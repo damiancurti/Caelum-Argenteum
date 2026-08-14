@@ -1,0 +1,24 @@
+version "4.10"
+
+// This root file tells GZDoom which ZScript source files belong to the game.
+// Keeping each system in a separate file will make the project easier to learn,
+// test, and maintain as it grows.
+#include "caelum/core/CaelumConstants.zs"
+#include "caelum/character/CaelumCharacterProfile.zs"
+#include "caelum/character/CaelumCharacterAllocation.zs"
+#include "caelum/attributes/CaelumAttributes.zs"
+#include "caelum/equipment/CaelumArmorModel.zs"
+#include "caelum/equipment/CaelumShieldModel.zs"
+#include "caelum/anatomy/CaelumAnatomyProfile.zs"
+#include "caelum/actors/CaelumTrainingDummy.zs"
+#include "caelum/actors/CaelumActorProjectile.zs"
+#include "caelum/actors/CaelumCombatActor.zs"
+#include "caelum/actors/CaelumMagicProjectiles.zs"
+#include "caelum/actors/CaelumArgento.zs"
+#include "caelum/actors/CaelumCaella.zs"
+#include "caelum/actors/CaelumRulo.zs"
+#include "caelum/actors/CaelumRonnie.zs"
+#include "caelum/statistics/CaelumDerivedStats.zs"
+#include "caelum/player/CaelumPlayer.zs"
+#include "caelum/hud/CaelumHUDOverlay.zs"
+#include "caelum/debug/CaelumDebugOverlay.zs"

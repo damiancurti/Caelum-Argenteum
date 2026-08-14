@@ -1,0 +1,124 @@
+// Add a dedicated Caelum Argenteum section to Customize Controls.
+addkeysection "Caelum Argenteum" CaelumArgenteumControls
+
+// This command toggles the user CVar read by CaelumDebugOverlay.
+addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
+
+// Network events let the correct player change a profile choice in multiplayer.
+alias ca_next_origin "netevent ca_next_origin"
+alias ca_next_identity "netevent ca_next_identity"
+alias ca_next_class "netevent ca_next_class"
+alias ca_select_next_layer "netevent ca_select_next_layer"
+alias ca_add_layer_point "netevent ca_add_layer_point"
+alias ca_select_next_attribute "netevent ca_select_next_attribute"
+alias ca_add_attribute_point "netevent ca_add_attribute_point"
+alias ca_reset_allocations "netevent ca_reset_allocations"
+alias ca_creation_open "netevent ca_creation_open"
+alias ca_creation_next_choice "netevent ca_creation_next_choice"
+alias ca_creation_confirm "netevent ca_creation_confirm"
+alias ca_creation_back "netevent ca_creation_back"
+alias ca_creation_add_point "netevent ca_creation_add_point"
+alias ca_debug_add_weight "netevent ca_debug_add_weight"
+alias ca_debug_reset_weight "netevent ca_debug_reset_weight"
+alias ca_debug_consume_air "netevent ca_debug_consume_air"
+alias ca_debug_refill_air "netevent ca_debug_refill_air"
+alias ca_debug_jump_air "netevent ca_debug_jump_air"
+alias ca_debug_consume_mana "netevent ca_debug_consume_mana"
+alias ca_debug_refill_mana "netevent ca_debug_refill_mana"
+alias ca_debug_add_adrenaline "netevent ca_debug_add_adrenaline"
+alias ca_debug_clear_adrenaline "netevent ca_debug_clear_adrenaline"
+alias ca_debug_pain_damage "netevent ca_debug_pain_damage"
+alias ca_debug_evasion_attack "netevent ca_debug_evasion_attack"
+alias ca_debug_attributes_75 "netevent ca_debug_attributes_75"
+alias ca_debug_health_state "netevent ca_debug_health_state"
+alias ca_debug_heal_health "netevent ca_debug_heal_health"
+alias ca_debug_next_page "netevent ca_debug_next_page"
+alias ca_debug_sword_attack "netevent ca_debug_sword_attack"
+alias ca_debug_staff_attack "netevent ca_debug_staff_attack"
+alias ca_debug_armor_slot "netevent ca_debug_armor_slot"
+alias ca_debug_armor_type "netevent ca_debug_armor_type"
+alias ca_debug_armor_tier "netevent ca_debug_armor_tier"
+alias ca_debug_armor_critical "netevent ca_debug_armor_critical"
+alias ca_debug_armor_hit "netevent ca_debug_armor_hit"
+alias ca_debug_armor_repair "netevent ca_debug_armor_repair"
+alias ca_debug_lose_lucidity "netevent ca_debug_lose_lucidity"
+alias ca_debug_refill_lucidity "netevent ca_debug_refill_lucidity"
+alias ca_debug_lucidity_state "netevent ca_debug_lucidity_state"
+alias ca_debug_lose_hunger "netevent ca_debug_lose_hunger"
+alias ca_debug_lose_thirst "netevent ca_debug_lose_thirst"
+alias ca_debug_lose_sleep "netevent ca_debug_lose_sleep"
+alias ca_debug_refill_survival "netevent ca_debug_refill_survival"
+alias ca_debug_spawn_dummy "netevent ca_debug_spawn_dummy"
+alias ca_debug_spawn_argento "netevent ca_debug_spawn_argento"
+alias ca_debug_spawn_caella "netevent ca_debug_spawn_caella"
+alias ca_debug_spawn_rulo "netevent ca_debug_spawn_rulo"
+alias ca_debug_spawn_ronnie "netevent ca_debug_spawn_ronnie"
+alias ca_debug_actor_health_state "netevent ca_debug_actor_health_state"
+alias ca_debug_actor_lucidity_state "netevent ca_debug_actor_lucidity_state"
+alias ca_debug_shield_type "netevent ca_debug_shield_type"
+alias ca_debug_shield_tier "netevent ca_debug_shield_tier"
+alias ca_debug_shield_block "netevent ca_debug_shield_block"
+alias ca_debug_shield_damage "netevent ca_debug_shield_damage"
+alias ca_debug_shield_angle "netevent ca_debug_shield_angle"
+alias ca_debug_shield_hit "netevent ca_debug_shield_hit"
+alias ca_debug_shield_repair "netevent ca_debug_shield_repair"
+
+addmenukey "$CA_CONTROL_NEXT_ORIGIN" ca_next_origin
+addmenukey "$CA_CONTROL_NEXT_IDENTITY" ca_next_identity
+addmenukey "$CA_CONTROL_NEXT_CLASS" ca_next_class
+addmenukey "$CA_CONTROL_SELECT_NEXT_LAYER" ca_select_next_layer
+addmenukey "$CA_CONTROL_ADD_LAYER_POINT" ca_add_layer_point
+addmenukey "$CA_CONTROL_SELECT_NEXT_ATTRIBUTE" ca_select_next_attribute
+addmenukey "$CA_CONTROL_ADD_ATTRIBUTE_POINT" ca_add_attribute_point
+addmenukey "$CA_CONTROL_RESET_ALLOCATIONS" ca_reset_allocations
+addmenukey "$CA_CONTROL_CREATION_OPEN" ca_creation_open
+addmenukey "$CA_CONTROL_CREATION_NEXT_CHOICE" ca_creation_next_choice
+addmenukey "$CA_CONTROL_CREATION_CONFIRM" ca_creation_confirm
+addmenukey "$CA_CONTROL_CREATION_BACK" ca_creation_back
+addmenukey "$CA_CONTROL_CREATION_ADD_POINT" ca_creation_add_point
+addmenukey "$CA_CONTROL_DEBUG_ADD_WEIGHT" ca_debug_add_weight
+addmenukey "$CA_CONTROL_DEBUG_RESET_WEIGHT" ca_debug_reset_weight
+addmenukey "$CA_CONTROL_DEBUG_CONSUME_AIR" ca_debug_consume_air
+addmenukey "$CA_CONTROL_DEBUG_REFILL_AIR" ca_debug_refill_air
+addmenukey "$CA_CONTROL_DEBUG_JUMP_AIR" ca_debug_jump_air
+addmenukey "$CA_CONTROL_DEBUG_CONSUME_MANA" ca_debug_consume_mana
+addmenukey "$CA_CONTROL_DEBUG_REFILL_MANA" ca_debug_refill_mana
+addmenukey "$CA_CONTROL_DEBUG_ADD_ADRENALINE" ca_debug_add_adrenaline
+addmenukey "$CA_CONTROL_DEBUG_CLEAR_ADRENALINE" ca_debug_clear_adrenaline
+addmenukey "$CA_CONTROL_DEBUG_PAIN_DAMAGE" ca_debug_pain_damage
+addmenukey "$CA_CONTROL_DEBUG_EVASION_ATTACK" ca_debug_evasion_attack
+addmenukey "$CA_CONTROL_DEBUG_ATTRIBUTES_75" ca_debug_attributes_75
+addmenukey "$CA_CONTROL_DEBUG_HEALTH_STATE" ca_debug_health_state
+addmenukey "$CA_CONTROL_DEBUG_HEAL_HEALTH" ca_debug_heal_health
+addmenukey "$CA_CONTROL_DEBUG_NEXT_PAGE" ca_debug_next_page
+addmenukey "$CA_CONTROL_DEBUG_SWORD_ATTACK" ca_debug_sword_attack
+addmenukey "$CA_CONTROL_DEBUG_STAFF_ATTACK" ca_debug_staff_attack
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_SLOT" ca_debug_armor_slot
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_TYPE" ca_debug_armor_type
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_TIER" ca_debug_armor_tier
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_CRITICAL" ca_debug_armor_critical
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_HIT" ca_debug_armor_hit
+addmenukey "$CA_CONTROL_DEBUG_ARMOR_REPAIR" ca_debug_armor_repair
+addmenukey "$CA_CONTROL_DEBUG_LOSE_LUCIDITY" ca_debug_lose_lucidity
+addmenukey "$CA_CONTROL_DEBUG_REFILL_LUCIDITY" ca_debug_refill_lucidity
+addmenukey "$CA_CONTROL_DEBUG_LUCIDITY_STATE" ca_debug_lucidity_state
+addmenukey "$CA_CONTROL_DEBUG_LOSE_HUNGER" ca_debug_lose_hunger
+addmenukey "$CA_CONTROL_DEBUG_LOSE_THIRST" ca_debug_lose_thirst
+addmenukey "$CA_CONTROL_DEBUG_LOSE_SLEEP" ca_debug_lose_sleep
+addmenukey "$CA_CONTROL_DEBUG_REFILL_SURVIVAL" ca_debug_refill_survival
+addmenukey "$CA_CONTROL_DEBUG_SPAWN_DUMMY" ca_debug_spawn_dummy
+addmenukey "$CA_CONTROL_DEBUG_SPAWN_ARGENTO" ca_debug_spawn_argento
+addmenukey "$CA_CONTROL_DEBUG_SPAWN_CAELLA" ca_debug_spawn_caella
+addmenukey "$CA_CONTROL_DEBUG_SPAWN_RULO" ca_debug_spawn_rulo
+addmenukey "$CA_CONTROL_DEBUG_SPAWN_RONNIE" ca_debug_spawn_ronnie
+addmenukey "$CA_CONTROL_DEBUG_ACTOR_HEALTH_STATE" ca_debug_actor_health_state
+addmenukey "$CA_CONTROL_DEBUG_ACTOR_LUCIDITY_STATE" ca_debug_actor_lucidity_state
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_TYPE" ca_debug_shield_type
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_TIER" ca_debug_shield_tier
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_BLOCK" ca_debug_shield_block
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_DAMAGE" ca_debug_shield_damage
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_ANGLE" ca_debug_shield_angle
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
+addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
+
+// No default keys are imposed. Assign them under Customize Controls.

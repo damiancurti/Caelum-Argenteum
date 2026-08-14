@@ -1,0 +1,822 @@
+# Changelog
+
+## 0.63.0 — Complete offensive state for the four predefined actors
+
+- Gave Argento, Caella, Rulo, and Ronnie their own Dexterity and Insight,
+  including live armor bonuses, Type-1 physical/magical accuracy, and
+  `5% + Type2` physical/magical critical chance.
+- Made melee and ranged damage use each actor's real wounded-state performance:
+  healthy x1, wounded x0.75, and badly wounded x0.25 before Patience and
+  adrenaline progressively mitigate the harmful portion.
+- Applied the same health performance to actual actor movement speed and kept
+  the documented x2/x4 pain and earned-adrenaline intensity.
+- Connected Mareado to the actor's own attack accuracy and made the two-second
+  Aturdido interval stop horizontal movement and offensive attempts.
+- Made real actor criticals add damage only. Melee attacks transfer a
+  single-use critical result; projectiles retain their own result until impact.
+- Routed those criticals through the player's real shield, selected anatomy
+  region, armor, Dureza, health, lucidity, pain, adrenaline, and durability
+  pipeline. The effective region multiplier also governs critical head
+  lucidity loss after armor reinforcement.
+- Added a sixth compact actor page with current/base speed, health performance,
+  pain/adrenaline intensity, evasion, effective offensive attributes,
+  accuracy, critical chances, last attack damage, and both attack rolls.
+- Added localized controls to cycle the last inspected actor through health and
+  lucidity test states without inventing actor air, hunger, thirst, or sleep.
+
+## 0.62.0 — Shared lucidity for all predefined combat actors
+
+- Added a 100-point lucidity resource to Argento, Caella, Rulo, and Ronnie,
+  with complete regeneration over one real minute.
+- Made damage to a naturally critical anatomy region remove 25 base lucidity
+  even when armor reinforcement lowers its effective vulnerability grade.
+- Applied armor defense and the actor's Toughness Type-3 multiplier to that
+  loss, matching the player rule's mitigation order.
+- Made critical sword and staff hits transmit their real critical result to the
+  actor and multiply lucidity loss from the reinforced effective grade.
+- Added Mareado at 50% or less, represented by half of actor offensive attempts
+  failing until final actor aim cones exist.
+- Added Aturdido at 10% or less: entering the state from above immobilizes the
+  actor and prevents attacks for two seconds without restarting the timer while
+  it remains in critical lucidity.
+- Extended compact actor diagnostics with current lucidity, state, accuracy
+  factor, last localized loss, and remaining physical-stun time.
+
+## 0.61.0 — Ordinary attacks use the complete player defense pipeline
+
+- Routed directed melee, hitscan, bullet, physical-projectile, and magical-
+  projectile damage through Caelum shield, armor, Dureza, health, lucidity,
+  pain, and adrenaline rules automatically.
+- Kept explosions, survival damage, floors, telefrags, and other unclassified
+  hazards on GZDoom's native damage route.
+- Made shield coverage use the attacker's real direction relative to the
+  player's facing instead of the diagnostic angle control.
+- Selected physical or magical shield defense from the incoming Caelum damage
+  type, without adding any extra air cost when struck.
+- Reused the currently selected armor region as the temporary incoming hit
+  location until authored player hit volumes are implemented.
+- Prevented successful evasion and invulnerability from damaging shield or
+  armor durability.
+- Kept the compact armor page as the diagnostic view for both debug hits and
+  ordinary attacks.
+
+## 0.60.1 — GZDoom 4.14.2 armor parser correction
+
+- Renamed the uniform-loadout parameters that collided case-insensitively with
+  the `ArmorType[]` and `Tier[]` fields in ZScript.
+- Preserved every 0.60.0 armor value and behavior while allowing GZDoom 4.14.2
+  to parse the shared actor armor initializer.
+
+## 0.60.0 — Common actor armor, reinforcement, and durability
+
+- Connected the existing four-slot armor model to every predefined Caelum
+  actor instead of keeping it exclusive to the player diagnostic.
+- Assigned light tier-1 armor to Argento, Caella, and Ronnie, and heavy tier-1
+  armor to Rulo, matching their documented visual/equipment profiles.
+- Made authored anatomy impacts select head, body, hands, or feet, apply that
+  piece's reinforcement and percentage defense, and wear only its durability.
+- Preserved natural and reinforced vulnerability separately in diagnostics.
+- Applied armor-derived Agility and Patience bonuses to actor evasion and
+  wounded-state penalty mitigation.
+- Extended compact combat diagnostics with the last actor armor slot, defense,
+  absorbed damage, remaining durability, and durability loss.
+
+## 0.59.0 — Rulo and Ronnie predefined characters
+
+- Added Rulo, the documented Southern Beast Warrior, with physical/technical/
+  social/mental attributes 20/18/7/5, 3100 health, mass 95, and a wider
+  28-radius/80-height body.
+- Added Ronnie, the documented Northern Caelith Explorer, with attributes
+  5/18/7/20, 1150 health, mass 60, and a 20-radius/72-height body.
+- Added forty-eight original transparent frames per character: eight rotations
+  each for idle, stride, melee, ranged attack, pain, and death.
+- Gave Rulo a 372-damage axe strike and deterministic 372-damage thrown axe;
+  his heavy movement speed is 8 and the projectile speed is 20.
+- Gave Ronnie a 138-damage sword strike and deterministic 372-damage golden
+  magic bolt; his movement speed is 12 and projectile speed is 28.
+- Connected both actors to shared anatomy, evasion, pain, adrenaline, wounded
+  state, enemy-kill reward, directional corpse, and compact diagnostics.
+- Added independent localized spawn controls for Rulo and Ronnie, and corrected
+  actor-name diagnostics so all four predefined characters identify properly.
+
+## 0.58.0 — Anatomy profiles and complete test-enemy state art
+
+- Added an ordered reusable anatomy profile with up to sixteen normalized
+  regions, independently assigned locations and vulnerability grades.
+- Connected sword and staff impact classification to original actors' anatomy
+  without applying the location multiplier twice; ordinary actors retain the
+  verified humanoid fallback.
+- Added compact diagnostics for the last anatomy region, vulnerability grade,
+  relative height, and lateral position struck on Argento or Caella.
+- Added eight-direction walking, ranged-cast, pain, and death frames for both
+  test enemies while preserving their 72-unit body and collision dimensions.
+- Made actor pain use the new eight-tic hurt pose and death finish in the new
+  direction-aware corpse pose.
+- Added blue and violet magic-bolt actors and ranged monster states. Each bolt
+  travels at 24 units per tic and deals a deterministic 138 base magical damage
+  before the target's defenses, with no secondary effect.
+
+## 0.57.0 — Shared defensive combat layer for original actors
+
+- Added `CaelumCombatActor` as the reusable base class for original enemies
+  and future non-player combatants.
+- Gave Argento and Caella their documented Toughness 20, Resilience 16,
+  Agility 16, and Patience 5 defensive profile instead of native Doom pain.
+- Applied directed-attack evasion before damage, including the normal +8
+  adrenaline reward and combat-timer restart on success.
+- Applied post-damage pain chance from percentage health lost, Toughness,
+  current adrenaline, and the wounded/badly-wounded intensity rules.
+- Applied Toughness Type 3 to incoming health damage before the resulting
+  health-loss percentage enters pain chance.
+- Added actor-owned Type-4 maximum adrenaline, damage/pain/evasion gains,
+  thirty-second combat timing, and unchanged ten-per-second decay.
+- Added compact combat diagnostics for the last damaged Caelum actor: health,
+  adrenaline, evasion roll, health-loss percentage, and pain result.
+
+## 0.56.0 — Caella hostile test enemy
+
+- Added Caella as a second independently invocable hostile humanoid test enemy.
+- Created and normalized sixteen original transparent sprites from the supplied
+  visual reference: eight idle rotations and eight sword-attack rotations.
+- Made Caella inherit Argento's complete legal Southern Federal Warrior test
+  profile, preserving 3100 health, 372 base melee damage, movement, mass,
+  hitbox, pain, hostility, death, and enemy-kill adrenaline behavior.
+- Added localized English and Spanish spawn controls and documented the new
+  project-owned sprite assets.
+
+## 0.55.0 — Argento hostile test enemy
+
+- Added Argento as the first hostile humanoid test enemy, invocable from a new
+  localized development control.
+- Built original transparent eight-direction idle and melee sprite rotations
+  from the user-supplied visual reference, with a 72-unit humanoid body.
+- Based Argento on a legal newly-created Southern Federal Warrior: physical 15,
+  technical 11, social 9, mental 5; combat allocation produces Strength,
+  Toughness, and Constitution 20 plus Dexterity, Resilience, and Agility 16.
+- Set 3100 health and 372 base melee damage from the same Type-1 formulas used
+  by a starting player, before target mitigation or vulnerability.
+- Recorded the completed staff and shield tests as user-confirmed.
+
+## 0.54.0 — Unified debug resource restoration
+
+- Expanded the existing debug healing control so one press restores health,
+  mana, and air to their current calculated maximums.
+- Updated the localized control name in English and Spanish to describe all
+  three resources.
+- Verified that shield blocking already consumes air continuously, independently
+  of incoming hits, at `ShieldWeight × 10% × AirMultiplier` per second.
+## 0.53.0 — Functional straight-line staff test
+
+- Added a real long-range line attack for the staff with documented 120 base
+  damage, 18-tic casting interval, and current-scale 500 mana cost.
+- Made Intelligence Type 1 scale magical damage and Insight Type 1 control
+  magical accuracy; crouching still doubles accuracy.
+- Added staff critical chance from its 8% weapon base plus Insight Type 2,
+  including crouching's x2 critical factor and localized critical damage only.
+- Applied health/survival offensive penalties, spent mana at cast start, blocked
+  recasting during the 18-tic interval, and granted +2 adrenaline on real damage.
+- Added a fifth compact debug page for magical damage, mana, accuracy, aim
+  offsets, critical roll, hit result, and remaining cast time.
+- Corrected documented magical-weapon mana costs to the established x10 scale:
+  staff/campana 500, book 700, and statuette 1000.
+
+## 0.52.0 — Shield horizontal coverage angles
+
+- Added a configurable horizontal incoming-attack angle to the shield test,
+  cycling from 0° to 180° in ten-degree steps.
+- Made blocking require the attack to fall within half of the shield's total
+  frontal arc: ±60° rodela/magic, ±70° kite, and ±80° tower.
+- Routed out-of-coverage hits past the shield with zero shield absorption,
+  durability loss, or block adrenaline, while preserving the complete
+  armor–Dureza–health pipeline.
+- Added localized angle control and compact covered/bypassed diagnostics.
+
+## 0.51.0 — Dureza damage-resistance stage
+
+- Added Dureza Type 3 as the final retained-damage multiplier in the shared
+  shield/armor test pipeline: `1 - Dureza × (Dureza + 1) / 10100`.
+- Applied it after armor defense, so it changes real health loss without
+  changing how much damage shield or armor absorbed for durability.
+- Kept Dureza's existing pain-chance and localized-lucidity multipliers as
+  independent calculations; they are not replaced by direct damage resistance.
+- Added post-defense damage, Dureza multiplier, and final health damage to the
+  compact armor diagnostic.
+
+## 0.50.0 — Shield-to-armor damage routing
+
+- Routed every point not absorbed by the debug shield into the selected
+  humanoid armor region instead of stopping at a diagnostic value.
+- Reused the complete armor pipeline: vulnerability and reinforcement,
+  defense absorption, armor durability, real health loss, localized lucidity,
+  pain chance, damage adrenaline, and combat timer.
+- Made an inactive or broken shield pass the complete 1000-point test impact
+  into armor, while a 100% block leaves armor, health, lucidity, and pain untouched.
+- Preserved the shield's separate durability calculation and +5 base
+  adrenaline reward whenever it absorbs positive damage.
+
+## 0.49.1 — Corrected shield defense tiers
+
+- Reclassified the original shield defenses as tier-2 values.
+- Made tier 1 subtract ten percentage points and tier 3 add ten percentage
+  points to both physical and magical defense for every shield.
+- Preserved shield weight, coverage, adrenaline reward, air cost, and
+  durability scaling x1/x3/x9.
+- Updated compact diagnostics, test instructions, and design-document tables.
+
+## 0.49.0 — Functional shield-blocking test
+
+- Added rodela, kite, tower, and magic shield models with their documented
+  weight, physical/magical defense, durability, and frontal coverage.
+- Added all three tiers: defense scales x1/x2/x3, durability x1/x3/x9, and
+  effective absorption is capped at 100% so values above 100% cannot heal.
+- Added a blocking toggle that suspends air regeneration and consumes 10% of
+  shield weight per second, adjusted by the existing equipment-load factor.
+- Added a frontal 1000-damage physical/magical diagnostic hit, the armor
+  durability-loss formula, shield repair, and +5 base adrenaline on a
+  successful block.
+- Added compact shield diagnostics and six localized test controls without
+  expanding the panel horizontally.
+- Recorded user confirmation that the corrected training dummy now aligns its
+  visible body with its hit regions.
+
+## 0.48.1 — Training-dummy visual and hitbox alignment
+
+- Reduced the dummy sprite canvas from 96×128 to 48×72 so its displayed height
+  exactly matches the actor's 72-unit collision height.
+- Matched the 42-pixel-wide visible silhouette with a 21-unit actor radius.
+- Converted the final small sprite to binary transparency: the dummy is fully
+  opaque and only its exterior background is transparent.
+- Preserved the one-million health, immobility, test control, and humanoid
+  location thresholds from 0.48.0.
+
+## 0.48.0 — Crouching bonuses and training dummy
+
+- Made crouching multiply accuracy, critical chance, and stealth by x2.
+- Applied the crouching accuracy and critical factors to the provisional sword;
+  critical chance remains capped at 100%.
+- Exposed the live crouching factors in compact resources/combat diagnostics.
+- Added an original stationary training dummy with 1,000,000 health, maximum
+  mass, no damage thrust, and a localized control that spawns it ahead.
+- Corrected sword calculated-damage diagnostics so health/survival penalties
+  update live even before a target is hit or when the latest attempt misses.
+- Recorded user confirmation of the running-accuracy implementation.
+
+## 0.47.0 — Running accuracy penalty
+
+- Applied the documented running penalty to the provisional sword: attacks
+  made while running retain 25% of physical accuracy.
+- Kept standing and walking attacks at 100% of their post-lucidity accuracy.
+- Applied movement after attribute and lucidity factors, so running while dizzy
+  combines multiplicatively to retain 12.5% before the weapon's aim formula.
+- Added the movement-accuracy factor to the compact combat diagnostic.
+- Recorded user confirmation of survival penalties on offensive sword damage.
+
+## 0.46.0 — Survival penalties on offensive damage
+
+- Connected the existing cumulative hunger, thirst, and sleep performance
+  factor to the provisional sword's real outgoing damage.
+- Combined health-state and survival damage penalties multiplicatively through
+  one stored offensive-damage factor for reuse by later weapons and spells.
+- Preserved adrenaline's percentage-based restoration of survival penalties:
+  full adrenaline restores the survival portion to x1.
+- Added the combined offensive-damage factor to compact resource diagnostics.
+- Recorded user confirmation of direct lucidity-state testing and 25-point loss.
+
+## 0.45.0 — Direct lucidity-state test and 25-point base loss
+
+- Raised localized critical-region lucidity loss from 15 to 25 base points.
+- Added one localized control that cycles exact clear, dizzy, and stunned
+  lucidity states so the accuracy penalty and visual distortion are immediately testable.
+- Kept the ten-point incremental loss and refill controls for timing tests.
+- Clarified where effective accuracy and sword aim offsets appear in the compact panel.
+- Recorded user confirmation of the 0.44.0 implementation before this adjustment.
+
+## 0.44.0 — Dizzy accuracy and visual distortion
+
+- Made physical accuracy use Dexterity Type 1 and magical accuracy use Insight
+  Type 1 through shared calculated values.
+- Made dizzy and stunned lucidity states retain 50% of both effective accuracy
+  values without changing damage or critical chance.
+- Connected effective physical accuracy to the provisional sword as a small
+  horizontal and vertical angular error; losing half accuracy doubles that error.
+- Added a restrained full-screen violet tint with opposing cyan/red edge bands
+  while dizzy or stunned, leaving HUD text crisp.
+- Added effective accuracy, lucidity factor, and the sword's latest horizontal
+  and vertical offsets to compact diagnostics.
+- Recorded user confirmation of natural critical-region lucidity mitigation.
+
+## 0.43.0 — Natural critical regions and lucidity mitigation
+
+- Raised localized critical-region lucidity loss from 10 to 15 base points.
+- Kept natural anatomy responsible for lucidity loss even when armor
+  reinforcement lowers the effective vulnerability grade.
+- Applied armor defense as equal percentage mitigation to health and localized
+  lucidity loss.
+- Made reinforcement reduce a critical hit's lucidity factor through the ratio
+  between effective critical and normal vulnerability multipliers.
+- Made low and critical sleep multiply lucidity loss and stun duration by x2
+  and x4, with Patience Type 3 mitigating the harmful amount above x1.
+- Added sleep factor to armor diagnostics and rendered armor defense as a percent.
+- Recorded user confirmation of damage-only criticals and critical-region lucidity loss.
+
+## 0.42.0 — Critical-point lucidity loss
+
+- Made critical hits damage-only for every damage type; they no longer grant
+  secondary bleeding, stun, penetration, or elemental effects.
+- Added a shared localized lucidity-loss rule for confirmed damage of any type.
+- Made only regions that remain critical points remove localized lucidity.
+- Reused the ten-point lucidity test base, multiplied by the same localized
+  damage multiplier and then by Toughness Type 3 resistance.
+- Added critical-point lucidity loss to the armor hit test and its diagnostics.
+- Recorded user confirmation of Type 2 JumpZ growth.
+
+## 0.41.0 — Type 2 JumpZ growth
+
+- Changed Agility's base JumpZ scale from Type 4 to `100% + Type 2`.
+- Kept level 0 at 100% and set level 100 to exactly 200% JumpZ.
+- Preserved the existing mass, air, survival, health, stun, and pain factors.
+- Clarified that doubling vertical launch velocity produces approximately four
+  times the geometric jump height under constant gravity.
+- Recorded user confirmation of automatic physical critical rolls.
+
+## 0.40.0 — Automatic physical critical rolls
+
+- Added the documented 5% base physical critical chance plus Dexterity Type 2.
+- Rolled critical chance once after each sword trace reaches a valid actor.
+- Applied the existing localized critical formula `V × (V + 1)` instead of an
+  unrelated global damage multiplier.
+- Added chance, roll, and normal/critical result to compact combat diagnostics.
+- Reserved magical critical chance as 5% plus Insight Type 2 for the future
+  magical-attack stage, without rolling it prematurely.
+- At this stage, secondary critical effects were still outside the prototype;
+  version 0.42.0 later removed them from the final design entirely.
+
+## 0.39.0 — Animation-matched pain immobilization
+
+- Added a physical pain lock when the custom pain roll succeeds.
+- Derived the lock duration from the actor's finite `Pain` state sequence; the
+  current DoomPlayer sequence lasts eight tics, approximately 0.229 seconds.
+- Disabled movement, jumping, running, and the sword test during that duration.
+- Displayed remaining and total pain-animation duration in combat diagnostics.
+- Documented that jump scaling modifies `JumpZ` linearly while approximate
+  geometric height changes quadratically under constant gravity.
+
+## 0.38.3 — Reliable kill credit and narrower debug pages
+
+- Recorded the last player responsible for real damage to each actor and used
+  that record first when awarding enemy-kill adrenaline.
+- Kept monster target and death inflictor as compatible fallback attribution.
+- Split every remaining wide diagnostic group into shorter stacked lines and
+  shortened the panel heading so Spanish text stays inside the virtual screen.
+- Preserved every confirmed gameplay system and design rule.
+
+## 0.38.2 — GZDoom 4.14.2 monster-flag compatibility
+
+- Replaced the invalid `bMonster` identifier with GZDoom 4.14.2's exposed
+  ZScript actor flag `bIsMonster` in the enemy-kill adrenaline detector.
+- Verified the other new death-event members against the g4.14.2 source.
+- Preserved every gameplay and documentation rule from 0.38.0.
+
+## 0.38.1 — Debug-overlay parser correction
+
+- Moved the compact overlay method's closing brace outside the disabled legacy
+  reference block so GZDoom 4.14.2 can parse the following `NetworkProcess`
+  override correctly.
+- Preserved every gameplay and documentation rule from 0.38.0.
+
+## 0.38.0 — Compact diagnostics and adrenaline event rewards
+
+- Split the development overlay into four compact pages: character,
+  resources/states, combat, and armor.
+- Added localized controls to change panel page and heal current health fully.
+- Restored gameplay adrenaline gains to their original values: damage 10, pain
+  20, melee 3, and evasion 8; post-combat decay remains 10 per second.
+- Added 5 adrenaline for killing a hostile monster.
+- Added 10 adrenaline to living allies within 10 development meters when an
+  allied actor dies.
+- Added last adrenaline source, base gain, and health-state-adjusted gain to
+  combat diagnostics.
+- Applied Patience Type 3 to detrimental wounded/badly-wounded penalties before
+  existing adrenaline mitigation without weakening their beneficial gain bonus.
+- Recorded user confirmation of health-bar interpolation and armor tests.
+
+## 0.37.0 — Vulnerability grades and armor durability
+
+- Replaced head/torso/arms/legs damage multipliers with seven fixed
+  vulnerability grades: x2.00, x1.60, x1.30, x1.00, x0.80, x0.60, and x0.40.
+- Derived critical-hit multipliers with `V × (V + 1)`.
+- Assigned humanoid head/body/hands/feet to critical/sensitive/weak/neutral.
+- Added four independent armor slots with uniform defense by type/tier,
+  slot-specific reinforcement, and live attribute bonuses.
+- Added the new 5/10/15, 10/20/30, 20/40/60, and 30/60/90 defense tables.
+- Preserved base durability and x3-per-tier scaling.
+- Applied percentage defense after vulnerability and based durability loss on
+  absorbed damage: one guaranteed point per 1000 plus 1% per ten remainder.
+- Reserved a durability-damage multiplier for future mitigation and the same
+  formula for future shield blocking.
+- Added localized armor configuration, hit, critical-mode, repair controls, and diagnostics.
+
+## 0.36.0 — Wounded and badly wounded health states
+
+- Added wounded at 50% health or less and badly wounded at 10% or less.
+- Set raw pain and combat-adrenaline gains to x2/x4 in those states.
+- Set raw outgoing damage, air recovery, movement, evasion, and jump performance
+  to x0.75/x0.25 respectively.
+- Applied the existing percentage-based adrenaline relief to every new health penalty.
+- Added localized health-state text and development-panel diagnostic factors.
+- Added a no-impact control that cycles exact health thresholds for testing.
+- Changed the health bar to interpolate green at 100%, gold at 50%, and red at 10%.
+- Documented configurable anatomy profiles, multiple weak points, and contextual
+  Tarot effects for players and enemies as future architecture.
+
+## 0.35.0 — Sword attack air cost
+
+- Connected the documented five-air sword primary cost to the live attack test.
+- Multiplied attack cost by the existing equipped-load air-use factor.
+- Charged the effort when a valid attack begins, including attacks that miss.
+- Prevented the attack entirely when current air cannot pay its complete cost.
+- Displayed final attack cost and insufficient-air result in the development panel.
+
+## 0.34.1 — Reversible level-75 development attributes
+
+- Added one localized control that toggles all twelve attributes to level 75.
+- Kept the real character profile and point allocation untouched underneath.
+- Recalculated all derived statistics and live limits immediately on each toggle.
+- Restored the ordinary creation-derived attributes when the override is disabled.
+
+## 0.34.0 — Passive evasion on directed attacks
+
+- Connected effective evasion chance to incoming melee, hitscan, and missile damage.
+- Rolled before GZDoom damage so a successful evasion prevents health loss,
+  pain, armor interaction, and damage-derived adrenaline.
+- Granted sixteen adrenaline and restarted combat time on successful evasion.
+- Excluded explosions, environmental damage, telefrags, and unclassified damage.
+- Added a localized directed-attack test and displayed the last roll, chance,
+  applicability, and result in the development panel.
+
+## 0.33.0 — Height-based localized melee damage
+
+- Replaced the provisional fixed torso hit with crosshair-driven body location.
+- Classified head at 80%-100%, torso at 40%-80%, lateral arms at 30%-50%,
+  and legs at 0%-30% of the target's actor height.
+- Applied the documented x2.0 head, x1.0 torso, x0.6 arms, and x0.5 legs
+  multipliers before sending damage through GZDoom.
+- Resolved the arms/torso height overlap by requiring an arms hit to pass
+  through the outer half of the target cylinder; central hits remain torso.
+- Displayed the selected body zone, multiplier, and relative impact height in
+  the localized development panel.
+- Kept armor by body part and temporary limb effects pending for Caelum actors.
+
+## 0.32.0 — Base melee damage functional test
+
+- Added an isolated sword torso attack with a base damage of 120 and a
+  64-unit melee range.
+- Applied Strength Type 1 directly to the weapon base damage and rounded the
+  final engine damage to the nearest whole point.
+- Used a provisional torso multiplier of x1, without location, critical,
+  Caelum armor, survival-damage, or attack-air stages.
+- Granted six adrenaline and restarted the combat timer only when the reached
+  actor actually received positive damage.
+- Displayed calculated damage, real damage, and hit or miss in the development
+  panel, with localized English and Spanish controls.
+
+## 0.31.0 — Type 4 adrenaline capacity and pain test damage
+
+- Replaced maximum-adrenaline Type 1 growth with Resilience Type 4 growth.
+- Defined maximum adrenaline as `1000 × Type4Percent / 100`, from 1000 to 3000.
+- Preserved current adrenaline percentage effects, gains, decay, and clamping.
+- Added a localized test action that removes 5% of maximum health, rounded to
+  whole health and limited to leave at least one point.
+- Routed test damage through the same pain chance and adrenaline logic as a
+  real mitigated hit while deliberately bypassing provisional Doom armor.
+
+## 0.30.0 — Health-percentage pain chance
+
+- Disabled DoomPlayer's independent native pain roll for Caelum players.
+- Calculated one custom pain chance after real mitigated health loss.
+- Set base chance to ten times the percentage of maximum health lost.
+- Applied Dureza Type 3 and the pre-hit adrenaline percentage multiplicatively.
+- Made 100% pre-hit adrenaline grant complete pain immunity.
+- Awarded 40 additional adrenaline when pain actually triggers, after the roll.
+- Displayed the latest health-loss percentage, final chance, Dureza multiplier,
+  and result in the development panel.
+
+## 0.29.0 — Physical lucidity stun
+
+- Triggered one two-second physical stun when lucidity crosses from above 10%
+  to 10% or less.
+- Prevented the stun from restarting merely because lucidity remains critical.
+- Disabled movement and jumping and stopped horizontal sliding during the stun.
+- Prevented stunned input from spending running or jumping air.
+- Displayed the remaining stun time in the gameplay HUD and development panel.
+- Preserved the remaining timer through ordinary saves.
+
+## 0.28.0 — Adrenaline rescale and survival-funded air recovery
+
+- Increased the complete adrenaline-capacity formula to ten times its prior scale.
+- Doubled confirmed-damage and test gains from 10 to 20 points per event.
+- Doubled post-combat decay from 5 to 10 points per second.
+- Preserved every percentage-based adrenaline effect and the 30-second timeout.
+- Made a complete air refill consume 10% hunger and 20% thirst.
+- Limited air recovery proportionally when hunger or thirst cannot fund it.
+
+## 0.27.0 — Ten-times combat scale and natural health recovery
+
+- Increased base health and mana from 100 to 1000 without changing percentages.
+- Increased the provisional mana cost from 10 to 100.
+- Defined all final base damage and mana costs as ten times their former values.
+- Added natural health recovery over one real hour at base speed.
+- Applied Resilience Type 4 to natural recovery.
+- Stopped natural recovery while any survival resource is critical.
+- Spent hunger and thirst proportionally while naturally recovering health.
+- Corrected critical survival damage to one real-hour base rate.
+
+## 0.26.0 — Progressive adrenaline relief and survival damage
+
+- Changed adrenaline relief from a fixed 100-point threshold to current percentage.
+- Restored the same percentage of performance that adrenaline currently holds.
+- Added cumulative critical health loss at the negative base health-regeneration rate.
+- Kept survival damage independent from armor and ordinary damage adrenaline gains.
+- Mixed each survival bar's base hue with gold or red instead of replacing it.
+
+## 0.25.0 — Cumulative survival movement penalties
+
+- Applied 75% retained movement and jump height for each low survival state.
+- Applied 50% retained movement and jump height for each critical state.
+- Multiplied simultaneous hunger, thirst, and sleep penalties together.
+- Combined survival with the existing mass and air-state movement pipeline.
+- Ignored survival performance penalties while adrenaline is at least 100.
+- Displayed the final survival factor and adrenaline exception in the panel.
+
+## 0.24.1 — Survival HUD parser correction
+
+- Renamed the survival-bar local variable `color` to `barColor`.
+- Fixed GZDoom 4.14.2's `Unexpected '='; Expecting identifier` errors because
+  `color` is a reserved ZScript type name.
+- Preserved every survival resource value, timer, state, and HUD position.
+
+## 0.24.0 — Survival resources and definitive world-time scale
+
+- Defined one game hour as three real minutes.
+- Added hunger depletion over 24 game hours, thirst over 12, and sleep over 16.
+- Applied Constitution Type 3 to hunger/thirst loss and Resilience Type 3 to sleep loss.
+- Added persistent values and normal, low, and critical states for all three resources.
+- Added localized test controls, HUD bars, and state labels.
+- Kept accumulated penalties and progressive damage pending until state tests pass.
+
+## 0.23.0 — Live lucidity resource and states
+
+- Added a persistent 100-point lucidity resource that begins full.
+- Added the documented one-minute empty-to-full recovery speed.
+- Added normal, dizzy at 50% or less, and stunned at 10% or less states.
+- Calculated Dureza's Type 3 future lucidity-loss multiplier.
+- Added localized test controls to lose ten lucidity or refill the resource.
+- Added a permanent cyan lucidity bar with gold and red critical colors.
+- Kept accuracy penalties and physical stun pending for their real systems.
+
+## 0.22.1 — Damage override declaration correction
+
+- Removed repeated default parameter values from the `DamageMobj` override.
+- Fixed GZDoom 4.14.2's `Default values for parameter of virtual override not
+  allowed` compilation error.
+- Preserved every adrenaline formula and gameplay behavior from version 0.22.0.
+
+## 0.22.0 — Live adrenaline and combat timeout
+
+- Added Resilience-derived maximum adrenaline using the documented formula.
+- Started new players at zero adrenaline and preserved it in ordinary saves.
+- Awarded ten adrenaline only when GZDoom confirms actual health loss.
+- Added a thirty-second combat timeout that restarts on each confirmed event.
+- Added five-adrenaline-per-second decay after the timeout reaches zero.
+- Added localized test controls to add ten adrenaline or clear the resource.
+- Added a permanent gold adrenaline bar, exact values, and visible timer.
+- Updated the main design document to define the thirty-second rule.
+
+## 0.21.0 — Live mana resource
+
+- Added persistent current mana with a Patience-derived Type 1 maximum.
+- Added Type 4 mana regeneration from Patience.
+- Applied the documented eight-minute base refill time before the regeneration
+  multiplier.
+- Added localized debug controls to spend ten mana and refill the resource.
+- Added a permanent violet mana bar and exact current/maximum values.
+- Displayed mana regeneration speed and percentage in the development panel.
+- Prevented profile recalculation from granting free mana.
+
+## 0.20.0 — Constitution-based live health
+
+- Connected Constitution's calculated maximum health to GZDoom's real player
+  health resource.
+- Overrode the engine maximum-health query so ordinary healing respects the
+  current Caelum limit.
+- Added a permanent localized health bar and exact current/maximum values.
+- Preserved native GZDoom damage, death, and healing behavior.
+- Prevented profile recalculation from granting free healing: a higher maximum
+  keeps current health unchanged, while a lower maximum only clamps it.
+- Drew the health display entirely through code without external artwork.
+
+## 0.19.0 — Functional air bar
+
+- Added a proportional bar to the permanent air HUD.
+- Kept the exact current and maximum values below the bar.
+- Matched the fill color to normal, tired, and breathless states.
+- Drew the bar entirely through code without external graphical assets.
+- Converted the virtual HUD position to real pixels for consistent widescreen
+  placement.
+
+## 0.18.0 — First permanent gameplay HUD element
+
+- Added a permanent current-air display separate from the debug panel.
+- Displayed current and maximum air together with the localized air state.
+- Used light blue, gold, and red for normal, tired, and breathless states.
+- Kept the HUD resolution-independent through a 640x360 virtual canvas.
+- Used only GZDoom's temporary built-in font, without distributing Doom art.
+
+## 0.17.0 — Larger air pool and correct Always Run detection
+
+- Increased base air capacity from 100 to 1000.
+- Preserved Type 4 Resilience growth, producing 1000 air at level 0 and 3000
+  air at level 100.
+- Preserved all action costs, load multipliers, thresholds, and the eight-minute
+  full-refill duration.
+- Replaced physical speed-key detection with GZDoom's effective run command.
+- Supported running-air consumption with Always Run both enabled and disabled.
+
+## 0.16.0 — Air cost while running
+
+- Connected the documented running cost to real grounded running movement.
+- Spent two base air units per second, adjusted by equipped load.
+- Kept walking, standing, swimming, flying, falling, and airborne input free.
+- Paused air regeneration while running so the displayed cost remains exact.
+- Added localized running-cost and active-state information to the panel.
+- Marked the two manual air-consumption controls clearly as debug tools.
+
+## 0.15.0 — Air cost on physical jumps
+
+- Detected successful grounded-to-rising jumps from the real jump control.
+- Spent five base air units once per successful takeoff.
+- Applied the existing equipment-load multiplier to the physical jump cost.
+- Ignored falling, lifts, airborne input, held-button tics, and predicted tics.
+- Retained the jump-cost debug control as an optional testing aid.
+
+## 0.14.0 — Physical movement and jump application
+
+- Applied effective movement to GZDoom's forward and sideways player fields.
+- Applied effective jump height to GZDoom's `JumpZ` player field.
+- Used fixed engine baselines to prevent multiplication accumulating per tic.
+- Displayed applied movement and `JumpZ` in the localized debug panel.
+- Kept jump air spending on its test control until valid physical jumps can be
+  distinguished from failed jump input.
+
+## 0.13.0 — Unified movement and jump model
+
+- Confirmed that evasion uses the same total-mass formula as movement, with no
+  separate overload penalty.
+- Unified ground, swimming, and flight speed under one Agility movement stat.
+- Replaced redundant swim/flight speed with Type 4 jump height.
+- Applied the same mass and air-state factors to movement and jump height.
+- Added a provisional five-unit base air cost for jumping.
+- Added a localized jump-cost test control and displayed movement and jump
+  calculations in the debug panel.
+- Kept physical movement and jump-height changes data-only until verified.
+
+## 0.12.0 — Evasion calculation pipeline
+
+- Added Type 2 growth calculations for Agility-based base evasion.
+- Applied the documented total-mass multiplier to base evasion.
+- Applied 75% retained evasion while tired and 25% while breathless.
+- Stored the current air state in play scope so UI rendering requires no
+  cross-context function calls.
+- Displayed base, mass-adjusted, and effective evasion in the debug panel.
+- Applied mass to evasion through the same formula used by movement.
+- Kept actual attack-evasion rolls pending for the combat system.
+
+## 0.11.1 — UI context correction
+
+- Marked the read-only air ratio and state helpers as UI-callable.
+- Fixed GZDoom's `Can't call play function IsBreathless from ui context`
+  startup error.
+- No formulas, resource values, or gameplay behavior changed.
+
+## 0.11.0 — Air regeneration and resource states
+
+- Added automatic air regeneration based on the documented eight-minute full
+  recovery time.
+- Scaled regeneration per second with maximum air so larger pools still take
+  eight minutes to refill completely.
+- Added normal, tired, and breathless state detection.
+- Set tired at 50% air or less and breathless at 10% or less.
+- Displayed localized air state and regeneration rate in the debug panel.
+- Kept movement and evasion penalties inactive until state detection is tested.
+
+## 0.10.0 — Live air-resource test
+
+- Corrected the overload threshold from above 80% to above 75% capacity.
+- Distinguished overload from exceeding the absolute 100% capacity.
+- Added persistent current air alongside calculated maximum air.
+- Added provisional controls to consume one ten-unit base action and refill air.
+- Applied the confirmed carry-load multiplier to the test action cost.
+- Displayed current air and adjusted action cost in the localized debug panel.
+
+## 0.9.0 — Carry-load air consumption
+
+- Replaced the provisional mass-based air factor with the confirmed
+  carry-load formula.
+- Increased air use by the equipped-load percentage through 75% capacity.
+- Doubled only the excess above 75% capacity.
+- Confirmed test factors: 50% = x1.50, 75% = x1.75, 80% = x1.85, and
+  100% = x2.25.
+- Added a separate implementation-status guide for beginners.
+
+## 0.8.0 — Mass and equipment-load calculations
+
+- Added provisional equipped weight in five-unit test steps.
+- Calculated total mass and equipped-load percentage.
+- Added normal, heavy, and overloaded load states.
+- Calculated push resistance, knockback, movement, air-consumption, and
+  evasion mass multipliers from the documented formulas.
+- Displayed localized mass values and states in the debug panel.
+- Kept all effects data-only until their calculations are verified in GZDoom.
+
+## 0.7.0 — First derived character statistics
+
+- Added reusable Type 1 and Type 4 growth calculations.
+- Calculated maximum health from Constitution.
+- Calculated maximum mana from Patience.
+- Calculated maximum air from Resilience.
+- Calculated carry capacity from its confirmed base of 100 and Strength.
+- Calculated base mass from identity and class.
+- Displayed all five localized values in the debug panel.
+
+## 0.6.0 — Complete six-page character creation wizard
+
+- Connected layer allocation, individual allocation, and summary pages.
+- Required all four layer points and all thirty individual points before advancing.
+- Added a dedicated add-point action for allocation pages.
+- Added transactional editing: cancelling restores the last confirmed profile and points.
+- Added final confirmation state and localized six-page navigation.
+
+## 0.5.0 — Character creation wizard, first three pages
+
+- Added a localized step-by-step character creation overlay.
+- Added origin, identity, and class selection pages.
+- Added open, cycle, confirm, and back actions using synchronized events.
+- Reused the previously validated profile and attribute calculation functions.
+- Reserved the remaining three pages for layer points, individual points, and summary.
+
+## 0.4.0 — Character point allocation rules
+
+- Added four free points assignable among the four attribute layers.
+- Enforced a maximum base value of 15 for every layer.
+- Added thirty individual points assignable among twelve attributes.
+- Enforced the +5 individual cap and the twice-base cap.
+- Added localized debug selectors, point counters, allocation controls, and reset.
+- Profile changes now reset allocations so an earlier bonus cannot invalidate a new base.
+
+## 0.3.0 — Origin, identity, and class profiles
+
+- Added the four documented origins, identities, and classes.
+- Applied their 5/3/3/1 distribution patterns to the four attribute layers.
+- Added multiplayer-aware debug commands for cycling each profile choice.
+- Displayed the current profile in the localized attribute debug panel.
+- Removed the conflicting provisional F7 default binding.
+
+## 0.2.0 — Toggleable attribute debug panel
+
+- Added a localized overlay displaying all twelve primary attributes.
+- Added a user CVar that remembers whether the panel is visible.
+- Added a provisional F7 control and a Customize Controls entry.
+- Registered the debug overlay as a GZDoom event handler.
+
+## 0.1.1 — ZScript constant syntax correction
+
+- Removed the invalid explicit `int` type from class constants.
+- No gameplay values or attribute behavior changed.
+
+## 0.1.0 — Primary attribute data model
+
+- Added the twelve documented primary attributes.
+- Added a separate attribute container for each player.
+- Added neutral test initialization at level 3 per attribute.
+- Added a total-level calculation whose expected test result is 36.
+- Added English and Spanish names for every primary attribute.
+
+## 0.0.3 — Windows filename compatibility
+
+- Renamed the ZScript source folder from `zscript` to `caelum`.
+- Fixed a Windows case-insensitive filename collision between the root
+  `ZSCRIPT` file and the former `zscript` folder.
+- Corrected the player-class include path.
+
+## 0.0.2 — Windows launcher correction
+
+- Corrected batch parsing of paths containing parentheses, such as
+  `C:\Program Files (x86)`.
+- Kept explicit error messages for missing GZDoom and IWAD files.
+
+## 0.0.1 — Initial scaffold
+
+- Added a repeatable Windows development build.
+- Added the custom `CaelumPlayer` ZScript class.
+- Added English and Spanish localization.
+- Added an asset-license register.

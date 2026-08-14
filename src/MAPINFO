@@ -1,0 +1,9 @@
+// GameInfo changes global game settings supplied by this project.
+GameInfo
+{
+    // This replaces Doom II's default player class with our own ZScript class.
+    PlayerClasses = "CaelumPlayer"
+
+    // Event handlers observe engine events without becoming map actors.
+    EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"
+}

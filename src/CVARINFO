@@ -1,0 +1,3 @@
+// This user setting remembers whether the attribute debug panel is visible.
+// "user" means that each local GZDoom profile stores its own value.
+user bool ca_debug_attributes = false;

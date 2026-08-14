@@ -1,0 +1,11 @@
+# Generated development packages are rebuilt from src and are not source code.
+build/
+
+# GZDoom may create local logs or crash reports during testing.
+*.log
+*.dmp
+
+# Windows Explorer metadata does not belong in the repository.
+Thumbs.db
+Desktop.ini
+
