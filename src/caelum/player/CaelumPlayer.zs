@@ -9,7 +9,7 @@ class CaelumPlayer : DoomPlayer
     // Each player receives a separate instance, including in multiplayer.
     CaelumAttributes Attributes;
 
-    // Origin, identity, and class are kept together in a character profile.
+    // Raza, dos clases, sexo y altura se guardan en un unico perfil.
     CaelumCharacterProfile CharacterProfile;
 
     // Stores the four layer points and thirty individual points.
@@ -94,7 +94,7 @@ class CaelumPlayer : DoomPlayer
     bool LastStaffHit;
     bool LastStaffCriticalAttempted;
     bool LastStaffCriticalHit;
-    bool LastStaffInsufficientMana;
+    bool LastStaffInsufficientAnima;
     double LastStaffCalculatedDamage;
     int LastStaffActualDamage;
     double LastStaffCriticalChancePercent;
@@ -108,10 +108,9 @@ class CaelumPlayer : DoomPlayer
     double LastMeleeYawOffset;
     double LastMeleePitchOffset;
 
-    // Mana is a separate persistent Caelum resource. It will later be spent
-    // by spells and magical weapons; temporary controls test it for now.
-    double CurrentMana;
-    bool ManaResourceInitialized;
+    // El Anima es un recurso persistente separado para magia y armas magicas.
+    double CurrentAnima;
+    bool AnimaResourceInitialized;
 
     // Adrenaline begins empty and persists with the player. The combat timer
     // stores how long remains before its automatic decay may begin.
@@ -269,10 +268,10 @@ class CaelumPlayer : DoomPlayer
             AirResourceInitialized = true;
         }
 
-        if (!ManaResourceInitialized)
+        if (!AnimaResourceInitialized)
         {
-            RefillMana();
-            ManaResourceInitialized = true;
+            RefillAnima();
+            AnimaResourceInitialized = true;
         }
 
         if (!AdrenalineResourceInitialized)
@@ -833,15 +832,14 @@ class CaelumPlayer : DoomPlayer
         IsSpendingRunningAir = IsRunningOnGround();
         UpdateCrouchEffects();
 
-        // Mana regenerates continuously while below its calculated maximum.
-        // The per-second value already includes Patience's Type 4 multiplier.
-        if (ManaResourceInitialized
+        // El Anima se regenera de forma continua segun Paciencia.
+        if (AnimaResourceInitialized
             && DerivedStats != null
-            && CurrentMana < DerivedStats.MaximumMana)
+            && CurrentAnima < DerivedStats.MaximumAnima)
         {
-            CurrentMana = Min(
-                DerivedStats.MaximumMana,
-                CurrentMana + DerivedStats.ManaRegenerationPerSecond / TICRATE
+            CurrentAnima = Min(
+                DerivedStats.MaximumAnima,
+                CurrentAnima + DerivedStats.AnimaRegenerationPerSecond / TICRATE
             );
         }
 
@@ -995,14 +993,14 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Functional straight-line staff test. Its trace distance and temporary
-    // puff are presentation scaffolding; documented damage, mana, timing,
+    // puff are presentation scaffolding; documented damage, Anima, timing,
     // Intelligence, Insight, critical, and status multipliers are live.
     void PerformDebugStaffAttack()
     {
         LastStaffHit = false;
         LastStaffCriticalAttempted = false;
         LastStaffCriticalHit = false;
-        LastStaffInsufficientMana = false;
+        LastStaffInsufficientAnima = false;
         LastStaffActualDamage = 0;
         LastStaffCriticalRollPercent = 0.0;
         LastStaffLocationMultiplier = 1.0;
@@ -1018,15 +1016,15 @@ class CaelumPlayer : DoomPlayer
 
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
             * EffectiveOffensiveDamageMultiplier;
-        if (CurrentMana < CaelumConstants.DEBUG_STAFF_MANA_COST)
+        if (CurrentAnima < DerivedStats.StaffAnimaCost)
         {
-            LastStaffInsufficientMana = true;
+            LastStaffInsufficientAnima = true;
             return;
         }
 
-        CurrentMana -= CaelumConstants.DEBUG_STAFF_MANA_COST;
+        CurrentAnima -= DerivedStats.StaffAnimaCost;
         StaffCastCooldownRemaining = CaelumConstants.DEBUG_STAFF_CAST_TICS
-            / double(TICRATE);
+            * DerivedStats.CastingDurationMultiplier / double(TICRATE);
         UpdateLucidityAccuracyEffects();
         UpdateCrouchEffects();
         LastStaffAccuracyPercent = Max(
@@ -1160,12 +1158,12 @@ class CaelumPlayer : DoomPlayer
 
     void CycleDebugShieldType()
     {
-        if (ShieldModel != null) { ShieldModel.CycleType(); UpdateShieldAirCost(); }
+        if (ShieldModel != null) { ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); }
     }
 
     void CycleDebugShieldTier()
     {
-        if (ShieldModel != null) { ShieldModel.CycleTier(); }
+        if (ShieldModel != null) { ShieldModel.CycleTier(); ApplyCharacterProfile(); }
     }
 
     void ToggleDebugShieldBlock()
@@ -1352,7 +1350,13 @@ class CaelumPlayer : DoomPlayer
                 // value; equipment bonuses remain active only in normal play.
                 Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL);
             }
+            DerivedStats.SetEquipmentWeights(
+                ArmorModel != null ? ArmorModel.GetTotalWeight() : 0.0,
+                ShieldModel != null ? ShieldModel.GetWeight() : 0.0
+            );
             DerivedStats.Recalculate(Attributes, CharacterProfile);
+            Height = DerivedStats.ActorHeight;
+            Radius = DerivedStats.ActorRadius;
             UpdateLucidityAccuracyEffects();
 
             // Recalculation never grants free healing. Increasing the maximum
@@ -1369,11 +1373,11 @@ class CaelumPlayer : DoomPlayer
                 }
             }
 
-            // Profile changes never refill mana for free; they only enforce a
+            // Profile changes never refill Anima for free; they only enforce a
             // newly reduced capacity, matching the health and air behavior.
-            if (ManaResourceInitialized)
+            if (AnimaResourceInitialized)
             {
-                CurrentMana = Min(CurrentMana, DerivedStats.MaximumMana);
+                CurrentAnima = Min(CurrentAnima, DerivedStats.MaximumAnima);
             }
 
             if (AdrenalineResourceInitialized)
@@ -1408,26 +1412,25 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
     }
 
-    // Spend a provisional flat mana cost. Equipment load does not alter magic
-    // costs unless a future design rule explicitly says otherwise.
-    void ConsumeDebugMana()
+    // Consume un costo de Anima de prueba ya expresado en la escala actual.
+    void ConsumeDebugAnima()
     {
-        CurrentMana = Max(
+        CurrentAnima = Max(
             0.0,
-            CurrentMana - CaelumConstants.DEBUG_MANA_ACTION_COST
+            CurrentAnima - CaelumConstants.DEBUG_ANIMA_ACTION_COST
         );
     }
 
-    // Restore mana only through the explicitly labeled development control.
-    void RefillMana()
+    // Restaura Anima solo mediante el control de desarrollo explicito.
+    void RefillAnima()
     {
         if (DerivedStats != null)
         {
-            CurrentMana = DerivedStats.MaximumMana;
+            CurrentAnima = DerivedStats.MaximumAnima;
         }
     }
 
-    // Add a positive amount without exceeding the Resilience-derived maximum.
+    // Add a positive amount without exceeding the Survival-derived maximum.
     void AddAdrenaline(double amount)
     {
         if (DerivedStats != null)
@@ -1513,7 +1516,7 @@ class CaelumPlayer : DoomPlayer
         player.health = health;
         if (DerivedStats != null)
         {
-            CurrentMana = DerivedStats.MaximumMana;
+            CurrentAnima = DerivedStats.MaximumAnima;
             CurrentAir = DerivedStats.MaximumAir;
         }
         NaturalHealthRegenerationAccumulator = 0.0;
@@ -2441,7 +2444,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Natural recovery is stopped by any critical survival state. Healing uses
-    // Resilience Type 4 and spends hunger/sed in proportion to health restored.
+    // Survival Type 4 and spends hunger/sed in proportion to health restored.
     void ApplyNaturalHealthRegeneration()
     {
         if (player == null
@@ -2626,26 +2629,17 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    void CycleOrigin()
+    void CycleRace()
     {
-        CharacterProfile.CycleOrigin();
+        CharacterProfile.CycleRace();
         CharacterAllocation.ResetAllocations();
         ApplyCharacterProfile();
     }
 
-    void CycleIdentity()
-    {
-        CharacterProfile.CycleIdentity();
-        CharacterAllocation.ResetAllocations();
-        ApplyCharacterProfile();
-    }
-
-    void CycleClass()
-    {
-        CharacterProfile.CycleClass();
-        CharacterAllocation.ResetAllocations();
-        ApplyCharacterProfile();
-    }
+    void CycleFirstClass() { CharacterProfile.CycleFirstClass(); CharacterAllocation.ResetAllocations(); ApplyCharacterProfile(); }
+    void CycleSecondClass() { CharacterProfile.CycleSecondClass(); CharacterAllocation.ResetAllocations(); ApplyCharacterProfile(); }
+    void CycleSex() { CharacterProfile.CycleSex(); ApplyCharacterProfile(); }
+    void CycleHeightChoice() { CharacterProfile.CycleHeight(); ApplyCharacterProfile(); }
 
     void CycleAllocationLayer()
     {
@@ -2726,7 +2720,7 @@ class CaelumPlayer : DoomPlayer
         CreationAllocationBackup = CaelumCharacterAllocation(new("CaelumCharacterAllocation"));
         CreationAllocationBackup.CopyFrom(CharacterAllocation);
 
-        CreationWizardPage = CaelumConstants.CREATION_PAGE_ORIGIN;
+        CreationWizardPage = CaelumConstants.CREATION_PAGE_RACE;
         CreationWizardOpen = true;
     }
 
@@ -2747,14 +2741,20 @@ class CaelumPlayer : DoomPlayer
     {
         switch (CreationWizardPage)
         {
-            case CaelumConstants.CREATION_PAGE_ORIGIN:
-                CycleOrigin();
+            case CaelumConstants.CREATION_PAGE_RACE:
+                CycleRace();
                 break;
-            case CaelumConstants.CREATION_PAGE_IDENTITY:
-                CycleIdentity();
+            case CaelumConstants.CREATION_PAGE_FIRST_CLASS:
+                CycleFirstClass();
                 break;
-            case CaelumConstants.CREATION_PAGE_CLASS:
-                CycleClass();
+            case CaelumConstants.CREATION_PAGE_SECOND_CLASS:
+                CycleSecondClass();
+                break;
+            case CaelumConstants.CREATION_PAGE_SEX:
+                CycleSex();
+                break;
+            case CaelumConstants.CREATION_PAGE_HEIGHT:
+                CycleHeightChoice();
                 break;
             case CaelumConstants.CREATION_PAGE_LAYERS:
                 CycleAllocationLayer();
@@ -2818,7 +2818,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        if (CreationWizardPage > CaelumConstants.CREATION_PAGE_ORIGIN)
+        if (CreationWizardPage > CaelumConstants.CREATION_PAGE_RACE)
         {
             CreationWizardPage--;
         }

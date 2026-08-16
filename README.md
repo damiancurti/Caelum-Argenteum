@@ -1,6 +1,6 @@
 # Caelum Argenteum — Development Project
 
-This is the first development scaffold for **Caelum Argenteum**.
+This is the **4.0 development prototype** for **Caelum Argenteum**.
 
 It is a GZDoom mod project that currently uses `DOOM2.WAD` only as a legal,
 local development dependency. The IWAD is never copied into this project.
@@ -27,9 +27,13 @@ folder and launch GZDoom.
 - English as the default game language.
 - Spanish localization support.
 - A project structure ready for modular ZScript systems.
-- A six-page character creation wizard with validated point limits.
-- Derived health, mana, air, carry-capacity, and mass calculations.
-- Provisional equipment-weight controls for testing mass effects safely.
+- An eight-page character creator with race, two classes/profession, sex,
+  height, and validated family/individual point limits.
+- Derived health, Anima, air, carry-capacity, mass-tier, and size-tier values.
+- Real per-piece armor and shield weight plus separate debug-added weight.
+- Survival as the current name for the former Resilience attribute.
+- Eloquence casting speed, Anima-cost reduction, ability range, and dialogue
+  values, with the live staff consuming the adjusted cost and duration.
 - Seven-grade localized vulnerability and four-slot armor test controls.
 - A live dizzy-lucidity accuracy penalty, provisional sword dispersion, and
   code-drawn visual distortion for testing without external art.

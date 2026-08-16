@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.0.0 — Character creation, mass, size, and Anima overhaul
+
+- Fixed the GZDoom 4.14.2 actor-action scope and UI/play-context parse errors.
+- Replaced Origin + Identity + Class with Race + two Classes/Profession + Sex
+  + Height, expanding character creation from six to eight pages.
+- Added all ten order-independent professions and the documented family and
+  individual point limits.
+- Added ten mass tiers and seven size tiers, including live player/actor
+  collision dimensions and body-mass scaling for health, physical power, air,
+  hunger, and thirst.
+- Added exact per-piece armor weights and included armor plus shield weight in
+  equipped load while preserving separate debug-added weight.
+- Renamed Mana to Anima and Resilience to Survival throughout current code and
+  localization.
+- Connected Eloquence to staff casting time and Anima cost, and prepared its
+  ability-range and dialogue values.
+- Rebuilt Rulo, Ronnie, Argento, and Caella from the authoritative final 4.0
+  table, including independent profiles, armor, dimensions, health, and damage.
+- Updated the main design document, README, implementation status, controls,
+  English localization, and Spanish localization for version 4.0.
+
 ## 0.63.0 — Complete offensive state for the four predefined actors
 
 - Gave Argento, Caella, Rulo, and Ronnie their own Dexterity and Insight,

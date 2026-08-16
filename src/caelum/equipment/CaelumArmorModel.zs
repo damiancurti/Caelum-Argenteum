@@ -1,6 +1,5 @@
-// Provisional four-slot armor data used by the localized combat test.
-// The model is independent from Doom's native armor inventory so the final
-// equipment UI can later adopt it without inheriting Doom-specific behavior.
+// Modelo provisional de cuatro piezas para las pruebas de combate localizado.
+// Es independiente de la armadura nativa de Doom para facilitar la futura UI.
 class CaelumArmorModel : Object
 {
     int ArmorType[4];
@@ -27,9 +26,8 @@ class CaelumArmorModel : Object
         Initialized = true;
     }
 
-    // Original actors use the same four-slot model as the player test.  A
-    // loadout initializes every piece together, while the arrays remain
-    // independent so one struck region can break without affecting the rest.
+    // Los actores originales usan las mismas cuatro piezas que el jugador.
+    // Cada pieza conserva durabilidad independiente por region golpeada.
     void InitializeUniformLoadout(int requestedArmorType, int requestedTier)
     {
         int resolvedType = Clamp(
@@ -78,6 +76,48 @@ class CaelumArmorModel : Object
                 if (tier == 2) { return 60; }
                 return 90;
         }
+    }
+
+    // El peso pertenece a la pieza equipada aunque su durabilidad llegue a cero.
+    int GetWeight(int slot)
+    {
+        int tier = Clamp(Tier[slot], 1, 3);
+        int armorType = Clamp(ArmorType[slot], 0, 3);
+        if (slot == CaelumConstants.ARMOR_SLOT_HEAD
+            || slot == CaelumConstants.ARMOR_SLOT_FEET)
+        {
+            if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED)
+                return tier == 3 ? 2 : 1;
+            if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT)
+                return tier == 1 ? 2 : (tier == 2 ? 3 : 4);
+            if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM)
+                return tier == 1 ? 4 : (tier == 2 ? 6 : 8);
+            return tier == 1 ? 8 : (tier == 2 ? 12 : 16);
+        }
+        if (slot == CaelumConstants.ARMOR_SLOT_BODY)
+        {
+            if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED)
+                return tier == 1 ? 2 : (tier == 2 ? 4 : 5);
+            if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT)
+                return tier == 1 ? 5 : (tier == 2 ? 8 : 10);
+            if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM)
+                return tier == 1 ? 10 : (tier == 2 ? 15 : 20);
+            return tier == 1 ? 20 : (tier == 2 ? 30 : 40);
+        }
+        if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED) return 1;
+        if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT) return tier == 3 ? 2 : 1;
+        if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM) return tier == 1 ? 2 : (tier == 2 ? 3 : 4);
+        return tier == 1 ? 4 : (tier == 2 ? 6 : 8);
+    }
+
+    int GetTotalWeight()
+    {
+        int total = 0;
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            total += GetWeight(slot);
+        }
+        return total;
     }
 
     int GetReinforcement(int slot)

@@ -1,14 +1,13 @@
-// Rulo is the predefined Southern Beast Warrior: a heavy close-range fighter
-// whose starting values come directly from the character table.
+// Rulo es el hombre bestia guerrero sureno predefinido, pesado y cuerpo a cuerpo.
 class CaelumRulo : CaelumCombatActor
 {
     Default
     {
         Tag "$CA_RULO_NAME";
-        Health 3100;
-        Radius 28;
-        Height 80;
-        Mass 95;
+        Health 6200;
+        Radius 21.3;
+        Height 74.7;
+        Mass 200;
         Speed 8;
         MeleeRange 72;
         MinMissileChance 128;
@@ -20,8 +19,8 @@ class CaelumRulo : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Physical 20, technical 18, social 7, mental 5.
-        InitializeCombatProfile(20, 18, 18, 5, 18, 5);
+        // Fisico 20, tecnico 18, social 6 y mental 2.
+        InitializeCombatProfile(20, 18, 18, 2, 18, 2);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_HEAVY, 1);
     }
 
@@ -46,7 +45,7 @@ class CaelumRulo : CaelumCombatActor
         RULO D 9 A_FaceTarget;
         RULO D 0 A_CaelumSpawnProjectile(
             "CaelumRuloThrownAxe", 46,
-            CaelumConstants.TEST_RULO_RANGED_DAMAGE, false
+            372, false
         );
         RULO A 16;
         Goto See;

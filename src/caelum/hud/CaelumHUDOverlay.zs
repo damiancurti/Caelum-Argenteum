@@ -1,6 +1,6 @@
 // CaelumHUDOverlay is the first permanent gameplay HUD component.
 // It remains separate from the optional development panel so future health,
-// mana, adrenaline, and lucidity displays can be added without debug code.
+// Anima, adrenaline, and lucidity displays can be added without debug code.
 class CaelumHUDOverlay : EventHandler
 {
     Font HUDFont;
@@ -247,9 +247,9 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
-    // Mana uses a violet bar above health. Like the other resource graphics,
+    // Anima uses a violet bar above health. Like the other resource graphics,
     // it is drawn through code and requires no copyrighted interface artwork.
-    ui void DrawManaBar(CaelumPlayer localPlayer)
+    ui void DrawAnimaBar(CaelumPlayer localPlayer)
     {
         double scale = Min(
             Screen.GetWidth() / 640.0,
@@ -266,10 +266,10 @@ class CaelumHUDOverlay : EventHandler
         int barHeight = Max(1, int(7.0 * scale));
         double ratio = 0.0;
 
-        if (localPlayer.DerivedStats.MaximumMana > 0.0)
+        if (localPlayer.DerivedStats.MaximumAnima > 0.0)
         {
             ratio = Clamp(
-                localPlayer.CurrentMana / localPlayer.DerivedStats.MaximumMana,
+                localPlayer.CurrentAnima / localPlayer.DerivedStats.MaximumAnima,
                 0.0,
                 1.0
             );
@@ -456,11 +456,11 @@ class CaelumHUDOverlay : EventHandler
             localPlayer.CaelumMaximumHealth,
             StringTable.Localize(GetHealthStateKey(localPlayer.HealthState), false)
         );
-        String manaLine = String.Format(
+        String animaLine = String.Format(
             "%s: %.0f / %.0f",
-            StringTable.Localize("CA_HUD_MANA", false),
-            localPlayer.CurrentMana,
-            localPlayer.DerivedStats.MaximumMana
+            StringTable.Localize("CA_HUD_ANIMA", false),
+            localPlayer.CurrentAnima,
+            localPlayer.DerivedStats.MaximumAnima
         );
         String adrenalineLine = String.Format(
             "%s: %.0f / %.0f  (%s: %.1fs)",
@@ -501,7 +501,7 @@ class CaelumHUDOverlay : EventHandler
         DrawLucidityDistortion(localPlayer);
         DrawLucidityBar(localPlayer);
         DrawAdrenalineBar(localPlayer);
-        DrawManaBar(localPlayer);
+        DrawAnimaBar(localPlayer);
         DrawHealthBar(localPlayer);
         DrawAirBar(localPlayer);
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
@@ -542,7 +542,7 @@ class CaelumHUDOverlay : EventHandler
             Font.CR_PURPLE,
             20.0,
             290.0,
-            manaLine,
+            animaLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
             DTA_KEEPRATIO, true

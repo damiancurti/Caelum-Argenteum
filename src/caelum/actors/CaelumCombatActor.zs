@@ -1,21 +1,22 @@
-// Shared combat foundation for original Caelum actors.
-//
-// It owns the defensive side of combat: anatomy, localized armor and
-// reinforcement, durability, attribute-derived resistance, evasion, pain,
-// adrenaline, and wounded-state effects.
+// Base de combate compartida por los actores originales de Caelum.
+// Gestiona anatomia, armadura localizada, refuerzo, durabilidad, resistencias,
+// evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
     CaelumAnatomyProfile AnatomyProfile;
     CaelumArmorModel CombatArmor;
     int CombatMaximumHealth;
     int CombatToughness;
-    int CombatResilience;
+    int CombatSurvival;
     int CombatAgility;
     int CombatPatience;
     int CombatDexterity;
     int CombatInsight;
+    int CombatEffectiveDexterity;
+    int CombatEffectiveInsight;
     bool CombatProfileInitialized;
     double CombatBaseSpeed;
+    double CombatPhysicalPowerMultiplier;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -73,8 +74,7 @@ class CaelumCombatActor : Actor
 
     Default
     {
-        // Native pain is disabled so every original actor uses exactly one
-        // post-mitigation Caelum roll.
+        // El dolor nativo se desactiva para usar un unico calculo de Caelum.
         PainChance 0;
     }
 
@@ -82,6 +82,7 @@ class CaelumCombatActor : Actor
     {
         Super.PostBeginPlay();
         CombatBaseSpeed = Speed;
+        CombatPhysicalPowerMultiplier = Max(0.0, Mass / 100.0);
         CombatMaximumHealth = Max(1, health);
         CombatHealthPerformanceMultiplier = 1.0;
         CombatHealthPainMultiplier = 1.0;
@@ -174,19 +175,17 @@ class CaelumCombatActor : Actor
         return LastAnatomyVulnerabilityGrade;
     }
 
-    // The anatomy trace is registered before the attack rolls its critical.
-    // This second, explicit flag keeps critical side effects out of generic
-    // DamageMobj calls and lets every authored damage type share the rule.
+    // La anatomia se registra antes de resolver el critico. Esta marca explicita
+    // separa el efecto critico del DamageMobj generico para todo tipo de dano.
     void RegisterPendingCriticalHit(bool criticalHit)
     {
         PendingLocalizedCriticalHit = PendingLocalizedImpact && criticalHit;
     }
 
-    // Concrete actors provide their character-scale defensive attributes once.
-    // Calling this again is safe and supports later transformation effects.
+    // Cada actor carga una vez sus atributos defensivos; puede recalcularlos.
     void InitializeCombatProfile(
         int toughness,
-        int resilience,
+        int survival,
         int agility,
         int patience,
         int dexterity,
@@ -194,7 +193,7 @@ class CaelumCombatActor : Actor
     )
     {
         CombatToughness = Max(0, toughness);
-        CombatResilience = Max(0, resilience);
+        CombatSurvival = Max(0, survival);
         CombatAgility = Max(0, agility);
         CombatPatience = Max(0, patience);
         CombatDexterity = Max(0, dexterity);
@@ -206,8 +205,8 @@ class CaelumCombatActor : Actor
     void RecalculateCombatStatistics()
     {
         MaximumCombatAdrenaline = 1000.0
-            * (100.0 + 2.0 * CombatResilience
-                * (CombatResilience + 1) / 101.0) / 100.0;
+            * (100.0 + 2.0 * CombatSurvival
+                * (CombatSurvival + 1) / 101.0) / 100.0;
         CurrentCombatAdrenaline = Clamp(
             CurrentCombatAdrenaline,
             0.0,
@@ -229,34 +228,32 @@ class CaelumCombatActor : Actor
 
     void UpdateActorOffensiveStatistics()
     {
-        int effectiveDexterity = CombatDexterity
+        CombatEffectiveDexterity = CombatDexterity
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
-        int effectiveInsight = CombatInsight
+        CombatEffectiveInsight = CombatInsight
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
         CombatPhysicalAccuracyPercent = CalculateActorType1Percent(
-            effectiveDexterity
+            CombatEffectiveDexterity
         );
         CombatMagicalAccuracyPercent = CalculateActorType1Percent(
-            effectiveInsight
+            CombatEffectiveInsight
         );
         CombatPhysicalCriticalChancePercent = Clamp(
             CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-                + CalculateActorType2Percent(effectiveDexterity),
+                + CalculateActorType2Percent(CombatEffectiveDexterity),
             0.0,
             100.0
         );
         CombatMagicalCriticalChancePercent = Clamp(
             CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-                + CalculateActorType2Percent(effectiveInsight),
+                + CalculateActorType2Percent(CombatEffectiveInsight),
             0.0,
             100.0
         );
     }
 
-    // Common offensive entry point. Health affects damage, lucidity affects
-    // accuracy, and the attack's own attribute chooses its critical chance.
-    // Critical location damage is deliberately resolved by the player after
-    // shield coverage selects the remaining damage and armor region.
+    // Entrada ofensiva comun: salud modifica dano, lucidez modifica precision
+    // y el atributo propio del ataque determina su probabilidad critica.
     int PrepareActorOutgoingDamage(int baseDamage, bool magicalAttack)
     {
         UpdateCombatHealthEffects();
@@ -299,6 +296,7 @@ class CaelumCombatActor : Actor
         LastCombatAttackCalculatedDamage = Max(
             1,
             int(LastCombatAttackBaseDamage
+                * (magicalAttack ? 1.0 : CombatPhysicalPowerMultiplier)
                 * CombatHealthPerformanceMultiplier + 0.5)
         );
         return LastCombatAttackCalculatedDamage;
@@ -311,20 +309,19 @@ class CaelumCombatActor : Actor
         return result;
     }
 
-    action void A_CaelumMeleeAttack(int baseDamage)
+    action(actor) void A_CaelumMeleeAttack(int baseDamage)
     {
         int calculatedDamage = PrepareActorOutgoingDamage(baseDamage, false);
         if (calculatedDamage <= 0) { return; }
         A_CustomMeleeAttack(calculatedDamage, "weapons/swordhit");
-        // A connected hit consumes this flag synchronously in CaelumPlayer.
-        // A miss must not leave a critical waiting for unrelated later damage.
+        // Un impacto consume esta marca sincronicamente en CaelumPlayer.
+        // Un fallo no debe dejar un critico pendiente para otro dano posterior.
         PendingCombatCriticalDelivery = false;
     }
 
-    // Ranged results are fixed at launch. Later changes to the shooter's
-    // health, lucidity, armor bonuses, adrenaline, or existence cannot alter
-    // a projectile that is already travelling through the world.
-    action void A_CaelumSpawnProjectile(
+    // El resultado a distancia queda fijado al disparar. Los cambios posteriores
+    // del atacante no alteran un proyectil que ya esta viajando por el mundo.
+    action(actor) void A_CaelumSpawnProjectile(
         class<CaelumActorProjectile> missileType,
         double spawnHeight,
         int baseDamage,

@@ -5,9 +5,11 @@ addkeysection "Caelum Argenteum" CaelumArgenteumControls
 addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
 
 // Network events let the correct player change a profile choice in multiplayer.
-alias ca_next_origin "netevent ca_next_origin"
-alias ca_next_identity "netevent ca_next_identity"
-alias ca_next_class "netevent ca_next_class"
+alias ca_next_race "netevent ca_next_race"
+alias ca_next_first_class "netevent ca_next_first_class"
+alias ca_next_second_class "netevent ca_next_second_class"
+alias ca_next_sex "netevent ca_next_sex"
+alias ca_next_height "netevent ca_next_height"
 alias ca_select_next_layer "netevent ca_select_next_layer"
 alias ca_add_layer_point "netevent ca_add_layer_point"
 alias ca_select_next_attribute "netevent ca_select_next_attribute"
@@ -23,8 +25,8 @@ alias ca_debug_reset_weight "netevent ca_debug_reset_weight"
 alias ca_debug_consume_air "netevent ca_debug_consume_air"
 alias ca_debug_refill_air "netevent ca_debug_refill_air"
 alias ca_debug_jump_air "netevent ca_debug_jump_air"
-alias ca_debug_consume_mana "netevent ca_debug_consume_mana"
-alias ca_debug_refill_mana "netevent ca_debug_refill_mana"
+alias ca_debug_consume_anima "netevent ca_debug_consume_anima"
+alias ca_debug_refill_anima "netevent ca_debug_refill_anima"
 alias ca_debug_add_adrenaline "netevent ca_debug_add_adrenaline"
 alias ca_debug_clear_adrenaline "netevent ca_debug_clear_adrenaline"
 alias ca_debug_pain_damage "netevent ca_debug_pain_damage"
@@ -63,9 +65,11 @@ alias ca_debug_shield_angle "netevent ca_debug_shield_angle"
 alias ca_debug_shield_hit "netevent ca_debug_shield_hit"
 alias ca_debug_shield_repair "netevent ca_debug_shield_repair"
 
-addmenukey "$CA_CONTROL_NEXT_ORIGIN" ca_next_origin
-addmenukey "$CA_CONTROL_NEXT_IDENTITY" ca_next_identity
-addmenukey "$CA_CONTROL_NEXT_CLASS" ca_next_class
+addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
+addmenukey "$CA_CONTROL_NEXT_FIRST_CLASS" ca_next_first_class
+addmenukey "$CA_CONTROL_NEXT_SECOND_CLASS" ca_next_second_class
+addmenukey "$CA_CONTROL_NEXT_SEX" ca_next_sex
+addmenukey "$CA_CONTROL_NEXT_HEIGHT" ca_next_height
 addmenukey "$CA_CONTROL_SELECT_NEXT_LAYER" ca_select_next_layer
 addmenukey "$CA_CONTROL_ADD_LAYER_POINT" ca_add_layer_point
 addmenukey "$CA_CONTROL_SELECT_NEXT_ATTRIBUTE" ca_select_next_attribute
@@ -81,8 +85,8 @@ addmenukey "$CA_CONTROL_DEBUG_RESET_WEIGHT" ca_debug_reset_weight
 addmenukey "$CA_CONTROL_DEBUG_CONSUME_AIR" ca_debug_consume_air
 addmenukey "$CA_CONTROL_DEBUG_REFILL_AIR" ca_debug_refill_air
 addmenukey "$CA_CONTROL_DEBUG_JUMP_AIR" ca_debug_jump_air
-addmenukey "$CA_CONTROL_DEBUG_CONSUME_MANA" ca_debug_consume_mana
-addmenukey "$CA_CONTROL_DEBUG_REFILL_MANA" ca_debug_refill_mana
+addmenukey "$CA_CONTROL_DEBUG_CONSUME_ANIMA" ca_debug_consume_anima
+addmenukey "$CA_CONTROL_DEBUG_REFILL_ANIMA" ca_debug_refill_anima
 addmenukey "$CA_CONTROL_DEBUG_ADD_ADRENALINE" ca_debug_add_adrenaline
 addmenukey "$CA_CONTROL_DEBUG_CLEAR_ADRENALINE" ca_debug_clear_adrenaline
 addmenukey "$CA_CONTROL_DEBUG_PAIN_DAMAGE" ca_debug_pain_damage

@@ -318,26 +318,15 @@ class CaelumDebugOverlay : EventHandler
         );
     }
 
-    // Convert stored numeric selections into localized LANGUAGE keys.
-    ui String GetOriginKey(int origin)
+    // Convierte las selecciones guardadas en claves localizadas.
+    ui String GetRaceKey(int race)
     {
-        switch (origin)
+        switch (race)
         {
-            case CaelumConstants.ORIGIN_CAPITAL: return "CA_ORIGIN_CAPITAL";
-            case CaelumConstants.ORIGIN_NORTH: return "CA_ORIGIN_NORTH";
-            case CaelumConstants.ORIGIN_WEST: return "CA_ORIGIN_WEST";
-            default: return "CA_ORIGIN_SOUTH";
-        }
-    }
-
-    ui String GetIdentityKey(int identity)
-    {
-        switch (identity)
-        {
-            case CaelumConstants.IDENTITY_FEDERAL: return "CA_IDENTITY_FEDERAL";
-            case CaelumConstants.IDENTITY_UNITARIAN: return "CA_IDENTITY_UNITARIAN";
-            case CaelumConstants.IDENTITY_BEAST: return "CA_IDENTITY_BEAST";
-            default: return "CA_IDENTITY_CAELITH";
+            case CaelumConstants.RACE_BEAST_MAN: return "CA_RACE_BEAST_MAN";
+            case CaelumConstants.RACE_CAELITH: return "CA_RACE_CAELITH";
+            case CaelumConstants.RACE_HUMAN: return "CA_RACE_HUMAN";
+            default: return "CA_RACE_GOBLIN";
         }
     }
 
@@ -350,6 +339,31 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.CLASS_PRIEST: return "CA_CLASS_PRIEST";
             default: return "CA_CLASS_MAGE";
         }
+    }
+
+    ui String GetProfessionKey(int firstClass, int secondClass)
+    {
+        int lowClass = Min(firstClass, secondClass);
+        int highClass = Max(firstClass, secondClass);
+        if (lowClass == highClass) return GetClassKey(lowClass);
+        if (lowClass == 0 && highClass == 1) return "CA_PROFESSION_MERCENARY";
+        if (lowClass == 0 && highClass == 2) return "CA_PROFESSION_CLERIC";
+        if (lowClass == 0 && highClass == 3) return "CA_PROFESSION_BATTLE_MAGE";
+        if (lowClass == 1 && highClass == 2) return "CA_PROFESSION_PILGRIM";
+        if (lowClass == 1 && highClass == 3) return "CA_PROFESSION_INVESTIGATOR";
+        return "CA_PROFESSION_ARCANIST";
+    }
+
+    ui String GetSexKey(int sex)
+    {
+        return sex == CaelumConstants.SEX_FEMALE ? "CA_SEX_FEMALE" : "CA_SEX_MALE";
+    }
+
+    ui String GetHeightChoiceKey(int heightChoice)
+    {
+        if (heightChoice == CaelumConstants.HEIGHT_SHORT) return "CA_HEIGHT_SHORT";
+        if (heightChoice == CaelumConstants.HEIGHT_TALL) return "CA_HEIGHT_TALL";
+        return "CA_HEIGHT_NORMAL";
     }
 
     ui String GetLayerKey(int layer)
@@ -371,7 +385,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.ATTRIBUTE_TOUGHNESS: return "CA_ATTRIBUTE_TOUGHNESS";
             case CaelumConstants.ATTRIBUTE_CONSTITUTION: return "CA_ATTRIBUTE_CONSTITUTION";
             case CaelumConstants.ATTRIBUTE_DEXTERITY: return "CA_ATTRIBUTE_DEXTERITY";
-            case CaelumConstants.ATTRIBUTE_RESILIENCE: return "CA_ATTRIBUTE_RESILIENCE";
+            case CaelumConstants.ATTRIBUTE_SURVIVAL: return "CA_ATTRIBUTE_SURVIVAL";
             case CaelumConstants.ATTRIBUTE_AGILITY: return "CA_ATTRIBUTE_AGILITY";
             case CaelumConstants.ATTRIBUTE_CHARISMA: return "CA_ATTRIBUTE_CHARISMA";
             case CaelumConstants.ATTRIBUTE_EMPATHY: return "CA_ATTRIBUTE_EMPATHY";
@@ -395,7 +409,7 @@ class CaelumDebugOverlay : EventHandler
         );
     }
 
-    // Draw the first three pages of the actual character creation wizard.
+    // Dibuja las ocho paginas del creador de personajes 4.0.
     ui void DrawCreationWizard(CaelumPlayer localPlayer)
     {
         CaelumCharacterProfile profile = localPlayer.CharacterProfile;
@@ -411,22 +425,36 @@ class CaelumDebugOverlay : EventHandler
 
         switch (localPlayer.CreationWizardPage)
         {
-            case CaelumConstants.CREATION_PAGE_ORIGIN:
-                pageTitle = StringTable.Localize("CA_CREATION_TITLE_ORIGIN", false);
-                selectedValue = StringTable.Localize(GetOriginKey(profile.Origin), false);
-                explanation = StringTable.Localize("CA_CREATION_HELP_ORIGIN", false);
+            case CaelumConstants.CREATION_PAGE_RACE:
+                pageTitle = StringTable.Localize("CA_CREATION_TITLE_RACE", false);
+                selectedValue = StringTable.Localize(GetRaceKey(profile.Race), false);
+                explanation = StringTable.Localize("CA_CREATION_HELP_RACE", false);
                 break;
 
-            case CaelumConstants.CREATION_PAGE_IDENTITY:
-                pageTitle = StringTable.Localize("CA_CREATION_TITLE_IDENTITY", false);
-                selectedValue = StringTable.Localize(GetIdentityKey(profile.Identity), false);
-                explanation = StringTable.Localize("CA_CREATION_HELP_IDENTITY", false);
+            case CaelumConstants.CREATION_PAGE_FIRST_CLASS:
+                pageTitle = StringTable.Localize("CA_CREATION_TITLE_FIRST_CLASS", false);
+                selectedValue = StringTable.Localize(GetClassKey(profile.FirstClass), false);
+                explanation = StringTable.Localize("CA_CREATION_HELP_FIRST_CLASS", false);
                 break;
 
-            case CaelumConstants.CREATION_PAGE_CLASS:
-                pageTitle = StringTable.Localize("CA_CREATION_TITLE_CLASS", false);
-                selectedValue = StringTable.Localize(GetClassKey(profile.CharacterClass), false);
-                explanation = StringTable.Localize("CA_CREATION_HELP_CLASS", false);
+            case CaelumConstants.CREATION_PAGE_SECOND_CLASS:
+                pageTitle = StringTable.Localize("CA_CREATION_TITLE_SECOND_CLASS", false);
+                selectedValue = String.Format("%s -> %s",
+                    StringTable.Localize(GetClassKey(profile.SecondClass), false),
+                    StringTable.Localize(GetProfessionKey(profile.FirstClass, profile.SecondClass), false));
+                explanation = StringTable.Localize("CA_CREATION_HELP_SECOND_CLASS", false);
+                break;
+
+            case CaelumConstants.CREATION_PAGE_SEX:
+                pageTitle = StringTable.Localize("CA_CREATION_TITLE_SEX", false);
+                selectedValue = StringTable.Localize(GetSexKey(profile.Sex), false);
+                explanation = StringTable.Localize("CA_CREATION_HELP_SEX", false);
+                break;
+
+            case CaelumConstants.CREATION_PAGE_HEIGHT:
+                pageTitle = StringTable.Localize("CA_CREATION_TITLE_HEIGHT", false);
+                selectedValue = StringTable.Localize(GetHeightChoiceKey(profile.HeightChoice), false);
+                explanation = StringTable.Localize("CA_CREATION_HELP_HEIGHT", false);
                 break;
 
             case CaelumConstants.CREATION_PAGE_LAYERS:
@@ -457,10 +485,11 @@ class CaelumDebugOverlay : EventHandler
             default:
                 pageTitle = StringTable.Localize("CA_CREATION_TITLE_SUMMARY", false);
                 selectedValue = String.Format(
-                    "%s / %s / %s",
-                    StringTable.Localize(GetOriginKey(profile.Origin), false),
-                    StringTable.Localize(GetIdentityKey(profile.Identity), false),
-                    StringTable.Localize(GetClassKey(profile.CharacterClass), false)
+                    "%s / %s / %s / %s",
+                    StringTable.Localize(GetRaceKey(profile.Race), false),
+                    StringTable.Localize(GetProfessionKey(profile.FirstClass, profile.SecondClass), false),
+                    StringTable.Localize(GetSexKey(profile.Sex), false),
+                    StringTable.Localize(GetHeightChoiceKey(profile.HeightChoice), false)
                 );
                 explanation = StringTable.Localize("CA_CREATION_HELP_SUMMARY", false);
                 break;
@@ -485,7 +514,7 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(StringTable.Localize(navigationKey, false), 226.0, Font.CR_WHITE);
 
         String pageNumber = String.Format(
-            "%d / 6",
+            "%d / 8",
             localPlayer.CreationWizardPage + 1
         );
         DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
@@ -557,18 +586,20 @@ class CaelumDebugOverlay : EventHandler
             DTA_KEEPRATIO, true
         );
 
-        // Show the three background choices used to calculate the values below.
+        // Muestra el perfil 4.0 en dos lineas compactas.
         String profileLine = String.Format(
             "%s: %s   %s: %s",
-            StringTable.Localize("CA_PROFILE_ORIGIN", false),
-            StringTable.Localize(GetOriginKey(profile.Origin), false),
-            StringTable.Localize("CA_PROFILE_IDENTITY", false),
-            StringTable.Localize(GetIdentityKey(profile.Identity), false)
+            StringTable.Localize("CA_PROFILE_RACE", false),
+            StringTable.Localize(GetRaceKey(profile.Race), false),
+            StringTable.Localize("CA_PROFILE_PROFESSION", false),
+            StringTable.Localize(GetProfessionKey(profile.FirstClass, profile.SecondClass), false)
         );
         String profileClassLine = String.Format(
-            "%s: %s",
-            StringTable.Localize("CA_PROFILE_CLASS", false),
-            StringTable.Localize(GetClassKey(profile.CharacterClass), false)
+            "%s: %s   %s: %s",
+            StringTable.Localize("CA_PROFILE_SEX", false),
+            StringTable.Localize(GetSexKey(profile.Sex), false),
+            StringTable.Localize("CA_PROFILE_HEIGHT", false),
+            StringTable.Localize(GetHeightChoiceKey(profile.HeightChoice), false)
         );
 
         Screen.DrawText(
@@ -589,9 +620,9 @@ class CaelumDebugOverlay : EventHandler
             DrawAttribute("CA_ATTRIBUTE_STRENGTH", attributes.Strength, 20.0, 62.0);
             DrawAttribute("CA_ATTRIBUTE_TOUGHNESS", attributes.Toughness, 20.0, 78.0);
             DrawAttribute("CA_ATTRIBUTE_CONSTITUTION", attributes.Constitution, 20.0, 94.0);
-            DrawAttribute("CA_ATTRIBUTE_DEXTERITY", attributes.Dexterity, 180.0, 62.0);
-            DrawAttribute("CA_ATTRIBUTE_RESILIENCE", attributes.Resilience, 180.0, 78.0);
-            DrawAttribute("CA_ATTRIBUTE_AGILITY", attributes.Agility, 180.0, 94.0);
+            DrawAttribute("CA_ATTRIBUTE_AGILITY", attributes.Agility, 180.0, 62.0);
+            DrawAttribute("CA_ATTRIBUTE_DEXTERITY", attributes.Dexterity, 180.0, 78.0);
+            DrawAttribute("CA_ATTRIBUTE_SURVIVAL", attributes.Survival, 180.0, 94.0);
             DrawAttribute("CA_ATTRIBUTE_CHARISMA", attributes.Charisma, 340.0, 62.0);
             DrawAttribute("CA_ATTRIBUTE_EMPATHY", attributes.Empathy, 340.0, 78.0);
             DrawAttribute("CA_ATTRIBUTE_ELOQUENCE", attributes.Eloquence, 340.0, 94.0);
@@ -626,13 +657,14 @@ class CaelumDebugOverlay : EventHandler
             String derivedLine = String.Format(
                 "%s: %.0f   %s: %.0f   %s: %.0f",
                 StringTable.Localize("CA_STAT_MAX_HEALTH", false), derived.MaximumHealth,
-                StringTable.Localize("CA_STAT_MAX_MANA", false), derived.MaximumMana,
+                StringTable.Localize("CA_STAT_MAX_ANIMA", false), derived.MaximumAnima,
                 StringTable.Localize("CA_STAT_MAX_AIR", false), derived.MaximumAir
             );
             String massLine = String.Format(
-                "%s: %.1f   %s: %d",
+                "%s: %.1f   %s: %d kg (T%d)   %s: %.2f m (T%d)",
                 StringTable.Localize("CA_STAT_CARRY_CAPACITY", false), derived.CarryCapacity,
-                StringTable.Localize("CA_STAT_BASE_MASS", false), derived.BaseMass
+                StringTable.Localize("CA_STAT_BASE_MASS", false), derived.BaseMass, derived.MassTier,
+                StringTable.Localize("CA_STAT_SIZE", false), derived.BodyHeightMeters, derived.SizeTier
             );
             Screen.DrawText(DebugFont, Font.CR_GOLD, 20.0, 178.0, derivedLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
@@ -640,8 +672,9 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String weightLine = String.Format(
-                "%s: %.1f   %s: %.1f",
-                StringTable.Localize("CA_STAT_EQUIPPED_WEIGHT", false), derived.EquippedWeight,
+                "%s: %.0f + %.0f + %.0f = %.0f   %s: %.1f",
+                StringTable.Localize("CA_STAT_EQUIPPED_WEIGHT", false),
+                derived.ArmorWeight, derived.ShieldWeight, derived.DebugWeight, derived.EquippedWeight,
                 StringTable.Localize("CA_STAT_TOTAL_MASS", false), derived.TotalMass
             );
             String loadLine = String.Format(
@@ -695,10 +728,10 @@ class CaelumDebugOverlay : EventHandler
             Screen.DrawText(DebugFont, Font.CR_ORANGE, 20.0, 114.0, healthIntensityLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
-            String manaLine = String.Format(
+            String animaLine = String.Format(
                 "%s: %.1f/%.1f (+%.3f/s)",
-                StringTable.Localize("CA_HUD_MANA", false), localPlayer.CurrentMana,
-                derived.MaximumMana, derived.ManaRegenerationPerSecond
+                StringTable.Localize("CA_HUD_ANIMA", false), localPlayer.CurrentAnima,
+                derived.MaximumAnima, derived.AnimaRegenerationPerSecond
             );
             String airLine = String.Format(
                 "%s: %.1f/%.1f (+%.3f/s)",
@@ -706,7 +739,7 @@ class CaelumDebugOverlay : EventHandler
                 derived.MaximumAir, derived.AirRegenerationPerSecond
                     * localPlayer.HealthPerformanceMultiplier
             );
-            Screen.DrawText(DebugFont, Font.CR_CYAN, 20.0, 138.0, manaLine,
+            Screen.DrawText(DebugFont, Font.CR_CYAN, 20.0, 138.0, animaLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_CYAN, 20.0, 154.0, airLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
@@ -1099,8 +1132,8 @@ class CaelumDebugOverlay : EventHandler
                 StringTable.Localize("CA_RESOURCE_STAFF_DAMAGE", false),
                 localPlayer.LastStaffCalculatedDamage,
                 localPlayer.LastStaffActualDamage,
-                StringTable.Localize("CA_RESOURCE_STAFF_MANA", false),
-                CaelumConstants.DEBUG_STAFF_MANA_COST
+                StringTable.Localize("CA_RESOURCE_STAFF_ANIMA", false),
+                derived.StaffAnimaCost
             );
             String staffAccuracyLine = String.Format(
                 "%s: %.2f%%   %s: %.2f/%.2f",
@@ -1131,9 +1164,23 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastStaffLocationMultiplier,
                 StringTable.Localize("CA_RESOURCE_STAFF_CAST", false),
                 localPlayer.StaffCastCooldownRemaining,
-                localPlayer.LastStaffInsufficientMana
-                    ? String.Format("   %s", StringTable.Localize("CA_ATTACK_NO_MANA", false))
+                localPlayer.LastStaffInsufficientAnima
+                    ? String.Format("   %s", StringTable.Localize("CA_ATTACK_NO_ANIMA", false))
                     : ""
+            );
+            String eloquenceLine = String.Format(
+                "%s: %.2f%%   %s: %.2f%%",
+                StringTable.Localize("CA_STAT_ANIMA_COST_REDUCTION", false),
+                derived.AnimaCostReductionPercent,
+                StringTable.Localize("CA_STAT_CASTING_SPEED", false),
+                derived.CastingSpeedPercent
+            );
+            String eloquenceUtilityLine = String.Format(
+                "%s: %.2f%%   %s: %.2f%%",
+                StringTable.Localize("CA_STAT_ABILITY_RANGE", false),
+                derived.AbilityRangePercent,
+                StringTable.Localize("CA_STAT_DIALOGUE_SKILL", false),
+                derived.DialogueSkillPercent
             );
             Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 62.0, staffDamageLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
@@ -1142,6 +1189,10 @@ class CaelumDebugOverlay : EventHandler
             Screen.DrawText(DebugFont, Font.CR_ORANGE, 20.0, 94.0, staffCriticalLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_WHITE, 20.0, 110.0, staffResultLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 134.0, eloquenceLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 150.0, eloquenceUtilityLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             return;
         }
@@ -1167,11 +1218,6 @@ class CaelumDebugOverlay : EventHandler
                 ? "CA_HEALTH_STATE_BADLY_WOUNDED"
                 : (actor.CombatHealthState == CaelumConstants.HEALTH_STATE_WOUNDED
                     ? "CA_HEALTH_STATE_WOUNDED" : "CA_HEALTH_STATE_NORMAL");
-            int effectiveDexterity = actor.CombatDexterity
-                + actor.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
-            int effectiveInsight = actor.CombatInsight
-                + actor.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
-
             String actorIdentityLine = String.Format(
                 "%s: %s   %s: %d/%d (%s)",
                 StringTable.Localize("CA_RESOURCE_ACTOR_LAST", false),
@@ -1201,9 +1247,9 @@ class CaelumDebugOverlay : EventHandler
             String actorAttributesLine = String.Format(
                 "%s: %d (%d)   %s: %d (%d)",
                 StringTable.Localize("CA_ATTRIBUTE_DEXTERITY", false),
-                actor.CombatDexterity, effectiveDexterity,
+                actor.CombatDexterity, actor.CombatEffectiveDexterity,
                 StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false),
-                actor.CombatInsight, effectiveInsight
+                actor.CombatInsight, actor.CombatEffectiveInsight
             );
             String actorAccuracyLine = String.Format(
                 "%s: %.2f%%   %s: %.2f%%   %s: x%.2f",
@@ -1294,7 +1340,7 @@ class CaelumDebugOverlay : EventHandler
 
         // Technical attributes: second column.
         DrawAttribute("CA_ATTRIBUTE_DEXTERITY", attributes.Dexterity, 180.0, 58.0);
-        DrawAttribute("CA_ATTRIBUTE_RESILIENCE", attributes.Resilience, 180.0, 70.0);
+        DrawAttribute("CA_ATTRIBUTE_SURVIVAL", attributes.Survival, 180.0, 70.0);
         DrawAttribute("CA_ATTRIBUTE_AGILITY", attributes.Agility, 180.0, 82.0);
 
         // Social attributes: third column.
@@ -1391,18 +1437,18 @@ class CaelumDebugOverlay : EventHandler
             DTA_KEEPRATIO, true
         );
 
-        String manaResourceLine = String.Format(
+        String animaResourceLine = String.Format(
             "%s: %.2f / %.2f   %s: %.3f/s (%.2f%%)",
-            StringTable.Localize("CA_HUD_MANA", false),
-            localPlayer.CurrentMana,
-            derived.MaximumMana,
-            StringTable.Localize("CA_RESOURCE_MANA_REGEN", false),
-            derived.ManaRegenerationPerSecond,
-            derived.ManaRegenerationPercent
+            StringTable.Localize("CA_HUD_ANIMA", false),
+            localPlayer.CurrentAnima,
+            derived.MaximumAnima,
+            StringTable.Localize("CA_RESOURCE_ANIMA_REGEN", false),
+            derived.AnimaRegenerationPerSecond,
+            derived.AnimaRegenerationPercent
         );
 
         Screen.DrawText(
-            DebugFont, Font.CR_PURPLE, 20.0, 134.0, manaResourceLine,
+            DebugFont, Font.CR_PURPLE, 20.0, 134.0, animaResourceLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
             DTA_KEEPRATIO, true
@@ -1519,7 +1565,7 @@ class CaelumDebugOverlay : EventHandler
             "%s: %.2f (+%.3f/s)   %s: %.2f   %s: %.2f",
             StringTable.Localize("CA_STAT_MAX_HEALTH", false), derived.MaximumHealth,
             derived.HealthRegenerationPerSecond,
-            StringTable.Localize("CA_STAT_MAX_MANA", false), derived.MaximumMana,
+            StringTable.Localize("CA_STAT_MAX_ANIMA", false), derived.MaximumAnima,
             StringTable.Localize("CA_STAT_MAX_AIR", false), derived.MaximumAir
         );
 
@@ -1735,18 +1781,11 @@ class CaelumDebugOverlay : EventHandler
             return;
         }
 
-        if (e.Name == "ca_next_origin")
-        {
-            requestingPlayer.CycleOrigin();
-        }
-        else if (e.Name == "ca_next_identity")
-        {
-            requestingPlayer.CycleIdentity();
-        }
-        else if (e.Name == "ca_next_class")
-        {
-            requestingPlayer.CycleClass();
-        }
+        if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
+        else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();
+        else if (e.Name == "ca_next_second_class") requestingPlayer.CycleSecondClass();
+        else if (e.Name == "ca_next_sex") requestingPlayer.CycleSex();
+        else if (e.Name == "ca_next_height") requestingPlayer.CycleHeightChoice();
         else if (e.Name == "ca_select_next_layer")
         {
             requestingPlayer.CycleAllocationLayer();
@@ -1807,13 +1846,13 @@ class CaelumDebugOverlay : EventHandler
         {
             requestingPlayer.ConsumeDebugJumpAir();
         }
-        else if (e.Name == "ca_debug_consume_mana")
+        else if (e.Name == "ca_debug_consume_anima")
         {
-            requestingPlayer.ConsumeDebugMana();
+            requestingPlayer.ConsumeDebugAnima();
         }
-        else if (e.Name == "ca_debug_refill_mana")
+        else if (e.Name == "ca_debug_refill_anima")
         {
-            requestingPlayer.RefillMana();
+            requestingPlayer.RefillAnima();
         }
         else if (e.Name == "ca_debug_add_adrenaline")
         {

@@ -1,10 +1,27 @@
-// Caella is a visual counterpart to Argento and deliberately inherits his
-// complete starting-character-scale combat profile for neutral comparisons.
-class CaelumCaella : CaelumArgento
+// Caella posee un perfil de combate propio como duende cleriga predefinida.
+class CaelumCaella : CaelumCombatActor
 {
     Default
     {
         Tag "$CA_CAELLA_NAME";
+        Health 1160;
+        Radius 14.2;
+        Height 49.8;
+        Mass 80;
+        Speed 10;
+        MeleeRange 64;
+        MinMissileChance 96;
+        MaxTargetRange 1024;
+        Monster;
+        +FLOORCLIP
+    }
+
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        // Duende cleriga: tecnico 7 y mental 18.
+        InitializeCombatProfile(9, 7, 7, 18, 7, 18);
+        InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_UNARMORED, 1);
     }
 
     States
@@ -21,14 +38,14 @@ class CaelumCaella : CaelumArgento
         Goto See;
     Melee:
         CAEL B 7 A_FaceTarget;
-        CAEL B 0 A_CaelumMeleeAttack(372);
+        CAEL B 0 A_CaelumMeleeAttack(174);
         CAEL B 11;
         Goto See;
     Missile:
         CAEL D 7 A_FaceTarget;
         CAEL D 0 A_CaelumSpawnProjectile(
             "CaelumCaellaMagicBolt", 40,
-            CaelumConstants.TEST_ACTOR_RANGED_DAMAGE, true
+            325, true
         );
         CAEL A 11;
         Goto See;

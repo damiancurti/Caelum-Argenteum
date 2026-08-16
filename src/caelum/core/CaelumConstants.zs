@@ -24,13 +24,13 @@ class CaelumConstants : Object
     // Provisional air-resource tests spend ten base units per key press.
     const DEBUG_AIR_ACTION_COST = 10;
 
-    // Until real spells exist, the mana test action spends ten units so the
+    // Until real spells exist, the Anima test action spends ten units so the
     // resource, saving, clamping, and regeneration can be verified safely.
-    const DEBUG_MANA_ACTION_COST = 100;
+    const DEBUG_ANIMA_ACTION_COST = 100;
 
-    // Health, mana, weapon damage, and mana costs use a ten-times larger
+    // Health, Anima, weapon damage, and Anima costs use a ten-times larger
     // integer scale. Percentages and unrelated resources remain unchanged.
-    const HEALTH_MANA_DAMAGE_SCALE = 10.0;
+    const HEALTH_ANIMA_DAMAGE_SCALE = 10.0;
 
     // Adrenaline capacity keeps its ten-times scale. Gameplay gains use their
     // original values again; post-combat decay deliberately remains 10/s.
@@ -51,7 +51,7 @@ class CaelumConstants : Object
     const DEBUG_SWORD_RANGE = 64.0;
     const DEBUG_SWORD_PRIMARY_AIR_COST = 5.0;
     const DEBUG_STAFF_BASE_DAMAGE = 120.0;
-    const DEBUG_STAFF_MANA_COST = 500.0;
+    const DEBUG_STAFF_ANIMA_COST = 500.0;
     const DEBUG_STAFF_CAST_TICS = 18;
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
@@ -193,7 +193,7 @@ class CaelumConstants : Object
     const GZDOOM_BASE_MOVEMENT = 1.0;
     const GZDOOM_BASE_JUMP_Z = 8.0;
 
-    // Air starts from a base capacity of 1000. Resilience applies the existing
+    // Air starts from a base capacity of 1000. Survival applies the existing
     // Type 4 percentage without changing its curve or reference levels.
     const BASE_AIR_CAPACITY = 1000.0;
 
@@ -204,8 +204,8 @@ class CaelumConstants : Object
     const AIR_FULL_RECOVERY_HUNGER_COST = 10.0;
     const AIR_FULL_RECOVERY_THIRST_COST = 20.0;
 
-    // Mana also takes eight minutes to refill at its base regeneration speed.
-    const MANA_FULL_RECOVERY_SECONDS = 480;
+    // Anima also takes eight minutes to refill at its base regeneration speed.
+    const ANIMA_FULL_RECOVERY_SECONDS = 480;
     const AIR_TIRED_THRESHOLD = 0.5;
     const AIR_BREATHLESS_THRESHOLD = 0.1;
 
@@ -226,18 +226,11 @@ class CaelumConstants : Object
     const LAYER_SOCIAL = 2;
     const LAYER_MENTAL = 3;
 
-    // Origin values. Their order also matches the four documented distribution
-    // patterns: Capital, North, West, and South.
-    const ORIGIN_CAPITAL = 0;
-    const ORIGIN_NORTH = 1;
-    const ORIGIN_WEST = 2;
-    const ORIGIN_SOUTH = 3;
-
-    // Playable identities.
-    const IDENTITY_FEDERAL = 0;
-    const IDENTITY_UNITARIAN = 1;
-    const IDENTITY_BEAST = 2;
-    const IDENTITY_CAELITH = 3;
+    // Razas jugables de la creacion 4.0.
+    const RACE_BEAST_MAN = 0;
+    const RACE_CAELITH = 1;
+    const RACE_HUMAN = 2;
+    const RACE_GOBLIN = 3;
 
     // Playable classes.
     const CLASS_WARRIOR = 0;
@@ -245,14 +238,39 @@ class CaelumConstants : Object
     const CLASS_PRIEST = 2;
     const CLASS_MAGE = 3;
 
+    // Profesiones resultantes de combinar las dos clases sin importar orden.
+    const PROFESSION_WARRIOR = 0;
+    const PROFESSION_EXPLORER = 1;
+    const PROFESSION_PRIEST = 2;
+    const PROFESSION_MAGE = 3;
+    const PROFESSION_MERCENARY = 4;
+    const PROFESSION_CLERIC = 5;
+    const PROFESSION_BATTLE_MAGE = 6;
+    const PROFESSION_PILGRIM = 7;
+    const PROFESSION_INVESTIGATOR = 8;
+    const PROFESSION_ARCANIST = 9;
+
+    const SEX_MALE = 0;
+    const SEX_FEMALE = 1;
+    const HEIGHT_SHORT = 0;
+    const HEIGHT_NORMAL = 1;
+    const HEIGHT_TALL = 2;
+
+    const BASE_MASS_TIER = 5;
+    const BASE_SIZE_TIER = 4;
+    const MIN_MASS_TIER = 1;
+    const MAX_MASS_TIER = 10;
+    const MIN_SIZE_TIER = 1;
+    const MAX_SIZE_TIER = 7;
+
     // Stable indices for the twelve primary attributes. These let the creation
     // system select an attribute without duplicating twelve separate functions.
     const ATTRIBUTE_STRENGTH = 0;
     const ATTRIBUTE_TOUGHNESS = 1;
     const ATTRIBUTE_CONSTITUTION = 2;
-    const ATTRIBUTE_DEXTERITY = 3;
-    const ATTRIBUTE_RESILIENCE = 4;
-    const ATTRIBUTE_AGILITY = 5;
+    const ATTRIBUTE_AGILITY = 3;
+    const ATTRIBUTE_DEXTERITY = 4;
+    const ATTRIBUTE_SURVIVAL = 5;
     const ATTRIBUTE_CHARISMA = 6;
     const ATTRIBUTE_EMPATHY = 7;
     const ATTRIBUTE_ELOQUENCE = 8;
@@ -260,11 +278,13 @@ class CaelumConstants : Object
     const ATTRIBUTE_PATIENCE = 10;
     const ATTRIBUTE_INSIGHT = 11;
 
-    // Character creation wizard pages.
-    const CREATION_PAGE_ORIGIN = 0;
-    const CREATION_PAGE_IDENTITY = 1;
-    const CREATION_PAGE_CLASS = 2;
-    const CREATION_PAGE_LAYERS = 3;
-    const CREATION_PAGE_ATTRIBUTES = 4;
-    const CREATION_PAGE_SUMMARY = 5;
+    // Paginas del creador 4.0.
+    const CREATION_PAGE_RACE = 0;
+    const CREATION_PAGE_FIRST_CLASS = 1;
+    const CREATION_PAGE_SECOND_CLASS = 2;
+    const CREATION_PAGE_SEX = 3;
+    const CREATION_PAGE_HEIGHT = 4;
+    const CREATION_PAGE_LAYERS = 5;
+    const CREATION_PAGE_ATTRIBUTES = 6;
+    const CREATION_PAGE_SUMMARY = 7;
 }
