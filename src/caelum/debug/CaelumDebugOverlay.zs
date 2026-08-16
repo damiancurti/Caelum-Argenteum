@@ -913,9 +913,11 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastMeleeHitHeightRatio * 100.0
             );
             String meleeAirLine = String.Format(
-                "%s: %.1f",
+                "%s: %.1f   %s: %.2f",
                 StringTable.Localize("CA_RESOURCE_MELEE_AIR_COST", false),
-                localPlayer.LastMeleeAirCost
+                localPlayer.LastMeleeAirCost,
+                StringTable.Localize("CA_STAT_LAST_PUSH_FORCE", false),
+                localPlayer.LastAttackPushForce
             );
             String meleeCriticalLine = String.Format(
                 "%s: %.2f%% x%.2f   %s: %.2f%% (%s)",
@@ -1084,6 +1086,15 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 78.0, armorStatsLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            String ownedEquipmentLine = String.Format(
+                "%s: %d   %s: %d",
+                StringTable.Localize("CA_RESOURCE_OWNED_ARMOR", false),
+                localPlayer.OwnedArmorCount,
+                StringTable.Localize("CA_RESOURCE_OWNED_SHIELDS", false),
+                localPlayer.OwnedShieldCount
+            );
+            Screen.DrawText(DebugFont, Font.CR_GREEN, 20.0, 92.0, ownedEquipmentLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String hitLine = String.Format(
                 "%s: %s x%.2f -> %.1f",
@@ -1104,6 +1115,15 @@ class CaelumDebugOverlay : EventHandler
             Screen.DrawText(DebugFont, Font.CR_RED, 20.0, 106.0, hitLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_RED, 20.0, 122.0, armorDamageLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+
+            String explosionLine = String.Format(
+                "%s: %d / %.1f",
+                StringTable.Localize("CA_RESOURCE_EXPLOSION_REGIONS", false),
+                localPlayer.LastExplosionTouchedRegionCount,
+                localPlayer.LastExplosionRadius
+            );
+            Screen.DrawText(DebugFont, Font.CR_GOLD, 20.0, 136.0, explosionLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String durabilityLine = String.Format(
@@ -1928,6 +1948,10 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_debug_attributes_75")
         {
             requestingPlayer.ToggleDebugAttributes75();
+        }
+        else if (e.Name == "ca_debug_attributes_100")
+        {
+            requestingPlayer.ToggleDebugAttributes100();
         }
         else if (e.Name == "ca_debug_health_state")
         {

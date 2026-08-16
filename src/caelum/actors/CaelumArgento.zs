@@ -20,7 +20,7 @@ class CaelumArgento : CaelumCombatActor
     {
         Super.PostBeginPlay();
         // Humano Mago de Batalla: tecnico 7 y mental 18.
-        InitializeCombatProfile(9, 7, 7, 18, 7, 18);
+        InitializeCombatProfile(9, 7, 7, 18, 7, 18, 9, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_LIGHT, 1);
     }
 

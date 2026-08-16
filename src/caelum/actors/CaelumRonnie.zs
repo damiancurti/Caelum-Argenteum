@@ -20,7 +20,7 @@ class CaelumRonnie : CaelumCombatActor
     {
         Super.PostBeginPlay();
         // Fisico 20, tecnico 18, social 5 y mental 7.
-        InitializeCombatProfile(20, 18, 18, 7, 18, 7);
+        InitializeCombatProfile(20, 18, 18, 7, 18, 7, 20, 7);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MEDIUM, 1);
     }
 

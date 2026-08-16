@@ -1,5 +1,54 @@
 # Changelog
 
+## 4.4.0 — Multi-region area damage
+
+- Fixed the ZScript parser failure caused by using the reserved `state` token
+  as the local name of the travelling character record.
+- Added spherical explosion/anatomy intersection for players and original
+  Caelum actors.
+- Applied the distance-adjusted explosion base independently to every touched
+  region, including its own vulnerability, reinforcement, defense, Toughness,
+  and armor durability calculation.
+- Unified both arms as one explosion region while preserving separate authored
+  heads and other future anatomy entries.
+- Evaluated pain and damage adrenaline once from the combined health loss and
+  retained critical-region lucidity loss and Caelum projectile push.
+- Added the last explosion's touched-region count and resolved radius to the
+  compact armor diagnostics.
+
+## 4.3.0 — Travelling profile and persistent equipment foundation
+
+- Added an invisible GZDoom inventory record that preserves the confirmed
+  profile, allocations, resources, armor, shield, durability, and ownership
+  across ordinary map travel.
+- Restored the travelling record after a level transition so the mandatory
+  creator does not reopen for an already-confirmed character. Normal save/load
+  continues to preserve the same state.
+- Made debug-selected armor and shields enter a persistent owned-equipment
+  registry and displayed the number of owned pieces on the armor page.
+- Extended mass-based push to magical attacks. Physical push uses Strength and
+  body mass; magical push uses Intelligence; both use the receiver's total-mass
+  knockback multiplier.
+- Connected the staff and the magical projectiles of Argento, Caella, and
+  Ronnie to the same confirmed-damage push rule.
+- Documented the current area-damage inconsistency: players use GZDoom's
+  non-localized route, while original Caelum actors fall back to sensitive
+  torso/body armor when no authored impact metadata exists.
+
+## 4.2.0 — Mass-based physical push
+
+- Connected physical push to the player sword, Caelum actor melee attacks,
+  and physical Caelum projectiles.
+- Applied push only after positive health damage; misses, evasion, full damage
+  prevention, and magical attacks do not produce it.
+- Scaled outgoing force from body mass and incoming knockback from total mass,
+  including the player's armor, shield, and development weight.
+- Mirrored total player mass into GZDoom's native actor mass so external engine
+  interactions use the equipped value too.
+- Added the last applied sword-push force to compact combat diagnostics.
+- Added a separate, mutually exclusive development option for setting every
+  attribute to 100 while retaining the existing level-75 option.
+
 ## 4.1.0 — Initial character-creation flow
 
 - Opened the eight-page creator automatically for every new character and

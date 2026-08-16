@@ -3,7 +3,8 @@
 // many different source files.
 class CaelumConstants : Object
 {
-    const DEBUG_ALL_ATTRIBUTES_LEVEL = 75;
+    const DEBUG_ALL_ATTRIBUTES_LEVEL_75 = 75;
+    const DEBUG_ALL_ATTRIBUTES_LEVEL_100 = 100;
     // The design document defines twelve primary character attributes.
     const PRIMARY_ATTRIBUTE_COUNT = 12;
     const ATTRIBUTE_LAYER_COUNT = 4;
@@ -50,6 +51,8 @@ class CaelumConstants : Object
     const DEBUG_SWORD_BASE_DAMAGE = 120.0;
     const DEBUG_SWORD_RANGE = 64.0;
     const DEBUG_SWORD_PRIMARY_AIR_COST = 5.0;
+    // Fuerza horizontal independiente del dano para los impactos fisicos.
+    const BASE_ATTACK_PUSH_FORCE = 8.0;
     const DEBUG_STAFF_BASE_DAMAGE = 120.0;
     const DEBUG_STAFF_ANIMA_COST = 500.0;
     const DEBUG_STAFF_CAST_TICS = 18;

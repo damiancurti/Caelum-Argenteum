@@ -39,6 +39,7 @@ class CaelumDerivedStats : Object
     double ActorHeight;
     double ActorRadius;
     double PhysicalPushMultiplier;
+    double MagicalPushMultiplier;
     double ArmorWeight;
     double ShieldWeight;
     double DebugWeight;
@@ -138,7 +139,13 @@ class CaelumDerivedStats : Object
             * CalculateType4Percent(attributes.Resilience) / 100.0;
 
         MeleeDamagePercent = CalculateType1Percent(attributes.Strength);
-        PhysicalPushMultiplier = BaseMassMultiplier;
+        // El empuje fisico usa Fuerza y masa corporal; el magico usa
+        // Inteligencia sin masa corporal, pero ambos enfrentan la misma
+        // resistencia del receptor.
+        PhysicalPushMultiplier = MeleeDamagePercent / 100.0
+            * BaseMassMultiplier;
+        MagicalPushMultiplier = CalculateType1Percent(attributes.Intelligence)
+            / 100.0;
         DebugSwordDamage = CaelumConstants.DEBUG_SWORD_BASE_DAMAGE
             * MeleeDamagePercent / 100.0 * BaseMassMultiplier;
         DebugStaffDamage = CaelumConstants.DEBUG_STAFF_BASE_DAMAGE

@@ -33,10 +33,14 @@ folder and launch GZDoom.
   protected until confirmation, with direct keyboard and gamepad navigation.
 - Derived health, Anima, air, carry-capacity, mass-tier, and size-tier values.
 - Real per-piece armor and shield weight plus separate debug-added weight.
+- Inventory-backed profile and equipment persistence across map transitions,
+  including owned armor/shield combinations and durability.
 - Resilience as the definitive name of the technical recovery attribute.
 - Eloquence casting speed, Anima-cost reduction, ability range, and dialogue
   values, with the live staff consuming the adjusted cost and duration.
 - Seven-grade localized vulnerability and four-slot armor test controls.
+- Multi-region explosions that independently resolve every anatomy volume
+  touched by the blast, with both arms treated as one logical region.
 - A live dizzy-lucidity accuracy penalty, provisional sword dispersion, and
   code-drawn visual distortion for testing without external art.
 - A live 25%-accuracy running penalty on the provisional sword, while walking

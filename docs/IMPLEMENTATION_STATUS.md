@@ -43,7 +43,9 @@ New characters now open this flow automatically. Until confirmation, ordinary
 movement and attacks are blocked, resource simulation is paused, and the
 unfinished character cannot receive damage. Keyboard controls are Right/Down,
 Enter, Space, and Backspace/Left; gamepads use D-pad, A, X, and B. The confirmed
-profile and completion flag are ordinary player fields and persist in saves.
+profile and completion flag persist in saves and in an inventory-backed travel
+record. Changing maps therefore restores the confirmed character instead of
+opening the creator again.
 
 Races contribute Physical / Technical / Social / Mental values:
 
@@ -97,9 +99,21 @@ Mass tier is clamped from 1 to 10 and maps to 50, 55, 60, 70, 80, 100, 120,
 | 7 | 2.40 | 74.7 | 21.3 |
 
 The body-mass multiplier is `BaseMassKg / 100`. It affects maximum health,
-physical attack power, prepared physical push, air consumption, hunger loss,
+physical attack power, physical push, air consumption, hunger loss,
 and thirst loss. Equipment remains separate and continues to affect load,
 movement, evasion, knockback, and additional air use.
+
+Push is live for the player's sword and staff, Caelum actor melee attacks, and
+physical or magical Caelum projectiles. Physical attacks use
+`Strength Type 1 × body mass`; magical attacks use `Intelligence Type 1`.
+The final force is `8 × attack push multiplier × receiver knockback multiplier`.
+It only occurs after positive health damage; misses, evasion, and fully
+prevented damage do not push. The training dummy's exceptional native mass keeps
+it stationary. The combat page displays the last player-attack push force.
+
+The development controls provide separate level-75 and level-100 attribute
+overrides. Enabling one disables the other; toggling the active option again
+restores the character's ordinary profile.
 
 ## Armor and equipped mass
 
@@ -109,6 +123,37 @@ Every armor piece now exposes its documented weight. Uniform full-set totals
 are 5/7/10 unarmored, 10/15/20 light, 20/30/40 medium, and 40/60/80 heavy for
 tiers 1/2/3. Broken pieces retain their weight. Existing shield weights are
 included automatically, and debug-added mass is shown separately.
+
+The current loadout is now mirrored into an invisible, undroppable GZDoom
+inventory record. It preserves armor type, tier, durability, selected slot,
+shield, profile, allocations, and live resources between maps. Selecting an
+armor or shield through development controls marks that exact slot/type/tier
+combination as owned. The armor page reports owned armor and shield counts.
+World pickups and the final equip/unequip interface remain the next presentation
+layer over this working persistence backend.
+
+## Area damage
+
+**Implemented — pending validation**
+
+Damage carrying `DMG_EXPLOSION` cannot be evaded. GZDoom first supplies the
+distance-adjusted radial damage for the actor; Caelum then intersects the
+explosion sphere with that actor's authored anatomy volumes. The supplied base
+damage is applied once per touched region, and each application independently
+resolves natural vulnerability, armor reinforcement, defense, Toughness, and
+durability. The resulting health damage is summed into one final hit.
+
+For the humanoid profile this produces at most four applications: head, torso,
+arms, and legs. Both arms are one logical region: touching either or both counts
+only once. A low explosion may therefore affect only legs, a larger wave from
+below may affect legs and torso, and a full-body intersection resolves all four.
+Separate authored non-arm regions remain independent, allowing future actors to
+define multiple heads, tails, or weak points without changing this pipeline.
+
+Pain and damage-based adrenaline are evaluated once from the total health loss.
+A naturally critical region touched by the explosion can reduce lucidity, with
+its own armor absorption mitigating that loss. Shields do not currently block
+radial damage.
 
 Defense percentages, reinforcement, bonuses, durability loss, and shield
 behavior remain **Implemented and previously validated**.
@@ -158,12 +203,15 @@ independent profile rather than inheriting Argento's combat setup.
    magical damage, pain, death, and actor debug page values.
 8. Re-run the previously validated shield, armor, lucidity, pain, adrenaline,
    movement, jump, survival, and resource controls to catch regressions.
+9. Change maps after confirming a character; verify the creator stays closed
+   and profile, resources, armor, shield, durability, and owned counts persist.
+10. Compare sword/staff push and Rulo/Ronnie projectiles. Both physical and
+    magical confirmed hits should push; misses and evasion should not.
 
 ## Not yet implemented
 
 - Final buffs, debuffs, healing abilities, and dialogue consumers for the new
   Eloquence range/Labia values.
-- A generalized physical-push attack consumer; the multiplier is calculated.
 - Save migration from prototype profiles that used Origin/Identity/Class.
-- Final production equipment inventory and later visual polish for the current
-  functional character-creation overlay.
+- World equipment pickups, final equip/unequip UI, and later visual polish for
+  the current functional character-creation overlay.

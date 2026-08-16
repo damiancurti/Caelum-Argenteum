@@ -17,13 +17,17 @@ class CaelumPlayer : DoomPlayer
 
     // Derived values are recalculated whenever primary creation data changes.
     CaelumDerivedStats DerivedStats;
+    CaelumAnatomyProfile AnatomyProfile;
     bool DebugAttributesAt75;
+    bool DebugAttributesAt100;
     int DebugPanelPage;
 
     // Four independently configured armor pieces provide uniform defense by
     // armor type/tier, slot-specific reinforcement, bonuses, and durability.
     CaelumArmorModel ArmorModel;
     CaelumShieldModel ShieldModel;
+    int OwnedArmorCount;
+    int OwnedShieldCount;
     double ArmorDurabilityDamageMultiplier;
     bool ArmorDurabilityMultiplierInitialized;
     bool DebugArmorCriticalHit;
@@ -55,6 +59,9 @@ class CaelumPlayer : DoomPlayer
     int LastAdrenalineEvent;
     double LastAdrenalineBaseGain;
     double LastAdrenalineFinalGain;
+    int LastExplosionTouchedRegionMask;
+    int LastExplosionTouchedRegionCount;
+    double LastExplosionRadius;
 
     // CaelumMaximumHealth is the integer gameplay maximum calculated from
     // Constitution. GZDoom damage still changes the inherited health field.
@@ -107,6 +114,7 @@ class CaelumPlayer : DoomPlayer
     double StaffCastCooldownRemaining;
     double LastMeleeYawOffset;
     double LastMeleePitchOffset;
+    double LastAttackPushForce;
 
     // El Anima es un recurso persistente separado para magia y armas magicas.
     double CurrentAnima;
@@ -195,6 +203,156 @@ class CaelumPlayer : DoomPlayer
         PainChance 0;
     }
 
+    CaelumPersistentCharacterState GetPersistentCharacterState(bool createState)
+    {
+        CaelumPersistentCharacterState persistentState = CaelumPersistentCharacterState(
+            FindInventory("CaelumPersistentCharacterState")
+        );
+        if (persistentState == null && createState)
+        {
+            persistentState = CaelumPersistentCharacterState(
+                GiveInventoryType("CaelumPersistentCharacterState")
+            );
+        }
+        return persistentState;
+    }
+
+    // Copia el perfil y el equipamiento al inventario viajero antes de salir
+    // del mapa. El mismo objeto queda incluido en guardados normales.
+    void PersistCharacterState()
+    {
+        if (!CharacterCreationComplete || CharacterProfile == null
+            || CharacterAllocation == null)
+        {
+            return;
+        }
+        CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+
+        persistentState.ProfileCommitted = true;
+        persistentState.Race = CharacterProfile.Race;
+        persistentState.FirstClass = CharacterProfile.FirstClass;
+        persistentState.SecondClass = CharacterProfile.SecondClass;
+        persistentState.Sex = CharacterProfile.Sex;
+        persistentState.HeightChoice = CharacterProfile.HeightChoice;
+        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
+        {
+            persistentState.LayerBonus[layer] = CharacterAllocation.LayerBonus[layer];
+        }
+        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+        {
+            persistentState.AttributeBonus[attribute] = CharacterAllocation.AttributeBonus[attribute];
+        }
+
+        if (ArmorModel != null && ShieldModel != null)
+        {
+            persistentState.EquipmentInitialized = true;
+            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+            {
+                persistentState.ArmorType[slot] = ArmorModel.ArmorType[slot];
+                persistentState.ArmorTier[slot] = ArmorModel.Tier[slot];
+                persistentState.ArmorDurability[slot] = ArmorModel.Durability[slot];
+            }
+            persistentState.ArmorSelectedSlot = ArmorModel.SelectedSlot;
+            persistentState.ShieldType = ShieldModel.ShieldType;
+            persistentState.ShieldTier = ShieldModel.Tier;
+            persistentState.ShieldDurability = ShieldModel.Durability;
+            persistentState.MarkCurrentEquipmentOwned();
+            OwnedArmorCount = persistentState.CountOwnedArmor();
+            OwnedShieldCount = persistentState.CountOwnedShields();
+        }
+
+        persistentState.StoredHealth = health;
+        persistentState.StoredAnima = CurrentAnima;
+        persistentState.StoredAir = CurrentAir;
+        persistentState.StoredAdrenaline = CurrentAdrenaline;
+        persistentState.StoredLucidity = CurrentLucidity;
+        persistentState.StoredHunger = CurrentHunger;
+        persistentState.StoredThirst = CurrentThirst;
+        persistentState.StoredSleep = CurrentSleep;
+    }
+
+    bool RestorePersistentCharacterState()
+    {
+        CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(false);
+        if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
+
+        CharacterProfile.Race = persistentState.Race;
+        CharacterProfile.FirstClass = persistentState.FirstClass;
+        CharacterProfile.SecondClass = persistentState.SecondClass;
+        CharacterProfile.Sex = persistentState.Sex;
+        CharacterProfile.HeightChoice = persistentState.HeightChoice;
+        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
+        {
+            CharacterAllocation.LayerBonus[layer] = persistentState.LayerBonus[layer];
+        }
+        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+        {
+            CharacterAllocation.AttributeBonus[attribute] = persistentState.AttributeBonus[attribute];
+        }
+
+        if (persistentState.EquipmentInitialized && ArmorModel != null && ShieldModel != null)
+        {
+            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+            {
+                ArmorModel.ArmorType[slot] = persistentState.ArmorType[slot];
+                ArmorModel.Tier[slot] = persistentState.ArmorTier[slot];
+                ArmorModel.Durability[slot] = persistentState.ArmorDurability[slot];
+            }
+            ArmorModel.SelectedSlot = persistentState.ArmorSelectedSlot;
+            ArmorModel.Initialized = true;
+            ShieldModel.ShieldType = persistentState.ShieldType;
+            ShieldModel.Tier = persistentState.ShieldTier;
+            ShieldModel.Durability = persistentState.ShieldDurability;
+            ShieldModel.Initialized = true;
+            OwnedArmorCount = persistentState.CountOwnedArmor();
+            OwnedShieldCount = persistentState.CountOwnedShields();
+        }
+
+        CharacterCreationComplete = true;
+        CreationWizardOpen = false;
+        CreationProfileBackup = null;
+        CreationAllocationBackup = null;
+        ApplyCharacterProfile();
+        CaelumMaximumHealth = Max(1, int(DerivedStats.MaximumHealth));
+        health = Clamp(persistentState.StoredHealth, 1, CaelumMaximumHealth);
+        if (player != null) { player.health = health; }
+        CurrentAnima = Clamp(persistentState.StoredAnima, 0.0, DerivedStats.MaximumAnima);
+        CurrentAir = Clamp(persistentState.StoredAir, 0.0, DerivedStats.MaximumAir);
+        CurrentAdrenaline = Clamp(
+            persistentState.StoredAdrenaline, 0.0, DerivedStats.MaximumAdrenaline
+        );
+        CurrentLucidity = Clamp(
+            persistentState.StoredLucidity, 0.0, CaelumConstants.MAXIMUM_LUCIDITY
+        );
+        CurrentHunger = Clamp(persistentState.StoredHunger, 0.0, CaelumConstants.SURVIVAL_MAXIMUM);
+        CurrentThirst = Clamp(persistentState.StoredThirst, 0.0, CaelumConstants.SURVIVAL_MAXIMUM);
+        CurrentSleep = Clamp(persistentState.StoredSleep, 0.0, CaelumConstants.SURVIVAL_MAXIMUM);
+        HealthResourceInitialized = true;
+        AnimaResourceInitialized = true;
+        AirResourceInitialized = true;
+        AdrenalineResourceInitialized = true;
+        LucidityResourceInitialized = true;
+        SurvivalResourcesInitialized = true;
+        UpdateHealthStateEffects();
+        UpdateAirStateEffects();
+        UpdateLucidityState();
+        UpdateSurvivalStates();
+        return true;
+    }
+
+    override void PreTravelled()
+    {
+        PersistCharacterState();
+        Super.PreTravelled();
+    }
+
+    override void Travelled()
+    {
+        Super.Travelled();
+        RestorePersistentCharacterState();
+    }
+
     // PostBeginPlay runs after this player actor has entered the game world.
     // It is a suitable place for first-time initialization of owned objects.
     override void PostBeginPlay()
@@ -227,6 +385,12 @@ class CaelumPlayer : DoomPlayer
             DerivedStats = CaelumDerivedStats(new("CaelumDerivedStats"));
         }
 
+        if (AnatomyProfile == null)
+        {
+            AnatomyProfile = CaelumAnatomyProfile(new("CaelumAnatomyProfile"));
+            AnatomyProfile.InitializeHumanoid();
+        }
+
         if (ArmorModel == null)
         {
             ArmorModel = CaelumArmorModel(new("CaelumArmorModel"));
@@ -245,7 +409,11 @@ class CaelumPlayer : DoomPlayer
             ArmorDurabilityMultiplierInitialized = true;
         }
 
-        ApplyCharacterProfile();
+        bool restoredPersistentState = RestorePersistentCharacterState();
+        if (!restoredPersistentState)
+        {
+            ApplyCharacterProfile();
+        }
 
         if (!HealthResourceInitialized)
         {
@@ -372,6 +540,18 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
+        if (flags & DMG_EXPLOSION)
+        {
+            return ApplyExplosionDefense(
+                inflictor,
+                source,
+                damage,
+                mod,
+                flags,
+                angle
+            );
+        }
+
         if (IsDirectedCombatDamage(inflictor, source, damage, mod, flags))
         {
             return ApplyRealCombatDefense(
@@ -443,6 +623,233 @@ class CaelumPlayer : DoomPlayer
                 || mod == 'CaelumMagicTest');
     }
 
+    double GetEffectiveExplosionRadius(Actor inflictor, int incomingDamage)
+    {
+        double resolvedRadius = Max(1.0, double(incomingDamage));
+        if (inflictor == null) { return resolvedRadius; }
+
+        resolvedRadius = inflictor.ExplosionRadius;
+        if (resolvedRadius < 0.0)
+        {
+            resolvedRadius = inflictor.ExplosionDamage;
+        }
+        if (resolvedRadius <= 0.0)
+        {
+            resolvedRadius = Max(1.0, double(incomingDamage));
+        }
+        return resolvedRadius;
+    }
+
+    int GetArmorSlotForHitLocation(int location)
+    {
+        switch (location)
+        {
+            case CaelumConstants.HIT_LOCATION_HEAD:
+                return CaelumConstants.ARMOR_SLOT_HEAD;
+            case CaelumConstants.HIT_LOCATION_ARMS:
+                return CaelumConstants.ARMOR_SLOT_HANDS;
+            case CaelumConstants.HIT_LOCATION_LEGS:
+                return CaelumConstants.ARMOR_SLOT_FEET;
+            default:
+                return CaelumConstants.ARMOR_SLOT_BODY;
+        }
+    }
+
+    // GZDoom entrega una sola cantidad radial por actor. Caelum reutiliza esa
+    // base una vez por cada volumen anatómico alcanzado y suma el resultado
+    // recién después de resolver vulnerabilidad, refuerzo y defensa por pieza.
+    int ApplyExplosionDefense(
+        Actor inflictor,
+        Actor source,
+        int incomingDamage,
+        Name mod,
+        int flags,
+        double damageAngle
+    )
+    {
+        LastExplosionTouchedRegionMask = 0;
+        LastExplosionTouchedRegionCount = 0;
+        LastExplosionRadius = GetEffectiveExplosionRadius(inflictor, incomingDamage);
+        if (incomingDamage <= 0 || inflictor == null || AnatomyProfile == null)
+        {
+            return 0;
+        }
+        if (bInvulnerable)
+        {
+            return Super.DamageMobj(
+                inflictor, source, incomingDamage, mod, flags, damageAngle
+            );
+        }
+
+        LastExplosionTouchedRegionMask = AnatomyProfile.GetExplosionTouchedRegionMask(
+            self,
+            inflictor.Pos,
+            LastExplosionRadius
+        );
+        if (LastExplosionTouchedRegionMask == 0) { return 0; }
+
+        bool criticalHit = ResolveIncomingActorCritical(inflictor, source);
+        LastArmorPreDefenseDamage = 0.0;
+        LastArmorAbsorbedDamage = 0.0;
+        LastArmorPostDefenseDamage = 0.0;
+        LastArmorHealthDamage = 0;
+        LastArmorDurabilityLoss = 0;
+        LastArmorDurabilityChancePercent = 0.0;
+        LastArmorDurabilityRollPercent = 0.0;
+        LastArmorHitWasCritical = criticalHit;
+        LastLocalizedLucidityLoss = 0.0;
+        LastToughnessDamageMultiplier = DerivedStats != null
+            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0)
+            : 1.0;
+
+        int totalHealthDamage = 0;
+        bool armorPieceBroken = false;
+        int lucidityNaturalGrade = -1;
+        int lucidityEffectiveGrade = -1;
+        double lucidityDefenseRatio = 0.0;
+        for (int regionIndex = 0;
+            regionIndex < AnatomyProfile.RegionCount;
+            regionIndex++)
+        {
+            if ((LastExplosionTouchedRegionMask & (1 << regionIndex)) == 0)
+            {
+                continue;
+            }
+            LastExplosionTouchedRegionCount++;
+            int location = AnatomyProfile.GetLocation(regionIndex);
+            int naturalGrade = AnatomyProfile.GetVulnerability(regionIndex);
+            int slot = GetArmorSlotForHitLocation(location);
+            int reinforcement = ArmorModel != null
+                ? ArmorModel.GetReinforcement(slot) : 0;
+            int effectiveGrade = Min(
+                CaelumConstants.VULNERABILITY_ARMORED_POINT,
+                naturalGrade + reinforcement
+            );
+            double vulnerabilityMultiplier = GetVulnerabilityMultiplier(
+                effectiveGrade,
+                criticalHit
+            );
+            double preDefenseDamage = incomingDamage * vulnerabilityMultiplier;
+            double defenseRatio = ArmorModel != null
+                ? Clamp(ArmorModel.GetDefense(slot) / 100.0, 0.0, 1.0)
+                : 0.0;
+            double absorbedDamage = preDefenseDamage * defenseRatio;
+            double postDefenseDamage = Max(
+                0.0,
+                preDefenseDamage - absorbedDamage
+            );
+
+            LastArmorVulnerabilityGrade = effectiveGrade;
+            LastArmorVulnerabilityMultiplier = vulnerabilityMultiplier;
+            LastArmorPreDefenseDamage += preDefenseDamage;
+            LastArmorAbsorbedDamage += absorbedDamage;
+            LastArmorPostDefenseDamage += postDefenseDamage;
+            totalHealthDamage += Max(
+                0,
+                int(postDefenseDamage * LastToughnessDamageMultiplier + 0.5)
+            );
+
+            if (naturalGrade == CaelumConstants.VULNERABILITY_CRITICAL_POINT
+                && lucidityNaturalGrade < 0)
+            {
+                lucidityNaturalGrade = naturalGrade;
+                lucidityEffectiveGrade = effectiveGrade;
+                lucidityDefenseRatio = defenseRatio;
+            }
+
+            if (ArmorModel != null
+                && ArmorModel.Durability[slot] > 0
+                && absorbedDamage > 0.0)
+            {
+                double eligibleDamage = absorbedDamage
+                    * Max(0.0, ArmorDurabilityDamageMultiplier);
+                int durabilityLoss = int(
+                    eligibleDamage
+                        / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
+                );
+                double remainder = eligibleDamage
+                    - durabilityLoss
+                        * CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
+                double chancePercent = Clamp(
+                    remainder
+                        / CaelumConstants.ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT,
+                    0.0,
+                    100.0
+                );
+                double rollPercent = Random[CaelumArmorDurability](0, 999999)
+                    / 10000.0;
+                if (rollPercent < chancePercent) { durabilityLoss++; }
+                durabilityLoss = Min(durabilityLoss, ArmorModel.Durability[slot]);
+                ArmorModel.Durability[slot] -= durabilityLoss;
+                if (durabilityLoss > 0 && ArmorModel.Durability[slot] <= 0)
+                {
+                    armorPieceBroken = true;
+                }
+                LastArmorDurabilityLoss += durabilityLoss;
+                LastArmorDurabilityChancePercent = chancePercent;
+                LastArmorDurabilityRollPercent = rollPercent;
+            }
+        }
+
+        LastArmorHealthDamage = totalHealthDamage;
+        if (totalHealthDamage <= 0)
+        {
+            if (armorPieceBroken) { ApplyCharacterProfile(); }
+            return 0;
+        }
+
+        double adrenalineRatioBeforeDamage = 0.0;
+        if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
+        {
+            adrenalineRatioBeforeDamage = Clamp(
+                CurrentAdrenaline / DerivedStats.MaximumAdrenaline,
+                0.0,
+                1.0
+            );
+        }
+        int healthBeforeDamage = health;
+        int result = Super.DamageMobj(
+            inflictor,
+            source,
+            totalHealthDamage,
+            mod,
+            flags | DMG_NO_ARMOR,
+            damageAngle
+        );
+        if (health < healthBeforeDamage)
+        {
+            int actualHealthLost = healthBeforeDamage - health;
+            LastArmorHealthDamage = actualHealthLost;
+            CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
+            if (attackProjectile != null)
+            {
+                ApplyAttackPushToTarget(
+                    self,
+                    inflictor.AngleTo(self),
+                    attackProjectile.CaelumPushMultiplier
+                );
+            }
+            if (lucidityNaturalGrade >= 0)
+            {
+                ApplyLocalizedLucidityLoss(
+                    lucidityNaturalGrade,
+                    lucidityEffectiveGrade,
+                    criticalHit,
+                    lucidityDefenseRatio
+                );
+            }
+            UpdateHealthStateEffects();
+            CalculateAndTriggerPain(actualHealthLost, adrenalineRatioBeforeDamage);
+            AddCombatAdrenaline(
+                CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
+                CaelumConstants.ADRENALINE_EVENT_DAMAGE
+            );
+            MarkCombatActivity();
+        }
+        if (armorPieceBroken) { ApplyCharacterProfile(); }
+        return result;
+    }
+
     int ApplyRealCombatDefense(
         Actor inflictor,
         Actor source,
@@ -508,6 +915,15 @@ class CaelumPlayer : DoomPlayer
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
+            if (attackProjectile != null)
+            {
+                ApplyAttackPushToTarget(
+                    self,
+                    inflictor.Angle,
+                    attackProjectile.CaelumPushMultiplier
+                );
+            }
             LastArmorHealthDamage = actualHealthLost;
             ApplyLocalizedLucidityLoss(
                 GetBaseVulnerabilityForArmorSlot(ArmorModel.SelectedSlot),
@@ -1042,6 +1458,7 @@ class CaelumPlayer : DoomPlayer
         LastStaffActualDamage = 0;
         LastStaffCriticalRollPercent = 0.0;
         LastStaffLocationMultiplier = 1.0;
+        LastAttackPushForce = 0.0;
         LastStaffVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
         if (DerivedStats == null
             || player == null
@@ -1087,7 +1504,7 @@ class CaelumPlayer : DoomPlayer
             attackPitch,
             0,
             'CaelumMagicTest',
-            'BulletPuff',
+            'CaelumNoDamageThrustPuff',
             LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
             targetData
         );
@@ -1140,13 +1557,18 @@ class CaelumPlayer : DoomPlayer
             attackPitch,
             integerDamage,
             'CaelumMagicTest',
-            'BulletPuff',
+            'CaelumNoDamageThrustPuff',
             0,
             targetData
         );
         LastStaffActualDamage = actualStaffDamage;
         if (LastStaffActualDamage > 0)
         {
+            ApplyAttackPushToTarget(
+                targetData.linetarget,
+                attackAngle,
+                DerivedStats.MagicalPushMultiplier
+            );
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_MAGIC_DAMAGE,
                 CaelumConstants.ADRENALINE_EVENT_MAGIC_DAMAGE
@@ -1196,12 +1618,12 @@ class CaelumPlayer : DoomPlayer
 
     void CycleDebugShieldType()
     {
-        if (ShieldModel != null) { ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); }
+        if (ShieldModel != null) { ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); PersistCharacterState(); }
     }
 
     void CycleDebugShieldTier()
     {
-        if (ShieldModel != null) { ShieldModel.CycleTier(); ApplyCharacterProfile(); }
+        if (ShieldModel != null) { ShieldModel.CycleTier(); ApplyCharacterProfile(); PersistCharacterState(); }
     }
 
     void ToggleDebugShieldBlock()
@@ -1233,7 +1655,7 @@ class CaelumPlayer : DoomPlayer
 
     void RepairDebugShield()
     {
-        if (ShieldModel != null) { ShieldModel.Repair(); }
+        if (ShieldModel != null) { ShieldModel.Repair(); PersistCharacterState(); }
     }
 
     void ApplyDebugShieldHit()
@@ -1382,17 +1804,24 @@ class CaelumPlayer : DoomPlayer
             {
                 ArmorModel.ApplyAttributeBonuses(Attributes);
             }
-            if (DebugAttributesAt75)
+            if (DebugAttributesAt100)
+            {
+                Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_100);
+            }
+            else if (DebugAttributesAt75)
             {
                 // The probability-test override is deliberately the final
                 // value; equipment bonuses remain active only in normal play.
-                Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL);
+                Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_75);
             }
             DerivedStats.SetEquipmentWeights(
                 ArmorModel != null ? ArmorModel.GetTotalWeight() : 0.0,
                 ShieldModel != null ? ShieldModel.GetWeight() : 0.0
             );
             DerivedStats.Recalculate(Attributes, CharacterProfile);
+            // La masa nativa representa la masa total para que el motor y los
+            // ataques externos respeten tambien el peso equipado del jugador.
+            Mass = Max(1, int(DerivedStats.TotalMass + 0.5));
             // Radius es readonly en ZScript; A_SetSize actualiza ambas medidas
             // y vuelve a enlazar correctamente al jugador en el mundo.
             A_SetSize(
@@ -1698,6 +2127,7 @@ class CaelumPlayer : DoomPlayer
         LastMeleeCrouchCriticalMultiplier = 1.0;
         LastMeleeYawOffset = 0.0;
         LastMeleePitchOffset = 0.0;
+        LastAttackPushForce = 0.0;
 
         if (player == null
             || player.playerstate != PST_LIVE
@@ -1755,7 +2185,7 @@ class CaelumPlayer : DoomPlayer
             attackPitch,
             0,
             'CaelumMeleeTest',
-            'BulletPuff',
+            'CaelumNoDamageThrustPuff',
             LAF_ISMELEEATTACK | LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
             targetData
         );
@@ -1809,7 +2239,7 @@ class CaelumPlayer : DoomPlayer
             attackPitch,
             integerDamage,
             'CaelumMeleeTest',
-            'BulletPuff',
+            'CaelumNoDamageThrustPuff',
             LAF_ISMELEEATTACK,
             targetData
         );
@@ -1817,11 +2247,48 @@ class CaelumPlayer : DoomPlayer
 
         if (LastMeleeHit && LastMeleeActualDamage > 0)
         {
+            ApplyAttackPushToTarget(
+                targetData.linetarget,
+                attackAngle,
+                DerivedStats.PhysicalPushMultiplier
+            );
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_MELEE_DAMAGE,
                 CaelumConstants.ADRENALINE_EVENT_MELEE
             );
             MarkCombatActivity();
+        }
+    }
+
+    // Calcula la resistencia con la masa total cuando el receptor pertenece a
+    // Caelum. Para actores externos usa la masa nativa de GZDoom.
+    double GetTargetKnockbackMultiplier(Actor target)
+    {
+        if (target == null) { return 0.0; }
+        CaelumPlayer playerTarget = CaelumPlayer(target);
+        if (playerTarget != null && playerTarget.DerivedStats != null)
+        {
+            return playerTarget.DerivedStats.KnockbackMultiplier;
+        }
+        CaelumCombatActor combatTarget = CaelumCombatActor(target);
+        double targetMass = Max(1.0, target.Mass);
+        if (combatTarget != null && combatTarget.CombatArmor != null)
+        {
+            targetMass += combatTarget.CombatArmor.GetTotalWeight();
+        }
+        return 100.0 / (targetMass + 50.0);
+    }
+
+    void ApplyAttackPushToTarget(Actor target, double attackAngle, double attackerMultiplier)
+    {
+        LastAttackPushForce = 0.0;
+        if (target == null || target.health <= 0) { return; }
+        LastAttackPushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
+            * Max(0.0, attackerMultiplier)
+            * GetTargetKnockbackMultiplier(target);
+        if (LastAttackPushForce > 0.0)
+        {
+            target.Thrust(LastAttackPushForce, attackAngle);
         }
     }
 
@@ -1964,6 +2431,7 @@ class CaelumPlayer : DoomPlayer
         if (ArmorModel == null) { return; }
         ArmorModel.CycleSelectedType();
         ApplyCharacterProfile();
+        PersistCharacterState();
     }
 
     void CycleDebugArmorTier()
@@ -1971,6 +2439,7 @@ class CaelumPlayer : DoomPlayer
         if (ArmorModel == null) { return; }
         ArmorModel.CycleSelectedTier();
         ApplyCharacterProfile();
+        PersistCharacterState();
     }
 
     void ToggleDebugArmorCritical()
@@ -1984,6 +2453,7 @@ class CaelumPlayer : DoomPlayer
         {
             ArmorModel.RepairSelectedPiece();
             ApplyCharacterProfile();
+            PersistCharacterState();
         }
     }
 
@@ -2721,6 +3191,17 @@ class CaelumPlayer : DoomPlayer
     void ToggleDebugAttributes75()
     {
         DebugAttributesAt75 = !DebugAttributesAt75;
+        if (DebugAttributesAt75) { DebugAttributesAt100 = false; }
+        ApplyCharacterProfile();
+        UpdateAirStateEffects();
+    }
+
+    // La opcion de 100 es independiente pero excluyente para evitar dos
+    // sustituciones simultaneas del mismo perfil.
+    void ToggleDebugAttributes100()
+    {
+        DebugAttributesAt100 = !DebugAttributesAt100;
+        if (DebugAttributesAt100) { DebugAttributesAt75 = false; }
         ApplyCharacterProfile();
         UpdateAirStateEffects();
     }
@@ -2883,6 +3364,7 @@ class CaelumPlayer : DoomPlayer
             UpdateAirStateEffects();
             UpdateLucidityState();
         }
+        PersistCharacterState();
     }
 
     void GoBackCreationWizard()

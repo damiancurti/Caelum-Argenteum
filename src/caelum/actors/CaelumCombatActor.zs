@@ -14,9 +14,13 @@ class CaelumCombatActor : Actor
     int CombatInsight;
     int CombatEffectiveDexterity;
     int CombatEffectiveInsight;
+    int CombatStrength;
+    int CombatIntelligence;
     bool CombatProfileInitialized;
     double CombatBaseSpeed;
     double CombatPhysicalPowerMultiplier;
+    double CombatPhysicalPushMultiplier;
+    double CombatMagicalPushMultiplier;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -70,12 +74,15 @@ class CaelumCombatActor : Actor
     double LastCombatAttackCriticalRollPercent;
     int LastCombatAttackBaseDamage;
     int LastCombatAttackCalculatedDamage;
+    double LastCombatPushForce;
     bool PendingCombatCriticalDelivery;
 
     Default
     {
         // El dolor nativo se desactiva para usar un unico calculo de Caelum.
         PainChance 0;
+        // El retroceso se calcula despues de confirmar dano fisico real.
+        +NODAMAGETHRUST
     }
 
     override void PostBeginPlay()
@@ -189,7 +196,9 @@ class CaelumCombatActor : Actor
         int agility,
         int patience,
         int dexterity,
-        int insight
+        int insight,
+        int strength,
+        int intelligence
     )
     {
         CombatToughness = Max(0, toughness);
@@ -198,6 +207,8 @@ class CaelumCombatActor : Actor
         CombatPatience = Max(0, patience);
         CombatDexterity = Max(0, dexterity);
         CombatInsight = Max(0, insight);
+        CombatStrength = Max(0, strength);
+        CombatIntelligence = Max(0, intelligence);
         CombatProfileInitialized = true;
         RecalculateCombatStatistics();
     }
@@ -250,6 +261,11 @@ class CaelumCombatActor : Actor
             0.0,
             100.0
         );
+        CombatPhysicalPushMultiplier = Max(0.0, Mass / 100.0)
+            * CalculateActorType1Percent(CombatStrength) / 100.0;
+        CombatMagicalPushMultiplier = CalculateActorType1Percent(
+            CombatIntelligence
+        ) / 100.0;
     }
 
     // Entrada ofensiva comun: salud modifica dano, lucidez modifica precision
@@ -309,6 +325,32 @@ class CaelumCombatActor : Actor
         return result;
     }
 
+    // La masa corporal genera empuje; la masa total del receptor lo resiste.
+    double GetActorKnockbackMultiplier(Actor receiver)
+    {
+        if (receiver == null) { return 0.0; }
+        CaelumCombatActor combatReceiver = CaelumCombatActor(receiver);
+        double receiverMass = Max(1.0, receiver.Mass);
+        if (combatReceiver != null && combatReceiver.CombatArmor != null)
+        {
+            receiverMass += combatReceiver.CombatArmor.GetTotalWeight();
+        }
+        return 100.0 / (receiverMass + 50.0);
+    }
+
+    void ApplyActorAttackPush(Actor receiver, double attackAngle, double attackerMultiplier)
+    {
+        LastCombatPushForce = 0.0;
+        if (receiver == null || receiver.health <= 0) { return; }
+        LastCombatPushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
+            * Max(0.0, attackerMultiplier)
+            * GetActorKnockbackMultiplier(receiver);
+        if (LastCombatPushForce > 0.0)
+        {
+            receiver.Thrust(LastCombatPushForce, attackAngle);
+        }
+    }
+
     action void A_CaelumMeleeAttack(int baseDamage)
     {
         // Las acciones sin alcance explicito son invocables desde estados de
@@ -320,10 +362,20 @@ class CaelumCombatActor : Actor
             false
         );
         if (calculatedDamage <= 0) { return; }
+        Actor meleeVictim = combatActor.Target;
+        int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
         combatActor.A_CustomMeleeAttack(
             calculatedDamage,
             "weapons/swordhit"
         );
+        if (meleeVictim != null && meleeVictim.health < victimHealthBefore)
+        {
+            combatActor.ApplyActorAttackPush(
+                meleeVictim,
+                combatActor.AngleTo(meleeVictim),
+                combatActor.CombatPhysicalPushMultiplier
+            );
+        }
         // Un impacto consume esta marca sincronicamente en CaelumPlayer.
         // Un fallo no debe dejar un critico pendiente para otro dano posterior.
         combatActor.PendingCombatCriticalDelivery = false;
@@ -354,7 +406,11 @@ class CaelumCombatActor : Actor
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
                 combatActor.LastCombatAttackAccuracySucceeded,
-                combatActor.LastCombatAttackCriticalHit
+                combatActor.LastCombatAttackCriticalHit,
+                magicalAttack,
+                magicalAttack
+                    ? combatActor.CombatMagicalPushMultiplier
+                    : combatActor.CombatPhysicalPushMultiplier
             );
         }
         combatActor.PendingCombatCriticalDelivery = false;
@@ -397,6 +453,20 @@ class CaelumCombatActor : Actor
             }
         }
 
+        if (flags & DMG_EXPLOSION)
+        {
+            PendingLocalizedImpact = false;
+            PendingLocalizedCriticalHit = false;
+            return ApplyActorExplosionDefense(
+                inflictor,
+                source,
+                damage,
+                mod,
+                flags,
+                angle
+            );
+        }
+
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = GetCombatAdrenalineRatio();
         bool hadLocalizedImpactForLucidity = PendingLocalizedImpact;
@@ -432,6 +502,15 @@ class CaelumCombatActor : Actor
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
+            if (attackProjectile != null)
+            {
+                ApplyActorAttackPush(
+                    self,
+                    inflictor.Angle,
+                    attackProjectile.CaelumPushMultiplier
+                );
+            }
             ApplyActorLocalizedLucidityLoss(
                 naturalVulnerabilityBeforeDamage,
                 effectiveVulnerabilityBeforeDamage,
@@ -448,6 +527,194 @@ class CaelumCombatActor : Actor
             MarkActorCombatActivity();
         }
 
+        return result;
+    }
+
+    double GetActorEffectiveExplosionRadius(Actor inflictor, int incomingDamage)
+    {
+        double resolvedRadius = Max(1.0, double(incomingDamage));
+        if (inflictor == null) { return resolvedRadius; }
+
+        resolvedRadius = inflictor.ExplosionRadius;
+        if (resolvedRadius < 0.0)
+        {
+            resolvedRadius = inflictor.ExplosionDamage;
+        }
+        if (resolvedRadius <= 0.0)
+        {
+            resolvedRadius = Max(1.0, double(incomingDamage));
+        }
+        return resolvedRadius;
+    }
+
+    int ApplyActorExplosionDefense(
+        Actor inflictor,
+        Actor source,
+        int incomingDamage,
+        Name mod,
+        int flags,
+        double damageAngle
+    )
+    {
+        if (incomingDamage <= 0 || inflictor == null || AnatomyProfile == null)
+        {
+            return 0;
+        }
+        if (bInvulnerable)
+        {
+            return Super.DamageMobj(
+                inflictor, source, incomingDamage, mod, flags, damageAngle
+            );
+        }
+
+        double explosionRadius = GetActorEffectiveExplosionRadius(
+            inflictor,
+            incomingDamage
+        );
+        int touchedRegionMask = AnatomyProfile.GetExplosionTouchedRegionMask(
+            self,
+            inflictor.Pos,
+            explosionRadius
+        );
+        if (touchedRegionMask == 0) { return 0; }
+
+        CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
+        bool criticalHit = attackProjectile != null
+            && attackProjectile.CaelumCriticalHit;
+        LastCombatArmorIncomingDamage = 0.0;
+        LastCombatArmorAbsorbedDamage = 0.0;
+        LastCombatArmorPostDefenseDamage = 0.0;
+        LastCombatArmorDurabilityLoss = 0;
+        LastCombatArmorDurabilityChancePercent = 0.0;
+        LastCombatArmorDurabilityRollPercent = 0.0;
+        LastCombatToughnessDamageMultiplier = Clamp(
+            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
+            0.0,
+            1.0
+        );
+
+        int totalHealthDamage = 0;
+        int lucidityNaturalGrade = -1;
+        int lucidityEffectiveGrade = -1;
+        double lucidityDefensePercent = 0.0;
+        for (int regionIndex = 0;
+            regionIndex < AnatomyProfile.RegionCount;
+            regionIndex++)
+        {
+            if ((touchedRegionMask & (1 << regionIndex)) == 0) { continue; }
+
+            int location = AnatomyProfile.GetLocation(regionIndex);
+            int naturalGrade = AnatomyProfile.GetVulnerability(regionIndex);
+            int effectiveGrade = GetEffectiveActorVulnerability(
+                naturalGrade,
+                location
+            );
+            int slot = GetArmorSlotForLocation(location);
+            double preDefenseDamage = incomingDamage
+                * GetActorVulnerabilityMultiplier(effectiveGrade);
+            int defensePercent = CombatArmor != null
+                ? CombatArmor.GetDefense(slot) : 0;
+            double defenseRatio = Clamp(defensePercent / 100.0, 0.0, 1.0);
+            double absorbedDamage = preDefenseDamage * defenseRatio;
+            double postDefenseDamage = Max(
+                0.0,
+                preDefenseDamage - absorbedDamage
+            );
+
+            LastAnatomyLocation = location;
+            LastAnatomyNaturalVulnerabilityGrade = naturalGrade;
+            LastAnatomyVulnerabilityGrade = effectiveGrade;
+            LastCombatArmorSlot = slot;
+            LastCombatArmorDefensePercent = defensePercent;
+            LastCombatArmorIncomingDamage += preDefenseDamage;
+            LastCombatArmorAbsorbedDamage += absorbedDamage;
+            LastCombatArmorPostDefenseDamage += postDefenseDamage;
+            totalHealthDamage += Max(
+                0,
+                int(postDefenseDamage
+                    * LastCombatToughnessDamageMultiplier + 0.5)
+            );
+
+            if (naturalGrade == CaelumConstants.VULNERABILITY_CRITICAL_POINT
+                && lucidityNaturalGrade < 0)
+            {
+                lucidityNaturalGrade = naturalGrade;
+                lucidityEffectiveGrade = effectiveGrade;
+                lucidityDefensePercent = defensePercent;
+            }
+
+            if (CombatArmor != null
+                && CombatArmor.Durability[slot] > 0
+                && absorbedDamage > 0.0)
+            {
+                int durabilityLoss = int(
+                    absorbedDamage
+                        / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
+                );
+                double remainder = absorbedDamage
+                    - durabilityLoss
+                        * CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
+                double chancePercent = Clamp(
+                    remainder
+                        / CaelumConstants.ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT,
+                    0.0,
+                    100.0
+                );
+                double rollPercent = Random[CaelumActorArmorDurability](0, 999999)
+                    / 10000.0;
+                if (rollPercent < chancePercent) { durabilityLoss++; }
+                durabilityLoss = Min(
+                    durabilityLoss,
+                    CombatArmor.Durability[slot]
+                );
+                CombatArmor.Durability[slot] -= durabilityLoss;
+                LastCombatArmorDurabilityLoss += durabilityLoss;
+                LastCombatArmorDurabilityChancePercent = chancePercent;
+                LastCombatArmorDurabilityRollPercent = rollPercent;
+            }
+        }
+
+        if (totalHealthDamage <= 0) { return 0; }
+        int healthBeforeDamage = health;
+        double adrenalineRatioBeforeDamage = GetCombatAdrenalineRatio();
+        int result = Super.DamageMobj(
+            inflictor,
+            source,
+            totalHealthDamage,
+            mod,
+            flags | DMG_NO_ARMOR,
+            damageAngle
+        );
+        if (health < healthBeforeDamage)
+        {
+            int actualHealthLost = healthBeforeDamage - health;
+            if (attackProjectile != null)
+            {
+                ApplyActorAttackPush(
+                    self,
+                    inflictor.AngleTo(self),
+                    attackProjectile.CaelumPushMultiplier
+                );
+            }
+            if (lucidityNaturalGrade >= 0)
+            {
+                LastCombatArmorDefensePercent = int(lucidityDefensePercent);
+                ApplyActorLocalizedLucidityLoss(
+                    lucidityNaturalGrade,
+                    lucidityEffectiveGrade,
+                    criticalHit
+                );
+            }
+            UpdateCombatHealthEffects();
+            CalculateAndTriggerActorPain(
+                actualHealthLost,
+                adrenalineRatioBeforeDamage
+            );
+            AddActorCombatAdrenaline(
+                CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
+            );
+            MarkActorCombatActivity();
+        }
         return result;
     }
 
@@ -552,7 +819,7 @@ class CaelumCombatActor : Actor
         PendingLocalizedImpact = false;
 
         // Sword/staff traces already include the authored region multiplier.
-        // Damage without contact metadata adopts the neutral torso fallback
+        // Damage without contact metadata adopts the sensitive torso fallback
         // here so ordinary attacks still enter the same vulnerability order.
         if (!hadLocalizedImpact)
         {

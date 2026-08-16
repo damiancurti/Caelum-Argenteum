@@ -101,4 +101,81 @@ class CaelumAnatomyProfile : Object
         }
         return RegionVulnerability[regionIndex];
     }
+
+    int FindRegionForLocation(int location)
+    {
+        for (int i = 0; i < RegionCount; i++)
+        {
+            if (RegionLocation[i] == location) { return i; }
+        }
+        return -1;
+    }
+
+    // Interseca la esfera de una explosión con cada volumen anatómico. La
+    // altura define un tramo vertical y la lateralidad un anillo del cilindro
+    // del actor; por eso los brazos laterales no cuentan como torso ni se
+    // duplican cuando la onda alcanza ambos lados.
+    int GetExplosionTouchedRegionMask(
+        Actor owner,
+        Vector3 explosionOrigin,
+        double explosionRadius
+    )
+    {
+        if (owner == null || explosionRadius <= 0.0) { return 0; }
+
+        double deltaX = explosionOrigin.X - owner.Pos.X;
+        double deltaY = explosionOrigin.Y - owner.Pos.Y;
+        double radialDistance = Sqrt(deltaX * deltaX + deltaY * deltaY);
+        int touchedRegions = 0;
+        bool armsAlreadyTouched = false;
+
+        for (int i = 0; i < RegionCount; i++)
+        {
+            int location = RegionLocation[i];
+            if (location == CaelumConstants.HIT_LOCATION_ARMS
+                && armsAlreadyTouched)
+            {
+                continue;
+            }
+
+            double minimumZ = owner.Pos.Z
+                + RegionMinimumHeight[i] * owner.Height;
+            double maximumZ = owner.Pos.Z
+                + RegionMaximumHeight[i] * owner.Height;
+            double verticalGap = 0.0;
+            if (explosionOrigin.Z < minimumZ)
+            {
+                verticalGap = minimumZ - explosionOrigin.Z;
+            }
+            else if (explosionOrigin.Z > maximumZ)
+            {
+                verticalGap = explosionOrigin.Z - maximumZ;
+            }
+
+            double innerRadius = RegionMinimumLateral[i] * owner.Radius;
+            double outerRadius = RegionMaximumLateral[i] * owner.Radius;
+            double horizontalGap = 0.0;
+            if (radialDistance < innerRadius)
+            {
+                horizontalGap = innerRadius - radialDistance;
+            }
+            else if (radialDistance > outerRadius)
+            {
+                horizontalGap = radialDistance - outerRadius;
+            }
+
+            double closestDistance = Sqrt(
+                horizontalGap * horizontalGap + verticalGap * verticalGap
+            );
+            if (closestDistance <= explosionRadius)
+            {
+                touchedRegions |= 1 << i;
+                if (location == CaelumConstants.HIT_LOCATION_ARMS)
+                {
+                    armsAlreadyTouched = true;
+                }
+            }
+        }
+        return touchedRegions;
+    }
 }

@@ -32,6 +32,7 @@ alias ca_debug_clear_adrenaline "netevent ca_debug_clear_adrenaline"
 alias ca_debug_pain_damage "netevent ca_debug_pain_damage"
 alias ca_debug_evasion_attack "netevent ca_debug_evasion_attack"
 alias ca_debug_attributes_75 "netevent ca_debug_attributes_75"
+alias ca_debug_attributes_100 "netevent ca_debug_attributes_100"
 alias ca_debug_health_state "netevent ca_debug_health_state"
 alias ca_debug_heal_health "netevent ca_debug_heal_health"
 alias ca_debug_next_page "netevent ca_debug_next_page"
@@ -92,6 +93,7 @@ addmenukey "$CA_CONTROL_DEBUG_CLEAR_ADRENALINE" ca_debug_clear_adrenaline
 addmenukey "$CA_CONTROL_DEBUG_PAIN_DAMAGE" ca_debug_pain_damage
 addmenukey "$CA_CONTROL_DEBUG_EVASION_ATTACK" ca_debug_evasion_attack
 addmenukey "$CA_CONTROL_DEBUG_ATTRIBUTES_75" ca_debug_attributes_75
+addmenukey "$CA_CONTROL_DEBUG_ATTRIBUTES_100" ca_debug_attributes_100
 addmenukey "$CA_CONTROL_DEBUG_HEALTH_STATE" ca_debug_health_state
 addmenukey "$CA_CONTROL_DEBUG_HEAL_HEALTH" ca_debug_heal_health
 addmenukey "$CA_CONTROL_DEBUG_NEXT_PAGE" ca_debug_next_page
