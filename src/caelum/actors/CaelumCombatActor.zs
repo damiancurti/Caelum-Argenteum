@@ -7,7 +7,7 @@ class CaelumCombatActor : Actor
     CaelumArmorModel CombatArmor;
     int CombatMaximumHealth;
     int CombatToughness;
-    int CombatSurvival;
+    int CombatResilience;
     int CombatAgility;
     int CombatPatience;
     int CombatDexterity;
@@ -185,7 +185,7 @@ class CaelumCombatActor : Actor
     // Cada actor carga una vez sus atributos defensivos; puede recalcularlos.
     void InitializeCombatProfile(
         int toughness,
-        int survival,
+        int resilience,
         int agility,
         int patience,
         int dexterity,
@@ -193,7 +193,7 @@ class CaelumCombatActor : Actor
     )
     {
         CombatToughness = Max(0, toughness);
-        CombatSurvival = Max(0, survival);
+        CombatResilience = Max(0, resilience);
         CombatAgility = Max(0, agility);
         CombatPatience = Max(0, patience);
         CombatDexterity = Max(0, dexterity);
@@ -205,8 +205,8 @@ class CaelumCombatActor : Actor
     void RecalculateCombatStatistics()
     {
         MaximumCombatAdrenaline = 1000.0
-            * (100.0 + 2.0 * CombatSurvival
-                * (CombatSurvival + 1) / 101.0) / 100.0;
+            * (100.0 + 2.0 * CombatResilience
+                * (CombatResilience + 1) / 101.0) / 100.0;
         CurrentCombatAdrenaline = Clamp(
             CurrentCombatAdrenaline,
             0.0,
@@ -309,43 +309,55 @@ class CaelumCombatActor : Actor
         return result;
     }
 
-    action(actor) void A_CaelumMeleeAttack(int baseDamage)
+    action void A_CaelumMeleeAttack(int baseDamage)
     {
-        int calculatedDamage = PrepareActorOutgoingDamage(baseDamage, false);
+        // Las acciones sin alcance explicito son invocables desde estados de
+        // monstruo. El casteo recupera el tipo concreto para llamar su logica.
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
+            baseDamage,
+            false
+        );
         if (calculatedDamage <= 0) { return; }
-        A_CustomMeleeAttack(calculatedDamage, "weapons/swordhit");
+        combatActor.A_CustomMeleeAttack(
+            calculatedDamage,
+            "weapons/swordhit"
+        );
         // Un impacto consume esta marca sincronicamente en CaelumPlayer.
         // Un fallo no debe dejar un critico pendiente para otro dano posterior.
-        PendingCombatCriticalDelivery = false;
+        combatActor.PendingCombatCriticalDelivery = false;
     }
 
     // El resultado a distancia queda fijado al disparar. Los cambios posteriores
     // del atacante no alteran un proyectil que ya esta viajando por el mundo.
-    action(actor) void A_CaelumSpawnProjectile(
+    action void A_CaelumSpawnProjectile(
         class<CaelumActorProjectile> missileType,
         double spawnHeight,
         int baseDamage,
         bool magicalAttack
     )
     {
-        int calculatedDamage = PrepareActorOutgoingDamage(
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             magicalAttack
         );
         if (calculatedDamage <= 0) { return; }
 
         CaelumActorProjectile missile = CaelumActorProjectile(
-            A_SpawnProjectile(missileType, spawnHeight)
+            combatActor.A_SpawnProjectile(missileType, spawnHeight)
         );
         if (missile != null)
         {
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
-                LastCombatAttackAccuracySucceeded,
-                LastCombatAttackCriticalHit
+                combatActor.LastCombatAttackAccuracySucceeded,
+                combatActor.LastCombatAttackCriticalHit
             );
         }
-        PendingCombatCriticalDelivery = false;
+        combatActor.PendingCombatCriticalDelivery = false;
     }
 
     override int DamageMobj(

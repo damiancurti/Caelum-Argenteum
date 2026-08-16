@@ -130,12 +130,12 @@ class CaelumDerivedStats : Object
         MaximumAnima = CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
             * CalculateType1Percent(attributes.Patience);
 
-        HealthRegenerationPercent = CalculateType4Percent(attributes.Survival);
+        HealthRegenerationPercent = CalculateType4Percent(attributes.Resilience);
         HealthRegenerationPerSecond = MaximumHealth
             / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
             * HealthRegenerationPercent / 100.0;
         MaximumAdrenaline = 100.0 * CaelumConstants.ADRENALINE_CAPACITY_SCALE
-            * CalculateType4Percent(attributes.Survival) / 100.0;
+            * CalculateType4Percent(attributes.Resilience) / 100.0;
 
         MeleeDamagePercent = CalculateType1Percent(attributes.Strength);
         PhysicalPushMultiplier = BaseMassMultiplier;
@@ -166,7 +166,7 @@ class CaelumDerivedStats : Object
             - attributes.Constitution * (attributes.Constitution + 1) / 10100.0,
             0.0, 1.0) * BaseMassMultiplier;
         SleepLossMultiplier = Clamp(1.0
-            - attributes.Survival * (attributes.Survival + 1) / 10100.0,
+            - attributes.Resilience * (attributes.Resilience + 1) / 10100.0,
             0.0, 1.0);
 
         AnimaRegenerationPercent = CalculateType4Percent(attributes.Patience);
@@ -182,7 +182,7 @@ class CaelumDerivedStats : Object
         DialogueSkillPercent = CalculateType2Percent(attributes.Eloquence);
 
         MaximumAir = CaelumConstants.BASE_AIR_CAPACITY
-            * CalculateType4Percent(attributes.Survival) / 100.0;
+            * CalculateType4Percent(attributes.Resilience) / 100.0;
         CarryCapacity = CalculateType1Percent(attributes.Strength);
         EquippedWeight = ArmorWeight + ShieldWeight + DebugWeight;
         TotalMass = BaseMass + EquippedWeight;

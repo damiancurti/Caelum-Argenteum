@@ -193,7 +193,7 @@ class CaelumConstants : Object
     const GZDOOM_BASE_MOVEMENT = 1.0;
     const GZDOOM_BASE_JUMP_Z = 8.0;
 
-    // Air starts from a base capacity of 1000. Survival applies the existing
+    // El aire parte de 1000 y Resilience aplica el crecimiento existente.
     // Type 4 percentage without changing its curve or reference levels.
     const BASE_AIR_CAPACITY = 1000.0;
 
@@ -270,7 +270,7 @@ class CaelumConstants : Object
     const ATTRIBUTE_CONSTITUTION = 2;
     const ATTRIBUTE_AGILITY = 3;
     const ATTRIBUTE_DEXTERITY = 4;
-    const ATTRIBUTE_SURVIVAL = 5;
+    const ATTRIBUTE_RESILIENCE = 5;
     const ATTRIBUTE_CHARISMA = 6;
     const ATTRIBUTE_EMPATHY = 7;
     const ATTRIBUTE_ELOQUENCE = 8;

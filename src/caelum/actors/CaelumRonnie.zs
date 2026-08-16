@@ -19,8 +19,8 @@ class CaelumRonnie : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Fisico 20, tecnico 18, social 4 y mental 4.
-        InitializeCombatProfile(20, 18, 18, 4, 18, 4);
+        // Fisico 20, tecnico 18, social 5 y mental 7.
+        InitializeCombatProfile(20, 18, 18, 7, 18, 7);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MEDIUM, 1);
     }
 
@@ -45,7 +45,7 @@ class CaelumRonnie : CaelumCombatActor
         RONI D 7 A_FaceTarget;
         RONI D 0 A_CaelumSpawnProjectile(
             "CaelumRonnieMagicBolt", 40,
-            132, true
+            154, true
         );
         RONI A 9;
         Goto See;

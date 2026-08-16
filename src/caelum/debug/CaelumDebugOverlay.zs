@@ -385,7 +385,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.ATTRIBUTE_TOUGHNESS: return "CA_ATTRIBUTE_TOUGHNESS";
             case CaelumConstants.ATTRIBUTE_CONSTITUTION: return "CA_ATTRIBUTE_CONSTITUTION";
             case CaelumConstants.ATTRIBUTE_DEXTERITY: return "CA_ATTRIBUTE_DEXTERITY";
-            case CaelumConstants.ATTRIBUTE_SURVIVAL: return "CA_ATTRIBUTE_SURVIVAL";
+            case CaelumConstants.ATTRIBUTE_RESILIENCE: return "CA_ATTRIBUTE_RESILIENCE";
             case CaelumConstants.ATTRIBUTE_AGILITY: return "CA_ATTRIBUTE_AGILITY";
             case CaelumConstants.ATTRIBUTE_CHARISMA: return "CA_ATTRIBUTE_CHARISMA";
             case CaelumConstants.ATTRIBUTE_EMPATHY: return "CA_ATTRIBUTE_EMPATHY";
@@ -520,6 +520,61 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
     }
 
+    // El creador inicial usa controles propios y no depende de asignaciones.
+    // Escape, la consola y el boton Start conservan su comportamiento global.
+    override bool InputProcess(InputEvent e)
+    {
+        CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
+        if (localPlayer == null || !localPlayer.CreationWizardOpen || menuactive != 0)
+        {
+            return false;
+        }
+
+        if (e.Type != InputEvent.Type_KeyDown
+            && e.Type != InputEvent.Type_KeyUp)
+        {
+            return false;
+        }
+
+        if (e.KeyScan == InputEvent.Key_Escape
+            || e.KeyScan == InputEvent.Key_Grave
+            || e.KeyScan == InputEvent.Key_Pad_Start)
+        {
+            return false;
+        }
+
+        if (e.Type == InputEvent.Type_KeyUp)
+        {
+            return true;
+        }
+
+        if (e.KeyScan == InputEvent.Key_RightArrow
+            || e.KeyScan == InputEvent.Key_DownArrow
+            || e.KeyScan == InputEvent.Key_Pad_DPad_Right
+            || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+        {
+            SendNetworkEvent("ca_creation_next_choice");
+        }
+        else if (e.KeyScan == InputEvent.Key_Enter
+            || e.KeyScan == InputEvent.Key_Pad_A)
+        {
+            SendNetworkEvent("ca_creation_confirm");
+        }
+        else if (e.KeyScan == InputEvent.Key_Space
+            || e.KeyScan == InputEvent.Key_Pad_X)
+        {
+            SendNetworkEvent("ca_creation_add_point");
+        }
+        else if (e.KeyScan == InputEvent.Key_Backspace
+            || e.KeyScan == InputEvent.Key_LeftArrow
+            || e.KeyScan == InputEvent.Key_Pad_B)
+        {
+            SendNetworkEvent("ca_creation_back");
+        }
+
+        return true;
+    }
+
     // RenderOverlay runs whenever GZDoom draws the player's game view.
     override void RenderOverlay(RenderEvent event)
     {
@@ -622,7 +677,7 @@ class CaelumDebugOverlay : EventHandler
             DrawAttribute("CA_ATTRIBUTE_CONSTITUTION", attributes.Constitution, 20.0, 94.0);
             DrawAttribute("CA_ATTRIBUTE_AGILITY", attributes.Agility, 180.0, 62.0);
             DrawAttribute("CA_ATTRIBUTE_DEXTERITY", attributes.Dexterity, 180.0, 78.0);
-            DrawAttribute("CA_ATTRIBUTE_SURVIVAL", attributes.Survival, 180.0, 94.0);
+            DrawAttribute("CA_ATTRIBUTE_RESILIENCE", attributes.Resilience, 180.0, 94.0);
             DrawAttribute("CA_ATTRIBUTE_CHARISMA", attributes.Charisma, 340.0, 62.0);
             DrawAttribute("CA_ATTRIBUTE_EMPATHY", attributes.Empathy, 340.0, 78.0);
             DrawAttribute("CA_ATTRIBUTE_ELOQUENCE", attributes.Eloquence, 340.0, 94.0);
@@ -1340,7 +1395,7 @@ class CaelumDebugOverlay : EventHandler
 
         // Technical attributes: second column.
         DrawAttribute("CA_ATTRIBUTE_DEXTERITY", attributes.Dexterity, 180.0, 58.0);
-        DrawAttribute("CA_ATTRIBUTE_SURVIVAL", attributes.Survival, 180.0, 70.0);
+        DrawAttribute("CA_ATTRIBUTE_RESILIENCE", attributes.Resilience, 180.0, 70.0);
         DrawAttribute("CA_ATTRIBUTE_AGILITY", attributes.Agility, 180.0, 82.0);
 
         // Social attributes: third column.

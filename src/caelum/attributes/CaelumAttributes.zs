@@ -13,7 +13,7 @@ class CaelumAttributes : Object
     // Technical layer.
     int Agility;
     int Dexterity;
-    int Survival;
+    int Resilience;
 
     // Social layer.
     int Charisma;
@@ -34,7 +34,7 @@ class CaelumAttributes : Object
         Constitution = level;
         Agility = level;
         Dexterity = level;
-        Survival = level;
+        Resilience = level;
         Charisma = level;
         Empathy = level;
         Eloquence = level;
@@ -61,7 +61,7 @@ class CaelumAttributes : Object
 
         Agility = technical + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_AGILITY];
         Dexterity = technical + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_DEXTERITY];
-        Survival = technical + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_SURVIVAL];
+        Resilience = technical + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_RESILIENCE];
 
         Charisma = social + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_CHARISMA];
         Empathy = social + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_EMPATHY];
@@ -77,7 +77,7 @@ class CaelumAttributes : Object
     int GetTotalPrimaryLevels()
     {
         return Strength + Toughness + Constitution
-            + Agility + Dexterity + Survival
+            + Agility + Dexterity + Resilience
             + Charisma + Empathy + Eloquence
             + Intelligence + Patience + Insight;
     }

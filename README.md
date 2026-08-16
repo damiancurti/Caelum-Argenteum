@@ -29,9 +29,11 @@ folder and launch GZDoom.
 - A project structure ready for modular ZScript systems.
 - An eight-page character creator with race, two classes/profession, sex,
   height, and validated family/individual point limits.
+- New characters enter that creator automatically. Gameplay remains paused and
+  protected until confirmation, with direct keyboard and gamepad navigation.
 - Derived health, Anima, air, carry-capacity, mass-tier, and size-tier values.
 - Real per-piece armor and shield weight plus separate debug-added weight.
-- Survival as the current name for the former Resilience attribute.
+- Resilience as the definitive name of the technical recovery attribute.
 - Eloquence casting speed, Anima-cost reduction, ability range, and dialogue
   values, with the live staff consuming the adjusted cost and duration.
 - Seven-grade localized vulnerability and four-slot armor test controls.

@@ -310,6 +310,13 @@ class CaelumPlayer : DoomPlayer
             "[Caelum] Character creation values loaded. Attribute total: %d",
             Attributes.GetTotalPrimaryLevels()
         );
+
+        // Un personaje nuevo debe completar el creador antes de jugar.
+        // El indicador queda guardado junto al actor y evita reabrirlo al cargar.
+        if (!CharacterCreationComplete && !CreationWizardOpen)
+        {
+            BeginCreationWizard();
+        }
     }
 
     // GZDoom calls this virtual function when health pickups and other engine
@@ -336,6 +343,12 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
+        // El mundo no puede dañar al personaje antes de confirmar su creación.
+        if (CreationWizardOpen && !CharacterCreationComplete)
+        {
+            return 0;
+        }
+
         LastEvasionAttempted = false;
         LastEvasionSucceeded = false;
         LastEvasionChancePercent = 0.0;
@@ -820,12 +833,37 @@ class CaelumPlayer : DoomPlayer
         return totalTics / double(TICRATE);
     }
 
+    // Bloquea las acciones normales mientras el creador ocupa la pantalla.
+    // Los comandos del creador viajan por eventos de red independientes.
+    override void PlayerThink()
+    {
+        if (CreationWizardOpen && player != null)
+        {
+            UserCmd creationCommand = player.cmd;
+            creationCommand.forwardmove = 0;
+            creationCommand.sidemove = 0;
+            creationCommand.upmove = 0;
+            creationCommand.buttons = 0;
+            Vel.X = 0.0;
+            Vel.Y = 0.0;
+        }
+
+        Super.PlayerThink();
+    }
+
     // Tick runs once per game tic. GZDoom uses 35 tics per second, so dividing
     // the documented per-second rate by TICRATE produces frame-independent
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
         Super.Tick();
+
+        // La creación inicial pausa necesidades, regeneraciones y costes.
+        if (CreationWizardOpen)
+        {
+            IsSpendingRunningAir = false;
+            return;
+        }
 
         UpdateHealthStateEffects();
 
@@ -1355,8 +1393,13 @@ class CaelumPlayer : DoomPlayer
                 ShieldModel != null ? ShieldModel.GetWeight() : 0.0
             );
             DerivedStats.Recalculate(Attributes, CharacterProfile);
-            Height = DerivedStats.ActorHeight;
-            Radius = DerivedStats.ActorRadius;
+            // Radius es readonly en ZScript; A_SetSize actualiza ambas medidas
+            // y vuelve a enlazar correctamente al jugador en el mundo.
+            A_SetSize(
+                DerivedStats.ActorRadius,
+                DerivedStats.ActorHeight,
+                false
+            );
             UpdateLucidityAccuracyEffects();
 
             // Recalculation never grants free healing. Increasing the maximum
@@ -1430,7 +1473,7 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    // Add a positive amount without exceeding the Survival-derived maximum.
+    // Agrega una cantidad positiva sin superar el maximo derivado de Resiliencia.
     void AddAdrenaline(double amount)
     {
         if (DerivedStats != null)
@@ -2444,7 +2487,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Natural recovery is stopped by any critical survival state. Healing uses
-    // Survival Type 4 and spends hunger/sed in proportion to health restored.
+    // Resiliencia Tipo 4 y gasta hambre/sed segun la vida restaurada.
     void ApplyNaturalHealthRegeneration()
     {
         if (player == null
@@ -2710,7 +2753,11 @@ class CaelumPlayer : DoomPlayer
     {
         if (CreationWizardOpen)
         {
-            CancelCreationWizard();
+            // El creador inicial es obligatorio y no puede cerrarse sin confirmar.
+            if (CharacterCreationComplete)
+            {
+                CancelCreationWizard();
+            }
             return;
         }
 
@@ -2726,6 +2773,11 @@ class CaelumPlayer : DoomPlayer
 
     void CancelCreationWizard()
     {
+        if (!CharacterCreationComplete)
+        {
+            return;
+        }
+
         if (CreationProfileBackup != null && CreationAllocationBackup != null)
         {
             CharacterProfile.CopyFrom(CreationProfileBackup);
@@ -2804,11 +2856,33 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        // Confirming the summary commits the live values by discarding backups.
+        // Confirmar por primera vez inicia todos los recursos con el perfil final.
+        bool firstConfirmation = !CharacterCreationComplete;
         CharacterCreationComplete = true;
         CreationProfileBackup = null;
         CreationAllocationBackup = null;
         CreationWizardOpen = false;
+        ApplyCharacterProfile();
+
+        if (firstConfirmation)
+        {
+            CaelumMaximumHealth = Max(1, int(DerivedStats.MaximumHealth));
+            health = CaelumMaximumHealth;
+            if (player != null) { player.health = health; }
+            CurrentAnima = DerivedStats.MaximumAnima;
+            CurrentAir = DerivedStats.MaximumAir;
+            CurrentAdrenaline = 0.0;
+            CurrentLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
+            RefillSurvivalResources();
+            HealthResourceInitialized = true;
+            AnimaResourceInitialized = true;
+            AirResourceInitialized = true;
+            AdrenalineResourceInitialized = true;
+            LucidityResourceInitialized = true;
+            UpdateHealthStateEffects();
+            UpdateAirStateEffects();
+            UpdateLucidityState();
+        }
     }
 
     void GoBackCreationWizard()
@@ -2824,7 +2898,11 @@ class CaelumPlayer : DoomPlayer
         }
         else
         {
-            CancelCreationWizard();
+            // En la creación inicial la primera página es el límite de retroceso.
+            if (CharacterCreationComplete)
+            {
+                CancelCreationWizard();
+            }
         }
     }
 }

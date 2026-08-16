@@ -19,8 +19,8 @@ class CaelumRulo : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Fisico 20, tecnico 18, social 6 y mental 2.
-        InitializeCombatProfile(20, 18, 18, 2, 18, 2);
+        // Fisico 20, tecnico 18, social 9 y mental 3.
+        InitializeCombatProfile(20, 18, 18, 3, 18, 3);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_HEAVY, 1);
     }
 

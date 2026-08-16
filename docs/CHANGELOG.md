@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.1.0 — Initial character-creation flow
+
+- Opened the eight-page creator automatically for every new character and
+  prevented cancelling the mandatory first pass.
+- Added direct keyboard and gamepad input, independent from custom bindings.
+- Blocked movement, attacks, resource simulation, and incoming damage until
+  the initial profile is confirmed.
+- Initialized health, Anima, air, lucidity, adrenaline, hunger, thirst, and
+  sleep from the final confirmed profile without granting free refills on edits.
+- Preserved the completion flag and profile fields through ordinary saves.
+- Corrected Rulo to 20/18/9/3 and Ronnie to 20/18/5/7. Ronnie's Intelligence
+  correction raises his magical projectile base damage from 132 to 154.
+
+## 4.0.1 — GZDoom 4.14.2 parser repair
+
+- Replaced the incompatible explicit actor action scope with state-compatible
+  actions that cast `self` to `CaelumCombatActor` before using custom members.
+- Replaced direct assignment to readonly `Radius` with GZDoom's `A_SetSize`,
+  which safely updates player radius and height in the world.
+- Restored Resilience as the definitive attribute name in code and localization.
+
 ## 4.0.0 — Character creation, mass, size, and Anima overhaul
 
 - Fixed the GZDoom 4.14.2 actor-action scope and UI/play-context parse errors.
@@ -12,8 +33,8 @@
   hunger, and thirst.
 - Added exact per-piece armor weights and included armor plus shield weight in
   equipped load while preserving separate debug-added weight.
-- Renamed Mana to Anima and Resilience to Survival throughout current code and
-  localization.
+- Renamed Mana to Anima and retained Resilience as the technical recovery
+  attribute throughout current code and localization.
 - Connected Eloquence to staff casting time and Anima cost, and prepared its
   ability-range and dialogue values.
 - Rebuilt Rulo, Ronnie, Argento, and Caella from the authoritative final 4.0

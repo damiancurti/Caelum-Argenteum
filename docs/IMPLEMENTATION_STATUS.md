@@ -15,14 +15,16 @@ Status legend:
 
 **Implemented — pending validation**
 
-- Actor state actions now use explicit `action(actor)` scope, removing the
-  incompatible/ambiguous `self` diagnostics from GZDoom 4.14.2.
+- Actor states use unscoped actions compatible with monster state chains. Each
+  action casts `self` to `CaelumCombatActor` before accessing custom members.
+- Player collision dimensions use GZDoom's `A_SetSize`; `Radius` itself is a
+  readonly ZScript field and cannot be assigned directly.
 - Effective actor Dexterity and Insight are cached in play scope. The UI overlay
   reads those fields instead of illegally calling play functions.
 - The cascading unknown identifiers reported in actor debug page six are
   consequently removed.
 
-## Character creation 4.0
+## Character creation 4.1
 
 **Implemented — pending validation**
 
@@ -36,6 +38,12 @@ The former Origin + Identity + Class model is replaced by eight pages:
 6. Four family points.
 7. Thirty individual points.
 8. Summary and confirmation.
+
+New characters now open this flow automatically. Until confirmation, ordinary
+movement and attacks are blocked, resource simulation is paused, and the
+unfinished character cannot receive damage. Keyboard controls are Right/Down,
+Enter, Space, and Backspace/Left; gamepads use D-pad, A, X, and B. The confirmed
+profile and completion flag are ordinary player fields and persist in saves.
 
 Races contribute Physical / Technical / Social / Mental values:
 
@@ -59,8 +67,9 @@ the attribute's family base.
 
 **Implemented — pending validation**
 
-- `Resilience` is renamed `Survival` in source, UI, controls, and current docs.
-  All existing air, adrenaline, sleep-loss, and natural-recovery effects remain.
+- The attribute retains its definitive `Resilience` name in source and UI.
+  Internal “survival resources” still refer collectively to hunger, thirst,
+  and sleep and are not the attribute name.
 - `Mana` is renamed `Anima` throughout the executable prototype.
 - Eloquence Type 4 increases casting speed. The test staff duration is
   `18 tics × 100 / Type4Percent(Eloquence)`.
@@ -112,8 +121,8 @@ The final-value table in the 4.0 specification is authoritative:
 
 | Actor | Profile | Attributes F/T/S/M | Mass / size | Armor | Health |
 |---|---|---:|---|---|---:|
-| Rulo | Beast Man Warrior, male, tall | 20/18/6/2 | 200 kg / 2.40 m | Heavy | 6200 |
-| Ronnie | Caelith Mercenary, male, tall | 20/18/4/4 | 140 kg / 2.00 m | Medium | 4340 |
+| Rulo | Beast Man Warrior, male, tall | 20/18/9/3 | 200 kg / 2.40 m | Heavy | 6200 |
+| Ronnie | Caelith Mercenary, male, tall | 20/18/5/7 | 140 kg / 2.00 m | Medium | 4340 |
 | Argento | Human Battle Mage, male, tall | 9/7/16/18 | 120 kg / 2.00 m | Light | 1740 |
 | Caella | Goblin Cleric, female, tall | 9/7/16/18 | 80 kg / 1.60 m | Unarmored | 1160 |
 
@@ -156,4 +165,5 @@ independent profile rather than inheriting Argento's combat setup.
   Eloquence range/Labia values.
 - A generalized physical-push attack consumer; the multiplier is calculated.
 - Save migration from prototype profiles that used Origin/Identity/Class.
-- Final production equipment inventory and non-debug character-creation menu.
+- Final production equipment inventory and later visual polish for the current
+  functional character-creation overlay.
