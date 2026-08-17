@@ -72,6 +72,7 @@ alias ca_debug_shield_angle "netevent ca_debug_shield_angle"
 alias ca_debug_shield_hit "netevent ca_debug_shield_hit"
 alias ca_debug_shield_repair "netevent ca_debug_shield_repair"
 alias ca_debug_test_silver_lock "netevent ca_debug_test_silver_lock"
+alias ca_debug_audit_crafting_catalogue "netevent ca_debug_audit_crafting_catalogue"
 
 addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
 addmenukey "$CA_CONTROL_NEXT_FIRST_CLASS" ca_next_first_class

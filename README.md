@@ -50,9 +50,10 @@ folder and launch GZDoom.
 - An unlimited-slot native personal inventory limited by carried weight.
   Pickups that would exceed capacity are marked as stored in the slot-limited
   Magic Box; when it is full, the object remains in the world.
-- Eight compact inventory filters, including a 40-entry native material
-  catalogue whose stacks are separated by type and tier, non-stackable `Key`
-  objects backed by `LOCKDEFS`, and unique key items.
+- Eight compact inventory filters, including 41 active native materials whose
+  stacks are separated by type and tier, non-stackable `Key` objects backed by
+  `LOCKDEFS`, and unique key items. The old iron-ingot prototype remains hidden
+  solely so earlier saves can still deserialize it.
 - A direct `ca_debug_test_silver_lock` command that exercises native lock 200
   without requiring a purpose-built test map.
 - Five native stackable consumables with real weight and Magic Box support:
@@ -108,6 +109,11 @@ folder and launch GZDoom.
 - Blue/violet and golden magic bolts plus Rulo's thrown axe for ranged tests.
 - A playable tier-one carbine replacing the short bow, with 360 damage,
   48-tic cadence, 30°/200° spread, 20-air reload, and size-M weight 12.
+- An authoritative 16-weapon physical catalogue for families 2–5, including
+  primary/secondary statistics, damage types, shield behavior, recipes, and
+  tier-source materials. Every active material is referenced by a recipe.
+- `ca_debug_audit_crafting_catalogue` reports the recipe/material totals and
+  lists any active material left without a use; the expected unused count is 0.
 - A shared combat base with attribute-based evasion, pain, adrenaline,
   wounded-state rules, and ordered reusable anatomy profiles.
 

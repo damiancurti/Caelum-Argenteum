@@ -205,6 +205,37 @@ class CaelumConstants : Object
     const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
     const WEAPON_CARBINE_PROJECTILE_SPEED = 80.0;
 
+    // Catálogo físico 4.12. Estos identificadores describen las dieciséis
+    // armas definitivas de las familias 2 a 5; el modelo jugable reducido de
+    // arriba conserva sus índices para no romper partidas anteriores.
+    const CATALOGUE_WEAPON_DAGGER = 0;
+    const CATALOGUE_WEAPON_HATCHET = 1;
+    const CATALOGUE_WEAPON_MACHETE = 2;
+    const CATALOGUE_WEAPON_JAVELIN = 3;
+    const CATALOGUE_WEAPON_SWORD = 4;
+    const CATALOGUE_WEAPON_AXE = 5;
+    const CATALOGUE_WEAPON_FLAIL = 6;
+    const CATALOGUE_WEAPON_SPEAR = 7;
+    const CATALOGUE_WEAPON_GREATSWORD = 8;
+    const CATALOGUE_WEAPON_WAR_AXE = 9;
+    const CATALOGUE_WEAPON_HALBERD = 10;
+    const CATALOGUE_WEAPON_GIANT_GAUNTLETS = 11;
+    const CATALOGUE_WEAPON_STANDARD_BOW = 12;
+    const CATALOGUE_WEAPON_CARBINE = 13;
+    const CATALOGUE_WEAPON_LONGBOW = 14;
+    const CATALOGUE_WEAPON_CROSSBOW = 15;
+    const CATALOGUE_PHYSICAL_WEAPON_COUNT = 16;
+    const CATALOGUE_FAMILY_SMALL = 2;
+    const CATALOGUE_FAMILY_ONE_HANDED = 3;
+    const CATALOGUE_FAMILY_LARGE = 4;
+    const CATALOGUE_FAMILY_RANGED = 5;
+    const CATALOGUE_DAMAGE_NONE = 0;
+    const CATALOGUE_DAMAGE_PIERCING = 1;
+    const CATALOGUE_DAMAGE_SLASHING = 2;
+    const CATALOGUE_DAMAGE_BLUNT = 3;
+    const CATALOGUE_ACTION_THROW = 4;
+    const CATALOGUE_ACTION_BLOCK = 5;
+
     // Consumibles 4.9. Las pilas conservan peso en el inventario personal y
     // ocupan un solo slot, con peso cero, dentro de la Caja Magica.
     const CONSUMABLE_LIFE_POTION = 0;
@@ -223,8 +254,9 @@ class CaelumConstants : Object
     // en futuras subclases sin alterar la suma autoritativa de Actor.Inv.
     const SPECIAL_ITEM_DEFAULT_WEIGHT = 0.10;
     // El indice cero conserva el lingote de prueba 4.10 para no invalidar
-    // partidas existentes. El resto forma el catalogo parametrizado 4.11.
+    // partidas existentes, pero queda fuera del catálogo activo desde 4.12.
     const MATERIAL_IRON_INGOT = 0;
+    const MATERIAL_FIRST_ACTIVE = 1;
     const MATERIAL_BLADE = 1;
     const MATERIAL_SMALL_BLADE = 2;
     const MATERIAL_CURVED_BLADE = 3;
@@ -264,7 +296,9 @@ class CaelumConstants : Object
     const MATERIAL_BELL_BASE = 37;
     const MATERIAL_BOOK_BASE = 38;
     const MATERIAL_STATUETTE_BASE = 39;
-    const MATERIAL_TYPE_COUNT = 40;
+    const MATERIAL_SMALL_WEAPON_HEAD = 40;
+    const MATERIAL_CHAIN = 41;
+    const MATERIAL_TYPE_COUNT = 42;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

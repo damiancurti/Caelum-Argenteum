@@ -1235,24 +1235,20 @@ class CaelumPlayer : DoomPlayer
         {
             specialTypeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
         }
+        int firstSpecialType = 0;
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            firstSpecialType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
+        }
         EquipmentSelectionSpecialType = Clamp(
-            EquipmentSelectionSpecialType, 0, specialTypeCount - 1
+            EquipmentSelectionSpecialType, firstSpecialType, specialTypeCount - 1
         );
         EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
-            if (EquipmentSelectionSpecialType
-                == CaelumConstants.MATERIAL_IRON_INGOT)
-            {
-                // Entrada heredada de partidas 4.10: representa hierro T2.
-                EquipmentSelectionTier = 2;
-            }
-            else
-            {
-                EquipmentSelectionTier = CaelumMaterialRules.ResolveTier(
-                    EquipmentSelectionSpecialType, EquipmentSelectionTier
-                );
-            }
+            EquipmentSelectionTier = CaelumMaterialRules.ResolveTier(
+                EquipmentSelectionSpecialType, EquipmentSelectionTier
+            );
         }
         EquipmentSelectionSize = Clamp(
             EquipmentSelectionSize,
@@ -1763,18 +1759,23 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             int typeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
+            int firstType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
             if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
             {
                 typeCount = CaelumConstants.KEY_TYPE_COUNT;
+                firstType = 0;
             }
             else if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
             {
                 typeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
+                firstType = 0;
             }
-            EquipmentSelectionSpecialType = (
-                EquipmentSelectionSpecialType + direction + typeCount
-            ) % typeCount;
+            int selectableTypeCount = typeCount - firstType;
+            EquipmentSelectionSpecialType = firstType + (
+                EquipmentSelectionSpecialType - firstType + direction
+                    + selectableTypeCount
+            ) % selectableTypeCount;
         }
         else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
@@ -1818,9 +1819,6 @@ class CaelumPlayer : DoomPlayer
             || EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM) { return; }
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-            && EquipmentSelectionSpecialType
-                == CaelumConstants.MATERIAL_IRON_INGOT) { return; }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && !CaelumMaterialRules.HasTier(
                 EquipmentSelectionSpecialType
             )) { return; }
@@ -1843,6 +1841,29 @@ class CaelumPlayer : DoomPlayer
         EquipmentSelectionSize = (EquipmentSelectionSize + 1)
             % CaelumConstants.EQUIPMENT_SIZE_COUNT;
         RefreshEquipmentSelectionPreview();
+    }
+
+    // Auditoría reproducible del catálogo: no crea ni consume inventario.
+    // Sirve para detectar inmediatamente un material activo sin receta.
+    void DebugAuditCraftingCatalogue()
+    {
+        int unusedMaterials = CaelumCraftingRules.CountUnusedActiveMaterials();
+        Console.Printf(
+            "[Caelum] Crafting 4.12: %d weapon recipes, %d active materials, %d unused.",
+            CaelumConstants.CATALOGUE_PHYSICAL_WEAPON_COUNT,
+            CaelumConstants.MATERIAL_TYPE_COUNT
+                - CaelumConstants.MATERIAL_FIRST_ACTIVE,
+            unusedMaterials
+        );
+        for (int materialType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
+            materialType < CaelumConstants.MATERIAL_TYPE_COUNT;
+            materialType++)
+        {
+            if (!CaelumCraftingRules.IsMaterialUsedByAnyRecipe(materialType))
+            {
+                Console.Printf("[Caelum] Unused material id: %d", materialType);
+            }
+        }
     }
 
     void SyncActiveModelsToNativeInventory()

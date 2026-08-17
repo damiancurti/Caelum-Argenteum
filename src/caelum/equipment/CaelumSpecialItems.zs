@@ -141,7 +141,8 @@ class CaelumMaterialRules : Object
                 && materialType <= CaelumConstants.MATERIAL_BROAD_BLADE)
             || (materialType >= CaelumConstants.MATERIAL_WEAPON_HEAD
                 && materialType <= CaelumConstants.MATERIAL_CHAINMAIL)
-            || materialType == CaelumConstants.MATERIAL_BARREL)
+            || materialType == CaelumConstants.MATERIAL_BARREL
+            || materialType == CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD)
         {
             return CaelumConstants.MATERIAL_FAMILY_METAL;
         }

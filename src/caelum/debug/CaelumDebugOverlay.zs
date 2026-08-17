@@ -311,6 +311,8 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_BELL_BASE: return "CA_MATERIAL_BELL_BASE";
             case CaelumConstants.MATERIAL_BOOK_BASE: return "CA_MATERIAL_BOOK_BASE";
             case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CA_MATERIAL_STATUETTE_BASE";
+            case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "CA_MATERIAL_SMALL_WEAPON_HEAD";
+            case CaelumConstants.MATERIAL_CHAIN: return "CA_MATERIAL_CHAIN";
             default: return "CA_MATERIAL_IRON_INGOT";
         }
     }
@@ -322,7 +324,8 @@ class CaelumDebugOverlay : EventHandler
                 && materialType <= CaelumConstants.MATERIAL_BROAD_BLADE)
             || (materialType >= CaelumConstants.MATERIAL_WEAPON_HEAD
                 && materialType <= CaelumConstants.MATERIAL_CHAINMAIL)
-            || materialType == CaelumConstants.MATERIAL_BARREL)
+            || materialType == CaelumConstants.MATERIAL_BARREL
+            || materialType == CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD)
         {
             return CaelumConstants.MATERIAL_FAMILY_METAL;
         }
@@ -2595,6 +2598,10 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_debug_test_silver_lock")
         {
             requestingPlayer.DebugTestSilverLock();
+        }
+        else if (e.Name == "ca_debug_audit_crafting_catalogue")
+        {
+            requestingPlayer.DebugAuditCraftingCatalogue();
         }
         else if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
         else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();

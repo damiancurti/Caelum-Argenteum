@@ -1,4 +1,4 @@
-version "4.10"
+version "4.12"
 
 // This root file tells GZDoom which ZScript source files belong to the game.
 // Keeping each system in a separate file will make the project easier to learn,
@@ -10,6 +10,8 @@ version "4.10"
 #include "caelum/equipment/CaelumEquipmentRules.zs"
 #include "caelum/equipment/CaelumArmorModel.zs"
 #include "caelum/equipment/CaelumShieldModel.zs"
+#include "caelum/equipment/CaelumWeaponCatalogue.zs"
+#include "caelum/equipment/CaelumCraftingRules.zs"
 #include "caelum/equipment/CaelumWeaponModel.zs"
 #include "caelum/equipment/CaelumEquipmentPickups.zs"
 #include "caelum/equipment/CaelumConsumables.zs"

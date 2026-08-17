@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.12.0
+
+- Added an authoritative data catalogue for the sixteen definitive physical
+  weapons across families 2–5, including both attack profiles, damage types,
+  cadence, range, spread, critical chance, air cost, and shield behavior.
+- Added structural recipes and tier-source rules for every physical weapon.
+- Added small weapon head for the hatchet and a generic tierless chain for the
+  flail; every one of the 41 active materials now has at least one recipe use.
+- Replaced the one-handed mace with the flail and removed the saber and
+  two-handed mace from the definitive roster. The large family is greatsword,
+  war axe, halberd, and giant gauntlets.
+- Made the point determine both spear and javelin tier, and normalized all
+  weapon-component terminology from stick to handle/long handle.
+- Hid the legacy iron-ingot prototype from the active material selector while
+  preserving its original identifier and class for old-save compatibility.
+- Updated the v66 design document with matching recipes, disassembly entries,
+  material uses, and obsolete-reference corrections while retaining its
+  typography and highlighting changed passages.
+- Left material quantities and inventory consumption pending instead of
+  inventing a crafting-cost formula that has not yet been specified.
+- Added `ca_debug_audit_crafting_catalogue`; its expected result is 16 recipes,
+  41 active materials, and zero unused entries.
+
 ## 4.11.0
 
 - Expanded the native material prototype into a 40-entry data-driven catalogue

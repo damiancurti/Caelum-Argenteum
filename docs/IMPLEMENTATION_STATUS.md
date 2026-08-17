@@ -3,6 +3,35 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
+## Definitive physical weapon and recipe catalogue 4.12.0
+
+**Implemented as authoritative data — pending playable crafting**
+
+The code now defines all sixteen physical weapons in families 2 through 5:
+dagger, hatchet, machete, javelin, sword, axe, flail, spear, greatsword, war
+axe, halberd, giant gauntlets, standard bow, carbine, longbow, and crossbow.
+Each entry centralizes primary/secondary damage, damage type or special action,
+attack cadence, range, spread, critical chance, air cost, family, and shield
+interaction. The carbine retains 360 damage/48 tics/60 m/30°–200°/0%/-20;
+the longbow retains 180 damage/24 tics/30 m/10°–120°/12%/-10.
+
+Every physical recipe now names one main component, one secondary component,
+and the exact component that supplies its tier. Spear and javelin use shaft +
+point and take the point's tier. Flail replaces the discarded one-handed mace
+and uses round head + generic chain. Giant gauntlets remain the fourth large
+weapon; the two-handed mace, saber, and their unused unique parts are absent.
+
+Small weapon head and chain complete the active material catalogue. All 41
+active material types are referenced by at least one physical, armor, shield,
+or essence recipe. The old iron-ingot prototype is hidden from new selections
+but its class and identifier remain available for save compatibility. Exact
+component quantities and actual inventory consumption remain pending until the
+global material-requirement formula is defined.
+
+The console command `ca_debug_audit_crafting_catalogue` performs a read-only
+runtime audit. Its expected result is 16 weapon recipes, 41 active materials,
+and 0 unused materials.
+
 ## Native material catalogue and lock test 4.11.0
 
 **Implemented — pending validation**
