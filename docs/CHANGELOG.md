@@ -1,5 +1,65 @@
 # Changelog
 
+## 4.6.1 — GZDoom compatibility, load HUD, and base clothing
+
+- Removed unsupported ZScript method overloads that made GZDoom 4.14.2 report
+  duplicate `GetMaximumDurabilityFor` definitions.
+- Replaced the short bow catalogue entry with the tier-one carbine: 360 damage,
+  48-tic fire time, 60 m range, 30°/200° spread, 0% base critical chance, and
+  -20 air. Its size-M tier-one weight is 24, twice the long bow's assigned 12.
+- Added a right-side load bar showing equipped weight, carry capacity, and load
+  percentage, with green/yellow/orange/red states.
+- Added a true unequipped state per armor slot: nothing, nothing, shirt, and
+  pants. These entries have zero defense, zero weight, no durability, and do
+  not occupy Magic Box slots.
+- Corrected Magic Box counting so genuinely unequipped armor slots are not
+  subtracted as if they still held owned equipment.
+
+## 4.6.0 — Equipment sizes, tiered weights, and Magic Box actions
+
+- Added XS/S/M/L/XL equipment sizes with the confirmed 50%/75%/100%/125%/150%
+  weight and durability factors and exact character-size compatibility ranges.
+- Added automatic migration of all pre-size owned equipment and current loadouts
+  to size M without deleting the previous persistence fields.
+- Changed weapon and shield weight scaling to 100%/150%/200% at tiers 1/2/3;
+  the provisional sword now contributes its confirmed base weight of 6.
+- Corrected tier-1 shield bases to magic 4, buckler 8, kite 12, and tower 16.
+- Aligned armor piece weights with the documented per-slot table and applied
+  size scaling without adding an armor-tier weight multiplier.
+- Changed Strength carry capacity to Type 4 and Agility jump scaling to Type 1;
+  the Magic Box keeps its original Intelligence Type 1 slot formula.
+- Expanded the equipment interface with a size selector, compatibility result,
+  three-decimal weight, Magic Box usage/capacity, filters, break, and drop.
+- Full Magic Box pickups now remain in the world; dropped equipment preserves
+  its size and current durability.
+
+## 4.5.1 — Documentation terminology correction
+
+- Restored `Resilience` as the definitive attribute name throughout the main
+  design document while retaining “survival” only for hunger, thirst, and
+  sleep as a collective resource system.
+- Replaced obsolete origin/identity creation references and legacy tables with
+  the current Race + two Class selections and resulting profession model.
+- Preserved the document's existing typography and highlighted the corrected
+  passages in yellow as changes from the previous version.
+
+## 4.5.0 — Persistent equipment inventory and world pickups
+
+- Added configurable armor and shield world pickups without duplicating one
+  actor class for every slot/type/tier combination.
+- Expanded ownership persistence so all 48 armor and 12 shield combinations
+  retain independent durability while unequipped.
+- Added automatic migration for ownership records and shield state created by
+  versions 4.3 and 4.4.
+- Added a compact localized equipment interface with keyboard/gamepad controls
+  for category, slot, type, tier, equip, remove, and close.
+- Made shield removal affect defense, coverage, blocking, air cost, and weight;
+  removing armor returns that slot to unarmored tier 1.
+- Added a development control that spawns the currently previewed pickup for
+  collection, duplicate-repair, save/load, and map-travel tests.
+- Preserved each outgoing equipped item's current durability before switching
+  and immediately recalculated mass and attribute-derived statistics.
+
 ## 4.4.0 — Multi-region area damage
 
 - Fixed the ZScript parser failure caused by using the reserved `state` token

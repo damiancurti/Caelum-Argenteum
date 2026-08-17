@@ -3,6 +3,28 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
+## Compatibility and equipment HUD 4.6.1
+
+**Implemented — pending validation**
+
+GZDoom 4.14.2 does not accept the two `GetMaximumDurabilityFor` signatures as
+overloads. The unused two-argument wrappers were removed; every active caller
+uses the size-aware three-argument function.
+
+The right-side HUD now includes equipped weight, carry capacity, and percentage
+in a dedicated bar. Its fill changes from green to yellow at 50%, orange at the
+75% overload threshold, and red at 100% or more.
+
+Removing armor now equips a non-item baseline according to slot: nothing on
+head and torso, shirt on hands, and pants on feet. Baseline entries have zero
+defense, weight, reinforcement, and durability, are never damaged, and do not
+occupy the Magic Box. The existing equippable unarmored set remains separate.
+
+The short bow catalogue entry is replaced by the tier-one carbine. Its prepared
+values are 360 damage, 48 tics, 60 m, 30°/200° spread, 0% base critical chance,
+-20 air, and size-M weight 24. The final ranged-weapon actor and inventory
+consumer remain part of the future complete weapon implementation.
+
 Status legend:
 
 - **Implemented — pending validation:** compiled into the 4.0 source and ready
@@ -28,7 +50,9 @@ Status legend:
 
 **Implemented — pending validation**
 
-The former Origin + Identity + Class model is replaced by eight pages:
+The legacy three-layer creation model is replaced by eight pages. The only
+structural character categories are Race and two Class selections; the second
+class resolves the resulting profession:
 
 1. Race.
 2. First class.
@@ -119,18 +143,28 @@ restores the character's ordinary profile.
 
 **Implemented — pending validation**
 
-Every armor piece now exposes its documented weight. Uniform full-set totals
-are 5/7/10 unarmored, 10/15/20 light, 20/30/40 medium, and 40/60/80 heavy for
-tiers 1/2/3. Broken pieces retain their weight. Existing shield weights are
-included automatically, and debug-added mass is shown separately.
+Every armor piece now exposes its documented weight. At size M, uniform
+full-set totals are 2 unarmored, 8 light, 19 medium, and 35 heavy. Armor tier
+does not alter those weights; equipment size does. Broken pieces retain their
+weight. Shield and provisional-weapon weights are included automatically, and
+debug-added mass is shown separately.
 
-The current loadout is now mirrored into an invisible, undroppable GZDoom
-inventory record. It preserves armor type, tier, durability, selected slot,
-shield, profile, allocations, and live resources between maps. Selecting an
-armor or shield through development controls marks that exact slot/type/tier
-combination as owned. The armor page reports owned armor and shield counts.
-World pickups and the final equip/unequip interface remain the next presentation
-layer over this working persistence backend.
+The current loadout is mirrored into an invisible, undroppable GZDoom inventory
+record. It preserves profile, allocations, resources, equipped items, ownership,
+and the individual durability of every armor/shield type, tier, and size
+combination across saves and map travel. Existing pre-size ownership records
+migrate automatically to size M.
+
+`CaelumArmorPickup` and `CaelumShieldPickup` are functional world pickups. Map
+authors configure armor with args `slot/type/tier/size/durability` and shields
+with `type/tier/size/durability`; size zero remains a backwards-compatible M
+default. Duplicate pickups retain ownership and repair that stored copy up to
+maximum durability. A separate compact equipment interface cycles owned or
+unowned previews, equips selected compatible objects, removes armor to
+unarmored tier 1, and can fully unequip shields. Every change immediately
+recalculates attribute bonuses, defense, reinforcement, mass, movement,
+evasion, air cost, and shield blocking. A development control spawns the
+currently previewed pickup.
 
 ## Area damage
 
@@ -174,6 +208,30 @@ The final-value table in the 4.0 specification is authoritative:
 Physical actor attacks apply body mass; magical attacks do not. Caella owns an
 independent profile rather than inheriting Argento's combat setup.
 
+## Equipment sizes and Magic Box 4.6
+
+**Implemented — pending validation**
+
+Equipment now records XS, S, M, L, or XL independently for every owned armor
+piece and shield. Weight and maximum durability use the size factors 0.50,
+0.75, 1.00, 1.25, and 1.50. Compatibility is exact: XS accepts character size
+tiers 1–2, S accepts 2–3, M accepts 3–5, L accepts 5–6, and XL accepts 6–7.
+Older ownership records and equipped objects migrate to M once.
+
+Shield tier-one weights are magic 4, buckler 8, kite 12, and tower 16. Shields
+then use tier factors 1.00/1.50/2.00 before size. The same tier/size weight rule
+is centralized for weapons; the provisional sword contributes base weight 6.
+Armor retains its documented per-piece weights and applies size only.
+
+The compact equipment interface now acts as the first functional Magic Box
+view: armor/shield filters, current and maximum slots, size compatibility,
+three-decimal item weight, equip/remove, development break, and drop. Pickups
+remain on the ground if the box has no free slot. Dropped objects preserve
+their current size and durability. The box formula remains
+`2 + floor(Type1Percent(Intelligence) / 50)`; Tarot bonuses remain reserved.
+
+Strength carry capacity now uses Type 4. Agility jump scaling is Type 1.
+
 ## Retained validated systems
 
 **Implemented and previously validated**
@@ -207,11 +265,22 @@ independent profile rather than inheriting Argento's combat setup.
    and profile, resources, armor, shield, durability, and owned counts persist.
 10. Compare sword/staff push and Rulo/Ronnie projectiles. Both physical and
     magical confirmed hits should push; misses and evasion should not.
+11. Assign the equipment and equipment-pickup test controls. Spawn several
+    armor/shield combinations, collect them, equip and remove them, then verify
+    individual durability and ownership survive save/load and map travel.
+12. Trigger explosions at low, middle, lateral, and full-body positions. Verify
+    the armor page's touched-region count and independent piece durability.
+13. In equipment, cycle XS through XL and verify incompatible sizes cannot be
+    equipped for the current character size tier.
+14. Check shield weights at M: magic 4/6/8, buckler 8/12/16, kite 12/18/24,
+    and tower 16/24/32 for tiers 1/2/3; then verify size multipliers.
+15. Fill the Magic Box, confirm a new pickup remains on the ground, then drop
+    and recollect a damaged item and verify size/durability persistence.
 
 ## Not yet implemented
 
 - Final buffs, debuffs, healing abilities, and dialogue consumers for the new
   Eloquence range/Labia values.
-- Save migration from prototype profiles that used Origin/Identity/Class.
-- World equipment pickups, final equip/unequip UI, and later visual polish for
-  the current functional character-creation overlay.
+- Save migration from profiles created with the legacy three-layer format.
+- Weapon-family, consumable, material, Tarot, and final visual inventory tabs;
+  armor/shield Magic Box capacity, filters, and core item actions are functional.

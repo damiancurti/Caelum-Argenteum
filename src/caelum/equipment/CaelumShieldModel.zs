@@ -4,7 +4,10 @@ class CaelumShieldModel : Object
 {
     int ShieldType;
     int Tier;
+    int Size;
     int Durability;
+    bool Equipped;
+    bool EquippedStateInitialized;
     bool Initialized;
 
     void InitializeDefaults()
@@ -12,23 +15,47 @@ class CaelumShieldModel : Object
         if (Initialized) { return; }
         ShieldType = CaelumConstants.SHIELD_TYPE_BUCKLER;
         Tier = 1;
+        Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
+        Equipped = true;
+        EquippedStateInitialized = true;
         Initialized = true;
     }
 
-    int GetWeight()
+    void EnsureEquippedStateInitialized()
     {
-        switch (ShieldType)
+        if (EquippedStateInitialized) { return; }
+        Equipped = true;
+        EquippedStateInitialized = true;
+    }
+
+    double GetBaseTierOneWeight(int shieldType)
+    {
+        switch (Clamp(shieldType, 0, CaelumConstants.SHIELD_TYPE_COUNT - 1))
         {
-            case CaelumConstants.SHIELD_TYPE_BUCKLER: return 8;
-            case CaelumConstants.SHIELD_TYPE_KITE: return 14;
-            case CaelumConstants.SHIELD_TYPE_TOWER: return 18;
-            default: return 6;
+            case CaelumConstants.SHIELD_TYPE_MAGIC: return 4.0;
+            case CaelumConstants.SHIELD_TYPE_BUCKLER: return 8.0;
+            case CaelumConstants.SHIELD_TYPE_KITE: return 12.0;
+            default: return 16.0;
         }
+    }
+
+    double GetWeightFor(int shieldType, int tier, int equipmentSize)
+    {
+        return CaelumEquipmentRules.CalculateTieredEquipmentWeight(
+            GetBaseTierOneWeight(shieldType), tier, equipmentSize
+        );
+    }
+
+    double GetWeight()
+    {
+        if (!Equipped) { return 0.0; }
+        return GetWeightFor(ShieldType, Tier, Size);
     }
 
     int GetCoverageDegrees()
     {
+        if (!Equipped) { return 0; }
         switch (ShieldType)
         {
             case CaelumConstants.SHIELD_TYPE_KITE: return 140;
@@ -56,7 +83,7 @@ class CaelumShieldModel : Object
 
     int GetDefense(int damageKind)
     {
-        if (Durability <= 0) { return 0; }
+        if (!Equipped || Durability <= 0) { return 0; }
         int tierTwoDefense = damageKind == CaelumConstants.SHIELD_DAMAGE_MAGICAL
             ? GetBaseMagicalDefense() : GetBasePhysicalDefense();
         int tierOffset = (Clamp(Tier, 1, 3) - 2) * 10;
@@ -76,22 +103,46 @@ class CaelumShieldModel : Object
 
     int GetMaximumDurability()
     {
+        return GetMaximumDurabilityFor(ShieldType, Tier, Size);
+    }
+
+    int GetMaximumDurabilityFor(int shieldType, int tier, int equipmentSize)
+    {
+        int baseDurability = 100;
+        switch (Clamp(shieldType, 0, CaelumConstants.SHIELD_TYPE_COUNT - 1))
+        {
+            case CaelumConstants.SHIELD_TYPE_BUCKLER: baseDurability = 80; break;
+            case CaelumConstants.SHIELD_TYPE_KITE: baseDurability = 150; break;
+            case CaelumConstants.SHIELD_TYPE_TOWER: baseDurability = 250; break;
+        }
         int multiplier = 1;
-        if (Tier == 2) { multiplier = 3; }
-        else if (Tier >= 3) { multiplier = 9; }
-        return GetBaseDurability() * multiplier;
+        if (tier == 2) { multiplier = 3; }
+        else if (tier >= 3) { multiplier = 9; }
+        return CaelumEquipmentRules.ScaleDurabilityForSize(
+            baseDurability * multiplier,
+            equipmentSize
+        );
     }
 
     void CycleType()
     {
+        Equipped = true;
         ShieldType = (ShieldType + 1) % CaelumConstants.SHIELD_TYPE_COUNT;
         Durability = GetMaximumDurability();
     }
 
     void CycleTier()
     {
+        Equipped = true;
         Tier++;
         if (Tier > 3) { Tier = 1; }
+        Durability = GetMaximumDurability();
+    }
+
+    void CycleSize()
+    {
+        Equipped = true;
+        Size = (Size + 1) % CaelumConstants.EQUIPMENT_SIZE_COUNT;
         Durability = GetMaximumDurability();
     }
 

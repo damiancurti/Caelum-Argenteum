@@ -32,13 +32,21 @@ folder and launch GZDoom.
 - New characters enter that creator automatically. Gameplay remains paused and
   protected until confirmation, with direct keyboard and gamepad navigation.
 - Derived health, Anima, air, carry-capacity, mass-tier, and size-tier values.
-- Real per-piece armor and shield weight plus separate debug-added weight.
+- Real per-piece armor, shield, and provisional sword weight plus separate
+  debug-added weight, including tier and XS/S/M/L/XL size multipliers.
+- A right-side load bar showing equipped weight, capacity, percentage, and
+  green/yellow/orange/red load states.
 - Inventory-backed profile and equipment persistence across map transitions,
   including owned armor/shield combinations and durability.
+- Configurable world armor/shield pickups and a compact localized interface for
+  filtering, equipping, removing, breaking, dropping, and preserving each
+  owned object's size and durability within the Magic Box capacity.
 - Resilience as the definitive name of the technical recovery attribute.
 - Eloquence casting speed, Anima-cost reduction, ability range, and dialogue
   values, with the live staff consuming the adjusted cost and duration.
 - Seven-grade localized vulnerability and four-slot armor test controls.
+- True per-slot unequipped clothing labels with zero defense, weight, and
+  durability, separate from the equippable unarmored set.
 - Multi-region explosions that independently resolve every anatomy volume
   touched by the blast, with both arms treated as one logical region.
 - A live dizzy-lucidity accuracy penalty, provisional sword dispersion, and
@@ -68,6 +76,8 @@ folder and launch GZDoom.
 - Ordinary directed attacks against the player now automatically traverse
   real-angle shield coverage and the complete custom armor/health pipeline.
 - Blue/violet and golden magic bolts plus Rulo's thrown axe for ranged tests.
+- A prepared tier-one carbine catalogue entry replacing the short bow; its
+  playable ranged-weapon actor remains part of the full weapon implementation.
 - A shared combat base with attribute-based evasion, pain, adrenaline,
   wounded-state rules, and ordered reusable anatomy profiles.
 

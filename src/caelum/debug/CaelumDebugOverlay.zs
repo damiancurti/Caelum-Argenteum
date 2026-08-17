@@ -144,6 +144,24 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    // El estado realmente desequipado usa una etiqueta distinta por zona.
+    ui String GetArmorDisplayKey(int slot, int armorType)
+    {
+        if (armorType != CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+        {
+            return GetArmorTypeKey(armorType);
+        }
+        if (slot == CaelumConstants.ARMOR_SLOT_HANDS)
+        {
+            return "CA_ARMOR_BASE_SHIRT";
+        }
+        if (slot == CaelumConstants.ARMOR_SLOT_FEET)
+        {
+            return "CA_ARMOR_BASE_PANTS";
+        }
+        return "CA_ARMOR_BASE_NOTHING";
+    }
+
     ui int GetArmorDefenseForPanel(CaelumArmorModel armor, int slot)
     {
         if (armor.Durability[slot] <= 0) { return 0; }
@@ -172,6 +190,10 @@ class CaelumDebugOverlay : EventHandler
 
     ui int GetArmorMaximumDurabilityForPanel(CaelumArmorModel armor, int slot)
     {
+        if (armor.ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+        {
+            return 0;
+        }
         int baseDurability = 20;
         switch (armor.ArmorType[slot])
         {
@@ -180,7 +202,12 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.ARMOR_TYPE_HEAVY: baseDurability = 100; break;
         }
         int multiplier = armor.Tier[slot] == 1 ? 1 : (armor.Tier[slot] == 2 ? 3 : 9);
-        return baseDurability * multiplier;
+        double sizeMultiplier = 1.0;
+        if (armor.Size[slot] == CaelumConstants.EQUIPMENT_SIZE_XS) sizeMultiplier = 0.50;
+        else if (armor.Size[slot] == CaelumConstants.EQUIPMENT_SIZE_S) sizeMultiplier = 0.75;
+        else if (armor.Size[slot] == CaelumConstants.EQUIPMENT_SIZE_L) sizeMultiplier = 1.25;
+        else if (armor.Size[slot] == CaelumConstants.EQUIPMENT_SIZE_XL) sizeMultiplier = 1.50;
+        return Max(1, int(baseDurability * multiplier * sizeMultiplier + 0.5));
     }
 
     ui String GetShieldTypeKey(int shieldType)
@@ -191,6 +218,18 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.SHIELD_TYPE_TOWER: return "CA_SHIELD_TYPE_TOWER";
             case CaelumConstants.SHIELD_TYPE_MAGIC: return "CA_SHIELD_TYPE_MAGIC";
             default: return "CA_SHIELD_TYPE_BUCKLER";
+        }
+    }
+
+    ui String GetEquipmentSizeKey(int equipmentSize)
+    {
+        switch (equipmentSize)
+        {
+            case CaelumConstants.EQUIPMENT_SIZE_XS: return "CA_EQUIPMENT_SIZE_XS";
+            case CaelumConstants.EQUIPMENT_SIZE_S: return "CA_EQUIPMENT_SIZE_S";
+            case CaelumConstants.EQUIPMENT_SIZE_L: return "CA_EQUIPMENT_SIZE_L";
+            case CaelumConstants.EQUIPMENT_SIZE_XL: return "CA_EQUIPMENT_SIZE_XL";
+            default: return "CA_EQUIPMENT_SIZE_M";
         }
     }
 
@@ -206,11 +245,17 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.SHIELD_TYPE_TOWER: baseDurability = 250; break;
         }
         int multiplier = shield.Tier == 1 ? 1 : (shield.Tier == 2 ? 3 : 9);
-        return baseDurability * multiplier;
+        double sizeMultiplier = 1.0;
+        if (shield.Size == CaelumConstants.EQUIPMENT_SIZE_XS) sizeMultiplier = 0.50;
+        else if (shield.Size == CaelumConstants.EQUIPMENT_SIZE_S) sizeMultiplier = 0.75;
+        else if (shield.Size == CaelumConstants.EQUIPMENT_SIZE_L) sizeMultiplier = 1.25;
+        else if (shield.Size == CaelumConstants.EQUIPMENT_SIZE_XL) sizeMultiplier = 1.50;
+        return Max(1, int(baseDurability * multiplier * sizeMultiplier + 0.5));
     }
 
     ui int GetShieldCoverageForPanel(CaelumShieldModel shield)
     {
+        if (!shield.Equipped) { return 0; }
         if (shield.ShieldType == CaelumConstants.SHIELD_TYPE_KITE) { return 140; }
         if (shield.ShieldType == CaelumConstants.SHIELD_TYPE_TOWER) { return 160; }
         return 120;
@@ -218,7 +263,7 @@ class CaelumDebugOverlay : EventHandler
 
     ui int GetShieldDefenseForPanel(CaelumShieldModel shield, int damageKind)
     {
-        if (shield.Durability <= 0) { return 0; }
+        if (!shield.Equipped || shield.Durability <= 0) { return 0; }
         int physicalDefense = 50;
         switch (shield.ShieldType)
         {
@@ -520,12 +565,112 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
     }
 
+    ui void DrawEquipmentMenu(CaelumPlayer localPlayer)
+    {
+        String category = localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_SHIELD
+            ? StringTable.Localize("CA_EQUIPMENT_CATEGORY_SHIELD", false)
+            : StringTable.Localize("CA_EQUIPMENT_CATEGORY_ARMOR", false);
+        String selection;
+        if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            selection = String.Format(
+                "%s T%d %s",
+                StringTable.Localize(
+                    GetShieldTypeKey(localPlayer.EquipmentSelectionShieldType),
+                    false
+                ),
+                localPlayer.EquipmentSelectionTier,
+                StringTable.Localize(
+                    GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
+                )
+            );
+        }
+        else
+        {
+            selection = String.Format(
+                "%s / %s T%d %s",
+                StringTable.Localize(
+                    GetArmorSlotKey(localPlayer.EquipmentSelectionSlot),
+                    false
+                ),
+                StringTable.Localize(
+                    GetArmorTypeKey(localPlayer.EquipmentSelectionArmorType),
+                    false
+                ),
+                localPlayer.EquipmentSelectionTier,
+                StringTable.Localize(
+                    GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
+                )
+            );
+        }
+
+        String ownershipKey = localPlayer.EquipmentSelectionOwned
+            ? "CA_EQUIPMENT_OWNED" : "CA_EQUIPMENT_NOT_OWNED";
+        String equippedKey = localPlayer.EquipmentSelectionEquipped
+            ? "CA_EQUIPMENT_EQUIPPED" : "CA_EQUIPMENT_NOT_EQUIPPED";
+        String status = String.Format(
+            "%s | %s",
+            StringTable.Localize(ownershipKey, false),
+            StringTable.Localize(equippedKey, false)
+        );
+        String detail = String.Format(
+            "%s | %s %d/%d | %.3f",
+            StringTable.Localize(
+                localPlayer.EquipmentSelectionSizeCompatible
+                    ? "CA_EQUIPMENT_SIZE_COMPATIBLE"
+                    : "CA_EQUIPMENT_SIZE_INCOMPATIBLE",
+                false
+            ),
+            StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),
+            localPlayer.EquipmentSelectionDurability,
+            localPlayer.EquipmentSelectionMaximumDurability,
+            localPlayer.EquipmentSelectionWeight
+        );
+        String totals = String.Format(
+            "%s: %d   %s: %d   %s: %d/%d",
+            StringTable.Localize("CA_RESOURCE_OWNED_ARMOR", false),
+            localPlayer.OwnedArmorCount,
+            StringTable.Localize("CA_RESOURCE_OWNED_SHIELDS", false),
+            localPlayer.OwnedShieldCount,
+            StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+            localPlayer.MagicBoxUsedSlots,
+            localPlayer.MagicBoxMaximumSlots
+        );
+
+        DrawCenteredText(
+            StringTable.Localize("CA_EQUIPMENT_MENU_TITLE", false),
+            70.0,
+            Font.CR_GOLD
+        );
+        DrawCenteredText(category, 104.0, Font.CR_WHITE);
+        DrawCenteredText(selection, 136.0, Font.CR_GREEN);
+        DrawCenteredText(status, 164.0,
+            localPlayer.EquipmentSelectionOwned ? Font.CR_WHITE : Font.CR_RED);
+        DrawCenteredText(detail, 188.0,
+            localPlayer.EquipmentSelectionSizeCompatible ? Font.CR_WHITE : Font.CR_RED);
+        DrawCenteredText(totals, 214.0, Font.CR_CYAN);
+        DrawCenteredText(
+            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_1", false),
+            242.0,
+            Font.CR_GRAY
+        );
+        DrawCenteredText(
+            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_2", false),
+            258.0,
+            Font.CR_GRAY
+        );
+    }
+
     // El creador inicial usa controles propios y no depende de asignaciones.
     // Escape, la consola y el boton Start conservan su comportamiento global.
     override bool InputProcess(InputEvent e)
     {
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
-        if (localPlayer == null || !localPlayer.CreationWizardOpen || menuactive != 0)
+        if (localPlayer == null || menuactive != 0
+            || (!localPlayer.CreationWizardOpen
+                && !localPlayer.EquipmentMenuOpen))
         {
             return false;
         }
@@ -536,8 +681,7 @@ class CaelumDebugOverlay : EventHandler
             return false;
         }
 
-        if (e.KeyScan == InputEvent.Key_Escape
-            || e.KeyScan == InputEvent.Key_Grave
+        if (e.KeyScan == InputEvent.Key_Grave
             || e.KeyScan == InputEvent.Key_Pad_Start)
         {
             return false;
@@ -546,6 +690,72 @@ class CaelumDebugOverlay : EventHandler
         if (e.Type == InputEvent.Type_KeyUp)
         {
             return true;
+        }
+
+        if (localPlayer.EquipmentMenuOpen)
+        {
+            if (e.KeyScan == InputEvent.Key_Escape)
+            {
+                SendNetworkEvent("ca_equipment_toggle");
+            }
+            else if (e.KeyScan == InputEvent.Key_Tab
+                || e.KeyScan == InputEvent.Key_Pad_Y)
+            {
+                SendNetworkEvent("ca_equipment_kind");
+            }
+            else if (e.KeyScan == InputEvent.Key_RightArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
+            {
+                SendNetworkEvent("ca_equipment_type_next");
+            }
+            else if (e.KeyScan == InputEvent.Key_LeftArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
+            {
+                SendNetworkEvent("ca_equipment_type_previous");
+            }
+            else if (e.KeyScan == InputEvent.Key_DownArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+            {
+                SendNetworkEvent("ca_equipment_slot_next");
+            }
+            else if (e.KeyScan == InputEvent.Key_UpArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Up)
+            {
+                SendNetworkEvent("ca_equipment_slot_previous");
+            }
+            else if (e.KeyScan == InputEvent.Key_Space
+                || e.KeyScan == InputEvent.Key_Pad_X)
+            {
+                SendNetworkEvent("ca_equipment_tier");
+            }
+            else if (e.KeyString == "r" || e.KeyString == "R")
+            {
+                SendNetworkEvent("ca_equipment_size");
+            }
+            else if (e.KeyScan == InputEvent.Key_Enter
+                || e.KeyScan == InputEvent.Key_Pad_A)
+            {
+                SendNetworkEvent("ca_equipment_equip");
+            }
+            else if (e.KeyScan == InputEvent.Key_Backspace
+                || e.KeyScan == InputEvent.Key_Pad_B)
+            {
+                SendNetworkEvent("ca_equipment_unequip");
+            }
+            else if (e.KeyString == "d" || e.KeyString == "D")
+            {
+                SendNetworkEvent("ca_equipment_drop");
+            }
+            else if (e.KeyString == "b" || e.KeyString == "B")
+            {
+                SendNetworkEvent("ca_equipment_break");
+            }
+            return true;
+        }
+
+        if (e.KeyScan == InputEvent.Key_Escape)
+        {
+            return false;
         }
 
         if (e.KeyScan == InputEvent.Key_RightArrow
@@ -584,6 +794,12 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer != null && localPlayer.CreationWizardOpen)
         {
             DrawCreationWizard(localPlayer);
+            return;
+        }
+
+        if (localPlayer != null && localPlayer.EquipmentMenuOpen)
+        {
+            DrawEquipmentMenu(localPlayer);
             return;
         }
 
@@ -1066,11 +1282,16 @@ class CaelumDebugOverlay : EventHandler
             if (compactArmor == null) { return; }
             int compactSlot = compactArmor.SelectedSlot;
             String armorLine = String.Format(
-                "%s: %s / %s T%d",
+                "%s: %s / %s T%d %s",
                 StringTable.Localize("CA_RESOURCE_ARMOR", false),
                 StringTable.Localize(GetArmorSlotKey(compactSlot), false),
-                StringTable.Localize(GetArmorTypeKey(compactArmor.ArmorType[compactSlot]), false),
-                compactArmor.Tier[compactSlot]
+                StringTable.Localize(GetArmorDisplayKey(
+                    compactSlot, compactArmor.ArmorType[compactSlot]
+                ), false),
+                compactArmor.Tier[compactSlot],
+                StringTable.Localize(
+                    GetEquipmentSizeKey(compactArmor.Size[compactSlot]), false
+                )
             );
             String armorStatsLine = String.Format(
                 "%s: %d%%   %s: +%d   %s: %d/%d",
@@ -1152,10 +1373,11 @@ class CaelumDebugOverlay : EventHandler
             if (shield != null)
             {
                 String shieldLine = String.Format(
-                    "%s: %s T%d   %s: %s   %s: %d/%d",
+                    "%s: %s T%d %s   %s: %s   %s: %d/%d",
                     StringTable.Localize("CA_RESOURCE_SHIELD", false),
                     StringTable.Localize(GetShieldTypeKey(shield.ShieldType), false),
                     shield.Tier,
+                    StringTable.Localize(GetEquipmentSizeKey(shield.Size), false),
                     StringTable.Localize("CA_RESOURCE_SHIELD_BLOCKING", false),
                     StringTable.Localize(localPlayer.DebugShieldBlocking
                         ? "CA_RESOURCE_SHIELD_ACTIVE" : "CA_RESOURCE_SHIELD_INACTIVE", false),
@@ -1439,7 +1661,9 @@ class CaelumDebugOverlay : EventHandler
                 "%s: %s / %s T%d   %s: %d%%   %s: +%d   %s: %d/%d   %s",
                 StringTable.Localize("CA_RESOURCE_ARMOR", false),
                 StringTable.Localize(GetArmorSlotKey(selectedSlot), false),
-                StringTable.Localize(GetArmorTypeKey(armor.ArmorType[selectedSlot]), false),
+                StringTable.Localize(GetArmorDisplayKey(
+                    selectedSlot, armor.ArmorType[selectedSlot]
+                ), false),
                 armor.Tier[selectedSlot],
                 StringTable.Localize("CA_RESOURCE_ARMOR_DEFENSE", false),
                 GetArmorDefenseForPanel(armor, selectedSlot),
@@ -1856,7 +2080,59 @@ class CaelumDebugOverlay : EventHandler
             return;
         }
 
-        if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
+        if (e.Name == "ca_equipment_toggle")
+        {
+            requestingPlayer.ToggleEquipmentMenu();
+        }
+        else if (e.Name == "ca_equipment_kind")
+        {
+            requestingPlayer.CycleEquipmentKind();
+        }
+        else if (e.Name == "ca_equipment_slot_next")
+        {
+            requestingPlayer.CycleEquipmentSlot(1);
+        }
+        else if (e.Name == "ca_equipment_slot_previous")
+        {
+            requestingPlayer.CycleEquipmentSlot(-1);
+        }
+        else if (e.Name == "ca_equipment_type_next")
+        {
+            requestingPlayer.CycleEquipmentType(1);
+        }
+        else if (e.Name == "ca_equipment_type_previous")
+        {
+            requestingPlayer.CycleEquipmentType(-1);
+        }
+        else if (e.Name == "ca_equipment_tier")
+        {
+            requestingPlayer.CycleEquipmentTier();
+        }
+        else if (e.Name == "ca_equipment_size")
+        {
+            requestingPlayer.CycleEquipmentSize();
+        }
+        else if (e.Name == "ca_equipment_equip")
+        {
+            requestingPlayer.EquipSelectedEquipment();
+        }
+        else if (e.Name == "ca_equipment_unequip")
+        {
+            requestingPlayer.UnequipSelectedEquipment();
+        }
+        else if (e.Name == "ca_equipment_drop")
+        {
+            requestingPlayer.DropSelectedEquipment();
+        }
+        else if (e.Name == "ca_equipment_break")
+        {
+            requestingPlayer.BreakSelectedEquipment();
+        }
+        else if (e.Name == "ca_debug_spawn_equipment")
+        {
+            requestingPlayer.SpawnDebugEquipmentPickup();
+        }
+        else if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
         else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();
         else if (e.Name == "ca_next_second_class") requestingPlayer.CycleSecondClass();
         else if (e.Name == "ca_next_sex") requestingPlayer.CycleSex();

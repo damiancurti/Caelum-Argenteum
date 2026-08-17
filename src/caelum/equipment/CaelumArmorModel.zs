@@ -4,6 +4,7 @@ class CaelumArmorModel : Object
 {
     int ArmorType[4];
     int Tier[4];
+    int Size[4];
     int Durability[4];
     int SelectedSlot;
     bool Initialized;
@@ -19,6 +20,7 @@ class CaelumArmorModel : Object
         {
             ArmorType[slot] = CaelumConstants.ARMOR_TYPE_UNARMORED;
             Tier[slot] = 1;
+            Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
             Durability[slot] = GetMaximumDurability(slot);
         }
 
@@ -40,6 +42,7 @@ class CaelumArmorModel : Object
         {
             ArmorType[slot] = resolvedType;
             Tier[slot] = resolvedTier;
+            Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
             Durability[slot] = GetMaximumDurability(slot);
         }
         SelectedSlot = CaelumConstants.ARMOR_SLOT_HEAD;
@@ -55,6 +58,7 @@ class CaelumArmorModel : Object
 
     int GetDefense(int slot)
     {
+        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         if (Durability[slot] <= 0) { return 0; }
         int tier = Clamp(Tier[slot], 1, 3);
         switch (ArmorType[slot])
@@ -79,40 +83,48 @@ class CaelumArmorModel : Object
     }
 
     // El peso pertenece a la pieza equipada aunque su durabilidad llegue a cero.
-    int GetWeight(int slot)
+    double GetBaseWeight(int slot, int armorType)
     {
-        int tier = Clamp(Tier[slot], 1, 3);
-        int armorType = Clamp(ArmorType[slot], 0, 3);
-        if (slot == CaelumConstants.ARMOR_SLOT_HEAD
-            || slot == CaelumConstants.ARMOR_SLOT_FEET)
-        {
-            if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED)
-                return tier == 3 ? 2 : 1;
-            if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT)
-                return tier == 1 ? 2 : (tier == 2 ? 3 : 4);
-            if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM)
-                return tier == 1 ? 4 : (tier == 2 ? 6 : 8);
-            return tier == 1 ? 8 : (tier == 2 ? 12 : 16);
-        }
+        int resolvedType = Clamp(armorType, 0, CaelumConstants.ARMOR_TYPE_COUNT - 1);
+        if (resolvedType == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) return 0.0;
         if (slot == CaelumConstants.ARMOR_SLOT_BODY)
         {
-            if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED)
-                return tier == 1 ? 2 : (tier == 2 ? 4 : 5);
-            if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT)
-                return tier == 1 ? 5 : (tier == 2 ? 8 : 10);
-            if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM)
-                return tier == 1 ? 10 : (tier == 2 ? 15 : 20);
-            return tier == 1 ? 20 : (tier == 2 ? 30 : 40);
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_UNARMORED) return 2.0;
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_LIGHT) return 6.0;
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 12.0;
+            return 20.0;
         }
-        if (armorType == CaelumConstants.ARMOR_TYPE_UNARMORED) return 1;
-        if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT) return tier == 3 ? 2 : 1;
-        if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM) return tier == 1 ? 2 : (tier == 2 ? 3 : 4);
-        return tier == 1 ? 4 : (tier == 2 ? 6 : 8);
+        if (slot == CaelumConstants.ARMOR_SLOT_HEAD)
+        {
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_LIGHT) return 2.0;
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 4.0;
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 6.0;
+            return 0.0;
+        }
+        if (slot == CaelumConstants.ARMOR_SLOT_HANDS
+            && resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 5.0;
+        if (slot == CaelumConstants.ARMOR_SLOT_FEET)
+        {
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 3.0;
+            if (resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 4.0;
+        }
+        return 0.0;
     }
 
-    int GetTotalWeight()
+    double GetWeightFor(int slot, int armorType, int equipmentSize)
     {
-        int total = 0;
+        return GetBaseWeight(slot, armorType)
+            * CaelumEquipmentRules.GetSizeWeightMultiplier(equipmentSize);
+    }
+
+    double GetWeight(int slot)
+    {
+        return GetWeightFor(slot, ArmorType[slot], Size[slot]);
+    }
+
+    double GetTotalWeight()
+    {
+        double total = 0.0;
         for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
             total += GetWeight(slot);
@@ -122,6 +134,7 @@ class CaelumArmorModel : Object
 
     int GetReinforcement(int slot)
     {
+        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         if (Durability[slot] <= 0) { return 0; }
         switch (ArmorType[slot])
         {
@@ -183,7 +196,13 @@ class CaelumArmorModel : Object
 
     int GetBaseDurability(int slot)
     {
-        switch (ArmorType[slot])
+        return GetBaseDurabilityForType(ArmorType[slot]);
+    }
+
+    int GetBaseDurabilityForType(int armorType)
+    {
+        if (armorType == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
+        switch (Clamp(armorType, 0, CaelumConstants.ARMOR_TYPE_COUNT - 1))
         {
             case CaelumConstants.ARMOR_TYPE_UNARMORED: return 20;
             case CaelumConstants.ARMOR_TYPE_LIGHT: return 40;
@@ -194,10 +213,23 @@ class CaelumArmorModel : Object
 
     int GetMaximumDurability(int slot)
     {
+        return GetMaximumDurabilityFor(
+            ArmorType[slot],
+            Tier[slot],
+            Size[slot]
+        );
+    }
+
+    int GetMaximumDurabilityFor(int armorType, int tier, int equipmentSize)
+    {
+        if (armorType == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         int multiplier = 1;
-        if (Tier[slot] == 2) { multiplier = 3; }
-        else if (Tier[slot] >= 3) { multiplier = 9; }
-        return GetBaseDurability(slot) * multiplier;
+        if (tier == 2) { multiplier = 3; }
+        else if (tier >= 3) { multiplier = 9; }
+        return CaelumEquipmentRules.ScaleDurabilityForSize(
+            GetBaseDurabilityForType(armorType) * multiplier,
+            equipmentSize
+        );
     }
 
     void CycleSelectedSlot()
@@ -208,7 +240,7 @@ class CaelumArmorModel : Object
     void CycleSelectedType()
     {
         ArmorType[SelectedSlot] = (ArmorType[SelectedSlot] + 1)
-            % CaelumConstants.ARMOR_TYPE_COUNT;
+            % CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT;
         Durability[SelectedSlot] = GetMaximumDurability(SelectedSlot);
     }
 
@@ -216,6 +248,13 @@ class CaelumArmorModel : Object
     {
         Tier[SelectedSlot]++;
         if (Tier[SelectedSlot] > 3) { Tier[SelectedSlot] = 1; }
+        Durability[SelectedSlot] = GetMaximumDurability(SelectedSlot);
+    }
+
+    void CycleSelectedSize()
+    {
+        Size[SelectedSlot] = (Size[SelectedSlot] + 1)
+            % CaelumConstants.EQUIPMENT_SIZE_COUNT;
         Durability[SelectedSlot] = GetMaximumDurability(SelectedSlot);
     }
 

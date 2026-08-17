@@ -28,6 +28,26 @@ class CaelumPlayer : DoomPlayer
     CaelumShieldModel ShieldModel;
     int OwnedArmorCount;
     int OwnedShieldCount;
+    bool EquipmentMenuOpen;
+    int EquipmentSelectionKind;
+    int EquipmentSelectionSlot;
+    int EquipmentSelectionArmorType;
+    int EquipmentSelectionShieldType;
+    int EquipmentSelectionTier;
+    int EquipmentSelectionSize;
+    bool EquipmentSelectionOwned;
+    bool EquipmentSelectionEquipped;
+    bool EquipmentSelectionSizeCompatible;
+    int EquipmentSelectionDurability;
+    int EquipmentSelectionMaximumDurability;
+    double EquipmentSelectionWeight;
+    int MagicBoxUsedSlots;
+    int MagicBoxMaximumSlots;
+    bool LastEquipmentPickupWasNew;
+    double EquippedWeaponBaseWeight;
+    int EquippedWeaponTier;
+    int EquippedWeaponSize;
+    bool WeaponWeightInitialized;
     double ArmorDurabilityDamageMultiplier;
     bool ArmorDurabilityMultiplierInitialized;
     bool DebugArmorCriticalHit;
@@ -228,6 +248,7 @@ class CaelumPlayer : DoomPlayer
         }
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
+        persistentState.EnsureEquipmentSizeInitialized();
 
         persistentState.ProfileCommitted = true;
         persistentState.Race = CharacterProfile.Race;
@@ -251,12 +272,19 @@ class CaelumPlayer : DoomPlayer
             {
                 persistentState.ArmorType[slot] = ArmorModel.ArmorType[slot];
                 persistentState.ArmorTier[slot] = ArmorModel.Tier[slot];
+                persistentState.ArmorSize[slot] = ArmorModel.Size[slot];
                 persistentState.ArmorDurability[slot] = ArmorModel.Durability[slot];
             }
             persistentState.ArmorSelectedSlot = ArmorModel.SelectedSlot;
             persistentState.ShieldType = ShieldModel.ShieldType;
             persistentState.ShieldTier = ShieldModel.Tier;
+            persistentState.ShieldSize = ShieldModel.Size;
             persistentState.ShieldDurability = ShieldModel.Durability;
+            persistentState.ShieldEquipped = ShieldModel.Equipped;
+            persistentState.EquippedWeaponBaseWeight = EquippedWeaponBaseWeight;
+            persistentState.EquippedWeaponTier = EquippedWeaponTier;
+            persistentState.EquippedWeaponSize = EquippedWeaponSize;
+            persistentState.WeaponWeightInitialized = WeaponWeightInitialized;
             persistentState.MarkCurrentEquipmentOwned();
             OwnedArmorCount = persistentState.CountOwnedArmor();
             OwnedShieldCount = persistentState.CountOwnedShields();
@@ -276,6 +304,7 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(false);
         if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
+        persistentState.EnsureEquipmentSizeInitialized();
 
         CharacterProfile.Race = persistentState.Race;
         CharacterProfile.FirstClass = persistentState.FirstClass;
@@ -295,16 +324,59 @@ class CaelumPlayer : DoomPlayer
         {
             for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
             {
+                if (persistentState.ArmorType[slot]
+                    != CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+                {
+                    persistentState.RegisterOwnedArmor(
+                        slot,
+                        persistentState.ArmorType[slot],
+                        persistentState.ArmorTier[slot],
+                        persistentState.ArmorSize[slot],
+                        persistentState.ArmorDurability[slot]
+                    );
+                    persistentState.StoreOwnedArmorDurability(
+                        slot,
+                        persistentState.ArmorType[slot],
+                        persistentState.ArmorTier[slot],
+                        persistentState.ArmorSize[slot],
+                        persistentState.ArmorDurability[slot]
+                    );
+                }
                 ArmorModel.ArmorType[slot] = persistentState.ArmorType[slot];
                 ArmorModel.Tier[slot] = persistentState.ArmorTier[slot];
+                ArmorModel.Size[slot] = persistentState.ArmorSize[slot];
                 ArmorModel.Durability[slot] = persistentState.ArmorDurability[slot];
             }
             ArmorModel.SelectedSlot = persistentState.ArmorSelectedSlot;
             ArmorModel.Initialized = true;
             ShieldModel.ShieldType = persistentState.ShieldType;
             ShieldModel.Tier = persistentState.ShieldTier;
+            ShieldModel.Size = persistentState.ShieldSize;
             ShieldModel.Durability = persistentState.ShieldDurability;
+            ShieldModel.Equipped = persistentState.ShieldEquipped;
+            if (ShieldModel.Equipped)
+            {
+                persistentState.RegisterOwnedShield(
+                    persistentState.ShieldType,
+                    persistentState.ShieldTier,
+                    persistentState.ShieldSize,
+                    persistentState.ShieldDurability
+                );
+                persistentState.StoreOwnedShieldDurability(
+                    persistentState.ShieldType,
+                    persistentState.ShieldTier,
+                    persistentState.ShieldSize,
+                    persistentState.ShieldDurability
+                );
+            }
             ShieldModel.Initialized = true;
+            if (persistentState.WeaponWeightInitialized)
+            {
+                EquippedWeaponBaseWeight = persistentState.EquippedWeaponBaseWeight;
+                EquippedWeaponTier = persistentState.EquippedWeaponTier;
+                EquippedWeaponSize = persistentState.EquippedWeaponSize;
+                WeaponWeightInitialized = true;
+            }
             OwnedArmorCount = persistentState.CountOwnedArmor();
             OwnedShieldCount = persistentState.CountOwnedShields();
         }
@@ -341,8 +413,585 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
+    void RefreshEquipmentSelectionPreview()
+    {
+        EquipmentSelectionSlot = Clamp(
+            EquipmentSelectionSlot,
+            0,
+            CaelumConstants.ARMOR_SLOT_COUNT - 1
+        );
+        EquipmentSelectionArmorType = Clamp(
+            EquipmentSelectionArmorType,
+            0,
+            CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
+        );
+        EquipmentSelectionShieldType = Clamp(
+            EquipmentSelectionShieldType,
+            0,
+            CaelumConstants.SHIELD_TYPE_COUNT - 1
+        );
+        EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
+        EquipmentSelectionSize = Clamp(
+            EquipmentSelectionSize,
+            0,
+            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        EquipmentSelectionOwned = false;
+        EquipmentSelectionEquipped = false;
+        EquipmentSelectionSizeCompatible = CharacterProfile != null
+            && CaelumEquipmentRules.IsSizeCompatible(
+                EquipmentSelectionSize,
+                CharacterProfile.GetSizeTier()
+            );
+        EquipmentSelectionDurability = 0;
+        EquipmentSelectionMaximumDurability = 0;
+        EquipmentSelectionWeight = 0.0;
+        MagicBoxUsedSlots = 0;
+        MagicBoxMaximumSlots = DerivedStats != null
+            ? DerivedStats.MagicBoxCapacity : 0;
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState == null) { return; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        int equippedOwnedArmor = 0;
+        if (ArmorModel != null)
+        {
+            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+            {
+                if (ArmorModel.ArmorType[slot]
+                    == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+                {
+                    continue;
+                }
+                if (persistentState.OwnsArmor(
+                    slot,
+                    ArmorModel.ArmorType[slot],
+                    ArmorModel.Tier[slot],
+                    ArmorModel.Size[slot]
+                ))
+                {
+                    equippedOwnedArmor++;
+                }
+            }
+        }
+        MagicBoxUsedSlots = Max(0,
+            persistentState.CountOwnedArmor() + persistentState.CountOwnedShields()
+            - equippedOwnedArmor
+            - (ShieldModel != null && ShieldModel.Equipped ? 1 : 0)
+        );
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            EquipmentSelectionOwned = persistentState.OwnsShield(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            EquipmentSelectionDurability = persistentState.GetOwnedShieldDurability(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            EquipmentSelectionMaximumDurability = ShieldModel != null
+                ? ShieldModel.GetMaximumDurabilityFor(
+                    EquipmentSelectionShieldType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                ) : 0;
+            EquipmentSelectionWeight = ShieldModel != null
+                ? ShieldModel.GetWeightFor(
+                    EquipmentSelectionShieldType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                ) : 0.0;
+            EquipmentSelectionEquipped = ShieldModel != null
+                && ShieldModel.Equipped
+                && ShieldModel.ShieldType == EquipmentSelectionShieldType
+                && ShieldModel.Tier == EquipmentSelectionTier
+                && ShieldModel.Size == EquipmentSelectionSize;
+            return;
+        }
+
+        EquipmentSelectionOwned = persistentState.OwnsArmor(
+            EquipmentSelectionSlot,
+            EquipmentSelectionArmorType,
+            EquipmentSelectionTier,
+            EquipmentSelectionSize
+        );
+        EquipmentSelectionDurability = persistentState.GetOwnedArmorDurability(
+            EquipmentSelectionSlot,
+            EquipmentSelectionArmorType,
+            EquipmentSelectionTier,
+            EquipmentSelectionSize
+        );
+        EquipmentSelectionMaximumDurability = ArmorModel != null
+            ? ArmorModel.GetMaximumDurabilityFor(
+                EquipmentSelectionArmorType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            ) : 0;
+        EquipmentSelectionWeight = ArmorModel != null
+            ? ArmorModel.GetWeightFor(
+                EquipmentSelectionSlot,
+                EquipmentSelectionArmorType,
+                EquipmentSelectionSize
+            ) : 0.0;
+        EquipmentSelectionEquipped = ArmorModel != null
+            && ArmorModel.ArmorType[EquipmentSelectionSlot]
+                == EquipmentSelectionArmorType
+            && ArmorModel.Tier[EquipmentSelectionSlot]
+                == EquipmentSelectionTier
+            && ArmorModel.Size[EquipmentSelectionSlot]
+                == EquipmentSelectionSize;
+    }
+
+    bool AcquireArmorPickup(
+        int slot,
+        int armorType,
+        int tier,
+        int equipmentSize,
+        int encodedDurability
+    )
+    {
+        if (ArmorModel == null) { return false; }
+        int resolvedSlot = Clamp(slot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
+        int resolvedType = Clamp(
+            armorType, 0, CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
+        );
+        int resolvedTier = Clamp(tier, 1, 3);
+        int resolvedSize = Clamp(
+            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        RefreshEquipmentSelectionPreview();
+        if (!persistentState.OwnsArmor(
+            resolvedSlot, resolvedType, resolvedTier, resolvedSize
+        ) && MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            return false;
+        }
+        int pickupDurability = encodedDurability > 0
+            ? encodedDurability - 1
+            : ArmorModel.GetMaximumDurabilityFor(resolvedType, resolvedTier, resolvedSize);
+        LastEquipmentPickupWasNew = persistentState.RegisterOwnedArmor(
+            resolvedSlot,
+            resolvedType,
+            resolvedTier,
+            resolvedSize,
+            pickupDurability
+        );
+        if (ArmorModel.ArmorType[resolvedSlot] == resolvedType
+            && ArmorModel.Tier[resolvedSlot] == resolvedTier
+            && ArmorModel.Size[resolvedSlot] == resolvedSize)
+        {
+            ArmorModel.Durability[resolvedSlot] = ArmorModel.GetMaximumDurabilityFor(
+                resolvedType, resolvedTier, resolvedSize
+            );
+        }
+        OwnedArmorCount = persistentState.CountOwnedArmor();
+        RefreshEquipmentSelectionPreview();
+        PersistCharacterState();
+        return true;
+    }
+
+    bool AcquireShieldPickup(
+        int shieldType,
+        int tier,
+        int equipmentSize,
+        int encodedDurability
+    )
+    {
+        if (ShieldModel == null) { return false; }
+        int resolvedType = Clamp(
+            shieldType,
+            0,
+            CaelumConstants.SHIELD_TYPE_COUNT - 1
+        );
+        int resolvedTier = Clamp(tier, 1, 3);
+        int resolvedSize = Clamp(
+            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        RefreshEquipmentSelectionPreview();
+        if (!persistentState.OwnsShield(resolvedType, resolvedTier, resolvedSize)
+            && MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            return false;
+        }
+        int pickupDurability = encodedDurability > 0
+            ? encodedDurability - 1
+            : ShieldModel.GetMaximumDurabilityFor(resolvedType, resolvedTier, resolvedSize);
+        LastEquipmentPickupWasNew = persistentState.RegisterOwnedShield(
+            resolvedType,
+            resolvedTier,
+            resolvedSize,
+            pickupDurability
+        );
+        if (ShieldModel.Equipped
+            && ShieldModel.ShieldType == resolvedType
+            && ShieldModel.Tier == resolvedTier
+            && ShieldModel.Size == resolvedSize)
+        {
+            ShieldModel.Durability = ShieldModel.GetMaximumDurabilityFor(
+                resolvedType, resolvedTier, resolvedSize
+            );
+        }
+        OwnedShieldCount = persistentState.CountOwnedShields();
+        RefreshEquipmentSelectionPreview();
+        PersistCharacterState();
+        return true;
+    }
+
+    void ToggleEquipmentMenu()
+    {
+        if (CreationWizardOpen) { return; }
+        EquipmentMenuOpen = !EquipmentMenuOpen;
+        if (!EquipmentMenuOpen) { return; }
+        PersistCharacterState();
+
+        if (ArmorModel != null)
+        {
+            EquipmentSelectionKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
+            EquipmentSelectionSlot = ArmorModel.SelectedSlot;
+            EquipmentSelectionArmorType = ArmorModel.ArmorType[EquipmentSelectionSlot];
+            EquipmentSelectionTier = ArmorModel.Tier[EquipmentSelectionSlot];
+            EquipmentSelectionSize = ArmorModel.Size[EquipmentSelectionSlot];
+        }
+        if (ShieldModel != null)
+        {
+            EquipmentSelectionShieldType = ShieldModel.ShieldType;
+        }
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void CycleEquipmentKind()
+    {
+        EquipmentSelectionKind = EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            ? CaelumConstants.EQUIPMENT_KIND_SHIELD
+            : CaelumConstants.EQUIPMENT_KIND_ARMOR;
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void CycleEquipmentSlot(int direction)
+    {
+        EquipmentSelectionSlot = (
+            EquipmentSelectionSlot + direction
+                + CaelumConstants.ARMOR_SLOT_COUNT
+        ) % CaelumConstants.ARMOR_SLOT_COUNT;
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void CycleEquipmentType(int direction)
+    {
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            EquipmentSelectionShieldType = (
+                EquipmentSelectionShieldType + direction
+                    + CaelumConstants.SHIELD_TYPE_COUNT
+            ) % CaelumConstants.SHIELD_TYPE_COUNT;
+        }
+        else
+        {
+            EquipmentSelectionArmorType = (
+                EquipmentSelectionArmorType + direction
+                    + CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT
+            ) % CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT;
+        }
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void CycleEquipmentTier()
+    {
+        EquipmentSelectionTier++;
+        if (EquipmentSelectionTier > 3) { EquipmentSelectionTier = 1; }
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void CycleEquipmentSize()
+    {
+        EquipmentSelectionSize = (EquipmentSelectionSize + 1)
+            % CaelumConstants.EQUIPMENT_SIZE_COUNT;
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void EquipSelectedEquipment()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState == null) { return; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        if (!EquipmentSelectionSizeCompatible) { return; }
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            if (ShieldModel == null || !persistentState.OwnsShield(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            ))
+            {
+                return;
+            }
+            if (ShieldModel.Equipped)
+            {
+                persistentState.RegisterOwnedShield(
+                    ShieldModel.ShieldType,
+                    ShieldModel.Tier,
+                    ShieldModel.Size,
+                    ShieldModel.Durability
+                );
+                persistentState.StoreOwnedShieldDurability(
+                    ShieldModel.ShieldType,
+                    ShieldModel.Tier,
+                    ShieldModel.Size,
+                    ShieldModel.Durability
+                );
+            }
+            ShieldModel.ShieldType = EquipmentSelectionShieldType;
+            ShieldModel.Tier = EquipmentSelectionTier;
+            ShieldModel.Size = EquipmentSelectionSize;
+            ShieldModel.Durability = persistentState.GetOwnedShieldDurability(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            ShieldModel.Equipped = true;
+            DebugShieldBlocking = false;
+        }
+        else
+        {
+            if (ArmorModel == null || !persistentState.OwnsArmor(
+                EquipmentSelectionSlot,
+                EquipmentSelectionArmorType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            ))
+            {
+                return;
+            }
+            if (ArmorModel.ArmorType[EquipmentSelectionSlot]
+                != CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+            {
+                persistentState.RegisterOwnedArmor(
+                    EquipmentSelectionSlot,
+                    ArmorModel.ArmorType[EquipmentSelectionSlot],
+                    ArmorModel.Tier[EquipmentSelectionSlot],
+                    ArmorModel.Size[EquipmentSelectionSlot],
+                    ArmorModel.Durability[EquipmentSelectionSlot]
+                );
+                persistentState.StoreOwnedArmorDurability(
+                    EquipmentSelectionSlot,
+                    ArmorModel.ArmorType[EquipmentSelectionSlot],
+                    ArmorModel.Tier[EquipmentSelectionSlot],
+                    ArmorModel.Size[EquipmentSelectionSlot],
+                    ArmorModel.Durability[EquipmentSelectionSlot]
+                );
+            }
+            ArmorModel.ArmorType[EquipmentSelectionSlot] =
+                EquipmentSelectionArmorType;
+            ArmorModel.Tier[EquipmentSelectionSlot] = EquipmentSelectionTier;
+            ArmorModel.Size[EquipmentSelectionSlot] = EquipmentSelectionSize;
+            ArmorModel.Durability[EquipmentSelectionSlot] =
+                persistentState.GetOwnedArmorDurability(
+                    EquipmentSelectionSlot,
+                    EquipmentSelectionArmorType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                );
+            ArmorModel.SelectedSlot = EquipmentSelectionSlot;
+        }
+
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void UnequipSelectedEquipment()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsureEquipmentSizeInitialized();
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            if (ShieldModel == null || !ShieldModel.Equipped) { return; }
+            persistentState.RegisterOwnedShield(
+                ShieldModel.ShieldType,
+                ShieldModel.Tier,
+                ShieldModel.Size,
+                ShieldModel.Durability
+            );
+            persistentState.StoreOwnedShieldDurability(
+                ShieldModel.ShieldType,
+                ShieldModel.Tier,
+                ShieldModel.Size,
+                ShieldModel.Durability
+            );
+            ShieldModel.Equipped = false;
+            DebugShieldBlocking = false;
+        }
+        else
+        {
+            if (ArmorModel == null) { return; }
+            int slot = EquipmentSelectionSlot;
+            if (ArmorModel.ArmorType[slot]
+                == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+            {
+                return;
+            }
+            persistentState.RegisterOwnedArmor(
+                slot,
+                ArmorModel.ArmorType[slot],
+                ArmorModel.Tier[slot],
+                ArmorModel.Size[slot],
+                ArmorModel.Durability[slot]
+            );
+            persistentState.StoreOwnedArmorDurability(
+                slot,
+                ArmorModel.ArmorType[slot],
+                ArmorModel.Tier[slot],
+                ArmorModel.Size[slot],
+                ArmorModel.Durability[slot]
+            );
+            ArmorModel.ArmorType[slot] = CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
+            ArmorModel.Tier[slot] = 1;
+            ArmorModel.Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
+            ArmorModel.Durability[slot] = 0;
+            ArmorModel.SelectedSlot = slot;
+        }
+
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void SpawnDebugEquipmentPickup()
+    {
+        if (player == null || player.playerstate != PST_LIVE) { return; }
+        Vector3 spawnPos = Pos + (
+            Cos(Angle) * 64.0,
+            Sin(Angle) * 64.0,
+            8.0
+        );
+        Actor pickup;
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
+            if (pickup != null)
+            {
+                pickup.args[0] = EquipmentSelectionShieldType;
+                pickup.args[1] = EquipmentSelectionTier;
+                pickup.args[2] = EquipmentSelectionSize + 1;
+            }
+        }
+        else
+        {
+            pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
+            if (pickup != null)
+            {
+                pickup.args[0] = EquipmentSelectionSlot;
+                pickup.args[1] = EquipmentSelectionArmorType;
+                pickup.args[2] = EquipmentSelectionTier;
+                pickup.args[3] = EquipmentSelectionSize + 1;
+            }
+        }
+    }
+
+    void BreakSelectedEquipment()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState == null || !EquipmentSelectionOwned) { return; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            persistentState.StoreOwnedShieldDurability(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
+            if (EquipmentSelectionEquipped && ShieldModel != null)
+            {
+                ShieldModel.Durability = 0;
+                DebugShieldBlocking = false;
+            }
+        }
+        else
+        {
+            persistentState.StoreOwnedArmorDurability(
+                EquipmentSelectionSlot,
+                EquipmentSelectionArmorType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
+            if (EquipmentSelectionEquipped && ArmorModel != null)
+            {
+                ArmorModel.Durability[EquipmentSelectionSlot] = 0;
+            }
+        }
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+    }
+
+    void DropSelectedEquipment()
+    {
+        if (!EquipmentSelectionOwned || EquipmentSelectionEquipped) { return; }
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState == null) { return; }
+        Vector3 spawnPos = Pos + (Cos(Angle) * 48.0, Sin(Angle) * 48.0, 8.0);
+        Actor pickup;
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
+            if (pickup == null) { return; }
+            pickup.args[0] = EquipmentSelectionShieldType;
+            pickup.args[1] = EquipmentSelectionTier;
+            pickup.args[2] = EquipmentSelectionSize + 1;
+            pickup.args[3] = EquipmentSelectionDurability + 1;
+            persistentState.RemoveOwnedShield(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+        }
+        else
+        {
+            pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
+            if (pickup == null) { return; }
+            pickup.args[0] = EquipmentSelectionSlot;
+            pickup.args[1] = EquipmentSelectionArmorType;
+            pickup.args[2] = EquipmentSelectionTier;
+            pickup.args[3] = EquipmentSelectionSize + 1;
+            pickup.args[4] = EquipmentSelectionDurability + 1;
+            persistentState.RemoveOwnedArmor(
+                EquipmentSelectionSlot,
+                EquipmentSelectionArmorType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+        }
+        OwnedArmorCount = persistentState.CountOwnedArmor();
+        OwnedShieldCount = persistentState.CountOwnedShields();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+    }
+
     override void PreTravelled()
     {
+        EquipmentMenuOpen = false;
         PersistCharacterState();
         Super.PreTravelled();
     }
@@ -401,7 +1050,16 @@ class CaelumPlayer : DoomPlayer
             ShieldModel = CaelumShieldModel(new("CaelumShieldModel"));
             ShieldModel.InitializeDefaults();
         }
+        ShieldModel.EnsureEquippedStateInitialized();
         ArmorModel.InitializeDefaults();
+        if (!WeaponWeightInitialized)
+        {
+            // La espada provisional representa el ejemplo confirmado 6/9/12.
+            EquippedWeaponBaseWeight = 6.0;
+            EquippedWeaponTier = 1;
+            EquippedWeaponSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            WeaponWeightInitialized = true;
+        }
         if (!ArmorDurabilityMultiplierInitialized)
         {
             // Reserved hook for future durability-loss mitigation effects.
@@ -478,6 +1136,7 @@ class CaelumPlayer : DoomPlayer
             "[Caelum] Character creation values loaded. Attribute total: %d",
             Attributes.GetTotalPrimaryLevels()
         );
+        RefreshEquipmentSelectionPreview();
 
         // Un personaje nuevo debe completar el creador antes de jugar.
         // El indicador queda guardado junto al actor y evita reabrirlo al cargar.
@@ -999,8 +1658,10 @@ class CaelumPlayer : DoomPlayer
         }
         DebugShieldIncomingAngleOffset = int(incomingOffset + 0.5);
         LastShieldWithinCoverage = ShieldModel != null
+            && ShieldModel.Equipped
             && incomingOffset <= ShieldModel.GetCoverageDegrees() / 2.0;
         bool shieldCanBlock = ShieldModel != null
+            && ShieldModel.Equipped
             && DebugShieldBlocking
             && ShieldModel.Durability > 0
             && LastShieldWithinCoverage;
@@ -1253,7 +1914,7 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
-        if (CreationWizardOpen && player != null)
+        if ((CreationWizardOpen || EquipmentMenuOpen) && player != null)
         {
             UserCmd creationCommand = player.cmd;
             creationCommand.forwardmove = 0;
@@ -1605,6 +2266,7 @@ class CaelumPlayer : DoomPlayer
     {
         UpdateShieldAirCost();
         if (!DebugShieldBlocking || ShieldModel == null
+            || !ShieldModel.Equipped
             || ShieldModel.Durability <= 0) { return; }
         if (CurrentAir <= 0.0)
         {
@@ -1618,17 +2280,18 @@ class CaelumPlayer : DoomPlayer
 
     void CycleDebugShieldType()
     {
-        if (ShieldModel != null) { ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); PersistCharacterState(); }
+        if (ShieldModel != null) { PersistCharacterState(); ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); }
     }
 
     void CycleDebugShieldTier()
     {
-        if (ShieldModel != null) { ShieldModel.CycleTier(); ApplyCharacterProfile(); PersistCharacterState(); }
+        if (ShieldModel != null) { PersistCharacterState(); ShieldModel.CycleTier(); ApplyCharacterProfile(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); }
     }
 
     void ToggleDebugShieldBlock()
     {
-        if (ShieldModel == null || ShieldModel.Durability <= 0 || CurrentAir <= 0.0)
+        if (ShieldModel == null || !ShieldModel.Equipped
+            || ShieldModel.Durability <= 0 || CurrentAir <= 0.0)
         {
             DebugShieldBlocking = false;
             return;
@@ -1655,7 +2318,7 @@ class CaelumPlayer : DoomPlayer
 
     void RepairDebugShield()
     {
-        if (ShieldModel != null) { ShieldModel.Repair(); PersistCharacterState(); }
+        if (ShieldModel != null) { ShieldModel.Repair(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); }
     }
 
     void ApplyDebugShieldHit()
@@ -1666,9 +2329,11 @@ class CaelumPlayer : DoomPlayer
         LastShieldDurabilityChancePercent = 0.0;
         LastShieldDurabilityRollPercent = 0.0;
         LastShieldWithinCoverage = ShieldModel != null
+            && ShieldModel.Equipped
             && Abs(DebugShieldIncomingAngleOffset)
                 <= ShieldModel.GetCoverageDegrees() / 2.0;
         bool shieldCanBlock = ShieldModel != null
+            && ShieldModel.Equipped
             && DebugShieldBlocking
             && ShieldModel.Durability > 0
             && LastShieldWithinCoverage;
@@ -1816,7 +2481,13 @@ class CaelumPlayer : DoomPlayer
             }
             DerivedStats.SetEquipmentWeights(
                 ArmorModel != null ? ArmorModel.GetTotalWeight() : 0.0,
-                ShieldModel != null ? ShieldModel.GetWeight() : 0.0
+                ShieldModel != null ? ShieldModel.GetWeight() : 0.0,
+                WeaponWeightInitialized
+                    ? CaelumEquipmentRules.CalculateTieredEquipmentWeight(
+                        EquippedWeaponBaseWeight,
+                        EquippedWeaponTier,
+                        EquippedWeaponSize
+                    ) : 0.0
             );
             DerivedStats.Recalculate(Attributes, CharacterProfile);
             // La masa nativa representa la masa total para que el motor y los
@@ -2429,17 +3100,21 @@ class CaelumPlayer : DoomPlayer
     void CycleDebugArmorType()
     {
         if (ArmorModel == null) { return; }
+        PersistCharacterState();
         ArmorModel.CycleSelectedType();
         ApplyCharacterProfile();
         PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
     }
 
     void CycleDebugArmorTier()
     {
         if (ArmorModel == null) { return; }
+        PersistCharacterState();
         ArmorModel.CycleSelectedTier();
         ApplyCharacterProfile();
         PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
     }
 
     void ToggleDebugArmorCritical()
@@ -2454,6 +3129,7 @@ class CaelumPlayer : DoomPlayer
             ArmorModel.RepairSelectedPiece();
             ApplyCharacterProfile();
             PersistCharacterState();
+            RefreshEquipmentSelectionPreview();
         }
     }
 
@@ -3347,6 +4023,24 @@ class CaelumPlayer : DoomPlayer
 
         if (firstConfirmation)
         {
+            int startingEquipmentSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(
+                CharacterProfile.GetSizeTier()
+            );
+            if (ArmorModel != null)
+            {
+                for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+                {
+                    ArmorModel.Size[slot] = startingEquipmentSize;
+                    ArmorModel.Durability[slot] = ArmorModel.GetMaximumDurability(slot);
+                }
+            }
+            if (ShieldModel != null)
+            {
+                ShieldModel.Size = startingEquipmentSize;
+                ShieldModel.Durability = ShieldModel.GetMaximumDurability();
+            }
+            EquippedWeaponSize = startingEquipmentSize;
+            ApplyCharacterProfile();
             CaelumMaximumHealth = Max(1, int(DerivedStats.MaximumHealth));
             health = CaelumMaximumHealth;
             if (player != null) { player.health = health; }
@@ -3365,6 +4059,7 @@ class CaelumPlayer : DoomPlayer
             UpdateLucidityState();
         }
         PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
     }
 
     void GoBackCreationWizard()

@@ -59,6 +59,17 @@ class CaelumConstants : Object
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
     const DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT = 8.0;
+    // Ficha tier 1 de la carabina, reemplazo del arco corto. El arco largo
+    // ocupa el extremo superior (12) de la familia a distancia documentada.
+    const LONG_BOW_TIER_ONE_BASE_WEIGHT = 12.0;
+    const CARBINE_TIER_ONE_BASE_WEIGHT = 24.0;
+    const CARBINE_TIER_ONE_DAMAGE = 360.0;
+    const CARBINE_TIER_ONE_FIRE_TICS = 48;
+    const CARBINE_TIER_ONE_RANGE_METERS = 60.0;
+    const CARBINE_MINIMUM_SPREAD_DEGREES = 30.0;
+    const CARBINE_MAXIMUM_SPREAD_DEGREES = 200.0;
+    const CARBINE_BASE_CRITICAL_CHANCE_PERCENT = 0.0;
+    const CARBINE_AIR_CHANGE = -20.0;
     const TEST_ACTOR_RANGED_DAMAGE = 138;
     const TEST_RULO_RANGED_DAMAGE = 372;
     const TEST_RONNIE_MAGIC_DAMAGE = 372;
@@ -124,10 +135,23 @@ class CaelumConstants : Object
     const ARMOR_TYPE_LIGHT = 1;
     const ARMOR_TYPE_MEDIUM = 2;
     const ARMOR_TYPE_HEAVY = 3;
-    const ARMOR_TYPE_COUNT = 4;
+    // El equipo base representa la ausencia real de armadura. No se ofrece
+    // como objeto seleccionable ni ocupa espacio en la Caja Mágica.
+    const ARMOR_TYPE_BASE_CLOTHING = 4;
+    const ARMOR_EQUIPPABLE_TYPE_COUNT = 4;
+    const ARMOR_TYPE_COUNT = 5;
     const DEBUG_ARMOR_HIT_DAMAGE = 1000.0;
     const ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT = 10.0;
     const ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY = 1000.0;
+    const EQUIPMENT_KIND_ARMOR = 0;
+    const EQUIPMENT_KIND_SHIELD = 1;
+
+    const EQUIPMENT_SIZE_XS = 0;
+    const EQUIPMENT_SIZE_S = 1;
+    const EQUIPMENT_SIZE_M = 2;
+    const EQUIPMENT_SIZE_L = 3;
+    const EQUIPMENT_SIZE_XL = 4;
+    const EQUIPMENT_SIZE_COUNT = 5;
 
     const SHIELD_TYPE_BUCKLER = 0;
     const SHIELD_TYPE_KITE = 1;
@@ -223,7 +247,7 @@ class CaelumConstants : Object
     const TIRED_PERFORMANCE_MULTIPLIER = 0.75;
     const BREATHLESS_PERFORMANCE_MULTIPLIER = 0.25;
 
-    // The four attribute layers used by origins, identities, and classes.
+    // Las cuatro capas de atributos usadas por razas y clases.
     const LAYER_PHYSICAL = 0;
     const LAYER_TECHNICAL = 1;
     const LAYER_SOCIAL = 2;

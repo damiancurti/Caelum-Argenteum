@@ -398,6 +398,30 @@ class CaelumHUDOverlay : EventHandler
         if (fill > 0) Screen.Dim(barColor, 0.95, x, y, fill, height);
     }
 
+    // La carga comparte la columna de supervivencia. El color avanza desde
+    // verde hasta rojo al acercarse y superar la capacidad máxima.
+    ui void DrawLoadBar(CaelumPlayer localPlayer, int virtualY)
+    {
+        double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
+        double offsetX = (Screen.GetWidth() - 640.0 * scale) * 0.5;
+        double offsetY = (Screen.GetHeight() - 360.0 * scale) * 0.5;
+        int x = int(offsetX + 440.0 * scale);
+        int y = int(offsetY + virtualY * scale);
+        int width = Max(1, int(180.0 * scale));
+        int height = Max(1, int(7.0 * scale));
+        double ratio = localPlayer.DerivedStats.CarryCapacity > 0.0
+            ? localPlayer.DerivedStats.EquippedWeight
+                / localPlayer.DerivedStats.CarryCapacity
+            : 0.0;
+        int fill = int(width * Clamp(ratio, 0.0, 1.0));
+        int barColor = 0x55B86A;
+        if (ratio >= 1.0) barColor = 0xC34B4B;
+        else if (ratio >= CaelumConstants.OVERLOAD_THRESHOLD) barColor = 0xD28B35;
+        else if (ratio >= 0.50) barColor = 0xB7B547;
+        Screen.Dim(0x161616, 0.85, x, y, width, height);
+        if (fill > 0) Screen.Dim(barColor, 0.95, x, y, fill, height);
+    }
+
     // A restrained full-screen tint plus opposed color bands represents the
     // documented dizzy visual distortion without depending on temporary art.
     // HUD text is drawn afterward and therefore stays crisp and readable.
@@ -497,6 +521,15 @@ class CaelumHUDOverlay : EventHandler
         String sleepLine = String.Format("%s: %.0f%% (%s)",
             StringTable.Localize("CA_HUD_SLEEP", false), localPlayer.CurrentSleep,
             StringTable.Localize(GetSurvivalStateKey(2, localPlayer.SleepState), false));
+        double loadPercent = localPlayer.DerivedStats.CarryCapacity > 0.0
+            ? localPlayer.DerivedStats.EquippedWeight
+                / localPlayer.DerivedStats.CarryCapacity * 100.0
+            : 0.0;
+        String loadLine = String.Format("%s: %.3f / %.3f (%.1f%%)",
+            StringTable.Localize("CA_HUD_LOAD", false),
+            localPlayer.DerivedStats.EquippedWeight,
+            localPlayer.DerivedStats.CarryCapacity,
+            loadPercent);
 
         DrawLucidityDistortion(localPlayer);
         DrawLucidityBar(localPlayer);
@@ -504,9 +537,14 @@ class CaelumHUDOverlay : EventHandler
         DrawAnimaBar(localPlayer);
         DrawHealthBar(localPlayer);
         DrawAirBar(localPlayer);
+        DrawLoadBar(localPlayer, 254);
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
+
+        Screen.DrawText(HUDFont, Font.CR_WHITE, 440.0, 266.0,
+            loadLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true);
 
         Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.HungerState), 440.0, 290.0,
             hungerLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);

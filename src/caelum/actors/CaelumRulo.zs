@@ -22,6 +22,11 @@ class CaelumRulo : CaelumCombatActor
         // Fisico 20, tecnico 18, social 9 y mental 3.
         InitializeCombatProfile(20, 18, 18, 3, 18, 3, 20, 3);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_HEAVY, 1);
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            CombatArmor.Size[slot] = CaelumConstants.EQUIPMENT_SIZE_XL;
+            CombatArmor.Durability[slot] = CombatArmor.GetMaximumDurability(slot);
+        }
     }
 
     States

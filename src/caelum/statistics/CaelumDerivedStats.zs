@@ -30,6 +30,7 @@ class CaelumDerivedStats : Object
     double HungerThirstLossMultiplier;
     double SleepLossMultiplier;
     double CarryCapacity;
+    int MagicBoxCapacity;
 
     int MassTier;
     int SizeTier;
@@ -42,6 +43,7 @@ class CaelumDerivedStats : Object
     double MagicalPushMultiplier;
     double ArmorWeight;
     double ShieldWeight;
+    double WeaponWeight;
     double DebugWeight;
     double EquippedWeight;
     double TotalMass;
@@ -96,10 +98,15 @@ class CaelumDerivedStats : Object
         return 1.0 + 0.2 * Clamp(tier, 1, 7);
     }
 
-    void SetEquipmentWeights(double armorWeight, double shieldWeight)
+    void SetEquipmentWeights(
+        double armorWeight,
+        double shieldWeight,
+        double weaponWeight
+    )
     {
         ArmorWeight = Max(0.0, armorWeight);
         ShieldWeight = Max(0.0, shieldWeight);
+        WeaponWeight = Max(0.0, weaponWeight);
     }
 
     void AddDebugWeight(double amount) { DebugWeight = Max(0.0, DebugWeight + amount); }
@@ -190,8 +197,11 @@ class CaelumDerivedStats : Object
 
         MaximumAir = CaelumConstants.BASE_AIR_CAPACITY
             * CalculateType4Percent(attributes.Resilience) / 100.0;
-        CarryCapacity = CalculateType1Percent(attributes.Strength);
-        EquippedWeight = ArmorWeight + ShieldWeight + DebugWeight;
+        CarryCapacity = CalculateType4Percent(attributes.Strength);
+        MagicBoxCapacity = 2 + int(
+            CalculateType1Percent(attributes.Intelligence) / 50.0
+        );
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + DebugWeight;
         TotalMass = BaseMass + EquippedWeight;
         LoadRatio = EquippedWeight / CarryCapacity;
         PushResistance = TotalMass / 100.0;
@@ -205,7 +215,7 @@ class CaelumDerivedStats : Object
         MassAdjustedEvasionChance = BaseEvasionChance * EvasionMassMultiplier;
         BaseMovementPercent = CalculateType4Percent(attributes.Agility);
         MassAdjustedMovementPercent = BaseMovementPercent * MovementMultiplier;
-        BaseJumpHeightPercent = 100.0 + CalculateType2Percent(attributes.Agility);
+        BaseJumpHeightPercent = CalculateType1Percent(attributes.Agility);
         MassAdjustedJumpHeightPercent = BaseJumpHeightPercent * MovementMultiplier;
     }
 }
