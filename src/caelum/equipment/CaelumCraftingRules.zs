@@ -1,6 +1,5 @@
-// Recetas estructurales 4.12. Cada arma usa un componente principal y uno
-// secundario. Las cantidades quedan deliberadamente fuera hasta definir la
-// fórmula global de requisitos; no se inventan costes en esta etapa.
+// Recetas estructurales 4.12. Cada arma usa un componente de tier y uno
+// básico. Ambos se calculan por peso y se redondean hacia arriba por separado.
 class CaelumCraftingRules : Object
 {
     static int GetPrimaryMaterial(int weaponId)
@@ -58,6 +57,128 @@ class CaelumCraftingRules : Object
             return CaelumConstants.MATERIAL_POINT;
         }
         return GetPrimaryMaterial(resolved);
+    }
+
+    static int GetBasicMaterial(int weaponId)
+    {
+        int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        int tierMaterial = GetTierMaterial(resolved);
+        int primaryMaterial = GetPrimaryMaterial(resolved);
+        return primaryMaterial == tierMaterial
+            ? GetSecondaryMaterial(resolved) : primaryMaterial;
+    }
+
+    static double GetTierWeightRatio(int weaponId)
+    {
+        int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_SPEAR
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_HALBERD)
+        {
+            return CaelumConstants.CRAFTING_POLEARM_TIER_WEIGHT_RATIO;
+        }
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_HATCHET
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_AXE
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_WAR_AXE)
+        {
+            return CaelumConstants.CRAFTING_AXE_TIER_WEIGHT_RATIO;
+        }
+        if (CaelumWeaponCatalogue.GetFamily(resolved)
+            == CaelumConstants.CATALOGUE_FAMILY_RANGED)
+        {
+            return CaelumConstants.CRAFTING_RANGED_TIER_WEIGHT_RATIO;
+        }
+        return CaelumConstants.CRAFTING_DEFAULT_TIER_WEIGHT_RATIO;
+    }
+
+    static double GetBasicWeightRatio(int weaponId)
+    {
+        return 1.0 - GetTierWeightRatio(weaponId);
+    }
+
+    static int GetRoundedMaterialUnits(double finalWeaponWeight, double ratio)
+    {
+        double exactUnits = Max(0.0, finalWeaponWeight)
+            * Clamp(ratio, 0.0, 1.0)
+            / CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        // El margen solo neutraliza error binario sobre un entero exacto.
+        return Max(0, int(Ceil(exactUnits - 0.0000001)));
+    }
+
+    static int GetRequiredTierMaterialUnits(
+        int weaponId, double finalWeaponWeight
+    )
+    {
+        return GetRoundedMaterialUnits(
+            finalWeaponWeight, GetTierWeightRatio(weaponId)
+        );
+    }
+
+    static int GetRequiredBasicMaterialUnits(
+        int weaponId, double finalWeaponWeight
+    )
+    {
+        return GetRoundedMaterialUnits(
+            finalWeaponWeight, GetBasicWeightRatio(weaponId)
+        );
+    }
+
+    static int GetRequiredPhysicalMaterialUnits(
+        int weaponId, double finalWeaponWeight
+    )
+    {
+        return GetRequiredTierMaterialUnits(weaponId, finalWeaponWeight)
+            + GetRequiredBasicMaterialUnits(weaponId, finalWeaponWeight);
+    }
+
+    static double GetCraftedWeaponWeight(
+        double tierOneBaseWeight, int tier, int equipmentSize
+    )
+    {
+        return CaelumEquipmentRules.CalculateTieredEquipmentWeight(
+            tierOneBaseWeight, tier, equipmentSize
+        );
+    }
+
+    static int GetRequiredTierUnitsForConfiguration(
+        int weaponId, double tierOneBaseWeight, int tier, int equipmentSize
+    )
+    {
+        return GetRequiredTierMaterialUnits(
+            weaponId,
+            GetCraftedWeaponWeight(tierOneBaseWeight, tier, equipmentSize)
+        );
+    }
+
+    static int GetRequiredBasicUnitsForConfiguration(
+        int weaponId, double tierOneBaseWeight, int tier, int equipmentSize
+    )
+    {
+        return GetRequiredBasicMaterialUnits(
+            weaponId,
+            GetCraftedWeaponWeight(tierOneBaseWeight, tier, equipmentSize)
+        );
+    }
+
+    static int GetRequiredEssenceUnits(double finalWeaponWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeaponWeight,
+            CaelumConstants.CRAFTING_ESSENCE_TIER_WEIGHT_RATIO
+        );
+    }
+
+    static int GetRequiredEssenceBaseUnits(double finalWeaponWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeaponWeight,
+            1.0 - CaelumConstants.CRAFTING_ESSENCE_TIER_WEIGHT_RATIO
+        );
+    }
+
+    static double GetMaterialWeightForUnits(int materialUnits)
+    {
+        return Max(0, materialUnits) * CaelumConstants.MATERIAL_UNIT_WEIGHT;
     }
 
     static bool IsMaterialUsedByWeaponRecipe(int materialType)

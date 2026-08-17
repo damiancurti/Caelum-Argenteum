@@ -1855,6 +1855,36 @@ class CaelumPlayer : DoomPlayer
                 - CaelumConstants.MATERIAL_FIRST_ACTIVE,
             unusedMaterials
         );
+        int swordBasic = CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+            CaelumConstants.CATALOGUE_WEAPON_SWORD,
+            CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT
+        );
+        int swordTier = CaelumCraftingRules.GetRequiredTierMaterialUnits(
+            CaelumConstants.CATALOGUE_WEAPON_SWORD,
+            CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT
+        );
+        Console.Printf(
+            "[Caelum] Sword M T1: basic %d, tier %d, material weight %.3f.",
+            swordBasic, swordTier,
+            CaelumCraftingRules.GetMaterialWeightForUnits(
+                swordBasic + swordTier
+            )
+        );
+        int carbineBasic = CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+            CaelumConstants.CATALOGUE_WEAPON_CARBINE,
+            CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT
+        );
+        int carbineTier = CaelumCraftingRules.GetRequiredTierMaterialUnits(
+            CaelumConstants.CATALOGUE_WEAPON_CARBINE,
+            CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT
+        );
+        Console.Printf(
+            "[Caelum] Carbine M T1: basic %d, tier %d, material weight %.3f.",
+            carbineBasic, carbineTier,
+            CaelumCraftingRules.GetMaterialWeightForUnits(
+                carbineBasic + carbineTier
+            )
+        );
         for (int materialType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
             materialType < CaelumConstants.MATERIAL_TYPE_COUNT;
             materialType++)

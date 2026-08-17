@@ -88,6 +88,11 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         return CaelumConstants.EQUIPMENT_KIND_MATERIAL;
     }
 
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.MATERIAL_UNIT_WEIGHT;
+    }
+
     override int GetSpecialType()
     {
         return Clamp(args[0], 1, CaelumConstants.MATERIAL_TYPE_COUNT - 1);
@@ -202,6 +207,12 @@ class CaelumIronIngot : CaelumSpecialInventoryItem
     }
 
     override int GetSpecialTier() { return 2; }
+
+    override double GetUnitWeight()
+    {
+        // Compatibilidad: aunque esté oculto, sigue siendo un material.
+        return CaelumConstants.MATERIAL_UNIT_WEIGHT;
+    }
 
     States { Spawn: CELP A -1; Stop; }
 }

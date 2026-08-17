@@ -9,3 +9,5 @@ build/
 Thumbs.db
 Desktop.ini
 
+# Los generadores internos de documentos no pertenecen al repositorio del juego.
+update_documentation*.py

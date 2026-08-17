@@ -253,6 +253,12 @@ class CaelumConstants : Object
     // objetos clave son instancias unicas. El peso base puede sobrescribirse
     // en futuras subclases sin alterar la suma autoritativa de Actor.Inv.
     const SPECIAL_ITEM_DEFAULT_WEIGHT = 0.10;
+    const MATERIAL_UNIT_WEIGHT = 0.001;
+    const CRAFTING_DEFAULT_TIER_WEIGHT_RATIO = 0.70;
+    const CRAFTING_ESSENCE_TIER_WEIGHT_RATIO = 0.10;
+    const CRAFTING_POLEARM_TIER_WEIGHT_RATIO = 0.20;
+    const CRAFTING_AXE_TIER_WEIGHT_RATIO = 0.30;
+    const CRAFTING_RANGED_TIER_WEIGHT_RATIO = 0.40;
     // El indice cero conserva el lingote de prueba 4.10 para no invalidar
     // partidas existentes, pero queda fuera del catálogo activo desde 4.12.
     const MATERIAL_IRON_INGOT = 0;
