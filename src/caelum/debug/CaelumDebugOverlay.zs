@@ -447,6 +447,14 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_USED";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE:
                 return "CA_EQUIPMENT_ACTION_FAILED_KEY_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_FAILED_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED:
+                return "CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }
@@ -1070,6 +1078,30 @@ class CaelumDebugOverlay : EventHandler
         String actionResult = StringTable.Localize(
             GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
         );
+        if (localPlayer.LastEquipmentAction
+            == CaelumConstants.EQUIPMENT_ACTION_DISMANTLED)
+        {
+            actionResult = String.Format(
+                "%s | %s x%d + %s x%d",
+                actionResult,
+                StringTable.Localize(
+                    GetSpecialItemTypeKey(
+                        CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                        localPlayer.LastDismantledBasicMaterialType
+                    ),
+                    false
+                ),
+                localPlayer.LastDismantledBasicUnits,
+                StringTable.Localize(
+                    GetSpecialItemTypeKey(
+                        CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                        localPlayer.LastDismantledTierMaterialType
+                    ),
+                    false
+                ),
+                localPlayer.LastDismantledTierUnits
+            );
+        }
         int actionColor = Font.CR_GRAY;
         if ((localPlayer.LastEquipmentAction >= CaelumConstants.EQUIPMENT_ACTION_CREATED
                 && localPlayer.LastEquipmentAction <= CaelumConstants.EQUIPMENT_ACTION_DROPPED)
@@ -1082,7 +1114,9 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.LastEquipmentAction
                 == CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR
             || localPlayer.LastEquipmentAction
-                == CaelumConstants.EQUIPMENT_ACTION_USED)
+                == CaelumConstants.EQUIPMENT_ACTION_USED
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_DISMANTLED)
         {
             actionColor = Font.CR_GREEN;
         }

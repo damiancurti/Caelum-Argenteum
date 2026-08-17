@@ -23,6 +23,27 @@ class CaelumCraftingRules : Object
         return -1;
     }
 
+    static int GetCatalogueWeaponForPlayableType(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_SWORD)
+        {
+            return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+        }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        {
+            return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
+        }
+        return -1;
+    }
+
+    static int GetRecoveredMaterialUnits(int requiredUnits)
+    {
+        return Max(0, int(Ceil(
+            Max(0, requiredUnits)
+                * CaelumConstants.CRAFTING_DISMANTLE_RECOVERY_RATIO
+        )));
+    }
+
     static double GetPlayableTierOneWeight(int weaponId)
     {
         return GetPlayableWeaponType(weaponId)

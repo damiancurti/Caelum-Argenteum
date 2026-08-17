@@ -170,6 +170,10 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_SPAWNED_ON_FLOOR = 13;
     const EQUIPMENT_ACTION_USED = 14;
     const EQUIPMENT_ACTION_FAILED_KEY_STORAGE = 15;
+    const EQUIPMENT_ACTION_DISMANTLED = 16;
+    const EQUIPMENT_ACTION_FAILED_EQUIPPED = 17;
+    const EQUIPMENT_ACTION_FAILED_STORAGE = 18;
+    const EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = 19;
 
     // La primera estación funcional fabrica las dos armas físicas que ya
     // poseen implementación jugable completa. El catálogo de dieciséis queda
@@ -270,6 +274,7 @@ class CaelumConstants : Object
     const CRAFTING_POLEARM_TIER_WEIGHT_RATIO = 0.20;
     const CRAFTING_AXE_TIER_WEIGHT_RATIO = 0.30;
     const CRAFTING_RANGED_TIER_WEIGHT_RATIO = 0.40;
+    const CRAFTING_DISMANTLE_RECOVERY_RATIO = 0.50;
     // El indice cero conserva el lingote de prueba 4.10 para no invalidar
     // partidas existentes, pero queda fuera del catálogo activo desde 4.12.
     const MATERIAL_IRON_INGOT = 0;

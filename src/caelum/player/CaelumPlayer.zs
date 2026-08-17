@@ -77,6 +77,10 @@ class CaelumPlayer : DoomPlayer
     int PersonalInventoryItemCount;
     int EquippedItemSlotCount;
     int LastEquipmentAction;
+    int LastDismantledBasicMaterialType;
+    int LastDismantledBasicUnits;
+    int LastDismantledTierMaterialType;
+    int LastDismantledTierUnits;
     bool LastEquipmentPickupWasNew;
     bool LastEquipmentPickupWentToMagicBox;
     double EquippedWeaponBaseWeight;
@@ -2922,6 +2926,11 @@ class CaelumPlayer : DoomPlayer
                 >= CaelumConstants.EQUIPMENT_KIND_MATERIAL) { return; }
         CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
         if (item == null) { return; }
+        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            DismantleSelectedNativeWeapon();
+            return;
+        }
         item.Durability = 0;
         if (item.Equipped)
         {
@@ -2947,6 +2956,191 @@ class CaelumPlayer : DoomPlayer
         PersistCharacterState();
         RefreshEquipmentSelectionPreview();
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_BROKEN;
+    }
+
+    CaelumMaterialPickup CreateDetachedMaterialStack(
+        int materialType, int materialTier, int materialAmount
+    )
+    {
+        CaelumMaterialPickup material = CaelumMaterialPickup(
+            Spawn("CaelumMaterialPickup", Pos, NO_REPLACE)
+        );
+        if (material == null) { return null; }
+        material.args[0] = materialType;
+        material.args[1] = materialTier;
+        material.Amount = Max(1, materialAmount);
+        material.InMagicBox = false;
+        return material;
+    }
+
+    void AddRecoveredMaterial(
+        CaelumSpecialInventoryItem existing,
+        CaelumMaterialPickup detached,
+        int recoveredAmount,
+        bool sendToMagicBox
+    )
+    {
+        if (existing != null)
+        {
+            existing.Amount += recoveredAmount;
+            if (sendToMagicBox) { existing.InMagicBox = true; }
+            if (detached != null) { detached.Destroy(); }
+            return;
+        }
+        if (detached == null) { return; }
+        detached.InMagicBox = sendToMagicBox;
+        detached.AttachToOwner(self);
+    }
+
+    void DismantleSelectedNativeWeapon()
+    {
+        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        LastDismantledBasicUnits = 0;
+        LastDismantledTierUnits = 0;
+        CaelumEquipmentItem weapon = GetSelectedNativeEquipmentItem();
+        if (weapon == null
+            || weapon.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            return;
+        }
+        if (weapon.Equipped)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
+            return;
+        }
+
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                weapon.ItemType
+            );
+        if (catalogueWeapon < 0)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED;
+            return;
+        }
+        double finalWeight = WeaponModel.GetWeightFor(
+            weapon.ItemType, weapon.Tier, weapon.EquipmentSize
+        );
+        int basicType = CaelumCraftingRules.GetBasicMaterial(catalogueWeapon);
+        int tierType = CaelumCraftingRules.GetTierMaterial(catalogueWeapon);
+        int basicTier = CaelumMaterialRules.ResolveTier(basicType, 1);
+        int tierTier = CaelumMaterialRules.ResolveTier(tierType, weapon.Tier);
+        int basicAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
+            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+                catalogueWeapon, finalWeight
+            )
+        );
+        int tierAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
+            CaelumCraftingRules.GetRequiredTierMaterialUnits(
+                catalogueWeapon, finalWeight
+            )
+        );
+        CaelumSpecialInventoryItem existingBasic = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            basicType,
+            basicTier
+        );
+        CaelumSpecialInventoryItem existingTier = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            tierType,
+            tierTier
+        );
+
+        RefreshCarriedInventorySummary();
+        double personalWeightAfterRemoval = Max(
+            0.0,
+            HUDCarriedWeight - weapon.GetCarriedWeight()
+        );
+        double recoveredPersonalWeight = 0.0;
+        if (existingBasic == null || !existingBasic.InMagicBox)
+        {
+            recoveredPersonalWeight += basicAmount
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        }
+        if (existingTier == null || !existingTier.InMagicBox)
+        {
+            recoveredPersonalWeight += tierAmount
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        }
+        bool sendToMagicBox = personalWeightAfterRemoval
+                + recoveredPersonalWeight
+            > HUDCarryCapacity + 0.0005;
+
+        int requiredBoxSlots = 0;
+        if (sendToMagicBox)
+        {
+            if (existingBasic == null || !existingBasic.InMagicBox)
+            {
+                requiredBoxSlots++;
+            }
+            if (existingTier == null || !existingTier.InMagicBox)
+            {
+                requiredBoxSlots++;
+            }
+        }
+        int freedBoxSlots = weapon.InMagicBox ? 1 : 0;
+        if (MagicBoxUsedSlots - freedBoxSlots + requiredBoxSlots
+            > MagicBoxMaximumSlots)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
+            return;
+        }
+
+        CaelumMaterialPickup detachedBasic;
+        CaelumMaterialPickup detachedTier;
+        if (existingBasic == null)
+        {
+            detachedBasic = CreateDetachedMaterialStack(
+                basicType, basicTier, basicAmount
+            );
+            if (detachedBasic == null)
+            {
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
+                return;
+            }
+        }
+        if (existingTier == null)
+        {
+            detachedTier = CreateDetachedMaterialStack(
+                tierType, tierTier, tierAmount
+            );
+            if (detachedTier == null)
+            {
+                if (detachedBasic != null) { detachedBasic.Destroy(); }
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
+                return;
+            }
+        }
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState != null)
+        {
+            persistentState.RemoveOwnedWeapon(
+                weapon.ItemType, weapon.Tier, weapon.EquipmentSize
+            );
+        }
+        weapon.Destroy();
+        AddRecoveredMaterial(
+            existingBasic, detachedBasic, basicAmount, sendToMagicBox
+        );
+        AddRecoveredMaterial(
+            existingTier, detachedTier, tierAmount, sendToMagicBox
+        );
+
+        LastDismantledBasicMaterialType = basicType;
+        LastDismantledBasicUnits = basicAmount;
+        LastDismantledTierMaterialType = tierType;
+        LastDismantledTierUnits = tierAmount;
+        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_DISMANTLED;
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
     }
 
     void DropSelectedNativeInventoryItem()
