@@ -149,7 +149,8 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_SHIELD = 1;
     const EQUIPMENT_KIND_WEAPON = 2;
     const EQUIPMENT_KIND_AMMUNITION = 3;
-    const EQUIPMENT_KIND_COUNT = 4;
+    const EQUIPMENT_KIND_CONSUMABLE = 4;
+    const EQUIPMENT_KIND_COUNT = 5;
     const EQUIPMENT_ACTION_NONE = 0;
     const EQUIPMENT_ACTION_CREATED = 1;
     const EQUIPMENT_ACTION_EQUIPPED = 2;
@@ -164,6 +165,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX = 11;
     const EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX = 12;
     const EQUIPMENT_ACTION_SPAWNED_ON_FLOOR = 13;
+    const EQUIPMENT_ACTION_USED = 14;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
@@ -198,6 +200,19 @@ class CaelumConstants : Object
     const WEAPON_CARBINE_STARTING_AMMO = 100;
     const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
     const WEAPON_CARBINE_PROJECTILE_SPEED = 80.0;
+
+    // Consumibles 4.9. Las pilas conservan peso en el inventario personal y
+    // ocupan un solo slot, con peso cero, dentro de la Caja Magica.
+    const CONSUMABLE_LIFE_POTION = 0;
+    const CONSUMABLE_ANIMA_POTION = 1;
+    const CONSUMABLE_ENERGY_DRINK = 2;
+    const CONSUMABLE_FOOD_RATION = 3;
+    const CONSUMABLE_WATER_RATION = 4;
+    const CONSUMABLE_TYPE_COUNT = 5;
+    const CONSUMABLE_POTION_WEIGHT = 0.25;
+    const CONSUMABLE_RATION_WEIGHT = 0.10;
+    const CONSUMABLE_REGENERATION_SECONDS = 10;
+    const CONSUMABLE_REGENERATION_PERCENT_PER_SECOND = 0.01;
 
     // Lucidity is a fixed 100-point resource that refills in one minute.
     const MAXIMUM_LUCIDITY = 100.0;

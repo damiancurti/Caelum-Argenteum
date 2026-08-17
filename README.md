@@ -50,6 +50,9 @@ folder and launch GZDoom.
 - An unlimited-slot native personal inventory limited by carried weight.
   Pickups that would exceed capacity are marked as stored in the slot-limited
   Magic Box; when it is full, the object remains in the world.
+- Five native stackable consumables with real weight and Magic Box support:
+  life and Anima potions, energy drinks, food rations, and water rations. Each
+  applies a one-percent-per-second regeneration Powerup for ten seconds.
 - The test loadout spawns a tier-one sword, staff, carbine, profession armor,
   shield, and 100 bullets on the floor. Each bullet weighs 0.003. A complete
   ammunition stack uses one Magic Box slot and has zero weight while boxed.

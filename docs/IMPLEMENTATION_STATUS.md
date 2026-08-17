@@ -3,9 +3,33 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
-## Native inventory shadowing correction 4.8.1
+## Native consumables and timed regeneration 4.9.0
 
 **Implemented — pending validation**
+
+Life potion, Anima potion, energy drink, food ration, and water ration are now
+stackable native GZDoom inventory objects. Their respective unit weights are
+0.25, 0.25, 0.25, 0.10, and 0.10. Personal-inventory stacks contribute
+`Amount × unit weight`; a complete stack occupies one Magic Box slot and weighs
+zero while boxed. An overweight pickup follows the already validated native
+overflow rule, and a full Magic Box leaves it in the world.
+
+Using an item consumes one unit through GZDoom's native inventory path and
+creates a ten-second Powerup. It applies one pulse per second: life restores 1%
+of maximum health, Anima restores 1% of maximum Anima, the energy drink restores
+1% of maximum air plus one sleep point, and each ration restores one hunger or
+thirst point. Reusing the same item refreshes its remaining duration to ten
+seconds instead of adding a second simultaneous intensity.
+
+The compact equipment interface includes a Consumables filter. Left/Right
+selects the item, `P` creates a five-unit test stack on the floor, Enter/E uses
+one unit, `C` moves the complete stack between personal inventory and the Magic
+Box, and `D` drops it. Native previous/next/use inventory commands are also
+available under Customize Controls.
+
+## Native inventory shadowing correction 4.8.1
+
+**Implemented and previously validated**
 
 The 4.8.0 native objects were collected correctly, as confirmed by `printinv`,
 but ZScript's case-insensitive identifiers caused two parameter/field name
@@ -17,7 +41,7 @@ in each native inventory instance.
 
 ## Native inventory and Magic Box object state 4.8.0
 
-**Implemented — pending validation**
+**Implemented and previously validated**
 
 Armor pieces, shields, weapons, and carbine bullets are now real GZDoom
 inventory objects. The player's native `Actor.Inv` chain is the single source

@@ -88,6 +88,9 @@ addmenukey "$CA_CONTROL_CREATION_CONFIRM" ca_creation_confirm
 addmenukey "$CA_CONTROL_CREATION_BACK" ca_creation_back
 addmenukey "$CA_CONTROL_CREATION_ADD_POINT" ca_creation_add_point
 addmenukey "$CA_CONTROL_EQUIPMENT_TOGGLE" ca_equipment_toggle
+addmenukey "$CA_CONTROL_INVENTORY_PREVIOUS" invprev
+addmenukey "$CA_CONTROL_INVENTORY_NEXT" invnext
+addmenukey "$CA_CONTROL_INVENTORY_USE" useinventory
 addmenukey "$CA_CONTROL_DEBUG_SPAWN_EQUIPMENT" ca_debug_spawn_equipment
 addmenukey "$CA_CONTROL_DEBUG_ADD_WEIGHT" ca_debug_add_weight
 addmenukey "$CA_CONTROL_DEBUG_RESET_WEIGHT" ca_debug_reset_weight

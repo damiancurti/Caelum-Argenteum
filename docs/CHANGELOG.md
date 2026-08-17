@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.9.0
+
+- Added native, stackable life and Anima potions, energy drinks, food rations,
+  and water rations with unit weights 0.25/0.25/0.25/0.10/0.10.
+- Added ten-second native Powerup effects with one 1%-of-maximum pulse per
+  second. Energy drinks restore both air and sleep; using another item of the
+  same type refreshes duration rather than stacking intensity.
+- Integrated consumable stacks into authoritative carried load and the Magic
+  Box. A whole stack uses one box slot and weighs zero while stored there.
+- Added a Consumables filter to the compact test interface with create, use,
+  box/unbox, and drop actions.
+- Exposed GZDoom's native previous, next, and use-inventory commands in the
+  Caelum Argenteum control section.
+- Marked the 4.8.0/4.8.1 native inventory and weight behavior as previously
+  validated after the complete manual collection, equipment, and Magic Box
+  test pass.
+
 ## 4.8.1
 
 - Fixed ZScript's case-insensitive parameter shadowing in the native equipment

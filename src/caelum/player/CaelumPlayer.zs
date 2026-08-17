@@ -41,6 +41,7 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionArmorType;
     int EquipmentSelectionShieldType;
     int EquipmentSelectionWeaponType;
+    int EquipmentSelectionConsumableType;
     int EquipmentSelectionTier;
     int EquipmentSelectionSize;
     bool EquipmentSelectionOwned;
@@ -531,7 +532,29 @@ class CaelumPlayer : DoomPlayer
         {
             total++;
         }
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
+            if (consumable != null && consumable.Amount > 0
+                && consumable.InMagicBox)
+            {
+                total++;
+            }
+        }
         return total;
+    }
+
+    CaelumConsumableItem FindNativeConsumableItem(int consumableType)
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumConsumableItem item = CaelumConsumableItem(cursor);
+            if (item != null && item.GetConsumableType() == consumableType)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 
     bool PrepareNativeEquipmentPickup(CaelumEquipmentItem item)
@@ -592,6 +615,53 @@ class CaelumPlayer : DoomPlayer
         // La munición es una sola pila: al desbordar, la pila completa pasa a
         // ocupar un slot y todo su Amount queda sin peso.
         ammunition.InMagicBox = true;
+        LastEquipmentPickupWentToMagicBox = true;
+        return true;
+    }
+
+    bool PrepareNativeConsumablePickup(CaelumConsumableItem consumable)
+    {
+        if (consumable == null || DerivedStats == null) { return false; }
+        CaelumConsumableItem existing = FindNativeConsumableItem(
+            consumable.GetConsumableType()
+        );
+        if (existing != null)
+        {
+            return PrepareNativeConsumableStackPickup(
+                existing, consumable.Amount
+            );
+        }
+        RefreshCarriedInventorySummary();
+        consumable.InMagicBox = false;
+        if (!CanAddWeightToPersonalInventory(consumable.GetCarriedWeight()))
+        {
+            if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
+            {
+                return false;
+            }
+            consumable.InMagicBox = true;
+        }
+        LastEquipmentPickupWasNew = true;
+        LastEquipmentPickupWentToMagicBox = consumable.InMagicBox;
+        return true;
+    }
+
+    bool PrepareNativeConsumableStackPickup(
+        CaelumConsumableItem consumable, int incomingAmount
+    )
+    {
+        if (consumable == null || DerivedStats == null) { return false; }
+        if (consumable.InMagicBox) { return true; }
+        RefreshCarriedInventorySummary();
+        double incomingWeight = Max(0, incomingAmount)
+            * consumable.GetUnitWeight();
+        if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
+        if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
+        {
+            return false;
+        }
+        // Una pila completa ocupa un unico slot, sin importar su Amount.
+        consumable.InMagicBox = true;
         LastEquipmentPickupWentToMagicBox = true;
         return true;
     }
@@ -948,6 +1018,21 @@ class CaelumPlayer : DoomPlayer
             }
         }
         else { CarbineAmmoCount = 0; }
+
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
+            if (consumable == null || consumable.Amount <= 0) { continue; }
+            if (consumable.InMagicBox)
+            {
+                MagicBoxUsedSlots++;
+                continue;
+            }
+            PersonalInventoryItemCount += consumable.Amount;
+            double consumableWeight = consumable.GetCarriedWeight();
+            personalInventoryWeight += consumableWeight;
+            carriedItemWeight += consumableWeight;
+        }
         if (DerivedStats != null)
         {
             DerivedStats.SetCarriedLoadBreakdown(
@@ -990,6 +1075,11 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
+        EquipmentSelectionConsumableType = Clamp(
+            EquipmentSelectionConsumableType,
+            0,
+            CaelumConstants.CONSUMABLE_TYPE_COUNT - 1
+        );
         EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
         EquipmentSelectionSize = Clamp(
             EquipmentSelectionSize,
@@ -1031,6 +1121,32 @@ class CaelumPlayer : DoomPlayer
                 ? ammunition.Amount : 0;
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
                 * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+            return;
+        }
+
+        if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            CaelumConsumableItem consumable = FindNativeConsumableItem(
+                EquipmentSelectionConsumableType
+            );
+            EquipmentSelectionOwned = consumable != null
+                && consumable.Amount > 0;
+            EquipmentSelectionInMagicBox = EquipmentSelectionOwned
+                && consumable.InMagicBox;
+            EquipmentSelectionSizeCompatible = true;
+            EquipmentSelectionStackAmount = EquipmentSelectionOwned
+                ? consumable.Amount : 0;
+            double unitWeight = consumable != null
+                ? consumable.GetUnitWeight()
+                : (EquipmentSelectionConsumableType
+                        == CaelumConstants.CONSUMABLE_FOOD_RATION
+                    || EquipmentSelectionConsumableType
+                        == CaelumConstants.CONSUMABLE_WATER_RATION
+                    ? CaelumConstants.CONSUMABLE_RATION_WEIGHT
+                    : CaelumConstants.CONSUMABLE_POTION_WEIGHT);
+            EquipmentSelectionWeight = EquipmentSelectionStackAmount
+                * unitWeight;
             return;
         }
 
@@ -1365,10 +1481,45 @@ class CaelumPlayer : DoomPlayer
         RefreshEquipmentSelectionPreview();
     }
 
+    Name GetConsumableClassName(int consumableType)
+    {
+        switch (consumableType)
+        {
+            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
+                return 'CaelumAnimaPotion';
+            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
+                return 'CaelumEnergyDrink';
+            case CaelumConstants.CONSUMABLE_FOOD_RATION:
+                return 'CaelumFoodRation';
+            case CaelumConstants.CONSUMABLE_WATER_RATION:
+                return 'CaelumWaterRation';
+            default:
+                return 'CaelumLifePotion';
+        }
+    }
+
+    void UseSelectedConsumable()
+    {
+        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        CaelumConsumableItem consumable = FindNativeConsumableItem(
+            EquipmentSelectionConsumableType
+        );
+        if (consumable == null || consumable.Amount <= 0
+            || consumable.InMagicBox)
+        {
+            return;
+        }
+        if (!UseInventory(consumable)) { return; }
+        OnNativeInventoryChanged();
+        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_USED;
+    }
+
     void CycleEquipmentSlot(int direction)
     {
         if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
         EquipmentSelectionSlot = (
             EquipmentSelectionSlot + direction
                 + CaelumConstants.ARMOR_SLOT_COUNT
@@ -1380,7 +1531,15 @@ class CaelumPlayer : DoomPlayer
     {
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return; }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            EquipmentSelectionConsumableType = (
+                EquipmentSelectionConsumableType + direction
+                    + CaelumConstants.CONSUMABLE_TYPE_COUNT
+            ) % CaelumConstants.CONSUMABLE_TYPE_COUNT;
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             EquipmentSelectionWeaponType = (
                 EquipmentSelectionWeaponType + direction
@@ -1407,7 +1566,9 @@ class CaelumPlayer : DoomPlayer
     void CycleEquipmentTier()
     {
         if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
         EquipmentSelectionTier++;
         if (EquipmentSelectionTier > 3) { EquipmentSelectionTier = 1; }
         RefreshEquipmentSelectionPreview();
@@ -1416,7 +1577,9 @@ class CaelumPlayer : DoomPlayer
     void CycleEquipmentSize()
     {
         if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
             return;
         }
@@ -1505,6 +1668,12 @@ class CaelumPlayer : DoomPlayer
     void EquipSelectedNativeEquipment()
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            UseSelectedConsumable();
+            return;
+        }
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
@@ -1625,6 +1794,44 @@ class CaelumPlayer : DoomPlayer
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         RefreshCarriedInventorySummary();
+        if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            CaelumConsumableItem consumable = FindNativeConsumableItem(
+                EquipmentSelectionConsumableType
+            );
+            if (consumable == null || consumable.Amount <= 0) { return; }
+            double stackWeight = consumable.Amount
+                * consumable.GetUnitWeight();
+            if (consumable.InMagicBox)
+            {
+                if (!CanAddWeightToPersonalInventory(stackWeight))
+                {
+                    LastEquipmentAction =
+                        CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
+                    return;
+                }
+                consumable.InMagicBox = false;
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
+            }
+            else
+            {
+                if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+                {
+                    LastEquipmentAction =
+                        CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
+                    return;
+                }
+                consumable.InMagicBox = true;
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
+            }
+            ApplyCharacterProfile();
+            PersistCharacterState();
+            RefreshEquipmentSelectionPreview();
+            return;
+        }
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
@@ -1989,6 +2196,15 @@ class CaelumPlayer : DoomPlayer
         );
         Actor pickup;
         if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            Name consumableClass = GetConsumableClassName(
+                EquipmentSelectionConsumableType
+            );
+            pickup = Spawn(consumableClass, spawnPos, NO_REPLACE);
+            if (pickup != null) { Inventory(pickup).Amount = 5; }
+        }
+        else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
             pickup = Spawn("CaelumCarbineAmmo", spawnPos, NO_REPLACE);
@@ -2037,6 +2253,8 @@ class CaelumPlayer : DoomPlayer
     void BreakSelectedNativeEquipment()
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
         CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
         if (item == null) { return; }
         item.Durability = 0;
@@ -2071,6 +2289,16 @@ class CaelumPlayer : DoomPlayer
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         Inventory selected;
         if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            CaelumConsumableItem consumable = FindNativeConsumableItem(
+                EquipmentSelectionConsumableType
+            );
+            if (consumable == null || consumable.Amount <= 0) { return; }
+            consumable.InMagicBox = false;
+            selected = consumable.CreateTossable(consumable.Amount);
+        }
+        else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
             CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(
@@ -4187,6 +4415,64 @@ class CaelumPlayer : DoomPlayer
         NaturalHealthRegenerationAccumulator = 0.0;
         UpdateHealthStateEffects();
         UpdateAirStateEffects();
+    }
+
+    void ApplyConsumableRegenerationPulse(int consumableType)
+    {
+        if (player == null || player.playerstate != PST_LIVE
+            || DerivedStats == null)
+        {
+            return;
+        }
+        double pulseRatio =
+            CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND;
+        switch (consumableType)
+        {
+            case CaelumConstants.CONSUMABLE_LIFE_POTION:
+            {
+                int healing = Max(1, int(CaelumMaximumHealth * pulseRatio + 0.5));
+                health = Min(CaelumMaximumHealth, health + healing);
+                player.health = health;
+                UpdateHealthStateEffects();
+                break;
+            }
+            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
+                CurrentAnima = Min(
+                    DerivedStats.MaximumAnima,
+                    CurrentAnima + DerivedStats.MaximumAnima * pulseRatio
+                );
+                break;
+            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
+                CurrentAir = Min(
+                    DerivedStats.MaximumAir,
+                    CurrentAir + DerivedStats.MaximumAir * pulseRatio
+                );
+                CurrentSleep = Min(
+                    CaelumConstants.SURVIVAL_MAXIMUM,
+                    CurrentSleep
+                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
+                );
+                UpdateAirStateEffects();
+                UpdateSurvivalStates();
+                break;
+            case CaelumConstants.CONSUMABLE_FOOD_RATION:
+                CurrentHunger = Min(
+                    CaelumConstants.SURVIVAL_MAXIMUM,
+                    CurrentHunger
+                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
+                );
+                UpdateSurvivalStates();
+                break;
+            case CaelumConstants.CONSUMABLE_WATER_RATION:
+                CurrentThirst = Min(
+                    CaelumConstants.SURVIVAL_MAXIMUM,
+                    CurrentThirst
+                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
+                );
+                UpdateSurvivalStates();
+                break;
+        }
+        PersistCharacterState();
     }
 
     void CycleDebugPanelPage()

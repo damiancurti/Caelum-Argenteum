@@ -243,6 +243,23 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetConsumableTypeKey(int consumableType)
+    {
+        switch (consumableType)
+        {
+            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
+                return "CA_CONSUMABLE_ANIMA_POTION";
+            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
+                return "CA_CONSUMABLE_ENERGY_DRINK";
+            case CaelumConstants.CONSUMABLE_FOOD_RATION:
+                return "CA_CONSUMABLE_FOOD_RATION";
+            case CaelumConstants.CONSUMABLE_WATER_RATION:
+                return "CA_CONSUMABLE_WATER_RATION";
+            default:
+                return "CA_CONSUMABLE_LIFE_POTION";
+        }
+    }
+
     ui String GetEquipmentActionKey(int equipmentAction)
     {
         switch (equipmentAction)
@@ -273,6 +290,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX";
             case CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR:
                 return "CA_EQUIPMENT_ACTION_SPAWNED_ON_FLOOR";
+            case CaelumConstants.EQUIPMENT_ACTION_USED:
+                return "CA_EQUIPMENT_ACTION_USED";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }
@@ -628,6 +647,11 @@ class CaelumDebugOverlay : EventHandler
         {
             categoryKey = "CA_EQUIPMENT_CATEGORY_AMMUNITION";
         }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_CONSUMABLE";
+        }
         String category = StringTable.Localize(categoryKey, false);
         String selection;
         if (localPlayer.EquipmentSelectionKind
@@ -636,6 +660,20 @@ class CaelumDebugOverlay : EventHandler
             selection = String.Format(
                 "%s x%d",
                 StringTable.Localize("CA_WEAPON_AMMO_CARTRIDGES", false),
+                localPlayer.EquipmentSelectionStackAmount
+            );
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            selection = String.Format(
+                "%s x%d",
+                StringTable.Localize(
+                    GetConsumableTypeKey(
+                        localPlayer.EquipmentSelectionConsumableType
+                    ),
+                    false
+                ),
                 localPlayer.EquipmentSelectionStackAmount
             );
         }
@@ -714,7 +752,9 @@ class CaelumDebugOverlay : EventHandler
         );
         String detail;
         if (localPlayer.EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
             detail = String.Format(
                 "%s %d | %s %.3f",
@@ -805,7 +845,9 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.LastEquipmentAction
                 == CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX
             || localPlayer.LastEquipmentAction
-                == CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR)
+                == CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_USED)
         {
             actionColor = Font.CR_GREEN;
         }
