@@ -23,6 +23,12 @@ class CaelumPersistentCharacterState : Inventory
     int ShieldSize;
     int ShieldDurability;
     bool ShieldEquipped;
+    int WeaponType;
+    int WeaponTier;
+    int WeaponSize;
+    int WeaponDurability;
+    bool WeaponEquipped;
+    bool WeaponEquipmentInitialized;
     double EquippedWeaponBaseWeight;
     int EquippedWeaponTier;
     int EquippedWeaponSize;
@@ -34,8 +40,10 @@ class CaelumPersistentCharacterState : Inventory
     // Los registros antiguos se conservan para migrar partidas 4.5 al talle M.
     bool SizedOwnedArmor[300];
     bool SizedOwnedShield[60];
+    bool SizedOwnedWeapon[45];
     int SizedOwnedArmorDurability[300];
     int SizedOwnedShieldDurability[60];
+    int SizedOwnedWeaponDurability[45];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
 
@@ -92,6 +100,13 @@ class CaelumPersistentCharacterState : Inventory
             + Clamp(equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
     }
 
+    int GetSizedWeaponOwnershipIndex(int weaponType, int tier, int equipmentSize)
+    {
+        return ((Clamp(weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1) * 3
+            + Clamp(tier, 1, 3) - 1) * CaelumConstants.EQUIPMENT_SIZE_COUNT)
+            + Clamp(equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+    }
+
     // Migra registros creados antes de que cada objeto guardara su propia
     // durabilidad. Solo se ejecuta una vez; después, cero vuelve a significar
     // correctamente que ese objeto está roto.
@@ -132,36 +147,79 @@ class CaelumPersistentCharacterState : Inventory
     void EnsureEquipmentSizeInitialized()
     {
         EnsureOwnershipDurabilityInitialized();
-        if (EquipmentSizeInitialized) { return; }
-        for (int slot = 0; slot < 4; slot++)
+        if (!EquipmentSizeInitialized)
         {
-            ArmorSize[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
+            for (int slot = 0; slot < 4; slot++)
+            {
+                ArmorSize[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
+            }
+            ShieldSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            for (int oldArmorIndex = 0; oldArmorIndex < 48; oldArmorIndex++)
+            {
+                if (!OwnedArmor[oldArmorIndex]) { continue; }
+                int slot = oldArmorIndex / 12;
+                int armorType = (oldArmorIndex % 12) / 3;
+                int tier = oldArmorIndex % 3 + 1;
+                int newIndex = GetSizedArmorOwnershipIndex(
+                    slot, armorType, tier, CaelumConstants.EQUIPMENT_SIZE_M
+                );
+                SizedOwnedArmor[newIndex] = true;
+                SizedOwnedArmorDurability[newIndex] = OwnedArmorDurability[oldArmorIndex];
+            }
+            for (int oldShieldIndex = 0; oldShieldIndex < 12; oldShieldIndex++)
+            {
+                if (!OwnedShield[oldShieldIndex]) { continue; }
+                int shieldType = oldShieldIndex / 3;
+                int tier = oldShieldIndex % 3 + 1;
+                int newIndex = GetSizedShieldOwnershipIndex(
+                    shieldType, tier, CaelumConstants.EQUIPMENT_SIZE_M
+                );
+                SizedOwnedShield[newIndex] = true;
+                SizedOwnedShieldDurability[newIndex] = OwnedShieldDurability[oldShieldIndex];
+            }
+            EquipmentSizeInitialized = true;
         }
-        ShieldSize = CaelumConstants.EQUIPMENT_SIZE_M;
-        for (int oldArmorIndex = 0; oldArmorIndex < 48; oldArmorIndex++)
+        EnsureWeaponEquipmentInitialized();
+    }
+
+    // Migra el peso provisional de versiones anteriores a un arma real. La
+    // espada era el valor normal; 4 identifica baston y 12 identifica carabina.
+    void EnsureWeaponEquipmentInitialized()
+    {
+        if (WeaponEquipmentInitialized) { return; }
+        bool migrateExistingWeapon = EquipmentInitialized
+            || WeaponWeightInitialized || ProfileCommitted;
+        WeaponType = CaelumConstants.WEAPON_TYPE_SWORD;
+        WeaponTier = WeaponWeightInitialized ? Clamp(EquippedWeaponTier, 1, 3) : 1;
+        WeaponSize = WeaponWeightInitialized
+            ? Clamp(EquippedWeaponSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1)
+            : CaelumConstants.EQUIPMENT_SIZE_M;
+        if (WeaponWeightInitialized && EquippedWeaponBaseWeight >= 10.0)
         {
-            if (!OwnedArmor[oldArmorIndex]) { continue; }
-            int slot = oldArmorIndex / 12;
-            int armorType = (oldArmorIndex % 12) / 3;
-            int tier = oldArmorIndex % 3 + 1;
-            int newIndex = GetSizedArmorOwnershipIndex(
-                slot, armorType, tier, CaelumConstants.EQUIPMENT_SIZE_M
+            WeaponType = CaelumConstants.WEAPON_TYPE_CARBINE;
+        }
+        else if (WeaponWeightInitialized && EquippedWeaponBaseWeight <= 4.5)
+        {
+            WeaponType = CaelumConstants.WEAPON_TYPE_STAFF;
+        }
+        WeaponDurability = 100;
+        if (WeaponType == CaelumConstants.WEAPON_TYPE_STAFF) { WeaponDurability = 80; }
+        else if (WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { WeaponDurability = 120; }
+        int tierMultiplier = WeaponTier == 1 ? 1 : (WeaponTier == 2 ? 3 : 9);
+        WeaponDurability = CaelumEquipmentRules.ScaleDurabilityForSize(
+            WeaponDurability * tierMultiplier,
+            WeaponSize
+        );
+        WeaponEquipped = migrateExistingWeapon;
+        if (migrateExistingWeapon)
+        {
+            int weaponIndex = GetSizedWeaponOwnershipIndex(
+                WeaponType, WeaponTier, WeaponSize
             );
-            SizedOwnedArmor[newIndex] = true;
-            SizedOwnedArmorDurability[newIndex] = OwnedArmorDurability[oldArmorIndex];
+            SizedOwnedWeapon[weaponIndex] = true;
+            SizedOwnedWeaponDurability[weaponIndex] = WeaponDurability;
         }
-        for (int oldShieldIndex = 0; oldShieldIndex < 12; oldShieldIndex++)
-        {
-            if (!OwnedShield[oldShieldIndex]) { continue; }
-            int shieldType = oldShieldIndex / 3;
-            int tier = oldShieldIndex % 3 + 1;
-            int newIndex = GetSizedShieldOwnershipIndex(
-                shieldType, tier, CaelumConstants.EQUIPMENT_SIZE_M
-            );
-            SizedOwnedShield[newIndex] = true;
-            SizedOwnedShieldDurability[newIndex] = OwnedShieldDurability[oldShieldIndex];
-        }
-        EquipmentSizeInitialized = true;
+        WeaponEquipmentInitialized = true;
     }
 
     void MarkCurrentEquipmentOwned()
@@ -188,6 +246,14 @@ class CaelumPersistentCharacterState : Inventory
             );
             SizedOwnedShield[shieldIndex] = true;
             SizedOwnedShieldDurability[shieldIndex] = ShieldDurability;
+        }
+        if (WeaponEquipped)
+        {
+            int weaponIndex = GetSizedWeaponOwnershipIndex(
+                WeaponType, WeaponTier, WeaponSize
+            );
+            SizedOwnedWeapon[weaponIndex] = true;
+            SizedOwnedWeaponDurability[weaponIndex] = WeaponDurability;
         }
     }
 
@@ -221,6 +287,17 @@ class CaelumPersistentCharacterState : Inventory
         return newlyOwned;
     }
 
+    bool RegisterOwnedWeapon(int weaponType, int tier, int equipmentSize, int durability)
+    {
+        int index = GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize);
+        bool newlyOwned = !SizedOwnedWeapon[index];
+        SizedOwnedWeapon[index] = true;
+        SizedOwnedWeaponDurability[index] = Max(
+            SizedOwnedWeaponDurability[index], Max(0, durability)
+        );
+        return newlyOwned;
+    }
+
     bool OwnsArmor(int slot, int armorType, int tier, int equipmentSize)
     {
         return SizedOwnedArmor[
@@ -235,6 +312,13 @@ class CaelumPersistentCharacterState : Inventory
         ];
     }
 
+    bool OwnsWeapon(int weaponType, int tier, int equipmentSize)
+    {
+        return SizedOwnedWeapon[
+            GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize)
+        ];
+    }
+
     int GetOwnedArmorDurability(int slot, int armorType, int tier, int equipmentSize)
     {
         return SizedOwnedArmorDurability[
@@ -246,6 +330,13 @@ class CaelumPersistentCharacterState : Inventory
     {
         return SizedOwnedShieldDurability[
             GetSizedShieldOwnershipIndex(shieldType, tier, equipmentSize)
+        ];
+    }
+
+    int GetOwnedWeaponDurability(int weaponType, int tier, int equipmentSize)
+    {
+        return SizedOwnedWeaponDurability[
+            GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize)
         ];
     }
 
@@ -278,6 +369,20 @@ class CaelumPersistentCharacterState : Inventory
         }
     }
 
+    void StoreOwnedWeaponDurability(
+        int weaponType,
+        int tier,
+        int equipmentSize,
+        int durability
+    )
+    {
+        int index = GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize);
+        if (SizedOwnedWeapon[index])
+        {
+            SizedOwnedWeaponDurability[index] = Max(0, durability);
+        }
+    }
+
     void RemoveOwnedArmor(int slot, int armorType, int tier, int equipmentSize)
     {
         int index = GetSizedArmorOwnershipIndex(slot, armorType, tier, equipmentSize);
@@ -292,6 +397,13 @@ class CaelumPersistentCharacterState : Inventory
         SizedOwnedShieldDurability[index] = 0;
     }
 
+    void RemoveOwnedWeapon(int weaponType, int tier, int equipmentSize)
+    {
+        int index = GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize);
+        SizedOwnedWeapon[index] = false;
+        SizedOwnedWeaponDurability[index] = 0;
+    }
+
     int CountOwnedArmor()
     {
         int total = 0;
@@ -303,6 +415,13 @@ class CaelumPersistentCharacterState : Inventory
     {
         int total = 0;
         for (int i = 0; i < 60; i++) { if (SizedOwnedShield[i]) total++; }
+        return total;
+    }
+
+    int CountOwnedWeapons()
+    {
+        int total = 0;
+        for (int i = 0; i < 45; i++) { if (SizedOwnedWeapon[i]) total++; }
         return total;
     }
 }

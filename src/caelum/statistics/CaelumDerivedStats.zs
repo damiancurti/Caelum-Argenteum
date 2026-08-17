@@ -197,7 +197,10 @@ class CaelumDerivedStats : Object
 
         MaximumAir = CaelumConstants.BASE_AIR_CAPACITY
             * CalculateType4Percent(attributes.Resilience) / 100.0;
-        CarryCapacity = CalculateType4Percent(attributes.Strength);
+        // La masa base es la capacidad a Fuerza 0; el Tipo 4 la lleva a x3 en
+        // nivel 100. Ejemplo: masa 200 produce capacidad 200 y luego 600.
+        CarryCapacity = BaseMass
+            * CalculateType4Percent(attributes.Strength) / 100.0;
         MagicBoxCapacity = 2 + int(
             CalculateType1Percent(attributes.Intelligence) / 50.0
         );

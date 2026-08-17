@@ -75,3 +75,41 @@ class CaelumShieldPickup : Inventory
         return true;
     }
 }
+
+// Arma: args 0=tipo, 1=tier, 2=talle (1..5), 3=durabilidad+1.
+class CaelumWeaponPickup : Inventory
+{
+    Default
+    {
+        Radius 12;
+        Height 8;
+        Inventory.Amount 1;
+        Inventory.MaxAmount 1;
+        Inventory.PickupSound "misc/w_pkup";
+        +INVENTORY.ALWAYSPICKUP
+    }
+
+    States
+    {
+    Spawn:
+        WPN2 A -1;
+        Stop;
+    }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
+        if (caelumPlayer == null) { return false; }
+        int equipmentSize = args[2] <= 0
+            ? CaelumConstants.EQUIPMENT_SIZE_M : args[2] - 1;
+        if (!caelumPlayer.AcquireWeaponPickup(
+            args[0], args[1], equipmentSize, args[3]
+        ))
+        {
+            return false;
+        }
+        toucher.A_StartSound(PickupSound, CHAN_ITEM);
+        GoAwayAndDie();
+        return true;
+    }
+}

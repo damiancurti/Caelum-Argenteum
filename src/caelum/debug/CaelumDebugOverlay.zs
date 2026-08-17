@@ -140,7 +140,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.ARMOR_TYPE_LIGHT: return "CA_ARMOR_TYPE_LIGHT";
             case CaelumConstants.ARMOR_TYPE_MEDIUM: return "CA_ARMOR_TYPE_MEDIUM";
             case CaelumConstants.ARMOR_TYPE_HEAVY: return "CA_ARMOR_TYPE_HEAVY";
-            default: return "CA_ARMOR_TYPE_UNARMORED";
+            default: return "CA_ARMOR_TYPE_MAGIC";
         }
     }
 
@@ -168,7 +168,7 @@ class CaelumDebugOverlay : EventHandler
         int tier = armor.Tier[slot];
         switch (armor.ArmorType[slot])
         {
-            case CaelumConstants.ARMOR_TYPE_UNARMORED: return tier == 1 ? 5 : (tier == 2 ? 10 : 15);
+            case CaelumConstants.ARMOR_TYPE_MAGIC: return tier == 1 ? 5 : (tier == 2 ? 10 : 15);
             case CaelumConstants.ARMOR_TYPE_LIGHT: return tier == 1 ? 10 : (tier == 2 ? 20 : 30);
             case CaelumConstants.ARMOR_TYPE_MEDIUM: return tier == 1 ? 20 : (tier == 2 ? 40 : 60);
             default: return tier == 1 ? 30 : (tier == 2 ? 60 : 90);
@@ -180,7 +180,7 @@ class CaelumDebugOverlay : EventHandler
         if (armor.Durability[slot] <= 0) { return 0; }
         switch (armor.ArmorType[slot])
         {
-            case CaelumConstants.ARMOR_TYPE_UNARMORED: return slot == CaelumConstants.ARMOR_SLOT_BODY ? 1 : 0;
+            case CaelumConstants.ARMOR_TYPE_MAGIC: return slot == CaelumConstants.ARMOR_SLOT_BODY ? 1 : 0;
             case CaelumConstants.ARMOR_TYPE_LIGHT:
                 return (slot == CaelumConstants.ARMOR_SLOT_HEAD || slot == CaelumConstants.ARMOR_SLOT_BODY) ? 1 : 0;
             case CaelumConstants.ARMOR_TYPE_MEDIUM: return slot == CaelumConstants.ARMOR_SLOT_HANDS ? 0 : 2;
@@ -218,6 +218,16 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.SHIELD_TYPE_TOWER: return "CA_SHIELD_TYPE_TOWER";
             case CaelumConstants.SHIELD_TYPE_MAGIC: return "CA_SHIELD_TYPE_MAGIC";
             default: return "CA_SHIELD_TYPE_BUCKLER";
+        }
+    }
+
+    ui String GetWeaponTypeKey(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
+            case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_TYPE_CARBINE";
+            default: return "CA_WEAPON_TYPE_SWORD";
         }
     }
 
@@ -567,12 +577,33 @@ class CaelumDebugOverlay : EventHandler
 
     ui void DrawEquipmentMenu(CaelumPlayer localPlayer)
     {
-        String category = localPlayer.EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_SHIELD
-            ? StringTable.Localize("CA_EQUIPMENT_CATEGORY_SHIELD", false)
-            : StringTable.Localize("CA_EQUIPMENT_CATEGORY_ARMOR", false);
+        String category = StringTable.Localize(
+            localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                ? "CA_EQUIPMENT_CATEGORY_WEAPON"
+                : (localPlayer.EquipmentSelectionKind
+                    == CaelumConstants.EQUIPMENT_KIND_SHIELD
+                        ? "CA_EQUIPMENT_CATEGORY_SHIELD"
+                        : "CA_EQUIPMENT_CATEGORY_ARMOR"),
+            false
+        );
         String selection;
         if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            selection = String.Format(
+                "%s / %s T%d %s",
+                StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
+                StringTable.Localize(
+                    GetWeaponTypeKey(localPlayer.EquipmentSelectionWeaponType),
+                    false
+                ),
+                localPlayer.EquipmentSelectionTier,
+                StringTable.Localize(
+                    GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
+                )
+            );
+        }
+        else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             selection = String.Format(
@@ -628,12 +659,38 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.EquipmentSelectionMaximumDurability,
             localPlayer.EquipmentSelectionWeight
         );
+        String weaponDetail = "";
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            weaponDetail = String.Format(
+                "%s %.0f | %d t | %s %.0f | %s %.0f",
+                StringTable.Localize("CA_WEAPON_DAMAGE", false),
+                localPlayer.EquipmentSelectionDamage,
+                localPlayer.EquipmentSelectionAttackTics,
+                StringTable.Localize("CA_WEAPON_AIR_COST", false),
+                localPlayer.EquipmentSelectionAirCost,
+                StringTable.Localize("CA_WEAPON_ANIMA_COST", false),
+                localPlayer.EquipmentSelectionAnimaCost
+            );
+            if (localPlayer.EquipmentSelectionWeaponType
+                == CaelumConstants.WEAPON_TYPE_CARBINE)
+            {
+                weaponDetail = String.Format(
+                    "%s | %s %d",
+                    weaponDetail,
+                    StringTable.Localize("CA_WEAPON_AMMO_CARTRIDGES", false),
+                    localPlayer.CarbineAmmoCount
+                );
+            }
+        }
         String totals = String.Format(
-            "%s: %d   %s: %d   %s: %d/%d",
-            StringTable.Localize("CA_RESOURCE_OWNED_ARMOR", false),
+            "%s:%d   %s:%d   %s:%d   %s:%d/%d",
+            StringTable.Localize("CA_EQUIPMENT_COUNT_ARMOR", false),
             localPlayer.OwnedArmorCount,
-            StringTable.Localize("CA_RESOURCE_OWNED_SHIELDS", false),
+            StringTable.Localize("CA_EQUIPMENT_COUNT_SHIELD", false),
             localPlayer.OwnedShieldCount,
+            StringTable.Localize("CA_EQUIPMENT_COUNT_WEAPON", false),
+            localPlayer.OwnedWeaponCount,
             StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
             localPlayer.MagicBoxUsedSlots,
             localPlayer.MagicBoxMaximumSlots
@@ -650,15 +707,25 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.EquipmentSelectionOwned ? Font.CR_WHITE : Font.CR_RED);
         DrawCenteredText(detail, 188.0,
             localPlayer.EquipmentSelectionSizeCompatible ? Font.CR_WHITE : Font.CR_RED);
-        DrawCenteredText(totals, 214.0, Font.CR_CYAN);
+        if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            DrawCenteredText(weaponDetail, 206.0, Font.CR_GOLD);
+        }
+        DrawCenteredText(totals, 224.0, Font.CR_CYAN);
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_1", false),
-            242.0,
+            244.0,
             Font.CR_GRAY
         );
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_2", false),
-            258.0,
+            260.0,
+            Font.CR_GRAY
+        );
+        DrawCenteredText(
+            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_3", false),
+            276.0,
             Font.CR_GRAY
         );
     }
@@ -694,7 +761,10 @@ class CaelumDebugOverlay : EventHandler
 
         if (localPlayer.EquipmentMenuOpen)
         {
-            if (e.KeyScan == InputEvent.Key_Escape)
+            // KeyChar resulta estable para letras en GZDoom 4.14.2; KeyString
+            // puede llegar vacio segun el teclado o la ruta de entrada.
+            int menuCharacter = e.KeyChar;
+            if (menuCharacter == 113 || menuCharacter == 81)
             {
                 SendNetworkEvent("ca_equipment_toggle");
             }
@@ -728,7 +798,7 @@ class CaelumDebugOverlay : EventHandler
             {
                 SendNetworkEvent("ca_equipment_tier");
             }
-            else if (e.KeyString == "r" || e.KeyString == "R")
+            else if (menuCharacter == 114 || menuCharacter == 82)
             {
                 SendNetworkEvent("ca_equipment_size");
             }
@@ -742,11 +812,16 @@ class CaelumDebugOverlay : EventHandler
             {
                 SendNetworkEvent("ca_equipment_unequip");
             }
-            else if (e.KeyString == "d" || e.KeyString == "D")
+            else if (menuCharacter == 112 || menuCharacter == 80)
+            {
+                // Crea directamente la vista seleccionada para probar el pickup.
+                SendNetworkEvent("ca_debug_spawn_equipment");
+            }
+            else if (menuCharacter == 100 || menuCharacter == 68)
             {
                 SendNetworkEvent("ca_equipment_drop");
             }
-            else if (e.KeyString == "b" || e.KeyString == "B")
+            else if (menuCharacter == 98 || menuCharacter == 66)
             {
                 SendNetworkEvent("ca_equipment_break");
             }

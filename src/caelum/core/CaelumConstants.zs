@@ -59,10 +59,8 @@ class CaelumConstants : Object
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
     const DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT = 8.0;
-    // Ficha tier 1 de la carabina, reemplazo del arco corto. El arco largo
-    // ocupa el extremo superior (12) de la familia a distancia documentada.
-    const LONG_BOW_TIER_ONE_BASE_WEIGHT = 12.0;
-    const CARBINE_TIER_ONE_BASE_WEIGHT = 24.0;
+    // Ficha tier 1 de la carabina, reemplazo del arco corto.
+    const CARBINE_TIER_ONE_BASE_WEIGHT = 12.0;
     const CARBINE_TIER_ONE_DAMAGE = 360.0;
     const CARBINE_TIER_ONE_FIRE_TICS = 48;
     const CARBINE_TIER_ONE_RANGE_METERS = 60.0;
@@ -131,7 +129,11 @@ class CaelumConstants : Object
     const ARMOR_SLOT_HANDS = 2;
     const ARMOR_SLOT_FEET = 3;
     const ARMOR_SLOT_COUNT = 4;
-    const ARMOR_TYPE_UNARMORED = 0;
+    const ARMOR_TYPE_MAGIC = 0;
+    // Alias de compatibilidad para archivos incrementales y partidas 4.6 que
+    // aun referencien el identificador anterior. En juego sigue mostrandose
+    // exclusivamente como armadura magica y conserva el mismo indice cero.
+    const ARMOR_TYPE_UNARMORED = ARMOR_TYPE_MAGIC;
     const ARMOR_TYPE_LIGHT = 1;
     const ARMOR_TYPE_MEDIUM = 2;
     const ARMOR_TYPE_HEAVY = 3;
@@ -145,6 +147,8 @@ class CaelumConstants : Object
     const ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY = 1000.0;
     const EQUIPMENT_KIND_ARMOR = 0;
     const EQUIPMENT_KIND_SHIELD = 1;
+    const EQUIPMENT_KIND_WEAPON = 2;
+    const EQUIPMENT_KIND_COUNT = 3;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
@@ -162,6 +166,22 @@ class CaelumConstants : Object
     const SHIELD_DAMAGE_MAGICAL = 1;
     const DEBUG_SHIELD_HIT_DAMAGE = 1000.0;
     const SHIELD_AIR_WEIGHT_RATIO_PER_SECOND = 0.10;
+
+    // Primer catalogo jugable de armas. Los indices son persistentes: no deben
+    // reordenarse cuando se agreguen nuevas familias en versiones posteriores.
+    const WEAPON_TYPE_SWORD = 0;
+    const WEAPON_TYPE_STAFF = 1;
+    const WEAPON_TYPE_CARBINE = 2;
+    const WEAPON_TYPE_COUNT = 3;
+    const WEAPON_SWORD_TIER_ONE_WEIGHT = 6.0;
+    const WEAPON_STAFF_TIER_ONE_WEIGHT = 4.0;
+    const WEAPON_CARBINE_TIER_ONE_WEIGHT = 12.0;
+    const WEAPON_SWORD_BASE_DURABILITY = 100;
+    const WEAPON_STAFF_BASE_DURABILITY = 80;
+    const WEAPON_CARBINE_BASE_DURABILITY = 120;
+    const WEAPON_SWORD_ATTACK_TICS = 14;
+    const WEAPON_CARBINE_STARTING_AMMO = 20;
+    const WEAPON_CARBINE_PROJECTILE_SPEED = 80.0;
 
     // Lucidity is a fixed 100-point resource that refills in one minute.
     const MAXIMUM_LUCIDITY = 100.0;

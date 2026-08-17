@@ -3,6 +3,58 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
+## Persistent playable weapons 4.7
+
+**Implemented — pending validation**
+
+Sword, staff, and carbine are now real main-hand equipment records rather than
+an isolated weight placeholder. Every weapon/type/tier/size combination owns
+independent durability, uses XS–XL compatibility, occupies the Magic Box only
+while unequipped, and survives save/load and map travel. Existing 4.6 profiles
+migrate their provisional weapon weight to a size-aware sword, staff, or
+carbine without invalidating the earlier equipment data.
+
+The compact equipment menu has a third Weapons filter. It previews damage,
+attack time, base air/Anima cost, weight, compatibility, durability, and
+carbine cartridges. `P`, `Enter`, `Backspace`, `B`, and `D` use the same spawn,
+equip, remove, break, and drop flow already used by armor and shields.
+
+The native Fire input dispatches through the equipped weapon in slot 1. Sword
+retains physical Strength/mass damage and its 14-tic cadence; staff retains
+Intelligence damage, Insight accuracy/critical, adjusted Anima cost, and
+Eloquence casting speed. Carbine uses 360 tier-one damage without an attribute
+damage multiplier, 48 tics, 60 m, 30°/200° accuracy-scaled spread, 0% weapon
+critical base, 20 air per reload, physical push, and one cartridge per shot.
+A newly collected carbine grants 20 test cartridges. AltFire toggles the
+equipped secondary-hand shield; weapon secondary attacks remain reserved.
+
+Tier damage uses the documented 1.00/1.20/1.50 material progression. Weapon
+weight uses 1.00/1.50/2.00 and size 0.50/0.75/1.00/1.25/1.50. Test durability
+bases are sword 100, staff 80, and carbine 120, followed by the existing
+×1/×3/×9 tier rule and size multiplier.
+
+Carry capacity is written directly as
+`BaseMass × Type4Percent(Strength) / 100`. Therefore a 200-mass character has
+200 capacity at Strength 0 and 600 at Strength 100.
+
+## Carry capacity, magic armor, and equipment testing 4.6.2
+
+**Implemented — pending validation**
+
+Carry capacity is now `Strength Type 4 × (BaseMass / 100)`. Equipment weight
+remains excluded from that multiplier and continues to form the numerator of
+the load percentage. The tier-one, size-M carbine weight is now 12.
+
+The basic equippable category is now named “magic armor” in
+source, UI, tables, and documentation. This is a terminology-only migration:
+its stored numeric value remains zero, so existing saves and owned equipment
+records stay compatible. It remains separate from the zero-stat base clothing
+used when a slot is genuinely empty.
+
+The equipment menu now accepts `P` to spawn its selected armor or shield as a
+world pickup. Walking over it stores it in the persistent Magic Box; `Enter`
+equips an owned compatible item, `Backspace` removes it, and `D` drops it.
+
 ## Compatibility and equipment HUD 4.6.1
 
 **Implemented — pending validation**
@@ -18,12 +70,12 @@ in a dedicated bar. Its fill changes from green to yellow at 50%, orange at the
 Removing armor now equips a non-item baseline according to slot: nothing on
 head and torso, shirt on hands, and pants on feet. Baseline entries have zero
 defense, weight, reinforcement, and durability, are never damaged, and do not
-occupy the Magic Box. The existing equippable unarmored set remains separate.
+occupy the Magic Box. The existing equippable magic-armor set remains separate.
 
-The short bow catalogue entry is replaced by the tier-one carbine. Its prepared
+The short bow catalogue entry is replaced by the tier-one carbine. Its
 values are 360 damage, 48 tics, 60 m, 30°/200° spread, 0% base critical chance,
--20 air, and size-M weight 24. The final ranged-weapon actor and inventory
-consumer remain part of the future complete weapon implementation.
+-20 air, and size-M weight 12. Version 4.7 connects this record to its playable
+projectile, cartridges, inventory ownership, and persistent equipment model.
 
 Status legend:
 
@@ -123,9 +175,9 @@ Mass tier is clamped from 1 to 10 and maps to 50, 55, 60, 70, 80, 100, 120,
 | 7 | 2.40 | 74.7 | 21.3 |
 
 The body-mass multiplier is `BaseMassKg / 100`. It affects maximum health,
-physical attack power, physical push, air consumption, hunger loss,
-and thirst loss. Equipment remains separate and continues to affect load,
-movement, evasion, knockback, and additional air use.
+physical attack power, physical push, carry capacity, air consumption, hunger
+loss, and thirst loss. Equipment remains separate and continues to affect
+load, movement, evasion, knockback, and additional air use.
 
 Push is live for the player's sword and staff, Caelum actor melee attacks, and
 physical or magical Caelum projectiles. Physical attacks use
@@ -144,9 +196,9 @@ restores the character's ordinary profile.
 **Implemented — pending validation**
 
 Every armor piece now exposes its documented weight. At size M, uniform
-full-set totals are 2 unarmored, 8 light, 19 medium, and 35 heavy. Armor tier
+full-set totals are 2 magic armor, 8 light, 19 medium, and 35 heavy. Armor tier
 does not alter those weights; equipment size does. Broken pieces retain their
-weight. Shield and provisional-weapon weights are included automatically, and
+weight. Shield and equipped-weapon weights are included automatically, and
 debug-added mass is shown separately.
 
 The current loadout is mirrored into an invisible, undroppable GZDoom inventory
@@ -160,8 +212,8 @@ authors configure armor with args `slot/type/tier/size/durability` and shields
 with `type/tier/size/durability`; size zero remains a backwards-compatible M
 default. Duplicate pickups retain ownership and repair that stored copy up to
 maximum durability. A separate compact equipment interface cycles owned or
-unowned previews, equips selected compatible objects, removes armor to
-unarmored tier 1, and can fully unequip shields. Every change immediately
+unowned previews, equips selected compatible objects, removes armor to its
+zero-stat base clothing, and can fully unequip shields. Every change immediately
 recalculates attribute bonuses, defense, reinforcement, mass, movement,
 evasion, air cost, and shield blocking. A development control spawns the
 currently previewed pickup.
@@ -203,7 +255,7 @@ The final-value table in the 4.0 specification is authoritative:
 | Rulo | Beast Man Warrior, male, tall | 20/18/9/3 | 200 kg / 2.40 m | Heavy | 6200 |
 | Ronnie | Caelith Mercenary, male, tall | 20/18/5/7 | 140 kg / 2.00 m | Medium | 4340 |
 | Argento | Human Battle Mage, male, tall | 9/7/16/18 | 120 kg / 2.00 m | Light | 1740 |
-| Caella | Goblin Cleric, female, tall | 9/7/16/18 | 80 kg / 1.60 m | Unarmored | 1160 |
+| Caella | Goblin Cleric, female, tall | 9/7/16/18 | 80 kg / 1.60 m | Magic armor | 1160 |
 
 Physical actor attacks apply body mass; magical attacks do not. Caella owns an
 independent profile rather than inheriting Argento's combat setup.
@@ -220,7 +272,7 @@ Older ownership records and equipped objects migrate to M once.
 
 Shield tier-one weights are magic 4, buckler 8, kite 12, and tower 16. Shields
 then use tier factors 1.00/1.50/2.00 before size. The same tier/size weight rule
-is centralized for weapons; the provisional sword contributes base weight 6.
+is centralized for weapons; the sword contributes base weight 6.
 Armor retains its documented per-piece weights and applies size only.
 
 The compact equipment interface now acts as the first functional Magic Box
@@ -230,7 +282,8 @@ remain on the ground if the box has no free slot. Dropped objects preserve
 their current size and durability. The box formula remains
 `2 + floor(Type1Percent(Intelligence) / 50)`; Tarot bonuses remain reserved.
 
-Strength carry capacity now uses Type 4. Agility jump scaling is Type 1.
+Strength carry capacity uses Type 4 multiplied by `BaseMass / 100`. Agility
+jump scaling is Type 1.
 
 ## Retained validated systems
 
@@ -276,11 +329,23 @@ Strength carry capacity now uses Type 4. Agility jump scaling is Type 1.
     and tower 16/24/32 for tiers 1/2/3; then verify size multipliers.
 15. Fill the Magic Box, confirm a new pickup remains on the ground, then drop
     and recollect a damaged item and verify size/durability persistence.
+16. Cycle to Weapons, spawn sword/staff/carbine variants, collect them, and
+    confirm incompatible sizes cannot be equipped.
+17. Equip each weapon, select slot 1, and use Fire. Confirm sword spends air,
+    staff spends adjusted Anima, and carbine spends one cartridge plus its
+    load-adjusted 20-air reload cost.
+18. Compare carbine fire while standing, running, crouching, and Mareado;
+    inspect its visible spread and verify the 48-tic firing limit.
+19. Break an equipped weapon and confirm it retains weight but cannot attack;
+    then drop/recollect an unequipped weapon and verify durability and size.
+20. Save/load and change maps with each weapon equipped and unequipped; verify
+    ownership, active main hand, durability, cartridges, and Magic Box counts.
 
 ## Not yet implemented
 
 - Final buffs, debuffs, healing abilities, and dialogue consumers for the new
   Eloquence range/Labia values.
 - Save migration from profiles created with the legacy three-layer format.
-- Weapon-family, consumable, material, Tarot, and final visual inventory tabs;
-  armor/shield Magic Box capacity, filters, and core item actions are functional.
+- Remaining weapon families, consumable, material, Tarot, and final visual
+  inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
+  item actions are functional.

@@ -26,13 +26,16 @@ class CaelumPlayer : DoomPlayer
     // armor type/tier, slot-specific reinforcement, bonuses, and durability.
     CaelumArmorModel ArmorModel;
     CaelumShieldModel ShieldModel;
+    CaelumWeaponModel WeaponModel;
     int OwnedArmorCount;
     int OwnedShieldCount;
+    int OwnedWeaponCount;
     bool EquipmentMenuOpen;
     int EquipmentSelectionKind;
     int EquipmentSelectionSlot;
     int EquipmentSelectionArmorType;
     int EquipmentSelectionShieldType;
+    int EquipmentSelectionWeaponType;
     int EquipmentSelectionTier;
     int EquipmentSelectionSize;
     bool EquipmentSelectionOwned;
@@ -41,6 +44,10 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionDurability;
     int EquipmentSelectionMaximumDurability;
     double EquipmentSelectionWeight;
+    double EquipmentSelectionDamage;
+    double EquipmentSelectionAirCost;
+    double EquipmentSelectionAnimaCost;
+    int EquipmentSelectionAttackTics;
     int MagicBoxUsedSlots;
     int MagicBoxMaximumSlots;
     bool LastEquipmentPickupWasNew;
@@ -48,6 +55,18 @@ class CaelumPlayer : DoomPlayer
     int EquippedWeaponTier;
     int EquippedWeaponSize;
     bool WeaponWeightInitialized;
+    double EquippedWeaponCooldownRemaining;
+    bool LastCarbineFired;
+    bool LastCarbineHadEnoughAir;
+    bool LastCarbineHadAmmo;
+    bool LastCarbineCriticalHit;
+    double LastCarbineDamage;
+    double LastCarbineAccuracyPercent;
+    double LastCarbineMinimumSpread;
+    double LastCarbineMaximumSpread;
+    double LastCarbineYawOffset;
+    double LastCarbinePitchOffset;
+    int CarbineAmmoCount;
     double ArmorDurabilityDamageMultiplier;
     bool ArmorDurabilityMultiplierInitialized;
     bool DebugArmorCriticalHit;
@@ -265,7 +284,7 @@ class CaelumPlayer : DoomPlayer
             persistentState.AttributeBonus[attribute] = CharacterAllocation.AttributeBonus[attribute];
         }
 
-        if (ArmorModel != null && ShieldModel != null)
+        if (ArmorModel != null && ShieldModel != null && WeaponModel != null)
         {
             persistentState.EquipmentInitialized = true;
             for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
@@ -281,6 +300,19 @@ class CaelumPlayer : DoomPlayer
             persistentState.ShieldSize = ShieldModel.Size;
             persistentState.ShieldDurability = ShieldModel.Durability;
             persistentState.ShieldEquipped = ShieldModel.Equipped;
+            persistentState.WeaponType = WeaponModel.WeaponType;
+            persistentState.WeaponTier = WeaponModel.Tier;
+            persistentState.WeaponSize = WeaponModel.Size;
+            persistentState.WeaponDurability = WeaponModel.Durability;
+            persistentState.WeaponEquipped = WeaponModel.Equipped;
+            persistentState.WeaponEquipmentInitialized = true;
+            // Campos antiguos conservados unicamente para migracion regresiva.
+            EquippedWeaponBaseWeight = WeaponModel.GetTierOneWeightFor(
+                WeaponModel.WeaponType
+            );
+            EquippedWeaponTier = WeaponModel.Tier;
+            EquippedWeaponSize = WeaponModel.Size;
+            WeaponWeightInitialized = true;
             persistentState.EquippedWeaponBaseWeight = EquippedWeaponBaseWeight;
             persistentState.EquippedWeaponTier = EquippedWeaponTier;
             persistentState.EquippedWeaponSize = EquippedWeaponSize;
@@ -288,6 +320,7 @@ class CaelumPlayer : DoomPlayer
             persistentState.MarkCurrentEquipmentOwned();
             OwnedArmorCount = persistentState.CountOwnedArmor();
             OwnedShieldCount = persistentState.CountOwnedShields();
+            OwnedWeaponCount = persistentState.CountOwnedWeapons();
         }
 
         persistentState.StoredHealth = health;
@@ -320,7 +353,8 @@ class CaelumPlayer : DoomPlayer
             CharacterAllocation.AttributeBonus[attribute] = persistentState.AttributeBonus[attribute];
         }
 
-        if (persistentState.EquipmentInitialized && ArmorModel != null && ShieldModel != null)
+        if (persistentState.EquipmentInitialized && ArmorModel != null
+            && ShieldModel != null && WeaponModel != null)
         {
             for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
             {
@@ -370,15 +404,36 @@ class CaelumPlayer : DoomPlayer
                 );
             }
             ShieldModel.Initialized = true;
-            if (persistentState.WeaponWeightInitialized)
+            WeaponModel.WeaponType = persistentState.WeaponType;
+            WeaponModel.Tier = persistentState.WeaponTier;
+            WeaponModel.Size = persistentState.WeaponSize;
+            WeaponModel.Durability = persistentState.WeaponDurability;
+            WeaponModel.Equipped = persistentState.WeaponEquipped;
+            WeaponModel.Initialized = true;
+            if (WeaponModel.Equipped)
             {
-                EquippedWeaponBaseWeight = persistentState.EquippedWeaponBaseWeight;
-                EquippedWeaponTier = persistentState.EquippedWeaponTier;
-                EquippedWeaponSize = persistentState.EquippedWeaponSize;
-                WeaponWeightInitialized = true;
+                persistentState.RegisterOwnedWeapon(
+                    WeaponModel.WeaponType,
+                    WeaponModel.Tier,
+                    WeaponModel.Size,
+                    WeaponModel.Durability
+                );
+                persistentState.StoreOwnedWeaponDurability(
+                    WeaponModel.WeaponType,
+                    WeaponModel.Tier,
+                    WeaponModel.Size,
+                    WeaponModel.Durability
+                );
             }
+            EquippedWeaponBaseWeight = WeaponModel.GetTierOneWeightFor(
+                WeaponModel.WeaponType
+            );
+            EquippedWeaponTier = WeaponModel.Tier;
+            EquippedWeaponSize = WeaponModel.Size;
+            WeaponWeightInitialized = true;
             OwnedArmorCount = persistentState.CountOwnedArmor();
             OwnedShieldCount = persistentState.CountOwnedShields();
+            OwnedWeaponCount = persistentState.CountOwnedWeapons();
         }
 
         CharacterCreationComplete = true;
@@ -430,6 +485,11 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.SHIELD_TYPE_COUNT - 1
         );
+        EquipmentSelectionWeaponType = Clamp(
+            EquipmentSelectionWeaponType,
+            0,
+            CaelumConstants.WEAPON_TYPE_COUNT - 1
+        );
         EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
         EquipmentSelectionSize = Clamp(
             EquipmentSelectionSize,
@@ -446,6 +506,10 @@ class CaelumPlayer : DoomPlayer
         EquipmentSelectionDurability = 0;
         EquipmentSelectionMaximumDurability = 0;
         EquipmentSelectionWeight = 0.0;
+        EquipmentSelectionDamage = 0.0;
+        EquipmentSelectionAirCost = 0.0;
+        EquipmentSelectionAnimaCost = 0.0;
+        EquipmentSelectionAttackTics = 0;
         MagicBoxUsedSlots = 0;
         MagicBoxMaximumSlots = DerivedStats != null
             ? DerivedStats.MagicBoxCapacity : 0;
@@ -476,10 +540,56 @@ class CaelumPlayer : DoomPlayer
             }
         }
         MagicBoxUsedSlots = Max(0,
-            persistentState.CountOwnedArmor() + persistentState.CountOwnedShields()
+            persistentState.CountOwnedArmor()
+            + persistentState.CountOwnedShields()
+            + persistentState.CountOwnedWeapons()
             - equippedOwnedArmor
             - (ShieldModel != null && ShieldModel.Equipped ? 1 : 0)
+            - (WeaponModel != null && WeaponModel.Equipped ? 1 : 0)
         );
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            EquipmentSelectionOwned = persistentState.OwnsWeapon(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            EquipmentSelectionDurability = persistentState.GetOwnedWeaponDurability(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            EquipmentSelectionMaximumDurability = WeaponModel != null
+                ? WeaponModel.GetMaximumDurabilityFor(
+                    EquipmentSelectionWeaponType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                ) : 0;
+            EquipmentSelectionWeight = WeaponModel != null
+                ? WeaponModel.GetWeightFor(
+                    EquipmentSelectionWeaponType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                ) : 0.0;
+            EquipmentSelectionDamage = WeaponModel != null
+                ? WeaponModel.GetDamageFor(
+                    EquipmentSelectionWeaponType,
+                    EquipmentSelectionTier
+                ) : 0.0;
+            EquipmentSelectionAirCost = WeaponModel != null
+                ? WeaponModel.GetAirCostFor(EquipmentSelectionWeaponType) : 0.0;
+            EquipmentSelectionAnimaCost = WeaponModel != null
+                ? WeaponModel.GetAnimaCostFor(EquipmentSelectionWeaponType) : 0.0;
+            EquipmentSelectionAttackTics = WeaponModel != null
+                ? WeaponModel.GetAttackTicsFor(EquipmentSelectionWeaponType) : 0;
+            EquipmentSelectionEquipped = WeaponModel != null
+                && WeaponModel.Equipped
+                && WeaponModel.WeaponType == EquipmentSelectionWeaponType
+                && WeaponModel.Tier == EquipmentSelectionTier
+                && WeaponModel.Size == EquipmentSelectionSize;
+            return;
+        }
 
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
@@ -649,6 +759,71 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
+    bool AcquireWeaponPickup(
+        int weaponType,
+        int tier,
+        int equipmentSize,
+        int encodedDurability
+    )
+    {
+        if (WeaponModel == null) { return false; }
+        int resolvedType = Clamp(
+            weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
+        );
+        int resolvedTier = Clamp(tier, 1, 3);
+        int resolvedSize = Clamp(
+            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        persistentState.EnsureEquipmentSizeInitialized();
+        RefreshEquipmentSelectionPreview();
+        if (!persistentState.OwnsWeapon(resolvedType, resolvedTier, resolvedSize)
+            && MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            return false;
+        }
+        int pickupDurability = encodedDurability > 0
+            ? encodedDurability - 1
+            : WeaponModel.GetMaximumDurabilityFor(
+                resolvedType, resolvedTier, resolvedSize
+            );
+        LastEquipmentPickupWasNew = persistentState.RegisterOwnedWeapon(
+            resolvedType, resolvedTier, resolvedSize, pickupDurability
+        );
+        if (WeaponModel.Equipped
+            && WeaponModel.WeaponType == resolvedType
+            && WeaponModel.Tier == resolvedTier
+            && WeaponModel.Size == resolvedSize)
+        {
+            WeaponModel.Durability = WeaponModel.GetMaximumDurabilityFor(
+                resolvedType, resolvedTier, resolvedSize
+            );
+        }
+        if (LastEquipmentPickupWasNew
+            && resolvedType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        {
+            Inventory carbineAmmo = FindInventory("CaelumCarbineAmmo");
+            if (carbineAmmo == null)
+            {
+                carbineAmmo = GiveInventoryType("CaelumCarbineAmmo");
+            }
+            if (carbineAmmo != null)
+            {
+                carbineAmmo.Amount = Min(
+                    carbineAmmo.MaxAmount,
+                    carbineAmmo.Amount
+                        + CaelumConstants.WEAPON_CARBINE_STARTING_AMMO - 1
+                );
+            }
+        }
+        OwnedWeaponCount = persistentState.CountOwnedWeapons();
+        RefreshEquipmentSelectionPreview();
+        PersistCharacterState();
+        return true;
+    }
+
     void ToggleEquipmentMenu()
     {
         if (CreationWizardOpen) { return; }
@@ -668,15 +843,17 @@ class CaelumPlayer : DoomPlayer
         {
             EquipmentSelectionShieldType = ShieldModel.ShieldType;
         }
+        if (WeaponModel != null)
+        {
+            EquipmentSelectionWeaponType = WeaponModel.WeaponType;
+        }
         RefreshEquipmentSelectionPreview();
     }
 
     void CycleEquipmentKind()
     {
-        EquipmentSelectionKind = EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_ARMOR
-            ? CaelumConstants.EQUIPMENT_KIND_SHIELD
-            : CaelumConstants.EQUIPMENT_KIND_ARMOR;
+        EquipmentSelectionKind = (EquipmentSelectionKind + 1)
+            % CaelumConstants.EQUIPMENT_KIND_COUNT;
         RefreshEquipmentSelectionPreview();
     }
 
@@ -691,7 +868,14 @@ class CaelumPlayer : DoomPlayer
 
     void CycleEquipmentType(int direction)
     {
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            EquipmentSelectionWeaponType = (
+                EquipmentSelectionWeaponType + direction
+                    + CaelumConstants.WEAPON_TYPE_COUNT
+            ) % CaelumConstants.WEAPON_TYPE_COUNT;
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             EquipmentSelectionShieldType = (
                 EquipmentSelectionShieldType + direction
@@ -730,7 +914,43 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsureEquipmentSizeInitialized();
         if (!EquipmentSelectionSizeCompatible) { return; }
 
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            if (WeaponModel == null || !persistentState.OwnsWeapon(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            ))
+            {
+                return;
+            }
+            if (WeaponModel.Equipped)
+            {
+                persistentState.RegisterOwnedWeapon(
+                    WeaponModel.WeaponType,
+                    WeaponModel.Tier,
+                    WeaponModel.Size,
+                    WeaponModel.Durability
+                );
+                persistentState.StoreOwnedWeaponDurability(
+                    WeaponModel.WeaponType,
+                    WeaponModel.Tier,
+                    WeaponModel.Size,
+                    WeaponModel.Durability
+                );
+            }
+            WeaponModel.WeaponType = EquipmentSelectionWeaponType;
+            WeaponModel.Tier = EquipmentSelectionTier;
+            WeaponModel.Size = EquipmentSelectionSize;
+            WeaponModel.Durability = persistentState.GetOwnedWeaponDurability(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+            WeaponModel.Equipped = true;
+            EquippedWeaponCooldownRemaining = 0.0;
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             if (ShieldModel == null || !persistentState.OwnsShield(
                 EquipmentSelectionShieldType,
@@ -821,7 +1041,25 @@ class CaelumPlayer : DoomPlayer
         if (persistentState == null) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
 
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            if (WeaponModel == null || !WeaponModel.Equipped) { return; }
+            persistentState.RegisterOwnedWeapon(
+                WeaponModel.WeaponType,
+                WeaponModel.Tier,
+                WeaponModel.Size,
+                WeaponModel.Durability
+            );
+            persistentState.StoreOwnedWeaponDurability(
+                WeaponModel.WeaponType,
+                WeaponModel.Tier,
+                WeaponModel.Size,
+                WeaponModel.Durability
+            );
+            WeaponModel.Equipped = false;
+            EquippedWeaponCooldownRemaining = 0.0;
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             if (ShieldModel == null || !ShieldModel.Equipped) { return; }
             persistentState.RegisterOwnedShield(
@@ -876,33 +1114,37 @@ class CaelumPlayer : DoomPlayer
 
     void SpawnDebugEquipmentPickup()
     {
+        // En el menu de desarrollo, crear significa agregar inmediatamente la
+        // seleccion a la Caja Magica. Soltar sigue creando el objeto de mundo,
+        // por lo que el circuito de recoleccion tambien puede probarse.
         if (player == null || player.playerstate != PST_LIVE) { return; }
-        Vector3 spawnPos = Pos + (
-            Cos(Angle) * 64.0,
-            Sin(Angle) * 64.0,
-            8.0
-        );
-        Actor pickup;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
-            pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionShieldType;
-                pickup.args[1] = EquipmentSelectionTier;
-                pickup.args[2] = EquipmentSelectionSize + 1;
-            }
+            AcquireWeaponPickup(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            AcquireShieldPickup(
+                EquipmentSelectionShieldType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
         }
         else
         {
-            pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionSlot;
-                pickup.args[1] = EquipmentSelectionArmorType;
-                pickup.args[2] = EquipmentSelectionTier;
-                pickup.args[3] = EquipmentSelectionSize + 1;
-            }
+            AcquireArmorPickup(
+                EquipmentSelectionSlot,
+                EquipmentSelectionArmorType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
         }
     }
 
@@ -912,7 +1154,21 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(false);
         if (persistentState == null || !EquipmentSelectionOwned) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            persistentState.StoreOwnedWeaponDurability(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize,
+                0
+            );
+            if (EquipmentSelectionEquipped && WeaponModel != null)
+            {
+                WeaponModel.Durability = 0;
+                EquippedWeaponCooldownRemaining = 0.0;
+            }
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             persistentState.StoreOwnedShieldDurability(
                 EquipmentSelectionShieldType,
@@ -947,13 +1203,35 @@ class CaelumPlayer : DoomPlayer
 
     void DropSelectedEquipment()
     {
-        if (!EquipmentSelectionOwned || EquipmentSelectionEquipped) { return; }
+        if (!EquipmentSelectionOwned) { return; }
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(false);
         if (persistentState == null) { return; }
+        // Tirar un objeto equipado primero lo retira de su ranura. Esto evita
+        // que el control parezca inactivo y actualiza su peso en el mismo tic.
+        if (EquipmentSelectionEquipped)
+        {
+            UnequipSelectedEquipment();
+            RefreshEquipmentSelectionPreview();
+            if (EquipmentSelectionEquipped || !EquipmentSelectionOwned) { return; }
+        }
         Vector3 spawnPos = Pos + (Cos(Angle) * 48.0, Sin(Angle) * 48.0, 8.0);
         Actor pickup;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            pickup = Spawn("CaelumWeaponPickup", spawnPos, NO_REPLACE);
+            if (pickup == null) { return; }
+            pickup.args[0] = EquipmentSelectionWeaponType;
+            pickup.args[1] = EquipmentSelectionTier;
+            pickup.args[2] = EquipmentSelectionSize + 1;
+            pickup.args[3] = EquipmentSelectionDurability + 1;
+            persistentState.RemoveOwnedWeapon(
+                EquipmentSelectionWeaponType,
+                EquipmentSelectionTier,
+                EquipmentSelectionSize
+            );
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
             if (pickup == null) { return; }
@@ -985,8 +1263,29 @@ class CaelumPlayer : DoomPlayer
         }
         OwnedArmorCount = persistentState.CountOwnedArmor();
         OwnedShieldCount = persistentState.CountOwnedShields();
+        OwnedWeaponCount = persistentState.CountOwnedWeapons();
+        ApplyCharacterProfile();
         PersistCharacterState();
         RefreshEquipmentSelectionPreview();
+    }
+
+    // Mantiene la barra sincronizada incluso si otro sistema cambia una pieza
+    // sin pasar por los botones del menu de equipo.
+    void RefreshEquipmentLoadIfNeeded()
+    {
+        if (DerivedStats == null || Attributes == null || CharacterProfile == null)
+        {
+            return;
+        }
+        double armorWeight = ArmorModel != null ? ArmorModel.GetTotalWeight() : 0.0;
+        double shieldWeight = ShieldModel != null ? ShieldModel.GetWeight() : 0.0;
+        double weaponWeight = WeaponModel != null ? WeaponModel.GetWeight() : 0.0;
+        if (Abs(DerivedStats.ArmorWeight - armorWeight) > 0.0005
+            || Abs(DerivedStats.ShieldWeight - shieldWeight) > 0.0005
+            || Abs(DerivedStats.WeaponWeight - weaponWeight) > 0.0005)
+        {
+            ApplyCharacterProfile();
+        }
     }
 
     override void PreTravelled()
@@ -1050,14 +1349,25 @@ class CaelumPlayer : DoomPlayer
             ShieldModel = CaelumShieldModel(new("CaelumShieldModel"));
             ShieldModel.InitializeDefaults();
         }
+        if (WeaponModel == null)
+        {
+            WeaponModel = CaelumWeaponModel(new("CaelumWeaponModel"));
+            WeaponModel.InitializeDefaults();
+        }
+        if (FindInventory("CaelumEquippedWeapon") == null)
+        {
+            GiveInventoryType("CaelumEquippedWeapon");
+        }
         ShieldModel.EnsureEquippedStateInitialized();
         ArmorModel.InitializeDefaults();
         if (!WeaponWeightInitialized)
         {
-            // La espada provisional representa el ejemplo confirmado 6/9/12.
-            EquippedWeaponBaseWeight = 6.0;
-            EquippedWeaponTier = 1;
-            EquippedWeaponSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            // Compatibilidad: los campos antiguos reflejan el arma real.
+            EquippedWeaponBaseWeight = WeaponModel.GetTierOneWeightFor(
+                WeaponModel.WeaponType
+            );
+            EquippedWeaponTier = WeaponModel.Tier;
+            EquippedWeaponSize = WeaponModel.Size;
             WeaponWeightInitialized = true;
         }
         if (!ArmorDurabilityMultiplierInitialized)
@@ -1942,6 +2252,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        RefreshEquipmentLoadIfNeeded();
+
         UpdateHealthStateEffects();
 
         IsSpendingRunningAir = IsRunningOnGround();
@@ -1965,6 +2277,13 @@ class CaelumPlayer : DoomPlayer
             0.0,
             StaffCastCooldownRemaining - 1.0 / TICRATE
         );
+        EquippedWeaponCooldownRemaining = Max(
+            0.0,
+            EquippedWeaponCooldownRemaining - 1.0 / TICRATE
+        );
+        Inventory currentCarbineAmmo = FindInventory("CaelumCarbineAmmo");
+        CarbineAmmoCount = currentCarbineAmmo != null
+            ? currentCarbineAmmo.Amount : 0;
 
         if (LucidityResourceInitialized
             && CurrentLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
@@ -2110,6 +2429,167 @@ class CaelumPlayer : DoomPlayer
     // Functional straight-line staff test. Its trace distance and temporary
     // puff are presentation scaffolding; documented damage, Anima, timing,
     // Intelligence, Insight, critical, and status multipliers are live.
+    double GetEquippedWeaponDamageScale(int weaponType)
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != weaponType)
+        {
+            return 1.0;
+        }
+        double tierOneDamage = WeaponModel.GetTierOneDamageFor(weaponType);
+        if (tierOneDamage <= 0.0) { return 1.0; }
+        return WeaponModel.GetDamage() / tierOneDamage;
+    }
+
+    // Fire se enruta por el objeto realmente equipado en la mano habil.
+    void PerformEquippedWeaponPrimaryAttack()
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.Durability <= 0
+            || EquipmentMenuOpen || CreationWizardOpen
+            || EquippedWeaponCooldownRemaining > 0.0
+            || IsPhysicallyImmobilized())
+        {
+            return;
+        }
+
+        switch (WeaponModel.WeaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_STAFF:
+                PerformDebugStaffAttack();
+                break;
+            case CaelumConstants.WEAPON_TYPE_CARBINE:
+                PerformCarbineAttack();
+                break;
+            default:
+                PerformDebugSwordAttack();
+                if (LastMeleeHadEnoughAir)
+                {
+                    EquippedWeaponCooldownRemaining =
+                        WeaponModel.GetAttackTics() / double(TICRATE);
+                }
+                break;
+        }
+    }
+
+    // AltFire prioriza siempre el escudo de la mano secundaria. Si no existe,
+    // queda reservado para el futuro ataque secundario propio de cada arma.
+    void PerformEquippedSecondaryHandAction()
+    {
+        if (ShieldModel != null && ShieldModel.Equipped)
+        {
+            ToggleDebugShieldBlock();
+        }
+    }
+
+    void PerformCarbineAttack()
+    {
+        LastCarbineFired = false;
+        LastCarbineHadEnoughAir = false;
+        LastCarbineHadAmmo = false;
+        LastCarbineCriticalHit = false;
+        LastCarbineDamage = 0.0;
+        LastCarbineAccuracyPercent = 0.0;
+        LastCarbineMinimumSpread = 0.0;
+        LastCarbineMaximumSpread = 0.0;
+        LastCarbineYawOffset = 0.0;
+        LastCarbinePitchOffset = 0.0;
+        LastAttackPushForce = 0.0;
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_CARBINE
+            || WeaponModel.Durability <= 0 || DerivedStats == null)
+        {
+            return;
+        }
+
+        Inventory carbineAmmo = FindInventory("CaelumCarbineAmmo");
+        LastCarbineHadAmmo = carbineAmmo != null && carbineAmmo.Amount > 0;
+        if (!LastCarbineHadAmmo) { return; }
+
+        double airCost = -CaelumConstants.CARBINE_AIR_CHANGE
+            * DerivedStats.AirConsumptionMultiplier;
+        LastCarbineHadEnoughAir = CurrentAir >= airCost;
+        if (!LastCarbineHadEnoughAir) { return; }
+
+        UpdateLucidityAccuracyEffects();
+        UpdateCrouchEffects();
+        double movementAccuracyMultiplier = IsCrouching
+            ? CrouchAccuracyMultiplier
+            : (IsRunningOnGround()
+                ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER
+                : 1.0);
+        LastCarbineAccuracyPercent = Max(
+            1.0,
+            EffectivePhysicalAccuracyPercent * movementAccuracyMultiplier
+        );
+        LastCarbineMinimumSpread = CaelumConstants.CARBINE_MINIMUM_SPREAD_DEGREES
+            * 100.0 / LastCarbineAccuracyPercent;
+        LastCarbineMaximumSpread = CaelumConstants.CARBINE_MAXIMUM_SPREAD_DEGREES
+            * 100.0 / LastCarbineAccuracyPercent;
+        double spreadRoll = Random[CaelumCarbineSpread](0, 100000) / 100000.0;
+        double spreadMagnitude = LastCarbineMinimumSpread
+            + (LastCarbineMaximumSpread - LastCarbineMinimumSpread) * spreadRoll;
+        LastCarbineYawOffset = Random[CaelumCarbineYaw](-100000, 100000)
+            / 100000.0 * spreadMagnitude;
+        LastCarbinePitchOffset = Random[CaelumCarbinePitch](-100000, 100000)
+            / 100000.0 * spreadMagnitude;
+
+        double criticalBonus = Max(
+            0.0,
+            DerivedStats.PhysicalCriticalChance
+                - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
+        );
+        double criticalChance = Clamp(
+            (CaelumConstants.CARBINE_BASE_CRITICAL_CHANCE_PERCENT + criticalBonus)
+                * CrouchCriticalChanceMultiplier,
+            0.0,
+            100.0
+        );
+        int criticalRoll = Random[CaelumCarbineCritical](0, 999999);
+        LastCarbineCriticalHit = criticalRoll / 10000.0 < criticalChance;
+        LastCarbineDamage = WeaponModel.GetDamage()
+            * EffectiveOffensiveDamageMultiplier;
+
+        double attackAngle = Angle + LastCarbineYawOffset;
+        double attackPitch = Pitch + LastCarbinePitchOffset;
+        Vector3 spawnPos = Pos + (
+            Cos(attackAngle) * 32.0,
+            Sin(attackAngle) * 32.0,
+            Height * 0.65
+        );
+        CaelumCarbineProjectile projectile = CaelumCarbineProjectile(
+            Spawn("CaelumCarbineProjectile", spawnPos, NO_REPLACE)
+        );
+        if (projectile == null) { return; }
+
+        projectile.Target = self;
+        projectile.Angle = attackAngle;
+        projectile.Pitch = attackPitch;
+        projectile.Vel = (
+            Cos(attackPitch) * Cos(attackAngle)
+                * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED,
+            Cos(attackPitch) * Sin(attackAngle)
+                * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED,
+            -Sin(attackPitch) * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED
+        );
+        projectile.StoreCaelumAttackResult(
+            Max(1, int(LastCarbineDamage + 0.5)),
+            true,
+            LastCarbineCriticalHit,
+            false,
+            DerivedStats.PhysicalPushMultiplier
+        );
+
+        carbineAmmo.Amount = Max(0, carbineAmmo.Amount - 1);
+        CarbineAmmoCount = carbineAmmo.Amount;
+        CurrentAir = Max(0.0, CurrentAir - airCost);
+        UpdateAirStateEffects();
+        LastCarbineFired = true;
+        EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics()
+            / double(TICRATE);
+        MarkCombatActivity();
+    }
+
     void PerformDebugStaffAttack()
     {
         LastStaffHit = false;
@@ -2131,6 +2611,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
+            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_STAFF)
             * EffectiveOffensiveDamageMultiplier;
         if (CurrentAnima < DerivedStats.StaffAnimaCost)
         {
@@ -2206,6 +2687,7 @@ class CaelumPlayer : DoomPlayer
             LastStaffCriticalHit
         );
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
+            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_STAFF)
             * EffectiveOffensiveDamageMultiplier
             * LastStaffLocationMultiplier;
         int integerDamage = Max(1, int(LastStaffCalculatedDamage + 0.5));
@@ -2482,12 +2964,7 @@ class CaelumPlayer : DoomPlayer
             DerivedStats.SetEquipmentWeights(
                 ArmorModel != null ? ArmorModel.GetTotalWeight() : 0.0,
                 ShieldModel != null ? ShieldModel.GetWeight() : 0.0,
-                WeaponWeightInitialized
-                    ? CaelumEquipmentRules.CalculateTieredEquipmentWeight(
-                        EquippedWeaponBaseWeight,
-                        EquippedWeaponTier,
-                        EquippedWeaponSize
-                    ) : 0.0
+                WeaponModel != null ? WeaponModel.GetWeight() : 0.0
             );
             DerivedStats.Recalculate(Attributes, CharacterProfile);
             // La masa nativa representa la masa total para que el motor y los
@@ -2820,6 +3297,7 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
 
         LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
+            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_SWORD)
             * EffectiveOffensiveDamageMultiplier;
         FTranslatedLineTarget targetData;
         UpdateLucidityAccuracyEffects();
@@ -2875,7 +3353,10 @@ class CaelumPlayer : DoomPlayer
         LastMeleeCriticalAttempted = true;
         LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
         LastMeleeCriticalChancePercent = Clamp(
-            DerivedStats.PhysicalCriticalChance
+            (DerivedStats.PhysicalCriticalChance
+                + (WeaponModel != null && WeaponModel.Equipped
+                    && WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SWORD
+                        ? 3.0 : 0.0))
                 * LastMeleeCrouchCriticalMultiplier,
             0.0,
             100.0
@@ -2898,6 +3379,7 @@ class CaelumPlayer : DoomPlayer
             LastMeleeCriticalHit
         );
         LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
+            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_SWORD)
             * LastMeleeLocationMultiplier
             * EffectiveOffensiveDamageMultiplier;
         int integerDamage = Max(1, int(LastMeleeCalculatedDamage + 0.5));
@@ -4038,6 +4520,11 @@ class CaelumPlayer : DoomPlayer
             {
                 ShieldModel.Size = startingEquipmentSize;
                 ShieldModel.Durability = ShieldModel.GetMaximumDurability();
+            }
+            if (WeaponModel != null)
+            {
+                WeaponModel.Size = startingEquipmentSize;
+                WeaponModel.Durability = WeaponModel.GetMaximumDurability();
             }
             EquippedWeaponSize = startingEquipmentSize;
             ApplyCharacterProfile();

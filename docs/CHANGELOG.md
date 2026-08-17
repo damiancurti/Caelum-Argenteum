@@ -1,12 +1,58 @@
 # Changelog
 
+## 4.7.2
+
+- Replaced unreliable equipment-menu letter checks with `InputEvent.KeyChar`
+  handling compatible with GZDoom 4.14.2.
+- Changed `P` development creation to add the selected object directly to the
+  Magic Box instead of hiding a world pickup behind the open menu.
+- Changed the menu close key from Escape to `Q`, avoiding the native options
+  menu, and allowed `D` to unequip and drop an equipped object in one action.
+- Added automatic equipped-weight synchronization so armor, shield, and weapon
+  changes immediately update load, total mass, movement, evasion, and air use.
+
+## 4.7.1
+
+- Added a source-compatibility alias from the retired
+  `ARMOR_TYPE_UNARMORED` identifier to `ARMOR_TYPE_MAGIC`. This keeps mixed
+  incremental 4.6/4.7 source trees compilable without restoring the old UI
+  terminology or changing saved numeric equipment data.
+- Made both weapon-state actions resolve their owner explicitly through
+  `invoker`, removing GZDoom 4.14.2's ambiguous `self` parsing error.
+
+## 4.7.0
+
+- Confirmed carry capacity as `BaseMass × Type4Percent(Strength) / 100`:
+  mass 200 produces 200 at Strength 0 and 600 at Strength 100.
+- Added a persistent main-hand weapon model for sword, staff, and carbine.
+- Added weapon tier, XS–XL size, weight, durability, ownership, migration,
+  Magic Box accounting, pickups, equip/remove, break, and drop actions.
+- Added a Weapons filter to the compact equipment menu with damage, attack
+  time, costs, weight, durability, compatibility, and cartridge data.
+- Connected native Fire to sword, staff, or carbine according to the equipped
+  item; AltFire now toggles the equipped secondary-hand shield.
+- Added the 60 m carbine projectile, accuracy-scaled 30°/200° spread, 48-tic
+  cadence, 360 base damage, physical push, cartridge use, and 20-air reload.
+- Added automatic migration from the old provisional weapon-weight record.
+
+## 4.6.2 — Mass-scaled load, magic armor terminology, and equipment testing
+
+- Set the tier-one carbine weight to 12 at size M.
+- Multiplied Strength Type 4 carry capacity by `BaseMass / 100`, so characters
+  with greater body mass can carry proportionally more equipment.
+- Renamed the complete basic equippable category to “magic armor” without
+  changing its numeric identity, defense, durability, weight, or bonuses.
+- Added `P` inside the equipment interface to spawn the selected armor or shield
+  pickup directly, completing the collect/equip/remove/drop test loop without
+  closing the menu.
+
 ## 4.6.1 — GZDoom compatibility, load HUD, and base clothing
 
 - Removed unsupported ZScript method overloads that made GZDoom 4.14.2 report
   duplicate `GetMaximumDurabilityFor` definitions.
 - Replaced the short bow catalogue entry with the tier-one carbine: 360 damage,
   48-tic fire time, 60 m range, 30°/200° spread, 0% base critical chance, and
-  -20 air. Its size-M tier-one weight is 24, twice the long bow's assigned 12.
+  -20 air. Its size-M tier-one weight is 12.
 - Added a right-side load bar showing equipped weight, carry capacity, and load
   percentage, with green/yellow/orange/red states.
 - Added a true unequipped state per armor slot: nothing, nothing, shirt, and
@@ -54,7 +100,7 @@
 - Added a compact localized equipment interface with keyboard/gamepad controls
   for category, slot, type, tier, equip, remove, and close.
 - Made shield removal affect defense, coverage, blocking, air cost, and weight;
-  removing armor returns that slot to unarmored tier 1.
+  removing armor returns that slot to its base clothing state.
 - Added a development control that spawns the currently previewed pickup for
   collection, duplicate-repair, save/load, and map-travel tests.
 - Preserved each outgoing equipped item's current durability before switching
