@@ -171,6 +171,17 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_USED = 14;
     const EQUIPMENT_ACTION_FAILED_KEY_STORAGE = 15;
 
+    // La primera estación funcional fabrica las dos armas físicas que ya
+    // poseen implementación jugable completa. El catálogo de dieciséis queda
+    // autoritativo y se irá habilitando sin cambiar la transacción nativa.
+    const CRAFTING_PLAYABLE_RECIPE_COUNT = 2;
+    const CRAFTING_ACTION_NONE = 0;
+    const CRAFTING_ACTION_CREATED = 1;
+    const CRAFTING_ACTION_FAILED_MATERIALS = 2;
+    const CRAFTING_ACTION_FAILED_BOX_FULL = 3;
+    const CRAFTING_ACTION_FAILED_DUPLICATE = 4;
+    const CRAFTING_ACTION_MATERIALS_SPAWNED = 5;
+
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
     const EQUIPMENT_SIZE_M = 2;

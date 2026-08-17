@@ -1,4 +1,4 @@
-version "4.12"
+version "4.13"
 
 // This root file tells GZDoom which ZScript source files belong to the game.
 // Keeping each system in a separate file will make the project easier to learn,

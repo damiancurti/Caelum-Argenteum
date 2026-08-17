@@ -36,6 +36,21 @@ class CaelumPlayer : DoomPlayer
     int OwnedShieldCount;
     int OwnedWeaponCount;
     bool EquipmentMenuOpen;
+    bool CraftingMenuOpen;
+    int CraftingSelectionRecipe;
+    int CraftingSelectionTier;
+    int CraftingSelectionSize;
+    int CraftingSelectedWeapon;
+    int CraftingBasicMaterialType;
+    int CraftingBasicMaterialTier;
+    int CraftingBasicRequired;
+    int CraftingBasicOwned;
+    int CraftingTierMaterialType;
+    int CraftingTierMaterialTier;
+    int CraftingTierRequired;
+    int CraftingTierOwned;
+    double CraftingFinalWeight;
+    int LastCraftingAction;
     int EquipmentSelectionKind;
     int EquipmentSelectionSlot;
     int EquipmentSelectionArmorType;
@@ -785,6 +800,7 @@ class CaelumPlayer : DoomPlayer
     {
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
+        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
         PersistCharacterState();
     }
 
@@ -1653,11 +1669,282 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
+    int CountCraftingMaterial(int materialType, int materialTier)
+    {
+        CaelumSpecialInventoryItem material = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            materialType,
+            materialTier
+        );
+        return material != null ? Max(0, material.Amount) : 0;
+    }
+
+    void RefreshCraftingPreview()
+    {
+        CraftingSelectionRecipe = Clamp(
+            CraftingSelectionRecipe,
+            0,
+            CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT - 1
+        );
+        CraftingSelectionTier = Clamp(CraftingSelectionTier, 1, 3);
+        CraftingSelectionSize = Clamp(
+            CraftingSelectionSize,
+            0,
+            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        CraftingSelectedWeapon = CaelumCraftingRules.GetPlayableRecipeWeapon(
+            CraftingSelectionRecipe
+        );
+        CraftingBasicMaterialType = CaelumCraftingRules.GetBasicMaterial(
+            CraftingSelectedWeapon
+        );
+        CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
+            CraftingBasicMaterialType, 1
+        );
+        CraftingTierMaterialType = CaelumCraftingRules.GetTierMaterial(
+            CraftingSelectedWeapon
+        );
+        CraftingTierMaterialTier = CaelumMaterialRules.ResolveTier(
+            CraftingTierMaterialType, CraftingSelectionTier
+        );
+        CraftingFinalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
+            CaelumCraftingRules.GetPlayableTierOneWeight(
+                CraftingSelectedWeapon
+            ),
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        CraftingBasicRequired =
+            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+                CraftingSelectedWeapon, CraftingFinalWeight
+            );
+        CraftingTierRequired =
+            CaelumCraftingRules.GetRequiredTierMaterialUnits(
+                CraftingSelectedWeapon, CraftingFinalWeight
+            );
+        CraftingBasicOwned = CountCraftingMaterial(
+            CraftingBasicMaterialType, CraftingBasicMaterialTier
+        );
+        CraftingTierOwned = CountCraftingMaterial(
+            CraftingTierMaterialType, CraftingTierMaterialTier
+        );
+        RefreshCarriedInventorySummary();
+    }
+
+    void ToggleCraftingMenu()
+    {
+        if (CreationWizardOpen) { return; }
+        CraftingMenuOpen = !CraftingMenuOpen;
+        if (!CraftingMenuOpen) { return; }
+        EquipmentMenuOpen = false;
+        CraftingSelectionRecipe = Clamp(
+            CraftingSelectionRecipe,
+            0,
+            CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT - 1
+        );
+        if (CraftingSelectionTier <= 0)
+        {
+            CraftingSelectionTier = 1;
+            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+        }
+        CraftingSelectionSize = Clamp(
+            CraftingSelectionSize,
+            0,
+            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        RefreshCraftingPreview();
+    }
+
+    void CycleCraftingRecipe(int direction)
+    {
+        CraftingSelectionRecipe = (
+            CraftingSelectionRecipe + direction
+            + CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT
+        ) % CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT;
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        RefreshCraftingPreview();
+    }
+
+    void CycleCraftingTier()
+    {
+        CraftingSelectionTier = CraftingSelectionTier % 3 + 1;
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        RefreshCraftingPreview();
+    }
+
+    void CycleCraftingSize()
+    {
+        CraftingSelectionSize = (CraftingSelectionSize + 1)
+            % CaelumConstants.EQUIPMENT_SIZE_COUNT;
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        RefreshCraftingPreview();
+    }
+
+    bool ConsumeCraftingMaterial(
+        int materialType, int materialTier, int requiredAmount
+    )
+    {
+        CaelumSpecialInventoryItem material = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            materialType,
+            materialTier
+        );
+        if (material == null || material.Amount < requiredAmount)
+        {
+            return false;
+        }
+        material.Amount -= requiredAmount;
+        if (material.Amount <= 0) { material.Destroy(); }
+        return true;
+    }
+
+    void SpawnSelectedCraftingMaterials()
+    {
+        if (player == null || player.playerstate != PST_LIVE) { return; }
+        RefreshCraftingPreview();
+        Vector3 forward = (Cos(Angle) * 56.0, Sin(Angle) * 56.0, 8.0);
+        Vector3 side = (-Sin(Angle) * 18.0, Cos(Angle) * 18.0, 0.0);
+        CaelumMaterialPickup basicMaterial = CaelumMaterialPickup(
+            Spawn("CaelumMaterialPickup", Pos + forward - side, NO_REPLACE)
+        );
+        if (basicMaterial != null)
+        {
+            basicMaterial.args[0] = CraftingBasicMaterialType;
+            basicMaterial.args[1] = CraftingBasicMaterialTier;
+            basicMaterial.Amount = CraftingBasicRequired;
+        }
+        CaelumMaterialPickup tierMaterial = CaelumMaterialPickup(
+            Spawn("CaelumMaterialPickup", Pos + forward + side, NO_REPLACE)
+        );
+        if (tierMaterial != null)
+        {
+            tierMaterial.args[0] = CraftingTierMaterialType;
+            tierMaterial.args[1] = CraftingTierMaterialTier;
+            tierMaterial.Amount = CraftingTierRequired;
+        }
+        LastCraftingAction =
+            CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED;
+    }
+
+    void CraftSelectedPhysicalWeapon()
+    {
+        RefreshCraftingPreview();
+        int playableWeaponType = CaelumCraftingRules.GetPlayableWeaponType(
+            CraftingSelectedWeapon
+        );
+        if (playableWeaponType < 0 || WeaponModel == null) { return; }
+        if (FindNativeEquipmentItem(
+            CaelumConstants.EQUIPMENT_KIND_WEAPON,
+            playableWeaponType,
+            -1,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        ) != null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE;
+            return;
+        }
+        if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
+            return;
+        }
+        if (CraftingBasicOwned < CraftingBasicRequired
+            || CraftingTierOwned < CraftingTierRequired)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        CaelumEquipmentItem result = CaelumEquipmentItem(
+            Spawn("CaelumWeaponPickup", Pos, NO_REPLACE)
+        );
+        if (result == null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        // La validación completa ocurre antes de modificar pilas. Como los
+        // componentes de estas recetas son distintos, ambas restas son una
+        // única transacción lógica y nunca dejan un crafteo parcial.
+        if (!ConsumeCraftingMaterial(
+                CraftingBasicMaterialType,
+                CraftingBasicMaterialTier,
+                CraftingBasicRequired
+            )
+            || !ConsumeCraftingMaterial(
+                CraftingTierMaterialType,
+                CraftingTierMaterialTier,
+                CraftingTierRequired
+            ))
+        {
+            result.Destroy();
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        result.ItemType = playableWeaponType;
+        result.ArmorSlot = -1;
+        result.Tier = CraftingSelectionTier;
+        result.EquipmentSize = CraftingSelectionSize;
+        result.Durability = WeaponModel.GetMaximumDurabilityFor(
+            playableWeaponType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.UnitWeight = WeaponModel.GetWeightFor(
+            playableWeaponType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.Equipped = false;
+        result.InMagicBox = true;
+        result.AttachToOwner(self);
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState != null)
+        {
+            persistentState.RegisterOwnedWeapon(
+                playableWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                result.Durability
+            );
+            persistentState.SetWeaponInMagicBox(
+                playableWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                true
+            );
+            persistentState.SetWeaponEquipped(
+                playableWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                false
+            );
+        }
+
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+        RefreshCraftingPreview();
+    }
+
     void ToggleEquipmentMenu()
     {
         if (CreationWizardOpen) { return; }
         EquipmentMenuOpen = !EquipmentMenuOpen;
         if (!EquipmentMenuOpen) { return; }
+        CraftingMenuOpen = false;
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
         PersistCharacterState();
 
@@ -2974,6 +3261,7 @@ class CaelumPlayer : DoomPlayer
     override void PreTravelled()
     {
         EquipmentMenuOpen = false;
+        CraftingMenuOpen = false;
         PersistCharacterState();
         Super.PreTravelled();
     }
@@ -3907,7 +4195,8 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
-        if ((CreationWizardOpen || EquipmentMenuOpen) && player != null)
+        if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen)
+            && player != null)
         {
             UserCmd creationCommand = player.cmd;
             creationCommand.forwardmove = 0;

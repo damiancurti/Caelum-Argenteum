@@ -2,6 +2,35 @@
 // básico. Ambos se calculan por peso y se redondean hacia arriba por separado.
 class CaelumCraftingRules : Object
 {
+    static int GetPlayableRecipeWeapon(int recipeIndex)
+    {
+        return recipeIndex <= 0
+            ? CaelumConstants.CATALOGUE_WEAPON_SWORD
+            : CaelumConstants.CATALOGUE_WEAPON_CARBINE;
+    }
+
+    static int GetPlayableWeaponType(int weaponId)
+    {
+        int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_SWORD)
+        {
+            return CaelumConstants.WEAPON_TYPE_SWORD;
+        }
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_CARBINE)
+        {
+            return CaelumConstants.WEAPON_TYPE_CARBINE;
+        }
+        return -1;
+    }
+
+    static double GetPlayableTierOneWeight(int weaponId)
+    {
+        return GetPlayableWeaponType(weaponId)
+                == CaelumConstants.WEAPON_TYPE_CARBINE
+            ? CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT
+            : CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT;
+    }
+
     static int GetPrimaryMaterial(int weaponId)
     {
         switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))

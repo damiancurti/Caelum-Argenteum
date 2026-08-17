@@ -21,6 +21,13 @@ alias ca_creation_confirm "netevent ca_creation_confirm"
 alias ca_creation_back "netevent ca_creation_back"
 alias ca_creation_add_point "netevent ca_creation_add_point"
 alias ca_equipment_toggle "netevent ca_equipment_toggle"
+alias ca_crafting_toggle "netevent ca_crafting_toggle"
+alias ca_crafting_recipe_next "netevent ca_crafting_recipe_next"
+alias ca_crafting_recipe_previous "netevent ca_crafting_recipe_previous"
+alias ca_crafting_tier "netevent ca_crafting_tier"
+alias ca_crafting_size "netevent ca_crafting_size"
+alias ca_crafting_create "netevent ca_crafting_create"
+alias ca_crafting_spawn_materials "netevent ca_crafting_spawn_materials"
 alias ca_equipment_size "netevent ca_equipment_size"
 alias ca_equipment_drop "netevent ca_equipment_drop"
 alias ca_equipment_break "netevent ca_equipment_break"
@@ -90,6 +97,7 @@ addmenukey "$CA_CONTROL_CREATION_CONFIRM" ca_creation_confirm
 addmenukey "$CA_CONTROL_CREATION_BACK" ca_creation_back
 addmenukey "$CA_CONTROL_CREATION_ADD_POINT" ca_creation_add_point
 addmenukey "$CA_CONTROL_EQUIPMENT_TOGGLE" ca_equipment_toggle
+addmenukey "$CA_CONTROL_CRAFTING_TOGGLE" ca_crafting_toggle
 addmenukey "$CA_CONTROL_INVENTORY_PREVIOUS" invprev
 addmenukey "$CA_CONTROL_INVENTORY_NEXT" invnext
 addmenukey "$CA_CONTROL_INVENTORY_USE" useinventory
