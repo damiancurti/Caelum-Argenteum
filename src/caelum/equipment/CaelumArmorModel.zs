@@ -18,10 +18,11 @@ class CaelumArmorModel : Object
 
         for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
-            ArmorType[slot] = CaelumConstants.ARMOR_TYPE_UNARMORED;
+            // Antes de confirmar la ficha solo existe la ropa corporal base.
+            ArmorType[slot] = CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             Tier[slot] = 1;
             Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
-            Durability[slot] = GetMaximumDurability(slot);
+            Durability[slot] = 0;
         }
 
         SelectedSlot = CaelumConstants.ARMOR_SLOT_HEAD;
@@ -34,7 +35,7 @@ class CaelumArmorModel : Object
     {
         int resolvedType = Clamp(
             requestedArmorType,
-            CaelumConstants.ARMOR_TYPE_UNARMORED,
+            CaelumConstants.ARMOR_TYPE_MAGIC,
             CaelumConstants.ARMOR_TYPE_HEAVY
         );
         int resolvedTier = Clamp(requestedTier, 1, 3);
@@ -63,7 +64,7 @@ class CaelumArmorModel : Object
         int tier = Clamp(Tier[slot], 1, 3);
         switch (ArmorType[slot])
         {
-            case CaelumConstants.ARMOR_TYPE_UNARMORED:
+            case CaelumConstants.ARMOR_TYPE_MAGIC:
                 if (tier == 1) { return 5; }
                 if (tier == 2) { return 10; }
                 return 15;
@@ -83,43 +84,77 @@ class CaelumArmorModel : Object
     }
 
     // El peso pertenece a la pieza equipada aunque su durabilidad llegue a cero.
-    double GetBaseWeight(int slot, int armorType)
+    // La tabla final distribuye el total entre cabeza, cuerpo, brazos y piernas;
+    // los nombres internos HANDS/FEET representan brazos/piernas en este modelo.
+    double GetMediumSizeWeightFor(int slot, int armorType, int tier)
     {
         int resolvedType = Clamp(armorType, 0, CaelumConstants.ARMOR_TYPE_COUNT - 1);
         if (resolvedType == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) return 0.0;
+        int resolvedTier = Clamp(tier, 1, 3);
+
+        if (resolvedType == CaelumConstants.ARMOR_TYPE_MAGIC)
+        {
+            if (slot == CaelumConstants.ARMOR_SLOT_HEAD
+                || slot == CaelumConstants.ARMOR_SLOT_FEET)
+            {
+                return resolvedTier == 3 ? 2.0 : 1.0;
+            }
+            if (slot == CaelumConstants.ARMOR_SLOT_BODY)
+            {
+                if (resolvedTier == 1) return 2.0;
+                if (resolvedTier == 2) return 4.0;
+                return 5.0;
+            }
+            return 1.0;
+        }
+
+        if (resolvedType == CaelumConstants.ARMOR_TYPE_LIGHT)
+        {
+            if (slot == CaelumConstants.ARMOR_SLOT_HEAD
+                || slot == CaelumConstants.ARMOR_SLOT_FEET)
+            {
+                if (resolvedTier == 1) return 2.0;
+                if (resolvedTier == 2) return 3.0;
+                return 4.0;
+            }
+            if (slot == CaelumConstants.ARMOR_SLOT_BODY)
+            {
+                if (resolvedTier == 1) return 5.0;
+                if (resolvedTier == 2) return 8.0;
+                return 10.0;
+            }
+            return resolvedTier == 3 ? 2.0 : 1.0;
+        }
+
+        double totalMultiplier = resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM
+            ? 1.0 : 2.0;
+        if (slot == CaelumConstants.ARMOR_SLOT_HEAD
+            || slot == CaelumConstants.ARMOR_SLOT_FEET)
+        {
+            if (resolvedTier == 1) return 4.0 * totalMultiplier;
+            if (resolvedTier == 2) return 6.0 * totalMultiplier;
+            return 8.0 * totalMultiplier;
+        }
         if (slot == CaelumConstants.ARMOR_SLOT_BODY)
         {
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_UNARMORED) return 2.0;
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_LIGHT) return 6.0;
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 12.0;
-            return 20.0;
+            if (resolvedTier == 1) return 10.0 * totalMultiplier;
+            if (resolvedTier == 2) return 15.0 * totalMultiplier;
+            return 20.0 * totalMultiplier;
         }
-        if (slot == CaelumConstants.ARMOR_SLOT_HEAD)
-        {
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_LIGHT) return 2.0;
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 4.0;
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 6.0;
-            return 0.0;
-        }
-        if (slot == CaelumConstants.ARMOR_SLOT_HANDS
-            && resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 5.0;
-        if (slot == CaelumConstants.ARMOR_SLOT_FEET)
-        {
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_MEDIUM) return 3.0;
-            if (resolvedType == CaelumConstants.ARMOR_TYPE_HEAVY) return 4.0;
-        }
-        return 0.0;
+        if (resolvedTier == 1) return 2.0 * totalMultiplier;
+        if (resolvedTier == 2) return 3.0 * totalMultiplier;
+        return 4.0 * totalMultiplier;
     }
 
-    double GetWeightFor(int slot, int armorType, int equipmentSize)
+    double GetWeightFor(int slot, int armorType, int tier, int equipmentSize)
     {
-        return GetBaseWeight(slot, armorType)
+        return GetMediumSizeWeightFor(slot, armorType, tier)
             * CaelumEquipmentRules.GetSizeWeightMultiplier(equipmentSize);
     }
 
     double GetWeight(int slot)
     {
-        return GetWeightFor(slot, ArmorType[slot], Size[slot]);
+        return GetWeightFor(slot, ArmorType[slot], Tier[slot], Size[slot]);
     }
 
     double GetTotalWeight()
@@ -138,7 +173,7 @@ class CaelumArmorModel : Object
         if (Durability[slot] <= 0) { return 0; }
         switch (ArmorType[slot])
         {
-            case CaelumConstants.ARMOR_TYPE_UNARMORED:
+            case CaelumConstants.ARMOR_TYPE_MAGIC:
                 return slot == CaelumConstants.ARMOR_SLOT_BODY ? 1 : 0;
             case CaelumConstants.ARMOR_TYPE_LIGHT:
                 return (slot == CaelumConstants.ARMOR_SLOT_HEAD
@@ -153,7 +188,7 @@ class CaelumArmorModel : Object
     int GetBonusAttribute(int slot)
     {
         if (Durability[slot] <= 0) { return -1; }
-        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_UNARMORED)
+        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_MAGIC)
         {
             if (slot == CaelumConstants.ARMOR_SLOT_HEAD) { return CaelumConstants.ATTRIBUTE_INTELLIGENCE; }
             if (slot == CaelumConstants.ARMOR_SLOT_HANDS) { return CaelumConstants.ATTRIBUTE_PATIENCE; }
@@ -204,7 +239,7 @@ class CaelumArmorModel : Object
         if (armorType == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         switch (Clamp(armorType, 0, CaelumConstants.ARMOR_TYPE_COUNT - 1))
         {
-            case CaelumConstants.ARMOR_TYPE_UNARMORED: return 20;
+            case CaelumConstants.ARMOR_TYPE_MAGIC: return 20;
             case CaelumConstants.ARMOR_TYPE_LIGHT: return 40;
             case CaelumConstants.ARMOR_TYPE_MEDIUM: return 60;
             default: return 100;

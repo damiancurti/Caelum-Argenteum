@@ -17,7 +17,7 @@ class CaelumShieldModel : Object
         Tier = 1;
         Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
-        Equipped = true;
+        Equipped = false;
         EquippedStateInitialized = true;
         Initialized = true;
     }
@@ -25,7 +25,7 @@ class CaelumShieldModel : Object
     void EnsureEquippedStateInitialized()
     {
         if (EquippedStateInitialized) { return; }
-        Equipped = true;
+        Equipped = false;
         EquippedStateInitialized = true;
     }
 

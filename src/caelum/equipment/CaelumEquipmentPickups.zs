@@ -1,19 +1,92 @@
-// Objetos de mundo configurables desde UDMF o desde los controles de prueba.
-// Armadura: args 0=ranura, 1=tipo, 2=tier, 3=talle (1..5), 4=durabilidad+1.
-// Escudo: args 0=tipo, 1=tier, 2=talle (1..5), 3=durabilidad+1.
-// Talle cero conserva M y durabilidad cero crea el objeto al máximo.
-class CaelumArmorPickup : Inventory
+// Objetos reales del inventario nativo. Cada pieza conserva su configuración,
+// durabilidad y estados de equipado/Caja Mágica dentro de la propia instancia.
+class CaelumEquipmentItem : Inventory
 {
+    int EquipmentKind;
+    int ItemType;
+    int ArmorSlot;
+    int Tier;
+    int EquipmentSize;
+    int Durability;
+    double UnitWeight;
+    bool Equipped;
+    bool InMagicBox;
+
     Default
     {
         Radius 12;
         Height 8;
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
+        Inventory.InterHubAmount 1;
         Inventory.PickupSound "misc/i_pkup";
-        +INVENTORY.ALWAYSPICKUP
+        +INVENTORY.INVBAR
     }
 
+    bool Matches(
+        int requestedKind,
+        int requestedItemType,
+        int requestedArmorSlot,
+        int requestedTier,
+        int requestedEquipmentSize
+    )
+    {
+        return EquipmentKind == requestedKind
+            && ItemType == requestedItemType
+            && (requestedKind != CaelumConstants.EQUIPMENT_KIND_ARMOR
+                || ArmorSlot == requestedArmorSlot)
+            && Tier == requestedTier
+            && EquipmentSize == requestedEquipmentSize;
+    }
+
+    double GetCarriedWeight()
+    {
+        return InMagicBox ? 0.0 : Max(0.0, UnitWeight) * Amount;
+    }
+
+    // Las piezas no son apilables. Devolver false permite que el motor añada
+    // otra instancia aun cuando su clase ZScript sea la misma.
+    override bool HandlePickup(Inventory item)
+    {
+        if (CaelumEquipmentItem(item) != null) { return false; }
+        return Super.HandlePickup(item);
+    }
+
+    override Inventory CreateCopy(Actor other)
+    {
+        CaelumEquipmentItem copy = CaelumEquipmentItem(Super.CreateCopy(other));
+        if (copy != null && copy != self)
+        {
+            copy.EquipmentKind = EquipmentKind;
+            copy.ItemType = ItemType;
+            copy.ArmorSlot = ArmorSlot;
+            copy.Tier = Tier;
+            copy.EquipmentSize = EquipmentSize;
+            copy.Durability = Durability;
+            copy.UnitWeight = UnitWeight;
+            copy.Equipped = Equipped;
+            copy.InMagicBox = InMagicBox;
+        }
+        return copy;
+    }
+
+    protected bool TryCaelumPickup(in out Actor toucher)
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
+        if (caelumPlayer == null
+            || !caelumPlayer.PrepareNativeEquipmentPickup(self))
+        {
+            return false;
+        }
+        bool pickedUp = Super.TryPickup(toucher);
+        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        return pickedUp;
+    }
+}
+
+// args: ranura, tipo, tier, talle (1..5), durabilidad+1.
+class CaelumArmorPickup : CaelumEquipmentItem
+{
     States
     {
     Spawn:
@@ -24,33 +97,31 @@ class CaelumArmorPickup : Inventory
     override bool TryPickup(in out Actor toucher)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null) { return false; }
-        int equipmentSize = args[3] <= 0
-            ? CaelumConstants.EQUIPMENT_SIZE_M : args[3] - 1;
-        if (!caelumPlayer.AcquireArmorPickup(
-            args[0], args[1], args[2], equipmentSize, args[4]
-        ))
-        {
-            return false;
-        }
-        toucher.A_StartSound(PickupSound, CHAN_ITEM);
-        GoAwayAndDie();
-        return true;
+        if (caelumPlayer == null || caelumPlayer.ArmorModel == null) { return false; }
+        EquipmentKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
+        ArmorSlot = Clamp(args[0], 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
+        ItemType = Clamp(
+            args[1], 0, CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
+        );
+        Tier = Clamp(args[2], 1, 3);
+        EquipmentSize = args[3] <= 0
+            ? CaelumConstants.EQUIPMENT_SIZE_M
+            : Clamp(args[3] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+        Durability = args[4] > 0 ? args[4] - 1
+            : caelumPlayer.ArmorModel.GetMaximumDurabilityFor(
+                ItemType, Tier, EquipmentSize
+            );
+        UnitWeight = caelumPlayer.ArmorModel.GetWeightFor(
+            ArmorSlot, ItemType, Tier, EquipmentSize
+        );
+        Equipped = false;
+        return TryCaelumPickup(toucher);
     }
 }
 
-class CaelumShieldPickup : Inventory
+// args: tipo, tier, talle (1..5), durabilidad+1.
+class CaelumShieldPickup : CaelumEquipmentItem
 {
-    Default
-    {
-        Radius 12;
-        Height 8;
-        Inventory.Amount 1;
-        Inventory.MaxAmount 1;
-        Inventory.PickupSound "misc/i_pkup";
-        +INVENTORY.ALWAYSPICKUP
-    }
-
     States
     {
     Spawn:
@@ -61,32 +132,32 @@ class CaelumShieldPickup : Inventory
     override bool TryPickup(in out Actor toucher)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null) { return false; }
-        int equipmentSize = args[2] <= 0
-            ? CaelumConstants.EQUIPMENT_SIZE_M : args[2] - 1;
-        if (!caelumPlayer.AcquireShieldPickup(
-            args[0], args[1], equipmentSize, args[3]
-        ))
-        {
-            return false;
-        }
-        toucher.A_StartSound(PickupSound, CHAN_ITEM);
-        GoAwayAndDie();
-        return true;
+        if (caelumPlayer == null || caelumPlayer.ShieldModel == null) { return false; }
+        EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SHIELD;
+        ArmorSlot = -1;
+        ItemType = Clamp(args[0], 0, CaelumConstants.SHIELD_TYPE_COUNT - 1);
+        Tier = Clamp(args[1], 1, 3);
+        EquipmentSize = args[2] <= 0
+            ? CaelumConstants.EQUIPMENT_SIZE_M
+            : Clamp(args[2] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+        Durability = args[3] > 0 ? args[3] - 1
+            : caelumPlayer.ShieldModel.GetMaximumDurabilityFor(
+                ItemType, Tier, EquipmentSize
+            );
+        UnitWeight = caelumPlayer.ShieldModel.GetWeightFor(
+            ItemType, Tier, EquipmentSize
+        );
+        Equipped = false;
+        return TryCaelumPickup(toucher);
     }
 }
 
-// Arma: args 0=tipo, 1=tier, 2=talle (1..5), 3=durabilidad+1.
-class CaelumWeaponPickup : Inventory
+// args: tipo, tier, talle (1..5), durabilidad+1.
+class CaelumWeaponPickup : CaelumEquipmentItem
 {
     Default
     {
-        Radius 12;
-        Height 8;
-        Inventory.Amount 1;
-        Inventory.MaxAmount 1;
         Inventory.PickupSound "misc/w_pkup";
-        +INVENTORY.ALWAYSPICKUP
     }
 
     States
@@ -99,17 +170,88 @@ class CaelumWeaponPickup : Inventory
     override bool TryPickup(in out Actor toucher)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null) { return false; }
-        int equipmentSize = args[2] <= 0
-            ? CaelumConstants.EQUIPMENT_SIZE_M : args[2] - 1;
-        if (!caelumPlayer.AcquireWeaponPickup(
-            args[0], args[1], equipmentSize, args[3]
-        ))
+        if (caelumPlayer == null || caelumPlayer.WeaponModel == null) { return false; }
+        EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        ArmorSlot = -1;
+        ItemType = Clamp(args[0], 0, CaelumConstants.WEAPON_TYPE_COUNT - 1);
+        Tier = Clamp(args[1], 1, 3);
+        EquipmentSize = args[2] <= 0
+            ? CaelumConstants.EQUIPMENT_SIZE_M
+            : Clamp(args[2] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+        Durability = args[3] > 0 ? args[3] - 1
+            : caelumPlayer.WeaponModel.GetMaximumDurabilityFor(
+                ItemType, Tier, EquipmentSize
+            );
+        UnitWeight = caelumPlayer.WeaponModel.GetWeightFor(
+            ItemType, Tier, EquipmentSize
+        );
+        Equipped = false;
+        return TryCaelumPickup(toucher);
+    }
+}
+
+// Toda la pila ocupa un único slot de Caja Mágica. Fuera de ella cada bala
+// pesa 0,003; dentro, la pila completa pesa cero sin importar Amount.
+class CaelumCarbineAmmo : Ammo
+{
+    bool InMagicBox;
+
+    Default
+    {
+        Inventory.MaxAmount 2147483647;
+        Inventory.InterHubAmount 2147483647;
+        Ammo.BackpackAmount 20;
+        Ammo.BackpackMaxAmount 2147483647;
+        +INVENTORY.INVBAR
+    }
+
+    double GetCarriedWeight()
+    {
+        return InMagicBox ? 0.0
+            : Amount * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+    }
+
+    override bool HandlePickup(Inventory item)
+    {
+        CaelumCarbineAmmo incoming = CaelumCarbineAmmo(item);
+        if (incoming != null)
+        {
+            CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
+            if (caelumPlayer != null
+                && !caelumPlayer.PrepareNativeAmmoStackPickup(
+                    self, incoming.Amount
+                ))
+            {
+                return true;
+            }
+        }
+        return Super.HandlePickup(item);
+    }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
+        if (caelumPlayer == null
+            || !caelumPlayer.PrepareNativeAmmoPickup(self))
         {
             return false;
         }
-        toucher.A_StartSound(PickupSound, CHAN_ITEM);
-        GoAwayAndDie();
-        return true;
+        bool pickedUp = Super.TryPickup(toucher);
+        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        return pickedUp;
+    }
+
+    override Inventory CreateCopy(Actor other)
+    {
+        CaelumCarbineAmmo copy = CaelumCarbineAmmo(Super.CreateCopy(other));
+        if (copy != null && copy != self) { copy.InMagicBox = InMagicBox; }
+        return copy;
+    }
+
+    States
+    {
+    Spawn:
+        CLIP A -1;
+        Stop;
     }
 }

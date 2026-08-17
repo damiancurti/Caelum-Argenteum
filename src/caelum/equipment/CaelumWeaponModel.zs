@@ -16,7 +16,7 @@ class CaelumWeaponModel : Object
         Tier = 1;
         Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
-        Equipped = true;
+        Equipped = false;
         Initialized = true;
     }
 

@@ -243,6 +243,41 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetEquipmentActionKey(int equipmentAction)
+    {
+        switch (equipmentAction)
+        {
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED:
+                return "CA_EQUIPMENT_ACTION_CREATED";
+            case CaelumConstants.EQUIPMENT_ACTION_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_UNEQUIPPED:
+                return "CA_EQUIPMENT_ACTION_UNEQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_BROKEN:
+                return "CA_EQUIPMENT_ACTION_BROKEN";
+            case CaelumConstants.EQUIPMENT_ACTION_DROPPED:
+                return "CA_EQUIPMENT_ACTION_DROPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE:
+                return "CA_EQUIPMENT_ACTION_FAILED_SIZE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL:
+                return "CA_EQUIPMENT_ACTION_FAILED_BOX_FULL";
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_NOT_OWNED";
+            case CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR:
+                return "CA_EQUIPMENT_ACTION_SPAWNED_ON_FLOOR";
+            default:
+                return "CA_EQUIPMENT_ACTION_NONE";
+        }
+    }
+
     // UI-scope mirrors of the shield data keep the overlay compatible with
     // GZDoom's play/UI scope separation.
     ui int GetShieldMaximumDurabilityForPanel(CaelumShieldModel shield)
@@ -577,17 +612,34 @@ class CaelumDebugOverlay : EventHandler
 
     ui void DrawEquipmentMenu(CaelumPlayer localPlayer)
     {
-        String category = StringTable.Localize(
-            localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                ? "CA_EQUIPMENT_CATEGORY_WEAPON"
-                : (localPlayer.EquipmentSelectionKind
-                    == CaelumConstants.EQUIPMENT_KIND_SHIELD
-                        ? "CA_EQUIPMENT_CATEGORY_SHIELD"
-                        : "CA_EQUIPMENT_CATEGORY_ARMOR"),
-            false
-        );
+        String categoryKey = "CA_EQUIPMENT_CATEGORY_ARMOR";
+        if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_WEAPON";
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_SHIELD";
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_AMMUNITION";
+        }
+        String category = StringTable.Localize(categoryKey, false);
         String selection;
         if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            selection = String.Format(
+                "%s x%d",
+                StringTable.Localize("CA_WEAPON_AMMO_CARTRIDGES", false),
+                localPlayer.EquipmentSelectionStackAmount
+            );
+        }
+        else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             selection = String.Format(
@@ -641,24 +693,53 @@ class CaelumDebugOverlay : EventHandler
             ? "CA_EQUIPMENT_OWNED" : "CA_EQUIPMENT_NOT_OWNED";
         String equippedKey = localPlayer.EquipmentSelectionEquipped
             ? "CA_EQUIPMENT_EQUIPPED" : "CA_EQUIPMENT_NOT_EQUIPPED";
+        String storageKey = "CA_EQUIPMENT_STORAGE_NONE";
+        if (localPlayer.EquipmentSelectionEquipped)
+        {
+            storageKey = "CA_EQUIPMENT_STORAGE_EQUIPPED";
+        }
+        else if (localPlayer.EquipmentSelectionInMagicBox)
+        {
+            storageKey = "CA_EQUIPMENT_STORAGE_MAGIC_BOX";
+        }
+        else if (localPlayer.EquipmentSelectionOwned)
+        {
+            storageKey = "CA_EQUIPMENT_STORAGE_INVENTORY";
+        }
         String status = String.Format(
-            "%s | %s",
+            "%s | %s | %s",
             StringTable.Localize(ownershipKey, false),
-            StringTable.Localize(equippedKey, false)
+            StringTable.Localize(equippedKey, false),
+            StringTable.Localize(storageKey, false)
         );
-        String detail = String.Format(
-            "%s | %s %d/%d | %.3f",
-            StringTable.Localize(
-                localPlayer.EquipmentSelectionSizeCompatible
-                    ? "CA_EQUIPMENT_SIZE_COMPATIBLE"
-                    : "CA_EQUIPMENT_SIZE_INCOMPATIBLE",
-                false
-            ),
-            StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),
-            localPlayer.EquipmentSelectionDurability,
-            localPlayer.EquipmentSelectionMaximumDurability,
-            localPlayer.EquipmentSelectionWeight
-        );
+        String detail;
+        if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            detail = String.Format(
+                "%s %d | %s %.3f",
+                StringTable.Localize("CA_EQUIPMENT_STACK_AMOUNT", false),
+                localPlayer.EquipmentSelectionStackAmount,
+                StringTable.Localize("CA_EQUIPMENT_STACK_WEIGHT", false),
+                localPlayer.EquipmentSelectionWeight
+            );
+        }
+        else
+        {
+            detail = String.Format(
+                "%s | %s %d/%d | %.3f",
+                StringTable.Localize(
+                    localPlayer.EquipmentSelectionSizeCompatible
+                        ? "CA_EQUIPMENT_SIZE_COMPATIBLE"
+                        : "CA_EQUIPMENT_SIZE_INCOMPATIBLE",
+                    false
+                ),
+                StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),
+                localPlayer.EquipmentSelectionDurability,
+                localPlayer.EquipmentSelectionMaximumDurability,
+                localPlayer.EquipmentSelectionWeight
+            );
+        }
         String weaponDetail = "";
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
@@ -683,18 +764,56 @@ class CaelumDebugOverlay : EventHandler
                 );
             }
         }
+        String loadBreakdown = String.Format(
+            "%s %.3f + %s %.3f + %s %.3f = %s %.3f/%.3f",
+            StringTable.Localize("CA_EQUIPMENT_LOAD_EQUIPPED", false),
+            localPlayer.DerivedStats.EquippedWeight,
+            StringTable.Localize("CA_EQUIPMENT_LOAD_INVENTORY", false),
+            localPlayer.DerivedStats.InventoryWeight,
+            StringTable.Localize("CA_EQUIPMENT_LOAD_TEST", false),
+            localPlayer.DerivedStats.DebugWeight,
+            StringTable.Localize("CA_HUD_LOAD", false),
+            localPlayer.HUDCarriedWeight,
+            localPlayer.HUDCarryCapacity
+        );
         String totals = String.Format(
-            "%s:%d   %s:%d   %s:%d   %s:%d/%d",
+            "%s:%d %s:%d %s:%d   %s:%d %s:%d %s:%d/%d",
             StringTable.Localize("CA_EQUIPMENT_COUNT_ARMOR", false),
             localPlayer.OwnedArmorCount,
             StringTable.Localize("CA_EQUIPMENT_COUNT_SHIELD", false),
             localPlayer.OwnedShieldCount,
             StringTable.Localize("CA_EQUIPMENT_COUNT_WEAPON", false),
             localPlayer.OwnedWeaponCount,
+            StringTable.Localize("CA_EQUIPMENT_INVENTORY", false),
+            localPlayer.PersonalInventoryItemCount,
+            StringTable.Localize("CA_EQUIPMENT_EQUIPPED_SLOTS", false),
+            localPlayer.EquippedItemSlotCount,
             StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
             localPlayer.MagicBoxUsedSlots,
             localPlayer.MagicBoxMaximumSlots
         );
+        String actionResult = StringTable.Localize(
+            GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
+        );
+        int actionColor = Font.CR_GRAY;
+        if ((localPlayer.LastEquipmentAction >= CaelumConstants.EQUIPMENT_ACTION_CREATED
+                && localPlayer.LastEquipmentAction <= CaelumConstants.EQUIPMENT_ACTION_DROPPED)
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX
+            || localPlayer.LastEquipmentAction
+                == CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR)
+        {
+            actionColor = Font.CR_GREEN;
+        }
+        else if (localPlayer.LastEquipmentAction
+            >= CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED)
+        {
+            actionColor = Font.CR_RED;
+        }
 
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_MENU_TITLE", false),
@@ -712,20 +831,22 @@ class CaelumDebugOverlay : EventHandler
         {
             DrawCenteredText(weaponDetail, 206.0, Font.CR_GOLD);
         }
-        DrawCenteredText(totals, 224.0, Font.CR_CYAN);
+        DrawCenteredText(loadBreakdown, 224.0, Font.CR_GOLD);
+        DrawCenteredText(totals, 242.0, Font.CR_CYAN);
+        DrawCenteredText(actionResult, 260.0, actionColor);
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_1", false),
-            244.0,
+            280.0,
             Font.CR_GRAY
         );
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_2", false),
-            260.0,
+            296.0,
             Font.CR_GRAY
         );
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_3", false),
-            276.0,
+            312.0,
             Font.CR_GRAY
         );
     }
@@ -807,10 +928,22 @@ class CaelumDebugOverlay : EventHandler
             {
                 SendNetworkEvent("ca_equipment_equip");
             }
+            else if (menuCharacter == 101 || menuCharacter == 69)
+            {
+                SendNetworkEvent("ca_equipment_equip");
+            }
             else if (e.KeyScan == InputEvent.Key_Backspace
                 || e.KeyScan == InputEvent.Key_Pad_B)
             {
                 SendNetworkEvent("ca_equipment_unequip");
+            }
+            else if (menuCharacter == 117 || menuCharacter == 85)
+            {
+                SendNetworkEvent("ca_equipment_unequip");
+            }
+            else if (menuCharacter == 99 || menuCharacter == 67)
+            {
+                SendNetworkEvent("ca_equipment_magic_box");
             }
             else if (menuCharacter == 112 || menuCharacter == 80)
             {
@@ -1019,13 +1152,14 @@ class CaelumDebugOverlay : EventHandler
 
             String weightLine = String.Format(
                 "%s: %.0f + %.0f + %.0f = %.0f   %s: %.1f",
-                StringTable.Localize("CA_STAT_EQUIPPED_WEIGHT", false),
-                derived.ArmorWeight, derived.ShieldWeight, derived.DebugWeight, derived.EquippedWeight,
+                StringTable.Localize("CA_STAT_CARRIED_WEIGHT", false),
+                derived.EquippedWeight, derived.InventoryWeight,
+                derived.DebugWeight, localPlayer.HUDCarriedWeight,
                 StringTable.Localize("CA_STAT_TOTAL_MASS", false), derived.TotalMass
             );
             String loadLine = String.Format(
                 "%s: %.1f%%   %s: x%.2f",
-                StringTable.Localize("CA_STAT_LOAD_PERCENT", false), derived.LoadRatio * 100.0,
+                StringTable.Localize("CA_STAT_LOAD_PERCENT", false), localPlayer.HUDLoadRatio * 100.0,
                 StringTable.Localize("CA_STAT_AIR_USE", false), derived.AirConsumptionMultiplier
             );
             Screen.DrawText(DebugFont, Font.CR_GRAY, 20.0, 218.0, weightLine,
@@ -1945,7 +2079,7 @@ class CaelumDebugOverlay : EventHandler
 
         String derivedLineTwo = String.Format(
             "%s: %.2f   %s: %d",
-            StringTable.Localize("CA_STAT_CARRY_CAPACITY", false), derived.CarryCapacity,
+            StringTable.Localize("CA_STAT_CARRY_CAPACITY", false), localPlayer.HUDCarryCapacity,
             StringTable.Localize("CA_STAT_BASE_MASS", false), derived.BaseMass
         );
 
@@ -1966,12 +2100,12 @@ class CaelumDebugOverlay : EventHandler
         String loadStateKey = "CA_LOAD_NORMAL";
         int loadColor = Font.CR_GREEN;
 
-        if (derived.HasExceededCapacity())
+        if (localPlayer.HUDLoadRatio >= 1.0)
         {
             loadStateKey = "CA_LOAD_CAPACITY_EXCEEDED";
             loadColor = Font.CR_RED;
         }
-        else if (derived.HasOverload())
+        else if (localPlayer.HUDLoadRatio >= CaelumConstants.OVERLOAD_THRESHOLD)
         {
             loadStateKey = "CA_LOAD_OVERLOAD";
             loadColor = Font.CR_GOLD;
@@ -1979,9 +2113,9 @@ class CaelumDebugOverlay : EventHandler
 
         String massLine = String.Format(
             "%s: %.2f   %s: %.2f   %s: %.1f%% (%s)",
-            StringTable.Localize("CA_STAT_EQUIPPED_WEIGHT", false), derived.EquippedWeight,
+            StringTable.Localize("CA_STAT_CARRIED_WEIGHT", false), localPlayer.HUDCarriedWeight,
             StringTable.Localize("CA_STAT_TOTAL_MASS", false), derived.TotalMass,
-            StringTable.Localize("CA_STAT_LOAD_PERCENT", false), derived.LoadRatio * 100.0,
+            StringTable.Localize("CA_STAT_LOAD_PERCENT", false), localPlayer.HUDLoadRatio * 100.0,
             StringTable.Localize(loadStateKey, false)
         );
 
@@ -2194,6 +2328,10 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_equipment_unequip")
         {
             requestingPlayer.UnequipSelectedEquipment();
+        }
+        else if (e.Name == "ca_equipment_magic_box")
+        {
+            requestingPlayer.ToggleSelectedMagicBox();
         }
         else if (e.Name == "ca_equipment_drop")
         {

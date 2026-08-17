@@ -409,10 +409,7 @@ class CaelumHUDOverlay : EventHandler
         int y = int(offsetY + virtualY * scale);
         int width = Max(1, int(180.0 * scale));
         int height = Max(1, int(7.0 * scale));
-        double ratio = localPlayer.DerivedStats.CarryCapacity > 0.0
-            ? localPlayer.DerivedStats.EquippedWeight
-                / localPlayer.DerivedStats.CarryCapacity
-            : 0.0;
+        double ratio = localPlayer.HUDLoadRatio;
         int fill = int(width * Clamp(ratio, 0.0, 1.0));
         int barColor = 0x55B86A;
         if (ratio >= 1.0) barColor = 0xC34B4B;
@@ -521,15 +518,22 @@ class CaelumHUDOverlay : EventHandler
         String sleepLine = String.Format("%s: %.0f%% (%s)",
             StringTable.Localize("CA_HUD_SLEEP", false), localPlayer.CurrentSleep,
             StringTable.Localize(GetSurvivalStateKey(2, localPlayer.SleepState), false));
-        double loadPercent = localPlayer.DerivedStats.CarryCapacity > 0.0
-            ? localPlayer.DerivedStats.EquippedWeight
-                / localPlayer.DerivedStats.CarryCapacity * 100.0
-            : 0.0;
-        String loadLine = String.Format("%s: %.3f / %.3f (%.1f%%)",
+        double loadPercent = localPlayer.HUDLoadRatio * 100.0;
+        String loadStateKey = "CA_LOAD_NORMAL";
+        if (localPlayer.HUDLoadRatio >= 1.0)
+        {
+            loadStateKey = "CA_LOAD_CAPACITY_EXCEEDED";
+        }
+        else if (localPlayer.HUDLoadRatio >= CaelumConstants.OVERLOAD_THRESHOLD)
+        {
+            loadStateKey = "CA_LOAD_OVERLOAD";
+        }
+        String loadLine = String.Format("%s: %.3f / %.3f (%.1f%%, %s)",
             StringTable.Localize("CA_HUD_LOAD", false),
-            localPlayer.DerivedStats.EquippedWeight,
-            localPlayer.DerivedStats.CarryCapacity,
-            loadPercent);
+            localPlayer.HUDCarriedWeight,
+            localPlayer.HUDCarryCapacity,
+            loadPercent,
+            StringTable.Localize(loadStateKey, false));
 
         DrawLucidityDistortion(localPlayer);
         DrawLucidityBar(localPlayer);

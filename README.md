@@ -31,22 +31,38 @@ folder and launch GZDoom.
   height, and validated family/individual point limits.
 - New characters enter that creator automatically. Gameplay remains paused and
   protected until confirmation, with direct keyboard and gamepad navigation.
+- New characters own no equipment before confirmation. After confirming race,
+  classes, body, and attributes, the development loadout is spawned on the
+  floor in front of the player for native pickup testing.
 - Derived health, Anima, air, carry-capacity, mass-tier, and size-tier values.
 - Carry capacity equal to base mass at Strength 0, scaled directly by Strength
   Type 4 up to three times base mass at Strength 100.
-- Real per-piece armor, shield, and equipped weapon weight plus separate
-  debug-added weight, including tier and XS/S/M/L/XL size multipliers.
-- A right-side load bar showing equipped weight, capacity, percentage, and
+- Authoritative per-piece armor tier weights, shield, weapon, and personal-
+  inventory weight plus separate debug-added weight and XS/S/M/L/XL scaling.
+- A right-side load bar showing all carried weight, capacity, percentage, and
   green/yellow/orange/red load states.
-- Inventory-backed profile and equipment persistence across map transitions,
-  including owned armor/shield combinations and durability.
-- Configurable world armor/shield pickups and a compact localized interface for
+- Native GZDoom inventory equipment persistence across saves and map travel,
+  including independent armor/shield/weapon instances, durability, equipped
+  state, and Magic Box state.
+- Configurable equipment pickups and a compact localized interface for
   filtering, equipping, removing, breaking, dropping, and preserving each
-  owned object's size and durability within the Magic Box capacity.
+  owned object's size, durability, and personal-inventory/Magic-Box location.
+- An unlimited-slot native personal inventory limited by carried weight.
+  Pickups that would exceed capacity are marked as stored in the slot-limited
+  Magic Box; when it is full, the object remains in the world.
+- The test loadout spawns a tier-one sword, staff, carbine, profession armor,
+  shield, and 100 bullets on the floor. Each bullet weighs 0.003. A complete
+  ammunition stack uses one Magic Box slot and has zero weight while boxed.
+- Starting armor and shield follow profession: warrior uses heavy/tower;
+  mercenary, cleric, and battle mage use medium/kite; explorer, pilgrim, and
+  investigator use light/buckler; priest, mage, and arcanist use magic
+  armor/magic shield.
 - Persistent sword, staff, and carbine equipment with independent tier, size,
   weight, durability, pickups, Magic Box ownership, and map/save continuity.
 - Native Fire uses the equipped main-hand weapon; AltFire controls the equipped
-  secondary-hand shield. The carbine has a live 60 m projectile and cartridges.
+  secondary-hand shield. The carbine has a live 60 m projectile and bullets.
+- Multiple weapons can remain equipped simultaneously. Their family buttons
+  choose only the active weapon: `3` sword, `5` carbine, and `6` staff.
 - Resilience as the definitive name of the technical recovery attribute.
 - Eloquence casting speed, Anima-cost reduction, ability range, and dialogue
   values, with the live staff consuming the adjusted cost and duration.

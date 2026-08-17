@@ -1,5 +1,114 @@
 # Changelog
 
+## 4.8.1
+
+- Fixed ZScript's case-insensitive parameter shadowing in the native equipment
+  matcher. One armor instance now matches only its real slot, type, tier, and
+  size instead of appearing owned in every tier.
+- Fixed the same shadowing in every carried-load setter. Native inventory,
+  equipped, ammunition, and total item weights now reach the derived-stat
+  fields, permanent HUD, total mass, and load penalties instead of being
+  written back into temporary parameters.
+
+## 4.8.0
+
+- Replaced simulated armor, shield, and weapon ownership with real native
+  GZDoom inventory instances. `printinv` can now report every collected
+  equipment pickup instead of only native weapon selectors and ammunition.
+- Made `Actor.Inv` the single source for carried weight: each non-boxed item
+  contributes its stored unit weight whether equipped or unequipped.
+- Added persistent equipped and Magic Box states to each native equipment
+  instance without deleting the object when either state changes.
+- Made carbine ammunition a native stack whose weight is `Amount × 0.003`.
+  The whole stack occupies one Magic Box slot and weighs zero while boxed.
+- Changed the initial development loadout to spawn nine pickups on the floor
+  in front of the newly confirmed character instead of granting hidden data.
+- Added an Ammunition category and a Magic Box toggle to the equipment menu.
+- Updated the v62 design document while preserving its typography and
+  highlighting only the changed inventory passages.
+
+## 4.7.8
+
+- Made persistent ownership outside the Magic Box the authoritative source for
+  carried item weight, so equipped and unequipped objects cannot disappear
+  from load because of a stale category transition.
+- Rebuilt armor, shield, weapon, inventory, ammunition, and total item weight
+  in one atomic pass on every load refresh.
+- Added the localized `normal`, `overload`, or `capacity exceeded` state to the
+  permanent load HUD, including the exact 75% and 100% boundaries.
+
+## 4.7.7
+
+- Replaced the provisional armor weights with the authoritative per-piece
+  table. Size-M full sets now weigh 5/7/10 for magic armor, 10/15/20 for
+  light armor, 20/30/40 for medium armor, and 40/60/80 for heavy armor at
+  tiers 1/2/3.
+- Preserved the confirmed XS/S/M/L/XL size multipliers after applying the
+  exact armor table.
+- Added a player-owned load snapshot synchronized every tic and after every
+  profile recalculation; the permanent HUD and debug overlay now read this
+  stable value instead of traversing the derived-stat object from UI scope.
+- Confirmed that tier-one shield weights already match the final table:
+  magic 4, buckler 8, kite 12, and tower 16.
+
+## 4.7.6
+
+- Fixed stale carried load by making every equipment, inventory, ammunition,
+  and development-weight setter refresh totals atomically.
+- Separated equipped weapons from the single active weapon; equipping one
+  family no longer unequips another.
+- Added native family selectors: sword on slot 3, carbine on slot 5, and staff
+  on slot 6.
+- Added persistent per-weapon equipped flags and migration of the previous
+  single active weapon into the new multi-weapon loadout.
+- Included every simultaneously equipped weapon in equipped weight while
+  keeping inventory-to-equipment changes neutral to total carried load.
+- Changed the pure priest starting loadout to magic armor and magic shield.
+
+## 4.7.5
+
+- Removed all provisional armor, shield, weapon, and carbine ammunition from
+  unconfirmed characters.
+- Added a one-time post-creation development loadout with sword, staff,
+  carbine, and 100 bullets at 0.003 weight each.
+- Added profession-based tier-one starting armor and shields using the
+  character's compatible equipment size.
+- Included live ammunition quantity in personal-inventory weight, carried
+  load, the HUD bar, total mass, and every existing load penalty.
+- Corrected armor weight so its tier multiplier applies both while equipped
+  and while stored in personal inventory.
+- Changed the visible ammunition term from cartridges/cartuchos to
+  bullets/balas.
+
+## 4.7.4
+
+- Fixed the GZDoom 4.14.2 parser error caused by using reserved identifier
+  `action` as an equipment-overlay parameter.
+- Added an unlimited-slot personal inventory whose contents contribute weight.
+- Redirected pickups to the Magic Box only when adding their weight would
+  exceed carry capacity; a full box now rejects only those overflow pickups.
+- Added persistent per-object storage location and migration of 4.7.3
+  unequipped equipment into the Magic Box.
+- Made equipment, personal inventory, and development weight combine into the
+  carried load used by the HUD and all mass/load penalties.
+- Added storage location, inventory count, box usage, and full carried-weight
+  diagnostics to the compact equipment menu.
+- Updated the main v58 design document with the corrected inventory rule while
+  preserving typography and highlighting the changed passages in yellow.
+
+## 4.7.3
+
+- Clarified the implemented inventory rule: unequipped objects live in the
+  Magic Box, while equipped objects occupy one of the six current equipment
+  slots and no longer count against the box.
+- Added explicit success and rejection feedback for create, equip, remove,
+  break, and drop actions, including incompatible-size and full-box causes.
+- Added reliable `E`/`U` shortcuts alongside Enter/Backspace and gamepad input.
+- Added an equipped-slot counter and a live armor + shield + weapon weight
+  breakdown to make every load change directly verifiable.
+- Corrected Magic Box accounting so only owned objects that are actually
+  equipped are excluded from its used-slot total.
+
 ## 4.7.2
 
 - Replaced unreliable equipment-menu letter checks with `InputEvent.KeyChar`

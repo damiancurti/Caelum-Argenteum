@@ -3,29 +3,157 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
+## Native inventory shadowing correction 4.8.1
+
+**Implemented — pending validation**
+
+The 4.8.0 native objects were collected correctly, as confirmed by `printinv`,
+but ZScript's case-insensitive identifiers caused two parameter/field name
+collisions. The equipment matcher compared its tier/type/slot/size parameters
+against themselves, and the carried-load setter wrote calculated weights back
+into its temporary parameters. Both interfaces now use unambiguous parameter
+names, so ownership selection and weight propagation retain the values stored
+in each native inventory instance.
+
+## Native inventory and Magic Box object state 4.8.0
+
+**Implemented — pending validation**
+
+Armor pieces, shields, weapons, and carbine bullets are now real GZDoom
+inventory objects. The player's native `Actor.Inv` chain is the single source
+of ownership, quantity, and carried weight; collecting equipment no longer
+deletes the pickup and replaces it with a parallel boolean record. Every
+non-stackable instance stores its own slot/type, tier, size, durability,
+equipped flag, Magic Box flag, and unit weight.
+
+Equipping and removing only changes the equipped flag. Moving an object to the
+Magic Box changes its carried contribution to zero while retaining the same
+native object. A non-stackable instance uses one box slot. Carbine ammunition
+uses its native `Amount`: any quantity remains one stack and therefore uses one
+box slot. Outside the box its weight is `Amount × 0.003`; inside it weighs zero.
+
+Immediately after the first character-creation confirmation, the four armor
+pieces, profession shield, sword, staff, carbine, and 100-bullet stack appear
+as nine pickups on the floor in front of the character. The character owns
+nothing until those pickups are collected. If a pickup would exceed capacity,
+it enters the Magic Box when a slot exists; otherwise it stays in the world.
+
+The compact equipment menu can inspect the native objects, equip or remove
+them, move them to or from the Magic Box, break them, and drop them. Its load
+breakdown and the permanent HUD are rebuilt directly from native inventory on
+every refresh. Legacy persistent equipment can be migrated once into native
+instances for save compatibility.
+
+## Authoritative persistent carried load 4.7.8
+
+**Implemented — pending validation**
+
+Every owned armor piece, shield, weapon, and bullet outside the Magic Box is
+now summed exactly once from the persistent object registry. Equipped state is
+used only to divide that authoritative value into equipped and personal
+inventory subtotals; it can no longer decide whether an object contributes to
+total carried weight. The complete breakdown is written atomically before mass,
+movement, jump, evasion, air consumption, and HUD values are recalculated.
+
+The permanent load display now prints its localized state next to the
+percentage: normal below 75%, overload from 75%, and capacity exceeded from
+100%. Its thresholds match the bar colors and gameplay state helpers.
+
+## Atomic carried load and multi-weapon equipment 4.7.6
+
+**Implemented — pending validation**
+
+Inventory weight, equipped weight, ammunition weight, and development weight
+now refresh `EquippedWeight`, `CarriedWeight`, `TotalMass`, and `LoadRatio`
+atomically. This removes the stale-value route where opening the equipment menu
+updated the inventory subtotal before the next gameplay tick and prevented that
+tick from recognizing that a complete recalculation was still required.
+
+Equipped and active weapons are now separate states. Any owned weapon can be
+equipped without removing weapons from other families. Every equipped weapon
+contributes its weight, but only one is active in the player's hands. Native
+weapon-family buttons select the active test weapon: `3` sword, `5` carbine,
+and `6` staff. Unequipping the active weapon automatically selects another
+equipped family when one exists.
+
+The equipped flags persist independently for every weapon/type/tier/size
+combination. Saves from the single-weapon implementation migrate their previous
+active weapon as equipped. Moving a weapon between personal inventory and an
+equipment slot does not change total carried weight; moving it from the Magic
+Box does.
+
+## Post-creation starting equipment and ammunition weight 4.7.5
+
+**Implemented — pending validation**
+
+A new player owns no armor, shield, weapon, or carbine ammunition while the
+character creator is open. Confirming the final page grants the development
+loadout exactly once, using tier 1 and the default compatible size calculated
+from the completed character.
+
+Sword, staff, and carbine are always granted for testing. Sword begins equipped;
+staff and carbine begin in personal inventory. The carbine begins with 100
+bullets. Each bullet weighs 0.003, and current ammunition now contributes to
+personal-inventory and carried weight, so firing reduces load by 0.003.
+
+Starting armor and shield depend on the resulting profession:
+
+- Warrior: heavy armor and tower shield.
+- Mercenary, cleric, and battle mage: medium armor and kite shield.
+- Explorer, pilgrim, and investigator: light armor and buckler.
+- Pure priest, mage, and arcanist: magic armor and magic shield.
+
+Armor uses its authoritative per-piece tier table in both equipped and
+personal-inventory calculations, followed only by the established size
+multiplier. This keeps previewed item weight and actual carried load identical.
+
+## Personal inventory and overflow Magic Box 4.7.4
+
+**Implemented — pending validation**
+
+The personal inventory now exists independently from equipment and the Magic
+Box. It has no item-slot limit: every unequipped object stored there contributes
+its complete tier/size weight to carried load. Equipped weight, personal-
+inventory weight, and development test weight form the load used by the HUD,
+movement, evasion, air consumption, total mass, and push resistance.
+
+When collecting or creating an object, the system first checks whether its
+weight fits without exceeding carry capacity. If it fits, it enters personal
+inventory. Otherwise it is redirected to the Magic Box; only this overflow
+storage consumes its Intelligence-derived slots. If overflow is required while
+the box is full, the pickup remains in the world.
+
+Equipping an inventory object only changes its location and therefore does not
+change carried weight. Equipping directly from the Magic Box adds its weight
+and is rejected when capacity is insufficient. Unequipping returns the object
+to personal inventory. The compact menu reports location, inventory count,
+equipped slots, box usage, and the complete weight breakdown. Saves from 4.7.3
+migrate their previously unequipped objects to the Magic Box.
+
 ## Persistent playable weapons 4.7
 
 **Implemented — pending validation**
 
 Sword, staff, and carbine are now real main-hand equipment records rather than
 an isolated weight placeholder. Every weapon/type/tier/size combination owns
-independent durability, uses XS–XL compatibility, occupies the Magic Box only
-while unequipped, and survives save/load and map travel. Existing 4.6 profiles
+independent durability, uses XS–XL compatibility, records its current storage
+location, and survives save/load and map travel. Existing 4.6 profiles
 migrate their provisional weapon weight to a size-aware sword, staff, or
 carbine without invalidating the earlier equipment data.
 
 The compact equipment menu has a third Weapons filter. It previews damage,
 attack time, base air/Anima cost, weight, compatibility, durability, and
-carbine cartridges. `P`, `Enter`, `Backspace`, `B`, and `D` use the same spawn,
+carbine bullets. `P`, `Enter`, `Backspace`, `B`, and `D` use the same spawn,
 equip, remove, break, and drop flow already used by armor and shields.
 
-The native Fire input dispatches through the equipped weapon in slot 1. Sword
+Every owned weapon may be equipped independently. Numeric family slots choose
+only the active weapon: sword uses 3, carbine uses 5, and staff uses 6. Sword
 retains physical Strength/mass damage and its 14-tic cadence; staff retains
 Intelligence damage, Insight accuracy/critical, adjusted Anima cost, and
 Eloquence casting speed. Carbine uses 360 tier-one damage without an attribute
 damage multiplier, 48 tics, 60 m, 30°/200° accuracy-scaled spread, 0% weapon
-critical base, 20 air per reload, physical push, and one cartridge per shot.
-A newly collected carbine grants 20 test cartridges. AltFire toggles the
+critical base, 20 air per reload, physical push, and one bullet per shot.
+The confirmed starting loadout grants 100 test bullets. AltFire toggles the
 equipped secondary-hand shield; weapon secondary attacks remain reserved.
 
 Tier damage uses the documented 1.00/1.20/1.50 material progression. Weapon
@@ -51,9 +179,9 @@ its stored numeric value remains zero, so existing saves and owned equipment
 records stay compatible. It remains separate from the zero-stat base clothing
 used when a slot is genuinely empty.
 
-The equipment menu now accepts `P` to spawn its selected armor or shield as a
-world pickup. Walking over it stores it in the persistent Magic Box; `Enter`
-equips an owned compatible item, `Backspace` removes it, and `D` drops it.
+The equipment menu accepts `P` to create its selected object through the pickup
+rules. It enters personal inventory when its weight fits or the Magic Box when
+it does not; `E`/`Enter` equips, `U`/`Backspace` removes, and `D` drops it.
 
 ## Compatibility and equipment HUD 4.6.1
 
@@ -63,7 +191,7 @@ GZDoom 4.14.2 does not accept the two `GetMaximumDurabilityFor` signatures as
 overloads. The unused two-argument wrappers were removed; every active caller
 uses the size-aware three-argument function.
 
-The right-side HUD now includes equipped weight, carry capacity, and percentage
+The right-side HUD now includes carried weight, carry capacity, and percentage
 in a dedicated bar. Its fill changes from green to yellow at 50%, orange at the
 75% overload threshold, and red at 100% or more.
 
@@ -75,7 +203,7 @@ occupy the Magic Box. The existing equippable magic-armor set remains separate.
 The short bow catalogue entry is replaced by the tier-one carbine. Its
 values are 360 damage, 48 tics, 60 m, 30°/200° spread, 0% base critical chance,
 -20 air, and size-M weight 12. Version 4.7 connects this record to its playable
-projectile, cartridges, inventory ownership, and persistent equipment model.
+projectile, bullets, inventory ownership, and persistent equipment model.
 
 Status legend:
 
@@ -195,11 +323,11 @@ restores the character's ordinary profile.
 
 **Implemented — pending validation**
 
-Every armor piece now exposes its documented weight. At size M, uniform
-full-set totals are 2 magic armor, 8 light, 19 medium, and 35 heavy. Armor tier
-does not alter those weights; equipment size does. Broken pieces retain their
-weight. Shield and equipped-weapon weights are included automatically, and
-debug-added mass is shown separately.
+Every armor piece now exposes its documented weight. At size M, full-set totals
+for tiers 1/2/3 are 5/7/10 magic armor, 10/15/20 light, 20/30/40 medium, and
+40/60/80 heavy. The exact per-piece tier table is applied before the equipment-
+size multiplier. Broken pieces retain their weight. Shield and equipped-weapon
+weights are included automatically, and debug-added mass is shown separately.
 
 The current loadout is mirrored into an invisible, undroppable GZDoom inventory
 record. It preserves profile, allocations, resources, equipped items, ownership,
@@ -275,11 +403,11 @@ then use tier factors 1.00/1.50/2.00 before size. The same tier/size weight rule
 is centralized for weapons; the sword contributes base weight 6.
 Armor retains its documented per-piece weights and applies size only.
 
-The compact equipment interface now acts as the first functional Magic Box
-view: armor/shield filters, current and maximum slots, size compatibility,
-three-decimal item weight, equip/remove, development break, and drop. Pickups
-remain on the ground if the box has no free slot. Dropped objects preserve
-their current size and durability. The box formula remains
+The compact equipment interface is the first functional catalogue view:
+armor/shield filters, storage location, current and maximum box slots, size
+compatibility, three-decimal item weight, equip/remove, development break, and
+drop. Pickups remain on the ground only when their weight exceeds capacity and
+the box has no free slot. Dropped objects preserve size and durability. The box formula remains
 `2 + floor(Type1Percent(Intelligence) / 50)`; Tarot bonuses remain reserved.
 
 Strength carry capacity uses Type 4 multiplied by `BaseMass / 100`. Agility
@@ -306,8 +434,8 @@ jump scaling is Type 1.
 2. Open creation and traverse all eight pages in both orders for mixed classes.
 3. Confirm four family points and thirty individual points remain mandatory.
 4. Cycle race, sex, and height; verify mass/size tiers and player collision size.
-5. Compare armor type/tier changes with the armor, shield, debug, and total
-   equipped weights shown on character page one.
+5. Compare armor type/tier changes with equipped, inventory, debug, and total
+   carried weights shown on character page one.
 6. Spend and refill Anima; verify HUD, staff cost reduction, and faster casting
    at higher Eloquence.
 7. Spawn all four actors and verify dimensions, health, armor, physical damage,
@@ -327,19 +455,23 @@ jump scaling is Type 1.
     equipped for the current character size tier.
 14. Check shield weights at M: magic 4/6/8, buckler 8/12/16, kite 12/18/24,
     and tower 16/24/32 for tiers 1/2/3; then verify size multipliers.
-15. Fill the Magic Box, confirm a new pickup remains on the ground, then drop
-    and recollect a damaged item and verify size/durability persistence.
-16. Cycle to Weapons, spawn sword/staff/carbine variants, collect them, and
+15. Collect objects below capacity and confirm they enter personal inventory
+    and increase carried weight without consuming box slots.
+    Fire the carbine and confirm that each bullet lowers load by 0.003.
+16. Exceed capacity and confirm the next object enters the Magic Box without
+    increasing load; fill the box and confirm another overweight pickup stays
+    on the ground.
+17. Cycle to Weapons, spawn sword/staff/carbine variants, collect them, and
     confirm incompatible sizes cannot be equipped.
-17. Equip each weapon, select slot 1, and use Fire. Confirm sword spends air,
-    staff spends adjusted Anima, and carbine spends one cartridge plus its
-    load-adjusted 20-air reload cost.
-18. Compare carbine fire while standing, running, crouching, and Mareado;
+18. Equip sword, staff, and carbine simultaneously. Confirm that equipping one
+    does not unequip the others; use 3/5/6 to activate sword/carbine/staff and
+    Fire to confirm their respective air, bullet, and adjusted Anima costs.
+19. Compare carbine fire while standing, running, crouching, and Mareado;
     inspect its visible spread and verify the 48-tic firing limit.
-19. Break an equipped weapon and confirm it retains weight but cannot attack;
+20. Break an equipped weapon and confirm it retains weight but cannot attack;
     then drop/recollect an unequipped weapon and verify durability and size.
-20. Save/load and change maps with each weapon equipped and unequipped; verify
-    ownership, active main hand, durability, cartridges, and Magic Box counts.
+21. Save/load and change maps with objects equipped, in personal inventory, and
+    in the Magic Box; verify location, load, durability, bullets, and counts.
 
 ## Not yet implemented
 

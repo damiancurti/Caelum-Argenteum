@@ -46,6 +46,20 @@ class CaelumPersistentCharacterState : Inventory
     int SizedOwnedWeaponDurability[45];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
+    // false significa que el objeto viaja con el personaje (inventario o
+    // ranura equipada); true lo deja fuera de su carga, en la Caja Magica.
+    bool SizedArmorInMagicBox[300];
+    bool SizedShieldInMagicBox[60];
+    bool SizedWeaponInMagicBox[45];
+    bool EquipmentStorageInitialized;
+    // Equipado y activo son conceptos distintos. Varias armas pueden estar
+    // preparadas simultaneamente, pero WeaponType/Tier/Size identifica solo
+    // la que responde al boton de familia seleccionado en este momento.
+    bool SizedWeaponEquipped[45];
+    bool WeaponLoadoutInitialized;
+    // Impide que los registros 4.7 vuelvan a crear objetos descartados una
+    // vez que la propiedad ya fue transferida al inventario nativo.
+    bool NativeEquipmentMigrationComplete;
 
     int StoredHealth;
     double StoredAnima;
@@ -180,6 +194,68 @@ class CaelumPersistentCharacterState : Inventory
             EquipmentSizeInitialized = true;
         }
         EnsureWeaponEquipmentInitialized();
+        EnsureEquipmentStorageInitialized();
+        EnsureWeaponLoadoutInitialized();
+    }
+
+    // Las partidas 4.7.2 trataban todo objeto desequipado como contenido de la
+    // Caja Magica. La migracion conserva esa ubicacion y deja fuera solamente
+    // las piezas que estaban realmente equipadas.
+    void EnsureEquipmentStorageInitialized()
+    {
+        if (EquipmentStorageInitialized) { return; }
+        for (int armorIndex = 0; armorIndex < 300; armorIndex++)
+        {
+            SizedArmorInMagicBox[armorIndex] = SizedOwnedArmor[armorIndex];
+        }
+        for (int shieldIndex = 0; shieldIndex < 60; shieldIndex++)
+        {
+            SizedShieldInMagicBox[shieldIndex] = SizedOwnedShield[shieldIndex];
+        }
+        for (int weaponIndex = 0; weaponIndex < 45; weaponIndex++)
+        {
+            SizedWeaponInMagicBox[weaponIndex] = SizedOwnedWeapon[weaponIndex];
+        }
+        if (EquipmentInitialized)
+        {
+            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+            {
+                if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
+                {
+                    continue;
+                }
+                SizedArmorInMagicBox[GetSizedArmorOwnershipIndex(
+                    slot, ArmorType[slot], ArmorTier[slot], ArmorSize[slot]
+                )] = false;
+            }
+            if (ShieldEquipped)
+            {
+                SizedShieldInMagicBox[GetSizedShieldOwnershipIndex(
+                    ShieldType, ShieldTier, ShieldSize
+                )] = false;
+            }
+            if (WeaponEquipped)
+            {
+                SizedWeaponInMagicBox[GetSizedWeaponOwnershipIndex(
+                    WeaponType, WeaponTier, WeaponSize
+                )] = false;
+            }
+        }
+        EquipmentStorageInitialized = true;
+    }
+
+    // Migra las partidas con una sola arma: la antigua arma activa pasa a ser
+    // la primera entrada equipada sin modificar las demás propiedades.
+    void EnsureWeaponLoadoutInitialized()
+    {
+        if (WeaponLoadoutInitialized) { return; }
+        if (WeaponEquipped)
+        {
+            SizedWeaponEquipped[GetSizedWeaponOwnershipIndex(
+                WeaponType, WeaponTier, WeaponSize
+            )] = true;
+        }
+        WeaponLoadoutInitialized = true;
     }
 
     // Migra el peso provisional de versiones anteriores a un arma real. La
@@ -254,6 +330,7 @@ class CaelumPersistentCharacterState : Inventory
             );
             SizedOwnedWeapon[weaponIndex] = true;
             SizedOwnedWeaponDurability[weaponIndex] = WeaponDurability;
+            SizedWeaponEquipped[weaponIndex] = true;
         }
     }
 
@@ -317,6 +394,101 @@ class CaelumPersistentCharacterState : Inventory
         return SizedOwnedWeapon[
             GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize)
         ];
+    }
+
+    bool IsArmorInMagicBox(int slot, int armorType, int tier, int equipmentSize)
+    {
+        return SizedArmorInMagicBox[
+            GetSizedArmorOwnershipIndex(slot, armorType, tier, equipmentSize)
+        ];
+    }
+
+    bool IsShieldInMagicBox(int shieldType, int tier, int equipmentSize)
+    {
+        return SizedShieldInMagicBox[
+            GetSizedShieldOwnershipIndex(shieldType, tier, equipmentSize)
+        ];
+    }
+
+    bool IsWeaponInMagicBox(int weaponType, int tier, int equipmentSize)
+    {
+        return SizedWeaponInMagicBox[
+            GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize)
+        ];
+    }
+
+    bool IsWeaponEquipped(int weaponType, int tier, int equipmentSize)
+    {
+        return SizedWeaponEquipped[
+            GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize)
+        ];
+    }
+
+    void SetWeaponEquipped(
+        int weaponType, int tier, int equipmentSize, bool equipped
+    )
+    {
+        int index = GetSizedWeaponOwnershipIndex(
+            weaponType, tier, equipmentSize
+        );
+        SizedWeaponEquipped[index] = equipped && SizedOwnedWeapon[index];
+        if (SizedWeaponEquipped[index]) { SizedWeaponInMagicBox[index] = false; }
+    }
+
+    int CountEquippedWeapons()
+    {
+        int total = 0;
+        for (int index = 0; index < 45; index++)
+        {
+            if (SizedOwnedWeapon[index] && SizedWeaponEquipped[index]) { total++; }
+        }
+        return total;
+    }
+
+    bool HasEquippedWeaponType(int weaponType)
+    {
+        for (int tier = 1; tier <= 3; tier++)
+        {
+            for (int equipmentSize = 0;
+                equipmentSize < CaelumConstants.EQUIPMENT_SIZE_COUNT;
+                equipmentSize++)
+            {
+                if (IsWeaponEquipped(weaponType, tier, equipmentSize))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    void SetArmorInMagicBox(
+        int slot, int armorType, int tier, int equipmentSize, bool inMagicBox
+    )
+    {
+        SizedArmorInMagicBox[
+            GetSizedArmorOwnershipIndex(slot, armorType, tier, equipmentSize)
+        ] = inMagicBox;
+    }
+
+    void SetShieldInMagicBox(
+        int shieldType, int tier, int equipmentSize, bool inMagicBox
+    )
+    {
+        SizedShieldInMagicBox[
+            GetSizedShieldOwnershipIndex(shieldType, tier, equipmentSize)
+        ] = inMagicBox;
+    }
+
+    void SetWeaponInMagicBox(
+        int weaponType, int tier, int equipmentSize, bool inMagicBox
+    )
+    {
+        int index = GetSizedWeaponOwnershipIndex(
+            weaponType, tier, equipmentSize
+        );
+        SizedWeaponInMagicBox[index] = inMagicBox;
+        if (inMagicBox) { SizedWeaponEquipped[index] = false; }
     }
 
     int GetOwnedArmorDurability(int slot, int armorType, int tier, int equipmentSize)
@@ -388,6 +560,7 @@ class CaelumPersistentCharacterState : Inventory
         int index = GetSizedArmorOwnershipIndex(slot, armorType, tier, equipmentSize);
         SizedOwnedArmor[index] = false;
         SizedOwnedArmorDurability[index] = 0;
+        SizedArmorInMagicBox[index] = false;
     }
 
     void RemoveOwnedShield(int shieldType, int tier, int equipmentSize)
@@ -395,6 +568,7 @@ class CaelumPersistentCharacterState : Inventory
         int index = GetSizedShieldOwnershipIndex(shieldType, tier, equipmentSize);
         SizedOwnedShield[index] = false;
         SizedOwnedShieldDurability[index] = 0;
+        SizedShieldInMagicBox[index] = false;
     }
 
     void RemoveOwnedWeapon(int weaponType, int tier, int equipmentSize)
@@ -402,6 +576,8 @@ class CaelumPersistentCharacterState : Inventory
         int index = GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize);
         SizedOwnedWeapon[index] = false;
         SizedOwnedWeaponDurability[index] = 0;
+        SizedWeaponInMagicBox[index] = false;
+        SizedWeaponEquipped[index] = false;
     }
 
     int CountOwnedArmor()
@@ -422,6 +598,24 @@ class CaelumPersistentCharacterState : Inventory
     {
         int total = 0;
         for (int i = 0; i < 45; i++) { if (SizedOwnedWeapon[i]) total++; }
+        return total;
+    }
+
+    int CountMagicBoxItems()
+    {
+        int total = 0;
+        for (int i = 0; i < 300; i++)
+        {
+            if (SizedOwnedArmor[i] && SizedArmorInMagicBox[i]) { total++; }
+        }
+        for (int i = 0; i < 60; i++)
+        {
+            if (SizedOwnedShield[i] && SizedShieldInMagicBox[i]) { total++; }
+        }
+        for (int i = 0; i < 45; i++)
+        {
+            if (SizedOwnedWeapon[i] && SizedWeaponInMagicBox[i]) { total++; }
+        }
         return total;
     }
 }

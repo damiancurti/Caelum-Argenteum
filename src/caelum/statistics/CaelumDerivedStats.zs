@@ -46,6 +46,9 @@ class CaelumDerivedStats : Object
     double WeaponWeight;
     double DebugWeight;
     double EquippedWeight;
+    double InventoryWeight;
+    double CarriedItemWeight;
+    double CarriedWeight;
     double TotalMass;
     double LoadRatio;
     double PushResistance;
@@ -99,20 +102,73 @@ class CaelumDerivedStats : Object
     }
 
     void SetEquipmentWeights(
-        double armorWeight,
-        double shieldWeight,
-        double weaponWeight
+        double newArmorWeight,
+        double newShieldWeight,
+        double newWeaponWeight
     )
     {
-        ArmorWeight = Max(0.0, armorWeight);
-        ShieldWeight = Max(0.0, shieldWeight);
-        WeaponWeight = Max(0.0, weaponWeight);
+        ArmorWeight = Max(0.0, newArmorWeight);
+        ShieldWeight = Max(0.0, newShieldWeight);
+        WeaponWeight = Max(0.0, newWeaponWeight);
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        CarriedItemWeight = EquippedWeight + InventoryWeight;
+        RefreshCarriedWeightTotals();
     }
 
-    void AddDebugWeight(double amount) { DebugWeight = Max(0.0, DebugWeight + amount); }
-    void ResetDebugWeight() { DebugWeight = 0.0; }
-    bool HasOverload() { return LoadRatio > CaelumConstants.OVERLOAD_THRESHOLD; }
-    bool HasExceededCapacity() { return LoadRatio > 1.0; }
+    void SetInventoryWeight(double newInventoryWeight)
+    {
+        InventoryWeight = Max(0.0, newInventoryWeight);
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        CarriedItemWeight = EquippedWeight + InventoryWeight;
+        RefreshCarriedWeightTotals();
+    }
+
+    // El inventario nativo es la fuente autoritativa: todo objeto que no esta
+    // en la Caja Magica cuenta una sola vez, equipado o no.
+    void SetCarriedLoadBreakdown(
+        double newArmorWeight,
+        double newShieldWeight,
+        double newWeaponWeight,
+        double newInventoryWeight,
+        double newCarriedItemWeight
+    )
+    {
+        ArmorWeight = Max(0.0, newArmorWeight);
+        ShieldWeight = Max(0.0, newShieldWeight);
+        WeaponWeight = Max(0.0, newWeaponWeight);
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        InventoryWeight = Max(0.0, newInventoryWeight);
+        CarriedItemWeight = Max(
+            Max(0.0, newCarriedItemWeight),
+            EquippedWeight + InventoryWeight
+        );
+        RefreshCarriedWeightTotals();
+    }
+
+    // Los setters de peso pueden ejecutarse desde la vista previa del menú,
+    // fuera de un recálculo completo. Mantener estos cuatro valores atómicos
+    // evita que el HUD quede mostrando una carga anterior indefinidamente.
+    void RefreshCarriedWeightTotals()
+    {
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        CarriedWeight = CarriedItemWeight + DebugWeight;
+        TotalMass = BaseMass + CarriedWeight;
+        LoadRatio = CarryCapacity > 0.0 ? CarriedWeight / CarryCapacity : 0.0;
+    }
+
+    void AddDebugWeight(double amount)
+    {
+        DebugWeight = Max(0.0, DebugWeight + amount);
+        RefreshCarriedWeightTotals();
+    }
+
+    void ResetDebugWeight()
+    {
+        DebugWeight = 0.0;
+        RefreshCarriedWeightTotals();
+    }
+    bool HasOverload() { return LoadRatio >= CaelumConstants.OVERLOAD_THRESHOLD; }
+    bool HasExceededCapacity() { return LoadRatio >= 1.0; }
 
     double CalculateLoadAirMultiplier(double loadRatio)
     {
@@ -204,9 +260,7 @@ class CaelumDerivedStats : Object
         MagicBoxCapacity = 2 + int(
             CalculateType1Percent(attributes.Intelligence) / 50.0
         );
-        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + DebugWeight;
-        TotalMass = BaseMass + EquippedWeight;
-        LoadRatio = EquippedWeight / CarryCapacity;
+        RefreshCarriedWeightTotals();
         PushResistance = TotalMass / 100.0;
         KnockbackMultiplier = 100.0 / (TotalMass + 50.0);
         MovementMultiplier = 100.0 / (TotalMass / 2.0 + 50.0);

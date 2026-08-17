@@ -56,19 +56,214 @@ class CaelumEquippedWeapon : Weapon
     }
 }
 
-class CaelumCarbineAmmo : Ammo
+// Selectores invisibles para los botones numericos de familia. No representan
+// copias adicionales: activan el registro equipado correspondiente del jugador.
+class CaelumSwordWeapon : Weapon
 {
     Default
     {
-        Inventory.MaxAmount 999;
-        Ammo.BackpackAmount 20;
-        Ammo.BackpackMaxAmount 1998;
+        Weapon.SelectionOrder 300;
+        Weapon.SlotNumber 3;
+        Weapon.KickBack 0;
+        +WEAPON.NOALERT
+        +INVENTORY.UNDROPPABLE
+    }
+
+    action void A_CaelumActivateFamily()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ActivateEquippedWeaponType(
+                CaelumConstants.WEAPON_TYPE_SWORD
+            );
+        }
+    }
+
+    action void A_CaelumFamilyPrimary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+                CaelumConstants.WEAPON_TYPE_SWORD
+            );
+        }
+    }
+
+    action void A_CaelumFamilySecondary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilySecondaryAction(
+                CaelumConstants.WEAPON_TYPE_SWORD
+            );
+        }
     }
 
     States
     {
+    Ready:
+        TNT1 A 1 A_WeaponReady;
+        Loop;
+    Deselect:
+        TNT1 A 1 A_Lower;
+        Loop;
+    Select:
+        TNT1 A 0 A_CaelumActivateFamily;
+        TNT1 A 1 A_Raise;
+        Loop;
+    Fire:
+        TNT1 A 0 A_CaelumFamilyPrimary;
+        TNT1 A 1;
+        Goto Ready;
+    AltFire:
+        TNT1 A 0 A_CaelumFamilySecondary;
+        TNT1 A 1;
+        Goto Ready;
     Spawn:
-        CLIP A -1;
+        TNT1 A -1;
+        Stop;
+    }
+}
+
+class CaelumCarbineWeapon : Weapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 500;
+        Weapon.SlotNumber 5;
+        Weapon.KickBack 0;
+        +WEAPON.NOALERT
+        +INVENTORY.UNDROPPABLE
+    }
+
+    action void A_CaelumActivateFamily()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ActivateEquippedWeaponType(
+                CaelumConstants.WEAPON_TYPE_CARBINE
+            );
+        }
+    }
+
+    action void A_CaelumFamilyPrimary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+                CaelumConstants.WEAPON_TYPE_CARBINE
+            );
+        }
+    }
+
+    action void A_CaelumFamilySecondary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilySecondaryAction(
+                CaelumConstants.WEAPON_TYPE_CARBINE
+            );
+        }
+    }
+
+    States
+    {
+    Ready:
+        TNT1 A 1 A_WeaponReady;
+        Loop;
+    Deselect:
+        TNT1 A 1 A_Lower;
+        Loop;
+    Select:
+        TNT1 A 0 A_CaelumActivateFamily;
+        TNT1 A 1 A_Raise;
+        Loop;
+    Fire:
+        TNT1 A 0 A_CaelumFamilyPrimary;
+        TNT1 A 1;
+        Goto Ready;
+    AltFire:
+        TNT1 A 0 A_CaelumFamilySecondary;
+        TNT1 A 1;
+        Goto Ready;
+    Spawn:
+        TNT1 A -1;
+        Stop;
+    }
+}
+
+class CaelumStaffWeapon : Weapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 6;
+        Weapon.KickBack 0;
+        +WEAPON.NOALERT
+        +INVENTORY.UNDROPPABLE
+    }
+
+    action void A_CaelumActivateFamily()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ActivateEquippedWeaponType(
+                CaelumConstants.WEAPON_TYPE_STAFF
+            );
+        }
+    }
+
+    action void A_CaelumFamilyPrimary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+                CaelumConstants.WEAPON_TYPE_STAFF
+            );
+        }
+    }
+
+    action void A_CaelumFamilySecondary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilySecondaryAction(
+                CaelumConstants.WEAPON_TYPE_STAFF
+            );
+        }
+    }
+
+    States
+    {
+    Ready:
+        TNT1 A 1 A_WeaponReady;
+        Loop;
+    Deselect:
+        TNT1 A 1 A_Lower;
+        Loop;
+    Select:
+        TNT1 A 0 A_CaelumActivateFamily;
+        TNT1 A 1 A_Raise;
+        Loop;
+    Fire:
+        TNT1 A 0 A_CaelumFamilyPrimary;
+        TNT1 A 1;
+        Goto Ready;
+    AltFire:
+        TNT1 A 0 A_CaelumFamilySecondary;
+        TNT1 A 1;
+        Goto Ready;
+    Spawn:
+        TNT1 A -1;
         Stop;
     }
 }
