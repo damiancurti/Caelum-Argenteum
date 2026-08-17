@@ -71,6 +71,7 @@ alias ca_debug_shield_damage "netevent ca_debug_shield_damage"
 alias ca_debug_shield_angle "netevent ca_debug_shield_angle"
 alias ca_debug_shield_hit "netevent ca_debug_shield_hit"
 alias ca_debug_shield_repair "netevent ca_debug_shield_repair"
+alias ca_debug_test_silver_lock "netevent ca_debug_test_silver_lock"
 
 addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
 addmenukey "$CA_CONTROL_NEXT_FIRST_CLASS" ca_next_first_class
@@ -137,5 +138,6 @@ addmenukey "$CA_CONTROL_DEBUG_SHIELD_DAMAGE" ca_debug_shield_damage
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_ANGLE" ca_debug_shield_angle
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
+addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
 
 // No default keys are imposed. Assign them under Customize Controls.

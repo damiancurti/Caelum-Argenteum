@@ -260,6 +260,129 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetSpecialItemTypeKey(int specialCategory, int specialType)
+    {
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            return "CA_KEY_SILVER";
+        }
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            return "CA_KEY_ITEM_SEALED_LETTER";
+        }
+        switch (specialType)
+        {
+            case CaelumConstants.MATERIAL_BLADE: return "CA_MATERIAL_BLADE";
+            case CaelumConstants.MATERIAL_SMALL_BLADE: return "CA_MATERIAL_SMALL_BLADE";
+            case CaelumConstants.MATERIAL_CURVED_BLADE: return "CA_MATERIAL_CURVED_BLADE";
+            case CaelumConstants.MATERIAL_LONG_BLADE: return "CA_MATERIAL_LONG_BLADE";
+            case CaelumConstants.MATERIAL_BROAD_BLADE: return "CA_MATERIAL_BROAD_BLADE";
+            case CaelumConstants.MATERIAL_SHAFT: return "CA_MATERIAL_SHAFT";
+            case CaelumConstants.MATERIAL_FRAME: return "CA_MATERIAL_FRAME";
+            case CaelumConstants.MATERIAL_LONG_FRAME: return "CA_MATERIAL_LONG_FRAME";
+            case CaelumConstants.MATERIAL_WEAPON_HEAD: return "CA_MATERIAL_WEAPON_HEAD";
+            case CaelumConstants.MATERIAL_ROUND_HEAD: return "CA_MATERIAL_ROUND_HEAD";
+            case CaelumConstants.MATERIAL_PLATE: return "CA_MATERIAL_PLATE";
+            case CaelumConstants.MATERIAL_ROUND_PLATE: return "CA_MATERIAL_ROUND_PLATE";
+            case CaelumConstants.MATERIAL_KITE_PLATE: return "CA_MATERIAL_KITE_PLATE";
+            case CaelumConstants.MATERIAL_TOWER_PLATE: return "CA_MATERIAL_TOWER_PLATE";
+            case CaelumConstants.MATERIAL_MAGIC_PLATE: return "CA_MATERIAL_MAGIC_PLATE";
+            case CaelumConstants.MATERIAL_LARGE_PLATE: return "CA_MATERIAL_LARGE_PLATE";
+            case CaelumConstants.MATERIAL_CHAINMAIL: return "CA_MATERIAL_CHAINMAIL";
+            case CaelumConstants.MATERIAL_FABRIC: return "CA_MATERIAL_FABRIC";
+            case CaelumConstants.MATERIAL_LEATHER: return "CA_MATERIAL_LEATHER";
+            case CaelumConstants.MATERIAL_FIRE_ESSENCE: return "CA_MATERIAL_FIRE_ESSENCE";
+            case CaelumConstants.MATERIAL_WATER_ESSENCE: return "CA_MATERIAL_WATER_ESSENCE";
+            case CaelumConstants.MATERIAL_EARTH_ESSENCE: return "CA_MATERIAL_EARTH_ESSENCE";
+            case CaelumConstants.MATERIAL_WIND_ESSENCE: return "CA_MATERIAL_WIND_ESSENCE";
+            case CaelumConstants.MATERIAL_QUINTESSENCE: return "CA_MATERIAL_QUINTESSENCE";
+            case CaelumConstants.MATERIAL_HILT: return "CA_MATERIAL_HILT";
+            case CaelumConstants.MATERIAL_LONG_HILT: return "CA_MATERIAL_LONG_HILT";
+            case CaelumConstants.MATERIAL_POINT: return "CA_MATERIAL_POINT";
+            case CaelumConstants.MATERIAL_HANDLE: return "CA_MATERIAL_HANDLE";
+            case CaelumConstants.MATERIAL_LONG_HANDLE: return "CA_MATERIAL_LONG_HANDLE";
+            case CaelumConstants.MATERIAL_BOWSTRING: return "CA_MATERIAL_BOWSTRING";
+            case CaelumConstants.MATERIAL_REINFORCED_BOWSTRING: return "CA_MATERIAL_REINFORCED_BOWSTRING";
+            case CaelumConstants.MATERIAL_STRAP: return "CA_MATERIAL_STRAP";
+            case CaelumConstants.MATERIAL_REINFORCED_STRAP: return "CA_MATERIAL_REINFORCED_STRAP";
+            case CaelumConstants.MATERIAL_BARREL: return "CA_MATERIAL_BARREL";
+            case CaelumConstants.MATERIAL_MECHANISM: return "CA_MATERIAL_MECHANISM";
+            case CaelumConstants.MATERIAL_STAFF_BASE: return "CA_MATERIAL_STAFF_BASE";
+            case CaelumConstants.MATERIAL_BELL_BASE: return "CA_MATERIAL_BELL_BASE";
+            case CaelumConstants.MATERIAL_BOOK_BASE: return "CA_MATERIAL_BOOK_BASE";
+            case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CA_MATERIAL_STATUETTE_BASE";
+            default: return "CA_MATERIAL_IRON_INGOT";
+        }
+    }
+
+    ui int GetMaterialFamilyForPanel(int materialType)
+    {
+        if (materialType == CaelumConstants.MATERIAL_IRON_INGOT
+            || (materialType >= CaelumConstants.MATERIAL_BLADE
+                && materialType <= CaelumConstants.MATERIAL_BROAD_BLADE)
+            || (materialType >= CaelumConstants.MATERIAL_WEAPON_HEAD
+                && materialType <= CaelumConstants.MATERIAL_CHAINMAIL)
+            || materialType == CaelumConstants.MATERIAL_BARREL)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_METAL;
+        }
+        if (materialType >= CaelumConstants.MATERIAL_SHAFT
+            && materialType <= CaelumConstants.MATERIAL_LONG_FRAME)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_WOOD;
+        }
+        if (materialType >= CaelumConstants.MATERIAL_FIRE_ESSENCE
+            && materialType <= CaelumConstants.MATERIAL_QUINTESSENCE)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_ESSENCE;
+        }
+        if (materialType == CaelumConstants.MATERIAL_LEATHER)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_LEATHER;
+        }
+        if (materialType == CaelumConstants.MATERIAL_FABRIC)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_FABRIC;
+        }
+        return CaelumConstants.MATERIAL_FAMILY_NONE;
+    }
+
+    ui String GetMaterialGradeKey(int materialType, int tier)
+    {
+        int family = GetMaterialFamilyForPanel(materialType);
+        if (family == CaelumConstants.MATERIAL_FAMILY_METAL)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_BRONZE"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_IRON"
+                    : "CA_MATERIAL_GRADE_STEEL");
+        }
+        if (family == CaelumConstants.MATERIAL_FAMILY_WOOD)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_COMMON_WOOD"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_HARD_WOOD"
+                    : "CA_MATERIAL_GRADE_EBONY_WOOD");
+        }
+        if (family == CaelumConstants.MATERIAL_FAMILY_ESSENCE)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_SIMPLE"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_FINE"
+                    : "CA_MATERIAL_GRADE_PURE");
+        }
+        if (family == CaelumConstants.MATERIAL_FAMILY_LEATHER)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_COW_LEATHER"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_PREDATOR_LEATHER"
+                    : "CA_MATERIAL_GRADE_MONSTER_LEATHER");
+        }
+        if (family == CaelumConstants.MATERIAL_FAMILY_FABRIC)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_WOOL"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_COTTON"
+                    : "CA_MATERIAL_GRADE_SILK");
+        }
+        return "";
+    }
+
     ui String GetEquipmentActionKey(int equipmentAction)
     {
         switch (equipmentAction)
@@ -292,6 +415,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_SPAWNED_ON_FLOOR";
             case CaelumConstants.EQUIPMENT_ACTION_USED:
                 return "CA_EQUIPMENT_ACTION_USED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_KEY_STORAGE";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }
@@ -652,9 +777,70 @@ class CaelumDebugOverlay : EventHandler
         {
             categoryKey = "CA_EQUIPMENT_CATEGORY_CONSUMABLE";
         }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_MATERIAL";
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_KEY";
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_KEY_ITEM";
+        }
         String category = StringTable.Localize(categoryKey, false);
         String selection;
         if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            String materialName = StringTable.Localize(
+                GetSpecialItemTypeKey(
+                    localPlayer.EquipmentSelectionKind,
+                    localPlayer.EquipmentSelectionSpecialType
+                ), false
+            );
+            String gradeKey = GetMaterialGradeKey(
+                localPlayer.EquipmentSelectionSpecialType,
+                localPlayer.EquipmentSelectionTier
+            );
+            if (GetMaterialFamilyForPanel(
+                localPlayer.EquipmentSelectionSpecialType
+            ) != CaelumConstants.MATERIAL_FAMILY_NONE)
+            {
+                selection = String.Format(
+                    "%s [%s] x%d", materialName,
+                    StringTable.Localize(gradeKey, false),
+                    localPlayer.EquipmentSelectionStackAmount
+                );
+            }
+            else
+            {
+                selection = String.Format(
+                    "%s x%d", materialName,
+                    localPlayer.EquipmentSelectionStackAmount
+                );
+            }
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            >= CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            selection = String.Format(
+                "%s x%d",
+                StringTable.Localize(
+                    GetSpecialItemTypeKey(
+                        localPlayer.EquipmentSelectionKind,
+                        localPlayer.EquipmentSelectionSpecialType
+                    ),
+                    false
+                ),
+                localPlayer.EquipmentSelectionStackAmount
+            );
+        }
+        else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
             selection = String.Format(
@@ -744,17 +930,36 @@ class CaelumDebugOverlay : EventHandler
         {
             storageKey = "CA_EQUIPMENT_STORAGE_INVENTORY";
         }
-        String status = String.Format(
-            "%s | %s | %s",
-            StringTable.Localize(ownershipKey, false),
-            StringTable.Localize(equippedKey, false),
-            StringTable.Localize(storageKey, false)
-        );
+        String status;
+        if (localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_SHIELD
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            status = String.Format(
+                "%s | %s | %s",
+                StringTable.Localize(ownershipKey, false),
+                StringTable.Localize(equippedKey, false),
+                StringTable.Localize(storageKey, false)
+            );
+        }
+        else
+        {
+            status = String.Format(
+                "%s | %s",
+                StringTable.Localize(ownershipKey, false),
+                StringTable.Localize(storageKey, false)
+            );
+        }
         String detail;
         if (localPlayer.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            || localPlayer.EquipmentSelectionKind
+                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             detail = String.Format(
                 "%s %d | %s %.3f",
@@ -2386,6 +2591,10 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_debug_spawn_equipment")
         {
             requestingPlayer.SpawnDebugEquipmentPickup();
+        }
+        else if (e.Name == "ca_debug_test_silver_lock")
+        {
+            requestingPlayer.DebugTestSilverLock();
         }
         else if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
         else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();

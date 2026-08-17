@@ -42,6 +42,7 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionShieldType;
     int EquipmentSelectionWeaponType;
     int EquipmentSelectionConsumableType;
+    int EquipmentSelectionSpecialType;
     int EquipmentSelectionTier;
     int EquipmentSelectionSize;
     bool EquipmentSelectionOwned;
@@ -541,6 +542,16 @@ class CaelumPlayer : DoomPlayer
                 total++;
             }
         }
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumSpecialInventoryItem specialItem =
+                CaelumSpecialInventoryItem(cursor);
+            if (specialItem != null && specialItem.Amount > 0
+                && specialItem.InMagicBox)
+            {
+                total++;
+            }
+        }
         return total;
     }
 
@@ -552,6 +563,42 @@ class CaelumPlayer : DoomPlayer
             if (item != null && item.GetConsumableType() == consumableType)
             {
                 return item;
+            }
+        }
+        return null;
+    }
+
+    CaelumSpecialInventoryItem FindNativeSpecialItem(
+        int specialCategory, int specialType, int specialTier = 0
+    )
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumSpecialInventoryItem item =
+                CaelumSpecialInventoryItem(cursor);
+            if (item != null
+                && item.GetSpecialCategory() == specialCategory
+                && item.GetSpecialType() == specialType
+                && (specialCategory != CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                    || item.GetSpecialTier()
+                        == CaelumMaterialRules.ResolveTier(
+                            specialType, specialTier
+                        )))
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    CaelumWeightedKey FindNativeKey(int keyType)
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumWeightedKey keyItem = CaelumWeightedKey(cursor);
+            if (keyItem != null && keyItem.GetKeyType() == keyType)
+            {
+                return keyItem;
             }
         }
         return null;
@@ -663,6 +710,74 @@ class CaelumPlayer : DoomPlayer
         // Una pila completa ocupa un unico slot, sin importar su Amount.
         consumable.InMagicBox = true;
         LastEquipmentPickupWentToMagicBox = true;
+        return true;
+    }
+
+    bool PrepareNativeSpecialPickup(CaelumSpecialInventoryItem specialItem)
+    {
+        if (specialItem == null || DerivedStats == null) { return false; }
+        CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
+            specialItem.GetSpecialCategory(), specialItem.GetSpecialType(),
+            specialItem.GetSpecialTier()
+        );
+        if (existing != null)
+        {
+            if (specialItem.GetSpecialCategory()
+                == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+            {
+                return PrepareNativeSpecialStackPickup(
+                    existing, specialItem.Amount
+                );
+            }
+            return true;
+        }
+        RefreshCarriedInventorySummary();
+        specialItem.InMagicBox = false;
+        if (!CanAddWeightToPersonalInventory(specialItem.GetCarriedWeight()))
+        {
+            if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
+            {
+                return false;
+            }
+            specialItem.InMagicBox = true;
+        }
+        LastEquipmentPickupWasNew = true;
+        LastEquipmentPickupWentToMagicBox = specialItem.InMagicBox;
+        return true;
+    }
+
+    bool PrepareNativeSpecialStackPickup(
+        CaelumSpecialInventoryItem specialItem, int incomingAmount
+    )
+    {
+        if (specialItem == null || DerivedStats == null) { return false; }
+        if (specialItem.InMagicBox) { return true; }
+        RefreshCarriedInventorySummary();
+        double incomingWeight = Max(0, incomingAmount)
+            * specialItem.GetUnitWeight();
+        if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
+        if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
+        {
+            return false;
+        }
+        specialItem.InMagicBox = true;
+        LastEquipmentPickupWentToMagicBox = true;
+        return true;
+    }
+
+    bool PrepareNativeKeyPickup(CaelumWeightedKey keyItem)
+    {
+        if (keyItem == null || DerivedStats == null) { return false; }
+        // Key ya impide duplicados por clase. Si existe, el pickup nativo
+        // decide el resultado sin reservar peso otra vez.
+        if (FindNativeKey(keyItem.GetKeyType()) != null) { return true; }
+        RefreshCarriedInventorySummary();
+        if (!CanAddWeightToPersonalInventory(keyItem.GetCarriedWeight()))
+        {
+            return false;
+        }
+        LastEquipmentPickupWasNew = true;
+        LastEquipmentPickupWentToMagicBox = false;
         return true;
     }
 
@@ -1033,6 +1148,32 @@ class CaelumPlayer : DoomPlayer
             personalInventoryWeight += consumableWeight;
             carriedItemWeight += consumableWeight;
         }
+
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumSpecialInventoryItem specialItem =
+                CaelumSpecialInventoryItem(cursor);
+            if (specialItem == null || specialItem.Amount <= 0) { continue; }
+            if (specialItem.InMagicBox)
+            {
+                MagicBoxUsedSlots++;
+                continue;
+            }
+            PersonalInventoryItemCount += specialItem.Amount;
+            double specialWeight = specialItem.GetCarriedWeight();
+            personalInventoryWeight += specialWeight;
+            carriedItemWeight += specialWeight;
+        }
+
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumWeightedKey keyItem = CaelumWeightedKey(cursor);
+            if (keyItem == null || keyItem.Amount <= 0) { continue; }
+            PersonalInventoryItemCount++;
+            double keyWeight = keyItem.GetCarriedWeight();
+            personalInventoryWeight += keyWeight;
+            carriedItemWeight += keyWeight;
+        }
         if (DerivedStats != null)
         {
             DerivedStats.SetCarriedLoadBreakdown(
@@ -1080,7 +1221,39 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.CONSUMABLE_TYPE_COUNT - 1
         );
+        int specialTypeCount = 1;
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            specialTypeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
+        }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            specialTypeCount = CaelumConstants.KEY_TYPE_COUNT;
+        }
+        else if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            specialTypeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
+        }
+        EquipmentSelectionSpecialType = Clamp(
+            EquipmentSelectionSpecialType, 0, specialTypeCount - 1
+        );
         EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            if (EquipmentSelectionSpecialType
+                == CaelumConstants.MATERIAL_IRON_INGOT)
+            {
+                // Entrada heredada de partidas 4.10: representa hierro T2.
+                EquipmentSelectionTier = 2;
+            }
+            else
+            {
+                EquipmentSelectionTier = CaelumMaterialRules.ResolveTier(
+                    EquipmentSelectionSpecialType, EquipmentSelectionTier
+                );
+            }
+        }
         EquipmentSelectionSize = Clamp(
             EquipmentSelectionSize,
             0,
@@ -1147,6 +1320,43 @@ class CaelumPlayer : DoomPlayer
                     : CaelumConstants.CONSUMABLE_POTION_WEIGHT);
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
                 * unitWeight;
+            return;
+        }
+
+        if (EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
+                EquipmentSelectionKind, EquipmentSelectionSpecialType,
+                EquipmentSelectionTier
+            );
+            EquipmentSelectionOwned = specialItem != null
+                && specialItem.Amount > 0;
+            EquipmentSelectionInMagicBox = EquipmentSelectionOwned
+                && specialItem.InMagicBox;
+            EquipmentSelectionSizeCompatible = true;
+            EquipmentSelectionStackAmount = EquipmentSelectionOwned
+                ? specialItem.Amount : 0;
+            EquipmentSelectionWeight = EquipmentSelectionStackAmount
+                * (specialItem != null
+                    ? specialItem.GetUnitWeight()
+                    : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT);
+            return;
+        }
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            CaelumWeightedKey keyItem = FindNativeKey(
+                EquipmentSelectionSpecialType
+            );
+            EquipmentSelectionOwned = keyItem != null && keyItem.Amount > 0;
+            EquipmentSelectionSizeCompatible = true;
+            EquipmentSelectionStackAmount = EquipmentSelectionOwned ? 1 : 0;
+            EquipmentSelectionWeight = EquipmentSelectionOwned
+                ? keyItem.GetCarriedWeight()
+                : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT;
             return;
         }
 
@@ -1498,6 +1708,23 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    Name GetSpecialItemClassName(int specialCategory, int specialType)
+    {
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            return 'CaelumSilverKey';
+        }
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            return 'CaelumSealedLetter';
+        }
+        if (specialType == CaelumConstants.MATERIAL_IRON_INGOT)
+        {
+            return 'CaelumIronIngot';
+        }
+        return 'CaelumMaterialPickup';
+    }
+
     void UseSelectedConsumable()
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -1519,7 +1746,9 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            || EquipmentSelectionKind
+                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL) { return; }
         EquipmentSelectionSlot = (
             EquipmentSelectionSlot + direction
                 + CaelumConstants.ARMOR_SLOT_COUNT
@@ -1531,7 +1760,23 @@ class CaelumPlayer : DoomPlayer
     {
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return; }
-        if (EquipmentSelectionKind
+        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            int typeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
+            if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+            {
+                typeCount = CaelumConstants.KEY_TYPE_COUNT;
+            }
+            else if (EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+            {
+                typeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
+            }
+            EquipmentSelectionSpecialType = (
+                EquipmentSelectionSpecialType + direction + typeCount
+            ) % typeCount;
+        }
+        else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
             EquipmentSelectionConsumableType = (
@@ -1568,7 +1813,17 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM) { return; }
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            && EquipmentSelectionSpecialType
+                == CaelumConstants.MATERIAL_IRON_INGOT) { return; }
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            && !CaelumMaterialRules.HasTier(
+                EquipmentSelectionSpecialType
+            )) { return; }
         EquipmentSelectionTier++;
         if (EquipmentSelectionTier > 3) { EquipmentSelectionTier = 1; }
         RefreshEquipmentSelectionPreview();
@@ -1579,7 +1834,9 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            || EquipmentSelectionKind
+                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             return;
         }
@@ -1676,6 +1933,10 @@ class CaelumPlayer : DoomPlayer
         }
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            return;
+        }
+        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             return;
         }
@@ -1794,6 +2055,53 @@ class CaelumPlayer : DoomPlayer
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         RefreshCarriedInventorySummary();
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE;
+            return;
+        }
+        if (EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
+                EquipmentSelectionKind, EquipmentSelectionSpecialType,
+                EquipmentSelectionTier
+            );
+            if (specialItem == null || specialItem.Amount <= 0) { return; }
+            double stackWeight = specialItem.Amount
+                * specialItem.GetUnitWeight();
+            if (specialItem.InMagicBox)
+            {
+                if (!CanAddWeightToPersonalInventory(stackWeight))
+                {
+                    LastEquipmentAction =
+                        CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
+                    return;
+                }
+                specialItem.InMagicBox = false;
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
+            }
+            else
+            {
+                if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+                {
+                    LastEquipmentAction =
+                        CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
+                    return;
+                }
+                specialItem.InMagicBox = true;
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
+            }
+            ApplyCharacterProfile();
+            PersistCharacterState();
+            RefreshEquipmentSelectionPreview();
+            return;
+        }
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
@@ -2195,7 +2503,22 @@ class CaelumPlayer : DoomPlayer
             8.0
         );
         Actor pickup;
-        if (EquipmentSelectionKind
+        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            Name specialClass = GetSpecialItemClassName(
+                EquipmentSelectionKind, EquipmentSelectionSpecialType
+            );
+            pickup = Spawn(specialClass, spawnPos, NO_REPLACE);
+            if (pickup != null
+                && EquipmentSelectionKind
+                    == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+            {
+                pickup.args[0] = EquipmentSelectionSpecialType;
+                pickup.args[1] = EquipmentSelectionTier;
+                Inventory(pickup).Amount = 10;
+            }
+        }
+        else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
             Name consumableClass = GetConsumableClassName(
@@ -2254,7 +2577,11 @@ class CaelumPlayer : DoomPlayer
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            || EquipmentSelectionKind
+                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL) { return; }
         CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
         if (item == null) { return; }
         item.Durability = 0;
@@ -2288,7 +2615,28 @@ class CaelumPlayer : DoomPlayer
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         Inventory selected;
-        if (EquipmentSelectionKind
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            CaelumWeightedKey keyItem = FindNativeKey(
+                EquipmentSelectionSpecialType
+            );
+            if (keyItem == null || keyItem.Amount <= 0) { return; }
+            selected = keyItem.CreateTossable(1);
+        }
+        else if (EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
+                EquipmentSelectionKind, EquipmentSelectionSpecialType,
+                EquipmentSelectionTier
+            );
+            if (specialItem == null || specialItem.Amount <= 0) { return; }
+            specialItem.InMagicBox = false;
+            selected = specialItem.CreateTossable(specialItem.Amount);
+        }
+        else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
             CaelumConsumableItem consumable = FindNativeConsumableItem(
@@ -2385,6 +2733,18 @@ class CaelumPlayer : DoomPlayer
             LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_CREATED;
         }
         RefreshEquipmentSelectionPreview();
+    }
+
+    // Comprueba exactamente la cerradura declarada en LOCKDEFS sin requerir
+    // una linea de mapa. El mensaje de fallo lo produce el propio motor.
+    void DebugTestSilverLock()
+    {
+        if (CheckKeys(CaelumConstants.LOCK_CAELUM_SILVER, true, false))
+        {
+            Console.Printf(
+                "%s", StringTable.Localize("CA_LOCK_TEST_GRANTED", false)
+            );
+        }
     }
 
     void BreakSelectedEquipment()

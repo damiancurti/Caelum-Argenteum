@@ -50,6 +50,11 @@ folder and launch GZDoom.
 - An unlimited-slot native personal inventory limited by carried weight.
   Pickups that would exceed capacity are marked as stored in the slot-limited
   Magic Box; when it is full, the object remains in the world.
+- Eight compact inventory filters, including a 40-entry native material
+  catalogue whose stacks are separated by type and tier, non-stackable `Key`
+  objects backed by `LOCKDEFS`, and unique key items.
+- A direct `ca_debug_test_silver_lock` command that exercises native lock 200
+  without requiring a purpose-built test map.
 - Five native stackable consumables with real weight and Magic Box support:
   life and Anima potions, energy drinks, food rations, and water rations. Each
   applies a one-percent-per-second regeneration Powerup for ten seconds.

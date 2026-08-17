@@ -3,9 +3,56 @@
 This file describes the current executable prototype. The main design document
 remains the authority for rules not yet connected to gameplay.
 
-## Native consumables and timed regeneration 4.9.0
+## Native material catalogue and lock test 4.11.0
 
 **Implemented — pending validation**
+
+The Materials filter now exposes a data-driven catalogue of weapon parts,
+shield plates, armor resources, elemental essences, secondary components, and
+magical-item bases. Metal, wood, essence, leather, and fabric use three
+localized grades; generic secondary components remain tier-independent.
+
+Every material is a native `Inventory` instance. Type and tier together define
+stack identity, so identical units merge while different grades remain
+separate. Each unit weighs 0.1 by default, participates in automatic overweight
+routing, and a complete stack occupies one Magic Box slot and weighs zero while
+stored there.
+
+`ca_debug_test_silver_lock` invokes `CheckKeys(200, true, false)`. This follows
+the same native `LOCKDEFS` path used by locked map specials: without the silver
+key it prints the configured remote failure message; with the key it confirms
+access. A real door still declares lock number 200 in its map-line special.
+
+## Categorized special inventory and native locks 4.10.0
+
+**Implemented and manually validated**
+
+The authoritative `Actor.Inv` chain now includes three additional categories:
+Materials, Keys, and Key Items. The compact inventory cycles through eight
+separate filters: armor, shields, weapons, ammunition, consumables, materials,
+keys, and key items. Equipment retains its equipped/unequipped state and every
+eligible object can still expose its Magic Box location.
+
+The first test catalogue contains a stackable iron ingot, a native silver key,
+and a unique sealed letter. Their default unit weight is 0.1. Materials use
+their `Amount` as the load multiplier and a complete stack occupies one Magic
+Box slot. Key items are non-stackable and can also enter the box.
+
+The silver key derives from GZDoom's native `Key`, so the engine itself prevents
+duplicates and recognizes it through `LOCKDEFS`. Lock number 200 can be passed
+to locked door specials or ACS locked actions. Keys deliberately remain in
+personal inventory: GZDoom's lock check only tests ownership and cannot see
+Caelum's `InMagicBox` field, so boxing the same native key would otherwise leave
+the lock usable. Its 0.1 weight always contributes to carried load.
+
+GZDoom also provides `PuzzleItem`, Strife quest/dialogue infrastructure, HUD
+messages, and programmable ZScript UI. These are reusable foundations for the
+future mission pass, while Caelum will still own the general objective tracker
+and presentation layer.
+
+## Native consumables and timed regeneration 4.9.0
+
+**Implemented and manually validated**
 
 Life potion, Anima potion, energy drink, food ration, and water ration are now
 stackable native GZDoom inventory objects. Their respective unit weights are
@@ -21,7 +68,7 @@ of maximum health, Anima restores 1% of maximum Anima, the energy drink restores
 thirst point. Reusing the same item refreshes its remaining duration to ten
 seconds instead of adding a second simultaneous intensity.
 
-The compact equipment interface includes a Consumables filter. Left/Right
+The compact inventory interface includes a Consumables filter. Left/Right
 selects the item, `P` creates a five-unit test stack on the floor, Enter/E uses
 one unit, `C` moves the complete stack between personal inventory and the Magic
 Box, and `D` drops it. Native previous/next/use inventory commands are also
@@ -502,6 +549,6 @@ jump scaling is Type 1.
 - Final buffs, debuffs, healing abilities, and dialogue consumers for the new
   Eloquence range/Labia values.
 - Save migration from profiles created with the legacy three-layer format.
-- Remaining weapon families, consumable, material, Tarot, and final visual
+- Remaining weapon families, material catalogue, Tarot, and final visual
   inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
   item actions are functional.

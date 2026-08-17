@@ -150,7 +150,10 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_WEAPON = 2;
     const EQUIPMENT_KIND_AMMUNITION = 3;
     const EQUIPMENT_KIND_CONSUMABLE = 4;
-    const EQUIPMENT_KIND_COUNT = 5;
+    const EQUIPMENT_KIND_MATERIAL = 5;
+    const EQUIPMENT_KIND_KEY = 6;
+    const EQUIPMENT_KIND_KEY_ITEM = 7;
+    const EQUIPMENT_KIND_COUNT = 8;
     const EQUIPMENT_ACTION_NONE = 0;
     const EQUIPMENT_ACTION_CREATED = 1;
     const EQUIPMENT_ACTION_EQUIPPED = 2;
@@ -166,6 +169,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX = 12;
     const EQUIPMENT_ACTION_SPAWNED_ON_FLOOR = 13;
     const EQUIPMENT_ACTION_USED = 14;
+    const EQUIPMENT_ACTION_FAILED_KEY_STORAGE = 15;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
@@ -213,6 +217,65 @@ class CaelumConstants : Object
     const CONSUMABLE_RATION_WEIGHT = 0.10;
     const CONSUMABLE_REGENERATION_SECONDS = 10;
     const CONSUMABLE_REGENERATION_PERCENT_PER_SECOND = 0.01;
+
+    // Objetos especiales 4.10. Los materiales son pilas; las llaves y los
+    // objetos clave son instancias unicas. El peso base puede sobrescribirse
+    // en futuras subclases sin alterar la suma autoritativa de Actor.Inv.
+    const SPECIAL_ITEM_DEFAULT_WEIGHT = 0.10;
+    // El indice cero conserva el lingote de prueba 4.10 para no invalidar
+    // partidas existentes. El resto forma el catalogo parametrizado 4.11.
+    const MATERIAL_IRON_INGOT = 0;
+    const MATERIAL_BLADE = 1;
+    const MATERIAL_SMALL_BLADE = 2;
+    const MATERIAL_CURVED_BLADE = 3;
+    const MATERIAL_LONG_BLADE = 4;
+    const MATERIAL_BROAD_BLADE = 5;
+    const MATERIAL_SHAFT = 6;
+    const MATERIAL_FRAME = 7;
+    const MATERIAL_LONG_FRAME = 8;
+    const MATERIAL_WEAPON_HEAD = 9;
+    const MATERIAL_ROUND_HEAD = 10;
+    const MATERIAL_PLATE = 11;
+    const MATERIAL_ROUND_PLATE = 12;
+    const MATERIAL_KITE_PLATE = 13;
+    const MATERIAL_TOWER_PLATE = 14;
+    const MATERIAL_MAGIC_PLATE = 15;
+    const MATERIAL_LARGE_PLATE = 16;
+    const MATERIAL_CHAINMAIL = 17;
+    const MATERIAL_FABRIC = 18;
+    const MATERIAL_LEATHER = 19;
+    const MATERIAL_FIRE_ESSENCE = 20;
+    const MATERIAL_WATER_ESSENCE = 21;
+    const MATERIAL_EARTH_ESSENCE = 22;
+    const MATERIAL_WIND_ESSENCE = 23;
+    const MATERIAL_QUINTESSENCE = 24;
+    const MATERIAL_HILT = 25;
+    const MATERIAL_LONG_HILT = 26;
+    const MATERIAL_POINT = 27;
+    const MATERIAL_HANDLE = 28;
+    const MATERIAL_LONG_HANDLE = 29;
+    const MATERIAL_BOWSTRING = 30;
+    const MATERIAL_REINFORCED_BOWSTRING = 31;
+    const MATERIAL_STRAP = 32;
+    const MATERIAL_REINFORCED_STRAP = 33;
+    const MATERIAL_BARREL = 34;
+    const MATERIAL_MECHANISM = 35;
+    const MATERIAL_STAFF_BASE = 36;
+    const MATERIAL_BELL_BASE = 37;
+    const MATERIAL_BOOK_BASE = 38;
+    const MATERIAL_STATUETTE_BASE = 39;
+    const MATERIAL_TYPE_COUNT = 40;
+    const MATERIAL_FAMILY_NONE = 0;
+    const MATERIAL_FAMILY_METAL = 1;
+    const MATERIAL_FAMILY_WOOD = 2;
+    const MATERIAL_FAMILY_ESSENCE = 3;
+    const MATERIAL_FAMILY_LEATHER = 4;
+    const MATERIAL_FAMILY_FABRIC = 5;
+    const KEY_SILVER = 0;
+    const KEY_TYPE_COUNT = 1;
+    const KEY_ITEM_SEALED_LETTER = 0;
+    const KEY_ITEM_TYPE_COUNT = 1;
+    const LOCK_CAELUM_SILVER = 200;
 
     // Lucidity is a fixed 100-point resource that refills in one minute.
     const MAXIMUM_LUCIDITY = 100.0;

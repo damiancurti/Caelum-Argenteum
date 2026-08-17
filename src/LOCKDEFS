@@ -1,0 +1,11 @@
+// Cerradura nativa de prueba para la llave de plata de Caelum Argenteum.
+// Puede usarse con Door_LockedRaise, Door_Animated, ACS_LockedExecute,
+// ACS_LockedExecuteDoor o Generic_Door pasando el numero 200.
+Lock 200
+{
+    CaelumSilverKey
+    Message "$CA_LOCK_SILVER_DOOR"
+    RemoteMessage "$CA_LOCK_SILVER_ACTION"
+    MapColor 192 192 208
+    LockedSound "misc/keytry"
+}

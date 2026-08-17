@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.11.0
+
+- Expanded the native material prototype into a 40-entry data-driven catalogue
+  covering weapon parts, shield plates, armor resources, elemental essences,
+  secondary components, and magical-item bases.
+- Added material families and three grade labels for metal, wood, essence,
+  leather, and fabric. Generic secondary components remain tier-independent.
+- Made material stack identity depend on both type and tier. Matching instances
+  stack natively; different materials or grades remain separate inventory items.
+- Preserved the validated 0.1 unit weight, carried-load overflow, one Magic Box
+  slot per complete stack, retrieval, and dropping behavior for every material.
+- Added `ca_debug_test_silver_lock`, which invokes GZDoom's native lock-200
+  check and therefore tests the real `LOCKDEFS` rule without a custom map door.
+- Corrected the old crafting-table weights for the kite and tower shields from
+  14/18 to their definitive tier-one values of 12/16.
+- Marked the manually tested 4.10 inventory categories, weight, stacking, and
+  Magic Box behavior as validated.
+
+## 4.10.0
+
+- Added native Materials, Keys, and Key Items inventory categories. The compact
+  inventory now exposes eight separate filters instead of mixing special items
+  with equipment or consumables.
+- Added a stackable iron-ingot prototype, a non-stackable native silver key,
+  and a unique sealed-letter key item. Each uses the default 0.1 unit weight.
+- Integrated materials and key items into carried load, automatic overweight
+  routing, one-slot-per-stack Magic Box storage, retrieval, and dropping.
+- Kept native keys in personal inventory because `LOCKDEFS` checks possession,
+  not Caelum's internal Magic Box state. Their weight still contributes to load.
+- Added lock 200 for `CaelumSilverKey`, including localized door and remote
+  action messages. It is ready for native locked doors and ACS locked actions.
+- Marked the complete 4.9 consumable pass as manually validated.
+
 ## 4.9.0
 
 - Added native, stackable life and Anima potions, energy drinks, food rations,
