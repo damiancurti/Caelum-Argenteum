@@ -177,6 +177,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 40.0;
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return 58.0;
+            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return 56.0;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return 72.0;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return 50.0;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return 62.0;

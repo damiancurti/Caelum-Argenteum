@@ -68,6 +68,7 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionArmorType;
     int EquipmentSelectionShieldType;
     int EquipmentSelectionWeaponType;
+    int EquipmentSelectionAmmunitionType;
     int EquipmentSelectionConsumableType;
     int EquipmentSelectionSpecialType;
     int EquipmentSelectionTier;
@@ -619,6 +620,20 @@ class CaelumPlayer : DoomPlayer
         return null;
     }
 
+    CaelumCarbineAmmo FindNativeAmmunition(int ammunitionType)
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
+            if (ammunition != null
+                && ammunition.GetAmmoType() == ammunitionType)
+            {
+                return ammunition;
+            }
+        }
+        return null;
+    }
+
     CaelumSpecialInventoryItem FindNativeSpecialItem(
         int specialCategory, int specialType, int specialTier = 0
     )
@@ -1048,59 +1063,91 @@ class CaelumPlayer : DoomPlayer
         return false;
     }
 
+    void EnsurePhysicalWeaponSelector(
+        int weaponType, class<Inventory> selectorClass
+    )
+    {
+        bool shouldExist = HasEquippedNativeWeaponType(weaponType);
+        if (shouldExist && FindInventory(selectorClass) == null)
+        {
+            GiveInventoryType(selectorClass);
+        }
+        else if (!shouldExist)
+        {
+            TakeInventory(selectorClass, 1);
+        }
+    }
+
     // Los selectores invisibles ocupan los botones nativos 2 a 6. Las piezas
-    // reales permanecen en Actor.Inv; estos actores solo cambian la familia.
+    // reales permanecen en Actor.Inv; repetir una tecla recorre los actores
+    // Weapon equipados que GZDoom mantiene dentro del mismo SlotNumber.
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
-        if (HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_SMALL
-        ) && FindInventory("CaelumLightWeapon") == null)
-        {
-            GiveInventoryType("CaelumLightWeapon");
-        }
-        else if (!HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_SMALL
-        ))
-        {
-            TakeInventory("CaelumLightWeapon", 1);
-        }
-        if (HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_ONE_HANDED
-        ) && FindInventory("CaelumSwordWeapon") == null)
-        {
-            GiveInventoryType("CaelumSwordWeapon");
-        }
-        else if (!HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_ONE_HANDED
-        ))
-        {
-            TakeInventory("CaelumSwordWeapon", 1);
-        }
-        if (HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_LARGE
-        ) && FindInventory("CaelumLargeWeapon") == null)
-        {
-            GiveInventoryType("CaelumLargeWeapon");
-        }
-        else if (!HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_LARGE
-        ))
-        {
-            TakeInventory("CaelumLargeWeapon", 1);
-        }
-        if (HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_RANGED
-        ) && FindInventory("CaelumCarbineWeapon") == null)
-        {
-            GiveInventoryType("CaelumCarbineWeapon");
-        }
-        else if (!HasEquippedWeaponFamily(
-            CaelumConstants.CATALOGUE_FAMILY_RANGED
-        ))
-        {
-            TakeInventory("CaelumCarbineWeapon", 1);
-        }
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_DAGGER,
+            "CaelumDaggerSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_HATCHET,
+            "CaelumHatchetSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_MACHETE,
+            "CaelumMacheteSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_JAVELIN,
+            "CaelumJavelinSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_SWORD,
+            "CaelumSwordSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_AXE,
+            "CaelumAxeSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_FLAIL,
+            "CaelumFlailSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_SPEAR,
+            "CaelumSpearSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_GREATSWORD,
+            "CaelumGreatswordSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_WAR_AXE,
+            "CaelumWarAxeSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_HALBERD,
+            "CaelumHalberdSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS,
+            "CaelumGiantGauntletsSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STANDARD_BOW,
+            "CaelumStandardBowSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_CARBINE,
+            "CaelumCarbineSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_LONGBOW,
+            "CaelumLongbowSelectorWeapon"
+        );
+        EnsurePhysicalWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_CROSSBOW,
+            "CaelumCrossbowSelectorWeapon"
+        );
         if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_STAFF)
             && FindInventory("CaelumStaffWeapon") == null)
         {
@@ -1145,8 +1192,12 @@ class CaelumPlayer : DoomPlayer
         {
             TakeInventory("CaelumStatuetteWeapon", 1);
         }
-        // El selector único de 4.7 queda retirado al migrar al sistema por
-        // familias; la propiedad y durabilidad permanecen en el registro.
+        // Los selectores genericos anteriores quedan retirados al migrar al
+        // ciclo nativo por arma; la propiedad y durabilidad no se modifican.
+        TakeInventory("CaelumLightWeapon", 1);
+        TakeInventory("CaelumSwordWeapon", 1);
+        TakeInventory("CaelumLargeWeapon", 1);
+        TakeInventory("CaelumCarbineWeapon", 1);
         TakeInventory("CaelumEquippedWeapon", 1);
     }
 
@@ -1450,6 +1501,11 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
+        EquipmentSelectionAmmunitionType = Clamp(
+            EquipmentSelectionAmmunitionType,
+            0,
+            CaelumConstants.AMMUNITION_TYPE_COUNT - 1
+        );
         EquipmentSelectionConsumableType = Clamp(
             EquipmentSelectionConsumableType,
             0,
@@ -1512,8 +1568,8 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(
-                FindInventory("CaelumCarbineAmmo")
+            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+                EquipmentSelectionAmmunitionType
             );
             EquipmentSelectionOwned = ammunition != null
                 && ammunition.Amount > 0;
@@ -1523,7 +1579,7 @@ class CaelumPlayer : DoomPlayer
             EquipmentSelectionStackAmount = EquipmentSelectionOwned
                 ? ammunition.Amount : 0;
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
-                * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+                * (ammunition != null ? ammunition.GetUnitWeight() : 0.0);
             return;
         }
 
@@ -2221,6 +2277,25 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    Name GetAmmunitionClassName(int ammunitionType)
+    {
+        switch (ammunitionType)
+        {
+            case CaelumConstants.AMMUNITION_ARROW:
+                return 'CaelumArrowAmmo';
+            case CaelumConstants.AMMUNITION_BOLT:
+                return 'CaelumBoltAmmo';
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
+                return 'CaelumJavelinTierOneAmmo';
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
+                return 'CaelumJavelinTierTwoAmmo';
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
+                return 'CaelumJavelinTierThreeAmmo';
+            default:
+                return 'CaelumCarbineAmmo';
+        }
+    }
+
     Name GetSpecialItemClassName(int specialCategory, int specialType)
     {
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
@@ -2309,8 +2384,14 @@ class CaelumPlayer : DoomPlayer
     void CycleEquipmentType(int direction)
     {
         if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return; }
-        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            EquipmentSelectionAmmunitionType = (
+                EquipmentSelectionAmmunitionType + direction
+                    + CaelumConstants.AMMUNITION_TYPE_COUNT
+            ) % CaelumConstants.AMMUNITION_TYPE_COUNT;
+        }
+        else if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             int typeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
             int firstType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
@@ -2763,12 +2844,12 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(
-                FindInventory("CaelumCarbineAmmo")
+            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+                EquipmentSelectionAmmunitionType
             );
             if (ammunition == null || ammunition.Amount <= 0) { return; }
             double stackWeight = ammunition.Amount
-                * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+                * ammunition.GetUnitWeight();
             if (ammunition.InMagicBox)
             {
                 if (!CanAddWeightToPersonalInventory(stackWeight))
@@ -3150,10 +3231,16 @@ class CaelumPlayer : DoomPlayer
         else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            pickup = Spawn("CaelumCarbineAmmo", spawnPos, NO_REPLACE);
+            pickup = Spawn(
+                GetAmmunitionClassName(EquipmentSelectionAmmunitionType),
+                spawnPos,
+                NO_REPLACE
+            );
             if (pickup != null)
             {
-                Inventory(pickup).Amount = 100;
+                bool isJavelin = EquipmentSelectionAmmunitionType
+                    >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
+                Inventory(pickup).Amount = isJavelin ? 5 : 100;
             }
         }
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
@@ -3460,8 +3547,8 @@ class CaelumPlayer : DoomPlayer
         else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(
-                FindInventory("CaelumCarbineAmmo")
+            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+                EquipmentSelectionAmmunitionType
             );
             if (ammunition == null || ammunition.Amount <= 0) { return; }
             ammunition.InMagicBox = false;
@@ -5172,6 +5259,12 @@ class CaelumPlayer : DoomPlayer
             PerformDebugStaffAttack(true);
             return;
         }
+        if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
+            && !HasJavelinMeleeFallbackTarget())
+        {
+            PerformJavelinThrow();
+            return;
+        }
         if (catalogueWeapon >= 0
             && CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon) > 0.0)
         {
@@ -5182,6 +5275,157 @@ class CaelumPlayer : DoomPlayer
                     WeaponModel.GetAttackTics() / double(TICRATE);
             }
         }
+    }
+
+    bool HasJavelinMeleeFallbackTarget()
+    {
+        FTranslatedLineTarget targetData;
+        Actor detectionPuff;
+        int ignoredDamage;
+        [detectionPuff, ignoredDamage] = LineAttack(
+            Angle,
+            CaelumWeaponCatalogue.GetPrimaryRange(
+                CaelumConstants.CATALOGUE_WEAPON_JAVELIN
+            ),
+            Pitch,
+            0,
+            'CaelumMeleeTest',
+            'CaelumNoDamageThrustPuff',
+            LAF_ISMELEEATTACK | LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
+            targetData
+        );
+        return targetData.linetarget != null;
+    }
+
+    int GetJavelinAmmunitionTypeForTier(int tier)
+    {
+        if (tier >= 3)
+        {
+            return CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE;
+        }
+        if (tier == 2)
+        {
+            return CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO;
+        }
+        return CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
+    }
+
+    Name GetJavelinProjectileClassForTier(int tier)
+    {
+        if (tier >= 3) { return 'CaelumJavelinTierThreeProjectile'; }
+        if (tier == 2) { return 'CaelumJavelinTierTwoProjectile'; }
+        return 'CaelumJavelinTierOneProjectile';
+    }
+
+    void PerformJavelinThrow()
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_JAVELIN
+            || WeaponModel.Durability <= 0 || DerivedStats == null)
+        {
+            return;
+        }
+
+        int ammunitionType = GetJavelinAmmunitionTypeForTier(
+            WeaponModel.Tier
+        );
+        CaelumCarbineAmmo ammunition = FindNativeAmmunition(ammunitionType);
+        if (ammunition == null || ammunition.Amount <= 0
+            || ammunition.InMagicBox)
+        {
+            return;
+        }
+
+        int catalogueWeapon = CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
+        double airCost = CaelumWeaponCatalogue.GetSecondaryAirCost(
+            catalogueWeapon
+        ) * DerivedStats.AirConsumptionMultiplier;
+        if (CurrentAir < airCost) { return; }
+
+        UpdateLucidityAccuracyEffects();
+        UpdateCrouchEffects();
+        double movementAccuracyMultiplier = IsCrouching
+            ? CrouchAccuracyMultiplier
+            : (IsRunningOnGround()
+                ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER
+                : 1.0);
+        double accuracyPercent = Max(
+            1.0,
+            EffectivePhysicalAccuracyPercent * movementAccuracyMultiplier
+        );
+        double minimumSpread = CaelumWeaponCatalogue.GetMinimumSpread(
+            catalogueWeapon
+        ) * 100.0 / accuracyPercent;
+        double maximumSpread = CaelumWeaponCatalogue.GetMaximumSpread(
+            catalogueWeapon
+        ) * 100.0 / accuracyPercent;
+        double spreadRoll = Random[CaelumJavelinSpread](0, 100000)
+            / 100000.0;
+        double spreadMagnitude = minimumSpread
+            + (maximumSpread - minimumSpread) * spreadRoll;
+        double yawOffset = Random[CaelumJavelinYaw](-100000, 100000)
+            / 100000.0 * spreadMagnitude;
+        double pitchOffset = Random[CaelumJavelinPitch](-100000, 100000)
+            / 100000.0 * spreadMagnitude;
+
+        double criticalBonus = Max(
+            0.0,
+            DerivedStats.PhysicalCriticalChance
+                - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
+        );
+        double criticalChance = Clamp(
+            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
+                + criticalBonus) * CrouchCriticalChanceMultiplier,
+            0.0,
+            100.0
+        );
+        int criticalRoll = Random[CaelumJavelinCritical](0, 999999);
+        bool criticalHit = criticalRoll / 10000.0 < criticalChance;
+        double damage = CaelumWeaponCatalogue.GetSecondaryDamage(
+            catalogueWeapon
+        ) * WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier)
+            * EffectiveOffensiveDamageMultiplier;
+
+        double attackAngle = Angle + yawOffset;
+        double attackPitch = Pitch + pitchOffset;
+        Vector3 spawnPos = Pos + (
+            Cos(attackAngle) * 32.0,
+            Sin(attackAngle) * 32.0,
+            Height * 0.65
+        );
+        CaelumJavelinProjectile projectile = CaelumJavelinProjectile(
+            Spawn(
+                GetJavelinProjectileClassForTier(WeaponModel.Tier),
+                spawnPos,
+                NO_REPLACE
+            )
+        );
+        if (projectile == null) { return; }
+
+        projectile.Target = self;
+        projectile.Angle = attackAngle;
+        projectile.Pitch = attackPitch;
+        double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_SLOW;
+        projectile.Vel = (
+            Cos(attackPitch) * Cos(attackAngle) * projectileSpeed,
+            Cos(attackPitch) * Sin(attackAngle) * projectileSpeed,
+            -Sin(attackPitch) * projectileSpeed
+        );
+        projectile.StoreCaelumAttackResult(
+            Max(1, int(damage + 0.5)),
+            true,
+            criticalHit,
+            false,
+            DerivedStats.PhysicalPushMultiplier
+        );
+
+        ammunition.Amount = Max(0, ammunition.Amount - 1);
+        CurrentAir = Max(0.0, CurrentAir - airCost);
+        UpdateAirStateEffects();
+        EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics()
+            / double(TICRATE);
+        MarkCombatActivity();
+        RefreshCarriedInventorySummary();
     }
 
     void PerformCarbineAttack()

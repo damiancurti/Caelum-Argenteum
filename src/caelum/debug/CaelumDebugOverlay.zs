@@ -331,6 +331,25 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetAmmunitionTypeKey(int ammunitionType)
+    {
+        switch (ammunitionType)
+        {
+            case CaelumConstants.AMMUNITION_ARROW:
+                return "CA_WEAPON_AMMO_ARROWS";
+            case CaelumConstants.AMMUNITION_BOLT:
+                return "CA_WEAPON_AMMO_BOLTS";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
+                return "CA_WEAPON_AMMO_JAVELIN_T1";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
+                return "CA_WEAPON_AMMO_JAVELIN_T2";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
+                return "CA_WEAPON_AMMO_JAVELIN_T3";
+            default:
+                return "CA_WEAPON_AMMO_CARTRIDGES";
+        }
+    }
+
     ui String GetSpecialItemTypeKey(int specialCategory, int specialType)
     {
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
@@ -927,7 +946,12 @@ class CaelumDebugOverlay : EventHandler
         {
             selection = String.Format(
                 "%s x%d",
-                StringTable.Localize("CA_WEAPON_AMMO_CARTRIDGES", false),
+                StringTable.Localize(
+                    GetAmmunitionTypeKey(
+                        localPlayer.EquipmentSelectionAmmunitionType
+                    ),
+                    false
+                ),
                 localPlayer.EquipmentSelectionStackAmount
             );
         }

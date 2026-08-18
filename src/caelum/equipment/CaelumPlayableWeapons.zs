@@ -338,6 +338,180 @@ class CaelumCarbineWeapon : Weapon
     }
 }
 
+// Cada arma fisica posee su propio selector nativo invisible. Compartir el
+// SlotNumber hace que GZDoom recorra las armas equipadas de una familia al
+// repetir su tecla, sin duplicar los objetos reales guardados en Actor.Inv.
+class CaelumPhysicalSelectorWeapon : Weapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 200;
+        Weapon.SlotNumber 2;
+        Weapon.KickBack 0;
+        +WEAPON.NOALERT
+        +INVENTORY.UNDROPPABLE
+    }
+
+    virtual int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_DAGGER;
+    }
+
+    action void A_CaelumActivateWeapon()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ActivateEquippedWeaponType(
+                invoker.GetCaelumWeaponType()
+            );
+        }
+    }
+
+    action void A_CaelumWeaponPrimary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+                invoker.GetCaelumWeaponType()
+            );
+        }
+    }
+
+    action void A_CaelumWeaponSecondary()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.PerformWeaponFamilySecondaryAction(
+                invoker.GetCaelumWeaponType()
+            );
+        }
+    }
+
+    States
+    {
+    Ready:
+        TNT1 A 1 A_WeaponReady;
+        Loop;
+    Deselect:
+        TNT1 A 1 A_Lower;
+        Loop;
+    Select:
+        TNT1 A 0 A_CaelumActivateWeapon;
+        TNT1 A 1 A_Raise;
+        Loop;
+    Fire:
+        TNT1 A 0 A_CaelumWeaponPrimary;
+        TNT1 A 1;
+        Goto Ready;
+    AltFire:
+        TNT1 A 0 A_CaelumWeaponSecondary;
+        TNT1 A 1;
+        Goto Ready;
+    Spawn:
+        TNT1 A -1;
+        Stop;
+    }
+}
+
+class CaelumDaggerSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 203; Weapon.SlotNumber 2; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_DAGGER; }
+}
+
+class CaelumHatchetSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 202; Weapon.SlotNumber 2; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_HATCHET; }
+}
+
+class CaelumMacheteSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 201; Weapon.SlotNumber 2; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_MACHETE; }
+}
+
+class CaelumJavelinSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 200; Weapon.SlotNumber 2; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_JAVELIN; }
+}
+
+class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 303; Weapon.SlotNumber 3; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_SWORD; }
+}
+
+class CaelumAxeSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 302; Weapon.SlotNumber 3; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_AXE; }
+}
+
+class CaelumFlailSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 301; Weapon.SlotNumber 3; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_FLAIL; }
+}
+
+class CaelumSpearSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 300; Weapon.SlotNumber 3; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_SPEAR; }
+}
+
+class CaelumGreatswordSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 403; Weapon.SlotNumber 4; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_GREATSWORD; }
+}
+
+class CaelumWarAxeSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 402; Weapon.SlotNumber 4; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_WAR_AXE; }
+}
+
+class CaelumHalberdSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 401; Weapon.SlotNumber 4; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_HALBERD; }
+}
+
+class CaelumGiantGauntletsSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 400; Weapon.SlotNumber 4; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS; }
+}
+
+class CaelumStandardBowSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 503; Weapon.SlotNumber 5; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_STANDARD_BOW; }
+}
+
+class CaelumCarbineSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 502; Weapon.SlotNumber 5; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_CARBINE; }
+}
+
+class CaelumLongbowSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 501; Weapon.SlotNumber 5; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_LONGBOW; }
+}
+
+class CaelumCrossbowSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 500; Weapon.SlotNumber 5; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_CROSSBOW; }
+}
+
 // Las cuatro armas de esencia comparten la familia numerica 6, pero cada una
 // necesita su propio selector nativo para que repetir la tecla 6 las recorra.
 class CaelumMagicSelectorWeapon : Weapon
@@ -499,6 +673,70 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         PUFF A 24 Bright;
         Stop;
     Death:
+        PUFF BCD 2 Bright;
+        Stop;
+    }
+}
+
+// El proyectil lento conserva el daño, el crítico y el empuje preparados por
+// el jugador. Al morir genera una unidad recuperable del mismo tier.
+class CaelumJavelinProjectile : CaelumCarbineProjectile
+{
+    Default
+    {
+        Speed 15;
+        DamageType "CaelumRangedTest";
+        -NOGRAVITY
+    }
+
+    States
+    {
+    Spawn:
+        BON1 A 1 Bright;
+        Loop;
+    }
+}
+
+class CaelumJavelinTierOneProjectile : CaelumJavelinProjectile
+{
+    States
+    {
+    Death:
+        TNT1 A 0 A_SpawnItemEx(
+            "CaelumJavelinTierOneAmmo",
+            0, 0, 0, 0, 0, 0, 0,
+            SXF_NOCHECKPOSITION
+        );
+        PUFF BCD 2 Bright;
+        Stop;
+    }
+}
+
+class CaelumJavelinTierTwoProjectile : CaelumJavelinProjectile
+{
+    States
+    {
+    Death:
+        TNT1 A 0 A_SpawnItemEx(
+            "CaelumJavelinTierTwoAmmo",
+            0, 0, 0, 0, 0, 0, 0,
+            SXF_NOCHECKPOSITION
+        );
+        PUFF BCD 2 Bright;
+        Stop;
+    }
+}
+
+class CaelumJavelinTierThreeProjectile : CaelumJavelinProjectile
+{
+    States
+    {
+    Death:
+        TNT1 A 0 A_SpawnItemEx(
+            "CaelumJavelinTierThreeAmmo",
+            0, 0, 0, 0, 0, 0, 0,
+            SXF_NOCHECKPOSITION
+        );
         PUFF BCD 2 Bright;
         Stop;
     }

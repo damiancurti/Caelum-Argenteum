@@ -309,3 +309,65 @@ class CaelumBoltAmmo : CaelumCarbineAmmo
         Stop;
     }
 }
+
+// Las jabalinas arrojables usan pilas nativas separadas por tier. Recoger el
+// proyectil devuelve exactamente una unidad a la pila correspondiente.
+class CaelumJavelinTierOneAmmo : CaelumCarbineAmmo
+{
+    override int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
+    }
+
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.JAVELIN_TIER_ONE_AMMO_UNIT_WEIGHT;
+    }
+
+    States
+    {
+    Spawn:
+        BON1 A -1;
+        Stop;
+    }
+}
+
+class CaelumJavelinTierTwoAmmo : CaelumCarbineAmmo
+{
+    override int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO;
+    }
+
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.JAVELIN_TIER_TWO_AMMO_UNIT_WEIGHT;
+    }
+
+    States
+    {
+    Spawn:
+        BON1 A -1;
+        Stop;
+    }
+}
+
+class CaelumJavelinTierThreeAmmo : CaelumCarbineAmmo
+{
+    override int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE;
+    }
+
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.JAVELIN_TIER_THREE_AMMO_UNIT_WEIGHT;
+    }
+
+    States
+    {
+    Spawn:
+        BON1 A -1;
+        Stop;
+    }
+}

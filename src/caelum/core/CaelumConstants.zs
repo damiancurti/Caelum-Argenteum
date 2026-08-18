@@ -298,10 +298,18 @@ class CaelumConstants : Object
     const AMMUNITION_CARBINE = 0;
     const AMMUNITION_ARROW = 1;
     const AMMUNITION_BOLT = 2;
-    const AMMUNITION_TYPE_COUNT = 3;
+    const AMMUNITION_JAVELIN_TIER_ONE = 3;
+    const AMMUNITION_JAVELIN_TIER_TWO = 4;
+    const AMMUNITION_JAVELIN_TIER_THREE = 5;
+    const AMMUNITION_TYPE_COUNT = 6;
     const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
     const ARROW_AMMO_UNIT_WEIGHT = 0.05;
     const BOLT_AMMO_UNIT_WEIGHT = 0.05;
+    // Cada proyectil es una jabalina completa de talle M. El tier conserva
+    // el escalado de peso 100%/150%/200% del arma correspondiente.
+    const JAVELIN_TIER_ONE_AMMO_UNIT_WEIGHT = 4.0;
+    const JAVELIN_TIER_TWO_AMMO_UNIT_WEIGHT = 6.0;
+    const JAVELIN_TIER_THREE_AMMO_UNIT_WEIGHT = 8.0;
     const WEAPON_CARBINE_PROJECTILE_SPEED = 80.0;
 
     // Catálogo físico 4.12. Estos identificadores describen las dieciséis
