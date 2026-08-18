@@ -208,11 +208,11 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
             case CaelumConstants.CATALOGUE_WEAPON_AXE:
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
                 return 110.0;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE:
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
                 return 130.0;
             default: return 70.0;
         }
