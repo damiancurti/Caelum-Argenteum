@@ -5101,21 +5101,9 @@ class CaelumPlayer : DoomPlayer
             * EffectiveOffensiveDamageMultiplier;
         int integerDamage = Max(1, int(LastStaffCalculatedDamage + 0.5));
 
-        // El libro adquiere su objetivo dentro del alcance real del hechizo;
-        // la traza solo selecciona y nunca aplica daño hitscan.
+        // El alcance real del hechizo tambien limita el guiado del libro.
         double spellRange = CaelumConstants.ESSENCE_BASE_RANGE_MAP_UNITS
             * DerivedStats.AbilityRangePercent / 100.0;
-        FTranslatedLineTarget targetData;
-        if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
-        {
-            Actor selectionPuff;
-            int selectionDamage;
-            [selectionPuff, selectionDamage] = LineAttack(
-                attackAngle, spellRange, attackPitch, 0,
-                'CaelumMagicTest', 'CaelumNoDamageThrustPuff',
-                LAF_NOINTERACT | LAF_NORANDOMPUFFZ, targetData
-            );
-        }
 
         int projectileCount = activeMagicType
             == CaelumConstants.WEAPON_TYPE_BELL ? 3 : 1;
@@ -5171,7 +5159,6 @@ class CaelumPlayer : DoomPlayer
             }
             if (projectile == null) { continue; }
             projectile.Target = self;
-            projectile.Tracer = targetData.linetarget;
             projectile.Angle = projectileAngle;
             projectile.Pitch = projectilePitch;
             double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_NORMAL;
@@ -5195,6 +5182,22 @@ class CaelumPlayer : DoomPlayer
                 integerDamage, true, projectileCritical, true,
                 DerivedStats.MagicalPushMultiplier
             );
+            if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
+            {
+                CaelumHomingMagicProjectile homingProjectile =
+                    CaelumHomingMagicProjectile(projectile);
+                if (homingProjectile != null)
+                {
+                    // La adquisicion usa la mira original. La dispersion solo
+                    // modifica la trayectoria inicial del proyectil.
+                    homingProjectile.ConfigureCaelumSeeking(
+                        spellRange,
+                        Angle,
+                        Pitch,
+                        maximumAimError
+                    );
+                }
+            }
             if (activeMagicType == CaelumConstants.WEAPON_TYPE_STATUETTE)
             {
                 CaelumExplosiveMagicProjectile explosiveProjectile =

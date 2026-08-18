@@ -550,16 +550,159 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
 
 class CaelumHomingMagicProjectile : CaelumPlayerMagicProjectile
 {
+    Vector3 CaelumSeekOrigin;
+    double CaelumSeekRange;
+    double CaelumSeekAimAngle;
+    double CaelumSeekAimPitch;
+    double CaelumSeekHalfAngle;
+    int CaelumSeekRetryTics;
+
     Default
     {
         +SEEKERMISSILE
         +INTERPOLATEANGLES
     }
 
+    void ConfigureCaelumSeeking(
+        double seekRange,
+        double aimAngle,
+        double aimPitch,
+        double halfAngle
+    )
+    {
+        CaelumSeekOrigin = Pos;
+        CaelumSeekRange = Max(1.0, seekRange);
+        CaelumSeekAimAngle = aimAngle;
+        CaelumSeekAimPitch = aimPitch;
+        CaelumSeekHalfAngle = Max(0.1, halfAngle);
+        CaelumSeekRetryTics = 0;
+        Tracer = FindBestCaelumSeekTarget();
+    }
+
+    bool IsCaelumSeekCandidate(Actor candidate, bool requireAimCone)
+    {
+        if (candidate == null
+            || candidate == Target
+            || candidate.health <= 0
+            || !candidate.bShootable)
+        {
+            return false;
+        }
+
+        // Solo se adquieren combatientes y el muneco construido para pruebas;
+        // decoraciones destructibles no deben atraer los hechizos del libro.
+        bool isCombatTarget = candidate.bMonster
+            || candidate.player != null
+            || CaelumTrainingDummy(candidate) != null;
+        if (!isCombatTarget) { return false; }
+        if (Target != null && candidate.IsFriend(Target)) { return false; }
+
+        Vector3 candidateCenter = candidate.Pos
+            + (0.0, 0.0, candidate.Height * 0.5);
+        Vector3 offset = candidateCenter - CaelumSeekOrigin;
+        if (offset.Length() > CaelumSeekRange) { return false; }
+        if (!CheckSight(candidate)) { return false; }
+        if (!requireAimCone) { return true; }
+
+        Vector2 horizontalOffset = (offset.X, offset.Y);
+        double targetAngle = VectorAngle(offset.X, offset.Y);
+        double targetPitch = -ATan2(
+            offset.Z,
+            Max(0.001, horizontalOffset.Length())
+        );
+        double yawDifference = Abs(DeltaAngle(
+            CaelumSeekAimAngle,
+            targetAngle
+        ));
+        double pitchDifference = Abs(DeltaAngle(
+            CaelumSeekAimPitch,
+            targetPitch
+        ));
+        return yawDifference <= CaelumSeekHalfAngle
+            && pitchDifference <= CaelumSeekHalfAngle;
+    }
+
+    Actor FindBestCaelumSeekTarget()
+    {
+        Actor bestTarget;
+        double bestAngularScore = double.max;
+        double bestDistance = double.max;
+        ThinkerIterator iterator = ThinkerIterator.Create("Actor");
+        Thinker entry;
+
+        while ((entry = iterator.Next()) != null)
+        {
+            Actor candidate = Actor(entry);
+            if (!IsCaelumSeekCandidate(candidate, true)) { continue; }
+
+            Vector3 candidateCenter = candidate.Pos
+                + (0.0, 0.0, candidate.Height * 0.5);
+            Vector3 offset = candidateCenter - CaelumSeekOrigin;
+            Vector2 horizontalOffset = (offset.X, offset.Y);
+            double targetAngle = VectorAngle(offset.X, offset.Y);
+            double targetPitch = -ATan2(
+                offset.Z,
+                Max(0.001, horizontalOffset.Length())
+            );
+            double yawDifference = Abs(DeltaAngle(
+                CaelumSeekAimAngle,
+                targetAngle
+            ));
+            double pitchDifference = Abs(DeltaAngle(
+                CaelumSeekAimPitch,
+                targetPitch
+            ));
+            double angularScore = yawDifference * yawDifference
+                + pitchDifference * pitchDifference;
+            double distance = offset.Length();
+
+            // La prioridad es la cercania a la mira; la distancia solo
+            // desempata objetivos con practicamente el mismo angulo.
+            if (angularScore < bestAngularScore
+                || (Abs(angularScore - bestAngularScore) < 0.0001
+                    && distance < bestDistance))
+            {
+                bestTarget = candidate;
+                bestAngularScore = angularScore;
+                bestDistance = distance;
+            }
+        }
+        return bestTarget;
+    }
+
+    action void A_UpdateCaelumSeeking()
+    {
+        // Las acciones de estado resuelven los campos propios desde invoker
+        // para evitar el self ambiguo de GZDoom 4.14.2.
+        if (!invoker.IsCaelumSeekCandidate(invoker.Tracer, false))
+        {
+            invoker.Tracer = null;
+            if (invoker.CaelumSeekRetryTics <= 0)
+            {
+                invoker.Tracer = invoker.FindBestCaelumSeekTarget();
+                invoker.CaelumSeekRetryTics = 3;
+            }
+            else
+            {
+                invoker.CaelumSeekRetryTics--;
+            }
+        }
+        else
+        {
+            invoker.CaelumSeekRetryTics = 0;
+        }
+
+        if (invoker.Tracer != null)
+        {
+            // Valores equivalentes al giro base del proyectil del Revenant.
+            invoker.A_SeekerMissile(10, 30);
+        }
+    }
+
     States
     {
     Spawn:
-        PUFF A 1 Bright A_SeekerMissile(10, 30);
+        PUFF A 1 Bright A_UpdateCaelumSeeking;
         Loop;
     }
 }
