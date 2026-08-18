@@ -4,36 +4,55 @@ class CaelumCraftingRules : Object
 {
     static int GetPlayableRecipeWeapon(int recipeIndex)
     {
-        return recipeIndex <= 0
-            ? CaelumConstants.CATALOGUE_WEAPON_SWORD
-            : CaelumConstants.CATALOGUE_WEAPON_CARBINE;
+        return CaelumWeaponCatalogue.ResolveWeapon(recipeIndex);
     }
 
     static int GetPlayableWeaponType(int weaponId)
     {
         int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
-        if (resolved == CaelumConstants.CATALOGUE_WEAPON_SWORD)
+        switch (resolved)
         {
-            return CaelumConstants.WEAPON_TYPE_SWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.WEAPON_TYPE_DAGGER;
+            case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return CaelumConstants.WEAPON_TYPE_HATCHET;
+            case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_TYPE_MACHETE;
+            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_TYPE_JAVELIN;
+            case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.WEAPON_TYPE_SWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_TYPE_AXE;
+            case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return CaelumConstants.WEAPON_TYPE_FLAIL;
+            case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return CaelumConstants.WEAPON_TYPE_SPEAR;
+            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return CaelumConstants.WEAPON_TYPE_GREATSWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.WEAPON_TYPE_WAR_AXE;
+            case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.WEAPON_TYPE_HALBERD;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS;
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return CaelumConstants.WEAPON_TYPE_STANDARD_BOW;
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.WEAPON_TYPE_CARBINE;
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.WEAPON_TYPE_LONGBOW;
+            default: return CaelumConstants.WEAPON_TYPE_CROSSBOW;
         }
-        if (resolved == CaelumConstants.CATALOGUE_WEAPON_CARBINE)
-        {
-            return CaelumConstants.WEAPON_TYPE_CARBINE;
-        }
-        return -1;
     }
 
     static int GetCatalogueWeaponForPlayableType(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_SWORD)
+        switch (weaponType)
         {
-            return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+            case CaelumConstants.WEAPON_TYPE_DAGGER: return CaelumConstants.CATALOGUE_WEAPON_DAGGER;
+            case CaelumConstants.WEAPON_TYPE_HATCHET: return CaelumConstants.CATALOGUE_WEAPON_HATCHET;
+            case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.CATALOGUE_WEAPON_MACHETE;
+            case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
+            case CaelumConstants.WEAPON_TYPE_SWORD: return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+            case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.CATALOGUE_WEAPON_AXE;
+            case CaelumConstants.WEAPON_TYPE_FLAIL: return CaelumConstants.CATALOGUE_WEAPON_FLAIL;
+            case CaelumConstants.WEAPON_TYPE_SPEAR: return CaelumConstants.CATALOGUE_WEAPON_SPEAR;
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD: return CaelumConstants.CATALOGUE_WEAPON_GREATSWORD;
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE: return CaelumConstants.CATALOGUE_WEAPON_WAR_AXE;
+            case CaelumConstants.WEAPON_TYPE_HALBERD: return CaelumConstants.CATALOGUE_WEAPON_HALBERD;
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS;
+            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW;
+            case CaelumConstants.WEAPON_TYPE_CARBINE: return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
+            case CaelumConstants.WEAPON_TYPE_LONGBOW: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW: return CaelumConstants.CATALOGUE_WEAPON_CROSSBOW;
+            default: return -1;
         }
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
-        {
-            return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
-        }
-        return -1;
     }
 
     static int GetRecoveredMaterialUnits(int requiredUnits)
@@ -46,10 +65,25 @@ class CaelumCraftingRules : Object
 
     static double GetPlayableTierOneWeight(int weaponId)
     {
-        return GetPlayableWeaponType(weaponId)
-                == CaelumConstants.WEAPON_TYPE_CARBINE
-            ? CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT
-            : CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT;
+        switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+        {
+            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.WEAPON_DAGGER_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return CaelumConstants.WEAPON_HATCHET_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_MACHETE_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_AXE_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return CaelumConstants.WEAPON_FLAIL_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return CaelumConstants.WEAPON_SPEAR_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return CaelumConstants.WEAPON_GREATSWORD_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.WEAPON_WAR_AXE_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.WEAPON_HALBERD_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_GIANT_GAUNTLETS_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return CaelumConstants.WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.WEAPON_LONGBOW_TIER_ONE_WEIGHT;
+            default: return CaelumConstants.WEAPON_CROSSBOW_TIER_ONE_WEIGHT;
+        }
     }
 
     static int GetPrimaryMaterial(int weaponId)

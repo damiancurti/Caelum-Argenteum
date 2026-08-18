@@ -22,6 +22,14 @@ class CaelumPlayer : DoomPlayer
     double HUDCarriedWeight;
     double HUDCarryCapacity;
     double HUDLoadRatio;
+    // Copias simples para que el HUD pueda leer el arma activa sin invocar
+    // funciones de play scope desde el contexto de interfaz.
+    bool HUDHasActiveWeapon;
+    int HUDActiveWeaponType;
+    int HUDActiveWeaponTier;
+    int HUDActiveWeaponSize;
+    double HUDActiveWeaponNoticeRemaining;
+    bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
     bool DebugAttributesAt75;
     bool DebugAttributesAt100;
@@ -544,13 +552,14 @@ class CaelumPlayer : DoomPlayer
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
             if (item != null && item.InMagicBox) { total++; }
         }
-        CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(
-            FindInventory("CaelumCarbineAmmo")
-        );
-        if (ammunition != null && ammunition.Amount > 0
-            && ammunition.InMagicBox)
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
-            total++;
+            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
+            if (ammunition != null && ammunition.Amount > 0
+                && ammunition.InMagicBox)
+            {
+                total++;
+            }
         }
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -646,11 +655,18 @@ class CaelumPlayer : DoomPlayer
     {
         if (ammunition == null || DerivedStats == null) { return false; }
         // Si ya existe una pila, HandlePickup decide usando el estado de ella.
-        if (FindInventory("CaelumCarbineAmmo") != null) { return true; }
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumCarbineAmmo existing = CaelumCarbineAmmo(cursor);
+            if (existing != null
+                && existing.GetAmmoType() == ammunition.GetAmmoType())
+            {
+                return true;
+            }
+        }
         RefreshCarriedInventorySummary();
         ammunition.InMagicBox = false;
-        double incomingWeight = ammunition.Amount
-            * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+        double incomingWeight = ammunition.Amount * ammunition.GetUnitWeight();
         if (!CanAddWeightToPersonalInventory(incomingWeight))
         {
             if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
@@ -672,7 +688,7 @@ class CaelumPlayer : DoomPlayer
         if (ammunition.InMagicBox) { return true; }
         RefreshCarriedInventorySummary();
         double incomingWeight = Max(0, incomingAmount)
-            * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+            * ammunition.GetUnitWeight();
         if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
         if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
         {
@@ -960,45 +976,111 @@ class CaelumPlayer : DoomPlayer
         return total;
     }
 
-    // Los tres actores invisibles ocupan los botones nativos de sus familias:
-    // espada 3, carabina 5 y bastón 6. Las piezas reales permanecen visibles
-    // en Actor.Inv; estos actores solo permiten cambiar la familia activa.
+    int GetWeaponFamilyForType(int weaponType)
+    {
+        if (WeaponModel != null && WeaponModel.IsMagicalType(weaponType))
+        {
+            return 6;
+        }
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
+        if (catalogueWeapon < 0) { return 0; }
+        return CaelumWeaponCatalogue.GetFamily(catalogueWeapon);
+    }
+
+    bool HasEquippedWeaponFamily(int family)
+    {
+        for (int weaponType = 0;
+            weaponType < CaelumConstants.WEAPON_TYPE_COUNT; weaponType++)
+        {
+            if (GetWeaponFamilyForType(weaponType) == family
+                && HasEquippedNativeWeaponType(weaponType))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool ActivateEquippedWeaponFamily(int family)
+    {
+        if (WeaponModel != null && WeaponModel.Equipped
+            && GetWeaponFamilyForType(WeaponModel.WeaponType) == family
+            && HasEquippedNativeWeaponType(WeaponModel.WeaponType))
+        {
+            return true;
+        }
+        for (int weaponType = 0;
+            weaponType < CaelumConstants.WEAPON_TYPE_COUNT; weaponType++)
+        {
+            if (GetWeaponFamilyForType(weaponType) == family
+                && ActivateEquippedWeaponType(weaponType))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Los selectores invisibles ocupan los botones nativos 2 a 6. Las piezas
+    // reales permanecen en Actor.Inv; estos actores solo cambian la familia.
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
-        if (HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_SWORD
+        if (HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_SMALL
+        ) && FindInventory("CaelumLightWeapon") == null)
+        {
+            GiveInventoryType("CaelumLightWeapon");
+        }
+        else if (!HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_SMALL
+        ))
+        {
+            TakeInventory("CaelumLightWeapon", 1);
+        }
+        if (HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_ONE_HANDED
         ) && FindInventory("CaelumSwordWeapon") == null)
         {
             GiveInventoryType("CaelumSwordWeapon");
         }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_SWORD
+        else if (!HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_ONE_HANDED
         ))
         {
             TakeInventory("CaelumSwordWeapon", 1);
         }
-        if (HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_CARBINE
+        if (HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_LARGE
+        ) && FindInventory("CaelumLargeWeapon") == null)
+        {
+            GiveInventoryType("CaelumLargeWeapon");
+        }
+        else if (!HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_LARGE
+        ))
+        {
+            TakeInventory("CaelumLargeWeapon", 1);
+        }
+        if (HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_RANGED
         ) && FindInventory("CaelumCarbineWeapon") == null)
         {
             GiveInventoryType("CaelumCarbineWeapon");
         }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_CARBINE
+        else if (!HasEquippedWeaponFamily(
+            CaelumConstants.CATALOGUE_FAMILY_RANGED
         ))
         {
             TakeInventory("CaelumCarbineWeapon", 1);
         }
-        if (HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_STAFF
-        ) && FindInventory("CaelumStaffWeapon") == null)
+        if (HasEquippedWeaponFamily(6)
+            && FindInventory("CaelumStaffWeapon") == null)
         {
             GiveInventoryType("CaelumStaffWeapon");
         }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_STAFF
-        ))
+        else if (!HasEquippedWeaponFamily(6))
         {
             TakeInventory("CaelumStaffWeapon", 1);
         }
@@ -1042,6 +1124,45 @@ class CaelumPlayer : DoomPlayer
         return false;
     }
 
+    // Mantiene una instantanea segura para UI y detecta cambios reales del
+    // arma activa. Varias armas pueden seguir equipadas simultaneamente.
+    void SyncHUDActiveWeaponState()
+    {
+        bool hasActiveWeapon = WeaponModel != null
+            && WeaponModel.Equipped
+            && WeaponModel.Durability > 0
+            && HasEquippedNativeWeaponType(WeaponModel.WeaponType);
+        int activeType = hasActiveWeapon ? WeaponModel.WeaponType : -1;
+        int activeTier = hasActiveWeapon ? WeaponModel.Tier : 0;
+        int activeSize = hasActiveWeapon
+            ? WeaponModel.Size : CaelumConstants.EQUIPMENT_SIZE_M;
+
+        bool changed = !HUDActiveWeaponStateInitialized
+            || HUDHasActiveWeapon != hasActiveWeapon
+            || HUDActiveWeaponType != activeType
+            || HUDActiveWeaponTier != activeTier
+            || HUDActiveWeaponSize != activeSize;
+
+        HUDHasActiveWeapon = hasActiveWeapon;
+        HUDActiveWeaponType = activeType;
+        HUDActiveWeaponTier = activeTier;
+        HUDActiveWeaponSize = activeSize;
+
+        if (changed)
+        {
+            HUDActiveWeaponNoticeRemaining =
+                CaelumConstants.ACTIVE_WEAPON_NOTICE_SECONDS;
+            HUDActiveWeaponStateInitialized = true;
+        }
+        else
+        {
+            HUDActiveWeaponNoticeRemaining = Max(
+                0.0,
+                HUDActiveWeaponNoticeRemaining - 1.0 / TICRATE
+            );
+        }
+    }
+
     bool ActivateFirstEquippedWeapon()
     {
         for (int weaponType = 0;
@@ -1059,6 +1180,22 @@ class CaelumPlayer : DoomPlayer
         if (ActivateEquippedWeaponType(weaponType))
         {
             PerformEquippedWeaponPrimaryAttack();
+        }
+    }
+
+    void PerformFamilyPrimaryAttack(int family)
+    {
+        if (ActivateEquippedWeaponFamily(family))
+        {
+            PerformEquippedWeaponPrimaryAttack();
+        }
+    }
+
+    void PerformFamilySecondaryAction(int family)
+    {
+        if (ActivateEquippedWeaponFamily(family))
+        {
+            PerformEquippedSecondaryHandAction();
         }
     }
 
@@ -1134,25 +1271,25 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
-        CaelumCarbineAmmo carbineAmmo = CaelumCarbineAmmo(
-            FindInventory("CaelumCarbineAmmo")
-        );
-        if (carbineAmmo != null && carbineAmmo.Amount > 0)
+        CarbineAmmoCount = 0;
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
-            CarbineAmmoCount = carbineAmmo.Amount;
-            if (carbineAmmo.InMagicBox)
+            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
+            if (ammunition == null || ammunition.Amount <= 0) { continue; }
+            if (ammunition.GetAmmoType()
+                == CaelumConstants.AMMUNITION_CARBINE)
             {
-                MagicBoxUsedSlots++;
+                CarbineAmmoCount = ammunition.Amount;
             }
+            if (ammunition.InMagicBox) { MagicBoxUsedSlots++; }
             else
             {
-                PersonalInventoryItemCount += carbineAmmo.Amount;
-                double ammunitionWeight = carbineAmmo.GetCarriedWeight();
+                PersonalInventoryItemCount += ammunition.Amount;
+                double ammunitionWeight = ammunition.GetCarriedWeight();
                 personalInventoryWeight += ammunitionWeight;
                 carriedItemWeight += ammunitionWeight;
             }
         }
-        else { CarbineAmmoCount = 0; }
 
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -4419,6 +4556,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         RefreshEquipmentLoadIfNeeded();
+        SyncHUDActiveWeaponState();
 
         UpdateHealthStateEffects();
 
@@ -4619,16 +4757,27 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                WeaponModel.WeaponType
+            );
+        if (catalogueWeapon >= 0
+            && CaelumWeaponCatalogue.GetFamily(catalogueWeapon)
+                == CaelumConstants.CATALOGUE_FAMILY_RANGED)
+        {
+            PerformCarbineAttack();
+            return;
+        }
         switch (WeaponModel.WeaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF:
-                PerformDebugStaffAttack();
-                break;
-            case CaelumConstants.WEAPON_TYPE_CARBINE:
-                PerformCarbineAttack();
+            case CaelumConstants.WEAPON_TYPE_BELL:
+            case CaelumConstants.WEAPON_TYPE_BOOK:
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                PerformDebugStaffAttack(false);
                 break;
             default:
-                PerformDebugSwordAttack();
+                PerformDebugSwordAttack(false);
                 if (LastMeleeHadEnoughAir)
                 {
                     EquippedWeaponCooldownRemaining =
@@ -4642,9 +4791,47 @@ class CaelumPlayer : DoomPlayer
     // queda reservado para el futuro ataque secundario propio de cada arma.
     void PerformEquippedSecondaryHandAction()
     {
-        if (ShieldModel != null && ShieldModel.Equipped)
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.Durability <= 0
+            || EquipmentMenuOpen || CreationWizardOpen
+            || IsPhysicallyImmobilized())
+        {
+            return;
+        }
+        int catalogueWeapon = WeaponModel != null
+            ? CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                WeaponModel.WeaponType
+            ) : -1;
+        bool shieldCompatible = catalogueWeapon >= 0
+            && CaelumWeaponCatalogue.UsesOneHandedShieldRules(
+                catalogueWeapon
+            );
+        shieldCompatible = shieldCompatible
+            || WeaponModel.IsMagicalType(WeaponModel.WeaponType);
+        if (ShieldModel != null && ShieldModel.Equipped && shieldCompatible)
         {
             ToggleDebugShieldBlock();
+            return;
+        }
+        if (EquippedWeaponCooldownRemaining > 0.0
+            || StaffCastCooldownRemaining > 0.0)
+        {
+            return;
+        }
+        if (WeaponModel.IsMagicalType(WeaponModel.WeaponType))
+        {
+            PerformDebugStaffAttack(true);
+            return;
+        }
+        if (catalogueWeapon >= 0
+            && CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon) > 0.0)
+        {
+            PerformDebugSwordAttack(true);
+            if (LastMeleeHadEnoughAir)
+            {
+                EquippedWeaponCooldownRemaining =
+                    WeaponModel.GetAttackTics() / double(TICRATE);
+            }
         }
     }
 
@@ -4662,21 +4849,48 @@ class CaelumPlayer : DoomPlayer
         LastCarbinePitchOffset = 0.0;
         LastAttackPushForce = 0.0;
         if (WeaponModel == null || !WeaponModel.Equipped
-            || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_CARBINE
             || WeaponModel.Durability <= 0 || DerivedStats == null)
         {
             return;
         }
-
-        CaelumCarbineAmmo carbineAmmo = CaelumCarbineAmmo(
-            FindInventory("CaelumCarbineAmmo")
-        );
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                WeaponModel.WeaponType
+            );
+        if (catalogueWeapon < 0
+            || CaelumWeaponCatalogue.GetFamily(catalogueWeapon)
+                != CaelumConstants.CATALOGUE_FAMILY_RANGED)
+        {
+            return;
+        }
+        int requiredAmmoType = CaelumConstants.AMMUNITION_ARROW;
+        if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        {
+            requiredAmmoType = CaelumConstants.AMMUNITION_CARBINE;
+        }
+        else if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
+        {
+            requiredAmmoType = CaelumConstants.AMMUNITION_BOLT;
+        }
+        CaelumCarbineAmmo carbineAmmo;
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumCarbineAmmo candidate = CaelumCarbineAmmo(cursor);
+            if (candidate != null
+                && candidate.GetAmmoType() == requiredAmmoType)
+            {
+                carbineAmmo = candidate;
+                break;
+            }
+        }
         LastCarbineHadAmmo = carbineAmmo != null
             && carbineAmmo.Amount > 0
             && !carbineAmmo.InMagicBox;
         if (!LastCarbineHadAmmo) { return; }
 
-        double airCost = -CaelumConstants.CARBINE_AIR_CHANGE
+        double airCost = CaelumWeaponCatalogue.GetPrimaryAirCost(
+            catalogueWeapon
+        )
             * DerivedStats.AirConsumptionMultiplier;
         LastCarbineHadEnoughAir = CurrentAir >= airCost;
         if (!LastCarbineHadEnoughAir) { return; }
@@ -4692,9 +4906,13 @@ class CaelumPlayer : DoomPlayer
             1.0,
             EffectivePhysicalAccuracyPercent * movementAccuracyMultiplier
         );
-        LastCarbineMinimumSpread = CaelumConstants.CARBINE_MINIMUM_SPREAD_DEGREES
+        LastCarbineMinimumSpread = CaelumWeaponCatalogue.GetMinimumSpread(
+            catalogueWeapon
+        )
             * 100.0 / LastCarbineAccuracyPercent;
-        LastCarbineMaximumSpread = CaelumConstants.CARBINE_MAXIMUM_SPREAD_DEGREES
+        LastCarbineMaximumSpread = CaelumWeaponCatalogue.GetMaximumSpread(
+            catalogueWeapon
+        )
             * 100.0 / LastCarbineAccuracyPercent;
         double spreadRoll = Random[CaelumCarbineSpread](0, 100000) / 100000.0;
         double spreadMagnitude = LastCarbineMinimumSpread
@@ -4710,7 +4928,8 @@ class CaelumPlayer : DoomPlayer
                 - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
         );
         double criticalChance = Clamp(
-            (CaelumConstants.CARBINE_BASE_CRITICAL_CHANCE_PERCENT + criticalBonus)
+            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
+                + criticalBonus)
                 * CrouchCriticalChanceMultiplier,
             0.0,
             100.0
@@ -4735,12 +4954,16 @@ class CaelumPlayer : DoomPlayer
         projectile.Target = self;
         projectile.Angle = attackAngle;
         projectile.Pitch = attackPitch;
+        double rangedProjectileSpeed = WeaponModel.WeaponType
+                == CaelumConstants.WEAPON_TYPE_CARBINE
+            ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED
+            : CaelumConstants.PROJECTILE_SPEED_VERY_FAST;
         projectile.Vel = (
             Cos(attackPitch) * Cos(attackAngle)
-                * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED,
+                * rangedProjectileSpeed,
             Cos(attackPitch) * Sin(attackAngle)
-                * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED,
-            -Sin(attackPitch) * CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED
+                * rangedProjectileSpeed,
+            -Sin(attackPitch) * rangedProjectileSpeed
         );
         projectile.StoreCaelumAttackResult(
             Max(1, int(LastCarbineDamage + 0.5)),
@@ -4760,7 +4983,7 @@ class CaelumPlayer : DoomPlayer
         MarkCombatActivity();
     }
 
-    void PerformDebugStaffAttack()
+    void PerformDebugStaffAttack(bool secondaryAttack)
     {
         LastStaffHit = false;
         LastStaffCriticalAttempted = false;
@@ -4780,17 +5003,24 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        int activeMagicType = WeaponModel != null
+            ? WeaponModel.WeaponType : CaelumConstants.WEAPON_TYPE_STAFF;
+        double magicDamageScale = WeaponModel.GetDamage()
+            / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
+        double animaCost = WeaponModel.GetAnimaCostFor(activeMagicType)
+            * DerivedStats.StaffAnimaCost
+            / CaelumConstants.DEBUG_STAFF_ANIMA_COST;
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
-            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_STAFF)
+            * magicDamageScale
             * EffectiveOffensiveDamageMultiplier;
-        if (CurrentAnima < DerivedStats.StaffAnimaCost)
+        if (CurrentAnima < animaCost)
         {
             LastStaffInsufficientAnima = true;
             return;
         }
 
-        CurrentAnima -= DerivedStats.StaffAnimaCost;
-        StaffCastCooldownRemaining = CaelumConstants.DEBUG_STAFF_CAST_TICS
+        CurrentAnima -= animaCost;
+        StaffCastCooldownRemaining = WeaponModel.GetAttackTics()
             * DerivedStats.CastingDurationMultiplier / double(TICRATE);
         UpdateLucidityAccuracyEffects();
         UpdateCrouchEffects();
@@ -4798,96 +5028,153 @@ class CaelumPlayer : DoomPlayer
             1.0,
             EffectiveMagicalAccuracyPercent * CrouchAccuracyMultiplier
         );
-        double maximumAimError = CaelumConstants.DEBUG_SWORD_BASE_INACCURACY_DEGREES
+        double maximumAimError = WeaponModel.GetMaximumSpreadFor(activeMagicType)
             * 100.0 / LastStaffAccuracyPercent;
-        LastStaffYawOffset = Random[CaelumStaffAccuracyYaw](-100000, 100000)
-            / 100000.0 * maximumAimError;
-        LastStaffPitchOffset = Random[CaelumStaffAccuracyPitch](-100000, 100000)
-            / 100000.0 * maximumAimError;
+        double minimumAimError = WeaponModel.GetMinimumSpreadFor(activeMagicType)
+            * 100.0 / LastStaffAccuracyPercent;
+        int staffYawRoll = Random[CaelumStaffAccuracyYaw](-100000, 100000);
+        int staffPitchRoll = Random[CaelumStaffAccuracyPitch](-100000, 100000);
+        LastStaffYawOffset = (staffYawRoll < 0 ? -1.0 : 1.0)
+            * (minimumAimError + (maximumAimError - minimumAimError)
+                * Abs(staffYawRoll) / 100000.0);
+        LastStaffPitchOffset = (staffPitchRoll < 0 ? -1.0 : 1.0)
+            * (minimumAimError + (maximumAimError - minimumAimError)
+                * Abs(staffPitchRoll) / 100000.0);
         double attackAngle = Angle + LastStaffYawOffset;
         double attackPitch = Pitch + LastStaffPitchOffset;
 
-        FTranslatedLineTarget targetData;
-        Actor detectionPuff;
-        int ignoredDamage;
-        [detectionPuff, ignoredDamage] = LineAttack(
-            attackAngle,
-            CaelumConstants.DEBUG_STAFF_TRACE_RANGE,
-            attackPitch,
-            0,
-            'CaelumMagicTest',
-            'CaelumNoDamageThrustPuff',
-            LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
-            targetData
-        );
-        LastStaffHit = targetData.linetarget != null;
-        if (!LastStaffHit) { return; }
-
-        int savedMeleeLocation = LastMeleeHitLocation;
-        int savedMeleeGrade = LastMeleeVulnerabilityGrade;
-        double savedMeleeHeight = LastMeleeHitHeightRatio;
-        double savedMeleeMultiplier = LastMeleeLocationMultiplier;
-        CalculateDebugMeleeHitLocation(targetData.linetarget, attackAngle, attackPitch);
-        LastStaffVulnerabilityGrade = LastMeleeVulnerabilityGrade;
-        LastMeleeHitLocation = savedMeleeLocation;
-        LastMeleeVulnerabilityGrade = savedMeleeGrade;
-        LastMeleeHitHeightRatio = savedMeleeHeight;
-        LastMeleeLocationMultiplier = savedMeleeMultiplier;
         LastStaffCriticalAttempted = true;
         LastStaffCriticalChancePercent = Clamp(
-            DerivedStats.StaffCriticalChance * CrouchCriticalChanceMultiplier,
+            (WeaponModel.GetBaseCriticalChanceFor(activeMagicType)
+                + Max(0.0, DerivedStats.MagicalCriticalChance
+                    - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
+                * CrouchCriticalChanceMultiplier,
             0.0,
             100.0
         );
-        int criticalRoll = Random[CaelumMagicalCritical](0, 999999);
-        LastStaffCriticalRollPercent = criticalRoll / 10000.0;
-        LastStaffCriticalHit = LastStaffCriticalRollPercent
-            < LastStaffCriticalChancePercent;
-        CaelumCombatActor staffCombatTarget = CaelumCombatActor(
-            targetData.linetarget
-        );
-        if (staffCombatTarget != null)
+        // La campana resuelve el critico por proyectil. Las demas armas
+        // conservan una unica tirada por ataque.
+        if (activeMagicType != CaelumConstants.WEAPON_TYPE_BELL)
         {
-            staffCombatTarget.RegisterPendingCriticalHit(
-                LastStaffCriticalHit
-            );
+            int criticalRoll = Random[CaelumMagicalCritical](0, 999999);
+            LastStaffCriticalRollPercent = criticalRoll / 10000.0;
+            LastStaffCriticalHit = LastStaffCriticalRollPercent
+                < LastStaffCriticalChancePercent;
         }
-        LastStaffLocationMultiplier = GetVulnerabilityMultiplier(
-            LastStaffVulnerabilityGrade,
-            LastStaffCriticalHit
-        );
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
-            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_STAFF)
-            * EffectiveOffensiveDamageMultiplier
-            * LastStaffLocationMultiplier;
+            * magicDamageScale
+            * EffectiveOffensiveDamageMultiplier;
         int integerDamage = Max(1, int(LastStaffCalculatedDamage + 0.5));
 
-        Actor puff;
-        int actualStaffDamage;
-        [puff, actualStaffDamage] = LineAttack(
-            attackAngle,
-            CaelumConstants.DEBUG_STAFF_TRACE_RANGE,
-            attackPitch,
-            integerDamage,
-            'CaelumMagicTest',
-            'CaelumNoDamageThrustPuff',
-            0,
-            targetData
-        );
-        LastStaffActualDamage = actualStaffDamage;
-        if (LastStaffActualDamage > 0)
+        // El libro adquiere su objetivo dentro del alcance real del hechizo;
+        // la traza solo selecciona y nunca aplica daño hitscan.
+        double spellRange = CaelumConstants.ESSENCE_BASE_RANGE_MAP_UNITS
+            * DerivedStats.AbilityRangePercent / 100.0;
+        FTranslatedLineTarget targetData;
+        if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
         {
-            ApplyAttackPushToTarget(
-                targetData.linetarget,
-                attackAngle,
+            Actor selectionPuff;
+            int selectionDamage;
+            [selectionPuff, selectionDamage] = LineAttack(
+                attackAngle, spellRange, attackPitch, 0,
+                'CaelumMagicTest', 'CaelumNoDamageThrustPuff',
+                LAF_NOINTERACT | LAF_NORANDOMPUFFZ, targetData
+            );
+        }
+
+        int projectileCount = activeMagicType
+            == CaelumConstants.WEAPON_TYPE_BELL ? 3 : 1;
+        for (int projectileIndex = 0;
+            projectileIndex < projectileCount; projectileIndex++)
+        {
+            bool projectileCritical = LastStaffCriticalHit;
+            if (activeMagicType == CaelumConstants.WEAPON_TYPE_BELL)
+            {
+                int bellCriticalRoll = Random[CaelumBellCritical](0, 999999);
+                LastStaffCriticalRollPercent = bellCriticalRoll / 10000.0;
+                projectileCritical = LastStaffCriticalRollPercent
+                    < LastStaffCriticalChancePercent;
+                LastStaffCriticalHit = LastStaffCriticalHit
+                    || projectileCritical;
+            }
+            double projectileAngle = attackAngle;
+            double projectilePitch = attackPitch;
+            if (projectileCount > 1)
+            {
+                int coneYaw = Random[CaelumBellSpreadYaw](-100000, 100000);
+                int conePitch = Random[CaelumBellSpreadPitch](-100000, 100000);
+                projectileAngle = Angle + (coneYaw < 0 ? -1.0 : 1.0)
+                    * (minimumAimError + (maximumAimError - minimumAimError)
+                        * Abs(coneYaw) / 100000.0);
+                projectilePitch = Pitch + (conePitch < 0 ? -1.0 : 1.0)
+                    * (minimumAimError + (maximumAimError - minimumAimError)
+                        * Abs(conePitch) / 100000.0);
+            }
+            Vector3 spawnPos = Pos + (
+                Cos(projectileAngle) * 32.0,
+                Sin(projectileAngle) * 32.0,
+                Height * 0.65
+            );
+            CaelumPlayerMagicProjectile projectile;
+            if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
+            {
+                projectile = CaelumPlayerMagicProjectile(Spawn(
+                    "CaelumHomingMagicProjectile", spawnPos, NO_REPLACE
+                ));
+            }
+            else if (activeMagicType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+            {
+                projectile = CaelumPlayerMagicProjectile(Spawn(
+                    "CaelumExplosiveMagicProjectile", spawnPos, NO_REPLACE
+                ));
+            }
+            else
+            {
+                projectile = CaelumPlayerMagicProjectile(Spawn(
+                    "CaelumPlayerMagicProjectile", spawnPos, NO_REPLACE
+                ));
+            }
+            if (projectile == null) { continue; }
+            projectile.Target = self;
+            projectile.Tracer = targetData.linetarget;
+            projectile.Angle = projectileAngle;
+            projectile.Pitch = projectilePitch;
+            double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_NORMAL;
+            if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
+            {
+                projectileSpeed = CaelumConstants.PROJECTILE_SPEED_FAST;
+            }
+            else if (activeMagicType == CaelumConstants.WEAPON_TYPE_BELL)
+            {
+                projectileSpeed = CaelumConstants.PROJECTILE_SPEED_SLOW;
+            }
+            projectile.Vel = (
+                Cos(projectilePitch) * Cos(projectileAngle)
+                    * projectileSpeed,
+                Cos(projectilePitch) * Sin(projectileAngle)
+                    * projectileSpeed,
+                -Sin(projectilePitch)
+                    * projectileSpeed
+            );
+            projectile.StoreCaelumAttackResult(
+                integerDamage, true, projectileCritical, true,
                 DerivedStats.MagicalPushMultiplier
             );
-            AddCombatAdrenaline(
-                CaelumConstants.ADRENALINE_GAIN_ON_MAGIC_DAMAGE,
-                CaelumConstants.ADRENALINE_EVENT_MAGIC_DAMAGE
-            );
-            MarkCombatActivity();
+            if (activeMagicType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+            {
+                CaelumExplosiveMagicProjectile explosiveProjectile =
+                    CaelumExplosiveMagicProjectile(projectile);
+                if (explosiveProjectile != null)
+                {
+                    explosiveProjectile.ConfigureCaelumExplosion(
+                        integerDamage,
+                        CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
+                            * DerivedStats.AbilityRangePercent / 100.0
+                    );
+                }
+            }
         }
+        MarkCombatActivity();
     }
 
     // Convert the documented per-second running cost into a per-tic cost.
@@ -5480,7 +5767,7 @@ class CaelumPlayer : DoomPlayer
     // LineAttack supplies the actor actually reached and the damage remaining
     // after the target's current engine mitigation. The physical critical roll
     // is live; status effects and the final Caelum armor stage remain separate.
-    void PerformDebugSwordAttack()
+    void PerformDebugSwordAttack(bool secondaryAttack)
     {
         LastMeleeCalculatedDamage = 0.0;
         LastMeleeActualDamage = 0;
@@ -5510,7 +5797,16 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        LastMeleeAirCost = CaelumConstants.DEBUG_SWORD_PRIMARY_AIR_COST
+        int activeWeaponType = WeaponModel != null
+            ? WeaponModel.WeaponType : CaelumConstants.WEAPON_TYPE_SWORD;
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                activeWeaponType
+            );
+        if (catalogueWeapon < 0) { return; }
+        LastMeleeAirCost = (secondaryAttack
+            ? CaelumWeaponCatalogue.GetSecondaryAirCost(catalogueWeapon)
+            : CaelumWeaponCatalogue.GetPrimaryAirCost(catalogueWeapon))
             * DerivedStats.AirConsumptionMultiplier;
         if (CurrentAir < LastMeleeAirCost)
         {
@@ -5521,8 +5817,14 @@ class CaelumPlayer : DoomPlayer
         CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
         UpdateAirStateEffects();
 
+        double selectedBaseDamage = secondaryAttack
+            ? CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon)
+            : CaelumWeaponCatalogue.GetPrimaryDamage(catalogueWeapon);
+        double physicalWeaponDamageScale = selectedBaseDamage
+            * WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier)
+            / CaelumConstants.DEBUG_SWORD_BASE_DAMAGE;
         LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
-            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_SWORD)
+            * physicalWeaponDamageScale
             * EffectiveOffensiveDamageMultiplier;
         FTranslatedLineTarget targetData;
         UpdateLucidityAccuracyEffects();
@@ -5540,12 +5842,20 @@ class CaelumPlayer : DoomPlayer
             EffectivePhysicalAccuracyPercent
                 * LastMeleeMovementAccuracyMultiplier
         );
-        double maximumAimError = CaelumConstants.DEBUG_SWORD_BASE_INACCURACY_DEGREES
-            * 100.0 / LastMeleeAccuracyPercent;
-        LastMeleeYawOffset = Random[CaelumSwordAccuracyYaw](-100000, 100000)
-            / 100000.0 * maximumAimError;
-        LastMeleePitchOffset = Random[CaelumSwordAccuracyPitch](-100000, 100000)
-            / 100000.0 * maximumAimError;
+        double maximumAimError = CaelumWeaponCatalogue.GetMaximumSpread(
+            catalogueWeapon
+        ) * 100.0 / LastMeleeAccuracyPercent;
+        double minimumAimError = CaelumWeaponCatalogue.GetMinimumSpread(
+            catalogueWeapon
+        ) * 100.0 / LastMeleeAccuracyPercent;
+        int meleeYawRoll = Random[CaelumSwordAccuracyYaw](-100000, 100000);
+        int meleePitchRoll = Random[CaelumSwordAccuracyPitch](-100000, 100000);
+        LastMeleeYawOffset = (meleeYawRoll < 0 ? -1.0 : 1.0)
+            * (minimumAimError + (maximumAimError - minimumAimError)
+                * Abs(meleeYawRoll) / 100000.0);
+        LastMeleePitchOffset = (meleePitchRoll < 0 ? -1.0 : 1.0)
+            * (minimumAimError + (maximumAimError - minimumAimError)
+                * Abs(meleePitchRoll) / 100000.0);
         double attackAngle = Angle + LastMeleeYawOffset;
         double attackPitch = Pitch + LastMeleePitchOffset;
 
@@ -5555,7 +5865,9 @@ class CaelumPlayer : DoomPlayer
         int ignoredDamage;
         [detectionPuff, ignoredDamage] = LineAttack(
             attackAngle,
-            CaelumConstants.DEBUG_SWORD_RANGE,
+            secondaryAttack
+                ? CaelumWeaponCatalogue.GetSecondaryRange(catalogueWeapon)
+                : CaelumWeaponCatalogue.GetPrimaryRange(catalogueWeapon),
             attackPitch,
             0,
             'CaelumMeleeTest',
@@ -5578,10 +5890,9 @@ class CaelumPlayer : DoomPlayer
         LastMeleeCriticalAttempted = true;
         LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
         LastMeleeCriticalChancePercent = Clamp(
-            (DerivedStats.PhysicalCriticalChance
-                + (WeaponModel != null && WeaponModel.Equipped
-                    && WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SWORD
-                        ? 3.0 : 0.0))
+            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
+                + Max(0.0, DerivedStats.PhysicalCriticalChance
+                    - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
                 * LastMeleeCrouchCriticalMultiplier,
             0.0,
             100.0
@@ -5604,7 +5915,7 @@ class CaelumPlayer : DoomPlayer
             LastMeleeCriticalHit
         );
         LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
-            * GetEquippedWeaponDamageScale(CaelumConstants.WEAPON_TYPE_SWORD)
+            * physicalWeaponDamageScale
             * LastMeleeLocationMultiplier
             * EffectiveOffensiveDamageMultiplier;
         int integerDamage = Max(1, int(LastMeleeCalculatedDamage + 0.5));
@@ -5613,7 +5924,9 @@ class CaelumPlayer : DoomPlayer
         int actualDamage;
         [puff, actualDamage] = LineAttack(
             attackAngle,
-            CaelumConstants.DEBUG_SWORD_RANGE,
+            secondaryAttack
+                ? CaelumWeaponCatalogue.GetSecondaryRange(catalogueWeapon)
+                : CaelumWeaponCatalogue.GetPrimaryRange(catalogueWeapon),
             attackPitch,
             integerDamage,
             'CaelumMeleeTest',
@@ -6798,9 +7111,9 @@ class CaelumPlayer : DoomPlayer
         ShieldModel.Equipped = false;
         DebugShieldBlocking = false;
 
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT;
-            weaponType++)
+        // El entorno inicial conserva únicamente espada, bastón y carabina.
+        // Ampliar el catálogo no debe regalar automáticamente armas nuevas.
+        for (int weaponType = 0; weaponType < 3; weaponType++)
         {
             Actor weapon = Spawn(
                 "CaelumWeaponPickup",
@@ -6881,9 +7194,7 @@ class CaelumPlayer : DoomPlayer
         WeaponModel.Size = startingSize;
         WeaponModel.Durability = WeaponModel.GetMaximumDurability();
         WeaponModel.Equipped = true;
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT;
-            weaponType++)
+        for (int weaponType = 0; weaponType < 3; weaponType++)
         {
             int durability = WeaponModel.GetMaximumDurabilityFor(
                 weaponType, 1, startingSize

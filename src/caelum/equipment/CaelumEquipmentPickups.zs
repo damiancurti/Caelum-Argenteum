@@ -205,10 +205,19 @@ class CaelumCarbineAmmo : Ammo
         +INVENTORY.INVBAR
     }
 
+    virtual int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_CARBINE;
+    }
+
+    virtual double GetUnitWeight()
+    {
+        return CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+    }
+
     double GetCarriedWeight()
     {
-        return InMagicBox ? 0.0
-            : Amount * CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+        return InMagicBox ? 0.0 : Amount * GetUnitWeight();
     }
 
     override bool HandlePickup(Inventory item)
@@ -252,6 +261,46 @@ class CaelumCarbineAmmo : Ammo
     {
     Spawn:
         CLIP A -1;
+        Stop;
+    }
+}
+
+class CaelumArrowAmmo : CaelumCarbineAmmo
+{
+    override int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_ARROW;
+    }
+
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
+    }
+
+    States
+    {
+    Spawn:
+        SHEL A -1;
+        Stop;
+    }
+}
+
+class CaelumBoltAmmo : CaelumCarbineAmmo
+{
+    override int GetAmmoType()
+    {
+        return CaelumConstants.AMMUNITION_BOLT;
+    }
+
+    override double GetUnitWeight()
+    {
+        return CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
+    }
+
+    States
+    {
+    Spawn:
+        SHEL A -1;
         Stop;
     }
 }

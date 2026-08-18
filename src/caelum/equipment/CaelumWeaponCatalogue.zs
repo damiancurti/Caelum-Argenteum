@@ -189,47 +189,32 @@ class CaelumWeaponCatalogue : Object
 
     static double GetMinimumSpread(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
-        {
-            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 10.0;
-            case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
-            case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
-            case CaelumConstants.CATALOGUE_WEAPON_SWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_SPEAR:
-            case CaelumConstants.CATALOGUE_WEAPON_HALBERD:
-            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 15.0;
-            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
-            case CaelumConstants.CATALOGUE_WEAPON_AXE:
-            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 20.0;
-            case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
-            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 25.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
-            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 30.0;
-            default: return 10.0;
-        }
+        return GetMaximumSpread(weaponId) * 0.10;
     }
 
     static double GetMaximumSpread(int weaponId)
     {
         switch (ResolveWeapon(weaponId))
         {
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 30.0;
+            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 50.0;
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 70.0;
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 90.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
             case CaelumConstants.CATALOGUE_WEAPON_SWORD:
             case CaelumConstants.CATALOGUE_WEAPON_SPEAR:
-            case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 100.0;
+            case CaelumConstants.CATALOGUE_WEAPON_HALBERD:
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
             case CaelumConstants.CATALOGUE_WEAPON_AXE:
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 120.0;
+                return 110.0;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
-            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 140.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 150.0;
-            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 160.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 180.0;
-            default: return 200.0;
+            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE:
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
+                return 130.0;
+            default: return 70.0;
         }
     }
 

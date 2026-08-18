@@ -12,6 +12,46 @@ class CaelumHUDOverlay : EventHandler
         HUDFont = Font.GetFont("SmallFont");
     }
 
+    ui String GetActiveWeaponNameKey(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_SWORD: return "CA_WEAPON_TYPE_SWORD";
+            case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
+            case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_TYPE_CARBINE";
+            case CaelumConstants.WEAPON_TYPE_DAGGER: return "CA_WEAPON_TYPE_DAGGER";
+            case CaelumConstants.WEAPON_TYPE_HATCHET: return "CA_WEAPON_TYPE_HATCHET";
+            case CaelumConstants.WEAPON_TYPE_MACHETE: return "CA_WEAPON_TYPE_MACHETE";
+            case CaelumConstants.WEAPON_TYPE_JAVELIN: return "CA_WEAPON_TYPE_JAVELIN";
+            case CaelumConstants.WEAPON_TYPE_AXE: return "CA_WEAPON_TYPE_AXE";
+            case CaelumConstants.WEAPON_TYPE_FLAIL: return "CA_WEAPON_TYPE_FLAIL";
+            case CaelumConstants.WEAPON_TYPE_SPEAR: return "CA_WEAPON_TYPE_SPEAR";
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD: return "CA_WEAPON_TYPE_GREATSWORD";
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "CA_WEAPON_TYPE_WAR_AXE";
+            case CaelumConstants.WEAPON_TYPE_HALBERD: return "CA_WEAPON_TYPE_HALBERD";
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "CA_WEAPON_TYPE_GIANT_GAUNTLETS";
+            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "CA_WEAPON_TYPE_STANDARD_BOW";
+            case CaelumConstants.WEAPON_TYPE_LONGBOW: return "CA_WEAPON_TYPE_LONGBOW";
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "CA_WEAPON_TYPE_CROSSBOW";
+            case CaelumConstants.WEAPON_TYPE_BELL: return "CA_WEAPON_TYPE_BELL";
+            case CaelumConstants.WEAPON_TYPE_BOOK: return "CA_WEAPON_TYPE_BOOK";
+            case CaelumConstants.WEAPON_TYPE_STATUETTE: return "CA_WEAPON_TYPE_STATUETTE";
+            default: return "CA_HUD_UNARMED";
+        }
+    }
+
+    ui String GetEquipmentSizeKey(int equipmentSize)
+    {
+        switch (equipmentSize)
+        {
+            case CaelumConstants.EQUIPMENT_SIZE_XS: return "CA_EQUIPMENT_SIZE_XS";
+            case CaelumConstants.EQUIPMENT_SIZE_S: return "CA_EQUIPMENT_SIZE_S";
+            case CaelumConstants.EQUIPMENT_SIZE_L: return "CA_EQUIPMENT_SIZE_L";
+            case CaelumConstants.EQUIPMENT_SIZE_XL: return "CA_EQUIPMENT_SIZE_XL";
+            default: return "CA_EQUIPMENT_SIZE_M";
+        }
+    }
+
     // Convert the stored play-scope state into a localized UI label.
     ui String GetAirStateKey(int airState)
     {
@@ -534,6 +574,34 @@ class CaelumHUDOverlay : EventHandler
             localPlayer.HUDCarryCapacity,
             loadPercent,
             StringTable.Localize(loadStateKey, false));
+        String activeWeaponName = StringTable.Localize(
+            localPlayer.HUDHasActiveWeapon
+                ? GetActiveWeaponNameKey(localPlayer.HUDActiveWeaponType)
+                : "CA_HUD_UNARMED",
+            false
+        );
+        String activeWeaponLine;
+        if (localPlayer.HUDHasActiveWeapon)
+        {
+            activeWeaponLine = String.Format(
+                "%s: %s | T%d | %s",
+                StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
+                activeWeaponName,
+                localPlayer.HUDActiveWeaponTier,
+                StringTable.Localize(
+                    GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
+                    false
+                )
+            );
+        }
+        else
+        {
+            activeWeaponLine = String.Format(
+                "%s: %s",
+                StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
+                activeWeaponName
+            );
+        }
 
         DrawLucidityDistortion(localPlayer);
         DrawLucidityBar(localPlayer);
@@ -545,6 +613,27 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
+
+        // Indicador permanente independiente de los sprites provisionales.
+        Screen.DrawText(
+            HUDFont, Font.CR_WHITE, 20.0, 16.0, activeWeaponLine,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true
+        );
+
+        // Al cambiar de familia, repite brevemente el dato en el centro.
+        if (localPlayer.HUDActiveWeaponNoticeRemaining > 0.0)
+        {
+            double noticeX = 320.0
+                - HUDFont.StringWidth(activeWeaponLine) * 0.5;
+            Screen.DrawText(
+                HUDFont, Font.CR_GOLD, noticeX, 48.0, activeWeaponLine,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
 
         Screen.DrawText(HUDFont, Font.CR_WHITE, 440.0, 266.0,
             loadLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,

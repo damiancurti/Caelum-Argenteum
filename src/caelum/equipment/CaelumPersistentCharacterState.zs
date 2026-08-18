@@ -40,22 +40,22 @@ class CaelumPersistentCharacterState : Inventory
     // Los registros antiguos se conservan para migrar partidas 4.5 al talle M.
     bool SizedOwnedArmor[300];
     bool SizedOwnedShield[60];
-    bool SizedOwnedWeapon[45];
+    bool SizedOwnedWeapon[300];
     int SizedOwnedArmorDurability[300];
     int SizedOwnedShieldDurability[60];
-    int SizedOwnedWeaponDurability[45];
+    int SizedOwnedWeaponDurability[300];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
     // false significa que el objeto viaja con el personaje (inventario o
     // ranura equipada); true lo deja fuera de su carga, en la Caja Magica.
     bool SizedArmorInMagicBox[300];
     bool SizedShieldInMagicBox[60];
-    bool SizedWeaponInMagicBox[45];
+    bool SizedWeaponInMagicBox[300];
     bool EquipmentStorageInitialized;
     // Equipado y activo son conceptos distintos. Varias armas pueden estar
     // preparadas simultaneamente, pero WeaponType/Tier/Size identifica solo
     // la que responde al boton de familia seleccionado en este momento.
-    bool SizedWeaponEquipped[45];
+    bool SizedWeaponEquipped[300];
     bool WeaponLoadoutInitialized;
     // Impide que los registros 4.7 vuelvan a crear objetos descartados una
     // vez que la propiedad ya fue transferida al inventario nativo.
@@ -212,7 +212,9 @@ class CaelumPersistentCharacterState : Inventory
         {
             SizedShieldInMagicBox[shieldIndex] = SizedOwnedShield[shieldIndex];
         }
-        for (int weaponIndex = 0; weaponIndex < 45; weaponIndex++)
+        for (int weaponIndex = 0;
+            weaponIndex < CaelumConstants.WEAPON_OWNERSHIP_COUNT;
+            weaponIndex++)
         {
             SizedWeaponInMagicBox[weaponIndex] = SizedOwnedWeapon[weaponIndex];
         }
@@ -438,7 +440,8 @@ class CaelumPersistentCharacterState : Inventory
     int CountEquippedWeapons()
     {
         int total = 0;
-        for (int index = 0; index < 45; index++)
+        for (int index = 0;
+            index < CaelumConstants.WEAPON_OWNERSHIP_COUNT; index++)
         {
             if (SizedOwnedWeapon[index] && SizedWeaponEquipped[index]) { total++; }
         }
@@ -597,7 +600,10 @@ class CaelumPersistentCharacterState : Inventory
     int CountOwnedWeapons()
     {
         int total = 0;
-        for (int i = 0; i < 45; i++) { if (SizedOwnedWeapon[i]) total++; }
+        for (int i = 0; i < CaelumConstants.WEAPON_OWNERSHIP_COUNT; i++)
+        {
+            if (SizedOwnedWeapon[i]) { total++; }
+        }
         return total;
     }
 
@@ -612,7 +618,7 @@ class CaelumPersistentCharacterState : Inventory
         {
             if (SizedOwnedShield[i] && SizedShieldInMagicBox[i]) { total++; }
         }
-        for (int i = 0; i < 45; i++)
+        for (int i = 0; i < CaelumConstants.WEAPON_OWNERSHIP_COUNT; i++)
         {
             if (SizedOwnedWeapon[i] && SizedWeaponInMagicBox[i]) { total++; }
         }

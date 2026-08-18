@@ -10,6 +10,9 @@ class CaelumDerivedStats : Object
     double CastingSpeedPercent;
     double CastingDurationMultiplier;
     double AbilityRangePercent;
+    double DebuffPowerPercent;
+    double BuffPowerPercent;
+    double InterruptionResistancePercent;
     double DialogueSkillPercent;
     double HealthRegenerationPercent;
     double HealthRegenerationPerSecond;
@@ -249,6 +252,11 @@ class CaelumDerivedStats : Object
         CastingSpeedPercent = CalculateType4Percent(attributes.Eloquence);
         CastingDurationMultiplier = 100.0 / CastingSpeedPercent;
         AbilityRangePercent = CastingSpeedPercent;
+        DebuffPowerPercent = CalculateType4Percent(attributes.Charisma);
+        BuffPowerPercent = CalculateType4Percent(attributes.Empathy);
+        InterruptionResistancePercent = Clamp(
+            CalculateType2Percent(attributes.Patience), 0.0, 100.0
+        );
         DialogueSkillPercent = CalculateType2Percent(attributes.Eloquence);
 
         MaximumAir = CaelumConstants.BASE_AIR_CAPACITY

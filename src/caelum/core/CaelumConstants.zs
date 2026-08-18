@@ -59,6 +59,15 @@ class CaelumConstants : Object
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
     const DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT = 8.0;
+    const ESSENCE_BASE_RANGE_MAP_UNITS = 3200.0;
+    // La velocidad normal toma como referencia el cohete de Doom/Cyberdemon.
+    const PROJECTILE_SPEED_VERY_SLOW = 10.0;
+    const PROJECTILE_SPEED_SLOW = 15.0;
+    const PROJECTILE_SPEED_NORMAL = 20.0;
+    const PROJECTILE_SPEED_FAST = 40.0;
+    const PROJECTILE_SPEED_VERY_FAST = 60.0;
+    const ESSENCE_EXPLOSION_BASE_RADIUS = 128;
+    const ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO = 0.10;
     // Ficha tier 1 de la carabina, reemplazo del arco corto.
     const CARBINE_TIER_ONE_BASE_WEIGHT = 12.0;
     const CARBINE_TIER_ONE_DAMAGE = 360.0;
@@ -175,10 +184,9 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_STORAGE = 18;
     const EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = 19;
 
-    // La primera estación funcional fabrica las dos armas físicas que ya
-    // poseen implementación jugable completa. El catálogo de dieciséis queda
-    // autoritativo y se irá habilitando sin cambiar la transacción nativa.
-    const CRAFTING_PLAYABLE_RECIPE_COUNT = 2;
+    // El menú de desarrollo expone las dieciséis recetas físicas. Más adelante
+    // la misma transacción se invocará desde el banco de trabajo real.
+    const CRAFTING_PLAYABLE_RECIPE_COUNT = 16;
     const CRAFTING_ACTION_NONE = 0;
     const CRAFTING_ACTION_CREATED = 1;
     const CRAFTING_ACTION_FAILED_MATERIALS = 2;
@@ -208,16 +216,62 @@ class CaelumConstants : Object
     const WEAPON_TYPE_SWORD = 0;
     const WEAPON_TYPE_STAFF = 1;
     const WEAPON_TYPE_CARBINE = 2;
-    const WEAPON_TYPE_COUNT = 3;
+    // Los índices históricos anteriores no cambian para conservar partidas.
+    const WEAPON_TYPE_DAGGER = 3;
+    const WEAPON_TYPE_HATCHET = 4;
+    const WEAPON_TYPE_MACHETE = 5;
+    const WEAPON_TYPE_JAVELIN = 6;
+    const WEAPON_TYPE_AXE = 7;
+    const WEAPON_TYPE_FLAIL = 8;
+    const WEAPON_TYPE_SPEAR = 9;
+    const WEAPON_TYPE_GREATSWORD = 10;
+    const WEAPON_TYPE_WAR_AXE = 11;
+    const WEAPON_TYPE_HALBERD = 12;
+    const WEAPON_TYPE_GIANT_GAUNTLETS = 13;
+    const WEAPON_TYPE_STANDARD_BOW = 14;
+    const WEAPON_TYPE_LONGBOW = 15;
+    const WEAPON_TYPE_CROSSBOW = 16;
+    const WEAPON_TYPE_BELL = 17;
+    const WEAPON_TYPE_BOOK = 18;
+    const WEAPON_TYPE_STATUETTE = 19;
+    const WEAPON_TYPE_COUNT = 20;
+    // El aviso temporal acompana al indicador permanente al cambiar de arma.
+    const ACTIVE_WEAPON_NOTICE_SECONDS = 1.5;
+    const WEAPON_OWNERSHIP_COUNT = 300;
     const WEAPON_SWORD_TIER_ONE_WEIGHT = 6.0;
     const WEAPON_STAFF_TIER_ONE_WEIGHT = 4.0;
     const WEAPON_CARBINE_TIER_ONE_WEIGHT = 12.0;
+    const WEAPON_DAGGER_TIER_ONE_WEIGHT = 2.0;
+    const WEAPON_HATCHET_TIER_ONE_WEIGHT = 3.0;
+    const WEAPON_MACHETE_TIER_ONE_WEIGHT = 3.0;
+    const WEAPON_JAVELIN_TIER_ONE_WEIGHT = 4.0;
+    const WEAPON_AXE_TIER_ONE_WEIGHT = 8.0;
+    const WEAPON_FLAIL_TIER_ONE_WEIGHT = 8.0;
+    const WEAPON_SPEAR_TIER_ONE_WEIGHT = 7.0;
+    const WEAPON_GREATSWORD_TIER_ONE_WEIGHT = 18.0;
+    const WEAPON_WAR_AXE_TIER_ONE_WEIGHT = 20.0;
+    const WEAPON_HALBERD_TIER_ONE_WEIGHT = 16.0;
+    const WEAPON_GIANT_GAUNTLETS_TIER_ONE_WEIGHT = 20.0;
+    const WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT = 6.0;
+    const WEAPON_LONGBOW_TIER_ONE_WEIGHT = 10.0;
+    const WEAPON_CROSSBOW_TIER_ONE_WEIGHT = 8.0;
+    const WEAPON_BELL_TIER_ONE_WEIGHT = 5.0;
+    const WEAPON_BOOK_TIER_ONE_WEIGHT = 6.0;
+    const WEAPON_STATUETTE_TIER_ONE_WEIGHT = 8.0;
     const WEAPON_SWORD_BASE_DURABILITY = 100;
     const WEAPON_STAFF_BASE_DURABILITY = 80;
     const WEAPON_CARBINE_BASE_DURABILITY = 120;
+    const WEAPON_PHYSICAL_BASE_DURABILITY = 100;
+    const WEAPON_ESSENCE_BASE_DURABILITY = 80;
     const WEAPON_SWORD_ATTACK_TICS = 14;
     const WEAPON_CARBINE_STARTING_AMMO = 100;
+    const AMMUNITION_CARBINE = 0;
+    const AMMUNITION_ARROW = 1;
+    const AMMUNITION_BOLT = 2;
+    const AMMUNITION_TYPE_COUNT = 3;
     const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
+    const ARROW_AMMO_UNIT_WEIGHT = 0.05;
+    const BOLT_AMMO_UNIT_WEIGHT = 0.05;
     const WEAPON_CARBINE_PROJECTILE_SPEED = 80.0;
 
     // Catálogo físico 4.12. Estos identificadores describen las dieciséis

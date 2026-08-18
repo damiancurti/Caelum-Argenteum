@@ -225,19 +225,50 @@ class CaelumDebugOverlay : EventHandler
     {
         switch (weaponType)
         {
+            case CaelumConstants.WEAPON_TYPE_DAGGER: return "CA_WEAPON_TYPE_DAGGER";
+            case CaelumConstants.WEAPON_TYPE_HATCHET: return "CA_WEAPON_TYPE_HATCHET";
+            case CaelumConstants.WEAPON_TYPE_MACHETE: return "CA_WEAPON_TYPE_MACHETE";
+            case CaelumConstants.WEAPON_TYPE_JAVELIN: return "CA_WEAPON_TYPE_JAVELIN";
             case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
             case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_TYPE_CARBINE";
+            case CaelumConstants.WEAPON_TYPE_AXE: return "CA_WEAPON_TYPE_AXE";
+            case CaelumConstants.WEAPON_TYPE_FLAIL: return "CA_WEAPON_TYPE_FLAIL";
+            case CaelumConstants.WEAPON_TYPE_SPEAR: return "CA_WEAPON_TYPE_SPEAR";
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD: return "CA_WEAPON_TYPE_GREATSWORD";
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "CA_WEAPON_TYPE_WAR_AXE";
+            case CaelumConstants.WEAPON_TYPE_HALBERD: return "CA_WEAPON_TYPE_HALBERD";
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "CA_WEAPON_TYPE_GIANT_GAUNTLETS";
+            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "CA_WEAPON_TYPE_STANDARD_BOW";
+            case CaelumConstants.WEAPON_TYPE_LONGBOW: return "CA_WEAPON_TYPE_LONGBOW";
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "CA_WEAPON_TYPE_CROSSBOW";
+            case CaelumConstants.WEAPON_TYPE_BELL: return "CA_WEAPON_TYPE_BELL";
+            case CaelumConstants.WEAPON_TYPE_BOOK: return "CA_WEAPON_TYPE_BOOK";
+            case CaelumConstants.WEAPON_TYPE_STATUETTE: return "CA_WEAPON_TYPE_STATUETTE";
             default: return "CA_WEAPON_TYPE_SWORD";
         }
     }
 
     ui String GetCraftingWeaponKey(int weaponId)
     {
-        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_CARBINE)
+        switch (weaponId)
         {
-            return "CA_WEAPON_CATALOGUE_CARBINE";
+            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return "CA_WEAPON_CATALOGUE_DAGGER";
+            case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return "CA_WEAPON_CATALOGUE_HATCHET";
+            case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return "CA_WEAPON_CATALOGUE_MACHETE";
+            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return "CA_WEAPON_CATALOGUE_JAVELIN";
+            case CaelumConstants.CATALOGUE_WEAPON_SWORD: return "CA_WEAPON_CATALOGUE_SWORD";
+            case CaelumConstants.CATALOGUE_WEAPON_AXE: return "CA_WEAPON_CATALOGUE_AXE";
+            case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return "CA_WEAPON_CATALOGUE_FLAIL";
+            case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return "CA_WEAPON_CATALOGUE_SPEAR";
+            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return "CA_WEAPON_CATALOGUE_GREATSWORD";
+            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return "CA_WEAPON_CATALOGUE_WAR_AXE";
+            case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return "CA_WEAPON_CATALOGUE_HALBERD";
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return "CA_WEAPON_CATALOGUE_GIANT_GAUNTLETS";
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return "CA_WEAPON_CATALOGUE_STANDARD_BOW";
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return "CA_WEAPON_CATALOGUE_CARBINE";
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return "CA_WEAPON_CATALOGUE_LONGBOW";
+            default: return "CA_WEAPON_CATALOGUE_CROSSBOW";
         }
-        return "CA_WEAPON_CATALOGUE_SWORD";
     }
 
     ui String GetCraftingActionKey(int craftingAction)
@@ -2959,11 +2990,11 @@ class CaelumDebugOverlay : EventHandler
         }
         else if (e.Name == "ca_debug_sword_attack")
         {
-            requestingPlayer.PerformDebugSwordAttack();
+            requestingPlayer.PerformDebugSwordAttack(false);
         }
         else if (e.Name == "ca_debug_staff_attack")
         {
-            requestingPlayer.PerformDebugStaffAttack();
+            requestingPlayer.PerformDebugStaffAttack(false);
         }
         else if (e.Name == "ca_debug_armor_slot")
         {
