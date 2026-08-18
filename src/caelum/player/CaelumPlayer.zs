@@ -1075,14 +1075,49 @@ class CaelumPlayer : DoomPlayer
         {
             TakeInventory("CaelumCarbineWeapon", 1);
         }
-        if (HasEquippedWeaponFamily(6)
+        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_STAFF)
             && FindInventory("CaelumStaffWeapon") == null)
         {
             GiveInventoryType("CaelumStaffWeapon");
         }
-        else if (!HasEquippedWeaponFamily(6))
+        else if (!HasEquippedNativeWeaponType(
+            CaelumConstants.WEAPON_TYPE_STAFF
+        ))
         {
             TakeInventory("CaelumStaffWeapon", 1);
+        }
+        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_BELL)
+            && FindInventory("CaelumBellWeapon") == null)
+        {
+            GiveInventoryType("CaelumBellWeapon");
+        }
+        else if (!HasEquippedNativeWeaponType(
+            CaelumConstants.WEAPON_TYPE_BELL
+        ))
+        {
+            TakeInventory("CaelumBellWeapon", 1);
+        }
+        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_BOOK)
+            && FindInventory("CaelumBookWeapon") == null)
+        {
+            GiveInventoryType("CaelumBookWeapon");
+        }
+        else if (!HasEquippedNativeWeaponType(
+            CaelumConstants.WEAPON_TYPE_BOOK
+        ))
+        {
+            TakeInventory("CaelumBookWeapon", 1);
+        }
+        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_STATUETTE)
+            && FindInventory("CaelumStatuetteWeapon") == null)
+        {
+            GiveInventoryType("CaelumStatuetteWeapon");
+        }
+        else if (!HasEquippedNativeWeaponType(
+            CaelumConstants.WEAPON_TYPE_STATUETTE
+        ))
+        {
+            TakeInventory("CaelumStatuetteWeapon", 1);
         }
         // El selector único de 4.7 queda retirado al migrar al sistema por
         // familias; la propiedad y durabilidad permanecen en el registro.

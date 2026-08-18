@@ -338,7 +338,9 @@ class CaelumCarbineWeapon : Weapon
     }
 }
 
-class CaelumStaffWeapon : Weapon
+// Las cuatro armas de esencia comparten la familia numerica 6, pero cada una
+// necesita su propio selector nativo para que repetir la tecla 6 las recorra.
+class CaelumMagicSelectorWeapon : Weapon
 {
     Default
     {
@@ -349,30 +351,41 @@ class CaelumStaffWeapon : Weapon
         +INVENTORY.UNDROPPABLE
     }
 
-    action void A_CaelumActivateFamily()
+    virtual int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    action void A_CaelumActivateWeapon()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.ActivateEquippedWeaponFamily(6);
+            caelumPlayer.ActivateEquippedWeaponType(
+                invoker.GetCaelumWeaponType()
+            );
         }
     }
 
-    action void A_CaelumFamilyPrimary()
+    action void A_CaelumWeaponPrimary()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.PerformFamilyPrimaryAttack(6);
+            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+                invoker.GetCaelumWeaponType()
+            );
         }
     }
 
-    action void A_CaelumFamilySecondary()
+    action void A_CaelumWeaponSecondary()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.PerformFamilySecondaryAction(6);
+            caelumPlayer.PerformWeaponFamilySecondaryAction(
+                invoker.GetCaelumWeaponType()
+            );
         }
     }
 
@@ -385,20 +398,60 @@ class CaelumStaffWeapon : Weapon
         TNT1 A 1 A_Lower;
         Loop;
     Select:
-        TNT1 A 0 A_CaelumActivateFamily;
+        TNT1 A 0 A_CaelumActivateWeapon;
         TNT1 A 1 A_Raise;
         Loop;
     Fire:
-        TNT1 A 0 A_CaelumFamilyPrimary;
+        TNT1 A 0 A_CaelumWeaponPrimary;
         TNT1 A 1;
         Goto Ready;
     AltFire:
-        TNT1 A 0 A_CaelumFamilySecondary;
+        TNT1 A 0 A_CaelumWeaponSecondary;
         TNT1 A 1;
         Goto Ready;
     Spawn:
         TNT1 A -1;
         Stop;
+    }
+}
+
+class CaelumStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 603; }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+}
+
+class CaelumBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 602; }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+}
+
+class CaelumBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 601; }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+}
+
+class CaelumStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 600; }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
     }
 }
 
