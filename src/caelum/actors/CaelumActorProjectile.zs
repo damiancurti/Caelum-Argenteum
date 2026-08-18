@@ -18,10 +18,31 @@ class CaelumActorProjectile : Actor
     bool CaelumMagicalAttack;
     int CaelumPreparedDamage;
     double CaelumPushMultiplier;
+    int CaelumEssenceType;
+    bool CaelumSecondaryElement;
+    double CaelumDebuffPowerPercent;
+    double CaelumBuffPowerPercent;
+    bool CaelumElementalPayloadPrepared;
 
     Default
     {
         +NODAMAGETHRUST
+    }
+
+    void StoreCaelumElementalPayload(
+        int essenceType,
+        bool secondaryElement,
+        double debuffPowerPercent,
+        double buffPowerPercent
+    )
+    {
+        CaelumElementalPayloadPrepared = true;
+        CaelumEssenceType = Clamp(
+            essenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+        CaelumSecondaryElement = secondaryElement;
+        CaelumDebuffPowerPercent = Max(0.0, debuffPowerPercent);
+        CaelumBuffPowerPercent = Max(0.0, buffPowerPercent);
     }
 
     void StoreCaelumAttackResult(

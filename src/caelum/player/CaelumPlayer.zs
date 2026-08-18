@@ -28,6 +28,7 @@ class CaelumPlayer : DoomPlayer
     int HUDActiveWeaponType;
     int HUDActiveWeaponTier;
     int HUDActiveWeaponSize;
+    int HUDActiveWeaponEssenceType;
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
@@ -40,6 +41,9 @@ class CaelumPlayer : DoomPlayer
     CaelumArmorModel ArmorModel;
     CaelumShieldModel ShieldModel;
     CaelumWeaponModel WeaponModel;
+    CaelumElementalStatus ElementalStatus;
+    int SelectedEssenceType;
+    double IlluminationRemaining;
     int OwnedArmorCount;
     int OwnedShieldCount;
     int OwnedWeaponCount;
@@ -191,6 +195,18 @@ class CaelumPlayer : DoomPlayer
     double LastStaffLocationMultiplier;
     int LastStaffVulnerabilityGrade;
     double StaffCastCooldownRemaining;
+    bool StaffCastPending;
+    bool PendingStaffSecondaryAttack;
+    int PendingStaffWeaponType;
+    int PendingStaffWeaponTier;
+    int PendingStaffWeaponSize;
+    int PendingStaffEssenceType;
+    double PendingStaffAnimaCost;
+    double PendingStaffCastTotalSeconds;
+    bool LastStaffCastInterrupted;
+    bool LastStaffCastCompleted;
+    double LastStaffInterruptionChancePercent;
+    double LastStaffInterruptionRollPercent;
     double LastMeleeYawOffset;
     double LastMeleePitchOffset;
     double LastAttackPushForce;
@@ -345,6 +361,7 @@ class CaelumPlayer : DoomPlayer
             persistentState.WeaponTier = WeaponModel.Tier;
             persistentState.WeaponSize = WeaponModel.Size;
             persistentState.WeaponDurability = WeaponModel.Durability;
+            persistentState.WeaponEssenceType = WeaponModel.EssenceType;
             persistentState.WeaponEquipped = WeaponModel.Equipped;
             persistentState.WeaponEquipmentInitialized = true;
             // Campos antiguos conservados unicamente para migracion regresiva.
@@ -446,6 +463,12 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Tier = persistentState.WeaponTier;
             WeaponModel.Size = persistentState.WeaponSize;
             WeaponModel.Durability = persistentState.WeaponDurability;
+            persistentState.EnsureWeaponEssenceInitialized();
+            WeaponModel.EssenceType = Clamp(
+                persistentState.WeaponEssenceType,
+                0,
+                CaelumConstants.ESSENCE_TYPE_COUNT - 1
+            );
             WeaponModel.Equipped = persistentState.WeaponEquipped;
             WeaponModel.Initialized = true;
             if (WeaponModel.Equipped)
@@ -944,6 +967,9 @@ class CaelumPlayer : DoomPlayer
                     item.Durability = persistentState.GetOwnedWeaponDurability(
                         weaponType, tier, equipmentSize
                     );
+                    item.EssenceType = persistentState.GetWeaponEssenceType(
+                        weaponType, tier, equipmentSize
+                    );
                     item.UnitWeight = WeaponModel.GetWeightFor(
                         weaponType, tier, equipmentSize
                     );
@@ -1136,6 +1162,7 @@ class CaelumPlayer : DoomPlayer
         {
             return true;
         }
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -1148,6 +1175,12 @@ class CaelumPlayer : DoomPlayer
                 WeaponModel.Tier = item.Tier;
                 WeaponModel.Size = item.EquipmentSize;
                 WeaponModel.Durability = item.Durability;
+                WeaponModel.EssenceType = Clamp(
+                    item.EssenceType,
+                    0,
+                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
+                );
+                SelectedEssenceType = WeaponModel.EssenceType;
                 WeaponModel.Equipped = true;
                 EquippedWeaponCooldownRemaining = 0.0;
                 ApplyCharacterProfile();
@@ -1171,17 +1204,26 @@ class CaelumPlayer : DoomPlayer
         int activeTier = hasActiveWeapon ? WeaponModel.Tier : 0;
         int activeSize = hasActiveWeapon
             ? WeaponModel.Size : CaelumConstants.EQUIPMENT_SIZE_M;
+        int activeEssenceType = hasActiveWeapon
+            ? Clamp(
+                WeaponModel.EssenceType,
+                0,
+                CaelumConstants.ESSENCE_TYPE_COUNT - 1
+            )
+            : CaelumConstants.ESSENCE_FIRE;
 
         bool changed = !HUDActiveWeaponStateInitialized
             || HUDHasActiveWeapon != hasActiveWeapon
             || HUDActiveWeaponType != activeType
             || HUDActiveWeaponTier != activeTier
-            || HUDActiveWeaponSize != activeSize;
+            || HUDActiveWeaponSize != activeSize
+            || HUDActiveWeaponEssenceType != activeEssenceType;
 
         HUDHasActiveWeapon = hasActiveWeapon;
         HUDActiveWeaponType = activeType;
         HUDActiveWeaponTier = activeTier;
         HUDActiveWeaponSize = activeSize;
+        HUDActiveWeaponEssenceType = activeEssenceType;
 
         if (changed)
         {
@@ -1584,6 +1626,15 @@ class CaelumPlayer : DoomPlayer
                 ? WeaponModel.GetAttackTicsFor(EquipmentSelectionWeaponType) : 0;
             EquipmentSelectionEquipped = item != null && item.Equipped;
             EquipmentSelectionInMagicBox = item != null && item.InMagicBox;
+            if (WeaponModel != null
+                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
+            {
+                SelectedEssenceType = item != null
+                    ? Clamp(item.EssenceType, 0,
+                        CaelumConstants.ESSENCE_TYPE_COUNT - 1)
+                    : Clamp(SelectedEssenceType, 0,
+                        CaelumConstants.ESSENCE_TYPE_COUNT - 1);
+            }
             return;
         }
 
@@ -1912,6 +1963,7 @@ class CaelumPlayer : DoomPlayer
         if (CreationWizardOpen) { return; }
         CraftingMenuOpen = !CraftingMenuOpen;
         if (!CraftingMenuOpen) { return; }
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;
         CraftingSelectionRecipe = Clamp(
             CraftingSelectionRecipe,
@@ -2075,6 +2127,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionTier,
             CraftingSelectionSize
         );
+        result.EssenceType = CaelumConstants.ESSENCE_FIRE;
         result.UnitWeight = WeaponModel.GetWeightFor(
             playableWeaponType,
             CraftingSelectionTier,
@@ -2120,6 +2173,7 @@ class CaelumPlayer : DoomPlayer
         if (CreationWizardOpen) { return; }
         EquipmentMenuOpen = !EquipmentMenuOpen;
         if (!EquipmentMenuOpen) { return; }
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
         CraftingMenuOpen = false;
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
         PersistCharacterState();
@@ -2202,6 +2256,43 @@ class CaelumPlayer : DoomPlayer
 
     void CycleEquipmentSlot(int direction)
     {
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && WeaponModel != null
+            && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
+        {
+            SelectedEssenceType = (
+                SelectedEssenceType + direction
+                    + CaelumConstants.ESSENCE_TYPE_COUNT
+            ) % CaelumConstants.ESSENCE_TYPE_COUNT;
+            CaelumEquipmentItem selectedWeapon = GetSelectedNativeEquipmentItem();
+            if (selectedWeapon != null)
+            {
+                selectedWeapon.EssenceType = SelectedEssenceType;
+                if (selectedWeapon.Equipped
+                    && WeaponModel.Equipped
+                    && WeaponModel.WeaponType == selectedWeapon.ItemType
+                    && WeaponModel.Tier == selectedWeapon.Tier
+                    && WeaponModel.Size == selectedWeapon.EquipmentSize)
+                {
+                    if (StaffCastPending) { CancelPendingStaffCast(false); }
+                    WeaponModel.EssenceType = SelectedEssenceType;
+                }
+                CaelumPersistentCharacterState persistentState =
+                    GetPersistentCharacterState(true);
+                if (persistentState != null)
+                {
+                    persistentState.SetWeaponEssenceType(
+                        selectedWeapon.ItemType,
+                        selectedWeapon.Tier,
+                        selectedWeapon.EquipmentSize,
+                        SelectedEssenceType
+                    );
+                }
+                PersistCharacterState();
+            }
+            RefreshEquipmentSelectionPreview();
+            return;
+        }
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || EquipmentSelectionKind
@@ -2403,6 +2494,11 @@ class CaelumPlayer : DoomPlayer
             if (weapon != null && weapon.Equipped)
             {
                 weapon.Durability = WeaponModel.Durability;
+                weapon.EssenceType = Clamp(
+                    WeaponModel.EssenceType,
+                    0,
+                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
+                );
             }
         }
     }
@@ -2518,6 +2614,12 @@ class CaelumPlayer : DoomPlayer
                 WeaponModel.Tier = item.Tier;
                 WeaponModel.Size = item.EquipmentSize;
                 WeaponModel.Durability = item.Durability;
+                WeaponModel.EssenceType = Clamp(
+                    item.EssenceType,
+                    0,
+                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
+                );
+                SelectedEssenceType = WeaponModel.EssenceType;
                 WeaponModel.Equipped = true;
             }
             EnsureWeaponFamilySelectors();
@@ -2555,7 +2657,11 @@ class CaelumPlayer : DoomPlayer
                 && WeaponModel.WeaponType == item.ItemType
                 && WeaponModel.Tier == item.Tier
                 && WeaponModel.Size == item.EquipmentSize;
-            if (wasActive) { WeaponModel.Equipped = false; }
+            if (wasActive)
+            {
+                CancelPendingStaffCast(false);
+                WeaponModel.Equipped = false;
+            }
             EnsureWeaponFamilySelectors();
             if (wasActive) { ActivateFirstEquippedWeapon(); }
         }
@@ -3058,6 +3164,7 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[0] = EquipmentSelectionWeaponType;
                 pickup.args[1] = EquipmentSelectionTier;
                 pickup.args[2] = EquipmentSelectionSize + 1;
+                pickup.args[4] = SelectedEssenceType + 1;
             }
         }
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
@@ -3691,6 +3798,15 @@ class CaelumPlayer : DoomPlayer
             WeaponModel = CaelumWeaponModel(new("CaelumWeaponModel"));
             WeaponModel.InitializeDefaults();
         }
+        if (ElementalStatus == null)
+        {
+            ElementalStatus = CaelumElementalStatus(
+                new("CaelumElementalStatus")
+            );
+        }
+        SelectedEssenceType = Clamp(
+            SelectedEssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
         ShieldModel.EnsureEquippedStateInitialized();
         ArmorModel.InitializeDefaults();
         if (!WeaponWeightInitialized)
@@ -3717,6 +3833,11 @@ class CaelumPlayer : DoomPlayer
         }
         else if (WeaponModel != null && WeaponModel.Equipped)
         {
+            SelectedEssenceType = Clamp(
+                WeaponModel.EssenceType,
+                0,
+                CaelumConstants.ESSENCE_TYPE_COUNT - 1
+            );
             EnsureWeaponFamilySelectors();
         }
 
@@ -3806,6 +3927,168 @@ class CaelumPlayer : DoomPlayer
         return Super.GetMaxHealth(withupgrades);
     }
 
+    bool RollQuintessenceEffect()
+    {
+        return Random[CaelumQuintessenceEffect](0, 999999) / 10000.0
+            < CaelumConstants.QUINTESSENCE_EFFECT_CHANCE_PERCENT;
+    }
+
+    void ApplyElementalLucidityLoss(double debuffScale)
+    {
+        if (DerivedStats == null || debuffScale <= 0.0) { return; }
+        double loss = CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
+            * debuffScale
+            * DerivedStats.LucidityLossMultiplier
+            * GetLuciditySleepDebuffMultiplier();
+        CurrentLucidity = Max(0.0, CurrentLucidity - loss);
+        UpdateLucidityState();
+    }
+
+    void ApplyIncomingElementalPayload(
+        CaelumActorProjectile projectile,
+        int actualHealthLost
+    )
+    {
+        if (projectile == null
+            || !projectile.CaelumElementalPayloadPrepared
+            || actualHealthLost <= 0)
+        {
+            return;
+        }
+        if (ElementalStatus == null)
+        {
+            ElementalStatus = CaelumElementalStatus(
+                new("CaelumElementalStatus")
+            );
+        }
+
+        double debuffScale = Max(
+            0.0, projectile.CaelumDebuffPowerPercent / 100.0
+        );
+        double duration = CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS
+            * debuffScale;
+        double controlPower =
+            CaelumConstants.ELEMENTAL_BASE_CONTROL_POWER_PERCENT
+                * debuffScale;
+        int dotDamage = Max(
+            1,
+            int(actualHealthLost
+                * CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO
+                * debuffScale + 0.5)
+        );
+        Actor effectSource = projectile.Target;
+        int essenceType = projectile.CaelumEssenceType;
+        bool secondary = projectile.CaelumSecondaryElement;
+
+        if (essenceType == CaelumConstants.ESSENCE_FIRE)
+        {
+            if (secondary)
+            {
+                ElementalStatus.ApplyControlEffect(
+                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
+                    duration,
+                    controlPower
+                );
+            }
+            else
+            {
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_BURN,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            }
+        }
+        else if (essenceType == CaelumConstants.ESSENCE_WATER && secondary)
+        {
+            ElementalStatus.ApplyControlEffect(
+                CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
+                duration,
+                controlPower
+            );
+        }
+        else if (essenceType == CaelumConstants.ESSENCE_EARTH)
+        {
+            if (secondary)
+            {
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_POISON,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            }
+            else
+            {
+                ApplyElementalLucidityLoss(debuffScale);
+            }
+        }
+        else if (essenceType == CaelumConstants.ESSENCE_WIND)
+        {
+            if (secondary)
+            {
+                ElementalStatus.ApplyControlEffect(
+                    CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
+                    CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
+                        * debuffScale,
+                    1.0
+                );
+            }
+            else
+            {
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_CUT,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            }
+        }
+        else if (essenceType == CaelumConstants.ESSENCE_QUINTESSENCE
+            && secondary)
+        {
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_BURN,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyControlEffect(
+                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
+                    duration, controlPower
+                );
+            if (RollQuintessenceEffect())
+                ApplyAttackPushToTarget(
+                    self, projectile.Angle,
+                    projectile.CaelumPushMultiplier * 1.5
+                );
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyControlEffect(
+                    CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
+                    duration, controlPower
+                );
+            if (RollQuintessenceEffect())
+                ApplyElementalLucidityLoss(debuffScale);
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_POISON,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyDamageOverTime(
+                    CaelumConstants.ELEMENTAL_EFFECT_CUT,
+                    duration, debuffScale, dotDamage, effectSource
+                );
+            if (RollQuintessenceEffect())
+                ApplyAttackPushToTarget(
+                    self, projectile.Angle,
+                    projectile.CaelumPushMultiplier * 0.6
+                );
+            if (RollQuintessenceEffect())
+                ElementalStatus.ApplyControlEffect(
+                    CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
+                    CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
+                        * debuffScale,
+                    1.0
+                );
+        }
+    }
+
     // Directed combat damage now uses the complete Caelum defensive order.
     // Environmental and unclassified damage stays on GZDoom's native route.
     override int DamageMobj(
@@ -3892,6 +4175,9 @@ class CaelumPlayer : DoomPlayer
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            TryInterruptPendingStaffCast(
+                actualHealthLost, adrenalineRatioBeforeDamage
+            );
             UpdateHealthStateEffects();
             CalculateAndTriggerPain(
                 actualHealthLost,
@@ -4126,6 +4412,9 @@ class CaelumPlayer : DoomPlayer
         {
             int actualHealthLost = healthBeforeDamage - health;
             LastArmorHealthDamage = actualHealthLost;
+            TryInterruptPendingStaffCast(
+                actualHealthLost, adrenalineRatioBeforeDamage
+            );
             CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
             if (attackProjectile != null)
             {
@@ -4133,6 +4422,9 @@ class CaelumPlayer : DoomPlayer
                     self,
                     inflictor.AngleTo(self),
                     attackProjectile.CaelumPushMultiplier
+                );
+                ApplyIncomingElementalPayload(
+                    attackProjectile, actualHealthLost
                 );
             }
             if (lucidityNaturalGrade >= 0)
@@ -4221,6 +4513,9 @@ class CaelumPlayer : DoomPlayer
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            TryInterruptPendingStaffCast(
+                actualHealthLost, adrenalineRatioBeforeDamage
+            );
             CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
             if (attackProjectile != null)
             {
@@ -4228,6 +4523,9 @@ class CaelumPlayer : DoomPlayer
                     self,
                     inflictor.Angle,
                     attackProjectile.CaelumPushMultiplier
+                );
+                ApplyIncomingElementalPayload(
+                    attackProjectile, actualHealthLost
                 );
             }
             LastArmorHealthDamage = actualHealthLost;
@@ -4593,6 +4891,11 @@ class CaelumPlayer : DoomPlayer
         RefreshEquipmentLoadIfNeeded();
         SyncHUDActiveWeaponState();
 
+        if (ElementalStatus != null) { ElementalStatus.Tick(self); }
+        IlluminationRemaining = Max(
+            0.0, IlluminationRemaining - 1.0 / TICRATE
+        );
+
         UpdateHealthStateEffects();
 
         IsSpendingRunningAir = IsRunningOnGround();
@@ -4616,6 +4919,16 @@ class CaelumPlayer : DoomPlayer
             0.0,
             StaffCastCooldownRemaining - 1.0 / TICRATE
         );
+        if (StaffCastPending
+            && (player == null || player.playerstate != PST_LIVE
+                || health <= 0))
+        {
+            CancelPendingStaffCast(false);
+        }
+        if (StaffCastPending && StaffCastCooldownRemaining <= 0.0)
+        {
+            CompletePendingStaffCast();
+        }
         EquippedWeaponCooldownRemaining = Max(
             0.0,
             EquippedWeaponCooldownRemaining - 1.0 / TICRATE
@@ -4829,7 +5142,8 @@ class CaelumPlayer : DoomPlayer
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
             || EquipmentMenuOpen || CreationWizardOpen
-            || IsPhysicallyImmobilized())
+            || IsPhysicallyImmobilized()
+            || StaffCastPending)
         {
             return;
         }
@@ -5018,6 +5332,90 @@ class CaelumPlayer : DoomPlayer
         MarkCombatActivity();
     }
 
+    void CancelPendingStaffCast(bool interrupted)
+    {
+        if (!StaffCastPending) { return; }
+        StaffCastPending = false;
+        StaffCastCooldownRemaining = 0.0;
+        PendingStaffAnimaCost = 0.0;
+        if (interrupted)
+        {
+            LastStaffCastInterrupted = true;
+            LastStaffCastCompleted = false;
+        }
+    }
+
+    void TryInterruptPendingStaffCast(
+        int actualHealthLost,
+        double adrenalineRatioBeforeDamage
+    )
+    {
+        if (!StaffCastPending || actualHealthLost <= 0
+            || CaelumMaximumHealth <= 0 || DerivedStats == null)
+        {
+            return;
+        }
+
+        double lostHealthPercent = 100.0
+            * actualHealthLost / CaelumMaximumHealth;
+        double patienceResistance = Clamp(
+            DerivedStats.InterruptionResistancePercent / 100.0,
+            0.0,
+            1.0
+        );
+        LastStaffInterruptionChancePercent = Clamp(
+            10.0 * lostHealthPercent
+                * DerivedStats.PainChanceMultiplier
+                * HealthPainMultiplier
+                * (1.0 - Clamp(adrenalineRatioBeforeDamage, 0.0, 1.0))
+                * (1.0 - patienceResistance),
+            0.0,
+            100.0
+        );
+        int interruptionRoll = Random[CaelumSpellInterruption](0, 999999);
+        LastStaffInterruptionRollPercent = interruptionRoll / 10000.0;
+        if (LastStaffInterruptionRollPercent
+            < LastStaffInterruptionChancePercent)
+        {
+            CancelPendingStaffCast(true);
+        }
+    }
+
+    void CompletePendingStaffCast()
+    {
+        if (!StaffCastPending) { return; }
+        bool secondaryAttack = PendingStaffSecondaryAttack;
+        int activeMagicType = PendingStaffWeaponType;
+        int activeEssenceType = PendingStaffEssenceType;
+        double animaCost = PendingStaffAnimaCost;
+
+        StaffCastPending = false;
+        StaffCastCooldownRemaining = 0.0;
+        PendingStaffAnimaCost = 0.0;
+        if (DerivedStats == null || WeaponModel == null
+            || !WeaponModel.Equipped || WeaponModel.Durability <= 0
+            || player == null || player.playerstate != PST_LIVE
+            || WeaponModel.WeaponType != activeMagicType
+            || WeaponModel.Tier != PendingStaffWeaponTier
+            || WeaponModel.Size != PendingStaffWeaponSize)
+        {
+            return;
+        }
+        if (CurrentAnima < animaCost)
+        {
+            LastStaffInsufficientAnima = true;
+            return;
+        }
+
+        CurrentAnima -= animaCost;
+        ReleasePendingStaffAttack(
+            secondaryAttack,
+            activeMagicType,
+            activeEssenceType
+        );
+        LastStaffCastCompleted = true;
+    }
+
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
         LastStaffHit = false;
@@ -5029,34 +5427,58 @@ class CaelumPlayer : DoomPlayer
         LastStaffLocationMultiplier = 1.0;
         LastAttackPushForce = 0.0;
         LastStaffVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
+        LastStaffCastInterrupted = false;
+        LastStaffCastCompleted = false;
+        LastStaffInterruptionChancePercent = 0.0;
+        LastStaffInterruptionRollPercent = 0.0;
         if (DerivedStats == null
             || player == null
             || player.playerstate != PST_LIVE
             || IsPhysicallyImmobilized()
-            || StaffCastCooldownRemaining > 0.0)
+            || StaffCastPending
+            || StaffCastCooldownRemaining > 0.0
+            || WeaponModel == null
+            || !WeaponModel.Equipped
+            || !WeaponModel.IsMagicalType(WeaponModel.WeaponType))
         {
             return;
         }
 
-        int activeMagicType = WeaponModel != null
-            ? WeaponModel.WeaponType : CaelumConstants.WEAPON_TYPE_STAFF;
-        double magicDamageScale = WeaponModel.GetDamage()
-            / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
+        int activeMagicType = WeaponModel.WeaponType;
         double animaCost = WeaponModel.GetAnimaCostFor(activeMagicType)
             * DerivedStats.StaffAnimaCost
             / CaelumConstants.DEBUG_STAFF_ANIMA_COST;
-        LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
-            * magicDamageScale
-            * EffectiveOffensiveDamageMultiplier;
         if (CurrentAnima < animaCost)
         {
             LastStaffInsufficientAnima = true;
             return;
         }
 
-        CurrentAnima -= animaCost;
+        StaffCastPending = true;
+        PendingStaffSecondaryAttack = secondaryAttack;
+        PendingStaffWeaponType = activeMagicType;
+        PendingStaffWeaponTier = WeaponModel.Tier;
+        PendingStaffWeaponSize = WeaponModel.Size;
+        PendingStaffEssenceType = Clamp(
+            WeaponModel.EssenceType,
+            0,
+            CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+        PendingStaffAnimaCost = animaCost;
         StaffCastCooldownRemaining = WeaponModel.GetAttackTics()
             * DerivedStats.CastingDurationMultiplier / double(TICRATE);
+        PendingStaffCastTotalSeconds = StaffCastCooldownRemaining;
+        MarkCombatActivity();
+    }
+
+    void ReleasePendingStaffAttack(
+        bool secondaryAttack,
+        int activeMagicType,
+        int activeEssenceType
+    )
+    {
+        double magicDamageScale = WeaponModel.GetDamage()
+            / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         UpdateLucidityAccuracyEffects();
         UpdateCrouchEffects();
         LastStaffAccuracyPercent = Max(
@@ -5100,13 +5522,48 @@ class CaelumPlayer : DoomPlayer
             * magicDamageScale
             * EffectiveOffensiveDamageMultiplier;
         int integerDamage = Max(1, int(LastStaffCalculatedDamage + 0.5));
+        if (activeEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE
+            && !secondaryAttack)
+        {
+            integerDamage = Max(
+                1,
+                int(integerDamage
+                    * CaelumConstants.QUINTESSENCE_PRIMARY_DAMAGE_MULTIPLIER
+                    + 0.5)
+            );
+            LastStaffCalculatedDamage = integerDamage;
+        }
+
+        double elementalPushMultiplier = DerivedStats.MagicalPushMultiplier;
+        if (!secondaryAttack
+            && activeEssenceType == CaelumConstants.ESSENCE_WATER)
+        {
+            elementalPushMultiplier *=
+                CaelumConstants.ELEMENTAL_EXTREME_PUSH_MULTIPLIER;
+        }
+        else if (!secondaryAttack
+            && activeEssenceType == CaelumConstants.ESSENCE_WIND)
+        {
+            elementalPushMultiplier *=
+                CaelumConstants.ELEMENTAL_MODERATE_PUSH_MULTIPLIER;
+        }
+        if (secondaryAttack
+            && activeEssenceType == CaelumConstants.ESSENCE_FIRE)
+        {
+            IlluminationRemaining = Max(
+                IlluminationRemaining,
+                CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS
+                    * DerivedStats.BuffPowerPercent / 100.0
+            );
+        }
 
         // El alcance real del hechizo tambien limita el guiado del libro.
         double spellRange = CaelumConstants.ESSENCE_BASE_RANGE_MAP_UNITS
             * DerivedStats.AbilityRangePercent / 100.0;
 
         int projectileCount = activeMagicType
-            == CaelumConstants.WEAPON_TYPE_BELL ? 3 : 1;
+            == CaelumConstants.WEAPON_TYPE_BELL
+                ? CaelumConstants.WEAPON_BELL_PROJECTILE_COUNT : 1;
         for (int projectileIndex = 0;
             projectileIndex < projectileCount; projectileIndex++)
         {
@@ -5180,7 +5637,13 @@ class CaelumPlayer : DoomPlayer
             );
             projectile.StoreCaelumAttackResult(
                 integerDamage, true, projectileCritical, true,
-                DerivedStats.MagicalPushMultiplier
+                elementalPushMultiplier
+            );
+            projectile.StoreCaelumElementalPayload(
+                activeEssenceType,
+                secondaryAttack,
+                DerivedStats.DebuffPowerPercent,
+                DerivedStats.BuffPowerPercent
             );
             if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
             {
@@ -5408,6 +5871,12 @@ class CaelumPlayer : DoomPlayer
     {
         double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0);
         double jumpFactor = Max(0.0, EffectiveJumpHeightPercent / 100.0);
+        if (ElementalStatus != null)
+        {
+            double elementalMovement = ElementalStatus.GetMovementMultiplier();
+            movementFactor *= elementalMovement;
+            jumpFactor *= elementalMovement;
+        }
 
         // Crossing the critical lucidity threshold causes one two-second
         // physical stun. Zeroing horizontal velocity prevents residual sliding
@@ -5430,7 +5899,9 @@ class CaelumPlayer : DoomPlayer
     bool IsPhysicallyImmobilized()
     {
         return LucidityPhysicalStunRemaining > 0.0
-            || PainImmobilizationRemaining > 0.0;
+            || PainImmobilizationRemaining > 0.0
+            || (ElementalStatus != null
+                && ElementalStatus.IsLightningStunned());
     }
 
     // Recalculate base attributes whenever a debug profile choice changes.
@@ -6464,9 +6935,13 @@ class CaelumPlayer : DoomPlayer
         }
 
         EffectivePhysicalAccuracyPercent = DerivedStats.PhysicalAccuracyPercent
-            * LucidityAccuracyMultiplier;
+            * LucidityAccuracyMultiplier
+            * (ElementalStatus != null
+                ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
         EffectiveMagicalAccuracyPercent = DerivedStats.MagicalAccuracyPercent
-            * LucidityAccuracyMultiplier;
+            * LucidityAccuracyMultiplier
+            * (ElementalStatus != null
+                ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
     }
 
     void UpdateLucidityPhysicalStun()

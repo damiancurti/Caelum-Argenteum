@@ -52,6 +52,19 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
+    ui String GetEssenceTypeKey(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "CA_ESSENCE_WATER";
+            case CaelumConstants.ESSENCE_EARTH: return "CA_ESSENCE_EARTH";
+            case CaelumConstants.ESSENCE_WIND: return "CA_ESSENCE_WIND";
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                return "CA_ESSENCE_QUINTESSENCE";
+            default: return "CA_ESSENCE_FIRE";
+        }
+    }
+
     // Convert the stored play-scope state into a localized UI label.
     ui String GetAirStateKey(int airState)
     {
@@ -583,16 +596,44 @@ class CaelumHUDOverlay : EventHandler
         String activeWeaponLine;
         if (localPlayer.HUDHasActiveWeapon)
         {
-            activeWeaponLine = String.Format(
-                "%s: %s | T%d | %s",
-                StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
-                activeWeaponName,
-                localPlayer.HUDActiveWeaponTier,
-                StringTable.Localize(
-                    GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
-                    false
-                )
-            );
+            bool magicalWeapon =
+                localPlayer.HUDActiveWeaponType
+                    == CaelumConstants.WEAPON_TYPE_STAFF
+                || localPlayer.HUDActiveWeaponType
+                    == CaelumConstants.WEAPON_TYPE_BELL
+                || localPlayer.HUDActiveWeaponType
+                    == CaelumConstants.WEAPON_TYPE_BOOK
+                || localPlayer.HUDActiveWeaponType
+                    == CaelumConstants.WEAPON_TYPE_STATUETTE;
+            if (magicalWeapon)
+            {
+                activeWeaponLine = String.Format(
+                    "%s: %s | %s | T%d | %s",
+                    StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
+                    activeWeaponName,
+                    StringTable.Localize(GetEssenceTypeKey(
+                        localPlayer.HUDActiveWeaponEssenceType
+                    ), false),
+                    localPlayer.HUDActiveWeaponTier,
+                    StringTable.Localize(
+                        GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
+                        false
+                    )
+                );
+            }
+            else
+            {
+                activeWeaponLine = String.Format(
+                    "%s: %s | T%d | %s",
+                    StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
+                    activeWeaponName,
+                    localPlayer.HUDActiveWeaponTier,
+                    StringTable.Localize(
+                        GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
+                        false
+                    )
+                );
+            }
         }
         else
         {

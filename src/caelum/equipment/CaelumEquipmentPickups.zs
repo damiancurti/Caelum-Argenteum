@@ -8,6 +8,7 @@ class CaelumEquipmentItem : Inventory
     int Tier;
     int EquipmentSize;
     int Durability;
+    int EssenceType;
     double UnitWeight;
     bool Equipped;
     bool InMagicBox;
@@ -63,6 +64,7 @@ class CaelumEquipmentItem : Inventory
             copy.Tier = Tier;
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
+            copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = Equipped;
             copy.InMagicBox = InMagicBox;
@@ -152,7 +154,7 @@ class CaelumShieldPickup : CaelumEquipmentItem
     }
 }
 
-// args: tipo, tier, talle (1..5), durabilidad+1.
+// args: tipo, tier, talle (1..5), durabilidad+1, esencia+1.
 class CaelumWeaponPickup : CaelumEquipmentItem
 {
     Default
@@ -182,6 +184,9 @@ class CaelumWeaponPickup : CaelumEquipmentItem
             : caelumPlayer.WeaponModel.GetMaximumDurabilityFor(
                 ItemType, Tier, EquipmentSize
             );
+        EssenceType = args[4] > 0
+            ? Clamp(args[4] - 1, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1)
+            : CaelumConstants.ESSENCE_FIRE;
         UnitWeight = caelumPlayer.WeaponModel.GetWeightFor(
             ItemType, Tier, EquipmentSize
         );

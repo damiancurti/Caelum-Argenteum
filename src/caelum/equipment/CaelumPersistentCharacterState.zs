@@ -27,6 +27,7 @@ class CaelumPersistentCharacterState : Inventory
     int WeaponTier;
     int WeaponSize;
     int WeaponDurability;
+    int WeaponEssenceType;
     bool WeaponEquipped;
     bool WeaponEquipmentInitialized;
     double EquippedWeaponBaseWeight;
@@ -44,6 +45,7 @@ class CaelumPersistentCharacterState : Inventory
     int SizedOwnedArmorDurability[300];
     int SizedOwnedShieldDurability[60];
     int SizedOwnedWeaponDurability[300];
+    int SizedWeaponEssenceType[300];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
     // false significa que el objeto viaja con el personaje (inventario o
@@ -60,6 +62,7 @@ class CaelumPersistentCharacterState : Inventory
     // Impide que los registros 4.7 vuelvan a crear objetos descartados una
     // vez que la propiedad ya fue transferida al inventario nativo.
     bool NativeEquipmentMigrationComplete;
+    bool WeaponEssenceInitialized;
 
     int StoredHealth;
     double StoredAnima;
@@ -196,6 +199,7 @@ class CaelumPersistentCharacterState : Inventory
         EnsureWeaponEquipmentInitialized();
         EnsureEquipmentStorageInitialized();
         EnsureWeaponLoadoutInitialized();
+        EnsureWeaponEssenceInitialized();
     }
 
     // Las partidas 4.7.2 trataban todo objeto desequipado como contenido de la
@@ -258,6 +262,18 @@ class CaelumPersistentCharacterState : Inventory
             )] = true;
         }
         WeaponLoadoutInitialized = true;
+    }
+
+    void EnsureWeaponEssenceInitialized()
+    {
+        if (WeaponEssenceInitialized) { return; }
+        WeaponEssenceType = CaelumConstants.ESSENCE_FIRE;
+        for (int index = 0;
+            index < CaelumConstants.WEAPON_OWNERSHIP_COUNT; index++)
+        {
+            SizedWeaponEssenceType[index] = CaelumConstants.ESSENCE_FIRE;
+        }
+        WeaponEssenceInitialized = true;
     }
 
     // Migra el peso provisional de versiones anteriores a un arma real. La
@@ -333,6 +349,11 @@ class CaelumPersistentCharacterState : Inventory
             SizedOwnedWeapon[weaponIndex] = true;
             SizedOwnedWeaponDurability[weaponIndex] = WeaponDurability;
             SizedWeaponEquipped[weaponIndex] = true;
+            SizedWeaponEssenceType[weaponIndex] = Clamp(
+                WeaponEssenceType,
+                0,
+                CaelumConstants.ESSENCE_TYPE_COUNT - 1
+            );
         }
     }
 
@@ -515,6 +536,30 @@ class CaelumPersistentCharacterState : Inventory
         ];
     }
 
+    int GetWeaponEssenceType(int weaponType, int tier, int equipmentSize)
+    {
+        EnsureWeaponEssenceInitialized();
+        return Clamp(
+            SizedWeaponEssenceType[GetSizedWeaponOwnershipIndex(
+                weaponType, tier, equipmentSize
+            )],
+            0,
+            CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+    }
+
+    void SetWeaponEssenceType(
+        int weaponType, int tier, int equipmentSize, int essenceType
+    )
+    {
+        EnsureWeaponEssenceInitialized();
+        SizedWeaponEssenceType[GetSizedWeaponOwnershipIndex(
+            weaponType, tier, equipmentSize
+        )] = Clamp(
+            essenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+    }
+
     void StoreOwnedArmorDurability(
         int slot,
         int armorType,
@@ -579,6 +624,7 @@ class CaelumPersistentCharacterState : Inventory
         int index = GetSizedWeaponOwnershipIndex(weaponType, tier, equipmentSize);
         SizedOwnedWeapon[index] = false;
         SizedOwnedWeaponDurability[index] = 0;
+        SizedWeaponEssenceType[index] = CaelumConstants.ESSENCE_FIRE;
         SizedWeaponInMagicBox[index] = false;
         SizedWeaponEquipped[index] = false;
     }

@@ -56,6 +56,11 @@ class CaelumConstants : Object
     const DEBUG_STAFF_BASE_DAMAGE = 120.0;
     const DEBUG_STAFF_ANIMA_COST = 500.0;
     const DEBUG_STAFF_CAST_TICS = 18;
+    // La campana compensa su abanico de siete proyectiles con menor dano
+    // individual y un coste de lanzamiento duplicado.
+    const WEAPON_BELL_BASE_DAMAGE = 50.0;
+    const WEAPON_BELL_ANIMA_COST = 1000.0;
+    const WEAPON_BELL_PROJECTILE_COUNT = 7;
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
     const DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT = 8.0;
@@ -66,6 +71,30 @@ class CaelumConstants : Object
     const PROJECTILE_SPEED_NORMAL = 20.0;
     const PROJECTILE_SPEED_FAST = 40.0;
     const PROJECTILE_SPEED_VERY_FAST = 60.0;
+
+    // Las cinco esencias comparten objeto base; este valor determina el
+    // elemento primario de Fire y el secundario de AltFire.
+    const ESSENCE_FIRE = 0;
+    const ESSENCE_WATER = 1;
+    const ESSENCE_EARTH = 2;
+    const ESSENCE_WIND = 3;
+    const ESSENCE_QUINTESSENCE = 4;
+    const ESSENCE_TYPE_COUNT = 5;
+    const ELEMENTAL_BASE_DURATION_SECONDS = 3.0;
+    const ELEMENTAL_DOT_DAMAGE_RATIO = 0.10;
+    const ELEMENTAL_BASE_CONTROL_POWER_PERCENT = 50.0;
+    const ELEMENTAL_LIGHTNING_STUN_SECONDS = 0.30;
+    const ELEMENTAL_MODERATE_PUSH_MULTIPLIER = 1.60;
+    const ELEMENTAL_EXTREME_PUSH_MULTIPLIER = 2.50;
+    const QUINTESSENCE_PRIMARY_DAMAGE_MULTIPLIER = 2.0;
+    const QUINTESSENCE_EFFECT_CHANCE_PERCENT = 10.0;
+
+    const ELEMENTAL_EFFECT_BURN = 0;
+    const ELEMENTAL_EFFECT_CUT = 1;
+    const ELEMENTAL_EFFECT_POISON = 2;
+    const ELEMENTAL_EFFECT_FREEZE = 3;
+    const ELEMENTAL_EFFECT_DAZZLE = 4;
+    const ELEMENTAL_EFFECT_LIGHTNING_STUN = 5;
     const ESSENCE_EXPLOSION_BASE_RADIUS = 128;
     const ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO = 0.10;
     // Ficha tier 1 de la carabina, reemplazo del arco corto.

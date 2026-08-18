@@ -591,7 +591,7 @@ class CaelumHomingMagicProjectile : CaelumPlayerMagicProjectile
 
         // Solo se adquieren combatientes y el muneco construido para pruebas;
         // decoraciones destructibles no deben atraer los hechizos del libro.
-        bool isCombatTarget = candidate.bMonster
+        bool isCombatTarget = candidate.bCountKill
             || candidate.player != null
             || CaelumTrainingDummy(candidate) != null;
         if (!isCombatTarget) { return false; }

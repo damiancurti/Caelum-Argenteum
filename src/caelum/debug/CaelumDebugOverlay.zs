@@ -248,6 +248,19 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetEssenceTypeKey(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "CA_ESSENCE_WATER";
+            case CaelumConstants.ESSENCE_EARTH: return "CA_ESSENCE_EARTH";
+            case CaelumConstants.ESSENCE_WIND: return "CA_ESSENCE_WIND";
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                return "CA_ESSENCE_QUINTESSENCE";
+            default: return "CA_ESSENCE_FIRE";
+        }
+    }
+
     ui String GetCraftingWeaponKey(int weaponId)
     {
         switch (weaponId)
@@ -935,18 +948,53 @@ class CaelumDebugOverlay : EventHandler
         else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
-            selection = String.Format(
-                "%s / %s T%d %s",
-                StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
-                StringTable.Localize(
-                    GetWeaponTypeKey(localPlayer.EquipmentSelectionWeaponType),
-                    false
-                ),
-                localPlayer.EquipmentSelectionTier,
-                StringTable.Localize(
-                    GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
-                )
-            );
+            if (localPlayer.EquipmentSelectionWeaponType
+                    == CaelumConstants.WEAPON_TYPE_STAFF
+                || localPlayer.EquipmentSelectionWeaponType
+                    == CaelumConstants.WEAPON_TYPE_BELL
+                || localPlayer.EquipmentSelectionWeaponType
+                    == CaelumConstants.WEAPON_TYPE_BOOK
+                || localPlayer.EquipmentSelectionWeaponType
+                    == CaelumConstants.WEAPON_TYPE_STATUETTE)
+            {
+                selection = String.Format(
+                    "%s / %s T%d %s / %s",
+                    StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
+                    StringTable.Localize(
+                        GetWeaponTypeKey(
+                            localPlayer.EquipmentSelectionWeaponType
+                        ), false
+                    ),
+                    localPlayer.EquipmentSelectionTier,
+                    StringTable.Localize(
+                        GetEquipmentSizeKey(
+                            localPlayer.EquipmentSelectionSize
+                        ), false
+                    ),
+                    StringTable.Localize(
+                        GetEssenceTypeKey(localPlayer.SelectedEssenceType),
+                        false
+                    )
+                );
+            }
+            else
+            {
+                selection = String.Format(
+                    "%s / %s T%d %s",
+                    StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
+                    StringTable.Localize(
+                        GetWeaponTypeKey(
+                            localPlayer.EquipmentSelectionWeaponType
+                        ), false
+                    ),
+                    localPlayer.EquipmentSelectionTier,
+                    StringTable.Localize(
+                        GetEquipmentSizeKey(
+                            localPlayer.EquipmentSelectionSize
+                        ), false
+                    )
+                );
+            }
         }
         else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_SHIELD)
@@ -2186,6 +2234,63 @@ class CaelumDebugOverlay : EventHandler
                 StringTable.Localize("CA_STAT_DIALOGUE_SKILL", false),
                 derived.DialogueSkillPercent
             );
+            String activeEssenceLine = String.Format(
+                "%s: %s   %s: %.2fs",
+                StringTable.Localize("CA_RESOURCE_ACTIVE_ESSENCE", false),
+                StringTable.Localize(
+                    GetEssenceTypeKey(localPlayer.WeaponModel != null
+                        ? localPlayer.WeaponModel.EssenceType
+                        : CaelumConstants.ESSENCE_FIRE), false
+                ),
+                StringTable.Localize("CA_RESOURCE_ILLUMINATION", false),
+                localPlayer.IlluminationRemaining
+            );
+            String elementalEffectsLine = String.Format(
+                "%s: %.1f/%.1f/%.1f/%.1f/%.1f/%.1f s",
+                StringTable.Localize("CA_RESOURCE_ELEMENTAL_EFFECTS", false),
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.BurnRemaining : 0.0,
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.CutRemaining : 0.0,
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.PoisonRemaining : 0.0,
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.FreezeRemaining : 0.0,
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.DazzleRemaining : 0.0,
+                localPlayer.ElementalStatus != null
+                    ? localPlayer.ElementalStatus.LightningStunRemaining : 0.0
+            );
+            String castStateKey = "CA_CAST_STATE_IDLE";
+            if (localPlayer.StaffCastPending)
+            {
+                castStateKey = "CA_CAST_STATE_PREPARING";
+            }
+            else if (localPlayer.LastStaffCastInterrupted)
+            {
+                castStateKey = "CA_CAST_STATE_INTERRUPTED";
+            }
+            else if (localPlayer.LastStaffCastCompleted)
+            {
+                castStateKey = "CA_CAST_STATE_COMPLETED";
+            }
+            String castStateLine = String.Format(
+                "%s: %s %.2f/%.2fs   %s: %.0f",
+                StringTable.Localize("CA_RESOURCE_CAST_STATE", false),
+                StringTable.Localize(castStateKey, false),
+                localPlayer.StaffCastCooldownRemaining,
+                localPlayer.PendingStaffCastTotalSeconds,
+                StringTable.Localize("CA_RESOURCE_RESERVED_ANIMA", false),
+                localPlayer.PendingStaffAnimaCost
+            );
+            String interruptionLine = String.Format(
+                "%s: %.2f%%/%.2f%%   %s: %.2f%%",
+                StringTable.Localize("CA_RESOURCE_INTERRUPTION", false),
+                localPlayer.LastStaffInterruptionChancePercent,
+                localPlayer.LastStaffInterruptionRollPercent,
+                StringTable.Localize("CA_RESOURCE_INTERRUPTION_RESISTANCE", false),
+                derived.InterruptionResistancePercent
+            );
             Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 62.0, staffDamageLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_CYAN, 20.0, 78.0, staffAccuracyLine,
@@ -2197,6 +2302,14 @@ class CaelumDebugOverlay : EventHandler
             Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 134.0, eloquenceLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_PURPLE, 20.0, 150.0, eloquenceUtilityLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_GOLD, 20.0, 174.0, activeEssenceLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_ORANGE, 20.0, 190.0, elementalEffectsLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 214.0, castStateLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_RED, 20.0, 230.0, interruptionLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             return;
         }
