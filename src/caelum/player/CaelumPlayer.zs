@@ -101,6 +101,15 @@ class CaelumPlayer : DoomPlayer
     int EquippedWeaponSize;
     bool WeaponWeightInitialized;
     double EquippedWeaponCooldownRemaining;
+
+    // Bloquea repeticiones de AltFire de la jabalina mientras el botón sigue
+    // pulsado. El motor puede reentrar en AltFire desde WeaponReady cada tic.
+    bool JavelinSecondaryLatched;
+
+    // Último resultado del desgaste de arma para depuración y futuras UI.
+    int LastWeaponDurabilityLoss;
+    double LastWeaponDurabilityChancePercent;
+    double LastWeaponDurabilityRollPercent;
     bool LastCarbineFired;
     bool LastCarbineHadEnoughAir;
     bool LastCarbineHadAmmo;
@@ -632,6 +641,71 @@ class CaelumPlayer : DoomPlayer
             }
         }
         return null;
+    }
+
+
+    // Añade unidades de jabalina mediante GiveInventoryType sin pasar nunca
+    // una pila por Amount = 0. Esta ruta se usa tanto para pickups recuperados
+    // como para el generador DEV, y verifica la pila real antes de informar éxito.
+    bool AcquireJavelinAmmunition(int ammunitionType, int incomingAmount)
+    {
+        if (incomingAmount <= 0 || DerivedStats == null) { return false; }
+
+        CaelumCarbineAmmo existing = FindNativeAmmunition(ammunitionType);
+        bool storeInMagicBox = existing != null && existing.InMagicBox;
+
+        if (existing != null)
+        {
+            if (!PrepareNativeAmmoStackPickup(existing, incomingAmount))
+            {
+                return false;
+            }
+            storeInMagicBox = existing.InMagicBox;
+        }
+        else
+        {
+            RefreshCarriedInventorySummary();
+            double incomingWeight = incomingAmount
+                * GetAmmunitionUnitWeight(ammunitionType);
+            if (!CanAddWeightToPersonalInventory(incomingWeight))
+            {
+                if (CountNativeMagicBoxSlots() >= DerivedStats.MagicBoxCapacity)
+                {
+                    return false;
+                }
+                storeInMagicBox = true;
+            }
+        }
+
+        // IMPORTANTE: no usar GiveInventoryType con las clases de jabalina.
+        // Su TryPickup llama nuevamente a AcquireJavelinAmmunition y generaría
+        // recursión infinita (stack overflow). Modificamos la pila directamente.
+        CaelumCarbineAmmo result = existing;
+        bool createdNewStack = false;
+
+        if (result != null)
+        {
+            result.Amount += incomingAmount;
+        }
+        else
+        {
+            Name ammoClass = GetAmmunitionClassName(ammunitionType);
+            result = CaelumCarbineAmmo(Spawn(ammoClass, Pos, NO_REPLACE));
+            if (result == null) { return false; }
+
+            // La clase nace con Amount 1. Sustituimos ese valor por la cantidad
+            // que realmente entra antes de adjuntarla al inventario del jugador.
+            result.Amount = incomingAmount;
+            AddInventory(result);
+            createdNewStack = true;
+        }
+
+        if (result == null || result.Amount <= 0) { return false; }
+        result.InMagicBox = storeInMagicBox;
+        LastEquipmentPickupWasNew = createdNewStack;
+        LastEquipmentPickupWentToMagicBox = storeInMagicBox;
+        OnNativeInventoryChanged();
+        return true;
     }
 
     CaelumSpecialInventoryItem FindNativeSpecialItem(
@@ -2277,6 +2351,25 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    double GetAmmunitionUnitWeight(int ammunitionType)
+    {
+        switch (ammunitionType)
+        {
+            case CaelumConstants.AMMUNITION_ARROW:
+                return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
+            case CaelumConstants.AMMUNITION_BOLT:
+                return CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
+                return CaelumConstants.JAVELIN_TIER_ONE_AMMO_UNIT_WEIGHT;
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
+                return CaelumConstants.JAVELIN_TIER_TWO_AMMO_UNIT_WEIGHT;
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
+                return CaelumConstants.JAVELIN_TIER_THREE_AMMO_UNIT_WEIGHT;
+            default:
+                return CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+        }
+    }
+
     Name GetAmmunitionClassName(int ammunitionType)
     {
         switch (ammunitionType)
@@ -3252,6 +3345,19 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[1] = EquipmentSelectionTier;
                 pickup.args[2] = EquipmentSelectionSize + 1;
                 pickup.args[4] = SelectedEssenceType + 1;
+            }
+            // Sólo para el generador de desarrollo: al crear una jabalina se
+            // garantiza una pila nativa de prueba en el inventario del jugador.
+            // Evita confundir el arma del suelo con una segunda jabalina que en
+            // realidad era la munición. La cantidad 5 ya era la usada por el
+            // entorno de prueba y no fija el balance final.
+            if (pickup != null
+                && EquipmentSelectionWeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN)
+            {
+                int ammoType = GetJavelinAmmunitionTypeForTier(EquipmentSelectionTier);
+                // El entorno DEV usa la misma ruta que una recogida real.
+                // Las cinco unidades siguen siendo sólo una cantidad de prueba.
+                AcquireJavelinAmmunition(ammoType, 5);
             }
         }
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
@@ -4968,6 +5074,13 @@ class CaelumPlayer : DoomPlayer
     {
         Super.Tick();
 
+        // AltFire de jabalina es de una acción por pulsación. Soltar el botón
+        // rearma el lanzamiento; mantenerlo no puede crear un bucle por tic.
+        if (player != null && (player.cmd.buttons & BT_ALTATTACK) == 0)
+        {
+            JavelinSecondaryLatched = false;
+        }
+
         // La creación inicial pausa necesidades, regeneraciones y costes.
         if (CreationWizardOpen)
         {
@@ -5238,6 +5351,12 @@ class CaelumPlayer : DoomPlayer
             ? CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
             ) : -1;
+
+        if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
+        {
+            if (JavelinSecondaryLatched) { return; }
+            JavelinSecondaryLatched = true;
+        }
         bool shieldCompatible = catalogueWeapon >= 0
             && CaelumWeaponCatalogue.UsesOneHandedShieldRules(
                 catalogueWeapon
@@ -5275,6 +5394,93 @@ class CaelumPlayer : DoomPlayer
                     WeaponModel.GetAttackTics() / double(TICRATE);
             }
         }
+    }
+
+    // Reutiliza exactamente la curva de desgaste de armaduras: por cada
+    // 1000 puntos elegibles se pierde 1 de durabilidad garantizado y el
+    // remanente aporta 1% de probabilidad por cada 10 puntos. Las jabalinas
+    // quedan fuera porque al arrojarse son munición recuperable.
+    void ApplyWeaponDurabilityFromSuccessfulDamage(
+        double dealtDamage,
+        int weaponType,
+        int tier,
+        int equipmentSize
+    )
+    {
+        LastWeaponDurabilityLoss = 0;
+        LastWeaponDurabilityChancePercent = 0.0;
+        LastWeaponDurabilityRollPercent = 0.0;
+
+        if (dealtDamage <= 0.0
+            || weaponType == CaelumConstants.WEAPON_TYPE_JAVELIN)
+        {
+            return;
+        }
+
+        CaelumEquipmentItem weapon = FindNativeEquipmentItem(
+            CaelumConstants.EQUIPMENT_KIND_WEAPON,
+            weaponType, -1, tier, equipmentSize
+        );
+        if (weapon == null || weapon.Durability <= 0 || weapon.InMagicBox)
+        {
+            return;
+        }
+
+        double eligibleDamage = dealtDamage
+            * Max(0.0, ArmorDurabilityDamageMultiplier);
+        LastWeaponDurabilityLoss = int(
+            eligibleDamage
+                / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
+        );
+        double remainder = eligibleDamage
+            - LastWeaponDurabilityLoss
+                * CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
+        LastWeaponDurabilityChancePercent = Clamp(
+            remainder / CaelumConstants.ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT,
+            0.0,
+            100.0
+        );
+        int roll = Random[CaelumWeaponDurability](0, 999999);
+        LastWeaponDurabilityRollPercent = roll / 10000.0;
+        if (LastWeaponDurabilityRollPercent < LastWeaponDurabilityChancePercent)
+        {
+            LastWeaponDurabilityLoss++;
+        }
+
+        LastWeaponDurabilityLoss = Min(
+            LastWeaponDurabilityLoss,
+            weapon.Durability
+        );
+        if (LastWeaponDurabilityLoss <= 0) { return; }
+
+        weapon.Durability -= LastWeaponDurabilityLoss;
+
+        bool isActiveWeapon = WeaponModel != null
+            && WeaponModel.Equipped
+            && WeaponModel.WeaponType == weaponType
+            && WeaponModel.Tier == tier
+            && WeaponModel.Size == equipmentSize;
+        if (isActiveWeapon)
+        {
+            WeaponModel.Durability = weapon.Durability;
+            if (WeaponModel.Durability <= 0)
+            {
+                EquippedWeaponCooldownRemaining = 0.0;
+                StaffCastCooldownRemaining = 0.0;
+                CancelPendingStaffCast(false);
+                LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_BROKEN;
+            }
+        }
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState != null)
+        {
+            persistentState.StoreOwnedWeaponDurability(
+                weaponType, tier, equipmentSize, weapon.Durability
+            );
+        }
+        RefreshEquipmentSelectionPreview();
     }
 
     bool HasJavelinMeleeFallbackTarget()
@@ -5417,6 +5623,11 @@ class CaelumPlayer : DoomPlayer
             criticalHit,
             false,
             DerivedStats.PhysicalPushMultiplier
+        );
+        projectile.StoreCaelumWeaponWearIdentity(
+            WeaponModel.WeaponType,
+            WeaponModel.Tier,
+            WeaponModel.Size
         );
 
         ammunition.Amount = Max(0, ammunition.Amount - 1);
@@ -5564,6 +5775,11 @@ class CaelumPlayer : DoomPlayer
             LastCarbineCriticalHit,
             false,
             DerivedStats.PhysicalPushMultiplier
+        );
+        projectile.StoreCaelumWeaponWearIdentity(
+            WeaponModel.WeaponType,
+            WeaponModel.Tier,
+            WeaponModel.Size
         );
 
         carbineAmmo.Amount = Max(0, carbineAmmo.Amount - 1);
@@ -5883,12 +6099,18 @@ class CaelumPlayer : DoomPlayer
                 integerDamage, true, projectileCritical, true,
                 elementalPushMultiplier
             );
+        projectile.StoreCaelumWeaponWearIdentity(
+            WeaponModel.WeaponType,
+            WeaponModel.Tier,
+            WeaponModel.Size
+        );
             projectile.StoreCaelumElementalPayload(
                 activeEssenceType,
                 secondaryAttack,
                 DerivedStats.DebuffPowerPercent,
                 DerivedStats.BuffPowerPercent
             );
+            projectile.UpdateCaelumElementalWorldSprite();
             if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
             {
                 CaelumHomingMagicProjectile homingProjectile =
@@ -6691,6 +6913,12 @@ class CaelumPlayer : DoomPlayer
 
         if (LastMeleeHit && LastMeleeActualDamage > 0)
         {
+            ApplyWeaponDurabilityFromSuccessfulDamage(
+                LastMeleeActualDamage,
+                WeaponModel.WeaponType,
+                WeaponModel.Tier,
+                WeaponModel.Size
+            );
             ApplyAttackPushToTarget(
                 targetData.linetarget,
                 attackAngle,

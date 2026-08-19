@@ -855,6 +855,117 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
     }
 
+    // Devuelve el icono independiente asociado al objeto seleccionado.
+    // Los iconos proceden del atlas propio de Caelum Argenteum y no usan
+    // recursos gráficos de Doom.
+    ui String GetEquipmentSelectionIcon(CaelumPlayer localPlayer)
+    {
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            switch (localPlayer.EquipmentSelectionWeaponType)
+            {
+                case CaelumConstants.WEAPON_TYPE_SWORD: return "graphics/caelum/icons/ca_sword.png";
+                case CaelumConstants.WEAPON_TYPE_STAFF: return "graphics/caelum/icons/ca_staff.png";
+                case CaelumConstants.WEAPON_TYPE_CARBINE: return "graphics/caelum/icons/ca_carbine.png";
+                case CaelumConstants.WEAPON_TYPE_DAGGER: return "graphics/caelum/icons/ca_dagger.png";
+                case CaelumConstants.WEAPON_TYPE_HATCHET: return "graphics/caelum/icons/ca_hatchet.png";
+                case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
+                case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
+                case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
+                case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
+                case CaelumConstants.WEAPON_TYPE_SPEAR: return "graphics/caelum/icons/ca_spear.png";
+                case CaelumConstants.WEAPON_TYPE_GREATSWORD: return "graphics/caelum/icons/ca_greatsword.png";
+                case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "graphics/caelum/icons/ca_war_axe.png";
+                case CaelumConstants.WEAPON_TYPE_HALBERD: return "graphics/caelum/icons/ca_halberd.png";
+                case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "graphics/caelum/icons/ca_giant_gauntlets.png";
+                case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "graphics/caelum/icons/ca_standard_bow.png";
+                case CaelumConstants.WEAPON_TYPE_LONGBOW: return "graphics/caelum/icons/ca_longbow.png";
+                case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "graphics/caelum/icons/ca_crossbow.png";
+                case CaelumConstants.WEAPON_TYPE_BELL: return "graphics/caelum/icons/ca_bell.png";
+                case CaelumConstants.WEAPON_TYPE_BOOK: return "graphics/caelum/icons/ca_book.png";
+                default: return "graphics/caelum/icons/ca_statuette.png";
+            }
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            switch (localPlayer.EquipmentSelectionShieldType)
+            {
+                case CaelumConstants.SHIELD_TYPE_BUCKLER: return "graphics/caelum/icons/ca_shield_buckler.png";
+                case CaelumConstants.SHIELD_TYPE_KITE: return "graphics/caelum/icons/ca_shield_kite.png";
+                case CaelumConstants.SHIELD_TYPE_TOWER: return "graphics/caelum/icons/ca_shield_tower.png";
+                default: return "graphics/caelum/icons/ca_shield_magic.png";
+            }
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        {
+            int slot = localPlayer.EquipmentSelectionSlot;
+            int armorType = localPlayer.EquipmentSelectionArmorType;
+            if (armorType == CaelumConstants.ARMOR_TYPE_MAGIC)
+            {
+                if (slot == CaelumConstants.ARMOR_SLOT_HEAD) return "graphics/caelum/icons/ca_helmet_magic.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_HANDS) return "graphics/caelum/icons/ca_gloves.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_FEET) return "graphics/caelum/icons/ca_boots.png";
+                return "graphics/caelum/icons/ca_armor_magic.png";
+            }
+            if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM)
+            {
+                if (slot == CaelumConstants.ARMOR_SLOT_HEAD) return "graphics/caelum/icons/ca_helmet_medium.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_HANDS) return "graphics/caelum/icons/ca_gloves_medium.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_FEET) return "graphics/caelum/icons/ca_boots_medium.png";
+                return "graphics/caelum/icons/ca_armor_medium.png";
+            }
+            if (armorType == CaelumConstants.ARMOR_TYPE_HEAVY)
+            {
+                if (slot == CaelumConstants.ARMOR_SLOT_HEAD) return "graphics/caelum/icons/ca_helmet.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_HANDS) return "graphics/caelum/icons/ca_gloves_heavy.png";
+                if (slot == CaelumConstants.ARMOR_SLOT_FEET) return "graphics/caelum/icons/ca_boots_heavy.png";
+                return "graphics/caelum/icons/ca_armor_heavy.png";
+            }
+            if (slot == CaelumConstants.ARMOR_SLOT_HEAD) return "graphics/caelum/icons/ca_helmet_light.png";
+            if (slot == CaelumConstants.ARMOR_SLOT_HANDS) return "graphics/caelum/icons/ca_gloves_light.png";
+            if (slot == CaelumConstants.ARMOR_SLOT_FEET) return "graphics/caelum/icons/ca_boots_light.png";
+            return "graphics/caelum/icons/ca_armor_light.png";
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            switch (localPlayer.EquipmentSelectionAmmunitionType)
+            {
+                case CaelumConstants.AMMUNITION_CARBINE: return "graphics/caelum/icons/ca_carbine_ammo.png";
+                case CaelumConstants.AMMUNITION_ARROW: return "graphics/caelum/icons/ca_arrow_ammo.png";
+                case CaelumConstants.AMMUNITION_BOLT: return "graphics/caelum/icons/ca_bolt_ammo.png";
+                default: return "graphics/caelum/icons/ca_javelin.png";
+            }
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            switch (localPlayer.EquipmentSelectionConsumableType)
+            {
+                case CaelumConstants.CONSUMABLE_LIFE_POTION: return "graphics/caelum/icons/ca_medikit.png";
+                case CaelumConstants.CONSUMABLE_ANIMA_POTION: return "graphics/caelum/icons/ca_anima_potion.png";
+                case CaelumConstants.CONSUMABLE_ENERGY_DRINK: return "graphics/caelum/icons/ca_energy_drink.png";
+                case CaelumConstants.CONSUMABLE_FOOD_RATION: return "graphics/caelum/icons/ca_food_ration.png";
+                default: return "graphics/caelum/icons/ca_water_ration.png";
+            }
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
+            return "graphics/caelum/icons/ca_key.png";
+        return "";
+    }
+
+    ui void DrawEquipmentSelectionIcon(CaelumPlayer localPlayer)
+    {
+        String iconPath = GetEquipmentSelectionIcon(localPlayer);
+        if (iconPath.Length() <= 0) { return; }
+        TextureID icon = TexMan.CheckForTexture(iconPath, TexMan.Type_MiscPatch);
+        if (!icon.IsValid()) { return; }
+        Screen.DrawTexture(
+            icon, true, 34.0, 112.0,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true
+        );
+    }
+
     ui void DrawEquipmentMenu(CaelumPlayer localPlayer)
     {
         String categoryKey = "CA_EQUIPMENT_CATEGORY_ARMOR";
@@ -1229,6 +1340,7 @@ class CaelumDebugOverlay : EventHandler
             actionColor = Font.CR_RED;
         }
 
+        DrawEquipmentSelectionIcon(localPlayer);
         DrawCenteredText(
             StringTable.Localize("CA_EQUIPMENT_MENU_TITLE", false),
             70.0,

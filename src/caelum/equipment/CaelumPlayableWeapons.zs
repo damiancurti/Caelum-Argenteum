@@ -649,6 +649,16 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         int preparedDamage = GetCaelumPreparedDamage(
             int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE)
         );
+        CaelumPlayer weaponOwner = CaelumPlayer(Target);
+        if (weaponOwner != null && CaelumWeaponWearPrepared)
+        {
+            weaponOwner.ApplyWeaponDurabilityFromSuccessfulDamage(
+                preparedDamage,
+                CaelumWearWeaponType,
+                CaelumWearWeaponTier,
+                CaelumWearWeaponSize
+            );
+        }
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }
 
@@ -685,6 +695,8 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
     Default
     {
         Speed 15;
+        // Usa la misma escala física que las jabalinas recogibles.
+        Scale 0.5;
         DamageType "CaelumRangedTest";
         -NOGRAVITY
     }
@@ -692,7 +704,7 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
     States
     {
     Spawn:
-        BON1 A 1 Bright;
+        CJAV A 1 Bright;
         Loop;
     }
 }
@@ -756,9 +768,57 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
         +NOEXTREMEDEATH
     }
 
+    void UpdateCaelumElementalWorldSprite()
+    {
+        if (!CaelumElementalPayloadPrepared) { return; }
+
+        // Cada esencia usa un juego rotacional de ocho vistas. El ataque
+        // secundario cambia únicamente el arte elemental; la lógica de daño
+        // y estados sigue usando CaelumEssenceType + CaelumSecondaryElement.
+        String visual = "XFIR";
+        if (CaelumEssenceType == CaelumConstants.ESSENCE_FIRE)
+        {
+            visual = CaelumSecondaryElement ? "XLIT" : "XFIR";
+        }
+        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WATER)
+        {
+            visual = CaelumSecondaryElement ? "XICE" : "XWAT";
+        }
+        else if (CaelumEssenceType == CaelumConstants.ESSENCE_EARTH)
+        {
+            visual = CaelumSecondaryElement ? "XVSN" : "XERT";
+        }
+        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WIND)
+        {
+            visual = CaelumSecondaryElement ? "XRAY" : "XAIR";
+        }
+        else if (CaelumEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE)
+        {
+            visual = "XQUI";
+        }
+        sprite = GetSpriteIndex(visual);
+        frame = 0;
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        UpdateCaelumElementalWorldSprite();
+    }
+
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
         int preparedDamage = GetCaelumPreparedDamage(1);
+        CaelumPlayer weaponOwner = CaelumPlayer(Target);
+        if (weaponOwner != null && CaelumWeaponWearPrepared)
+        {
+            weaponOwner.ApplyWeaponDurabilityFromSuccessfulDamage(
+                preparedDamage,
+                CaelumWearWeaponType,
+                CaelumWearWeaponTier,
+                CaelumWearWeaponSize
+            );
+        }
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }
         double heightRatio = victim.Height > 0.0
@@ -778,10 +838,10 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
     States
     {
     Spawn:
-        PUFF A 1 Bright;
+        XFIR A 1 Bright;
         Loop;
     Death:
-        PUFF BCD 2 Bright;
+        XFIR A 2 Bright;
         Stop;
     }
 }
@@ -940,7 +1000,7 @@ class CaelumHomingMagicProjectile : CaelumPlayerMagicProjectile
     States
     {
     Spawn:
-        PUFF A 1 Bright A_UpdateCaelumSeeking;
+        XFIR A 1 Bright A_UpdateCaelumSeeking;
         Loop;
     }
 }
@@ -979,11 +1039,11 @@ class CaelumExplosiveMagicProjectile : CaelumPlayerMagicProjectile
     States
     {
     Spawn:
-        PUFF A 1 Bright;
+        XFIR A 1 Bright;
         Loop;
     Death:
-        TNT1 A 0 A_CaelumExplode;
-        PUFF BCD 2 Bright;
+        XFIR A 0 A_CaelumExplode;
+        XFIR A 2 Bright;
         Stop;
     }
 }

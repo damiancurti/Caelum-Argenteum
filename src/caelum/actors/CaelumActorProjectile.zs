@@ -24,6 +24,14 @@ class CaelumActorProjectile : Actor
     double CaelumBuffPowerPercent;
     bool CaelumElementalPayloadPrepared;
 
+    // Conserva la identidad del arma que originó el proyectil. Así la
+    // durabilidad se descuenta del objeto correcto aunque el jugador cambie
+    // de arma antes de que el proyectil impacte.
+    bool CaelumWeaponWearPrepared;
+    int CaelumWearWeaponType;
+    int CaelumWearWeaponTier;
+    int CaelumWearWeaponSize;
+
     Default
     {
         +NODAMAGETHRUST
@@ -59,6 +67,18 @@ class CaelumActorProjectile : Actor
         CaelumCriticalHit = criticalHit;
         CaelumMagicalAttack = magicalAttack;
         CaelumPushMultiplier = Max(0.0, pushMultiplier);
+    }
+
+    void StoreCaelumWeaponWearIdentity(
+        int weaponType,
+        int tier,
+        int equipmentSize
+    )
+    {
+        CaelumWeaponWearPrepared = true;
+        CaelumWearWeaponType = weaponType;
+        CaelumWearWeaponTier = tier;
+        CaelumWearWeaponSize = equipmentSize;
     }
 
     int GetCaelumPreparedDamage(int fallbackDamage)

@@ -8,6 +8,8 @@ class CaelumSpecialInventoryItem : Inventory
     {
         Radius 12;
         Height 8;
+        // Sólo reduce el sprite del actor en el suelo; el icono de inventario conserva su tamaño.
+        Scale 0.5;
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
@@ -246,6 +248,7 @@ class CaelumSealedLetter : CaelumSpecialInventoryItem
 // posesion y no conoce la ubicacion interna definida por Caelum.
 class CaelumWeightedKey : Key
 {
+    Default { Inventory.Icon "graphics/caelum/icons/ca_key.png"; }
     virtual int GetKeyType() { return -1; }
 
     double GetCarriedWeight()
@@ -281,5 +284,5 @@ class CaelumSilverKey : CaelumWeightedKey
         return CaelumConstants.KEY_SILVER;
     }
 
-    States { Spawn: RKEY A -1; Stop; }
+    States { Spawn: CKEY A -1; Stop; }
 }

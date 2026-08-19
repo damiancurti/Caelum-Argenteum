@@ -8,6 +8,8 @@ class CaelumConsumableItem : PowerupGiver
     {
         Radius 12;
         Height 8;
+        // Sólo reduce el sprite del actor en el suelo; el icono de inventario conserva su tamaño.
+        Scale 0.5;
         Inventory.Amount 1;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
@@ -168,7 +170,7 @@ class CaelumLifePotion : CaelumConsumableItem
     Default
     {
         Tag "$CA_CONSUMABLE_LIFE_POTION";
-        Inventory.Icon "BON1A0";
+        Inventory.Icon "graphics/caelum/icons/ca_medikit.png";
         Inventory.PickupMessage "$CA_PICKUP_LIFE_POTION";
         Powerup.Type "CaelumLifeRegeneration";
     }
@@ -176,7 +178,7 @@ class CaelumLifePotion : CaelumConsumableItem
     {
         return CaelumConstants.CONSUMABLE_LIFE_POTION;
     }
-    States { Spawn: BON1 A -1; Stop; }
+    States { Spawn: CMED A -1; Stop; }
 }
 
 class CaelumAnimaPotion : CaelumConsumableItem
@@ -184,7 +186,7 @@ class CaelumAnimaPotion : CaelumConsumableItem
     Default
     {
         Tag "$CA_CONSUMABLE_ANIMA_POTION";
-        Inventory.Icon "SOULA0";
+        Inventory.Icon "graphics/caelum/icons/ca_anima_potion.png";
         Inventory.PickupMessage "$CA_PICKUP_ANIMA_POTION";
         Powerup.Type "CaelumAnimaRegeneration";
     }
@@ -192,7 +194,7 @@ class CaelumAnimaPotion : CaelumConsumableItem
     {
         return CaelumConstants.CONSUMABLE_ANIMA_POTION;
     }
-    States { Spawn: SOUL A -1 Bright; Stop; }
+    States { Spawn: CANI A -1 Bright; Stop; }
 }
 
 class CaelumEnergyDrink : CaelumConsumableItem
@@ -200,7 +202,7 @@ class CaelumEnergyDrink : CaelumConsumableItem
     Default
     {
         Tag "$CA_CONSUMABLE_ENERGY_DRINK";
-        Inventory.Icon "MEGAA0";
+        Inventory.Icon "graphics/caelum/icons/ca_energy_drink.png";
         Inventory.PickupMessage "$CA_PICKUP_ENERGY_DRINK";
         Powerup.Type "CaelumEnergyRegeneration";
     }
@@ -208,7 +210,7 @@ class CaelumEnergyDrink : CaelumConsumableItem
     {
         return CaelumConstants.CONSUMABLE_ENERGY_DRINK;
     }
-    States { Spawn: MEGA A -1 Bright; Stop; }
+    States { Spawn: CENE A -1 Bright; Stop; }
 }
 
 class CaelumFoodRation : CaelumConsumableItem
@@ -216,7 +218,7 @@ class CaelumFoodRation : CaelumConsumableItem
     Default
     {
         Tag "$CA_CONSUMABLE_FOOD_RATION";
-        Inventory.Icon "STIMA0";
+        Inventory.Icon "graphics/caelum/icons/ca_food_ration.png";
         Inventory.PickupMessage "$CA_PICKUP_FOOD_RATION";
         Powerup.Type "CaelumHungerRegeneration";
     }
@@ -224,7 +226,7 @@ class CaelumFoodRation : CaelumConsumableItem
     {
         return CaelumConstants.CONSUMABLE_FOOD_RATION;
     }
-    States { Spawn: STIM A -1; Stop; }
+    States { Spawn: CFOO A -1; Stop; }
 }
 
 class CaelumWaterRation : CaelumConsumableItem
@@ -232,7 +234,7 @@ class CaelumWaterRation : CaelumConsumableItem
     Default
     {
         Tag "$CA_CONSUMABLE_WATER_RATION";
-        Inventory.Icon "BON2A0";
+        Inventory.Icon "graphics/caelum/icons/ca_water_ration.png";
         Inventory.PickupMessage "$CA_PICKUP_WATER_RATION";
         Powerup.Type "CaelumThirstRegeneration";
     }
@@ -240,5 +242,5 @@ class CaelumWaterRation : CaelumConsumableItem
     {
         return CaelumConstants.CONSUMABLE_WATER_RATION;
     }
-    States { Spawn: BON2 A -1; Stop; }
+    States { Spawn: CWAT A -1; Stop; }
 }
