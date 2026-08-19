@@ -79,7 +79,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     Default
     {
         Tag "$CA_MATERIAL_GENERIC";
-        Inventory.Icon "CELPA0";
+        Inventory.Icon "graphics/caelum/icons/materials/ca_material_blade.png";
         Inventory.PickupMessage "$CA_PICKUP_MATERIAL_GENERIC";
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
@@ -97,12 +97,99 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     override int GetSpecialType()
     {
-        return Clamp(args[0], 1, CaelumConstants.MATERIAL_TYPE_COUNT - 1);
+        return Clamp(args[0], 0, CaelumConstants.MATERIAL_TYPE_COUNT - 1);
     }
 
     override int GetSpecialTier()
     {
         return CaelumMaterialRules.ResolveTier(GetSpecialType(), args[1]);
+    }
+
+    // Cada material conserva una sola clase nativa y resuelve su arte desde
+    // args[0]. Esto evita crear una subclase por componente de crafteo.
+    String GetMaterialIconPath()
+    {
+        switch (GetSpecialType())
+        {
+            case CaelumConstants.MATERIAL_IRON_INGOT: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
+            case CaelumConstants.MATERIAL_BLADE: return "graphics/caelum/icons/materials/ca_material_blade.png";
+            case CaelumConstants.MATERIAL_SMALL_BLADE: return "graphics/caelum/icons/materials/ca_material_small_blade.png";
+            case CaelumConstants.MATERIAL_CURVED_BLADE: return "graphics/caelum/icons/materials/ca_material_curved_blade.png";
+            case CaelumConstants.MATERIAL_LONG_BLADE: return "graphics/caelum/icons/materials/ca_material_long_blade.png";
+            case CaelumConstants.MATERIAL_BROAD_BLADE: return "graphics/caelum/icons/materials/ca_material_broad_blade.png";
+            case CaelumConstants.MATERIAL_SHAFT: return "graphics/caelum/icons/materials/ca_material_shaft.png";
+            case CaelumConstants.MATERIAL_FRAME: return "graphics/caelum/icons/materials/ca_material_frame.png";
+            case CaelumConstants.MATERIAL_LONG_FRAME: return "graphics/caelum/icons/materials/ca_material_long_frame.png";
+            case CaelumConstants.MATERIAL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_weapon_head.png";
+            case CaelumConstants.MATERIAL_ROUND_HEAD: return "graphics/caelum/icons/materials/ca_material_round_head.png";
+            case CaelumConstants.MATERIAL_PLATE: return "graphics/caelum/icons/materials/ca_material_plate.png";
+            case CaelumConstants.MATERIAL_ROUND_PLATE: return "graphics/caelum/icons/materials/ca_material_round_plate.png";
+            case CaelumConstants.MATERIAL_KITE_PLATE: return "graphics/caelum/icons/materials/ca_material_kite_plate.png";
+            case CaelumConstants.MATERIAL_TOWER_PLATE: return "graphics/caelum/icons/materials/ca_material_tower_plate.png";
+            case CaelumConstants.MATERIAL_MAGIC_PLATE: return "graphics/caelum/icons/materials/ca_material_magic_plate.png";
+            case CaelumConstants.MATERIAL_LARGE_PLATE: return "graphics/caelum/icons/materials/ca_material_large_plate.png";
+            case CaelumConstants.MATERIAL_CHAINMAIL: return "graphics/caelum/icons/materials/ca_material_chainmail.png";
+            case CaelumConstants.MATERIAL_FABRIC: return "graphics/caelum/icons/materials/ca_material_fabric.png";
+            case CaelumConstants.MATERIAL_LEATHER: return "graphics/caelum/icons/materials/ca_material_leather.png";
+            case CaelumConstants.MATERIAL_FIRE_ESSENCE: return "graphics/caelum/icons/materials/ca_material_fire_essence.png";
+            case CaelumConstants.MATERIAL_WATER_ESSENCE: return "graphics/caelum/icons/materials/ca_material_water_essence.png";
+            case CaelumConstants.MATERIAL_EARTH_ESSENCE: return "graphics/caelum/icons/materials/ca_material_earth_essence.png";
+            case CaelumConstants.MATERIAL_WIND_ESSENCE: return "graphics/caelum/icons/materials/ca_material_wind_essence.png";
+            case CaelumConstants.MATERIAL_QUINTESSENCE: return "graphics/caelum/icons/materials/ca_material_quintessence.png";
+            case CaelumConstants.MATERIAL_HILT: return "graphics/caelum/icons/materials/ca_material_hilt.png";
+            case CaelumConstants.MATERIAL_LONG_HILT: return "graphics/caelum/icons/materials/ca_material_long_hilt.png";
+            case CaelumConstants.MATERIAL_POINT: return "graphics/caelum/icons/materials/ca_material_point.png";
+            case CaelumConstants.MATERIAL_HANDLE: return "graphics/caelum/icons/materials/ca_material_handle.png";
+            case CaelumConstants.MATERIAL_LONG_HANDLE: return "graphics/caelum/icons/materials/ca_material_long_handle.png";
+            case CaelumConstants.MATERIAL_BOWSTRING: return "graphics/caelum/icons/materials/ca_material_bowstring.png";
+            case CaelumConstants.MATERIAL_REINFORCED_BOWSTRING: return "graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png";
+            case CaelumConstants.MATERIAL_STRAP: return "graphics/caelum/icons/materials/ca_material_strap.png";
+            case CaelumConstants.MATERIAL_REINFORCED_STRAP: return "graphics/caelum/icons/materials/ca_material_reinforced_strap.png";
+            case CaelumConstants.MATERIAL_BARREL: return "graphics/caelum/icons/materials/ca_material_barrel.png";
+            case CaelumConstants.MATERIAL_MECHANISM: return "graphics/caelum/icons/materials/ca_material_mechanism.png";
+            // El objeto base de un arma de esencia usa el mismo arte del arma.
+            case CaelumConstants.MATERIAL_STAFF_BASE: return "graphics/caelum/icons/ca_staff.png";
+            case CaelumConstants.MATERIAL_BELL_BASE: return "graphics/caelum/icons/ca_bell.png";
+            case CaelumConstants.MATERIAL_BOOK_BASE: return "graphics/caelum/icons/ca_book.png";
+            case CaelumConstants.MATERIAL_STATUETTE_BASE: return "graphics/caelum/icons/ca_statuette.png";
+            case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_small_weapon_head.png";
+            case CaelumConstants.MATERIAL_CHAIN: return "graphics/caelum/icons/materials/ca_material_chain.png";
+            default: return "graphics/caelum/icons/materials/ca_material_wood.png";
+        }
+    }
+
+    String GetMaterialSpriteName()
+    {
+        switch (GetSpecialType())
+        {
+            case CaelumConstants.MATERIAL_STAFF_BASE: return "CSTF";
+            case CaelumConstants.MATERIAL_BELL_BASE: return "CBEL";
+            case CaelumConstants.MATERIAL_BOOK_BASE: return "CBOO";
+            case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CSTA";
+            default: return String.Format("M%03d", GetSpecialType());
+        }
+    }
+
+    void UpdateMaterialVisuals()
+    {
+        Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
+        if (Owner == null)
+        {
+            sprite = GetSpriteIndex(GetMaterialSpriteName());
+            frame = 0;
+        }
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        UpdateMaterialVisuals();
+    }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        UpdateMaterialVisuals();
+        return Super.TryPickup(toucher);
     }
 
     override bool HandlePickup(Inventory incoming)
@@ -134,7 +221,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         return true;
     }
 
-    States { Spawn: CELP A -1; Stop; }
+    States { Spawn: M001 A -1; Stop; }
 }
 
 // Las familias determinan si el tier representa metal, madera, esencia,
@@ -192,7 +279,7 @@ class CaelumIronIngot : CaelumSpecialInventoryItem
     Default
     {
         Tag "$CA_MATERIAL_IRON_INGOT";
-        Inventory.Icon "CELPA0";
+        Inventory.Icon "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
         Inventory.PickupMessage "$CA_PICKUP_MATERIAL_IRON_INGOT";
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
@@ -216,7 +303,7 @@ class CaelumIronIngot : CaelumSpecialInventoryItem
         return CaelumConstants.MATERIAL_UNIT_WEIGHT;
     }
 
-    States { Spawn: CELP A -1; Stop; }
+    States { Spawn: M000 A -1; Stop; }
 }
 
 // Los objetos clave comunes son unicos y pueden guardarse en la Caja Magica.
@@ -226,7 +313,7 @@ class CaelumSealedLetter : CaelumSpecialInventoryItem
     Default
     {
         Tag "$CA_KEY_ITEM_SEALED_LETTER";
-        Inventory.Icon "BPAKA0";
+        Inventory.Icon "graphics/caelum/icons/ca_sealed_letter.png";
         Inventory.PickupMessage "$CA_PICKUP_KEY_ITEM_SEALED_LETTER";
     }
 
@@ -240,7 +327,7 @@ class CaelumSealedLetter : CaelumSpecialInventoryItem
         return CaelumConstants.KEY_ITEM_SEALED_LETTER;
     }
 
-    States { Spawn: BPAK A -1; Stop; }
+    States { Spawn: CSEL A -1; Stop; }
 }
 
 // Key conserva la comprobacion nativa de puertas y acciones LOCKDEFS. Por esa

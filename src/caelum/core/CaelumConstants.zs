@@ -425,7 +425,9 @@ class CaelumConstants : Object
     const MATERIAL_STATUETTE_BASE = 39;
     const MATERIAL_SMALL_WEAPON_HEAD = 40;
     const MATERIAL_CHAIN = 41;
-    const MATERIAL_TYPE_COUNT = 42;
+    // Material básico reservado para usos futuros.
+    const MATERIAL_WOOD = 42;
+    const MATERIAL_TYPE_COUNT = 43;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

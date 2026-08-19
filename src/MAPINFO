@@ -1,15 +1,15 @@
-// GameInfo changes global game settings supplied by this project.
+// GameInfo modifica ajustes globales suministrados por el proyecto.
 GameInfo
 {
-    // This replaces Doom II's default player class with our own ZScript class.
+    // Reemplaza la clase de jugador por la clase ZScript propia del proyecto.
     PlayerClasses = "CaelumPlayer"
 
-    // Event handlers observe engine events without becoming map actors.
+    // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
     EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"
 }
 
-// Editor numbers used by the development test map. These are project-local
-// assignments and avoid reusing Doom's standard thing numbers.
+// Números de editor usados por el mapa de pruebas. Son asignaciones locales
+// del proyecto y evitan reutilizar números estándar de actores de Doom.
 DoomEdNums
 {
     18000 = CaelumForgeStation
@@ -18,4 +18,27 @@ DoomEdNums
     18003 = CaelumEssenceAltarStation
     18004 = CaelumWorkbenchStation
     18010 = CaelumTrainingDummy
+
+    // Galería de objetos del MAP01 de pruebas.
+    18020 = CaelumRulo
+    18021 = CaelumArgento
+    18022 = CaelumCaella
+    18023 = CaelumRonnie
+
+    18100 = CaelumWeaponPickup
+    18101 = CaelumArmorPickup
+    18102 = CaelumShieldPickup
+    18103 = CaelumMaterialPickup
+    18104 = CaelumSilverKey
+    18105 = CaelumSealedLetter
+
+    18110 = CaelumCarbineAmmo
+    18111 = CaelumArrowAmmo
+    18112 = CaelumBoltAmmo
+
+    18120 = CaelumLifePotion
+    18121 = CaelumAnimaPotion
+    18122 = CaelumEnergyDrink
+    18123 = CaelumFoodRation
+    18124 = CaelumWaterRation
 }

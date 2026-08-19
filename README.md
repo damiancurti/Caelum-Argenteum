@@ -23,7 +23,7 @@ This README is the public technical entry point for collaborators. The author's 
 - Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
 - Physical weapon catalogue and family/slot cycling.
 - Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
-- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support.
+- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Held shield blocking consumes Air continuously and suppresses Air regeneration while AltFire remains pressed.
 - Weapon durability using the shared damage-based wear logic.
 - Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
 - Carbine, bows/crossbows, their ammunition foundations, and weapon-specific accuracy/spread behavior currently used by the development build.
@@ -33,8 +33,8 @@ This README is the public technical entry point for collaborators. The author's 
 - Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
 - Crafting and dismantling foundations used by current physical equipment and material recovery systems.
 - Physical crafting-station interaction core: Forge and Bow Workshop filter and execute their currently supported physical recipes through the shared crafting transaction.
-- Modular item/world sprites for many current weapons, shields, armor pieces, consumables, ammunition, and projectiles.
-- Custom player HUD face replacing the Doomguy face states in the current development HUD.
+- Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
+- Custom player HUD face replacing the Doomguy face states in the current development HUD. The HUD also uses the equipped weapon art as a provisional first-person weapon representation, so the permanent top-left active-weapon label is no longer required.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
 ### Implemented foundation — still expanding
@@ -65,6 +65,10 @@ This README is the public technical entry point for collaborators. The author's 
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.
+
+The four central rooms are also a visual pickup gallery: they expose all current weapon types, every essence combination for the four essence weapons, all shield types, all sixteen equipable armor pieces, current ammunition and consumables, the complete material catalogue, the Silver Key, and the sealed letter. This is intentionally redundant development content so a collaborator can perform a fast visual sweep for incorrect sprites or pickup behavior.
+
+A Silver-Key-locked room is placed behind the player start. It contains the current Rulo, Argento, Caella, and Ronnie test actors plus the level-exit switch. The Silver Key required to enter is displayed in the central gallery.
 
 The training dummies on the main east-west axis are placed approximately 512, 1024, 2048, and 3072 map units from the player start so projectile-range changes are easier to compare.
 

@@ -424,6 +424,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CA_MATERIAL_STATUETTE_BASE";
             case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "CA_MATERIAL_SMALL_WEAPON_HEAD";
             case CaelumConstants.MATERIAL_CHAIN: return "CA_MATERIAL_CHAIN";
+            case CaelumConstants.MATERIAL_WOOD: return "CA_MATERIAL_WOOD";
             default: return "CA_MATERIAL_IRON_INGOT";
         }
     }
@@ -876,6 +877,69 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
     }
 
+    ui String GetMaterialSelectionIcon(int materialType)
+    {
+        switch (materialType)
+        {
+            case CaelumConstants.MATERIAL_IRON_INGOT: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
+            case CaelumConstants.MATERIAL_BLADE: return "graphics/caelum/icons/materials/ca_material_blade.png";
+            case CaelumConstants.MATERIAL_SMALL_BLADE: return "graphics/caelum/icons/materials/ca_material_small_blade.png";
+            case CaelumConstants.MATERIAL_CURVED_BLADE: return "graphics/caelum/icons/materials/ca_material_curved_blade.png";
+            case CaelumConstants.MATERIAL_LONG_BLADE: return "graphics/caelum/icons/materials/ca_material_long_blade.png";
+            case CaelumConstants.MATERIAL_BROAD_BLADE: return "graphics/caelum/icons/materials/ca_material_broad_blade.png";
+            case CaelumConstants.MATERIAL_SHAFT: return "graphics/caelum/icons/materials/ca_material_shaft.png";
+            case CaelumConstants.MATERIAL_FRAME: return "graphics/caelum/icons/materials/ca_material_frame.png";
+            case CaelumConstants.MATERIAL_LONG_FRAME: return "graphics/caelum/icons/materials/ca_material_long_frame.png";
+            case CaelumConstants.MATERIAL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_weapon_head.png";
+            case CaelumConstants.MATERIAL_ROUND_HEAD: return "graphics/caelum/icons/materials/ca_material_round_head.png";
+            case CaelumConstants.MATERIAL_PLATE: return "graphics/caelum/icons/materials/ca_material_plate.png";
+            case CaelumConstants.MATERIAL_ROUND_PLATE: return "graphics/caelum/icons/materials/ca_material_round_plate.png";
+            case CaelumConstants.MATERIAL_KITE_PLATE: return "graphics/caelum/icons/materials/ca_material_kite_plate.png";
+            case CaelumConstants.MATERIAL_TOWER_PLATE: return "graphics/caelum/icons/materials/ca_material_tower_plate.png";
+            case CaelumConstants.MATERIAL_MAGIC_PLATE: return "graphics/caelum/icons/materials/ca_material_magic_plate.png";
+            case CaelumConstants.MATERIAL_LARGE_PLATE: return "graphics/caelum/icons/materials/ca_material_large_plate.png";
+            case CaelumConstants.MATERIAL_CHAINMAIL: return "graphics/caelum/icons/materials/ca_material_chainmail.png";
+            case CaelumConstants.MATERIAL_FABRIC: return "graphics/caelum/icons/materials/ca_material_fabric.png";
+            case CaelumConstants.MATERIAL_LEATHER: return "graphics/caelum/icons/materials/ca_material_leather.png";
+            case CaelumConstants.MATERIAL_FIRE_ESSENCE: return "graphics/caelum/icons/materials/ca_material_fire_essence.png";
+            case CaelumConstants.MATERIAL_WATER_ESSENCE: return "graphics/caelum/icons/materials/ca_material_water_essence.png";
+            case CaelumConstants.MATERIAL_EARTH_ESSENCE: return "graphics/caelum/icons/materials/ca_material_earth_essence.png";
+            case CaelumConstants.MATERIAL_WIND_ESSENCE: return "graphics/caelum/icons/materials/ca_material_wind_essence.png";
+            case CaelumConstants.MATERIAL_QUINTESSENCE: return "graphics/caelum/icons/materials/ca_material_quintessence.png";
+            case CaelumConstants.MATERIAL_HILT: return "graphics/caelum/icons/materials/ca_material_hilt.png";
+            case CaelumConstants.MATERIAL_LONG_HILT: return "graphics/caelum/icons/materials/ca_material_long_hilt.png";
+            case CaelumConstants.MATERIAL_POINT: return "graphics/caelum/icons/materials/ca_material_point.png";
+            case CaelumConstants.MATERIAL_HANDLE: return "graphics/caelum/icons/materials/ca_material_handle.png";
+            case CaelumConstants.MATERIAL_LONG_HANDLE: return "graphics/caelum/icons/materials/ca_material_long_handle.png";
+            case CaelumConstants.MATERIAL_BOWSTRING: return "graphics/caelum/icons/materials/ca_material_bowstring.png";
+            case CaelumConstants.MATERIAL_REINFORCED_BOWSTRING: return "graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png";
+            case CaelumConstants.MATERIAL_STRAP: return "graphics/caelum/icons/materials/ca_material_strap.png";
+            case CaelumConstants.MATERIAL_REINFORCED_STRAP: return "graphics/caelum/icons/materials/ca_material_reinforced_strap.png";
+            case CaelumConstants.MATERIAL_BARREL: return "graphics/caelum/icons/materials/ca_material_barrel.png";
+            case CaelumConstants.MATERIAL_MECHANISM: return "graphics/caelum/icons/materials/ca_material_mechanism.png";
+            case CaelumConstants.MATERIAL_STAFF_BASE: return "graphics/caelum/icons/ca_staff.png";
+            case CaelumConstants.MATERIAL_BELL_BASE: return "graphics/caelum/icons/ca_bell.png";
+            case CaelumConstants.MATERIAL_BOOK_BASE: return "graphics/caelum/icons/ca_book.png";
+            case CaelumConstants.MATERIAL_STATUETTE_BASE: return "graphics/caelum/icons/ca_statuette.png";
+            case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_small_weapon_head.png";
+            case CaelumConstants.MATERIAL_CHAIN: return "graphics/caelum/icons/materials/ca_material_chain.png";
+            case CaelumConstants.MATERIAL_WOOD: return "graphics/caelum/icons/materials/ca_material_wood.png";
+            default: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
+        }
+    }
+
+    ui String GetEssenceBadgeIcon(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "graphics/caelum/icons/elements/ca_element_water.png";
+            case CaelumConstants.ESSENCE_EARTH: return "graphics/caelum/icons/elements/ca_element_earth.png";
+            case CaelumConstants.ESSENCE_WIND: return "graphics/caelum/icons/elements/ca_element_wind.png";
+            case CaelumConstants.ESSENCE_QUINTESSENCE: return "graphics/caelum/icons/elements/ca_element_quintessence.png";
+            default: return "graphics/caelum/icons/elements/ca_element_fire.png";
+        }
+    }
+
     // Devuelve el icono independiente asociado al objeto seleccionado.
     // Los iconos proceden del atlas propio de Caelum Argenteum y no usan
     // recursos gráficos de Doom.
@@ -968,8 +1032,12 @@ class CaelumDebugOverlay : EventHandler
                 default: return "graphics/caelum/icons/ca_water_ration.png";
             }
         }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+            return GetMaterialSelectionIcon(localPlayer.EquipmentSelectionSpecialType);
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
             return "graphics/caelum/icons/ca_key.png";
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+            return "graphics/caelum/icons/ca_sealed_letter.png";
         return "";
     }
 
@@ -985,6 +1053,34 @@ class CaelumDebugOverlay : EventHandler
             DTA_VIRTUALHEIGHTF, 360.0,
             DTA_KEEPRATIO, true
         );
+
+        // Las armas de esencia reutilizan el icono del objeto base y agregan
+        // un orbe pequeño en la esquina superior derecha. Así evitamos crear
+        // veinte imágenes duplicadas para las combinaciones arma + esencia.
+        bool magicalWeapon = localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && localPlayer.WeaponModel != null
+            && localPlayer.WeaponModel.IsMagicalType(
+                localPlayer.EquipmentSelectionWeaponType
+            );
+        if (magicalWeapon)
+        {
+            TextureID badge = TexMan.CheckForTexture(
+                GetEssenceBadgeIcon(localPlayer.SelectedEssenceType),
+                TexMan.Type_MiscPatch
+            );
+            if (badge.IsValid())
+            {
+                Screen.DrawTexture(
+                    badge, true, 76.0, 108.0,
+                    DTA_VIRTUALWIDTHF, 640.0,
+                    DTA_VIRTUALHEIGHTF, 360.0,
+                    DTA_DESTWIDTHF, 20.0,
+                    DTA_DESTHEIGHTF, 20.0,
+                    DTA_KEEPRATIO, true
+                );
+            }
+        }
     }
 
     ui void DrawEquipmentMenu(CaelumPlayer localPlayer)

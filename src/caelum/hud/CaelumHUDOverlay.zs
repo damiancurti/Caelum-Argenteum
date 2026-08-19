@@ -65,6 +65,94 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
+    ui String GetActiveWeaponIconPath(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_SWORD: return "graphics/caelum/icons/ca_sword.png";
+            case CaelumConstants.WEAPON_TYPE_STAFF: return "graphics/caelum/icons/ca_staff.png";
+            case CaelumConstants.WEAPON_TYPE_CARBINE: return "graphics/caelum/icons/ca_carbine.png";
+            case CaelumConstants.WEAPON_TYPE_DAGGER: return "graphics/caelum/icons/ca_dagger.png";
+            case CaelumConstants.WEAPON_TYPE_HATCHET: return "graphics/caelum/icons/ca_hatchet.png";
+            case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
+            case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
+            case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
+            case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
+            case CaelumConstants.WEAPON_TYPE_SPEAR: return "graphics/caelum/icons/ca_spear.png";
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD: return "graphics/caelum/icons/ca_greatsword.png";
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "graphics/caelum/icons/ca_war_axe.png";
+            case CaelumConstants.WEAPON_TYPE_HALBERD: return "graphics/caelum/icons/ca_halberd.png";
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "graphics/caelum/icons/ca_giant_gauntlets.png";
+            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "graphics/caelum/icons/ca_standard_bow.png";
+            case CaelumConstants.WEAPON_TYPE_LONGBOW: return "graphics/caelum/icons/ca_longbow.png";
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "graphics/caelum/icons/ca_crossbow.png";
+            case CaelumConstants.WEAPON_TYPE_BELL: return "graphics/caelum/icons/ca_bell.png";
+            case CaelumConstants.WEAPON_TYPE_BOOK: return "graphics/caelum/icons/ca_book.png";
+            default: return "graphics/caelum/icons/ca_statuette.png";
+        }
+    }
+
+    ui String GetActiveEssenceBadgePath(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "graphics/caelum/icons/elements/ca_element_water.png";
+            case CaelumConstants.ESSENCE_EARTH: return "graphics/caelum/icons/elements/ca_element_earth.png";
+            case CaelumConstants.ESSENCE_WIND: return "graphics/caelum/icons/elements/ca_element_wind.png";
+            case CaelumConstants.ESSENCE_QUINTESSENCE: return "graphics/caelum/icons/elements/ca_element_quintessence.png";
+            default: return "graphics/caelum/icons/elements/ca_element_fire.png";
+        }
+    }
+
+    ui bool IsActiveWeaponMagical(int weaponType)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_STAFF
+            || weaponType == CaelumConstants.WEAPON_TYPE_BELL
+            || weaponType == CaelumConstants.WEAPON_TYPE_BOOK
+            || weaponType == CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    // Presentación provisional en primera persona usando el mismo arte propio
+    // del objeto. Sustituye el texto permanente de "arma activa" y mantiene
+    // una sola fuente gráfica para inventario, suelo y vista del jugador.
+    ui void DrawFirstPersonWeapon(CaelumPlayer localPlayer)
+    {
+        if (!localPlayer.HUDHasActiveWeapon) { return; }
+        TextureID weaponIcon = TexMan.CheckForTexture(
+            GetActiveWeaponIconPath(localPlayer.HUDActiveWeaponType),
+            TexMan.Type_MiscPatch
+        );
+        if (!weaponIcon.IsValid()) { return; }
+
+        Screen.DrawTexture(
+            weaponIcon, true, 272.0, 232.0,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_DESTWIDTHF, 96.0,
+            DTA_DESTHEIGHTF, 96.0,
+            DTA_KEEPRATIO, true
+        );
+
+        if (IsActiveWeaponMagical(localPlayer.HUDActiveWeaponType))
+        {
+            TextureID badge = TexMan.CheckForTexture(
+                GetActiveEssenceBadgePath(localPlayer.HUDActiveWeaponEssenceType),
+                TexMan.Type_MiscPatch
+            );
+            if (badge.IsValid())
+            {
+                Screen.DrawTexture(
+                    badge, true, 342.0, 228.0,
+                    DTA_VIRTUALWIDTHF, 640.0,
+                    DTA_VIRTUALHEIGHTF, 360.0,
+                    DTA_DESTWIDTHF, 24.0,
+                    DTA_DESTHEIGHTF, 24.0,
+                    DTA_KEEPRATIO, true
+                );
+            }
+        }
+    }
+
     // Convert the stored play-scope state into a localized UI label.
     ui String GetAirStateKey(int airState)
     {
@@ -655,15 +743,10 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
 
-        // Indicador permanente independiente de los sprites provisionales.
-        Screen.DrawText(
-            HUDFont, Font.CR_WHITE, 20.0, 16.0, activeWeaponLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
-        );
+        DrawFirstPersonWeapon(localPlayer);
 
-        // Al cambiar de familia, repite brevemente el dato en el centro.
+        // Al cambiar de familia, el texto aparece solo de forma breve.
+        // La identificación permanente ahora recae en el arma visible.
         if (localPlayer.HUDActiveWeaponNoticeRemaining > 0.0)
         {
             double noticeX = 320.0

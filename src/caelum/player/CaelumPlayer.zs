@@ -5250,6 +5250,7 @@ class CaelumPlayer : DoomPlayer
         ApplyCriticalSurvivalDamage();
         ApplyNaturalHealthRegeneration();
 
+        UpdateEquippedShieldBlockingInput();
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
@@ -5460,7 +5461,11 @@ class CaelumPlayer : DoomPlayer
             || WeaponModel.IsMagicalType(WeaponModel.WeaponType);
         if (ShieldModel != null && ShieldModel.Equipped && shieldCompatible)
         {
-            ToggleDebugShieldBlock();
+            // El bloqueo real sigue el estado mantenido de AltFire. No se
+            // alterna por tic: mientras el botón está pulsado permanece activo
+            // y al soltarlo Tick lo desactiva.
+            DebugShieldBlocking = true;
+            UpdateShieldAirCost();
             return;
         }
         if (EquippedWeaponCooldownRemaining > 0.0
@@ -6340,6 +6345,35 @@ class CaelumPlayer : DoomPlayer
             * DerivedStats.AirConsumptionMultiplier;
         CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond / TICRATE);
         UpdateAirStateEffects();
+    }
+
+    bool IsEquippedWeaponShieldCompatible()
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped) { return false; }
+        int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+            WeaponModel.WeaponType
+        );
+        bool compatible = catalogueWeapon >= 0
+            && CaelumWeaponCatalogue.UsesOneHandedShieldRules(catalogueWeapon);
+        return compatible || WeaponModel.IsMagicalType(WeaponModel.WeaponType);
+    }
+
+    // El escudo se mantiene levantado mientras AltFire está físicamente
+    // pulsado. Esta sincronización ocurre antes de regenerar Aire, de modo que
+    // bloquear detiene la regeneración desde el mismo tic y paga su coste.
+    void UpdateEquippedShieldBlockingInput()
+    {
+        bool canBlock = player != null
+            && player.playerstate == PST_LIVE
+            && !EquipmentMenuOpen
+            && !CreationWizardOpen
+            && ShieldModel != null
+            && ShieldModel.Equipped
+            && ShieldModel.Durability > 0
+            && CurrentAir > 0.0
+            && IsEquippedWeaponShieldCompatible();
+        DebugShieldBlocking = canBlock
+            && (player.cmd.buttons & BT_ALTATTACK) != 0;
     }
 
     void UpdateShieldAirCost()
