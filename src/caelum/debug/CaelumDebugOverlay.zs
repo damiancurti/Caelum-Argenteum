@@ -284,6 +284,25 @@ class CaelumDebugOverlay : EventHandler
         }
     }
 
+    ui String GetCraftingStationKey(int stationType)
+    {
+        switch (stationType)
+        {
+            case CaelumConstants.CRAFTING_STATION_FORGE:
+                return "CA_CRAFTING_STATION_FORGE";
+            case CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP:
+                return "CA_CRAFTING_STATION_BOW_WORKSHOP";
+            case CaelumConstants.CRAFTING_STATION_ARMOR_WORKSHOP:
+                return "CA_CRAFTING_STATION_ARMOR_WORKSHOP";
+            case CaelumConstants.CRAFTING_STATION_ESSENCE_ALTAR:
+                return "CA_CRAFTING_STATION_ESSENCE_ALTAR";
+            case CaelumConstants.CRAFTING_STATION_WORKBENCH:
+                return "CA_CRAFTING_STATION_WORKBENCH";
+            default:
+                return "CA_CRAFTING_STATION_NONE";
+        }
+    }
+
     ui String GetCraftingActionKey(int craftingAction)
     {
         switch (craftingAction)
@@ -298,6 +317,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_DUPLICATE";
             case CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED:
                 return "CA_CRAFTING_ACTION_MATERIALS_SPAWNED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_STATION:
+                return "CA_CRAFTING_ACTION_FAILED_STATION";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -1450,10 +1471,26 @@ class CaelumDebugOverlay : EventHandler
             Font.CR_GOLD
         );
         DrawCenteredText(
-            StringTable.Localize("CA_CRAFTING_STATION_DEVELOPMENT", false),
+            StringTable.Localize(
+                GetCraftingStationKey(localPlayer.ActiveCraftingStationType), false
+            ),
             100.0,
             Font.CR_CYAN
         );
+        if (localPlayer.CraftingSelectedWeapon < 0)
+        {
+            DrawCenteredText(
+                StringTable.Localize("CA_CRAFTING_STATION_NO_RECIPES", false),
+                154.0,
+                Font.CR_GRAY
+            );
+            DrawCenteredText(
+                StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_EMPTY", false),
+                286.0,
+                Font.CR_GRAY
+            );
+            return;
+        }
         DrawCenteredText(selection, 132.0, Font.CR_WHITE);
         DrawCenteredText(
             StringTable.Localize("CA_CRAFTING_RECIPE", false),

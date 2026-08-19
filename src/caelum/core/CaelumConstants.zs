@@ -214,15 +214,25 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_STORAGE = 18;
     const EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = 19;
 
-    // El menú de desarrollo expone las dieciséis recetas físicas. Más adelante
-    // la misma transacción se invocará desde el banco de trabajo real.
+    // Las estaciones reales reutilizan la transacción de crafteo ya probada.
+    // El índice de receta ahora es local a la estación activa.
     const CRAFTING_PLAYABLE_RECIPE_COUNT = 16;
+    const CRAFTING_STATION_NONE = -1;
+    const CRAFTING_STATION_FORGE = 0;
+    const CRAFTING_STATION_BOW_WORKSHOP = 1;
+    const CRAFTING_STATION_ARMOR_WORKSHOP = 2;
+    const CRAFTING_STATION_ESSENCE_ALTAR = 3;
+    const CRAFTING_STATION_WORKBENCH = 4;
+    const CRAFTING_STATION_COUNT = 5;
+    const CRAFTING_FORGE_RECIPE_COUNT = 12;
+    const CRAFTING_BOW_WORKSHOP_RECIPE_COUNT = 3;
     const CRAFTING_ACTION_NONE = 0;
     const CRAFTING_ACTION_CREATED = 1;
     const CRAFTING_ACTION_FAILED_MATERIALS = 2;
     const CRAFTING_ACTION_FAILED_BOX_FULL = 3;
     const CRAFTING_ACTION_FAILED_DUPLICATE = 4;
     const CRAFTING_ACTION_MATERIALS_SPAWNED = 5;
+    const CRAFTING_ACTION_FAILED_STATION = 6;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;

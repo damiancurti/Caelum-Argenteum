@@ -7,3 +7,15 @@ GameInfo
     // Event handlers observe engine events without becoming map actors.
     EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"
 }
+
+// Editor numbers used by the development test map. These are project-local
+// assignments and avoid reusing Doom's standard thing numbers.
+DoomEdNums
+{
+    18000 = CaelumForgeStation
+    18001 = CaelumBowWorkshopStation
+    18002 = CaelumArmorWorkshopStation
+    18003 = CaelumEssenceAltarStation
+    18004 = CaelumWorkbenchStation
+    18010 = CaelumTrainingDummy
+}

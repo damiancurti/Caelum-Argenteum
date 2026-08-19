@@ -1,53 +1,147 @@
 # Caelum Argenteum
 
-**Caelum Argenteum** es un videojuego independiente de fantasía oscura con estructura FPS-RPG, desarrollado sobre GZDoom/ZScript. El proyecto está pensado desde el inicio para poder distribuirse como obra independiente y no como un mod dependiente de recursos de Doom.
+**Caelum Argenteum** is an independent dark-fantasy FPS-RPG developed in GZDoom/ZScript. The project is designed to become a standalone distributable game rather than remain dependent on Doom content.
 
-## Principios del proyecto
+**Author and game designer:** Damian Curti
 
-- **Independencia de assets:** la versión final no debe incluir sprites, sonidos, música, texturas, fuentes ni otros recursos de Doom o de terceros cuya licencia no permita su distribución. Los recursos provisionales usados durante desarrollo se consideran placeholders y deben poder reemplazarse sin romper la arquitectura del juego.
-- **Funciones nativas primero:** cuando GZDoom/ZScript ya ofrece una solución estable, se prioriza esa vía antes que construir sistemas paralelos innecesarios.
-- **Robustez antes que presentación:** una implementación simple, comprobable y mantenible tiene prioridad sobre una solución visualmente más compleja pero frágil.
-- **Arquitectura escalable:** los sistemas comunes deben resolverse mediante clases base, datos compartidos y funciones reutilizables en lugar de duplicar lógica por cada arma, objeto o actor.
-- **Gráficos modulares:** personajes y equipamiento visible se diseñarán por capas independientes cuando sea técnicamente razonable, evitando crear un sprite completo para cada combinación de personaje, arma, escudo o armadura.
-- **Balance separado de lógica:** daño, costes, pesos, durabilidad y otros valores de diseño deben mantenerse separados de la lógica siempre que sea posible para facilitar balance y pruebas.
-- **Sin valores arbitrarios:** si una implementación necesita una decisión de diseño aún no definida, debe consultarse al autor. Se pueden proponer valores y explicar sus consecuencias, pero no incorporarlos silenciosamente como definitivos.
+## Project status at a glance
 
-## Convenciones de código
+The project is in active implementation. Core player statistics, survival resources, equipment, combat foundations, weapon families, elemental weapons, durability, inventory/crafting foundations, and development tooling already exist in ZScript. Large world systems such as the full calendar/weather simulation, factions, dialogue, travel, sieges, and the complete Tarot/TCG layer are planned but are not yet fully implemented.
 
-- Identificadores, clases, funciones y variables se escriben en **inglés**.
-- Los comentarios explicativos dentro del código se escriben en **español**.
-- Los comentarios deben explicar sistemas, decisiones, límites y puntos de extensión; no se busca comentar cada línea de forma redundante.
-- El código debe ser legible y modificable por alguien que todavía está aprendiendo ZScript.
-- Se evita introducir dependencias locales, rutas absolutas o soluciones que funcionen sólo en una máquina de desarrollo.
+This README is the public technical entry point for collaborators. The author's private design documentation remains the authoritative source for detailed balance, lore, formulas, and unresolved design decisions.
 
-## Filosofía de implementación
+## Implementation status
 
-El orden general de trabajo es:
+### Implemented and tested
 
-1. **Arquitectura y mecánicas fundamentales.**
-2. **Contenido construido sobre sistemas ya estables.**
-3. **Presentación, pulido y expansión gráfica.**
+- Character creation foundation with race, dual-class/profession, sex, height, attribute layers, and twelve primary attributes.
+- Derived statistics and non-linear attribute scaling.
+- Player mass/size model and equipment-weight integration.
+- Health, Anima, Air, Adrenaline, Lucidity, Hunger, Thirst, and Sleep resources.
+- Air consumption for running and jumping, including load penalties and low-Air performance states.
+- Movement speed, jump height, evasion, load effects, crouching, and physical immobilization states.
+- Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
+- Physical weapon catalogue and family/slot cycling.
+- Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
+- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support.
+- Weapon durability using the shared damage-based wear logic.
+- Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
+- Carbine, bows/crossbows, their ammunition foundations, and weapon-specific accuracy/spread behavior currently used by the development build.
+- Essence weapons: staff, bell, book, and statuette foundations.
+- Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
+- Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
+- Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
+- Crafting and dismantling foundations used by current physical equipment and material recovery systems.
+- Physical crafting-station interaction core: Forge and Bow Workshop filter and execute their currently supported physical recipes through the shared crafting transaction.
+- Modular item/world sprites for many current weapons, shields, armor pieces, consumables, ammunition, and projectiles.
+- Custom player HUD face replacing the Doomguy face states in the current development HUD.
+- Development/debug overlay and test controls used to validate gameplay formulas.
 
-Los sistemas confirmados como correctos se consideran estables. Un parche posterior debe evitar modificarlos salvo que exista una razón concreta, y cada cambio importante debe incluir pruebas de regresión sobre los sistemas relacionados.
+### Implemented foundation — still expanding
 
-Las actualizaciones se agrupan, cuando es razonable, en paquetes suficientemente grandes como para avanzar de forma significativa, pero con una batería de pruebas concreta que permita aislar fallos por subsistema.
+- Crafting content and material catalogue: the underlying rules exist, but recipes/material coverage are still being expanded. Armor Workshop, Essence Altar, and Workbench actors are placeable and interactive, while their recipe families remain pending. The Carbine is intentionally not assigned to a crafting station until the author defines that design choice.
+- Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
+- Inventory presentation: functional development UI exists, but final UX and art are not complete.
+- Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.
+- Persistence: character/equipment persistence foundations exist, but the complete final save/profile/world-state design is not yet finished.
+- Movable world props: a strength-gated base actor is implemented; individual rocks, fallen trees, furniture, etc. still require their final assets, collision dimensions, masses, and designer-defined physical-power requirements.
 
-## Estado de implementación
+### Planned / not yet fully implemented
 
-La documentación de diseño distingue entre funcionalidades **pendientes**, **programadas** y **comprobadas**. Escribir código no convierte automáticamente una función en comprobada: la validación en el motor forma parte del proceso.
+- **Calendar-driven weather system.** Weather must react to the game calendar/season and eventually also to location/biome. The final calendar structure, seasonal boundaries, starting date, and weather distributions are author-defined design data and must not be invented by contributors.
+- Full day/night/world calendar presentation and world-state integration beyond the current gameplay time scale.
+- Complete world/biome implementation, travel routes, terrestrial/maritime/aerial/submarine travel, Hell and Moon regions.
+- Factions, reputation, diplomacy, and political world-state systems.
+- Dialogue and NPC interaction system.
+- Quest/journal system and authored quest content.
+- Siege and dynamic world-event systems.
+- Complete Tarot collection/progression system and Tarot-based TCG.
+- Final stealth/AI systems and full NPC/enemy roster.
+- Final modular third-person character/equipment sprite pipeline.
+- Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
+- Final standalone packaging and licensing audit.
 
-Los errores de especificación se tratan como bugs. Los sistemas que funcionan según lo programado pero requieren ajustes de valores se consideran problemas de balance y deben corregirse sin reconstruir innecesariamente su arquitectura.
 
-## Assets y licencias
+## Development test map
 
-Todo recurso incorporado al repositorio público debe tener un origen y una licencia compatibles con la distribución del juego. Antes de cualquier alpha o release público se realizará una auditoría de independencia para clasificar recursos propios, placeholders y recursos externos autorizados.
+`MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.
 
-No debe existir una dependencia final de archivos pertenecientes a Doom u otras obras protegidas que no puedan redistribuirse legalmente con el juego.
+The training dummies on the main east-west axis are placed approximately 512, 1024, 2048, and 3072 map units from the player start so projectile-range changes are easier to compare.
 
-## Repositorio público
+## World time, calendar, and weather
 
-Este proyecto está preparado para desarrollarse en un repositorio GitHub público. El código y la estructura del proyecto deben mantenerse comprensibles, reproducibles y aptos para revisión pública.
+The current gameplay time scale is already defined as:
 
-## Autor
+- **1 game hour = 3 real minutes.**
 
-**Damian Curti**
+This timing is already used by survival systems. A complete calendar/weather simulation is planned but is intentionally not hard-coded yet because its design data is still author-controlled.
+
+The intended architecture is:
+
+`game clock -> calendar/date -> season -> biome/location -> allowed weather -> gameplay/visual effects`
+
+Contributors should not choose month lengths, season dates, weather probabilities, biome distributions, or gameplay penalties without approval from the author.
+
+## Movable world props
+
+`CaelumMovableProp` is the common ZScript foundation for strength-gated scenery interaction.
+
+The system intentionally uses the existing player **PhysicalPushMultiplier** rather than creating a second strength statistic. The player interacts with a movable prop through the normal `+use` control and the native `Player.UseRange`. A prop only moves if the player's physical power reaches the requirement configured for that placed actor.
+
+### Map argument
+
+- `arg0`: required physical power encoded as `PhysicalPushMultiplier × 100`.
+- `arg0 <= 0`: unconfigured; the prop cannot be moved.
+
+Example: a designer requirement of `1.50` is stored as `150` in `arg0`. The gameplay value itself must be chosen by the author/map designer; the base class does not invent a default threshold.
+
+Concrete subclasses should define their own original sprite, radius, height, mass, sounds, and other presentation data. Good candidates include rocks, fallen trees/logs, crates, furniture, rubble, and other grounded objects. Upright rooted trees should normally remain static unless a specific gameplay interaction requires otherwise.
+
+## Development principles
+
+- **Independent final product.** The release version must not depend on Doom sprites, textures, sounds, music, fonts, maps, or other copyrighted assets that cannot legally ship with the game.
+- **Development placeholders are temporary.** Temporary Doom/inherited assets may exist during implementation, but systems must not be architecturally dependent on them.
+- **Native engine features first.** Prefer stable GZDoom/ZScript facilities over custom parallel systems when the engine already provides the required behavior.
+- **Robustness before spectacle.** Prefer simple, testable, maintainable implementations over visually elaborate but fragile solutions.
+- **Scalable architecture.** Shared behavior belongs in reusable classes/functions/data instead of near-identical copies for each weapon, item, actor, or element.
+- **Modular graphics.** Character bodies and visible equipment should use independent layers where practical. UI icons may also be composed from a base icon plus overlays when the custom UI supports it.
+- **Separate balance from logic.** Damage, costs, durability, weight, ranges, and other design values should remain easy to rebalance without rewriting system logic.
+- **Do not invent design values.** Missing gameplay values, content decisions, calendar rules, recipes, requirements, or balance choices must be brought to the author. Contributors may propose alternatives and explain trade-offs, but must not silently make them canonical.
+- **Protect tested systems.** Once a feature has been validated, later work should avoid modifying it unless required and should include regression tests when it is touched.
+- **Incremental but meaningful patches.** Prefer coherent implementation packages with explicit test cases rather than many tiny unrelated edits.
+
+## Code conventions
+
+- Classes, functions, variables, identifiers, filenames, and implementation-facing terminology are written in **English**.
+- Explanatory comments inside code are written in **Spanish**, so the author can quickly understand the purpose and boundaries of each system.
+- Comments should explain systems, decisions, assumptions, and extension points rather than narrate every line.
+- Code should remain readable for a developer who is still learning ZScript.
+- Avoid local absolute paths, machine-specific assumptions, and undocumented dependencies.
+
+## Asset and licensing policy
+
+Every asset intended for the public repository/release must have a known origin and a license compatible with redistribution. Before any public alpha/release, the repository must receive an independence/licensing audit classifying assets as:
+
+- original/project-owned;
+- externally licensed and redistributable;
+- development placeholder requiring replacement.
+
+The final product must not require Doom-owned assets or other incompatible copyrighted material.
+
+## Current development dependency note
+
+The current development player class still inherits from `DoomPlayer`, and the test environment may load Doom II/resources while systems are being built. This is a **development convenience only**, not the intended final dependency structure. The standalone asset/player-class replacement remains part of the planned independence pass.
+
+## Suggested contributor workflow
+
+1. Read this README and identify the feature's current status.
+2. Check whether the change affects a system already marked as tested.
+3. Reuse existing base classes, constants, catalogue data, and native engine functionality whenever possible.
+4. Ask the author about any undefined gameplay value or design choice before implementing it.
+5. Keep code in English and explanatory comments in Spanish.
+6. Provide a focused regression-test list with gameplay changes.
+7. Do not mark a feature as tested merely because it compiles; runtime validation is required.
+
+## Public repository goal
+
+The repository is intended to be public on GitHub. Code and project structure should therefore remain understandable, reproducible, reviewable, and suitable for collaboration without access to the author's private design document.

@@ -49,6 +49,7 @@ class CaelumPlayer : DoomPlayer
     int OwnedWeaponCount;
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
+    int ActiveCraftingStationType;
     int CraftingSelectionRecipe;
     int CraftingSelectionTier;
     int CraftingSelectionSize;
@@ -105,6 +106,10 @@ class CaelumPlayer : DoomPlayer
     // Bloquea repeticiones de AltFire de la jabalina mientras el botón sigue
     // pulsado. El motor puede reentrar en AltFire desde WeaponReady cada tic.
     bool JavelinSecondaryLatched;
+
+    // Evita repetir una interacción de empuje cada tic mientras se mantiene
+    // pulsada la tecla de uso. El sistema normal de +use sigue funcionando.
+    bool MovablePropUseLatched;
 
     // Último resultado del desgaste de arma para depuración y futuras UI.
     int LastWeaponDurabilityLoss;
@@ -2038,10 +2043,28 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshCraftingPreview()
     {
+        int stationRecipeCount = CaelumCraftingRules.GetStationRecipeCount(
+            ActiveCraftingStationType
+        );
+        if (stationRecipeCount <= 0)
+        {
+            CraftingSelectionRecipe = 0;
+            CraftingSelectedWeapon = -1;
+            CraftingBasicMaterialType = 0;
+            CraftingBasicMaterialTier = 1;
+            CraftingBasicRequired = 0;
+            CraftingBasicOwned = 0;
+            CraftingTierMaterialType = 0;
+            CraftingTierMaterialTier = 1;
+            CraftingTierRequired = 0;
+            CraftingTierOwned = 0;
+            CraftingFinalWeight = 0.0;
+            RefreshCarriedInventorySummary();
+            return;
+        }
+
         CraftingSelectionRecipe = Clamp(
-            CraftingSelectionRecipe,
-            0,
-            CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT - 1
+            CraftingSelectionRecipe, 0, stationRecipeCount - 1
         );
         CraftingSelectionTier = Clamp(CraftingSelectionTier, 1, 3);
         CraftingSelectionSize = Clamp(
@@ -2049,8 +2072,8 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
         );
-        CraftingSelectedWeapon = CaelumCraftingRules.GetPlayableRecipeWeapon(
-            CraftingSelectionRecipe
+        CraftingSelectedWeapon = CaelumCraftingRules.GetStationRecipeWeapon(
+            ActiveCraftingStationType, CraftingSelectionRecipe
         );
         CraftingBasicMaterialType = CaelumCraftingRules.GetBasicMaterial(
             CraftingSelectedWeapon
@@ -2065,20 +2088,16 @@ class CaelumPlayer : DoomPlayer
             CraftingTierMaterialType, CraftingSelectionTier
         );
         CraftingFinalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
-            CaelumCraftingRules.GetPlayableTierOneWeight(
-                CraftingSelectedWeapon
-            ),
+            CaelumCraftingRules.GetPlayableTierOneWeight(CraftingSelectedWeapon),
             CraftingSelectionTier,
             CraftingSelectionSize
         );
-        CraftingBasicRequired =
-            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-                CraftingSelectedWeapon, CraftingFinalWeight
-            );
-        CraftingTierRequired =
-            CaelumCraftingRules.GetRequiredTierMaterialUnits(
-                CraftingSelectedWeapon, CraftingFinalWeight
-            );
+        CraftingBasicRequired = CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+            CraftingSelectedWeapon, CraftingFinalWeight
+        );
+        CraftingTierRequired = CaelumCraftingRules.GetRequiredTierMaterialUnits(
+            CraftingSelectedWeapon, CraftingFinalWeight
+        );
         CraftingBasicOwned = CountCraftingMaterial(
             CraftingBasicMaterialType, CraftingBasicMaterialTier
         );
@@ -2088,38 +2107,47 @@ class CaelumPlayer : DoomPlayer
         RefreshCarriedInventorySummary();
     }
 
-    void ToggleCraftingMenu()
+    void OpenCraftingStation(int stationType)
     {
         if (CreationWizardOpen) { return; }
-        CraftingMenuOpen = !CraftingMenuOpen;
-        if (!CraftingMenuOpen) { return; }
+        int resolvedStation = CaelumCraftingRules.ResolveStationType(stationType);
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_NONE) { return; }
+
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;
-        CraftingSelectionRecipe = Clamp(
-            CraftingSelectionRecipe,
-            0,
-            CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT - 1
-        );
+        CraftingMenuOpen = true;
+        ActiveCraftingStationType = resolvedStation;
+        CraftingSelectionRecipe = 0;
         if (CraftingSelectionTier <= 0)
         {
             CraftingSelectionTier = 1;
             CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
         }
-        CraftingSelectionSize = Clamp(
-            CraftingSelectionSize,
-            0,
-            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
     }
 
+    void ToggleCraftingMenu()
+    {
+        // La tecla de crafteo ya no abre una estación virtual desde cualquier
+        // lugar. Sirve para cerrar el menú; la apertura real ocurre usando
+        // un actor CaelumCraftingStation del escenario.
+        if (CraftingMenuOpen)
+        {
+            CraftingMenuOpen = false;
+            ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
+        }
+    }
+
     void CycleCraftingRecipe(int direction)
     {
+        int stationRecipeCount = CaelumCraftingRules.GetStationRecipeCount(
+            ActiveCraftingStationType
+        );
+        if (stationRecipeCount <= 0) { return; }
         CraftingSelectionRecipe = (
-            CraftingSelectionRecipe + direction
-            + CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT
-        ) % CaelumConstants.CRAFTING_PLAYABLE_RECIPE_COUNT;
+            CraftingSelectionRecipe + direction + stationRecipeCount
+        ) % stationRecipeCount;
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
     }
@@ -2161,6 +2189,11 @@ class CaelumPlayer : DoomPlayer
     {
         if (player == null || player.playerstate != PST_LIVE) { return; }
         RefreshCraftingPreview();
+        if (CraftingSelectedWeapon < 0)
+        {
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
         Vector3 forward = (Cos(Angle) * 56.0, Sin(Angle) * 56.0, 8.0);
         Vector3 side = (-Sin(Angle) * 18.0, Cos(Angle) * 18.0, 0.0);
         CaelumMaterialPickup basicMaterial = CaelumMaterialPickup(
@@ -2188,6 +2221,14 @@ class CaelumPlayer : DoomPlayer
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
+        if (CraftingSelectedWeapon < 0
+            || !CaelumCraftingRules.CanStationCraftWeapon(
+                ActiveCraftingStationType, CraftingSelectedWeapon
+            ))
+        {
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
         int playableWeaponType = CaelumCraftingRules.GetPlayableWeaponType(
             CraftingSelectedWeapon
         );
@@ -2305,6 +2346,7 @@ class CaelumPlayer : DoomPlayer
         if (!EquipmentMenuOpen) { return; }
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         CraftingMenuOpen = false;
+        ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
         PersistCharacterState();
 
@@ -3915,6 +3957,7 @@ class CaelumPlayer : DoomPlayer
     {
         EquipmentMenuOpen = false;
         CraftingMenuOpen = false;
+        ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
         PersistCharacterState();
         Super.PreTravelled();
     }
@@ -3930,6 +3973,7 @@ class CaelumPlayer : DoomPlayer
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
 
         // Create the attribute container only when it does not already exist.
         // This guard helps prevent accidental replacement of stored data.
@@ -5035,6 +5079,68 @@ class CaelumPlayer : DoomPlayer
         return totalTics / double(TICRATE);
     }
 
+    // Intenta mover un objeto de escenario colocado frente al jugador.
+    // La detección reutiliza Player.UseRange, por lo que respeta el alcance
+    // nativo configurado para la clase de jugador en vez de duplicar un valor.
+    bool TryPushMovablePropInFront()
+    {
+        if (player == null || player.playerstate != PST_LIVE
+            || DerivedStats == null)
+        {
+            return false;
+        }
+
+        FTranslatedLineTarget targetData;
+        Actor detectionPuff;
+        int ignoredDamage;
+        [detectionPuff, ignoredDamage] = LineAttack(
+            Angle,
+            Max(1.0, UseRange),
+            Pitch,
+            0,
+            'CaelumPropInteraction',
+            'CaelumSilentDetectionPuff',
+            LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
+            targetData
+        );
+
+        CaelumMovableProp movable = CaelumMovableProp(targetData.linetarget);
+        if (movable == null) { return false; }
+
+        double physicalPower = Max(
+            0.0, DerivedStats.PhysicalPushMultiplier
+        );
+        double pushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
+            * physicalPower;
+        return movable.TryPushFrom(self, physicalPower, pushForce);
+    }
+
+    // +use puede mantenerse varios tics. Sólo intentamos un empuje por
+    // pulsación para evitar aceleraciones artificiales de 35 impulsos/segundo.
+    void UpdateMovablePropUseInteraction()
+    {
+        if (player == null)
+        {
+            MovablePropUseLatched = false;
+            return;
+        }
+
+        bool usePressed = (player.cmd.buttons & BT_USE) != 0;
+        if (!usePressed)
+        {
+            MovablePropUseLatched = false;
+            return;
+        }
+
+        if (MovablePropUseLatched) { return; }
+        MovablePropUseLatched = true;
+
+        // La predicción de cliente no debe aplicar un segundo impulso sobre
+        // el mismo actor; el tic autoritativo realiza la interacción real.
+        if (player.cheats & CF_PREDICTING) { return; }
+        TryPushMovablePropInFront();
+    }
+
     // Bloquea las acciones normales mientras el creador ocupa la pantalla.
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
@@ -5067,6 +5173,8 @@ class CaelumPlayer : DoomPlayer
         {
             JavelinSecondaryLatched = false;
         }
+
+        UpdateMovablePropUseInteraction();
 
         // La creación inicial pausa necesidades, regeneraciones y costes.
         if (CreationWizardOpen)
@@ -5630,11 +5738,14 @@ class CaelumPlayer : DoomPlayer
         projectile.Target = self;
         projectile.Angle = attackAngle;
         projectile.Pitch = attackPitch;
-        // La distancia útil del lanzamiento crece con la misma potencia
-        // física ya derivada de Fuerza y masa corporal. No se introduce una
-        // curva nueva exclusiva para la jabalina.
+        // La distancia útil del lanzamiento usa la raíz cuadrada de la
+        // potencia física. Así conserva el beneficio de Fuerza y masa corporal
+        // sin producir alcances absurdos cuando el multiplicador es muy alto.
+        double throwPowerScale = Sqrt(
+            Max(0.0, DerivedStats.PhysicalPushMultiplier)
+        );
         double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_SLOW
-            * Max(0.0, DerivedStats.PhysicalPushMultiplier);
+            * throwPowerScale;
         projectile.Vel = (
             Cos(attackPitch) * Cos(attackAngle) * projectileSpeed,
             Cos(attackPitch) * Sin(attackAngle) * projectileSpeed,

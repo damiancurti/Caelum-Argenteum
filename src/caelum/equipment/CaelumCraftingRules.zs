@@ -2,6 +2,78 @@
 // básico. Ambos se calculan por peso y se redondean hacia arriba por separado.
 class CaelumCraftingRules : Object
 {
+    static int ResolveStationType(int stationType)
+    {
+        if (stationType < 0 || stationType >= CaelumConstants.CRAFTING_STATION_COUNT)
+        {
+            return CaelumConstants.CRAFTING_STATION_NONE;
+        }
+        return stationType;
+    }
+
+    static int GetStationRecipeCount(int stationType)
+    {
+        switch (ResolveStationType(stationType))
+        {
+            case CaelumConstants.CRAFTING_STATION_FORGE:
+                return CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT;
+            case CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP:
+                return CaelumConstants.CRAFTING_BOW_WORKSHOP_RECIPE_COUNT;
+            default:
+                // Taller de armaduras, Altar de esencias y Banco de trabajo
+                // ya existen como estaciones, pero sus transacciones se
+                // incorporarán cuando implementemos esas familias de recetas.
+                return 0;
+        }
+    }
+
+    static int GetStationRecipeWeapon(int stationType, int recipeIndex)
+    {
+        int resolvedStation = ResolveStationType(stationType);
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_FORGE)
+        {
+            switch (Clamp(recipeIndex, 0, CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT - 1))
+            {
+                case 0: return CaelumConstants.CATALOGUE_WEAPON_DAGGER;
+                case 1: return CaelumConstants.CATALOGUE_WEAPON_HATCHET;
+                case 2: return CaelumConstants.CATALOGUE_WEAPON_MACHETE;
+                case 3: return CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
+                case 4: return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+                case 5: return CaelumConstants.CATALOGUE_WEAPON_AXE;
+                case 6: return CaelumConstants.CATALOGUE_WEAPON_FLAIL;
+                case 7: return CaelumConstants.CATALOGUE_WEAPON_SPEAR;
+                case 8: return CaelumConstants.CATALOGUE_WEAPON_GREATSWORD;
+                case 9: return CaelumConstants.CATALOGUE_WEAPON_WAR_AXE;
+                case 10: return CaelumConstants.CATALOGUE_WEAPON_HALBERD;
+                default: return CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS;
+            }
+        }
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP)
+        {
+            switch (Clamp(recipeIndex, 0, CaelumConstants.CRAFTING_BOW_WORKSHOP_RECIPE_COUNT - 1))
+            {
+                case 0: return CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW;
+                case 1: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
+                default: return CaelumConstants.CATALOGUE_WEAPON_CROSSBOW;
+            }
+        }
+        return -1;
+    }
+
+    static bool CanStationCraftWeapon(int stationType, int weaponId)
+    {
+        int recipeCount = GetStationRecipeCount(stationType);
+        for (int i = 0; i < recipeCount; i++)
+        {
+            if (GetStationRecipeWeapon(stationType, i)
+                == CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     static int GetPlayableRecipeWeapon(int recipeIndex)
     {
         return CaelumWeaponCatalogue.ResolveWeapon(recipeIndex);
