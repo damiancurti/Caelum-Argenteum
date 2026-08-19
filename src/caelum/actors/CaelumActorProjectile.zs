@@ -7,6 +7,23 @@ class CaelumNoDamageThrustPuff : BulletPuff
     }
 }
 
+// Puff invisible usado únicamente para trazas de detección. Evita que una
+// comprobación lógica de alcance genere un falso efecto de impacto.
+class CaelumSilentDetectionPuff : BulletPuff
+{
+    Default
+    {
+        +NODAMAGETHRUST
+    }
+
+    States
+    {
+    Spawn:
+        TNT1 A 1;
+        Stop;
+    }
+}
+
 // Immutable offensive metadata stored by a Caelum projectile at launch.
 // Keeping this base independent from CaelumCombatActor avoids circular class
 // dependencies while allowing the receiver to inspect the result at impact.

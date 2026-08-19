@@ -5387,6 +5387,64 @@ class CaelumPlayer : DoomPlayer
     // 1000 puntos elegibles se pierde 1 de durabilidad garantizado y el
     // remanente aporta 1% de probabilidad por cada 10 puntos. En la jabalina
     // esta misma función se ejecuta al arrojarla, no al recoger munición.
+    // Aplica una pérdida fija de durabilidad cuando la regla de diseño no
+    // depende del daño. La jabalina arrojada usa esta ruta: cada lanzamiento
+    // consume exactamente un punto, mientras sus golpes melee conservan la
+    // curva normal basada en daño.
+    void ApplyFixedWeaponDurabilityLoss(
+        int durabilityLoss,
+        int weaponType,
+        int tier,
+        int equipmentSize
+    )
+    {
+        LastWeaponDurabilityLoss = 0;
+        LastWeaponDurabilityChancePercent = 0.0;
+        LastWeaponDurabilityRollPercent = 0.0;
+
+        int requestedLoss = Max(0, durabilityLoss);
+        if (requestedLoss <= 0) { return; }
+
+        CaelumEquipmentItem weapon = FindNativeEquipmentItem(
+            CaelumConstants.EQUIPMENT_KIND_WEAPON,
+            weaponType, -1, tier, equipmentSize
+        );
+        if (weapon == null || weapon.Durability <= 0 || weapon.InMagicBox)
+        {
+            return;
+        }
+
+        LastWeaponDurabilityLoss = Min(requestedLoss, weapon.Durability);
+        weapon.Durability -= LastWeaponDurabilityLoss;
+
+        bool isActiveWeapon = WeaponModel != null
+            && WeaponModel.Equipped
+            && WeaponModel.WeaponType == weaponType
+            && WeaponModel.Tier == tier
+            && WeaponModel.Size == equipmentSize;
+        if (isActiveWeapon)
+        {
+            WeaponModel.Durability = weapon.Durability;
+            if (WeaponModel.Durability <= 0)
+            {
+                EquippedWeaponCooldownRemaining = 0.0;
+                StaffCastCooldownRemaining = 0.0;
+                CancelPendingStaffCast(false);
+                LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_BROKEN;
+            }
+        }
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState != null)
+        {
+            persistentState.StoreOwnedWeaponDurability(
+                weaponType, tier, equipmentSize, weapon.Durability
+            );
+        }
+        RefreshEquipmentSelectionPreview();
+    }
+
     void ApplyWeaponDurabilityFromSuccessfulDamage(
         double dealtDamage,
         int weaponType,
@@ -5482,7 +5540,7 @@ class CaelumPlayer : DoomPlayer
             Pitch,
             0,
             'CaelumMeleeTest',
-            'CaelumNoDamageThrustPuff',
+            'CaelumSilentDetectionPuff',
             LAF_ISMELEEATTACK | LAF_NOINTERACT | LAF_NORANDOMPUFFZ,
             targetData
         );
@@ -5543,9 +5601,14 @@ class CaelumPlayer : DoomPlayer
         );
         int criticalRoll = Random[CaelumJavelinCritical](0, 999999);
         bool criticalHit = criticalRoll / 10000.0 < criticalChance;
-        double damage = CaelumWeaponCatalogue.GetSecondaryDamage(
+        double selectedBaseDamage = CaelumWeaponCatalogue.GetSecondaryDamage(
             catalogueWeapon
-        ) * WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier)
+        );
+        double physicalWeaponDamageScale = selectedBaseDamage
+            * WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier)
+            / CaelumConstants.DEBUG_SWORD_BASE_DAMAGE;
+        double damage = DerivedStats.DebugSwordDamage
+            * physicalWeaponDamageScale
             * EffectiveOffensiveDamageMultiplier;
 
         double attackAngle = Angle + yawOffset;
@@ -5567,7 +5630,11 @@ class CaelumPlayer : DoomPlayer
         projectile.Target = self;
         projectile.Angle = attackAngle;
         projectile.Pitch = attackPitch;
-        double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_SLOW;
+        // La distancia útil del lanzamiento crece con la misma potencia
+        // física ya derivada de Fuerza y masa corporal. No se introduce una
+        // curva nueva exclusiva para la jabalina.
+        double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_SLOW
+            * Max(0.0, DerivedStats.PhysicalPushMultiplier);
         projectile.Vel = (
             Cos(attackPitch) * Cos(attackAngle) * projectileSpeed,
             Cos(attackPitch) * Sin(attackAngle) * projectileSpeed,
@@ -5580,18 +5647,57 @@ class CaelumPlayer : DoomPlayer
             false,
             DerivedStats.PhysicalPushMultiplier
         );
-        // La jabalina no usa munición. Conservamos tier y talle únicamente
-        // para que el proyectil pueda dejar los materiales correctos al romperse.
-        projectile.StoreJavelinBreakageConfiguration(
+        // Cada lanzamiento representa exactamente un punto de durabilidad.
+        // Los materiales recuperados por este proyectil corresponden a la
+        // mitad del valor material de ESE punto concreto de durabilidad.
+        int maximumDurability = WeaponModel.GetMaximumDurabilityFor(
+            WeaponModel.WeaponType, WeaponModel.Tier, WeaponModel.Size
+        );
+        int durabilityBeforeThrow = Clamp(
+            WeaponModel.Durability, 0, maximumDurability
+        );
+        int durabilityAfterThrow = Max(0, durabilityBeforeThrow - 1);
+        double finalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
+            CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT,
             WeaponModel.Tier,
             WeaponModel.Size
         );
+        int requiredBasicUnits = CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+            catalogueWeapon, finalWeight
+        );
+        int requiredTierUnits = CaelumCraftingRules.GetRequiredTierMaterialUnits(
+            catalogueWeapon, finalWeight
+        );
 
-        // Arrojarla desgasta el arma con la misma curva ya usada por el resto
-        // del equipamiento. Se aplica al lanzamiento para que también cuente si
-        // el proyectil termina rompiéndose contra el escenario.
-        ApplyWeaponDurabilityFromSuccessfulDamage(
-            damage,
+        int usedBefore = maximumDurability - durabilityBeforeThrow;
+        int usedAfter = maximumDurability - durabilityAfterThrow;
+        double recoveryRatio = CaelumConstants.CRAFTING_DISMANTLE_RECOVERY_RATIO;
+        int basicRecoveredBefore = int(Floor(
+            requiredBasicUnits * recoveryRatio * usedBefore
+                / Max(1, maximumDurability) + 0.0000001
+        ));
+        int basicRecoveredAfter = int(Floor(
+            requiredBasicUnits * recoveryRatio * usedAfter
+                / Max(1, maximumDurability) + 0.0000001
+        ));
+        int tierRecoveredBefore = int(Floor(
+            requiredTierUnits * recoveryRatio * usedBefore
+                / Max(1, maximumDurability) + 0.0000001
+        ));
+        int tierRecoveredAfter = int(Floor(
+            requiredTierUnits * recoveryRatio * usedAfter
+                / Max(1, maximumDurability) + 0.0000001
+        ));
+
+        projectile.StoreJavelinBreakageConfiguration(
+            WeaponModel.Tier,
+            WeaponModel.Size,
+            Max(0, basicRecoveredAfter - basicRecoveredBefore),
+            Max(0, tierRecoveredAfter - tierRecoveredBefore)
+        );
+
+        ApplyFixedWeaponDurabilityLoss(
+            1,
             WeaponModel.WeaponType,
             WeaponModel.Tier,
             WeaponModel.Size

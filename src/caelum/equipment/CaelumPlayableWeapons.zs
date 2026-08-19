@@ -695,6 +695,8 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
 {
     int JavelinTier;
     int JavelinSize;
+    int JavelinBasicMaterialDropAmount;
+    int JavelinTierMaterialDropAmount;
     bool JavelinBreakageConfigured;
 
     Default
@@ -705,7 +707,12 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
         -NOGRAVITY
     }
 
-    void StoreJavelinBreakageConfiguration(int tier, int equipmentSize)
+    void StoreJavelinBreakageConfiguration(
+        int tier,
+        int equipmentSize,
+        int basicMaterialDropAmount,
+        int tierMaterialDropAmount
+    )
     {
         JavelinTier = Clamp(tier, 1, 3);
         JavelinSize = Clamp(
@@ -713,6 +720,8 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
             CaelumConstants.EQUIPMENT_SIZE_XS,
             CaelumConstants.EQUIPMENT_SIZE_XL
         );
+        JavelinBasicMaterialDropAmount = Max(0, basicMaterialDropAmount);
+        JavelinTierMaterialDropAmount = Max(0, tierMaterialDropAmount);
         JavelinBreakageConfigured = true;
     }
 
@@ -746,32 +755,21 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
         if (!JavelinBreakageConfigured) { return; }
 
         int weaponId = CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
-        double finalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
-            CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT,
-            JavelinTier,
-            JavelinSize
-        );
-
         int basicType = CaelumCraftingRules.GetBasicMaterial(weaponId);
         int tierType = CaelumCraftingRules.GetTierMaterial(weaponId);
         int basicTier = CaelumMaterialRules.ResolveTier(basicType, 1);
         int tierTier = CaelumMaterialRules.ResolveTier(tierType, JavelinTier);
 
-        int basicAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
-            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-                weaponId, finalWeight
-            )
+        // El jugador ya calculó cuánto corresponde exactamente a este punto
+        // de durabilidad. Al sumar todos los lanzamientos desde durabilidad
+        // máxima hasta cero, la recuperación total converge exactamente a la
+        // mitad de los materiales de la receta.
+        SpawnBrokenMaterial(
+            basicType, basicTier, JavelinBasicMaterialDropAmount, -6.0
         );
-        int tierAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
-            CaelumCraftingRules.GetRequiredTierMaterialUnits(
-                weaponId, finalWeight
-            )
+        SpawnBrokenMaterial(
+            tierType, tierTier, JavelinTierMaterialDropAmount, 6.0
         );
-
-        // Se reutiliza la recuperación del desensamblaje; no existe una tabla
-        // especial ni valores nuevos exclusivos para las jabalinas arrojadas.
-        SpawnBrokenMaterial(basicType, basicTier, basicAmount, -6.0);
-        SpawnBrokenMaterial(tierType, tierTier, tierAmount, 6.0);
         JavelinBreakageConfigured = false;
     }
 
