@@ -3346,19 +3346,6 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[2] = EquipmentSelectionSize + 1;
                 pickup.args[4] = SelectedEssenceType + 1;
             }
-            // Sólo para el generador de desarrollo: al crear una jabalina se
-            // garantiza una pila nativa de prueba en el inventario del jugador.
-            // Evita confundir el arma del suelo con una segunda jabalina que en
-            // realidad era la munición. La cantidad 5 ya era la usada por el
-            // entorno de prueba y no fija el balance final.
-            if (pickup != null
-                && EquipmentSelectionWeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN)
-            {
-                int ammoType = GetJavelinAmmunitionTypeForTier(EquipmentSelectionTier);
-                // El entorno DEV usa la misma ruta que una recogida real.
-                // Las cinco unidades siguen siendo sólo una cantidad de prueba.
-                AcquireJavelinAmmunition(ammoType, 5);
-            }
         }
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
@@ -5398,8 +5385,8 @@ class CaelumPlayer : DoomPlayer
 
     // Reutiliza exactamente la curva de desgaste de armaduras: por cada
     // 1000 puntos elegibles se pierde 1 de durabilidad garantizado y el
-    // remanente aporta 1% de probabilidad por cada 10 puntos. Las jabalinas
-    // quedan fuera porque al arrojarse son munición recuperable.
+    // remanente aporta 1% de probabilidad por cada 10 puntos. En la jabalina
+    // esta misma función se ejecuta al arrojarla, no al recoger munición.
     void ApplyWeaponDurabilityFromSuccessfulDamage(
         double dealtDamage,
         int weaponType,
@@ -5411,8 +5398,7 @@ class CaelumPlayer : DoomPlayer
         LastWeaponDurabilityChancePercent = 0.0;
         LastWeaponDurabilityRollPercent = 0.0;
 
-        if (dealtDamage <= 0.0
-            || weaponType == CaelumConstants.WEAPON_TYPE_JAVELIN)
+        if (dealtDamage <= 0.0)
         {
             return;
         }
@@ -5503,41 +5489,11 @@ class CaelumPlayer : DoomPlayer
         return targetData.linetarget != null;
     }
 
-    int GetJavelinAmmunitionTypeForTier(int tier)
-    {
-        if (tier >= 3)
-        {
-            return CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE;
-        }
-        if (tier == 2)
-        {
-            return CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO;
-        }
-        return CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
-    }
-
-    Name GetJavelinProjectileClassForTier(int tier)
-    {
-        if (tier >= 3) { return 'CaelumJavelinTierThreeProjectile'; }
-        if (tier == 2) { return 'CaelumJavelinTierTwoProjectile'; }
-        return 'CaelumJavelinTierOneProjectile';
-    }
-
     void PerformJavelinThrow()
     {
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_JAVELIN
             || WeaponModel.Durability <= 0 || DerivedStats == null)
-        {
-            return;
-        }
-
-        int ammunitionType = GetJavelinAmmunitionTypeForTier(
-            WeaponModel.Tier
-        );
-        CaelumCarbineAmmo ammunition = FindNativeAmmunition(ammunitionType);
-        if (ammunition == null || ammunition.Amount <= 0
-            || ammunition.InMagicBox)
         {
             return;
         }
@@ -5601,7 +5557,7 @@ class CaelumPlayer : DoomPlayer
         );
         CaelumJavelinProjectile projectile = CaelumJavelinProjectile(
             Spawn(
-                GetJavelinProjectileClassForTier(WeaponModel.Tier),
+                "CaelumJavelinProjectile",
                 spawnPos,
                 NO_REPLACE
             )
@@ -5624,13 +5580,23 @@ class CaelumPlayer : DoomPlayer
             false,
             DerivedStats.PhysicalPushMultiplier
         );
-        projectile.StoreCaelumWeaponWearIdentity(
+        // La jabalina no usa munición. Conservamos tier y talle únicamente
+        // para que el proyectil pueda dejar los materiales correctos al romperse.
+        projectile.StoreJavelinBreakageConfiguration(
+            WeaponModel.Tier,
+            WeaponModel.Size
+        );
+
+        // Arrojarla desgasta el arma con la misma curva ya usada por el resto
+        // del equipamiento. Se aplica al lanzamiento para que también cuente si
+        // el proyectil termina rompiéndose contra el escenario.
+        ApplyWeaponDurabilityFromSuccessfulDamage(
+            damage,
             WeaponModel.WeaponType,
             WeaponModel.Tier,
             WeaponModel.Size
         );
 
-        ammunition.Amount = Max(0, ammunition.Amount - 1);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics()

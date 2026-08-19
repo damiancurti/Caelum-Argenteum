@@ -688,17 +688,91 @@ class CaelumCarbineProjectile : CaelumActorProjectile
     }
 }
 
-// El proyectil lento conserva el daño, el crítico y el empuje preparados por
-// el jugador. Al morir genera una unidad recuperable del mismo tier.
+// El proyectil lento conserva daño, crítico y empuje. La jabalina se considera
+// rota al finalizar su trayectoria y deja materiales calculados con la misma
+// receta y recuperación de desensamblaje que ya usa el sistema de crafteo.
 class CaelumJavelinProjectile : CaelumCarbineProjectile
 {
+    int JavelinTier;
+    int JavelinSize;
+    bool JavelinBreakageConfigured;
+
     Default
     {
         Speed 15;
-        // Usa la misma escala física que las jabalinas recogibles.
         Scale 0.5;
         DamageType "CaelumRangedTest";
         -NOGRAVITY
+    }
+
+    void StoreJavelinBreakageConfiguration(int tier, int equipmentSize)
+    {
+        JavelinTier = Clamp(tier, 1, 3);
+        JavelinSize = Clamp(
+            equipmentSize,
+            CaelumConstants.EQUIPMENT_SIZE_XS,
+            CaelumConstants.EQUIPMENT_SIZE_XL
+        );
+        JavelinBreakageConfigured = true;
+    }
+
+    void SpawnBrokenMaterial(
+        int materialType,
+        int materialTier,
+        int materialAmount,
+        double lateralOffset
+    )
+    {
+        if (materialAmount <= 0) { return; }
+
+        Vector3 dropPos = Pos + (
+            Cos(Angle + 90.0) * lateralOffset,
+            Sin(Angle + 90.0) * lateralOffset,
+            0.0
+        );
+        CaelumMaterialPickup material = CaelumMaterialPickup(
+            Spawn("CaelumMaterialPickup", dropPos, NO_REPLACE)
+        );
+        if (material == null) { return; }
+
+        material.args[0] = materialType;
+        material.args[1] = materialTier;
+        material.Amount = materialAmount;
+        material.InMagicBox = false;
+    }
+
+    void DropBrokenJavelinMaterials()
+    {
+        if (!JavelinBreakageConfigured) { return; }
+
+        int weaponId = CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
+        double finalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
+            CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT,
+            JavelinTier,
+            JavelinSize
+        );
+
+        int basicType = CaelumCraftingRules.GetBasicMaterial(weaponId);
+        int tierType = CaelumCraftingRules.GetTierMaterial(weaponId);
+        int basicTier = CaelumMaterialRules.ResolveTier(basicType, 1);
+        int tierTier = CaelumMaterialRules.ResolveTier(tierType, JavelinTier);
+
+        int basicAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
+            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+                weaponId, finalWeight
+            )
+        );
+        int tierAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
+            CaelumCraftingRules.GetRequiredTierMaterialUnits(
+                weaponId, finalWeight
+            )
+        );
+
+        // Se reutiliza la recuperación del desensamblaje; no existe una tabla
+        // especial ni valores nuevos exclusivos para las jabalinas arrojadas.
+        SpawnBrokenMaterial(basicType, basicTier, basicAmount, -6.0);
+        SpawnBrokenMaterial(tierType, tierTier, tierAmount, 6.0);
+        JavelinBreakageConfigured = false;
     }
 
     States
@@ -706,49 +780,8 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
     Spawn:
         CJAV A 1 Bright;
         Loop;
-    }
-}
-
-class CaelumJavelinTierOneProjectile : CaelumJavelinProjectile
-{
-    States
-    {
     Death:
-        TNT1 A 0 A_SpawnItemEx(
-            "CaelumJavelinTierOneAmmo",
-            0, 0, 0, 0, 0, 0, 0,
-            SXF_NOCHECKPOSITION
-        );
-        PUFF BCD 2 Bright;
-        Stop;
-    }
-}
-
-class CaelumJavelinTierTwoProjectile : CaelumJavelinProjectile
-{
-    States
-    {
-    Death:
-        TNT1 A 0 A_SpawnItemEx(
-            "CaelumJavelinTierTwoAmmo",
-            0, 0, 0, 0, 0, 0, 0,
-            SXF_NOCHECKPOSITION
-        );
-        PUFF BCD 2 Bright;
-        Stop;
-    }
-}
-
-class CaelumJavelinTierThreeProjectile : CaelumJavelinProjectile
-{
-    States
-    {
-    Death:
-        TNT1 A 0 A_SpawnItemEx(
-            "CaelumJavelinTierThreeAmmo",
-            0, 0, 0, 0, 0, 0, 0,
-            SXF_NOCHECKPOSITION
-        );
+        TNT1 A 0 DropBrokenJavelinMaterials();
         PUFF BCD 2 Bright;
         Stop;
     }

@@ -288,11 +288,11 @@ class CaelumConstants : Object
     const WEAPON_BELL_TIER_ONE_WEIGHT = 5.0;
     const WEAPON_BOOK_TIER_ONE_WEIGHT = 6.0;
     const WEAPON_STATUETTE_TIER_ONE_WEIGHT = 8.0;
-    const WEAPON_SWORD_BASE_DURABILITY = 1000;
-    const WEAPON_STAFF_BASE_DURABILITY = 800;
-    const WEAPON_CARBINE_BASE_DURABILITY = 1200;
-    const WEAPON_PHYSICAL_BASE_DURABILITY = 1000;
-    const WEAPON_ESSENCE_BASE_DURABILITY = 800;
+    const WEAPON_SWORD_BASE_DURABILITY = 100;
+    const WEAPON_STAFF_BASE_DURABILITY = 80;
+    const WEAPON_CARBINE_BASE_DURABILITY = 120;
+    const WEAPON_PHYSICAL_BASE_DURABILITY = 100;
+    const WEAPON_ESSENCE_BASE_DURABILITY = 80;
     const WEAPON_SWORD_ATTACK_TICS = 14;
     const WEAPON_CARBINE_STARTING_AMMO = 100;
     const AMMUNITION_CARBINE = 0;
@@ -301,12 +301,15 @@ class CaelumConstants : Object
     const AMMUNITION_JAVELIN_TIER_ONE = 3;
     const AMMUNITION_JAVELIN_TIER_TWO = 4;
     const AMMUNITION_JAVELIN_TIER_THREE = 5;
-    const AMMUNITION_TYPE_COUNT = 6;
+    // Las jabalinas ya no usan munición. Las IDs antiguas se conservan sólo
+    // para compatibilidad con partidas de desarrollo anteriores, pero quedan
+    // fuera del selector y de todas las rutas normales de juego.
+    const AMMUNITION_TYPE_COUNT = 3;
     const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
     const ARROW_AMMO_UNIT_WEIGHT = 0.05;
     const BOLT_AMMO_UNIT_WEIGHT = 0.05;
-    // Cada proyectil es una jabalina completa de talle M. El tier conserva
-    // el escalado de peso 100%/150%/200% del arma correspondiente.
+    // Valores heredados de la prueba de munición de jabalinas. Se conservan
+    // sólo para compatibilidad con partidas de desarrollo anteriores.
     const JAVELIN_TIER_ONE_AMMO_UNIT_WEIGHT = 4.0;
     const JAVELIN_TIER_TWO_AMMO_UNIT_WEIGHT = 6.0;
     const JAVELIN_TIER_THREE_AMMO_UNIT_WEIGHT = 8.0;
