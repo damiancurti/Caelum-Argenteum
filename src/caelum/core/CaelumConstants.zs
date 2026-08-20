@@ -309,6 +309,9 @@ class CaelumConstants : Object
     const SHIELD_DAMAGE_MAGICAL = 1;
     const DEBUG_SHIELD_HIT_DAMAGE = 1000.0;
     const SHIELD_AIR_WEIGHT_RATIO_PER_SECOND = 0.10;
+    const SHIELD_BUCKLER_COMBAT_MASS_MULTIPLIER = 0.50;
+    const SHIELD_TOWER_COMBAT_MASS_MULTIPLIER = 2.00;
+    const SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER = 2.00;
 
     // Primer catalogo jugable de armas. Los indices son persistentes: no deben
     // reordenarse cuando se agreguen nuevas familias en versiones posteriores.

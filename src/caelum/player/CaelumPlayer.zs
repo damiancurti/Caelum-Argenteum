@@ -5930,6 +5930,20 @@ class CaelumPlayer : DoomPlayer
         return LastIncomingActorCriticalHit;
     }
 
+    void ReflectProjectileFromMagicShield(Actor inflictor)
+    {
+        if (inflictor == null || !inflictor.bMissile
+            || ShieldModel == null
+            || ShieldModel.ShieldType != CaelumConstants.SHIELD_TYPE_MAGIC)
+        {
+            return;
+        }
+        inflictor.Vel = -inflictor.Vel;
+        inflictor.Angle += 180.0;
+        inflictor.Pitch = -inflictor.Pitch;
+        inflictor.Target = self;
+    }
+
     double ResolveRealShieldDamage(
         Actor inflictor,
         Actor source,
@@ -5960,6 +5974,12 @@ class CaelumPlayer : DoomPlayer
             && LastShieldWithinCoverage;
         if (!shieldCanBlock) { return incomingDamage; }
 
+        if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC
+            && inflictor != null && inflictor.bMissile)
+        {
+            ReflectProjectileFromMagicShield(inflictor);
+        }
+
         int damageKind = mod == 'CaelumMagicTest'
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
             : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
@@ -5975,8 +5995,15 @@ class CaelumPlayer : DoomPlayer
         );
         if (LastShieldAbsorbedDamage > 0.0)
         {
+            double blockAdrenaline =
+                CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK;
+            if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_KITE)
+            {
+                blockAdrenaline *=
+                    CaelumConstants.SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER;
+            }
             AddCombatAdrenaline(
-                CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK,
+                blockAdrenaline,
                 CaelumConstants.ADRENALINE_EVENT_SHIELD_BLOCK
             );
             MarkCombatActivity();
@@ -6017,7 +6044,7 @@ class CaelumPlayer : DoomPlayer
             ShieldModel.Durability
         );
         ShieldModel.Durability -= LastShieldDurabilityLoss;
-        if (ShieldModel.Durability <= 0) { DebugShieldBlocking = false; }
+        if (ShieldModel.Durability <= 0) { CancelCombatBlockMode(); }
     }
 
     void PrepareRealArmorDamage(double incomingDamage, bool criticalHit)
@@ -7814,26 +7841,33 @@ class CaelumPlayer : DoomPlayer
             Vel.Y = 0.0;
         }
 
+        movementFactor *= GetShieldCombatMobilityMultiplier();
+
         double walkMovement =
             CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
-        double runMovement = walkMovement * 2.0;
-        double blockedRunMovement = (walkMovement + runMovement) * 0.5;
 
-        // En GZDoom ForwardMove1/SideMove1 corresponden a caminar y
-        // ForwardMove2/SideMove2 a correr. Mientras Block está activo, la
-        // velocidad de carrera queda exactamente en el punto medio entre
-        // ambas velocidades finales.
+        // Player.ForwardMove/SideMove son multiplicadores. GZDoom ya duplica
+        // internamente la velocidad al correr, por lo que NO debemos volver a
+        // multiplicar ForwardMove2 por 2 aquí.
+        //
+        // Movimiento real normal:
+        //   caminar = 1.00 * walkMovement
+        //   correr  = 2.00 * walkMovement  (factor nativo del motor)
+        //
+        // El punto medio real es 1.50 * walkMovement. Como el motor vuelve a
+        // multiplicar el valor "run" por 2, el multiplicador que debemos
+        // entregar durante Block es 0.75 * walkMovement.
         ForwardMove1 = walkMovement;
         SideMove1 = walkMovement;
         if (CombatBlockModeActive)
         {
-            ForwardMove2 = blockedRunMovement;
-            SideMove2 = blockedRunMovement;
+            ForwardMove2 = walkMovement * 0.75;
+            SideMove2 = walkMovement * 0.75;
         }
         else
         {
-            ForwardMove2 = runMovement;
-            SideMove2 = runMovement;
+            ForwardMove2 = walkMovement;
+            SideMove2 = walkMovement;
         }
         JumpZ = CaelumConstants.GZDOOM_BASE_JUMP_Z * jumpFactor;
     }
@@ -8454,15 +8488,54 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    // Calcula la resistencia con la masa total cuando el receptor pertenece a
-    // Caelum. Para actores externos usa la masa nativa de GZDoom.
+    double GetShieldCombatMassMultiplier()
+    {
+        if (!CombatBlockModeActive || ShieldModel == null
+            || !ShieldModel.Equipped || ShieldModel.Durability <= 0)
+        {
+            return 1.0;
+        }
+        if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_BUCKLER)
+        {
+            return CaelumConstants.SHIELD_BUCKLER_COMBAT_MASS_MULTIPLIER;
+        }
+        if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_TOWER)
+        {
+            return CaelumConstants.SHIELD_TOWER_COMBAT_MASS_MULTIPLIER;
+        }
+        return 1.0;
+    }
+
+    double GetCombatMass()
+    {
+        if (DerivedStats == null) { return 1.0; }
+        return Max(
+            1.0,
+            DerivedStats.TotalMass * GetShieldCombatMassMultiplier()
+        );
+    }
+
+    double GetShieldCombatMobilityMultiplier()
+    {
+        if (DerivedStats == null || !CombatBlockModeActive) { return 1.0; }
+        double normalMass = Max(1.0, DerivedStats.TotalMass);
+        double combatMass = GetCombatMass();
+        double normalDenominator = normalMass / 2.0 + 50.0;
+        double combatDenominator = combatMass / 2.0 + 50.0;
+        return combatDenominator > 0.0
+            ? normalDenominator / combatDenominator
+            : 1.0;
+    }
+
+    // Calcula la resistencia con la masa efectiva de combate cuando el
+    // receptor pertenece a Caelum. Para actores externos usa masa nativa.
     double GetTargetKnockbackMultiplier(Actor target)
     {
         if (target == null) { return 0.0; }
         CaelumPlayer playerTarget = CaelumPlayer(target);
         if (playerTarget != null && playerTarget.DerivedStats != null)
         {
-            return playerTarget.DerivedStats.KnockbackMultiplier;
+            return 100.0 / (playerTarget.GetCombatMass() + 50.0);
         }
         CaelumCombatActor combatTarget = CaelumCombatActor(target);
         double targetMass = Max(1.0, target.Mass);
