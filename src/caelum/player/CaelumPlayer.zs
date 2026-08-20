@@ -7006,6 +7006,7 @@ class CaelumPlayer : DoomPlayer
             || IsPhysicallyImmobilized()
             || StaffCastPending
             || StaffCastCooldownRemaining > 0.0
+            || CombatBlockModeActive
             || WeaponModel == null
             || !WeaponModel.Equipped
             || !WeaponModel.IsMagicalType(WeaponModel.WeaponType))
@@ -7014,7 +7015,16 @@ class CaelumPlayer : DoomPlayer
         }
 
         int activeMagicType = WeaponModel.WeaponType;
+
+        // El coste base estipulado corresponde a T1. T2 consume 160% y T3
+        // 250%, antes de aplicar las reducciones/modificadores de Ánima ya
+        // existentes en las estadísticas derivadas.
+        double magicTierAnimaMultiplier = 1.0;
+        if (WeaponModel.Tier == 2) { magicTierAnimaMultiplier = 1.60; }
+        else if (WeaponModel.Tier >= 3) { magicTierAnimaMultiplier = 2.50; }
+
         double animaCost = WeaponModel.GetAnimaCostFor(activeMagicType)
+            * magicTierAnimaMultiplier
             * DerivedStats.StaffAnimaCost
             / CaelumConstants.DEBUG_STAFF_ANIMA_COST;
         if (CurrentAnima < animaCost)
@@ -7294,6 +7304,10 @@ class CaelumPlayer : DoomPlayer
             && player.playerstate == PST_LIVE
             && !EquipmentMenuOpen
             && !CreationWizardOpen
+            && !CraftingMenuOpen
+            && !CombatChannelModeActive
+            && !StaffCastPending
+            && !IsPhysicallyImmobilized()
             && ShieldModel != null
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
@@ -7458,7 +7472,7 @@ class CaelumPlayer : DoomPlayer
                 ShieldModel.Durability
             );
             ShieldModel.Durability -= LastShieldDurabilityLoss;
-            if (ShieldModel.Durability <= 0) { DebugShieldBlocking = false; }
+            if (ShieldModel.Durability <= 0) { CancelCombatBlockMode(); }
         }
 
         // The damage not stopped by the shield now enters the selected body
