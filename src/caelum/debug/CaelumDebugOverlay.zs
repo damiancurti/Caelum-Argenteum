@@ -1512,9 +1512,46 @@ class CaelumDebugOverlay : EventHandler
 
     ui void DrawCraftingMenu(CaelumPlayer localPlayer)
     {
-        String weaponName = StringTable.Localize(
-            GetCraftingWeaponKey(localPlayer.CraftingSelectedWeapon), false
-        );
+        String recipeName;
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            String armorTypeName = StringTable.Localize(
+                GetArmorTypeKey(localPlayer.CraftingSelectedArmorType), false
+            );
+            String armorSlotName = StringTable.Localize(
+                GetArmorSlotKey(localPlayer.CraftingSelectedArmorSlot), false
+            );
+            recipeName = String.Format(
+                "%s - %s", armorTypeName, armorSlotName
+            );
+        }
+        else if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        {
+            String magicWeaponName = StringTable.Localize(
+                GetWeaponTypeKey(
+                    localPlayer.CraftingSelectedEssenceWeaponType
+                ),
+                false
+            );
+            String essenceName = StringTable.Localize(
+                GetEssenceTypeKey(
+                    localPlayer.CraftingSelectedEssenceType
+                ),
+                false
+            );
+            recipeName = String.Format(
+                "%s - %s", magicWeaponName, essenceName
+            );
+        }
+        else
+        {
+            recipeName = StringTable.Localize(
+                GetCraftingWeaponKey(localPlayer.CraftingSelectedWeapon), false
+            );
+        }
+
         String sizeName = StringTable.Localize(
             GetEquipmentSizeKey(localPlayer.CraftingSelectionSize), false
         );
@@ -1541,7 +1578,7 @@ class CaelumDebugOverlay : EventHandler
         );
         String selection = String.Format(
             "%s | T%d %s | %.3f",
-            weaponName,
+            recipeName,
             localPlayer.CraftingSelectionTier,
             sizeName,
             localPlayer.CraftingFinalWeight
@@ -1614,7 +1651,9 @@ class CaelumDebugOverlay : EventHandler
             100.0,
             Font.CR_CYAN
         );
-        if (localPlayer.CraftingSelectedWeapon < 0)
+        if (localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
+            && localPlayer.CraftingSelectedWeapon < 0)
         {
             DrawCenteredText(
                 StringTable.Localize("CA_CRAFTING_STATION_NO_RECIPES", false),

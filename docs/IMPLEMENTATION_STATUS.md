@@ -1,6 +1,6 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Connected crafting infrastructure 4.23.2j
+## Connected crafting infrastructure 4.23.3
 
 **Implemented — pending validation**
 
@@ -68,6 +68,31 @@ transaction remain unchanged.
 MAP01 contains four infrastructure tests: a full twelve-station network, a
 Workbench+Forge tier-1 network, a Workbench+Forge+Anvil tier-2 network, and an
 isolated Forge that must reject interaction because no Workbench is connected.
+
+
+### Armor and essence recipes
+
+The unified Workbench currently exposes 52 recipes. Recipes 1–16 are the
+physical weapon catalogue. The next 16 cover all four armor types across all
+four body slots. The final 20 cover the four essence weapons with each of the
+five elemental essences.
+
+Armor material logic is weight-based and uses the existing material-unit
+rounding system. Strap is always the base component. Fabric, Leather,
+Chainmail, and Plate are the tier components for Magic, Light, Medium, and
+Heavy armor respectively. Head/Body use 20% Strap and 80% tier material;
+Hands/Feet use 60% Strap and 40% tier material.
+
+Magic and Light armor require Workbench + Armor Workshop at tier 1, add Sewing
+Machine at tier 2, and add Master Bench at tier 3. Medium and Heavy armor use
+Workbench + Forge, add Anvil at tier 2, and add Master Bench at tier 3.
+
+Essence weapons use 90% of their corresponding base material and 10% elemental
+essence by final weapon weight. Tier 1 requires Workbench + Essence Altar,
+tier 2 additionally requires Globe, and tier 3 additionally requires Master
+Bench. The resulting weapon stores the selected essence on the native
+equipment item.
+
 
 
 This file describes the current executable prototype. The main design document

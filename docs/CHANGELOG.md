@@ -1,5 +1,27 @@
 # Changelog
 
+## 4.23.3 — Armor and essence crafting recipes
+
+- Expanded the unified Workbench list from 16 to 52 recipes:
+  16 physical weapons, 16 armor pieces, and 20 imbued essence weapons.
+- Added armor recipes for Magic, Light, Medium, and Heavy armor across Head,
+  Body, Hands, and Feet.
+- Armor always uses Strap as the base material. Magic uses Fabric, Light uses
+  Leather, Medium uses Chainmail, and Heavy uses Plate as the tier material.
+- Head and Body recipes use 20% base / 80% tier material by final weight.
+  Hands and Feet use 60% base / 40% tier material.
+- Magic and Light armor use Armor Workshop + Sewing Machine; Medium and Heavy
+  use Forge + Anvil. Tier 3 additionally requires the Master Bench.
+- Added twenty essence recipes: Staff, Bell, Book, and Statuette, each with
+  Fire, Water, Earth, Wind, or Quintessence.
+- Essence recipes retain the documented 90% weapon-base / 10% essence weight
+  split. Their infrastructure is Essence Altar at tier 1, plus Globe at tier
+  2, plus Master Bench at tier 3.
+- Existing material spawning, transactional consumption, Magic Box routing,
+  tier/size weight scaling, and the validated station-use latch are reused
+  rather than duplicated.
+
+
 ## 4.23.2j — Self-contained station activation hotfix
 
 - Repackaged the station activation fix with both required source files:

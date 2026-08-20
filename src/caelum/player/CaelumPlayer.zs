@@ -2065,6 +2065,12 @@ class CaelumPlayer : DoomPlayer
         {
             CraftingSelectionRecipe = 0;
             CraftingSelectedWeapon = -1;
+            CraftingSelectedRecipeKind =
+                CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
+            CraftingSelectedArmorType = CaelumConstants.ARMOR_TYPE_MAGIC;
+            CraftingSelectedArmorSlot = CaelumConstants.ARMOR_SLOT_HEAD;
+            CraftingSelectedEssenceWeaponType = CaelumConstants.WEAPON_TYPE_STAFF;
+            CraftingSelectedEssenceType = CaelumConstants.ESSENCE_FIRE;
             CraftingBasicMaterialType = 0;
             CraftingBasicMaterialTier = 1;
             CraftingBasicRequired = 0;
@@ -2090,32 +2096,147 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
         );
-        CraftingSelectedWeapon = CaelumCraftingRules.GetStationRecipeWeapon(
-            ActiveCraftingStationType, CraftingSelectionRecipe
-        );
-        CraftingBasicMaterialType = CaelumCraftingRules.GetBasicMaterial(
-            CraftingSelectedWeapon
-        );
+
+        CraftingSelectedRecipeKind =
+            CaelumCraftingRules.GetUnifiedRecipeKind(
+                CraftingSelectionRecipe
+            );
+        CraftingSelectedWeapon = -1;
+
+        if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)
+        {
+            int physicalIndex =
+                CaelumCraftingRules.GetUnifiedPhysicalRecipeIndex(
+                    CraftingSelectionRecipe
+                );
+            CraftingSelectedWeapon =
+                CaelumCraftingRules.GetStationRecipeWeapon(
+                    CaelumConstants.CRAFTING_STATION_WORKBENCH,
+                    physicalIndex
+                );
+
+            CraftingBasicMaterialType =
+                CaelumCraftingRules.GetBasicMaterial(
+                    CraftingSelectedWeapon
+                );
+            CraftingTierMaterialType =
+                CaelumCraftingRules.GetTierMaterial(
+                    CraftingSelectedWeapon
+                );
+            CraftingFinalWeight =
+                CaelumCraftingRules.GetCraftedWeaponWeight(
+                    CaelumCraftingRules.GetPlayableTierOneWeight(
+                        CraftingSelectedWeapon
+                    ),
+                    CraftingSelectionTier,
+                    CraftingSelectionSize
+                );
+            CraftingBasicRequired =
+                CaelumCraftingRules.GetRequiredBasicMaterialUnits(
+                    CraftingSelectedWeapon, CraftingFinalWeight
+                );
+            CraftingTierRequired =
+                CaelumCraftingRules.GetRequiredTierMaterialUnits(
+                    CraftingSelectedWeapon, CraftingFinalWeight
+                );
+            CraftingMissingStationType =
+                CaelumCraftingRules.GetMissingNetworkStation(
+                    CraftingNetworkCapabilities,
+                    CraftingSelectionTier,
+                    CraftingSelectedWeapon
+                );
+        }
+        else if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            CraftingSelectedArmorType =
+                CaelumCraftingRules.GetUnifiedArmorType(
+                    CraftingSelectionRecipe
+                );
+            CraftingSelectedArmorSlot =
+                CaelumCraftingRules.GetUnifiedArmorSlot(
+                    CraftingSelectionRecipe
+                );
+
+            CraftingBasicMaterialType = CaelumConstants.MATERIAL_STRAP;
+            CraftingTierMaterialType =
+                CaelumCraftingRules.GetArmorTierMaterial(
+                    CraftingSelectedArmorType
+                );
+            CraftingFinalWeight = ArmorModel != null
+                ? ArmorModel.GetWeightFor(
+                    CraftingSelectedArmorSlot,
+                    CraftingSelectedArmorType,
+                    CraftingSelectionTier,
+                    CraftingSelectionSize
+                )
+                : 0.0;
+            CraftingBasicRequired =
+                CaelumCraftingRules.GetRequiredArmorBaseUnits(
+                    CraftingSelectedArmorSlot, CraftingFinalWeight
+                );
+            CraftingTierRequired =
+                CaelumCraftingRules.GetRequiredArmorTierUnits(
+                    CraftingSelectedArmorSlot, CraftingFinalWeight
+                );
+            CraftingMissingStationType =
+                CaelumCraftingRules.GetMissingArmorStation(
+                    CraftingNetworkCapabilities,
+                    CraftingSelectionTier,
+                    CraftingSelectedArmorType
+                );
+        }
+        else
+        {
+            CraftingSelectedEssenceWeaponType =
+                CaelumCraftingRules.GetUnifiedEssenceWeaponType(
+                    CraftingSelectionRecipe
+                );
+            CraftingSelectedEssenceType =
+                CaelumCraftingRules.GetUnifiedEssenceType(
+                    CraftingSelectionRecipe
+                );
+
+            CraftingBasicMaterialType =
+                CaelumCraftingRules.GetEssenceBaseMaterial(
+                    CraftingSelectedEssenceWeaponType
+                );
+            CraftingTierMaterialType =
+                CaelumCraftingRules.GetEssenceMaterial(
+                    CraftingSelectedEssenceType
+                );
+            CraftingFinalWeight =
+                CaelumCraftingRules.GetCraftedWeaponWeight(
+                    CaelumCraftingRules.GetEssenceTierOneWeight(
+                        CraftingSelectedEssenceWeaponType
+                    ),
+                    CraftingSelectionTier,
+                    CraftingSelectionSize
+                );
+            CraftingBasicRequired =
+                CaelumCraftingRules.GetRequiredEssenceBaseUnits(
+                    CraftingFinalWeight
+                );
+            CraftingTierRequired =
+                CaelumCraftingRules.GetRequiredEssenceUnits(
+                    CraftingFinalWeight
+                );
+            CraftingMissingStationType =
+                CaelumCraftingRules.GetMissingEssenceStation(
+                    CraftingNetworkCapabilities,
+                    CraftingSelectionTier
+                );
+        }
+
+        // El material base siempre es estructural y permanece en tier 1.
         CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
             CraftingBasicMaterialType, 1
-        );
-        CraftingTierMaterialType = CaelumCraftingRules.GetTierMaterial(
-            CraftingSelectedWeapon
         );
         CraftingTierMaterialTier = CaelumMaterialRules.ResolveTier(
             CraftingTierMaterialType, CraftingSelectionTier
         );
-        CraftingFinalWeight = CaelumCraftingRules.GetCraftedWeaponWeight(
-            CaelumCraftingRules.GetPlayableTierOneWeight(CraftingSelectedWeapon),
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        CraftingBasicRequired = CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-            CraftingSelectedWeapon, CraftingFinalWeight
-        );
-        CraftingTierRequired = CaelumCraftingRules.GetRequiredTierMaterialUnits(
-            CraftingSelectedWeapon, CraftingFinalWeight
-        );
+
         CraftingBasicOwned = CountCraftingMaterial(
             CraftingBasicMaterialType, CraftingBasicMaterialTier
         );
@@ -2123,12 +2244,6 @@ class CaelumPlayer : DoomPlayer
             CraftingTierMaterialType, CraftingTierMaterialTier
         );
 
-        CraftingMissingStationType =
-            CaelumCraftingRules.GetMissingNetworkStation(
-                CraftingNetworkCapabilities,
-                CraftingSelectionTier,
-                CraftingSelectedWeapon
-            );
         CraftingSelectedInfrastructureAvailable =
             CraftingMissingStationType
                 == CaelumConstants.CRAFTING_STATION_NONE;
@@ -2273,7 +2388,9 @@ class CaelumPlayer : DoomPlayer
     {
         if (player == null || player.playerstate != PST_LIVE) { return; }
         RefreshCraftingPreview();
-        if (CraftingSelectedWeapon < 0)
+        if (CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
+            && CraftingSelectedWeapon < 0)
         {
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
             return;
@@ -2302,9 +2419,264 @@ class CaelumPlayer : DoomPlayer
             CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED;
     }
 
+    void CraftSelectedArmorRecipe()
+    {
+        if (ArmorModel == null) { return; }
+        RefreshCraftingPreview();
+
+        if (CraftingSelectedRecipeKind
+            != CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
+        if (!CraftingSelectedInfrastructureAvailable)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
+            return;
+        }
+        if (FindNativeEquipmentItem(
+            CaelumConstants.EQUIPMENT_KIND_ARMOR,
+            CraftingSelectedArmorType,
+            CraftingSelectedArmorSlot,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        ) != null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE;
+            return;
+        }
+        if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
+            return;
+        }
+        if (CraftingBasicOwned < CraftingBasicRequired
+            || CraftingTierOwned < CraftingTierRequired)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        CaelumEquipmentItem result = CaelumEquipmentItem(
+            Spawn("CaelumArmorPickup", Pos, NO_REPLACE)
+        );
+        if (result == null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        if (!ConsumeCraftingMaterial(
+                CraftingBasicMaterialType,
+                CraftingBasicMaterialTier,
+                CraftingBasicRequired
+            )
+            || !ConsumeCraftingMaterial(
+                CraftingTierMaterialType,
+                CraftingTierMaterialTier,
+                CraftingTierRequired
+            ))
+        {
+            result.Destroy();
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
+        result.ItemType = CraftingSelectedArmorType;
+        result.ArmorSlot = CraftingSelectedArmorSlot;
+        result.Tier = CraftingSelectionTier;
+        result.EquipmentSize = CraftingSelectionSize;
+        result.Durability = ArmorModel.GetMaximumDurabilityFor(
+            CraftingSelectedArmorType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.EssenceType = CaelumConstants.ESSENCE_FIRE;
+        result.UnitWeight = ArmorModel.GetWeightFor(
+            CraftingSelectedArmorSlot,
+            CraftingSelectedArmorType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.Equipped = false;
+        result.InMagicBox = true;
+        result.PickupDataInitialized = true;
+        result.AttachToOwner(self);
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState != null)
+        {
+            persistentState.RegisterOwnedArmor(
+                CraftingSelectedArmorSlot,
+                CraftingSelectedArmorType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                result.Durability
+            );
+            persistentState.SetArmorInMagicBox(
+                CraftingSelectedArmorSlot,
+                CraftingSelectedArmorType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                true
+            );
+        }
+
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+        RefreshCraftingPreview();
+    }
+
+    void CraftSelectedEssenceWeaponRecipe()
+    {
+        if (WeaponModel == null) { return; }
+        RefreshCraftingPreview();
+
+        if (CraftingSelectedRecipeKind
+            != CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        {
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
+        if (!CraftingSelectedInfrastructureAvailable)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
+            return;
+        }
+        if (FindNativeEquipmentItem(
+            CaelumConstants.EQUIPMENT_KIND_WEAPON,
+            CraftingSelectedEssenceWeaponType,
+            -1,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        ) != null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE;
+            return;
+        }
+        if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
+            return;
+        }
+        if (CraftingBasicOwned < CraftingBasicRequired
+            || CraftingTierOwned < CraftingTierRequired)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        CaelumEquipmentItem result = CaelumEquipmentItem(
+            Spawn("CaelumWeaponPickup", Pos, NO_REPLACE)
+        );
+        if (result == null)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        if (!ConsumeCraftingMaterial(
+                CraftingBasicMaterialType,
+                CraftingBasicMaterialTier,
+                CraftingBasicRequired
+            )
+            || !ConsumeCraftingMaterial(
+                CraftingTierMaterialType,
+                CraftingTierMaterialTier,
+                CraftingTierRequired
+            ))
+        {
+            result.Destroy();
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        result.ItemType = CraftingSelectedEssenceWeaponType;
+        result.ArmorSlot = -1;
+        result.Tier = CraftingSelectionTier;
+        result.EquipmentSize = CraftingSelectionSize;
+        result.Durability = WeaponModel.GetMaximumDurabilityFor(
+            CraftingSelectedEssenceWeaponType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.EssenceType = CraftingSelectedEssenceType;
+        result.UnitWeight = WeaponModel.GetWeightFor(
+            CraftingSelectedEssenceWeaponType,
+            CraftingSelectionTier,
+            CraftingSelectionSize
+        );
+        result.Equipped = false;
+        result.InMagicBox = true;
+        result.PickupDataInitialized = true;
+        result.AttachToOwner(self);
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState != null)
+        {
+            persistentState.RegisterOwnedWeapon(
+                CraftingSelectedEssenceWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                result.Durability
+            );
+            persistentState.SetWeaponInMagicBox(
+                CraftingSelectedEssenceWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                true
+            );
+            persistentState.SetWeaponEquipped(
+                CraftingSelectedEssenceWeaponType,
+                CraftingSelectionTier,
+                CraftingSelectionSize,
+                false
+            );
+        }
+
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+        RefreshCraftingPreview();
+    }
+
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
+
+        if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            CraftSelectedArmorRecipe();
+            return;
+        }
+        if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        {
+            CraftSelectedEssenceWeaponRecipe();
+            return;
+        }
+
         if (CraftingSelectedWeapon < 0)
         {
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;

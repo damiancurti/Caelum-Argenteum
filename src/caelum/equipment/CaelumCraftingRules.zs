@@ -188,6 +188,244 @@ class CaelumCraftingRules : Object
         ) == CaelumConstants.CRAFTING_STATION_NONE;
     }
 
+    static int GetUnifiedRecipeKind(int recipeIndex)
+    {
+        int resolved = Clamp(
+            recipeIndex, 0,
+            CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1
+        );
+        if (resolved < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT)
+        {
+            return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
+        }
+        if (resolved < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT)
+        {
+            return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
+        }
+        return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
+    }
+
+    static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex, 0,
+            CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT - 1
+        );
+    }
+
+    static int GetUnifiedArmorRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex - CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT,
+            0, CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT - 1
+        );
+    }
+
+    static int GetUnifiedArmorType(int recipeIndex)
+    {
+        return GetUnifiedArmorRecipeIndex(recipeIndex)
+            / CaelumConstants.ARMOR_SLOT_COUNT;
+    }
+
+    static int GetUnifiedArmorSlot(int recipeIndex)
+    {
+        return GetUnifiedArmorRecipeIndex(recipeIndex)
+            % CaelumConstants.ARMOR_SLOT_COUNT;
+    }
+
+    static int GetUnifiedEssenceRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex
+                - CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+                - CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT,
+            0, CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT - 1
+        );
+    }
+
+    static int GetUnifiedEssenceWeaponType(int recipeIndex)
+    {
+        int group = GetUnifiedEssenceRecipeIndex(recipeIndex)
+            / CaelumConstants.ESSENCE_TYPE_COUNT;
+        switch (group)
+        {
+            case 0: return CaelumConstants.WEAPON_TYPE_STAFF;
+            case 1: return CaelumConstants.WEAPON_TYPE_BELL;
+            case 2: return CaelumConstants.WEAPON_TYPE_BOOK;
+            default: return CaelumConstants.WEAPON_TYPE_STATUETTE;
+        }
+    }
+
+    static int GetUnifiedEssenceType(int recipeIndex)
+    {
+        return GetUnifiedEssenceRecipeIndex(recipeIndex)
+            % CaelumConstants.ESSENCE_TYPE_COUNT;
+    }
+
+    static int GetArmorTierMaterial(int armorType)
+    {
+        switch (Clamp(
+            armorType, 0, CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
+        ))
+        {
+            case CaelumConstants.ARMOR_TYPE_MAGIC:
+                return CaelumConstants.MATERIAL_FABRIC;
+            case CaelumConstants.ARMOR_TYPE_LIGHT:
+                return CaelumConstants.MATERIAL_LEATHER;
+            case CaelumConstants.ARMOR_TYPE_MEDIUM:
+                return CaelumConstants.MATERIAL_CHAINMAIL;
+            default:
+                return CaelumConstants.MATERIAL_PLATE;
+        }
+    }
+
+    static double GetArmorTierWeightRatio(int armorSlot)
+    {
+        if (armorSlot == CaelumConstants.ARMOR_SLOT_HEAD
+            || armorSlot == CaelumConstants.ARMOR_SLOT_BODY)
+        {
+            return 0.80;
+        }
+        return 0.40;
+    }
+
+    static double GetArmorBaseWeightRatio(int armorSlot)
+    {
+        return 1.0 - GetArmorTierWeightRatio(armorSlot);
+    }
+
+    static int GetRequiredArmorTierUnits(int armorSlot, double finalWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeight, GetArmorTierWeightRatio(armorSlot)
+        );
+    }
+
+    static int GetRequiredArmorBaseUnits(int armorSlot, double finalWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeight, GetArmorBaseWeightRatio(armorSlot)
+        );
+    }
+
+    static int GetEssenceBaseMaterial(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_STAFF:
+                return CaelumConstants.MATERIAL_STAFF_BASE;
+            case CaelumConstants.WEAPON_TYPE_BELL:
+                return CaelumConstants.MATERIAL_BELL_BASE;
+            case CaelumConstants.WEAPON_TYPE_BOOK:
+                return CaelumConstants.MATERIAL_BOOK_BASE;
+            default:
+                return CaelumConstants.MATERIAL_STATUETTE_BASE;
+        }
+    }
+
+    static int GetEssenceMaterial(int essenceType)
+    {
+        switch (Clamp(
+            essenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        ))
+        {
+            case CaelumConstants.ESSENCE_WATER:
+                return CaelumConstants.MATERIAL_WATER_ESSENCE;
+            case CaelumConstants.ESSENCE_EARTH:
+                return CaelumConstants.MATERIAL_EARTH_ESSENCE;
+            case CaelumConstants.ESSENCE_WIND:
+                return CaelumConstants.MATERIAL_WIND_ESSENCE;
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                return CaelumConstants.MATERIAL_QUINTESSENCE;
+            default:
+                return CaelumConstants.MATERIAL_FIRE_ESSENCE;
+        }
+    }
+
+    static double GetEssenceTierOneWeight(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_STAFF:
+                return CaelumConstants.WEAPON_STAFF_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_BELL:
+                return CaelumConstants.WEAPON_BELL_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_BOOK:
+                return CaelumConstants.WEAPON_BOOK_TIER_ONE_WEIGHT;
+            default:
+                return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_WEIGHT;
+        }
+    }
+
+    static int GetArmorPrimaryStation(int armorType)
+    {
+        if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM
+            || armorType == CaelumConstants.ARMOR_TYPE_HEAVY)
+        {
+            return CaelumConstants.CRAFTING_STATION_FORGE;
+        }
+        return CaelumConstants.CRAFTING_STATION_ARMOR_WORKSHOP;
+    }
+
+    static int GetArmorTierTwoStation(int armorType)
+    {
+        if (armorType == CaelumConstants.ARMOR_TYPE_MEDIUM
+            || armorType == CaelumConstants.ARMOR_TYPE_HEAVY)
+        {
+            return CaelumConstants.CRAFTING_STATION_ANVIL;
+        }
+        return CaelumConstants.CRAFTING_STATION_SEWING_MACHINE;
+    }
+
+    static int GetMissingStationForBranch(
+        int capabilities, int craftingTier, int primary, int tierTwo
+    )
+    {
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        }
+        if (!NetworkHasStation(capabilities, primary)) { return primary; }
+        if (craftingTier >= 2
+            && !NetworkHasStation(capabilities, tierTwo))
+        {
+            return tierTwo;
+        }
+        if (craftingTier >= 3
+            && !NetworkHasStation(
+                capabilities, CaelumConstants.CRAFTING_STATION_MASTER_BENCH
+            ))
+        {
+            return CaelumConstants.CRAFTING_STATION_MASTER_BENCH;
+        }
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static int GetMissingArmorStation(
+        int capabilities, int craftingTier, int armorType
+    )
+    {
+        return GetMissingStationForBranch(
+            capabilities, craftingTier,
+            GetArmorPrimaryStation(armorType),
+            GetArmorTierTwoStation(armorType)
+        );
+    }
+
+    static int GetMissingEssenceStation(
+        int capabilities, int craftingTier
+    )
+    {
+        return GetMissingStationForBranch(
+            capabilities, craftingTier,
+            CaelumConstants.CRAFTING_STATION_ESSENCE_ALTAR,
+            CaelumConstants.CRAFTING_STATION_GLOBE
+        );
+    }
+
     static int GetPlayableRecipeWeapon(int recipeIndex)
     {
         return CaelumWeaponCatalogue.ResolveWeapon(recipeIndex);
