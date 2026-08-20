@@ -776,7 +776,9 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
     States
     {
     Spawn:
-        CJAV A 1 Bright;
+        // JAVL dispone de A1-A8; GZDoom elige automáticamente la vista según
+        // el ángulo relativo entre cámara y proyectil.
+        JAVL A 1 Bright;
         Loop;
     Death:
         TNT1 A 0 DropBrokenJavelinMaterials();

@@ -629,3 +629,149 @@ Sprite "SLQUA0", 128, 128
  Offset 64, 124
  Patch "sprites/caelum/jewelry/SLQUA0.png", 0, 0
 }
+
+// V4.23.5 - eight-direction physical projectile sprites.
+
+Sprite "ARROA1", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA1.png", 0, 0
+}
+
+Sprite "ARROA2", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA2.png", 0, 0
+}
+
+Sprite "ARROA3", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA3.png", 0, 0
+}
+
+Sprite "ARROA4", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA4.png", 0, 0
+}
+
+Sprite "ARROA5", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA5.png", 0, 0
+}
+
+Sprite "ARROA6", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA6.png", 0, 0
+}
+
+Sprite "ARROA7", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA7.png", 0, 0
+}
+
+Sprite "ARROA8", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/ARROA8.png", 0, 0
+}
+
+Sprite "BOLTA1", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA1.png", 0, 0
+}
+
+Sprite "BOLTA2", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA2.png", 0, 0
+}
+
+Sprite "BOLTA3", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA3.png", 0, 0
+}
+
+Sprite "BOLTA4", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA4.png", 0, 0
+}
+
+Sprite "BOLTA5", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA5.png", 0, 0
+}
+
+Sprite "BOLTA6", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA6.png", 0, 0
+}
+
+Sprite "BOLTA7", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA7.png", 0, 0
+}
+
+Sprite "BOLTA8", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/BOLTA8.png", 0, 0
+}
+
+Sprite "JAVLA1", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA1.png", 0, 0
+}
+
+Sprite "JAVLA2", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA2.png", 0, 0
+}
+
+Sprite "JAVLA3", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA3.png", 0, 0
+}
+
+Sprite "JAVLA4", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA4.png", 0, 0
+}
+
+Sprite "JAVLA5", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA5.png", 0, 0
+}
+
+Sprite "JAVLA6", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA6.png", 0, 0
+}
+
+Sprite "JAVLA7", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA7.png", 0, 0
+}
+
+Sprite "JAVLA8", 128, 128
+{
+    Offset 64, 64
+    Patch "sprites/caelum/projectiles/physical/JAVLA8.png", 0, 0
+}

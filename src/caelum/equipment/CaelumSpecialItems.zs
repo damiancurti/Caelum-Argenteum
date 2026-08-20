@@ -427,8 +427,10 @@ class CaelumSilverKey : CaelumWeightedKey
     Default
     {
         Tag "$CA_KEY_SILVER";
-        Inventory.Icon "RKEYA0";
+        Inventory.Icon "graphics/caelum/icons/ca_key.png";
         Inventory.PickupMessage "$CA_PICKUP_KEY_SILVER";
+        // Sólo el actor de mundo se reduce; el icono conserva resolución.
+        Scale 0.25;
     }
 
     override int GetKeyType()

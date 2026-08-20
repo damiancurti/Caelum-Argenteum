@@ -553,9 +553,9 @@ class CaelumDebugOverlay : EventHandler
         }
         if (family == CaelumConstants.MATERIAL_FAMILY_GEM)
         {
-            return tier == 1 ? "CA_MATERIAL_GRADE_TIER_1"
-                : (tier == 2 ? "CA_MATERIAL_GRADE_TIER_2"
-                    : "CA_MATERIAL_GRADE_TIER_3");
+            return tier == 1 ? "CA_MATERIAL_GRADE_NORMAL"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_REFINED"
+                    : "CA_MATERIAL_GRADE_LUXURY");
         }
         return "";
     }
@@ -1150,12 +1150,31 @@ class CaelumDebugOverlay : EventHandler
         if (iconPath.Length() <= 0) { return; }
         TextureID icon = TexMan.CheckForTexture(iconPath, TexMan.Type_MiscPatch);
         if (!icon.IsValid()) { return; }
-        Screen.DrawTexture(
-            icon, true, 34.0, 112.0,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
-        );
+        bool jewelryIcon =
+            localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_AMULET
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_SEAL;
+        if (jewelryIcon)
+        {
+            Screen.DrawTexture(
+                icon, true, 34.0, 112.0,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_DESTWIDTHF, 48.0,
+                DTA_DESTHEIGHTF, 48.0,
+                DTA_KEEPRATIO, true
+            );
+        }
+        else
+        {
+            Screen.DrawTexture(
+                icon, true, 34.0, 112.0,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
 
         // Las armas de esencia reutilizan el icono del objeto base y agregan
         // un orbe pequeño en la esquina superior derecha. Así evitamos crear
@@ -1249,9 +1268,23 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.EquipmentSelectionSpecialType,
                 localPlayer.EquipmentSelectionTier
             );
-            if (GetMaterialFamilyForPanel(
+            int materialFamily = GetMaterialFamilyForPanel(
                 localPlayer.EquipmentSelectionSpecialType
-            ) != CaelumConstants.MATERIAL_FAMILY_NONE)
+            );
+            if (materialFamily == CaelumConstants.MATERIAL_FAMILY_GEM)
+            {
+                String grade = StringTable.Localize(gradeKey, false);
+                selection = localPlayer.EquipmentSelectionTier == 1
+                    ? String.Format(
+                        "%s x%d", materialName,
+                        localPlayer.EquipmentSelectionStackAmount
+                    )
+                    : String.Format(
+                        "%s %s x%d", materialName, grade,
+                        localPlayer.EquipmentSelectionStackAmount
+                    );
+            }
+            else if (materialFamily != CaelumConstants.MATERIAL_FAMILY_NONE)
             {
                 selection = String.Format(
                     "%s [%s] x%d", materialName,
@@ -1722,13 +1755,36 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.CraftingBasicOwned,
             localPlayer.CraftingBasicRequired
         );
-        String tierLine = String.Format(
-            "%s [%s]: %d / %d",
-            tierName,
-            tierGrade,
-            localPlayer.CraftingTierOwned,
-            localPlayer.CraftingTierRequired
-        );
+        String tierLine;
+        if (GetMaterialFamilyForPanel(
+                localPlayer.CraftingTierMaterialType
+            ) == CaelumConstants.MATERIAL_FAMILY_GEM)
+        {
+            tierLine = localPlayer.CraftingTierMaterialTier == 1
+                ? String.Format(
+                    "%s: %d / %d",
+                    tierName,
+                    localPlayer.CraftingTierOwned,
+                    localPlayer.CraftingTierRequired
+                )
+                : String.Format(
+                    "%s %s: %d / %d",
+                    tierName,
+                    tierGrade,
+                    localPlayer.CraftingTierOwned,
+                    localPlayer.CraftingTierRequired
+                );
+        }
+        else
+        {
+            tierLine = String.Format(
+                "%s [%s]: %d / %d",
+                tierName,
+                tierGrade,
+                localPlayer.CraftingTierOwned,
+                localPlayer.CraftingTierRequired
+            );
+        }
         String infrastructureLine;
         if (localPlayer.CraftingSelectedInfrastructureAvailable)
         {

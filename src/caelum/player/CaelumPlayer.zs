@@ -8689,7 +8689,18 @@ class CaelumPlayer : DoomPlayer
                 * AirStatePerformanceMultiplier
                 * SurvivalPerformanceMultiplier
                 * HealthPerformanceMultiplier;
-            EffectiveJumpHeightPercent = DerivedStats.MassAdjustedJumpHeightPercent
+            // El salto usa la curva Tipo 4 propia de Agilidad, pero
+            // aplica la raíz cuadrada sobre su multiplicador final. Así
+            // conserva la progresión oficial del atributo con rendimientos
+            // decrecientes específicos para la altura de salto.
+            double jumpAgilityTypeFourPercent =
+                DerivedStats.CalculateType4Percent(Attributes.Agility);
+            double jumpAgilityFactor = Sqrt(
+                Max(0.0, jumpAgilityTypeFourPercent / 100.0)
+            );
+            EffectiveJumpHeightPercent = 100.0
+                * jumpAgilityFactor
+                * DerivedStats.MovementMultiplier
                 * AirStatePerformanceMultiplier
                 * SurvivalPerformanceMultiplier
                 * HealthPerformanceMultiplier;
@@ -8936,20 +8947,11 @@ class CaelumPlayer : DoomPlayer
         int armorType = GetStartingArmorTypeForProfession(profession);
         int shieldType = GetStartingShieldTypeForProfession(profession);
 
-        // El personaje comienza realmente sin objetos. Las nueve recogidas se
-        // distribuyen delante de él para que el inventario nativo las reciba.
+        // La ropa inicial deja de aparecer como pickups al terminar la
+        // creación. El modelo interno conserva ropa base neutra hasta que el
+        // jugador equipe una pieza real.
         for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
-            Actor armor = Spawn(
-                "CaelumArmorPickup", GetStartingPickupPosition(slot), NO_REPLACE
-            );
-            if (armor != null)
-            {
-                armor.args[0] = slot;
-                armor.args[1] = armorType;
-                armor.args[2] = 1;
-                armor.args[3] = startingSize + 1;
-            }
             ArmorModel.ArmorType[slot] =
                 CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             ArmorModel.Tier[slot] = 1;
