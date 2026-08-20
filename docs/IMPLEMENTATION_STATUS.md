@@ -1,27 +1,77 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-This file describes the current executable prototype. The main design document remains the authority for rules not yet connected to gameplay.
+## Connected crafting infrastructure 4.23.2j
 
-## Current 4.22 development state
+**Implemented — pending validation**
 
-**Implemented and under active manual validation**
+The world-sprite alignment table has been restored from the validated 4.22.4c
+configuration while retaining the twelve crafting-station sprites. The
+training dummy and floor gallery therefore again use their corrected paths and
+offsets.
 
-- MAP01 is a large flat combat/systems test range with central rooms, distance targets, an item/material gallery, crafting stations, and a silver-key test room containing Rulo, Argento, Caella, Ronnie, and the level exit.
-- Physical, ranged, and magical weapon families are playable through the current selector architecture. Javelin AltFire throws the weapon without ammunition, costs Air, loses exactly one durability, scales throw distance with the square root of physical power, uses physical damage scaling, and recovers at most half a replacement recipe across a full durability spent only on throws.
-- Weapon durability bases use the confirmed x10 scale. Armor, shields, inventory, Magic Box, carried load, survival resources, lucidity, adrenaline, pain, vulnerability, elemental projectiles, and the current HUD/debug foundations remain active.
-- Physical crafting recipes and material identities exist. Forge, Bow Workshop, Armor Workshop, Essence Altar, and Workbench actors exist and share one station interface; the Forge and Bow Workshop have the first playable recipe groups while the remaining station families are still being completed.
-- Project-owned material, equipment, key-item, face, and elemental projectile art is being organized into dedicated sprite/icon subfolders. Remaining visual cleanup is an active QA task.
-- Rulo, Ronnie, Argento, and Caella now use guided elemental ranged attacks: Earth/Poison, Wind/Lightning, Fire/Light, and Water/Ice respectively. The shared projectile follows the same native seeker primitive used by the Book.
+Crafting close input now has a dedicated UI processor. This is necessary
+because GZDoom routes input through `UiProcess` instead of `InputProcess` while
+its GUI owns keyboard focus; `Q` is forwarded to the existing networked
+crafting toggle in either input mode.
 
-## Planned combat architecture refactor
+All twelve infrastructure actors now use dedicated project-local station
+sprites rather than temporary weapon/equipment placeholders. Their source
+cards were normalized for the sprite namespace and registered in
+`ASSET_REGISTER.md`.
 
-**Planned — do not treat as implemented**
+The crafting overlay now accepts its close command while GZDoom retains
+`menuactive`, removing the previous requirement to press Escape before `Q`.
 
-- Weapon behavior becomes independent from shield ownership. Physical weapons retain Fire/AltFire offensive profiles; ranged weapons gain magazines, Reload and precision Zoom/ADS cumulative with crouching; magical weapons retain primary/secondary elements.
-- User1 is reserved for independent Block mode; User2 for Seal-based Channel; User3 for Tarot-card activation; User4 for class ability.
-- Block mode prevents ordinary attacks except the planned spear/javelin exceptions and penalizes running speed. Attacking with another weapon cancels blocking.
-- A future Seal equipment slot supplies stats and an element. Completed Channel consumes Anima over time while immobilized and empowers the next physical attack with elemental damage/effect or greatly strengthens a matching-element magical attack. Exact channel timing, costs, interruption rules, and multipliers remain intentionally undefined until the author specifies them.
-- Calendar-driven weather, fast travel/dynamic-event integration, and strength-gated movable world props remain planned for the later environment/world-interaction phase.
+### Input regression note
+
+The experimental global crafting UI processor has been removed because it
+interfered with character creation at map start. Crafting input is temporarily
+back on the stable 4.23.2 path; the requirement to close residual native menu
+focus before `Q` may still occur and remains pending a safer implementation.
+
+
+Crafting infrastructure forms a graph at interaction time. Two
+`CaelumCraftingStation` actors are directly linked when their three-dimensional
+distance is at most 64 map units, equal to exactly two development metres.
+Connectivity is transitive, so a station can belong to the same workshop even
+when it is farther than two metres from the Workbench if connected stations
+bridge the distance.
+
+The Workbench is the logical root of the interface. Using any station scans
+its complete connected component and opens the same Workbench menu. A
+component without a Workbench is rejected with a localized message. The scan
+runs only on interaction and uses a per-player token to avoid recursion cycles
+and cross-player scan collisions.
+
+The twelve planned infrastructure actors currently exist: Workbench, Forge,
+Anvil, Ranged Weapons Workshop, Sawmill, Armor Workshop, Sewing Machine,
+Essence Altar, Globe, Jeweler Bench, Fine-tools Bench, and Master Bench. All
+inherit `CaelumMovableProp`; their push requirement remains unset, so they
+cannot yet be moved. Final station mass and physical-power requirements remain
+deliberately pending for the later environment pass.
+
+Tier requirements are cumulative. Forge recipes require Workbench + Forge at
+tier 1, additionally Anvil at tier 2, and additionally Master Bench at tier 3.
+Ranged-weapon recipes require Workbench + Ranged Weapons Workshop at tier 1,
+additionally Sawmill at tier 2, and additionally Master Bench at tier 3. The
+same architecture is reserved for Armor Workshop/Sewing Machine, Essence
+Altar/Globe, and Jeweler Bench/Fine-tools Bench once those recipe families are
+authored.
+
+The Workbench menu currently exposes sixteen physical recipes: twelve Forge
+recipes plus standard bow, carbine, longbow, and crossbow from the Ranged
+Weapons Workshop. The interface reports whether the selected recipe's
+infrastructure is ready and names the first missing station. Material
+requirements, ownership checks, Magic Box routing, and the existing crafting
+transaction remain unchanged.
+
+MAP01 contains four infrastructure tests: a full twelve-station network, a
+Workbench+Forge tier-1 network, a Workbench+Forge+Anvil tier-2 network, and an
+isolated Forge that must reject interaction because no Workbench is connected.
+
+
+This file describes the current executable prototype. The main design document
+remains the authority for rules not yet connected to gameplay.
 
 ## Definitive physical weapon and recipe catalogue 4.12.0
 

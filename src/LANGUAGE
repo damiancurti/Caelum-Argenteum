@@ -1093,3 +1093,38 @@ CA_SHIELD_TYPE_BUCKLER = "rodela";
 CA_SHIELD_TYPE_KITE = "escudo de lágrima";
 CA_SHIELD_TYPE_TOWER = "escudo de torre";
 CA_SHIELD_TYPE_MAGIC = "escudo mágico";
+
+[enu default]
+CA_CRAFTING_STATION_ANVIL = "Anvil";
+CA_CRAFTING_STATION_SAWMILL = "Sawmill";
+CA_CRAFTING_STATION_SEWING_MACHINE = "Sewing machine";
+CA_CRAFTING_STATION_GLOBE = "Globe";
+CA_CRAFTING_STATION_JEWELER_BENCH = "Jeweler bench";
+CA_CRAFTING_STATION_FINE_TOOLS_BENCH = "Fine-tools bench";
+CA_CRAFTING_STATION_MASTER_BENCH = "Master bench";
+CA_CRAFTING_NETWORK_MISSING_WORKBENCH = "A workbench is missing from this crafting network.";
+CA_CRAFTING_NETWORK_MISSING_PRIMARY = "A compatible crafting station is missing from this workbench network.";
+CA_CRAFTING_INFRASTRUCTURE_READY = "Infrastructure: ready";
+CA_CRAFTING_INFRASTRUCTURE_MISSING = "Missing";
+CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE = "Missing required crafting infrastructure.";
+
+[es]
+CA_CRAFTING_STATION_ANVIL = "Yunque";
+CA_CRAFTING_STATION_SAWMILL = "Aserradero";
+CA_CRAFTING_STATION_SEWING_MACHINE = "Máquina de coser";
+CA_CRAFTING_STATION_GLOBE = "Globo terráqueo";
+CA_CRAFTING_STATION_JEWELER_BENCH = "Banco de joyero";
+CA_CRAFTING_STATION_FINE_TOOLS_BENCH = "Banco de herramientas finas";
+CA_CRAFTING_STATION_MASTER_BENCH = "Banco maestro";
+CA_CRAFTING_NETWORK_MISSING_WORKBENCH = "Falta un banco de trabajo en esta red de crafteo.";
+CA_CRAFTING_NETWORK_MISSING_PRIMARY = "Falta una estación de crafteo compatible conectada a este banco de trabajo.";
+CA_CRAFTING_INFRASTRUCTURE_READY = "Infraestructura: lista";
+CA_CRAFTING_INFRASTRUCTURE_MISSING = "Falta";
+CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE = "Falta infraestructura necesaria para esta receta.";
+
+[enu default]
+CA_CRAFTING_STATION_RANGED_WORKSHOP = "Ranged weapons workshop";
+
+[es]
+CA_CRAFTING_STATION_RANGED_WORKSHOP = "Taller de armas a distancia";
+

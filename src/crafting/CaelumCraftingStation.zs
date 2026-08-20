@@ -68,16 +68,12 @@ class CaelumCraftingStation : CaelumMovableProp
     void OpenForActivator(Actor activator)
     {
         CaelumPlayer user = CaelumPlayer(activator);
-        if (user == null || user.player == null) { return; }
+        if (user == null) { return; }
 
-        // Una estación sólo puede abrirse por una pulsación REAL de Use.
-        // Al cerrar crafting con Q, GZDoom puede volver a invocar la ruta
-        // Activate/Deactivate de la estación que sigue bajo la mira; como Q
-        // no contiene BT_USE, esa reentrada se descarta aquí.
-        if ((user.player.cmd.buttons & BT_USE) == 0) { return; }
-
-        // Además conservamos el latch para evitar múltiples aperturas durante
-        // una misma pulsación física de Use.
+        // +USESPECIAL puede volver a entrar mientras la misma estación sigue
+        // bajo la mira. Consumimos la pulsación que abrió el menú y no
+        // permitimos otra activación hasta que CaelumPlayer detecte Use suelto
+        // después de cerrar crafting.
         if (user.CraftingStationUseLatched) { return; }
         user.CraftingStationUseLatched = true;
 

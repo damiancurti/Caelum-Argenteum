@@ -387,3 +387,76 @@ Sprite "XWATA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemen
 Sprite "XWATA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA6.png", 0, 0 }
 Sprite "XWATA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA7.png", 0, 0 }
 Sprite "XWATA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA8.png", 0, 0 }
+
+// V4.23.2 - dedicated crafting-station sprites.
+Sprite "CWBKA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CWBKA0.png", 0, 0
+}
+
+Sprite "CFRGA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CFRGA0.png", 0, 0
+}
+
+Sprite "CANVA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CANVA0.png", 0, 0
+}
+
+Sprite "CRNGA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CRNGA0.png", 0, 0
+}
+
+Sprite "CSAWA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CSAWA0.png", 0, 0
+}
+
+Sprite "CARMA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CARMA0.png", 0, 0
+}
+
+Sprite "CSEWA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CSEWA0.png", 0, 0
+}
+
+Sprite "CESAA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CESAA0.png", 0, 0
+}
+
+Sprite "CGLBA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CGLBA0.png", 0, 0
+}
+
+Sprite "CJWLA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CJWLA0.png", 0, 0
+}
+
+Sprite "CFINA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CFINA0.png", 0, 0
+}
+
+Sprite "CMSTA0", 128, 128
+{
+    Offset 64, 124
+    Patch "sprites/caelum/crafting/stations/CMSTA0.png", 0, 0
+}

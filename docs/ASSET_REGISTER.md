@@ -11,10 +11,10 @@ Every external asset must be recorded here before it can enter a public build.
 | Caella melee rotations | `sprites/caelum/caella/CAELB1.png`–`CAELB8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight transparent sword-attack rotations. |
 | Argento extended states | `sprites/caelum/argento/ARGOC1.png`–`ARGOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
 | Caella extended states | `sprites/caelum/caella/CAELC1.png`–`CAELF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
+| Test magic bolts | `sprites/caelum/projectiles/CAMGA0.png`, `CAMGB0.png` | OpenAI image generation, directed by Damian Curti | Original project generation matching the supplied character sheets | Project-owned original | Yes | Compact transparent blue and violet bolts. |
 | Rulo complete state set | `sprites/caelum/rulo/RULOA1.png`–`RULOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied bear-warrior character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, axe melee, axe throw, pain, and death. |
 | Ronnie complete state set | `sprites/caelum/ronnie/RONIA1.png`–`RONIF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied Caelith character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, sword melee, golden cast, pain, and death. |
-| Shared elemental projectile rotations | `sprites/caelum/projectiles/elemental/` | OpenAI image generation, directed by Damian Curti | Original project generation | Project-owned original | Yes | Eight-direction elemental families reused by player magic and predefined actors. |
-
+| Rulo/Ronnie projectiles | `sprites/caelum/projectiles/CARUA0.png`, `CAROB0.png` | OpenAI image generation, directed by Damian Curti | Extracted from the project-owned ranged state atlases | Project-owned original adaptation | Yes | Thrown axe and straight golden Caelith bolt. |
 
 ## Rules
 
@@ -51,10 +51,29 @@ Every external asset must be recorded here before it can enter a public build.
 - Source-generation mode: built-in image generation based on the two supplied
   character sheets, followed by project-local atlas extraction and validation.
 
-## Version 4.22.4 maintenance notes
+## Crafting stations — V4.23.2
 
-- Removed the obsolete `CAMGA0`, `CAMGB0`, `CARUA0`, and `CAROB0` projectile assets.
-- Rulo, Ronnie, Argento, and Caella now reuse the shared elemental projectile art.
-- Rulo rotation 1/5 was corrected across idle, stride, melee, ranged, pain, and death states.
-- The four predefined actor sprite sets received a conservative alpha/background cleanup without changing their authored silhouettes.
-- A broader semi-realistic redraw of Argento and Caella remains an art-direction task; it is not represented as completed by this maintenance pass.
+The following station sprites are original project assets supplied by the
+author from ChatGPT-generated source images and processed for in-game use.
+The title plaques were removed, baked checkerboard backgrounds were cleaned
+where necessary, and the objects were normalized to transparent 128×128
+sprites without redrawing the station artwork.
+
+| Sprite | Asset |
+| --- | --- |
+| `CWBKA0` | Workbench |
+| `CFRGA0` | Forge |
+| `CANVA0` | Anvil |
+| `CRNGA0` | Ranged Weapons Workshop |
+| `CSAWA0` | Sawmill |
+| `CARMA0` | Armor Workshop |
+| `CSEWA0` | Sewing Machine |
+| `CESAA0` | Essence Altar |
+| `CGLBA0` | Globe |
+| `CJWLA0` | Jeweler Bench |
+| `CFINA0` | Fine-tools Bench |
+| `CMSTA0` | Master Bench |
+
+Source/status: author-supplied AI-generated artwork; project-local asset.
+Final product policy remains independent of Doom copyrighted art.
+

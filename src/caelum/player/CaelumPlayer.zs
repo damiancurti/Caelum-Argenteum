@@ -50,6 +50,13 @@ class CaelumPlayer : DoomPlayer
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
     int ActiveCraftingStationType;
+
+    // Estado de la red de infraestructura detectada al interactuar.
+    int CraftingNetworkCapabilities;
+    int CraftingNetworkScanToken;
+    bool CraftingSelectedInfrastructureAvailable;
+    int CraftingMissingStationType;
+
     int CraftingSelectionRecipe;
     int CraftingSelectionTier;
     int CraftingSelectionSize;
@@ -110,6 +117,11 @@ class CaelumPlayer : DoomPlayer
     // Evita repetir una interacción de empuje cada tic mientras se mantiene
     // pulsada la tecla de uso. El sistema normal de +use sigue funcionando.
     bool MovablePropUseLatched;
+
+    // La estación consume la pulsación de Use que abrió el crafting. No se
+    // rearma mientras el menú siga abierto; sólo vuelve a aceptar una nueva
+    // activación después de cerrar el menú y detectar Use liberado.
+    bool CraftingStationUseLatched;
 
     // Último resultado del desgaste de arma para depuración y futuras UI.
     int LastWeaponDurabilityLoss;
@@ -2062,6 +2074,9 @@ class CaelumPlayer : DoomPlayer
             CraftingTierRequired = 0;
             CraftingTierOwned = 0;
             CraftingFinalWeight = 0.0;
+            CraftingSelectedInfrastructureAvailable = false;
+            CraftingMissingStationType =
+                CaelumConstants.CRAFTING_STATION_NONE;
             RefreshCarriedInventorySummary();
             return;
         }
@@ -2107,7 +2122,73 @@ class CaelumPlayer : DoomPlayer
         CraftingTierOwned = CountCraftingMaterial(
             CraftingTierMaterialType, CraftingTierMaterialTier
         );
+
+        CraftingMissingStationType =
+            CaelumCraftingRules.GetMissingNetworkStation(
+                CraftingNetworkCapabilities,
+                CraftingSelectionTier,
+                CraftingSelectedWeapon
+            );
+        CraftingSelectedInfrastructureAvailable =
+            CraftingMissingStationType
+                == CaelumConstants.CRAFTING_STATION_NONE;
+
         RefreshCarriedInventorySummary();
+    }
+
+    int BeginCraftingNetworkScan()
+    {
+        CraftingNetworkCapabilities = 0;
+        CraftingNetworkScanToken++;
+        if (CraftingNetworkScanToken <= 0) { CraftingNetworkScanToken = 1; }
+        return CraftingNetworkScanToken;
+    }
+
+    void OpenCraftingNetwork()
+    {
+        bool hasPrimaryStation;
+
+        if (!CaelumCraftingRules.NetworkHasStation(
+            CraftingNetworkCapabilities,
+            CaelumConstants.CRAFTING_STATION_WORKBENCH
+        ))
+        {
+            A_Log("$CA_CRAFTING_NETWORK_MISSING_WORKBENCH");
+            CraftingMenuOpen = false;
+            return;
+        }
+
+        hasPrimaryStation =
+            CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_FORGE
+            )
+            || CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP
+            )
+            || CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_ARMOR_WORKSHOP
+            )
+            || CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_ESSENCE_ALTAR
+            )
+            || CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_JEWELER_BENCH
+            );
+
+        if (!hasPrimaryStation)
+        {
+            A_Log("$CA_CRAFTING_NETWORK_MISSING_PRIMARY");
+            CraftingMenuOpen = false;
+            return;
+        }
+
+        // Cualquier estación conectada abre el mismo menú central.
+        OpenCraftingStation(CaelumConstants.CRAFTING_STATION_WORKBENCH);
     }
 
     void OpenCraftingStation(int stationType)
@@ -2224,12 +2305,26 @@ class CaelumPlayer : DoomPlayer
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
-        if (CraftingSelectedWeapon < 0
-            || !CaelumCraftingRules.CanStationCraftWeapon(
-                ActiveCraftingStationType, CraftingSelectedWeapon
-            ))
+        if (CraftingSelectedWeapon < 0)
         {
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
+        if (!CaelumCraftingRules.CanNetworkCraftWeapon(
+            CraftingNetworkCapabilities,
+            CraftingSelectionTier,
+            CraftingSelectedWeapon
+        ))
+        {
+            CraftingMissingStationType =
+                CaelumCraftingRules.GetMissingNetworkStation(
+                    CraftingNetworkCapabilities,
+                    CraftingSelectionTier,
+                    CraftingSelectedWeapon
+                );
+            CraftingSelectedInfrastructureAvailable = false;
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
             return;
         }
         int playableWeaponType = CaelumCraftingRules.GetPlayableWeaponType(
@@ -5156,6 +5251,15 @@ class CaelumPlayer : DoomPlayer
             creationCommand.sidemove = 0;
             creationCommand.upmove = 0;
             creationCommand.buttons = 0;
+
+            // UserCmd no admite asignación estructural en GZDoom 4.14.2.
+            // Limpiamos directamente los campos nativos antes de
+            // Super.PlayerThink() para que BT_USE no reactive la estación.
+            player.cmd.forwardmove = 0;
+            player.cmd.sidemove = 0;
+            player.cmd.upmove = 0;
+            player.cmd.buttons = 0;
+
             Vel.X = 0.0;
             Vel.Y = 0.0;
         }
@@ -5169,6 +5273,17 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         Super.Tick();
+
+        // No rearmamos la estación mientras crafting siga abierto, aunque
+        // PlayerThink haya limpiado temporalmente los botones. Tras cerrar,
+        // una lectura real de Use liberado habilita la próxima pulsación.
+        if (CraftingStationUseLatched
+            && !CraftingMenuOpen
+            && player != null
+            && (player.cmd.buttons & BT_USE) == 0)
+        {
+            CraftingStationUseLatched = false;
+        }
 
         // AltFire de jabalina es de una acción por pulsación. Soltar el botón
         // rearma el lanzamiento; mantenerlo no puede crear un bucle por tic.

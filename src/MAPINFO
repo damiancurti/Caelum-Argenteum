@@ -12,14 +12,22 @@ GameInfo
 // del proyecto y evitan reutilizar números estándar de actores de Doom.
 DoomEdNums
 {
+    // Infraestructura de crafting.
     18000 = CaelumForgeStation
-    18001 = CaelumBowWorkshopStation
+    18001 = CaelumRangedWorkshopStation
     18002 = CaelumArmorWorkshopStation
     18003 = CaelumEssenceAltarStation
     18004 = CaelumWorkbenchStation
+    18005 = CaelumAnvilStation
+    18006 = CaelumSawmillStation
+    18007 = CaelumSewingMachineStation
+    18008 = CaelumGlobeStation
+    18009 = CaelumJewelerBenchStation
     18010 = CaelumTrainingDummy
+    18011 = CaelumFineToolsBenchStation
+    18012 = CaelumMasterBenchStation
 
-    // Galería de objetos del MAP01 de pruebas.
+    // Galería y actores de prueba de MAP01.
     18020 = CaelumRulo
     18021 = CaelumArgento
     18022 = CaelumCaella

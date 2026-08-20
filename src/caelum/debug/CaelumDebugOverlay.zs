@@ -290,14 +290,28 @@ class CaelumDebugOverlay : EventHandler
         {
             case CaelumConstants.CRAFTING_STATION_FORGE:
                 return "CA_CRAFTING_STATION_FORGE";
-            case CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP:
-                return "CA_CRAFTING_STATION_BOW_WORKSHOP";
+            case CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP:
+                return "CA_CRAFTING_STATION_RANGED_WORKSHOP";
             case CaelumConstants.CRAFTING_STATION_ARMOR_WORKSHOP:
                 return "CA_CRAFTING_STATION_ARMOR_WORKSHOP";
             case CaelumConstants.CRAFTING_STATION_ESSENCE_ALTAR:
                 return "CA_CRAFTING_STATION_ESSENCE_ALTAR";
             case CaelumConstants.CRAFTING_STATION_WORKBENCH:
                 return "CA_CRAFTING_STATION_WORKBENCH";
+            case CaelumConstants.CRAFTING_STATION_ANVIL:
+                return "CA_CRAFTING_STATION_ANVIL";
+            case CaelumConstants.CRAFTING_STATION_SAWMILL:
+                return "CA_CRAFTING_STATION_SAWMILL";
+            case CaelumConstants.CRAFTING_STATION_SEWING_MACHINE:
+                return "CA_CRAFTING_STATION_SEWING_MACHINE";
+            case CaelumConstants.CRAFTING_STATION_GLOBE:
+                return "CA_CRAFTING_STATION_GLOBE";
+            case CaelumConstants.CRAFTING_STATION_JEWELER_BENCH:
+                return "CA_CRAFTING_STATION_JEWELER_BENCH";
+            case CaelumConstants.CRAFTING_STATION_FINE_TOOLS_BENCH:
+                return "CA_CRAFTING_STATION_FINE_TOOLS_BENCH";
+            case CaelumConstants.CRAFTING_STATION_MASTER_BENCH:
+                return "CA_CRAFTING_STATION_MASTER_BENCH";
             default:
                 return "CA_CRAFTING_STATION_NONE";
         }
@@ -319,6 +333,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_MATERIALS_SPAWNED";
             case CaelumConstants.CRAFTING_ACTION_FAILED_STATION:
                 return "CA_CRAFTING_ACTION_FAILED_STATION";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -1543,6 +1559,31 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.CraftingTierOwned,
             localPlayer.CraftingTierRequired
         );
+        String infrastructureLine;
+        if (localPlayer.CraftingSelectedInfrastructureAvailable)
+        {
+            infrastructureLine =
+                StringTable.Localize(
+                    "CA_CRAFTING_INFRASTRUCTURE_READY", false
+                );
+        }
+        else
+        {
+            String missingStation = StringTable.Localize(
+                GetCraftingStationKey(
+                    localPlayer.CraftingMissingStationType
+                ),
+                false
+            );
+            infrastructureLine = String.Format(
+                "%s: %s",
+                StringTable.Localize(
+                    "CA_CRAFTING_INFRASTRUCTURE_MISSING", false
+                ),
+                missingStation
+            );
+        }
+
         String boxLine = String.Format(
             "%s: %d / %d",
             StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
@@ -1606,16 +1647,22 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.CraftingTierOwned >= localPlayer.CraftingTierRequired
                 ? Font.CR_GREEN : Font.CR_RED
         );
-        DrawCenteredText(boxLine, 232.0, Font.CR_CYAN);
-        DrawCenteredText(actionText, 258.0, actionColor);
+        DrawCenteredText(
+            infrastructureLine,
+            224.0,
+            localPlayer.CraftingSelectedInfrastructureAvailable
+                ? Font.CR_GREEN : Font.CR_RED
+        );
+        DrawCenteredText(boxLine, 244.0, Font.CR_CYAN);
+        DrawCenteredText(actionText, 264.0, actionColor);
         DrawCenteredText(
             StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_1", false),
-            288.0,
+            290.0,
             Font.CR_GRAY
         );
         DrawCenteredText(
             StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_2", false),
-            306.0,
+            308.0,
             Font.CR_GRAY
         );
     }
@@ -1625,10 +1672,18 @@ class CaelumDebugOverlay : EventHandler
     override bool InputProcess(InputEvent e)
     {
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
-        if (localPlayer == null || menuactive != 0
+        if (localPlayer == null
             || (!localPlayer.CreationWizardOpen
                 && !localPlayer.EquipmentMenuOpen
                 && !localPlayer.CraftingMenuOpen))
+        {
+            return false;
+        }
+
+        // El crafting debe poder recibir Q aunque GZDoom conserve menuactive
+        // tras interactuar con una estación. Los otros menús personalizados
+        // mantienen la protección anterior para no interceptar el menú nativo.
+        if (menuactive != 0 && !localPlayer.CraftingMenuOpen)
         {
             return false;
         }
@@ -1653,7 +1708,13 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer.CraftingMenuOpen)
         {
             int craftingCharacter = e.KeyChar;
-            if (craftingCharacter == 113 || craftingCharacter == 81)
+            String craftingKey = e.KeyString;
+
+            // KeyChar puede llegar vacío/inestable justo después de usar una
+            // estación. KeyString deriva del KeyScan y resulta una segunda
+            // ruta segura para detectar Q sin intervenir el sistema UI global.
+            if (craftingCharacter == 113 || craftingCharacter == 81
+                || craftingKey ~== "q")
             {
                 SendNetworkEvent("ca_crafting_toggle");
             }

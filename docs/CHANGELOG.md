@@ -1,14 +1,170 @@
 # Changelog
 
-## 4.22.4 — Predefined actor elemental homing and repository docs
+## 4.23.2j — Self-contained station activation hotfix
 
-- Replaced the four predefined actors' legacy ranged projectiles with one shared guided elemental projectile using the same native seeker primitive as the Book.
-- Rulo alternates Earth/Poison, Ronnie Wind/Lightning, Argento Fire/Light, and Caella Water/Ice on successive ranged attacks.
-- Preserved each actor's existing damage preparation, magical critical roll, accuracy, push multiplier, health, armor, melee behavior, and other combat statistics.
-- Removed obsolete `CAMGA0`, `CAMGB0`, `CARUA0`, and `CAROB0` projectile sprites and their old projectile classes.
-- Corrected Rulo's front/back rotation mapping across all six state families and performed conservative alpha cleanup on all four predefined actor sprite sets.
-- Updated `docs/ASSET_REGISTER.md`, `docs/CHANGELOG.md`, and `docs/IMPLEMENTATION_STATUS.md` to cover the 4.19–4.22 development line, MAP01 test range, current javelin behavior, crafting-station foundation, asset organization, and planned combat refactor.
-- Kept the broader semi-realistic redraw of Argento/Caella as a pending art-direction task rather than silently replacing their visual identity.
+- Repackaged the station activation fix with both required source files:
+  `CaelumPlayer.zs` now includes the `CraftingStationUseLatched` field and
+  rearm logic, while `CaelumCraftingStation.zs` contains the real-`BT_USE`
+  activation guard.
+- This removes the hidden dependency on having applied 4.23.2h before
+  4.23.2i.
+- No MAP01, TEXTURES, sprite, recipe, or crafting-network changes.
+
+
+## 4.23.2i — Require real Use for station activation
+
+- Confirmed from menu-state behavior that `Q` was closing crafting and the
+  focused station was immediately reopening it. Reopening resets only the
+  recipe index to Dagger while preserving tier and size, matching the observed
+  regression exactly.
+- `CaelumCraftingStation.OpenForActivator()` now requires the activator's
+  current command to contain `BT_USE`. Activate/Deactivate reentries caused
+  while pressing `Q` are therefore ignored.
+- The existing per-player Use latch remains as protection against repeated
+  activation during one physical Use press.
+- No cooldown or arbitrary timing value was introduced.
+
+
+## 4.23.2h — Crafting station Use latch
+
+- Added a station-specific Use latch. The station that opens crafting consumes
+  that activation and ignores further `+USESPECIAL` activations from the same
+  player while crafting remains open.
+- The latch rearms only after crafting has closed and the player command shows
+  `BT_USE` released. This prevents a station under the crosshair from reopening
+  immediately after `Q` closes the menu.
+- The fix is local to crafting interaction and does not use a global UI
+  processor or change MAP01, sprites, TEXTURES, or crafting-network rules.
+
+
+## 4.23.2g — UserCmd field-write parser fix
+
+- Replaced the unsupported whole-structure assignment
+  `player.cmd = creationCommand` with direct writes to the native UserCmd
+  fields (`forwardmove`, `sidemove`, `upmove`, and `buttons`).
+- The intent remains unchanged: suppress residual `BT_USE` while custom menus
+  are open so a station cannot immediately reopen after `Q`.
+- No crafting rules, MAP01, sprites, TEXTURES, or station-network logic changed.
+
+
+## 4.23.2f — Station reactivation fix
+
+- Fixed `CaelumPlayer.PlayerThink()` menu command suppression. The sanitized
+  `UserCmd` was previously modified only as a local copy and never assigned
+  back to `player.cmd`.
+- While character creation, equipment, or crafting UI is open, the cleared
+  command is now written back before `Super.PlayerThink()`.
+- This prevents the original held `BT_USE` from immediately reactivating the
+  station after `Q` closes crafting while the player is still looking at it.
+- No crafting rules, network distances, MAP01, sprites, or TEXTURES changed.
+
+
+## 4.23.2e — Crafting Q input fallback
+
+- Added `InputEvent.KeyString` as a fallback for the crafting close key.
+  `KeyChar` may be empty or unstable immediately after station interaction;
+  `KeyString` is derived from the key scan and avoids requiring Escape or a
+  successful craft before `Q` is recognized.
+- No UI processor, MAP01, crafting-network, sprite, or TEXTURES changes.
+
+
+## 4.23.2d — UI processor rollback
+
+- Removed `CaelumCraftingUIInput` and its global `IsUiProcessor` registration.
+  The processor interfered with the character-creation UI from map start and
+  could leave the game without responsive controls.
+- Restored the stable 4.23.2 `CaelumDebugOverlay` input path.
+- Kept the complete MAP01 DoomEdNum restoration, validated sprite offsets,
+  station artwork, crafting-network logic, and ranged-workshop changes.
+- The post-station `Q` close issue is reopened and will be solved without a
+  global UI processor.
+
+
+## 4.23.2c — GZDoom 4.14.2 UI override parser fix
+
+- Fixed `CaelumCraftingUIInput.UiProcess` overriding syntax. The inherited
+  virtual already carries UI scope, so the override now uses
+  `override bool UiProcess(UiEvent e)` instead of attempting to redeclare
+  the scope.
+- No crafting rules, MAP01 geometry, sprite alignment, or network logic changed.
+
+
+## 4.23.2b — Regression fix for gallery sprites and crafting close input
+
+- Restored the complete validated `TEXTURES` alignment set from 4.22.4c,
+  including the corrected training-dummy path and explicit offsets for world
+  weapons, armor, shields, materials, ammunition, consumables, and key items.
+- Preserved the twelve dedicated crafting-station sprite definitions from
+  4.23.2.
+- Added `CaelumCraftingUIInput`, a dedicated UI event processor that receives
+  `UiProcess` events while GZDoom routes keyboard input to its GUI. Pressing
+  `Q` now sends the normal crafting close network event even when
+  `menuactive` is non-zero.
+- Kept the full MAP01 `DoomEdNums` restored in 4.23.2a.
+
+
+## 4.23.2 — Crafting station art and menu-input fix
+
+- Added dedicated project sprites for all twelve crafting infrastructure
+  actors and removed their temporary weapon/equipment visual placeholders.
+- Processed the author-supplied source cards into transparent 128×128
+  in-world sprites, removing title plaques and baked checkerboard backgrounds
+  where present.
+- Added station sprite definitions and offsets to `TEXTURES`.
+- Fixed crafting input capture so `Q` can close the crafting interface
+  immediately after interacting with a station even when GZDoom still reports
+  `menuactive`.
+- Kept the 4.23.1 connected-network rules, two-metre links, cumulative tier
+  requirements, and sixteen physical recipes unchanged.
+
+
+## 4.23.1 — Crafting network parser fix and ranged workshop
+
+- Fixed the missing `CaelumPlayer` declarations for crafting-network
+  capabilities, scan token, selected infrastructure availability, and missing
+  station state. These omissions prevented 4.23.0 from parsing.
+- Moved the `hasPrimaryStation` local declaration to the start of
+  `OpenCraftingNetwork()` for GZDoom 4.14.2 compatibility.
+- Renamed Bow Workshop to Ranged Weapons Workshop in code, localization,
+  editor mapping, UI, and collaborator documentation.
+- Added the carbine as the fourth Ranged Weapons Workshop recipe. The unified
+  Workbench menu now exposes all sixteen authoritative physical weapons.
+- Ranged-weapons tier requirements are cumulative: Workbench + Ranged Weapons
+  Workshop at tier 1, plus Sawmill at tier 2, plus Master Bench at tier 3.
+
+
+## 4.23.0 — Connected crafting infrastructure
+
+- Reworked crafting stations into a proximity network with an exact maximum
+  link distance of 64 map units (2 development metres). Connectivity is
+  transitive: stations do not need to be within two metres of the workbench
+  itself as long as every link in the chain remains within the limit.
+- Made the Workbench the logical root of the crafting interface. Interacting
+  with any station in a connected network resolves the same workbench menu;
+  an isolated auxiliary station reports that a workbench is missing.
+- Added seven infrastructure actors: Anvil, Sawmill, Sewing Machine, Globe,
+  Jeweler Bench, Fine-tools Bench, and Master Bench. Together with Forge,
+  Bow Workshop, Armor Workshop, Essence Altar, and Workbench this produces
+  twelve physical crafting actors.
+- Made every crafting station inherit `CaelumMovableProp`. Mobility remains
+  intentionally disabled because station mass and physical-power requirements
+  have not yet been authored; this keeps the actors compatible with the future
+  movable-world-object system without inventing balance values.
+- Added cumulative tier requirements. Current metal recipes need Workbench +
+  Forge at tier 1, add Anvil at tier 2, and add Master Bench at tier 3.
+  Current bow/crossbow recipes use Workbench + Bow Workshop, add Sawmill at
+  tier 2, and add Master Bench at tier 3.
+- Prepared the same infrastructure model for Armor Workshop + Sewing Machine,
+  Essence Altar + Globe, and Jeweler Bench + Fine-tools Bench. Their recipe
+  families remain pending rather than receiving invented recipes.
+- Unified the fifteen currently playable physical recipes in the Workbench
+  menu and added a visible infrastructure-ready/missing requirement line.
+- Expanded MAP01 with a complete connected network, a tier-1 metal test
+  cluster, a tier-2 metal test cluster, and an isolated forge for missing-
+  workbench validation.
+- Kept the carbine crafting station unresolved; no station assignment was
+  invented.
+
 
 ## 4.12.0
 

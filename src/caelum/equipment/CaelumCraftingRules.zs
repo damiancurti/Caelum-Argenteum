@@ -17,12 +17,14 @@ class CaelumCraftingRules : Object
         {
             case CaelumConstants.CRAFTING_STATION_FORGE:
                 return CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT;
-            case CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP:
-                return CaelumConstants.CRAFTING_BOW_WORKSHOP_RECIPE_COUNT;
+            case CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP:
+                return CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT;
+            case CaelumConstants.CRAFTING_STATION_WORKBENCH:
+                // El Banco de Trabajo es ahora el menú unificado. Por el momento
+                // reúne las quince recetas físicas ya jugables; las demás ramas
+                // se incorporarán cuando sus recetas estén definidas.
+                return CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             default:
-                // Taller de armaduras, Altar de esencias y Banco de trabajo
-                // ya existen como estaciones, pero sus transacciones se
-                // incorporarán cuando implementemos esas familias de recetas.
                 return 0;
         }
     }
@@ -48,14 +50,35 @@ class CaelumCraftingRules : Object
                 default: return CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS;
             }
         }
-        if (resolvedStation == CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP)
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP)
         {
-            switch (Clamp(recipeIndex, 0, CaelumConstants.CRAFTING_BOW_WORKSHOP_RECIPE_COUNT - 1))
+            switch (Clamp(
+                recipeIndex, 0,
+                CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT - 1
+            ))
             {
                 case 0: return CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW;
-                case 1: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
+                case 1: return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
+                case 2: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
                 default: return CaelumConstants.CATALOGUE_WEAPON_CROSSBOW;
             }
+        }
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH)
+        {
+            int unifiedIndex = Clamp(
+                recipeIndex, 0,
+                CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1
+            );
+            if (unifiedIndex < CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT)
+            {
+                return GetStationRecipeWeapon(
+                    CaelumConstants.CRAFTING_STATION_FORGE, unifiedIndex
+                );
+            }
+            return GetStationRecipeWeapon(
+                CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP,
+                unifiedIndex - CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT
+            );
         }
         return -1;
     }
@@ -72,6 +95,97 @@ class CaelumCraftingRules : Object
             }
         }
         return false;
+    }
+
+    static int GetStationCapabilityBit(int stationType)
+    {
+        int resolved = ResolveStationType(stationType);
+        if (resolved == CaelumConstants.CRAFTING_STATION_NONE) { return 0; }
+        return 1 << resolved;
+    }
+
+    static bool NetworkHasStation(int capabilities, int stationType)
+    {
+        int bit = GetStationCapabilityBit(stationType);
+        return bit != 0 && (capabilities & bit) != 0;
+    }
+
+    static int GetWeaponPrimaryStation(int weaponId)
+    {
+        int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        if (CanStationCraftWeapon(CaelumConstants.CRAFTING_STATION_FORGE, resolved))
+        {
+            return CaelumConstants.CRAFTING_STATION_FORGE;
+        }
+        if (CanStationCraftWeapon(
+            CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP, resolved
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP;
+        }
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static int GetWeaponTierTwoStation(int weaponId)
+    {
+        int primary = GetWeaponPrimaryStation(weaponId);
+        if (primary == CaelumConstants.CRAFTING_STATION_FORGE)
+        {
+            return CaelumConstants.CRAFTING_STATION_ANVIL;
+        }
+        if (primary == CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP)
+        {
+            return CaelumConstants.CRAFTING_STATION_SAWMILL;
+        }
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static int GetMissingNetworkStation(
+        int capabilities, int craftingTier, int weaponId
+    )
+    {
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        }
+
+        int primary = GetWeaponPrimaryStation(weaponId);
+        if (primary == CaelumConstants.CRAFTING_STATION_NONE
+            || !NetworkHasStation(capabilities, primary))
+        {
+            return primary;
+        }
+
+        if (craftingTier >= 2)
+        {
+            int tierTwo = GetWeaponTierTwoStation(weaponId);
+            if (tierTwo == CaelumConstants.CRAFTING_STATION_NONE
+                || !NetworkHasStation(capabilities, tierTwo))
+            {
+                return tierTwo;
+            }
+        }
+
+        if (craftingTier >= 3
+            && !NetworkHasStation(
+                capabilities, CaelumConstants.CRAFTING_STATION_MASTER_BENCH
+            ))
+        {
+            return CaelumConstants.CRAFTING_STATION_MASTER_BENCH;
+        }
+
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static bool CanNetworkCraftWeapon(
+        int capabilities, int craftingTier, int weaponId
+    )
+    {
+        return GetMissingNetworkStation(
+            capabilities, craftingTier, weaponId
+        ) == CaelumConstants.CRAFTING_STATION_NONE;
     }
 
     static int GetPlayableRecipeWeapon(int recipeIndex)

@@ -219,13 +219,29 @@ class CaelumConstants : Object
     const CRAFTING_PLAYABLE_RECIPE_COUNT = 16;
     const CRAFTING_STATION_NONE = -1;
     const CRAFTING_STATION_FORGE = 0;
-    const CRAFTING_STATION_BOW_WORKSHOP = 1;
+    const CRAFTING_STATION_RANGED_WORKSHOP = 1;
+    // Alias temporal para compatibilidad de código de parches anteriores.
+    const CRAFTING_STATION_BOW_WORKSHOP = CRAFTING_STATION_RANGED_WORKSHOP;
     const CRAFTING_STATION_ARMOR_WORKSHOP = 2;
     const CRAFTING_STATION_ESSENCE_ALTAR = 3;
     const CRAFTING_STATION_WORKBENCH = 4;
-    const CRAFTING_STATION_COUNT = 5;
+    const CRAFTING_STATION_ANVIL = 5;
+    const CRAFTING_STATION_SAWMILL = 6;
+    const CRAFTING_STATION_SEWING_MACHINE = 7;
+    const CRAFTING_STATION_GLOBE = 8;
+    const CRAFTING_STATION_JEWELER_BENCH = 9;
+    const CRAFTING_STATION_FINE_TOOLS_BENCH = 10;
+    const CRAFTING_STATION_MASTER_BENCH = 11;
+    const CRAFTING_STATION_COUNT = 12;
+
+    // Dos metros exactos en la escala de desarrollo (32 unidades = 1 m).
+    // Las estaciones forman una red transitiva: cada enlace individual debe
+    // estar como máximo a esta distancia.
+    const CRAFTING_NETWORK_LINK_DISTANCE = 64.0;
+
     const CRAFTING_FORGE_RECIPE_COUNT = 12;
-    const CRAFTING_BOW_WORKSHOP_RECIPE_COUNT = 3;
+    const CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT = 4;
+    const CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT = 16;
     const CRAFTING_ACTION_NONE = 0;
     const CRAFTING_ACTION_CREATED = 1;
     const CRAFTING_ACTION_FAILED_MATERIALS = 2;
@@ -233,6 +249,7 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_FAILED_DUPLICATE = 4;
     const CRAFTING_ACTION_MATERIALS_SPAWNED = 5;
     const CRAFTING_ACTION_FAILED_STATION = 6;
+    const CRAFTING_ACTION_FAILED_INFRASTRUCTURE = 7;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
