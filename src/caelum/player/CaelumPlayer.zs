@@ -639,7 +639,7 @@ class CaelumPlayer : DoomPlayer
 
 
     bool HasEquippedNativeMagicWeapon(
-        int weaponType, int essenceType
+        int weaponType, int essenceType, int tier
     )
     {
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
@@ -649,6 +649,7 @@ class CaelumPlayer : DoomPlayer
                 && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
                 && item.ItemType == weaponType
                 && item.EssenceType == essenceType
+                && item.Tier == tier
                 && item.Equipped
                 && !item.InMagicBox)
             {
@@ -659,7 +660,9 @@ class CaelumPlayer : DoomPlayer
     }
 
     bool ActivateEquippedMagicWeapon(
-        int requestedWeaponType, int requestedEssenceType
+        int requestedWeaponType,
+        int requestedEssenceType,
+        int requestedTier
     )
     {
         if (WeaponModel == null) { return false; }
@@ -670,11 +673,13 @@ class CaelumPlayer : DoomPlayer
         int essenceType = Clamp(
             requestedEssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
         );
+        int tier = Clamp(requestedTier, 1, 3);
 
         if (CombatBlockModeActive
             && WeaponModel.Equipped
             && (WeaponModel.WeaponType != weaponType
-                || WeaponModel.EssenceType != essenceType))
+                || WeaponModel.EssenceType != essenceType
+                || WeaponModel.Tier != tier))
         {
             CancelCombatBlockMode();
         }
@@ -682,7 +687,8 @@ class CaelumPlayer : DoomPlayer
         if (WeaponModel.Equipped
             && WeaponModel.WeaponType == weaponType
             && WeaponModel.EssenceType == essenceType
-            && HasEquippedNativeMagicWeapon(weaponType, essenceType))
+            && WeaponModel.Tier == tier
+            && HasEquippedNativeMagicWeapon(weaponType, essenceType, tier))
         {
             return true;
         }
@@ -696,11 +702,12 @@ class CaelumPlayer : DoomPlayer
                 && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
                 && item.ItemType == weaponType
                 && item.EssenceType == essenceType
+                && item.Tier == tier
                 && item.Equipped
                 && !item.InMagicBox)
             {
                 WeaponModel.WeaponType = weaponType;
-                WeaponModel.Tier = item.Tier;
+                WeaponModel.Tier = tier;
                 WeaponModel.Size = item.EquipmentSize;
                 WeaponModel.Durability = item.Durability;
                 WeaponModel.EssenceType = essenceType;
@@ -717,20 +724,20 @@ class CaelumPlayer : DoomPlayer
     }
 
     void PerformMagicWeaponPrimaryAttack(
-        int weaponType, int essenceType
+        int weaponType, int essenceType, int tier
     )
     {
-        if (ActivateEquippedMagicWeapon(weaponType, essenceType))
+        if (ActivateEquippedMagicWeapon(weaponType, essenceType, tier))
         {
             PerformEquippedWeaponPrimaryAttack();
         }
     }
 
     void PerformMagicWeaponSecondaryAttack(
-        int weaponType, int essenceType
+        int weaponType, int essenceType, int tier
     )
     {
-        if (ActivateEquippedMagicWeapon(weaponType, essenceType))
+        if (ActivateEquippedMagicWeapon(weaponType, essenceType, tier))
         {
             PerformEquippedWeaponSecondaryAttack();
         }
@@ -1315,11 +1322,12 @@ class CaelumPlayer : DoomPlayer
     void EnsureMagicWeaponSelector(
         int weaponType,
         int essenceType,
+        int tier,
         class<Inventory> selectorClass
     )
     {
         bool shouldExist = HasEquippedNativeMagicWeapon(
-            weaponType, essenceType
+            weaponType, essenceType, tier
         );
         if (shouldExist && FindInventory(selectorClass) == null)
         {
@@ -1404,102 +1412,362 @@ class CaelumPlayer : DoomPlayer
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_FIRE,
-            "CaelumFireStaffWeapon"
+            1,
+            "CaelumFireStaffT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_FIRE,
+            2,
+            "CaelumFireStaffT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_FIRE,
+            3,
+            "CaelumFireStaffT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BELL,
             CaelumConstants.ESSENCE_FIRE,
-            "CaelumFireBellWeapon"
+            1,
+            "CaelumFireBellT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_FIRE,
+            2,
+            "CaelumFireBellT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_FIRE,
+            3,
+            "CaelumFireBellT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BOOK,
             CaelumConstants.ESSENCE_FIRE,
-            "CaelumFireBookWeapon"
+            1,
+            "CaelumFireBookT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_FIRE,
+            2,
+            "CaelumFireBookT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_FIRE,
+            3,
+            "CaelumFireBookT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_FIRE,
-            "CaelumFireStatuetteWeapon"
+            1,
+            "CaelumFireStatuetteT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_FIRE,
+            2,
+            "CaelumFireStatuetteT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_FIRE,
+            3,
+            "CaelumFireStatuetteT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_WATER,
-            "CaelumWaterStaffWeapon"
+            1,
+            "CaelumWaterStaffT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WATER,
+            2,
+            "CaelumWaterStaffT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WATER,
+            3,
+            "CaelumWaterStaffT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BELL,
             CaelumConstants.ESSENCE_WATER,
-            "CaelumWaterBellWeapon"
+            1,
+            "CaelumWaterBellT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WATER,
+            2,
+            "CaelumWaterBellT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WATER,
+            3,
+            "CaelumWaterBellT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BOOK,
             CaelumConstants.ESSENCE_WATER,
-            "CaelumWaterBookWeapon"
+            1,
+            "CaelumWaterBookT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WATER,
+            2,
+            "CaelumWaterBookT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WATER,
+            3,
+            "CaelumWaterBookT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_WATER,
-            "CaelumWaterStatuetteWeapon"
+            1,
+            "CaelumWaterStatuetteT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WATER,
+            2,
+            "CaelumWaterStatuetteT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WATER,
+            3,
+            "CaelumWaterStatuetteT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_EARTH,
-            "CaelumEarthStaffWeapon"
+            1,
+            "CaelumEarthStaffT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_EARTH,
+            2,
+            "CaelumEarthStaffT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_EARTH,
+            3,
+            "CaelumEarthStaffT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BELL,
             CaelumConstants.ESSENCE_EARTH,
-            "CaelumEarthBellWeapon"
+            1,
+            "CaelumEarthBellT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_EARTH,
+            2,
+            "CaelumEarthBellT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_EARTH,
+            3,
+            "CaelumEarthBellT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BOOK,
             CaelumConstants.ESSENCE_EARTH,
-            "CaelumEarthBookWeapon"
+            1,
+            "CaelumEarthBookT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_EARTH,
+            2,
+            "CaelumEarthBookT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_EARTH,
+            3,
+            "CaelumEarthBookT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_EARTH,
-            "CaelumEarthStatuetteWeapon"
+            1,
+            "CaelumEarthStatuetteT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_EARTH,
+            2,
+            "CaelumEarthStatuetteT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_EARTH,
+            3,
+            "CaelumEarthStatuetteT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_WIND,
-            "CaelumAirStaffWeapon"
+            1,
+            "CaelumAirStaffT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WIND,
+            2,
+            "CaelumAirStaffT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WIND,
+            3,
+            "CaelumAirStaffT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BELL,
             CaelumConstants.ESSENCE_WIND,
-            "CaelumAirBellWeapon"
+            1,
+            "CaelumAirBellT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WIND,
+            2,
+            "CaelumAirBellT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WIND,
+            3,
+            "CaelumAirBellT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BOOK,
             CaelumConstants.ESSENCE_WIND,
-            "CaelumAirBookWeapon"
+            1,
+            "CaelumAirBookT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WIND,
+            2,
+            "CaelumAirBookT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WIND,
+            3,
+            "CaelumAirBookT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_WIND,
-            "CaelumAirStatuetteWeapon"
+            1,
+            "CaelumAirStatuetteT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WIND,
+            2,
+            "CaelumAirStatuetteT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WIND,
+            3,
+            "CaelumAirStatuetteT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_QUINTESSENCE,
-            "CaelumQuintessenceStaffWeapon"
+            1,
+            "CaelumQuintessenceStaffT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            2,
+            "CaelumQuintessenceStaffT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            3,
+            "CaelumQuintessenceStaffT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BELL,
             CaelumConstants.ESSENCE_QUINTESSENCE,
-            "CaelumQuintessenceBellWeapon"
+            1,
+            "CaelumQuintessenceBellT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            2,
+            "CaelumQuintessenceBellT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            3,
+            "CaelumQuintessenceBellT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_BOOK,
             CaelumConstants.ESSENCE_QUINTESSENCE,
-            "CaelumQuintessenceBookWeapon"
+            1,
+            "CaelumQuintessenceBookT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            2,
+            "CaelumQuintessenceBookT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            3,
+            "CaelumQuintessenceBookT3Weapon"
         );
         EnsureMagicWeaponSelector(
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_QUINTESSENCE,
-            "CaelumQuintessenceStatuetteWeapon"
+            1,
+            "CaelumQuintessenceStatuetteT1Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            2,
+            "CaelumQuintessenceStatuetteT2Weapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            3,
+            "CaelumQuintessenceStatuetteT3Weapon"
         );
         // Los selectores genericos anteriores quedan retirados al migrar al
         // ciclo nativo por arma; la propiedad y durabilidad no se modifican.
@@ -7278,29 +7546,12 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
     }
 
-    // Zoom genera un pulso por tic desde el arma activa. El pequeño período
-    // de gracia evita depender de un bit global BT_ZOOM y deja que el sistema
-    // nativo de Weapon gestione la entrada.
-    void PulseCombatBlockInput()
+    // Zoom funciona como interruptor real de Block. Una pulsación activa
+    // el modo y otra lo cancela; el estado persiste hasta una cancelación
+    // explícita o hasta que deje de cumplirse alguna condición válida.
+    bool CanEnterCombatBlockMode()
     {
-        CombatBlockInputGraceTics = 2;
-    }
-
-    void CancelCombatBlockMode()
-    {
-        CombatBlockInputGraceTics = 0;
-        CombatBlockModeActive = false;
-        DebugShieldBlocking = false;
-    }
-
-    void UpdateCombatBlockMode()
-    {
-        if (CombatBlockInputGraceTics > 0)
-        {
-            CombatBlockInputGraceTics--;
-        }
-
-        bool canBlock = player != null
+        return player != null
             && player.playerstate == PST_LIVE
             && !EquipmentMenuOpen
             && !CreationWizardOpen
@@ -7312,12 +7563,43 @@ class CaelumPlayer : DoomPlayer
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
             && CurrentAir > 0.0;
+    }
 
-        CombatBlockModeActive =
-            canBlock && CombatBlockInputGraceTics > 0;
+    void ToggleCombatBlockMode()
+    {
+        if (CombatBlockModeActive)
+        {
+            CancelCombatBlockMode();
+            return;
+        }
 
-        // Compatibilidad temporal con la lógica de cobertura, daño y
-        // durabilidad ya validada del escudo.
+        if (!CanEnterCombatBlockMode())
+        {
+            CancelCombatBlockMode();
+            return;
+        }
+
+        CombatBlockInputGraceTics = 0;
+        CombatBlockModeActive = true;
+        DebugShieldBlocking = true;
+        UpdateShieldAirCost();
+    }
+
+    void CancelCombatBlockMode()
+    {
+        CombatBlockInputGraceTics = 0;
+        CombatBlockModeActive = false;
+        DebugShieldBlocking = false;
+    }
+
+    void UpdateCombatBlockMode()
+    {
+        // No reinterpreta el input: sólo valida que un Block ya activo pueda
+        // continuar. Esto evita que el estado desaparezca al tic siguiente.
+        if (CombatBlockModeActive && !CanEnterCombatBlockMode())
+        {
+            CancelCombatBlockMode();
+        }
         DebugShieldBlocking = CombatBlockModeActive;
     }
 
@@ -7380,14 +7662,7 @@ class CaelumPlayer : DoomPlayer
 
     void ToggleDebugShieldBlock()
     {
-        if (CombatBlockModeActive)
-        {
-            CancelCombatBlockMode();
-            return;
-        }
-        PulseCombatBlockInput();
-        UpdateCombatBlockMode();
-        UpdateShieldAirCost();
+        ToggleCombatBlockMode();
     }
 
     void ToggleDebugShieldDamageKind()
