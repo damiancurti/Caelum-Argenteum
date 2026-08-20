@@ -61,6 +61,16 @@ class CaelumPlayer : DoomPlayer
     int CraftingSelectionTier;
     int CraftingSelectionSize;
     int CraftingSelectedWeapon;
+
+    // Estado de la receta unificada actualmente seleccionada.
+    int CraftingSelectedRecipeKind;
+    int CraftingSelectedArmorType;
+    int CraftingSelectedArmorSlot;
+    int CraftingSelectedEssenceWeaponType;
+    int CraftingSelectedEssenceType;
+    int CraftingSelectedAmuletType;
+    int CraftingSelectedSealType;
+
     int CraftingBasicMaterialType;
     int CraftingBasicMaterialTier;
     int CraftingBasicRequired;
@@ -79,6 +89,8 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionAmmunitionType;
     int EquipmentSelectionConsumableType;
     int EquipmentSelectionSpecialType;
+    int EquipmentSelectionAmuletType;
+    int EquipmentSelectionSealType;
     int EquipmentSelectionTier;
     int EquipmentSelectionSize;
     bool EquipmentSelectionOwned;
@@ -1573,6 +1585,11 @@ class CaelumPlayer : DoomPlayer
             <= DerivedStats.CarryCapacity + 0.0005;
     }
 
+    bool IsSpecialInventoryKind(int k)
+    { return k==CaelumConstants.EQUIPMENT_KIND_MATERIAL || k==CaelumConstants.EQUIPMENT_KIND_KEY || k==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM; }
+    bool IsUniversalJewelryKind(int k)
+    { return k==CaelumConstants.EQUIPMENT_KIND_AMULET || k==CaelumConstants.EQUIPMENT_KIND_SEAL; }
+
     void RefreshEquipmentSelectionPreview()
     {
         EquipmentSelectionSlot = Clamp(
@@ -1605,6 +1622,8 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.CONSUMABLE_TYPE_COUNT - 1
         );
+        EquipmentSelectionAmuletType = Clamp(EquipmentSelectionAmuletType,0,CaelumConstants.AMULET_TYPE_COUNT-1);
+        EquipmentSelectionSealType = Clamp(EquipmentSelectionSealType,0,CaelumConstants.SEAL_TYPE_COUNT-1);
         int specialTypeCount = 1;
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
@@ -1737,6 +1756,18 @@ class CaelumPlayer : DoomPlayer
             EquipmentSelectionWeight = EquipmentSelectionOwned
                 ? keyItem.GetCarriedWeight()
                 : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT;
+            return;
+        }
+
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET
+            || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            int type = EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_AMULET ? EquipmentSelectionAmuletType : EquipmentSelectionSealType;
+            CaelumEquipmentItem item=FindNativeEquipmentItem(EquipmentSelectionKind,type,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
+            EquipmentSelectionSize=CaelumConstants.EQUIPMENT_SIZE_M; EquipmentSelectionSizeCompatible=true;
+            EquipmentSelectionOwned=item!=null; EquipmentSelectionEquipped=item!=null&&item.Equipped;
+            EquipmentSelectionInMagicBox=item!=null&&item.InMagicBox; EquipmentSelectionDurability=0; EquipmentSelectionMaximumDurability=0;
+            EquipmentSelectionWeight=item!=null ? item.UnitWeight : CaelumCraftingRules.GetJewelryWeight(EquipmentSelectionTier);
             return;
         }
 
@@ -2187,7 +2218,8 @@ class CaelumPlayer : DoomPlayer
                     CraftingSelectedArmorType
                 );
         }
-        else
+        else if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
         {
             CraftingSelectedEssenceWeaponType =
                 CaelumCraftingRules.GetUnifiedEssenceWeaponType(
@@ -2227,6 +2259,29 @@ class CaelumPlayer : DoomPlayer
                     CraftingNetworkCapabilities,
                     CraftingSelectionTier
                 );
+        }
+
+        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
+        {
+            CraftingSelectedAmuletType = CaelumCraftingRules.GetUnifiedAmuletType(CraftingSelectionRecipe);
+            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SILVER_CHAIN;
+            CraftingTierMaterialType = CaelumCraftingRules.GetAmuletTierMaterial(CraftingSelectedAmuletType);
+            CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
+            CraftingBasicRequired = CaelumCraftingRules.GetRequiredAmuletBaseUnits(CraftingFinalWeight);
+            CraftingTierRequired = CaelumCraftingRules.GetRequiredAmuletTierUnits(CraftingFinalWeight);
+            CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
+        }
+        else
+        {
+            CraftingSelectedSealType = CaelumCraftingRules.GetUnifiedSealType(CraftingSelectionRecipe);
+            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SEAL_BASE;
+            CraftingTierMaterialType = CaelumCraftingRules.GetSealTierMaterial(CraftingSelectedSealType);
+            CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
+            CraftingBasicRequired = CaelumCraftingRules.GetRequiredSealBaseUnits(CraftingFinalWeight);
+            CraftingTierRequired = CaelumCraftingRules.GetRequiredSealTierUnits(CraftingFinalWeight);
+            CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
         }
 
         // El material base siempre es estructural y permanece en tier 1.
@@ -2360,6 +2415,13 @@ class CaelumPlayer : DoomPlayer
 
     void CycleCraftingSize()
     {
+        RefreshCraftingPreview();
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        {
+            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            return;
+        }
         CraftingSelectionSize = (CraftingSelectionSize + 1)
             % CaelumConstants.EQUIPMENT_SIZE_COUNT;
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
@@ -2660,6 +2722,39 @@ class CaelumPlayer : DoomPlayer
         RefreshCraftingPreview();
     }
 
+    void CraftSelectedJewelry(bool seal)
+    {
+        RefreshCraftingPreview();
+        int expected = seal ? CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
+            : CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
+        if (CraftingSelectedRecipeKind != expected) return;
+        if (!CraftingSelectedInfrastructureAvailable)
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE; return; }
+        int kind = seal ? CaelumConstants.EQUIPMENT_KIND_SEAL : CaelumConstants.EQUIPMENT_KIND_AMULET;
+        int type = seal ? CraftingSelectedSealType : CraftingSelectedAmuletType;
+        if (FindNativeEquipmentItem(kind,type,-1,CraftingSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M) != null)
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
+        if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL; return; }
+        if (CraftingBasicOwned < CraftingBasicRequired || CraftingTierOwned < CraftingTierRequired)
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
+
+        Name cls = seal ? "CaelumSealPickup" : "CaelumAmuletPickup";
+        CaelumEquipmentItem result = CaelumEquipmentItem(Spawn(cls, Pos, NO_REPLACE));
+        if (result == null) { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
+        if (!ConsumeCraftingMaterial(CraftingBasicMaterialType,CraftingBasicMaterialTier,CraftingBasicRequired)
+            || !ConsumeCraftingMaterial(CraftingTierMaterialType,CraftingTierMaterialTier,CraftingTierRequired))
+        { result.Destroy(); LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
+
+        result.EquipmentKind=kind; result.ItemType=type; result.ArmorSlot=-1;
+        result.Tier=CraftingSelectionTier; result.EquipmentSize=CaelumConstants.EQUIPMENT_SIZE_M;
+        result.Durability=0; result.EssenceType=seal ? type : CaelumConstants.ESSENCE_FIRE;
+        result.UnitWeight=CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
+        result.Equipped=false; result.InMagicBox=true; result.PickupDataInitialized=true; result.AttachToOwner(self);
+        LastCraftingAction=CaelumConstants.CRAFTING_ACTION_CREATED;
+        ApplyCharacterProfile(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); RefreshCraftingPreview();
+    }
+
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
@@ -2676,6 +2771,10 @@ class CaelumPlayer : DoomPlayer
             CraftSelectedEssenceWeaponRecipe();
             return;
         }
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
+        { CraftSelectedJewelry(false); return; }
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        { CraftSelectedJewelry(true); return; }
 
         if (CraftingSelectedWeapon < 0)
         {
@@ -2996,7 +3095,7 @@ class CaelumPlayer : DoomPlayer
                     + CaelumConstants.AMMUNITION_TYPE_COUNT
             ) % CaelumConstants.AMMUNITION_TYPE_COUNT;
         }
-        else if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        else if (IsSpecialInventoryKind(EquipmentSelectionKind))
         {
             int typeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
             int firstType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
@@ -3039,6 +3138,10 @@ class CaelumPlayer : DoomPlayer
                     + CaelumConstants.SHIELD_TYPE_COUNT
             ) % CaelumConstants.SHIELD_TYPE_COUNT;
         }
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+            EquipmentSelectionAmuletType=(EquipmentSelectionAmuletType+direction+CaelumConstants.AMULET_TYPE_COUNT)%CaelumConstants.AMULET_TYPE_COUNT;
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            EquipmentSelectionSealType=(EquipmentSelectionSealType+direction+CaelumConstants.SEAL_TYPE_COUNT)%CaelumConstants.SEAL_TYPE_COUNT;
         else
         {
             EquipmentSelectionArmorType = (
@@ -3215,6 +3318,10 @@ class CaelumPlayer : DoomPlayer
                 EquipmentSelectionTier, EquipmentSelectionSize
             );
         }
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+            return FindNativeEquipmentItem(EquipmentSelectionKind,EquipmentSelectionAmuletType,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            return FindNativeEquipmentItem(EquipmentSelectionKind,EquipmentSelectionSealType,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
         return null;
     }
 
@@ -3232,7 +3339,7 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
-        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        if (IsSpecialInventoryKind(EquipmentSelectionKind))
         {
             return;
         }
@@ -3291,6 +3398,15 @@ class CaelumPlayer : DoomPlayer
             ShieldModel.Equipped = true;
             DebugShieldBlocking = false;
         }
+        else if (IsUniversalJewelryKind(item.EquipmentKind))
+        {
+            for (Inventory c=Inv;c!=null;c=c.Inv)
+            {
+                CaelumEquipmentItem other=CaelumEquipmentItem(c);
+                if (other!=null && other.EquipmentKind==item.EquipmentKind) other.Equipped=false;
+            }
+            item.Equipped=true;
+        }
         else
         {
             item.Equipped = true;
@@ -3336,6 +3452,10 @@ class CaelumPlayer : DoomPlayer
         {
             ShieldModel.Equipped = false;
             DebugShieldBlocking = false;
+        }
+        else if (IsUniversalJewelryKind(item.EquipmentKind))
+        {
+            // Los bonos se recalculan desde el inventario.
         }
         else
         {
@@ -3809,7 +3929,7 @@ class CaelumPlayer : DoomPlayer
             8.0
         );
         Actor pickup;
-        if (EquipmentSelectionKind >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        if (IsSpecialInventoryKind(EquipmentSelectionKind))
         {
             Name specialClass = GetSpecialItemClassName(
                 EquipmentSelectionKind, EquipmentSelectionSpecialType
@@ -7078,6 +7198,51 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Recalculate base attributes whenever a debug profile choice changes.
+    void AddJewelryFamilyBonus(CaelumAttributes a, int family, int amount)
+    {
+        if (family == CaelumConstants.LAYER_PHYSICAL) { a.Strength+=amount; a.Toughness+=amount; a.Constitution+=amount; }
+        else if (family == CaelumConstants.LAYER_TECHNICAL) { a.Agility+=amount; a.Dexterity+=amount; a.Resilience+=amount; }
+        else if (family == CaelumConstants.LAYER_SOCIAL) { a.Charisma+=amount; a.Empathy+=amount; a.Eloquence+=amount; }
+        else { a.Intelligence+=amount; a.Patience+=amount; a.Insight+=amount; }
+    }
+    void ApplyJewelryAttributeBonuses(CaelumAttributes a)
+    {
+        // Durante el creador no existe joyería equipable. Evitamos recorrer
+        // el inventario provisional y conservamos exactamente la ruta de
+        // atributos que ya estaba validada antes de V4.23.4.
+        if (a == null || !CharacterCreationComplete) return;
+
+        for (Inventory c=Inv; c!=null; c=c.Inv)
+        {
+            CaelumEquipmentItem j=CaelumEquipmentItem(c);
+            if (j==null || !j.Equipped) continue;
+            int mult=Clamp(j.Tier,1,3);
+            if (j.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            {
+                int b=CaelumConstants.SEAL_ALL_ATTRIBUTE_BONUS_T1*mult;
+                AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,b);
+                AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,b);
+                AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,b);
+                AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,b);
+            }
+            else if (j.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+            {
+                int main=CaelumConstants.AMULET_MAIN_FAMILY_BONUS_T1*mult;
+                int adj=CaelumConstants.AMULET_ADJACENT_FAMILY_BONUS_T1*mult;
+                int opp=CaelumConstants.AMULET_OPPOSITE_FAMILY_BONUS_T1*mult;
+                if (j.ItemType==CaelumConstants.AMULET_RUBY) {
+                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,opp);
+                } else if (j.ItemType==CaelumConstants.AMULET_SAPPHIRE) {
+                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,opp);
+                } else if (j.ItemType==CaelumConstants.AMULET_EMERALD) {
+                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,opp);
+                } else {
+                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,opp);
+                }
+            }
+        }
+    }
+
     void ApplyCharacterProfile()
     {
         if (Attributes != null
@@ -7090,6 +7255,7 @@ class CaelumPlayer : DoomPlayer
             {
                 ArmorModel.ApplyAttributeBonuses(Attributes);
             }
+            ApplyJewelryAttributeBonuses(Attributes);
             if (DebugAttributesAt100)
             {
                 Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_100);

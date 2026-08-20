@@ -154,6 +154,25 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
             case CaelumConstants.MATERIAL_STATUETTE_BASE: return "graphics/caelum/icons/ca_statuette.png";
             case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_small_weapon_head.png";
             case CaelumConstants.MATERIAL_CHAIN: return "graphics/caelum/icons/materials/ca_material_chain.png";
+            case CaelumConstants.MATERIAL_SILVER_CHAIN: return "graphics/caelum/icons/materials/ca_material_silver_chain.png";
+            case CaelumConstants.MATERIAL_SEAL_BASE: return "graphics/caelum/icons/materials/ca_material_seal_base.png";
+            case CaelumConstants.MATERIAL_RUBY_PENDANT: return "graphics/caelum/icons/materials/ca_material_ruby_pendant.png";
+            case CaelumConstants.MATERIAL_SAPPHIRE_PENDANT: return "graphics/caelum/icons/materials/ca_material_sapphire_pendant.png";
+            case CaelumConstants.MATERIAL_EMERALD_PENDANT: return "graphics/caelum/icons/materials/ca_material_emerald_pendant.png";
+            case CaelumConstants.MATERIAL_TOPAZ_PENDANT: return "graphics/caelum/icons/materials/ca_material_topaz_pendant.png";
+            case CaelumConstants.MATERIAL_RUBY_GEM: return "graphics/caelum/icons/materials/ca_material_ruby_gem.png";
+            case CaelumConstants.MATERIAL_SAPPHIRE_GEM: return "graphics/caelum/icons/materials/ca_material_sapphire_gem.png";
+            case CaelumConstants.MATERIAL_EMERALD_GEM: return "graphics/caelum/icons/materials/ca_material_emerald_gem.png";
+            case CaelumConstants.MATERIAL_TOPAZ_GEM: return "graphics/caelum/icons/materials/ca_material_topaz_gem.png";
+            case CaelumConstants.MATERIAL_OPAL_BROOCH: return "graphics/caelum/icons/materials/ca_material_opal_brooch.png";
+            case CaelumConstants.MATERIAL_RAW_RUBY: return "graphics/caelum/icons/materials/ca_material_raw_ruby.png";
+            case CaelumConstants.MATERIAL_RAW_SAPPHIRE: return "graphics/caelum/icons/materials/ca_material_raw_sapphire.png";
+            case CaelumConstants.MATERIAL_RAW_EMERALD: return "graphics/caelum/icons/materials/ca_material_raw_emerald.png";
+            case CaelumConstants.MATERIAL_RAW_TOPAZ: return "graphics/caelum/icons/materials/ca_material_raw_topaz.png";
+            case CaelumConstants.MATERIAL_RAW_OPAL: return "graphics/caelum/icons/materials/ca_material_raw_opal.png";
+            case CaelumConstants.MATERIAL_COPPER_INGOT: return "graphics/caelum/icons/materials/ca_material_copper_ingot.png";
+            case CaelumConstants.MATERIAL_TIN_INGOT: return "graphics/caelum/icons/materials/ca_material_tin_ingot.png";
+            case CaelumConstants.MATERIAL_COAL: return "graphics/caelum/icons/materials/ca_material_coal.png";
             default: return "graphics/caelum/icons/materials/ca_material_wood.png";
         }
     }
@@ -362,20 +381,13 @@ class CaelumSilverKey : CaelumWeightedKey
     Default
     {
         Tag "$CA_KEY_SILVER";
-        Inventory.Icon "graphics/caelum/icons/ca_key.png";
+        Inventory.Icon "RKEYA0";
         Inventory.PickupMessage "$CA_PICKUP_KEY_SILVER";
     }
 
     override int GetKeyType()
     {
         return CaelumConstants.KEY_SILVER;
-    }
-
-    Default
-    {
-        // La llave usa una escala de mundo reducida; el icono de inventario
-        // conserva su resolución original.
-        Scale 0.25;
     }
 
     States { Spawn: CKEY A -1; Stop; }

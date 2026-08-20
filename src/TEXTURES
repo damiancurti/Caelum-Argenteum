@@ -460,3 +460,172 @@ Sprite "CMSTA0", 128, 128
     Offset 64, 124
     Patch "sprites/caelum/crafting/stations/CMSTA0.png", 0, 0
 }
+
+// V4.23.4 jewelry
+Sprite "M043A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_silver_chain.png", 0, 0
+}
+
+Sprite "M044A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_seal_base.png", 0, 0
+}
+
+Sprite "M045A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_ruby_pendant.png", 0, 0
+}
+
+Sprite "M046A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_sapphire_pendant.png", 0, 0
+}
+
+Sprite "M047A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_emerald_pendant.png", 0, 0
+}
+
+Sprite "M048A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_topaz_pendant.png", 0, 0
+}
+
+Sprite "M049A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_ruby_gem.png", 0, 0
+}
+
+Sprite "M050A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_sapphire_gem.png", 0, 0
+}
+
+Sprite "M051A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_emerald_gem.png", 0, 0
+}
+
+Sprite "M052A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_topaz_gem.png", 0, 0
+}
+
+Sprite "M053A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_opal_brooch.png", 0, 0
+}
+
+Sprite "M054A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_raw_ruby.png", 0, 0
+}
+
+Sprite "M055A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_raw_sapphire.png", 0, 0
+}
+
+Sprite "M056A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_raw_emerald.png", 0, 0
+}
+
+Sprite "M057A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_raw_topaz.png", 0, 0
+}
+
+Sprite "M058A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_raw_opal.png", 0, 0
+}
+
+Sprite "M059A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_copper_ingot.png", 0, 0
+}
+
+Sprite "M060A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_tin_ingot.png", 0, 0
+}
+
+Sprite "M061A0", 128, 128
+{
+ Offset 64, 124
+ Patch "graphics/caelum/icons/materials/ca_material_coal.png", 0, 0
+}
+
+Sprite "AMRBA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/AMRBA0.png", 0, 0
+}
+
+Sprite "AMSAA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/AMSAA0.png", 0, 0
+}
+
+Sprite "AMEMA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/AMEMA0.png", 0, 0
+}
+
+Sprite "AMTOA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/AMTOA0.png", 0, 0
+}
+
+Sprite "SLFIA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/SLFIA0.png", 0, 0
+}
+
+Sprite "SLWAA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/SLWAA0.png", 0, 0
+}
+
+Sprite "SLEAA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/SLEAA0.png", 0, 0
+}
+
+Sprite "SLAIA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/SLAIA0.png", 0, 0
+}
+
+Sprite "SLQUA0", 128, 128
+{
+ Offset 64, 124
+ Patch "sprites/caelum/jewelry/SLQUA0.png", 0, 0
+}

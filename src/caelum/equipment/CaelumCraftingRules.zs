@@ -190,20 +190,17 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
-        int resolved = Clamp(
-            recipeIndex, 0,
-            CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1
-        );
-        if (resolved < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT)
-        {
-            return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
-        }
-        if (resolved < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
-            + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT)
-        {
-            return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
-        }
-        return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
+        int resolved = Clamp(recipeIndex, 0,
+            CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1);
+        int armorStart = CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT;
+        int essenceStart = armorStart + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT;
+        int amuletStart = essenceStart + CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT;
+        int sealStart = amuletStart + CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT;
+        if (resolved < armorStart) return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
+        if (resolved < essenceStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
+        if (resolved < amuletStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
+        if (resolved < sealStart) return CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
+        return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
     }
 
     static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)
@@ -262,6 +259,58 @@ class CaelumCraftingRules : Object
         return GetUnifiedEssenceRecipeIndex(recipeIndex)
             % CaelumConstants.ESSENCE_TYPE_COUNT;
     }
+
+    static int GetUnifiedAmuletType(int recipeIndex)
+    {
+        return Clamp(recipeIndex
+            - CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            - CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT
+            - CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT,
+            0, CaelumConstants.AMULET_TYPE_COUNT - 1);
+    }
+
+    static int GetUnifiedSealType(int recipeIndex)
+    {
+        return Clamp(recipeIndex
+            - CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            - CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT
+            - CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT
+            - CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT,
+            0, CaelumConstants.SEAL_TYPE_COUNT - 1);
+    }
+
+    static double GetJewelryWeight(int tier)
+    {
+        if (tier <= 1) return CaelumConstants.JEWELRY_TIER_ONE_WEIGHT;
+        if (tier == 2) return CaelumConstants.JEWELRY_TIER_TWO_WEIGHT;
+        return CaelumConstants.JEWELRY_TIER_THREE_WEIGHT;
+    }
+
+    static int GetAmuletTierMaterial(int t)
+    {
+        if (t == CaelumConstants.AMULET_SAPPHIRE) return CaelumConstants.MATERIAL_SAPPHIRE_PENDANT;
+        if (t == CaelumConstants.AMULET_EMERALD) return CaelumConstants.MATERIAL_EMERALD_PENDANT;
+        if (t == CaelumConstants.AMULET_TOPAZ) return CaelumConstants.MATERIAL_TOPAZ_PENDANT;
+        return CaelumConstants.MATERIAL_RUBY_PENDANT;
+    }
+
+    static int GetSealTierMaterial(int t)
+    {
+        if (t == CaelumConstants.SEAL_WATER) return CaelumConstants.MATERIAL_SAPPHIRE_GEM;
+        if (t == CaelumConstants.SEAL_EARTH) return CaelumConstants.MATERIAL_EMERALD_GEM;
+        if (t == CaelumConstants.SEAL_AIR) return CaelumConstants.MATERIAL_TOPAZ_GEM;
+        if (t == CaelumConstants.SEAL_QUINTESSENCE) return CaelumConstants.MATERIAL_OPAL_BROOCH;
+        return CaelumConstants.MATERIAL_RUBY_GEM;
+    }
+
+    static int GetRequiredAmuletBaseUnits(double w)
+    { return GetRoundedMaterialUnits(w, CaelumConstants.CRAFTING_AMULET_BASE_WEIGHT_RATIO); }
+    static int GetRequiredAmuletTierUnits(double w)
+    { return GetRoundedMaterialUnits(w, 1.0 - CaelumConstants.CRAFTING_AMULET_BASE_WEIGHT_RATIO); }
+    static int GetRequiredSealBaseUnits(double w)
+    { return GetRoundedMaterialUnits(w, CaelumConstants.CRAFTING_SEAL_BASE_WEIGHT_RATIO); }
+    static int GetRequiredSealTierUnits(double w)
+    { return GetRoundedMaterialUnits(w, 1.0 - CaelumConstants.CRAFTING_SEAL_BASE_WEIGHT_RATIO); }
 
     static int GetArmorTierMaterial(int armorType)
     {
@@ -425,6 +474,14 @@ class CaelumCraftingRules : Object
             CaelumConstants.CRAFTING_STATION_GLOBE
         );
     }
+    static int GetMissingJewelryStation(int capabilities, int craftingTier)
+    {
+        return GetMissingStationForBranch(
+            capabilities, craftingTier,
+            CaelumConstants.CRAFTING_STATION_JEWELER_BENCH,
+            CaelumConstants.CRAFTING_STATION_FINE_TOOLS_BENCH);
+    }
+
 
     static int GetPlayableRecipeWeapon(int recipeIndex)
     {

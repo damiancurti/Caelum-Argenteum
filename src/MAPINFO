@@ -49,4 +49,6 @@ DoomEdNums
     18122 = CaelumEnergyDrink
     18123 = CaelumFoodRation
     18124 = CaelumWaterRation
+    18130 = CaelumAmuletPickup
+    18131 = CaelumSealPickup
 }

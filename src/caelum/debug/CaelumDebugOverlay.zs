@@ -260,6 +260,22 @@ class CaelumDebugOverlay : EventHandler
             default: return "CA_ESSENCE_FIRE";
         }
     }
+    ui String GetAmuletTypeKey(int t)
+    {
+        if (t==CaelumConstants.AMULET_SAPPHIRE) return "CA_AMULET_SAPPHIRE";
+        if (t==CaelumConstants.AMULET_EMERALD) return "CA_AMULET_EMERALD";
+        if (t==CaelumConstants.AMULET_TOPAZ) return "CA_AMULET_TOPAZ";
+        return "CA_AMULET_RUBY";
+    }
+    ui String GetSealTypeKey(int t)
+    {
+        if (t==CaelumConstants.SEAL_WATER) return "CA_SEAL_WATER";
+        if (t==CaelumConstants.SEAL_EARTH) return "CA_SEAL_EARTH";
+        if (t==CaelumConstants.SEAL_AIR) return "CA_SEAL_AIR";
+        if (t==CaelumConstants.SEAL_QUINTESSENCE) return "CA_SEAL_QUINTESSENCE";
+        return "CA_SEAL_FIRE";
+    }
+
 
     ui String GetCraftingWeaponKey(int weaponId)
     {
@@ -441,6 +457,25 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "CA_MATERIAL_SMALL_WEAPON_HEAD";
             case CaelumConstants.MATERIAL_CHAIN: return "CA_MATERIAL_CHAIN";
             case CaelumConstants.MATERIAL_WOOD: return "CA_MATERIAL_WOOD";
+            case CaelumConstants.MATERIAL_SILVER_CHAIN: return "CA_MATERIAL_SILVER_CHAIN";
+            case CaelumConstants.MATERIAL_SEAL_BASE: return "CA_MATERIAL_SEAL_BASE";
+            case CaelumConstants.MATERIAL_RUBY_PENDANT: return "CA_MATERIAL_RUBY_PENDANT";
+            case CaelumConstants.MATERIAL_SAPPHIRE_PENDANT: return "CA_MATERIAL_SAPPHIRE_PENDANT";
+            case CaelumConstants.MATERIAL_EMERALD_PENDANT: return "CA_MATERIAL_EMERALD_PENDANT";
+            case CaelumConstants.MATERIAL_TOPAZ_PENDANT: return "CA_MATERIAL_TOPAZ_PENDANT";
+            case CaelumConstants.MATERIAL_RUBY_GEM: return "CA_MATERIAL_RUBY_GEM";
+            case CaelumConstants.MATERIAL_SAPPHIRE_GEM: return "CA_MATERIAL_SAPPHIRE_GEM";
+            case CaelumConstants.MATERIAL_EMERALD_GEM: return "CA_MATERIAL_EMERALD_GEM";
+            case CaelumConstants.MATERIAL_TOPAZ_GEM: return "CA_MATERIAL_TOPAZ_GEM";
+            case CaelumConstants.MATERIAL_OPAL_BROOCH: return "CA_MATERIAL_OPAL_BROOCH";
+            case CaelumConstants.MATERIAL_RAW_RUBY: return "CA_MATERIAL_RAW_RUBY";
+            case CaelumConstants.MATERIAL_RAW_SAPPHIRE: return "CA_MATERIAL_RAW_SAPPHIRE";
+            case CaelumConstants.MATERIAL_RAW_EMERALD: return "CA_MATERIAL_RAW_EMERALD";
+            case CaelumConstants.MATERIAL_RAW_TOPAZ: return "CA_MATERIAL_RAW_TOPAZ";
+            case CaelumConstants.MATERIAL_RAW_OPAL: return "CA_MATERIAL_RAW_OPAL";
+            case CaelumConstants.MATERIAL_COPPER_INGOT: return "CA_MATERIAL_COPPER_INGOT";
+            case CaelumConstants.MATERIAL_TIN_INGOT: return "CA_MATERIAL_TIN_INGOT";
+            case CaelumConstants.MATERIAL_COAL: return "CA_MATERIAL_COAL";
             default: return "CA_MATERIAL_IRON_INGOT";
         }
     }
@@ -1545,6 +1580,10 @@ class CaelumDebugOverlay : EventHandler
                 "%s - %s", magicWeaponName, essenceName
             );
         }
+        else if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
+            recipeName=StringTable.Localize(GetAmuletTypeKey(localPlayer.CraftingSelectedAmuletType),false);
+        else if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+            recipeName=StringTable.Localize(GetSealTypeKey(localPlayer.CraftingSelectedSealType),false);
         else
         {
             recipeName = StringTable.Localize(

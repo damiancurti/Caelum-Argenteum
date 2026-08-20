@@ -1,5 +1,31 @@
 # Changelog
 
+## 4.23.4b — Character creation jewelry guard
+
+- Jewelry attribute scanning is now disabled until character creation has been
+  fully confirmed.
+- The creation wizard therefore uses the same attribute recalculation path as
+  the validated pre-jewelry build; amulet and seal bonuses begin applying only
+  during normal play.
+- No jewelry recipes, bonuses, MAP01 objects, sprites, or crafting rules
+  changed.
+
+
+## 4.23.4 — Jewelry and seals
+
+- Added universal amulets and seals, jewelry crafting, bonuses, sprites, and MAP01 test objects.
+- Added raw ruby, sapphire, emerald, topaz, opal, copper ingot, tin ingot, and coal as reserved future materials; they currently have no recipe function.
+
+
+## 4.23.3a — Unified recipe field declaration fix
+
+- Added the five missing `CaelumPlayer` fields used by the 4.23.3 unified
+  recipe system: recipe kind, armor type, armor slot, essence weapon type,
+  and essence type.
+- No recipe formulas, material ratios, infrastructure requirements, MAP01,
+  sprites, or input behavior changed.
+
+
 ## 4.23.3 — Armor and essence crafting recipes
 
 - Expanded the unified Workbench list from 16 to 52 recipes:

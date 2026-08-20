@@ -415,6 +415,90 @@ class CaelumWeaponPickup : CaelumEquipmentItem
     }
 }
 
+
+class CaelumAmuletPickup : CaelumEquipmentItem
+{
+    Default { Tag "$CA_EQUIPMENT_CATEGORY_AMULET"; Inventory.PickupMessage "$CA_PICKUP_AMULET"; }
+    String GetJewelryIconPath()
+    {
+        int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
+        if (t == CaelumConstants.AMULET_SAPPHIRE) return "graphics/caelum/icons/jewelry/ca_amulet_sapphire.png";
+        if (t == CaelumConstants.AMULET_EMERALD) return "graphics/caelum/icons/jewelry/ca_amulet_emerald.png";
+        if (t == CaelumConstants.AMULET_TOPAZ) return "graphics/caelum/icons/jewelry/ca_amulet_topaz.png";
+        return "graphics/caelum/icons/jewelry/ca_amulet_ruby.png";
+    }
+    String GetJewelrySpriteName()
+    {
+        int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
+        if (t == CaelumConstants.AMULET_SAPPHIRE) return "AMSA";
+        if (t == CaelumConstants.AMULET_EMERALD) return "AMEM";
+        if (t == CaelumConstants.AMULET_TOPAZ) return "AMTO";
+        return "AMRB";
+    }
+    override void UpdateWorldSprite()
+    {
+        Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch);
+        sprite = GetSpriteIndex(GetJewelrySpriteName()); frame = 0;
+    }
+    override void Tick() { Super.Tick(); Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch); }
+    States { Spawn: AMRB A -1; Stop; }
+    override bool TryPickup(in out Actor toucher)
+    {
+        if (CaelumPlayer(toucher) == null) return false;
+        if (!PickupDataInitialized)
+        {
+            EquipmentKind = CaelumConstants.EQUIPMENT_KIND_AMULET; ArmorSlot = -1;
+            ItemType = Clamp(args[0],0,CaelumConstants.AMULET_TYPE_COUNT-1);
+            Tier = Clamp(args[1],1,3); EquipmentSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            Durability = 0; UnitWeight = double(Tier); Equipped = false; PickupDataInitialized = true;
+        }
+        UpdateWorldSprite(); return TryCaelumPickup(toucher);
+    }
+}
+
+class CaelumSealPickup : CaelumEquipmentItem
+{
+    Default { Tag "$CA_EQUIPMENT_CATEGORY_SEAL"; Inventory.PickupMessage "$CA_PICKUP_SEAL"; }
+    String GetJewelryIconPath()
+    {
+        int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
+        if (t == CaelumConstants.SEAL_WATER) return "graphics/caelum/icons/jewelry/ca_seal_water.png";
+        if (t == CaelumConstants.SEAL_EARTH) return "graphics/caelum/icons/jewelry/ca_seal_earth.png";
+        if (t == CaelumConstants.SEAL_AIR) return "graphics/caelum/icons/jewelry/ca_seal_air.png";
+        if (t == CaelumConstants.SEAL_QUINTESSENCE) return "graphics/caelum/icons/jewelry/ca_seal_quintessence.png";
+        return "graphics/caelum/icons/jewelry/ca_seal_fire.png";
+    }
+    String GetJewelrySpriteName()
+    {
+        int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
+        if (t == CaelumConstants.SEAL_WATER) return "SLWA";
+        if (t == CaelumConstants.SEAL_EARTH) return "SLEA";
+        if (t == CaelumConstants.SEAL_AIR) return "SLAI";
+        if (t == CaelumConstants.SEAL_QUINTESSENCE) return "SLQU";
+        return "SLFI";
+    }
+    override void UpdateWorldSprite()
+    {
+        Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch);
+        sprite = GetSpriteIndex(GetJewelrySpriteName()); frame = 0;
+    }
+    override void Tick() { Super.Tick(); Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch); }
+    States { Spawn: SLFI A -1; Stop; }
+    override bool TryPickup(in out Actor toucher)
+    {
+        if (CaelumPlayer(toucher) == null) return false;
+        if (!PickupDataInitialized)
+        {
+            EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SEAL; ArmorSlot = -1;
+            ItemType = Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
+            Tier = Clamp(args[1],1,3); EquipmentSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            Durability = 0; EssenceType = ItemType; UnitWeight = double(Tier);
+            Equipped = false; PickupDataInitialized = true;
+        }
+        UpdateWorldSprite(); return TryCaelumPickup(toucher);
+    }
+}
+
 // Toda la pila ocupa un único slot de Caja Mágica. Fuera de ella cada bala
 // pesa 0,003; dentro, la pila completa pesa cero sin importar Amount.
 class CaelumCarbineAmmo : Ammo

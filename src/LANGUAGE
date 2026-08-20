@@ -1128,3 +1128,32 @@ CA_CRAFTING_STATION_RANGED_WORKSHOP = "Ranged weapons workshop";
 [es]
 CA_CRAFTING_STATION_RANGED_WORKSHOP = "Taller de armas a distancia";
 
+[enu default]
+CA_EQUIPMENT_CATEGORY_AMULET = "Amulet";
+CA_EQUIPMENT_CATEGORY_SEAL = "Seal";
+CA_AMULET_RUBY = "Ruby Amulet";
+CA_AMULET_SAPPHIRE = "Sapphire Amulet";
+CA_AMULET_EMERALD = "Emerald Amulet";
+CA_AMULET_TOPAZ = "Topaz Amulet";
+CA_SEAL_FIRE = "Fire Seal";
+CA_SEAL_WATER = "Water Seal";
+CA_SEAL_EARTH = "Earth Seal";
+CA_SEAL_AIR = "Air Seal";
+CA_SEAL_QUINTESSENCE = "Quintessence Seal";
+CA_PICKUP_AMULET = "You pick up an amulet.";
+CA_PICKUP_SEAL = "You pick up a seal.";
+
+[es]
+CA_EQUIPMENT_CATEGORY_AMULET = "Amuleto";
+CA_EQUIPMENT_CATEGORY_SEAL = "Sello";
+CA_AMULET_RUBY = "Amuleto de Rubí";
+CA_AMULET_SAPPHIRE = "Amuleto de Zafiro";
+CA_AMULET_EMERALD = "Amuleto de Esmeralda";
+CA_AMULET_TOPAZ = "Amuleto de Topacio";
+CA_SEAL_FIRE = "Sello de Fuego";
+CA_SEAL_WATER = "Sello de Agua";
+CA_SEAL_EARTH = "Sello de Tierra";
+CA_SEAL_AIR = "Sello de Aire";
+CA_SEAL_QUINTESSENCE = "Sello de Quintaesencia";
+CA_PICKUP_AMULET = "Recoges un amuleto.";
+CA_PICKUP_SEAL = "Recoges un sello.";

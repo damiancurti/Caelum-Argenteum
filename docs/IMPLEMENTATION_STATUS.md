@@ -1,6 +1,6 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Connected crafting infrastructure 4.23.3
+## Connected crafting infrastructure 4.23.3a
 
 **Implemented — pending validation**
 
@@ -676,3 +676,7 @@ jump scaling is Type 1.
 - Remaining weapon families, material catalogue, Tarot, and final visual
   inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
   item actions are functional.
+
+## Jewelry crafting — 4.23.4b
+
+Implemented universal amulets and elemental seals with tier-based weight, attribute bonuses, Jeweler Bench infrastructure, and MAP01 test placement. Raw gems, copper, tin, and coal are registered for future systems and intentionally have no current recipe function.
