@@ -628,6 +628,7 @@ class CaelumArrowAmmo : Ammo
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png";
+        Scale 0.20;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Ammo.BackpackAmount 20;
@@ -642,6 +643,7 @@ class CaelumBoltAmmo : Ammo
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png";
+        Scale 0.20;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Ammo.BackpackAmount 20;

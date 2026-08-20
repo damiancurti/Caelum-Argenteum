@@ -688,6 +688,44 @@ class CaelumCarbineProjectile : CaelumActorProjectile
     }
 }
 
+class CaelumArrowProjectile : CaelumCarbineProjectile
+{
+    Default
+    {
+        Scale 0.20;
+        Speed 35;
+    }
+
+    States
+    {
+    Spawn:
+        ARRO A 1;
+        Loop;
+    Death:
+        PUFF BCD 2 Bright;
+        Stop;
+    }
+}
+
+class CaelumBoltProjectile : CaelumCarbineProjectile
+{
+    Default
+    {
+        Scale 0.20;
+        Speed 45;
+    }
+
+    States
+    {
+    Spawn:
+        BOLT A 1;
+        Loop;
+    Death:
+        PUFF BCD 2 Bright;
+        Stop;
+    }
+}
+
 // El proyectil lento conserva daño, crítico y empuje. La jabalina se considera
 // rota al finalizar su trayectoria y deja materiales calculados con la misma
 // receta y recuperación de desensamblaje que ya usa el sistema de crafteo.

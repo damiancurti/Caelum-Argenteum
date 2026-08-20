@@ -6511,20 +6511,14 @@ class CaelumPlayer : DoomPlayer
         {
             requiredAmmoType = CaelumConstants.AMMUNITION_BOLT;
         }
-        CaelumCarbineAmmo carbineAmmo;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        Inventory rangedAmmo = FindNativeAmmunition(requiredAmmoType);
+        bool ammoAvailable = rangedAmmo != null && rangedAmmo.Amount > 0;
+        CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(rangedAmmo);
+        if (carbineStack != null && carbineStack.InMagicBox)
         {
-            CaelumCarbineAmmo candidate = CaelumCarbineAmmo(cursor);
-            if (candidate != null
-                && candidate.GetAmmoType() == requiredAmmoType)
-            {
-                carbineAmmo = candidate;
-                break;
-            }
+            ammoAvailable = false;
         }
-        LastCarbineHadAmmo = carbineAmmo != null
-            && carbineAmmo.Amount > 0
-            && !carbineAmmo.InMagicBox;
+        LastCarbineHadAmmo = ammoAvailable;
         if (!LastCarbineHadAmmo) { return; }
 
         double airCost = CaelumWeaponCatalogue.GetPrimaryAirCost(
@@ -6585,8 +6579,18 @@ class CaelumPlayer : DoomPlayer
             Sin(attackAngle) * 32.0,
             Height * 0.65
         );
+        Name projectileClass = "CaelumCarbineProjectile";
+        if (requiredAmmoType == CaelumConstants.AMMUNITION_ARROW)
+        {
+            projectileClass = "CaelumArrowProjectile";
+        }
+        else if (requiredAmmoType == CaelumConstants.AMMUNITION_BOLT)
+        {
+            projectileClass = "CaelumBoltProjectile";
+        }
+
         CaelumCarbineProjectile projectile = CaelumCarbineProjectile(
-            Spawn("CaelumCarbineProjectile", spawnPos, NO_REPLACE)
+            Spawn(projectileClass, spawnPos, NO_REPLACE)
         );
         if (projectile == null) { return; }
 
@@ -6617,8 +6621,11 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Size
         );
 
-        carbineAmmo.Amount = Max(0, carbineAmmo.Amount - 1);
-        CarbineAmmoCount = carbineAmmo.Amount;
+        rangedAmmo.Amount = Max(0, rangedAmmo.Amount - 1);
+        if (requiredAmmoType == CaelumConstants.AMMUNITION_CARBINE)
+        {
+            CarbineAmmoCount = rangedAmmo.Amount;
+        }
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
