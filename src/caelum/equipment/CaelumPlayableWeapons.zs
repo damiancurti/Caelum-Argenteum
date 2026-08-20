@@ -27,7 +27,7 @@ class CaelumEquippedWeapon : Weapon
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.PerformEquippedSecondaryHandAction();
+            caelumPlayer.PerformEquippedWeaponSecondaryAttack();
         }
     }
 
@@ -390,10 +390,39 @@ class CaelumPhysicalSelectorWeapon : Weapon
         }
     }
 
+    action void A_CaelumBlockInputPulse()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.PulseCombatBlockInput(); }
+    }
+
+    action void A_CaelumChannelInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.RequestCombatChannelInput(); }
+    }
+
+    action void A_CaelumTarotInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.ReserveTarotInput(); }
+    }
+
+    action void A_CaelumClassAbilityInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.ReserveClassAbilityInput(); }
+    }
+
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady;
+        TNT1 A 1 A_WeaponReady(
+            WRF_ALLOWZOOM
+            | WRF_ALLOWRELOAD
+            | WRF_ALLOWUSER3
+            | WRF_ALLOWUSER4
+        );
         Loop;
     Deselect:
         TNT1 A 1 A_Lower;
@@ -408,6 +437,22 @@ class CaelumPhysicalSelectorWeapon : Weapon
         Goto Ready;
     AltFire:
         TNT1 A 0 A_CaelumWeaponSecondary;
+        TNT1 A 1;
+        Goto Ready;
+    Zoom:
+        TNT1 A 0 A_CaelumBlockInputPulse;
+        TNT1 A 1;
+        Goto Ready;
+    Reload:
+        TNT1 A 0 A_CaelumChannelInput;
+        TNT1 A 1;
+        Goto Ready;
+    User3:
+        TNT1 A 0 A_CaelumTarotInput;
+        TNT1 A 1;
+        Goto Ready;
+    User4:
+        TNT1 A 0 A_CaelumClassAbilityInput;
         TNT1 A 1;
         Goto Ready;
     Spawn:
@@ -563,10 +608,39 @@ class CaelumMagicSelectorWeapon : Weapon
         }
     }
 
+    action void A_CaelumBlockInputPulse()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.PulseCombatBlockInput(); }
+    }
+
+    action void A_CaelumChannelInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.RequestCombatChannelInput(); }
+    }
+
+    action void A_CaelumTarotInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.ReserveTarotInput(); }
+    }
+
+    action void A_CaelumClassAbilityInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.ReserveClassAbilityInput(); }
+    }
+
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady;
+        TNT1 A 1 A_WeaponReady(
+            WRF_ALLOWZOOM
+            | WRF_ALLOWRELOAD
+            | WRF_ALLOWUSER3
+            | WRF_ALLOWUSER4
+        );
         Loop;
     Deselect:
         TNT1 A 1 A_Lower;
@@ -581,6 +655,22 @@ class CaelumMagicSelectorWeapon : Weapon
         Goto Ready;
     AltFire:
         TNT1 A 0 A_CaelumWeaponSecondary;
+        TNT1 A 1;
+        Goto Ready;
+    Zoom:
+        TNT1 A 0 A_CaelumBlockInputPulse;
+        TNT1 A 1;
+        Goto Ready;
+    Reload:
+        TNT1 A 0 A_CaelumChannelInput;
+        TNT1 A 1;
+        Goto Ready;
+    User3:
+        TNT1 A 0 A_CaelumTarotInput;
+        TNT1 A 1;
+        Goto Ready;
+    User4:
+        TNT1 A 0 A_CaelumClassAbilityInput;
         TNT1 A 1;
         Goto Ready;
     Spawn:

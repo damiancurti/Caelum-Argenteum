@@ -169,6 +169,16 @@ class CaelumPlayer : DoomPlayer
     double LastIncomingActorCriticalChancePercent;
     double LastIncomingActorCriticalRollPercent;
     bool DebugShieldBlocking;
+
+    // V4.24 combat-state foundation. DebugShieldBlocking remains as a
+    // compatibility mirror while existing shield hit/durability code is
+    // migrated incrementally.
+    bool CombatBlockModeActive;
+    int CombatBlockInputGraceTics;
+    bool CombatChannelModeActive;
+    bool CombatTarotInputReserved;
+    bool CombatClassAbilityInputReserved;
+
     int DebugShieldDamageKind;
     int DebugShieldIncomingAngleOffset;
     bool LastShieldWithinCoverage;
@@ -1314,6 +1324,17 @@ class CaelumPlayer : DoomPlayer
         int resolvedType = Clamp(
             requestedWeaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
+
+        // Cambiar de arma rompe el bloqueo anterior. Si el jugador mantiene
+        // Zoom, el arma nueva podrá levantar el escudo nuevamente mediante su
+        // propio estado Zoom.
+        if (CombatBlockModeActive
+            && WeaponModel.Equipped
+            && WeaponModel.WeaponType != resolvedType)
+        {
+            CancelCombatBlockMode();
+        }
+
         if (WeaponModel.Equipped
             && WeaponModel.WeaponType == resolvedType
             && HasEquippedNativeWeaponType(resolvedType))
@@ -1430,7 +1451,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (ActivateEquippedWeaponFamily(family))
         {
-            PerformEquippedSecondaryHandAction();
+            PerformEquippedWeaponSecondaryAttack();
         }
     }
 
@@ -1438,7 +1459,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (ActivateEquippedWeaponType(weaponType))
         {
-            PerformEquippedSecondaryHandAction();
+            PerformEquippedWeaponSecondaryAttack();
         }
     }
 
@@ -3476,7 +3497,7 @@ class CaelumPlayer : DoomPlayer
         else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             ShieldModel.Equipped = false;
-            DebugShieldBlocking = false;
+            CancelCombatBlockMode();
         }
         else if (IsUniversalJewelryKind(item.EquipmentKind))
         {
@@ -5897,7 +5918,7 @@ class CaelumPlayer : DoomPlayer
         ApplyCriticalSurvivalDamage();
         ApplyNaturalHealthRegeneration();
 
-        UpdateEquippedShieldBlockingInput();
+        UpdateCombatBlockMode();
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
@@ -6052,6 +6073,15 @@ class CaelumPlayer : DoomPlayer
             CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
             );
+
+        bool blockAttackException =
+            WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SPEAR
+            || WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN;
+        if (CombatBlockModeActive && !blockAttackException)
+        {
+            return;
+        }
+
         if (catalogueWeapon >= 0
             && CaelumWeaponCatalogue.GetFamily(catalogueWeapon)
                 == CaelumConstants.CATALOGUE_FAMILY_RANGED)
@@ -6078,9 +6108,10 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    // AltFire prioriza siempre el escudo de la mano secundaria. Si no existe,
-    // queda reservado para el futuro ataque secundario propio de cada arma.
-    void PerformEquippedSecondaryHandAction()
+    // AltFire pertenece exclusivamente al arma activa. El escudo ya no
+    // intercepta este input: Block usa el estado nativo Zoom de forma
+    // independiente.
+    void PerformEquippedWeaponSecondaryAttack()
     {
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
@@ -6090,47 +6121,47 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
-        int catalogueWeapon = WeaponModel != null
-            ? CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
-            ) : -1;
+            );
+
+        // Mientras Block está activo sólo lanza y jabalina conservan permiso
+        // de ataque, según la excepción de diseño acordada.
+        bool blockAttackException =
+            WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SPEAR
+            || WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN;
+        if (CombatBlockModeActive && !blockAttackException)
+        {
+            return;
+        }
 
         if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
         {
             if (JavelinSecondaryLatched) { return; }
             JavelinSecondaryLatched = true;
         }
-        bool shieldCompatible = catalogueWeapon >= 0
-            && CaelumWeaponCatalogue.UsesOneHandedShieldRules(
-                catalogueWeapon
-            );
-        shieldCompatible = shieldCompatible
-            || WeaponModel.IsMagicalType(WeaponModel.WeaponType);
-        if (ShieldModel != null && ShieldModel.Equipped && shieldCompatible)
-        {
-            // El bloqueo real sigue el estado mantenido de AltFire. No se
-            // alterna por tic: mientras el botón está pulsado permanece activo
-            // y al soltarlo Tick lo desactiva.
-            DebugShieldBlocking = true;
-            UpdateShieldAirCost();
-            return;
-        }
+
         if (EquippedWeaponCooldownRemaining > 0.0
             || StaffCastCooldownRemaining > 0.0)
         {
             return;
         }
+
         if (WeaponModel.IsMagicalType(WeaponModel.WeaponType))
         {
             PerformDebugStaffAttack(true);
             return;
         }
+
         if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
             && !HasJavelinMeleeFallbackTarget())
         {
             PerformJavelinThrow();
             return;
         }
+
         if (catalogueWeapon >= 0
             && CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon) > 0.0)
         {
@@ -7001,22 +7032,28 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
     }
 
-    bool IsEquippedWeaponShieldCompatible()
+    // Zoom genera un pulso por tic desde el arma activa. El pequeño período
+    // de gracia evita depender de un bit global BT_ZOOM y deja que el sistema
+    // nativo de Weapon gestione la entrada.
+    void PulseCombatBlockInput()
     {
-        if (WeaponModel == null || !WeaponModel.Equipped) { return false; }
-        int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-            WeaponModel.WeaponType
-        );
-        bool compatible = catalogueWeapon >= 0
-            && CaelumWeaponCatalogue.UsesOneHandedShieldRules(catalogueWeapon);
-        return compatible || WeaponModel.IsMagicalType(WeaponModel.WeaponType);
+        CombatBlockInputGraceTics = 2;
     }
 
-    // El escudo se mantiene levantado mientras AltFire está físicamente
-    // pulsado. Esta sincronización ocurre antes de regenerar Aire, de modo que
-    // bloquear detiene la regeneración desde el mismo tic y paga su coste.
-    void UpdateEquippedShieldBlockingInput()
+    void CancelCombatBlockMode()
     {
+        CombatBlockInputGraceTics = 0;
+        CombatBlockModeActive = false;
+        DebugShieldBlocking = false;
+    }
+
+    void UpdateCombatBlockMode()
+    {
+        if (CombatBlockInputGraceTics > 0)
+        {
+            CombatBlockInputGraceTics--;
+        }
+
         bool canBlock = player != null
             && player.playerstate == PST_LIVE
             && !EquipmentMenuOpen
@@ -7024,10 +7061,36 @@ class CaelumPlayer : DoomPlayer
             && ShieldModel != null
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
-            && CurrentAir > 0.0
-            && IsEquippedWeaponShieldCompatible();
-        DebugShieldBlocking = canBlock
-            && (player.cmd.buttons & BT_ALTATTACK) != 0;
+            && CurrentAir > 0.0;
+
+        CombatBlockModeActive =
+            canBlock && CombatBlockInputGraceTics > 0;
+
+        // Compatibilidad temporal con la lógica de cobertura, daño y
+        // durabilidad ya validada del escudo.
+        DebugShieldBlocking = CombatBlockModeActive;
+    }
+
+    // Reload queda reservado arquitectónicamente para Channel. Todavía no
+    // activa canalización porque faltan tiempo, coste y reglas de interrupción
+    // definitivas.
+    void RequestCombatChannelInput()
+    {
+        CombatChannelModeActive = false;
+    }
+
+    // User3/User4 quedan conectados al arma pero no ejecutan mecánicas hasta
+    // que sus respectivos bloques sean implementados.
+    void ReserveTarotInput()
+    {
+        CombatTarotInputReserved = true;
+        CombatTarotInputReserved = false;
+    }
+
+    void ReserveClassAbilityInput()
+    {
+        CombatClassAbilityInputReserved = true;
+        CombatClassAbilityInputReserved = false;
     }
 
     void UpdateShieldAirCost()
@@ -7047,11 +7110,11 @@ class CaelumPlayer : DoomPlayer
             || ShieldModel.Durability <= 0) { return; }
         if (CurrentAir <= 0.0)
         {
-            DebugShieldBlocking = false;
+            CancelCombatBlockMode();
             return;
         }
         CurrentAir = Max(0.0, CurrentAir - CurrentShieldAirCostPerSecond / TICRATE);
-        if (CurrentAir <= 0.0) { DebugShieldBlocking = false; }
+        if (CurrentAir <= 0.0) { CancelCombatBlockMode(); }
         UpdateAirStateEffects();
     }
 
@@ -7067,13 +7130,13 @@ class CaelumPlayer : DoomPlayer
 
     void ToggleDebugShieldBlock()
     {
-        if (ShieldModel == null || !ShieldModel.Equipped
-            || ShieldModel.Durability <= 0 || CurrentAir <= 0.0)
+        if (CombatBlockModeActive)
         {
-            DebugShieldBlocking = false;
+            CancelCombatBlockMode();
             return;
         }
-        DebugShieldBlocking = !DebugShieldBlocking;
+        PulseCombatBlockInput();
+        UpdateCombatBlockMode();
         UpdateShieldAirCost();
     }
 
@@ -7226,10 +7289,27 @@ class CaelumPlayer : DoomPlayer
             Vel.Y = 0.0;
         }
 
-        ForwardMove1 = CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
-        ForwardMove2 = CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
-        SideMove1 = CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
-        SideMove2 = CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
+        double walkMovement =
+            CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
+        double runMovement = walkMovement * 2.0;
+        double blockedRunMovement = (walkMovement + runMovement) * 0.5;
+
+        // En GZDoom ForwardMove1/SideMove1 corresponden a caminar y
+        // ForwardMove2/SideMove2 a correr. Mientras Block está activo, la
+        // velocidad de carrera queda exactamente en el punto medio entre
+        // ambas velocidades finales.
+        ForwardMove1 = walkMovement;
+        SideMove1 = walkMovement;
+        if (CombatBlockModeActive)
+        {
+            ForwardMove2 = blockedRunMovement;
+            SideMove2 = blockedRunMovement;
+        }
+        else
+        {
+            ForwardMove2 = runMovement;
+            SideMove2 = runMovement;
+        }
         JumpZ = CaelumConstants.GZDOOM_BASE_JUMP_Z * jumpFactor;
     }
 
@@ -9006,7 +9086,8 @@ class CaelumPlayer : DoomPlayer
         // Armaduras, escudos, armas y munición se obtienen posteriormente
         // mediante pickups, crafting u otras fuentes del mundo.
         ShieldModel.Equipped = false;
-        DebugShieldBlocking = false;
+        CancelCombatBlockMode();
+        CombatChannelModeActive = false;
         WeaponModel.Equipped = false;
         EnsureWeaponFamilySelectors();
         ApplyCharacterProfile();
