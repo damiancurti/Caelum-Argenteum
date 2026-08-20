@@ -161,6 +161,7 @@ class CaelumPlayer : DoomPlayer
     double LastArmorPostDefenseDamage;
     double LastToughnessDamageMultiplier;
     int LastArmorHealthDamage;
+    int LastIncomingArmorSlot;
     int LastArmorDurabilityLoss;
     double LastArmorDurabilityChancePercent;
     double LastArmorDurabilityRollPercent;
@@ -5796,6 +5797,32 @@ class CaelumPlayer : DoomPlayer
         return result;
     }
 
+    int ResolveIncomingArmorSlot(Actor inflictor, Actor source)
+    {
+        double impactZ = Pos.Z + Height * 0.60;
+        if (inflictor != null)
+        {
+            impactZ = inflictor.Pos.Z + inflictor.Height * 0.5;
+        }
+        else if (source != null)
+        {
+            impactZ = source.Pos.Z + source.Height * 0.60;
+        }
+
+        double heightRatio = Height > 0.0
+            ? Clamp((impactZ - Pos.Z) / Height, 0.0, 1.0)
+            : 0.60;
+
+        if (heightRatio >= CaelumConstants.HIT_HEAD_MINIMUM_RATIO)
+            return CaelumConstants.ARMOR_SLOT_HEAD;
+        if (heightRatio >= CaelumConstants.HIT_ARMS_MINIMUM_RATIO
+            && heightRatio <= CaelumConstants.HIT_ARMS_MAXIMUM_RATIO)
+            return CaelumConstants.ARMOR_SLOT_HANDS;
+        if (heightRatio >= CaelumConstants.HIT_TORSO_MINIMUM_RATIO)
+            return CaelumConstants.ARMOR_SLOT_BODY;
+        return CaelumConstants.ARMOR_SLOT_FEET;
+    }
+
     int ApplyRealCombatDefense(
         Actor inflictor,
         Actor source,
@@ -5828,7 +5855,12 @@ class CaelumPlayer : DoomPlayer
             inflictor,
             source
         );
-        PrepareRealArmorDamage(damageAfterShield, incomingActorCritical);
+        LastIncomingArmorSlot = ResolveIncomingArmorSlot(inflictor, source);
+        PrepareRealArmorDamage(
+            damageAfterShield,
+            incomingActorCritical,
+            LastIncomingArmorSlot
+        );
 
         double adrenalineRatioBeforeDamage = 0.0;
         if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
@@ -5878,10 +5910,13 @@ class CaelumPlayer : DoomPlayer
             }
             LastArmorHealthDamage = actualHealthLost;
             ApplyLocalizedLucidityLoss(
-                GetBaseVulnerabilityForArmorSlot(ArmorModel.SelectedSlot),
+                GetBaseVulnerabilityForArmorSlot(LastIncomingArmorSlot),
                 LastArmorVulnerabilityGrade,
                 incomingActorCritical,
-                Clamp(ArmorModel.GetDefense(ArmorModel.SelectedSlot) / 100.0, 0.0, 1.0)
+                Clamp(
+                    ArmorModel.GetDefense(LastIncomingArmorSlot) / 100.0,
+                    0.0, 1.0
+                )
             );
             UpdateHealthStateEffects();
             CalculateAndTriggerPain(actualHealthLost, adrenalineRatioBeforeDamage);
@@ -5930,20 +5965,6 @@ class CaelumPlayer : DoomPlayer
         return LastIncomingActorCriticalHit;
     }
 
-    void ReflectProjectileFromMagicShield(Actor inflictor)
-    {
-        if (inflictor == null || !inflictor.bMissile
-            || ShieldModel == null
-            || ShieldModel.ShieldType != CaelumConstants.SHIELD_TYPE_MAGIC)
-        {
-            return;
-        }
-        inflictor.Vel = -inflictor.Vel;
-        inflictor.Angle += 180.0;
-        inflictor.Pitch = -inflictor.Pitch;
-        inflictor.Target = self;
-    }
-
     double ResolveRealShieldDamage(
         Actor inflictor,
         Actor source,
@@ -5973,12 +5994,6 @@ class CaelumPlayer : DoomPlayer
             && ShieldModel.Durability > 0
             && LastShieldWithinCoverage;
         if (!shieldCanBlock) { return incomingDamage; }
-
-        if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC
-            && inflictor != null && inflictor.bMissile)
-        {
-            ReflectProjectileFromMagicShield(inflictor);
-        }
 
         int damageKind = mod == 'CaelumMagicTest'
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
@@ -6047,7 +6062,11 @@ class CaelumPlayer : DoomPlayer
         if (ShieldModel.Durability <= 0) { CancelCombatBlockMode(); }
     }
 
-    void PrepareRealArmorDamage(double incomingDamage, bool criticalHit)
+    void PrepareRealArmorDamage(
+        double incomingDamage,
+        bool criticalHit,
+        int incomingSlot
+    )
     {
         LastLocalizedLucidityLoss = 0.0;
         LastArmorPreDefenseDamage = 0.0;
@@ -6060,7 +6079,9 @@ class CaelumPlayer : DoomPlayer
         LastArmorHitWasCritical = criticalHit && incomingDamage > 0.0;
         if (ArmorModel == null || incomingDamage <= 0.0) { return; }
 
-        int slot = ArmorModel.SelectedSlot;
+        int slot = Clamp(
+            incomingSlot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1
+        );
         LastArmorVulnerabilityGrade = GetEffectiveArmorVulnerability(slot);
         LastArmorVulnerabilityMultiplier = GetVulnerabilityMultiplier(
             LastArmorVulnerabilityGrade,
@@ -6112,7 +6133,9 @@ class CaelumPlayer : DoomPlayer
     void CommitRealArmorDurability()
     {
         if (ArmorModel == null || LastArmorDurabilityLoss <= 0) { return; }
-        int slot = ArmorModel.SelectedSlot;
+        int slot = Clamp(
+            LastIncomingArmorSlot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1
+        );
         LastArmorDurabilityLoss = Min(
             LastArmorDurabilityLoss,
             ArmorModel.Durability[slot]
@@ -7609,6 +7632,10 @@ class CaelumPlayer : DoomPlayer
         CombatBlockInputGraceTics = 0;
         CombatBlockModeActive = true;
         DebugShieldBlocking = true;
+        bool magicReflect = ShieldModel != null
+            && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC;
+        bREFLECTIVE = magicReflect;
+        bSHIELDREFLECT = magicReflect;
         UpdateShieldAirCost();
     }
 
@@ -7617,6 +7644,8 @@ class CaelumPlayer : DoomPlayer
         CombatBlockInputGraceTics = 0;
         CombatBlockModeActive = false;
         DebugShieldBlocking = false;
+        bREFLECTIVE = false;
+        bSHIELDREFLECT = false;
     }
 
     void UpdateCombatBlockMode()
@@ -7627,7 +7656,18 @@ class CaelumPlayer : DoomPlayer
         {
             CancelCombatBlockMode();
         }
+
         DebugShieldBlocking = CombatBlockModeActive;
+
+        // El escudo mágico usa ahora la reflexión nativa del motor. REFLECTIVE
+        // devuelve misiles y SHIELDREFLECT limita el comportamiento al frente.
+        bool magicReflect = CombatBlockModeActive
+            && ShieldModel != null
+            && ShieldModel.Equipped
+            && ShieldModel.Durability > 0
+            && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC;
+        bREFLECTIVE = magicReflect;
+        bSHIELDREFLECT = magicReflect;
     }
 
     // Reload queda reservado arquitectónicamente para Channel. Todavía no

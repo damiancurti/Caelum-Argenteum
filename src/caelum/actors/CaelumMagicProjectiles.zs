@@ -10,10 +10,14 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
         Damage 1;
         DamageType "CaelumMagicTest";
         Projectile;
-        +NOGRAVITY
         +SEEKERMISSILE
         +INTERPOLATEANGLES
         +NOEXTREMEDEATH
+    }
+
+    override int DoSpecialDamage(Actor victim, int damage, Name damageType)
+    {
+        return GetCaelumPreparedDamage(Max(1, damage));
     }
 
     void UpdateElementSprite()
@@ -41,31 +45,7 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
         if (invoker.Tracer == null && invoker.Target != null)
             invoker.Tracer = invoker.Target.Target;
         if (invoker.Tracer != null && invoker.Tracer.health > 0)
-        {
             invoker.A_SeekerMissile(10, 30);
-
-            // El seeker nativo resuelve el giro horizontal. Recalculamos Vel.Z
-            // hacia el centro vertical del objetivo para que el misil no pierda
-            // altura progresivamente durante persecuciones largas.
-            double targetZ = invoker.Tracer.Pos.Z + (invoker.Tracer.Height * 0.5);
-            double deltaZ = targetZ - (invoker.Pos.Z + (invoker.Height * 0.5));
-            double deltaX = invoker.Tracer.Pos.X - invoker.Pos.X;
-            double deltaY = invoker.Tracer.Pos.Y - invoker.Pos.Y;
-            double horizontalDistance = sqrt((deltaX * deltaX) + (deltaY * deltaY));
-            double horizontalSpeed = sqrt((invoker.Vel.X * invoker.Vel.X) + (invoker.Vel.Y * invoker.Vel.Y));
-
-            // Usamos el tiempo horizontal estimado hasta el blanco; de este modo
-            // la corrección vertical no introduce una velocidad arbitraria.
-            if (horizontalSpeed > 0.001)
-            {
-                double travelTics = max(horizontalDistance / horizontalSpeed, 1.0);
-                invoker.Vel.Z = deltaZ / travelTics;
-            }
-            else
-            {
-                invoker.Vel.Z = 0;
-            }
-        }
     }
 
     override void Tick()

@@ -331,6 +331,13 @@ class CaelumCombatActor : Actor
     double GetActorKnockbackMultiplier(Actor receiver)
     {
         if (receiver == null) { return 0.0; }
+
+        CaelumPlayer playerReceiver = CaelumPlayer(receiver);
+        if (playerReceiver != null && playerReceiver.DerivedStats != null)
+        {
+            return 100.0 / (playerReceiver.GetCombatMass() + 50.0);
+        }
+
         CaelumCombatActor combatReceiver = CaelumCombatActor(receiver);
         double receiverMass = Max(1.0, receiver.Mass);
         if (combatReceiver != null && combatReceiver.CombatArmor != null)
