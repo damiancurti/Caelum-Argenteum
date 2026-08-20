@@ -362,13 +362,20 @@ class CaelumSilverKey : CaelumWeightedKey
     Default
     {
         Tag "$CA_KEY_SILVER";
-        Inventory.Icon "RKEYA0";
+        Inventory.Icon "graphics/caelum/icons/ca_key.png";
         Inventory.PickupMessage "$CA_PICKUP_KEY_SILVER";
     }
 
     override int GetKeyType()
     {
         return CaelumConstants.KEY_SILVER;
+    }
+
+    Default
+    {
+        // La llave usa una escala de mundo reducida; el icono de inventario
+        // conserva su resolución original.
+        Scale 0.25;
     }
 
     States { Spawn: CKEY A -1; Stop; }

@@ -308,6 +308,9 @@ class CaelumPlayer : DoomPlayer
         // This prevents user-facing text from being hard-coded in ZScript.
         Player.DisplayName "$CA_PLAYER_DISPLAY_NAME";
 
+        // Prefijo facial propio para evitar resolver iconos/rostros heredados de Doom.
+        Player.Face "CAF";
+
         // Caelum performs one custom pain roll after engine mitigation. This
         // disables DoomPlayer's independent native roll and prevents duplicates.
         PainChance 0;

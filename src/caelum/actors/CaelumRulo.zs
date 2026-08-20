@@ -48,9 +48,9 @@ class CaelumRulo : CaelumCombatActor
         Goto See;
     Missile:
         RULO D 9 A_FaceTarget;
-        RULO D 0 A_CaelumSpawnProjectile(
-            "CaelumRuloThrownAxe", 46,
-            372, false
+        RULO D 0 A_CaelumSpawnHomingElementalProjectile(
+            "CaelumActorHomingElementalProjectile", 46,
+            372, CaelumConstants.ESSENCE_EARTH
         );
         RULO A 16;
         Goto See;

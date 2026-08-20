@@ -11,10 +11,10 @@ Every external asset must be recorded here before it can enter a public build.
 | Caella melee rotations | `sprites/caelum/caella/CAELB1.png`–`CAELB8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight transparent sword-attack rotations. |
 | Argento extended states | `sprites/caelum/argento/ARGOC1.png`–`ARGOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
 | Caella extended states | `sprites/caelum/caella/CAELC1.png`–`CAELF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
-| Test magic bolts | `sprites/caelum/projectiles/CAMGA0.png`, `CAMGB0.png` | OpenAI image generation, directed by Damian Curti | Original project generation matching the supplied character sheets | Project-owned original | Yes | Compact transparent blue and violet bolts. |
 | Rulo complete state set | `sprites/caelum/rulo/RULOA1.png`–`RULOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied bear-warrior character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, axe melee, axe throw, pain, and death. |
 | Ronnie complete state set | `sprites/caelum/ronnie/RONIA1.png`–`RONIF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied Caelith character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, sword melee, golden cast, pain, and death. |
-| Rulo/Ronnie projectiles | `sprites/caelum/projectiles/CARUA0.png`, `CAROB0.png` | OpenAI image generation, directed by Damian Curti | Extracted from the project-owned ranged state atlases | Project-owned original adaptation | Yes | Thrown axe and straight golden Caelith bolt. |
+| Shared elemental projectile rotations | `sprites/caelum/projectiles/elemental/` | OpenAI image generation, directed by Damian Curti | Original project generation | Project-owned original | Yes | Eight-direction elemental families reused by player magic and predefined actors. |
+
 
 ## Rules
 
@@ -50,3 +50,11 @@ Every external asset must be recorded here before it can enter a public build.
   common baseline before visual inspection.
 - Source-generation mode: built-in image generation based on the two supplied
   character sheets, followed by project-local atlas extraction and validation.
+
+## Version 4.22.4 maintenance notes
+
+- Removed the obsolete `CAMGA0`, `CAMGB0`, `CARUA0`, and `CAROB0` projectile assets.
+- Rulo, Ronnie, Argento, and Caella now reuse the shared elemental projectile art.
+- Rulo rotation 1/5 was corrected across idle, stride, melee, ranged, pain, and death states.
+- The four predefined actor sprite sets received a conservative alpha/background cleanup without changing their authored silhouettes.
+- A broader semi-realistic redraw of Argento and Caella remains an art-direction task; it is not represented as completed by this maintenance pass.

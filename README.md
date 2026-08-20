@@ -149,3 +149,19 @@ The current development player class still inherits from `DoomPlayer`, and the t
 ## Public repository goal
 
 The repository is intended to be public on GitHub. Code and project structure should therefore remain understandable, reproducible, reviewable, and suitable for collaboration without access to the author's private design document.
+
+## Asset directory layout
+
+The development source keeps game sprites grouped by function. GZDoom supports deeper folders inside `/sprites/`, while sprite basenames must remain unique across the namespace.
+
+- `sprites/caelum/weapons/physical/` — physical melee/thrown weapon pickups.
+- `sprites/caelum/weapons/ranged/` — bows, crossbows and firearms.
+- `sprites/caelum/weapons/magic/` — staff, bell, book and statuette.
+- `sprites/caelum/armor/{body,head,hands,feet}/` — armor pieces by slot.
+- `sprites/caelum/shields/` — shield pickups.
+- `sprites/caelum/ammunition/` — ammunition pickups.
+- `sprites/caelum/consumables/` — consumable world sprites.
+- `sprites/caelum/items/` — keys, Tarot and quest/special items.
+- `sprites/caelum/materials/` — crafting materials.
+- `sprites/caelum/projectiles/elemental/` — elemental projectile rotations/static references.
+- character-specific folders remain separated by character name.

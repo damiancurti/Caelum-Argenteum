@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.22.4 — Predefined actor elemental homing and repository docs
+
+- Replaced the four predefined actors' legacy ranged projectiles with one shared guided elemental projectile using the same native seeker primitive as the Book.
+- Rulo alternates Earth/Poison, Ronnie Wind/Lightning, Argento Fire/Light, and Caella Water/Ice on successive ranged attacks.
+- Preserved each actor's existing damage preparation, magical critical roll, accuracy, push multiplier, health, armor, melee behavior, and other combat statistics.
+- Removed obsolete `CAMGA0`, `CAMGB0`, `CARUA0`, and `CAROB0` projectile sprites and their old projectile classes.
+- Corrected Rulo's front/back rotation mapping across all six state families and performed conservative alpha cleanup on all four predefined actor sprite sets.
+- Updated `docs/ASSET_REGISTER.md`, `docs/CHANGELOG.md`, and `docs/IMPLEMENTATION_STATUS.md` to cover the 4.19–4.22 development line, MAP01 test range, current javelin behavior, crafting-station foundation, asset organization, and planned combat refactor.
+- Kept the broader semi-realistic redraw of Argento/Caella as a pending art-direction task rather than silently replacing their visual identity.
+
 ## 4.12.0
 
 - Added an authoritative data catalogue for the sixteen definitive physical

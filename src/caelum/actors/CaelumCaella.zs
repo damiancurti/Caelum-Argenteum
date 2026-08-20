@@ -21,7 +21,7 @@ class CaelumCaella : CaelumCombatActor
         Super.PostBeginPlay();
         // Duende cleriga: tecnico 7 y mental 18.
         InitializeCombatProfile(9, 7, 7, 18, 7, 18, 9, 18);
-        InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_UNARMORED, 1);
+        InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MAGIC, 1);
     }
 
     States
@@ -43,9 +43,9 @@ class CaelumCaella : CaelumCombatActor
         Goto See;
     Missile:
         CAEL D 7 A_FaceTarget;
-        CAEL D 0 A_CaelumSpawnProjectile(
-            "CaelumCaellaMagicBolt", 40,
-            325, true
+        CAEL D 0 A_CaelumSpawnHomingElementalProjectile(
+            "CaelumActorHomingElementalProjectile", 40,
+            325, CaelumConstants.ESSENCE_WATER
         );
         CAEL A 11;
         Goto See;

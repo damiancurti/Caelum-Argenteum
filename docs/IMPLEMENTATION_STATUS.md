@@ -1,7 +1,27 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-This file describes the current executable prototype. The main design document
-remains the authority for rules not yet connected to gameplay.
+This file describes the current executable prototype. The main design document remains the authority for rules not yet connected to gameplay.
+
+## Current 4.22 development state
+
+**Implemented and under active manual validation**
+
+- MAP01 is a large flat combat/systems test range with central rooms, distance targets, an item/material gallery, crafting stations, and a silver-key test room containing Rulo, Argento, Caella, Ronnie, and the level exit.
+- Physical, ranged, and magical weapon families are playable through the current selector architecture. Javelin AltFire throws the weapon without ammunition, costs Air, loses exactly one durability, scales throw distance with the square root of physical power, uses physical damage scaling, and recovers at most half a replacement recipe across a full durability spent only on throws.
+- Weapon durability bases use the confirmed x10 scale. Armor, shields, inventory, Magic Box, carried load, survival resources, lucidity, adrenaline, pain, vulnerability, elemental projectiles, and the current HUD/debug foundations remain active.
+- Physical crafting recipes and material identities exist. Forge, Bow Workshop, Armor Workshop, Essence Altar, and Workbench actors exist and share one station interface; the Forge and Bow Workshop have the first playable recipe groups while the remaining station families are still being completed.
+- Project-owned material, equipment, key-item, face, and elemental projectile art is being organized into dedicated sprite/icon subfolders. Remaining visual cleanup is an active QA task.
+- Rulo, Ronnie, Argento, and Caella now use guided elemental ranged attacks: Earth/Poison, Wind/Lightning, Fire/Light, and Water/Ice respectively. The shared projectile follows the same native seeker primitive used by the Book.
+
+## Planned combat architecture refactor
+
+**Planned — do not treat as implemented**
+
+- Weapon behavior becomes independent from shield ownership. Physical weapons retain Fire/AltFire offensive profiles; ranged weapons gain magazines, Reload and precision Zoom/ADS cumulative with crouching; magical weapons retain primary/secondary elements.
+- User1 is reserved for independent Block mode; User2 for Seal-based Channel; User3 for Tarot-card activation; User4 for class ability.
+- Block mode prevents ordinary attacks except the planned spear/javelin exceptions and penalizes running speed. Attacking with another weapon cancels blocking.
+- A future Seal equipment slot supplies stats and an element. Completed Channel consumes Anima over time while immobilized and empowers the next physical attack with elemental damage/effect or greatly strengthens a matching-element magical attack. Exact channel timing, costs, interruption rules, and multipliers remain intentionally undefined until the author specifies them.
+- Calendar-driven weather, fast travel/dynamic-event integration, and strength-gated movable world props remain planned for the later environment/world-interaction phase.
 
 ## Definitive physical weapon and recipe catalogue 4.12.0
 

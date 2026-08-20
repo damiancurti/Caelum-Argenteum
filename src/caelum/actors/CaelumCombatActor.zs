@@ -3,9 +3,10 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    bool NextRangedSecondaryElement;
+
     CaelumAnatomyProfile AnatomyProfile;
     CaelumArmorModel CombatArmor;
-    CaelumElementalStatus ElementalStatus;
     int CombatMaximumHealth;
     int CombatToughness;
     int CombatResilience;
@@ -104,12 +105,6 @@ class CaelumCombatActor : Actor
         {
             AnatomyProfile = CaelumAnatomyProfile(new("CaelumAnatomyProfile"));
             AnatomyProfile.InitializeHumanoid();
-        }
-        if (ElementalStatus == null)
-        {
-            ElementalStatus = CaelumElementalStatus(
-                new("CaelumElementalStatus")
-            );
         }
         LastAnatomyLocation = CaelumConstants.HIT_LOCATION_NONE;
         LastAnatomyNaturalVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
@@ -252,12 +247,10 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
         CombatPhysicalAccuracyPercent = CalculateActorType1Percent(
             CombatEffectiveDexterity
-        ) * (ElementalStatus != null
-            ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
+        );
         CombatMagicalAccuracyPercent = CalculateActorType1Percent(
             CombatEffectiveInsight
-        ) * (ElementalStatus != null
-            ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
+        );
         CombatPhysicalCriticalChancePercent = Clamp(
             CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
                 + CalculateActorType2Percent(CombatEffectiveDexterity),
@@ -425,156 +418,42 @@ class CaelumCombatActor : Actor
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
-    bool RollActorQuintessenceEffect()
-    {
-        return Random[CaelumActorQuintessenceEffect](0, 999999) / 10000.0
-            < CaelumConstants.QUINTESSENCE_EFFECT_CHANCE_PERCENT;
-    }
-
-    void ApplyActorElementalLucidityLoss(double debuffScale)
-    {
-        double toughnessMultiplier = Clamp(
-            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
-            0.0,
-            1.0
-        );
-        CurrentCombatLucidity = Max(
-            0.0,
-            CurrentCombatLucidity
-                - CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
-                    * Max(0.0, debuffScale)
-                    * toughnessMultiplier
-        );
-        UpdateActorLucidityState();
-    }
-
-    void ApplyActorIncomingElementalPayload(
-        CaelumActorProjectile projectile,
-        int actualHealthLost
+    // Variante elemental guiada para actores de prueba. Reutiliza la misma
+    // metadata ofensiva y el mismo payload elemental que los hechizos del jugador.
+    // Cada actor alterna de forma determinista entre su elemento primario y secundario.
+    action void A_CaelumSpawnHomingElementalProjectile(
+        class<CaelumActorProjectile> missileType,
+        double spawnHeight,
+        int baseDamage,
+        int essenceType
     )
     {
-        if (projectile == null
-            || !projectile.CaelumElementalPayloadPrepared
-            || actualHealthLost <= 0)
-        {
-            return;
-        }
-        if (ElementalStatus == null)
-        {
-            ElementalStatus = CaelumElementalStatus(
-                new("CaelumElementalStatus")
-            );
-        }
-        double debuffScale = Max(
-            0.0, projectile.CaelumDebuffPowerPercent / 100.0
-        );
-        double duration = CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS
-            * debuffScale;
-        double controlPower =
-            CaelumConstants.ELEMENTAL_BASE_CONTROL_POWER_PERCENT
-                * debuffScale;
-        int dotDamage = Max(
-            1,
-            int(actualHealthLost
-                * CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO
-                * debuffScale + 0.5)
-        );
-        Actor effectSource = projectile.Target;
-        int essenceType = projectile.CaelumEssenceType;
-        bool secondary = projectile.CaelumSecondaryElement;
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(baseDamage, true);
+        if (calculatedDamage <= 0) { return; }
 
-        if (essenceType == CaelumConstants.ESSENCE_FIRE)
+        CaelumActorProjectile missile = CaelumActorProjectile(
+            combatActor.A_SpawnProjectile(missileType, spawnHeight)
+        );
+        if (missile != null)
         {
-            if (secondary)
-                ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
-                    duration, controlPower
-                );
-            else
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_BURN,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-        }
-        else if (essenceType == CaelumConstants.ESSENCE_WATER && secondary)
-        {
-            ElementalStatus.ApplyControlEffect(
-                CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
-                duration, controlPower
+            missile.StoreCaelumAttackResult(
+                calculatedDamage,
+                combatActor.LastCombatAttackAccuracySucceeded,
+                combatActor.LastCombatAttackCriticalHit,
+                true,
+                combatActor.CombatMagicalPushMultiplier
+            );
+            missile.StoreCaelumElementalPayload(
+                essenceType,
+                combatActor.NextRangedSecondaryElement,
+                100.0,
+                100.0
             );
         }
-        else if (essenceType == CaelumConstants.ESSENCE_EARTH)
-        {
-            if (secondary)
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_POISON,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-            else ApplyActorElementalLucidityLoss(debuffScale);
-        }
-        else if (essenceType == CaelumConstants.ESSENCE_WIND)
-        {
-            if (secondary)
-                ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
-                    CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
-                        * debuffScale,
-                    1.0
-                );
-            else
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_CUT,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-        }
-        else if (essenceType == CaelumConstants.ESSENCE_QUINTESSENCE
-            && secondary)
-        {
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_BURN,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
-                    duration, controlPower
-                );
-            if (RollActorQuintessenceEffect())
-                ApplyActorAttackPush(
-                    self, projectile.Angle,
-                    projectile.CaelumPushMultiplier * 1.5
-                );
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
-                    duration, controlPower
-                );
-            if (RollActorQuintessenceEffect())
-                ApplyActorElementalLucidityLoss(debuffScale);
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_POISON,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyDamageOverTime(
-                    CaelumConstants.ELEMENTAL_EFFECT_CUT,
-                    duration, debuffScale, dotDamage, effectSource
-                );
-            if (RollActorQuintessenceEffect())
-                ApplyActorAttackPush(
-                    self, projectile.Angle,
-                    projectile.CaelumPushMultiplier * 0.6
-                );
-            if (RollActorQuintessenceEffect())
-                ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
-                    CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
-                        * debuffScale,
-                    1.0
-                );
-        }
+        combatActor.NextRangedSecondaryElement = !combatActor.NextRangedSecondaryElement;
+        combatActor.PendingCombatCriticalDelivery = false;
     }
 
     override int DamageMobj(
@@ -586,19 +465,6 @@ class CaelumCombatActor : Actor
         double angle
     )
     {
-        if (mod == 'CaelumElementalDOT')
-        {
-            int elementalHealthBefore = health;
-            int elementalResult = Super.DamageMobj(
-                inflictor, source, damage, mod, flags | DMG_NO_ARMOR, angle
-            );
-            if (health < elementalHealthBefore)
-            {
-                UpdateCombatHealthEffects();
-                MarkActorCombatActivity();
-            }
-            return elementalResult;
-        }
         LastCombatEvasionAttempted = false;
         LastCombatEvasionSucceeded = false;
         LastCombatEvasionChancePercent = 0.0;
@@ -683,9 +549,6 @@ class CaelumCombatActor : Actor
                     self,
                     inflictor.Angle,
                     attackProjectile.CaelumPushMultiplier
-                );
-                ApplyActorIncomingElementalPayload(
-                    attackProjectile, actualHealthLost
                 );
             }
             ApplyActorLocalizedLucidityLoss(
@@ -871,9 +734,6 @@ class CaelumCombatActor : Actor
                     self,
                     inflictor.AngleTo(self),
                     attackProjectile.CaelumPushMultiplier
-                );
-                ApplyActorIncomingElementalPayload(
-                    attackProjectile, actualHealthLost
                 );
             }
             if (lucidityNaturalGrade >= 0)
@@ -1221,9 +1081,7 @@ class CaelumCombatActor : Actor
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
             * CombatHealthPerformanceMultiplier;
-        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier
-            * (ElementalStatus != null
-                ? ElementalStatus.GetMovementMultiplier() : 1.0);
+        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier;
     }
 
     void CycleDebugCombatHealthState()
@@ -1283,7 +1141,6 @@ class CaelumCombatActor : Actor
     override void Tick()
     {
         Super.Tick();
-        if (ElementalStatus != null) { ElementalStatus.Tick(self); }
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
         if (health > 0
@@ -1298,9 +1155,7 @@ class CaelumCombatActor : Actor
             );
             UpdateActorLucidityState();
         }
-        if (CombatLucidityPhysicalStunRemaining > 0.0
-            || (ElementalStatus != null
-                && ElementalStatus.IsLightningStunned()))
+        if (CombatLucidityPhysicalStunRemaining > 0.0)
         {
             Vel.X = 0.0;
             Vel.Y = 0.0;

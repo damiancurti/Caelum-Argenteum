@@ -4,7 +4,7 @@
 Sprite "CDMYA0", 48, 72
 {
     Offset 24, 72
-    Patch "sprites/caelum/CDMYA0.png", 0, 0
+    Patch "sprites/caelum/actors/training/CDMYA0.png", 0, 0
 }
 
 // Argento's raw PNGs share one 96x80 canvas and a common floor baseline.
@@ -113,9 +113,6 @@ Sprite "CAELF7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF7.png
 Sprite "CAELF8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF8.png", 0, 0 }
 
 // Compact additive-looking magic bolts; brightness comes from their actor state.
-Sprite "CAMGA0", 64, 32 { Offset 32, 16 Patch "sprites/caelum/projectiles/CAMGA0.png", 0, 0 }
-Sprite "CAMGB0", 64, 32 { Offset 32, 16 Patch "sprites/caelum/projectiles/CAMGB0.png", 0, 0 }
-
 // Rulo uses an 80-unit bear-warrior silhouette and wide canvases for axe arcs.
 Sprite "RULOA1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA1.png", 0, 0 }
 Sprite "RULOA2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA2.png", 0, 0 }
@@ -216,6 +213,177 @@ Sprite "RONIF6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF6.png
 Sprite "RONIF7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF7.png", 0, 0 }
 Sprite "RONIF8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF8.png", 0, 0 }
 
-// Rulo thrown axe and Ronnie golden magic projectile.
-Sprite "CARUA0", 64, 40 { Offset 32, 20 Patch "sprites/caelum/projectiles/CARUA0.png", 0, 0 }
-Sprite "CAROB0", 64, 32 { Offset 32, 16 Patch "sprites/caelum/projectiles/CAROB0.png", 0, 0 }
+// -----------------------------------------------------------------------------
+// Caelum Argenteum 4.22.4c - explicit world-sprite alignment
+// Los pickups usan como piso el último píxel visible real del PNG.
+// Los proyectiles elementales se centran sobre su origen físico.
+// -----------------------------------------------------------------------------
+
+Sprite "CAMUA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CAMUA0.png", 0, 0 }
+Sprite "CARRA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CARRA0.png", 0, 0 }
+Sprite "CBOLA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CBOLA0.png", 0, 0 }
+Sprite "CCAAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CCAAA0.png", 0, 0 }
+Sprite "CAHVA0", 64, 64 { Offset 32, 59 Patch "sprites/caelum/armor/body/CAHVA0.png", 0, 0 }
+Sprite "CALIA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CALIA0.png", 0, 0 }
+Sprite "CAMAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CAMAA0.png", 0, 0 }
+Sprite "CAMDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CAMDA0.png", 0, 0 }
+Sprite "CBHVA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/feet/CBHVA0.png", 0, 0 }
+Sprite "CBLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/feet/CBLTA0.png", 0, 0 }
+Sprite "CBMDA0", 64, 64 { Offset 32, 58 Patch "sprites/caelum/armor/feet/CBMDA0.png", 0, 0 }
+Sprite "CBOMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/feet/CBOMA0.png", 0, 0 }
+Sprite "CGHVA0", 64, 64 { Offset 32, 58 Patch "sprites/caelum/armor/hands/CGHVA0.png", 0, 0 }
+Sprite "CGLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/hands/CGLTA0.png", 0, 0 }
+Sprite "CGMDA0", 64, 64 { Offset 32, 53 Patch "sprites/caelum/armor/hands/CGMDA0.png", 0, 0 }
+Sprite "CGMMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/hands/CGMMA0.png", 0, 0 }
+Sprite "CHEHA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/head/CHEHA0.png", 0, 0 }
+Sprite "CHLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHLTA0.png", 0, 0 }
+Sprite "CHMDA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHMDA0.png", 0, 0 }
+Sprite "CHMGA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHMGA0.png", 0, 0 }
+Sprite "CANIA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CANIA0.png", 0, 0 }
+Sprite "CENEA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CENEA0.png", 0, 0 }
+Sprite "CFOOA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CFOOA0.png", 0, 0 }
+Sprite "CMEDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CMEDA0.png", 0, 0 }
+Sprite "CWATA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CWATA0.png", 0, 0 }
+Sprite "CKEYA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/items/CKEYA0.png", 0, 0 }
+Sprite "CSELA0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/items/CSELA0.png", 0, 0 }
+Sprite "CTARA0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/items/CTARA0.png", 0, 0 }
+Sprite "M000A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M000A0.png", 0, 0 }
+Sprite "M001A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M001A0.png", 0, 0 }
+Sprite "M002A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M002A0.png", 0, 0 }
+Sprite "M003A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M003A0.png", 0, 0 }
+Sprite "M004A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M004A0.png", 0, 0 }
+Sprite "M005A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M005A0.png", 0, 0 }
+Sprite "M006A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M006A0.png", 0, 0 }
+Sprite "M007A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M007A0.png", 0, 0 }
+Sprite "M008A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M008A0.png", 0, 0 }
+Sprite "M009A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M009A0.png", 0, 0 }
+Sprite "M010A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M010A0.png", 0, 0 }
+Sprite "M011A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M011A0.png", 0, 0 }
+Sprite "M012A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M012A0.png", 0, 0 }
+Sprite "M013A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M013A0.png", 0, 0 }
+Sprite "M014A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M014A0.png", 0, 0 }
+Sprite "M015A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M015A0.png", 0, 0 }
+Sprite "M016A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M016A0.png", 0, 0 }
+Sprite "M017A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M017A0.png", 0, 0 }
+Sprite "M018A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M018A0.png", 0, 0 }
+Sprite "M019A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M019A0.png", 0, 0 }
+Sprite "M020A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M020A0.png", 0, 0 }
+Sprite "M021A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M021A0.png", 0, 0 }
+Sprite "M022A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M022A0.png", 0, 0 }
+Sprite "M023A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M023A0.png", 0, 0 }
+Sprite "M024A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M024A0.png", 0, 0 }
+Sprite "M025A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M025A0.png", 0, 0 }
+Sprite "M026A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M026A0.png", 0, 0 }
+Sprite "M027A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M027A0.png", 0, 0 }
+Sprite "M028A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M028A0.png", 0, 0 }
+Sprite "M029A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M029A0.png", 0, 0 }
+Sprite "M030A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M030A0.png", 0, 0 }
+Sprite "M031A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M031A0.png", 0, 0 }
+Sprite "M032A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M032A0.png", 0, 0 }
+Sprite "M033A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M033A0.png", 0, 0 }
+Sprite "M034A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M034A0.png", 0, 0 }
+Sprite "M035A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M035A0.png", 0, 0 }
+Sprite "M036A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M036A0.png", 0, 0 }
+Sprite "M037A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M037A0.png", 0, 0 }
+Sprite "M038A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M038A0.png", 0, 0 }
+Sprite "M039A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M039A0.png", 0, 0 }
+Sprite "M040A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M040A0.png", 0, 0 }
+Sprite "M041A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M041A0.png", 0, 0 }
+Sprite "M042A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M042A0.png", 0, 0 }
+Sprite "CBUCA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CBUCA0.png", 0, 0 }
+Sprite "CSHKA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHKA0.png", 0, 0 }
+Sprite "CSHMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHMA0.png", 0, 0 }
+Sprite "CSHTA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHTA0.png", 0, 0 }
+Sprite "CBELA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CBELA0.png", 0, 0 }
+Sprite "CBOOA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CBOOA0.png", 0, 0 }
+Sprite "CSTAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CSTAA0.png", 0, 0 }
+Sprite "CSTFA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CSTFA0.png", 0, 0 }
+Sprite "CAXEA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CAXEA0.png", 0, 0 }
+Sprite "CDAGA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CDAGA0.png", 0, 0 }
+Sprite "CFLAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CFLAA0.png", 0, 0 }
+Sprite "CGAUA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CGAUA0.png", 0, 0 }
+Sprite "CGRSA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CGRSA0.png", 0, 0 }
+Sprite "CHALA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CHALA0.png", 0, 0 }
+Sprite "CHATA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CHATA0.png", 0, 0 }
+Sprite "CJAVA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CJAVA0.png", 0, 0 }
+Sprite "CMACA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CMACA0.png", 0, 0 }
+Sprite "CSPRA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CSPRA0.png", 0, 0 }
+Sprite "CSWDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CSWDA0.png", 0, 0 }
+Sprite "CWAXA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CWAXA0.png", 0, 0 }
+Sprite "CBOWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CBOWA0.png", 0, 0 }
+Sprite "CCARA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CCARA0.png", 0, 0 }
+Sprite "CCBWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CCBWA0.png", 0, 0 }
+Sprite "CLBWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CLBWA0.png", 0, 0 }
+
+Sprite "XAIRA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA1.png", 0, 0 }
+Sprite "XAIRA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA2.png", 0, 0 }
+Sprite "XAIRA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA3.png", 0, 0 }
+Sprite "XAIRA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA4.png", 0, 0 }
+Sprite "XAIRA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA5.png", 0, 0 }
+Sprite "XAIRA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA6.png", 0, 0 }
+Sprite "XAIRA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA7.png", 0, 0 }
+Sprite "XAIRA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA8.png", 0, 0 }
+Sprite "XERTA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA1.png", 0, 0 }
+Sprite "XERTA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA2.png", 0, 0 }
+Sprite "XERTA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA3.png", 0, 0 }
+Sprite "XERTA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA4.png", 0, 0 }
+Sprite "XERTA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA5.png", 0, 0 }
+Sprite "XERTA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA6.png", 0, 0 }
+Sprite "XERTA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA7.png", 0, 0 }
+Sprite "XERTA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XERTA8.png", 0, 0 }
+Sprite "XFIRA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA1.png", 0, 0 }
+Sprite "XFIRA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA2.png", 0, 0 }
+Sprite "XFIRA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA3.png", 0, 0 }
+Sprite "XFIRA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA4.png", 0, 0 }
+Sprite "XFIRA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA5.png", 0, 0 }
+Sprite "XFIRA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA6.png", 0, 0 }
+Sprite "XFIRA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA7.png", 0, 0 }
+Sprite "XFIRA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XFIRA8.png", 0, 0 }
+Sprite "XICEA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA1.png", 0, 0 }
+Sprite "XICEA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA2.png", 0, 0 }
+Sprite "XICEA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA3.png", 0, 0 }
+Sprite "XICEA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA4.png", 0, 0 }
+Sprite "XICEA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA5.png", 0, 0 }
+Sprite "XICEA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA6.png", 0, 0 }
+Sprite "XICEA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA7.png", 0, 0 }
+Sprite "XICEA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XICEA8.png", 0, 0 }
+Sprite "XLITA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA1.png", 0, 0 }
+Sprite "XLITA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA2.png", 0, 0 }
+Sprite "XLITA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA3.png", 0, 0 }
+Sprite "XLITA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA4.png", 0, 0 }
+Sprite "XLITA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA5.png", 0, 0 }
+Sprite "XLITA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA6.png", 0, 0 }
+Sprite "XLITA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA7.png", 0, 0 }
+Sprite "XLITA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XLITA8.png", 0, 0 }
+Sprite "XQUIA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA1.png", 0, 0 }
+Sprite "XQUIA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA2.png", 0, 0 }
+Sprite "XQUIA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA3.png", 0, 0 }
+Sprite "XQUIA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA4.png", 0, 0 }
+Sprite "XQUIA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA5.png", 0, 0 }
+Sprite "XQUIA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA6.png", 0, 0 }
+Sprite "XQUIA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA7.png", 0, 0 }
+Sprite "XQUIA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XQUIA8.png", 0, 0 }
+Sprite "XRAYA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA1.png", 0, 0 }
+Sprite "XRAYA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA2.png", 0, 0 }
+Sprite "XRAYA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA3.png", 0, 0 }
+Sprite "XRAYA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA4.png", 0, 0 }
+Sprite "XRAYA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA5.png", 0, 0 }
+Sprite "XRAYA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA6.png", 0, 0 }
+Sprite "XRAYA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA7.png", 0, 0 }
+Sprite "XRAYA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XRAYA8.png", 0, 0 }
+Sprite "XVSNA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA1.png", 0, 0 }
+Sprite "XVSNA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA2.png", 0, 0 }
+Sprite "XVSNA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA3.png", 0, 0 }
+Sprite "XVSNA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA4.png", 0, 0 }
+Sprite "XVSNA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA5.png", 0, 0 }
+Sprite "XVSNA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA6.png", 0, 0 }
+Sprite "XVSNA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA7.png", 0, 0 }
+Sprite "XVSNA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XVSNA8.png", 0, 0 }
+Sprite "XWATA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA1.png", 0, 0 }
+Sprite "XWATA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA2.png", 0, 0 }
+Sprite "XWATA3", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA3.png", 0, 0 }
+Sprite "XWATA4", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA4.png", 0, 0 }
+Sprite "XWATA5", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA5.png", 0, 0 }
+Sprite "XWATA6", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA6.png", 0, 0 }
+Sprite "XWATA7", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA7.png", 0, 0 }
+Sprite "XWATA8", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XWATA8.png", 0, 0 }
