@@ -8689,14 +8689,13 @@ class CaelumPlayer : DoomPlayer
                 * AirStatePerformanceMultiplier
                 * SurvivalPerformanceMultiplier
                 * HealthPerformanceMultiplier;
-            // El salto usa la curva Tipo 4 propia de Agilidad, pero
-            // aplica la raíz cuadrada sobre su multiplicador final. Así
-            // conserva la progresión oficial del atributo con rendimientos
-            // decrecientes específicos para la altura de salto.
-            double jumpAgilityTypeFourPercent =
-                DerivedStats.CalculateType4Percent(Attributes.Agility);
+            // El salto usa la curva Tipo 1 de Agilidad y aplica la raíz
+            // cuadrada sobre su multiplicador final. Conserva el crecimiento
+            // fuerte de Tipo 1, pero amortiguado para evitar saltos absurdos.
+            double jumpAgilityTypeOnePercent =
+                DerivedStats.CalculateType1Percent(Attributes.Agility);
             double jumpAgilityFactor = Sqrt(
-                Max(0.0, jumpAgilityTypeFourPercent / 100.0)
+                Max(0.0, jumpAgilityTypeOnePercent / 100.0)
             );
             EffectiveJumpHeightPercent = 100.0
                 * jumpAgilityFactor
@@ -8959,44 +8958,13 @@ class CaelumPlayer : DoomPlayer
             ArmorModel.Durability[slot] = 0;
         }
 
-        Actor shield = Spawn(
-            "CaelumShieldPickup", GetStartingPickupPosition(4), NO_REPLACE
-        );
-        if (shield != null)
-        {
-            shield.args[0] = shieldType;
-            shield.args[1] = 1;
-            shield.args[2] = startingSize + 1;
-        }
+        // La creación ya no genera equipo físico alrededor del jugador.
+        // Armaduras, escudos, armas y munición se obtienen posteriormente
+        // mediante pickups, crafting u otras fuentes del mundo.
         ShieldModel.Equipped = false;
         DebugShieldBlocking = false;
-
-        // El entorno inicial conserva únicamente espada, bastón y carabina.
-        // Ampliar el catálogo no debe regalar automáticamente armas nuevas.
-        for (int weaponType = 0; weaponType < 3; weaponType++)
-        {
-            Actor weapon = Spawn(
-                "CaelumWeaponPickup",
-                GetStartingPickupPosition(5 + weaponType),
-                NO_REPLACE
-            );
-            if (weapon != null)
-            {
-                weapon.args[0] = weaponType;
-                weapon.args[1] = 1;
-                weapon.args[2] = startingSize + 1;
-            }
-        }
         WeaponModel.Equipped = false;
         EnsureWeaponFamilySelectors();
-
-        Inventory ammunition = Inventory(Spawn(
-            "CaelumCarbineAmmo", GetStartingPickupPosition(8), NO_REPLACE
-        ));
-        if (ammunition != null)
-        {
-            ammunition.Amount = CaelumConstants.WEAPON_CARBINE_STARTING_AMMO;
-        }
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
     }
