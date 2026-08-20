@@ -186,6 +186,7 @@ class CaelumPlayer : DoomPlayer
     bool LastShieldWithinCoverage;
     double LastShieldAbsorbedDamage;
     int LastShieldHealthDamage;
+    bool LastShieldBlockedAttack;
     int LastShieldDurabilityLoss;
     double LastShieldDurabilityChancePercent;
     double LastShieldDurabilityRollPercent;
@@ -5772,9 +5773,12 @@ class CaelumPlayer : DoomPlayer
                     inflictor.AngleTo(self),
                     attackProjectile.CaelumPushMultiplier
                 );
-                ApplyIncomingElementalPayload(
-                    attackProjectile, actualHealthLost
-                );
+                if (!LastShieldBlockedAttack)
+                {
+                    ApplyIncomingElementalPayload(
+                        attackProjectile, actualHealthLost
+                    );
+                }
             }
             if (lucidityNaturalGrade >= 0)
             {
@@ -5920,10 +5924,13 @@ class CaelumPlayer : DoomPlayer
             );
             UpdateHealthStateEffects();
             CalculateAndTriggerPain(actualHealthLost, adrenalineRatioBeforeDamage);
-            AddCombatAdrenaline(
-                CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
-                CaelumConstants.ADRENALINE_EVENT_DAMAGE
-            );
+            if (!LastShieldBlockedAttack)
+            {
+                AddCombatAdrenaline(
+                    CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
+                    CaelumConstants.ADRENALINE_EVENT_DAMAGE
+                );
+            }
             MarkCombatActivity();
         }
         return result;
@@ -5965,6 +5972,35 @@ class CaelumPlayer : DoomPlayer
         return LastIncomingActorCriticalHit;
     }
 
+    void RegisterNativeReflectedShieldBlock(Actor missile)
+    {
+        if (!CombatBlockModeActive
+            || ShieldModel == null
+            || !ShieldModel.Equipped
+            || ShieldModel.Durability <= 0
+            || ShieldModel.ShieldType != CaelumConstants.SHIELD_TYPE_MAGIC)
+        {
+            return;
+        }
+
+        Actor attacker = missile != null ? missile.Target : null;
+        double incomingOffset = 180.0;
+        if (attacker != null)
+        {
+            incomingOffset = Abs(DeltaAngle(Angle, AngleTo(attacker)));
+        }
+        if (incomingOffset > ShieldModel.GetCoverageDegrees() / 2.0)
+        {
+            return;
+        }
+
+        AddCombatAdrenaline(
+            CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK,
+            CaelumConstants.ADRENALINE_EVENT_SHIELD_BLOCK
+        );
+        MarkCombatActivity();
+    }
+
     double ResolveRealShieldDamage(
         Actor inflictor,
         Actor source,
@@ -5974,6 +6010,7 @@ class CaelumPlayer : DoomPlayer
     {
         LastShieldAbsorbedDamage = 0.0;
         LastShieldHealthDamage = Max(0, int(incomingDamage + 0.5));
+        LastShieldBlockedAttack = false;
         LastShieldDurabilityLoss = 0;
         LastShieldDurabilityChancePercent = 0.0;
         LastShieldDurabilityRollPercent = 0.0;
@@ -5994,6 +6031,8 @@ class CaelumPlayer : DoomPlayer
             && ShieldModel.Durability > 0
             && LastShieldWithinCoverage;
         if (!shieldCanBlock) { return incomingDamage; }
+        LastShieldBlockedAttack = true;
+
 
         int damageKind = mod == 'CaelumMagicTest'
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL

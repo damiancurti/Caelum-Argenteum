@@ -98,6 +98,21 @@ class CaelumActorProjectile : Actor
         CaelumWearWeaponSize = equipmentSize;
     }
 
+    override int SpecialMissileHit(Actor victim)
+    {
+        CaelumPlayer playerVictim = CaelumPlayer(victim);
+        if (playerVictim != null
+            && playerVictim.CombatBlockModeActive
+            && playerVictim.ShieldModel != null
+            && playerVictim.ShieldModel.Equipped
+            && playerVictim.ShieldModel.ShieldType
+                == CaelumConstants.SHIELD_TYPE_MAGIC)
+        {
+            playerVictim.RegisterNativeReflectedShieldBlock(self);
+        }
+        return Super.SpecialMissileHit(victim);
+    }
+
     int GetCaelumPreparedDamage(int fallbackDamage)
     {
         if (!CaelumAttackPrepared)
