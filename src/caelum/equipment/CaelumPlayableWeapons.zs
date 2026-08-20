@@ -575,13 +575,19 @@ class CaelumMagicSelectorWeapon : Weapon
         return CaelumConstants.WEAPON_TYPE_STAFF;
     }
 
+    virtual int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_FIRE;
+    }
+
     action void A_CaelumActivateWeapon()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.ActivateEquippedWeaponType(
-                invoker.GetCaelumWeaponType()
+            caelumPlayer.ActivateEquippedMagicWeapon(
+                invoker.GetCaelumWeaponType(),
+                invoker.GetCaelumEssenceType()
             );
         }
     }
@@ -591,8 +597,9 @@ class CaelumMagicSelectorWeapon : Weapon
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.PerformWeaponFamilyPrimaryAttack(
-                invoker.GetCaelumWeaponType()
+            caelumPlayer.PerformMagicWeaponPrimaryAttack(
+                invoker.GetCaelumWeaponType(),
+                invoker.GetCaelumEssenceType()
             );
         }
     }
@@ -602,8 +609,9 @@ class CaelumMagicSelectorWeapon : Weapon
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.PerformWeaponFamilySecondaryAction(
-                invoker.GetCaelumWeaponType()
+            caelumPlayer.PerformMagicWeaponSecondaryAttack(
+                invoker.GetCaelumWeaponType(),
+                invoker.GetCaelumEssenceType()
             );
         }
     }
@@ -716,6 +724,390 @@ class CaelumStatuetteWeapon : CaelumMagicSelectorWeapon
     override int GetCaelumWeaponType()
     {
         return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+}
+
+// V4.24: selectores mágicos por familia elemental.
+// Slots: 6 Fuego, 7 Agua, 8 Tierra, 9 Aire, 0 Quintaesencia.
+// Dentro de cada slot se recorren Bastón, Campana, Libro y Estatuilla.
+
+class CaelumFireStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 603;
+        Weapon.SlotNumber 6;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_FIRE;
+    }
+}
+
+class CaelumFireBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 602;
+        Weapon.SlotNumber 6;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_FIRE;
+    }
+}
+
+class CaelumFireBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 601;
+        Weapon.SlotNumber 6;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_FIRE;
+    }
+}
+
+class CaelumFireStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 6;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_FIRE;
+    }
+}
+
+class CaelumWaterStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 603;
+        Weapon.SlotNumber 7;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WATER;
+    }
+}
+
+class CaelumWaterBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 602;
+        Weapon.SlotNumber 7;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WATER;
+    }
+}
+
+class CaelumWaterBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 601;
+        Weapon.SlotNumber 7;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WATER;
+    }
+}
+
+class CaelumWaterStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 7;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WATER;
+    }
+}
+
+class CaelumEarthStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 603;
+        Weapon.SlotNumber 8;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_EARTH;
+    }
+}
+
+class CaelumEarthBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 602;
+        Weapon.SlotNumber 8;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_EARTH;
+    }
+}
+
+class CaelumEarthBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 601;
+        Weapon.SlotNumber 8;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_EARTH;
+    }
+}
+
+class CaelumEarthStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 8;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_EARTH;
+    }
+}
+
+class CaelumAirStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 603;
+        Weapon.SlotNumber 9;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WIND;
+    }
+}
+
+class CaelumAirBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 602;
+        Weapon.SlotNumber 9;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WIND;
+    }
+}
+
+class CaelumAirBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 601;
+        Weapon.SlotNumber 9;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WIND;
+    }
+}
+
+class CaelumAirStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 9;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_WIND;
+    }
+}
+
+class CaelumQuintessenceStaffWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 603;
+        Weapon.SlotNumber 0;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STAFF;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_QUINTESSENCE;
+    }
+}
+
+class CaelumQuintessenceBellWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 602;
+        Weapon.SlotNumber 0;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BELL;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_QUINTESSENCE;
+    }
+}
+
+class CaelumQuintessenceBookWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 601;
+        Weapon.SlotNumber 0;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_BOOK;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_QUINTESSENCE;
+    }
+}
+
+class CaelumQuintessenceStatuetteWeapon : CaelumMagicSelectorWeapon
+{
+    Default
+    {
+        Weapon.SelectionOrder 600;
+        Weapon.SlotNumber 0;
+    }
+
+    override int GetCaelumWeaponType()
+    {
+        return CaelumConstants.WEAPON_TYPE_STATUETTE;
+    }
+
+    override int GetCaelumEssenceType()
+    {
+        return CaelumConstants.ESSENCE_QUINTESSENCE;
     }
 }
 

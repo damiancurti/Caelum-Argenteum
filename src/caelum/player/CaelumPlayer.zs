@@ -619,6 +619,105 @@ class CaelumPlayer : DoomPlayer
         return false;
     }
 
+
+    bool HasEquippedNativeMagicWeapon(
+        int weaponType, int essenceType
+    )
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
+            if (item != null
+                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && item.ItemType == weaponType
+                && item.EssenceType == essenceType
+                && item.Equipped
+                && !item.InMagicBox)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool ActivateEquippedMagicWeapon(
+        int requestedWeaponType, int requestedEssenceType
+    )
+    {
+        if (WeaponModel == null) { return false; }
+
+        int weaponType = Clamp(
+            requestedWeaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
+        );
+        int essenceType = Clamp(
+            requestedEssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+
+        if (CombatBlockModeActive
+            && WeaponModel.Equipped
+            && (WeaponModel.WeaponType != weaponType
+                || WeaponModel.EssenceType != essenceType))
+        {
+            CancelCombatBlockMode();
+        }
+
+        if (WeaponModel.Equipped
+            && WeaponModel.WeaponType == weaponType
+            && WeaponModel.EssenceType == essenceType
+            && HasEquippedNativeMagicWeapon(weaponType, essenceType))
+        {
+            return true;
+        }
+
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
+
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
+            if (item != null
+                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && item.ItemType == weaponType
+                && item.EssenceType == essenceType
+                && item.Equipped
+                && !item.InMagicBox)
+            {
+                WeaponModel.WeaponType = weaponType;
+                WeaponModel.Tier = item.Tier;
+                WeaponModel.Size = item.EquipmentSize;
+                WeaponModel.Durability = item.Durability;
+                WeaponModel.EssenceType = essenceType;
+                SelectedEssenceType = essenceType;
+                WeaponModel.Equipped = true;
+                EquippedWeaponCooldownRemaining = 0.0;
+                ApplyCharacterProfile();
+                PersistCharacterState();
+                RefreshEquipmentSelectionPreview();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void PerformMagicWeaponPrimaryAttack(
+        int weaponType, int essenceType
+    )
+    {
+        if (ActivateEquippedMagicWeapon(weaponType, essenceType))
+        {
+            PerformEquippedWeaponPrimaryAttack();
+        }
+    }
+
+    void PerformMagicWeaponSecondaryAttack(
+        int weaponType, int essenceType
+    )
+    {
+        if (ActivateEquippedMagicWeapon(weaponType, essenceType))
+        {
+            PerformEquippedWeaponSecondaryAttack();
+        }
+    }
+
     int CountNativeMagicBoxSlots()
     {
         int total = 0;
@@ -1195,9 +1294,28 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    // Los selectores invisibles ocupan los botones nativos 2 a 6. Las piezas
-    // reales permanecen en Actor.Inv; repetir una tecla recorre los actores
-    // Weapon equipados que GZDoom mantiene dentro del mismo SlotNumber.
+    void EnsureMagicWeaponSelector(
+        int weaponType,
+        int essenceType,
+        class<Inventory> selectorClass
+    )
+    {
+        bool shouldExist = HasEquippedNativeMagicWeapon(
+            weaponType, essenceType
+        );
+        if (shouldExist && FindInventory(selectorClass) == null)
+        {
+            GiveInventoryType(selectorClass);
+        }
+        else if (!shouldExist)
+        {
+            TakeInventory(selectorClass, 1);
+        }
+    }
+
+    // Los selectores físicos conservan sus slots. Las armas mágicas se
+    // agrupan por elemento: 6 Fuego, 7 Agua, 8 Tierra, 9 Aire y 0
+    // Quintaesencia (el slot 0 representa la décima familia numérica).
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
@@ -1265,52 +1383,112 @@ class CaelumPlayer : DoomPlayer
             CaelumConstants.WEAPON_TYPE_CROSSBOW,
             "CaelumCrossbowSelectorWeapon"
         );
-        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_STAFF)
-            && FindInventory("CaelumStaffWeapon") == null)
-        {
-            GiveInventoryType("CaelumStaffWeapon");
-        }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_STAFF
-        ))
-        {
-            TakeInventory("CaelumStaffWeapon", 1);
-        }
-        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_BELL)
-            && FindInventory("CaelumBellWeapon") == null)
-        {
-            GiveInventoryType("CaelumBellWeapon");
-        }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_BELL
-        ))
-        {
-            TakeInventory("CaelumBellWeapon", 1);
-        }
-        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_BOOK)
-            && FindInventory("CaelumBookWeapon") == null)
-        {
-            GiveInventoryType("CaelumBookWeapon");
-        }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_BOOK
-        ))
-        {
-            TakeInventory("CaelumBookWeapon", 1);
-        }
-        if (HasEquippedNativeWeaponType(CaelumConstants.WEAPON_TYPE_STATUETTE)
-            && FindInventory("CaelumStatuetteWeapon") == null)
-        {
-            GiveInventoryType("CaelumStatuetteWeapon");
-        }
-        else if (!HasEquippedNativeWeaponType(
-            CaelumConstants.WEAPON_TYPE_STATUETTE
-        ))
-        {
-            TakeInventory("CaelumStatuetteWeapon", 1);
-        }
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_FIRE,
+            "CaelumFireStaffWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_FIRE,
+            "CaelumFireBellWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_FIRE,
+            "CaelumFireBookWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_FIRE,
+            "CaelumFireStatuetteWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WATER,
+            "CaelumWaterStaffWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WATER,
+            "CaelumWaterBellWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WATER,
+            "CaelumWaterBookWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WATER,
+            "CaelumWaterStatuetteWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_EARTH,
+            "CaelumEarthStaffWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_EARTH,
+            "CaelumEarthBellWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_EARTH,
+            "CaelumEarthBookWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_EARTH,
+            "CaelumEarthStatuetteWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_WIND,
+            "CaelumAirStaffWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_WIND,
+            "CaelumAirBellWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_WIND,
+            "CaelumAirBookWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_WIND,
+            "CaelumAirStatuetteWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            "CaelumQuintessenceStaffWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BELL,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            "CaelumQuintessenceBellWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_BOOK,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            "CaelumQuintessenceBookWeapon"
+        );
+        EnsureMagicWeaponSelector(
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_QUINTESSENCE,
+            "CaelumQuintessenceStatuetteWeapon"
+        );
         // Los selectores genericos anteriores quedan retirados al migrar al
         // ciclo nativo por arma; la propiedad y durabilidad no se modifican.
+        TakeInventory("CaelumStaffWeapon", 1);
+        TakeInventory("CaelumBellWeapon", 1);
+        TakeInventory("CaelumBookWeapon", 1);
+        TakeInventory("CaelumStatuetteWeapon", 1);
         TakeInventory("CaelumLightWeapon", 1);
         TakeInventory("CaelumSwordWeapon", 1);
         TakeInventory("CaelumLargeWeapon", 1);
@@ -8806,16 +8984,26 @@ class CaelumPlayer : DoomPlayer
 
         if (DerivedStats != null)
         {
-            EffectiveEvasionChance = DerivedStats.MassAdjustedEvasionChance
+            // La penalización de carga depende únicamente del porcentaje de
+            // capacidad usado. 0% = 100% rendimiento; 50% = 50%;
+            // 100% o más = 0%. La masa corporal absoluta no interviene.
+            double loadPerformanceMultiplier = 1.0 - Clamp(
+                DerivedStats.LoadRatio, 0.0, 1.0
+            );
+
+            EffectiveEvasionChance = DerivedStats.BaseEvasionChance
+                * loadPerformanceMultiplier
                 * AirStatePerformanceMultiplier
                 * HealthPerformanceMultiplier;
-            EffectiveMovementPercent = DerivedStats.MassAdjustedMovementPercent
+
+            EffectiveMovementPercent = DerivedStats.BaseMovementPercent
+                * loadPerformanceMultiplier
                 * AirStatePerformanceMultiplier
                 * SurvivalPerformanceMultiplier
                 * HealthPerformanceMultiplier;
-            // El salto usa la curva Tipo 1 de Agilidad y aplica la raíz
-            // cuadrada sobre su multiplicador final. Conserva el crecimiento
-            // fuerte de Tipo 1, pero amortiguado para evitar saltos absurdos.
+
+            // El salto mantiene sqrt(Tipo 1 de Agilidad), pero la penalización
+            // por carga usa la misma regla porcentual nueva que el movimiento.
             double jumpAgilityTypeOnePercent =
                 DerivedStats.CalculateType1Percent(Attributes.Agility);
             double jumpAgilityFactor = Sqrt(
@@ -8823,7 +9011,7 @@ class CaelumPlayer : DoomPlayer
             );
             EffectiveJumpHeightPercent = 100.0
                 * jumpAgilityFactor
-                * DerivedStats.MovementMultiplier
+                * loadPerformanceMultiplier
                 * AirStatePerformanceMultiplier
                 * SurvivalPerformanceMultiplier
                 * HealthPerformanceMultiplier;
