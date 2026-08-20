@@ -418,7 +418,14 @@ class CaelumWeaponPickup : CaelumEquipmentItem
 
 class CaelumAmuletPickup : CaelumEquipmentItem
 {
-    Default { Tag "$CA_EQUIPMENT_CATEGORY_AMULET"; Inventory.PickupMessage "$CA_PICKUP_AMULET"; }
+    Default
+    {
+        Tag "$CA_EQUIPMENT_CATEGORY_AMULET";
+        Inventory.PickupMessage "$CA_PICKUP_AMULET";
+        // El arte nuevo ocupa casi todo el lienzo 128x128; compensamos sólo
+        // el actor de mundo. Inventory.Icon mantiene resolución completa.
+        Scale 0.275;
+    }
     String GetJewelryIconPath()
     {
         int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
@@ -441,7 +448,17 @@ class CaelumAmuletPickup : CaelumEquipmentItem
         sprite = GetSpriteIndex(GetJewelrySpriteName()); frame = 0;
     }
     override void Tick() { Super.Tick(); Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch); }
-    States { Spawn: AMRB A -1; Stop; }
+    States
+    {
+    Spawn:
+        AMRB A -1;
+        Stop;
+    VisualRegistry:
+        AMSA A 0;
+        AMEM A 0;
+        AMTO A 0;
+        Stop;
+    }
     override bool TryPickup(in out Actor toucher)
     {
         if (CaelumPlayer(toucher) == null) return false;
@@ -458,7 +475,12 @@ class CaelumAmuletPickup : CaelumEquipmentItem
 
 class CaelumSealPickup : CaelumEquipmentItem
 {
-    Default { Tag "$CA_EQUIPMENT_CATEGORY_SEAL"; Inventory.PickupMessage "$CA_PICKUP_SEAL"; }
+    Default
+    {
+        Tag "$CA_EQUIPMENT_CATEGORY_SEAL";
+        Inventory.PickupMessage "$CA_PICKUP_SEAL";
+        Scale 0.275;
+    }
     String GetJewelryIconPath()
     {
         int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
@@ -483,7 +505,18 @@ class CaelumSealPickup : CaelumEquipmentItem
         sprite = GetSpriteIndex(GetJewelrySpriteName()); frame = 0;
     }
     override void Tick() { Super.Tick(); Icon = TexMan.CheckForTexture(GetJewelryIconPath(), TexMan.Type_MiscPatch); }
-    States { Spawn: SLFI A -1; Stop; }
+    States
+    {
+    Spawn:
+        SLFI A -1;
+        Stop;
+    VisualRegistry:
+        SLWA A 0;
+        SLEA A 0;
+        SLAI A 0;
+        SLQU A 0;
+        Stop;
+    }
     override bool TryPickup(in out Actor toucher)
     {
         if (CaelumPlayer(toucher) == null) return false;

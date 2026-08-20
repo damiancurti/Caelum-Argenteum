@@ -194,6 +194,18 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
         if (Owner == null)
         {
+            // Los materiales nuevos ocupan casi todo el lienzo 128x128. Esta
+            // escala compensa ese recorte sin alterar los materiales previos.
+            if (GetSpecialType() >= CaelumConstants.MATERIAL_SILVER_CHAIN)
+            {
+                Scale.X = 0.275;
+                Scale.Y = 0.275;
+            }
+            else
+            {
+                Scale.X = 0.5;
+                Scale.Y = 0.5;
+            }
             sprite = GetSpriteIndex(GetMaterialSpriteName());
             frame = 0;
         }
@@ -240,7 +252,36 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         return true;
     }
 
-    States { Spawn: M001 A -1; Stop; }
+    States
+    {
+    Spawn:
+        M001 A -1;
+        Stop;
+
+    // Catálogo no ejecutado: fuerza a GZDoom a registrar los nombres de
+    // sprite que luego seleccionamos dinámicamente con GetSpriteIndex().
+    VisualRegistry:
+        M043 A 0;
+        M044 A 0;
+        M045 A 0;
+        M046 A 0;
+        M047 A 0;
+        M048 A 0;
+        M049 A 0;
+        M050 A 0;
+        M051 A 0;
+        M052 A 0;
+        M053 A 0;
+        M054 A 0;
+        M055 A 0;
+        M056 A 0;
+        M057 A 0;
+        M058 A 0;
+        M059 A 0;
+        M060 A 0;
+        M061 A 0;
+        Stop;
+    }
 }
 
 // Las familias determinan si el tier representa metal, madera, esencia,
@@ -276,6 +317,11 @@ class CaelumMaterialRules : Object
         if (materialType == CaelumConstants.MATERIAL_FABRIC)
         {
             return CaelumConstants.MATERIAL_FAMILY_FABRIC;
+        }
+        if (materialType >= CaelumConstants.MATERIAL_RUBY_PENDANT
+            && materialType <= CaelumConstants.MATERIAL_OPAL_BROOCH)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_GEM;
         }
         return CaelumConstants.MATERIAL_FAMILY_NONE;
     }

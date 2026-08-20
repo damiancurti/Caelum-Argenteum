@@ -510,6 +510,11 @@ class CaelumDebugOverlay : EventHandler
         {
             return CaelumConstants.MATERIAL_FAMILY_FABRIC;
         }
+        if (materialType >= CaelumConstants.MATERIAL_RUBY_PENDANT
+            && materialType <= CaelumConstants.MATERIAL_OPAL_BROOCH)
+        {
+            return CaelumConstants.MATERIAL_FAMILY_GEM;
+        }
         return CaelumConstants.MATERIAL_FAMILY_NONE;
     }
 
@@ -545,6 +550,12 @@ class CaelumDebugOverlay : EventHandler
             return tier == 1 ? "CA_MATERIAL_GRADE_WOOL"
                 : (tier == 2 ? "CA_MATERIAL_GRADE_COTTON"
                     : "CA_MATERIAL_GRADE_SILK");
+        }
+        if (family == CaelumConstants.MATERIAL_FAMILY_GEM)
+        {
+            return tier == 1 ? "CA_MATERIAL_GRADE_TIER_1"
+                : (tier == 2 ? "CA_MATERIAL_GRADE_TIER_2"
+                    : "CA_MATERIAL_GRADE_TIER_3");
         }
         return "";
     }
@@ -975,6 +986,25 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "graphics/caelum/icons/materials/ca_material_small_weapon_head.png";
             case CaelumConstants.MATERIAL_CHAIN: return "graphics/caelum/icons/materials/ca_material_chain.png";
             case CaelumConstants.MATERIAL_WOOD: return "graphics/caelum/icons/materials/ca_material_wood.png";
+            case CaelumConstants.MATERIAL_SILVER_CHAIN: return "graphics/caelum/icons/materials/ca_material_silver_chain.png";
+            case CaelumConstants.MATERIAL_SEAL_BASE: return "graphics/caelum/icons/materials/ca_material_seal_base.png";
+            case CaelumConstants.MATERIAL_RUBY_PENDANT: return "graphics/caelum/icons/materials/ca_material_ruby_pendant.png";
+            case CaelumConstants.MATERIAL_SAPPHIRE_PENDANT: return "graphics/caelum/icons/materials/ca_material_sapphire_pendant.png";
+            case CaelumConstants.MATERIAL_EMERALD_PENDANT: return "graphics/caelum/icons/materials/ca_material_emerald_pendant.png";
+            case CaelumConstants.MATERIAL_TOPAZ_PENDANT: return "graphics/caelum/icons/materials/ca_material_topaz_pendant.png";
+            case CaelumConstants.MATERIAL_RUBY_GEM: return "graphics/caelum/icons/materials/ca_material_ruby_gem.png";
+            case CaelumConstants.MATERIAL_SAPPHIRE_GEM: return "graphics/caelum/icons/materials/ca_material_sapphire_gem.png";
+            case CaelumConstants.MATERIAL_EMERALD_GEM: return "graphics/caelum/icons/materials/ca_material_emerald_gem.png";
+            case CaelumConstants.MATERIAL_TOPAZ_GEM: return "graphics/caelum/icons/materials/ca_material_topaz_gem.png";
+            case CaelumConstants.MATERIAL_OPAL_BROOCH: return "graphics/caelum/icons/materials/ca_material_opal_brooch.png";
+            case CaelumConstants.MATERIAL_RAW_RUBY: return "graphics/caelum/icons/materials/ca_material_raw_ruby.png";
+            case CaelumConstants.MATERIAL_RAW_SAPPHIRE: return "graphics/caelum/icons/materials/ca_material_raw_sapphire.png";
+            case CaelumConstants.MATERIAL_RAW_EMERALD: return "graphics/caelum/icons/materials/ca_material_raw_emerald.png";
+            case CaelumConstants.MATERIAL_RAW_TOPAZ: return "graphics/caelum/icons/materials/ca_material_raw_topaz.png";
+            case CaelumConstants.MATERIAL_RAW_OPAL: return "graphics/caelum/icons/materials/ca_material_raw_opal.png";
+            case CaelumConstants.MATERIAL_COPPER_INGOT: return "graphics/caelum/icons/materials/ca_material_copper_ingot.png";
+            case CaelumConstants.MATERIAL_TIN_INGOT: return "graphics/caelum/icons/materials/ca_material_tin_ingot.png";
+            case CaelumConstants.MATERIAL_COAL: return "graphics/caelum/icons/materials/ca_material_coal.png";
             default: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
         }
     }
@@ -1061,6 +1091,28 @@ class CaelumDebugOverlay : EventHandler
             if (slot == CaelumConstants.ARMOR_SLOT_HANDS) return "graphics/caelum/icons/ca_gloves_light.png";
             if (slot == CaelumConstants.ARMOR_SLOT_FEET) return "graphics/caelum/icons/ca_boots_light.png";
             return "graphics/caelum/icons/ca_armor_light.png";
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            if (localPlayer.EquipmentSelectionAmuletType == CaelumConstants.AMULET_SAPPHIRE)
+                return "graphics/caelum/icons/jewelry/ca_amulet_sapphire.png";
+            if (localPlayer.EquipmentSelectionAmuletType == CaelumConstants.AMULET_EMERALD)
+                return "graphics/caelum/icons/jewelry/ca_amulet_emerald.png";
+            if (localPlayer.EquipmentSelectionAmuletType == CaelumConstants.AMULET_TOPAZ)
+                return "graphics/caelum/icons/jewelry/ca_amulet_topaz.png";
+            return "graphics/caelum/icons/jewelry/ca_amulet_ruby.png";
+        }
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            if (localPlayer.EquipmentSelectionSealType == CaelumConstants.SEAL_WATER)
+                return "graphics/caelum/icons/jewelry/ca_seal_water.png";
+            if (localPlayer.EquipmentSelectionSealType == CaelumConstants.SEAL_EARTH)
+                return "graphics/caelum/icons/jewelry/ca_seal_earth.png";
+            if (localPlayer.EquipmentSelectionSealType == CaelumConstants.SEAL_AIR)
+                return "graphics/caelum/icons/jewelry/ca_seal_air.png";
+            if (localPlayer.EquipmentSelectionSealType == CaelumConstants.SEAL_QUINTESSENCE)
+                return "graphics/caelum/icons/jewelry/ca_seal_quintessence.png";
+            return "graphics/caelum/icons/jewelry/ca_seal_fire.png";
         }
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
@@ -1172,6 +1224,16 @@ class CaelumDebugOverlay : EventHandler
         {
             categoryKey = "CA_EQUIPMENT_CATEGORY_KEY_ITEM";
         }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_AMULET";
+        }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_SEAL";
+        }
         String category = StringTable.Localize(categoryKey, false);
         String selection;
         if (localPlayer.EquipmentSelectionKind
@@ -1206,7 +1268,9 @@ class CaelumDebugOverlay : EventHandler
             }
         }
         else if (localPlayer.EquipmentSelectionKind
-            >= CaelumConstants.EQUIPMENT_KIND_KEY)
+                == CaelumConstants.EQUIPMENT_KIND_KEY
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             selection = String.Format(
                 "%s x%d",
@@ -1219,6 +1283,18 @@ class CaelumDebugOverlay : EventHandler
                 ),
                 localPlayer.EquipmentSelectionStackAmount
             );
+        }
+        else if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            selection = String.Format("%s T%d",
+                StringTable.Localize(GetAmuletTypeKey(localPlayer.EquipmentSelectionAmuletType), false),
+                localPlayer.EquipmentSelectionTier);
+        }
+        else if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            selection = String.Format("%s T%d",
+                StringTable.Localize(GetSealTypeKey(localPlayer.EquipmentSelectionSealType), false),
+                localPlayer.EquipmentSelectionTier);
         }
         else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
@@ -1356,7 +1432,11 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_SHIELD
             || localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+                == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_AMULET
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_SEAL)
         {
             status = String.Format(
                 "%s | %s | %s",
@@ -1379,13 +1459,27 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
             || localPlayer.EquipmentSelectionKind
-                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             detail = String.Format(
                 "%s %d | %s %.3f",
                 StringTable.Localize("CA_EQUIPMENT_STACK_AMOUNT", false),
                 localPlayer.EquipmentSelectionStackAmount,
                 StringTable.Localize("CA_EQUIPMENT_STACK_WEIGHT", false),
+                localPlayer.EquipmentSelectionWeight
+            );
+        }
+        else if (localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_AMULET
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            detail = String.Format(
+                "Universal | %.3f",
                 localPlayer.EquipmentSelectionWeight
             );
         }

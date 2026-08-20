@@ -1157,3 +1157,52 @@ CA_SEAL_AIR = "Sello de Aire";
 CA_SEAL_QUINTESSENCE = "Sello de Quintaesencia";
 CA_PICKUP_AMULET = "Recoges un amuleto.";
 CA_PICKUP_SEAL = "Recoges un sello.";
+
+[enu default]
+CA_MATERIAL_SILVER_CHAIN = "Fine Silver Chain";
+CA_MATERIAL_SEAL_BASE = "Seal Base";
+CA_MATERIAL_RUBY_PENDANT = "Ruby Pendant";
+CA_MATERIAL_SAPPHIRE_PENDANT = "Sapphire Pendant";
+CA_MATERIAL_EMERALD_PENDANT = "Emerald Pendant";
+CA_MATERIAL_TOPAZ_PENDANT = "Topaz Pendant";
+CA_MATERIAL_RUBY_GEM = "Ruby";
+CA_MATERIAL_SAPPHIRE_GEM = "Sapphire";
+CA_MATERIAL_EMERALD_GEM = "Emerald";
+CA_MATERIAL_TOPAZ_GEM = "Topaz";
+CA_MATERIAL_OPAL_BROOCH = "Opal Brooch";
+CA_MATERIAL_RAW_RUBY = "Raw Ruby";
+CA_MATERIAL_RAW_SAPPHIRE = "Raw Sapphire";
+CA_MATERIAL_RAW_EMERALD = "Raw Emerald";
+CA_MATERIAL_RAW_TOPAZ = "Raw Topaz";
+CA_MATERIAL_RAW_OPAL = "Raw Opal";
+CA_MATERIAL_COPPER_INGOT = "Copper Ingot";
+CA_MATERIAL_TIN_INGOT = "Tin Ingot";
+CA_MATERIAL_COAL = "Coal";
+CA_MATERIAL_GRADE_TIER_1 = "Tier 1";
+CA_MATERIAL_GRADE_TIER_2 = "Tier 2";
+CA_MATERIAL_GRADE_TIER_3 = "Tier 3";
+
+[es]
+CA_MATERIAL_SILVER_CHAIN = "Cadena Fina de Plata";
+CA_MATERIAL_SEAL_BASE = "Base de Sello";
+CA_MATERIAL_RUBY_PENDANT = "Colgante de Rubí";
+CA_MATERIAL_SAPPHIRE_PENDANT = "Colgante de Zafiro";
+CA_MATERIAL_EMERALD_PENDANT = "Colgante de Esmeralda";
+CA_MATERIAL_TOPAZ_PENDANT = "Colgante de Topacio";
+CA_MATERIAL_RUBY_GEM = "Rubí";
+CA_MATERIAL_SAPPHIRE_GEM = "Zafiro";
+CA_MATERIAL_EMERALD_GEM = "Esmeralda";
+CA_MATERIAL_TOPAZ_GEM = "Topacio";
+CA_MATERIAL_OPAL_BROOCH = "Broche de Ópalo";
+CA_MATERIAL_RAW_RUBY = "Rubí Bruto";
+CA_MATERIAL_RAW_SAPPHIRE = "Zafiro Bruto";
+CA_MATERIAL_RAW_EMERALD = "Esmeralda Bruta";
+CA_MATERIAL_RAW_TOPAZ = "Topacio Bruto";
+CA_MATERIAL_RAW_OPAL = "Ópalo Bruto";
+CA_MATERIAL_COPPER_INGOT = "Lingote de Cobre";
+CA_MATERIAL_TIN_INGOT = "Lingote de Estaño";
+CA_MATERIAL_COAL = "Carbón";
+CA_MATERIAL_GRADE_TIER_1 = "Tier 1";
+CA_MATERIAL_GRADE_TIER_2 = "Tier 2";
+CA_MATERIAL_GRADE_TIER_3 = "Tier 3";
+
