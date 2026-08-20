@@ -623,46 +623,32 @@ class CaelumCarbineAmmo : Ammo
     }
 }
 
-class CaelumArrowAmmo : CaelumCarbineAmmo
+class CaelumArrowAmmo : Ammo
 {
-    Default { Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png"; }
-    override int GetAmmoType()
+    Default
     {
-        return CaelumConstants.AMMUNITION_ARROW;
+        Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png";
+        Inventory.MaxAmount 2147483647;
+        Inventory.InterHubAmount 2147483647;
+        Ammo.BackpackAmount 20;
+        Ammo.BackpackMaxAmount 2147483647;
+        +INVENTORY.INVBAR
     }
-
-    override double GetUnitWeight()
-    {
-        return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
-    }
-
-    States
-    {
-    Spawn:
-        CARR A -1;
-        Stop;
-    }
+    States { Spawn: CARR A -1; Stop; }
 }
 
-class CaelumBoltAmmo : CaelumCarbineAmmo
+class CaelumBoltAmmo : Ammo
 {
-    Default { Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png"; }
-    override int GetAmmoType()
+    Default
     {
-        return CaelumConstants.AMMUNITION_BOLT;
+        Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png";
+        Inventory.MaxAmount 2147483647;
+        Inventory.InterHubAmount 2147483647;
+        Ammo.BackpackAmount 20;
+        Ammo.BackpackMaxAmount 2147483647;
+        +INVENTORY.INVBAR
     }
-
-    override double GetUnitWeight()
-    {
-        return CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
-    }
-
-    States
-    {
-    Spawn:
-        CBOL A -1;
-        Stop;
-    }
+    States { Spawn: CBOL A -1; Stop; }
 }
 
 // Las jabalinas arrojables usan pilas nativas separadas por tier.

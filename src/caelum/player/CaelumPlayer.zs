@@ -661,18 +661,17 @@ class CaelumPlayer : DoomPlayer
         return null;
     }
 
-    CaelumCarbineAmmo FindNativeAmmunition(int ammunitionType)
+    Inventory FindNativeAmmunition(int ammunitionType)
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        if (ammunitionType == CaelumConstants.AMMUNITION_ARROW)
         {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
-            if (ammunition != null
-                && ammunition.GetAmmoType() == ammunitionType)
-            {
-                return ammunition;
-            }
+            return FindInventory("CaelumArrowAmmo");
         }
-        return null;
+        if (ammunitionType == CaelumConstants.AMMUNITION_BOLT)
+        {
+            return FindInventory("CaelumBoltAmmo");
+        }
+        return FindInventory("CaelumCarbineAmmo");
     }
 
 
@@ -683,7 +682,9 @@ class CaelumPlayer : DoomPlayer
     {
         if (incomingAmount <= 0 || DerivedStats == null) { return false; }
 
-        CaelumCarbineAmmo existing = FindNativeAmmunition(ammunitionType);
+        CaelumCarbineAmmo existing = CaelumCarbineAmmo(
+            FindNativeAmmunition(ammunitionType)
+        );
         bool storeInMagicBox = existing != null && existing.InMagicBox;
 
         if (existing != null)
@@ -1525,6 +1526,25 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
+        Inventory arrowAmmo = FindInventory("CaelumArrowAmmo");
+        if (arrowAmmo != null && arrowAmmo.Amount > 0)
+        {
+            PersonalInventoryItemCount += arrowAmmo.Amount;
+            double arrowWeight = arrowAmmo.Amount
+                * CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
+            personalInventoryWeight += arrowWeight;
+            carriedItemWeight += arrowWeight;
+        }
+        Inventory boltAmmo = FindInventory("CaelumBoltAmmo");
+        if (boltAmmo != null && boltAmmo.Amount > 0)
+        {
+            PersonalInventoryItemCount += boltAmmo.Amount;
+            double boltWeight = boltAmmo.Amount
+                * CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
+            personalInventoryWeight += boltWeight;
+            carriedItemWeight += boltWeight;
+        }
+
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
@@ -1681,18 +1701,23 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+            Inventory ammunition = FindNativeAmmunition(
                 EquipmentSelectionAmmunitionType
             );
             EquipmentSelectionOwned = ammunition != null
                 && ammunition.Amount > 0;
-            EquipmentSelectionInMagicBox = EquipmentSelectionOwned
-                && ammunition.InMagicBox;
+            EquipmentSelectionInMagicBox = false;
             EquipmentSelectionSizeCompatible = true;
             EquipmentSelectionStackAmount = EquipmentSelectionOwned
                 ? ammunition.Amount : 0;
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
-                * (ammunition != null ? ammunition.GetUnitWeight() : 0.0);
+                * GetAmmunitionUnitWeight(EquipmentSelectionAmmunitionType);
+            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
+            if (carbineStack != null)
+            {
+                EquipmentSelectionInMagicBox = carbineStack.InMagicBox;
+                EquipmentSelectionWeight = carbineStack.GetCarriedWeight();
+            }
             return;
         }
 
@@ -3569,13 +3594,24 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+            Inventory ammunition = FindNativeAmmunition(
                 EquipmentSelectionAmmunitionType
             );
             if (ammunition == null || ammunition.Amount <= 0) { return; }
-            double stackWeight = ammunition.Amount
-                * ammunition.GetUnitWeight();
-            if (ammunition.InMagicBox)
+
+            // Flechas y virotes son Ammo nativa independiente. De momento
+            // permanecen en inventario personal; la Caja Mágica especial sólo
+            // se aplica a la pila personalizada de carabina.
+            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
+            if (carbineStack == null)
+            {
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
+                return;
+            }
+
+            double stackWeight = carbineStack.GetCarriedWeight();
+            if (carbineStack.InMagicBox)
             {
                 if (!CanAddWeightToPersonalInventory(stackWeight))
                 {
@@ -3583,7 +3619,7 @@ class CaelumPlayer : DoomPlayer
                         CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
                     return;
                 }
-                ammunition.InMagicBox = false;
+                carbineStack.InMagicBox = false;
                 LastEquipmentAction =
                     CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
             }
@@ -3595,7 +3631,7 @@ class CaelumPlayer : DoomPlayer
                         CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
                     return;
                 }
-                ammunition.InMagicBox = true;
+                carbineStack.InMagicBox = true;
                 LastEquipmentAction =
                     CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
             }
@@ -4272,11 +4308,12 @@ class CaelumPlayer : DoomPlayer
         else if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            CaelumCarbineAmmo ammunition = FindNativeAmmunition(
+            Inventory ammunition = FindNativeAmmunition(
                 EquipmentSelectionAmmunitionType
             );
             if (ammunition == null || ammunition.Amount <= 0) { return; }
-            ammunition.InMagicBox = false;
+            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
+            if (carbineStack != null) { carbineStack.InMagicBox = false; }
             selected = ammunition.CreateTossable(ammunition.Amount);
         }
         else
