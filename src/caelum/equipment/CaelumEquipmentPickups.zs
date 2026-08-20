@@ -158,6 +158,20 @@ class CaelumEquipmentItem : Inventory
             && EquipmentSize == requestedEquipmentSize;
     }
 
+    bool MatchesMagicWeapon(
+        int requestedWeaponType,
+        int requestedEssenceType,
+        int requestedTier,
+        int requestedEquipmentSize
+    )
+    {
+        return EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && ItemType == requestedWeaponType
+            && EssenceType == requestedEssenceType
+            && Tier == requestedTier
+            && EquipmentSize == requestedEquipmentSize;
+    }
+
     double GetCarriedWeight()
     {
         return InMagicBox ? 0.0 : Max(0.0, UnitWeight) * Amount;

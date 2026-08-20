@@ -86,6 +86,7 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionArmorType;
     int EquipmentSelectionShieldType;
     int EquipmentSelectionWeaponType;
+    int EquipmentSelectionWeaponEssenceType;
     int EquipmentSelectionAmmunitionType;
     int EquipmentSelectionConsumableType;
     int EquipmentSelectionSpecialType;
@@ -594,6 +595,23 @@ class CaelumPlayer : DoomPlayer
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
             if (item != null && item.Matches(
                 kind, itemType, armorSlot, tier, equipmentSize
+            ))
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    CaelumEquipmentItem FindNativeMagicWeaponItem(
+        int weaponType, int essenceType, int tier, int equipmentSize
+    )
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
+            if (item != null && item.MatchesMagicWeapon(
+                weaponType, essenceType, tier, equipmentSize
             ))
             {
                 return item;
@@ -1831,6 +1849,11 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
+        EquipmentSelectionWeaponEssenceType = Clamp(
+            EquipmentSelectionWeaponEssenceType,
+            0,
+            CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
         EquipmentSelectionAmmunitionType = Clamp(
             EquipmentSelectionAmmunitionType,
             0,
@@ -1997,13 +2020,27 @@ class CaelumPlayer : DoomPlayer
 
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
-            CaelumEquipmentItem item = FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                EquipmentSelectionWeaponType,
-                -1,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
+            CaelumEquipmentItem item;
+            if (WeaponModel != null
+                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
+            {
+                item = FindNativeMagicWeaponItem(
+                    EquipmentSelectionWeaponType,
+                    EquipmentSelectionWeaponEssenceType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                );
+            }
+            else
+            {
+                item = FindNativeEquipmentItem(
+                    CaelumConstants.EQUIPMENT_KIND_WEAPON,
+                    EquipmentSelectionWeaponType,
+                    -1,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                );
+            }
             EquipmentSelectionOwned = item != null;
             EquipmentSelectionDurability = item != null ? item.Durability : 0;
             EquipmentSelectionMaximumDurability = WeaponModel != null
@@ -2034,11 +2071,7 @@ class CaelumPlayer : DoomPlayer
             if (WeaponModel != null
                 && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
             {
-                SelectedEssenceType = item != null
-                    ? Clamp(item.EssenceType, 0,
-                        CaelumConstants.ESSENCE_TYPE_COUNT - 1)
-                    : Clamp(SelectedEssenceType, 0,
-                        CaelumConstants.ESSENCE_TYPE_COUNT - 1);
+                SelectedEssenceType = EquipmentSelectionWeaponEssenceType;
             }
             return;
         }
@@ -2841,10 +2874,9 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
             return;
         }
-        if (FindNativeEquipmentItem(
-            CaelumConstants.EQUIPMENT_KIND_WEAPON,
+        if (FindNativeMagicWeaponItem(
             CraftingSelectedEssenceWeaponType,
-            -1,
+            CraftingSelectedEssenceType,
             CraftingSelectionTier,
             CraftingSelectionSize
         ) != null)
@@ -3263,36 +3295,13 @@ class CaelumPlayer : DoomPlayer
             && WeaponModel != null
             && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
         {
-            SelectedEssenceType = (
-                SelectedEssenceType + direction
+            // En armas mágicas la dimensión equivalente a "slot" del menú es
+            // el elemento. Nunca mutamos EssenceType de otra instancia.
+            EquipmentSelectionWeaponEssenceType = (
+                EquipmentSelectionWeaponEssenceType + direction
                     + CaelumConstants.ESSENCE_TYPE_COUNT
             ) % CaelumConstants.ESSENCE_TYPE_COUNT;
-            CaelumEquipmentItem selectedWeapon = GetSelectedNativeEquipmentItem();
-            if (selectedWeapon != null)
-            {
-                selectedWeapon.EssenceType = SelectedEssenceType;
-                if (selectedWeapon.Equipped
-                    && WeaponModel.Equipped
-                    && WeaponModel.WeaponType == selectedWeapon.ItemType
-                    && WeaponModel.Tier == selectedWeapon.Tier
-                    && WeaponModel.Size == selectedWeapon.EquipmentSize)
-                {
-                    if (StaffCastPending) { CancelPendingStaffCast(false); }
-                    WeaponModel.EssenceType = SelectedEssenceType;
-                }
-                CaelumPersistentCharacterState persistentState =
-                    GetPersistentCharacterState(true);
-                if (persistentState != null)
-                {
-                    persistentState.SetWeaponEssenceType(
-                        selectedWeapon.ItemType,
-                        selectedWeapon.Tier,
-                        selectedWeapon.EquipmentSize,
-                        SelectedEssenceType
-                    );
-                }
-                PersistCharacterState();
-            }
+            SelectedEssenceType = EquipmentSelectionWeaponEssenceType;
             RefreshEquipmentSelectionPreview();
             return;
         }
@@ -3499,19 +3508,28 @@ class CaelumPlayer : DoomPlayer
         }
         if (WeaponModel != null && WeaponModel.Equipped)
         {
-            CaelumEquipmentItem weapon = FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                WeaponModel.WeaponType, -1,
-                WeaponModel.Tier, WeaponModel.Size
-            );
+            CaelumEquipmentItem weapon;
+            if (WeaponModel.IsMagicalType(WeaponModel.WeaponType))
+            {
+                weapon = FindNativeMagicWeaponItem(
+                    WeaponModel.WeaponType,
+                    WeaponModel.EssenceType,
+                    WeaponModel.Tier,
+                    WeaponModel.Size
+                );
+            }
+            else
+            {
+                weapon = FindNativeEquipmentItem(
+                    CaelumConstants.EQUIPMENT_KIND_WEAPON,
+                    WeaponModel.WeaponType, -1,
+                    WeaponModel.Tier, WeaponModel.Size
+                );
+            }
             if (weapon != null && weapon.Equipped)
             {
                 weapon.Durability = WeaponModel.Durability;
-                weapon.EssenceType = Clamp(
-                    WeaponModel.EssenceType,
-                    0,
-                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
-                );
+
             }
         }
     }
@@ -3520,6 +3538,16 @@ class CaelumPlayer : DoomPlayer
     {
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
+            if (WeaponModel != null
+                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
+            {
+                return FindNativeMagicWeaponItem(
+                    EquipmentSelectionWeaponType,
+                    EquipmentSelectionWeaponEssenceType,
+                    EquipmentSelectionTier,
+                    EquipmentSelectionSize
+                );
+            }
             return FindNativeEquipmentItem(
                 CaelumConstants.EQUIPMENT_KIND_WEAPON,
                 EquipmentSelectionWeaponType, -1,
@@ -3633,21 +3661,21 @@ class CaelumPlayer : DoomPlayer
         }
         else
         {
+            // Cada arma física o mágica es una instancia independiente.
+            // Equipar Bastón/Fuego no cambia ningún otro Bastón.
             item.Equipped = true;
-            if (!WeaponModel.Equipped)
-            {
-                WeaponModel.WeaponType = item.ItemType;
-                WeaponModel.Tier = item.Tier;
-                WeaponModel.Size = item.EquipmentSize;
-                WeaponModel.Durability = item.Durability;
-                WeaponModel.EssenceType = Clamp(
-                    item.EssenceType,
-                    0,
-                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
-                );
-                SelectedEssenceType = WeaponModel.EssenceType;
-                WeaponModel.Equipped = true;
-            }
+            WeaponModel.WeaponType = item.ItemType;
+            WeaponModel.Tier = item.Tier;
+            WeaponModel.Size = item.EquipmentSize;
+            WeaponModel.Durability = item.Durability;
+            WeaponModel.EssenceType = Clamp(
+                item.EssenceType,
+                0,
+                CaelumConstants.ESSENCE_TYPE_COUNT - 1
+            );
+            SelectedEssenceType = WeaponModel.EssenceType;
+            EquipmentSelectionWeaponEssenceType = WeaponModel.EssenceType;
+            WeaponModel.Equipped = true;
             EnsureWeaponFamilySelectors();
             EquippedWeaponCooldownRemaining = 0.0;
         }
@@ -3686,7 +3714,9 @@ class CaelumPlayer : DoomPlayer
             bool wasActive = WeaponModel.Equipped
                 && WeaponModel.WeaponType == item.ItemType
                 && WeaponModel.Tier == item.Tier
-                && WeaponModel.Size == item.EquipmentSize;
+                && WeaponModel.Size == item.EquipmentSize
+                && (!WeaponModel.IsMagicalType(item.ItemType)
+                    || WeaponModel.EssenceType == item.EssenceType);
             if (wasActive)
             {
                 CancelPendingStaffCast(false);
@@ -6374,10 +6404,24 @@ class CaelumPlayer : DoomPlayer
         int requestedLoss = Max(0, durabilityLoss);
         if (requestedLoss <= 0) { return; }
 
-        CaelumEquipmentItem weapon = FindNativeEquipmentItem(
-            CaelumConstants.EQUIPMENT_KIND_WEAPON,
-            weaponType, -1, tier, equipmentSize
-        );
+        CaelumEquipmentItem weapon;
+        if (WeaponModel != null
+            && WeaponModel.IsMagicalType(weaponType))
+        {
+            weapon = FindNativeMagicWeaponItem(
+                weaponType,
+                WeaponModel.EssenceType,
+                tier,
+                equipmentSize
+            );
+        }
+        else
+        {
+            weapon = FindNativeEquipmentItem(
+                CaelumConstants.EQUIPMENT_KIND_WEAPON,
+                weaponType, -1, tier, equipmentSize
+            );
+        }
         if (weapon == null || weapon.Durability <= 0 || weapon.InMagicBox)
         {
             return;
@@ -6430,10 +6474,24 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        CaelumEquipmentItem weapon = FindNativeEquipmentItem(
-            CaelumConstants.EQUIPMENT_KIND_WEAPON,
-            weaponType, -1, tier, equipmentSize
-        );
+        CaelumEquipmentItem weapon;
+        if (WeaponModel != null
+            && WeaponModel.IsMagicalType(weaponType))
+        {
+            weapon = FindNativeMagicWeaponItem(
+                weaponType,
+                WeaponModel.EssenceType,
+                tier,
+                equipmentSize
+            );
+        }
+        else
+        {
+            weapon = FindNativeEquipmentItem(
+                CaelumConstants.EQUIPMENT_KIND_WEAPON,
+                weaponType, -1, tier, equipmentSize
+            );
+        }
         if (weapon == null || weapon.Durability <= 0 || weapon.InMagicBox)
         {
             return;
