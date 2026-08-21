@@ -860,3 +860,20 @@ Physical/Lucidity stun still sets controlled biological damping to zero.
 -> `HP`
 
 The same contact weights separately feed Lucidity response.
+
+
+## 22. V4.26.3 — Buckler acrobatic impact response
+
+The buckler preserves its 0.5 effective-combat-mass rule, making its user easier to displace. While actively blocking, Caelum then applies two defensive responses after the physical impulse has already been solved:
+
+`ImpactToughness = 2 × Toughness`
+
+`AgilityAbsorption = 2 × JumpZ`
+
+The doubled Agility absorption applies to floor, actor and wall traumatic Delta-v. It does **not** change impulse, momentum, resulting velocity or displacement; it represents rolling, yielding and acrobatic body control after being launched.
+
+If physical/Lucidity stun is active:
+
+`AgilityAbsorption = 0`
+
+Thus the rodela rewards an agile conscious defender but does not protect an incapacitated body from uncontrolled impact.

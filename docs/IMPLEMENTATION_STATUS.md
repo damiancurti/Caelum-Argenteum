@@ -1,5 +1,13 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Buckler acrobatics and fall-test map 4.26.3
+
+**Implemented — pending manual validation**
+
+Active buckler block uses `2 × Toughness` for CaelumImpact tolerance and `2 × JumpZ` as Agility absorption. The latter applies to floor, actor and wall trauma. Stun sets active Agility absorption to zero. The buckler still uses 0.5× effective combat mass, so it remains easier to launch while making that displacement defensively survivable.
+
+MAP01 now has seven roofed structures: six equal test rooms plus the west NPC room. Outdoor vertical space is 512 MU.
+
 ## Universal impact scale and anatomy response 4.26.2
 
 **Implemented — pending manual validation**

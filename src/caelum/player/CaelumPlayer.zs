@@ -5536,13 +5536,39 @@ class CaelumPlayer : DoomPlayer
         return totalDefense / CaelumConstants.ARMOR_SLOT_COUNT;
     }
 
+    bool IsBucklerAcrobaticDefenseActive()
+    {
+        return CombatBlockModeActive
+            && ShieldModel != null
+            && ShieldModel.Equipped
+            && ShieldModel.Durability > 0
+            && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_BUCKLER;
+    }
+
+    double GetImpactAgilityAbsorptionSpeed(int impactKind)
+    {
+        if (IsPhysicallyImmobilized()) { return 0.0; }
+        double baseAbsorption = Max(0.0, JumpZ);
+        if (IsBucklerAcrobaticDefenseActive())
+        {
+            return baseAbsorption
+                * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER;
+        }
+        if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
+        {
+            return baseAbsorption;
+        }
+        return 0.0;
+    }
+
     double GetBiologicalLandingAbsorptionSpeed()
     {
         // Un personaje consciente flexiona articulaciones y usa musculatura
         // para absorber un aterrizaje comparable a su propio salto normal.
         // Aturdido/inmovilizado cae rígido: no recibe esta amortiguación.
-        if (IsPhysicallyImmobilized()) { return 0.0; }
-        return Max(0.0, JumpZ);
+        return GetImpactAgilityAbsorptionSpeed(
+            CaelumConstants.IMPACT_KIND_FLOOR
+        );
     }
 
     double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
@@ -5709,7 +5735,18 @@ class CaelumPlayer : DoomPlayer
     )
     {
         LastImpactKind = impactKind;
-        LastImpactDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactBiologicalAbsorptionSpeed = 0.0;
+        LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
+        if (impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
+        {
+            LastImpactBiologicalAbsorptionSpeed =
+                GetImpactAgilityAbsorptionSpeed(impactKind);
+            LastImpactDeltaSpeed = Max(
+                0.0,
+                LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed
+            );
+        }
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
@@ -5728,6 +5765,11 @@ class CaelumPlayer : DoomPlayer
                 0.0,
                 double(Attributes.Toughness)
             );
+            if (IsBucklerAcrobaticDefenseActive())
+            {
+                LastImpactToughnessPercent *=
+                    CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
+            }
         }
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = 0.0;

@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.26.3 — Buckler acrobatics and fall-test map
+
+- Buckler block doubles collision Toughness.
+- Buckler block doubles Agility/JumpZ impact absorption and extends it to horizontal actor/wall trauma.
+- Stun disables the Agility absorption, including the buckler bonus.
+- Momentum, 0.5× buckler effective mass and displacement remain unchanged.
+- Added two equal MAP01 test rooms.
+- Roofed the four original rooms, two new rooms and west NPC room at 128 MU.
+- Raised outdoor ceiling/exterior wall height from 256 to 512 MU for fall testing.
+
 ## 4.26.2 — Universal impact scale and weighted anatomical response
 
 - Replaced actor-height-dependent equivalent-time severity with a universal 28-map-unit reference distance.

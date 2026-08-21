@@ -145,6 +145,12 @@ Impact Lucidity loss uses the same normalized anatomical weights. Only naturally
 
 Fall biological damping is Agility/jump based. Player damping remains the current normal `JumpZ`; Caelum NPC damping now uses `8 × sqrt(Type1(Agility)/100)`. Physical stun removes this controlled-landing damping.
 
+## Buckler acrobatics and fall-test map (V4.26.3)
+
+While actively blocking with the buckler, collision Toughness is doubled and Agility/JumpZ impact absorption is doubled. Buckler acrobatic absorption also applies to horizontal wall/actor trauma. It reduces traumatic Delta-v only, never the momentum/displacement already resolved by Impact Physics. Physical/Lucidity stun disables this Agility absorption.
+
+MAP01 adds two test rooms matching the four central rooms. The four original rooms, two new rooms and west NPC room are roofed at 128 MU. Outdoor ceiling height is raised from 256 to 512 MU, doubling vertical fall-test space and exterior wall height.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.
