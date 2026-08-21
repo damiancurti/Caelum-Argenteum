@@ -24,6 +24,18 @@ class CaelumCombatActor : Actor
     double CombatPhysicalPushMultiplier;
     double CombatMagicalPushMultiplier;
 
+    // V4.25.1 — física de colisión compartida con el jugador.
+    double CollisionDamageMultiplier;
+    int LastImpactKind;
+    double LastImpactDeltaSpeed;
+    double LastImpactEquivalentTics;
+    double LastImpactDamagePercent;
+    int LastImpactBaseDamage;
+    double LastImpactEffectiveMass;
+    double LastImpactOtherEffectiveMass;
+    double LastImpactClosingSpeed;
+    double LastImpactImpulse;
+
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
     double CombatTimeRemaining;
@@ -90,6 +102,7 @@ class CaelumCombatActor : Actor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        CollisionDamageMultiplier = 1.0;
         CombatBaseSpeed = Speed;
         CombatPhysicalPowerMultiplier = Max(0.0, Mass / 100.0);
         CombatMaximumHealth = Max(1, health);
@@ -463,6 +476,241 @@ class CaelumCombatActor : Actor
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
+    double GetCollisionEffectiveMass()
+    {
+        double result = Max(1.0, double(Mass));
+        if (CombatArmor != null)
+        {
+            result += Max(0.0, CombatArmor.GetTotalWeight());
+        }
+        return Max(1.0, result);
+    }
+
+    double GetImpactMaximumHealth()
+    {
+        if (CombatMaximumHealth > 0) { return CombatMaximumHealth; }
+        return Max(1.0, double(GetMaxHealth()));
+    }
+
+    double CalculateImpactEquivalentTics(double deltaSpeed)
+    {
+        if (deltaSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            return 1.0e9;
+        }
+        return (Height * 0.5) / deltaSpeed;
+    }
+
+    double CalculateImpactDamagePercent(double equivalentTics)
+    {
+        if (equivalentTics > CaelumConstants.IMPACT_DAMAGE_THRESHOLD_TICS)
+        {
+            return 0.0;
+        }
+        int elapsedTier = int(Ceil(Max(1.0, equivalentTics)));
+        int damageSteps = Clamp(
+            36 - elapsedTier,
+            0,
+            int(CaelumConstants.IMPACT_DAMAGE_THRESHOLD_TICS)
+        );
+        return Min(
+            CaelumConstants.IMPACT_DAMAGE_MAX_PERCENT,
+            damageSteps * CaelumConstants.IMPACT_DAMAGE_PERCENT_PER_TIC
+        );
+    }
+
+    void ReceiveCaelumImpact(
+        double deltaSpeed,
+        int impactKind,
+        Actor sourceActor,
+        double sourceSurfaceMultiplier,
+        double selfEffectiveMass,
+        double otherEffectiveMass,
+        double closingSpeed,
+        double impulse
+    )
+    {
+        LastImpactKind = impactKind;
+        LastImpactDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactEquivalentTics =
+            CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
+        LastImpactDamagePercent =
+            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+        LastImpactEffectiveMass = selfEffectiveMass;
+        LastImpactOtherEffectiveMass = otherEffectiveMass;
+        LastImpactClosingSpeed = closingSpeed;
+        LastImpactImpulse = impulse;
+        LastImpactBaseDamage = 0;
+
+        if (LastImpactDamagePercent <= 0.0 || health <= 0)
+        {
+            return;
+        }
+
+        LastImpactBaseDamage = Max(
+            1,
+            int(GetImpactMaximumHealth()
+                * LastImpactDamagePercent / 100.0
+                * Max(0.0, sourceSurfaceMultiplier) + 0.5)
+        );
+        Actor impactSource = sourceActor;
+        if (impactSource == null)
+        {
+            impactSource = self;
+        }
+        DamageMobj(
+            impactSource,
+            impactSource,
+            LastImpactBaseDamage,
+            'CaelumImpact',
+            DMG_NO_ARMOR,
+            0.0
+        );
+    }
+
+    double GetOtherCollisionEffectiveMass(Actor other)
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null) { return otherPlayer.GetCombatMass(); }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            return otherActor.GetCollisionEffectiveMass();
+        }
+        return Max(1.0, double(other.Mass));
+    }
+
+    double GetOtherCollisionDamageMultiplier(Actor other)
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            return Max(0.0, otherPlayer.CollisionDamageMultiplier);
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            return Max(0.0, otherActor.CollisionDamageMultiplier);
+        }
+        return 1.0;
+    }
+
+    void DeliverImpactToOther(
+        Actor other,
+        double deltaSpeed,
+        double sourceEffectiveMass,
+        double targetEffectiveMass,
+        double closingSpeed,
+        double impulse
+    )
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            otherPlayer.ReceiveCaelumImpact(
+                deltaSpeed,
+                CaelumConstants.IMPACT_KIND_ACTOR,
+                self,
+                CollisionDamageMultiplier,
+                targetEffectiveMass,
+                sourceEffectiveMass,
+                closingSpeed,
+                impulse
+            );
+            return;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            otherActor.ReceiveCaelumImpact(
+                deltaSpeed,
+                CaelumConstants.IMPACT_KIND_ACTOR,
+                self,
+                CollisionDamageMultiplier,
+                targetEffectiveMass,
+                sourceEffectiveMass,
+                closingSpeed,
+                impulse
+            );
+        }
+    }
+
+    override void CollidedWith(Actor other, bool passive)
+    {
+        Super.CollidedWith(other, passive);
+
+        if (passive || other == null || other == self
+            || health <= 0 || other.health <= 0
+            || (CaelumPlayer(other) == null
+                && CaelumCombatActor(other) == null))
+        {
+            return;
+        }
+
+        double dx = other.Pos.X - Pos.X;
+        double dy = other.Pos.Y - Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        if (distance <= 0.0001) { return; }
+
+        double nx = dx / distance;
+        double ny = dy / distance;
+        double relativeX = Vel.X - other.Vel.X;
+        double relativeY = Vel.Y - other.Vel.Y;
+        double closingSpeed = relativeX * nx + relativeY * ny;
+        if (closingSpeed <= 0.0) { return; }
+
+        double selfMass = Max(1.0, GetCollisionEffectiveMass());
+        double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
+        double inverseMassSum = 1.0 / selfMass + 1.0 / otherMass;
+        if (inverseMassSum <= 0.0) { return; }
+
+        double impulse = (1.0 + CaelumConstants.IMPACT_RESTITUTION)
+            * closingSpeed / inverseMassSum;
+        double selfDeltaSpeed = impulse / selfMass;
+        double otherDeltaSpeed = impulse / otherMass;
+
+        Vel.X -= nx * selfDeltaSpeed;
+        Vel.Y -= ny * selfDeltaSpeed;
+        other.Vel.X += nx * otherDeltaSpeed;
+        other.Vel.Y += ny * otherDeltaSpeed;
+
+        ReceiveCaelumImpact(
+            selfDeltaSpeed,
+            CaelumConstants.IMPACT_KIND_ACTOR,
+            other,
+            GetOtherCollisionDamageMultiplier(other),
+            selfMass,
+            otherMass,
+            closingSpeed,
+            impulse
+        );
+        DeliverImpactToOther(
+            other,
+            otherDeltaSpeed,
+            selfMass,
+            otherMass,
+            closingSpeed,
+            impulse
+        );
+    }
+
+    void RegisterWorldImpact(double deltaSpeed, int impactKind)
+    {
+        ReceiveCaelumImpact(
+            deltaSpeed,
+            impactKind,
+            self,
+            1.0,
+            GetCollisionEffectiveMass(),
+            0.0,
+            deltaSpeed,
+            0.0
+        );
+    }
+
     override int DamageMobj(
         Actor inflictor,
         Actor source,
@@ -472,6 +720,34 @@ class CaelumCombatActor : Actor
         double angle
     )
     {
+        if (mod == 'CaelumImpact')
+        {
+            int healthBeforeImpact = health;
+            double adrenalineRatioBeforeImpact = GetCombatAdrenalineRatio();
+            int result = Super.DamageMobj(
+                inflictor,
+                source,
+                damage,
+                mod,
+                flags | DMG_NO_ARMOR,
+                angle
+            );
+            if (health < healthBeforeImpact)
+            {
+                int actualHealthLost = healthBeforeImpact - health;
+                UpdateCombatHealthEffects();
+                CalculateAndTriggerActorPain(
+                    actualHealthLost,
+                    adrenalineRatioBeforeImpact
+                );
+                AddActorCombatAdrenaline(
+                    CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
+                );
+                MarkActorCombatActivity();
+            }
+            return result;
+        }
+
         LastCombatEvasionAttempted = false;
         LastCombatEvasionSucceeded = false;
         LastCombatEvasionChancePercent = 0.0;
@@ -1147,7 +1423,46 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        Vector3 prePhysicsVelocity = Vel;
+        bool wasOnFloorBeforePhysics =
+            Pos.Z <= FloorZ + 0.01;
+
         Super.Tick();
+
+        bool onFloorAfterPhysics = Pos.Z <= FloorZ + 0.01;
+        if (!wasOnFloorBeforePhysics
+            && onFloorAfterPhysics
+            && prePhysicsVelocity.Z < 0.0)
+        {
+            double landingDeltaSpeed = Abs(
+                Vel.Z - prePhysicsVelocity.Z
+            );
+            if (landingDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+            {
+                RegisterWorldImpact(
+                    landingDeltaSpeed,
+                    CaelumConstants.IMPACT_KIND_FLOOR
+                );
+            }
+        }
+
+        if (BlockingMobj == null
+            && (MovementBlockingLine != null || BlockingLine != null))
+        {
+            double deltaX = Vel.X - prePhysicsVelocity.X;
+            double deltaY = Vel.Y - prePhysicsVelocity.Y;
+            double wallDeltaSpeed = Sqrt(
+                deltaX * deltaX + deltaY * deltaY
+            );
+            if (wallDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+            {
+                RegisterWorldImpact(
+                    wallDeltaSpeed,
+                    CaelumConstants.IMPACT_KIND_WALL
+                );
+            }
+        }
+
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
         if (health > 0

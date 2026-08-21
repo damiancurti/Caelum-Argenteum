@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.25.1 — Momentum collision and impact physics
+
+- Corrected Carbine base Reload from 10 s to 5 s; ranged Reload bases are now 3/3/5/5 s.
+- Added action/reaction actor collisions through GZDoom `CollidedWith()`.
+- Added effective-mass two-body impulse resolution using a coefficient of restitution of 0.0.
+- Added independent `Delta-v` impact evaluation for both collision participants.
+- Added the universal half-height equivalent-time damage rule: over 35 tics = 0 damage; each step down to 1 tic adds 3% max-HP damage, capped at 105%.
+- Added experimental wall-impact detection from before/after horizontal velocity on blocked world movement.
+- Added landing/fall impact detection from before/after vertical velocity.
+- Added a future-facing `CollisionDamageMultiplier` surface parameter for spikes and similar contact effects.
+- Added compact impact telemetry to the debug overlay.
+- Added `docs/PHYSICS_COLLISION_SYSTEM.md` with the full real-physics basis, gameplay conventions, formulas, engine integration and planned extensions.
+
 ## 4.25.0 — Ranged weapon architecture and balance
 
 - Added dedicated magazines: 50 rounds for Standard Bow and Longbow, 20 for Crossbow, 10 for Carbine; capacities are identical across tiers.

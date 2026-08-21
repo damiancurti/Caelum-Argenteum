@@ -275,6 +275,18 @@ class CaelumPlayer : DoomPlayer
     double LastMeleePitchOffset;
     double LastAttackPushForce;
 
+    // V4.25.1 — diagnóstico y estado del último impacto físico.
+    double CollisionDamageMultiplier;
+    int LastImpactKind;
+    double LastImpactDeltaSpeed;
+    double LastImpactEquivalentTics;
+    double LastImpactDamagePercent;
+    int LastImpactBaseDamage;
+    double LastImpactEffectiveMass;
+    double LastImpactOtherEffectiveMass;
+    double LastImpactClosingSpeed;
+    double LastImpactImpulse;
+
     // El Anima es un recurso persistente separado para magia y armas magicas.
     double CurrentAnima;
     bool AnimaResourceInitialized;
@@ -5115,6 +5127,7 @@ class CaelumPlayer : DoomPlayer
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        CollisionDamageMultiplier = 1.0;
         ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
 
         // Create the attribute container only when it does not already exist.
@@ -5457,6 +5470,249 @@ class CaelumPlayer : DoomPlayer
 
     // Directed combat damage now uses the complete Caelum defensive order.
     // Environmental and unclassified damage stays on GZDoom's native route.
+    double GetImpactMaximumHealth()
+    {
+        if (CaelumMaximumHealth > 0) { return CaelumMaximumHealth; }
+        return Max(1.0, double(GetMaxHealth()));
+    }
+
+    double CalculateImpactEquivalentTics(double deltaSpeed)
+    {
+        if (deltaSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            return 1.0e9;
+        }
+        return (Height * 0.5) / deltaSpeed;
+    }
+
+    double CalculateImpactDamagePercent(double equivalentTics)
+    {
+        if (equivalentTics > CaelumConstants.IMPACT_DAMAGE_THRESHOLD_TICS)
+        {
+            return 0.0;
+        }
+
+        // Ceil hace conservador cada escalón: 35 tics = 3%, 1 tic = 105%.
+        int elapsedTier = int(Ceil(Max(1.0, equivalentTics)));
+        int damageSteps = Clamp(
+            36 - elapsedTier,
+            0,
+            int(CaelumConstants.IMPACT_DAMAGE_THRESHOLD_TICS)
+        );
+        return Min(
+            CaelumConstants.IMPACT_DAMAGE_MAX_PERCENT,
+            damageSteps * CaelumConstants.IMPACT_DAMAGE_PERCENT_PER_TIC
+        );
+    }
+
+    void ReceiveCaelumImpact(
+        double deltaSpeed,
+        int impactKind,
+        Actor sourceActor,
+        double sourceSurfaceMultiplier,
+        double selfEffectiveMass,
+        double otherEffectiveMass,
+        double closingSpeed,
+        double impulse
+    )
+    {
+        LastImpactKind = impactKind;
+        LastImpactDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactEquivalentTics =
+            CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
+        LastImpactDamagePercent =
+            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+        LastImpactEffectiveMass = selfEffectiveMass;
+        LastImpactOtherEffectiveMass = otherEffectiveMass;
+        LastImpactClosingSpeed = closingSpeed;
+        LastImpactImpulse = impulse;
+        LastImpactBaseDamage = 0;
+
+        if (LastImpactDamagePercent <= 0.0 || health <= 0)
+        {
+            return;
+        }
+
+        double surfaceMultiplier = Max(0.0, sourceSurfaceMultiplier);
+        LastImpactBaseDamage = Max(
+            1,
+            int(GetImpactMaximumHealth()
+                * LastImpactDamagePercent / 100.0
+                * surfaceMultiplier + 0.5)
+        );
+
+        Actor impactSource = sourceActor;
+        if (impactSource == null)
+        {
+            impactSource = self;
+        }
+        DamageMobj(
+            impactSource,
+            impactSource,
+            LastImpactBaseDamage,
+            'CaelumImpact',
+            DMG_NO_ARMOR,
+            0.0
+        );
+    }
+
+    bool IsCaelumCollisionBody(Actor other)
+    {
+        return other != null
+            && other != self
+            && other.health > 0
+            && (CaelumPlayer(other) != null
+                || CaelumCombatActor(other) != null);
+    }
+
+    double GetOtherCollisionEffectiveMass(Actor other)
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null) { return otherPlayer.GetCombatMass(); }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            return otherActor.GetCollisionEffectiveMass();
+        }
+        return Max(1.0, double(other.Mass));
+    }
+
+    double GetOtherCollisionDamageMultiplier(Actor other)
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            return Max(0.0, otherPlayer.CollisionDamageMultiplier);
+        }
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            return Max(0.0, otherActor.CollisionDamageMultiplier);
+        }
+        return 1.0;
+    }
+
+    void DeliverImpactToOther(
+        Actor other,
+        double deltaSpeed,
+        double sourceEffectiveMass,
+        double targetEffectiveMass,
+        double closingSpeed,
+        double impulse
+    )
+    {
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            otherPlayer.ReceiveCaelumImpact(
+                deltaSpeed,
+                CaelumConstants.IMPACT_KIND_ACTOR,
+                self,
+                CollisionDamageMultiplier,
+                targetEffectiveMass,
+                sourceEffectiveMass,
+                closingSpeed,
+                impulse
+            );
+            return;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            otherActor.ReceiveCaelumImpact(
+                deltaSpeed,
+                CaelumConstants.IMPACT_KIND_ACTOR,
+                self,
+                CollisionDamageMultiplier,
+                targetEffectiveMass,
+                sourceEffectiveMass,
+                closingSpeed,
+                impulse
+            );
+        }
+    }
+
+    override void CollidedWith(Actor other, bool passive)
+    {
+        Super.CollidedWith(other, passive);
+
+        // CollidedWith se ejecuta en ambos actores. Sólo el lado activo
+        // resuelve el par para evitar duplicar acción-reacción.
+        if (passive || !IsCaelumCollisionBody(other) || health <= 0)
+        {
+            return;
+        }
+
+        double dx = other.Pos.X - Pos.X;
+        double dy = other.Pos.Y - Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        if (distance <= 0.0001) { return; }
+
+        double nx = dx / distance;
+        double ny = dy / distance;
+        double relativeX = Vel.X - other.Vel.X;
+        double relativeY = Vel.Y - other.Vel.Y;
+        double closingSpeed = relativeX * nx + relativeY * ny;
+
+        // Valor positivo = los cuerpos se aproximan en la normal de contacto.
+        if (closingSpeed <= 0.0) { return; }
+
+        double selfMass = Max(1.0, GetCombatMass());
+        double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
+        double inverseMassSum = 1.0 / selfMass + 1.0 / otherMass;
+        if (inverseMassSum <= 0.0) { return; }
+
+        // Impulso normal de una colisión con coeficiente de restitución e.
+        // V4.25.1 usa e=0: colisión perfectamente inelástica en la normal.
+        double impulse = (1.0 + CaelumConstants.IMPACT_RESTITUTION)
+            * closingSpeed / inverseMassSum;
+        double selfDeltaSpeed = impulse / selfMass;
+        double otherDeltaSpeed = impulse / otherMass;
+
+        Vel.X -= nx * selfDeltaSpeed;
+        Vel.Y -= ny * selfDeltaSpeed;
+        other.Vel.X += nx * otherDeltaSpeed;
+        other.Vel.Y += ny * otherDeltaSpeed;
+
+        ReceiveCaelumImpact(
+            selfDeltaSpeed,
+            CaelumConstants.IMPACT_KIND_ACTOR,
+            other,
+            GetOtherCollisionDamageMultiplier(other),
+            selfMass,
+            otherMass,
+            closingSpeed,
+            impulse
+        );
+        DeliverImpactToOther(
+            other,
+            otherDeltaSpeed,
+            selfMass,
+            otherMass,
+            closingSpeed,
+            impulse
+        );
+    }
+
+    void RegisterWorldImpact(
+        double deltaSpeed,
+        int impactKind
+    )
+    {
+        ReceiveCaelumImpact(
+            deltaSpeed,
+            impactKind,
+            self,
+            1.0,
+            Max(1.0, GetCombatMass()),
+            0.0,
+            deltaSpeed,
+            0.0
+        );
+    }
+
     override int DamageMobj(
         Actor inflictor,
         Actor source,
@@ -5470,6 +5726,50 @@ class CaelumPlayer : DoomPlayer
         if (CreationWizardOpen && !CharacterCreationComplete)
         {
             return 0;
+        }
+
+        // Impacto cinemático: no puede evadirse, bloquearse ni localizarse por
+        // armadura. Es trauma global basado en Δv y vida máxima.
+        if (mod == 'CaelumImpact')
+        {
+            int healthBeforeImpact = health;
+            double adrenalineRatioBeforeImpact = 0.0;
+            if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
+            {
+                adrenalineRatioBeforeImpact = Clamp(
+                    CurrentAdrenaline / DerivedStats.MaximumAdrenaline,
+                    0.0,
+                    1.0
+                );
+            }
+
+            int result = Super.DamageMobj(
+                inflictor,
+                source,
+                damage,
+                mod,
+                flags | DMG_NO_ARMOR,
+                angle
+            );
+
+            if (health < healthBeforeImpact)
+            {
+                int actualHealthLost = healthBeforeImpact - health;
+                TryInterruptPendingStaffCast(
+                    actualHealthLost, adrenalineRatioBeforeImpact
+                );
+                UpdateHealthStateEffects();
+                CalculateAndTriggerPain(
+                    actualHealthLost,
+                    adrenalineRatioBeforeImpact
+                );
+                AddCombatAdrenaline(
+                    CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
+                    CaelumConstants.ADRENALINE_EVENT_DAMAGE
+                );
+                MarkCombatActivity();
+            }
+            return result;
         }
 
         LastEvasionAttempted = false;
@@ -6403,7 +6703,49 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        Vector3 prePhysicsVelocity = Vel;
+        bool wasGroundedBeforePhysics =
+            player != null && player.onground;
+
         Super.Tick();
+
+        // Impacto vertical: aterrizaje. Vel está expresada en unidades por tic,
+        // por lo que H/2 dividido por |Δv| produce directamente tics equivalentes.
+        bool groundedAfterPhysics = player != null && player.onground;
+        if (!wasGroundedBeforePhysics
+            && groundedAfterPhysics
+            && prePhysicsVelocity.Z < 0.0)
+        {
+            double landingDeltaSpeed = Abs(
+                Vel.Z - prePhysicsVelocity.Z
+            );
+            if (landingDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+            {
+                RegisterWorldImpact(
+                    landingDeltaSpeed,
+                    CaelumConstants.IMPACT_KIND_FLOOR
+                );
+            }
+        }
+
+        // Impacto horizontal contra geometría. Se excluyen actores porque
+        // CollidedWith resuelve esos pares mediante conservación de momento.
+        if (BlockingMobj == null
+            && (MovementBlockingLine != null || BlockingLine != null))
+        {
+            double deltaX = Vel.X - prePhysicsVelocity.X;
+            double deltaY = Vel.Y - prePhysicsVelocity.Y;
+            double wallDeltaSpeed = Sqrt(
+                deltaX * deltaX + deltaY * deltaY
+            );
+            if (wallDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+            {
+                RegisterWorldImpact(
+                    wallDeltaSpeed,
+                    CaelumConstants.IMPACT_KIND_WALL
+                );
+            }
+        }
 
         // No rearmamos la estación mientras crafting siga abierto, aunque
         // PlayerThink haya limpiado temporalmente los botones. Tras cerrar,
@@ -7178,7 +7520,7 @@ class CaelumPlayer : DoomPlayer
 
     double GetRangedBaseReloadSeconds(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 10.0; }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 5.0; }
         if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW) { return 5.0; }
         if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
             || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)

@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.25.1 asset note
+
+V4.25.1 is a physics/code/documentation patch and introduces no new external art assets.
+
 ## V4.25.0 asset note
 
 V4.25.0 introduces no new external artwork. The ranged refactor reuses the already registered arrow, bolt, carbine-ammunition, projectile, weapon, shield, and UI assets. This entry exists so code-only balance patches remain traceable in the public asset audit.

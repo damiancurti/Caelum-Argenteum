@@ -1,5 +1,21 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Momentum collision and impact physics 4.25.1
+
+**Implemented — pending manual validation**
+
+The collision foundation now resolves Caelum character/NPC contacts through a two-body impulse model. Effective combat mass participates in the impulse, so Buckler (`x0.5`) and Tower Shield (`x2`) naturally change both outgoing and self collision response. The normal coefficient of restitution is currently `e = 0`, producing an inelastic character collision rather than a bounce.
+
+Each body independently converts its forced `Delta-v` into an equivalent time to cover half of its own height. More than 35 equivalent tics is non-damaging. From 35 down to 1 tic, each discrete threshold adds 3% maximum-health base damage, reaching 105% at one tic or less.
+
+The same impact evaluator is connected experimentally to blocked horizontal world movement and floor landings. Impact damage currently bypasses evasion, shield Block and localized armor so the test build exposes the raw physical scale without hidden mitigation.
+
+The debug overlay displays last impact kind, Delta-v, equivalent tics, damage percent and base damage. Internal fields also preserve effective masses, closing speed and impulse for calibration.
+
+Carbine Reload base time is corrected to 5 seconds. Ranged Reload bases are now 3/3/5/5 seconds.
+
+Detailed design: `docs/PHYSICS_COLLISION_SYSTEM.md`.
+
 ## Ranged weapon architecture 4.25.0
 
 **Implemented — pending manual validation**

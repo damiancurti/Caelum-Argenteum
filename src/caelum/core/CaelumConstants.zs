@@ -313,6 +313,20 @@ class CaelumConstants : Object
     const SHIELD_TOWER_COMBAT_MASS_MULTIPLIER = 2.00;
     const SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER = 2.00;
 
+    // V4.25.1 — física de impactos.
+    // Una variación de velocidad capaz de recorrer media altura en más de
+    // 35 tics no produce daño. Cada escalón por debajo suma 3% de vida máxima.
+    const IMPACT_DAMAGE_THRESHOLD_TICS = 35.0;
+    const IMPACT_DAMAGE_PERCENT_PER_TIC = 3.0;
+    const IMPACT_DAMAGE_MAX_PERCENT = 105.0;
+    const IMPACT_RESTITUTION = 0.0;
+    const IMPACT_MIN_DELTA_SPEED = 0.0001;
+
+    const IMPACT_KIND_NONE = 0;
+    const IMPACT_KIND_ACTOR = 1;
+    const IMPACT_KIND_WALL = 2;
+    const IMPACT_KIND_FLOOR = 3;
+
     // Primer catalogo jugable de armas. Los indices son persistentes: no deben
     // reordenarse cuando se agreguen nuevas familias en versiones posteriores.
     const WEAPON_TYPE_SWORD = 0;

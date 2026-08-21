@@ -6,6 +6,7 @@ class CaelumWeaponModel : Object
     int Tier;
     int Size;
     int Durability;
+    int EssenceType;
     bool Equipped;
     bool Initialized;
 
@@ -16,6 +17,7 @@ class CaelumWeaponModel : Object
         Tier = 1;
         Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
+        EssenceType = CaelumConstants.ESSENCE_FIRE;
         Equipped = false;
         Initialized = true;
     }
