@@ -129,6 +129,22 @@ Static geometry now rejects grazing contact when the engine removes less than 25
 
 Wall/floor environmental impact damage no longer grants the generic received-damage Adrenaline gain. Actor-to-actor impact retains that response.
 
+## Universal impact scale and weighted anatomical response (V4.26.2)
+
+Impact Physics Core now uses a universal **28 map-unit reference distance** for equivalent-time severity:
+
+`T_impact = 28 / |Delta-v|`
+
+28 MU is half the standard 56-MU / 1.8-m Caelum humanoid reference height. Individual body height no longer changes kinetic severity, preventing size from being counted both through inertial mass and through the energy conversion. `ImpactBody.Height` remains available for neutral contact geometry and integration-specific biomechanics.
+
+The generic API now also returns normalized vertical contact intervals for both finite bodies. These values contain no Caelum anatomy semantics. For two cylindrical actors they are derived from their actual vertical overlap. Static vertical geometry defaults to a full-height contact interval. Floor integration supplies a bottom point contact.
+
+Caelum maps the neutral interval onto its authored anatomy regions. Region overlap lengths are normalized into weights, so vulnerability and armor are applied proportionally rather than selecting one arbitrary body part. If an impact is 80% torso, 10% head and 10% legs, torso vulnerability/armor contributes eight times as much as each 10% region.
+
+Impact Lucidity loss uses the same normalized anatomical weights. Only naturally critical/head regions contribute the existing critical-point Lucidity loss, multiplied by their contact share and their localized armor protection. A 50% head / 50% torso impact therefore produces half the head-contact Lucidity contribution of a 100% head impact.
+
+Fall biological damping is Agility/jump based. Player damping remains the current normal `JumpZ`; Caelum NPC damping now uses `8 × sqrt(Type1(Agility)/100)`. Physical stun removes this controlled-landing damping.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.

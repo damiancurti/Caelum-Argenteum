@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.26.2 — Universal impact scale and weighted anatomical response
+
+- Replaced actor-height-dependent equivalent-time severity with a universal 28-map-unit reference distance.
+- Individual height no longer directly reduces/increases kinetic severity; mass continues to affect impulse and Delta-v.
+- Kept `ImpactBody.Height` as neutral geometry metadata rather than an energy multiplier.
+- Extended generic `ImpactResult` with source/target normalized vertical contact intervals.
+- `ResolveBodies` derives those intervals from the vertical overlap of the two generic bodies.
+- Caelum integration converts contact intervals into normalized anatomy-region weights.
+- Collision vulnerability is now weighted by contacted-region proportion.
+- Collision armor defense is now localized and weighted by the same proportions instead of using global average armor.
+- Collision Lucidity loss is weighted by critical/head contact share and localized head armor.
+- Floor impacts use bottom-point contact; vertical static geometry uses full-height contact until the engine can provide more precise Z contact data.
+- Player biological landing damping remains based on current JumpZ/Agility.
+- NPC biological landing damping now derives from CombatAgility Type-1 jump scaling rather than body height.
+- Updated debug telemetry with contact band, weighted vulnerability, weighted armor, head-contact share and collision Lucidity loss.
+
 ## 4.26.1 — Impact response refinement
 
 - Changed collision Toughness from multiplicative mitigation to subtractive maximum-HP percentage-point tolerance.

@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.26.2 asset note
+
+V4.26.2 changes generic impact geometry, Caelum anatomy response and documentation only. No new external art assets are introduced.
+
 ## V4.26.1 asset note
 
 V4.26.1 changes physics response, combat integration and documentation only. No new external art assets are introduced.

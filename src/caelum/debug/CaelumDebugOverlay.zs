@@ -2284,22 +2284,23 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastImpactDamagePercent
             );
             String impactDefenseLine = String.Format(
-                "AfterTough %.2f%% (%d) Final %d | Tough %.1fpp Armor %.1f%% | RawDV %.3f Bio %.3f",
+                "AfterTough %.2f%% Final %d | Vul x%.2f ArmorW %.1f%% HeadW %.1f%% Luc %.2f",
                 localPlayer.LastImpactPostToughnessPercent,
-                localPlayer.LastImpactBaseDamage,
                 localPlayer.LastImpactFinalDamage,
-                localPlayer.LastImpactToughnessPercent,
-                localPlayer.LastImpactArmorDefensePercent,
-                localPlayer.LastImpactRawDeltaSpeed,
-                localPlayer.LastImpactBiologicalAbsorptionSpeed
+                localPlayer.LastImpactWeightedVulnerabilityMultiplier,
+                localPlayer.LastImpactWeightedArmorDefensePercent,
+                localPlayer.LastImpactHeadContactWeight * 100.0,
+                localPlayer.LastImpactLucidityLoss
             );
             String accelerationLine = String.Format(
-                "Accel %.1f%% (%.2fs) | Contact %s Sep %d/%d | EnergyCurve v^2",
+                "Accel %.1f%% (%.2fs) | Contact %s Sep %d/%d | Band %.2f-%.2f",
                 localPlayer.MovementAccelerationFactor * 100.0,
                 localPlayer.MovementAccelerationSeconds,
                 localPlayer.ImpactContactActor != null ? "ON" : "OFF",
                 localPlayer.ImpactContactSeparatedTics,
-                CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
+                CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS,
+                localPlayer.LastImpactContactMinimumHeightRatio,
+                localPlayer.LastImpactContactMaximumHeightRatio
             );
             Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 250.0, impactLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);

@@ -10,6 +10,7 @@ class ImpactBody : Object
 {
     double Mass;
     double Height;
+    Vector3 Position;
     Vector3 Velocity;
     double Restitution;
     double SurfaceMultiplier;
@@ -28,6 +29,10 @@ class ImpactResult : Object
     double TargetEquivalentTics;
     double SourceEnergyPercent;
     double TargetEnergyPercent;
+    double SourceContactMinimumHeightRatio;
+    double SourceContactMaximumHeightRatio;
+    double TargetContactMinimumHeightRatio;
+    double TargetContactMaximumHeightRatio;
 
     void Reset()
     {
@@ -42,6 +47,10 @@ class ImpactResult : Object
         TargetEquivalentTics = 1.0e9;
         SourceEnergyPercent = 0.0;
         TargetEnergyPercent = 0.0;
+        SourceContactMinimumHeightRatio = 0.0;
+        SourceContactMaximumHeightRatio = 1.0;
+        TargetContactMinimumHeightRatio = 0.0;
+        TargetContactMaximumHeightRatio = 1.0;
     }
 }
 
@@ -69,8 +78,13 @@ class ImpactPhysics
 
     static double EquivalentTics(double height, double deltaSpeed)
     {
+        // V4.26.2: universal physical reference. `height` remains in the
+        // signature for API compatibility and contact geometry, but no longer
+        // changes kinetic severity. 56 MU is the standard 1.8 m Caelum actor;
+        // half that height is the fixed 28 MU reference distance.
+        double referenceDistance = 28.0;
         if (deltaSpeed <= 0.0001) { return 1.0e9; }
-        return (SanitizeHeight(height) * 0.5) / deltaSpeed;
+        return referenceDistance / deltaSpeed;
     }
 
     static double EnergyPercent(double equivalentTics)
@@ -144,6 +158,33 @@ class ImpactPhysics
             EnergyPercent(result.SourceEquivalentTics);
         result.TargetEnergyPercent =
             EnergyPercent(result.TargetEquivalentTics);
+
+        // Neutral geometric contact interval from vertical cylinder overlap.
+        double sourceBottom = sourceBody.Position.Z;
+        double sourceTop = sourceBottom + SanitizeHeight(sourceBody.Height);
+        double targetBottom = targetBody.Position.Z;
+        double targetTop = targetBottom + SanitizeHeight(targetBody.Height);
+        double overlapBottom = Max(sourceBottom, targetBottom);
+        double overlapTop = Min(sourceTop, targetTop);
+        if (overlapTop >= overlapBottom)
+        {
+            result.SourceContactMinimumHeightRatio = Clamp(
+                (overlapBottom - sourceBottom) / SanitizeHeight(sourceBody.Height),
+                0.0, 1.0
+            );
+            result.SourceContactMaximumHeightRatio = Clamp(
+                (overlapTop - sourceBottom) / SanitizeHeight(sourceBody.Height),
+                0.0, 1.0
+            );
+            result.TargetContactMinimumHeightRatio = Clamp(
+                (overlapBottom - targetBottom) / SanitizeHeight(targetBody.Height),
+                0.0, 1.0
+            );
+            result.TargetContactMaximumHeightRatio = Clamp(
+                (overlapTop - targetBottom) / SanitizeHeight(targetBody.Height),
+                0.0, 1.0
+            );
+        }
     }
 
     static void ResolveStatic(

@@ -1,5 +1,33 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Universal impact scale and anatomy response 4.26.2
+
+**Implemented — pending manual validation**
+
+The kinetic reference distance is now fixed at 28 MU for every body:
+
+`T_impact = 28 / |Delta-v|`
+
+This removes the previous double size effect in which large actors benefited both from greater mass during impulse resolution and from a larger height numerator during severity conversion.
+
+Impact Physics Core remains anatomy-agnostic. It exposes only normalized contact-height intervals. Caelum interprets those intervals using `CaelumAnatomyProfile`, normalizes all overlapping region spans, and applies vulnerability and armor proportionally.
+
+For each contacted region `i`:
+
+`w_i = overlap_i / sum(overlap)`
+
+After the V4.26.1 subtractive Toughness threshold:
+
+`S_i = S_postToughness × w_i × Vulnerability_i × (1 - ArmorDefense_i)`
+
+`S_final = sum(S_i)`
+
+Critical/head Lucidity contribution uses the same `w_i`; non-critical regions contribute zero critical-point Lucidity loss. Local armor defense reduces the corresponding contribution.
+
+Floor contact is represented as normalized height 0.0 and therefore maps to the lowest authored anatomy region. Actor-to-actor contact uses actual vertical cylinder overlap. Static vertical geometry currently uses 0.0-1.0 because native GZDoom line collision does not provide an anatomical Z contact point.
+
+NPC controlled-landing absorption now follows Agility Type-1 jump scaling, matching the player design concept instead of scaling by actor height.
+
 ## Impact response refinement 4.26.1
 
 **Implemented — pending manual validation**

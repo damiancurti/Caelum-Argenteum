@@ -297,6 +297,12 @@ class CaelumPlayer : DoomPlayer
     int ImpactStaticClearTics;
     double LastImpactToughnessPercent;
     double LastImpactPostToughnessPercent;
+    double LastImpactWeightedVulnerabilityMultiplier;
+    double LastImpactWeightedArmorDefensePercent;
+    double LastImpactHeadContactWeight;
+    double LastImpactLucidityLoss;
+    double LastImpactContactMinimumHeightRatio;
+    double LastImpactContactMaximumHeightRatio;
 
     // V4.25.3 — aceleración y contacto sostenido.
     double MovementAccelerationFactor;
@@ -5564,15 +5570,142 @@ class CaelumPlayer : DoomPlayer
         return ImpactPhysics.EnergyPercent(equivalentTics);
     }
 
+    double GetImpactRegionOverlap(
+        int regionIndex,
+        double minimumHeightRatio,
+        double maximumHeightRatio
+    )
+    {
+        if (AnatomyProfile == null
+            || regionIndex < 0
+            || regionIndex >= AnatomyProfile.RegionCount)
+        {
+            return 0.0;
+        }
+
+        double minimumContact = Clamp(minimumHeightRatio, 0.0, 1.0);
+        double maximumContact = Clamp(maximumHeightRatio, 0.0, 1.0);
+        if (maximumContact < minimumContact)
+        {
+            double swap = minimumContact;
+            minimumContact = maximumContact;
+            maximumContact = swap;
+        }
+
+        // Point contact (floor, future point-like geometry).
+        if (maximumContact - minimumContact <= 0.0001)
+        {
+            int pointRegion = AnatomyProfile.FindRegion(minimumContact, 0.0);
+            return pointRegion == regionIndex ? 1.0 : 0.0;
+        }
+
+        double overlapMinimum = Max(
+            minimumContact,
+            AnatomyProfile.RegionMinimumHeight[regionIndex]
+        );
+        double overlapMaximum = Min(
+            maximumContact,
+            AnatomyProfile.RegionMaximumHeight[regionIndex]
+        );
+        return Max(0.0, overlapMaximum - overlapMinimum);
+    }
+
+    double GetImpactRegionTotalOverlap(
+        double minimumHeightRatio,
+        double maximumHeightRatio
+    )
+    {
+        if (AnatomyProfile == null) { return 0.0; }
+        double total = 0.0;
+        for (int regionIndex = 0;
+            regionIndex < AnatomyProfile.RegionCount;
+            regionIndex++)
+        {
+            total += GetImpactRegionOverlap(
+                regionIndex,
+                minimumHeightRatio,
+                maximumHeightRatio
+            );
+        }
+        return total;
+    }
+
+    void ApplyWeightedImpactLucidity(
+        double minimumHeightRatio,
+        double maximumHeightRatio,
+        double totalOverlap
+    )
+    {
+        LastImpactHeadContactWeight = 0.0;
+        LastImpactLucidityLoss = 0.0;
+        LastLocalizedLucidityLoss = 0.0;
+        if (AnatomyProfile == null
+            || DerivedStats == null
+            || totalOverlap <= 0.0)
+        {
+            return;
+        }
+
+        double weightedLoss = 0.0;
+        for (int regionIndex = 0;
+            regionIndex < AnatomyProfile.RegionCount;
+            regionIndex++)
+        {
+            double overlap = GetImpactRegionOverlap(
+                regionIndex,
+                minimumHeightRatio,
+                maximumHeightRatio
+            );
+            if (overlap <= 0.0) { continue; }
+
+            double weight = overlap / totalOverlap;
+            int naturalGrade = AnatomyProfile.GetVulnerability(regionIndex);
+            if (naturalGrade != CaelumConstants.VULNERABILITY_CRITICAL_POINT)
+            {
+                continue;
+            }
+
+            LastImpactHeadContactWeight += weight;
+            int location = AnatomyProfile.GetLocation(regionIndex);
+            int slot = GetArmorSlotForHitLocation(location);
+            double defenseRatio = ArmorModel != null
+                ? Clamp(ArmorModel.GetDefense(slot) / 100.0, 0.0, 1.0)
+                : 0.0;
+            weightedLoss +=
+                CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
+                * weight
+                * (1.0 - defenseRatio);
+        }
+
+        LastImpactLucidityLoss = Min(
+            CurrentLucidity,
+            weightedLoss
+                * DerivedStats.LucidityLossMultiplier
+                * GetLuciditySleepDebuffMultiplier()
+        );
+        LastLocalizedLucidityLoss = LastImpactLucidityLoss;
+        if (LastImpactLucidityLoss > 0.0)
+        {
+            CurrentLucidity = Max(
+                0.0,
+                CurrentLucidity - LastImpactLucidityLoss
+            );
+            UpdateLucidityState();
+        }
+    }
+
     void ReceiveCaelumImpact(
         double deltaSpeed,
+
         int impactKind,
         Actor sourceActor,
         double sourceSurfaceMultiplier,
         double selfEffectiveMass,
         double otherEffectiveMass,
         double closingSpeed,
-        double impulse
+        double impulse,
+        double contactMinimumHeightRatio,
+        double contactMaximumHeightRatio
     )
     {
         LastImpactKind = impactKind;
@@ -5596,7 +5729,15 @@ class CaelumPlayer : DoomPlayer
                 double(Attributes.Toughness)
             );
         }
-        LastImpactArmorDefensePercent = GetImpactArmorDefensePercent();
+        LastImpactArmorDefensePercent = 0.0;
+        LastImpactWeightedVulnerabilityMultiplier = 0.0;
+        LastImpactWeightedArmorDefensePercent = 0.0;
+        LastImpactHeadContactWeight = 0.0;
+        LastImpactLucidityLoss = 0.0;
+        LastImpactContactMinimumHeightRatio =
+            Clamp(contactMinimumHeightRatio, 0.0, 1.0);
+        LastImpactContactMaximumHeightRatio =
+            Clamp(contactMaximumHeightRatio, 0.0, 1.0);
 
         if (LastImpactDamagePercent <= 0.0 || health <= 0)
         {
@@ -5610,6 +5751,70 @@ class CaelumPlayer : DoomPlayer
             0.0,
             surfacedDamagePercent - LastImpactToughnessPercent
         );
+
+        if (AnatomyProfile == null)
+        {
+            AnatomyProfile = CaelumAnatomyProfile(new("CaelumAnatomyProfile"));
+            AnatomyProfile.InitializeHumanoid();
+        }
+
+        double totalOverlap = GetImpactRegionTotalOverlap(
+            LastImpactContactMinimumHeightRatio,
+            LastImpactContactMaximumHeightRatio
+        );
+        double weightedFinalPercent = 0.0;
+        if (totalOverlap > 0.0)
+        {
+            for (int regionIndex = 0;
+                regionIndex < AnatomyProfile.RegionCount;
+                regionIndex++)
+            {
+                double overlap = GetImpactRegionOverlap(
+                    regionIndex,
+                    LastImpactContactMinimumHeightRatio,
+                    LastImpactContactMaximumHeightRatio
+                );
+                if (overlap <= 0.0) { continue; }
+
+                double weight = overlap / totalOverlap;
+                int location = AnatomyProfile.GetLocation(regionIndex);
+                int naturalGrade =
+                    AnatomyProfile.GetVulnerability(regionIndex);
+                int slot = GetArmorSlotForHitLocation(location);
+                int reinforcement = ArmorModel != null
+                    ? ArmorModel.GetReinforcement(slot) : 0;
+                int effectiveGrade = Min(
+                    CaelumConstants.VULNERABILITY_ARMORED_POINT,
+                    naturalGrade + reinforcement
+                );
+                double vulnerabilityMultiplier =
+                    GetVulnerabilityMultiplier(effectiveGrade, false);
+                double defenseRatio = ArmorModel != null
+                    ? Clamp(
+                        ArmorModel.GetDefense(slot) / 100.0,
+                        0.0, 1.0
+                    )
+                    : 0.0;
+
+                LastImpactWeightedVulnerabilityMultiplier +=
+                    weight * vulnerabilityMultiplier;
+                LastImpactWeightedArmorDefensePercent +=
+                    weight * defenseRatio * 100.0;
+                weightedFinalPercent +=
+                    LastImpactPostToughnessPercent
+                    * weight
+                    * vulnerabilityMultiplier
+                    * (1.0 - defenseRatio);
+            }
+        }
+        else
+        {
+            weightedFinalPercent = LastImpactPostToughnessPercent;
+            LastImpactWeightedVulnerabilityMultiplier = 1.0;
+        }
+
+        LastImpactArmorDefensePercent =
+            LastImpactWeightedArmorDefensePercent;
         LastImpactBaseDamage = Max(
             0,
             int(
@@ -5618,16 +5823,23 @@ class CaelumPlayer : DoomPlayer
                 + 0.5
             )
         );
-
-        double armorMultiplier = Clamp(
-            1.0 - LastImpactArmorDefensePercent / 100.0,
-            0.0,
-            1.0
-        );
         LastImpactFinalDamage = Max(
             0,
-            int(LastImpactBaseDamage * armorMultiplier + 0.5)
+            int(
+                GetImpactMaximumHealth()
+                * weightedFinalPercent / 100.0
+                + 0.5
+            )
         );
+
+        if (LastImpactPostToughnessPercent > 0.0)
+        {
+            ApplyWeightedImpactLucidity(
+                LastImpactContactMinimumHeightRatio,
+                LastImpactContactMaximumHeightRatio,
+                totalOverlap
+            );
+        }
         if (LastImpactFinalDamage <= 0) { return; }
 
         Actor impactSource = sourceActor;
@@ -5695,7 +5907,9 @@ class CaelumPlayer : DoomPlayer
         double sourceEffectiveMass,
         double targetEffectiveMass,
         double closingSpeed,
-        double impulse
+        double impulse,
+        double targetContactMinimumHeightRatio,
+        double targetContactMaximumHeightRatio
     )
     {
         CaelumPlayer otherPlayer = CaelumPlayer(other);
@@ -5709,8 +5923,9 @@ class CaelumPlayer : DoomPlayer
                 targetEffectiveMass,
                 sourceEffectiveMass,
                 closingSpeed,
-                impulse
-            );
+                impulse,
+                targetContactMinimumHeightRatio,
+                targetContactMaximumHeightRatio            );
             return;
         }
 
@@ -5725,8 +5940,9 @@ class CaelumPlayer : DoomPlayer
                 targetEffectiveMass,
                 sourceEffectiveMass,
                 closingSpeed,
-                impulse
-            );
+                impulse,
+                targetContactMinimumHeightRatio,
+                targetContactMaximumHeightRatio            );
         }
     }
 
@@ -5846,6 +6062,7 @@ class CaelumPlayer : DoomPlayer
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetCombatMass());
         body.Height = GetImpactReferenceHeight();
+        body.Position = Pos;
         body.Velocity = Vel;
         body.Restitution = CaelumConstants.IMPACT_RESTITUTION;
         body.SurfaceMultiplier = CollisionDamageMultiplier;
@@ -5858,9 +6075,11 @@ class CaelumPlayer : DoomPlayer
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetOtherCollisionEffectiveMass(other));
         body.Height = GetOtherImpactReferenceHeight(other);
+        body.Position = (0.0, 0.0, 0.0);
         body.Velocity = (0.0, 0.0, 0.0);
         if (other != null)
         {
+            body.Position = other.Pos;
             body.Velocity = other.Vel;
         }
         body.Restitution = CaelumConstants.IMPACT_RESTITUTION;
@@ -5924,7 +6143,9 @@ class CaelumPlayer : DoomPlayer
             selfBody.Mass,
             otherBody.Mass,
             impact.ClosingSpeed,
-            impact.Impulse
+            impact.Impulse,
+            impact.SourceContactMinimumHeightRatio,
+            impact.SourceContactMaximumHeightRatio
         );
         DeliverImpactToOther(
             other,
@@ -5932,7 +6153,9 @@ class CaelumPlayer : DoomPlayer
             selfBody.Mass,
             otherBody.Mass,
             impact.ClosingSpeed,
-            impact.Impulse
+            impact.Impulse,
+            impact.TargetContactMinimumHeightRatio,
+            impact.TargetContactMaximumHeightRatio
         );
     }
 
@@ -6004,7 +6227,9 @@ class CaelumPlayer : DoomPlayer
             selfBody.Mass,
             0.0,
             impact.ClosingSpeed,
-            impact.Impulse
+            impact.Impulse,
+            0.0,
+            1.0
         );
     }
 
@@ -6031,7 +6256,9 @@ class CaelumPlayer : DoomPlayer
             Max(1.0, GetCombatMass()),
             0.0,
             effectiveDeltaSpeed,
-            0.0
+            0.0,
+            0.0,
+            impactKind == CaelumConstants.IMPACT_KIND_FLOOR ? 0.0 : 1.0
         );
     }
 

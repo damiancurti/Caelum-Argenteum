@@ -740,3 +740,123 @@ Environmental kinetic trauma is separated from combat damage response:
 - floor/fall impact -> no received-damage Adrenaline.
 
 Pain and health-state consequences still occur when environmental impact actually removes HP.
+
+## 21. V4.26.2 — Universal 28-MU scale and weighted contact anatomy
+
+### Universal severity distance
+
+Equivalent impact time no longer uses half of the individual body's height.
+
+The fixed reference is:
+
+`L_ref = 28 map units`
+
+This originates from half the standard 56-MU Caelum humanoid height (the 1.8 m reference character), but it is an engine-space calibration constant, not a claim that Doom map units universally equal real-world meters.
+
+For every body:
+
+`T_impact = 28 / |Delta-v|`
+
+The V4.25.4 specific-energy curve remains unchanged after this conversion.
+
+This prevents body size from entering severity twice. Mass already affects impulse and therefore the Delta-v received by each body. Toughness and biological damping then describe resistance/controlled absorption separately.
+
+### Generic contact geometry
+
+Impact Physics Core remains independent of anatomy.
+
+`ImpactBody` now includes world `Position` in addition to Height. `ImpactResult` exposes:
+
+- `SourceContactMinimumHeightRatio`
+- `SourceContactMaximumHeightRatio`
+- `TargetContactMinimumHeightRatio`
+- `TargetContactMaximumHeightRatio`
+
+All are neutral normalized values from 0.0 (bottom) to 1.0 (top).
+
+For two finite cylindrical bodies, the core intersects their vertical spans and reports the overlap relative to each body independently.
+
+No result field is named head, torso, arm, leg, armor or vulnerability.
+
+### Caelum anatomy adapter
+
+Caelum takes the neutral contact interval and intersects it with every authored `CaelumAnatomyProfile` region.
+
+For region `i`:
+
+`overlap_i = length(ContactBand intersect Region_i)`
+
+Because authored regions may overlap (for example arms and torso bands), the overlaps are normalized:
+
+`w_i = overlap_i / sum(overlap_j)`
+
+Therefore:
+
+`sum(w_i) = 1`
+
+These weights are then used for both vulnerability and armor.
+
+After surface severity and subtractive Toughness:
+
+`S_post = max(0, S_surface - Toughness)`
+
+Each region contributes:
+
+`S_i = S_post × w_i × M_vulnerability,i × (1 - Defense_i/100)`
+
+Final collision severity is:
+
+`S_final = sum(S_i)`
+
+This means an 80/10/10 contact distribution makes the 80% region's vulnerability and armor eight times as influential as either 10% region.
+
+### Lucidity
+
+Collision Lucidity uses the same contact weights rather than selecting a single arbitrary region.
+
+Only regions whose **natural** vulnerability is Critical contribute the existing critical-point Lucidity loss. For each such region:
+
+`Lucidity_i = BaseCriticalLucidityLoss × w_i × (1 - localArmorDefense_i)`
+
+The contributions are summed, then the player's existing Lucidity-loss and sleep modifiers apply.
+
+Thus a 50% head / 50% torso collision produces approximately half the critical-point Lucidity contribution of an otherwise identical 100% head collision, before armor and player-specific Lucidity modifiers.
+
+### Floor and static geometry
+
+A controlled floor landing is supplied to the anatomy adapter as a point contact at normalized height `0.0`, mapping naturally to the lowest authored body region (humanoid legs/feet).
+
+GZDoom vertical wall/door collision does not provide an exact Z contact point for the cylindrical actor. Therefore static vertical geometry currently reports the full 0.0-1.0 band. Caelum weights all anatomy regions intersecting that band rather than inventing a torso-only hit.
+
+Future geometry systems that know a real contact Z may supply a narrower neutral band without changing the anatomy adapter.
+
+### Biological landing damping
+
+Player controlled landing absorption remains:
+
+`Delta-v_bio = current JumpZ`
+
+which already derives from the player's Agility jump scaling.
+
+CaelumCombatActor now mirrors the same principle:
+
+`Type1Agility% = 100 + Agility(Agility+1)/2`
+
+`Delta-v_bio,NPC = 8 × sqrt(Type1Agility% / 100)`
+
+Physical/Lucidity stun still sets controlled biological damping to zero.
+
+### Final floor-impact order
+
+`raw vertical Delta-v`
+-> `Agility/JumpZ biological damping`
+-> `effective Delta-v`
+-> `28-MU equivalent time`
+-> `specific-energy severity`
+-> `surface modifier`
+-> `subtract Toughness`
+-> `weighted anatomy vulnerability`
+-> `weighted localized armor`
+-> `HP`
+
+The same contact weights separately feed Lucidity response.
