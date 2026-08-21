@@ -8,26 +8,17 @@ class CaelumTrainingDummy : Actor
         // 48-pixel canvas; Height matches the full 72-pixel visual canvas.
         Radius 21;
         Height 72;
-        Mass 0x7fffffff;
+        Mass 10000;
         PainChance 0;
         Speed 0;
         +SOLID
         +SHOOTABLE
         +NOBLOOD
         +NODAMAGETHRUST
-        +CANNOTPUSH
         +NOTELEPORT
         +DONTSPLASH
     }
 
-    override void Tick()
-    {
-        Super.Tick();
-        // Preserve vertical gravity so a dummy spawned above a lower floor can
-        // settle normally, while guaranteeing that attacks never move it
-        // horizontally.
-        Vel = (0.0, 0.0, Vel.Z);
-    }
 
     States
     {

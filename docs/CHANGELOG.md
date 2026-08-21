@@ -1,5 +1,30 @@
 # Changelog
 
+## 4.25.3 — Acceleration, contact latch and biological damping
+
+- Added exponential player acceleration. Continuous grounded movement reaches exactly 95% of its currently available maximum after 3.0 seconds.
+- The acceleration factor multiplies the existing Caelum movement result instead of replacing Agility/load/status/shield calculations.
+- Wall-impact severity now includes the current acceleration factor, so a half-step approach and a long run no longer carry the same self-powered wall momentum.
+- Added actor-pair contact latching: one confirmed collision produces one impulse/impact until the bodies physically separate.
+- Added biological landing damping before Toughness and armor.
+- Player biological landing absorption equals the current normal `JumpZ`, making ordinary controlled jumps naturally safe.
+- Physical stun/immobilization removes player landing absorption, so a stunned body lands rigidly and can take substantially more floor-impact damage.
+- Caelum NPC biological landing absorption scales as `8 × sqrt(Height / 56)` and becomes zero while lucidity-stunned.
+- Added debug telemetry for acceleration, contact latch, raw delta-v and biological absorption.
+
+## 4.25.2 — Impact mitigation and calibration
+
+- Added Toughness mitigation to `CaelumImpact` using the existing Caelum body-resistance curve.
+- Added global impact armor defense as the mean defense of all four functional armor slots.
+- Kept impact trauma non-localized: no evasion and no shield Block interception.
+- Switched player impact-height normalization to stable `DerivedStats.ActorHeight`.
+- Reworked landing detection to preserve the last falling vertical speed across tics and detect airborne-to-grounded transitions reliably.
+- Normalized self-powered player wall impacts against `EffectiveMovementPercent`; a complete stop at 100% movement maps to the 35-tic threshold.
+- Added wall-contact latching so holding forward against a wall does not repeatedly deal impact damage.
+- Made the training dummy movable, set its mass to 10000, and added it to the Caelum momentum collision whitelist.
+- Documented the exact Rulo/Caella/Ronnie/Argento combat profiles and their current T1 armor.
+- Ordinary Doom actors remain outside the Caelum collision adapter pending a generic-actor design.
+
 ## 4.25.1 — Momentum collision and impact physics
 
 - Corrected Carbine base Reload from 10 s to 5 s; ranged Reload bases are now 3/3/5/5 s.

@@ -79,6 +79,24 @@ Characters now use a momentum/impulse collision foundation. Actor-to-actor conta
 
 The same `Delta-v` severity model is used experimentally for wall impacts and landings, allowing future ramming, movable-object impacts and falling damage to share one physical rule. See `docs/PHYSICS_COLLISION_SYSTEM.md` for the complete formulas and design rationale.
 
+## Impact mitigation and calibration (V4.25.2)
+
+Collision damage now applies Toughness and global armor defense after raw kinetic severity. Global impact armor defense is the mean of the four functional armor slots; collision trauma remains non-localized and cannot be evaded or shield-blocked.
+
+Player wall impacts are normalized against `EffectiveMovementPercent` rather than treating raw Doom velocity as physical meters. A full frontal stop at 100% movement corresponds to the 35-tic damage threshold, while load and movement modifiers alter severity naturally. Wall contact is latched so holding movement against a wall does not cause repeated impacts.
+
+Landing detection stores the last downward vertical velocity across tics and uses the stable body-height reference. The training dummy is now movable with mass 10000 and participates in momentum collision tests.
+
+## Acceleration, contact latch and biological landing damping (V4.25.3)
+
+Player locomotion no longer reaches the current movement limit immediately. Continuous grounded movement follows an exponential approach to maximum speed and reaches exactly 95% after 3.0 seconds. The current factor is multiplied into the already-calculated Caelum movement percentage, so Agility, load, health/Air/survival states and shield mobility remain the source of the final maximum speed.
+
+Actor-to-actor impact now uses a real contact latch. Once a Caelum collision pair has resolved one action/reaction impulse, maintaining contact does not create new impacts. The pair rearms only after physical separation beyond the combined collision radii plus a small engine tolerance.
+
+Living actors now receive biological landing damping before Toughness and armor. For the player, the safe landing absorption speed equals the current normal `JumpZ`; an ordinary self-generated jump therefore does not become traumatic merely because the engine reports a large raw vertical velocity. If the player is physically stunned/immobilized, this absorption becomes zero, representing a rigid uncontrolled fall. Caelum NPCs use a geometrically scaled biological landing speed based on their body height and lose it while lucidity-stunned.
+
+The debug overlay now exposes acceleration percentage/time, contact-latch state, raw landing delta-v and the biological delta-v absorption.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.

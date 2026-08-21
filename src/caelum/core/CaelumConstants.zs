@@ -322,6 +322,24 @@ class CaelumConstants : Object
     const IMPACT_RESTITUTION = 0.0;
     const IMPACT_MIN_DELTA_SPEED = 0.0001;
 
+    // La pared se calibra contra la velocidad efectiva del personaje.
+    // A 100% de movimiento y detención frontal completa, el impacto queda
+    // exactamente en el umbral de 35 tics.
+    const IMPACT_WALL_REFERENCE_MOVEMENT_PERCENT = 100.0;
+
+    // V4.25.3 — aceleración horizontal exponencial.
+    // alpha produce exactamente 95% de la velocidad disponible tras 3 s
+    // de entrada continua a 35 tics/s: f(n)=1-(1-alpha)^n.
+    const MOVEMENT_ACCELERATION_ALPHA_PER_TIC = 0.0281276240;
+    const MOVEMENT_ACCELERATION_TARGET_SECONDS_95 = 3.0;
+
+    // Separación necesaria para rearmar un choque entre los mismos cuerpos.
+    const IMPACT_CONTACT_RELEASE_MARGIN = 2.0;
+
+    // Altura base de referencia del PlayerPawn estándar usada únicamente
+    // para escalar la amortiguación biológica de NPC de tamaño diferente.
+    const BIOLOGICAL_REFERENCE_ACTOR_HEIGHT = 56.0;
+
     const IMPACT_KIND_NONE = 0;
     const IMPACT_KIND_ACTOR = 1;
     const IMPACT_KIND_WALL = 2;

@@ -163,20 +163,31 @@ A spiked surface can therefore increase injury without changing momentum:
 
 Momentum determines **how violently velocities changed**. Surface properties determine **how dangerous the contact surface is**.
 
-## 7. Current mitigation rule
+## 7. Impact mitigation (V4.25.2)
 
-V4.25.1 treats `CaelumImpact` as global kinetic trauma:
+`CaelumImpact` remains global kinetic trauma, but raw collision severity is no longer final health damage.
 
-- it cannot be evaded;
-- it is not intercepted by shield Block;
-- it does not use localized armor pieces;
-- it bypasses ordinary armor mitigation.
+The raw impact result is:
 
-This is deliberate for the first validation pass so the measured damage corresponds directly to the documented `Δv -> equivalent tics -> % max HP` relation.
+`D_raw = HP_max × DamagePercent × SurfaceMultiplier`
 
-Pain and ordinary "received damage" combat consequences still occur after real health loss.
+Then Toughness applies the same body-resistance curve already used by Caelum combat:
 
-This rule can be revisited after the physical scale is validated.
+`M_toughness = clamp(1 - T(T+1)/10100, 0, 1)`
+
+Global impact armor defense is the arithmetic mean of the four currently functional armor slots:
+
+`A_impact = (A_head + A_body + A_hands + A_feet) / 4`
+
+Broken/base-clothing pieces contribute zero because the normal `GetDefense(slot)` rule already returns zero.
+
+Final health damage is:
+
+`D_final = D_raw × M_toughness × (1 - A_impact/100)`
+
+Impact still cannot be evaded and is not intercepted by shield Block. It also does not choose one localized hit region because wall/ground/body trauma is treated as distributed kinetic load.
+
+Armor durability is **not yet consumed by global impact absorption**. This is deliberate: a later balance decision is needed for how a distributed collision should divide durability loss among the four pieces.
 
 ## 8. Actor-to-actor collision flow
 
@@ -199,27 +210,41 @@ Different masses produce different velocity changes. The heavier/effectively bra
 
 ## 9. Walls and map geometry
 
-For blocking map geometry, Caelum compares velocity immediately before and after the engine movement step when a blocking line is reported.
+Raw GZDoom horizontal velocity is intentionally **not** interpreted directly as physical meters per tic. The first V4.25.1 test produced values such as 0.53 equivalent tics from an ordinary short run into a wall, demonstrating that the engine movement scale is unsuitable as a direct physical scale for self-propelled wall impacts.
 
-Horizontal forced change:
+V4.25.2 therefore normalizes wall severity against the character's already calculated effective movement percentage.
 
-`Δv_wall = |v_xy,after - v_xy,before|`
+The fraction of horizontal velocity actually lost is:
 
-This is fed into the same height-normalized impact function.
+`F_lost = clamp(Δv_wall / |v_xy,before|, 0, 1)`
 
-Wall-impact detection is marked **experimental** in V4.25.1 because player acceleration, sliding and Doom movement resolution occur inside the native movement step. The debug telemetry exists specifically to validate that the measured `Δv` represents real impacts rather than ordinary steering/friction.
+Movement severity is:
+
+`S_wall = (EffectiveMovementPercent / 100) × F_lost`
+
+and:
+
+`T_eq,wall = 35 / S_wall`
+
+Therefore a complete frontal stop at exactly 100% effective movement lands at the 35-tic threshold. Load, Agility and health/Air/survival movement modifiers already change `EffectiveMovementPercent`, so a heavily encumbered slow character generates a less severe self-powered wall collision while superhuman movement can move far below the threshold.
+
+Wall damage is only registered on the transition from unblocked to blocked movement. Holding forward against a wall does not reapply collision damage every tic.
 
 ## 10. Falling and floor impacts
 
 Caelum does not need a separate arbitrary fall-height damage table.
 
-Immediately before landing the actor has a downward vertical velocity. After floor contact that component is strongly reduced or becomes zero:
+V4.25.2 stores the latest downward `v_z` while the actor is airborne and detects the transition from airborne on the previous tic to grounded on the current tic. This avoids relying on an intra-`Tick()` ground-state transition that V4.25.1 failed to observe reliably.
 
-`Δv_floor = |v_z,after - v_z,before|`
+At landing:
 
-The same formula then applies:
+`Δv_floor ≈ |v_z,last_falling|`
 
-`T_eq = (H/2) / Δv_floor`
+and:
+
+`T_eq = (H_ref/2) / Δv_floor`
+
+Player `H_ref` is the stable body height from `DerivedStats.ActorHeight`, not the transient actor cylinder height. NPC Caelum actors use their class-defined base `Height`.
 
 This means fall damage depends on **landing speed**, not directly on fall distance.
 
@@ -283,4 +308,142 @@ The same infrastructure is intended to support:
 - collision-specific damage types;
 - configurable coefficients of restitution for genuinely bouncy objects;
 - surface materials that alter damage without altering momentum.
+
+
+## 15. Current Caelum test-actor physical/defensive profiles
+
+| Actor | HP | Mass | Height | Toughness | Resilience | Agility | Patience | Dexterity | Insight | Strength | Intelligence | Armor | Impact armor | Toughness multiplier |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: |
+| Rulo | 6200 | 200 | 74.7 | 20 | 18 | 18 | 3 | 18 | 3 | 20 | 3 | Heavy T1 | 30% | 0.9584 |
+| Caella | 1160 | 80 | 49.8 | 9 | 7 | 7 | 18 | 7 | 18 | 9 | 18 | Magic T1 | 5% | 0.9911 |
+| Ronnie | 4340 | 140 | 62.2 | 20 | 18 | 18 | 7 | 18 | 7 | 20 | 7 | Medium T1 | 20% | 0.9584 |
+| Argento | 1740 | 120 | 62.2 | 9 | 7 | 7 | 18 | 7 | 18 | 9 | 18 | Light T1 | 10% | 0.9911 |
+
+These four actors are **not full player character sheets**. `CaelumCombatActor` stores the eight combat-relevant attributes listed above. Their health, native mass, height and speed are explicitly authored in their actor classes rather than reconstructed from a complete race/class/Constitution profile.
+
+Ordinary Doom actors such as `Demon` do not yet enter this Caelum collision pipeline because they lack `CaelumPlayer`, `CaelumCombatActor`, or the explicit training-dummy adapter. They continue to use native GZDoom collision behavior.
+
+## 16. Training dummy
+
+The training dummy is now movable and uses native `Mass 10000`. It no longer clears horizontal velocity every tic and no longer carries `CANNOTPUSH`. It is accepted as a valid Caelum collision body for momentum calculations.
+
+The dummy intentionally remains a diagnostic native actor rather than a full `CaelumCombatActor`; its role is to behave as an extremely massive movable object so action/reaction against near-immovable mass can be observed cleanly.
+
+## 17. V4.25.3 — Acceleration and biological damping
+
+### Horizontal acceleration
+
+The character's maximum movement speed is still produced by the existing Caelum stat/load/status pipeline. V4.25.3 adds a dimensionless acceleration state `A` between 0 and 1.
+
+For each grounded tic with directional input:
+
+`A_(n+1) = A_n + (1 - A_n) alpha`
+
+with:
+
+`alpha = 0.028127624`
+
+Therefore:
+
+`A_n = 1 - (1 - alpha)^n`
+
+and after 105 tics (3 seconds):
+
+`A_105 = 0.95`
+
+The movement multiplier applied to GZDoom is:
+
+`Movement_final = Movement_existing × A`
+
+This is an exponential approach to the existing maximum, not a replacement for Agility or load rules.
+
+When movement input is released or the actor becomes physically immobilized, the active acceleration state is reset. While airborne, the reached acceleration state is preserved but does not continue to build.
+
+### Run-up and wall impacts
+
+The V4.25.2 wall severity formula now includes `A`:
+
+`S_wall = (EffectiveMovementPercent × A / 100) × F_lost`
+
+`T_eq,wall = 35 / S_wall`
+
+Consequently, taking a half-step into a wall and running into it after a long acceleration period are physically different events even if both ultimately become blocked by the same map line.
+
+### Contact latching
+
+A sustained push is not a sequence of fresh impacts.
+
+When actor A and actor B resolve a valid closing collision, both store the other actor as their current impact contact. Further `CollidedWith()` callbacks for that same pair are ignored.
+
+The contact rearms only once center distance exceeds:
+
+`R_A + R_B + technical_margin`
+
+The margin is 2 map units and exists only to avoid contact-state flicker caused by collision precision.
+
+This preserves continuous pushing while eliminating repeated collision trauma from simply holding movement against another body.
+
+### Biological landing damping
+
+Living tissue is not modeled as a perfectly rigid body. Controlled landings extend the effective stopping process through muscles, tendons and joints.
+
+V4.25.3 therefore separates:
+
+`raw floor Delta-v`
+
+from:
+
+`effective traumatic Delta-v`
+
+For the player:
+
+`Delta-v_bio = current normal JumpZ`
+
+unless the player is physically immobilized/stunned, in which case:
+
+`Delta-v_bio = 0`
+
+The traumatic vertical change becomes:
+
+`Delta-v_effective = max(0, Delta-v_raw - Delta-v_bio)`
+
+Only `Delta-v_effective` enters the equivalent-tic damage equation.
+
+Using current `JumpZ` makes a normal self-generated jump the natural reference for a controlled safe landing while automatically respecting the already-defined jump scaling.
+
+### Stunned falls
+
+A stunned body cannot deliberately flex the legs or coordinate posture. Therefore biological landing absorption is removed while physical stun/immobilization is active.
+
+The same fall can consequently produce very different trauma:
+
+- conscious/controlled landing -> biological absorption -> remaining Delta-v -> Toughness -> armor;
+- stunned/uncontrolled landing -> no biological absorption -> full Delta-v -> Toughness -> armor.
+
+### Caelum NPC biological scale
+
+`CaelumCombatActor` does not use PlayerPawn `JumpZ`, so its living-body landing absorption uses geometric scaling:
+
+`Delta-v_bio,NPC = 8 × sqrt(H / 56)`
+
+where 8 is the standard Caelum/GZDoom jump-velocity reference and 56 is the standard actor-height reference already used by the player size conversion.
+
+This square-root length scaling follows the characteristic velocity scale `v ~ sqrt(g L)` for geometrically similar bodies under the same gravity.
+
+Lucidity-stunned NPCs receive zero biological landing absorption.
+
+### Damage pipeline after V4.25.3
+
+For a floor impact:
+
+`raw Delta-v`
+-> `biological absorption`
+-> `effective Delta-v`
+-> `equivalent tics`
+-> `raw % max HP`
+-> `Toughness`
+-> `global armor`
+-> `final health damage`
+
+For actor-to-actor collisions the existing impulse/action-reaction calculation is unchanged.
 

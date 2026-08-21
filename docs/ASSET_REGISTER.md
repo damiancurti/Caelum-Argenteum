@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.25.3 asset note
+
+V4.25.3 changes movement/physics code and documentation only. No new external art assets are introduced.
+
 ## V4.25.1 asset note
 
 V4.25.1 is a physics/code/documentation patch and introduces no new external art assets.

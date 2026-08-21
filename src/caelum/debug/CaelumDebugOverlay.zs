@@ -2272,7 +2272,7 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String impactLine = String.Format(
-                "%s: %s %d   %s %.3f   %s %.2f   %s %.1f%% (%d)",
+                "%s: %s %d   %s %.3f   %s %.2f   %s %.1f%%",
                 StringTable.Localize("CA_PHYSICS_IMPACT", false),
                 StringTable.Localize("CA_PHYSICS_KIND", false),
                 localPlayer.LastImpactKind,
@@ -2281,10 +2281,28 @@ class CaelumDebugOverlay : EventHandler
                 StringTable.Localize("CA_PHYSICS_EQUIV_TICS", false),
                 localPlayer.LastImpactEquivalentTics,
                 StringTable.Localize("CA_PHYSICS_DAMAGE", false),
-                localPlayer.LastImpactDamagePercent,
-                localPlayer.LastImpactBaseDamage
+                localPlayer.LastImpactDamagePercent
+            );
+            String impactDefenseLine = String.Format(
+                "Raw %d Final %d | Tough x%.3f Armor %.1f%% | RawDV %.3f Bio %.3f",
+                localPlayer.LastImpactBaseDamage,
+                localPlayer.LastImpactFinalDamage,
+                localPlayer.LastImpactToughnessMultiplier,
+                localPlayer.LastImpactArmorDefensePercent,
+                localPlayer.LastImpactRawDeltaSpeed,
+                localPlayer.LastImpactBiologicalAbsorptionSpeed
+            );
+            String accelerationLine = String.Format(
+                "Accel %.1f%% (%.2fs) | ContactLatch %s",
+                localPlayer.MovementAccelerationFactor * 100.0,
+                localPlayer.MovementAccelerationSeconds,
+                localPlayer.ImpactContactActor != null ? "ON" : "OFF"
             );
             Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 250.0, impactLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 266.0, impactDefenseLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 282.0, accelerationLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             return;
         }

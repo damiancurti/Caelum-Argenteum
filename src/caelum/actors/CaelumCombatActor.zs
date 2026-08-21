@@ -35,6 +35,17 @@ class CaelumCombatActor : Actor
     double LastImpactOtherEffectiveMass;
     double LastImpactClosingSpeed;
     double LastImpactImpulse;
+    double LastImpactToughnessMultiplier;
+    double LastImpactArmorDefensePercent;
+    int LastImpactFinalDamage;
+
+    bool ImpactGroundTrackingInitialized;
+    bool ImpactWasGroundedLastTick;
+    double LastImpactFallingVelocityZ;
+    bool ImpactWasWallBlockedLastTick;
+    Actor ImpactContactActor;
+    double LastImpactRawDeltaSpeed;
+    double LastImpactBiologicalAbsorptionSpeed;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -492,13 +503,71 @@ class CaelumCombatActor : Actor
         return Max(1.0, double(GetMaxHealth()));
     }
 
+    double GetImpactReferenceHeight()
+    {
+        // Los NPC Caelum tienen una altura física fija definida en su clase.
+        return Max(1.0, Height);
+    }
+
+    double GetImpactToughnessMultiplier()
+    {
+        return Clamp(
+            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
+            0.0,
+            1.0
+        );
+    }
+
+    double GetImpactArmorDefensePercent()
+    {
+        if (CombatArmor == null) { return 0.0; }
+        double totalDefense = 0.0;
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            totalDefense += Clamp(
+                double(CombatArmor.GetDefense(slot)),
+                0.0,
+                100.0
+            );
+        }
+        return totalDefense / CaelumConstants.ARMOR_SLOT_COUNT;
+    }
+
+    double GetBiologicalLandingAbsorptionSpeed()
+    {
+        // Escala geométrica de la velocidad segura: la velocidad característica
+        // de un cuerpo bajo la misma gravedad crece como sqrt(longitud).
+        if (CombatLucidityPhysicalStunRemaining > 0.0)
+        {
+            return 0.0;
+        }
+
+        return CaelumConstants.GZDOOM_BASE_JUMP_Z
+            * Sqrt(
+                Max(1.0, GetImpactReferenceHeight())
+                / CaelumConstants.BIOLOGICAL_REFERENCE_ACTOR_HEIGHT
+            );
+    }
+
+    double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
+    {
+        LastImpactRawDeltaSpeed = Max(0.0, rawDeltaSpeed);
+        LastImpactBiologicalAbsorptionSpeed =
+            GetBiologicalLandingAbsorptionSpeed();
+        return Max(
+            0.0,
+            LastImpactRawDeltaSpeed
+                - LastImpactBiologicalAbsorptionSpeed
+        );
+    }
+
     double CalculateImpactEquivalentTics(double deltaSpeed)
     {
         if (deltaSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
         {
             return 1.0e9;
         }
-        return (Height * 0.5) / deltaSpeed;
+        return (GetImpactReferenceHeight() * 0.5) / deltaSpeed;
     }
 
     double CalculateImpactDamagePercent(double equivalentTics)
@@ -541,6 +610,9 @@ class CaelumCombatActor : Actor
         LastImpactClosingSpeed = closingSpeed;
         LastImpactImpulse = impulse;
         LastImpactBaseDamage = 0;
+        LastImpactFinalDamage = 0;
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
+        LastImpactArmorDefensePercent = GetImpactArmorDefensePercent();
 
         if (LastImpactDamagePercent <= 0.0 || health <= 0)
         {
@@ -553,6 +625,23 @@ class CaelumCombatActor : Actor
                 * LastImpactDamagePercent / 100.0
                 * Max(0.0, sourceSurfaceMultiplier) + 0.5)
         );
+
+        double armorMultiplier = Clamp(
+            1.0 - LastImpactArmorDefensePercent / 100.0,
+            0.0,
+            1.0
+        );
+        LastImpactFinalDamage = Max(
+            0,
+            int(
+                LastImpactBaseDamage
+                * LastImpactToughnessMultiplier
+                * armorMultiplier
+                + 0.5
+            )
+        );
+        if (LastImpactFinalDamage <= 0) { return; }
+
         Actor impactSource = sourceActor;
         if (impactSource == null)
         {
@@ -561,7 +650,7 @@ class CaelumCombatActor : Actor
         DamageMobj(
             impactSource,
             impactSource,
-            LastImpactBaseDamage,
+            LastImpactFinalDamage,
             'CaelumImpact',
             DMG_NO_ARMOR,
             0.0
@@ -577,6 +666,12 @@ class CaelumCombatActor : Actor
         if (otherActor != null)
         {
             return otherActor.GetCollisionEffectiveMass();
+        }
+
+        CaelumTrainingDummy dummy = CaelumTrainingDummy(other);
+        if (dummy != null)
+        {
+            return Max(1.0, double(dummy.Mass));
         }
         return Max(1.0, double(other.Mass));
     }
@@ -638,6 +733,47 @@ class CaelumCombatActor : Actor
         }
     }
 
+    bool IsImpactContactLatchedWith(Actor other)
+    {
+        return other != null && ImpactContactActor == other;
+    }
+
+    void LatchImpactContact(Actor other)
+    {
+        ImpactContactActor = other;
+
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            otherPlayer.ImpactContactActor = self;
+            return;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            otherActor.ImpactContactActor = self;
+        }
+    }
+
+    void UpdateImpactContactLatch()
+    {
+        if (ImpactContactActor == null) { return; }
+
+        double dx = ImpactContactActor.Pos.X - Pos.X;
+        double dy = ImpactContactActor.Pos.Y - Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        double releaseDistance = Radius
+            + ImpactContactActor.Radius
+            + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
+
+        if (distance > releaseDistance
+            || ImpactContactActor.health <= 0)
+        {
+            ImpactContactActor = null;
+        }
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
@@ -645,7 +781,12 @@ class CaelumCombatActor : Actor
         if (passive || other == null || other == self
             || health <= 0 || other.health <= 0
             || (CaelumPlayer(other) == null
-                && CaelumCombatActor(other) == null))
+                && CaelumCombatActor(other) == null
+                && CaelumTrainingDummy(other) == null))
+        {
+            return;
+        }
+        if (IsImpactContactLatchedWith(other))
         {
             return;
         }
@@ -661,6 +802,8 @@ class CaelumCombatActor : Actor
         double relativeY = Vel.Y - other.Vel.Y;
         double closingSpeed = relativeX * nx + relativeY * ny;
         if (closingSpeed <= 0.0) { return; }
+
+        LatchImpactContact(other);
 
         double selfMass = Max(1.0, GetCollisionEffectiveMass());
         double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
@@ -699,14 +842,24 @@ class CaelumCombatActor : Actor
 
     void RegisterWorldImpact(double deltaSpeed, int impactKind)
     {
+        double effectiveDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactRawDeltaSpeed = effectiveDeltaSpeed;
+        LastImpactBiologicalAbsorptionSpeed = 0.0;
+
+        if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
+        {
+            effectiveDeltaSpeed =
+                ApplyBiologicalLandingAbsorption(effectiveDeltaSpeed);
+        }
+
         ReceiveCaelumImpact(
-            deltaSpeed,
+            effectiveDeltaSpeed,
             impactKind,
             self,
             1.0,
             GetCollisionEffectiveMass(),
             0.0,
-            deltaSpeed,
+            effectiveDeltaSpeed,
             0.0
         );
     }
@@ -1424,30 +1577,36 @@ class CaelumCombatActor : Actor
     override void Tick()
     {
         Vector3 prePhysicsVelocity = Vel;
-        bool wasOnFloorBeforePhysics =
-            Pos.Z <= FloorZ + 0.01;
 
         Super.Tick();
 
-        bool onFloorAfterPhysics = Pos.Z <= FloorZ + 0.01;
-        if (!wasOnFloorBeforePhysics
-            && onFloorAfterPhysics
-            && prePhysicsVelocity.Z < 0.0)
+        bool groundedNow = Pos.Z <= FloorZ + 0.01;
+        if (!ImpactGroundTrackingInitialized)
         {
-            double landingDeltaSpeed = Abs(
-                Vel.Z - prePhysicsVelocity.Z
-            );
-            if (landingDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
-            {
-                RegisterWorldImpact(
-                    landingDeltaSpeed,
-                    CaelumConstants.IMPACT_KIND_FLOOR
-                );
-            }
+            ImpactWasGroundedLastTick = groundedNow;
+            ImpactGroundTrackingInitialized = true;
         }
+        if (!groundedNow && Vel.Z < 0.0)
+        {
+            LastImpactFallingVelocityZ = Vel.Z;
+        }
+        if (groundedNow
+            && !ImpactWasGroundedLastTick
+            && LastImpactFallingVelocityZ < 0.0)
+        {
+            RegisterWorldImpact(
+                Abs(LastImpactFallingVelocityZ),
+                CaelumConstants.IMPACT_KIND_FLOOR
+            );
+            LastImpactFallingVelocityZ = 0.0;
+        }
+        ImpactWasGroundedLastTick = groundedNow;
 
-        if (BlockingMobj == null
-            && (MovementBlockingLine != null || BlockingLine != null))
+        // Para NPC se conserva por ahora la escala cruda de pared, pero sólo al
+        // iniciar contacto para eliminar daño repetido por presión continua.
+        bool wallBlockedNow = BlockingMobj == null
+            && (MovementBlockingLine != null || BlockingLine != null);
+        if (wallBlockedNow && !ImpactWasWallBlockedLastTick)
         {
             double deltaX = Vel.X - prePhysicsVelocity.X;
             double deltaY = Vel.Y - prePhysicsVelocity.Y;
@@ -1462,6 +1621,8 @@ class CaelumCombatActor : Actor
                 );
             }
         }
+        ImpactWasWallBlockedLastTick = wallBlockedNow;
+        UpdateImpactContactLatch();
 
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();

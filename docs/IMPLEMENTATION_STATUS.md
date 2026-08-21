@@ -1,5 +1,37 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Acceleration and biological impact response 4.25.3
+
+**Implemented — pending manual validation**
+
+Player horizontal locomotion now uses an exponential acceleration state. With uninterrupted grounded directional input:
+
+`A(n) = 1 - (1 - 0.028127624)^n`
+
+At 105 tics (3 seconds) the factor is exactly 0.95. `A` multiplies the existing movement result, so the final maximum remains determined by Agility, LoadRatio, health/Air/survival state and shield mobility.
+
+Self-powered wall impact severity also multiplies by this acceleration state. This makes run-up distance physically meaningful without changing the already validated actor-to-actor impulse equation.
+
+Actor collisions now latch by contact pair. A collision is not eligible to resolve again while the same bodies remain touching; separation beyond their combined radii plus a small technical margin rearms the next impact.
+
+Floor impacts now have a biological-damping layer before Toughness and armor. Player controlled landing absorption equals current `JumpZ`. Stun/physical immobilization sets that absorption to zero. CaelumCombatActor NPCs use height-scaled biological absorption and likewise lose it while lucidity-stunned.
+
+**Validation focus:** acceleration feel and 95%-at-3s timing; short-run vs long-run wall impacts; sustained push against the 10000-mass dummy; ordinary jump landing; stunned landing; high falls that exceed biological absorption.
+
+## Impact mitigation and calibration 4.25.2
+
+**Implemented — pending manual validation**
+
+Raw impact severity now passes through Toughness and global armor defense before health loss. The armor term is the simple arithmetic mean of all four armor-slot defenses; this avoids inventing location weights before a separate impact-location design exists.
+
+Player wall-impact severity is normalized against effective movement percentage rather than raw GZDoom velocity. A 100% full frontal stop maps to 35 equivalent tics; load and movement-state penalties therefore reduce self-powered wall severity. A contact latch prevents repeated damage while continuously pressing against the same blocking geometry.
+
+Landing detection now stores falling vertical velocity from prior tics and resolves damage on the next grounded state. Player impact reference height is the stable derived actor height.
+
+Training dummy: movable, mass 10000, valid collision body.
+
+Rulo/Caella/Ronnie/Argento already carry `CaelumCombatActor` profiles and T1 armor; V4.25.2 now allows these statistics to mitigate impact damage too. Generic Doom actors do not yet have a Caelum profile adapter.
+
 ## Momentum collision and impact physics 4.25.1
 
 **Implemented — pending manual validation**

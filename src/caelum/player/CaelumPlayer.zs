@@ -286,6 +286,23 @@ class CaelumPlayer : DoomPlayer
     double LastImpactOtherEffectiveMass;
     double LastImpactClosingSpeed;
     double LastImpactImpulse;
+    double LastImpactToughnessMultiplier;
+    double LastImpactArmorDefensePercent;
+    int LastImpactFinalDamage;
+
+    bool ImpactGroundTrackingInitialized;
+    bool ImpactWasGroundedLastTick;
+    double LastImpactFallingVelocityZ;
+    bool ImpactWasWallBlockedLastTick;
+
+    // V4.25.3 — aceleración y contacto sostenido.
+    double MovementAccelerationFactor;
+    double MovementAccelerationSeconds;
+    Actor ImpactContactActor;
+
+    // Amortiguación biológica del último aterrizaje.
+    double LastImpactRawDeltaSpeed;
+    double LastImpactBiologicalAbsorptionSpeed;
 
     // El Anima es un recurso persistente separado para magia y armas magicas.
     double CurrentAnima;
@@ -5476,13 +5493,67 @@ class CaelumPlayer : DoomPlayer
         return Max(1.0, double(GetMaxHealth()));
     }
 
+    double GetImpactReferenceHeight()
+    {
+        // Usa la altura corporal base derivada del tamaño del personaje.
+        // No cambia al agacharse ni por estados temporales del cilindro.
+        if (DerivedStats != null && DerivedStats.ActorHeight > 0.0)
+        {
+            return DerivedStats.ActorHeight;
+        }
+        return Max(1.0, Height);
+    }
+
+    double GetImpactToughnessMultiplier()
+    {
+        if (DerivedStats == null) { return 1.0; }
+        return Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0);
+    }
+
+    double GetImpactArmorDefensePercent()
+    {
+        if (ArmorModel == null) { return 0.0; }
+
+        double totalDefense = 0.0;
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            totalDefense += Clamp(
+                double(ArmorModel.GetDefense(slot)),
+                0.0,
+                100.0
+            );
+        }
+        return totalDefense / CaelumConstants.ARMOR_SLOT_COUNT;
+    }
+
+    double GetBiologicalLandingAbsorptionSpeed()
+    {
+        // Un personaje consciente flexiona articulaciones y usa musculatura
+        // para absorber un aterrizaje comparable a su propio salto normal.
+        // Aturdido/inmovilizado cae rígido: no recibe esta amortiguación.
+        if (IsPhysicallyImmobilized()) { return 0.0; }
+        return Max(0.0, JumpZ);
+    }
+
+    double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
+    {
+        LastImpactRawDeltaSpeed = Max(0.0, rawDeltaSpeed);
+        LastImpactBiologicalAbsorptionSpeed =
+            GetBiologicalLandingAbsorptionSpeed();
+        return Max(
+            0.0,
+            LastImpactRawDeltaSpeed
+                - LastImpactBiologicalAbsorptionSpeed
+        );
+    }
+
     double CalculateImpactEquivalentTics(double deltaSpeed)
     {
         if (deltaSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
         {
             return 1.0e9;
         }
-        return (Height * 0.5) / deltaSpeed;
+        return (GetImpactReferenceHeight() * 0.5) / deltaSpeed;
     }
 
     double CalculateImpactDamagePercent(double equivalentTics)
@@ -5527,6 +5598,9 @@ class CaelumPlayer : DoomPlayer
         LastImpactClosingSpeed = closingSpeed;
         LastImpactImpulse = impulse;
         LastImpactBaseDamage = 0;
+        LastImpactFinalDamage = 0;
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
+        LastImpactArmorDefensePercent = GetImpactArmorDefensePercent();
 
         if (LastImpactDamagePercent <= 0.0 || health <= 0)
         {
@@ -5541,6 +5615,22 @@ class CaelumPlayer : DoomPlayer
                 * surfaceMultiplier + 0.5)
         );
 
+        double armorMultiplier = Clamp(
+            1.0 - LastImpactArmorDefensePercent / 100.0,
+            0.0,
+            1.0
+        );
+        LastImpactFinalDamage = Max(
+            0,
+            int(
+                LastImpactBaseDamage
+                * LastImpactToughnessMultiplier
+                * armorMultiplier
+                + 0.5
+            )
+        );
+        if (LastImpactFinalDamage <= 0) { return; }
+
         Actor impactSource = sourceActor;
         if (impactSource == null)
         {
@@ -5549,7 +5639,7 @@ class CaelumPlayer : DoomPlayer
         DamageMobj(
             impactSource,
             impactSource,
-            LastImpactBaseDamage,
+            LastImpactFinalDamage,
             'CaelumImpact',
             DMG_NO_ARMOR,
             0.0
@@ -5562,7 +5652,8 @@ class CaelumPlayer : DoomPlayer
             && other != self
             && other.health > 0
             && (CaelumPlayer(other) != null
-                || CaelumCombatActor(other) != null);
+                || CaelumCombatActor(other) != null
+                || CaelumTrainingDummy(other) != null);
     }
 
     double GetOtherCollisionEffectiveMass(Actor other)
@@ -5574,6 +5665,12 @@ class CaelumPlayer : DoomPlayer
         if (otherActor != null)
         {
             return otherActor.GetCollisionEffectiveMass();
+        }
+
+        CaelumTrainingDummy dummy = CaelumTrainingDummy(other);
+        if (dummy != null)
+        {
+            return Max(1.0, double(dummy.Mass));
         }
         return Max(1.0, double(other.Mass));
     }
@@ -5634,6 +5731,47 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    bool IsImpactContactLatchedWith(Actor other)
+    {
+        return other != null && ImpactContactActor == other;
+    }
+
+    void LatchImpactContact(Actor other)
+    {
+        ImpactContactActor = other;
+
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            otherPlayer.ImpactContactActor = self;
+            return;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            otherActor.ImpactContactActor = self;
+        }
+    }
+
+    void UpdateImpactContactLatch()
+    {
+        if (ImpactContactActor == null) { return; }
+
+        double dx = ImpactContactActor.Pos.X - Pos.X;
+        double dy = ImpactContactActor.Pos.Y - Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        double releaseDistance = Radius
+            + ImpactContactActor.Radius
+            + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
+
+        if (distance > releaseDistance
+            || ImpactContactActor.health <= 0)
+        {
+            ImpactContactActor = null;
+        }
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
@@ -5641,6 +5779,10 @@ class CaelumPlayer : DoomPlayer
         // CollidedWith se ejecuta en ambos actores. Sólo el lado activo
         // resuelve el par para evitar duplicar acción-reacción.
         if (passive || !IsCaelumCollisionBody(other) || health <= 0)
+        {
+            return;
+        }
+        if (IsImpactContactLatchedWith(other))
         {
             return;
         }
@@ -5658,6 +5800,10 @@ class CaelumPlayer : DoomPlayer
 
         // Valor positivo = los cuerpos se aproximan en la normal de contacto.
         if (closingSpeed <= 0.0) { return; }
+
+        // A partir de aquí es un único impacto. Mantener presión contra el
+        // mismo cuerpo no vuelve a crear choques hasta separarse físicamente.
+        LatchImpactContact(other);
 
         double selfMass = Max(1.0, GetCombatMass());
         double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
@@ -5696,19 +5842,126 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
+    void ReceiveCaelumImpactWithEquivalentTics(
+        double deltaSpeed,
+        double equivalentTics,
+        int impactKind
+    )
+    {
+        LastImpactKind = impactKind;
+        LastImpactDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactEquivalentTics = Max(0.0, equivalentTics);
+        LastImpactDamagePercent =
+            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+        LastImpactEffectiveMass = Max(1.0, GetCombatMass());
+        LastImpactOtherEffectiveMass = 0.0;
+        LastImpactClosingSpeed = deltaSpeed;
+        LastImpactImpulse = 0.0;
+        LastImpactBaseDamage = 0;
+        LastImpactFinalDamage = 0;
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
+        LastImpactArmorDefensePercent = GetImpactArmorDefensePercent();
+
+        if (LastImpactDamagePercent <= 0.0 || health <= 0) { return; }
+
+        LastImpactBaseDamage = Max(
+            1,
+            int(
+                GetImpactMaximumHealth()
+                * LastImpactDamagePercent / 100.0
+                + 0.5
+            )
+        );
+
+        double armorMultiplier = Clamp(
+            1.0 - LastImpactArmorDefensePercent / 100.0,
+            0.0,
+            1.0
+        );
+        LastImpactFinalDamage = Max(
+            0,
+            int(
+                LastImpactBaseDamage
+                * LastImpactToughnessMultiplier
+                * armorMultiplier
+                + 0.5
+            )
+        );
+        if (LastImpactFinalDamage <= 0) { return; }
+
+        DamageMobj(
+            self,
+            self,
+            LastImpactFinalDamage,
+            'CaelumImpact',
+            DMG_NO_ARMOR,
+            0.0
+        );
+    }
+
+    void RegisterWallImpact(
+        double rawDeltaSpeed,
+        double horizontalSpeedBeforeImpact
+    )
+    {
+        if (rawDeltaSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED
+            || horizontalSpeedBeforeImpact <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            return;
+        }
+
+        // Sólo cuenta la fracción realmente perdida contra la pared.
+        double lostFraction = Clamp(
+            rawDeltaSpeed / horizontalSpeedBeforeImpact,
+            0.0,
+            1.0
+        );
+
+        // La escala interna de velocidad de Doom no se interpreta como metros.
+        // Normalizamos contra la velocidad efectiva calculada del personaje.
+        // A 100% y choque frontal completo: 35 tics equivalentes.
+        double movementSeverity = Max(
+            0.0,
+            EffectiveMovementPercent
+                * MovementAccelerationFactor
+                / CaelumConstants.IMPACT_WALL_REFERENCE_MOVEMENT_PERCENT
+                * lostFraction
+        );
+        if (movementSeverity <= 0.0) { return; }
+
+        double equivalentTics =
+            CaelumConstants.IMPACT_DAMAGE_THRESHOLD_TICS / movementSeverity;
+
+        ReceiveCaelumImpactWithEquivalentTics(
+            rawDeltaSpeed,
+            equivalentTics,
+            CaelumConstants.IMPACT_KIND_WALL
+        );
+    }
+
     void RegisterWorldImpact(
         double deltaSpeed,
         int impactKind
     )
     {
+        double effectiveDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactRawDeltaSpeed = effectiveDeltaSpeed;
+        LastImpactBiologicalAbsorptionSpeed = 0.0;
+
+        if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
+        {
+            effectiveDeltaSpeed =
+                ApplyBiologicalLandingAbsorption(effectiveDeltaSpeed);
+        }
+
         ReceiveCaelumImpact(
-            deltaSpeed,
+            effectiveDeltaSpeed,
             impactKind,
             self,
             1.0,
             Max(1.0, GetCombatMass()),
             0.0,
-            deltaSpeed,
+            effectiveDeltaSpeed,
             0.0
         );
     }
@@ -6704,48 +6957,58 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         Vector3 prePhysicsVelocity = Vel;
-        bool wasGroundedBeforePhysics =
-            player != null && player.onground;
 
         Super.Tick();
 
-        // Impacto vertical: aterrizaje. Vel está expresada en unidades por tic,
-        // por lo que H/2 dividido por |Δv| produce directamente tics equivalentes.
-        bool groundedAfterPhysics = player != null && player.onground;
-        if (!wasGroundedBeforePhysics
-            && groundedAfterPhysics
-            && prePhysicsVelocity.Z < 0.0)
+        bool groundedNow = player != null && player.onground;
+        if (!ImpactGroundTrackingInitialized)
         {
-            double landingDeltaSpeed = Abs(
-                Vel.Z - prePhysicsVelocity.Z
-            );
-            if (landingDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
-            {
-                RegisterWorldImpact(
-                    landingDeltaSpeed,
-                    CaelumConstants.IMPACT_KIND_FLOOR
-                );
-            }
+            ImpactWasGroundedLastTick = groundedNow;
+            ImpactGroundTrackingInitialized = true;
         }
 
-        // Impacto horizontal contra geometría. Se excluyen actores porque
-        // CollidedWith resuelve esos pares mediante conservación de momento.
-        if (BlockingMobj == null
-            && (MovementBlockingLine != null || BlockingLine != null))
+        // Mientras cae se conserva la última velocidad vertical descendente.
+        if (!groundedNow && Vel.Z < 0.0)
+        {
+            LastImpactFallingVelocityZ = Vel.Z;
+        }
+
+        // El aterrizaje se detecta entre tics, no dentro del mismo Super.Tick.
+        if (groundedNow
+            && !ImpactWasGroundedLastTick
+            && LastImpactFallingVelocityZ < 0.0)
+        {
+            double landingDeltaSpeed = Abs(LastImpactFallingVelocityZ);
+            RegisterWorldImpact(
+                landingDeltaSpeed,
+                CaelumConstants.IMPACT_KIND_FLOOR
+            );
+            LastImpactFallingVelocityZ = 0.0;
+        }
+        ImpactWasGroundedLastTick = groundedNow;
+
+        // Pared: sólo se dispara al comenzar el contacto. Mantener W contra la
+        // misma pared no genera un impacto nuevo cada tic.
+        bool wallBlockedNow = BlockingMobj == null
+            && (MovementBlockingLine != null || BlockingLine != null);
+        if (wallBlockedNow && !ImpactWasWallBlockedLastTick)
         {
             double deltaX = Vel.X - prePhysicsVelocity.X;
             double deltaY = Vel.Y - prePhysicsVelocity.Y;
             double wallDeltaSpeed = Sqrt(
                 deltaX * deltaX + deltaY * deltaY
             );
-            if (wallDeltaSpeed > CaelumConstants.IMPACT_MIN_DELTA_SPEED)
-            {
-                RegisterWorldImpact(
-                    wallDeltaSpeed,
-                    CaelumConstants.IMPACT_KIND_WALL
-                );
-            }
+            double horizontalSpeedBeforeImpact = Sqrt(
+                prePhysicsVelocity.X * prePhysicsVelocity.X
+                + prePhysicsVelocity.Y * prePhysicsVelocity.Y
+            );
+            RegisterWallImpact(
+                wallDeltaSpeed,
+                horizontalSpeedBeforeImpact
+            );
         }
+        ImpactWasWallBlockedLastTick = wallBlockedNow;
+        UpdateImpactContactLatch();
 
         // No rearmamos la estación mientras crafting siga abierto, aunque
         // PlayerThink haya limpiado temporalmente los botones. Tras cerrar,
@@ -6846,6 +7109,7 @@ class CaelumPlayer : DoomPlayer
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
+        UpdateMovementAcceleration();
         ApplyPhysicalMovement();
         DetectAndChargePhysicalJump();
         ConsumeRunningAir();
@@ -8439,6 +8703,38 @@ class CaelumPlayer : DoomPlayer
         WasGroundedLastTick = isGroundedNow;
     }
 
+    void UpdateMovementAcceleration()
+    {
+        if (player == null || player.playerstate != PST_LIVE)
+        {
+            MovementAccelerationFactor = 0.0;
+            MovementAccelerationSeconds = 0.0;
+            return;
+        }
+
+        bool hasMovementInput = player.cmd.forwardmove != 0
+            || player.cmd.sidemove != 0;
+
+        if (!hasMovementInput || IsPhysicallyImmobilized())
+        {
+            MovementAccelerationFactor = 0.0;
+            MovementAccelerationSeconds = 0.0;
+            return;
+        }
+
+        // En el aire se conserva el momentum alcanzado, pero no se genera
+        // carrera adicional sin contacto con el suelo.
+        if (!player.onground) { return; }
+
+        MovementAccelerationFactor +=
+            (1.0 - MovementAccelerationFactor)
+            * CaelumConstants.MOVEMENT_ACCELERATION_ALPHA_PER_TIC;
+        MovementAccelerationFactor = Clamp(
+            MovementAccelerationFactor, 0.0, 1.0
+        );
+        MovementAccelerationSeconds += 1.0 / TICRATE;
+    }
+
     // Apply the verified effective values to GZDoom's real movement fields.
     // Forward/backward, sideways, swimming, and flight share this movement.
     void ApplyPhysicalMovement()
@@ -8464,6 +8760,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         movementFactor *= GetShieldCombatMobilityMultiplier();
+        movementFactor *= MovementAccelerationFactor;
 
         double walkMovement =
             CaelumConstants.GZDOOM_BASE_MOVEMENT * movementFactor;
