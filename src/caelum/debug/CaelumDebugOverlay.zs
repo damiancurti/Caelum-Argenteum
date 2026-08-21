@@ -2284,19 +2284,22 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastImpactDamagePercent
             );
             String impactDefenseLine = String.Format(
-                "Raw %d Final %d | Tough x%.3f Armor %.1f%% | RawDV %.3f Bio %.3f",
+                "AfterTough %.2f%% (%d) Final %d | Tough %.1fpp Armor %.1f%% | RawDV %.3f Bio %.3f",
+                localPlayer.LastImpactPostToughnessPercent,
                 localPlayer.LastImpactBaseDamage,
                 localPlayer.LastImpactFinalDamage,
-                localPlayer.LastImpactToughnessMultiplier,
+                localPlayer.LastImpactToughnessPercent,
                 localPlayer.LastImpactArmorDefensePercent,
                 localPlayer.LastImpactRawDeltaSpeed,
                 localPlayer.LastImpactBiologicalAbsorptionSpeed
             );
             String accelerationLine = String.Format(
-                "Accel %.1f%% (%.2fs) | ContactLatch %s",
+                "Accel %.1f%% (%.2fs) | Contact %s Sep %d/%d | EnergyCurve v^2",
                 localPlayer.MovementAccelerationFactor * 100.0,
                 localPlayer.MovementAccelerationSeconds,
-                localPlayer.ImpactContactActor != null ? "ON" : "OFF"
+                localPlayer.ImpactContactActor != null ? "ON" : "OFF",
+                localPlayer.ImpactContactSeparatedTics,
+                CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
             );
             Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 250.0, impactLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);

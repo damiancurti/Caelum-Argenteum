@@ -447,3 +447,296 @@ For a floor impact:
 
 For actor-to-actor collisions the existing impulse/action-reaction calculation is unchanged.
 
+
+## 18. V4.25.4 — Specific kinetic energy damage curve
+
+### Why the previous linear staircase was replaced
+
+The former rule mapped each equivalent-tic step directly to another 3% maximum-health damage. This made moderate actor collisions too destructive and introduced abrupt discontinuities between adjacent speeds.
+
+Kinetic energy does not scale linearly with speed:
+
+`E_k = 1/2 m v²`
+
+For injury severity Caelum uses **specific kinetic energy**:
+
+`E_k / m = 1/2 v²`
+
+Mass is deliberately omitted from this second stage because it has already participated in the two-body impulse equation and therefore already determines each actor's resulting `Delta-v`. Reintroducing `m` in injury would count the mass advantage twice.
+
+### Relationship with equivalent tics
+
+The existing size-normalized relation is:
+
+`T_eq = (H/2) / |Delta-v|`
+
+Therefore:
+
+`|Delta-v| ∝ 1 / T_eq`
+
+and specific kinetic energy scales as:
+
+`E_specific ∝ 1 / T_eq²`
+
+### Continuous normalized damage function
+
+The reference points are:
+
+`T_eq = 35 -> 0% raw max-HP damage`
+
+`T_eq = 1 -> 100% raw max-HP damage`
+
+For `T_eq < 35`:
+
+`R_v = 35 / T_eq`
+
+`R_E = R_v²`
+
+`DamagePercent = 100 × (R_E - 1) / (35² - 1)`
+
+For `T_eq >= 35`:
+
+`DamagePercent = 0`
+
+There is no upper clamp at one tic. The same energy law continues below one tic.
+
+Reference values:
+
+| Equivalent tics | Raw max-HP damage |
+| ---: | ---: |
+| 35 | 0% |
+| 30 | 0.03% |
+| 25 | 0.08% |
+| 20 | 0.17% |
+| 15 | 0.36% |
+| 10 | 0.92% |
+| 5 | 3.92% |
+| 3 | 11.04% |
+| 2 | 24.94% |
+| 1 | 100% |
+| 0.8 | 156.30% |
+| 0.5 | 400.25% |
+| 0.25 | 1601.23% |
+
+These are **raw** values. Biological landing damping, Toughness, global armor defense and surface multipliers remain later stages of the pipeline.
+
+### Robust contact rearm
+
+A temporary gap caused by the inelastic impulse is no longer enough to define a new charge.
+
+After a valid actor collision, the pair remains latched until:
+
+`distance > Radius_A + Radius_B + 0.25 × min(H_A, H_B) + 2`
+
+and this condition remains true for:
+
+`5 consecutive tics`
+
+Only then is the pair eligible to generate a fresh impact.
+
+This creates a physical distinction between:
+
+- continuing to push after one collision;
+- tiny recoil/engine oscillation while still engaged;
+- actually disengaging, taking space, and charging again.
+
+The 25% body-height term is gameplay geometry tied to character scale. The two-unit margin and five-tic persistence are technical anti-flicker parameters rather than physical constants.
+
+## 19. V4.26.0 — Impact Physics Core API
+
+### Architectural separation
+
+The physics solver is now independent of Caelum gameplay systems.
+
+`impactphysics/ImpactPhysics.zs` contains only generic mechanics:
+
+- inertial mass;
+- body height;
+- velocity;
+- collision normal;
+- coefficient of restitution;
+- impulse;
+- forced velocity change;
+- equivalent impact tics;
+- specific kinetic-energy severity.
+
+It contains no references to CaelumPlayer, CaelumCombatActor, attributes, armor, biology, HP, Tarot or equipment.
+
+### ImpactBody
+
+A generic body describes the physical input:
+
+- `Mass`
+- `Height`
+- `Velocity`
+- `Restitution`
+- `SurfaceMultiplier`
+
+The core does not decide what SurfaceMultiplier means to a game's damage system; it is metadata available to integrations.
+
+### ImpactResult
+
+A resolved impact returns:
+
+- validity;
+- static/finite target flag;
+- collision normal;
+- closing speed;
+- impulse magnitude;
+- source Delta-v;
+- target Delta-v;
+- equivalent tics for each body;
+- energy severity percentage for each body.
+
+The result is descriptive. The core does not remove HP or apply armor.
+
+### ResolveBodies
+
+Two finite masses use the normal impulse equation:
+
+`J = (1+e) v_close / (1/m_A + 1/m_B)`
+
+`Delta-v_A = J/m_A`
+
+`Delta-v_B = J/m_B`
+
+The resulting Delta-v values are converted to equivalent tics and the V4.25.4 energy curve.
+
+### ResolveStatic
+
+Static geometry is defined as the limit:
+
+`m_target -> infinity`
+
+The target does not change velocity. The source loses the velocity component normal to the surface.
+
+`Delta-v_source = |v_source dot n|`
+
+`J_static = m_source × Delta-v_source`
+
+The same equivalent-tic and energy functions then apply. There is no special wall damage curve.
+
+### Engine-derived effective wall normal
+
+GZDoom map-line geometry is not reimplemented by the core. The Caelum adapter compares horizontal velocity before and after the native movement step:
+
+`v_lost = v_before - v_after`
+
+The normalized lost-velocity direction becomes the effective collision normal passed to `ResolveStatic`.
+
+This naturally ignores preserved tangential/sliding velocity and evaluates only the motion the engine actually removed.
+
+### Convergence property
+
+A required validation property is:
+
+`lim(m_B -> infinity) ResolveBodies(A,B) = ResolveStatic(A)`
+
+The mass-10000 training dummy is therefore not only a gameplay object but a convergence test. Its effect on the player should be close to, but not exactly equal to, static geometry.
+
+### ResolveExternal
+
+`ResolveExternal` accepts a target body plus an externally supplied source mass, source velocity, normal and restitution.
+
+This is the intended bridge for systems that may not be ordinary Actor-to-Actor collisions:
+
+- avalanches;
+- moving sectors;
+- scripted machinery;
+- collapsing structures;
+- rams;
+- catapult payload systems;
+- other project-specific hazards.
+
+The external system supplies physical state rather than arbitrary attack damage.
+
+### Standalone export target
+
+After validation, `/impactphysics/ImpactPhysics.zs` can become the basis of a standalone `ImpactPhysics.pk3`.
+
+A consuming project should be able to:
+
+1. include the core;
+2. construct `ImpactBody` values from its own actors/objects;
+3. call a solver;
+4. interpret `ImpactResult` using its own health, armor, structural-integrity or breakage rules.
+
+Caelum is therefore an adapter/client of the API rather than the owner of the underlying mathematics.
+
+### Melee boundary
+
+Melee is deliberately outside V4.26.0.
+
+A physical melee model would need more than player and weapon mass. At minimum it requires:
+
+- swing/strike velocity rather than locomotion velocity;
+- effective weapon mass at the contact point;
+- lever arm and rotational contribution;
+- contact area;
+- edge sharpness or point geometry;
+- target material/armor response;
+- penetration/cutting versus blunt energy transfer;
+- attack technique.
+
+Therefore current melee damage remains the authoritative combat model. A future melee-physics layer can consume Impact Physics Core outputs once these additional variables are explicitly designed.
+
+## 20. V4.26.1 — Toughness tolerance and static-contact filtering
+
+### Toughness as kinetic-trauma tolerance
+
+For collision damage, Toughness is no longer interpreted as a multiplicative percentage reduction.
+
+After energy severity and the impacting surface modifier:
+
+`S_surface = S_energy × SurfaceMultiplier`
+
+Toughness removes percentage points directly:
+
+`S_postToughness = max(0, S_surface - Toughness)`
+
+The remaining severity is converted to health:
+
+`D_preArmor = HP_max × S_postToughness / 100`
+
+and armor remains proportional:
+
+`D_final = D_preArmor × (1 - A_impact/100)`
+
+Examples:
+
+- raw 10%, Toughness 5 -> 5% remains;
+- raw 10%, Toughness 50 -> 0%;
+- raw 100%, Toughness 100 -> 0%;
+- raw 200%, Toughness 100 -> 100% remains before armor.
+
+This models Toughness as a structural/biological trauma threshold rather than conventional damage resistance.
+
+### Static grazing filter
+
+Static geometry is still solved through the infinite-mass Impact Physics Core path, but the Caelum adapter distinguishes impact from ordinary sliding.
+
+`F_lost = |Delta-v_horizontal| / |v_horizontal,before|`
+
+If:
+
+`F_lost < 0.25`
+
+the event is treated as grazing contact and does not enter the damage solver.
+
+The 25% threshold is a gameplay contact classifier, not a physical constant. It prevents narrow corridors and shallow wall contact from becoming a source of constant trauma.
+
+### Static contact rearm
+
+After a wall/static collision state begins, another static impact is not eligible until the actor has been unblocked for five consecutive tics.
+
+This protects against one-tic gaps in GZDoom's blocking-line state while sliding along irregular geometry.
+
+### Adrenaline
+
+Environmental kinetic trauma is separated from combat damage response:
+
+- actor collision -> normal received-damage Adrenaline remains;
+- wall/static geometry -> no received-damage Adrenaline;
+- floor/fall impact -> no received-damage Adrenaline.
+
+Pain and health-state consequences still occur when environmental impact actually removes HP.

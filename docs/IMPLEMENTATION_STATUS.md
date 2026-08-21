@@ -1,5 +1,57 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Impact response refinement 4.26.1
+
+**Implemented — pending manual validation**
+
+Impact Toughness is now a threshold/tolerance measured in percentage points of maximum health. If the energy curve produces `S%` after the source-surface modifier:
+
+`S_post = max(0, S - Toughness)`
+
+`D_preArmor = HP_max × S_post / 100`
+
+`D_final = D_preArmor × (1 - GlobalImpactArmor/100)`
+
+This deliberately makes high Toughness completely ignore ordinary kinetic trauma while preserving vulnerability to sufficiently extreme impacts.
+
+Static geometry requires at least 25% of pre-impact horizontal speed to be lost before the contact is considered an impact. Once static contact occurs, it remains latched until five consecutive unblocked tics have passed.
+
+Environmental wall/floor impacts do not generate received-damage Adrenaline. Actor-to-actor impacts continue to do so.
+
+## Impact Physics Core API 4.26.0
+
+**Implemented — pending manual validation**
+
+Generic physics is now separated from Caelum damage interpretation. `ImpactPhysics` resolves finite-body, static and external-source impacts and returns a neutral `ImpactResult`. Caelum adapters remain responsible for effective shield mass, biological landing damping, Toughness, armor and HP.
+
+Static geometry is now modeled as the infinite-mass limit of the same physical model. The player-wall exception introduced during early calibration has been removed. The velocity component actually lost by native GZDoom movement defines the effective static collision normal.
+
+**Convergence validation:** a character hitting increasingly massive movable bodies should approach the result of hitting static geometry. The existing mass-10000 training dummy is the primary MAP01 comparison against walls/doors.
+
+**Export status:** the core source is isolated under `/impactphysics/` and contains no Caelum-specific class references. Packaging/licensing/versioning it as a standalone PK3 is planned after the API survives this validation pass.
+
+**Melee integration:** intentionally deferred. Weapon mass can eventually feed an impact model, but melee also needs swing velocity, effective striking mass, contact area/edge geometry, material penetration, sharpness and attack technique. Existing melee damage remains authoritative until those variables are designed.
+
+## Energy impact curve and contact rearm 4.25.4
+
+**Implemented — pending manual validation**
+
+Impact severity no longer uses discrete 3% damage steps. For `T_eq < 35`:
+
+`R_v = 35 / T_eq`
+
+`R_E = R_v²`
+
+`Damage% = 100 × (R_E - 1) / (35² - 1)`
+
+At or above 35 tics the result is zero. This normalization produces exactly 100% raw max-HP damage at one equivalent tic. Below one tic the same continuous quadratic curve remains active and may exceed 100%.
+
+This is intentionally based on **specific kinetic energy** rather than total `1/2 m v²`. Mass already determines the action/reaction impulse and each body's resulting `Delta-v`; multiplying injury by mass again would double-count mass.
+
+Contact rearm now requires true disengagement. A collision pair stays latched until center separation exceeds `RadiusA + RadiusB + 0.25 × min(HeightA, HeightB) + 2` for five consecutive tics. This is designed to reject tiny recoil gaps produced while holding movement against another body.
+
+Existing V4.25.3 acceleration, biological landing damping, Toughness, armor mitigation and actor-to-actor momentum equations are unchanged.
+
 ## Acceleration and biological impact response 4.25.3
 
 **Implemented — pending manual validation**

@@ -336,6 +336,23 @@ class CaelumConstants : Object
     // Separación necesaria para rearmar un choque entre los mismos cuerpos.
     const IMPACT_CONTACT_RELEASE_MARGIN = 2.0;
 
+    // V4.25.4 — rearme robusto de contacto.
+    // Una nueva embestida requiere separación corporal apreciable:
+    // radios combinados + 25% de la altura del cuerpo menor, mantenida 5 tics.
+    const IMPACT_CONTACT_REARM_HEIGHT_FRACTION = 0.25;
+    const IMPACT_CONTACT_REARM_SEPARATED_TICS = 5;
+
+    // V4.25.4 — curva energética continua.
+    // 35 tics equivalentes = 0% de daño bruto.
+    // 1 tic = 100% de daño bruto.
+    // Por debajo de 1 tic la curva continúa sin clamp superior.
+    const IMPACT_ENERGY_REFERENCE_TICS = 35.0;
+    const IMPACT_ENERGY_REFERENCE_DAMAGE_PERCENT = 100.0;
+
+    // V4.26.1 — contacto con geometría.
+    const IMPACT_STATIC_MIN_LOST_SPEED_FRACTION = 0.25;
+    const IMPACT_STATIC_REARM_CLEAR_TICS = 5;
+
     // Altura base de referencia del PlayerPawn estándar usada únicamente
     // para escalar la amortiguación biológica de NPC de tamaño diferente.
     const BIOLOGICAL_REFERENCE_ACTOR_HEIGHT = 56.0;

@@ -1,5 +1,17 @@
 # Asset register
 
+## V4.26.1 asset note
+
+V4.26.1 changes physics response, combat integration and documentation only. No new external art assets are introduced.
+
+## V4.26.0 asset note
+
+V4.26.0 is an architecture/physics/documentation refactor and introduces no new external art assets.
+
+## V4.25.4 asset note
+
+V4.25.4 changes physics/balance code and documentation only. No new external art assets are introduced.
+
 ## V4.25.3 asset note
 
 V4.25.3 changes movement/physics code and documentation only. No new external art assets are introduced.

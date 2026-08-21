@@ -97,6 +97,38 @@ Living actors now receive biological landing damping before Toughness and armor.
 
 The debug overlay now exposes acceleration percentage/time, contact-latch state, raw landing delta-v and the biological delta-v absorption.
 
+## Energy impact curve and robust contact rearm (V4.25.4)
+
+Impact damage is now continuous and energy-shaped rather than a discrete 3%-per-tic staircase. Equivalent time still defines the kinematic severity, but damage follows specific kinetic energy (`E/m ∝ Delta-v²`). Because `Delta-v ∝ 1/T_eq`, the damage curve is proportional to `1/T_eq²`.
+
+The curve is normalized so 35 equivalent tics = 0% raw max-HP damage and 1 equivalent tic = 100%. It continues above 100% below one tic instead of clamping, allowing genuinely extreme impacts to remain catastrophic before biological damping, Toughness and armor mitigation.
+
+Sustained actor contact also uses a stronger rearm rule. A previously collided pair must separate by the combined radii plus 25% of the smaller body's reference height, and remain beyond that distance for 5 consecutive tics, before another collision impact is eligible. Small engine recoil/separation oscillations no longer count as a new charge.
+
+## Impact Physics Core API (V4.26.0)
+
+The collision mathematics are now isolated in `impactphysics/ImpactPhysics.zs`. This core is intentionally project-agnostic: it knows mass, height, velocity, collision normal, restitution, equivalent impact time and energy severity, but it does not know Caelum attributes, armor, biology, HP, classes or Tarot.
+
+Public data structures are `ImpactBody` and `ImpactResult`. Public solver entry points are `ImpactPhysics.ResolveBodies(...)`, `ImpactPhysics.ResolveStatic(...)`, and `ImpactPhysics.ResolveExternal(...)`. `ResolveStatic` is the infinite-mass limit for walls/doors/static geometry; `ResolveExternal` is the adapter point for future non-Actor moving hazards such as avalanches or moving sectors.
+
+CaelumPlayer and CaelumCombatActor now act as integration adapters: they build generic bodies, call the core, apply returned velocity changes, then interpret energy severity through biological damping, Toughness, armor and health.
+
+Wall/door collision no longer uses the provisional EffectiveMovementPercent calibration from V4.25.2. The engine-observed lost velocity supplies an effective impact normal and the static solver uses the same `Delta-v -> equivalent tics -> v² energy` path as body collisions. A very massive movable body should therefore converge toward static-geometry behavior as its mass approaches infinity.
+
+The core is structured so it can later be packaged as a standalone `ImpactPhysics.pk3` for another GZDoom project without importing Caelum-specific systems.
+
+## Impact response refinement (V4.26.1)
+
+Kinetic impact Toughness is now subtractive in **percentage points of maximum health**, not a multiplicative damage-resistance factor. After the energy curve and source-surface multiplier:
+
+`PostToughness% = max(0, RawImpact% - Toughness)`
+
+Only the remaining percentage is converted to HP, then global armor defense remains multiplicative. Toughness 100 therefore ignores impacts up to 100% raw max-HP severity but does not make the body immune to extreme 200%+ collisions.
+
+Static geometry now rejects grazing contact when the engine removes less than 25% of the actor's pre-impact horizontal speed. Static collision also requires five consecutive clear tics before rearming, preventing narrow corridors and contact flicker from repeatedly generating wall impacts.
+
+Wall/floor environmental impact damage no longer grants the generic received-damage Adrenaline gain. Actor-to-actor impact retains that response.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.

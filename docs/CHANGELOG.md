@@ -1,5 +1,41 @@
 # Changelog
 
+## 4.26.1 — Impact response refinement
+
+- Changed collision Toughness from multiplicative mitigation to subtractive maximum-HP percentage-point tolerance.
+- New impact order: energy severity × surface multiplier -> subtract Toughness percentage points -> convert remaining percentage to HP -> apply global armor defense.
+- Toughness 100 is no longer absolute immunity: a 200% raw collision still leaves 100% max-HP severity before armor.
+- Added a 25% minimum lost-horizontal-speed fraction for static geometry impacts; lower values are treated as grazing/sliding contact.
+- Added a five-clear-tic static-contact rearm latch to prevent repeated wall damage from collision-state flicker in narrow spaces.
+- Removed generic damage Adrenaline gain from wall and floor impacts.
+- Actor-to-actor collision damage still grants the normal received-damage Adrenaline response.
+- Updated impact debug telemetry to display Toughness in percentage points and post-Toughness severity.
+
+## 4.26.0 — Impact Physics Core API
+
+- Extracted generic impact mathematics into `impactphysics/ImpactPhysics.zs`.
+- Added project-neutral `ImpactBody` and `ImpactResult` data structures.
+- Added `ResolveBodies` for two finite-mass moving bodies.
+- Added `ResolveStatic` for the infinite-mass static-geometry limit.
+- Added `ResolveExternal` as an integration point for moving hazards that are not conventional Caelum actors.
+- Refactored CaelumPlayer and CaelumCombatActor actor collisions to use the shared core solver.
+- Removed the provisional V4.25.2 player-wall severity calibration based on EffectiveMovementPercent.
+- Walls and doors now derive a normal from the velocity actually lost during the engine movement step and use the same static-impact core path.
+- Delegated equivalent-tic and kinetic-energy severity calculations to the core, removing duplicated Caelum implementations.
+- Preserved V4.25.4 energy curve, acceleration, contact rearm, biological damping, Toughness and armor response unchanged.
+- Prepared the architecture for future standalone `ImpactPhysics.pk3`, rolling rocks, avalanches, rams, catapults and moving-map hazards.
+
+## 4.25.4 — Energy impact curve and robust contact rearm
+
+- Replaced the discrete 3%-per-equivalent-tic collision damage staircase with a continuous kinetic-energy-shaped curve.
+- The new curve uses specific kinetic energy (`E/m ∝ Delta-v²`) so mass remains in the impulse/momentum solution and is not double-counted in injury severity.
+- Normalization points: 35 equivalent tics = 0% raw max-HP damage; 1 tic = 100%.
+- The curve continues naturally below one tic: ~156% at 0.8 tics, ~400% at 0.5 tics, ~1600% at 0.25 tics, before biological/Toughness/armor mitigation.
+- Removed the previous 105% hard cap from the active impact-damage calculation.
+- Strengthened actor-contact rearm: separation must exceed combined radii plus 25% of the smaller reference height.
+- Required that separation to persist for 5 consecutive tics before the pair can generate a new collision impact.
+- Added debug display for contact separation progress and the active `v²` energy curve.
+
 ## 4.25.3 — Acceleration, contact latch and biological damping
 
 - Added exponential player acceleration. Continuous grounded movement reaches exactly 95% of its currently available maximum after 3.0 seconds.
