@@ -1,15 +1,16 @@
 # Changelog
 
-## 4.23.4b — Character creation jewelry guard
+## 4.25.0 — Ranged weapon architecture and balance
 
-- Jewelry attribute scanning is now disabled until character creation has been
-  fully confirmed.
-- The creation wizard therefore uses the same attribute recalculation path as
-  the validated pre-jewelry build; amulet and seal bonuses begin applying only
-  during normal play.
-- No jewelry recipes, bonuses, MAP01 objects, sprites, or crafting rules
-  changed.
-
+- Added dedicated magazines: 50 rounds for Standard Bow and Longbow, 20 for Crossbow, 10 for Carbine; capacities are identical across tiers.
+- Added timed Reload for the ranged family. Base times are 3 s for both bows, 5 s for Crossbow, and 10 s for Carbine, divided by Dexterity Type-4 attack speed.
+- Changed ranged AltFire to a persistent Aim toggle. Aim grants ×2 physical accuracy and stacks multiplicatively with crouching ×2.
+- Kept native Zoom as the independent shield Block input, avoiding the previous input conflict.
+- Rebalanced ranged damage to a dedicated T1/T2/T3 scale of 100% / 160% / 250%, then increased all four ranged T1 base damages ×10: Standard Bow 1200, Longbow 1800, Crossbow 1400, Carbine 3600.
+- Ranged base critical chance now follows the same tier scale. T1 bases are Standard Bow 10%, Longbow 12%, Crossbow 8%, Carbine 6%.
+- Restored the authoritative seven-level spread ladder (10/30/50/70/90/110/130° maximum; minimum = 10%). Standard Bow moved two tiers to Very High (110°), Longbow to Medium (70°), Crossbow to High (90°), and Carbine remains Maximum (130°).
+- Audited documentation against executable equipment data, including all physical-weapon values and definitive shield T1 weights (Magic 4, Buckler 8, Kite 12, Tower 16).
+- Updated README, implementation status, asset register, and private design documentation to preserve these balance values as authoritative project data.
 
 ## 4.23.4 — Jewelry and seals
 

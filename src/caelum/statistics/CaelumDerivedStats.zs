@@ -25,6 +25,8 @@ class CaelumDerivedStats : Object
     double DebugSwordDamage;
     double DebugStaffDamage;
     double PhysicalAccuracyPercent;
+    double AttackSpeedPercent;
+    double AttackDurationMultiplier;
     double MagicalAccuracyPercent;
     double PhysicalCriticalChance;
     double MagicalCriticalChance;
@@ -218,6 +220,8 @@ class CaelumDerivedStats : Object
             * CalculateType1Percent(attributes.Intelligence) / 100.0;
 
         PhysicalAccuracyPercent = CalculateType1Percent(attributes.Dexterity);
+        AttackSpeedPercent = CalculateType4Percent(attributes.Dexterity);
+        AttackDurationMultiplier = 100.0 / Max(1.0, AttackSpeedPercent);
         MagicalAccuracyPercent = CalculateType1Percent(attributes.Insight);
         PhysicalCriticalChance = Clamp(CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
             + CalculateType2Percent(attributes.Dexterity), 0.0, 100.0);

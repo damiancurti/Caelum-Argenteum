@@ -99,10 +99,10 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 220.0;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 180.0;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 240.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 120.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 360.0;
-            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 180.0;
-            default: return 140.0;
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 1200.0;
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 3600.0;
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 1800.0;
+            default: return 1400.0;
         }
     }
 
@@ -165,7 +165,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 60.0;
             case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 20.0;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 60.0;
-            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 30.0;
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 70.0;
             default: return 25.0;
         }
     }
@@ -177,7 +177,6 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 40.0;
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return 58.0;
-            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return 56.0;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return 72.0;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return 50.0;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return 62.0;
@@ -198,8 +197,8 @@ class CaelumWeaponCatalogue : Object
         switch (ResolveWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 30.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 50.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 70.0;
+            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 90.0;
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 110.0;
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 90.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
@@ -209,11 +208,11 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
             case CaelumConstants.CATALOGUE_WEAPON_AXE:
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
                 return 110.0;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE:
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
                 return 130.0;
             default: return 70.0;
         }
@@ -234,7 +233,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD:
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 8.0;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 12.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 0.0;
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 6.0;
             default: return 5.0;
         }
     }

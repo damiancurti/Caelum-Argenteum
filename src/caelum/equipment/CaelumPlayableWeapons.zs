@@ -399,7 +399,12 @@ class CaelumPhysicalSelectorWeapon : Weapon
     action void A_CaelumChannelInput()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
-        if (caelumPlayer != null) { caelumPlayer.RequestCombatChannelInput(); }
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.RequestWeaponReloadOrChannel(
+                invoker.GetCaelumWeaponType()
+            );
+        }
     }
 
     action void A_CaelumTarotInput()

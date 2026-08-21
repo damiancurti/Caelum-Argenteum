@@ -3,7 +3,6 @@
 class CaelumWeaponModel : Object
 {
     int WeaponType;
-    int EssenceType;
     int Tier;
     int Size;
     int Durability;
@@ -14,7 +13,6 @@ class CaelumWeaponModel : Object
     {
         if (Initialized) { return; }
         WeaponType = CaelumConstants.WEAPON_TYPE_SWORD;
-        EssenceType = CaelumConstants.ESSENCE_FIRE;
         Tier = 1;
         Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
@@ -80,18 +78,34 @@ class CaelumWeaponModel : Object
         }
         switch (weaponType)
         {
-            case CaelumConstants.WEAPON_TYPE_BELL:
-                return CaelumConstants.WEAPON_BELL_BASE_DAMAGE;
+            case CaelumConstants.WEAPON_TYPE_BELL: return 100.0;
             case CaelumConstants.WEAPON_TYPE_BOOK: return 120.0;
             case CaelumConstants.WEAPON_TYPE_STATUETTE: return 140.0;
             default: return CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         }
     }
 
+    bool IsRangedPhysicalType(int weaponType)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_CARBINE;
+    }
+
+    double GetRangedTierMultiplierFor(int tier)
+    {
+        if (tier <= 1) { return 1.0; }
+        if (tier == 2) { return 1.60; }
+        return 2.50;
+    }
+
     double GetDamageFor(int weaponType, int tier)
     {
-        return GetTierOneDamageFor(weaponType)
-            * GetTierDamageMultiplierFor(tier);
+        double tierMultiplier = IsRangedPhysicalType(weaponType)
+            ? GetRangedTierMultiplierFor(tier)
+            : GetTierDamageMultiplierFor(tier);
+        return GetTierOneDamageFor(weaponType) * tierMultiplier;
     }
 
     double GetDamage()
@@ -168,9 +182,8 @@ class CaelumWeaponModel : Object
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF:
-                return 500.0;
             case CaelumConstants.WEAPON_TYPE_BELL:
-                return CaelumConstants.WEAPON_BELL_ANIMA_COST;
+                return 500.0;
             case CaelumConstants.WEAPON_TYPE_BOOK: return 700.0;
             case CaelumConstants.WEAPON_TYPE_STATUETTE: return 1000.0;
             default: return 0.0;

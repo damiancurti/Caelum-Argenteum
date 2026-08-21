@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.25.0 asset note
+
+V4.25.0 introduces no new external artwork. The ranged refactor reuses the already registered arrow, bolt, carbine-ammunition, projectile, weapon, shield, and UI assets. This entry exists so code-only balance patches remain traceable in the public asset audit.
+
 Every external asset must be recorded here before it can enter a public build.
 
 | Asset | File | Author | Source | License | Final use allowed? | Notes |

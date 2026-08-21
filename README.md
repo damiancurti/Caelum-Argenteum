@@ -23,10 +23,10 @@ This README is the public technical entry point for collaborators. The author's 
 - Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
 - Physical weapon catalogue and family/slot cycling.
 - Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
-- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Held shield blocking consumes Air continuously and suppresses Air regeneration while AltFire remains pressed.
+- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Block is a persistent native Zoom-mode toggle, consumes Air continuously, suppresses Air regeneration, and supports shield-specific effects.
 - Weapon durability using the shared damage-based wear logic.
 - Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
-- Carbine, bows/crossbows, their ammunition foundations, and weapon-specific accuracy/spread behavior currently used by the development build.
+- Ranged family (standard bow, longbow, crossbow, carbine) with native ammunition/projectiles, tier-scaled damage and critical chance, normalized spread categories, per-weapon magazines, timed Reload, and AltFire aiming.
 - Essence weapons: staff, bell, book, and statuette foundations.
 - Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
@@ -39,7 +39,7 @@ This README is the public technical entry point for collaborators. The author's 
 
 ### Implemented foundation — still expanding
 
-- Crafting content and material catalogue: the underlying rules exist, but recipes/material coverage are still being expanded. Armor Workshop, Essence Altar, and Workbench actors are placeable and interactive, while their recipe families remain pending. The Carbine is intentionally not assigned to a crafting station until the author defines that design choice.
+- Crafting content and material catalogue: physical weapons, armor, essence weapons, jewelry, seals, and the connected station network are implemented foundations. Recipe coverage and final material balancing remain active work. The carbine belongs to the Ranged Weapons Workshop together with bows and crossbows.
 - Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
 - Inventory presentation: functional development UI exists, but final UX and art are not complete.
 - Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.
@@ -61,6 +61,17 @@ This README is the public technical entry point for collaborators. The author's 
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
 
+
+
+## Ranged weapon rules (V4.25.0)
+
+The current ranged family uses the authoritative spread ladder: Minimum 10°, Very Low 30°, Low 50°, Medium 70°, High 90°, Very High 110°, Maximum 130°. Minimum spread is always 10% of maximum spread.
+
+Current assignments are Standard Bow = Very High (11°–110°), Longbow = Medium (7°–70°), Crossbow = High (9°–90°), and Carbine = Maximum (13°–130°).
+
+Ranged damage uses its own tier scale: T1 = 100%, T2 = 160%, T3 = 250%. The definitive T1 bases are 1200 / 1800 / 1400 / 3600 for Standard Bow / Longbow / Crossbow / Carbine. Ranged base critical chance uses the same tier scale: 10% / 12% / 8% / 6% at T1 respectively.
+
+Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Base reload times are 3 / 3 / 5 / 10 seconds and are divided by the Dexterity Type-4 attack-speed modifier. AltFire toggles aiming and multiplies physical accuracy ×2; crouching also multiplies it ×2, so both effects stack.
 
 ## Development test map
 

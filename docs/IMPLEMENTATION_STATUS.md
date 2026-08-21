@@ -1,5 +1,23 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Ranged weapon architecture 4.25.0
+
+**Implemented — pending manual validation**
+
+The four definitive ranged weapons now have independent magazine state and Reload behavior. Standard Bow and Longbow each hold 50 shots, Crossbow 20, and Carbine 10. Magazine capacity does not scale with tier. Reload base durations are 3 seconds for both bows, 5 seconds for Crossbow, and 10 seconds for Carbine; effective duration is divided by the Dexterity Type-4 attack-speed multiplier.
+
+AltFire now toggles Aim for ranged weapons rather than trying to reuse the shield input. Aim multiplies physical accuracy by 2.0 and stacks with the existing crouch accuracy multiplier of 2.0. Native Zoom remains the independent persistent Block toggle.
+
+Ranged damage is intentionally attribute-independent at the base-damage layer and therefore has been raised substantially. T1 bases are Standard Bow 1200, Longbow 1800, Crossbow 1400, and Carbine 3600. Ranged tiers use 100% / 160% / 250%, producing T2/T3 damage of 1920/3000, 2880/4500, 2240/3500, and 5760/9000 respectively.
+
+Base critical chance scales with the same 100% / 160% / 250% tier multipliers before the Dexterity critical bonus is added. T1 bases are Standard Bow 10%, Longbow 12%, Crossbow 8%, and Carbine 6%.
+
+The authoritative spread ladder is Minimum 10°, Very Low 30°, Low 50°, Medium 70°, High 90°, Very High 110°, Maximum 130°. Minimum spread is always 10% of maximum. Current ranged assignments are Standard Bow Very High (11°–110°), Longbow Medium (7°–70°), Crossbow High (9°–90°), and Carbine Maximum (13°–130°).
+
+### Equipment-data audit
+
+The executable remains the source checked for equipment values. Shield T1 weights are Magic 4, Buckler 8, Kite 12, Tower 16; documentation entries using older 14/18 values for Kite/Tower are obsolete. Physical-weapon T1 weights and catalogue combat values have been rechecked against `CaelumWeaponModel` and `CaelumWeaponCatalogue`.
+
 ## Connected crafting infrastructure 4.23.3a
 
 **Implemented — pending validation**
@@ -677,6 +695,6 @@ jump scaling is Type 1.
   inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
   item actions are functional.
 
-## Jewelry crafting — 4.23.4b
+## Jewelry crafting — 4.23.4
 
 Implemented universal amulets and elemental seals with tier-based weight, attribute bonuses, Jeweler Bench infrastructure, and MAP01 test placement. Raw gems, copper, tin, and coal are registered for future systems and intentionally have no current recipe function.

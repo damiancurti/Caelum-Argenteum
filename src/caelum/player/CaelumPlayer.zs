@@ -151,6 +151,18 @@ class CaelumPlayer : DoomPlayer
     double LastCarbineYawOffset;
     double LastCarbinePitchOffset;
     int CarbineAmmoCount;
+
+    // V4.25 ranged architecture.
+    int StandardBowMagazine;
+    int LongbowMagazine;
+    int CrossbowMagazine;
+    int CarbineMagazine;
+    bool RangedAimModeActive;
+    bool RangedReloadActive;
+    int RangedReloadWeaponType;
+    double RangedReloadRemainingSeconds;
+    double RangedReloadTotalSeconds;
+
     double ArmorDurabilityDamageMultiplier;
     bool ArmorDurabilityMultiplierInitialized;
     bool DebugArmorCriticalHit;
@@ -1794,11 +1806,15 @@ class CaelumPlayer : DoomPlayer
         // Cambiar de arma rompe el bloqueo anterior. Si el jugador mantiene
         // Zoom, el arma nueva podrá levantar el escudo nuevamente mediante su
         // propio estado Zoom.
-        if (CombatBlockModeActive
-            && WeaponModel.Equipped
+        if (WeaponModel.Equipped
             && WeaponModel.WeaponType != resolvedType)
         {
-            CancelCombatBlockMode();
+            CancelRangedAim();
+            CancelRangedReload();
+            if (CombatBlockModeActive)
+            {
+                CancelCombatBlockMode();
+            }
         }
 
         if (WeaponModel.Equipped
@@ -6484,6 +6500,7 @@ class CaelumPlayer : DoomPlayer
         ApplyNaturalHealthRegeneration();
 
         UpdateCombatBlockMode();
+        UpdateRangedReload();
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
@@ -6691,6 +6708,12 @@ class CaelumPlayer : DoomPlayer
             CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
             );
+
+        if (IsRangedWeaponType(WeaponModel.WeaponType))
+        {
+            ToggleRangedAim(WeaponModel.WeaponType);
+            return;
+        }
 
         // Mientras Block está activo sólo lanza y jabalina conservan permiso
         // de ataque, según la excepción de diseño acordada.
@@ -7098,6 +7121,171 @@ class CaelumPlayer : DoomPlayer
         RefreshCarriedInventorySummary();
     }
 
+    bool IsRangedWeaponType(int weaponType)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_CARBINE;
+    }
+
+    int GetRangedMagazineCapacity(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 10; }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW) { return 20; }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
+        {
+            return 50;
+        }
+        return 0;
+    }
+
+    int GetRangedMagazineCount(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW)
+            return StandardBowMagazine;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
+            return LongbowMagazine;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
+            return CrossbowMagazine;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+            return CarbineMagazine;
+        return 0;
+    }
+
+    void SetRangedMagazineCount(int weaponType, int amount)
+    {
+        int value = Clamp(amount, 0, GetRangedMagazineCapacity(weaponType));
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW)
+            StandardBowMagazine = value;
+        else if (weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
+            LongbowMagazine = value;
+        else if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
+            CrossbowMagazine = value;
+        else if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+            CarbineMagazine = value;
+    }
+
+    int GetRangedAmmoType(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+            return CaelumConstants.AMMUNITION_CARBINE;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
+            return CaelumConstants.AMMUNITION_BOLT;
+        return CaelumConstants.AMMUNITION_ARROW;
+    }
+
+    double GetRangedBaseReloadSeconds(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 10.0; }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW) { return 5.0; }
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
+        {
+            return 3.0;
+        }
+        return 0.0;
+    }
+
+    double GetRangedTierCriticalMultiplier(int tier)
+    {
+        if (tier <= 1) { return 1.0; }
+        if (tier == 2) { return 1.60; }
+        return 2.50;
+    }
+
+    void CancelRangedAim()
+    {
+        RangedAimModeActive = false;
+    }
+
+    void ToggleRangedAim(int requestedWeaponType)
+    {
+        if (!IsRangedWeaponType(requestedWeaponType)
+            || WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != requestedWeaponType
+            || RangedReloadActive || CombatBlockModeActive)
+        {
+            RangedAimModeActive = false;
+            return;
+        }
+        RangedAimModeActive = !RangedAimModeActive;
+    }
+
+    void CancelRangedReload()
+    {
+        RangedReloadActive = false;
+        RangedReloadRemainingSeconds = 0.0;
+        RangedReloadTotalSeconds = 0.0;
+    }
+
+    void RequestRangedReload(int requestedWeaponType)
+    {
+        if (!IsRangedWeaponType(requestedWeaponType)
+            || WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != requestedWeaponType
+            || DerivedStats == null || CombatBlockModeActive)
+        {
+            return;
+        }
+
+        int ammoType = GetRangedAmmoType(requestedWeaponType);
+        Inventory ammo = FindNativeAmmunition(ammoType);
+        int available = ammo != null ? ammo.Amount : 0;
+        int capacity = GetRangedMagazineCapacity(requestedWeaponType);
+        int targetLoad = Min(capacity, available);
+        if (targetLoad <= GetRangedMagazineCount(requestedWeaponType))
+        {
+            return;
+        }
+
+        CancelRangedAim();
+        RangedReloadWeaponType = requestedWeaponType;
+        RangedReloadTotalSeconds =
+            GetRangedBaseReloadSeconds(requestedWeaponType)
+            * DerivedStats.AttackDurationMultiplier;
+        RangedReloadRemainingSeconds = RangedReloadTotalSeconds;
+        RangedReloadActive = RangedReloadRemainingSeconds > 0.0;
+    }
+
+    void UpdateRangedReload()
+    {
+        if (!RangedReloadActive) { return; }
+
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != RangedReloadWeaponType
+            || CombatBlockModeActive || IsPhysicallyImmobilized())
+        {
+            CancelRangedReload();
+            return;
+        }
+
+        RangedReloadRemainingSeconds = Max(
+            0.0, RangedReloadRemainingSeconds - 1.0 / TICRATE
+        );
+        if (RangedReloadRemainingSeconds > 0.0) { return; }
+
+        int ammoType = GetRangedAmmoType(RangedReloadWeaponType);
+        Inventory ammo = FindNativeAmmunition(ammoType);
+        int available = ammo != null ? ammo.Amount : 0;
+        SetRangedMagazineCount(
+            RangedReloadWeaponType,
+            Min(GetRangedMagazineCapacity(RangedReloadWeaponType), available)
+        );
+        CancelRangedReload();
+    }
+
+    void RequestWeaponReloadOrChannel(int requestedWeaponType)
+    {
+        if (IsRangedWeaponType(requestedWeaponType))
+        {
+            RequestRangedReload(requestedWeaponType);
+            return;
+        }
+        RequestCombatChannelInput();
+    }
+
     void PerformCarbineAttack()
     {
         LastCarbineFired = false;
@@ -7136,14 +7324,16 @@ class CaelumPlayer : DoomPlayer
             requiredAmmoType = CaelumConstants.AMMUNITION_BOLT;
         }
         Inventory rangedAmmo = FindNativeAmmunition(requiredAmmoType);
-        bool ammoAvailable = rangedAmmo != null && rangedAmmo.Amount > 0;
+        bool ammoAvailable = rangedAmmo != null
+            && rangedAmmo.Amount > 0
+            && GetRangedMagazineCount(WeaponModel.WeaponType) > 0;
         CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(rangedAmmo);
         if (carbineStack != null && carbineStack.InMagicBox)
         {
             ammoAvailable = false;
         }
         LastCarbineHadAmmo = ammoAvailable;
-        if (!LastCarbineHadAmmo) { return; }
+        if (!LastCarbineHadAmmo || RangedReloadActive) { return; }
 
         double airCost = CaelumWeaponCatalogue.GetPrimaryAirCost(
             catalogueWeapon
@@ -7159,9 +7349,12 @@ class CaelumPlayer : DoomPlayer
             : (IsRunningOnGround()
                 ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER
                 : 1.0);
+        double aimAccuracyMultiplier = RangedAimModeActive ? 2.0 : 1.0;
         LastCarbineAccuracyPercent = Max(
             1.0,
-            EffectivePhysicalAccuracyPercent * movementAccuracyMultiplier
+            EffectivePhysicalAccuracyPercent
+                * movementAccuracyMultiplier
+                * aimAccuracyMultiplier
         );
         LastCarbineMinimumSpread = CaelumWeaponCatalogue.GetMinimumSpread(
             catalogueWeapon
@@ -7184,9 +7377,11 @@ class CaelumPlayer : DoomPlayer
             DerivedStats.PhysicalCriticalChance
                 - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
         );
+        double rangedBaseCritical =
+            CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
+            * GetRangedTierCriticalMultiplier(WeaponModel.Tier);
         double criticalChance = Clamp(
-            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-                + criticalBonus)
+            (rangedBaseCritical + criticalBonus)
                 * CrouchCriticalChanceMultiplier,
             0.0,
             100.0
@@ -7246,9 +7441,13 @@ class CaelumPlayer : DoomPlayer
         );
 
         rangedAmmo.Amount = Max(0, rangedAmmo.Amount - 1);
+        SetRangedMagazineCount(
+            WeaponModel.WeaponType,
+            GetRangedMagazineCount(WeaponModel.WeaponType) - 1
+        );
         if (requiredAmmoType == CaelumConstants.AMMUNITION_CARBINE)
         {
-            CarbineAmmoCount = rangedAmmo.Amount;
+            CarbineAmmoCount = CarbineMagazine;
         }
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
@@ -7668,6 +7867,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        CancelRangedAim();
+        CancelRangedReload();
         CombatBlockInputGraceTics = 0;
         CombatBlockModeActive = true;
         DebugShieldBlocking = true;
