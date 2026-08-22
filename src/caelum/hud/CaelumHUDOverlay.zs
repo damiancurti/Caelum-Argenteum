@@ -745,6 +745,32 @@ class CaelumHUDOverlay : EventHandler
 
         DrawFirstPersonWeapon(localPlayer);
 
+        if (localPlayer.HUDHasActiveWeapon
+            && localPlayer.HUDActiveWeaponIsRanged)
+        {
+            String magazineLine = String.Format(
+                "%s: %d / %d  |  %s: %d%s",
+                StringTable.Localize("CA_HUD_MAGAZINE", false),
+                localPlayer.HUDRangedMagazineCount,
+                localPlayer.HUDRangedMagazineCapacity,
+                StringTable.Localize("CA_HUD_RESERVE", false),
+                localPlayer.HUDRangedReserveCount,
+                localPlayer.RangedReloadActive
+                    ? String.Format("  |  %s %.1fs",
+                        StringTable.Localize("CA_HUD_RELOADING", false),
+                        localPlayer.RangedReloadRemainingSeconds)
+                    : ""
+            );
+            double magazineX = 320.0
+                - HUDFont.StringWidth(magazineLine) * 0.5;
+            Screen.DrawText(
+                HUDFont, Font.CR_WHITE, magazineX, 326.0, magazineLine,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
+
         // Al cambiar de familia, el texto aparece solo de forma breve.
         // La identificación permanente ahora recae en el arma visible.
         if (localPlayer.HUDActiveWeaponNoticeRemaining > 0.0)

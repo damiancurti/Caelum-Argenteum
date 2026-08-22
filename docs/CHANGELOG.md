@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.26.5f — Finite room walls, repeatable door and contextual ranged Zoom
+
+- Replaced the template room's infinitely wrapped middle textures with bottom-pegged finite 3D middle textures.
+- Removed the permanent full-height blocking flag from those seven finite wall/jamb textures.
+- Enabled back-side USE activation on both repeatable `Door_Raise` thresholds.
+- Made Zoom contextual: ranged weapons toggle real ×2 ADS/FOV zoom, while only shield-compatible weapons can enter Block.
+- Prevented ranged and other two-handed physical weapons from blocking through an equipped shield.
+- Preserved ranged AltFire as an alternate Aim input.
+- Added a live HUD line for loaded magazine, capacity, reserve ammunition and Reload countdown.
+- Added no new assets or balance values.
+
 ## 4.26.5e — Bilateral wall rendering, dual-use door and ranged ammunition
 
 - Added explicit wrapped middle textures to both sides of the five template-room walls and two jambs.

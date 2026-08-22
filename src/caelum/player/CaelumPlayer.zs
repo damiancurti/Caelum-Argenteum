@@ -29,6 +29,10 @@ class CaelumPlayer : DoomPlayer
     int HUDActiveWeaponTier;
     int HUDActiveWeaponSize;
     int HUDActiveWeaponEssenceType;
+    bool HUDActiveWeaponIsRanged;
+    int HUDRangedMagazineCount;
+    int HUDRangedMagazineCapacity;
+    int HUDRangedReserveCount;
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
@@ -1928,6 +1932,14 @@ class CaelumPlayer : DoomPlayer
         HUDActiveWeaponTier = activeTier;
         HUDActiveWeaponSize = activeSize;
         HUDActiveWeaponEssenceType = activeEssenceType;
+        HUDActiveWeaponIsRanged = hasActiveWeapon
+            && IsRangedWeaponType(activeType);
+        HUDRangedMagazineCount = HUDActiveWeaponIsRanged
+            ? GetRangedMagazineCount(activeType) : 0;
+        HUDRangedMagazineCapacity = HUDActiveWeaponIsRanged
+            ? GetRangedMagazineCapacity(activeType) : 0;
+        HUDRangedReserveCount = HUDActiveWeaponIsRanged
+            ? GetEquippedRangedReserveCount() : 0;
 
         if (changed)
         {
@@ -8954,7 +8966,42 @@ class CaelumPlayer : DoomPlayer
             && ShieldModel != null
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
+            && CanUseShieldWithEquippedWeapon()
             && CurrentAir > 0.0;
+    }
+
+    bool CanUseShieldWithEquippedWeapon()
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped) { return true; }
+        if (IsRangedWeaponType(WeaponModel.WeaponType)) { return false; }
+
+        int catalogueWeapon =
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
+                WeaponModel.WeaponType
+            );
+        if (catalogueWeapon < 0)
+        {
+            // Las armas de esencia conservan sus reglas de escudo actuales.
+            return true;
+        }
+        return CaelumWeaponCatalogue.UsesOneHandedShieldRules(catalogueWeapon);
+    }
+
+    int GetEquippedRangedReserveCount()
+    {
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || !IsRangedWeaponType(WeaponModel.WeaponType))
+        {
+            return 0;
+        }
+        Inventory ammo = FindNativeAmmunition(
+            GetRangedAmmoType(WeaponModel.WeaponType)
+        );
+        if (ammo == null) { return 0; }
+        return Max(
+            0,
+            ammo.Amount - GetRangedMagazineCount(WeaponModel.WeaponType)
+        );
     }
 
     void ToggleCombatBlockMode()

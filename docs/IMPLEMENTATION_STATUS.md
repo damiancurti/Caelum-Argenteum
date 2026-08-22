@@ -1,5 +1,26 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Finite room walls, repeatable door and contextual ranged Zoom 4.26.5f
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The template room no longer uses infinitely wrapped blocking middle textures. Its five wall lines and two jambs now use bottom-pegged finite 3D middle textures, allowing their visible and physical height to follow the authored texture instead of extending to the outdoor 512-MU ceiling.
+
+Both door thresholds retain repeatable tag-0 `Door_Raise` and now accept USE from their back side as well as their front side. This pass specifically targets the reported failure to begin a second open/close cycle.
+
+Zoom is now contextual. Standard Bow, Longbow, Crossbow and Carbine toggle Aim with a real native ×2 FOV zoom. For non-ranged weapons, Zoom enters persistent Block only when the equipped weapon uses one-handed shield rules. Large and ranged two-handed physical weapons therefore cannot block through a shield that remains equipped. Ranged AltFire remains an alternate Aim input.
+
+The normal HUD now displays `Magazine: loaded / capacity | Reserve: amount` while a ranged weapon is active, plus the remaining Reload time while reloading. Reserve excludes the rounds already represented by the loaded magazine.
+
+Manual validation:
+
+1. Room walls stop at their finite authored height instead of reaching the outdoor sky.
+2. Complete at least three door open/close cycles, testing USE from both sides.
+3. Equip a shield with a large or ranged weapon and verify that Zoom does not enter Block.
+4. Equip a one-handed shield-compatible weapon and verify that Zoom still toggles Block.
+5. Equip each ranged weapon and verify that Zoom changes FOV and the HUD reports magazine, capacity and reserve.
+6. Fire and Reload while watching the HUD counts and Reload countdown.
+
 ## Bilateral wall rendering, dual-use door and ranged ammunition 4.26.5e
 
 **Implemented — pending manual validation in GZDoom 4.14.2**

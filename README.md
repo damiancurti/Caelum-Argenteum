@@ -12,7 +12,7 @@ This README is the public technical entry point for collaborators. The author's 
 
 The reconciled implementation order and authoritative target input mapping are maintained in [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-The current combat-input baseline preserves **Zoom = persistent Block**, ranged **AltFire = Aim**, and ranged **Reload = magazine reload**. User1 is reserved for the future racial ability; User2 for Seal Channel; User3 for Tarot activation; and User4 for the class ability.
+The current combat-input baseline uses **Zoom contextually**: it activates persistent Block only when the equipped weapon can share the off hand with a shield, and activates real ADS/FOV zoom for ranged weapons. Ranged **AltFire** remains an alternate Aim input, and ranged **Reload** controls the magazine. User1 is reserved for the future racial ability; User2 for Seal Channel; User3 for Tarot activation; and User4 for the class ability.
 
 ## Implementation status
 
@@ -27,10 +27,10 @@ The current combat-input baseline preserves **Zoom = persistent Block**, ranged 
 - Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
 - Physical weapon catalogue and family/slot cycling.
 - Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
-- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Block is a persistent native Zoom-mode toggle, consumes Air continuously, suppresses Air regeneration, and supports shield-specific effects.
+- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Block is a persistent contextual Zoom-mode toggle for shield-compatible weapons, consumes Air continuously, suppresses Air regeneration, and supports shield-specific effects. Ranged and other two-handed physical weapons cannot block merely because a shield remains equipped.
 - Weapon durability using the shared damage-based wear logic.
 - Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
-- Ranged family (standard bow, longbow, crossbow, carbine) with native ammunition/projectiles, tier-scaled damage and critical chance, normalized spread categories, per-weapon magazines, timed Reload, and AltFire aiming.
+- Ranged family (standard bow, longbow, crossbow, carbine) with native ammunition/projectiles, tier-scaled damage and critical chance, normalized spread categories, per-weapon magazines, timed Reload, contextual Zoom ADS, alternate AltFire aiming, and a live magazine/reserve HUD readout.
 - Essence weapons: staff, bell, book, and statuette foundations.
 - Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
@@ -75,7 +75,7 @@ Current assignments are Standard Bow = Very High (11°–110°), Longbow = Mediu
 
 Ranged damage uses its own tier scale: T1 = 100%, T2 = 160%, T3 = 250%. The definitive T1 bases are 1200 / 1800 / 1400 / 3600 for Standard Bow / Longbow / Crossbow / Carbine. Ranged base critical chance uses the same tier scale: 10% / 12% / 8% / 6% at T1 respectively.
 
-Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Base reload times are 3 / 3 / 5 / 5 seconds and are divided by the Dexterity Type-4 attack-speed modifier. AltFire toggles aiming and multiplies physical accuracy ×2; crouching also multiplies it ×2, so both effects stack.
+Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Base reload times are 3 / 3 / 5 / 5 seconds and are divided by the Dexterity Type-4 attack-speed modifier. Zoom toggles ranged ADS with a real ×2 FOV factor; AltFire remains an alternate Aim toggle. Aim multiplies physical accuracy ×2, and crouching also multiplies it ×2, so both effects stack. The HUD displays loaded rounds, capacity, reserve ammunition and active Reload time.
 
 ## Collision and impact physics (V4.25.1)
 

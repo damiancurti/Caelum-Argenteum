@@ -387,13 +387,36 @@ class CaelumPhysicalSelectorWeapon : Weapon
             caelumPlayer.PerformWeaponFamilySecondaryAction(
                 invoker.GetCaelumWeaponType()
             );
+
+            // Las armas a distancia conservan AltFire como acceso alternativo
+            // a Aim, pero ahora el estado tambien modifica el FOV real.
+            if (caelumPlayer.IsRangedWeaponType(invoker.GetCaelumWeaponType()))
+            {
+                A_ZoomFactor(
+                    caelumPlayer.RangedAimModeActive ? 2.0 : 1.0
+                );
+            }
         }
     }
 
-    action void A_CaelumBlockInputPulse()
+    action void A_CaelumContextZoomInput()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
-        if (caelumPlayer != null) { caelumPlayer.ToggleCombatBlockMode(); }
+        if (caelumPlayer == null) { return; }
+
+        // Zoom es contextual: ADS para distancia y Block para armas que
+        // realmente pueden compartir la mano secundaria con un escudo.
+        if (caelumPlayer.IsRangedWeaponType(invoker.GetCaelumWeaponType()))
+        {
+            caelumPlayer.ToggleRangedAim(invoker.GetCaelumWeaponType());
+            A_ZoomFactor(
+                caelumPlayer.RangedAimModeActive ? 2.0 : 1.0
+            );
+            return;
+        }
+
+        A_ZoomFactor(1.0);
+        caelumPlayer.ToggleCombatBlockMode();
     }
 
     action void A_CaelumChannelInput()
@@ -404,6 +427,10 @@ class CaelumPhysicalSelectorWeapon : Weapon
             caelumPlayer.RequestWeaponReloadOrChannel(
                 invoker.GetCaelumWeaponType()
             );
+            if (caelumPlayer.IsRangedWeaponType(invoker.GetCaelumWeaponType()))
+            {
+                A_ZoomFactor(1.0);
+            }
         }
     }
 
@@ -433,6 +460,7 @@ class CaelumPhysicalSelectorWeapon : Weapon
         TNT1 A 1 A_Lower;
         Loop;
     Select:
+        TNT1 A 0 A_ZoomFactor(1.0, 1);
         TNT1 A 0 A_CaelumActivateWeapon;
         TNT1 A 1 A_Raise;
         Loop;
@@ -445,7 +473,7 @@ class CaelumPhysicalSelectorWeapon : Weapon
         TNT1 A 1;
         Goto Ready;
     Zoom:
-        TNT1 A 0 A_CaelumBlockInputPulse;
+        TNT1 A 0 A_CaelumContextZoomInput;
         TNT1 A 1;
         Goto Ready;
     Reload:
