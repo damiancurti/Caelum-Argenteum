@@ -81,6 +81,12 @@ The effective Reload duration is recalculated from the player's current effectiv
 
 Contextual Zoom is latched to one transition per physical key press; holding the key cannot repeatedly alternate ADS or Block. Native Fly is recognized by the acceleration layer as supported no-gravity movement, preserving lateral controls without adding ground-style acceleration to ordinary jumps.
 
+While shield Block is active, the equipped shield is rendered as a modular first-person HUD layer. All four shield types use the same medium, left-offset Kite framing so none is excessively large or centered. The Magic Shield retains a translucent halo as its only type-specific composition difference. The layer is visual feedback only; mechanical coverage, defense and mobility continue to come from the shield model.
+
+The isolated MAP01 room now uses a true solid `Sector_3DFloor` roof slab from 128 to 136 MU under the 512-MU outdoor sky. Its 136-MU upper face is walkable and aligns with the final stair/access platform, while the room retains usable interior space below. The room and door recess share the roof target so the module remains covered above the doorway.
+
+The template doorway now keeps its base ceiling at the 512-MU sky and its shared 3D-floor roof permanently static. Its finite 128-MU stone panel is represented by a raised floor that uses `Plat_DownWaitUpStay`: USE retracts it from 128 to 0 MU, waits for the existing 150-tic interval and raises it again. This separates the moving closure from the roof, prevents any panel from extending toward the sky and keeps the upper surface above the doorway continuously walkable. Manual USE remains repeatable from both sides.
+
 ## Collision and impact physics (V4.25.1)
 
 Characters now use a momentum/impulse collision foundation. Actor-to-actor contact resolves an action/reaction impulse along the collision normal with coefficient of restitution `e = 0`, using effective combat mass. The resulting forced velocity change (`Delta-v`) is converted into an equivalent time to traverse half the receiver's height. More than 35 equivalent tics causes no impact damage; each step below that threshold adds 3% of maximum health, capped at 105%.

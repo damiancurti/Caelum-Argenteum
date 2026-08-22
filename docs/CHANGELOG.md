@@ -1,5 +1,40 @@
 # Changelog
 
+## 4.26.5l — Independent finite door and continuous roof
+
+- Replaced the door ceiling action with a finite 128-MU raised-floor panel using `Plat_DownWaitUpStay`.
+- Kept the doorway's base ceiling at 512 MU so the roof slab retains valid playable space above it in every door state.
+- Applied the roof target to the door and both jamb sectors, keeping the upper surface continuous across the complete entrance.
+- Moved the visible `BIGDOOR2` panel from upper textures to the correct lower textures for raised-floor geometry.
+- Preserved bilateral repeatable USE, speed 16, the 150-tic wait and the existing room dimensions.
+- Superseded the 4.26.5k ceiling-limiter solution, which still coupled the moving door ceiling to the roof space.
+
+## 4.26.5k — Finite framed template door
+
+- Added two narrow structural jamb sectors beside the template-room door.
+- Set their ceiling reference to 132 MU so the existing `Door_Raise` four-unit clearance opens exactly to the 128-MU roof underside.
+- Prevented the door from deriving its raised position from the 512-MU outdoor sky and appearing infinitely tall.
+- Preserved the existing 128-MU doorway, two-sided manual USE, repeat-special behavior, speed, delay and walkable roof.
+- Added no scripts, gameplay balance values or external assets.
+
+## 4.26.5j — Unified shield framing and true walkable room roof
+
+- Standardized Buckler, Kite, Tower and Magic Shield Block layers on the validated medium Kite framing: left-offset, 210×230 virtual pixels.
+- Preserved the Magic Shield's translucent halo without returning it to the center of the screen.
+- Replaced the template room's low conventional sector ceiling with a solid `Sector_3DFloor` slab from 128 to 136 MU.
+- Raised the room's base ceiling to the 512-MU outdoor sky so the upper side of the slab is a real playable space.
+- Applied the roof target to both the room interior and door recess, covering the complete module footprint.
+- Added a closed off-map control sector and one initialization special without external scripts or assets.
+- Preserved finite wall midtextures, the six-step 136-MU access platform and repeatable two-sided `Door_Raise` activation.
+
+## 4.26.5i — Equipped shield first-person Block layer
+
+- Added a first-person HUD shield layer that appears only while contextual Zoom Block is active.
+- Reused the equipped Buckler, Kite, Tower and Magic Shield project sprites; no new external assets were added.
+- Differentiated provisional shield framing: Buckler centered/lower, Kite left and broad, Tower very large on the far left, and Magic Shield centered with a translucent halo layer.
+- Kept the active weapon visible underneath the modular shield layer.
+- Recorded Fly lateral control, ranged visual Zoom and Dexterity-scaled Reload as user-validated.
+
 ## 4.26.5h — Zoom input latch, Fly lateral movement and roof diagnosis
 
 - Added one-action-per-press latching to the contextual Zoom input.

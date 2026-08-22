@@ -1,5 +1,89 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Independent finite door and continuous roof 4.26.5l
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The 4.26.5k limiter shortened the vertical ceiling motion but did not solve the underlying coupling: door sector 5 was still both the moving closure and a target for the solid roof 3D floor. Lowering its base ceiling to the 128-MU roof underside removed the playable upper volume over the doorway, while the ceiling-based panel could still render against the complete vertical sector.
+
+The closure is now independent of the ceiling. Door sector 5 has a fixed 512-MU sky ceiling and a closed floor at 128 MU. Both USE thresholds call native `Plat_DownWaitUpStay` (special 62): the floor panel lowers to the surrounding 0-MU floor, waits 150 tics and returns to its authored 128-MU closed position. The existing speed remains 16. `BIGDOOR2` is assigned as a lower texture, so only the finite floor-height difference renders as the door face.
+
+Room sector 4, door sector 5 and jamb sectors 14–15 all retain the 512-MU base ceiling and target ID 100. The solid 3D-floor slab from 128 to 136 MU therefore remains valid and walkable above the complete entrance regardless of door position. The map structure remains 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things; static topology and reference validation pass.
+
+Manual validation:
+
+1. Confirm the closed panel ends at the 128-MU lintel and has no continuation toward the sky.
+2. Open from outside, cross, wait for closure and reopen from inside.
+3. Complete at least four alternating cycles and confirm the panel returns to the same closed height.
+4. Walk continuously across the roof above the door while it is closed and while it is open.
+5. Stand clear during closure and confirm the passage does not remain visually or physically blocked after reopening.
+
+## Finite framed template door 4.26.5k
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+**Superseded by 4.26.5l.** The limiter corrected the target height but kept the moving ceiling coupled to the roof target, so the upper doorway remained non-traversable.
+
+The template door previously opened against sectors whose base ceilings were at the 512-MU outdoor sky. Because the standard vertical `Door_Raise` action stops four map units below the lowest adjacent ceiling, the moving door sector rose far above the visible 128-MU doorway and appeared infinitely tall.
+
+Two 16×24-MU structural jamb sectors now flank the existing 128-MU-wide door recess. Their ceilings are 132 MU, providing a deterministic 128-MU open position after the native four-unit clearance. The door remains a conventional vertical stone door rather than a polyobject: this preserves finite collision beneath the walkable 3D-floor roof and avoids an infinitely tall rotating polyobject blocking traversal above the doorway.
+
+The room, roof, door width, activation lines, speed and 150-tic delay are unchanged. Both thresholds retain front/back player USE and `repeatspecial = true`. Updated MAP01 structure: 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Static validation confirms valid references and balanced sector boundaries.
+
+Manual validation:
+
+1. Open the door from outside and confirm its visible panel disappears at the 128-MU lintel instead of rising toward the sky.
+2. Cross the threshold, wait for closure and reopen it from inside.
+3. Complete at least four full cycles while alternating sides.
+4. Walk over the roof above the doorway and confirm there is no new invisible obstruction.
+5. Confirm the two narrow jamb extensions render as part of the doorway rather than as gaps.
+
+## Unified shield framing and true walkable room roof 4.26.5j
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+All four equipped-shield Block layers now use the same medium framing previously validated for the Kite Shield: virtual position `(90, 125)` and rendered size `210×230`. This keeps every shield left of center without the Buckler becoming too central or the Tower becoming excessively large. The Magic Shield retains only its larger translucent halo pass as a type-specific visual distinction.
+
+The room is no longer a sector capped at 136 MU. Room sector 4 now has a 512-MU sky ceiling and shares target ID 100 with door sector 5. A closed control sector outside the playable field defines a solid opaque 3D-floor slab with underside at 128 MU and walkable top at 136 MU. Its initialization line uses `Sector_3DFloor` (special 160) for target 100. The existing finite 3D middle-texture walls end below the slab, so the player can cross their upper edge onto the roof rather than colliding with an infinitely tall boundary.
+
+The adjacent raised platform and final stair remain at 136 MU. They provide the current access/calibration point for crossing onto the new roof at the same elevation. The door recess receives the same slab, avoiding an uncovered strip above the doorway. `Door_Raise` remains front/back usable and uses the valid `repeatspecial` field.
+
+Updated MAP01 structure: 90 vertices, 87 linedefs, 166 sidedefs and 14 sectors. The added control geometry is a conventional closed four-line sector and is outside the playable field.
+
+Manual validation:
+
+1. Enter the room and confirm the ceiling underside remains at 128 MU.
+2. Use the six steps to reach 136 MU and cross/jump from the adjacent platform onto the room roof.
+3. Walk across the complete roof, including above the doorway, without falling through or meeting an invisible wall.
+4. Drop from the roof into the field and confirm collision/landing physics still operate.
+5. Complete at least four door cycles from alternating sides.
+6. Test all four shields and confirm they share the same medium left-offset framing.
+
+## Equipped shield first-person Block layer 4.26.5i
+
+**Implemented — pending visual calibration in GZDoom 4.14.2**
+
+Persistent Block now exposes the equipped shield as a modular first-person HUD layer. The layer is driven by a play-scope snapshot of `CombatBlockModeActive` and the live equipped shield type, and disappears immediately when Block ends, the shield breaks or the shield is unequipped.
+
+The four provisional compositions preserve the authored visual distinction:
+
+- Buckler: near the center and lower in the frame.
+- Kite Shield: shifted left and covering a broader part of the screen.
+- Tower Shield: far left and substantially larger.
+- Magic Shield: more centered, with a second translucent sprite pass acting as a temporary magical halo.
+
+The existing original 64×64 project shield sprites are reused and enlarged at render time. Exact HUD coordinates and sizes are provisional visual calibration values, not combat coverage or balance values. Mechanical coverage remains 120° / 140° / 160° / 120° according to shield type.
+
+User-validated in the preceding test pass: native Fly lateral movement, ranged visual Zoom/ADS, ADS physical-accuracy behavior and Dexterity-scaled ranged Reload.
+
+Manual validation:
+
+1. Enter/leave Block once with each shield and confirm the layer follows the equipped type.
+2. Confirm ranged ADS never displays a shield layer.
+3. Confirm large/two-handed physical weapons still cannot enter Block.
+4. Check that Buckler, Kite, Tower and Magic Shield remain readable at 1920×1080 without hiding critical HUD resources.
+5. Break or unequip the shield and confirm the layer disappears.
+
 ## Zoom input latch, Fly lateral movement and roof diagnosis 4.26.5h
 
 **Input/movement fixes implemented — roof rebuild pending**

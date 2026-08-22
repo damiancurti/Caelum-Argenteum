@@ -1,5 +1,21 @@
 # Asset register
 
+## V4.26.5l asset note
+
+V4.26.5l changes MAP01 door-sector motion, texture placement and public documentation only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5k asset note
+
+V4.26.5k changes MAP01 door-frame sector geometry and public documentation only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5j asset note
+
+V4.26.5j changes existing shield render placement, MAP01 sector/control geometry and documentation only. It reuses the registered shield sprites and Doom development-placeholder textures; no new external asset or release dependency is introduced.
+
+## V4.26.5i asset note
+
+V4.26.5i reuses the already registered `CBUCA0`, `CSHKA0`, `CSHTA0` and `CSHMA0` project shield sprites as provisional first-person Block layers. No new external artwork or license dependency is introduced.
+
 ## V4.26.5h asset note
 
 V4.26.5h changes Zoom input handling, native Fly movement compatibility and documentation only. It introduces no new external art assets.

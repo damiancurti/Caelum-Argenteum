@@ -104,6 +104,21 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
+    ui String GetBlockShieldSpritePath(int shieldType)
+    {
+        switch (shieldType)
+        {
+            case CaelumConstants.SHIELD_TYPE_KITE:
+                return "sprites/caelum/shields/CSHKA0.png";
+            case CaelumConstants.SHIELD_TYPE_TOWER:
+                return "sprites/caelum/shields/CSHTA0.png";
+            case CaelumConstants.SHIELD_TYPE_MAGIC:
+                return "sprites/caelum/shields/CSHMA0.png";
+            default:
+                return "sprites/caelum/shields/CBUCA0.png";
+        }
+    }
+
     ui bool IsActiveWeaponMagical(int weaponType)
     {
         return weaponType == CaelumConstants.WEAPON_TYPE_STAFF
@@ -151,6 +166,51 @@ class CaelumHUDOverlay : EventHandler
                 );
             }
         }
+    }
+
+    // Capa modular provisional para comunicar visualmente Block. Cada escudo
+    // conserva una silueta/ocupacion distinta sin duplicar armas o personajes.
+    ui void DrawFirstPersonBlockShield(CaelumPlayer localPlayer)
+    {
+        if (!localPlayer.HUDCombatBlockActive) { return; }
+
+        TextureID shieldSprite = TexMan.CheckForTexture(
+            GetBlockShieldSpritePath(localPlayer.HUDActiveShieldType),
+            TexMan.Type_MiscPatch
+        );
+        if (!shieldSprite.IsValid()) { return; }
+
+        // Los cuatro tipos comparten el encuadre medio del escudo cometa:
+        // desplazado a la izquierda, sin tamaño extremo ni centro de pantalla.
+        double drawX = 90.0;
+        double drawY = 125.0;
+        double drawWidth = 210.0;
+        double drawHeight = 230.0;
+
+        if (localPlayer.HUDActiveShieldType
+            == CaelumConstants.SHIELD_TYPE_MAGIC)
+        {
+            // Halo tenue adicional para distinguir el bloqueo mágico sin
+            // requerir todavía un asset de efecto separado.
+            Screen.DrawTexture(
+                shieldSprite, true, 80.0, 115.0,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_DESTWIDTHF, 230.0,
+                DTA_DESTHEIGHTF, 250.0,
+                DTA_ALPHA, 0.20,
+                DTA_KEEPRATIO, true
+            );
+        }
+
+        Screen.DrawTexture(
+            shieldSprite, true, drawX, drawY,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_DESTWIDTHF, drawWidth,
+            DTA_DESTHEIGHTF, drawHeight,
+            DTA_KEEPRATIO, true
+        );
     }
 
     // Convert the stored play-scope state into a localized UI label.
@@ -744,6 +804,7 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
 
         DrawFirstPersonWeapon(localPlayer);
+        DrawFirstPersonBlockShield(localPlayer);
 
         if (localPlayer.HUDHasActiveWeapon
             && localPlayer.HUDActiveWeaponIsRanged)

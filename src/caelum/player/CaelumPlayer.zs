@@ -33,6 +33,8 @@ class CaelumPlayer : DoomPlayer
     int HUDRangedMagazineCount;
     int HUDRangedMagazineCapacity;
     int HUDRangedReserveCount;
+    bool HUDCombatBlockActive;
+    int HUDActiveShieldType;
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
@@ -1941,6 +1943,12 @@ class CaelumPlayer : DoomPlayer
             ? GetRangedMagazineCapacity(activeType) : 0;
         HUDRangedReserveCount = HUDActiveWeaponIsRanged
             ? GetEquippedRangedReserveCount() : 0;
+        HUDCombatBlockActive = CombatBlockModeActive
+            && ShieldModel != null
+            && ShieldModel.Equipped
+            && ShieldModel.Durability > 0;
+        HUDActiveShieldType = HUDCombatBlockActive
+            ? ShieldModel.ShieldType : CaelumConstants.SHIELD_TYPE_BUCKLER;
 
         if (changed)
         {
