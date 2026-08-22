@@ -1,5 +1,27 @@
 # Changelog
 
+## 4.26.5b — Canonical MAP01 topology and roadmap reconciliation
+
+- Removed four provisional appended sidedefs from the architectural template experiment.
+- Removed explicit negative back-side placeholders from the one-sided door lines.
+- Reconnected the door to its canonical sidedef indices and consistently oriented the three one-sided door boundaries.
+- Restored the original room-front/door-back threshold sidedef pair.
+- Addressed the engine-reported front-sector/front-sidedef failures on lines 53, 54 and 82 and the disconnected right edge on line 52.
+- Added `docs/ROADMAP.md`, reconciling the old crafting/economy/NPC roadmap with the current partial implementations.
+- Defined V4.27 as the next major block: Fire/AltFire preservation, Reload-only ranged reload, Zoom-only ranged ADS, User1 Block, User2 Seal Channel, User3 Tarot and User4 class ability.
+- Reserved racial abilities for a dedicated multiplayer-safe Caelum action because native User1–User4 are fully allocated.
+- Changed no combat physics, balance values, crafting formulas, room dimensions or external assets.
+
+## 4.26.5a — Architectural template topology correction
+
+- Removed invalid room-sector back sides from the two template door jambs.
+- Restored the outer manual door line as a one-sided boundary of the door sector.
+- Reoriented the jamb and outer door linedefs into one continuous clockwise door-sector loop.
+- Corrected the inner threshold orientation so its front faces the room and its back faces the door sector.
+- Restored closed directed boundaries for the room and door sectors.
+- Removed the structural cause of the node-builder `line 54 has no front side` error.
+- Preserved the existing `Door_Raise` special, dimensions, textures, stair geometry, physics and gameplay systems unchanged.
+
 ## 4.26.5 — Architectural template room
 
 - Returned MAP01 structural experimentation to the last known loadable safe map.

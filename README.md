@@ -10,6 +10,8 @@ The project is in active implementation. Core player statistics, survival resour
 
 This README is the public technical entry point for collaborators. The author's private design documentation remains the authoritative source for detailed balance, lore, formulas, and unresolved design decisions.
 
+The reconciled implementation order and authoritative target input mapping are maintained in [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
 ## Implementation status
 
 ### Implemented and tested
@@ -172,6 +174,14 @@ Stealth is now materialized as the documented Type-2 Agility derivative:
 Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
 
 MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
+
+## Canonical architectural topology correction (V4.26.5b)
+
+MAP01 removes the provisional appended sidedefs introduced while diagnosing the template door. The door now uses the canonical original sidedef set: three consistently oriented one-sided door boundaries and one two-sided room/door threshold. Explicit negative back-side placeholders are removed. This addresses the node-builder failures reported for lines 53, 54 and 82, plus the disconnected right edge reported for line 52, without changing room dimensions, door timing, stairs, physics or gameplay systems.
+
+## Architectural template room topology correction (V4.26.5a)
+
+The isolated MAP01 template now uses a closed, conventional door-sector topology. The two door jamb lines no longer expose invalid back sides into the room sector, the three one-sided door boundaries follow a consistent clockwise loop, and the inner threshold correctly faces the room with the door sector on its back. The previous branching and reversed boundaries caused the node builder to report line 54 as lacking a valid front side. This corrective pass changes no dimensions, textures, specials, physics or gameplay behavior.
 
 ## Architectural template room (V4.26.5)
 

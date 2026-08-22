@@ -1,5 +1,13 @@
 # Asset register
 
+## V4.26.5b asset note
+
+V4.26.5b corrects MAP01 topology and adds roadmap/documentation updates only. No new external art assets are introduced.
+
+## V4.26.5a asset note
+
+V4.26.5a corrects MAP01 topology and updates documentation only. No new external art assets are introduced.
+
 ## V4.26.5 asset note
 
 V4.26.5 adds only MAP01 geometry and documentation. No new external art assets are introduced.
@@ -120,4 +128,3 @@ sprites without redrawing the station artwork.
 
 Source/status: author-supplied AI-generated artwork; project-local asset.
 Final product policy remains independent of Doom copyrighted art.
-

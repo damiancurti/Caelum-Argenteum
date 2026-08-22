@@ -1,5 +1,37 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Canonical MAP01 topology correction and roadmap reconciliation 4.26.5b
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The V4.26.5a diagnostic pass left four provisional appended sidedefs and explicit `sideback = -1` placeholders in the UDMF map. Although local index/boundary validation could parse them, the engine node builder still rejected lines 53, 54 and 82 and reported line 52's right edge as disconnected.
+
+MAP01 now uses the canonical 156-sidedef set. Door jambs and the outer manual door line are true one-sided boundaries with no synthetic back-side field. The outer door uses its original sector-5 sidedef; the inner threshold uses the original room-front/door-back pair. All three one-sided door edges are consistently oriented around the sector.
+
+Static validation confirms 86 vertices, 83 linedefs, 156 sidedefs and 13 sectors, with valid references and balanced sector boundaries. Manual engine validation remains authoritative:
+
+1. MAP01 loads without the reported front-sector/front-sidedef errors.
+2. No disconnected edge is reported for the template doorway.
+3. USE raises the door; it waits and closes normally.
+4. The last stair sector and 136-MU platform remain valid and walkable.
+
+The former V4.22–V4.26 roadmap has been reconciled with current implementation status in `docs/ROADMAP.md`. The next major implementation block is V4.27 Combat Input Architecture and Mode Separation.
+
+## Architectural template topology correction 4.26.5a
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated template door had been converted to branching two-sided geometry: both jamb lines incorrectly continued into the room sector and the outer manual door line exposed an unnecessary exterior back side. Although all referenced sidedefs existed, those branches broke the closed boundaries expected by the node builder; it consequently reported human-facing line 54 as lacking a valid front side.
+
+The jambs and outer door line are now consistently oriented one-sided front boundaries of door sector 5. The inner threshold is a two-sided transition facing room sector 4, with door sector 5 on its back. Static validation confirms that every linedef has an existing front sidedef, every referenced sector exists, and every sector boundary has balanced incoming/outgoing endpoints.
+
+Manual validation remains:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. Facing the unlocked template door and pressing USE raises it.
+3. The door waits and closes normally.
+4. The room, jambs, six stair sectors and 136-MU platform remain physically valid.
+
 ## Architectural template room 4.26.5
 
 **Implemented — pending manual validation**
