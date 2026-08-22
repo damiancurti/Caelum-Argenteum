@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.26.5h — Zoom input latch, Fly lateral movement and roof diagnosis
+
+- Added one-action-per-press latching to the contextual Zoom input.
+- Prevented a held Zoom key from repeatedly toggling ADS or Block.
+- Rearmed Zoom only after the native `BT_ZOOM` button is released.
+- Allowed the movement-acceleration layer to treat native `NOGRAVITY` Fly as continuously supported movement.
+- Preserved airborne momentum rules for ordinary jumps.
+- Documented why the adjacent stair block is walkable while the current room ceiling is not: the block is a raised floor sector, whereas a normal sector ceiling has no walkable upper surface.
+- Deferred the room roof conversion to a true solid 3D-floor slab so it can retain both an interior and a walkable roof.
+
 ## 4.26.5g — Upper-wall removal, true repeatable door and live Dexterity reload
 
 - Removed the upper `STARTAN3` textures that continued above the finite room-wall middle textures.

@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.26.5h asset note
+
+V4.26.5h changes Zoom input handling, native Fly movement compatibility and documentation only. It introduces no new external art assets.
+
 ## V4.26.5g asset note
 
 V4.26.5g changes MAP01 texture/special fields, ranged Reload timing code and documentation only. It introduces no new external art assets.

@@ -403,6 +403,8 @@ class CaelumPhysicalSelectorWeapon : Weapon
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer == null) { return; }
+        if (caelumPlayer.CombatZoomInputLatched) { return; }
+        caelumPlayer.CombatZoomInputLatched = true;
 
         // Zoom es contextual: ADS para distancia y Block para armas que
         // realmente pueden compartir la mano secundaria con un escudo.

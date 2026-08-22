@@ -193,6 +193,7 @@ class CaelumPlayer : DoomPlayer
     // migrated incrementally.
     bool CombatBlockModeActive;
     int CombatBlockInputGraceTics;
+    bool CombatZoomInputLatched;
     bool CombatChannelModeActive;
     bool CombatTarotInputReserved;
     bool CombatClassAbilityInputReserved;
@@ -7461,6 +7462,13 @@ class CaelumPlayer : DoomPlayer
             JavelinSecondaryLatched = false;
         }
 
+        // Zoom/ADS/Block se rearma solamente al soltar la tecla. El estado
+        // nativo Zoom puede reenviar pulsos mientras se mantiene presionada.
+        if (player != null && (player.cmd.buttons & BT_ZOOM) == 0)
+        {
+            CombatZoomInputLatched = false;
+        }
+
         UpdateMovablePropUseInteraction();
 
         // La creación inicial pausa necesidades, regeneraciones y costes.
@@ -9279,9 +9287,9 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        // En el aire se conserva el momentum alcanzado, pero no se genera
-        // carrera adicional sin contacto con el suelo.
-        if (!player.onground) { return; }
+        // En un salto normal se conserva el momentum sin acelerar. Fly usa
+        // NOGRAVITY y debe conservar control lateral como soporte continuo.
+        if (!player.onground && !bNOGRAVITY) { return; }
 
         MovementAccelerationFactor +=
             (1.0 - MovementAccelerationFactor)

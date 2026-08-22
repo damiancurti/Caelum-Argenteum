@@ -1,5 +1,24 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Zoom input latch, Fly lateral movement and roof diagnosis 4.26.5h
+
+**Input/movement fixes implemented — roof rebuild pending**
+
+Contextual Zoom now accepts exactly one transition per physical key press. GZDoom may revisit a weapon's native Zoom state while the button remains held; `CombatZoomInputLatched` ignores those repeated pulses and is cleared only when `BT_ZOOM` is released. This applies equally to ranged ADS and shield Block.
+
+Native Fly sets the player to a no-gravity movement state. The Caelum acceleration layer previously required ground contact before increasing its movement factor, leaving Fly at factor zero if it began while stationary. `NOGRAVITY` movement is now treated as continuously supported for lateral acceleration, while ordinary jumping retains its existing no-air-acceleration rule.
+
+The block beside the stairs is sector 6: its floor is physically raised to 136 MU and its ceiling remains at 512 MU. The player stands on that raised floor, so its top is a native walkable plane. The room is sector 4: its floor is 0 and its ceiling is 136 MU. A Doom-sector ceiling renders the underside, but its opposite side is not a second walkable plane. Consequently the room can have an interior ceiling without providing a roof surface above it.
+
+A room with both usable interior space and a walkable roof requires a solid 3D-floor slab (planned from 128 to 136 MU) controlled by separate geometry. Simply raising the room floor would reproduce the stair block but destroy the interior; simply retaining the low ceiling cannot create a walkable upper surface. The next architectural pass must replace the current ceiling with that control-sector 3D floor and revalidate the door's target height.
+
+Manual validation:
+
+1. Hold Zoom for several seconds: ADS/Block changes only once.
+2. Release and press Zoom again: the state toggles once in the opposite direction.
+3. Enable native Fly while stationary and verify forward, backward and lateral movement.
+4. Verify ordinary airborne movement still preserves momentum without ground-style acceleration.
+
 ## Upper-wall removal, true repeatable door and live Dexterity reload 4.26.5g
 
 **Implemented — pending manual validation in GZDoom 4.14.2**

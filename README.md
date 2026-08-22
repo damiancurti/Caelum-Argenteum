@@ -79,6 +79,8 @@ Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Bas
 
 The effective Reload duration is recalculated from the player's current effective Dexterity when Reload begins: `base seconds × 100 / Type-4 attack-speed percent`. This keeps equipment/debug attribute changes from reusing an older cached duration multiplier.
 
+Contextual Zoom is latched to one transition per physical key press; holding the key cannot repeatedly alternate ADS or Block. Native Fly is recognized by the acceleration layer as supported no-gravity movement, preserving lateral controls without adding ground-style acceleration to ordinary jumps.
+
 ## Collision and impact physics (V4.25.1)
 
 Characters now use a momentum/impulse collision foundation. Actor-to-actor contact resolves an action/reaction impulse along the collision normal with coefficient of restitution `e = 0`, using effective combat mass. The resulting forced velocity change (`Delta-v`) is converted into an equivalent time to traverse half the receiver's height. More than 35 equivalent tics causes no impact damage; each step below that threshold adds 3% of maximum health, capped at 105%.
