@@ -4891,6 +4891,16 @@ class CaelumPlayer : DoomPlayer
         );
         selected.SetOrigin(spawnPos, false);
         selected.TossItem();
+
+        // Jewelry was visibly launched upward by Inventory.TossItem().
+        // Preserve the horizontal toss, but make seals/amulets begin falling
+        // immediately from the small +8 MU spawn offset.
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET
+            || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            selected.Vel.Z = -0.25;
+        }
+
         ApplyCharacterProfile();
         PersistCharacterState();
         RefreshEquipmentSelectionPreview();
@@ -5548,16 +5558,40 @@ class CaelumPlayer : DoomPlayer
     double GetImpactAgilityAbsorptionSpeed(int impactKind)
     {
         if (IsPhysicallyImmobilized()) { return 0.0; }
+
         double baseAbsorption = Max(0.0, JumpZ);
-        if (IsBucklerAcrobaticDefenseActive())
-        {
-            return baseAbsorption
-                * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER;
-        }
+
+        // En caída, JumpZ y la velocidad vertical comparten la misma escala,
+        // por lo que se conserva la amortiguación directa ya validada.
         if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
         {
+            if (IsBucklerAcrobaticDefenseActive())
+            {
+                return baseAbsorption
+                    * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER;
+            }
             return baseAbsorption;
         }
+
+        // En horizontal no restamos JumpZ directamente: su escala numérica es
+        // mucho mayor que el Delta-v normal de una embestida y producía
+        // Delta-v=0 / tics infinitos. La rodela convierte sólo el BONUS sobre
+        // el salto humano base en una fracción de amortiguación.
+        if (IsBucklerAcrobaticDefenseActive())
+        {
+            double baseJump = CaelumConstants.GZDOOM_BASE_JUMP_Z;
+            double agilityBonusRatio = Max(
+                0.0,
+                baseAbsorption / Max(0.0001, baseJump) - 1.0
+            );
+            return Clamp(
+                agilityBonusRatio
+                    * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER,
+                0.0,
+                CaelumConstants.SHIELD_BUCKLER_HORIZONTAL_ABSORPTION_MAX_FRACTION
+            );
+        }
+
         return 0.0;
     }
 
@@ -5740,8 +5774,10 @@ class CaelumPlayer : DoomPlayer
         LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
         if (impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
         {
-            LastImpactBiologicalAbsorptionSpeed =
+            double horizontalAbsorptionFraction =
                 GetImpactAgilityAbsorptionSpeed(impactKind);
+            LastImpactBiologicalAbsorptionSpeed =
+                LastImpactRawDeltaSpeed * horizontalAbsorptionFraction;
             LastImpactDeltaSpeed = Max(
                 0.0,
                 LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed

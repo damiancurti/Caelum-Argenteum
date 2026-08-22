@@ -2272,12 +2272,13 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String impactLine = String.Format(
-                "%s: %s %d   %s %.3f   %s %.2f   %s %.1f%%",
+                "%s: %s %d   RawDV %.3f TraumaDV %.3f Bio %.3f   %s %.2f   %s %.1f%%",
                 StringTable.Localize("CA_PHYSICS_IMPACT", false),
                 StringTable.Localize("CA_PHYSICS_KIND", false),
                 localPlayer.LastImpactKind,
-                StringTable.Localize("CA_PHYSICS_DELTA_V", false),
+                localPlayer.LastImpactRawDeltaSpeed,
                 localPlayer.LastImpactDeltaSpeed,
+                localPlayer.LastImpactBiologicalAbsorptionSpeed,
                 StringTable.Localize("CA_PHYSICS_EQUIV_TICS", false),
                 localPlayer.LastImpactEquivalentTics,
                 StringTable.Localize("CA_PHYSICS_DAMAGE", false),

@@ -877,3 +877,36 @@ If physical/Lucidity stun is active:
 `AgilityAbsorption = 0`
 
 Thus the rodela rewards an agile conscious defender but does not protect an incapacitated body from uncontrolled impact.
+
+
+## 23. V4.26.3b — Horizontal acrobatic damping calibration
+
+The first horizontal buckler implementation reused `2 × JumpZ` as a direct subtraction from collision Delta-v. Although both values are engine velocities, their practical gameplay scales differ: a normal high-Agility JumpZ can exceed the entire Delta-v of a full-speed horizontal collision. The result was artificial complete cancellation and the no-impact sentinel:
+
+`TraumaticDeltaV = 0 -> EquivalentTics ≈ infinity`
+
+Horizontal buckler damping now uses only the **relative Agility jump bonus above the base jump**:
+
+`B_agility = max(0, JumpZ / BaseJumpZ - 1)`
+
+The requested buckler doubling becomes:
+
+`F_acrobatic = clamp(2 × B_agility, 0, 0.50)`
+
+and horizontal trauma becomes:
+
+`DeltaV_traumatic = DeltaV_raw × (1 - F_acrobatic)`
+
+The 50% cap is deliberately a response-layer limit: it never modifies the impulse, momentum, physical post-collision velocity or displacement produced by Impact Physics Core.
+
+Vertical landing remains different because JumpZ is already the validated reference for controlled landing velocity:
+
+`DeltaV_traumatic,floor = max(0, DeltaV_raw - JumpZ)` normally
+
+and with active buckler:
+
+`DeltaV_traumatic,floor = max(0, DeltaV_raw - 2 JumpZ)`
+
+Stun removes both active forms of Agility damping.
+
+The rodela's doubled subtractive Toughness is unchanged and is applied later. Therefore a character can still receive zero **final** damage because `2 × Toughness` exceeds the remaining energy severity, but equivalent tics should remain finite whenever a real horizontal Delta-v occurred.

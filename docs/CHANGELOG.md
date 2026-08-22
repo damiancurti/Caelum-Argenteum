@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.26.3b — Buckler calibration and MAP01 structural rebuild
+
+- Fixed buckler horizontal damping producing `Delta-v = 0` and effectively infinite equivalent tics.
+- Horizontal buckler damping now uses the Agility-derived jump **bonus**, doubled by the buckler, as a fraction of horizontal trauma rather than subtracting raw JumpZ units.
+- Capped buckler horizontal acrobatic damping at 50% of physical Delta-v; momentum/displacement remain unchanged.
+- Floor damping remains direct JumpZ-based and still doubles with active buckler block.
+- Debug overlay now separates physical `RawDV`, post-acrobatics `TraumaDV` and absorbed amount.
+- Fixed seals and amulets being tossed upward when dropped; horizontal toss remains, vertical velocity begins downward.
+- Rebuilt MAP01 rooms from the clean pre-roof geometry.
+- Replaced infinitely wrapped blocking room walls with finite `midtex3d` walls.
+- Added genuine solid 3D-floor roof slabs (128–136 MU), making the roof top physically walkable.
+- Added a six-step exterior roof-access staircase.
+- Corrected both new room entrances to face the central corridor.
+- Preserved the 512-MU outdoor ceiling/exterior wall height.
+- Redistributed pickups into six rooms by type and removed 16 redundant shield pickups.
+- Kept the west NPC room on the same finite-wall/3D-roof system while preserving its existing door assembly.
+
 ## 4.26.3 — Buckler acrobatics and fall-test map
 
 - Buckler block doubles collision Toughness.

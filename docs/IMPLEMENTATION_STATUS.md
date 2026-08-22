@@ -1,5 +1,21 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Buckler/map corrective pass 4.26.3b
+
+**Implemented — pending manual validation**
+
+The rodela no longer mixes direct JumpZ units with horizontal collision Delta-v. For horizontal impacts:
+
+`AgilityBonusRatio = max(0, JumpZ / BaseJumpZ - 1)`
+
+`BucklerHorizontalFraction = clamp(2 × AgilityBonusRatio, 0, 0.50)`
+
+`TraumaticDeltaV = RawDeltaV × (1 - BucklerHorizontalFraction)`
+
+This means the buckler can at most halve horizontal traumatic Delta-v; it can no longer manufacture `Delta-v = 0` / infinite equivalent tics. Its `2 × Toughness` rule remains unchanged, so a sufficiently tough buckler user may still end with zero final HP damage after the kinematic calculation. Stun continues to disable Agility damping.
+
+MAP01 validation focus: finite room-wall height, real walkable 3D roofs, east-room door orientation, roof staircase, NPC-room roof bounds, item placement and absence of invisible room barriers.
+
 ## Buckler acrobatics and fall-test map 4.26.3
 
 **Implemented — pending manual validation**

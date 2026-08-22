@@ -151,6 +151,16 @@ While actively blocking with the buckler, collision Toughness is doubled and Agi
 
 MAP01 adds two test rooms matching the four central rooms. The four original rooms, two new rooms and west NPC room are roofed at 128 MU. Outdoor ceiling height is raised from 256 to 512 MU, doubling vertical fall-test space and exterior wall height.
 
+## V4.26.3b — Buckler calibration, grounded jewelry drops and MAP01 room rebuild
+
+Buckler horizontal acrobatic damping no longer subtracts `2 × JumpZ` directly from horizontal Delta-v. That mixed two numerical scales and could force traumatic Delta-v to zero, producing the debug sentinel of effectively infinite equivalent tics. Horizontal buckler damping now derives from the **Agility jump bonus above the base GZDoom jump**, doubles that bonus as requested, and converts it to a damping fraction capped at 50% of the physical horizontal Delta-v. Floor damping remains the already-validated direct JumpZ-based rule.
+
+The debug overlay now shows `RawDV`, `TraumaDV` and absorbed `Bio` separately so physical displacement and post-acrobatic trauma can be distinguished.
+
+Jewelry drops preserve TossItem horizontal movement but seals and amulets have their upward Z toss removed and begin falling immediately.
+
+MAP01 rooms were rebuilt from the clean pre-roof layout. Their walls use finite 3D middle textures instead of infinitely wrapped blocking textures, while a shared solid `Sector_Set3DFloor` slab provides a true walkable roof at 136 MU with an underside at 128 MU. A six-step exterior stair reaches the east test-room roof. All seven rooms use the same roof system, the two new rooms face the central corridor, the exterior remains 512 MU tall, and pickups are redistributed by family inside the six test rooms. Excess magic-shield duplicates are removed.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.
