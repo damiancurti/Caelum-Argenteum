@@ -1,8 +1,8 @@
 # Asset register
 
-## V4.26.5p asset note
+## V4.26.5v asset note
 
-V4.26.5p clears the two rear roof-landing boundaries and documents the NPC-archetype audit. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+V4.26.5v closes terrace/wall topology and rebuilds the entrance frame with opaque structural sectors. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
 
 ## V4.26.5n asset note
 

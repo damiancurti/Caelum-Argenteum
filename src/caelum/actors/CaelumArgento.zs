@@ -19,8 +19,8 @@ class CaelumArgento : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Humano Mago de Batalla: tecnico 7 y mental 18.
-        InitializeCombatProfile(9, 7, 7, 18, 7, 18, 9, 18);
+        // Humano Mago de Batalla: fisico 9, tecnico 7, social 11 y mental 18.
+        InitializeCombatProfile(9, 9, 9, 7, 7, 7, 11, 11, 11, 18, 18, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_LIGHT, 1);
     }
 

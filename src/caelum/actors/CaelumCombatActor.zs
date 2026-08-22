@@ -17,7 +17,14 @@ class CaelumCombatActor : Actor
     int CombatEffectiveDexterity;
     int CombatEffectiveInsight;
     int CombatStrength;
+    int CombatConstitution;
     int CombatIntelligence;
+    int CombatEffectiveIntelligence;
+    int CombatCharisma;
+    int CombatEmpathy;
+    int CombatEloquence;
+    double CurrentCombatAnima;
+    double MaximumCombatAnima;
     bool CombatProfileInitialized;
     double CombatBaseSpeed;
     double CombatPhysicalPowerMultiplier;
@@ -163,6 +170,9 @@ class CaelumCombatActor : Actor
             CombatArmor = CaelumArmorModel(new("CaelumArmorModel"));
         }
         CombatArmor.InitializeUniformLoadout(requestedArmorType, requestedTier);
+        // Igual que en el jugador, los atributos derivados se recalculan
+        // después de equipar para incorporar las bonificaciones de armadura.
+        if (CombatProfileInitialized) { RecalculateCombatStatistics(); }
     }
 
     int GetArmorSlotForLocation(int location)
@@ -227,30 +237,50 @@ class CaelumCombatActor : Actor
 
     // Cada actor carga una vez sus atributos defensivos; puede recalcularlos.
     void InitializeCombatProfile(
-        int toughness,
-        int resilience,
-        int agility,
-        int patience,
-        int dexterity,
-        int insight,
         int strength,
-        int intelligence
+        int toughness,
+        int constitution,
+        int agility,
+        int dexterity,
+        int resilience,
+        int charisma,
+        int empathy,
+        int eloquence,
+        int intelligence,
+        int patience,
+        int insight
     )
     {
-        CombatToughness = Max(0, toughness);
-        CombatResilience = Max(0, resilience);
-        CombatAgility = Max(0, agility);
-        CombatPatience = Max(0, patience);
-        CombatDexterity = Max(0, dexterity);
-        CombatInsight = Max(0, insight);
         CombatStrength = Max(0, strength);
+        CombatToughness = Max(0, toughness);
+        CombatConstitution = Max(0, constitution);
+        CombatAgility = Max(0, agility);
+        CombatDexterity = Max(0, dexterity);
+        CombatResilience = Max(0, resilience);
+        CombatCharisma = Max(0, charisma);
+        CombatEmpathy = Max(0, empathy);
+        CombatEloquence = Max(0, eloquence);
         CombatIntelligence = Max(0, intelligence);
+        CombatPatience = Max(0, patience);
+        CombatInsight = Max(0, insight);
         CombatProfileInitialized = true;
         RecalculateCombatStatistics();
+        // Los NPC comienzan con el recurso completo, igual que un personaje
+        // jugador recién inicializado; recalcular nunca concede Ánima gratis.
+        CurrentCombatAnima = MaximumCombatAnima;
     }
 
     void RecalculateCombatStatistics()
     {
+        int effectivePatience = CombatPatience
+            + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
+        MaximumCombatAnima = CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
+            * CalculateActorType1Percent(effectivePatience);
+        CurrentCombatAnima = Clamp(
+            CurrentCombatAnima,
+            0.0,
+            MaximumCombatAnima
+        );
         MaximumCombatAdrenaline = 1000.0
             * (100.0 + 2.0 * CombatResilience
                 * (CombatResilience + 1) / 101.0) / 100.0;
@@ -279,6 +309,8 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
         CombatEffectiveInsight = CombatInsight
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
+        CombatEffectiveIntelligence = CombatIntelligence
+            + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INTELLIGENCE);
         CombatPhysicalAccuracyPercent = CalculateActorType1Percent(
             CombatEffectiveDexterity
         );
@@ -300,7 +332,7 @@ class CaelumCombatActor : Actor
         CombatPhysicalPushMultiplier = Max(0.0, Mass / 100.0)
             * CalculateActorType1Percent(CombatStrength) / 100.0;
         CombatMagicalPushMultiplier = CalculateActorType1Percent(
-            CombatIntelligence
+            CombatEffectiveIntelligence
         ) / 100.0;
     }
 

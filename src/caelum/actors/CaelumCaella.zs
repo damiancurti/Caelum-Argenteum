@@ -19,8 +19,8 @@ class CaelumCaella : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Duende cleriga: tecnico 7 y mental 18.
-        InitializeCombatProfile(9, 7, 7, 18, 7, 18, 9, 18);
+        // Duende cleriga: fisico 9, tecnico 7, social 11 y mental 18.
+        InitializeCombatProfile(9, 9, 9, 7, 7, 7, 11, 11, 11, 18, 18, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MAGIC, 1);
     }
 

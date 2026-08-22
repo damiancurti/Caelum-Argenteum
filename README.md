@@ -91,7 +91,23 @@ The two jamb partitions are finite solid 128-MU pillars with lower `STARTAN3` fa
 
 All eight MAP01 rooms instantiate this template: four central test rooms, two eastern test rooms, the NPC room and the rear room. Their doors face their corresponding corridors. The NPC instance applies silver lock 200 to both usable thresholds while retaining the same platform mechanism. The rear room faces west toward the main corridor. Its former east staircase and raised block are removed; two six-step side staircases now occupy the corridor beside the new front and reach the 136-MU roof level.
 
-The rear staircases share their eastern boundary directly with the room wall and keep only a 1-MU clearance from the older eastern-room wall, eliminating the visible side gaps without introducing overlapping linedefs. Their two top landing boundaries are open partitions, so neither side leaves a wall fragment across roof access. The NPC-room exit switch is an authored segment of its western wall rather than a floating two-sided middle texture.
+The rear staircases share their eastern boundary directly with the room front where required by the doorway frame. All six shared boundaries are open partitions, so no wall fragment projects along the climb or across roof access. The other repeated stair modules retain a 1-MU safety clearance from conventional room walls to avoid overlapping linedefs. The NPC-room exit switch is an authored segment of its western wall rather than a floating two-sided middle texture.
+
+V4.26.5q expands roof access into three uniformly separated complete staircase pairs across the intermediate room corridors. The eastern room pair and rear room move 24 MU east to accommodate the repeated module, and pickups inside the eastern pair preserve their local arrangement through the same translation. Every rear-room stair boundary is now free of projecting middle textures along the full six-step climb.
+
+V4.26.5r completes the alignment pass. Every staircase pair is 119 MU wide, begins 665 MU after the preceding module, starts at the common y=±80 corridor boundaries and reaches y=±272. The western and eastern room pairs move with their pickups to maintain 1-MU conventional clearances. The rear room is centered between its flights, and finite lower wall faces close each stair boundary only up to its local tread height.
+
+V4.26.5s renders the rear staircase walls above each tread through individually scaled finite 3D middle textures ending at the 128-MU roof underside. The final 136-MU boundaries remain open. A second standalone trap-door gate at the beginning of the test corridor reuses the complete finite panel/frame/roof mechanism without a lock, independently of the silver-key NPC room.
+
+V4.26.5t replaces that provisional stair-owned rendering with two real structural wall strips belonging to the rear room. Their 136-MU floor produces visible finite wall faces on both sides and a roof-aligned walkable top; the stairs contain no wall middle textures. The entry gate moves to 32 MU ahead of the Player Start, and the training dummies move as one row to y=-900.
+
+For repeated development sessions, character creation includes a localized `Debug` / `Depuración` option on the race page. It skips the allocation pages and produces exactly 30 in all twelve primary attributes, a 1.8-m body and 100-kg base body mass. Equipment mass remains additional, as in ordinary profiles.
+
+V4.26.5u removes the isolated gate beside the spawn and integrates its panel/frame directly into the western entrance between the nearest room pair. Four roofed connectors fill only the rear spaces behind the first two north/south stair pairs, joining the six paired-room roofs into one continuous terrace. The complete central corridor and every staircase approach remain open to the sky.
+
+V4.26.5v closes two malformed structural-wall contours that allowed a roof surface to escape toward the spawn. Every non-exterior MAP01 sector now passes a degree-2 closed-boundary check. The integrated entrance uses the exact room-frame decomposition—16-MU jamb plus 16-MU wall extension on each side—so no section remains transparent.
+
+Caelum NPCs use the same twelve primary attributes as player characters while intentionally omitting player-only survival resources. They also carry current and maximum Anima using the player formula based on effective Patience after equipment. Intelligence bonuses improve magical performance but do not directly increase Anima capacity: Caella's magic helmet supplies +5 Intelligence, while her separate +5 Patience gloves raise maximum Anima from the 2710 base at Patience 18 to 3760 at effective Patience 23.
 
 ## Collision and impact physics (V4.25.1)
 

@@ -9431,7 +9431,15 @@ class CaelumPlayer : DoomPlayer
                 ArmorModel.ApplyAttributeBonuses(Attributes);
             }
             ApplyJewelryAttributeBonuses(Attributes);
-            if (DebugAttributesAt100)
+            if (CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
+            {
+                // El perfil rápido debe quedar exactamente en 30 incluso si
+                // el equipo inicial concede bonificaciones de atributo.
+                Attributes.SetAllForDebug(
+                    CaelumConstants.DEBUG_CREATION_ATTRIBUTE_LEVEL
+                );
+            }
+            else if (DebugAttributesAt100)
             {
                 Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_100);
             }
@@ -11302,6 +11310,16 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        // Depuración salta directamente al resumen: 30 en los doce atributos,
+        // 1,8 m y 100 kg base, sin asignación manual.
+        if (CreationWizardPage == CaelumConstants.CREATION_PAGE_RACE
+            && CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
+        {
+            CreationWizardPage = CaelumConstants.CREATION_PAGE_SUMMARY;
+            ApplyCharacterProfile();
+            return;
+        }
+
         // Every one of the four free layer points must be assigned.
         if (CreationWizardPage == CaelumConstants.CREATION_PAGE_LAYERS
             && CharacterAllocation.GetRemainingLayerPoints() > 0)
@@ -11361,7 +11379,12 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        if (CreationWizardPage > CaelumConstants.CREATION_PAGE_RACE)
+        if (CreationWizardPage == CaelumConstants.CREATION_PAGE_SUMMARY
+            && CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
+        {
+            CreationWizardPage = CaelumConstants.CREATION_PAGE_RACE;
+        }
+        else if (CreationWizardPage > CaelumConstants.CREATION_PAGE_RACE)
         {
             CreationWizardPage--;
         }

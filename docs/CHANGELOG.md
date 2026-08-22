@@ -1,5 +1,70 @@
 # Changelog
 
+## 4.26.5v — Closed terrace topology and opaque entrance frame
+
+- Fixed two open rear structural-wall contours whose dangling jamb connections allowed 3D-floor geometry to leak toward the Player Start.
+- Restored the rear jamb connections to the correct adjacent stair sectors, closing both the stair polygons and the independent room-wall strips.
+- Rebuilt the integrated corridor entrance frame as exact 16-MU jamb sectors plus separate 16-MU solid wall extensions instead of stretched 32-MU jambs.
+- Added finite lower faces to every side of the jamb and extension polygons, eliminating the transparent frame section.
+- Preserved the four rear terrace connectors, uncovered central corridor, door mechanisms, dummy row and all 186 things.
+- Rebuilt MAP01 as 208 vertices, 284 linedefs, 560 sidedefs, 81 sectors and 186 things.
+- Validated every one of the 80 non-exterior sectors as a closed degree-2 boundary, with no collinear overlap or non-vertex crossing.
+- Added no external assets or gameplay changes.
+
+## 4.26.5u — Integrated corridor entrance and continuous rear terrace
+
+- Removed the isolated trap-door structure beside the Player Start.
+- Rebuilt the unkeyed panel and frame directly into the true western corridor entrance at x=-593…-569, joining the two nearest rooms across the complete 192-MU passage width.
+- Preserved the validated 128-MU retracting panel, 24-MU depth, bilateral repeatable USE and finite frame/roof behavior.
+- Added four roofed connector sectors behind the two intermediate north/south staircase pairs, extending from y=±272 to the room backs at y=±640.
+- Shared connector side boundaries with the existing rooms and shared their fronts with the 136-MU final steps, avoiding duplicate linedefs and closing the former small gaps.
+- Kept the central corridor, all stair flights and their approach zones without a roof.
+- Rebuilt MAP01 as 204 vertices, 278 linedefs, 548 sidedefs, 79 sectors and 186 things with 39 roof targets and no overlap or non-vertex crossing.
+- Added no external assets or gameplay changes.
+
+## 4.26.5t — Structural rear walls, compact entry gate and debug creation
+
+- Replaced all stair-owned rear middle textures with two real 8-MU-thick room-wall sectors at floor height 136.
+- Made the restored room walls visible from both interior and exterior, flush with the roof and traversable from the 136-MU final steps.
+- Moved the standalone entry gate to 32 MU ahead of the Player Start while retaining only its 24-MU panel/frame depth.
+- Moved all four training dummies off the central corridor into one southern test row at y=-900 without changing their x spacing.
+- Added `Depuración` / `Debug` as a fifth race-page creation option that jumps directly to summary.
+- Made the debug creation profile set all twelve attributes exactly to 30, body height to 1.8 m and base body mass to 100 kg.
+- Rebuilt MAP01 as 198 vertices, 258 linedefs, 508 sidedefs, 75 sectors and 186 things with no scaled stair middle textures, overlap or non-vertex crossing.
+- Added no external assets.
+
+## 4.26.5s — Visible stepped rear walls and corridor trap door
+
+- Replaced the invisible lower faces beside the rear stairs with individually scaled finite 3D middle walls from each tread to the 128-MU roof underside.
+- Left both 136-MU final-step boundaries open so roof access remains unobstructed.
+- Added a standalone reusable trap-door gate 104 MU in front of the Player Start at the beginning of the test corridor.
+- Reused the validated 128-MU retracting floor panel, bilateral repeatable USE, 16-MU solid jambs and 128–136-MU finite roof slab.
+- Kept the silver-key NPC-room door, training dummies and all 186 thing positions unchanged.
+- Rebuilt MAP01 as 194 vertices, 252 linedefs, 496 sidedefs, 73 sectors and 186 things with 18 platform-door activators and no overlap or non-vertex crossing.
+- Added no external assets or gameplay balance changes.
+
+## 4.26.5r — Aligned staircase modules and restored rear walls
+
+- Standardized all three north/south staircase pairs to exactly 119 MU wide, with starts separated by exactly 665 MU.
+- Aligned every low step to the common corridor boundaries at y=±80 and every high step to y=±272.
+- Centered the rear room on y=0 so its two front corners coincide with the final north and south steps.
+- Restored the six rear-room staircase walls as finite lower wall faces that stop at each step height instead of projecting above it.
+- Moved the western room pair 71 MU east and its contained pickups by the same translation, leaving a 1-MU conventional clearance beside the first staircase.
+- Moved the eastern pair and its pickups 1 additional MU east; shifted the rear room 1 MU east to preserve the repeated 119/665-MU layout.
+- Preserved 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with deterministic regeneration and no invalid overlap or crossing.
+- Added no external assets or gameplay balance changes.
+
+## 4.26.5q — Complete NPC attributes and uniform corridor stairs
+
+- Expanded `CaelumCombatActor` from eight combat attributes to the same twelve primary attributes used by player characters.
+- Added current and maximum Anima to Caelum NPCs, using the player formula `10 × Type1(effective Patience)` after equipment and full initialization without changing the formula to Intelligence.
+- Assigned complete authored layer values to Rulo, Ronnie, Argento and Caella; Caella's helmet adds +5 effective Intelligence while her separate +5 Patience gloves correctly raise maximum Anima to 3760.
+- Added three complete north/south staircase pairs at uniformly separated x centers across the intermediate room corridors.
+- Moved both eastern rooms and the rear room 24 MU east; moved every pickup inside the eastern pair by the same 24 MU.
+- Removed the protruding wall middle textures from all six rear-room stair boundaries, not only the roof landing.
+- Rebuilt MAP01 as 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with no collinear overlap or non-vertex crossing.
+- Added no external assets.
+
 ## 4.26.5p — Clear rear roof access and NPC-archetype audit
 
 - Removed the finite wall face from the two 136-MU rear-stair landing boundaries, clearing both routes onto the rear-room roof while retaining the closed lower staircase sides.

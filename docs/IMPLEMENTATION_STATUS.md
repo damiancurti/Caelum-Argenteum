@@ -1,5 +1,117 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Closed terrace topology and opaque entrance frame 4.26.5v
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The screenshot from 4.26.5u exposed a topology leak rather than an intentionally authored corridor: the two 136-MU rear structural-wall strips each inherited one extra jamb edge, leaving an open contour. Their floor surface could consequently extend as a long black strip toward the spawn and make the left/right terrace fill appear asymmetric. Those connections now return to the correct low stair sectors; wall strips, stairs, connectors, rooms and gate components all form independent closed polygons.
+
+The western entrance retains the same location and 128-MU panel. Its frame is now structurally identical to the room pattern: 16-MU north/south jamb sectors at floor 128, followed by separate 16-MU wall-extension sectors at floor 136 to reach y=±96. Every exposed edge carries a finite lower face, removing the transparent section without enlarging the door or covering the corridor.
+
+Updated structure: 208 vertices, 284 linedefs, 560 sidedefs, 81 sectors and 186 things. Static validation confirms all 80 non-exterior sectors have closed degree-2 boundaries, plus no collinear overlap or non-vertex crossing.
+
+Manual validation:
+
+1. Return to the screenshot viewpoint and confirm no black roof strip extends toward the Player Start.
+2. Compare the northern/southern and western/eastern terrace connectors for symmetric fill and roof continuity.
+3. Inspect all four faces of both entrance jambs and wall extensions for transparency.
+4. Cycle the entrance panel repeatedly from both sides and confirm the corrected frame remains finite.
+
+## Integrated corridor entrance and continuous rear terrace 4.26.5u
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The standalone gate at x≈-1556 is removed completely. Its mechanism now occupies the actual western entrance between the nearest north/south rooms: west threshold x=-593, east threshold x=-569, panel width 128 MU and solid frame spanning the remaining corridor width to y=±96. No separate gate sector remains near the Player Start.
+
+Four new connector sectors fill only the areas behind the first two north/south staircase pairs. Northern connectors cover y=272…640; southern connectors cover y=-640…-272. Their 128–136 MU solid roof target joins the neighboring room roofs into one terrace. Existing room-side linedefs are split and shared with the connector sectors, while the 136-MU final steps provide their front boundary. The central y=-272…272 corridor/stair zone remains open to the sky.
+
+Updated structure: 204 vertices, 278 linedefs, 548 sidedefs, 79 sectors and 186 things. Static validation confirms deterministic regeneration, 18 platform-door activators, 39 roof-target sectors, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Confirm there is no gate, jamb, roof strip or collision remnant near the Player Start.
+2. Approach the western room pair and verify a single framed trap door closes the real corridor entrance.
+3. Complete at least four opening cycles from both sides and inspect the frame obliquely.
+4. Climb the first two northern and southern stair pairs and cross their final steps onto the new connector roofs.
+5. Walk the joined terrace across all six paired rooms and confirm no 1-MU holes remain behind the stairs.
+6. Look upward throughout the central corridor and confirm it remains completely unroofed.
+
+## Structural rear walls, compact entry gate and debug creation 4.26.5t
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The rear staircases no longer own wall middle textures. Two 8-MU structural strips now belong to the rear room itself. Their conventional floor is 136 MU, producing visible lower wall faces from the room floor and from every adjacent tread while aligning their walkable top with the roof. This restores the interior wall and prevents stair textures from projecting above the building.
+
+The entry trap gate moves from x=-1496…-1472 to x=-1568…-1544. Its west face is 32 MU ahead of the Player Start and its total depth remains 24 MU; panel, jambs, roof target and bilateral activation are unchanged. The four training dummies retain x=-1216/-704/320/1344 but move together to y=-900, clearing the central corridor.
+
+Character creation now exposes `Depuración` / `Debug` as a fifth option on the race page. Confirming it jumps directly to the summary. The resulting profile overrides all twelve post-equipment primary attributes to exactly 30 and forces mass tier 6 / size tier 4: 100 kg base body mass and 1.8 m body height. A second confirmation completes creation and initializes resources normally. Carried equipment weight remains additional to the documented 100-kg body mass.
+
+Updated MAP01 structure: 198 vertices, 258 linedefs, 508 sidedefs, 75 sectors and 186 things. Static validation confirms deterministic regeneration, no scaled stair middle textures, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both faces of the rear-room walls from inside, from every tread and from the roof.
+2. Confirm the stairs themselves have no wall texture and their final steps transition onto the wall/roof top.
+3. Spawn facing east and verify the compact gate is immediately ahead without overlapping the player; complete four bilateral cycles.
+4. Confirm all four dummies form a usable row south of the buildings and no longer obstruct the corridor.
+5. Select `Depuración`, confirm twice, and verify twelve attributes at 30, 1.8 m height and 100 kg base mass.
+
+## Visible stepped rear walls and corridor trap door 4.26.5s
+
+**Implemented — pending manual visual/activation validation in GZDoom 4.14.2**
+
+The ten rear-room wall sections beside treads below roof level now use individually scaled `STARTAN3` 3D middle textures. Each section begins at its adjacent stair floor and ends at the 128-MU roof underside; it therefore closes the room above the tread without becoming invisible below it or projecting through the roof. The two boundaries adjacent to the 136-MU final steps remain open for traversal.
+
+A standalone trap-door gate now crosses the beginning of the test corridor at x=-1496…-1472, 104 MU ahead of the Player Start at x=-1600. It combines a 128-MU-wide retracting panel, two 16-MU solid jambs, bilateral repeatable special 62 activation and the same finite 128–136 MU roof target as the room template. It is unlocked and independent of the silver-key NPC door.
+
+Updated structure: 194 vertices, 252 linedefs, 496 sidedefs, 73 sectors and 186 things. Static validation confirms 18 platform-door activators, 35 roof-target sectors, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Climb both rear staircases and confirm every wall is visible above its tread and terminates at the roof underside.
+2. Cross from both 136-MU final steps onto the roof without invisible collision.
+3. Open the new corridor door from the Player Start side, cross it, wait for closure and reopen it from the opposite side for at least four cycles.
+4. Inspect its jambs obliquely and confirm the panel and frame do not extend above the roof slab.
+
+## Aligned staircase modules and restored rear walls 4.26.5r
+
+**Implemented — pending manual visual/collision validation in GZDoom 4.14.2**
+
+The three complete north/south staircase pairs now share one exact module: 119 MU width, 665 MU start-to-start horizontal spacing, low corridor boundary at y=±80 and high roof boundary at y=±272. No flight protrudes farther into the central passage than another.
+
+The western rooms move 71 MU east and the eastern rooms move one additional MU east, with all contained pickups translated identically. Conventional modules retain a 1-MU anti-overlap clearance. The rear room moves one additional MU east and is centered on y=0; its y=±272 corners coincide with the two high steps.
+
+All six boundaries between the rear room and its stairs again carry `STARTAN3` lower faces. These close the room only across the local floor-height difference and stop at each corresponding step height, replacing both the missing walls from 4.26.5q and the projecting 128-MU middle textures from 4.26.5o.
+
+MAP01 remains at 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Walk the central corridor and confirm all six first steps begin on the same north/south line.
+2. Compare all three staircase widths and verify none projects into the passage.
+3. Climb both rear flights and confirm the final steps meet the room corners and roof without a gap or obstruction.
+4. Look into the rear room from every step and confirm its side walls are restored without rising above the current tread.
+5. Verify pickups in the western and eastern rooms retained their internal arrangements.
+
+## Complete NPC attributes and uniform corridor stairs 4.26.5q
+
+**Implemented — pending manual gameplay validation in GZDoom 4.14.2**
+
+`CaelumCombatActor` now stores Constitution, Charisma, Empathy and Eloquence alongside its previous eight attributes, completing the same twelve-field primary model used by `CaelumAttributes`. It also stores current and maximum Anima. Maximum Anima uses the player rule `HEALTH_ANIMA_DAMAGE_SCALE × Type1(Patience)` and every predefined NPC initializes at maximum.
+
+The resulting equipped test values are: Rulo 1060 Anima (Patience 3), Ronnie 1280 (Patience 7), Argento 2710 (Patience 18), and Caella 3760 (effective Patience 23). Caella's tier-1 magic helmet raises effective Intelligence by five but does not directly alter Anima; her separate magic-glove +5 Patience bonus is what increases the reserve. NPC statistics now recalculate after armor initialization, matching the player's equipment order.
+
+MAP01 now contains three complete mirrored staircase pairs in the intermediate vertical corridors. Their centers are separated by approximately 664 MU on the integer map grid. The eastern north/south rooms and rear room move 24 MU east; pickups inside the eastern rooms move with them. All six shared rear-stair boundaries are textureless two-sided partitions, eliminating the protruding wall along the full climb.
+
+Updated structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, no collinear overlap, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Climb every north and south staircase and confirm all six steps are free of projecting wall strips.
+2. Cross onto the roofs from each staircase pair and check the 1-MU safety clearances beside conventional room walls.
+3. Confirm eastern-room pickups retained their relative positions after the 24-MU move.
+4. Inspect Rulo, Ronnie, Argento and Caella diagnostics for all twelve attributes and full Anima.
+
 ## Clear roof landings and NPC-archetype audit 4.26.5p
 
 **Map fix implemented — pending manual collision validation in GZDoom 4.14.2**
@@ -8,7 +120,7 @@ The two boundaries shared by the rear room and the 136-MU top stair sectors rema
 
 The definitive **`habitación con puerta trampa`** configuration is the complete 4.26.5p form: finite 128-MU room walls, solid walkable 128–136 MU roof, independent retracting floor panel, bilateral repeatable USE, solid jamb pillars that block lateral sight, and an unobstructed upper traversal plane. The keyed NPC room is the locked variant of the same template.
 
-The existing `CaelumCombatActor` is a combat-capable subset rather than a complete general NPC archetype. It already provides Health, eight combat attributes (Strength, Toughness, Agility, Dexterity, Resilience, Intelligence, Patience and Insight), Lucidity, Adrenaline, physical/magical accuracy and critical chance, evasion, armor/durability, pain, anatomy, mass and impact/fall/collision physics. It does not yet carry Constitution, Charisma, Empathy, Eloquence or an Anima pool. Those five fields must be added before NPC dialogue/faction and resource-limited magic are built; survival-only Hunger, Thirst, Sleep, Carry Load and Air remain intentionally player-only.
+The 4.26.5p audit identified `CaelumCombatActor` as a combat-capable subset rather than a complete general NPC archetype. Constitution, Charisma, Empathy, Eloquence and Anima were its five missing fields; 4.26.5q implements them. Survival-only Hunger, Thirst, Sleep, Carry Load and Air remain intentionally player-only.
 
 No missing attribute values are assigned in this patch: Rulo, Ronnie, Argento and Caella retain their existing balance exactly.
 

@@ -745,6 +745,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.RACE_BEAST_MAN: return "CA_RACE_BEAST_MAN";
             case CaelumConstants.RACE_CAELITH: return "CA_RACE_CAELITH";
             case CaelumConstants.RACE_HUMAN: return "CA_RACE_HUMAN";
+            case CaelumConstants.RACE_DEBUG: return "CA_RACE_DEBUG";
             default: return "CA_RACE_GOBLIN";
         }
     }
@@ -903,13 +904,22 @@ class CaelumDebugOverlay : EventHandler
 
             default:
                 pageTitle = StringTable.Localize("CA_CREATION_TITLE_SUMMARY", false);
-                selectedValue = String.Format(
-                    "%s / %s / %s / %s",
-                    StringTable.Localize(GetRaceKey(profile.Race), false),
-                    StringTable.Localize(GetProfessionKey(profile.FirstClass, profile.SecondClass), false),
-                    StringTable.Localize(GetSexKey(profile.Sex), false),
-                    StringTable.Localize(GetHeightChoiceKey(profile.HeightChoice), false)
-                );
+                if (profile.Race == CaelumConstants.RACE_DEBUG)
+                {
+                    selectedValue = StringTable.Localize(
+                        "CA_CREATION_DEBUG_SUMMARY", false
+                    );
+                }
+                else
+                {
+                    selectedValue = String.Format(
+                        "%s / %s / %s / %s",
+                        StringTable.Localize(GetRaceKey(profile.Race), false),
+                        StringTable.Localize(GetProfessionKey(profile.FirstClass, profile.SecondClass), false),
+                        StringTable.Localize(GetSexKey(profile.Sex), false),
+                        StringTable.Localize(GetHeightChoiceKey(profile.HeightChoice), false)
+                    );
+                }
                 explanation = StringTable.Localize("CA_CREATION_HELP_SUMMARY", false);
                 break;
         }

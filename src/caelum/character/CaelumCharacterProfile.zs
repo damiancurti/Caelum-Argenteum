@@ -25,7 +25,7 @@ class CaelumCharacterProfile : Object
         HeightChoice = CaelumConstants.HEIGHT_NORMAL;
     }
 
-    void CycleRace() { Race = (Race + 1) % 4; }
+    void CycleRace() { Race = (Race + 1) % 5; }
     void CycleFirstClass() { FirstClass = (FirstClass + 1) % 4; }
     void CycleSecondClass() { SecondClass = (SecondClass + 1) % 4; }
     void CycleSex() { Sex = (Sex + 1) % 2; }
@@ -122,6 +122,7 @@ class CaelumCharacterProfile : Object
 
     int GetMassTier()
     {
+        if (Race == CaelumConstants.RACE_DEBUG) { return 6; }
         return Clamp(CaelumConstants.BASE_MASS_TIER + GetRaceMassModifier()
             + GetProfessionMassModifier() + GetSexModifier() + GetHeightModifier(),
             CaelumConstants.MIN_MASS_TIER, CaelumConstants.MAX_MASS_TIER);
@@ -129,6 +130,7 @@ class CaelumCharacterProfile : Object
 
     int GetSizeTier()
     {
+        if (Race == CaelumConstants.RACE_DEBUG) { return 4; }
         return Clamp(CaelumConstants.BASE_SIZE_TIER + GetRaceSizeModifier()
             + GetProfessionSizeModifier() + GetSexModifier() + GetHeightModifier(),
             CaelumConstants.MIN_SIZE_TIER, CaelumConstants.MAX_SIZE_TIER);

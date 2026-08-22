@@ -77,8 +77,8 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-- Promote `CaelumCombatActor` into the complete non-survival NPC stat archetype by adding Constitution, Charisma, Empathy, Eloquence and Anima; preserve Hunger, Thirst, Sleep, Carry Load and Air as player-only systems.
-- Define authored values for those missing fields per NPC instead of deriving or silently defaulting their personalities.
+- Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
+- Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
 - Add a shared Use-based NPC interaction layer.
 - Add data-driven dialogue foundations.
 - Add merchant inventories and buy/sell transactions using V4.31 economy data.
@@ -95,7 +95,15 @@ User1 is the remaining native User input and is reserved for the racial ability.
 - Replicate only the MAP01 architectural template that has passed manual validation.
 - Add locked/keyed door variants, roofed rooms and later multi-floor modules.
 
-The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive 4.26.5p configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel, continuous traversable roof and clear upper access boundaries. All eight MAP01 rooms use it, including the silver-key NPC variant. Future level work should instantiate or rotate this pattern instead of recreating wall, roof, jamb and door topology independently.
+The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive door/roof configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel and continuous traversable roof. V4.26.5r adds a validated 119-MU staircase companion module whose finite lower side faces stop at each tread height. All eight MAP01 rooms use the room template, including the silver-key NPC variant. Future level work should instantiate or rotate these patterns instead of recreating their topology independently.
+
+V4.26.5s also extracts the door/frame/roof portion as a standalone corridor gate at the Player Start. Treat it as the unkeyed gate variant of the same trap-door family; keyed instances must preserve their authored lock number.
+
+V4.26.5t replaces the provisional scaled stair faces with a reusable structural room-wall strip whose top aligns at 136 MU. Prefer this sector geometry wherever stairs meet a roofed room. The same patch adds a debug-only character-creation shortcut; it must remain clearly separated from campaign races and balance validation.
+
+V4.26.5u establishes the entrance-gate variant as an integrated corridor boundary rather than a freestanding module. It also validates roofed rear connectors for joining neighboring room roofs while explicitly preserving an uncovered central passage.
+
+V4.26.5v adds closed-boundary degree validation as a required acceptance check for every future 3D-floor/terrace module. A visually plausible map is not accepted if any non-exterior sector contains a dangling contour edge.
 - Establish world locations, travel links and caravan/event integration points.
 
 ### V4.35 — Calendar, Weather and Dynamic Events
