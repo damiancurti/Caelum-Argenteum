@@ -8425,14 +8425,11 @@ class CaelumPlayer : DoomPlayer
             requiredAmmoType = CaelumConstants.AMMUNITION_BOLT;
         }
         Inventory rangedAmmo = FindNativeAmmunition(requiredAmmoType);
-        bool ammoAvailable = rangedAmmo != null
-            && rangedAmmo.Amount > 0
-            && GetRangedMagazineCount(WeaponModel.WeaponType) > 0;
-        CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(rangedAmmo);
-        if (carbineStack != null && carbineStack.InMagicBox)
-        {
-            ammoAvailable = false;
-        }
+        // El cargador es la fuente inmediata del disparo. La reserva se usa
+        // al recargar, pero no debe invalidar proyectiles ya cargados si la
+        // pila cambia de ubicación o llega a cero después de la recarga.
+        bool ammoAvailable =
+            GetRangedMagazineCount(WeaponModel.WeaponType) > 0;
         LastCarbineHadAmmo = ammoAvailable;
         if (!LastCarbineHadAmmo || RangedReloadActive) { return; }
 
@@ -8541,7 +8538,13 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Size
         );
 
-        rangedAmmo.Amount = Max(0, rangedAmmo.Amount - 1);
+        // La pila nativa representa el total físico restante y normalmente
+        // acompaña al cargador. La comprobación nula preserva un cargador ya
+        // cargado aunque la reserva haya cambiado de contenedor.
+        if (rangedAmmo != null && rangedAmmo.Amount > 0)
+        {
+            rangedAmmo.Amount = Max(0, rangedAmmo.Amount - 1);
+        }
         SetRangedMagazineCount(
             WeaponModel.WeaponType,
             GetRangedMagazineCount(WeaponModel.WeaponType) - 1

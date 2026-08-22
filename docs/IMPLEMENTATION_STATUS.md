@@ -1,5 +1,24 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Bilateral wall rendering, dual-use door and ranged ammunition 4.26.5e
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The room/exterior sector split from V4.26.5d was structurally valid, but an upper texture only fills the height difference above the lower ceiling; it does not draw the required wall from floor level. The five room walls and two jambs now retain bilateral sector ownership while also using explicit wrapped `STARTAN3` middle textures on both sides, matching MAP01's already visible test-wall vocabulary.
+
+The inner room/door threshold now carries the same tag-0 manual `Door_Raise` special, speed and delay as the exterior-facing line. The exterior line remains non-blocking and the door sector remains the physical closure, so USE is available from both approaches.
+
+Ranged ammo actors now declare `Inventory.Amount 20`. Firing checks the loaded magazine rather than requiring both a loaded magazine and a simultaneously accessible reserve stack. Reserve ammo remains the Reload source and is decremented when a shot consumes a physical round, but moving/exhausting the reserve cannot cancel a round already loaded in the magazine.
+
+Manual validation:
+
+1. All room walls and jambs render from exterior and interior.
+2. USE opens the door from both approaches and the raised opening is passable.
+3. Pickups provide 20 bullets/arrows/bolts.
+4. Press Reload and wait for the weapon's 3/3/5/5-second base time.
+5. Standard Bow, Longbow, Crossbow and Carbine each spawn the correct projectile and reduce the loaded magazine by one.
+6. Empty magazines still require Reload; reserve ammunition alone is not a loaded shot.
+
 ## Bilateral room shell, usable door and environmental Adrenaline 4.26.5d
 
 **Implemented — pending manual validation in GZDoom 4.14.2**

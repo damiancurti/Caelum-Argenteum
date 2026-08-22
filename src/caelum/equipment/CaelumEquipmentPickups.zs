@@ -555,6 +555,7 @@ class CaelumCarbineAmmo : Ammo
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_carbine_ammo.png";
+        Inventory.Amount 20;
         Scale 0.5;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
@@ -642,6 +643,7 @@ class CaelumArrowAmmo : Ammo
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png";
+        Inventory.Amount 20;
         Scale 0.20;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
@@ -657,6 +659,7 @@ class CaelumBoltAmmo : Ammo
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png";
+        Inventory.Amount 20;
         Scale 0.20;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;

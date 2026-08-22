@@ -177,6 +177,12 @@ Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing 
 
 MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
 
+## Bilateral wall rendering, dual-use door and ranged-ammunition correction (V4.26.5e)
+
+The template's bilateral room walls now use the same explicit wrapped middle-texture vocabulary already proven by the visible MAP01 test walls. Both room/exterior sides carry `STARTAN3`, while the finite room ceiling remains available for the next architectural pass. The inner threshold now carries the same manual `Door_Raise` action as the exterior door line, allowing USE from inside and outside.
+
+Ranged ammunition pickups explicitly grant 20 units. A ranged shot now treats the loaded magazine as its immediate ammunition source; reserve inventory is consulted during Reload and decremented when present, but it cannot invalidate a projectile that is already loaded. Manual Reload and the existing 3/3/5/5-second base timings remain authoritative.
+
 ## Visible architectural shell, usable door and environmental Adrenaline correction (V4.26.5d)
 
 The isolated template room is now a true bilateral sector module inside exterior sector 0. Its five room walls and two door jambs carry exterior back sides with finite upper textures, so the building is visible from the field while retaining solid collision. The outer door line faces the exterior for manual USE, targets door sector 5 on its back, and no longer carries a permanent blocking flag; the raised door can therefore be crossed.

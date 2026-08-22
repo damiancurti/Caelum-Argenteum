@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.26.5e asset note
+
+V4.26.5e changes MAP01 wall presentation, ranged-ammunition logic and documentation only. It reuses existing project textures and projectile sprites; no new external art assets are introduced.
+
 ## V4.26.5d asset note
 
 V4.26.5d changes MAP01 geometry, environmental-impact response code and documentation only. No new external art assets are introduced.

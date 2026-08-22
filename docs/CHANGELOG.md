@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.26.5e — Bilateral wall rendering, dual-use door and ranged ammunition
+
+- Added explicit wrapped middle textures to both sides of the five template-room walls and two jambs.
+- Preserved bilateral room/exterior sector ownership and solid wall collision.
+- Added the manual `Door_Raise` special to the inner threshold, allowing USE from inside and outside.
+- Added an explicit pickup amount of 20 to carbine ammunition, arrows and bolts.
+- Made the loaded magazine the immediate ranged-fire ammunition source.
+- Prevented reserve-stack location/exhaustion from invalidating an already loaded projectile.
+- Preserved manual Reload, magazine capacities, Reload durations, Air costs, damage, spread and critical formulas.
+
 ## 4.26.5d — Visible room, usable door and environmental Adrenaline correction
 
 - Converted the five template-room perimeter walls into bilateral room/exterior lines.
