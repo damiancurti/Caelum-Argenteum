@@ -2400,12 +2400,14 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.EffectiveMovementPercent
             );
             String accuracyLine = String.Format(
-                "%s: %.2f%% x%.2f   %s x%.2f",
+                "%s: %.2f%% x%.2f   %s %.1f%%   Noise %.1f%% / %.1f MU",
                 StringTable.Localize("CA_STAT_PHYSICAL_ACCURACY", false),
                 localPlayer.EffectivePhysicalAccuracyPercent,
                 localPlayer.CrouchAccuracyMultiplier,
                 StringTable.Localize("CA_STAT_STEALTH", false),
-                localPlayer.CrouchStealthMultiplier
+                localPlayer.EffectiveStealthPercent,
+                localPlayer.MovementNoiseMultiplier * 100.0,
+                localPlayer.LastMovementNoiseRange
             );
             Screen.DrawText(DebugFont, Font.CR_WHITE, 20.0, 226.0, lucidityLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);

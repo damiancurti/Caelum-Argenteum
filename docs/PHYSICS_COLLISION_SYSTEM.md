@@ -910,3 +910,83 @@ and with active buckler:
 Stun removes both active forms of Agility damping.
 
 The rodela's doubled subtractive Toughness is unchanged and is applied later. Therefore a character can still receive zero **final** damage because `2 × Toughness` exceeds the remaining energy severity, but equivalent tics should remain finite whenever a real horizontal Delta-v occurred.
+
+
+## 24. V4.26.4 — Crouched wall damping and careful movement
+
+Crouching now has a physical defensive meaning in addition to accuracy and Stealth.
+
+A conscious crouching character can yield, brace, roll the shoulder and move cautiously against static geometry. This does **not** change the physical collision impulse. It changes only the traumatic response to a wall Delta-v.
+
+The same normalized Agility bonus used by the calibrated buckler response is reused:
+
+`B_agility = max(0, JumpZ/BaseJumpZ - 1)`
+
+For crouched wall contact:
+
+`F_crouch = clamp(B_agility, 0, 0.50)`
+
+For active buckler block:
+
+`F_buckler = clamp(2 B_agility, 0, 0.50)`
+
+If both apply:
+
+`F_horizontal = max(F_crouch, F_buckler)`
+
+They do not add together.
+
+`DeltaV_traumatic = DeltaV_raw × (1 - F_horizontal)`
+
+Actor-to-actor horizontal damping remains a buckler specialty; crouching alone only adds the careful-movement response to walls/static geometry.
+
+Physical/Lucidity stun sets active Agility damping to zero.
+
+### Movement noise and Sigilo
+
+The documented Sigilo rule is now materialized:
+
+`Stealth = Type2(Agility) = Agility(Agility+1)/101`
+
+and clamped to 0–100%.
+
+Crouching retains the previously documented x2 Stealth modifier:
+
+`EffectiveStealth = clamp(Stealth × CrouchStealthMultiplier, 0, 100)`
+
+Movement noise heard by AI uses:
+
+`NoiseMultiplier = 1 - EffectiveStealth/100`
+
+The base movement-hearing reference is 20 m = 622.22 MU under the project's 56 MU = 1.8 m scale.
+
+Movement-mode factors:
+
+- walking: 1.0
+- running: 1.5
+- crouching: 0.5
+
+Thus:
+
+`NoiseRange = 622.22 × ModeFactor × NoiseMultiplier`
+
+At EffectiveStealth = 100%, movement emits no SoundAlert.
+
+This is a hearing/noise rule; visual detection remains a separate future stealth/AI layer.
+
+
+## 25. V4.26.5 — Architectural validation module
+
+MAP architecture testing is now isolated from the physics core.
+
+The first validated building module uses only conventional sector/linedef/sidedef concepts:
+
+- one ordinary room sector;
+- an opening framed by the wall geometry;
+- one thin door sector;
+- a manually activated `Door_Raise` linedef using the standard player USE input;
+- ordinary raised sectors for stairs and a roof-height access platform.
+
+This is deliberately simpler than the earlier generated 3D-floor building attempts. The purpose is to establish a topology that GZDoom's node builder accepts reliably before reintroducing walkable roofs over occupied interiors.
+
+A locked door will later use the same geometry but a locked-door action/key requirement. The physical layout does not need to change.

@@ -161,6 +161,30 @@ Jewelry drops preserve TossItem horizontal movement but seals and amulets have t
 
 MAP01 rooms were rebuilt from the clean pre-roof layout. Their walls use finite 3D middle textures instead of infinitely wrapped blocking textures, while a shared solid `Sector_Set3DFloor` slab provides a true walkable roof at 136 MU with an underside at 128 MU. A six-step exterior stair reaches the east test-room roof. All seven rooms use the same roof system, the two new rooms face the central corridor, the exterior remains 512 MU tall, and pickups are redistributed by family inside the six test rooms. Excess magic-shield duplicates are removed.
 
+## Crouched impact damping, movement noise and rebuilt fall-test rooms (V4.26.4)
+
+Crouching now allows the normal Agility-derived biological response to reduce **wall** collision trauma. It uses the same calibrated horizontal fraction introduced for the buckler but without the buckler's x2 bonus. If the buckler is also active, the stronger buckler fraction wins rather than stacking. Physical/Lucidity stun still removes all active Agility damping.
+
+Stealth is now materialized as the documented Type-2 Agility derivative:
+
+`Stealth% = clamp(Agility × (Agility + 1) / 101, 0, 100)`
+
+Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
+
+MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
+
+## Architectural template room (V4.26.5)
+
+MAP01 now includes one isolated architectural test room built from ordinary Doom/GZDoom sector geometry rather than experimental generated 3D-floor room shells. The template validates the basic building vocabulary before replication:
+
+- finite ordinary room sector;
+- visible wall/jamb opening;
+- classic manually-activated vertical door using the player's standard USE key;
+- a separate raised roof-access platform at 136 MU;
+- six isolated stair sectors at 24/48/72/96/120/136 MU.
+
+The door is intentionally unlocked. Its front linedef uses `Door_Raise` with local tag 0, so a player facing the door and pressing USE should raise it, wait, and close again. Once this template is validated in-engine, it becomes the source pattern for locked variants, keyed doors, real roofed rooms and later multi-floor modules.
+
 ## Development test map
 
 `MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.

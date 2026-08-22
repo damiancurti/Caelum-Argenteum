@@ -1,5 +1,31 @@
 # Changelog
 
+## 4.26.5 — Architectural template room
+
+- Returned MAP01 structural experimentation to the last known loadable safe map.
+- Added one isolated building template for controlled validation instead of modifying all seven structures at once.
+- Added a standard room sector with a 136-MU ceiling.
+- Added a 128-MU-wide doorway with side jamb geometry.
+- Added an unlocked classic vertical door using manual `Door_Raise` on player USE.
+- Added a separate 136-MU raised roof-access platform.
+- Added six isolated stair sectors at 24, 48, 72, 96, 120 and 136 MU.
+- Kept V4.26.4 crouch wall damping, Stealth movement-noise and buckler behavior unchanged.
+
+## 4.26.4 — Crouched impact damping, movement noise and finite test buildings
+
+- Crouching now enables Agility-derived biological damping for wall collisions.
+- Crouched wall damping uses the calibrated horizontal Agility-bonus fraction; it does not subtract raw JumpZ units.
+- Buckler and crouch wall damping do not stack: the larger active fraction is used.
+- Physical/Lucidity stun disables crouched and buckler Agility damping.
+- Added `StealthPercent` as the documented Type-2 derivative of Agility.
+- Existing crouch x2 Stealth bonus now applies to the effective Stealth percentage, capped at 100%.
+- Movement-hearing noise is multiplied by `(1 - EffectiveStealth/100)`; 100% Stealth produces no movement SoundAlert.
+- Walking uses the 20 m reference hearing range; running x1.5; crouching x0.5, before Stealth reduction.
+- Rebuilt all six test rooms and the NPC room using finite raised-floor wall sectors rather than infinitely blocking middle textures.
+- Added a shared solid 3D-floor roof slab at 128–136 MU to all room interiors.
+- Added two lateral six-step staircases reaching 136 MU for roof access.
+- Preserved 512-MU exterior height, categorized item distribution and reduced shield duplicates.
+
 ## 4.26.3b — Buckler calibration and MAP01 structural rebuild
 
 - Fixed buckler horizontal damping producing `Delta-v = 0` and effectively infinite equivalent tics.

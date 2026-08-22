@@ -68,6 +68,7 @@ class CaelumDerivedStats : Object
     double MassAdjustedMovementPercent;
     double BaseJumpHeightPercent;
     double MassAdjustedJumpHeightPercent;
+    double StealthPercent;
 
     double CalculateType1Percent(int level)
     {
@@ -282,6 +283,11 @@ class CaelumDerivedStats : Object
         EvasionMassMultiplier = MovementMultiplier;
         BaseEvasionChance = CalculateType2Percent(attributes.Agility);
         MassAdjustedEvasionChance = BaseEvasionChance * EvasionMassMultiplier;
+        StealthPercent = Clamp(
+            CalculateType2Percent(attributes.Agility),
+            0.0,
+            100.0
+        );
         BaseMovementPercent = CalculateType4Percent(attributes.Agility);
         MassAdjustedMovementPercent = BaseMovementPercent * MovementMultiplier;
         BaseJumpHeightPercent = CalculateType1Percent(attributes.Agility);

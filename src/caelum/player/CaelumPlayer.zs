@@ -338,6 +338,10 @@ class CaelumPlayer : DoomPlayer
     double CrouchAccuracyMultiplier;
     double CrouchCriticalChanceMultiplier;
     double CrouchStealthMultiplier;
+    double EffectiveStealthPercent;
+    double MovementNoiseMultiplier;
+    double LastMovementNoiseRange;
+    double MovementNoiseTimer;
     double PainImmobilizationRemaining;
     double LastPainAnimationDuration;
 
@@ -5561,8 +5565,7 @@ class CaelumPlayer : DoomPlayer
 
         double baseAbsorption = Max(0.0, JumpZ);
 
-        // En caída, JumpZ y la velocidad vertical comparten la misma escala,
-        // por lo que se conserva la amortiguación directa ya validada.
+        // La caída conserva la amortiguación directa por JumpZ.
         if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
         {
             if (IsBucklerAcrobaticDefenseActive())
@@ -5573,18 +5576,31 @@ class CaelumPlayer : DoomPlayer
             return baseAbsorption;
         }
 
-        // En horizontal no restamos JumpZ directamente: su escala numérica es
-        // mucho mayor que el Delta-v normal de una embestida y producía
-        // Delta-v=0 / tics infinitos. La rodela convierte sólo el BONUS sobre
-        // el salto humano base en una fracción de amortiguación.
+        double baseJump = CaelumConstants.GZDOOM_BASE_JUMP_Z;
+        double agilityBonusRatio = Max(
+            0.0,
+            baseAbsorption / Max(0.0001, baseJump) - 1.0
+        );
+
+        // Agacharse permite amortiguar choques contra geometría: el personaje
+        // se mueve deliberadamente con cuidado y cede ante el contacto.
+        double carefulMovementFraction = 0.0;
+        if (IsCrouching
+            && impactKind == CaelumConstants.IMPACT_KIND_WALL)
+        {
+            carefulMovementFraction = Clamp(
+                agilityBonusRatio,
+                0.0,
+                CaelumConstants.SHIELD_BUCKLER_HORIZONTAL_ABSORPTION_MAX_FRACTION
+            );
+        }
+
+        // La rodela conserva su versión más potente y también funciona contra
+        // actores. Si ambas condiciones coinciden usamos la mayor, no se apilan.
+        double bucklerFraction = 0.0;
         if (IsBucklerAcrobaticDefenseActive())
         {
-            double baseJump = CaelumConstants.GZDOOM_BASE_JUMP_Z;
-            double agilityBonusRatio = Max(
-                0.0,
-                baseAbsorption / Max(0.0001, baseJump) - 1.0
-            );
-            return Clamp(
+            bucklerFraction = Clamp(
                 agilityBonusRatio
                     * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER,
                 0.0,
@@ -5592,7 +5608,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
 
-        return 0.0;
+        return Max(carefulMovementFraction, bucklerFraction);
     }
 
     double GetBiologicalLandingAbsorptionSpeed()
@@ -7440,6 +7456,7 @@ class CaelumPlayer : DoomPlayer
 
         IsSpendingRunningAir = IsRunningOnGround();
         UpdateCrouchEffects();
+        UpdateMovementNoise();
 
         // El Anima se regenera de forma continua segun Paciencia.
         if (AnimaResourceInitialized
@@ -7539,6 +7556,79 @@ class CaelumPlayer : DoomPlayer
         CrouchStealthMultiplier = IsCrouching
             ? CaelumConstants.CROUCH_STEALTH_MULTIPLIER
             : 1.0;
+
+        EffectiveStealthPercent = 0.0;
+        if (DerivedStats != null)
+        {
+            EffectiveStealthPercent = Clamp(
+                DerivedStats.StealthPercent * CrouchStealthMultiplier,
+                0.0,
+                100.0
+            );
+        }
+        MovementNoiseMultiplier = Clamp(
+            1.0 - EffectiveStealthPercent / 100.0,
+            0.0,
+            1.0
+        );
+    }
+
+    void UpdateMovementNoise()
+    {
+        LastMovementNoiseRange = 0.0;
+
+        if (player == null
+            || player.playerstate != PST_LIVE
+            || !player.onground
+            || IsPhysicallyImmobilized())
+        {
+            MovementNoiseTimer = 0.0;
+            return;
+        }
+
+        bool hasMovementInput = player.cmd.forwardmove != 0
+            || player.cmd.sidemove != 0;
+        if (!hasMovementInput)
+        {
+            MovementNoiseTimer = 0.0;
+            return;
+        }
+
+        MovementNoiseTimer += 1.0 / TICRATE;
+        if (MovementNoiseTimer
+            < CaelumConstants.MOVEMENT_NOISE_INTERVAL_SECONDS)
+        {
+            return;
+        }
+        MovementNoiseTimer = 0.0;
+
+        // 100% de Sigilo = ningún ruido de movimiento.
+        if (MovementNoiseMultiplier <= 0.0)
+        {
+            return;
+        }
+
+        double movementMultiplier = 1.0;
+        if (IsCrouching)
+        {
+            movementMultiplier =
+                CaelumConstants.MOVEMENT_NOISE_CROUCH_MULTIPLIER;
+        }
+        else if (IsRunningOnGround())
+        {
+            movementMultiplier =
+                CaelumConstants.MOVEMENT_NOISE_RUN_MULTIPLIER;
+        }
+
+        LastMovementNoiseRange =
+            CaelumConstants.MOVEMENT_NOISE_BASE_RANGE_MU
+            * movementMultiplier
+            * MovementNoiseMultiplier;
+
+        if (LastMovementNoiseRange > 0.0)
+        {
+            SoundAlert(self, false, LastMovementNoiseRange);
+        }
     }
 
     void SpawnDebugTrainingDummy()

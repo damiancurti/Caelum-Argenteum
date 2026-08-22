@@ -1,5 +1,13 @@
 # Asset register
 
+## V4.26.5 asset note
+
+V4.26.5 adds only MAP01 geometry and documentation. No new external art assets are introduced.
+
+## V4.26.4 asset note
+
+V4.26.4 changes movement physics, stealth/noise logic, MAP01 geometry and documentation only. No new external art assets are introduced.
+
 ## V4.26.3b asset note
 
 V4.26.3b changes physics calibration, inventory-drop behavior, MAP01 geometry and documentation only. No new external art assets are introduced.

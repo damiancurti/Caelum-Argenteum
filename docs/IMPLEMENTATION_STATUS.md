@@ -1,5 +1,47 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Architectural template room 4.26.5
+
+**Implemented — pending manual validation**
+
+A single MAP01 template room is used to validate architecture before replication.
+
+Validation sequence:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. The room walls render and block normally.
+3. The doorway has visible jambs/opening.
+4. Facing the door and pressing USE triggers the manual `Door_Raise`.
+5. The door opens, waits, then closes.
+6. The six stair sectors can be climbed from 24 to 136 MU.
+7. The 136-MU platform is walkable.
+
+No attempt is made in this patch to retrofit all existing rooms with the template. Replication is deferred until this exact module works correctly in GZDoom 4.14.2.
+
+## Crouch physics, movement noise and MAP01 building rebuild 4.26.4
+
+**Implemented — pending manual validation**
+
+For wall impacts while crouching:
+
+`AgilityBonusRatio = max(0, JumpZ/BaseJumpZ - 1)`
+
+`CrouchWallFraction = clamp(AgilityBonusRatio, 0, 0.50)`
+
+The physical collision and displacement remain unchanged. Only traumatic Delta-v is reduced. If buckler block is also active, its doubled fraction is compared against the crouch fraction and the maximum is used; the two effects do not stack.
+
+Sigilo is now explicitly calculated from Agility Type 2:
+
+`Stealth% = clamp(Agility(Agility+1)/101, 0, 100)`
+
+Crouch x2 remains authoritative and is capped at 100%. Movement hearing:
+
+`NoiseRange = BaseRange × MovementMode × (1 - EffectiveStealth/100)`
+
+with BaseRange = 20 m reference (622.22 MU), walking = 1.0, running = 1.5, crouching = 0.5. At EffectiveStealth = 100%, no movement alert is emitted.
+
+MAP01 uses finite wall sectors with floor 136 MU and sky ceiling 512 MU. Interior sectors remain floor 0 and receive the shared 3D roof slab 128–136 MU. Two staircases reach roof level. All generated sectors pass closed-loop endpoint validation and every linedef has valid front/back sidedef and sector references.
+
 ## Buckler/map corrective pass 4.26.3b
 
 **Implemented — pending manual validation**
