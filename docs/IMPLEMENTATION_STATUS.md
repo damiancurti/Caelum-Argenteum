@@ -1,5 +1,23 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Three-room terrace divisions and sealed entrance frame 4.26.5w
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The two roofed areas behind the intermediate staircases are no longer continuous hall-like spaces. Each north/south row is divided at the centers of its two connector modules, producing three similarly sized rooms connected in sequence. Every new partition contains a centered 128-MU retracting panel with bilateral repeatable USE. The remaining partition spans are self-referencing finite 3D middle walls from floor 0 to the underside of the 128-MU roof, so they close sight and movement at room level without creating another ceiling/control strip or obstructing terrace traversal above.
+
+The western corridor gate retains its established position and dimensions. Its two outer frame extensions now use floor 128 and roof-control ID 100 like the adjacent jambs. This makes the complete jamb/extension assembly opaque and finite while preserving the open roof route above the panel.
+
+Updated structure: 256 vertices, 340 linedefs, 672 sidedefs, 93 sectors and 186 things. Static validation confirms valid references, 26 platform-door activators, 53 roof targets, closed boundaries for every conventional sector, no duplicate or overlapping segments, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Enter each north/south terrace interior and confirm it is now a sequence of three rooms rather than one large hall.
+2. Cycle all four new internal doors repeatedly from both sides and confirm they block sight while closed.
+3. Inspect every partition from floor level and then cross the uninterrupted terrace above it.
+4. View the western entrance frame obliquely from both sides and confirm there are no transparent triangles, black extensions or infinite faces.
+5. Confirm the central corridor remains uncovered and all six staircase routes still reach the terrace.
+
 ## Closed terrace topology and opaque entrance frame 4.26.5v
 
 **Implemented — pending visual confirmation in GZDoom 4.14.2**

@@ -16,6 +16,8 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
+The current MAP01 construction prototype includes two terrace rows divided into three similarly sized connected rooms apiece. Their internal trap doors reuse the finite `habitación con 1 puerta trampa` mechanism, while the central corridor remains uncovered and all roof routes remain traversable.
+
 ### Implemented and tested
 
 - Character creation foundation with race, dual-class/profession, sex, height, attribute layers, and twelve primary attributes.

@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.26.5w asset note
+
+V4.26.5w restores internal MAP01 room divisions, adds four trap-door connections and seals the entrance frame. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
 ## V4.26.5v asset note
 
 V4.26.5v closes terrace/wall topology and rebuilds the entrance frame with opaque structural sectors. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.

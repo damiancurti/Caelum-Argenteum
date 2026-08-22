@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.26.5w — Three-room terrace divisions and sealed entrance frame
+
+- Restored four internal cross-walls across the north and south terrace connectors, dividing each formerly merged large zone into three similarly sized rooms.
+- Added one centered 128-MU reusable trap door to every cross-wall, for four new bilateral repeatable connections between the rooms.
+- Built the opaque wall spans as finite 3D middle textures under the 128-MU roof underside, without adding roof sectors or blocking traversal above the terrace.
+- Rebuilt the two entrance-frame extensions at the same 128-MU floor height and roof-control ID as their jambs, closing the transparent frame sections without lengthening the gate.
+- Preserved the uncovered central corridor, six staircase flights, existing room doors, locked NPC room, item positions and all 186 things.
+- Rebuilt MAP01 as 256 vertices, 340 linedefs, 672 sidedefs, 93 sectors and 186 things.
+- Validated all non-self-referencing sector contours as closed degree-2 boundaries, with no invalid references, duplicate segments, collinear overlaps or non-vertex crossings; deterministic regeneration produces the same SHA-256.
+- Added no external assets or gameplay changes.
+
 ## 4.26.5v — Closed terrace topology and opaque entrance frame
 
 - Fixed two open rear structural-wall contours whose dangling jamb connections allowed 3D-floor geometry to leak toward the Player Start.
