@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.26.5g — Upper-wall removal, true repeatable door and live Dexterity reload
+
+- Removed the upper `STARTAN3` textures that continued above the finite room-wall middle textures.
+- Corrected both door thresholds from the ignored custom field `repeatable` to the valid UDMF field `repeatspecial`.
+- Preserved front/back USE support and the existing `Door_Raise` speed and delay.
+- Confirmed ranged Aim/ADS multiplies effective physical accuracy by ×2 and continues to stack with crouching ×2.
+- Recalculated ranged Reload duration from current effective Dexterity whenever Reload begins: `base seconds × 100 / Type-4 attack-speed percent`.
+- Preserved the 3/3/5/5-second base durations and introduced no new balance values.
+
 ## 4.26.5f — Finite room walls, repeatable door and contextual ranged Zoom
 
 - Replaced the template room's infinitely wrapped middle textures with bottom-pegged finite 3D middle textures.

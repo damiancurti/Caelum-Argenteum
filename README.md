@@ -77,6 +77,8 @@ Ranged damage uses its own tier scale: T1 = 100%, T2 = 160%, T3 = 250%. The defi
 
 Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Base reload times are 3 / 3 / 5 / 5 seconds and are divided by the Dexterity Type-4 attack-speed modifier. Zoom toggles ranged ADS with a real ×2 FOV factor; AltFire remains an alternate Aim toggle. Aim multiplies physical accuracy ×2, and crouching also multiplies it ×2, so both effects stack. The HUD displays loaded rounds, capacity, reserve ammunition and active Reload time.
 
+The effective Reload duration is recalculated from the player's current effective Dexterity when Reload begins: `base seconds × 100 / Type-4 attack-speed percent`. This keeps equipment/debug attribute changes from reusing an older cached duration multiplier.
+
 ## Collision and impact physics (V4.25.1)
 
 Characters now use a momentum/impulse collision foundation. Actor-to-actor contact resolves an action/reaction impulse along the collision normal with coefficient of restitution `e = 0`, using effective combat mass. The resulting forced velocity change (`Delta-v`) is converted into an equivalent time to traverse half the receiver's height. More than 35 equivalent tics causes no impact damage; each step below that threshold adds 3% of maximum health, capped at 105%.

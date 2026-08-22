@@ -1,5 +1,28 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Upper-wall removal, true repeatable door and live Dexterity reload 4.26.5g
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The finite middle textures introduced in 4.26.5f ended at roof height, but both sidedefs still carried upper `STARTAN3` textures. Those upper textures filled the room/outdoor ceiling difference and visually recreated the wall above the roof. They are now removed from both sides of all five room walls and both jambs.
+
+The door-cycle limit was caused by using `repeatable`, which is not the valid UDMF repeat-special field. Both door thresholds now use `repeatspecial = true`, retain front/back player USE activation and operate the same door sector with the existing speed and 150-tic delay.
+
+Ranged Aim is verified in the attack path: `RangedAimModeActive` multiplies `EffectivePhysicalAccuracyPercent` by ×2. Crouching supplies its own ×2 multiplier, so Aim + crouch still produces ×4 before the weapon spread calculation.
+
+Reload now derives its effective duration from the player's current effective Dexterity at the moment Reload starts. The formula remains the authored Type-4 rule:
+
+`effective seconds = base seconds × 100 / Type4(Dexterity)%`
+
+The base durations remain Standard Bow 3 s, Longbow 3 s, Crossbow 5 s and Carbine 5 s.
+
+Manual validation:
+
+1. Verify that no wall texture reappears above the roof cut.
+2. Complete at least four full door open/close cycles, alternating approaches.
+3. Compare Reload at ordinary Dexterity and debug Dexterity 75 while observing the HUD countdown.
+4. Verify that Zoom ADS remains visual and that ranged shots become more accurate.
+
 ## Finite room walls, repeatable door and contextual ranged Zoom 4.26.5f
 
 **Implemented — pending manual validation in GZDoom 4.14.2**

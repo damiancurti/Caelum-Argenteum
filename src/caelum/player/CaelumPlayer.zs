@@ -8301,6 +8301,19 @@ class CaelumPlayer : DoomPlayer
         return 0.0;
     }
 
+    double GetRangedEffectiveReloadSeconds(int weaponType)
+    {
+        if (DerivedStats == null || Attributes == null) { return 0.0; }
+
+        // Se calcula desde la Destreza efectiva actual al iniciar Reload.
+        // Evita reutilizar una instantanea anterior del multiplicador y
+        // conserva la regla acordada: base / modificador Tipo 4.
+        double attackSpeedPercent =
+            DerivedStats.CalculateType4Percent(Attributes.Dexterity);
+        return GetRangedBaseReloadSeconds(weaponType)
+            * 100.0 / Max(1.0, attackSpeedPercent);
+    }
+
     double GetRangedTierCriticalMultiplier(int tier)
     {
         if (tier <= 1) { return 1.0; }
@@ -8356,8 +8369,7 @@ class CaelumPlayer : DoomPlayer
         CancelRangedAim();
         RangedReloadWeaponType = requestedWeaponType;
         RangedReloadTotalSeconds =
-            GetRangedBaseReloadSeconds(requestedWeaponType)
-            * DerivedStats.AttackDurationMultiplier;
+            GetRangedEffectiveReloadSeconds(requestedWeaponType);
         RangedReloadRemainingSeconds = RangedReloadTotalSeconds;
         RangedReloadActive = RangedReloadRemainingSeconds > 0.0;
     }

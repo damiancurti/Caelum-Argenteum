@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.26.5g asset note
+
+V4.26.5g changes MAP01 texture/special fields, ranged Reload timing code and documentation only. It introduces no new external art assets.
+
 ## V4.26.5f asset note
 
 V4.26.5f changes MAP01 line behavior, ranged HUD/control code and documentation only. It introduces no new external art assets.
