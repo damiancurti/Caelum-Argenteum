@@ -1,5 +1,17 @@
 # Asset register
 
+## V4.26.5p asset note
+
+V4.26.5p clears the two rear roof-landing boundaries and documents the NPC-archetype audit. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5n asset note
+
+V4.26.5n rebuilds and replicates existing MAP01 room, door, roof and staircase geometry and updates public documentation. It reuses current Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5m asset note
+
+V4.26.5m removes invalid MAP01 partition texture assignments and updates public documentation only. It introduces no new external artwork or release dependency.
+
 ## V4.26.5l asset note
 
 V4.26.5l changes MAP01 door-sector motion, texture placement and public documentation only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.

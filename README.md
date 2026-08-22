@@ -83,9 +83,15 @@ Contextual Zoom is latched to one transition per physical key press; holding the
 
 While shield Block is active, the equipped shield is rendered as a modular first-person HUD layer. All four shield types use the same medium, left-offset Kite framing so none is excessively large or centered. The Magic Shield retains a translucent halo as its only type-specific composition difference. The layer is visual feedback only; mechanical coverage, defense and mobility continue to come from the shield model.
 
-The isolated MAP01 room now uses a true solid `Sector_3DFloor` roof slab from 128 to 136 MU under the 512-MU outdoor sky. Its 136-MU upper face is walkable and aligns with the final stair/access platform, while the room retains usable interior space below. The room and door recess share the roof target so the module remains covered above the doorway.
+MAP01 now defines the reusable **trap-door room** (`habitación con puerta trampa`) architectural template. Its definitive configuration combines a usable interior, finite 128-MU walls, a solid `Sector_3DFloor` roof slab from 128 to 136 MU under the 512-MU outdoor sky, one finite retracting floor door, solid sight-blocking jamb pillars and clear upper traversal boundaries. The roof remains continuously walkable above the doorway because the moving closure is independent of the base ceiling and roof slab.
 
 The template doorway now keeps its base ceiling at the 512-MU sky and its shared 3D-floor roof permanently static. Its finite 128-MU stone panel is represented by a raised floor that uses `Plat_DownWaitUpStay`: USE retracts it from 128 to 0 MU, waits for the existing 150-tic interval and raises it again. This separates the moving closure from the roof, prevents any panel from extending toward the sky and keeps the upper surface above the doorway continuously walkable. Manual USE remains repeatable from both sides.
+
+The two jamb partitions are finite solid 128-MU pillars with lower `STARTAN3` faces. Together with the raised door floor, they form a recessed three-sided frame that blocks lateral sight and prevents actors inside a closed room from acquiring targets through the doorway edges. No jamb uses a middle texture, so nothing extends into the 512-MU upper space.
+
+All eight MAP01 rooms instantiate this template: four central test rooms, two eastern test rooms, the NPC room and the rear room. Their doors face their corresponding corridors. The NPC instance applies silver lock 200 to both usable thresholds while retaining the same platform mechanism. The rear room faces west toward the main corridor. Its former east staircase and raised block are removed; two six-step side staircases now occupy the corridor beside the new front and reach the 136-MU roof level.
+
+The rear staircases share their eastern boundary directly with the room wall and keep only a 1-MU clearance from the older eastern-room wall, eliminating the visible side gaps without introducing overlapping linedefs. Their two top landing boundaries are open partitions, so neither side leaves a wall fragment across roof access. The NPC-room exit switch is an authored segment of its western wall rather than a floating two-sided middle texture.
 
 ## Collision and impact physics (V4.25.1)
 

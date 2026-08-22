@@ -1,5 +1,83 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Clear roof landings and NPC-archetype audit 4.26.5p
+
+**Map fix implemented — pending manual collision validation in GZDoom 4.14.2**
+
+The two boundaries shared by the rear room and the 136-MU top stair sectors remain valid two-sided partitions but no longer render or collide as finite wall faces. Both lateral routes can now reach the roof; the five lower boundaries on each staircase retain their closed wall faces.
+
+The definitive **`habitación con puerta trampa`** configuration is the complete 4.26.5p form: finite 128-MU room walls, solid walkable 128–136 MU roof, independent retracting floor panel, bilateral repeatable USE, solid jamb pillars that block lateral sight, and an unobstructed upper traversal plane. The keyed NPC room is the locked variant of the same template.
+
+The existing `CaelumCombatActor` is a combat-capable subset rather than a complete general NPC archetype. It already provides Health, eight combat attributes (Strength, Toughness, Agility, Dexterity, Resilience, Intelligence, Patience and Insight), Lucidity, Adrenaline, physical/magical accuracy and critical chance, evasion, armor/durability, pain, anatomy, mass and impact/fall/collision physics. It does not yet carry Constitution, Charisma, Empathy, Eloquence or an Anima pool. Those five fields must be added before NPC dialogue/faction and resource-limited magic are built; survival-only Hunger, Thirst, Sleep, Carry Load and Air remain intentionally player-only.
+
+No missing attribute values are assigned in this patch: Rulo, Ronnie, Argento and Caella retain their existing balance exactly.
+
+Manual validation:
+
+1. Climb both rear stairs and walk onto the roof without catching on a narrow wall fragment.
+2. Confirm the lower outer sides of both staircases remain closed.
+3. Recheck the rear door, jamb sight blocking and roof traversal after the boundary change.
+
+## Solid door frames, flush stairs and mounted exit 4.26.5o
+
+**Implemented — pending manual visibility and collision validation in GZDoom 4.14.2**
+
+The invisible 16×24-MU jamb partitions from 4.26.5n left a lateral sight slit beside each closed floor panel. Their sectors now begin at floor height 128 MU and carry finite `STARTAN3` lower textures on every exposed boundary. Each doorway therefore has a real two-pillar frame whose closed volume blocks sight and projectile targeting below the roof while retaining the 512-MU base ceiling and shared 128–136 MU roof slab above it.
+
+The rear staircases now reach x=1400 and use the rear-room wall as their shared eastern boundary; no duplicate line is authored. Their western edge moves from x=1288 to x=1281, leaving only 1 MU before the pre-existing eastern-room wall at x=1280. Zero clearance would require splitting and sharing that older wall across the individual step sectors; 1 MU is the closest conventional integer-grid placement that avoids overlaps while making the gap visually negligible.
+
+The freestanding NPC exit line at x=-2448 is removed. `SW1EXIT` and special 243 now occupy the central 128-MU segment of the actual western room wall at x=-2464, y=-64…64. It inherits the same finite wall collision and cannot float inside the room.
+
+Updated MAP01 structure: 130 vertices, 166 linedefs, 324 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced sector boundaries, no collinear overlap and no intersection outside shared vertices.
+
+Manual validation:
+
+1. Stand at oblique angles beside several closed doors and confirm the interior cannot be seen through either jamb.
+2. Confirm NPCs do not acquire or attack the player through a closed doorway, then acquire normally after opening it.
+3. Open every door and confirm both frame pillars remain finite and do not obstruct the central passage.
+4. Climb both rear staircases and inspect the 1-MU western clearance and flush shared eastern wall.
+5. Use the exit switch on the NPC room's western wall and confirm it no longer floats.
+
+## Reusable one-trap-door room replication 4.26.5n
+
+**Implemented — pending complete manual validation in GZDoom 4.14.2**
+
+The architecture validated through 4.26.5m is now named **`habitación con 1 puerta trampa`** in the project vocabulary. One instance consists of an interior sector, a 128–136 MU solid 3D-floor roof, a finite floor panel that retracts through `Plat_DownWaitUpStay`, and two invisible jamb partitions. Its base ceiling remains at 512 MU, so wall and door geometry never extends into the upper playable space and the roof remains traversable in every door state.
+
+MAP01 now contains eight instances: four central rooms, two eastern rooms, the NPC room and the rear room. Every door faces the corridor serving that room. The rear-room entrance has rotated from south to west. The NPC room retains silver lock 200 using the native UDMF `locknumber` field on both special-62 thresholds; the underlying trap-door motion is identical to the unlocked instances.
+
+The provisional staircase and 136-MU raised block east of the rear room are removed. Two staircases flank its new west-facing entrance. Each contains six 32-MU-deep steps and reuses the established floor heights 24, 48, 72, 96, 120 and 136 MU. They occupy the passage between the eastern rooms and the exterior face of the rear door, and their upper steps provide the roof-access jump across the existing 24-MU door depth.
+
+All 186 things remain present. Item coordinates are unchanged. The four `CaelumTrainingDummy` instances move 128 MU west, toward the player start, leaving the rear room empty without changing their common firing axis.
+
+Updated MAP01 structure: 132 vertices, 167 linedefs, 326 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced boundaries, no overlapping collinear linedefs and no intersections outside authored vertices.
+
+Manual validation:
+
+1. Open every unlocked room from outside and inside, then complete at least two full cycles per door.
+2. Confirm all seven unlocked doors face their corridors and none produces suspended or infinitely tall textures.
+3. Approach the NPC door without and with `CaelumSilverKey`; verify the localized lock response and successful opening only with the key.
+4. Enter every room and walk across representative roof areas, including all eight doorway roofs.
+5. Climb both new side staircases and cross from each 136-MU upper step onto the rear-room roof.
+6. Confirm the old eastern staircase and raised block are absent.
+7. Verify all pickups remain in their prior positions and all four training dummies are outside rooms on the shifted firing axis.
+
+## Door partition texture cleanup 4.26.5m
+
+**Implemented — pending visual validation in GZDoom 4.14.2**
+
+The 4.26.5l geometry and motion behaved correctly, but the auxiliary sectors introduced around the jambs still carried `STARTAN3` middle textures. After their base ceilings were raised to 512 MU for continuous roof traversal, those partition textures rendered as narrow suspended strips above the door.
+
+All sixteen middle-texture assignments belonging to the auxiliary partition boundaries and the moving-door side partitions are removed. The two side lines no longer use `midtex3d` or bottom-pegged middle-texture flags. Their finite `BIGDOOR2` lower textures remain, appearing only across the actual 128-MU floor-height difference while the panel is closed.
+
+MAP01 remains at 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Reference and closed-boundary validation pass; door motion and roof targets are unchanged.
+
+Manual validation:
+
+1. Inspect the doorway from outside and inside and confirm no narrow strips float above it.
+2. Open and close the door and confirm its finite front and side faces remain visible while closed.
+3. Walk over the complete roof and confirm the entrance remains traversable above.
+
 ## Independent finite door and continuous roof 4.26.5l
 
 **Implemented — pending manual validation in GZDoom 4.14.2**
@@ -297,7 +375,7 @@ MAP01 validation focus: finite room-wall height, real walkable 3D roofs, east-ro
 
 Active buckler block uses `2 × Toughness` for CaelumImpact tolerance and `2 × JumpZ` as Agility absorption. The latter applies to floor, actor and wall trauma. Stun sets active Agility absorption to zero. The buckler still uses 0.5× effective combat mass, so it remains easier to launch while making that displacement defensively survivable.
 
-MAP01 now has seven roofed structures: six equal test rooms plus the west NPC room. Outdoor vertical space is 512 MU.
+At V4.26.3, MAP01 had seven roofed structures: six equal test rooms plus the west NPC room. V4.26.5n supersedes that count with eight one-trap-door room instances. Outdoor vertical space remains 512 MU.
 
 ## Universal impact scale and anatomy response 4.26.2
 

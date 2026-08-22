@@ -77,6 +77,8 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
+- Promote `CaelumCombatActor` into the complete non-survival NPC stat archetype by adding Constitution, Charisma, Empathy, Eloquence and Anima; preserve Hunger, Thirst, Sleep, Carry Load and Air as player-only systems.
+- Define authored values for those missing fields per NPC instead of deriving or silently defaulting their personalities.
 - Add a shared Use-based NPC interaction layer.
 - Add data-driven dialogue foundations.
 - Add merchant inventories and buy/sell transactions using V4.31 economy data.
@@ -92,6 +94,8 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 - Replicate only the MAP01 architectural template that has passed manual validation.
 - Add locked/keyed door variants, roofed rooms and later multi-floor modules.
+
+The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive 4.26.5p configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel, continuous traversable roof and clear upper access boundaries. All eight MAP01 rooms use it, including the silver-key NPC variant. Future level work should instantiate or rotate this pattern instead of recreating wall, roof, jamb and door topology independently.
 - Establish world locations, travel links and caravan/event integration points.
 
 ### V4.35 — Calendar, Weather and Dynamic Events
