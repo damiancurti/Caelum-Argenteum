@@ -1,5 +1,40 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Bilateral room shell, usable door and environmental Adrenaline 4.26.5d
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated room's one-sided walls faced inward, leaving no exterior sidedefs to render from the field. The five room perimeter lines and two door jambs now separate their authored interior sectors from exterior sector 0 and use finite upper textures. They remain blocking walls, but both sides have valid sector ownership and visibility.
+
+The outer manual door line is reversed so sector 0 is its front and door sector 5 is its back. `Door_Raise` therefore receives USE from the exterior-facing side and operates on the door sector behind the line. The permanent linedef blocking flag has been removed from this opening; the closed door sector supplies collision until its ceiling rises.
+
+Environmental impact damage already skipped the direct received-damage Adrenaline event, but its shared Pain calculation could still grant Pain Adrenaline. Pain resolution now receives an explicit permission flag. Wall/floor impacts pass `false`; actor impacts and ordinary combat damage pass `true`. Environmental impacts may still cause Pain/stun, but neither their damage nor their Pain grants Adrenaline.
+
+Manual validation:
+
+1. The isolated room is visible from the exterior on every wall and jamb.
+2. USE from outside raises the door, which becomes passable, waits and closes.
+3. Walls remain solid and the room interior renders normally.
+4. A damaging wall collision may reduce HP/cause Pain but never increases Adrenaline.
+5. Actor-to-actor damage and Pain still grant their intended Adrenaline.
+
+## Final stair front-side correction and input-roadmap audit 4.26.5c
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+After V4.26.5b, the engine accepted the door repair and reported only linedef 82 as lacking a front. That line closes the sixth 136-MU stair sector.
+
+MAP01 now removes the two unreferenced door sidedefs left at indices 94 and 96 and remaps all subsequent live references. Linedef 82 is reversed together with its front/back assignment, preserving the same physical sector adjacency while making exterior sector 0 its explicit front and stair sector 12 its back. The map now contains 86 vertices, 83 linedefs, 154 sidedefs and 13 sectors; every sidedef is referenced exactly once and every sector boundary remains balanced.
+
+Manual validation:
+
+1. MAP01 loads without a line-82/front-sidedef error.
+2. The sixth stair remains visible, solid and climbable.
+3. The 136-MU platform remains walkable.
+4. The template door retains its V4.26.5b behavior.
+
+The roadmap input audit preserves the already implemented architecture: Zoom = Block, ranged AltFire = Aim and ranged Reload = magazine reload. User1 is the remaining slot for the future racial ability; User2 remains Seal Channel; User3 Tarot; User4 class ability.
+
 ## Canonical MAP01 topology correction and roadmap reconciliation 4.26.5b
 
 **Implemented — pending manual validation in GZDoom 4.14.2**

@@ -1269,7 +1269,8 @@ class CaelumCombatActor : Actor
                 UpdateCombatHealthEffects();
                 CalculateAndTriggerActorPain(
                     actualHealthLost,
-                    adrenalineRatioBeforeImpact
+                    adrenalineRatioBeforeImpact,
+                    LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR
                 );
                 if (LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR)
                 {
@@ -1376,7 +1377,8 @@ class CaelumCombatActor : Actor
             UpdateCombatHealthEffects();
             CalculateAndTriggerActorPain(
                 actualHealthLost,
-                adrenalineRatioBeforeDamage
+                adrenalineRatioBeforeDamage,
+                true
             );
             AddActorCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
@@ -1565,7 +1567,8 @@ class CaelumCombatActor : Actor
             UpdateCombatHealthEffects();
             CalculateAndTriggerActorPain(
                 actualHealthLost,
-                adrenalineRatioBeforeDamage
+                adrenalineRatioBeforeDamage,
+                true
             );
             AddActorCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
@@ -1782,7 +1785,8 @@ class CaelumCombatActor : Actor
 
     void CalculateAndTriggerActorPain(
         int actualHealthLost,
-        double adrenalineRatioBeforeDamage
+        double adrenalineRatioBeforeDamage,
+        bool grantPainAdrenaline
     )
     {
         LastCombatHealthLossPercent = 0.0;
@@ -1812,9 +1816,12 @@ class CaelumCombatActor : Actor
             {
                 SetState(painState);
                 LastCombatPainTriggered = true;
-                AddActorCombatAdrenaline(
-                    CaelumConstants.ADRENALINE_GAIN_ON_PAIN
-                );
+                if (grantPainAdrenaline)
+                {
+                    AddActorCombatAdrenaline(
+                        CaelumConstants.ADRENALINE_GAIN_ON_PAIN
+                    );
+                }
             }
         }
     }

@@ -1,5 +1,9 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.26.5d — Environmental Pain does not grant Adrenaline
+
+Wall and floor impacts already bypass the direct received-damage Adrenaline event. V4.26.5d closes the remaining shared-path leak: if environmental impact damage triggers the Pain state, that Pain may still immobilize/stun the body but does not grant Pain Adrenaline. Actor-to-actor impacts and ordinary combat damage retain their authored Pain Adrenaline behavior. No kinematic, energy, Toughness, armor, anatomy or damping formula changes in this correction.
+
 ## Status
 
 **V4.25.1 — implemented, pending manual validation**

@@ -6404,7 +6404,8 @@ class CaelumPlayer : DoomPlayer
                 UpdateHealthStateEffects();
                 CalculateAndTriggerPain(
                     actualHealthLost,
-                    adrenalineRatioBeforeImpact
+                    adrenalineRatioBeforeImpact,
+                    LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR
                 );
                 if (LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR)
                 {
@@ -6493,7 +6494,8 @@ class CaelumPlayer : DoomPlayer
             UpdateHealthStateEffects();
             CalculateAndTriggerPain(
                 actualHealthLost,
-                adrenalineRatioBeforeDamage
+                adrenalineRatioBeforeDamage,
+                true
             );
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
@@ -6752,7 +6754,11 @@ class CaelumPlayer : DoomPlayer
                 );
             }
             UpdateHealthStateEffects();
-            CalculateAndTriggerPain(actualHealthLost, adrenalineRatioBeforeDamage);
+            CalculateAndTriggerPain(
+                actualHealthLost,
+                adrenalineRatioBeforeDamage,
+                true
+            );
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
                 CaelumConstants.ADRENALINE_EVENT_DAMAGE
@@ -6885,7 +6891,11 @@ class CaelumPlayer : DoomPlayer
                 )
             );
             UpdateHealthStateEffects();
-            CalculateAndTriggerPain(actualHealthLost, adrenalineRatioBeforeDamage);
+            CalculateAndTriggerPain(
+                actualHealthLost,
+                adrenalineRatioBeforeDamage,
+                true
+            );
             if (!LastShieldBlockedAttack)
             {
                 AddCombatAdrenaline(
@@ -7185,7 +7195,8 @@ class CaelumPlayer : DoomPlayer
     // adrenaline percentage that existed before this hit.
     void CalculateAndTriggerPain(
         int actualHealthLost,
-        double adrenalineRatioBeforeDamage
+        double adrenalineRatioBeforeDamage,
+        bool grantPainAdrenaline
     )
     {
         LastHealthLossPercent = 0.0;
@@ -7225,10 +7236,13 @@ class CaelumPlayer : DoomPlayer
                 );
                 SetState(painState);
                 LastPainTriggered = true;
-                AddCombatAdrenaline(
-                    CaelumConstants.ADRENALINE_GAIN_ON_PAIN,
-                    CaelumConstants.ADRENALINE_EVENT_PAIN
-                );
+                if (grantPainAdrenaline)
+                {
+                    AddCombatAdrenaline(
+                        CaelumConstants.ADRENALINE_GAIN_ON_PAIN,
+                        CaelumConstants.ADRENALINE_EVENT_PAIN
+                    );
+                }
             }
         }
     }
@@ -9644,7 +9658,11 @@ class CaelumPlayer : DoomPlayer
         player.health = health;
 
         UpdateHealthStateEffects();
-        CalculateAndTriggerPain(testDamage, adrenalineRatioBeforeDamage);
+        CalculateAndTriggerPain(
+            testDamage,
+            adrenalineRatioBeforeDamage,
+            true
+        );
         AddCombatAdrenaline(
             CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
             CaelumConstants.ADRENALINE_EVENT_DAMAGE
@@ -10231,7 +10249,11 @@ class CaelumPlayer : DoomPlayer
                 defenseRatio
             );
             UpdateHealthStateEffects();
-            CalculateAndTriggerPain(LastArmorHealthDamage, adrenalineRatioBeforeDamage);
+            CalculateAndTriggerPain(
+                LastArmorHealthDamage,
+                adrenalineRatioBeforeDamage,
+                true
+            );
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
                 CaelumConstants.ADRENALINE_EVENT_DAMAGE

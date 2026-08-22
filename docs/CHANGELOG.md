@@ -1,5 +1,27 @@
 # Changelog
 
+## 4.26.5d — Visible room, usable door and environmental Adrenaline correction
+
+- Converted the five template-room perimeter walls into bilateral room/exterior lines.
+- Added exterior sidedefs and finite upper textures so the room renders from the field.
+- Converted both door jambs into bilateral door/exterior boundaries.
+- Reversed the outer door line so exterior sector 0 is its front and door sector 5 is its back.
+- Removed the door line's permanent blocking flag so `Door_Raise` can create a passable opening.
+- Preserved room, door, stairs and platform dimensions.
+- Added an explicit Pain-Adrenaline permission to player and Caelum NPC pain processing.
+- Disabled Pain Adrenaline for wall and floor impacts while preserving health loss, Pain/stun and actor-impact Adrenaline.
+- Changed no impact-energy, Toughness, armor, anatomy or acceleration formulas.
+
+## 4.26.5c — Final stair front side and input-roadmap audit
+
+- Removed the two orphan sidedefs left by the template-door correction.
+- Remapped all subsequent sidedef references into a compact 154-sidedef map.
+- Reversed linedef 82 together with its side assignments, preserving geometry while exposing exterior sector 0 as the explicit front.
+- Preserved the sixth stair's sector 12, height, dimensions and textures.
+- Corrected the roadmap to preserve the implemented Zoom Block, ranged AltFire Aim and ranged Reload systems.
+- Reserved User1 for racial ability, User2 for Seal Channel, User3 for Tarot and User4 for class ability.
+- Reframed V4.27 as completion/validation of the existing input architecture rather than a destructive remapping.
+
 ## 4.26.5b — Canonical MAP01 topology and roadmap reconciliation
 
 - Removed four provisional appended sidedefs from the architectural template experiment.
@@ -8,8 +30,8 @@
 - Restored the original room-front/door-back threshold sidedef pair.
 - Addressed the engine-reported front-sector/front-sidedef failures on lines 53, 54 and 82 and the disconnected right edge on line 52.
 - Added `docs/ROADMAP.md`, reconciling the old crafting/economy/NPC roadmap with the current partial implementations.
-- Defined V4.27 as the next major block: Fire/AltFire preservation, Reload-only ranged reload, Zoom-only ranged ADS, User1 Block, User2 Seal Channel, User3 Tarot and User4 class ability.
-- Reserved racial abilities for a dedicated multiplayer-safe Caelum action because native User1–User4 are fully allocated.
+- Added the initial V4.27 input-remapping draft; V4.26.5c supersedes that draft after auditing the already implemented Zoom Block, ranged AltFire Aim and ranged Reload behavior.
+- Initially proposed a dedicated racial-action key; V4.26.5c supersedes it by reserving the actually available User1 input for racial ability.
 - Changed no combat physics, balance values, crafting formulas, room dimensions or external assets.
 
 ## 4.26.5a — Architectural template topology correction

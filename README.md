@@ -12,6 +12,8 @@ This README is the public technical entry point for collaborators. The author's 
 
 The reconciled implementation order and authoritative target input mapping are maintained in [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
+The current combat-input baseline preserves **Zoom = persistent Block**, ranged **AltFire = Aim**, and ranged **Reload = magazine reload**. User1 is reserved for the future racial ability; User2 for Seal Channel; User3 for Tarot activation; and User4 for the class ability.
+
 ## Implementation status
 
 ### Implemented and tested
@@ -174,6 +176,16 @@ Stealth is now materialized as the documented Type-2 Agility derivative:
 Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
 
 MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
+
+## Visible architectural shell, usable door and environmental Adrenaline correction (V4.26.5d)
+
+The isolated template room is now a true bilateral sector module inside exterior sector 0. Its five room walls and two door jambs carry exterior back sides with finite upper textures, so the building is visible from the field while retaining solid collision. The outer door line faces the exterior for manual USE, targets door sector 5 on its back, and no longer carries a permanent blocking flag; the raised door can therefore be crossed.
+
+Wall and floor impacts still produce health loss, Pain and stun when their physical severity requires it, but environmental Pain no longer grants Adrenaline. Actor-to-actor impacts retain the authored received-damage and Pain Adrenaline behavior.
+
+## Final stair front-side correction (V4.26.5c)
+
+The only remaining node-builder failure was linedef 82, the closing edge of the sixth raised stair sector. MAP01 now removes the two orphan door sidedefs left by the earlier topology experiment, remaps every live sidedef reference, and represents line 82 in an equivalent reversed form with exterior sector 0 as its explicit front and stair sector 12 as its back. The physical sector relationship, textures and stair dimensions remain unchanged.
 
 ## Canonical architectural topology correction (V4.26.5b)
 

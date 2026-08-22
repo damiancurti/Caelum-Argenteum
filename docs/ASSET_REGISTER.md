@@ -1,5 +1,13 @@
 # Asset register
 
+## V4.26.5d asset note
+
+V4.26.5d changes MAP01 geometry, environmental-impact response code and documentation only. No new external art assets are introduced.
+
+## V4.26.5c asset note
+
+V4.26.5c corrects MAP01 sidedef ownership and roadmap documentation only. No new external art assets are introduced.
+
 ## V4.26.5b asset note
 
 V4.26.5b corrects MAP01 topology and adds roadmap/documentation updates only. No new external art assets are introduced.
