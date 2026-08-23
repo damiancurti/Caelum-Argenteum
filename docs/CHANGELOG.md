@@ -1,5 +1,43 @@
 # Changelog
 
+## 4.27.0q — Collision-mass hotfix and quadruped speed baseline
+
+- Fixed the GZDoom 4.14.2 compilation error caused by overriding the non-virtual `GetCollisionEffectiveMass()` method in `CaelumBull`.
+- Centralized temporary collision-mass changes in `CaelumCombatActor` through `CollisionEffectiveMassMultiplier`; the bull now selects the existing Tower Shield multiplier only during Charge without overriding collision code.
+- Set the bull's quadruped walking baseline to Speed 10 and its Charge speed to the exact native 2:1 run ratio, 20 MU/tic.
+- Preserved ordinary bull effective mass 900 and active-Charge effective mass 1800, independently from inventory load.
+- Recorded approval of the eight-room first-floor `1 | 2 | 1` distribution; its geometry remains isolated for the next patch.
+
+## 4.27.0p — Shared actor Air, cached bull UI and tower-mass Charge
+
+- Fixed the GZDoom 4.14.2 parse error caused by calling play-scope `GetBullRunningSpeed()` from the UI debug overlay.
+- Cached the bull's derived running speed in play scope and made the UI read the stored value only.
+- Moved current/maximum Air, regeneration and spending state into `CaelumCombatActor`, giving the resource to Rulo, Ronnie, Argento, Caella, the bull and future original Caelum actors.
+- Kept hunger, thirst, sleep and inventory load exclusive to player survival; NPC actors receive Air without those systems.
+- Applied the Tower Shield combat-mass multiplier 2.0 to the bull only while Charge is active, raising collision-effective mass from 900 to 1800 kg.
+- The actor debug page now displays Air for every inspected `CaelumCombatActor`.
+- Added the agreed first-floor distribution to the roadmap: one upper room over each of four outer lateral volumes and two over each of two central volumes, totaling eight.
+
+## 4.27.0o — Mansion gate leaf and stamina-driven bull charge
+
+- Applied project-owned mansion door leaf `CMDR03` to both visible sides of the main gate panel; its 64×128 repeat forms two leaves across the 128-MU opening.
+- Added the standard DoomPlayer walk/run speed relationship as a reusable constant without changing player movement.
+- Kept bull Speed 7 as its walking speed and derived Charge speed as walk speed × native run ratio 2 × Agility Type-4, resulting in approximately 15.164 MU/tic at Agility 20.
+- Added bull-only Air from Resilience Type-4, running consumption scaled by its 900-kg body mass and passive eight-minute recovery without humanoid survival resources.
+- Pain and Death now terminate active Charge velocity immediately.
+- Added bull Air and derived running speed to the inspected-combat-actor debug page.
+- Deferred first-floor geometry until the exact sixteen-door connectivity across the eight upper rooms is confirmed; no validated ground-floor contour changed.
+- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
+## 4.27.0n — Physical bull charge and closed main-gate platform
+
+- Replaced the bull's direct horn melee damage and common melee knockback with a true physical Charge movement.
+- The bull now faces its target for three tics and advances at its authored actor Speed 7 for five tics; only Impact Physics contact can inflict offensive damage.
+- Removed the former dagger-base 60 damage call, preventing a melee hit, 441-MU/tic knockback and secondary collision from stacking.
+- Reversed only the two main-gate threshold directions while preserving exterior front sides, moving-panel back sides and bilateral platform actions.
+- The moving door sector is now a consistently enclosed rectangle, so the surrounding exterior floor cannot rise and fall with the panel.
+- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
 ## 4.27.0m — Main-gate strip isolation and V4.27 validation update
 
 - Removed roof-control tag 100 from the main gate panel and both frame jambs.

@@ -2,6 +2,68 @@
 // torso y cuatro piernas; la cabeza sólo se resuelve en el frente del actor.
 class CaelumBull : CaelumCombatActor
 {
+    bool BullChargeActive;
+    double BullRunningSpeed;
+
+    double GetBullRunningSpeed()
+    {
+        double runToWalkRatio =
+            CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+        // Los cuadrúpedos usan Speed como marcha base. La embestida conserva
+        // la relación nativa correr/caminar 2:1: 10 de marcha, 20 de carga.
+        return Speed * runToWalkRatio;
+    }
+
+    double GetBullRunningAirCostPerSecond()
+    {
+        // El toro no tiene carga de inventario. Su masa corporal conserva el
+        // mismo multiplicador base de consumo que un personaje jugador.
+        return CaelumConstants.RUN_AIR_COST_PER_SECOND
+            * Max(0.0, Mass / 100.0);
+    }
+
+    void StopBullCharge()
+    {
+        BullChargeActive = false;
+        CombatAirSpending = false;
+        CollisionEffectiveMassMultiplier = 1.0;
+        Vel.X = 0.0;
+        Vel.Y = 0.0;
+    }
+
+    void BeginBullCharge()
+    {
+        double firstTicCost = GetBullRunningAirCostPerSecond() / TICRATE;
+        if (CurrentCombatAir < firstTicCost)
+        {
+            StopBullCharge();
+            return;
+        }
+        BullChargeActive = true;
+        CombatAirSpending = true;
+        CollisionEffectiveMassMultiplier =
+            CaelumConstants.SHIELD_TOWER_COMBAT_MASS_MULTIPLIER;
+        Vel.X = Cos(Angle) * BullRunningSpeed;
+        Vel.Y = Sin(Angle) * BullRunningSpeed;
+    }
+
+    // Inicia una embestida física en la dirección ya fijada por A_FaceTarget.
+    // No aplica daño ni empuje melee: el contacto lo resuelve Impact Physics.
+    action void A_CaelumBeginBullCharge()
+    {
+        CaelumBull bull = CaelumBull(self);
+        if (bull == null) { return; }
+        bull.BeginBullCharge();
+    }
+
+    action void A_CaelumEndBullCharge()
+    {
+        CaelumBull bull = CaelumBull(self);
+        if (bull == null) { return; }
+        bull.StopBullCharge();
+    }
+
     Default
     {
         Tag "$CA_BULL_NAME";
@@ -9,7 +71,7 @@ class CaelumBull : CaelumCombatActor
         Radius 15.6;
         Height 51.8;
         Mass 900;
-        Speed 7;
+        Speed 10;
         MeleeRange 64;
         MaxTargetRange 1024;
         Monster;
@@ -30,6 +92,18 @@ class CaelumBull : CaelumCombatActor
             CombatArmor.Durability[slot] = 0;
         }
         RecalculateCombatStatistics();
+        BullRunningSpeed = GetBullRunningSpeed();
+        StopBullCharge();
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        if (BullChargeActive)
+        {
+            double ticCost = GetBullRunningAirCostPerSecond() / TICRATE;
+            if (!TrySpendCombatAir(ticCost)) { StopBullCharge(); }
+        }
     }
 
     States
@@ -48,16 +122,18 @@ class CaelumBull : CaelumCombatActor
         BULL A 1;
         Goto See;
     Melee:
-        // La cornada adopta exactamente la base temporal y de daño de la
-        // daga T1: 8 tics totales y 60 puntos antes del perfil del atacante.
+        // Conserva el ciclo base de ocho tics, pero la cornada ya no es un
+        // ataque directo. Tras apuntar, el toro recorre cinco tics en Charge.
         BULL F 3 A_FaceTarget;
-        BULL G 0 A_CaelumMeleeAttack(60);
-        BULL G 5;
+        BULL G 5 A_CaelumBeginBullCharge;
+        BULL G 0 A_CaelumEndBullCharge;
         Goto See;
     Pain:
+        BULL H 0 A_CaelumEndBullCharge;
         BULL H 8 A_Pain;
         Goto See;
     Death:
+        BULL I 0 A_CaelumEndBullCharge;
         BULL I 5 A_Scream;
         BULL JKLM 5;
         BULL N 5 A_NoBlocking;

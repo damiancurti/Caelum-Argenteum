@@ -1,5 +1,86 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Collision-mass hotfix and quadruped speed baseline 4.27.0q
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bull no longer overrides `GetCollisionEffectiveMass()`, which is not virtual in `CaelumCombatActor`. Temporary effective-mass changes now use the shared `CollisionEffectiveMassMultiplier`: every combat actor begins at 1.0, the bull selects the established Tower Shield value 2.0 while Charge is active, and stopping Charge restores 1.0. This preserves 900 kg normally and 1800 kg during the embestida without coupling collision mass to inventory capacity.
+
+The quadruped movement baseline is now Speed 10. Charge applies the exact native walk/run ratio 2:1 and therefore stores 20 MU/tic; Agility no longer modifies this authored movement value. Shared Air consumption and regeneration remain unchanged.
+
+Manual validation:
+
+1. Launch GZDoom 4.14.2 and confirm `CaelumBull.zs` compiles without a virtual-function error.
+2. Inspect the bull debug page and confirm walk speed 10, cached Charge speed 20 and full shared Air.
+3. Confirm effective collision mass is 900 outside Charge, 1800 during Charge and returns to 900 after Charge, Pain or Death.
+4. Confirm Charge still stops when Air is insufficient.
+
+The eight-room first-floor `1 | 2 | 1` distribution is approved. No first-floor sector was mixed into this compilation hotfix; construction is the next isolated map patch.
+
+## Shared actor Air, cached bull UI and tower-mass Charge 4.27.0p
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+V4.27.0o attempted to call `GetBullRunningSpeed()` from the UI debug overlay. GZDoom correctly rejected this because ordinary actor functions belong to play scope. The bull now calculates and stores `BullRunningSpeed` during play initialization; UI reads that field without invoking simulation code.
+
+Air is no longer bull-specific. `CaelumCombatActor` owns current Air, maximum Air, passive regeneration and a spending flag. Every original Caelum actor that initializes a combat profile therefore receives maximum Air from Resilience Type-4 and starts full. At present only the bull spends it because Charge is the first NPC running action; other NPCs still regenerate and expose the resource for future running, attacks, jumping, blocking or casting rules. None receives player hunger, thirst, sleep or inventory-load processing.
+
+The current code distinction is behavioral rather than systemic: Rulo, Ronnie, Argento, Caella and the bull all inherit `CaelumCombatActor` and currently carry GZDoom's `Monster` flag, so all five use hostile monster AI in MAP01. The four named humanoids are NPC characters by game design; the bull is the first non-humanoid monster archetype. They share combat/physics/resources while dialogue, faction and friendliness remain future World/NPC layers.
+
+During Charge, `CaelumBull.GetCollisionEffectiveMass()` applies the existing Tower Shield multiplier 2.0. Its ordinary effective body mass remains 900 kg; only the active embestida resolves as 1800 kg. Speed, raw Mass, knockback resistance and non-Charge collisions are unchanged.
+
+The accepted first-floor distribution uses the six lateral support volumes: each of four outer supports carries one upper room, and each of two central supports carries two smaller rooms. The resulting north/south `1 | 2 | 1` rows total eight rooms and preserve enlarged terrace areas for later staircases. Exact wall coordinates and the second-door orientations remain a visual approval gate before UDMF geometry is added.
+
+Manual validation:
+
+1. Launch GZDoom 4.14.2 and confirm actor parsing completes without a UI/play-scope error.
+2. Inspect Rulo, Ronnie, Argento, Caella and the bull on debug page 5; each must display current/maximum Air.
+3. Confirm the bull still shows cached run speed approximately 15.164 MU/tic.
+4. Compare walking contact against active Charge: debug collision mass must be 900 versus 1800 kg.
+5. Repeat Charge until Air falls, then verify passive recovery and no hunger/thirst/sleep fields on actors.
+
+MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
+## Mansion gate leaf and stamina-driven bull charge 4.27.0o
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The validated main-gate geometry is unchanged. Its four threshold sidedefs now use project-owned mansion leaf `CMDR03` instead of `STARTAN3`. The source is a separate 64×128 door leaf; natural horizontal repetition across the 128-MU panel presents a two-leaf gate from both sides while the map-built jambs remain independent.
+
+GZDoom monsters expose one actor `Speed`; they do not natively manage a player-style walk/run toggle or stamina. The bull therefore keeps Speed 7 as walking/chase speed and derives Charge speed from the standard DoomPlayer ratio (`50/3 ÷ 25/3 = 2`) plus Agility Type-4. With Agility 20, Charge begins at approximately 15.164 MU/tic. Bull Air is `1000 × Resilience Type-4`, giving approximately 1083.168 at Resilience 20. While charging it spends the player's two base running-Air units per second multiplied by body-mass ratio 9, or 18 Air/second; outside Charge it refills over the same 480-second full-recovery interval. It has no hunger, thirst, sleep, inventory load or humanoid survival processing.
+
+The actor debug page identifies the bull correctly and displays current/maximum Air plus derived run speed, making the custom non-player resource testable.
+
+The first-floor request is recorded but geometry remains deliberately untouched in this patch. The measured ground-floor layout contains six central north/south rooms, one western NPC room, one eastern rear room, and four closed intermediate staircase volumes. Each intermediate volume can geometrically receive the descending panels of the two adjacent upper rooms. The exact connection of the remaining upper doors and the requested two-door topology per room must be fixed before adding overlapping 3D-floor architecture.
+
+Manual validation:
+
+1. Inspect the main gate from both sides and confirm two mansion leaves move with only the central panel.
+2. Inspect the bull debug page: maximum Air should be approximately 1083.168 and Charge speed approximately 15.164 MU/tic.
+3. Observe ordinary chase at Speed 7 and Charge at the visibly faster derived running speed.
+4. Repeat charges until Air decreases; confirm an empty resource prevents Charge and passive recovery restores it.
+5. Trigger Pain during Charge and confirm horizontal Charge velocity stops immediately.
+
+MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
+## Physical bull charge and closed main-gate platform 4.27.0n
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bull no longer performs a direct melee horn attack. Its sole attack is now Charge: three tics face the current target and the existing two-frame Charge animation then advances for five tics at the bull's authored actor Speed 7. No `A_CaelumMeleeAttack`, fixed damage or common attack-push call remains. A successful body contact is resolved once by the existing Impact Physics latch, using actual closing speed and the two effective masses. This removes the previous stack of 540 direct damage, approximately 441.6 MU/tic melee thrust and a possible secondary wall/body impact.
+
+The screenshot of the moving exterior floor identified an orientation error rather than a roof-control leak. Both gate thresholds had the correct exterior/door sector references but ran in the wrong direction, placing the door's back side outside its visual rectangle. Their endpoints are now reversed: the western threshold runs north-to-south and the eastern threshold south-to-north. The special remains on both lines with exterior at the front and moving panel at the back, but the platform contour now closes around only the intended 24×128-MU panel.
+
+Manual validation:
+
+1. Activate the gate from both sides and confirm only the central panel moves; every surrounding exterior-floor tile must remain at height 0.
+2. Complete four open/close cycles and confirm the frame, top traversal and collision remain finite.
+3. Let the bull contact a stationary character in open ground and confirm there is one `CaelumImpact` result with no preceding melee event.
+4. Sidestep during the three-tic tell and confirm the five-tic Charge keeps its committed direction rather than homing.
+5. Compare standing, walking and running head-on contacts to verify that actual closing speed changes the result without producing the former artificial 441.6-MU/tic launch.
+
+MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
 ## Main-gate strip isolation and bull damage diagnosis 4.27.0m
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

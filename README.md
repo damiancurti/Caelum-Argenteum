@@ -20,6 +20,8 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 The current MAP01 construction prototype is based on the stable pre-gate V4.26.5r layout. It retains eight validated trap-door rooms and aligned staircase pairs, restores the finite walls beside the rear-room entrance, and roofs only the four closed regions behind the intermediate staircases. The complete central corridor remains open to the sky, with no main corridor gate or rejected terrace partition.
 
+The current actor hotfix centralizes temporary effective-mass changes without virtual overrides. The bull uses Speed 10 while walking and an exact 20 MU/tic during its Air-driven Charge, with effective mass 900 normally and 1800 only during Charge. The approved next map block adds eight smaller upper rooms in two `1 | 2 | 1` rows without altering the validated ground floor.
+
 ### Implemented and tested
 
 - Character creation foundation with race, dual-class/profession, sex, height, attribute layers, and twelve primary attributes.
@@ -133,6 +135,12 @@ V4.27.0k isolates every intermediate roof from adjacent room walls using the pre
 V4.27.0l gives the bull the Tier-1 Dagger's base horn values (60 damage, eight attack tics) while retaining its Caelum actor statistics and 900-kg physical scaling. MAP01 adds only a compact main gate panel and continuous frame at the true western entrance; it creates no corridor, roof, connector or lateral extension.
 
 V4.27.0m removes the room-roof 3D-floor target tag from the gate's conventional raised-floor sectors, eliminating the forward infinite strip without changing its geometry or activation. Giant Gauntlets Block, charged magical radius and User1–User4 HUD routing are manually confirmed. The bull's current horn remains melee; its independent 900-kg/Strength knockback can cause a much larger secondary Impact Physics event when the target hits another body or wall.
+
+V4.27.0n supersedes that bull contract: the bull now attacks only through a committed physical Charge, with no direct melee damage or melee knockback. The main-gate thresholds are reoriented around the moving rectangle, preventing exterior floor from joining the platform while preserving bilateral use and all dimensions.
+
+V4.27.0o textures the validated gate with the project-owned `CMDR03` mansion leaf and gives the bull an explicit Caelum run/Air model. Charge speed derives from its walking Speed, the native DoomPlayer 2:1 run ratio and Agility Type-4; bull-only Air uses Resilience, body-mass running cost and passive recovery without adding survival resources to humanoid NPCs. First-floor mansion construction is recorded as the next isolated map block but awaits the exact two-door connectivity of all eight upper rooms.
+
+V4.27.0p moves Air into the shared `CaelumCombatActor` resource layer, fixes UI/play separation by caching bull run speed, and gives active Charge the existing Tower Shield 2.0 combat-mass multiplier. All original Caelum NPC/monster actors now possess Air without player survival needs. The approved first-floor schematic distributes rooms `1 | 2 | 1` over each north/south set of three lateral supports.
 
 Caelum NPCs use the same twelve primary attributes as player characters while intentionally omitting player-only survival resources. They also carry current and maximum Anima using the player formula based on effective Patience after equipment. Intelligence bonuses improve magical performance but do not directly increase Anima capacity: Caella's magic helmet supplies +5 Intelligence, while her separate +5 Patience gloves raise maximum Anima from the 2710 base at Patience 18 to 3760 at effective Patience 23.
 

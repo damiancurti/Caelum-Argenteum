@@ -6,6 +6,8 @@ The private design documentation supplied by Damian Curti remains authoritative 
 
 The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
 
+The next architectural block is the first mansion floor: eight smaller rooms distributed across the six validated lateral support volumes. In each north/south row, the two outer supports carry one room each and the central support carries two, producing the approved `1 | 2 | 1` distribution and eight rooms total. Every room has two trap doors and a walkable setback/balcony; the existing staircase-gap width is the balcony reference. Descending panels terminate inside the closed lower volumes rather than occupied ground-floor rooms. The wider remaining terrace areas are reserved for later staircases. Construction begins in the patch after V4.27.0q, while the validated ground-floor geometry remains frozen as the regression baseline.
+
 ## 1. Reconciliation with the old roadmap
 
 | Old block | Current status | Remaining work |
@@ -50,7 +52,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 - Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
 - Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
 
-Pain cancellation of active Block, active charge and the stored charged window is manually confirmed. Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and the visible HUD acknowledgement for User1–User4 are also confirmed. Before closing V4.27, manually confirm the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix across every weapon family and resolve the bull horn's authored melee/charge/impact contract. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
+Pain cancellation of active Block, active charge and the stored charged window is manually confirmed. Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and the visible HUD acknowledgement for User1–User4 are also confirmed. The bull horn contract is now authored as a physical Charge-only attack: no direct melee damage or melee knockback remains. Before closing V4.27, manually confirm the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix across every weapon family, the corrected gate platform contour and the bull's single-contact Charge result. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
 
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 

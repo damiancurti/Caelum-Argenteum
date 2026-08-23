@@ -644,6 +644,9 @@ class CaelumConstants : Object
     // GZDoom PlayerPawn defaults use movement x1 and JumpZ 8. Fixed baselines
     // prevent the effective percentages from accumulating every game tic.
     const GZDOOM_BASE_MOVEMENT = 1.0;
+    // El DoomPlayer estándar alcanza 25/3 MU por tic caminando y el doble
+    // corriendo. Los actores Caelum reutilizan esta relación, no su velocidad.
+    const GZDOOM_BASE_MAX_WALK_SPEED = 25.0 / 3.0;
     // Velocidad terminal horizontal del DoomPlayer estándar al correr sobre
     // suelo normal (50/3 MU por tic). ForwardMove escala este valor, mientras
     // que asignar Vel requiere unidades físicas y no el multiplicador 1.0.

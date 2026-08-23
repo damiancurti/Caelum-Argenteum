@@ -2939,6 +2939,7 @@ class CaelumDebugOverlay : EventHandler
             if (CaelumCaella(actor) != null) { actorNameKey = "CA_CAELLA_NAME"; }
             else if (CaelumRulo(actor) != null) { actorNameKey = "CA_RULO_NAME"; }
             else if (CaelumRonnie(actor) != null) { actorNameKey = "CA_RONNIE_NAME"; }
+            else if (CaelumBull(actor) != null) { actorNameKey = "CA_BULL_NAME"; }
             String healthStateKey = actor.CombatHealthState
                 == CaelumConstants.HEALTH_STATE_BADLY_WOUNDED
                 ? "CA_HEALTH_STATE_BADLY_WOUNDED"
@@ -3032,6 +3033,24 @@ class CaelumDebugOverlay : EventHandler
                 StringTable.Localize(localPlayer.LastIncomingActorCriticalHit
                     ? "CA_CRITICAL_HIT" : "CA_CRITICAL_NORMAL", false)
             );
+            String actorAirLine = String.Format(
+                "%s: %.2f/%.2f",
+                StringTable.Localize("CA_HUD_AIR", false),
+                actor.CurrentCombatAir,
+                actor.MaximumCombatAir
+            );
+            CaelumBull inspectedBull = CaelumBull(actor);
+            if (inspectedBull != null)
+            {
+                actorAirLine = String.Format(
+                    "%s: %.2f/%.2f   %s: %.2f",
+                    StringTable.Localize("CA_HUD_AIR", false),
+                    actor.CurrentCombatAir,
+                    actor.MaximumCombatAir,
+                    StringTable.Localize("CA_RESOURCE_ACTOR_SPEED", false),
+                    inspectedBull.BullRunningSpeed
+                );
+            }
 
             Screen.DrawText(DebugFont, Font.CR_LIGHTBLUE, 20.0, 62.0, actorIdentityLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
@@ -3053,6 +3072,9 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_RED, 20.0, 266.0, incomingCriticalLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            Screen.DrawText(DebugFont, Font.CR_BLUE, 20.0, 286.0, actorAirLine,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true);
             return;
         }
 

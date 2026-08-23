@@ -25,6 +25,10 @@ class CaelumCombatActor : Actor
     int CombatEloquence;
     double CurrentCombatAnima;
     double MaximumCombatAnima;
+    double CurrentCombatAir;
+    double MaximumCombatAir;
+    double CombatAirRegenerationPerSecond;
+    bool CombatAirSpending;
     bool CombatProfileInitialized;
     double CombatBaseSpeed;
     double CombatPhysicalPowerMultiplier;
@@ -33,6 +37,7 @@ class CaelumCombatActor : Actor
 
     // V4.25.1 — física de colisión compartida con el jugador.
     double CollisionDamageMultiplier;
+    double CollisionEffectiveMassMultiplier;
     int LastImpactKind;
     double LastImpactDeltaSpeed;
     double LastImpactEquivalentTics;
@@ -131,6 +136,7 @@ class CaelumCombatActor : Actor
     {
         Super.PostBeginPlay();
         CollisionDamageMultiplier = 1.0;
+        CollisionEffectiveMassMultiplier = 1.0;
         CombatBaseSpeed = Speed;
         CombatPhysicalPowerMultiplier = Max(0.0, Mass / 100.0);
         CombatMaximumHealth = Max(1, health);
@@ -305,8 +311,9 @@ class CaelumCombatActor : Actor
         CombatProfileInitialized = true;
         RecalculateCombatStatistics();
         // Los NPC comienzan con el recurso completo, igual que un personaje
-        // jugador recién inicializado; recalcular nunca concede Ánima gratis.
+        // jugador recién inicializado; recalcular nunca concede recursos gratis.
         CurrentCombatAnima = MaximumCombatAnima;
+        CurrentCombatAir = MaximumCombatAir;
     }
 
     void RecalculateCombatStatistics()
@@ -320,6 +327,15 @@ class CaelumCombatActor : Actor
             0.0,
             MaximumCombatAnima
         );
+        MaximumCombatAir = CaelumConstants.BASE_AIR_CAPACITY
+            * CalculateActorType4Percent(CombatResilience) / 100.0;
+        CurrentCombatAir = Clamp(
+            CurrentCombatAir,
+            0.0,
+            MaximumCombatAir
+        );
+        CombatAirRegenerationPerSecond = MaximumCombatAir
+            / CaelumConstants.AIR_FULL_RECOVERY_SECONDS;
         MaximumCombatAdrenaline = 1000.0
             * (100.0 + 2.0 * CombatResilience
                 * (CombatResilience + 1) / 101.0) / 100.0;
@@ -340,6 +356,19 @@ class CaelumCombatActor : Actor
     double CalculateActorType2Percent(int level)
     {
         return level * (level + 1) / 101.0;
+    }
+
+    double CalculateActorType4Percent(int level)
+    {
+        return 100.0 + 2.0 * level * (level + 1) / 101.0;
+    }
+
+    bool TrySpendCombatAir(double requestedAmount)
+    {
+        double amount = Max(0.0, requestedAmount);
+        if (CurrentCombatAir < amount) { return false; }
+        CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
+        return true;
     }
 
     void UpdateActorOffensiveStatistics()
@@ -575,7 +604,7 @@ class CaelumCombatActor : Actor
         {
             result += Max(0.0, CombatArmor.GetTotalWeight());
         }
-        return Max(1.0, result);
+        return Max(1.0, result * Max(0.0, CollisionEffectiveMassMultiplier));
     }
 
     double GetImpactMaximumHealth()
@@ -2100,6 +2129,14 @@ class CaelumCombatActor : Actor
 
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
+        if (health > 0 && !CombatAirSpending
+            && CurrentCombatAir < MaximumCombatAir)
+        {
+            CurrentCombatAir = Min(
+                MaximumCombatAir,
+                CurrentCombatAir + CombatAirRegenerationPerSecond / TICRATE
+            );
+        }
         if (health > 0
             && CurrentCombatLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
         {
