@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.27.0k — Corrected bull animation atlas, isolated roofs and visible ability acknowledgement
+
+- Re-extracted the corrected bull atlas into 70 clean transparent sprites: eight rotations for Idle, two Walk frames, two Run frames, two Charge frames and Pain, plus six non-rotating Death frames.
+- Activated the supplied Walk, Charge, Pain and complete Death sequences in `CaelumBull` while preserving the original art and deterministic extractor.
+- Rebuilt all four stair-back roofs at the exact 119-MU final-step width with the established 1-MU room clearance. No roof target now owns or replaces a room wall.
+- Restored the complete original room-side linedefs beside every staircase and removed the 3D-floor endpoint responsible for vertical projections.
+- Replaced console-only User1–User4 acknowledgements with a localized two-second gameplay HUD message, independent of the user's console-message configuration.
+- Preserved the bull's provisional horn base damage of 120; its current 900-kg physical multiplier makes the ordinary calculated hit 1080 before health-state and critical processing.
+- MAP01 remains at 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
+
+## 4.27.0j — Giant Gauntlets Block, first quadruped monster and input acknowledgements
+
+- Removed the eight 1-MU top-step bridge linedefs that produced a narrow vertical projection; every final stair now shares the complete front boundary of its roofed closure.
+- Made Giant Gauntlets a self-contained Block source on Zoom without requiring an equipped shield. Coverage, physical/magical defense, Air load, acrobatic impact handling and combat-mass behavior match a same-tier Buckler; absorbed damage wears the gauntlets' own durability.
+- Added localized successful-use acknowledgements to the provisional racial, Seal Channel, equipped Tarot and class-ability hooks without assigning final effects.
+- Added `CaelumBull`, the first fully hostile monster and quadruped anatomy model: physical attributes 40, technical attributes 20, social/mental attributes 2, six anatomical regions and a front-only critical head.
+- Set the bull's physical body to 900 kg, 1.50 m high and approximately 0.90 m wide, represented by a 51.8-MU height and 15.6-MU collision radius at the existing player scale.
+- Cropped eight clean directional bull sprites plus the final corpse from the author-supplied atlas. Overlapping movement/charge/pain cells remain deliberately deferred rather than shipping fragmented art.
+- Added one bull to the north side of MAP01's entrance for Pain/cancellation testing without blocking the central corridor.
+- MAP01 now contains 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
+
 ## 4.27.0i — Roofed stair-back closures, direct jewelry spawn and authoritative face
 
 - Rebuilt each intermediate stair-back closure as one normal target sector plus one independent raised rear-wall sector, sharing boundaries with its room and final stair.

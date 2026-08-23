@@ -2307,10 +2307,8 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         double heightRatio = victim.Height > 0.0
             ? Clamp((Pos.Z - victim.Pos.Z) / victim.Height, 0.0, 1.0)
             : 0.60;
-        int vulnerabilityGrade = combatTarget.RegisterAnatomyImpact(
-            heightRatio,
-            0.50
-        );
+        int vulnerabilityGrade =
+            combatTarget.RegisterDirectionalAnatomyImpact(self, heightRatio);
         combatTarget.RegisterPendingCriticalHit(CaelumCriticalHit);
         double multiplier = combatTarget.GetActorVulnerabilityMultiplier(
             vulnerabilityGrade
@@ -2537,9 +2535,8 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
         double heightRatio = victim.Height > 0.0
             ? Clamp((Pos.Z - victim.Pos.Z) / victim.Height, 0.0, 1.0)
             : 0.60;
-        int vulnerabilityGrade = combatTarget.RegisterAnatomyImpact(
-            heightRatio, 0.50
-        );
+        int vulnerabilityGrade =
+            combatTarget.RegisterDirectionalAnatomyImpact(self, heightRatio);
         combatTarget.RegisterPendingCriticalHit(CaelumCriticalHit);
         double multiplier = combatTarget.GetActorVulnerabilityMultiplier(
             vulnerabilityGrade

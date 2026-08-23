@@ -1,5 +1,51 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Isolated terrace roofs, corrected bull animation and HUD acknowledgement 4.27.0k
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The roof defect and missing room walls had one cause: 4.27.0i/j retargeted long room boundaries to the new roof sectors. Because room and connector shared floor height while only one received the 3D floor, the renderer could omit the original lower wall and expose a vertical endpoint face. Every roof module now uses the exact existing final-step span (`x=-24…95` or `x=641…760`) and retains the established 1-MU clearance from room walls at `x=-25/96` or `x=640/761`. Original room linedefs are untouched. The stair threshold is the sole shared boundary; three target boundaries and the independent rear-wall sector complete each conventional contour.
+
+The corrected author-supplied atlas provides clean non-overlapping cells. The deterministic extractor now produces 64 rotating state sprites (`A`–`H`, rotations 1–8) and six death sprites (`I0`–`N0`). The bull uses Idle, two-frame Walk, two-frame Charge, directional Pain and the full six-frame Death sequence. The supplied Run frames are registered and ready for a later distinct chase/charge-speed state.
+
+User1–User4 previously called `A_Log`, which respects console/message visibility and did not guarantee a gameplay HUD result. Each routed input now starts a play-scope acknowledgement timer; the HUD renders the localized success text centered for two seconds.
+
+The bull's high damage is currently mechanical rather than hidden: `A_CaelumMeleeAttack(120)` supplies base horn damage 120, and `PrepareActorOutgoingDamage` multiplies physical actor damage by `Mass / 100`. At 900 kg the normal calculated value is therefore `120 × 9 = 1080`, before health performance and critical processing. Strength 40 currently affects physical push force, accuracy/critical derive from the technical profile, and target defense/vulnerability apply afterward. Final horn base damage, attack cadence, walk/run/charge speeds, sight/hearing ranges, Pain resistance and intended health tier remain author-controlled values.
+
+Manual validation:
+
+1. Inspect both sides of all four stair/room pairs: every room wall must be visible and no vertical column may extend above the 136-MU terrace.
+2. Walk every roof and confirm the 1-MU isolation produces no hole large enough to affect traversal.
+3. Observe the bull from all eight directions during movement, attack, Pain and Death.
+4. Press User1–User4 once with each weapon family and confirm the green localized HUD acknowledgement appears once per press.
+5. Record ordinary and critical bull damage before authoring the final horn base value.
+
+MAP01 structure: 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
+
+## Giant Gauntlets Block and first quadruped monster 4.27.0j
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The narrow projection beside the new terrace came from eight 1-MU bridge linedefs between the 119-MU final stair and the 121-MU closure. Each final-step linedef now spans and owns the full shared boundary directly. The closure remains conventional and closed, with no replacement middle texture or free edge.
+
+Giant Gauntlets now block with the weapon itself. Zoom can enter Block even when no shield is equipped, the HUD displays the gauntlets, and the complete active Block source reports same-tier Buckler coverage (120°), defense (50/60/70), equivalent Air load, acrobatic absorption and combat-mass behavior. Durability loss is committed to the gauntlets rather than to an unrelated equipped shield.
+
+`CaelumBull` is the first hostile quadruped. Its profile is 40 Strength/Toughness/Constitution; 20 Agility/Dexterity/Resilience; and 2 in Charisma/Empathy/Eloquence/Intelligence/Patience/Insight. The physical actor uses 900 kg, 51.8 MU height and 15.6 MU radius, corresponding to approximately 1.50 m at the shoulder and 0.90 m body width under the established 62.2-MU/1.80-m player scale. GZDoom still uses a cylindrical collision body, so longitudinal length is represented visually and anatomically rather than by a rectangular collider.
+
+The bull anatomy contains six ordered regions: front head, torso, front-left leg, front-right leg, rear-left leg and rear-right leg. Incoming melee and projectile contacts now supply their direction relative to the target; the critical head region can therefore be selected only from the animal's front. Torso and legs reuse the established sensitive and neutral natural grades.
+
+Manual validation:
+
+1. Inspect all eight former 1-MU joins and confirm the narrow vertical projection is gone while every roof remains traversable.
+2. Equip Giant Gauntlets without a shield, press Zoom and verify the gauntlet HUD layer, 120° coverage, Buckler-equivalent defense/Air behavior and weapon durability loss.
+3. Begin Reload charge and let the bull damage the player; a successful Pain state must cancel both the active charge and stored charged window.
+4. Attack the bull from front, side and rear at head height, then target each lower quadrant and verify the reported anatomical region/vulnerability.
+5. Press User1–User4 with physical, ranged and magical weapons and confirm one localized successful-use message per press.
+
+The debug overlay already reports the resolved explosion radius numerically. A charged magical area uses `sqrt(2)` times the ordinary linear radius, which is exactly twice the circular area even before a permanent explosion animation exists.
+
+MAP01 structure: 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
+
 ## Roofed stair-back regions, direct jewelry spawn and face regression 4.27.0i
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

@@ -12,10 +12,14 @@ class CaelumAnatomyProfile : Object
     double RegionMaximumHeight[16];
     double RegionMinimumLateral[16];
     double RegionMaximumLateral[16];
+    double RegionMinimumForward[16];
+    double RegionMaximumForward[16];
+    bool UsesDirectionalRegions;
 
     void ClearRegions()
     {
         RegionCount = 0;
+        UsesDirectionalRegions = false;
     }
 
     void AddRegion(
@@ -39,6 +43,31 @@ class CaelumAnatomyProfile : Object
         RegionMaximumHeight[index] = Clamp(maximumHeight, 0.0, 1.0);
         RegionMinimumLateral[index] = Clamp(minimumLateral, 0.0, 1.0);
         RegionMaximumLateral[index] = Clamp(maximumLateral, 0.0, 1.0);
+        RegionMinimumForward[index] = -1.0;
+        RegionMaximumForward[index] = 1.0;
+    }
+
+    void AddDirectionalRegion(
+        int location,
+        int vulnerability,
+        double minimumHeight,
+        double maximumHeight,
+        double minimumLateral,
+        double maximumLateral,
+        double minimumForward,
+        double maximumForward
+    )
+    {
+        AddRegion(
+            location, vulnerability, minimumHeight, maximumHeight,
+            0.0, 1.0
+        );
+        int index = RegionCount - 1;
+        RegionMinimumLateral[index] = Clamp(minimumLateral, -1.0, 1.0);
+        RegionMaximumLateral[index] = Clamp(maximumLateral, -1.0, 1.0);
+        RegionMinimumForward[index] = Clamp(minimumForward, -1.0, 1.0);
+        RegionMaximumForward[index] = Clamp(maximumForward, -1.0, 1.0);
+        UsesDirectionalRegions = true;
     }
 
     void InitializeHumanoid()
@@ -67,6 +96,36 @@ class CaelumAnatomyProfile : Object
         );
     }
 
+    void InitializeBullQuadruped()
+    {
+        ClearRegions();
+        // La cabeza ocupa el frente del volumen y precede al torso. Las cuatro
+        // piernas comparten localización de armadura pero conservan regiones
+        // independientes: delantera/trasera e izquierda/derecha.
+        AddDirectionalRegion(
+            CaelumConstants.HIT_LOCATION_HEAD,
+            CaelumConstants.VULNERABILITY_CRITICAL_POINT,
+            0.42, 1.00, -1.00, 1.00, 0.45, 1.00
+        );
+        AddDirectionalRegion(
+            CaelumConstants.HIT_LOCATION_TORSO,
+            CaelumConstants.VULNERABILITY_SENSITIVE_POINT,
+            0.42, 1.00, -1.00, 1.00, -1.00, 1.00
+        );
+        AddDirectionalRegion(CaelumConstants.HIT_LOCATION_LEGS,
+            CaelumConstants.VULNERABILITY_NEUTRAL_POINT,
+            0.00, 0.42, -1.00, 0.00, 0.00, 1.00);
+        AddDirectionalRegion(CaelumConstants.HIT_LOCATION_LEGS,
+            CaelumConstants.VULNERABILITY_NEUTRAL_POINT,
+            0.00, 0.42, 0.00, 1.00, 0.00, 1.00);
+        AddDirectionalRegion(CaelumConstants.HIT_LOCATION_LEGS,
+            CaelumConstants.VULNERABILITY_NEUTRAL_POINT,
+            0.00, 0.42, -1.00, 0.00, -1.00, 0.00);
+        AddDirectionalRegion(CaelumConstants.HIT_LOCATION_LEGS,
+            CaelumConstants.VULNERABILITY_NEUTRAL_POINT,
+            0.00, 0.42, 0.00, 1.00, -1.00, 0.00);
+    }
+
     int FindRegion(double heightRatio, double lateralRatio)
     {
         double normalizedHeight = Clamp(heightRatio, 0.0, 1.0);
@@ -77,6 +136,34 @@ class CaelumAnatomyProfile : Object
                 && normalizedHeight <= RegionMaximumHeight[i]
                 && normalizedLateral >= RegionMinimumLateral[i]
                 && normalizedLateral <= RegionMaximumLateral[i])
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    int FindDirectionalRegion(
+        double heightRatio,
+        double lateralRatio,
+        double forwardRatio
+    )
+    {
+        if (!UsesDirectionalRegions)
+        {
+            return FindRegion(heightRatio, Abs(lateralRatio));
+        }
+        double normalizedHeight = Clamp(heightRatio, 0.0, 1.0);
+        double normalizedLateral = Clamp(lateralRatio, -1.0, 1.0);
+        double normalizedForward = Clamp(forwardRatio, -1.0, 1.0);
+        for (int i = 0; i < RegionCount; i++)
+        {
+            if (normalizedHeight >= RegionMinimumHeight[i]
+                && normalizedHeight <= RegionMaximumHeight[i]
+                && normalizedLateral >= RegionMinimumLateral[i]
+                && normalizedLateral <= RegionMaximumLateral[i]
+                && normalizedForward >= RegionMinimumForward[i]
+                && normalizedForward <= RegionMaximumForward[i])
             {
                 return i;
             }

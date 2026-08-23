@@ -174,8 +174,11 @@ class CaelumHUDOverlay : EventHandler
     {
         if (!localPlayer.HUDCombatBlockActive) { return; }
 
+        String blockSpritePath = localPlayer.HUDCombatBlockUsesGauntlets
+            ? "graphics/caelum/icons/ca_giant_gauntlets.png"
+            : GetBlockShieldSpritePath(localPlayer.HUDActiveShieldType);
         TextureID shieldSprite = TexMan.CheckForTexture(
-            GetBlockShieldSpritePath(localPlayer.HUDActiveShieldType),
+            blockSpritePath,
             TexMan.Type_MiscPatch
         );
         if (!shieldSprite.IsValid()) { return; }
@@ -805,6 +808,21 @@ class CaelumHUDOverlay : EventHandler
 
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
+
+        if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
+        {
+            String abilityMessage = StringTable.Localize(
+                "CA_ABILITY_USED_SUCCESSFULLY", false
+            );
+            double abilityX = 320.0
+                - HUDFont.StringWidth(abilityMessage) * 0.5;
+            Screen.DrawText(
+                HUDFont, Font.CR_GREEN, abilityX, 72.0, abilityMessage,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
 
         if (localPlayer.HUDHasActiveWeapon
             && localPlayer.HUDActiveWeaponIsRanged)

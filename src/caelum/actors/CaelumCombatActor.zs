@@ -228,6 +228,45 @@ class CaelumCombatActor : Actor
         return LastAnatomyVulnerabilityGrade;
     }
 
+    int RegisterDirectionalAnatomyImpact(
+        Actor impactSource,
+        double heightRatio
+    )
+    {
+        if (AnatomyProfile == null || !AnatomyProfile.UsesDirectionalRegions
+            || impactSource == null)
+        {
+            return RegisterAnatomyImpact(heightRatio, 0.5);
+        }
+        Vector2 sourceDirection = impactSource.Pos.XY - Pos.XY;
+        double directionLength = sourceDirection.Length();
+        if (directionLength <= 0.0)
+        {
+            return RegisterAnatomyImpact(heightRatio, 0.0);
+        }
+        sourceDirection /= directionLength;
+        Vector2 forward = AngleToVector(Angle, 1.0);
+        Vector2 right = AngleToVector(Angle + 90.0, 1.0);
+        double forwardRatio = sourceDirection.X * forward.X
+            + sourceDirection.Y * forward.Y;
+        double lateralRatio = sourceDirection.X * right.X
+            + sourceDirection.Y * right.Y;
+        int regionIndex = AnatomyProfile.FindDirectionalRegion(
+            heightRatio, lateralRatio, forwardRatio
+        );
+        LastAnatomyHeightRatio = Clamp(heightRatio, 0.0, 1.0);
+        LastAnatomyLateralRatio = Clamp(Abs(lateralRatio), 0.0, 1.0);
+        LastAnatomyLocation = AnatomyProfile.GetLocation(regionIndex);
+        LastAnatomyNaturalVulnerabilityGrade =
+            AnatomyProfile.GetVulnerability(regionIndex);
+        LastAnatomyVulnerabilityGrade = GetEffectiveActorVulnerability(
+            LastAnatomyNaturalVulnerabilityGrade,
+            LastAnatomyLocation
+        );
+        PendingLocalizedImpact = true;
+        return LastAnatomyVulnerabilityGrade;
+    }
+
     // La anatomia se registra antes de resolver el critico. Esta marca explicita
     // separa el efecto critico del DamageMobj generico para todo tipo de dano.
     void RegisterPendingCriticalHit(bool criticalHit)

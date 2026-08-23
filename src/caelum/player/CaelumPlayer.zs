@@ -34,6 +34,7 @@ class CaelumPlayer : DoomPlayer
     int HUDRangedMagazineCapacity;
     int HUDRangedReserveCount;
     bool HUDCombatBlockActive;
+    bool HUDCombatBlockUsesGauntlets;
     int HUDActiveShieldType;
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
@@ -210,6 +211,7 @@ class CaelumPlayer : DoomPlayer
     bool CombatRacialAbilityInputReserved;
     bool CombatTarotInputReserved;
     bool CombatClassAbilityInputReserved;
+    double HUDAbilitySuccessRemaining;
 
     int DebugShieldDamageKind;
     int DebugShieldIncomingAngleOffset;
@@ -1956,11 +1958,11 @@ class CaelumPlayer : DoomPlayer
             ? GetRangedMagazineCapacity(activeType) : 0;
         HUDRangedReserveCount = HUDActiveWeaponIsRanged
             ? GetEquippedRangedReserveCount() : 0;
-        HUDCombatBlockActive = CombatBlockModeActive
-            && ShieldModel != null
-            && ShieldModel.Equipped
-            && ShieldModel.Durability > 0;
+        HUDCombatBlockActive = CombatBlockModeActive && HasActiveBlockSource();
+        HUDCombatBlockUsesGauntlets = HUDCombatBlockActive
+            && IsGiantGauntletsBlockSource();
         HUDActiveShieldType = HUDCombatBlockActive
+            && !HUDCombatBlockUsesGauntlets && ShieldModel != null
             ? ShieldModel.ShieldType : CaelumConstants.SHIELD_TYPE_BUCKLER;
 
         if (changed)
@@ -5642,10 +5644,12 @@ class CaelumPlayer : DoomPlayer
     bool IsBucklerAcrobaticDefenseActive()
     {
         return CombatBlockModeActive
-            && ShieldModel != null
-            && ShieldModel.Equipped
-            && ShieldModel.Durability > 0
-            && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_BUCKLER;
+            && (IsGiantGauntletsBlockSource()
+                || (ShieldModel != null
+                    && ShieldModel.Equipped
+                    && ShieldModel.Durability > 0
+                    && ShieldModel.ShieldType
+                        == CaelumConstants.SHIELD_TYPE_BUCKLER));
     }
 
     double GetImpactAgilityAbsorptionSpeed(int impactKind)
@@ -7083,13 +7087,10 @@ class CaelumPlayer : DoomPlayer
             incomingOffset = Abs(DeltaAngle(Angle, AngleTo(attacker)));
         }
         DebugShieldIncomingAngleOffset = int(incomingOffset + 0.5);
-        LastShieldWithinCoverage = ShieldModel != null
-            && ShieldModel.Equipped
-            && incomingOffset <= ShieldModel.GetCoverageDegrees() / 2.0;
-        bool shieldCanBlock = ShieldModel != null
-            && ShieldModel.Equipped
+        LastShieldWithinCoverage = HasActiveBlockSource()
+            && incomingOffset <= GetActiveBlockCoverageDegrees() / 2.0;
+        bool shieldCanBlock = HasActiveBlockSource()
             && DebugShieldBlocking
-            && ShieldModel.Durability > 0
             && LastShieldWithinCoverage;
         if (!shieldCanBlock) { return incomingDamage; }
         LastShieldBlockedAttack = true;
@@ -7099,7 +7100,7 @@ class CaelumPlayer : DoomPlayer
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
             : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
         double defenseRatio = Clamp(
-            ShieldModel.GetDefense(damageKind) / 100.0,
+            GetActiveBlockDefense(damageKind) / 100.0,
             0.0,
             1.0
         );
@@ -7112,7 +7113,8 @@ class CaelumPlayer : DoomPlayer
         {
             double blockAdrenaline =
                 CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK;
-            if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_KITE)
+            if (!IsGiantGauntletsBlockSource()
+                && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_KITE)
             {
                 blockAdrenaline *=
                     CaelumConstants.SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER;
@@ -7153,10 +7155,19 @@ class CaelumPlayer : DoomPlayer
 
     void CommitRealShieldDurability()
     {
-        if (ShieldModel == null || LastShieldDurabilityLoss <= 0) { return; }
+        if (LastShieldDurabilityLoss <= 0) { return; }
+        if (IsGiantGauntletsBlockSource())
+        {
+            LastShieldDurabilityLoss = Min(
+                LastShieldDurabilityLoss, WeaponModel.Durability
+            );
+            WeaponModel.Durability -= LastShieldDurabilityLoss;
+            if (WeaponModel.Durability <= 0) { CancelCombatBlockMode(); }
+            return;
+        }
+        if (ShieldModel == null) { return; }
         LastShieldDurabilityLoss = Min(
-            LastShieldDurabilityLoss,
-            ShieldModel.Durability
+            LastShieldDurabilityLoss, ShieldModel.Durability
         );
         ShieldModel.Durability -= LastShieldDurabilityLoss;
         if (ShieldModel.Durability <= 0) { CancelCombatBlockMode(); }
@@ -7640,6 +7651,9 @@ class CaelumPlayer : DoomPlayer
         DetectAndChargePhysicalJump();
         ConsumeRunningAir();
         ConsumeShieldBlockingAir();
+        HUDAbilitySuccessRemaining = Max(
+            0.0, HUDAbilitySuccessRemaining - 1.0 / TICRATE
+        );
     }
 
     // GZDoom exposes the effective run state through BT_RUN after combining
@@ -9219,11 +9233,56 @@ class CaelumPlayer : DoomPlayer
             && !CombatChannelModeActive
             && !StaffCastPending
             && !IsPhysicallyImmobilized()
-            && ShieldModel != null
+            && HasActiveBlockSource()
+            && CurrentAir > 0.0;
+    }
+
+    bool IsGiantGauntletsBlockSource()
+    {
+        return WeaponModel != null
+            && WeaponModel.Equipped
+            && WeaponModel.WeaponType
+                == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS
+            && WeaponModel.Durability > 0;
+    }
+
+    bool HasActiveBlockSource()
+    {
+        if (IsGiantGauntletsBlockSource()) { return true; }
+        return ShieldModel != null
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
-            && CanUseShieldWithEquippedWeapon()
-            && CurrentAir > 0.0;
+            && CanUseShieldWithEquippedWeapon();
+    }
+
+    int GetActiveBlockCoverageDegrees()
+    {
+        if (IsGiantGauntletsBlockSource()) { return 120; }
+        return ShieldModel != null ? ShieldModel.GetCoverageDegrees() : 0;
+    }
+
+    int GetActiveBlockDefense(int damageKind)
+    {
+        if (!IsGiantGauntletsBlockSource())
+        {
+            return ShieldModel != null ? ShieldModel.GetDefense(damageKind) : 0;
+        }
+        // Los guanteletes usan exactamente la defensa de una rodela del mismo
+        // tier: 50/60/70 para daño físico o mágico.
+        return 60 + (Clamp(WeaponModel.Tier, 1, 3) - 2) * 10;
+    }
+
+    double GetActiveBlockWeight()
+    {
+        if (!IsGiantGauntletsBlockSource())
+        {
+            return ShieldModel != null ? ShieldModel.GetWeight() : 0.0;
+        }
+        return ShieldModel != null ? ShieldModel.GetWeightFor(
+            CaelumConstants.SHIELD_TYPE_BUCKLER,
+            WeaponModel.Tier,
+            WeaponModel.Size
+        ) : 0.0;
     }
 
     bool CanUseShieldWithEquippedWeapon()
@@ -9284,7 +9343,8 @@ class CaelumPlayer : DoomPlayer
             ConsumeWeaponChargedState();
             PerformChargedBlockDash();
         }
-        bool magicReflect = ShieldModel != null
+        bool magicReflect = !IsGiantGauntletsBlockSource()
+            && ShieldModel != null
             && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC;
         bREFLECTIVE = magicReflect;
         bSHIELDREFLECT = magicReflect;
@@ -9332,6 +9392,7 @@ class CaelumPlayer : DoomPlayer
         // El escudo mágico usa ahora la reflexión nativa del motor. REFLECTIVE
         // devuelve misiles y SHIELDREFLECT limita el comportamiento al frente.
         bool magicReflect = CombatBlockModeActive
+            && !IsGiantGauntletsBlockSource()
             && ShieldModel != null
             && ShieldModel.Equipped
             && ShieldModel.Durability > 0
@@ -9346,6 +9407,7 @@ class CaelumPlayer : DoomPlayer
     void RequestCombatChannelInput()
     {
         CombatChannelModeActive = false;
+        ShowAbilitySuccessMessage();
     }
 
     // User1/User3/User4 quedan conectados al arma pero no ejecutan mecánicas
@@ -9353,26 +9415,36 @@ class CaelumPlayer : DoomPlayer
     void ReserveRacialAbilityInput()
     {
         CombatRacialAbilityInputReserved = true;
+        ShowAbilitySuccessMessage();
         CombatRacialAbilityInputReserved = false;
     }
 
     void ReserveTarotInput()
     {
         CombatTarotInputReserved = true;
+        ShowAbilitySuccessMessage();
         CombatTarotInputReserved = false;
     }
 
     void ReserveClassAbilityInput()
     {
         CombatClassAbilityInputReserved = true;
+        ShowAbilitySuccessMessage();
         CombatClassAbilityInputReserved = false;
+    }
+
+    void ShowAbilitySuccessMessage()
+    {
+        // El HUD garantiza visibilidad aunque los mensajes de consola estén
+        // desactivados por la configuración local del jugador.
+        HUDAbilitySuccessRemaining = 2.0;
     }
 
     void UpdateShieldAirCost()
     {
         CurrentShieldAirCostPerSecond = 0.0;
-        if (ShieldModel == null || DerivedStats == null) { return; }
-        CurrentShieldAirCostPerSecond = ShieldModel.GetWeight()
+        if (DerivedStats == null || !HasActiveBlockSource()) { return; }
+        CurrentShieldAirCostPerSecond = GetActiveBlockWeight()
             * CaelumConstants.SHIELD_AIR_WEIGHT_RATIO_PER_SECOND
             * DerivedStats.AirConsumptionMultiplier;
     }
@@ -9380,9 +9452,7 @@ class CaelumPlayer : DoomPlayer
     void ConsumeShieldBlockingAir()
     {
         UpdateShieldAirCost();
-        if (!DebugShieldBlocking || ShieldModel == null
-            || !ShieldModel.Equipped
-            || ShieldModel.Durability <= 0) { return; }
+        if (!DebugShieldBlocking || !HasActiveBlockSource()) { return; }
         if (CurrentAir <= 0.0)
         {
             CancelCombatBlockMode();
@@ -10281,12 +10351,12 @@ class CaelumPlayer : DoomPlayer
 
     double GetShieldCombatMassMultiplier()
     {
-        if (!CombatBlockModeActive || ShieldModel == null
-            || !ShieldModel.Equipped || ShieldModel.Durability <= 0)
+        if (!CombatBlockModeActive || !HasActiveBlockSource())
         {
             return 1.0;
         }
-        if (ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_BUCKLER)
+        if (IsGiantGauntletsBlockSource()
+            || ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_BUCKLER)
         {
             return CaelumConstants.SHIELD_BUCKLER_COMBAT_MASS_MULTIPLIER;
         }
@@ -10383,10 +10453,10 @@ class CaelumPlayer : DoomPlayer
         CaelumCombatActor combatTarget = CaelumCombatActor(target);
         if (combatTarget != null)
         {
-            LastMeleeVulnerabilityGrade = combatTarget.RegisterAnatomyImpact(
-                LastMeleeHitHeightRatio,
-                lateralRatio
-            );
+            LastMeleeVulnerabilityGrade =
+                combatTarget.RegisterDirectionalAnatomyImpact(
+                    self, LastMeleeHitHeightRatio
+                );
             LastMeleeHitLocation = combatTarget.LastAnatomyLocation;
         }
         else if (LastMeleeHitHeightRatio >= CaelumConstants.HIT_HEAD_MINIMUM_RATIO)

@@ -39,7 +39,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.27 — Combat Input Completion and Validation
 
-**Implementation substantially complete; validation gate remains open.** Native User1–User4 routing, contextual Reload/charge, ranged ADS, shield Block and the charged Block dash are implemented. The author has confirmed Reload/charge, ranged Zoom, magic-weapon Block and the charged shield impulse; the remaining full weapon-family matrix is listed below.
+**Implementation substantially complete; validation gate remains open.** Native User1–User4 routing, contextual Reload/charge, ranged ADS, shield/Giant-Gauntlets Block and the charged Block dash are implemented. The author has confirmed Reload/charge, ranged Zoom, magic-weapon Block, charged shield impulse, Giant Gauntlets uppercut, charged double cost/damage and automatic empty-magazine Reload. The remaining validation gate is listed below.
 
 - Preserve Fire and AltFire weapon behavior.
 - Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
@@ -50,7 +50,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 - Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
 - Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
 
-Before closing V4.27, manually confirm: Giant Gauntlets AltFire upward impulse; charged melee/magic double cost, damage and magical area; charge cancellation on Pain, weapon switch and expiry; automatic ranged Reload when firing an empty magazine with reserve ammunition; and the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
+Before closing V4.27, manually confirm: charged magical area through the numeric debug radius; charge cancellation specifically on Pain; Giant Gauntlets weapon-based Block; the visible HUD acknowledgement; and the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
 
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 
