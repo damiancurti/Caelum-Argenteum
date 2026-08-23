@@ -1,5 +1,54 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rear roof-passage blocks and V4.27 closure checklist 4.27.0u
+
+**Implemented — pending final manual GZDoom 4.14.2 smoke tests**
+
+A second conventional 119×119-MU block continues each corrected rear landing toward the rear room. It shares its western edge with the first square and places its inward north/south edge against the existing rear-room roof boundary. The new sectors remain outside the room footprint, use floor height 136 and expose explicit two-sided boundaries to exterior sector 0; they do not replace or overlap the room's 3D roof.
+
+V4.27 can close after the following focused manual checks:
+
+1. **Architecture:** traverse both two-square rear passages onto the rear-room roof; confirm no triangles, strips, raised exterior floor, gaps or roof/wall regressions. Recycle the main gate several times from both sides.
+2. **Bull statistics and Charge:** confirm 82800 Health, approximately 10.8317 walking speed, approximately 21.6634 Charge speed, shared Air spending/recovery and collision mass 900/1800. One Charge contact must resolve once rather than stacking direct melee and collision damage.
+3. **Input regression smoke test:** for one representative weapon from each melee, ranged and magical family, confirm Fire/AltFire, contextual Zoom, Reload/charged Reload and User1–User4 acknowledgement. Include shield-compatible, two-handed and Giant-Gauntlets cases.
+4. **NPC regression:** confirm Rulo/Ronnie/Argento/Caella retain maximum Health 6200/4340/1740/1160 and expose shared Air without player survival resources.
+
+The author has already confirmed ranged Zoom and reload scaling, magazine behavior, charged melee/magic double cost and damage, `sqrt(2)` magical radius, Pain cancellation, automatic empty-magazine reload, shield/Giant-Gauntlets Block, charged shield dash, Giant-Gauntlets uppercut and visible User1–User4 acknowledgement. Crafting exhaustion and final ability effects are not V4.27 blockers and remain assigned to their later roadmap patches.
+
+MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
+
+## Square-landing exterior topology hotfix 4.27.0t
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The V4.27.0s dimensions were correct, but each new square was inserted inside the existing exterior sector using one-sided perimeter lines. The node builder consequently had no explicit exterior floor ownership on the opposite side and triangulated visible planes away from the intended rectangles.
+
+Every new perimeter line is now two-sided: the 119×119-MU raised landing remains on its authored side and exterior sector 0 explicitly owns the opposite side. The shared final-tread boundary, landing height 136 and all room/roof sectors remain unchanged.
+
+Manual validation:
+
+1. Inspect both landings from above: each must render as one clean 119×119 square without triangular extensions.
+2. Inspect from ground level and confirm exterior floor 0 remains flat around all six new perimeter edges.
+3. Cross every landing edge and verify no invisible floor, infinite strip or displaced room surface appears.
+4. Confirm both rear staircases, rear-room roof and main gate remain unchanged.
+
+MAP01 now contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
+
+## Independent square rear-stair landings 4.27.0s
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Each rear staircase now continues from its 119-MU-wide final tread onto an independent square landing measuring 119×119 MU. Both sectors have floor height 136 and a normal sky ceiling; neither carries roof-control tag 100 nor coincides with the rear-room roof, wall strips, door frame or another terrace sector. Their only shared map boundary is the complete edge of the final tread.
+
+Manual validation:
+
+1. Climb both rear staircases and confirm each top landing is visibly square and as wide as the staircase.
+2. Walk across the complete 119×119 surface and check every exterior edge for gaps, raised surrounding ground or infinite strips.
+3. Inspect the rear-room walls, roof and door from above and below; none must change or intersect either landing.
+4. Recheck the main gate and all existing staircase/terrace closures for regressions.
+
+MAP01 now contains 216 vertices, 288 linedefs, 562 sidedefs, 85 sectors and 187 things.
+
 ## Attribute-derived bull movement and actor Health 4.27.0r
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
@@ -15,7 +64,7 @@ Manual validation:
 3. Confirm Charge remains exactly twice walking speed and continues spending shared Air.
 4. Inspect the four humanoid NPCs and confirm their maximum Health values did not change.
 
-The rear-stair top landing remains unchanged in this mechanics-only patch. Its current final tread is 119 MU wide; expanding the landing toward the rear-room roof and expanding it outward create different sector contours, so MAP01 remains frozen until that direction is explicitly selected.
+The rear-stair top landing remained unchanged in this mechanics-only patch; the independent square geometry was subsequently implemented in V4.27.0s.
 
 ## Collision-mass hotfix and quadruped speed baseline 4.27.0q
 

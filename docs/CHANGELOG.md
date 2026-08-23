@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.27.0u — Rear roof-passage blocks and V4.27 closure checklist
+
+- Added a second independent 119×119-MU block behind each corrected rear-stair landing.
+- Each new block shares one complete edge with its landing and places its inward edge against the rear-room roof boundary, forming a two-block-wide upper passage without overlapping the room sector.
+- Used explicit two-sided boundaries against exterior sector 0 on every exposed edge.
+- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
+- Consolidated the remaining V4.27 manual closure tests: new passage topology, attribute-derived bull values/single-contact Charge and one final cross-family input-routing smoke test.
+
+## 4.27.0t — Square-landing exterior topology hotfix
+
+- Fixed the malformed triangular floors and exterior strips produced by the V4.27.0s rear landings.
+- Converted all six new landing perimeter lines from one-sided boundaries to explicit two-sided boundaries between the raised landing and exterior sector 0.
+- Preserved both 119×119-MU landing dimensions, floor height 136, staircase connections and every pre-existing room/roof sector.
+- MAP01 now contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
+- Extended validation to require an exterior-sector back side on every new landing perimeter line.
+
+## 4.27.0s — Independent square rear-stair landings
+
+- Added one independent 119×119-MU conventional landing after the final tread of each rear staircase.
+- Both landings use floor height 136, matching the terrace and the validated 119-MU staircase width.
+- Each new sector shares only its complete 119-MU edge with the corresponding final tread and does not overlap a room wall, roof or 3D-floor target.
+- MAP01 now contains 216 vertices, 288 linedefs, 562 sidedefs, 85 sectors and 187 things.
+- Extended static validation to enforce the exact two square contours, heights and absence of duplicated linedefs.
+
 ## 4.27.0r — Attribute-derived bull movement and actor Health
 
 - Restored Agility Type-4 as the bull's movement-stat modifier while preserving the authored quadruped Speed 10 baseline.
