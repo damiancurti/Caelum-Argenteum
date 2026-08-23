@@ -775,3 +775,10 @@ Sprite "JAVLA8", 128, 128
     Offset 64, 64
     Patch "sprites/caelum/projectiles/physical/JAVLA8.png", 0, 0
 }
+
+// Adoquín grande original del atlas de mansión. La ruta está dentro de
+// graphics para no colisionar en Windows con este lump raíz TEXTURES.
+Texture "CMWV01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWV01.png", 0, 0
+}

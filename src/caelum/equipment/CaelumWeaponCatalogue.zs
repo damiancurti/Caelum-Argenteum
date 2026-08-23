@@ -120,6 +120,8 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return 240.0;
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 260.0;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 200.0;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+                return GetPrimaryDamage(weaponId);
             default: return 0.0;
         }
     }
@@ -183,6 +185,8 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return 90.0;
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 64.0;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 92.0;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+                return GetPrimaryRange(weaponId);
             default: return 0.0;
         }
     }
@@ -276,6 +280,8 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 15.0;
             case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return 18.0;
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 20.0;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+                return GetPrimaryAirCost(weaponId);
             default: return 0.0;
         }
     }

@@ -24,14 +24,14 @@ The target combat layout is:
 | --- | --- |
 | `Fire` | Weapon primary attack. |
 | `AltFire` | Weapon-specific secondary attack; ranged weapons retain it as an alternate Aim input. |
-| `Reload` | Ranged-weapon reload only. |
+| `Reload` | Ranged magazine reload; melee/magic next-attack charge. |
 | `Zoom` | Contextual action: persistent shield Block for compatible weapons; real ADS/FOV zoom for ranged weapons. |
 | `User1` | Racial ability. |
 | `User2` | Seal Channel mode. |
 | `User3` | Active Tarot card activation. |
 | `User4` | Class ability. |
 
-The current implementation uses native Zoom contextually. It enters persistent Block only when the active weapon supports one-handed shield rules; ranged weapons instead enter Aim and apply a real FOV zoom. Ranged AltFire remains an alternate Aim path. Independent magazines, Reload and the magazine/reserve HUD are implemented. These foundations require broader manual validation. Channel remains pending; User3 and User4 are connected reservation hooks without finished Tarot/class mechanics.
+The current implementation uses native Zoom contextually. It enters persistent Block only when the active weapon supports one-handed shield rules; ranged weapons instead enter Aim and apply a real FOV zoom. Ranged AltFire remains an alternate Aim path. Independent magazines and the magazine/reserve HUD are implemented. Reload preserves ranged magazine behavior and charges the next melee/magical attack, including movement slowdown, interruption and empowered cost/damage/area rules. User1–User4 are connected to explicit racial, Seal Channel, Tarot and class reservation hooks across every weapon family. Their authored gameplay effects remain pending.
 
 User1 is the remaining native User input and is reserved for the racial ability. Its gameplay behavior remains pending the authored race-by-race designs; no arbitrary effects or values may be introduced.
 
@@ -39,13 +39,18 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.27 — Combat Input Completion and Validation
 
+**Implementation substantially complete; validation gate remains open.** Native User1–User4 routing, contextual Reload/charge, ranged ADS, shield Block and the charged Block dash are implemented. The author has confirmed Reload/charge, ranged Zoom, magic-weapon Block and the charged shield impulse; the remaining full weapon-family matrix is listed below.
+
 - Preserve Fire and AltFire weapon behavior.
 - Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
 - Preserve ranged Aim on AltFire as an alternate input and ranged magazines on Reload.
+- Validate the melee/magic charged Reload window, speed scaling, Pain/switch cancellation and doubled next-attack cost/damage/area.
 - Connect User1 to the racial-ability service hook without inventing race effects.
 - Connect Seal Channel to User2 without replacing ranged Reload.
 - Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
 - Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
+
+Before closing V4.27, manually confirm: Giant Gauntlets AltFire upward impulse; charged melee/magic double cost, damage and magical area; charge cancellation on Pain, weapon switch and expiry; automatic ranged Reload when firing an empty magazine with reserve ammunition; and the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
 
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 
@@ -99,13 +104,9 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive door/roof configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel and continuous traversable roof. V4.26.5r adds a validated 119-MU staircase companion module whose finite lower side faces stop at each tread height. All eight MAP01 rooms use the room template, including the silver-key NPC variant. Future level work should instantiate or rotate these patterns instead of recreating their topology independently.
 
-V4.26.5s also extracts the door/frame/roof portion as a standalone corridor gate at the Player Start. Treat it as the unkeyed gate variant of the same trap-door family; keyed instances must preserve their authored lock number.
+V4.27.0b restores V4.26.5r as the sole accepted MAP01 baseline. The standalone/integrated main gates, rear terrace connectors and internal terrace divisions from V4.26.5s through V4.27.0a are rejected modules and must not be replicated. Future construction adds one isolated module at a time and requires both static topology checks and manual GZDoom traversal before the next module begins.
 
-V4.26.5t replaces the provisional scaled stair faces with a reusable structural room-wall strip whose top aligns at 136 MU. Prefer this sector geometry wherever stairs meet a roofed room. The same patch adds a debug-only character-creation shortcut; it must remain clearly separated from campaign races and balance validation.
-
-V4.26.5u establishes the entrance-gate variant as an integrated corridor boundary rather than a freestanding module. It also validates roofed rear connectors for joining neighboring room roofs while explicitly preserving an uncovered central passage.
-
-V4.26.5v adds closed-boundary degree validation as a required acceptance check for every future 3D-floor/terrace module. A visually plausible map is not accepted if any non-exterior sector contains a dangling contour edge.
+Closed-boundary degree validation remains a required check, but it is not sufficient by itself: the V4.27.0a crash demonstrated that a statically closed UDMF structure can still be unsafe for the runtime renderer or 3D-floor system.
 - Establish world locations, travel links and caravan/event integration points.
 
 ### V4.35 — Calendar, Weather and Dynamic Events
@@ -127,7 +128,20 @@ V4.26.5v adds closed-boundary degree validation as a required acceptance check f
 - Implement card activation costs, cooldowns and persistence before broad content.
 - Expand toward the occasional Tarot-based Truco TCG only after inventory, NPC and world-event dependencies are stable.
 
-## 4. Parallel validation tracks
+## 4. Version 5 transition
+
+### V5.0.0 — Modular Source Architecture
+
+**Scheduled as the first Version 5 patch, after every pending Version 4 block above is completed and validated.**
+
+- Reorganize the source tree into explicit `core`, `character`, `attributes`, `statistics`, `player`, `equipment`, `combat`, `anatomy`, `actors`, `survival`, `crafting`, `tarot`, `dialogue`, `factions`, `world`, `events`, `multiplayer`, `hud` and `debug` modules.
+- Reduce `CaelumPlayer.zs` to player-state coordination instead of retaining complete combat, survival, crafting and inventory implementations in one class.
+- Move formulas and state machines through incremental compatibility wrappers; do not perform an untestable all-at-once rewrite.
+- Preserve one authoritative inventory, player and Tarot implementation. The multiplayer module handles authority, ownership, validation and synchronization rather than duplicating those systems.
+- Keep save compatibility and native selector/input behavior across the transition.
+- Require parser, single-player, multiplayer and persistence regression tests before removing compatibility wrappers.
+
+## 5. Parallel validation tracks
 
 These tracks continue without displacing the ordered major patches:
 
@@ -136,7 +150,7 @@ These tracks continue without displacing the ordered major patches:
 3. **Combat controls:** the existing Zoom/Block, ranged AltFire Aim and ranged Reload behavior remains subject to V4.27 completion and full weapon-family testing.
 4. **Release independence:** Doom assets may remain temporary test dependencies but cannot become final standalone-game dependencies.
 
-## 5. Deferred design gates
+## 6. Deferred design gates
 
 - Concrete class abilities require authored class-by-class definitions.
 - Concrete racial abilities require authored race-by-race definitions and use User1.

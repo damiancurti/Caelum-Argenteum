@@ -1,5 +1,166 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Roofed stair-back regions, direct jewelry spawn and face regression 4.27.0i
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Each of the four intermediate closures is now a two-sector module. The interior sector stays at floor 0 and joins roof target 100, reusing the validated 128–136-MU solid slab; the independent rear wall remains at floor 136. Existing room and final-stair boundaries are split and shared instead of duplicated. Consequently the closed area behind each staircase gains a walkable roof while the complete central corridor remains open to the sky.
+
+The reported Seal/Amulet failure came from the equipment interface's direct floor-spawn path, not the crafting transaction. That path previously handled weapons and shields, then treated every other selection as Armor. It now has explicit Amulet and Seal branches with their selected type and tier; the crafting system remains scheduled for exhaustive V4.29 validation.
+
+The HUD face has one authoritative master at `graphics/caelum/face/ca_player_face.png`. All 42 engine-required `CAF` status lumps are synchronized aliases of that master, preventing an unrelated armor image from surviving in one face state while retaining GZDoom's native lump-name contract.
+
+Manual validation:
+
+1. Walk and view all four new roofs; confirm every closed rear region is covered and the central corridor has no ceiling.
+2. Inspect the room/stair joins from above and below for raised exterior ground, gaps, infinite strips or duplicate faces.
+3. Use the equipment interface's direct floor-spawn action for one Amulet and one Seal; verify their class, inventory category and selected tier.
+4. Trigger normal, Pain, turn, special-damage and death face states and confirm that the player face never becomes armor.
+
+MAP01 structure: 206 vertices, 280 linedefs, 552 sidedefs, 80 sectors and 186 things.
+
+V4.27 is not yet formally closed. Reload/charge, ranged Zoom, magic-weapon Block and charged shield dash are confirmed. Remaining acceptance tests are Giant Gauntlets AltFire upward impulse; charged double cost/damage/magical area and its Pain/switch/expiry cancellation; automatic empty-magazine Reload with reserve ammunition; and the complete Fire/AltFire/Zoom/Reload/User1–User4 weapon-family matrix. Crafting's exhaustive pass belongs to V4.29.
+
+## Corrected stair sectors, charged Block consumption and strict jewelry transaction 4.27.0h
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four stair-back strips retain the dimensions introduced in 4.27.0g, but their linedefs now follow clockwise contours. In UDMF the front side lies to the right of a directed line; the previous counterclockwise order therefore assigned the raised floor to exterior space. One strip only appeared correct because the node builder partitioned its neighboring geometry differently. All four corrected strips share the exact room-back planes `y=640` and `y=-640`, reuse existing room-corner vertices where coordinates coincide and introduce no overlapping linedefs.
+
+The charged Block dash now converts the player's movement percentage into physical velocity rather than writing the `ForwardMove` multiplier directly to `Vel`. GZDoom's standard maximum run velocity is `50/3` MU per tic on ordinary ground, so a 100% character receives exactly 25 MU/tic at the requested 150%. Current attribute and elemental movement factors scale this value. Existing horizontal velocity is replaced, producing the same launch from rest and from full running speed. A successful charged Block activation consumes the charged state before the dash.
+
+Jewelry crafting now creates `CaelumAmuletPickup` and `CaelumSealPickup` through separate explicit branches and verifies the concrete runtime subclass before materials are removed. If a class replacement or name collision resolves to anything else, the transaction destroys the invalid result and fails instead of adding Armor. The inventory category is assigned only after profile application, persistence and crafting refresh have completed.
+
+Manual validation:
+
+1. Inspect all four intermediate stair backs and verify that only each 8-MU wall strip is elevated; surrounding ground must remain at height 0.
+2. Check the outer face of every strip against the room backs and cross their upper surfaces.
+3. From rest and from established full running speed, charge a compatible weapon and press Zoom with a shield: both cases must produce the same forward speed and remove the charged HUD state.
+4. Craft one new Amulet and one new Seal. Confirm the created category, icon, weight and concrete inventory identity; pre-existing erroneous helmets from older saves are not retroactively converted.
+
+MAP01 structure: 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## Stair-back closures, contextual Block dash and Giant Gauntlets AltFire 4.27.0g
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The two north and two south gaps behind the intermediate staircase pairs are each closed by an independent conventional sector. Every strip is eight map units deep, has a 136-MU walkable floor and is aligned with the established room-back plane at `y=±640`; no free-standing middle texture or self-referencing sector is used. The four arena perimeter walls now display the large weathered cobblestone atlas crop `CMWV01`.
+
+Mansion PNGs now live under `graphics/caelum/textures/mansion`. This avoids the case-insensitive Windows collision between the root `TEXTURES` lump file and a sibling `textures` directory while retaining engine-visible eight-character resource names.
+
+The jewelry failure was a presentation-state reset: crafting instantiated `CaelumSealPickup` or `CaelumAmuletPickup`, but opening the equipment menu immediately replaced the selection with Armor/head. The menu now synchronizes armor fields only when Armor is the selected family, so a newly crafted Seal or Amulet remains visible and selectable.
+
+Giant Gauntlets AltFire uses the same catalogue damage, reach and Air cost as Fire. A successful damaging uppercut applies the normal horizontal physical push and adds that calculated push force to vertical velocity; it therefore continues to respect the attacker's push multiplier and the target's effective mass instead of introducing an unrelated launch constant.
+
+When Zoom begins a valid shield Block while the next attack is charged, horizontal velocity is set forward to 150% of the character's live maximum run speed. Attribute and elemental movement multipliers are read at activation; Pain/immobilization prevents the dash. The charged state is not consumed, because it remains attached to the next attack.
+
+Manual validation:
+
+1. Inspect and cross all four intermediate stair-back strips from ground, stair and roof level; confirm no side or upper plane escapes.
+2. Confirm all four outer perimeter walls use the large cobblestone and room interiors retain their current material.
+3. Craft a Seal and an Amulet separately, reopen equipment and verify the proper family/icon instead of Armor/head.
+4. Compare Giant Gauntlets Fire/AltFire range, Air and damage, then confirm only AltFire launches a living target upward.
+5. Charge a compatible melee or magic weapon, press Zoom with a shield equipped and confirm Block plus one forward 150%-maximum-speed impulse; confirm the next attack still consumes the charge.
+
+MAP01 structure: 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## Charge HUD, jewelry selection, rear-wall faces and mansion textures 4.27.0f
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The combat HUD now displays `Charging: N.Ns` during the speed-scaled preparation and `Charged/Potenciador: N.Ns` during the three-second empowered window. The value reads the authoritative state timer rather than estimating it from animation frames.
+
+Amulet and Seal crafting already spawned the correct native subclasses. The apparent helmet result came from the equipment menu always reopening on its default armor/head selection. Successful jewelry crafting now selects the created kind, type and tier before refreshing the inventory preview.
+
+The two rear structural strips retain their closed 8-MU geometry and lower `STARTAN3` faces. Their new closure sidedefs no longer carry middle textures, removing the duplicate patches rendered above the intended wall height.
+
+The author-supplied 1536×1024 mansion atlas was separated into 81 engine-ready PNG resources, subsequently relocated in 4.27.0g to `graphics/caelum/textures/mansion` for Windows compatibility. Every filename is an eight-character map-texture identifier.
+
+Manual validation:
+
+1. Inspect both restored rear walls from ground and roof level; confirm no wall patch floats above them.
+2. Charge a melee and magical weapon while stationary and moving; confirm the countdown follows actual progress.
+3. Let the charge complete and confirm the potentiator countdown begins at three seconds and disappears on attack, Pain, switch or expiry.
+4. Craft one amulet and one seal; open inventory and confirm each created item is selected instead of a helmet.
+5. Inspect the `CMEX`, `CMIN`, `CMST`, `CMWD`, `CMRF`, `CMGR`, `CMPW`, `CMPF` and `CMWA` families in SLADE or the map editor before assigning them to production geometry.
+
+## Static charged-projectile classes 4.27.0e
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+GZDoom 4.14.2 does not expose Actor `SetSize` to ZScript. Charged standard, homing and explosive magical projectiles therefore use dedicated subclasses with `Radius`, `Height` and `Scale` fixed in each `Default` block. Attack routing selects the corresponding charged class before spawning it, retaining all parent homing, elemental, damage, durability and explosion behavior without runtime geometry mutation.
+
+## GZDoom 4.14.2 charged-projectile compatibility 4.27.0d
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+The charged magical projectile now changes collision dimensions through Actor `SetSize` and replaces the complete visual `Scale` vector. ZScript does not permit direct compound assignment to the exposed `Radius`, `Height`, `Scale.X` or `Scale.Y` values. This revision fixes the parser error at `CaelumPlayer.zs:9057` without changing the intended `sqrt(2)` linear multiplier or any 4.27.0c gameplay value.
+
+## Rear-wall restoration and contextual charged Reload 4.27.0c
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 remains on the V4.26.5r pre-gate baseline. This patch adds only two closed, 8-MU-deep structural strips beside the rear-room door so the missing wall faces return on the stair and room sides. The four training dummies are moved laterally to `y=-900`. No main gate, connector corridor or terrace partition has been restored.
+
+Reload is now contextual. Ranged weapons retain their existing magazine reload. Melee and essence weapons begin a 2-second base charge multiplied by the current physical attack-duration or casting-duration multiplier. Moving during either reload or charge applies a 50% movement multiplier and a 50% progress multiplier. On completion, the charged state lasts 3 seconds.
+
+The next valid charged attack consumes 200% Air or Anima and inflicts 200% damage. Magical projectile collision/visual dimensions and explosion radius use a `sqrt(2)` linear multiplier, which doubles planar area. Pain, charge expiry and weapon switching remove the state. Fire/AltFire cancel an active shield Block before attacking. Empty ranged Fire automatically requests Reload if compatible inventory ammunition remains.
+
+Manual validation:
+
+1. Inspect both sides of the restored rear-room wall strips and cross the room roof without obstruction.
+2. Confirm all four training dummies stand on the lateral line and no main entrance gate exists.
+3. Time melee and magical charge at baseline attributes, then compare high physical attack speed and high casting speed.
+4. Move during ranged Reload and both charge types; confirm movement and progress are each halved only while directional input is present.
+5. Confirm Pain, weapon switching and the 3-second timeout remove the charge.
+6. Compare normal/charged Air or Anima cost, damage, projectile size and statuette explosion radius.
+7. Activate Block, press Fire and confirm Block drops while the attack continues.
+8. Empty a ranged magazine while retaining reserve ammunition and confirm Fire begins Reload automatically.
+
+MAP01 structure: 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+
+## MAP01 rollback to the pre-gate baseline 4.27.0b
+
+**Implemented — pending confirmation that the crash is gone in GZDoom 4.14.2**
+
+The supplied crash report shows that GZDoom completed actor parsing, initialized MAP01 and entered gameplay before raising access violation `C0000005`. The recorded position (`x=-14.09`, `y=536.57`) lies inside the new western/northern terrace connector introduced after the stable staircase layout. This is treated as an engine-level failure triggered by the experimental map geometry rather than a ZScript compile error.
+
+MAP01 is therefore restored byte-for-byte from V4.26.5r. It contains no main corridor gate, no rear terrace connector fill and no internal terrace-partition doors. The rollback also removes every map experiment from V4.26.5s through V4.27.0a instead of attempting another local repair. Construction will resume incrementally from the aligned-room/stair baseline.
+
+Restored structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references and closed degree-2 boundaries for all 69 non-exterior sectors.
+
+V4.27 input work is not rolled back. The user has manually confirmed that held Zoom behaves correctly with a magic weapon and shield. Ranged-only Reload and User1–User4 reservation routing remain pending broader manual validation.
+
+Manual validation:
+
+1. Start MAP01 and revisit the former crash coordinates around the first north connector/stair pair.
+2. Confirm there is no main entrance gate or associated frame near the Player Start.
+3. Confirm the later terrace fills, internal divider doors and lateral black strips are absent.
+4. Verify the original eight room doors, silver-key NPC room and three aligned staircase pairs still work.
+5. Retest ranged Reload and the four User bindings separately from map construction.
+
+## Native input contract and conventional terrace partitions 4.27.0a
+
+**Superseded for MAP01 by 4.27.0b; input changes remain active**
+
+V4.27 has begun without assigning unauthored ability effects. Every physical, ranged and magic selector now exposes the complete native input contract: User1 reaches the racial-ability service hook, User2 reaches Seal Channel, User3 reaches the equipped-Tarot hook and User4 reaches the class-ability hook. Reload exclusively requests a magazine reload for ranged weapons. The four abilities remain reservation interfaces until their authored content patches; the control menu now names all four bindings in English and Spanish.
+
+Magic weapons now share the same release latch used by physical/ranged contextual Zoom. Holding Zoom therefore produces only one Block toggle until the key is released. Ranged Zoom/ADS and its physical accuracy multiplier are unchanged.
+
+The failed 4.26.5w internal-wall technique has been removed completely. Each of the four terrace connectors is now a set of seven ordinary sectors: west/east floor spaces at height 0, wall spans at 136, jambs and moving panel at 128. No self-referencing middle texture participates in the room division. This preserves three connected rooms per north/south row while preventing a wall face or 3D-floor plane from escaping laterally. The main western entrance similarly uses two continuous closed jamb polygons rather than a jamb/extension seam.
+
+Updated MAP01 structure: 252 vertices, 350 linedefs, 692 sidedefs, 103 sectors and 186 things. Static validation confirms 102 closed non-exterior sector contours, valid references, no duplicated/overlapping segment and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both terrace rows from below and above; confirm the left roof is complete and no black or textured strip escapes laterally.
+2. Inspect the four internal doors from both rooms, including their floor edges and all jamb faces.
+3. Cycle every internal panel at least four times from both sides and cross above every partition on the terrace.
+4. Inspect and cycle the western entrance from both directions; confirm both jambs are complete and opaque.
+5. Bind User1–User4 through Customize Controls and confirm each weapon family accepts the proper native state without attacking or reloading unexpectedly.
+6. Hold Zoom with a shield-compatible magic weapon and confirm Block toggles only once until release.
+7. Confirm Reload affects ranged magazines only and User2 does not consume Anima yet.
+
 ## Three-room terrace divisions and sealed entrance frame 4.26.5w
 
 **Implemented — pending visual confirmation in GZDoom 4.14.2**

@@ -3,6 +3,10 @@ addkeysection "Caelum Argenteum" CaelumArgenteumControls
 
 // This command toggles the user CVar read by CaelumDebugOverlay.
 addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
+addmenukey "$CA_CONTROL_RACIAL_ABILITY" +user1
+addmenukey "$CA_CONTROL_SEAL_CHANNEL" +user2
+addmenukey "$CA_CONTROL_TAROT_ABILITY" +user3
+addmenukey "$CA_CONTROL_CLASS_ABILITY" +user4
 
 // Network events let the correct player change a profile choice in multiplayer.
 alias ca_next_race "netevent ca_next_race"

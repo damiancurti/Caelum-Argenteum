@@ -831,6 +831,37 @@ class CaelumHUDOverlay : EventHandler
                 DTA_KEEPRATIO, true
             );
         }
+        else if (localPlayer.WeaponChargeActive
+            || localPlayer.WeaponChargedStateActive)
+        {
+            String chargeLine;
+            int chargeColor = Font.CR_GOLD;
+            if (localPlayer.WeaponChargeActive)
+            {
+                chargeLine = String.Format(
+                    "%s: %.1fs",
+                    StringTable.Localize("CA_HUD_CHARGING", false),
+                    localPlayer.WeaponChargeRemainingSeconds
+                );
+            }
+            else
+            {
+                chargeLine = String.Format(
+                    "%s: %.1fs",
+                    StringTable.Localize("CA_HUD_CHARGED", false),
+                    localPlayer.WeaponChargedRemainingSeconds
+                );
+                chargeColor = Font.CR_GREEN;
+            }
+            double chargeX = 320.0
+                - HUDFont.StringWidth(chargeLine) * 0.5;
+            Screen.DrawText(
+                HUDFont, chargeColor, chargeX, 326.0, chargeLine,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
 
         // Al cambiar de familia, el texto aparece solo de forma breve.
         // La identificación permanente ahora recae en el arma visible.

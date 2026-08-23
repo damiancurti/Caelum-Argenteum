@@ -421,19 +421,31 @@ class CaelumPhysicalSelectorWeapon : Weapon
         caelumPlayer.ToggleCombatBlockMode();
     }
 
-    action void A_CaelumChannelInput()
+    action void A_CaelumReloadInput()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
-            caelumPlayer.RequestWeaponReloadOrChannel(
-                invoker.GetCaelumWeaponType()
+            caelumPlayer.RequestWeaponReloadOrCharge(
+                invoker.GetCaelumWeaponType(), false
             );
-            if (caelumPlayer.IsRangedWeaponType(invoker.GetCaelumWeaponType()))
-            {
-                A_ZoomFactor(1.0);
-            }
+            A_ZoomFactor(1.0);
         }
+    }
+
+    action void A_CaelumRacialAbilityInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ReserveRacialAbilityInput();
+        }
+    }
+
+    action void A_CaelumChannelInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null) { caelumPlayer.RequestCombatChannelInput(); }
     }
 
     action void A_CaelumTarotInput()
@@ -454,6 +466,8 @@ class CaelumPhysicalSelectorWeapon : Weapon
         TNT1 A 1 A_WeaponReady(
             WRF_ALLOWZOOM
             | WRF_ALLOWRELOAD
+            | WRF_ALLOWUSER1
+            | WRF_ALLOWUSER2
             | WRF_ALLOWUSER3
             | WRF_ALLOWUSER4
         );
@@ -479,6 +493,14 @@ class CaelumPhysicalSelectorWeapon : Weapon
         TNT1 A 1;
         Goto Ready;
     Reload:
+        TNT1 A 0 A_CaelumReloadInput;
+        TNT1 A 1;
+        Goto Ready;
+    User1:
+        TNT1 A 0 A_CaelumRacialAbilityInput;
+        TNT1 A 1;
+        Goto Ready;
+    User2:
         TNT1 A 0 A_CaelumChannelInput;
         TNT1 A 1;
         Goto Ready;
@@ -662,7 +684,32 @@ class CaelumMagicSelectorWeapon : Weapon
     action void A_CaelumBlockInputPulse()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
-        if (caelumPlayer != null) { caelumPlayer.ToggleCombatBlockMode(); }
+        if (caelumPlayer == null || caelumPlayer.CombatZoomInputLatched)
+        {
+            return;
+        }
+        caelumPlayer.CombatZoomInputLatched = true;
+        caelumPlayer.ToggleCombatBlockMode();
+    }
+
+    action void A_CaelumReloadInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.RequestWeaponReloadOrCharge(
+                invoker.GetCaelumWeaponType(), true
+            );
+        }
+    }
+
+    action void A_CaelumRacialAbilityInput()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer != null)
+        {
+            caelumPlayer.ReserveRacialAbilityInput();
+        }
     }
 
     action void A_CaelumChannelInput()
@@ -689,6 +736,8 @@ class CaelumMagicSelectorWeapon : Weapon
         TNT1 A 1 A_WeaponReady(
             WRF_ALLOWZOOM
             | WRF_ALLOWRELOAD
+            | WRF_ALLOWUSER1
+            | WRF_ALLOWUSER2
             | WRF_ALLOWUSER3
             | WRF_ALLOWUSER4
         );
@@ -713,6 +762,14 @@ class CaelumMagicSelectorWeapon : Weapon
         TNT1 A 1;
         Goto Ready;
     Reload:
+        TNT1 A 0 A_CaelumReloadInput;
+        TNT1 A 1;
+        Goto Ready;
+    User1:
+        TNT1 A 0 A_CaelumRacialAbilityInput;
+        TNT1 A 1;
+        Goto Ready;
+    User2:
         TNT1 A 0 A_CaelumChannelInput;
         TNT1 A 1;
         Goto Ready;
@@ -2701,5 +2758,39 @@ class CaelumExplosiveMagicProjectile : CaelumPlayerMagicProjectile
         XFIR A 0 A_CaelumExplode;
         XFIR A 2 Bright;
         Stop;
+    }
+}
+
+// GZDoom 4.14.2 no expone Radius/Height ni SetSize para cambios dinámicos
+// desde ZScript. Estas variantes fijan la geometría cargada en Default.
+// 4 * sqrt(2) duplica el área transversal respecto del proyectil normal.
+class CaelumChargedPlayerMagicProjectile : CaelumPlayerMagicProjectile
+{
+    Default
+    {
+        Radius 5.6568542495;
+        Height 5.6568542495;
+        Scale 1.4142135624;
+    }
+}
+
+class CaelumChargedHomingMagicProjectile : CaelumHomingMagicProjectile
+{
+    Default
+    {
+        Radius 5.6568542495;
+        Height 5.6568542495;
+        Scale 1.4142135624;
+    }
+}
+
+class CaelumChargedExplosiveMagicProjectile
+    : CaelumExplosiveMagicProjectile
+{
+    Default
+    {
+        Radius 5.6568542495;
+        Height 5.6568542495;
+        Scale 1.4142135624;
     }
 }

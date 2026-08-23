@@ -168,6 +168,16 @@ class CaelumPlayer : DoomPlayer
     int RangedReloadWeaponType;
     double RangedReloadRemainingSeconds;
     double RangedReloadTotalSeconds;
+    bool WeaponChargeActive;
+    bool WeaponChargedStateActive;
+    bool WeaponChargeIsMagic;
+    int WeaponChargeWeaponType;
+    int WeaponChargeWeaponTier;
+    int WeaponChargeWeaponSize;
+    int WeaponChargeEssenceType;
+    double WeaponChargeRemainingSeconds;
+    double WeaponChargeTotalSeconds;
+    double WeaponChargedRemainingSeconds;
 
     double ArmorDurabilityDamageMultiplier;
     bool ArmorDurabilityMultiplierInitialized;
@@ -197,6 +207,7 @@ class CaelumPlayer : DoomPlayer
     int CombatBlockInputGraceTics;
     bool CombatZoomInputLatched;
     bool CombatChannelModeActive;
+    bool CombatRacialAbilityInputReserved;
     bool CombatTarotInputReserved;
     bool CombatClassAbilityInputReserved;
 
@@ -268,6 +279,7 @@ class CaelumPlayer : DoomPlayer
     double StaffCastCooldownRemaining;
     bool StaffCastPending;
     bool PendingStaffSecondaryAttack;
+    bool PendingStaffChargedAttack;
     int PendingStaffWeaponType;
     int PendingStaffWeaponTier;
     int PendingStaffWeaponSize;
@@ -739,13 +751,13 @@ class CaelumPlayer : DoomPlayer
         );
         int tier = Clamp(requestedTier, 1, 3);
 
-        if (CombatBlockModeActive
-            && WeaponModel.Equipped
+        if (WeaponModel.Equipped
             && (WeaponModel.WeaponType != weaponType
                 || WeaponModel.EssenceType != essenceType
                 || WeaponModel.Tier != tier))
         {
-            CancelCombatBlockMode();
+            CancelWeaponCharge();
+            if (CombatBlockModeActive) { CancelCombatBlockMode(); }
         }
 
         if (WeaponModel.Equipped
@@ -1861,6 +1873,7 @@ class CaelumPlayer : DoomPlayer
         {
             CancelRangedAim();
             CancelRangedReload();
+            CancelWeaponCharge();
             if (CombatBlockModeActive)
             {
                 CancelCombatBlockMode();
@@ -3345,9 +3358,29 @@ class CaelumPlayer : DoomPlayer
         if (CraftingBasicOwned < CraftingBasicRequired || CraftingTierOwned < CraftingTierRequired)
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
 
-        Name cls = seal ? "CaelumSealPickup" : "CaelumAmuletPickup";
-        CaelumEquipmentItem result = CaelumEquipmentItem(Spawn(cls, Pos, NO_REPLACE));
+        CaelumEquipmentItem result;
+        if (seal)
+        {
+            result = CaelumEquipmentItem(
+                Spawn("CaelumSealPickup", Pos, NO_REPLACE)
+            );
+        }
+        else
+        {
+            result = CaelumEquipmentItem(
+                Spawn("CaelumAmuletPickup", Pos, NO_REPLACE)
+            );
+        }
         if (result == null) { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
+        // La transacción nunca puede degradarse silenciosamente a una pieza de
+        // armadura aunque exista una colisión o reemplazo de clases externos.
+        if ((seal && CaelumSealPickup(result) == null)
+            || (!seal && CaelumAmuletPickup(result) == null))
+        {
+            result.Destroy();
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
         if (!ConsumeCraftingMaterial(CraftingBasicMaterialType,CraftingBasicMaterialTier,CraftingBasicRequired)
             || !ConsumeCraftingMaterial(CraftingTierMaterialType,CraftingTierMaterialTier,CraftingTierRequired))
         { result.Destroy(); LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
@@ -3358,7 +3391,17 @@ class CaelumPlayer : DoomPlayer
         result.UnitWeight=CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
         result.Equipped=false; result.InMagicBox=true; result.PickupDataInitialized=true; result.AttachToOwner(self);
         LastCraftingAction=CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); RefreshCraftingPreview();
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshCraftingPreview();
+        // Se aplica al final de la transacción, después de toda sincronización,
+        // para que ninguna actualización intermedia restaure Cabeza/Armadura.
+        EquipmentSelectionKind = kind;
+        EquipmentSelectionTier = CraftingSelectionTier;
+        EquipmentSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+        if (seal) { EquipmentSelectionSealType = type; }
+        else { EquipmentSelectionAmuletType = type; }
+        RefreshEquipmentSelectionPreview();
     }
 
     void CraftSelectedPhysicalWeapon()
@@ -3525,7 +3568,10 @@ class CaelumPlayer : DoomPlayer
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
         PersistCharacterState();
 
-        if (ArmorModel != null)
+        // Conserva la familia seleccionada. Forzar ARMOR en cada apertura
+        // ocultaba el sello o amuleto recién fabricado detrás de un casco.
+        if (ArmorModel != null
+            && EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
         {
             EquipmentSelectionKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
             EquipmentSelectionSlot = ArmorModel.SelectedSlot;
@@ -4604,8 +4650,30 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[2] = EquipmentSelectionSize + 1;
             }
         }
+        else if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            pickup = Spawn("CaelumAmuletPickup", spawnPos, NO_REPLACE);
+            if (pickup != null)
+            {
+                pickup.args[0] = EquipmentSelectionAmuletType;
+                pickup.args[1] = EquipmentSelectionTier;
+            }
+        }
+        else if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            pickup = Spawn("CaelumSealPickup", spawnPos, NO_REPLACE);
+            if (pickup != null)
+            {
+                pickup.args[0] = EquipmentSelectionSealType;
+                pickup.args[1] = EquipmentSelectionTier;
+            }
+        }
         else
         {
+            // Sólo ARMOR llega a este fallback. Antes Amulet y Seal también
+            // caían aquí y la herramienta de desarrollo creaba un casco.
             pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
             if (pickup != null)
             {
@@ -7257,6 +7325,13 @@ class CaelumPlayer : DoomPlayer
                 );
                 SetState(painState);
                 LastPainTriggered = true;
+                CancelWeaponCharge();
+                if (PendingStaffChargedAttack)
+                {
+                    PendingStaffChargedAttack = false;
+                    PendingStaffAnimaCost /=
+                        CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+                }
                 if (grantPainAdrenaline)
                 {
                     AddCombatAdrenaline(
@@ -7556,6 +7631,7 @@ class CaelumPlayer : DoomPlayer
 
         UpdateCombatBlockMode();
         UpdateRangedReload();
+        UpdateWeaponCharge();
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
@@ -7780,17 +7856,17 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if (WeaponChargeActive) { return; }
+
         int catalogueWeapon =
             CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
             );
 
-        bool blockAttackException =
-            WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SPEAR
-            || WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN;
-        if (CombatBlockModeActive && !blockAttackException)
+        // Fire rompe Block y continúa con el ataque en la misma pulsación.
+        if (CombatBlockModeActive)
         {
-            return;
+            CancelCombatBlockMode();
         }
 
         if (catalogueWeapon >= 0
@@ -7833,6 +7909,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if (WeaponChargeActive) { return; }
+
         int catalogueWeapon =
             CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
                 WeaponModel.WeaponType
@@ -7844,14 +7922,9 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        // Mientras Block está activo sólo lanza y jabalina conservan permiso
-        // de ataque, según la excepción de diseño acordada.
-        bool blockAttackException =
-            WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_SPEAR
-            || WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_JAVELIN;
-        if (CombatBlockModeActive && !blockAttackException)
+        if (CombatBlockModeActive)
         {
-            return;
+            CancelCombatBlockMode();
         }
 
         if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
@@ -8096,6 +8169,11 @@ class CaelumPlayer : DoomPlayer
         double airCost = CaelumWeaponCatalogue.GetSecondaryAirCost(
             catalogueWeapon
         ) * DerivedStats.AirConsumptionMultiplier;
+        bool chargedAttack = WeaponChargedStateActive;
+        if (chargedAttack)
+        {
+            airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+        }
         if (CurrentAir < airCost) { return; }
 
         UpdateLucidityAccuracyEffects();
@@ -8146,6 +8224,10 @@ class CaelumPlayer : DoomPlayer
         double damage = DerivedStats.DebugSwordDamage
             * physicalWeaponDamageScale
             * EffectiveOffensiveDamageMultiplier;
+        if (chargedAttack)
+        {
+            damage *= CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
+        }
 
         double attackAngle = Angle + yawOffset;
         double attackPitch = Pitch + pitchOffset;
@@ -8162,6 +8244,7 @@ class CaelumPlayer : DoomPlayer
             )
         );
         if (projectile == null) { return; }
+        if (chargedAttack) { ConsumeWeaponChargedState(); }
 
         projectile.Target = self;
         projectile.Angle = attackAngle;
@@ -8362,6 +8445,119 @@ class CaelumPlayer : DoomPlayer
         RangedReloadTotalSeconds = 0.0;
     }
 
+    bool HasReloadMovementInput()
+    {
+        return player != null
+            && (player.cmd.forwardmove != 0 || player.cmd.sidemove != 0);
+    }
+
+    double GetReloadProgressMultiplier()
+    {
+        return HasReloadMovementInput()
+            ? CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER : 1.0;
+    }
+
+    bool IsReloadOrChargeActive()
+    {
+        return RangedReloadActive || WeaponChargeActive;
+    }
+
+    void CancelWeaponCharge()
+    {
+        WeaponChargeActive = false;
+        WeaponChargedStateActive = false;
+        WeaponChargeRemainingSeconds = 0.0;
+        WeaponChargeTotalSeconds = 0.0;
+        WeaponChargedRemainingSeconds = 0.0;
+    }
+
+    bool ConsumeWeaponChargedState()
+    {
+        if (!WeaponChargedStateActive) { return false; }
+        WeaponChargedStateActive = false;
+        WeaponChargedRemainingSeconds = 0.0;
+        return true;
+    }
+
+    void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
+    {
+        if (IsRangedWeaponType(requestedWeaponType))
+        {
+            RequestRangedReload(requestedWeaponType);
+            return;
+        }
+        if (WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.WeaponType != requestedWeaponType
+            || DerivedStats == null || CombatBlockModeActive
+            || StaffCastPending || IsPhysicallyImmobilized())
+        {
+            return;
+        }
+
+        CancelRangedAim();
+        WeaponChargeIsMagic = isMagic;
+        WeaponChargeWeaponType = WeaponModel.WeaponType;
+        WeaponChargeWeaponTier = WeaponModel.Tier;
+        WeaponChargeWeaponSize = WeaponModel.Size;
+        WeaponChargeEssenceType = WeaponModel.EssenceType;
+        WeaponChargeTotalSeconds = CaelumConstants.WEAPON_CHARGE_BASE_SECONDS
+            * (isMagic ? DerivedStats.CastingDurationMultiplier
+                : DerivedStats.AttackDurationMultiplier);
+        WeaponChargeRemainingSeconds = WeaponChargeTotalSeconds;
+        WeaponChargeActive = WeaponChargeRemainingSeconds > 0.0;
+        WeaponChargedStateActive = false;
+        WeaponChargedRemainingSeconds = 0.0;
+    }
+
+    bool DoesWeaponChargeMatchEquippedWeapon()
+    {
+        return WeaponModel != null && WeaponModel.Equipped
+            && WeaponModel.WeaponType == WeaponChargeWeaponType
+            && WeaponModel.Tier == WeaponChargeWeaponTier
+            && WeaponModel.Size == WeaponChargeWeaponSize
+            && WeaponModel.EssenceType == WeaponChargeEssenceType;
+    }
+
+    void UpdateWeaponCharge()
+    {
+        if (WeaponChargeActive)
+        {
+            if (!DoesWeaponChargeMatchEquippedWeapon()
+                || IsPhysicallyImmobilized() || CombatBlockModeActive)
+            {
+                CancelWeaponCharge();
+                return;
+            }
+            WeaponChargeRemainingSeconds = Max(
+                0.0,
+                WeaponChargeRemainingSeconds
+                    - GetReloadProgressMultiplier() / TICRATE
+            );
+            if (WeaponChargeRemainingSeconds <= 0.0)
+            {
+                WeaponChargeActive = false;
+                WeaponChargedStateActive = true;
+                WeaponChargedRemainingSeconds =
+                    CaelumConstants.WEAPON_CHARGED_STATE_SECONDS;
+            }
+        }
+        else if (WeaponChargedStateActive)
+        {
+            if (!DoesWeaponChargeMatchEquippedWeapon())
+            {
+                CancelWeaponCharge();
+                return;
+            }
+            WeaponChargedRemainingSeconds = Max(
+                0.0, WeaponChargedRemainingSeconds - 1.0 / TICRATE
+            );
+            if (WeaponChargedRemainingSeconds <= 0.0)
+            {
+                CancelWeaponCharge();
+            }
+        }
+    }
+
     void RequestRangedReload(int requestedWeaponType)
     {
         if (!IsRangedWeaponType(requestedWeaponType)
@@ -8403,7 +8599,9 @@ class CaelumPlayer : DoomPlayer
         }
 
         RangedReloadRemainingSeconds = Max(
-            0.0, RangedReloadRemainingSeconds - 1.0 / TICRATE
+            0.0,
+            RangedReloadRemainingSeconds
+                - GetReloadProgressMultiplier() / TICRATE
         );
         if (RangedReloadRemainingSeconds > 0.0) { return; }
 
@@ -8415,16 +8613,6 @@ class CaelumPlayer : DoomPlayer
             Min(GetRangedMagazineCapacity(RangedReloadWeaponType), available)
         );
         CancelRangedReload();
-    }
-
-    void RequestWeaponReloadOrChannel(int requestedWeaponType)
-    {
-        if (IsRangedWeaponType(requestedWeaponType))
-        {
-            RequestRangedReload(requestedWeaponType);
-            return;
-        }
-        RequestCombatChannelInput();
     }
 
     void PerformCarbineAttack()
@@ -8471,7 +8659,15 @@ class CaelumPlayer : DoomPlayer
         bool ammoAvailable =
             GetRangedMagazineCount(WeaponModel.WeaponType) > 0;
         LastCarbineHadAmmo = ammoAvailable;
-        if (!LastCarbineHadAmmo || RangedReloadActive) { return; }
+        if (!LastCarbineHadAmmo)
+        {
+            if (rangedAmmo != null && rangedAmmo.Amount > 0)
+            {
+                RequestRangedReload(WeaponModel.WeaponType);
+            }
+            return;
+        }
+        if (RangedReloadActive) { return; }
 
         double airCost = CaelumWeaponCatalogue.GetPrimaryAirCost(
             catalogueWeapon
@@ -8607,6 +8803,7 @@ class CaelumPlayer : DoomPlayer
         StaffCastPending = false;
         StaffCastCooldownRemaining = 0.0;
         PendingStaffAnimaCost = 0.0;
+        PendingStaffChargedAttack = false;
         if (interrupted)
         {
             LastStaffCastInterrupted = true;
@@ -8657,10 +8854,12 @@ class CaelumPlayer : DoomPlayer
         int activeMagicType = PendingStaffWeaponType;
         int activeEssenceType = PendingStaffEssenceType;
         double animaCost = PendingStaffAnimaCost;
+        bool chargedAttack = PendingStaffChargedAttack;
 
         StaffCastPending = false;
         StaffCastCooldownRemaining = 0.0;
         PendingStaffAnimaCost = 0.0;
+        PendingStaffChargedAttack = false;
         if (DerivedStats == null || WeaponModel == null
             || !WeaponModel.Equipped || WeaponModel.Durability <= 0
             || player == null || player.playerstate != PST_LIVE
@@ -8680,7 +8879,8 @@ class CaelumPlayer : DoomPlayer
         ReleasePendingStaffAttack(
             secondaryAttack,
             activeMagicType,
-            activeEssenceType
+            activeEssenceType,
+            chargedAttack
         );
         LastStaffCastCompleted = true;
     }
@@ -8727,6 +8927,11 @@ class CaelumPlayer : DoomPlayer
             * magicTierAnimaMultiplier
             * DerivedStats.StaffAnimaCost
             / CaelumConstants.DEBUG_STAFF_ANIMA_COST;
+        bool chargedAttack = WeaponChargedStateActive;
+        if (chargedAttack)
+        {
+            animaCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+        }
         if (CurrentAnima < animaCost)
         {
             LastStaffInsufficientAnima = true;
@@ -8744,6 +8949,8 @@ class CaelumPlayer : DoomPlayer
             CaelumConstants.ESSENCE_TYPE_COUNT - 1
         );
         PendingStaffAnimaCost = animaCost;
+        PendingStaffChargedAttack = chargedAttack;
+        if (chargedAttack) { ConsumeWeaponChargedState(); }
         StaffCastCooldownRemaining = WeaponModel.GetAttackTics()
             * DerivedStats.CastingDurationMultiplier / double(TICRATE);
         PendingStaffCastTotalSeconds = StaffCastCooldownRemaining;
@@ -8753,7 +8960,8 @@ class CaelumPlayer : DoomPlayer
     void ReleasePendingStaffAttack(
         bool secondaryAttack,
         int activeMagicType,
-        int activeEssenceType
+        int activeEssenceType,
+        bool chargedAttack
     )
     {
         double magicDamageScale = WeaponModel.GetDamage()
@@ -8800,6 +9008,11 @@ class CaelumPlayer : DoomPlayer
         LastStaffCalculatedDamage = DerivedStats.DebugStaffDamage
             * magicDamageScale
             * EffectiveOffensiveDamageMultiplier;
+        if (chargedAttack)
+        {
+            LastStaffCalculatedDamage *=
+                CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
+        }
         int integerDamage = Max(1, int(LastStaffCalculatedDamage + 0.5));
         if (activeEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE
             && !secondaryAttack)
@@ -8878,19 +9091,31 @@ class CaelumPlayer : DoomPlayer
             if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
             {
                 projectile = CaelumPlayerMagicProjectile(Spawn(
-                    "CaelumHomingMagicProjectile", spawnPos, NO_REPLACE
+                    chargedAttack
+                        ? "CaelumChargedHomingMagicProjectile"
+                        : "CaelumHomingMagicProjectile",
+                    spawnPos,
+                    NO_REPLACE
                 ));
             }
             else if (activeMagicType == CaelumConstants.WEAPON_TYPE_STATUETTE)
             {
                 projectile = CaelumPlayerMagicProjectile(Spawn(
-                    "CaelumExplosiveMagicProjectile", spawnPos, NO_REPLACE
+                    chargedAttack
+                        ? "CaelumChargedExplosiveMagicProjectile"
+                        : "CaelumExplosiveMagicProjectile",
+                    spawnPos,
+                    NO_REPLACE
                 ));
             }
             else
             {
                 projectile = CaelumPlayerMagicProjectile(Spawn(
-                    "CaelumPlayerMagicProjectile", spawnPos, NO_REPLACE
+                    chargedAttack
+                        ? "CaelumChargedPlayerMagicProjectile"
+                        : "CaelumPlayerMagicProjectile",
+                    spawnPos,
+                    NO_REPLACE
                 ));
             }
             if (projectile == null) { continue; }
@@ -8956,6 +9181,9 @@ class CaelumPlayer : DoomPlayer
                         integerDamage,
                         CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
                             * DerivedStats.AbilityRangePercent / 100.0
+                            * (chargedAttack
+                                ? CaelumConstants.WEAPON_CHARGED_AREA_LINEAR_MULTIPLIER
+                                : 1.0)
                     );
                 }
             }
@@ -9051,11 +9279,34 @@ class CaelumPlayer : DoomPlayer
         CombatBlockInputGraceTics = 0;
         CombatBlockModeActive = true;
         DebugShieldBlocking = true;
+        if (WeaponChargedStateActive)
+        {
+            ConsumeWeaponChargedState();
+            PerformChargedBlockDash();
+        }
         bool magicReflect = ShieldModel != null
             && ShieldModel.ShieldType == CaelumConstants.SHIELD_TYPE_MAGIC;
         bREFLECTIVE = magicReflect;
         bSHIELDREFLECT = magicReflect;
         UpdateShieldAirCost();
+    }
+
+    // Al iniciar Block con una carga preparada, impulsa al personaje hacia
+    // donde mira al 150% de su velocidad máxima real de carrera. Toggle Block
+    // consume el estado cargado inmediatamente antes de producir el impulso.
+    void PerformChargedBlockDash()
+    {
+        if (DerivedStats == null || IsPhysicallyImmobilized()) { return; }
+        double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0);
+        if (ElementalStatus != null)
+        {
+            movementFactor *= ElementalStatus.GetMovementMultiplier();
+        }
+        double maximumRunSpeed =
+            CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED * movementFactor;
+        Vector2 dash = AngleToVector(Angle, maximumRunSpeed * 1.5);
+        Vel.X = dash.X;
+        Vel.Y = dash.Y;
     }
 
     void CancelCombatBlockMode()
@@ -9089,16 +9340,22 @@ class CaelumPlayer : DoomPlayer
         bSHIELDREFLECT = magicReflect;
     }
 
-    // Reload queda reservado arquitectónicamente para Channel. Todavía no
-    // activa canalización porque faltan tiempo, coste y reglas de interrupción
-    // definitivas.
+    // User2 reserva arquitectónicamente la canalización mediante Sello.
+    // Todavía no activa el efecto porque faltan tiempo, coste y reglas de
+    // interrupción definitivas; Reload queda exclusivamente para distancia.
     void RequestCombatChannelInput()
     {
         CombatChannelModeActive = false;
     }
 
-    // User3/User4 quedan conectados al arma pero no ejecutan mecánicas hasta
-    // que sus respectivos bloques sean implementados.
+    // User1/User3/User4 quedan conectados al arma pero no ejecutan mecánicas
+    // hasta que sus respectivos bloques sean implementados.
+    void ReserveRacialAbilityInput()
+    {
+        CombatRacialAbilityInputReserved = true;
+        CombatRacialAbilityInputReserved = false;
+    }
+
     void ReserveTarotInput()
     {
         CombatTarotInputReserved = true;
@@ -9333,6 +9590,11 @@ class CaelumPlayer : DoomPlayer
         }
 
         movementFactor *= GetShieldCombatMobilityMultiplier();
+        if (IsReloadOrChargeActive() && HasReloadMovementInput())
+        {
+            movementFactor *=
+                CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
+        }
         movementFactor *= MovementAccelerationFactor;
 
         double walkMovement =
@@ -9843,12 +10105,19 @@ class CaelumPlayer : DoomPlayer
             ? CaelumWeaponCatalogue.GetSecondaryAirCost(catalogueWeapon)
             : CaelumWeaponCatalogue.GetPrimaryAirCost(catalogueWeapon))
             * DerivedStats.AirConsumptionMultiplier;
+        bool chargedAttack = WeaponChargedStateActive;
+        if (chargedAttack)
+        {
+            LastMeleeAirCost *=
+                CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+        }
         if (CurrentAir < LastMeleeAirCost)
         {
             return;
         }
 
         LastMeleeHadEnoughAir = true;
+        if (chargedAttack) { ConsumeWeaponChargedState(); }
         CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
         UpdateAirStateEffects();
 
@@ -9861,6 +10130,11 @@ class CaelumPlayer : DoomPlayer
         LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
             * physicalWeaponDamageScale
             * EffectiveOffensiveDamageMultiplier;
+        if (chargedAttack)
+        {
+            LastMeleeCalculatedDamage *=
+                CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
+        }
         FTranslatedLineTarget targetData;
         UpdateLucidityAccuracyEffects();
         // Running applies after attributes and lucidity, retaining 25% of the
@@ -9953,6 +10227,11 @@ class CaelumPlayer : DoomPlayer
             * physicalWeaponDamageScale
             * LastMeleeLocationMultiplier
             * EffectiveOffensiveDamageMultiplier;
+        if (chargedAttack)
+        {
+            LastMeleeCalculatedDamage *=
+                CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
+        }
         int integerDamage = Max(1, int(LastMeleeCalculatedDamage + 0.5));
 
         Actor puff;
@@ -9984,6 +10263,14 @@ class CaelumPlayer : DoomPlayer
                 attackAngle,
                 DerivedStats.PhysicalPushMultiplier
             );
+            if (secondaryAttack
+                && catalogueWeapon
+                    == CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS
+                && LastAttackPushForce > 0.0)
+            {
+                // El uppercut suma el mismo impulso físico en el eje vertical.
+                targetData.linetarget.Vel.Z += LastAttackPushForce;
+            }
             AddCombatAdrenaline(
                 CaelumConstants.ADRENALINE_GAIN_ON_MELEE_DAMAGE,
                 CaelumConstants.ADRENALINE_EVENT_MELEE

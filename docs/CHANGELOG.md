@@ -1,5 +1,97 @@
 # Changelog
 
+## 4.27.0i — Roofed stair-back closures, direct jewelry spawn and authoritative face
+
+- Rebuilt each intermediate stair-back closure as one normal target sector plus one independent raised rear-wall sector, sharing boundaries with its room and final stair.
+- Applied the established target ID 100 roof slab only to the four closed regions; the full central corridor remains uncovered.
+- Preserved the validated clockwise/shared-linedef construction pattern and added a duplicate-segment regression check.
+- Fixed the equipment interface's direct `spawn in front` action so Amulet and Seal selections instantiate `CaelumAmuletPickup` and `CaelumSealPickup` rather than falling through to heavy Armor.
+- Established `graphics/caelum/face/ca_player_face.png` as the authoritative HUD-face source and regenerated every required native `CAF` status alias from it.
+- Recorded the project-wide modularity rule: one authoritative source per subsystem/asset, explicit compatibility contracts and regression validation for previously working behavior.
+- MAP01 now contains 206 vertices, 280 linedefs, 552 sidedefs, 80 sectors and 186 things.
+
+## 4.27.0h — Correct sector winding, physical charged dash and strict jewelry classes
+
+- Rebuilt the four intermediate stair-back closures clockwise so each raised sector occupies the intended 8-MU strip instead of assigning its 136-MU floor to surrounding space.
+- Preserved exact alignment with the room backs at `y=±640` and their shared endpoints, without overlapping room linedefs.
+- Recalibrated the charged Block dash in physical velocity units: 150% of the live maximum run speed now equals 25 MU/tic at 100% movement, independent of whether the player starts stationary or already running.
+- Charged Block now consumes the charged state when the valid Block activation begins.
+- Split Seal and Amulet construction into explicit concrete-class branches and validate the resulting runtime class before consuming materials; a replacement or collision can no longer silently produce Armor.
+- Moved the crafted jewelry inventory selection to the end of the complete profile/persistence transaction.
+- MAP01 remains at 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## 4.27.0g — Intermediate stair closures, charged Block dash and gauntlet uppercut
+
+- Closed the four gaps behind the intermediate staircase pairs with ordinary 8-MU-deep elevated sectors aligned to the room backs at `y=±640`.
+- Replaced the four outer arena wall faces with the author-supplied large weathered cobblestone variant `CMWV01`.
+- Moved the mansion atlas resources from the Windows-conflicting `src/textures` directory to `src/graphics/caelum/textures/mansion`; the root `TEXTURES` lump remains a file.
+- Stopped the equipment menu from forcing the Armor/head category whenever it opens, so crafted Seals and Amulets remain selected and visible as their actual native item classes.
+- Added a Giant Gauntlets secondary uppercut with exactly the primary attack's damage, range and Air cost, plus an equal vertical physical impulse on a successful damaging hit.
+- Starting shield Block with a compatible weapon while the charged state is active now produces a forward dash at 150% of the character's current maximum run speed without consuming the charged attack.
+- Restored the charged damage multiplier after localized hit recalculation so melee charge remains doubled at the final damage application stage.
+- MAP01 now contains 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## 4.27.0f — Charge HUD, jewelry selection, finite rear walls and mansion textures
+
+- Added a centered HUD countdown while a melee/magical weapon is charging and during the remaining charged-potentiator window.
+- After crafting an amulet or seal, the inventory selection now points to that exact jewelry item instead of retaining the default helmet category.
+- Removed middle textures from the six rear-wall closure linedefs, preserving the validated lower wall faces without rendering duplicate wall patches in the air.
+- Extracted 81 original mansion texture resources from the author-supplied atlas: exterior/interior/damaged/basement walls, foundations, ceilings, doors, stone/wood floors, carpets, exterior roofs, terrain, moldings and modular pool surfaces.
+- Added the Version 5 transition to the roadmap: V5.0.0 begins with incremental modular source reorganization only after all pending Version 4 work is completed.
+- MAP01 remains at 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+
+## 4.27.0e — Static charged-projectile classes for GZDoom 4.14.2
+
+- Replaced the unavailable Actor `SetSize` call with three charged projectile subclasses whose collision dimensions and visual scale are defined in `Default`.
+- Added charged variants for the standard, homing-book and explosive-statuette projectiles while preserving their inherited behavior.
+- Corrects the `Unknown function SetSize` parser failure reported at `CaelumPlayer.zs:9061`.
+- Preserves the intended `sqrt(2)` linear multiplier and doubled projectile area.
+- Added no balance, map or external-asset changes relative to 4.27.0d.
+
+## 4.27.0d — GZDoom 4.14.2 charged-projectile compatibility
+
+- Replaced direct writes to the read-only Actor `Radius` and `Height` properties with native `SetSize` when scaling charged magical projectiles.
+- Replaced component writes to `Scale.X` and `Scale.Y` with one complete vector assignment.
+- Corrects the `GExpression must be a modifiable value` parser failure reported at `CaelumPlayer.zs:9057`.
+- Added no balance, map or asset changes relative to 4.27.0c.
+
+## 4.27.0c — Rear-wall restoration and contextual charged Reload
+
+- Restored only the two finite structural wall strips beside the rear-room door, using the accepted V4.26.5r MAP01 baseline and leaving the rejected main gate and terrace experiments absent.
+- Moved the four training dummies from the corridor center to the lateral test line at `y=-900`.
+- Extended native Reload contextually: ranged weapons retain magazine reload; melee and essence weapons charge their next attack.
+- Added a 2-second base charge modified by the live physical attack-speed or magical casting-speed duration multiplier, followed by a 3-second charged window.
+- Charged attacks consume twice the normal Air or Anima and deal twice the normal damage. Charged magical projectiles and explosions use `sqrt(2)` linear dimensions, producing twice the area rather than four times the area.
+- Movement during ranged Reload or weapon charging halves movement speed and halves reload/charge progress; standing still restores the live full rate.
+- Pain and weapon switching cancel charging and the charged state. Starting an attack cancels shield Block.
+- Ranged Fire with an empty magazine now requests Reload automatically when compatible ammunition remains in inventory.
+- Rebuilt MAP01 as 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+- Added no external assets.
+
+## 4.27.0b — MAP01 rollback to the pre-gate baseline
+
+- Restored MAP01 byte-for-byte from V4.26.5r, the last version before any standalone or integrated main corridor gate.
+- Removed the entrance gate, rear terrace connectors, three-room terrace partitions and every map-sector experiment added in V4.26.5s through V4.27.0a.
+- Preserved the eight validated trap-door rooms, the locked NPC-room variant, three aligned staircase pairs, room/item placement and 186 things from V4.26.5r.
+- Preserved all V4.27.0a input work, including ranged-only Reload, User1–User4 routing and the confirmed magic-weapon Zoom latch.
+- Diagnosed the supplied GZDoom crash as a runtime access violation after successful script parsing and map startup, at player coordinates inside the new western terrace connector; no ZScript parse error was reported.
+- Restored MAP01 to 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with no invalid references or open conventional-sector boundaries.
+- Added no external assets.
+
+## 4.27.0a — Native input contract and conventional terrace partitions
+
+- Began V4.27 by connecting native User1 to the racial-ability reservation hook and User2 to the Seal Channel reservation hook across physical, ranged and magic selector weapons.
+- Kept Reload exclusive to ranged magazine reload; melee and magic weapons no longer reinterpret Reload as Channel.
+- Preserved User3 for the equipped Tarot card and User4 for the class ability without inventing gameplay effects or balance values.
+- Added localized Customize Controls entries for all four native User inputs.
+- Applied the existing Zoom release latch to magic weapons as well, preventing held Zoom from toggling shield Block repeatedly.
+- Removed all four self-referencing 3D-middle-texture terrace partitions introduced in 4.26.5w.
+- Rebuilt each terrace connector from seven conventional closed sectors: two room extensions, two structural wall spans, two jambs and one finite retracting panel.
+- Replaced the segmented western entrance frame with one closed continuous jamb sector on each side, removing its internal seam and transparent section.
+- Rebuilt MAP01 as 252 vertices, 350 linedefs, 692 sidedefs, 103 sectors and 186 things; 26 bilateral platform-door activators and 63 roof targets remain intentional.
+- Validated every sector as a closed degree-2 contour with no invalid references, duplicate segments, collinear overlap or non-vertex crossing.
+- Added no external assets.
+
 ## 4.26.5w — Three-room terrace divisions and sealed entrance frame
 
 - Restored four internal cross-walls across the north and south terrace connectors, dividing each formerly merged large zone into three similarly sized rooms.

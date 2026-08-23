@@ -56,6 +56,14 @@ class CaelumConstants : Object
     const DEBUG_STAFF_BASE_DAMAGE = 120.0;
     const DEBUG_STAFF_ANIMA_COST = 500.0;
     const DEBUG_STAFF_CAST_TICS = 18;
+    // Reload prepara un único ataque potenciado en armas físicas o mágicas.
+    const WEAPON_CHARGE_BASE_SECONDS = 2.0;
+    const WEAPON_CHARGED_STATE_SECONDS = 3.0;
+    const WEAPON_CHARGED_COST_MULTIPLIER = 2.0;
+    const WEAPON_CHARGED_DAMAGE_MULTIPLIER = 2.0;
+    // Duplicar un área circular requiere multiplicar su radio por sqrt(2).
+    const WEAPON_CHARGED_AREA_LINEAR_MULTIPLIER = 1.4142135623730951;
+    const RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER = 0.5;
     // La campana compensa su abanico de siete proyectiles con menor dano
     // individual y un coste de lanzamiento duplicado.
     const WEAPON_BELL_BASE_DAMAGE = 50.0;
@@ -636,6 +644,10 @@ class CaelumConstants : Object
     // GZDoom PlayerPawn defaults use movement x1 and JumpZ 8. Fixed baselines
     // prevent the effective percentages from accumulating every game tic.
     const GZDOOM_BASE_MOVEMENT = 1.0;
+    // Velocidad terminal horizontal del DoomPlayer estándar al correr sobre
+    // suelo normal (50/3 MU por tic). ForwardMove escala este valor, mientras
+    // que asignar Vel requiere unidades físicas y no el multiplicador 1.0.
+    const GZDOOM_BASE_MAX_RUN_SPEED = 50.0 / 3.0;
     const GZDOOM_BASE_JUMP_Z = 8.0;
 
     // El aire parte de 1000 y Resilience aplica el crecimiento existente.

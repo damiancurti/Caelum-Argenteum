@@ -12,11 +12,13 @@ This README is the public technical entry point for collaborators. The author's 
 
 The reconciled implementation order and authoritative target input mapping are maintained in [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-The current combat-input baseline uses **Zoom contextually**: it activates persistent Block only when the equipped weapon can share the off hand with a shield, and activates real ADS/FOV zoom for ranged weapons. Ranged **AltFire** remains an alternate Aim input, and ranged **Reload** controls the magazine. User1 is reserved for the future racial ability; User2 for Seal Channel; User3 for Tarot activation; and User4 for the class ability.
+Every subsystem must have one authoritative module or source of truth. New work must preserve the established contracts of already functional systems, and every affected contract must be regression-tested before a patch is accepted. Compatibility assets may exist where GZDoom requires fixed lump names, but they must be derived from one master rather than maintained as independent copies. This is the governing premise for current development and the incremental V5.0.0 source reorganization.
+
+The current combat-input baseline uses **Zoom contextually**: it activates persistent Block only when the equipped weapon can share the off hand with a shield, and activates real ADS/FOV zoom for ranged weapons. Ranged **AltFire** remains an alternate Aim input. **Reload** reloads ranged magazines and charges the next melee or magical attack for compatible weapons. User1 is connected to the future racial-ability hook; User2 to Seal Channel; User3 to equipped Tarot activation; and User4 to the class-ability hook. The ability hooks intentionally perform no effect until their authored mechanics are implemented.
 
 ## Implementation status
 
-The current MAP01 construction prototype includes two terrace rows divided into three similarly sized connected rooms apiece. Their internal trap doors reuse the finite `habitación con 1 puerta trampa` mechanism, while the central corridor remains uncovered and all roof routes remain traversable.
+The current MAP01 construction prototype is based on the stable pre-gate V4.26.5r layout. It retains eight validated trap-door rooms and aligned staircase pairs, restores the finite walls beside the rear-room entrance, and roofs only the four closed regions behind the intermediate staircases. The complete central corridor remains open to the sky, with no main corridor gate or rejected terrace partition.
 
 ### Implemented and tested
 
@@ -29,6 +31,7 @@ The current MAP01 construction prototype includes two terrace rows divided into 
 - Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
 - Physical weapon catalogue and family/slot cycling.
 - Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
+- Contextual charged Reload for melee and essence weapons: a speed-scaled 2-second base charge creates a 3-second empowered window; the next attack doubles resource cost and damage, while magical area doubles geometrically.
 - Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Block is a persistent contextual Zoom-mode toggle for shield-compatible weapons, consumes Air continuously, suppresses Air regeneration, and supports shield-specific effects. Ranged and other two-handed physical weapons cannot block merely because a shield remains equipped.
 - Weapon durability using the shared damage-based wear logic.
 - Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
@@ -40,6 +43,7 @@ The current MAP01 construction prototype includes two terrace rows divided into 
 - Crafting and dismantling foundations used by current physical equipment and material recovery systems.
 - Physical crafting-station interaction core: Forge and Bow Workshop filter and execute their currently supported physical recipes through the shared crafting transaction.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
+- Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
 - Custom player HUD face replacing the Doomguy face states in the current development HUD. The HUD also uses the equipped weapon art as a provisional first-person weapon representation, so the permanent top-left active-weapon label is no longer required.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
@@ -66,6 +70,8 @@ The current MAP01 construction prototype includes two terrace rows divided into 
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
+
+Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.
 
 
 
@@ -108,6 +114,16 @@ For repeated development sessions, character creation includes a localized `Debu
 V4.26.5u removes the isolated gate beside the spawn and integrates its panel/frame directly into the western entrance between the nearest room pair. Four roofed connectors fill only the rear spaces behind the first two north/south stair pairs, joining the six paired-room roofs into one continuous terrace. The complete central corridor and every staircase approach remain open to the sky.
 
 V4.26.5v closes two malformed structural-wall contours that allowed a roof surface to escape toward the spawn. Every non-exterior MAP01 sector now passes a degree-2 closed-boundary check. The integrated entrance uses the exact room-frame decomposition—16-MU jamb plus 16-MU wall extension on each side—so no section remains transparent.
+
+V4.27.0a replaces the failed self-referencing terrace partitions with ordinary closed sectors and a finite door module. Each north/south terrace row remains divided into three connected rooms, while every internal wall, jamb, floor and roof target has its own conventional polygon. The same patch begins the V4.27 input contract: native User1–User4 are connected to racial, Seal, Tarot and class hooks, and Reload remains ranged-only.
+
+V4.27.0b supersedes every post-V4.26.5r MAP01 construction experiment after a reproducible GZDoom access violation inside a terrace connector. MAP01 is restored byte-for-byte to the pre-gate V4.26.5r baseline: no main corridor gate, rear terrace fill or internal terrace divider remains. The V4.27 input contract and confirmed magic-weapon Zoom latch remain active.
+
+V4.27.0g closes only the four intermediate stair-back gaps with finite conventional raised sectors aligned to the rooms, and applies the atlas's large weathered cobblestone to the arena perimeter. It also makes Giant Gauntlets AltFire an equal-stat uppercut, adds the charged Block dash at 150% maximum run speed, preserves charged melee doubling through final hit localization, and fixes Seal/Amulet inventory presentation by retaining the crafted equipment family. Mansion assets now use the Windows-safe `graphics/caelum/textures/mansion` path instead of colliding with the root `TEXTURES` lump.
+
+V4.27.0h corrects the four stair-back sector contours to clockwise UDMF winding, preventing raised floors from leaking into the surrounding field while preserving exact alignment at `y=±640`. Charged shield Block now consumes the stored charge and writes a physical 150%-maximum-run velocity—25 MU/tic at 100% movement—rather than the much smaller `ForwardMove` multiplier. Seal and Amulet crafting now validates the concrete spawned subclass before consuming materials and applies its inventory selection only after the full transaction completes.
+
+V4.27.0i replaces each provisional stair-back strip with a paired closure module: a normal floor sector targeted by the established 128–136-MU roof slab and an independent 136-MU rear wall. Shared linedefs join each module to its rooms and final stair, so only the four closed rear regions receive roofs and the central corridor remains uncovered. The direct equipment debug spawner now dispatches Amulets and Seals to their own pickup classes instead of falling through to Armor. Every native `CAF` status-face lump is regenerated from `graphics/caelum/face/ca_player_face.png`, which remains the single master face asset.
 
 Caelum NPCs use the same twelve primary attributes as player characters while intentionally omitting player-only survival resources. They also carry current and maximum Anima using the player formula based on effective Patience after equipment. Intelligence bonuses improve magical performance but do not directly increase Anima capacity: Caella's magic helmet supplies +5 Intelligence, while her separate +5 Patience gloves raise maximum Anima from the 2710 base at Patience 18 to 3760 at effective Patience 23.
 
