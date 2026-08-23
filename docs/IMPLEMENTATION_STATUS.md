@@ -1,5 +1,41 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Main-gate strip isolation and bull damage diagnosis 4.27.0m
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The main gate's panel and two jambs were incorrectly tagged as target sector 100. That tag belongs to the shared room-roof `Sector_Set3DFloor` system; applying it to the otherwise conventional raised-floor gate introduced an unrelated 3D surface that escaped from its forward edge. All three gate sectors now remain finite raised floors without a roof-control ID. No coordinate, activation line, passage width, speed or delay changed.
+
+The bull's current horn state is a melee attack, not a scripted charge. Direct full-health damage remains 540 before critical and target mitigation. A successful melee hit also calls the common physical-push service. With mass 900 kg and Strength 40, the bull's physical-push multiplier is 82.8; against a 100-kg target the current formula can produce approximately 441.6 MU/tic of thrust. A subsequent wall or actor collision is resolved independently by Impact Physics and can therefore dwarf the melee hit. The reported value near 350,000 is consistent with this secondary high-speed impact path, not with the dagger-based 540 direct damage. Changing the horn into melee-only, charge-only or a combined authored charge remains a design decision and is intentionally not guessed here.
+
+V4.27 confirmations now include Giant Gauntlets Block, charged magical radius visually matching `sqrt(2)`, Pain cancellation of Block/charge/stored charge and green HUD acknowledgement for User1–User4.
+
+Manual validation:
+
+1. Inspect the front and rear of the main gate and confirm the forward infinite strip is absent.
+2. Complete four bilateral gate cycles and traverse over its finite top.
+3. Reproduce a bull horn hit in open ground and compare it with a hit that drives the target into a wall; the debug overlay should identify the latter as a separate `CaelumImpact` event.
+4. After the horn contract is selected, calibrate its direct damage, movement and push as separate values.
+
+MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
+## Isolated main gate and final bull horn baseline 4.27.0l
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bull retains the same derived combat profile as a player-shaped Caelum combatant with physical attributes 40, technical attributes 20 and social/mental attributes 2. Its horn attack now takes the Tier-1 Dagger's authored base values: damage 60 and eight total attack tics. The existing actor pipeline then applies the bull's 900-kg physical multiplier, health performance, Dexterity-based accuracy/critical chance and target defenses. Its ordinary pre-critical calculated damage at full health is therefore `60 × 9 = 540`, rather than the previous `120 × 9 = 1080`.
+
+MAP01 adds one isolated main gate directly across the true western corridor mouth (`x=-593…-569`, `y=-96…96`). The moving panel occupies the central 128 MU and two continuous 32-MU jambs fill the remaining passage width. This patch deliberately adds no corridor, roof, connector, partition or outboard strip. Both panel thresholds retain bilateral player USE, repeatability, speed 16 and delay 150.
+
+Manual validation:
+
+1. Approach the main gate from both sides and complete at least four full open/close cycles.
+2. Confirm the frame is opaque from floor to its finite top, has no invisible ground section and creates no lateral or vertical projection.
+3. Cross over the closed panel/frame from the terrace and confirm no infinite-height collision exists.
+4. Compare the bull's ordinary horn result with the expected full-health pre-critical value 540 and verify its complete attack cycle is eight tics.
+
+MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
 ## Isolated terrace roofs, corrected bull animation and HUD acknowledgement 4.27.0k
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

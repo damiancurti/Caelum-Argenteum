@@ -50,7 +50,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 - Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
 - Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
 
-Before closing V4.27, manually confirm: charged magical area through the numeric debug radius; charge cancellation specifically on Pain; Giant Gauntlets weapon-based Block; the visible HUD acknowledgement; and the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
+Pain cancellation of active Block, active charge and the stored charged window is manually confirmed. Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and the visible HUD acknowledgement for User1–User4 are also confirmed. Before closing V4.27, manually confirm the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix across every weapon family and resolve the bull horn's authored melee/charge/impact contract. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
 
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 

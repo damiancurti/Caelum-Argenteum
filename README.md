@@ -130,6 +130,10 @@ V4.27.0j removes the eight 1-MU bridge edges responsible for the remaining narro
 
 V4.27.0k isolates every intermediate roof from adjacent room walls using the previously validated 1-MU staircase clearance, restoring all missing room faces and removing 3D-floor endpoint columns. The corrected bull atlas supplies 70 clean state sprites, including directional movement, charge and Pain plus the complete death sequence. Reserved User inputs now display their acknowledgement through the gameplay HUD rather than the console log.
 
+V4.27.0l gives the bull the Tier-1 Dagger's base horn values (60 damage, eight attack tics) while retaining its Caelum actor statistics and 900-kg physical scaling. MAP01 adds only a compact main gate panel and continuous frame at the true western entrance; it creates no corridor, roof, connector or lateral extension.
+
+V4.27.0m removes the room-roof 3D-floor target tag from the gate's conventional raised-floor sectors, eliminating the forward infinite strip without changing its geometry or activation. Giant Gauntlets Block, charged magical radius and User1–User4 HUD routing are manually confirmed. The bull's current horn remains melee; its independent 900-kg/Strength knockback can cause a much larger secondary Impact Physics event when the target hits another body or wall.
+
 Caelum NPCs use the same twelve primary attributes as player characters while intentionally omitting player-only survival resources. They also carry current and maximum Anima using the player formula based on effective Patience after equipment. Intelligence bonuses improve magical performance but do not directly increase Anima capacity: Caella's magic helmet supplies +5 Intelligence, while her separate +5 Patience gloves raise maximum Anima from the 2710 base at Patience 18 to 3760 at effective Patience 23.
 
 ## Collision and impact physics (V4.25.1)

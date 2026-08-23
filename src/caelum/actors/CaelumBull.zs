@@ -48,9 +48,11 @@ class CaelumBull : CaelumCombatActor
         BULL A 1;
         Goto See;
     Melee:
-        BULL F 5 A_FaceTarget;
-        BULL G 0 A_CaelumMeleeAttack(120);
-        BULL G 7;
+        // La cornada adopta exactamente la base temporal y de daño de la
+        // daga T1: 8 tics totales y 60 puntos antes del perfil del atacante.
+        BULL F 3 A_FaceTarget;
+        BULL G 0 A_CaelumMeleeAttack(60);
+        BULL G 5;
         Goto See;
     Pain:
         BULL H 8 A_Pain;

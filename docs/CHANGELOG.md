@@ -1,5 +1,23 @@
 # Changelog
 
+## 4.27.0m — Main-gate strip isolation and V4.27 validation update
+
+- Removed roof-control tag 100 from the main gate panel and both frame jambs.
+- The gate now consists only of three conventional raised-floor sectors; it can no longer inherit the room roof 3D floor that produced the forward infinite strip.
+- Confirmed Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and visible green acknowledgement for User1–User4.
+- Confirmed that the current bull horn is a melee action. Its separate mass/Strength-based knockback can subsequently create a second, much larger collision impact if the target strikes geometry or another body.
+- Deferred changing the bull to a true charge until the author selects its intended melee/impact contract.
+- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
+## 4.27.0l — Dagger-based bull horn attack and isolated main gate
+
+- Replaced the bull's provisional 120-damage, 12-tic horn attack with the Tier-1 Dagger's authored base damage 60 and base cadence 8 tics.
+- Preserved the bull's player-equivalent 40/20/2 attribute profile, 900-kg physical multiplier, technical accuracy/critical rules and health-state processing.
+- Added only the compact main gate panel and its two continuous frame jambs at the true western corridor entrance.
+- The gate adds no corridor, roof, terrace connector, partition or lateral extension.
+- The panel remains bilateral, repeatable and uses the validated speed 16 / delay 150 trap-door action.
+- MAP01 now contains 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+
 ## 4.27.0k — Corrected bull animation atlas, isolated roofs and visible ability acknowledgement
 
 - Re-extracted the corrected bull atlas into 70 clean transparent sprites: eight rotations for Idle, two Walk frames, two Run frames, two Charge frames and Pain, plus six non-rotating Death frames.
