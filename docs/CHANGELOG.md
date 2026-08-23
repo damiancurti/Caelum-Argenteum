@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.27.0r — Attribute-derived bull movement and actor Health
+
+- Restored Agility Type-4 as the bull's movement-stat modifier while preserving the authored quadruped Speed 10 baseline.
+- Charge now remains exactly twice the Agility-modified walking speed: approximately 10.832 walking and 21.663 MU/tic charging at Agility 20.
+- Centralized original-actor maximum Health in `CaelumCombatActor` using the player formula `10 × Constitution Type-1 × body-mass multiplier`.
+- Corrected the 900-kg bull with Constitution 40 from the provisional 9200 maximum Health to the player-equivalent 82800; existing humanoid NPC maxima remain unchanged because their authored values already matched the formula.
+- Deferred the rear-stair landing edit until its expansion direction is fixed, preventing an arbitrary overlap with the validated room wall/roof topology.
+
 ## 4.27.0q — Collision-mass hotfix and quadruped speed baseline
 
 - Fixed the GZDoom 4.14.2 compilation error caused by overriding the non-virtual `GetCollisionEffectiveMass()` method in `CaelumBull`.

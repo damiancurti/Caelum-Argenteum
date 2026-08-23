@@ -1,5 +1,22 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Attribute-derived bull movement and actor Health 4.27.0r
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bull retains authored quadruped `Speed 10`, then applies the shared Type-4 curve from Agility 20. Its effective walking/chase speed is therefore approximately 10.8317 MU/tic. Charge remains the exact native 2:1 running relationship over that derived value, approximately 21.6634 MU/tic. Agility is once again observable in movement and can support future quadruped progression without changing the actor baseline.
+
+`CaelumCombatActor.InitializeCombatProfile()` now derives maximum Health from the same player contract: `10 × Constitution Type-1 × Mass/100`. The bull's Constitution 40 produces 9200 at the 100-kg reference and 82800 at its authored 900-kg mass. Rulo, Ronnie, Argento and Caella retain 6200, 4340, 1740 and 1160 respectively because their existing values already matched their Constitution and mass.
+
+Manual validation:
+
+1. Launch GZDoom 4.14.2 and inspect the bull: Health must be 82800/82800.
+2. Confirm effective walk speed approximately 10.8317 and cached Charge speed approximately 21.6634.
+3. Confirm Charge remains exactly twice walking speed and continues spending shared Air.
+4. Inspect the four humanoid NPCs and confirm their maximum Health values did not change.
+
+The rear-stair top landing remains unchanged in this mechanics-only patch. Its current final tread is 119 MU wide; expanding the landing toward the rear-room roof and expanding it outward create different sector contours, so MAP01 remains frozen until that direction is explicitly selected.
+
 ## Collision-mass hotfix and quadruped speed baseline 4.27.0q
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

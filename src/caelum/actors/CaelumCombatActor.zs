@@ -309,6 +309,14 @@ class CaelumCombatActor : Actor
         CombatPatience = Max(0, patience);
         CombatInsight = Max(0, insight);
         CombatProfileInitialized = true;
+        // La Salud máxima de actores usa la misma fuente autoritativa que el
+        // jugador: Constitución Tipo 1 multiplicada por la masa corporal.
+        CombatMaximumHealth = Max(1, int(
+            CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
+            * CalculateActorType1Percent(CombatConstitution)
+            * Max(0.01, Mass / 100.0)
+        ));
+        health = CombatMaximumHealth;
         RecalculateCombatStatistics();
         // Los NPC comienzan con el recurso completo, igual que un personaje
         // jugador recién inicializado; recalcular nunca concede recursos gratis.

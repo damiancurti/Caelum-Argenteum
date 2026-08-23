@@ -10,8 +10,8 @@ class CaelumBull : CaelumCombatActor
         double runToWalkRatio =
             CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
             / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
-        // Los cuadrúpedos usan Speed como marcha base. La embestida conserva
-        // la relación nativa correr/caminar 2:1: 10 de marcha, 20 de carga.
+        // Speed ya contiene la marcha base modificada por Agilidad. La
+        // embestida conserva sobre ese valor la relación nativa 2:1.
         return Speed * runToWalkRatio;
     }
 
@@ -92,6 +92,10 @@ class CaelumBull : CaelumCombatActor
             CombatArmor.Durability[slot] = 0;
         }
         RecalculateCombatStatistics();
+        // La base cuadrúpeda 10 también respeta Agilidad Tipo 4, igual que las
+        // estadísticas derivadas que convertirán sus atributos en movimiento.
+        Speed = CombatBaseSpeed
+            * CalculateActorType4Percent(CombatAgility) / 100.0;
         BullRunningSpeed = GetBullRunningSpeed();
         StopBullCharge();
     }

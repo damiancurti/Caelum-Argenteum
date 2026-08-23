@@ -20,7 +20,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 The current MAP01 construction prototype is based on the stable pre-gate V4.26.5r layout. It retains eight validated trap-door rooms and aligned staircase pairs, restores the finite walls beside the rear-room entrance, and roofs only the four closed regions behind the intermediate staircases. The complete central corridor remains open to the sky, with no main corridor gate or rejected terrace partition.
 
-The current actor hotfix centralizes temporary effective-mass changes without virtual overrides. The bull uses Speed 10 while walking and an exact 20 MU/tic during its Air-driven Charge, with effective mass 900 normally and 1800 only during Charge. The approved next map block adds eight smaller upper rooms in two `1 | 2 | 1` rows without altering the validated ground floor.
+The current actor baseline centralizes derived Health and temporary effective-mass changes. The bull uses authored Speed 10 modified by Agility Type-4 (approximately 10.832 at Agility 20) and doubles that derived value during its Air-driven Charge (approximately 21.663 MU/tic). Its Constitution 40 and 900-kg body now produce the player-equivalent 82800 maximum Health; effective collision mass remains 900 normally and 1800 only during Charge. The approved next map block adds eight smaller upper rooms in two `1 | 2 | 1` rows without altering the validated ground floor.
 
 ### Implemented and tested
 
