@@ -1,8 +1,42 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Unified rear-room 3D-floor target crash fix 4.27.0y
+
+**Implemented — crash reproduction boundary pending manual confirmation**
+
+The supplied report records an engine access violation while the player was at `(1486.37, -272.29)`, precisely on the new south-wing/rear-room boundary. The room and its four extensions previously used five adjacent target sectors carrying the same 3D floor. Their sidedef orientation was valid after V4.27.0x, but crossing between separate adjacent 3D-floor targets still reached an invalid engine-side contact state.
+
+Every surface in the combined shape now belongs directly to sector 65. Internal subdivision linedefs remain for stable node construction, but both sides resolve to the same sector and therefore no 3D-floor transition exists. The four empty target-sector definitions were removed.
+
+Manual test: repeatedly cross both former room/wing boundaries at `y = -272` and `y = 272`, on the floor and on the roof. If stable, the next isolated map patch will place one trap door between each wing and its adjacent lateral room.
+
+## Rear-wing wall orientation hotfix 4.27.0x
+
+**Implemented — pending focused visual confirmation**
+
+The four newly added outer edges had valid geometry and finite wall textures, but their interior/exterior sidedefs were assigned opposite to the geometric right/left sides of their directed linedefs. The exterior sector now owns each front/right side and the corresponding room wing owns each back/left side. No coordinates, sector heights, roof targets or openings changed.
+
+Manual check: inspect both integrated passages from above and below. The former dark projection and its mirrored hole must both be absent; all other V4.27.0w geometry must remain unchanged.
+
+## Integrated rear-room roof passages and V4.27 closure 4.27.0w
+
+**Implemented — V4.27 gameplay checks closed; new architecture pending visual validation**
+
+The author confirmed the restored V4.27.0v architecture and completed the authoritative Fire/AltFire/Reload/Zoom matrix. Together with the previously confirmed bull, NPC, charged-attack, blocking, ranged and User1–User4 checks, this closes the V4.27 gameplay validation set.
+
+The rear-room passage is now built as part of the room rather than as a conventional raised block laid against it. Both 119×119-MU stair landings and their new 119×119-MU continuations use floor 0, ceiling 512 and roof target 100. The shared 3D floor therefore provides the walkable terrace at 136 MU while leaving a coherent interior below. Exactly 119 MU of each north/south room wall opens into the corresponding wing; all exposed edges use the already validated finite middle-wall construction.
+
+Focused visual test:
+
+1. Traverse both rear stairs, both integrated passages and the rear-room roof.
+2. Confirm that the exterior floor remains flat and that no face rises above the roof.
+3. Inspect the rear room from inside and outside: its original walls must remain visible except for the two intentional 119-MU openings.
+
+MAP01 contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
+
 ## Rejected passage rollback and complete weapon-input matrix 4.27.0v
 
-**Implemented — pending architecture and input-matrix validation**
+**Superseded by V4.27.0w — both manual checks confirmed**
 
 The two V4.27.0u passage blocks are rejected. Manual GZDoom testing showed that adjoining a normal floor-136 sector directly to the rear-room boundary removed lower wall faces and left a structural face projecting above the roof. V4.27.0v removes both sectors, their vertices, linedefs and sidedefs, then restores the complete original room/exterior boundaries. The accepted V4.27.0t square landings remain unchanged.
 

@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.27.0y — Unified rear-room 3D-floor target crash fix
+
+- Diagnosed the reported GZDoom access violation at `(1486.37, -272.29)` as occurring exactly while crossing the south wing/rear-room boundary.
+- Consolidated the rear room, both stair landings and both extensions into the single existing sector 65 instead of four adjacent sectors receiving the same target-100 3D floor independently.
+- Removed the four now-unused sector definitions while preserving all vertices, linedefs, wall orientation, roof surfaces and passage dimensions.
+- Deferred the two requested inter-room doors until this crash fix is manually confirmed, preventing a new moving-sector topology from obscuring the boundary regression test.
+- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 83 sectors and 187 things.
+
+## 4.27.0x — Rear-wing wall orientation hotfix
+
+- Corrected the front/back sector ownership of the four new exterior wall segments in the integrated rear-room wings.
+- Preserved every vertex, height, roof target, opening and accepted passage dimension from V4.27.0w.
+- Eliminated the asymmetric symptom in which one side rendered as a projecting dark wall while its counterpart appeared as a hole.
+
+## 4.27.0w — Integrated rear-room roof passages and V4.27 closure
+
+- Recorded the author's successful completion of the two remaining V4.27 checks: restored rear architecture and the complete weapon-input matrix.
+- Converted both accepted rear-stair landings from independent raised blocks into target-100 interior extensions of the rear room.
+- Added one 119-MU continuation beside each landing and opened exactly 119 MU of the rear-room wall into each new wing.
+- Reused the room's finite 3D middle-wall treatment around every exposed edge, preserving a flat exterior floor and a walkable roof at 136 MU.
+- The rear room now has an intentionally non-rectangular footprint incorporating both stair landings and their continuations.
+- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
+
 ## 4.27.0v — Rejected passage rollback and complete weapon-input matrix
 
 - Removed both V4.27.0u second passage blocks after manual testing showed a roof projection and missing rear-room walls.
