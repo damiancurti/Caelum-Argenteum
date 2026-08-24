@@ -1,5 +1,24 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rejected passage rollback and complete weapon-input matrix 4.27.0v
+
+**Implemented — pending architecture and input-matrix validation**
+
+The two V4.27.0u passage blocks are rejected. Manual GZDoom testing showed that adjoining a normal floor-136 sector directly to the rear-room boundary removed lower wall faces and left a structural face projecting above the roof. V4.27.0v removes both sectors, their vertices, linedefs and sidedefs, then restores the complete original room/exterior boundaries. The accepted V4.27.0t square landings remain unchanged.
+
+The author has confirmed V4.27 closure checks 2 and 4: the bull's attribute-derived Health, movement, Charge, mass and Air behavior are correct; Rulo, Ronnie, Argento and Caella retain their intended Health and shared Air without player survival resources.
+
+`docs/WEAPON_INPUT_MATRIX.md` now records the implemented Fire, AltFire, Reload and Zoom contract for every weapon. The audit also found that the Bell's existing authored constants were not connected to `CaelumWeaponModel`; it now uses 50 base damage and 1000 base Anima while retaining seven slow projectiles.
+
+Remaining V4.27 checks:
+
+1. Confirm the rejected second blocks are absent, both rear-room walls are fully visible and no face projects above the roof. The accepted first square landings must remain clean.
+2. Execute the weapon matrix: every physical row once; every magical implement once; every essence primary/secondary pair once; and one complete T1/T2/T3 selector cycle.
+
+If both pass, V4.27 closes and development advances to V4.28.
+
+MAP01 contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
+
 ## Rear roof-passage blocks and V4.27 closure checklist 4.27.0u
 
 **Implemented — pending final manual GZDoom 4.14.2 smoke tests**

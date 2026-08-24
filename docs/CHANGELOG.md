@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.27.0v — Rejected passage rollback and complete weapon-input matrix
+
+- Removed both V4.27.0u second passage blocks after manual testing showed a roof projection and missing rear-room walls.
+- Restored the complete original north/south rear-room boundaries, their exterior-sector ownership and every affected wall face.
+- Preserved the manually accepted V4.27.0t 119×119-MU square landings.
+- Added an authoritative Fire/AltFire/Reload/Zoom matrix covering all sixteen physical weapons and all sixty magical implement/essence/tier variants.
+- Connected the Bell's existing authored 50 base damage and 1000 Anima cost constants; its seven-projectile delivery is unchanged.
+- Recorded successful V4.27 bull-statistics/Charge-resource and NPC-stat/resource validation.
+- MAP01 returns to 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
+
 ## 4.27.0u — Rear roof-passage blocks and V4.27 closure checklist
 
 - Added a second independent 119×119-MU block behind each corrected rear-stair landing.

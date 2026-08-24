@@ -56,6 +56,8 @@ Pain cancellation of active Block, active charge and the stored charged window i
 
 V4.27.0u narrows that gate to a final smoke test rather than another implementation block: traverse the corrected two-square rear passages, verify the attribute-derived bull Health/speeds/Air/mass and single-contact Charge, then sample the complete input contract on representative melee, ranged and magical weapons. If those checks pass, development advances to V4.28.
 
+The second passage squares from V4.27.0u are rejected and removed in V4.27.0v because they altered rear-room wall rendering. Bull and NPC validation gates are confirmed. The only remaining closure gates are the restored rear-room architecture check and the authoritative matrix in `WEAPON_INPUT_MATRIX.md`.
+
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 
 - Complete Seal selection/equipment state.

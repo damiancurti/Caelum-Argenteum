@@ -22,7 +22,6 @@ The current MAP01 construction prototype is based on the stable pre-gate V4.26.5
 
 Both rear staircases now terminate in independent 119×119-MU square landings at terrace height. Each landing shares only its full-width edge with the final tread and remains separate from every room roof and 3D-floor control sector.
 Their perimeter uses explicit two-sided boundaries between the raised platform and exterior sector 0, preventing the node builder from extending or triangulating the surrounding floor into the landing.
-Each landing now continues through a second 119×119-MU block whose inward edge reaches the rear-room roof boundary, providing a broad upper passage without overlapping the room sector.
 
 The current actor baseline centralizes derived Health and temporary effective-mass changes. The bull uses authored Speed 10 modified by Agility Type-4 (approximately 10.832 at Agility 20) and doubles that derived value during its Air-driven Charge (approximately 21.663 MU/tic). Its Constitution 40 and 900-kg body now produce the player-equivalent 82800 maximum Health; effective collision mass remains 900 normally and 1800 only during Charge. The approved next map block adds eight smaller upper rooms in two `1 | 2 | 1` rows without altering the validated ground floor.
 
