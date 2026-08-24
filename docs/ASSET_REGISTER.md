@@ -1,5 +1,9 @@
 # Asset register
 
+## V4.28.0b opaque architectural texture policy
+
+All mansion families intended to be opaque map architecture are composited over solid black: walls, floors, ceilings, doors, roofs, terrain, carpets, trims and structural pieces. Source-atlas alpha may not be interpreted as holes in these surfaces. Transparency is retained only for explicitly transparent asset families such as water and glass.
+
 ## V4.27.0k bull quadruped sprites
 
 The corrected source bull atlas was supplied by Damian Curti as an original Caelum Argenteum project asset. `BULLA1`–`BULLH8` contain eight rotations for Idle, Walk, Run, Charge and Pain; `BULLI0`–`BULLN0` contain the six-frame Death sequence. All 70 files use deterministic background isolation and normalization to a 96×64 transparent canvas. `tools/extract_bull_sprites.py` is the authoritative reproducible extraction path.

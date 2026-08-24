@@ -1,5 +1,89 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Hidden 3D controls and unified sky 4.28.0e
+
+**Implemented — focused visual/fly confirmation pending**
+
+Manual testing confirmed excellent performance across the 60,000 × 60,000 field and confirmed that the ground-floor room beneath the prototype remains unchanged. The visible floating wall groups were the map's off-site 3D-floor control sectors: the old 4608-MU field excluded their coordinates, but the expanded field exposed them as real geometry and collision.
+
+All control sectors now occupy a technical quadrant beyond both playable x=30000 and y=30000 boundaries while remaining below 32768. Their relative dimensions, heights, specials and tags are unchanged. Every real `F_SKY1` sector now shares ceiling Z=30000, removing hidden 512-MU collision planes above the mansion. Authored physical slabs and ceilings remain unchanged.
+
+Focused confirmation:
+
+1. Fly over the complete mansion between Z=512 and Z=2000; no invisible ceiling or floating control geometry may block movement.
+2. Revisit the location shown in the report near the first-floor prototype; both floating wall groups must be absent.
+3. Ascend to Z≈30000. Only the final sky ceiling may stop upward movement; no detached textured wall may be visible there.
+4. Recheck the prototype's lower room and rising door once to confirm the relocated controls still drive every 3D floor.
+
+After these four checks, continue with the complete upper-room geometry/door validation from V4.28.0d.
+
+## Vertical-limit field and first real upper-room module 4.28.0d
+
+**Implemented — mandatory manual GZDoom 4.14.2 validation pending**
+
+The exterior sky now reaches Z=30000 while exterior ground remains exactly Z=0. This exposes almost the complete positive classic coordinate range to native Fly without lowering the mansion, its actors or any accepted floor. The horizontal field remains 60,000 × 60,000 MU.
+
+One real first-floor prototype is present over the northwestern lateral room. Its 136-MU walkable floor, 264-MU second-floor terrace slab, finite upper walls and upward-opening door are separate 3D-floor systems. The door target also receives an independent static 128–136-MU slab, so opening the panel cannot remove the floor or expose the ground room below.
+
+Validation gate:
+
+1. **Vertical range:** enable `fly`, ascend above Z=512 and continue toward Z=30000. Confirm free lateral movement, stable sky rendering and no sudden collision below the final ceiling.
+2. **Horizontal/vertical precision:** at low, middle and high Z, visit the mansion, halfway point and one perimeter corner; confirm no shaking, displaced sprites or broken collision.
+3. **Ground-floor regression:** walk below the prototype and inspect every object in that room. Nothing may rise, float, disappear or stand on the upper door.
+4. **Upper-room geometry:** enter the prototype at roof level. Confirm its floor is continuous at 136, walls end at 256, the ceiling/terrace is continuous at 264 and no face extends toward Z=30000.
+5. **Door cycle:** use the panel from both sides at least three complete cycles. It must open upward, remain passable during its wait, close again, block sight when closed and leave the 136-MU floor intact.
+6. **Existing systems:** cycle the main gate and one original trap door, then check stairs, bull, NPCs and nearby pickups. Their behavior must match V4.28.0c.
+7. **Performance:** compare framerate at the mansion at Z≈0, over the mansion at Z≈15000 and near a perimeter corner at both low and high Z.
+
+Only after checks 3–6 pass may this module be replicated into the remaining seven first-floor rooms.
+
+## 60,000-MU boundary test and upper rising-door contract 4.28.0c
+
+**Implemented — pending manual traversal/performance validation**
+
+MAP01's exterior rectangle now spans `x=-30000..30000` and `y=-30000..30000`. Only the original four perimeter vertices move; the complete accepted V4.27.0y mansion remains geometrically unchanged at the center. This intentionally stress-tests a field close to the conservative GZDoom map-space boundary without placing geometry directly at ±32768.
+
+The approved first-floor plan now has an explicit door-motion contract. A panel that cannot retract into a neighboring upper sector opens vertically and remains visible above the doorway. It must be a solid 3D-floor volume driven by its own remote control sector; no ordinary elevated floor may serve as the panel. The first implementation remains limited to one upper-room prototype. Replication to eight rooms is blocked until the prototype preserves ground-floor actors/surfaces, blocks sight while closed and cycles repeatedly from both sides.
+
+Manual validation:
+
+1. Use `fly` or high-speed debug movement to inspect all four distant corners and the complete perimeter.
+2. Confirm the ground remains flat and the perimeter walls do not create diagonal or infinite strips.
+3. Compare framerate near the mansion, halfway to the boundary and beside a corner.
+4. Confirm all existing mansion rooms, doors, stairs, bull, NPCs and pickups remain unchanged.
+
+## Rejected first-floor rollback and opaque mansion surfaces 4.28.0b
+
+**Corrective rollback implemented — MAP01 restored to accepted V4.27.0y**
+
+The complete V4.28.0a first-floor experiment is rejected. Its ordinary floor-256 door sectors also acted as support planes for actors whose XY positions lay below them, while its shifted middle-texture walls did not create reliable upper-only room boundaries. This caused the observed immobile panels, ground-floor objects appearing above the rooms, missing walls and vertically displaced fragments.
+
+MAP01 is therefore restored byte-for-byte to V4.27.0y. The approved eight-room arrangement remains a design contract only: two lateral rows, `1 | 2 | 1` support distribution, 119-MU circulation setback and `corridor ← A ↔ B ↔ C ↔ D → corridor` connectivity.
+
+The next implementation must begin with one isolated upper room. Its floor, solid walls, roof and moving door must use independent 3D-floor control volumes so none can alter a ground-floor sector's support plane. It may be replicated only after both floors remain intact, the panel cycles repeatedly from both sides and no actor below is displaced.
+
+The opaque mansion architecture families are now composited over black. Alpha remains only on resources intentionally authored as transparent, such as water or glass.
+
+## First-floor 1|2|1 room chain and rear lateral doors 4.28.0a
+
+**Rejected and removed by V4.28.0b**
+
+The approved first-floor topology is now present in both lateral rows: `corridor ← A ↔ B ↔ C ↔ D → corridor`. The four rooms per row follow the approved `1 | 2 | 1` support distribution. A 119-MU setback remains between each row and the central corridor, forming the initial balcony circulation band.
+
+Each room has exactly two logical doors. Because adjacent rooms share one panel, each row uses five physical panels rather than eight: two balcony/corridor accesses and the shared A-B, B-C and C-D connections. Upper panels begin at floor height 256 and use the established special-62 down/wait/up behavior. Room targets receive the original 128–136 floor slab plus a new 256–264 roof slab. Mansion interior wall `CMIN01`, ceiling `CMCL01` and door leaf `CMDR03` replace placeholder presentation in this module.
+
+Two additional 64-MU trap doors now bridge the one-MU structural separation between the rear-room north/south wings and lateral ground-floor rooms 53/57. Their moving sectors use the established floor-128 target-100 mechanism.
+
+Mandatory test order:
+
+1. Recheck both former crash boundaries at `y = ±272` before using a door.
+2. Cycle both new ground-floor lateral doors repeatedly from both sides.
+3. Walk the complete north and south balconies and visit A→B→C→D in both directions.
+4. Cycle all ten upper panels twice and confirm their lower receiving columns do not expose holes in the 136-MU floor.
+5. Inspect all eight room walls from ground level, first-floor level and above the 264-MU roof; no texture may extend infinitely or face the wrong sector.
+
+MAP01 contains 332 vertices, 414 linedefs, 812 sidedefs, 105 sectors and 187 things.
+
 ## Unified rear-room 3D-floor target crash fix 4.27.0y
 
 **Implemented — crash reproduction boundary pending manual confirmation**
