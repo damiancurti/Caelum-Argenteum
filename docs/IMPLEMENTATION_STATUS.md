@@ -1,5 +1,23 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Maximum-body circulation inset 4.28.0f
+
+**Implemented — circulation test pending**
+
+The author confirmed that the first upper room contains no anomalous geometry and that Fly now crosses the complete mansion without collision. The size system's maximum creatable body is tier 7: 2.4 m, actor radius 21.333 MU and collision diameter 42.667 MU.
+
+The prototype now leaves a uniform 96-MU border between its exterior walls and every edge of the supporting roof. Eight MU are reserved for the future railing, producing 88 MU of genuinely walkable circulation—more than twice the maximum actor radius and 45.333 MU wider than its full diameter. The same inset applies around the stair landing, so turning left or right at roof level must no longer meet the room wall immediately.
+
+Focused test:
+
+1. Create or debug-select the largest available body and ascend the adjacent staircase normally.
+2. Turn left and right at the top without Fly; both directions must admit the character without rubbing the room wall.
+3. Walk one complete circuit around the prototype, including behind it.
+4. Open the rising door from both sides and confirm its control was unaffected by the moved footprint.
+5. Inspect the lower room once more; it must remain identical.
+
+The railing itself is not yet instantiated. Its 8-MU construction band is reserved and must use finite-height geometry. A lateral sliding door remains feasible, but it must also be finite in Z; an ordinary vertically infinite polyobject would violate the stacked-floor contract.
+
 ## Hidden 3D controls and unified sky 4.28.0e
 
 **Implemented — focused visual/fly confirmation pending**

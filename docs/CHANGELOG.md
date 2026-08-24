@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.28.0f — Maximum-body circulation inset around upper room
+
+- Recorded successful removal of floating controls and invisible sky collisions across the mansion.
+- Derived the maximum creatable player collision diameter from the existing size system: tier-7 height 2.4 m produces radius 21.333 MU and diameter 42.667 MU.
+- Retracted every side of the first upper-room prototype to leave a uniform 96-MU circulation border around its complete supporting roof.
+- Reserved the outermost 8 MU for a future finite railing, leaving 88 MU of unobstructed walking width around the room and stair landing.
+- Preserved all room sectors, 3D-floor controls, door behavior, heights and ground-floor geometry; only the 24 upper-room plan vertices moved.
+- Kept the validated rising panel while a finite-height lateral sliding implementation is developed; conventional infinitely vertical polyobjects are not accepted for stacked floors.
+
 ## 4.28.0e — Hidden 3D controls and unified 30,000-MU sky
 
 - Diagnosed the reported floating textured structures as 3D-floor control sectors that became visible when the exterior field expanded beyond their former off-map coordinates.
