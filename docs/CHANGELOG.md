@@ -1,47 +1,5 @@
 # Changelog
 
-## 4.28.0f — Maximum-body circulation inset around upper room
-
-- Recorded successful removal of floating controls and invisible sky collisions across the mansion.
-- Derived the maximum creatable player collision diameter from the existing size system: tier-7 height 2.4 m produces radius 21.333 MU and diameter 42.667 MU.
-- Retracted every side of the first upper-room prototype to leave a uniform 96-MU circulation border around its complete supporting roof.
-- Reserved the outermost 8 MU for a future finite railing, leaving 88 MU of unobstructed walking width around the room and stair landing.
-- Preserved all room sectors, 3D-floor controls, door behavior, heights and ground-floor geometry; only the 24 upper-room plan vertices moved.
-- Kept the validated rising panel while a finite-height lateral sliding implementation is developed; conventional infinitely vertical polyobjects are not accepted for stacked floors.
-
-## 4.28.0e — Hidden 3D controls and unified 30,000-MU sky
-
-- Diagnosed the reported floating textured structures as 3D-floor control sectors that became visible when the exterior field expanded beyond their former off-map coordinates.
-- Moved the original roof control and all upper-room prototype controls into the non-playable technical quadrant at `x/y > 30000` and below the signed-16-bit coordinate boundary.
-- Raised every sector whose real ceiling texture is `F_SKY1` to Z=30000, eliminating the remaining invisible 512-MU sky collisions above mansion sectors.
-- Preserved all physical ceiling/control volumes at 136, 256 and 264 MU and every accepted ground-floor height.
-- Recorded successful 60,000 × 60,000 field performance and unchanged lower-room behavior; floating-control and high-altitude collision corrections await focused confirmation.
-
-## 4.28.0d — Vertical-limit field and first real upper-room module
-
-- Raised only exterior sector 0's sky ceiling from 512 to 30,000 MU while preserving floor 0, the 60,000 × 60,000 perimeter and every accepted mansion sector height.
-- Added the first actual first-floor room over the northwestern lateral ground-floor room.
-- Built its interior floor at 136 MU and second-floor terrace/roof at 264 MU from two independent solid 3D-floor slabs.
-- Built its finite 128-MU upper walls as a separate 3D-floor wall volume; no upper wall changes a ground-floor support plane.
-- Added a 128-MU-wide upward-opening panel with a static floor slab beneath it. The panel uses its own tagged control sector and repeatable `Plat_UpWaitDownStay` triggers on both faces.
-- Kept replication to the remaining seven rooms blocked until this prototype completes the documented manual validation gate.
-
-## 4.28.0c — 60,000-MU MAP01 boundary test and upper rising-door contract
-
-- Expanded only MAP01's four exterior corner vertices to `(-30000,-30000)` through `(30000,30000)`, producing a 60,000 × 60,000-MU field while keeping a 2,768-MU safety margin from the classic signed-16-bit boundary on every side.
-- Preserved all 220 vertices, 294 linedefs, 580 sidedefs, 83 sectors, 187 things and every accepted mansion coordinate/height relationship from V4.27.0y.
-- Adopted upward-opening panels for first-floor rooms whose doors cannot retract into another local sector.
-- Defined each upper panel as an independently controlled solid 3D-floor volume. Its movement may not reuse a room floor, room ceiling or ground-floor support plane.
-- Retained the one-module validation gate: one complete upper room and rising panel must pass repeated use and both-floor regression testing before the approved eight-room `1 | 2 | 1` layout is replicated.
-
-## 4.28.0b — Rejected first-floor rollback and opaque mansion surfaces
-
-- Rejected the V4.28.0a first-floor prototype after manual testing exposed nonfunctional upper doors, missing upper walls, lower-floor actors resting on door sectors and fragmented transparent floors/ceilings.
-- Restored MAP01 byte-for-byte to the accepted V4.27.0y baseline. No V4.28.0a upper room, upper door or rear lateral-door geometry remains in the map.
-- Retained the approved `1 | 2 | 1` / `corridor ← A ↔ B ↔ C ↔ D → corridor` plan as a design target, not as implemented geometry.
-- Composited every architectural mansion wall, floor, ceiling, door, roof, terrain, molding, carpet and structural texture over solid black. Intentional transparency remains restricted to assets such as water and glass.
-- Defined the next construction gate as one isolated upper-room module using independent 3D-floor wall and door control volumes; replication to eight rooms is forbidden until that module passes ground-floor, upper-floor and repeated-door tests.
-
 ## 4.28.0a — First-floor 1|2|1 room chain and rear lateral doors
 
 - Added the confirmed north and south first-floor chains `corridor ← A ↔ B ↔ C ↔ D → corridor`, totaling eight rooms.

@@ -33,6 +33,10 @@ DoomEdNums
     18022 = CaelumCaella
     18023 = CaelumRonnie
     18024 = CaelumBull
+    18025 = CaelumSlidingDoorLeaf
+    18026 = CaelumFiniteWallPanel
+    18027 = CaelumFiniteFloorPanel
+    18028 = CaelumFiniteRoofPanel
 
     18100 = CaelumWeaponPickup
     18101 = CaelumArmorPickup

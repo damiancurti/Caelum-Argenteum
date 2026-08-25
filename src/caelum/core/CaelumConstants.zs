@@ -38,7 +38,8 @@ class CaelumConstants : Object
     const ADRENALINE_CAPACITY_SCALE = 10.0;
     const ADRENALINE_GAIN_ON_DAMAGE = 10.0;
     const ADRENALINE_GAIN_ON_PAIN = 20.0;
-    const DEBUG_ADRENALINE_GAIN = 10.0;
+    const DEBUG_ADRENALINE_GAIN = 100.0;
+    const DEBUG_SEAL_COOLDOWN_REDUCTION_SECONDS = 10.0;
 
     // Combat ends thirty seconds after the latest confirmed event. Adrenaline
     // then decays by ten points per second until it reaches zero.
@@ -96,6 +97,16 @@ class CaelumConstants : Object
     const ELEMENTAL_EXTREME_PUSH_MULTIPLIER = 2.50;
     const QUINTESSENCE_PRIMARY_DAMAGE_MULTIPLIER = 2.0;
     const QUINTESSENCE_EFFECT_CHANCE_PERCENT = 10.0;
+    // V4.28.0w: Canalizacion mediante el Sello equipado.
+    const SEAL_CHANNEL_T1_ADRENALINE_PER_TIC = 3.0;
+    const SEAL_CHANNEL_T2_ADRENALINE_PER_TIC = 6.0;
+    const SEAL_CHANNEL_T3_ADRENALINE_PER_TIC = 9.0;
+    const SEAL_CHANNEL_COOLDOWN_SECONDS = 60.0;
+    const SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER = 10.0;
+    const SEAL_LIGHTNING_RADIUS_STATUETTE_MULTIPLIER = 2.0;
+    const SEAL_LIGHTNING_BASE_TOTAL_DAMAGE = 10000.0;
+    const SEAL_QUINTESSENCE_BASE_EXPULSION_SPEED = 10.0;
+    const SEAL_CHANNEL_PULSE_SECONDS = 1.0;
 
     const ELEMENTAL_EFFECT_BURN = 0;
     const ELEMENTAL_EFFECT_CUT = 1;

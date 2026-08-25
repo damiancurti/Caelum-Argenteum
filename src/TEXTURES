@@ -1,6 +1,30 @@
 // One texture pixel equals one map unit at the default sprite scale. Matching
 // this 72-pixel canvas to the actor's 72-unit Height keeps every visible body
 // region inside the collision cylinder.
+Sprite "CDLSA0", 64, 128
+{
+    Offset 32, 128
+    Patch "graphics/caelum/textures/mansion/CMDR03.png", 0, 0
+}
+
+Sprite "CWALA0", 128, 128
+{
+    Offset 64, 128
+    Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
+}
+
+Sprite "CSUFA0", 128, 128
+{
+    Offset 64, 64
+    Patch "graphics/caelum/textures/mansion/CMWD01.png", 0, 0
+}
+
+Sprite "CSURA0", 128, 128
+{
+    Offset 64, 64
+    Patch "graphics/caelum/textures/mansion/CMCL01.png", 0, 0
+}
+
 Sprite "CDMYA0", 48, 72
 {
     Offset 24, 72

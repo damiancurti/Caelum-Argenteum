@@ -65,6 +65,19 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
+    ui String GetSealTypeKey(int sealType)
+    {
+        switch (sealType)
+        {
+            case CaelumConstants.SEAL_WATER: return "CA_SEAL_WATER";
+            case CaelumConstants.SEAL_EARTH: return "CA_SEAL_EARTH";
+            case CaelumConstants.SEAL_AIR: return "CA_SEAL_AIR";
+            case CaelumConstants.SEAL_QUINTESSENCE:
+                return "CA_SEAL_QUINTESSENCE";
+            default: return "CA_SEAL_FIRE";
+        }
+    }
+
     ui String GetActiveWeaponIconPath(int weaponType)
     {
         switch (weaponType)
@@ -808,6 +821,56 @@ class CaelumHUDOverlay : EventHandler
 
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
+
+        if (localPlayer.HUDHasEquippedSeal)
+        {
+            String sealName = StringTable.Localize(
+                GetSealTypeKey(localPlayer.HUDEquippedSealType), false
+            );
+            String channelLine;
+            int channelColor = Font.CR_WHITE;
+            if (localPlayer.CombatChannelModeActive)
+            {
+                channelLine = String.Format(
+                    "%s: %s | T%d | %s: %d",
+                    StringTable.Localize("CA_HUD_SEAL_CHANNEL_ACTIVE", false),
+                    sealName,
+                    localPlayer.HUDEquippedSealTier,
+                    StringTable.Localize("CA_HUD_SEAL_TARGETS", false),
+                    localPlayer.HUDChannelAffectedCount
+                );
+                channelColor = Font.CR_GREEN;
+            }
+            else if (localPlayer.CombatChannelCooldownRemaining > 0.0)
+            {
+                channelLine = String.Format(
+                    "%s: %s | %s: %.1fs",
+                    StringTable.Localize("CA_HUD_EQUIPPED_SEAL", false),
+                    sealName,
+                    StringTable.Localize("CA_HUD_SEAL_COOLDOWN", false),
+                    localPlayer.CombatChannelCooldownRemaining
+                );
+                channelColor = Font.CR_GOLD;
+            }
+            else
+            {
+                channelLine = String.Format(
+                    "%s: %s | T%d | %s",
+                    StringTable.Localize("CA_HUD_EQUIPPED_SEAL", false),
+                    sealName,
+                    localPlayer.HUDEquippedSealTier,
+                    StringTable.Localize("CA_HUD_SEAL_READY", false)
+                );
+            }
+            double channelX = 320.0
+                - HUDFont.StringWidth(channelLine) * 0.5;
+            Screen.DrawText(
+                HUDFont, channelColor, channelX, 84.0, channelLine,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
+        }
 
         if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
         {

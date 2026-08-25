@@ -7,6 +7,7 @@ class CaelumCombatActor : Actor
 
     CaelumAnatomyProfile AnatomyProfile;
     CaelumArmorModel CombatArmor;
+    CaelumElementalStatus ElementalStatus;
     int CombatMaximumHealth;
     int CombatToughness;
     int CombatResilience;
@@ -153,6 +154,8 @@ class CaelumCombatActor : Actor
             AnatomyProfile = CaelumAnatomyProfile(new("CaelumAnatomyProfile"));
             AnatomyProfile.InitializeHumanoid();
         }
+        if (ElementalStatus == null)
+            ElementalStatus = CaelumElementalStatus(new("CaelumElementalStatus"));
         LastAnatomyLocation = CaelumConstants.HIT_LOCATION_NONE;
         LastAnatomyNaturalVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
         LastAnatomyVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
@@ -425,7 +428,9 @@ class CaelumCombatActor : Actor
             (magicalAttack
                 ? CombatMagicalAccuracyPercent
                 : CombatPhysicalAccuracyPercent)
-                * CombatLucidityAccuracyMultiplier,
+                * CombatLucidityAccuracyMultiplier
+                * (ElementalStatus != null
+                    ? ElementalStatus.GetAccuracyMultiplier() : 1.0),
             0.0,
             100.0
         );
@@ -2013,7 +2018,9 @@ class CaelumCombatActor : Actor
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
             * CombatHealthPerformanceMultiplier;
-        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier;
+        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier
+            * (ElementalStatus != null
+                ? ElementalStatus.GetMovementMultiplier() : 1.0);
     }
 
     void CycleDebugCombatHealthState()
@@ -2075,6 +2082,7 @@ class CaelumCombatActor : Actor
         Vector3 prePhysicsVelocity = Vel;
 
         Super.Tick();
+        if (ElementalStatus != null) ElementalStatus.Tick(self);
 
         bool groundedNow = Pos.Z <= FloorZ + 0.01;
         if (!ImpactGroundTrackingInitialized)

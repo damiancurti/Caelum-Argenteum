@@ -36,6 +36,10 @@ class CaelumPlayer : DoomPlayer
     bool HUDCombatBlockActive;
     bool HUDCombatBlockUsesGauntlets;
     int HUDActiveShieldType;
+    bool HUDHasEquippedSeal;
+    int HUDEquippedSealType;
+    int HUDEquippedSealTier;
+    int HUDChannelAffectedCount;
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
@@ -208,6 +212,13 @@ class CaelumPlayer : DoomPlayer
     int CombatBlockInputGraceTics;
     bool CombatZoomInputLatched;
     bool CombatChannelModeActive;
+    Actor CombatChannelEffectActor;
+    double CombatChannelCooldownRemaining;
+    int CombatChannelSealType;
+    int CombatChannelSealTier;
+    double CombatChannelAdrenalinePerTic;
+    double CombatChannelRadius;
+    bool CombatChannelInputLatched;
     bool CombatRacialAbilityInputReserved;
     bool CombatTarotInputReserved;
     bool CombatClassAbilityInputReserved;
@@ -1922,6 +1933,25 @@ class CaelumPlayer : DoomPlayer
     // arma activa. Varias armas pueden seguir equipadas simultaneamente.
     void SyncHUDActiveWeaponState()
     {
+        HUDHasEquippedSeal = false;
+        HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
+        HUDEquippedSealTier = 0;
+        for (Inventory sealCursor = Inv; sealCursor != null;
+            sealCursor = sealCursor.Inv)
+        {
+            CaelumEquipmentItem equippedSeal =
+                CaelumEquipmentItem(sealCursor);
+            if (equippedSeal != null && equippedSeal.Equipped
+                && equippedSeal.EquipmentKind
+                    == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            {
+                HUDHasEquippedSeal = true;
+                HUDEquippedSealType = Clamp(equippedSeal.ItemType, 0,
+                    CaelumConstants.SEAL_TYPE_COUNT - 1);
+                HUDEquippedSealTier = Clamp(equippedSeal.Tier, 1, 3);
+                break;
+            }
+        }
         bool hasActiveWeapon = WeaponModel != null
             && WeaponModel.Equipped
             && WeaponModel.Durability > 0
@@ -7441,7 +7471,17 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
-        if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen)
+        // Mientras canaliza se conserva exclusivamente una nueva pulsacion de
+        // User2 para permitir la interrupcion manual antes de limpiar acciones.
+        if (CombatChannelModeActive && player != null)
+        {
+            bool channelPressed = (player.cmd.buttons & BT_USER2) != 0;
+            if (channelPressed && !CombatChannelInputLatched)
+                RequestCombatChannelInput();
+            if (!channelPressed) CombatChannelInputLatched = false;
+        }
+        if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
+                || CombatChannelModeActive)
             && player != null)
         {
             UserCmd creationCommand = player.cmd;
@@ -7598,6 +7638,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         UpdateAdrenalineDecay();
+        UpdateSealChannel();
         UpdateLucidityPhysicalStun();
         UpdatePainImmobilization();
         StaffCastCooldownRemaining = Max(
@@ -9401,12 +9442,107 @@ class CaelumPlayer : DoomPlayer
         bSHIELDREFLECT = magicReflect;
     }
 
-    // User2 reserva arquitectónicamente la canalización mediante Sello.
-    // Todavía no activa el efecto porque faltan tiempo, coste y reglas de
-    // interrupción definitivas; Reload queda exclusivamente para distancia.
+    CaelumEquipmentItem GetEquippedSeal()
+    {
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumEquipmentItem seal = CaelumEquipmentItem(cursor);
+            if (seal != null && seal.Equipped
+                && seal.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+                return seal;
+        }
+        return null;
+    }
+
+    double GetSealChannelAdrenalinePerTic(int tier)
+    {
+        if (tier >= 3) return CaelumConstants.SEAL_CHANNEL_T3_ADRENALINE_PER_TIC;
+        if (tier == 2) return CaelumConstants.SEAL_CHANNEL_T2_ADRENALINE_PER_TIC;
+        return CaelumConstants.SEAL_CHANNEL_T1_ADRENALINE_PER_TIC;
+    }
+
+    void StopSealChannel(bool startCooldown)
+    {
+        if (!CombatChannelModeActive && CombatChannelEffectActor == null) return;
+        CombatChannelModeActive = false;
+        HUDChannelAffectedCount = 0;
+        if (CombatChannelEffectActor != null)
+        {
+            CaelumChannelEffect effect = CaelumChannelEffect(CombatChannelEffectActor);
+            if (effect != null) effect.ReleaseChannel();
+            else CombatChannelEffectActor.Destroy();
+            CombatChannelEffectActor = null;
+        }
+        if (startCooldown)
+            CombatChannelCooldownRemaining = CaelumConstants.SEAL_CHANNEL_COOLDOWN_SECONDS;
+    }
+
+    void UpdateSealChannel()
+    {
+        CombatChannelCooldownRemaining = Max(0.0,
+            CombatChannelCooldownRemaining - 1.0 / TICRATE);
+        if (!CombatChannelModeActive) return;
+        CaelumEquipmentItem seal = GetEquippedSeal();
+        bool interrupted = player == null || player.playerstate != PST_LIVE
+            || health <= 0 || seal == null
+            || seal.ItemType != CombatChannelSealType
+            || seal.Tier != CombatChannelSealTier
+            || PainImmobilizationRemaining > 0.0
+            || LucidityPhysicalStunRemaining > 0.0;
+        if (interrupted || CurrentAdrenaline < CombatChannelAdrenalinePerTic)
+        {
+            StopSealChannel(true);
+            return;
+        }
+        CurrentAdrenaline = Max(0.0,
+            CurrentAdrenaline - CombatChannelAdrenalinePerTic);
+        Vel.X = 0.0; Vel.Y = 0.0;
+        CancelCombatBlockMode();
+        CancelRangedAim();
+        CancelRangedReload();
+        CancelWeaponCharge();
+        CancelPendingStaffCast(false);
+        if (CombatChannelEffectActor != null)
+            CombatChannelEffectActor.SetOrigin(Pos, false);
+    }
+
+    // User2 alterna la canalizacion; Reload conserva sus funciones propias.
     void RequestCombatChannelInput()
     {
-        CombatChannelModeActive = false;
+        if (CombatChannelModeActive)
+        {
+            CombatChannelInputLatched = true;
+            StopSealChannel(true);
+            return;
+        }
+        if (CombatChannelCooldownRemaining > 0.0 || player == null
+            || player.playerstate != PST_LIVE || health <= 0
+            || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
+            || IsPhysicallyImmobilized() || StaffCastPending) return;
+        CaelumEquipmentItem seal = GetEquippedSeal();
+        if (seal == null) return;
+        CombatChannelSealType = Clamp(seal.ItemType, 0,
+            CaelumConstants.SEAL_TYPE_COUNT - 1);
+        CombatChannelSealTier = Clamp(seal.Tier, 1, 3);
+        CombatChannelAdrenalinePerTic =
+            GetSealChannelAdrenalinePerTic(CombatChannelSealTier);
+        if (CurrentAdrenaline < CombatChannelAdrenalinePerTic) return;
+        CombatChannelRadius = CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
+            * CaelumConstants.SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER
+            * (DerivedStats != null
+                ? DerivedStats.AbilityRangePercent / 100.0 : 1.0);
+        CaelumChannelEffect effect = CaelumChannelEffect(
+            Spawn("CaelumChannelEffect", Pos, ALLOW_REPLACE));
+        if (effect == null) return;
+        effect.ConfigureChannel(self, CombatChannelSealType,
+            CombatChannelSealTier, CombatChannelRadius);
+        CombatChannelEffectActor = effect;
+        CombatChannelModeActive = true;
+        CombatChannelInputLatched = true;
+        CancelCombatBlockMode();
+        CancelRangedAim();
+        CancelRangedReload();
+        CancelWeaponCharge();
         ShowAbilitySuccessMessage();
     }
 
@@ -9698,7 +9834,8 @@ class CaelumPlayer : DoomPlayer
 
     bool IsPhysicallyImmobilized()
     {
-        return LucidityPhysicalStunRemaining > 0.0
+        return CombatChannelModeActive
+            || LucidityPhysicalStunRemaining > 0.0
             || PainImmobilizationRemaining > 0.0
             || (ElementalStatus != null
                 && ElementalStatus.IsLightningStunned());
@@ -9931,6 +10068,11 @@ class CaelumPlayer : DoomPlayer
     void AddDebugAdrenaline()
     {
         AddAdrenaline(CaelumConstants.DEBUG_ADRENALINE_GAIN);
+        CombatChannelCooldownRemaining = Max(
+            0.0,
+            CombatChannelCooldownRemaining
+                - CaelumConstants.DEBUG_SEAL_COOLDOWN_REDUCTION_SECONDS
+        );
         MarkCombatActivity();
     }
 
