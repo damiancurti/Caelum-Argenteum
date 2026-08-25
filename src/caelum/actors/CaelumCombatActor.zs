@@ -1050,6 +1050,21 @@ class CaelumCombatActor : Actor
         return other != null && ImpactContactActor == other;
     }
 
+    // Un actor sólo puede guardar un contacto principal, pero un grupo puede
+    // mantener varios enlaces hacia él. Cualquiera de los dos lados basta para
+    // demostrar que el par ya fue resuelto y evitar nuevas asignaciones.
+    bool IsImpactPairLatched(Actor other)
+    {
+        if (IsImpactContactLatchedWith(other)) { return true; }
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            return otherPlayer.ImpactContactActor == self;
+        }
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        return otherActor != null && otherActor.ImpactContactActor == self;
+    }
+
     double GetOtherImpactReferenceHeight(Actor other)
     {
         if (other == null) { return GetImpactReferenceHeight(); }
@@ -1198,7 +1213,7 @@ class CaelumCombatActor : Actor
         {
             return;
         }
-        if (IsImpactContactLatchedWith(other))
+        if (IsImpactPairLatched(other))
         {
             return;
         }

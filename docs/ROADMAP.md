@@ -4,9 +4,7 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
-The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, independent 119×119-MU square top landings, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
-
-The first mansion-floor prototype is implemented in V4.28.0a: eight smaller rooms are distributed across the six validated lateral support volumes. In each north/south row, the two outer supports carry one room each and the central support carries two, producing the approved `1 | 2 | 1` distribution. Connectivity follows the confirmed `corridor ← A ↔ B ↔ C ↔ D → corridor` chain. Every room has two logical trap doors, adjacent rooms share their connecting panel, and a 119-MU setback forms the initial balcony band. The wider remaining terrace areas stay reserved for later staircases. This architectural layer remains behind a complete GZDoom 4.14.2 visual/runtime validation gate before it becomes a reusable module.
+The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
 
 ## 1. Reconciliation with the old roadmap
 
@@ -41,7 +39,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.27 — Combat Input Completion and Validation
 
-**Implementation substantially complete; validation gate remains open.** Native User1–User4 routing, contextual Reload/charge, ranged ADS, shield/Giant-Gauntlets Block and the charged Block dash are implemented. The author has confirmed Reload/charge, ranged Zoom, magic-weapon Block, charged shield impulse, Giant Gauntlets uppercut, charged double cost/damage and automatic empty-magazine Reload. The remaining validation gate is listed below.
+**In progress since V4.27.0a.** Native User1–User4 routing, contextual Reload and the magic-weapon Zoom latch are implemented; full manual matrix validation remains pending.
 
 - Preserve Fire and AltFire weapon behavior.
 - Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
@@ -52,19 +50,37 @@ User1 is the remaining native User input and is reserved for the racial ability.
 - Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
 - Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
 
-Pain cancellation of active Block, active charge and the stored charged window is manually confirmed. Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and the visible HUD acknowledgement for User1–User4 are also confirmed. The bull horn contract is now authored as a physical Charge-only attack: no direct melee damage or melee knockback remains. Before closing V4.27, manually confirm the complete Fire/AltFire/Zoom/Reload/User1–User4 routing matrix across every weapon family, the corrected gate platform contour and the bull's single-contact Charge result. User1–User4 currently acknowledge successful routing only; final racial, Seal, Tarot and class effects belong to their authored content patches. Exhaustive crafting validation belongs to V4.29 and is not a V4.27 blocker.
-
-V4.27.0u narrows that gate to a final smoke test rather than another implementation block: traverse the corrected two-square rear passages, verify the attribute-derived bull Health/speeds/Air/mass and single-contact Charge, then sample the complete input contract on representative melee, ranged and magical weapons. If those checks pass, development advances to V4.28.
-
-The second passage squares from V4.27.0u are rejected and removed in V4.27.0v because they altered rear-room wall rendering. Bull and NPC validation gates are confirmed. The only remaining closure gates are the restored rear-room architecture check and the authoritative matrix in `WEAPON_INPUT_MATRIX.md`.
-
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 
-- Complete Seal selection/equipment state.
-- Implement interruptible Channel timing and Anima-per-second consumption through User2.
-- Store one empowered next attack and apply the seal element through the existing damage/element systems.
-- Distinguish physical-weapon elemental augmentation from same-element magical amplification.
+Core and non-weather elemental effects are implemented through 4.28.0af. The 4.28.0af compatibility pass corrects the GZDoom 4.14.2 static actor-spawn call; parser confirmation and complete manual effect validation remain pending. Weather-dependent Seal tier additions are deferred to Version 5.
+
+Current acceptance work:
+
+- Validate burn, poison, freeze and both lightning orientations with the new visual sequences.
+- Complete the remaining Quintaesencia mass/expulsion tests.
+- Confirm Seal HUD state, exact 105/210/315-per-second drain, interruption paths and 60-second cooldown.
+- Confirm the debug Adrenaline action adds 100 and reduces Seal cooldown by 10 seconds.
+- Validate the rebuilt first-floor floors, roofs, lateral doors and unobstructed stair landing before adding more mansion content.
+
+First-floor construction is now an explicit four-patch gate after the complete build froze beneath the central span:
+
+1. V4.28.0ag: western north/south pair only; verify corridor safety and native 3D floors.
+   - V4.28.0ah corrective gate: restore all ground-floor ceiling slabs, exclude the obsolete central connectors and validate inventory stability beside the rat crowd. This does not count as pair 2.
+   - V4.28.0ai diagnostic gate: use a stationary twenty-rat subclass for deterministic area-effect testing while retaining the normal pursuing Giant Rat separately. This does not count as pair 2.
+   - V4.28.0aj supersedes the stationary workaround: fix the bilateral multi-contact latch and restore all twenty normal active rats. Stress validation remains required before pair 2.
+   - V4.28.0ak isolates the active rat crowd and Bull in separate closed barred enclosures. Validate player/rat and player/Bull contacts independently before changing Impact Physics or beginning pair 2.
+   - V4.28.0al removes every MAP01 monster, NPC and dummy plus the temporary barred enclosures after `noclip` also froze. Validate architecture alone; if it freezes, compare against a map without the current upper-room pair.
+2. Pair 2: add exactly two rooms after pair 1 passes manual GZDoom validation.
+3. Pair 3: add exactly two more rooms after pair 2 passes.
+4. Pair 4: add the final two rooms and only then validate inter-room connections as a complete wing system.
+
+No later pair may be added while the current pair has a freeze, missing floor, rotated roof, incorrect door axis or stair-landing obstruction.
+
+- Validate equipped-Seal selection, exact Adrenaline drain, interruption, action lock and cooldown in GZDoom 4.14.2.
+- Validate Fire, Earth, Air, Water and Quintessence target filtering, damage, control, attraction and mass-scaled release.
+- Add final Channel HUD/UX feedback after the mechanical tests establish which diagnostics must remain visible.
 - Add stable Tarot, class-ability and racial-ability service interfaces; content values remain design-controlled.
+- Defer all weather-dependent Seal-tier extensions to the Version 5 calendar/weather integration.
 
 ### V4.29 — Crafting Completion and Persistent Recipe Book
 

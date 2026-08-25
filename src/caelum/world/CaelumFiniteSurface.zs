@@ -4,10 +4,34 @@ class CaelumFiniteRoofBlocker : Actor
 {
     Default
     {
-        Radius 8;
+        Radius 24;
         Height 8;
         +SOLID
         +CANPASS
+        +ACTLIKEBRIDGE
+        +NOGRAVITY
+        +CANNOTPUSH
+        +DONTTHRUST
+        RenderStyle "None";
+    }
+
+    States
+    {
+    Spawn:
+        TNT1 A -1;
+        Stop;
+    }
+}
+
+class CaelumFiniteFloorBlocker : Actor
+{
+    Default
+    {
+        Radius 24;
+        Height 8;
+        +SOLID
+        +CANPASS
+        +ACTLIKEBRIDGE
         +NOGRAVITY
         +CANNOTPUSH
         +DONTTHRUST
@@ -31,6 +55,22 @@ class CaelumFiniteFloorPanel : Actor
         int panelWidth = Max(8, args[1]);
         Scale.X = panelLength / 128.0;
         Scale.Y = panelWidth / 128.0;
+
+        // La planta alta reconstruida no depende de sectores inferiores. Una
+        // cuadricula solapada sostiene el piso exactamente a la cota Z=136.
+        for (int xOffset = -panelLength / 2 + 16;
+             xOffset <= panelLength / 2 - 16; xOffset += 32)
+        {
+            for (int yOffset = -panelWidth / 2 + 16;
+                 yOffset <= panelWidth / 2 - 16; yOffset += 32)
+            {
+                Actor blocker = Spawn(
+                    "CaelumFiniteFloorBlocker",
+                    Pos + (xOffset, yOffset, -8)
+                );
+                if (blocker != null) { blocker.master = self; }
+            }
+        }
     }
 
     Default
@@ -60,17 +100,13 @@ class CaelumFiniteRoofPanel : Actor
         // cuadrícula física permanece definida por las mismas dimensiones.
         Scale.X = panelLength / 128.0;
         Scale.Y = panelWidth / 128.0;
-        // FLATSPRITE conserva su huella con Angle; SpriteAngle gira solamente
-        // el dibujo del cielorraso, que en CSUR esta orientado a 90 grados.
-        SpriteAngle = 90.0;
-
         // Cuadrícula de soportes finitos: forma un techo transitable desde
         // arriba y un cielorraso sólido desde abajo.
-        for (int xOffset = -panelLength / 2 + 8;
-             xOffset <= panelLength / 2 - 8; xOffset += 16)
+        for (int xOffset = -panelLength / 2 + 16;
+             xOffset <= panelLength / 2 - 16; xOffset += 32)
         {
-            for (int yOffset = -panelWidth / 2 + 8;
-                 yOffset <= panelWidth / 2 - 8; yOffset += 16)
+            for (int yOffset = -panelWidth / 2 + 16;
+                 yOffset <= panelWidth / 2 - 16; yOffset += 32)
             {
                 Actor blocker = Spawn(
                     "CaelumFiniteRoofBlocker",

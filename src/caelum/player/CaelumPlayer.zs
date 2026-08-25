@@ -6168,6 +6168,21 @@ class CaelumPlayer : DoomPlayer
         return other != null && ImpactContactActor == other;
     }
 
+    // Los grupos pueden conservar varios enlaces hacia el jugador aunque él
+    // sólo guarde el contacto más reciente. Consultar ambos lados impide que
+    // el mismo par vuelva a crear cuerpos y resultados físicos cada tic.
+    bool IsImpactPairLatched(Actor other)
+    {
+        if (IsImpactContactLatchedWith(other)) { return true; }
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            return otherPlayer.ImpactContactActor == self;
+        }
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        return otherActor != null && otherActor.ImpactContactActor == self;
+    }
+
     double GetOtherImpactReferenceHeight(Actor other)
     {
         if (other == null) { return GetImpactReferenceHeight(); }
@@ -6314,7 +6329,7 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
-        if (IsImpactContactLatchedWith(other))
+        if (IsImpactPairLatched(other))
         {
             return;
         }

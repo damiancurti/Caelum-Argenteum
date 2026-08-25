@@ -31,11 +31,11 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
         else if (CaelumEssenceType == CaelumConstants.ESSENCE_EARTH)
             visual = CaelumSecondaryElement ? "XVSN" : "XERT";
         else if (CaelumEssenceType == CaelumConstants.ESSENCE_WIND)
-            visual = CaelumSecondaryElement ? "XRAY" : "XAIR";
+            visual = CaelumSecondaryElement ? "CELH" : "XAIR";
         else if (CaelumEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE)
             visual = "XQUI";
         sprite = GetSpriteIndex(visual);
-        frame = 0;
+        frame = visual == "CELH" ? (level.time / 2) % 12 : 0;
     }
 
     action void A_CaelumActorSeek()

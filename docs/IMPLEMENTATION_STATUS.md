@@ -1,346 +1,133 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## First-floor 1|2|1 room chain and rear lateral doors 4.28.0a
-
-**Implemented — pending complete visual/runtime validation in GZDoom 4.14.2**
-
-The approved first-floor topology is now present in both lateral rows: `corridor ← A ↔ B ↔ C ↔ D → corridor`. The four rooms per row follow the approved `1 | 2 | 1` support distribution. A 119-MU setback remains between each row and the central corridor, forming the initial balcony circulation band.
-
-Each room has exactly two logical doors. Because adjacent rooms share one panel, each row uses five physical panels rather than eight: two balcony/corridor accesses and the shared A-B, B-C and C-D connections. Upper panels begin at floor height 256 and use the established special-62 down/wait/up behavior. Room targets receive the original 128–136 floor slab plus a new 256–264 roof slab. Mansion interior wall `CMIN01`, ceiling `CMCL01` and door leaf `CMDR03` replace placeholder presentation in this module.
-
-Two additional 64-MU trap doors now bridge the one-MU structural separation between the rear-room north/south wings and lateral ground-floor rooms 53/57. Their moving sectors use the established floor-128 target-100 mechanism.
-
-Mandatory test order:
-
-1. Recheck both former crash boundaries at `y = ±272` before using a door.
-2. Cycle both new ground-floor lateral doors repeatedly from both sides.
-3. Walk the complete north and south balconies and visit A→B→C→D in both directions.
-4. Cycle all ten upper panels twice and confirm their lower receiving columns do not expose holes in the 136-MU floor.
-5. Inspect all eight room walls from ground level, first-floor level and above the 264-MU roof; no texture may extend infinitely or face the wrong sector.
-
-MAP01 contains 332 vertices, 414 linedefs, 812 sidedefs, 105 sectors and 187 things.
-
-## Unified rear-room 3D-floor target crash fix 4.27.0y
-
-**Implemented — crash reproduction boundary pending manual confirmation**
-
-The supplied report records an engine access violation while the player was at `(1486.37, -272.29)`, precisely on the new south-wing/rear-room boundary. The room and its four extensions previously used five adjacent target sectors carrying the same 3D floor. Their sidedef orientation was valid after V4.27.0x, but crossing between separate adjacent 3D-floor targets still reached an invalid engine-side contact state.
-
-Every surface in the combined shape now belongs directly to sector 65. Internal subdivision linedefs remain for stable node construction, but both sides resolve to the same sector and therefore no 3D-floor transition exists. The four empty target-sector definitions were removed.
-
-Manual test: repeatedly cross both former room/wing boundaries at `y = -272` and `y = 272`, on the floor and on the roof. If stable, the next isolated map patch will place one trap door between each wing and its adjacent lateral room.
-
-## Rear-wing wall orientation hotfix 4.27.0x
-
-**Implemented — pending focused visual confirmation**
-
-The four newly added outer edges had valid geometry and finite wall textures, but their interior/exterior sidedefs were assigned opposite to the geometric right/left sides of their directed linedefs. The exterior sector now owns each front/right side and the corresponding room wing owns each back/left side. No coordinates, sector heights, roof targets or openings changed.
-
-Manual check: inspect both integrated passages from above and below. The former dark projection and its mirrored hole must both be absent; all other V4.27.0w geometry must remain unchanged.
-
-## Integrated rear-room roof passages and V4.27 closure 4.27.0w
-
-**Implemented — V4.27 gameplay checks closed; new architecture pending visual validation**
-
-The author confirmed the restored V4.27.0v architecture and completed the authoritative Fire/AltFire/Reload/Zoom matrix. Together with the previously confirmed bull, NPC, charged-attack, blocking, ranged and User1–User4 checks, this closes the V4.27 gameplay validation set.
-
-The rear-room passage is now built as part of the room rather than as a conventional raised block laid against it. Both 119×119-MU stair landings and their new 119×119-MU continuations use floor 0, ceiling 512 and roof target 100. The shared 3D floor therefore provides the walkable terrace at 136 MU while leaving a coherent interior below. Exactly 119 MU of each north/south room wall opens into the corresponding wing; all exposed edges use the already validated finite middle-wall construction.
-
-Focused visual test:
-
-1. Traverse both rear stairs, both integrated passages and the rear-room roof.
-2. Confirm that the exterior floor remains flat and that no face rises above the roof.
-3. Inspect the rear room from inside and outside: its original walls must remain visible except for the two intentional 119-MU openings.
-
-MAP01 contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
-
-## Rejected passage rollback and complete weapon-input matrix 4.27.0v
-
-**Superseded by V4.27.0w — both manual checks confirmed**
-
-The two V4.27.0u passage blocks are rejected. Manual GZDoom testing showed that adjoining a normal floor-136 sector directly to the rear-room boundary removed lower wall faces and left a structural face projecting above the roof. V4.27.0v removes both sectors, their vertices, linedefs and sidedefs, then restores the complete original room/exterior boundaries. The accepted V4.27.0t square landings remain unchanged.
-
-The author has confirmed V4.27 closure checks 2 and 4: the bull's attribute-derived Health, movement, Charge, mass and Air behavior are correct; Rulo, Ronnie, Argento and Caella retain their intended Health and shared Air without player survival resources.
-
-`docs/WEAPON_INPUT_MATRIX.md` now records the implemented Fire, AltFire, Reload and Zoom contract for every weapon. The audit also found that the Bell's existing authored constants were not connected to `CaelumWeaponModel`; it now uses 50 base damage and 1000 base Anima while retaining seven slow projectiles.
-
-Remaining V4.27 checks:
-
-1. Confirm the rejected second blocks are absent, both rear-room walls are fully visible and no face projects above the roof. The accepted first square landings must remain clean.
-2. Execute the weapon matrix: every physical row once; every magical implement once; every essence primary/secondary pair once; and one complete T1/T2/T3 selector cycle.
-
-If both pass, V4.27 closes and development advances to V4.28.
-
-MAP01 contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
-
-## Rear roof-passage blocks and V4.27 closure checklist 4.27.0u
-
-**Implemented — pending final manual GZDoom 4.14.2 smoke tests**
-
-A second conventional 119×119-MU block continues each corrected rear landing toward the rear room. It shares its western edge with the first square and places its inward north/south edge against the existing rear-room roof boundary. The new sectors remain outside the room footprint, use floor height 136 and expose explicit two-sided boundaries to exterior sector 0; they do not replace or overlap the room's 3D roof.
-
-V4.27 can close after the following focused manual checks:
-
-1. **Architecture:** traverse both two-square rear passages onto the rear-room roof; confirm no triangles, strips, raised exterior floor, gaps or roof/wall regressions. Recycle the main gate several times from both sides.
-2. **Bull statistics and Charge:** confirm 82800 Health, approximately 10.8317 walking speed, approximately 21.6634 Charge speed, shared Air spending/recovery and collision mass 900/1800. One Charge contact must resolve once rather than stacking direct melee and collision damage.
-3. **Input regression smoke test:** for one representative weapon from each melee, ranged and magical family, confirm Fire/AltFire, contextual Zoom, Reload/charged Reload and User1–User4 acknowledgement. Include shield-compatible, two-handed and Giant-Gauntlets cases.
-4. **NPC regression:** confirm Rulo/Ronnie/Argento/Caella retain maximum Health 6200/4340/1740/1160 and expose shared Air without player survival resources.
-
-The author has already confirmed ranged Zoom and reload scaling, magazine behavior, charged melee/magic double cost and damage, `sqrt(2)` magical radius, Pain cancellation, automatic empty-magazine reload, shield/Giant-Gauntlets Block, charged shield dash, Giant-Gauntlets uppercut and visible User1–User4 acknowledgement. Crafting exhaustion and final ability effects are not V4.27 blockers and remain assigned to their later roadmap patches.
-
-MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
-
-## Square-landing exterior topology hotfix 4.27.0t
+## Actor-free architecture diagnostic 4.28.0al
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-The V4.27.0s dimensions were correct, but each new square was inserted inside the existing exterior sector using one-sided perimeter lines. The node builder consequently had no explicit exterior floor ownership on the opposite side and triangulated visible planes away from the intended rectangles.
+The freeze also occurred while native `noclip` was active, so physical contact is no longer the primary hypothesis. MAP01 temporarily contains no monster, NPC or Training Dummy. The twenty Giant Rats, Bull, Rulo, Argento, Caella, Ronnie and four dummies are absent. The barred enclosures introduced only for 4.28.0ak are also removed.
 
-Every new perimeter line is now two-sided: the 119×119-MU raised landing remains on its authored side and exterior sector 0 explicitly owns the opposite side. The shared final-tread boundary, landing height 136 and all room/roof sectors remain unchanged.
+The current first-floor room pair, ground-floor ceiling slabs, stairs, landing, doors, pickups and crafting infrastructure remain unchanged. This isolates the map architecture and non-combat world actors without modifying Impact Physics or gameplay code.
 
 Manual validation:
 
-1. Inspect both landings from above: each must render as one clean 119×119 square without triangular extensions.
-2. Inspect from ground level and confirm exterior floor 0 remains flat around all six new perimeter edges.
-3. Cross every landing edge and verify no invisible floor, infinite strip or displaced room surface appears.
-4. Confirm both rear staircases, rear-room roof and main gate remain unchanged.
+1. Remain at the player start for several minutes.
+2. Traverse the ground floor, stairs, landing and both implemented upper rooms with and without `noclip`.
+3. Open the inventory in several areas.
+4. If the freeze remains, remove the current upper-room pair for a direct architectural comparison.
 
-MAP01 now contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
-
-## Independent square rear-stair landings 4.27.0s
+## Isolated collision test enclosures 4.28.0ak
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-Each rear staircase now continues from its 119-MU-wide final tread onto an independent square landing measuring 119×119 MU. Both sectors have floor height 136 and a normal sky ceiling; neither carries roof-control tag 100 nor coincides with the rear-room roof, wall strips, door frame or another terrace sector. Their only shared map boundary is the complete edge of the final tread.
+The Bull previously stood inside the approximately twenty-rat group and could push many bodies simultaneously, preventing a clean distinction between player/rat crowd contacts and Bull-driven displacement. MAP01 now has two closed, non-adjacent barred enclosures. All twenty normal active Giant Rats remain together in the western enclosure; the Bull is centered in a separate eastern enclosure. The bars block players and monsters while preserving visibility.
+
+No collision formula or latch behavior changes in this diagnostic patch. The observed `noclip` result points to physical contact, but remains provisional until the two groups are tested independently.
 
 Manual validation:
 
-1. Climb both rear staircases and confirm each top landing is visibly square and as wide as the staircase.
-2. Walk across the complete 119×119 surface and check every exterior edge for gaps, raised surrounding ground or infinite strips.
-3. Inspect the rear-room walls, roof and door from above and below; none must change or intersect either landing.
-4. Recheck the main gate and all existing staircase/terrace closures for regressions.
+1. Remain outside both enclosures and confirm the Bull cannot touch or push any rat.
+2. Enter only the rat enclosure with `noclip`, disable it inside and test the complete crowd without Bull interference.
+3. Enter the Bull enclosure separately and test one Bull/player collision.
+4. Confirm both barred contours remain closed and neither actor group escapes.
 
-MAP01 now contains 216 vertices, 288 linedefs, 562 sidedefs, 85 sectors and 187 things.
+## Bilateral multi-contact latch for actor crowds 4.28.0aj
 
-## Attribute-derived bull movement and actor Health 4.27.0r
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The stationary-rat test still froze after physical contact, disproving both AI load and ordinary actor count as the root cause. Impact Physics stored only one `ImpactContactActor` on each body. When a player contacted several rats, the player's pointer moved to the newest rat while earlier rats still pointed to the player. The player-side test then treated those older pairs as new every tic and repeatedly allocated `ImpactBody`, `ImpactBody` and `ImpactResult` objects.
+
+Player and combat actors now treat a pair as latched when either side still references the other. This preserves the existing separation/rearm rule while preventing repeated allocation and impulse delivery for simultaneous crowd contacts. The twenty MAP01 actors are restored to the normal pursuing `CaelumGiantRat`; the diagnostic stationary subclass and DoomEdNum 18030 are removed.
+
+Manual validation:
+
+1. Remain near the complete active rat group for at least two minutes.
+2. Let the group surround and physically push against the player.
+3. Walk through the group repeatedly and open inventory while surrounded.
+4. Confirm each rat still pursues and bites for base damage 60.
+5. Confirm a separated rat can collide again after the established contact-rearm interval.
+
+## Stable twenty-target Giant Rat area test 4.28.0ai
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-The bull retains authored quadruped `Speed 10`, then applies the shared Type-4 curve from Agility 20. Its effective walking/chase speed is therefore approximately 10.8317 MU/tic. Charge remains the exact native 2:1 running relationship over that derived value, approximately 21.6634 MU/tic. Agility is once again observable in movement and can support future quadruped progression without changing the actor baseline.
+The freeze is confirmed to occur without opening inventory when the complete rat group enters its simultaneous `A_Look`/`A_Chase` range. MAP01 now uses `CaelumGiantRatAreaTest` for its twenty-target cluster. This subclass retains the Giant Rat body, mass 10, combat profile, quadruped anatomy, elemental statuses, Pain and Death, but deliberately has no target acquisition, chase or melee state.
 
-`CaelumCombatActor.InitializeCombatProfile()` now derives maximum Health from the same player contract: `10 × Constitution Type-1 × Mass/100`. The bull's Constitution 40 produces 9200 at the 100-kg reference and 82800 at its authored 900-kg mass. Rulo, Ronnie, Argento and Caella retain 6200, 4340, 1740 and 1160 respectively because their existing values already matched their Constitution and mass.
+The normal `CaelumGiantRat` remains available as the actual enemy with chase and base bite damage 60. The stationary test subclass exists only to make Fire, Earth, Air, Water, Quintessence and other mass attacks reproducible without mixing the measurement with twenty concurrent AI routes.
 
 Manual validation:
 
-1. Launch GZDoom 4.14.2 and inspect the bull: Health must be 82800/82800.
-2. Confirm effective walk speed approximately 10.8317 and cached Charge speed approximately 21.6634.
-3. Confirm Charge remains exactly twice walking speed and continues spending shared Air.
-4. Inspect the four humanoid NPCs and confirm their maximum Health values did not change.
+1. Approach and circle the complete group without a freeze.
+2. Open inventory beside the group.
+3. Apply each Seal effect and confirm all authorized targets respond.
+4. Confirm Pain and Death function and Quintaesencia still uses each rat's mass 10.
+5. Spawn a normal `CaelumGiantRat` separately and confirm it still chases and bites for base 60.
 
-The rear-stair top landing remained unchanged in this mechanics-only patch; the independent square geometry was subsequently implemented in V4.27.0s.
-
-## Collision-mass hotfix and quadruped speed baseline 4.27.0q
+## Ground-floor ceiling restoration and Giant Rat crowd fix 4.28.0ah
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-The bull no longer overrides `GetCollisionEffectiveMass()`, which is not virtual in `CaelumCombatActor`. Temporary effective-mass changes now use the shared `CollisionEffectiveMassMultiplier`: every combat actor begins at 1.0, the bull selects the established Tower Shield value 2.0 while Charge is active, and stopping Charge restores 1.0. This preserves 900 kg normally and 1800 kg during the embestida without coupling collision mass to inventory capacity.
+Native 3D-floor slabs again cover the eight actual room footprints, restoring the ground-floor ceilings and reserving the future first-floor walking surfaces. The two obsolete 64×64 central connectors remain untagged, so no slab or collision crosses the central corridor. Upper walls and doors remain limited to the manually accepted western pair from 4.28.0ag.
 
-The quadruped movement baseline is now Speed 10. Charge applies the exact native walk/run ratio 2:1 and therefore stores 20 MU/tic; Agility no longer modifies this authored movement value. Shared Air consumption and regeneration remain unchanged.
+Opening the custom inventory does not enumerate nearby actors, but it immobilizes the player while the simulation continues. The approximately twenty test rats could therefore converge into one same-species collision pile. Giant Rats now use `THRUSPECIES`: they continue colliding with and attacking the player while passing through other Giant Rats. Mass, bite damage, targeting and elemental-area eligibility are unchanged.
 
 Manual validation:
 
-1. Launch GZDoom 4.14.2 and confirm `CaelumBull.zs` compiles without a virtual-function error.
-2. Inspect the bull debug page and confirm walk speed 10, cached Charge speed 20 and full shared Air.
-3. Confirm effective collision mass is 900 outside Charge, 1800 during Charge and returns to 900 after Charge, Pain or Death.
-4. Confirm Charge still stops when Air is insufficient.
+1. Inspect every ground-floor room ceiling and confirm its footprint matches the room above it.
+2. Cross beneath the central corridor; confirm both former 64×64 connector slabs are absent.
+3. Approach the full rat group and open/close inventory repeatedly while they converge.
+4. Confirm rats still attack and collide with the player but no longer block one another.
 
-The eight-room first-floor `1 | 2 | 1` distribution is approved. No first-floor sector was mixed into this compilation hotfix; construction is the next isolated map patch.
-
-## Shared actor Air, cached bull UI and tower-mass Charge 4.27.0p
+## Incremental first-floor rebuild: pair 1 4.28.0ag
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-V4.27.0o attempted to call `GetBullRunningSpeed()` from the UI debug overlay. GZDoom correctly rejected this because ordinary actor functions belong to play scope. The bull now calculates and stores `BullRunningSpeed` during play initialization; UI reads that field without invoking simulation code.
+The complete actor-surface first floor from 4.28.0ae is rejected after a runtime freeze while the player crossed beneath its central elevated span. All upper finite floor, roof and wall panels are removed. Native 3D-floor controls now target only the two western rooms, one per wing; every other former upper polygon is assigned to an untagged neutral sector and therefore creates no upper volume.
 
-Air is no longer bull-specific. `CaelumCombatActor` owns current Air, maximum Air, passive regeneration and a spending flag. Every original Caelum actor that initializes a combat profile therefore receives maximum Air from Resilience Type-4 and starts full. At present only the bull spends it because Charge is the first NPC running action; other NPCs still regenerate and expose the resource for future running, attacks, jumping, blocking or casting rules. None receives player hunger, thirst, sleep or inventory-load processing.
-
-The current code distinction is behavioral rather than systemic: Rulo, Ronnie, Argento, Caella and the bull all inherit `CaelumCombatActor` and currently carry GZDoom's `Monster` flag, so all five use hostile monster AI in MAP01. The four named humanoids are NPC characters by game design; the bull is the first non-humanoid monster archetype. They share combat/physics/resources while dialogue, faction and friendliness remain future World/NPC layers.
-
-During Charge, `CaelumBull.GetCollisionEffectiveMass()` applies the existing Tower Shield multiplier 2.0. Its ordinary effective body mass remains 900 kg; only the active embestida resolves as 1800 kg. Speed, raw Mass, knockback resistance and non-Charge collisions are unchanged.
-
-The accepted first-floor distribution uses the six lateral support volumes: each of four outer supports carries one upper room, and each of two central supports carries two smaller rooms. The resulting north/south `1 | 2 | 1` rows total eight rooms and preserve enlarged terrace areas for later staircases. Exact wall coordinates and the second-door orientations remain a visual approval gate before UDMF geometry is added.
+Only four upper sliding leaves remain: the two exterior doors of the western north/south pair. The central corridor contains no upper actor bridge or blocker grid. Ground-floor geometry, doors, lintel, Seal systems and the approximately twenty Giant Rats are unchanged.
 
 Manual validation:
 
-1. Launch GZDoom 4.14.2 and confirm actor parsing completes without a UI/play-scope error.
-2. Inspect Rulo, Ronnie, Argento, Caella and the bull on debug page 5; each must display current/maximum Air.
-3. Confirm the bull still shows cached run speed approximately 15.164 MU/tic.
-4. Compare walking contact against active Charge: debug collision mass must be 900 versus 1800 kg.
-5. Repeat Charge until Air falls, then verify passive recovery and no hunger/thirst/sleep fields on actors.
+1. Cross the entire central corridor and the stair landing repeatedly without a freeze or pause.
+2. Inspect both western upper rooms from below, inside and above.
+3. Confirm each room has a continuous floor and correctly oriented roof.
+4. Open both double doors from each side and confirm both leaves slide laterally.
+5. Confirm no wall, collision or invisible floor belonging to the other six rooms remains.
 
-MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+## GZDoom 4.14.2 elemental-visual compatibility 4.28.0af
 
-## Mansion gate leaf and stamina-driven bull charge 4.27.0o
+**Implemented — pending parser and manual gameplay validation**
 
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The validated main-gate geometry is unchanged. Its four threshold sidedefs now use project-owned mansion leaf `CMDR03` instead of `STARTAN3`. The source is a separate 64×128 door leaf; natural horizontal repetition across the 128-MU panel presents a two-leaf gate from both sides while the map-built jambs remain independent.
-
-GZDoom monsters expose one actor `Speed`; they do not natively manage a player-style walk/run toggle or stamina. The bull therefore keeps Speed 7 as walking/chase speed and derives Charge speed from the standard DoomPlayer ratio (`50/3 ÷ 25/3 = 2`) plus Agility Type-4. With Agility 20, Charge begins at approximately 15.164 MU/tic. Bull Air is `1000 × Resilience Type-4`, giving approximately 1083.168 at Resilience 20. While charging it spends the player's two base running-Air units per second multiplied by body-mass ratio 9, or 18 Air/second; outside Charge it refills over the same 480-second full-recovery interval. It has no hunger, thirst, sleep, inventory load or humanoid survival processing.
-
-The actor debug page identifies the bull correctly and displays current/maximum Air plus derived run speed, making the custom non-player resource testable.
-
-The first-floor request is recorded but geometry remains deliberately untouched in this patch. The measured ground-floor layout contains six central north/south rooms, one western NPC room, one eastern rear room, and four closed intermediate staircase volumes. Each intermediate volume can geometrically receive the descending panels of the two adjacent upper rooms. The exact connection of the remaining upper doors and the requested two-door topology per room must be fixed before adding overlapping 3D-floor architecture.
+The elemental-status visual helper now receives a typed `class<Actor>` and calls the native static factory as `Actor.Spawn`. This replaces the object-scope call that GZDoom 4.14.2 rejected at `CaelumElementalStatus.zs:192`. No elemental damage, duration, target filtering or balance value changes in this compatibility patch.
 
 Manual validation:
 
-1. Inspect the main gate from both sides and confirm two mansion leaves move with only the central panel.
-2. Inspect the bull debug page: maximum Air should be approximately 1083.168 and Charge speed approximately 15.164 MU/tic.
-3. Observe ordinary chase at Speed 7 and Charge at the visibly faster derived running speed.
-4. Repeat charges until Air decreases; confirm an empty resource prevents Charge and passive recovery restores it.
-5. Trigger Pain during Charge and confirm horizontal Charge velocity stops immediately.
+1. Confirm the PK3 parses and MAP01 starts in GZDoom 4.14.2.
+2. Apply burn, poison, freeze and lightning and confirm the attached effects follow their owner and disappear with the status.
+3. Confirm horizontal lightning projectiles and vertical Water-channel strikes retain their correct orientation.
 
-MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+## Seal Channel, Giant Rat tests and first-floor rebuild 4.28.0ae
 
-## Physical bull charge and closed main-gate platform 4.27.0n
+**Implemented — parser correction supplied in 4.28.0af; manual GZDoom 4.14.2 validation pending**
 
-**Implemented — pending manual GZDoom 4.14.2 validation**
+User2 now starts the area effect defined by the equipped Seal and a second press interrupts it. Channeling spends exactly 3/6/9 Adrenaline each 35-Hz tic for T1/T2/T3, cannot begin without the first tic's cost, and starts a 60-second cooldown whenever it ends. Pain, death, losing/changing the Seal or reaching insufficient Adrenaline also ends it.
 
-The bull no longer performs a direct melee horn attack. Its sole attack is now Charge: three tics face the current target and the existing two-frame Charge animation then advances for five tics at the bull's authored actor Speed 7. No `A_CaelumMeleeAttack`, fixed damage or common attack-push call remains. A successful body contact is resolved once by the existing Impact Physics latch, using actual closing speed and the two effective masses. This removes the previous stack of 540 direct damage, approximately 441.6 MU/tic melee thrust and a possible secondary wall/body impact.
-
-The screenshot of the moving exterior floor identified an orientation error rather than a roof-control leak. Both gate thresholds had the correct exterior/door sector references but ran in the wrong direction, placing the door's back side outside its visual rectangle. Their endpoints are now reversed: the western threshold runs north-to-south and the eastern threshold south-to-north. The special remains on both lines with exterior at the front and moving panel at the back, but the platform contour now closes around only the intended 24×128-MU panel.
+The player is stationary and cannot attack, Block, Aim, Reload, charge, cast, use consumables, Tarot, racial or class abilities while channeling. Fire, Earth, Air, Water and Quintessence have their authored non-weather effects. The area selector accepts living combatants of every allegiance, neutral NPCs, corpses and missiles; it does not accept inventory, pickups, stations, doors or map architecture.
 
 Manual validation:
 
-1. Activate the gate from both sides and confirm only the central panel moves; every surrounding exterior-floor tile must remain at height 0.
-2. Complete four open/close cycles and confirm the frame, top traversal and collision remain finite.
-3. Let the bull contact a stationary character in open ground and confirm there is one `CaelumImpact` result with no preceding melee event.
-4. Sidestep during the three-tic tell and confirm the five-tic Charge keeps its committed direction rather than homing.
-5. Compare standing, walking and running head-on contacts to verify that actual closing speed changes the result without producing the former artificial 441.6-MU/tic launch.
+1. Equip each Seal tier and confirm exact consumption of 105/210/315 Adrenaline over one second.
+2. Confirm User2 starts/stops the effect and every termination path starts a 60-second cooldown.
+3. Confirm movement, attacks, Reload/charge, Zoom/Block, AltFire, User1, User3, User4, Use and consumables are suppressed.
+4. Confirm Pain, death, zero Adrenaline, unequipping or changing the Seal interrupts immediately.
+5. Test each elemental effect against enemies, allies, neutral NPCs, corpses and projectiles; verify pickups, doors and stations remain untouched.
+6. For Water, place 1/2/4 actors inside the impact area and confirm the modified 10,000 pool is divided once across them.
+7. For Quintaesencia, compare actors of different mass and verify release follows `10 × total trapped mass / individual mass`.
 
-MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
+Climate modifiers by Seal tier are intentionally pending the Version 5 calendar/weather module.
 
-## Main-gate strip isolation and bull damage diagnosis 4.27.0m
+The Seal HUD identifies the equipped element/tier, active channel and remaining cooldown. The development Adrenaline control adds 100 Adrenaline and removes 10 seconds from the Seal cooldown. MAP01 contains approximately twenty Giant Rats for mass-area testing; each rat uses quadruped anatomy, mass 10, approximately 40 cm height, all twelve attributes at 1 and base bite damage 60.
 
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The main gate's panel and two jambs were incorrectly tagged as target sector 100. That tag belongs to the shared room-roof `Sector_Set3DFloor` system; applying it to the otherwise conventional raised-floor gate introduced an unrelated 3D surface that escaped from its forward edge. All three gate sectors now remain finite raised floors without a roof-control ID. No coordinate, activation line, passage width, speed or delay changed.
-
-The bull's current horn state is a melee attack, not a scripted charge. Direct full-health damage remains 540 before critical and target mitigation. A successful melee hit also calls the common physical-push service. With mass 900 kg and Strength 40, the bull's physical-push multiplier is 82.8; against a 100-kg target the current formula can produce approximately 441.6 MU/tic of thrust. A subsequent wall or actor collision is resolved independently by Impact Physics and can therefore dwarf the melee hit. The reported value near 350,000 is consistent with this secondary high-speed impact path, not with the dagger-based 540 direct damage. Changing the horn into melee-only, charge-only or a combined authored charge remains a design decision and is intentionally not guessed here.
-
-V4.27 confirmations now include Giant Gauntlets Block, charged magical radius visually matching `sqrt(2)`, Pain cancellation of Block/charge/stored charge and green HUD acknowledgement for User1–User4.
-
-Manual validation:
-
-1. Inspect the front and rear of the main gate and confirm the forward infinite strip is absent.
-2. Complete four bilateral gate cycles and traverse over its finite top.
-3. Reproduce a bull horn hit in open ground and compare it with a hit that drives the target into a wall; the debug overlay should identify the latter as a separate `CaelumImpact` event.
-4. After the horn contract is selected, calibrate its direct damage, movement and push as separate values.
-
-MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## Isolated main gate and final bull horn baseline 4.27.0l
-
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The bull retains the same derived combat profile as a player-shaped Caelum combatant with physical attributes 40, technical attributes 20 and social/mental attributes 2. Its horn attack now takes the Tier-1 Dagger's authored base values: damage 60 and eight total attack tics. The existing actor pipeline then applies the bull's 900-kg physical multiplier, health performance, Dexterity-based accuracy/critical chance and target defenses. Its ordinary pre-critical calculated damage at full health is therefore `60 × 9 = 540`, rather than the previous `120 × 9 = 1080`.
-
-MAP01 adds one isolated main gate directly across the true western corridor mouth (`x=-593…-569`, `y=-96…96`). The moving panel occupies the central 128 MU and two continuous 32-MU jambs fill the remaining passage width. This patch deliberately adds no corridor, roof, connector, partition or outboard strip. Both panel thresholds retain bilateral player USE, repeatability, speed 16 and delay 150.
-
-Manual validation:
-
-1. Approach the main gate from both sides and complete at least four full open/close cycles.
-2. Confirm the frame is opaque from floor to its finite top, has no invisible ground section and creates no lateral or vertical projection.
-3. Cross over the closed panel/frame from the terrace and confirm no infinite-height collision exists.
-4. Compare the bull's ordinary horn result with the expected full-health pre-critical value 540 and verify its complete attack cycle is eight tics.
-
-MAP01 structure: 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## Isolated terrace roofs, corrected bull animation and HUD acknowledgement 4.27.0k
-
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The roof defect and missing room walls had one cause: 4.27.0i/j retargeted long room boundaries to the new roof sectors. Because room and connector shared floor height while only one received the 3D floor, the renderer could omit the original lower wall and expose a vertical endpoint face. Every roof module now uses the exact existing final-step span (`x=-24…95` or `x=641…760`) and retains the established 1-MU clearance from room walls at `x=-25/96` or `x=640/761`. Original room linedefs are untouched. The stair threshold is the sole shared boundary; three target boundaries and the independent rear-wall sector complete each conventional contour.
-
-The corrected author-supplied atlas provides clean non-overlapping cells. The deterministic extractor now produces 64 rotating state sprites (`A`–`H`, rotations 1–8) and six death sprites (`I0`–`N0`). The bull uses Idle, two-frame Walk, two-frame Charge, directional Pain and the full six-frame Death sequence. The supplied Run frames are registered and ready for a later distinct chase/charge-speed state.
-
-User1–User4 previously called `A_Log`, which respects console/message visibility and did not guarantee a gameplay HUD result. Each routed input now starts a play-scope acknowledgement timer; the HUD renders the localized success text centered for two seconds.
-
-The bull's high damage is currently mechanical rather than hidden: `A_CaelumMeleeAttack(120)` supplies base horn damage 120, and `PrepareActorOutgoingDamage` multiplies physical actor damage by `Mass / 100`. At 900 kg the normal calculated value is therefore `120 × 9 = 1080`, before health performance and critical processing. Strength 40 currently affects physical push force, accuracy/critical derive from the technical profile, and target defense/vulnerability apply afterward. Final horn base damage, attack cadence, walk/run/charge speeds, sight/hearing ranges, Pain resistance and intended health tier remain author-controlled values.
-
-Manual validation:
-
-1. Inspect both sides of all four stair/room pairs: every room wall must be visible and no vertical column may extend above the 136-MU terrace.
-2. Walk every roof and confirm the 1-MU isolation produces no hole large enough to affect traversal.
-3. Observe the bull from all eight directions during movement, attack, Pain and Death.
-4. Press User1–User4 once with each weapon family and confirm the green localized HUD acknowledgement appears once per press.
-5. Record ordinary and critical bull damage before authoring the final horn base value.
-
-MAP01 structure: 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
-
-## Giant Gauntlets Block and first quadruped monster 4.27.0j
-
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The narrow projection beside the new terrace came from eight 1-MU bridge linedefs between the 119-MU final stair and the 121-MU closure. Each final-step linedef now spans and owns the full shared boundary directly. The closure remains conventional and closed, with no replacement middle texture or free edge.
-
-Giant Gauntlets now block with the weapon itself. Zoom can enter Block even when no shield is equipped, the HUD displays the gauntlets, and the complete active Block source reports same-tier Buckler coverage (120°), defense (50/60/70), equivalent Air load, acrobatic absorption and combat-mass behavior. Durability loss is committed to the gauntlets rather than to an unrelated equipped shield.
-
-`CaelumBull` is the first hostile quadruped. Its profile is 40 Strength/Toughness/Constitution; 20 Agility/Dexterity/Resilience; and 2 in Charisma/Empathy/Eloquence/Intelligence/Patience/Insight. The physical actor uses 900 kg, 51.8 MU height and 15.6 MU radius, corresponding to approximately 1.50 m at the shoulder and 0.90 m body width under the established 62.2-MU/1.80-m player scale. GZDoom still uses a cylindrical collision body, so longitudinal length is represented visually and anatomically rather than by a rectangular collider.
-
-The bull anatomy contains six ordered regions: front head, torso, front-left leg, front-right leg, rear-left leg and rear-right leg. Incoming melee and projectile contacts now supply their direction relative to the target; the critical head region can therefore be selected only from the animal's front. Torso and legs reuse the established sensitive and neutral natural grades.
-
-Manual validation:
-
-1. Inspect all eight former 1-MU joins and confirm the narrow vertical projection is gone while every roof remains traversable.
-2. Equip Giant Gauntlets without a shield, press Zoom and verify the gauntlet HUD layer, 120° coverage, Buckler-equivalent defense/Air behavior and weapon durability loss.
-3. Begin Reload charge and let the bull damage the player; a successful Pain state must cancel both the active charge and stored charged window.
-4. Attack the bull from front, side and rear at head height, then target each lower quadrant and verify the reported anatomical region/vulnerability.
-5. Press User1–User4 with physical, ranged and magical weapons and confirm one localized successful-use message per press.
-
-The debug overlay already reports the resolved explosion radius numerically. A charged magical area uses `sqrt(2)` times the ordinary linear radius, which is exactly twice the circular area even before a permanent explosion animation exists.
-
-MAP01 structure: 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
-
-## Roofed stair-back regions, direct jewelry spawn and face regression 4.27.0i
-
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-Each of the four intermediate closures is now a two-sector module. The interior sector stays at floor 0 and joins roof target 100, reusing the validated 128–136-MU solid slab; the independent rear wall remains at floor 136. Existing room and final-stair boundaries are split and shared instead of duplicated. Consequently the closed area behind each staircase gains a walkable roof while the complete central corridor remains open to the sky.
-
-The reported Seal/Amulet failure came from the equipment interface's direct floor-spawn path, not the crafting transaction. That path previously handled weapons and shields, then treated every other selection as Armor. It now has explicit Amulet and Seal branches with their selected type and tier; the crafting system remains scheduled for exhaustive V4.29 validation.
-
-The HUD face has one authoritative master at `graphics/caelum/face/ca_player_face.png`. All 42 engine-required `CAF` status lumps are synchronized aliases of that master, preventing an unrelated armor image from surviving in one face state while retaining GZDoom's native lump-name contract.
-
-Manual validation:
-
-1. Walk and view all four new roofs; confirm every closed rear region is covered and the central corridor has no ceiling.
-2. Inspect the room/stair joins from above and below for raised exterior ground, gaps, infinite strips or duplicate faces.
-3. Use the equipment interface's direct floor-spawn action for one Amulet and one Seal; verify their class, inventory category and selected tier.
-4. Trigger normal, Pain, turn, special-damage and death face states and confirm that the player face never becomes armor.
-
-MAP01 structure: 206 vertices, 280 linedefs, 552 sidedefs, 80 sectors and 186 things.
-
-V4.27 is not yet formally closed. Reload/charge, ranged Zoom, magic-weapon Block and charged shield dash are confirmed. Remaining acceptance tests are Giant Gauntlets AltFire upward impulse; charged double cost/damage/magical area and its Pain/switch/expiry cancellation; automatic empty-magazine Reload with reserve ammunition; and the complete Fire/AltFire/Zoom/Reload/User1–User4 weapon-family matrix. Crafting's exhaustive pass belongs to V4.29.
-
-## Corrected stair sectors, charged Block consumption and strict jewelry transaction 4.27.0h
-
-**Implemented — pending manual GZDoom 4.14.2 validation**
-
-The four stair-back strips retain the dimensions introduced in 4.27.0g, but their linedefs now follow clockwise contours. In UDMF the front side lies to the right of a directed line; the previous counterclockwise order therefore assigned the raised floor to exterior space. One strip only appeared correct because the node builder partitioned its neighboring geometry differently. All four corrected strips share the exact room-back planes `y=640` and `y=-640`, reuse existing room-corner vertices where coordinates coincide and introduce no overlapping linedefs.
-
-The charged Block dash now converts the player's movement percentage into physical velocity rather than writing the `ForwardMove` multiplier directly to `Vel`. GZDoom's standard maximum run velocity is `50/3` MU per tic on ordinary ground, so a 100% character receives exactly 25 MU/tic at the requested 150%. Current attribute and elemental movement factors scale this value. Existing horizontal velocity is replaced, producing the same launch from rest and from full running speed. A successful charged Block activation consumes the charged state before the dash.
-
-Jewelry crafting now creates `CaelumAmuletPickup` and `CaelumSealPickup` through separate explicit branches and verifies the concrete runtime subclass before materials are removed. If a class replacement or name collision resolves to anything else, the transaction destroys the invalid result and fails instead of adding Armor. The inventory category is assigned only after profile application, persistence and crafting refresh have completed.
-
-Manual validation:
-
-1. Inspect all four intermediate stair backs and verify that only each 8-MU wall strip is elevated; surrounding ground must remain at height 0.
-2. Check the outer face of every strip against the room backs and cross their upper surfaces.
-3. From rest and from established full running speed, charge a compatible weapon and press Zoom with a shield: both cases must produce the same forward speed and remove the charged HUD state.
-4. Craft one new Amulet and one new Seal. Confirm the created category, icon, weight and concrete inventory identity; pre-existing erroneous helmets from older saves are not retroactively converted.
-
-MAP01 structure: 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+The first floor is an experimental full-wing rebuild with four similarly sized rooms per wing, one internal connection per adjacent pair and a clear stair-landing corridor. Original 3D-floor room-floor/roof controls were restored, finite bridge surfaces remain only where a real span is required, and door leaves choose their lateral axis from doorway orientation. Manual validation of floor continuity, roof orientation, lateral door travel and landing clearance remains mandatory.
 
 ## Stair-back closures, contextual Block dash and Giant Gauntlets AltFire 4.27.0g
 

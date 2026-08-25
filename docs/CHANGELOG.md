@@ -1,176 +1,78 @@
 # Changelog
 
-## 4.28.0a — First-floor 1|2|1 room chain and rear lateral doors
+## 4.28.0al — Actor-free MAP01 architecture diagnostic
 
-- Added the confirmed north and south first-floor chains `corridor ← A ↔ B ↔ C ↔ D → corridor`, totaling eight rooms.
-- Reserved a 119-MU front balcony/setback on both rows and retained the wider connector terraces for later stair construction.
-- Added ten unique upper trap-door panels: two corridor accesses and three shared inter-room connections per row, giving every room exactly two logical doors.
-- Added a second 3D-floor control slab at 256–264 MU over the eight upper-room targets while preserving the existing walkable floor slab at 128–136 MU.
-- Added two ground-floor trap doors connecting the consolidated rear-room wings with the adjacent north/south lateral rooms.
-- Closed every doorway transition explicitly, removed four T-junctions at balcony entrances and merged all coincident vertices.
-- MAP01 now contains 332 vertices, 414 linedefs, 812 sidedefs, 105 sectors and 187 things.
+- Removed every MAP01 combatant and character: twenty Giant Rats, the Bull, Rulo, Argento, Caella, Ronnie and four Training Dummies.
+- Removed the two now-unused barred diagnostic enclosures from 4.28.0ak, restoring the prior 498-vertex, 611-linedef and 1188-sidedef architecture.
+- Preserved the player start, pickups, ammunition, consumables, crafting stations, sliding doors and all current first-floor architecture.
+- Changed no Impact Physics, AI, Seal, inventory or first-floor implementation code.
+- Establishes a clean architectural test after the freeze also occurred while `noclip` was active.
 
-## 4.27.0y — Unified rear-room 3D-floor target crash fix
+## 4.28.0ak — Isolated bull and rat collision enclosures
 
-- Diagnosed the reported GZDoom access violation at `(1486.37, -272.29)` as occurring exactly while crossing the south wing/rear-room boundary.
-- Consolidated the rear room, both stair landings and both extensions into the single existing sector 65 instead of four adjacent sectors receiving the same target-100 3D floor independently.
-- Removed the four now-unused sector definitions while preserving all vertices, linedefs, wall orientation, roof surfaces and passage dimensions.
-- Deferred the two requested inter-room doors until this crash fix is manually confirmed, preventing a new moving-sector topology from obscuring the boundary regression test.
-- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 83 sectors and 187 things.
+- Added two completely separate barred diagnostic enclosures to MAP01: one retains all twenty active Giant Rats and the other contains the Bull.
+- Moved the Bull out of the rat crowd so its charge and mass displacement cannot create rat/rat or bull/rat contacts during the crowd test.
+- Made every enclosure boundary player- and monster-blocking while keeping direct visibility through the bars.
+- Preserved rat AI, bite damage 60, mass 10, `THRUSPECIES`, Bull behavior, Impact Physics and the current two-room first-floor construction state.
+- Recorded that approaching with `noclip` did not initially reproduce the freeze, making physical contact the current diagnostic boundary without yet treating that observation as a final root cause.
 
-## 4.27.0x — Rear-wing wall orientation hotfix
+## 4.28.0aj — Bilateral Impact Physics contact latch
 
-- Corrected the front/back sector ownership of the four new exterior wall segments in the integrated rear-room wings.
-- Preserved every vertex, height, roof target, opening and accepted passage dimension from V4.27.0w.
-- Eliminated the asymmetric symptom in which one side rendered as a projecting dark wall while its counterpart appeared as a hole.
+- Rejected actor count and pursuit AI as the freeze cause after the stationary twenty-rat group still locked up following physical contact.
+- Made player/actor and actor/actor contact checks bilateral: a pair is already resolved when either body retains the other as its active contact.
+- Prevented repeated per-tic allocation of two `ImpactBody` objects and one `ImpactResult` for older simultaneous contacts whose player-side pointer had been replaced.
+- Restored all twenty MAP01 actors to the normal active Giant Rat with pursuit and base bite damage 60.
+- Removed the temporary stationary test subclass and DoomEdNum 18030.
+- Preserved `THRUSPECIES`, mass 10, anatomy, collision rearm and all current mansion geometry.
 
-## 4.27.0w — Integrated rear-room roof passages and V4.27 closure
+## 4.28.0ai — Stable twenty-rat area-test subclass
 
-- Recorded the author's successful completion of the two remaining V4.27 checks: restored rear architecture and the complete weapon-input matrix.
-- Converted both accepted rear-stair landings from independent raised blocks into target-100 interior extensions of the rear room.
-- Added one 119-MU continuation beside each landing and opened exactly 119 MU of the rear-room wall into each new wing.
-- Reused the room's finite 3D middle-wall treatment around every exposed edge, preserving a flat exterior floor and a walkable roof at 136 MU.
-- The rear room now has an intentionally non-rectangular footprint incorporating both stair landings and their continuations.
-- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
+- Identified the freeze boundary as simultaneous acquisition/chase by the complete twenty-rat group, independent of inventory opening.
+- Added `CaelumGiantRatAreaTest`, a stationary but fully damageable Giant Rat subclass for deterministic mass-effect tests.
+- Converted all twenty MAP01 crowd actors to DoomEdNum 18030 and left normal `CaelumGiantRat` registered at 18029.
+- Preserved mass 10, approximately 40 cm height, all attributes at 1, quadruped anatomy, elemental status handling, Pain and Death.
+- Normal Giant Rats retain pursuit and base bite damage 60; only the MAP01 stress-test crowd omits AI and melee.
+- Added no first-floor rooms or architectural changes relative to 4.28.0ah.
 
-## 4.27.0v — Rejected passage rollback and complete weapon-input matrix
+## 4.28.0ah — Ground-floor ceilings and Giant Rat crowd stability
 
-- Removed both V4.27.0u second passage blocks after manual testing showed a roof projection and missing rear-room walls.
-- Restored the complete original north/south rear-room boundaries, their exterior-sector ownership and every affected wall face.
-- Preserved the manually accepted V4.27.0t 119×119-MU square landings.
-- Added an authoritative Fire/AltFire/Reload/Zoom matrix covering all sixteen physical weapons and all sixty magical implement/essence/tier variants.
-- Connected the Bell's existing authored 50 base damage and 1000 Anima cost constants; its seven-projectile delivery is unchanged.
-- Recorded successful V4.27 bull-statistics/Charge-resource and NPC-stat/resource validation.
-- MAP01 returns to 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
+- Restored native 3D-floor slabs over all eight room footprints, returning the missing ground-floor ceilings without constructing additional upper rooms.
+- Excluded both obsolete 64×64 central connector polygons so the corridor remains completely clear above and below.
+- Added `THRUSPECIES` to Giant Rats to prevent the approximately twenty-rat test group from forming an expensive same-species collision pile while menus immobilize the player.
+- Preserved rat/player collision, bite damage 60, mass 10, AI and area-effect eligibility.
+- Kept upper walls and sliding doors restricted to the validated western pair; no second room pair is added.
 
-## 4.27.0u — Rear roof-passage blocks and V4.27 closure checklist
+## 4.28.0ag — Incremental first-floor rebuild, pair 1
 
-- Added a second independent 119×119-MU block behind each corrected rear-stair landing.
-- Each new block shares one complete edge with its landing and places its inward edge against the rear-room roof boundary, forming a two-block-wide upper passage without overlapping the room sector.
-- Used explicit two-sided boundaries against exterior sector 0 on every exposed edge.
-- MAP01 now contains 220 vertices, 294 linedefs, 580 sidedefs, 87 sectors and 187 things.
-- Consolidated the remaining V4.27 manual closure tests: new passage topology, attribute-derived bull values/single-contact Charge and one final cross-family input-routing smoke test.
+- Rejected and removed the complete actor-surface first-floor reconstruction after the reported freeze beneath its central elevated span.
+- Removed every upper finite floor, roof and wall panel and every upper sliding leaf except the two exterior double doors of the first room pair.
+- Restricted the native 3D-floor targets to the two western rooms, one in each wing; the remaining upper polygons use untagged neutral sectors and produce no volume.
+- Left the central corridor and stair landing completely free of upper actor bridges and blocker grids.
+- Preserved the ground floor, Seal functionality, elemental effects and Giant Rat test group.
+- Establishes the four-patch construction rule: exactly two rooms per manually validated patch.
 
-## 4.27.0t — Square-landing exterior topology hotfix
+## 4.28.0af — GZDoom 4.14.2 elemental-visual parser correction
 
-- Fixed the malformed triangular floors and exterior strips produced by the V4.27.0s rear landings.
-- Converted all six new landing perimeter lines from one-sided boundaries to explicit two-sided boundaries between the raised landing and exterior sector 0.
-- Preserved both 119×119-MU landing dimensions, floor height 136, staircase connections and every pre-existing room/roof sector.
-- MAP01 now contains 216 vertices, 288 linedefs, 568 sidedefs, 85 sectors and 187 things.
-- Extended validation to require an exterior-sector back side on every new landing perimeter line.
+- Changed the status-visual class parameter to `class<Actor>` and invoked the native static actor factory as `Actor.Spawn`.
+- Corrects the `Call to unknown function 'Spawn'` parser failure reported at `CaelumElementalStatus.zs:192`.
+- Preserves all 4.28.0ae gameplay, map, rat, effect-art and balance behavior.
+- Updated README, public implementation/roadmap/asset documentation and the private design document.
 
-## 4.27.0s — Independent square rear-stair landings
+## 4.28.0ae — Seal Channel effects, Giant Rat test group and first-floor rebuild
 
-- Added one independent 119×119-MU conventional landing after the final tread of each rear staircase.
-- Both landings use floor height 136, matching the terrace and the validated 119-MU staircase width.
-- Each new sector shares only its complete 119-MU edge with the corresponding final tread and does not overlap a room wall, roof or 3D-floor target.
-- MAP01 now contains 216 vertices, 288 linedefs, 562 sidedefs, 85 sectors and 187 things.
-- Extended static validation to enforce the exact two square contours, heights and absence of duplicated linedefs.
-
-## 4.27.0r — Attribute-derived bull movement and actor Health
-
-- Restored Agility Type-4 as the bull's movement-stat modifier while preserving the authored quadruped Speed 10 baseline.
-- Charge now remains exactly twice the Agility-modified walking speed: approximately 10.832 walking and 21.663 MU/tic charging at Agility 20.
-- Centralized original-actor maximum Health in `CaelumCombatActor` using the player formula `10 × Constitution Type-1 × body-mass multiplier`.
-- Corrected the 900-kg bull with Constitution 40 from the provisional 9200 maximum Health to the player-equivalent 82800; existing humanoid NPC maxima remain unchanged because their authored values already matched the formula.
-- Deferred the rear-stair landing edit until its expansion direction is fixed, preventing an arbitrary overlap with the validated room wall/roof topology.
-
-## 4.27.0q — Collision-mass hotfix and quadruped speed baseline
-
-- Fixed the GZDoom 4.14.2 compilation error caused by overriding the non-virtual `GetCollisionEffectiveMass()` method in `CaelumBull`.
-- Centralized temporary collision-mass changes in `CaelumCombatActor` through `CollisionEffectiveMassMultiplier`; the bull now selects the existing Tower Shield multiplier only during Charge without overriding collision code.
-- Set the bull's quadruped walking baseline to Speed 10 and its Charge speed to the exact native 2:1 run ratio, 20 MU/tic.
-- Preserved ordinary bull effective mass 900 and active-Charge effective mass 1800, independently from inventory load.
-- Recorded approval of the eight-room first-floor `1 | 2 | 1` distribution; its geometry remains isolated for the next patch.
-
-## 4.27.0p — Shared actor Air, cached bull UI and tower-mass Charge
-
-- Fixed the GZDoom 4.14.2 parse error caused by calling play-scope `GetBullRunningSpeed()` from the UI debug overlay.
-- Cached the bull's derived running speed in play scope and made the UI read the stored value only.
-- Moved current/maximum Air, regeneration and spending state into `CaelumCombatActor`, giving the resource to Rulo, Ronnie, Argento, Caella, the bull and future original Caelum actors.
-- Kept hunger, thirst, sleep and inventory load exclusive to player survival; NPC actors receive Air without those systems.
-- Applied the Tower Shield combat-mass multiplier 2.0 to the bull only while Charge is active, raising collision-effective mass from 900 to 1800 kg.
-- The actor debug page now displays Air for every inspected `CaelumCombatActor`.
-- Added the agreed first-floor distribution to the roadmap: one upper room over each of four outer lateral volumes and two over each of two central volumes, totaling eight.
-
-## 4.27.0o — Mansion gate leaf and stamina-driven bull charge
-
-- Applied project-owned mansion door leaf `CMDR03` to both visible sides of the main gate panel; its 64×128 repeat forms two leaves across the 128-MU opening.
-- Added the standard DoomPlayer walk/run speed relationship as a reusable constant without changing player movement.
-- Kept bull Speed 7 as its walking speed and derived Charge speed as walk speed × native run ratio 2 × Agility Type-4, resulting in approximately 15.164 MU/tic at Agility 20.
-- Added bull-only Air from Resilience Type-4, running consumption scaled by its 900-kg body mass and passive eight-minute recovery without humanoid survival resources.
-- Pain and Death now terminate active Charge velocity immediately.
-- Added bull Air and derived running speed to the inspected-combat-actor debug page.
-- Deferred first-floor geometry until the exact sixteen-door connectivity across the eight upper rooms is confirmed; no validated ground-floor contour changed.
-- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## 4.27.0n — Physical bull charge and closed main-gate platform
-
-- Replaced the bull's direct horn melee damage and common melee knockback with a true physical Charge movement.
-- The bull now faces its target for three tics and advances at its authored actor Speed 7 for five tics; only Impact Physics contact can inflict offensive damage.
-- Removed the former dagger-base 60 damage call, preventing a melee hit, 441-MU/tic knockback and secondary collision from stacking.
-- Reversed only the two main-gate threshold directions while preserving exterior front sides, moving-panel back sides and bilateral platform actions.
-- The moving door sector is now a consistently enclosed rectangle, so the surrounding exterior floor cannot rise and fall with the panel.
-- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## 4.27.0m — Main-gate strip isolation and V4.27 validation update
-
-- Removed roof-control tag 100 from the main gate panel and both frame jambs.
-- The gate now consists only of three conventional raised-floor sectors; it can no longer inherit the room roof 3D floor that produced the forward infinite strip.
-- Confirmed Giant Gauntlets weapon-based Block, the charged magical `sqrt(2)` radius increase and visible green acknowledgement for User1–User4.
-- Confirmed that the current bull horn is a melee action. Its separate mass/Strength-based knockback can subsequently create a second, much larger collision impact if the target strikes geometry or another body.
-- Deferred changing the bull to a true charge until the author selects its intended melee/impact contract.
-- MAP01 remains at 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## 4.27.0l — Dagger-based bull horn attack and isolated main gate
-
-- Replaced the bull's provisional 120-damage, 12-tic horn attack with the Tier-1 Dagger's authored base damage 60 and base cadence 8 tics.
-- Preserved the bull's player-equivalent 40/20/2 attribute profile, 900-kg physical multiplier, technical accuracy/critical rules and health-state processing.
-- Added only the compact main gate panel and its two continuous frame jambs at the true western corridor entrance.
-- The gate adds no corridor, roof, terrace connector, partition or lateral extension.
-- The panel remains bilateral, repeatable and uses the validated speed 16 / delay 150 trap-door action.
-- MAP01 now contains 212 vertices, 282 linedefs, 556 sidedefs, 83 sectors and 187 things.
-
-## 4.27.0k — Corrected bull animation atlas, isolated roofs and visible ability acknowledgement
-
-- Re-extracted the corrected bull atlas into 70 clean transparent sprites: eight rotations for Idle, two Walk frames, two Run frames, two Charge frames and Pain, plus six non-rotating Death frames.
-- Activated the supplied Walk, Charge, Pain and complete Death sequences in `CaelumBull` while preserving the original art and deterministic extractor.
-- Rebuilt all four stair-back roofs at the exact 119-MU final-step width with the established 1-MU room clearance. No roof target now owns or replaces a room wall.
-- Restored the complete original room-side linedefs beside every staircase and removed the 3D-floor endpoint responsible for vertical projections.
-- Replaced console-only User1–User4 acknowledgements with a localized two-second gameplay HUD message, independent of the user's console-message configuration.
-- Preserved the bull's provisional horn base damage of 120; its current 900-kg physical multiplier makes the ordinary calculated hit 1080 before health-state and critical processing.
-- MAP01 remains at 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
-
-## 4.27.0j — Giant Gauntlets Block, first quadruped monster and input acknowledgements
-
-- Removed the eight 1-MU top-step bridge linedefs that produced a narrow vertical projection; every final stair now shares the complete front boundary of its roofed closure.
-- Made Giant Gauntlets a self-contained Block source on Zoom without requiring an equipped shield. Coverage, physical/magical defense, Air load, acrobatic impact handling and combat-mass behavior match a same-tier Buckler; absorbed damage wears the gauntlets' own durability.
-- Added localized successful-use acknowledgements to the provisional racial, Seal Channel, equipped Tarot and class-ability hooks without assigning final effects.
-- Added `CaelumBull`, the first fully hostile monster and quadruped anatomy model: physical attributes 40, technical attributes 20, social/mental attributes 2, six anatomical regions and a front-only critical head.
-- Set the bull's physical body to 900 kg, 1.50 m high and approximately 0.90 m wide, represented by a 51.8-MU height and 15.6-MU collision radius at the existing player scale.
-- Cropped eight clean directional bull sprites plus the final corpse from the author-supplied atlas. Overlapping movement/charge/pain cells remain deliberately deferred rather than shipping fragmented art.
-- Added one bull to the north side of MAP01's entrance for Pain/cancellation testing without blocking the central corridor.
-- MAP01 now contains 206 vertices, 272 linedefs, 536 sidedefs, 80 sectors and 187 things.
-
-## 4.27.0i — Roofed stair-back closures, direct jewelry spawn and authoritative face
-
-- Rebuilt each intermediate stair-back closure as one normal target sector plus one independent raised rear-wall sector, sharing boundaries with its room and final stair.
-- Applied the established target ID 100 roof slab only to the four closed regions; the full central corridor remains uncovered.
-- Preserved the validated clockwise/shared-linedef construction pattern and added a duplicate-segment regression check.
-- Fixed the equipment interface's direct `spawn in front` action so Amulet and Seal selections instantiate `CaelumAmuletPickup` and `CaelumSealPickup` rather than falling through to heavy Armor.
-- Established `graphics/caelum/face/ca_player_face.png` as the authoritative HUD-face source and regenerated every required native `CAF` status alias from it.
-- Recorded the project-wide modularity rule: one authoritative source per subsystem/asset, explicit compatibility contracts and regression validation for previously working behavior.
-- MAP01 now contains 206 vertices, 280 linedefs, 552 sidedefs, 80 sectors and 186 things.
-
-## 4.27.0h — Correct sector winding, physical charged dash and strict jewelry classes
-
-- Rebuilt the four intermediate stair-back closures clockwise so each raised sector occupies the intended 8-MU strip instead of assigning its 136-MU floor to surrounding space.
-- Preserved exact alignment with the room backs at `y=±640` and their shared endpoints, without overlapping room linedefs.
-- Recalibrated the charged Block dash in physical velocity units: 150% of the live maximum run speed now equals 25 MU/tic at 100% movement, independent of whether the player starts stationary or already running.
-- Charged Block now consumes the charged state when the valid Block activation begins.
-- Split Seal and Amulet construction into explicit concrete-class branches and validate the resulting runtime class before consuming materials; a replacement or collision can no longer silently produce Armor.
-- Moved the crafted jewelry inventory selection to the end of the complete profile/persistence transaction.
-- MAP01 remains at 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+- Replaced the User2 reservation hook with an interruptible channel driven by the equipped Seal.
+- Added exact T1/T2/T3 Adrenaline costs of 3/6/9 per tic (105/210/315 per second) and a 60-second cooldown after every completed or interrupted use.
+- Channeling immobilizes the player and cancels Block, Aim, Reload, weapon charge and pending spell casts; ordinary attacks, movement, Tarot, racial/class hooks and inventory actions are suppressed.
+- Added a channel-area actor with a base radius ten times the statuette explosion radius, scaled by the existing ability-range statistic.
+- Fire continuously renews burn; Earth renews poison, 25% remaining movement and 50% remaining accuracy; Air pushes continuously with combined physical and magical power; Water calls one random lightning strike per second; Quintessence attracts continuously and expels on release.
+- Water uses a 10,000-point total damage pool, modified by magical damage and divided between every valid actor inside an impact radius twice the base statuette explosion radius.
+- Quintessence release uses `10 × (trapped total mass / expelled actor mass)` as radial launch speed.
+- Target filtering includes living combatants, allies, neutral NPCs, corpses and projectiles, while excluding the channeler, inventory/pickups, stations, doors and architecture.
+- Weather-dependent tier additions remain deferred to the Version 5 weather integration.
+- Added Seal HUD feedback for equipped element/tier, active use and cooldown; the debug Adrenaline action now adds 100 and removes 10 seconds of Seal cooldown.
+- Added the Giant Rat with quadruped anatomy, mass 10, approximately 40 cm height, all attributes at 1 and base bite damage 60; MAP01 contains an approximately twenty-rat group for area-effect tests.
+- Added attached twelve-frame burn, poison, freeze and lightning visuals plus vertical and horizontal lightning sequences from the author-supplied atlas; visuals do not duplicate damage.
+- Rebuilt the mansion first floor as two four-room wings around a clear stair landing, restored real 3D-floor floor/roof controls and corrected sliding-door axes; manual architectural validation remains pending.
 
 ## 4.27.0g — Intermediate stair closures, charged Block dash and gauntlet uppercut
 

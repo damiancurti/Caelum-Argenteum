@@ -146,9 +146,18 @@ class CaelumChannelEffect : Actor
             CaelumConstants.SEAL_LIGHTNING_BASE_TOTAL_DAMAGE
                 * damageScale / victimCount + 0.5));
         for (int index = 0; index < victimCount; index++)
+        {
+            Actor lightningVisual = Spawn(
+                "CaelumLightningImpactVisual",
+                victims[index].Pos,
+                ALLOW_REPLACE
+            );
+            if (lightningVisual != null)
+                lightningVisual.master = victims[index];
             if (victims[index].health > 0)
                 victims[index].DamageMobj(self, ChannelOwner, damage,
                     'Electric', 0, 0.0);
+        }
     }
 
     void ApplyContinuousEffect()

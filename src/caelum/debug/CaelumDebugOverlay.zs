@@ -2940,6 +2940,10 @@ class CaelumDebugOverlay : EventHandler
             else if (CaelumRulo(actor) != null) { actorNameKey = "CA_RULO_NAME"; }
             else if (CaelumRonnie(actor) != null) { actorNameKey = "CA_RONNIE_NAME"; }
             else if (CaelumBull(actor) != null) { actorNameKey = "CA_BULL_NAME"; }
+            else if (CaelumGiantRat(actor) != null)
+            {
+                actorNameKey = "CA_GIANT_RAT_NAME";
+            }
             String healthStateKey = actor.CombatHealthState
                 == CaelumConstants.HEALTH_STATE_BADLY_WOUNDED
                 ? "CA_HEALTH_STATE_BADLY_WOUNDED"

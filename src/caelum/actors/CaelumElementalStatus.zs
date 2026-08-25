@@ -26,6 +26,11 @@ class CaelumElementalStatus : Object
     double DazzlePowerPercent;
     double LightningStunRemaining;
 
+    Actor BurnVisual;
+    Actor PoisonVisual;
+    Actor FreezeVisual;
+    Actor LightningVisual;
+
     bool ShouldReplace(
         double newPower,
         double newDuration,
@@ -170,6 +175,43 @@ class CaelumElementalStatus : Object
         }
     }
 
+    play Actor UpdateVisual(
+        Actor owner,
+        Actor visual,
+        class<Actor> visualClass,
+        bool active
+    )
+    {
+        if (!active || owner == null || owner.health <= 0)
+        {
+            if (visual != null) { visual.Destroy(); }
+            return null;
+        }
+        if (visual == null)
+        {
+            visual = Actor.Spawn(visualClass, owner.Pos, ALLOW_REPLACE);
+            if (visual != null) { visual.master = owner; }
+        }
+        return visual;
+    }
+
+    play void UpdateVisualEffects(Actor owner)
+    {
+        BurnVisual = UpdateVisual(
+            owner, BurnVisual, "CaelumBurnVisual", BurnRemaining > 0.0
+        );
+        PoisonVisual = UpdateVisual(
+            owner, PoisonVisual, "CaelumPoisonVisual", PoisonRemaining > 0.0
+        );
+        FreezeVisual = UpdateVisual(
+            owner, FreezeVisual, "CaelumFreezeVisual", FreezeRemaining > 0.0
+        );
+        LightningVisual = UpdateVisual(
+            owner, LightningVisual, "CaelumLightningStatusVisual",
+            LightningStunRemaining > 0.0
+        );
+    }
+
     play void Tick(Actor owner)
     {
         TickDamageOverTime(owner);
@@ -181,6 +223,7 @@ class CaelumElementalStatus : Object
         );
         if (FreezeRemaining <= 0.0) { FreezePowerPercent = 0.0; }
         if (DazzleRemaining <= 0.0) { DazzlePowerPercent = 0.0; }
+        UpdateVisualEffects(owner);
     }
 
     double GetMovementMultiplier()
