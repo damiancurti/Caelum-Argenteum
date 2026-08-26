@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.28.0bh build keeps architecture and actor tests separate. MAP01 uses finite first-floor walls with independently rendered front and rear faces. MAP02 preserves its 16,384×16,384 MU enclosure and doubles the validated stress population to 1,874 combatants. Impact Physics represents simultaneous pairs through persistent shared contact records: connected contacts form implicit islands, continued pressure transfers momentum without repeating impact trauma, and each sustained second applies the existing walking-speed collision damage after biological absorption. NPC elemental attacks use straight explosive projectiles whose attack and travel distance share the authoritative Eloquence-derived magical range.
+The current V4.28.0bi build keeps architecture and actor tests separate. MAP01 uses finite first-floor walls with independently rendered front and rear faces. MAP02 preserves its 16,384×16,384 MU enclosure and restores the full 15,000-combatant stress population. Impact Physics represents simultaneous pairs through persistent shared contact records: connected contacts form implicit islands, continued pressure transfers momentum without repeating impact trauma, and each sustained second applies the existing walking-speed collision damage after biological absorption. NPC elemental attacks use straight explosive projectiles whose attack and travel distance share the authoritative Eloquence-derived magical range.
 
 ### Building the development PK3
 

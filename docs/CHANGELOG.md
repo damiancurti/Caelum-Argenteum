@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.28.0bi — Full 15,000-actor post-island stress population
+
+- Increased MAP02 from 1,874 to exactly 15,000 combatants without changing
+  its enclosure, entrance or geometry.
+- Placed 1,000 Rulo, 1,000 Caella, 1,000 Ronnie, 1,000 Argento, 1,000 Bulls
+  and 10,000 Giant Rats at unique positions on the existing 96 MU grid.
+- Changed no physics, projectile, menu, typography or Debug-profile code so
+  this patch isolates the full-scale population test.
+
 ## 4.28.0bh — Doubled post-island stress population
 
 - Doubled MAP02 from the validated 937-actor population to exactly 1,874

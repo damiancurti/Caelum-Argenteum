@@ -1,19 +1,20 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Doubled post-island stress population 4.28.0bh
+## Full post-island stress population 4.28.0bi
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
-MAP02 now contains exactly 1,874 combatants: 126 Rulo, 126 Caella, 124
-Ronnie, 124 Argento, 124 Bulls and 1,250 Giant Rats. Its geometry is identical
-to the validated 937-actor field. Contact islands, once-per-second crushing,
-straight explosive projectiles, Eloquence-derived range and the 350-tic
-absolute projectile safeguard remain unchanged.
+MAP02 now contains exactly 15,000 combatants: 1,000 each of Rulo, Caella,
+Ronnie, Argento and Bull, plus 10,000 Giant Rats. Every actor occupies a unique
+position on the existing 96 MU grid, and the enclosure, entrance and geometry
+remain unchanged. Contact islands, once-per-second crushing, straight explosive
+projectiles, Eloquence-derived range and the 350-tic absolute projectile
+safeguard remain unchanged.
 
 Validation focus:
 
 1. Confirm the initial chamber remains responsive before acquisition.
-2. Wake the complete population and record the first sustained frame drop.
+2. Wake all 15,000 combatants and record the first sustained frame drop.
 3. Distinguish stable low frame rate from progressive loss of responsiveness.
 4. Continue after projectiles expire and verify whether performance recovers.
 5. Enter the central contact pile and monitor active contact count.
