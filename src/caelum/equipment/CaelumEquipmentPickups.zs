@@ -494,6 +494,9 @@ class CaelumSealPickup : CaelumEquipmentItem
         Tag "$CA_EQUIPMENT_CATEGORY_SEAL";
         Inventory.PickupMessage "$CA_PICKUP_SEAL";
         Scale 0.275;
+        // El inventario/equipamiento propio ya gestiona los Sellos. Evita que
+        // el último recogido reemplace la cara en la barra nativa de GZDoom.
+        -INVENTORY.INVBAR
     }
     String GetJewelryIconPath()
     {

@@ -1,5 +1,130 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Mass-resisted Seals and elevated Quintessence epicenter 4.28.0bm
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Quintessence now centers its sphere 160 map units above the player: exactly
+five meters at the established 32-units-per-meter development scale. Targets
+therefore converge overhead instead of through the owner's collision volume.
+Continuous attraction and Air's clockwise tangential/vertical acceleration
+divide the applied force by each target's authoritative mass. The existing
+Quintessence release formula remains `10 × trapped mass / expelled mass`.
+
+Earth channeling no longer calls either Freeze or Dazzle. Poison remains its
+only elemental status and visual, while a new presentation-independent Earth
+penalty preserves the radial reduction of movement and accuracy: 100% at the
+center, 50% at half radius and 0% at the boundary. Actual Ice attacks continue
+to own Freeze and its visual exclusively.
+
+Seal pickups no longer participate in GZDoom's native inventory bar. Caelum's
+own inventory and equipment system remains authoritative, and collecting a
+Seal cannot replace the native HUD face with that Seal's icon.
+
+Validation focus:
+
+1. Channel Quintessence among a crowd and confirm targets gather overhead
+   without crossing and collision-killing the player.
+2. Compare a Giant Rat and Bull under Air and Quintessence; the Bull must
+   accelerate substantially less because of its greater mass.
+3. Channel Earth and confirm Poison plus radial statistic reduction with no
+   Freeze state, frozen visual or Ice presentation.
+4. Collect all five Seals and confirm the player face remains unchanged.
+
+## MAP01 panel rollback and authoritative Seal binding 4.28.0bl
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bilateral visual reconstruction from `4.28.0bk` is reverted. MAP01 no
+longer places any of its eight `CaelumFiniteWallPanel` actors, including the
+interior wall indicated in the supplied screenshot and the panels adjoining
+the entrances. They are deliberately open rather than covered by another
+actor-wall experiment. Sliding doors again have one visual leaf, eliminating
+the second coincident-looking texture introduced in the previous patch.
+
+Seal channel actors now retain the exact Seal inventory object that created
+them. Every tic validates that this object is still the equipped Seal and
+reads the effect type from it; unequipping or replacing it destroys the old
+channel. The HUD selection and the applied element can therefore no longer
+diverge through a surviving Fire channel actor.
+
+MAP02 is unchanged from `4.28.0bk`: 15,000 passive, solid and damageable stress
+actors with no target acquisition, chase, facing or attack calls.
+
+Validation focus:
+
+1. View and operate MAP01 doors from both sides; each leaf must show one
+   texture, with no doubled rear leaf.
+2. Inspect the eight removed panel positions; they must be empty and must not
+   retain an invisible collision wall.
+3. Channel Fire, stop, equip each other Seal and channel again. The applied
+   mechanic must always match the equipped element shown by the HUD.
+4. Confirm MAP02 retains 15,000 passive actors and its validated responsiveness.
+
+## Rebuilt bilateral walls/doors and passive stress population 4.28.0bk
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The first-floor actor walls no longer place their reverse visuals at a fixed
+diagonal offset. Each back panel is reconstructed from its master's actual
+orientation, positioned 0.5 MU along the local normal and rotated 180 degrees.
+Sliding doors now use the same two-visual representation: one master front
+leaf owns the existing collision/blockers and a synchronized non-solid rear
+leaf follows every opening and closing movement.
+
+MAP02 now uses six passive stress subclasses. All 15,000 actors retain their
+normal profiles, mass, radius, height, solidity, anatomy, elemental response,
+Pain and Death states, but Spawn/See/Melee/Missile contain no `A_Look`,
+`A_Chase`, target facing, charge or projectile/melee call. This isolates actor
+count, rendering, collision and Seal processing from AI and combat decisions.
+
+Validation focus:
+
+1. Inspect every rebuilt upper wall and door from both sides, particularly the
+   room shown in the supplied screenshot and the entrance-facing doors.
+2. Open and close each rebuilt door from either side and confirm both faces
+   move together without doubled collision.
+3. Start MAP02 and approach the entire population: no actor may acquire,
+   pursue, turn toward or attack the player or another actor.
+4. Damage representatives of all six passive types and confirm Pain, Death,
+   solidity, physics and Seal effects still operate.
+5. Compare responsiveness while viewing and entering the passive 15,000-actor
+   crowd against the previous active-AI result.
+
+## Southern tornado Seal and first-floor seam closure 4.28.0bj
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The Air Seal now adds clockwise horizontal tangent velocity and positive
+vertical velocity instead of radial expulsion. Its direction is viewed from
+above and follows the project's southern-hemisphere convention. Air and
+Quintessence record each target's original `NOGRAVITY` flag, suspend gravity
+only while that target remains affected, and restore the original value when
+the target leaves, the owner is interrupted or channeling ends normally.
+
+The Earth Seal computes Freeze and Dazzle power from distance to the channel
+center. A continuous piecewise squared curve produces exactly 100% at the
+center, 50% at half radius and 0% at the boundary. The existing 1.1-second
+refresh, poison damage, channel radius, tier costs and cooldown are unchanged.
+
+The remaining MAP01 slit shown from inside the central first-floor room was a
+terminal render seam behind the nominal 64-MU closure. The mirrored terminal
+panels at `x=368`, `y=±540`, height 136 now span 72 MU. Their 4-MU overlap at
+each endpoint closes the visible joint while retaining finite upper-floor-only
+collision and the existing first-floor topology.
+
+Validation focus:
+
+1. View the indicated central-room wall from the supplied firing position and
+   confirm no black vertical seam remains.
+2. Inspect both mirrored closures from either side and from the ground floor.
+3. Channel Air beside several masses and confirm clockwise orbit plus lift.
+4. Walk or throw a target outside Air and verify gravity resumes immediately.
+5. Repeat with Quintessence, including normal release and Pain interruption.
+6. Compare Earth targets at center, half radius and boundary for approximately
+   100%, 50% and 0% movement/accuracy penalties.
+7. Confirm MAP02 still contains and can awaken all 15,000 combatants.
+
 ## Full post-island stress population 4.28.0bi
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

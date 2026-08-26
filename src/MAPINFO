@@ -62,6 +62,13 @@ DoomEdNums
     18027 = CaelumFiniteFloorPanel
     18028 = CaelumFiniteRoofPanel
     18029 = CaelumGiantRat
+    // Variantes pasivas para la prueba aislada de 15.000 actores en MAP02.
+    18030 = CaelumPassiveRulo
+    18031 = CaelumPassiveArgento
+    18032 = CaelumPassiveCaella
+    18033 = CaelumPassiveRonnie
+    18034 = CaelumPassiveBull
+    18035 = CaelumPassiveGiantRat
 
     18100 = CaelumWeaponPickup
     18101 = CaelumArmorPickup

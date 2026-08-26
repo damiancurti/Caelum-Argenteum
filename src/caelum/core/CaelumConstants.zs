@@ -106,6 +106,8 @@ class CaelumConstants : Object
     const SEAL_LIGHTNING_RADIUS_STATUETTE_MULTIPLIER = 2.0;
     const SEAL_LIGHTNING_BASE_TOTAL_DAMAGE = 10000.0;
     const SEAL_QUINTESSENCE_BASE_EXPULSION_SPEED = 10.0;
+    // Cinco metros a la escala de desarrollo de 32 unidades por metro.
+    const SEAL_QUINTESSENCE_EPICENTER_HEIGHT = 160.0;
     const SEAL_CHANNEL_PULSE_SECONDS = 1.0;
 
     const ELEMENTAL_EFFECT_BURN = 0;

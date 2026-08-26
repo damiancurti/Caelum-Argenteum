@@ -1,5 +1,71 @@
 # Changelog
 
+## 4.28.0bm — Mass-resisted Seals and elevated Quintessence epicenter
+
+- Raised the Quintessence channel epicenter exactly five development-scale
+  meters (160 map units) above the owner, pulling targets away from the
+  player's collision volume.
+- Applied force-over-mass acceleration to the continuous Air tornado and
+  Quintessence attraction. Giant Rats and Bulls no longer receive identical
+  velocity from the same force; the authored Quintessence release formula of
+  `10 × trapped mass / expelled mass` remains unchanged.
+- Removed Freeze and Dazzle application from the Earth Seal. It now applies
+  Poison plus a dedicated non-Ice radial statistic penalty, retaining the
+  authored 100%/50%/0% curve without creating a Freeze visual.
+- Removed Seals from GZDoom's native inventory bar because Caelum's equipment
+  interface already manages them. Picking up a Seal can no longer replace the
+  native player face with the most recently collected Seal icon.
+- Preserved MAP01 and MAP02 byte-for-byte from `4.28.0bl` and changed no
+  Impact Physics or passive-AI code.
+
+## 4.28.0bl — MAP01 panel rollback and authoritative Seal binding
+
+- Reverted the `4.28.0bk` rear-leaf additions for finite walls and sliding
+  doors, removing the duplicated door texture reported in MAP01.
+- Deleted all eight `CaelumFiniteWallPanel` things from MAP01. These are the
+  first-floor actor walls called out from inside the room and beside its
+  entrances; the openings are now intentionally left empty for reconstruction.
+- Bound each channel-effect actor to the exact equipped Seal inventory item.
+  Its gameplay type is refreshed from that item and the channel is destroyed
+  if it is unequipped or replaced, preventing a Fire actor from surviving a
+  change to another displayed Seal.
+- Preserved MAP02 byte-for-byte with its 15,000 passive actors and changed no
+  Impact Physics, passive-AI, tornado, gravity or radial-falloff behavior.
+
+## 4.28.0bk — Rebuilt bilateral walls/doors and passive 15,000-actor test
+
+- Deleted the orientation-independent diagonal backing logic from finite walls
+  and rebuilt every rear face at the correct local wall normal, opposite the
+  master panel and separated by 0.5 MU.
+- Rebuilt sliding doors as synchronized front/rear visual leaves. The reverse
+  leaf follows movement, angle and scale but adds no solidity, blockers,
+  contact mass or Impact Physics participation.
+- Added passive stress subclasses for Rulo, Argento, Caella, Ronnie, Bull and
+  Giant Rat. They retain normal stats, rendering, solid collision, damage,
+  Pain and Death while omitting A_Look, A_Chase, facing and attacks.
+- Replaced every MAP02 combatant with its passive counterpart: 1,000 of each
+  non-rat type and 10,000 Giant Rats. Actor positions and geometry are
+  unchanged.
+- Preserved the 4.28.0bj Seal mechanics and changed no physics formulas,
+  projectile behavior, typography, menu or Debug-profile values.
+
+## 4.28.0bj — Southern tornado Seal and first-floor seam closure
+
+- Changed the Air Seal from radial expulsion to clockwise tangential rotation
+  plus vertical lift, using the same existing combined push power for both
+  components.
+- Made Air and Quintessence preserve and disable each affected actor's gravity
+  flag while it remains inside the channel, restoring the original flag upon
+  exit, interruption or release.
+- Replaced the Earth Seal's uniform Freeze/Dazzle penalties with a continuous
+  squared radial curve: 100% at the center, 50% at half radius and 0% at the
+  boundary. Poison damage and all existing durations remain unchanged.
+- Extended the mirrored MAP01 first-floor terminal closures from 64 to 72 MU,
+  covering the remaining visible interior seam with a controlled 4-MU overlap
+  at each endpoint and without modifying ground-floor geometry.
+- Kept MAP02 at 15,000 combatants and changed no Impact Physics, NPC AI,
+  projectile, typography, menu or Debug-profile code.
+
 ## 4.28.0bi — Full 15,000-actor post-island stress population
 
 - Increased MAP02 from 1,874 to exactly 15,000 combatants without changing

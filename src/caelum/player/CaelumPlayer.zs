@@ -9633,8 +9633,8 @@ class CaelumPlayer : DoomPlayer
         CancelRangedReload();
         CancelWeaponCharge();
         CancelPendingStaffCast(false);
-        if (CombatChannelEffectActor != null)
-            CombatChannelEffectActor.SetOrigin(Pos, false);
+        // El actor del canal mantiene su propio epicentro; Quintaesencia lo
+        // sitúa por encima del jugador en vez de atravesar su cuerpo.
     }
 
     // User2 alterna la canalizacion; Reload conserva sus funciones propias.
@@ -9665,8 +9665,7 @@ class CaelumPlayer : DoomPlayer
         CaelumChannelEffect effect = CaelumChannelEffect(
             Spawn("CaelumChannelEffect", Pos, ALLOW_REPLACE));
         if (effect == null) return;
-        effect.ConfigureChannel(self, CombatChannelSealType,
-            CombatChannelSealTier, CombatChannelRadius);
+        effect.ConfigureChannel(self, seal, CombatChannelRadius);
         CombatChannelEffectActor = effect;
         CombatChannelModeActive = true;
         CombatChannelInputLatched = true;

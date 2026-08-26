@@ -3,11 +3,14 @@
 class CaelumChannelEffect : Actor
 {
     CaelumPlayer ChannelOwner;
+    CaelumEquipmentItem ChannelSeal;
     int SealType;
     int SealTier;
     double EffectRadius;
     double PulseAccumulator;
     double TrappedMass;
+    Array<Actor> GravityTargets;
+    Array<int> GravityOriginalFlags;
 
     Default
     {
@@ -20,13 +23,15 @@ class CaelumChannelEffect : Actor
         Height 1;
     }
 
-    void ConfigureChannel(CaelumPlayer owner, int sealType,
-        int sealTier, double radius)
+    void ConfigureChannel(CaelumPlayer owner, CaelumEquipmentItem seal,
+        double radius)
     {
         ChannelOwner = owner;
+        ChannelSeal = seal;
         Target = owner;
-        SealType = Clamp(sealType, 0, CaelumConstants.SEAL_TYPE_COUNT - 1);
-        SealTier = Clamp(sealTier, 1, 3);
+        SealType = Clamp(seal.ItemType, 0,
+            CaelumConstants.SEAL_TYPE_COUNT - 1);
+        SealTier = Clamp(seal.Tier, 1, 3);
         EffectRadius = Max(1.0, radius);
         PulseAccumulator = 0.0;
         TrappedMass = 0.0;
@@ -56,6 +61,13 @@ class CaelumChannelEffect : Actor
         return Max(1.0, double(candidate.Mass));
     }
 
+    // Fuerza constante: la aceleración resultante es inversamente
+    // proporcional a la masa del cuerpo afectado.
+    double GetMassAdjustedContinuousSpeed(Actor candidate, double force)
+    {
+        return Max(0.0, force) / GetActorMass(candidate);
+    }
+
     void ApplyRadialVelocity(Actor candidate, double speed, bool inward)
     {
         Vector3 offset = candidate.Pos
@@ -66,7 +78,62 @@ class CaelumChannelEffect : Actor
         candidate.Vel += direction * speed;
     }
 
-    void ApplyPersistentElement(Actor candidate, bool fire)
+    // El giro horario visto desde arriba representa la convención de las
+    // tormentas del hemisferio sur. La componente vertical usa la misma
+    // potencia que la tangencial para no introducir otro valor de balance.
+    void ApplySouthernTornadoVelocity(Actor candidate, double speed)
+    {
+        Vector2 offset = (candidate.Pos.X - Pos.X, candidate.Pos.Y - Pos.Y);
+        double distance = Max(0.001, offset.Length());
+        Vector2 radial = offset / distance;
+        Vector2 clockwiseTangent = (radial.Y, -radial.X);
+        candidate.Vel.X += clockwiseTangent.X * speed;
+        candidate.Vel.Y += clockwiseTangent.Y * speed;
+        candidate.Vel.Z += speed;
+    }
+
+    void SuppressTargetGravity(Actor candidate)
+    {
+        GravityTargets.Push(candidate);
+        GravityOriginalFlags.Push(candidate.bNOGRAVITY ? 1 : 0);
+        candidate.bNOGRAVITY = true;
+    }
+
+    void RestoreTargetGravity()
+    {
+        for (int index = GravityTargets.Size() - 1; index >= 0; index--)
+        {
+            Actor candidate = GravityTargets[index];
+            if (candidate != null)
+                candidate.bNOGRAVITY = GravityOriginalFlags[index] != 0;
+            GravityTargets.Delete(index);
+            GravityOriginalFlags.Delete(index);
+        }
+    }
+
+    // Caída por potencia cuadrática: 100% en el centro, 50% a mitad del
+    // radio y 0% en el borde, sin discontinuidades entre ambas mitades.
+    double GetRadialPenaltyPercent(Actor candidate)
+    {
+        Vector3 center = candidate.Pos
+            + (0.0, 0.0, candidate.Height * 0.5);
+        double ratio = Clamp((center - Pos).Length() / EffectRadius, 0.0, 1.0);
+        double intensity;
+        if (ratio <= 0.5)
+        {
+            double inner = 1.0 - ratio * 2.0;
+            intensity = 0.5 + 0.5 * inner * inner;
+        }
+        else
+        {
+            double outer = 2.0 - ratio * 2.0;
+            intensity = 0.5 * outer * outer;
+        }
+        return Clamp(intensity * 100.0, 0.0, 100.0);
+    }
+
+    void ApplyPersistentElement(Actor candidate, bool fire,
+        double penaltyPercent)
     {
         int damage = Max(1, int((ChannelOwner != null
             && ChannelOwner.DerivedStats != null
@@ -80,12 +147,8 @@ class CaelumChannelEffect : Actor
             playerTarget.ElementalStatus.ApplyDamageOverTime(
                 effect, 1.1, 1.0, damage, ChannelOwner);
             if (!fire)
-            {
-                playerTarget.ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_FREEZE, 1.1, 75.0);
-                playerTarget.ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE, 1.1, 50.0);
-            }
+                playerTarget.ElementalStatus.ApplyEarthPenalty(
+                    1.1, penaltyPercent);
             return;
         }
         CaelumCombatActor combatTarget = CaelumCombatActor(candidate);
@@ -94,12 +157,8 @@ class CaelumChannelEffect : Actor
             combatTarget.ElementalStatus.ApplyDamageOverTime(
                 effect, 1.1, 1.0, damage, ChannelOwner);
             if (!fire)
-            {
-                combatTarget.ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_FREEZE, 1.1, 75.0);
-                combatTarget.ElementalStatus.ApplyControlEffect(
-                    CaelumConstants.ELEMENTAL_EFFECT_DAZZLE, 1.1, 50.0);
-            }
+                combatTarget.ElementalStatus.ApplyEarthPenalty(
+                    1.1, penaltyPercent);
         }
         else if (candidate.health > 0)
             candidate.DamageMobj(self, ChannelOwner, damage,
@@ -162,6 +221,9 @@ class CaelumChannelEffect : Actor
 
     void ApplyContinuousEffect()
     {
+        // Se restaura y reconstruye la lista una vez por tic. Así la búsqueda
+        // permanece O(n) incluso durante la prueba de 15.000 actores.
+        RestoreTargetGravity();
         TrappedMass = 0.0;
         int affectedCount = 0;
         ThinkerIterator iterator = ThinkerIterator.Create("Actor");
@@ -176,12 +238,18 @@ class CaelumChannelEffect : Actor
                 && ChannelOwner.DerivedStats != null
                 ? ChannelOwner.DerivedStats.PhysicalPushMultiplier
                     + ChannelOwner.DerivedStats.MagicalPushMultiplier : 2.0;
+            double massAdjustedSpeed =
+                GetMassAdjustedContinuousSpeed(candidate, combinedPower);
             if (SealType == CaelumConstants.SEAL_AIR)
-                ApplyRadialVelocity(candidate, combinedPower, false);
+            {
+                SuppressTargetGravity(candidate);
+                ApplySouthernTornadoVelocity(candidate, massAdjustedSpeed);
+            }
             else if (SealType == CaelumConstants.SEAL_QUINTESSENCE)
             {
+                SuppressTargetGravity(candidate);
                 TrappedMass += GetActorMass(candidate);
-                ApplyRadialVelocity(candidate, combinedPower, true);
+                ApplyRadialVelocity(candidate, massAdjustedSpeed, true);
             }
         }
         if (ChannelOwner != null)
@@ -205,12 +273,15 @@ class CaelumChannelEffect : Actor
             if (IsAuthorizedTarget(candidate)
                 && IsInside(candidate, Pos, EffectRadius))
                 ApplyPersistentElement(candidate,
-                    SealType == CaelumConstants.SEAL_FIRE);
+                    SealType == CaelumConstants.SEAL_FIRE,
+                    SealType == CaelumConstants.SEAL_EARTH
+                        ? GetRadialPenaltyPercent(candidate) : 100.0);
         }
     }
 
     void ReleaseChannel()
     {
+        RestoreTargetGravity();
         if (SealType == CaelumConstants.SEAL_QUINTESSENCE
             && TrappedMass > 0.0)
         {
@@ -233,12 +304,25 @@ class CaelumChannelEffect : Actor
     override void Tick()
     {
         Super.Tick();
-        if (ChannelOwner == null || !ChannelOwner.CombatChannelModeActive)
+        if (ChannelOwner == null || ChannelSeal == null
+            || !ChannelSeal.Equipped
+            || ChannelSeal.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+            || ChannelOwner.GetEquippedSeal() != ChannelSeal
+            || !ChannelOwner.CombatChannelModeActive)
         {
+            RestoreTargetGravity();
             Destroy();
             return;
         }
-        SetOrigin(ChannelOwner.Pos, false);
+        // El tipo se toma del objeto exacto que inició la canalización. Así
+        // ningún actor de efecto anterior puede conservar el tipo Fuego.
+        SealType = Clamp(ChannelSeal.ItemType, 0,
+            CaelumConstants.SEAL_TYPE_COUNT - 1);
+        vector3 epicenter = ChannelOwner.Pos;
+        if (SealType == CaelumConstants.SEAL_QUINTESSENCE)
+            epicenter.Z +=
+                CaelumConstants.SEAL_QUINTESSENCE_EPICENTER_HEIGHT;
+        SetOrigin(epicenter, false);
         ApplyContinuousEffect();
         PulseAccumulator += 1.0 / TICRATE;
         if (PulseAccumulator >= CaelumConstants.SEAL_CHANNEL_PULSE_SECONDS)

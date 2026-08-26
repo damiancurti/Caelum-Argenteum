@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.28.0bi build keeps architecture and actor tests separate. MAP01 uses finite first-floor walls with independently rendered front and rear faces. MAP02 preserves its 16,384×16,384 MU enclosure and restores the full 15,000-combatant stress population. Impact Physics represents simultaneous pairs through persistent shared contact records: connected contacts form implicit islands, continued pressure transfers momentum without repeating impact trauma, and each sustained second applies the existing walking-speed collision damage after biological absorption. NPC elemental attacks use straight explosive projectiles whose attack and travel distance share the authoritative Eloquence-derived magical range.
+The current V4.28.0bm build keeps architecture and actor tests separate. MAP01 retains the `4.28.0bl` removal of eight defective first-floor actor-wall panels and its single-leaf sliding doors. MAP02 retains 15,000 visible, solid and damageable passive stress actors. Seal channels are bound to the exact equipped item; Air and Quintessence acceleration now respects target mass, and Quintessence gathers targets five meters above the owner. Earth applies Poison and a non-Ice radial statistic penalty following the authored 100%/50%/0% curve. Seal pickups are excluded from GZDoom's native inventory bar so they cannot replace the player face.
 
 ### Building the development PK3
 

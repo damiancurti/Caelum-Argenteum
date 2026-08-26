@@ -24,6 +24,8 @@ class CaelumElementalStatus : Object
     double FreezePowerPercent;
     double DazzleRemaining;
     double DazzlePowerPercent;
+    double EarthPenaltyRemaining;
+    double EarthPenaltyPowerPercent;
     double LightningStunRemaining;
 
     Actor BurnVisual;
@@ -119,6 +121,19 @@ class CaelumElementalStatus : Object
                 LightningStunRemaining = duration;
             }
         }
+    }
+
+    // La penalización del Sello de Tierra es mecánica, no Congelación: no
+    // activa el estado ni el visual de Hielo y conserva su caída radial.
+    void ApplyEarthPenalty(double duration, double power)
+    {
+        duration = Max(0.0, duration);
+        power = Clamp(power, 0.0, 100.0);
+        if (!ShouldReplace(
+            power, duration, EarthPenaltyPowerPercent, EarthPenaltyRemaining
+        )) { return; }
+        EarthPenaltyRemaining = duration;
+        EarthPenaltyPowerPercent = power;
     }
 
     // DamageMobj pertenece al alcance jugable del motor. Declarar toda la
@@ -218,24 +233,35 @@ class CaelumElementalStatus : Object
         double ticSeconds = 1.0 / TICRATE;
         FreezeRemaining = Max(0.0, FreezeRemaining - ticSeconds);
         DazzleRemaining = Max(0.0, DazzleRemaining - ticSeconds);
+        EarthPenaltyRemaining = Max(
+            0.0, EarthPenaltyRemaining - ticSeconds
+        );
         LightningStunRemaining = Max(
             0.0, LightningStunRemaining - ticSeconds
         );
         if (FreezeRemaining <= 0.0) { FreezePowerPercent = 0.0; }
         if (DazzleRemaining <= 0.0) { DazzlePowerPercent = 0.0; }
+        if (EarthPenaltyRemaining <= 0.0)
+            EarthPenaltyPowerPercent = 0.0;
         UpdateVisualEffects(owner);
     }
 
     double GetMovementMultiplier()
     {
-        return FreezeRemaining > 0.0
+        double freezeMultiplier = FreezeRemaining > 0.0
             ? 1.0 - FreezePowerPercent / 100.0 : 1.0;
+        double earthMultiplier = EarthPenaltyRemaining > 0.0
+            ? 1.0 - EarthPenaltyPowerPercent / 100.0 : 1.0;
+        return Min(freezeMultiplier, earthMultiplier);
     }
 
     double GetAccuracyMultiplier()
     {
-        return DazzleRemaining > 0.0
+        double dazzleMultiplier = DazzleRemaining > 0.0
             ? 1.0 - DazzlePowerPercent / 100.0 : 1.0;
+        double earthMultiplier = EarthPenaltyRemaining > 0.0
+            ? 1.0 - EarthPenaltyPowerPercent / 100.0 : 1.0;
+        return Min(dazzleMultiplier, earthMultiplier);
     }
 
     bool IsLightningStunned()
