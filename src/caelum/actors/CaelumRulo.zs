@@ -27,6 +27,7 @@ class CaelumRulo : CaelumCombatActor
             CombatArmor.Size[slot] = CaelumConstants.EQUIPMENT_SIZE_XL;
             CombatArmor.Durability[slot] = CombatArmor.GetMaximumDurability(slot);
         }
+        ConfigureCombatMagicalRange();
     }
 
     States
@@ -48,8 +49,8 @@ class CaelumRulo : CaelumCombatActor
         Goto See;
     Missile:
         RULO D 9 A_FaceTarget;
-        RULO D 0 A_CaelumSpawnHomingElementalProjectile(
-            "CaelumActorHomingElementalProjectile", 46,
+        RULO D 0 A_CaelumSpawnExplosiveElementalProjectile(
+            "CaelumActorExplosiveElementalProjectile", 46,
             372, CaelumConstants.ESSENCE_EARTH
         );
         RULO A 16;

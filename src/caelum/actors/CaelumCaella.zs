@@ -22,6 +22,7 @@ class CaelumCaella : CaelumCombatActor
         // Duende cleriga: fisico 9, tecnico 7, social 11 y mental 18.
         InitializeCombatProfile(9, 9, 9, 7, 7, 7, 11, 11, 11, 18, 18, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MAGIC, 1);
+        ConfigureCombatMagicalRange();
     }
 
     States
@@ -43,8 +44,8 @@ class CaelumCaella : CaelumCombatActor
         Goto See;
     Missile:
         CAEL D 7 A_FaceTarget;
-        CAEL D 0 A_CaelumSpawnHomingElementalProjectile(
-            "CaelumActorHomingElementalProjectile", 40,
+        CAEL D 0 A_CaelumSpawnExplosiveElementalProjectile(
+            "CaelumActorExplosiveElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_WATER
         );
         CAEL A 11;

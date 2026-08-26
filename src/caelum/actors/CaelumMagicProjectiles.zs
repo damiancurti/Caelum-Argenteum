@@ -1,8 +1,11 @@
-// Proyectil elemental guiado compartido por los cuatro actores de prueba.
-// Usa A_SeekerMissile, la misma primitiva nativa empleada por el Libro.
-class CaelumActorHomingElementalProjectile : CaelumActorProjectile
+// Proyectil elemental explosivo compartido por los cuatro actores de prueba.
+// Reutiliza las reglas de la Estatuilla y no ejecuta búsqueda guiada por tic.
+class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 {
     int CaelumLifetimeTicks;
+    Vector3 CaelumPreviousPosition;
+    double CaelumDistanceTraveled;
+    bool CaelumTravelTrackingInitialized;
 
     Default
     {
@@ -12,14 +15,15 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
         Damage 1;
         DamageType "CaelumMagicTest";
         Projectile;
-        +SEEKERMISSILE
-        +INTERPOLATEANGLES
         +NOEXTREMEDEATH
     }
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
-        return GetCaelumPreparedDamage(Max(1, damage));
+        return Max(1, int(
+            GetCaelumPreparedDamage(Max(1, damage))
+                * CaelumConstants.ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO + 0.5
+        ));
     }
 
     void UpdateElementSprite()
@@ -40,23 +44,40 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
         frame = visual == "CELH" ? (level.time / 2) % 12 : 0;
     }
 
-    action void A_CaelumActorSeek()
+    action void A_CaelumActorExplode()
     {
-        // El proyectil nace con Target = lanzador. El objetivo del lanzador es
-        // la referencia más robusta para estos actores de prueba.
-        if (invoker.Tracer == null && invoker.Target != null)
-            invoker.Tracer = invoker.Target.Target;
-        if (invoker.Tracer != null && invoker.Tracer.health > 0)
-            invoker.A_SeekerMissile(10, 30);
+        invoker.A_Explode(
+            invoker.CaelumActorExplosionDamage,
+            invoker.CaelumActorExplosionRadius,
+            0,
+            false
+        );
     }
 
     override void Tick()
     {
+        Vector3 positionBeforeTick = Pos;
         Super.Tick();
 
-        // Un proyectil guiado que pierde su blanco no puede permanecer para
-        // siempre en el campo de pruebas. El límite evita acumulaciones
-        // silenciosas cuando varios recintos se despiertan por un disparo.
+        if (!CaelumTravelTrackingInitialized)
+        {
+            CaelumPreviousPosition = positionBeforeTick;
+            CaelumTravelTrackingInitialized = true;
+        }
+        Vector3 traveled = Pos - CaelumPreviousPosition;
+        CaelumDistanceTraveled += traveled.Length();
+        CaelumPreviousPosition = Pos;
+
+        // El alcance derivado del lanzador es el límite funcional. Diez
+        // segundos permanecen como salvaguarda absoluta independiente.
+        if (CaelumMaximumTravelDistance > 0.0
+            && CaelumDistanceTraveled >= CaelumMaximumTravelDistance)
+        {
+            Destroy();
+            return;
+        }
+
+        // Incluso la variante explosiva conserva un límite absoluto de vida.
         CaelumLifetimeTicks++;
         if (CaelumLifetimeTicks >= 350)
         {
@@ -70,9 +91,10 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
     States
     {
     Spawn:
-        XFIR A 1 Bright A_CaelumActorSeek;
+        XFIR A 1 Bright;
         Loop;
     Death:
+        XFIR A 0 Bright A_CaelumActorExplode;
         XFIR A 2 Bright;
         Stop;
     }

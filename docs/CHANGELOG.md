@@ -1,6 +1,29 @@
 # Changelog
 
-## 4.28.0bd — Persistent contact islands and stable stress population
+## 4.28.0bh — Doubled post-island stress population
+
+- Doubled MAP02 from the validated 937-actor population to exactly 1,874
+  combatants without changing its enclosure, entrance or geometry.
+- Placed 126 Rulo, 126 Caella, 124 Ronnie, 124 Argento, 124 Bulls and 1,250
+  Giant Rats, preserving the deterministic proportional distribution.
+- Changed no physics, projectile, menu, typography or Debug-profile code so
+  this test isolates the load difference under the 4.28.0bf/4.28.0bg systems.
+
+## 4.28.0bf — Range-bounded projectiles and UI-safe contact telemetry
+
+- Supersedes the unloadable 4.28.0be draft. The debug HUD now reads a contact
+  count cached during player `Tick` instead of calling a play-scope function
+  from UI scope.
+- Connected NPC magical range to the same authoritative rule as the player:
+  3,200 MU base multiplied by Eloquence Type 4 `AbilityRangePercent`.
+- Applied that distance both to `MaxTargetRange` and to projectile travel.
+  Explosive missiles destroy themselves when they exhaust the caster's range;
+  the ten-second lifetime remains an independent absolute safeguard.
+
+## 4.28.0be — Contact islands, crushing and explosive NPC projectiles
+
+- Supersedes the unloadable 4.28.0bd draft. Renamed every contact-local
+  `state` identifier because `state` is reserved by the ZScript parser.
 
 - Restored MAP02 to its validated 937-actor population after the doubled
   1,874-actor field froze during combined combat.
@@ -12,8 +35,12 @@
 - Added allocation-free sustained momentum transfer for already-latched
   contacts. Continued pressure propagates through a crowd without repeating
   impact trauma or recreating `ImpactBody` and `ImpactResult` every tic.
-- Stored sustained-contact duration, closing speed and transmitted impulse for
-  the future crushing system. No crushing threshold or damage was introduced.
+- Added one crushing evaluation per 35 sustained-contact tics. Its damage is
+  exactly the existing collision result at the pusher's current walking speed,
+  with both effective masses and the receiver's biological absorption applied.
+- Replaced the four NPC homing elemental missiles with the existing explosive
+  projectile model: straight flight, Statuette radius/direct-damage rules and
+  the same absolute ten-second lifetime.
 - Updated the physics debug line to report the player's active contact count.
 - Kept the ten-second NPC-projectile lifetime unchanged.
 

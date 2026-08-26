@@ -22,6 +22,7 @@ class CaelumRonnie : CaelumCombatActor
         // Fisico 20, tecnico 18, social 5 y mental 7.
         InitializeCombatProfile(20, 20, 20, 18, 18, 18, 5, 5, 5, 7, 7, 7);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MEDIUM, 1);
+        ConfigureCombatMagicalRange();
     }
 
     States
@@ -43,8 +44,8 @@ class CaelumRonnie : CaelumCombatActor
         Goto See;
     Missile:
         RONI D 7 A_FaceTarget;
-        RONI D 0 A_CaelumSpawnHomingElementalProjectile(
-            "CaelumActorHomingElementalProjectile", 40,
+        RONI D 0 A_CaelumSpawnExplosiveElementalProjectile(
+            "CaelumActorExplosiveElementalProjectile", 40,
             154, CaelumConstants.ESSENCE_WIND
         );
         RONI A 9;

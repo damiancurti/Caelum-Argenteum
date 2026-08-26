@@ -40,6 +40,9 @@ class CaelumActorProjectile : Actor
     double CaelumDebuffPowerPercent;
     double CaelumBuffPowerPercent;
     bool CaelumElementalPayloadPrepared;
+    int CaelumActorExplosionDamage;
+    double CaelumActorExplosionRadius;
+    double CaelumMaximumTravelDistance;
 
     // Conserva la identidad del arma que originó el proyectil. Así la
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
@@ -84,6 +87,17 @@ class CaelumActorProjectile : Actor
         CaelumCriticalHit = criticalHit;
         CaelumMagicalAttack = magicalAttack;
         CaelumPushMultiplier = Max(0.0, pushMultiplier);
+    }
+
+    void ConfigureCaelumActorExplosion(
+        int damage,
+        double radius,
+        double maximumTravelDistance
+    )
+    {
+        CaelumActorExplosionDamage = Max(0, damage);
+        CaelumActorExplosionRadius = Max(1.0, radius);
+        CaelumMaximumTravelDistance = Max(1.0, maximumTravelDistance);
     }
 
     void StoreCaelumWeaponWearIdentity(

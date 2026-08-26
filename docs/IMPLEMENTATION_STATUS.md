@@ -1,6 +1,24 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Persistent multi-contact islands 4.28.0bd
+## Doubled post-island stress population 4.28.0bh
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now contains exactly 1,874 combatants: 126 Rulo, 126 Caella, 124
+Ronnie, 124 Argento, 124 Bulls and 1,250 Giant Rats. Its geometry is identical
+to the validated 937-actor field. Contact islands, once-per-second crushing,
+straight explosive projectiles, Eloquence-derived range and the 350-tic
+absolute projectile safeguard remain unchanged.
+
+Validation focus:
+
+1. Confirm the initial chamber remains responsive before acquisition.
+2. Wake the complete population and record the first sustained frame drop.
+3. Distinguish stable low frame rate from progressive loss of responsiveness.
+4. Continue after projectiles expire and verify whether performance recovers.
+5. Enter the central contact pile and monitor active contact count.
+
+## Range-bounded projectiles and UI-safe contact telemetry 4.28.0bf
 
 **Implemented — pending manual GZDoom 4.14.2 validation**
 
@@ -16,10 +34,25 @@ distance for five consecutive tics.
 
 An initial collision still uses `ImpactPhysics.ResolveBodies` and may apply
 ordinary collision trauma. Later collision callbacks for the same pair perform
-an allocation-free inelastic momentum transfer only. They cannot apply a
-second impact while contact persists. Each state records sustained tics,
-closing speed and transmitted impulse, but crushing damage remains pending
-until its threshold, formula and base damage are approved.
+an allocation-free inelastic momentum transfer and cannot apply a second
+impact while contact persists. Every 35 sustained-contact tics, crushing
+resolves a synthetic collision at the pusher's current walking speed. It uses
+the existing source and receiver effective masses, contact-height interval,
+anatomy, Toughness and armor pipeline; the receiver's biological landing
+absorption is subtracted before the damage curve. There is no independent
+crushing base damage or arbitrary multiplier.
+
+Rulo, Caella, Argento and Ronnie now fire straight explosive elemental
+projectiles instead of calling `A_SeekerMissile` every tic. Their explosion
+uses the same base radius and direct-damage ratio as the player's Statuette.
+Their magical attack decision and projectile distance now share the player's
+authoritative range rule: 3,200 MU multiplied by Eloquence Type 4
+`AbilityRangePercent`. Unimpacted projectiles self-destruct as soon as they
+exhaust that distance, while 350 tics remains an absolute safeguard.
+
+The debug UI no longer calls the play-scope `GetImpactContactCount` function.
+Player `Tick` caches `ImpactContactCountForUI`, and the overlay only reads that
+numeric field, preserving GZDoom's play/UI context boundary.
 
 Validation focus:
 
@@ -29,6 +62,10 @@ Validation focus:
 4. Observe `Contacts` on the physics debug page while touching several bodies.
 5. Confirm one collision causes at most one trauma event until true separation.
 6. Confirm sustained pushing can propagate through several touching actors.
+7. Hold a heavy actor against a lighter body for several seconds and compare
+   the once-per-second Crush result with a walking-speed collision.
+8. Confirm NPC projectiles fly straight, explode on impact and disappear after
+   ten seconds when they miss.
 
 ## Wall reverse rendering and texture-package validation 4.28.0az
 

@@ -365,6 +365,9 @@ class CaelumConstants : Object
     // radios combinados + 25% de la altura del cuerpo menor, mantenida 5 tics.
     const IMPACT_CONTACT_REARM_HEIGHT_FRACTION = 0.25;
     const IMPACT_CONTACT_REARM_SEPARATED_TICS = 5;
+    // La presión sostenida se evalúa una vez por segundo. El daño usa una
+    // colisión sintética a velocidad de caminata; no introduce daño base.
+    const IMPACT_CRUSH_INTERVAL_TICS = 35;
 
     // V4.25.4 — curva energética continua.
     // 35 tics equivalentes = 0% de daño bruto.
@@ -385,6 +388,7 @@ class CaelumConstants : Object
     const IMPACT_KIND_ACTOR = 1;
     const IMPACT_KIND_WALL = 2;
     const IMPACT_KIND_FLOOR = 3;
+    const IMPACT_KIND_CRUSH = 4;
 
     // Primer catalogo jugable de armas. Los indices son persistentes: no deben
     // reordenarse cuando se agreguen nuevas familias en versiones posteriores.

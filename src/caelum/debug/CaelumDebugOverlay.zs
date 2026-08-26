@@ -2307,7 +2307,7 @@ class CaelumDebugOverlay : EventHandler
                 "Accel %.1f%% (%.2fs) | Contacts %d | Band %.2f-%.2f",
                 localPlayer.MovementAccelerationFactor * 100.0,
                 localPlayer.MovementAccelerationSeconds,
-                localPlayer.GetImpactContactCount(),
+                localPlayer.ImpactContactCountForUI,
                 localPlayer.LastImpactContactMinimumHeightRatio,
                 localPlayer.LastImpactContactMaximumHeightRatio
             );

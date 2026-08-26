@@ -64,6 +64,7 @@ class ImpactContactState : Object
     double ReleaseDistance;
     int SeparatedTics;
     int LastUpdatedTick;
+    int LastSustainedTick;
     int SustainedTics;
     double LastClosingSpeed;
     double LastTransmittedImpulse;
@@ -76,6 +77,7 @@ class ImpactContactState : Object
         ReleaseDistance = Max(0.0, releaseDistance);
         SeparatedTics = 0;
         LastUpdatedTick = -1;
+        LastSustainedTick = -1;
         SustainedTics = 0;
         LastClosingSpeed = 0.0;
         LastTransmittedImpulse = 0.0;
@@ -118,11 +120,25 @@ class ImpactContactState : Object
         }
     }
 
-    void RegisterSustainedTransfer(double closingSpeed, double impulse)
+    bool RegisterSustainedTransfer(
+        int currentTick,
+        double closingSpeed,
+        double impulse,
+        int crushIntervalTics
+    )
     {
+        if (LastSustainedTick == currentTick)
+        {
+            LastClosingSpeed = Max(LastClosingSpeed, closingSpeed);
+            LastTransmittedImpulse = Max(LastTransmittedImpulse, impulse);
+            return false;
+        }
+        LastSustainedTick = currentTick;
         SustainedTics++;
         LastClosingSpeed = Max(0.0, closingSpeed);
         LastTransmittedImpulse = Max(0.0, impulse);
+        return crushIntervalTics > 0
+            && SustainedTics % crushIntervalTics == 0;
     }
 }
 

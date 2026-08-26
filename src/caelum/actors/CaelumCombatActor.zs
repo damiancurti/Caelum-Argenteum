@@ -373,6 +373,19 @@ class CaelumCombatActor : Actor
         return 100.0 + 2.0 * level * (level + 1) / 101.0;
     }
 
+    double GetCombatAbilityRange()
+    {
+        int effectiveEloquence = CombatEloquence
+            + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_ELOQUENCE);
+        return CaelumConstants.ESSENCE_BASE_RANGE_MAP_UNITS
+            * CalculateActorType4Percent(effectiveEloquence) / 100.0;
+    }
+
+    void ConfigureCombatMagicalRange()
+    {
+        MaxTargetRange = GetCombatAbilityRange();
+    }
+
     bool TrySpendCombatAir(double requestedAmount)
     {
         double amount = Max(0.0, requestedAmount);
@@ -571,10 +584,10 @@ class CaelumCombatActor : Actor
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
-    // Variante elemental guiada para actores de prueba. Reutiliza la misma
-    // metadata ofensiva y el mismo payload elemental que los hechizos del jugador.
+    // Variante elemental explosiva para actores de prueba. Reutiliza la misma
+    // metadata ofensiva, radio y payload elemental que la Estatuilla.
     // Cada actor alterna de forma determinista entre su elemento primario y secundario.
-    action void A_CaelumSpawnHomingElementalProjectile(
+    action void A_CaelumSpawnExplosiveElementalProjectile(
         class<CaelumActorProjectile> missileType,
         double spawnHeight,
         int baseDamage,
@@ -603,6 +616,11 @@ class CaelumCombatActor : Actor
                 combatActor.NextRangedSecondaryElement,
                 100.0,
                 100.0
+            );
+            missile.ConfigureCaelumActorExplosion(
+                calculatedDamage,
+                CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS,
+                combatActor.GetCombatAbilityRange()
             );
         }
         combatActor.NextRangedSecondaryElement = !combatActor.NextRangedSecondaryElement;
@@ -825,7 +843,20 @@ class CaelumCombatActor : Actor
     )
     {
         LastImpactKind = impactKind;
-        LastImpactDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
+        LastImpactBiologicalAbsorptionSpeed = 0.0;
+        LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
+        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH)
+        {
+            LastImpactBiologicalAbsorptionSpeed = Min(
+                LastImpactRawDeltaSpeed,
+                GetBiologicalLandingAbsorptionSpeed()
+            );
+            LastImpactDeltaSpeed = Max(
+                0.0,
+                LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed
+            );
+        }
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
@@ -1048,8 +1079,11 @@ class CaelumCombatActor : Actor
     {
         for (int index = 0; index < ImpactContacts.Size(); index++)
         {
-            ImpactContactState state = ImpactContacts[index];
-            if (state != null && state.Matches(self, other)) { return state; }
+            ImpactContactState contact = ImpactContacts[index];
+            if (contact != null && contact.Matches(self, other))
+            {
+                return contact;
+            }
         }
         return null;
     }
@@ -1091,14 +1125,14 @@ class CaelumCombatActor : Actor
         return Max(1.0, other.Height);
     }
 
-    void AddImpactContactState(ImpactContactState state)
+    void AddImpactContactState(ImpactContactState contact)
     {
-        if (state == null || GetImpactContactState(state.FirstActor == self
-            ? state.SecondActor : state.FirstActor) != null)
+        if (contact == null || GetImpactContactState(contact.FirstActor == self
+            ? contact.SecondActor : contact.FirstActor) != null)
         {
             return;
         }
-        ImpactContacts.Push(state);
+        ImpactContacts.Push(contact);
     }
 
     ImpactContactState LatchImpactContact(Actor other)
@@ -1115,47 +1149,47 @@ class CaelumCombatActor : Actor
                 * CaelumConstants.IMPACT_CONTACT_REARM_HEIGHT_FRACTION
             + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
 
-        ImpactContactState state = new("ImpactContactState");
-        if (state == null) { return null; }
-        state.Initialize(self, other, releaseDistance);
-        ImpactContacts.Push(state);
+        ImpactContactState contact = new("ImpactContactState");
+        if (contact == null) { return null; }
+        contact.Initialize(self, other, releaseDistance);
+        ImpactContacts.Push(contact);
 
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null)
         {
-            otherPlayer.AddImpactContactState(state);
-            return state;
+            otherPlayer.AddImpactContactState(contact);
+            return contact;
         }
 
         CaelumCombatActor otherActor = CaelumCombatActor(other);
-        if (otherActor != null) { otherActor.AddImpactContactState(state); }
-        return state;
+        if (otherActor != null) { otherActor.AddImpactContactState(contact); }
+        return contact;
     }
 
     void UpdateImpactContactLatch()
     {
         for (int index = ImpactContacts.Size() - 1; index >= 0; index--)
         {
-            ImpactContactState state = ImpactContacts[index];
-            if (state == null)
+            ImpactContactState contact = ImpactContacts[index];
+            if (contact == null)
             {
                 ImpactContacts.Delete(index);
                 continue;
             }
-            state.UpdateSeparation(
+            contact.UpdateSeparation(
                 level.time,
                 CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
             );
-            if (!state.Active) { ImpactContacts.Delete(index); }
+            if (!contact.Active) { ImpactContacts.Delete(index); }
         }
     }
 
     void ResolveSustainedImpactContact(
         Actor other,
-        ImpactContactState state
+        ImpactContactState contact
     )
     {
-        if (other == null || state == null || !state.Active) { return; }
+        if (other == null || contact == null || !contact.Active) { return; }
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;
         double distance = Sqrt(dx * dx + dy * dy);
@@ -1180,7 +1214,85 @@ class CaelumCombatActor : Actor
         Vel.Y -= normalY * selfDeltaSpeed;
         other.Vel.X += normalX * otherDeltaSpeed;
         other.Vel.Y += normalY * otherDeltaSpeed;
-        state.RegisterSustainedTransfer(closingSpeed, impulse);
+        bool applyCrush = contact.RegisterSustainedTransfer(
+            level.time,
+            closingSpeed,
+            impulse,
+            CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS
+        );
+        if (applyCrush)
+        {
+            ApplySustainedCrush(other, normalX, normalY);
+        }
+    }
+
+    double GetImpactWalkingSpeed()
+    {
+        return Max(0.0, Speed);
+    }
+
+    void ApplySustainedCrush(Actor other, double normalX, double normalY)
+    {
+        double walkingSpeed = GetImpactWalkingSpeed();
+        if (other == null || walkingSpeed <= 0.0001) { return; }
+
+        ImpactBody sourceBody = BuildImpactPhysicsBody();
+        ImpactBody targetBody = BuildOtherImpactPhysicsBody(other);
+        ImpactResult crushResult = new("ImpactResult");
+        if (sourceBody == null || targetBody == null || crushResult == null)
+        {
+            return;
+        }
+
+        // El daño por segundo equivale a una colisión a velocidad de marcha.
+        sourceBody.Velocity = (
+            normalX * walkingSpeed,
+            normalY * walkingSpeed,
+            0.0
+        );
+        targetBody.Velocity = (0.0, 0.0, 0.0);
+        ImpactPhysics.ResolveBodies(
+            sourceBody,
+            targetBody,
+            (normalX, normalY, 0.0),
+            crushResult
+        );
+        if (!crushResult.Valid) { return; }
+
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
+        {
+            otherPlayer.ReceiveCaelumImpact(
+                crushResult.TargetDeltaSpeed,
+                CaelumConstants.IMPACT_KIND_CRUSH,
+                self,
+                CollisionDamageMultiplier,
+                targetBody.Mass,
+                sourceBody.Mass,
+                crushResult.ClosingSpeed,
+                crushResult.Impulse,
+                crushResult.TargetContactMinimumHeightRatio,
+                crushResult.TargetContactMaximumHeightRatio
+            );
+            return;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null)
+        {
+            otherActor.ReceiveCaelumImpact(
+                crushResult.TargetDeltaSpeed,
+                CaelumConstants.IMPACT_KIND_CRUSH,
+                self,
+                CollisionDamageMultiplier,
+                targetBody.Mass,
+                sourceBody.Mass,
+                crushResult.ClosingSpeed,
+                crushResult.Impulse,
+                crushResult.TargetContactMinimumHeightRatio,
+                crushResult.TargetContactMaximumHeightRatio
+            );
+        }
     }
 
     ImpactBody BuildImpactPhysicsBody()
