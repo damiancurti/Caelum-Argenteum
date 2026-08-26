@@ -39,7 +39,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.27 — Combat Input Completion and Validation
 
-**In progress since V4.27.0a.** Native User1–User4 routing, contextual Reload and the magic-weapon Zoom latch are implemented; full manual matrix validation remains pending.
+**Implementation present; complete matrix validation deferred by author decision until V4.29 crafting is complete.** Native User1–User4 routing, contextual Reload and the magic-weapon Zoom latch are implemented. This deferred QA no longer blocks the start of V4.29.
 
 - Preserve Fire and AltFire weapon behavior.
 - Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
@@ -52,7 +52,7 @@ User1 is the remaining native User input and is reserved for the racial ability.
 
 ### V4.28 — Seal Channeling and Active-Ability Hooks
 
-Core and non-weather elemental effects are implemented through 4.28.0af. The 4.28.0af compatibility pass corrects the GZDoom 4.14.2 static actor-spawn call; parser confirmation and complete manual effect validation remain pending. Weather-dependent Seal tier additions are deferred to Version 5.
+**Functionally validated and closed in V4.28.0bp.** The author validated every current non-weather Seal effect and its corrected equipment binding, mass response and gravity handling. Weather-dependent Seal tier additions remain deferred to Version 5. MAP01 continues as a parallel architectural track and does not block V4.29.
 
 Current acceptance work:
 
@@ -86,6 +86,27 @@ No later pair may be added while the current pair has a freeze, missing floor, r
 - Defer all weather-dependent Seal-tier extensions to the Version 5 calendar/weather integration.
 
 ### V4.29 — Crafting Completion and Persistent Recipe Book
+
+**Authorized to begin after V4.28.0bp.** MAP01 reconstruction continues in
+parallel, and the deferred V4.27 combat-input matrix will be revisited after
+this crafting block is complete.
+
+V4.29.0a is a parallel physics-diagnostic gate requested before new crafting
+content: bounded contact cleanup, real accumulated-pressure damage and eight
+controlled MAP02 A/B rooms. It does not reopen the validated V4.28 Seal track,
+does not modify MAP01 and does not count as completion of any crafting item
+below. Its runtime results determine whether the later collision work needs a
+true connected-component island solver or only targeted AI/projectile
+optimization.
+
+V4.29.0b applies the first telemetry-directed robustness pass without adding a
+connected-component solver. Mass-test NPCs use bounded straight projectiles
+without homing or explosion; repeated contact resolves each shared pair at
+most once per tic; non-closing callbacks leave before expensive work; and
+physics bodies/results are reused. MAP02 adds an equal native/full/pass-through
+Quintessence comparison. MAP01 independently closes the visible endpoints of
+the four existing central finite panels. These changes do not reopen validated
+Seal behavior and do not count as crafting completion.
 
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.

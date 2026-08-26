@@ -139,7 +139,9 @@ class CaelumEquipmentItem : Inventory
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
         Inventory.PickupSound "misc/i_pkup";
-        +INVENTORY.INVBAR
+        // El equipo se administra desde la interfaz propia. Excluirlo de la
+        // barra nativa evita que su icono reemplace la cara del HUD clásico.
+        -INVENTORY.INVBAR
     }
 
     bool Matches(

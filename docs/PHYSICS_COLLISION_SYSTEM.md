@@ -1,5 +1,87 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0b — Once-per-pair resolution and allocation-free repeated contact
+
+The engine may report the same solid pair several times during one tic and may
+continue reporting physically stacked bodies after an external force ends.
+V4.29.0b preserves those callbacks as the authoritative edge-liveness signal,
+but a shared `ImpactContactState` admits only one custom resolution per tic:
+
+`custom pair resolutions per tic <= live contact pairs`
+
+Later callbacks for that pair increment diagnostic duplicate counts and return
+without applying a second impulse. For a pair entering or maintaining contact,
+the cheap squared-distance and closing projection are evaluated first:
+
+`closing projection = (v_A - v_B) dot (p_B - p_A)`
+
+If the centers coincide, the projection is non-positive, or the normalized
+closing speed is below the universal minimum, the callback is classified as
+resting and returns. The square root, contact normal, effective bodies and
+solver run only for a genuinely closing pair.
+
+`CaelumPlayer` and `CaelumCombatActor` each lazily allocate one source
+`ImpactBody`, one target `ImpactBody` and one `ImpactResult`, then overwrite and
+reuse them. Pair edges themselves remain persistent shared objects because
+they carry the bounded 35-tic pressure history. Thus ordinary repeated contact
+does not allocate bodies/results per callback, while edge creation and expiry
+remain visible through reference-churn telemetry.
+
+This optimization does not suppress or replace GZDoom's native collision
+checks. A pile of thousands of solid actors can still generate high raw
+callback volume and severe engine-side cost. The MAP02 `unicos`, `duplicados`
+and `reposo` counters separate that native volume from work actually executed
+by the Caelum solver.
+
+The NPC mass path is now physically simpler as well: Rulo, Caella, Ronnie and
+Argento fire a bounded straight single-impact projectile. It has no seeker
+update and no radial explosion; the explosive class remains available only by
+explicit request. This is a combat/AI cost policy rather than a change to the
+two-body formulas below.
+
+## V4.29.0a — Bounded contact graph and accumulated pressure
+
+The multi-contact implementation remains a shared graph of pair edges, not a
+simultaneous rigid-body island solver. V4.29.0a bounds that graph and makes its
+pressure output depend on measured impulse.
+
+Each valid `CollidedWith` callback refreshes `LastCollisionTick`. A contact
+edge is released when either existing geometric separation remains valid for
+five tics or five complete tics pass without a new collision callback. This
+prevents an actor's linear contact lookup from retaining every historical
+neighbor merely because a crowd remains within the generous rearm radius.
+
+For a sustained edge, the inelastic pair impulse remains:
+
+`J_tic = v_close / (1/m_A + 1/m_B)`
+
+At most one sample is counted per edge per tic; if the engine reports the edge
+more than once in that tic, only the largest sample contributes. Over the
+existing one-second interval:
+
+`J_pressure = sum(J_tic, 35 tics)`
+
+The pressure pulse reconstructs the closing speed that would produce that
+measured aggregate impulse for the same two effective masses:
+
+`v_equivalent = J_pressure × (1/m_A + 1/m_B)`
+
+That value enters the existing universal impact/anatomy/armor pipeline as
+`IMPACT_KIND_CRUSH`. The former synthetic walking-speed collision is removed.
+Consequently a gentle or intermittent contact remains low, while persistent
+force transmitted through successive neighboring edges can damage bodies in
+the compressed direction.
+
+Giant Rats no longer use `THRUSPECIES`. This is required for Rat-to-Rat
+pressure: species pass-through prevented a Quintessence cluster or player-led
+Rat pile from creating collision edges at all.
+
+Repeated edge impulses can propagate movement and pressure across a cluster,
+but the solver still does not collect a connected component, compute one total
+island mass or resolve all constraints simultaneously. That expansion remains
+conditional on the controlled MAP02 results because it would add traversal
+cost to the exact crowd case under investigation.
+
 ## V4.26.5d — Environmental Pain does not grant Adrenaline
 
 Wall and floor impacts already bypass the direct received-damage Adrenaline event. V4.26.5d closes the remaining shared-path leak: if environmental impact damage triggers the Pain state, that Pain may still immobilize/stun the body but does not grant Pain Adrenaline. Actor-to-actor impacts and ordinary combat damage retain their authored Pain Adrenaline behavior. No kinematic, energy, Toughness, armor, anatomy or damping formula changes in this correction.

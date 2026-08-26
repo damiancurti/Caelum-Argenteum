@@ -1,5 +1,217 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Simple mass projectiles and collision hot-path reduction 4.29.0b
+
+**Implemented — pending controlled GZDoom 4.14.2 runtime validation**
+
+The V4.29.0a telemetry rejects the retained-contact graph as the sole cause of
+the post-Quintessence slowdown. In the 2,000-actor sample, callbacks reached
+approximately 30,000 per reported simulated second and remained high while
+the bodies stayed physically stacked, but the retained graph stayed much
+smaller. Explosive Argento fire also produced a clear callback increase,
+especially after radial damage caused infighting. These are real repeated
+native collision events, not merely historical contact references.
+
+V4.29.0b therefore reduces the amount of Caelum work performed for every such
+event. A shared pair resolves once per tic; later callbacks only refresh its
+liveness. Coincident, separating or effectively resting callbacks return
+before body construction, normalization and square root. Every player and
+combat actor lazily owns three reusable work objects (`ImpactBody` source,
+`ImpactBody` target and `ImpactResult`) instead of allocating them in the
+collision hot path. Native collision detection still has an unavoidable cost,
+but duplicate callbacks no longer multiply the custom impulse calculation or
+temporary-object churn.
+
+Rulo, Caella, Ronnie and Argento now use the mass-safe projectile route. It is
+straight, finite-range, single-impact and non-explosive. It preserves the
+prepared attack result, critical flag, elemental payload, magical push and
+Eloquence-derived maximum range. It performs no seeker target lookup, steering
+or radial victim search. The old explosive behavior remains as an explicit
+class for authored explosive weapons and the controlled Room 6 comparison.
+
+The MAP02 monitor now writes three `[CA-PHYS]` lines per simulated second. In
+addition to actors, targets, missiles, contacts and reference churn, it reports:
+
+- `unicos`: contact pairs on which Caelum actually began one resolution tic;
+- `duplicados`: later callbacks for a pair already resolved that tic;
+- `reposo`: callbacks rejected as coincident, separating or below threshold;
+- `sello_afectados`: actors in the current player's Channel target set.
+
+Rooms 7–9 form an equal three-way Quintessence comparison with 500 passive
+Rats in each room:
+
+| Room | Collision configuration | Purpose |
+| --- | --- | --- |
+| 7 | Native solid collision; Caelum contacts disabled | Native-engine baseline |
+| 8 | Native solid collision plus complete Caelum contacts | Exact custom-physics increment |
+| 9 | Caelum contacts disabled plus same-species pass-through | Channel scan/force cost without pair collisions |
+
+The original 15,000 passive stress actors remain outside these isolated rooms.
+All nine rooms share one valid UDMF sector with 71 linedefs, 134 sidedefs and
+no missing front sides.
+
+MAP01 retains its finite-wall architecture. The four central first-floor
+panels at `x=368` now all cover 72 MU, and each interior reverse face receives
+only a 0.25-MU offset along the panel normal. The previous global X/Y shift
+moved an angle-90 reverse face partly along its width and exposed its endpoint
+from inside; that diagonal displacement is removed.
+
+Manual validation for this candidate:
+
+1. In MAP01, inspect both central first-floor room pairs from inside and from
+   the corridor. The four wall endpoints must remain closed with no flicker or
+   duplicate collision surface.
+2. Reload MAP02 before each test. Compare Rooms 5 and 6 for thirty seconds;
+   Room 5 must use straight single-impact shots, while Room 6 retains the
+   intentionally expensive explosion/infighting case.
+3. Test Rooms 7, 8 and 9 separately with a five-second Quintessence channel,
+   then observe twenty seconds after release. Record FPS and all three
+   telemetry lines. Room 8 minus Room 7 estimates Caelum contact cost; Room 7
+   minus Room 9 estimates native Rat-to-Rat collision cost.
+4. Repeat the 2,000-actor pile once. High raw `callbacks/s` may remain because
+   the engine is still resolving stacked solid bodies, but `unicos` must be
+   bounded to at most one resolution per pair/tic and custom allocations must
+   no longer scale with callbacks.
+
+Validated Seal effects/formulas and crafting behavior are unchanged.
+
+## Bounded contact pressure and controlled MAP02 rooms 4.29.0a
+
+**Implemented — pending controlled GZDoom 4.14.2 runtime matrix**
+
+The reported Quintessence cluster exposed two independent conditions. First,
+Giant Rats inherited `THRUSPECIES`, so Rat-to-Rat overlap could not generate
+the contact graph required for pressure or crushing. Second, every historical
+pair remained in both actors' arrays while its centers stayed inside a broad
+release distance, even when the engine had stopped reporting actual
+collisions. A converging `A_Chase` crowd could therefore retain increasingly
+large arrays and linearly search them on later callbacks.
+
+V4.29.0a removes Rat species pass-through and makes collision callbacks the
+authoritative liveness signal. A shared edge expires after five complete tics
+without another callback; the existing distance test remains as an additional
+release condition. Sustained contact records at most one impulse sample per
+tic, sums the real transmitted impulse for 35 tics, and converts that sum back
+to its two-body equivalent closing speed for the existing mass/anatomy/impact
+pipeline. No fixed walking speed is substituted.
+
+This correction deliberately remains a bounded pair graph. Repeated
+action/reaction impulses can propagate through adjacent edges, but the code
+does not yet solve every connected member and constraint simultaneously as a
+single aggregate-mass island. That larger solver remains conditional on the
+results below because a full component traversal could itself increase crowd
+cost.
+
+MAP02 preserves the original 15,000 passive actors and adds eight rooms. The
+north row is numbered 1–4 west to east; the south row is numbered 5–8 west to
+east. Every room uses ordinary two-sided blocking walls, an internal
+sight-breaking baffle and an invisible player-passable/monster-blocking
+threshold. All 64 linedefs have valid front sides.
+
+| Room | Population | Isolated variable |
+| --- | ---: | --- |
+| 1 | 25 Rats | `A_Look`/target acquisition only; no chase or attack |
+| 2 | 25 Rats | `A_Chase`, native solid collision, no Caelum contacts/attack |
+| 3 | 25 Rats | Same chase as Room 2 plus bounded Caelum contacts |
+| 4 | 25 Rats | Complete current Rat AI, melee and Caelum contacts |
+| 5 | 4 Argento | Stationary shooting; projectile Death omits `A_Explode` |
+| 6 | 4 Argento | Identical stationary shooting with normal `A_Explode` |
+| 7 | 100 passive Rats | Controlled Quintessence pressure |
+| 8 | 500 passive Rats | Larger Quintessence pressure and cancellation load |
+
+The MAP02 monitor writes two `[CA-PHYS]` console lines each second: actor and
+target totals, live projectile count, approximate shared contact edges,
+maximum contacts held by one actor, collision callbacks per second, and
+created/removed contact references. The original passive field is expected to
+keep `objetivos=0` and contribute no contacts until physically disturbed.
+
+Manual validation must run each room from a fresh `map map02` load:
+
+1. Record the untouched baseline for ten seconds; contacts and projectiles
+   should remain zero and controls must be responsive.
+2. Enter Room 1 and wait thirty seconds. If this alone freezes, investigate
+   target acquisition/base actor Tick rather than movement or collisions.
+3. Repeat separately in Rooms 2 and 3. Room 2 must report zero Caelum contacts;
+   any large regression appearing only in Room 3 identifies the custom graph.
+4. In Room 4, let all Rats converge, then run directly into the cluster from
+   several angles. Verify mass-dependent displacement, pressure damage along
+   contacted neighbors, and bounded `max/actor` rather than historical growth.
+5. Compare Rooms 5 and 6 for thirty seconds each. A regression unique to Room
+   6 isolates explosion/status/area-contact churn from perception and firing.
+6. In Rooms 7 and 8, channel Quintessence for five seconds while centered,
+   cancel it manually, and record affected count, cancellation response,
+   contact peak, `max/actor`, deaths and recovery. Rat-to-Rat contacts and
+   some pressure damage are now expected; complete overlap without contact is
+   not.
+7. Repeat the worst room three times from a fresh map and compare the same
+   baseline. If performance degrades while live contacts/projectiles return to
+   baseline, inspect allocation/GC or engine caches; if the counters remain
+   elevated, inspect the corresponding logical subsystem first.
+
+MAP01, all author-validated Seal effects and crafting behavior are unchanged.
+The V4.29 crafting roadmap remains authorized but receives no recipe-content
+change in this diagnostic patch.
+
+## MAP01 safe rollback and V4.29 authorization 4.28.0bp
+
+**Seal track validated; MAP01 parallel; V4.29 authorized**
+
+- The author validated Fire, Earth, Air, Water and Quintessence Seal behavior,
+  including the corrected element binding, mass response and gravity handling.
+- V4.28 Seal mechanics are accepted. Weather extensions remain deferred to
+  the Version 5 calendar/weather module as planned.
+- The V4.28.0bo MAP01 geometry is rejected because GZDoom's node builder
+  reported linedefs 569–590 without usable front sides.
+- MAP01 is restored byte-for-byte to the loadable V4.28.0bn version and no
+  longer blocks major-version progression. Its large-room reconstruction is a
+  parallel architecture task.
+- Material and special-item HUD isolation is retained and awaits a short
+  pickup regression test.
+- The complete V4.27 input matrix is deferred by author decision until the
+  crafting system is complete.
+- V4.29 Crafting Completion and Persistent Recipe Book may now begin.
+
+## Geometry-native first-floor rooms and material HUD isolation 4.28.0bo
+
+**Rejected — invalid GZDoom node-builder result; superseded by 4.28.0bp**
+
+- Both mirrored central first-floor modules in MAP01 are now large rectangular
+  rooms built from UDMF geometry, without finite wall actors.
+- Each room has one centered door in its left wall, one in its right wall and
+  one in the central dividing wall.
+- The two former front entrances are closed with the standard wall sector.
+- Coincident internal linedefs were removed during consolidation to prevent
+  duplicated faces and z-fighting.
+- `CaelumSpecialInventoryItem` is excluded from the native inventory bar, so
+  materials and key/special items cannot replace the player face.
+- Consumables and ammunition remain available through their independent
+  native-bar definitions.
+- Bull sprites, Seal effects and MAP02 are unchanged.
+
+Pending runtime validation: inspect all wall faces and three doors from both
+sides, confirm correct door collision/opening, and collect several material
+types while watching the player face.
+
+## MAP01 wall orientation, equipment HUD isolation and Bull sprites 4.28.0bn
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+- MAP01 contains the four valid finite wall panels at `x=368`, angle 90, and
+  no angle-0 perpendicular finite wall panels.
+- `CaelumEquipmentItem` is excluded from the native inventory bar, covering
+  weapons, armor, shields, amulets and Seals through their common base class.
+- Consumables remain available through their independent native inventory
+  class and `INVBAR` flag.
+- Bull rear Charge frames `BULLF5` and `BULLG5` now show the authored rear
+  views.
+- Bull Death frames `BULLI0` through `BULLN0` use transparent 96x64 PNGs; the
+  final frame has a complete head and no duplicated or clipped face.
+- MAP02 remains unchanged with 15,000 passive stress actors.
+
+Pending runtime validation: confirm the intended walls from both sides in
+MAP01, verify that no custom equipment pickup replaces the player face, and
+check Bull rear Charge rotation and Death offsets in motion.
+
 ## Mass-resisted Seals and elevated Quintessence epicenter 4.28.0bm
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

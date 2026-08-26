@@ -66,6 +66,16 @@ class CaelumCombatActor : Actor
     double LastImpactContactMinimumHeightRatio;
     double LastImpactContactMaximumHeightRatio;
     Array<ImpactContactState> ImpactContacts;
+    bool DisableCaelumImpactContacts;
+    int ImpactDiagnosticCollisionCallbacks;
+    int ImpactDiagnosticUniquePairTicks;
+    int ImpactDiagnosticDuplicateCallbacks;
+    int ImpactDiagnosticRestingCallbacks;
+    int ImpactDiagnosticContactsCreated;
+    int ImpactDiagnosticContactsRemoved;
+    ImpactBody ImpactSelfBodyScratch;
+    ImpactBody ImpactOtherBodyScratch;
+    ImpactResult ImpactResultScratch;
     double LastImpactRawDeltaSpeed;
     double LastImpactBiologicalAbsorptionSpeed;
 
@@ -581,6 +591,50 @@ class CaelumCombatActor : Actor
                     : combatActor.CombatPhysicalPushMultiplier
             );
         }
+        combatActor.PendingCombatCriticalDelivery = false;
+    }
+
+    // Ruta elemental recta para NPC numerosos. Conserva daño, crítico,
+    // elemento y alcance, pero no añade guiado, búsqueda radial ni explosión.
+    action void A_CaelumSpawnSimpleElementalProjectile(
+        class<CaelumActorProjectile> missileType,
+        double spawnHeight,
+        int baseDamage,
+        int essenceType
+    )
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
+            baseDamage,
+            true
+        );
+        if (calculatedDamage <= 0) { return; }
+
+        CaelumActorProjectile missile = CaelumActorProjectile(
+            combatActor.A_SpawnProjectile(missileType, spawnHeight)
+        );
+        if (missile != null)
+        {
+            missile.StoreCaelumAttackResult(
+                calculatedDamage,
+                combatActor.LastCombatAttackAccuracySucceeded,
+                combatActor.LastCombatAttackCriticalHit,
+                true,
+                combatActor.CombatMagicalPushMultiplier
+            );
+            missile.StoreCaelumElementalPayload(
+                essenceType,
+                combatActor.NextRangedSecondaryElement,
+                100.0,
+                100.0
+            );
+            missile.ConfigureCaelumTravelDistance(
+                combatActor.GetCombatAbilityRange()
+            );
+        }
+        combatActor.NextRangedSecondaryElement =
+            !combatActor.NextRangedSecondaryElement;
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
@@ -1133,6 +1187,7 @@ class CaelumCombatActor : Actor
             return;
         }
         ImpactContacts.Push(contact);
+        ImpactDiagnosticContactsCreated++;
     }
 
     ImpactContactState LatchImpactContact(Actor other)
@@ -1152,7 +1207,9 @@ class CaelumCombatActor : Actor
         ImpactContactState contact = new("ImpactContactState");
         if (contact == null) { return null; }
         contact.Initialize(self, other, releaseDistance);
+        contact.RegisterCollision(level.time);
         ImpactContacts.Push(contact);
+        ImpactDiagnosticContactsCreated++;
 
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null)
@@ -1174,13 +1231,18 @@ class CaelumCombatActor : Actor
             if (contact == null)
             {
                 ImpactContacts.Delete(index);
+                ImpactDiagnosticContactsRemoved++;
                 continue;
             }
             contact.UpdateSeparation(
                 level.time,
                 CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
             );
-            if (!contact.Active) { ImpactContacts.Delete(index); }
+            if (!contact.Active)
+            {
+                ImpactContacts.Delete(index);
+                ImpactDiagnosticContactsRemoved++;
+            }
         }
     }
 
@@ -1190,16 +1252,38 @@ class CaelumCombatActor : Actor
     )
     {
         if (other == null || contact == null || !contact.Active) { return; }
+        if (!contact.BeginResolutionTick(level.time))
+        {
+            ImpactDiagnosticDuplicateCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;
-        double distance = Sqrt(dx * dx + dy * dy);
-        if (distance <= 0.0001) { return; }
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
 
+        double closingProjection = (Vel.X - other.Vel.X) * dx
+            + (Vel.Y - other.Vel.Y) * dy;
+        if (closingProjection <= 0.0)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
         double normalX = dx / distance;
         double normalY = dy / distance;
-        double closingSpeed = (Vel.X - other.Vel.X) * normalX
-            + (Vel.Y - other.Vel.Y) * normalY;
-        if (closingSpeed <= 0.0001) { return; }
+        double closingSpeed = closingProjection / distance;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
 
         double selfMass = Max(1.0, GetCollisionEffectiveMass());
         double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
@@ -1222,32 +1306,39 @@ class CaelumCombatActor : Actor
         );
         if (applyCrush)
         {
-            ApplySustainedCrush(other, normalX, normalY);
+            ApplySustainedCrush(other, normalX, normalY, contact);
         }
     }
 
-    double GetImpactWalkingSpeed()
+    void ApplySustainedCrush(
+        Actor other,
+        double normalX,
+        double normalY,
+        ImpactContactState contact
+    )
     {
-        return Max(0.0, Speed);
-    }
-
-    void ApplySustainedCrush(Actor other, double normalX, double normalY)
-    {
-        double walkingSpeed = GetImpactWalkingSpeed();
-        if (other == null || walkingSpeed <= 0.0001) { return; }
+        if (other == null || contact == null
+            || contact.LastTransmittedImpulse <= 0.0001)
+        {
+            return;
+        }
 
         ImpactBody sourceBody = BuildImpactPhysicsBody();
         ImpactBody targetBody = BuildOtherImpactPhysicsBody(other);
-        ImpactResult crushResult = new("ImpactResult");
+        ImpactResult crushResult = GetImpactResultScratch();
         if (sourceBody == null || targetBody == null || crushResult == null)
         {
             return;
         }
 
-        // El daño por segundo equivale a una colisión a velocidad de marcha.
+        // Reconstruye la velocidad de cierre equivalente al impulso realmente
+        // transmitido durante el intervalo. ResolveBodies conserva geometria,
+        // masa efectiva y las mismas reglas universales de trauma.
+        double equivalentClosingSpeed = contact.LastTransmittedImpulse
+            * (1.0 / sourceBody.Mass + 1.0 / targetBody.Mass);
         sourceBody.Velocity = (
-            normalX * walkingSpeed,
-            normalY * walkingSpeed,
+            normalX * equivalentClosingSpeed,
+            normalY * equivalentClosingSpeed,
             0.0
         );
         targetBody.Velocity = (0.0, 0.0, 0.0);
@@ -1297,7 +1388,11 @@ class CaelumCombatActor : Actor
 
     ImpactBody BuildImpactPhysicsBody()
     {
-        ImpactBody body = new("ImpactBody");
+        if (ImpactSelfBodyScratch == null)
+        {
+            ImpactSelfBodyScratch = ImpactBody(new("ImpactBody"));
+        }
+        ImpactBody body = ImpactSelfBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetCollisionEffectiveMass());
         body.Height = GetImpactReferenceHeight();
@@ -1310,7 +1405,11 @@ class CaelumCombatActor : Actor
 
     ImpactBody BuildOtherImpactPhysicsBody(Actor other)
     {
-        ImpactBody body = new("ImpactBody");
+        if (ImpactOtherBodyScratch == null)
+        {
+            ImpactOtherBodyScratch = ImpactBody(new("ImpactBody"));
+        }
+        ImpactBody body = ImpactOtherBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetOtherCollisionEffectiveMass(other));
         body.Height = GetOtherImpactReferenceHeight(other);
@@ -1326,11 +1425,25 @@ class CaelumCombatActor : Actor
         return body;
     }
 
+    ImpactResult GetImpactResultScratch()
+    {
+        if (ImpactResultScratch == null)
+        {
+            ImpactResultScratch = ImpactResult(new("ImpactResult"));
+        }
+        if (ImpactResultScratch != null) { ImpactResultScratch.Reset(); }
+        return ImpactResultScratch;
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
 
-        if (passive || other == null || other == self
+        CaelumCombatActor otherCombatActor = CaelumCombatActor(other);
+        if (passive || DisableCaelumImpactContacts
+            || (otherCombatActor != null
+                && otherCombatActor.DisableCaelumImpactContacts)
+            || other == null || other == self
             || health <= 0 || other.health <= 0
             || (CaelumPlayer(other) == null
                 && CaelumCombatActor(other) == null
@@ -1338,6 +1451,7 @@ class CaelumCombatActor : Actor
         {
             return;
         }
+        ImpactDiagnosticCollisionCallbacks++;
         ImpactContactState contactState = GetImpactContactState(other);
         if (contactState != null)
         {
@@ -1347,8 +1461,29 @@ class CaelumCombatActor : Actor
 
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;
-        double distance = Sqrt(dx * dx + dy * dy);
-        if (distance <= 0.0001) { return; }
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double closingProjection = (Vel.X - other.Vel.X) * dx
+            + (Vel.Y - other.Vel.Y) * dy;
+        if (closingProjection <= 0.0)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
+        double closingSpeed = closingProjection / distance;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
 
         Vector3 collisionNormal = (dx / distance, dy / distance, 0.0);
         ImpactBody selfBody;
@@ -1356,7 +1491,7 @@ class CaelumCombatActor : Actor
         ImpactResult impact;
         selfBody = BuildImpactPhysicsBody();
         otherBody = BuildOtherImpactPhysicsBody(other);
-        impact = new("ImpactResult");
+        impact = GetImpactResultScratch();
         if (selfBody == null || otherBody == null || impact == null)
         {
             return;
@@ -1372,6 +1507,7 @@ class CaelumCombatActor : Actor
         contactState = LatchImpactContact(other);
         if (contactState != null)
         {
+            contactState.BeginResolutionTick(level.time);
             contactState.LastClosingSpeed = impact.ClosingSpeed;
             contactState.LastTransmittedImpulse = impact.Impulse;
         }
@@ -1452,7 +1588,7 @@ class CaelumCombatActor : Actor
         ImpactBody selfBody;
         ImpactResult impact;
         selfBody = BuildImpactPhysicsBody();
-        impact = new("ImpactResult");
+        impact = GetImpactResultScratch();
         if (selfBody == null || impact == null) { return; }
         selfBody.Velocity = preImpactVelocity;
         ImpactPhysics.ResolveStatic(

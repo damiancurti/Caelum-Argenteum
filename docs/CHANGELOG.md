@@ -1,5 +1,118 @@
 # Changelog
 
+## 4.29.0b — Simple mass projectiles, bounded pair work and mansion wall closure
+
+- Replaced the homing elemental projectile used by Rulo, Caella, Ronnie and
+  Argento with a bounded straight-impact projectile. It performs no target
+  search, seeker steering or radial explosion and keeps prepared damage,
+  critical result, elemental payload, push multiplier and Eloquence-derived
+  range.
+- Limited the straight projectile through lifetime multiplied by its constant
+  speed, avoiding a per-tic position vector and square root. The explosive
+  variant remains available only where an authored weapon or the MAP02 A/B
+  diagnostic explicitly requests it.
+- Reused one source body, target body and result object per player or combat
+  actor instead of allocating all three on every custom collision.
+- Allowed each shared contact edge to resolve at most once per tic. Duplicate
+  engine callbacks still refresh edge liveness but no longer repeat the
+  impulse calculation.
+- Rejected coincident, separating and below-threshold resting callbacks before
+  constructing physics bodies; the square root and normal calculation now run
+  only for a genuinely closing pair.
+- Expanded MAP02 telemetry with unique pair-tics, duplicate callbacks, resting
+  callbacks and the current Seal-affected count. This distinguishes high
+  native callback volume from actual custom physics work.
+- Replaced the former unequal Quintessence rooms with three equal groups of
+  500 passive Rats: native collision without Caelum contacts, complete Caelum
+  contacts, and native collision with same-species pass-through. The original
+  15,000 passive stress population remains available outside the rooms.
+- Preserved the simple-versus-explosive shooter comparison in Rooms 5 and 6;
+  the explosive room continues to expose radial damage and infighting cost.
+- Closed the four finite first-floor central wall spans in MAP01 at 72 MU and
+  changed the reverse visual face offset from a global X/Y shift to a local
+  wall-normal shift. This prevents the reverse face from exposing an endpoint
+  gap when viewed from inside the middle rooms.
+- Kept validated Seal formulas/effects and crafting behavior unchanged.
+
+## 4.29.0a — Bounded contact pressure and MAP02 A/B diagnostics
+
+- Removed `THRUSPECIES` from Giant Rats. Rat-to-Rat contact can now transmit
+  displacement and pressure instead of allowing a Quintessence cluster to
+  overlap without forming collision edges.
+- Added a collision-callback timestamp to every shared contact edge. An edge
+  now expires after five complete tics without a new collision callback, in
+  addition to the existing distance/separation test, preventing historical
+  neighbor lists from growing indefinitely after a crowd disperses.
+- Replaced the nominal walking-speed crush pulse with the real impulse summed
+  once per tic over the existing 35-tic interval. Duplicate callbacks in one
+  tic contribute only their maximum impulse sample.
+- Kept pairwise inelastic action/reaction and mass resistance unchanged. This
+  is a bounded contact graph and pressure-transfer correction, not yet a
+  simultaneous connected-component island solver.
+- Replaced the square-root radius test used by Seal target scans with an exact
+  squared-distance comparison, reducing per-tic Quintessence/Air scan cost
+  without changing the authored radius or force.
+- Expanded MAP02 with eight independently sight-blocked test rooms while
+  preserving the original 15,000 passive stress actors:
+  1. 25 perception-only Giant Rats;
+  2. 25 chase-only Rats using native collision without Caelum contacts;
+  3. 25 otherwise identical chase-only Rats using Caelum contacts;
+  4. 25 complete active Giant Rats;
+  5. four stationary Argento shooters whose projectiles do not explode;
+  6. four otherwise identical shooters with the normal explosion;
+  7. 100 passive Rats for Quintessence;
+  8. 500 passive Rats for Quintessence.
+- Added a MAP02-only one-second console monitor for acquired targets, live
+  projectiles, approximate contact edges, maximum contacts per actor,
+  collision callbacks, created references and removed references.
+- Rebuilt MAP02 as valid UDMF with 64 linedefs and 120 sidedefs; every linedef
+  has a front side. MAP01, validated Seal behavior and crafting rules are
+  unchanged.
+
+## 4.28.0bp — MAP01 safe rollback and V4.29 authorization
+
+- Rejected the V4.28.0bo MAP01 room consolidation after GZDoom reported
+  linedefs 569–590 without usable front sides during node construction.
+- Restored MAP01 byte-for-byte from the last loadable V4.28.0bn package; its
+  future room reconstruction continues as a non-blocking parallel track.
+- Preserved the material/special-item native inventory-bar exclusion from
+  V4.28.0bo.
+- Recorded author validation of all current non-weather Seal effects and
+  mechanics, closing the functional V4.28 Seal gate.
+- Authorized the start of V4.29 Crafting Completion and Persistent Recipe
+  Book while MAP01 continues independently.
+- Deferred the complete V4.27 combat-input matrix until the crafting system
+  is complete.
+
+## 4.28.0bo — Geometry-native first-floor rooms and material HUD isolation
+
+- Rebuilt both mirrored central first-floor modules in MAP01 as large rooms
+  using map geometry rather than finite wall actors.
+- Merged each former pair of small rooms and its narrow connector into one
+  large rectangular room.
+- Moved the two former front doors to the left and right side walls, centered
+  on the same axis.
+- Closed the former front door openings with the normal wall sector.
+- Consolidated the former inner walls into one central dividing wall and
+  retained a single centered door through it.
+- Removed all remaining `CaelumFiniteWallPanel` things from MAP01.
+- Excluded materials and other special inventory items from GZDoom's native
+  inventory bar, preventing their icons from replacing the player face.
+- Left the Bull, Seals and MAP02 unchanged after their successful validation.
+
+## 4.28.0bn — MAP01 wall orientation, equipment HUD isolation and Bull sprites
+
+- Restored only the four valid angle-90 first-floor wall panels in MAP01 and
+  kept the four connected perpendicular angle-0 panels removed.
+- Removed every custom equipment instance from GZDoom's native inventory bar,
+  preventing weapons, armor, shields, amulets and Seals from replacing the
+  player face; native-bar consumables remain unchanged.
+- Replaced the Bull's two rear Charge frames with the authored back-facing
+  source frames.
+- Rebuilt all six Bull Death frames with real alpha transparency and repaired
+  the cropped head in the final frame.
+- Left MAP02 and its 15,000 passive stress actors unchanged.
+
 ## 4.28.0bm — Mass-resisted Seals and elevated Quintessence epicenter
 
 - Raised the Quintessence channel epicenter exactly five development-scale

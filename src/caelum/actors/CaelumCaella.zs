@@ -44,8 +44,8 @@ class CaelumCaella : CaelumCombatActor
         Goto See;
     Missile:
         CAEL D 7 A_FaceTarget;
-        CAEL D 0 A_CaelumSpawnExplosiveElementalProjectile(
-            "CaelumActorExplosiveElementalProjectile", 40,
+        CAEL D 0 A_CaelumSpawnSimpleElementalProjectile(
+            "CaelumActorSimpleElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_WATER
         );
         CAEL A 11;

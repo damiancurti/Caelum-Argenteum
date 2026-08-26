@@ -57,11 +57,12 @@ class CaelumFiniteWallBackPanel : Actor
             return;
         }
 
-        // Evita que ambas caras queden coplanares en el búfer de profundidad.
-        // El desplazamiento es sólo visual y no añade nueva colisión.
+        // Evita caras coplanares sin desplazar el reverso a lo largo del ancho.
+        // El corrimiento sigue la normal local de la pared y es sólo visual.
         vector3 backPos = master.Pos;
-        backPos.X += 0.25;
-        backPos.Y += 0.25;
+        Vector2 backOffset = AngleToVector(master.Angle + 90.0, 0.25);
+        backPos.X += backOffset.X;
+        backPos.Y += backOffset.Y;
         SetOrigin(backPos, true);
         Angle = master.Angle + 180.0;
         Scale.X = master.Scale.X;
@@ -101,8 +102,9 @@ class CaelumFiniteWallPanel : Actor
         Scale.X = panelWidth / 128.0;
 
         vector3 backPos = Pos;
-        backPos.X += 0.25;
-        backPos.Y += 0.25;
+        Vector2 backOffset = AngleToVector(Angle + 90.0, 0.25);
+        backPos.X += backOffset.X;
+        backPos.Y += backOffset.Y;
         Actor backPanel = Spawn("CaelumFiniteWallBackPanel", backPos);
         if (backPanel != null)
         {

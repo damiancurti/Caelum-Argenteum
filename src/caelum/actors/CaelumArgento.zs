@@ -44,8 +44,8 @@ class CaelumArgento : CaelumCombatActor
         Goto See;
     Missile:
         ARGO D 7 A_FaceTarget;
-        ARGO D 0 A_CaelumSpawnExplosiveElementalProjectile(
-            "CaelumActorExplosiveElementalProjectile", 40,
+        ARGO D 0 A_CaelumSpawnSimpleElementalProjectile(
+            "CaelumActorSimpleElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_FIRE
         );
         ARGO A 11;

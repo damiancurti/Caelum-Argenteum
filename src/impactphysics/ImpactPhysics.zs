@@ -64,10 +64,16 @@ class ImpactContactState : Object
     double ReleaseDistance;
     int SeparatedTics;
     int LastUpdatedTick;
+    int LastCollisionTick;
+    int LastResolutionTick;
     int LastSustainedTick;
+    int LastCrushTick;
     int SustainedTics;
     double LastClosingSpeed;
     double LastTransmittedImpulse;
+    double CurrentTickTransmittedImpulse;
+    double AccumulatedClosingSpeed;
+    double AccumulatedTransmittedImpulse;
     bool Active;
 
     void Initialize(Actor first, Actor second, double releaseDistance)
@@ -77,10 +83,16 @@ class ImpactContactState : Object
         ReleaseDistance = Max(0.0, releaseDistance);
         SeparatedTics = 0;
         LastUpdatedTick = -1;
+        LastCollisionTick = -1;
+        LastResolutionTick = -1;
         LastSustainedTick = -1;
+        LastCrushTick = -1;
         SustainedTics = 0;
         LastClosingSpeed = 0.0;
         LastTransmittedImpulse = 0.0;
+        CurrentTickTransmittedImpulse = 0.0;
+        AccumulatedClosingSpeed = 0.0;
+        AccumulatedTransmittedImpulse = 0.0;
         Active = first != null && second != null;
     }
 
@@ -91,6 +103,24 @@ class ImpactContactState : Object
                 || (FirstActor == other && SecondActor == owner));
     }
 
+    void RegisterCollision(int currentTick)
+    {
+        if (!Active) { return; }
+        LastCollisionTick = currentTick;
+        SeparatedTics = 0;
+    }
+
+    bool BeginResolutionTick(int currentTick)
+    {
+        RegisterCollision(currentTick);
+        if (LastResolutionTick == currentTick)
+        {
+            return false;
+        }
+        LastResolutionTick = currentTick;
+        return true;
+    }
+
     void UpdateSeparation(int currentTick, int requiredSeparatedTics)
     {
         if (!Active || LastUpdatedTick == currentTick) { return; }
@@ -98,6 +128,16 @@ class ImpactContactState : Object
 
         if (FirstActor == null || SecondActor == null
             || FirstActor.health <= 0 || SecondActor.health <= 0)
+        {
+            Active = false;
+            return;
+        }
+
+        // Un contacto que ya no recibe callbacks de colision no puede quedar
+        // como arista historica de la isla. Se toleran cinco tics completos
+        // para conservar actores cuyo A_Chase avanza en cadencia de 4 o 5.
+        if (LastCollisionTick >= 0
+            && currentTick - LastCollisionTick > Max(1, requiredSeparatedTics))
         {
             Active = false;
             return;
@@ -127,18 +167,52 @@ class ImpactContactState : Object
         int crushIntervalTics
     )
     {
+        RegisterCollision(currentTick);
         if (LastSustainedTick == currentTick)
         {
-            LastClosingSpeed = Max(LastClosingSpeed, closingSpeed);
-            LastTransmittedImpulse = Max(LastTransmittedImpulse, impulse);
+            // CollidedWith puede notificarse mas de una vez en un mismo tic.
+            // Contar solo una muestra evita multiplicar presion por callbacks.
+            AccumulatedClosingSpeed = Max(
+                AccumulatedClosingSpeed,
+                Max(0.0, closingSpeed)
+            );
+            double sanitizedImpulse = Max(0.0, impulse);
+            if (sanitizedImpulse > CurrentTickTransmittedImpulse)
+            {
+                AccumulatedTransmittedImpulse +=
+                    sanitizedImpulse - CurrentTickTransmittedImpulse;
+                CurrentTickTransmittedImpulse = sanitizedImpulse;
+            }
             return false;
         }
         LastSustainedTick = currentTick;
         SustainedTics++;
-        LastClosingSpeed = Max(0.0, closingSpeed);
-        LastTransmittedImpulse = Max(0.0, impulse);
-        return crushIntervalTics > 0
-            && SustainedTics % crushIntervalTics == 0;
+        AccumulatedClosingSpeed = Max(
+            AccumulatedClosingSpeed,
+            Max(0.0, closingSpeed)
+        );
+        CurrentTickTransmittedImpulse = Max(0.0, impulse);
+        AccumulatedTransmittedImpulse += CurrentTickTransmittedImpulse;
+
+        if (LastCrushTick < 0)
+        {
+            LastCrushTick = currentTick;
+            return false;
+        }
+        if (crushIntervalTics <= 0
+            || currentTick - LastCrushTick < crushIntervalTics)
+        {
+            return false;
+        }
+
+        // El pulso usa la suma real de impulso que cruzo esta arista durante
+        // el intervalo. No inventa una velocidad nominal de marcha.
+        LastClosingSpeed = AccumulatedClosingSpeed;
+        LastTransmittedImpulse = AccumulatedTransmittedImpulse;
+        AccumulatedClosingSpeed = 0.0;
+        AccumulatedTransmittedImpulse = 0.0;
+        LastCrushTick = currentTick;
+        return LastTransmittedImpulse > 0.0001;
     }
 }
 

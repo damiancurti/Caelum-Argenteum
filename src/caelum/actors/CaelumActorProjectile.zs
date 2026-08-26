@@ -97,6 +97,11 @@ class CaelumActorProjectile : Actor
     {
         CaelumActorExplosionDamage = Max(0, damage);
         CaelumActorExplosionRadius = Max(1.0, radius);
+        ConfigureCaelumTravelDistance(maximumTravelDistance);
+    }
+
+    void ConfigureCaelumTravelDistance(double maximumTravelDistance)
+    {
         CaelumMaximumTravelDistance = Max(1.0, maximumTravelDistance);
     }
 

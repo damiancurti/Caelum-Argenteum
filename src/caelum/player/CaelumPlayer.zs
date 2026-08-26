@@ -341,6 +341,15 @@ class CaelumPlayer : DoomPlayer
     double MovementAccelerationSeconds;
     Array<ImpactContactState> ImpactContacts;
     int ImpactContactCountForUI;
+    int ImpactDiagnosticCollisionCallbacks;
+    int ImpactDiagnosticUniquePairTicks;
+    int ImpactDiagnosticDuplicateCallbacks;
+    int ImpactDiagnosticRestingCallbacks;
+    int ImpactDiagnosticContactsCreated;
+    int ImpactDiagnosticContactsRemoved;
+    ImpactBody ImpactSelfBodyScratch;
+    ImpactBody ImpactOtherBodyScratch;
+    ImpactResult ImpactResultScratch;
 
     // Amortiguación biológica del último aterrizaje.
     double LastImpactRawDeltaSpeed;
@@ -6087,11 +6096,14 @@ class CaelumPlayer : DoomPlayer
 
     bool IsCaelumCollisionBody(Actor other)
     {
+        CaelumCombatActor combatActor = CaelumCombatActor(other);
         return other != null
             && other != self
             && other.health > 0
+            && (combatActor == null
+                || !combatActor.DisableCaelumImpactContacts)
             && (CaelumPlayer(other) != null
-                || CaelumCombatActor(other) != null
+                || combatActor != null
                 || CaelumTrainingDummy(other) != null);
     }
 
@@ -6232,6 +6244,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         ImpactContacts.Push(contact);
+        ImpactDiagnosticContactsCreated++;
     }
 
     ImpactContactState LatchImpactContact(Actor other)
@@ -6251,7 +6264,9 @@ class CaelumPlayer : DoomPlayer
         ImpactContactState contact = new("ImpactContactState");
         if (contact == null) { return null; }
         contact.Initialize(self, other, releaseDistance);
+        contact.RegisterCollision(level.time);
         ImpactContacts.Push(contact);
+        ImpactDiagnosticContactsCreated++;
 
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null)
@@ -6273,13 +6288,18 @@ class CaelumPlayer : DoomPlayer
             if (contact == null)
             {
                 ImpactContacts.Delete(index);
+                ImpactDiagnosticContactsRemoved++;
                 continue;
             }
             contact.UpdateSeparation(
                 level.time,
                 CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
             );
-            if (!contact.Active) { ImpactContacts.Delete(index); }
+            if (!contact.Active)
+            {
+                ImpactContacts.Delete(index);
+                ImpactDiagnosticContactsRemoved++;
+            }
         }
         // La interfaz sólo lee este valor; no llama funciones de contexto play.
         ImpactContactCountForUI = GetImpactContactCount();
@@ -6291,16 +6311,38 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (other == null || contact == null || !contact.Active) { return; }
+        if (!contact.BeginResolutionTick(level.time))
+        {
+            ImpactDiagnosticDuplicateCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;
-        double distance = Sqrt(dx * dx + dy * dy);
-        if (distance <= 0.0001) { return; }
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
 
+        double closingProjection = (Vel.X - other.Vel.X) * dx
+            + (Vel.Y - other.Vel.Y) * dy;
+        if (closingProjection <= 0.0)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
         double normalX = dx / distance;
         double normalY = dy / distance;
-        double closingSpeed = (Vel.X - other.Vel.X) * normalX
-            + (Vel.Y - other.Vel.Y) * normalY;
-        if (closingSpeed <= 0.0001) { return; }
+        double closingSpeed = closingProjection / distance;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
 
         double selfMass = Max(1.0, GetCombatMass());
         double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
@@ -6323,33 +6365,38 @@ class CaelumPlayer : DoomPlayer
         );
         if (applyCrush)
         {
-            ApplySustainedCrush(other, normalX, normalY);
+            ApplySustainedCrush(other, normalX, normalY, contact);
         }
     }
 
-    double GetImpactWalkingSpeed()
+    void ApplySustainedCrush(
+        Actor other,
+        double normalX,
+        double normalY,
+        ImpactContactState contact
+    )
     {
-        return CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED
-            * Max(0.0, ForwardMove1);
-    }
-
-    void ApplySustainedCrush(Actor other, double normalX, double normalY)
-    {
-        double walkingSpeed = GetImpactWalkingSpeed();
-        if (other == null || walkingSpeed <= 0.0001) { return; }
+        if (other == null || contact == null
+            || contact.LastTransmittedImpulse <= 0.0001)
+        {
+            return;
+        }
 
         ImpactBody sourceBody = BuildImpactPhysicsBody();
         ImpactBody targetBody = BuildOtherImpactPhysicsBody(other);
-        ImpactResult crushResult = new("ImpactResult");
+        ImpactResult crushResult = GetImpactResultScratch();
         if (sourceBody == null || targetBody == null || crushResult == null)
         {
             return;
         }
 
-        // El daño por segundo equivale a una colisión a velocidad de marcha.
+        // Convierte el impulso acumulado de presion a su velocidad de cierre
+        // equivalente, conservando masa, anatomia y la curva universal.
+        double equivalentClosingSpeed = contact.LastTransmittedImpulse
+            * (1.0 / sourceBody.Mass + 1.0 / targetBody.Mass);
         sourceBody.Velocity = (
-            normalX * walkingSpeed,
-            normalY * walkingSpeed,
+            normalX * equivalentClosingSpeed,
+            normalY * equivalentClosingSpeed,
             0.0
         );
         targetBody.Velocity = (0.0, 0.0, 0.0);
@@ -6399,7 +6446,11 @@ class CaelumPlayer : DoomPlayer
 
     ImpactBody BuildImpactPhysicsBody()
     {
-        ImpactBody body = new("ImpactBody");
+        if (ImpactSelfBodyScratch == null)
+        {
+            ImpactSelfBodyScratch = ImpactBody(new("ImpactBody"));
+        }
+        ImpactBody body = ImpactSelfBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetCombatMass());
         body.Height = GetImpactReferenceHeight();
@@ -6412,7 +6463,11 @@ class CaelumPlayer : DoomPlayer
 
     ImpactBody BuildOtherImpactPhysicsBody(Actor other)
     {
-        ImpactBody body = new("ImpactBody");
+        if (ImpactOtherBodyScratch == null)
+        {
+            ImpactOtherBodyScratch = ImpactBody(new("ImpactBody"));
+        }
+        ImpactBody body = ImpactOtherBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetOtherCollisionEffectiveMass(other));
         body.Height = GetOtherImpactReferenceHeight(other);
@@ -6428,6 +6483,16 @@ class CaelumPlayer : DoomPlayer
         return body;
     }
 
+    ImpactResult GetImpactResultScratch()
+    {
+        if (ImpactResultScratch == null)
+        {
+            ImpactResultScratch = ImpactResult(new("ImpactResult"));
+        }
+        if (ImpactResultScratch != null) { ImpactResultScratch.Reset(); }
+        return ImpactResultScratch;
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
@@ -6438,6 +6503,7 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
+        ImpactDiagnosticCollisionCallbacks++;
         ImpactContactState contactState = GetImpactContactState(other);
         if (contactState != null)
         {
@@ -6447,8 +6513,29 @@ class CaelumPlayer : DoomPlayer
 
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;
-        double distance = Sqrt(dx * dx + dy * dy);
-        if (distance <= 0.0001) { return; }
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double closingProjection = (Vel.X - other.Vel.X) * dx
+            + (Vel.Y - other.Vel.Y) * dy;
+        if (closingProjection <= 0.0)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
+        double closingSpeed = closingProjection / distance;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
 
         Vector3 collisionNormal = (dx / distance, dy / distance, 0.0);
         ImpactBody selfBody;
@@ -6456,7 +6543,7 @@ class CaelumPlayer : DoomPlayer
         ImpactResult impact;
         selfBody = BuildImpactPhysicsBody();
         otherBody = BuildOtherImpactPhysicsBody(other);
-        impact = new("ImpactResult");
+        impact = GetImpactResultScratch();
         if (selfBody == null || otherBody == null || impact == null)
         {
             return;
@@ -6474,6 +6561,7 @@ class CaelumPlayer : DoomPlayer
         contactState = LatchImpactContact(other);
         if (contactState != null)
         {
+            contactState.BeginResolutionTick(level.time);
             contactState.LastClosingSpeed = impact.ClosingSpeed;
             contactState.LastTransmittedImpulse = impact.Impulse;
         }
@@ -6557,7 +6645,7 @@ class CaelumPlayer : DoomPlayer
         ImpactBody selfBody;
         ImpactResult impact;
         selfBody = BuildImpactPhysicsBody();
-        impact = new("ImpactResult");
+        impact = GetImpactResultScratch();
         if (selfBody == null || impact == null) { return; }
         selfBody.Velocity = preImpactVelocity;
         ImpactPhysics.ResolveStatic(

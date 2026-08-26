@@ -44,8 +44,8 @@ class CaelumRonnie : CaelumCombatActor
         Goto See;
     Missile:
         RONI D 7 A_FaceTarget;
-        RONI D 0 A_CaelumSpawnExplosiveElementalProjectile(
-            "CaelumActorExplosiveElementalProjectile", 40,
+        RONI D 0 A_CaelumSpawnSimpleElementalProjectile(
+            "CaelumActorSimpleElementalProjectile", 40,
             154, CaelumConstants.ESSENCE_WIND
         );
         RONI A 9;

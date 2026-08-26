@@ -50,7 +50,12 @@ class CaelumChannelEffect : Actor
     {
         Vector3 candidateCenter = candidate.Pos
             + (0.0, 0.0, candidate.Height * 0.5);
-        return (candidateCenter - center).Length() <= radius;
+        Vector3 offset = candidateCenter - center;
+        double safeRadius = Max(0.0, radius);
+        // La canalizacion consulta miles de actores por tic. Comparar
+        // distancias al cuadrado evita una raiz por actor sin alterar el radio.
+        return offset.X * offset.X + offset.Y * offset.Y
+            + offset.Z * offset.Z <= safeRadius * safeRadius;
     }
 
     double GetActorMass(Actor candidate)

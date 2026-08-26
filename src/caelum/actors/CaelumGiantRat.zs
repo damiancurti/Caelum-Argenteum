@@ -14,9 +14,6 @@ class CaelumGiantRat : CaelumCombatActor
         MaxTargetRange 768;
         Monster;
         +FLOORCLIP
-        // Evita que el grupo de prueba forme una pila de veinte colisiones
-        // mientras el jugador permanece inmóvil dentro de un menú.
-        +THRUSPECIES
         Scale 0.11;
     }
 
