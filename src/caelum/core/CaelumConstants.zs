@@ -704,7 +704,7 @@ class CaelumConstants : Object
     const RACE_GOBLIN = 3;
     // Perfil de pruebas del creador: no es una raza jugable de campaña.
     const RACE_DEBUG = 4;
-    const DEBUG_CREATION_ATTRIBUTE_LEVEL = 30;
+    const DEBUG_CREATION_ATTRIBUTE_LEVEL = 90;
 
     // Playable classes.
     const CLASS_WARRIOR = 0;

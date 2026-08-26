@@ -339,8 +339,7 @@ class CaelumPlayer : DoomPlayer
     // V4.25.3 — aceleración y contacto sostenido.
     double MovementAccelerationFactor;
     double MovementAccelerationSeconds;
-    Actor ImpactContactActor;
-    int ImpactContactSeparatedTics;
+    Array<ImpactContactState> ImpactContacts;
 
     // Amortiguación biológica del último aterrizaje.
     double LastImpactRawDeltaSpeed;
@@ -6163,24 +6162,32 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    bool IsImpactContactLatchedWith(Actor other)
+    ImpactContactState GetImpactContactState(Actor other)
     {
-        return other != null && ImpactContactActor == other;
+        for (int index = 0; index < ImpactContacts.Size(); index++)
+        {
+            ImpactContactState state = ImpactContacts[index];
+            if (state != null && state.Matches(self, other)) { return state; }
+        }
+        return null;
     }
 
-    // Los grupos pueden conservar varios enlaces hacia el jugador aunque él
-    // sólo guarde el contacto más reciente. Consultar ambos lados impide que
-    // el mismo par vuelva a crear cuerpos y resultados físicos cada tic.
     bool IsImpactPairLatched(Actor other)
     {
-        if (IsImpactContactLatchedWith(other)) { return true; }
-        CaelumPlayer otherPlayer = CaelumPlayer(other);
-        if (otherPlayer != null)
+        return GetImpactContactState(other) != null;
+    }
+
+    int GetImpactContactCount()
+    {
+        int count = 0;
+        for (int index = 0; index < ImpactContacts.Size(); index++)
         {
-            return otherPlayer.ImpactContactActor == self;
+            if (ImpactContacts[index] != null && ImpactContacts[index].Active)
+            {
+                count++;
+            }
         }
-        CaelumCombatActor otherActor = CaelumCombatActor(other);
-        return otherActor != null && otherActor.ImpactContactActor == self;
+        return count;
     }
 
     double GetOtherImpactReferenceHeight(Actor other)
@@ -6202,90 +6209,96 @@ class CaelumPlayer : DoomPlayer
         return Max(1.0, other.Height);
     }
 
-    void LatchImpactContact(Actor other)
+    void AddImpactContactState(ImpactContactState state)
     {
-        ImpactContactActor = other;
-        ImpactContactSeparatedTics = 0;
-
-        CaelumPlayer otherPlayer = CaelumPlayer(other);
-        if (otherPlayer != null)
+        if (state == null || GetImpactContactState(state.FirstActor == self
+            ? state.SecondActor : state.FirstActor) != null)
         {
-            otherPlayer.ImpactContactActor = self;
-            otherPlayer.ImpactContactSeparatedTics = 0;
             return;
         }
-
-        CaelumCombatActor otherActor = CaelumCombatActor(other);
-        if (otherActor != null)
-        {
-            otherActor.ImpactContactActor = self;
-            otherActor.ImpactContactSeparatedTics = 0;
-        }
+        ImpactContacts.Push(state);
     }
 
-    void ClearImpactContact()
+    ImpactContactState LatchImpactContact(Actor other)
     {
-        Actor previousContact = ImpactContactActor;
-        ImpactContactActor = null;
-        ImpactContactSeparatedTics = 0;
-
-        CaelumPlayer otherPlayer = CaelumPlayer(previousContact);
-        if (otherPlayer != null && otherPlayer.ImpactContactActor == self)
-        {
-            otherPlayer.ImpactContactActor = null;
-            otherPlayer.ImpactContactSeparatedTics = 0;
-            return;
-        }
-
-        CaelumCombatActor otherActor = CaelumCombatActor(previousContact);
-        if (otherActor != null && otherActor.ImpactContactActor == self)
-        {
-            otherActor.ImpactContactActor = null;
-            otherActor.ImpactContactSeparatedTics = 0;
-        }
-    }
-
-    void UpdateImpactContactLatch()
-    {
-        if (ImpactContactActor == null)
-        {
-            ImpactContactSeparatedTics = 0;
-            return;
-        }
-
-        if (ImpactContactActor.health <= 0)
-        {
-            ClearImpactContact();
-            return;
-        }
-
-        double dx = ImpactContactActor.Pos.X - Pos.X;
-        double dy = ImpactContactActor.Pos.Y - Pos.Y;
-        double distance = Sqrt(dx * dx + dy * dy);
+        ImpactContactState existing = GetImpactContactState(other);
+        if (existing != null) { return existing; }
 
         double smallerHeight = Min(
             GetImpactReferenceHeight(),
-            GetOtherImpactReferenceHeight(ImpactContactActor)
+            GetOtherImpactReferenceHeight(other)
         );
-        double releaseDistance = Radius
-            + ImpactContactActor.Radius
+        double releaseDistance = Radius + other.Radius
             + smallerHeight
                 * CaelumConstants.IMPACT_CONTACT_REARM_HEIGHT_FRACTION
             + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
 
-        if (distance > releaseDistance)
+        ImpactContactState state = new("ImpactContactState");
+        if (state == null) { return null; }
+        state.Initialize(self, other, releaseDistance);
+        ImpactContacts.Push(state);
+
+        CaelumPlayer otherPlayer = CaelumPlayer(other);
+        if (otherPlayer != null)
         {
-            ImpactContactSeparatedTics++;
-            if (ImpactContactSeparatedTics
-                >= CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS)
+            otherPlayer.AddImpactContactState(state);
+            return state;
+        }
+
+        CaelumCombatActor otherActor = CaelumCombatActor(other);
+        if (otherActor != null) { otherActor.AddImpactContactState(state); }
+        return state;
+    }
+
+    void UpdateImpactContactLatch()
+    {
+        for (int index = ImpactContacts.Size() - 1; index >= 0; index--)
+        {
+            ImpactContactState state = ImpactContacts[index];
+            if (state == null)
             {
-                ClearImpactContact();
+                ImpactContacts.Delete(index);
+                continue;
             }
+            state.UpdateSeparation(
+                level.time,
+                CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
+            );
+            if (!state.Active) { ImpactContacts.Delete(index); }
         }
-        else
-        {
-            ImpactContactSeparatedTics = 0;
-        }
+    }
+
+    void ResolveSustainedImpactContact(
+        Actor other,
+        ImpactContactState state
+    )
+    {
+        if (other == null || state == null || !state.Active) { return; }
+        double dx = other.Pos.X - Pos.X;
+        double dy = other.Pos.Y - Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        if (distance <= 0.0001) { return; }
+
+        double normalX = dx / distance;
+        double normalY = dy / distance;
+        double closingSpeed = (Vel.X - other.Vel.X) * normalX
+            + (Vel.Y - other.Vel.Y) * normalY;
+        if (closingSpeed <= 0.0001) { return; }
+
+        double selfMass = Max(1.0, GetCombatMass());
+        double otherMass = Max(1.0, GetOtherCollisionEffectiveMass(other));
+        double inverseMassSum = 1.0 / selfMass + 1.0 / otherMass;
+        if (inverseMassSum <= 0.0) { return; }
+
+        // Restricción inelástica: transmite la presión sin generar otro golpe.
+        double impulse = closingSpeed / inverseMassSum;
+        double selfDeltaSpeed = impulse / selfMass;
+        double otherDeltaSpeed = impulse / otherMass;
+        Vel.X -= normalX * selfDeltaSpeed;
+        Vel.Y -= normalY * selfDeltaSpeed;
+        other.Vel.X += normalX * otherDeltaSpeed;
+        other.Vel.Y += normalY * otherDeltaSpeed;
+        state.RegisterSustainedTransfer(closingSpeed, impulse);
     }
 
     ImpactBody BuildImpactPhysicsBody()
@@ -6329,8 +6342,10 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
-        if (IsImpactPairLatched(other))
+        ImpactContactState contactState = GetImpactContactState(other);
+        if (contactState != null)
         {
+            ResolveSustainedImpactContact(other, contactState);
             return;
         }
 
@@ -6360,7 +6375,12 @@ class CaelumPlayer : DoomPlayer
 
         // A partir de aquí es un único impacto. Mantener presión contra el
         // mismo cuerpo no vuelve a crear choques hasta separarse físicamente.
-        LatchImpactContact(other);
+        contactState = LatchImpactContact(other);
+        if (contactState != null)
+        {
+            contactState.LastClosingSpeed = impact.ClosingSpeed;
+            contactState.LastTransmittedImpulse = impact.Impulse;
+        }
 
         Vel.X -= impact.Normal.X * impact.SourceDeltaSpeed;
         Vel.Y -= impact.Normal.Y * impact.SourceDeltaSpeed;

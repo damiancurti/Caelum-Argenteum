@@ -1,5 +1,88 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Persistent multi-contact islands 4.28.0bd
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 returns to the previously validated population of 937 combatants: 63
+Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats. Its
+16,384×16,384 MU enclosure, dogleg entrance and actor positions are unchanged.
+
+Player and combat actors now store an array of shared `ImpactContactState`
+objects rather than one replaceable actor reference. Each state is the edge
+between two bodies; connected edges therefore form an implicit contact island.
+The state remains active until its bodies exceed the established release
+distance for five consecutive tics.
+
+An initial collision still uses `ImpactPhysics.ResolveBodies` and may apply
+ordinary collision trauma. Later collision callbacks for the same pair perform
+an allocation-free inelastic momentum transfer only. They cannot apply a
+second impact while contact persists. Each state records sustained tics,
+closing speed and transmitted impulse, but crushing damage remains pending
+until its threshold, formula and base damage are approved.
+
+Validation focus:
+
+1. Confirm MAP02 loads with exactly 937 combatants and remains quiet at spawn.
+2. Wake all populations and let them collide and exchange projectiles.
+3. Run through the central pile and confirm the game remains responsive.
+4. Observe `Contacts` on the physics debug page while touching several bodies.
+5. Confirm one collision causes at most one trauma event until true separation.
+6. Confirm sustained pushing can propagate through several touching actors.
+
+## Wall reverse rendering and texture-package validation 4.28.0az
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The repeated first-floor slit persisted because `CaelumFiniteWallBackPanel` used `NOINTERACTION`. The reverse actor therefore failed to remain available to the sector renderer. It now remains render-linked while `NOBLOCKMAP`, absence of `SOLID`, `CANNOTPUSH` and `DONTTHRUST` keep it outside collision and Impact Physics. Front and rear visuals remain separated by 0.25 MU to avoid coplanar depth rejection.
+
+Font directories use kerning `-4` and one additional pixel of `SpaceWidth`. One transparent right column was also removed from every glyph, so template fonts created by `FONTDEFS` receive the same one-pixel tightening even when they do not consume `font.inf`. `FONTDEFS` now carries the matching larger word spaces. The five classic main-menu actions are patch graphics rather than live text, so `M_NGAME`, `M_OPTION`, `M_LOADG`, `M_SAVEG` and `M_QUITG` are replaced by CaelumText-rendered Spanish labels.
+
+The supplied startup log identifies `sprites/caelum/weapons/` as invalid texture data. The existing development archives contain explicit zero-byte ZIP directory records in texture namespaces, while all 3,166 PNG files decode successfully and have positive dimensions. `tools/build_pk3.py` packages files only, validates PNG headers and dimensions, rejects every empty source file, verifies the ZIP and atomically replaces the output. This directly removes the only invalid texture resource exposed by the log and addresses the later `Trying to create zero size texture` fatal at its concrete package-level source.
+
+Manual validation:
+
+1. Build exclusively with `python tools/build_pk3.py src build/caelum_argenteum_dev.pk3`.
+2. Confirm startup no longer prints `Invalid data encountered for texture`.
+3. Inspect the central first-floor wall from both directions.
+4. Verify spacing in HUD, options and the main-menu labels.
+5. Repeat the 937-actor projectile test. If the fatal recurs, preserve the new log and crash stack because no zero-sized package entry should remain.
+
+## Closed connector ends and 937-actor stress step 4.28.0ay
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The black vertical strip visible through the central first-floor rooms belongs to the old 64-MU connector band between the two equal rooms. Its front and rear ends remained visually open. Four new 64-MU finite panels now close those ends at coordinates `x=368`, `y=±196/±540`, height 136. Each is a single smooth wall section using the existing finite-wall renderer and collision, so the closure does not extend infinitely through the ground floor.
+
+Letter kerning remains `-3`. Only `SpaceWidth` increases by two pixels in every family, making word boundaries clearer without reopening the spacing between individual letters. The Debug profile remains unchanged at twelve attributes of 90.
+
+MAP02 retains its 17 vertices, 17 linedefs, 17 sidedefs, one sector and original enclosure. Its new total is exactly 937 stress actors: 63 Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats, plus the player start. The two equal fractional remainders were assigned deterministically to Rulo and Caella.
+
+Manual validation:
+
+1. Stand at the position shown in the supplied screenshot and verify that neither end of the obsolete connector reveals the map background.
+2. Inspect the same four closures from the opposite side and from the ground floor.
+3. Confirm menu and HUD word spacing while individual letter spacing remains unchanged.
+4. Wake all 937 MAP02 actors and note whether projectile activity still causes a freeze.
+
+## Exact wall spans and 1,875-actor stress step 4.28.0ax
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor finite wall panels previously covered 136 MU each, leaving 4-MU slits at the exterior endpoints. They now use exact 140-MU spans. Their centers move from ±268/±468 to ±266/±470, producing continuous ranges 196–336 and 400–540 on both wings while preserving the 64-MU central doorway from 336 to 400. No extra overlapping panel or collision layer is introduced.
+
+Every bitmap family now uses kerning `-3`; `SpaceWidth` remains unchanged. The Debug creation profile's central attribute constant is 90, so all twelve attributes are reset to exactly 90 after equipment bonuses whenever the Debug profile is applied or recalculated.
+
+MAP02 retains the 17 vertices, 17 linedefs, 17 sidedefs, one sector and original 16,384×16,384 MU stress enclosure. Its population is now 125 Rulo, 125 Caella, 125 Ronnie, 125 Argento, 125 Bulls and 1,250 Giant Rats: 1,875 test actors plus the player start.
+
+Manual validation:
+
+1. Inspect the four endpoints of both central wall dividers from inside and outside.
+2. Verify both 64-MU internal door openings remain unobstructed.
+3. Check menu, options, console and HUD letter spacing without losing word separation.
+4. Create a Debug character and confirm all twelve attributes read 90.
+5. Wake all 1,875 MAP02 actors and record whether the engine freezes or remains responsive.
+
 ## Direct transition and 3,750-actor stress step 4.28.0aw
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

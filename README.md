@@ -16,7 +16,17 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.28.0au build keeps architecture and actor tests separate. MAP01 now applies the validated equal-room/dividing-door topology to both central first-floor pairs; the remote geometry around coordinate 30,000 remains the intentional 3D-floor control area, not playable rooms. The menu explicitly selects Caelum fonts, replaces Doom II presentation patches with the supplied logo, and suppresses the inherited Doom II credit page. MAP02 preserves its 16,384×16,384 MU enclosure while reducing the mixed stress population to 7,500 actors. Contact-island and continuous-push physics are reserved for the following patch.
+The current V4.28.0bd build keeps architecture and actor tests separate. MAP01 uses finite first-floor walls with independently rendered front and rear faces. MAP02 preserves its 16,384×16,384 MU enclosure and returns to the validated 937-actor stress population. Impact Physics now represents simultaneous pairs through persistent shared contact states: connected contacts form implicit islands, and continued pressure transfers momentum without repeating impact trauma or per-tic result allocations. Crushing damage remains pending until its design values are approved.
+
+### Building the development PK3
+
+Build from the repository root with:
+
+```text
+python tools/build_pk3.py src build/caelum_argenteum_dev.pk3
+```
+
+The builder writes file entries only: ZIP directory records inside `sprites/`, `graphics/`, `flats/` or `textures/` are forbidden because GZDoom may inspect them as zero-sized texture resources. It also rejects empty files, zero-sized PNG dimensions and corrupt ZIP entries before replacing the existing development PK3.
 
 ### Implemented and tested
 

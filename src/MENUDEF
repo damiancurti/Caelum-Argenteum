@@ -1,13 +1,15 @@
-// Mantener el MainMenu nativo: redefinirlo sin TextItem elimina sus opciones.
-// M_DOOM proporciona el logo de Caelum Argenteum sin reemplazar la lógica.
+// Mantener siempre el MainMenu nativo. Una declaración parcial de MainMenu
+// reemplazaría sus TextItem y dejaría únicamente el logo visible.
+// El recurso M_DOOM proporciona el logo de Caelum sin alterar su lógica.
 DefaultListMenu
 {
-    Font "CaelumText", "White"
+    Font "CaelumText", "Gold"
     Selector "M_SKULL1", -32, -5
-    Linespacing 15
+    Linespacing 16
 }
 
+// GZDoom 4.14.2 no admite la propiedad Font en OptionMenuSettings.
 OptionMenuSettings
 {
-    Linespacing 11
+    Linespacing 12
 }

@@ -1,5 +1,51 @@
 # Changelog
 
+## 4.28.0bd — Persistent contact islands and stable stress population
+
+- Restored MAP02 to its validated 937-actor population after the doubled
+  1,874-actor field froze during combined combat.
+- Replaced the single `ImpactContactActor` latch with a shared multi-contact
+  graph. Every touching pair owns one persistent `ImpactContactState`, and
+  both bodies reference the same state until five true separation tics pass.
+- Made connected contact graphs act as implicit physical islands: bodies can
+  retain every simultaneous neighbour instead of overwriting an older pair.
+- Added allocation-free sustained momentum transfer for already-latched
+  contacts. Continued pressure propagates through a crowd without repeating
+  impact trauma or recreating `ImpactBody` and `ImpactResult` every tic.
+- Stored sustained-contact duration, closing speed and transmitted impulse for
+  the future crushing system. No crushing threshold or damage was introduced.
+- Updated the physics debug line to report the player's active contact count.
+- Kept the ten-second NPC-projectile lifetime unchanged.
+
+## 4.28.0az — Render-linked wall backs and zero-size texture packaging fix
+
+- Replaced `NOINTERACTION` on finite-wall reverse panels with non-solid `NOBLOCKMAP`, keeping the actor linked to its sector so GZDoom can render it from the rear.
+- Preserved the 0.25-MU separation between the two visual faces and retained one collision owner.
+- Tightened direct font families to kerning `-4`, added one more pixel to every word space and reduced each glyph canvas by one transparent right-hand column.
+- Updated `FONTDEFS` word-space values so modern menu aliases no longer ignore the spacing configured by the font directories.
+- Replaced the five classic Doom main-menu label patches with Spanish labels composed from `CaelumText`; those items were images and could not respond to font metrics.
+- Added a deterministic PK3 builder that never emits directory entries, rejects empty files, validates non-zero PNG dimensions and verifies the resulting ZIP.
+- Audited 3,166 PNG resources: every decoded successfully and every declared texture has positive dimensions; the concrete invalid resource in the supplied log was the zero-byte directory entry `sprites/caelum/weapons/`.
+- Kept MAP02 at 937 actors because the reported fatal error is now an actionable texture/package failure rather than a non-diagnostic freeze.
+
+## 4.28.0ay — Closed central connector ends, wider spaces and 937-actor step
+
+- Preserved kerning `-3` and increased every bitmap family's `SpaceWidth` by two pixels.
+- Identified the visible black strip as the open 64-MU ends of the obsolete central connector band, not the previously adjusted dividing-wall endpoints.
+- Added one continuous 64-MU finite wall panel to the front and rear end of each central wing, closing all four openings only at first-floor height.
+- Avoided infinitely tall blocking linedefs, preserving ground-floor traversal and keeping collision limited to the upper rooms.
+- Reduced MAP02 from 1,875 to exactly 937 stress actors while preserving its complete enclosure and geometry.
+- Kept the validated Debug profile at 90 and made no push/contact-island physics changes.
+
+## 4.28.0ax — Exact central wall spans, tighter kerning and 1,875-actor step
+
+- Tightened all Caelum bitmap families from kerning `-2` to `-3`, preserving every word-space width.
+- Replaced the four 136-MU central first-floor wall segments with exact 140-MU spans, covering each boundary continuously from its exterior edge to the internal doorway.
+- Repositioned the four segment centers by 2 MU so their endpoints meet the mansion geometry exactly without overlapping the 64-MU door openings.
+- Reduced MAP02 from 3,750 to 1,875 stress actors without changing its vertices, linedefs, sidedefs, sector or enclosure size.
+- Changed the Debug creation profile from 30 to 90 in all twelve attributes through the central creation constant.
+- Made no change to push/contact-island physics and did not update the private/personal design document.
+
 ## 4.28.0aw — Direct transition, tighter type and 3,750-actor limit search
 
 - Disabled MAP01's inherited Doom intermission; Exit now transitions directly to MAP02.

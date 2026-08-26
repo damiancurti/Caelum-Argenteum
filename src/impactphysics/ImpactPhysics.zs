@@ -54,6 +54,78 @@ class ImpactResult : Object
     }
 }
 
+// Un enlace persistente representa una arista del grafo de contactos. Ambos
+// cuerpos guardan el mismo objeto, por lo que una multitud puede formar islas
+// sin perder parejas cuando aparece un vecino nuevo.
+class ImpactContactState : Object
+{
+    Actor FirstActor;
+    Actor SecondActor;
+    double ReleaseDistance;
+    int SeparatedTics;
+    int LastUpdatedTick;
+    int SustainedTics;
+    double LastClosingSpeed;
+    double LastTransmittedImpulse;
+    bool Active;
+
+    void Initialize(Actor first, Actor second, double releaseDistance)
+    {
+        FirstActor = first;
+        SecondActor = second;
+        ReleaseDistance = Max(0.0, releaseDistance);
+        SeparatedTics = 0;
+        LastUpdatedTick = -1;
+        SustainedTics = 0;
+        LastClosingSpeed = 0.0;
+        LastTransmittedImpulse = 0.0;
+        Active = first != null && second != null;
+    }
+
+    bool Matches(Actor owner, Actor other)
+    {
+        return Active && other != null
+            && ((FirstActor == owner && SecondActor == other)
+                || (FirstActor == other && SecondActor == owner));
+    }
+
+    void UpdateSeparation(int currentTick, int requiredSeparatedTics)
+    {
+        if (!Active || LastUpdatedTick == currentTick) { return; }
+        LastUpdatedTick = currentTick;
+
+        if (FirstActor == null || SecondActor == null
+            || FirstActor.health <= 0 || SecondActor.health <= 0)
+        {
+            Active = false;
+            return;
+        }
+
+        double dx = SecondActor.Pos.X - FirstActor.Pos.X;
+        double dy = SecondActor.Pos.Y - FirstActor.Pos.Y;
+        double distance = Sqrt(dx * dx + dy * dy);
+        if (distance > ReleaseDistance)
+        {
+            SeparatedTics++;
+            if (SeparatedTics >= Max(1, requiredSeparatedTics))
+            {
+                Active = false;
+            }
+        }
+        else
+        {
+            SeparatedTics = 0;
+        }
+    }
+
+    void RegisterSustainedTransfer(double closingSpeed, double impulse)
+    {
+        SustainedTics++;
+        LastClosingSpeed = Max(0.0, closingSpeed);
+        LastTransmittedImpulse = Max(0.0, impulse);
+    }
+}
+
 class ImpactPhysics
 {
     static double SanitizeMass(double mass)

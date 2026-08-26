@@ -2304,12 +2304,10 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastImpactLucidityLoss
             );
             String accelerationLine = String.Format(
-                "Accel %.1f%% (%.2fs) | Contact %s Sep %d/%d | Band %.2f-%.2f",
+                "Accel %.1f%% (%.2fs) | Contacts %d | Band %.2f-%.2f",
                 localPlayer.MovementAccelerationFactor * 100.0,
                 localPlayer.MovementAccelerationSeconds,
-                localPlayer.ImpactContactActor != null ? "ON" : "OFF",
-                localPlayer.ImpactContactSeparatedTics,
-                CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS,
+                localPlayer.GetImpactContactCount(),
                 localPlayer.LastImpactContactMinimumHeightRatio,
                 localPlayer.LastImpactContactMaximumHeightRatio
             );

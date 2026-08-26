@@ -74,8 +74,12 @@ class CaelumFiniteWallBackPanel : Actor
         Height 120;
         XScale 0.5;
         YScale 0.9375;
-        +NOINTERACTION
+        // Debe permanecer enlazado al sector para que el renderer lo dibuje.
+        // NOBLOCKMAP evita colisión sin ocultarlo como hacía NOINTERACTION.
+        +NOBLOCKMAP
         +NOGRAVITY
+        +CANNOTPUSH
+        +DONTTHRUST
         +WALLSPRITE
         RenderStyle "Normal";
     }

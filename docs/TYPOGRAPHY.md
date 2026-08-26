@@ -36,4 +36,4 @@ Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y
 
 ## Estado
 
-La revisión V4.28.0aw mantiene tamaños y contraste de V4.28.0av, pero reduce el kerning global de `-1` a `-2`. El ancho de los espacios no cambia, de modo que se acorta la separación entre letras sin confundir los límites entre palabras. La intermisión heredada de Doom queda desactivada provisionalmente mediante MAPINFO.
+La revisión V4.28.0az reduce el kerning directo a `-4`, recorta una columna transparente derecha de cada glifo y suma otro píxel a `SpaceWidth`. `FONTDEFS` recibe los mismos anchos de palabra para sus alias modernos. Los cinco rótulos clásicos del menú principal, que GZDoom trataba como imágenes en lugar de texto, se reemplazan por gráficos españoles compuestos con `CaelumText` y estas mismas métricas.
