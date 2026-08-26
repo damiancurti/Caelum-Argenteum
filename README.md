@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.28.0as build keeps architecture and actor tests separate. MAP01 contains a north-central prototype formed by one continuous exterior volume and two equal rooms. Each room has its own 64-MU exterior lateral door, and one separate internal door crosses the midpoint divider; no entrance shares the divider axis. The supplied Unicode bitmap typography now uses fixed-height, shared-baseline glyph cells at HUD-safe sizes and covers both classic and modern GZDoom font aliases. MAP02 retains seven isolated populations of twenty actors each; its complete combined stress sequence passes without freezing after remote-sound isolation and bounded NPC projectiles. The one-reference collision latch remains scheduled for a robust contact-island replacement.
+The current V4.28.0au build keeps architecture and actor tests separate. MAP01 now applies the validated equal-room/dividing-door topology to both central first-floor pairs; the remote geometry around coordinate 30,000 remains the intentional 3D-floor control area, not playable rooms. The menu explicitly selects Caelum fonts, replaces Doom II presentation patches with the supplied logo, and suppresses the inherited Doom II credit page. MAP02 preserves its 16,384×16,384 MU enclosure while reducing the mixed stress population to 7,500 actors. Contact-island and continuous-push physics are reserved for the following patch.
 
 ### Implemented and tested
 

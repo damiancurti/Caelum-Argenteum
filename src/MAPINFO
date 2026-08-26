@@ -7,6 +7,8 @@ GameInfo
     // Pantalla de presentación oficial suministrada por el autor.
     TitlePage = "TITLEPIC"
     TitleMusic = "CA_MUS01"
+    // Evita que el ciclo del título vuelva a mostrar los créditos de Doom II.
+    CreditPage = "TITLEPIC"
 
     // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
     EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"

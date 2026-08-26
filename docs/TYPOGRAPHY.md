@@ -32,8 +32,8 @@ ASCII imprimible y Latin-1 completo: mayúsculas, minúsculas, cifras, puntuaci�
 
 ## Licencia y procedencia
 
-Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold y DejaVu Sans Mono. La licencia y avisos de redistribución se incluyen en `licenses/DejaVu-copyright.txt` dentro del paquete. El generador reproducible es `build_caelum_fonts.py`.
+Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y DejaVu Sans Mono Bold. La licencia y avisos de redistribución se incluyen en `licenses/DejaVu-copyright.txt` dentro del paquete. El generador reproducible se conserva en las herramientas de construcción del proyecto.
 
 ## Estado
 
-La revisión V4.28.0as reduce las métricas del HUD, corrige la línea base e incorpora los alias modernos del motor. Debe verificarse en GZDoom 4.14.2 dentro del HUD, creación de personaje, menú y consola antes de fijar definitivamente tamaños y espaciados.
+La revisión V4.28.0av conserva los enlaces de `FONTDEFS`, pero elimina la redefinición destructiva de `MainMenu`: el logo se sustituye mediante `M_DOOM` y las opciones siguen perteneciendo al menú nativo. Las familias de lectura y consola aumentan un punto y reciben contorno oscuro; `BigFont` y `AlternativeBigFont` bajan de 15 a 12 puntos para las pantallas de intermisión. Debe verificarse en GZDoom 4.14.2 dentro del HUD, creación de personaje, menú principal, todas las configuraciones, consola y fin de mapa.

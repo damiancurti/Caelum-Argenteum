@@ -1,0 +1,41 @@
+// Los nombres New* son los que consume la interfaz moderna de GZDoom 4.14.2.
+// Se redefinen explícitamente para evitar que gane la familia interna del IWAD.
+NewSmallFont
+{
+    Template "fonts/caelumtext/%04X.png"
+    Base 33
+    Count 223
+    SpaceWidth 4
+}
+
+NewConsoleFont
+{
+    Template "fonts/caelummono/%04X.png"
+    Base 33
+    Count 223
+    SpaceWidth 4
+}
+
+SmallFont
+{
+    Template "fonts/caelumtext/%04X.png"
+    Base 33
+    Count 223
+    SpaceWidth 4
+}
+
+ConsoleFont
+{
+    Template "fonts/caelummono/%04X.png"
+    Base 33
+    Count 223
+    SpaceWidth 4
+}
+
+BigFont
+{
+    Template "fonts/caelumdisplay/%04X.png"
+    Base 33
+    Count 223
+    SpaceWidth 6
+}

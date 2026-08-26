@@ -867,7 +867,8 @@ class CaelumHUDOverlay : EventHandler
                 HUDFont, channelColor, channelX, 84.0, channelLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
+                DTA_KEEPRATIO, true,
+                DTA_SHADOW, true
             );
         }
 
@@ -882,7 +883,8 @@ class CaelumHUDOverlay : EventHandler
                 HUDFont, Font.CR_GREEN, abilityX, 72.0, abilityMessage,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
+                DTA_KEEPRATIO, true,
+                DTA_SHADOW, true
             );
         }
 
@@ -908,7 +910,8 @@ class CaelumHUDOverlay : EventHandler
                 HUDFont, Font.CR_WHITE, magazineX, 326.0, magazineLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
+                DTA_KEEPRATIO, true,
+                DTA_SHADOW, true
             );
         }
         else if (localPlayer.WeaponChargeActive
@@ -939,7 +942,8 @@ class CaelumHUDOverlay : EventHandler
                 HUDFont, chargeColor, chargeX, 326.0, chargeLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
+                DTA_KEEPRATIO, true,
+                DTA_SHADOW, true
             );
         }
 
@@ -953,20 +957,24 @@ class CaelumHUDOverlay : EventHandler
                 HUDFont, Font.CR_GOLD, noticeX, 48.0, activeWeaponLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
+                DTA_KEEPRATIO, true,
+                DTA_SHADOW, true
             );
         }
 
         Screen.DrawText(HUDFont, Font.CR_WHITE, 440.0, 266.0,
             loadLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true);
+            DTA_KEEPRATIO, true, DTA_SHADOW, true);
 
         Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.HungerState), 440.0, 290.0,
-            hungerLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            hungerLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true, DTA_SHADOW, true);
         Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.ThirstState), 440.0, 314.0,
-            thirstLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            thirstLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true, DTA_SHADOW, true);
         Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.SleepState), 440.0, 338.0,
-            sleepLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            sleepLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true, DTA_SHADOW, true);
 
         Screen.DrawText(
             HUDFont,
@@ -976,7 +984,8 @@ class CaelumHUDOverlay : EventHandler
             lucidityLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
         );
 
         Screen.DrawText(
@@ -987,7 +996,8 @@ class CaelumHUDOverlay : EventHandler
             adrenalineLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
         );
 
         Screen.DrawText(
@@ -998,7 +1008,8 @@ class CaelumHUDOverlay : EventHandler
             animaLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
         );
 
         Screen.DrawText(
@@ -1009,7 +1020,8 @@ class CaelumHUDOverlay : EventHandler
             healthLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
         );
 
         Screen.DrawText(
@@ -1020,7 +1032,8 @@ class CaelumHUDOverlay : EventHandler
             airLine,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
         );
     }
 }

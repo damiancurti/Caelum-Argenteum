@@ -1,0 +1,13 @@
+// Mantener el MainMenu nativo: redefinirlo sin TextItem elimina sus opciones.
+// M_DOOM proporciona el logo de Caelum Argenteum sin reemplazar la lógica.
+DefaultListMenu
+{
+    Font "CaelumText", "White"
+    Selector "M_SKULL1", -32, -5
+    Linespacing 15
+}
+
+OptionMenuSettings
+{
+    Linespacing 11
+}

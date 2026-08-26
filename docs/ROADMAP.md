@@ -168,6 +168,10 @@ Closed-boundary degree validation remains a required check, but it is not suffic
 
 ## 5. Parallel validation tracks
 
+V4.28.0au mirrors the validated central-room topology into the second central pair, explicitly owns the main/options font mappings and presentation logo, and reduces the unchanged MAP02 field to 7,500 actors after the 15,000-actor test saturated the engine. The next patch is reserved for contact-island state, continuous post-contact pushing and the future crushing-damage input; those physics changes must not be mixed into this architectural/UI revision.
+
+V4.28.0at preserves the validated north-central layout, adds a visual reverse face to finite walls, and moves actor validation to one remote mixed population of 15,000 combatants. This is a deliberate ceiling test for bounded projectiles, AI and dense collision; it does not replace the planned contact-island redesign. Typography validation continues with moderately larger bold metrics and HUD contrast shadows.
+
 V4.28.0as corrects the first north-central prototype: two independent exterior doors replace the divider-aligned opening, while the midpoint keeps a separate internal door. The typography validation restarts with fixed baseline cells, reduced HUD metrics and the modern GZDoom font aliases.
 
 V4.28.0ar supersedes the 4.28.0aq central-room shape. The north-central two-room prototype uses one continuous exterior footprint, equal interior areas and one internal dividing wall/door. Once manually approved it will be mirrored south, then the lateral pairs will be connected so each complete wing reads as one exterior architectural volume. The global Caelum font family also enters visual validation at 640×360 and 320×200.

@@ -1,5 +1,58 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Native-menu recovery and legibility pass 4.28.0av
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The 4.28.0au `ListMenu "MainMenu"` declaration contained a logo but no selectable items. In MENUDEF, that declaration replaces the inherited menu definition rather than decorating it, so the game displayed only the logo and directional input produced sounds without a usable selection. The override has been removed. `M_DOOM` continues to provide the Caelum logo, while GZDoom supplies the complete native menu structure and actions.
+
+The bitmap families retain their fixed cell height and shared baseline. Ordinary serif and monospaced roles increase by one point and gain a dark one-pixel outline behind a bright translated foreground. Large/intermission roles decrease from 15 to 12 points to correct the oversized MAP01 completion presentation.
+
+Manual validation:
+
+1. Start the game and confirm that every main-menu entry is visible, selectable and functional.
+2. Check main, options, controls, video, audio and console screens for the Caelum family and adequate contrast.
+3. Verify HUD and dialogue text at the normal gameplay resolution.
+4. Finish MAP01 and confirm the intermission typography is smaller than in 4.28.0au.
+
+## Explicit menus, complete central pairs and 7,500-actor field 4.28.0au
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The main menu now has a project-owned `MENUDEF`: it draws the transparent `CAMLOGO` emblem and requests `CaelumText` directly. `FONTDEFS` explicitly rebinds `NewSmallFont`, `NewConsoleFont`, `SmallFont`, `ConsoleFont` and `BigFont`, covering the modern option menus as well as classic list menus. `GameInfo.CreditPage` points to `TITLEPIC`, so Doom II's inherited credit image no longer alternates with the project title screen.
+
+MAP01 activates the previously reserved sectors 93-95 for the south-central pair using control tags 510-512. It mirrors the validated north topology: one continuous exterior volume, two equal rooms, two independent exterior sliding doors and one door through the midpoint divider. Geometry near coordinate ±30,000 remains deliberately remote because it supplies the stacked-sector control planes used by GZDoom's 3D floors.
+
+MAP02 keeps exactly the same room, start chamber, dogleg and unique-position distribution from 4.28.0at. Only population counts change: 500 Rulo, 500 Caella, 500 Ronnie, 500 Argento, 500 Bulls and 5,000 Giant Rats. The 7,500 actors remain deaf/ambush until acquiring sight.
+
+Manual validation:
+
+1. Confirm the main menu shows `CAMLOGO`, never `M_DOOM`, and the title loop never shows Doom II credits.
+2. Open the main, settings, controls, video and audio menus and verify the Caelum typeface in every one.
+3. Inspect both central MAP01 pairs: equal floor areas, continuous exterior walls, two exterior entrances and one midpoint door per pair.
+4. Confirm the distant control geometry remains inaccessible during normal play and all first-floor surfaces remain present.
+5. Wake the 7,500 MAP02 combatants and record whether the engine remains responsive. No push/contact-island code changed in this revision.
+
+## Titanic isolated stress field and finite-wall reverse faces 4.28.0at
+
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The narrow first-floor section that was visible externally but transparent internally was the reverse side of a one-sided `WALLSPRITE`. Every finite wall panel now creates one synchronized visual reverse face. The reverse actor has no interaction and creates no collision blockers, so physical behavior remains owned solely by the original panel.
+
+Typography retains the shared-baseline cells introduced in 4.28.0as but increases each role moderately. Compact interface and monospaced families use bold faces, and all gameplay HUD labels request the engine's standard text shadow to remain readable against bright or detailed surfaces.
+
+MAP02 now contains one remote 16,384×16,384 MU enclosure with 15,000 mixed combatants: 1,000 each of Rulo, Caella, Ronnie, Argento and Bull, plus 10,000 Giant Rats. A two-turn corridor blocks every initial line of sight, and `ambush` prevents remote sounds from waking them. Initial positions are unique, reproducibly shuffled and spaced 96 MU apart.
+
+The earlier freeze has not been reproduced since remote awakening was isolated and NPC homing projectiles gained a ten-second lifetime. Infinite lost projectiles remain the leading causal candidate, but the two corrections were introduced together and therefore do not constitute a single-variable proof. An unbounded projectile population adds permanent thinkers whose seeking, movement and collision work executes every tic; a saturation freeze may leave no script error because the main loop is overloaded rather than throwing an exception.
+
+Manual validation:
+
+1. Inspect the corrected MAP01 wall from inside and outside; both faces must be opaque while collision remains single and finite.
+2. Review HUD, menus, character creation and console for baseline, size and contrast.
+3. Start MAP02 and remain in the initial chamber; no combatant may see, hear or attack the player.
+4. Traverse the dogleg and enter the single enclosure; verify all six populations are interspersed rather than stacked.
+5. Record frame rate, responsiveness, actor activation time and whether finite-lifetime projectiles disappear. With 15,000 active AI actors, severe slowdown may represent an engine capacity limit rather than the former unbounded-growth defect.
+
 ## Corrected north-pair entrances and font metrics 4.28.0as
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

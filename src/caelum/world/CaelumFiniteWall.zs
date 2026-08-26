@@ -43,6 +43,46 @@ class CaelumFiniteWallBlocker : Actor
     }
 }
 
+// Los WALLSPRITE se dibujan por una sola cara. Este reverso replica solamente
+// la imagen del panel maestro para que la pared también sea visible desde el
+// interior, sin añadir un segundo conjunto de bloqueadores ni contactos.
+class CaelumFiniteWallBackPanel : Actor
+{
+    override void Tick()
+    {
+        Super.Tick();
+        if (master == null)
+        {
+            Destroy();
+            return;
+        }
+
+        SetOrigin(master.Pos, true);
+        Angle = master.Angle + 180.0;
+        Scale.X = master.Scale.X;
+        Scale.Y = master.Scale.Y;
+    }
+
+    Default
+    {
+        Radius 1;
+        Height 120;
+        XScale 0.5;
+        YScale 0.9375;
+        +NOINTERACTION
+        +NOGRAVITY
+        +WALLSPRITE
+        RenderStyle "Normal";
+    }
+
+    States
+    {
+    Spawn:
+        CWAL A -1;
+        Stop;
+    }
+}
+
 class CaelumFiniteWallPanel : Actor
 {
     override void PostBeginPlay()
@@ -50,6 +90,16 @@ class CaelumFiniteWallPanel : Actor
         Super.PostBeginPlay();
         int panelWidth = args[1] > 0 ? args[1] : 64;
         Scale.X = panelWidth / 128.0;
+
+        Actor backPanel = Spawn("CaelumFiniteWallBackPanel", Pos);
+        if (backPanel != null)
+        {
+            backPanel.master = self;
+            backPanel.Angle = Angle + 180.0;
+            backPanel.Scale.X = Scale.X;
+            backPanel.Scale.Y = Scale.Y;
+        }
+
         for (int offset = -panelWidth / 2 + 4;
              offset <= panelWidth / 2 - 4; offset += 8)
         {

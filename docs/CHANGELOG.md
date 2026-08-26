@@ -1,5 +1,33 @@
 # Changelog
 
+## 4.28.0av — Restored native menus and contrast-safe typography
+
+- Removed the empty `MainMenu` override introduced in 4.28.0au; it replaced the native menu without declaring any selectable items.
+- Preserved the Caelum logo through the `M_DOOM` replacement while restoring every native main-menu action.
+- Kept a non-destructive `DefaultListMenu` style so project typography can apply without replacing menu contents or behavior.
+- Increased ordinary text and console families by one point and added a one-pixel dark outline around bright glyphs for stable contrast.
+- Reduced the large/intermission families from 15 to 12 points so the MAP01 completion screen remains proportionate.
+- Produced a source-only patch and did not update the private/personal design document.
+
+## 4.28.0au — Explicit Caelum menu, mirrored central rooms and reduced stress population
+
+- Added explicit `MENUDEF` and `FONTDEFS` mappings so the main and configuration menus request Caelum typography instead of inheriting Doom II patches/fonts.
+- Replaced the main-menu Doom II logo with the supplied Caelum Argenteum emblem after extracting a true transparent background.
+- Assigned the official `TITLEPIC` as the credit page too, preventing the title loop from showing Doom II credits.
+- Activated the reserved south-central 3D-floor sectors and mirrored the validated two-equal-room topology, including two exterior doors and one internal dividing door.
+- Preserved the remote coordinate-30,000 geometry because it consists of required 3D-floor control sectors, not misplaced playable rooms.
+- Kept MAP02's titanic enclosure unchanged while halving every population: 500 each of Rulo, Caella, Ronnie, Argento and Bull, plus 5,000 Giant Rats (7,500 actors total).
+- Deferred every contact-island, continuous-push and crushing-damage change to the next physics patch.
+
+## 4.28.0at — Two-sided finite walls and titanic MAP02 stress field
+
+- Added a non-solid synchronized reverse face to finite first-floor wall panels, removing the interior transparency without duplicating blockers, contacts or collision mass.
+- Increased all Caelum font roles moderately, changed compact/interface families to bold variants and enabled a standard shadow on gameplay HUD text.
+- Replaced MAP02's seven small populations with one remote 16,384×16,384 MU enclosure reached through a two-turn sight-breaking corridor.
+- Distributed 1,000 Rulo, 1,000 Caella, 1,000 Ronnie, 1,000 Argento, 1,000 Bulls and 10,000 Giant Rats at unique positions: 15,000 test actors plus the player start.
+- Kept every test actor in ambush mode so neither sight nor remote sound activates the population from the initial chamber.
+- Produced a source-only patch; no complete development PK3 or private/personal document update is part of this revision.
+
 ## 4.28.0as — Corrected room entrances and baseline-safe typography
 
 - Closed the erroneous exterior opening placed on the same axis as the north-central dividing wall.
