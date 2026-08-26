@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.28.0al MAP01 continues the four-patch incremental first-floor rebuild without adding pair 2. Only the two western upper rooms—one per wing—have walls and doors; native slabs cover the eight legitimate ground-floor ceiling footprints while obsolete central connectors remain empty. MAP01 temporarily contains no monster, NPC or Training Dummy, and the barred 4.28.0ak enclosures are removed. This isolates the current architecture after the freeze also reproduced with native `noclip`. Each later construction patch may add exactly two rooms only after this architecture-only test and the preceding room pair pass manual GZDoom validation.
+The current V4.28.0as build keeps architecture and actor tests separate. MAP01 contains a north-central prototype formed by one continuous exterior volume and two equal rooms. Each room has its own 64-MU exterior lateral door, and one separate internal door crosses the midpoint divider; no entrance shares the divider axis. The supplied Unicode bitmap typography now uses fixed-height, shared-baseline glyph cells at HUD-safe sizes and covers both classic and modern GZDoom font aliases. MAP02 retains seven isolated populations of twenty actors each; its complete combined stress sequence passes without freezing after remote-sound isolation and bounded NPC projectiles. The one-reference collision latch remains scheduled for a robust contact-island replacement.
 
 ### Implemented and tested
 

@@ -2,6 +2,8 @@
 // Usa A_SeekerMissile, la misma primitiva nativa empleada por el Libro.
 class CaelumActorHomingElementalProjectile : CaelumActorProjectile
 {
+    int CaelumLifetimeTicks;
+
     Default
     {
         Radius 4;
@@ -51,6 +53,17 @@ class CaelumActorHomingElementalProjectile : CaelumActorProjectile
     override void Tick()
     {
         Super.Tick();
+
+        // Un proyectil guiado que pierde su blanco no puede permanecer para
+        // siempre en el campo de pruebas. El límite evita acumulaciones
+        // silenciosas cuando varios recintos se despiertan por un disparo.
+        CaelumLifetimeTicks++;
+        if (CaelumLifetimeTicks >= 350)
+        {
+            Destroy();
+            return;
+        }
+
         UpdateElementSprite();
     }
 

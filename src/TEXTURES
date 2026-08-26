@@ -1,6 +1,18 @@
 // One texture pixel equals one map unit at the default sprite scale. Matching
 // this 72-pixel canvas to the actor's 72-unit Height keeps every visible body
 // region inside the collision cylinder.
+// Recursos planos de alcantarilla. Se almacenan bajo graphics para evitar la
+// colisión de Windows entre el archivo TEXTURES y una carpeta textures.
+Texture "CASWRWAL", 256, 256
+{
+    Patch "graphics/caelum/textures/sewer/CASWRWAL.png", 0, 0
+}
+
+Flat "CASWRFLR", 256, 256
+{
+    Patch "graphics/caelum/textures/sewer/CASWRFLR.png", 0, 0
+}
+
 Sprite "CDLSA0", 64, 128
 {
     Offset 32, 128

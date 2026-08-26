@@ -1,5 +1,113 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Corrected north-pair entrances and font metrics 4.28.0as
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The first 4.28.0ar room placement incorrectly aligned the midpoint divider with the only newly closed exterior gap. V4.28.0as closes that central opening as wall and restores both original 64-MU entrance positions. Each of the two equal rooms now has one exterior single-leaf sliding door, while the midpoint wall retains a third single-leaf door for internal communication.
+
+The original supplied glyph PNGs were tightly cropped to different heights. GZDoom draws Unicode glyph patches from a common top origin, so lowercase, capitals, accents and descenders did not share a baseline. Every family is now regenerated on fixed-height transparent cells with one baseline. The classic HUD/console family is reduced to 10 pixels, `CaelumMono` is requested explicitly by both project overlays, and the modern engine aliases are supplied for menus and the console.
+
+Manual validation:
+
+1. Confirm each north-central room has its own exterior sliding entrance.
+2. Confirm the central exterior face is solid and the midpoint divider does not intersect either entrance.
+3. Open and close both exterior doors and the internal door from both sides.
+4. Check that capitals, lowercase letters, accents and descenders share one baseline in HUD and character creation.
+5. Confirm the HUD fits around every bar and that menus and console visibly use the new family.
+
+## North-central room prototype and typography 4.28.0ar
+
+**Implemented — pending manual GZDoom 4.14.2 architectural/font validation**
+
+The 4.28.0aq interpretation of the central rooms is superseded. The north-central pair is now one continuous 336×336 MU exterior body. A finite wall at its exact midpoint divides it into two equal 168×336 MU rooms and contains one 64-MU single-leaf lateral door. There is no connector room or narrow passage between them. Only this pair is active; the mirrored south pair and lateral rooms remain neutral until the prototype passes manual validation.
+
+The supplied font package is merged into the main PK3. Standard GZDoom font names are replaced globally, while the named Caelum variants remain available for later role-specific ZScript and MENUDEF use. Coverage includes printable ASCII, Latin-1 and Spanish punctuation. The supplied guide is stored as `docs/TYPOGRAPHY.md`, and the DejaVu redistribution notice is included under `licenses/DejaVu-copyright.txt`.
+
+The complete MAP02 stress sequence passed: sound did not wake unopened rooms; Bulls crowded and collided; Caella, Argento, Rulo and Ronnie were introduced sequentially; Giant Rats were killed through impacts; and the surviving actors fought centrally without freezing. The 4.28.0aq containment is therefore validated. Contact-island physics remains a planned robustness improvement rather than the current reproduced cause of the freeze.
+
+Manual validation:
+
+1. Inspect the north-central pair from every exterior side: it must read as one large rectangular room volume.
+2. Confirm the interior consists of exactly two equal rooms separated by one wall and one sliding door, with no intermediate passage.
+3. Check floor, ceiling and outer walls from both floors and verify the stair landing remains clear.
+4. Review main menu, character creation, HUD, inventory, console and debug overlay at 640×360 and 320×200 for missing accented glyphs or unreadable sizes.
+5. After approval, reflect this exact room topology into the south-central pair.
+
+## Central rooms, authored music and bounded MAP02 projectiles 4.28.0aq
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor rooms in MAP01 again target the existing native 3D-floor controls: the two 64×64 links use floor/roof tag 510, their walls use tag 511 and their door/threshold regions use tag 512. This repairs the reported holes, irregular floor and absent walls without placing actor panels over the stair landing.
+
+The title screen and MAP01 use `CA_MUS01`; MAP02 uses `CA_MUS02`. The embedded files identify the work as `The Argentine Omen` and the artist as `marjaja197` (metadata also notes creation with Suno).
+
+The latest freeze sequence exposed two test-contamination risks. Because all MAP02 populations share a connected sound region, one pistol shot could alert actors outside the room being tested. Every test actor is now marked ambush/deaf and therefore ignores remote sound until it sees the player. NPC homing elemental projectiles also had an unbounded one-tic `Spawn` loop; each now self-destructs after 350 tics (ten seconds) if it has not impacted first. This patch does not yet replace the one-reference contact latch with contact islands.
+
+Manual validation:
+
+1. Inspect all four central MAP01 rooms from above and below: continuous floor, regular roof, complete walls and a clear stair landing.
+2. Confirm `01` plays on the title screen and MAP01, while `02` plays on MAP02.
+3. Fire inside one MAP02 room and confirm actors in unopened rooms remain asleep.
+4. Wake Caella, Argento, Rulo and Ronnie populations individually and verify lost projectiles disappear within ten seconds.
+5. Repeat the previous multi-group sequence; if it still freezes, record which populations are simultaneously visible/contacting so the contact-island implementation can be scoped.
+
+## Rat room restoration, title screen and freeze diagnosis 4.28.0ap
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now has a seventh isolated room containing twenty Giant Rats. Its dedicated zigzag corridor blocks every initial sight line, as do the six previous rooms. Total population is 140 test actors: twenty each of Training Dummy, Rulo, Argento, Caella, Ronnie, Bull and Giant Rat, plus one player start.
+
+The author-supplied 1920×1080 presentation image is registered explicitly as `TITLEPIC` through MAPINFO and stored in the graphics namespace.
+
+The inventory is no longer a supported freeze hypothesis because the failure reproduced without opening it. Actor count alone is also insufficient: ranged NPC crowds and the initial Bull pile remained responsive. The strongest code-level hypothesis is the single-reference contact latch. Every body stores only one `ImpactContactActor`; in a dense moving pile, new contacts overwrite older references. Once both members of an older pair point elsewhere, that still-touching pair is treated as new and allocates two `ImpactBody` objects plus one `ImpactResult`, resolves another impulse and may overwrite more links. Bull pursuit, charge mass and a narrow corridor continuously rearrange neighbors, creating a feedback loop capable of producing allocation and impulse churn.
+
+No physics change is included in 4.28.0ap. The next physics correction should replace the one-contact pointer with bounded multi-contact or island state, retain separation-based rearming and avoid per-contact heap allocation during collision callbacks.
+
+Manual validation:
+
+1. Confirm the new title screen appears before starting a game.
+2. Enter only the Giant Rat room and repeat the prior twenty-rat tests.
+3. Reproduce the Bull sequence: enter, allow crowding, leave, then approach the corridor again.
+4. Do not mix groups during the reproduction; record whether the freeze occurs while Bulls contact one another, a wall or the player.
+5. Confirm the other six rooms remain initially unaware of the player.
+
+## Compartmentalized large-scale MAP02 4.28.0ao
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The unapplied 4.28.0an package is superseded. Sewer source assets now follow the Windows-safe project order `src/graphics/caelum/textures/sewer`; the patch does not create a directory beside the root `TEXTURES` file.
+
+MAP02 is now a large connected field with a central empty start and six distant rooms connected through two-turn corridors. It contains no Giant Rats. Each room contains twenty instances of exactly one test type: Training Dummy, Rulo, Argento, Caella, Ronnie or Bull. All 120 test actors begin behind native sight-blocking walls and have no direct line of sight to the player start.
+
+MAP01.wad remains byte-identical to 4.28.0al/4.28.0am. MAPINFO assigns MAP02 as its next map so the existing normal Exit advances to the separate actor field.
+
+The loose `CAF*` and `STF*` graphics are native status-face lumps selected by name. Files in the graphics namespace do not become inventory actors, and no face file is referenced by the equipment catalogue. The reported appearance of faces as equipable items therefore remains open for reproduction and must not be treated as a folder-placement fix.
+
+Manual validation:
+
+1. Start MAP02 and remain in the central chamber; confirm no actor attacks or acquires the player immediately.
+2. Enter one room at a time and verify its population remains isolated from the other five groups.
+3. Stress-test twenty actors of one type before opening a second room or using area effects.
+4. Confirm there are no Giant Rats anywhere in MAP02.
+5. Test MAP01's existing Exit and confirm it changes to MAP02.
+6. If a face appears as equipment, record its inventory category, displayed name and icon before changing face assets.
+
+## Separate architecture and actor maps 4.28.0am
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 is now the architecture-only mansion test and remains byte-identical to its stable 4.28.0al state. MAP02 is a new independent actor arena built from one flat sector, four ordinary outer boundaries and no mansion or actor-based architecture.
+
+MAP02 contains one player start, four Training Dummies, the four elemental NPCs, one Bull and twenty active Giant Rats. The groups begin separated so AI acquisition, collisions, inventory behavior, Seal effects and mass attacks can be observed without 3D-floor or sliding-door interactions.
+
+Manual validation:
+
+1. Load MAP01 and confirm its architecture-only stability remains unchanged.
+2. Enter `map map02` in the console and remain stationary while the active actors acquire targets.
+3. Test `noclip`, inventory, rat contacts, the Bull and area attacks independently.
+4. Do not recombine actors with MAP01 until both maps remain stable separately.
+
 ## Actor-free architecture diagnostic 4.28.0al
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

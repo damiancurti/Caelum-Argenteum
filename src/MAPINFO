@@ -4,8 +4,27 @@ GameInfo
     // Reemplaza la clase de jugador por la clase ZScript propia del proyecto.
     PlayerClasses = "CaelumPlayer"
 
+    // Pantalla de presentación oficial suministrada por el autor.
+    TitlePage = "TITLEPIC"
+    TitleMusic = "CA_MUS01"
+
     // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
     EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"
+}
+
+// Los mapas permanecen separados durante la consolidación: MAP01 valida
+// arquitectura y MAP02 valida actores, IA, colisiones y efectos de área.
+map MAP01 "Mansión — prueba arquitectónica"
+{
+    music = "CA_MUS01"
+
+    // El Exit existente conduce al campo independiente de actores.
+    next = "MAP02"
+}
+
+map MAP02 "Campo de pruebas de actores"
+{
+    music = "CA_MUS02"
 }
 
 // Números de editor usados por el mapa de pruebas. Son asignaciones locales

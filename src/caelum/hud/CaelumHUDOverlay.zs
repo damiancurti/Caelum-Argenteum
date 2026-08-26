@@ -5,11 +5,10 @@ class CaelumHUDOverlay : EventHandler
 {
     Font HUDFont;
 
-    // SmallFont is supplied by GZDoom and is temporary until original Caelum
-    // Argenteum interface graphics and fonts are created.
+    // CaelumMono conserva alineación estable en contadores y recursos.
     override void OnRegister()
     {
-        HUDFont = Font.GetFont("SmallFont");
+        HUDFont = Font.GetFont("CaelumMono");
     }
 
     ui String GetActiveWeaponNameKey(int weaponType)

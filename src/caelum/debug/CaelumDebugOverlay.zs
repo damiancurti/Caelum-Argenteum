@@ -2,7 +2,7 @@
 // It is deliberately separate from the final HUD and can be toggled off.
 class CaelumDebugOverlay : EventHandler
 {
-    // GZDoom supplies SmallFont. We use it only as a temporary debug font.
+    // La depuración usa la variante monoespaciada propia del proyecto.
     Font DebugFont;
     Array<Actor> LastDamagedActors;
     Array<Actor> LastPlayerDamageOwners;
@@ -658,7 +658,7 @@ class CaelumDebugOverlay : EventHandler
     // OnRegister runs once when GZDoom registers this event handler.
     override void OnRegister()
     {
-        DebugFont = Font.GetFont("SmallFont");
+        DebugFont = Font.GetFont("CaelumMono");
     }
 
     // Confirmed enemy kills reward the player responsible. An allied death

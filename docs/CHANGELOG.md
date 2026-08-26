@@ -1,5 +1,58 @@
 # Changelog
 
+## 4.28.0as — Corrected room entrances and baseline-safe typography
+
+- Closed the erroneous exterior opening placed on the same axis as the north-central dividing wall.
+- Restored the two original 64-MU exterior doorways, one per room, and added one lateral sliding leaf to each.
+- Preserved the separate internal 64-MU door in the midpoint wall; the pair now has two exterior entrances and one internal connection.
+- Regenerated every Caelum glyph on a fixed-height transparent cell with a shared typographic baseline instead of top-aligning tightly cropped images.
+- Reduced classic HUD font height from 18 to 10 pixels and assigned `CaelumMono` explicitly to the gameplay HUD and debug overlay.
+- Added the GZDoom 4.14.2 modern aliases `NewSmallFont`, `NewConsoleFont`, `AlternativeSmallFont` and `AlternativeBigFont`, allowing menus and the modern console to use the supplied family.
+
+## 4.28.0ar — Contiguous north-central room pair and global typography
+
+- Rejected the 4.28.0aq central-room interpretation: the two rooms may not be joined by a third corridor-shaped space.
+- Rebuilt only the north-central pair as a single 336×336 MU exterior volume divided into two equal 168×336 MU rooms.
+- Added one finite internal dividing wall with a single 64-MU lateral door; the former narrow connector no longer exists as a room or passage.
+- Kept the south-central and lateral rooms neutral for the next two-room validation patches.
+- Integrated the supplied Unicode bitmap font family globally: `BigFont`, `SmallFont`, `ConsoleFont`, `IndexFont`, `CaelumDisplay`, `CaelumText`, `CaelumSmall` and `CaelumMono`.
+- Added the supplied typography guide and the bundled DejaVu copyright/license notice.
+- Recorded a successful full MAP02 stress test: every actor group converged and fought in the center, rats were killed through impacts, and no freeze occurred.
+
+## 4.28.0aq — Central first-floor repair, authored music and isolated actor diagnostics
+
+- Restored the native 3D floor, roof and wall controls for the four central MAP01 first-floor rooms, including the two missing 64×64 floor links; no finite actor-wall grid was reintroduced.
+- Assigned `01` to the title screen and MAP01, and `02` to MAP02. Both files identify `marjaja197` as artist in their embedded metadata and carry the title `The Argentine Omen`.
+- Marked all MAP02 test actors as ambush/deaf so a remote pistol shot cannot wake every room through the shared sound region before its individual test begins.
+- Added a ten-second lifetime to NPC homing elemental projectiles. Previously their `Spawn` state looped indefinitely, allowing lost projectiles to accumulate after mass awakening.
+- Preserved the seven isolated populations of twenty actors each and made no change to Impact Physics collision formulas or the current one-reference contact latch.
+
+## 4.28.0ap — Restored rat test room and official title screen
+
+- Restored twenty Giant Rats in a seventh isolated MAP02 room reached through its own sight-breaking zigzag corridor.
+- Preserved the six 20-actor rooms from 4.28.0ao; MAP02 now contains 140 test actors plus the player start.
+- Added the author-supplied 1920×1080 Caelum Argenteum image as the explicit `TITLEPIC` presentation screen.
+- Recorded the strongest current freeze hypothesis: the one-reference contact latch loses pair state when dense moving bodies repeatedly overwrite both ends, causing unresolved pairs to allocate and resolve again without true separation.
+- Changed no collision or Impact Physics behavior so the isolated rooms remain a controlled reproduction environment for the future multi-contact/island implementation.
+
+## 4.28.0ao — Compartmentalized large-scale MAP02
+
+- Superseded the unapplied 4.28.0an package and restored the Windows-safe source order under `src/graphics/caelum/textures/sewer`; no `src/textures` directory is created.
+- Expanded MAP02 into a large connected test field with a central safe start and six distant rooms reached through sight-breaking dogleg corridors.
+- Removed every Giant Rat from MAP02.
+- Added twenty Training Dummies, twenty Rulo, twenty Argento, twenty Caella, twenty Ronnie and twenty Bulls: 120 test actors plus one player start.
+- Confirmed geometrically that every actor starts on valid floor and that no room has direct line of sight to the player start.
+- Connected MAP01's existing Exit to MAP02 through MAPINFO while preserving MAP01.wad byte-for-byte.
+- Kept the native `CAF*` and `STF*` status-face lumps in the graphics namespace; their location cannot register them as equipment, so the reported face/equipment symptom remains a separate diagnostic item.
+
+## 4.28.0am — Separate architecture and actor test maps
+
+- Reserved MAP01 exclusively for mansion architecture and preserved its validated 4.28.0al actor-free state byte-for-byte.
+- Added MAP02 as a single-sector flat actor test arena without 3D floors, doors, stations, pickups, finite panels or mansion geometry.
+- Placed one player start, four Training Dummies, Rulo, Argento, Caella, Ronnie, one Bull and twenty active Giant Rats in separated test zones.
+- Registered descriptive MAP01 and MAP02 names in MAPINFO; both remain directly accessible through the console.
+- Established that architecture and actor systems must pass independent validation before they are recombined.
+
 ## 4.28.0al — Actor-free MAP01 architecture diagnostic
 
 - Removed every MAP01 combatant and character: twenty Giant Rats, the Bull, Rulo, Argento, Caella, Ronnie and four Training Dummies.
