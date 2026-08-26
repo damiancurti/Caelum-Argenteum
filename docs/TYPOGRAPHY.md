@@ -36,4 +36,4 @@ Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y
 
 ## Estado
 
-La revisión V4.28.0av conserva los enlaces de `FONTDEFS`, pero elimina la redefinición destructiva de `MainMenu`: el logo se sustituye mediante `M_DOOM` y las opciones siguen perteneciendo al menú nativo. Las familias de lectura y consola aumentan un punto y reciben contorno oscuro; `BigFont` y `AlternativeBigFont` bajan de 15 a 12 puntos para las pantallas de intermisión. Debe verificarse en GZDoom 4.14.2 dentro del HUD, creación de personaje, menú principal, todas las configuraciones, consola y fin de mapa.
+La revisión V4.28.0aw mantiene tamaños y contraste de V4.28.0av, pero reduce el kerning global de `-1` a `-2`. El ancho de los espacios no cambia, de modo que se acorta la separación entre letras sin confundir los límites entre palabras. La intermisión heredada de Doom queda desactivada provisionalmente mediante MAPINFO.

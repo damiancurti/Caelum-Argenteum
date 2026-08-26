@@ -57,7 +57,12 @@ class CaelumFiniteWallBackPanel : Actor
             return;
         }
 
-        SetOrigin(master.Pos, true);
+        // Evita que ambas caras queden coplanares en el búfer de profundidad.
+        // El desplazamiento es sólo visual y no añade nueva colisión.
+        vector3 backPos = master.Pos;
+        backPos.X += 0.25;
+        backPos.Y += 0.25;
+        SetOrigin(backPos, true);
         Angle = master.Angle + 180.0;
         Scale.X = master.Scale.X;
         Scale.Y = master.Scale.Y;
@@ -91,7 +96,10 @@ class CaelumFiniteWallPanel : Actor
         int panelWidth = args[1] > 0 ? args[1] : 64;
         Scale.X = panelWidth / 128.0;
 
-        Actor backPanel = Spawn("CaelumFiniteWallBackPanel", Pos);
+        vector3 backPos = Pos;
+        backPos.X += 0.25;
+        backPos.Y += 0.25;
+        Actor backPanel = Spawn("CaelumFiniteWallBackPanel", backPos);
         if (backPanel != null)
         {
             backPanel.master = self;

@@ -20,6 +20,9 @@ map MAP01 "Mansión — prueba arquitectónica"
 {
     music = "CA_MUS01"
 
+    // Transición provisional directa: las estadísticas Doom no se muestran.
+    nointermission
+
     // El Exit existente conduce al campo independiente de actores.
     next = "MAP02"
 }

@@ -1,5 +1,25 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Direct transition and 3,750-actor stress step 4.28.0aw
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 now uses `nointermission`, bypassing Doom's inherited completion statistics and moving directly to MAP02. This is provisional: a future Caelum intermission may report project-specific information such as elapsed time, exploration, objectives, casualties and resource use.
+
+Typography keeps the validated size and contrast from 4.28.0av, but all letter pairs use kerning `-2` instead of `-1`; `SpaceWidth` remains unchanged so word separation stays visibly greater than letter separation. The native main menu remains intact and its title uses the higher-resolution `CAMLOGO` through `hires/M_DOOM.png`, retaining the original 132×65 logical footprint so it cannot overlap the options.
+
+The central-room reverse wall face no longer occupies exactly the same rendering plane as its forward face. It is offset by 0.25 MU in X and Y, which is visually negligible but prevents coplanar depth rejection. Collision remains exclusively on the master panel and its blockers.
+
+MAP02 preserves its entire enclosure and reduces each population exactly by half: 250 Rulo, 250 Caella, 250 Ronnie, 250 Argento, 250 Bulls and 2,500 Giant Rats. The result contains 3,750 stress actors plus the player start.
+
+Manual validation:
+
+1. Confirm MAP01 Exit reaches MAP02 without showing Doom statistics.
+2. Check that letters are tighter while spaces between words remain clear.
+3. Inspect every central finite wall from both sides and confirm one collision surface.
+4. Verify the larger menu logo does not overlap selectable items.
+5. Wake all 3,750 MAP02 actors and record whether the engine freezes or remains responsive.
+
 ## Native-menu recovery and legibility pass 4.28.0av
 
 **Implemented — pending manual GZDoom 4.14.2 validation**

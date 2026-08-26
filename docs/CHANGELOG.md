@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.28.0aw — Direct transition, tighter type and 3,750-actor limit search
+
+- Disabled MAP01's inherited Doom intermission; Exit now transitions directly to MAP02.
+- Tightened every Caelum bitmap family from kerning `-1` to `-2` while preserving word-space widths.
+- Separated the reverse visual face of finite first-floor walls by 0.25 MU on each horizontal axis, preventing coplanar depth rejection without adding collision.
+- Added the existing 210×103 `CAMLOGO` project resource as a high-resolution `M_DOOM` replacement, preserving the menu's 132×65 logical layout.
+- Preserved MAP02's complete 16,384×16,384 MU room and reduced its population from 7,500 to 3,750 actors: 250 of each NPC and Bull plus 2,500 Giant Rats.
+- Made no change to push/contact-island physics and did not update the private/personal design document.
+
 ## 4.28.0av — Restored native menus and contrast-safe typography
 
 - Removed the empty `MainMenu` override introduced in 4.28.0au; it replaced the native menu without declaring any selectable items.
