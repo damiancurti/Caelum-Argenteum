@@ -28,7 +28,7 @@ class CaelumCaella : CaelumCombatActor
     States
     {
     Spawn:
-        CAEL A 10 A_Look;
+        CAEL A 10 A_CaelumBudgetedLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");

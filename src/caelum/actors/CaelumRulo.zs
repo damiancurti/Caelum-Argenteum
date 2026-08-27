@@ -33,7 +33,7 @@ class CaelumRulo : CaelumCombatActor
     States
     {
     Spawn:
-        RULO A 10 A_Look;
+        RULO A 10 A_CaelumBudgetedLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");

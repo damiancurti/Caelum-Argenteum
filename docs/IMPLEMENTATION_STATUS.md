@@ -1,5 +1,61 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Cached perception scheduling, MAP01 doors and UI foundation 4.29.0i
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The stable V4.29.0h run shows that chase/attack phase separation can keep the
+1,875 active actors responsive. V4.29.0i moves the remaining dormant cost—the
+native `A_Look` scan—behind the same seven-phase schedule. Each main-field
+actor captures the three diagnostic CVars and both deterministic phase keys
+once at map load. The hot Look, Chase and attack paths therefore contain no
+CVar lookup and no coordinate hash. Normal maps and the nine isolated MAP02
+rooms execute their original native AI timing.
+
+The monitor now separates Look attempts, updates and deferrals from Chase. At
+the default value, a ten-tic Spawn loop admitted once per seven phases yields
+one sight check per actor approximately every 70 tics. This is a diagnostic
+foundation for the later stealth/group scheduler, not its final alert model:
+formations, shared sightings, proximity wake-up and fair group attack tokens
+remain future authored behavior.
+
+MAP01 retains the author-accepted central first-floor shells byte-for-byte and
+adds only four thin native divider targets around the two existing central
+doors. The targets reuse sector 511 and its already working 3D-floor controls.
+Four rear-room leaves form two additional double doors without changing room
+footprints. Current structure is 398 vertices, 489 linedefs, 948 sidedefs, 99
+sectors and 210 Things.
+
+HUD/UI-01 supplies 94 independent runtime PNGs. `CaelumStatusBar` removes the
+Doom face/status bar, while the permanent overlay keeps real resource values
+and applies modular frames/icons. Tab opens a local six-section Journal and M
+preserves the native automap. Inventory ownership and quantities are not
+copied into UI storage. Only the existing active weapon/load and twelve
+attributes are exposed now; the four not-yet-authored sections state that they
+are pending.
+
+### V4.29.0i runtime procedure
+
+Set the diagnostic values before loading MAP02 because actors cache them in
+`PostBeginPlay`:
+
+```text
+logfile ca_physics_4_29_0i.log
+ca_diag_mass_attacks true
+ca_diag_mass_ai_stagger 7
+ca_diag_mass_attack_stagger 64
+map map02
+sv_cheats 1
+warp 16368 -16 0
+```
+
+Run the field for at least three minutes. Do not lower the stagger values in
+this candidate. Confirm that `[CA-AI] ... look` and `... chase` each report
+attempted/executed/deferred counts, no custom contact graph grows, and input
+remains responsive. Separately load MAP01 and validate both new divider walls
+and both rear double doors from above, below and on both sides.
+
+
 ## Canonical MAP01 sector ownership and budgeted mass AI 4.29.0h
 
 **Implemented and structurally validated; manual GZDoom acceptance pending**

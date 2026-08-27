@@ -81,6 +81,9 @@ class CaelumCombatActor : Actor
     int ImpactDiagnosticChaseAttempts;
     int ImpactDiagnosticChaseUpdates;
     int ImpactDiagnosticChaseDeferred;
+    int ImpactDiagnosticLookAttempts;
+    int ImpactDiagnosticLookUpdates;
+    int ImpactDiagnosticLookDeferred;
     int ImpactDiagnosticProjectilesSpawned;
     int ImpactDiagnosticProjectileSpawnFailures;
     int ImpactDiagnosticProjectileImpacts;
@@ -91,6 +94,16 @@ class CaelumCombatActor : Actor
     ImpactResult ImpactResultScratch;
     double LastImpactRawDeltaSpeed;
     double LastImpactBiologicalAbsorptionSpeed;
+
+    // El campo masivo fija su presupuesto una sola vez al aparecer. Esto evita
+    // buscar CVars y recalcular hashes miles de veces por segundo dentro de
+    // A_Look/A_Chase, pero conserva fases deterministas y reproducibles.
+    bool CaelumMassAIScheduleActive;
+    bool CaelumMassAttacksEnabled;
+    int CaelumMassLookChaseInterval;
+    int CaelumMassAttackInterval;
+    int CaelumMassLookChasePhaseKey;
+    int CaelumMassAttackPhaseKey;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -202,7 +215,41 @@ class CaelumCombatActor : Actor
             Species = 'CaelumMassDiagnosticCrowd';
             bTHRUSPECIES = true;
             bTHRUACTORS = true;
+            InitializeCaelumMassAISchedule();
         }
+    }
+
+    void InitializeCaelumMassAISchedule()
+    {
+        CaelumMassAIScheduleActive = true;
+
+        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
+        CaelumMassAttacksEnabled = attackSetting == null
+            || attackSetting.GetBool();
+
+        CVar chaseSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
+        CaelumMassLookChaseInterval = chaseSetting == null
+            ? 7
+            : Clamp(chaseSetting.GetInt(), 1, 31);
+
+        CVar attackStaggerSetting = CVar.GetCVar(
+            "ca_diag_mass_attack_stagger"
+        );
+        CaelumMassAttackInterval = attackStaggerSetting == null
+            ? 64
+            : Clamp(attackStaggerSetting.GetInt(), 1, 64);
+
+        // SpawnPoint permanece estable aunque A_Chase mueva al actor. Dividir
+        // por la separación de la matriz evita que todas las coordenadas
+        // múltiplas de 96 caigan en la misma fase.
+        int gridX = int(SpawnPoint.X / 96.0);
+        int gridY = int(SpawnPoint.Y / 96.0);
+        CaelumMassLookChasePhaseKey = Abs(
+            gridX * 19 + gridY * 23 + int(Mass) * 11
+        );
+        CaelumMassAttackPhaseKey = Abs(
+            gridX * 31 + gridY * 17 + int(Mass) * 13
+        );
     }
 
     bool IsCaelumMassDiagnosticActor()
@@ -220,29 +267,19 @@ class CaelumCombatActor : Actor
     {
         if (level.MapName != "MAP02") { return true; }
         ImpactDiagnosticAttackAttempts++;
-        if (!IsCaelumMassDiagnosticActor()) { return true; }
+        if (!CaelumMassAIScheduleActive) { return true; }
 
-        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
-        if (attackSetting != null && !attackSetting.GetBool())
+        if (!CaelumMassAttacksEnabled)
         {
             ImpactDiagnosticSuppressedAttacks++;
             PendingCombatCriticalDelivery = false;
             return false;
         }
 
-        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_attack_stagger");
-        int stagger = staggerSetting == null
-            ? 64
-            : Clamp(staggerSetting.GetInt(), 1, 64);
+        int stagger = CaelumMassAttackInterval;
         if (stagger > 1)
         {
-            // SpawnPoint permanece estable aunque A_Chase mueva al actor. La
-            // división por la separación de la matriz evita que todas las
-            // coordenadas múltiplas de 96 caigan en la misma fase.
-            int gridX = int(SpawnPoint.X / 96.0);
-            int gridY = int(SpawnPoint.Y / 96.0);
-            int phase = Abs(gridX * 31 + gridY * 17 + int(Mass) * 13)
-                % stagger;
+            int phase = CaelumMassAttackPhaseKey % stagger;
             if (level.time % stagger != phase)
             {
                 ImpactDiagnosticSuppressedAttacks++;
@@ -256,21 +293,15 @@ class CaelumCombatActor : Actor
 
     bool BeginCaelumDiagnosticChase()
     {
-        if (!IsCaelumMassDiagnosticActor()) { return true; }
+        if (!CaelumMassAIScheduleActive) { return true; }
         ImpactDiagnosticChaseAttempts++;
 
-        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
-        int stagger = staggerSetting == null
-            ? 7
-            : Clamp(staggerSetting.GetInt(), 1, 31);
+        int stagger = CaelumMassLookChaseInterval;
         if (stagger > 1)
         {
             // Siete es coprimo con los ciclos actuales de 8 y 10 tics. Así
             // ninguna familia queda fijada para siempre a una fase inválida.
-            int gridX = int(SpawnPoint.X / 96.0);
-            int gridY = int(SpawnPoint.Y / 96.0);
-            int phase = Abs(gridX * 19 + gridY * 23 + int(Mass) * 11)
-                % stagger;
+            int phase = CaelumMassLookChasePhaseKey % stagger;
             if (level.time % stagger != phase)
             {
                 ImpactDiagnosticChaseDeferred++;
@@ -279,6 +310,33 @@ class CaelumCombatActor : Actor
         }
         ImpactDiagnosticChaseUpdates++;
         return true;
+    }
+
+    bool BeginCaelumDiagnosticLook()
+    {
+        if (!CaelumMassAIScheduleActive) { return true; }
+        ImpactDiagnosticLookAttempts++;
+
+        int stagger = CaelumMassLookChaseInterval;
+        if (stagger > 1)
+        {
+            int phase = CaelumMassLookChasePhaseKey % stagger;
+            if (level.time % stagger != phase)
+            {
+                ImpactDiagnosticLookDeferred++;
+                return false;
+            }
+        }
+        ImpactDiagnosticLookUpdates++;
+        return true;
+    }
+
+    action void A_CaelumBudgetedLook()
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticLook()) { return; }
+        combatActor.A_Look();
     }
 
     action void A_CaelumBudgetedChase()

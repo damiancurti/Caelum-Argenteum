@@ -1,5 +1,22 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0i — Perception joins the cached mass-AI schedule
+
+The accepted V4.29.0h run no longer froze under the seven-phase Chase and
+64-phase attack diagnostic. V4.29.0i keeps those boundaries and adds dormant
+`A_Look` to the same seven-phase budget. Each mass-field actor captures attack
+enablement, phase intervals and deterministic phase keys once when the map
+loads. This removes repeated CVar lookups and coordinate hashes from Look,
+Chase and attack state actions.
+
+The monitor reports Look and Chase independently. No physics formula, contact
+edge, pressure history or Quintessence-room collision rule changes. The main
+field remains intentionally pass-through so this run measures AI scheduling,
+not a 15,000-body native collision pile. The design can later serve stealth
+and formation coordinators, but shared group perception and group command
+objects are not yet implemented.
+
+
 ## V4.29.0f — Combat-boundary telemetry after contact cleanup
 
 The supplied V4.29.0e runs confirm that raw callbacks scale with the number of

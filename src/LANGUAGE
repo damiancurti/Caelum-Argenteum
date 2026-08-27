@@ -1261,3 +1261,37 @@ CA_PHYSICS_KIND = "Type";
 CA_PHYSICS_DELTA_V = "Delta-v";
 CA_PHYSICS_EQUIV_TICS = "Eq. tics";
 CA_PHYSICS_DAMAGE = "Damage";
+
+[enu default]
+CA_CONTROL_JOURNAL = "Open/close Journal";
+CA_JOURNAL_TITLE = "JOURNAL";
+CA_JOURNAL_INVENTORY = "Inventory";
+CA_JOURNAL_CHARACTER = "Character";
+CA_JOURNAL_WORLD = "World";
+CA_JOURNAL_CRAFTS = "Crafts";
+CA_JOURNAL_QUESTS = "Quests";
+CA_JOURNAL_REPUTATION = "Reputation";
+CA_JOURNAL_INVENTORY_FOUNDATION = "Read-only foundation: the real inventory remains the single source of item ownership and quantity.";
+CA_JOURNAL_WORLD_PENDING = "Date, time, weather and layered map are scheduled for their corresponding world systems.";
+CA_JOURNAL_CRAFTS_PENDING = "Recipe book, crafting and repair will reuse this section as their systems are completed.";
+CA_JOURNAL_QUESTS_PENDING = "Quest data is not implemented yet.";
+CA_JOURNAL_REPUTATION_PENDING = "Reputation and faction data are not implemented yet.";
+CA_JOURNAL_NO_FAKE_DATA = "This section is visible without inventing provisional gameplay data.";
+CA_JOURNAL_NAVIGATION_HELP = "Left/Right: section | Tab/Escape: close | M: automap";
+
+[es]
+CA_CONTROL_JOURNAL = "Abrir/cerrar Diario";
+CA_JOURNAL_TITLE = "DIARIO";
+CA_JOURNAL_INVENTORY = "Inventario";
+CA_JOURNAL_CHARACTER = "Personaje";
+CA_JOURNAL_WORLD = "Mundo";
+CA_JOURNAL_CRAFTS = "Oficios";
+CA_JOURNAL_QUESTS = "Misiones";
+CA_JOURNAL_REPUTATION = "Reputación";
+CA_JOURNAL_INVENTORY_FOUNDATION = "Base de lectura: el inventario real sigue siendo la única fuente de propiedad y cantidad de objetos.";
+CA_JOURNAL_WORLD_PENDING = "Fecha, hora, clima y mapa por plantas se incorporarán con sus sistemas de mundo correspondientes.";
+CA_JOURNAL_CRAFTS_PENDING = "Recetario, fabricación y reparación reutilizarán esta sección a medida que se completen sus sistemas.";
+CA_JOURNAL_QUESTS_PENDING = "Los datos de misiones todavía no están implementados.";
+CA_JOURNAL_REPUTATION_PENDING = "Los datos de reputación y facciones todavía no están implementados.";
+CA_JOURNAL_NO_FAKE_DATA = "La sección ya es visible sin inventar datos provisionales de juego.";
+CA_JOURNAL_NAVIGATION_HELP = "Izquierda/Derecha: sección | Tab/Escape: cerrar | M: automapa";

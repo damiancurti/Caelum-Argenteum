@@ -10,8 +10,12 @@ GameInfo
     // Evita que el ciclo del título vuelva a mostrar los créditos de Doom II.
     CreditPage = "TITLEPIC"
 
+    // Elimina el status bar, rostro y contadores heredados de Doom. La capa
+    // permanente se compone con los recursos propios HUD-01.
+    StatusBarClass = "CaelumStatusBar"
+
     // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumHUDOverlay", "CaelumDebugOverlay"
+    EventHandlers = "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 }
 
 // Los mapas permanecen separados durante la consolidación: MAP01 valida

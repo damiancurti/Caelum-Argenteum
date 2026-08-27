@@ -118,7 +118,7 @@ class CaelumBull : CaelumCombatActor
     States
     {
     Spawn:
-        BULL A 10 A_Look;
+        BULL A 10 A_CaelumBudgetedLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(

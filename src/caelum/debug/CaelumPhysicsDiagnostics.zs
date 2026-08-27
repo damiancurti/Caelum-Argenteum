@@ -164,7 +164,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: ataques true, attack_stagger 64, ai_stagger 7, warp 16368 -16 0."
+            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fijar CVars antes de map map02; warp 16368 -16 0."
         );
     }
 
@@ -196,6 +196,12 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int chaseAttempts = 0;
         int chaseUpdates = 0;
         int chaseDeferred = 0;
+        int lookAttempts = 0;
+        int lookUpdates = 0;
+        int lookDeferred = 0;
+        int scheduledLookChaseInterval = 0;
+        int scheduledAttackInterval = 0;
+        bool scheduledAttacksEnabled = false;
         int projectilesSpawned = 0;
         int projectileSpawnFailures = 0;
         int projectileImpacts = 0;
@@ -298,6 +304,22 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     combatActor.ImpactDiagnosticChaseUpdates;
                 chaseDeferred +=
                     combatActor.ImpactDiagnosticChaseDeferred;
+                lookAttempts +=
+                    combatActor.ImpactDiagnosticLookAttempts;
+                lookUpdates +=
+                    combatActor.ImpactDiagnosticLookUpdates;
+                lookDeferred +=
+                    combatActor.ImpactDiagnosticLookDeferred;
+                if (combatActor.CaelumMassAIScheduleActive
+                    && scheduledLookChaseInterval == 0)
+                {
+                    scheduledLookChaseInterval =
+                        combatActor.CaelumMassLookChaseInterval;
+                    scheduledAttackInterval =
+                        combatActor.CaelumMassAttackInterval;
+                    scheduledAttacksEnabled =
+                        combatActor.CaelumMassAttacksEnabled;
+                }
                 projectilesSpawned +=
                     combatActor.ImpactDiagnosticProjectilesSpawned;
                 projectileSpawnFailures +=
@@ -321,6 +343,9 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 combatActor.ImpactDiagnosticChaseAttempts = 0;
                 combatActor.ImpactDiagnosticChaseUpdates = 0;
                 combatActor.ImpactDiagnosticChaseDeferred = 0;
+                combatActor.ImpactDiagnosticLookAttempts = 0;
+                combatActor.ImpactDiagnosticLookUpdates = 0;
+                combatActor.ImpactDiagnosticLookDeferred = 0;
                 combatActor.ImpactDiagnosticProjectilesSpawned = 0;
                 combatActor.ImpactDiagnosticProjectileSpawnFailures = 0;
                 combatActor.ImpactDiagnosticProjectileImpacts = 0;
@@ -374,10 +399,16 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             targetedRonnies, activeRonnies,
             targetedBulls, activeBulls
         );
-        CVar aiStaggerSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
+        Console.Printf(
+            "[CA-AI] escalonado=%d look intentos/s=%d ejecutados/s=%d diferidos/s=%d",
+            scheduledLookChaseInterval,
+            lookAttempts,
+            lookUpdates,
+            lookDeferred
+        );
         Console.Printf(
             "[CA-AI] escalonado=%d chase intentos/s=%d ejecutados/s=%d diferidos/s=%d",
-            aiStaggerSetting == null ? 7 : aiStaggerSetting.GetInt(),
+            scheduledLookChaseInterval,
             chaseAttempts,
             chaseUpdates,
             chaseDeferred
@@ -397,12 +428,10 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             removedReferences,
             channelAffectedActors
         );
-        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
-        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_attack_stagger");
         Console.Printf(
             "[CA-COMBAT] ataques_masivos=%d escalonado=%d intentos/s=%d anulados/s=%d diferidos/s=%d fuego_amigo=%d proj +%d impacto=%d vencido=%d destruido=%d fallo=%d",
-            attackSetting == null || attackSetting.GetBool(),
-            staggerSetting == null ? 64 : staggerSetting.GetInt(),
+            scheduledAttacksEnabled,
+            scheduledAttackInterval,
             attackAttempts,
             suppressedAttacks,
             deferredAttacks,

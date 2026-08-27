@@ -1,5 +1,23 @@
 # Asset register
 
+## V4.29.0i HUD/UI-01 runtime kit
+
+The author supplied `caelum_argenteum_hud_ui_01` as the first permanent visual
+system for the HUD and Journal. The project integrates the 94 individual PNG
+exports, not the mockup composites or layered masters. The pack records Damian
+Curti's art direction, project-directed OpenAI Codex/ImageGen assistance and a
+creation date of 2026-08-26. It declares no Doom, GZDoom or third-party art.
+Rights remain reserved under `LicenseRef-Caelum-Argenteum-Project` until the
+project selects its public license.
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| HUD modular components | `graphics/caelum/ui/hud/components/*.png` (17) | Damian Curti / project-directed generation | Author-supplied HUD/UI-01 pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Three-piece bars, 9-slice panels, frames, selector and tintable vignette. |
+| HUD resource/combat/status icons | `graphics/caelum/ui/hud/icons/*.png` (27) | Damian Curti / project-directed generation | Author-supplied HUD/UI-01 pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Nine resources, five combat cues, five reticles and eight conditions. |
+| Journal controls | `graphics/caelum/ui/journal/components/*.png` (14) | Damian Curti / project-directed generation | Author-supplied HUD/UI-01 pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Buttons, arrows, scroll controls, cursor and state marks. |
+| Journal navigation/action icons | `graphics/caelum/ui/journal/icons/*.png` (36) | Damian Curti / project-directed generation | Author-supplied HUD/UI-01 pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Navigation, categories, equipment slots and actions. |
+
+
 ## 4.28.0af compatibility note
 
 V4.28.0af changes ZScript invocation and documentation only. It introduces no artwork or external release dependency beyond the assets registered for V4.28.0ae.

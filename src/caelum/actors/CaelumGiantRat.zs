@@ -36,7 +36,7 @@ class CaelumGiantRat : CaelumCombatActor
     States
     {
     Spawn:
-        RATG A 10 A_Look;
+        RATG A 10 A_CaelumBudgetedLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(

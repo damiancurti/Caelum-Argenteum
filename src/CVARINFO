@@ -2,14 +2,19 @@
 // "user" means that each local GZDoom profile stores its own value.
 user bool ca_debug_attributes = false;
 
-// Interruptor exclusivo del campo masivo de MAP02. Permite comparar la misma
-// IA con y sin ejecución de ataques sin duplicar actores ni cambiar el mapa.
+// Estado exclusivamente local del Diario. La interfaz puede modificar estos
+// CVars desde ámbito UI sin convertir navegación visual en estado de juego.
+user bool ca_journal_open = false;
+user int ca_journal_page = 0;
+
+// Interruptor exclusivo del campo masivo de MAP02. Se captura cuando aparece
+// cada actor; para una prueba comparable debe fijarse antes de `map map02`.
 server bool ca_diag_mass_attacks = true;
 
 // Divide de forma determinista los intentos de ataque del campo masivo entre
-// varios tics. 1 reproduce la frecuencia original; 64 evita que centenares de
-// ratas entreguen su primer ataque cuerpo a cuerpo dentro del mismo tic.
+// varios tics. Se captura al cargar el mapa para eliminar búsquedas de CVar del
+// camino caliente de combate.
 server int ca_diag_mass_attack_stagger = 64;
-// Presupuesta sólo las llamadas nativas de persecución del campo masivo.
-// Siete es coprimo con los ciclos de animación de las seis familias actuales.
+// Presupuesta percepción y persecución del campo masivo. Siete es coprimo con
+// los ciclos de animación de las seis familias actuales y se captura al cargar.
 server int ca_diag_mass_ai_stagger = 7;

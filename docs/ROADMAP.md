@@ -139,6 +139,16 @@ explosive projectiles remain excluded from mass NPCs. This robustness and
 architecture gate does not count as crafting completion; the next AI stage is
 authorized only after the enabled/disabled 1,875 comparison completes.
 
+V4.29.0i extends the accepted seven-phase mass-AI budget to dormant perception
+and caches all diagnostic scheduling data once per actor. It also begins the
+permanent interface as a transverse V4.29 track: HUD-01 replaces the inherited
+Doom status bar/face, Tab opens the shared Journal shell and M retains the
+native automap. Inventory and Character expose only existing authoritative
+data; World, Crafts, Quests and Reputation receive their final navigation
+slots but no fabricated state. MAP01 continues independently with native
+divider geometry and rear first-floor doors. These robustness, architecture
+and UI foundations do not complete the crafting requirements below.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

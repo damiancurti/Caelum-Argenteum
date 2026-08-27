@@ -260,8 +260,8 @@ class CaelumHUDOverlay : EventHandler
         return Font.CR_LIGHTBLUE;
     }
 
-    // Return an RGB color for the filled part of the bar. Screen.Dim draws a
-    // solid rectangle, so no external image or copyrighted HUD art is needed.
+    // Devuelve el color RGB del relleno. Los valores siguen dibujándose por
+    // código y el paquete HUD-01 aporta solamente el marco modular exterior.
     ui int GetAirBarColor(int airState)
     {
         if (airState == CaelumConstants.AIR_STATE_BREATHLESS)
@@ -377,6 +377,69 @@ class CaelumHUDOverlay : EventHandler
             return BlendRGB(0xC43B3B, 0xD49A28, (ratio - 0.10) / 0.40);
         }
         return BlendRGB(0xD49A28, 0x3FAE55, (ratio - 0.50) / 0.50);
+    }
+
+    // Dibuja un recurso propio dentro del mismo lienzo virtual 640x360 que el
+    // texto. Los fallos de arte son degradables: un PNG ausente no afecta la
+    // simulación ni impide que continúen visibles los valores numéricos.
+    ui void DrawHUDTexture(String path, double x, double y, double width,
+        double height, double alpha = 1.0)
+    {
+        TextureID texture = TexMan.CheckForTexture(path, TexMan.Type_MiscPatch);
+        if (!texture.IsValid()) { return; }
+        Screen.DrawTexture(
+            texture, true, x, y,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_DESTWIDTHF, width,
+            DTA_DESTHEIGHTF, height,
+            DTA_ALPHA, alpha,
+            DTA_KEEPRATIO, true
+        );
+    }
+
+    // Los extremos nunca se deforman; solamente se estira la pieza central.
+    // El relleno continúa siendo un rectángulo tintado y queda por debajo.
+    ui void DrawHUDBarFrame(double barX, double barY, double barWidth)
+    {
+        String root = "graphics/caelum/ui/hud/components/";
+        double endWidth = 16.0;
+        double frameHeight = 16.0;
+        double frameX = barX - endWidth * 0.5;
+        double frameY = barY - 4.5;
+        double centerWidth = Max(1.0, barWidth - endWidth);
+        DrawHUDTexture(root .. "ca_hud_bar_left.png", frameX, frameY,
+            endWidth, frameHeight);
+        DrawHUDTexture(root .. "ca_hud_bar_center.png", frameX + endWidth,
+            frameY, centerWidth, frameHeight);
+        DrawHUDTexture(root .. "ca_hud_bar_right.png",
+            frameX + endWidth + centerWidth, frameY, endWidth, frameHeight);
+    }
+
+    // Aplica el vocabulario visual del paquete sin reservar espacio para un
+    // retrato. Cada silueta continúa siendo legible aun sin depender del color.
+    ui void DrawResourceSkin()
+    {
+        String root = "graphics/caelum/ui/hud/icons/";
+        DrawHUDBarFrame(20.0, 230.0, 180.0);
+        DrawHUDBarFrame(20.0, 254.0, 180.0);
+        DrawHUDBarFrame(20.0, 278.0, 180.0);
+        DrawHUDBarFrame(20.0, 302.0, 180.0);
+        DrawHUDBarFrame(20.0, 326.0, 180.0);
+        DrawHUDBarFrame(440.0, 254.0, 180.0);
+        DrawHUDBarFrame(440.0, 278.0, 180.0);
+        DrawHUDBarFrame(440.0, 302.0, 180.0);
+        DrawHUDBarFrame(440.0, 326.0, 180.0);
+
+        DrawHUDTexture(root .. "ca_hud_icon_lucidity.png", 2.0, 225.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_adrenaline.png", 2.0, 249.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_anima.png", 2.0, 273.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_health.png", 2.0, 297.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_air.png", 2.0, 321.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_load.png", 422.0, 249.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_hunger.png", 422.0, 273.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_thirst.png", 422.0, 297.0, 18.0, 18.0);
+        DrawHUDTexture(root .. "ca_hud_icon_sleep.png", 422.0, 321.0, 18.0, 18.0);
     }
 
     // Screen.Dim uses real screen pixels. This conversion reproduces the same
@@ -817,6 +880,7 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
+        DrawResourceSkin();
 
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);

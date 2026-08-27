@@ -84,6 +84,7 @@ alias ca_debug_shield_hit "netevent ca_debug_shield_hit"
 alias ca_debug_shield_repair "netevent ca_debug_shield_repair"
 alias ca_debug_test_silver_lock "netevent ca_debug_test_silver_lock"
 alias ca_debug_audit_crafting_catalogue "netevent ca_debug_audit_crafting_catalogue"
+alias ca_journal_toggle "event ca_journal_toggle"
 
 addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
 addmenukey "$CA_CONTROL_NEXT_FIRST_CLASS" ca_next_first_class
@@ -105,6 +106,7 @@ addmenukey "$CA_CONTROL_CRAFTING_TOGGLE" ca_crafting_toggle
 addmenukey "$CA_CONTROL_INVENTORY_PREVIOUS" invprev
 addmenukey "$CA_CONTROL_INVENTORY_NEXT" invnext
 addmenukey "$CA_CONTROL_INVENTORY_USE" useinventory
+addmenukey "$CA_CONTROL_JOURNAL" ca_journal_toggle
 addmenukey "$CA_CONTROL_DEBUG_SPAWN_EQUIPMENT" ca_debug_spawn_equipment
 addmenukey "$CA_CONTROL_DEBUG_ADD_WEIGHT" ca_debug_add_weight
 addmenukey "$CA_CONTROL_DEBUG_RESET_WEIGHT" ca_debug_reset_weight
@@ -153,4 +155,7 @@ addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
 addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
 
-// No default keys are imposed. Assign them under Customize Controls.
+// Tab abre el Diario definitivo. El automapa nativo se conserva en M para
+// exteriores y depuración; ambas acciones siguen apareciendo en Controles.
+defaultbind Tab "ca_journal_toggle"
+defaultbind M "togglemap"

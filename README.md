@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0h build continues the authorized V4.29 line with controlled mass-combat staging before crafting content changes. Seal mechanics remain author-validated and closed. MAP02 keeps the exact 1,875 active AI population inside its 15,000-body main field, uses bounded straight projectiles, prevents diagnostic crowd collision and friendly fire, budgets native chase updates and distributes attacks over deterministic phases. Its separate Quintessence rooms retain full physical collisions. In MAP01, the two minimal central shells now use canonical clockwise contours so their front sectors occupy the actual room/wall polygons and receive the shared 510/511 3D-floor controls. Doors and dividers remain deferred until those shells pass visual and traversal acceptance. The complete V4.27 input matrix remains explicitly deferred until the crafting system is complete.
+The current V4.29.0i build continues the authorized V4.29 line with controlled mass-combat scheduling and the first definitive UI foundation. MAP02 keeps the exact 1,875 active AI population inside its 15,000-body main field, uses bounded straight projectiles, prevents diagnostic crowd collision and friendly fire, and now budgets both native perception and chase through cached deterministic phases. MAP01 preserves the accepted central shells, adds native wall segments around their middle doors and adds four sliding leaves to the rear first-floor rooms. The inherited Doom status bar and face are removed; HUD-01 resource frames/icons and a read-only six-section Journal begin the permanent interface without duplicating gameplay state. Seal mechanics remain author-validated and closed, and the complete V4.27 input matrix remains deferred until the crafting system is complete.
 
 ### Building the development PK3
 
@@ -55,14 +55,14 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Physical crafting-station interaction core: Forge and Bow Workshop filter and execute their currently supported physical recipes through the shared crafting transaction.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
-- Custom player HUD face replacing the Doomguy face states in the current development HUD. The HUD also uses the equipped weapon art as a provisional first-person weapon representation, so the permanent top-left active-weapon label is no longer required.
+- Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The separate Journal foundation uses the same modular visual language and keeps real gameplay objects as its only data source.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
 ### Implemented foundation — still expanding
 
 - Crafting content and material catalogue: physical weapons, armor, essence weapons, jewelry, seals, and the connected station network are implemented foundations. Recipe coverage and final material balancing remain active work. The carbine belongs to the Ranged Weapons Workshop together with bows and crossbows.
 - Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
-- Inventory presentation: functional development UI exists, but final UX and art are not complete.
+- Inventory presentation: the permanent Journal shell, navigation, read-only Inventory and Character pages are integrated with original UI art; selection, equipment actions and the later world/crafting/quest/reputation data remain incomplete.
 - Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.
 - Persistence: character/equipment persistence foundations exist, but the complete final save/profile/world-state design is not yet finished.
 - Movable world props: a strength-gated base actor is implemented; individual rocks, fallen trees, furniture, etc. still require their final assets, collision dimensions, masses, and designer-defined physical-power requirements.

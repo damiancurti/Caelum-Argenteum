@@ -1,5 +1,34 @@
 # Changelog
 
+## 4.29.0i — Cached perception scheduling and permanent UI foundation
+
+- Extended the MAP02 mass-field budget from `A_Chase` to `A_Look`. Perception,
+  chase and attack settings are captured once per actor at map load, and both
+  AI phase keys are derived once from stable spawn coordinates instead of
+  performing CVar lookups and hash work in the hot state-action path.
+- Added separate attempted/executed/deferred perception telemetry. The default
+  seven-phase budget lets dormant actors perform a native sight check roughly
+  once every two seconds while preserving ordinary timing outside the mass
+  diagnostic field.
+- Preserved pass-through, bounded straight projectiles, friendly-fire
+  prevention and the 64-phase diagnostic attack gate from 4.29.0h. This patch
+  does not claim a final formation controller or stealth scheduler.
+- Added four native first-floor divider sectors around the accepted middle
+  doors of MAP01. They reuse the existing tag-511 wall target and the shared
+  3D-floor controls instead of overlaying finite actor panels.
+- Added two sliding door pairs to the rear first-floor rooms without moving or
+  enlarging those rooms. MAP01 now contains 398 vertices, 489 linedefs, 948
+  sidedefs, 99 sectors and 210 Things.
+- Integrated the 94-file HUD/UI-01 runtime pack: modular bar and panel pieces,
+  resource/combat/status icons, reticles, Journal controls, navigation,
+  categories, equipment slots and action icons.
+- Removed the inherited Doom status bar and face through a custom
+  `BaseStatusBar`; applied HUD-01 frames/icons to the existing live resource
+  display and added the first six-section Journal on Tab. Inventory and
+  Character read real state; unimplemented pages are visible but never invent
+  placeholder world, quest or reputation data. The native automap moves to M.
+
+
 ## 4.29.0h — Canonical room sectors and budgeted mass AI
 
 - Corrected the geometric sidedef ownership of all eight edges in each new
