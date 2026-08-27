@@ -1,5 +1,74 @@
 # Changelog
 
+## 4.29.0h — Canonical room sectors and budgeted mass AI
+
+- Corrected the geometric sidedef ownership of all eight edges in each new
+  MAP01 central module. Twelve edges required reversal; sector 510 now occupies
+  the actual 336×336 interior, sector 511 occupies the wall ring and the
+  existing 128–136/256–264 controls remain the only slabs.
+- Kept MAP01 at 382 vertices, 473 linedefs, 916 sidedefs and 99 sectors. No
+  extra plane, patch sector, door or divider was added.
+- Recorded the author's stagger-3 freeze with 958 targets, zero custom physics
+  callbacks and only 16 live projectiles. This excludes contact retention,
+  projectile accumulation and diagnostic infighting as necessary triggers.
+- Added deterministic budgeting to main-field `A_Chase` calls with
+  `ca_diag_mass_ai_stagger 7`, plus executed/deferred chase telemetry.
+- Raised the MAP02-only attack phase count from 3 to 64 so the 634 target-bearing
+  rats cannot all deliver their first melee action within one expensive tic.
+- Main-field actors now pass through every actor rather than forming a native
+  collision ring around the player. Quintaesencia rooms and every normal map
+  retain their authored collision rules.
+
+## 4.29.0g — Clean central-room modules and staggered mass combat
+
+- Removed all 60 lines, 120 sidedefs and three sectors from the superseded
+  MAP01 central-room rebuild instead of applying another surface repair.
+- Rebuilt each central first-floor room as one 336×336-MU interior with one
+  continuous 8-MU wall ring. This candidate deliberately has no divider,
+  threshold or door; those elements remain deferred until the clean shell is
+  accepted from above, below, inside and outside.
+- Reduced MAP01 to 382 vertices, 473 linedefs and 916 sidedefs. No coincident
+  linedefs remain, every line has a valid front side and the shared 510/511
+  3D-floor controls used by the working end rooms remain unchanged.
+- Added deterministic three-tic staggering to main-field attacks in MAP02.
+  `ca_diag_mass_attack_stagger 1` reproduces the original synchronized rate;
+  the default `3` admits one position-derived phase per tic.
+- Assigned the 15,000-body main field one diagnostic species with
+  `THRUSPECIES`, while the separate Quintessence rooms retain full physical
+  collisions. Straight projectiles and melee attacks also suppress friendly
+  damage inside that field, preventing impact-driven infighting cascades.
+- Extended combat telemetry with the stagger value, deferred attempts and
+  prevented friendly-fire events.
+- Added a six-exercise Ultimate Doom Builder guide for UDMF rooms, 3D floors,
+  upper walls, roofs, doors, modular repetition and structural validation.
+
+
+## 4.29.0f — Continuous central slabs and isolated mass-AI combat
+
+- Replaced the separate MAP01 room/threshold 3D-floor targets with one shared
+  tag 510 surface. The three former tag-512 sectors now receive exactly the
+  same lower and upper slabs as the adjoining central rooms, covering the
+  reported interior and exterior bands without another overlapping repair.
+- Removed the redundant lower tag-512 control sector, its four lines/sides and
+  four vertices, cleared the second upper link and removed one inherited empty
+  sector. MAP01 now contains 510 vertices, 517 linedefs, 1,004 sidedefs, 98
+  sectors and 206 Things; no tag or 3D-floor target 512 remains.
+- Registered the mansion wood, ceiling, interior-wall and door resources
+  explicitly as map flats/textures. Their sprite aliases remain available,
+  but 3D floors no longer depend on sprite-namespace lookup for visible planes.
+- Closed MAP02's spawn side from the 1,875-AI field with one native two-sided,
+  sight-blocking monster wall. The population loads unchanged, but starts with
+  zero main-field targets until the player explicitly enters the test.
+- Added `ca_diag_mass_attacks`, a MAP02-only server diagnostic gate. `false`
+  keeps perception/chase active in the main field while suppressing melee,
+  charge and projectile actions; the nine smaller rooms remain unaffected.
+- Added once-per-second attack and projectile telemetry: attempts, suppressed
+  attempts, successful/failed spawns, impacts, range expiry and destruction,
+  plus target/active counts for every main-field actor family.
+- Added an idempotent source-map reconstruction script and validated the
+  resulting PK3, MAP01 and MAP02 with the GZDoom 4.14.2 executable. Visual and
+  traversal acceptance of the rebuilt central slabs remains a manual test.
+
 ## 4.29.0e — Traversable MAP01 doors and in-range MAP02 tests
 
 - Corrected the four exterior leaves in MAP01's rebuilt central pairs: their

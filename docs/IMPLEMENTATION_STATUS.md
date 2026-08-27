@@ -1,5 +1,180 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Canonical MAP01 sector ownership and budgeted mass AI 4.29.0h
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The V4.29.0g rectangles were topologically closed but twelve of their edges
+placed the intended front sector on the geometric left. The lower tag-510
+control therefore existed while GZDoom resolved the tagged interior outside
+the visible room, producing the photographed hole and ground-floor fall.
+V4.29.0h gives both outer and inner contours one clockwise winding: sector 510
+is on the right/front inside the room and sector 511 is on the right/front
+inside the wall ring. No new surface or control sector was added.
+
+The supplied stagger-3 run froze after its second complete report with 958
+target-bearing actors, 16 live projectiles, zero contacts and zero custom
+collision callbacks. The last combat interval contained only 57 attempts,
+19 projectile spawns and three impacts. The remaining synchronous threshold is
+the arrival of 634 rats at melee range and the native chase/collision work
+around one player, not projectile retention or the Caelum contact graph.
+
+Only MAP02's main field now uses `THRUACTORS`. Its `A_Chase` invocations are
+distributed across seven deterministic phases and its attack deliveries across
+64 phases. Rooms 1–9 and all normal maps use the original AI/collision timing.
+The monitor reports chase attempts, updates and deferrals separately.
+
+### V4.29.0h runtime procedure
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0h.log
+sv_cheats 1
+ca_diag_mass_attacks true
+ca_diag_mass_ai_stagger 7
+ca_diag_mass_attack_stagger 64
+warp 16368 -16 0
+```
+
+Run one 60-second session. Do not repeat the rejected stagger values 3, 2 or 1.
+For MAP01, load `map map01`, enable `noclip` and verify both central interiors
+from below, above, inside and outside before any door or divider is restored.
+
+
+## Clean MAP01 modules and staggered mass combat 4.29.0g
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+MAP01's two central first-floor rooms no longer contain any part of the
+V4.29.0c–f divider, threshold or door topology. Sixty lines and their 120
+sidedefs were removed as one unit. Each replacement now consists of exactly
+eight bilateral lines: four around one 336×336-MU interior and four around its
+continuous 8-MU wall ring. The working end rooms and the common 3D-floor
+controls for tags 510 and 511 were not rebuilt.
+
+MAP02's main field now separates AI stress from island-physics stress. Its
+15,000 bodies share a diagnostic species and `THRUSPECIES`; Rooms 7–9 still
+retain full collisions for Quintaesencia. When attacks are enabled, the default
+`ca_diag_mass_attack_stagger 3` distributes attempts between three deterministic
+phases derived from each spawn cell. Straight projectiles and melee actions do
+not damage another main-field actor, so one intercepted shot cannot trigger an
+infighting cascade. A value of `1` restores the unthrottled V4.29.0f behavior.
+
+The supplied no-attack log reached 1,983 targeted actors and 42,415 collision
+callbacks/s without ending at that point. The attack run stopped after the
+first second containing 97 projectile spawns and 28 impacts, while only 69
+missiles remained live. This makes synchronous attack/impact work and crowd
+cross-collision the actionable causes; retained projectiles and contact-list
+growth are not required to reproduce the abrupt stop.
+
+The mapping workflow is documented in
+`docs/ULTIMATE_DOOM_BUILDER_TUTORIAL.md`. Doors and dividers remain intentionally
+absent from the new central shells until visual and traversal acceptance.
+
+### V4.29.0g runtime procedure
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0g.log
+sv_cheats 1
+ca_diag_mass_attacks true
+ca_diag_mass_attack_stagger 3
+warp 16368 -16 0
+```
+
+Run for 60 seconds or until a freeze. On a fresh `map map02`, repeat with
+stagger values `2` and `1`, in that order, stopping after the first unstable
+setting. Do not continue to a more aggressive setting after a freeze.
+
+For MAP01, use `map map01` and inspect both central shells from ground floor,
+first floor, exterior and below the slab. Closed walls are expected in this
+candidate; doors and the divider are not.
+
+
+## Continuous MAP01 slabs and isolated mass-AI combat 4.29.0f
+
+**Implemented and load-validated in GZDoom 4.14.2; manual visual/performance acceptance pending**
+
+The V4.29.0e threshold repair still treated the visible room surface and each
+door/exterior band as different 3D-floor targets. Their lower and upper
+controls could occupy the same height while remaining different render links,
+which reproduced the reported solid-but-invisible surface from both the room
+and its exterior. V4.29.0f removes that distinction instead of adding another
+plane: every former tag-512 target is now tag 510 and therefore uses the same
+128–136-MU floor slab and 256–264-MU roof slab as the adjacent room.
+
+The independent 512 control rectangle, its upper duplicate link and an empty
+sector inherited from the earlier rebuild are removed. The mansion surface
+PNGs are also registered explicitly in flat/texture namespaces rather than
+being available only through their sprite aliases. Current MAP01 structure is
+510 vertices, 517 linedefs, 1,004 sidedefs, 98 sectors and 206 Things. Every
+linedef has a valid front sidedef, bilateral flags agree exactly with back
+sides, and there is no target or 3D-floor link 512.
+
+MAP02 keeps all 16,608 combat actors and the exact 1,875-active main-field
+stage. One native wall at X=8192 blocks actors, monsters and sight between the
+spawn/test-room side and the mass field. GZDoom 4.14.2 runtime loading reports
+zero main-field targets at baseline. The new server CVar
+`ca_diag_mass_attacks` changes only attack execution inside that field:
+
+- `false`: perception and chase remain active, but melee, Bull charge and
+  projectile actions are counted and suppressed;
+- `true`: the same actors execute their normal attacks using the existing
+  bounded straight projectiles;
+- all nine small diagnostic rooms ignore the gate and retain their authored
+  behavior.
+
+The monitor now prints family target/active counts and a combat line:
+
+```text
+[CA-AI] campo objetivos/activos ratas=0/1250 rulo=0/125 argento=0/125 caella=0/125 ronnie=0/125 toros=0/125
+[CA-COMBAT] ataques_masivos=1 intentos/s=0 anulados/s=0 proj +0 impacto=0 vencido=0 destruido=0 fallo=0
+```
+
+Counters are integer increments on the existing actors/projectiles; no new
+per-tic actor search was added. The MAP02-only monitor still performs its one
+aggregate Thinker traversal per second.
+
+### V4.29.0f runtime procedure
+
+Start each logged session from the console:
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0f.log
+```
+
+Wait ten seconds at spawn. Every family numerator in `[CA-AI]` must remain
+zero, `ia_objetivos=0` and `proyectiles=0`. Then run two fresh-map sessions:
+
+```text
+ca_diag_mass_attacks false
+map map02
+warp 16368 -16 0
+```
+
+and:
+
+```text
+ca_diag_mass_attacks true
+map map02
+warp 16368 -16 0
+```
+
+Observe each for 30 seconds or until a freeze. The first run should report
+attack attempts under `anulados/s` with `proj +0`; the second exposes the
+actual projectile creation/completion rate. The final complete line written
+before a freeze is diagnostic evidence even if the failing tic never reaches
+the next one-second report.
+
+MAP01 acceptance is independent: walk over both central first-floor rooms,
+the exterior bands at their lateral doors and the internal divider doorway;
+inspect all six doors from both faces and verify every surface from above and
+below. A visually absent but collision-solid band still fails acceptance.
+
 ## Central threshold closure and valid MAP02 coordinates 4.29.0e
 
 **Implemented — pending GZDoom 4.14.2 runtime validation**
@@ -45,10 +220,10 @@ Use a fresh `map map02` before each position:
 
 | Test | Command | Expected Seal count |
 | --- | --- | ---: |
-| Room 7 — native collision | `setpos -24000 -18000 0` | 500 |
-| Room 8 — complete Caelum contacts | `setpos -24000 0 0` | 500 |
-| Room 9 — same-species pass-through | `setpos -24000 18000 0` | 500 |
-| 1,875-AI main field | `setpos 16368 -16 0` | Not a Seal-isolation test |
+| Room 7 — native collision | `warp -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `warp -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `warp -24000 18000 0` | 500 |
+| 1,875-AI main field | `warp 16368 -16 0` | Not a Seal-isolation test |
 
 The fresh-map telemetry baseline should still be approximately
 `actores=16608 ia=1983 ia_objetivos=0 objetivos=0 proyectiles=0`.
@@ -164,10 +339,10 @@ in-range console positions after every fresh `map map02`:
 
 | Test | Command | Expected Seal count |
 | --- | --- | ---: |
-| Room 7 — native collision | `setpos -24000 -18000 0` | 500 |
-| Room 8 — complete Caelum contacts | `setpos -24000 0 0` | 500 |
-| Room 9 — same-species pass-through | `setpos -24000 18000 0` | 500 |
-| 1,875-AI main field | `setpos 16368 -16 0` | Not a Seal-isolation test |
+| Room 7 — native collision | `warp -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `warp -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `warp -24000 18000 0` | 500 |
+| 1,875-AI main field | `warp 16368 -16 0` | Not a Seal-isolation test |
 
 Manual validation order:
 
@@ -178,7 +353,7 @@ Manual validation order:
 3. Run Rooms 7, 8 and 9 separately from a fresh map. Channel Quintessence for
    five seconds and observe twenty seconds after release. Each run must report
    exactly 500 affected actors; otherwise the isolation still failed.
-4. Load MAP02 again, use `setpos 16368 -16 0`, do not Channel, and let the
+4. Load MAP02 again, use `warp 16368 -16 0`, do not Channel, and let the
    1,875-AI population pursue and attack for sixty real seconds. Record FPS,
    input responsiveness and all three telemetry lines until either stabilization
    or the first abrupt freeze.

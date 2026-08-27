@@ -37,7 +37,7 @@ class CaelumRulo : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RULO CA 5 A_Chase;
+        RULO CA 5 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         RULO A 1;

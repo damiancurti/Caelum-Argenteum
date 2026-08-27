@@ -32,7 +32,7 @@ class CaelumRonnie : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RONI CA 4 A_Chase;
+        RONI CA 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         RONI A 1;

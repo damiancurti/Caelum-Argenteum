@@ -1,5 +1,34 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0f — Combat-boundary telemetry after contact cleanup
+
+The supplied V4.29.0e runs confirm that raw callbacks scale with the number of
+solid actors physically piled together. A post-Quintessence stack can retain
+approximately 30,000 callbacks per simulated second even after Channel ends,
+while simulated seconds themselves slow down. This is consistent with native
+collision work on a dense solid pile; it is not evidence that the bounded
+Caelum contact-edge graph regrew.
+
+The abrupt freeze associated with active NPCs therefore needs a separate
+boundary between chase/collision and attack/projectile execution. V4.29.0f
+adds that boundary without changing physics formulas:
+
+- a sight-blocking wall keeps the 1,875-active main field dormant at MAP02
+  spawn;
+- `ca_diag_mass_attacks false` records and suppresses attacks only in that
+  field while leaving perception, chase and collisions active;
+- `true` restores the same actors' melee, Bull charge and bounded straight
+  projectile actions;
+- projectile spawn, impact, range expiry, destruction and failure counters
+  make a synchronous combat avalanche visible without scanning every missile
+  a second time.
+
+If chase with attacks suppressed freezes, native crowd movement/collision is
+still sufficient. If only the enabled run freezes, the final family, attack
+and projectile rates identify combat synchronization as the next hot path.
+This diagnostic does not restore guided projectiles to mass NPCs and does not
+add a connected-component/island solver.
+
 ## V4.29.0e — Valid diagnostic placement
 
 V4.29.0c's intended 18,000-MU isolation was correct, but its Room-7 X

@@ -74,6 +74,18 @@ class CaelumCombatActor : Actor
     int ImpactDiagnosticRestingCallbacks;
     int ImpactDiagnosticContactsCreated;
     int ImpactDiagnosticContactsRemoved;
+    int ImpactDiagnosticAttackAttempts;
+    int ImpactDiagnosticSuppressedAttacks;
+    int ImpactDiagnosticDeferredAttacks;
+    int ImpactDiagnosticFriendlyFirePrevented;
+    int ImpactDiagnosticChaseAttempts;
+    int ImpactDiagnosticChaseUpdates;
+    int ImpactDiagnosticChaseDeferred;
+    int ImpactDiagnosticProjectilesSpawned;
+    int ImpactDiagnosticProjectileSpawnFailures;
+    int ImpactDiagnosticProjectileImpacts;
+    int ImpactDiagnosticProjectilesExpired;
+    int ImpactDiagnosticProjectilesDestroyed;
     ImpactBody ImpactSelfBodyScratch;
     ImpactBody ImpactOtherBodyScratch;
     ImpactResult ImpactResultScratch;
@@ -180,6 +192,109 @@ class CaelumCombatActor : Actor
         }
         RecalculateCombatStatistics();
         UpdateActorLucidityState();
+
+        // El campo masivo mide IA y ataques, no resolución de islas físicas.
+        // Sus seis familias comparten especie y se atraviesan entre sí para
+        // impedir una cuadrícula de 15.000 cuerpos sólidos. Los recintos de
+        // Quintaesencia conservan las colisiones completas por separado.
+        if (IsCaelumMassDiagnosticActor())
+        {
+            Species = 'CaelumMassDiagnosticCrowd';
+            bTHRUSPECIES = true;
+            bTHRUACTORS = true;
+        }
+    }
+
+    bool IsCaelumMassDiagnosticActor()
+    {
+        // La pared de aislamiento de MAP02 empieza en X=8192. Esta condición
+        // excluye los nueve recintos y no afecta ningún mapa de juego normal.
+        return level.MapName == "MAP02"
+            && Pos.X >= 8192.0
+            && Pos.X <= 24576.0
+            && Pos.Y >= -8192.0
+            && Pos.Y <= 8192.0;
+    }
+
+    bool BeginCaelumDiagnosticAttack()
+    {
+        if (level.MapName != "MAP02") { return true; }
+        ImpactDiagnosticAttackAttempts++;
+        if (!IsCaelumMassDiagnosticActor()) { return true; }
+
+        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
+        if (attackSetting != null && !attackSetting.GetBool())
+        {
+            ImpactDiagnosticSuppressedAttacks++;
+            PendingCombatCriticalDelivery = false;
+            return false;
+        }
+
+        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_attack_stagger");
+        int stagger = staggerSetting == null
+            ? 64
+            : Clamp(staggerSetting.GetInt(), 1, 64);
+        if (stagger > 1)
+        {
+            // SpawnPoint permanece estable aunque A_Chase mueva al actor. La
+            // división por la separación de la matriz evita que todas las
+            // coordenadas múltiplas de 96 caigan en la misma fase.
+            int gridX = int(SpawnPoint.X / 96.0);
+            int gridY = int(SpawnPoint.Y / 96.0);
+            int phase = Abs(gridX * 31 + gridY * 17 + int(Mass) * 13)
+                % stagger;
+            if (level.time % stagger != phase)
+            {
+                ImpactDiagnosticSuppressedAttacks++;
+                ImpactDiagnosticDeferredAttacks++;
+                PendingCombatCriticalDelivery = false;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool BeginCaelumDiagnosticChase()
+    {
+        if (!IsCaelumMassDiagnosticActor()) { return true; }
+        ImpactDiagnosticChaseAttempts++;
+
+        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
+        int stagger = staggerSetting == null
+            ? 7
+            : Clamp(staggerSetting.GetInt(), 1, 31);
+        if (stagger > 1)
+        {
+            // Siete es coprimo con los ciclos actuales de 8 y 10 tics. Así
+            // ninguna familia queda fijada para siempre a una fase inválida.
+            int gridX = int(SpawnPoint.X / 96.0);
+            int gridY = int(SpawnPoint.Y / 96.0);
+            int phase = Abs(gridX * 19 + gridY * 23 + int(Mass) * 11)
+                % stagger;
+            if (level.time % stagger != phase)
+            {
+                ImpactDiagnosticChaseDeferred++;
+                return false;
+            }
+        }
+        ImpactDiagnosticChaseUpdates++;
+        return true;
+    }
+
+    action void A_CaelumBudgetedChase()
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
+        combatActor.A_Chase();
+    }
+
+    bool IsCaelumMassDiagnosticAlly(Actor other)
+    {
+        CaelumCombatActor combatOther = CaelumCombatActor(other);
+        return IsCaelumMassDiagnosticActor()
+            && combatOther != null
+            && combatOther.IsCaelumMassDiagnosticActor();
     }
 
     void InitializeCombatArmor(int requestedArmorType, int requestedTier)
@@ -536,6 +651,13 @@ class CaelumCombatActor : Actor
         // monstruo. El casteo recupera el tipo concreto para llamar su logica.
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
+        {
+            combatActor.ImpactDiagnosticFriendlyFirePrevented++;
+            combatActor.PendingCombatCriticalDelivery = false;
+            return;
+        }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             false
@@ -571,6 +693,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             magicalAttack
@@ -582,6 +705,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
                 combatActor.LastCombatAttackAccuracySucceeded,
@@ -591,6 +715,10 @@ class CaelumCombatActor : Actor
                     ? combatActor.CombatMagicalPushMultiplier
                     : combatActor.CombatPhysicalPushMultiplier
             );
+        }
+        else
+        {
+            combatActor.ImpactDiagnosticProjectileSpawnFailures++;
         }
         combatActor.PendingCombatCriticalDelivery = false;
     }
@@ -606,6 +734,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             true
@@ -617,6 +746,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
                 combatActor.LastCombatAttackAccuracySucceeded,
@@ -633,6 +763,10 @@ class CaelumCombatActor : Actor
             missile.ConfigureCaelumTravelDistance(
                 combatActor.GetCombatAbilityRange()
             );
+        }
+        else
+        {
+            combatActor.ImpactDiagnosticProjectileSpawnFailures++;
         }
         combatActor.NextRangedSecondaryElement =
             !combatActor.NextRangedSecondaryElement;
@@ -651,6 +785,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(baseDamage, true);
         if (calculatedDamage <= 0) { return; }
 
@@ -659,6 +794,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
                 combatActor.LastCombatAttackAccuracySucceeded,
@@ -677,6 +813,10 @@ class CaelumCombatActor : Actor
                 CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS,
                 combatActor.GetCombatAbilityRange()
             );
+        }
+        else
+        {
+            combatActor.ImpactDiagnosticProjectileSpawnFailures++;
         }
         combatActor.NextRangedSecondaryElement = !combatActor.NextRangedSecondaryElement;
         combatActor.PendingCombatCriticalDelivery = false;

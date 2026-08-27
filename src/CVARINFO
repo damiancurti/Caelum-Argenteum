@@ -1,3 +1,15 @@
 // This user setting remembers whether the attribute debug panel is visible.
 // "user" means that each local GZDoom profile stores its own value.
 user bool ca_debug_attributes = false;
+
+// Interruptor exclusivo del campo masivo de MAP02. Permite comparar la misma
+// IA con y sin ejecución de ataques sin duplicar actores ni cambiar el mapa.
+server bool ca_diag_mass_attacks = true;
+
+// Divide de forma determinista los intentos de ataque del campo masivo entre
+// varios tics. 1 reproduce la frecuencia original; 64 evita que centenares de
+// ratas entreguen su primer ataque cuerpo a cuerpo dentro del mismo tic.
+server int ca_diag_mass_attack_stagger = 64;
+// Presupuesta sólo las llamadas nativas de persecución del campo masivo.
+// Siete es coprimo con los ciclos de animación de las seis familias actuales.
+server int ca_diag_mass_ai_stagger = 7;

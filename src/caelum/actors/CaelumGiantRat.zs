@@ -43,7 +43,7 @@ class CaelumGiantRat : CaelumCombatActor
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
-        RATG BC 4 A_Chase;
+        RATG BC 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         RATG A 1;

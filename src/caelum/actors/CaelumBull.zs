@@ -54,6 +54,11 @@ class CaelumBull : CaelumCombatActor
     {
         CaelumBull bull = CaelumBull(self);
         if (bull == null) { return; }
+        if (!bull.BeginCaelumDiagnosticAttack())
+        {
+            bull.StopBullCharge();
+            return;
+        }
         bull.BeginBullCharge();
     }
 
@@ -120,7 +125,7 @@ class CaelumBull : CaelumCombatActor
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
-        BULL DE 4 A_Chase;
+        BULL DE 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         BULL A 1;

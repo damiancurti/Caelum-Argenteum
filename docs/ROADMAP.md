@@ -130,6 +130,15 @@ GZDoom's UDMF range. Coordinate-range validation is now part of every PK3
 build. The 1,875-AI stage and later 3,750 → 7,500 → 15,000 progression remain
 unchanged; this repair does not count as crafting completion.
 
+V4.29.0f supersedes the remaining overlapping slab repair: the central-room
+interiors and exterior door bands share one 3D-floor target and the redundant
+threshold control is removed. MAP02 gains a spawn sight barrier, a main-field
+attack A/B gate and family/projectile lifecycle telemetry so the 1,875-AI stage
+can distinguish chase/collision from synchronous combat work. Guided and
+explosive projectiles remain excluded from mass NPCs. This robustness and
+architecture gate does not count as crafting completion; the next AI stage is
+authorized only after the enabled/disabled 1,875 comparison completes.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

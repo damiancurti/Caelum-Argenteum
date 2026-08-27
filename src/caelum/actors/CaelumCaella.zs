@@ -32,7 +32,7 @@ class CaelumCaella : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        CAEL CA 4 A_Chase;
+        CAEL CA 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         CAEL A 1;

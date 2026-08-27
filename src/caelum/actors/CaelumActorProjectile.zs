@@ -43,6 +43,7 @@ class CaelumActorProjectile : Actor
     int CaelumActorExplosionDamage;
     double CaelumActorExplosionRadius;
     double CaelumMaximumTravelDistance;
+    bool CaelumDiagnosticCompletionRecorded;
 
     // Conserva la identidad del arma que originó el proyectil. Así la
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
@@ -103,6 +104,38 @@ class CaelumActorProjectile : Actor
     void ConfigureCaelumTravelDistance(double maximumTravelDistance)
     {
         CaelumMaximumTravelDistance = Max(1.0, maximumTravelDistance);
+    }
+
+    void RegisterCaelumDiagnosticCompletion(bool impact, bool expired)
+    {
+        if (CaelumDiagnosticCompletionRecorded) { return; }
+        CaelumDiagnosticCompletionRecorded = true;
+        CaelumCombatActor projectileOwner = CaelumCombatActor(target);
+        if (projectileOwner == null || level.MapName != "MAP02") { return; }
+        if (impact) { projectileOwner.ImpactDiagnosticProjectileImpacts++; }
+        if (expired) { projectileOwner.ImpactDiagnosticProjectilesExpired++; }
+        projectileOwner.ImpactDiagnosticProjectilesDestroyed++;
+    }
+
+    bool PreventCaelumMassDiagnosticFriendlyFire(Actor victim)
+    {
+        CaelumCombatActor projectileOwner = CaelumCombatActor(target);
+        if (projectileOwner == null
+            || !projectileOwner.IsCaelumMassDiagnosticAlly(victim))
+        {
+            return false;
+        }
+        projectileOwner.ImpactDiagnosticFriendlyFirePrevented++;
+        return true;
+    }
+
+    action void A_CaelumRecordDiagnosticProjectileImpact()
+    {
+        CaelumActorProjectile projectile = CaelumActorProjectile(self);
+        if (projectile != null)
+        {
+            projectile.RegisterCaelumDiagnosticCompletion(true, false);
+        }
     }
 
     void StoreCaelumWeaponWearIdentity(

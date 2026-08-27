@@ -32,7 +32,7 @@ class CaelumArgento : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        ARGO CA 4 A_Chase;
+        ARGO CA 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         ARGO A 1;

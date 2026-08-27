@@ -18,6 +18,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
+        if (PreventCaelumMassDiagnosticFriendlyFire(victim)) { return 0; }
         return Max(1, GetCaelumPreparedDamage(Max(1, damage)));
     }
 
@@ -53,6 +54,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
                     >= CaelumMaximumTravelDistance)
             || CaelumLifetimeTicks >= 350)
         {
+            RegisterCaelumDiagnosticCompletion(false, true);
             Destroy();
         }
     }
@@ -63,7 +65,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
         XFIR A 1 Bright;
         Loop;
     Death:
-        TNT1 A 1;
+        TNT1 A 1 A_CaelumRecordDiagnosticProjectileImpact;
         Stop;
     }
 }
@@ -90,6 +92,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
+        if (PreventCaelumMassDiagnosticFriendlyFire(victim)) { return 0; }
         return Max(1, int(
             GetCaelumPreparedDamage(Max(1, damage))
                 * CaelumConstants.ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO + 0.5
@@ -143,6 +146,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
         if (CaelumMaximumTravelDistance > 0.0
             && CaelumDistanceTraveled >= CaelumMaximumTravelDistance)
         {
+            RegisterCaelumDiagnosticCompletion(false, true);
             Destroy();
             return;
         }
@@ -151,6 +155,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
         CaelumLifetimeTicks++;
         if (CaelumLifetimeTicks >= 350)
         {
+            RegisterCaelumDiagnosticCompletion(false, true);
             Destroy();
             return;
         }
@@ -164,6 +169,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
         XFIR A 1 Bright;
         Loop;
     Death:
+        XFIR A 0 Bright A_CaelumRecordDiagnosticProjectileImpact;
         XFIR A 0 Bright A_CaelumActorExplode;
         XFIR A 2 Bright;
         Stop;

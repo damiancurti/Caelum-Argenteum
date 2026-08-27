@@ -13,6 +13,34 @@ Flat "CASWRFLR", 256, 256
     Patch "graphics/caelum/textures/sewer/CASWRFLR.png", 0, 0
 }
 
+// Superficies arquitectónicas de la mansión. Los mismos PNG también se usan
+// como sprites de galería, pero los planos y paredes del mapa necesitan una
+// declaración propia para que las losas 3D se rendericen en ambos lados.
+Flat "CMWD01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD01.png", 0, 0
+}
+
+Flat "CMCL01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMCL01.png", 0, 0
+}
+
+Flat "CMIN01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
+}
+
+Texture "CMIN01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
+}
+
+Texture "CMDR03", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR03.png", 0, 0
+}
+
 Sprite "CDLSA0", 64, 128
 {
     Offset 32, 128

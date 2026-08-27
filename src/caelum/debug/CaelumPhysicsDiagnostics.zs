@@ -164,7 +164,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia aislada: 7 setpos -24000 -18000 0; 8 setpos -24000 0 0; 9 setpos -24000 18000 0. IA masiva: setpos 16368 -16 0."
+            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: ataques true, attack_stagger 64, ai_stagger 7, warp 16368 -16 0."
         );
     }
 
@@ -189,6 +189,30 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int createdReferences = 0;
         int removedReferences = 0;
         int channelAffectedActors = 0;
+        int attackAttempts = 0;
+        int suppressedAttacks = 0;
+        int deferredAttacks = 0;
+        int friendlyFirePrevented = 0;
+        int chaseAttempts = 0;
+        int chaseUpdates = 0;
+        int chaseDeferred = 0;
+        int projectilesSpawned = 0;
+        int projectileSpawnFailures = 0;
+        int projectileImpacts = 0;
+        int projectilesExpired = 0;
+        int projectilesDestroyed = 0;
+        int activeRats = 0;
+        int targetedRats = 0;
+        int activeRulos = 0;
+        int targetedRulos = 0;
+        int activeArgentos = 0;
+        int targetedArgentos = 0;
+        int activeCaellas = 0;
+        int targetedCaellas = 0;
+        int activeRonnies = 0;
+        int targetedRonnies = 0;
+        int activeBulls = 0;
+        int targetedBulls = 0;
 
         ThinkerIterator iterator = ThinkerIterator.Create("Actor");
         Thinker entry;
@@ -207,6 +231,42 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 {
                     activeAIActors++;
                     if (combatActor.target != null) { activeAITargets++; }
+                    if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumGiantRat(combatActor) != null)
+                    {
+                        activeRats++;
+                        if (combatActor.target != null) { targetedRats++; }
+                    }
+                    else if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumRulo(combatActor) != null)
+                    {
+                        activeRulos++;
+                        if (combatActor.target != null) { targetedRulos++; }
+                    }
+                    else if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumArgento(combatActor) != null)
+                    {
+                        activeArgentos++;
+                        if (combatActor.target != null) { targetedArgentos++; }
+                    }
+                    else if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumCaella(combatActor) != null)
+                    {
+                        activeCaellas++;
+                        if (combatActor.target != null) { targetedCaellas++; }
+                    }
+                    else if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumRonnie(combatActor) != null)
+                    {
+                        activeRonnies++;
+                        if (combatActor.target != null) { targetedRonnies++; }
+                    }
+                    else if (combatActor.IsCaelumMassDiagnosticActor()
+                        && CaelumBull(combatActor) != null)
+                    {
+                        activeBulls++;
+                        if (combatActor.target != null) { targetedBulls++; }
+                    }
                 }
                 if (combatActor.target != null) { targetedActors++; }
                 int actorContacts = combatActor.GetImpactContactCount();
@@ -224,12 +284,48 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     combatActor.ImpactDiagnosticContactsCreated;
                 removedReferences +=
                     combatActor.ImpactDiagnosticContactsRemoved;
+                attackAttempts +=
+                    combatActor.ImpactDiagnosticAttackAttempts;
+                suppressedAttacks +=
+                    combatActor.ImpactDiagnosticSuppressedAttacks;
+                deferredAttacks +=
+                    combatActor.ImpactDiagnosticDeferredAttacks;
+                friendlyFirePrevented +=
+                    combatActor.ImpactDiagnosticFriendlyFirePrevented;
+                chaseAttempts +=
+                    combatActor.ImpactDiagnosticChaseAttempts;
+                chaseUpdates +=
+                    combatActor.ImpactDiagnosticChaseUpdates;
+                chaseDeferred +=
+                    combatActor.ImpactDiagnosticChaseDeferred;
+                projectilesSpawned +=
+                    combatActor.ImpactDiagnosticProjectilesSpawned;
+                projectileSpawnFailures +=
+                    combatActor.ImpactDiagnosticProjectileSpawnFailures;
+                projectileImpacts +=
+                    combatActor.ImpactDiagnosticProjectileImpacts;
+                projectilesExpired +=
+                    combatActor.ImpactDiagnosticProjectilesExpired;
+                projectilesDestroyed +=
+                    combatActor.ImpactDiagnosticProjectilesDestroyed;
                 combatActor.ImpactDiagnosticCollisionCallbacks = 0;
                 combatActor.ImpactDiagnosticUniquePairTicks = 0;
                 combatActor.ImpactDiagnosticDuplicateCallbacks = 0;
                 combatActor.ImpactDiagnosticRestingCallbacks = 0;
                 combatActor.ImpactDiagnosticContactsCreated = 0;
                 combatActor.ImpactDiagnosticContactsRemoved = 0;
+                combatActor.ImpactDiagnosticAttackAttempts = 0;
+                combatActor.ImpactDiagnosticSuppressedAttacks = 0;
+                combatActor.ImpactDiagnosticDeferredAttacks = 0;
+                combatActor.ImpactDiagnosticFriendlyFirePrevented = 0;
+                combatActor.ImpactDiagnosticChaseAttempts = 0;
+                combatActor.ImpactDiagnosticChaseUpdates = 0;
+                combatActor.ImpactDiagnosticChaseDeferred = 0;
+                combatActor.ImpactDiagnosticProjectilesSpawned = 0;
+                combatActor.ImpactDiagnosticProjectileSpawnFailures = 0;
+                combatActor.ImpactDiagnosticProjectileImpacts = 0;
+                combatActor.ImpactDiagnosticProjectilesExpired = 0;
+                combatActor.ImpactDiagnosticProjectilesDestroyed = 0;
                 continue;
             }
 
@@ -270,6 +366,23 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             missiles
         );
         Console.Printf(
+            "[CA-AI] campo objetivos/activos ratas=%d/%d rulo=%d/%d argento=%d/%d caella=%d/%d ronnie=%d/%d toros=%d/%d",
+            targetedRats, activeRats,
+            targetedRulos, activeRulos,
+            targetedArgentos, activeArgentos,
+            targetedCaellas, activeCaellas,
+            targetedRonnies, activeRonnies,
+            targetedBulls, activeBulls
+        );
+        CVar aiStaggerSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
+        Console.Printf(
+            "[CA-AI] escalonado=%d chase intentos/s=%d ejecutados/s=%d diferidos/s=%d",
+            aiStaggerSetting == null ? 7 : aiStaggerSetting.GetInt(),
+            chaseAttempts,
+            chaseUpdates,
+            chaseDeferred
+        );
+        Console.Printf(
             "[CA-PHYS] contactos~=%d max/actor=%d callbacks/s=%d unicos=%d duplicados=%d reposo=%d",
             contactReferences / 2,
             maximumContacts,
@@ -283,6 +396,22 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             createdReferences,
             removedReferences,
             channelAffectedActors
+        );
+        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
+        CVar staggerSetting = CVar.GetCVar("ca_diag_mass_attack_stagger");
+        Console.Printf(
+            "[CA-COMBAT] ataques_masivos=%d escalonado=%d intentos/s=%d anulados/s=%d diferidos/s=%d fuego_amigo=%d proj +%d impacto=%d vencido=%d destruido=%d fallo=%d",
+            attackSetting == null || attackSetting.GetBool(),
+            staggerSetting == null ? 64 : staggerSetting.GetInt(),
+            attackAttempts,
+            suppressedAttacks,
+            deferredAttacks,
+            friendlyFirePrevented,
+            projectilesSpawned,
+            projectileImpacts,
+            projectilesExpired,
+            projectilesDestroyed,
+            projectileSpawnFailures
         );
     }
 }
