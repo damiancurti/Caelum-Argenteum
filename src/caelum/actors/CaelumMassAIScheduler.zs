@@ -11,6 +11,7 @@ class CaelumMassAIScheduler : EventHandler
     int MassChaseInterval;
     int MassLookBudgetPerTic;
     int MassChaseBudgetPerTic;
+    bool SettingsInitialized;
 
     int LookUpdatesThisTic;
     int PeakLookUpdatesPerTic;
@@ -59,7 +60,9 @@ class CaelumMassAIScheduler : EventHandler
 
         CVar chaseBudget = CVar.GetCVar("ca_diag_mass_chase_budget");
         MassChaseBudgetPerTic = chaseBudget == null
-            ? 40 : Clamp(chaseBudget.GetInt(), 1, 128);
+            ? 20 : Clamp(chaseBudget.GetInt(), 1, 128);
+
+        SettingsInitialized = true;
     }
 
     override void WorldLoaded(WorldEvent event)
@@ -75,9 +78,10 @@ class CaelumMassAIScheduler : EventHandler
 
     override void WorldTick()
     {
-        RefreshSettings();
         // WorldTick corre antes de los Thinkers. Cerrar aqui el tic anterior
         // mantiene un limite determinista y no depende de los FPS del cliente.
+        // La configuración es inmutable durante el mapa: no se consultan CVars
+        // 35 veces por segundo ni se propagan cambios parciales entre actores.
         PeakLookUpdatesPerTic = Max(
             PeakLookUpdatesPerTic,
             LookUpdatesThisTic

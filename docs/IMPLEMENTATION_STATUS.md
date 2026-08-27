@@ -1,5 +1,45 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## MAP01 rollback and pursuit isolation 4.29.0n
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+MAP01 is restored byte-for-byte to V4.29.0i, the accepted state immediately
+before the continuous-room expansion. This rejects the complete V4.29.0l and
+V4.29.0m geometry passes instead of trying to repair their overlapping walls,
+missing landing space and open surfaces. The restored map has 398 vertices,
+489 linedefs, 948 sidedefs, 99 sectors and 210 Things. Its valid divider and
+rear-door additions remain; none of the later enlarged rows remains.
+
+The four supplied V4.29.0m logs also correct the previous runtime assumption.
+The server CVars entered after `map map02` were not live; their effective value
+appeared on the next map load. Consequently the runs actually were: all
+enabled for 34 reports, all disabled for 249, Look-only for 495, and Look plus
+Chase with main-field attacks disabled for 119. Only the last run stopped.
+Its final report retained zero contacts and callbacks, 16,500 lightweight
+actors and a 40-update Chase peak. The isolated-room actors explain its single
+projectile; the main field explicitly reported `ataques_masivos=0`.
+
+This isolates sustained native pursuit/convergence as the next boundary. The
+diagnostic Chase ceiling is reduced from 40 to 20 calls per tic. The scheduler
+captures server settings once per map, and state actions no longer copy every
+setting on every Look, Chase or attack attempt. This is both a stricter test
+and a universal hot-path optimization for the diagnostic. Gameplay maps and
+the nine isolated MAP02 rooms remain unchanged.
+
+### V4.29.0n runtime procedure
+
+Enter every server CVar before `map map02`. The first report after loading is
+the authority; do not continue if its active flags differ from the requested
+test. Run Chase without attacks for five real minutes. Only if it remains
+responsive, repeat with attacks enabled. Both tests use Look 7/20, Chase 13/20
+and attack stagger 64. If the first test freezes, stop there and repeat later
+with a Chase budget of 10 instead of enabling attacks.
+
+In MAP01 verify only the rollback: both central pairs, their middle divisions,
+rear first-floor doors, balcony strips and stair landings must match V4.29.0i.
+Do not extend or connect rooms in this patch.
+
 ## Live mass-AI controls and straight landing corridor 4.29.0m
 
 **Implemented and structurally validated; manual GZDoom acceptance pending**

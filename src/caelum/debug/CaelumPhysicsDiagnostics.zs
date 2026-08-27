@@ -164,7 +164,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: CVars en vivo; warp 16368 -16 0."
+            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fija CVars antes de map map02; warp 16368 -16 0."
         );
     }
 

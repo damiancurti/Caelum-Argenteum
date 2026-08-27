@@ -258,7 +258,8 @@ class CaelumCombatActor : Actor
         CaelumMassScheduler = CaelumMassAIScheduler(
             EventHandler.Find("CaelumMassAIScheduler")
         );
-        if (CaelumMassScheduler != null)
+        if (CaelumMassScheduler != null
+            && !CaelumMassScheduler.SettingsInitialized)
         {
             CaelumMassScheduler.RefreshSettings();
         }
@@ -284,7 +285,7 @@ class CaelumCombatActor : Actor
             CaelumMassLookInterval = 7;
             CaelumMassChaseInterval = 13;
             CaelumMassLookBudgetPerTic = 20;
-            CaelumMassChaseBudgetPerTic = 40;
+            CaelumMassChaseBudgetPerTic = 20;
             return;
         }
 
@@ -317,7 +318,10 @@ class CaelumCombatActor : Actor
         if (level.MapName != "MAP02") { return true; }
         ImpactDiagnosticAttackAttempts++;
         if (!CaelumMassAIScheduleActive) { return true; }
-        SyncCaelumMassAISchedule();
+        if (CaelumMassScheduler == null)
+        {
+            SyncCaelumMassAISchedule();
+        }
 
         if (!CaelumMassAttacksEnabled)
         {
@@ -345,7 +349,10 @@ class CaelumCombatActor : Actor
     {
         if (!CaelumMassAIScheduleActive) { return true; }
         ImpactDiagnosticChaseAttempts++;
-        SyncCaelumMassAISchedule();
+        if (CaelumMassScheduler == null)
+        {
+            SyncCaelumMassAISchedule();
+        }
 
         if (!CaelumMassChaseEnabled)
         {
@@ -386,7 +393,10 @@ class CaelumCombatActor : Actor
     {
         if (!CaelumMassAIScheduleActive) { return true; }
         ImpactDiagnosticLookAttempts++;
-        SyncCaelumMassAISchedule();
+        if (CaelumMassScheduler == null)
+        {
+            SyncCaelumMassAISchedule();
+        }
 
         if (!CaelumMassLookEnabled)
         {

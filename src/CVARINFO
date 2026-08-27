@@ -7,9 +7,9 @@ user bool ca_debug_attributes = false;
 user bool ca_journal_open = false;
 user int ca_journal_page = 0;
 
-// Interruptores exclusivos del campo masivo de MAP02. El coordinador los lee
-// una vez por tic, por lo que pueden cambiarse con el mapa ya iniciado y la
-// telemetría confirma el valor efectivo en el siguiente informe.
+// Interruptores exclusivos del campo masivo de MAP02. Son CVars de servidor:
+// deben fijarse antes de cargar MAP02 y el coordinador los captura una sola vez
+// para que ninguna IA consulte configuración dentro del camino caliente.
 server bool ca_diag_mass_attacks = true;
 server bool ca_diag_mass_look_enabled = true;
 server bool ca_diag_mass_chase_enabled = true;
@@ -28,4 +28,4 @@ server int ca_diag_mass_chase_stagger = 13;
 // Un coordinador global impide que una distribución de fases desfavorable
 // supere estos números de llamadas nativas dentro del mismo tic.
 server int ca_diag_mass_look_budget = 20;
-server int ca_diag_mass_chase_budget = 40;
+server int ca_diag_mass_chase_budget = 20;

@@ -1,5 +1,27 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0n — Native pursuit is the remaining active boundary
+
+The four V4.29.0m files form a valid comparison only after shifting each set
+of console commands to the following map load. The Look-only configuration ran
+for 495 telemetry intervals without stopping. The final configuration stopped
+after 119 intervals with Look and Chase enabled, but main-field attacks still
+disabled. Contacts, custom collision callbacks and retained contact references
+were zero; the lightweight object counts remained exact.
+
+This excludes the Caelum contact graph, mass projectiles and attack delivery as
+necessary causes of that stop. The remaining mechanism is native `A_Chase`
+moving many pass-through actors toward the same target. Even when actors ignore
+one another for gameplay collision, convergence can concentrate native spatial
+queries and blockmap updates until one simulation tic becomes pathological.
+That is consistent with an abrupt stop after a long stable interval.
+
+V4.29.0n lowers the diagnostic coordinator ceiling from 40 to 20 native Chase
+calls per tic and removes per-attempt setting synchronization. This does not
+claim a final formation controller: it tests whether bounding convergence work
+is sufficient before adding distance tiers, shared squad movement or a density
+cap. Collision and pressure formulas are unchanged.
+
 ## V4.29.0m — The supplied A/B runs were all enabled
 
 The three V4.29.0l files do not implicate contact physics: every final report

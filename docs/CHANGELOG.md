@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.29.0n — MAP01 rollback and lower pursuit ceiling
+
+- Restored `MAP01.wad` byte-for-byte from the accepted V4.29.0i package,
+  before the rejected continuous-room expansions. The restored map contains
+  398 vertices, 489 linedefs, 948 sidedefs, 99 sectors and 210 Things.
+- Replaced the obsolete V4.29.0l and V4.29.0m map migration scripts with safe
+  no-ops so an old rebuild command cannot reapply the rejected geometry.
+- Reinterpreted the four supplied V4.29.0m logs using the values printed by
+  telemetry rather than the commands entered after `map map02`. Server CVars
+  took effect on the following map load: the 495-second Look-only run remained
+  stable, while the final 119-second stop had Chase enabled but main-field
+  attacks disabled.
+- Kept the validated lightweight population: 16,500 stress actors still omit
+  49,500 unnecessary anatomy, armor and elemental-status helper objects.
+- Reduced the diagnostic global Chase ceiling from 40 to 20 native calls per
+  tic. Normal maps and the nine isolated MAP02 rooms retain their original AI.
+- Captured mass diagnostic CVars once per map, refreshed them at most once
+  during actor initialization and removed repeated setting copies from Look,
+  Chase and attack state actions. Test settings must now be entered before
+  loading MAP02, and the first telemetry report is authoritative.
+
 ## 4.29.0m — Live AI controls, lightweight stress actors and straight balcony corridor
 
 - Confirmed from all three V4.29.0l logs that contacts stayed at zero,

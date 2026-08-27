@@ -167,6 +167,15 @@ an uninterrupted 96-MU corridor while keeping 119-MU flights and closed lateral
 divisions. The colored HUD bars are accepted. This remains a robustness/map/UI
 acceptance increment and does not complete crafting.
 
+V4.29.0n supersedes the V4.29.0m map and live-CVar conclusions. MAP01 returns
+byte-for-byte to the accepted V4.29.0i pre-expansion layout; continuous first-
+floor enlargement will be redesigned from that clean boundary. MAP02 server
+diagnostic settings are map-load configuration, not live state. The corrected
+four-run sequence isolates the abrupt stop to sustained native pursuit with
+main-field attacks disabled, so the global Chase ceiling falls from 40 to 20
+and repeated hot-path setting synchronization is removed. A stable 20-call
+run is required before enabling attacks or beginning squad/formation AI.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.
