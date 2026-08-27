@@ -164,7 +164,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fijar CVars antes de map map02; warp 16368 -16 0."
+            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: CVars en vivo; warp 16368 -16 0."
         );
     }
 
@@ -196,12 +196,27 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int chaseAttempts = 0;
         int chaseUpdates = 0;
         int chaseDeferred = 0;
+        int chasePhaseDeferred = 0;
+        int chaseBudgetDeferred = 0;
+        int chaseDisabled = 0;
         int lookAttempts = 0;
         int lookUpdates = 0;
         int lookDeferred = 0;
-        int scheduledLookChaseInterval = 0;
+        int lookPhaseDeferred = 0;
+        int lookBudgetDeferred = 0;
+        int lookDisabled = 0;
+        int scheduledLookInterval = 0;
+        int scheduledLookBudget = 0;
+        int scheduledChaseInterval = 0;
+        int scheduledChaseBudget = 0;
         int scheduledAttackInterval = 0;
+        bool scheduledChaseEnabled = false;
+        bool scheduledLookEnabled = false;
         bool scheduledAttacksEnabled = false;
+        int lightweightDiagnosticActors = 0;
+        int anatomyObjects = 0;
+        int armorObjects = 0;
+        int elementalStatusObjects = 0;
         int projectilesSpawned = 0;
         int projectileSpawnFailures = 0;
         int projectileImpacts = 0;
@@ -209,16 +224,25 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int projectilesDestroyed = 0;
         int activeRats = 0;
         int targetedRats = 0;
+        int chaseRats = 0;
         int activeRulos = 0;
         int targetedRulos = 0;
+        int chaseRulos = 0;
         int activeArgentos = 0;
         int targetedArgentos = 0;
+        int chaseArgentos = 0;
         int activeCaellas = 0;
         int targetedCaellas = 0;
+        int chaseCaellas = 0;
         int activeRonnies = 0;
         int targetedRonnies = 0;
+        int chaseRonnies = 0;
         int activeBulls = 0;
         int targetedBulls = 0;
+        int chaseBulls = 0;
+        int targetedNear = 0;
+        int targetedMiddle = 0;
+        int targetedFar = 0;
 
         ThinkerIterator iterator = ThinkerIterator.Create("Actor");
         Thinker entry;
@@ -232,6 +256,17 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             if (combatActor != null)
             {
                 combatActors++;
+                if (combatActor.CaelumMassAIScheduleActive
+                    || combatActor.CaelumDiagnosticPassiveAI)
+                {
+                    lightweightDiagnosticActors++;
+                }
+                if (combatActor.AnatomyProfile != null) { anatomyObjects++; }
+                if (combatActor.CombatArmor != null) { armorObjects++; }
+                if (combatActor.ElementalStatus != null)
+                {
+                    elementalStatusObjects++;
+                }
                 if (!combatActor.CaelumDiagnosticPassiveAI
                     && combatActor.health > 0)
                 {
@@ -242,36 +277,65 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     {
                         activeRats++;
                         if (combatActor.target != null) { targetedRats++; }
+                        chaseRats += combatActor.ImpactDiagnosticChaseUpdates;
                     }
                     else if (combatActor.IsCaelumMassDiagnosticActor()
                         && CaelumRulo(combatActor) != null)
                     {
                         activeRulos++;
                         if (combatActor.target != null) { targetedRulos++; }
+                        chaseRulos += combatActor.ImpactDiagnosticChaseUpdates;
                     }
                     else if (combatActor.IsCaelumMassDiagnosticActor()
                         && CaelumArgento(combatActor) != null)
                     {
                         activeArgentos++;
                         if (combatActor.target != null) { targetedArgentos++; }
+                        chaseArgentos += combatActor.ImpactDiagnosticChaseUpdates;
                     }
                     else if (combatActor.IsCaelumMassDiagnosticActor()
                         && CaelumCaella(combatActor) != null)
                     {
                         activeCaellas++;
                         if (combatActor.target != null) { targetedCaellas++; }
+                        chaseCaellas += combatActor.ImpactDiagnosticChaseUpdates;
                     }
                     else if (combatActor.IsCaelumMassDiagnosticActor()
                         && CaelumRonnie(combatActor) != null)
                     {
                         activeRonnies++;
                         if (combatActor.target != null) { targetedRonnies++; }
+                        chaseRonnies += combatActor.ImpactDiagnosticChaseUpdates;
                     }
                     else if (combatActor.IsCaelumMassDiagnosticActor()
                         && CaelumBull(combatActor) != null)
                     {
                         activeBulls++;
                         if (combatActor.target != null) { targetedBulls++; }
+                        chaseBulls += combatActor.ImpactDiagnosticChaseUpdates;
+                    }
+
+                    if (combatActor.IsCaelumMassDiagnosticActor()
+                        && combatActor.target != null)
+                    {
+                        double distanceX = combatActor.Pos.X
+                            - combatActor.target.Pos.X;
+                        double distanceY = combatActor.Pos.Y
+                            - combatActor.target.Pos.Y;
+                        double distanceSquared = distanceX * distanceX
+                            + distanceY * distanceY;
+                        if (distanceSquared <= 512.0 * 512.0)
+                        {
+                            targetedNear++;
+                        }
+                        else if (distanceSquared <= 1024.0 * 1024.0)
+                        {
+                            targetedMiddle++;
+                        }
+                        else
+                        {
+                            targetedFar++;
+                        }
                     }
                 }
                 if (combatActor.target != null) { targetedActors++; }
@@ -304,19 +368,41 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     combatActor.ImpactDiagnosticChaseUpdates;
                 chaseDeferred +=
                     combatActor.ImpactDiagnosticChaseDeferred;
+                chasePhaseDeferred +=
+                    combatActor.ImpactDiagnosticChasePhaseDeferred;
+                chaseBudgetDeferred +=
+                    combatActor.ImpactDiagnosticChaseBudgetDeferred;
+                chaseDisabled +=
+                    combatActor.ImpactDiagnosticChaseDisabled;
                 lookAttempts +=
                     combatActor.ImpactDiagnosticLookAttempts;
                 lookUpdates +=
                     combatActor.ImpactDiagnosticLookUpdates;
                 lookDeferred +=
                     combatActor.ImpactDiagnosticLookDeferred;
+                lookPhaseDeferred +=
+                    combatActor.ImpactDiagnosticLookPhaseDeferred;
+                lookBudgetDeferred +=
+                    combatActor.ImpactDiagnosticLookBudgetDeferred;
+                lookDisabled +=
+                    combatActor.ImpactDiagnosticLookDisabled;
                 if (combatActor.CaelumMassAIScheduleActive
-                    && scheduledLookChaseInterval == 0)
+                    && scheduledLookInterval == 0)
                 {
-                    scheduledLookChaseInterval =
-                        combatActor.CaelumMassLookChaseInterval;
+                    scheduledLookInterval =
+                        combatActor.CaelumMassLookInterval;
+                    scheduledLookBudget =
+                        combatActor.CaelumMassLookBudgetPerTic;
+                    scheduledChaseInterval =
+                        combatActor.CaelumMassChaseInterval;
+                    scheduledChaseBudget =
+                        combatActor.CaelumMassChaseBudgetPerTic;
                     scheduledAttackInterval =
                         combatActor.CaelumMassAttackInterval;
+                    scheduledChaseEnabled =
+                        combatActor.CaelumMassChaseEnabled;
+                    scheduledLookEnabled =
+                        combatActor.CaelumMassLookEnabled;
                     scheduledAttacksEnabled =
                         combatActor.CaelumMassAttacksEnabled;
                 }
@@ -343,9 +429,15 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 combatActor.ImpactDiagnosticChaseAttempts = 0;
                 combatActor.ImpactDiagnosticChaseUpdates = 0;
                 combatActor.ImpactDiagnosticChaseDeferred = 0;
+                combatActor.ImpactDiagnosticChasePhaseDeferred = 0;
+                combatActor.ImpactDiagnosticChaseBudgetDeferred = 0;
+                combatActor.ImpactDiagnosticChaseDisabled = 0;
                 combatActor.ImpactDiagnosticLookAttempts = 0;
                 combatActor.ImpactDiagnosticLookUpdates = 0;
                 combatActor.ImpactDiagnosticLookDeferred = 0;
+                combatActor.ImpactDiagnosticLookPhaseDeferred = 0;
+                combatActor.ImpactDiagnosticLookBudgetDeferred = 0;
+                combatActor.ImpactDiagnosticLookDisabled = 0;
                 combatActor.ImpactDiagnosticProjectilesSpawned = 0;
                 combatActor.ImpactDiagnosticProjectileSpawnFailures = 0;
                 combatActor.ImpactDiagnosticProjectileImpacts = 0;
@@ -382,6 +474,25 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             }
         }
 
+        int peakLookUpdatesPerTic = 0;
+        int schedulerLookBudgetDeferred = 0;
+        int peakChaseUpdatesPerTic = 0;
+        int schedulerBudgetDeferred = 0;
+        CaelumMassAIScheduler massScheduler = CaelumMassAIScheduler(
+            EventHandler.Find("CaelumMassAIScheduler")
+        );
+        if (massScheduler != null)
+        {
+            peakLookUpdatesPerTic =
+                massScheduler.ReadAndResetPeakLookUpdates();
+            schedulerLookBudgetDeferred =
+                massScheduler.ReadAndResetLookBudgetDeferrals();
+            peakChaseUpdatesPerTic =
+                massScheduler.ReadAndResetPeakChaseUpdates();
+            schedulerBudgetDeferred =
+                massScheduler.ReadAndResetBudgetDeferrals();
+        }
+
         Console.Printf(
             "[CA-PHYS] actores=%d ia=%d ia_objetivos=%d objetivos=%d proyectiles=%d",
             combatActors,
@@ -389,6 +500,13 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             activeAITargets,
             targetedActors,
             missiles
+        );
+        Console.Printf(
+            "[CA-PHYS] ligeros=%d auxiliares anatomia=%d armadura=%d estados=%d",
+            lightweightDiagnosticActors,
+            anatomyObjects,
+            armorObjects,
+            elementalStatusObjects
         );
         Console.Printf(
             "[CA-AI] campo objetivos/activos ratas=%d/%d rulo=%d/%d argento=%d/%d caella=%d/%d ronnie=%d/%d toros=%d/%d",
@@ -400,18 +518,44 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             targetedBulls, activeBulls
         );
         Console.Printf(
-            "[CA-AI] escalonado=%d look intentos/s=%d ejecutados/s=%d diferidos/s=%d",
-            scheduledLookChaseInterval,
+            "[CA-AI] look activo=%d escalonado=%d cupo/tic=%d pico/tic=%d intentos/s=%d ejecutados/s=%d diferidos/s=%d fase=%d cupo=%d pausa=%d coord=%d",
+            scheduledLookEnabled,
+            scheduledLookInterval,
+            scheduledLookBudget,
+            peakLookUpdatesPerTic,
             lookAttempts,
             lookUpdates,
-            lookDeferred
+            lookDeferred,
+            lookPhaseDeferred,
+            lookBudgetDeferred,
+            lookDisabled,
+            schedulerLookBudgetDeferred
         );
         Console.Printf(
-            "[CA-AI] escalonado=%d chase intentos/s=%d ejecutados/s=%d diferidos/s=%d",
-            scheduledLookChaseInterval,
+            "[CA-AI] chase activo=%d escalonado=%d cupo/tic=%d pico/tic=%d intentos/s=%d ejecutados/s=%d diferidos/s=%d fase=%d cupo=%d pausa=%d coord=%d",
+            scheduledChaseEnabled,
+            scheduledChaseInterval,
+            scheduledChaseBudget,
+            peakChaseUpdatesPerTic,
             chaseAttempts,
             chaseUpdates,
-            chaseDeferred
+            chaseDeferred,
+            chasePhaseDeferred,
+            chaseBudgetDeferred,
+            chaseDisabled,
+            schedulerBudgetDeferred
+        );
+        Console.Printf(
+            "[CA-AI] chase/familia ratas=%d rulo=%d argento=%d caella=%d ronnie=%d toros=%d distancia <=512=%d <=1024=%d >1024=%d",
+            chaseRats,
+            chaseRulos,
+            chaseArgentos,
+            chaseCaellas,
+            chaseRonnies,
+            chaseBulls,
+            targetedNear,
+            targetedMiddle,
+            targetedFar
         );
         Console.Printf(
             "[CA-PHYS] contactos~=%d max/actor=%d callbacks/s=%d unicos=%d duplicados=%d reposo=%d",

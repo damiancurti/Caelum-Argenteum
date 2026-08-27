@@ -18,6 +18,18 @@ The runtime pack contains 94 independent PNGs:
 Mockups and layered masters remain art sources and are not loaded by the PK3.
 See `ASSET_REGISTER.md` for authorship and license tracking.
 
+## Corrected in 4.29.0l
+
+- HUD-01 frame centers render before the live colored rectangles. Each fill is
+  inset to 164 MU, so it remains visible without covering either metal cap.
+- Health again exposes its red--gold--green progression; Anima, Adrenaline,
+  Lucidity, Air, Load and survival resources retain their authored hues.
+- `CaelumText` word spacing increases from six to eight pixels in the Journal
+  and secondary menus. Glyph kerning and the compact `CaelumMono` HUD remain
+  unchanged.
+
+The colored resource fills were manually accepted during V4.29.0m testing.
+
 ## Implemented in 4.29.0i
 
 - `CaelumStatusBar` replaces the Doom status bar with an empty project-owned
@@ -55,11 +67,13 @@ player. Opening a page or moving its cursor remains local.
 6. Validate keyboard, mouse and controller navigation at 4:3, 16:9 and
    ultrawide resolutions before calling the interface visually final.
 
-## Manual acceptance for 4.29.0i
+## Manual acceptance for 4.29.0l
 
 - No Doom face, Doom arms counter or Doom ammunition panel is visible.
-- The nine live resource bars retain correct numeric values and use the new
-  frames/icons without cropping at 4:3 or 16:9.
+- The nine live resource bars retain correct numeric values, visible resource
+  colors and uncropped frames/icons at 4:3 or 16:9.
+- Journal word boundaries are visibly clearer without loosening letter pairs
+  or changing HUD counter alignment.
 - Tab opens and closes the Journal; Escape closes it; arrow keys change all six
   sections; M still toggles the automap when the Journal is closed.
 - Inventory and Character values match the debug interface.

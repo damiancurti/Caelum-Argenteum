@@ -21,8 +21,12 @@ class CaelumGiantRat : CaelumCombatActor
     {
         Super.PostBeginPlay();
         InitializeCombatProfile(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-        AnatomyProfile.InitializeBullQuadruped();
-        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        if (AnatomyProfile != null)
+        {
+            AnatomyProfile.InitializeBullQuadruped();
+        }
+        for (int slot = 0; CombatArmor != null
+            && slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
             CombatArmor.ArmorType[slot] =
                 CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;

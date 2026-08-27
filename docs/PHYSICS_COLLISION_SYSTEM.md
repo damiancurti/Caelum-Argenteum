@@ -1,5 +1,46 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0m — The supplied A/B runs were all enabled
+
+The three V4.29.0l files do not implicate contact physics: every final report
+contains zero retained contacts and zero collision callbacks, while live
+projectiles remain between zero and two. The global Chase limiter also holds
+at its requested 40 updates per tic. Freeze timing varies substantially and no
+telemetry counter grows before the abrupt stop.
+
+The intended disabled controls were not active. The first two console logs set
+their CVars after the MAP02 actors had already copied the initial values, and
+their reports explicitly say `chase activo=1` and `ataques_masivos=1`. This
+patch makes the single scheduler own live settings and adds a 20-call per-tic
+Look ceiling. A disabled report can no longer silently exercise enabled AI.
+
+V4.29.0m also removes the diagnostic population's unnecessary object graph and
+per-tic custom combat recomputation. This optimization is confined to MAP02
+stress/passive actors; it does not weaken collision, anatomy, armor or status
+rules for gameplay actors or the isolated Quintessence rooms. The next logs
+will distinguish a collector/object-graph pause from native perception/chase.
+
+## V4.29.0l — Per-tic ceiling for native pursuit
+
+V4.29.0i reaches 1,605 simultaneous targets and approximately 1,924 admitted
+`A_Chase` calls per second immediately before its abrupt stop. Contact edges,
+custom callbacks and accepted attacks are all zero in that final interval; four
+bounded projectiles remain alive. The freeze is therefore reproducible without
+the custom pair solver, projectile accumulation or active attack delivery.
+
+Look and Chase no longer share one interval. Look remains seven-phase, while
+Chase uses thirteen coprime phases so the 4/5/8/10-tic actor loops eventually
+visit every phase. A single deterministic EventHandler resets one counter per
+world tic and admits at most 40 native Chase calls. Actors cache its reference
+at spawn, so enforcing the ceiling adds neither a Thinker traversal nor a CVar
+lookup to the state action.
+
+The diagnostic can disable Chase while retaining acquired targets. Its monitor
+separates phase, global-budget and disabled deferrals and records peak admitted
+updates per tic. This is the first reusable foundation for later formation and
+stealth scheduling; it is not yet the final group-command model.
+
+
 ## V4.29.0i — Perception joins the cached mass-AI schedule
 
 The accepted V4.29.0h run no longer froze under the seven-phase Chase and

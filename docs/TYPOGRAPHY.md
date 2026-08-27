@@ -36,4 +36,4 @@ Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y
 
 ## Estado
 
-La revisión V4.28.0az reduce el kerning directo a `-4`, recorta una columna transparente derecha de cada glifo y suma otro píxel a `SpaceWidth`. `FONTDEFS` recibe los mismos anchos de palabra para sus alias modernos. Los cinco rótulos clásicos del menú principal, que GZDoom trataba como imágenes en lugar de texto, se reemplazan por gráficos españoles compuestos con `CaelumText` y estas mismas métricas.
+La revisión V4.28.0az reduce el kerning directo a `-4`, recorta una columna transparente derecha de cada glifo y suma otro píxel a `SpaceWidth`. V4.29.0l aumenta únicamente la separación de palabra de `CaelumText` y sus alias de menú pequeño de 6 a 8 píxeles; no cambia el kerning entre letras, `CaelumSmall`, `CaelumDisplay` ni `CaelumMono`. `FONTDEFS` conserva los mismos valores en sus alias modernos. Los cinco rótulos clásicos del menú principal, que GZDoom trataba como imágenes en lugar de texto, se reemplazan por gráficos españoles compuestos con `CaelumText` y sus métricas correspondientes.

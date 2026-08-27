@@ -1,5 +1,57 @@
 # Changelog
 
+## 4.29.0m — Live AI controls, lightweight stress actors and straight balcony corridor
+
+- Confirmed from all three V4.29.0l logs that contacts stayed at zero,
+  projectiles stayed between zero and two and the global Chase peak never
+  exceeded 40. The stops remained abrupt and occurred after different run
+  lengths, with no monitored counter growing toward the failure.
+- Corrected the A/B controls: the first two logs issued `false` after the
+  actors had already cached `true`, so all three sessions actually ran Look,
+  Chase and attacks. The sole coordinator now reads settings once per tic;
+  changes are live and the next telemetry report displays their effective value.
+- Added independent Look enablement and a default hard ceiling of 20 native
+  `A_Look` calls per tic, alongside the existing 40-call Chase ceiling.
+- Added a diagnostic-only lightweight path. The 16,500 mass/passive stress
+  actors no longer allocate permanent anatomy, armor and elemental-status
+  helpers or recalculate full RPG/contact state every tic. Native state
+  progression and scheduled Look/Chase/attacks remain active. Normal maps,
+  isolated physics rooms and gameplay NPCs keep the complete simulation.
+- Expanded telemetry with effective Look controls, phase/budget/pause
+  deferrals, per-tic Look peak, lightweight actor count and allocated helper
+  object counts.
+- Rebuilt both MAP01 first-floor façades at Y=±368. Each repeated staircase
+  ends at Y=±272, leaving one uninterrupted 96-MU landing corridor. Removed
+  the former stair-shaped wall returns, aligned the four balcony door pairs
+  and moved the accepted middle doors to the centers of the shallower rooms.
+- Changed the top face of tag-511 walls to the roof texture so wall caps no
+  longer form panel-textured strips above the façade. All flights remain
+  119 MU wide and lateral room connections remain closed for acceptance.
+- Recorded manual acceptance of the corrected colored HUD resource bars.
+
+## 4.29.0l — Bounded chase coordinator and continuous first-floor rows
+
+- Separated MAP02 mass-field perception and chase settings. `A_Look` keeps its
+  seven-phase cadence while `A_Chase` defaults to thirteen coprime phases,
+  approximately one update every 1.5--2 seconds for the current state loops.
+- Added one deterministic per-game coordinator with a hard default ceiling of
+  40 native `A_Chase` calls per tic. Actors cache its reference once at spawn;
+  no actor search or CVar lookup was added to the hot path.
+- Added an A/B switch that keeps acquired targets but pauses `A_Chase`, plus
+  telemetry for phase/budget/paused deferrals, peak updates per tic, family
+  execution totals and target distance bands.
+- Rebuilt MAP01's complete north and south first-floor rows from the accepted
+  tag-510/tag-511 controls. The eight rooms now meet behind the repeated stair
+  landings, preserve the 96-MU balcony setback and all three 119-MU flights,
+  and contain no coincident repair lines.
+- Removed the four former central side leaves that would float inside the
+  enlarged rooms. The four balcony-facing double doors and the two accepted
+  middle doors remain; lateral room connections stay closed for the next gate.
+- Drew resource fills inside and after the opaque HUD-01 frame centers so the
+  authored health/resource colors remain visible without covering metal caps.
+- Increased only `CaelumText` and its small-menu aliases from six to eight
+  pixels of word spacing. Letter kerning and `CaelumMono` remain unchanged.
+
 ## 4.29.0i — Cached perception scheduling and permanent UI foundation
 
 - Extended the MAP02 mass-field budget from `A_Chase` to `A_Look`. Perception,

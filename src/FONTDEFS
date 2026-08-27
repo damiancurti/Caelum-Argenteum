@@ -5,7 +5,7 @@ NewSmallFont
     Template "fonts/caelumtext/%04X.png"
     Base 33
     Count 223
-    SpaceWidth 6
+    SpaceWidth 8
 }
 
 NewConsoleFont
@@ -21,7 +21,7 @@ SmallFont
     Template "fonts/caelumtext/%04X.png"
     Base 33
     Count 223
-    SpaceWidth 6
+    SpaceWidth 8
 }
 
 ConsoleFont

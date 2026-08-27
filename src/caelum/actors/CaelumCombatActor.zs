@@ -81,9 +81,15 @@ class CaelumCombatActor : Actor
     int ImpactDiagnosticChaseAttempts;
     int ImpactDiagnosticChaseUpdates;
     int ImpactDiagnosticChaseDeferred;
+    int ImpactDiagnosticChasePhaseDeferred;
+    int ImpactDiagnosticChaseBudgetDeferred;
+    int ImpactDiagnosticChaseDisabled;
     int ImpactDiagnosticLookAttempts;
     int ImpactDiagnosticLookUpdates;
     int ImpactDiagnosticLookDeferred;
+    int ImpactDiagnosticLookPhaseDeferred;
+    int ImpactDiagnosticLookBudgetDeferred;
+    int ImpactDiagnosticLookDisabled;
     int ImpactDiagnosticProjectilesSpawned;
     int ImpactDiagnosticProjectileSpawnFailures;
     int ImpactDiagnosticProjectileImpacts;
@@ -95,15 +101,21 @@ class CaelumCombatActor : Actor
     double LastImpactRawDeltaSpeed;
     double LastImpactBiologicalAbsorptionSpeed;
 
-    // El campo masivo fija su presupuesto una sola vez al aparecer. Esto evita
-    // buscar CVars y recalcular hashes miles de veces por segundo dentro de
-    // A_Look/A_Chase, pero conserva fases deterministas y reproducibles.
+    // El campo masivo conserva fases deterministas por actor y lee los ajustes
+    // efectivos desde un único coordinador. Sólo el coordinador consulta CVars.
     bool CaelumMassAIScheduleActive;
     bool CaelumMassAttacksEnabled;
-    int CaelumMassLookChaseInterval;
+    bool CaelumMassLookEnabled;
+    bool CaelumMassChaseEnabled;
+    int CaelumMassLookInterval;
+    int CaelumMassChaseInterval;
+    int CaelumMassLookBudgetPerTic;
+    int CaelumMassChaseBudgetPerTic;
     int CaelumMassAttackInterval;
-    int CaelumMassLookChasePhaseKey;
+    int CaelumMassLookPhaseKey;
+    int CaelumMassChasePhaseKey;
     int CaelumMassAttackPhaseKey;
+    CaelumMassAIScheduler CaelumMassScheduler;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -184,18 +196,33 @@ class CaelumCombatActor : Actor
         CombatLucidityState = CaelumConstants.LUCIDITY_STATE_NORMAL;
         CombatLucidityAccuracyMultiplier = 1.0;
         LastCombatLucidityCriticalFactor = 1.0;
-        if (AnatomyProfile == null)
+
+        // Los miles de actores exclusivos del estrés no necesitan tres objetos
+        // auxiliares permanentes ni toda la simulación RPG por tic. Si alguno
+        // recibe daño real, las rutas normales crean su anatomía bajo demanda.
+        bool massDiagnostic = IsCaelumMassDiagnosticActor();
+        bool lightweightDiagnostic = massDiagnostic
+            || CaelumDiagnosticPassiveAI;
+        if (massDiagnostic)
+        {
+            Species = 'CaelumMassDiagnosticCrowd';
+            bTHRUSPECIES = true;
+            bTHRUACTORS = true;
+            InitializeCaelumMassAISchedule();
+        }
+
+        if (!lightweightDiagnostic && AnatomyProfile == null)
         {
             AnatomyProfile = CaelumAnatomyProfile(new("CaelumAnatomyProfile"));
             AnatomyProfile.InitializeHumanoid();
         }
-        if (ElementalStatus == null)
+        if (!lightweightDiagnostic && ElementalStatus == null)
             ElementalStatus = CaelumElementalStatus(new("CaelumElementalStatus"));
         LastAnatomyLocation = CaelumConstants.HIT_LOCATION_NONE;
         LastAnatomyNaturalVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
         LastAnatomyVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
         LastCombatArmorSlot = CaelumConstants.ARMOR_SLOT_BODY;
-        if (CombatArmor == null)
+        if (!lightweightDiagnostic && CombatArmor == null)
         {
             CombatArmor = CaelumArmorModel(new("CaelumArmorModel"));
             CombatArmor.InitializeUniformLoadout(
@@ -205,51 +232,73 @@ class CaelumCombatActor : Actor
         }
         RecalculateCombatStatistics();
         UpdateActorLucidityState();
-
-        // El campo masivo mide IA y ataques, no resolución de islas físicas.
-        // Sus seis familias comparten especie y se atraviesan entre sí para
-        // impedir una cuadrícula de 15.000 cuerpos sólidos. Los recintos de
-        // Quintaesencia conservan las colisiones completas por separado.
-        if (IsCaelumMassDiagnosticActor())
-        {
-            Species = 'CaelumMassDiagnosticCrowd';
-            bTHRUSPECIES = true;
-            bTHRUACTORS = true;
-            InitializeCaelumMassAISchedule();
-        }
     }
 
     void InitializeCaelumMassAISchedule()
     {
         CaelumMassAIScheduleActive = true;
 
-        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
-        CaelumMassAttacksEnabled = attackSetting == null
-            || attackSetting.GetBool();
-
-        CVar chaseSetting = CVar.GetCVar("ca_diag_mass_ai_stagger");
-        CaelumMassLookChaseInterval = chaseSetting == null
-            ? 7
-            : Clamp(chaseSetting.GetInt(), 1, 31);
-
-        CVar attackStaggerSetting = CVar.GetCVar(
-            "ca_diag_mass_attack_stagger"
-        );
-        CaelumMassAttackInterval = attackStaggerSetting == null
-            ? 64
-            : Clamp(attackStaggerSetting.GetInt(), 1, 64);
-
         // SpawnPoint permanece estable aunque A_Chase mueva al actor. Dividir
         // por la separación de la matriz evita que todas las coordenadas
         // múltiplas de 96 caigan en la misma fase.
         int gridX = int(SpawnPoint.X / 96.0);
         int gridY = int(SpawnPoint.Y / 96.0);
-        CaelumMassLookChasePhaseKey = Abs(
+        CaelumMassLookPhaseKey = Abs(
             gridX * 19 + gridY * 23 + int(Mass) * 11
+        );
+        CaelumMassChasePhaseKey = Abs(
+            gridX * 29 + gridY * 31 + int(Mass) * 17
         );
         CaelumMassAttackPhaseKey = Abs(
             gridX * 31 + gridY * 17 + int(Mass) * 13
         );
+
+        // Find se ejecuta una sola vez al aparecer. El camino caliente usa la
+        // referencia cacheada y nunca recorre actores ni handlers.
+        CaelumMassScheduler = CaelumMassAIScheduler(
+            EventHandler.Find("CaelumMassAIScheduler")
+        );
+        if (CaelumMassScheduler != null)
+        {
+            CaelumMassScheduler.RefreshSettings();
+        }
+        SyncCaelumMassAISchedule();
+    }
+
+    void SyncCaelumMassAISchedule()
+    {
+        if (CaelumMassScheduler == null)
+        {
+            CaelumMassScheduler = CaelumMassAIScheduler(
+                EventHandler.Find("CaelumMassAIScheduler")
+            );
+        }
+
+        if (CaelumMassScheduler == null)
+        {
+            // Valores seguros si un guardado antiguo no contiene el handler.
+            CaelumMassAttacksEnabled = false;
+            CaelumMassLookEnabled = false;
+            CaelumMassChaseEnabled = false;
+            CaelumMassAttackInterval = 64;
+            CaelumMassLookInterval = 7;
+            CaelumMassChaseInterval = 13;
+            CaelumMassLookBudgetPerTic = 20;
+            CaelumMassChaseBudgetPerTic = 40;
+            return;
+        }
+
+        CaelumMassAttacksEnabled =
+            CaelumMassScheduler.MassAttacksEnabled;
+        CaelumMassLookEnabled = CaelumMassScheduler.MassLookEnabled;
+        CaelumMassChaseEnabled = CaelumMassScheduler.MassChaseEnabled;
+        CaelumMassAttackInterval = CaelumMassScheduler.MassAttackInterval;
+        CaelumMassLookInterval = CaelumMassScheduler.MassLookInterval;
+        CaelumMassChaseInterval = CaelumMassScheduler.MassChaseInterval;
+        CaelumMassLookBudgetPerTic =
+            CaelumMassScheduler.MassLookBudgetPerTic;
+        CaelumMassChaseBudgetPerTic =
+            CaelumMassScheduler.MassChaseBudgetPerTic;
     }
 
     bool IsCaelumMassDiagnosticActor()
@@ -268,6 +317,7 @@ class CaelumCombatActor : Actor
         if (level.MapName != "MAP02") { return true; }
         ImpactDiagnosticAttackAttempts++;
         if (!CaelumMassAIScheduleActive) { return true; }
+        SyncCaelumMassAISchedule();
 
         if (!CaelumMassAttacksEnabled)
         {
@@ -295,19 +345,39 @@ class CaelumCombatActor : Actor
     {
         if (!CaelumMassAIScheduleActive) { return true; }
         ImpactDiagnosticChaseAttempts++;
+        SyncCaelumMassAISchedule();
 
-        int stagger = CaelumMassLookChaseInterval;
+        if (!CaelumMassChaseEnabled)
+        {
+            ImpactDiagnosticChaseDeferred++;
+            ImpactDiagnosticChaseDisabled++;
+            return false;
+        }
+
+        int stagger = CaelumMassChaseInterval;
         if (stagger > 1)
         {
-            // Siete es coprimo con los ciclos actuales de 8 y 10 tics. Así
-            // ninguna familia queda fijada para siempre a una fase inválida.
-            int phase = CaelumMassLookChasePhaseKey % stagger;
+            // Trece es coprimo con los ciclos de 4, 5, 8 y 10 tics usados por
+            // las familias del campo, por lo que ningún actor queda varado.
+            int phase = CaelumMassChasePhaseKey % stagger;
             if (level.time % stagger != phase)
             {
                 ImpactDiagnosticChaseDeferred++;
+                ImpactDiagnosticChasePhaseDeferred++;
                 return false;
             }
         }
+
+        // La fase reduce el promedio; el coordinador limita también el peor
+        // tic. Si no estuviera registrado, fallar cerrado protege la sesión.
+        if (CaelumMassScheduler == null
+            || !CaelumMassScheduler.TryAdmitChase())
+        {
+            ImpactDiagnosticChaseDeferred++;
+            ImpactDiagnosticChaseBudgetDeferred++;
+            return false;
+        }
+
         ImpactDiagnosticChaseUpdates++;
         return true;
     }
@@ -316,16 +386,33 @@ class CaelumCombatActor : Actor
     {
         if (!CaelumMassAIScheduleActive) { return true; }
         ImpactDiagnosticLookAttempts++;
+        SyncCaelumMassAISchedule();
 
-        int stagger = CaelumMassLookChaseInterval;
+        if (!CaelumMassLookEnabled)
+        {
+            ImpactDiagnosticLookDeferred++;
+            ImpactDiagnosticLookDisabled++;
+            return false;
+        }
+
+        int stagger = CaelumMassLookInterval;
         if (stagger > 1)
         {
-            int phase = CaelumMassLookChasePhaseKey % stagger;
+            int phase = CaelumMassLookPhaseKey % stagger;
             if (level.time % stagger != phase)
             {
                 ImpactDiagnosticLookDeferred++;
+                ImpactDiagnosticLookPhaseDeferred++;
                 return false;
             }
+        }
+
+        if (CaelumMassScheduler == null
+            || !CaelumMassScheduler.TryAdmitLook())
+        {
+            ImpactDiagnosticLookDeferred++;
+            ImpactDiagnosticLookBudgetDeferred++;
+            return false;
         }
         ImpactDiagnosticLookUpdates++;
         return true;
@@ -357,6 +444,10 @@ class CaelumCombatActor : Actor
 
     void InitializeCombatArmor(int requestedArmorType, int requestedTier)
     {
+        if (CaelumMassAIScheduleActive || CaelumDiagnosticPassiveAI)
+        {
+            return;
+        }
         if (CombatArmor == null)
         {
             CombatArmor = CaelumArmorModel(new("CaelumArmorModel"));
@@ -2564,6 +2655,15 @@ class CaelumCombatActor : Actor
         Vector3 prePhysicsVelocity = Vel;
 
         Super.Tick();
+
+        // Los actores diagnósticos conservan estados nativos, A_Look, A_Chase
+        // y ataques, pero no recalculan estadísticas, estados elementales ni
+        // contactos que no forman parte de esta prueba. El juego normal no
+        // toma esta salida rápida.
+        if (CaelumMassAIScheduleActive || CaelumDiagnosticPassiveAI)
+        {
+            return;
+        }
         if (ElementalStatus != null) ElementalStatus.Tick(self);
 
         bool groundedNow = Pos.Z <= FloorZ + 0.01;

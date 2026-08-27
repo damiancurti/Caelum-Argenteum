@@ -5,8 +5,8 @@ class CaelumPassiveRulo : CaelumRulo
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States
@@ -23,8 +23,8 @@ class CaelumPassiveArgento : CaelumArgento
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States
@@ -41,8 +41,8 @@ class CaelumPassiveCaella : CaelumCaella
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States
@@ -59,8 +59,8 @@ class CaelumPassiveRonnie : CaelumRonnie
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States
@@ -77,8 +77,8 @@ class CaelumPassiveBull : CaelumBull
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States
@@ -95,8 +95,8 @@ class CaelumPassiveGiantRat : CaelumGiantRat
 {
     override void PostBeginPlay()
     {
-        Super.PostBeginPlay();
         CaelumDiagnosticPassiveAI = true;
+        Super.PostBeginPlay();
     }
 
     States

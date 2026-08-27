@@ -15,7 +15,7 @@ GameInfo
     StatusBarClass = "CaelumStatusBar"
 
     // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
+    EventHandlers = "CaelumMassAIScheduler", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 }
 
 // Los mapas permanecen separados durante la consolidación: MAP01 valida

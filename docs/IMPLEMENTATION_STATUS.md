@@ -1,5 +1,100 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Live mass-AI controls and straight landing corridor 4.29.0m
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The three V4.29.0l logs stop after different durations but share the same
+stable boundary: 16,608 combat actors, 1,983 active AI, zero custom contacts,
+zero callbacks, zero to two projectiles and at most 40 admitted Chase updates
+in any tic. No monitored value rises toward the abrupt stop. However, the two
+intended disabled sessions did not actually disable their systems: the console
+changed the CVars after the actors had cached their initial `true` values.
+Consequently all three files are enabled-Chase samples, not a valid A/B result.
+
+V4.29.0m moves those settings into `CaelumMassAIScheduler`. It reads CVars once
+per world tic and every field actor reads only cached coordinator fields.
+Look, Chase and attacks can now be changed while MAP02 is running, and the
+telemetry shows the effective state on the next line. Look also receives a
+hard default ceiling of 20 native calls per tic; Chase remains capped at 40.
+
+The variable abrupt timing, stable counters and very large fixed ZScript object
+graph make a collector/main-thread pause more plausible than contact or missile
+growth. The diagnostic-only population is therefore lightweight: 16,500
+mass/passive stress actors keep native thinker/state execution but do not own
+permanent anatomy, armor or elemental-state objects and do not run the complete
+Caelum RPG/contact Tick. The isolated test actors and all normal-map NPCs retain
+the full model. Telemetry reports both lightweight and remaining helper counts.
+
+MAP01 replaces the stair-shaped room fronts with straight façades at Y=±368.
+Since all six upper landings end at Y=±272, the path between stairs and rooms is
+exactly 96 MU and uninterrupted. Front doors move to Y=±372; middle doors move
+to Y=±456. The rear balcony keeps its existing 96-MU offset, all stair modules
+remain 119 MU wide and lateral room divisions stay closed for the next gate.
+
+The colored HUD resource fills are manually accepted.
+
+### V4.29.0m runtime procedure
+
+Run four fresh MAP02 sessions: all three systems disabled; Look only; Look plus
+Chase; then full combat. CVars are live, so a valid report must literally show
+`look activo=0/1`, `chase activo=0/1` and `ataques_masivos=0/1` as requested.
+The lightweight line should report approximately 16,500 actors and only the
+isolated-room population should retain helper objects. Look peak must stay at
+or below 20 and Chase peak at or below 40.
+
+In MAP01 walk the full corridor behind every staircase, then inspect both
+façades and roofs from above and below. No wall return may point toward a
+landing; the front and rear balcony gaps must both measure visually alike.
+
+## Bounded chase, colored HUD fills and continuous room rows 4.29.0l
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The supplied V4.29.0i log freezes after approximately 120 reported seconds
+with 1,605 target-bearing actors and roughly 1,924 real `A_Chase` executions
+per second. Contacts and custom callbacks remain zero, only four projectiles
+are alive and no attack is accepted in the final interval. Every family reaches
+a similar target saturation; rats dominate only because they are the largest
+population. The earlier V4.29.0h run survived more cumulative Chase calls, so
+the actionable boundary is concurrent native pursuit work rather than a simple
+per-call memory leak.
+
+V4.29.0l keeps dormant perception at seven phases and moves pursuit to an
+independent thirteen-phase schedule. One registered `CaelumMassAIScheduler`
+also caps the whole field at 40 admitted Chase calls per tic. Each actor caches
+the handler and all CVar values once in `PostBeginPlay`. `ca_diag_mass_chase_enabled`
+provides a target-retaining, no-movement control. Telemetry now reports the
+actual peak per tic, phase/budget/pause deferrals, family updates and target
+distance bands.
+
+MAP01 no longer consists of six isolated room rectangles. The two first-floor
+rows are clean, disconnected components of one tag-510 interior and one
+tag-511 wall sector. Their fronts remain at Y=±192, preserving 96 MU of balcony;
+the rooms expand behind the stair landings at Y=±272. Every flight remains
+119 MU wide. Closed native dividers yield four rooms per row. Balcony doors
+700/716/717/718 and middle doors 902/905 remain; obsolete side leaves
+900/901/903/904 are removed until lateral openings are authored.
+
+HUD-01 frames render before 164-MU inset fills, restoring every resource color
+without painting over end caps. `CaelumText`, `NewSmallFont`, `SmallFont` and
+their alternative small alias use `SpaceWidth 8`; letter kerning and HUD
+`CaelumMono` are unchanged.
+
+### V4.29.0l runtime procedure
+
+Run three fresh MAP02 sessions for five simulated minutes each: Chase disabled
+and attacks disabled; Chase enabled and attacks disabled; then both enabled.
+Use Look 7, Chase 13, budget 40 and attack stagger 64 in all three. A stable
+disabled run proves target ownership alone is safe; a stable no-attack Chase
+run validates the native pursuit ceiling; the final run restores combat.
+
+In MAP01 inspect all eight rooms, both balcony edges and all six stair modules
+from above and below. Lateral dividers are expected to be closed. No room floor,
+landing or exterior strip may be missing, collision-solid but invisible, or
+crossed by a coincident wall.
+
+
 ## Cached perception scheduling, MAP01 doors and UI foundation 4.29.0i
 
 **Implemented and structurally validated; manual GZDoom acceptance pending**

@@ -88,9 +88,13 @@ class CaelumBull : CaelumCombatActor
         Super.PostBeginPlay();
         // Físicos 40, técnicos 20, sociales 2 y mentales 2.
         InitializeCombatProfile(40, 40, 40, 20, 20, 20, 2, 2, 2, 2, 2, 2);
-        AnatomyProfile.InitializeBullQuadruped();
+        if (AnatomyProfile != null)
+        {
+            AnatomyProfile.InitializeBullQuadruped();
+        }
         // El toro no lleva armadura: conserva las regiones naturales.
-        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        for (int slot = 0; CombatArmor != null
+            && slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
             CombatArmor.ArmorType[slot] =
                 CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;

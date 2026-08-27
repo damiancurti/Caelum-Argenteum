@@ -7,14 +7,25 @@ user bool ca_debug_attributes = false;
 user bool ca_journal_open = false;
 user int ca_journal_page = 0;
 
-// Interruptor exclusivo del campo masivo de MAP02. Se captura cuando aparece
-// cada actor; para una prueba comparable debe fijarse antes de `map map02`.
+// Interruptores exclusivos del campo masivo de MAP02. El coordinador los lee
+// una vez por tic, por lo que pueden cambiarse con el mapa ya iniciado y la
+// telemetría confirma el valor efectivo en el siguiente informe.
 server bool ca_diag_mass_attacks = true;
+server bool ca_diag_mass_look_enabled = true;
+server bool ca_diag_mass_chase_enabled = true;
 
 // Divide de forma determinista los intentos de ataque del campo masivo entre
-// varios tics. Se captura al cargar el mapa para eliminar búsquedas de CVar del
-// camino caliente de combate.
+// varios tics. Sólo el coordinador consulta estas CVars; los actores usan su
+// referencia cacheada y no ejecutan búsquedas en el camino caliente.
 server int ca_diag_mass_attack_stagger = 64;
-// Presupuesta percepción y persecución del campo masivo. Siete es coprimo con
-// los ciclos de animación de las seis familias actuales y se captura al cargar.
-server int ca_diag_mass_ai_stagger = 7;
+
+// Percepción y persecución tienen presupuestos independientes. Siete mantiene
+// una comprobación de sigilo/percepción cercana a dos segundos; trece reparte
+// A_Chase entre ciclos coprimos y reduce su cadencia a aproximadamente 1,5--2 s.
+server int ca_diag_mass_look_stagger = 7;
+server int ca_diag_mass_chase_stagger = 13;
+
+// Un coordinador global impide que una distribución de fases desfavorable
+// supere estos números de llamadas nativas dentro del mismo tic.
+server int ca_diag_mass_look_budget = 20;
+server int ca_diag_mass_chase_budget = 40;

@@ -149,6 +149,24 @@ slots but no fabricated state. MAP01 continues independently with native
 divider geometry and rear first-floor doors. These robustness, architecture
 and UI foundations do not complete the crafting requirements below.
 
+V4.29.0l responds to the later 1,605-target freeze by separating Look and Chase,
+using thirteen coprime Chase phases and enforcing a global 40-update ceiling
+per tic. It also restores visible HUD resource colors and clearer Journal word
+spacing. MAP01 replaces the isolated first-floor rectangles with two continuous
+native rows that preserve the 96-MU balcony setback and every 119-MU stair;
+lateral room openings remain the next manual-acceptance gate. This remains a
+parallel robustness/architecture/UI increment and does not complete crafting.
+
+V4.29.0m corrects the invalid disabled comparison discovered in the supplied
+logs: mass Look, Chase and attack controls become live coordinator state and
+Look gains its own 20-call per-tic ceiling. MAP02 stress-only actors use a
+lightweight representation so the extreme 16,500-body diagnostic does not
+allocate or tick unused full RPG submodels; gameplay NPCs remain complete.
+MAP01 moves both continuous façades behind the upper stair landings, producing
+an uninterrupted 96-MU corridor while keeping 119-MU flights and closed lateral
+divisions. The colored HUD bars are accepted. This remains a robustness/map/UI
+acceptance increment and does not complete crafting.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

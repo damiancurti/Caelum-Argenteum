@@ -399,7 +399,7 @@ class CaelumHUDOverlay : EventHandler
     }
 
     // Los extremos nunca se deforman; solamente se estira la pieza central.
-    // El relleno continúa siendo un rectángulo tintado y queda por debajo.
+    // El relleno se compone después dentro del hueco y no cubre los extremos.
     ui void DrawHUDBarFrame(double barX, double barY, double barWidth)
     {
         String root = "graphics/caelum/ui/hud/components/";
@@ -455,9 +455,9 @@ class CaelumHUDOverlay : EventHandler
         double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
         double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
 
-        int barX = int(offsetX + 20.0 * scale);
+        int barX = int(offsetX + 28.0 * scale);
         int barY = int(offsetY + 326.0 * scale);
-        int barWidth = Max(1, int(180.0 * scale));
+        int barWidth = Max(1, int(164.0 * scale));
         int barHeight = Max(1, int(7.0 * scale));
         // Read stored fields directly. Calling a play-scope function such as
         // GetAirRatio from this UI context is forbidden by ZScript.
@@ -502,9 +502,9 @@ class CaelumHUDOverlay : EventHandler
         double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
         double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
 
-        int barX = int(offsetX + 20.0 * scale);
+        int barX = int(offsetX + 28.0 * scale);
         int barY = int(offsetY + 302.0 * scale);
-        int barWidth = Max(1, int(180.0 * scale));
+        int barWidth = Max(1, int(164.0 * scale));
         int barHeight = Max(1, int(7.0 * scale));
         double ratio = 0.0;
 
@@ -539,9 +539,9 @@ class CaelumHUDOverlay : EventHandler
         double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
         double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
 
-        int barX = int(offsetX + 20.0 * scale);
+        int barX = int(offsetX + 28.0 * scale);
         int barY = int(offsetY + 278.0 * scale);
-        int barWidth = Max(1, int(180.0 * scale));
+        int barWidth = Max(1, int(164.0 * scale));
         int barHeight = Max(1, int(7.0 * scale));
         double ratio = 0.0;
 
@@ -577,9 +577,9 @@ class CaelumHUDOverlay : EventHandler
         double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
         double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
 
-        int barX = int(offsetX + 20.0 * scale);
+        int barX = int(offsetX + 28.0 * scale);
         int barY = int(offsetY + 254.0 * scale);
-        int barWidth = Max(1, int(180.0 * scale));
+        int barWidth = Max(1, int(164.0 * scale));
         int barHeight = Max(1, int(7.0 * scale));
         double ratio = 0.0;
 
@@ -611,9 +611,9 @@ class CaelumHUDOverlay : EventHandler
         double canvasHeight = 360.0 * scale;
         double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
         double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-        int barX = int(offsetX + 20.0 * scale);
+        int barX = int(offsetX + 28.0 * scale);
         int barY = int(offsetY + 230.0 * scale);
-        int barWidth = Max(1, int(180.0 * scale));
+        int barWidth = Max(1, int(164.0 * scale));
         int barHeight = Max(1, int(7.0 * scale));
         double ratio = Clamp(
             localPlayer.CurrentLucidity / CaelumConstants.MAXIMUM_LUCIDITY,
@@ -647,9 +647,9 @@ class CaelumHUDOverlay : EventHandler
         double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
         double offsetX = (Screen.GetWidth() - 640.0 * scale) * 0.5;
         double offsetY = (Screen.GetHeight() - 360.0 * scale) * 0.5;
-        int x = int(offsetX + 440.0 * scale);
+        int x = int(offsetX + 448.0 * scale);
         int y = int(offsetY + virtualY * scale);
-        int width = Max(1, int(180.0 * scale));
+        int width = Max(1, int(164.0 * scale));
         int height = Max(1, int(7.0 * scale));
         int fill = int(width * Clamp(value / 100.0, 0.0, 1.0));
         // "color" is a built-in ZScript type, so the variable needs a more
@@ -684,9 +684,9 @@ class CaelumHUDOverlay : EventHandler
         double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
         double offsetX = (Screen.GetWidth() - 640.0 * scale) * 0.5;
         double offsetY = (Screen.GetHeight() - 360.0 * scale) * 0.5;
-        int x = int(offsetX + 440.0 * scale);
+        int x = int(offsetX + 448.0 * scale);
         int y = int(offsetY + virtualY * scale);
-        int width = Max(1, int(180.0 * scale));
+        int width = Max(1, int(164.0 * scale));
         int height = Max(1, int(7.0 * scale));
         double ratio = localPlayer.HUDLoadRatio;
         int fill = int(width * Clamp(ratio, 0.0, 1.0));
@@ -871,6 +871,10 @@ class CaelumHUDOverlay : EventHandler
         }
 
         DrawLucidityDistortion(localPlayer);
+        // El centro del marco HUD-01 es deliberadamente oscuro y casi opaco.
+        // Dibujarlo primero permite que los rellenos tintados queden visibles
+        // dentro de sus bordes metálicos en vez de quedar tapados por el arte.
+        DrawResourceSkin();
         DrawLucidityBar(localPlayer);
         DrawAdrenalineBar(localPlayer);
         DrawAnimaBar(localPlayer);
@@ -880,7 +884,6 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
-        DrawResourceSkin();
 
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
