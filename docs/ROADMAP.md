@@ -108,6 +108,28 @@ Quintessence comparison. MAP01 independently closes the visible endpoints of
 the four existing central finite panels. These changes do not reopen validated
 Seal behavior and do not count as crafting completion.
 
+V4.29.0c replaces the rejected central finite-panel accumulation with two clean
+native exterior volumes and one divider per mirrored pair. Its MAP02 gate
+replays the former 1,875-AI failure population with the straight-projectile
+route, adds active-AI telemetry and physically isolates the three Quintessence
+matrices. If 1,875 passes, later diagnostic patches advance through 3,750,
+7,500 and 15,000 active AI without mixing stages. This remains a parallel
+robustness/architecture gate and does not count as crafting completion.
+
+V4.29.0d canonically compacts MAP01's complete sidedef table after the native
+room replacement and restores the required `twosided` flag on every bilateral
+line. The PK3 build now rejects orphaned or shared sidedefs, missing front
+sides, invalid vertex/sector references and any disagreement between
+`sideback` and `twosided`. It changes no MAP02 test stage and does not count as
+crafting completion.
+
+V4.29.0e closes the upper slabs of MAP01's six rebuilt doorway sectors and
+aligns all door movement with the wall plane. It also moves MAP02 Rooms 7–9 to
+three valid Y-separated centers after the former Room-7 X coordinate exceeded
+GZDoom's UDMF range. Coordinate-range validation is now part of every PK3
+build. The 1,875-AI stage and later 3,750 → 7,500 → 15,000 progression remain
+unchanged; this repair does not count as crafting completion.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

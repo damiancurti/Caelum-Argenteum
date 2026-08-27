@@ -3,6 +3,12 @@
 // pero ningún estado ejecuta A_Look, A_Chase, apuntado ni ataques.
 class CaelumPassiveRulo : CaelumRulo
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: RULO A -1; Stop;
@@ -15,6 +21,12 @@ class CaelumPassiveRulo : CaelumRulo
 
 class CaelumPassiveArgento : CaelumArgento
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: ARGO A -1; Stop;
@@ -27,6 +39,12 @@ class CaelumPassiveArgento : CaelumArgento
 
 class CaelumPassiveCaella : CaelumCaella
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: CAEL A -1; Stop;
@@ -39,6 +57,12 @@ class CaelumPassiveCaella : CaelumCaella
 
 class CaelumPassiveRonnie : CaelumRonnie
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: RONI A -1; Stop;
@@ -51,6 +75,12 @@ class CaelumPassiveRonnie : CaelumRonnie
 
 class CaelumPassiveBull : CaelumBull
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: BULL A -1; Stop;
@@ -63,6 +93,12 @@ class CaelumPassiveBull : CaelumBull
 
 class CaelumPassiveGiantRat : CaelumGiantRat
 {
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        CaelumDiagnosticPassiveAI = true;
+    }
+
     States
     {
     Spawn: RATG A -1; Stop;

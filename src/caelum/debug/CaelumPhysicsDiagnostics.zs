@@ -164,7 +164,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] MAP02: norte 1-4; sur 5-9. Quintaesencia: 7 nativa, 8 completa, 9 sin colision entre pares."
+            "[CA-PHYS] Quintaesencia aislada: 7 setpos -24000 -18000 0; 8 setpos -24000 0 0; 9 setpos -24000 18000 0. IA masiva: setpos 16368 -16 0."
         );
     }
 
@@ -176,6 +176,8 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         ReportAccumulator = 0;
 
         int combatActors = 0;
+        int activeAIActors = 0;
+        int activeAITargets = 0;
         int targetedActors = 0;
         int missiles = 0;
         int contactReferences = 0;
@@ -200,6 +202,12 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             if (combatActor != null)
             {
                 combatActors++;
+                if (!combatActor.CaelumDiagnosticPassiveAI
+                    && combatActor.health > 0)
+                {
+                    activeAIActors++;
+                    if (combatActor.target != null) { activeAITargets++; }
+                }
                 if (combatActor.target != null) { targetedActors++; }
                 int actorContacts = combatActor.GetImpactContactCount();
                 contactReferences += actorContacts;
@@ -254,8 +262,12 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         }
 
         Console.Printf(
-            "[CA-PHYS] actores=%d objetivos=%d proyectiles=%d",
-            combatActors, targetedActors, missiles
+            "[CA-PHYS] actores=%d ia=%d ia_objetivos=%d objetivos=%d proyectiles=%d",
+            combatActors,
+            activeAIActors,
+            activeAITargets,
+            targetedActors,
+            missiles
         );
         Console.Printf(
             "[CA-PHYS] contactos~=%d max/actor=%d callbacks/s=%d unicos=%d duplicados=%d reposo=%d",

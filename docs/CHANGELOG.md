@@ -1,5 +1,82 @@
 # Changelog
 
+## 4.29.0e — Traversable MAP01 doors and in-range MAP02 tests
+
+- Corrected the four exterior leaves in MAP01's rebuilt central pairs: their
+  visible plane was vertical but their blockers and opening displacement used
+  the perpendicular X axis. All six leaves now move along Y, parallel to the
+  authored vertical wall, instead of projecting into or out of the room.
+- Added a second tag-512 3D-floor control using the existing 256–264-MU roof
+  slab. The six 64-MU door sectors now receive both the 128–136-MU first-floor
+  slab and continuous upper roof, removing the reported holes without changing
+  room footprints, sector tags or door TIDs `900–905`.
+- Corrected the MAP02 load failure shown by GZDoom 4.14.2. Room 7 had been
+  placed near X=-50,000 even though the valid UDMF coordinate range ends at
+  -32,768; Room 8 geometry also extended 32 MU beyond that boundary.
+- Moved the three 500-Rat Quintessence matrices to `(-24000,-18000)`,
+  `(-24000,0)` and `(-24000,18000)`. Adjacent tests remain 18,000 MU apart,
+  the main 1,875-AI field is unchanged, and no diagnostic population overlaps.
+- Extended the PK3 UDMF gate to reject every vertex or Thing whose X/Y lies
+  outside `-32768..32768`. The gate reproduces the former MAP02 failure at
+  vertex 56 and now accepts both corrected maps.
+- Updated the MAP02 startup instructions and telemetry commands. Physics,
+  projectile rules, active/passive counts and validated Seal formulas are
+  unchanged.
+
+## 4.29.0d — Canonical MAP01 sidedefs and two-sided flags
+
+- Corrected the reported MAP01 linedef range instead of layering another wall
+  or visual patch over the central first-floor reconstruction.
+- Removed 316 orphaned sidedefs retained from superseded room geometries and
+  remapped every live `sidefront`/`sideback` reference to one continuous table.
+- Reduced MAP01 from 1,324 to 1,008 sidedefs without changing its 514 vertices,
+  521 linedefs, 100 sectors, 206 Things or authored room coordinates.
+- Added the missing `twosided = true` field to linedefs 461–520, all of which
+  already carried a valid `sideback`. Every bilateral line now declares the
+  matching UDMF flag and every unilateral line omits it.
+- Extended the PK3 builder with a read-only UDMF gate that rejects missing or
+  out-of-range front sides, invalid vertices/sectors, zero-length lines, shared
+  or orphaned sidedefs and disagreement between `sideback` and `twosided`.
+- Verified that the new gate rejects the V4.29.0c MAP01 and accepts both current
+  MAP01 and MAP02. MAP02, AI staging, projectiles, physics and Seal behavior are
+  unchanged.
+
+## 4.29.0c — Native central rooms and staged 1,875-AI return
+
+- Reconstructed both mirrored central first-floor pairs in MAP01 from clean
+  native UDMF topology instead of applying another finite-wall correction.
+- Removed the complete former pair geometry, its fourteen accumulated bridge
+  lines and all four `CaelumFiniteWallPanel` Things before creating the new
+  sectors. No old wall or coincident visual patch remains underneath.
+- Made each pair one continuous 352×352-MU exterior volume, then added one
+  native 8-MU central divider with a centered 64-MU doorway. The two room
+  interiors remain separate while sharing a single exterior footprint.
+- Moved the four exterior door leaves to the west/east side walls and retained
+  the two existing internal leaves in the dividers. All six keep their TIDs,
+  access rules and 136-MU first-floor height.
+- Reduced MAP01 from 619 to 521 linedefs, but retained 316 sidedefs belonging
+  to removed geometry and omitted `twosided` on the final 60 bilateral lines.
+  V4.29.0d supersedes this incomplete structural validation.
+- Recorded the supplied V4.29.0b sequential telemetry: Room 5 remained at four
+  targets with at most 18 straight projectiles and one isolated callback;
+  Room 6 raised target-bearing actors from four to 199 without generating
+  contact callbacks, isolating explosion-driven target propagation/infighting.
+- Confirmed that the former Quintessence rooms were not spatially isolated:
+  Room 7 reported 1,103 affected actors and Room 8 reported 1,755 instead of
+  500. The attempted X centers `-50000`, `-32000` and `-14000` left 18,000 MU
+  between tests but exceeded GZDoom's coordinate range; V4.29.0e supersedes
+  those invalid positions.
+- Restored exactly 1,875 active actors inside MAP02's existing 15,000-body main
+  field: 125 Rulo, 125 Argento, 125 Caella, 125 Ronnie, 125 Bulls and 1,250
+  Giant Rats. The closest bodies to the field center are selected so the test
+  enters targeting range as one reproducible stress population.
+- Kept the other 13,125 main-field bodies passive. This reproduces the former
+  1,875-actor failure before attempting 3,750, 7,500 or 15,000 simultaneous AI.
+- Added `ia` and `ia_objetivos` telemetry. `objetivos` remains the total and can
+  therefore reveal passive bodies that received a target through damage.
+- Kept validated Seal behavior, mass formulas, crafting and the permanent
+  straight-projectile policy unchanged.
+
 ## 4.29.0b — Simple mass projectiles, bounded pair work and mansion wall closure
 
 - Replaced the homing elemental projectile used by Rulo, Caella, Ronnie and

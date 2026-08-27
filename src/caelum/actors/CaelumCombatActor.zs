@@ -67,6 +67,7 @@ class CaelumCombatActor : Actor
     double LastImpactContactMaximumHeightRatio;
     Array<ImpactContactState> ImpactContacts;
     bool DisableCaelumImpactContacts;
+    bool CaelumDiagnosticPassiveAI;
     int ImpactDiagnosticCollisionCallbacks;
     int ImpactDiagnosticUniquePairTicks;
     int ImpactDiagnosticDuplicateCallbacks;

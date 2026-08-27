@@ -1,5 +1,194 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Central threshold closure and valid MAP02 coordinates 4.29.0e
+
+**Implemented — pending GZDoom 4.14.2 runtime validation**
+
+The supplied screenshots expose two independent construction regressions.
+MAP01's four exterior leaves used `arg2=0`: their vertical WALLSPRITE faced the
+authored opening, but their blocker row and displacement ran along X,
+perpendicular to the wall. MAP01's target tag 512 also received only the lower
+128–136-MU slab, leaving its six doorway sectors absent from the 256–264-MU
+walkable roof. MAP02 failed before gameplay because Room 7 Things reached
+approximately X=-50,288 and Room 8 vertices reached X=-32,800, outside the
+engine-supported `-32768..32768` coordinate range.
+
+Current corrections:
+
+- door groups `900`, `901`, `903` and `904` now use `arg2=1`, matching the two
+  divider groups `902` and `905`; all six slide parallel to their Y-axis wall;
+- linedef 325 applies the existing upper 256–264-MU control slab to target tag
+  512, while the original 128–136-MU threshold slab remains unchanged;
+- Rooms 7–9 move to centers `(-24000,-18000)`, `(-24000,0)` and
+  `(-24000,18000)` respectively;
+- each room retains exactly 500 actors and remains 18,000 MU from its neighbor;
+- MAP02 now ranges only from X=-24,800..24,576 and Y=-18,700..18,900 for
+  vertices, and X=-24,288..24,288 and Y=-18,228..18,228 for Things.
+
+The PK3 builder now checks the coordinate range of every UDMF vertex and Thing.
+It rejects the V4.29.0d MAP02 at vertex 56 before packaging and accepts both
+current maps. MAP01 remains 514 vertices, 521 linedefs, 1,008 sidedefs, 100
+sectors and 206 Things. MAP02 remains 80 vertices, 71 linedefs, 134 sidedefs,
+one sector and 16,610 Things.
+
+### V4.29.0e runtime procedure
+
+Start logging before each MAP02 session:
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0e.log
+```
+
+Use a fresh `map map02` before each position:
+
+| Test | Command | Expected Seal count |
+| --- | --- | ---: |
+| Room 7 — native collision | `setpos -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `setpos -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `setpos -24000 18000 0` | 500 |
+| 1,875-AI main field | `setpos 16368 -16 0` | Not a Seal-isolation test |
+
+The fresh-map telemetry baseline should still be approximately
+`actores=16608 ia=1983 ia_objetivos=0 objetivos=0 proyectiles=0`.
+
+## Canonical MAP01 side table and bilateral-line repair 4.29.0d
+
+**Implemented — pending GZDoom 4.14.2 runtime validation**
+
+The V4.29.0c MAP01 retained 316 unreferenced sidedefs from removed room
+iterations. Although every linedef contained a numeric `sidefront`, the live
+references after linedef 420 jumped across those dead index ranges. In
+addition, linedefs 461–520 carried `sideback` but did not declare
+`twosided = true`. An editor or node builder that normalizes the side table can
+therefore reject or reinterpret the later references.
+
+V4.29.0d performs one canonical repair over the complete WAD:
+
+- retain only sidedefs referenced by a live linedef;
+- remap every `sidefront` and `sideback` to the compact table;
+- require exactly one owner for each sidedef;
+- add `twosided = true` to every linedef with `sideback`;
+- reject `twosided = true` when no `sideback` exists.
+
+Current MAP01 structure: 514 vertices, 521 linedefs, 1,008 sidedefs, 100
+sectors and 206 Things. All 1,008 side references are unique and cover the
+continuous range `0..1007`; every linedef has an in-range front sidedef; every
+sidedef has an in-range sector; every line with a back side is explicitly
+two-sided; and no one-sided line carries that flag. The room geometry, sector
+heights, six door Things and their TIDs `900–905` remain unchanged from the
+V4.29.0c reconstruction.
+
+`tools/build_pk3.py` now applies these UDMF invariants to every embedded
+`TEXTMAP`. It rejects the V4.29.0c MAP01 at linedef 461 and accepts current
+MAP01/MAP02 before writing the PK3, so the earlier shallow range-only check can
+no longer certify this failure mode.
+
+Manual validation remains authoritative: load MAP01 in GZDoom 4.14.2, confirm
+that node construction reports no missing front sides, and inspect both
+central pairs plus all six doors from both faces.
+
+## Native central-room rebuild and historical mass-AI replay 4.29.0c
+
+**Superseded structurally by V4.29.0d; MAP02 staging remains current**
+
+The V4.29.0b log contains five fresh-map sessions in the declared order:
+Rooms 5, 6, 7, 8 and the main-field center. Its results separate three costs
+that had previously appeared together.
+
+| Session | Relevant peak/result | Interpretation |
+| --- | --- | --- |
+| Room 5 — straight projectile | 4 targets, 18 missiles, 1 callback | The mass-safe projectile route is bounded and adds no sustained contact work. |
+| Room 6 — explosive projectile | Targets grow 4 → 199; 18 missiles; 0 callbacks | `A_Explode` propagates damage/targets and infighting even without moving bodies. |
+| Room 7 — native Rat collision | 1,103 Seal targets; 240 callbacks once | The test was contaminated beyond its authored 500 Rats. |
+| Room 8 — complete contacts | 1,755 Seal targets; 33,232 callbacks; 815 edges; max 12/actor | The room and neighboring populations were pulled together; pair duplication is measurable but bounded. |
+| Main center | 2,065 Seal targets; 37,144 callback peak | Density, rather than retained historical edges, is the dominant trigger. |
+
+At the end of the main-center session, after Channel release, the log still
+shows 4,718 raw callbacks but only 18 retained edges, `max/actor=4`, 503 unique
+pair-tic attempts, 28 duplicates and 4,599 resting rejections. This validates
+the V4.29.0b cleanup: the former large retained graph and per-callback object
+allocation are no longer the principal post-release cost. GZDoom continues to
+report thousands of native collisions while solid bodies remain physically
+stacked, so low simulated-time FPS can persist without a logical contact leak.
+
+### MAP01 reconstruction
+
+The finite-panel approach is retired for the two central first-floor pairs.
+Each north/south pair is rebuilt in this order:
+
+1. one continuous exterior rectangle from `x=192` to `544`, spanning
+   `y=192..544` north or `y=-544..-192` south;
+2. one 8-MU native outer wall ring;
+3. two interiors divided only by the native `x=364..372` wall;
+4. one centered 64-MU door sector in that divider;
+5. one centered 64-MU exterior door on each lateral wall.
+
+The four former front doors move to `(196, ±368)` and `(540, ±368)` at angle
+0. Internal doors remain at `(368, ±368)`. Their TIDs `900–905`, first-floor
+height 136 and sliding-door arguments are unchanged.
+
+The V4.29.0c artifact contained 514 vertices, 521 linedefs, 1,324 sidedefs, 100
+sectors and 206 Things. Its geometry and removal of `CaelumFiniteWallPanel`
+remain current, but the 316 orphaned sidedefs and missing bilateral flags are
+corrected by V4.29.0d.
+
+### MAP02 staged AI and isolated Quintessence rooms
+
+The total main-field population remains 15,000, but it now contains the exact
+historical 1,875 active-AI stage:
+
+- 125 Rulo;
+- 125 Argento;
+- 125 Caella;
+- 125 Ronnie;
+- 125 Bulls;
+- 1,250 active Giant Rats;
+- 13,125 remaining passive stress actors.
+
+The active actors closest to `(16368, -16)` are selected deterministically;
+the farthest is approximately 3,417 MU from that center. Including Rooms 1–6,
+the fresh-map telemetry baseline should be approximately:
+
+`actores=16608 ia=1983 ia_objetivos=0 objetivos=0 proyectiles=0`
+
+`ia` counts living classes that execute perception, chase or attacks.
+`ia_objetivos` counts only those active classes with a target. `objetivos`
+still counts every actor with a target, including passive bodies affected by
+damage; the difference exposes the exact contamination observed in Room 6.
+
+The three 500-Rat matrices keep their collision variants and remain separated
+by 18,000 MU. V4.29.0e replaces the invalid V4.29.0c positions with these
+in-range console positions after every fresh `map map02`:
+
+| Test | Command | Expected Seal count |
+| --- | --- | ---: |
+| Room 7 — native collision | `setpos -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `setpos -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `setpos -24000 18000 0` | 500 |
+| 1,875-AI main field | `setpos 16368 -16 0` | Not a Seal-isolation test |
+
+Manual validation order:
+
+1. Load MAP01 and inspect both central pairs from every room, corridor, ground
+   floor and roof. Confirm continuous walls, correct floors/roofs and all six
+   doors opening from both sides.
+2. Load a fresh MAP02 and record ten seconds of the baseline above.
+3. Run Rooms 7, 8 and 9 separately from a fresh map. Channel Quintessence for
+   five seconds and observe twenty seconds after release. Each run must report
+   exactly 500 affected actors; otherwise the isolation still failed.
+4. Load MAP02 again, use `setpos 16368 -16 0`, do not Channel, and let the
+   1,875-AI population pursue and attack for sixty real seconds. Record FPS,
+   input responsiveness and all three telemetry lines until either stabilization
+   or the first abrupt freeze.
+5. If this exact historical stage remains responsive, increase later patches
+   in the prior sequence: 3,750 → 7,500 → 15,000 active AI. Do not combine the
+   stages, because the first failing population is diagnostic evidence.
+
+Validated Seal behavior/formulas, crafting and V4.27 input deferral remain
+unchanged.
+
 ## Simple mass projectiles and collision hot-path reduction 4.29.0b
 
 **Implemented — pending controlled GZDoom 4.14.2 runtime validation**

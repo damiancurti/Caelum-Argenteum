@@ -1,5 +1,50 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0e — Valid diagnostic placement
+
+V4.29.0c's intended 18,000-MU isolation was correct, but its Room-7 X
+coordinate exceeded GZDoom's UDMF range and Room 8's western geometry crossed
+the same limit by 32 MU. V4.29.0e preserves the separation along Y at the
+in-range centers `(-24000,-18000)`, `(-24000,0)` and `(-24000,18000)`.
+
+This changes no physics formula, actor class, contact rule or Seal radius. It
+only makes the three 500-actor native/full/pass-through tests loadable and
+mutually isolated. The build now rejects out-of-range vertex and Thing
+coordinates before packaging.
+
+## V4.29.0c — Runtime evidence and staged AI boundary
+
+The sequential V4.29.0b log validates the distinction introduced by the new
+telemetry. Straight projectiles in Room 5 sustained up to 18 live missiles with
+no physical-contact workload. Explosive Room 6 instead increased target-bearing
+actors from four to 199 while reporting zero contact callbacks. Its observed
+cost is therefore radial damage, target propagation and infighting, not the
+pair solver.
+
+The Quintessence sessions were spatially contaminated: the nominal 500-Rat
+rooms reported 1,103 and 1,755 affected actors. In the complete-contact run,
+raw callbacks peaked at 33,232 with 21,493 unique pair-tic attempts, 7,763
+duplicates, 9,167 resting rejections, 815 retained edges and at most 12 edges
+on one actor. The main field peaked at 37,144 callbacks for 2,065 affected
+actors.
+
+After release in the main field, the final report was approximately:
+
+`callbacks=4718, unicos=503, duplicados=28, reposo=4599, contactos=18, max=4`
+
+The exact counters overlap by design: a pair can be admitted once for a tic
+and then classified as resting, while an unlatched resting callback has no
+persistent pair yet. They should not be summed as mutually exclusive buckets.
+Nevertheless, the small edge/duplicate counts beside 4,599 resting rejections
+show that the remaining post-release load is repeated native collision among
+stacked solids, not growth of the historical contact graph.
+
+V4.29.0c therefore does not add a connected-component/island traversal. It
+first replays the exact historical 1,875-active-actor population with straight
+projectiles and isolates the three Quintessence matrices by 18,000 MU. Only a
+failure that remains after this controlled replay justifies another physics
+algorithm change.
+
 ## V4.29.0b — Once-per-pair resolution and allocation-free repeated contact
 
 The engine may report the same solid pair several times during one tic and may
