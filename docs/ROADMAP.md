@@ -201,6 +201,25 @@ updates instead of raising the per-tic ceiling. MAP01 closes the four obsolete
 extreme-room gaps, inserts four 64-MU sliding connections wholly inside shared
 walls and preserves the accepted central divider doors and 119-MU landings.
 
+V4.29.0r records that the moving-target run still stops after 193 reports at
+the 10-call gate, so no fixed Chase count is considered universally safe. Its
+single diagnostic change removes the 13,125 passive visual fillers from the
+native blockmap while retaining the same 1,875 active field actors and full
+combat. A stable result advances directly to distance-tiered squad perception;
+a failed result advances to leader/follower movement isolation. The patch also
+adds the two missing central front entrances and integrates the 353 approved
+runtime replacements —137 icons and 216 actor frames— without adding previews,
+unused future art or Doom-derived assets.
+
+V4.29.0s records that the blockmap-isolated run still stops after 148 reports:
+passive spatial residency is not sufficient. MAP02 now performs the first
+leader/follower isolation with one native movement leader per configurable
+group of 16 and slow phased orientation for followers. This is the bridge to
+the planned perception/squad architecture; it does not yet implement shared
+formation steering. The same patch removes the four redundant side-door actors
+from MAP01, makes the recomposed icon masters authoritative for UI and world
+pickups, and adopts Domingo as the player's world appearance.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

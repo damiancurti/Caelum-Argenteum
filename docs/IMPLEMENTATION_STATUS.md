@@ -1,5 +1,111 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Leader/follower pursuit isolation and canonical character art 4.29.0s
+
+**Implemented and structurally validated; manual GZDoom endurance and visual acceptance pending**
+
+The supplied `ca_physics_4_29_0r.log` contains 148 complete telemetry reports
+before the same abrupt stop. Its stable invariants are decisive: 13,125 passive
+fillers are already outside the blockmap, all 1,983 active AI actors have a
+target, custom contacts/callbacks/references remain zero, and live projectiles
+stay between zero and two. The final report is ordinary rather than a rising
+curve. Passive blockmap enumeration, projectile accumulation and the custom
+contact graph are therefore not sufficient causes. The remaining common path
+is repeated native `A_Chase`/`TryMove`, whose internal work can vary sharply by
+actor position even under the ten-call-per-tic gate.
+
+V4.29.0s isolates independent movers rather than lowering the same global
+number again. The 1,875 active main-field actors form deterministic diagnostic
+groups of 16. Exactly 126 are leaders and 1,749 are followers in the current
+field; leaders can use the existing
+13-phase Chase plus ten-call ceiling. Followers retain perception and targets,
+but only face their target on a phased 64-tic pulse; they do not request native
+movement or range/attack checks. The new telemetry line reports group size,
+leader/follower counts and pulses. This affects only the MAP02 main field.
+
+MAP01's four side portals were already valid geometry; only their finite door
+Things were embedded unnecessarily in the wall thickness. Groups 906–909 are
+removed without touching a vertex, linedef, sidedef or sector. The divider and
+front-entry groups 902, 905, 910 and 911 remain. The final structure is
+468/587/1,144/101/214 for vertices/linedefs/sidedefs/sectors/Things.
+
+World pickups no longer maintain a stale second art catalogue. `TEXTURES`
+maps all ordinary equipment, ammunition, consumables, materials and jewelry
+directly to the 128×128 icon masters and applies world-only scale. The PK3 omits
+the superseded legacy directories. Domingo contributes 39 gameplay frames and
+is now CaelumPlayer's third-person/world appearance; unused banners, blood,
+faces, weapon cutouts and slash effects are not loaded.
+
+### V4.29.0s runtime procedure
+
+Set all mass CVars before loading MAP02, including
+`ca_diag_mass_squad_size 16`. Warp to the main field and move through it for at
+least fifteen real minutes. The squad line must show `lideres=126`,
+`seguidores=1749` and nonzero follower pulses; admitted Chase must fall
+well below the old constant 350 calls per simulated second. Do not invoke
+Quintaessence in this run. If it remains stable, repeat from a fresh map with
+group size 1 only as a short A/B confirmation.
+
+In MAP01, cross all four side connections and confirm that no visible or
+invisible leaf remains, then test the divider and front doors. Inspect pickups
+from every major category for updated art and correct floor scale. Use a
+third-person view to inspect Domingo standing, moving, attacking, crouching,
+taking Pain and dying.
+
+## Blockmap-isolated endurance candidate and final central entries 4.29.0r
+
+**Implemented and structurally validated; manual GZDoom endurance and visual acceptance pending**
+
+The supplied `ca_physics_4_29_0q_C.log` ends after 193 complete telemetry
+reports. Every final report is internally consistent: 16,608 combat actors,
+1,983 active AI actors with targets, 10 admitted native Chase calls per tic,
+350 per simulated second, zero custom contacts/callbacks/references and zero
+live projectiles. The stop is abrupt and the preceding V4.29.0p full-combat run
+survived 548 reports with the same settings. Ten calls is therefore not a
+universal safety boundary and no monitored gameplay object grows toward the
+failure.
+
+V4.29.0r changes one spatial property. The 13,125 passive fillers of the main
+15,000-actor field are still visible and still exist as lightweight actors,
+but are omitted from the native blockmap. The 1,875 active field actors remain
+linked and continue using the same Look, Chase and attack settings. The three
+500-rat Quintaessence rooms explicitly re-enable blockmap membership, so their
+collision tests are unchanged. If the endurance run now remains stable, native
+movement was spending pathological time enumerating passive blockmap residents;
+if it still stops, independent `A_Chase`/TryMove work remains sufficient.
+
+MAP01 receives the only missing entrances approved by the author. Each central
+T room now has a 128-MU front portal and two normal 64-MU sliding leaves:
+group 910 at Y=196 and group 911 at Y=-196. The doors align at X=336 and 400,
+matching the established double-door layout. No room footprint, divider,
+connection, stair, balcony passage or 119×119-MU landing moves. The resulting
+map has 468 vertices, 587 linedefs, 1,144 sidedefs, 101 sectors and 218 Things.
+
+The graphics recomposition is integrated selectively by runtime use. All 137
+inventory, equipment, crafting and elemental icons now use the supplied
+128×128 masters. Rulo, Ronnie, Argento and Caella each provide 48 directional
+A–F frames and six common G–L death stages on 256×256 RGBA canvases. Explicit
+baseline offsets and actor scales preserve the previous world height. This
+patch does not import preview sheets, unused sewer/Domingo art or the package's
+unchanged/Doom-compatible preservation copies. Pre-existing compatibility
+lumps are unaffected. The permanent sizing rules are documented in
+`docs/GRAPHICS_SIZE_GUIDE.md`.
+
+### V4.29.0r runtime procedure
+
+Load MAP01 and test both new double entrances from the central corridor and
+from inside each room. Confirm that both leaves open, that the complete 128-MU
+threshold is passable, that closing does not crush the player, and that the
+central divider and side-room connections behave exactly as before. Inspect
+Rulo, Ronnie, Argento and Caella from all eight directions, then trigger their
+attack, Pain and complete Death states; no frame may jump vertically, float,
+clip or revert to the previous artwork.
+
+For MAP02, keep the same Look 7/20, Chase 13/10 and full-combat settings. The
+first report must show `ligeros=16500 blockmap=3375 visuales=13125`. Move among
+several positions in the main field for ten real minutes. This is one controlled
+comparison; do not change the budget or run Quintaessence during it.
+
 ## Connected upper rooms and stable 10-call load 4.29.0q
 
 **Implemented and structurally validated; manual MAP01 door acceptance pending**

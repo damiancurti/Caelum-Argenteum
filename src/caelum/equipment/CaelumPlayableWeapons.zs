@@ -2380,7 +2380,7 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
     Default
     {
         Speed 15;
-        Scale 0.5;
+        Scale 0.25;
         DamageType "CaelumRangedTest";
         -NOGRAVITY
     }

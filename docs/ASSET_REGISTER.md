@@ -1,5 +1,48 @@
 # Asset register
 
+## V4.29.0s canonical pickups and Domingo runtime appearance
+
+V4.29.0s does not create alternate item art. It makes the already registered
+128×128 icon masters the source for both interface presentation and world
+pickup aliases, then excludes the superseded 64×64 source copies from runtime
+packaging. The files remain in the working tree as historical source until a
+separate authorized cleanup; they are not shipped or loaded by the PK3.
+
+The same author-supplied recomposition pack includes Domingo. Thirty-nine core
+frames are accepted as the player's world appearance. The eighteen files in
+`Extras`—banner, blood, face references, weapon cutouts and slash effects—are
+not actor-state frames and remain excluded.
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Domingo playable set | `sprites/caelum/domingo/DOMI*.png` (39) | Damian Curti / project-directed generation and recomposition | Author-supplied recomposed graphics pack, 2026-08-27 | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | 16 directional standing/movement frames, 15 attack frames and 8 death frames; 256×256, baseline 244. |
+| Canonical pickup aliases | 123 `TEXTURES` aliases backed by registered `graphics/caelum/icons` masters | Same registered art | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | No duplicate pixels are introduced; only runtime names, alpha baselines and world scale are defined. |
+
+## V4.29.0r recomposed runtime graphics
+
+The author supplied `Caelum_Argenteum_graphics_recompuesto - 3.zip` together
+with the project sizing guide. The bundle report's 255-file delta is measured
+against an earlier art bundle, not against the game source. Independent runtime
+comparison accepts 353 replacements: all 137 inventory/crafting icons and 216
+actor frames. The unchanged preservation copy, preview sheets, manifests,
+unused sewer/Domingo art and the package's Doom-compatible `STF*` copies are
+not imported by this patch. Pre-existing compatibility lumps are unaffected.
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Recomposition of item icons | 137 PNGs under `graphics/caelum/icons` | Damian Curti / project-directed generation and recomposition | Author-supplied recomposed graphics pack, 2026-08-27 | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | 128×128 RGBA, real transparency, visible content kept at least eight pixels from every edge. |
+| Rulo animation set | `sprites/caelum/rulo/RULOA1.png`–`RULOL0.png` (54) | Damian Curti / project-directed generation and recomposition | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | 48 directional frames plus six common death stages; 256×256, baseline 244. |
+| Ronnie animation set | `sprites/caelum/ronnie/RONIA1.png`–`RONIL0.png` (54) | Damian Curti / project-directed generation and recomposition | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Source prefix `RONN` is mapped to the established runtime prefix `RONI`. |
+| Argento animation set | `sprites/caelum/argento/ARGOA1.png`–`ARGOL0.png` (54) | Damian Curti / project-directed generation and recomposition | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Source prefix `ARGE` is mapped to the established runtime prefix `ARGO`. |
+| Caella animation set | `sprites/caelum/caella/CAELA1.png`–`CAELL0.png` (54) | Damian Curti / project-directed generation and recomposition | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | 48 directional frames plus six common death stages; 256×256, baseline 244. |
+
+Validation confirms 256×256 RGBA canvases, complete alpha margins and 54
+correctly named frames per character. Of the 216 frames, 215 end on the common
+ground line at Y=244. Source `RONNA8` ends at Y=235; runtime `RONIA8` preserves
+the original PNG and compensates only its origin with `Offset 128, 235`.
+Runtime offsets and actor scales are explicit in code. See
+[`GRAPHICS_SIZE_GUIDE.md`](GRAPHICS_SIZE_GUIDE.md).
+
 ## V4.29.0i HUD/UI-01 runtime kit
 
 The author supplied `caelum_argenteum_hud_ui_01` as the first permanent visual

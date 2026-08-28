@@ -12,6 +12,8 @@ class CaelumArgento : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 96;
         MaxTargetRange 1024;
+        // 72/176 conserva la altura visual mundial anterior.
+        Scale 0.409091;
         Monster;
         +FLOORCLIP
     }
@@ -32,31 +34,33 @@ class CaelumArgento : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        ARGO CA 4 A_CaelumBudgetedChase;
+        ARGO BCDC 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         ARGO A 1;
         Goto See;
     Melee:
-        ARGO B 7 A_FaceTarget;
-        ARGO B 0 A_CaelumMeleeAttack(174);
-        ARGO B 11;
+        ARGO E 7 A_FaceTarget;
+        ARGO E 0 A_CaelumMeleeAttack(174);
+        ARGO A 11;
         Goto See;
     Missile:
-        ARGO D 7 A_FaceTarget;
-        ARGO D 0 A_CaelumSpawnSimpleElementalProjectile(
+        ARGO E 7 A_FaceTarget;
+        ARGO E 0 A_CaelumSpawnSimpleElementalProjectile(
             "CaelumActorSimpleElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_FIRE
         );
         ARGO A 11;
         Goto See;
     Pain:
-        ARGO E 8 A_Pain;
+        ARGO F 8 A_Pain;
         Goto See;
     Death:
-        ARGO E 5 A_Scream;
-        ARGO F 8 A_NoBlocking;
-        ARGO F -1;
+        ARGO G 5 A_Scream;
+        ARGO H 5;
+        ARGO I 5 A_NoBlocking;
+        ARGO JK 5;
+        ARGO L -1;
         Stop;
     }
 }

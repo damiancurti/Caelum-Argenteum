@@ -12,6 +12,8 @@ class CaelumCaella : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 96;
         MaxTargetRange 1024;
+        // 72/176 conserva la altura visual mundial anterior.
+        Scale 0.409091;
         Monster;
         +FLOORCLIP
     }
@@ -32,31 +34,33 @@ class CaelumCaella : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        CAEL CA 4 A_CaelumBudgetedChase;
+        CAEL BCDC 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         CAEL A 1;
         Goto See;
     Melee:
-        CAEL B 7 A_FaceTarget;
-        CAEL B 0 A_CaelumMeleeAttack(174);
-        CAEL B 11;
+        CAEL E 7 A_FaceTarget;
+        CAEL E 0 A_CaelumMeleeAttack(174);
+        CAEL A 11;
         Goto See;
     Missile:
-        CAEL D 7 A_FaceTarget;
-        CAEL D 0 A_CaelumSpawnSimpleElementalProjectile(
+        CAEL E 7 A_FaceTarget;
+        CAEL E 0 A_CaelumSpawnSimpleElementalProjectile(
             "CaelumActorSimpleElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_WATER
         );
         CAEL A 11;
         Goto See;
     Pain:
-        CAEL E 8 A_Pain;
+        CAEL F 8 A_Pain;
         Goto See;
     Death:
-        CAEL E 5 A_Scream;
-        CAEL F 8 A_NoBlocking;
-        CAEL F -1;
+        CAEL G 5 A_Scream;
+        CAEL H 5;
+        CAEL I 5 A_NoBlocking;
+        CAEL JK 5;
+        CAEL L -1;
         Stop;
     }
 }

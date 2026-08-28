@@ -1,5 +1,71 @@
 # Changelog
 
+## 4.29.0s — Squad pursuit isolation, canonical pickups and Domingo
+
+- Rejected passive blockmap residency as a sufficient explanation. The supplied
+  `4.29.0r` run ends abruptly after 148 complete reports while all 13,125
+  passive visual fillers remain `NOBLOCKMAP`, all 1,983 AI actors hold targets,
+  custom contacts/callbacks/references stay at zero and live projectiles remain
+  between zero and two.
+- Added deterministic diagnostic squads to the MAP02 main field. One actor per
+  configurable group of 16 is a leader and may enter the existing phased,
+  globally budgeted `A_Chase`; followers retain their acquired target and face
+  it only on the existing 64-tic attack phase. They do not call `TryMove`,
+  `CheckMissileRange` or an independent attack state in this isolation.
+- Added `ca_diag_mass_squad_size` and telemetry for effective group size,
+  leaders, followers and follower pulses. A value of 1 restores the previous
+  independent-movement path for a controlled comparison.
+- Removed only door Things 906–909 from MAP01. Their four 64-MU side portals
+  remain geometrically open; central divider doors 902/905 and double front
+  doors 910/911 are preserved. MAP01 retains 468 vertices, 587 linedefs,
+  1,144 sidedefs and 101 sectors, with 214 Things.
+- Made the 128×128 files under `graphics/caelum/icons` the single runtime source
+  for 123 pickup/material/jewelry sprite aliases. Actor scales and alpha
+  baselines preserve their prior world footprint. Nine legacy sprite
+  directories and the duplicate root key are omitted from the generated PK3.
+- Integrated 39 playable Domingo frames on 256×256 canvases as the CaelumPlayer
+  world sprite, with explicit baseline, scale, running, attack, Pain, Death and
+  Raise states. Inherited Doom crouch and color-remap sprites are disabled;
+  the 18 promotional/effect extras remain outside runtime.
+- Added idempotent reconstruction tools for the MAP01 Thing edit and the
+  canonical TEXTURES tables. The PK3 builder validates the resulting WAD/PNG
+  inputs before atomic replacement.
+
+## 4.29.0r — Blockmap isolation, central entrances and recomposed actors
+
+- Reclassified the 10-call `A_Chase` ceiling as a mitigation rather than a
+  validated safe boundary. The supplied `4.29.0q_C` run stops abruptly after
+  193 complete reports despite zero custom contacts, callbacks and retained
+  references, zero live projectiles at the final interval and the same
+  10-call/350-per-second gate that previously survived 548 reports.
+- Isolated the remaining spatial variable. The 13,125 passive fillers in the
+  main MAP02 field remain rendered and retain their lightweight actor thinkers,
+  but now use `NOBLOCKMAP`; the 1,875 active field actors and all three
+  Quintaessence collision rooms remain linked normally. Telemetry now separates
+  `blockmap=3375` from `visuales=13125` inside the unchanged 16,500 lightweight
+  population.
+- Added two 128-MU double-leaf front entrances to the upper central rooms in
+  MAP01. Door groups 910 and 911 reuse the accepted normal sliding-door setup
+  at X=336/400 and Y=196/-196. Existing rooms, dividers, side connections,
+  stairs and four 119×119-MU landings are unchanged.
+- Integrated the 353 images that differ from the current runtime: all 137
+  normalized 128×128 icons and 216 character frames. The package's 39-icon
+  correction count measured only its delta against an earlier art bundle that
+  had never entered the game. Runtime sprites use explicit 256×256 canvases,
+  preserved world scale and complete G–L death sequences. Of 216 frames, 215
+  use baseline offset 128/244; `RONIA8` compensates its source baseline at
+  128/235 without altering or recompressing the PNG.
+- Fixed the inherited equipment overlay to draw every normalized item master
+  at an explicit 48×48 destination. Raising old 64×64 files to 128×128 can no
+  longer double their on-screen size accidentally.
+- Did not import preview sheets, manifests, unchanged preservation assets,
+  not-yet-used sewer/Domingo art or the package's `STF*` compatibility copies.
+  Pre-existing compatibility lumps remain a separate cleanup item. Added the
+  author-supplied graphics size guide and registered every integrated family.
+- MAP01 now contains 468 vertices, 587 linedefs, 1,144 sidedefs, 101 sectors
+  and 218 Things. The idempotent builder validates both new portal contours,
+  every door leaf, all previous connections and every reserved stair landing.
+
 ## 4.29.0q — Connected upper rooms and validated 10-call gate
 
 - Validated the 10-call diagnostic Chase ceiling for 368 complete reports with

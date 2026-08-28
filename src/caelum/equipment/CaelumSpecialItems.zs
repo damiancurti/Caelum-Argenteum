@@ -9,7 +9,7 @@ class CaelumSpecialInventoryItem : Inventory
         Radius 12;
         Height 8;
         // Sólo reduce el sprite del actor en el suelo; el icono de inventario conserva su tamaño.
-        Scale 0.5;
+        Scale 0.25;
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
@@ -196,18 +196,10 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
         if (Owner == null)
         {
-            // Los materiales nuevos ocupan casi todo el lienzo 128x128. Esta
-            // escala compensa ese recorte sin alterar los materiales previos.
-            if (GetSpecialType() >= CaelumConstants.MATERIAL_SILVER_CHAIN)
-            {
-                Scale.X = 0.275;
-                Scale.Y = 0.275;
-            }
-            else
-            {
-                Scale.X = 0.5;
-                Scale.Y = 0.5;
-            }
+            // Todos los alias usan ahora los maestros 128x128 canónicos.
+            // La escala única preserva aproximadamente el tamaño anterior.
+            Scale.X = 0.25;
+            Scale.Y = 0.25;
             sprite = GetSpriteIndex(GetMaterialSpriteName());
             frame = 0;
         }
@@ -432,7 +424,7 @@ class CaelumSilverKey : CaelumWeightedKey
         Inventory.Icon "graphics/caelum/icons/ca_key.png";
         Inventory.PickupMessage "$CA_PICKUP_KEY_SILVER";
         // Sólo el actor de mundo se reduce; el icono conserva resolución.
-        Scale 0.25;
+        Scale 0.125;
     }
 
     override int GetKeyType()

@@ -1,8 +1,14 @@
-// Variantes exclusivas de MAP02 para separar cantidad/render/física de IA.
-// Conservan estadísticas, anatomía, solidez, daño, Pain y Death de cada actor,
-// pero ningún estado ejecuta A_Look, A_Chase, apuntado ni ataques.
+// Rellenos visuales exclusivos del campo masivo de MAP02. Conservan actor,
+// render y estados heredados, pero no ocupan el blockmap: la prueba 4.29.0r
+// separa así el coste de dibujar 15.000 cuerpos del coste de consultar 13.125
+// obstáculos pasivos durante cada movimiento nativo A_Chase.
 class CaelumPassiveRulo : CaelumRulo
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;
@@ -21,6 +27,11 @@ class CaelumPassiveRulo : CaelumRulo
 
 class CaelumPassiveArgento : CaelumArgento
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;
@@ -39,6 +50,11 @@ class CaelumPassiveArgento : CaelumArgento
 
 class CaelumPassiveCaella : CaelumCaella
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;
@@ -57,6 +73,11 @@ class CaelumPassiveCaella : CaelumCaella
 
 class CaelumPassiveRonnie : CaelumRonnie
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;
@@ -75,6 +96,11 @@ class CaelumPassiveRonnie : CaelumRonnie
 
 class CaelumPassiveBull : CaelumBull
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;
@@ -93,6 +119,11 @@ class CaelumPassiveBull : CaelumBull
 
 class CaelumPassiveGiantRat : CaelumGiantRat
 {
+    Default
+    {
+        +NOBLOCKMAP
+    }
+
     override void PostBeginPlay()
     {
         CaelumDiagnosticPassiveAI = true;

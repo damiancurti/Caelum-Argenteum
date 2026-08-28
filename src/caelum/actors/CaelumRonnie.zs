@@ -12,6 +12,9 @@ class CaelumRonnie : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 64;
         MaxTargetRange 1280;
+        // 72/176 conserva la altura visual mundial previa con el maestro
+        // 256x256 y deja el ajuste físico separado del tamaño del lienzo.
+        Scale 0.409091;
         Monster;
         +FLOORCLIP
     }
@@ -32,31 +35,33 @@ class CaelumRonnie : CaelumCombatActor
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RONI CA 4 A_CaelumBudgetedChase;
+        RONI BCDC 4 A_CaelumBudgetedChase;
         Loop;
     LucidityStun:
         RONI A 1;
         Goto See;
     Melee:
-        RONI B 7 A_FaceTarget;
-        RONI B 0 A_CaelumMeleeAttack(372);
+        RONI E 7 A_FaceTarget;
+        RONI E 0 A_CaelumMeleeAttack(372);
         RONI A 10;
         Goto See;
     Missile:
-        RONI D 7 A_FaceTarget;
-        RONI D 0 A_CaelumSpawnSimpleElementalProjectile(
+        RONI E 7 A_FaceTarget;
+        RONI E 0 A_CaelumSpawnSimpleElementalProjectile(
             "CaelumActorSimpleElementalProjectile", 40,
             154, CaelumConstants.ESSENCE_WIND
         );
         RONI A 9;
         Goto See;
     Pain:
-        RONI E 8 A_Pain;
+        RONI F 8 A_Pain;
         Goto See;
     Death:
-        RONI E 5 A_Scream;
-        RONI F 8 A_NoBlocking;
-        RONI F -1;
+        RONI G 5 A_Scream;
+        RONI H 5;
+        RONI I 5 A_NoBlocking;
+        RONI JK 5;
+        RONI L -1;
         Stop;
     }
 }

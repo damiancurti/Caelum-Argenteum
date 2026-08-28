@@ -71,313 +71,391 @@ Sprite "CDMYA0", 48, 72
     Patch "sprites/caelum/actors/training/CDMYA0.png", 0, 0
 }
 
-// Argento's raw PNGs share one 96x80 canvas and a common floor baseline.
-// Explicit offsets avoid editor-dependent PNG metadata and keep all rotations
-// aligned to his 72-unit collision height.
-Sprite "ARGOA1", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA1.png", 0, 0 }
-Sprite "ARGOA2", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA2.png", 0, 0 }
-Sprite "ARGOA3", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA3.png", 0, 0 }
-Sprite "ARGOA4", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA4.png", 0, 0 }
-Sprite "ARGOA5", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA5.png", 0, 0 }
-Sprite "ARGOA6", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA6.png", 0, 0 }
-Sprite "ARGOA7", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA7.png", 0, 0 }
-Sprite "ARGOA8", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOA8.png", 0, 0 }
-Sprite "ARGOB1", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB1.png", 0, 0 }
-Sprite "ARGOB2", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB2.png", 0, 0 }
-Sprite "ARGOB3", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB3.png", 0, 0 }
-Sprite "ARGOB4", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB4.png", 0, 0 }
-Sprite "ARGOB5", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB5.png", 0, 0 }
-Sprite "ARGOB6", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB6.png", 0, 0 }
-Sprite "ARGOB7", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB7.png", 0, 0 }
-Sprite "ARGOB8", 96, 80 { Offset 48, 78 Patch "sprites/caelum/argento/ARGOB8.png", 0, 0 }
+// Maestros recompuestos V4.29.0r. Los 216 cuadros comparten lienzo
+// 256x256 y línea de suelo Y=244. Los offsets explícitos evitan depender
+// de metadata PNG o del editor; Scale en cada actor conserva su tamaño mundial.
+// Rulo: A idle, B move, C walk, D run, E attack, F pain, G-L death.
+Sprite "RULOA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA1.png", 0, 0 }
+Sprite "RULOA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA2.png", 0, 0 }
+Sprite "RULOA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA3.png", 0, 0 }
+Sprite "RULOA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA4.png", 0, 0 }
+Sprite "RULOA5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA5.png", 0, 0 }
+Sprite "RULOA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA6.png", 0, 0 }
+Sprite "RULOA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA7.png", 0, 0 }
+Sprite "RULOA8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOA8.png", 0, 0 }
+Sprite "RULOB1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB1.png", 0, 0 }
+Sprite "RULOB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB2.png", 0, 0 }
+Sprite "RULOB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB3.png", 0, 0 }
+Sprite "RULOB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB4.png", 0, 0 }
+Sprite "RULOB5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB5.png", 0, 0 }
+Sprite "RULOB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB6.png", 0, 0 }
+Sprite "RULOB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB7.png", 0, 0 }
+Sprite "RULOB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOB8.png", 0, 0 }
+Sprite "RULOC1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC1.png", 0, 0 }
+Sprite "RULOC2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC2.png", 0, 0 }
+Sprite "RULOC3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC3.png", 0, 0 }
+Sprite "RULOC4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC4.png", 0, 0 }
+Sprite "RULOC5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC5.png", 0, 0 }
+Sprite "RULOC6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC6.png", 0, 0 }
+Sprite "RULOC7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC7.png", 0, 0 }
+Sprite "RULOC8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOC8.png", 0, 0 }
+Sprite "RULOD1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD1.png", 0, 0 }
+Sprite "RULOD2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD2.png", 0, 0 }
+Sprite "RULOD3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD3.png", 0, 0 }
+Sprite "RULOD4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD4.png", 0, 0 }
+Sprite "RULOD5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD5.png", 0, 0 }
+Sprite "RULOD6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD6.png", 0, 0 }
+Sprite "RULOD7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD7.png", 0, 0 }
+Sprite "RULOD8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOD8.png", 0, 0 }
+Sprite "RULOE1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE1.png", 0, 0 }
+Sprite "RULOE2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE2.png", 0, 0 }
+Sprite "RULOE3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE3.png", 0, 0 }
+Sprite "RULOE4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE4.png", 0, 0 }
+Sprite "RULOE5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE5.png", 0, 0 }
+Sprite "RULOE6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE6.png", 0, 0 }
+Sprite "RULOE7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE7.png", 0, 0 }
+Sprite "RULOE8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOE8.png", 0, 0 }
+Sprite "RULOF1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF1.png", 0, 0 }
+Sprite "RULOF2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF2.png", 0, 0 }
+Sprite "RULOF3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF3.png", 0, 0 }
+Sprite "RULOF4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF4.png", 0, 0 }
+Sprite "RULOF5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF5.png", 0, 0 }
+Sprite "RULOF6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF6.png", 0, 0 }
+Sprite "RULOF7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF7.png", 0, 0 }
+Sprite "RULOF8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOF8.png", 0, 0 }
+Sprite "RULOG0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOG0.png", 0, 0 }
+Sprite "RULOH0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOH0.png", 0, 0 }
+Sprite "RULOI0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOI0.png", 0, 0 }
+Sprite "RULOJ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOJ0.png", 0, 0 }
+Sprite "RULOK0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOK0.png", 0, 0 }
+Sprite "RULOL0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rulo/RULOL0.png", 0, 0 }
 
-// Caella uses the same normalized humanoid canvas and baseline as Argento.
-Sprite "CAELA1", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA1.png", 0, 0 }
-Sprite "CAELA2", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA2.png", 0, 0 }
-Sprite "CAELA3", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA3.png", 0, 0 }
-Sprite "CAELA4", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA4.png", 0, 0 }
-Sprite "CAELA5", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA5.png", 0, 0 }
-Sprite "CAELA6", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA6.png", 0, 0 }
-Sprite "CAELA7", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA7.png", 0, 0 }
-Sprite "CAELA8", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELA8.png", 0, 0 }
-Sprite "CAELB1", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB1.png", 0, 0 }
-Sprite "CAELB2", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB2.png", 0, 0 }
-Sprite "CAELB3", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB3.png", 0, 0 }
-Sprite "CAELB4", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB4.png", 0, 0 }
-Sprite "CAELB5", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB5.png", 0, 0 }
-Sprite "CAELB6", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB6.png", 0, 0 }
-Sprite "CAELB7", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB7.png", 0, 0 }
-Sprite "CAELB8", 96, 80 { Offset 48, 78 Patch "sprites/caelum/caella/CAELB8.png", 0, 0 }
+// Ronnie: A idle, B move, C walk, D run, E attack, F pain, G-L death.
+Sprite "RONIA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA1.png", 0, 0 }
+Sprite "RONIA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA2.png", 0, 0 }
+Sprite "RONIA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA3.png", 0, 0 }
+Sprite "RONIA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA4.png", 0, 0 }
+Sprite "RONIA5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA5.png", 0, 0 }
+Sprite "RONIA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA6.png", 0, 0 }
+Sprite "RONIA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIA7.png", 0, 0 }
+// Este cuadro termina en Y=235 dentro del maestro. Su pivote local compensa
+// los nueve píxeles transparentes adicionales sin recomprimir el PNG.
+Sprite "RONIA8", 256, 256 { Offset 128, 235 Patch "sprites/caelum/ronnie/RONIA8.png", 0, 0 }
+Sprite "RONIB1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB1.png", 0, 0 }
+Sprite "RONIB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB2.png", 0, 0 }
+Sprite "RONIB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB3.png", 0, 0 }
+Sprite "RONIB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB4.png", 0, 0 }
+Sprite "RONIB5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB5.png", 0, 0 }
+Sprite "RONIB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB6.png", 0, 0 }
+Sprite "RONIB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB7.png", 0, 0 }
+Sprite "RONIB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIB8.png", 0, 0 }
+Sprite "RONIC1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC1.png", 0, 0 }
+Sprite "RONIC2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC2.png", 0, 0 }
+Sprite "RONIC3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC3.png", 0, 0 }
+Sprite "RONIC4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC4.png", 0, 0 }
+Sprite "RONIC5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC5.png", 0, 0 }
+Sprite "RONIC6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC6.png", 0, 0 }
+Sprite "RONIC7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC7.png", 0, 0 }
+Sprite "RONIC8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIC8.png", 0, 0 }
+Sprite "RONID1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID1.png", 0, 0 }
+Sprite "RONID2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID2.png", 0, 0 }
+Sprite "RONID3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID3.png", 0, 0 }
+Sprite "RONID4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID4.png", 0, 0 }
+Sprite "RONID5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID5.png", 0, 0 }
+Sprite "RONID6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID6.png", 0, 0 }
+Sprite "RONID7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID7.png", 0, 0 }
+Sprite "RONID8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONID8.png", 0, 0 }
+Sprite "RONIE1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE1.png", 0, 0 }
+Sprite "RONIE2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE2.png", 0, 0 }
+Sprite "RONIE3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE3.png", 0, 0 }
+Sprite "RONIE4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE4.png", 0, 0 }
+Sprite "RONIE5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE5.png", 0, 0 }
+Sprite "RONIE6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE6.png", 0, 0 }
+Sprite "RONIE7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE7.png", 0, 0 }
+Sprite "RONIE8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIE8.png", 0, 0 }
+Sprite "RONIF1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF1.png", 0, 0 }
+Sprite "RONIF2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF2.png", 0, 0 }
+Sprite "RONIF3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF3.png", 0, 0 }
+Sprite "RONIF4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF4.png", 0, 0 }
+Sprite "RONIF5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF5.png", 0, 0 }
+Sprite "RONIF6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF6.png", 0, 0 }
+Sprite "RONIF7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF7.png", 0, 0 }
+Sprite "RONIF8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIF8.png", 0, 0 }
+Sprite "RONIG0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIG0.png", 0, 0 }
+Sprite "RONIH0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIH0.png", 0, 0 }
+Sprite "RONII0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONII0.png", 0, 0 }
+Sprite "RONIJ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIJ0.png", 0, 0 }
+Sprite "RONIK0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIK0.png", 0, 0 }
+Sprite "RONIL0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/ronnie/RONIL0.png", 0, 0 }
 
-// Generated movement, ranged, pain, and death frames use a wider canvas so
-// effects and horizontal death poses cannot be clipped.
-Sprite "ARGOC1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC1.png", 0, 0 }
-Sprite "ARGOC2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC2.png", 0, 0 }
-Sprite "ARGOC3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC3.png", 0, 0 }
-Sprite "ARGOC4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC4.png", 0, 0 }
-Sprite "ARGOC5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC5.png", 0, 0 }
-Sprite "ARGOC6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC6.png", 0, 0 }
-Sprite "ARGOC7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC7.png", 0, 0 }
-Sprite "ARGOC8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOC8.png", 0, 0 }
-Sprite "ARGOD1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD1.png", 0, 0 }
-Sprite "ARGOD2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD2.png", 0, 0 }
-Sprite "ARGOD3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD3.png", 0, 0 }
-Sprite "ARGOD4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD4.png", 0, 0 }
-Sprite "ARGOD5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD5.png", 0, 0 }
-Sprite "ARGOD6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD6.png", 0, 0 }
-Sprite "ARGOD7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD7.png", 0, 0 }
-Sprite "ARGOD8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOD8.png", 0, 0 }
-Sprite "ARGOE1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE1.png", 0, 0 }
-Sprite "ARGOE2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE2.png", 0, 0 }
-Sprite "ARGOE3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE3.png", 0, 0 }
-Sprite "ARGOE4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE4.png", 0, 0 }
-Sprite "ARGOE5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE5.png", 0, 0 }
-Sprite "ARGOE6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE6.png", 0, 0 }
-Sprite "ARGOE7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE7.png", 0, 0 }
-Sprite "ARGOE8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOE8.png", 0, 0 }
-Sprite "ARGOF1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF1.png", 0, 0 }
-Sprite "ARGOF2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF2.png", 0, 0 }
-Sprite "ARGOF3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF3.png", 0, 0 }
-Sprite "ARGOF4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF4.png", 0, 0 }
-Sprite "ARGOF5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF5.png", 0, 0 }
-Sprite "ARGOF6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF6.png", 0, 0 }
-Sprite "ARGOF7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF7.png", 0, 0 }
-Sprite "ARGOF8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/argento/ARGOF8.png", 0, 0 }
-Sprite "CAELC1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC1.png", 0, 0 }
-Sprite "CAELC2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC2.png", 0, 0 }
-Sprite "CAELC3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC3.png", 0, 0 }
-Sprite "CAELC4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC4.png", 0, 0 }
-Sprite "CAELC5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC5.png", 0, 0 }
-Sprite "CAELC6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC6.png", 0, 0 }
-Sprite "CAELC7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC7.png", 0, 0 }
-Sprite "CAELC8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELC8.png", 0, 0 }
-Sprite "CAELD1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD1.png", 0, 0 }
-Sprite "CAELD2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD2.png", 0, 0 }
-Sprite "CAELD3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD3.png", 0, 0 }
-Sprite "CAELD4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD4.png", 0, 0 }
-Sprite "CAELD5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD5.png", 0, 0 }
-Sprite "CAELD6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD6.png", 0, 0 }
-Sprite "CAELD7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD7.png", 0, 0 }
-Sprite "CAELD8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELD8.png", 0, 0 }
-Sprite "CAELE1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE1.png", 0, 0 }
-Sprite "CAELE2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE2.png", 0, 0 }
-Sprite "CAELE3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE3.png", 0, 0 }
-Sprite "CAELE4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE4.png", 0, 0 }
-Sprite "CAELE5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE5.png", 0, 0 }
-Sprite "CAELE6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE6.png", 0, 0 }
-Sprite "CAELE7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE7.png", 0, 0 }
-Sprite "CAELE8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELE8.png", 0, 0 }
-Sprite "CAELF1", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF1.png", 0, 0 }
-Sprite "CAELF2", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF2.png", 0, 0 }
-Sprite "CAELF3", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF3.png", 0, 0 }
-Sprite "CAELF4", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF4.png", 0, 0 }
-Sprite "CAELF5", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF5.png", 0, 0 }
-Sprite "CAELF6", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF6.png", 0, 0 }
-Sprite "CAELF7", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF7.png", 0, 0 }
-Sprite "CAELF8", 128, 80 { Offset 64, 78 Patch "sprites/caelum/caella/CAELF8.png", 0, 0 }
+// Argento: A idle, B move, C walk, D run, E attack, F pain, G-L death.
+Sprite "ARGOA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA1.png", 0, 0 }
+Sprite "ARGOA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA2.png", 0, 0 }
+Sprite "ARGOA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA3.png", 0, 0 }
+Sprite "ARGOA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA4.png", 0, 0 }
+Sprite "ARGOA5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA5.png", 0, 0 }
+Sprite "ARGOA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA6.png", 0, 0 }
+Sprite "ARGOA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA7.png", 0, 0 }
+Sprite "ARGOA8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOA8.png", 0, 0 }
+Sprite "ARGOB1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB1.png", 0, 0 }
+Sprite "ARGOB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB2.png", 0, 0 }
+Sprite "ARGOB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB3.png", 0, 0 }
+Sprite "ARGOB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB4.png", 0, 0 }
+Sprite "ARGOB5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB5.png", 0, 0 }
+Sprite "ARGOB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB6.png", 0, 0 }
+Sprite "ARGOB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB7.png", 0, 0 }
+Sprite "ARGOB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOB8.png", 0, 0 }
+Sprite "ARGOC1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC1.png", 0, 0 }
+Sprite "ARGOC2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC2.png", 0, 0 }
+Sprite "ARGOC3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC3.png", 0, 0 }
+Sprite "ARGOC4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC4.png", 0, 0 }
+Sprite "ARGOC5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC5.png", 0, 0 }
+Sprite "ARGOC6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC6.png", 0, 0 }
+Sprite "ARGOC7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC7.png", 0, 0 }
+Sprite "ARGOC8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOC8.png", 0, 0 }
+Sprite "ARGOD1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD1.png", 0, 0 }
+Sprite "ARGOD2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD2.png", 0, 0 }
+Sprite "ARGOD3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD3.png", 0, 0 }
+Sprite "ARGOD4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD4.png", 0, 0 }
+Sprite "ARGOD5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD5.png", 0, 0 }
+Sprite "ARGOD6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD6.png", 0, 0 }
+Sprite "ARGOD7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD7.png", 0, 0 }
+Sprite "ARGOD8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOD8.png", 0, 0 }
+Sprite "ARGOE1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE1.png", 0, 0 }
+Sprite "ARGOE2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE2.png", 0, 0 }
+Sprite "ARGOE3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE3.png", 0, 0 }
+Sprite "ARGOE4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE4.png", 0, 0 }
+Sprite "ARGOE5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE5.png", 0, 0 }
+Sprite "ARGOE6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE6.png", 0, 0 }
+Sprite "ARGOE7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE7.png", 0, 0 }
+Sprite "ARGOE8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOE8.png", 0, 0 }
+Sprite "ARGOF1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF1.png", 0, 0 }
+Sprite "ARGOF2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF2.png", 0, 0 }
+Sprite "ARGOF3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF3.png", 0, 0 }
+Sprite "ARGOF4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF4.png", 0, 0 }
+Sprite "ARGOF5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF5.png", 0, 0 }
+Sprite "ARGOF6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF6.png", 0, 0 }
+Sprite "ARGOF7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF7.png", 0, 0 }
+Sprite "ARGOF8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOF8.png", 0, 0 }
+Sprite "ARGOG0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOG0.png", 0, 0 }
+Sprite "ARGOH0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOH0.png", 0, 0 }
+Sprite "ARGOI0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOI0.png", 0, 0 }
+Sprite "ARGOJ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOJ0.png", 0, 0 }
+Sprite "ARGOK0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOK0.png", 0, 0 }
+Sprite "ARGOL0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARGOL0.png", 0, 0 }
 
-// Compact additive-looking magic bolts; brightness comes from their actor state.
-// Rulo uses an 80-unit bear-warrior silhouette and wide canvases for axe arcs.
-Sprite "RULOA1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA1.png", 0, 0 }
-Sprite "RULOA2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA2.png", 0, 0 }
-Sprite "RULOA3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA3.png", 0, 0 }
-Sprite "RULOA4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA4.png", 0, 0 }
-Sprite "RULOA5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA5.png", 0, 0 }
-Sprite "RULOA6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA6.png", 0, 0 }
-Sprite "RULOA7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA7.png", 0, 0 }
-Sprite "RULOA8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOA8.png", 0, 0 }
-Sprite "RULOB1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB1.png", 0, 0 }
-Sprite "RULOB2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB2.png", 0, 0 }
-Sprite "RULOB3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB3.png", 0, 0 }
-Sprite "RULOB4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB4.png", 0, 0 }
-Sprite "RULOB5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB5.png", 0, 0 }
-Sprite "RULOB6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB6.png", 0, 0 }
-Sprite "RULOB7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB7.png", 0, 0 }
-Sprite "RULOB8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOB8.png", 0, 0 }
-Sprite "RULOC1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC1.png", 0, 0 }
-Sprite "RULOC2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC2.png", 0, 0 }
-Sprite "RULOC3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC3.png", 0, 0 }
-Sprite "RULOC4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC4.png", 0, 0 }
-Sprite "RULOC5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC5.png", 0, 0 }
-Sprite "RULOC6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC6.png", 0, 0 }
-Sprite "RULOC7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC7.png", 0, 0 }
-Sprite "RULOC8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOC8.png", 0, 0 }
-Sprite "RULOD1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD1.png", 0, 0 }
-Sprite "RULOD2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD2.png", 0, 0 }
-Sprite "RULOD3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD3.png", 0, 0 }
-Sprite "RULOD4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD4.png", 0, 0 }
-Sprite "RULOD5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD5.png", 0, 0 }
-Sprite "RULOD6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD6.png", 0, 0 }
-Sprite "RULOD7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD7.png", 0, 0 }
-Sprite "RULOD8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOD8.png", 0, 0 }
-Sprite "RULOE1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE1.png", 0, 0 }
-Sprite "RULOE2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE2.png", 0, 0 }
-Sprite "RULOE3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE3.png", 0, 0 }
-Sprite "RULOE4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE4.png", 0, 0 }
-Sprite "RULOE5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE5.png", 0, 0 }
-Sprite "RULOE6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE6.png", 0, 0 }
-Sprite "RULOE7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE7.png", 0, 0 }
-Sprite "RULOE8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOE8.png", 0, 0 }
-Sprite "RULOF1", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF1.png", 0, 0 }
-Sprite "RULOF2", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF2.png", 0, 0 }
-Sprite "RULOF3", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF3.png", 0, 0 }
-Sprite "RULOF4", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF4.png", 0, 0 }
-Sprite "RULOF5", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF5.png", 0, 0 }
-Sprite "RULOF6", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF6.png", 0, 0 }
-Sprite "RULOF7", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF7.png", 0, 0 }
-Sprite "RULOF8", 160, 96 { Offset 80, 90 Patch "sprites/caelum/rulo/RULOF8.png", 0, 0 }
-
-// Ronnie remains humanoid height; the wider canvas preserves golden effects and corpses.
-Sprite "RONIA1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA1.png", 0, 0 }
-Sprite "RONIA2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA2.png", 0, 0 }
-Sprite "RONIA3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA3.png", 0, 0 }
-Sprite "RONIA4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA4.png", 0, 0 }
-Sprite "RONIA5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA5.png", 0, 0 }
-Sprite "RONIA6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA6.png", 0, 0 }
-Sprite "RONIA7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA7.png", 0, 0 }
-Sprite "RONIA8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIA8.png", 0, 0 }
-Sprite "RONIB1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB1.png", 0, 0 }
-Sprite "RONIB2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB2.png", 0, 0 }
-Sprite "RONIB3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB3.png", 0, 0 }
-Sprite "RONIB4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB4.png", 0, 0 }
-Sprite "RONIB5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB5.png", 0, 0 }
-Sprite "RONIB6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB6.png", 0, 0 }
-Sprite "RONIB7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB7.png", 0, 0 }
-Sprite "RONIB8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIB8.png", 0, 0 }
-Sprite "RONIC1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC1.png", 0, 0 }
-Sprite "RONIC2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC2.png", 0, 0 }
-Sprite "RONIC3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC3.png", 0, 0 }
-Sprite "RONIC4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC4.png", 0, 0 }
-Sprite "RONIC5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC5.png", 0, 0 }
-Sprite "RONIC6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC6.png", 0, 0 }
-Sprite "RONIC7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC7.png", 0, 0 }
-Sprite "RONIC8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIC8.png", 0, 0 }
-Sprite "RONID1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID1.png", 0, 0 }
-Sprite "RONID2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID2.png", 0, 0 }
-Sprite "RONID3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID3.png", 0, 0 }
-Sprite "RONID4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID4.png", 0, 0 }
-Sprite "RONID5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID5.png", 0, 0 }
-Sprite "RONID6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID6.png", 0, 0 }
-Sprite "RONID7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID7.png", 0, 0 }
-Sprite "RONID8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONID8.png", 0, 0 }
-Sprite "RONIE1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE1.png", 0, 0 }
-Sprite "RONIE2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE2.png", 0, 0 }
-Sprite "RONIE3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE3.png", 0, 0 }
-Sprite "RONIE4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE4.png", 0, 0 }
-Sprite "RONIE5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE5.png", 0, 0 }
-Sprite "RONIE6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE6.png", 0, 0 }
-Sprite "RONIE7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE7.png", 0, 0 }
-Sprite "RONIE8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIE8.png", 0, 0 }
-Sprite "RONIF1", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF1.png", 0, 0 }
-Sprite "RONIF2", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF2.png", 0, 0 }
-Sprite "RONIF3", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF3.png", 0, 0 }
-Sprite "RONIF4", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF4.png", 0, 0 }
-Sprite "RONIF5", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF5.png", 0, 0 }
-Sprite "RONIF6", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF6.png", 0, 0 }
-Sprite "RONIF7", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF7.png", 0, 0 }
-Sprite "RONIF8", 144, 88 { Offset 72, 82 Patch "sprites/caelum/ronnie/RONIF8.png", 0, 0 }
-
+// Caella: A idle, B move, C walk, D run, E attack, F pain, G-L death.
+Sprite "CAELA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA1.png", 0, 0 }
+Sprite "CAELA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA2.png", 0, 0 }
+Sprite "CAELA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA3.png", 0, 0 }
+Sprite "CAELA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA4.png", 0, 0 }
+Sprite "CAELA5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA5.png", 0, 0 }
+Sprite "CAELA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA6.png", 0, 0 }
+Sprite "CAELA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA7.png", 0, 0 }
+Sprite "CAELA8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELA8.png", 0, 0 }
+Sprite "CAELB1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB1.png", 0, 0 }
+Sprite "CAELB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB2.png", 0, 0 }
+Sprite "CAELB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB3.png", 0, 0 }
+Sprite "CAELB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB4.png", 0, 0 }
+Sprite "CAELB5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB5.png", 0, 0 }
+Sprite "CAELB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB6.png", 0, 0 }
+Sprite "CAELB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB7.png", 0, 0 }
+Sprite "CAELB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELB8.png", 0, 0 }
+Sprite "CAELC1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC1.png", 0, 0 }
+Sprite "CAELC2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC2.png", 0, 0 }
+Sprite "CAELC3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC3.png", 0, 0 }
+Sprite "CAELC4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC4.png", 0, 0 }
+Sprite "CAELC5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC5.png", 0, 0 }
+Sprite "CAELC6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC6.png", 0, 0 }
+Sprite "CAELC7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC7.png", 0, 0 }
+Sprite "CAELC8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELC8.png", 0, 0 }
+Sprite "CAELD1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD1.png", 0, 0 }
+Sprite "CAELD2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD2.png", 0, 0 }
+Sprite "CAELD3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD3.png", 0, 0 }
+Sprite "CAELD4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD4.png", 0, 0 }
+Sprite "CAELD5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD5.png", 0, 0 }
+Sprite "CAELD6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD6.png", 0, 0 }
+Sprite "CAELD7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD7.png", 0, 0 }
+Sprite "CAELD8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELD8.png", 0, 0 }
+Sprite "CAELE1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE1.png", 0, 0 }
+Sprite "CAELE2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE2.png", 0, 0 }
+Sprite "CAELE3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE3.png", 0, 0 }
+Sprite "CAELE4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE4.png", 0, 0 }
+Sprite "CAELE5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE5.png", 0, 0 }
+Sprite "CAELE6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE6.png", 0, 0 }
+Sprite "CAELE7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE7.png", 0, 0 }
+Sprite "CAELE8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELE8.png", 0, 0 }
+Sprite "CAELF1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF1.png", 0, 0 }
+Sprite "CAELF2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF2.png", 0, 0 }
+Sprite "CAELF3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF3.png", 0, 0 }
+Sprite "CAELF4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF4.png", 0, 0 }
+Sprite "CAELF5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF5.png", 0, 0 }
+Sprite "CAELF6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF6.png", 0, 0 }
+Sprite "CAELF7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF7.png", 0, 0 }
+Sprite "CAELF8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELF8.png", 0, 0 }
+Sprite "CAELG0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELG0.png", 0, 0 }
+Sprite "CAELH0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELH0.png", 0, 0 }
+Sprite "CAELI0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELI0.png", 0, 0 }
+Sprite "CAELJ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELJ0.png", 0, 0 }
+Sprite "CAELK0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELK0.png", 0, 0 }
+Sprite "CAELL0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAELL0.png", 0, 0 }
 // -----------------------------------------------------------------------------
-// Caelum Argenteum 4.22.4c - explicit world-sprite alignment
-// Los pickups usan como piso el último píxel visible real del PNG.
-// Los proyectiles elementales se centran sobre su origen físico.
-// -----------------------------------------------------------------------------
+// V4.29.0s - Domingo player sprites
+Sprite "DOMIA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA1.png", 0, 0 }
+Sprite "DOMIA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA2.png", 0, 0 }
+Sprite "DOMIA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA3.png", 0, 0 }
+Sprite "DOMIA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA4.png", 0, 0 }
+Sprite "DOMIA5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA5.png", 0, 0 }
+Sprite "DOMIA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA6.png", 0, 0 }
+Sprite "DOMIA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA7.png", 0, 0 }
+Sprite "DOMIA8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIA8.png", 0, 0 }
+Sprite "DOMIB1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB1.png", 0, 0 }
+Sprite "DOMIB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB2.png", 0, 0 }
+Sprite "DOMIB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB3.png", 0, 0 }
+Sprite "DOMIB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB4.png", 0, 0 }
+Sprite "DOMIB5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB5.png", 0, 0 }
+Sprite "DOMIB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB6.png", 0, 0 }
+Sprite "DOMIB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB7.png", 0, 0 }
+Sprite "DOMIB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIB8.png", 0, 0 }
+Sprite "DOMIC0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIC0.png", 0, 0 }
+Sprite "DOMID0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMID0.png", 0, 0 }
+Sprite "DOMIE0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIE0.png", 0, 0 }
+Sprite "DOMIF0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIF0.png", 0, 0 }
+Sprite "DOMIG0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIG0.png", 0, 0 }
+Sprite "DOMIH0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIH0.png", 0, 0 }
+Sprite "DOMII0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMII0.png", 0, 0 }
+Sprite "DOMIJ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIJ0.png", 0, 0 }
+Sprite "DOMIK0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIK0.png", 0, 0 }
+Sprite "DOMIL0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIL0.png", 0, 0 }
+Sprite "DOMIM0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIM0.png", 0, 0 }
+Sprite "DOMIN0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIN0.png", 0, 0 }
+Sprite "DOMIO0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIO0.png", 0, 0 }
+Sprite "DOMIP0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIP0.png", 0, 0 }
+Sprite "DOMIQ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIQ0.png", 0, 0 }
+Sprite "DOMIS0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIS0.png", 0, 0 }
+Sprite "DOMIT0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIT0.png", 0, 0 }
+Sprite "DOMIU0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIU0.png", 0, 0 }
+Sprite "DOMIV0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIV0.png", 0, 0 }
+Sprite "DOMIW0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIW0.png", 0, 0 }
+Sprite "DOMIX0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIX0.png", 0, 0 }
+Sprite "DOMIY0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIY0.png", 0, 0 }
+Sprite "DOMIZ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIZ0.png", 0, 0 }
 
-Sprite "CAMUA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CAMUA0.png", 0, 0 }
-Sprite "CARRA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CARRA0.png", 0, 0 }
-Sprite "CBOLA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CBOLA0.png", 0, 0 }
-Sprite "CCAAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/ammunition/CCAAA0.png", 0, 0 }
-Sprite "CAHVA0", 64, 64 { Offset 32, 59 Patch "sprites/caelum/armor/body/CAHVA0.png", 0, 0 }
-Sprite "CALIA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CALIA0.png", 0, 0 }
-Sprite "CAMAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CAMAA0.png", 0, 0 }
-Sprite "CAMDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/body/CAMDA0.png", 0, 0 }
-Sprite "CBHVA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/feet/CBHVA0.png", 0, 0 }
-Sprite "CBLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/feet/CBLTA0.png", 0, 0 }
-Sprite "CBMDA0", 64, 64 { Offset 32, 58 Patch "sprites/caelum/armor/feet/CBMDA0.png", 0, 0 }
-Sprite "CBOMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/feet/CBOMA0.png", 0, 0 }
-Sprite "CGHVA0", 64, 64 { Offset 32, 58 Patch "sprites/caelum/armor/hands/CGHVA0.png", 0, 0 }
-Sprite "CGLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/hands/CGLTA0.png", 0, 0 }
-Sprite "CGMDA0", 64, 64 { Offset 32, 53 Patch "sprites/caelum/armor/hands/CGMDA0.png", 0, 0 }
-Sprite "CGMMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/hands/CGMMA0.png", 0, 0 }
-Sprite "CHEHA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/armor/head/CHEHA0.png", 0, 0 }
-Sprite "CHLTA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHLTA0.png", 0, 0 }
-Sprite "CHMDA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHMDA0.png", 0, 0 }
-Sprite "CHMGA0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/armor/head/CHMGA0.png", 0, 0 }
-Sprite "CANIA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CANIA0.png", 0, 0 }
-Sprite "CENEA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CENEA0.png", 0, 0 }
-Sprite "CFOOA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CFOOA0.png", 0, 0 }
-Sprite "CMEDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CMEDA0.png", 0, 0 }
-Sprite "CWATA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/consumables/CWATA0.png", 0, 0 }
-Sprite "CKEYA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/items/CKEYA0.png", 0, 0 }
-Sprite "CSELA0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/items/CSELA0.png", 0, 0 }
-Sprite "CTARA0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/items/CTARA0.png", 0, 0 }
-Sprite "M000A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M000A0.png", 0, 0 }
-Sprite "M001A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M001A0.png", 0, 0 }
-Sprite "M002A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M002A0.png", 0, 0 }
-Sprite "M003A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M003A0.png", 0, 0 }
-Sprite "M004A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M004A0.png", 0, 0 }
-Sprite "M005A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M005A0.png", 0, 0 }
-Sprite "M006A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M006A0.png", 0, 0 }
-Sprite "M007A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M007A0.png", 0, 0 }
-Sprite "M008A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M008A0.png", 0, 0 }
-Sprite "M009A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M009A0.png", 0, 0 }
-Sprite "M010A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M010A0.png", 0, 0 }
-Sprite "M011A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M011A0.png", 0, 0 }
-Sprite "M012A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M012A0.png", 0, 0 }
-Sprite "M013A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M013A0.png", 0, 0 }
-Sprite "M014A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M014A0.png", 0, 0 }
-Sprite "M015A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M015A0.png", 0, 0 }
-Sprite "M016A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M016A0.png", 0, 0 }
-Sprite "M017A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M017A0.png", 0, 0 }
-Sprite "M018A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M018A0.png", 0, 0 }
-Sprite "M019A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M019A0.png", 0, 0 }
-Sprite "M020A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M020A0.png", 0, 0 }
-Sprite "M021A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M021A0.png", 0, 0 }
-Sprite "M022A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M022A0.png", 0, 0 }
-Sprite "M023A0", 64, 64 { Offset 32, 60 Patch "sprites/caelum/materials/M023A0.png", 0, 0 }
-Sprite "M024A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M024A0.png", 0, 0 }
-Sprite "M025A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M025A0.png", 0, 0 }
-Sprite "M026A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M026A0.png", 0, 0 }
-Sprite "M027A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M027A0.png", 0, 0 }
-Sprite "M028A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M028A0.png", 0, 0 }
-Sprite "M029A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M029A0.png", 0, 0 }
-Sprite "M030A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M030A0.png", 0, 0 }
-Sprite "M031A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M031A0.png", 0, 0 }
-Sprite "M032A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M032A0.png", 0, 0 }
-Sprite "M033A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M033A0.png", 0, 0 }
-Sprite "M034A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M034A0.png", 0, 0 }
-Sprite "M035A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M035A0.png", 0, 0 }
-Sprite "M036A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M036A0.png", 0, 0 }
-Sprite "M037A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M037A0.png", 0, 0 }
-Sprite "M038A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M038A0.png", 0, 0 }
-Sprite "M039A0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/materials/M039A0.png", 0, 0 }
-Sprite "M040A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M040A0.png", 0, 0 }
-Sprite "M041A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M041A0.png", 0, 0 }
-Sprite "M042A0", 64, 64 { Offset 32, 54 Patch "sprites/caelum/materials/M042A0.png", 0, 0 }
-Sprite "CBUCA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CBUCA0.png", 0, 0 }
-Sprite "CSHKA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHKA0.png", 0, 0 }
-Sprite "CSHMA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHMA0.png", 0, 0 }
-Sprite "CSHTA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/shields/CSHTA0.png", 0, 0 }
-Sprite "CBELA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CBELA0.png", 0, 0 }
-Sprite "CBOOA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CBOOA0.png", 0, 0 }
-Sprite "CSTAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CSTAA0.png", 0, 0 }
-Sprite "CSTFA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/magic/CSTFA0.png", 0, 0 }
-Sprite "CAXEA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CAXEA0.png", 0, 0 }
-Sprite "CDAGA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CDAGA0.png", 0, 0 }
-Sprite "CFLAA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CFLAA0.png", 0, 0 }
-Sprite "CGAUA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CGAUA0.png", 0, 0 }
-Sprite "CGRSA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CGRSA0.png", 0, 0 }
-Sprite "CHALA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CHALA0.png", 0, 0 }
-Sprite "CHATA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CHATA0.png", 0, 0 }
-Sprite "CJAVA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CJAVA0.png", 0, 0 }
-Sprite "CMACA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CMACA0.png", 0, 0 }
-Sprite "CSPRA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CSPRA0.png", 0, 0 }
-Sprite "CSWDA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CSWDA0.png", 0, 0 }
-Sprite "CWAXA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/physical/CWAXA0.png", 0, 0 }
-Sprite "CBOWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CBOWA0.png", 0, 0 }
-Sprite "CCARA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CCARA0.png", 0, 0 }
-Sprite "CCBWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CCBWA0.png", 0, 0 }
-Sprite "CLBWA0", 64, 64 { Offset 32, 61 Patch "sprites/caelum/weapons/ranged/CLBWA0.png", 0, 0 }
+// V4.29.0s - canonical 128x128 world pickup aliases
+Sprite "CAMUA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_javelin.png", 0, 0 }
+Sprite "CARRA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_arrow_ammo.png", 0, 0 }
+Sprite "CBOLA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_bolt_ammo.png", 0, 0 }
+Sprite "CCAAA0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/ca_carbine_ammo.png", 0, 0 }
+Sprite "CAHVA0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/ca_armor_heavy.png", 0, 0 }
+Sprite "CALIA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_light.png", 0, 0 }
+Sprite "CAMAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_magic.png", 0, 0 }
+Sprite "CAMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_medium.png", 0, 0 }
+Sprite "CBHVA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_heavy.png", 0, 0 }
+Sprite "CBLTA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_light.png", 0, 0 }
+Sprite "CBMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_medium.png", 0, 0 }
+Sprite "CBOMA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots.png", 0, 0 }
+Sprite "CGHVA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_gloves_heavy.png", 0, 0 }
+Sprite "CGLTA0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/ca_gloves_light.png", 0, 0 }
+Sprite "CGMDA0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/ca_gloves_medium.png", 0, 0 }
+Sprite "CGMMA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_gloves.png", 0, 0 }
+Sprite "CHEHA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_helmet.png", 0, 0 }
+Sprite "CHLTA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_helmet_light.png", 0, 0 }
+Sprite "CHMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_helmet_medium.png", 0, 0 }
+Sprite "CHMGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_helmet_magic.png", 0, 0 }
+Sprite "CANIA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_anima_potion.png", 0, 0 }
+Sprite "CENEA0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/ca_energy_drink.png", 0, 0 }
+Sprite "CFOOA0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/ca_food_ration.png", 0, 0 }
+Sprite "CMEDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_medikit.png", 0, 0 }
+Sprite "CWATA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_water_ration.png", 0, 0 }
+Sprite "CKEYA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_key.png", 0, 0 }
+Sprite "CSELA0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/ca_sealed_letter.png", 0, 0 }
+Sprite "CTARA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_tarot_back.png", 0, 0 }
+Sprite "CBUCA0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/ca_shield_buckler.png", 0, 0 }
+Sprite "CSHKA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_shield_kite.png", 0, 0 }
+Sprite "CSHMA0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/ca_shield_magic.png", 0, 0 }
+Sprite "CSHTA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_shield_tower.png", 0, 0 }
+Sprite "CBELA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_bell.png", 0, 0 }
+Sprite "CBOOA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book.png", 0, 0 }
+Sprite "CSTAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_statuette.png", 0, 0 }
+Sprite "CSTFA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_staff.png", 0, 0 }
+Sprite "CAXEA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_axe.png", 0, 0 }
+Sprite "CDAGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_dagger.png", 0, 0 }
+Sprite "CFLAA0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/ca_flail.png", 0, 0 }
+Sprite "CGAUA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_giant_gauntlets.png", 0, 0 }
+Sprite "CGRSA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_greatsword.png", 0, 0 }
+Sprite "CHALA0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/ca_halberd.png", 0, 0 }
+Sprite "CHATA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_hatchet.png", 0, 0 }
+Sprite "CJAVA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_javelin.png", 0, 0 }
+Sprite "CMACA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_machete.png", 0, 0 }
+Sprite "CSPRA0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/ca_spear.png", 0, 0 }
+Sprite "CSWDA0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/ca_sword.png", 0, 0 }
+Sprite "CWAXA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_war_axe.png", 0, 0 }
+Sprite "CBOWA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_standard_bow.png", 0, 0 }
+Sprite "CCARA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_carbine.png", 0, 0 }
+Sprite "CCBWA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_crossbow.png", 0, 0 }
+Sprite "CLBWA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_longbow.png", 0, 0 }
+Sprite "M000A0", 128, 128 { Offset 64, 118 Patch "graphics/caelum/icons/materials/ca_material_iron_ingot.png", 0, 0 }
+Sprite "M001A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_blade.png", 0, 0 }
+Sprite "M002A0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/materials/ca_material_small_blade.png", 0, 0 }
+Sprite "M003A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_curved_blade.png", 0, 0 }
+Sprite "M004A0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/materials/ca_material_long_blade.png", 0, 0 }
+Sprite "M005A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_broad_blade.png", 0, 0 }
+Sprite "M006A0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/materials/ca_material_shaft.png", 0, 0 }
+Sprite "M007A0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/materials/ca_material_frame.png", 0, 0 }
+Sprite "M008A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_long_frame.png", 0, 0 }
+Sprite "M009A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_weapon_head.png", 0, 0 }
+Sprite "M010A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_round_head.png", 0, 0 }
+Sprite "M011A0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/materials/ca_material_plate.png", 0, 0 }
+Sprite "M012A0", 128, 128 { Offset 64, 116 Patch "graphics/caelum/icons/materials/ca_material_round_plate.png", 0, 0 }
+Sprite "M013A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_kite_plate.png", 0, 0 }
+Sprite "M014A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_tower_plate.png", 0, 0 }
+Sprite "M015A0", 128, 128 { Offset 64, 110 Patch "graphics/caelum/icons/materials/ca_material_magic_plate.png", 0, 0 }
+Sprite "M016A0", 128, 128 { Offset 64, 110 Patch "graphics/caelum/icons/materials/ca_material_large_plate.png", 0, 0 }
+Sprite "M017A0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/materials/ca_material_chainmail.png", 0, 0 }
+Sprite "M018A0", 128, 128 { Offset 64, 98 Patch "graphics/caelum/icons/materials/ca_material_fabric.png", 0, 0 }
+Sprite "M019A0", 128, 128 { Offset 64, 98 Patch "graphics/caelum/icons/materials/ca_material_leather.png", 0, 0 }
+Sprite "M020A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_fire_essence.png", 0, 0 }
+Sprite "M021A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_water_essence.png", 0, 0 }
+Sprite "M022A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_earth_essence.png", 0, 0 }
+Sprite "M023A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_wind_essence.png", 0, 0 }
+Sprite "M024A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_quintessence.png", 0, 0 }
+Sprite "M025A0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/materials/ca_material_hilt.png", 0, 0 }
+Sprite "M026A0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/materials/ca_material_long_hilt.png", 0, 0 }
+Sprite "M027A0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/materials/ca_material_point.png", 0, 0 }
+Sprite "M028A0", 128, 128 { Offset 64, 101 Patch "graphics/caelum/icons/materials/ca_material_handle.png", 0, 0 }
+Sprite "M029A0", 128, 128 { Offset 64, 105 Patch "graphics/caelum/icons/materials/ca_material_long_handle.png", 0, 0 }
+Sprite "M030A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_bowstring.png", 0, 0 }
+Sprite "M031A0", 128, 128 { Offset 64, 102 Patch "graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png", 0, 0 }
+Sprite "M032A0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/materials/ca_material_strap.png", 0, 0 }
+Sprite "M033A0", 128, 128 { Offset 64, 100 Patch "graphics/caelum/icons/materials/ca_material_reinforced_strap.png", 0, 0 }
+Sprite "M034A0", 128, 128 { Offset 64, 110 Patch "graphics/caelum/icons/materials/ca_material_barrel.png", 0, 0 }
+Sprite "M035A0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/materials/ca_material_mechanism.png", 0, 0 }
+Sprite "M036A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_staff_base.png", 0, 0 }
+Sprite "M037A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_bell_base.png", 0, 0 }
+Sprite "M038A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_book_base.png", 0, 0 }
+Sprite "M039A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_statuette_base.png", 0, 0 }
+Sprite "M040A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_small_weapon_head.png", 0, 0 }
+Sprite "M041A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_chain.png", 0, 0 }
+Sprite "M042A0", 128, 128 { Offset 64, 101 Patch "graphics/caelum/icons/materials/ca_material_wood.png", 0, 0 }
+Sprite "M043A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_silver_chain.png", 0, 0 }
+Sprite "M044A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_seal_base.png", 0, 0 }
+Sprite "M045A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_ruby_pendant.png", 0, 0 }
+Sprite "M046A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_sapphire_pendant.png", 0, 0 }
+Sprite "M047A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_emerald_pendant.png", 0, 0 }
+Sprite "M048A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_topaz_pendant.png", 0, 0 }
+Sprite "M049A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_ruby_gem.png", 0, 0 }
+Sprite "M050A0", 128, 128 { Offset 64, 110 Patch "graphics/caelum/icons/materials/ca_material_sapphire_gem.png", 0, 0 }
+Sprite "M051A0", 128, 128 { Offset 64, 118 Patch "graphics/caelum/icons/materials/ca_material_emerald_gem.png", 0, 0 }
+Sprite "M052A0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/materials/ca_material_topaz_gem.png", 0, 0 }
+Sprite "M053A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_opal_brooch.png", 0, 0 }
+Sprite "M054A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_raw_ruby.png", 0, 0 }
+Sprite "M055A0", 128, 128 { Offset 64, 110 Patch "graphics/caelum/icons/materials/ca_material_raw_sapphire.png", 0, 0 }
+Sprite "M056A0", 128, 128 { Offset 64, 118 Patch "graphics/caelum/icons/materials/ca_material_raw_emerald.png", 0, 0 }
+Sprite "M057A0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/materials/ca_material_raw_topaz.png", 0, 0 }
+Sprite "M058A0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/materials/ca_material_raw_opal.png", 0, 0 }
+Sprite "M059A0", 128, 128 { Offset 64, 107 Patch "graphics/caelum/icons/materials/ca_material_copper_ingot.png", 0, 0 }
+Sprite "M060A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_tin_ingot.png", 0, 0 }
+Sprite "M061A0", 128, 128 { Offset 64, 102 Patch "graphics/caelum/icons/materials/ca_material_coal.png", 0, 0 }
 
 Sprite "XAIRA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA1.png", 0, 0 }
 Sprite "XAIRA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA2.png", 0, 0 }
@@ -526,173 +604,15 @@ Sprite "CMSTA0", 128, 128
 }
 
 // V4.23.4 jewelry
-Sprite "M043A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_silver_chain.png", 0, 0
-}
-
-Sprite "M044A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_seal_base.png", 0, 0
-}
-
-Sprite "M045A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_ruby_pendant.png", 0, 0
-}
-
-Sprite "M046A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_sapphire_pendant.png", 0, 0
-}
-
-Sprite "M047A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_emerald_pendant.png", 0, 0
-}
-
-Sprite "M048A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_topaz_pendant.png", 0, 0
-}
-
-Sprite "M049A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_ruby_gem.png", 0, 0
-}
-
-Sprite "M050A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_sapphire_gem.png", 0, 0
-}
-
-Sprite "M051A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_emerald_gem.png", 0, 0
-}
-
-Sprite "M052A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_topaz_gem.png", 0, 0
-}
-
-Sprite "M053A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_opal_brooch.png", 0, 0
-}
-
-Sprite "M054A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_raw_ruby.png", 0, 0
-}
-
-Sprite "M055A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_raw_sapphire.png", 0, 0
-}
-
-Sprite "M056A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_raw_emerald.png", 0, 0
-}
-
-Sprite "M057A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_raw_topaz.png", 0, 0
-}
-
-Sprite "M058A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_raw_opal.png", 0, 0
-}
-
-Sprite "M059A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_copper_ingot.png", 0, 0
-}
-
-Sprite "M060A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_tin_ingot.png", 0, 0
-}
-
-Sprite "M061A0", 128, 128
-{
- Offset 64, 124
- Patch "graphics/caelum/icons/materials/ca_material_coal.png", 0, 0
-}
-
-Sprite "AMRBA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/AMRBA0.png", 0, 0
-}
-
-Sprite "AMSAA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/AMSAA0.png", 0, 0
-}
-
-Sprite "AMEMA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/AMEMA0.png", 0, 0
-}
-
-Sprite "AMTOA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/AMTOA0.png", 0, 0
-}
-
-Sprite "SLFIA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/SLFIA0.png", 0, 0
-}
-
-Sprite "SLWAA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/SLWAA0.png", 0, 0
-}
-
-Sprite "SLEAA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/SLEAA0.png", 0, 0
-}
-
-Sprite "SLAIA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/SLAIA0.png", 0, 0
-}
-
-Sprite "SLQUA0", 128, 128
-{
- Offset 64, 124
- Patch "sprites/caelum/jewelry/SLQUA0.png", 0, 0
-}
+Sprite "AMRBA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_amulet_ruby.png", 0, 0 }
+Sprite "AMSAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_amulet_sapphire.png", 0, 0 }
+Sprite "AMEMA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_amulet_emerald.png", 0, 0 }
+Sprite "AMTOA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_amulet_topaz.png", 0, 0 }
+Sprite "SLFIA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_seal_fire.png", 0, 0 }
+Sprite "SLWAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_seal_water.png", 0, 0 }
+Sprite "SLEAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_seal_earth.png", 0, 0 }
+Sprite "SLAIA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_seal_air.png", 0, 0 }
+Sprite "SLQUA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/jewelry/ca_seal_quintessence.png", 0, 0 }
 
 // V4.23.5 - eight-direction physical projectile sprites.
 

@@ -444,9 +444,49 @@ class CaelumPlayer : DoomPlayer
         // Prefijo facial propio para evitar resolver iconos/rostros heredados de Doom.
         Player.Face "CAF";
 
+        // Domingo reemplaza la apariencia mundial heredada de DoomPlayer. El
+        // rango 0,0 conserva su paleta original y "None" elimina PLYC: al
+        // agacharse el motor comprime el mismo sprite en vez de volver a Doom.
+        Scale 0.409091;
+        Player.CrouchSprite "None";
+        Player.ColorRange 0, 0;
+
         // Caelum performs one custom pain roll after engine mitigation. This
         // disables DoomPlayer's independent native roll and prevents duplicates.
         PainChance 0;
+    }
+
+    States
+    {
+    Spawn:
+        DOMI A -1;
+        Loop;
+    See:
+        DOMI AB 4;
+        Loop;
+    Missile:
+        DOMI CDEFGHIJ 2;
+        Goto Spawn;
+    Melee:
+        DOMI KLMNOPQ 2;
+        Goto Spawn;
+    Pain:
+        DOMI A 4;
+        DOMI A 4 A_Pain;
+        Goto Spawn;
+    Death:
+        DOMI S 8;
+        DOMI T 8 A_PlayerScream;
+        DOMI U 8;
+        DOMI V 8 A_NoBlocking;
+        DOMI WXY 8;
+        DOMI Z -1;
+        Stop;
+    XDeath:
+        Goto Death;
+    Raise:
+        DOMI ZYXWVUTS 5;
+        Goto Spawn;
     }
 
     CaelumPersistentCharacterState GetPersistentCharacterState(bool createState)

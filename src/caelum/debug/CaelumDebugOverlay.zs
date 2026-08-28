@@ -1160,31 +1160,16 @@ class CaelumDebugOverlay : EventHandler
         if (iconPath.Length() <= 0) { return; }
         TextureID icon = TexMan.CheckForTexture(iconPath, TexMan.Type_MiscPatch);
         if (!icon.IsValid()) { return; }
-        bool jewelryIcon =
-            localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_AMULET
-            || localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_SEAL;
-        if (jewelryIcon)
-        {
-            Screen.DrawTexture(
-                icon, true, 34.0, 112.0,
-                DTA_VIRTUALWIDTHF, 640.0,
-                DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_DESTWIDTHF, 48.0,
-                DTA_DESTHEIGHTF, 48.0,
-                DTA_KEEPRATIO, true
-            );
-        }
-        else
-        {
-            Screen.DrawTexture(
-                icon, true, 34.0, 112.0,
-                DTA_VIRTUALWIDTHF, 640.0,
-                DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true
-            );
-        }
+        // Todos los maestros recompuestos son 128x128. El tamaño del archivo
+        // no debe cambiar la disposición de esta interfaz heredada.
+        Screen.DrawTexture(
+            icon, true, 34.0, 112.0,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_DESTWIDTHF, 48.0,
+            DTA_DESTHEIGHTF, 48.0,
+            DTA_KEEPRATIO, true
+        );
 
         // Las armas de esencia reutilizan el icono del objeto base y agregan
         // un orbe pequeño en la esquina superior derecha. Así evitamos crear

@@ -9,7 +9,7 @@ class CaelumConsumableItem : PowerupGiver
         Radius 12;
         Height 8;
         // Sólo reduce el sprite del actor en el suelo; el icono de inventario conserva su tamaño.
-        Scale 0.5;
+        Scale 0.25;
         Inventory.Amount 1;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;

@@ -64,6 +64,8 @@ class CaelumDiagnosticQuintessenceFullRat : CaelumPassiveGiantRat
 {
     Default
     {
+        // Los tres recintos de Quintaesencia sí conservan blockmap y colisión.
+        -NOBLOCKMAP
         Species "CaelumDiagnosticQuintessenceRat";
     }
 }
@@ -108,8 +110,8 @@ class CaelumDiagnosticNonExplosiveShooter : CaelumArgento
         TNT1 A 0;
         Goto Missile;
     Missile:
-        ARGO D 7 A_FaceTarget;
-        ARGO D 0 A_CaelumSpawnSimpleElementalProjectile(
+        ARGO E 7 A_FaceTarget;
+        ARGO E 0 A_CaelumSpawnSimpleElementalProjectile(
             "CaelumDiagnosticNonExplosiveProjectile", 40,
             325, CaelumConstants.ESSENCE_FIRE
         );
@@ -132,8 +134,8 @@ class CaelumDiagnosticExplosiveShooter : CaelumArgento
         TNT1 A 0;
         Goto Missile;
     Missile:
-        ARGO D 7 A_FaceTarget;
-        ARGO D 0 A_CaelumSpawnExplosiveElementalProjectile(
+        ARGO E 7 A_FaceTarget;
+        ARGO E 0 A_CaelumSpawnExplosiveElementalProjectile(
             "CaelumActorExplosiveElementalProjectile", 40,
             325, CaelumConstants.ESSENCE_FIRE
         );
@@ -164,7 +166,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fija CVars antes de map map02; warp 16368 -16 0."
+            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fija CVars (escuadra=16) antes de map map02; warp 16368 -16 0."
         );
     }
 
@@ -209,11 +211,17 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int scheduledLookBudget = 0;
         int scheduledChaseInterval = 0;
         int scheduledChaseBudget = 0;
+        int scheduledSquadSize = 0;
         int scheduledAttackInterval = 0;
         bool scheduledChaseEnabled = false;
         bool scheduledLookEnabled = false;
         bool scheduledAttacksEnabled = false;
         int lightweightDiagnosticActors = 0;
+        int lightweightBlockmapActors = 0;
+        int lightweightVisualActors = 0;
+        int massSquadLeaders = 0;
+        int massSquadFollowers = 0;
+        int massFollowerPulses = 0;
         int anatomyObjects = 0;
         int armorObjects = 0;
         int elementalStatusObjects = 0;
@@ -260,6 +268,27 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     || combatActor.CaelumDiagnosticPassiveAI)
                 {
                     lightweightDiagnosticActors++;
+                    if (combatActor.bNOBLOCKMAP)
+                    {
+                        lightweightVisualActors++;
+                    }
+                    else
+                    {
+                        lightweightBlockmapActors++;
+                    }
+                }
+                if (combatActor.CaelumMassAIScheduleActive)
+                {
+                    if (combatActor.CaelumMassSquadLeader)
+                    {
+                        massSquadLeaders++;
+                    }
+                    else
+                    {
+                        massSquadFollowers++;
+                    }
+                    massFollowerPulses +=
+                        combatActor.ImpactDiagnosticFollowerPulses;
                 }
                 if (combatActor.AnatomyProfile != null) { anatomyObjects++; }
                 if (combatActor.CombatArmor != null) { armorObjects++; }
@@ -397,6 +426,8 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                         combatActor.CaelumMassChaseInterval;
                     scheduledChaseBudget =
                         combatActor.CaelumMassChaseBudgetPerTic;
+                    scheduledSquadSize =
+                        combatActor.CaelumMassSquadSize;
                     scheduledAttackInterval =
                         combatActor.CaelumMassAttackInterval;
                     scheduledChaseEnabled =
@@ -432,6 +463,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 combatActor.ImpactDiagnosticChasePhaseDeferred = 0;
                 combatActor.ImpactDiagnosticChaseBudgetDeferred = 0;
                 combatActor.ImpactDiagnosticChaseDisabled = 0;
+                combatActor.ImpactDiagnosticFollowerPulses = 0;
                 combatActor.ImpactDiagnosticLookAttempts = 0;
                 combatActor.ImpactDiagnosticLookUpdates = 0;
                 combatActor.ImpactDiagnosticLookDeferred = 0;
@@ -502,8 +534,10 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             missiles
         );
         Console.Printf(
-            "[CA-PHYS] ligeros=%d auxiliares anatomia=%d armadura=%d estados=%d",
+            "[CA-PHYS] ligeros=%d blockmap=%d visuales=%d auxiliares anatomia=%d armadura=%d estados=%d",
             lightweightDiagnosticActors,
+            lightweightBlockmapActors,
+            lightweightVisualActors,
             anatomyObjects,
             armorObjects,
             elementalStatusObjects
@@ -544,6 +578,13 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             chaseBudgetDeferred,
             chaseDisabled,
             schedulerBudgetDeferred
+        );
+        Console.Printf(
+            "[CA-AI] escuadras tamano=%d lideres=%d seguidores=%d pulsos_seguidor/s=%d",
+            scheduledSquadSize,
+            massSquadLeaders,
+            massSquadFollowers,
+            massFollowerPulses
         );
         Console.Printf(
             "[CA-AI] chase/familia ratas=%d rulo=%d argento=%d caella=%d ronnie=%d toros=%d distancia <=512=%d <=1024=%d >1024=%d",

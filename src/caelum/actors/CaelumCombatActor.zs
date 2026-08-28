@@ -111,11 +111,15 @@ class CaelumCombatActor : Actor
     int CaelumMassChaseInterval;
     int CaelumMassLookBudgetPerTic;
     int CaelumMassChaseBudgetPerTic;
+    int CaelumMassSquadSize;
     int CaelumMassAttackInterval;
     int CaelumMassLookPhaseKey;
     int CaelumMassChasePhaseKey;
     int CaelumMassAttackPhaseKey;
+    bool CaelumMassSquadLeader;
     CaelumMassAIScheduler CaelumMassScheduler;
+
+    int ImpactDiagnosticFollowerPulses;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -264,6 +268,8 @@ class CaelumCombatActor : Actor
             CaelumMassScheduler.RefreshSettings();
         }
         SyncCaelumMassAISchedule();
+        CaelumMassSquadLeader =
+            (CaelumMassChasePhaseKey % Max(1, CaelumMassSquadSize)) == 0;
     }
 
     void SyncCaelumMassAISchedule()
@@ -286,6 +292,7 @@ class CaelumCombatActor : Actor
             CaelumMassChaseInterval = 13;
             CaelumMassLookBudgetPerTic = 20;
             CaelumMassChaseBudgetPerTic = 10;
+            CaelumMassSquadSize = 16;
             return;
         }
 
@@ -300,6 +307,7 @@ class CaelumCombatActor : Actor
             CaelumMassScheduler.MassLookBudgetPerTic;
         CaelumMassChaseBudgetPerTic =
             CaelumMassScheduler.MassChaseBudgetPerTic;
+        CaelumMassSquadSize = CaelumMassScheduler.MassSquadSize;
     }
 
     bool IsCaelumMassDiagnosticActor()
@@ -440,8 +448,37 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+
+        // La prueba de escuadras separa decisión y combate de la consulta
+        // espacial nativa. Sólo los líderes entran en A_Chase/TryMove; los
+        // seguidores sólo conservan objetivo y orientación en un pulso lento.
+        // El ataque queda también en manos del líder durante esta prueba: así
+        // ningún CheckMissileRange oculto contamina el aislamiento de TryMove.
+        if (combatActor.CaelumMassAIScheduleActive
+            && !combatActor.CaelumMassSquadLeader)
+        {
+            combatActor.RunCaelumMassFollowerPulse();
+            return;
+        }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
         combatActor.A_Chase();
+    }
+
+    void RunCaelumMassFollowerPulse()
+    {
+        if (target == null || health <= 0) { return; }
+
+        // El intervalo de ataque ya está calibrado entre uno y dos segundos
+        // (64 tics por defecto) y evita que todos los seguidores giren juntos.
+        int stagger = Max(1, CaelumMassAttackInterval);
+        if (stagger > 1
+            && level.time % stagger != CaelumMassAttackPhaseKey % stagger)
+        {
+            return;
+        }
+
+        ImpactDiagnosticFollowerPulses++;
+        A_FaceTarget();
     }
 
     bool IsCaelumMassDiagnosticAlly(Actor other)

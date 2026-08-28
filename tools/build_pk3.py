@@ -8,6 +8,31 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 
+# V4.29.0s: estos directorios conservan copias fuente históricas de pickups.
+# TEXTURES resuelve ahora los sprites del mundo desde graphics/caelum/icons,
+# por lo que empaquetarlos duplicaría memoria y permitiría regresiones visuales.
+LEGACY_RUNTIME_PREFIXES = (
+    "sprites/caelum/ammunition/",
+    "sprites/caelum/armor/",
+    "sprites/caelum/consumables/",
+    "sprites/caelum/items/",
+    "sprites/caelum/jewelry/",
+    "sprites/caelum/materials/",
+    "sprites/caelum/shields/",
+    "sprites/caelum/weapons/",
+)
+LEGACY_RUNTIME_FILES = {
+    "sprites/caelum/CKEYA0.png",
+}
+
+
+def is_runtime_file(source, path):
+    relative = path.relative_to(source).as_posix()
+    if relative in LEGACY_RUNTIME_FILES:
+        return False
+    return not relative.startswith(LEGACY_RUNTIME_PREFIXES)
+
+
 def validate_png(path):
     with path.open("rb") as stream:
         header = stream.read(24)
@@ -142,7 +167,11 @@ def validate_wad(path):
 
 
 def build(source, destination):
-    files = sorted(path for path in source.rglob("*") if path.is_file())
+    files = sorted(
+        path
+        for path in source.rglob("*")
+        if path.is_file() and is_runtime_file(source, path)
+    )
     if not files:
         raise ValueError(f"No hay archivos para empaquetar en {source}")
 

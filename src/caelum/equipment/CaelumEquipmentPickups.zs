@@ -134,7 +134,7 @@ class CaelumEquipmentItem : Inventory
         Radius 12;
         Height 8;
         // Escala visual del pickup en el mundo. Inventory.Icon no se altera.
-        Scale 0.5;
+        Scale 0.25;
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
@@ -561,7 +561,7 @@ class CaelumCarbineAmmo : Ammo
     {
         Inventory.Icon "graphics/caelum/icons/ca_carbine_ammo.png";
         Inventory.Amount 20;
-        Scale 0.5;
+        Scale 0.25;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Ammo.BackpackAmount 20;
@@ -649,7 +649,7 @@ class CaelumArrowAmmo : Ammo
     {
         Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png";
         Inventory.Amount 20;
-        Scale 0.20;
+        Scale 0.10;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Ammo.BackpackAmount 20;
@@ -665,7 +665,7 @@ class CaelumBoltAmmo : Ammo
     {
         Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png";
         Inventory.Amount 20;
-        Scale 0.20;
+        Scale 0.10;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Ammo.BackpackAmount 20;

@@ -11,6 +11,7 @@ class CaelumMassAIScheduler : EventHandler
     int MassChaseInterval;
     int MassLookBudgetPerTic;
     int MassChaseBudgetPerTic;
+    int MassSquadSize;
     bool SettingsInitialized;
 
     int LookUpdatesThisTic;
@@ -61,6 +62,10 @@ class CaelumMassAIScheduler : EventHandler
         CVar chaseBudget = CVar.GetCVar("ca_diag_mass_chase_budget");
         MassChaseBudgetPerTic = chaseBudget == null
             ? 10 : Clamp(chaseBudget.GetInt(), 1, 128);
+
+        CVar squadSize = CVar.GetCVar("ca_diag_mass_squad_size");
+        MassSquadSize = squadSize == null
+            ? 16 : Clamp(squadSize.GetInt(), 1, 128);
 
         SettingsInitialized = true;
     }

@@ -1,5 +1,53 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0s — Independent native movers are isolated by diagnostic squads
+
+The V4.29.0r endurance run still stops after 148 complete reports even though
+13,125 passive fillers are absent from the blockmap. All 1,983 AI actors have
+targets, custom contacts and callbacks remain zero, and live projectiles stay
+between zero and two. Passive blockmap residency is therefore rejected as a
+sufficient cause; the common remaining operation is native pursuit.
+
+The abrupt final report remains normal. This is consistent with an occasional
+pathological `A_Chase`/`TryMove` query rather than a monitored counter growing
+toward exhaustion. The ten-call global ceiling bounds calls, not the number of
+blockmap cells, collision candidates or engine branches traversed by each call.
+
+V4.29.0s assigns one deterministic movement leader per 16 main-field actors.
+Only leaders can enter the existing Chase phase and global budget. Followers
+keep their target and periodically face it without movement, range checks or
+attack-state selection. Group size 1 restores V4.29.0r behavior. This is a
+diagnostic precursor to real formation ownership, not the final formation AI.
+Normal-map collision, pressure and combat formulas are unchanged.
+
+## V4.29.0r — Passive blockmap residency is the next isolated variable
+
+The moving-target V4.29.0q run stops after 193 complete reports at the same
+10-call/350-per-second Chase ceiling that previously survived 548 reports.
+The final interval has zero contacts, callbacks, retained references and live
+projectiles. This confirms that a fixed number of admitted `A_Chase` calls does
+not bound the actual native spatial work performed by those calls.
+
+The main field contains 13,125 passive fillers in addition to 1,875 active
+actors. `THRUACTORS` prevents the active actors from treating those fillers as
+gameplay obstacles, but the fillers were still registered in the engine's
+blockmap. A native movement query may therefore enumerate cell residents before
+discarding them. This is the leading new inference from the complete A/B/C
+history; V4.29.0r tests it rather than declaring it proven.
+
+Only the main-field passive fillers now use `NOBLOCKMAP`. They remain visible,
+retain their actor states and count toward the 16,500 lightweight population.
+The active 1,875 actors and the 1,500 Quintaessence rats remain blockmap-linked.
+Expected telemetry is `blockmap=3375 visuales=13125`. Collision and pressure
+formulas, normal gameplay actors and the three Quintaessence A/B rooms are
+unchanged.
+
+If this configuration survives repeated ten-minute convergence, production AI
+will formalize distance/squad representation so dormant crowds do not occupy
+the high-frequency collision structure. If it still stops, the next isolation
+must reduce the number of independent native movement agents through leaders
+and formation followers rather than lowering a global numeric gate again.
+
 ## V4.29.0q — Per-tic native pursuit load is the leading cause
 
 The 10-call comparison remains responsive for 368 reports without mass attacks

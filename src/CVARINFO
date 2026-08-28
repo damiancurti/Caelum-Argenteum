@@ -29,3 +29,9 @@ server int ca_diag_mass_chase_stagger = 13;
 // supere estos números de llamadas nativas dentro del mismo tic.
 server int ca_diag_mass_look_budget = 20;
 server int ca_diag_mass_chase_budget = 10;
+
+// Prueba arquitectónica de escuadras: sólo uno de cada N actores del campo
+// masivo puede ejecutar movimiento nativo. Los demás conservan adquisición,
+// objetivo y orientación lenta sin iniciar TryMove ni chequeos de ataque.
+// El valor uno restaura el comportamiento anterior para una comparación A/B.
+server int ca_diag_mass_squad_size = 16;
