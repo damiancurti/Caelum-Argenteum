@@ -1,5 +1,73 @@
 # Changelog
 
+## 4.29.0q — Connected upper rooms and validated 10-call gate
+
+- Validated the 10-call diagnostic Chase ceiling for 368 complete reports with
+  main-field attacks disabled and 548 with full combat. Both sessions reached
+  all 1,983 field targets, held Chase at 10 calls per tic and 350 per simulated
+  second, and retained zero custom contacts, callbacks or references.
+- Confirmed cleanup across a consecutive MAP02 reload in the same GZDoom
+  process. The enabled run completed 40 projectile spawn/impact/destruction
+  cycles, retained at most one live missile and reported no spawn failure.
+- Closed the four obsolete 128-MU openings in the extreme first-floor rooms.
+  Those openings partly faced the landing corridor and overlapped only 41 MU
+  of the newly accepted T rooms, so they were not valid room connections.
+- Added four 64-MU portals completely inside the actual 153-MU shared walls.
+  Their finite sliding leaves use groups 906–909 and retract toward the rear
+  wall, without changing the room footprints or the four 119×119-MU landings.
+- Preserved and now explicitly validates both central divider walls and their
+  existing groups 902 and 905. MAP01 contains 460 vertices, 575 linedefs,
+  1,120 sidedefs, 99 sectors and 214 Things.
+- Added deterministic validation for every affected tag-510/tag-511 contour,
+  all door openings, sidedef ownership, duplicate edges, central dividers and
+  reserved stair landings. The superseded 4.29.0p builder no longer edits maps.
+
+## 4.29.0p — Continuous central rooms and 10-call pursuit gate
+
+- Reclassified the 20-call Chase ceiling as non-robust. The supplied endurance
+  run stopped after 119 complete reports with all 1,983 AI actors targeted,
+  zero contacts, zero custom collision callbacks and zero to one live bounded
+  projectile. Its final interval still admitted 20 Chase calls per tic and
+  roughly 699 per simulated second.
+- Matched that result to the previous 119-report stop at a 40-call ceiling with
+  main-field attacks disabled. Attacks and projectile retention are therefore
+  not necessary for the abrupt stop; sustained native pursuit remains the
+  common path. The diagnostic Chase default and fallback fall to 10 calls per
+  tic, or at most 350 admitted calls per simulated second.
+- Restored MAP01 from the byte-identical V4.29.0i/0n base and replaced each
+  upper central room with one continuous T-shaped tag-510/tag-511 component.
+  Each component absorbs both rear wings without retaining the old vertical
+  seams, while all four 119×119-MU stair landings remain outside the room.
+- Recreated the two middle dividers with their original 64-MU openings and
+  retained every existing door actor, side room, stair and passage position.
+  MAP01 now contains 448 vertices, 559 linedefs, 1,088 sidedefs, 99 sectors
+  and 210 Things.
+- Added an idempotent geometry builder that requires the clean accepted hash,
+  validates the two T contours and divider islands, rejects duplicate lines or
+  invalid sidedefs and prevents any line from entering a reserved landing.
+  Running the superseded 4.29.0o builder now exits without editing the map.
+
+## 4.29.0o — Stable 20-call pursuit and four independent upper blocks
+
+- Validated both requested V4.29.0n configurations. Chase without main-field
+  attacks remained responsive for 319 telemetry intervals; full combat remained
+  responsive for 506. Both runs acquired all 1,983 AI targets, held Look and
+  Chase peaks at 20 calls per tic, retained zero custom contacts/callbacks and
+  kept the lightweight count at exactly 16,500. The complete run held zero to
+  two live projectiles. The diagnostic Chase ceiling remains 20.
+- Added four independent closed first-floor blocks to the clean V4.29.0i/0n
+  MAP01 base. Each outer footprint is 313×153 MU and each usable interior is
+  297×137 MU, with native tag-510 floors/roofs and tag-511 wall rings.
+- Placed every new façade exactly 119 MU behind its corresponding stair edge:
+  the four internal stairs retain independent 119×119-MU upper landings. The
+  central passage, all six stair flights, existing rooms and existing doors are
+  unchanged. No connection or new door is authored in this patch.
+- Added deterministic reconstruction and validation for the new modules. The
+  builder requires all eight new sector contours to be closed with degree two,
+  preserves the three existing 3D-floor controls and rejects any line invading
+  a reserved landing. MAP01 now contains 454 vertices, 569 linedefs, 1,108
+  sidedefs, 107 sectors and 210 Things.
+
 ## 4.29.0n — MAP01 rollback and lower pursuit ceiling
 
 - Restored `MAP01.wad` byte-for-byte from the accepted V4.29.0i package,

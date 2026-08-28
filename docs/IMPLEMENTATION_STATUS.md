@@ -1,5 +1,138 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Connected upper rooms and stable 10-call load 4.29.0q
+
+**Implemented and structurally validated; manual MAP01 door acceptance pending**
+
+The supplied V4.29.0p pair validates the reduced scheduler gate. Test A runs
+for 368 complete reports with mass attacks disabled; test B immediately reloads
+MAP02 in the same process and runs for 548 with full combat. Both acquire all
+1,983 field targets, cap native Chase at 10 calls per tic and 350 per simulated
+second, and retain exactly 16,500 lightweight actors. Contacts, callbacks and
+contact references remain zero throughout.
+
+Test B spawns 40 bounded projectiles and records all 40 impacts/destructions,
+never retains more than one live missile and reports no spawn failure. It also
+reaches 502 targets within 512 MU, whereas the failed V4.29.0p input run reached
+only 175 before stopping at a 20-call gate. Local actor density and projectiles
+therefore cannot be sufficient causes of the abrupt freeze. The variable that
+still tracks stability is the number of native `A_Chase`/movement queries
+admitted in one world tic.
+
+MAP01 keeps the accepted two continuous T rooms. The old extreme-room openings
+spanned Y=304..432 and Y=-432..-304; after the T reconstruction only 41 MU of
+each opening actually overlapped a shared room wall. V4.29.0q closes those
+obsolete portals, then creates four exact 64-MU connections at Y=400..464 and
+Y=-464..-400. Each connection crosses both 8-MU wall rings and receives one
+finite sliding leaf, groups 906–909, which retracts into the longer rear wall.
+
+The original central dividers remain at X=364..372. Their 64-MU openings and
+door groups 902/905 are validated rather than duplicated. All four 119×119-MU
+landings, stairs, room footprints and the previous 210 Things remain fixed;
+only four connection doors are added. MAP01 now has 460 vertices, 575 linedefs,
+1,120 sidedefs, 99 sectors and 214 Things.
+
+### V4.29.0q runtime procedure
+
+In MAP01, open every new door from both sides and wait for it to close. Cross
+each threshold while the door is open, stand in it through the close timer and
+confirm the anti-crush hold. Walk the formerly open lower portions of all four
+extreme-room walls and confirm they are now solid. Test both central divider
+doors and all four stair landings without `noclip`.
+
+For the final 10-call endurance gate, use full combat and move the player among
+several points of the mass field for at least eight real minutes. This tests
+reconvergence and different blockmap paths. Do not increase the Chase budget;
+the next architectural step after acceptance is distance-tiered or shared
+squad scheduling, not searching for the highest unsafe count.
+
+## Continuous central rooms and lower pursuit gate 4.29.0p
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The V4.29.0o endurance file contains 119 complete telemetry intervals before
+the abrupt stop. All 1,983 active AI actors had targets; custom contacts,
+callbacks and retained references remained zero; the lightweight population
+remained exactly 16,500 and live projectiles stayed between zero and one. The
+last complete interval admitted 20 native Chase calls per tic and 699 during
+the simulated second. No monitored counter grows toward the stop.
+
+This invalidates 20 as a universally stable diagnostic ceiling. More
+importantly, it reproduces the exact 119-report duration previously observed at
+40 calls with main-field attacks disabled. Attack delivery, guided projectile
+logic, custom collision and RPG helper objects are not necessary causes. The
+shared active path is native `A_Chase` and spatial convergence. The next gate
+therefore uses a hard default of 10 Chase calls per tic (350 per simulated
+second at most), while Look remains at 7 phases and 20 calls per tic.
+
+MAP01 is reconstructed from the accepted V4.29.0i/0n hash. The four separate
+V4.29.0o blocks are not merged or patched. Instead, the old north and south
+central contours are removed completely and rebuilt as two continuous T-shaped
+rooms. Each room absorbs both rear wings, uses one tag-510 floor/roof component
+and one tag-511 wall component, and has no residual seam at X=192 or X=544 in
+the rear bar. The original middle dividers and their 64-MU door openings are
+recreated after the continuous rooms.
+
+The internal stairs still end at Y=±272. Their room fronts remain at Y=±391,
+so the four reserved landings remain exact independent 119×119-MU squares.
+Side rooms, six stair flights, passages and all 210 Things retain their accepted
+positions. MAP01 contains 448 vertices, 559 linedefs, 1,088 sidedefs and 99
+sectors.
+
+### V4.29.0p runtime procedure
+
+Set all server CVars before loading MAP02. First run Look and Chase with
+main-field attacks disabled for five real minutes at Look 7/20, Chase 13/10.
+Only if it remains responsive, start a fresh MAP02 load with attacks enabled
+and repeat for five real minutes. The first report must literally show
+`chase ... cupo/tic=10`; stop any invalid run. Do not increase the budget.
+
+In MAP01, enter both T-shaped rooms with `noclip`, then disable `noclip` and
+walk their entire inner floor, both halves and the two central door openings.
+Walk all four green-reserved landing areas and verify that no invisible surface,
+wall seam or fall-through remains. Existing side rooms and stairs must behave
+as in V4.29.0n.
+
+## Four closed upper blocks and stable pursuit boundary 4.29.0o
+
+**Implemented and structurally validated; manual MAP01 acceptance pending**
+
+The two V4.29.0n logs validate the reduced pursuit ceiling under both required
+loads. The no-attack session supplies 319 complete telemetry reports and the
+full-combat session supplies 506. Both reach all 1,983 target-bearing AI actors,
+hold native Look and Chase peaks at 20 per tic and Chase throughput at 700 per
+simulated second. Contacts, callbacks and references remain zero. The enabled
+run retains at most two bounded projectiles. No counter trends toward a stop,
+so 20 is now the accepted diagnostic ceiling; 40 remains rejected.
+
+MAP01 retains the complete V4.29.0i/0n rooms and inserts four new closed blocks
+only in the two gaps between rooms on each side of the central passage. Their
+outer footprints are 313×153 MU; 8-MU native wall rings leave 297×137-MU
+interiors. The north façades begin at Y=391 and the south façades at Y=-391.
+Because the internal stairs end at Y=±272, each one retains an exact 119-MU
+setback and a separate 119×119-MU landing aligned to its 119-MU flight.
+
+The blocks end at Y=±544 and use the full available rear depth without moving
+an accepted room. They are individual tag-510/tag-511 components, not another
+continuous-row reconstruction. Existing side openings and door actors are not
+repurposed, and every new block remains physically closed until the author
+specifies its connections. MAP01 now has 454 vertices, 569 linedefs, 1,108
+sidedefs, 107 sectors and 210 Things.
+
+### V4.29.0o runtime procedure
+
+Load MAP01 and inspect all four new blocks from roof level, ground level and
+inside with `noclip`. Walk every 119×119 landing and the central passage without
+crossing an invisible wall, falling through a surface or entering a new block.
+Confirm the six stairs, existing rooms and all prior doors still behave exactly
+as in V4.29.0n. Connections are deliberately absent.
+
+For AI endurance, keep the accepted 7/20 Look, 13/20 Chase and 64-phase attack
+settings. Run one three-load sequence with full combat: five minutes in MAP02,
+reload MAP02, repeat, then reload once more and repeat while changing the
+player's position. This tests map cleanup and repeated convergence; do not raise
+the Chase budget above 20.
+
 ## MAP01 rollback and pursuit isolation 4.29.0n
 
 **Implemented and structurally validated; manual GZDoom acceptance pending**

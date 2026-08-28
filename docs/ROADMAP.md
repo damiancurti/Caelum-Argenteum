@@ -176,6 +176,31 @@ main-field attacks disabled, so the global Chase ceiling falls from 40 to 20
 and repeated hot-path setting synchronization is removed. A stable 20-call
 run is required before enabling attacks or beginning squad/formation AI.
 
+V4.29.0o accepts the 20-call diagnostic pursuit ceiling after stable 319-report
+and 506-report runs without and with main-field attacks. The next AI gate is a
+three-load endurance/reconvergence test at the same ceiling; no higher budget
+is required. MAP01 adds four closed 313×153-MU upper blocks to the clean 0i/0n
+base. Each preserves a separate 119×119-MU stair landing, existing architecture
+and central passage. Their door and room connections await explicit author
+direction and must not be inferred from the rejected continuous-row maps.
+
+V4.29.0p records that the first repeated-convergence run at 20 calls stopped
+after 119 reports, with zero custom contacts and at most one projectile. Twenty
+is therefore rejected as a robust boundary and the next gate uses 10 native
+Chase calls per tic. MAP01 again starts from the clean 0i/0n WAD: each central
+upper room becomes one continuous T-shaped component containing both new rear
+wings, then receives its original middle divider and 64-MU door opening. The
+four 119×119-MU stair landings and all accepted side architecture remain fixed.
+
+V4.29.0q accepts the initial 10-call A/B pair after 368 and 548 reports. The
+second run follows a MAP02 reload in the same process, completes 40 projectile
+lifecycles and reaches greater local density than the failed 20-call run. The
+next and final stress gate at this stage is moving-target reconvergence at 10;
+after that, mass gameplay AI advances through distance tiers and shared squad
+updates instead of raising the per-tic ceiling. MAP01 closes the four obsolete
+extreme-room gaps, inserts four 64-MU sliding connections wholly inside shared
+walls and preserves the accepted central divider doors and 119-MU landings.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

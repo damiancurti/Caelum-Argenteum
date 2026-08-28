@@ -285,7 +285,7 @@ class CaelumCombatActor : Actor
             CaelumMassLookInterval = 7;
             CaelumMassChaseInterval = 13;
             CaelumMassLookBudgetPerTic = 20;
-            CaelumMassChaseBudgetPerTic = 20;
+            CaelumMassChaseBudgetPerTic = 10;
             return;
         }
 

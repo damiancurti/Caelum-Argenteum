@@ -60,7 +60,7 @@ class CaelumMassAIScheduler : EventHandler
 
         CVar chaseBudget = CVar.GetCVar("ca_diag_mass_chase_budget");
         MassChaseBudgetPerTic = chaseBudget == null
-            ? 20 : Clamp(chaseBudget.GetInt(), 1, 128);
+            ? 10 : Clamp(chaseBudget.GetInt(), 1, 128);
 
         SettingsInitialized = true;
     }

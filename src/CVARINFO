@@ -28,4 +28,4 @@ server int ca_diag_mass_chase_stagger = 13;
 // Un coordinador global impide que una distribución de fases desfavorable
 // supere estos números de llamadas nativas dentro del mismo tic.
 server int ca_diag_mass_look_budget = 20;
-server int ca_diag_mass_chase_budget = 20;
+server int ca_diag_mass_chase_budget = 10;

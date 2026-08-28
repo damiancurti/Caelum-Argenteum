@@ -1,5 +1,69 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0q — Per-tic native pursuit load is the leading cause
+
+The 10-call comparison remains responsive for 368 reports without mass attacks
+and 548 with full combat. Both runs reach all 1,983 field targets and keep
+contacts, callbacks and retained references at zero. The enabled run completes
+40 projectile lifecycles with at most one live missile and no failure.
+
+The full-combat run reaches 502 actors within 512 MU. The failed 20-call run
+had reached only 175 at that distance, so local density alone cannot explain
+the stop. Likewise, attacks and projectiles are neither necessary nor
+sufficient: a prior attack-disabled run stopped, while this enabled run remains
+stable and destroys every missile it creates. Two consecutive MAP02 loads in
+one process also weaken the retained-object or cleanup-leak hypothesis.
+
+The strongest remaining explanation is worst-case native movement cost within
+one simulation tic. `A_Chase` ultimately performs collision/blockmap movement
+queries whose cost varies by actor and position. A fixed call count does not
+measure that cost; admitting 20 or 40 expensive updates together can produce a
+single pathological tic with no preceding counter ramp. Ten calls per tic is
+the validated diagnostic mitigation, not proof of a specific engine defect.
+
+The final confirmation is moving-target reconvergence at 10. The production
+direction remains a shared squad/distance-tier coordinator so dormant, distant
+and formation-linked actors do not all request independent native movement.
+Collision and pressure formulas remain unchanged.
+
+## V4.29.0p — Twenty Chase calls are not a robust boundary
+
+The repeated-convergence run stops after 119 complete reports despite the
+20-call ceiling previously surviving 319 and 506 reports. At the final complete
+interval all 1,983 AI actors have targets, native Chase is saturated at 20
+calls per tic and about 699 per simulated second, but contacts, callbacks and
+retained references remain zero. Only one bounded projectile is alive.
+
+The same 119-report duration occurred earlier with a 40-call ceiling and
+main-field attacks disabled. This makes attacks, guided missiles, custom
+contacts and retained projectiles unnecessary causes. It also shows that one
+long successful run cannot certify a native pursuit budget: actor positions
+can eventually produce a pathological simulation tic without a preceding
+telemetry ramp.
+
+V4.29.0p lowers the diagnostic Chase ceiling to 10 calls per tic, at most 350
+per simulated second, and retains the independent seven-phase Look and
+thirteen-phase Chase schedules. This is the next controlled gate before adding
+distance tiers or a shared squad controller. Collision and pressure formulas
+remain unchanged.
+
+## V4.29.0o — The 20-call pursuit boundary is stable
+
+The corrected V4.29.0n A/B pair validates the lower scheduler ceiling. With
+main-field attacks disabled, MAP02 remained responsive for 319 telemetry
+intervals. With full combat enabled it remained responsive for 506. Both runs
+reached all 1,983 target-bearing AI actors, admitted at most 20 native Look and
+20 native Chase calls per tic and sustained at most 700 Chase calls per
+simulated second. Contacts, callbacks and retained references stayed at zero;
+the enabled run held at most two live bounded projectiles.
+
+This confirms that the earlier abrupt stop was a concurrency/density boundary
+of native pursuit rather than a rat-specific script, custom-contact leak or
+projectile accumulation. It does not establish that any number below 40 is
+universally safe on every map, so 20 remains a conservative stress limit. The
+next useful test is repeated map loading and moving-target convergence at 20,
+not increasing the ceiling. Collision and pressure formulas are unchanged.
+
 ## V4.29.0n — Native pursuit is the remaining active boundary
 
 The four V4.29.0m files form a valid comparison only after shifting each set
