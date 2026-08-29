@@ -1,5 +1,186 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Final endurance acceptance and MAP01 correction 4.29.0v
+
+**Implemented and structurally validated; one focused MAP01 manual retest remains**
+
+The supplied `ca_physics_4_29_0u_final.log` closes both remaining diagnostic
+tests. Its first MAP02 session produces 1,033 consecutive reports, equivalent
+to 17 minutes 13 seconds of simulation inside an approximately 22-minute-
+36-second file window. The log cannot timestamp the boundary between its two
+sessions, so it cannot assign exact real seconds to the first one alone; the
+combined timing, uninterrupted telemetry and the author's live observation
+are sufficient to accept the requested approximately twenty-real-minute run.
+
+All 16,608 combat actors remain present and all 1,983 active AI actors reach a
+target. The group-16 split stays fixed at 126 leaders and 1,749 followers.
+Admitted native Chase totals 93,211 calls, averages 90.2 per simulated second,
+peaks at 146 per second and at nine in one tic, below the ten-call budget.
+Custom contacts, maximum contacts, callbacks, duplicate callbacks and retained
+references remain zero in every report. At most one projectile is live; all 26
+spawned projectiles impact and are destroyed, with no expiry or failure.
+
+The second MAP02 session is the short Quintaessence release test. Its affected
+population peaks at 2,086, then descends to zero across eleven nonzero reports
+and remains zero for seven further reports. The author observed a slight frame-
+rate reduction only when releasing the black hole. FPS itself is not recorded,
+but the bounded population and clean terminal counters show a transient density
+cost rather than a persistent leak or freeze. Repeated simultaneous releases
+may be optimized later; they do not block this acceptance.
+
+MAP01 incorporates the corrections found during the manual V4.29.0u walk.
+The 128-MU upper western opening now contains two 64-MU sliding leaves at
+height 136 MU. They share new group 912 and remain independent of ground-floor
+group 808. Eight narrow joints beside the four stair modules and all four
+landings now use the complete tag-510 floor/roof volume. The twenty-four real
+stair sectors keep tag 515, so their ascent remains open and only their overhead
+cover is added. The resulting map has 516/690/1,350/146/220 structural counts
+and SHA-256 `cd285dcebe7b92245ec42851ef988fe35849e0be7d0d1f618682b117dbb4c70d`.
+
+The future auditory allowance is now fixed as:
+
+`HearingAllowanceMU(L) = (50 + L) × [1 + 2L(L + 1) / 10100]`
+
+where `L` is effective Perspicacity from 0 to 100 and the bracket is its Type-4
+multiplier from x1 to x3. The allowance is 50 MU at level 0, about 84.7 at 25,
+150.5 at 50, 266.1 at 75 and 450 MU at 100. Final hearing reach is planned as
+`dB² / 4 + HearingAllowanceMU`; listener height is excluded. Target height
+remains relevant only to visual exposure. This formula, native `SoundAlert`
+propagation and the dynamic faction/species group controller remain planned;
+V4.29.0v contains no new perception ZScript.
+
+### V4.29.0v runtime procedure
+
+Only MAP01 needs another test because V4.29.0v changes no runtime code or
+MAP02 content. From both sides, use the upper western portón and confirm that
+its two halves retract in opposite directions, close normally and do not move
+the ground-floor gate. Walk all four staircases and their landings without
+`noclip`; verify continuous floor at every one-MU joint, no hole in any landing
+and continuous cover above all four landings. Confirm that no added slab blocks
+the climb or closes a real stair shaft. Finally recheck the western threshold,
+interior roof and uncovered eastern balcony. The accepted MAP02 endurance and
+single-release Quintaessence tests do not need repetition for this map-only
+patch.
+
+## Accepted squad margin and first-floor enclosure 4.29.0u
+
+**Implemented and structurally validated; manual MAP01 traversal and one final mixed endurance run remain**
+
+The two requested V4.29.0t comparisons both remained responsive. Group 16
+produced 1,087 complete telemetry intervals, or 18.1 simulated minutes; group
+8 produced 995, or 16.6 simulated minutes. Both preserve 16,608 combat actors,
+1,983 active AI actors and eventual target acquisition by every active actor.
+Contacts, maximum contacts per actor, custom callbacks, unique/duplicate
+callbacks and retained references remain exactly zero. Live projectiles stay
+between zero and two and no projectile spawn failure is reported.
+
+Group 16 uses 126 leaders and 1,749 followers. After acquisition its native
+Chase execution averages 85.8 calls per simulated second and peaks at 121.
+Group 8 uses 230 leaders and 1,645 followers, averages 164.7 and peaks at 243.
+The latter nearly doubles the admitted movement work while preserving the same
+active population and target coverage. Group 16 is therefore retained as the
+baseline for the future formation controller. The result is not evidence that
+16 is a universal gameplay formation size: authored formations may subdivide
+visually while sharing a smaller set of movement owners.
+
+MAP01 now closes the first-floor shell needed before authoring a second floor.
+The complete western 96×192-MU gap behind the main threshold receives the
+128–136-MU floor slab and the 256–264-MU roof slab. A 128-MU opening aligned
+with the entry remains traversable. Finite walls connect the northern and
+southern wings at the west and east. At the east, the wall stays inside a
+96-MU continuous balcony; its connecting floor remains exterior and uncovered.
+Every newly enclosed central strip, existing upper door threshold, stair tread
+and landing receives the required roof without duplicating the pre-existing
+tag-100 landing floor.
+
+The perception design was also reconciled during this audit, but remains
+deliberately separate from runtime code. Its accepted base curve is
+`1000 / (1 + 9(d / 20 m)^2)%`, with values below 1% treated as zero. Sight uses
+current height/1.8 m and a 60-degree core fading quadratically to zero at the
+120-degree limit; hearing uses total mass/100 kg in 360 degrees. Perspicacity
+scales from x1 to x2 and Stealth multiplies both channels by
+`1 - Stealth/100`, including complete visual and auditory concealment at 100%.
+Walking, running and crouching emit x1, x2 and x0.5 movement noise. Visual
+checks will be phased at one per NPC per second and hearing will be event
+driven. The exact angular convention —full aperture or half-angle— remains an
+author decision and must be settled before implementation. V4.29.0u still
+uses the legacy V4.26.4 movement `SoundAlert` and diagnostic/native target
+acquisition.
+
+The generated WAD contains 516 vertices, 690 linedefs, 1,350 sidedefs, 146
+sectors and 218 Things. Its accepted SHA-256 is
+`cd5db426b51570a2a4715223cd0a6bb8afb9373192b67d64fe7263371bcf7d9b`.
+The constructor is deterministic and refuses any base other than the accepted
+4.29.0t MAP01.
+
+### V4.29.0u runtime procedure
+
+In MAP01, cross the main threshold without `noclip`, walk the whole new western
+vestibule and pass through its centered opening. Traverse every old/new floor
+seam, all four stair landings and every upper door. Confirm that the eastern
+balcony is 96 MU wide, walkable, exterior and open to the sky; the interior
+side must be closed by the finite east wall. Finally use `fly` or `noclip` only
+for inspection and verify that the complete enclosed portion has a continuous
+roof suitable as the next floor base.
+
+In MAP02, perform one final 20-real-minute group-16 run with Look, Chase and
+attacks enabled, including ordinary player movement through the main field but
+without Quintaessence. A separate short Quintaessence density test belongs to
+collision calibration and must not be mixed with this AI endurance result.
+
+## Accepted squad endurance and AirCapacity audit 4.29.0t
+
+**Implemented and structurally validated; one repeated manual endurance run remains recommended**
+
+The supplied `ca_physics_4_29_0s.log` completes 1,328 internally consistent
+telemetry reports without a stop, approximately 22 simulated minutes. It keeps
+16,608 combat actors alive and reaches targets on all 1,983 active AI actors.
+Custom contacts, collision callbacks, maximum contacts per actor and retained
+contact references stay at zero for the entire run. Live projectiles remain
+between zero and one and continue reaching their bounded destruction path.
+
+With groups of 16, admitted native Chase averages 96.6 calls per simulated
+second and peaks at 161, versus the previous saturated ~350. This is 7.1 times
+longer than the failed 148-report V4.29.0r run and is the strongest controlled
+result so far. It does not prove which internal branch of `A_Chase`/`TryMove`
+produced the abrupt stalls; it does establish that actor count, target count,
+custom contacts and projectile retention are not sufficient causes. Production
+AI should therefore retain shared squad goals, distance/sleep tiers and a small
+number of movement owners instead of restoring independent pursuit to every
+member.
+
+The V4.29.0s telemetry accidentally included 13,125 passive field bodies in
+the squad totals. V4.29.0t corrects only that report path. The expected active
+line is `escuadras_activas tamano=16 lideres=126 seguidores=1749`; gameplay
+behavior is unchanged.
+
+MAP01 restores the four requested finite leaves at the end-of-corridor room
+connections: groups 906–909. No geometry changed, and the output is
+byte-identical to the previously validated 4.29.0r map. Groups 902/905 and the
+double front entrances 910/911 also remain.
+
+The inherited engine property `Player.AirCapacity` is not Caelum's HUD meter.
+GZDoom defines it as a multiplier for the native underwater air supply and it
+remains at its default value of 1. Caelum separately stores `CurrentAir`,
+derives `MaximumAir` from the 1,000-unit base and Resilience, spends it on
+running/jumping/combat/blocking and refills it over the authored eight-minute
+cycle. A future underwater rule must either make `CurrentAir` authoritative or
+explicitly keep breath separate; merely copying the maximum into
+`Player.AirCapacity` would leave two unsynchronized resources.
+
+### V4.29.0t runtime procedure
+
+Run one clean MAP02 repetition with the same group size 16 for at least fifteen
+real minutes. Confirm `126/1749`, nonzero follower pulses, zero custom contacts
+and bounded projectile counts. A second high-value comparison changes only
+`ca_diag_mass_squad_size` to 8; it should report 230 leaders and 1,645
+followers. This measures the scalability margin without returning immediately
+to the unsafe one-agent-per-actor path.
+
+In MAP01, test the four end-of-corridor leaves 906–909, the two middle divider
+doors 902/905 and the two double front entries 910/911. No room contour needs
+to be reaccepted.
+
 ## Leader/follower pursuit isolation and canonical character art 4.29.0s
 
 **Implemented and structurally validated; manual GZDoom endurance and visual acceptance pending**

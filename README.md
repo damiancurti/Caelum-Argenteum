@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0s candidate continues the authorized V4.29 line with the first leader/follower isolation of mass pursuit and the definitive UI foundation. The supplied 4.29.0r run stopped after 148 complete reports even though 13,125 passive fillers were already outside the blockmap, custom contacts stayed at zero and only zero to two bounded projectiles existed. MAP02 therefore lets one deterministic leader per 16 active actors enter native `A_Chase`; followers keep their target and update orientation on a slow phased pulse without requesting `TryMove`. MAP01 preserves all accepted first-floor geometry and removes only the four redundant side-door Things embedded in already-open connections. The 137 normalized icon masters now serve both UI and world pickups, while legacy 64×64 duplicates are excluded from the PK3. Domingo's 39 playable frames replace DoomPlayer's world appearance. Preview sheets, sewer resources, promotional extras and Doom-compatible preservation assets remain excluded. The inherited Doom status bar and face remain removed; validated Seal mechanics and the complete V4.27 input contract are unchanged.
+The current V4.29.0v candidate closes the V4.29 mass-AI acceptance gate and corrects the MAP01 first-floor shell. The final group-16 log contains 1,033 uninterrupted main-run reports —17.2 simulated minutes inside a 22.6-minute file window— with 16,608 combat actors, all 1,983 active AI actors repeatedly targeted, zero custom contacts and no abrupt stop. Its 126 movement leaders averaged 90.2 admitted native Chase calls per simulated second and never exceeded the ten-call per-tic budget. A separate Quintaessence run affected at most 2,086 actors and returned to zero in eleven reports; the observed brief frame-rate dip on release did not leave projectiles, references or collision state accumulated. MAP01 now adds an independent two-leaf 128-MU upper portón in the western opening and restores complete floor/roof slabs to eight stair joints and four landings while preserving the real stair shafts. Group 16 remains the production-oriented movement baseline; the finalized perception and dynamic-group rules are documented design and are not yet runtime code. The 137 normalized icon masters serve both UI and world pickups, while legacy 64×64 duplicates are excluded from the PK3. Domingo's 39 playable frames replace DoomPlayer's world appearance. Preview sheets, sewer resources, promotional extras and Doom-compatible preservation assets remain excluded. The inherited Doom status bar and face remain removed; validated Seal mechanics and the complete V4.27 input contract are unchanged.
 
 ### Building the development PK3
 
@@ -35,6 +35,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Player mass/size model and equipment-weight integration.
 - Health, Anima, Air, Adrenaline, Lucidity, Hunger, Thirst, and Sleep resources.
 - Air consumption for running and jumping, including load penalties and low-Air performance states.
+- Caelum Air is the persistent `CurrentAir` gameplay resource shown by the HUD; inherited GZDoom `Player.AirCapacity` remains only the native underwater breath-duration multiplier and is not used as that meter.
 - Movement speed, jump height, evasion, load effects, crouching, and physical immobilization states.
 - Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
 - Physical weapon catalogue and family/slot cycling.
@@ -231,6 +232,22 @@ Stealth is now materialized as the documented Type-2 Agility derivative:
 `Stealth% = clamp(Agility × (Agility + 1) / 101, 0, 100)`
 
 Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
+
+**Design supersession through V4.29.0v:** the preceding paragraph documents
+the legacy runtime only. The accepted future perception module removes the x2
+crouch Stealth bonus, uses movement-noise multipliers walk x1, run x2 and
+crouch x0.5, and lets Stealth reduce only concealable body emissions such as
+steps and ordinary impacts. Hearing remains event-driven through native
+`SoundAlert`; unavoidable weapon, magic, Pain, Death and explosion emissions
+are not erased by Stealth. Sound base range is `dB² / 4` MU, plus the listener
+allowance `(50 + PerspicacityLevel) × Type4(PerspicacityLevel)`, where
+`Type4(L) = 1 + 2L(L + 1) / 10100`; this adds 50 MU at level 0 and 450 MU at
+level 100 and no longer depends on listener height. Sight retains the target's
+current-height factor, has a 30-degree full-strength aperture and falls
+linearly to zero at the 60-degree total limit. Visual checks are staggered at
+most once per NPC per second. These rules are **not implemented yet**:
+V4.29.0v retains the legacy `SoundAlert` path and the diagnostic movement
+controller while the production perception/group controller is designed.
 
 MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
 

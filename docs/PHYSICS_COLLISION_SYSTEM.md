@@ -1,5 +1,104 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0v — Final endurance and Quintaessence results are accepted
+
+The final supplied log contains two clean MAP02 sessions. The 1,033-report
+group-16 session preserves 16,608 combat actors and 1,983 active AI actors,
+with 126 movement leaders and 1,749 followers. It admits 93,211 native Chase
+calls, an average of 90.2 per simulated second, a maximum of 146 per second and
+a maximum of nine in one tic. Custom contacts, callbacks, retained references
+and duplicate callbacks stay at zero. Every one of the 26 spawned projectiles
+reaches impact and destruction, with at most one live at a time and no failure.
+
+The short Quintaessence session peaks at 2,086 affected actors. Its nonzero
+sequence is 2,086, 2,086, 2,059, 2,006, 2,006, 1,973, 1,936, 1,927, 1,900,
+1,898 and 1,889 before returning to zero; seven later reports remain clean.
+The slight frame-rate dip observed at black-hole release is therefore a
+bounded high-density cost. Nothing in the exposed collision, reference or
+projectile counters persists after release, and no freeze occurs.
+
+These results close the V4.29 diagnostic performance gate with group 16 as the
+movement-owner baseline. They do not implement the planned production group
+controller. That controller will derive faction/species membership, mutual
+perception links, lowest-value spawn-order hierarchy, 30-second link tolerance
+and network-wide shared target/memory data in a later isolated patch.
+
+The accepted future auditory reach is also design-only. Native `SoundAlert`
+will provide robust engine propagation; base event reach is `dB² / 4` MU and
+the listener adds `(50 + L) × [1 + 2L(L + 1) / 10100]` MU for effective
+Perspicacity level `L`. This allowance ranges from 50 to 450 MU, applies only
+to hearing and never expands collision. Listener height is removed from the
+calculation. Concealable body emissions may be reduced by Stealth; weapon,
+magic, Pain, Death and explosion events retain their physical sound.
+
+## V4.29.0u — Both squad margins remain stable; group 16 is the baseline
+
+The requested group-size comparison completes without an abrupt stop in both
+configurations. Group 16 produces 1,087 complete reports and group 8 produces
+995 while preserving the same 16,608 actors, 1,983 active AI actors and full
+target acquisition. Contacts, callbacks and references stay at zero in every
+report, and projectiles remain bounded between zero and two.
+
+The useful distinction is native movement ownership. Group 16 has 126 leaders
+and averages 85.8 admitted Chase calls per simulated second after acquisition;
+group 8 has 230 leaders and averages 164.7. Their maxima are 121 and 243. The
+smaller grouping therefore costs approximately 1.92 times as much admitted
+native pursuit without increasing population or perception coverage.
+
+This completes the diagnostic argument at the current scale:
+
+- High raw actor count is viable when most actors are lightweight and do not
+  own independent high-frequency movement.
+- Custom contacts are not required for the abrupt mass-AI freeze; they remain
+  zero in failed and successful pursuit runs alike.
+- Projectiles, explosions, guided behavior and infighting can amplify a busy
+  encounter but are not required for the zero-contact failures.
+- Dense Quintaessence piles are a different proportional collision workload;
+  they should be bounded separately rather than used to choose AI cadence.
+- The common failing path is sustained independent `A_Chase`/`TryMove` across
+  thousands of actors. A single native call can have variable spatial cost, so
+  a call budget alone does not bound the worst simulation tic.
+
+Group 16 remains the production-oriented diagnostic default. Final formations
+will share perception goals and movement ownership, use distance/sleep tiers
+and stagger one-second recognition checks. Followers may still animate, turn
+or take local formation offsets without each issuing an independent native
+path request. Normal-map collision, pressure and combat formulas are unchanged
+by this acceptance.
+
+The accepted perception design is an adjacent future module, not part of this
+performance patch. It will phase one visual recognition check per NPC per
+second and consume event-driven hearing stimuli, sharing the curve
+`1000 / (1 + 9(d / 20 m)^2)%` before height/mass, Perspicacity and Stealth
+modifiers. V4.29.0u still runs the legacy movement `SoundAlert` path; therefore
+the successful squad tests validate movement ownership, not the unimplemented
+recognition formula.
+
+## V4.29.0t — Squad ownership survives the longest controlled endurance run
+
+The V4.29.0s group-of-16 run remains responsive for 1,328 complete reports,
+approximately 22 simulated minutes. All 1,983 active AI actors hold targets,
+but only 126 deterministic leaders can request native movement. Admitted Chase
+averages 96.6 calls per simulated second and peaks at 161 instead of remaining
+saturated near 350. Contacts, custom collision callbacks and retained contact
+references are zero throughout; live projectiles remain bounded at zero or one.
+
+This separates three performance regimes that previously appeared related:
+
+- Dense Quintaessence piles produce a proportional slowdown through native
+  collision candidates plus up to tens of thousands of custom callbacks.
+- Explosions, guided projectiles and infighting amplify work but are not
+  necessary for the abrupt mass-AI stop.
+- Repeated independent `A_Chase`/`TryMove` remains the common controlled path
+  of every abrupt zero-contact failure. Its per-call internal spatial work is
+  not bounded by the exposed call counter.
+
+The result supports a production architecture with shared squad goals,
+distance/sleep tiers and a bounded number of movement owners. It does not yet
+prove a specific engine defect or make a fixed leader count universally safe.
+V4.29.0t also fixes the report to exclude passive visual bodies from squad
+membership; the active field is 126 leaders plus 1,749 followers.
+
 ## V4.29.0s — Independent native movers are isolated by diagnostic squads
 
 The V4.29.0r endurance run still stops after 148 complete reports even though

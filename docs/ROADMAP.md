@@ -220,6 +220,41 @@ formation steering. The same patch removes the four redundant side-door actors
 from MAP01, makes the recomposed icon masters authoritative for UI and world
 pickups, and adopts Domingo as the player's world appearance.
 
+V4.29.0t accepts the first leader/follower endurance run after 1,328 complete
+reports without a stop, the longest controlled mass-AI result in this series.
+The active field uses 126 movement leaders for 1,875 actors and averages 96.6
+admitted Chase calls per simulated second while contacts remain zero. Shared
+movement ownership, distance tiers and sleeping therefore become the production
+direction; restoring independent `A_Chase` for every crowd member is no longer
+a target. One group-size-16 repetition and a group-size-8 margin test precede
+formation steering. MAP01 restores the four requested side-connection doors
+without altering any accepted geometry. The inherited underwater
+`Player.AirCapacity` remains separate from Caelum's authoritative action
+resource until underwater consumption is explicitly designed.
+
+V4.29.0u accepts both requested margin runs: group 16 completes 1,087 reports
+and group 8 completes 995 without a stop, with 16,608 actors, full acquisition,
+zero custom contacts and bounded projectiles. Group 16 admits an average 85.8
+native Chase calls per simulated second versus 164.7 for group 8, so 16 remains
+the mass-AI baseline while formation steering is designed. MAP01 fills and
+roofs the complete western entry gap, connects both upper wings with finite
+walls, covers all newly enclosed first-floor sectors and preserves an exterior,
+uncovered 96-MU eastern balcony. The continuous roof is the base plane for the
+second-floor mapping phase.
+
+V4.29.0v closes the diagnostic test gate with the supplied final log. Its
+group-16 session contains 1,033 uninterrupted reports, 16,608 actors, full
+1,983-actor acquisition, zero custom contact/reference state and a nine-call
+per-tic Chase maximum. The separate Quintaessence release peaks at 2,086
+affected actors and returns cleanly to zero; the observed frame-rate dip is
+brief and does not block acceptance. MAP01 receives the missing independent
+two-leaf upper western portón and converts the eight stair joints plus four
+landings to complete floor/roof slabs without closing the real stair shafts.
+After the focused MAP01 retest, further perception, hierarchy and dynamic-group
+work remains planning-only until it receives its own isolated implementation
+and validation patch. The next house-construction increment may continue in
+parallel under the existing one-variable-at-a-time rule.
+
 - Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
 - Preserve the expanded station-network requirements already documented for higher tiers.
 - Complete recipe filtering instead of creating five independent crafting systems.

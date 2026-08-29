@@ -1,5 +1,92 @@
 # Changelog
 
+## 4.29.0v — Final endurance acceptance and MAP01 slab/portón correction
+
+- Accepted the supplied final V4.29.0u log as the closing group-16 endurance
+  result. The file covers about 22 minutes 36 seconds of wall time and contains
+  1,033 uninterrupted main-run telemetry reports, or 17 minutes 13 seconds of
+  simulated time. All 16,608 combat actors remain present; all 1,983 active AI
+  actors reach targets; custom contacts, callbacks and retained references stay
+  at zero; and live projectiles never exceed one.
+- Confirmed the 126-leader/1,749-follower production baseline. Native Chase
+  averages 90.2 admitted calls per simulated second, peaks at 146 per second
+  and at nine in one tic, below the ten-call coordinator ceiling. No projectile
+  spawn, impact or lifecycle failure is reported.
+- Accepted the separate Quintaessence/black-hole release as favorable. It
+  affects at most 2,086 actors, falls to zero after eleven nonzero reports and
+  is followed by seven clean reports. The author observed only a brief frame-
+  rate dip at release; telemetry shows no persistent contacts, references,
+  projectiles or residual affected population.
+- Added a 128-MU two-leaf sliding portón to the first-floor western opening.
+  Both 64-MU leaves use independent group 912 at height 136 MU, so the new gate
+  cannot activate with the ground-floor entrance.
+- Corrected the twelve slab cells identified during manual MAP01 inspection:
+  eight one-MU stair joints and four complete landings now receive the shared
+  128–136-MU floor plus 256–264-MU roof. The twenty-four true stair sectors
+  retain roof only, preserving every climb and open shaft.
+- Added an idempotent V4.29.0v MAP01 constructor restricted to the accepted
+  V4.29.0u hash. The corrected map remains at 516 vertices, 690 linedefs,
+  1,350 sidedefs and 146 sectors, with 220 Things after the two gate leaves.
+- Recorded the accepted future hearing allowance as
+  `(50 MU + Perspicacity level) × Perspicacity Type-4 multiplier`, equal to
+  50 MU at level 0 and 450 MU at level 100. It is added only to auditory range,
+  replaces listener-height padding and remains design rather than runtime code.
+
+## 4.29.0u — Accepted squad margin and enclosed first-floor structure
+
+- Accepted both requested V4.29.0t endurance runs without an abrupt stop.
+  Group 16 completed 1,087 telemetry intervals —18.1 simulated minutes— and
+  group 8 completed 995 —16.6 simulated minutes— with 16,608 combat actors,
+  all 1,983 active AI actors targeted and every custom contact/callback/reference
+  counter fixed at zero.
+- Retained group 16 as the production-oriented baseline. Its 126 leaders
+  averaged 85.8 admitted native Chase calls per simulated second and peaked at
+  121, while group 8 used 230 leaders, averaged 164.7 and peaked at 243. The
+  smaller group therefore nearly doubles native movement work without adding a
+  visible behavior benefit in this diagnostic field.
+- Kept projectiles bounded between zero and two in both runs, with no spawn
+  failures or retained collision state. The accumulated evidence identifies
+  thousands of independent, sustained `A_Chase`/`TryMove` owners as the leading
+  freeze condition; raw actor count, custom contacts, attacks and projectiles
+  are amplifiers or separate density costs rather than sufficient causes.
+- Completed the missing first-floor platform in MAP01. The whole 96×192-MU
+  western gap behind the main threshold is now walkable and roofed, and its
+  128-MU central opening remains aligned with the entrance.
+- Joined the northern and southern upper wings with finite 128-MU walls at
+  both ends. The eastern wall begins at the inner edge of a continuous 96-MU
+  exterior balcony; that balcony receives a floor but deliberately no roof.
+- Extended the 256–264-MU roof slab over every newly enclosed first-floor
+  sector, existing door threshold and stair landing without superposing a
+  second floor on the stairs. The roof is the structural base for the future
+  second floor.
+- Added an idempotent MAP01 constructor that requires the accepted 4.29.0t
+  hash, validates all sector contours, controls, door groups, stair landings
+  and references, and produces exactly 516 vertices, 690 linedefs, 1,350
+  sidedefs, 146 sectors and 218 Things.
+
+## 4.29.0t — Accepted squad endurance and restored room doors
+
+- Accepted the supplied V4.29.0s endurance result: 1,328 complete telemetry
+  intervals —about 22 simulated minutes— with 16,608 combat actors and no
+  abrupt stop. All 1,983 active AI actors acquired targets while custom
+  contacts, callbacks and retained references remained exactly zero.
+- The group-of-16 isolation reduced admitted native Chase from the previous
+  constant ~350 calls per simulated second to an average of 96.6 and a maximum
+  of 161. This is the longest controlled mass-AI run so far and supports shared
+  movement ownership rather than thousands of independent `A_Chase` agents.
+- Corrected squad telemetry so passive diagnostic bodies are no longer counted
+  as leaders or followers. The current active field now reports exactly 126
+  leaders and 1,749 followers; the label is `escuadras_activas`.
+- Restored MAP01 door Things 906–909 at the four accepted end-of-corridor
+  connections. No vertex, linedef, sidedef or sector changed. The resulting
+  WAD is byte-identical to the previously validated 4.29.0r MAP01 and again
+  contains 468/587/1,144/101/218 map elements.
+- Documented that GZDoom's inherited `Player.AirCapacity` is only an underwater
+  breath-duration multiplier. Caelum's visible Aire is the independent,
+  persistent `CurrentAir` resource with a derived maximum, action costs and
+  eight-minute recovery. No unsafe synchronization between the two systems was
+  introduced in this patch.
+
 ## 4.29.0s — Squad pursuit isolation, canonical pickups and Domingo
 
 - Rejected passive blockmap residency as a sufficient explanation. The supplied

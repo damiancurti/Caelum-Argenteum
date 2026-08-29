@@ -277,7 +277,12 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                         lightweightBlockmapActors++;
                     }
                 }
-                if (combatActor.CaelumMassAIScheduleActive)
+                // La población pasiva comparte la marca de campo para poder
+                // auditar su representación, pero no integra escuadras de IA.
+                // Contarla aquí ocultaba los 126 líderes y 1.749 seguidores
+                // activos que realmente participan en la prueba.
+                if (combatActor.CaelumMassAIScheduleActive
+                    && !combatActor.CaelumDiagnosticPassiveAI)
                 {
                     if (combatActor.CaelumMassSquadLeader)
                     {
@@ -580,7 +585,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             schedulerBudgetDeferred
         );
         Console.Printf(
-            "[CA-AI] escuadras tamano=%d lideres=%d seguidores=%d pulsos_seguidor/s=%d",
+            "[CA-AI] escuadras_activas tamano=%d lideres=%d seguidores=%d pulsos_seguidor/s=%d",
             scheduledSquadSize,
             massSquadLeaders,
             massSquadFollowers,
