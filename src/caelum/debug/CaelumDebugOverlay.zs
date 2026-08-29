@@ -365,6 +365,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_ARMOR:
                 return "CA_CRAFTING_FILTER_ARMOR";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SHIELD:
+                return "CA_CRAFTING_FILTER_SHIELDS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_ESSENCE_WEAPON:
                 return "CA_CRAFTING_FILTER_ESSENCE_WEAPONS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_AMULET:
@@ -1702,6 +1704,14 @@ class CaelumDebugOverlay : EventHandler
             );
             recipeName = String.Format(
                 "%s - %s", armorTypeName, armorSlotName
+            );
+        }
+        else if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
+        {
+            recipeName = StringTable.Localize(
+                GetShieldTypeKey(localPlayer.CraftingSelectedShieldType),
+                false
             );
         }
         else if (localPlayer.CraftingSelectedRecipeKind

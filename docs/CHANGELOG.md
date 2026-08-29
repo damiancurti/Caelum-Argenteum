@@ -1,5 +1,23 @@
 # Changelog
 
+## 4.29.0y — Shield recipes, empty recipe book and high-resolution type
+
+- Appended four shield recipes without renumbering any of the 61 existing
+  entries. Buckler, Kite, Tower and Magic Shield use their named tiered plate
+  plus a tier-1 strap under the existing 70/30 physical weight split.
+- Required Workbench, Forge and Anvil for every shield tier, with Master Bench
+  added cumulatively at tier 3. Crafted shields are persistent, unequipped and
+  routed to the Magic Box with their exact tier, size, weight and durability.
+- Advanced the recipe-book schema to version 2. New characters begin with no
+  recipes; 4.29.0x saves retain their exact 61 flags; appended shields begin
+  unknown in migrated profiles.
+- Added a stable catalogue-weapon unlock entry point for the future MAP01
+  tutorial choice without inventing its dialogue or quest sequence.
+- Rerasterized all twelve font folders at physical 2x resolution with `Scale 2`,
+  preserving every prior logical glyph metric and menu/HUD layout.
+- Covered the twelve eastern stair sectors in MAP01 through the existing
+  roof-only control. No geometry count or traversable stair surface changed.
+
 ## 4.29.0x — Persistent recipe book and unified filters
 
 - Added one persistent knowledge flag for each of the 61 unified recipes. The

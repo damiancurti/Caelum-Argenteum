@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0x candidate begins the actual V4.29 crafting-completion track after acceptance of the V4.29.0w MAP01 correction. The unified 61-recipe catalogue now has family filters, per-recipe persistent knowledge, an authoritative learned-recipe guard and a real read-only recipe-book summary in the Journal. Recipe-book schema-0 profiles initialize with all 61 recipes known as a development-compatibility baseline, so current saves and tests retain their previous access; authored initial recipes and world/merchant/NPC/discovery unlock sources remain separate content work. The accepted group-16 diagnostic baseline remains 126 movement leaders for 1,875 mass-test NPCs, with the final endurance run completing 1,033 reports and no freeze. Perception and production group movement remain isolated future runtime patches.
+The current V4.29.0y candidate continues the crafting-completion track with a unified 65-recipe catalogue: 61 existing recipes retain their stable indices and four appended shield recipes use named plates plus straps under cumulative Forge/Anvil infrastructure rules. New characters now begin with an empty recipe book, while V4.29.0x saves preserve their exact knowledge flags. A stable starter-weapon unlock entry point prepares the authored MAP01 tutorial flow. The same increment rerasterizes the bitmap type system at physical 2x resolution and extends MAP01's continuous roof over the remaining eastern stair pair. The accepted group-16 diagnostic baseline remains 126 movement leaders for 1,875 mass-test NPCs, with the final endurance run completing 1,033 reports and no freeze. Perception and production group movement remain isolated future runtime patches.
 
 ### Building the development PK3
 
@@ -53,7 +53,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
 - Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
 - Crafting and dismantling foundations used by current physical equipment and material recovery systems.
-- Connected crafting-station interaction core: all five recipe families reuse one Workbench transaction and cumulative tier infrastructure checks.
+- Connected crafting-station interaction core: all six current recipe families reuse one Workbench transaction and cumulative tier infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
 - Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
@@ -61,7 +61,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 
 ### Implemented foundation — still expanding
 
-- Crafting content and material catalogue: 16 physical weapons, 16 armor recipes, 20 essence weapons, 4 amulets and 5 seals share one filtered catalogue and persistent recipe book. Authored unlock sources and final material balancing remain active work.
+- Crafting content and material catalogue: 16 physical weapons, 16 armor recipes, 4 shields, 20 essence weapons, 4 amulets and 5 seals share one filtered catalogue and persistent recipe book. Authored unlock sources and final material balancing remain active work.
 - Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
 - Inventory presentation: the permanent Journal shell, navigation, read-only Inventory/Character/Recipe Book pages and original UI art are integrated; the owned-item index, equipment actions and later world/quest/reputation data remain incomplete.
 - Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.

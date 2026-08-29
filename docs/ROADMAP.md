@@ -10,7 +10,7 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 
 | Old block | Current status | Remaining work |
 | --- | --- | --- |
-| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All five families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
+| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All six current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
 | V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
 | V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability, several repairs and material recovery foundations exist. Complete the authoritative craft → use → deteriorate → repair/disassemble loop, preserving tier and essence/base-item recovery choices. |
 | V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
@@ -269,10 +269,22 @@ knowledge for the final new-profile flow remains an author decision. Public `Lea
 ready for later sheets, merchants, NPC dialogue and discovery hooks, but those
 authored sources are not claimed as implemented by this increment.
 
+V4.29.0y appends four shield recipes, bringing the unified catalogue to 65
+without changing any existing recipe index. The named plate supplies 70% of
+each shield's final weight and the generic strap 30%; all tiers require Forge
+and Anvil, while tier 3 also requires the cumulative Master Bench. Recipe-book
+schema 2 gives new characters an empty book and preserves the exact 61 knowledge
+flags of 4.29.0x saves. A stable physical-weapon unlock method prepares the
+MAP01 tutorial choice, but the NPC tasks, dialogue and reward handoff remain
+authored content. This increment also upgrades bitmap fonts to physical 2x and
+extends the existing roof control across the twelve eastern stair sectors.
+
 - Complete the permanent Journal interaction layer for inventory and the shared station interface.
 - Manually validate the preserved higher-tier station-network requirements.
 - **Implemented in 4.29.0x; manual validation pending:** unified family filters.
-- **Implemented in 4.29.0x; save/load validation pending:** permanent recipe knowledge and schema-0 compatibility initialization.
+- **Implemented through 4.29.0y; save/load validation pending:** permanent recipe knowledge, exact 4.29.0x migration and zero-recipes new profiles.
+- **Implemented in 4.29.0y; manual validation pending:** the complete four-shield crafting transaction and Forge/Anvil requirements.
+- Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
 
 ### V4.30 — Repair, Disassembly and Durability Loop

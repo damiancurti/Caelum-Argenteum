@@ -65,11 +65,10 @@ class CaelumPersistentCharacterState : Inventory
     bool WeaponEssenceInitialized;
 
     // El recetario pertenece al perfil y viaja con el mismo Inventory entre
-    // mapas y guardados. La versión permite distinguir la migración 4.29.0x de
-    // la futura política de recetas iniciales para personajes nuevos.
+    // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
+    // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
-    // 61 coincide con CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT en 4.29.0x.
-    bool KnownCraftingRecipe[61];
+    bool KnownCraftingRecipe[65];
 
     int StoredHealth;
     double StoredAnima;
@@ -216,14 +215,35 @@ class CaelumPersistentCharacterState : Inventory
             return;
         }
 
-        // Compatibilidad de desarrollo: antes de 4.29.0x el catálogo completo
-        // era visible y fabricable. Todo perfil del esquema 0 conserva ese
-        // acceso hasta que el autor defina el repertorio inicial definitivo.
-        for (int recipeIndex = 0;
+        if (RecipeBookVersion <= 0 && ProfileCommitted)
+        {
+            // Un perfil anterior a 4.29.0x ya jugable conserva las 61 recetas
+            // que entonces estaban abiertas. Los cuatro escudos son nuevos.
+            for (int recipeIndex = 0;
+                recipeIndex < CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
+                recipeIndex++)
+            {
+                KnownCraftingRecipe[recipeIndex] = true;
+            }
+        }
+        else if (RecipeBookVersion <= 0)
+        {
+            // Un estado recién creado aún no confirmado comienza sin recetas.
+            for (int recipeIndex = 0;
+                recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+                recipeIndex++)
+            {
+                KnownCraftingRecipe[recipeIndex] = false;
+            }
+        }
+
+        // Las partidas 4.29.0x conservan exactamente sus 61 bits. En todos los
+        // casos las recetas añadidas en 4.29.0y comienzan bloqueadas.
+        for (int recipeIndex = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
             recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             recipeIndex++)
         {
-            KnownCraftingRecipe[recipeIndex] = true;
+            KnownCraftingRecipe[recipeIndex] = false;
         }
         RecipeBookVersion = CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION;
     }

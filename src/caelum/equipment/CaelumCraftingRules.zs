@@ -20,7 +20,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP:
                 return CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT;
             case CaelumConstants.CRAFTING_STATION_WORKBENCH:
-                // El Banco de Trabajo es el catálogo unificado de las cinco
+                // El Banco de Trabajo es el catálogo unificado de las seis
                 // familias. Los filtros nunca crean transacciones paralelas.
                 return CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             default:
@@ -195,11 +195,13 @@ class CaelumCraftingRules : Object
         int essenceStart = armorStart + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT;
         int amuletStart = essenceStart + CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT;
         int sealStart = amuletStart + CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT;
+        int shieldStart = sealStart + CaelumConstants.CRAFTING_NETWORK_SEAL_RECIPE_COUNT;
         if (resolved < armorStart) return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (resolved < essenceStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
         if (resolved < amuletStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if (resolved < sealStart) return CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
-        return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
+        if (resolved < shieldStart) return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
+        return CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
     }
 
     static int ResolveRecipeFilter(int recipeFilter)
@@ -241,6 +243,24 @@ class CaelumCraftingRules : Object
             recipeIndex, 0,
             CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT - 1
         );
+    }
+
+    static int FindUnifiedPhysicalRecipeIndex(int weaponId)
+    {
+        int resolvedWeapon = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (GetStationRecipeWeapon(
+                    CaelumConstants.CRAFTING_STATION_WORKBENCH,
+                    recipeIndex
+                ) == resolvedWeapon)
+            {
+                return recipeIndex;
+            }
+        }
+        return -1;
     }
 
     static int GetUnifiedArmorRecipeIndex(int recipeIndex)
@@ -309,6 +329,19 @@ class CaelumCraftingRules : Object
             - CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT
             - CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT,
             0, CaelumConstants.SEAL_TYPE_COUNT - 1);
+    }
+
+    static int GetUnifiedShieldRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex - CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT,
+            0, CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT - 1
+        );
+    }
+
+    static int GetUnifiedShieldType(int recipeIndex)
+    {
+        return GetUnifiedShieldRecipeIndex(recipeIndex);
     }
 
     static double GetJewelryWeight(int tier)
@@ -387,6 +420,39 @@ class CaelumCraftingRules : Object
     {
         return GetRoundedMaterialUnits(
             finalWeight, GetArmorBaseWeightRatio(armorSlot)
+        );
+    }
+
+    static int GetShieldPlateMaterial(int shieldType)
+    {
+        switch (Clamp(
+            shieldType, 0, CaelumConstants.SHIELD_TYPE_COUNT - 1
+        ))
+        {
+            case CaelumConstants.SHIELD_TYPE_BUCKLER:
+                return CaelumConstants.MATERIAL_ROUND_PLATE;
+            case CaelumConstants.SHIELD_TYPE_KITE:
+                return CaelumConstants.MATERIAL_KITE_PLATE;
+            case CaelumConstants.SHIELD_TYPE_TOWER:
+                return CaelumConstants.MATERIAL_TOWER_PLATE;
+            default:
+                return CaelumConstants.MATERIAL_MAGIC_PLATE;
+        }
+    }
+
+    static int GetRequiredShieldPlateUnits(double finalWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeight,
+            CaelumConstants.CRAFTING_DEFAULT_TIER_WEIGHT_RATIO
+        );
+    }
+
+    static int GetRequiredShieldStrapUnits(double finalWeight)
+    {
+        return GetRoundedMaterialUnits(
+            finalWeight,
+            1.0 - CaelumConstants.CRAFTING_DEFAULT_TIER_WEIGHT_RATIO
         );
     }
 
@@ -494,6 +560,37 @@ class CaelumCraftingRules : Object
             GetArmorPrimaryStation(armorType),
             GetArmorTierTwoStation(armorType)
         );
+    }
+
+    static int GetMissingShieldStation(int capabilities, int craftingTier)
+    {
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        }
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_FORGE
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_FORGE;
+        }
+        // Todo escudo, incluido tier 1, necesita conformado sobre yunque.
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_ANVIL
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_ANVIL;
+        }
+        if (craftingTier >= 3
+            && !NetworkHasStation(
+                capabilities, CaelumConstants.CRAFTING_STATION_MASTER_BENCH
+            ))
+        {
+            return CaelumConstants.CRAFTING_STATION_MASTER_BENCH;
+        }
+        return CaelumConstants.CRAFTING_STATION_NONE;
     }
 
     static int GetMissingEssenceStation(

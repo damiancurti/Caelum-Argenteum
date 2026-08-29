@@ -40,6 +40,13 @@ The colored resource fills were manually accepted during V4.29.0m testing.
 - Crafts remains read-only in the Journal. Creating an item still requires Use
   on a valid connected station.
 
+## Implemented in 4.29.0y
+
+- Crafts now reports the four appended shield recipes and the unified 65-recipe
+  total without changing any earlier recipe index.
+- New profiles begin at 0/65; migrated 4.29.0x profiles preserve their exact
+  knowledge flags and begin with the four shield entries unknown.
+
 ## Implemented in 4.29.0i
 
 - `CaelumStatusBar` replaces the Doom status bar with an empty project-owned

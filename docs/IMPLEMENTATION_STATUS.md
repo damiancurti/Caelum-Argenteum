@@ -1,5 +1,40 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Shield recipes, empty new-profile book and stair cover 4.29.0y
+
+**Implemented and structurally validated; focused runtime/save validation pending**
+
+The unified Workbench catalogue now contains 65 recipes. Four appended shield
+entries preserve all prior indices and craft Buckler, Kite, Tower and Magic
+Shield configurations for every tier and size. Each transaction consumes its
+named tiered plate plus a tier-1 strap, using the existing physical 70/30
+plate/strap weight split. Every shield tier requires a connected Workbench,
+Forge and Anvil; tier 3 additionally retains the cumulative Master Bench rule.
+The result is a real `CaelumShieldPickup`, is registered persistently and is
+routed unequipped to the Magic Box like the other crafted equipment families.
+
+Recipe-book schema version 2 changes only new-profile policy. A newly created
+character starts with zero known recipes. Existing 4.29.0x saves preserve their
+exact 61 knowledge flags, while the four appended shield recipes begin locked.
+Older committed development profiles retain the 61 recipes that were open
+before knowledge existed. `LearnPhysicalWeaponRecipe(catalogueWeaponId)` gives
+the tutorial/NPC layer a stable way to unlock exactly the starter weapon chosen
+by the player; no provisional NPC dialogue, task or reward sequence is claimed
+by this patch.
+
+All twelve bitmap font families are rerasterized at twice their physical
+resolution and declare `Scale 2`, preserving their established logical height,
+advance, spacing and UI layout. MAP01 assigns the same roof-only tag used by the
+other flights to the twelve eastern stair sectors. Structural counts remain
+536/718/1,406/156/220 and MAP01 SHA-256 is
+`1223bafec960be9c14018af07867e6ec2e216975f1c44b0415ff4002973c51de`.
+
+The focused runtime pass must confirm: a new profile reports 0/65; an existing
+4.29.0x save keeps its former known recipes; each shield stays hidden until
+learned, requires Forge plus Anvil even at tier 1, consumes the displayed plate
+and strap amounts, and reaches the Magic Box with correct tier/size/durability;
+and the eastern stair pair is covered without blocking either ascent.
+
 ## Persistent recipe book and unified filters 4.29.0x
 
 **Implemented and structurally validated; manual runtime/save validation pending**
