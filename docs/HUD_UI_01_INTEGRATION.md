@@ -47,6 +47,18 @@ The colored resource fills were manually accepted during V4.29.0m testing.
 - New profiles begin at 0/65; migrated 4.29.0x profiles preserve their exact
   knowledge flags and begin with the four shield entries unknown.
 
+## Implemented in 4.29.0aa
+
+- Crafts reports the appended Processing family and the unified 79-recipe
+  total without renumbering any equipment entry.
+- The station view exposes processing input, optional second alloy input,
+  output amount and ×1/×10/×100/×1000 batch selection.
+- Equipment recipes show the additional silver/gold ingot requirement for
+  their selected finish. The requirement is transactional and reads the same
+  authoritative inventory stacks used by the rest of crafting.
+- Unknown processing recipes keep their inputs and output hidden. The MAP01
+  processing manual unlocks all fourteen through persistent play-scope state.
+
 ## Implemented in 4.29.0i
 
 - `CaelumStatusBar` replaces the Doom status bar with an empty project-owned

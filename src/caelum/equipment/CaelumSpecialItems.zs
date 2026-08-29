@@ -175,6 +175,23 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
             case CaelumConstants.MATERIAL_COPPER_INGOT: return "graphics/caelum/icons/materials/ca_material_copper_ingot.png";
             case CaelumConstants.MATERIAL_TIN_INGOT: return "graphics/caelum/icons/materials/ca_material_tin_ingot.png";
             case CaelumConstants.MATERIAL_COAL: return "graphics/caelum/icons/materials/ca_material_coal.png";
+            case CaelumConstants.MATERIAL_RAW_COPPER: return "graphics/caelum/icons/materials/ca_material_raw_copper.png";
+            case CaelumConstants.MATERIAL_RAW_TIN: return "graphics/caelum/icons/materials/ca_material_raw_tin.png";
+            case CaelumConstants.MATERIAL_RAW_IRON: return "graphics/caelum/icons/materials/ca_material_raw_iron.png";
+            case CaelumConstants.MATERIAL_RAW_SILVER: return "graphics/caelum/icons/materials/ca_material_raw_silver.png";
+            case CaelumConstants.MATERIAL_RAW_GOLD: return "graphics/caelum/icons/materials/ca_material_raw_gold.png";
+            case CaelumConstants.MATERIAL_BRONZE_INGOT: return "graphics/caelum/icons/materials/ca_material_bronze_ingot.png";
+            case CaelumConstants.MATERIAL_STEEL_INGOT: return "graphics/caelum/icons/materials/ca_material_steel_ingot.png";
+            case CaelumConstants.MATERIAL_SILVER_INGOT: return "graphics/caelum/icons/materials/ca_material_silver_ingot.png";
+            case CaelumConstants.MATERIAL_GOLD_INGOT: return "graphics/caelum/icons/materials/ca_material_gold_ingot.png";
+            case CaelumConstants.MATERIAL_WOOL: return "graphics/caelum/icons/materials/ca_material_wool.png";
+            case CaelumConstants.MATERIAL_COTTON: return "graphics/caelum/icons/materials/ca_material_cotton.png";
+            case CaelumConstants.MATERIAL_RAW_SILK: return "graphics/caelum/icons/materials/ca_material_raw_silk.png";
+            case CaelumConstants.MATERIAL_PLANT_FIBER: return "graphics/caelum/icons/materials/ca_material_plant_fiber.png";
+            case CaelumConstants.MATERIAL_ROPE: return "graphics/caelum/icons/materials/ca_material_rope.png";
+            case CaelumConstants.MATERIAL_COW_HIDE: return "graphics/caelum/icons/materials/ca_material_cow_hide.png";
+            case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "graphics/caelum/icons/materials/ca_material_predator_hide.png";
+            case CaelumConstants.MATERIAL_MONSTER_HIDE: return "graphics/caelum/icons/materials/ca_material_monster_hide.png";
             default: return "graphics/caelum/icons/materials/ca_material_wood.png";
         }
     }
@@ -274,6 +291,23 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M059 A 0;
         M060 A 0;
         M061 A 0;
+        M062 A 0;
+        M063 A 0;
+        M064 A 0;
+        M065 A 0;
+        M066 A 0;
+        M067 A 0;
+        M068 A 0;
+        M069 A 0;
+        M070 A 0;
+        M071 A 0;
+        M072 A 0;
+        M073 A 0;
+        M074 A 0;
+        M075 A 0;
+        M076 A 0;
+        M077 A 0;
+        M078 A 0;
         Stop;
     }
 }
@@ -387,6 +421,41 @@ class CaelumSealedLetter : CaelumSpecialInventoryItem
     }
 
     States { Spawn: CSEL A -1; Stop; }
+}
+
+// El manual del tutorial conserva el conocimiento en el perfil, no en el
+// mapa. Recogerlo una vez abre las catorce transformaciones básicas.
+class CaelumProcessingManual : CaelumSpecialInventoryItem
+{
+    Default
+    {
+        Tag "$CA_KEY_ITEM_PROCESSING_MANUAL";
+        Inventory.Icon "graphics/caelum/icons/ca_book.png";
+        Inventory.PickupMessage "$CA_PICKUP_KEY_ITEM_PROCESSING_MANUAL";
+    }
+
+    override int GetSpecialCategory()
+    {
+        return CaelumConstants.EQUIPMENT_KIND_KEY_ITEM;
+    }
+
+    override int GetSpecialType()
+    {
+        return CaelumConstants.KEY_ITEM_PROCESSING_MANUAL;
+    }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
+        bool pickedUp = Super.TryPickup(toucher);
+        if (pickedUp && caelumPlayer != null)
+        {
+            caelumPlayer.LearnAllProcessingRecipes();
+        }
+        return pickedUp;
+    }
+
+    States { Spawn: CBOO A -1; Stop; }
 }
 
 // Key conserva la comprobacion nativa de puertas y acciones LOCKDEFS. Por esa

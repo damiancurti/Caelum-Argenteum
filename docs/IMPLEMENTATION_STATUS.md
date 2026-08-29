@@ -1,5 +1,42 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Processing recipes and precious-metal finish costs 4.29.0aa
+
+**Implemented and structurally validated; focused GZDoom gameplay/save validation pending**
+
+The persistent Workbench catalogue contains 79 entries. The original 65
+equipment indices are unchanged and the 14 processing recipes occupy the final
+contiguous block. Recipe-book schema 3 preserves every schema-2 equipment flag
+and initializes only the new processing block as unknown. A fresh character
+therefore remains at 0/79.
+
+`Manual de Procesamiento (LORE-0001)` is a real MAP01 key item placed at
+x=-364, y=800, immediately left of the main station row. Picking it up once
+unlocks the complete processing block. The tutorial's chosen starter-weapon
+recipe and material handoff remain separate authored NPC work.
+
+Five ore recipes and six fiber/hide recipes use the initial 50% conversion
+rate: two raw units produce one refined unit. Bronze is 9 copper ingots plus 1
+tin ingot for 10 bronze ingots. Weapon-grade steel is 497 iron ingots plus 3
+coal units for 500 steel ingots (0.6% carbon by mass). Every transformation
+supports batches ×1, ×10, ×100 and ×1000. Metals and alloys require the Forge;
+fabrics, rope and leather require the Sewing Machine; both branches also
+require the connected Workbench.
+
+All crafted equipment shares one finish rule. Silver configurations consume
+extra silver ingots equal to 10% of final item weight. Gold configurations
+consume extra silver equal to 20% and gold equal to 10%. Quantities use the
+existing 0.001-weight material unit and round upward; decorative metals never
+increase the finished item's recorded weight.
+
+Seventeen supplied 128×128 sprites cover raw copper/tin/iron/silver/gold,
+bronze/steel/silver/gold ingots, wool, cotton, raw silk, plant fiber, rope and
+the three hides. Existing copper/tin/iron and coal assets remain authoritative
+for their earlier catalogue entries. MAP01 keeps the accepted 544 vertices,
+730 linedefs, 1,430 sidedefs and 159 sectors and now contains 221 Things.
+
+No AI, detection, combat, MAP02 or mansion geometry changed in this increment.
+
 ## Character-first menu, equipment finishes and eastern stair walls 4.29.0z
 
 **Implemented and exercised in GZDoom 4.14.2; focused manual visual/save validation pending**

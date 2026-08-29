@@ -68,7 +68,7 @@ class CaelumPersistentCharacterState : Inventory
     // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
     // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
-    bool KnownCraftingRecipe[65];
+    bool KnownCraftingRecipe[79];
 
     int StoredHealth;
     double StoredAnima;
@@ -237,9 +237,14 @@ class CaelumPersistentCharacterState : Inventory
             }
         }
 
-        // Las partidas 4.29.0x conservan exactamente sus 61 bits. En todos los
-        // casos las recetas añadidas en 4.29.0y comienzan bloqueadas.
-        for (int recipeIndex = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
+        // La versión 2 ya contenía los cuatro escudos de 4.29.0y. Sólo una
+        // partida anterior debe inicializarlos como bloqueados; las catorce
+        // recetas de procesamiento de la versión 3 siempre empiezan cerradas.
+        int addedRecipeStart = RecipeBookVersion >= 2
+            ? CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
+                + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
+            : CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
+        for (int recipeIndex = addedRecipeStart;
             recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             recipeIndex++)
         {

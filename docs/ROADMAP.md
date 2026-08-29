@@ -10,7 +10,7 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 
 | Old block | Current status | Remaining work |
 | --- | --- | --- |
-| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All six current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
+| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All seven current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
 | V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
 | V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability, several repairs and material recovery foundations exist. Complete the authoritative craft → use → deteriorate → repair/disassemble loop, preserving tier and essence/base-item recovery choices. |
 | V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
@@ -288,13 +288,23 @@ The eastern stair pair receives its three U-shaped enclosing walls. The next
 raw-material crafting layer is intentionally blocked until original silver and
 gold raw/ingot sprites are supplied; every other requested raw sprite is ready.
 
+V4.29.0aa integrates the supplied raw-material art and appends 14 processing
+recipes without renumbering the 65 equipment entries. Base refinement is 2→1
+(50%), bronze is 9 copper + 1 tin → 10 and steel is 497 iron + 3 coal → 500;
+all recipes support ×1/×10/×100/×1000 batches. Forge handles ores/alloys and
+Sewing Machine handles fibers/hides. A MAP01 manual unlocks this complete
+tutorial family. Silver-finish equipment additionally consumes 10% of final
+weight in silver; gold finish consumes 20% silver plus 10% gold, without
+changing final equipment weight.
+
 - Complete the permanent Journal interaction layer for inventory and the shared station interface.
 - Manually validate the preserved higher-tier station-network requirements.
 - **Implemented in 4.29.0x; manual validation pending:** unified family filters.
 - **Implemented through 4.29.0z; save/load validation pending:** permanent recipe knowledge, exact 4.29.0x migration and zero-recipes new profiles.
 - **Implemented in 4.29.0y; manual validation pending:** the complete four-shield crafting transaction and Forge/Anvil requirements.
 - **Implemented in 4.29.0z; manual validation pending:** character-first main menu, neutral single skill, weapon auto-equip, finish names and the eastern stair enclosure.
-- Supply original silver and gold raw/ingot sprites, then implement raw-resource conversion into the existing item-material components. Decide whether bronze is consumed as copper+tin or exists as its own inventory intermediate before adding a bronze sprite.
+- **Implemented in 4.29.0aa; manual/save validation pending:** 14 persistent processing recipes, all four batch sizes, the MAP01 processing manual, 50% base refinement, bronze/steel alloys and silver/gold equipment costs.
+- Add authored efficiency bonuses on top of the explicit 50% processing base; no bonus value or progression source is assigned yet.
 - Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
 

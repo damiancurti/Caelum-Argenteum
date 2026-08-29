@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.29.0aa — Raw-material processing and precious-metal finishes
+
+- Appended 14 processing recipes after the existing 65 equipment entries, so
+  every prior persistent recipe index remains stable. New profiles begin at
+  0/79 and schema-2 saves preserve all former equipment knowledge.
+- Added 2→1 conversion recipes for copper, tin, iron, silver and gold ores;
+  wool, cotton and silk fabrics; plant-fiber rope; and cow, predator and
+  monster leather. The 50% base yield is explicit and ready for later
+  efficiency modifiers.
+- Added batch choices ×1, ×10, ×100 and ×1000. Bronze uses 9 copper plus 1 tin
+  to produce 10 ingots; steel uses 497 iron plus 3 coal to produce 500 ingots.
+- Assigned ore and alloy work to the connected Forge, and fiber/hide work to
+  the connected Sewing Machine. Both still require the Workbench network.
+- Added silver/gold finishing costs to every equipment family: tier 2 consumes
+  silver equal to 10% of final item weight; tier 3 consumes 20% silver and 10%
+  gold. These decorative inputs do not increase final equipment weight.
+- Integrated 17 author-supplied 128×128 material sprites and their world aliases.
+- Added `Manual de Procesamiento (LORE-0001)` to MAP01 at x=-364, y=800. Its
+  pickup unlocks all 14 processing recipes with one localized message.
+- Expanded the Workbench filter, crafting display and Journal Crafts summary
+  to the 79-entry catalogue. No AI, perception, combat or house geometry was
+  changed.
+
 ## 4.29.0z — Character-first menu, item finishes and eastern stair enclosure
 
 - Automatically equip and activate compatible Caelum weapons collected into

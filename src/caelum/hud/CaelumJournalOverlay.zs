@@ -323,7 +323,14 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize("CA_CRAFTING_FILTER_SHIELDS", false),
                 localPlayer.CraftingKnownShieldRecipeCount,
                 CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT));
-        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 276.0,
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 260.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_PROCESSING", false
+                ),
+                localPlayer.CraftingKnownProcessingRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 288.0,
             StringTable.Localize("CA_JOURNAL_CRAFTS_STATION_HELP", false));
     }
 

@@ -20,7 +20,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP:
                 return CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT;
             case CaelumConstants.CRAFTING_STATION_WORKBENCH:
-                // El Banco de Trabajo es el catálogo unificado de las seis
+                // El Banco de Trabajo es el catálogo unificado de las siete
                 // familias. Los filtros nunca crean transacciones paralelas.
                 return CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             default:
@@ -196,12 +196,15 @@ class CaelumCraftingRules : Object
         int amuletStart = essenceStart + CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT;
         int sealStart = amuletStart + CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT;
         int shieldStart = sealStart + CaelumConstants.CRAFTING_NETWORK_SEAL_RECIPE_COUNT;
+        int processingStart = shieldStart
+            + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT;
         if (resolved < armorStart) return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (resolved < essenceStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
         if (resolved < amuletStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if (resolved < sealStart) return CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
         if (resolved < shieldStart) return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
-        return CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
+        if (resolved < processingStart) return CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
+        return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
     }
 
     static int ResolveRecipeFilter(int recipeFilter)
@@ -342,6 +345,220 @@ class CaelumCraftingRules : Object
     static int GetUnifiedShieldType(int recipeIndex)
     {
         return GetUnifiedShieldRecipeIndex(recipeIndex);
+    }
+
+    static int GetProcessingRecipeStart()
+    {
+        return CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT;
+    }
+
+    static int GetUnifiedProcessingRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex - GetProcessingRecipeStart(),
+            0, CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT - 1
+        );
+    }
+
+    static int GetProcessingBatchMultiplier(int batchIndex)
+    {
+        switch (Clamp(
+            batchIndex, 0,
+            CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT - 1
+        ))
+        {
+            case 1: return 10;
+            case 2: return 100;
+            case 3: return 1000;
+            default: return 1;
+        }
+    }
+
+    static int GetProcessingInputOneMaterial(int recipeIndex)
+    {
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_TIN_INGOT:
+                return CaelumConstants.MATERIAL_RAW_TIN;
+            case CaelumConstants.CRAFTING_PROCESSING_IRON_INGOT:
+                return CaelumConstants.MATERIAL_RAW_IRON;
+            case CaelumConstants.CRAFTING_PROCESSING_SILVER_INGOT:
+                return CaelumConstants.MATERIAL_RAW_SILVER;
+            case CaelumConstants.CRAFTING_PROCESSING_GOLD_INGOT:
+                return CaelumConstants.MATERIAL_RAW_GOLD;
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                return CaelumConstants.MATERIAL_COPPER_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                return CaelumConstants.MATERIAL_IRON_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_WOOL_FABRIC:
+                return CaelumConstants.MATERIAL_WOOL;
+            case CaelumConstants.CRAFTING_PROCESSING_COTTON_FABRIC:
+                return CaelumConstants.MATERIAL_COTTON;
+            case CaelumConstants.CRAFTING_PROCESSING_SILK_FABRIC:
+                return CaelumConstants.MATERIAL_RAW_SILK;
+            case CaelumConstants.CRAFTING_PROCESSING_ROPE:
+                return CaelumConstants.MATERIAL_PLANT_FIBER;
+            case CaelumConstants.CRAFTING_PROCESSING_COW_LEATHER:
+                return CaelumConstants.MATERIAL_COW_HIDE;
+            case CaelumConstants.CRAFTING_PROCESSING_PREDATOR_LEATHER:
+                return CaelumConstants.MATERIAL_PREDATOR_HIDE;
+            case CaelumConstants.CRAFTING_PROCESSING_MONSTER_LEATHER:
+                return CaelumConstants.MATERIAL_MONSTER_HIDE;
+            default:
+                return CaelumConstants.MATERIAL_RAW_COPPER;
+        }
+    }
+
+    static int GetProcessingInputTwoMaterial(int recipeIndex)
+    {
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                return CaelumConstants.MATERIAL_TIN_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                return CaelumConstants.MATERIAL_COAL;
+            default:
+                return -1;
+        }
+    }
+
+    static int GetProcessingInputOneTier(int recipeIndex)
+    {
+        return GetUnifiedProcessingRecipeIndex(recipeIndex)
+            == CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY ? 2 : 1;
+    }
+
+    static int GetProcessingInputTwoTier(int recipeIndex)
+    {
+        return 1;
+    }
+
+    static int GetProcessingOutputMaterial(int recipeIndex)
+    {
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_TIN_INGOT:
+                return CaelumConstants.MATERIAL_TIN_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_IRON_INGOT:
+                return CaelumConstants.MATERIAL_IRON_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_SILVER_INGOT:
+                return CaelumConstants.MATERIAL_SILVER_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_GOLD_INGOT:
+                return CaelumConstants.MATERIAL_GOLD_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                return CaelumConstants.MATERIAL_BRONZE_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                return CaelumConstants.MATERIAL_STEEL_INGOT;
+            case CaelumConstants.CRAFTING_PROCESSING_WOOL_FABRIC:
+            case CaelumConstants.CRAFTING_PROCESSING_COTTON_FABRIC:
+            case CaelumConstants.CRAFTING_PROCESSING_SILK_FABRIC:
+                return CaelumConstants.MATERIAL_FABRIC;
+            case CaelumConstants.CRAFTING_PROCESSING_ROPE:
+                return CaelumConstants.MATERIAL_ROPE;
+            case CaelumConstants.CRAFTING_PROCESSING_COW_LEATHER:
+            case CaelumConstants.CRAFTING_PROCESSING_PREDATOR_LEATHER:
+            case CaelumConstants.CRAFTING_PROCESSING_MONSTER_LEATHER:
+                return CaelumConstants.MATERIAL_LEATHER;
+            default:
+                return CaelumConstants.MATERIAL_COPPER_INGOT;
+        }
+    }
+
+    static int GetProcessingOutputTier(int recipeIndex)
+    {
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_IRON_INGOT:
+            case CaelumConstants.CRAFTING_PROCESSING_COTTON_FABRIC:
+            case CaelumConstants.CRAFTING_PROCESSING_PREDATOR_LEATHER:
+                return 2;
+            case CaelumConstants.CRAFTING_PROCESSING_SILK_FABRIC:
+            case CaelumConstants.CRAFTING_PROCESSING_MONSTER_LEATHER:
+                return 3;
+            default:
+                return 1;
+        }
+    }
+
+    static int GetProcessingInputOneUnits(int recipeIndex, int batchIndex)
+    {
+        int units = 2;
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                units = CaelumConstants.CRAFTING_BRONZE_COPPER_UNITS;
+                break;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                units = CaelumConstants.CRAFTING_STEEL_IRON_UNITS;
+                break;
+        }
+        return units * GetProcessingBatchMultiplier(batchIndex);
+    }
+
+    static int GetProcessingInputTwoUnits(int recipeIndex, int batchIndex)
+    {
+        int units = 0;
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                units = CaelumConstants.CRAFTING_BRONZE_TIN_UNITS;
+                break;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                units = CaelumConstants.CRAFTING_STEEL_COAL_UNITS;
+                break;
+        }
+        return units * GetProcessingBatchMultiplier(batchIndex);
+    }
+
+    static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
+    {
+        int units = 1;
+        switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
+        {
+            case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
+                units = CaelumConstants.CRAFTING_BRONZE_OUTPUT_UNITS;
+                break;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
+                units = CaelumConstants.CRAFTING_STEEL_OUTPUT_UNITS;
+                break;
+        }
+        return units * GetProcessingBatchMultiplier(batchIndex);
+    }
+
+    static int GetMissingProcessingStation(int capabilities, int recipeIndex)
+    {
+        if (!NetworkHasStation(
+            capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH
+        ))
+        {
+            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        }
+        int processingIndex = GetUnifiedProcessingRecipeIndex(recipeIndex);
+        int station = processingIndex
+            <= CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY
+                ? CaelumConstants.CRAFTING_STATION_FORGE
+                : CaelumConstants.CRAFTING_STATION_SEWING_MACHINE;
+        if (!NetworkHasStation(capabilities, station)) { return station; }
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static int GetRequiredSilverDetailUnits(double finalWeight, int tier)
+    {
+        if (tier <= 1) { return 0; }
+        double ratio = tier == 2
+            ? CaelumConstants.CRAFTING_SILVER_DETAIL_TIER_TWO_RATIO
+            : CaelumConstants.CRAFTING_SILVER_DETAIL_TIER_THREE_RATIO;
+        return GetRoundedMaterialUnits(finalWeight, ratio);
+    }
+
+    static int GetRequiredGoldDetailUnits(double finalWeight, int tier)
+    {
+        if (tier < 3) { return 0; }
+        return GetRoundedMaterialUnits(
+            finalWeight,
+            CaelumConstants.CRAFTING_GOLD_DETAIL_TIER_THREE_RATIO
+        );
     }
 
     static double GetJewelryWeight(int tier)
@@ -902,6 +1119,7 @@ class CaelumCraftingRules : Object
         // Armaduras, escudos y armas de esencia ya documentados.
         switch (materialType)
         {
+            case CaelumConstants.MATERIAL_IRON_INGOT:
             case CaelumConstants.MATERIAL_PLATE:
             case CaelumConstants.MATERIAL_ROUND_PLATE:
             case CaelumConstants.MATERIAL_KITE_PLATE:
@@ -920,6 +1138,26 @@ class CaelumCraftingRules : Object
             case CaelumConstants.MATERIAL_BELL_BASE:
             case CaelumConstants.MATERIAL_BOOK_BASE:
             case CaelumConstants.MATERIAL_STATUETTE_BASE:
+            case CaelumConstants.MATERIAL_COPPER_INGOT:
+            case CaelumConstants.MATERIAL_TIN_INGOT:
+            case CaelumConstants.MATERIAL_COAL:
+            case CaelumConstants.MATERIAL_RAW_COPPER:
+            case CaelumConstants.MATERIAL_RAW_TIN:
+            case CaelumConstants.MATERIAL_RAW_IRON:
+            case CaelumConstants.MATERIAL_RAW_SILVER:
+            case CaelumConstants.MATERIAL_RAW_GOLD:
+            case CaelumConstants.MATERIAL_BRONZE_INGOT:
+            case CaelumConstants.MATERIAL_STEEL_INGOT:
+            case CaelumConstants.MATERIAL_SILVER_INGOT:
+            case CaelumConstants.MATERIAL_GOLD_INGOT:
+            case CaelumConstants.MATERIAL_WOOL:
+            case CaelumConstants.MATERIAL_COTTON:
+            case CaelumConstants.MATERIAL_RAW_SILK:
+            case CaelumConstants.MATERIAL_PLANT_FIBER:
+            case CaelumConstants.MATERIAL_ROPE:
+            case CaelumConstants.MATERIAL_COW_HIDE:
+            case CaelumConstants.MATERIAL_PREDATOR_HIDE:
+            case CaelumConstants.MATERIAL_MONSTER_HIDE:
                 return true;
             default: return false;
         }

@@ -456,6 +456,23 @@ Sprite "M058A0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/material
 Sprite "M059A0", 128, 128 { Offset 64, 107 Patch "graphics/caelum/icons/materials/ca_material_copper_ingot.png", 0, 0 }
 Sprite "M060A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_tin_ingot.png", 0, 0 }
 Sprite "M061A0", 128, 128 { Offset 64, 102 Patch "graphics/caelum/icons/materials/ca_material_coal.png", 0, 0 }
+Sprite "M062A0", 128, 128 { Offset 64, 116 Patch "graphics/caelum/icons/materials/ca_material_raw_copper.png", 0, 0 }
+Sprite "M063A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_raw_tin.png", 0, 0 }
+Sprite "M064A0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/materials/ca_material_raw_iron.png", 0, 0 }
+Sprite "M065A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_raw_silver.png", 0, 0 }
+Sprite "M066A0", 128, 128 { Offset 64, 112 Patch "graphics/caelum/icons/materials/ca_material_raw_gold.png", 0, 0 }
+Sprite "M067A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_bronze_ingot.png", 0, 0 }
+Sprite "M068A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_steel_ingot.png", 0, 0 }
+Sprite "M069A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_silver_ingot.png", 0, 0 }
+Sprite "M070A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/materials/ca_material_gold_ingot.png", 0, 0 }
+Sprite "M071A0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/materials/ca_material_wool.png", 0, 0 }
+Sprite "M072A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/materials/ca_material_cotton.png", 0, 0 }
+Sprite "M073A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_raw_silk.png", 0, 0 }
+Sprite "M074A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
+Sprite "M075A0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/materials/ca_material_rope.png", 0, 0 }
+Sprite "M076A0", 128, 128 { Offset 64, 113 Patch "graphics/caelum/icons/materials/ca_material_cow_hide.png", 0, 0 }
+Sprite "M077A0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/materials/ca_material_predator_hide.png", 0, 0 }
+Sprite "M078A0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/materials/ca_material_monster_hide.png", 0, 0 }
 
 Sprite "XAIRA1", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA1.png", 0, 0 }
 Sprite "XAIRA2", 64, 64 { Offset 32, 32 Patch "sprites/caelum/projectiles/elemental/XAIRA2.png", 0, 0 }

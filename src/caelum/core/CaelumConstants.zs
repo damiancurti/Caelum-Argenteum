@@ -283,6 +283,23 @@ class CaelumConstants : Object
     const CRAFTING_NETWORK_AMULET_RECIPE_COUNT = 4;
     const CRAFTING_NETWORK_SEAL_RECIPE_COUNT = 5;
     const CRAFTING_NETWORK_SHIELD_RECIPE_COUNT = 4;
+    // Las recetas de procesamiento se anexan al final para conservar los
+    // índices persistentes de las 65 recetas de equipo existentes.
+    const CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT = 14;
+    const CRAFTING_PROCESSING_COPPER_INGOT = 0;
+    const CRAFTING_PROCESSING_TIN_INGOT = 1;
+    const CRAFTING_PROCESSING_IRON_INGOT = 2;
+    const CRAFTING_PROCESSING_SILVER_INGOT = 3;
+    const CRAFTING_PROCESSING_GOLD_INGOT = 4;
+    const CRAFTING_PROCESSING_BRONZE_ALLOY = 5;
+    const CRAFTING_PROCESSING_STEEL_ALLOY = 6;
+    const CRAFTING_PROCESSING_WOOL_FABRIC = 7;
+    const CRAFTING_PROCESSING_COTTON_FABRIC = 8;
+    const CRAFTING_PROCESSING_SILK_FABRIC = 9;
+    const CRAFTING_PROCESSING_ROPE = 10;
+    const CRAFTING_PROCESSING_COW_LEATHER = 11;
+    const CRAFTING_PROCESSING_PREDATOR_LEATHER = 12;
+    const CRAFTING_PROCESSING_MONSTER_LEATHER = 13;
     // Los primeros 61 índices pertenecen al catálogo 4.29.0x. Los escudos se
     // anexan al final para que las recetas ya aprendidas conserven su índice.
     const CRAFTING_NETWORK_LEGACY_RECIPE_COUNT =
@@ -293,8 +310,9 @@ class CaelumConstants : Object
         + CRAFTING_NETWORK_SEAL_RECIPE_COUNT;
     const CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT =
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
-        + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT;
-    const CRAFTING_RECIPE_BOOK_VERSION = 2;
+        + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
+        + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
+    const CRAFTING_RECIPE_BOOK_VERSION = 3;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
     const CRAFTING_RECIPE_KIND_ARMOR = 1;
@@ -302,6 +320,7 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_KIND_ESSENCE_WEAPON = 3;
     const CRAFTING_RECIPE_KIND_AMULET = 4;
     const CRAFTING_RECIPE_KIND_SEAL = 5;
+    const CRAFTING_RECIPE_KIND_PROCESSING = 6;
     // El filtro 0 muestra el catálogo completo; los siguientes valores se
     // alinean con RecipeKind + 1 para mantener una sola lista autoritativa.
     const CRAFTING_RECIPE_FILTER_ALL = 0;
@@ -311,7 +330,8 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_FILTER_ESSENCE_WEAPON = 4;
     const CRAFTING_RECIPE_FILTER_AMULET = 5;
     const CRAFTING_RECIPE_FILTER_SEAL = 6;
-    const CRAFTING_RECIPE_FILTER_COUNT = 7;
+    const CRAFTING_RECIPE_FILTER_PROCESSING = 7;
+    const CRAFTING_RECIPE_FILTER_COUNT = 8;
     const CRAFTING_AMULET_BASE_WEIGHT_RATIO = 0.20;
     const CRAFTING_SEAL_BASE_WEIGHT_RATIO = 0.40;
     const CRAFTING_ACTION_NONE = 0;
@@ -323,6 +343,22 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_FAILED_STATION = 6;
     const CRAFTING_ACTION_FAILED_INFRASTRUCTURE = 7;
     const CRAFTING_ACTION_FAILED_RECIPE_LOCKED = 8;
+    const CRAFTING_ACTION_PROCESSED = 9;
+
+    // Procesamiento por lotes. Los recursos primarios rinden 50 % (2 -> 1).
+    // Las aleaciones conservan masa: bronce 90/10 y acero histórico de arma
+    // con 0,6 % de carbono (497 hierro + 3 carbón -> 500 acero).
+    const CRAFTING_PROCESSING_BATCH_OPTION_COUNT = 4;
+    const CRAFTING_PROCESSING_BASE_EFFICIENCY = 0.50;
+    const CRAFTING_BRONZE_COPPER_UNITS = 9;
+    const CRAFTING_BRONZE_TIN_UNITS = 1;
+    const CRAFTING_BRONZE_OUTPUT_UNITS = 10;
+    const CRAFTING_STEEL_IRON_UNITS = 497;
+    const CRAFTING_STEEL_COAL_UNITS = 3;
+    const CRAFTING_STEEL_OUTPUT_UNITS = 500;
+    const CRAFTING_SILVER_DETAIL_TIER_TWO_RATIO = 0.10;
+    const CRAFTING_SILVER_DETAIL_TIER_THREE_RATIO = 0.20;
+    const CRAFTING_GOLD_DETAIL_TIER_THREE_RATIO = 0.10;
 
     const EQUIPMENT_SIZE_XS = 0;
     const EQUIPMENT_SIZE_S = 1;
@@ -540,10 +576,10 @@ class CaelumConstants : Object
     const CRAFTING_AXE_TIER_WEIGHT_RATIO = 0.30;
     const CRAFTING_RANGED_TIER_WEIGHT_RATIO = 0.40;
     const CRAFTING_DISMANTLE_RECOVERY_RATIO = 0.50;
-    // El indice cero conserva el lingote de prueba 4.10 para no invalidar
-    // partidas existentes, pero queda fuera del catálogo activo desde 4.12.
+    // El índice cero conserva el lingote de prueba 4.10 y vuelve a formar
+    // parte del catálogo activo como resultado del refinado de hierro.
     const MATERIAL_IRON_INGOT = 0;
-    const MATERIAL_FIRST_ACTIVE = 1;
+    const MATERIAL_FIRST_ACTIVE = 0;
     const MATERIAL_BLADE = 1;
     const MATERIAL_SMALL_BLADE = 2;
     const MATERIAL_CURVED_BLADE = 3;
@@ -606,7 +642,24 @@ class CaelumConstants : Object
     const MATERIAL_COPPER_INGOT = 59;
     const MATERIAL_TIN_INGOT = 60;
     const MATERIAL_COAL = 61;
-    const MATERIAL_TYPE_COUNT = 62;
+    const MATERIAL_RAW_COPPER = 62;
+    const MATERIAL_RAW_TIN = 63;
+    const MATERIAL_RAW_IRON = 64;
+    const MATERIAL_RAW_SILVER = 65;
+    const MATERIAL_RAW_GOLD = 66;
+    const MATERIAL_BRONZE_INGOT = 67;
+    const MATERIAL_STEEL_INGOT = 68;
+    const MATERIAL_SILVER_INGOT = 69;
+    const MATERIAL_GOLD_INGOT = 70;
+    const MATERIAL_WOOL = 71;
+    const MATERIAL_COTTON = 72;
+    const MATERIAL_RAW_SILK = 73;
+    const MATERIAL_PLANT_FIBER = 74;
+    const MATERIAL_ROPE = 75;
+    const MATERIAL_COW_HIDE = 76;
+    const MATERIAL_PREDATOR_HIDE = 77;
+    const MATERIAL_MONSTER_HIDE = 78;
+    const MATERIAL_TYPE_COUNT = 79;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;
@@ -617,7 +670,8 @@ class CaelumConstants : Object
     const KEY_SILVER = 0;
     const KEY_TYPE_COUNT = 1;
     const KEY_ITEM_SEALED_LETTER = 0;
-    const KEY_ITEM_TYPE_COUNT = 1;
+    const KEY_ITEM_PROCESSING_MANUAL = 1;
+    const KEY_ITEM_TYPE_COUNT = 2;
     const LOCK_CAELUM_SILVER = 200;
 
     // Lucidity is a fixed 100-point resource that refills in one minute.

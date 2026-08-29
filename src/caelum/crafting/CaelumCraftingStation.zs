@@ -104,6 +104,7 @@ class CaelumCraftingStation : CaelumMovableProp
 
 class CaelumForgeStation : CaelumCraftingStation
 {
+    // Además del equipo metálico, procesa minerales y aleaciones.
     override int GetCraftingStationType()
     {
         return CaelumConstants.CRAFTING_STATION_FORGE;
@@ -170,6 +171,7 @@ class CaelumSawmillStation : CaelumCraftingStation
 
 class CaelumSewingMachineStation : CaelumCraftingStation
 {
+    // Refina fibras, tejidos, cuerdas y pieles de las recetas básicas.
     override int GetCraftingStationType()
     {
         return CaelumConstants.CRAFTING_STATION_SEWING_MACHINE;

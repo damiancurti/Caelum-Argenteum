@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0z candidate keeps the 65-recipe catalogue and empty new-character recipe book from V4.29.0y, then completes the surrounding player-facing transition. Picked-up Caelum weapons equip and become active automatically when their size is compatible and they remain in personal inventory. Equipment is named by finish instead of exposing numeric tiers: base name, Silver/Plateado and Golden/Dorado. Processed crafting components are explicitly labelled as item materials, reserving wood, ingots, coal and raw gems for the next raw-material layer. The main menu now uses CaelumText and offers New/Load/Save Character; one neutral Caelum skill replaces Doom's five difficulty presets and removes the obsolete difficulty screen. MAP01 closes the eastern stair enclosure with three solid walls beneath the accepted roof. The accepted group-16 diagnostic baseline remains unchanged, and perception/production group movement remain isolated future runtime patches.
+The current V4.29.0aa candidate expands the persistent catalogue from 65 to 79 recipes without renumbering existing equipment. Fourteen tutorial processing recipes turn ores, fibers and hides into usable materials at a 50% base yield and produce bronze/steel through mass-conserving historical mixtures. A MAP01 manual unlocks that processing family while new characters still begin at 0/79. Every silver-finish equipment recipe additionally consumes silver equal to 10% of final weight; every gold finish consumes silver equal to 20% plus gold equal to 10%, without changing equipment weight. Picked-up compatible Caelum weapons still auto-equip, the character-first menu and accepted eastern stair enclosure remain unchanged, and AI/perception are untouched by this crafting increment.
 
 ### Building the development PK3
 
@@ -53,7 +53,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
 - Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
 - Crafting and dismantling foundations used by current physical equipment and material recovery systems.
-- Connected crafting-station interaction core: all six current recipe families reuse one Workbench transaction and cumulative internal-grade infrastructure checks.
+- Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
 - Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
@@ -61,7 +61,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 
 ### Implemented foundation — still expanding
 
-- Crafting content and material catalogue: 16 physical weapons, 16 armor recipes, 4 shields, 20 essence weapons, 4 amulets and 5 seals share one filtered catalogue and persistent recipe book. New characters start with no recipes; the authored MAP01 tutorial must unlock and fund the selected starter weapon. The raw-material conversion layer awaits the original silver and gold ingot/ore sprites.
+- Crafting content and material catalogue: 16 physical weapons, 16 armor recipes, 4 shields, 20 essence weapons, 4 amulets, 5 seals and 14 processing recipes share one filtered 79-entry catalogue and persistent recipe book. New characters start with no recipes; MAP01's processing manual unlocks the 14 basic conversions, while the authored NPC tutorial must still unlock and fund the selected starter weapon.
 - Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
 - Inventory presentation: the permanent Journal shell, navigation, read-only Inventory/Character/Recipe Book pages and original UI art are integrated; the owned-item index, equipment actions and later world/quest/reputation data remain incomplete.
 - Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.

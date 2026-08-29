@@ -353,6 +353,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE";
             case CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED:
                 return "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED";
+            case CaelumConstants.CRAFTING_ACTION_PROCESSED:
+                return "CA_CRAFTING_ACTION_PROCESSED";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -373,6 +375,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_AMULETS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_SEAL:
                 return "CA_CRAFTING_FILTER_SEALS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
+                return "CA_CRAFTING_FILTER_PROCESSING";
             default:
                 return "CA_CRAFTING_FILTER_ALL";
         }
@@ -434,6 +438,10 @@ class CaelumDebugOverlay : EventHandler
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
+            {
+                return "CA_KEY_ITEM_PROCESSING_MANUAL";
+            }
             return "CA_KEY_ITEM_SEALED_LETTER";
         }
         switch (specialType)
@@ -499,6 +507,23 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_COPPER_INGOT: return "CA_MATERIAL_COPPER_INGOT";
             case CaelumConstants.MATERIAL_TIN_INGOT: return "CA_MATERIAL_TIN_INGOT";
             case CaelumConstants.MATERIAL_COAL: return "CA_MATERIAL_COAL";
+            case CaelumConstants.MATERIAL_RAW_COPPER: return "CA_MATERIAL_RAW_COPPER";
+            case CaelumConstants.MATERIAL_RAW_TIN: return "CA_MATERIAL_RAW_TIN";
+            case CaelumConstants.MATERIAL_RAW_IRON: return "CA_MATERIAL_RAW_IRON";
+            case CaelumConstants.MATERIAL_RAW_SILVER: return "CA_MATERIAL_RAW_SILVER";
+            case CaelumConstants.MATERIAL_RAW_GOLD: return "CA_MATERIAL_RAW_GOLD";
+            case CaelumConstants.MATERIAL_BRONZE_INGOT: return "CA_MATERIAL_BRONZE_INGOT";
+            case CaelumConstants.MATERIAL_STEEL_INGOT: return "CA_MATERIAL_STEEL_INGOT";
+            case CaelumConstants.MATERIAL_SILVER_INGOT: return "CA_MATERIAL_SILVER_INGOT";
+            case CaelumConstants.MATERIAL_GOLD_INGOT: return "CA_MATERIAL_GOLD_INGOT";
+            case CaelumConstants.MATERIAL_WOOL: return "CA_MATERIAL_WOOL";
+            case CaelumConstants.MATERIAL_COTTON: return "CA_MATERIAL_COTTON";
+            case CaelumConstants.MATERIAL_RAW_SILK: return "CA_MATERIAL_RAW_SILK";
+            case CaelumConstants.MATERIAL_PLANT_FIBER: return "CA_MATERIAL_PLANT_FIBER";
+            case CaelumConstants.MATERIAL_ROPE: return "CA_MATERIAL_ROPE";
+            case CaelumConstants.MATERIAL_COW_HIDE: return "CA_MATERIAL_COW_HIDE";
+            case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "CA_MATERIAL_PREDATOR_HIDE";
+            case CaelumConstants.MATERIAL_MONSTER_HIDE: return "CA_MATERIAL_MONSTER_HIDE";
             default: return "CA_MATERIAL_IRON_INGOT";
         }
     }
@@ -1038,6 +1063,23 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.MATERIAL_COPPER_INGOT: return "graphics/caelum/icons/materials/ca_material_copper_ingot.png";
             case CaelumConstants.MATERIAL_TIN_INGOT: return "graphics/caelum/icons/materials/ca_material_tin_ingot.png";
             case CaelumConstants.MATERIAL_COAL: return "graphics/caelum/icons/materials/ca_material_coal.png";
+            case CaelumConstants.MATERIAL_RAW_COPPER: return "graphics/caelum/icons/materials/ca_material_raw_copper.png";
+            case CaelumConstants.MATERIAL_RAW_TIN: return "graphics/caelum/icons/materials/ca_material_raw_tin.png";
+            case CaelumConstants.MATERIAL_RAW_IRON: return "graphics/caelum/icons/materials/ca_material_raw_iron.png";
+            case CaelumConstants.MATERIAL_RAW_SILVER: return "graphics/caelum/icons/materials/ca_material_raw_silver.png";
+            case CaelumConstants.MATERIAL_RAW_GOLD: return "graphics/caelum/icons/materials/ca_material_raw_gold.png";
+            case CaelumConstants.MATERIAL_BRONZE_INGOT: return "graphics/caelum/icons/materials/ca_material_bronze_ingot.png";
+            case CaelumConstants.MATERIAL_STEEL_INGOT: return "graphics/caelum/icons/materials/ca_material_steel_ingot.png";
+            case CaelumConstants.MATERIAL_SILVER_INGOT: return "graphics/caelum/icons/materials/ca_material_silver_ingot.png";
+            case CaelumConstants.MATERIAL_GOLD_INGOT: return "graphics/caelum/icons/materials/ca_material_gold_ingot.png";
+            case CaelumConstants.MATERIAL_WOOL: return "graphics/caelum/icons/materials/ca_material_wool.png";
+            case CaelumConstants.MATERIAL_COTTON: return "graphics/caelum/icons/materials/ca_material_cotton.png";
+            case CaelumConstants.MATERIAL_RAW_SILK: return "graphics/caelum/icons/materials/ca_material_raw_silk.png";
+            case CaelumConstants.MATERIAL_PLANT_FIBER: return "graphics/caelum/icons/materials/ca_material_plant_fiber.png";
+            case CaelumConstants.MATERIAL_ROPE: return "graphics/caelum/icons/materials/ca_material_rope.png";
+            case CaelumConstants.MATERIAL_COW_HIDE: return "graphics/caelum/icons/materials/ca_material_cow_hide.png";
+            case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "graphics/caelum/icons/materials/ca_material_predator_hide.png";
+            case CaelumConstants.MATERIAL_MONSTER_HIDE: return "graphics/caelum/icons/materials/ca_material_monster_hide.png";
             default: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
         }
     }
@@ -1173,7 +1215,12 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
             return "graphics/caelum/icons/ca_key.png";
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
-            return "graphics/caelum/icons/ca_sealed_letter.png";
+        {
+            return localPlayer.EquipmentSelectionSpecialType
+                    == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
+                ? "graphics/caelum/icons/ca_book.png"
+                : "graphics/caelum/icons/ca_sealed_letter.png";
+        }
         return "";
     }
 
@@ -1738,6 +1785,17 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.CraftingSelectedSealType,
                 localPlayer.CraftingSelectionTier
             );
+        else if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            recipeName = StringTable.Localize(
+                GetSpecialItemTypeKey(
+                    CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                    localPlayer.CraftingOutputMaterialType
+                ),
+                false
+            );
+        }
         else
         {
             recipeName = CaelumDisplayNames.FormatCatalogueWeaponName(
@@ -1772,28 +1830,46 @@ class CaelumDebugOverlay : EventHandler
             ),
             false
         );
-        String tierName = StringTable.Localize(
-            GetSpecialItemTypeKey(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                localPlayer.CraftingTierMaterialType
-            ),
-            false
-        );
-        String tierGrade = StringTable.Localize(
-            GetMaterialGradeKey(
-                localPlayer.CraftingTierMaterialType,
-                localPlayer.CraftingTierMaterialTier
-            ),
-            false
-        );
-        String selection = localPlayer.CraftingSelectedRecipeKnown
-            ? String.Format(
+        String tierName = localPlayer.CraftingTierRequired > 0
+            ? StringTable.Localize(
+                GetSpecialItemTypeKey(
+                    CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                    localPlayer.CraftingTierMaterialType
+                ),
+                false
+            ) : "";
+        String tierGrade = localPlayer.CraftingTierRequired > 0
+            ? StringTable.Localize(
+                GetMaterialGradeKey(
+                    localPlayer.CraftingTierMaterialType,
+                    localPlayer.CraftingTierMaterialTier
+                ),
+                false
+            ) : "";
+        String selection;
+        if (!localPlayer.CraftingSelectedRecipeKnown)
+        {
+            selection = recipeName;
+        }
+        else if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            selection = String.Format(
+                "%s | x%d | %.3f",
+                recipeName,
+                localPlayer.CraftingProcessingBatchMultiplier,
+                localPlayer.CraftingFinalWeight
+            );
+        }
+        else
+        {
+            selection = String.Format(
                 "%s | %s | %.3f",
                 recipeName,
                 sizeName,
                 localPlayer.CraftingFinalWeight
-            )
-            : recipeName;
+            );
+        }
         String basicLine = String.Format(
             "%s: %d / %d",
             basicName,
@@ -1801,9 +1877,23 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.CraftingBasicRequired
         );
         String tierLine;
-        if (GetMaterialFamilyForPanel(
-                localPlayer.CraftingTierMaterialType
-            ) == CaelumConstants.MATERIAL_FAMILY_GEM)
+        int tierFamily = GetMaterialFamilyForPanel(
+            localPlayer.CraftingTierMaterialType
+        );
+        if (localPlayer.CraftingTierRequired <= 0)
+        {
+            tierLine = "";
+        }
+        else if (tierFamily == CaelumConstants.MATERIAL_FAMILY_NONE)
+        {
+            tierLine = String.Format(
+                "%s: %d / %d",
+                tierName,
+                localPlayer.CraftingTierOwned,
+                localPlayer.CraftingTierRequired
+            );
+        }
+        else if (tierFamily == CaelumConstants.MATERIAL_FAMILY_GEM)
         {
             tierLine = localPlayer.CraftingTierMaterialTier == 1
                 ? String.Format(
@@ -1828,6 +1918,38 @@ class CaelumDebugOverlay : EventHandler
                 tierGrade,
                 localPlayer.CraftingTierOwned,
                 localPlayer.CraftingTierRequired
+            );
+        }
+        String outputLine = "";
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            String outputName = StringTable.Localize(
+                GetSpecialItemTypeKey(
+                    CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                    localPlayer.CraftingOutputMaterialType
+                ),
+                false
+            );
+            outputLine = String.Format(
+                "%s: %d %s",
+                StringTable.Localize("CA_CRAFTING_OUTPUT", false),
+                localPlayer.CraftingOutputAmount,
+                outputName
+            );
+        }
+        String finishLine = "";
+        if (localPlayer.CraftingSilverRequired > 0
+            || localPlayer.CraftingGoldRequired > 0)
+        {
+            finishLine = String.Format(
+                "%s: %d / %d | %s: %d / %d",
+                StringTable.Localize("CA_MATERIAL_SILVER_INGOT", false),
+                localPlayer.CraftingSilverOwned,
+                localPlayer.CraftingSilverRequired,
+                StringTable.Localize("CA_MATERIAL_GOLD_INGOT", false),
+                localPlayer.CraftingGoldOwned,
+                localPlayer.CraftingGoldRequired
             );
         }
         String infrastructureLine;
@@ -1868,10 +1990,21 @@ class CaelumDebugOverlay : EventHandler
                 == CaelumConstants.CRAFTING_STATION_WORKBENCH
             ? "CA_CRAFTING_NAVIGATION_HELP_1"
             : "CA_CRAFTING_NAVIGATION_HELP_SPECIALIZED_1";
+        String navigationHelp2Key = "CA_CRAFTING_NAVIGATION_HELP_2";
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            navigationHelp1Key =
+                "CA_CRAFTING_NAVIGATION_HELP_PROCESSING";
+            navigationHelp2Key =
+                "CA_CRAFTING_NAVIGATION_HELP_PROCESSING_2";
+        }
         int actionColor = (localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_CREATED
             || localPlayer.LastCraftingAction
-                == CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED)
+                == CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_PROCESSED)
             ? Font.CR_GREEN
             : (localPlayer.LastCraftingAction
                     >= CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS
@@ -1924,7 +2057,7 @@ class CaelumDebugOverlay : EventHandler
                 Font.CR_GRAY
             );
             DrawCenteredText(
-                StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_2", false),
+                StringTable.Localize(navigationHelp2Key, false),
                 306.0,
                 Font.CR_GRAY
             );
@@ -1944,26 +2077,43 @@ class CaelumDebugOverlay : EventHandler
         );
         DrawCenteredText(
             tierLine,
-            204.0,
+            200.0,
             localPlayer.CraftingTierOwned >= localPlayer.CraftingTierRequired
                 ? Font.CR_GREEN : Font.CR_RED
         );
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            DrawCenteredText(outputLine, 220.0, Font.CR_CYAN);
+        }
+        else if (finishLine != "")
+        {
+            DrawCenteredText(
+                finishLine,
+                220.0,
+                localPlayer.CraftingSilverOwned
+                        >= localPlayer.CraftingSilverRequired
+                    && localPlayer.CraftingGoldOwned
+                        >= localPlayer.CraftingGoldRequired
+                    ? Font.CR_GREEN : Font.CR_RED
+            );
+        }
         DrawCenteredText(
             infrastructureLine,
-            224.0,
+            238.0,
             localPlayer.CraftingSelectedInfrastructureAvailable
                 ? Font.CR_GREEN : Font.CR_RED
         );
-        DrawCenteredText(boxLine, 244.0, Font.CR_CYAN);
-        DrawCenteredText(actionText, 264.0, actionColor);
+        DrawCenteredText(boxLine, 256.0, Font.CR_CYAN);
+        DrawCenteredText(actionText, 274.0, actionColor);
         DrawCenteredText(
             StringTable.Localize(navigationHelp1Key, false),
-            290.0,
+            296.0,
             Font.CR_GRAY
         );
         DrawCenteredText(
-            StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_2", false),
-            308.0,
+            StringTable.Localize(navigationHelp2Key, false),
+            314.0,
             Font.CR_GRAY
         );
     }

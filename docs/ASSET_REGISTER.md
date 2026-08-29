@@ -1,5 +1,22 @@
 # Asset register
 
+## V4.29.0aa raw-material processing set
+
+The author supplied `Caelum_Argenteum_materiales_nuevos(1).zip` with explicit
+runtime names and use instructions. Seventeen 128×128 RGBA masters are
+integrated directly; no generated substitute or third-party asset is added.
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Raw metals | `ca_material_raw_copper.png`, `raw_tin`, `raw_iron`, `raw_silver`, `raw_gold` | Damian Curti / project-directed generation | Author-supplied materials pack, 2026-08-29 | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Inputs for the five 50%-yield ore recipes. |
+| Refined metals | `ca_material_bronze_ingot.png`, `steel_ingot`, `silver_ingot`, `gold_ingot` | Same | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Copper, tin and iron ingot masters already existed and are not duplicated. |
+| Fibers and rope | `ca_material_wool.png`, `cotton`, `raw_silk`, `plant_fiber`, `rope` | Same | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Inputs/outputs for Sewing Machine processing. |
+| Hides | `ca_material_cow_hide.png`, `predator_hide`, `monster_hide` | Same | Same pack | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Produce leather grades 1, 2 and 3 respectively. |
+
+All files retain their supplied 128×128 canvas and transparent margin. Runtime
+aliases `M062A0`–`M078A0` use alpha-derived floor offsets; the inventory keeps
+the full-resolution masters.
+
 ## V4.29.0s canonical pickups and Domingo runtime appearance
 
 V4.29.0s does not create alternate item art. It makes the already registered

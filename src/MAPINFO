@@ -104,6 +104,7 @@ DoomEdNums
     18103 = CaelumMaterialPickup
     18104 = CaelumSilverKey
     18105 = CaelumSealedLetter
+    18106 = CaelumProcessingManual
 
     18110 = CaelumCarbineAmmo
     18111 = CaelumArrowAmmo

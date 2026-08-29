@@ -81,6 +81,7 @@ class CaelumPlayer : DoomPlayer
     int CraftingKnownEssenceRecipeCount;
     int CraftingKnownAmuletRecipeCount;
     int CraftingKnownSealRecipeCount;
+    int CraftingKnownProcessingRecipeCount;
 
     // Estado de la receta unificada actualmente seleccionada.
     int CraftingSelectedRecipeKind;
@@ -91,6 +92,12 @@ class CaelumPlayer : DoomPlayer
     int CraftingSelectedEssenceType;
     int CraftingSelectedAmuletType;
     int CraftingSelectedSealType;
+    int CraftingSelectedProcessingRecipe;
+    int CraftingProcessingBatchIndex;
+    int CraftingProcessingBatchMultiplier;
+    int CraftingOutputMaterialType;
+    int CraftingOutputMaterialTier;
+    int CraftingOutputAmount;
 
     int CraftingBasicMaterialType;
     int CraftingBasicMaterialTier;
@@ -100,6 +107,10 @@ class CaelumPlayer : DoomPlayer
     int CraftingTierMaterialTier;
     int CraftingTierRequired;
     int CraftingTierOwned;
+    int CraftingSilverRequired;
+    int CraftingSilverOwned;
+    int CraftingGoldRequired;
+    int CraftingGoldOwned;
     double CraftingFinalWeight;
     int LastCraftingAction;
     int EquipmentSelectionKind;
@@ -2971,6 +2982,7 @@ class CaelumPlayer : DoomPlayer
         CraftingKnownEssenceRecipeCount = 0;
         CraftingKnownAmuletRecipeCount = 0;
         CraftingKnownSealRecipeCount = 0;
+        CraftingKnownProcessingRecipeCount = 0;
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -2999,6 +3011,9 @@ class CaelumPlayer : DoomPlayer
                     break;
                 case CaelumConstants.CRAFTING_RECIPE_KIND_SEAL:
                     CraftingKnownSealRecipeCount++;
+                    break;
+                case CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING:
+                    CraftingKnownProcessingRecipeCount++;
                     break;
                 default:
                     CraftingKnownPhysicalRecipeCount++;
@@ -3030,6 +3045,28 @@ class CaelumPlayer : DoomPlayer
             catalogueWeaponId
         );
         return recipeIndex >= 0 && LearnCraftingRecipe(recipeIndex);
+    }
+
+    void LearnAllProcessingRecipes()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        bool learnedAny = false;
+        int processingStart = CaelumCraftingRules.GetProcessingRecipeStart();
+        for (int recipeIndex = processingStart;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (persistentState.LearnCraftingRecipe(recipeIndex))
+            {
+                learnedAny = true;
+            }
+        }
+        if (!learnedAny) { return; }
+        RefreshCraftingRecipeBookSummary();
+        PersistCharacterState();
+        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
     }
 
     void DebugSetAllCraftingRecipesKnown(bool known)
@@ -3090,6 +3127,11 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectedShieldType = CaelumConstants.SHIELD_TYPE_BUCKLER;
             CraftingSelectedEssenceWeaponType = CaelumConstants.WEAPON_TYPE_STAFF;
             CraftingSelectedEssenceType = CaelumConstants.ESSENCE_FIRE;
+            CraftingSelectedProcessingRecipe = -1;
+            CraftingProcessingBatchMultiplier = 1;
+            CraftingOutputMaterialType = 0;
+            CraftingOutputMaterialTier = 1;
+            CraftingOutputAmount = 0;
             CraftingBasicMaterialType = 0;
             CraftingBasicMaterialTier = 1;
             CraftingBasicRequired = 0;
@@ -3098,6 +3140,10 @@ class CaelumPlayer : DoomPlayer
             CraftingTierMaterialTier = 1;
             CraftingTierRequired = 0;
             CraftingTierOwned = 0;
+            CraftingSilverRequired = 0;
+            CraftingSilverOwned = 0;
+            CraftingGoldRequired = 0;
+            CraftingGoldOwned = 0;
             CraftingFinalWeight = 0.0;
             CraftingSelectedInfrastructureAvailable = false;
             CraftingMissingStationType =
@@ -3126,12 +3172,26 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
         );
+        CraftingProcessingBatchIndex = Clamp(
+            CraftingProcessingBatchIndex, 0,
+            CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT - 1
+        );
 
         CraftingSelectedRecipeKind =
             CaelumCraftingRules.GetUnifiedRecipeKind(
                 CraftingSelectionRecipe
             );
         CraftingSelectedWeapon = -1;
+        CraftingSelectedProcessingRecipe = -1;
+        CraftingProcessingBatchMultiplier =
+            CaelumCraftingRules.GetProcessingBatchMultiplier(
+                CraftingProcessingBatchIndex
+            );
+        CraftingOutputMaterialType = 0;
+        CraftingOutputMaterialTier = 1;
+        CraftingOutputAmount = 0;
+        CraftingSilverRequired = 0;
+        CraftingGoldRequired = 0;
 
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)
@@ -3294,6 +3354,60 @@ class CaelumPlayer : DoomPlayer
                 );
         }
 
+        else if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            CraftingSelectedProcessingRecipe =
+                CaelumCraftingRules.GetUnifiedProcessingRecipeIndex(
+                    CraftingSelectionRecipe
+                );
+            CraftingBasicMaterialType =
+                CaelumCraftingRules.GetProcessingInputOneMaterial(
+                    CraftingSelectionRecipe
+                );
+            CraftingBasicMaterialTier =
+                CaelumCraftingRules.GetProcessingInputOneTier(
+                    CraftingSelectionRecipe
+                );
+            CraftingBasicRequired =
+                CaelumCraftingRules.GetProcessingInputOneUnits(
+                    CraftingSelectionRecipe,
+                    CraftingProcessingBatchIndex
+                );
+            CraftingTierMaterialType =
+                CaelumCraftingRules.GetProcessingInputTwoMaterial(
+                    CraftingSelectionRecipe
+                );
+            CraftingTierMaterialTier =
+                CaelumCraftingRules.GetProcessingInputTwoTier(
+                    CraftingSelectionRecipe
+                );
+            CraftingTierRequired =
+                CaelumCraftingRules.GetProcessingInputTwoUnits(
+                    CraftingSelectionRecipe,
+                    CraftingProcessingBatchIndex
+                );
+            CraftingOutputMaterialType =
+                CaelumCraftingRules.GetProcessingOutputMaterial(
+                    CraftingSelectionRecipe
+                );
+            CraftingOutputMaterialTier =
+                CaelumCraftingRules.GetProcessingOutputTier(
+                    CraftingSelectionRecipe
+                );
+            CraftingOutputAmount =
+                CaelumCraftingRules.GetProcessingOutputUnits(
+                    CraftingSelectionRecipe,
+                    CraftingProcessingBatchIndex
+                );
+            CraftingFinalWeight = CraftingOutputAmount
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            CraftingMissingStationType =
+                CaelumCraftingRules.GetMissingProcessingStation(
+                    CraftingNetworkCapabilities,
+                    CraftingSelectionRecipe
+                );
+        }
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {
             CraftingSelectedAmuletType = CaelumCraftingRules.GetUnifiedAmuletType(CraftingSelectionRecipe);
@@ -3305,7 +3419,8 @@ class CaelumPlayer : DoomPlayer
             CraftingTierRequired = CaelumCraftingRules.GetRequiredAmuletTierUnits(CraftingFinalWeight);
             CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
         }
-        else
+        else if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
         {
             CraftingSelectedSealType = CaelumCraftingRules.GetUnifiedSealType(CraftingSelectionRecipe);
             CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
@@ -3317,20 +3432,41 @@ class CaelumPlayer : DoomPlayer
             CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
         }
 
-        // El material base siempre es estructural y permanece en tier 1.
-        CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
-            CraftingBasicMaterialType, 1
-        );
-        CraftingTierMaterialTier = CaelumMaterialRules.ResolveTier(
-            CraftingTierMaterialType, CraftingSelectionTier
-        );
+        if (CraftingSelectedRecipeKind
+            != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            // El material base siempre es estructural y permanece en tier 1.
+            CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
+                CraftingBasicMaterialType, 1
+            );
+            CraftingTierMaterialTier = CaelumMaterialRules.ResolveTier(
+                CraftingTierMaterialType, CraftingSelectionTier
+            );
+            CraftingSilverRequired =
+                CaelumCraftingRules.GetRequiredSilverDetailUnits(
+                    CraftingFinalWeight, CraftingSelectionTier
+                );
+            CraftingGoldRequired =
+                CaelumCraftingRules.GetRequiredGoldDetailUnits(
+                    CraftingFinalWeight, CraftingSelectionTier
+                );
+        }
 
         CraftingBasicOwned = CountCraftingMaterial(
             CraftingBasicMaterialType, CraftingBasicMaterialTier
         );
-        CraftingTierOwned = CountCraftingMaterial(
-            CraftingTierMaterialType, CraftingTierMaterialTier
-        );
+        CraftingTierOwned = CraftingTierRequired > 0
+            ? CountCraftingMaterial(
+                CraftingTierMaterialType, CraftingTierMaterialTier
+            ) : 0;
+        CraftingSilverOwned = CraftingSilverRequired > 0
+            ? CountCraftingMaterial(
+                CaelumConstants.MATERIAL_SILVER_INGOT, 1
+            ) : 0;
+        CraftingGoldOwned = CraftingGoldRequired > 0
+            ? CountCraftingMaterial(
+                CaelumConstants.MATERIAL_GOLD_INGOT, 1
+            ) : 0;
 
         CraftingSelectedInfrastructureAvailable =
             CraftingMissingStationType
@@ -3381,6 +3517,10 @@ class CaelumPlayer : DoomPlayer
             || CaelumCraftingRules.NetworkHasStation(
                 CraftingNetworkCapabilities,
                 CaelumConstants.CRAFTING_STATION_JEWELER_BENCH
+            )
+            || CaelumCraftingRules.NetworkHasStation(
+                CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_SEWING_MACHINE
             );
 
         if (!hasPrimaryStation)
@@ -3473,6 +3613,16 @@ class CaelumPlayer : DoomPlayer
 
     void CycleCraftingTier()
     {
+        RefreshCraftingPreview();
+        if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            CraftingProcessingBatchIndex = (CraftingProcessingBatchIndex + 1)
+                % CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT;
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+            RefreshCraftingPreview();
+            return;
+        }
         CraftingSelectionTier = CraftingSelectionTier % 3 + 1;
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
@@ -3482,7 +3632,8 @@ class CaelumPlayer : DoomPlayer
     {
         RefreshCraftingPreview();
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
         {
             CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
             return;
@@ -3497,6 +3648,7 @@ class CaelumPlayer : DoomPlayer
         int materialType, int materialTier, int requiredAmount
     )
     {
+        if (requiredAmount <= 0) { return true; }
         CaelumSpecialInventoryItem material = FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_MATERIAL,
             materialType,
@@ -3509,6 +3661,26 @@ class CaelumPlayer : DoomPlayer
         material.Amount -= requiredAmount;
         if (material.Amount <= 0) { material.Destroy(); }
         return true;
+    }
+
+    bool HasCraftingFinishMaterials()
+    {
+        return CraftingSilverOwned >= CraftingSilverRequired
+            && CraftingGoldOwned >= CraftingGoldRequired;
+    }
+
+    bool ConsumeCraftingFinishMaterials()
+    {
+        return ConsumeCraftingMaterial(
+                CaelumConstants.MATERIAL_SILVER_INGOT,
+                1,
+                CraftingSilverRequired
+            )
+            && ConsumeCraftingMaterial(
+                CaelumConstants.MATERIAL_GOLD_INGOT,
+                1,
+                CraftingGoldRequired
+            );
     }
 
     void SpawnSelectedCraftingMaterials()
@@ -3539,17 +3711,131 @@ class CaelumPlayer : DoomPlayer
             basicMaterial.args[1] = CraftingBasicMaterialTier;
             basicMaterial.Amount = CraftingBasicRequired;
         }
-        CaelumMaterialPickup tierMaterial = CaelumMaterialPickup(
-            Spawn("CaelumMaterialPickup", Pos + forward + side, NO_REPLACE)
-        );
-        if (tierMaterial != null)
+        if (CraftingTierRequired > 0)
         {
-            tierMaterial.args[0] = CraftingTierMaterialType;
-            tierMaterial.args[1] = CraftingTierMaterialTier;
-            tierMaterial.Amount = CraftingTierRequired;
+            CaelumMaterialPickup tierMaterial = CaelumMaterialPickup(
+                Spawn("CaelumMaterialPickup", Pos + forward + side, NO_REPLACE)
+            );
+            if (tierMaterial != null)
+            {
+                tierMaterial.args[0] = CraftingTierMaterialType;
+                tierMaterial.args[1] = CraftingTierMaterialTier;
+                tierMaterial.Amount = CraftingTierRequired;
+            }
+        }
+        if (CraftingSilverRequired > 0)
+        {
+            CaelumMaterialPickup silverMaterial = CaelumMaterialPickup(
+                Spawn(
+                    "CaelumMaterialPickup",
+                    Pos + forward - side * 2.0,
+                    NO_REPLACE
+                )
+            );
+            if (silverMaterial != null)
+            {
+                silverMaterial.args[0] =
+                    CaelumConstants.MATERIAL_SILVER_INGOT;
+                silverMaterial.args[1] = 1;
+                silverMaterial.Amount = CraftingSilverRequired;
+            }
+        }
+        if (CraftingGoldRequired > 0)
+        {
+            CaelumMaterialPickup goldMaterial = CaelumMaterialPickup(
+                Spawn(
+                    "CaelumMaterialPickup",
+                    Pos + forward + side * 2.0,
+                    NO_REPLACE
+                )
+            );
+            if (goldMaterial != null)
+            {
+                goldMaterial.args[0] = CaelumConstants.MATERIAL_GOLD_INGOT;
+                goldMaterial.args[1] = 1;
+                goldMaterial.Amount = CraftingGoldRequired;
+            }
         }
         LastCraftingAction =
             CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED;
+    }
+
+    void CraftSelectedProcessingRecipe()
+    {
+        RefreshCraftingPreview();
+        if (CraftingSelectedRecipeKind
+            != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
+            return;
+        }
+        if (!CraftingSelectedInfrastructureAvailable)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
+            return;
+        }
+        if (CraftingBasicOwned < CraftingBasicRequired
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            CraftingOutputMaterialType,
+            CraftingOutputMaterialTier
+        );
+        CaelumMaterialPickup detachedOutput;
+        if (existingOutput == null)
+        {
+            detachedOutput = CreateDetachedMaterialStack(
+                CraftingOutputMaterialType,
+                CraftingOutputMaterialTier,
+                CraftingOutputAmount
+            );
+            if (detachedOutput == null)
+            {
+                LastCraftingAction =
+                    CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+                return;
+            }
+        }
+
+        if (!ConsumeCraftingMaterial(
+                CraftingBasicMaterialType,
+                CraftingBasicMaterialTier,
+                CraftingBasicRequired
+            )
+            || !ConsumeCraftingMaterial(
+                CraftingTierMaterialType,
+                CraftingTierMaterialTier,
+                CraftingTierRequired
+            )
+            || !ConsumeCraftingFinishMaterials())
+        {
+            if (detachedOutput != null) { detachedOutput.Destroy(); }
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+            return;
+        }
+
+        if (existingOutput != null)
+        {
+            existingOutput.Amount += CraftingOutputAmount;
+        }
+        else
+        {
+            detachedOutput.AttachToOwner(self);
+        }
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_PROCESSED;
+        ApplyCharacterProfile();
+        PersistCharacterState();
+        RefreshEquipmentSelectionPreview();
+        RefreshCraftingPreview();
     }
 
     void CraftSelectedArmorRecipe()
@@ -3588,7 +3874,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired)
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
@@ -3614,7 +3901,8 @@ class CaelumPlayer : DoomPlayer
                 CraftingTierMaterialType,
                 CraftingTierMaterialTier,
                 CraftingTierRequired
-            ))
+            )
+            || !ConsumeCraftingFinishMaterials())
         {
             result.Destroy();
             LastCraftingAction =
@@ -3707,7 +3995,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired)
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
@@ -3734,7 +4023,8 @@ class CaelumPlayer : DoomPlayer
                 CraftingTierMaterialType,
                 CraftingTierMaterialTier,
                 CraftingTierRequired
-            ))
+            )
+            || !ConsumeCraftingFinishMaterials())
         {
             result.Destroy();
             LastCraftingAction =
@@ -3823,7 +4113,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired)
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
@@ -3849,7 +4140,8 @@ class CaelumPlayer : DoomPlayer
                 CraftingTierMaterialType,
                 CraftingTierMaterialTier,
                 CraftingTierRequired
-            ))
+            )
+            || !ConsumeCraftingFinishMaterials())
         {
             result.Destroy();
             LastCraftingAction =
@@ -3923,7 +4215,9 @@ class CaelumPlayer : DoomPlayer
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (MagicBoxUsedSlots >= MagicBoxMaximumSlots)
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL; return; }
-        if (CraftingBasicOwned < CraftingBasicRequired || CraftingTierOwned < CraftingTierRequired)
+        if (CraftingBasicOwned < CraftingBasicRequired
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
 
         CaelumEquipmentItem result;
@@ -3950,7 +4244,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (!ConsumeCraftingMaterial(CraftingBasicMaterialType,CraftingBasicMaterialTier,CraftingBasicRequired)
-            || !ConsumeCraftingMaterial(CraftingTierMaterialType,CraftingTierMaterialTier,CraftingTierRequired))
+            || !ConsumeCraftingMaterial(CraftingTierMaterialType,CraftingTierMaterialTier,CraftingTierRequired)
+            || !ConsumeCraftingFinishMaterials())
         { result.Destroy(); LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
 
         result.EquipmentKind=kind; result.ItemType=type; result.ArmorSlot=-1;
@@ -4005,6 +4300,12 @@ class CaelumPlayer : DoomPlayer
         { CraftSelectedJewelry(false); return; }
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
         { CraftSelectedJewelry(true); return; }
+        if (CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+        {
+            CraftSelectedProcessingRecipe();
+            return;
+        }
 
         if (CraftingSelectedWeapon < 0)
         {
@@ -4051,7 +4352,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired)
+            || CraftingTierOwned < CraftingTierRequired
+            || !HasCraftingFinishMaterials())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
@@ -4080,7 +4382,8 @@ class CaelumPlayer : DoomPlayer
                 CraftingTierMaterialType,
                 CraftingTierMaterialTier,
                 CraftingTierRequired
-            ))
+            )
+            || !ConsumeCraftingFinishMaterials())
         {
             result.Destroy();
             LastCraftingAction =
@@ -4241,6 +4544,10 @@ class CaelumPlayer : DoomPlayer
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
+            {
+                return 'CaelumProcessingManual';
+            }
             return 'CaelumSealedLetter';
         }
         if (specialType == CaelumConstants.MATERIAL_IRON_INGOT)
