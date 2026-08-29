@@ -225,8 +225,28 @@ class CaelumEquipmentItem : Inventory
         {
             return false;
         }
+        // Super.TryPickup puede adjuntar una copia y destruir el actor del
+        // mundo. Conservamos la identidad antes de entregarlo para que el
+        // jugador pueda activar la configuración del arma recién recogida.
+        int pickedKind = EquipmentKind;
+        int pickedType = ItemType;
+        int pickedTier = Tier;
+        int pickedSize = EquipmentSize;
+        int pickedEssence = EssenceType;
+        bool pickedIntoMagicBox = InMagicBox;
+
         bool pickedUp = Super.TryPickup(toucher);
-        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        if (pickedUp)
+        {
+            caelumPlayer.OnNativeEquipmentPickedUp(
+                pickedKind,
+                pickedType,
+                pickedTier,
+                pickedSize,
+                pickedEssence,
+                pickedIntoMagicBox
+            );
+        }
         return pickedUp;
     }
 }

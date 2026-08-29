@@ -1337,15 +1337,17 @@ class CaelumDebugOverlay : EventHandler
         }
         else if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
         {
-            selection = String.Format("%s T%d",
-                StringTable.Localize(GetAmuletTypeKey(localPlayer.EquipmentSelectionAmuletType), false),
-                localPlayer.EquipmentSelectionTier);
+            selection = CaelumDisplayNames.FormatAmuletName(
+                localPlayer.EquipmentSelectionAmuletType,
+                localPlayer.EquipmentSelectionTier
+            );
         }
         else if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
         {
-            selection = String.Format("%s T%d",
-                StringTable.Localize(GetSealTypeKey(localPlayer.EquipmentSelectionSealType), false),
-                localPlayer.EquipmentSelectionTier);
+            selection = CaelumDisplayNames.FormatSealName(
+                localPlayer.EquipmentSelectionSealType,
+                localPlayer.EquipmentSelectionTier
+            );
         }
         else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
@@ -1388,14 +1390,12 @@ class CaelumDebugOverlay : EventHandler
                     == CaelumConstants.WEAPON_TYPE_STATUETTE)
             {
                 selection = String.Format(
-                    "%s / %s T%d %s / %s",
+                    "%s / %s %s / %s",
                     StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
-                    StringTable.Localize(
-                        GetWeaponTypeKey(
-                            localPlayer.EquipmentSelectionWeaponType
-                        ), false
+                    CaelumDisplayNames.FormatWeaponName(
+                        localPlayer.EquipmentSelectionWeaponType,
+                        localPlayer.EquipmentSelectionTier
                     ),
-                    localPlayer.EquipmentSelectionTier,
                     StringTable.Localize(
                         GetEquipmentSizeKey(
                             localPlayer.EquipmentSelectionSize
@@ -1410,14 +1410,12 @@ class CaelumDebugOverlay : EventHandler
             else
             {
                 selection = String.Format(
-                    "%s / %s T%d %s",
+                    "%s / %s %s",
                     StringTable.Localize("CA_WEAPON_HAND_MAIN", false),
-                    StringTable.Localize(
-                        GetWeaponTypeKey(
-                            localPlayer.EquipmentSelectionWeaponType
-                        ), false
+                    CaelumDisplayNames.FormatWeaponName(
+                        localPlayer.EquipmentSelectionWeaponType,
+                        localPlayer.EquipmentSelectionTier
                     ),
-                    localPlayer.EquipmentSelectionTier,
                     StringTable.Localize(
                         GetEquipmentSizeKey(
                             localPlayer.EquipmentSelectionSize
@@ -1430,12 +1428,11 @@ class CaelumDebugOverlay : EventHandler
             == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             selection = String.Format(
-                "%s T%d %s",
-                StringTable.Localize(
-                    GetShieldTypeKey(localPlayer.EquipmentSelectionShieldType),
-                    false
+                "%s %s",
+                CaelumDisplayNames.FormatShieldName(
+                    localPlayer.EquipmentSelectionShieldType,
+                    localPlayer.EquipmentSelectionTier
                 ),
-                localPlayer.EquipmentSelectionTier,
                 StringTable.Localize(
                     GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
                 )
@@ -1444,16 +1441,15 @@ class CaelumDebugOverlay : EventHandler
         else
         {
             selection = String.Format(
-                "%s / %s T%d %s",
+                "%s / %s %s",
                 StringTable.Localize(
                     GetArmorSlotKey(localPlayer.EquipmentSelectionSlot),
                     false
                 ),
-                StringTable.Localize(
-                    GetArmorTypeKey(localPlayer.EquipmentSelectionArmorType),
-                    false
+                CaelumDisplayNames.FormatArmorTypeName(
+                    localPlayer.EquipmentSelectionArmorType,
+                    localPlayer.EquipmentSelectionTier
                 ),
-                localPlayer.EquipmentSelectionTier,
                 StringTable.Localize(
                     GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize), false
                 )
@@ -1696,8 +1692,9 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {
-            String armorTypeName = StringTable.Localize(
-                GetArmorTypeKey(localPlayer.CraftingSelectedArmorType), false
+            String armorTypeName = CaelumDisplayNames.FormatArmorTypeName(
+                localPlayer.CraftingSelectedArmorType,
+                localPlayer.CraftingSelectionTier
             );
             String armorSlotName = StringTable.Localize(
                 GetArmorSlotKey(localPlayer.CraftingSelectedArmorSlot), false
@@ -1709,19 +1706,17 @@ class CaelumDebugOverlay : EventHandler
         else if (localPlayer.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
         {
-            recipeName = StringTable.Localize(
-                GetShieldTypeKey(localPlayer.CraftingSelectedShieldType),
-                false
+            recipeName = CaelumDisplayNames.FormatShieldName(
+                localPlayer.CraftingSelectedShieldType,
+                localPlayer.CraftingSelectionTier
             );
         }
         else if (localPlayer.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
         {
-            String magicWeaponName = StringTable.Localize(
-                GetWeaponTypeKey(
-                    localPlayer.CraftingSelectedEssenceWeaponType
-                ),
-                false
+            String magicWeaponName = CaelumDisplayNames.FormatWeaponName(
+                localPlayer.CraftingSelectedEssenceWeaponType,
+                localPlayer.CraftingSelectionTier
             );
             String essenceName = StringTable.Localize(
                 GetEssenceTypeKey(
@@ -1734,13 +1729,20 @@ class CaelumDebugOverlay : EventHandler
             );
         }
         else if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
-            recipeName=StringTable.Localize(GetAmuletTypeKey(localPlayer.CraftingSelectedAmuletType),false);
+            recipeName = CaelumDisplayNames.FormatAmuletName(
+                localPlayer.CraftingSelectedAmuletType,
+                localPlayer.CraftingSelectionTier
+            );
         else if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
-            recipeName=StringTable.Localize(GetSealTypeKey(localPlayer.CraftingSelectedSealType),false);
+            recipeName = CaelumDisplayNames.FormatSealName(
+                localPlayer.CraftingSelectedSealType,
+                localPlayer.CraftingSelectionTier
+            );
         else
         {
-            recipeName = StringTable.Localize(
-                GetCraftingWeaponKey(localPlayer.CraftingSelectedWeapon), false
+            recipeName = CaelumDisplayNames.FormatCatalogueWeaponName(
+                localPlayer.CraftingSelectedWeapon,
+                localPlayer.CraftingSelectionTier
             );
         }
         if (!localPlayer.CraftingSelectedRecipeKnown)
@@ -1786,9 +1788,8 @@ class CaelumDebugOverlay : EventHandler
         );
         String selection = localPlayer.CraftingSelectedRecipeKnown
             ? String.Format(
-                "%s | T%d %s | %.3f",
+                "%s | %s | %.3f",
                 recipeName,
-                localPlayer.CraftingSelectionTier,
                 sizeName,
                 localPlayer.CraftingFinalWeight
             )
@@ -2710,14 +2711,20 @@ class CaelumDebugOverlay : EventHandler
             CaelumArmorModel compactArmor = localPlayer.ArmorModel;
             if (compactArmor == null) { return; }
             int compactSlot = compactArmor.SelectedSlot;
+            String compactArmorName = compactArmor.ArmorType[compactSlot]
+                    == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING
+                ? StringTable.Localize(GetArmorDisplayKey(
+                    compactSlot, compactArmor.ArmorType[compactSlot]
+                ), false)
+                : CaelumDisplayNames.FormatArmorTypeName(
+                    compactArmor.ArmorType[compactSlot],
+                    compactArmor.Tier[compactSlot]
+                );
             String armorLine = String.Format(
-                "%s: %s / %s T%d %s",
+                "%s: %s / %s %s",
                 StringTable.Localize("CA_RESOURCE_ARMOR", false),
                 StringTable.Localize(GetArmorSlotKey(compactSlot), false),
-                StringTable.Localize(GetArmorDisplayKey(
-                    compactSlot, compactArmor.ArmorType[compactSlot]
-                ), false),
-                compactArmor.Tier[compactSlot],
+                compactArmorName,
                 StringTable.Localize(
                     GetEquipmentSizeKey(compactArmor.Size[compactSlot]), false
                 )
@@ -2802,10 +2809,11 @@ class CaelumDebugOverlay : EventHandler
             if (shield != null)
             {
                 String shieldLine = String.Format(
-                    "%s: %s T%d %s   %s: %s   %s: %d/%d",
+                    "%s: %s %s   %s: %s   %s: %d/%d",
                     StringTable.Localize("CA_RESOURCE_SHIELD", false),
-                    StringTable.Localize(GetShieldTypeKey(shield.ShieldType), false),
-                    shield.Tier,
+                    CaelumDisplayNames.FormatShieldName(
+                        shield.ShieldType, shield.Tier
+                    ),
                     StringTable.Localize(GetEquipmentSizeKey(shield.Size), false),
                     StringTable.Localize("CA_RESOURCE_SHIELD_BLOCKING", false),
                     StringTable.Localize(localPlayer.DebugShieldBlocking

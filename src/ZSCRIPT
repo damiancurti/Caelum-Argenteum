@@ -5,6 +5,7 @@ version "4.14"
 // Keeping each system in a separate file will make the project easier to learn,
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
+#include "caelum/ui/CaelumDisplayNames.zs"
 #include "caelum/actors/CaelumMassAIScheduler.zs"
 #include "caelum/character/CaelumCharacterProfile.zs"
 #include "caelum/character/CaelumCharacterAllocation.zs"

@@ -279,11 +279,22 @@ MAP01 tutorial choice, but the NPC tasks, dialogue and reward handoff remain
 authored content. This increment also upgrades bitmap fonts to physical 2x and
 extends the existing roof control across the twelve eastern stair sectors.
 
+V4.29.0z turns the native front door into a character-first flow: New Character
+starts the full-screen creation wizard in MAP01, Load/Save Character reuse the
+native save lineage, and one neutral Caelum skill removes Doom's obsolete
+difficulty page. Compatible weapon pickups auto-equip. Numeric equipment tiers
+remain internal but all player-facing names use base, silver and gold finishes.
+The eastern stair pair receives its three U-shaped enclosing walls. The next
+raw-material crafting layer is intentionally blocked until original silver and
+gold raw/ingot sprites are supplied; every other requested raw sprite is ready.
+
 - Complete the permanent Journal interaction layer for inventory and the shared station interface.
 - Manually validate the preserved higher-tier station-network requirements.
 - **Implemented in 4.29.0x; manual validation pending:** unified family filters.
-- **Implemented through 4.29.0y; save/load validation pending:** permanent recipe knowledge, exact 4.29.0x migration and zero-recipes new profiles.
+- **Implemented through 4.29.0z; save/load validation pending:** permanent recipe knowledge, exact 4.29.0x migration and zero-recipes new profiles.
 - **Implemented in 4.29.0y; manual validation pending:** the complete four-shield crafting transaction and Forge/Anvil requirements.
+- **Implemented in 4.29.0z; manual validation pending:** character-first main menu, neutral single skill, weapon auto-equip, finish names and the eastern stair enclosure.
+- Supply original silver and gold raw/ingot sprites, then implement raw-resource conversion into the existing item-material components. Decide whether bronze is consumed as copper+tin or exists as its own inventory intermediate before adding a bronze sprite.
 - Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
 

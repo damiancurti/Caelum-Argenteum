@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.29.0z — Character-first menu, item finishes and eastern stair enclosure
+
+- Automatically equip and activate compatible Caelum weapons collected into
+  personal inventory. Weapons routed to the Magic Box or rejected by size are
+  not forced onto the player.
+- Replaced client-facing T1/T2/T3 equipment labels with localized base,
+  silver/plateado and gold/dorado names across the HUD, Journal, inventory,
+  crafting and active Seal feedback. Internal tier values and save data remain
+  unchanged.
+- Renamed processed crafting components as item materials while keeping raw
+  wood, ingots, coal and gems distinct. Audited the requested raw sprites:
+  silver and gold remain missing, so the conversion recipe layer is deferred.
+- Replaced the patch-based Doom main menu labels with `CaelumText` entries for
+  New, Load and Save Character, Options and Quit. Replaced Doom's five skills
+  with one neutral Caelum skill so the difficulty screen is skipped.
+- Documented the engine boundary that prevents a stock PK3 from replacing the
+  hardcoded native OptionMenu font used by Controls and other settings pages.
+- Added three solid 8-MU walls following the U-shaped eastern stair guide while
+  preserving the accepted roof, all twelve stair treads and central access.
+- Parsed MAPINFO, MENUDEF and the complete ZScript tree successfully with the
+  official GZDoom 4.14.2 executable. Loaded MAP01 and passed a focused runtime
+  pickup test for a physical weapon, an essence weapon and an incompatible
+  size that must not replace the active weapon.
+
 ## 4.29.0y — Shield recipes, empty recipe book and high-resolution type
 
 - Appended four shield recipes without renumbering any of the 61 existing

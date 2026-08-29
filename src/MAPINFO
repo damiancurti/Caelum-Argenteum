@@ -18,6 +18,19 @@ GameInfo
     EventHandlers = "CaelumMassAIScheduler", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 }
 
+// Caelum administra su progresión dentro del personaje. Las cinco dificultades
+// heredadas de Doom alterarían daño, munición, población y velocidad de los
+// enemigos sin respetar esas reglas, por lo que se sustituyen por un único modo
+// neutral. Al existir una sola opción GZDoom omite la pantalla de dificultad.
+clearskills
+skill Caelum
+{
+    Name = "$CA_SKILL_CAELUM"
+    Key = "c"
+    DefaultSkill
+    SpawnFilter = Normal
+}
+
 // Los mapas permanecen separados durante la consolidación: MAP01 valida
 // arquitectura y MAP02 valida actores, IA, colisiones y efectos de área.
 map MAP01 "Mansión — prueba arquitectónica"

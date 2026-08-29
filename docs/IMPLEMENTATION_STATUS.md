@@ -1,5 +1,50 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Character-first menu, equipment finishes and eastern stair walls 4.29.0z
+
+**Implemented and exercised in GZDoom 4.14.2; focused manual visual/save validation pending**
+
+Successful Caelum weapon pickups now select, equip and activate the collected
+configuration automatically when its size matches the character and the item
+remains in personal inventory. Overweight pickups routed to the Magic Box and
+incompatible sizes retain their normal storage behavior instead of being
+forced onto the player.
+
+The focused runtime test collected a silver sword, then a silver Water staff:
+both became the active native selector and the staff ended on
+`CaelumWaterStaffT2Weapon`. A deliberately incompatible crossbow was collected
+without replacing that active staff.
+
+The numeric equipment grade remains stable in saves and formulas but is no
+longer presented to the player as T1/T2/T3. Weapons, essence implements,
+shields, armor, amulets and seals use their base name, then localized silver
+and gold finishes. Crafting and inventory navigation call the same finish a
+finish/acabado. Processed components are labelled as item materials, while
+wood, iron/copper/tin ingots, coal and raw gems keep their raw-resource names.
+
+The main list menu is now text-based and uses `CaelumText` for New Character,
+Load Character, Save Character, Options and Quit. Doom's five skill presets
+are cleared and replaced by one neutral Caelum mode, so GZDoom starts MAP01
+without showing a difficulty page. New Character still creates the player in
+MAP01 and immediately opens the full-screen Caelum creation wizard; Load
+Character uses native save loading. A stock PK3 cannot replace the hardcoded
+`NewSmallFont` used by native OptionMenu rows, so Controls/Options keep the
+engine font until those menus are reimplemented or a project executable is
+maintained.
+
+MAP01 adds an 8-MU-thick U around the eastern stair pair at x=1306..1697 and
+y=-391..391. The three wall volumes use the existing tag-511 3D wall control
+from z=128 to 256, leaving the twelve treads, continuous roof and central access
+unchanged. Structure is 544 vertices, 730 linedefs, 1,430 sidedefs, 159 sectors
+and 220 Things; SHA-256 is
+`700a1f2c5bd7e99b2d36f5e3a033809301e58022836ee34880dd6f94f90dfae4`.
+
+The raw sprite audit found ready assets for wood, iron/copper/tin ingots, coal
+and raw ruby, sapphire, emerald, topaz and opal. Original raw/ingot sprites for
+silver and gold are still required. A bronze sprite is required only if bronze
+becomes a persistent intermediate item rather than consuming copper and tin
+directly. No raw-resource conversion recipes are introduced in this patch.
+
 ## Shield recipes, empty new-profile book and stair cover 4.29.0y
 
 **Implemented and structurally validated; focused runtime/save validation pending**

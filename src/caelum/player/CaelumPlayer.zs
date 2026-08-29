@@ -1255,6 +1255,64 @@ class CaelumPlayer : DoomPlayer
         PersistCharacterState();
     }
 
+    // Los pickups de armas que permanecen en el inventario personal se
+    // incorporan al equipamiento y pasan a ser el arma activa. Las piezas que
+    // desbordan a la Caja Mágica y los talles incompatibles conservan las
+    // reglas normales de almacenamiento y no se fuerzan sobre el personaje.
+    void OnNativeEquipmentPickedUp(
+        int pickedKind,
+        int pickedType,
+        int pickedTier,
+        int pickedSize,
+        int pickedEssence,
+        bool pickedIntoMagicBox
+    )
+    {
+        ApplyCharacterProfile();
+        RefreshEquipmentSelectionPreview();
+
+        if (pickedKind != CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || pickedIntoMagicBox
+            || CharacterProfile == null
+            || !CaelumEquipmentRules.IsSizeCompatible(
+                pickedSize,
+                CharacterProfile.GetSizeTier()
+            ))
+        {
+            if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+            PersistCharacterState();
+            return;
+        }
+
+        EquipmentSelectionKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        EquipmentSelectionWeaponType = Clamp(
+            pickedType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
+        );
+        EquipmentSelectionTier = Clamp(pickedTier, 1, 3);
+        EquipmentSelectionSize = Clamp(
+            pickedSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
+        );
+        EquipmentSelectionWeaponEssenceType = Clamp(
+            pickedEssence, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
+        );
+        RefreshEquipmentSelectionPreview();
+
+        CaelumEquipmentItem pickedItem = GetSelectedNativeEquipmentItem();
+        if (pickedItem != null && !pickedItem.InMagicBox)
+        {
+            EquipSelectedNativeEquipment();
+            SelectNativeWeaponConfiguration(
+                pickedType, pickedEssence, pickedTier
+            );
+        }
+        else
+        {
+            PersistCharacterState();
+        }
+
+        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+    }
+
     void MigrateLegacyEquipmentToNativeInventory(
         CaelumPersistentCharacterState persistentState
     )
@@ -1488,6 +1546,100 @@ class CaelumPlayer : DoomPlayer
         else if (!shouldExist)
         {
             TakeInventory(selectorClass, 1);
+        }
+    }
+
+    Name GetNativeWeaponSelectorClass(
+        int weaponType, int essenceType, int tier
+    )
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_DAGGER:
+                return 'CaelumDaggerSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_HATCHET:
+                return 'CaelumHatchetSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_MACHETE:
+                return 'CaelumMacheteSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_JAVELIN:
+                return 'CaelumJavelinSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_SWORD:
+                return 'CaelumSwordSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_AXE:
+                return 'CaelumAxeSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_FLAIL:
+                return 'CaelumFlailSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_SPEAR:
+                return 'CaelumSpearSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD:
+                return 'CaelumGreatswordSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE:
+                return 'CaelumWarAxeSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_HALBERD:
+                return 'CaelumHalberdSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
+                return 'CaelumGiantGauntletsSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW:
+                return 'CaelumStandardBowSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_CARBINE:
+                return 'CaelumCarbineSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_LONGBOW:
+                return 'CaelumLongbowSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW:
+                return 'CaelumCrossbowSelectorWeapon';
+        }
+
+        String essenceName;
+        switch (Clamp(essenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1))
+        {
+            case CaelumConstants.ESSENCE_WATER: essenceName = "Water"; break;
+            case CaelumConstants.ESSENCE_EARTH: essenceName = "Earth"; break;
+            case CaelumConstants.ESSENCE_WIND: essenceName = "Air"; break;
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                essenceName = "Quintessence";
+                break;
+            default: essenceName = "Fire"; break;
+        }
+
+        String implementName;
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_STAFF:
+                implementName = "Staff";
+                break;
+            case CaelumConstants.WEAPON_TYPE_BELL:
+                implementName = "Bell";
+                break;
+            case CaelumConstants.WEAPON_TYPE_BOOK:
+                implementName = "Book";
+                break;
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                implementName = "Statuette";
+                break;
+            default: return '';
+        }
+
+        return Name(String.Format(
+            "Caelum%s%sT%dWeapon",
+            essenceName,
+            implementName,
+            Clamp(tier, 1, 3)
+        ));
+    }
+
+    void SelectNativeWeaponConfiguration(
+        int weaponType, int essenceType, int tier
+    )
+    {
+        if (player == null) { return; }
+        Name selectorClass = GetNativeWeaponSelectorClass(
+            weaponType, essenceType, tier
+        );
+        if (selectorClass == '') { return; }
+        Weapon selector = Weapon(FindInventory(selectorClass));
+        if (selector != null && player.ReadyWeapon != selector)
+        {
+            player.PendingWeapon = selector;
         }
     }
 

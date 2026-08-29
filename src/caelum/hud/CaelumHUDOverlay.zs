@@ -813,12 +813,12 @@ class CaelumHUDOverlay : EventHandler
             localPlayer.HUDCarryCapacity,
             loadPercent,
             StringTable.Localize(loadStateKey, false));
-        String activeWeaponName = StringTable.Localize(
-            localPlayer.HUDHasActiveWeapon
-                ? GetActiveWeaponNameKey(localPlayer.HUDActiveWeaponType)
-                : "CA_HUD_UNARMED",
-            false
-        );
+        String activeWeaponName = localPlayer.HUDHasActiveWeapon
+            ? CaelumDisplayNames.FormatWeaponName(
+                localPlayer.HUDActiveWeaponType,
+                localPlayer.HUDActiveWeaponTier
+            )
+            : StringTable.Localize("CA_HUD_UNARMED", false);
         String activeWeaponLine;
         if (localPlayer.HUDHasActiveWeapon)
         {
@@ -834,13 +834,12 @@ class CaelumHUDOverlay : EventHandler
             if (magicalWeapon)
             {
                 activeWeaponLine = String.Format(
-                    "%s: %s | %s | T%d | %s",
+                    "%s: %s | %s | %s",
                     StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
                     activeWeaponName,
                     StringTable.Localize(GetEssenceTypeKey(
                         localPlayer.HUDActiveWeaponEssenceType
                     ), false),
-                    localPlayer.HUDActiveWeaponTier,
                     StringTable.Localize(
                         GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
                         false
@@ -850,10 +849,9 @@ class CaelumHUDOverlay : EventHandler
             else
             {
                 activeWeaponLine = String.Format(
-                    "%s: %s | T%d | %s",
+                    "%s: %s | %s",
                     StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
                     activeWeaponName,
-                    localPlayer.HUDActiveWeaponTier,
                     StringTable.Localize(
                         GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
                         false
@@ -890,18 +888,18 @@ class CaelumHUDOverlay : EventHandler
 
         if (localPlayer.HUDHasEquippedSeal)
         {
-            String sealName = StringTable.Localize(
-                GetSealTypeKey(localPlayer.HUDEquippedSealType), false
+            String sealName = CaelumDisplayNames.FormatSealName(
+                localPlayer.HUDEquippedSealType,
+                localPlayer.HUDEquippedSealTier
             );
             String channelLine;
             int channelColor = Font.CR_WHITE;
             if (localPlayer.CombatChannelModeActive)
             {
                 channelLine = String.Format(
-                    "%s: %s | T%d | %s: %d",
+                    "%s: %s | %s: %d",
                     StringTable.Localize("CA_HUD_SEAL_CHANNEL_ACTIVE", false),
                     sealName,
-                    localPlayer.HUDEquippedSealTier,
                     StringTable.Localize("CA_HUD_SEAL_TARGETS", false),
                     localPlayer.HUDChannelAffectedCount
                 );
@@ -921,10 +919,9 @@ class CaelumHUDOverlay : EventHandler
             else
             {
                 channelLine = String.Format(
-                    "%s: %s | T%d | %s",
+                    "%s: %s | %s",
                     StringTable.Localize("CA_HUD_EQUIPPED_SEAL", false),
                     sealName,
-                    localPlayer.HUDEquippedSealTier,
                     StringTable.Localize("CA_HUD_SEAL_READY", false)
                 );
             }

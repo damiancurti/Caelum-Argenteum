@@ -1,6 +1,7 @@
-// Mantener siempre el MainMenu nativo. Una declaración parcial de MainMenu
-// reemplazaría sus TextItem y dejaría únicamente el logo visible.
-// El recurso M_DOOM proporciona el logo de Caelum sin alterar su lógica.
+// La portada emplea texto real con la tipografía de Caelum. Esto evita los
+// parches rasterizados de Doom y convierte el flujo en creación/carga de
+// personaje. Con una sola clase, episodio y dificultad, "Nuevo personaje"
+// inicia MAP01 directamente y el asistente de creación toma el control.
 DefaultListMenu
 {
     Font "CaelumText", "Gold"
@@ -8,7 +9,42 @@ DefaultListMenu
     Linespacing 16
 }
 
-// GZDoom 4.14.2 no admite la propiedad Font en OptionMenuSettings.
+ListMenu "MainMenu"
+{
+    StaticPatch 94, 2, "M_DOOM"
+    Position 97, 72
+    Font "CaelumText", "Gold"
+    Linespacing 16
+
+    TextItem "$CA_MENU_NEW_CHARACTER", "n", "PlayerclassMenu"
+    TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
+    TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
+    TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+    TextItem "$MNU_QUITGAME", "s", "QuitMenu"
+}
+
+// Estos menús deben conservar las clases nativas de carga y guardado.
+ListMenu "LoadGameMenu"
+{
+    NetgameMessage "$LOADNET"
+    CaptionItem "$CA_MENU_LOAD_CHARACTER"
+    Position 80, 40
+    Class "LoadMenu"
+    Size Clean
+}
+
+ListMenu "SaveGameMenu"
+{
+    CaptionItem "$CA_MENU_SAVE_CHARACTER"
+    Position 80, 40
+    Class "SaveMenu"
+    Size Clean
+}
+
+// GZDoom 4.14.2 fija NewSmallFont desde gzdoom.pk3 para los renglones de
+// OptionMenu (incluido Personalizar controles). Un PK3 puede ajustar el
+// espaciado, pero no reemplazar esa fuente sin reimplementar dichos menús o
+// usar un ejecutable propio.
 OptionMenuSettings
 {
     Linespacing 12

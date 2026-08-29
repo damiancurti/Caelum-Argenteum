@@ -230,12 +230,12 @@ class CaelumJournalOverlay : EventHandler
             );
         }
 
-        String weaponName = StringTable.Localize(
-            localPlayer.HUDHasActiveWeapon
-                ? GetWeaponNameKey(localPlayer.HUDActiveWeaponType)
-                : "CA_HUD_UNARMED",
-            false
-        );
+        String weaponName = localPlayer.HUDHasActiveWeapon
+            ? CaelumDisplayNames.FormatWeaponName(
+                localPlayer.HUDActiveWeaponType,
+                localPlayer.HUDActiveWeaponTier
+            )
+            : StringTable.Localize("CA_HUD_UNARMED", false);
         DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 174.0,
             String.Format("%s: %s",
                 StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
