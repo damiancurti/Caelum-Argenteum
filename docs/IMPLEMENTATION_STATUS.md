@@ -1,5 +1,45 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Persistent recipe book and unified filters 4.29.0x
+
+**Implemented and structurally validated; manual runtime/save validation pending**
+
+The Workbench remains the only authoritative catalogue and transaction. Its 61
+recipes are now browsed through six views: All, Physical Weapons, Armor, Essence
+Weapons, Amulets and Seals. `Tab`/controller Y changes the family; Left/Right
+cycles only entries in the active family. Tier, size, materials, box routing and
+cumulative station requirements retain their existing code paths.
+
+`CaelumPersistentCharacterState` stores one knowledge flag per unified recipe
+and a recipe-book schema version. Schema-0 development profiles initialize as
+version 1 with all recipes known, preserving the access current saves and tests
+had before recipe knowledge existed. An unknown entry appears without its name, weight or components and is
+rejected before either material spawning or the crafting transaction can run.
+`CaelumPlayer.LearnCraftingRecipe(index)` is the shared authoritative entry point
+for later sheets, merchants, NPC dialogue and discoveries.
+
+The Journal Crafts page is no longer provisional: it reports known/total counts
+for all 61 recipes and for the 16/16/20/4/5 family split. It remains read-only;
+crafting still requires Use on a valid connected station. Runtime commands for
+this isolated test are:
+
+- `ca_debug_crafting_forget_all_recipes`
+- `ca_debug_crafting_learn_selected_recipe`
+- `ca_debug_crafting_learn_all_recipes`
+
+This increment changes no recipe formula, balance value, map, AI, perception or
+combat behavior. Final starting recipes are deliberately unresolved rather than
+inferred from class or profession.
+
+## Accepted MAP01 corrective follow-up 4.29.0w
+
+**Implemented and manually accepted**
+
+The author confirmed that the eight actual stair-side gaps are covered. Rear
+landings remain under the continuous roof and the upper western canopy is
+supported by two solid 8×8-MU columns that do not narrow the gate opening. This
+acceptance closes the focused MAP01 correction and does not reopen MAP02 tests.
+
 ## Final endurance acceptance and MAP01 correction 4.29.0v
 
 **Implemented and structurally validated; one focused MAP01 manual retest remains**

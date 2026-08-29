@@ -275,6 +275,53 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
     }
 
+    ui void DrawCraftsPage(CaelumPlayer localPlayer)
+    {
+        DrawCenteredText(
+            TextFont,
+            Font.CR_GOLD,
+            320.0,
+            136.0,
+            String.Format(
+                "%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_RECIPE_BOOK", false),
+                localPlayer.CraftingKnownRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            )
+        );
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 176.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS", false
+                ),
+                localPlayer.CraftingKnownPhysicalRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 176.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_ARMOR", false),
+                localPlayer.CraftingKnownArmorRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 204.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_ESSENCE_WEAPONS", false
+                ),
+                localPlayer.CraftingKnownEssenceRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 204.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_AMULETS", false),
+                localPlayer.CraftingKnownAmuletRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 232.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_SEALS", false),
+                localPlayer.CraftingKnownSealRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_SEAL_RECIPE_COUNT));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 276.0,
+            StringTable.Localize("CA_JOURNAL_CRAFTS_STATION_HELP", false));
+    }
+
     ui void DrawPlannedPage(String key)
     {
         DrawCenteredText(TextFont, Font.CR_WHITE, 320.0, 174.0,
@@ -354,7 +401,7 @@ class CaelumJournalOverlay : EventHandler
         if (currentPage == 0) { DrawInventoryPage(localPlayer); }
         else if (currentPage == 1) { DrawCharacterPage(localPlayer); }
         else if (currentPage == 2) { DrawPlannedPage("CA_JOURNAL_WORLD_PENDING"); }
-        else if (currentPage == 3) { DrawPlannedPage("CA_JOURNAL_CRAFTS_PENDING"); }
+        else if (currentPage == 3) { DrawCraftsPage(localPlayer); }
         else if (currentPage == 4) { DrawPlannedPage("CA_JOURNAL_QUESTS_PENDING"); }
         else { DrawPlannedPage("CA_JOURNAL_REPUTATION_PENDING"); }
 

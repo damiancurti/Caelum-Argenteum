@@ -64,6 +64,13 @@ class CaelumPersistentCharacterState : Inventory
     bool NativeEquipmentMigrationComplete;
     bool WeaponEssenceInitialized;
 
+    // El recetario pertenece al perfil y viaja con el mismo Inventory entre
+    // mapas y guardados. La versión permite distinguir la migración 4.29.0x de
+    // la futura política de recetas iniciales para personajes nuevos.
+    int RecipeBookVersion;
+    // 61 coincide con CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT en 4.29.0x.
+    bool KnownCraftingRecipe[61];
+
     int StoredHealth;
     double StoredAnima;
     double StoredAir;
@@ -200,6 +207,73 @@ class CaelumPersistentCharacterState : Inventory
         EnsureEquipmentStorageInitialized();
         EnsureWeaponLoadoutInitialized();
         EnsureWeaponEssenceInitialized();
+    }
+
+    void EnsureRecipeBookInitialized()
+    {
+        if (RecipeBookVersion >= CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION)
+        {
+            return;
+        }
+
+        // Compatibilidad de desarrollo: antes de 4.29.0x el catálogo completo
+        // era visible y fabricable. Todo perfil del esquema 0 conserva ese
+        // acceso hasta que el autor defina el repertorio inicial definitivo.
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            KnownCraftingRecipe[recipeIndex] = true;
+        }
+        RecipeBookVersion = CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION;
+    }
+
+    bool KnowsCraftingRecipe(int recipeIndex)
+    {
+        EnsureRecipeBookInitialized();
+        if (recipeIndex < 0
+            || recipeIndex >= CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT)
+        {
+            return false;
+        }
+        return KnownCraftingRecipe[recipeIndex];
+    }
+
+    bool LearnCraftingRecipe(int recipeIndex)
+    {
+        EnsureRecipeBookInitialized();
+        if (recipeIndex < 0
+            || recipeIndex >= CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            || KnownCraftingRecipe[recipeIndex])
+        {
+            return false;
+        }
+        KnownCraftingRecipe[recipeIndex] = true;
+        return true;
+    }
+
+    void SetAllCraftingRecipesKnown(bool known)
+    {
+        EnsureRecipeBookInitialized();
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            KnownCraftingRecipe[recipeIndex] = known;
+        }
+    }
+
+    int CountKnownCraftingRecipes()
+    {
+        EnsureRecipeBookInitialized();
+        int knownCount = 0;
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (KnownCraftingRecipe[recipeIndex]) { knownCount++; }
+        }
+        return knownCount;
     }
 
     // Las partidas 4.7.2 trataban todo objeto desequipado como contenido de la

@@ -20,9 +20,8 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP:
                 return CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT;
             case CaelumConstants.CRAFTING_STATION_WORKBENCH:
-                // El Banco de Trabajo es ahora el menú unificado. Por el momento
-                // reúne las quince recetas físicas ya jugables; las demás ramas
-                // se incorporarán cuando sus recetas estén definidas.
+                // El Banco de Trabajo es el catálogo unificado de las cinco
+                // familias. Los filtros nunca crean transacciones paralelas.
                 return CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             default:
                 return 0;
@@ -201,6 +200,39 @@ class CaelumCraftingRules : Object
         if (resolved < amuletStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if (resolved < sealStart) return CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
         return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
+    }
+
+    static int ResolveRecipeFilter(int recipeFilter)
+    {
+        return Clamp(
+            recipeFilter,
+            CaelumConstants.CRAFTING_RECIPE_FILTER_ALL,
+            CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT - 1
+        );
+    }
+
+    static bool RecipeMatchesFilter(int recipeIndex, int recipeFilter)
+    {
+        int resolvedFilter = ResolveRecipeFilter(recipeFilter);
+        if (resolvedFilter == CaelumConstants.CRAFTING_RECIPE_FILTER_ALL)
+        {
+            return true;
+        }
+        return GetUnifiedRecipeKind(recipeIndex) == resolvedFilter - 1;
+    }
+
+    static int GetFirstRecipeMatchingFilter(int recipeFilter)
+    {
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (RecipeMatchesFilter(recipeIndex, recipeFilter))
+            {
+                return recipeIndex;
+            }
+        }
+        return 0;
     }
 
     static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)

@@ -30,6 +30,16 @@ See `ASSET_REGISTER.md` for authorship and license tracking.
 
 The colored resource fills were manually accepted during V4.29.0m testing.
 
+## Implemented in 4.29.0x
+
+- Crafts reads the persistent 61-recipe book and reports known totals for the
+  16 physical, 16 armor, 20 essence-weapon, 4 amulet and 5 seal recipes.
+- The station interface filters that same catalogue; it does not own or copy a
+  second recipe list.
+- Unknown recipes hide their details and are rejected by play-scope authority.
+- Crafts remains read-only in the Journal. Creating an item still requires Use
+  on a valid connected station.
+
 ## Implemented in 4.29.0i
 
 - `CaelumStatusBar` replaces the Doom status bar with an empty project-owned
@@ -58,8 +68,8 @@ player. Opening a page or moving its cursor remains local.
 1. Build a revision-driven visible-row inventory index and equipment slots.
 2. Route Use, Equip, Drop and Magic Box actions through existing authoritative
    inventory/equipment events.
-3. Move the existing crafting and recipe-book functions into Crafts without
-   duplicating their transaction model.
+3. Add recipe selection/details to Crafts after the owned-item interaction
+   pattern is validated, still without duplicating the Workbench transaction.
 4. Add Repair/Disassembly, then Quests/Reputation, only when their data models
    become authoritative.
 5. Add date, time, weather and a layered map to World with their scheduled

@@ -10,8 +10,8 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 
 | Old block | Current status | Remaining work |
 | --- | --- | --- |
-| V4.22 — Crafting Stations & Crafting Core | Partially implemented | The shared station/transaction foundation exists. Forge and Ranged Weapon Workshop support current physical recipes; Workbench and the wider station network exist in partial form. Complete station filters, infrastructure requirements and the missing Armor/Essence/Workbench workflows. |
-| V4.23 — Recipe Book & Crafting Persistence | Partially implemented | The recipe catalogue and unified crafting interface exist, but permanent recipe knowledge and unlock sources are not complete. Add persistent unlocks from sheets, merchants, NPCs and discovery, without level restrictions. |
+| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All five families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
+| V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
 | V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability, several repairs and material recovery foundations exist. Complete the authoritative craft → use → deteriorate → repair/disassemble loop, preserving tier and essence/base-item recovery choices. |
 | V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
 | V4.26 — NPC Interaction, Quests and Factions | Not implemented as a complete system | Build interaction and dialogue first, then merchants, quests, reputation and factions. Do not begin large social content before the shared infrastructure is stable. |
@@ -255,11 +255,25 @@ work remains planning-only until it receives its own isolated implementation
 and validation patch. The next house-construction increment may continue in
 parallel under the existing one-variable-at-a-time rule.
 
-- Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
-- Preserve the expanded station-network requirements already documented for higher tiers.
-- Complete recipe filtering instead of creating five independent crafting systems.
-- Add permanent recipe knowledge and save/load persistence.
-- Support unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
+V4.29.0w is accepted by the author after the focused MAP01 walk. It closes the
+eight actual 96×191-MU stair-side holes, covers the rear landings and supports
+the upper western canopy with two solid 8×8-MU columns. No gameplay code or
+MAP02 state changed.
+
+V4.29.0x begins the crafting-completion track. The single 61-recipe Workbench
+catalogue gains All/Physical/Armor/Essence/Amulet/Seal filters, persistent
+per-recipe knowledge and an authoritative unknown-recipe rejection. The Journal
+Crafts page reads real known-recipe totals by family. Schema-0 profiles initialize
+with all recipes known as a development-compatibility baseline; starting
+knowledge for the final new-profile flow remains an author decision. Public `LearnCraftingRecipe` state is
+ready for later sheets, merchants, NPC dialogue and discovery hooks, but those
+authored sources are not claimed as implemented by this increment.
+
+- Complete the permanent Journal interaction layer for inventory and the shared station interface.
+- Manually validate the preserved higher-tier station-network requirements.
+- **Implemented in 4.29.0x; manual validation pending:** unified family filters.
+- **Implemented in 4.29.0x; save/load validation pending:** permanent recipe knowledge and schema-0 compatibility initialization.
+- Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 

@@ -72,6 +72,14 @@ class CaelumPlayer : DoomPlayer
     int CraftingSelectionTier;
     int CraftingSelectionSize;
     int CraftingSelectedWeapon;
+    int CraftingRecipeFilter;
+    bool CraftingSelectedRecipeKnown;
+    int CraftingKnownRecipeCount;
+    int CraftingKnownPhysicalRecipeCount;
+    int CraftingKnownArmorRecipeCount;
+    int CraftingKnownEssenceRecipeCount;
+    int CraftingKnownAmuletRecipeCount;
+    int CraftingKnownSealRecipeCount;
 
     // Estado de la receta unificada actualmente seleccionada.
     int CraftingSelectedRecipeKind;
@@ -516,6 +524,8 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.EnsureRecipeBookInitialized();
+        RefreshCraftingRecipeBookSummary();
 
         persistentState.ProfileCommitted = true;
         persistentState.Race = CharacterProfile.Race;
@@ -584,6 +594,8 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(false);
         if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.EnsureRecipeBookInitialized();
+        RefreshCraftingRecipeBookSummary();
 
         CharacterProfile.Race = persistentState.Race;
         CharacterProfile.FirstClass = persistentState.FirstClass;
@@ -2788,14 +2800,120 @@ class CaelumPlayer : DoomPlayer
         return material != null ? Max(0, material.Amount) : 0;
     }
 
+    bool IsCraftingRecipeKnown(int recipeIndex)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        return persistentState.KnowsCraftingRecipe(recipeIndex);
+    }
+
+    void RefreshCraftingRecipeBookSummary()
+    {
+        CraftingKnownRecipeCount = 0;
+        CraftingKnownPhysicalRecipeCount = 0;
+        CraftingKnownArmorRecipeCount = 0;
+        CraftingKnownEssenceRecipeCount = 0;
+        CraftingKnownAmuletRecipeCount = 0;
+        CraftingKnownSealRecipeCount = 0;
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsureRecipeBookInitialized();
+
+        for (int recipeIndex = 0;
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (!persistentState.KnowsCraftingRecipe(recipeIndex)) { continue; }
+            CraftingKnownRecipeCount++;
+            switch (CaelumCraftingRules.GetUnifiedRecipeKind(recipeIndex))
+            {
+                case CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR:
+                    CraftingKnownArmorRecipeCount++;
+                    break;
+                case CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON:
+                    CraftingKnownEssenceRecipeCount++;
+                    break;
+                case CaelumConstants.CRAFTING_RECIPE_KIND_AMULET:
+                    CraftingKnownAmuletRecipeCount++;
+                    break;
+                case CaelumConstants.CRAFTING_RECIPE_KIND_SEAL:
+                    CraftingKnownSealRecipeCount++;
+                    break;
+                default:
+                    CraftingKnownPhysicalRecipeCount++;
+                    break;
+            }
+        }
+    }
+
+    bool LearnCraftingRecipe(int recipeIndex)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool learned = persistentState.LearnCraftingRecipe(recipeIndex);
+        if (learned)
+        {
+            RefreshCraftingRecipeBookSummary();
+            PersistCharacterState();
+            if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        }
+        return learned;
+    }
+
+    void DebugSetAllCraftingRecipesKnown(bool known)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.SetAllCraftingRecipesKnown(known);
+        RefreshCraftingRecipeBookSummary();
+        PersistCharacterState();
+        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        if (known) { A_Log("$CA_DEBUG_CRAFTING_RECIPES_ALL_KNOWN"); }
+        else { A_Log("$CA_DEBUG_CRAFTING_RECIPES_FORGOTTEN"); }
+    }
+
+    void DebugLearnSelectedCraftingRecipe()
+    {
+        if (LearnCraftingRecipe(CraftingSelectionRecipe))
+        {
+            A_Log("$CA_DEBUG_CRAFTING_RECIPE_LEARNED");
+        }
+        else
+        {
+            A_Log("$CA_DEBUG_CRAFTING_RECIPE_ALREADY_KNOWN");
+        }
+    }
+
     void RefreshCraftingPreview()
     {
+        // Los filtros recorren el catálogo global del Banco de Trabajo. Las
+        // estaciones especializadas conservan sus índices locales y no deben
+        // recibir selecciones pertenecientes a otra familia.
+        if (ActiveCraftingStationType
+            != CaelumConstants.CRAFTING_STATION_WORKBENCH)
+        {
+            CraftingRecipeFilter =
+                CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
+        }
+        CraftingRecipeFilter = CaelumCraftingRules.ResolveRecipeFilter(
+            CraftingRecipeFilter
+        );
+        RefreshCraftingRecipeBookSummary();
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+
         int stationRecipeCount = CaelumCraftingRules.GetStationRecipeCount(
             ActiveCraftingStationType
         );
         if (stationRecipeCount <= 0)
         {
             CraftingSelectionRecipe = 0;
+            CraftingSelectedRecipeKnown = false;
             CraftingSelectedWeapon = -1;
             CraftingSelectedRecipeKind =
                 CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
@@ -2822,6 +2940,17 @@ class CaelumPlayer : DoomPlayer
         CraftingSelectionRecipe = Clamp(
             CraftingSelectionRecipe, 0, stationRecipeCount - 1
         );
+        if (!CaelumCraftingRules.RecipeMatchesFilter(
+            CraftingSelectionRecipe, CraftingRecipeFilter
+        ))
+        {
+            CraftingSelectionRecipe =
+                CaelumCraftingRules.GetFirstRecipeMatchingFilter(
+                    CraftingRecipeFilter
+                );
+        }
+        CraftingSelectedRecipeKnown = persistentState != null
+            && persistentState.KnowsCraftingRecipe(CraftingSelectionRecipe);
         CraftingSelectionTier = Clamp(CraftingSelectionTier, 1, 3);
         CraftingSelectionSize = Clamp(
             CraftingSelectionSize,
@@ -3073,6 +3202,7 @@ class CaelumPlayer : DoomPlayer
         CraftingMenuOpen = true;
         ActiveCraftingStationType = resolvedStation;
         CraftingSelectionRecipe = 0;
+        CraftingRecipeFilter = CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
         if (CraftingSelectionTier <= 0)
         {
             CraftingSelectionTier = 1;
@@ -3100,9 +3230,40 @@ class CaelumPlayer : DoomPlayer
             ActiveCraftingStationType
         );
         if (stationRecipeCount <= 0) { return; }
-        CraftingSelectionRecipe = (
-            CraftingSelectionRecipe + direction + stationRecipeCount
-        ) % stationRecipeCount;
+        int step = direction < 0 ? -1 : 1;
+        for (int offset = 1; offset <= stationRecipeCount; offset++)
+        {
+            int candidate = (
+                CraftingSelectionRecipe + step * offset
+                    + stationRecipeCount * 2
+            ) % stationRecipeCount;
+            if (CaelumCraftingRules.RecipeMatchesFilter(
+                candidate, CraftingRecipeFilter
+            ))
+            {
+                CraftingSelectionRecipe = candidate;
+                break;
+            }
+        }
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        RefreshCraftingPreview();
+    }
+
+    void CycleCraftingRecipeFilter()
+    {
+        if (ActiveCraftingStationType
+            != CaelumConstants.CRAFTING_STATION_WORKBENCH)
+        {
+            CraftingRecipeFilter =
+                CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
+            return;
+        }
+        CraftingRecipeFilter = (CraftingRecipeFilter + 1)
+            % CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT;
+        CraftingSelectionRecipe =
+            CaelumCraftingRules.GetFirstRecipeMatchingFilter(
+                CraftingRecipeFilter
+            );
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
     }
@@ -3151,6 +3312,12 @@ class CaelumPlayer : DoomPlayer
     {
         if (player == null || player.playerstate != PST_LIVE) { return; }
         RefreshCraftingPreview();
+        if (!CraftingSelectedRecipeKnown)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED;
+            return;
+        }
         if (CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             && CraftingSelectedWeapon < 0)
@@ -3488,6 +3655,13 @@ class CaelumPlayer : DoomPlayer
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
+
+        if (!CraftingSelectedRecipeKnown)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED;
+            return;
+        }
 
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)

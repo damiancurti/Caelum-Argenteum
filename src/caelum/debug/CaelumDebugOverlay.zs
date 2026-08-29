@@ -351,7 +351,28 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_STATION";
             case CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE:
                 return "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED:
+                return "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED";
             default: return "CA_CRAFTING_ACTION_NONE";
+        }
+    }
+
+    ui String GetCraftingFilterKey(int recipeFilter)
+    {
+        switch (recipeFilter)
+        {
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PHYSICAL_WEAPON:
+                return "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ARMOR:
+                return "CA_CRAFTING_FILTER_ARMOR";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ESSENCE_WEAPON:
+                return "CA_CRAFTING_FILTER_ESSENCE_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMULET:
+                return "CA_CRAFTING_FILTER_AMULETS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SEAL:
+                return "CA_CRAFTING_FILTER_SEALS";
+            default:
+                return "CA_CRAFTING_FILTER_ALL";
         }
     }
 
@@ -1712,9 +1733,25 @@ class CaelumDebugOverlay : EventHandler
                 GetCraftingWeaponKey(localPlayer.CraftingSelectedWeapon), false
             );
         }
+        if (!localPlayer.CraftingSelectedRecipeKnown)
+        {
+            recipeName = StringTable.Localize(
+                "CA_CRAFTING_RECIPE_UNKNOWN", false
+            );
+        }
 
         String sizeName = StringTable.Localize(
             GetEquipmentSizeKey(localPlayer.CraftingSelectionSize), false
+        );
+        String filterLine = String.Format(
+            "%s: %s | %s: %d / %d",
+            StringTable.Localize("CA_CRAFTING_FILTER", false),
+            StringTable.Localize(
+                GetCraftingFilterKey(localPlayer.CraftingRecipeFilter), false
+            ),
+            StringTable.Localize("CA_CRAFTING_RECIPE_BOOK", false),
+            localPlayer.CraftingKnownRecipeCount,
+            CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
         );
         String basicName = StringTable.Localize(
             GetSpecialItemTypeKey(
@@ -1737,13 +1774,15 @@ class CaelumDebugOverlay : EventHandler
             ),
             false
         );
-        String selection = String.Format(
-            "%s | T%d %s | %.3f",
-            recipeName,
-            localPlayer.CraftingSelectionTier,
-            sizeName,
-            localPlayer.CraftingFinalWeight
-        );
+        String selection = localPlayer.CraftingSelectedRecipeKnown
+            ? String.Format(
+                "%s | T%d %s | %.3f",
+                recipeName,
+                localPlayer.CraftingSelectionTier,
+                sizeName,
+                localPlayer.CraftingFinalWeight
+            )
+            : recipeName;
         String basicLine = String.Format(
             "%s: %d / %d",
             basicName,
@@ -1814,6 +1853,10 @@ class CaelumDebugOverlay : EventHandler
         String actionText = StringTable.Localize(
             GetCraftingActionKey(localPlayer.LastCraftingAction), false
         );
+        String navigationHelp1Key = localPlayer.ActiveCraftingStationType
+                == CaelumConstants.CRAFTING_STATION_WORKBENCH
+            ? "CA_CRAFTING_NAVIGATION_HELP_1"
+            : "CA_CRAFTING_NAVIGATION_HELP_SPECIALIZED_1";
         int actionColor = (localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_CREATED
             || localPlayer.LastCraftingAction
@@ -1832,9 +1875,10 @@ class CaelumDebugOverlay : EventHandler
             StringTable.Localize(
                 GetCraftingStationKey(localPlayer.ActiveCraftingStationType), false
             ),
-            100.0,
+            96.0,
             Font.CR_CYAN
         );
+        DrawCenteredText(filterLine, 114.0, Font.CR_GOLD);
         if (localPlayer.CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             && localPlayer.CraftingSelectedWeapon < 0)
@@ -1851,7 +1895,30 @@ class CaelumDebugOverlay : EventHandler
             );
             return;
         }
-        DrawCenteredText(selection, 132.0, Font.CR_WHITE);
+        DrawCenteredText(selection, 136.0,
+            localPlayer.CraftingSelectedRecipeKnown
+                ? Font.CR_WHITE : Font.CR_DARKGRAY);
+        if (!localPlayer.CraftingSelectedRecipeKnown)
+        {
+            DrawCenteredText(
+                StringTable.Localize("CA_CRAFTING_RECIPE_LOCKED", false),
+                174.0,
+                Font.CR_RED
+            );
+            DrawCenteredText(boxLine, 224.0, Font.CR_CYAN);
+            DrawCenteredText(actionText, 250.0, actionColor);
+            DrawCenteredText(
+                StringTable.Localize(navigationHelp1Key, false),
+                286.0,
+                Font.CR_GRAY
+            );
+            DrawCenteredText(
+                StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_2", false),
+                306.0,
+                Font.CR_GRAY
+            );
+            return;
+        }
         DrawCenteredText(
             StringTable.Localize("CA_CRAFTING_RECIPE", false),
             158.0,
@@ -1879,7 +1946,7 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(boxLine, 244.0, Font.CR_CYAN);
         DrawCenteredText(actionText, 264.0, actionColor);
         DrawCenteredText(
-            StringTable.Localize("CA_CRAFTING_NAVIGATION_HELP_1", false),
+            StringTable.Localize(navigationHelp1Key, false),
             290.0,
             Font.CR_GRAY
         );
@@ -1940,6 +2007,11 @@ class CaelumDebugOverlay : EventHandler
                 || craftingKey ~== "q")
             {
                 SendNetworkEvent("ca_crafting_toggle");
+            }
+            else if (e.KeyScan == InputEvent.Key_Tab
+                || e.KeyScan == InputEvent.Key_Pad_Y)
+            {
+                SendNetworkEvent("ca_crafting_filter");
             }
             else if (e.KeyScan == InputEvent.Key_RightArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
@@ -3534,6 +3606,10 @@ class CaelumDebugOverlay : EventHandler
         {
             requestingPlayer.CycleCraftingRecipe(-1);
         }
+        else if (e.Name == "ca_crafting_filter")
+        {
+            requestingPlayer.CycleCraftingRecipeFilter();
+        }
         else if (e.Name == "ca_crafting_tier")
         {
             requestingPlayer.CycleCraftingTier();
@@ -3609,6 +3685,18 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_debug_audit_crafting_catalogue")
         {
             requestingPlayer.DebugAuditCraftingCatalogue();
+        }
+        else if (e.Name == "ca_debug_crafting_forget_all_recipes")
+        {
+            requestingPlayer.DebugSetAllCraftingRecipesKnown(false);
+        }
+        else if (e.Name == "ca_debug_crafting_learn_selected_recipe")
+        {
+            requestingPlayer.DebugLearnSelectedCraftingRecipe();
+        }
+        else if (e.Name == "ca_debug_crafting_learn_all_recipes")
+        {
+            requestingPlayer.DebugSetAllCraftingRecipesKnown(true);
         }
         else if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
         else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();

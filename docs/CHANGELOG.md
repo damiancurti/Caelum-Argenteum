@@ -1,5 +1,34 @@
 # Changelog
 
+## 4.29.0x — Persistent recipe book and unified filters
+
+- Added one persistent knowledge flag for each of the 61 unified recipes. The
+  flags live in `CaelumPersistentCharacterState` and therefore travel with the
+  character through normal saves and hub transitions.
+- Added recipe-book version 1 initialization: every schema-0 development profile
+  starts with all recipes known, preserving the access current saves and tests
+  had before recipe knowledge existed. This compatibility baseline does not
+  define the final starting recipes for the authored new-profile flow.
+- Added All, Physical Weapons, Armor, Essence Weapons, Amulets and Seals filters
+  without duplicating the existing Workbench transaction or station rules.
+- Unknown recipes now hide their identity, weight and material formula. Both
+  crafting and the exact-material test route reject them in play scope.
+- Replaced the Journal Crafts placeholder with authoritative totals for the
+  complete recipe book and each recipe family.
+- Added console-only test events to forget every recipe, learn the selected
+  recipe and restore all recipes, allowing save/load and unlock checks without
+  adding provisional world content.
+- Changed no MAP01/MAP02 geometry, AI, perception, combat, item formulas or
+  infrastructure distances.
+
+## 4.29.0w — Accepted stair-side closures and upper canopy supports
+
+- Closed the eight actual stair-side holes and covered the rear landings under
+  the continuous slab while preserving all real stair paths.
+- Retained the upper western canopy and added two solid 8×8-MU columns outside
+  the useful gate opening. The author accepted the corrected geometry in the
+  focused MAP01 test.
+
 ## 4.29.0v — Final endurance acceptance and MAP01 slab/portón correction
 
 - Accepted the supplied final V4.29.0u log as the closing group-16 endurance
