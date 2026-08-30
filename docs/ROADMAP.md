@@ -390,21 +390,39 @@ continuous rear room; restores two symmetric uncovered balconies; adds one
 centered rectangular second-floor room; and restores MAP02's sewer materials.
 It changes no gameplay or diagnostic actor code.
 
+The author's visual pass rejected that construction: one return remained open,
+the opposite wall blocked a balcony, the upper room was short and displaced to
+the east, two fins remained instead of a lower divider and MAP02 kept mansion
+materials on its interior faces.
+
+V4.29.0af rebuilds those surfaces directly from the clean 4.29.0ad WAD. It
+closes both lower wings, opens both 96-MU balconies, replaces the fins with one
+ground-floor divider and group-914 double door, and places a 1426×782-MU room
+near the main building's true center. MAP02 applies sewer materials to all
+nine floors and every non-empty sidedef texture. The accepted group-913
+stairs/tunnel and all gameplay source remain unchanged.
+
 The immediate closing order is:
 
-1. Manually accept 4.29.0ae MAP01: one continuous rear room below both wings,
-   closed outer walls, two symmetric uncovered balconies, no internal divider,
-   and one centered roofed second-floor room reached from the accepted landing.
-2. Confirm MAP02 again uses sewer walls/floor and both maps load without a
-   parser, node-builder, HOM or floating-surface failure. The accepted creator,
-   `changemap` persistence and crafting cases do not need repetition.
-3. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
+1. Manually accept 4.29.0af MAP01 from both ground wings: verify the missing
+   return is closed, the two former fins are one complete divider, its group-914
+   door opens, and no internal wall remains inside either room.
+2. Traverse both 96-MU balconies and inspect their undersides/corners. Require
+   lower walls below every slab, no blocking wall at the balcony entrance and
+   no remaining awning-like open corner.
+3. Traverse the centered second-floor room, its complete floor and roof, the
+   four retained stair landings and its 128-MU eastern opening. Reject any HOM,
+   floating face, internal solid cut or displaced/asymmetric perimeter.
+4. Confirm every MAP02 room uses sewer floors and wall faces and both maps load
+   without a parser or node-builder failure. The accepted creator, `changemap`
+   persistence and crafting cases do not need repetition.
+5. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.
-4. Replace the rejected global-ring follower steering with a density-aware,
+6. Replace the rejected global-ring follower steering with a density-aware,
    budgeted local route test. Pass 20 real minutes at 1,875 active actors before
    raising the active count.
-5. Once architecture, creator/persistence, controlled perception and the new
+7. Once architecture, creator/persistence, controlled perception and the new
    1,875-active movement gate pass, close V4.29 and begin V4.30.
 
 ### V4.30 — Repair, Disassembly and Durability Loop

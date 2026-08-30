@@ -1,5 +1,58 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rear-wing closure, lower divider and centered second floor 4.29.0af
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0af supersedes the rejected MAP01 construction from 4.29.0ae and is
+rebuilt directly from the clean 4.29.0ad geometry. The accepted external stair
+pair, its shared landing, the tunnel beneath it and the group-913 double door
+retain their positions, heights and arguments.
+
+The missing return at x=1201..1209 now closes both rear wings through z=0–256.
+The wall segments at x=1306 no longer block either balcony: the northern and
+southern 96-MU strips retain only their z=128–136 walkable slab. The lower
+outer corners use finite z=0–128 walls, so the spaces below those slabs belong
+to the rear ground-floor rooms instead of reading as unsupported awnings.
+
+The two former fins between the lower rooms are replaced by one continuous
+divider along x=1201..1209. It is solid from z=0 to 128 except for a centered
+y=-64..64 opening. Two 64-MU leaves at `(1205,-32,0)` and `(1205,32,0)` form
+one group-914 sliding door; obsolete group 915 is absent.
+
+The second-floor room no longer occupies the eastern edge. Its structural
+rectangle is x=-121..1305, y=-391..391, centered within approximately 20 MU
+of the main building axis and more than three times the rejected room's
+length. An 8-MU perimeter receives finite z=264–392 walls. The complete area
+receives a z=256–264 floor and z=392–400 roof, while the central 128-MU east
+opening remains aligned with the accepted stair landing. The four internal
+stair landings remain open inside the room rather than becoming wall volumes.
+
+MAP02 keeps the same 112 vertices, 110 linedefs, 212 sidedefs, nine sectors and
+16,508 Things. Every sector floor now uses `CASWRFLR`; every non-empty upper,
+middle and lower wall face uses `CASWRWAL`. Its sky ceilings, actors, arguments
+and all non-texture geometry are unchanged.
+
+Deterministic outputs are:
+
+- MAP01 `(884, 1206, 2206, 352, 225)`, SHA-256
+  `dc56f1b681bb9d80bedaaa5ce37734f8137b2aabee3fe0c1f05dd1f3e4d36334`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The constructor consumes only the exact 4.29.0ad hashes. Its 180 physical
+upper-room subdivisions collapse unused hosts and preserve canonical sector,
+sidedef and vertex references. An independent clean reconstruction matched
+both WADs byte for byte; a repeated execution is idempotent. The development
+PK3 contains 3,314 entries and passes the ZIP and UDMF structural gates.
+
+Focused runtime validation remains: inspect both closed lower returns, open
+and traverse the group-914 divider door, enter both balconies without hitting
+an invisible wall, verify the centered upper room and its eastern opening, and
+inspect every MAP02 room for sewer surfaces. Creator, `changemap`, recipes,
+inventory, crafting and AI behavior do not require repetition because this
+increment changes only maps and public status files.
+
 ## Rear-room perimeter, balconies and second-floor room 4.29.0ae
 
 **Implemented and statically validated; focused author QA pending**

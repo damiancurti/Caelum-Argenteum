@@ -1,5 +1,37 @@
 # Changelog
 
+## 4.29.0af — Closed rear wings, ground divider and centered upper room
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD instead of extending the
+  rejected 0ae geometry. The external stair flights, shared landing, tunnel
+  and group-913 double door remain unchanged.
+- Closed the missing northern and southern return walls through z=0–256. The
+  former blocking side pieces now use only the z=128–136 balcony slab, leaving
+  a 96-MU passage into each symmetric balcony.
+- Replaced the two ground-floor fins with one complete x=1201..1209 divider.
+  Its centered 128-MU opening contains one two-leaf group-914 sliding door at
+  z=0; no group-915 actor remains.
+- Closed the lower exterior corners below the balcony slabs without projecting
+  walls through the open balcony level.
+- Replaced the short eastern second-floor room with one centered structural
+  rectangle at x=-121..1305 and y=-391..391. It measures 1426×782 MU, uses an
+  8-MU perimeter, retains a centered 128-MU east opening and has continuous
+  z=256–264 floor, z=264–392 walls and z=392–400 roof.
+- Applied `CASWRFLR` to all nine MAP02 floors and `CASWRWAL` to every non-empty
+  top, middle and bottom sidedef texture. All 16,508 Things and all non-texture
+  diagnostic geometry remain byte-semantically unchanged.
+- Added the idempotent `rebuild_4_29_0af_maps.py` constructor, restricted to
+  the exact 4.29.0ad inputs. Independent clean rebuilds reproduced both WADs
+  byte for byte, and a second execution validates without modifying them.
+- Final MAP01 structure is 884 vertices, 1,206 linedefs, 2,206 sidedefs, 352
+  sectors and 225 Things; SHA-256 is
+  `dc56f1b681bb9d80bedaaa5ce37734f8137b2aabee3fe0c1f05dd1f3e4d36334`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- The complete development PK3 passed the ZIP and UDMF structural gates. This
+  increment changes no ZScript, creator, persistence, crafting, inventory, AI,
+  perception or combat source; focused visual traversal remains the author QA.
+
 ## 4.29.0ae — Rear-room perimeter, symmetric balconies and second-floor room
 
 - Removed the rejected first-floor group-914 and group-915 door leaves and
