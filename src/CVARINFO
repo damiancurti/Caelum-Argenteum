@@ -7,6 +7,31 @@ user bool ca_debug_attributes = false;
 user bool ca_journal_open = false;
 user int ca_journal_page = 0;
 
+// Puente local entre el creador previo a la partida y el primer CaelumPlayer.
+// El inventario persistente toma el relevo apenas comienza el mapa.
+user bool ca_newchar_ready = false;
+user int ca_newchar_race = 2;
+user int ca_newchar_first_class = 0;
+user int ca_newchar_second_class = 3;
+user int ca_newchar_sex = 0;
+user int ca_newchar_height = 1;
+user int ca_newchar_layer0 = 0;
+user int ca_newchar_layer1 = 0;
+user int ca_newchar_layer2 = 0;
+user int ca_newchar_layer3 = 0;
+user int ca_newchar_attribute0 = 0;
+user int ca_newchar_attribute1 = 0;
+user int ca_newchar_attribute2 = 0;
+user int ca_newchar_attribute3 = 0;
+user int ca_newchar_attribute4 = 0;
+user int ca_newchar_attribute5 = 0;
+user int ca_newchar_attribute6 = 0;
+user int ca_newchar_attribute7 = 0;
+user int ca_newchar_attribute8 = 0;
+user int ca_newchar_attribute9 = 0;
+user int ca_newchar_attribute10 = 0;
+user int ca_newchar_attribute11 = 0;
+
 // Interruptores exclusivos del campo masivo de MAP02. Son CVars de servidor:
 // deben fijarse antes de cargar MAP02 y el coordinador los captura una sola vez
 // para que ninguna IA consulte configuración dentro del camino caliente.

@@ -1,5 +1,79 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## First-floor tunnel, mansion materials and pre-game creator 4.29.0ad
+
+**Implemented and statically/runtime-load validated; focused author QA pending**
+
+MAP01 no longer places the new eastern door at the second-floor landing. The
+two group-913 leaves stand at z=136 inside an opening from z=136 through 256.
+The shared stair landing has a thin traversable floor at 128–136 and an upper
+landing/ceiling at 256–264, so its underside is a tunnel instead of a solid
+pedestal. The upper 264–392 facade volume is gone, removing the reported
+floating bars.
+
+Rear-room sectors 160/161 and the ten false retraction/fin sectors are part of
+the rooms again. The side U closes the exterior perimeter. Two first-floor
+dividers occupy y=-286..-278 and y=278..286 with centered 64-MU openings and
+independent door groups 914/915. Their topology is validated against the
+correct adjacent room sectors and is forbidden from touching world sector 0.
+
+MAP01 uses `CMIN01`, `CMWD01`, `CMCL01` and `CMDR03` instead of its inherited
+Doom ground-floor surfaces. MAP02 changes only sewer material fields to the
+mansion wall/floor set; a semantic digest proves its 16,508 Things and its
+diagnostic geometry are unchanged. Deterministic outputs are:
+
+- MAP01 `(696, 942, 1798, 226, 225)`, SHA-256
+  `7bc0519a11adf058848a7986e456cd0ea8a97457f7e6ec963310a1ed3dbbc3a2`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `2f4568f60512ff3656476f32c506ac2547f6b4949b58b20d2f9b6de8c5fc0b54`.
+
+The title-screen `Nuevo personaje` action now opens
+`CaelumCharacterCreationMenu`, not the native Doom class/episode/skill chain
+and not the old in-game overlay. It collects all eight existing creation pages
+before starting MAP01. A one-use user-CVar draft bridges UI scope to the first
+`CaelumPlayer`; committed persistent state always has priority. `map MAP02`
+remains a new developer session and therefore receives a safe test profile,
+whereas normal exits and `changemap` preserve the current character. Native
+save loading supplies `Cargar personaje`.
+
+The new code parses and its menu Drawer executes under GZDoom 4.14.2. An
+automated keyboard pass completed all eight pages, verified the one-use CVar
+draft and loaded MAP01. Both maps also load with the expected actor counts.
+The incremental source omission in `ImpactContactState` is repaired: the
+documented collision-refresh and once-per-pair-per-tic resolution methods are
+present again, and stale edges expire after five collision-free tics.
+
+### 4.29.0ac evidence audit
+
+The group-16 control without follower movement closed normally. The moving
+run did not: its incremental logfile retains exactly 1,024 complete reports,
+or 17:04 simulated, and has no closing timestamp. The tester places the freeze
+at about 18 real minutes. `logfile` therefore preserves everything flushed
+before a freeze when enabled in advance, but cannot reconstruct a previous
+unlogged freeze or provide a missing wall-clock end time.
+
+Both runs kept 16,506 actors, 1,875 shared targets, 126 leaders, 1,749
+followers, bounded projectiles and zero retained custom references/contacts.
+Leader Chase stayed near 85–86 calls/s and peaked at eight per tic. The moving
+run alone added 15,669,314 follower decisions (about 15,302/s) outside the
+leader budget and drove up to all 1,875 active actors inside 512 MU around only
+128 formation destinations. The final report is ordinary rather than a rising
+counter spike. The best-supported cause is a pathological native movement or
+collision tic in the compacted crowd, not a leak. That algorithm is rejected;
+4.29.0ad leaves `ca_diag_mass_follower_movement=false` and does not authorize
+3,750/7,500/15,000 active stages.
+
+Perception arithmetic is internally coherent: all 455 logged rows satisfy
+`detected = LOS && roll < visual probability`. Aperture produced 26/354 and
+semicone 10/101, compatible with their expected probability sums. It is not a
+valid angular A/B: 436/455 samples are within 30 degrees, semicone reaches only
+36.6 degrees, and rooms 3/6 always report LOS 0/1 respectively. Hearing ranges
+match the planned arithmetic, but only one positive event exists and the
+diagnostic compares direct event serial/distance rather than validating real
+sector `SoundAlert` propagation. Controlled angle markers, symmetric
+occlusion and event-position/SoundAlert instrumentation are the next isolated
+perception gate.
+
 ## Mansion correction and isolated perception/group prototype 4.29.0ac
 
 **Implemented and structurally validated; GZDoom runtime validation required**

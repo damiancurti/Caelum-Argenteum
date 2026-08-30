@@ -527,6 +527,185 @@ class CaelumPlayer : DoomPlayer
         return persistentState;
     }
 
+    int ReadNewCharacterDraft(Name setting, int fallback)
+    {
+        if (player == null) { return fallback; }
+        CVar value = CVar.GetCVar(setting, player);
+        return value == null ? fallback : value.GetInt();
+    }
+
+    int ReadNewCharacterLayer(int layer)
+    {
+        switch (layer)
+        {
+            case 0: return ReadNewCharacterDraft("ca_newchar_layer0", 0);
+            case 1: return ReadNewCharacterDraft("ca_newchar_layer1", 0);
+            case 2: return ReadNewCharacterDraft("ca_newchar_layer2", 0);
+            default: return ReadNewCharacterDraft("ca_newchar_layer3", 0);
+        }
+    }
+
+    int ReadNewCharacterAttribute(int attribute)
+    {
+        switch (attribute)
+        {
+            case 0: return ReadNewCharacterDraft("ca_newchar_attribute0", 0);
+            case 1: return ReadNewCharacterDraft("ca_newchar_attribute1", 0);
+            case 2: return ReadNewCharacterDraft("ca_newchar_attribute2", 0);
+            case 3: return ReadNewCharacterDraft("ca_newchar_attribute3", 0);
+            case 4: return ReadNewCharacterDraft("ca_newchar_attribute4", 0);
+            case 5: return ReadNewCharacterDraft("ca_newchar_attribute5", 0);
+            case 6: return ReadNewCharacterDraft("ca_newchar_attribute6", 0);
+            case 7: return ReadNewCharacterDraft("ca_newchar_attribute7", 0);
+            case 8: return ReadNewCharacterDraft("ca_newchar_attribute8", 0);
+            case 9: return ReadNewCharacterDraft("ca_newchar_attribute9", 0);
+            case 10: return ReadNewCharacterDraft("ca_newchar_attribute10", 0);
+            default: return ReadNewCharacterDraft("ca_newchar_attribute11", 0);
+        }
+    }
+
+    bool NewCharacterDraftIsReady()
+    {
+        if (player == null) { return false; }
+        CVar ready = CVar.GetCVar("ca_newchar_ready", player);
+        return ready != null && ready.GetBool();
+    }
+
+    void ClearNewCharacterDraftReady()
+    {
+        if (player == null) { return; }
+        CVar ready = CVar.GetCVar("ca_newchar_ready", player);
+        if (ready != null) { ready.SetBool(false); }
+    }
+
+    bool ValidateLoadedNewCharacterDraft()
+    {
+        if (CharacterProfile.Race < CaelumConstants.RACE_BEAST_MAN
+            || CharacterProfile.Race > CaelumConstants.RACE_GOBLIN
+            || CharacterProfile.FirstClass < CaelumConstants.CLASS_WARRIOR
+            || CharacterProfile.FirstClass > CaelumConstants.CLASS_MAGE
+            || CharacterProfile.SecondClass < CaelumConstants.CLASS_WARRIOR
+            || CharacterProfile.SecondClass > CaelumConstants.CLASS_MAGE
+            || CharacterProfile.Sex < CaelumConstants.SEX_MALE
+            || CharacterProfile.Sex > CaelumConstants.SEX_FEMALE
+            || CharacterProfile.HeightChoice < CaelumConstants.HEIGHT_SHORT
+            || CharacterProfile.HeightChoice > CaelumConstants.HEIGHT_TALL)
+        {
+            return false;
+        }
+
+        int spentLayers = 0;
+        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
+        {
+            int bonus = CharacterAllocation.LayerBonus[layer];
+            spentLayers += bonus;
+            if (bonus < 0
+                || CharacterProfile.GetCombinedLayerValue(layer) + bonus
+                    > CaelumConstants.MAX_LAYER_BASE)
+            {
+                return false;
+            }
+        }
+        if (spentLayers != CaelumConstants.FREE_LAYER_POINTS) { return false; }
+
+        int spentAttributes = 0;
+        for (int attribute = 0;
+            attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+        {
+            int bonus = CharacterAllocation.AttributeBonus[attribute];
+            spentAttributes += bonus;
+            if (bonus < 0 || bonus > CharacterAllocation.GetMaximumIndividualBonus(
+                CharacterProfile, attribute
+            ))
+            {
+                return false;
+            }
+        }
+        return spentAttributes == CaelumConstants.INDIVIDUAL_ATTRIBUTE_POINTS;
+    }
+
+    bool ConsumeNewCharacterDraft()
+    {
+        if (!NewCharacterDraftIsReady()) { return false; }
+
+        CharacterProfile.Race = ReadNewCharacterDraft(
+            "ca_newchar_race", CaelumConstants.RACE_HUMAN
+        );
+        CharacterProfile.FirstClass = ReadNewCharacterDraft(
+            "ca_newchar_first_class", CaelumConstants.CLASS_WARRIOR
+        );
+        CharacterProfile.SecondClass = ReadNewCharacterDraft(
+            "ca_newchar_second_class", CaelumConstants.CLASS_MAGE
+        );
+        CharacterProfile.Sex = ReadNewCharacterDraft(
+            "ca_newchar_sex", CaelumConstants.SEX_MALE
+        );
+        CharacterProfile.HeightChoice = ReadNewCharacterDraft(
+            "ca_newchar_height", CaelumConstants.HEIGHT_NORMAL
+        );
+        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
+        {
+            CharacterAllocation.LayerBonus[layer] = ReadNewCharacterLayer(layer);
+        }
+        for (int attribute = 0;
+            attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+        {
+            CharacterAllocation.AttributeBonus[attribute] =
+                ReadNewCharacterAttribute(attribute);
+        }
+
+        if (!ValidateLoadedNewCharacterDraft())
+        {
+            ClearNewCharacterDraftReady();
+            Console.Printf(
+                "[Caelum] Borrador inválido rechazado; se aplicará el perfil "
+                "seguro de ejecución directa."
+            );
+            return false;
+        }
+
+        CharacterCreationComplete = true;
+        CreationWizardOpen = false;
+        CreationProfileBackup = null;
+        CreationAllocationBackup = null;
+        ApplyCharacterProfile();
+        GrantStartingDevelopmentEquipment();
+        ClearNewCharacterDraftReady();
+        return true;
+    }
+
+    // `map MAPxx` comienza una partida distinta y no atraviesa el menú. Este
+    // perfil completo mantiene las pruebas reproducibles sin volver a abrir un
+    // asistente dentro de MAP01 o MAP02.
+    void InitializeDirectMapCharacter()
+    {
+        CharacterProfile.InitializeDefaultTestProfile();
+        CharacterAllocation.ResetAllocations();
+        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
+        {
+            CharacterAllocation.LayerBonus[layer] = 1;
+        }
+        CharacterAllocation.AttributeBonus[0] = 3;
+        CharacterAllocation.AttributeBonus[1] = 3;
+        CharacterAllocation.AttributeBonus[2] = 2;
+        CharacterAllocation.AttributeBonus[3] = 3;
+        CharacterAllocation.AttributeBonus[4] = 3;
+        CharacterAllocation.AttributeBonus[5] = 2;
+        CharacterAllocation.AttributeBonus[6] = 3;
+        CharacterAllocation.AttributeBonus[7] = 2;
+        CharacterAllocation.AttributeBonus[8] = 2;
+        CharacterAllocation.AttributeBonus[9] = 3;
+        CharacterAllocation.AttributeBonus[10] = 2;
+        CharacterAllocation.AttributeBonus[11] = 2;
+        CharacterCreationComplete = true;
+        CreationWizardOpen = false;
+        ApplyCharacterProfile();
+        GrantStartingDevelopmentEquipment();
+        Console.Printf(
+            "[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado."
+        );
+    }
+
     // Copia el perfil y el equipamiento al inventario viajero antes de salir
     // del mapa. El mismo objeto queda incluido en guardados normales.
     void PersistCharacterState()
@@ -6227,9 +6406,15 @@ class CaelumPlayer : DoomPlayer
         }
 
         bool restoredPersistentState = RestorePersistentCharacterState();
+        bool initializedNewCharacter = false;
         if (!restoredPersistentState)
         {
-            ApplyCharacterProfile();
+            initializedNewCharacter = ConsumeNewCharacterDraft();
+            if (!initializedNewCharacter)
+            {
+                InitializeDirectMapCharacter();
+                initializedNewCharacter = true;
+            }
         }
         else if (WeaponModel != null && WeaponModel.Equipped)
         {
@@ -6306,11 +6491,9 @@ class CaelumPlayer : DoomPlayer
         );
         RefreshEquipmentSelectionPreview();
 
-        // Un personaje nuevo debe completar el creador antes de jugar.
-        // El indicador queda guardado junto al actor y evita reabrirlo al cargar.
-        if (!CharacterCreationComplete && !CreationWizardOpen)
+        if (initializedNewCharacter)
         {
-            BeginCreationWizard();
+            PersistCharacterState();
         }
     }
 

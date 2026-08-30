@@ -369,6 +369,37 @@ logs pass.
 - Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
 
+V4.29.0ad supersedes the rejected 4.29.0ac house result and closes the first
+analysis pass on its logs. MAP01 moves the eastern group-913 door into the
+first-floor tunnel, removes the solid landing block/floating facade, restores
+the rear rooms, adds two real room dividers and replaces inherited ground-floor
+materials. MAP02 receives mansion materials only. A real pre-game eight-page
+creator replaces the repeatedly opened in-map wizard.
+
+The 4.29.0ac moving-follower candidate is rejected: it froze after 1,024
+simulated seconds while all leak indicators remained bounded and nearly every
+active actor had converged into a 512-MU crowd. Do not enable it for the next
+baseline or advance to 3,750/7,500/15,000 active IA. The next movement design
+must budget follower updates too, use many more spatial destinations, limit
+local density and test non-converging routes before any combat convergence.
+
+The immediate closing order is:
+
+1. Manually accept 4.29.0ad MAP01: tunnel/door height, both stair flights,
+   landing, restored rear rooms, both divider doors, continuous roof and no
+   floating/HOM surfaces.
+2. Validate `Nuevo personaje` through all eight pages, save/load, normal exit
+   and `changemap MAP02`; a direct `map` is intentionally a separate test
+   session.
+3. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
+   degrees, symmetric visible/occluded points and event-position plus real
+   `SoundAlert` instrumentation. Only then choose aperture versus semicone.
+4. Replace the rejected global-ring follower steering with a density-aware,
+   budgeted local route test. Pass 20 real minutes at 1,875 active actors before
+   raising the active count.
+5. Once architecture, creator/persistence, controlled perception and the new
+   1,875-active movement gate pass, close V4.29 and begin V4.30.
+
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.

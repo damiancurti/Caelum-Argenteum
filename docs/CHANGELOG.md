@@ -1,5 +1,54 @@
 # Changelog
 
+## 4.29.0ad — First-floor tunnel, mansion materials and pre-game character creation
+
+- Lowered MAP01's group-913 double door from z=264 to z=136. The shared
+  landing is now two separate slabs at 128–136 and 256–264 MU, leaving a
+  120-MU-high open tunnel between them instead of a solid block.
+- Removed the obsolete upper facade volume that produced floating bars at
+  roof height. The eastern frame now ends at z=264 and the doorway keeps only
+  its lower pedestal and upper lintel.
+- Reopened the two accidental walls inside the rear ground-floor room and
+  returned the ten thin/retracted sectors to the northern and southern room
+  volumes. Restored the full exterior U perimeter.
+- Added two first-floor partition walls with independent sliding doors 914 and
+  915. Their four wall segments are attached to the actual room sectors rather
+  than the outside world; the builder rejects any future world-sector edge.
+- Replaced remaining MAP01 `STARTAN3`, `BIGDOOR2` and `CEIL5_2` surfaces with
+  the existing mansion wall, door, ceiling and wood-floor materials. MAP02
+  replaces every `CASWRWAL`/`CASWRFLR` sewer surface while preserving all
+  Things and non-texture geometry.
+- Added the idempotent `rebuild_4_29_0ad_maps.py` constructor restricted to the
+  exact 4.29.0ac WAD hashes. Final MAP01 structure is 696 vertices, 942
+  linedefs, 1,798 sidedefs, 226 sectors and 225 Things; MAP02 remains
+  112/110/212/9/16,508.
+- Replaced the in-map new-character launch with a real `ListMenu` shown before
+  the game begins. Its eight pages use the Caelum fonts and the existing
+  4-layer/12-attribute rules, write a validated one-use CVar draft and start
+  MAP01 directly with the sole neutral Caelum skill.
+- `CaelumPlayer` restores a committed save first, otherwise consumes the
+  pre-game draft once. Sessions started with the developer `map` command
+  receive a complete safe profile instead of reopening the creation wizard.
+- Restored the documented `ImpactContactState.RegisterCollision` and
+  `BeginResolutionTick` API omitted from the previous incremental source set.
+  Contact edges now also expire after five complete tics without a native
+  collision callback, as already specified by the bounded-contact design.
+- Parsed and exercised all eight pages of the new menu under official GZDoom
+  4.14.2, confirmed its CVar draft and loaded MAP01. Direct mouse selection and
+  the complete save/travel path still require the author's Windows runtime
+  pass.
+- Audited the four 4.29.0ac logs. The moving-follower run stopped at 1,024
+  complete telemetry seconds (17:04 simulated) before its 20-minute target.
+  It kept 16,506 actors, 1,875 targets, projectiles and references bounded, but
+  executed 15,669,314 follower decisions and concentrated 1,819 actors inside
+  512 MU in its final block. This movement prototype is rejected and remains
+  disabled by default.
+- The 455 visible perception samples obeyed the logged probability/roll rule,
+  but 436 were at 30 degrees or less and the semicone run never exceeded 36.6
+  degrees. Rooms 3 and 6 also produced permanently opposite LOS results. The
+  angular, symmetric occlusion and real `SoundAlert` redesign is deferred to
+  the next isolated diagnostic patch.
+
 ## 4.29.0ac — Mansion correction, perception rooms and moving followers
 
 - Restored MAP01 rear-room wall sectors 160 and 161, which 4.29.0ab had

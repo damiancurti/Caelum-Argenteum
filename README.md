@@ -16,11 +16,39 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0ac candidate retains the validated 79-recipe crafting catalogue from 4.29.0aa and corrects the MAP01 construction reported after 4.29.0ab. It restores the two rear-room wall segments opened by mistake, fills the remaining stair-origin slab, retracts the new enclosure to preserve a 96-MU side balcony, closes the lower extension, completes the covered first-floor area, and adds two exterior eight-step flights converging on a shared second-floor threshold and independent double door.
+The current V4.29.0ad candidate retains the validated 79-recipe crafting
+catalogue and corrects the MAP01 construction rejected after 4.29.0ac. The
+eastern access now begins at the first-floor level: its two stairs reach a
+shared landing, while the space below that landing remains an open tunnel with
+the double door inside it. The accidental rear-room walls and thin protrusions
+are removed, the northern and southern extensions rejoin their rooms through
+new door partitions, and the inherited Doom wall/floor/door surfaces on the
+ground floor are replaced with mansion materials. MAP02 also uses mansion
+materials without changing its 15,000 actors or diagnostic geometry.
 
-MAP02 now replaces the superseded local Look/Chase/shooter rooms with six physical perception rooms. Diagnostic observers sample the documented distance/height/Insight/Stealth model once per second, consume movement-noise events once, and log line of sight, angle, probability, roll and hearing result. The unresolved 60°/120° angular interpretation is an explicit A/B CVar. The 15,000-actor mass field remains intact: 1,875 active actors use one shared target; 126 leaders retain budgeted native `A_Chase`, while 1,749 followers can optionally move continuously through cheap local velocity without invoking `A_Chase` or `TryMove`. This is an implemented diagnostic candidate pending runtime validation, not yet the final faction/group AI.
+`Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
+exists. It selects race, two classes, sex, height, four layer points and thirty
+attribute points, then starts the single neutral Caelum mode. The first player
+consumes the validated draft once and stores it in the existing persistent
+inventory record. Native saves remain `Cargar personaje`; normal map travel
+preserves the live character, while a direct developer `map MAPxx` starts a
+safe complete test profile and never reopens the old in-map wizard.
 
-The full personal-document audit completed in 4.29.0ab remains in force for persistence, 0/79 new profiles, processing recipes, localized armor, contextual shield Block and player-facing base/silver/gold finish names. Its rejected eastern-house geometry is the part superseded here; the private document is not regenerated merely to record an unvalidated diagnostic implementation.
+The 4.29.0ac logs reject the optional moving-follower experiment. Its control
+closed normally, but the moving run ended after 1,024 complete one-second
+reports (17:04 simulated, approximately 18 real minutes according to the
+tester). Actors, references and projectiles stayed bounded; instead, 1,749
+followers produced about 15,302 movement decisions per second and converged
+on only 128 nearby destinations. The likely failure is one pathological native
+crowd/collision tic, not an accumulating leak. Follower movement therefore
+remains disabled and cannot be scaled to 15,000 active NPCs.
+
+The visual probability roll and reported hearing ranges are internally
+consistent, but the angular A/B and occlusion rooms were not controlled well
+enough to choose the 60°/120° convention. Their redesign is reserved for the
+next isolated perception patch rather than being mixed into 4.29.0ad. The full
+personal-document audit completed in 4.29.0ab remains authoritative for the
+already accepted crafting and persistence systems.
 
 ### Building the development PK3
 
