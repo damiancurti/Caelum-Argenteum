@@ -1,5 +1,43 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Closed upper perimeter and continuous eastern platform 4.29.0ag
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ag supersedes only the second-floor room and eastern upper-platform
+surfaces from 4.29.0af. It is reconstructed directly from the clean 4.29.0ad
+WAD, not incrementally from the rejected visual result. The first-floor rooms
+already accepted by the author, both balconies, the ground divider and its
+group-914 door, the exterior stairs, tunnel, shared landing and group-913 door
+retain their geometry and actor arguments.
+
+The 1426×782-MU upper room moves 104 MU west to x=-225..1201 and remains
+y=-391..391. Its complete 8-MU perimeter now receives the finite z=264–392
+wall volume; there is no remaining east-side opening. Floor z=256–264 and roof
+z=392–400 cover the full footprint. The resulting 179 physical rectangles
+cover exactly 1,115,132 MU², have no positive-area overlap and stay inside the
+intended bounds.
+
+The eastern platform no longer relies on profiles that stopped below the
+upper level. Six explicit profile families cover its ground walls, lower
+balcony returns, full walls, upper walls, open balconies and floor-only strips.
+All 26 corrected target sectors now include the z=256–264 floor. The balcony
+returns retain walls only at z=0–128, so their lower corners close while the
+z=136–256 balcony passages remain open.
+
+Deterministic outputs are:
+
+- MAP01 `(898, 1231, 2252, 362, 225)`, SHA-256
+  `4efe597c8a5b632e8211d4afca6699db001d548e4145c4546491888f5adbd57e`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The remaining runtime gate is visual and local: confirm the reported wall is
+closed, the shifted upper room is fully supported, the eastern upper platform
+has no floating strips or floor gaps, and both balcony corners close below
+without blocking passage. MAP02 and all gameplay systems are unchanged and do
+not require functional repetition for this corrective patch.
+
 ## Rear-wing closure, lower divider and centered second floor 4.29.0af
 
 **Implemented and statically validated; focused author QA pending**

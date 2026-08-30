@@ -402,20 +402,26 @@ near the main building's true center. MAP02 applies sewer materials to all
 nine floors and every non-empty sidedef texture. The accepted group-913
 stairs/tunnel and all gameplay source remain unchanged.
 
+The author accepted the first-floor rooms but found four upper-level defects:
+one remaining open wall, an eastward unsupported room overhang, floating
+platform strips/floor gaps and an uncovered balcony corner. V4.29.0ag again
+starts from 4.29.0ad, shifts the same-size room 104 MU toward the main entrance,
+closes its complete perimeter and assigns a z=256–264 slab to every corrected
+eastern platform sector. The balcony returns close below z=128 but remain open
+at the walkable balcony level. MAP02 is byte-identical to 4.29.0af.
+
 The immediate closing order is:
 
-1. Manually accept 4.29.0af MAP01 from both ground wings: verify the missing
-   return is closed, the two former fins are one complete divider, its group-914
-   door opens, and no internal wall remains inside either room.
-2. Traverse both 96-MU balconies and inspect their undersides/corners. Require
-   lower walls below every slab, no blocking wall at the balcony entrance and
-   no remaining awning-like open corner.
-3. Traverse the centered second-floor room, its complete floor and roof, the
-   four retained stair landings and its 128-MU eastern opening. Reject any HOM,
-   floating face, internal solid cut or displaced/asymmetric perimeter.
-4. Confirm every MAP02 room uses sewer floors and wall faces and both maps load
-   without a parser or node-builder failure. The accepted creator, `changemap`
-   persistence and crafting cases do not need repetition.
+1. Manually accept 4.29.0ag MAP01 at the formerly open upper wall and require a
+   continuous closed face with no HOM or internal protrusion.
+2. Traverse the shifted 1426×782-MU second-floor room and inspect it from below.
+   Require complete support, floor and roof with no suspended eastern portion.
+3. Walk and inspect the complete eastern upper platform, both balcony returns
+   and the reported corner. Reject any floating strip, floor hole, awning-like
+   opening or wall that blocks either balcony.
+4. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
+   from the all-sewer 4.29.0af WAD; the accepted first-floor rooms, creator,
+   `changemap` persistence and crafting cases do not need functional repetition.
 5. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.

@@ -1,5 +1,33 @@
 # Changelog
 
+## 4.29.0ag — Closed upper perimeter and continuous eastern platform
+
+- Rebuilt MAP01 again from the exact clean 4.29.0ad WAD. The accepted
+  first-floor rooms, two 96-MU balconies, ground divider and group-914 door,
+  external stairs, tunnel, shared landing and group-913 door remain unchanged.
+- Moved the complete 1426×782-MU second-floor room 104 MU toward the main
+  entrance, from x=-121..1305 to x=-225..1201. Its full 8-MU perimeter is now
+  closed; the former eastern opening is a finite z=264–392 wall.
+- Completed the z=256–264 floor over all 26 corrected physical sectors in the
+  eastern platform. Thin wall, full wall, upper wall, balcony-return, open
+  balcony and floor-only pieces now have explicit non-overlapping 3D-floor
+  profiles instead of inheriting incomplete combinations.
+- Restored both balcony returns as z=0–128 walls with the z=128–136 balcony
+  slab and z=256–264 upper floor. This closes the visible lower corners without
+  projecting a solid wall through either balcony passage.
+- Exact geometry audit covers the room's full 1,115,132-MU² footprint with 179
+  closed rectangular sectors, zero positive-area overlap and no sector outside
+  the intended bounds. Every corrected platform target supplies its upper slab.
+- MAP02 is byte-identical to 4.29.0af and retains all-sewer surfaces. This
+  increment changes no ZScript, character creation, persistence, crafting,
+  inventory, AI, perception or combat source.
+- Added the idempotent `rebuild_4_29_0ag_maps.py` constructor, restricted to
+  the exact 4.29.0ad inputs. Final MAP01 structure is 898 vertices, 1,231
+  linedefs, 2,252 sidedefs, 362 sectors and 225 Things; SHA-256 is
+  `4efe597c8a5b632e8211d4afca6699db001d548e4145c4546491888f5adbd57e`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
 ## 4.29.0af — Closed rear wings, ground divider and centered upper room
 
 - Rebuilt MAP01 from the exact clean 4.29.0ad WAD instead of extending the
