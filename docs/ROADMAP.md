@@ -297,13 +297,46 @@ tutorial family. Silver-finish equipment additionally consumes 10% of final
 weight in silver; gold finish consumes 20% silver plus 10% gold, without
 changing final equipment weight.
 
+V4.29.0ab completes the eastern MAP01 volume without changing runtime code.
+The U-shaped wall joins the existing rear room, the obsolete internal wall is
+opened, the ground-floor rear room expands beneath the new first-floor slab,
+all enclosed upper space receives a roof and an uncovered 272×782-MU balcony
+spans the complete new east facade. The complete personal document is audited
+against code and accepted tests; obsolete external-profile, all-recipes-known,
+global-armor-defense, AltFire-Block and visible-tier descriptions are retired.
+The following closing gate replaces the scattered manual-validation bullets:
+
+1. Traverse the new ground and first floors; verify the U join, open internal
+   passage and absence of invisible/internal wall cuts.
+2. Inspect the new floor from below and roof from above; verify solid perimeter
+   walls, continuous cover and a fully uncovered balcony.
+3. Traverse eastern stairs, bridge, landings, balcony and both portones; verify
+   continued access to the manual and station network.
+4. Create a character: one neutral skill, wizard once in MAP01 and 0/79 recipes.
+5. Save/load creation, resources, materials, recipes, equipment, active weapon,
+   durability and Magic Box state.
+6. Load a V4.29.0x save: preserve 61 legacy flags and append locked shield and
+   processing entries according to the current schema.
+7. Validate every recipe filter/total and hidden data for unknown recipes.
+8. Pick up the processing manual twice: the first changes 0/79 to 14/79 and
+   the second is idempotent.
+9. Exercise all 14 processing recipes at ×1 and representative ×10/×100/×1000
+   batches; verify 2→1, bronze 9:1, steel 497:3 and atomic failure.
+10. Validate cumulative station requirements and all shields with Workbench,
+    Forge and Anvil; tier 3 additionally requires Master Bench.
+11. Craft representative base/silver/gold equipment in every family; verify
+    precious-metal rounding and unchanged final weight.
+12. Regress compatible-weapon autoequip and incompatible/Magic-Box/capacity
+    non-replacement behavior.
+13. Build a clean PK3, start GZDoom 4.14.2 without ZScript errors and load MAP01.
+
+MAP02 endurance and Quintessence are already accepted and are not part of this
+closing gate. A blocking failure remains in V4.29.0ab/0ac; only a clean gate
+authorizes the transition to V4.30.
+
 - Complete the permanent Journal interaction layer for inventory and the shared station interface.
-- Manually validate the preserved higher-tier station-network requirements.
-- **Implemented in 4.29.0x; manual validation pending:** unified family filters.
-- **Implemented through 4.29.0z; save/load validation pending:** permanent recipe knowledge, exact 4.29.0x migration and zero-recipes new profiles.
-- **Implemented in 4.29.0y; manual validation pending:** the complete four-shield crafting transaction and Forge/Anvil requirements.
-- **Implemented in 4.29.0z; manual validation pending:** character-first main menu, neutral single skill, weapon auto-equip, finish names and the eastern stair enclosure.
-- **Implemented in 4.29.0aa; manual/save validation pending:** 14 persistent processing recipes, all four batch sizes, the MAP01 processing manual, 50% base refinement, bronze/steel alloys and silver/gold equipment costs.
+- Execute the thirteen-case V4.29 closing gate above; no accepted visual or
+  MAP02 stress test needs repetition unless a later patch changes that system.
 - Add authored efficiency bonuses on top of the explicit 50% processing base; no bonus value or progression source is assigned yet.
 - Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.

@@ -1,5 +1,41 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Eastern room completion and full documentation audit 4.29.0ab
+
+**Implemented and structurally validated; focused MAP01 and V4.29 closing tests pending**
+
+MAP01 now treats every wall requested around the eastern stair pair as one
+finite architectural volume. The former U closes against the existing rear
+room through north and south connectors. The old east wall inside that join is
+open from y=-383 to y=383, so it no longer leaves a cut through the expanded
+ground-floor room. The added upper floor has solid 0–256-MU perimeter walls
+below it, the enclosed first floor receives continuous floor and roof slabs,
+and the twelve real stair sectors retain only overhead cover.
+
+The exterior addition is an uncovered balcony from x=1697 to x=1969 and
+y=-391 to y=391: 272 MU deep by 782 MU wide. MAP01 has 568 vertices, 777
+linedefs, 1,520 sidedefs, 176 sectors and the same 221 Things. Its SHA-256 is
+`03a16179216566bb0bdc521f1ff331c1d4b27cc48a2c4ed7a91a3e855ef8b0f0`.
+The V4.29.0ab constructor accepts only the exact V4.29.0aa base and is
+deterministic and idempotent.
+
+The personal documentation is audited against the executable state rather
+than historical intentions. Native GZDoom saves plus
+`CaelumPersistentCharacterState` replace the obsolete external `profile.dat`
+model. New characters begin at 0/79 recipes; MAP01's processing manual teaches
+14. Armor is localized by the struck piece, shield Block is the persistent
+contextual Zoom action, and equipment levels remain internal while visible
+names use base, silver and gold finishes. The accepted recipe-book presentation
+is recorded as implemented. Final perception sensors and playable formations
+remain explicit future work; the accepted MAP02/Quintessence telemetry does not
+need repetition for this map/document-only increment.
+
+V4.29 closes only after the focused MAP01 traversal, clean GZDoom load,
+new/save/load/migration checks, recipe-book/manual checks, processing batches,
+station matrix, precious-metal costs and pickup autoequip regression all pass.
+The complete thirteen-case procedure is mirrored in the audited personal
+document and `docs/ROADMAP.md`.
+
 ## Processing recipes and precious-metal finish costs 4.29.0aa
 
 **Implemented and structurally validated; focused GZDoom gameplay/save validation pending**

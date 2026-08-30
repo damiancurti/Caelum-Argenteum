@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0aa candidate expands the persistent catalogue from 65 to 79 recipes without renumbering existing equipment. Fourteen tutorial processing recipes turn ores, fibers and hides into usable materials at a 50% base yield and produce bronze/steel through mass-conserving historical mixtures. A MAP01 manual unlocks that processing family while new characters still begin at 0/79. Every silver-finish equipment recipe additionally consumes silver equal to 10% of final weight; every gold finish consumes silver equal to 20% plus gold equal to 10%, without changing equipment weight. Picked-up compatible Caelum weapons still auto-equip, the character-first menu and accepted eastern stair enclosure remain unchanged, and AI/perception are untouched by this crafting increment.
+The current V4.29.0ab candidate retains the accepted 79-recipe catalogue from V4.29.0aa and completes the requested eastern MAP01 volume. The U-shaped first-floor wall now joins the existing rear room, the obsolete intermediate wall is open, every new upper floor has a solid ground-floor perimeter below it, the enclosed first floor is fully roofed, and an uncovered 272×782-MU balcony extends across the complete new facade. The personal design document was audited against current code: native save persistence, 0/79 new profiles, recipe processing, localized armor, contextual shield Block, internal equipment levels and player-facing base/silver/gold finishes now supersede their obsolete descriptions. AI, perception, combat, MAP02 and the accepted recipe implementation are unchanged.
 
 ### Building the development PK3
 
