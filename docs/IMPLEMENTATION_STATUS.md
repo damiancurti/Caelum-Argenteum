@@ -1,5 +1,50 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rear-room perimeter, balconies and second-floor room 4.29.0ae
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ae supersedes only the rejected MAP01 partitions/perimeter from
+4.29.0ad. Door groups 914/915 and their two internal divider walls are gone.
+The ground-floor rear room now extends through both northern and southern
+wings and is closed at its true exterior boundary by finite z=0–128 walls. No
+wall control for that perimeter reaches into the balcony or upper floors.
+
+The first-floor side walls are inset at y=±295. Beyond them, four sectors form
+two symmetric 96-MU uncovered balconies with only the z=128–136 walkable slab.
+The accepted external stair pair, shared landing, tunnel and group-913 double
+door are unchanged. The thin internal contours left by the rejected dividers
+remain only as harmless sector boundaries and receive no wall volume.
+
+One new room is centered on the stair axis and aligned to the structural
+rectangle x=1306..1697, y=-295..295. Its usable floor is z=264, its clear
+interior reaches z=392 and its roof slab occupies z=392–400. Finite west,
+north, south and east wall volumes enclose it. The central east strip remains
+open above the existing lintel, providing a direct entrance from the
+second-floor landing without adding another door group.
+
+MAP02 again uses `CASWRWAL` and `CASWRFLR`. Its Things digest and non-texture
+geometry digest remain unchanged, and the WAD matches the accepted 4.29.0ac
+sewer version byte for byte. Deterministic outputs are:
+
+- MAP01 `(756, 1017, 1904, 252, 223)`, SHA-256
+  `d0e50dea403b8b1291a4b5ba513d6c3bd014735804e73f3687b1077ba75bf107`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `88956e5074fe4e0ae097cfb539b67a4e0a3b6f33407bddcfcdfb7b73ce8180a9`.
+
+The constructor accepts only the exact 4.29.0ad WAD hashes, validates every
+new control range and closed wall sector, and reproduced both maps byte for
+byte in an independent clean rebuild. The complete development PK3 passes its
+ZIP and UDMF structural gates. Because no ZScript, MENUDEF, persistence or
+crafting source changed, the accepted `Nuevo personaje`/`changemap` result and
+crafting cases 5–13 do not require repetition.
+
+Focused manual validation remains: inspect both lower wings as one continuous
+rear room, verify both balconies from above and below, traverse the second-
+floor room and its centered entrance, and confirm MAP02 presents sewer
+surfaces. Any HOM, floating face, internal solid cut or asymmetric balcony
+rejects this architecture.
+
 ## First-floor tunnel, mansion materials and pre-game creator 4.29.0ad
 
 **Implemented and statically/runtime-load validated; focused author QA pending**

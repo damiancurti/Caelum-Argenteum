@@ -1,5 +1,35 @@
 # Changelog
 
+## 4.29.0ae — Rear-room perimeter, symmetric balconies and second-floor room
+
+- Removed the rejected first-floor group-914 and group-915 door leaves and
+  converted their four thin wall sectors back into ordinary room targets. No
+  solid divider remains across the rear room.
+- Rebuilt the northern and southern extensions as symmetric vertical layers.
+  The outer walls close only z=0–128 around the expanded ground-floor rear
+  room; each side keeps a 96-MU uncovered balcony at z=128–136; the inner
+  first-floor walls remain finite rather than projecting through other levels.
+- Added one centered second-floor rectangle at x=1306..1697 and y=-295..295.
+  It reuses the existing z=256–264 surface as its floor, adds a z=392–400 roof
+  and finite 264–392 walls, and leaves one centered eastern entrance aligned
+  with the accepted group-913 stair landing.
+- Preserved both exterior stair flights, their shared landing, the tunnel and
+  group-913 door exactly as accepted. Character creation, persistence,
+  crafting, recipes, inventory, AI, perception and combat code are unchanged.
+- Restored MAP02's original `CASWRWAL` and `CASWRFLR` sewer materials. Its
+  16,508 Things and all non-texture geometry are byte-semantically unchanged;
+  the resulting WAD is byte-identical to the accepted 4.29.0ac MAP02.
+- Added the idempotent `rebuild_4_29_0ae_maps.py` constructor, restricted to
+  the exact 4.29.0ad inputs. Two independent rebuilds reproduced both outputs
+  byte for byte.
+- Final MAP01 structure is 756 vertices, 1,017 linedefs, 1,904 sidedefs, 252
+  sectors and 223 Things; SHA-256 is
+  `d0e50dea403b8b1291a4b5ba513d6c3bd014735804e73f3687b1077ba75bf107`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `88956e5074fe4e0ae097cfb539b67a4e0a3b6f33407bddcfcdfb7b73ce8180a9`.
+- The complete PK3 passed the ZIP and UDMF structural gates. Focused visual
+  traversal in GZDoom 4.14.2 remains the author acceptance gate.
+
 ## 4.29.0ad — First-floor tunnel, mansion materials and pre-game character creation
 
 - Lowered MAP01's group-913 double door from z=264 to z=136. The shared

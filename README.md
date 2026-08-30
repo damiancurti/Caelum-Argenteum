@@ -16,15 +16,15 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0ad candidate retains the validated 79-recipe crafting
-catalogue and corrects the MAP01 construction rejected after 4.29.0ac. The
-eastern access now begins at the first-floor level: its two stairs reach a
-shared landing, while the space below that landing remains an open tunnel with
-the double door inside it. The accidental rear-room walls and thin protrusions
-are removed, the northern and southern extensions rejoin their rooms through
-new door partitions, and the inherited Doom wall/floor/door surfaces on the
-ground floor are replaced with mansion materials. MAP02 also uses mansion
-materials without changing its 15,000 actors or diagnostic geometry.
+The current V4.29.0ae candidate retains the validated 79-recipe crafting
+catalogue, accepted pre-game character creator and group-913 eastern stairs.
+MAP01 removes the rejected group-914/915 partitions from the middle of the
+rear room, closes the complete ground-floor perimeter below two symmetric
+uncovered balconies and adds one centered rectangular second-floor room above
+the accepted stair landing. Its ground and upper levels use separate finite
+wall volumes, so the lower extension belongs to the rear room while the
+balconies remain open. MAP02 restores its sewer wall and floor materials
+without changing any actor or non-texture diagnostic geometry.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
 exists. It selects race, two classes, sex, height, four layer points and thirty
@@ -46,7 +46,7 @@ remains disabled and cannot be scaled to 15,000 active NPCs.
 The visual probability roll and reported hearing ranges are internally
 consistent, but the angular A/B and occlusion rooms were not controlled well
 enough to choose the 60°/120° convention. Their redesign is reserved for the
-next isolated perception patch rather than being mixed into 4.29.0ad. The full
+next isolated perception patch rather than being mixed into 4.29.0ae. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 

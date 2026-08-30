@@ -383,14 +383,21 @@ baseline or advance to 3,750/7,500/15,000 active IA. The next movement design
 must budget follower updates too, use many more spatial destinations, limit
 local density and test non-converging routes before any combat convergence.
 
+V4.29.0ae supersedes the rejected group-914/915 dividers and side-wing
+interpretation from 4.29.0ad. It keeps the accepted creator, group-913 tunnel,
+landing and exterior stairs; turns the complete lower extension into one
+continuous rear room; restores two symmetric uncovered balconies; adds one
+centered rectangular second-floor room; and restores MAP02's sewer materials.
+It changes no gameplay or diagnostic actor code.
+
 The immediate closing order is:
 
-1. Manually accept 4.29.0ad MAP01: tunnel/door height, both stair flights,
-   landing, restored rear rooms, both divider doors, continuous roof and no
-   floating/HOM surfaces.
-2. Validate `Nuevo personaje` through all eight pages, save/load, normal exit
-   and `changemap MAP02`; a direct `map` is intentionally a separate test
-   session.
+1. Manually accept 4.29.0ae MAP01: one continuous rear room below both wings,
+   closed outer walls, two symmetric uncovered balconies, no internal divider,
+   and one centered roofed second-floor room reached from the accepted landing.
+2. Confirm MAP02 again uses sewer walls/floor and both maps load without a
+   parser, node-builder, HOM or floating-surface failure. The accepted creator,
+   `changemap` persistence and crafting cases do not need repetition.
 3. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.
