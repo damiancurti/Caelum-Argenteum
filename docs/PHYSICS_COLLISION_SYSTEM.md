@@ -1,5 +1,38 @@
 # Caelum Argenteum — Collision, Momentum and Impact Physics
 
+## V4.29.0ac — Shared-target and perception diagnostics are live
+
+MAP02 now contains six physical perception rooms and retains exactly 15,000
+actors in the mass field. The 1,875 active field actors still divide into 126
+native-movement leaders and 1,749 followers at group size 16. The first field
+actor to acquire the player publishes one shared target; later actors adopt the
+reference without repeating native `A_Look`.
+
+`ca_diag_mass_follower_movement false` reproduces the accepted stationary-
+follower control. When set to `true` before loading MAP02, every follower uses
+a deterministic local formation destination and continuous velocity at 25% of
+its actor `Speed`. This route performs no `A_Chase`, `TryMove` or neighbor scan.
+It is an unvalidated diagnostic bridge, not final formation navigation.
+
+The six fixed observers sample visual recognition once per second:
+
+`Pbase = 1000 / [1 + 9(distance metres / 20)²]%`
+
+Values below 1% become zero. Native line of sight, current target height/1.8 m,
+Perspicacity x1..x2, retained Stealth and a quadratic angular factor then apply.
+The default CVar interpretation gives full strength through ±30° and zero at
+±60° (60°/120° total aperture). The alternate diagnostic value compares full
+strength through ±60° and zero at ±120°. This unresolved convention must be
+chosen from the A/B results.
+
+Movement hearing now starts from the 50-dB base `50²/4 = 625 MU`. Each listener
+adds `(50 + L) × [1 + 2L(L+1)/10100]` MU, then total mass/100 kg, mode (walk
+x1, run x2, crouch x0.5) and `1 - Stealth/100` apply. Crouching does not also
+double Stealth, and listener height is excluded. MAP02 observers consume the
+player's movement-event serial once; native `SoundAlert` remains the physical
+event source. Weapons, magic, Pain, Death and explosions are outside this
+concealable movement-noise path.
+
 ## V4.29.0v — Final endurance and Quintaessence results are accepted
 
 The final supplied log contains two clean MAP02 sessions. The 1,033-report
@@ -1401,29 +1434,36 @@ The documented Sigilo rule is now materialized:
 
 and clamped to 0–100%.
 
-Crouching retains the previously documented x2 Stealth modifier:
+Crouching no longer multiplies the Stealth stat:
 
-`EffectiveStealth = clamp(Stealth × CrouchStealthMultiplier, 0, 100)`
+`EffectiveStealth = clamp(Stealth, 0, 100)`
 
 Movement noise heard by AI uses:
 
 `NoiseMultiplier = 1 - EffectiveStealth/100`
 
-The base movement-hearing reference is 20 m = 622.22 MU under the project's 56 MU = 1.8 m scale.
+The base movement event is 50 dB:
+
+`BaseNoiseRange = 50²/4 = 625 MU`
+
+For listener Perspicacity `L`, add:
+
+`HearingAllowance = (50+L) × [1 + 2L(L+1)/10100] MU`
 
 Movement-mode factors:
 
 - walking: 1.0
-- running: 1.5
+- running: 2.0
 - crouching: 0.5
 
 Thus:
 
-`NoiseRange = 622.22 × ModeFactor × NoiseMultiplier`
+`NoiseRange = (625 + HearingAllowance) × (TotalMass/100 kg) × ModeFactor × NoiseMultiplier`
 
 At EffectiveStealth = 100%, movement emits no SoundAlert.
 
-This is a hearing/noise rule; visual detection remains a separate future stealth/AI layer.
+This listener-specific formula is implemented in the MAP02 diagnostic observer.
+The native global NPC hearing and final faction/alert controller remain pending.
 
 
 ## 25. V4.26.5 — Architectural validation module

@@ -1,25 +1,61 @@
 # Changelog
 
+## 4.29.0ac — Mansion correction, perception rooms and moving followers
+
+- Restored MAP01 rear-room wall sectors 160 and 161, which 4.29.0ab had
+  opened together with the intended central connection. Filled the remaining
+  95×160-MU stair-origin void with the normal first-floor/roof target.
+- Retracted the eastern enclosure by 96 MU to preserve a real uncovered side
+  balcony. Completed the lower room extension and the slab over every newly
+  enclosed first-floor cell.
+- Added two mirrored exterior flights of eight 16-MU rises. Both start on the
+  first-floor balcony, converge on a 128×128-MU second-floor landing and meet
+  an independent two-leaf group-913 door at z=264.
+- Replaced MAP02's superseded local Look/Chase/shooter enclosures with six
+  raised-sector rooms for distance, angle, occlusion and movement-noise tests.
+  Six fixed observers use Insight 0/50/100 and emit one perception report per
+  second only while the player is within 1,500 MU.
+- Implemented the diagnostic visual model: inverse-square distance curve,
+  current-height ratio, Insight ×1..×2, Stealth retention and quadratic angular
+  fade. A server CVar compares total 60°/120° apertures with the unresolved
+  ±60°/±120° interpretation.
+- Converted player movement noise to the approved 50-dB base of 625 MU, total
+  mass/100 kg, run ×2 and crouch ×0.5. Crouching no longer doubles Stealth
+  before those separate height/noise factors. Observers add the listener-
+  specific 50..450-MU Insight allowance before applying mass, movement and
+  Stealth, and consume each emitted movement event once.
+- Preserved exactly 15,000 actors in the mass field. One detected target is
+  published by the scheduler and adopted without repeated native Look calls.
+  The accepted 126-leader/1,749-follower group-16 structure remains intact.
+- Added optional continuous follower formation movement without `A_Chase`,
+  `TryMove` or neighbor scans. It is disabled by default for a clean comparison
+  with the accepted baseline and uses a configurable 0.25 speed scale when
+  enabled. Telemetry reports shared-target adoption and follower updates.
+- The author reported tests 5–13 of the preceding 4.29 candidate as correct.
+  The four MAP01 construction checks are superseded by this correction; all
+  new geometry, perception and moving-crowd behavior still require runtime QA.
+
 ## 4.29.0ab — Complete eastern room volume and documentation audit
 
 - Closed the eastern U against the existing rear room with two finite wall
   connectors and removed the obsolete intermediate east wall from the usable
   ground-floor opening.
 - Extended the rear ground-floor room through the complete new footprint. All
-  added upper-floor edges now have solid 0–256-MU wall volume below them.
+  added upper-floor edges received solid 0–256-MU wall volume below them.
 - Completed floor and roof slabs across the enclosed first-floor footprint
   while preserving all twelve eastern stair treads as roof-only sectors.
 - Added one uncovered balcony spanning the full new east facade: 272 MU deep
-  and 782 MU wide.
+  and 782 MU wide. The later visual test rejected this geometry and 4.29.0ac
+  supersedes its house result.
 - Preserved all 221 Things, including the processing manual and the author's
-  guide marker. MAP01 now contains 568 vertices, 777 linedefs, 1,520 sidedefs
-  and 176 sectors; SHA-256 is
+  guide marker. MAP01 contained 568 vertices, 777 linedefs, 1,520 sidedefs and
+  176 sectors; SHA-256 was
   `03a16179216566bb0bdc521f1ff331c1d4b27cc48a2c4ed7a91a3e855ef8b0f0`.
 - Added an idempotent constructor restricted to the exact V4.29.0aa MAP01
-  hash and structural counts. Independent rebuilds produce the same WAD.
-- Audited the complete personal design document against the current code and
+  hash and structural counts. Independent rebuilds produced the same WAD.
+- Audited the complete personal design document against current code and
   accepted tests. Corrected obsolete persistence, recipe, equipment-name,
-  armor, shield, crafting, IA/perception and MAP01 statements and added the
+  armor, shield, crafting, AI/perception and MAP01 statements and added the
   explicit thirteen-test gate from V4.29 to V4.30.
 - Changed no crafting transaction, recipe index, ZScript, AI, perception,
   combat or MAP02 content.

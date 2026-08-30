@@ -96,6 +96,7 @@ DoomEdNums
     18205 = CaelumDiagnosticQuintessenceNativeRat
     18206 = CaelumDiagnosticQuintessencePassThroughRat
     18207 = CaelumDiagnosticQuintessenceFullRat
+    18208 = CaelumDiagnosticPerceptionObserver
     18220 = CaelumPhysicsDiagnosticMonitor
 
     18100 = CaelumWeaponPickup

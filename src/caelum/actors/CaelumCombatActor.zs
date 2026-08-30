@@ -112,6 +112,8 @@ class CaelumCombatActor : Actor
     int CaelumMassLookBudgetPerTic;
     int CaelumMassChaseBudgetPerTic;
     int CaelumMassSquadSize;
+    bool CaelumMassFollowerMovementEnabled;
+    double CaelumMassFollowerSpeedScale;
     int CaelumMassAttackInterval;
     int CaelumMassLookPhaseKey;
     int CaelumMassChasePhaseKey;
@@ -120,6 +122,9 @@ class CaelumCombatActor : Actor
     CaelumMassAIScheduler CaelumMassScheduler;
 
     int ImpactDiagnosticFollowerPulses;
+    int ImpactDiagnosticFollowerMoveUpdates;
+    int ImpactDiagnosticFollowerMoveStops;
+    int ImpactDiagnosticSharedTargetAdoptions;
 
     double CurrentCombatAdrenaline;
     double MaximumCombatAdrenaline;
@@ -293,6 +298,8 @@ class CaelumCombatActor : Actor
             CaelumMassLookBudgetPerTic = 20;
             CaelumMassChaseBudgetPerTic = 10;
             CaelumMassSquadSize = 16;
+            CaelumMassFollowerMovementEnabled = false;
+            CaelumMassFollowerSpeedScale = 0.25;
             return;
         }
 
@@ -308,6 +315,10 @@ class CaelumCombatActor : Actor
         CaelumMassChaseBudgetPerTic =
             CaelumMassScheduler.MassChaseBudgetPerTic;
         CaelumMassSquadSize = CaelumMassScheduler.MassSquadSize;
+        CaelumMassFollowerMovementEnabled =
+            CaelumMassScheduler.MassFollowerMovementEnabled;
+        CaelumMassFollowerSpeedScale =
+            CaelumMassScheduler.MassFollowerSpeedScale;
     }
 
     bool IsCaelumMassDiagnosticActor()
@@ -440,8 +451,36 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+
+        // El primer miembro que ve al jugador publica el objetivo. Los demás
+        // pueden pasar a See mediante una lectura O(1), sin ejecutar otra
+        // búsqueda espacial. El campo diagnóstico tiene una sola facción;
+        // producción separará este registro por grupo y zona.
+        if (combatActor.CaelumMassAIScheduleActive
+            && combatActor.CaelumMassScheduler != null)
+        {
+            Actor sharedTarget =
+                combatActor.CaelumMassScheduler.GetSharedMassTarget();
+            if (sharedTarget != null)
+            {
+                combatActor.target = sharedTarget;
+                combatActor.CaelumMassScheduler.RecordSharedTargetAdoption();
+                combatActor.ImpactDiagnosticSharedTargetAdoptions++;
+                State seeState = combatActor.FindState('See');
+                if (seeState != null) { combatActor.SetState(seeState); }
+                return;
+            }
+        }
         if (!combatActor.BeginCaelumDiagnosticLook()) { return; }
         combatActor.A_Look();
+        if (combatActor.CaelumMassAIScheduleActive
+            && combatActor.CaelumMassScheduler != null
+            && combatActor.target != null)
+        {
+            combatActor.CaelumMassScheduler.PublishSharedMassTarget(
+                combatActor.target
+            );
+        }
     }
 
     action void A_CaelumBudgetedChase()
@@ -451,7 +490,8 @@ class CaelumCombatActor : Actor
 
         // La prueba de escuadras separa decisión y combate de la consulta
         // espacial nativa. Sólo los líderes entran en A_Chase/TryMove; los
-        // seguidores sólo conservan objetivo y orientación en un pulso lento.
+        // seguidores conservan el objetivo y, si la prueba lo habilita, usan
+        // velocidad local barata sin A_Chase, TryMove ni búsqueda de vecinos.
         // El ataque queda también en manos del líder durante esta prueba: así
         // ningún CheckMissileRange oculto contamina el aislamiento de TryMove.
         if (combatActor.CaelumMassAIScheduleActive
@@ -466,7 +506,52 @@ class CaelumCombatActor : Actor
 
     void RunCaelumMassFollowerPulse()
     {
-        if (target == null || health <= 0) { return; }
+        if (target == null || target.health <= 0 || health <= 0)
+        {
+            if (CaelumMassFollowerMovementEnabled)
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+                ImpactDiagnosticFollowerMoveStops++;
+            }
+            return;
+        }
+
+        if (CaelumMassFollowerMovementEnabled)
+        {
+            // Treinta y dos direcciones y cuatro radios producen destinos
+            // estables alrededor del objetivo. Es una formación diagnóstica,
+            // no una comparación entre seguidores ni navegación definitiva.
+            int formationIndex = CaelumMassChasePhaseKey % 128;
+            double formationAngle = (formationIndex % 32) * 11.25;
+            double formationRadius = 96.0
+                + ((formationIndex / 32) % 4) * 48.0;
+            double destinationX = target.Pos.X
+                + Cos(formationAngle) * formationRadius;
+            double destinationY = target.Pos.Y
+                + Sin(formationAngle) * formationRadius;
+            double offsetX = destinationX - Pos.X;
+            double offsetY = destinationY - Pos.Y;
+            double distance = Sqrt(offsetX * offsetX + offsetY * offsetY);
+
+            if (distance <= 24.0)
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+                ImpactDiagnosticFollowerMoveStops++;
+                return;
+            }
+
+            Angle = VectorAngle(offsetX, offsetY);
+            double localSpeed = Max(
+                0.0,
+                Speed * CaelumMassFollowerSpeedScale
+            );
+            Vel.X = Cos(Angle) * localSpeed;
+            Vel.Y = Sin(Angle) * localSpeed;
+            ImpactDiagnosticFollowerMoveUpdates++;
+            return;
+        }
 
         // El intervalo de ataque ya está calibrado entre uno y dos segundos
         // (64 tics por defecto) y evita que todos los seguidores giren juntos.

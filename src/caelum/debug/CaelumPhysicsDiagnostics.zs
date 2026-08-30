@@ -144,6 +144,197 @@ class CaelumDiagnosticExplosiveShooter : CaelumArgento
     }
 }
 
+// Observador inmóvil de los nuevos recintos de percepción. Ejecuta una sola
+// muestra visual por segundo, usa la fórmula documentada y consume cada evento
+// de pasos una sola vez. args[0] fija Perspicacia (0..100) y args[1] identifica
+// la sala en la telemetría. La convención angular sigue siendo una comparación
+// diagnóstica seleccionable por CVar hasta cerrar la interpretación canónica.
+class CaelumDiagnosticPerceptionObserver : CaelumPassiveGiantRat
+{
+    int PerceptionReportAccumulator;
+    int LastProcessedNoiseSerial;
+    bool NoiseSerialInitialized;
+    int VisualSamples;
+    int VisualDetections;
+    int HeardMovementEvents;
+
+    const MU_PER_METER = 31.111111;
+    const REFERENCE_HEIGHT_MU = 56.0;
+    const MOVEMENT_SOUND_BASE_MU = 625.0;
+    const REPORT_DISTANCE_MU = 1500.0;
+
+    CaelumPlayer FindDiagnosticPlayer()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]
+                || players[playerIndex].mo == null)
+            {
+                continue;
+            }
+            CaelumPlayer candidate = CaelumPlayer(players[playerIndex].mo);
+            if (candidate != null) { return candidate; }
+        }
+        return null;
+    }
+
+    double GetDiagnosticInsight()
+    {
+        return Clamp(double(args[0]), 0.0, 100.0);
+    }
+
+    bool UsesWideHalfAngles()
+    {
+        CVar setting = CVar.GetCVar(
+            "ca_diag_perception_wide_half_angles"
+        );
+        return setting != null && setting.GetBool();
+    }
+
+    double CalculateAngularFactor(Actor candidate, bool wideHalfAngles)
+    {
+        double coreHalfAngle = wideHalfAngles ? 60.0 : 30.0;
+        double limitHalfAngle = wideHalfAngles ? 120.0 : 60.0;
+        double offset = Abs(DeltaAngle(Angle, AngleTo(candidate)));
+        if (offset <= coreHalfAngle) { return 1.0; }
+        if (offset >= limitHalfAngle) { return 0.0; }
+        double remaining = 1.0
+            - (offset - coreHalfAngle)
+                / (limitHalfAngle - coreHalfAngle);
+        return remaining * remaining;
+    }
+
+    double CalculateVisualChance(
+        CaelumPlayer candidate,
+        double distanceMU,
+        bool lineOfSight,
+        bool wideHalfAngles
+    )
+    {
+        if (!lineOfSight) { return 0.0; }
+
+        double distanceMeters = distanceMU / MU_PER_METER;
+        double normalizedDistance = distanceMeters / 20.0;
+        double baseChance = 1000.0
+            / (1.0 + 9.0 * normalizedDistance * normalizedDistance);
+        if (baseChance < 1.0) { return 0.0; }
+
+        double currentHeight = candidate.GetImpactReferenceHeight();
+        if (candidate.player != null)
+        {
+            currentHeight *= Clamp(candidate.player.crouchfactor, 0.0, 1.0);
+        }
+        double heightFactor = Clamp(
+            currentHeight / REFERENCE_HEIGHT_MU,
+            0.0,
+            2.0
+        );
+        double insightFactor = 1.0 + GetDiagnosticInsight() / 100.0;
+        double stealthFactor = Clamp(
+            1.0 - candidate.EffectiveStealthPercent / 100.0,
+            0.0,
+            1.0
+        );
+        double angularFactor = CalculateAngularFactor(
+            candidate,
+            wideHalfAngles
+        );
+        double result = baseChance
+            * heightFactor
+            * insightFactor
+            * stealthFactor
+            * angularFactor;
+        return result < 1.0 ? 0.0 : Clamp(result, 0.0, 100.0);
+    }
+
+    double CalculateAuditoryAllowance()
+    {
+        double insight = GetDiagnosticInsight();
+        return (50.0 + insight)
+            * (1.0 + 2.0 * insight * (insight + 1.0) / 10100.0);
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        if (level.MapName != "MAP02") { return; }
+
+        PerceptionReportAccumulator++;
+        if (PerceptionReportAccumulator < TICRATE) { return; }
+        PerceptionReportAccumulator = 0;
+
+        CaelumPlayer candidate = FindDiagnosticPlayer();
+        if (candidate == null || candidate.health <= 0) { return; }
+        double distanceMU = Distance2D(candidate);
+        if (!NoiseSerialInitialized)
+        {
+            LastProcessedNoiseSerial = candidate.MovementNoiseEventSerial;
+            NoiseSerialInitialized = true;
+        }
+        if (distanceMU > REPORT_DISTANCE_MU)
+        {
+            // Un evento emitido fuera de esta sala no debe reaparecer cuando
+            // el jugador se teletransporte después junto al observador.
+            LastProcessedNoiseSerial = candidate.MovementNoiseEventSerial;
+            return;
+        }
+
+        bool wideHalfAngles = UsesWideHalfAngles();
+        bool lineOfSight = CheckSight(candidate);
+        double angularOffset = Abs(DeltaAngle(Angle, AngleTo(candidate)));
+        double visualChance = CalculateVisualChance(
+            candidate,
+            distanceMU,
+            lineOfSight,
+            wideHalfAngles
+        );
+        double visualRoll =
+            Random[CaelumPerceptionDiagnostic](0, 999999) / 10000.0;
+        bool visuallyDetected = visualChance > 0.0
+            && visualRoll < visualChance;
+        VisualSamples++;
+        if (visuallyDetected) { VisualDetections++; }
+
+        bool newNoiseEvent = false;
+        newNoiseEvent = candidate.MovementNoiseEventSerial
+            != LastProcessedNoiseSerial;
+        bool heardMovement = false;
+        double hearingRange = 0.0;
+        if (newNoiseEvent)
+        {
+            LastProcessedNoiseSerial = candidate.MovementNoiseEventSerial;
+            double sourceMultiplier = candidate.LastMovementNoiseEventRange
+                / MOVEMENT_SOUND_BASE_MU;
+            hearingRange = (
+                MOVEMENT_SOUND_BASE_MU + CalculateAuditoryAllowance()
+            ) * sourceMultiplier;
+            heardMovement = candidate.LastMovementNoiseEventTic >= 0
+                && candidate.LastMovementNoiseEventTic <= level.time
+                && distanceMU <= hearingRange;
+            if (heardMovement) { HeardMovementEvents++; }
+        }
+
+        Console.Printf(
+            "[CA-PERCEP] sala=%d perspicacia=%d distancia=%.1fMU angulo=%.1f linea=%d modo=%s visual=%.2f%% tirada=%.2f detectado=%d muestras=%d/%d ruido_nuevo=%d alcance_oido=%.1fMU oido=%d eventos=%d",
+            args[1],
+            int(GetDiagnosticInsight()),
+            distanceMU,
+            angularOffset,
+            lineOfSight,
+            wideHalfAngles ? "semicono_60_120" : "apertura_60_120",
+            visualChance,
+            visualRoll,
+            visuallyDetected,
+            VisualDetections,
+            VisualSamples,
+            newNoiseEvent,
+            hearingRange,
+            heardMovement,
+            HeardMovementEvents
+        );
+    }
+}
+
 // Un monitor colocado una sola vez en MAP02 informa cada segundo. Los
 // contactos se guardan como una referencia en cada cuerpo; por eso se divide
 // el total por dos para mostrar aristas fisicas aproximadas.
@@ -166,7 +357,13 @@ class CaelumPhysicsDiagnosticMonitor : Actor
     {
         Super.PostBeginPlay();
         Console.Printf(
-            "[CA-PHYS] Quintaesencia: 7 warp -24000 -18000 0; 8 warp -24000 0 0; 9 warp -24000 18000 0. IA masiva: fija CVars (escuadra=16) antes de map map02; warp 16368 -16 0."
+            "[CA-PERCEP] Salas: 1 warp 300 2000 0; 2 warp 2900 1500 0; 3 warp 6100 2100 0; 4 warp 300 -2000 0; 5 warp 2900 -1500 0; 6 warp 6100 -2100 0."
+        );
+        Console.Printf(
+            "[CA-AI] Base aceptada: ca_diag_mass_follower_movement false. Movimiento barato: true antes de map map02; después warp 16368 -16 0."
+        );
+        Console.Printf(
+            "[CA-PHYS] Quintaesencia: warp -24000 -18000 0; warp -24000 0 0; warp -24000 18000 0."
         );
     }
 
@@ -178,6 +375,8 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         ReportAccumulator = 0;
 
         int combatActors = 0;
+        int massFieldActors = 0;
+        int massFieldActiveActors = 0;
         int activeAIActors = 0;
         int activeAITargets = 0;
         int targetedActors = 0;
@@ -222,6 +421,11 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int massSquadLeaders = 0;
         int massSquadFollowers = 0;
         int massFollowerPulses = 0;
+        int massFollowerMoveUpdates = 0;
+        int massFollowerMoveStops = 0;
+        int massSharedTargetAdoptions = 0;
+        bool scheduledFollowerMovement = false;
+        double scheduledFollowerSpeedScale = 0.0;
         int anatomyObjects = 0;
         int armorObjects = 0;
         int elementalStatusObjects = 0;
@@ -264,6 +468,15 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             if (combatActor != null)
             {
                 combatActors++;
+                if (combatActor.IsCaelumMassDiagnosticActor())
+                {
+                    massFieldActors++;
+                    if (!combatActor.CaelumDiagnosticPassiveAI
+                        && combatActor.health > 0)
+                    {
+                        massFieldActiveActors++;
+                    }
+                }
                 if (combatActor.CaelumMassAIScheduleActive
                     || combatActor.CaelumDiagnosticPassiveAI)
                 {
@@ -294,6 +507,12 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                     }
                     massFollowerPulses +=
                         combatActor.ImpactDiagnosticFollowerPulses;
+                    massFollowerMoveUpdates +=
+                        combatActor.ImpactDiagnosticFollowerMoveUpdates;
+                    massFollowerMoveStops +=
+                        combatActor.ImpactDiagnosticFollowerMoveStops;
+                    massSharedTargetAdoptions +=
+                        combatActor.ImpactDiagnosticSharedTargetAdoptions;
                 }
                 if (combatActor.AnatomyProfile != null) { anatomyObjects++; }
                 if (combatActor.CombatArmor != null) { armorObjects++; }
@@ -441,6 +660,10 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                         combatActor.CaelumMassLookEnabled;
                     scheduledAttacksEnabled =
                         combatActor.CaelumMassAttacksEnabled;
+                    scheduledFollowerMovement =
+                        combatActor.CaelumMassFollowerMovementEnabled;
+                    scheduledFollowerSpeedScale =
+                        combatActor.CaelumMassFollowerSpeedScale;
                 }
                 projectilesSpawned +=
                     combatActor.ImpactDiagnosticProjectilesSpawned;
@@ -469,6 +692,9 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 combatActor.ImpactDiagnosticChaseBudgetDeferred = 0;
                 combatActor.ImpactDiagnosticChaseDisabled = 0;
                 combatActor.ImpactDiagnosticFollowerPulses = 0;
+                combatActor.ImpactDiagnosticFollowerMoveUpdates = 0;
+                combatActor.ImpactDiagnosticFollowerMoveStops = 0;
+                combatActor.ImpactDiagnosticSharedTargetAdoptions = 0;
                 combatActor.ImpactDiagnosticLookAttempts = 0;
                 combatActor.ImpactDiagnosticLookUpdates = 0;
                 combatActor.ImpactDiagnosticLookDeferred = 0;
@@ -515,6 +741,8 @@ class CaelumPhysicsDiagnosticMonitor : Actor
         int schedulerLookBudgetDeferred = 0;
         int peakChaseUpdatesPerTic = 0;
         int schedulerBudgetDeferred = 0;
+        int sharedTargetPublications = 0;
+        int sharedTargetAdoptions = 0;
         CaelumMassAIScheduler massScheduler = CaelumMassAIScheduler(
             EventHandler.Find("CaelumMassAIScheduler")
         );
@@ -528,11 +756,17 @@ class CaelumPhysicsDiagnosticMonitor : Actor
                 massScheduler.ReadAndResetPeakChaseUpdates();
             schedulerBudgetDeferred =
                 massScheduler.ReadAndResetBudgetDeferrals();
+            sharedTargetPublications =
+                massScheduler.ReadAndResetSharedTargetPublications();
+            sharedTargetAdoptions =
+                massScheduler.ReadAndResetSharedTargetAdoptions();
         }
 
         Console.Printf(
-            "[CA-PHYS] actores=%d ia=%d ia_objetivos=%d objetivos=%d proyectiles=%d",
+            "[CA-PHYS] actores=%d campo=%d ia_campo=%d ia=%d ia_objetivos=%d objetivos=%d proyectiles=%d",
             combatActors,
+            massFieldActors,
+            massFieldActiveActors,
             activeAIActors,
             activeAITargets,
             targetedActors,
@@ -585,10 +819,20 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             schedulerBudgetDeferred
         );
         Console.Printf(
-            "[CA-AI] escuadras_activas tamano=%d lideres=%d seguidores=%d pulsos_seguidor/s=%d",
+            "[CA-AI] escuadras tamano=%d lideres=%d seguidores=%d objetivo_publicado=%d adopciones_coord=%d adopciones_actores=%d",
             scheduledSquadSize,
             massSquadLeaders,
             massSquadFollowers,
+            sharedTargetPublications,
+            sharedTargetAdoptions,
+            massSharedTargetAdoptions
+        );
+        Console.Printf(
+            "[CA-AI] seguidores movimiento=%d escala=%.3f actualizaciones/s=%d paradas/s=%d pulsos_pasivos/s=%d",
+            scheduledFollowerMovement,
+            scheduledFollowerSpeedScale,
+            massFollowerMoveUpdates,
+            massFollowerMoveStops,
             massFollowerPulses
         );
         Console.Printf(

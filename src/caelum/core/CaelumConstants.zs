@@ -692,10 +692,12 @@ class CaelumConstants : Object
     const RUNNING_ACCURACY_MULTIPLIER = 0.25;
     const CROUCH_ACCURACY_MULTIPLIER = 2.0;
     const CROUCH_CRITICAL_CHANCE_MULTIPLIER = 2.0;
-    const CROUCH_STEALTH_MULTIPLIER = 2.0;
-    // 20 m de alcance auditivo base convertidos con 56 MU = 1,8 m.
-    const MOVEMENT_NOISE_BASE_RANGE_MU = 622.222222;
-    const MOVEMENT_NOISE_RUN_MULTIPLIER = 1.50;
+    // Agacharse ya modifica por separado altura visible y ruido corporal; no
+    // duplica el atributo Sigilo antes de aplicar esos dos factores.
+    const CROUCH_STEALTH_MULTIPLIER = 1.0;
+    // Un paso de 50 dB aporta dB²/4 = 625 MU antes de Perspicacia.
+    const MOVEMENT_NOISE_BASE_RANGE_MU = 625.0;
+    const MOVEMENT_NOISE_RUN_MULTIPLIER = 2.0;
     const MOVEMENT_NOISE_CROUCH_MULTIPLIER = 0.50;
     const MOVEMENT_NOISE_INTERVAL_SECONDS = 0.50;
     const DEBUG_SWORD_BASE_INACCURACY_DEGREES = 6.0;

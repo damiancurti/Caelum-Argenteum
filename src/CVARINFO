@@ -35,3 +35,15 @@ server int ca_diag_mass_chase_budget = 10;
 // objetivo y orientación lenta sin iniciar TryMove ni chequeos de ataque.
 // El valor uno restaura el comportamiento anterior para una comparación A/B.
 server int ca_diag_mass_squad_size = 16;
+
+// Movimiento local experimental para seguidores. Desactivado conserva la
+// línea base 4.29.0u/0v ya aceptada; activado mueve a todos los seguidores con
+// velocidad continua sin permitirles entrar en A_Chase/TryMove. 0.25 equivale
+// aproximadamente al desplazamiento normal de una acción cada cuatro tics.
+server bool ca_diag_mass_follower_movement = false;
+server int ca_diag_mass_follower_speed_percent = 25;
+
+// La especificación aún debe confirmar si 60°/120° describe la apertura total
+// o el semicono. false prueba aperturas totales (±30°/±60°); true compara la
+// lectura amplia (±60°/±120°) sin cambiar código ni documentación canónica.
+server bool ca_diag_perception_wide_half_angles = false;

@@ -403,7 +403,10 @@ class CaelumPlayer : DoomPlayer
     double EffectiveStealthPercent;
     double MovementNoiseMultiplier;
     double LastMovementNoiseRange;
+    double LastMovementNoiseEventRange;
     double MovementNoiseTimer;
+    int LastMovementNoiseEventTic;
+    int MovementNoiseEventSerial;
     double PainImmobilizationRemaining;
     double LastPainAnimationDuration;
 
@@ -8862,10 +8865,16 @@ class CaelumPlayer : DoomPlayer
         LastMovementNoiseRange =
             CaelumConstants.MOVEMENT_NOISE_BASE_RANGE_MU
             * movementMultiplier
-            * MovementNoiseMultiplier;
+            * MovementNoiseMultiplier
+            * (DerivedStats != null
+                ? Max(0.0, DerivedStats.TotalMass / 100.0)
+                : 1.0);
 
         if (LastMovementNoiseRange > 0.0)
         {
+            LastMovementNoiseEventTic = level.time;
+            LastMovementNoiseEventRange = LastMovementNoiseRange;
+            MovementNoiseEventSerial++;
             SoundAlert(self, false, LastMovementNoiseRange);
         }
     }

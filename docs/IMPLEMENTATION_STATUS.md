@@ -1,40 +1,73 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Eastern room completion and full documentation audit 4.29.0ab
+## Mansion correction and isolated perception/group prototype 4.29.0ac
 
-**Implemented and structurally validated; focused MAP01 and V4.29 closing tests pending**
+**Implemented and structurally validated; GZDoom runtime validation required**
 
-MAP01 now treats every wall requested around the eastern stair pair as one
-finite architectural volume. The former U closes against the existing rear
-room through north and south connectors. The old east wall inside that join is
-open from y=-383 to y=383, so it no longer leaves a cut through the expanded
-ground-floor room. The added upper floor has solid 0–256-MU perimeter walls
-below it, the enclosed first floor receives continuous floor and roof slabs,
-and the twelve real stair sectors retain only overhead cover.
+MAP01 is rebuilt only from the exact 4.29.0ab hash. The two mistakenly opened
+rear-room wall pieces return to target 511 while the intended three-piece
+central opening remains target 510. A new target-510 slab closes the unroofed
+stair-origin cell. The enclosure moves inward from y=±391 to y=±295, leaving
+96 MU of open balcony beyond the new full-height walls. The lower extension is
+therefore part of the rear ground-floor room, while the side balcony remains
+outside it. Every enclosed first-floor cell retains both the 128–136 floor and
+256–264 roof slabs.
 
-The exterior addition is an uncovered balcony from x=1697 to x=1969 and
-y=-391 to y=391: 272 MU deep by 782 MU wide. MAP01 has 568 vertices, 777
-linedefs, 1,520 sidedefs, 176 sectors and the same 221 Things. Its SHA-256 is
-`03a16179216566bb0bdc521f1ff331c1d4b27cc48a2c4ed7a91a3e855ef8b0f0`.
-The V4.29.0ab constructor accepts only the exact V4.29.0aa base and is
-deterministic and idempotent.
+Two symmetric external stair flights occupy x=1697..1816. Each contains eight
+32-MU-deep treads whose tops rise from z=152 to z=264. Their inner ends meet a
+128×128-MU solid landing. The center of the inherited front wall contains a
+128-MU opening above z=264; two `CaelumSlidingDoorLeaf` actors form independent
+group 913 and cannot activate any earlier door group. MAP01 has 676 vertices,
+918 linedefs, 1,754 sidedefs, 221 sectors and 223 Things; SHA-256 is
+`41085aa4eafffae7d4d24706b31f3aa8e6900c22103d9b2bde0ed40c8498fd67`.
 
-The personal documentation is audited against the executable state rather
-than historical intentions. Native GZDoom saves plus
-`CaelumPersistentCharacterState` replace the obsolete external `profile.dat`
-model. New characters begin at 0/79 recipes; MAP01's processing manual teaches
-14. Armor is localized by the struck piece, shield Block is the persistent
-contextual Zoom action, and equipment levels remain internal while visible
-names use base, silver and gold finishes. The accepted recipe-book presentation
-is recorded as implemented. Final perception sensors and playable formations
-remain explicit future work; the accepted MAP02/Quintessence telemetry does not
-need repetition for this map/document-only increment.
+MAP02 removes the 108 local actors and 42 lines that implemented the obsolete
+Look/Chase/projectile rooms. Six U-shaped raised-sector rooms and two interior
+occluders replace them. The remote three-way Quintessence comparison is
+unchanged. The mass field still contains exactly 15,000 actors: 13,125 passive
+visual bodies plus 1,875 active actors. MAP02 has 112 vertices, 110 linedefs,
+212 sidedefs, 9 sectors and 16,508 Things; SHA-256 is
+`88956e5074fe4e0ae097cfb539b67a4e0a3b6f33407bddcfcdfb7b73ce8180a9`.
 
-V4.29 closes only after the focused MAP01 traversal, clean GZDoom load,
-new/save/load/migration checks, recipe-book/manual checks, processing batches,
-station matrix, precious-metal costs and pickup autoequip regression all pass.
-The complete thirteen-case procedure is mirrored in the audited personal
-document and `docs/ROADMAP.md`.
+`CaelumDiagnosticPerceptionObserver` samples once per second and logs the
+complete calculation. Its visual base is
+`1000 / (1 + 9 × (distance metres / 20)²)` percent, with values below 1% set
+to zero. The result then applies current target height / 56 MU, Insight
+`1 + level/100`, retained Stealth and the angular factor before clamping to
+100%. Native `CheckSight` must also pass. The default angular test interprets
+60°/120° as total apertures (full strength through ±30°, quadratic fade to
+zero at ±60°); `ca_diag_perception_wide_half_angles true` compares ±60°/±120°.
+This CVar records an unresolved design interpretation rather than selecting a
+final rule silently.
+
+Walking now starts from the approved 50-dB base `50²/4 = 625 MU`; total mass
+is divided by 100 kg, running is ×2 and crouching ×0.5. Stealth is applied
+once, so crouching no longer doubles the Stealth stat and then also reduces
+noise. Each observer consumes the player's latest event serial once and adds
+its own auditory allowance before applying mass/movement/Stealth:
+`(50+L) × [1 + 2L(L+1)/10100]`, producing 50/approximately 150.5/450 MU at
+Insight 0/50/100. Listener height does not enter hearing.
+
+The mass scheduler now publishes one live MAP02 target. Other field actors
+adopt it by direct reference and enter `See` without an additional native
+Look. Leaders retain the accepted ten-call native Chase ceiling. With
+`ca_diag_mass_follower_movement true`, followers update a deterministic
+32-direction/four-radius destination around that target and set local velocity
+without native Chase, TryMove or actor searches. The default remains false so
+the previously accepted baseline can be replayed first. This prototype does
+not yet implement faction-specific target stores, sleeping distance tiers,
+navigation around complex buildings or follower attacks.
+
+Required runtime gates are listed in the roadmap. No stability, probability or
+architectural result in this section is accepted merely from static validation.
+
+The personal-document audit delivered with 4.29.0ab remains authoritative for
+the already implemented systems: native saves plus
+`CaelumPersistentCharacterState`, 0/79 new profiles, the 14-recipe processing
+manual, localized armor, contextual Zoom Block and internal equipment levels
+with base/silver/gold client names. Only 4.29.0ab's rejected house description
+is superseded. The private document is deliberately not revised again until
+the new architecture and diagnostic perception/group behavior pass runtime QA.
 
 ## Processing recipes and precious-metal finish costs 4.29.0aa
 

@@ -12,7 +12,16 @@ class CaelumMassAIScheduler : EventHandler
     int MassLookBudgetPerTic;
     int MassChaseBudgetPerTic;
     int MassSquadSize;
+    bool MassFollowerMovementEnabled;
+    double MassFollowerSpeedScale;
     bool SettingsInitialized;
+
+    // MAP02 usa un solo objetivo compartido para demostrar que los seguidores
+    // pueden adoptar la detección de su escuadra sin repetir A_Look. No es aún
+    // el registro definitivo por facción/zona de los mapas jugables.
+    Actor SharedMassTarget;
+    int SharedTargetPublicationsSinceReport;
+    int SharedTargetAdoptionsSinceReport;
 
     int LookUpdatesThisTic;
     int PeakLookUpdatesPerTic;
@@ -67,6 +76,18 @@ class CaelumMassAIScheduler : EventHandler
         MassSquadSize = squadSize == null
             ? 16 : Clamp(squadSize.GetInt(), 1, 128);
 
+        CVar followerMovement = CVar.GetCVar(
+            "ca_diag_mass_follower_movement"
+        );
+        MassFollowerMovementEnabled = followerMovement != null
+            && followerMovement.GetBool();
+
+        CVar followerSpeed = CVar.GetCVar(
+            "ca_diag_mass_follower_speed_percent"
+        );
+        MassFollowerSpeedScale = followerSpeed == null
+            ? 0.25 : Clamp(followerSpeed.GetInt(), 0, 100) / 100.0;
+
         SettingsInitialized = true;
     }
 
@@ -79,6 +100,9 @@ class CaelumMassAIScheduler : EventHandler
         ChaseUpdatesThisTic = 0;
         PeakChaseUpdatesPerTic = 0;
         ChaseBudgetDeferralsSinceReport = 0;
+        SharedMassTarget = null;
+        SharedTargetPublicationsSinceReport = 0;
+        SharedTargetAdoptionsSinceReport = 0;
     }
 
     override void WorldTick()
@@ -152,6 +176,45 @@ class CaelumMassAIScheduler : EventHandler
     {
         int result = ChaseBudgetDeferralsSinceReport;
         ChaseBudgetDeferralsSinceReport = 0;
+        return result;
+    }
+
+    Actor GetSharedMassTarget()
+    {
+        if (SharedMassTarget != null
+            && (SharedMassTarget.health <= 0 || !SharedMassTarget.bShootable))
+        {
+            SharedMassTarget = null;
+        }
+        return SharedMassTarget;
+    }
+
+    void PublishSharedMassTarget(Actor candidate)
+    {
+        if (candidate == null || candidate.health <= 0) { return; }
+        if (SharedMassTarget != candidate)
+        {
+            SharedMassTarget = candidate;
+            SharedTargetPublicationsSinceReport++;
+        }
+    }
+
+    void RecordSharedTargetAdoption()
+    {
+        SharedTargetAdoptionsSinceReport++;
+    }
+
+    int ReadAndResetSharedTargetPublications()
+    {
+        int result = SharedTargetPublicationsSinceReport;
+        SharedTargetPublicationsSinceReport = 0;
+        return result;
+    }
+
+    int ReadAndResetSharedTargetAdoptions()
+    {
+        int result = SharedTargetAdoptionsSinceReport;
+        SharedTargetAdoptionsSinceReport = 0;
         return result;
     }
 }

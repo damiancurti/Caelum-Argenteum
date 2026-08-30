@@ -297,21 +297,18 @@ tutorial family. Silver-finish equipment additionally consumes 10% of final
 weight in silver; gold finish consumes 20% silver plus 10% gold, without
 changing final equipment weight.
 
-V4.29.0ab completes the eastern MAP01 volume without changing runtime code.
-The U-shaped wall joins the existing rear room, the obsolete internal wall is
-opened, the ground-floor rear room expands beneath the new first-floor slab,
-all enclosed upper space receives a roof and an uncovered 272×782-MU balcony
-spans the complete new east facade. The complete personal document is audited
-against code and accepted tests; obsolete external-profile, all-recipes-known,
-global-armor-defense, AltFire-Block and visible-tier descriptions are retired.
-The following closing gate replaces the scattered manual-validation bullets:
+V4.29.0ab completed the full personal-document audit and established the
+following thirteen-case closing gate. Its recipe/manual result is accepted,
+but its house expansion is not: the author found two rear-room wall sections
+removed, one stair-origin slab still open, an incomplete lower enclosure and
+no usable side balcony.
 
-1. Traverse the new ground and first floors; verify the U join, open internal
-   passage and absence of invisible/internal wall cuts.
+1. Traverse the new ground and first floors; verify the wall join, open internal
+   passage and absence of invisible/internal cuts.
 2. Inspect the new floor from below and roof from above; verify solid perimeter
    walls, continuous cover and a fully uncovered balcony.
-3. Traverse eastern stairs, bridge, landings, balcony and both portones; verify
-   continued access to the manual and station network.
+3. Traverse eastern stairs, bridge, landings, balcony and both existing
+   portones; verify continued access to the manual and station network.
 4. Create a character: one neutral skill, wizard once in MAP01 and 0/79 recipes.
 5. Save/load creation, resources, materials, recipes, equipment, active weapon,
    durability and Magic Box state.
@@ -323,20 +320,51 @@ The following closing gate replaces the scattered manual-validation bullets:
 9. Exercise all 14 processing recipes at ×1 and representative ×10/×100/×1000
    batches; verify 2→1, bronze 9:1, steel 497:3 and atomic failure.
 10. Validate cumulative station requirements and all shields with Workbench,
-    Forge and Anvil; tier 3 additionally requires Master Bench.
+    Forge and Anvil; gold additionally requires Master Bench.
 11. Craft representative base/silver/gold equipment in every family; verify
     precious-metal rounding and unchanged final weight.
 12. Regress compatible-weapon autoequip and incompatible/Magic-Box/capacity
     non-replacement behavior.
 13. Build a clean PK3, start GZDoom 4.14.2 without ZScript errors and load MAP01.
 
-MAP02 endurance and Quintessence are already accepted and are not part of this
-closing gate. A blocking failure remains in V4.29.0ab/0ac; only a clean gate
-authorizes the transition to V4.30.
+The author accepted cases 5–13 on the preceding candidate. Cases 1–4 remain
+open because the visual inspection rejected the house result. Case 13 must also
+receive a short parse/load regression after 4.29.0ac because this candidate
+does change ZScript and MAP02.
 
-- Complete the permanent Journal interaction layer for inventory and the shared station interface.
-- Execute the thirteen-case V4.29 closing gate above; no accepted visual or
-  MAP02 stress test needs repetition unless a later patch changes that system.
+V4.29.0ac supersedes only that geometry and begins the next isolated AI gate.
+MAP01 restores the two unintended openings, fills the stair-origin slab,
+retracts the enclosure to a 96-MU side balcony and adds paired external flights
+converging on a second-floor landing and group-913 door. MAP02 preserves the
+15,000-actor field but replaces its local rooms with six physical perception
+tests. One shared diagnostic target removes redundant Look acquisition;
+optional cheap follower steering moves 1,749 followers without native Chase or
+neighbor searches. The accepted group-16/no-follower-movement run remains the
+mandatory control. This patch does not claim 15,000 independently thinking or
+pathfinding actors, and no later active-population stage begins before its A/B
+logs pass.
+
+- **4.29.0ac house gate:** repeat cases 1–4 on MAP01, including the restored
+  rear rooms, filled stair-origin slab, complete lower extension, side balcony,
+  both new stair flights, landing and group-913 door.
+- **4.29.0ac load regression:** build and load both MAP01 and MAP02 without a
+  parser/node-builder failure. The accepted crafting/persistence cases 5–12 do
+  not need repetition because this patch does not touch those systems.
+- **Perception gate:** in rooms 1–6 compare standing/crouched and
+  walking/running results at Insight 0/50/100; verify occluders force visual
+  chance to zero while hearing remains listener-specific. Run both angular CVar
+  conventions and choose the authoritative interpretation from their logs.
+- **Mass-AI A/B gate:** first replay group 16 with follower movement false;
+  then reload MAP02 with follower movement true and keep the player moving for
+  at least 20 real minutes. Require 15,000 field actors, 126 leaders, 1,749
+  followers, native Chase peak ≤10/tic, bounded projectiles, zero retained
+  custom contacts and no accumulating frame degradation.
+- After that A/B passes, expand active simulation in separate 3,750 → 7,500 →
+  15,000 stages. Do not label the current 15,000 loaded actors as 15,000 full
+  AI: 13,125 remain passive visual bodies in 4.29.0ac.
+- Complete the permanent Journal interaction layer for inventory and the
+  shared station interface in its own reversible increment; the read-only
+  recipe book and authoritative crafting transactions are already accepted.
 - Add authored efficiency bonuses on top of the explicit 50% processing base; no bonus value or progression source is assigned yet.
 - Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
 - Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.

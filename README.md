@@ -16,7 +16,11 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0ab candidate retains the accepted 79-recipe catalogue from V4.29.0aa and completes the requested eastern MAP01 volume. The U-shaped first-floor wall now joins the existing rear room, the obsolete intermediate wall is open, every new upper floor has a solid ground-floor perimeter below it, the enclosed first floor is fully roofed, and an uncovered 272×782-MU balcony extends across the complete new facade. The personal design document was audited against current code: native save persistence, 0/79 new profiles, recipe processing, localized armor, contextual shield Block, internal equipment levels and player-facing base/silver/gold finishes now supersede their obsolete descriptions. AI, perception, combat, MAP02 and the accepted recipe implementation are unchanged.
+The current V4.29.0ac candidate retains the validated 79-recipe crafting catalogue from 4.29.0aa and corrects the MAP01 construction reported after 4.29.0ab. It restores the two rear-room wall segments opened by mistake, fills the remaining stair-origin slab, retracts the new enclosure to preserve a 96-MU side balcony, closes the lower extension, completes the covered first-floor area, and adds two exterior eight-step flights converging on a shared second-floor threshold and independent double door.
+
+MAP02 now replaces the superseded local Look/Chase/shooter rooms with six physical perception rooms. Diagnostic observers sample the documented distance/height/Insight/Stealth model once per second, consume movement-noise events once, and log line of sight, angle, probability, roll and hearing result. The unresolved 60°/120° angular interpretation is an explicit A/B CVar. The 15,000-actor mass field remains intact: 1,875 active actors use one shared target; 126 leaders retain budgeted native `A_Chase`, while 1,749 followers can optionally move continuously through cheap local velocity without invoking `A_Chase` or `TryMove`. This is an implemented diagnostic candidate pending runtime validation, not yet the final faction/group AI.
+
+The full personal-document audit completed in 4.29.0ab remains in force for persistence, 0/79 new profiles, processing recipes, localized armor, contextual shield Block and player-facing base/silver/gold finish names. Its rejected eastern-house geometry is the part superseded here; the private document is not regenerated merely to record an unvalidated diagnostic implementation.
 
 ### Building the development PK3
 
@@ -231,23 +235,24 @@ Stealth is now materialized as the documented Type-2 Agility derivative:
 
 `Stealth% = clamp(Agility × (Agility + 1) / 101, 0, 100)`
 
-Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
+Crouching originally doubled Stealth, walking used 622.22 MU and running used
+x1.5. That is retained here only as V4.26.4 history; it is no longer the current
+runtime.
 
-**Design supersession through V4.29.0v:** the preceding paragraph documents
-the legacy runtime only. The accepted future perception module removes the x2
-crouch Stealth bonus, uses movement-noise multipliers walk x1, run x2 and
-crouch x0.5, and lets Stealth reduce only concealable body emissions such as
-steps and ordinary impacts. Hearing remains event-driven through native
-`SoundAlert`; unavoidable weapon, magic, Pain, Death and explosion emissions
-are not erased by Stealth. Sound base range is `dB² / 4` MU, plus the listener
-allowance `(50 + PerspicacityLevel) × Type4(PerspicacityLevel)`, where
-`Type4(L) = 1 + 2L(L + 1) / 10100`; this adds 50 MU at level 0 and 450 MU at
-level 100 and no longer depends on listener height. Sight retains the target's
-current-height factor, has a 30-degree full-strength aperture and falls
-linearly to zero at the 60-degree total limit. Visual checks are staggered at
-most once per NPC per second. These rules are **not implemented yet**:
-V4.29.0v retains the legacy `SoundAlert` path and the diagnostic movement
-controller while the production perception/group controller is designed.
+**Superseded in V4.29.0ac:** crouching no longer multiplies the Stealth stat.
+Walking starts from `50²/4 = 625 MU`; total mass/100 kg, movement (walk x1,
+run x2, crouch x0.5) and retained Stealth are applied after the listener adds
+`(50 + PerspicacityLevel) × Type4(PerspicacityLevel)`. This allowance is 50 MU
+at level 0 and 450 MU at level 100 and never uses listener height. Native
+`SoundAlert` still emits the source event; MAP02's custom diagnostic observers
+apply the listener-specific allowance.
+
+The diagnostic visual sensor samples once per second. It uses
+`1000 / [1 + 9(distance / 20 m)²]%`, current target height, Perspicacity x1..x2,
+retained Stealth and a quadratic angular fade. Total 60°/120° aperture is the
+default test; a CVar compares the unresolved ±60°/±120° reading. This is a real
+MAP02 implementation pending validation, but still not the final faction,
+memory, alert-state or production NPC controller.
 
 MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
 
