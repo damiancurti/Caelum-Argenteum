@@ -410,18 +410,30 @@ closes its complete perimeter and assigns a z=256–264 slab to every corrected
 eastern platform sector. The balcony returns close below z=128 but remain open
 at the walkable balcony level. MAP02 is byte-identical to 4.29.0af.
 
+The 0ag runtime pass proved that interpretation inverted the needed vertical
+layers: the returns remained open on the first floor, their ground-floor walls
+cut the rooms, exterior corners did not close and the completed upper slab read
+as a floating awning. The upper room also needed to move back and receive an
+actual entrance door.
+
+V4.29.0ah reconstructs those layers from 4.29.0ad. Exterior walls occupy
+z=0–256; balcony returns occupy only z=128–256; the room moves 64 MU east and
+receives group-915 double leaves. The obsolete upper platform is removed except
+for a 128-MU corridor between that door and the accepted stair landing.
+
 The immediate closing order is:
 
-1. Manually accept 4.29.0ag MAP01 at the formerly open upper wall and require a
-   continuous closed face with no HOM or internal protrusion.
-2. Traverse the shifted 1426×782-MU second-floor room and inspect it from below.
-   Require complete support, floor and roof with no suspended eastern portion.
-3. Walk and inspect the complete eastern upper platform, both balcony returns
-   and the reported corner. Reject any floating strip, floor hole, awning-like
-   opening or wall that blocks either balcony.
+1. Manually accept the V4.29.0ah eastern ground-floor perimeter and walk both
+   rooms beneath the balconies. Require continuous exterior walls, closed
+   corners and no internal return wall cutting either room.
+2. Traverse the first-floor perimeter and both centered 64-MU balcony passages.
+   Require all four corners closed without losing access to either balcony.
+3. Traverse the shifted 1426×782-MU upper room, open group 915 from both sides
+   and walk the 128-MU corridor to the exterior landing. Inspect from below and
+   reject any remnant of the former floating awning.
 4. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
-   from the all-sewer 4.29.0af WAD; the accepted first-floor rooms, creator,
-   `changemap` persistence and crafting cases do not need functional repetition.
+   from the all-sewer 4.29.0af WAD; creator, `changemap`, crafting, IA and
+   perception do not need functional repetition for this correction.
 5. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.

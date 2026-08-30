@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.29.0ah — Rebuilt lower shell, upper door and removed legacy awning
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD rather than modifying the
+  rejected 0ag output. The accepted rooms, external stairs, tunnel, landing,
+  group-913 gate and ground-floor group-914 divider remain in place.
+- Removed the fragmented lower-extension wall profiles and reassigned every
+  physical piece. The north/south/east exterior perimeter is again solid from
+  z=0 through 256, closing both floors and all four exterior corners.
+- Moved the two balcony returns from z=0–128 to z=128–256. Ground-floor space
+  beneath both balconies now belongs to the rear rooms, while the first-floor
+  corners close correctly. Each balcony wall has one centered 64-MU passage.
+- Moved the 1426×782-MU second-floor room 64 MU east from 0ag to
+  x=-161..1265, y=-391..391. Its centered east opening contains a real pair of
+  64-MU sliding leaves at z=264 using independent group 915.
+- Removed the complete legacy z=256–264 eastern platform outside the new room.
+  Only a 128-MU-wide corridor at x=1265..1697, y=-64..64 remains to connect the
+  new door with the accepted exterior stair landing.
+- Exact partition audit covers the room's 1,115,132 MU² with 190 closed
+  rectangles and the corridor's 55,296 MU² with six. Both have zero overlap,
+  no target outside their bounds and no residual upper-floor target in the
+  former awning area.
+- MAP02 remains byte-identical to 4.29.0af. No ZScript, character creation,
+  persistence, crafting, inventory, AI, perception or combat source changed.
+- Added the idempotent `rebuild_4_29_0ah_maps.py` constructor. Final MAP01 is
+  946 vertices, 1,297 linedefs, 2,356 sidedefs, 383 sectors and 227 Things;
+  SHA-256 is
+  `faf38441d47a3bc0db36d5b069aff082451e4ddabeb38251cf996396f16ed2f3`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- An independent clean rebuild reproduced both WADs byte for byte. The complete
+  3,314-entry development PK3 passes its ZIP and UDMF structural gates; focused
+  visual traversal in GZDoom 4.14.2 remains the author acceptance gate.
+
 ## 4.29.0ag — Closed upper perimeter and continuous eastern platform
 
 - Rebuilt MAP01 again from the exact clean 4.29.0ad WAD. The accepted

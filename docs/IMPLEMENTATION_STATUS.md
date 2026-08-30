@@ -1,5 +1,46 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rebuilt lower shell, upper door and removed legacy awning 4.29.0ah
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ah rejects the wall heights and extended upper slab from 4.29.0ag and
+reconstructs MAP01 directly from clean 4.29.0ad. Existing rooms, both balcony
+footprints, the ground-floor group-914 divider, external stair pair, tunnel,
+shared landing and group-913 gate preserve their coordinates and arguments.
+
+The eastern exterior shell now uses one consistent z=0–256 profile across its
+north, south and east perimeter pieces. The west divider remains z=0–128 with
+its centered group-914 door. The two x=1306 balcony returns are no longer
+ground-floor walls: they occupy only z=128–256, so the rooms connect beneath
+the balconies while the first-floor corners close. Each y=±291 interior wall
+contains a centered x=1512..1576 passage into its balcony.
+
+The upper room keeps 1426×782 MU but moves one 64-MU module toward the rear to
+x=-161..1265. Its z=264–392 perimeter has a centered y=-64..64 eastern opening
+with group-915 leaves at `(1261,-32,264)` and `(1261,32,264)`. A six-sector
+128-MU-wide corridor runs from x=1265 to 1697 and joins the accepted landing.
+Every other z=256–264 target east of x=1265 is removed.
+
+The room's 190 rectangular targets cover exactly 1,115,132 MU²; the corridor's
+six targets cover 55,296 MU². Neither partition has overlap or escapes its
+bounds, and an exhaustive target audit finds no legacy upper slab outside the
+corridor. Deterministic outputs are:
+
+- MAP01 `(946, 1297, 2356, 383, 227)`, SHA-256
+  `faf38441d47a3bc0db36d5b069aff082451e4ddabeb38251cf996396f16ed2f3`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent clean reconstruction matches both WADs byte for byte. The
+3,314-entry development PK3 passes the ZIP and UDMF structural gates.
+
+Runtime acceptance is limited to MAP01: inspect the ground and first-floor
+shell, all balcony corners and passages, the room position and group-915 door,
+and the complete underside of the new corridor. No crafting, creator,
+`changemap`, MAP02, IA or perception test needs repetition for this map-only
+corrective increment.
+
 ## Closed upper perimeter and continuous eastern platform 4.29.0ag
 
 **Implemented and statically validated; focused author QA pending**
