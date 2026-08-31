@@ -421,26 +421,34 @@ z=0–256; balcony returns occupy only z=128–256; the room moves 64 MU east an
 receives group-915 double leaves. The obsolete upper platform is removed except
 for a 128-MU corridor between that door and the accepted stair landing.
 
+The 0ah runtime capture proved that the room still stopped 40 MU short of the
+intended rear structural line and that removing the platform wholesale was too
+broad. V4.29.0ai therefore preserves the accepted 0ah lower shell, moves the
+same room to x=-121..1305 and moves group 915 to x=1301. It restores the full
+z=256–264 eastern platform while continuing to omit the obsolete room strip
+west of x=-121. The central 128-MU corridor remains the direct access route but
+is no longer the only upper-floor surface.
+
 The immediate closing order is:
 
-1. Manually accept the V4.29.0ah eastern ground-floor perimeter and walk both
-   rooms beneath the balconies. Require continuous exterior walls, closed
-   corners and no internal return wall cutting either room.
-2. Traverse the first-floor perimeter and both centered 64-MU balcony passages.
-   Require all four corners closed without losing access to either balcony.
-3. Traverse the shifted 1426×782-MU upper room, open group 915 from both sides
-   and walk the 128-MU corridor to the exterior landing. Inspect from below and
-   reject any remnant of the former floating awning.
-4. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
+1. Load V4.29.0ai and confirm that the ground and first-floor rooms accepted in
+   0ah remain unchanged, including both centered 64-MU balcony passages.
+2. Walk the complete restored upper platform on both sides of the central
+   corridor. Require continuous floor with no lateral holes or floating strips.
+3. Traverse the x=-121..1305 upper room, open group 915 from both sides and
+   confirm that its facade is 40 MU farther toward the rear than in 0ah.
+4. Inspect the platform and room from below. Require support under all intended
+   floor and no obsolete strip left by the earlier x=-225 room footprint.
+5. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
    from the all-sewer 4.29.0af WAD; creator, `changemap`, crafting, IA and
    perception do not need functional repetition for this correction.
-5. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
+6. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.
-6. Replace the rejected global-ring follower steering with a density-aware,
+7. Replace the rejected global-ring follower steering with a density-aware,
    budgeted local route test. Pass 20 real minutes at 1,875 active actors before
    raising the active count.
-7. Once architecture, creator/persistence, controlled perception and the new
+8. Once architecture, creator/persistence, controlled perception and the new
    1,875-active movement gate pass, close V4.29 and begin V4.30.
 
 ### V4.30 — Repair, Disassembly and Durability Loop

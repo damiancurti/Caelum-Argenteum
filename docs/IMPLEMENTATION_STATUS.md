@@ -1,5 +1,52 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Restored upper platform and rear-aligned room 4.29.0ai
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ai corrects the two regressions observed in the 0ah runtime capture. It
+again reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. The
+accepted ground-floor and first-floor shell from 0ah is byte-semantically
+preserved: exterior walls remain z=0–256, balcony returns remain z=128–256,
+both centered balcony passages stay open and groups 913/914 keep their actors,
+positions and arguments.
+
+The 1426×782-MU upper room moves another 40 MU toward the rear, from
+x=-161..1265 to x=-121..1305. This restores its structurally aligned eastern
+edge at x=1305, a total rearward correction of 104 MU from the rejected 0ag
+position. Its complete footprint receives floor z=256–264 and roof z=392–400;
+the 8-MU perimeter receives wall z=264–392 except for the centered y=-64..64
+opening. Group-915 leaves move with that facade to `(1301,-32,264)` and
+`(1301,32,264)`.
+
+The eastern upper platform is no longer reduced to the central corridor. Every
+legacy platform sector and every lower-shell profile again includes the
+z=256–264 walkable slab. The 128-MU corridor remains the direct route from
+x=1305 to the accepted landing at x=1697, but lateral platform floor is also
+present. The constructor does not recreate any room target west of x=-121, so
+the obsolete strip associated with the earlier x=-225 room position is absent.
+
+The room's 180 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's five targets cover exactly 50,176 MU². Each partition remains inside
+its declared bounds, has zero positive-area overlap and exactly fills its
+rectangle. A cell-by-cell comparison across the eastern platform finds no
+upper-floor omission relative to 0ag; the only two differences add floor where
+the rear-aligned room now overlaps the platform. Separate lower-volume
+comparisons against 0ah find zero differences at z=0–128, 128–136 and 136–256.
+
+Deterministic outputs are:
+
+- MAP01 `(950, 1282, 2302, 373, 227)`, SHA-256
+  `7c5514798969abc83fce0faf6702af99fbb359b1f8aa39d6e19fb18b427f9d01`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent reconstruction from 4.29.0ad reproduces both WADs byte for
+byte, and a second execution is idempotent. Runtime acceptance is limited to
+walking the restored upper platform, confirming the room's new position,
+opening group 915 from both sides and inspecting the underside for only the
+intended platform. MAP02 and all gameplay systems are unchanged.
+
 ## Rebuilt lower shell, upper door and removed legacy awning 4.29.0ah
 
 **Implemented and statically validated; focused author QA pending**

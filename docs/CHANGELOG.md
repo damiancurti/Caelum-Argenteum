@@ -1,5 +1,36 @@
 # Changelog
 
+## 4.29.0ai — Restored upper platform and rear-aligned room
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD; no rejected 0ah geometry is
+  used as an input. Accepted lower and first-floor architecture, both balcony
+  passages, the external stairs, tunnel and groups 913/914 remain unchanged.
+- Moved the 1426×782-MU upper room another 40 MU toward the rear, from
+  x=-161..1265 to the structural line x=-121..1305. This is 104 MU rearward
+  from the rejected 0ag position.
+- Moved the centered group-915 double door with the room facade to x=1301,
+  retaining its two 64-MU leaves at y=-32 and y=32, z=264.
+- Restored the complete z=256–264 eastern platform instead of retaining only
+  the 128-MU central corridor. The corridor remains the direct door-to-landing
+  route, while lateral floor again covers every original platform profile.
+- Did not generate any upper-room target west of x=-121. Thus the obsolete
+  strip belonging only to the earlier x=-225 room position is removed without
+  deleting the useful eastern floor.
+- Added exact partition gates: 180 room rectangles cover 1,115,132 MU² and
+  five corridor rectangles cover 50,176 MU², with no positive-area overlap,
+  escape or missing area. The platform has no missing upper-floor cell versus
+  0ag, and all lower volumes match the accepted 0ah shell.
+- MAP02 remains byte-identical to 4.29.0af. No ZScript, character creation,
+  persistence, crafting, inventory, AI, perception or combat source changed.
+- Added the idempotent `rebuild_4_29_0ai_maps.py` constructor. Final MAP01 is
+  950 vertices, 1,282 linedefs, 2,302 sidedefs, 373 sectors and 227 Things;
+  SHA-256 is
+  `7c5514798969abc83fce0faf6702af99fbb359b1f8aa39d6e19fb18b427f9d01`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- An independent clean rebuild reproduced both WADs byte for byte; focused
+  visual traversal in GZDoom 4.14.2 remains the author acceptance gate.
+
 ## 4.29.0ah — Rebuilt lower shell, upper door and removed legacy awning
 
 - Rebuilt MAP01 from the exact clean 4.29.0ad WAD rather than modifying the

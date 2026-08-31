@@ -16,19 +16,20 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0ah candidate retains the validated 79-recipe crafting
+The current V4.29.0ai candidate retains the validated 79-recipe crafting
 catalogue, accepted pre-game character creator and group-913 eastern stairs.
 MAP01 rebuilds the current architecture from the clean 4.29.0ad base: the
 existing rooms, symmetric balconies, ground-floor divider, external stairs,
 tunnel and door groups 913/914 remain intact. The eastern extension now has a
 continuous z=0–256 exterior perimeter; its balcony returns close only the first
 floor, leaving the ground-floor rooms connected beneath them, and each balcony
-has a centered 64-MU passage. The 1426×782-MU second-floor room moves 64 MU
-toward the rear from its 0ag position, receives a real two-leaf group-915 door
-and connects to the exterior landing through one 128-MU-wide upper corridor.
-Every other part of the former z=256–264 platform is removed instead of being
-left as a floating awning. MAP02 remains byte-identical to the all-sewer
-4.29.0af WAD and changes no actors or non-texture geometry.
+has a centered 64-MU passage. The 1426×782-MU second-floor room now occupies
+x=-121..1305, 40 MU farther toward the rear than 0ah, and its centered eastern
+opening contains a real two-leaf group-915 door at x=1301. The complete
+z=256–264 eastern platform is restored around the 128-MU direct access
+corridor; only the obsolete western strip from the rejected 0ag room position
+is not generated. MAP02 remains byte-identical to the all-sewer 4.29.0af WAD
+and changes no actors or non-texture geometry.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
 exists. It selects race, two classes, sex, height, four layer points and thirty
@@ -50,7 +51,7 @@ remains disabled and cannot be scaled to 15,000 active NPCs.
 The visual probability roll and reported hearing ranges are internally
 consistent, but the angular A/B and occlusion rooms were not controlled well
 enough to choose the 60°/120° convention. Their redesign is reserved for the
-next isolated perception patch rather than being mixed into 4.29.0ah. The full
+next isolated perception patch rather than being mixed into 4.29.0ai. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
