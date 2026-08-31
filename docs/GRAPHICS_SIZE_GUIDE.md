@@ -199,3 +199,18 @@ visible. El conjunto se asigna al actor del jugador en tercera persona; no
 reemplaza por sí mismo las manos o armas dibujadas en primera persona. Al
 agacharse se reutiliza la misma apariencia comprimida y no el sprite PLYC
 heredado de Doom.
+
+## 10. Personajes folclóricos de V4.29.0aq
+
+Palomo y Mandinga conservan lienzos de 256×256, pero sus figuras visibles son
+mayores que los maestros humanos anteriores: aproximadamente 235 y 226 px.
+Zupay usa 416×416 y ocupa 384 px visibles. Aplicar la antigua escala 0,409091
+los sobredimensionaría; por eso los tres comparten `Scale 0.3125`. El resultado
+es aproximadamente 73,4 MU para Palomo, 70,6 MU para Mandinga y exactamente
+120 MU para Zupay, manteniendo su relación declarada de 3 m frente a 1,8 m.
+
+`TEXTURES` fija pivotes constantes por personaje para evitar vibración entre
+poses: Palomo `(128,246)`, Mandinga `(128,248)` y Zupay `(208,400)`. Los atlas
+no entran al PK3. Los prefijos `PALM`, `PLLF`, `PLAG`, `PLJY`, `PLSP`, `PLSD`,
+`PLTH`, `MNDG` y `ZUPY` separan las familias
+sin agotar las letras de cuadro de un único sprite.

@@ -1,5 +1,25 @@
 # Asset register
 
+## V4.29.0aq Palomo, Mandinga and Zupay character package
+
+The author supplied a 398-file package containing 380 individual runtime
+frames, ten review atlases and eight README/manifest documents. Only the 380
+individual frames enter `src`; the atlases remain outside the PK3 and the
+instructions remain under `docs/assets/characters`. The archive itself does
+not state authorship or a redistribution license, so public redistribution is
+blocked until Damian Curti confirms that it is project-owned original art or
+records another compatible license.
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Palomo | `sprites/caelum/actors/palomo/*.png` (224) | Pending confirmation | Author-supplied `Caelum_Argenteum_Ultimos_3_Personajes_v1` package, 2026-08-31 | Pending | Pending confirmation | 32 base frames plus 192 emotion frames; 256×256 RGBA. |
+| Mandinga de la Salamanca | `sprites/caelum/actors/mandinga/*.png` (54) | Pending confirmation | Same package | Pending | Pending confirmation | 48 directional frames plus six shared death frames; 256×256 RGBA. |
+| Zupay Colossus | `sprites/caelum/actors/zupay_colossus/*.png` (102) | Pending confirmation | Same package | Pending | Pending confirmation | 96 directional frames plus six shared death frames; 416×416 RGBA. No independent rock projectile is supplied. |
+
+Runtime aliases, offsets, localization and ZScript definitions are original
+project code; they do not alter the supplied pixels or establish rights over
+the source artwork.
+
 ## V4.29.0am–0ap separated mansion grass and selected audio
 
 The author supplied the three standalone 128×128 grass variants previously
@@ -13,12 +33,10 @@ logical names. Seven came from the author-supplied selected-audio package; the
 requested pickup effect is the public OGG preview of Freesound #332629. Full
 provenance, required attribution text and the pre-release original-download
 requirement ship inside [`src/licenses/AUDIO_CREDITS.md`](../src/licenses/AUDIO_CREDITS.md).
-V4.29.0an applies the author's final menu roles: daddo22's Metal Tssht is the
+V4.29.0an applies the final menu roles: daddo22's Metal Tssht is the
 movement asset `ca_menu_move.ogg`; dodrio's clack is the acceptance asset
-`ca_menu_select.ogg`. The source works and licenses are unchanged.
-V4.29.0ao changes only MAP01 geometry and documentation; it adds no asset and
-does not alter any registered source, license or attribution requirement.
-V4.29.0ap likewise changes only MAP01 geometry and documentation.
+`ca_menu_select.ogg`. The source works and licenses are unchanged. V4.29.0ao
+and 0ap change only MAP01 geometry/documentation and add no audiovisual asset.
 
 | Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
 |---|---|---|---|---|---|---|

@@ -1,97 +1,68 @@
 # Changelog
 
-## 4.29.0ap — Stair-side walls and exact eastern roof
+## 4.29.0aq — Folklore character presentations and V4.30 design lock
 
-- Added the two missing solid walls beside the eastern stair flights. Both
-  occupy x=1689..1697, close z=136..256 and run from the accepted transverse
-  walls to the y=-64/64 edges of group-913's central door. Together, the four
-  real 8-MU-thick walls now form the requested symmetric U without entering a
-  step or duplicating the gate opening.
-- Replaced the fragmented inherited eastern roof profiles with one exact
-  z=256..264 target over x=1209..1697, y=-328..328. The rebuild fills every
-  interior gap, removes both outer overhang strips and keeps the side
-  balconies open.
-- Preserved the central landing and final step on each flight, as well as the
-  accepted upper room, group-915 door, two-slope 64-MU roof, exterior stairs,
-  lower shell, tunnel and door groups 913/914. MAP02 and all gameplay/audio
-  behavior remain unchanged.
-- Added topology-cell audits for continuous roof coverage, exact roof limits,
-  both complete stair-side walls, the open central doorway and unobstructed
-  first steps. The constructor also rejects coincident linedefs and any return
-  of the obsolete WALLSPRITE panels.
-- Added the idempotent `rebuild_4_29_0ap_maps.py` constructor. MAP01 is 1,029
-  vertices, 1,424 linedefs, 2,578 sidedefs, 431 sectors and 227 Things;
-  SHA-256 is
-  `d7c54872c3de2f7bf4dc1800bded68909cf3484ddb6e82fb00812cf203ec46d7`.
-  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+- Imported the 380 individual RGBA frames supplied for Palomo (224), Mandinga
+  (54) and the Zupay Colossus (102). The ten review atlases remain outside the
+  PK3; the eight supplied README/manifest files remain auditable under
+  `docs/assets/characters`.
+- Added 380 deterministic `TEXTURES` aliases with explicit ground offsets and
+  a common `Scale 0.3125`. This keeps the two humanoids close to the current
+  72-MU visual convention and makes the 384-pixel Zupay exactly 120 MU tall,
+  preserving its supplied 3 m versus 1.8 m reference.
+- Added `CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus`, localized
+  names and editor numbers 18036–18038. Their supplied walk, attack, pain,
+  death, emotion, lift and throw poses are exposed as named states.
+- Kept all three classes noninteractive presentation actors. The package does
+  not define combat attributes, collision, factions, loot, map placement or a
+  standalone Zupay rock projectile, so this patch does not invent them or add
+  any actor to MAP01/MAP02.
+- Added an idempotent package importer that validates ZIP integrity, manifest
+  totals, dimensions, RGBA format, runtime names, offsets and exact
+  224/54/102 frame distribution before updating source assets.
+- Recorded, but did not implement, the V4.30 material-processing design:
+  50%/75%/100% yields use ×1/×3/×9 base time, physical-precision task time is
+  reduced by Dexterity Type 1, and equipment components use one base-material
+  type each. Repair and disassembly remain V4.30 work.
+- Preserved the cumulative 4.29.0ap maps byte for byte: MAP01 SHA-256
+  `d7c54872c3de2f7bf4dc1800bded68909cf3484ddb6e82fb00812cf203ec46d7`;
+  MAP02 SHA-256
   `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
-- Static reconstruction and idempotence pass. The non-house V4.29 gate remains
-  accepted and V4.30 stays authorized in parallel; this newest house revision
-  awaits the author's traversal.
 
-## 4.29.0ao — Symmetric solid stair walls and rebuilt eastern roof
+## 4.29.0ap — Exact eastern roof and stair-run walls
 
-- Replaced the four flat `CaelumFiniteWallPanel` actors from 0an with two real
-  architectural sectors. The southern wall occupies x=1209..1697,
-  y=-328..-320 and the northern wall mirrors it at y=320..328; both are 8 MU
-  thick and close z=136..256 with `CMIN01` visible from either side.
-- Started both walls on the eastern face of the existing x=1201..1209
-  longitudinal structure. This removes the former 8-MU overlap while keeping
-  the x=1697 stair bases and every first-step sector untouched.
-- Restored the stable z=256..264 second-floor profiles around the central
-  corridor. The eastern platform is filled on both sides, but its two
-  symmetric stairwell openings remain open and the new walls do not carry the
-  roof onto either exterior side balcony.
-- Preserved the accepted x=-371..1055 upper room, group-915 door, 64-MU-rise
-  gabled roof, exterior stairs, lower shell, tunnel and door groups 913/914.
-  MAP02 and all gameplay/audio behavior remain unchanged by this correction.
-- Recorded the author's acceptance of character creation, focused audio QA
-  and the MAP01/MAP02 smoke. The non-house V4.29 gate is complete, so V4.30
-  may begin while the newest house geometry continues its visual review.
-- Added the idempotent `rebuild_4_29_0ao_maps.py` constructor. MAP01 is 981
-  vertices, 1,364 linedefs, 2,490 sidedefs, 401 sectors and 227 Things;
-  SHA-256 is
-  `794ea57a00bf6b320e7ce310810243ea355afa67f82b6d0815d515f5ac9c9edc`.
-  MAP02 remains 112/110/212/9/16,508; SHA-256 is
-  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
-- Rebuilt the complete PK3 and loaded MAP01 plus MAP02 in GZDoom 4.14.2.
-  ZScript/SNDINFO compilation, resource resolution and both map starts finish
-  without loader errors. The latest wall/roof appearance remains the only
-  author-facing check for this house revision.
+- Preserved the two symmetric transverse 8-MU walls accepted in 4.29.0ao.
+- Added two 8-MU walls along the inner side of the exterior stair flights,
+  running from the transverse walls to the 128-MU central group-913 opening.
+- Rebuilt the flat z=256..264 cover as an exact x=1209..1697,
+  y=-328..328 slab plus the central landing and two already covered upper
+  steps. Side balconies and the remaining stair treads stay uncovered.
+- Added exact profile/overhang/void validation. MAP01 is
+  1029/1424/2578/431/227 with the SHA-256 recorded above; MAP02 is unchanged.
+- Focused author traversal remains pending, as requested.
 
-## 4.29.0an — Stair-base wall, cleared flat roof and corrected menu audio
+## 4.29.0ao — Symmetric transverse walls and restored interior cover
 
-- Rebuilt MAP01 again from the exact clean 4.29.0ad WAD. The approved
-  x=-371..1055 second-floor room, group-915 door, 64-MU-rise gabled roof,
-  central access corridor, exterior stairs, balconies, lower rooms and door
-  groups 913/914 remain in place.
-- Added the requested first-floor wall perpendicular to the southern flight.
-  Four two-sided finite panels cover exactly x=1201..1697 at y=-324 and
-  z=136..256. Their collision reaches the y=-320 base line without entering
-  the first stair sector x=1697..1816.
-- Removed the inherited flat z=256..264 platform from the eastern extension so
-  it can be rebuilt later. Only the 128-MU central corridor and stair landing
-  retain that height outside the approved room; the room floor and both slopes
-  of its `CMRF01`/`CMCL01` roof are unchanged.
-- Corrected the author-specified menu sound roles. **Metal Tssht** now maps to
-  native `menu/cursor` and `menu/change`; dodrio's **clack.ogg** maps to
-  `menu/choose` and `menu/advance`. The custom creator uses those same logical
-  events, no longer plays the clack merely on opening and keeps invalid-action
-  feedback separate.
-- Clarified the 4.30 transition gate: outside the parallel house track, only
-  the manual new-character acceptance, focused audio acceptance and final
-  clean-build/map-load smoke remain. Accepted cases 5–12 stay accepted;
-  perception and mass-AI experiments remain isolated, non-blocking tracks.
-- Added the idempotent `rebuild_4_29_0an_maps.py` constructor. MAP01 is 907
-  vertices, 1,266 linedefs, 2,342 sidedefs, 377 sectors and 231 Things;
-  SHA-256 is
-  `b04fc8c03eac0905ce0304da98a960b08ebe04929c3ae010e7b1135851ba2076`.
-  MAP02 remains 112/110/212/9/16,508; SHA-256 is
-  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
-- Rebuilt the complete PK3 and loaded both MAP01 and MAP02 in GZDoom 4.14.2.
-  ZScript/SNDINFO compilation, resource lookup and both map loads complete
-  without loader errors; focused author traversal and sound-mix acceptance
-  remain manual.
+- Replaced the provisional one-sided panel from 4.29.0an with two symmetric
+  architectural walls, each 8 MU thick, spanning x=1209..1697 at
+  y=-328..-320 and y=320..328.
+- Restored the interior z=256..264 cover while preserving only the two stair
+  openings and leaving the approved gabled roof untouched.
+- MAP01 is 981/1364/2490/401/227, SHA-256
+  `794ea57a00bf6b320e7ce310810243ea355afa67f82b6d0815d515f5ac9c9edc`;
+  MAP02 remains byte-identical.
+
+## 4.29.0an — First stair-base wall and roof removal
+
+- Added the first-floor transverse wall requested from the inner corner of the
+  first stair tread to the longitudinal x=1201..1209 wall.
+- Removed the flat z=256..264 cover over the eastern extension so it could be
+  rebuilt from a clean boundary in the following increments.
+- Corrected the two supplied menu roles: Metal Tssht now handles cursor/value
+  movement and dodrio's clack handles choice/advance confirmation.
+- MAP01 is 907/1266/2342/377/231, SHA-256
+  `b04fc8c03eac0905ce0304da98a960b08ebe04929c3ae010e7b1135851ba2076`;
+  MAP02 remains byte-identical.
 
 ## 4.29.0am — Open balcony perimeter, gabled roof and selected audio
 

@@ -1415,3 +1415,13 @@ CA_MATERIAL_ROPE = "Cuerda";
 CA_MATERIAL_COW_HIDE = "Piel de vaca";
 CA_MATERIAL_PREDATOR_HIDE = "Piel de depredador";
 CA_MATERIAL_MONSTER_HIDE = "Piel de monstruo";
+
+[enu default]
+CA_PALOMO_NAME = "Palomo";
+CA_MANDINGA_NAME = "Mandinga of the Salamanca";
+CA_ZUPAY_COLOSSUS_NAME = "Zupay Colossus of the Mine";
+
+[es]
+CA_PALOMO_NAME = "Palomo";
+CA_MANDINGA_NAME = "Mandinga de la Salamanca";
+CA_ZUPAY_COLOSSUS_NAME = "Zupay Colosal del Socavón";

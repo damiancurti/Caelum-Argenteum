@@ -12,7 +12,7 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 | --- | --- | --- |
 | V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All seven current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
 | V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
-| V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability, several repairs and material recovery foundations exist. Complete the authoritative craft → use → deteriorate → repair/disassemble loop, preserving tier and essence/base-item recovery choices. |
+| V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability and material-recovery foundations exist. Complete same-station proportional repair and durability-scaled disassembly; elemental equipment returns its corresponding recipe materials rather than an essence/base-implement choice. |
 | V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
 | V4.26 — NPC Interaction, Quests and Factions | Not implemented as a complete system | Build interaction and dialogue first, then merchants, quests, reputation and factions. Do not begin large social content before the shared infrastructure is stable. |
 
@@ -465,48 +465,44 @@ events and carry in-package license records. This audiovisual integration does
 not authorize later sound mixing values or new terrain placement beyond the
 explicit assignments above.
 
-V4.29.0an preserves the approved gabled room but deliberately clears the flat
-eastern z=256–264 platform outside its 128-MU access corridor. Four finite wall
-panels form the requested x=1201..1697 first-floor wall at the southern stair
-base without entering the first step. It also corrects the supplied menu sound
-roles: Metal Tssht is cursor/value movement and dodrio's clack is
-choice/advance. House reconstruction continues as a parallel author-review
-track and is not used below to inflate the non-architecture transition list.
+V4.29.0an cleared the eastern flat roof and added the first requested wall at
+the stair base. V4.29.0ao replaced that provisional result with two reflected
+488×8-MU solid transverse walls. V4.29.0ap completes the symmetric U with two
+8-MU stair-side walls and replaces fragmented inherited roof profiles with an
+exact z=256..264 rectangle over x=1209..1697, y=-328..328. The central landing,
+final steps, side balconies and accepted upper gabled room remain unchanged.
 
-V4.29.0ao replaces those four panels with two reflected 488×8-MU solid walls
-at y=-328..-320 and y=320..328. Both begin on the existing wall face x=1209,
-end at the stair bases x=1697 and close z=136..256 without overlapping old
-geometry or entering a first tread. Stable z=256..264 profiles refill the
-second-floor platforms around the corridor while preserving both stairwell
-openings and keeping the exterior side balconies uncovered.
-
-V4.29.0ap completes that enclosure with two 8-MU-thick longitudinal walls
-beside the stair flights. They run from the transverse pair to the two edges
-of group-913's central door, so the result is a symmetric U and no tread is
-occupied. It also replaces the fragmented inherited eastern roof profiles
-with an exact z=256..264 rectangle over x=1209..1697, y=-328..328. All gaps
-inside that footprint and all overhangs outside it are removed; the central
-landing, final steps, side balconies and accepted upper room remain unchanged.
-This is another parallel house correction and does not reopen the non-house
-V4.29 transition gate.
-
-The author has now accepted the new-character case, the focused menu/world
-sound mix and event mapping, and the MAP01/MAP02 smoke. Together with the
-previously accepted crafting/persistence cases, this completes the non-house
-V4.29 gate. V4.30 repair/disassembly implementation is authorized to begin in
-parallel with the remaining visual review and construction of the house; the
-house track does not block that transition.
+The author has accepted the new-character case, focused menu/world sound mix
+and event mapping, and the non-house MAP01/MAP02 smoke. The latest 0ap house
+geometry remains a parallel focused visual/traversal review and does not
+reopen those accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
-experiment remain valuable isolated diagnostics, but neither is a prerequisite
-for V4.30.
+experiment remain valuable isolated diagnostics. They are not prerequisites
+for defining V4.30, but V4.30 implementation waits until the unresolved rules
+listed in its section are authored.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
-- Preserve item tier during authorized recovery.
-- Implement the authored essence-weapon choice between recovering the essence or the base implement.
+- Refinement and equipment-material fabrication offer 50%/75%/100% material
+  yield with elapsed-time factors ×1/×3/×9. Duration is reduced by Dexterity
+  Type-1 physical-precision task speed; the initial test baseline uses no
+  Dexterity acceleration.
+- Fabricate every equipment component from exactly one base-material type;
+  component recipes never mix multiple base materials.
+- Repair through the same station infrastructure as crafting. Consume the
+  complete recipe proportionally to missing durability:
+  `(MaximumDurability - CurrentDurability) / MaximumDurability`.
+- Scale disassembly output by remaining durability:
+  `CurrentDurability / MaximumDurability`, preserving corresponding material
+  identity and tier.
+- Elemental weapons disassemble into their corresponding recipe materials;
+  remove the former essence-versus-intact-base-implement branch.
 - Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
+- Before implementation, author base durations, 0.001-unit rounding, batch and
+  interruption rules, the base disassembly-recovery factor and the complete
+  one-material component mapping.
 
 ### V4.31 — Loot, Materials and Economy Foundation
 
