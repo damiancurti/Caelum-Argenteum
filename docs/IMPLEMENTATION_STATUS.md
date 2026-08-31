@@ -1,5 +1,117 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Stair-side walls and exact eastern roof 4.29.0ap
+
+**Implemented and statically validated; author traversal pending**
+
+V4.29.0ap completes the solid first-floor enclosure requested around the
+eastern stairs. The two accepted transverse walls remain at y=-328..-320 and
+y=320..328. A reflected longitudinal pair now occupies x=1689..1697,
+y=-320..-64 and y=64..320. Each new wall is exactly 8 MU thick, closes
+z=136..256 and ends on one edge of the 128-MU group-913 doorway. Their outer
+faces touch the stair flights without covering any tread, and the four walls
+form one symmetric U with no overlapping volume.
+
+The eastern z=256..264 roof no longer inherits a broad profile across sectors
+that also belong to the balconies. Its target is exactly x=1209..1697,
+y=-328..328. Every topology cell inside that rectangle is covered, while the
+two outer strips are explicitly rebuilt without the roof range. The central
+landing and last step on each flight keep their independent accepted profiles;
+the central gate and both first steps remain open and traversable.
+
+Deterministic map outputs are:
+
+- MAP01 `(1029, 1424, 2578, 431, 227)`, SHA-256
+  `d7c54872c3de2f7bf4dc1800bded68909cf3484ddb6e82fb00812cf203ec46d7`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The constructor audits all physical cells rather than relying on a few sample
+points. It requires complete coverage inside the target, no eastern overhang,
+both full stair-side walls, the open group-913 doorway, unobstructed first
+steps, no coincident linedefs and no legacy WALLSPRITE panels. Final visual
+acceptance belongs to the author's traversal; it remains independent from the
+already closed non-house V4.29 gate and does not block later V4.30 work.
+
+## Symmetric solid stair walls and rebuilt eastern roof 4.29.0ao
+
+**Implemented, statically validated and runtime-loaded; latest house geometry awaits author visual acceptance**
+
+V4.29.0ao removes all four flat `CaelumFiniteWallPanel` actors introduced in
+0an. Their replacement is a reflected pair of closed architectural sectors:
+the southern wall spans x=1209..1697, y=-328..-320, and the northern wall spans
+the same x range at y=320..328. Each wall is exactly 488×8 MU, closes
+z=136..256 with `CMIN01`, and supplies real two-sided rendering and collision.
+Starting at x=1209 joins the eastern face of the existing longitudinal wall
+without reproducing its x=1201..1209 volume; ending at x=1697 leaves both
+first stair treads untouched.
+
+The z=256..264 second-floor profiles are restored instead of applying another
+single oversized slab. They complete both platforms around the 128-MU central
+corridor, retain the two symmetric stairwell openings and stop at the new
+walls, so the exterior north/south balconies remain open to the sky. The
+approved upper room, group-915 door, east-west ridge, 64-MU roof rise, exterior
+stairs, lower rooms and door groups 913/914 are unchanged.
+
+Deterministic map outputs are:
+
+- MAP01 `(981, 1364, 2490, 401, 227)`, SHA-256
+  `794ea57a00bf6b320e7ce310810243ea355afa67f82b6d0815d515f5ac9c9edc`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The author reports the complete new-character, focused audio and prior map
+smoke set as successful. Those non-house cases close the V4.29 transition gate
+and authorize V4.30 work in parallel; only visual acceptance of this newest
+wall/roof revision remains in the independent house track.
+
+The final 0ao PK3 also compiles all ZScript/SNDINFO and enters MAP01 and MAP02
+under GZDoom 4.14.2 without loader or missing-resource errors. Automated
+geometry gates additionally require two complete 488×8-MU wall partitions,
+the four old WALLSPRITE panels to be absent, continuous covered samples around
+both stairwells and open samples inside both stairwell holes and balconies.
+
+## Stair-base wall, cleared flat roof and menu sound roles 4.29.0an
+
+**Implemented, statically validated and runtime-loaded in both maps; author acceptance pending**
+
+V4.29.0an preserves the approved second-floor room and its 64-MU-rise gabled
+roof. Four `CaelumFiniteWallPanel` actors form the requested perpendicular
+first-floor wall at y=-324, z=136: four 124-MU spans cover x=1201..1697
+exactly, touch the y=-320 base line and never enter the southern first-step
+sector x=1697..1816. Each panel supplies a reverse visual face and 8-MU-spaced
+solid blockers through the already established finite-wall implementation.
+
+The obsolete z=256..264 flat platform is removed from the eastern extension.
+Outside the room, only the 128-MU corridor x=1055..1697, y=-64..64 and the
+accepted stair landing retain second-floor surface. Both first-floor balcony
+floors remain z=128..136 and open; the room floor, walls, group-915 door and
+the `CMRF01`/`CMCL01` roof slopes are unchanged.
+
+Menu audio now follows the supplied roles globally and in the custom creator:
+Metal Tssht is `menu/cursor` plus `menu/change`, while dodrio's clack is
+`menu/choose` plus `menu/advance`. Opening the creator is silent, invalid
+allocation feedback remains `menu/clear`, and moving backward uses the metal
+navigation event.
+
+Deterministic map outputs are:
+
+- MAP01 `(907, 1266, 2342, 377, 231)`, SHA-256
+  `b04fc8c03eac0905ce0304da98a960b08ebe04929c3ae010e7b1135851ba2076`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The fresh PK3 compiles its complete ZScript/SNDINFO set in GZDoom 4.14.2 and
+enters MAP01 and MAP02 without loader errors. That completes the automated
+candidate smoke; the local author rerun still belongs after the last accepted
+source change.
+
+Outside the parallel house-construction track, the remaining 4.29 acceptance
+work is limited to the manual new-character case, focused sound-event/mix QA
+and the final clean-build/map-load smoke. Cases 5–12 of the thirteen-case gate
+remain accepted. Perception-angle and mass-AI movement experiments remain
+separate diagnostics and do not block the transition to V4.30.
+
 ## Open balcony perimeter, gabled roof and selected audio 4.29.0am
 
 **Implemented and runtime-loaded; focused author QA pending**
@@ -23,8 +135,9 @@ The former three-band grass repeat is no longer assigned to MAP01. The world
 sector uses standalone `CMGR01A`; `CMGR01B` and `CMGR01C` are separately named
 128×128 variants for later worn and dry sectors.
 
-Eight OGG effects have stable logical names and active callers: menu open and
-confirmation, first recipe unlock, ordinary and multi-leaf sliding doors,
+Eight OGG effects entered the candidate here with active callers: the initial
+menu-open/confirmation mapping (superseded by the movement/selection roles in
+0an), first recipe unlock, ordinary and multi-leaf sliding doors,
 carbine discharge, item pickup and local low-health heartbeat. The heartbeat
 uses a 42-tic timer for its 1.055-second file, plays only in the existing badly
 wounded state and stops on recovery, death or character creation. Mandatory

@@ -1,8 +1,15 @@
 // Caelum Argenteum — efectos seleccionados para GZDoom 4.14.2.
 
-caelum/ui/menu_open = "sounds/caelum/ui/ca_menu_open.ogg"
+caelum/ui/menu_move = "sounds/caelum/ui/ca_menu_move.ogg"
 caelum/ui/menu_select = "sounds/caelum/ui/ca_menu_select.ogg"
 caelum/ui/recipe_learned = "sounds/caelum/ui/ca_recipe_learned.ogg"
+
+// El paquete seleccionado distingue navegación de aceptación en todos los
+// menús nativos. Los menús propios reutilizan estas mismas rutas lógicas.
+$alias menu/cursor caelum/ui/menu_move
+$alias menu/change caelum/ui/menu_move
+$alias menu/choose caelum/ui/menu_select
+$alias menu/advance caelum/ui/menu_select
 
 caelum/world/door_open = "sounds/caelum/world/doors/ca_door_open.ogg"
 caelum/world/door_large_open = "sounds/caelum/world/doors/ca_door_large_open.ogg"

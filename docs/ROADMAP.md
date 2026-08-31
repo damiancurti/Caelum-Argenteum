@@ -465,39 +465,41 @@ events and carry in-package license records. This audiovisual integration does
 not authorize later sound mixing values or new terrain placement beyond the
 explicit assignments above.
 
-The immediate closing order is:
+V4.29.0an preserves the approved gabled room but deliberately clears the flat
+eastern z=256–264 platform outside its 128-MU access corridor. Four finite wall
+panels form the requested x=1201..1697 first-floor wall at the southern stair
+base without entering the first step. It also corrects the supplied menu sound
+roles: Metal Tssht is cursor/value movement and dodrio's clack is
+choice/advance. House reconstruction continues as a parallel author-review
+track and is not used below to inflate the non-architecture transition list.
 
-1. Load V4.29.0am and confirm that the exterior world sector repeats only
-   standalone `CMGR01A`, with no three-band stripe and no Doom floor patch.
-2. Traverse both complete 96-MU first-floor balconies along their north/south
-   edges and around x=1689..1697. Require continuous wood floor, open sky and
-   no longitudinal, terminal, return or invisible obstruction.
-3. Inspect the complete outer U from planta baja and require its facade to
-   remain closed through z=128; opening the balcony must not open the rooms
-   below.
-4. Inspect both symmetric lower junctions at x=1201..1209 and require a
-   continuous exterior corner with no gap or new internal partition.
-5. Inspect both `CMRF01` roof slopes from outside and the `CMCL01` underside
-   from inside. Require continuous eaves, a closed east-west ridge, no central
-   seam/HOM and no collision below the sloped ceiling.
-6. Reconfirm that the x=-371..1055 upper-room walls, group-915 door, extended
-   x=1055..1697 corridor and unchanged stair landing remain intact.
-7. Verify the eight logical sounds: enter/confirm the character menu, learn one
-   new recipe, open one single and one double sliding door, fire the carbine,
-   collect an item and cross into/out of the badly-wounded health state. Require
-   one event per action, positional doors/weapon and a local non-overlapping
-   heartbeat that stops after recovery or death.
-8. Build and load both maps without parser, unknown-sound or missing-resource
-   errors. MAP02 remains unchanged from the all-sewer 4.29.0af WAD; IA and
-   perception do not need functional repetition for this candidate.
-9. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
-   degrees, symmetric visible/occluded points and event-position plus real
-   `SoundAlert` instrumentation. Only then choose aperture versus semicone.
-10. Replace the rejected global-ring follower steering with a density-aware,
-   budgeted local route test. Pass 20 real minutes at 1,875 active actors before
-   raising the active count.
-11. Once architecture, creator/persistence, controlled perception and the new
-   1,875-active movement gate pass, close V4.29 and begin V4.30.
+V4.29.0ao replaces those four panels with two reflected 488×8-MU solid walls
+at y=-328..-320 and y=320..328. Both begin on the existing wall face x=1209,
+end at the stair bases x=1697 and close z=136..256 without overlapping old
+geometry or entering a first tread. Stable z=256..264 profiles refill the
+second-floor platforms around the corridor while preserving both stairwell
+openings and keeping the exterior side balconies uncovered.
+
+V4.29.0ap completes that enclosure with two 8-MU-thick longitudinal walls
+beside the stair flights. They run from the transverse pair to the two edges
+of group-913's central door, so the result is a symmetric U and no tread is
+occupied. It also replaces the fragmented inherited eastern roof profiles
+with an exact z=256..264 rectangle over x=1209..1697, y=-328..328. All gaps
+inside that footprint and all overhangs outside it are removed; the central
+landing, final steps, side balconies and accepted upper room remain unchanged.
+This is another parallel house correction and does not reopen the non-house
+V4.29 transition gate.
+
+The author has now accepted the new-character case, the focused menu/world
+sound mix and event mapping, and the MAP01/MAP02 smoke. Together with the
+previously accepted crafting/persistence cases, this completes the non-house
+V4.29 gate. V4.30 repair/disassembly implementation is authorized to begin in
+parallel with the remaining visual review and construction of the house; the
+house track does not block that transition.
+
+Controlled perception-angle work and a replacement mass-AI movement
+experiment remain valuable isolated diagnostics, but neither is a prerequisite
+for V4.30.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 

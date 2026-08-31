@@ -1,6 +1,6 @@
 # Asset register
 
-## V4.29.0am separated mansion grass and selected audio
+## V4.29.0am–0ap separated mansion grass and selected audio
 
 The author supplied the three standalone 128×128 grass variants previously
 represented as horizontal bands inside `CMGR01.png`. They enter the project as
@@ -13,6 +13,12 @@ logical names. Seven came from the author-supplied selected-audio package; the
 requested pickup effect is the public OGG preview of Freesound #332629. Full
 provenance, required attribution text and the pre-release original-download
 requirement ship inside [`src/licenses/AUDIO_CREDITS.md`](../src/licenses/AUDIO_CREDITS.md).
+V4.29.0an applies the author's final menu roles: daddo22's Metal Tssht is the
+movement asset `ca_menu_move.ogg`; dodrio's clack is the acceptance asset
+`ca_menu_select.ogg`. The source works and licenses are unchanged.
+V4.29.0ao changes only MAP01 geometry and documentation; it adds no asset and
+does not alter any registered source, license or attribution requirement.
+V4.29.0ap likewise changes only MAP01 geometry and documentation.
 
 | Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
 |---|---|---|---|---|---|---|

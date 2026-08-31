@@ -46,15 +46,15 @@ Attribution is not required, but the metadata is retained for traceability.
 
 | Use | Work and author | Source | Project file |
 | --- | --- | --- | --- |
-| Menu open | **clack.ogg**, dodrio | https://freesound.org/people/dodrio/sounds/554021/ | `sounds/caelum/ui/ca_menu_open.ogg` |
-| Menu selection | **Metal Tssht**, daddo22 | https://freesound.org/people/daddo22/sounds/442313/ | `sounds/caelum/ui/ca_menu_select.ogg` |
+| Menu movement | **Metal Tssht**, daddo22 | https://freesound.org/people/daddo22/sounds/442313/ | `sounds/caelum/ui/ca_menu_move.ogg` |
+| Menu selection | **clack.ogg**, dodrio | https://freesound.org/people/dodrio/sounds/554021/ | `sounds/caelum/ui/ca_menu_select.ogg` |
 | Standard door | **Door2.ogg**, CoolKT11 | https://freesound.org/people/CoolKT11/sounds/553427/ | `sounds/caelum/world/doors/ca_door_open.ogg` |
 | Large door | **Door open sound effect**, Wenpire | https://freesound.org/people/Wenpire/sounds/574810/ | `sounds/caelum/world/doors/ca_door_large_open.ogg` |
 | Carbine | **Gunshot.ogg**, Wenpire | https://freesound.org/people/Wenpire/sounds/574818/ | `sounds/caelum/weapons/ca_carabine_fire.ogg` |
 
 ## Release note
 
-`ca_menu_open.ogg` is the original file supplied to the project. The other
+`ca_menu_select.ogg` is the original file supplied to the project. The other
 Freesound assets are public OGG previews because downloading the originals
 requires an authenticated Freesound session. They are suitable for integration
 and testing. Before the final public release, replace each preview with its
