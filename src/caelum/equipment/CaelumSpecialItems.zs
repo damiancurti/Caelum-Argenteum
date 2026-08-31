@@ -13,7 +13,7 @@ class CaelumSpecialInventoryItem : Inventory
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
-        Inventory.PickupSound "misc/i_pkup";
+        Inventory.PickupSound "caelum/items/pickup";
         // Materiales y objetos clave se gestionan desde la interfaz propia.
         // La barra nativa reserva su selección para consumibles y munición.
         -INVENTORY.INVBAR

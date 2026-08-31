@@ -16,24 +16,29 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0al candidate retains the validated 79-recipe crafting
+The current V4.29.0am candidate retains the validated 79-recipe crafting
 catalogue, accepted pre-game character creator and group-913 eastern stairs.
 MAP01 rebuilds the current architecture from the clean 4.29.0ad base: the
 existing rooms, symmetric balconies, ground-floor divider, external stairs,
 tunnel and door groups 913/914 remain intact. The two previously missing 8×8
-MU lower corner links now close the z=0–256 exterior perimeter. The six wall
-and return pieces that narrowed the first-floor balconies are absent, leaving
-both complete 96-MU strips and their transitions with only the z=128–136 wood
-floor and open sky. The two 8×96-MU terminal sectors at x=1689..1697 retain
-their z=0–128 ground-floor facade and z=128–136 balcony floor, but no longer
-place a z=136–256 wall or z=256–264 cover across either first-floor route.
-Both side balconies therefore connect to the eastern exterior platform. The
-1426×782-MU second-floor room remains at
-x=-371..1055, exactly 150 MU west of 0aj, and its centered eastern opening
-contains the two-leaf group-915 door at x=1051. The direct upper corridor
-extends to that moved door. MAP01 keeps the project-owned `CMGR01` grass
-terrain flat; MAP02 remains byte-identical to the all-sewer 4.29.0af WAD and
-changes no actors or non-texture geometry.
+MU lower corner links still close the lower shell. Every outer U-shaped
+balcony-edge sector now keeps only its z=0–128 ground-floor facade and
+z=128–136 floor; no z=136–256 wall or z=256–264 cover remains around the two
+complete 96-MU routes. The approved 1426×782-MU second-floor room remains at
+x=-371..1055 with its group-915 door at x=1051 and unchanged access corridor.
+Its former horizontal roof is replaced by two solid 8-MU sloped planes. Their
+east-west ridge is perpendicular to the eastern balcony, rises 64 MU from the
+wall line and reaches z=456..464 at y=0; both eaves remain z=392..400 at
+y=±391. The exterior face uses `CMRF01` and the interior face uses `CMCL01`.
+
+MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
+sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
+bands inside one repeated flat. Eight selected sound effects are registered
+and connected to menu entry/confirmation, recipe learning, standard and
+double doors, carbine fire, local critical-health heartbeat and all Caelum
+pickup bases. Required audio attribution ships in
+[`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
+byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
 exists. It selects race, two classes, sex, height, four layer points and thirty
@@ -55,7 +60,7 @@ remains disabled and cannot be scaled to 15,000 active NPCs.
 The visual probability roll and reported hearing ranges are internally
 consistent, but the angular A/B and occlusion rooms were not controlled well
 enough to choose the 60°/120° convention. Their redesign is reserved for the
-next isolated perception patch rather than being mixed into 4.29.0al. The full
+next isolated perception patch rather than being mixed into 4.29.0am. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
@@ -96,7 +101,8 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Crafting and dismantling foundations used by current physical equipment and material recovery systems.
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
-- Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
+- Original mansion-environment texture foundation: 85 wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered, including three independent mansion-grass variants.
+- Selected audio foundation: eight license-compatible effects are wired to menu, crafting, door, weapon, health-state and pickup events; credits ship inside the PK3 and runtime mixing remains an author QA gate.
 - Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 

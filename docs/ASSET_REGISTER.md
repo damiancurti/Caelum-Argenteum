@@ -1,5 +1,27 @@
 # Asset register
 
+## V4.29.0am separated mansion grass and selected audio
+
+The author supplied the three standalone 128×128 grass variants previously
+represented as horizontal bands inside `CMGR01.png`. They enter the project as
+new project-owned files; the historical masters remain untouched. MAP01 uses
+the cared dark-green `CMGR01A` variant for the mansion grounds. `CMGR01B` and
+`CMGR01C` remain available for separately bounded worn and dry terrain sectors.
+
+The same patch integrates eight external sound effects through stable SNDINFO
+logical names. Seven came from the author-supplied selected-audio package; the
+requested pickup effect is the public OGG preview of Freesound #332629. Full
+provenance, required attribution text and the pre-release original-download
+requirement ship inside [`src/licenses/AUDIO_CREDITS.md`](../src/licenses/AUDIO_CREDITS.md).
+
+| Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Separated mansion grass | `CMGR01A.png`, `CMGR01B.png`, `CMGR01C.png` | Damian Curti / project-directed separation | Author-supplied grass package, 2026-08-30 | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project | Three independent seamless 128×128 RGB flats; no runtime use of the three-band `CMGR01` composite. |
+| Menu, doors and carbine | Five OGG files under `sounds/caelum` | dodrio, daddo22, CoolKT11 and Wenpire | Freesound #554021, #442313, #553427, #574810 and #574818 | CC0 1.0 | Yes | Metadata retained despite optional attribution. Spatial previews should be replaced by original downloads before final release. |
+| Critical-health heartbeat | `ca_low_health_heartbeat.ogg` | ibm5155 | Freesound #174917 | CC BY 4.0 | Yes, with attribution | Public OGG preview, unaltered except project filename. |
+| Recipe learned | `ca_recipe_learned.ogg` | Frostnox | Freesound #849821 | CC BY 4.0 | Yes, with attribution | Public OGG preview, unaltered except project filename. |
+| Item pickup | `ca_item_pickup.ogg` | TreasureSounds | Freesound #332629 | CC BY 4.0 | Yes, with attribution | Public low-quality OGG preview, unaltered except project filename. |
+
 ## V4.29.0aj exterior grass activation
 
 No new artwork is introduced. The already registered project-owned

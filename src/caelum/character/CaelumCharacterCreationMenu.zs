@@ -35,6 +35,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SmallTextFont = Font.GetFont("CaelumSmall");
         DontDim = true;
         DontBlur = true;
+        MenuSound("caelum/ui/menu_open");
     }
 
     void ResetAllocations()
@@ -413,6 +414,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_attribute10", AttributeBonus[10]);
         SetDraft("ca_newchar_attribute11", AttributeBonus[11]);
         SetDraft("ca_newchar_ready", 1);
+        MenuSound("caelum/ui/menu_select");
         Menu.StartGameDirect(true, false, "CaelumPlayer", 0, 0);
     }
 
@@ -457,7 +459,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 return true;
             }
             Page++;
-            MenuSound("menu/advance");
+            MenuSound("caelum/ui/menu_select");
             return true;
         }
         if (mkey == MKEY_Back)

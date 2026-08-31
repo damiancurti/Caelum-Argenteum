@@ -13,7 +13,7 @@ class CaelumConsumableItem : PowerupGiver
         Inventory.Amount 1;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
-        Inventory.PickupSound "misc/i_pkup";
+        Inventory.PickupSound "caelum/items/pickup";
         +INVENTORY.INVBAR
     }
 

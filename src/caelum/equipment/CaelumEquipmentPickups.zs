@@ -138,7 +138,7 @@ class CaelumEquipmentItem : Inventory
         Inventory.Amount 1;
         Inventory.MaxAmount 1;
         Inventory.InterHubAmount 1;
-        Inventory.PickupSound "misc/i_pkup";
+        Inventory.PickupSound "caelum/items/pickup";
         // El equipo se administra desde la interfaz propia. Excluirlo de la
         // barra nativa evita que su icono reemplace la cara del HUD clásico.
         -INVENTORY.INVBAR
@@ -415,7 +415,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
 
     Default
     {
-        Inventory.PickupSound "misc/w_pkup";
+        Inventory.PickupSound "caelum/items/pickup";
     }
 
     States
@@ -584,6 +584,7 @@ class CaelumCarbineAmmo : Ammo
         Scale 0.25;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
+        Inventory.PickupSound "caelum/items/pickup";
         Ammo.BackpackAmount 20;
         Ammo.BackpackMaxAmount 2147483647;
         +INVENTORY.INVBAR
@@ -672,6 +673,7 @@ class CaelumArrowAmmo : Ammo
         Scale 0.10;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
+        Inventory.PickupSound "caelum/items/pickup";
         Ammo.BackpackAmount 20;
         Ammo.BackpackMaxAmount 2147483647;
         +INVENTORY.INVBAR
@@ -688,6 +690,7 @@ class CaelumBoltAmmo : Ammo
         Scale 0.10;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
+        Inventory.PickupSound "caelum/items/pickup";
         Ammo.BackpackAmount 20;
         Ammo.BackpackMaxAmount 2147483647;
         +INVENTORY.INVBAR
@@ -716,7 +719,7 @@ class CaelumJavelinAmmo : CaelumCarbineAmmo
 
         // La transferencia ya creó/aumentó la pila nativa; este actor sólo
         // representa las unidades que estaban físicamente en el suelo.
-        A_StartSound("misc/w_pkup", CHAN_ITEM);
+        A_StartSound("caelum/items/pickup", CHAN_ITEM);
         Destroy();
         return true;
     }

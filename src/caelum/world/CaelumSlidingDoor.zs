@@ -96,14 +96,31 @@ class CaelumSlidingDoorLeaf : Actor
             return false;
         }
 
+        int groupLeafCount = 0;
+        bool groupWasRequested = false;
         let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
         CaelumSlidingDoorLeaf leaf;
         while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())))
         {
             if (leaf.args[0] == args[0])
             {
+                groupLeafCount++;
+                groupWasRequested = groupWasRequested || leaf.DoorRequested;
                 leaf.DoorRequested = true;
                 leaf.HoldTimer = 105;
+            }
+        }
+        // Una hoja de 64 MU usa puerta común; dos o más hojas forman una
+        // abertura grande. El sonido se emite una sola vez al iniciar el grupo.
+        if (!groupWasRequested && groupLeafCount > 0)
+        {
+            if (groupLeafCount > 1)
+            {
+                A_StartSound("caelum/world/door_large_open", CHAN_BODY);
+            }
+            else
+            {
+                A_StartSound("caelum/world/door_open", CHAN_BODY);
             }
         }
         return true;

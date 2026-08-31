@@ -158,6 +158,8 @@ class CaelumConstants : Object
     const HEALTH_BADLY_WOUNDED_PERFORMANCE_MULTIPLIER = 0.25;
     const HEALTH_WOUNDED_INTENSITY_MULTIPLIER = 2.0;
     const HEALTH_BADLY_WOUNDED_INTENSITY_MULTIPLIER = 4.0;
+    // 42 tics superan levemente los 1,055 s del archivo y evitan solaparlo.
+    const LOW_HEALTH_HEARTBEAT_INTERVAL_TICS = 42;
     const HIT_LOCATION_NONE = 0;
     const HIT_LOCATION_HEAD = 1;
     const HIT_LOCATION_TORSO = 2;

@@ -32,6 +32,28 @@ Flat "CMGR01", 128, 128
     Patch "graphics/caelum/textures/mansion/CMGR01.png", 0, 0
 }
 
+// Variantes separadas: jardín cuidado, césped desgastado y terreno seco.
+Flat "CMGR01A", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01A.png", 0, 0
+}
+
+Flat "CMGR01B", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01B.png", 0, 0
+}
+
+Flat "CMGR01C", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01C.png", 0, 0
+}
+
+// Cubierta inclinada exterior del cuarto de segundo piso.
+Flat "CMRF01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMRF01.png", 0, 0
+}
+
 Flat "CMIN01", 128, 128
 {
     Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0

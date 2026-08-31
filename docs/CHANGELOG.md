@@ -1,5 +1,44 @@
 # Changelog
 
+## 4.29.0am — Open balcony perimeter, gabled roof and selected audio
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD while preserving the
+  approved x=-371..1055 second-floor room, group-915 door, direct corridor,
+  lower corner closures, rooms, stairs, tunnel and groups 913/914.
+- Corrected the remaining balcony obstruction identified in the 0al capture:
+  all seven sectors forming the long north, east and south outer U retain the
+  z=0–128 lower facade and z=128–136 walkable floor, but no longer produce a
+  z=136–256 wall or z=256–264 overhead slab. The western building joins and
+  both 8×8 lower corners remain closed.
+- Replaced the upper room's horizontal z=392–400 slab with a solid 8-MU gabled
+  3D roof. Its east-west ridge is perpendicular to the eastern balcony; the
+  lower/upper roof planes rise from z=392/400 at y=±391 to z=456/464 at y=0.
+  `CMRF01` covers the exterior and `CMCL01` the interior face.
+- Added `CMGR01A`, `CMGR01B` and `CMGR01C` as three independent seamless
+  128×128 grass flats. MAP01 uses cared dark-green `CMGR01A`, removing the
+  visible three-band repetition caused by the historical composite.
+- Added eight SNDINFO effects and connected them to character-menu opening and
+  confirmation, first-time recipe learning, one-leaf and multi-leaf sliding
+  doors, carbine fire, a local timer-driven badly-wounded heartbeat and every
+  project-owned pickup base. The heartbeat stops on recovery, death or the
+  character-creation state and cannot overlap itself.
+- Registered all audio provenance in `src/licenses/AUDIO_CREDITS.md`. Three
+  CC BY 4.0 works retain mandatory title/author/source/license attribution;
+  five CC0 works retain optional traceability. Public previews remain marked
+  for replacement by authenticated original downloads before final release.
+- Added the idempotent `rebuild_4_29_0am_maps.py` constructor with exact
+  balcony profiles, roof-plane/eave/ridge/thickness checks and partition gates.
+  MAP01 is 927 vertices, 1,286 linedefs, 2,362 sidedefs, 382 sectors and 227
+  Things; SHA-256 is
+  `1fbc9638c7b0b454ed7b443e64b50989ee89d854e19ed730433eb44cf0e26cc7`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- Static reconstruction, idempotence, asset decoding, SNDINFO reference and
+  PK3 structure gates pass. GZDoom 4.14.2 also compiles all ZScript/SNDINFO,
+  enters MAP01 without loader errors and renders the open outer balcony plus
+  both roof slopes in automated spot checks. Focused author traversal and
+  audio-mix QA remain the acceptance gate.
+
 ## 4.29.0al — Open first-floor balcony ends
 
 - Rebuilt MAP01 from the exact clean 4.29.0ad WAD while preserving the

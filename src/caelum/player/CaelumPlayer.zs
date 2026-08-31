@@ -273,6 +273,8 @@ class CaelumPlayer : DoomPlayer
     double HealthPerformanceMultiplier;
     double HealthPainMultiplier;
     double HealthAdrenalineGainMultiplier;
+    int LowHealthHeartbeatTimer;
+    bool LowHealthHeartbeatActive;
 
     // Stored diagnostic values expose the latest real-damage pain calculation
     // without changing its result. They also survive saves with the player.
@@ -3215,6 +3217,13 @@ class CaelumPlayer : DoomPlayer
             RefreshCraftingRecipeBookSummary();
             PersistCharacterState();
             if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+            A_StartSound(
+                "caelum/ui/recipe_learned",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI,
+                1.0,
+                ATTN_NONE
+            );
         }
         return learned;
     }
@@ -3249,6 +3258,13 @@ class CaelumPlayer : DoomPlayer
         RefreshCraftingRecipeBookSummary();
         PersistCharacterState();
         if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        A_StartSound(
+            "caelum/ui/recipe_learned",
+            CHAN_6,
+            CHANF_LOCAL | CHANF_UI,
+            1.0,
+            ATTN_NONE
+        );
     }
 
     void DebugSetAllCraftingRecipesKnown(bool known)
@@ -8861,6 +8877,7 @@ class CaelumPlayer : DoomPlayer
         if (CreationWizardOpen)
         {
             IsSpendingRunningAir = false;
+            UpdateLowHealthHeartbeat();
             return;
         }
 
@@ -8873,6 +8890,7 @@ class CaelumPlayer : DoomPlayer
         );
 
         UpdateHealthStateEffects();
+        UpdateLowHealthHeartbeat();
 
         IsSpendingRunningAir = IsRunningOnGround();
         UpdateCrouchEffects();
@@ -10086,6 +10104,11 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Tier,
             WeaponModel.Size
         );
+
+        if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        {
+            A_StartSound("caelum/weapons/carabine_fire", CHAN_WEAPON);
+        }
 
         // La pila nativa representa el total físico restante y normalmente
         // acompaña al cargador. La comprobación nula preserva un cargador ya
@@ -12377,6 +12400,40 @@ class CaelumPlayer : DoomPlayer
             + (1.0 - SurvivalRawPerformanceMultiplier)
             * AdrenalinePenaltyIgnoreRatio;
         UpdateEffectiveOffensiveDamageMultiplier();
+    }
+
+    void UpdateLowHealthHeartbeat()
+    {
+        bool shouldPlay = !CreationWizardOpen
+            && HealthResourceInitialized
+            && HealthState == CaelumConstants.HEALTH_STATE_BADLY_WOUNDED
+            && health > 0
+            && player != null
+            && player.playerstate == PST_LIVE;
+        if (!shouldPlay)
+        {
+            if (LowHealthHeartbeatActive) { A_StopSound(CHAN_5); }
+            LowHealthHeartbeatTimer = 0;
+            LowHealthHeartbeatActive = false;
+            return;
+        }
+
+        if (LowHealthHeartbeatTimer > 0)
+        {
+            LowHealthHeartbeatTimer--;
+            return;
+        }
+
+        A_StartSound(
+            "caelum/player/low_health_heartbeat",
+            CHAN_5,
+            CHANF_LOCAL | CHANF_UI,
+            1.0,
+            ATTN_NONE
+        );
+        LowHealthHeartbeatTimer =
+            CaelumConstants.LOW_HEALTH_HEARTBEAT_INTERVAL_TICS;
+        LowHealthHeartbeatActive = true;
     }
 
     // Patience first mitigates the harmful part of wounded states. Adrenaline

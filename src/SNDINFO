@@ -1,0 +1,15 @@
+// Caelum Argenteum — efectos seleccionados para GZDoom 4.14.2.
+
+caelum/ui/menu_open = "sounds/caelum/ui/ca_menu_open.ogg"
+caelum/ui/menu_select = "sounds/caelum/ui/ca_menu_select.ogg"
+caelum/ui/recipe_learned = "sounds/caelum/ui/ca_recipe_learned.ogg"
+
+caelum/world/door_open = "sounds/caelum/world/doors/ca_door_open.ogg"
+caelum/world/door_large_open = "sounds/caelum/world/doors/ca_door_large_open.ogg"
+
+caelum/weapons/carabine_fire = "sounds/caelum/weapons/ca_carabine_fire.ogg"
+caelum/player/low_health_heartbeat = "sounds/caelum/player/ca_low_health_heartbeat.ogg"
+caelum/items/pickup = "sounds/caelum/items/ca_item_pickup.ogg"
+
+// Impide superponer varias instancias del mismo latido.
+$limit caelum/player/low_health_heartbeat 1

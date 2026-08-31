@@ -452,32 +452,51 @@ while removing only the z=136–256 obstruction and z=256–264 cover. The side
 balconies now join the eastern exterior platform without changing the approved
 upper room, door, corridor, lower corners or grass.
 
+The 0al visual pass confirmed that those terminal walls were not the complete
+blocker: the long north/east/south wall around the outside of the balcony
+remained. V4.29.0am applies the same lower-facade/open-upper profile to all
+seven sectors in that outer U while preserving the western joins and lower
+corner closures. It also replaces the accepted room's flat roof with the
+author-selected two-slope form: an east-west ridge perpendicular to the
+eastern balcony and a 64-MU rise. The separately supplied grass files enter as
+`CMGR01A/B/C`, with A replacing the three-band composite on MAP01. The selected
+audio package and Freesound #332629 are connected to their intended runtime
+events and carry in-package license records. This audiovisual integration does
+not authorize later sound mixing values or new terrain placement beyond the
+explicit assignments above.
+
 The immediate closing order is:
 
-1. Load V4.29.0al and confirm that the entire exterior ground still uses
-   `CMGR01` grass terrain with no remaining Doom floor patch.
-2. Traverse both 96-MU first-floor balconies across x=1689..1697 and onto the
-   eastern platform. Require continuous wood floor, open sky and no terminal
-   wall, return or invisible obstruction.
-3. Inspect those same terminal cells from planta baja and require the facade to
-   remain closed through z=128; the balcony correction must not open the rooms
+1. Load V4.29.0am and confirm that the exterior world sector repeats only
+   standalone `CMGR01A`, with no three-band stripe and no Doom floor patch.
+2. Traverse both complete 96-MU first-floor balconies along their north/south
+   edges and around x=1689..1697. Require continuous wood floor, open sky and
+   no longitudinal, terminal, return or invisible obstruction.
+3. Inspect the complete outer U from planta baja and require its facade to
+   remain closed through z=128; opening the balcony must not open the rooms
    below.
 4. Inspect both symmetric lower junctions at x=1201..1209 and require a
    continuous exterior corner with no gap or new internal partition.
-5. Reconfirm without further modification that the approved x=-371..1055 upper
-   room and group-915 door remain intact.
-6. Walk the extended x=1055..1697 corridor and unchanged stair landing. Inspect
-   from below and reject any hole, floating strip or blocked balcony edge.
-7. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
-   from the all-sewer 4.29.0af WAD; creator, `changemap`, crafting, IA and
-   perception do not need functional repetition for this correction.
-8. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
+5. Inspect both `CMRF01` roof slopes from outside and the `CMCL01` underside
+   from inside. Require continuous eaves, a closed east-west ridge, no central
+   seam/HOM and no collision below the sloped ceiling.
+6. Reconfirm that the x=-371..1055 upper-room walls, group-915 door, extended
+   x=1055..1697 corridor and unchanged stair landing remain intact.
+7. Verify the eight logical sounds: enter/confirm the character menu, learn one
+   new recipe, open one single and one double sliding door, fire the carbine,
+   collect an item and cross into/out of the badly-wounded health state. Require
+   one event per action, positional doors/weapon and a local non-overlapping
+   heartbeat that stops after recovery or death.
+8. Build and load both maps without parser, unknown-sound or missing-resource
+   errors. MAP02 remains unchanged from the all-sewer 4.29.0af WAD; IA and
+   perception do not need functional repetition for this candidate.
+9. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.
-9. Replace the rejected global-ring follower steering with a density-aware,
+10. Replace the rejected global-ring follower steering with a density-aware,
    budgeted local route test. Pass 20 real minutes at 1,875 active actors before
    raising the active count.
-10. Once architecture, creator/persistence, controlled perception and the new
+11. Once architecture, creator/persistence, controlled perception and the new
    1,875-active movement gate pass, close V4.29 and begin V4.30.
 
 ### V4.30 — Repair, Disassembly and Durability Loop

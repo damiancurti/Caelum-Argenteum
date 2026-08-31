@@ -1,5 +1,51 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Open balcony perimeter, gabled roof and selected audio 4.29.0am
+
+**Implemented and runtime-loaded; focused author QA pending**
+
+V4.29.0am preserves the approved x=-371..1055 upper room, group-915 door at
+x=1051, direct corridor, lower shell, exterior stairs, tunnel and door groups.
+The latest capture identified the remaining obstruction as the long outer
+balcony wall, not only the two terminal sectors corrected in 0al. The north,
+east and south sectors of that U now retain the z=0–128 ground-floor facade and
+z=128–136 walkable floor while omitting every z=136–256 wall and z=256–264
+cover. The western joins and two lower 8×8 corner closures remain unchanged.
+
+The same upper-room footprint now carries a two-slope roof with an east-west
+ridge, perpendicular to the eastern balcony. Each solid plane is 8 MU thick:
+the eaves occupy z=392..400 at y=±391 and the author-selected 64-MU rise places
+the ridge at z=456..464 on y=0. The exterior face uses `CMRF01`; the underside
+uses `CMCL01`. The room split at y=0 increases its exact closed partition from
+186 to 188 target sectors without moving its walls, floor, doorway or actors.
+
+The former three-band grass repeat is no longer assigned to MAP01. The world
+sector uses standalone `CMGR01A`; `CMGR01B` and `CMGR01C` are separately named
+128×128 variants for later worn and dry sectors.
+
+Eight OGG effects have stable logical names and active callers: menu open and
+confirmation, first recipe unlock, ordinary and multi-leaf sliding doors,
+carbine discharge, item pickup and local low-health heartbeat. The heartbeat
+uses a 42-tic timer for its 1.055-second file, plays only in the existing badly
+wounded state and stops on recovery, death or character creation. Mandatory
+CC BY 4.0 attribution and CC0 traceability ship in
+`src/licenses/AUDIO_CREDITS.md`; preview files remain development assets until
+their authenticated Freesound originals replace them before release.
+
+Deterministic map outputs are:
+
+- MAP01 `(927, 1286, 2362, 382, 227)`, SHA-256
+  `1fbc9638c7b0b454ed7b443e64b50989ee89d854e19ed730433eb44cf0e26cc7`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The clean-base reconstruction, second execution, topology/references, exact
+roof equations and resource decoders pass. GZDoom 4.14.2 compiles the complete
+ZScript/SNDINFO set, enters MAP01 without loader errors and renders the open
+outer wall and both roof slopes in automated viewpoints. Author acceptance
+must still traverse the complete balcony, inspect the interior roof collision
+and verify every sound at the intended mix before this candidate is accepted.
+
 ## Open first-floor balcony ends 4.29.0al
 
 **Implemented and statically validated; focused author QA pending**
