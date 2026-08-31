@@ -429,16 +429,24 @@ z=256–264 eastern platform while continuing to omit the obsolete room strip
 west of x=-121. The central 128-MU corridor remains the direct access route but
 is no longer the only upper-floor surface.
 
+The 0ai runtime pass then established two final author corrections: move the
+upper room exactly 100 MU west and recover the intended uncovered state of the
+two 96-MU first-floor balconies. V4.29.0aj moves the room to x=-221..1205,
+moves group 915 to x=1201 and lengthens only the central access corridor. It
+removes z=256–264 solely from the two balcony strips, preserving their wood
+floor and the rest of the upper platform. The MAP01 world sector also adopts
+the existing project-owned `CMGR01` grass terrain instead of Doom `FLOOR0_1`.
+
 The immediate closing order is:
 
-1. Load V4.29.0ai and confirm that the ground and first-floor rooms accepted in
-   0ah remain unchanged, including both centered 64-MU balcony passages.
-2. Walk the complete restored upper platform on both sides of the central
-   corridor. Require continuous floor with no lateral holes or floating strips.
-3. Traverse the x=-121..1305 upper room, open group 915 from both sides and
-   confirm that its facade is 40 MU farther toward the rear than in 0ah.
-4. Inspect the platform and room from below. Require support under all intended
-   floor and no obsolete strip left by the earlier x=-225 room footprint.
+1. Load V4.29.0aj and confirm that the entire exterior ground uses `CMGR01`
+   grass terrain with no remaining Doom floor patch.
+2. Traverse both 96-MU first-floor balconies through their centered passages.
+   Require continuous wood floor and open sky, with no z=256 cover above them.
+3. Traverse the x=-221..1205 upper room and open group 915 from both sides.
+   Confirm that room, roof and door all moved exactly 100 MU west from 0ai.
+4. Walk the extended central corridor and unchanged stair landing. Inspect from
+   below and reject any new hole or floating strip outside the open balconies.
 5. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
    from the all-sewer 4.29.0af WAD; creator, `changemap`, crafting, IA and
    perception do not need functional repetition for this correction.

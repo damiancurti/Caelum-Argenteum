@@ -1,5 +1,37 @@
 # Changelog
 
+## 4.29.0aj — West-shifted upper room, uncovered balconies and grass
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD, preserving the accepted
+  lower/first-floor rooms, walls, passages, external stairs, tunnel and door
+  groups 913/914.
+- Moved the complete 1426×782-MU upper room exactly 100 MU west, from
+  x=-121..1305 to x=-221..1205. Floor, walls, roof and opening share the same
+  displacement.
+- Moved the group-915 double door from x=1301 to x=1201 while retaining its
+  y=-32/32 positions, z=264 height and two 64-MU leaves. No other Thing changed.
+- Extended the 128-MU access corridor to x=1205..1697 so it still joins the
+  unchanged external stair landing directly to the moved room.
+- Removed the accidental z=256–264 cover from both 96-MU first-floor balcony
+  strips. Their four dedicated targets retain only their z=128–136 wood floor;
+  the middle upper platform and stair landings remain intact.
+- Replaced Doom `FLOOR0_1` on MAP01's exterior world sector with the existing
+  project-owned `CMGR01` grass terrain and registered that 128×128 resource as
+  a native flat in `TEXTURES`. Interior mansion surfaces are unchanged.
+- Added exact partition gates: 193 room rectangles cover 1,115,132 MU² and
+  seven corridor rectangles cover 62,976 MU², with no overlap, escape or
+  missing area. Cell comparison finds zero lower-volume differences from 0ai.
+- MAP02 remains byte-identical to 4.29.0af. No ZScript, character creation,
+  persistence, crafting, inventory, AI, perception or combat source changed.
+- Added the idempotent `rebuild_4_29_0aj_maps.py` constructor. Final MAP01 is
+  976 vertices, 1,335 linedefs, 2,412 sidedefs, 396 sectors and 227 Things;
+  SHA-256 is
+  `f743acf7a08a27d5e511bd067218a00a8ea1bf19376bb6703dbd8866ec843858`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- Independent clean reconstruction, idempotence and the complete PK3 ZIP/UDMF
+  validation pass; focused visual traversal in GZDoom 4.14.2 remains pending.
+
 ## 4.29.0ai — Restored upper platform and rear-aligned room
 
 - Rebuilt MAP01 from the exact clean 4.29.0ad WAD; no rejected 0ah geometry is

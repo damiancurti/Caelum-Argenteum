@@ -26,6 +26,12 @@ Flat "CMCL01", 128, 128
     Patch "graphics/caelum/textures/mansion/CMCL01.png", 0, 0
 }
 
+// Pasto y tierra originales para el terreno exterior de MAP01.
+Flat "CMGR01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01.png", 0, 0
+}
+
 Flat "CMIN01", 128, 128
 {
     Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0

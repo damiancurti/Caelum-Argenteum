@@ -1,5 +1,12 @@
 # Asset register
 
+## V4.29.0aj exterior grass activation
+
+No new artwork is introduced. The already registered project-owned
+`CMGR01.png` 128×128 mansion-terrain master is now declared as the native
+`CMGR01` flat and assigned to MAP01's exterior world sector. Interior mansion
+floors retain their established materials; MAP02 remains all sewer surfaces.
+
 ## V4.29.0aa raw-material processing set
 
 The author supplied `Caelum_Argenteum_materiales_nuevos(1).zip` with explicit

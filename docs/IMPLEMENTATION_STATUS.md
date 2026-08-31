@@ -1,5 +1,48 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## West-shifted upper room, uncovered balconies and grass 4.29.0aj
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0aj reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. It
+preserves the accepted ground-floor and first-floor walls, rooms, balcony
+passages, external stairs, tunnel and groups 913/914. An exhaustive cell
+comparison against 0ai finds zero changes in physical coverage at z=0–128,
+128–136 and 136–256.
+
+The complete 1426×782-MU upper room moves exactly 100 MU west, from
+x=-121..1305 to x=-221..1205. Its floor, 8-MU perimeter, roof and centered
+eastern opening move as one unit. The two group-915 leaves move from x=1301 to
+x=1201 at y=-32/32 and z=264; every other Thing remains identical to 0ai. The
+128-MU-wide direct corridor now covers x=1205..1697 and joins the unchanged
+stair landing.
+
+The two lateral first-floor balconies are again exterior and uncovered. Four
+dedicated physical targets retain only the z=128–136 wood slab; they contain no
+z=136–256 obstruction and no z=256–264 upper cover. The middle platform,
+stair landings and direct corridor retain their upper walking surface.
+
+MAP01's world sector now uses the project-owned 128×128 `CMGR01` grass-and-soil
+terrain master. `TEXTURES` registers it as a native flat, and no MAP01 sector
+retains Doom's `FLOOR0_1`. Interior floors and all mansion 3D floors remain on
+their existing mansion materials.
+
+The room's 193 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's seven targets cover exactly 62,976 MU². Both partitions stay inside
+their declared bounds, have zero positive-area overlap and exactly fill their
+rectangles. Deterministic outputs are:
+
+- MAP01 `(976, 1335, 2412, 396, 227)`, SHA-256
+  `f743acf7a08a27d5e511bd067218a00a8ea1bf19376bb6703dbd8866ec843858`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent reconstruction from 4.29.0ad reproduces both WADs byte for
+byte, a second execution is idempotent and the complete development PK3 passes
+its ZIP/UDMF gates. Runtime acceptance is limited to the room position and
+group-915 door, both uncovered balconies and the exterior grass. MAP02 and all
+gameplay systems are unchanged.
+
 ## Restored upper platform and rear-aligned room 4.29.0ai
 
 **Implemented and statically validated; focused author QA pending**
