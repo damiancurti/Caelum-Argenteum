@@ -437,26 +437,47 @@ removes z=256–264 solely from the two balcony strips, preserving their wood
 floor and the rest of the upper platform. The MAP01 world sector also adopts
 the existing project-owned `CMGR01` grass terrain instead of Doom `FLOOR0_1`.
 
+The 0aj visual pass found that six inherited wall/return pieces still narrowed
+the balconies, both 8×8-MU links between the old shell and the lower extension
+remained open, and the upper room needed another 150-MU westward correction.
+V4.29.0ak moves the complete room to x=-371..1055 and group 915 to x=1051,
+extends the direct corridor, gives all six balcony-transition pieces the open
+z=128–136-only profile and closes the two lower corner cells with the adjacent
+z=0–256 exterior-wall profile. MAP02 and gameplay code remain unchanged.
+
+The 0ak visual pass approved the complete second floor but exposed two remaining
+8×96-MU terminal walls at x=1689..1697 across the ends of the side balconies.
+V4.29.0al keeps their z=0–128 ground-floor facade and z=128–136 wood floor,
+while removing only the z=136–256 obstruction and z=256–264 cover. The side
+balconies now join the eastern exterior platform without changing the approved
+upper room, door, corridor, lower corners or grass.
+
 The immediate closing order is:
 
-1. Load V4.29.0aj and confirm that the entire exterior ground uses `CMGR01`
-   grass terrain with no remaining Doom floor patch.
-2. Traverse both 96-MU first-floor balconies through their centered passages.
-   Require continuous wood floor and open sky, with no z=256 cover above them.
-3. Traverse the x=-221..1205 upper room and open group 915 from both sides.
-   Confirm that room, roof and door all moved exactly 100 MU west from 0ai.
-4. Walk the extended central corridor and unchanged stair landing. Inspect from
-   below and reject any new hole or floating strip outside the open balconies.
-5. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
+1. Load V4.29.0al and confirm that the entire exterior ground still uses
+   `CMGR01` grass terrain with no remaining Doom floor patch.
+2. Traverse both 96-MU first-floor balconies across x=1689..1697 and onto the
+   eastern platform. Require continuous wood floor, open sky and no terminal
+   wall, return or invisible obstruction.
+3. Inspect those same terminal cells from planta baja and require the facade to
+   remain closed through z=128; the balcony correction must not open the rooms
+   below.
+4. Inspect both symmetric lower junctions at x=1201..1209 and require a
+   continuous exterior corner with no gap or new internal partition.
+5. Reconfirm without further modification that the approved x=-371..1055 upper
+   room and group-915 door remain intact.
+6. Walk the extended x=1055..1697 corridor and unchanged stair landing. Inspect
+   from below and reject any hole, floating strip or blocked balcony edge.
+7. Build and load MAP01 without parser/node-builder failure. MAP02 is unchanged
    from the all-sewer 4.29.0af WAD; creator, `changemap`, crafting, IA and
    perception do not need functional repetition for this correction.
-6. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
+8. In an isolated perception patch, add fixed markers at 0/30/45/60/75/90/120
    degrees, symmetric visible/occluded points and event-position plus real
    `SoundAlert` instrumentation. Only then choose aperture versus semicone.
-7. Replace the rejected global-ring follower steering with a density-aware,
+9. Replace the rejected global-ring follower steering with a density-aware,
    budgeted local route test. Pass 20 real minutes at 1,875 active actors before
    raising the active count.
-8. Once architecture, creator/persistence, controlled perception and the new
+10. Once architecture, creator/persistence, controlled perception and the new
    1,875-active movement gate pass, close V4.29 and begin V4.30.
 
 ### V4.30 — Repair, Disassembly and Durability Loop

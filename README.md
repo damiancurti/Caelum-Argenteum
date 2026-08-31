@@ -16,21 +16,24 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current V4.29.0aj candidate retains the validated 79-recipe crafting
+The current V4.29.0al candidate retains the validated 79-recipe crafting
 catalogue, accepted pre-game character creator and group-913 eastern stairs.
 MAP01 rebuilds the current architecture from the clean 4.29.0ad base: the
 existing rooms, symmetric balconies, ground-floor divider, external stairs,
-tunnel and door groups 913/914 remain intact. The eastern extension now has a
-continuous z=0–256 exterior perimeter; its balcony returns close only the first
-floor, leaving the ground-floor rooms connected beneath them, and each balcony
-has a centered 64-MU passage. The 1426×782-MU second-floor room now occupies
-x=-221..1205, exactly 100 MU west of 0ai, and its centered eastern opening
-contains a real two-leaf group-915 door at x=1201. The direct upper corridor
-extends to the moved door, while both 96-MU first-floor balconies retain their
-wood floor but no z=256–264 cover. MAP01's exterior world sector now uses the
-project-owned `CMGR01` grass terrain flat instead of Doom's `FLOOR0_1`. MAP02
-remains byte-identical to the all-sewer 4.29.0af WAD and changes no actors or
-non-texture geometry.
+tunnel and door groups 913/914 remain intact. The two previously missing 8×8
+MU lower corner links now close the z=0–256 exterior perimeter. The six wall
+and return pieces that narrowed the first-floor balconies are absent, leaving
+both complete 96-MU strips and their transitions with only the z=128–136 wood
+floor and open sky. The two 8×96-MU terminal sectors at x=1689..1697 retain
+their z=0–128 ground-floor facade and z=128–136 balcony floor, but no longer
+place a z=136–256 wall or z=256–264 cover across either first-floor route.
+Both side balconies therefore connect to the eastern exterior platform. The
+1426×782-MU second-floor room remains at
+x=-371..1055, exactly 150 MU west of 0aj, and its centered eastern opening
+contains the two-leaf group-915 door at x=1051. The direct upper corridor
+extends to that moved door. MAP01 keeps the project-owned `CMGR01` grass
+terrain flat; MAP02 remains byte-identical to the all-sewer 4.29.0af WAD and
+changes no actors or non-texture geometry.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
 exists. It selects race, two classes, sex, height, four layer points and thirty
@@ -52,7 +55,7 @@ remains disabled and cannot be scaled to 15,000 active NPCs.
 The visual probability roll and reported hearing ranges are internally
 consistent, but the angular A/B and occlusion rooms were not controlled well
 enough to choose the 60°/120° convention. Their redesign is reserved for the
-next isolated perception patch rather than being mixed into 4.29.0aj. The full
+next isolated perception patch rather than being mixed into 4.29.0al. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 

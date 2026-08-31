@@ -1,5 +1,80 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Open first-floor balcony ends 4.29.0al
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0al preserves the accepted 4.29.0ak second-floor room at
+x=-371..1055, group-915 double door at x=1051, roof, direct corridor, exterior
+grass, closed lower corners, ground-floor rooms, stairs, tunnel and existing
+door groups.
+
+The screenshot from the 0ak visual pass identified the remaining blockers as
+the symmetric 8×96-MU sectors at x=1689..1697, y=-391..-295 and y=295..391.
+They stood across the ends of the two side balconies before the eastern
+exterior platform. Their new profile retains the z=0–128 mansion wall below
+the balcony and the z=128–136 walkable wood slab, but contains no z=136–256
+wall and no z=256–264 cover. The lower facade therefore remains closed while
+the first-floor route and sky become continuous.
+
+Validation samples cover both terminal sectors and the platform side of the
+x=1697 seam. They independently require the lower wall, balcony floor, open
+first-floor volume and absence of overhead cover. The parsed 227-Thing table
+is unchanged from 0ak, including the accepted second-floor door coordinates.
+Deterministic outputs are:
+
+- MAP01 `(940, 1297, 2368, 384, 227)`, SHA-256
+  `fa51876850a0ab2ca2ec13cdb75e5e0cba989d6c65abce39313ec6137a658719`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The count increase from 0ak is restricted to two off-map 3D-floor control
+sectors and their eight vertices/linedefs/sidedefs. Runtime acceptance is
+limited to walking both balcony ends and confirming the already approved
+second floor remains visually unchanged.
+
+## Free balconies, closed lower corners and western upper room 4.29.0ak
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ak reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. It
+preserves the accepted lower rooms, ground divider and group-914 door,
+external stairs and landing, tunnel, group-913 access, mansion materials and
+`CMGR01` exterior terrain.
+
+The complete 1426×782-MU upper room moves exactly 150 MU west from its 0aj
+position: x=-371..1055, y=-391..391. Its floor, 8-MU perimeter, roof and
+centered eastern opening move as one unit. The two group-915 leaves are now at
+`(1051,-32,264)` and `(1051,32,264)`; every other Thing is unchanged. The
+128-MU-wide direct corridor covers x=1055..1697 and continues to the unchanged
+stair landing.
+
+The six inherited pieces at x=1306..1689, y=±287..295 and x=1306..1314 no
+longer produce z=128–256 walls. Their complete footprints share the open-
+balcony profile: a z=128–136 wood floor, no obstruction above it and no
+z=256–264 cover. Both 96-MU balconies therefore connect across their full
+width instead of through a single narrow opening.
+
+The two missing lower corner cells at x=1201..1209, y=-391..-383 and
+y=383..391 now use the same z=0–256 exterior-wall profile as their adjacent
+perimeter. This closes the ground-floor shell symmetrically without adding an
+internal wall to either expanded rear room.
+
+The room's 186 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's eight targets cover exactly 82,176 MU². Both partitions stay inside
+their declared bounds, contain no positive-area overlap and fill their
+rectangles exactly. Deterministic outputs are:
+
+- MAP01 `(932, 1289, 2360, 382, 227)`, SHA-256
+  `378c8de65607ccb7a135f25a063e06daeb495b1c52b4102e09c3d76aade7005e`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The constructor validates both corner links, every balcony transition sample,
+the room/roof/door displacement, closed target topology, references and
+idempotence. Runtime acceptance is restricted to these MAP01 geometry points;
+MAP02 and all gameplay systems are unchanged.
+
 ## West-shifted upper room, uncovered balconies and grass 4.29.0aj
 
 **Implemented and statically validated; focused author QA pending**

@@ -1,5 +1,66 @@
 # Changelog
 
+## 4.29.0al — Open first-floor balcony ends
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD while preserving the
+  accepted 4.29.0ak second-floor room, door, roof, corridor, grass, lower
+  corners, rooms, stairs, tunnel and door groups 913/914/915.
+- Identified the remaining blockers as the two 8×96-MU terminal sectors at
+  x=1689..1697, y=-391..-295 and y=295..391.
+- Replaced only their vertical profile: the z=0–128 ground-floor facade stays
+  closed and the z=128–136 wood floor stays walkable, while the z=136–256 wall
+  and z=256–264 cover are absent. Both 96-MU side balconies now continue onto
+  the eastern exterior platform without reopening the rooms below.
+- Added symmetric validation samples on both sides of each former blocker and
+  across the x=1697 seam. They require continuous floor, open first-floor
+  volume and open sky while separately requiring the lower facade.
+- Every MAP01 Thing remains byte-equivalent at the parsed UDMF level: 227
+  Things, including group 915 at x=1051. MAP02 and all gameplay systems remain
+  unchanged.
+- Added the idempotent `rebuild_4_29_0al_maps.py` constructor. Its additional
+  isolated control profile changes only the off-map 3D-floor controls. Final
+  MAP01 is 940 vertices, 1,297 linedefs, 2,368 sidedefs, 384 sectors and 227
+  Things; SHA-256 is
+  `fa51876850a0ab2ca2ec13cdb75e5e0cba989d6c65abce39313ec6137a658719`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- Static profiles, topology, references and idempotence pass. Focused visual
+  traversal in GZDoom 4.14.2 remains the acceptance gate.
+
+## 4.29.0ak — Free balconies, closed lower corners and western upper room
+
+- Rebuilt MAP01 from the exact clean 4.29.0ad WAD, preserving the accepted
+  rooms, external stairs, tunnel, terrain and door groups 913/914.
+- Moved the complete 1426×782-MU upper room exactly 150 MU farther west than
+  0aj, from x=-221..1205 to x=-371..1055. Floor, perimeter walls, roof and
+  centered eastern opening move together.
+- Moved both group-915 leaves from x=1201 to x=1051 while retaining y=-32/32,
+  z=264 and their independent double-door behavior. Every other Thing remains
+  unchanged.
+- Extended the 128-MU access corridor to x=1055..1697 so the moved room still
+  connects directly to the unchanged external stair landing.
+- Removed the six first-floor wall/return pieces that divided or narrowed the
+  two 96-MU balconies. Their complete footprints now retain only the
+  z=128–136 walkable wood slab: no z=136–256 wall and no z=256–264 cover can
+  block either balcony or its transition.
+- Closed the two missing 8×8-MU lower corner links at x=1201..1209,
+  y=-391..-383 and y=383..391. They continue the adjacent exterior wall from
+  z=0 through 256 without creating a new internal partition.
+- MAP01 retains the project-owned `CMGR01` exterior grass. MAP02 remains
+  byte-identical to 4.29.0af/0aj. No ZScript, crafting, inventory, character
+  creation, persistence, AI, perception, combat or asset file changed.
+- Added exact partition gates: 186 room rectangles cover 1,115,132 MU² and
+  eight corridor rectangles cover 82,176 MU², with no overlap, escape or
+  missing area.
+- Added the idempotent `rebuild_4_29_0ak_maps.py` constructor. Final MAP01 is
+  932 vertices, 1,289 linedefs, 2,360 sidedefs, 382 sectors and 227 Things;
+  SHA-256 is
+  `378c8de65607ccb7a135f25a063e06daeb495b1c52b4102e09c3d76aade7005e`.
+  MAP02 remains 112/110/212/9/16,508; SHA-256 is
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+- Static topology, exact corner/balcony profiles and idempotence pass. A
+  focused visual traversal in GZDoom 4.14.2 remains the acceptance gate.
+
 ## 4.29.0aj — West-shifted upper room, uncovered balconies and grass
 
 - Rebuilt MAP01 from the exact clean 4.29.0ad WAD, preserving the accepted
