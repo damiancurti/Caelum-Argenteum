@@ -1,5 +1,73 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Legacy-curtain removal and door alignment 4.29.0av
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+The 0au profile audit did not model two-sided 3D middle textures, so 36
+ground-level `CMIN01` curtains around the rear stair flights and two exterior
+continuations remained visible and collidable. V4.29.0av clears exactly these
+38 `midtex3d` flags and their 76 middle textures. Each source line was
+lower-unpegged between floor-zero hosts, making the removed curtain occupy
+z=0..128. No sector, vertex, stair tread or upper profile changes.
+
+The two group-807 leaves move from x=1413 to x=1693 while retaining y=-32/+32,
+z=0, orientation, group and motion arguments. They now sit directly below the
+group-913 leaves and align with the eastern stair landing. The lower door ends
+before the preserved z=128..136 slab and group 913 begins at z=136.
+
+The complete sector and vertex digests remain identical to 0au, and the
+first-/second-floor occupancy digest remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+MAP01 stays at 1,045/1,438/2,590/437/225 and has SHA-256
+`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+The grass appearance remains explicitly deferred.
+
+Focused validation for this candidate is:
+
+1. Walk through all former panels surrounding both stair flights and the two
+   exterior continuations; require no curtain, collision or HOM.
+2. Verify the two stair flights and all necessary step/landing faces remain
+   textured and usable.
+3. Verify door 807 is at the eastern landing axis directly below group 913.
+4. Recheck the first and second floors and require no geometry, material or
+   collision change; ignore the separately deferred grass defect.
+
+## Complete rear ground-floor opening 4.29.0au
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+V4.29.0au removes every remaining wall shown in the two author captures while
+the rear ground floor awaits reconstruction. The complete south, north and
+east perimeter U and both stepped exterior joins are open throughout z=0..128.
+The two leaves of door group 807 remain at x=1413, y=-32/+32, and sectors 1–12
+of the two stair flights remain unchanged.
+
+The solid-profile change covers 18 physical sectors. The same mask touches 102
+two-sided linedefs, whose 204 `CMIN01` middle textures are now empty; all eight
+associated `midtex3d` flags are removed so no visual or collidable curtain
+survives the opening. Profiles, materials and occupancy from z=128 upward are
+identical to 0at, including the first and second floors. The exterior-grass
+visual defect is explicitly deferred and receives no additional change here.
+
+The deterministic MAP01 result remains 1,045 vertices, 1,438 linedefs, 2,590
+sidedefs, 437 sectors and 225 Things; SHA-256 is
+`835e1f113fa24b8b646f2dfccd712f603d1de91d8434c72b48a1b1367560fb74`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+Focused validation for this candidate is:
+
+1. Walk through every former north/east/south wall and both exterior joins at
+   ground level; require no collision, visible middle-texture curtain or HOM.
+2. Confirm both 807 leaves and both stair flights remain present and usable.
+3. Recheck the first and second floors and require no material, wall, floor,
+   cover or collision change.
+4. Ignore the outstanding exterior-grass appearance until its later focused
+   pass; it is outside 0au.
+
 ## Ground-floor rear correction 4.29.0at
 
 **Implemented and deterministically validated; focused visual GZDoom
@@ -81,7 +149,7 @@ Focused validation for this candidate is:
    six physical/technical attributes report 20.
 5. Summon Zupay and verify the same slam effect now takes twice as long.
 
-## V4.30 material-processing and durability definition through 4.29.0at
+## V4.30 material-processing and durability definition through 4.29.0av
 
 **Author-specified design only; no V4.30 transaction is implemented**
 
@@ -94,8 +162,11 @@ only an explicit user order cancels it. Disassembly uses exactly the crafting
 time and station network of the corresponding object. Each component recipe
 uses the cumulative station network of the target equipment recipe. Exact
 component-to-card assignments are deliberately deferred until the Tarot-card
-implementation. The only unresolved transaction choice is whether inputs are
-reserved against other uses while the timer runs. The authoritative formulas
+implementation. Required inputs are calculated and locked as a reservation
+when the task starts. They cannot be used by another transaction and are
+consumed only on atomic completion; explicit user cancellation releases the
+full reservation without spending anything or generating output. All rules
+needed for the V4.30 transaction are now defined. The authoritative formulas
 and mappings remain in
 [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
 

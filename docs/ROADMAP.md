@@ -502,6 +502,24 @@ z=128..136 wood slabs and every first-/second-floor occupancy cell remain
 unchanged. MAP01 becomes 1,045/1,438/2,590/437/225 with SHA-256
 `13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
 
+The following author review requires a temporary complete teardown before the
+rear ground floor is rebuilt. V4.29.0au therefore opens only z=0..128 across
+the full north/east/south perimeter U and the two stepped exterior joins. It
+also clears 204 `CMIN01` middle textures and eight `midtex3d` flags from the
+102 affected lines. Door 807, both stair flights and all profiles/materials
+from z=128 upward remain unchanged. The unsuccessful visible grass correction
+is deferred. MAP01 remains 1,045/1,438/2,590/437/225 with SHA-256
+`835e1f113fa24b8b646f2dfccd712f603d1de91d8434c72b48a1b1367560fb74`.
+
+The next traversal exposed a separate legacy layer that the sector-profile
+audit did not cover: 36 `CMIN01` `midtex3d` curtains around the two rear stair
+flights and two exterior continuations. V4.29.0av removes exactly those 38
+ground-level curtains and leaves every sector, stair and z>=128 profile
+unchanged. It also moves both group-807 leaves from x=1413 to x=1693, directly
+below group 913 and on the eastern stair-landing axis. MAP01 remains
+1,045/1,438/2,590/437/225 with SHA-256
+`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+
 The author has accepted the new-character case, focused menu/world sound mix
 and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
 remains a parallel focused visual/traversal review and does not reopen those
@@ -509,14 +527,13 @@ accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
 experiment remain valuable isolated diagnostics. They are not prerequisites
-for defining V4.30. No V4.30 transaction is implemented by 4.29.0at.
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0av.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
-The complete current specification and its single unresolved transaction
-choice are maintained
+The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
-record only; 4.29.0at does not start the V4.30 transaction implementation.
+record only; 4.29.0av does not start the V4.30 transaction implementation.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
@@ -555,9 +572,13 @@ record only; 4.29.0at does not start the V4.30 transaction implementation.
 - Persist hard, ebony and magical wood as tiers 1/2/3; scale decorative
   silver/gold like every other recipe ingredient; keep thrown-javelin recovery
   separate; exclude amulets and seals from durability.
-- Confirm only whether inputs remain reserved against other uses while the
-  timer runs. Exact component/card mapping is deliberately deferred and must
-  not be invented during the transaction implementation.
+- Calculate and lock all required inputs as a reservation when a task starts.
+  Reserved inputs cannot serve another transaction and are consumed only on
+  atomic completion. Explicit user cancellation releases the entire reserve
+  without spend or output.
+- Treat all transaction rules needed by V4.30 as closed. Exact component/card
+  mapping is deliberately deferred until the Tarot-card implementation and
+  must not be invented during transaction work.
 
 ### V4.31 — Loot, Materials and Economy Foundation
 

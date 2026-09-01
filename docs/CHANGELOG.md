@@ -1,5 +1,50 @@
 # Changelog
 
+## 4.29.0av — Removed legacy ground curtains and aligned door 807
+
+- Removed the 36 surviving `CMIN01` `midtex3d` curtains around the two rear
+  stair flights and their two exterior continuations. All 38 lines keep their
+  lower anchoring and references, but their 76 middle textures are empty and
+  no longer provide visual or physical ground-floor walls.
+- Preserved every vertex, sector, stair tread and 3D-floor profile. The
+  first-/second-floor occupancy digest remains
+  `cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`;
+  the deferred grass defect is unchanged.
+- Moved only the two group-807 leaves from x=1413 to x=1693 at y=-32/+32 and
+  z=0. They now share the horizontal axis of group 913 and the eastern stair
+  landing while remaining vertically separated by the z=128..136 slab.
+- MAP01 retains 1,045 vertices, 1,438 linedefs, 2,590 sidedefs, 437 sectors and
+  225 Things; SHA-256 is
+  `fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+  MAP02 remains byte-identical. This incremental patch contains only the four
+  updated status documents, MAP01 and its 0av builder; it contains no sprites,
+  actors, audio or other unchanged resources.
+
+## 4.29.0au — Complete temporary opening of the rear ground floor
+
+- Removed only the z=0..128 volume of the complete rear north/east/south
+  perimeter and both 8-MU stepped exterior joins shown in the author captures.
+  The two group-807 leaves and both stair flights remain in place while the
+  room awaits its later reconstruction.
+- Cleared all 204 `CMIN01` middle textures from the 102 two-sided lines touching
+  those 18 wall sectors and removed their eight `midtex3d` flags. This prevents
+  the opened sectors from leaving visible or collidable one-texture curtains.
+- Preserved every material and solid profile from z=128 upward, including the
+  first- and second-floor walls, floors and cover. MAP01 retains 1,045 vertices,
+  1,438 linedefs, 2,590 sidedefs, 437 sectors and 225 Things; SHA-256 is
+  `835e1f113fa24b8b646f2dfccd712f603d1de91d8434c72b48a1b1367560fb74`.
+  The unsuccessful visible grass correction is deliberately left for a later
+  focused pass. MAP02 remains byte-identical.
+- Closed the last transactional V4.30 design choice without implementing it:
+  required inputs are locked as a reservation when a task begins, cannot be
+  reused during its timer, and are consumed only on atomic completion. Explicit
+  user cancellation releases the complete reservation with no spend or output.
+  Exact Minor-Arcana recipe assignments remain deferred content, not an open
+  transaction rule.
+- This incremental patch contains only the five updated design/status documents,
+  MAP01 and its deterministic 0au builder; it includes no character sprites,
+  actors, audio, MAP02 or other unchanged resources.
+
 ## 4.29.0at — Restored rear door, closed lower joins and exterior grass
 
 - Restored the two group-807 leaves at their original x=1413, y=-32/+32

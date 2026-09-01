@@ -16,19 +16,20 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0at candidate retains the validated 79-recipe
+The current cumulative V4.29.0av candidate retains the validated 79-recipe
 crafting catalogue, accepted pre-game character creator and group-913 eastern
-stairs. MAP01 keeps both leaves of group 807 while the four surrounding
-ground-floor wall/jamb hosts remain open. The rear ground-floor room therefore
-has no internal wall outside its two stair flights. Two 8-MU stepped exterior
-joins now close the ground-floor shell from z=0 to 128, and the adjacent
-exterior base floors use `CMGR01A`; their z=128..136 wood slabs are unchanged.
-The accepted first and second floors, gabled-roof direction, stair access,
-balconies and upper door groups remain unchanged.
+stairs. MAP01 keeps both stair flights and moves both group-807 leaves from
+x=1413 to x=1693, directly below group 913 and on the eastern stair-landing
+axis. In addition to the perimeter opening inherited from 0au, the pass removes
+38 overlooked ground-level `CMIN01` 3D curtains: 36 around the two flights and
+two exterior continuations. Their 76 middle textures are empty and no target
+line retains `midtex3d`. Stair sectors and every wall, floor and cover profile
+from z=128 upward remain unchanged. The attempted exterior-grass assignment
+from 0at is not revised in this increment and stays deferred.
 
-The deterministic 4.29.0at MAP01 output contains 1,045 vertices, 1,438
+The deterministic 4.29.0av MAP01 output contains 1,045 vertices, 1,438
 linedefs, 2,590 sidedefs, 437 sectors and 225 Things. Its SHA-256 is
-`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
 Only the focused visual traversal in GZDoom remains pending for this map pass.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
@@ -41,7 +42,7 @@ pickup bases. Required audio attribution ships in
 [`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
 byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
-V4.29.0at retains the three authored folklore gameplay
+V4.29.0av retains the three authored folklore gameplay
 profiles. Palomo uses the playable-character statistical model with all twelve
 attributes at 100, `Height 56`, `Radius 16` and mass 700; he wanders but has no
 attack. Mandinga uses attributes 6, `Height 51.644444`, `Radius 14.755556` and
@@ -88,7 +89,7 @@ The author has accepted the new-character flow, focused sound mix/event checks
 and final MAP01/MAP02 smoke outside the parallel house-construction track.
 That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
 this candidate: no timed crafting, repair or disassembly transaction is
-implemented by 4.29.0at.
+implemented by 4.29.0av.
 
 ### Building the development PK3
 
@@ -166,9 +167,12 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   active task. Disassembly uses the same time and cumulative stations as
   crafting the item; component recipes use the station network of their target
   equipment recipe. Exact Minor-Arcana card assignments are deferred until the
-  Tarot-card implementation. Only input reservation during the timer remains
-  undecided; no V4.30 transaction is implemented in 4.29.0at. The complete
-  definition is recorded in
+  Tarot-card implementation. Required inputs are calculated and locked as a
+  reservation when the task starts, cannot serve another transaction, and are
+  consumed only by atomic completion. Explicit cancellation releases the full
+  reservation without spend or output. All transactional rules needed for
+  V4.30 are now defined; no V4.30 transaction is implemented in 4.29.0av. The
+  complete definition is recorded in
   [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.

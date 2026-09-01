@@ -1,9 +1,9 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** especificación de diseño autorizada; no implementada en 4.29.0at.
+**Estado:** especificación transaccional cerrada; no implementada en 4.29.0au.
 
 Este documento fija las reglas ya decididas para V4.30. El ejecutable de
-4.29.0at conserva sus transacciones inmediatas, su catálogo persistente de 79
+4.29.0au conserva sus transacciones inmediatas, su catálogo persistente de 79
 recetas y sus herramientas de reparación/desarme de desarrollo. Ningún tiempo,
 coste proporcional o receta de componente descrito aquí debe presentarse como
 funcional hasta que exista su transacción autoritativa y pase pruebas en
@@ -49,11 +49,12 @@ EffectiveSeconds = BaseSeconds * EfficiencyTimeFactor
 Una tarea no puede iniciarse mientras el personaje está en combate. Una vez
 iniciada, sólo se cancela mediante una orden explícita del usuario: recibir
 daño, moverse o entrar posteriormente en combate no son canceladores
-automáticos. Al cancelar no se consume ninguna entrada ni se genera salida.
-La finalización sí deberá consumir entradas y generar salidas como una única
-transacción atómica. Falta confirmar únicamente si las entradas quedan
-reservadas —bloqueadas contra otros usos, pero todavía sin consumirse— durante
-el temporizador.
+automáticos. Al iniciar se calculan todas las entradas necesarias y quedan
+reservadas: permanecen en el inventario, pero están bloqueadas contra cualquier
+otro uso mientras corre el temporizador. Al cancelar se libera la reserva
+completa, sin consumir entradas ni generar salidas. Al completar, las entradas
+reservadas se consumen y las salidas se generan como una única transacción
+atómica.
 
 Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
 usa cobre/estaño `9:1` y acero siempre usa hierro/carbón `497:3`; la eficiencia
@@ -236,11 +237,10 @@ arcanos menores. La carta concreta asociada a cada receta se definirá
 únicamente cuando se implemente el sistema de cartas. V4.30 debe conservar el
 punto de integración sin inventar esa correspondencia.
 
-## 7. Única decisión transaccional todavía abierta
+## 7. Estado de las decisiones
 
-Antes de implementar la transacción temporizada falta confirmar si las
-entradas quedan reservadas contra otros usos durante la tarea. El momento de
-consumo ya está fijado en la finalización atómica y cancelar por orden del
-usuario sigue liberando la tarea sin gasto ni salida. La correspondencia exacta
-entre recetas y cartas no es una decisión pendiente de esta transacción: queda
-deliberadamente aplazada hasta la implementación del sistema de Tarot.
+Las reglas transaccionales necesarias para implementar V4.30 están cerradas.
+Las entradas quedan reservadas contra otros usos durante la tarea, se consumen
+sólo al completar y se liberan íntegramente al cancelar. La correspondencia
+exacta entre recetas y cartas no es una decisión pendiente de esta transacción:
+queda deliberadamente aplazada hasta la implementación del sistema de Tarot.
