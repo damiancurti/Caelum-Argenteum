@@ -1,24 +1,26 @@
 # Asset register
 
-## V4.29.0aq Palomo, Mandinga and Zupay character package
+## V4.29.0aq–0ar Palomo, Mandinga and Zupay character package
 
 The author supplied a 398-file package containing 380 individual runtime
 frames, ten review atlases and eight README/manifest documents. Only the 380
 individual frames enter `src`; the atlases remain outside the PK3 and the
-instructions remain under `docs/assets/characters`. The archive itself does
-not state authorship or a redistribution license, so public redistribution is
-blocked until Damian Curti confirms that it is project-owned original art or
-records another compatible license.
+instructions remain under `docs/assets/characters`. Damian Curti confirmed on
+2026-08-31 that all 380 frames are original Caelum Argenteum project artwork
+generated with OpenAI image tools under his project direction and account. He
+authorized their inclusion and public redistribution with the project. They
+therefore use the same project asset license reference as the other original,
+project-directed graphics.
 
 | Asset family | Files | Author/direction | Source | License | Final use allowed? | Notes |
 |---|---|---|---|---|---|---|
-| Palomo | `sprites/caelum/actors/palomo/*.png` (224) | Pending confirmation | Author-supplied `Caelum_Argenteum_Ultimos_3_Personajes_v1` package, 2026-08-31 | Pending | Pending confirmation | 32 base frames plus 192 emotion frames; 256×256 RGBA. |
-| Mandinga de la Salamanca | `sprites/caelum/actors/mandinga/*.png` (54) | Pending confirmation | Same package | Pending | Pending confirmation | 48 directional frames plus six shared death frames; 256×256 RGBA. |
-| Zupay Colossus | `sprites/caelum/actors/zupay_colossus/*.png` (102) | Pending confirmation | Same package | Pending | Pending confirmation | 96 directional frames plus six shared death frames; 416×416 RGBA. No independent rock projectile is supplied. |
+| Palomo | `sprites/caelum/actors/palomo/*.png` (224) | Damian Curti / project-directed OpenAI image generation | Author-supplied `Caelum_Argenteum_Ultimos_3_Personajes_v1` package, 2026-08-31 | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project and public repository | 32 base frames plus 192 emotion frames; 256×256 RGBA. |
+| Mandinga de la Salamanca | `sprites/caelum/actors/mandinga/*.png` (54) | Damian Curti / project-directed OpenAI image generation | Same package | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project and public repository | 48 directional frames plus six shared death frames; 256×256 RGBA. |
+| Zupay Colossus | `sprites/caelum/actors/zupay_colossus/*.png` (102) | Damian Curti / project-directed OpenAI image generation | Same package | `LicenseRef-Caelum-Argenteum-Project` | Yes, within project and public repository | 96 directional frames plus six shared death frames; 416×416 RGBA. No independent rock projectile is supplied; 4.29.0ar temporarily reuses the tier-1 Earth statuette projectile behavior. |
 
 Runtime aliases, offsets, localization and ZScript definitions are original
-project code; they do not alter the supplied pixels or establish rights over
-the source artwork.
+project code. The provenance confirmation above covers the supplied source
+artwork independently of those runtime definitions.
 
 ## V4.29.0am–0ap separated mansion grass and selected audio
 

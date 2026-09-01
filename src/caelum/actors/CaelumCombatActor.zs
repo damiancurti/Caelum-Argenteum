@@ -26,6 +26,7 @@ class CaelumCombatActor : Actor
     int CombatEloquence;
     double CurrentCombatAnima;
     double MaximumCombatAnima;
+    double CombatAnimaRegenerationPerSecond;
     double CurrentCombatAir;
     double MaximumCombatAir;
     double CombatAirRegenerationPerSecond;
@@ -180,6 +181,9 @@ class CaelumCombatActor : Actor
     int LastCombatAttackCalculatedDamage;
     double LastCombatPushForce;
     bool PendingCombatCriticalDelivery;
+    bool CombatAreaExplosionActive;
+    double CombatAreaExplosionRadius;
+    bool CombatAreaExplosionCriticalHit;
 
     Default
     {
@@ -590,6 +594,21 @@ class CaelumCombatActor : Actor
         if (CombatProfileInitialized) { RecalculateCombatStatistics(); }
     }
 
+    void ClearCombatArmorToBaseClothing()
+    {
+        if (CaelumMassAIScheduleActive || CaelumDiagnosticPassiveAI)
+        {
+            return;
+        }
+
+        // PostBeginPlay equipa armadura mágica a los combatientes históricos.
+        // Los personajes sin equipo funcional necesitan un modelo nuevo para
+        // que ropa, defensa, peso y bonificaciones queden realmente en cero.
+        CombatArmor = CaelumArmorModel(new("CaelumArmorModel"));
+        CombatArmor.InitializeDefaults();
+        if (CombatProfileInitialized) { RecalculateCombatStatistics(); }
+    }
+
     int GetArmorSlotForLocation(int location)
     {
         switch (location)
@@ -739,6 +758,9 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
         MaximumCombatAnima = CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
             * CalculateActorType1Percent(effectivePatience);
+        CombatAnimaRegenerationPerSecond = MaximumCombatAnima
+            / CaelumConstants.ANIMA_FULL_RECOVERY_SECONDS
+            * CalculateActorType4Percent(effectivePatience) / 100.0;
         CurrentCombatAnima = Clamp(
             CurrentCombatAnima,
             0.0,
@@ -801,6 +823,71 @@ class CaelumCombatActor : Actor
         return true;
     }
 
+    double GetTierOneMagicBaseDamage(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+        {
+            return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_BASE_DAMAGE;
+        }
+        return CaelumConstants.WEAPON_STAFF_TIER_ONE_BASE_DAMAGE;
+    }
+
+    double GetTierOneMagicBaseAnimaCost(int weaponType)
+    {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+        {
+            return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_ANIMA_COST;
+        }
+        return CaelumConstants.WEAPON_STAFF_TIER_ONE_ANIMA_COST;
+    }
+
+    double GetTierOneMagicAnimaCost(int weaponType)
+    {
+        int effectiveEloquence = CombatEloquence
+            + GetCombatArmorAttributeBonus(
+                CaelumConstants.ATTRIBUTE_ELOQUENCE
+            );
+        double reductionPercent = Clamp(
+            CalculateActorType2Percent(effectiveEloquence),
+            0.0,
+            100.0
+        );
+        return GetTierOneMagicBaseAnimaCost(weaponType)
+            * (1.0 - reductionPercent / 100.0);
+    }
+
+    bool TrySpendTierOneMagicAnima(int weaponType)
+    {
+        double cost = Max(0.0, GetTierOneMagicAnimaCost(weaponType));
+        if (CurrentCombatAnima < cost) { return false; }
+        CurrentCombatAnima = Max(0.0, CurrentCombatAnima - cost);
+        return true;
+    }
+
+    int GetTierOneMagicDamage(int weaponType)
+    {
+        int effectiveIntelligence = CombatIntelligence
+            + GetCombatArmorAttributeBonus(
+                CaelumConstants.ATTRIBUTE_INTELLIGENCE
+            );
+        return Max(1, int(
+            GetTierOneMagicBaseDamage(weaponType)
+                * CalculateActorType1Percent(effectiveIntelligence)
+                / 100.0
+                + 0.5
+        ));
+    }
+
+    double GetTierOneStatuetteExplosionRadius()
+    {
+        int effectiveEloquence = CombatEloquence
+            + GetCombatArmorAttributeBonus(
+                CaelumConstants.ATTRIBUTE_ELOQUENCE
+            );
+        return CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
+            * CalculateActorType4Percent(effectiveEloquence) / 100.0;
+    }
+
     void UpdateActorOffensiveStatistics()
     {
         CombatEffectiveDexterity = CombatDexterity
@@ -836,13 +923,14 @@ class CaelumCombatActor : Actor
 
     // Entrada ofensiva comun: salud modifica dano, lucidez modifica precision
     // y el atributo propio del ataque determina su probabilidad critica.
-    int PrepareActorOutgoingDamage(int baseDamage, bool magicalAttack)
+    int PrepareActorOutgoingDamage(double baseDamage, bool magicalAttack)
     {
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
+        double resolvedBaseDamage = Max(0.0, baseDamage);
         LastCombatAttackAttempted = true;
         LastCombatAttackMagical = magicalAttack;
-        LastCombatAttackBaseDamage = Max(0, baseDamage);
+        LastCombatAttackBaseDamage = int(resolvedBaseDamage + 0.5);
         LastCombatAttackAccuracyChancePercent = Clamp(
             (magicalAttack
                 ? CombatMagicalAccuracyPercent
@@ -879,7 +967,7 @@ class CaelumCombatActor : Actor
         PendingCombatCriticalDelivery = LastCombatAttackCriticalHit;
         LastCombatAttackCalculatedDamage = Max(
             1,
-            int(LastCombatAttackBaseDamage
+            int(resolvedBaseDamage
                 * (magicalAttack ? 1.0 : CombatPhysicalPowerMultiplier)
                 * CombatHealthPerformanceMultiplier + 0.5)
         );
@@ -891,6 +979,29 @@ class CaelumCombatActor : Actor
         bool result = PendingCombatCriticalDelivery;
         PendingCombatCriticalDelivery = false;
         return result;
+    }
+
+    void BeginCombatAreaExplosion(double radius)
+    {
+        // A_Explode no copia sus argumentos a ExplosionRadius. Esta ventana
+        // síncrona permite que la defensa anatómica lea la ficha real sin
+        // duplicar el radio en una propiedad nativa separada.
+        CombatAreaExplosionActive = true;
+        CombatAreaExplosionRadius = Max(1.0, radius);
+        CombatAreaExplosionCriticalHit = PendingCombatCriticalDelivery;
+    }
+
+    void EndCombatAreaExplosion()
+    {
+        CombatAreaExplosionActive = false;
+        CombatAreaExplosionRadius = 0.0;
+        CombatAreaExplosionCriticalHit = false;
+    }
+
+    bool GetCombatAreaExplosionCriticalHit()
+    {
+        return CombatAreaExplosionActive
+            && CombatAreaExplosionCriticalHit;
     }
 
     // La masa corporal genera empuje; la masa total del receptor lo resiste.
@@ -960,6 +1071,121 @@ class CaelumCombatActor : Actor
         }
         // Un impacto consume esta marca sincronicamente en CaelumPlayer.
         // Un fallo no debe dejar un critico pendiente para otro dano posterior.
+        combatActor.PendingCombatCriticalDelivery = false;
+    }
+
+    action void A_CaelumProfiledMeleeAttack(double authoredBaseDamage)
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
+        {
+            combatActor.ImpactDiagnosticFriendlyFirePrevented++;
+            combatActor.PendingCombatCriticalDelivery = false;
+            return;
+        }
+
+        // El valor escrito en la ficha es previo a Fuerza y masa, igual que
+        // las armas del jugador. Se redondea una sola vez al entrar en la ruta
+        // ofensiva existente del actor.
+        double strengthScaledDamage = Max(1.0,
+            Max(0.0, authoredBaseDamage)
+                * combatActor.CalculateActorType1Percent(
+                    combatActor.CombatStrength
+                )
+                / 100.0
+        );
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
+            strengthScaledDamage,
+            false
+        );
+        if (calculatedDamage <= 0) { return; }
+
+        Actor meleeVictim = combatActor.Target;
+        int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
+        combatActor.A_CustomMeleeAttack(
+            calculatedDamage,
+            "weapons/swordhit"
+        );
+        if (meleeVictim != null && meleeVictim.health < victimHealthBefore)
+        {
+            combatActor.ApplyActorAttackPush(
+                meleeVictim,
+                combatActor.AngleTo(meleeVictim),
+                combatActor.CombatPhysicalPushMultiplier
+            );
+        }
+        combatActor.PendingCombatCriticalDelivery = false;
+    }
+
+    void LaunchActorsInGroundRadius(double radius, double verticalSpeed)
+    {
+        double resolvedRadius = Max(1.0, radius);
+        double resolvedVerticalSpeed = Max(0.0, verticalSpeed);
+        BlockThingsIterator iterator = BlockThingsIterator.Create(
+            self,
+            resolvedRadius
+        );
+
+        while (iterator.Next())
+        {
+            Actor candidate = iterator.thing;
+            if (candidate == null
+                || candidate == self
+                || candidate.health <= 0
+                || !candidate.bShootable
+                || IsFriend(candidate))
+            {
+                continue;
+            }
+
+            // XF_CIRCULAR usa Distance3D; la elevación comparte exactamente
+            // el mismo volumen antes de comprobar la línea de visión.
+            if (candidate.Distance3D(self) > resolvedRadius
+                || !CheckSight(candidate))
+            {
+                continue;
+            }
+            candidate.Vel.Z += resolvedVerticalSpeed;
+        }
+    }
+
+    action void A_CaelumGroundSlam(
+        double authoredBaseDamage,
+        double radius,
+        double verticalSpeed
+    )
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+
+        double strengthScaledDamage = Max(1.0,
+            Max(0.0, authoredBaseDamage)
+                * combatActor.CalculateActorType1Percent(
+                    combatActor.CombatStrength
+                )
+                / 100.0
+        );
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
+            strengthScaledDamage,
+            false
+        );
+        if (calculatedDamage <= 0) { return; }
+
+        // A_Explode aplica caída lineal hasta el radio solicitado. Se elimina
+        // su empuje nativo para que la elevación sea exactamente +8 MU/tic y
+        // atraviese de forma controlada NODAMAGETHRUST del sistema Caelum.
+        combatActor.BeginCombatAreaExplosion(radius);
+        combatActor.LaunchActorsInGroundRadius(radius, verticalSpeed);
+        combatActor.A_Explode(
+            calculatedDamage,
+            radius,
+            XF_NOTMISSILE | XF_THRUSTLESS | XF_NOALLIES | XF_CIRCULAR,
+            false
+        );
+        combatActor.EndCombatAreaExplosion();
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
@@ -1100,6 +1326,84 @@ class CaelumCombatActor : Actor
             combatActor.ImpactDiagnosticProjectileSpawnFailures++;
         }
         combatActor.NextRangedSecondaryElement = !combatActor.NextRangedSecondaryElement;
+        combatActor.PendingCombatCriticalDelivery = false;
+    }
+
+    action void A_CaelumSpawnTierOneMagicProjectile(
+        class<CaelumActorProjectile> missileType,
+        double spawnHeightRatio,
+        int weaponType,
+        int essenceType,
+        bool explosive
+    )
+    {
+        CaelumCombatActor combatActor = CaelumCombatActor(self);
+        if (combatActor == null) { return; }
+        if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
+        {
+            combatActor.ImpactDiagnosticFriendlyFirePrevented++;
+            return;
+        }
+
+        // El coste se paga al resolver el ataque aunque la tirada ofensiva
+        // falle, como ocurre con el lanzamiento ya iniciado del jugador.
+        if (!combatActor.TrySpendTierOneMagicAnima(weaponType)) { return; }
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
+            combatActor.GetTierOneMagicDamage(weaponType),
+            true
+        );
+        if (calculatedDamage <= 0)
+        {
+            combatActor.PendingCombatCriticalDelivery = false;
+            return;
+        }
+
+        CaelumActorProjectile missile = CaelumActorProjectile(
+            combatActor.A_SpawnProjectile(
+                missileType,
+                combatActor.Height * Max(0.0, spawnHeightRatio)
+            )
+        );
+        if (missile != null)
+        {
+            combatActor.ImpactDiagnosticProjectilesSpawned++;
+            missile.StoreCaelumAttackResult(
+                calculatedDamage,
+                combatActor.LastCombatAttackAccuracySucceeded,
+                combatActor.LastCombatAttackCriticalHit,
+                true,
+                combatActor.CombatMagicalPushMultiplier
+            );
+            missile.StoreCaelumElementalPayload(
+                essenceType,
+                false,
+                combatActor.CalculateActorType4Percent(
+                    combatActor.CombatCharisma
+                ),
+                combatActor.CalculateActorType4Percent(
+                    combatActor.CombatEmpathy
+                )
+            );
+            if (explosive)
+            {
+                missile.ConfigureCaelumActorExplosion(
+                    calculatedDamage,
+                    combatActor.GetTierOneStatuetteExplosionRadius(),
+                    combatActor.GetCombatAbilityRange()
+                );
+            }
+            else
+            {
+                missile.ConfigureCaelumTravelDistance(
+                    combatActor.GetCombatAbilityRange()
+                );
+            }
+        }
+        else
+        {
+            combatActor.ImpactDiagnosticProjectileSpawnFailures++;
+        }
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
@@ -2212,6 +2516,20 @@ class CaelumCombatActor : Actor
         double resolvedRadius = Max(1.0, double(incomingDamage));
         if (inflictor == null) { return resolvedRadius; }
 
+        CaelumCombatActor combatInflictor = CaelumCombatActor(inflictor);
+        if (combatInflictor != null
+            && combatInflictor.CombatAreaExplosionActive)
+        {
+            return combatInflictor.CombatAreaExplosionRadius;
+        }
+
+        CaelumActorProjectile actorProjectile = CaelumActorProjectile(inflictor);
+        if (actorProjectile != null
+            && actorProjectile.CaelumActorExplosionRadius > 0.0)
+        {
+            return actorProjectile.CaelumActorExplosionRadius;
+        }
+
         resolvedRadius = inflictor.ExplosionRadius;
         if (resolvedRadius < 0.0)
         {
@@ -2256,8 +2574,15 @@ class CaelumCombatActor : Actor
         if (touchedRegionMask == 0) { return 0; }
 
         CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
-        bool criticalHit = attackProjectile != null
-            && attackProjectile.CaelumCriticalHit;
+        CaelumCombatActor areaAttacker = CaelumCombatActor(source);
+        if (areaAttacker == null)
+        {
+            areaAttacker = CaelumCombatActor(inflictor);
+        }
+        bool criticalHit = (attackProjectile != null
+                && attackProjectile.CaelumCriticalHit)
+            || (areaAttacker != null
+                && areaAttacker.GetCombatAreaExplosionCriticalHit());
         LastCombatArmorIncomingDamage = 0.0;
         LastCombatArmorAbsorbedDamage = 0.0;
         LastCombatArmorPostDefenseDamage = 0.0;
@@ -2287,8 +2612,14 @@ class CaelumCombatActor : Actor
                 location
             );
             int slot = GetArmorSlotForLocation(location);
+            double vulnerabilityMultiplier =
+                GetActorVulnerabilityMultiplier(effectiveGrade);
+            if (criticalHit)
+            {
+                vulnerabilityMultiplier *= vulnerabilityMultiplier + 1.0;
+            }
             double preDefenseDamage = incomingDamage
-                * GetActorVulnerabilityMultiplier(effectiveGrade);
+                * vulnerabilityMultiplier;
             int defensePercent = CombatArmor != null
                 ? CombatArmor.GetDefense(slot) : 0;
             double defenseRatio = Clamp(defensePercent / 100.0, 0.0, 1.0);
@@ -2859,6 +3190,14 @@ class CaelumCombatActor : Actor
 
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
+        if (health > 0 && CurrentCombatAnima < MaximumCombatAnima)
+        {
+            CurrentCombatAnima = Min(
+                MaximumCombatAnima,
+                CurrentCombatAnima
+                    + CombatAnimaRegenerationPerSecond / TICRATE
+            );
+        }
         if (health > 0 && !CombatAirSpending
             && CurrentCombatAir < MaximumCombatAir)
         {

@@ -54,9 +54,25 @@ class CaelumConstants : Object
     const DEBUG_SWORD_PRIMARY_AIR_COST = 5.0;
     // Fuerza horizontal independiente del dano para los impactos fisicos.
     const BASE_ATTACK_PUSH_FORCE = 8.0;
-    const DEBUG_STAFF_BASE_DAMAGE = 120.0;
-    const DEBUG_STAFF_ANIMA_COST = 500.0;
-    const DEBUG_STAFF_CAST_TICS = 18;
+    // Fichas T1 compartidas por el jugador y los actores que usan magia.
+    const WEAPON_STAFF_TIER_ONE_BASE_DAMAGE = 120.0;
+    const WEAPON_STAFF_TIER_ONE_ANIMA_COST = 500.0;
+    const WEAPON_STAFF_TIER_ONE_ATTACK_TICS = 18;
+    const WEAPON_STATUETTE_TIER_ONE_BASE_DAMAGE = 140.0;
+    const WEAPON_STATUETTE_TIER_ONE_ANIMA_COST = 1000.0;
+    const WEAPON_STATUETTE_TIER_ONE_ATTACK_TICS = 24;
+    // Balance provisional de los tres personajes folclóricos. El radio de
+    // Palomo pertenece sólo al entorno de prueba y puede ajustarse aquí.
+    const PALOMO_TEST_WANDER_RADIUS = 192.0;
+    const MANDINGA_MACHETE_BASE_DAMAGE = 66.0;
+    const ZUPAY_SLAM_BASE_DAMAGE = 66.0;
+    const ZUPAY_SLAM_RADIUS_MAP_UNITS = 192.0;
+    const ZUPAY_SLAM_VERTICAL_SPEED = 8.0;
+    // Los nombres DEBUG se conservan porque todavía forman parte de la API
+    // interna del jugador; ambos apuntan a la misma ficha autoritativa.
+    const DEBUG_STAFF_BASE_DAMAGE = WEAPON_STAFF_TIER_ONE_BASE_DAMAGE;
+    const DEBUG_STAFF_ANIMA_COST = WEAPON_STAFF_TIER_ONE_ANIMA_COST;
+    const DEBUG_STAFF_CAST_TICS = WEAPON_STAFF_TIER_ONE_ATTACK_TICS;
     // Reload prepara un único ataque potenciado en armas físicas o mágicas.
     const WEAPON_CHARGE_BASE_SECONDS = 2.0;
     const WEAPON_CHARGED_STATE_SECONDS = 3.0;

@@ -1,6 +1,44 @@
 # Changelog
 
-## 4.29.0aq — Folklore character presentations and V4.30 design lock
+## 4.29.0ar — House topology cleanup and folklore gameplay profiles
+
+- Corrected the MAP01 house topology identified in the three author captures:
+  removed an isolated floating floor fragment, bounded two open profiles whose
+  planes escaped the intended footprint, restored the affected floor material
+  and closure, closed the exposed exterior section and removed the unintended
+  divider crossing the rear ground-floor room. That rear room remains a single
+  undivided interior. Final MAP01 is 1,045 vertices, 1,436 linedefs, 2,586
+  sidedefs, 435 sectors and 225 Things; SHA-256 is
+  `35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+  Only the focused visual traversal in GZDoom remains pending for this map.
+- Promoted Palomo from a presentation actor to a mobile noncombatant using the
+  playable-character statistical model: all twelve attributes are 100,
+  collision is `Height 56`/`Radius 16`, mass is 700, and autonomous wandering
+  never enters an attack state.
+- Promoted Mandinga to an enemy profile with all twelve attributes at 6,
+  `Height 51.644444`, `Radius 14.755556` and mass 66. His melee base damage is
+  66; his ranged action reuses the tier-1 Fire staff projectile behavior.
+- Promoted Zupay to an enemy profile with all twelve attributes at 33,
+  `Height 93.333333`, `Radius 26.666667` and mass 666. His ground slam applies
+  base damage 66 with linear falloff across 192 MU and adds +8 vertical launch;
+  the temporary thrown-stone action reuses the tier-1 Earth statuette behavior.
+- Kept all three actors out of MAP01/MAP02 and assigned no faction or loot.
+  Their editor numbers and console summon names remain stable.
+- Recorded the author's provenance confirmation for all 380 character frames:
+  they are original Caelum Argenteum artwork generated with OpenAI image tools
+  under Damian Curti's project direction and account, and are authorized for
+  public redistribution with the project.
+- Extended the V4.30 definition without starting its implementation. The test
+  base duration is 9 seconds; 50%/75%/100% conversion uses ×1/×3/×9 time;
+  repair uses the complete recipe and station scaled by missing durability;
+  and disassembly returns 50% of each base-recipe material scaled by remaining
+  durability. Component-material families and remaining gates are recorded in
+  `docs/V4_30_CRAFTING_DESIGN.md`. No timed crafting, repair or disassembly
+  transaction changes in 4.29.0ar.
+- Preserved MAP02 from the all-sewer 4.29.0af lineage; its SHA-256 remains
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+## 4.29.0aq — Folklore character presentations and initial V4.30 design record
 
 - Imported the 380 individual RGBA frames supplied for Palomo (224), Mandinga
   (54) and the Zupay Colossus (102). The ten review atlases remain outside the

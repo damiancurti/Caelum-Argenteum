@@ -472,37 +472,58 @@ the stair base. V4.29.0ao replaced that provisional result with two reflected
 exact z=256..264 rectangle over x=1209..1697, y=-328..328. The central landing,
 final steps, side balconies and accepted upper gabled room remain unchanged.
 
+The author traversal rejected that 0ap result as the final house baseline: one
+floor fragment floated, two open profiles projected planes outside the intended
+footprint, an affected floor lost its material/closure, one exterior section
+remained open and an unintended divider crossed the rear ground-floor room.
+V4.29.0ar corrects only those topology defects and keeps the rear room as one
+undivided interior. Its deterministic MAP01 output is 1,045 vertices, 1,436
+linedefs, 2,586 sidedefs, 435 sectors and 225 Things; SHA-256 is
+`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+Only the focused visual traversal in GZDoom remains pending for this map pass.
+
 The author has accepted the new-character case, focused menu/world sound mix
-and event mapping, and the non-house MAP01/MAP02 smoke. The latest 0ap house
-geometry remains a parallel focused visual/traversal review and does not
-reopen those accepted cases.
+and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
+remains a parallel focused visual/traversal review and does not reopen those
+accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
 experiment remain valuable isolated diagnostics. They are not prerequisites
-for defining V4.30, but V4.30 implementation waits until the unresolved rules
-listed in its section are authored.
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0ar.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
+The complete current specification and its remaining decisions are maintained
+in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
+record only; 4.29.0ar does not start the V4.30 transaction implementation.
+
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
-  yield with elapsed-time factors ×1/×3/×9. Duration is reduced by Dexterity
-  Type-1 physical-precision task speed; the initial test baseline uses no
-  Dexterity acceleration.
+  yield with elapsed-time factors ×1/×3/×9. The test base is 9 seconds, so
+  the initial neutral-Dexterity durations are 9/27/81 seconds. Duration is
+  reduced by Dexterity Type-1 physical-precision task speed; the initial test
+  baseline applies no acceleration.
 - Fabricate every equipment component from exactly one base-material type;
   component recipes never mix multiple base materials.
+- Map component families as follows: metal parts, including bells, use the
+  corresponding ingot; elemental essences use their assigned gem; staffs,
+  statuettes and sticks use wood; books and cords use fiber; straps always use
+  the simplest leather; armor uses the leather grade matching its tier.
 - Repair through the same station infrastructure as crafting. Consume the
   complete recipe proportionally to missing durability:
   `(MaximumDurability - CurrentDurability) / MaximumDurability`.
-- Scale disassembly output by remaining durability:
-  `CurrentDurability / MaximumDurability`, preserving corresponding material
-  identity and tier.
+- Disassembly always starts from 50% of the base recipe and then scales output
+  by remaining durability:
+  `BaseRecipeMaterial × 0.50 × CurrentDurability / MaximumDurability`,
+  preserving corresponding material identity and tier.
 - Elemental weapons disassemble into their corresponding recipe materials;
   remove the former essence-versus-intact-base-implement branch.
 - Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
-- Before implementation, author base durations, 0.001-unit rounding, batch and
-  interruption rules, the base disassembly-recovery factor and the complete
-  one-material component mapping.
+- Retain the established 0.001 material unit; define how proportional results
+  round to integer inventory units before implementation.
+- Close the batch, alloy-efficiency, interruption/cancellation, task-time,
+  station, persistent-material and special-recovery gates enumerated in the
+  linked design record before implementation.
 
 ### V4.31 — Loot, Materials and Economy Foundation
 
@@ -525,6 +546,11 @@ listed in its section are authored.
 - Add persistent quest state and objective tracking.
 - Add faction membership/standing and reputation changes.
 - Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
+- Four faction identifiers and a relation lookup do not materially increase
+  map data load by themselves. Reuse the budgeted perception scheduler,
+  spatial candidate filtering and staggered target reacquisition; never run a
+  global actor search for every combatant. LOS tests, pathing, projectiles and
+  dense collision are the freeze risks, not the four-entry faction relation.
 
 ### V4.34 — Architectural Modules and World/Travel Foundation
 

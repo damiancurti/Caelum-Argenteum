@@ -87,7 +87,8 @@ DoomEdNums
     18034 = CaelumPassiveBull
     18035 = CaelumPassiveGiantRat
 
-    // Presentaciones visuales 4.29.0aq; todavía no poseen IA ni balance.
+    // Perfiles folclóricos 4.29.0ar; conservan estos números aunque todavía
+    // no tengan facción, botín ni colocación permanente en los mapas.
     18036 = CaelumPalomo
     18037 = CaelumMandinga
     18038 = CaelumZupayColossus

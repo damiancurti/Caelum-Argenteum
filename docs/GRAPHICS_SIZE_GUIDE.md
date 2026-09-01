@@ -200,7 +200,7 @@ reemplaza por sí mismo las manos o armas dibujadas en primera persona. Al
 agacharse se reutiliza la misma apariencia comprimida y no el sprite PLYC
 heredado de Doom.
 
-## 10. Personajes folclóricos de V4.29.0aq
+## 10. Personajes folclóricos de V4.29.0aq–0ar
 
 Palomo y Mandinga conservan lienzos de 256×256, pero sus figuras visibles son
 mayores que los maestros humanos anteriores: aproximadamente 235 y 226 px.
@@ -208,6 +208,21 @@ Zupay usa 416×416 y ocupa 384 px visibles. Aplicar la antigua escala 0,409091
 los sobredimensionaría; por eso los tres comparten `Scale 0.3125`. El resultado
 es aproximadamente 73,4 MU para Palomo, 70,6 MU para Mandinga y exactamente
 120 MU para Zupay, manteniendo su relación declarada de 3 m frente a 1,8 m.
+
+La altura visual del sprite no es la caja física del actor. V4.29.0ar usa las
+dimensiones de colisión autorizadas siguientes:
+
+| Personaje | Altura visible aproximada | `Height` | `Radius` | Masa |
+| --- | ---: | ---: | ---: | ---: |
+| Palomo | 73,4 MU | 56 | 16 | 700 |
+| Mandinga | 70,6 MU | 51,644444 | 14,755556 | 66 |
+| Zupay | 120 MU | 93,333333 | 26,666667 | 666 |
+
+Palomo conserva así la caja física del personaje jugable de tamaño 4 y
+1,8 m. Mandinga aplica proporcionalmente su altura de 1,66 m, y Zupay la de
+3 m, sin convertir el ancho transparente del lienzo en colisión. La convención
+de alcance de combate es independiente: el golpe de piso de Zupay interpreta
+sus 6 m como un radio exacto de 192 MU.
 
 `TEXTURES` fija pivotes constantes por personaje para evitar vibración entre
 poses: Palomo `(128,246)`, Mandinga `(128,248)` y Zupay `(208,400)`. Los atlas

@@ -83,7 +83,8 @@ class CaelumWeaponModel : Object
             case CaelumConstants.WEAPON_TYPE_BELL:
                 return CaelumConstants.WEAPON_BELL_BASE_DAMAGE;
             case CaelumConstants.WEAPON_TYPE_BOOK: return 120.0;
-            case CaelumConstants.WEAPON_TYPE_STATUETTE: return 140.0;
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_BASE_DAMAGE;
             default: return CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         }
     }
@@ -158,7 +159,8 @@ class CaelumWeaponModel : Object
         {
             case CaelumConstants.WEAPON_TYPE_BELL: return 22;
             case CaelumConstants.WEAPON_TYPE_BOOK: return 16;
-            case CaelumConstants.WEAPON_TYPE_STATUETTE: return 24;
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_ATTACK_TICS;
             default: return CaelumConstants.DEBUG_STAFF_CAST_TICS;
         }
     }
@@ -184,11 +186,13 @@ class CaelumWeaponModel : Object
     {
         switch (weaponType)
         {
-            case CaelumConstants.WEAPON_TYPE_STAFF: return 500.0;
+            case CaelumConstants.WEAPON_TYPE_STAFF:
+                return CaelumConstants.WEAPON_STAFF_TIER_ONE_ANIMA_COST;
             case CaelumConstants.WEAPON_TYPE_BELL:
                 return CaelumConstants.WEAPON_BELL_ANIMA_COST;
             case CaelumConstants.WEAPON_TYPE_BOOK: return 700.0;
-            case CaelumConstants.WEAPON_TYPE_STATUETTE: return 1000.0;
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_ANIMA_COST;
             default: return 0.0;
         }
     }

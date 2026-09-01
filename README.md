@@ -16,25 +16,21 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0aq candidate retains the validated 79-recipe crafting
-catalogue, accepted pre-game character creator and group-913 eastern stairs.
-MAP01 rebuilds the current architecture from the clean 4.29.0ad base: the
-existing rooms, symmetric balconies, ground-floor divider, external stairs,
-tunnel and door groups 913/914 remain intact. The two previously missing 8×8
-MU lower corner links still close the lower shell. Every outer U-shaped
-balcony-edge sector now keeps only its z=0–128 ground-floor facade and
-z=128–136 floor; no z=136–256 wall or z=256–264 cover remains around the two
-complete 96-MU routes. The approved 1426×782-MU second-floor room remains at
-x=-371..1055 with its group-915 door at x=1051 and unchanged access corridor.
-Four real 8-MU-thick walls form a symmetric U around the eastern room: two
-transverse walls at y=-328..-320 and y=320..328, plus two stair-side walls
-from those runs to the y=-64/64 edges of group 913. The exact z=256..264 cover
-fills x=1209..1697, y=-328..328 while leaving both side balconies and lower
-stair treads uncovered. The upper room's former horizontal roof is replaced
-by two solid 8-MU sloped planes. Their
-east-west ridge is perpendicular to the eastern balcony, rises 64 MU from the
-wall line and reaches z=456..464 at y=0; both eaves remain z=392..400 at
-y=±391. The exterior face uses `CMRF01` and the interior face uses `CMCL01`.
+The current cumulative V4.29.0ar candidate retains the validated 79-recipe
+crafting catalogue, accepted pre-game character creator and group-913 eastern
+stairs. MAP01 supersedes the visually rejected 4.29.0ap house result with a
+focused topology cleanup. It removes the isolated floating floor fragment,
+bounds two open profiles whose planes escaped the intended footprint, restores
+the affected floor material and closure so no missing-texture/HOM surface is
+expected, closes the exposed exterior section and removes the unintended wall
+that divided the rear ground-floor room. That rear room remains one continuous
+interior. The accepted second-floor room, gabled-roof direction, stair access,
+balconies and door groups remain outside the scope of those corrections.
+
+The deterministic 4.29.0ar MAP01 output contains 1,045 vertices, 1,436
+linedefs, 2,586 sidedefs, 435 sectors and 225 Things. Its SHA-256 is
+`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+Only the focused visual traversal in GZDoom remains pending for this map pass.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
 sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
@@ -46,14 +42,18 @@ pickup bases. Required audio attribution ships in
 [`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
 byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
-That 4.29.0ap map is preserved byte for byte in 4.29.0aq; its focused author
-traversal remains pending.
-
-V4.29.0aq also integrates Palomo, Mandinga de la Salamanca and the Zupay
-Colossus as noninteractive presentation actors. Their 380 supplied frames,
-rotations and special poses are runtime-addressable, but no combat statistics,
-factions, loot or map placements are invented. Those actors can be inspected
-with `summon CaelumPalomo`, `summon CaelumMandinga` and
+V4.29.0ar promotes the three 4.29.0aq visual actors to authored gameplay
+profiles. Palomo uses the playable-character statistical model with all twelve
+attributes at 100, `Height 56`, `Radius 16` and mass 700; he wanders but has no
+attack. Mandinga uses attributes 6, `Height 51.644444`, `Radius 14.755556` and
+mass 66; his melee base is 66 and his ranged action reuses the tier-1 Fire
+staff behavior. Zupay uses attributes 33, `Height 93.333333`,
+`Radius 26.666667` and mass 666. His ground slam has base damage 66, a 192-MU
+radius with linear falloff and a +8 vertical launch; his temporary ranged
+action reuses the tier-1 Earth statuette behavior. Palomo remains a mobile
+noncombatant, and none of the three receives a faction, loot table or MAP01/
+MAP02 placement in this patch. They remain available through
+`summon CaelumPalomo`, `summon CaelumMandinga` and
 `summon CaelumZupayColossus`.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
@@ -76,14 +76,15 @@ remains disabled and cannot be scaled to 15,000 active NPCs.
 The visual probability roll and reported hearing ranges are internally
 consistent, but the angular A/B and occlusion rooms were not controlled well
 enough to choose the 60°/120° convention. Their redesign is reserved for the
-next isolated perception patch rather than being mixed into 4.29.0aq. The full
+next isolated perception patch rather than being mixed into 4.29.0ar. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author has accepted the new-character flow, focused sound mix/event checks
 and final MAP01/MAP02 smoke outside the parallel house-construction track.
 That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
-this candidate, pending the remaining rules listed in the roadmap.
+this candidate: no timed crafting, repair or disassembly transaction is
+implemented by 4.29.0ar.
 
 ### Building the development PK3
 
@@ -123,7 +124,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 85 wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered, including three independent mansion-grass variants.
-- Selected audio foundation: eight license-compatible effects are wired to menu, crafting, door, weapon, health-state and pickup events; credits ship inside the PK3 and runtime mixing remains an author QA gate.
+- Selected audio foundation: eight license-compatible effects are wired to menu, crafting, door, weapon, health-state and pickup events; credits ship inside the PK3, and the author accepted their event mapping and focused mix. Authenticated original downloads remain a final-release asset gate where documented.
 - Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
@@ -150,11 +151,14 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Its fixed design uses
-  50%/75%/100% yield at ×1/×3/×9 base time, Dexterity Type-1 precision-task
-  speed, one base-material type per equipment component, proportional repair
-  by missing durability and proportional disassembly by remaining durability;
-  implementation waits for the remaining duration/rounding/recovery gates.
+- V4.30 timed material conversion and durability loop. Its definition uses a
+  9-second test base, 50%/75%/100% yield at ×1/×3/×9 time, Dexterity Type-1
+  precision-task speed, one base-material type per equipment component,
+  proportional same-station repair and disassembly output equal to 50% of the
+  base recipe multiplied by remaining durability. Batch timing, interruption
+  and proportional-result rounding remain definition gates; no V4.30
+  transaction is implemented in 4.29.0ar. The complete current definition is
+  recorded in [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.
 

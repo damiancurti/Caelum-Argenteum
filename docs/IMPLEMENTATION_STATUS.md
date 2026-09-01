@@ -1,54 +1,95 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Folklore character presentations and V4.30 design lock 4.29.0aq
+## MAP01 topology cleanup and folklore gameplay profiles 4.29.0ar
 
-**Character resources are integrated and statically validated; gameplay
-profiles and focused author QA remain pending**
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
 
-The supplied package contributes 380 individual runtime frames: 224 for
-Palomo, 54 for Mandinga and 102 for the Zupay Colossus. Ten atlas images are
-review sources and are not duplicated inside the PK3. Eight README/manifest
-files remain under `docs/assets/characters`. `TEXTURES` defines every runtime
-alias and explicit ground offset; all three actors use the reconciled common
-scale 0.3125. Palomo and Mandinga therefore remain near the existing 72-MU
-human visual baseline, while the Zupay reaches the supplied 120-MU/3-m target.
+The MAP01 correction is deliberately limited to the defects shown in the
+three author captures. It removes the isolated floating floor fragment, closes
+two open profiles so their visible planes remain within the intended house
+footprint, restores the affected floor material and surrounding closure,
+closes the exposed exterior section and removes the unintended wall crossing
+the rear ground-floor room. The rear room remains a single continuous space;
+the second-floor room, gabled-roof orientation, balconies, stairs and existing
+door groups are not redesigned by this pass. The final output is 1,045
+vertices, 1,436 linedefs, 2,586 sidedefs, 435 sectors and 225 Things; SHA-256 is
+`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+Only its focused visual traversal in GZDoom remains pending.
 
-`CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus` expose all supplied
-pose families as named states and are available through editor numbers
-18036–18038 or console `summon`. They deliberately inherit from a
-noninteractive presentation base. No package file supplies the twelve
-attributes, health, armor, mass, radius, collision height, speed, damage,
-range, faction, loot, spawn placement or Zupay projectile. MAP01 and MAP02 are
-therefore unchanged from 4.29.0ap and no provisional combat behavior is
-claimed.
+The supplied character package still contributes 380 individual runtime
+frames: 224 for Palomo, 54 for Mandinga and 102 for Zupay. Ten atlas images
+remain review sources outside the PK3; eight README/manifest files remain
+auditable under `docs/assets/characters`. The package importer continues to
+validate paths, dimensions, RGBA format, manifest totals and the exact
+224/54/102 distribution before generating runtime aliases.
 
-The importer validates the original ZIP, its two manifest totals, all source
-paths, RGBA dimensions and the exact 224/54/102 split before generating the
-380 runtime files and aliases. A second execution produces no change.
+The three actor profiles now use the playable-character statistical model:
 
-## V4.30 material-processing and durability design lock 4.29.0aq
+| Actor | Collision | Mass | Twelve attributes | Authored behavior |
+| --- | --- | ---: | ---: | --- |
+| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Wanders autonomously; has no attack. |
+| Mandinga | `Height 51.644444`, `Radius 14.755556` | 66 | 6 | Melee base 66; ranged action reuses the tier-1 Fire staff behavior. |
+| Zupay | `Height 93.333333`, `Radius 26.666667` | 666 | 33 | Ground slam base 66, 192-MU linear-falloff radius and +8 vertical launch; ranged action temporarily reuses the tier-1 Earth statuette behavior. |
+
+`CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus` retain editor
+numbers 18036–18038 and their console summon names. None receives a faction,
+loot table or MAP01/MAP02 placement in 4.29.0ar. The faction system remains a
+separate roadmap feature.
+
+Focused validation for this candidate is:
+
+1. Inspect the three reported MAP01 viewpoints and require no floating piece,
+   runaway plane, checkerboard/missing material, HOM or open exterior seam.
+2. Traverse the complete rear ground-floor room and require one continuous
+   interior with no crossing divider; recheck the adjacent stairs, doors,
+   balconies and roof access.
+3. Summon each actor and verify collision height/radius, mass and all twelve
+   attributes. Palomo must move without producing an attack.
+4. Confirm Mandinga's 66-base melee and tier-1 Fire-staff ranged behavior.
+5. Confirm Zupay's 66-base slam, 192-MU linear falloff, +8 vertical launch and
+   tier-1 Earth-statuette ranged behavior.
+6. Build the PK3 without parser or missing-resource errors and verify MAP02
+   remains byte-identical to its accepted all-sewer source.
+
+## V4.30 material-processing and durability definition through 4.29.0ar
 
 **Author-specified design only; no V4.30 transaction is implemented**
 
+The complete current definition, recipe-family mapping and unresolved gates
+are maintained in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
+
 Refinement and equipment-material fabrication will offer 50%, 75% and 100%
 material yield. For a fixed base-material input `B`, their outputs are
-`0.50B`, `0.75B` and `1.00B`; their elapsed-time factors are ×1, ×3 and ×9.
-Effective duration will be divided by the Dexterity Type-1 physical-precision
-task-speed percentage. The first test environment applies no Dexterity
-acceleration, so its effective percentage remains 100%.
+`0.50B`, `0.75B` and `1.00B`; elapsed-time factors are ×1, ×3 and ×9. The
+test environment uses a 9-second base, so the three unaccelerated durations
+are 9, 27 and 81 seconds. Effective duration will later be divided by the
+Dexterity Type-1 physical-precision task-speed percentage; its test modifier
+is currently neutral.
 
-Every equipment component is fabricated from exactly one base-material type;
-this restriction does not redefine multi-input alloy-refining recipes. Repair
-will reuse the item's complete recipe and station infrastructure, scaled by
-its missing-durability fraction. Disassembly output will be scaled by its
-remaining-durability fraction, and elemental weapons will return their
-corresponding recipe materials rather than an essence-versus-intact-base
-choice.
+Every equipment component is fabricated from exactly one base-material type.
+Metal components, including bells, use their corresponding ingot; elemental
+essences use their assigned gem; staffs, statuettes and sticks use wood; books
+and cords use fiber; straps use the simplest leather; and armor uses the
+leather grade corresponding to its tier. This restriction does not redefine
+multi-input alloy-refining recipes.
 
-Base durations, 0.001-unit rounding, batch timing, interruption/cancellation,
-the base recovery factor for disassembly and the exact component-to-material
-table remain authoring gates. Existing immediate processing and repair/debug
-foundations remain unchanged until those gates are closed.
+Repair reuses the complete item recipe and the same station infrastructure,
+with material cost scaled by missing durability:
+
+`RepairInput = BaseRecipeMaterial × (MaximumDurability - CurrentDurability) / MaximumDurability`.
+
+Disassembly always returns half of the base recipe, then scales that recovery
+by remaining durability:
+
+`DisassemblyOutput = BaseRecipeMaterial × 0.50 × CurrentDurability / MaximumDurability`.
+
+Elemental weapons return their corresponding recipe materials. The established
+0.001 material unit remains the quantity convention, but rounding proportional
+results to integer inventory units is still undefined. Batch timing,
+interruption/cancellation and the other gates listed in the design document
+also remain open. Existing immediate processing and repair/debug foundations
+remain unchanged in 4.29.0ar.
 
 ## Exact eastern roof and stair-run walls 4.29.0ap
 

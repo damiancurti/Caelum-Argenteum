@@ -7925,6 +7925,20 @@ class CaelumPlayer : DoomPlayer
         double resolvedRadius = Max(1.0, double(incomingDamage));
         if (inflictor == null) { return resolvedRadius; }
 
+        CaelumCombatActor combatInflictor = CaelumCombatActor(inflictor);
+        if (combatInflictor != null
+            && combatInflictor.CombatAreaExplosionActive)
+        {
+            return combatInflictor.CombatAreaExplosionRadius;
+        }
+
+        CaelumActorProjectile actorProjectile = CaelumActorProjectile(inflictor);
+        if (actorProjectile != null
+            && actorProjectile.CaelumActorExplosionRadius > 0.0)
+        {
+            return actorProjectile.CaelumActorExplosionRadius;
+        }
+
         resolvedRadius = inflictor.ExplosionRadius;
         if (resolvedRadius < 0.0)
         {
@@ -8329,8 +8343,12 @@ class CaelumPlayer : DoomPlayer
                 attacker.LastCombatAttackCriticalChancePercent;
             LastIncomingActorCriticalRollPercent =
                 attacker.LastCombatAttackCriticalRollPercent;
-            LastIncomingActorCriticalHit =
-                attacker.ConsumePendingCombatCritical();
+            // Una explosión de área es síncrona y puede alcanzar a más de un
+            // receptor. Todos comparten la misma tirada; consumirla en el
+            // primero volvería no críticos a los demás de forma accidental.
+            LastIncomingActorCriticalHit = attacker.CombatAreaExplosionActive
+                ? attacker.GetCombatAreaExplosionCriticalHit()
+                : attacker.ConsumePendingCombatCritical();
         }
         return LastIncomingActorCriticalHit;
     }
