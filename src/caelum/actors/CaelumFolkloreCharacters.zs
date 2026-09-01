@@ -284,13 +284,15 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         ZUPY A 1;
         Goto See;
     Melee:
-        ZUPY D 6 A_FaceTarget;
+        // El golpe conserva el mismo punto proporcional de impacto, pero su
+        // ciclo completo pasa de 10 a 20 tics.
+        ZUPY D 12 A_FaceTarget;
         ZUPY E 0 A_CaelumGroundSlam(
             CaelumConstants.ZUPAY_SLAM_BASE_DAMAGE,
             CaelumConstants.ZUPAY_SLAM_RADIUS_MAP_UNITS,
             CaelumConstants.ZUPAY_SLAM_VERTICAL_SPEED
         );
-        ZUPY E 4;
+        ZUPY E 8;
         Goto See;
     Missile:
         // 20 tics: ficha T1 de estatuilla redondeada con Elocuencia 33.

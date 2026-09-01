@@ -86,8 +86,8 @@ class CaelumBull : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Físicos 40, técnicos 20, sociales 2 y mentales 2.
-        InitializeCombatProfile(40, 40, 40, 20, 20, 20, 2, 2, 2, 2, 2, 2);
+        // Físicos y técnicos 20; sociales y mentales 2.
+        InitializeCombatProfile(20, 20, 20, 20, 20, 20, 2, 2, 2, 2, 2, 2);
         if (AnatomyProfile != null)
         {
             AnatomyProfile.InitializeBullQuadruped();
@@ -135,10 +135,13 @@ class CaelumBull : CaelumCombatActor
         BULL A 1;
         Goto See;
     Melee:
-        // Conserva el ciclo base de ocho tics, pero la cornada ya no es un
-        // ataque directo. Tras apuntar, el toro recorre cinco tics en Charge.
+        // Conserva la embestida y restaura la cornada directa al final del
+        // avance. Sus 45 puntos son la base previa a Fuerza, masa y defensas.
         BULL F 3 A_FaceTarget;
         BULL G 5 A_CaelumBeginBullCharge;
+        BULL G 0 A_CaelumProfiledMeleeAttack(
+            CaelumConstants.BULL_GORE_BASE_DAMAGE
+        );
         BULL G 0 A_CaelumEndBullCharge;
         Goto See;
     Pain:

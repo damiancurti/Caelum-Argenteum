@@ -1,5 +1,63 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rear-room shell and actor balance 4.29.0as
+
+**Implemented and deterministically validated; focused visual/combat GZDoom
+traversal remains pending**
+
+The author capture proved that the wall still crossing the rear ground-floor
+room was the historical group-807 construction, not the group-914 divider
+removed by 4.29.0ar. Its two long sectors used a base floor of 136 MU and its
+two jamb sectors used a base floor of 128 MU, so they remained opaque and
+solid below the first floor despite the newer 3D-floor profiles.
+
+V4.29.0as removes both 807 leaves and lowers only those four host floors to
+zero. The former top surface is replaced by the same `CMWD01` z=128..136 slab,
+and the z=256..264 cover is retained. A band-by-band occupancy digest across
+every induced cell confirms no first- or second-floor volume changed. The rear
+ground-floor interior now contains no barrier outside the two accepted stair
+flights, while its north, east and south perimeter is continuously solid from
+z=0 to 128. The group-913 and group-915 doors, stairs, upper walls, balconies
+and gabled room remain unchanged.
+
+The deterministic MAP01 result is 1,045 vertices, 1,436 linedefs, 2,586
+sidedefs, 435 sectors and 223 Things; SHA-256 is
+`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The Bull retains its existing charge and now applies a direct profiled gore at
+the end of that advance. Its authored base damage is 45. Physical and
+technical attributes are all 20; social and mental attributes remain 2.
+Zupay's ground slam retains base 66, 192-MU falloff and +8 vertical launch,
+but its state lasts 20 tics instead of 10: 12 before impact and 8 after.
+
+Focused validation for this candidate is:
+
+1. Traverse the rear ground-floor room and require an uninterrupted interior,
+   with no group-807 wall or leaves and no new seam at the former wall line.
+2. Inspect the complete exterior north/east/south shell from both sides and
+   require continuous wall and collision at z=0..128.
+3. Recheck the first and second floors, especially the old wall footprint;
+   floor, cover, stairs, doors and movement must be unchanged.
+4. Summon a Bull and verify the charge ends with a 45-base gore and that its
+   six physical/technical attributes report 20.
+5. Summon Zupay and verify the same slam effect now takes twice as long.
+
+## V4.30 material-processing and durability definition through 4.29.0as
+
+**Author-specified design only; no V4.30 transaction is implemented**
+
+The design now fixes directional 0.001-unit rounding, complete-transaction
+batch timing, exact alloy ratios, zero-spend/zero-output cancellation,
+missing-durability repair time, Minor-Arcana learning, persistent wood tiers,
+decorative-metal proportionality, the javelin exception boundary and the lack
+of durability on amulets/seals. The remaining choices are limited to exact
+cancellation triggers/reservation behavior, disassembly time/stations,
+component stations and the exact component-to-card mapping. The authoritative
+formulas and mappings remain in
+[`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
+
 ## MAP01 topology cleanup and folklore gameplay profiles 4.29.0ar
 
 **Implemented and deterministically validated; focused visual GZDoom

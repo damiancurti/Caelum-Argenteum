@@ -1,9 +1,9 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** especificación de diseño autorizada; no implementada en 4.29.0ar.
+**Estado:** especificación de diseño autorizada; no implementada en 4.29.0as.
 
 Este documento fija las reglas ya decididas para V4.30. El ejecutable de
-4.29.0ar conserva sus transacciones inmediatas, su catálogo persistente de 79
+4.29.0as conserva sus transacciones inmediatas, su catálogo persistente de 79
 recetas y sus herramientas de reparación/desarme de desarrollo. Ningún tiempo,
 coste proporcional o receta de componente descrito aquí debe presentarse como
 funcional hasta que exista su transacción autoritativa y pase pruebas en
@@ -11,9 +11,19 @@ GZDoom.
 
 ## 1. Unidades, rendimiento y tiempo
 
-Una unidad de material conserva la precisión existente de `0.001` de peso.
-Las cantidades de inventario siguen siendo enteras; la política de redondeo de
-los resultados proporcionales queda pendiente.
+Una unidad entera de inventario representa `0.001` de peso. Todo coste exacto
+que produzca una fracción de esa unidad se redondea **hacia arriba**; toda
+salida o devolución se redondea **hacia abajo**:
+
+```text
+InputUnits  = Ceil(ExactInput / 0.001)
+OutputUnits = Floor(ExactOutput / 0.001)
+```
+
+El redondeo se aplica por material después de calcular la receta, su
+eficiencia y la fracción de durabilidad. Así ninguna tarea resulta gratuita
+por un coste fraccionario y el jugador nunca recibe más material que la salida
+teórica.
 
 El refinado y la fabricación de materiales de equipo ofrecen tres eficiencias
 sobre una misma entrada base `B`:
@@ -24,9 +34,11 @@ sobre una misma entrada base `B`:
 | 75% | `0.75 * B` | x3 | 27 s |
 | 100% | `1.00 * B` | x9 | 81 s |
 
-La duración base del entorno de prueba es 9 segundos. Durante la primera
-validación se desactiva la contribución de Destreza y la velocidad efectiva es
-100%. La fórmula existente que se conectará posteriormente es:
+La duración base del entorno de prueba es 9 segundos por **transacción
+completa**, con independencia de que el lote use el multiplicador de cantidad
+x1, x10, x100 o x1000. Durante la primera validación se desactiva la
+contribución de Destreza y la velocidad efectiva es 100%. La fórmula existente
+que se conectará posteriormente es:
 
 ```text
 Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2
@@ -34,8 +46,16 @@ EffectiveSeconds = BaseSeconds * EfficiencyTimeFactor
                  * 100 / Type1DexterityPercent
 ```
 
-No se autoriza todavía un temporizador, reserva de materiales ni regla de
-cancelación concreta.
+Si una tarea se cancela, no consume material y no genera ninguna salida. La
+lista exacta de acciones que cancelan y si los materiales quedan bloqueados
+como reserva durante el temporizador todavía deben definirse. La finalización
+sí deberá consumir entradas y generar salidas como una única transacción
+atómica.
+
+Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
+usa cobre/estaño `9:1` y acero siempre usa hierro/carbón `497:3`; la eficiencia
+50%/75%/100% se aplica a la salida teórica del lote completo, nunca a cada
+entrada por separado ni alterando esas proporciones.
 
 ## 2. Materiales de equipo
 
@@ -69,8 +89,9 @@ Los metales tiered conservan la progresión de materiales existente: bronce en
 tier 1, hierro en tier 2 y acero en tier 3. Un componente estructural que la
 receta final solicita expresamente en tier 1 usa su variante más sencilla.
 
-La madera cubre las variantes común, dura y ébano/mágica ya nombradas por la
-interfaz. El cuero tier 1/2/3 sigue correspondiendo a vaca,
+La madera tendrá tres identidades persistentes de tier: madera dura en tier 1,
+ébano en tier 2 y madera mágica en tier 3. El cuero tier 1/2/3 sigue
+correspondiendo a vaca,
 depredador y monstruo. El tejido tier 1/2/3 ya procesado sigue correspondiendo
 a lana, algodón y seda, aunque V4.30 establece cuero —no tejido, cota ni
 placa— como material de las dieciséis recetas de armadura.
@@ -118,8 +139,8 @@ Las dieciséis armas físicas conservan esta identidad de componentes:
 | Ballesta | Armazón de madera | Cuerda reforzada de fibra |
 
 Las catorce transformaciones de procesamiento existentes conservan sus
-ingredientes identificables mientras se decide cómo aplicarles las nuevas
-eficiencias:
+ingredientes identificables y reciben las nuevas eficiencias. Las aleaciones
+de dos entradas aplican la regla proporcional exacta de la sección 1:
 
 | Salida | Entrada actual |
 |---|---|
@@ -143,9 +164,19 @@ RepairInput[i] = FullRecipeInput[i] * MissingFraction
 ```
 
 El tier, tamaño, esencia, forma, ranura y acabado del objeto determinan la
-misma receta que determinaron su fabricación. Esta regla fija el coste de
-materiales; no fija todavía si el tiempo de reparación también se multiplica
-por `MissingFraction`.
+misma receta que determinaron su fabricación. Los metales decorativos de un
+acabado plateado o dorado participan en el coste con la misma proporción de
+durabilidad faltante que todos los demás ingredientes.
+
+El tiempo de reparación también escala con la fracción faltante:
+
+```text
+RepairSeconds = FullRecipeSeconds * MissingFraction
+```
+
+La reparación exige exactamente la misma infraestructura acumulativa que la
+fabricación del objeto. Cada coste fraccionario se redondea hacia arriba según
+la sección 1.
 
 ## 5. Desarme
 
@@ -158,9 +189,19 @@ DismantleOutput[i] = FullRecipeInput[i] * 0.50 * RemainingFraction
 ```
 
 Un objeto con durabilidad cero devuelve cero; uno intacto devuelve como máximo
-la mitad de su receta. Las armas elementales devuelven su base de implemento y
+la mitad de su receta. Cada devolución fraccionaria se redondea hacia abajo.
+Los metales decorativos de acabados plateado y dorado se recuperan con la misma
+fórmula proporcional. Las armas elementales devuelven su base de implemento y
 la esencia del elemento correspondiente. No existe elección entre recuperar
 una esencia o recuperar el implemento intacto.
+
+La jabalina no constituye una excepción de fabricación, reparación o desarme:
+en esas tres operaciones usa las mismas fórmulas que el resto de las armas. Su
+recuperación parcial al arrojarla pertenece exclusivamente a la mecánica de
+proyectil arrojadizo y no se combina con una transacción de desarme.
+
+Amuletos y sellos quedan fuera del ciclo de durabilidad. No se gastan, no se
+reparan y no se desarman mediante este sistema.
 
 ## 6. Infraestructura ya existente
 
@@ -181,26 +222,19 @@ La reparación heredará sin cambios la red exigida por la fabricación final:
 El cambio de ingrediente de las armaduras a cuero no modifica por sí solo la
 infraestructura heredada de sus cuatro tipos.
 
+Las recetas nuevas de componentes se aprenden mediante cartas de Tarot de
+arcanos menores. La asignación de cada carta concreta y las estaciones exigidas
+para fabricar cada familia de componentes todavía deben cerrarse antes de la
+implementación.
+
 ## 7. Decisiones todavía abiertas
 
 Antes de implementar la transacción temporizada faltan únicamente estas
 definiciones:
 
-- redondeo de costes y salidas a unidades enteras de `0.001`;
-- si el tiempo de un lote escala con x1/x10/x100/x1000 o si 9 segundos son por
-  transacción completa;
-- aplicación de 50%/75%/100% a las aleaciones de dos entradas sin alterar sus
-  proporciones 9:1 y 497:3;
-- acciones que cancelan una tarea, momento de consumo/reserva y política de
-  devolución al cancelar;
-- tiempo del desarme, estaciones exigidas para desarmar y si el tiempo de
-  reparación escala con la fracción faltante;
-- estaciones y método de aprendizaje para las nuevas recetas de componentes;
-- representación persistente de madera dura y ébano/mágica, ya que el catálogo
-  actual solo tiene un ID base de madera;
-- tratamiento proporcional de los metales decorativos de acabados plateado y
-  dorado al reparar o desarmar;
-- conciliación de la recuperación especial de la jabalina arrojada con la
-  fórmula única de desarme;
-- inclusión futura de amuletos y sellos, que hoy no participan del ciclo de
-  durabilidad de armas, armaduras y escudos.
+- qué acciones concretas cancelan una tarea y si las entradas quedan
+  bloqueadas como reserva hasta su finalización;
+- duración base y estaciones exigidas para desarmar;
+- estaciones exigidas para fabricar cada familia de componentes;
+- correspondencia entre cada receta de componente y su carta concreta de
+  arcano menor.

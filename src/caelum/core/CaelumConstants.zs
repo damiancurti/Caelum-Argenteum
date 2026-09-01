@@ -64,6 +64,7 @@ class CaelumConstants : Object
     // Balance provisional de los tres personajes folclóricos. El radio de
     // Palomo pertenece sólo al entorno de prueba y puede ajustarse aquí.
     const PALOMO_TEST_WANDER_RADIUS = 192.0;
+    const BULL_GORE_BASE_DAMAGE = 45.0;
     const MANDINGA_MACHETE_BASE_DAMAGE = 66.0;
     const ZUPAY_SLAM_BASE_DAMAGE = 66.0;
     const ZUPAY_SLAM_RADIUS_MAP_UNITS = 192.0;

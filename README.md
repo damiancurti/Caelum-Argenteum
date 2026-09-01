@@ -16,20 +16,19 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0ar candidate retains the validated 79-recipe
+The current cumulative V4.29.0as candidate retains the validated 79-recipe
 crafting catalogue, accepted pre-game character creator and group-913 eastern
-stairs. MAP01 supersedes the visually rejected 4.29.0ap house result with a
-focused topology cleanup. It removes the isolated floating floor fragment,
-bounds two open profiles whose planes escaped the intended footprint, restores
-the affected floor material and closure so no missing-texture/HOM surface is
-expected, closes the exposed exterior section and removes the unintended wall
-that divided the rear ground-floor room. That rear room remains one continuous
-interior. The accepted second-floor room, gabled-roof direction, stair access,
-balconies and door groups remain outside the scope of those corrections.
+stairs. MAP01 includes the 4.29.0ar topology repair and removes the remaining
+historical group-807 wall from the rear ground-floor room. Its four raised
+ground-floor hosts are converted to open space while their z=128..136 floor and
+z=256..264 cover remain unchanged. The room has no internal wall outside its
+two stair flights, and its north/east/south exterior shell is continuous. The
+accepted first and second floors, gabled-roof direction, stair access,
+balconies and upper door groups remain unchanged.
 
-The deterministic 4.29.0ar MAP01 output contains 1,045 vertices, 1,436
-linedefs, 2,586 sidedefs, 435 sectors and 225 Things. Its SHA-256 is
-`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+The deterministic 4.29.0as MAP01 output contains 1,045 vertices, 1,436
+linedefs, 2,586 sidedefs, 435 sectors and 223 Things. Its SHA-256 is
+`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
 Only the focused visual traversal in GZDoom remains pending for this map pass.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
@@ -42,7 +41,7 @@ pickup bases. Required audio attribution ships in
 [`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
 byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
-V4.29.0ar promotes the three 4.29.0aq visual actors to authored gameplay
+V4.29.0as retains the three authored folklore gameplay
 profiles. Palomo uses the playable-character statistical model with all twelve
 attributes at 100, `Height 56`, `Radius 16` and mass 700; he wanders but has no
 attack. Mandinga uses attributes 6, `Height 51.644444`, `Radius 14.755556` and
@@ -55,6 +54,11 @@ noncombatant, and none of the three receives a faction, loot table or MAP01/
 MAP02 placement in this patch. They remain available through
 `summon CaelumPalomo`, `summon CaelumMandinga` and
 `summon CaelumZupayColossus`.
+
+The Bull retains its charge, restores a direct profiled gore with authored
+base damage 45 and now uses level 20 for all physical and technical
+attributes. Zupay's ground-slam effect is unchanged, but its complete attack
+cycle is doubled from 10 to 20 tics.
 
 `Nuevo personaje` is now a real eight-page GZDoom menu that runs before MAP01
 exists. It selects race, two classes, sex, height, four layer points and thirty
@@ -84,7 +88,7 @@ The author has accepted the new-character flow, focused sound mix/event checks
 and final MAP01/MAP02 smoke outside the parallel house-construction track.
 That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
 this candidate: no timed crafting, repair or disassembly transaction is
-implemented by 4.29.0ar.
+implemented by 4.29.0as.
 
 ### Building the development PK3
 
@@ -155,9 +159,11 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   9-second test base, 50%/75%/100% yield at ×1/×3/×9 time, Dexterity Type-1
   precision-task speed, one base-material type per equipment component,
   proportional same-station repair and disassembly output equal to 50% of the
-  base recipe multiplied by remaining durability. Batch timing, interruption
-  and proportional-result rounding remain definition gates; no V4.30
-  transaction is implemented in 4.29.0ar. The complete current definition is
+  base recipe multiplied by remaining durability. Inputs round up and outputs
+  round down to 0.001; each 9/27/81-second duration covers the complete batch,
+  cancellation spends/produces nothing and exact alloy ratios are preserved.
+  A few cancellation, disassembly and component-recipe routing choices remain;
+  no V4.30 transaction is implemented in 4.29.0as. The complete definition is
   recorded in [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.

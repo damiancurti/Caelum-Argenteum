@@ -482,6 +482,17 @@ linedefs, 2,586 sidedefs, 435 sectors and 225 Things; SHA-256 is
 `35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
 Only the focused visual traversal in GZDoom remains pending for this map pass.
 
+The next author capture identified a different surviving divider: the
+historical group-807 wall still used raised base floors, so 0ar's profile-only
+opening did not remove it. V4.29.0as removes both 807 leaves, lowers only its
+four ground-floor wall/jamb hosts and restores their z=128..136 surface as a
+3D floor. It then enforces an undivided rear ground-floor interior and a
+continuous north/east/south exterior shell. First- and second-floor occupancy
+is unchanged. The same increment restores the Bull's 45-base direct gore,
+sets all six physical/technical Bull attributes to 20 and doubles Zupay's slam
+cycle to 20 tics. Its MAP01 result is 1,045/1,436/2,586/435/223 with SHA-256
+`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+
 The author has accepted the new-character case, focused menu/world sound mix
 and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
 remains a parallel focused visual/traversal review and does not reopen those
@@ -489,13 +500,13 @@ accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
 experiment remain valuable isolated diagnostics. They are not prerequisites
-for defining V4.30. No V4.30 transaction is implemented by 4.29.0ar.
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0as.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 The complete current specification and its remaining decisions are maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
-record only; 4.29.0ar does not start the V4.30 transaction implementation.
+record only; 4.29.0as does not start the V4.30 transaction implementation.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
@@ -519,10 +530,16 @@ record only; 4.29.0ar does not start the V4.30 transaction implementation.
 - Elemental weapons disassemble into their corresponding recipe materials;
   remove the former essence-versus-intact-base-implement branch.
 - Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
-- Retain the established 0.001 material unit; define how proportional results
-  round to integer inventory units before implementation.
-- Close the batch, alloy-efficiency, interruption/cancellation, task-time,
-  station, persistent-material and special-recovery gates enumerated in the
+- Round every input cost up and every output/recovery down to the established
+  0.001 material unit. Treat 9/27/81 seconds as a complete transaction at any
+  batch multiplier and preserve exact 9:1 and 497:3 alloy input ratios.
+- Cancel with no spend and no output; scale repair duration by missing
+  durability; learn component recipes through Minor-Arcana Tarot cards.
+- Persist hard, ebony and magical wood as tiers 1/2/3; scale decorative
+  silver/gold like every other recipe ingredient; keep thrown-javelin recovery
+  separate; exclude amulets and seals from durability.
+- Close the remaining cancellation-trigger/reservation, disassembly-time/
+  station, component-station and exact component/card gates enumerated in the
   linked design record before implementation.
 
 ### V4.31 — Loot, Materials and Economy Foundation

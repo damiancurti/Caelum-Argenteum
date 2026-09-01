@@ -1,5 +1,34 @@
 # Changelog
 
+## 4.29.0as — Rear-room shell, Bull gore and completed V4.30 decisions
+
+- Rebuilt the remaining historical group-807 wall in MAP01 instead of treating
+  it as part of the already removed group-914 divider. The two 807 leaves are
+  gone; both raised wall panels and both raised jamb sectors now open at
+  z=0..128 while retaining their exact z=128..136 floor and z=256..264 cover.
+  The rear ground-floor room has no internal wall outside its two existing
+  stair flights. Its north, east and south z=0..128 perimeter remains
+  continuous. First- and second-floor occupancy is byte-for-byte equivalent at
+  every induced audit cell. MAP01 is 1,045 vertices, 1,436 linedefs, 2,586
+  sidedefs, 435 sectors and 223 Things; SHA-256 is
+  `8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+- Restored a direct Bull gore with authored base damage 45 at the end of the
+  existing charge. All three physical and all three technical attributes are
+  now 20; social and mental attributes remain 2.
+- Doubled Zupay's complete ground-slam state from 10 to 20 tics while
+  preserving its proportional impact point, base damage 66, 192-MU radius and
+  +8 vertical launch.
+- Closed the newly answered V4.30 design gates without starting V4.30 code:
+  inputs round up and outputs round down to 0.001; 9/27/81 seconds cover a
+  complete transaction regardless of x1/x10/x100/x1000 batch size; alloy
+  ratios remain exact; cancellation spends and produces nothing; repair time
+  scales with missing durability; component recipes come from Minor Arcana;
+  hard/ebony/magical wood map to tiers 1/2/3; decorative metals are
+  proportional; thrown-javelin recovery remains separate; and amulets/seals
+  have no durability. Four narrower transaction choices remain documented.
+- Preserved MAP02 byte for byte at SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
 ## 4.29.0ar — House topology cleanup and folklore gameplay profiles
 
 - Corrected the MAP01 house topology identified in the three author captures:
