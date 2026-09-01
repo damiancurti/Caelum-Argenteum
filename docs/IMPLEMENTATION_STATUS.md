@@ -1,5 +1,42 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Ground-floor rear correction 4.29.0at
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+V4.29.0at corrects the inversion found in the 0as author test. The two group
+807 leaves are restored at their original x=1413, y=-32/+32 positions, while
+the four surrounding wall and jamb hosts remain open throughout z=0..128.
+No other ground-floor barrier exists inside the rear room outside the two
+existing stair flights.
+
+The exposed corner in the supplied capture was the pair of stepped 8-MU joins
+at x=1201..1209, y=-544..-391 and y=391..544. Their former profile contained
+only the z=128..256 upper wall. Each join now reuses the existing profile 516,
+closing z=0..128 with the same `CMIN01` material while preserving identical
+occupancy from z=128 upward. The adjacent exterior ground sectors 19 and 22
+now use `CMGR01A`; their z=128..136 `CMWD01` slabs are unchanged. MAP01's
+first- and second-floor occupancy digest remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+
+The deterministic MAP01 result is 1,045 vertices, 1,438 linedefs, 2,590
+sidedefs, 437 sectors and 225 Things; SHA-256 is
+`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+Focused validation for this candidate is:
+
+1. Verify both leaves of door 807 remain usable while no wall or jamb crosses
+   the rear ground-floor room.
+2. Inspect both stepped exterior joins from ground level and require continuous
+   wall, collision and no floating upper volume.
+3. Verify the adjacent exterior base floors show `CMGR01A` with no checkerboard
+   or HOM; their first-floor wood surfaces must remain wood.
+4. Recheck the first and second floors and require no geometric, collision or
+   material change.
+
 ## Rear-room shell and actor balance 4.29.0as
 
 **Implemented and deterministically validated; focused visual/combat GZDoom
@@ -44,7 +81,7 @@ Focused validation for this candidate is:
    six physical/technical attributes report 20.
 5. Summon Zupay and verify the same slam effect now takes twice as long.
 
-## V4.30 material-processing and durability definition through 4.29.0as
+## V4.30 material-processing and durability definition through 4.29.0at
 
 **Author-specified design only; no V4.30 transaction is implemented**
 
@@ -52,10 +89,14 @@ The design now fixes directional 0.001-unit rounding, complete-transaction
 batch timing, exact alloy ratios, zero-spend/zero-output cancellation,
 missing-durability repair time, Minor-Arcana learning, persistent wood tiers,
 decorative-metal proportionality, the javelin exception boundary and the lack
-of durability on amulets/seals. The remaining choices are limited to exact
-cancellation triggers/reservation behavior, disassembly time/stations,
-component stations and the exact component-to-card mapping. The authoritative
-formulas and mappings remain in
+of durability on amulets/seals. A task cannot begin in combat and, once active,
+only an explicit user order cancels it. Disassembly uses exactly the crafting
+time and station network of the corresponding object. Each component recipe
+uses the cumulative station network of the target equipment recipe. Exact
+component-to-card assignments are deliberately deferred until the Tarot-card
+implementation. The only unresolved transaction choice is whether inputs are
+reserved against other uses while the timer runs. The authoritative formulas
+and mappings remain in
 [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
 
 ## MAP01 topology cleanup and folklore gameplay profiles 4.29.0ar

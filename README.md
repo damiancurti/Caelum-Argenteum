@@ -16,19 +16,19 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0as candidate retains the validated 79-recipe
+The current cumulative V4.29.0at candidate retains the validated 79-recipe
 crafting catalogue, accepted pre-game character creator and group-913 eastern
-stairs. MAP01 includes the 4.29.0ar topology repair and removes the remaining
-historical group-807 wall from the rear ground-floor room. Its four raised
-ground-floor hosts are converted to open space while their z=128..136 floor and
-z=256..264 cover remain unchanged. The room has no internal wall outside its
-two stair flights, and its north/east/south exterior shell is continuous. The
-accepted first and second floors, gabled-roof direction, stair access,
+stairs. MAP01 keeps both leaves of group 807 while the four surrounding
+ground-floor wall/jamb hosts remain open. The rear ground-floor room therefore
+has no internal wall outside its two stair flights. Two 8-MU stepped exterior
+joins now close the ground-floor shell from z=0 to 128, and the adjacent
+exterior base floors use `CMGR01A`; their z=128..136 wood slabs are unchanged.
+The accepted first and second floors, gabled-roof direction, stair access,
 balconies and upper door groups remain unchanged.
 
-The deterministic 4.29.0as MAP01 output contains 1,045 vertices, 1,436
-linedefs, 2,586 sidedefs, 435 sectors and 223 Things. Its SHA-256 is
-`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+The deterministic 4.29.0at MAP01 output contains 1,045 vertices, 1,438
+linedefs, 2,590 sidedefs, 437 sectors and 225 Things. Its SHA-256 is
+`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
 Only the focused visual traversal in GZDoom remains pending for this map pass.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
@@ -41,7 +41,7 @@ pickup bases. Required audio attribution ships in
 [`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
 byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
-V4.29.0as retains the three authored folklore gameplay
+V4.29.0at retains the three authored folklore gameplay
 profiles. Palomo uses the playable-character statistical model with all twelve
 attributes at 100, `Height 56`, `Radius 16` and mass 700; he wanders but has no
 attack. Mandinga uses attributes 6, `Height 51.644444`, `Radius 14.755556` and
@@ -88,7 +88,7 @@ The author has accepted the new-character flow, focused sound mix/event checks
 and final MAP01/MAP02 smoke outside the parallel house-construction track.
 That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
 this candidate: no timed crafting, repair or disassembly transaction is
-implemented by 4.29.0as.
+implemented by 4.29.0at.
 
 ### Building the development PK3
 
@@ -162,9 +162,14 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   base recipe multiplied by remaining durability. Inputs round up and outputs
   round down to 0.001; each 9/27/81-second duration covers the complete batch,
   cancellation spends/produces nothing and exact alloy ratios are preserved.
-  A few cancellation, disassembly and component-recipe routing choices remain;
-  no V4.30 transaction is implemented in 4.29.0as. The complete definition is
-  recorded in [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
+  Crafting cannot begin in combat and only an explicit user order cancels an
+  active task. Disassembly uses the same time and cumulative stations as
+  crafting the item; component recipes use the station network of their target
+  equipment recipe. Exact Minor-Arcana card assignments are deferred until the
+  Tarot-card implementation. Only input reservation during the timer remains
+  undecided; no V4.30 transaction is implemented in 4.29.0at. The complete
+  definition is recorded in
+  [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.
 

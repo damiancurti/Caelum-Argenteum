@@ -1,9 +1,9 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** especificación de diseño autorizada; no implementada en 4.29.0as.
+**Estado:** especificación de diseño autorizada; no implementada en 4.29.0at.
 
 Este documento fija las reglas ya decididas para V4.30. El ejecutable de
-4.29.0as conserva sus transacciones inmediatas, su catálogo persistente de 79
+4.29.0at conserva sus transacciones inmediatas, su catálogo persistente de 79
 recetas y sus herramientas de reparación/desarme de desarrollo. Ningún tiempo,
 coste proporcional o receta de componente descrito aquí debe presentarse como
 funcional hasta que exista su transacción autoritativa y pase pruebas en
@@ -46,11 +46,14 @@ EffectiveSeconds = BaseSeconds * EfficiencyTimeFactor
                  * 100 / Type1DexterityPercent
 ```
 
-Si una tarea se cancela, no consume material y no genera ninguna salida. La
-lista exacta de acciones que cancelan y si los materiales quedan bloqueados
-como reserva durante el temporizador todavía deben definirse. La finalización
-sí deberá consumir entradas y generar salidas como una única transacción
-atómica.
+Una tarea no puede iniciarse mientras el personaje está en combate. Una vez
+iniciada, sólo se cancela mediante una orden explícita del usuario: recibir
+daño, moverse o entrar posteriormente en combate no son canceladores
+automáticos. Al cancelar no se consume ninguna entrada ni se genera salida.
+La finalización sí deberá consumir entradas y generar salidas como una única
+transacción atómica. Falta confirmar únicamente si las entradas quedan
+reservadas —bloqueadas contra otros usos, pero todavía sin consumirse— durante
+el temporizador.
 
 Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
 usa cobre/estaño `9:1` y acero siempre usa hierro/carbón `497:3`; la eficiencia
@@ -155,7 +158,7 @@ de dos entradas aplican la regla proporcional exacta de la sección 1:
 
 Reparar usa la receta completa del objeto y exactamente la misma
 infraestructura de estaciones que fabricarlo. Para cada ingrediente de receta
-`i`, antes del redondeo pendiente:
+`i`, antes de aplicar el redondeo de la sección 1:
 
 ```text
 MissingFraction = (MaximumDurability - CurrentDurability)
@@ -200,12 +203,18 @@ en esas tres operaciones usa las mismas fórmulas que el resto de las armas. Su
 recuperación parcial al arrojarla pertenece exclusivamente a la mecánica de
 proyectil arrojadizo y no se combina con una transacción de desarme.
 
+Desarmar exige exactamente la misma red acumulativa de estaciones y el mismo
+tiempo base que fabricar el objeto correspondiente. No introduce una estación
+ni una duración propia.
+
 Amuletos y sellos quedan fuera del ciclo de durabilidad. No se gastan, no se
 reparan y no se desarman mediante este sistema.
 
 ## 6. Infraestructura ya existente
 
-La reparación heredará sin cambios la red exigida por la fabricación final:
+La reparación y el desarme heredan sin cambios la red exigida por la
+fabricación final. Cada receta de componente exige la misma red acumulativa de
+estaciones que la receta final del arma o equipo para el que se fabrica:
 
 | Familia | Red de estaciones actual |
 |---|---|
@@ -223,18 +232,15 @@ El cambio de ingrediente de las armaduras a cuero no modifica por sí solo la
 infraestructura heredada de sus cuatro tipos.
 
 Las recetas nuevas de componentes se aprenden mediante cartas de Tarot de
-arcanos menores. La asignación de cada carta concreta y las estaciones exigidas
-para fabricar cada familia de componentes todavía deben cerrarse antes de la
-implementación.
+arcanos menores. La carta concreta asociada a cada receta se definirá
+únicamente cuando se implemente el sistema de cartas. V4.30 debe conservar el
+punto de integración sin inventar esa correspondencia.
 
-## 7. Decisiones todavía abiertas
+## 7. Única decisión transaccional todavía abierta
 
-Antes de implementar la transacción temporizada faltan únicamente estas
-definiciones:
-
-- qué acciones concretas cancelan una tarea y si las entradas quedan
-  bloqueadas como reserva hasta su finalización;
-- duración base y estaciones exigidas para desarmar;
-- estaciones exigidas para fabricar cada familia de componentes;
-- correspondencia entre cada receta de componente y su carta concreta de
-  arcano menor.
+Antes de implementar la transacción temporizada falta confirmar si las
+entradas quedan reservadas contra otros usos durante la tarea. El momento de
+consumo ya está fijado en la finalización atómica y cancelar por orden del
+usuario sigue liberando la tarea sin gasto ni salida. La correspondencia exacta
+entre recetas y cartas no es una decisión pendiente de esta transacción: queda
+deliberadamente aplazada hasta la implementación del sistema de Tarot.

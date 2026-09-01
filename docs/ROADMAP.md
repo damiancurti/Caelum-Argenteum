@@ -493,6 +493,15 @@ sets all six physical/technical Bull attributes to 20 and doubles Zupay's slam
 cycle to 20 tics. Its MAP01 result is 1,045/1,436/2,586/435/223 with SHA-256
 `8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
 
+The 0as author test rejected removal of the group-807 leaves and exposed the
+actual open corner: two stepped 8-MU exterior joins retained only their
+z=128..256 upper wall. V4.29.0at restores both 807 leaves without restoring
+any surrounding ground-floor wall, closes only z=0..128 in those two exterior
+joins and assigns `CMGR01A` to the adjacent exterior base floors. Their
+z=128..136 wood slabs and every first-/second-floor occupancy cell remain
+unchanged. MAP01 becomes 1,045/1,438/2,590/437/225 with SHA-256
+`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+
 The author has accepted the new-character case, focused menu/world sound mix
 and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
 remains a parallel focused visual/traversal review and does not reopen those
@@ -500,13 +509,14 @@ accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
 experiment remain valuable isolated diagnostics. They are not prerequisites
-for defining V4.30. No V4.30 transaction is implemented by 4.29.0as.
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0at.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
-The complete current specification and its remaining decisions are maintained
+The complete current specification and its single unresolved transaction
+choice are maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
-record only; 4.29.0as does not start the V4.30 transaction implementation.
+record only; 4.29.0at does not start the V4.30 transaction implementation.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
@@ -535,12 +545,19 @@ record only; 4.29.0as does not start the V4.30 transaction implementation.
   batch multiplier and preserve exact 9:1 and 497:3 alloy input ratios.
 - Cancel with no spend and no output; scale repair duration by missing
   durability; learn component recipes through Minor-Arcana Tarot cards.
+- Forbid starting a task in combat. Once a task is active, cancel it only from
+  an explicit user order; damage, movement or later combat do not cancel it.
+- Give disassembly exactly the same time and cumulative station requirements
+  as crafting the corresponding object.
+- Give each component recipe the same cumulative stations as the target
+  weapon/equipment recipe that will use it. Defer the exact Minor-Arcana card
+  assigned to each component until the Tarot-card implementation.
 - Persist hard, ebony and magical wood as tiers 1/2/3; scale decorative
   silver/gold like every other recipe ingredient; keep thrown-javelin recovery
   separate; exclude amulets and seals from durability.
-- Close the remaining cancellation-trigger/reservation, disassembly-time/
-  station, component-station and exact component/card gates enumerated in the
-  linked design record before implementation.
+- Confirm only whether inputs remain reserved against other uses while the
+  timer runs. Exact component/card mapping is deliberately deferred and must
+  not be invented during the transaction implementation.
 
 ### V4.31 — Loot, Materials and Economy Foundation
 

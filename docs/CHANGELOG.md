@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.29.0at — Restored rear door, closed lower joins and exterior grass
+
+- Restored the two group-807 leaves at their original x=1413, y=-32/+32
+  positions without restoring any of the four surrounding ground-floor wall or
+  jamb volumes. The rear ground-floor room remains undivided outside its two
+  existing stair flights.
+- Closed the two symmetric 8-MU stepped joins at x=1201..1209,
+  y=-544..-391/391..544. Each join now uses the existing 0..256 wall profile,
+  adding only the missing z=0..128 closure while preserving identical first-
+  and second-floor occupancy.
+- Restored `CMGR01A` to the adjacent exterior base floors in sectors 19 and
+  22. Their z=128..136 `CMWD01` slabs remain unchanged. MAP01 is 1,045
+  vertices, 1,438 linedefs, 2,590 sidedefs, 437 sectors and 225 Things;
+  SHA-256 is
+  `13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+- Recorded the remaining V4.30 decisions without implementing them: crafting
+  cannot start in combat and only an explicit user order cancels an active
+  task; disassembly uses the same time and stations as crafting the object;
+  components use the target equipment recipe's stations; and exact
+  Minor-Arcana card assignments wait for the Tarot-card implementation. Input
+  reservation during the timer remains the sole unanswered transaction rule.
+- Preserved MAP02 byte for byte at SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
 ## 4.29.0as — Rear-room shell, Bull gore and completed V4.30 decisions
 
 - Rebuilt the remaining historical group-807 wall in MAP01 instead of treating
