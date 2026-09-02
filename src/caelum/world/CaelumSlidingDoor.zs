@@ -67,6 +67,7 @@ class CaelumSlidingDoorLeaf : Actor
     vector3 ClosedPosition;
     int SlideProgress;
     int HoldTimer;
+    int LockedSoundCooldown;
     bool DoorRequested;
 
     override void PostBeginPlay()
@@ -93,6 +94,12 @@ class CaelumSlidingDoorLeaf : Actor
         // mensaje localizado del bloqueo y no consume la llave reutilizable.
         if (args[3] > 0 && (user == null || !user.CheckKeys(args[3], false)))
         {
+            // Evita que mantener Use reproduzca el golpe de cerradura cada tic.
+            if (LockedSoundCooldown <= 0)
+            {
+                A_StartSound("caelum/world/door_locked", CHAN_BODY);
+                LockedSoundCooldown = 7;
+            }
             return false;
         }
 
@@ -169,6 +176,8 @@ class CaelumSlidingDoorLeaf : Actor
     override void Tick()
     {
         Super.Tick();
+
+        if (LockedSoundCooldown > 0) { LockedSoundCooldown--; }
 
         if (DoorRequested && SlideProgress < 64)
         {

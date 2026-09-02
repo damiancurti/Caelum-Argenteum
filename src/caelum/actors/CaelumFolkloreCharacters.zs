@@ -190,6 +190,11 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         ConfigureCombatMagicalRange();
     }
 
+    override String GetCaelumRecognitionSound()
+    {
+        return "caelum/enemies/mandinga_alert";
+    }
+
     States
     {
     Spawn:
@@ -266,9 +271,15 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         ConfigureCombatMagicalRange();
     }
 
+    override String GetCaelumRecognitionSound()
+    {
+        return "caelum/enemies/zupay_alert";
+    }
+
     States
     {
     Spawn:
+        TNT1 A 0 NoDelay A_StopSound(CHAN_7);
         ZUPY A 10 A_CaelumBudgetedLook;
         Loop;
     See:
@@ -276,14 +287,21 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
+        ZUPY B 0 A_StartSoundIfNotSame(
+            "caelum/enemies/zupay_walk",
+            "caelum/enemies/zupay_walk",
+            CHAN_7
+        );
         ZUPY BC 4 A_CaelumBudgetedChase;
         Loop;
     Walk:
         Goto See;
     LucidityStun:
+        TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY A 1;
         Goto See;
     Melee:
+        TNT1 A 0 A_StopSound(CHAN_7);
         // El golpe conserva el mismo punto proporcional de impacto, pero su
         // ciclo completo pasa de 10 a 20 tics.
         ZUPY D 12 A_FaceTarget;
@@ -295,6 +313,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         ZUPY E 8;
         Goto See;
     Missile:
+        TNT1 A 0 A_StopSound(CHAN_7);
         // 20 tics: ficha T1 de estatuilla redondeada con Elocuencia 33.
         ZUPY M 3 A_FaceTarget;
         ZUPY NOPQ 3;
@@ -311,9 +330,11 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     Attack:
         Goto Melee;
     Pain:
+        TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY F 5 A_Pain;
         Goto See;
     Death:
+        TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY G 5 A_Scream;
         ZUPY HI 5;
         ZUPY J 5 A_NoBlocking;
@@ -321,6 +342,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         ZUPY L -1;
         Stop;
     Lift:
+        TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY MN 6;
         ZUPY O -1;
         Stop;

@@ -16,33 +16,45 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0av candidate retains the validated 79-recipe
-crafting catalogue, accepted pre-game character creator and group-913 eastern
-stairs. MAP01 keeps both stair flights and moves both group-807 leaves from
-x=1413 to x=1693, directly below group 913 and on the eastern stair-landing
-axis. In addition to the perimeter opening inherited from 0au, the pass removes
-38 overlooked ground-level `CMIN01` 3D curtains: 36 around the two flights and
-two exterior continuations. Their 76 middle textures are empty and no target
-line retains `midtex3d`. Stair sectors and every wall, floor and cover profile
-from z=128 upward remain unchanged. The attempted exterior-grass assignment
-from 0at is not revised in this increment and stays deferred.
+The current cumulative V4.29.0ay candidate repairs the reported GZDoom 4.14.2
+parser failure and integrates HUD-03 laurels plus selected-audio v3 without
+changing either map. Its V4.29.0ax inventory foundation gives every
+non-stackable equipment instance
+a monotonically allocated persistent `ItemId`, so several pieces with the same
+type, tier and size can coexist with independent durability, storage and
+equipped state. Material, ammunition and consumable quantities remain native
+stacks; a material stack is identified by type+tier and occupies one Magic Box
+slot regardless of its amount. Tab's Inventory page now enumerates the real
+`Actor.Inv` contents and supports selection, category filters, equip/use,
+Magic Box transfer and dropping without relying on the development equipment
+catalogue.
 
-The deterministic 4.29.0av MAP01 output contains 1,045 vertices, 1,438
-linedefs, 2,590 sidedefs, 437 sectors and 225 Things. Its SHA-256 is
-`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+V4.29.0ax retains the validated 79-recipe crafting catalogue, accepted
+pre-game character creator and group-913 eastern stairs. MAP01 remains exactly
+the 4.29.0aw WAD: it replaces the surviving thin panel beside door 804 with one real
+24-MU wall to the northern stair and restores the intended 8-MU exterior north
+closure to the eastern flight. It removes the five ground-level `CMIN01`
+curtains that formed the eastern U and removes only the two group-807 leaves at
+z=0; group 913 remains unchanged at z=136. Stair sectors and every wall, floor
+and cover profile from z=128 upward remain unchanged. The attempted exterior-
+grass assignment from 0at is not revised in this increment and stays deferred.
+
+The retained 4.29.0aw MAP01 output contains 1,052 vertices, 1,448
+linedefs, 2,606 sidedefs, 441 sectors and 223 Things. Its SHA-256 is
+`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
 Only the focused visual traversal in GZDoom remains pending for this map pass.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
 sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
-bands inside one repeated flat. Eight selected sound effects are registered:
-Metal Tssht drives menu cursor/value movement, dodrio's clack drives menu
-choice/advance, and the rest cover recipe learning, standard and
-double doors, carbine fire, local critical-health heartbeat and all Caelum
-pickup bases. Required audio attribution ships in
+bands inside one repeated flat. The twenty-file selected-audio v3 catalogue is
+registered without duplicating its v2 subset. Seventeen effects have bounded
+runtime roles across UI, doors, weapons, player state, grass terrain, fire and
+character cues; three remain stock-only with no caller. Required audio
+attribution ships in
 [`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
 byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
 
-V4.29.0av retains the three authored folklore gameplay
+V4.29.0aw retains the three authored folklore gameplay
 profiles. Palomo uses the playable-character statistical model with all twelve
 attributes at 100, `Height 56`, `Radius 16` and mass 700; he wanders but has no
 attack. Mandinga uses attributes 6, `Height 51.644444`, `Radius 14.755556` and
@@ -89,7 +101,7 @@ The author has accepted the new-character flow, focused sound mix/event checks
 and final MAP01/MAP02 smoke outside the parallel house-construction track.
 That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
 this candidate: no timed crafting, repair or disassembly transaction is
-implemented by 4.29.0av.
+implemented by 4.29.0aw.
 
 ### Building the development PK3
 
@@ -129,8 +141,8 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 85 wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered, including three independent mansion-grass variants.
-- Selected audio foundation: eight license-compatible effects are wired to menu, crafting, door, weapon, health-state and pickup events; credits ship inside the PK3, and the author accepted their event mapping and focused mix. Authenticated original downloads remain a final-release asset gate where documented.
-- Original HUD-01 resource frames/icons and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
+- Selected audio foundation: selected-audio v3 contributes twenty catalogued effects. Seventeen are wired to bounded UI, crafting, door, weapon, health, terrain, elemental and character events; three remain stock-only. Credits ship inside the PK3. Authenticated original downloads remain a final-release asset gate where documented.
+- Original HUD-01 resource frames/icons plus HUD-03 bar and navigation laurels and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
 ### Implemented foundation — still expanding
@@ -171,7 +183,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   reservation when the task starts, cannot serve another transaction, and are
   consumed only by atomic completion. Explicit cancellation releases the full
   reservation without spend or output. All transactional rules needed for
-  V4.30 are now defined; no V4.30 transaction is implemented in 4.29.0av. The
+  V4.30 are now defined; no V4.30 transaction is implemented in 4.29.0aw. The
   complete definition is recorded in
   [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 

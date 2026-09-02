@@ -1,5 +1,26 @@
 # Asset register
 
+## V4.29.0ay HUD-03 laurels and selected audio v3
+
+The HUD update is incremental. Only its four final RGBA exports enter `src`;
+review mockups, 2x masters, contact sheets, layered sources and generator files
+remain outside the PK3. The author-supplied provenance identifies them as
+original Caelum Argenteum project artwork made under Damian Curti's direction
+with OpenAI image-generation assistance.
+
+Selected-audio v3 supersedes v2. Seven files were already present and compare
+byte for byte, so this increment imports only the thirteen genuinely new OGG
+files. The three stock effects are catalogued and declared in `SNDINFO`, but
+have no ZScript or map caller. Full per-work provenance and the original-file
+release gate are recorded in
+[`src/licenses/AUDIO_CREDITS.md`](../src/licenses/AUDIO_CREDITS.md).
+
+| Asset family | Files | Source/license | Runtime status |
+|---|---:|---|---|
+| Resource-bar laurels | 2 PNG | Project original; `LicenseRef-Caelum-Argenteum-Project` | Health, Anima, Adrenaline, Lucidity and Air only |
+| Journal navigation laurels | 2 PNG | Project original; `LicenseRef-Caelum-Argenteum-Project` | Silver inactive / gold active, behind frame and icon |
+| Selected audio v3 | 20 OGG total; 13 new in 0ay | CC0, CC BY 3.0 and CC BY 4.0 as itemized in audio credits | 17 event-bound; 3 stock-only |
+
 ## V4.29.0aq–0ar Palomo, Mandinga and Zupay character package
 
 The author supplied a 398-file package containing 380 individual runtime

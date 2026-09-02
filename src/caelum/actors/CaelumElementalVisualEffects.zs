@@ -7,6 +7,7 @@ class CaelumAttachedElementalVisual : Actor
         Super.Tick();
         if (master == null)
         {
+            A_StopSound(CHAN_BODY);
             Destroy();
             return;
         }
@@ -30,6 +31,9 @@ class CaelumBurnVisual : CaelumAttachedElementalVisual
     States
     {
     Spawn:
+        TNT1 A 0 NoDelay A_StartSound(
+            "caelum/world/fire_loop", CHAN_BODY, CHANF_LOOP
+        );
         CEFB ABCDEFGHIJKL 3 Bright;
         Loop;
     }

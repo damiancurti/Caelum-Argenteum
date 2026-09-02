@@ -4,6 +4,7 @@
 class CaelumCombatActor : Actor
 {
     bool NextRangedSecondaryElement;
+    Actor CaelumRecognitionTarget;
 
     CaelumAnatomyProfile AnatomyProfile;
     CaelumArmorModel CombatArmor;
@@ -245,6 +246,30 @@ class CaelumCombatActor : Actor
         }
         RecalculateCombatStatistics();
         UpdateActorLucidityState();
+    }
+
+    virtual String GetCaelumRecognitionSound()
+    {
+        return "";
+    }
+
+    void UpdateCaelumRecognitionSound()
+    {
+        // La alerta sólo marca la transición hacia un objetivo jugador. Perder
+        // el objetivo rearma una futura alerta; conservarlo no repite el audio.
+        if (target == null || target.player == null)
+        {
+            CaelumRecognitionTarget = null;
+            return;
+        }
+        if (CaelumRecognitionTarget == target) { return; }
+
+        String recognitionSound = GetCaelumRecognitionSound();
+        if (recognitionSound != "")
+        {
+            A_StartSound(recognitionSound, CHAN_VOICE);
+        }
+        CaelumRecognitionTarget = target;
     }
 
     void InitializeCaelumMassAISchedule()
@@ -3118,6 +3143,7 @@ class CaelumCombatActor : Actor
         Vector3 prePhysicsVelocity = Vel;
 
         Super.Tick();
+        UpdateCaelumRecognitionSound();
 
         // Los actores diagnósticos conservan estados nativos, A_Look, A_Chase
         // y ataques, pero no recalculan estadísticas, estados elementales ni

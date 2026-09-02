@@ -1,13 +1,20 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** especificación transaccional cerrada; no implementada en 4.29.0au.
+**Estado:** especificación transaccional cerrada; inventario formal e identidad
+de piezas implementados en 4.29.0ax, tareas temporizadas todavía no implementadas.
 
 Este documento fija las reglas ya decididas para V4.30. El ejecutable de
-4.29.0au conserva sus transacciones inmediatas, su catálogo persistente de 79
+4.29.0ax conserva sus transacciones inmediatas, su catálogo persistente de 79
 recetas y sus herramientas de reparación/desarme de desarrollo. Ningún tiempo,
 coste proporcional o receta de componente descrito aquí debe presentarse como
 funcional hasta que exista su transacción autoritativa y pase pruebas en
 GZDoom.
+
+Desde 4.29.0ax, cada pieza no apilable posee un `ItemId` persistente propio y
+pueden coexistir varias piezas de configuración idéntica. Los materiales se
+mantienen como una sola pila por tipo+tier, y cada pila ocupa un único espacio
+de Caja Mágica sin importar su cantidad. La futura reserva temporal bloqueará
+una cantidad dentro de esa misma pila; no creará otra pila ni otro espacio.
 
 ## 1. Unidades, rendimiento y tiempo
 

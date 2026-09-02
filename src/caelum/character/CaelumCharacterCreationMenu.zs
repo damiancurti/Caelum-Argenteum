@@ -35,6 +35,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SmallTextFont = Font.GetFont("CaelumSmall");
         DontDim = true;
         DontBlur = true;
+        MenuSound("caelum/ui/menu_open");
     }
 
     void ResetAllocations()
@@ -413,7 +414,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_attribute10", AttributeBonus[10]);
         SetDraft("ca_newchar_attribute11", AttributeBonus[11]);
         SetDraft("ca_newchar_ready", 1);
-        MenuSound("menu/choose");
+        MenuSound("caelum/ui/menu_select");
         Menu.StartGameDirect(true, false, "CaelumPlayer", 0, 0);
     }
 
@@ -428,7 +429,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 SelectedAttribute = Wrap(SelectedAttribute + direction, 12);
             else
                 ChangeChoice(direction);
-            MenuSound("menu/cursor");
+            MenuSound("caelum/ui/menu_move");
             return true;
         }
         if (mkey == MKEY_Left || mkey == MKEY_Right)
@@ -439,7 +440,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 ChangeSelectedPoint(direction);
             else
                 ChangeChoice(direction);
-            MenuSound("menu/change");
+            MenuSound("caelum/ui/menu_move");
             return true;
         }
         if (mkey == MKEY_Enter)
@@ -458,7 +459,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 return true;
             }
             Page++;
-            MenuSound("menu/advance");
+            MenuSound("caelum/ui/menu_select");
             return true;
         }
         if (mkey == MKEY_Back)
@@ -466,7 +467,7 @@ class CaelumCharacterCreationMenu : ListMenu
             if (Page > CaelumConstants.CREATION_PAGE_RACE)
             {
                 Page--;
-                MenuSound("menu/cursor");
+                MenuSound("menu/backup");
                 return true;
             }
             return Super.MenuEvent(mkey, fromcontroller);

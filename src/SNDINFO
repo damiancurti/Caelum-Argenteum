@@ -1,22 +1,88 @@
 // Caelum Argenteum — efectos seleccionados para GZDoom 4.14.2.
 
+caelum/ui/menu_open = "sounds/caelum/ui/ca_menu_open.ogg"
 caelum/ui/menu_move = "sounds/caelum/ui/ca_menu_move.ogg"
 caelum/ui/menu_select = "sounds/caelum/ui/ca_menu_select.ogg"
 caelum/ui/recipe_learned = "sounds/caelum/ui/ca_recipe_learned.ogg"
-
-// El paquete seleccionado distingue navegación de aceptación en todos los
-// menús nativos. Los menús propios reutilizan estas mismas rutas lógicas.
-$alias menu/cursor caelum/ui/menu_move
-$alias menu/change caelum/ui/menu_move
-$alias menu/choose caelum/ui/menu_select
-$alias menu/advance caelum/ui/menu_select
+caelum/ui/crafting_page_turn = "sounds/caelum/ui/ca_crafting_page_turn.ogg"
+caelum/ui/map_transition = "sounds/caelum/ui/ca_map_transition.ogg"
 
 caelum/world/door_open = "sounds/caelum/world/doors/ca_door_open.ogg"
 caelum/world/door_large_open = "sounds/caelum/world/doors/ca_door_large_open.ogg"
+caelum/world/door_locked = "sounds/caelum/world/doors/ca_door_locked.ogg"
+caelum/world/fire_loop = "sounds/caelum/world/fire/ca_fire_loop.ogg"
 
 caelum/weapons/carabine_fire = "sounds/caelum/weapons/ca_carabine_fire.ogg"
-caelum/player/low_health_heartbeat = "sounds/caelum/player/ca_low_health_heartbeat.ogg"
 caelum/items/pickup = "sounds/caelum/items/ca_item_pickup.ogg"
+caelum/items/weapon_pickup = "sounds/caelum/items/ca_weapon_pickup.ogg"
+caelum/player/low_health_heartbeat = "sounds/caelum/player/ca_low_health_heartbeat.ogg"
+caelum/player/footstep_grass = "sounds/caelum/player/footsteps/ca_footstep_grass.ogg"
 
-// Impide superponer varias instancias del mismo latido.
+caelum/enemies/zupay_alert = "sounds/caelum/enemies/zupay/ca_zupay_alert.ogg"
+caelum/enemies/zupay_walk = "sounds/caelum/enemies/zupay/ca_zupay_walk.ogg"
+caelum/enemies/mandinga_alert = "sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg"
+caelum/npcs/rulo_alert = "sounds/caelum/npcs/rulo/ca_rulo_alert.ogg"
+
+// Recursos catalogados sin evento definitivo: no tienen llamadas ZScript.
+caelum/stock/cricket = "sounds/caelum/stock/ambient/ca_stock_cricket.ogg"
+caelum/stock/iron_gate = "sounds/caelum/stock/world/ca_stock_iron_gate.ogg"
+caelum/stock/evil_laugh = "sounds/caelum/stock/voices/ca_stock_evil_laugh.ogg"
+
+// Paquete 04: eventos con destino aprobado.
+caelum/world/rain_loop = "sounds/caelum/world/weather/ca_rain_loop.ogg"
+caelum/player/swim_loop = "sounds/caelum/player/movement/ca_swim_loop.ogg"
+caelum/world/quintessence_seal_activate = "sounds/caelum/world/seals/ca_quintessence_seal_activate.ogg"
+caelum/world/quintessence_seal_deactivate = "sounds/caelum/world/seals/ca_quintessence_seal_deactivate.ogg"
+caelum/npcs/palomo_disappear = "sounds/caelum/npcs/palomo/ca_palomo_disappear.ogg"
+caelum/player/level_up = "sounds/caelum/player/progression/ca_level_up.ogg"
+caelum/player/anima_restored = "sounds/caelum/player/anima/ca_anima_restored.ogg"
+caelum/player/cough = "sounds/caelum/player/status/ca_player_cough.ogg"
+
+// Variantes aleatorias de recogida de monedas.
+caelum/items/coin_pickup_01 = "sounds/caelum/items/currency/ca_coin_pickup_01.ogg"
+caelum/items/coin_pickup_02 = "sounds/caelum/items/currency/ca_coin_pickup_02.ogg"
+caelum/items/coin_pickup_03 = "sounds/caelum/items/currency/ca_coin_pickup_03.ogg"
+caelum/items/coin_pickup_04 = "sounds/caelum/items/currency/ca_coin_pickup_04.ogg"
+caelum/items/coin_pickup_05 = "sounds/caelum/items/currency/ca_coin_pickup_05.ogg"
+caelum/items/coin_pickup_06 = "sounds/caelum/items/currency/ca_coin_pickup_06.ogg"
+caelum/items/coin_pickup_07 = "sounds/caelum/items/currency/ca_coin_pickup_07.ogg"
+caelum/items/coin_pickup_08 = "sounds/caelum/items/currency/ca_coin_pickup_08.ogg"
+caelum/items/coin_pickup_09 = "sounds/caelum/items/currency/ca_coin_pickup_09.ogg"
+caelum/items/coin_pickup_10 = "sounds/caelum/items/currency/ca_coin_pickup_10.ogg"
+caelum/items/coin_pickup_11 = "sounds/caelum/items/currency/ca_coin_pickup_11.ogg"
+caelum/items/coin_pickup_12 = "sounds/caelum/items/currency/ca_coin_pickup_12.ogg"
+$random caelum/items/coin_pickup { caelum/items/coin_pickup_01 caelum/items/coin_pickup_02 caelum/items/coin_pickup_03 caelum/items/coin_pickup_04 caelum/items/coin_pickup_05 caelum/items/coin_pickup_06 caelum/items/coin_pickup_07 caelum/items/coin_pickup_08 caelum/items/coin_pickup_09 caelum/items/coin_pickup_10 caelum/items/coin_pickup_11 caelum/items/coin_pickup_12 }
+
+// Variantes aleatorias de pasos sobre madera.
+caelum/player/footstep_wood_01 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_01.ogg"
+caelum/player/footstep_wood_02 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_02.ogg"
+caelum/player/footstep_wood_03 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_03.ogg"
+caelum/player/footstep_wood_04 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_04.ogg"
+caelum/player/footstep_wood_05 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_05.ogg"
+caelum/player/footstep_wood_06 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_06.ogg"
+caelum/player/footstep_wood_07 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_07.ogg"
+caelum/player/footstep_wood_08 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_08.ogg"
+$random caelum/player/footstep_wood { caelum/player/footstep_wood_01 caelum/player/footstep_wood_02 caelum/player/footstep_wood_03 caelum/player/footstep_wood_04 caelum/player/footstep_wood_05 caelum/player/footstep_wood_06 caelum/player/footstep_wood_07 caelum/player/footstep_wood_08 }
+
+// Stock del paquete 04: catalogado, pero sin llamadas desde ZScript.
+caelum/stock/piano_progression = "sounds/caelum/stock/music/ca_stock_piano_progression.ogg"
+caelum/stock/npc_mumble_male = "sounds/caelum/stock/voices/ca_stock_npc_mumble_male.ogg"
+caelum/stock/menu_strings_start = "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg"
+caelum/stock/reveal_sting = "sounds/caelum/stock/ui/ca_stock_reveal_sting.ogg"
+caelum/stock/tarot_harp_loop = "sounds/caelum/stock/music/ca_stock_tarot_harp_loop.ogg"
+caelum/stock/war_drums = "sounds/caelum/stock/music/ca_stock_war_drums.ogg"
+caelum/stock/ghoul_laugh = "sounds/caelum/stock/voices/ca_stock_ghoul_laugh.ogg"
+
+// Impide superponer varias instancias del mismo latido o reconocimiento.
 $limit caelum/player/low_health_heartbeat 1
+$limit caelum/enemies/zupay_alert 1
+$limit caelum/enemies/mandinga_alert 1
+$limit caelum/npcs/rulo_alert 1
+$limit caelum/world/rain_loop 1
+$limit caelum/player/swim_loop 1
+$limit caelum/world/quintessence_seal_activate 1
+$limit caelum/world/quintessence_seal_deactivate 1
+$limit caelum/npcs/palomo_disappear 1
+$limit caelum/player/level_up 1
+$limit caelum/player/anima_restored 1
+$limit caelum/player/cough 1

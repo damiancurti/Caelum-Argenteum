@@ -1,5 +1,113 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## HUD-03 laurels, selected audio v3 and parser repair 4.29.0ay
+
+**Implemented and structurally validated; focused runtime GZDoom validation
+remains pending**
+
+The reported GZDoom 4.14.2 parser failure is repaired at its exact source:
+`action` was a reserved token and is no longer used as the equipment-action
+parameter. HUD-03 contributes exactly four final runtime PNGs. Resource
+laurels decorate Health, Anima, Adrenaline, Lucidity and Air after their fills;
+the normal/selected Journal laurels compose behind each navigation frame.
+
+Selected-audio v3 supersedes v2 without duplicating its shared files. Thirteen
+new OGG assets complete the twenty-file author package. Event-bound sounds have
+bounded lifetime or replay rules; the three `caelum/stock/*` names are declared
+only for future use. `TERRAIN` plus the native `PlayerPawn.MakeFootsteps` flag
+select the grass step sound without a per-tic custom scanner.
+
+Focused validation for this candidate is:
+
+1. Start GZDoom 4.14.2 and require ZScript to load past
+   `CaelumJournalOverlay.zs` with no parser or unknown-resource error.
+2. Open the Journal and visit all six pages; require the active gold laurel and
+   inactive silver laurels to stay behind the original frame/icon layers.
+3. Inspect the five left resource bars at 16:9 and 4:3; require both laurels to
+   align without changing the bar fill geometry.
+4. Exercise each connected sound once, including held-use on a locked door,
+   and require no per-tic repetition or lingering burn/Zupay loop.
+5. Run `playsound` for the three stock names, but require no automatic caller.
+
+MAP01 and MAP02 remain outside this patch and preserve their 4.29.0ax hashes.
+
+## Formal inventory and per-piece identity 4.29.0ax
+
+**Implemented and structurally validated; focused runtime GZDoom validation
+remains pending**
+
+`Actor.Inv` remains the sole authoritative source for ownership. Every
+`CaelumEquipmentItem` now carries a persistent positive `ItemId`, allocated by
+the character's travelling state and preserved through native copies, drops,
+pickups, crafting, migration, saves and map travel. Equal equipment recipes no
+longer collapse into one ownership flag: several identical pieces can coexist
+and their active armor/shield/weapon/accessory references retain the exact ID.
+
+Materials, consumables and ammunition remain amount-based native stacks. A
+material stack is keyed by type+tier and occupies one Magic Box slot regardless
+of amount; a non-stackable piece occupies one slot. The Journal Inventory page
+now reads a play-scope snapshot of the real chain, displays six rows at a time,
+filters all eight authored categories, and sends synchronized actions for
+equip/use, storage and dropping. It no longer depends on the debug catalogue
+selector and does not invent unowned entries.
+
+Focused validation for this candidate is:
+
+1. Create or collect two identical equipment pieces; require different stable
+   `#ID` values and independent durability/storage state.
+2. Save, load and travel between maps; require both IDs and the selected active
+   piece to remain unchanged.
+3. Put material stacks of different type/tier in the Magic Box; require one
+   slot per stack and no slot increase when `Amount` increases.
+4. Exercise every Journal filter and the equip/use, transfer and drop actions;
+   require actions to affect only the selected real entry.
+5. Recheck crafting with a duplicate recipe; require a new piece instead of a
+   duplicate rejection.
+
+MAP01 and MAP02 are outside this patch. Their hashes remain the exact 0aw
+values, so the next coordinate-guided MAP01 pass can be applied independently.
+
+## Solid north walls and lower-U removal 4.29.0aw
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+The two supplied north-wing views identify complementary missing closures: the
+surviving thin curtain beside door 804 with its cleared continuation, and the
+exterior wall that must meet the eastern flight. The door-side replacement is
+a real z=0..128 wall, 24 MU thick, extending from the existing x=1113 jamb to
+the stair face at x=1306. Its four physical footprints share one new lower-wall
+profile while retaining the exact z=128..136 and z=256..264 slabs. Every
+coplanar middle texture is empty, including the former line-608 `midtex3d`
+curtain.
+
+The exterior north closure uses seven existing 8-MU footprints arranged as
+three continuous runs: x=1201..1209/y=391..544,
+x=1201..1689/y=383..391 and x=1689..1697/y=320..391. They receive only the
+z=0..128 wall profile and meet the eastern flight without altering any stair
+sector. The five curtains at x=1697..1969, y=-272..272 that formed the lower
+eastern U are empty, and the two group-807 leaves are removed. The group-913
+leaves remain unchanged at z=136.
+
+The deterministic rebuild from an exact 0av MAP01 is idempotent. MAP01 now has
+1,052 vertices, 1,448 linedefs, 2,606 sidedefs, 441 sectors and 223 Things;
+SHA-256 is
+`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+The stair digest remains `5862699c73c2511c4db249c483b6a198b82ab8b3ea7ca467d52df6442fc04b76`
+and first-/second-floor occupancy remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+The previously reported grass appearance is deliberately unchanged.
+
+Focused validation for this candidate is:
+
+1. Inspect both north-wall viewpoints; require a solid 24-MU door-to-stair
+   wall and a continuous 8-MU exterior closure with no thin duplicate panel.
+2. Walk the former eastern U and group-807 opening; require no curtain,
+   collision, door leaf or HOM at ground level.
+3. Recheck both stair flights and group 913 at z=136.
+4. Recheck the first and second floors and require no material, wall, floor or
+   collision change. The grass defect remains outside this pass.
+
 ## Legacy-curtain removal and door alignment 4.29.0av
 
 **Implemented and deterministically validated; focused visual GZDoom
@@ -149,7 +257,7 @@ Focused validation for this candidate is:
    six physical/technical attributes report 20.
 5. Summon Zupay and verify the same slam effect now takes twice as long.
 
-## V4.30 material-processing and durability definition through 4.29.0av
+## V4.30 material-processing and durability definition through 4.29.0aw
 
 **Author-specified design only; no V4.30 transaction is implemented**
 

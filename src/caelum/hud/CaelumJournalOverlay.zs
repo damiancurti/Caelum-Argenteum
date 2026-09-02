@@ -106,6 +106,145 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui String GetInventoryFilterKey(int category)
+    {
+        switch (category)
+        {
+            case 1: return "CA_JOURNAL_FILTER_WEAPONS";
+            case 2: return "CA_JOURNAL_FILTER_ARMOR";
+            case 3: return "CA_JOURNAL_FILTER_SHIELDS";
+            case 4: return "CA_JOURNAL_FILTER_ACCESSORIES";
+            case 5: return "CA_JOURNAL_FILTER_CONSUMABLES";
+            case 6: return "CA_JOURNAL_FILTER_MATERIALS";
+            case 7: return "CA_JOURNAL_FILTER_AMMUNITION";
+            case 8: return "CA_JOURNAL_FILTER_KEY_ITEMS";
+            default: return "CA_JOURNAL_FILTER_ALL";
+        }
+    }
+
+    ui String GetEssenceKey(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "CA_ESSENCE_WATER";
+            case CaelumConstants.ESSENCE_EARTH: return "CA_ESSENCE_EARTH";
+            case CaelumConstants.ESSENCE_WIND: return "CA_ESSENCE_WIND";
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                return "CA_ESSENCE_QUINTESSENCE";
+            default: return "CA_ESSENCE_FIRE";
+        }
+    }
+
+    ui String GetEquipmentActionKey(int actionCode)
+    {
+        switch (actionCode)
+        {
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED:
+                return "CA_EQUIPMENT_ACTION_CREATED";
+            case CaelumConstants.EQUIPMENT_ACTION_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_UNEQUIPPED:
+                return "CA_EQUIPMENT_ACTION_UNEQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_BROKEN:
+                return "CA_EQUIPMENT_ACTION_BROKEN";
+            case CaelumConstants.EQUIPMENT_ACTION_DROPPED:
+                return "CA_EQUIPMENT_ACTION_DROPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_NOT_OWNED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE:
+                return "CA_EQUIPMENT_ACTION_FAILED_SIZE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL:
+                return "CA_EQUIPMENT_ACTION_FAILED_BOX_FULL";
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY";
+            case CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_USED:
+                return "CA_EQUIPMENT_ACTION_USED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_KEY_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_STORAGE";
+            default: return "CA_EQUIPMENT_ACTION_NONE";
+        }
+    }
+
+    ui String FormatInventoryEntryName(
+        int kind, int itemType, int armorSlot, int tier, int equipmentSize,
+        int essenceType
+    )
+    {
+        String sizeName = StringTable.Localize(
+            CaelumDisplayNames.GetEquipmentSizeKey(equipmentSize), false
+        );
+        if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            String weaponName =
+                CaelumDisplayNames.FormatWeaponName(itemType, tier);
+            if (itemType == CaelumConstants.WEAPON_TYPE_STAFF
+                || itemType == CaelumConstants.WEAPON_TYPE_BELL
+                || itemType == CaelumConstants.WEAPON_TYPE_BOOK
+                || itemType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+            {
+                return String.Format(
+                    "%s · %s · %s", weaponName, sizeName,
+                    StringTable.Localize(GetEssenceKey(essenceType), false)
+                );
+            }
+            return String.Format("%s · %s", weaponName, sizeName);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        {
+            return String.Format(
+                "%s · %s · %s",
+                CaelumDisplayNames.FormatArmorTypeName(itemType, tier),
+                StringTable.Localize(
+                    CaelumDisplayNames.GetArmorSlotKey(armorSlot), false
+                ),
+                sizeName
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatShieldName(itemType, tier), sizeName
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            return CaelumDisplayNames.FormatAmuletName(itemType, tier);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            return CaelumDisplayNames.FormatSealName(itemType, tier);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            return StringTable.Localize(
+                CaelumDisplayNames.GetConsumableKey(itemType), false
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            return StringTable.Localize(
+                CaelumDisplayNames.GetAmmunitionKey(itemType), false
+            );
+        }
+        String specialName = StringTable.Localize(
+            CaelumDisplayNames.GetSpecialItemKey(kind, itemType), false
+        );
+        if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL && tier > 0)
+        {
+            return String.Format("%s · T%d", specialName, tier);
+        }
+        return specialName;
+    }
+
     ui String GetWeaponNameKey(int weaponType)
     {
         switch (weaponType)
@@ -151,11 +290,12 @@ class CaelumJournalOverlay : EventHandler
         );
     }
 
-    ui void DrawTextLine(Font font, int color, double x, double y, String text)
+    ui void DrawTextLine(Font font, int textColor, double x, double y,
+        String text)
     {
         if (font == null) { return; }
         Screen.DrawText(
-            font, color, x, y, text,
+            font, textColor, x, y, text,
             DTA_VIRTUALWIDTHF, 640.0,
             DTA_VIRTUALHEIGHTF, 360.0,
             DTA_KEEPRATIO, true,
@@ -163,11 +303,17 @@ class CaelumJournalOverlay : EventHandler
         );
     }
 
-    ui void DrawCenteredText(Font font, int color, double centerX,
+    ui void DrawCenteredText(Font font, int textColor, double centerX,
         double y, String text)
     {
         if (font == null) { return; }
-        DrawTextLine(font, color, centerX - font.StringWidth(text) * 0.5, y, text);
+        DrawTextLine(
+            font,
+            textColor,
+            centerX - font.StringWidth(text) * 0.5,
+            y,
+            text
+        );
     }
 
     ui void DrawPanel(double x, double y, double width, double height)
@@ -200,9 +346,14 @@ class CaelumJournalOverlay : EventHandler
         for (int page = 0; page < JOURNAL_PAGE_COUNT; page++)
         {
             double centerX = 80.0 + page * 96.0;
+            String laurel = page == currentPage
+                ? "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_selected.png"
+                : "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_normal.png";
             String frame = page == currentPage
                 ? "graphics/caelum/ui/hud/components/ca_ui_icon_frame_selected.png"
                 : "graphics/caelum/ui/hud/components/ca_ui_icon_frame_normal.png";
+            // El laurel comparte la caja del marco y siempre se compone detrás.
+            DrawTexture(laurel, centerX - 24.0, 38.0, 48.0, 48.0);
             DrawTexture(frame, centerX - 24.0, 38.0, 48.0, 48.0);
             DrawTexture(GetPageIcon(page), centerX - 14.0, 48.0, 28.0, 28.0);
             DrawCenteredText(
@@ -226,27 +377,119 @@ class CaelumJournalOverlay : EventHandler
                 124.0,
                 28.0,
                 28.0,
-                index == 0 ? 1.0 : 0.55
+                index == localPlayer.FormalInventoryFilter ? 1.0 : 0.35
+            );
+        }
+        DrawTextLine(
+            SmallFont, Font.CR_GOLD, 52.0, 151.0,
+            String.Format(
+                "%s · %d",
+                StringTable.Localize(
+                    GetInventoryFilterKey(localPlayer.FormalInventoryFilter),
+                    false
+                ),
+                localPlayer.FormalInventoryEntryCount
+            )
+        );
+
+        int selectedRow = localPlayer.FormalInventorySelectionIndex
+            - localPlayer.FormalInventoryVisibleStart;
+        for (int row = 0;
+            row < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS; row++)
+        {
+            int kind = localPlayer.FormalInventoryRowKind[row];
+            if (kind < 0) { continue; }
+            String entryLabel = FormatInventoryEntryName(
+                kind,
+                localPlayer.FormalInventoryRowType[row],
+                localPlayer.FormalInventoryRowArmorSlot[row],
+                localPlayer.FormalInventoryRowTier[row],
+                localPlayer.FormalInventoryRowSize[row],
+                localPlayer.FormalInventoryRowEssenceType[row]
+            );
+            if (localPlayer.FormalInventoryRowItemId[row] > 0)
+            {
+                entryLabel = String.Format(
+                    "%s  #%d", entryLabel,
+                    localPlayer.FormalInventoryRowItemId[row]
+                );
+            }
+            else
+            {
+                entryLabel = String.Format(
+                    "%s  x%d", entryLabel,
+                    localPlayer.FormalInventoryRowAmount[row]
+                );
+            }
+            if (localPlayer.FormalInventoryRowEquipped[row])
+            {
+                entryLabel = entryLabel .. "  [E]";
+            }
+            if (localPlayer.FormalInventoryRowInMagicBox[row])
+            {
+                entryLabel = entryLabel .. "  [M]";
+            }
+            DrawTextLine(
+                SmallFont,
+                row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,
+                52.0,
+                170.0 + row * 21.0,
+                (row == selectedRow ? "> " : "  ") .. entryLabel
             );
         }
 
-        String weaponName = localPlayer.HUDHasActiveWeapon
-            ? CaelumDisplayNames.FormatWeaponName(
-                localPlayer.HUDActiveWeaponType,
-                localPlayer.HUDActiveWeaponTier
-            )
-            : StringTable.Localize("CA_HUD_UNARMED", false);
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 174.0,
-            String.Format("%s: %s",
-                StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
-                weaponName));
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 198.0,
+        if (localPlayer.FormalInventoryEntryCount <= 0)
+        {
+            DrawTextLine(
+                SmallFont, Font.CR_GRAY, 52.0, 190.0,
+                StringTable.Localize("CA_JOURNAL_INVENTORY_EMPTY", false)
+            );
+        }
+
+        DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 170.0,
             String.Format("%s: %.3f / %.3f",
                 StringTable.Localize("CA_HUD_LOAD", false),
                 localPlayer.HUDCarriedWeight,
                 localPlayer.HUDCarryCapacity));
-        DrawTextLine(SmallFont, Font.CR_GRAY, 56.0, 242.0,
-            StringTable.Localize("CA_JOURNAL_INVENTORY_FOUNDATION", false));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 190.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                localPlayer.MagicBoxUsedSlots,
+                localPlayer.MagicBoxMaximumSlots));
+        if (selectedRow >= 0
+            && selectedRow < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
+            && localPlayer.FormalInventoryRowKind[selectedRow] >= 0)
+        {
+            DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 220.0,
+                String.Format("%s: %.3f",
+                    StringTable.Localize(
+                        "CA_JOURNAL_INVENTORY_WEIGHT", false
+                    ),
+                    localPlayer.FormalInventoryRowWeight[selectedRow]));
+            if (localPlayer.FormalInventoryRowMaximumDurability[selectedRow]
+                > 0)
+            {
+                DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 240.0,
+                    String.Format("%s: %d / %d",
+                        StringTable.Localize(
+                            "CA_JOURNAL_INVENTORY_DURABILITY", false
+                        ),
+                        localPlayer.FormalInventoryRowDurability[selectedRow],
+                        localPlayer.FormalInventoryRowMaximumDurability[
+                            selectedRow
+                        ]));
+            }
+        }
+        DrawTextLine(
+            SmallFont,
+            localPlayer.LastEquipmentAction
+                    == CaelumConstants.EQUIPMENT_ACTION_NONE
+                ? Font.CR_GRAY : Font.CR_GOLD,
+            52.0, 298.0,
+            StringTable.Localize(
+                GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
+            )
+        );
     }
 
     ui void DrawCharacterPage(CaelumPlayer localPlayer)
@@ -363,22 +606,70 @@ class CaelumJournalOverlay : EventHandler
         {
             SetJournalOpen(false);
         }
-        else if (e.KeyScan == InputEvent.Key_RightArrow
-            || e.KeyScan == InputEvent.Key_DownArrow
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Right
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+        else if (GetJournalPage() == 0
+            && (e.KeyScan == InputEvent.Key_DownArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
         {
-            SetJournalPage((GetJournalPage() + 1) % JOURNAL_PAGE_COUNT);
+            SendNetworkEvent("ca_inventory_next");
+        }
+        else if (GetJournalPage() == 0
+            && (e.KeyScan == InputEvent.Key_UpArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
+        {
+            SendNetworkEvent("ca_inventory_previous");
+        }
+        else if (GetJournalPage() == 0
+            && (e.KeyChar == 102 || e.KeyChar == 70
+                || e.KeyScan == InputEvent.Key_Pad_Y))
+        {
+            SendNetworkEvent("ca_inventory_filter");
+        }
+        else if (GetJournalPage() == 0
+            && (e.KeyScan == InputEvent.Key_Enter
+                || e.KeyScan == InputEvent.Key_Pad_A))
+        {
+            SendNetworkEvent("ca_inventory_activate");
+        }
+        else if (GetJournalPage() == 0
+            && (e.KeyChar == 99 || e.KeyChar == 67
+                || e.KeyScan == InputEvent.Key_Pad_X))
+        {
+            SendNetworkEvent("ca_inventory_storage");
+        }
+        else if (GetJournalPage() == 0
+            && (e.KeyChar == 100 || e.KeyChar == 68))
+        {
+            SendNetworkEvent("ca_inventory_drop");
+        }
+        else if (e.KeyScan == InputEvent.Key_RightArrow
+            || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
+        {
+            int nextPage = (GetJournalPage() + 1) % JOURNAL_PAGE_COUNT;
+            SetJournalPage(nextPage);
+            if (nextPage == 3)
+            {
+                SendNetworkEvent("ca_crafting_page_turn_sound");
+            }
+            if (nextPage == 0)
+            {
+                SendNetworkEvent("ca_inventory_refresh");
+            }
         }
         else if (e.KeyScan == InputEvent.Key_LeftArrow
-            || e.KeyScan == InputEvent.Key_UpArrow
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Left
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Up)
+            || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
         {
-            SetJournalPage(
+            int nextPage =
                 (GetJournalPage() + JOURNAL_PAGE_COUNT - 1)
-                    % JOURNAL_PAGE_COUNT
-            );
+                    % JOURNAL_PAGE_COUNT;
+            SetJournalPage(nextPage);
+            if (nextPage == 3)
+            {
+                SendNetworkEvent("ca_crafting_page_turn_sound");
+            }
+            if (nextPage == 0)
+            {
+                SendNetworkEvent("ca_inventory_refresh");
+            }
         }
         return true;
     }
@@ -387,7 +678,51 @@ class CaelumJournalOverlay : EventHandler
     {
         if (e.Name ~== "ca_journal_toggle")
         {
-            SetJournalOpen(!IsJournalOpen());
+            bool opening = !IsJournalOpen();
+            SetJournalOpen(opening);
+            if (opening) { SendNetworkEvent("ca_inventory_refresh"); }
+        }
+    }
+
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
+        if (requestingPlayer == null) { return; }
+        if (e.Name == "ca_inventory_refresh")
+        {
+            requestingPlayer.RefreshFormalInventorySnapshot();
+        }
+        else if (e.Name == "ca_inventory_next")
+        {
+            requestingPlayer.CycleFormalInventorySelection(1);
+        }
+        else if (e.Name == "ca_inventory_previous")
+        {
+            requestingPlayer.CycleFormalInventorySelection(-1);
+        }
+        else if (e.Name == "ca_inventory_filter")
+        {
+            requestingPlayer.CycleFormalInventoryFilter();
+        }
+        else if (e.Name == "ca_inventory_activate")
+        {
+            requestingPlayer.ActivateFormalInventorySelection();
+        }
+        else if (e.Name == "ca_inventory_storage")
+        {
+            requestingPlayer.ToggleFormalInventoryStorage();
+        }
+        else if (e.Name == "ca_inventory_drop")
+        {
+            requestingPlayer.DropFormalInventorySelection();
+        }
+        else if (e.Name == "ca_crafting_page_turn_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/crafting_page_turn",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
         }
     }
 
@@ -418,6 +753,11 @@ class CaelumJournalOverlay : EventHandler
         else { DrawPlannedPage("CA_JOURNAL_REPUTATION_PENDING"); }
 
         DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 322.0,
-            StringTable.Localize("CA_JOURNAL_NAVIGATION_HELP", false));
+            StringTable.Localize(
+                currentPage == 0
+                    ? "CA_JOURNAL_INVENTORY_HELP"
+                    : "CA_JOURNAL_NAVIGATION_HELP",
+                false
+            ));
     }
 }

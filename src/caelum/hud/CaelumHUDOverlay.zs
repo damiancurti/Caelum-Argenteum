@@ -416,6 +416,42 @@ class CaelumHUDOverlay : EventHandler
             frameX + endWidth + centerWidth, frameY, endWidth, frameHeight);
     }
 
+    // HUD-03: los laureles son remates independientes. Se dibujan al final
+    // para no quedar ocultos por el marco ni por el relleno tintado.
+    ui void DrawHUDBarLaurels(double barX, double barY, double barWidth)
+    {
+        String root = "graphics/caelum/ui/hud/components/";
+        double laurelSize = 18.0;
+        double laurelY = barY - 5.5;
+        DrawHUDTexture(
+            root .. "ca_hud_bar_laurel_left.png",
+            barX - laurelSize * 0.5,
+            laurelY,
+            laurelSize,
+            laurelSize
+        );
+        DrawHUDTexture(
+            root .. "ca_hud_bar_laurel_right.png",
+            barX + barWidth - laurelSize * 0.5,
+            laurelY,
+            laurelSize,
+            laurelSize
+        );
+    }
+
+    ui void DrawResourceLaurels()
+    {
+        DrawHUDBarLaurels(20.0, 230.0, 180.0);
+        DrawHUDBarLaurels(20.0, 254.0, 180.0);
+        DrawHUDBarLaurels(20.0, 278.0, 180.0);
+        DrawHUDBarLaurels(20.0, 302.0, 180.0);
+        DrawHUDBarLaurels(20.0, 326.0, 180.0);
+        DrawHUDBarLaurels(440.0, 254.0, 180.0);
+        DrawHUDBarLaurels(440.0, 278.0, 180.0);
+        DrawHUDBarLaurels(440.0, 302.0, 180.0);
+        DrawHUDBarLaurels(440.0, 326.0, 180.0);
+    }
+
     // Aplica el vocabulario visual del paquete sin reservar espacio para un
     // retrato. Cada silueta continúa siendo legible aun sin depender del color.
     ui void DrawResourceSkin()
@@ -878,6 +914,7 @@ class CaelumHUDOverlay : EventHandler
         DrawAnimaBar(localPlayer);
         DrawHealthBar(localPlayer);
         DrawAirBar(localPlayer);
+        DrawResourceLaurels();
         DrawLoadBar(localPlayer, 254);
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);

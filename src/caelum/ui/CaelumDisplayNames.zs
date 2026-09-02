@@ -105,6 +105,159 @@ class CaelumDisplayNames : Object
         }
     }
 
+    static ui String GetEquipmentSizeKey(int equipmentSize)
+    {
+        switch (equipmentSize)
+        {
+            case CaelumConstants.EQUIPMENT_SIZE_XS: return "CA_EQUIPMENT_SIZE_XS";
+            case CaelumConstants.EQUIPMENT_SIZE_S: return "CA_EQUIPMENT_SIZE_S";
+            case CaelumConstants.EQUIPMENT_SIZE_L: return "CA_EQUIPMENT_SIZE_L";
+            case CaelumConstants.EQUIPMENT_SIZE_XL: return "CA_EQUIPMENT_SIZE_XL";
+            default: return "CA_EQUIPMENT_SIZE_M";
+        }
+    }
+
+    static ui String GetArmorSlotKey(int armorSlot)
+    {
+        switch (armorSlot)
+        {
+            case CaelumConstants.ARMOR_SLOT_BODY: return "CA_ARMOR_SLOT_BODY";
+            case CaelumConstants.ARMOR_SLOT_HANDS: return "CA_ARMOR_SLOT_HANDS";
+            case CaelumConstants.ARMOR_SLOT_FEET: return "CA_ARMOR_SLOT_FEET";
+            default: return "CA_ARMOR_SLOT_HEAD";
+        }
+    }
+
+    static ui String GetConsumableKey(int consumableType)
+    {
+        switch (consumableType)
+        {
+            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
+                return "CA_CONSUMABLE_ANIMA_POTION";
+            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
+                return "CA_CONSUMABLE_ENERGY_DRINK";
+            case CaelumConstants.CONSUMABLE_FOOD_RATION:
+                return "CA_CONSUMABLE_FOOD_RATION";
+            case CaelumConstants.CONSUMABLE_WATER_RATION:
+                return "CA_CONSUMABLE_WATER_RATION";
+            default: return "CA_CONSUMABLE_LIFE_POTION";
+        }
+    }
+
+    static ui String GetAmmunitionKey(int ammunitionType)
+    {
+        switch (ammunitionType)
+        {
+            case CaelumConstants.AMMUNITION_ARROW:
+                return "CA_WEAPON_AMMO_ARROWS";
+            case CaelumConstants.AMMUNITION_BOLT:
+                return "CA_WEAPON_AMMO_BOLTS";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
+                return "CA_WEAPON_AMMO_JAVELIN_T1";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
+                return "CA_WEAPON_AMMO_JAVELIN_T2";
+            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
+                return "CA_WEAPON_AMMO_JAVELIN_T3";
+            default: return "CA_WEAPON_AMMO_CARTRIDGES";
+        }
+    }
+
+    static ui String GetSpecialItemKey(int category, int itemType)
+    {
+        if (category == CaelumConstants.EQUIPMENT_KIND_KEY)
+        {
+            return "CA_KEY_SILVER";
+        }
+        if (category == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        {
+            return itemType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
+                ? "CA_KEY_ITEM_PROCESSING_MANUAL"
+                : "CA_KEY_ITEM_SEALED_LETTER";
+        }
+        switch (itemType)
+        {
+            case CaelumConstants.MATERIAL_BLADE: return "CA_MATERIAL_BLADE";
+            case CaelumConstants.MATERIAL_SMALL_BLADE: return "CA_MATERIAL_SMALL_BLADE";
+            case CaelumConstants.MATERIAL_CURVED_BLADE: return "CA_MATERIAL_CURVED_BLADE";
+            case CaelumConstants.MATERIAL_LONG_BLADE: return "CA_MATERIAL_LONG_BLADE";
+            case CaelumConstants.MATERIAL_BROAD_BLADE: return "CA_MATERIAL_BROAD_BLADE";
+            case CaelumConstants.MATERIAL_SHAFT: return "CA_MATERIAL_SHAFT";
+            case CaelumConstants.MATERIAL_FRAME: return "CA_MATERIAL_FRAME";
+            case CaelumConstants.MATERIAL_LONG_FRAME: return "CA_MATERIAL_LONG_FRAME";
+            case CaelumConstants.MATERIAL_WEAPON_HEAD: return "CA_MATERIAL_WEAPON_HEAD";
+            case CaelumConstants.MATERIAL_ROUND_HEAD: return "CA_MATERIAL_ROUND_HEAD";
+            case CaelumConstants.MATERIAL_PLATE: return "CA_MATERIAL_PLATE";
+            case CaelumConstants.MATERIAL_ROUND_PLATE: return "CA_MATERIAL_ROUND_PLATE";
+            case CaelumConstants.MATERIAL_KITE_PLATE: return "CA_MATERIAL_KITE_PLATE";
+            case CaelumConstants.MATERIAL_TOWER_PLATE: return "CA_MATERIAL_TOWER_PLATE";
+            case CaelumConstants.MATERIAL_MAGIC_PLATE: return "CA_MATERIAL_MAGIC_PLATE";
+            case CaelumConstants.MATERIAL_LARGE_PLATE: return "CA_MATERIAL_LARGE_PLATE";
+            case CaelumConstants.MATERIAL_CHAINMAIL: return "CA_MATERIAL_CHAINMAIL";
+            case CaelumConstants.MATERIAL_FABRIC: return "CA_MATERIAL_FABRIC";
+            case CaelumConstants.MATERIAL_LEATHER: return "CA_MATERIAL_LEATHER";
+            case CaelumConstants.MATERIAL_FIRE_ESSENCE: return "CA_MATERIAL_FIRE_ESSENCE";
+            case CaelumConstants.MATERIAL_WATER_ESSENCE: return "CA_MATERIAL_WATER_ESSENCE";
+            case CaelumConstants.MATERIAL_EARTH_ESSENCE: return "CA_MATERIAL_EARTH_ESSENCE";
+            case CaelumConstants.MATERIAL_WIND_ESSENCE: return "CA_MATERIAL_WIND_ESSENCE";
+            case CaelumConstants.MATERIAL_QUINTESSENCE: return "CA_MATERIAL_QUINTESSENCE";
+            case CaelumConstants.MATERIAL_HILT: return "CA_MATERIAL_HILT";
+            case CaelumConstants.MATERIAL_LONG_HILT: return "CA_MATERIAL_LONG_HILT";
+            case CaelumConstants.MATERIAL_POINT: return "CA_MATERIAL_POINT";
+            case CaelumConstants.MATERIAL_HANDLE: return "CA_MATERIAL_HANDLE";
+            case CaelumConstants.MATERIAL_LONG_HANDLE: return "CA_MATERIAL_LONG_HANDLE";
+            case CaelumConstants.MATERIAL_BOWSTRING: return "CA_MATERIAL_BOWSTRING";
+            case CaelumConstants.MATERIAL_REINFORCED_BOWSTRING: return "CA_MATERIAL_REINFORCED_BOWSTRING";
+            case CaelumConstants.MATERIAL_STRAP: return "CA_MATERIAL_STRAP";
+            case CaelumConstants.MATERIAL_REINFORCED_STRAP: return "CA_MATERIAL_REINFORCED_STRAP";
+            case CaelumConstants.MATERIAL_BARREL: return "CA_MATERIAL_BARREL";
+            case CaelumConstants.MATERIAL_MECHANISM: return "CA_MATERIAL_MECHANISM";
+            case CaelumConstants.MATERIAL_STAFF_BASE: return "CA_MATERIAL_STAFF_BASE";
+            case CaelumConstants.MATERIAL_BELL_BASE: return "CA_MATERIAL_BELL_BASE";
+            case CaelumConstants.MATERIAL_BOOK_BASE: return "CA_MATERIAL_BOOK_BASE";
+            case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CA_MATERIAL_STATUETTE_BASE";
+            case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "CA_MATERIAL_SMALL_WEAPON_HEAD";
+            case CaelumConstants.MATERIAL_CHAIN: return "CA_MATERIAL_CHAIN";
+            case CaelumConstants.MATERIAL_WOOD: return "CA_MATERIAL_WOOD";
+            case CaelumConstants.MATERIAL_SILVER_CHAIN: return "CA_MATERIAL_SILVER_CHAIN";
+            case CaelumConstants.MATERIAL_SEAL_BASE: return "CA_MATERIAL_SEAL_BASE";
+            case CaelumConstants.MATERIAL_RUBY_PENDANT: return "CA_MATERIAL_RUBY_PENDANT";
+            case CaelumConstants.MATERIAL_SAPPHIRE_PENDANT: return "CA_MATERIAL_SAPPHIRE_PENDANT";
+            case CaelumConstants.MATERIAL_EMERALD_PENDANT: return "CA_MATERIAL_EMERALD_PENDANT";
+            case CaelumConstants.MATERIAL_TOPAZ_PENDANT: return "CA_MATERIAL_TOPAZ_PENDANT";
+            case CaelumConstants.MATERIAL_RUBY_GEM: return "CA_MATERIAL_RUBY_GEM";
+            case CaelumConstants.MATERIAL_SAPPHIRE_GEM: return "CA_MATERIAL_SAPPHIRE_GEM";
+            case CaelumConstants.MATERIAL_EMERALD_GEM: return "CA_MATERIAL_EMERALD_GEM";
+            case CaelumConstants.MATERIAL_TOPAZ_GEM: return "CA_MATERIAL_TOPAZ_GEM";
+            case CaelumConstants.MATERIAL_OPAL_BROOCH: return "CA_MATERIAL_OPAL_BROOCH";
+            case CaelumConstants.MATERIAL_RAW_RUBY: return "CA_MATERIAL_RAW_RUBY";
+            case CaelumConstants.MATERIAL_RAW_SAPPHIRE: return "CA_MATERIAL_RAW_SAPPHIRE";
+            case CaelumConstants.MATERIAL_RAW_EMERALD: return "CA_MATERIAL_RAW_EMERALD";
+            case CaelumConstants.MATERIAL_RAW_TOPAZ: return "CA_MATERIAL_RAW_TOPAZ";
+            case CaelumConstants.MATERIAL_RAW_OPAL: return "CA_MATERIAL_RAW_OPAL";
+            case CaelumConstants.MATERIAL_COPPER_INGOT: return "CA_MATERIAL_COPPER_INGOT";
+            case CaelumConstants.MATERIAL_TIN_INGOT: return "CA_MATERIAL_TIN_INGOT";
+            case CaelumConstants.MATERIAL_COAL: return "CA_MATERIAL_COAL";
+            case CaelumConstants.MATERIAL_RAW_COPPER: return "CA_MATERIAL_RAW_COPPER";
+            case CaelumConstants.MATERIAL_RAW_TIN: return "CA_MATERIAL_RAW_TIN";
+            case CaelumConstants.MATERIAL_RAW_IRON: return "CA_MATERIAL_RAW_IRON";
+            case CaelumConstants.MATERIAL_RAW_SILVER: return "CA_MATERIAL_RAW_SILVER";
+            case CaelumConstants.MATERIAL_RAW_GOLD: return "CA_MATERIAL_RAW_GOLD";
+            case CaelumConstants.MATERIAL_BRONZE_INGOT: return "CA_MATERIAL_BRONZE_INGOT";
+            case CaelumConstants.MATERIAL_STEEL_INGOT: return "CA_MATERIAL_STEEL_INGOT";
+            case CaelumConstants.MATERIAL_SILVER_INGOT: return "CA_MATERIAL_SILVER_INGOT";
+            case CaelumConstants.MATERIAL_GOLD_INGOT: return "CA_MATERIAL_GOLD_INGOT";
+            case CaelumConstants.MATERIAL_WOOL: return "CA_MATERIAL_WOOL";
+            case CaelumConstants.MATERIAL_COTTON: return "CA_MATERIAL_COTTON";
+            case CaelumConstants.MATERIAL_RAW_SILK: return "CA_MATERIAL_RAW_SILK";
+            case CaelumConstants.MATERIAL_PLANT_FIBER: return "CA_MATERIAL_PLANT_FIBER";
+            case CaelumConstants.MATERIAL_ROPE: return "CA_MATERIAL_ROPE";
+            case CaelumConstants.MATERIAL_COW_HIDE: return "CA_MATERIAL_COW_HIDE";
+            case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "CA_MATERIAL_PREDATOR_HIDE";
+            case CaelumConstants.MATERIAL_MONSTER_HIDE: return "CA_MATERIAL_MONSTER_HIDE";
+            default: return "CA_MATERIAL_IRON_INGOT";
+        }
+    }
+
     static ui String GetFinishFormatKey(int tier, int grammar)
     {
         bool silver = tier == 2;

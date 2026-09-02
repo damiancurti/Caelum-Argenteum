@@ -1,5 +1,75 @@
 # Changelog
 
+## 4.29.0ay — GZDoom parser fix, HUD-03 laurels and selected audio v3
+
+- Fixed the GZDoom 4.14.2 startup failure in `CaelumJournalOverlay.zs` by
+  replacing the reserved ZScript parameter name `action` with `actionCode`.
+- Integrated only the four final HUD-03 assets. Silver/gold navigation
+  laurels render behind Journal frames and icons; paired resource laurels
+  render after the five left-side resource bars without changing their fill
+  size or position. Mockups, layered masters, contact sheets and generation
+  sources remain outside the runtime package.
+- Reconciled the selected-audio v3 package as a superset of v2. The seven
+  already present files remain byte-identical and only thirteen new OGG files
+  enter the source tree. Door lock, weapon pickup, grass footsteps, crafting
+  page, map transition, burn loop and the Mandinga/Zupay/Rulo cues are wired
+  to bounded events; cricket, iron gate and evil laugh remain defined stock
+  with no gameplay caller.
+- Added native GZDoom 4.14.2 terrain footsteps for the four Caelum grass flat
+  names. The burn loop is explicitly stopped with its visual actor, locked
+  doors use a short replay cooldown, recognition sounds fire only on a new
+  player target and the Zupay walk channel stops before action states.
+- MAP01 and MAP02 are byte-identical to 4.29.0ax. No map, folklore sprite or
+  unrelated asset belongs to the incremental patch.
+
+## 4.29.0ax — Formal native inventory and persistent item identities
+
+- Added a persistent, monotonically allocated `ItemId` to every non-stackable
+  armor, shield, weapon, amulet and seal instance. Copying, dropping, picking
+  up, crafting, migration and map travel preserve the concrete piece; a
+  collision from a different owner is reassigned safely.
+- Removed the crafting prohibition on duplicate equipment configurations.
+  Equal recipes can now produce several independent pieces with separate IDs,
+  durability, Magic Box state and equipped/active references.
+- Replaced the Journal's read-only Inventory placeholder with an authoritative
+  snapshot of `Actor.Inv`. It lists real pieces and stacks, filters eight
+  categories, exposes durability/weight/storage and provides equip/use,
+  Magic Box transfer and drop actions through synchronized events.
+- Kept materials as one stack per type+tier. A stack occupies exactly one
+  Magic Box slot regardless of `Amount`; equipment continues to occupy one
+  slot per concrete piece.
+- Recorded the closed V4.30 task rules: inputs remain reserved but unspent
+  during a task, only explicit user cancellation releases them, and repair,
+  disassembly and component production inherit the same time and cumulative
+  station network as the corresponding finished recipe. Minor-Arcana card
+  assignments remain deliberately deferred to the Tarot implementation.
+- Did not modify MAP01, MAP02, sprites, audio or any other asset. MAP01 remains
+  byte-identical to 4.29.0aw at SHA-256
+  `e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+
+## 4.29.0aw — Solid north walls and removal of the lower eastern U
+
+- Replaced the thin surviving panel beside door 804 and its two accidentally
+  cleared continuations with one real 24-MU-thick wall. The volume runs from
+  the existing jamb at x=1113 to the northern stair face at x=1306 and occupies
+  only z=0..128.
+- Restored the intended 8-MU exterior north wall as three continuous stepped
+  runs from the old building to the eastern flight. The seven existing sector
+  footprints receive only a new z=0..128 profile; their z>=128 profiles do not
+  change.
+- Removed the five remaining `CMIN01` ground curtains that formed the eastern
+  U and removed only the two group-807 leaves at z=0. Group 913 remains at
+  x=1693, y=-32/+32 and z=136.
+- Cleared all middle textures and `midtex3d` from the new door-to-stair wall
+  boundaries, preventing the former panel from overlapping the solid volume.
+  Stair and first-/second-floor occupancy digests remain identical to 0av.
+- MAP01 now contains 1,052 vertices, 1,448 linedefs, 2,606 sidedefs, 441
+  sectors and 223 Things; SHA-256 is
+  `e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+  MAP02 remains byte-identical. The incremental patch contains only the four
+  updated status documents, MAP01 and its 0aw builder; it includes no sprites,
+  actors, audio or other unchanged resources.
+
 ## 4.29.0av — Removed legacy ground curtains and aligned door 807
 
 - Removed the 36 surviving `CMIN01` `midtex3d` curtains around the two rear

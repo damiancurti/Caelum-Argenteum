@@ -64,6 +64,16 @@ class CaelumPersistentCharacterState : Inventory
     bool NativeEquipmentMigrationComplete;
     bool WeaponEssenceInitialized;
 
+    // Secuencia monotónica por personaje para las piezas no apilables. El ID
+    // viaja dentro de cada CaelumEquipmentItem; este contador evita reutilizar
+    // valores después de soltar, destruir o desarmar una pieza.
+    int NextEquipmentItemId;
+    int EquippedArmorItemId[4];
+    int EquippedShieldItemId;
+    int ActiveWeaponItemId;
+    int EquippedAmuletItemId;
+    int EquippedSealItemId;
+
     // El recetario pertenece al perfil y viaja con el mismo Inventory entre
     // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
     // vacío que usan los personajes creados desde 4.29.0y.
@@ -101,6 +111,30 @@ class CaelumPersistentCharacterState : Inventory
         return Clamp(slot, 0, 3) * 12
             + Clamp(armorType, 0, 3) * 3
             + Clamp(tier, 1, 3) - 1;
+    }
+
+    void EnsureEquipmentItemIdSequence()
+    {
+        if (NextEquipmentItemId < 1) { NextEquipmentItemId = 1; }
+    }
+
+    int AllocateEquipmentItemId()
+    {
+        EnsureEquipmentItemIdSequence();
+        int allocated = NextEquipmentItemId;
+        NextEquipmentItemId++;
+        // Evita que un desbordamiento futuro produzca el centinela cero.
+        if (NextEquipmentItemId < 1) { NextEquipmentItemId = 1; }
+        return allocated;
+    }
+
+    void ObserveEquipmentItemId(int itemId)
+    {
+        EnsureEquipmentItemIdSequence();
+        if (itemId >= NextEquipmentItemId && itemId < 2147483647)
+        {
+            NextEquipmentItemId = itemId + 1;
+        }
     }
 
     int GetShieldOwnershipIndex(int shieldType, int tier)

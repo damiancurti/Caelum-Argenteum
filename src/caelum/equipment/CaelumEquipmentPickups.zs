@@ -117,6 +117,11 @@ class CaelumWorldSpriteRegistry : Actor
 // durabilidad y estados de equipado/Caja Mágica dentro de la propia instancia.
 class CaelumEquipmentItem : Inventory
 {
+    // Identidad estable de esta pieza concreta. Dos objetos con la misma
+    // receta, tier y talle siguen siendo instancias distintas para reparar,
+    // soltar, equipar y guardar. El contador vive en el estado persistente
+    // del personaje; cero queda reservado para objetos todavía no adquiridos.
+    int ItemId;
     int EquipmentKind;
     int ItemType;
     int ArmorSlot;
@@ -193,6 +198,7 @@ class CaelumEquipmentItem : Inventory
         if (copy != null && copy != self)
         {
             copy.EquipmentKind = EquipmentKind;
+            copy.ItemId = ItemId;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
             copy.Tier = Tier;
@@ -202,6 +208,29 @@ class CaelumEquipmentItem : Inventory
             copy.UnitWeight = UnitWeight;
             copy.Equipped = Equipped;
             copy.InMagicBox = InMagicBox;
+            copy.PickupDataInitialized = PickupDataInitialized;
+        }
+        return copy;
+    }
+
+    override Inventory CreateTossable(int tossAmount)
+    {
+        CaelumEquipmentItem copy = CaelumEquipmentItem(
+            Super.CreateTossable(tossAmount)
+        );
+        if (copy != null && copy != self)
+        {
+            copy.ItemId = ItemId;
+            copy.EquipmentKind = EquipmentKind;
+            copy.ItemType = ItemType;
+            copy.ArmorSlot = ArmorSlot;
+            copy.Tier = Tier;
+            copy.EquipmentSize = EquipmentSize;
+            copy.Durability = Durability;
+            copy.EssenceType = EssenceType;
+            copy.UnitWeight = UnitWeight;
+            copy.Equipped = false;
+            copy.InMagicBox = false;
             copy.PickupDataInitialized = PickupDataInitialized;
         }
         return copy;
@@ -228,6 +257,7 @@ class CaelumEquipmentItem : Inventory
         // Super.TryPickup puede adjuntar una copia y destruir el actor del
         // mundo. Conservamos la identidad antes de entregarlo para que el
         // jugador pueda activar la configuración del arma recién recogida.
+        int pickedItemId = ItemId;
         int pickedKind = EquipmentKind;
         int pickedType = ItemType;
         int pickedTier = Tier;
@@ -239,6 +269,7 @@ class CaelumEquipmentItem : Inventory
         if (pickedUp)
         {
             caelumPlayer.OnNativeEquipmentPickedUp(
+                pickedItemId,
                 pickedKind,
                 pickedType,
                 pickedTier,
@@ -415,7 +446,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
 
     Default
     {
-        Inventory.PickupSound "caelum/items/pickup";
+        Inventory.PickupSound "caelum/items/weapon_pickup";
     }
 
     States

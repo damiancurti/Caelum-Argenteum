@@ -91,6 +91,15 @@ No later pair may be added while the current pair has a freeze, missing floor, r
 parallel, and the deferred V4.27 combat-input matrix will be revisited after
 this crafting block is complete.
 
+V4.29.0ax establishes the formal inventory prerequisite without altering
+MAP01. Real native entries, rather than catalogue combinations, now drive the
+Journal; non-stackable equipment has a persistent per-piece ID and duplicate
+recipes are allowed, while each material type+tier remains one amount-based
+stack and one Magic Box slot. This closes the ownership model required by
+repair and disassembly. Timed reservation/consumption is still part of V4.30
+and is not represented as completed merely because the inventory can identify
+its future transaction targets.
+
 V4.29.0a is a parallel physics-diagnostic gate requested before new crafting
 content: bounded contact cleanup, real accumulated-pressure damage and eight
 controlled MAP02 A/B rooms. It does not reopen the validated V4.28 Seal track,
@@ -520,6 +529,16 @@ below group 913 and on the eastern stair-landing axis. MAP01 remains
 1,045/1,438/2,590/437/225 with SHA-256
 `fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
 
+The 0av author review restores only two intended northern closures before the
+ground floor is redesigned: one continuous 8-MU exterior wall to the eastern
+flight and one 24-MU solid wall from door 804 to the inner stair. V4.29.0aw
+uses a ground-only profile for both and clears the former coplanar panel. It
+also removes the unique five-sided lower eastern U and both group-807 leaves,
+while preserving group 913 and every z>=128 occupancy cell. MAP01 becomes
+1,052/1,448/2,606/441/223 with SHA-256
+`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+The exterior-grass appearance remains deferred.
+
 The author has accepted the new-character case, focused menu/world sound mix
 and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
 remains a parallel focused visual/traversal review and does not reopen those
@@ -527,13 +546,13 @@ accepted cases.
 
 Controlled perception-angle work and a replacement mass-AI movement
 experiment remain valuable isolated diagnostics. They are not prerequisites
-for defining V4.30. No V4.30 transaction is implemented by 4.29.0av.
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
-record only; 4.29.0av does not start the V4.30 transaction implementation.
+record only; 4.29.0aw does not start the V4.30 transaction implementation.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material

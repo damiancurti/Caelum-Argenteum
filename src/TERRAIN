@@ -1,0 +1,23 @@
+// Caelum Argenteum — superficies con pasos propios para GZDoom 4.14.2.
+
+Terrain CaelumGrass
+{
+    StepVolume 0.70
+    WalkStepTics 18
+    RunStepTics 12
+    StepSounds "caelum/player/footstep_grass"
+}
+
+Terrain CaelumWood
+{
+    StepVolume 0.70
+    WalkStepTics 18
+    RunStepTics 12
+    StepSounds "caelum/player/footstep_wood"
+}
+
+Floor CMGR01 CaelumGrass
+Floor CMGR01A CaelumGrass
+Floor CMGR01B CaelumGrass
+Floor CMGR01C CaelumGrass
+Floor CMWD01 CaelumWood

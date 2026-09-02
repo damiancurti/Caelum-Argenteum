@@ -34,6 +34,11 @@ class CaelumRulo : CaelumCombatActor
         ConfigureCombatMagicalRange();
     }
 
+    override String GetCaelumRecognitionSound()
+    {
+        return "caelum/npcs/rulo_alert";
+    }
+
     States
     {
     Spawn:

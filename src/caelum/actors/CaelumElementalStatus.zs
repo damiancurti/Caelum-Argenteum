@@ -199,7 +199,11 @@ class CaelumElementalStatus : Object
     {
         if (!active || owner == null || owner.health <= 0)
         {
-            if (visual != null) { visual.Destroy(); }
+            if (visual != null)
+            {
+                visual.A_StopSound(CHAN_BODY);
+                visual.Destroy();
+            }
             return null;
         }
         if (visual == null)
