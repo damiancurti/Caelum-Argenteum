@@ -1,13 +1,13 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** régimen por material y eficiencia por capas implementado en el
-candidato acumulativo 4.30.0f; carga, auditoría funcional y captura verificadas
-en GZDoom 4.14.2. Validación manual del autor en Windows/Doom II pendiente.
+**Estado:** régimen por material y eficiencia por ramas implementado en el
+candidato acumulativo 4.30.0i; auditorías de fórmulas y fuente verificadas.
+Validación manual enfocada del autor en Windows/Doom II pendiente.
 
 Este documento fija las reglas introducidas en V4.30.0b y actualizadas en
-V4.30.0f. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
+V4.30.0i. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
 componentes, para un total persistente de 129. MAP01 y sus materiales de prueba
-no cambian por el régimen temporal de 4.30.0f.
+no cambian por el régimen temporal de 4.30.0i.
 
 ## 1. Unidades, rendimiento y tiempo
 
@@ -25,19 +25,21 @@ eficiencia y la fracción de durabilidad. Así ninguna tarea resulta gratuita
 por un coste fraccionario y el jugador nunca recibe más material que la salida
 teórica.
 
-Todos los procesos ofrecen 50%, 75% y 100% de eficiencia. En refinado y
+Todos los procesos ofrecen 25%, 50% y 100% de eficiencia. En refinado y
 fabricación aislada de componentes, una entrada base `B` mantiene su coste y
 produce `B * Eficiencia`. En montaje de objetos indivisibles, fabricación
 directa por capas y reparación, el resultado queda completo y la eficiencia
 representa merma: cada entrada teórica `R` consume
-`Ceil(R * 100 / Eficiencia)`. Por tanto, 50% usa el doble, 75% usa 4/3 y 100%
-usa la cantidad teórica. El tiempo siempre cuenta todas las unidades realmente
+`Ceil(R * 100 / Eficiencia)`. Por tanto, 25% usa el cuádruple, 50% usa el doble
+y 100% usa la cantidad teórica. El tiempo siempre cuenta todas las unidades realmente
 empleadas.
 
 Al fabricar un arma, cada operación del árbol —montaje final, componente o
 refinado— conserva una elección independiente. Cambiar la eficiencia de una
 capa recalcula sus entradas, todas sus dependencias y las dos vistas previas
-sin modificar las demás elecciones.
+sin modificar las demás elecciones. El factor temporal de esa capa abarca la
+operación y toda subrama que obliga a fabricar; los factores elegidos en capas
+anidadas se acumulan.
 
 Cada unidad de material empleada cuesta una cantidad de tics determinada por
 la complejidad de la operación:
@@ -53,23 +55,26 @@ Cada eficiencia añade además un factor de trabajo independiente:
 
 | Eficiencia | Factor temporal |
 |---:|---:|
-| 50% | 1× |
-| 75% | 10× |
+| 25% | 1× |
+| 50% | 10× |
 | 100% | 100× |
 
 El factor se aplica después de resolver las unidades realmente empleadas. Por
-ejemplo, una entrada teórica de 100 unidades consume 200/134/100 y aporta
-200/1.340/10.000 unidades de trabajo respectivamente antes de Destreza. Así la
-reducción de merma nunca vuelve más rápida una fabricación de mayor eficiencia.
+ejemplo, una entrada teórica de 100 unidades consume 400/200/100 y aporta
+400/2.000/10.000 unidades de trabajo propio respectivamente antes de Destreza.
+En una ruta recursiva, el factor de la capa multiplica además el trabajo de
+cada requisito que esa capa hace necesario fabricar.
 
 La duración de una capa y de la tarea completa es:
 
 ```text
 Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2
-LayerSeconds = EmployedMaterialUnits * ComplexityTicsPerMaterial
-             / TICRATE * EfficiencyTimeFactor
-             * 100 / Type1DexterityPercent
-TaskSeconds = Sum(ExecutedLayerSeconds)
+OwnMaterialSeconds = EmployedMaterialUnits * ComplexityTicsPerMaterial
+                   / TICRATE * 100 / Type1DexterityPercent
+BranchSeconds(node) = EfficiencyTimeFactor(node)
+                    * (OwnMaterialSeconds(node)
+                       + Sum(BranchSeconds(requiredChild)))
+TaskSeconds = BranchSeconds(final operation)
 ```
 
 `TICRATE` vale 35. Destreza 0 equivale a 100%; Destreza 100 equivale a
@@ -87,16 +92,18 @@ una orden explícita cancela, libera la reserva completa y no produce salida. Al
 completar, las entradas reservadas se consumen y las salidas se generan como
 una única transacción atómica.
 
-Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
+Los refinados comunes y componentes usan un lote x1 de cuatro unidades, de
+modo que el redondeo hacia abajo produce 1/2/4 unidades a 25/50/100 y nunca
+una salida nula. Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
 usa cobre/estaño `9:1` y acero siempre usa hierro/carbón `497:3`; la eficiencia
-50%/75%/100% se aplica a la salida teórica del lote completo, nunca a cada
+25%/50%/100% se aplica a la salida teórica del lote completo, nunca a cada
 entrada por separado ni alterando esas proporciones.
 
 ## 2. Materiales de equipo
 
 Cada componente de equipo se fabrica a partir de **un solo tipo de material
 base**. La fabricación aislada transforma esa entrada con rendimiento
-50%/75%/100%; dentro de una ruta directa, la misma elección determina cuánta
+25%/50%/100%; dentro de una ruta directa, la misma elección determina cuánta
 entrada se necesita para completar la cantidad exigida por la capa superior.
 Esta restricción no convierte el montaje final de un objeto en una receta de
 un solo ingrediente.
@@ -152,7 +159,7 @@ base cero; V4.30 no debe renumerarlos al añadir fabricación de componentes.
 | 56-60 | 5 | Sellos | 40% base metálica de sello + 60% gema/broche del elemento |
 | 61-64 | 4 | Escudos | 30% correa de cuero sencillo + 70% placa de su forma |
 | 65-78 | 14 | Procesamiento | Cinco lingotes, bronce, acero, tres tejidos, cuerda y tres cueros |
-| 79-128 | 50 | Componentes | Una entrada base por receta; salida 50%/75%/100% y misma red de estaciones que su familia de equipo |
+| 79-128 | 50 | Componentes | Una entrada base por receta; salida 25%/50%/100% y misma red de estaciones que su familia de equipo |
 
 Las dieciséis armas físicas conservan esta identidad de componentes:
 
@@ -201,7 +208,8 @@ una red que reúna la infraestructura completa de cada paso. El planificador:
    componentes temporales en el inventario.
 4. Aplica a cada paso omitido su propia eficiencia y su propia complejidad.
 5. Suma el tiempo por unidad de material sólo de los pasos que realmente debe
-   ejecutar, además del montaje final.
+   ejecutar y aplica los factores acumulados de sus capas padre, además del
+   montaje final.
 
 El Diario presenta a la vez el tiempo de la **ruta actual**, que aprovecha lo
 que ya existe en Inventario, y el tiempo teórico **desde materias primas**. La
@@ -304,14 +312,16 @@ punto de integración sin inventar esa correspondencia.
 Las reglas transaccionales necesarias para V4.30 están cerradas. La base
 atómica se implementó en 4.30.0b y el tiempo por material, el árbol recursivo y
 la eficiencia independiente por capa se implementaron en 4.30.0e. El factor
-temporal 1×/10×/100× que evita la inversión por menor consumo quedó fijado en
-4.30.0f.
+temporal 1×/10×/100× quedó fijado en 4.30.0f. V4.30.0h cambia las opciones
+materiales a 25/50/100 sin alterar esos factores. V4.30.0i cierra la inversión
+que aún podía aparecer en árboles profundos: cada factor alcanza toda la rama
+requerida por su capa y se acumula con los factores de sus subcapas.
 Las entradas quedan reservadas contra otros usos durante la tarea, se consumen
 sólo al completar y se liberan íntegramente al cancelar. La correspondencia
 exacta entre recetas y cartas no es una decisión pendiente de esta transacción:
 queda deliberadamente aplazada hasta la implementación del sistema de Tarot.
 
-## 8. Contrato de prueba de 4.30.0f
+## 8. Contrato de prueba de 4.30.0h/4.30.0i
 
 MAP01 contiene seis cúmulos interiores con una pila de 10.000 unidades por
 cada ID de material. También incluye los tiers 1/2/3 de madera y de las cinco
@@ -338,7 +348,7 @@ Controles dentro de la red de estaciones:
 | `B` | Lote x1/x10/x100/x1000 en procesamiento/componentes |
 | `R` | Talle |
 | `Arriba/Abajo` | Elegir una capa fabricable de la receta desplegada |
-| `X` | Eficiencia 50%/75%/100% de la capa elegida |
+| `X` | Eficiencia 25%/50%/100% de la capa elegida |
 | `E` o `Enter` | Iniciar la tarea seleccionada |
 | `C` | Cancelar explícitamente la tarea activa |
 | `F` | Reparar la pieza exacta seleccionada en el Journal |
@@ -361,9 +371,9 @@ contador normal; completa atómicamente si los 600 segundos agotan el tiempo.
 La matriz enfocada debe comprobar además:
 
 1. Que no aparezca ninguna clave `CA_*` sin localizar en Inventario u Oficios.
-2. Que 50%, 75% y 100% cambien materiales y vista previa sin alterar las
+2. Que 25%, 50% y 100% cambien materiales y vista previa sin alterar las
    elecciones de otras capas, y que sus factores temporales sean exactamente
-   1×, 10× y 100× antes de Destreza.
+   1×, 10× y 100× antes de Destreza y abarquen toda su rama requerida.
 3. Que los lotes x1/x10/x100/x1000 escalen el tiempo por las unidades de
    material realmente empleadas.
 4. Que una ruta directa desde materias primas muestre componentes y materias

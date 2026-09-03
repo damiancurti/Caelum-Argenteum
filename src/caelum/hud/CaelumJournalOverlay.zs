@@ -1087,6 +1087,7 @@ class CaelumJournalOverlay : EventHandler
             if (craftingSession)
             {
                 SendNetworkEvent("ca_crafting_session_close");
+                SendNetworkEvent("ca_journal_menu_select_sound");
             }
             SetJournalOpen(false);
         }
@@ -1095,6 +1096,7 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyString ~== "q"))
         {
             SendNetworkEvent("ca_crafting_session_close");
+            SendNetworkEvent("ca_journal_menu_select_sound");
             SetJournalOpen(false);
         }
         else if (currentPage == 3 && craftingSession
@@ -1102,6 +1104,7 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyScan == InputEvent.Key_Pad_Y))
         {
             SendNetworkEvent("ca_crafting_filter");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage != 3 && e.KeyScan == InputEvent.Key_Tab)
         {
@@ -1180,65 +1183,77 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
         {
             SendNetworkEvent("ca_crafting_step_next");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_UpArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
         {
             SendNetworkEvent("ca_crafting_step_previous");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_RightArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Right))
         {
             SendNetworkEvent("ca_crafting_recipe_next");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_LeftArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Left))
         {
             SendNetworkEvent("ca_crafting_recipe_previous");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_Space
                 || e.KeyScan == InputEvent.Key_Pad_X))
         {
             SendNetworkEvent("ca_crafting_tier");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 114 || e.KeyChar == 82))
         {
             SendNetworkEvent("ca_crafting_size");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 98 || e.KeyChar == 66))
         {
             SendNetworkEvent("ca_crafting_batch");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 120 || e.KeyChar == 88))
         {
             SendNetworkEvent("ca_crafting_efficiency");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 99 || e.KeyChar == 67))
         {
             SendNetworkEvent("ca_crafting_cancel_task");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 116 || e.KeyChar == 84))
         {
             SendNetworkEvent("ca_debug_advance_crafting_time");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 102 || e.KeyChar == 70))
         {
             SendNetworkEvent("ca_crafting_repair_selected");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 100 || e.KeyChar == 68))
         {
             SendNetworkEvent("ca_crafting_dismantle_selected");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_Enter
@@ -1246,6 +1261,7 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyChar == 101 || e.KeyChar == 69))
         {
             SendNetworkEvent("ca_crafting_create");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (e.KeyScan == InputEvent.Key_RightArrow
             || e.KeyScan == InputEvent.Key_Pad_DPad_Right)

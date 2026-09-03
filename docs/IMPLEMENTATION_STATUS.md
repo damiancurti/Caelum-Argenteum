@@ -1,10 +1,44 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Mansion textures v2, corrected balcony railings and interaction feedback 4.30.0g
+## Focused railing traversal and branch-weighted crafting 4.30.0i
 
-**Implemented; exact-engine load, texture-resource audit, MAP01 railing audit,
-crafting formula audit and visual exterior pass completed in GZDoom 4.14.2;
-focused author Windows/Doom II acceptance pending**
+**Implemented; MAP01 topology/property audit and focused timing regression
+completed; author Windows/GZDoom visual and gameplay confirmation pending**
+
+The author's three traversal observations are applied directly to existing
+MAP01 linedefs. The 96-MU first-floor railing at `y=-383, x=1209..1305` is
+removed. At the eastern second-floor stair, the obstructing route
+`x=1697, y=-128..64` is removed and the protected edge becomes
+`x=1689, y=-320..-64`. The missing western edge is filled at
+`x=-569, y=-92..92`. The result has 41 first-floor and 82 second-floor railing
+linedefs, spanning 7,364 and 6,476 MU respectively. All bases remain exactly
+at z=136 or z=264. Vertex, linedef, sidedef, sector and Thing counts remain
+`(1419, 1983, 3544, 618, 322)`; no sector is orphaned. MAP01 SHA-256 is
+`dc5eb73f7b876d5c70b9b2ae7862ac21c617b2c10ef879d508b89c096281a36e`.
+
+Crafting retains independent 25%/50%/100% choices, material waste and
+1×/10×/100× factors. The time of a recursive branch is now evaluated as:
+
+```text
+BranchTime(node) = EfficiencyFactor(node)
+                 * (OwnMaterialTime(node) + Sum(BranchTime(child)))
+```
+
+Consequently, the final weapon's factor also covers every component and
+refining step that it requires from raw materials; a selected child factor is
+then accumulated inside that branch. The current-inventory route omits child
+work for components already owned. Using the author's rounded dagger readings
+as a regression fixture changes the full-from-raw preview from
+`270.0 / 155.0 / 177.5 s` to approximately
+`270.0 / 1350.2 / 6761.0 s` when only the weapon layer changes from
+25% to 50% to 100%. This closes the reported inversion while preserving the
+actual material quantities and Type-1 Dexterity scaling.
+
+## Railing height, 25/50/100 crafting and menu legibility 4.30.0h
+
+**Implemented; superseded cumulatively by 4.30.0i; texture-resource audit,
+MAP01 topology/railing-height audit and crafting formula/source audit
+completed; author passed the complete 11-point Windows/Doom II matrix**
 
 The mansion environment now uses the author-supplied v2 package as one
 canonical 58-PNG set. The previous 85-file collection is not mixed into the
@@ -22,41 +56,49 @@ world-texture filtering. V4.30.0g removes every provisional 4.30.0f railing
 and snaps the author's 23 supplied viewpoints to the actual inner balcony
 edges. The first-floor route covers 42 linedefs/7,460 MU and the second-floor
 route covers 76 linedefs/6,228 MU. The western central opening and eastern
-stair access stay open. No vertex, sector, Thing or navigable floor was added
-or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and now has SHA-256
-`ebdc0ebd159d747e82b4dcabc434f65fe66dbd64361f9584f6ba9d55157f75b9`.
+stair access stay open. V4.30.0h compensates `offsety_mid` for the composite's
+2.583333 vertical texture scale: GZDoom now resolves every first-floor base to
+z=136 and every second-floor base to z=264 instead of dividing the intended
+world displacement by the texture scale. No vertex, sector, Thing or navigable
+floor was added or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and
+now has SHA-256
+`aef653d161697746883ddd5d74c71ac1bac35ba01191e3325b28c3e7f1a8c578`.
 
 Inventory text now uses `CaelumMono`, the same physically doubled monospaced
 face used by the HUD, so its character spacing no longer collapses relative to
 the surrounding interface. Inventory movement/filter events play
 `caelum/ui/menu_move`; accepted inventory, storage and drop actions play
-`caelum/ui/menu_select`. These are the same logical events used by the main
-Caelum character menu and remain subject to their existing sound definitions.
+`caelum/ui/menu_select`. V4.30.0h connects the same two events to every
+crafting navigation/option and accepted-action branch that was still silent.
+`CaelumSmall` also raises `SpaceWidth` from 5 to 8, matching the main menu's
+word-space metric without changing glyph art, line height or kerning.
 
 The per-material crafting model from 4.30.0e is retained, but efficiency now
-also carries an explicit time multiplier: 50%=1×, 75%=10× and 100%=100×. The
+uses 25%/50%/100% while preserving the explicit time factors
+25%=1×, 50%=10× and 100%=100×. The
 factor is applied independently to every executed recipe layer after material
 waste and operation complexity are known, and before Dexterity Type-1 speed is
-applied. For an otherwise identical 100-unit layer, material use remains
-200/134/100 while work scales as 200/1,340/10,000 before Dexterity. Higher
-efficiency therefore cannot become faster merely because it consumes fewer
-materials. Creation, direct recursive routes and repair use the selected
+applied. For an otherwise identical 100-unit layer, material use is
+400/200/100 while its own work scales as 400/2,000/10,000 before Dexterity.
+Creation, direct recursive routes and repair use the selected
 layer/tier factor; disassembly has no efficiency selection and remains on the
-1× baseline.
+1× baseline. Common standalone processing/component batches now use four
+theoretical units at x1, yielding exactly 1/2/4 at 25/50/100; alloy lot sizes
+and ratios remain unchanged.
 
 ## Recursive layered crafting and material work 4.30.0e
 
 **Implemented; exact-engine load, formula audit, complete recipe-tree audit and
-visual capture passed in GZDoom 4.14.2; efficiency-time relation superseded by
-the 4.30.0f 1×/10×/100× regime above; focused author Windows/Doom II matrix
-pending**
+visual capture passed in GZDoom 4.14.2; efficiency percentages and time
+relation superseded by the 4.30.0i branch-weighted regime above; the author
+later passed the complete 11-point Windows/Doom II matrix on 4.30.0h**
 
 Journal → Crafts now expands the selected recipe through every producible
 component and processing dependency until it reaches raw materials. Each
 material row includes its owned/required amount. The view shows four
 scrollable rows, keeps the final operation and every craftable
 intermediate selectable with Up/Down, and changes only the selected layer's
-50%/75%/100% efficiency with X. It presents both the route that uses current
+25%/50%/100% efficiency with X. It presents both the route that uses current
 inventory and the theoretical route from raw materials. Direct physical and
 elemental weapon plans continue to consume existing components first and now
 carry the selected efficiency, input-unit count, complexity and duration for
@@ -72,7 +114,7 @@ bows and flails use two; armor, shields, giant gauntlets and crossbows use
 three; essence/gem/jewelry work, elemental implements, amulets, seals and the
 carbine use four.
 
-Standalone processing and component batches retain their 50%/75%/100% output
+Standalone processing and component batches use their 25%/50%/100% output
 yield. Indivisible assembly and repair always complete the result and apply
 efficiency as material waste: each theoretical input becomes
 `ceil(input * 100 / efficiency)`, and the extra units also add time. Repair
@@ -245,7 +287,7 @@ clusters. Vertex, linedef, sidedef and sector digests are unchanged from
 4.29.0bd, MAP02 remains byte-identical, and no character sprite or unrelated
 asset is part of this candidate.
 
-Focused acceptance requires: all 50/75/100 efficiencies at all four batch
+Focused acceptance requires: all 25/50/100 efficiencies at all four batch
 sizes, start-in-combat rejection, manual cancellation, save/load and map travel
 during a task, carry/Box overflow, every equipment family at tiers 1–3 and
 sizes 1–5, proportional repair, durability-scaled disassembly, duplicate item
@@ -588,7 +630,7 @@ Focused validation for this candidate is:
 The complete current definition, recipe-family mapping and unresolved gates
 are maintained in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
 
-Refinement and equipment-material fabrication will offer 50%, 75% and 100%
+Refinement and equipment-material fabrication offer 25%, 50% and 100%
 material yield. For a fixed base-material input `B`, their outputs are
 `0.50B`, `0.75B` and `1.00B`; elapsed-time factors are ×1, ×3 and ×9. The
 test environment uses a 9-second base, so the three unaccelerated durations

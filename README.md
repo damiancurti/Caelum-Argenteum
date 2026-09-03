@@ -16,12 +16,12 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0g. It preserves the V4.30.0b
+The current cumulative candidate is V4.30.0i. It preserves the V4.30.0b
 gameplay correction, V4.30.0c MAP01 compaction and V4.30.0d player-start crash
 repair, then replaces the fixed crafting-test duration with material work.
 Every recipe now exposes its complete recursive component-to-raw-material tree
 in Journal → Crafts, including owned/required quantities. Up/Down selects each
-craftable layer and X assigns that layer its own 50%, 75% or 100% efficiency;
+craftable layer and X assigns that layer its own 25%, 50% or 100% efficiency;
 the actual-route and full-from-raw time previews update immediately.
 
 Each employed material unit costs 1, 2, 3 or 4 engine tics according to the
@@ -30,9 +30,13 @@ multiplied by `100 / Type1DexterityPercent`, where
 `Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2`. Indivisible
 assembly and repair always produce the complete result and represent lower
 efficiency as extra material waste. Processing/component batches retain their
-50%/75%/100% yield choices. V4.30.0f additionally multiplies work time by
-1×/10×/100× at 50%/75%/100% efficiency, so improved precision always costs
-substantially more time even though it wastes fewer materials. Closing the
+25%/50%/100% yield choices. V4.30.0h uses a four-unit minimum common batch so
+all three choices yield at least one unit, and retains the 1×/10×/100× work
+factors at 25%/50%/100% efficiency. V4.30.0i applies a layer's factor to its
+own operation and every prerequisite that the layer forces the direct planner
+to fabricate. Nested layer choices therefore accumulate, preventing the
+full-from-raw preview from becoming shorter merely because a more efficient
+parent consumes fewer components. Closing the
 Journal, leaving the station radius,
 losing required infrastructure or entering combat pauses the clock without
 releasing reserved inputs; only explicit cancellation ends the task.
@@ -50,13 +54,21 @@ Doom's inherited starting Pistol and Clip are excluded declaratively; Fist
 remains the valid unarmed fallback.
 
 The Inventory page now uses the same physically doubled monospaced font as the
-HUD instead of the tighter menu face. Selection movement and accepted actions
-reuse the main Caelum menu's bounded move/confirm sounds. The mansion resource
+HUD instead of the tighter menu face. Crafting's compact face now uses the same
+eight-pixel word-space metric as the main menu. Inventory and crafting
+selection movement and accepted actions reuse the main Caelum menu's bounded
+move/confirm sounds. The mansion resource
 folder is replaced by the author-supplied 58-PNG v2 canonical set. MAP01 uses a
 32×48-MU composite derived from `CMRL02` on 42 first-floor and 76 second-floor
 inner balcony boundary lines. V4.30.0g removes the former exterior route and
 snaps the replacement to the 23 author-supplied positions while keeping the
-western and eastern stair openings unobstructed.
+western and eastern stair openings unobstructed. V4.30.0h corrects their
+vertical texture panning: it compensates for `CMRLBAL`'s 2.583333 Y scale so
+the railing bases actually render at z=136 and z=264. V4.30.0i then applies
+the author's three focused traversal corrections: it opens the 96-MU
+first-floor southern access, protects the complete western second-floor edge,
+and moves the eastern stair railing from the landing to the south stairwell
+edge.
 The integration and recoverable repository migration are documented in
 [`docs/MANSION_TEXTURES_V2.md`](docs/MANSION_TEXTURES_V2.md).
 
@@ -80,7 +92,7 @@ Thing, retained sector property or non-index sidedef property. The current
 MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 618 sectors and
 322 Things. Balcony railings change only existing linedef/sidedef properties,
 so these counts remain stable. Its SHA-256 is
-`ebdc0ebd159d747e82b4dcabc434f65fe66dbd64361f9584f6ba9d55157f75b9`.
+`dc5eb73f7b876d5c70b9b2ae7862ac21c617b2c10ef879d508b89c096281a36e`.
 
 MAP01's historical `CMGR01A` world-flat identifier now resolves to canonical
 v2 `CMGR01`; the compatibility names `CMGR01B` and `CMGR01C` resolve to the
@@ -137,12 +149,13 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0g is
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0i is
 the cumulative correction candidate described above. The former address-0x58
 failure was reproduced with the exact GZDoom 4.14.2 engine; the corrected
 player start and the layered crafting implementation both complete bounded
-MAP01 smoke runs. The focused Windows/Doom II visual and gameplay matrix
-remains pending.
+MAP01 smoke runs. The author completed all eleven 4.30.0h Windows/Doom II
+acceptance checks; only the three changed railing areas and the revised
+branch-weighted duration need focused confirmation for 4.30.0i.
 
 ### Building the development PK3
 
@@ -228,11 +241,11 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Candidate 4.30.0f uses
+- V4.30 timed material conversion and durability loop. Candidate 4.30.0i uses
   1/2/3/4 tics per employed material unit according to operation complexity,
-  multiplied by 1×/10×/100× for 50%/75%/100% efficiency and divided by
-  Dexterity Type-1 speed, with an independent 50%/75%/100%
-  efficiency choice for every craftable recipe layer. It retains one
+  with each independently selected 25%/50%/100% layer multiplying its whole
+  required branch by 1×/10×/100× before division by Dexterity Type-1 speed.
+  Nested layer factors accumulate. It retains one
   base-material type per component, proportional same-station repair and
   disassembly output equal to 50% of the base recipe multiplied by remaining
   durability. Inputs round up and outputs round down to 0.001; cancellation

@@ -438,6 +438,9 @@ class CaelumCraftingRules : Object
         double typeOneDexterityPercent, int efficiencyIndex
     )
     {
+        // Este es el coste propio de una operacion. Los planificadores de
+        // recetas aplican aparte los factores heredados de sus capas padre
+        // cuando la operacion forma parte de una rama recursiva.
         double baseTics = Max(0, employedMaterialUnits)
             * Clamp(
                 complexityTics,
@@ -678,7 +681,8 @@ class CaelumCraftingRules : Object
 
     static int GetComponentInputUnits(int batchIndex)
     {
-        return 2 * GetProcessingBatchMultiplier(batchIndex);
+        return CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS
+            * GetProcessingBatchMultiplier(batchIndex);
     }
 
     static int GetComponentOutputUnits(int batchIndex, int efficiencyIndex)
@@ -811,7 +815,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneUnits(int recipeIndex, int batchIndex)
     {
-        int units = 2;
+        int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
@@ -841,9 +845,9 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
     {
-        // Esta es la salida teórica al 100 %. La eficiencia 50/75/100 se
-        // aplica después al lote completo; 2 entradas producen 1/1/2 unidades.
-        int units = 2;
+        // Esta es la salida teórica al 100 %. La eficiencia 25/50/100 se
+        // aplica después al lote completo; 4 entradas producen 1/2/4 unidades.
+        int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:

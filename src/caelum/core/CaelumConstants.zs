@@ -414,20 +414,23 @@ class CaelumConstants : Object
     const CRAFTING_COMPLEX_TICS_PER_MATERIAL = 4;
     const CRAFTING_DEBUG_ADVANCE_SECONDS = 600.0;
     const CRAFTING_EFFICIENCY_OPTION_COUNT = 3;
-    const CRAFTING_EFFICIENCY_FAST_PERCENT = 50;
-    const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 75;
+    const CRAFTING_EFFICIENCY_FAST_PERCENT = 25;
+    const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 50;
     const CRAFTING_EFFICIENCY_PERFECT_PERCENT = 100;
     const CRAFTING_EFFICIENCY_FAST_TIME_FACTOR = 1.0;
-    // Cada grado adicional multiplica por diez el trabajo temporal. La merma
-    // sigue calculándose por separado, por lo que una eficiencia mayor nunca
-    // se vuelve accidentalmente más rápida por emplear menos material.
+    // Cada grado adicional multiplica por diez el trabajo temporal. Desde
+    // 4.30.0i, el factor de una capa abarca también todos los requisitos que
+    // esa capa obliga a fabricar; factores de subcapas distintas se acumulan.
+    // La merma de materiales se sigue calculando por separado.
     const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 10.0;
     const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 100.0;
 
-    // Procesamiento por lotes. Los recursos primarios rinden 50 % (2 -> 1).
-    // Las aleaciones conservan masa: bronce 90/10 y acero histórico de arma
-    // con 0,6 % de carbono (497 hierro + 3 carbón -> 500 acero).
+    // Procesamiento por lotes. El mínimo común usa cuatro unidades para que
+    // 25/50/100 % produzca 1/2/4 sin una salida cero por redondeo.
+    // Las aleaciones conservan sus lotes históricos: bronce 90/10 y acero
+    // de arma con 0,6 % de carbono (497 hierro + 3 carbón -> 500 acero).
     const CRAFTING_PROCESSING_BATCH_OPTION_COUNT = 4;
+    const CRAFTING_COMMON_BASE_BATCH_UNITS = 4;
     const CRAFTING_PROCESSING_BASE_EFFICIENCY = 0.50;
     const CRAFTING_BRONZE_COPPER_UNITS = 9;
     const CRAFTING_BRONZE_TIN_UNITS = 1;
