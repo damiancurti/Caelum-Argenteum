@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0f. It preserves the V4.30.0b
+The current cumulative candidate is V4.30.0g. It preserves the V4.30.0b
 gameplay correction, V4.30.0c MAP01 compaction and V4.30.0d player-start crash
 repair, then replaces the fixed crafting-test duration with material work.
 Every recipe now exposes its complete recursive component-to-raw-material tree
@@ -53,8 +53,10 @@ The Inventory page now uses the same physically doubled monospaced font as the
 HUD instead of the tighter menu face. Selection movement and accepted actions
 reuse the main Caelum menu's bounded move/confirm sounds. The mansion resource
 folder is replaced by the author-supplied 58-PNG v2 canonical set. MAP01 uses a
-32×48-MU composite derived from `CMRL02` on 42 first-floor and 116 second-floor
-balcony boundary lines; door, bridge and stair openings remain unobstructed.
+32×48-MU composite derived from `CMRL02` on 42 first-floor and 76 second-floor
+inner balcony boundary lines. V4.30.0g removes the former exterior route and
+snaps the replacement to the 23 author-supplied positions while keeping the
+western and eastern stair openings unobstructed.
 The integration and recoverable repository migration are documented in
 [`docs/MANSION_TEXTURES_V2.md`](docs/MANSION_TEXTURES_V2.md).
 
@@ -78,7 +80,7 @@ Thing, retained sector property or non-index sidedef property. The current
 MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 618 sectors and
 322 Things. Balcony railings change only existing linedef/sidedef properties,
 so these counts remain stable. Its SHA-256 is
-`45b7178613ce3d741660caf75af6572a2405106806021382c6b4c99bb3240867`.
+`ebdc0ebd159d747e82b4dcabc434f65fe66dbd64361f9584f6ba9d55157f75b9`.
 
 MAP01's historical `CMGR01A` world-flat identifier now resolves to canonical
 v2 `CMGR01`; the compatibility names `CMGR01B` and `CMGR01C` resolve to the
@@ -135,7 +137,7 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0f is
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0g is
 the cumulative correction candidate described above. The former address-0x58
 failure was reproduced with the exact GZDoom 4.14.2 engine; the corrected
 player start and the layered crafting implementation both complete bounded

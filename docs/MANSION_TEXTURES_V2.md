@@ -1,4 +1,4 @@
-# Texturas de mansión v2 — integración 4.30.0f
+# Texturas de mansión v2 — integración 4.30.0g
 
 ## Resultado integrado
 
@@ -63,19 +63,23 @@ alterar el PNG canónico. El módulo final mide 32×48 MU.
 
 | Nivel transitable | Linedefs | Longitud cubierta |
 |---:|---:|---:|
-| Primer piso, z=136 | 42 | 7.546 MU |
-| Segundo piso, z=264 | 116 | 6.662 MU |
+| Primer piso, z=136 | 42 | 7.460 MU |
+| Segundo piso, z=264 | 76 | 6.228 MU |
 
-Las rejas usan las líneas limítrofes ya existentes. Las aberturas reales de
-puertas, puentes y escaleras se excluyen expresamente. No cambia la geometría
-transitable ni las cantidades de vértices, linedefs, sidedefs, sectores o
-Things.
+La corrección 4.30.0g retira por completo el contorno provisional exterior de
+4.30.0f y encaja las 23 posiciones/ángulos suministrados por el autor en las
+linedefs interiores que forman el borde real de cada balcón. Se conservan
+expresamente la abertura central occidental y el acceso de la escalera
+oriental del segundo piso. No cambia la geometría transitable ni las
+cantidades de vértices, linedefs, sidedefs, sectores o Things.
 
-## Aplicación del parche incremental
+## Aplicación de 4.30.0g
 
-1. Extraer el ZIP 4.30.0f sobre un árbol de proyecto 4.30.0e.
-2. Ejecutar `python tools/migrate_4_30_0f_mansion_textures.py` desde la raíz.
-3. Reconstruir el PK3 con `python tools/build_pk3.py src build/caelum_argenteum_dev.pk3`.
+1. Extraer el ZIP 4.30.0g sobre la raíz de un proyecto 4.30.0f.
+2. Aceptar el reemplazo de `src/maps/MAP01.wad` y
+   `build/caelum_argenteum_dev.pk3`.
+3. Ejecutar `run_dev.bat` normalmente.
 
-El PK3 completo de prueba ya contiene sólo el conjunto v2 y no necesita el
-paso de migración.
+El parche incluye el PK3 ya construido. Los ayudantes Python quedan como
+herramientas de desarrollo reproducibles, pero el autor no necesita
+ejecutarlos para instalar ni probar esta corrección.

@@ -1,6 +1,6 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Mansion textures v2, balcony railings and interaction feedback 4.30.0f
+## Mansion textures v2, corrected balcony railings and interaction feedback 4.30.0g
 
 **Implemented; exact-engine load, texture-resource audit, MAP01 railing audit,
 crafting formula audit and visual exterior pass completed in GZDoom 4.14.2;
@@ -18,11 +18,13 @@ compatibility composites; no retired PNG remains in the complete PK3.
 MAP01 places an iron railing derived from supplied `CMRL02` on existing balcony
 boundary linedefs. Its logical module is 32×48 MU. Three one-pixel-offset
 layers preserve the supplied image while keeping its fine bars visible under
-world-texture filtering. The first-floor route covers 42 linedefs/7,546 MU and
-the second-floor route covers 116 linedefs/6,662 MU. Real openings at doors,
-bridges and stairs stay open. No vertex, sector, Thing or navigable floor was
-added or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and now has
-SHA-256 `45b7178613ce3d741660caf75af6572a2405106806021382c6b4c99bb3240867`.
+world-texture filtering. V4.30.0g removes every provisional 4.30.0f railing
+and snaps the author's 23 supplied viewpoints to the actual inner balcony
+edges. The first-floor route covers 42 linedefs/7,460 MU and the second-floor
+route covers 76 linedefs/6,228 MU. The western central opening and eastern
+stair access stay open. No vertex, sector, Thing or navigable floor was added
+or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and now has SHA-256
+`ebdc0ebd159d747e82b4dcabc434f65fe66dbd64361f9584f6ba9d55157f75b9`.
 
 Inventory text now uses `CaelumMono`, the same physically doubled monospaced
 face used by the HUD, so its character spacing no longer collapses relative to

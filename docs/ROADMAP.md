@@ -543,12 +543,14 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 
 The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The atomic
-transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0f preserves
+transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0g preserves
 the 4.30.0c compaction and 4.30.0d player-start correction, and replaces the
 provisional fixed task duration with recursive recipe display, independent
 efficiency per craftable layer and material-unit complexity time. It also
 closes the efficiency-time inversion with 1×/10×/100× work multipliers for the
-50%/75%/100% choices. The complete 129-recipe/three-tier tree audit and
+50%/75%/100% choices. V4.30.0g additionally relocates both balcony railing
+routes from the provisional exterior outline to the 23 author-specified inner
+edge positions. The complete 129-recipe/three-tier tree audit and
 exact-engine GZDoom 4.14.2 smoke pass; a
 focused author Windows/Doom II visual and gameplay matrix remains required
 before V4.31 begins.
