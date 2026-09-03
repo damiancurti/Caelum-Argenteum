@@ -1,0 +1,59 @@
+﻿archivo,categoría,tamaño_px,alfa,repetición,uso_recomendado
+CMEX01.png,Paredes exteriores,128x128,no,horizontal,paño exterior
+CMEX02.png,Paredes exteriores,128x128,sí,no,ventana abierta simple / midtexture
+CMEX03.png,Paredes exteriores,128x128,sí,no,ventana abierta ornamentada / midtexture
+CMEX04.png,Paredes exteriores,128x128,no,horizontal,paño exterior
+CMEX05.png,Paredes exteriores,128x128,no,horizontal,paño exterior
+CMST01.png,Pisos de piedra,128x128,no,2 ejes,flat de piso
+CMST02.png,Pisos de piedra,128x128,no,2 ejes,flat de piso
+CMST03.png,Pisos de piedra,128x128,no,2 ejes,flat de piso
+CMST04.png,Pisos de piedra,128x128,no,2 ejes,flat de piso
+CMST05.png,Pisos de piedra,128x128,no,2 ejes,flat de piso
+CMIN01.png,Paredes interiores,128x128,no,horizontal,pared interior
+CMIN02.png,Paredes interiores,128x128,no,horizontal,pared interior
+CMIN03.png,Paredes interiores,128x128,no,horizontal,pared interior
+CMIN04.png,Paredes interiores,128x128,no,horizontal,pared interior
+CMIN05.png,Paredes interiores,128x128,no,horizontal,pared interior
+CMWD01.png,Pisos de madera,128x128,no,2 ejes,flat de piso
+CMWD02.png,Pisos de madera,128x128,no,2 ejes,flat de piso
+CMWD03.png,Pisos de madera,128x128,no,2 ejes,flat de piso
+CMWD04.png,Pisos de madera,128x128,no,2 ejes,flat de piso
+CMWD05.png,Pisos de madera,128x128,no,2 ejes,flat de piso
+CMGR01.png,Pasto y terreno,128x128,no,2 ejes,flat de exterior
+CMGR02.png,Pasto y terreno,128x128,no,2 ejes,flat de exterior
+CMGR03.png,Pasto y terreno,128x128,no,2 ejes,flat de exterior
+CMSP01.png,Escalones de madera,128x64,no,horizontal,frente de peldaño / contrahuella
+CMSP02.png,Escalones de madera,128x64,no,horizontal,frente de peldaño / contrahuella
+CMSP03.png,Escalones de madera,128x64,no,horizontal,frente de peldaño / contrahuella
+CMSP04.png,Escalones de madera,128x64,no,horizontal,frente de peldaño / contrahuella
+CMSP05.png,Escalones de madera,128x64,no,horizontal,frente de peldaño / contrahuella
+CMDR01.png,Puertas,64x128,sí,no,puerta o parche de puerta
+CMDR02.png,Puertas,64x128,sí,no,puerta o parche de puerta
+CMDR03.png,Puertas,64x128,sí,no,puerta o parche de puerta
+CMDR04.png,Puertas,64x128,sí,no,puerta o parche de puerta
+CMDR05.png,Puertas,64x128,sí,no,puerta o parche de puerta
+CMGT01.png,Portones,128x128,sí,no,portón / midtexture
+CMGT02.png,Portones,128x128,sí,no,portón / midtexture
+CMRL01.png,Rejas y barandas,128x128,sí,no,reja o baranda / midtexture
+CMRL02.png,Rejas y barandas,128x128,sí,no,reja o baranda / midtexture
+CMRL03.png,Rejas y barandas,128x128,sí,no,reja o baranda / midtexture
+CMRL04.png,Rejas y barandas,128x128,sí,no,reja o baranda / midtexture
+CMCR01.png,Alfombras,128x128,no,no,flat decorativo
+CMCR02.png,Alfombras,128x128,no,no,flat decorativo
+CMCR03.png,Alfombras,128x128,no,no,flat decorativo
+CMPW01.png,Piscina y fuente,128x64,no,horizontal,pared interior de piscina
+CMPW02.png,Piscina y fuente,128x64,no,horizontal,pared exterior de fuente
+CMBS01.png,Establos y granero,128x128,no,no,"establo, portón o muro rural"
+CMBS02.png,Establos y granero,128x128,no,no,"establo, portón o muro rural"
+CMBS03.png,Establos y granero,128x128,no,horizontal,"establo, portón o muro rural"
+CMBS04.png,Establos y granero,128x128,no,horizontal,"establo, portón o muro rural"
+CMBS05.png,Establos y granero,128x128,no,horizontal,"establo, portón o muro rural"
+CMTB01.png,Terraza y balcón,128x128,no,2 ejes,piso o cubierta de terraza
+CMTB02.png,Terraza y balcón,128x128,no,2 ejes,piso o cubierta de terraza
+CMTB04.png,Terraza y balcón,128x128,no,2 ejes,piso o cubierta de terraza
+CMTB03.png,Terraza y balcón,128x128,sí,no,baranda de balcón / midtexture
+CMDT01.png,Detalles y decoraciones,128x128,no,no,detalle mural
+CMDT02.png,Detalles y decoraciones,128x128,no,no,detalle mural
+CMDT04.png,Detalles y decoraciones,128x128,no,no,detalle mural
+CMDT05.png,Detalles y decoraciones,128x128,no,no,detalle mural
+CMDT03.png,Detalles y decoraciones,128x128,sí,no,aplique decorativo

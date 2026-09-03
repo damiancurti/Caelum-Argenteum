@@ -8,12 +8,15 @@ class CaelumJournalOverlay : EventHandler
     Font TitleFont;
     Font TextFont;
     Font SmallFont;
+    Font InventoryFont;
 
     override void OnRegister()
     {
         TitleFont = Font.GetFont("CaelumDisplay");
         TextFont = Font.GetFont("CaelumText");
         SmallFont = Font.GetFont("CaelumSmall");
+        // El inventario comparte exactamente la métrica monoespaciada del HUD.
+        InventoryFont = Font.GetFont("CaelumMono");
         SetOrder(100);
     }
 
@@ -447,7 +450,7 @@ class CaelumJournalOverlay : EventHandler
             );
         }
         DrawTextLine(
-            SmallFont, Font.CR_GOLD, 52.0, 151.0,
+            InventoryFont, Font.CR_GOLD, 52.0, 151.0,
             String.Format(
                 "%s · %d",
                 StringTable.Localize(
@@ -504,7 +507,7 @@ class CaelumJournalOverlay : EventHandler
                 );
             }
             DrawTextLine(
-                SmallFont,
+                InventoryFont,
                 row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,
                 52.0,
                 170.0 + row * 21.0,
@@ -515,17 +518,17 @@ class CaelumJournalOverlay : EventHandler
         if (localPlayer.FormalInventoryEntryCount <= 0)
         {
             DrawTextLine(
-                SmallFont, Font.CR_GRAY, 52.0, 190.0,
+                InventoryFont, Font.CR_GRAY, 52.0, 190.0,
                 StringTable.Localize("CA_JOURNAL_INVENTORY_EMPTY", false)
             );
         }
 
-        DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 170.0,
+        DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 170.0,
             String.Format("%s: %.3f / %.3f",
                 StringTable.Localize("CA_HUD_LOAD", false),
                 localPlayer.HUDCarriedWeight,
                 localPlayer.HUDCarryCapacity));
-        DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 190.0,
+        DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 190.0,
             String.Format("%s: %d / %d",
                 StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
                 localPlayer.MagicBoxUsedSlots,
@@ -534,7 +537,7 @@ class CaelumJournalOverlay : EventHandler
             && selectedRow < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
             && localPlayer.FormalInventoryRowKind[selectedRow] >= 0)
         {
-            DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 220.0,
+            DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 220.0,
                 String.Format("%s: %.3f",
                     StringTable.Localize(
                         "CA_JOURNAL_INVENTORY_WEIGHT", false
@@ -543,7 +546,7 @@ class CaelumJournalOverlay : EventHandler
             if (localPlayer.FormalInventoryRowMaximumDurability[selectedRow]
                 > 0)
             {
-                DrawTextLine(SmallFont, Font.CR_WHITE, 414.0, 240.0,
+                DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 240.0,
                     String.Format("%s: %d / %d",
                         StringTable.Localize(
                             "CA_JOURNAL_INVENTORY_DURABILITY", false
@@ -555,7 +558,7 @@ class CaelumJournalOverlay : EventHandler
             }
         }
         DrawTextLine(
-            SmallFont,
+            InventoryFont,
             localPlayer.LastEquipmentAction
                     == CaelumConstants.EQUIPMENT_ACTION_NONE
                 ? Font.CR_GRAY : Font.CR_GOLD,
@@ -567,7 +570,7 @@ class CaelumJournalOverlay : EventHandler
         if (localPlayer.CraftingTaskActive)
         {
             DrawTextLine(
-                SmallFont, Font.CR_CYAN, 414.0, 278.0,
+                InventoryFont, Font.CR_CYAN, 414.0, 278.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
                     StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
@@ -1109,35 +1112,41 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
         {
             SendNetworkEvent("ca_inventory_next");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_UpArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
         {
             SendNetworkEvent("ca_inventory_previous");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 0
             && (e.KeyChar == 102 || e.KeyChar == 70
                 || e.KeyScan == InputEvent.Key_Pad_Y))
         {
             SendNetworkEvent("ca_inventory_filter");
+            SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_Enter
                 || e.KeyScan == InputEvent.Key_Pad_A))
         {
             SendNetworkEvent("ca_inventory_activate");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 0
             && (e.KeyChar == 99 || e.KeyChar == 67
                 || e.KeyScan == InputEvent.Key_Pad_X))
         {
             SendNetworkEvent("ca_inventory_storage");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 0
             && (e.KeyChar == 100 || e.KeyChar == 68))
         {
             SendNetworkEvent("ca_inventory_drop");
+            SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_RightArrow
@@ -1148,10 +1157,12 @@ class CaelumJournalOverlay : EventHandler
                     >= CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1)
             {
                 SetJournalPage(1);
+                SendNetworkEvent("ca_journal_menu_move_sound");
             }
             else
             {
                 SendNetworkEvent("ca_inventory_filter");
+                SendNetworkEvent("ca_journal_menu_move_sound");
             }
         }
         else if (currentPage == 0
@@ -1161,6 +1172,7 @@ class CaelumJournalOverlay : EventHandler
             if (localPlayer != null && localPlayer.FormalInventoryFilter > 0)
             {
                 SendNetworkEvent("ca_inventory_filter_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
             }
         }
         else if (currentPage == 3 && craftingSession
@@ -1318,6 +1330,22 @@ class CaelumJournalOverlay : EventHandler
         {
             requestingPlayer.DropFormalInventorySelection();
         }
+        else if (e.Name == "ca_journal_menu_move_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/menu_move",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
+        }
+        else if (e.Name == "ca_journal_menu_select_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/menu_select",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
+        }
         else if (e.Name == "ca_crafting_page_turn_sound")
         {
             requestingPlayer.A_StartSound(
@@ -1395,7 +1423,8 @@ class CaelumJournalOverlay : EventHandler
     override void RenderOverlay(RenderEvent event)
     {
         if (!IsJournalOpen() || consoleplayer < 0
-            || TitleFont == null || TextFont == null || SmallFont == null)
+            || TitleFont == null || TextFont == null || SmallFont == null
+            || InventoryFont == null)
         {
             return;
         }

@@ -418,11 +418,11 @@ class CaelumConstants : Object
     const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 75;
     const CRAFTING_EFFICIENCY_PERFECT_PERCENT = 100;
     const CRAFTING_EFFICIENCY_FAST_TIME_FACTOR = 1.0;
-    // Desde 4.30.0e la eficiencia sigue describiendo rendimiento/merma. El
-    // tiempo depende de las unidades realmente empleadas, de la complejidad
-    // de cada paso y de Destreza Tipo 1; no usa un factor temporal separado.
-    const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 1.0;
-    const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 1.0;
+    // Cada grado adicional multiplica por diez el trabajo temporal. La merma
+    // sigue calculándose por separado, por lo que una eficiencia mayor nunca
+    // se vuelve accidentalmente más rápida por emplear menos material.
+    const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 10.0;
+    const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 100.0;
 
     // Procesamiento por lotes. Los recursos primarios rinden 50 % (2 -> 1).
     // Las aleaciones conservan masa: bronce 90/10 y acero histórico de arma

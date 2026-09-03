@@ -1,9 +1,52 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Mansion textures v2, balcony railings and interaction feedback 4.30.0f
+
+**Implemented; exact-engine load, texture-resource audit, MAP01 railing audit,
+crafting formula audit and visual exterior pass completed in GZDoom 4.14.2;
+focused author Windows/Doom II acceptance pending**
+
+The mansion environment now uses the author-supplied v2 package as one
+canonical 58-PNG set. The previous 85-file collection is not mixed into the
+new folder. `TEXTURES` registers every supplied exterior wall, stone floor,
+interior wall, wood floor, terrain, stair, door, gate, railing, carpet,
+pool/fountain wall, stable, terrace and detail resource through the project's
+Windows-safe `graphics/caelum/textures/mansion` path. Historical MAP01 names
+that the v2 package retires resolve only through explicit v2-based
+compatibility composites; no retired PNG remains in the complete PK3.
+
+MAP01 places an iron railing derived from supplied `CMRL02` on existing balcony
+boundary linedefs. Its logical module is 32×48 MU. Three one-pixel-offset
+layers preserve the supplied image while keeping its fine bars visible under
+world-texture filtering. The first-floor route covers 42 linedefs/7,546 MU and
+the second-floor route covers 116 linedefs/6,662 MU. Real openings at doors,
+bridges and stairs stay open. No vertex, sector, Thing or navigable floor was
+added or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and now has
+SHA-256 `45b7178613ce3d741660caf75af6572a2405106806021382c6b4c99bb3240867`.
+
+Inventory text now uses `CaelumMono`, the same physically doubled monospaced
+face used by the HUD, so its character spacing no longer collapses relative to
+the surrounding interface. Inventory movement/filter events play
+`caelum/ui/menu_move`; accepted inventory, storage and drop actions play
+`caelum/ui/menu_select`. These are the same logical events used by the main
+Caelum character menu and remain subject to their existing sound definitions.
+
+The per-material crafting model from 4.30.0e is retained, but efficiency now
+also carries an explicit time multiplier: 50%=1×, 75%=10× and 100%=100×. The
+factor is applied independently to every executed recipe layer after material
+waste and operation complexity are known, and before Dexterity Type-1 speed is
+applied. For an otherwise identical 100-unit layer, material use remains
+200/134/100 while work scales as 200/1,340/10,000 before Dexterity. Higher
+efficiency therefore cannot become faster merely because it consumes fewer
+materials. Creation, direct recursive routes and repair use the selected
+layer/tier factor; disassembly has no efficiency selection and remains on the
+1× baseline.
+
 ## Recursive layered crafting and material work 4.30.0e
 
 **Implemented; exact-engine load, formula audit, complete recipe-tree audit and
-visual capture passed in GZDoom 4.14.2; focused author Windows/Doom II matrix
+visual capture passed in GZDoom 4.14.2; efficiency-time relation superseded by
+the 4.30.0f 1×/10×/100× regime above; focused author Windows/Doom II matrix
 pending**
 
 Journal → Crafts now expands the selected recipe through every producible

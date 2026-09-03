@@ -1,0 +1,466 @@
+[
+  {
+    "filename": "CMEX01.png",
+    "category": "Paredes exteriores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "paño exterior"
+  },
+  {
+    "filename": "CMEX02.png",
+    "category": "Paredes exteriores",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "ventana abierta simple / midtexture"
+  },
+  {
+    "filename": "CMEX03.png",
+    "category": "Paredes exteriores",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "ventana abierta ornamentada / midtexture"
+  },
+  {
+    "filename": "CMEX04.png",
+    "category": "Paredes exteriores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "paño exterior"
+  },
+  {
+    "filename": "CMEX05.png",
+    "category": "Paredes exteriores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "paño exterior"
+  },
+  {
+    "filename": "CMST01.png",
+    "category": "Pisos de piedra",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMST02.png",
+    "category": "Pisos de piedra",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMST03.png",
+    "category": "Pisos de piedra",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMST04.png",
+    "category": "Pisos de piedra",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMST05.png",
+    "category": "Pisos de piedra",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMIN01.png",
+    "category": "Paredes interiores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior"
+  },
+  {
+    "filename": "CMIN02.png",
+    "category": "Paredes interiores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior"
+  },
+  {
+    "filename": "CMIN03.png",
+    "category": "Paredes interiores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior"
+  },
+  {
+    "filename": "CMIN04.png",
+    "category": "Paredes interiores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior"
+  },
+  {
+    "filename": "CMIN05.png",
+    "category": "Paredes interiores",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior"
+  },
+  {
+    "filename": "CMWD01.png",
+    "category": "Pisos de madera",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMWD02.png",
+    "category": "Pisos de madera",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMWD03.png",
+    "category": "Pisos de madera",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMWD04.png",
+    "category": "Pisos de madera",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMWD05.png",
+    "category": "Pisos de madera",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de piso"
+  },
+  {
+    "filename": "CMGR01.png",
+    "category": "Pasto y terreno",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de exterior"
+  },
+  {
+    "filename": "CMGR02.png",
+    "category": "Pasto y terreno",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de exterior"
+  },
+  {
+    "filename": "CMGR03.png",
+    "category": "Pasto y terreno",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "flat de exterior"
+  },
+  {
+    "filename": "CMSP01.png",
+    "category": "Escalones de madera",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "frente de peldaño / contrahuella"
+  },
+  {
+    "filename": "CMSP02.png",
+    "category": "Escalones de madera",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "frente de peldaño / contrahuella"
+  },
+  {
+    "filename": "CMSP03.png",
+    "category": "Escalones de madera",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "frente de peldaño / contrahuella"
+  },
+  {
+    "filename": "CMSP04.png",
+    "category": "Escalones de madera",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "frente de peldaño / contrahuella"
+  },
+  {
+    "filename": "CMSP05.png",
+    "category": "Escalones de madera",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "frente de peldaño / contrahuella"
+  },
+  {
+    "filename": "CMDR01.png",
+    "category": "Puertas",
+    "size": "64x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "puerta o parche de puerta"
+  },
+  {
+    "filename": "CMDR02.png",
+    "category": "Puertas",
+    "size": "64x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "puerta o parche de puerta"
+  },
+  {
+    "filename": "CMDR03.png",
+    "category": "Puertas",
+    "size": "64x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "puerta o parche de puerta"
+  },
+  {
+    "filename": "CMDR04.png",
+    "category": "Puertas",
+    "size": "64x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "puerta o parche de puerta"
+  },
+  {
+    "filename": "CMDR05.png",
+    "category": "Puertas",
+    "size": "64x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "puerta o parche de puerta"
+  },
+  {
+    "filename": "CMGT01.png",
+    "category": "Portones",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "portón / midtexture"
+  },
+  {
+    "filename": "CMGT02.png",
+    "category": "Portones",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "portón / midtexture"
+  },
+  {
+    "filename": "CMRL01.png",
+    "category": "Rejas y barandas",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "reja o baranda / midtexture"
+  },
+  {
+    "filename": "CMRL02.png",
+    "category": "Rejas y barandas",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "reja o baranda / midtexture"
+  },
+  {
+    "filename": "CMRL03.png",
+    "category": "Rejas y barandas",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "reja o baranda / midtexture"
+  },
+  {
+    "filename": "CMRL04.png",
+    "category": "Rejas y barandas",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "reja o baranda / midtexture"
+  },
+  {
+    "filename": "CMCR01.png",
+    "category": "Alfombras",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "flat decorativo"
+  },
+  {
+    "filename": "CMCR02.png",
+    "category": "Alfombras",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "flat decorativo"
+  },
+  {
+    "filename": "CMCR03.png",
+    "category": "Alfombras",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "flat decorativo"
+  },
+  {
+    "filename": "CMPW01.png",
+    "category": "Piscina y fuente",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared interior de piscina"
+  },
+  {
+    "filename": "CMPW02.png",
+    "category": "Piscina y fuente",
+    "size": "128x64",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "pared exterior de fuente"
+  },
+  {
+    "filename": "CMBS01.png",
+    "category": "Establos y granero",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "establo, portón o muro rural"
+  },
+  {
+    "filename": "CMBS02.png",
+    "category": "Establos y granero",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "establo, portón o muro rural"
+  },
+  {
+    "filename": "CMBS03.png",
+    "category": "Establos y granero",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "establo, portón o muro rural"
+  },
+  {
+    "filename": "CMBS04.png",
+    "category": "Establos y granero",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "establo, portón o muro rural"
+  },
+  {
+    "filename": "CMBS05.png",
+    "category": "Establos y granero",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "horizontal",
+    "use": "establo, portón o muro rural"
+  },
+  {
+    "filename": "CMTB01.png",
+    "category": "Terraza y balcón",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "piso o cubierta de terraza"
+  },
+  {
+    "filename": "CMTB02.png",
+    "category": "Terraza y balcón",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "piso o cubierta de terraza"
+  },
+  {
+    "filename": "CMTB04.png",
+    "category": "Terraza y balcón",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "2 ejes",
+    "use": "piso o cubierta de terraza"
+  },
+  {
+    "filename": "CMTB03.png",
+    "category": "Terraza y balcón",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "baranda de balcón / midtexture"
+  },
+  {
+    "filename": "CMDT01.png",
+    "category": "Detalles y decoraciones",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "detalle mural"
+  },
+  {
+    "filename": "CMDT02.png",
+    "category": "Detalles y decoraciones",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "detalle mural"
+  },
+  {
+    "filename": "CMDT04.png",
+    "category": "Detalles y decoraciones",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "detalle mural"
+  },
+  {
+    "filename": "CMDT05.png",
+    "category": "Detalles y decoraciones",
+    "size": "128x128",
+    "alpha": "no",
+    "tile": "no",
+    "use": "detalle mural"
+  },
+  {
+    "filename": "CMDT03.png",
+    "category": "Detalles y decoraciones",
+    "size": "128x128",
+    "alpha": "sí",
+    "tile": "no",
+    "use": "aplique decorativo"
+  }
+]

@@ -13,50 +13,57 @@ Flat "CASWRFLR", 256, 256
     Patch "graphics/caelum/textures/sewer/CASWRFLR.png", 0, 0
 }
 
-// Superficies arquitectónicas de la mansión. Los mismos PNG también se usan
-// como sprites de galería, pero los planos y paredes del mapa necesitan una
-// declaración propia para que las losas 3D se rendericen en ambos lados.
-Flat "CMWD01", 128, 128
+// Mansión v2: 58 recursos canónicos recompuestos, sin rótulos, divisiones ni
+// fragmentos de celdas vecinas. Se conserva la ruta histórica del proyecto
+// para no mover otros recursos durante este parche.
+Texture "CMEX01", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMWD01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX01.png", 0, 0
 }
 
-Flat "CMCL01", 128, 128
+Texture "CMEX02", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMCL01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX02.png", 0, 0
 }
 
-// Pasto y tierra originales para el terreno exterior de MAP01.
-Flat "CMGR01", 128, 128
+Texture "CMEX03", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMGR01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX03.png", 0, 0
 }
 
-// Variantes separadas: jardín cuidado, césped desgastado y terreno seco.
-Flat "CMGR01A", 128, 128
+Texture "CMEX04", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMGR01A.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX04.png", 0, 0
 }
 
-Flat "CMGR01B", 128, 128
+Texture "CMEX05", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMGR01B.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX05.png", 0, 0
 }
 
-Flat "CMGR01C", 128, 128
+Flat "CMST01", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMGR01C.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMST01.png", 0, 0
 }
 
-// Cubierta inclinada exterior del cuarto de segundo piso.
-Flat "CMRF01", 128, 128
+Flat "CMST02", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMRF01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMST02.png", 0, 0
 }
 
-Flat "CMIN01", 128, 128
+Flat "CMST03", 128, 128
 {
-    Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMST03.png", 0, 0
+}
+
+Flat "CMST04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMST04.png", 0, 0
+}
+
+Flat "CMST05", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMST05.png", 0, 0
 }
 
 Texture "CMIN01", 128, 128
@@ -64,9 +71,315 @@ Texture "CMIN01", 128, 128
     Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
 }
 
+Texture "CMIN02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN02.png", 0, 0
+}
+
+Texture "CMIN03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, 0
+}
+
+Texture "CMIN04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN04.png", 0, 0
+}
+
+Texture "CMIN05", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN05.png", 0, 0
+}
+
+// MAP01 también usa CMIN01 en planos de control de sus losas 3D.
+Flat "CMIN01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMIN01.png", 0, 0
+}
+
+Flat "CMWD01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD01.png", 0, 0
+}
+
+Flat "CMWD02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD02.png", 0, 0
+}
+
+Flat "CMWD03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD03.png", 0, 0
+}
+
+Flat "CMWD04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD04.png", 0, 0
+}
+
+Flat "CMWD05", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD05.png", 0, 0
+}
+
+// Algunas caras verticales de control conservan el nombre CMWD01.
+Texture "CMWD01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMWD01.png", 0, 0
+}
+
+Flat "CMGR01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01.png", 0, 0
+}
+
+Flat "CMGR02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR02.png", 0, 0
+}
+
+Flat "CMGR03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR03.png", 0, 0
+}
+
+Texture "CMSP01", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMSP01.png", 0, 0
+}
+
+Texture "CMSP02", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMSP02.png", 0, 0
+}
+
+Texture "CMSP03", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMSP03.png", 0, 0
+}
+
+Texture "CMSP04", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMSP04.png", 0, 0
+}
+
+Texture "CMSP05", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMSP05.png", 0, 0
+}
+
+Texture "CMDR01", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR01.png", 0, 0
+}
+
+Texture "CMDR02", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR02.png", 0, 0
+}
+
 Texture "CMDR03", 64, 128
 {
     Patch "graphics/caelum/textures/mansion/CMDR03.png", 0, 0
+}
+
+Texture "CMDR04", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR04.png", 0, 0
+}
+
+Texture "CMDR05", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR05.png", 0, 0
+}
+
+Flat "CMDR03", 64, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDR03.png", 0, 0
+}
+
+Texture "CMGT01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGT01.png", 0, 0
+}
+
+Texture "CMGT02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGT02.png", 0, 0
+}
+
+Texture "CMRL01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMRL01.png", 0, 0
+}
+
+Texture "CMRL02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMRL02.png", 0, 0
+}
+
+Texture "CMRL03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMRL03.png", 0, 0
+}
+
+Texture "CMRL04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMRL04.png", 0, 0
+}
+
+// Variante repetible para los balcones existentes. Recorta el margen alfa de
+// CMRL02 y superpone tres copias separadas por un píxel. El pequeño refuerzo
+// evita que los barrotes desaparezcan con el filtrado a distancia, sin tocar
+// el PNG canónico suministrado ni cambiar el módulo final de 32x48 MU.
+Texture "CMRLBAL", 90, 124
+{
+    XScale 2.8125
+    YScale 2.583333
+    Patch "graphics/caelum/textures/mansion/CMRL02.png", -20, -2
+    Patch "graphics/caelum/textures/mansion/CMRL02.png", -19, -2
+    Patch "graphics/caelum/textures/mansion/CMRL02.png", -18, -2
+}
+
+Flat "CMCR01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMCR01.png", 0, 0
+}
+
+Flat "CMCR02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMCR02.png", 0, 0
+}
+
+Flat "CMCR03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMCR03.png", 0, 0
+}
+
+Texture "CMPW01", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMPW01.png", 0, 0
+}
+
+Texture "CMPW02", 128, 64
+{
+    Patch "graphics/caelum/textures/mansion/CMPW02.png", 0, 0
+}
+
+Texture "CMBS01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMBS01.png", 0, 0
+}
+
+Texture "CMBS02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMBS02.png", 0, 0
+}
+
+Texture "CMBS03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMBS03.png", 0, 0
+}
+
+Texture "CMBS04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMBS04.png", 0, 0
+}
+
+Texture "CMBS05", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMBS05.png", 0, 0
+}
+
+Flat "CMTB01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB01.png", 0, 0
+}
+
+Flat "CMTB02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB02.png", 0, 0
+}
+
+Flat "CMTB04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB04.png", 0, 0
+}
+
+Texture "CMTB03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB03.png", 0, 0
+}
+
+Texture "CMDT01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDT01.png", 0, 0
+}
+
+Texture "CMDT02", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDT02.png", 0, 0
+}
+
+Texture "CMDT03", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDT03.png", 0, 0
+}
+
+Texture "CMDT04", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDT04.png", 0, 0
+}
+
+Texture "CMDT05", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMDT05.png", 0, 0
+}
+
+// Alias de transición para los cuatro nombres retirados que MAP01 todavía usa.
+// Todos se componen sólo con imágenes canónicas de la mansión v2.
+Flat "CMGR01A", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR01.png", 0, 0
+}
+
+Flat "CMGR01B", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR02.png", 0, 0
+}
+
+Flat "CMGR01C", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMGR03.png", 0, 0
+}
+
+Flat "CMRF01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB04.png", 0, 0
+}
+
+Texture "CMRF01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMTB04.png", 0, 0
+}
+
+Texture "CMWV01", 128, 128
+{
+    Patch "graphics/caelum/textures/mansion/CMST01.png", 0, 0
+}
+
+// El paquete v2 no incorpora una familia de cielorrasos. Se deriva un plano
+// neutro de la zona de yeso de CMIN03, sin conservar el PNG CMCL01 retirado.
+Flat "CMCL01", 128, 80
+{
+    YScale 0.625
+    Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, -8
+}
+
+Texture "CMCL01", 128, 80
+{
+    YScale 0.625
+    Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, -8
 }
 
 Sprite "CDLSA0", 64, 128
@@ -90,7 +403,7 @@ Sprite "CSUFA0", 128, 128
 Sprite "CSURA0", 128, 128
 {
     Offset 64, 64
-    Patch "graphics/caelum/textures/mansion/CMCL01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, 0
 }
 
 Sprite "CDMYA0", 48, 72
@@ -805,12 +1118,6 @@ Sprite "JAVLA8", 128, 128
     Patch "sprites/caelum/projectiles/physical/JAVLA8.png", 0, 0
 }
 
-// Adoquín grande original del atlas de mansión. La ruta está dentro de
-// graphics para no colisionar en Windows con este lump raíz TEXTURES.
-Texture "CMWV01", 128, 128
-{
-    Patch "graphics/caelum/textures/mansion/CMWV01.png", 0, 0
-}
 // Toro cuadrúpedo: ocho rotaciones limpias y un cadáver sin rotación.
 Sprite "BULLA1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA1.png", 0, 0 }
 Sprite "BULLA2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA2.png", 0, 0 }

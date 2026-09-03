@@ -1,0 +1,77 @@
+CAELUM ARGENTEUM — MIGRACIÓN DEL PAQUETE DE MANSIÓN
+
+El paquete anterior contenía 85 PNG. Este paquete contiene 58 piezas canónicas.
+Para evitar que sobrevivan recortes defectuosos, reemplazar la carpeta completa graphics/mansion/.
+
+Archivos anteriores que ya no forman parte del conjunto canónico:
+- CMCL01.png
+- CMCL02.png
+- CMCL03.png
+- CMCL04.png
+- CMCL05.png
+- CMCL06.png
+- CMCR04.png
+- CMCR05.png
+- CMCR06.png
+- CMDM01.png
+- CMDM02.png
+- CMDM03.png
+- CMDM04.png
+- CMDM05.png
+- CMDM06.png
+- CMDM07.png
+- CMEX06.png
+- CMFD01.png
+- CMFD02.png
+- CMFD03.png
+- CMFD04.png
+- CMGR01A.png
+- CMGR01B.png
+- CMGR01C.png
+- CMGR04.png
+- CMPC01.png
+- CMPF01.png
+- CMPF02.png
+- CMRF01.png
+- CMRF02.png
+- CMRF03.png
+- CMRF04.png
+- CMST06.png
+- CMST07.png
+- CMST08.png
+- CMTR01.png
+- CMTR02.png
+- CMTR03.png
+- CMTR04.png
+- CMTR05.png
+- CMTR06.png
+- CMWA01.png
+- CMWA02.png
+- CMWA03.png
+- CMWD06.png
+- CMWD07.png
+- CMWD08.png
+- CMWV01.png
+
+Nombres nuevos incorporados:
+- CMDT01.png
+- CMDT02.png
+- CMDT03.png
+- CMDT04.png
+- CMDT05.png
+- CMGT01.png
+- CMGT02.png
+- CMPW02.png
+- CMRL01.png
+- CMRL02.png
+- CMRL03.png
+- CMRL04.png
+- CMSP01.png
+- CMSP02.png
+- CMSP03.png
+- CMSP04.png
+- CMSP05.png
+- CMTB01.png
+- CMTB02.png
+- CMTB03.png
+- CMTB04.png

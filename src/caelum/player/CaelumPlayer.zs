@@ -4366,13 +4366,15 @@ class CaelumPlayer : DoomPlayer
     }
 
     double GetCraftingMaterialWorkSeconds(
-        int employedMaterialUnits, int complexityTics
+        int employedMaterialUnits, int complexityTics,
+        int efficiencyIndex
     )
     {
         return CaelumCraftingRules.GetMaterialWorkSeconds(
             employedMaterialUnits,
             complexityTics,
-            GetCraftingDexterityPercent()
+            GetCraftingDexterityPercent(),
+            efficiencyIndex
         );
     }
 
@@ -4677,7 +4679,7 @@ class CaelumPlayer : DoomPlayer
         CraftingBlueprintNodeEfficiency[0] = CraftingEfficiencyIndex;
         CraftingBlueprintNodeComplexityTics[0] = rootComplexity;
         CraftingBlueprintNodeSeconds[0] = GetCraftingMaterialWorkSeconds(
-            rootInputs, rootComplexity
+            rootInputs, rootComplexity, CraftingEfficiencyIndex
         );
         CraftingBlueprintNodeExecuted[0] = true;
 
@@ -4717,7 +4719,8 @@ class CaelumPlayer : DoomPlayer
             CraftingBlueprintNodeSeconds[node] =
                 GetCraftingMaterialWorkSeconds(
                     CraftingBlueprintNodeInputUnits[node],
-                    CraftingBlueprintNodeComplexityTics[node]
+                    CraftingBlueprintNodeComplexityTics[node],
+                    CraftingBlueprintNodeEfficiency[node]
                 );
             CraftingBlueprintFullSeconds +=
                 CraftingBlueprintNodeSeconds[node];
@@ -4911,7 +4914,8 @@ class CaelumPlayer : DoomPlayer
         CraftingPlanStepInputUnits[step] += employedMaterialUnits;
         CraftingPlanStepSeconds[step] = GetCraftingMaterialWorkSeconds(
             CraftingPlanStepInputUnits[step],
-            CraftingPlanStepComplexityTics[step]
+            CraftingPlanStepComplexityTics[step],
+            CraftingPlanStepEfficiency[step]
         );
         MarkCraftingBlueprintStepExecuted(
             CraftingPlanStepRecipe[step], CraftingPlanStepTier[step]
@@ -6039,7 +6043,8 @@ class CaelumPlayer : DoomPlayer
             GetCurrentCraftingInputUnits(),
             CaelumCraftingRules.GetRecipeComplexityTics(
                 CraftingSelectionRecipe
-            )
+            ),
+            CraftingEfficiencyIndex
         );
 
         // El árbol completo permanece visible aunque ya existan componentes;
@@ -8608,12 +8613,14 @@ class CaelumPlayer : DoomPlayer
     }
 
     double GetEquipmentTaskSeconds(
-        CaelumEquipmentItem item, int employedMaterialUnits
+        CaelumEquipmentItem item, int employedMaterialUnits,
+        int efficiencyIndex
     )
     {
         return GetCraftingMaterialWorkSeconds(
             employedMaterialUnits,
-            GetEquipmentTaskComplexityTics(item)
+            GetEquipmentTaskComplexityTics(item),
+            efficiencyIndex
         );
     }
 
@@ -8680,7 +8687,8 @@ class CaelumPlayer : DoomPlayer
         StartPreparedCraftingTask(
             CaelumConstants.CRAFTING_TASK_REPAIR,
             GetEquipmentTaskSeconds(
-                target, GetCraftingTaskReservedUnitTotal()
+                target, GetCraftingTaskReservedUnitTotal(),
+                CraftingEfficiencyIndex
             )
         );
     }
@@ -8751,7 +8759,8 @@ class CaelumPlayer : DoomPlayer
                 target,
                 CaelumCraftingRules.GetRoundedMaterialUnits(
                     GetEquipmentTaskWeight(target), 1.0
-                )
+                ),
+                0
             )
         );
     }

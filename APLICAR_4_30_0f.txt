@@ -1,0 +1,15 @@
+CAELUM ARGENTEUM 4.30.0f — APLICACIÓN
+
+Opción recomendada para probar:
+- Ejecutar directamente el PK3 completo 4.30.0f.
+
+Parche incremental para el árbol de desarrollo 4.30.0e:
+1. Extraer el ZIP sobre la raíz del proyecto.
+2. Ejecutar:
+   python tools/migrate_4_30_0f_mansion_textures.py
+3. Reconstruir:
+   python tools/build_pk3.py src build/caelum_argenteum_dev.pk3
+
+El migrador no borra los 48 PNG retirados: los mueve a
+build/mansion_pre_4_30_0f_backup para que puedan recuperarse. El PK3 completo
+ya contiene únicamente los 58 PNG canónicos v2 y no requiere migración.

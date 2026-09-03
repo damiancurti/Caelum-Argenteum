@@ -1,13 +1,13 @@
 # V4.30: refinado, componentes, reparación y desarme
 
 **Estado:** régimen por material y eficiencia por capas implementado en el
-candidato acumulativo 4.30.0e; carga, auditoría funcional y captura verificadas
+candidato acumulativo 4.30.0f; carga, auditoría funcional y captura verificadas
 en GZDoom 4.14.2. Validación manual del autor en Windows/Doom II pendiente.
 
 Este documento fija las reglas introducidas en V4.30.0b y actualizadas en
-V4.30.0e. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
+V4.30.0f. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
 componentes, para un total persistente de 129. MAP01 y sus materiales de prueba
-no cambian en 4.30.0e.
+no cambian por el régimen temporal de 4.30.0f.
 
 ## 1. Unidades, rendimiento y tiempo
 
@@ -49,12 +49,26 @@ la complejidad de la operación:
 | Detallada | 3 | Armaduras, escudos, guanteletes gigantes y ballesta |
 | Delicada/compleja | 4 | Esencias, refinado de gemas, componentes de joyería, armas elementales, sellos, amuletos y carabina |
 
+Cada eficiencia añade además un factor de trabajo independiente:
+
+| Eficiencia | Factor temporal |
+|---:|---:|
+| 50% | 1× |
+| 75% | 10× |
+| 100% | 100× |
+
+El factor se aplica después de resolver las unidades realmente empleadas. Por
+ejemplo, una entrada teórica de 100 unidades consume 200/134/100 y aporta
+200/1.340/10.000 unidades de trabajo respectivamente antes de Destreza. Así la
+reducción de merma nunca vuelve más rápida una fabricación de mayor eficiencia.
+
 La duración de una capa y de la tarea completa es:
 
 ```text
 Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2
 LayerSeconds = EmployedMaterialUnits * ComplexityTicsPerMaterial
-             / TICRATE * 100 / Type1DexterityPercent
+             / TICRATE * EfficiencyTimeFactor
+             * 100 / Type1DexterityPercent
 TaskSeconds = Sum(ExecutedLayerSeconds)
 ```
 
@@ -221,6 +235,7 @@ complejidad del objeto:
 RepairInputWithWaste[i] = Ceil(RepairInput[i] * 100 / EfficiencyPercent)
 RepairSeconds = Sum(RepairInputWithWaste)
               * ItemComplexityTics / TICRATE
+              * EfficiencyTimeFactor
               * 100 / Type1DexterityPercent
 ```
 
@@ -288,13 +303,15 @@ punto de integración sin inventar esa correspondencia.
 
 Las reglas transaccionales necesarias para V4.30 están cerradas. La base
 atómica se implementó en 4.30.0b y el tiempo por material, el árbol recursivo y
-la eficiencia independiente por capa se implementaron en 4.30.0e.
+la eficiencia independiente por capa se implementaron en 4.30.0e. El factor
+temporal 1×/10×/100× que evita la inversión por menor consumo quedó fijado en
+4.30.0f.
 Las entradas quedan reservadas contra otros usos durante la tarea, se consumen
 sólo al completar y se liberan íntegramente al cancelar. La correspondencia
 exacta entre recetas y cartas no es una decisión pendiente de esta transacción:
 queda deliberadamente aplazada hasta la implementación del sistema de Tarot.
 
-## 8. Contrato de prueba de 4.30.0e
+## 8. Contrato de prueba de 4.30.0f
 
 MAP01 contiene seis cúmulos interiores con una pila de 10.000 unidades por
 cada ID de material. También incluye los tiers 1/2/3 de madera y de las cinco
@@ -345,7 +362,8 @@ La matriz enfocada debe comprobar además:
 
 1. Que no aparezca ninguna clave `CA_*` sin localizar en Inventario u Oficios.
 2. Que 50%, 75% y 100% cambien materiales y vista previa sin alterar las
-   elecciones de otras capas.
+   elecciones de otras capas, y que sus factores temporales sean exactamente
+   1×, 10× y 100× antes de Destreza.
 3. Que los lotes x1/x10/x100/x1000 escalen el tiempo por las unidades de
    material realmente empleadas.
 4. Que una ruta directa desde materias primas muestre componentes y materias

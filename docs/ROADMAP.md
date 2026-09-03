@@ -543,11 +543,13 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 
 The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The atomic
-transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0e preserves
+transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0f preserves
 the 4.30.0c compaction and 4.30.0d player-start correction, and replaces the
 provisional fixed task duration with recursive recipe display, independent
-efficiency per craftable layer and material-unit complexity time. The complete
-129-recipe/three-tier tree audit and exact-engine GZDoom 4.14.2 smoke pass; a
+efficiency per craftable layer and material-unit complexity time. It also
+closes the efficiency-time inversion with 1×/10×/100× work multipliers for the
+50%/75%/100% choices. The complete 129-recipe/three-tier tree audit and
+exact-engine GZDoom 4.14.2 smoke pass; a
 focused author Windows/Doom II visual and gameplay matrix remains required
 before V4.31 begins.
 
@@ -557,7 +559,8 @@ before V4.31 begins.
   waste while still completing the object. Every craftable layer retains its
   own choice and updates the live route preview immediately.
 - Charge 1/2/3/4 tics per employed material unit according to operation
-  complexity, then multiply by `100 / DexterityType1Percent`. Dexterity 0 is
+  complexity, multiply independently by 1×/10×/100× at 50%/75%/100%
+  efficiency, then multiply by `100 / DexterityType1Percent`. Dexterity 0 is
   100%; Dexterity 100 is 5150% and therefore 51.5 times faster.
 - Fabricate every equipment component from exactly one base-material type;
   component recipes never mix multiple base materials.

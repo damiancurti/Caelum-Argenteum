@@ -16,7 +16,7 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0e. It preserves the V4.30.0b
+The current cumulative candidate is V4.30.0f. It preserves the V4.30.0b
 gameplay correction, V4.30.0c MAP01 compaction and V4.30.0d player-start crash
 repair, then replaces the fixed crafting-test duration with material work.
 Every recipe now exposes its complete recursive component-to-raw-material tree
@@ -30,7 +30,10 @@ multiplied by `100 / Type1DexterityPercent`, where
 `Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2`. Indivisible
 assembly and repair always produce the complete result and represent lower
 efficiency as extra material waste. Processing/component batches retain their
-50%/75%/100% yield choices. Closing the Journal, leaving the station radius,
+50%/75%/100% yield choices. V4.30.0f additionally multiplies work time by
+1×/10×/100× at 50%/75%/100% efficiency, so improved precision always costs
+substantially more time even though it wastes fewer materials. Closing the
+Journal, leaving the station radius,
 losing required infrastructure or entering combat pauses the clock without
 releasing reserved inputs; only explicit cancellation ends the task.
 
@@ -45,6 +48,15 @@ Numeric slot 2 cycles exact equipped small-weapon instances, including several
 otherwise identical daggers with different `ItemId`, durability or finish.
 Doom's inherited starting Pistol and Clip are excluded declaratively; Fist
 remains the valid unarmed fallback.
+
+The Inventory page now uses the same physically doubled monospaced font as the
+HUD instead of the tighter menu face. Selection movement and accepted actions
+reuse the main Caelum menu's bounded move/confirm sounds. The mansion resource
+folder is replaced by the author-supplied 58-PNG v2 canonical set. MAP01 uses a
+32×48-MU composite derived from `CMRL02` on 42 first-floor and 116 second-floor
+balcony boundary lines; door, bridge and stair openings remain unobstructed.
+The integration and recoverable repository migration are documented in
+[`docs/MANSION_TEXTURES_V2.md`](docs/MANSION_TEXTURES_V2.md).
 
 The V4.29.0ax inventory foundation gives every non-stackable equipment instance
 a monotonically allocated persistent `ItemId`, so several pieces with the same
@@ -62,14 +74,16 @@ volumes. The conversion is limited to z=0..128 in the main mansion: doors,
 stairs, first-/second-floor occupancy and MAP02 remain unchanged. V4.30.0c
 removes the 17 unreferenced sector records left by that carving operation and
 remaps every live sidedef sector index without changing any vertex, linedef,
-Thing, retained sector property or non-index sidedef property. The resulting
+Thing, retained sector property or non-index sidedef property. The current
 MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 618 sectors and
-322 Things. Its SHA-256 is
-`b333acc001de94d9d1342f62c92596e7e521ff007da620432e0bbdabbfabddfe`.
+322 Things. Balcony railings change only existing linedef/sidedef properties,
+so these counts remain stable. Its SHA-256 is
+`45b7178613ce3d741660caf75af6572a2405106806021382c6b4c99bb3240867`.
 
-MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
-sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
-bands inside one repeated flat. The twenty-file selected-audio v3 catalogue is
+MAP01's historical `CMGR01A` world-flat identifier now resolves to canonical
+v2 `CMGR01`; the compatibility names `CMGR01B` and `CMGR01C` resolve to the
+independent worn/dry `CMGR02` and `CMGR03` variants. The twenty-file
+selected-audio v3 catalogue is
 registered without duplicating its v2 subset. Seventeen effects have bounded
 runtime roles across UI, doors, weapons, player state, grass terrain, fire and
 character cues; three remain stock-only with no caller. Required audio
@@ -121,7 +135,7 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0e is
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0f is
 the cumulative correction candidate described above. The former address-0x58
 failure was reproduced with the exact GZDoom 4.14.2 engine; the corrected
 player start and the layered crafting implementation both complete bounded
@@ -167,7 +181,10 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   durability-scaled disassembly for weapons, armor and shields.
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
-- Original mansion-environment texture foundation: 85 wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered, including three independent mansion-grass variants.
+- Original mansion-environment texture foundation: the 58 canonical v2 wall,
+  floor, terrain, stair, door, gate, railing, carpet, pool, stable, terrace and
+  detail resources are registered. The prior 85-file set is retired rather
+  than mixed with the corrected crops.
 - Selected audio foundation: selected-audio v3 contributes twenty catalogued effects. Seventeen are wired to bounded UI, crafting, door, weapon, health, terrain, elemental and character events; three remain stock-only. Credits ship inside the PK3. Authenticated original downloads remain a final-release asset gate where documented.
 - Original HUD-01 resource frames/icons plus HUD-03 bar and navigation laurels and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
 - Development/debug overlay and test controls used to validate gameplay formulas.
@@ -209,9 +226,10 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Candidate 4.30.0e uses
+- V4.30 timed material conversion and durability loop. Candidate 4.30.0f uses
   1/2/3/4 tics per employed material unit according to operation complexity,
-  divided by Dexterity Type-1 speed, with an independent 50%/75%/100%
+  multiplied by 1×/10×/100× for 50%/75%/100% efficiency and divided by
+  Dexterity Type-1 speed, with an independent 50%/75%/100%
   efficiency choice for every craftable recipe layer. It retains one
   base-material type per component, proportional same-station repair and
   disassembly output equal to 50% of the base recipe multiplied by remaining
@@ -227,7 +245,7 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   only the missing steps, while the expanded recipe also shows the theoretical
   full route from raw materials. Required inputs are locked when the task
   starts and consumed only by atomic completion. These transactions are
-  implemented and exact-engine smoke-tested in candidate 4.30.0e; author
+  implemented and exact-engine smoke-tested in candidate 4.30.0f; author
   runtime acceptance remains pending. The complete contract is recorded in
   [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 

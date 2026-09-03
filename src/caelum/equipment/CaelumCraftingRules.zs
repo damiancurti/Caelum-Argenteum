@@ -435,7 +435,7 @@ class CaelumCraftingRules : Object
 
     static double GetMaterialWorkSeconds(
         int employedMaterialUnits, int complexityTics,
-        double typeOneDexterityPercent
+        double typeOneDexterityPercent, int efficiencyIndex
     )
     {
         double baseTics = Max(0, employedMaterialUnits)
@@ -444,7 +444,8 @@ class CaelumCraftingRules : Object
                 CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL,
                 CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL
             );
-        return baseTics / TICRATE
+        return baseTics
+            * GetCraftingEfficiencyTimeFactor(efficiencyIndex) / TICRATE
             * 100.0 / Max(100.0, typeOneDexterityPercent);
     }
 
