@@ -1,14 +1,13 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** implementada en 4.30.0b y preservada sin cambios en el candidato
-acumulativo 4.30.0d; validación manual en GZDoom 4.14.2 pendiente.
+**Estado:** régimen por material y eficiencia por capas implementado en el
+candidato acumulativo 4.30.0e; carga, auditoría funcional y captura verificadas
+en GZDoom 4.14.2. Validación manual del autor en Windows/Doom II pendiente.
 
-Este documento fija las reglas y el contrato de prueba introducido en
-V4.30.0b y conservado en V4.30.0d. El
-catálogo conserva los 79 índices anteriores y anexa 50 recetas de componentes,
-para un total persistente de 129. Las transacciones autoritativas ya están
-implementadas; su aceptación definitiva depende de las pruebas manuales en
-GZDoom descritas al final.
+Este documento fija las reglas introducidas en V4.30.0b y actualizadas en
+V4.30.0e. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
+componentes, para un total persistente de 129. MAP01 y sus materiales de prueba
+no cambian en 4.30.0e.
 
 ## 1. Unidades, rendimiento y tiempo
 
@@ -26,25 +25,42 @@ eficiencia y la fracción de durabilidad. Así ninguna tarea resulta gratuita
 por un coste fraccionario y el jugador nunca recibe más material que la salida
 teórica.
 
-El refinado y la fabricación de materiales de equipo ofrecen tres eficiencias
-sobre una misma entrada base `B`:
+Todos los procesos ofrecen 50%, 75% y 100% de eficiencia. En refinado y
+fabricación aislada de componentes, una entrada base `B` mantiene su coste y
+produce `B * Eficiencia`. En montaje de objetos indivisibles, fabricación
+directa por capas y reparación, el resultado queda completo y la eficiencia
+representa merma: cada entrada teórica `R` consume
+`Ceil(R * 100 / Eficiencia)`. Por tanto, 50% usa el doble, 75% usa 4/3 y 100%
+usa la cantidad teórica. El tiempo siempre cuenta todas las unidades realmente
+empleadas.
 
-| Eficiencia | Salida ideal | Factor de tiempo | Duración de prueba |
-|---|---:|---:|---:|
-| 50% | `0.50 * B` | x1 | 10 s |
-| 75% | `0.75 * B` | x1 | 10 s |
-| 100% | `1.00 * B` | x1 | 10 s |
+Al fabricar un arma, cada operación del árbol —montaje final, componente o
+refinado— conserva una elección independiente. Cambiar la eficiencia de una
+capa recalcula sus entradas, todas sus dependencias y las dos vistas previas
+sin modificar las demás elecciones.
 
-La duración base del entorno de prueba es 10 segundos por **transacción
-completa**, con independencia de que el lote use el multiplicador de cantidad
-x1, x10, x100 o x1000. Durante la primera validación se desactiva la
-contribución de Destreza y la velocidad efectiva es 100%. La fórmula existente
-que se conectará posteriormente es:
+Cada unidad de material empleada cuesta una cantidad de tics determinada por
+la complejidad de la operación:
+
+| Complejidad | Tics por unidad | Operaciones actuales |
+|---|---:|---|
+| Sencilla | 1 | Refinado común, componentes estructurales y armas físicas de filo o asta |
+| Normal | 2 | Arco, arco largo y mayal |
+| Detallada | 3 | Armaduras, escudos, guanteletes gigantes y ballesta |
+| Delicada/compleja | 4 | Esencias, refinado de gemas, componentes de joyería, armas elementales, sellos, amuletos y carabina |
+
+La duración de una capa y de la tarea completa es:
 
 ```text
 Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2
-EffectiveSeconds = BaseSeconds * 100 / Type1DexterityPercent
+LayerSeconds = EmployedMaterialUnits * ComplexityTicsPerMaterial
+             / TICRATE * 100 / Type1DexterityPercent
+TaskSeconds = Sum(ExecutedLayerSeconds)
 ```
+
+`TICRATE` vale 35. Destreza 0 equivale a 100%; Destreza 100 equivale a
+5150%, por lo que el trabajo se completa 51,5 veces más rápido. El tamaño del
+lote sí modifica el tiempo porque modifica las unidades empleadas.
 
 Una tarea no puede iniciarse mientras el personaje está en combate. Una vez
 iniciada, sólo progresa mientras el Diario sigue abierto en la estación, el
@@ -65,10 +81,11 @@ entrada por separado ni alterando esas proporciones.
 ## 2. Materiales de equipo
 
 Cada componente de equipo se fabrica a partir de **un solo tipo de material
-base**. La opción rápida parte del 50% de conversión; las opciones de 75% y
-100% usan la misma entrada única con los factores temporales anteriores. Esta
-restricción no convierte el montaje final de un objeto en una receta de un
-solo ingrediente.
+base**. La fabricación aislada transforma esa entrada con rendimiento
+50%/75%/100%; dentro de una ruta directa, la misma elección determina cuánta
+entrada se necesita para completar la cantidad exigida por la capa superior.
+Esta restricción no convierte el montaje final de un objeto en una receta de
+un solo ingrediente.
 
 ### Mapeo autorizado
 
@@ -168,13 +185,16 @@ una red que reúna la infraestructura completa de cada paso. El planificador:
 2. Resuelve recursivamente sólo lo que falta hasta llegar a materias primas.
 3. Reserva de una vez la ruta primaria completa, sin crear lingotes ni
    componentes temporales en el inventario.
-4. Añade 10 segundos por cada receta intermedia distinta omitida, además de los
-   10 segundos del montaje final.
+4. Aplica a cada paso omitido su propia eficiencia y su propia complejidad.
+5. Suma el tiempo por unidad de material sólo de los pasos que realmente debe
+   ejecutar, además del montaje final.
 
-Por ejemplo, una daga que omita refinado, hoja y empuñadura tarda 40 segundos:
-10 por cada uno de esos tres pasos y 10 por el arma. La cantidad procesada en
-un paso no multiplica su tiempo, igual que en los lotes normales. Las
-proporciones exactas de bronce y acero siguen siendo obligatorias.
+El Diario presenta a la vez el tiempo de la **ruta actual**, que aprovecha lo
+que ya existe en Inventario, y el tiempo teórico **desde materias primas**. La
+receta desplegada incluye el montaje final, cada receta intermedia y las
+materias primas terminales; las flechas Arriba/Abajo recorren sólo las capas
+que permiten elegir eficiencia. Las proporciones exactas de bronce y acero
+siguen siendo obligatorias.
 
 ## 4. Reparación
 
@@ -193,10 +213,15 @@ misma receta que determinaron su fabricación. Los metales decorativos de un
 acabado plateado o dorado participan en el coste con la misma proporción de
 durabilidad faltante que todos los demás ingredientes.
 
-El tiempo de reparación también escala con la fracción faltante:
+Después de calcular la fracción faltante, cada entrada aplica la eficiencia
+elegida como merma. El tiempo usa exactamente las unidades reservadas y la
+complejidad del objeto:
 
 ```text
-RepairSeconds = FullRecipeSeconds * MissingFraction
+RepairInputWithWaste[i] = Ceil(RepairInput[i] * 100 / EfficiencyPercent)
+RepairSeconds = Sum(RepairInputWithWaste)
+              * ItemComplexityTics / TICRATE
+              * 100 / Type1DexterityPercent
 ```
 
 La reparación exige exactamente la misma infraestructura acumulativa que la
@@ -225,9 +250,10 @@ en esas tres operaciones usa las mismas fórmulas que el resto de las armas. Su
 recuperación parcial al arrojarla pertenece exclusivamente a la mecánica de
 proyectil arrojadizo y no se combina con una transacción de desarme.
 
-Desarmar exige exactamente la misma red acumulativa de estaciones y el mismo
-tiempo base que fabricar el objeto correspondiente. No introduce una estación
-ni una duración propia.
+Desarmar exige exactamente la misma red acumulativa de estaciones y usa la
+complejidad del objeto correspondiente. Su duración cuenta las unidades de la
+receta completa antes de la recuperación por durabilidad; no introduce una
+estación ni una categoría temporal propia.
 
 Amuletos y sellos quedan fuera del ciclo de durabilidad. No se gastan, no se
 reparan y no se desarman mediante este sistema.
@@ -260,14 +286,15 @@ punto de integración sin inventar esa correspondencia.
 
 ## 7. Estado de las decisiones
 
-Las reglas transaccionales necesarias para V4.30 están cerradas e
-implementadas en 4.30.0b.
+Las reglas transaccionales necesarias para V4.30 están cerradas. La base
+atómica se implementó en 4.30.0b y el tiempo por material, el árbol recursivo y
+la eficiencia independiente por capa se implementaron en 4.30.0e.
 Las entradas quedan reservadas contra otros usos durante la tarea, se consumen
 sólo al completar y se liberan íntegramente al cancelar. La correspondencia
 exacta entre recetas y cartas no es una decisión pendiente de esta transacción:
 queda deliberadamente aplazada hasta la implementación del sistema de Tarot.
 
-## 8. Contrato de prueba de 4.30.0b
+## 8. Contrato de prueba de 4.30.0e
 
 MAP01 contiene seis cúmulos interiores con una pila de 10.000 unidades por
 cada ID de material. También incluye los tiers 1/2/3 de madera y de las cinco
@@ -293,11 +320,13 @@ Controles dentro de la red de estaciones:
 | `Espacio` | Tier; en procesamiento cambia el lote |
 | `B` | Lote x1/x10/x100/x1000 en procesamiento/componentes |
 | `R` | Talle |
-| `X` | Eficiencia 50%/75%/100% en procesamiento, componentes y pasos directos de armas |
+| `Arriba/Abajo` | Elegir una capa fabricable de la receta desplegada |
+| `X` | Eficiencia 50%/75%/100% de la capa elegida |
 | `E` o `Enter` | Iniciar la tarea seleccionada |
 | `C` | Cancelar explícitamente la tarea activa |
 | `F` | Reparar la pieza exacta seleccionada en el Journal |
 | `D` | Desarmar la pieza exacta seleccionada en el Journal |
+| `T` | Depuración: adelantar 600 segundos de una tarea válida atendida |
 
 Para reparar o desarmar, se selecciona primero una pieza sin equipar en
 Inventario y luego se usa la red de estaciones requerida. La estación abre
@@ -307,16 +336,27 @@ Cerrar el Diario, alejarse, perder infraestructura o entrar en combate pausa el
 contador y mantiene la reserva. Volver a una red válida permite continuar;
 sólo `C` o `ca_crafting_cancel_task` cancela y libera lo bloqueado.
 
+El control de depuración también está disponible como
+`ca_debug_advance_crafting_time` y en la sección Caelum Argenteum de Controles.
+Respeta la misma sesión, estación, distancia, infraestructura y pausa que el
+contador normal; completa atómicamente si los 600 segundos agotan el tiempo.
+
 La matriz enfocada debe comprobar además:
 
 1. Que no aparezca ninguna clave `CA_*` sin localizar en Inventario u Oficios.
-2. Que 50%, 75%, 100% y lotes x1/x10/x100/x1000 duren 10 segundos.
-3. Que una ruta directa desde materias primas muestre los pasos omitidos,
-   reserve sus entradas y sume 10 segundos por paso.
-4. Que la vista previa corresponda al material u objeto seleccionado.
-5. Que Izquierda/Derecha/F recorran los filtros y que Derecha desde el último
+2. Que 50%, 75% y 100% cambien materiales y vista previa sin alterar las
+   elecciones de otras capas.
+3. Que los lotes x1/x10/x100/x1000 escalen el tiempo por las unidades de
+   material realmente empleadas.
+4. Que una ruta directa desde materias primas muestre componentes y materias
+   primas, reserve sus entradas y sume el tiempo de cada paso ejecutado.
+5. Que Destreza 0 produzca 100% y Destreza 100 produzca 5150%/51,5×.
+6. Que `T` reste exactamente 600 segundos y no avance una tarea pausada o sin
+   estación válida.
+7. Que la vista previa corresponda al material u objeto seleccionado.
+8. Que Izquierda/Derecha/F recorran los filtros y que Derecha desde el último
    pase a Personaje.
-6. Que el 2 recorra todas las instancias pequeñas equipadas por `ItemId`, sin
+9. Que el 2 recorra todas las instancias pequeñas equipadas por `ItemId`, sin
    Pistol ni Clip iniciales.
-7. Que los muros convertidos sean sólidos y gruesos desde ambos lados sin
+10. Que los muros convertidos sean sólidos y gruesos desde ambos lados sin
    modificar los pisos superiores.

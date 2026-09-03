@@ -1,14 +1,14 @@
-// Add a dedicated Caelum Argenteum section to Customize Controls.
+// Agrega una sección propia de Caelum Argenteum a Personalizar controles.
 addkeysection "Caelum Argenteum" CaelumArgenteumControls
 
-// This command toggles the user CVar read by CaelumDebugOverlay.
+// Este comando alterna la CVar de usuario que lee CaelumDebugOverlay.
 addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
 addmenukey "$CA_CONTROL_RACIAL_ABILITY" +user1
 addmenukey "$CA_CONTROL_SEAL_CHANNEL" +user2
 addmenukey "$CA_CONTROL_TAROT_ABILITY" +user3
 addmenukey "$CA_CONTROL_CLASS_ABILITY" +user4
 
-// Network events let the correct player change a profile choice in multiplayer.
+// Los eventos de red permiten que el jugador correcto cambie su perfil.
 alias ca_next_race "netevent ca_next_race"
 alias ca_next_first_class "netevent ca_next_first_class"
 alias ca_next_second_class "netevent ca_next_second_class"
@@ -92,6 +92,7 @@ alias ca_debug_audit_crafting_catalogue "netevent ca_debug_audit_crafting_catalo
 alias ca_debug_crafting_forget_all_recipes "netevent ca_debug_crafting_forget_all_recipes"
 alias ca_debug_crafting_learn_selected_recipe "netevent ca_debug_crafting_learn_selected_recipe"
 alias ca_debug_crafting_learn_all_recipes "netevent ca_debug_crafting_learn_all_recipes"
+alias ca_debug_advance_crafting_time "netevent ca_debug_advance_crafting_time"
 alias ca_journal_toggle "event ca_journal_toggle"
 
 addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
@@ -162,6 +163,7 @@ addmenukey "$CA_CONTROL_DEBUG_SHIELD_ANGLE" ca_debug_shield_angle
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
 addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
+addmenukey "$CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME" ca_debug_advance_crafting_time
 
 // Tab abre el Diario definitivo. El automapa nativo se conserva en M para
 // exteriores y depuración; ambas acciones siguen apareciendo en Controles.

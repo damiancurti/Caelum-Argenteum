@@ -16,26 +16,31 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0d. It preserves the complete
-V4.30.0b gameplay correction and V4.30.0c MAP01 compaction, then fixes the
-player-start crash exposed by the next GZDoom 4.14.2 load. `CaelumPlayer` now
-redeclares its inherited start-item list with `Fist` as the sole entry, so the
-engine never grants and removes `Pistol` while `PlayerReborn` is staging the
-ready weapon. The V4.30.0b gameplay layer incorporates the runtime feedback
-from V4.30.0a: all Journal
-inventory/filter/help labels are localized, crafting stations now open the
-Oficios page of the Journal, and that page owns recipe navigation, preview art,
-requirements, infrastructure and task state.
-Every normal transaction lasts 10 seconds at 50%, 75% or 100% efficiency and
-at every batch size. Closing the Journal, leaving the station radius, losing
-required infrastructure or entering combat pauses the clock without releasing
-reserved inputs; only explicit cancellation ends the task.
+The current cumulative candidate is V4.30.0e. It preserves the V4.30.0b
+gameplay correction, V4.30.0c MAP01 compaction and V4.30.0d player-start crash
+repair, then replaces the fixed crafting-test duration with material work.
+Every recipe now exposes its complete recursive component-to-raw-material tree
+in Journal → Crafts, including owned/required quantities. Up/Down selects each
+craftable layer and X assigns that layer its own 50%, 75% or 100% efficiency;
+the actual-route and full-from-raw time previews update immediately.
+
+Each employed material unit costs 1, 2, 3 or 4 engine tics according to the
+operation's complexity. Effective time is the sum of the executed layers,
+multiplied by `100 / Type1DexterityPercent`, where
+`Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2`. Indivisible
+assembly and repair always produce the complete result and represent lower
+efficiency as extra material waste. Processing/component batches retain their
+50%/75%/100% yield choices. Closing the Journal, leaving the station radius,
+losing required infrastructure or entering combat pauses the clock without
+releasing reserved inputs; only explicit cancellation ends the task.
 
 Weapons can be assembled directly from available primary materials. The
 planner consumes already-owned components first, recursively resolves known
-component/refining recipes through the same complete station network, and adds
-10 seconds for each skipped recipe step. It reserves the complete primary
-input route atomically and never creates temporary intermediate objects.
+component/refining recipes through the same complete station network, applies
+the independently selected efficiency and material time at every missing
+layer, and reserves the complete primary route atomically without creating
+temporary intermediate objects. The development control
+`ca_debug_advance_crafting_time` advances a valid attended task by 600 seconds.
 Numeric slot 2 cycles exact equipped small-weapon instances, including several
 otherwise identical daggers with different `ItemId`, durability or finish.
 Doom's inherited starting Pistol and Clip are excluded declaratively; Fist
@@ -116,11 +121,12 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0d is
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0e is
 the cumulative correction candidate described above. The former address-0x58
-failure was reproduced with the exact GZDoom 4.14.2 engine and the corrected
-PK3 completed a headless MAP01 smoke run; the focused Windows/Doom II visual
-and gameplay matrix remains pending.
+failure was reproduced with the exact GZDoom 4.14.2 engine; the corrected
+player start and the layered crafting implementation both complete bounded
+MAP01 smoke runs. The focused Windows/Doom II visual and gameplay matrix
+remains pending.
 
 ### Building the development PK3
 
@@ -156,7 +162,8 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
 - Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
-- Timed atomic crafting, component production, proportional repair and
+- Timed atomic crafting with recursive recipe display, independent efficiency
+  per layer, material-unit complexity time, proportional repair and
   durability-scaled disassembly for weapons, armor and shields.
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
@@ -202,22 +209,25 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Its implementation uses
-  a fixed 10-second test duration at 50%/75%/100% yield and every batch size,
-  Dexterity Type-1 precision-task speed, one base-material type per component,
-  proportional same-station repair and disassembly output equal to 50% of the
-  base recipe multiplied by remaining durability. Inputs round up and outputs
-  round down to 0.001; each 10-second duration covers the complete batch,
-  cancellation spends/produces nothing and exact alloy ratios are preserved.
+- V4.30 timed material conversion and durability loop. Candidate 4.30.0e uses
+  1/2/3/4 tics per employed material unit according to operation complexity,
+  divided by Dexterity Type-1 speed, with an independent 50%/75%/100%
+  efficiency choice for every craftable recipe layer. It retains one
+  base-material type per component, proportional same-station repair and
+  disassembly output equal to 50% of the base recipe multiplied by remaining
+  durability. Inputs round up and outputs round down to 0.001; cancellation
+  spends/produces nothing and exact alloy ratios are preserved.
   Crafting cannot progress in combat or away from its valid station session;
   these conditions pause rather than cancel it, and only an explicit user order
-  releases the reservation. Disassembly uses the same time and stations as
-  crafting the item; component recipes use the station network of their target
-  equipment recipe. Exact Minor-Arcana card assignments are deferred until the
-  Tarot-card implementation. A weapon may consume a recursively resolved route
-  from primary materials, adding 10 seconds for each omitted intermediate
-  recipe. Required inputs are locked when the task starts and consumed only by
-  atomic completion. These transactions are implemented in candidate 4.30.0b;
+  releases the reservation. Disassembly uses the item's complexity and the
+  same stations as crafting it; component recipes use the station network of
+  their target equipment recipe. Exact Minor-Arcana card assignments are
+  deferred until the Tarot-card implementation. A weapon may consume a
+  recursively resolved route from primary materials; its live preview sums
+  only the missing steps, while the expanded recipe also shows the theoretical
+  full route from raw materials. Required inputs are locked when the task
+  starts and consumed only by atomic completion. These transactions are
+  implemented and exact-engine smoke-tested in candidate 4.30.0e; author
   runtime acceptance remains pending. The complete contract is recorded in
   [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 

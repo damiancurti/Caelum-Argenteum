@@ -369,6 +369,10 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_REPAIRED";
             case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
                 return "CA_CRAFTING_ACTION_DISMANTLED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_ADVANCED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_BLOCKED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -2669,6 +2673,28 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
             Screen.DrawText(DebugFont, Font.CR_WHITE, 20.0, 258.0, mobilityLine,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
+            String craftingTimeLine = localPlayer.CraftingTaskActive
+                ? String.Format(
+                    "%s: %.1f/%.1f s   %s",
+                    StringTable.Localize(
+                        "CA_CRAFTING_TASK_ACTIVE", false
+                    ),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds,
+                    StringTable.Localize(
+                        "CA_DEBUG_CRAFTING_ADVANCE_HINT", false
+                    )
+                )
+                : StringTable.Localize(
+                    "CA_DEBUG_CRAFTING_NO_ACTIVE_TASK", false
+                );
+            Screen.DrawText(
+                DebugFont, Font.CR_CYAN, 20.0, 282.0,
+                craftingTimeLine,
+                DTA_VIRTUALWIDTHF, 640.0,
+                DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true
+            );
             return;
         }
 
@@ -3861,6 +3887,10 @@ class CaelumDebugOverlay : EventHandler
         else if (e.Name == "ca_debug_crafting_learn_all_recipes")
         {
             requestingPlayer.DebugSetAllCraftingRecipesKnown(true);
+        }
+        else if (e.Name == "ca_debug_advance_crafting_time")
+        {
+            requestingPlayer.AdvanceDebugCraftingTime();
         }
         else if (e.Name == "ca_next_race") requestingPlayer.CycleRace();
         else if (e.Name == "ca_next_first_class") requestingPlayer.CycleFirstClass();

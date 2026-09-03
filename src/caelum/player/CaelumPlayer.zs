@@ -108,11 +108,40 @@ class CaelumPlayer : DoomPlayer
     bool CraftingDirectPlanAvailable;
     bool CraftingDirectPlanUsed;
     int CraftingDirectPlanStepCount;
+    int CraftingLayerChoiceRootRecipe;
+    int CraftingLayerChoiceRootTier;
+    int CraftingLayerChoiceRootSize;
+    int CraftingLayerChoiceCount;
+    int CraftingLayerChoiceRecipe[CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT];
+    int CraftingLayerChoiceTier[CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT];
+    int CraftingLayerChoiceEfficiency[CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT];
     int CraftingPlanReservedType[CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT];
     int CraftingPlanReservedTier[CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT];
     int CraftingPlanReservedUnits[CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT];
     int CraftingPlanStepRecipe[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
     int CraftingPlanStepTier[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+    int CraftingPlanStepEfficiency[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+    int CraftingPlanStepInputUnits[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+    int CraftingPlanStepComplexityTics[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+    double CraftingPlanStepSeconds[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+
+    // Árbol de receta aplanado para que UI scope pueda mostrar cada capa sin
+    // ejecutar lógica de inventario. El nodo cero es siempre el montaje final.
+    int CraftingBlueprintNodeCount;
+    int CraftingBlueprintSelectedNode;
+    int CraftingBlueprintNodeKind[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeDepth[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeRecipe[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeMaterialType[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeMaterialTier[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeUnits[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeOwnedUnits[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeInputUnits[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeEfficiency[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    int CraftingBlueprintNodeComplexityTics[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    double CraftingBlueprintNodeSeconds[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    bool CraftingBlueprintNodeExecuted[CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT];
+    double CraftingBlueprintFullSeconds;
     int CraftingOutputMaterialType;
     int CraftingOutputMaterialTier;
     int CraftingOutputAmount;
@@ -4327,6 +4356,421 @@ class CaelumPlayer : DoomPlayer
             ? 1 : 0;
     }
 
+    double GetCraftingDexterityPercent()
+    {
+        if (DerivedStats == null || Attributes == null) { return 100.0; }
+        return Max(
+            100.0,
+            DerivedStats.CalculateType1Percent(Attributes.Dexterity)
+        );
+    }
+
+    double GetCraftingMaterialWorkSeconds(
+        int employedMaterialUnits, int complexityTics
+    )
+    {
+        return CaelumCraftingRules.GetMaterialWorkSeconds(
+            employedMaterialUnits,
+            complexityTics,
+            GetCraftingDexterityPercent()
+        );
+    }
+
+    int GetCurrentCraftingInputUnits()
+    {
+        return Max(0, CraftingBasicRequired)
+            + Max(0, CraftingTierRequired)
+            + Max(0, CraftingSilverRequired)
+            + Max(0, CraftingGoldRequired);
+    }
+
+    void ResetCraftingLayerChoices()
+    {
+        CraftingLayerChoiceCount = 0;
+        CraftingBlueprintSelectedNode = 0;
+        for (int slot = 0;
+            slot < CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT; slot++)
+        {
+            CraftingLayerChoiceRecipe[slot] = -1;
+            CraftingLayerChoiceTier[slot] = 1;
+            CraftingLayerChoiceEfficiency[slot] = 0;
+        }
+    }
+
+    void EnsureCraftingLayerChoiceRoot()
+    {
+        if (CraftingLayerChoiceRootRecipe == CraftingSelectionRecipe
+            && CraftingLayerChoiceRootTier == CraftingSelectionTier
+            && CraftingLayerChoiceRootSize == CraftingSelectionSize)
+        {
+            return;
+        }
+        CraftingLayerChoiceRootRecipe = CraftingSelectionRecipe;
+        CraftingLayerChoiceRootTier = CraftingSelectionTier;
+        CraftingLayerChoiceRootSize = CraftingSelectionSize;
+        ResetCraftingLayerChoices();
+    }
+
+    int FindCraftingLayerChoice(int recipeIndex, int materialTier)
+    {
+        int resolvedTier = Clamp(materialTier, 1, 3);
+        for (int slot = 0; slot < CraftingLayerChoiceCount; slot++)
+        {
+            if (CraftingLayerChoiceRecipe[slot] == recipeIndex
+                && CraftingLayerChoiceTier[slot] == resolvedTier)
+            {
+                return slot;
+            }
+        }
+        return -1;
+    }
+
+    int GetOrCreateCraftingLayerChoice(
+        int recipeIndex, int materialTier
+    )
+    {
+        int existing = FindCraftingLayerChoice(recipeIndex, materialTier);
+        if (existing >= 0) { return existing; }
+        if (CraftingLayerChoiceCount
+            >= CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT)
+        {
+            return -1;
+        }
+        int slot = CraftingLayerChoiceCount++;
+        CraftingLayerChoiceRecipe[slot] = recipeIndex;
+        CraftingLayerChoiceTier[slot] = Clamp(materialTier, 1, 3);
+        CraftingLayerChoiceEfficiency[slot] = Clamp(
+            CraftingEfficiencyIndex, 0,
+            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
+        );
+        return slot;
+    }
+
+    int GetCraftingLayerEfficiencyIndex(
+        int recipeIndex, int materialTier
+    )
+    {
+        int choice = GetOrCreateCraftingLayerChoice(
+            recipeIndex, materialTier
+        );
+        return choice >= 0
+            ? CraftingLayerChoiceEfficiency[choice]
+            : CraftingEfficiencyIndex;
+    }
+
+    void SetCraftingLayerEfficiencyIndex(
+        int recipeIndex, int materialTier, int efficiencyIndex
+    )
+    {
+        int choice = GetOrCreateCraftingLayerChoice(
+            recipeIndex, materialTier
+        );
+        if (choice < 0) { return; }
+        CraftingLayerChoiceEfficiency[choice] = Clamp(
+            efficiencyIndex, 0,
+            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
+        );
+    }
+
+    void ClearCraftingBlueprint()
+    {
+        CraftingBlueprintNodeCount = 0;
+        CraftingBlueprintFullSeconds = 0.0;
+        for (int slot = 0;
+            slot < CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT; slot++)
+        {
+            CraftingBlueprintNodeKind[slot] =
+                CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW;
+            CraftingBlueprintNodeDepth[slot] = 0;
+            CraftingBlueprintNodeRecipe[slot] = -1;
+            CraftingBlueprintNodeMaterialType[slot] = -1;
+            CraftingBlueprintNodeMaterialTier[slot] = 1;
+            CraftingBlueprintNodeUnits[slot] = 0;
+            CraftingBlueprintNodeOwnedUnits[slot] = 0;
+            CraftingBlueprintNodeInputUnits[slot] = 0;
+            CraftingBlueprintNodeEfficiency[slot] = -1;
+            CraftingBlueprintNodeComplexityTics[slot] = 0;
+            CraftingBlueprintNodeSeconds[slot] = 0.0;
+            CraftingBlueprintNodeExecuted[slot] = false;
+        }
+    }
+
+    int FindCraftingBlueprintNode(
+        int nodeKind, int recipeIndex,
+        int materialType, int materialTier
+    )
+    {
+        int resolvedTier = CaelumMaterialRules.ResolveTier(
+            materialType, materialTier
+        );
+        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
+        {
+            if (CraftingBlueprintNodeKind[node] != nodeKind) { continue; }
+            if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
+            {
+                if (CraftingBlueprintNodeRecipe[node] == recipeIndex
+                    && CraftingBlueprintNodeMaterialTier[node]
+                        == resolvedTier)
+                {
+                    return node;
+                }
+            }
+            else if (CraftingBlueprintNodeMaterialType[node] == materialType
+                && CraftingBlueprintNodeMaterialTier[node] == resolvedTier)
+            {
+                return node;
+            }
+        }
+        return -1;
+    }
+
+    int AddOrAccumulateCraftingBlueprintNode(
+        int nodeKind, int depth, int recipeIndex,
+        int materialType, int materialTier, int units
+    )
+    {
+        if (units <= 0) { return -1; }
+        int resolvedTier = CaelumMaterialRules.ResolveTier(
+            materialType, materialTier
+        );
+        int existing = FindCraftingBlueprintNode(
+            nodeKind, recipeIndex, materialType, resolvedTier
+        );
+        if (existing >= 0)
+        {
+            CraftingBlueprintNodeUnits[existing] += units;
+            CraftingBlueprintNodeDepth[existing] = Min(
+                CraftingBlueprintNodeDepth[existing], depth
+            );
+            return existing;
+        }
+        if (CraftingBlueprintNodeCount
+            >= CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT)
+        {
+            return -1;
+        }
+        int node = CraftingBlueprintNodeCount++;
+        CraftingBlueprintNodeKind[node] = nodeKind;
+        CraftingBlueprintNodeDepth[node] = Clamp(depth, 0, 8);
+        CraftingBlueprintNodeRecipe[node] = recipeIndex;
+        CraftingBlueprintNodeMaterialType[node] = materialType;
+        CraftingBlueprintNodeMaterialTier[node] = resolvedTier;
+        CraftingBlueprintNodeUnits[node] = units;
+        if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
+        {
+            CraftingBlueprintNodeEfficiency[node] =
+                GetCraftingLayerEfficiencyIndex(recipeIndex, resolvedTier);
+            CraftingBlueprintNodeComplexityTics[node] =
+                CaelumCraftingRules.GetRecipeComplexityTics(recipeIndex);
+        }
+        return node;
+    }
+
+    void ExpandCraftingBlueprintMaterial(
+        int materialType, int materialTier, int requiredUnits, int depth = 1
+    )
+    {
+        if (requiredUnits <= 0 || depth > 8) { return; }
+        int resolvedTier = CaelumMaterialRules.ResolveTier(
+            materialType, materialTier
+        );
+        int recipeIndex =
+            CaelumCraftingRules.FindComponentRecipeForOutput(materialType);
+        bool componentRecipe = recipeIndex >= 0;
+        if (!componentRecipe)
+        {
+            recipeIndex = CaelumCraftingRules.FindProcessingRecipeForOutput(
+                materialType, resolvedTier
+            );
+        }
+        if (recipeIndex < 0)
+        {
+            AddOrAccumulateCraftingBlueprintNode(
+                CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW,
+                depth, -1, materialType, resolvedTier, requiredUnits
+            );
+            return;
+        }
+
+        int node = AddOrAccumulateCraftingBlueprintNode(
+            CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE,
+            depth, recipeIndex, materialType, resolvedTier, requiredUnits
+        );
+        if (node < 0) { return; }
+        int efficiencyIndex = GetCraftingLayerEfficiencyIndex(
+            recipeIndex, resolvedTier
+        );
+        int efficiencyAdjustedOutput =
+            CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                requiredUnits, efficiencyIndex
+            );
+        if (componentRecipe)
+        {
+            CraftingBlueprintNodeInputUnits[node] +=
+                efficiencyAdjustedOutput;
+            ExpandCraftingBlueprintMaterial(
+                CaelumCraftingRules.GetComponentBaseMaterial(
+                    materialType, resolvedTier
+                ),
+                CaelumCraftingRules.GetComponentBaseTier(
+                    materialType, resolvedTier
+                ),
+                efficiencyAdjustedOutput,
+                depth + 1
+            );
+            return;
+        }
+
+        int theoreticalOutput = Max(
+            1,
+            CaelumCraftingRules.GetProcessingOutputUnits(recipeIndex, 0)
+        );
+        int inputOneUnits = GetRoundedUpProportionalUnits(
+            efficiencyAdjustedOutput,
+            CaelumCraftingRules.GetProcessingInputOneUnits(recipeIndex, 0),
+            theoreticalOutput
+        );
+        int inputTwoUnits = GetRoundedUpProportionalUnits(
+            efficiencyAdjustedOutput,
+            CaelumCraftingRules.GetProcessingInputTwoUnits(recipeIndex, 0),
+            theoreticalOutput
+        );
+        CraftingBlueprintNodeInputUnits[node] +=
+            inputOneUnits + inputTwoUnits;
+        ExpandCraftingBlueprintMaterial(
+            CaelumCraftingRules.GetProcessingInputOneMaterial(recipeIndex),
+            CaelumCraftingRules.GetProcessingInputOneTier(recipeIndex),
+            inputOneUnits,
+            depth + 1
+        );
+        int inputTwoMaterial =
+            CaelumCraftingRules.GetProcessingInputTwoMaterial(recipeIndex);
+        if (inputTwoMaterial >= 0 && inputTwoUnits > 0)
+        {
+            ExpandCraftingBlueprintMaterial(
+                inputTwoMaterial,
+                CaelumCraftingRules.GetProcessingInputTwoTier(recipeIndex),
+                inputTwoUnits,
+                depth + 1
+            );
+        }
+    }
+
+    void BuildCraftingBlueprint()
+    {
+        EnsureCraftingLayerChoiceRoot();
+        ClearCraftingBlueprint();
+        int rootInputs = GetCurrentCraftingInputUnits();
+        int rootComplexity = CaelumCraftingRules.GetRecipeComplexityTics(
+            CraftingSelectionRecipe
+        );
+
+        CraftingBlueprintNodeCount = 1;
+        CraftingBlueprintNodeKind[0] =
+            CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL;
+        CraftingBlueprintNodeDepth[0] = 0;
+        CraftingBlueprintNodeRecipe[0] = CraftingSelectionRecipe;
+        CraftingBlueprintNodeMaterialType[0] = CraftingOutputMaterialType;
+        CraftingBlueprintNodeMaterialTier[0] = CraftingOutputMaterialTier;
+        CraftingBlueprintNodeUnits[0] = 1;
+        CraftingBlueprintNodeInputUnits[0] = rootInputs;
+        CraftingBlueprintNodeEfficiency[0] = CraftingEfficiencyIndex;
+        CraftingBlueprintNodeComplexityTics[0] = rootComplexity;
+        CraftingBlueprintNodeSeconds[0] = GetCraftingMaterialWorkSeconds(
+            rootInputs, rootComplexity
+        );
+        CraftingBlueprintNodeExecuted[0] = true;
+
+        ExpandCraftingBlueprintMaterial(
+            CraftingBasicMaterialType,
+            CraftingBasicMaterialTier,
+            CraftingBasicRequired
+        );
+        ExpandCraftingBlueprintMaterial(
+            CraftingTierMaterialType,
+            CraftingTierMaterialTier,
+            CraftingTierRequired
+        );
+        ExpandCraftingBlueprintMaterial(
+            CaelumConstants.MATERIAL_SILVER_INGOT,
+            1,
+            CraftingSilverRequired
+        );
+        ExpandCraftingBlueprintMaterial(
+            CaelumConstants.MATERIAL_GOLD_INGOT,
+            1,
+            CraftingGoldRequired
+        );
+
+        CraftingBlueprintFullSeconds = CraftingBlueprintNodeSeconds[0];
+        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
+        {
+            CraftingBlueprintNodeOwnedUnits[node] = CountCraftingMaterial(
+                CraftingBlueprintNodeMaterialType[node],
+                CraftingBlueprintNodeMaterialTier[node]
+            );
+            if (CraftingBlueprintNodeKind[node]
+                != CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
+            {
+                continue;
+            }
+            CraftingBlueprintNodeSeconds[node] =
+                GetCraftingMaterialWorkSeconds(
+                    CraftingBlueprintNodeInputUnits[node],
+                    CraftingBlueprintNodeComplexityTics[node]
+                );
+            CraftingBlueprintFullSeconds +=
+                CraftingBlueprintNodeSeconds[node];
+        }
+        CraftingBlueprintSelectedNode = Clamp(
+            CraftingBlueprintSelectedNode,
+            0, Max(0, CraftingBlueprintNodeCount - 1)
+        );
+        if (CraftingBlueprintNodeKind[CraftingBlueprintSelectedNode]
+            == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
+        {
+            CraftingBlueprintSelectedNode = 0;
+        }
+    }
+
+    void CycleCraftingBlueprintSelection(int direction)
+    {
+        RefreshCraftingPreview();
+        if (CraftingBlueprintNodeCount <= 1) { return; }
+        int step = direction < 0 ? -1 : 1;
+        int candidate = CraftingBlueprintSelectedNode;
+        for (int attempt = 0;
+            attempt < CraftingBlueprintNodeCount; attempt++)
+        {
+            candidate = (candidate + step + CraftingBlueprintNodeCount)
+                % CraftingBlueprintNodeCount;
+            if (CraftingBlueprintNodeKind[candidate]
+                != CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
+            {
+                CraftingBlueprintSelectedNode = candidate;
+                return;
+            }
+        }
+    }
+
+    void MarkCraftingBlueprintStepExecuted(
+        int recipeIndex, int materialTier
+    )
+    {
+        int resolvedTier = Clamp(materialTier, 1, 3);
+        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
+        {
+            if (CraftingBlueprintNodeKind[node]
+                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE
+                && CraftingBlueprintNodeRecipe[node] == recipeIndex
+                && CraftingBlueprintNodeMaterialTier[node] == resolvedTier)
+            {
+                CraftingBlueprintNodeExecuted[node] = true;
+                return;
+            }
+        }
+    }
+
     bool ReserveCurrentCraftingPreview()
     {
         if (!AddCraftingTaskReservation(
@@ -4372,6 +4816,10 @@ class CaelumPlayer : DoomPlayer
         {
             CraftingPlanStepRecipe[step] = -1;
             CraftingPlanStepTier[step] = 1;
+            CraftingPlanStepEfficiency[step] = 0;
+            CraftingPlanStepInputUnits[step] = 0;
+            CraftingPlanStepComplexityTics[step] = 0;
+            CraftingPlanStepSeconds[step] = 0.0;
         }
     }
 
@@ -4427,7 +4875,7 @@ class CaelumPlayer : DoomPlayer
         return false;
     }
 
-    bool RegisterDirectCraftingStep(int recipeIndex, int materialTier)
+    int RegisterDirectCraftingStep(int recipeIndex, int materialTier)
     {
         int resolvedTier = Clamp(materialTier, 1, 3);
         for (int step = 0; step < CraftingDirectPlanStepCount; step++)
@@ -4435,18 +4883,39 @@ class CaelumPlayer : DoomPlayer
             if (CraftingPlanStepRecipe[step] == recipeIndex
                 && CraftingPlanStepTier[step] == resolvedTier)
             {
-                return true;
+                return step;
             }
         }
         if (CraftingDirectPlanStepCount
             >= CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT)
         {
-            return false;
+            return -1;
         }
-        CraftingPlanStepRecipe[CraftingDirectPlanStepCount] = recipeIndex;
-        CraftingPlanStepTier[CraftingDirectPlanStepCount] = resolvedTier;
-        CraftingDirectPlanStepCount++;
-        return true;
+        int step = CraftingDirectPlanStepCount++;
+        CraftingPlanStepRecipe[step] = recipeIndex;
+        CraftingPlanStepTier[step] = resolvedTier;
+        CraftingPlanStepEfficiency[step] =
+            GetCraftingLayerEfficiencyIndex(recipeIndex, resolvedTier);
+        CraftingPlanStepComplexityTics[step] =
+            CaelumCraftingRules.GetRecipeComplexityTics(recipeIndex);
+        return step;
+    }
+
+    void AddDirectCraftingStepWork(int step, int employedMaterialUnits)
+    {
+        if (step < 0 || step >= CraftingDirectPlanStepCount
+            || employedMaterialUnits <= 0)
+        {
+            return;
+        }
+        CraftingPlanStepInputUnits[step] += employedMaterialUnits;
+        CraftingPlanStepSeconds[step] = GetCraftingMaterialWorkSeconds(
+            CraftingPlanStepInputUnits[step],
+            CraftingPlanStepComplexityTics[step]
+        );
+        MarkCraftingBlueprintStepExecuted(
+            CraftingPlanStepRecipe[step], CraftingPlanStepTier[step]
+        );
     }
 
     int GetRoundedUpProportionalUnits(
@@ -4511,19 +4980,22 @@ class CaelumPlayer : DoomPlayer
                 CraftingSelectedInfrastructureAvailable = false;
                 return false;
             }
-            if (!RegisterDirectCraftingStep(componentRecipe, resolvedTier))
-            {
-                return false;
-            }
+            int planStep = RegisterDirectCraftingStep(
+                componentRecipe, resolvedTier
+            );
+            if (planStep < 0) { return false; }
             int baseMaterial = CaelumCraftingRules.GetComponentBaseMaterial(
                 materialType, resolvedTier
             );
             int baseTier = CaelumCraftingRules.GetComponentBaseTier(
                 materialType, resolvedTier
             );
-            int baseUnits = GetRoundedUpProportionalUnits(
-                missingUnits, 100, Max(1, CraftingEfficiencyPercent)
-            );
+            int baseUnits =
+                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                    missingUnits,
+                    CraftingPlanStepEfficiency[planStep]
+                );
+            AddDirectCraftingStepWork(planStep, baseUnits);
             return RequireDirectCraftingMaterial(
                 baseMaterial, baseTier, baseUnits, depth + 1
             );
@@ -4547,14 +5019,16 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectedInfrastructureAvailable = false;
             return false;
         }
-        if (!RegisterDirectCraftingStep(processingRecipe, resolvedTier))
-        {
-            return false;
-        }
-
-        int efficiencyAdjustedOutput = GetRoundedUpProportionalUnits(
-            missingUnits, 100, Max(1, CraftingEfficiencyPercent)
+        int planStep = RegisterDirectCraftingStep(
+            processingRecipe, resolvedTier
         );
+        if (planStep < 0) { return false; }
+
+        int efficiencyAdjustedOutput =
+            CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                missingUnits,
+                CraftingPlanStepEfficiency[planStep]
+            );
         int theoreticalOutput = Max(
             1,
             CaelumCraftingRules.GetProcessingOutputUnits(
@@ -4568,6 +5042,18 @@ class CaelumPlayer : DoomPlayer
             ),
             theoreticalOutput
         );
+        int inputTwoMaterial =
+            CaelumCraftingRules.GetProcessingInputTwoMaterial(processingRecipe);
+        int inputTwoUnits = GetRoundedUpProportionalUnits(
+            efficiencyAdjustedOutput,
+            CaelumCraftingRules.GetProcessingInputTwoUnits(
+                processingRecipe, 0
+            ),
+            theoreticalOutput
+        );
+        AddDirectCraftingStepWork(
+            planStep, inputOneUnits + inputTwoUnits
+        );
         if (!RequireDirectCraftingMaterial(
             CaelumCraftingRules.GetProcessingInputOneMaterial(processingRecipe),
             CaelumCraftingRules.GetProcessingInputOneTier(processingRecipe),
@@ -4577,16 +5063,7 @@ class CaelumPlayer : DoomPlayer
         {
             return false;
         }
-        int inputTwoMaterial =
-            CaelumCraftingRules.GetProcessingInputTwoMaterial(processingRecipe);
         if (inputTwoMaterial < 0) { return true; }
-        int inputTwoUnits = GetRoundedUpProportionalUnits(
-            efficiencyAdjustedOutput,
-            CaelumCraftingRules.GetProcessingInputTwoUnits(
-                processingRecipe, 0
-            ),
-            theoreticalOutput
-        );
         return RequireDirectCraftingMaterial(
             inputTwoMaterial,
             CaelumCraftingRules.GetProcessingInputTwoTier(processingRecipe),
@@ -4637,11 +5114,19 @@ class CaelumPlayer : DoomPlayer
         CraftingDirectPlanUsed = valid && CraftingDirectPlanStepCount > 0;
         if (valid)
         {
-            CraftingPreviewSeconds =
-                CaelumCraftingRules.GetPrecisionTaskSeconds(
-                    CaelumConstants.CRAFTING_BASE_TASK_SECONDS
-                        * (1 + CraftingDirectPlanStepCount)
-                );
+            for (int step = 0;
+                step < CraftingDirectPlanStepCount; step++)
+            {
+                CraftingPreviewSeconds += CraftingPlanStepSeconds[step];
+            }
+        }
+        else
+        {
+            for (int node = 1;
+                node < CraftingBlueprintNodeCount; node++)
+            {
+                CraftingBlueprintNodeExecuted[node] = false;
+            }
         }
     }
 
@@ -5143,6 +5628,8 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectedInfrastructureAvailable = false;
             CraftingMissingStationType =
                 CaelumConstants.CRAFTING_STATION_NONE;
+            ClearCraftingBlueprint();
+            ClearDirectCraftingPlan();
             RefreshCarriedInventorySummary();
             return;
         }
@@ -5506,6 +5993,26 @@ class CaelumPlayer : DoomPlayer
                     CraftingBasicMaterialType, CraftingSelectionTier
                 );
             }
+
+            // El montaje y la reparación producen un objeto indivisible. Una
+            // eficiencia menor conserva el resultado completo y aumenta cada
+            // entrada por separado para representar la merma elegida.
+            CraftingBasicRequired =
+                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                    CraftingBasicRequired, CraftingEfficiencyIndex
+                );
+            CraftingTierRequired =
+                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                    CraftingTierRequired, CraftingEfficiencyIndex
+                );
+            CraftingSilverRequired =
+                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                    CraftingSilverRequired, CraftingEfficiencyIndex
+                );
+            CraftingGoldRequired =
+                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                    CraftingGoldRequired, CraftingEfficiencyIndex
+                );
         }
 
         CraftingBasicOwned = CountCraftingMaterial(
@@ -5528,24 +6035,16 @@ class CaelumPlayer : DoomPlayer
             CraftingMissingStationType
                 == CaelumConstants.CRAFTING_STATION_NONE;
 
-        double taskTimeFactor = 1.0;
-        if (CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            taskTimeFactor =
-                CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                    CraftingEfficiencyIndex
-                );
-        }
-        CraftingPreviewSeconds = CaelumCraftingRules.GetPrecisionTaskSeconds(
-            CaelumConstants.CRAFTING_BASE_TASK_SECONDS,
-            taskTimeFactor
+        CraftingPreviewSeconds = GetCraftingMaterialWorkSeconds(
+            GetCurrentCraftingInputUnits(),
+            CaelumCraftingRules.GetRecipeComplexityTics(
+                CraftingSelectionRecipe
+            )
         );
 
-        // Las armas pueden reservar una ruta completa desde materias primas.
-        // Cada receta intermedia única suma otra transacción de diez segundos.
+        // El árbol completo permanece visible aunque ya existan componentes;
+        // la ruta real añade tiempo sólo por pasos que deban ejecutarse.
+        BuildCraftingBlueprint();
         RefreshDirectWeaponCraftingPlan();
         CraftingPreviewIconPath = ResolveCraftingPreviewIconPath();
 
@@ -5798,10 +6297,7 @@ class CaelumPlayer : DoomPlayer
             || CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
         {
-            CraftingEfficiencyIndex = (CraftingEfficiencyIndex + 1)
-                % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-            RefreshCraftingPreview();
+            CycleCraftingEfficiency();
             return;
         }
         CraftingSelectionSize = (CraftingSelectionSize + 1)
@@ -5813,19 +6309,31 @@ class CaelumPlayer : DoomPlayer
     void CycleCraftingEfficiency()
     {
         RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        int selectedNode = Clamp(
+            CraftingBlueprintSelectedNode,
+            0, Max(0, CraftingBlueprintNodeCount - 1)
+        );
+        if (selectedNode > 0
+            && CraftingBlueprintNodeKind[selectedNode]
+                == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
         {
-            return;
+            int recipeIndex = CraftingBlueprintNodeRecipe[selectedNode];
+            int materialTier =
+                CraftingBlueprintNodeMaterialTier[selectedNode];
+            int nextEfficiency =
+                (GetCraftingLayerEfficiencyIndex(
+                    recipeIndex, materialTier
+                ) + 1)
+                % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
+            SetCraftingLayerEfficiencyIndex(
+                recipeIndex, materialTier, nextEfficiency
+            );
         }
-        CraftingEfficiencyIndex = (CraftingEfficiencyIndex + 1)
-            % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
+        else
+        {
+            CraftingEfficiencyIndex = (CraftingEfficiencyIndex + 1)
+                % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
+        }
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
     }
@@ -7870,6 +8378,12 @@ class CaelumPlayer : DoomPlayer
             : CaelumCraftingRules.GetProportionalInputUnits(
                 fullUnits, durabilityFraction
             );
+        if (!recovery)
+        {
+            units = CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
+                units, CraftingEfficiencyIndex
+            );
+        }
         if (recovery)
         {
             return AddCraftingTaskOutput(
@@ -8067,6 +8581,42 @@ class CaelumPlayer : DoomPlayer
         return Max(0, requiredSlots - freedSlots);
     }
 
+    int GetCraftingTaskReservedUnitTotal()
+    {
+        int total = 0;
+        for (int slot = 0;
+            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
+        {
+            total += Max(0, CraftingTaskReservedUnits[slot]);
+        }
+        return total;
+    }
+
+    int GetEquipmentTaskComplexityTics(CaelumEquipmentItem item)
+    {
+        if (item == null)
+        {
+            return CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
+        }
+        bool essenceWeapon = item.EquipmentKind
+                == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && WeaponModel != null
+            && WeaponModel.IsMagicalType(item.ItemType);
+        return CaelumCraftingRules.GetEquipmentComplexityTics(
+            item.EquipmentKind, item.ItemType, essenceWeapon
+        );
+    }
+
+    double GetEquipmentTaskSeconds(
+        CaelumEquipmentItem item, int employedMaterialUnits
+    )
+    {
+        return GetCraftingMaterialWorkSeconds(
+            employedMaterialUnits,
+            GetEquipmentTaskComplexityTics(item)
+        );
+    }
+
     void BeginRepairSelectedEquipment()
     {
         LastEquipmentAction =
@@ -8129,9 +8679,8 @@ class CaelumPlayer : DoomPlayer
             CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED;
         StartPreparedCraftingTask(
             CaelumConstants.CRAFTING_TASK_REPAIR,
-            CaelumCraftingRules.GetPrecisionTaskSeconds(
-                CaelumConstants.CRAFTING_BASE_TASK_SECONDS
-                    * missingFraction
+            GetEquipmentTaskSeconds(
+                target, GetCraftingTaskReservedUnitTotal()
             )
         );
     }
@@ -8198,8 +8747,11 @@ class CaelumPlayer : DoomPlayer
             CaelumConstants.EQUIPMENT_ACTION_DISMANTLE_STARTED;
         StartPreparedCraftingTask(
             CaelumConstants.CRAFTING_TASK_DISMANTLE,
-            CaelumCraftingRules.GetPrecisionTaskSeconds(
-                CaelumConstants.CRAFTING_BASE_TASK_SECONDS
+            GetEquipmentTaskSeconds(
+                target,
+                CaelumCraftingRules.GetRoundedMaterialUnits(
+                    GetEquipmentTaskWeight(target), 1.0
+                )
             )
         );
     }
@@ -8391,6 +8943,32 @@ class CaelumPlayer : DoomPlayer
         CraftingNetworkCapabilities = oldCapabilities;
         PersistCharacterState();
         RefreshEquipmentSelectionPreview();
+        RefreshFormalInventorySnapshot();
+        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+    }
+
+    void AdvanceDebugCraftingTime()
+    {
+        if (!CraftingTaskActive || CraftingTaskCompleting
+            || !RefreshActiveCraftingStationSession())
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_BLOCKED;
+            return;
+        }
+        CraftingTaskRemainingSeconds = Max(
+            0.0,
+            CraftingTaskRemainingSeconds
+                - CaelumConstants.CRAFTING_DEBUG_ADVANCE_SECONDS
+        );
+        LastCraftingAction =
+            CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_ADVANCED;
+        if (CraftingTaskRemainingSeconds <= 0.0)
+        {
+            CompleteCraftingTask();
+            return;
+        }
+        PersistCharacterState();
         RefreshFormalInventorySnapshot();
         if (CraftingMenuOpen) { RefreshCraftingPreview(); }
     }

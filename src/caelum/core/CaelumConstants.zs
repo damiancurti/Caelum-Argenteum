@@ -384,28 +384,43 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_FAILED_TARGET = 14;
     const CRAFTING_ACTION_REPAIRED = 15;
     const CRAFTING_ACTION_DISMANTLED = 16;
+    const CRAFTING_ACTION_DEBUG_TIME_ADVANCED = 17;
+    const CRAFTING_ACTION_DEBUG_TIME_BLOCKED = 18;
 
     // Una sola tarea autoritativa por jugador. Los huecos adicionales permiten
     // reservar de forma atómica los materiales primarios de una ruta directa
     // (equipo -> componentes -> refinado) sin crear objetos intermedios falsos.
     const CRAFTING_TASK_MATERIAL_SLOT_COUNT = 16;
     const CRAFTING_DIRECT_STEP_SLOT_COUNT = 16;
+    // El desglose visible incluye el objeto final, transformaciones
+    // intermedias y materias primas. Las elecciones de eficiencia se guardan
+    // por receta/tier y se reutilizan si una misma transformación alimenta
+    // más de una rama.
+    const CRAFTING_BLUEPRINT_NODE_SLOT_COUNT = 32;
+    const CRAFTING_LAYER_CHOICE_SLOT_COUNT = 16;
+    const CRAFTING_BLUEPRINT_NODE_FINAL = 0;
+    const CRAFTING_BLUEPRINT_NODE_RECIPE = 1;
+    const CRAFTING_BLUEPRINT_NODE_RAW = 2;
     const CRAFTING_TASK_NONE = 0;
     const CRAFTING_TASK_ASSEMBLY = 1;
     const CRAFTING_TASK_PROCESSING = 2;
     const CRAFTING_TASK_COMPONENT = 3;
     const CRAFTING_TASK_REPAIR = 4;
     const CRAFTING_TASK_DISMANTLE = 5;
-    const CRAFTING_BASE_TASK_SECONDS = 10.0;
     const CRAFTING_ACTIVE_STATION_DISTANCE = 96.0;
-    const CRAFTING_PRECISION_TEST_SPEED_PERCENT = 100.0;
+    const CRAFTING_SIMPLE_TICS_PER_MATERIAL = 1;
+    const CRAFTING_NORMAL_TICS_PER_MATERIAL = 2;
+    const CRAFTING_DETAILED_TICS_PER_MATERIAL = 3;
+    const CRAFTING_COMPLEX_TICS_PER_MATERIAL = 4;
+    const CRAFTING_DEBUG_ADVANCE_SECONDS = 600.0;
     const CRAFTING_EFFICIENCY_OPTION_COUNT = 3;
     const CRAFTING_EFFICIENCY_FAST_PERCENT = 50;
     const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 75;
     const CRAFTING_EFFICIENCY_PERFECT_PERCENT = 100;
     const CRAFTING_EFFICIENCY_FAST_TIME_FACTOR = 1.0;
-    // Desde 4.30.0b la eficiencia modifica únicamente el rendimiento. Todas
-    // las transacciones y todos los tamaños de lote duran diez segundos.
+    // Desde 4.30.0e la eficiencia sigue describiendo rendimiento/merma. El
+    // tiempo depende de las unidades realmente empleadas, de la complejidad
+    // de cada paso y de Destreza Tipo 1; no usa un factor temporal separado.
     const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 1.0;
     const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 1.0;
 

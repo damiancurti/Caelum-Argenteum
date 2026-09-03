@@ -182,6 +182,10 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_REPAIRED";
             case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
                 return "CA_CRAFTING_ACTION_DISMANTLED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_ADVANCED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_BLOCKED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -761,6 +765,144 @@ class CaelumJournalOverlay : EventHandler
         );
     }
 
+    ui int GetCraftingEfficiencyPercentForIndex(int efficiencyIndex)
+    {
+        if (efficiencyIndex == 1)
+        {
+            return CaelumConstants.CRAFTING_EFFICIENCY_CAREFUL_PERCENT;
+        }
+        if (efficiencyIndex == 2)
+        {
+            return CaelumConstants.CRAFTING_EFFICIENCY_PERFECT_PERCENT;
+        }
+        return CaelumConstants.CRAFTING_EFFICIENCY_FAST_PERCENT;
+    }
+
+    ui String FormatCraftingBlueprintNodeName(
+        CaelumPlayer localPlayer, int node
+    )
+    {
+        if (localPlayer.CraftingBlueprintNodeKind[node]
+            == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
+        {
+            return StringTable.Localize(
+                "CA_JOURNAL_CRAFTING_FINAL_STEP", false
+            );
+        }
+        return FormatInventoryEntryName(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            localPlayer.CraftingBlueprintNodeMaterialType[node],
+            -1,
+            localPlayer.CraftingBlueprintNodeMaterialTier[node],
+            CaelumConstants.EQUIPMENT_SIZE_M,
+            CaelumConstants.ESSENCE_FIRE
+        );
+    }
+
+    ui void DrawCraftingBlueprint(CaelumPlayer localPlayer)
+    {
+        int visibleRows = 4;
+        int nodeCount = localPlayer.CraftingBlueprintNodeCount;
+        if (nodeCount <= 0) { return; }
+        int selected = Clamp(
+            localPlayer.CraftingBlueprintSelectedNode,
+            0, nodeCount - 1
+        );
+        int visibleStart = Clamp(
+            selected - 1,
+            0, Max(0, nodeCount - visibleRows)
+        );
+
+        DrawTextLine(
+            SmallFont, Font.CR_GRAY, 52.0, 212.0,
+            String.Format(
+                "%s  ·  %s %d/%d",
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_BREAKDOWN", false
+                ),
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_SELECTED_STEP", false
+                ),
+                selected + 1,
+                nodeCount
+            )
+        );
+
+        for (int row = 0; row < visibleRows; row++)
+        {
+            int node = visibleStart + row;
+            if (node >= nodeCount) { break; }
+            int nodeKind = localPlayer.CraftingBlueprintNodeKind[node];
+            String indentation = "";
+            for (int depth = 0;
+                depth < Min(4, localPlayer.CraftingBlueprintNodeDepth[node]);
+                depth++)
+            {
+                indentation = indentation .. "  ";
+            }
+            String nodeName = FormatCraftingBlueprintNodeName(
+                localPlayer, node
+            );
+            String nodeLine;
+            if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
+            {
+                nodeLine = String.Format(
+                    "%s%s %d/%d",
+                    indentation,
+                    nodeName,
+                    localPlayer.CraftingBlueprintNodeOwnedUnits[node],
+                    localPlayer.CraftingBlueprintNodeUnits[node]
+                );
+            }
+            else
+            {
+                if (nodeKind
+                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
+                {
+                    nodeLine = String.Format(
+                        "%s%s x%d · %d%% · %d t/u · %.1f s",
+                        indentation,
+                        nodeName,
+                        localPlayer.CraftingBlueprintNodeInputUnits[node],
+                        GetCraftingEfficiencyPercentForIndex(
+                            localPlayer.CraftingBlueprintNodeEfficiency[node]
+                        ),
+                        localPlayer.CraftingBlueprintNodeComplexityTics[node],
+                        localPlayer.CraftingBlueprintNodeSeconds[node]
+                    );
+                }
+                else
+                {
+                    nodeLine = String.Format(
+                        "%s%s %d/%d · %d%% · %d t/u · %.1f s",
+                        indentation,
+                        nodeName,
+                        localPlayer.CraftingBlueprintNodeOwnedUnits[node],
+                        localPlayer.CraftingBlueprintNodeUnits[node],
+                        GetCraftingEfficiencyPercentForIndex(
+                            localPlayer.CraftingBlueprintNodeEfficiency[node]
+                        ),
+                        localPlayer.CraftingBlueprintNodeComplexityTics[node],
+                        localPlayer.CraftingBlueprintNodeSeconds[node]
+                    );
+                }
+            }
+            bool nodeAvailable = nodeKind
+                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL
+                || localPlayer.CraftingBlueprintNodeExecuted[node]
+                || localPlayer.CraftingBlueprintNodeOwnedUnits[node]
+                    >= localPlayer.CraftingBlueprintNodeUnits[node];
+            int color = node == selected
+                ? Font.CR_GOLD
+                : nodeAvailable ? Font.CR_GREEN : Font.CR_RED;
+            DrawTextLine(
+                SmallFont, color,
+                52.0, 228.0 + row * 14.0,
+                nodeLine
+            );
+        }
+    }
+
     ui void DrawCraftsPage(CaelumPlayer localPlayer)
     {
         if (!localPlayer.CraftingMenuOpen)
@@ -820,87 +962,34 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(
             SmallFont, Font.CR_CYAN, 132.0, 194.0,
             String.Format(
-                "%s: %.1f s",
+                "%s: %.1f s  ·  %s: %.1f s",
                 StringTable.Localize("CA_JOURNAL_CRAFTING_TIME", false),
-                localPlayer.CraftingPreviewSeconds
+                localPlayer.CraftingPreviewSeconds,
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_FROM_RAW", false
+                ),
+                localPlayer.CraftingBlueprintFullSeconds
             )
         );
 
-        String basicName = FormatInventoryEntryName(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            localPlayer.CraftingBasicMaterialType,
-            -1,
-            localPlayer.CraftingBasicMaterialTier,
-            CaelumConstants.EQUIPMENT_SIZE_M,
-            CaelumConstants.ESSENCE_FIRE
-        );
-        DrawTextLine(
-            SmallFont,
-            localPlayer.CraftingDirectPlanAvailable
-                || localPlayer.CraftingBasicOwned
-                    >= localPlayer.CraftingBasicRequired
-                ? Font.CR_GREEN : Font.CR_RED,
-            132.0, 216.0,
-            String.Format(
-                "%s: %d/%d", basicName,
-                localPlayer.CraftingBasicOwned,
-                localPlayer.CraftingBasicRequired
-            )
-        );
-        if (localPlayer.CraftingTierRequired > 0)
-        {
-            String tierName = FormatInventoryEntryName(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                localPlayer.CraftingTierMaterialType,
-                -1,
-                localPlayer.CraftingTierMaterialTier,
-                CaelumConstants.EQUIPMENT_SIZE_M,
-                CaelumConstants.ESSENCE_FIRE
-            );
-            DrawTextLine(
-                SmallFont,
-                localPlayer.CraftingDirectPlanAvailable
-                    || localPlayer.CraftingTierOwned
-                        >= localPlayer.CraftingTierRequired
-                    ? Font.CR_GREEN : Font.CR_RED,
-                132.0, 236.0,
-                String.Format(
-                    "%s: %d/%d", tierName,
-                    localPlayer.CraftingTierOwned,
-                    localPlayer.CraftingTierRequired
-                )
-            );
-        }
-
-        if (localPlayer.CraftingDirectPlanAvailable)
-        {
-            DrawTextLine(
-                SmallFont, Font.CR_GREEN, 398.0, 216.0,
-                String.Format(
-                    "%s: %d",
-                    StringTable.Localize(
-                        "CA_JOURNAL_CRAFTING_DIRECT_STEPS", false
-                    ),
-                    localPlayer.CraftingDirectPlanStepCount
-                )
-            );
-        }
+        DrawCraftingBlueprint(localPlayer);
         DrawTextLine(
             SmallFont,
             localPlayer.CraftingSelectedInfrastructureAvailable
                 ? Font.CR_GREEN : Font.CR_RED,
-            398.0, 236.0,
-            StringTable.Localize(
-                localPlayer.CraftingSelectedInfrastructureAvailable
-                    ? "CA_CRAFTING_INFRASTRUCTURE_READY"
-                    : "CA_CRAFTING_INFRASTRUCTURE_MISSING",
-                false
-            )
-        );
-        DrawTextLine(
-            SmallFont, Font.CR_CYAN, 398.0, 256.0,
+            52.0, 288.0,
             String.Format(
-                "%s: %d/%d",
+                "%s  ·  %s: %d  ·  %s: %d/%d",
+                StringTable.Localize(
+                    localPlayer.CraftingSelectedInfrastructureAvailable
+                        ? "CA_CRAFTING_INFRASTRUCTURE_READY"
+                        : "CA_CRAFTING_INFRASTRUCTURE_MISSING",
+                    false
+                ),
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_DIRECT_STEPS", false
+                ),
+                localPlayer.CraftingDirectPlanStepCount,
                 StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
                 localPlayer.MagicBoxUsedSlots,
                 localPlayer.MagicBoxMaximumSlots
@@ -913,7 +1002,7 @@ class CaelumJournalOverlay : EventHandler
                 SmallFont,
                 localPlayer.CraftingTaskProgressing
                     ? Font.CR_CYAN : Font.CR_GOLD,
-                52.0, 278.0,
+                52.0, 304.0,
                 String.Format(
                     "%s: %.1f/%.1f s · %s",
                     StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
@@ -935,7 +1024,7 @@ class CaelumJournalOverlay : EventHandler
                 localPlayer.LastCraftingAction
                         == CaelumConstants.CRAFTING_ACTION_NONE
                     ? Font.CR_GRAY : Font.CR_GOLD,
-                52.0, 278.0,
+                52.0, 304.0,
                 StringTable.Localize(
                     GetCraftingActionKey(localPlayer.LastCraftingAction),
                     false
@@ -1075,6 +1164,18 @@ class CaelumJournalOverlay : EventHandler
             }
         }
         else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_DownArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
+        {
+            SendNetworkEvent("ca_crafting_step_next");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_UpArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
+        {
+            SendNetworkEvent("ca_crafting_step_previous");
+        }
+        else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_RightArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Right))
         {
@@ -1111,6 +1212,11 @@ class CaelumJournalOverlay : EventHandler
             && (e.KeyChar == 99 || e.KeyChar == 67))
         {
             SendNetworkEvent("ca_crafting_cancel_task");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 116 || e.KeyChar == 84))
+        {
+            SendNetworkEvent("ca_debug_advance_crafting_time");
         }
         else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 102 || e.KeyChar == 70))
@@ -1255,6 +1361,14 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_crafting_efficiency")
         {
             requestingPlayer.CycleCraftingEfficiency();
+        }
+        else if (e.Name == "ca_crafting_step_next")
+        {
+            requestingPlayer.CycleCraftingBlueprintSelection(1);
+        }
+        else if (e.Name == "ca_crafting_step_previous")
+        {
+            requestingPlayer.CycleCraftingBlueprintSelection(-1);
         }
         else if (e.Name == "ca_crafting_cancel_task")
         {

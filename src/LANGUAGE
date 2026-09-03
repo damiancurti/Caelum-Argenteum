@@ -1517,3 +1517,27 @@ CA_JOURNAL_CRAFTING_DIRECT_STEPS = "Pasos previos automáticos";
 CA_JOURNAL_CRAFTING_RUNNING = "trabajando en la estación";
 CA_JOURNAL_CRAFTING_PAUSED = "en pausa";
 CA_JOURNAL_CRAFTING_HELP = "Izq./Der. receta | Tab familia | Espacio tier/lote | R talle | X eficiencia | E fabricar | C cancelar | Q cerrar";
+
+[enu default]
+CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Debug: advance active crafting task by 10 minutes";
+CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED = "Debug: active task advanced by 10 minutes";
+CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED = "Debug advance rejected: attend the valid active station task";
+CA_JOURNAL_CRAFTING_FROM_RAW = "from raw materials";
+CA_JOURNAL_CRAFTING_FINAL_STEP = "Final assembly / operation";
+CA_JOURNAL_CRAFTING_BREAKDOWN = "Expanded recipe";
+CA_JOURNAL_CRAFTING_SELECTED_STEP = "selected step";
+CA_DEBUG_CRAFTING_ADVANCE_HINT = "debug control: +10 min";
+CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · debug control advances 10 min";
+CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier/batch | R size | E craft | T +10m | Q close";
+
+[es]
+CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Depuración: adelantar 10 minutos la tarea de crafteo";
+CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED = "Depuración: tarea adelantada 10 minutos";
+CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED = "Avance rechazado: atendé la tarea activa en una estación válida";
+CA_JOURNAL_CRAFTING_FROM_RAW = "desde materias primas";
+CA_JOURNAL_CRAFTING_FINAL_STEP = "Montaje u operación final";
+CA_JOURNAL_CRAFTING_BREAKDOWN = "Receta desplegada";
+CA_JOURNAL_CRAFTING_SELECTED_STEP = "paso elegido";
+CA_DEBUG_CRAFTING_ADVANCE_HINT = "control de depuración: +10 min";
+CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el control adelanta 10 min";
+CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier/lote | R talle | E fabricar | T +10m | Q cerrar";

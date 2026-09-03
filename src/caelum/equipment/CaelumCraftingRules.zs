@@ -414,9 +414,113 @@ class CaelumCraftingRules : Object
         double baseSeconds, double timeFactor = 1.0
     )
     {
-        return Max(0.0, baseSeconds) * Max(0.0, timeFactor)
-            * 100.0
-            / CaelumConstants.CRAFTING_PRECISION_TEST_SPEED_PERCENT;
+        // Compatibilidad con llamadas antiguas: 4.30.0e calcula el tiempo
+        // autoritativo con GetMaterialWorkSeconds y la Destreza del jugador.
+        return Max(0.0, baseSeconds) * Max(0.0, timeFactor);
+    }
+
+    static int GetEfficiencyAdjustedInputUnits(
+        int theoreticalUnits, int efficiencyIndex
+    )
+    {
+        if (theoreticalUnits <= 0) { return 0; }
+        // En objetos indivisibles la eficiencia representa merma: el resultado
+        // sigue siendo una pieza completa y cada material se redondea arriba.
+        return Max(1, int(Ceil(
+            theoreticalUnits * 100.0
+                / Max(1, GetCraftingEfficiencyPercent(efficiencyIndex))
+            - 0.0000001
+        )));
+    }
+
+    static double GetMaterialWorkSeconds(
+        int employedMaterialUnits, int complexityTics,
+        double typeOneDexterityPercent
+    )
+    {
+        double baseTics = Max(0, employedMaterialUnits)
+            * Clamp(
+                complexityTics,
+                CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL,
+                CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL
+            );
+        return baseTics / TICRATE
+            * 100.0 / Max(100.0, typeOneDexterityPercent);
+    }
+
+    static int GetPhysicalWeaponComplexityTics(int weaponId)
+    {
+        switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+        {
+            case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
+            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW:
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW:
+                return CaelumConstants.CRAFTING_NORMAL_TICS_PER_MATERIAL;
+            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW:
+                return CaelumConstants.CRAFTING_DETAILED_TICS_PER_MATERIAL;
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
+                return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
+            default:
+                // Dagas, hachas, machetes y todas las armas de filo o asta.
+                return CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
+        }
+    }
+
+    static int GetRecipeComplexityTics(int recipeIndex)
+    {
+        int recipeKind = GetUnifiedRecipeKind(recipeIndex);
+        if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)
+        {
+            return GetPhysicalWeaponComplexityTics(
+                GetStationRecipeWeapon(
+                    CaelumConstants.CRAFTING_STATION_WORKBENCH,
+                    GetUnifiedPhysicalRecipeIndex(recipeIndex)
+                )
+            );
+        }
+        if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
+            || recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
+        {
+            return CaelumConstants.CRAFTING_DETAILED_TICS_PER_MATERIAL;
+        }
+        if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
+            || recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+            || recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        {
+            return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
+        }
+        if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
+        {
+            int materialType = GetComponentOutputMaterial(recipeIndex);
+            if (IsEssenceComponent(materialType)
+                || IsJewelryComponent(materialType))
+            {
+                return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
+            }
+        }
+        // Fundición, aleaciones, madera, fibras, cueros y componentes
+        // estructurales sencillos usan un tic por unidad empleada.
+        return CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
+    }
+
+    static int GetEquipmentComplexityTics(
+        int equipmentKind, int itemType, bool essenceWeapon
+    )
+    {
+        if (equipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            || equipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            return CaelumConstants.CRAFTING_DETAILED_TICS_PER_MATERIAL;
+        }
+        if (essenceWeapon)
+        {
+            return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
+        }
+        int catalogueWeapon = GetCatalogueWeaponForPlayableType(itemType);
+        return catalogueWeapon >= 0
+            ? GetPhysicalWeaponComplexityTics(catalogueWeapon)
+            : CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
     }
 
     static int ApplyOutputEfficiency(int theoreticalUnits, int efficiencyIndex)

@@ -542,22 +542,23 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 The complete current specification is maintained
-in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The complete
-transaction remains implemented in 4.30.0b. Cumulative candidate 4.30.0d
-preserves the 4.30.0c compaction of the 17 unreferenced MAP01 sectors and
-corrects the independent player-start crash found by its follow-up load. The
-player now declares Fist as its sole inherited start item instead of granting
-and removing Doom's Pistol during `PlayerReborn`; the address-`0x58` control
-failure reproduces on 4.30.0c and the corrected PK3 completes the exact-engine
-headless smoke. A focused Windows/Doom II visual and gameplay matrix remains
-required before V4.31 begins.
+in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The atomic
+transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0e preserves
+the 4.30.0c compaction and 4.30.0d player-start correction, and replaces the
+provisional fixed task duration with recursive recipe display, independent
+efficiency per craftable layer and material-unit complexity time. The complete
+129-recipe/three-tier tree audit and exact-engine GZDoom 4.14.2 smoke pass; a
+focused author Windows/Doom II visual and gameplay matrix remains required
+before V4.31 begins.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
-  yield with the same elapsed-time factor. The test duration is 10 seconds at
-  every efficiency and for every x1/x10/x100/x1000 batch. Duration is
-  reduced by Dexterity Type-1 physical-precision task speed; the initial test
-  baseline applies no acceleration.
+  yield. Indivisible assembly and repair express the same choices as material
+  waste while still completing the object. Every craftable layer retains its
+  own choice and updates the live route preview immediately.
+- Charge 1/2/3/4 tics per employed material unit according to operation
+  complexity, then multiply by `100 / DexterityType1Percent`. Dexterity 0 is
+  100%; Dexterity 100 is 5150% and therefore 51.5 times faster.
 - Fabricate every equipment component from exactly one base-material type;
   component recipes never mix multiple base materials.
 - Map component families as follows: metal parts, including bells, use the
@@ -575,8 +576,8 @@ required before V4.31 begins.
   remove the former essence-versus-intact-base-implement branch.
 - Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
 - Round every input cost up and every output/recovery down to the established
-  0.001 material unit. Treat 10 seconds as a complete transaction at any
-  batch multiplier and preserve exact 9:1 and 497:3 alloy input ratios.
+  0.001 material unit. Count every employed unit in task time and preserve
+  exact 9:1 and 497:3 alloy input ratios.
 - Cancel with no spend and no output; scale repair duration by missing
   durability; learn component recipes through Minor-Arcana Tarot cards.
 - Progress only while the player actively attends the valid connected station,
@@ -598,7 +599,11 @@ required before V4.31 begins.
 - Permit direct physical/elemental weapon assembly from primary materials when
   every recursively required recipe is known and the complete station network
   is available. Consume existing components first, reserve the remaining raw
-  route atomically and add 10 seconds for each skipped intermediate recipe.
+  route atomically and sum the independently configured material time of every
+  executed intermediate recipe.
+- Display the complete selected recipe down to raw materials, plus both the
+  actual inventory-aware time and the theoretical full-from-raw time. Provide
+  a debug control that advances a valid attended active task by 600 seconds.
 - Treat all transaction rules needed by V4.30 as closed. Exact component/card
   mapping is deliberately deferred until the Tarot-card implementation and
   must not be invented during transaction work.

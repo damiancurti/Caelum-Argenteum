@@ -1,5 +1,56 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Recursive layered crafting and material work 4.30.0e
+
+**Implemented; exact-engine load, formula audit, complete recipe-tree audit and
+visual capture passed in GZDoom 4.14.2; focused author Windows/Doom II matrix
+pending**
+
+Journal → Crafts now expands the selected recipe through every producible
+component and processing dependency until it reaches raw materials. Each
+material row includes its owned/required amount. The view shows four
+scrollable rows, keeps the final operation and every craftable
+intermediate selectable with Up/Down, and changes only the selected layer's
+50%/75%/100% efficiency with X. It presents both the route that uses current
+inventory and the theoretical route from raw materials. Direct physical and
+elemental weapon plans continue to consume existing components first and now
+carry the selected efficiency, input-unit count, complexity and duration for
+each missing layer.
+
+Fixed ten-second transactions are removed. Each executed recipe layer costs
+one, two, three or four engine tics per employed material unit and then applies
+`100 / Type1DexterityPercent`. Type-1 remains
+`100 + Dexterity * (Dexterity + 1) / 2`, so Dexterity 100 supplies 5150% and
+completes the same material work 51.5 times faster than Dexterity 0. Simple
+processing, structural parts and ordinary blade/pole weapons use one tic;
+bows and flails use two; armor, shields, giant gauntlets and crossbows use
+three; essence/gem/jewelry work, elemental implements, amulets, seals and the
+carbine use four.
+
+Standalone processing and component batches retain their 50%/75%/100% output
+yield. Indivisible assembly and repair always complete the result and apply
+efficiency as material waste: each theoretical input becomes
+`ceil(input * 100 / efficiency)`, and the extra units also add time. Repair
+uses the reserved proportional inputs and the item's complexity. Disassembly
+keeps its durability-scaled 50% recovery and now uses the corresponding item
+complexity instead of the retired fixed duration.
+
+The `ca_debug_advance_crafting_time` network command and its Customize
+Controls entry subtract exactly 600 seconds from a valid attended active task.
+It respects the normal station, distance, infrastructure and pause checks and
+uses the same atomic completion path when the remainder reaches zero. T invokes
+it directly while the Crafts station page is open.
+
+The exact 4.14.2 audit measured a 51.500 speed ratio, verified independent
+layer preview changes, verified that 50% doubles the final-operation inputs,
+and verified a 1000-second task becoming 400 seconds after one debug advance.
+All 129 catalogue recipes at all three tiers built valid recursive trees; the
+largest used 16 of the 32 reserved nodes and the invalid count was zero. An
+offscreen Journal capture confirmed that the tree, selected-layer highlight,
+two time previews and task status fit the 640×360 virtual layout. The test PK3
+loaded MAP01 and remained running for the bounded smoke interval. MAP01,
+MAP02, actors and art are unchanged by this patch.
+
 ## Player start-weapon repair 4.30.0d
 
 **Implemented; crash reproduced and repair smoke-tested in exact GZDoom
@@ -57,8 +108,8 @@ independent ready-weapon failure corrected in V4.30.0d.
 
 ## Journal crafting, exact weapon cycling and solid mansion walls 4.30.0b
 
-**Implemented and statically validated; focused runtime/visual matrix in
-GZDoom 4.14.2 pending**
+**Implemented and statically validated in 4.30.0b; fixed-duration behavior
+superseded by the 4.30.0e material-work regime above**
 
 The V4.30.0a runtime report is addressed in one incremental candidate. Missing
 Journal inventory, filter, weight and help strings now have English and Spanish
@@ -68,8 +119,10 @@ Oficios page displays the selected output icon, recipe, tier, size, batch,
 efficiency, material availability, cumulative infrastructure, direct-route
 steps and running/paused task state.
 
-Every normal craft, refinement or component transaction now takes 10 seconds
-at all three efficiencies and all four batch multipliers. An active task only
+In 4.30.0b every normal craft, refinement or component transaction took 10
+seconds at all three efficiencies and all four batch multipliers. Candidate
+4.30.0e replaces that provisional duration with the per-unit complexity model
+documented above. In both versions, an active task only
 advances while its Journal station session remains open, the player is within
 96 MU, the snapshotted infrastructure is still available and the player is out
 of combat. Closing/leaving, missing infrastructure or later combat pauses the
@@ -78,10 +131,10 @@ blocked until the player resumes and completes it or explicitly cancels it.
 
 Physical and elemental weapon assembly can consume a recursively resolved
 primary-material plan when direct components are missing. Existing components
-are used first; every distinct known skipped component/refining recipe adds one
-10-second step and the complete primary input route is reserved atomically.
+are used first and the complete primary input route is reserved atomically.
 The path requires the same cumulative stations and does not create intermediate
-inventory objects.
+inventory objects. In 4.30.0e, independently selected material work replaces
+the former ten-second increment for every skipped component/refining recipe.
 
 Inventory Left/Right walks filters and Right enters Personaje after the last;
 F always advances the filter. Numeric slot 2 cycles exact equipped small-family
