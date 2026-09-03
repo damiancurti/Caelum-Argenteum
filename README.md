@@ -16,10 +16,13 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0c. It preserves the complete
-V4.30.0b gameplay correction and canonically compacts MAP01 after its first
-GZDoom 4.14.2 load exposed 17 sectors with no linedef boundary. The V4.30.0b
-gameplay layer incorporates the runtime feedback from V4.30.0a: all Journal
+The current cumulative candidate is V4.30.0d. It preserves the complete
+V4.30.0b gameplay correction and V4.30.0c MAP01 compaction, then fixes the
+player-start crash exposed by the next GZDoom 4.14.2 load. `CaelumPlayer` now
+redeclares its inherited start-item list with `Fist` as the sole entry, so the
+engine never grants and removes `Pistol` while `PlayerReborn` is staging the
+ready weapon. The V4.30.0b gameplay layer incorporates the runtime feedback
+from V4.30.0a: all Journal
 inventory/filter/help labels are localized, crafting stations now open the
 Oficios page of the Journal, and that page owns recipe navigation, preview art,
 requirements, infrastructure and task state.
@@ -35,7 +38,8 @@ component/refining recipes through the same complete station network, and adds
 input route atomically and never creates temporary intermediate objects.
 Numeric slot 2 cycles exact equipped small-weapon instances, including several
 otherwise identical daggers with different `ItemId`, durability or finish.
-Doom's inherited starting Pistol and Clip are removed.
+Doom's inherited starting Pistol and Clip are excluded declaratively; Fist
+remains the valid unarmed fallback.
 
 The V4.29.0ax inventory foundation gives every non-stackable equipment instance
 a monotonically allocated persistent `ItemId`, so several pieces with the same
@@ -112,9 +116,11 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0c is
-the cumulative correction candidate described above; its focused GZDoom 4.14.2
-MAP01 load and runtime matrix remain pending.
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0d is
+the cumulative correction candidate described above. The former address-0x58
+failure was reproduced with the exact GZDoom 4.14.2 engine and the corrected
+PK3 completed a headless MAP01 smoke run; the focused Windows/Doom II visual
+and gameplay matrix remains pending.
 
 ### Building the development PK3
 

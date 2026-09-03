@@ -544,6 +544,12 @@ class CaelumPlayer : DoomPlayer
         // This prevents user-facing text from being hard-coded in ZScript.
         Player.DisplayName "$CA_PLAYER_DISPLAY_NAME";
 
+        // Declara de nuevo los StartItem para reemplazar la lista heredada de
+        // DoomPlayer. Entregar y retirar Pistol dentro de GiveDefaultInventory
+        // dejaba PendingWeapon en WP_NOCHANGE durante PlayerReborn; el motor
+        // copiaba luego ese centinela a ReadyWeapon y lo trataba como un arma.
+        Player.StartItem "Fist";
+
         // Prefijo facial propio para evitar resolver iconos/rostros heredados de Doom.
         Player.Face "CAF";
 
@@ -8981,15 +8987,6 @@ class CaelumPlayer : DoomPlayer
         RestorePersistentCharacterState();
     }
 
-    override void GiveDefaultInventory()
-    {
-        Super.GiveDefaultInventory();
-        // Se ejecuta después de que DoomPlayer entregue sus StartItem, de modo
-        // que ni la pistola ni sus balas reaparezcan al morir o cambiar mapa.
-        TakeInventory("Pistol", 2147483647);
-        TakeInventory("Clip", 2147483647);
-    }
-
     // PostBeginPlay runs after this player actor has entered the game world.
     // It is a suitable place for first-time initialization of owned objects.
     override void PostBeginPlay()
@@ -8999,11 +8996,6 @@ class CaelumPlayer : DoomPlayer
         ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
         ActiveCraftingStationActor = null;
         CraftingTaskProgressing = false;
-
-        // DoomPlayer aporta Pistol y Clip por herencia. Caelum empieza sin
-        // ambos; las armas y sus municiones se obtienen por sus sistemas.
-        TakeInventory("Pistol", 2147483647);
-        TakeInventory("Clip", 2147483647);
 
         // Create the attribute container only when it does not already exist.
         // This guard helps prevent accidental replacement of stored data.

@@ -1,9 +1,35 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Player start-weapon repair 4.30.0d
+
+**Implemented; crash reproduced and repair smoke-tested in exact GZDoom
+4.14.2; focused Windows/Doom II confirmation pending**
+
+The post-4.30.0c report no longer contains orphan-sector warnings, but retains
+the same address-`0x58` access violation. Symbols for the exact engine build
+place the failure in `PlayerPawn.BringUpWeapon`: `ReadyWeapon.GetReadyState()`
+receives GZDoom's `WP_NOCHANGE` sentinel instead of a real `Weapon`.
+
+`CaelumPlayer.GiveDefaultInventory()` formerly called the DoomPlayer method
+and then removed its inherited Pistol. Removing the selected weapon can finish
+the fallback selection with `PendingWeapon = WP_NOCHANGE`; `PlayerReborn`
+subsequently copies `PendingWeapon` into `ReadyWeapon` before psprite setup.
+The sentinel is a valid generic `DObject`, but it has no `Weapon` virtual entry
+for `GetReadyState`, which produced the null function access.
+
+V4.30.0d declares `Player.StartItem "Fist"` in `CaelumPlayer.Default`. The
+first subclass start-item declaration replaces DoomPlayer's inherited list,
+so Pistol and Clip are never granted and no active weapon is removed during
+rebirth. The redundant `TakeInventory` calls and override are gone. A control
+run reproduced the crash with the cumulative 4.30.0c PK3; the corrected PK3
+loaded MAP01, initialized the safe direct-start profile and remained alive for
+the complete bounded smoke interval on GZDoom 4.14.2. MAP01, MAP02, gameplay
+systems and assets are otherwise unchanged.
+
 ## MAP01 orphan-sector compaction 4.30.0c
 
-**Implemented and independently structurally validated; focused GZDoom 4.14.2
-load/visual matrix pending**
+**Implemented and independently structurally validated; runtime warnings
+cleared, superseded by the 4.30.0d player-start correction above**
 
 The first V4.30.0b MAP01 runtime attempt reached level setup after successful
 ZScript parsing, then reported 17 sector records with no lines before the
@@ -26,8 +52,8 @@ SHA-256 is
 `tools/rebuild_4_30_0c_maps.py` accepts only the exact rejected V4.30.0b WAD or
 the exact corrected WAD, performs an atomic replacement and is idempotent.
 This patch changes no ZScript, LANGUAGE, crafting, inventory, actors, MAP02 or
-assets. Runtime acceptance therefore begins with a MAP01 load smoke test and
-then checks the new 8-MU ground-floor walls and unchanged upper traversal.
+assets. Its next load removed every orphan-sector warning and exposed the
+independent ready-weapon failure corrected in V4.30.0d.
 
 ## Journal crafting, exact weapon cycling and solid mansion walls 4.30.0b
 
