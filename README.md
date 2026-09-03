@@ -16,10 +16,13 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0b. It incorporates the runtime
-feedback from V4.30.0a: all Journal inventory/filter/help labels are localized,
-crafting stations now open the Oficios page of the Journal, and that page owns
-recipe navigation, preview art, requirements, infrastructure and task state.
+The current cumulative candidate is V4.30.0c. It preserves the complete
+V4.30.0b gameplay correction and canonically compacts MAP01 after its first
+GZDoom 4.14.2 load exposed 17 sectors with no linedef boundary. The V4.30.0b
+gameplay layer incorporates the runtime feedback from V4.30.0a: all Journal
+inventory/filter/help labels are localized, crafting stations now open the
+Oficios page of the Journal, and that page owns recipe navigation, preview art,
+requirements, infrastructure and task state.
 Every normal transaction lasts 10 seconds at 50%, 75% or 100% efficiency and
 at every batch size. Closing the Journal, leaving the station radius, losing
 required infrastructure or entering combat pauses the clock without releasing
@@ -47,10 +50,13 @@ catalogue.
 MAP01 keeps the accepted ground-floor plan and its 91 test-material piles, but
 replaces the 31 remaining thin `CMIN01` mansion panels with 19 closed 8-MU wall
 volumes. The conversion is limited to z=0..128 in the main mansion: doors,
-stairs, first-/second-floor occupancy and MAP02 remain unchanged. The resulting
-MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 635 sectors and
+stairs, first-/second-floor occupancy and MAP02 remain unchanged. V4.30.0c
+removes the 17 unreferenced sector records left by that carving operation and
+remaps every live sidedef sector index without changing any vertex, linedef,
+Thing, retained sector property or non-index sidedef property. The resulting
+MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 618 sectors and
 322 Things. Its SHA-256 is
-`ebc4c8aa654bdfc7c3ccd4eb60a8aa9bc4a745f85715189325612cf7bdec6f90`.
+`b333acc001de94d9d1342f62c92596e7e521ff007da620432e0bbdabbfabddfe`.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
 sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
@@ -106,9 +112,9 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0b is
-the focused correction candidate described above; its GZDoom 4.14.2 runtime
-matrix remains pending.
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0c is
+the cumulative correction candidate described above; its focused GZDoom 4.14.2
+MAP01 load and runtime matrix remain pending.
 
 ### Building the development PK3
 
@@ -118,7 +124,7 @@ Build from the repository root with:
 python tools/build_pk3.py src build/caelum_argenteum_dev.pk3
 ```
 
-The builder writes file entries only: ZIP directory records inside `sprites/`, `graphics/`, `flats/` or `textures/` are forbidden because GZDoom may inspect them as zero-sized texture resources. It also rejects empty files, zero-sized PNG dimensions, corrupt ZIP entries and structurally inconsistent UDMF WADs before replacing the existing development PK3. The UDMF gate requires valid front/back/vertex/sector references, exact `sideback`/`twosided` agreement, no orphaned sidedefs and every vertex/Thing coordinate inside the engine-supported `-32768..32768` range.
+The builder writes file entries only: ZIP directory records inside `sprites/`, `graphics/`, `flats/` or `textures/` are forbidden because GZDoom may inspect them as zero-sized texture resources. It also rejects empty files, zero-sized PNG dimensions, corrupt ZIP entries and structurally inconsistent UDMF WADs before replacing the existing development PK3. The UDMF gate requires valid front/back/vertex/sector references, exact `sideback`/`twosided` agreement, no orphaned sidedefs and every vertex/Thing coordinate inside the engine-supported `-32768..32768` range. The V4.30.0c MAP01 repair adds the missing inverse check: every retained sector must be referenced by at least one sidedef.
 
 ### Implemented and tested
 

@@ -1,5 +1,34 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## MAP01 orphan-sector compaction 4.30.0c
+
+**Implemented and independently structurally validated; focused GZDoom 4.14.2
+load/visual matrix pending**
+
+The first V4.30.0b MAP01 runtime attempt reached level setup after successful
+ZScript parsing, then reported 17 sector records with no lines before the
+player was initialized. They were sector indexes 30, 31, 33, 34, 75, 82, 84,
+94, 96, 244, 245, 268, 271, 322, 323, 346 and 349, carrying the residual tags
+510, 546, 580, 581 and 562. The thick-wall carving had removed their complete
+boundaries but had not compacted the sector table.
+
+V4.30.0c removes exactly those unreferenced records and remaps every live
+sidedef sector index in original order. Independent before/after validation
+confirms that all 1,419 vertices, 1,983 linedefs, 3,544 sidedefs and 322 Things
+are retained; vertex, linedef and Thing blocks are byte-identical, and every
+retained sector and every non-index sidedef property is unchanged. All 618
+remaining sectors have at least one sidedef. There are no invalid front/back,
+vertex or sector references, no orphaned/shared sidedefs, no zero-length or
+coincident linedefs and no `sideback`/`twosided` disagreement. Corrected MAP01
+SHA-256 is
+`b333acc001de94d9d1342f62c92596e7e521ff007da620432e0bbdabbfabddfe`.
+
+`tools/rebuild_4_30_0c_maps.py` accepts only the exact rejected V4.30.0b WAD or
+the exact corrected WAD, performs an atomic replacement and is idempotent.
+This patch changes no ZScript, LANGUAGE, crafting, inventory, actors, MAP02 or
+assets. Runtime acceptance therefore begins with a MAP01 load smoke test and
+then checks the new 8-MU ground-floor walls and unchanged upper traversal.
+
 ## Journal crafting, exact weapon cycling and solid mansion walls 4.30.0b
 
 **Implemented and statically validated; focused runtime/visual matrix in

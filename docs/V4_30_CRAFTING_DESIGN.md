@@ -1,9 +1,10 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** implementada en el candidato 4.30.0b; validación manual en GZDoom
-4.14.2 pendiente.
+**Estado:** implementada en 4.30.0b y preservada sin cambios en el candidato
+acumulativo 4.30.0c; validación manual en GZDoom 4.14.2 pendiente.
 
-Este documento fija las reglas y el contrato de prueba de V4.30.0b. El
+Este documento fija las reglas y el contrato de prueba introducido en
+V4.30.0b y conservado en V4.30.0c. El
 catálogo conserva los 79 índices anteriores y anexa 50 recetas de componentes,
 para un total persistente de 129. Las transacciones autoritativas ya están
 implementadas; su aceptación definitiva depende de las pruebas manuales en

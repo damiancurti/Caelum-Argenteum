@@ -543,8 +543,11 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 
 The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The complete
-transaction is implemented in candidate 4.30.0b and awaits its focused
-GZDoom 4.14.2 acceptance matrix before V4.31 begins.
+transaction remains implemented in 4.30.0b. Cumulative candidate 4.30.0c
+canonically removes the 17 unreferenced MAP01 sector records exposed by the
+first load attempt and remaps the live sector indexes without changing
+gameplay or geometry. It awaits a focused MAP01 load smoke test followed by
+the existing GZDoom 4.14.2 acceptance matrix before V4.31 begins.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
