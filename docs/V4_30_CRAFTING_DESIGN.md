@@ -1,20 +1,13 @@
 # V4.30: refinado, componentes, reparación y desarme
 
-**Estado:** especificación transaccional cerrada; inventario formal e identidad
-de piezas implementados en 4.29.0ax, tareas temporizadas todavía no implementadas.
+**Estado:** implementada en el candidato 4.30.0b; validación manual en GZDoom
+4.14.2 pendiente.
 
-Este documento fija las reglas ya decididas para V4.30. El ejecutable de
-4.29.0ax conserva sus transacciones inmediatas, su catálogo persistente de 79
-recetas y sus herramientas de reparación/desarme de desarrollo. Ningún tiempo,
-coste proporcional o receta de componente descrito aquí debe presentarse como
-funcional hasta que exista su transacción autoritativa y pase pruebas en
-GZDoom.
-
-Desde 4.29.0ax, cada pieza no apilable posee un `ItemId` persistente propio y
-pueden coexistir varias piezas de configuración idéntica. Los materiales se
-mantienen como una sola pila por tipo+tier, y cada pila ocupa un único espacio
-de Caja Mágica sin importar su cantidad. La futura reserva temporal bloqueará
-una cantidad dentro de esa misma pila; no creará otra pila ni otro espacio.
+Este documento fija las reglas y el contrato de prueba de V4.30.0b. El
+catálogo conserva los 79 índices anteriores y anexa 50 recetas de componentes,
+para un total persistente de 129. Las transacciones autoritativas ya están
+implementadas; su aceptación definitiva depende de las pruebas manuales en
+GZDoom descritas al final.
 
 ## 1. Unidades, rendimiento y tiempo
 
@@ -37,11 +30,11 @@ sobre una misma entrada base `B`:
 
 | Eficiencia | Salida ideal | Factor de tiempo | Duración de prueba |
 |---|---:|---:|---:|
-| 50% | `0.50 * B` | x1 | 9 s |
-| 75% | `0.75 * B` | x3 | 27 s |
-| 100% | `1.00 * B` | x9 | 81 s |
+| 50% | `0.50 * B` | x1 | 10 s |
+| 75% | `0.75 * B` | x1 | 10 s |
+| 100% | `1.00 * B` | x1 | 10 s |
 
-La duración base del entorno de prueba es 9 segundos por **transacción
+La duración base del entorno de prueba es 10 segundos por **transacción
 completa**, con independencia de que el lote use el multiplicador de cantidad
 x1, x10, x100 o x1000. Durante la primera validación se desactiva la
 contribución de Destreza y la velocidad efectiva es 100%. La fórmula existente
@@ -49,19 +42,19 @@ que se conectará posteriormente es:
 
 ```text
 Type1DexterityPercent = 100 + Dexterity * (Dexterity + 1) / 2
-EffectiveSeconds = BaseSeconds * EfficiencyTimeFactor
-                 * 100 / Type1DexterityPercent
+EffectiveSeconds = BaseSeconds * 100 / Type1DexterityPercent
 ```
 
 Una tarea no puede iniciarse mientras el personaje está en combate. Una vez
-iniciada, sólo se cancela mediante una orden explícita del usuario: recibir
-daño, moverse o entrar posteriormente en combate no son canceladores
-automáticos. Al iniciar se calculan todas las entradas necesarias y quedan
-reservadas: permanecen en el inventario, pero están bloqueadas contra cualquier
-otro uso mientras corre el temporizador. Al cancelar se libera la reserva
-completa, sin consumir entradas ni generar salidas. Al completar, las entradas
-reservadas se consumen y las salidas se generan como una única transacción
-atómica.
+iniciada, sólo progresa mientras el Diario sigue abierto en la estación, el
+jugador permanece dentro de 96 MU, continúa fuera de combate y la red conserva
+toda la infraestructura fotografiada al inicio. Cerrar el Diario, alejarse,
+perder una estación o entrar en combate **pausa**, pero no cancela. Al iniciar
+se calculan todas las entradas y quedan reservadas: permanecen en el inventario,
+pero están bloqueadas contra cualquier otro uso incluso durante la pausa. Sólo
+una orden explícita cancela, libera la reserva completa y no produce salida. Al
+completar, las entradas reservadas se consumen y las salidas se generan como
+una única transacción atómica.
 
 Las aleaciones mantienen sus proporciones de entrada exactas. Bronce siempre
 usa cobre/estaño `9:1` y acero siempre usa hierro/carbón `497:3`; la eficiencia
@@ -113,7 +106,7 @@ decisión: cabeza/cuerpo usan 20% correa y 80% material de armadura;
 manos/pies usan 60% correa y 40% material de armadura; los escudos usan 30%
 correa y 70% placa.
 
-## 3. Catálogo persistente actual de 79 recetas
+## 3. Catálogo persistente de 129 recetas
 
 Los rangos siguientes documentan el orden actual. Son índices persistentes de
 base cero; V4.30 no debe renumerarlos al añadir fabricación de componentes.
@@ -127,6 +120,7 @@ base cero; V4.30 no debe renumerarlos al añadir fabricación de componentes.
 | 56-60 | 5 | Sellos | 40% base metálica de sello + 60% gema/broche del elemento |
 | 61-64 | 4 | Escudos | 30% correa de cuero sencillo + 70% placa de su forma |
 | 65-78 | 14 | Procesamiento | Cinco lingotes, bronce, acero, tres tejidos, cuerda y tres cueros |
+| 79-128 | 50 | Componentes | Una entrada base por receta; salida 50%/75%/100% y misma red de estaciones que su familia de equipo |
 
 Las dieciséis armas físicas conservan esta identidad de componentes:
 
@@ -161,6 +155,25 @@ de dos entradas aplican la regla proporcional exacta de la sección 1:
 | Tejido de lana, algodón o seda | 2 unidades de la fibra respectiva por 1 tejido |
 | Cuerda | 2 fibras vegetales por 1 cuerda |
 | Cuero de vaca, depredador o monstruo | 2 pieles respectivas por 1 cuero |
+
+### Fabricación directa de armas
+
+Una receta de arma física o elemental puede iniciarse aunque falten sus
+componentes intermedios, siempre que el personaje posea materiales primarios
+suficientes, conozca todas las recetas intermedias necesarias y esté atendiendo
+una red que reúna la infraestructura completa de cada paso. El planificador:
+
+1. Consume primero componentes o materiales procesados que ya existan.
+2. Resuelve recursivamente sólo lo que falta hasta llegar a materias primas.
+3. Reserva de una vez la ruta primaria completa, sin crear lingotes ni
+   componentes temporales en el inventario.
+4. Añade 10 segundos por cada receta intermedia distinta omitida, además de los
+   10 segundos del montaje final.
+
+Por ejemplo, una daga que omita refinado, hoja y empuñadura tarda 40 segundos:
+10 por cada uno de esos tres pasos y 10 por el arma. La cantidad procesada en
+un paso no multiplica su tiempo, igual que en los lotes normales. Las
+proporciones exactas de bronce y acero siguen siendo obligatorias.
 
 ## 4. Reparación
 
@@ -246,8 +259,63 @@ punto de integración sin inventar esa correspondencia.
 
 ## 7. Estado de las decisiones
 
-Las reglas transaccionales necesarias para implementar V4.30 están cerradas.
+Las reglas transaccionales necesarias para V4.30 están cerradas e
+implementadas en 4.30.0b.
 Las entradas quedan reservadas contra otros usos durante la tarea, se consumen
 sólo al completar y se liberan íntegramente al cancelar. La correspondencia
 exacta entre recetas y cartas no es una decisión pendiente de esta transacción:
 queda deliberadamente aplazada hasta la implementación del sistema de Tarot.
+
+## 8. Contrato de prueba de 4.30.0b
+
+MAP01 contiene seis cúmulos interiores con una pila de 10.000 unidades por
+cada ID de material. También incluye los tiers 1/2/3 de madera y de las cinco
+gemas brutas, que no tienen una transformación anterior capaz de generarlos.
+Son 91 pilas y 910.000 unidades de prueba en total. MAP01 conserva esas pilas y
+el plano aceptado, pero convierte sus 31 paneles finos restantes en 19 muros
+sólidos de 8 MU limitados a z=0..128. Puertas, escaleras, la ocupación/perfil de
+los pisos superiores y MAP02 permanecen sin cambios.
+
+Las recetas de componentes empiezan bloqueadas porque sus cartas concretas
+aún no están definidas. Para probarlas sin inventar cartas:
+
+```text
+ca_debug_crafting_learn_all_recipes
+```
+
+Controles dentro de la red de estaciones:
+
+| Entrada | Función |
+|---|---|
+| `Tab` | Cambiar familia de recetas |
+| `Izquierda/Derecha` | Cambiar receta |
+| `Espacio` | Tier; en procesamiento cambia el lote |
+| `B` | Lote x1/x10/x100/x1000 en procesamiento/componentes |
+| `R` | Talle |
+| `X` | Eficiencia 50%/75%/100% en procesamiento, componentes y pasos directos de armas |
+| `E` o `Enter` | Iniciar la tarea seleccionada |
+| `C` | Cancelar explícitamente la tarea activa |
+| `F` | Reparar la pieza exacta seleccionada en el Journal |
+| `D` | Desarmar la pieza exacta seleccionada en el Journal |
+
+Para reparar o desarmar, se selecciona primero una pieza sin equipar en
+Inventario y luego se usa la red de estaciones requerida. La estación abre
+directamente Diario → Oficios; el objeto seleccionado se conserva. El Diario
+marca con `[R:n]` las unidades reservadas y con `[R:1]` el objeto bloqueado.
+Cerrar el Diario, alejarse, perder infraestructura o entrar en combate pausa el
+contador y mantiene la reserva. Volver a una red válida permite continuar;
+sólo `C` o `ca_crafting_cancel_task` cancela y libera lo bloqueado.
+
+La matriz enfocada debe comprobar además:
+
+1. Que no aparezca ninguna clave `CA_*` sin localizar en Inventario u Oficios.
+2. Que 50%, 75%, 100% y lotes x1/x10/x100/x1000 duren 10 segundos.
+3. Que una ruta directa desde materias primas muestre los pasos omitidos,
+   reserve sus entradas y sume 10 segundos por paso.
+4. Que la vista previa corresponda al material u objeto seleccionado.
+5. Que Izquierda/Derecha/F recorran los filtros y que Derecha desde el último
+   pase a Personaje.
+6. Que el 2 recorra todas las instancias pequeñas equipadas por `ItemId`, sin
+   Pistol ni Clip iniciales.
+7. Que los muros convertidos sean sólidos y gruesos desde ambos lados sin
+   modificar los pisos superiores.

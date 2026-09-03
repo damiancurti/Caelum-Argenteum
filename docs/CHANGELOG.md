@@ -1,5 +1,33 @@
 # Changelog
 
+## 4.30.0a — Timed atomic crafting, repair and disassembly
+
+- Expanded the persistent recipe book from 79 to 129 entries without
+  renumbering any previous recipe. Fifty single-input component recipes are
+  appended at indices 79–128 and remain locked pending their authored
+  Minor-Arcana cards; the development learn-all command unlocks them for QA.
+- Replaced immediate crafting with one persistent timed task per player.
+  Assembly uses 9 seconds; processing/components offer 50%/75%/100% output at
+  9/27/81 seconds for x1/x10/x100/x1000 complete batches. Inputs remain present
+  but reserved until atomic completion, and explicit cancellation releases
+  them with no spend and no output.
+- Added exact per-instance repair and disassembly for weapons, armor and
+  shields. Repair consumes the full recipe proportionally to missing
+  durability and scales its time by the same fraction. Disassembly uses the
+  assembly time and station network and returns
+  `floor(recipe × 0.50 × remaining durability)` per material.
+- Unified elemental, decorative-metal and javelin handling with the same
+  recipe reconstruction. Amulets and seals remain outside durability.
+- Made material outputs obey personal carry weight and reserve a Magic Box
+  stack slot when needed. Reserved stacks, output slots and target item IDs
+  cannot be moved, dropped, equipped or reused by a second transaction.
+- Added six MAP01 ground-floor supply clusters: one 10,000-unit stack for each
+  of the 79 material IDs plus the missing tier variants of wood and raw gems,
+  91 stacks total. MAP01 geometry and upper-floor occupancy are unchanged;
+  MAP02 is byte-identical to 4.29.0bd.
+- The incremental patch contains only files changed by 4.30.0a. It does not
+  repeat folklore sprites, HUD art, audio or any other unchanged asset.
+
 ## 4.29.0ay — GZDoom parser fix, HUD-03 laurels and selected audio v3
 
 - Fixed the GZDoom 4.14.2 startup failure in `CaelumJournalOverlay.zs` by

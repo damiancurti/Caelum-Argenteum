@@ -91,15 +91,6 @@ No later pair may be added while the current pair has a freeze, missing floor, r
 parallel, and the deferred V4.27 combat-input matrix will be revisited after
 this crafting block is complete.
 
-V4.29.0ax establishes the formal inventory prerequisite without altering
-MAP01. Real native entries, rather than catalogue combinations, now drive the
-Journal; non-stackable equipment has a persistent per-piece ID and duplicate
-recipes are allowed, while each material type+tier remains one amount-based
-stack and one Magic Box slot. This closes the ownership model required by
-repair and disassembly. Timed reservation/consumption is still part of V4.30
-and is not represented as completed merely because the inventory can identify
-its future transaction targets.
-
 V4.29.0a is a parallel physics-diagnostic gate requested before new crafting
 content: bounded contact cleanup, real accumulated-pressure damage and eight
 controlled MAP02 A/B rooms. It does not reopen the validated V4.28 Seal track,
@@ -551,13 +542,14 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 ### V4.30 — Repair, Disassembly and Durability Loop
 
 The complete current specification is maintained
-in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). This is a design
-record only; 4.29.0aw does not start the V4.30 transaction implementation.
+in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The complete
+transaction is implemented in candidate 4.30.0b and awaits its focused
+GZDoom 4.14.2 acceptance matrix before V4.31 begins.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 50%/75%/100% material
-  yield with elapsed-time factors ×1/×3/×9. The test base is 9 seconds, so
-  the initial neutral-Dexterity durations are 9/27/81 seconds. Duration is
+  yield with the same elapsed-time factor. The test duration is 10 seconds at
+  every efficiency and for every x1/x10/x100/x1000 batch. Duration is
   reduced by Dexterity Type-1 physical-precision task speed; the initial test
   baseline applies no acceleration.
 - Fabricate every equipment component from exactly one base-material type;
@@ -577,12 +569,14 @@ record only; 4.29.0aw does not start the V4.30 transaction implementation.
   remove the former essence-versus-intact-base-implement branch.
 - Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
 - Round every input cost up and every output/recovery down to the established
-  0.001 material unit. Treat 9/27/81 seconds as a complete transaction at any
+  0.001 material unit. Treat 10 seconds as a complete transaction at any
   batch multiplier and preserve exact 9:1 and 497:3 alloy input ratios.
 - Cancel with no spend and no output; scale repair duration by missing
   durability; learn component recipes through Minor-Arcana Tarot cards.
-- Forbid starting a task in combat. Once a task is active, cancel it only from
-  an explicit user order; damage, movement or later combat do not cancel it.
+- Progress only while the player actively attends the valid connected station,
+  remains within its 96-MU interaction radius and is out of combat. Closing the
+  Journal, leaving, losing infrastructure or entering combat pauses the task
+  without releasing inputs. Only an explicit user order cancels it.
 - Give disassembly exactly the same time and cumulative station requirements
   as crafting the corresponding object.
 - Give each component recipe the same cumulative stations as the target
@@ -595,6 +589,10 @@ record only; 4.29.0aw does not start the V4.30 transaction implementation.
   Reserved inputs cannot serve another transaction and are consumed only on
   atomic completion. Explicit user cancellation releases the entire reserve
   without spend or output.
+- Permit direct physical/elemental weapon assembly from primary materials when
+  every recursively required recipe is known and the complete station network
+  is available. Consume existing components first, reserve the remaining raw
+  route atomically and add 10 seconds for each skipped intermediate recipe.
 - Treat all transaction rules needed by V4.30 as closed. Exact component/card
   mapping is deliberately deferred until the Tarot-card implementation and
   must not be invented during transaction work.
@@ -642,6 +640,9 @@ Closed-boundary degree validation remains a required check, but it is not suffic
 
 - Expand the existing time scale into the authored calendar.
 - Add weather state and environmental modifiers.
+- Publish one stable weather snapshot containing ambient temperature, wind,
+  precipitation and humidity. V4.35 owns those environmental facts but does
+  not yet apply the complete player thermoregulation model.
 - Add travel and world-event scheduling on top of the stable location/faction layer.
 
 ### V4.36 — Movable Environment and Physical Hazards
@@ -669,6 +670,36 @@ Closed-boundary degree validation remains a required check, but it is not suffic
 - Preserve one authoritative inventory, player and Tarot implementation. The multiplayer module handles authority, ownership, validation and synchronization rather than duplicating those systems.
 - Keep save compatibility and native selector/input behavior across the transition.
 - Require parser, single-player, multiplayer and persistence regression tests before removing compatibility wrappers.
+
+### V5.1.0 — Thermal Exposure and Thermoregulation
+
+**Author-approved design; implementation and numeric balance pending. Depends
+on the V4.35 weather snapshot and the V5.0.0 modular transition.**
+
+- Combine climate, tagged environmental zones, activity-derived heat,
+  persistent wetness, wind, exact equipped items and temporary consumables
+  into one bounded player thermal-exposure state.
+- Use Resilience to widen the comfortable temperature band.
+- Apply the approved heat consequences to Thirst, Lucidity and Air recovery;
+  apply the approved cold consequences to Hunger, Anima and damage received.
+- Accumulate and recover exposure over time with hysteresis instead of
+  switching conditions directly at a temperature boundary.
+- Persist player exposure/wetness, recalculate ambient conditions after load,
+  and display compact HUD feedback only outside the comfortable band.
+- Derive sweat from activity and equipment ventilation; let wet equipment
+  create delayed cooling after movement stops.
+- Make camps and authored properties provide shelter, heating and drying, and
+  connect thermal comfort to rest quality and recovery.
+- Add bounded gradual acclimatization so seasonal calendar transitions remain
+  meaningful without being permanently punitive.
+- Apply data-driven species/race climate profiles, elemental Fire/Water/Ice/Air
+  influences and durability-dependent equipment protection.
+- Begin with one low-frequency player calculation. Any later NPC simulation
+  uses simplified profiles and staggered scheduler updates.
+- Implement the diagnostic controls and acceptance matrix before balancing
+  final numeric curves.
+
+Detailed contract: [`V5_THERMAL_EXPOSURE_DESIGN.md`](V5_THERMAL_EXPOSURE_DESIGN.md).
 
 ## 5. Parallel validation tracks
 

@@ -16,10 +16,25 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative V4.29.0ay candidate repairs the reported GZDoom 4.14.2
-parser failure and integrates HUD-03 laurels plus selected-audio v3 without
-changing either map. Its V4.29.0ax inventory foundation gives every
-non-stackable equipment instance
+The current cumulative candidate is V4.30.0b. It incorporates the runtime
+feedback from V4.30.0a: all Journal inventory/filter/help labels are localized,
+crafting stations now open the Oficios page of the Journal, and that page owns
+recipe navigation, preview art, requirements, infrastructure and task state.
+Every normal transaction lasts 10 seconds at 50%, 75% or 100% efficiency and
+at every batch size. Closing the Journal, leaving the station radius, losing
+required infrastructure or entering combat pauses the clock without releasing
+reserved inputs; only explicit cancellation ends the task.
+
+Weapons can be assembled directly from available primary materials. The
+planner consumes already-owned components first, recursively resolves known
+component/refining recipes through the same complete station network, and adds
+10 seconds for each skipped recipe step. It reserves the complete primary
+input route atomically and never creates temporary intermediate objects.
+Numeric slot 2 cycles exact equipped small-weapon instances, including several
+otherwise identical daggers with different `ItemId`, durability or finish.
+Doom's inherited starting Pistol and Clip are removed.
+
+The V4.29.0ax inventory foundation gives every non-stackable equipment instance
 a monotonically allocated persistent `ItemId`, so several pieces with the same
 type, tier and size can coexist with independent durability, storage and
 equipped state. Material, ammunition and consumable quantities remain native
@@ -29,20 +44,13 @@ slot regardless of its amount. Tab's Inventory page now enumerates the real
 Magic Box transfer and dropping without relying on the development equipment
 catalogue.
 
-V4.29.0ax retains the validated 79-recipe crafting catalogue, accepted
-pre-game character creator and group-913 eastern stairs. MAP01 remains exactly
-the 4.29.0aw WAD: it replaces the surviving thin panel beside door 804 with one real
-24-MU wall to the northern stair and restores the intended 8-MU exterior north
-closure to the eastern flight. It removes the five ground-level `CMIN01`
-curtains that formed the eastern U and removes only the two group-807 leaves at
-z=0; group 913 remains unchanged at z=136. Stair sectors and every wall, floor
-and cover profile from z=128 upward remain unchanged. The attempted exterior-
-grass assignment from 0at is not revised in this increment and stays deferred.
-
-The retained 4.29.0aw MAP01 output contains 1,052 vertices, 1,448
-linedefs, 2,606 sidedefs, 441 sectors and 223 Things. Its SHA-256 is
-`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
-Only the focused visual traversal in GZDoom remains pending for this map pass.
+MAP01 keeps the accepted ground-floor plan and its 91 test-material piles, but
+replaces the 31 remaining thin `CMIN01` mansion panels with 19 closed 8-MU wall
+volumes. The conversion is limited to z=0..128 in the main mansion: doors,
+stairs, first-/second-floor occupancy and MAP02 remain unchanged. The resulting
+MAP01 contains 1,419 vertices, 1,983 linedefs, 3,544 sidedefs, 635 sectors and
+322 Things. Its SHA-256 is
+`ebc4c8aa654bdfc7c3ccd4eb60a8aa9bc4a745f85715189325612cf7bdec6f90`.
 
 MAP01 now assigns the separately tiled `CMGR01A` dark-green grass to the world
 sector; `CMGR01B` and `CMGR01C` are independent worn/dry variants instead of
@@ -97,11 +105,10 @@ next isolated perception patch rather than being mixed into 4.29.0ar. The full
 personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
-The author has accepted the new-character flow, focused sound mix/event checks
-and final MAP01/MAP02 smoke outside the parallel house-construction track.
-That closes the non-architectural V4.29 gate. V4.30 remains definition-only in
-this candidate: no timed crafting, repair or disassembly transaction is
-implemented by 4.29.0aw.
+The author accepted the new-character flow, focused sound mix/event checks,
+formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0b is
+the focused correction candidate described above; its GZDoom 4.14.2 runtime
+matrix remains pending.
 
 ### Building the development PK3
 
@@ -137,7 +144,8 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
 - Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
 - Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
-- Crafting and dismantling foundations used by current physical equipment and material recovery systems.
+- Timed atomic crafting, component production, proportional repair and
+  durability-scaled disassembly for weapons, armor and shields.
 - Connected crafting-station interaction core: all seven current recipe families reuse one Workbench transaction and cumulative infrastructure checks.
 - Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
 - Original mansion-environment texture foundation: 85 wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered, including three independent mansion-grass variants.
@@ -147,7 +155,12 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 
 ### Implemented foundation — still expanding
 
-- Crafting content and material catalogue: 16 physical weapons, 16 armor recipes, 4 shields, 20 essence weapons, 4 amulets, 5 seals and 14 processing recipes share one filtered 79-entry catalogue and persistent recipe book. New characters start with no recipes; MAP01's processing manual unlocks the 14 basic conversions, while the authored NPC tutorial must still unlock and fund the selected starter weapon.
+- Crafting content and material catalogue: 16 physical weapons, 16 armor
+  recipes, 4 shields, 20 essence weapons, 4 amulets, 5 seals, 14 processing
+  recipes and 50 component recipes share one filtered 129-entry catalogue and
+  persistent recipe book. New characters start with no recipes; MAP01's
+  processing manual unlocks only the 14 basic conversions. Minor-Arcana cards
+  for components and the authored starter tutorial remain pending.
 - Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
 - Inventory presentation: the permanent Journal shell, navigation, read-only Inventory/Character/Recipe Book pages and original UI art are integrated; the owned-item index, equipment actions and later world/quest/reputation data remain incomplete.
 - Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.
@@ -157,6 +170,15 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 ### Planned / not yet fully implemented
 
 - **Calendar-driven weather system.** Weather must react to the game calendar/season and eventually also to location/biome. The final calendar structure, seasonal boundaries, starting date, and weather distributions are author-defined design data and must not be invented by contributors.
+- **Version 5 thermal exposure and thermoregulation.** After the weather
+  provider and modular transition are stable, climate, tagged map zones,
+  activity, wind, wetness, equipment and consumables feed an accumulated
+  player heat/cold state. Resilience widens the comfort band; the approved
+  design also covers sweat and delayed cooling, property/refuge quality,
+  thermal rest, gradual acclimatization, species profiles, elemental
+  interactions and durability-dependent equipment protection. Exact numeric
+  gates are specified in
+  [`docs/V5_THERMAL_EXPOSURE_DESIGN.md`](docs/V5_THERMAL_EXPOSURE_DESIGN.md).
 - Full day/night/world calendar presentation and world-state integration beyond the current gameplay time scale.
 - Complete world/biome implementation, travel routes, terrestrial/maritime/aerial/submarine travel, Hell and Moon regions.
 - Factions, reputation, diplomacy, and political world-state systems.
@@ -168,23 +190,23 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Its definition uses a
-  9-second test base, 50%/75%/100% yield at ×1/×3/×9 time, Dexterity Type-1
-  precision-task speed, one base-material type per equipment component,
+- V4.30 timed material conversion and durability loop. Its implementation uses
+  a fixed 10-second test duration at 50%/75%/100% yield and every batch size,
+  Dexterity Type-1 precision-task speed, one base-material type per component,
   proportional same-station repair and disassembly output equal to 50% of the
   base recipe multiplied by remaining durability. Inputs round up and outputs
-  round down to 0.001; each 9/27/81-second duration covers the complete batch,
+  round down to 0.001; each 10-second duration covers the complete batch,
   cancellation spends/produces nothing and exact alloy ratios are preserved.
-  Crafting cannot begin in combat and only an explicit user order cancels an
-  active task. Disassembly uses the same time and cumulative stations as
+  Crafting cannot progress in combat or away from its valid station session;
+  these conditions pause rather than cancel it, and only an explicit user order
+  releases the reservation. Disassembly uses the same time and stations as
   crafting the item; component recipes use the station network of their target
   equipment recipe. Exact Minor-Arcana card assignments are deferred until the
-  Tarot-card implementation. Required inputs are calculated and locked as a
-  reservation when the task starts, cannot serve another transaction, and are
-  consumed only by atomic completion. Explicit cancellation releases the full
-  reservation without spend or output. All transactional rules needed for
-  V4.30 are now defined; no V4.30 transaction is implemented in 4.29.0aw. The
-  complete definition is recorded in
+  Tarot-card implementation. A weapon may consume a recursively resolved route
+  from primary materials, adding 10 seconds for each omitted intermediate
+  recipe. Required inputs are locked when the task starts and consumed only by
+  atomic completion. These transactions are implemented in candidate 4.30.0b;
+  runtime acceptance remains pending. The complete contract is recorded in
   [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.

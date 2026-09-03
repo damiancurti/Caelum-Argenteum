@@ -1,5 +1,103 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Journal crafting, exact weapon cycling and solid mansion walls 4.30.0b
+
+**Implemented and statically validated; focused runtime/visual matrix in
+GZDoom 4.14.2 pending**
+
+The V4.30.0a runtime report is addressed in one incremental candidate. Missing
+Journal inventory, filter, weight and help strings now have English and Spanish
+LANGUAGE entries. Using a connected station opens Journal → Oficios directly;
+the former debug presentation no longer intercepts or renders crafting. The
+Oficios page displays the selected output icon, recipe, tier, size, batch,
+efficiency, material availability, cumulative infrastructure, direct-route
+steps and running/paused task state.
+
+Every normal craft, refinement or component transaction now takes 10 seconds
+at all three efficiencies and all four batch multipliers. An active task only
+advances while its Journal station session remains open, the player is within
+96 MU, the snapshotted infrastructure is still available and the player is out
+of combat. Closing/leaving, missing infrastructure or later combat pauses the
+clock; none consumes inputs or cancels the task. Its exact reservations remain
+blocked until the player resumes and completes it or explicitly cancels it.
+
+Physical and elemental weapon assembly can consume a recursively resolved
+primary-material plan when direct components are missing. Existing components
+are used first; every distinct known skipped component/refining recipe adds one
+10-second step and the complete primary input route is reserved atomically.
+The path requires the same cumulative stations and does not create intermediate
+inventory objects.
+
+Inventory Left/Right walks filters and Right enters Personaje after the last;
+F always advances the filter. Numeric slot 2 cycles exact equipped small-family
+instances by `ItemId`, so equal daggers with different durability or finish are
+distinguishable in the active-weapon HUD. The inherited Doom Pistol and Clip are
+removed from every default inventory grant.
+
+MAP01 converts the 31 remaining thin mansion `CMIN01` panels into 19 closed,
+8-MU-thick z=0..128 wall volumes. Doors, stairs, the 91 material piles, upper
+floor occupancy/profile and MAP02 are unchanged. MAP01 now contains 1,419
+vertices, 1,983 linedefs, 3,544 sidedefs, 635 sectors and 322 Things; SHA-256 is
+`ebc4c8aa654bdfc7c3ccd4eb60a8aa9bc4a745f85715189325612cf7bdec6f90`.
+The reconstruction is deterministic and idempotent.
+
+## Version 5 thermal exposure design
+
+**Author-approved and scheduled; not implemented**
+
+V5.1.0 will consume the stable weather snapshot planned for V4.35 after the
+V5.0.0 modular transition. The approved player model combines ambient climate,
+tagged indoor/outdoor environmental zones, activity derived from real Air
+expenditure, wind, persistent 0–100 wetness, exact equipped-item thermal
+properties and temporary food/drink effects. Resilience widens the base
+comfort band.
+
+Thermal excess accumulates with recovery and hysteresis across comfortable,
+mild, intense and extreme states. Heat increases Thirst loss, drains Lucidity
+and slows Air recovery. Cold increases Hunger loss, drains Anima and increases
+Health lost when damaged. Exact degrees, curves, multipliers and caps remain
+author-controlled numeric gates and must not be invented during implementation.
+
+The initial system affects only the player at a bounded low update frequency,
+persists exposure and wetness, recalculates the local environment after load,
+and displays normal HUD feedback only outside the comfortable band.
+
+The author also approved activity/ventilation-driven sweat and delayed cooling;
+shelter, heating and drying supplied by camps and properties; thermal effects
+on rest; bounded gradual acclimatization across seasonal change; data-driven
+species/race climate profiles; Fire/Water/Ice/Air environmental interaction;
+and reduced equipment thermal protection as durability falls. Persistent
+medical conditions remain unapproved. Detailed design is recorded in
+`docs/V5_THERMAL_EXPOSURE_DESIGN.md`.
+
+## Atomic crafting and durability loop 4.30.0a
+
+**Implemented and runtime-tested by the author; superseded by the focused
+4.30.0b corrections above**
+
+One serializable task now owns the complete refine/component/assembly/repair/
+disassembly transaction. It snapshots recipe configuration and infrastructure,
+reserves exact type+tier input amounts and any required Magic Box output slot,
+and blocks the exact repair/disassembly `ItemId`. Only explicit cancellation
+releases the reservation; completion consumes and produces atomically.
+
+The 129-entry recipe book preserves indices 0–78 and appends 50 component
+recipes at 79–128. Component recipes use one base material and the cumulative
+station network of their equipment family. Their exact Minor-Arcana sources
+remain deliberately unassigned; `ca_debug_crafting_learn_all_recipes` is the
+QA-only unlock.
+
+MAP01 receives 91 non-solid 10,000-unit material stacks in six ground-floor
+clusters. Vertex, linedef, sidedef and sector digests are unchanged from
+4.29.0bd, MAP02 remains byte-identical, and no character sprite or unrelated
+asset is part of this candidate.
+
+Focused acceptance requires: all 50/75/100 efficiencies at all four batch
+sizes, start-in-combat rejection, manual cancellation, save/load and map travel
+during a task, carry/Box overflow, every equipment family at tiers 1–3 and
+sizes 1–5, proportional repair, durability-scaled disassembly, duplicate item
+IDs, elemental outputs, decorative silver/gold and zero-durability recovery.
+
 ## HUD-03 laurels, selected audio v3 and parser repair 4.29.0ay
 
 **Implemented and structurally validated; focused runtime GZDoom validation

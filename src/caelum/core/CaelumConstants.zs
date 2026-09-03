@@ -268,6 +268,14 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_EQUIPPED = 17;
     const EQUIPMENT_ACTION_FAILED_STORAGE = 18;
     const EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = 19;
+    const EQUIPMENT_ACTION_REPAIR_STARTED = 20;
+    const EQUIPMENT_ACTION_REPAIRED = 21;
+    const EQUIPMENT_ACTION_DISMANTLE_STARTED = 22;
+    const EQUIPMENT_ACTION_FAILED_CRAFTING_TASK = 23;
+    const EQUIPMENT_ACTION_FAILED_COMBAT = 24;
+    const EQUIPMENT_ACTION_FAILED_DURABILITY = 25;
+    const EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE = 26;
+    const EQUIPMENT_ACTION_FAILED_RESERVED = 27;
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.
@@ -305,6 +313,9 @@ class CaelumConstants : Object
     // Las recetas de procesamiento se anexan al final para conservar los
     // índices persistentes de las 65 recetas de equipo existentes.
     const CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT = 14;
+    // Las cincuenta recetas de componentes se anexan después de los 79
+    // índices persistentes de 4.29. Ninguna receta anterior cambia de número.
+    const CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT = 50;
     const CRAFTING_PROCESSING_COPPER_INGOT = 0;
     const CRAFTING_PROCESSING_TIN_INGOT = 1;
     const CRAFTING_PROCESSING_IRON_INGOT = 2;
@@ -330,8 +341,9 @@ class CaelumConstants : Object
     const CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT =
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
-        + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
-    const CRAFTING_RECIPE_BOOK_VERSION = 3;
+        + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT;
+    const CRAFTING_RECIPE_BOOK_VERSION = 4;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
     const CRAFTING_RECIPE_KIND_ARMOR = 1;
@@ -340,6 +352,7 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_KIND_AMULET = 4;
     const CRAFTING_RECIPE_KIND_SEAL = 5;
     const CRAFTING_RECIPE_KIND_PROCESSING = 6;
+    const CRAFTING_RECIPE_KIND_COMPONENT = 7;
     // El filtro 0 muestra el catálogo completo; los siguientes valores se
     // alinean con RecipeKind + 1 para mantener una sola lista autoritativa.
     const CRAFTING_RECIPE_FILTER_ALL = 0;
@@ -350,7 +363,8 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_FILTER_AMULET = 5;
     const CRAFTING_RECIPE_FILTER_SEAL = 6;
     const CRAFTING_RECIPE_FILTER_PROCESSING = 7;
-    const CRAFTING_RECIPE_FILTER_COUNT = 8;
+    const CRAFTING_RECIPE_FILTER_COMPONENT = 8;
+    const CRAFTING_RECIPE_FILTER_COUNT = 9;
     const CRAFTING_AMULET_BASE_WEIGHT_RATIO = 0.20;
     const CRAFTING_SEAL_BASE_WEIGHT_RATIO = 0.40;
     const CRAFTING_ACTION_NONE = 0;
@@ -363,6 +377,37 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_FAILED_INFRASTRUCTURE = 7;
     const CRAFTING_ACTION_FAILED_RECIPE_LOCKED = 8;
     const CRAFTING_ACTION_PROCESSED = 9;
+    const CRAFTING_ACTION_TASK_STARTED = 10;
+    const CRAFTING_ACTION_TASK_CANCELLED = 11;
+    const CRAFTING_ACTION_FAILED_TASK_ACTIVE = 12;
+    const CRAFTING_ACTION_FAILED_COMBAT = 13;
+    const CRAFTING_ACTION_FAILED_TARGET = 14;
+    const CRAFTING_ACTION_REPAIRED = 15;
+    const CRAFTING_ACTION_DISMANTLED = 16;
+
+    // Una sola tarea autoritativa por jugador. Los huecos adicionales permiten
+    // reservar de forma atómica los materiales primarios de una ruta directa
+    // (equipo -> componentes -> refinado) sin crear objetos intermedios falsos.
+    const CRAFTING_TASK_MATERIAL_SLOT_COUNT = 16;
+    const CRAFTING_DIRECT_STEP_SLOT_COUNT = 16;
+    const CRAFTING_TASK_NONE = 0;
+    const CRAFTING_TASK_ASSEMBLY = 1;
+    const CRAFTING_TASK_PROCESSING = 2;
+    const CRAFTING_TASK_COMPONENT = 3;
+    const CRAFTING_TASK_REPAIR = 4;
+    const CRAFTING_TASK_DISMANTLE = 5;
+    const CRAFTING_BASE_TASK_SECONDS = 10.0;
+    const CRAFTING_ACTIVE_STATION_DISTANCE = 96.0;
+    const CRAFTING_PRECISION_TEST_SPEED_PERCENT = 100.0;
+    const CRAFTING_EFFICIENCY_OPTION_COUNT = 3;
+    const CRAFTING_EFFICIENCY_FAST_PERCENT = 50;
+    const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 75;
+    const CRAFTING_EFFICIENCY_PERFECT_PERCENT = 100;
+    const CRAFTING_EFFICIENCY_FAST_TIME_FACTOR = 1.0;
+    // Desde 4.30.0b la eficiencia modifica únicamente el rendimiento. Todas
+    // las transacciones y todos los tamaños de lote duran diez segundos.
+    const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 1.0;
+    const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 1.0;
 
     // Procesamiento por lotes. Los recursos primarios rinden 50 % (2 -> 1).
     // Las aleaciones conservan masa: bronce 90/10 y acero histórico de arma

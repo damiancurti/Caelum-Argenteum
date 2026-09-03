@@ -122,6 +122,70 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui String GetCraftingFilterKey(int recipeFilter)
+    {
+        switch (recipeFilter)
+        {
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PHYSICAL_WEAPON:
+                return "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ARMOR:
+                return "CA_CRAFTING_FILTER_ARMOR";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SHIELD:
+                return "CA_CRAFTING_FILTER_SHIELDS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ESSENCE_WEAPON:
+                return "CA_CRAFTING_FILTER_ESSENCE_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMULET:
+                return "CA_CRAFTING_FILTER_AMULETS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SEAL:
+                return "CA_CRAFTING_FILTER_SEALS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
+                return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
+                return "CA_CRAFTING_FILTER_COMPONENTS";
+            default: return "CA_CRAFTING_FILTER_ALL";
+        }
+    }
+
+    ui String GetCraftingActionKey(int craftingAction)
+    {
+        switch (craftingAction)
+        {
+            case CaelumConstants.CRAFTING_ACTION_CREATED:
+                return "CA_CRAFTING_ACTION_CREATED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS:
+                return "CA_CRAFTING_ACTION_FAILED_MATERIALS";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL:
+                return "CA_CRAFTING_ACTION_FAILED_BOX_FULL";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE:
+                return "CA_CRAFTING_ACTION_FAILED_DUPLICATE";
+            case CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED:
+                return "CA_CRAFTING_ACTION_MATERIALS_SPAWNED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_STATION:
+                return "CA_CRAFTING_ACTION_FAILED_STATION";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED:
+                return "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED";
+            case CaelumConstants.CRAFTING_ACTION_PROCESSED:
+                return "CA_CRAFTING_ACTION_PROCESSED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_STARTED:
+                return "CA_CRAFTING_ACTION_TASK_STARTED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_CANCELLED:
+                return "CA_CRAFTING_ACTION_TASK_CANCELLED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TASK_ACTIVE:
+                return "CA_CRAFTING_ACTION_FAILED_TASK_ACTIVE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT:
+                return "CA_CRAFTING_ACTION_FAILED_COMBAT";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TARGET:
+                return "CA_CRAFTING_ACTION_FAILED_TARGET";
+            case CaelumConstants.CRAFTING_ACTION_REPAIRED:
+                return "CA_CRAFTING_ACTION_REPAIRED";
+            case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
+                return "CA_CRAFTING_ACTION_DISMANTLED";
+            default: return "CA_CRAFTING_ACTION_NONE";
+        }
+    }
+
     ui String GetEssenceKey(int essenceType)
     {
         switch (essenceType)
@@ -169,6 +233,28 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_KEY_STORAGE";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE:
                 return "CA_EQUIPMENT_ACTION_FAILED_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_FAILED_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED:
+                return "CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED:
+                return "CA_EQUIPMENT_ACTION_REPAIR_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIRED:
+                return "CA_EQUIPMENT_ACTION_REPAIRED";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLE_STARTED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLE_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK:
+                return "CA_EQUIPMENT_ACTION_FAILED_CRAFTING_TASK";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT:
+                return "CA_EQUIPMENT_ACTION_FAILED_COMBAT";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_DURABILITY";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED:
+                return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
             default: return "CA_EQUIPMENT_ACTION_NONE";
         }
     }
@@ -247,31 +333,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetWeaponNameKey(int weaponType)
     {
-        switch (weaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_DAGGER: return "CA_WEAPON_DAGGER";
-            case CaelumConstants.WEAPON_TYPE_HATCHET: return "CA_WEAPON_HATCHET";
-            case CaelumConstants.WEAPON_TYPE_MACHETE: return "CA_WEAPON_MACHETE";
-            case CaelumConstants.WEAPON_TYPE_JAVELIN: return "CA_WEAPON_JAVELIN";
-            case CaelumConstants.WEAPON_TYPE_SWORD: return "CA_WEAPON_SWORD";
-            case CaelumConstants.WEAPON_TYPE_AXE: return "CA_WEAPON_AXE";
-            case CaelumConstants.WEAPON_TYPE_FLAIL: return "CA_WEAPON_FLAIL";
-            case CaelumConstants.WEAPON_TYPE_SPEAR: return "CA_WEAPON_SPEAR";
-            case CaelumConstants.WEAPON_TYPE_GREATSWORD: return "CA_WEAPON_GREATSWORD";
-            case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "CA_WEAPON_WAR_AXE";
-            case CaelumConstants.WEAPON_TYPE_HALBERD: return "CA_WEAPON_HALBERD";
-            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
-                return "CA_WEAPON_GIANT_GAUNTLETS";
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW:
-                return "CA_WEAPON_STANDARD_BOW";
-            case CaelumConstants.WEAPON_TYPE_LONGBOW: return "CA_WEAPON_LONGBOW";
-            case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "CA_WEAPON_CROSSBOW";
-            case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_CARBINE";
-            case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_STAFF";
-            case CaelumConstants.WEAPON_TYPE_BELL: return "CA_WEAPON_BELL";
-            case CaelumConstants.WEAPON_TYPE_BOOK: return "CA_WEAPON_BOOK";
-            default: return "CA_HUD_UNARMED";
-        }
+        return CaelumDisplayNames.GetWeaponKey(weaponType);
     }
 
     ui void DrawTexture(String path, double x, double y, double width,
@@ -429,6 +491,14 @@ class CaelumJournalOverlay : EventHandler
             {
                 entryLabel = entryLabel .. "  [M]";
             }
+            if (localPlayer.FormalInventoryRowReservedUnits[row] > 0)
+            {
+                entryLabel = String.Format(
+                    "%s  [R:%d]",
+                    entryLabel,
+                    localPlayer.FormalInventoryRowReservedUnits[row]
+                );
+            }
             DrawTextLine(
                 SmallFont,
                 row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,
@@ -490,6 +560,18 @@ class CaelumJournalOverlay : EventHandler
                 GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
             )
         );
+        if (localPlayer.CraftingTaskActive)
+        {
+            DrawTextLine(
+                SmallFont, Font.CR_CYAN, 414.0, 278.0,
+                String.Format(
+                    "%s: %.1f / %.1f s",
+                    StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds
+                )
+            );
+        }
     }
 
     ui void DrawCharacterPage(CaelumPlayer localPlayer)
@@ -518,7 +600,7 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
     }
 
-    ui void DrawCraftsPage(CaelumPlayer localPlayer)
+    ui void DrawCraftingSummary(CaelumPlayer localPlayer)
     {
         DrawCenteredText(
             TextFont,
@@ -573,8 +655,293 @@ class CaelumJournalOverlay : EventHandler
                 ),
                 localPlayer.CraftingKnownProcessingRecipeCount,
                 CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT));
-        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 288.0,
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 260.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_COMPONENTS", false
+                ),
+                localPlayer.CraftingKnownComponentRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT));
+        if (localPlayer.CraftingTaskActive)
+        {
+            DrawCenteredText(
+                SmallFont, Font.CR_CYAN, 320.0, 282.0,
+                String.Format(
+                    "%s: %.1f / %.1f s",
+                    StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds
+                )
+            );
+        }
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0,
+            localPlayer.CraftingTaskActive ? 304.0 : 288.0,
             StringTable.Localize("CA_JOURNAL_CRAFTS_STATION_HELP", false));
+    }
+
+    ui String FormatCraftingRecipeName(CaelumPlayer localPlayer)
+    {
+        if (!localPlayer.CraftingSelectedRecipeKnown)
+        {
+            return StringTable.Localize("CA_CRAFTING_RECIPE_UNKNOWN", false);
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatArmorTypeName(
+                    localPlayer.CraftingSelectedArmorType,
+                    localPlayer.CraftingSelectionTier
+                ),
+                StringTable.Localize(
+                    CaelumDisplayNames.GetArmorSlotKey(
+                        localPlayer.CraftingSelectedArmorSlot
+                    ),
+                    false
+                )
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
+        {
+            return CaelumDisplayNames.FormatShieldName(
+                localPlayer.CraftingSelectedShieldType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatWeaponName(
+                    localPlayer.CraftingSelectedEssenceWeaponType,
+                    localPlayer.CraftingSelectionTier
+                ),
+                StringTable.Localize(
+                    GetEssenceKey(localPlayer.CraftingSelectedEssenceType),
+                    false
+                )
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
+        {
+            return CaelumDisplayNames.FormatAmuletName(
+                localPlayer.CraftingSelectedAmuletType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        {
+            return CaelumDisplayNames.FormatSealName(
+                localPlayer.CraftingSelectedSealType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
+        {
+            return FormatInventoryEntryName(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                localPlayer.CraftingOutputMaterialType,
+                -1,
+                localPlayer.CraftingOutputMaterialTier,
+                CaelumConstants.EQUIPMENT_SIZE_M,
+                CaelumConstants.ESSENCE_FIRE
+            );
+        }
+        return CaelumDisplayNames.FormatCatalogueWeaponName(
+            localPlayer.CraftingSelectedWeapon,
+            localPlayer.CraftingSelectionTier
+        );
+    }
+
+    ui void DrawCraftsPage(CaelumPlayer localPlayer)
+    {
+        if (!localPlayer.CraftingMenuOpen)
+        {
+            DrawCraftingSummary(localPlayer);
+            return;
+        }
+
+        DrawTextLine(
+            SmallFont, Font.CR_GOLD, 52.0, 126.0,
+            String.Format(
+                "%s: %s  ·  %s: %d/%d",
+                StringTable.Localize("CA_CRAFTING_FILTER", false),
+                StringTable.Localize(
+                    GetCraftingFilterKey(localPlayer.CraftingRecipeFilter),
+                    false
+                ),
+                StringTable.Localize("CA_CRAFTING_RECIPE_BOOK", false),
+                localPlayer.CraftingKnownRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            )
+        );
+
+        DrawTexture(
+            "graphics/caelum/ui/hud/components/ca_ui_icon_frame_selected.png",
+            52.0, 150.0, 64.0, 64.0
+        );
+        if (localPlayer.CraftingPreviewIconPath.Length() > 0)
+        {
+            DrawTexture(
+                localPlayer.CraftingPreviewIconPath,
+                60.0, 158.0, 48.0, 48.0
+            );
+        }
+
+        String recipeName = FormatCraftingRecipeName(localPlayer);
+        DrawTextLine(
+            TextFont,
+            localPlayer.CraftingSelectedRecipeKnown
+                ? Font.CR_WHITE : Font.CR_DARKGRAY,
+            132.0, 150.0, recipeName
+        );
+        DrawTextLine(
+            SmallFont, Font.CR_WHITE, 132.0, 174.0,
+            String.Format(
+                "T%d · %s · x%d · %d%%",
+                localPlayer.CraftingSelectionTier,
+                StringTable.Localize(
+                    CaelumDisplayNames.GetEquipmentSizeKey(
+                        localPlayer.CraftingSelectionSize
+                    ), false
+                ),
+                localPlayer.CraftingProcessingBatchMultiplier,
+                localPlayer.CraftingEfficiencyPercent
+            )
+        );
+        DrawTextLine(
+            SmallFont, Font.CR_CYAN, 132.0, 194.0,
+            String.Format(
+                "%s: %.1f s",
+                StringTable.Localize("CA_JOURNAL_CRAFTING_TIME", false),
+                localPlayer.CraftingPreviewSeconds
+            )
+        );
+
+        String basicName = FormatInventoryEntryName(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            localPlayer.CraftingBasicMaterialType,
+            -1,
+            localPlayer.CraftingBasicMaterialTier,
+            CaelumConstants.EQUIPMENT_SIZE_M,
+            CaelumConstants.ESSENCE_FIRE
+        );
+        DrawTextLine(
+            SmallFont,
+            localPlayer.CraftingDirectPlanAvailable
+                || localPlayer.CraftingBasicOwned
+                    >= localPlayer.CraftingBasicRequired
+                ? Font.CR_GREEN : Font.CR_RED,
+            132.0, 216.0,
+            String.Format(
+                "%s: %d/%d", basicName,
+                localPlayer.CraftingBasicOwned,
+                localPlayer.CraftingBasicRequired
+            )
+        );
+        if (localPlayer.CraftingTierRequired > 0)
+        {
+            String tierName = FormatInventoryEntryName(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                localPlayer.CraftingTierMaterialType,
+                -1,
+                localPlayer.CraftingTierMaterialTier,
+                CaelumConstants.EQUIPMENT_SIZE_M,
+                CaelumConstants.ESSENCE_FIRE
+            );
+            DrawTextLine(
+                SmallFont,
+                localPlayer.CraftingDirectPlanAvailable
+                    || localPlayer.CraftingTierOwned
+                        >= localPlayer.CraftingTierRequired
+                    ? Font.CR_GREEN : Font.CR_RED,
+                132.0, 236.0,
+                String.Format(
+                    "%s: %d/%d", tierName,
+                    localPlayer.CraftingTierOwned,
+                    localPlayer.CraftingTierRequired
+                )
+            );
+        }
+
+        if (localPlayer.CraftingDirectPlanAvailable)
+        {
+            DrawTextLine(
+                SmallFont, Font.CR_GREEN, 398.0, 216.0,
+                String.Format(
+                    "%s: %d",
+                    StringTable.Localize(
+                        "CA_JOURNAL_CRAFTING_DIRECT_STEPS", false
+                    ),
+                    localPlayer.CraftingDirectPlanStepCount
+                )
+            );
+        }
+        DrawTextLine(
+            SmallFont,
+            localPlayer.CraftingSelectedInfrastructureAvailable
+                ? Font.CR_GREEN : Font.CR_RED,
+            398.0, 236.0,
+            StringTable.Localize(
+                localPlayer.CraftingSelectedInfrastructureAvailable
+                    ? "CA_CRAFTING_INFRASTRUCTURE_READY"
+                    : "CA_CRAFTING_INFRASTRUCTURE_MISSING",
+                false
+            )
+        );
+        DrawTextLine(
+            SmallFont, Font.CR_CYAN, 398.0, 256.0,
+            String.Format(
+                "%s: %d/%d",
+                StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                localPlayer.MagicBoxUsedSlots,
+                localPlayer.MagicBoxMaximumSlots
+            )
+        );
+
+        if (localPlayer.CraftingTaskActive)
+        {
+            DrawTextLine(
+                SmallFont,
+                localPlayer.CraftingTaskProgressing
+                    ? Font.CR_CYAN : Font.CR_GOLD,
+                52.0, 278.0,
+                String.Format(
+                    "%s: %.1f/%.1f s · %s",
+                    StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds,
+                    StringTable.Localize(
+                        localPlayer.CraftingTaskProgressing
+                            ? "CA_JOURNAL_CRAFTING_RUNNING"
+                            : "CA_JOURNAL_CRAFTING_PAUSED",
+                        false
+                    )
+                )
+            );
+        }
+        else
+        {
+            DrawTextLine(
+                SmallFont,
+                localPlayer.LastCraftingAction
+                        == CaelumConstants.CRAFTING_ACTION_NONE
+                    ? Font.CR_GRAY : Font.CR_GOLD,
+                52.0, 278.0,
+                StringTable.Localize(
+                    GetCraftingActionKey(localPlayer.LastCraftingAction),
+                    false
+                )
+            );
+        }
     }
 
     ui void DrawPlannedPage(String key)
@@ -587,7 +954,24 @@ class CaelumJournalOverlay : EventHandler
 
     override bool InputProcess(InputEvent e)
     {
-        if (!IsJournalOpen()) { return false; }
+        // El slot nativo sólo conoce clases de Weapon. Caelum mantiene varias
+        // instancias exactas (acabado, tier y durabilidad propios), por lo que
+        // el 2 cicla sus objetos equipados antes de que Doom seleccione Pistol.
+        bool slotTwo = e.KeyChar == 50 || e.KeyString ~== "2";
+        if (!IsJournalOpen())
+        {
+            if (menuactive == 0 && slotTwo
+                && (e.Type == InputEvent.Type_KeyDown
+                    || e.Type == InputEvent.Type_KeyUp))
+            {
+                if (e.Type == InputEvent.Type_KeyDown)
+                {
+                    SendNetworkEvent("ca_cycle_weapon_slot_2");
+                }
+                return true;
+            }
+            return false;
+        }
         if (e.Type != InputEvent.Type_KeyDown
             && e.Type != InputEvent.Type_KeyUp)
         {
@@ -600,46 +984,150 @@ class CaelumJournalOverlay : EventHandler
         }
         if (e.Type == InputEvent.Type_KeyUp) { return true; }
 
-        if (e.KeyScan == InputEvent.Key_Tab
-            || e.KeyScan == InputEvent.Key_Escape
+        int currentPage = GetJournalPage();
+        CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
+        bool craftingSession = currentPage == 3
+            && localPlayer != null && localPlayer.CraftingMenuOpen;
+
+        if (e.KeyScan == InputEvent.Key_Escape
             || e.KeyScan == InputEvent.Key_Pad_B)
+        {
+            if (craftingSession)
+            {
+                SendNetworkEvent("ca_crafting_session_close");
+            }
+            SetJournalOpen(false);
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 113 || e.KeyChar == 81
+                || e.KeyString ~== "q"))
+        {
+            SendNetworkEvent("ca_crafting_session_close");
+            SetJournalOpen(false);
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_Tab
+                || e.KeyScan == InputEvent.Key_Pad_Y))
+        {
+            SendNetworkEvent("ca_crafting_filter");
+        }
+        else if (currentPage != 3 && e.KeyScan == InputEvent.Key_Tab)
         {
             SetJournalOpen(false);
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_DownArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
         {
             SendNetworkEvent("ca_inventory_next");
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_UpArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
         {
             SendNetworkEvent("ca_inventory_previous");
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyChar == 102 || e.KeyChar == 70
                 || e.KeyScan == InputEvent.Key_Pad_Y))
         {
             SendNetworkEvent("ca_inventory_filter");
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_Enter
                 || e.KeyScan == InputEvent.Key_Pad_A))
         {
             SendNetworkEvent("ca_inventory_activate");
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyChar == 99 || e.KeyChar == 67
                 || e.KeyScan == InputEvent.Key_Pad_X))
         {
             SendNetworkEvent("ca_inventory_storage");
         }
-        else if (GetJournalPage() == 0
+        else if (currentPage == 0
             && (e.KeyChar == 100 || e.KeyChar == 68))
         {
             SendNetworkEvent("ca_inventory_drop");
+        }
+        else if (currentPage == 0
+            && (e.KeyScan == InputEvent.Key_RightArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Right))
+        {
+            if (localPlayer != null
+                && localPlayer.FormalInventoryFilter
+                    >= CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1)
+            {
+                SetJournalPage(1);
+            }
+            else
+            {
+                SendNetworkEvent("ca_inventory_filter");
+            }
+        }
+        else if (currentPage == 0
+            && (e.KeyScan == InputEvent.Key_LeftArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Left))
+        {
+            if (localPlayer != null && localPlayer.FormalInventoryFilter > 0)
+            {
+                SendNetworkEvent("ca_inventory_filter_previous");
+            }
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_RightArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Right))
+        {
+            SendNetworkEvent("ca_crafting_recipe_next");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_LeftArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Left))
+        {
+            SendNetworkEvent("ca_crafting_recipe_previous");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_Space
+                || e.KeyScan == InputEvent.Key_Pad_X))
+        {
+            SendNetworkEvent("ca_crafting_tier");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 114 || e.KeyChar == 82))
+        {
+            SendNetworkEvent("ca_crafting_size");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 98 || e.KeyChar == 66))
+        {
+            SendNetworkEvent("ca_crafting_batch");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 120 || e.KeyChar == 88))
+        {
+            SendNetworkEvent("ca_crafting_efficiency");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 99 || e.KeyChar == 67))
+        {
+            SendNetworkEvent("ca_crafting_cancel_task");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 102 || e.KeyChar == 70))
+        {
+            SendNetworkEvent("ca_crafting_repair_selected");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyChar == 100 || e.KeyChar == 68))
+        {
+            SendNetworkEvent("ca_crafting_dismantle_selected");
+        }
+        else if (currentPage == 3 && craftingSession
+            && (e.KeyScan == InputEvent.Key_Enter
+                || e.KeyScan == InputEvent.Key_Pad_A
+                || e.KeyChar == 101 || e.KeyChar == 69))
+        {
+            SendNetworkEvent("ca_crafting_create");
         }
         else if (e.KeyScan == InputEvent.Key_RightArrow
             || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
@@ -679,6 +1167,10 @@ class CaelumJournalOverlay : EventHandler
         if (e.Name ~== "ca_journal_toggle")
         {
             bool opening = !IsJournalOpen();
+            if (!opening && GetJournalPage() == 3)
+            {
+                SendNetworkEvent("ca_crafting_session_close");
+            }
             SetJournalOpen(opening);
             if (opening) { SendNetworkEvent("ca_inventory_refresh"); }
         }
@@ -704,6 +1196,10 @@ class CaelumJournalOverlay : EventHandler
         {
             requestingPlayer.CycleFormalInventoryFilter();
         }
+        else if (e.Name == "ca_inventory_filter_previous")
+        {
+            requestingPlayer.CycleFormalInventoryFilter(-1);
+        }
         else if (e.Name == "ca_inventory_activate")
         {
             requestingPlayer.ActivateFormalInventorySelection();
@@ -723,6 +1219,62 @@ class CaelumJournalOverlay : EventHandler
                 CHAN_6,
                 CHANF_LOCAL | CHANF_UI
             );
+        }
+        else if (e.Name == "ca_crafting_session_close")
+        {
+            requestingPlayer.CloseCraftingStationSession();
+        }
+        else if (e.Name == "ca_crafting_toggle")
+        {
+            requestingPlayer.ToggleCraftingMenu();
+        }
+        else if (e.Name == "ca_crafting_recipe_next")
+        {
+            requestingPlayer.CycleCraftingRecipe(1);
+        }
+        else if (e.Name == "ca_crafting_recipe_previous")
+        {
+            requestingPlayer.CycleCraftingRecipe(-1);
+        }
+        else if (e.Name == "ca_crafting_filter")
+        {
+            requestingPlayer.CycleCraftingRecipeFilter();
+        }
+        else if (e.Name == "ca_crafting_tier")
+        {
+            requestingPlayer.CycleCraftingTier();
+        }
+        else if (e.Name == "ca_crafting_size")
+        {
+            requestingPlayer.CycleCraftingSize();
+        }
+        else if (e.Name == "ca_crafting_batch")
+        {
+            requestingPlayer.CycleCraftingBatch();
+        }
+        else if (e.Name == "ca_crafting_efficiency")
+        {
+            requestingPlayer.CycleCraftingEfficiency();
+        }
+        else if (e.Name == "ca_crafting_cancel_task")
+        {
+            requestingPlayer.CancelCraftingTask();
+        }
+        else if (e.Name == "ca_crafting_repair_selected")
+        {
+            requestingPlayer.BeginRepairSelectedEquipment();
+        }
+        else if (e.Name == "ca_crafting_dismantle_selected")
+        {
+            requestingPlayer.BeginDismantleSelectedEquipment();
+        }
+        else if (e.Name == "ca_crafting_create")
+        {
+            requestingPlayer.CraftSelectedPhysicalWeapon();
+        }
+        else if (e.Name == "ca_cycle_weapon_slot_2")
+        {
+            requestingPlayer.CycleEquippedWeaponSlot(2);
         }
     }
 
@@ -756,7 +1308,9 @@ class CaelumJournalOverlay : EventHandler
             StringTable.Localize(
                 currentPage == 0
                     ? "CA_JOURNAL_INVENTORY_HELP"
-                    : "CA_JOURNAL_NAVIGATION_HELP",
+                    : currentPage == 3 && localPlayer.CraftingMenuOpen
+                        ? "CA_JOURNAL_CRAFTING_HELP"
+                        : "CA_JOURNAL_NAVIGATION_HELP",
                 false
             ));
     }

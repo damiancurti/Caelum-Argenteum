@@ -34,85 +34,18 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui int GetWeaponGrammar(int weaponType)
-    {
-        switch (weaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_CARBINE:
-            case CaelumConstants.WEAPON_TYPE_DAGGER:
-            case CaelumConstants.WEAPON_TYPE_HATCHET:
-            case CaelumConstants.WEAPON_TYPE_JAVELIN:
-            case CaelumConstants.WEAPON_TYPE_AXE:
-            case CaelumConstants.WEAPON_TYPE_SPEAR:
-            case CaelumConstants.WEAPON_TYPE_WAR_AXE:
-            case CaelumConstants.WEAPON_TYPE_HALBERD:
-            case CaelumConstants.WEAPON_TYPE_CROSSBOW:
-            case CaelumConstants.WEAPON_TYPE_BELL:
-            case CaelumConstants.WEAPON_TYPE_STATUETTE:
-                return GRAMMAR_FEMININE;
-            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
-                return GRAMMAR_MASCULINE_PLURAL;
-            default:
-                return GRAMMAR_MASCULINE;
-        }
-    }
-
-    static ui String GetArmorTypeKey(int armorType)
-    {
-        switch (armorType)
-        {
-            case CaelumConstants.ARMOR_TYPE_LIGHT:
-                return "CA_EQUIPMENT_NAME_ARMOR_LIGHT";
-            case CaelumConstants.ARMOR_TYPE_MEDIUM:
-                return "CA_EQUIPMENT_NAME_ARMOR_MEDIUM";
-            case CaelumConstants.ARMOR_TYPE_HEAVY:
-                return "CA_EQUIPMENT_NAME_ARMOR_HEAVY";
-            default: return "CA_EQUIPMENT_NAME_ARMOR_MAGIC";
-        }
-    }
-
-    static ui String GetShieldKey(int shieldType)
-    {
-        switch (shieldType)
-        {
-            case CaelumConstants.SHIELD_TYPE_KITE: return "CA_SHIELD_TYPE_KITE";
-            case CaelumConstants.SHIELD_TYPE_TOWER: return "CA_SHIELD_TYPE_TOWER";
-            case CaelumConstants.SHIELD_TYPE_MAGIC: return "CA_SHIELD_TYPE_MAGIC";
-            default: return "CA_SHIELD_TYPE_BUCKLER";
-        }
-    }
-
-    static ui String GetAmuletKey(int amuletType)
-    {
-        switch (amuletType)
-        {
-            case CaelumConstants.AMULET_SAPPHIRE: return "CA_AMULET_SAPPHIRE";
-            case CaelumConstants.AMULET_EMERALD: return "CA_AMULET_EMERALD";
-            case CaelumConstants.AMULET_TOPAZ: return "CA_AMULET_TOPAZ";
-            default: return "CA_AMULET_RUBY";
-        }
-    }
-
-    static ui String GetSealKey(int sealType)
-    {
-        switch (sealType)
-        {
-            case CaelumConstants.SEAL_WATER: return "CA_SEAL_WATER";
-            case CaelumConstants.SEAL_EARTH: return "CA_SEAL_EARTH";
-            case CaelumConstants.SEAL_AIR: return "CA_SEAL_AIR";
-            case CaelumConstants.SEAL_QUINTESSENCE: return "CA_SEAL_QUINTESSENCE";
-            default: return "CA_SEAL_FIRE";
-        }
-    }
-
     static ui String GetEquipmentSizeKey(int equipmentSize)
     {
         switch (equipmentSize)
         {
-            case CaelumConstants.EQUIPMENT_SIZE_XS: return "CA_EQUIPMENT_SIZE_XS";
-            case CaelumConstants.EQUIPMENT_SIZE_S: return "CA_EQUIPMENT_SIZE_S";
-            case CaelumConstants.EQUIPMENT_SIZE_L: return "CA_EQUIPMENT_SIZE_L";
-            case CaelumConstants.EQUIPMENT_SIZE_XL: return "CA_EQUIPMENT_SIZE_XL";
+            case CaelumConstants.EQUIPMENT_SIZE_XS:
+                return "CA_EQUIPMENT_SIZE_XS";
+            case CaelumConstants.EQUIPMENT_SIZE_S:
+                return "CA_EQUIPMENT_SIZE_S";
+            case CaelumConstants.EQUIPMENT_SIZE_L:
+                return "CA_EQUIPMENT_SIZE_L";
+            case CaelumConstants.EQUIPMENT_SIZE_XL:
+                return "CA_EQUIPMENT_SIZE_XL";
             default: return "CA_EQUIPMENT_SIZE_M";
         }
     }
@@ -121,10 +54,10 @@ class CaelumDisplayNames : Object
     {
         switch (armorSlot)
         {
+            case CaelumConstants.ARMOR_SLOT_HEAD: return "CA_ARMOR_SLOT_HEAD";
             case CaelumConstants.ARMOR_SLOT_BODY: return "CA_ARMOR_SLOT_BODY";
             case CaelumConstants.ARMOR_SLOT_HANDS: return "CA_ARMOR_SLOT_HANDS";
-            case CaelumConstants.ARMOR_SLOT_FEET: return "CA_ARMOR_SLOT_FEET";
-            default: return "CA_ARMOR_SLOT_HEAD";
+            default: return "CA_ARMOR_SLOT_FEET";
         }
     }
 
@@ -162,19 +95,19 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetSpecialItemKey(int category, int itemType)
+    static ui String GetSpecialItemKey(int specialCategory, int specialType)
     {
-        if (category == CaelumConstants.EQUIPMENT_KIND_KEY)
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
             return "CA_KEY_SILVER";
         }
-        if (category == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
-            return itemType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
+            return specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
                 ? "CA_KEY_ITEM_PROCESSING_MANUAL"
                 : "CA_KEY_ITEM_SEALED_LETTER";
         }
-        switch (itemType)
+        switch (specialType)
         {
             case CaelumConstants.MATERIAL_BLADE: return "CA_MATERIAL_BLADE";
             case CaelumConstants.MATERIAL_SMALL_BLADE: return "CA_MATERIAL_SMALL_BLADE";
@@ -255,6 +188,77 @@ class CaelumDisplayNames : Object
             case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "CA_MATERIAL_PREDATOR_HIDE";
             case CaelumConstants.MATERIAL_MONSTER_HIDE: return "CA_MATERIAL_MONSTER_HIDE";
             default: return "CA_MATERIAL_IRON_INGOT";
+        }
+    }
+
+    static ui int GetWeaponGrammar(int weaponType)
+    {
+        switch (weaponType)
+        {
+            case CaelumConstants.WEAPON_TYPE_CARBINE:
+            case CaelumConstants.WEAPON_TYPE_DAGGER:
+            case CaelumConstants.WEAPON_TYPE_HATCHET:
+            case CaelumConstants.WEAPON_TYPE_JAVELIN:
+            case CaelumConstants.WEAPON_TYPE_AXE:
+            case CaelumConstants.WEAPON_TYPE_SPEAR:
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE:
+            case CaelumConstants.WEAPON_TYPE_HALBERD:
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW:
+            case CaelumConstants.WEAPON_TYPE_BELL:
+            case CaelumConstants.WEAPON_TYPE_STATUETTE:
+                return GRAMMAR_FEMININE;
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
+                return GRAMMAR_MASCULINE_PLURAL;
+            default:
+                return GRAMMAR_MASCULINE;
+        }
+    }
+
+    static ui String GetArmorTypeKey(int armorType)
+    {
+        switch (armorType)
+        {
+            case CaelumConstants.ARMOR_TYPE_LIGHT:
+                return "CA_EQUIPMENT_NAME_ARMOR_LIGHT";
+            case CaelumConstants.ARMOR_TYPE_MEDIUM:
+                return "CA_EQUIPMENT_NAME_ARMOR_MEDIUM";
+            case CaelumConstants.ARMOR_TYPE_HEAVY:
+                return "CA_EQUIPMENT_NAME_ARMOR_HEAVY";
+            default: return "CA_EQUIPMENT_NAME_ARMOR_MAGIC";
+        }
+    }
+
+    static ui String GetShieldKey(int shieldType)
+    {
+        switch (shieldType)
+        {
+            case CaelumConstants.SHIELD_TYPE_KITE: return "CA_SHIELD_TYPE_KITE";
+            case CaelumConstants.SHIELD_TYPE_TOWER: return "CA_SHIELD_TYPE_TOWER";
+            case CaelumConstants.SHIELD_TYPE_MAGIC: return "CA_SHIELD_TYPE_MAGIC";
+            default: return "CA_SHIELD_TYPE_BUCKLER";
+        }
+    }
+
+    static ui String GetAmuletKey(int amuletType)
+    {
+        switch (amuletType)
+        {
+            case CaelumConstants.AMULET_SAPPHIRE: return "CA_AMULET_SAPPHIRE";
+            case CaelumConstants.AMULET_EMERALD: return "CA_AMULET_EMERALD";
+            case CaelumConstants.AMULET_TOPAZ: return "CA_AMULET_TOPAZ";
+            default: return "CA_AMULET_RUBY";
+        }
+    }
+
+    static ui String GetSealKey(int sealType)
+    {
+        switch (sealType)
+        {
+            case CaelumConstants.SEAL_WATER: return "CA_SEAL_WATER";
+            case CaelumConstants.SEAL_EARTH: return "CA_SEAL_EARTH";
+            case CaelumConstants.SEAL_AIR: return "CA_SEAL_AIR";
+            case CaelumConstants.SEAL_QUINTESSENCE: return "CA_SEAL_QUINTESSENCE";
+            default: return "CA_SEAL_FIRE";
         }
     }
 

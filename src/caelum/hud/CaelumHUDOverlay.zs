@@ -870,9 +870,10 @@ class CaelumHUDOverlay : EventHandler
             if (magicalWeapon)
             {
                 activeWeaponLine = String.Format(
-                    "%s: %s | %s | %s",
+                    "%s: %s #%d | %s | %s",
                     StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
                     activeWeaponName,
+                    localPlayer.HUDActiveWeaponItemId,
                     StringTable.Localize(GetEssenceTypeKey(
                         localPlayer.HUDActiveWeaponEssenceType
                     ), false),
@@ -885,9 +886,10 @@ class CaelumHUDOverlay : EventHandler
             else
             {
                 activeWeaponLine = String.Format(
-                    "%s: %s | %s",
+                    "%s: %s #%d | %s",
                     StringTable.Localize("CA_HUD_ACTIVE_WEAPON", false),
                     activeWeaponName,
+                    localPlayer.HUDActiveWeaponItemId,
                     StringTable.Localize(
                         GetEquipmentSizeKey(localPlayer.HUDActiveWeaponSize),
                         false

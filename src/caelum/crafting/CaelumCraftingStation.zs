@@ -52,8 +52,8 @@ class CaelumCraftingStation : CaelumMovableProp
                 GetCraftingStationType()
             );
 
-        // La red sólo se recalcula al interactuar. Con pocas estaciones es más
-        // robusto que mantener enlaces persistentes cada tic.
+        // La red se recalcula al interactuar y luego, mientras el Diario sigue
+        // en esta estación, a una frecuencia acotada de una vez por segundo.
         let iterator = ThinkerIterator.Create('CaelumCraftingStation');
         CaelumCraftingStation other;
         while ((other = CaelumCraftingStation(iterator.Next())))
@@ -83,7 +83,7 @@ class CaelumCraftingStation : CaelumMovableProp
 
         int scanToken = user.BeginCraftingNetworkScan();
         CollectCraftingNetwork(user, scanToken);
-        user.OpenCraftingNetwork();
+        user.OpenCraftingNetwork(self);
 
         // Si la red no era válida y el menú no llegó a abrirse, permitimos
         // rearmar al soltar Use mediante la misma lógica del jugador.

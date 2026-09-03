@@ -107,11 +107,22 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         return CaelumMaterialRules.ResolveTier(GetSpecialType(), args[1]);
     }
 
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        // MAP01 usa arg2 únicamente para las pilas masivas de prueba. Los
+        // pickups creados por código siguen asignando Amount directamente.
+        if (Owner == null && args[2] > 0)
+        {
+            Amount = Clamp(args[2], 1, 2147483647);
+        }
+    }
+
     // Cada material conserva una sola clase nativa y resuelve su arte desde
     // args[0]. Esto evita crear una subclase por componente de crafteo.
-    String GetMaterialIconPath()
+    static String GetMaterialIconPathForType(int materialType)
     {
-        switch (GetSpecialType())
+        switch (materialType)
         {
             case CaelumConstants.MATERIAL_IRON_INGOT: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
             case CaelumConstants.MATERIAL_BLADE: return "graphics/caelum/icons/materials/ca_material_blade.png";
@@ -194,6 +205,11 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
             case CaelumConstants.MATERIAL_MONSTER_HIDE: return "graphics/caelum/icons/materials/ca_material_monster_hide.png";
             default: return "graphics/caelum/icons/materials/ca_material_wood.png";
         }
+    }
+
+    String GetMaterialIconPath()
+    {
+        return GetMaterialIconPathForType(GetSpecialType());
     }
 
     String GetMaterialSpriteName()
@@ -319,17 +335,33 @@ class CaelumMaterialRules : Object
     static int GetFamily(int materialType)
     {
         if (materialType == CaelumConstants.MATERIAL_IRON_INGOT
+            || (materialType >= CaelumConstants.MATERIAL_COPPER_INGOT
+                && materialType <= CaelumConstants.MATERIAL_TIN_INGOT)
+            || (materialType >= CaelumConstants.MATERIAL_BRONZE_INGOT
+                && materialType <= CaelumConstants.MATERIAL_GOLD_INGOT)
             || (materialType >= CaelumConstants.MATERIAL_BLADE
                 && materialType <= CaelumConstants.MATERIAL_BROAD_BLADE)
             || (materialType >= CaelumConstants.MATERIAL_WEAPON_HEAD
                 && materialType <= CaelumConstants.MATERIAL_CHAINMAIL)
+            || materialType == CaelumConstants.MATERIAL_POINT
             || materialType == CaelumConstants.MATERIAL_BARREL
-            || materialType == CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD)
+            || materialType == CaelumConstants.MATERIAL_MECHANISM
+            || materialType == CaelumConstants.MATERIAL_BELL_BASE
+            || materialType == CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD
+            || materialType == CaelumConstants.MATERIAL_CHAIN
+            || materialType == CaelumConstants.MATERIAL_SEAL_BASE)
         {
             return CaelumConstants.MATERIAL_FAMILY_METAL;
         }
-        if (materialType >= CaelumConstants.MATERIAL_SHAFT
-            && materialType <= CaelumConstants.MATERIAL_LONG_FRAME)
+        if ((materialType >= CaelumConstants.MATERIAL_SHAFT
+                && materialType <= CaelumConstants.MATERIAL_LONG_FRAME)
+            || materialType == CaelumConstants.MATERIAL_HILT
+            || materialType == CaelumConstants.MATERIAL_LONG_HILT
+            || materialType == CaelumConstants.MATERIAL_HANDLE
+            || materialType == CaelumConstants.MATERIAL_LONG_HANDLE
+            || materialType == CaelumConstants.MATERIAL_STAFF_BASE
+            || materialType == CaelumConstants.MATERIAL_STATUETTE_BASE
+            || materialType == CaelumConstants.MATERIAL_WOOD)
         {
             return CaelumConstants.MATERIAL_FAMILY_WOOD;
         }
@@ -338,16 +370,21 @@ class CaelumMaterialRules : Object
         {
             return CaelumConstants.MATERIAL_FAMILY_ESSENCE;
         }
-        if (materialType == CaelumConstants.MATERIAL_LEATHER)
+        if (materialType == CaelumConstants.MATERIAL_LEATHER
+            || materialType == CaelumConstants.MATERIAL_STRAP
+            || materialType == CaelumConstants.MATERIAL_REINFORCED_STRAP)
         {
             return CaelumConstants.MATERIAL_FAMILY_LEATHER;
         }
-        if (materialType == CaelumConstants.MATERIAL_FABRIC)
+        if (materialType == CaelumConstants.MATERIAL_FABRIC
+            || materialType == CaelumConstants.MATERIAL_BOWSTRING
+            || materialType == CaelumConstants.MATERIAL_REINFORCED_BOWSTRING
+            || materialType == CaelumConstants.MATERIAL_BOOK_BASE)
         {
             return CaelumConstants.MATERIAL_FAMILY_FABRIC;
         }
         if (materialType >= CaelumConstants.MATERIAL_RUBY_PENDANT
-            && materialType <= CaelumConstants.MATERIAL_OPAL_BROOCH)
+            && materialType <= CaelumConstants.MATERIAL_RAW_OPAL)
         {
             return CaelumConstants.MATERIAL_FAMILY_GEM;
         }

@@ -198,13 +198,16 @@ class CaelumCraftingRules : Object
         int shieldStart = sealStart + CaelumConstants.CRAFTING_NETWORK_SEAL_RECIPE_COUNT;
         int processingStart = shieldStart
             + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT;
+        int componentStart = processingStart
+            + CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
         if (resolved < armorStart) return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (resolved < essenceStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR;
         if (resolved < amuletStart) return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if (resolved < sealStart) return CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
         if (resolved < shieldStart) return CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
         if (resolved < processingStart) return CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
-        return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
+        if (resolved < componentStart) return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
+        return CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
     }
 
     static int ResolveRecipeFilter(int recipeFilter)
@@ -375,6 +378,225 @@ class CaelumCraftingRules : Object
         }
     }
 
+    static int GetCraftingEfficiencyPercent(int efficiencyIndex)
+    {
+        switch (Clamp(
+            efficiencyIndex, 0,
+            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
+        ))
+        {
+            case 1:
+                return CaelumConstants.CRAFTING_EFFICIENCY_CAREFUL_PERCENT;
+            case 2:
+                return CaelumConstants.CRAFTING_EFFICIENCY_PERFECT_PERCENT;
+            default:
+                return CaelumConstants.CRAFTING_EFFICIENCY_FAST_PERCENT;
+        }
+    }
+
+    static double GetCraftingEfficiencyTimeFactor(int efficiencyIndex)
+    {
+        switch (Clamp(
+            efficiencyIndex, 0,
+            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
+        ))
+        {
+            case 1:
+                return CaelumConstants.CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR;
+            case 2:
+                return CaelumConstants.CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR;
+            default:
+                return CaelumConstants.CRAFTING_EFFICIENCY_FAST_TIME_FACTOR;
+        }
+    }
+
+    static double GetPrecisionTaskSeconds(
+        double baseSeconds, double timeFactor = 1.0
+    )
+    {
+        return Max(0.0, baseSeconds) * Max(0.0, timeFactor)
+            * 100.0
+            / CaelumConstants.CRAFTING_PRECISION_TEST_SPEED_PERCENT;
+    }
+
+    static int ApplyOutputEfficiency(int theoreticalUnits, int efficiencyIndex)
+    {
+        double exact = Max(0, theoreticalUnits)
+            * GetCraftingEfficiencyPercent(efficiencyIndex) / 100.0;
+        // Todo lo que recibe el jugador se redondea hacia abajo a 0,001.
+        return Max(0, int(Floor(exact + 0.0000001)));
+    }
+
+    static int GetComponentRecipeStart()
+    {
+        return GetProcessingRecipeStart()
+            + CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
+    }
+
+    static int GetUnifiedComponentRecipeIndex(int recipeIndex)
+    {
+        return Clamp(
+            recipeIndex - GetComponentRecipeStart(),
+            0, CaelumConstants.CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT - 1
+        );
+    }
+
+    // Los materiales 18/19/42 son bases procesadas (tejido, cuero y madera),
+    // no componentes. El orden salta esos tres IDs sin alterar 0..78.
+    static int GetComponentOutputMaterial(int recipeIndex)
+    {
+        int componentIndex = GetUnifiedComponentRecipeIndex(recipeIndex);
+        if (componentIndex < 17) { return componentIndex + 1; }
+        if (componentIndex < 39) { return componentIndex + 3; }
+        return componentIndex + 4;
+    }
+
+    static bool IsWoodComponent(int componentType)
+    {
+        return componentType == CaelumConstants.MATERIAL_SHAFT
+            || componentType == CaelumConstants.MATERIAL_FRAME
+            || componentType == CaelumConstants.MATERIAL_LONG_FRAME
+            || componentType == CaelumConstants.MATERIAL_HILT
+            || componentType == CaelumConstants.MATERIAL_LONG_HILT
+            || componentType == CaelumConstants.MATERIAL_HANDLE
+            || componentType == CaelumConstants.MATERIAL_LONG_HANDLE
+            || componentType == CaelumConstants.MATERIAL_STAFF_BASE
+            || componentType == CaelumConstants.MATERIAL_STATUETTE_BASE;
+    }
+
+    static bool IsFiberComponent(int componentType)
+    {
+        return componentType == CaelumConstants.MATERIAL_BOWSTRING
+            || componentType == CaelumConstants.MATERIAL_REINFORCED_BOWSTRING
+            || componentType == CaelumConstants.MATERIAL_BOOK_BASE;
+    }
+
+    static bool IsLeatherComponent(int componentType)
+    {
+        return componentType == CaelumConstants.MATERIAL_STRAP
+            || componentType == CaelumConstants.MATERIAL_REINFORCED_STRAP;
+    }
+
+    static bool IsEssenceComponent(int componentType)
+    {
+        return componentType >= CaelumConstants.MATERIAL_FIRE_ESSENCE
+            && componentType <= CaelumConstants.MATERIAL_QUINTESSENCE;
+    }
+
+    static bool IsJewelryComponent(int componentType)
+    {
+        return componentType >= CaelumConstants.MATERIAL_SILVER_CHAIN
+            && componentType <= CaelumConstants.MATERIAL_OPAL_BROOCH;
+    }
+
+    static int GetTierMetalIngot(int tier)
+    {
+        if (tier <= 1) { return CaelumConstants.MATERIAL_BRONZE_INGOT; }
+        if (tier == 2) { return CaelumConstants.MATERIAL_IRON_INGOT; }
+        return CaelumConstants.MATERIAL_STEEL_INGOT;
+    }
+
+    static int GetRawGemForElementalComponent(int componentType)
+    {
+        switch (componentType)
+        {
+            case CaelumConstants.MATERIAL_WATER_ESSENCE:
+            case CaelumConstants.MATERIAL_SAPPHIRE_PENDANT:
+            case CaelumConstants.MATERIAL_SAPPHIRE_GEM:
+                return CaelumConstants.MATERIAL_RAW_SAPPHIRE;
+            case CaelumConstants.MATERIAL_EARTH_ESSENCE:
+            case CaelumConstants.MATERIAL_EMERALD_PENDANT:
+            case CaelumConstants.MATERIAL_EMERALD_GEM:
+                return CaelumConstants.MATERIAL_RAW_EMERALD;
+            case CaelumConstants.MATERIAL_WIND_ESSENCE:
+            case CaelumConstants.MATERIAL_TOPAZ_PENDANT:
+            case CaelumConstants.MATERIAL_TOPAZ_GEM:
+                return CaelumConstants.MATERIAL_RAW_TOPAZ;
+            case CaelumConstants.MATERIAL_QUINTESSENCE:
+            case CaelumConstants.MATERIAL_OPAL_BROOCH:
+                return CaelumConstants.MATERIAL_RAW_OPAL;
+            default:
+                return CaelumConstants.MATERIAL_RAW_RUBY;
+        }
+    }
+
+    static int GetComponentBaseMaterial(int componentType, int componentTier)
+    {
+        if (IsWoodComponent(componentType))
+        {
+            return CaelumConstants.MATERIAL_WOOD;
+        }
+        if (IsFiberComponent(componentType))
+        {
+            return CaelumConstants.MATERIAL_PLANT_FIBER;
+        }
+        if (IsLeatherComponent(componentType))
+        {
+            return CaelumConstants.MATERIAL_LEATHER;
+        }
+        if (IsEssenceComponent(componentType)
+            || (componentType >= CaelumConstants.MATERIAL_RUBY_PENDANT
+                && componentType <= CaelumConstants.MATERIAL_OPAL_BROOCH))
+        {
+            return GetRawGemForElementalComponent(componentType);
+        }
+        if (componentType == CaelumConstants.MATERIAL_SILVER_CHAIN)
+        {
+            return CaelumConstants.MATERIAL_SILVER_INGOT;
+        }
+        return GetTierMetalIngot(componentTier);
+    }
+
+    static int GetComponentBaseTier(int componentType, int componentTier)
+    {
+        if (IsLeatherComponent(componentType)) { return 1; }
+        if (IsFiberComponent(componentType)
+            || componentType == CaelumConstants.MATERIAL_SILVER_CHAIN)
+        {
+            return 1;
+        }
+        int baseMaterial = GetComponentBaseMaterial(
+            componentType, componentTier
+        );
+        return CaelumMaterialRules.ResolveTier(baseMaterial, componentTier);
+    }
+
+    static int GetComponentOutputTier(int componentType, int componentTier)
+    {
+        if (IsLeatherComponent(componentType)
+            || componentType == CaelumConstants.MATERIAL_SILVER_CHAIN)
+        {
+            return 1;
+        }
+        return CaelumMaterialRules.ResolveTier(componentType, componentTier);
+    }
+
+    static int GetComponentInputUnits(int batchIndex)
+    {
+        return 2 * GetProcessingBatchMultiplier(batchIndex);
+    }
+
+    static int GetComponentOutputUnits(int batchIndex, int efficiencyIndex)
+    {
+        return ApplyOutputEfficiency(
+            GetComponentInputUnits(batchIndex), efficiencyIndex
+        );
+    }
+
+    static int FindComponentRecipeForOutput(int materialType)
+    {
+        for (int recipeIndex = GetComponentRecipeStart();
+            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            if (GetComponentOutputMaterial(recipeIndex) == materialType)
+            {
+                return recipeIndex;
+            }
+        }
+        return -1;
+    }
+
     static int GetProcessingInputOneMaterial(int recipeIndex)
     {
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -473,6 +695,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CRAFTING_PROCESSING_COTTON_FABRIC:
             case CaelumConstants.CRAFTING_PROCESSING_PREDATOR_LEATHER:
                 return 2;
+            case CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY:
             case CaelumConstants.CRAFTING_PROCESSING_SILK_FABRIC:
             case CaelumConstants.CRAFTING_PROCESSING_MONSTER_LEATHER:
                 return 3;
@@ -513,7 +736,9 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
     {
-        int units = 1;
+        // Esta es la salida teórica al 100 %. La eficiencia 50/75/100 se
+        // aplica después al lote completo; 2 entradas producen 1/1/2 unidades.
+        int units = 2;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
@@ -524,6 +749,38 @@ class CaelumCraftingRules : Object
                 break;
         }
         return units * GetProcessingBatchMultiplier(batchIndex);
+    }
+
+    static int GetProcessingOutputUnitsAtEfficiency(
+        int recipeIndex, int batchIndex, int efficiencyIndex
+    )
+    {
+        return ApplyOutputEfficiency(
+            GetProcessingOutputUnits(recipeIndex, batchIndex),
+            efficiencyIndex
+        );
+    }
+
+    static int FindProcessingRecipeForOutput(
+        int materialType, int materialTier
+    )
+    {
+        int resolvedTier = CaelumMaterialRules.ResolveTier(
+            materialType, materialTier
+        );
+        for (int recipeIndex = GetProcessingRecipeStart();
+            recipeIndex < GetComponentRecipeStart(); recipeIndex++)
+        {
+            if (GetProcessingOutputMaterial(recipeIndex) == materialType
+                && CaelumMaterialRules.ResolveTier(
+                    materialType,
+                    GetProcessingOutputTier(recipeIndex)
+                ) == resolvedTier)
+            {
+                return recipeIndex;
+            }
+        }
+        return -1;
     }
 
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
@@ -541,6 +798,83 @@ class CaelumCraftingRules : Object
                 : CaelumConstants.CRAFTING_STATION_SEWING_MACHINE;
         if (!NetworkHasStation(capabilities, station)) { return station; }
         return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static int GetMissingComponentStation(
+        int capabilities, int craftingTier, int componentType
+    )
+    {
+        if (componentType >= CaelumConstants.MATERIAL_ROUND_PLATE
+            && componentType <= CaelumConstants.MATERIAL_MAGIC_PLATE)
+        {
+            return GetMissingShieldStation(capabilities, craftingTier);
+        }
+        if (componentType == CaelumConstants.MATERIAL_PLATE)
+        {
+            return GetMissingArmorStation(
+                capabilities, craftingTier,
+                CaelumConstants.ARMOR_TYPE_HEAVY
+            );
+        }
+        if (componentType == CaelumConstants.MATERIAL_CHAINMAIL
+            || componentType == CaelumConstants.MATERIAL_STRAP)
+        {
+            return GetMissingArmorStation(
+                capabilities, craftingTier,
+                CaelumConstants.ARMOR_TYPE_LIGHT
+            );
+        }
+        if (componentType == CaelumConstants.MATERIAL_REINFORCED_STRAP)
+        {
+            return GetMissingNetworkStation(
+                capabilities, craftingTier,
+                CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS
+            );
+        }
+        if (IsEssenceComponent(componentType)
+            || (componentType >= CaelumConstants.MATERIAL_STAFF_BASE
+                && componentType <= CaelumConstants.MATERIAL_STATUETTE_BASE))
+        {
+            return GetMissingEssenceStation(capabilities, craftingTier);
+        }
+        if (IsJewelryComponent(componentType))
+        {
+            return GetMissingJewelryStation(capabilities, craftingTier);
+        }
+        if (componentType == CaelumConstants.MATERIAL_FRAME
+            || componentType == CaelumConstants.MATERIAL_BOWSTRING)
+        {
+            return GetMissingNetworkStation(
+                capabilities, craftingTier,
+                CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW
+            );
+        }
+        if (componentType == CaelumConstants.MATERIAL_LONG_FRAME)
+        {
+            return GetMissingNetworkStation(
+                capabilities, craftingTier,
+                CaelumConstants.CATALOGUE_WEAPON_LONGBOW
+            );
+        }
+        if (componentType == CaelumConstants.MATERIAL_REINFORCED_BOWSTRING)
+        {
+            return GetMissingNetworkStation(
+                capabilities, craftingTier,
+                CaelumConstants.CATALOGUE_WEAPON_CROSSBOW
+            );
+        }
+        if (componentType == CaelumConstants.MATERIAL_BARREL
+            || componentType == CaelumConstants.MATERIAL_MECHANISM)
+        {
+            return GetMissingNetworkStation(
+                capabilities, craftingTier,
+                CaelumConstants.CATALOGUE_WEAPON_CARBINE
+            );
+        }
+        return GetMissingNetworkStation(
+            capabilities, craftingTier,
+            CaelumConstants.CATALOGUE_WEAPON_DAGGER
+        );
     }
 
     static int GetRequiredSilverDetailUnits(double finalWeight, int tier)
@@ -596,19 +930,9 @@ class CaelumCraftingRules : Object
 
     static int GetArmorTierMaterial(int armorType)
     {
-        switch (Clamp(
-            armorType, 0, CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
-        ))
-        {
-            case CaelumConstants.ARMOR_TYPE_MAGIC:
-                return CaelumConstants.MATERIAL_FABRIC;
-            case CaelumConstants.ARMOR_TYPE_LIGHT:
-                return CaelumConstants.MATERIAL_LEATHER;
-            case CaelumConstants.ARMOR_TYPE_MEDIUM:
-                return CaelumConstants.MATERIAL_CHAINMAIL;
-            default:
-                return CaelumConstants.MATERIAL_PLATE;
-        }
+        // Las dieciséis recetas usan cuero del tier del objeto. El tipo de
+        // armadura conserva peso, defensa y estaciones, no cambia el recurso.
+        return CaelumConstants.MATERIAL_LEATHER;
     }
 
     static double GetArmorTierWeightRatio(int armorSlot)
@@ -882,12 +1206,26 @@ class CaelumCraftingRules : Object
         }
     }
 
-    static int GetRecoveredMaterialUnits(int requiredUnits)
+    static int GetRecoveredMaterialUnits(
+        int requiredUnits, double remainingDurabilityFraction = 1.0
+    )
     {
-        return Max(0, int(Ceil(
+        return Max(0, int(Floor(
             Max(0, requiredUnits)
                 * CaelumConstants.CRAFTING_DISMANTLE_RECOVERY_RATIO
+                * Clamp(remainingDurabilityFraction, 0.0, 1.0)
+                + 0.0000001
         )));
+    }
+
+    static int GetProportionalInputUnits(
+        int fullRecipeUnits, double requiredFraction
+    )
+    {
+        double exact = Max(0, fullRecipeUnits)
+            * Clamp(requiredFraction, 0.0, 1.0);
+        // Todo coste se redondea hacia arriba a la unidad 0,001.
+        return Max(0, int(Ceil(exact - 0.0000001)));
     }
 
     static double GetPlayableTierOneWeight(int weaponId)
@@ -1115,6 +1453,27 @@ class CaelumCraftingRules : Object
             return false;
         }
         if (IsMaterialUsedByWeaponRecipe(materialType)) { return true; }
+
+        // Todo componente cuenta tanto por ser una salida fabricable como
+        // por el material base único que consume en cualquiera de sus tiers.
+        // Así la auditoría deriva del catálogo persistente 4.30 y no de una
+        // segunda lista manual propensa a quedar desactualizada.
+        for (int recipeIndex = GetComponentRecipeStart();
+            recipeIndex
+                < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex++)
+        {
+            int componentType = GetComponentOutputMaterial(recipeIndex);
+            if (componentType == materialType) { return true; }
+            for (int tier = 1; tier <= 3; tier++)
+            {
+                if (GetComponentBaseMaterial(componentType, tier)
+                    == materialType)
+                {
+                    return true;
+                }
+            }
+        }
 
         // Armaduras, escudos y armas de esencia ya documentados.
         switch (materialType)

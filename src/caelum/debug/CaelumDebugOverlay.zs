@@ -355,6 +355,20 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED";
             case CaelumConstants.CRAFTING_ACTION_PROCESSED:
                 return "CA_CRAFTING_ACTION_PROCESSED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_STARTED:
+                return "CA_CRAFTING_ACTION_TASK_STARTED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_CANCELLED:
+                return "CA_CRAFTING_ACTION_TASK_CANCELLED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TASK_ACTIVE:
+                return "CA_CRAFTING_ACTION_FAILED_TASK_ACTIVE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT:
+                return "CA_CRAFTING_ACTION_FAILED_COMBAT";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TARGET:
+                return "CA_CRAFTING_ACTION_FAILED_TARGET";
+            case CaelumConstants.CRAFTING_ACTION_REPAIRED:
+                return "CA_CRAFTING_ACTION_REPAIRED";
+            case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
+                return "CA_CRAFTING_ACTION_DISMANTLED";
             default: return "CA_CRAFTING_ACTION_NONE";
         }
     }
@@ -377,6 +391,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_SEALS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
                 return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
+                return "CA_CRAFTING_FILTER_COMPONENTS";
             default:
                 return "CA_CRAFTING_FILTER_ALL";
         }
@@ -650,6 +666,22 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_STORAGE";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED:
                 return "CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED:
+                return "CA_EQUIPMENT_ACTION_REPAIR_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIRED:
+                return "CA_EQUIPMENT_ACTION_REPAIRED";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLE_STARTED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLE_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK:
+                return "CA_EQUIPMENT_ACTION_FAILED_CRAFTING_TASK";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT:
+                return "CA_EQUIPMENT_ACTION_FAILED_COMBAT";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_DURABILITY";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED:
+                return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }
@@ -1786,7 +1818,9 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.CraftingSelectionTier
             );
         else if (localPlayer.CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
         {
             recipeName = StringTable.Localize(
                 GetSpecialItemTypeKey(
@@ -1852,13 +1886,17 @@ class CaelumDebugOverlay : EventHandler
             selection = recipeName;
         }
         else if (localPlayer.CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
         {
             selection = String.Format(
-                "%s | x%d | %.3f",
+                "%s | T%d | x%d | %d%% | %.1fs",
                 recipeName,
+                localPlayer.CraftingSelectionTier,
                 localPlayer.CraftingProcessingBatchMultiplier,
-                localPlayer.CraftingFinalWeight
+                localPlayer.CraftingEfficiencyPercent,
+                localPlayer.CraftingPreviewSeconds
             );
         }
         else
@@ -1922,7 +1960,9 @@ class CaelumDebugOverlay : EventHandler
         }
         String outputLine = "";
         if (localPlayer.CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
         {
             String outputName = StringTable.Localize(
                 GetSpecialItemTypeKey(
@@ -1983,9 +2023,16 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.MagicBoxUsedSlots,
             localPlayer.MagicBoxMaximumSlots
         );
-        String actionText = StringTable.Localize(
-            GetCraftingActionKey(localPlayer.LastCraftingAction), false
-        );
+        String actionText = localPlayer.CraftingTaskActive
+            ? String.Format(
+                "%s: %.1f / %.1f s",
+                StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                localPlayer.CraftingTaskRemainingSeconds,
+                localPlayer.CraftingTaskTotalSeconds
+            )
+            : StringTable.Localize(
+                GetCraftingActionKey(localPlayer.LastCraftingAction), false
+            );
         String navigationHelp1Key = localPlayer.ActiveCraftingStationType
                 == CaelumConstants.CRAFTING_STATION_WORKBENCH
             ? "CA_CRAFTING_NAVIGATION_HELP_1"
@@ -1999,16 +2046,55 @@ class CaelumDebugOverlay : EventHandler
             navigationHelp2Key =
                 "CA_CRAFTING_NAVIGATION_HELP_PROCESSING_2";
         }
-        int actionColor = (localPlayer.LastCraftingAction
+        else if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
+        {
+            navigationHelp1Key =
+                "CA_CRAFTING_NAVIGATION_HELP_COMPONENTS";
+            navigationHelp2Key =
+                "CA_CRAFTING_NAVIGATION_HELP_COMPONENTS_2";
+        }
+        int actionColor = Font.CR_GRAY;
+        if (localPlayer.CraftingTaskActive
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_TASK_STARTED)
+        {
+            actionColor = Font.CR_CYAN;
+        }
+        else if (localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_CREATED
             || localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED
             || localPlayer.LastCraftingAction
-                == CaelumConstants.CRAFTING_ACTION_PROCESSED)
-            ? Font.CR_GREEN
-            : (localPlayer.LastCraftingAction
-                    >= CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS
-                ? Font.CR_RED : Font.CR_GRAY);
+                == CaelumConstants.CRAFTING_ACTION_PROCESSED
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_REPAIRED
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_DISMANTLED)
+        {
+            actionColor = Font.CR_GREEN;
+        }
+        else if (localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_STATION
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_TASK_ACTIVE
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_TARGET)
+        {
+            actionColor = Font.CR_RED;
+        }
 
         DrawCenteredText(
             StringTable.Localize("CA_CRAFTING_MENU_TITLE", false),
@@ -2082,7 +2168,9 @@ class CaelumDebugOverlay : EventHandler
                 ? Font.CR_GREEN : Font.CR_RED
         );
         if (localPlayer.CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
         {
             DrawCenteredText(outputLine, 220.0, Font.CR_CYAN);
         }
@@ -2125,16 +2213,12 @@ class CaelumDebugOverlay : EventHandler
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
         if (localPlayer == null
             || (!localPlayer.CreationWizardOpen
-                && !localPlayer.EquipmentMenuOpen
-                && !localPlayer.CraftingMenuOpen))
+                && !localPlayer.EquipmentMenuOpen))
         {
             return false;
         }
 
-        // El crafting debe poder recibir Q aunque GZDoom conserve menuactive
-        // tras interactuar con una estación. Los otros menús personalizados
-        // mantienen la protección anterior para no interceptar el menú nativo.
-        if (menuactive != 0 && !localPlayer.CraftingMenuOpen)
+        if (menuactive != 0)
         {
             return false;
         }
@@ -2153,56 +2237,6 @@ class CaelumDebugOverlay : EventHandler
 
         if (e.Type == InputEvent.Type_KeyUp)
         {
-            return true;
-        }
-
-        if (localPlayer.CraftingMenuOpen)
-        {
-            int craftingCharacter = e.KeyChar;
-            String craftingKey = e.KeyString;
-
-            // KeyChar puede llegar vacío/inestable justo después de usar una
-            // estación. KeyString deriva del KeyScan y resulta una segunda
-            // ruta segura para detectar Q sin intervenir el sistema UI global.
-            if (craftingCharacter == 113 || craftingCharacter == 81
-                || craftingKey ~== "q")
-            {
-                SendNetworkEvent("ca_crafting_toggle");
-            }
-            else if (e.KeyScan == InputEvent.Key_Tab
-                || e.KeyScan == InputEvent.Key_Pad_Y)
-            {
-                SendNetworkEvent("ca_crafting_filter");
-            }
-            else if (e.KeyScan == InputEvent.Key_RightArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
-            {
-                SendNetworkEvent("ca_crafting_recipe_next");
-            }
-            else if (e.KeyScan == InputEvent.Key_LeftArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
-            {
-                SendNetworkEvent("ca_crafting_recipe_previous");
-            }
-            else if (e.KeyScan == InputEvent.Key_Space
-                || e.KeyScan == InputEvent.Key_Pad_X)
-            {
-                SendNetworkEvent("ca_crafting_tier");
-            }
-            else if (craftingCharacter == 114 || craftingCharacter == 82)
-            {
-                SendNetworkEvent("ca_crafting_size");
-            }
-            else if (e.KeyScan == InputEvent.Key_Enter
-                || e.KeyScan == InputEvent.Key_Pad_A
-                || craftingCharacter == 101 || craftingCharacter == 69)
-            {
-                SendNetworkEvent("ca_crafting_create");
-            }
-            else if (craftingCharacter == 112 || craftingCharacter == 80)
-            {
-                SendNetworkEvent("ca_crafting_spawn_materials");
-            }
             return true;
         }
 
@@ -2334,12 +2368,6 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer != null && localPlayer.EquipmentMenuOpen)
         {
             DrawEquipmentMenu(localPlayer);
-            return;
-        }
-
-        if (localPlayer != null && localPlayer.CraftingMenuOpen)
-        {
-            DrawCraftingMenu(localPlayer);
             return;
         }
 
@@ -3761,38 +3789,6 @@ class CaelumDebugOverlay : EventHandler
         if (e.Name == "ca_equipment_toggle")
         {
             requestingPlayer.ToggleEquipmentMenu();
-        }
-        else if (e.Name == "ca_crafting_toggle")
-        {
-            requestingPlayer.ToggleCraftingMenu();
-        }
-        else if (e.Name == "ca_crafting_recipe_next")
-        {
-            requestingPlayer.CycleCraftingRecipe(1);
-        }
-        else if (e.Name == "ca_crafting_recipe_previous")
-        {
-            requestingPlayer.CycleCraftingRecipe(-1);
-        }
-        else if (e.Name == "ca_crafting_filter")
-        {
-            requestingPlayer.CycleCraftingRecipeFilter();
-        }
-        else if (e.Name == "ca_crafting_tier")
-        {
-            requestingPlayer.CycleCraftingTier();
-        }
-        else if (e.Name == "ca_crafting_size")
-        {
-            requestingPlayer.CycleCraftingSize();
-        }
-        else if (e.Name == "ca_crafting_create")
-        {
-            requestingPlayer.CraftSelectedPhysicalWeapon();
-        }
-        else if (e.Name == "ca_crafting_spawn_materials")
-        {
-            requestingPlayer.SpawnSelectedCraftingMaterials();
         }
         else if (e.Name == "ca_equipment_kind")
         {

@@ -64,9 +64,8 @@ class CaelumPersistentCharacterState : Inventory
     bool NativeEquipmentMigrationComplete;
     bool WeaponEssenceInitialized;
 
-    // Secuencia monotónica por personaje para las piezas no apilables. El ID
-    // viaja dentro de cada CaelumEquipmentItem; este contador evita reutilizar
-    // valores después de soltar, destruir o desarmar una pieza.
+    // Identidad formal 4.29.0bc. Estos campos viajan junto con el registro y
+    // evitan que dos piezas iguales compartan selección o durabilidad.
     int NextEquipmentItemId;
     int EquippedArmorItemId[4];
     int EquippedShieldItemId;
@@ -78,7 +77,30 @@ class CaelumPersistentCharacterState : Inventory
     // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
     // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
-    bool KnownCraftingRecipe[79];
+    bool KnownCraftingRecipe[129];
+
+    // Instantánea viajera de la única tarea 4.30. Los guardados normales ya
+    // serializan al jugador; esta copia adicional conserva el estado durante
+    // `changemap` y otros viajes que reconstruyen el pawn.
+    bool CraftingTaskActive;
+    int CraftingTaskKind;
+    int CraftingTaskRecipeIndex;
+    int CraftingTaskTier;
+    int CraftingTaskSize;
+    int CraftingTaskBatchIndex;
+    int CraftingTaskEfficiencyIndex;
+    int CraftingTaskTargetItemId;
+    int CraftingTaskNetworkCapabilities;
+    int CraftingTaskReservedBoxSlots;
+    bool CraftingTaskUsesDirectPlan;
+    double CraftingTaskTotalSeconds;
+    double CraftingTaskRemainingSeconds;
+    int CraftingTaskReservedType[16];
+    int CraftingTaskReservedTier[16];
+    int CraftingTaskReservedUnits[16];
+    int CraftingTaskOutputType[16];
+    int CraftingTaskOutputTier[16];
+    int CraftingTaskOutputUnits[16];
 
     int StoredHealth;
     double StoredAnima;
@@ -106,35 +128,26 @@ class CaelumPersistentCharacterState : Inventory
         Stop;
     }
 
+    void ObserveEquipmentItemId(int itemId)
+    {
+        if (itemId > NextEquipmentItemId)
+        {
+            NextEquipmentItemId = itemId;
+        }
+    }
+
+    int AllocateEquipmentItemId()
+    {
+        NextEquipmentItemId++;
+        if (NextEquipmentItemId <= 0) { NextEquipmentItemId = 1; }
+        return NextEquipmentItemId;
+    }
+
     int GetArmorOwnershipIndex(int slot, int armorType, int tier)
     {
         return Clamp(slot, 0, 3) * 12
             + Clamp(armorType, 0, 3) * 3
             + Clamp(tier, 1, 3) - 1;
-    }
-
-    void EnsureEquipmentItemIdSequence()
-    {
-        if (NextEquipmentItemId < 1) { NextEquipmentItemId = 1; }
-    }
-
-    int AllocateEquipmentItemId()
-    {
-        EnsureEquipmentItemIdSequence();
-        int allocated = NextEquipmentItemId;
-        NextEquipmentItemId++;
-        // Evita que un desbordamiento futuro produzca el centinela cero.
-        if (NextEquipmentItemId < 1) { NextEquipmentItemId = 1; }
-        return allocated;
-    }
-
-    void ObserveEquipmentItemId(int itemId)
-    {
-        EnsureEquipmentItemIdSequence();
-        if (itemId >= NextEquipmentItemId && itemId < 2147483647)
-        {
-            NextEquipmentItemId = itemId + 1;
-        }
     }
 
     int GetShieldOwnershipIndex(int shieldType, int tier)
@@ -271,13 +284,25 @@ class CaelumPersistentCharacterState : Inventory
             }
         }
 
-        // La versión 2 ya contenía los cuatro escudos de 4.29.0y. Sólo una
-        // partida anterior debe inicializarlos como bloqueados; las catorce
-        // recetas de procesamiento de la versión 3 siempre empiezan cerradas.
-        int addedRecipeStart = RecipeBookVersion >= 2
-            ? CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
+        // La versión 2 ya contenía los cuatro escudos de 4.29.0y. Las catorce
+        // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
+        // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
+        int addedRecipeStart;
+        if (RecipeBookVersion >= 3)
+        {
+            addedRecipeStart = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
                 + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
-            : CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
+                + CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
+        }
+        else if (RecipeBookVersion >= 2)
+        {
+            addedRecipeStart = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
+                + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT;
+        }
+        else
+        {
+            addedRecipeStart = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT;
+        }
         for (int recipeIndex = addedRecipeStart;
             recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             recipeIndex++)
