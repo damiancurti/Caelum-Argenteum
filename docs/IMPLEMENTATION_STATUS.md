@@ -1,5 +1,49 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Environmental variants, south hill and progressive drowning 4.31.0d
+
+**Implemented; exact GZDoom 4.14.2 compile, MAP01 load and drowning audit
+passed; focused Windows visual and traversal acceptance pending**
+
+The regional library now contains 63 tree actors and 75 rock actors. Every one
+of the twenty-one accepted tree species retains its original class and adds a
+75% variant suffixed `2` plus a 125% variant suffixed `3`; their branch or
+crown distribution changes deterministically without changing the species'
+basic silhouette or material. The five rock forms now combine five nominal
+size tiers (0.5×, 1×, 2×, 5× and 20×) with the same three 75/100/125% visual
+variants. All variants share the material of their source form.
+
+The runtime therefore exposes 138 solid environmental actors backed by 78 OBJ
+meshes and 44,976 faces. Historical base DoomEdNums 18041–18045 and
+18050–18070 remain unchanged; the 112 new actors use 18300–18411. The sauce's
+hanging branches now originate continuously at the trunk, and the ciprés,
+guindo and pehuén trunks terminate inside their crowns instead of projecting
+through the top. Collision scales with each actor, but remains GZDoom's simple
+rock/trunk cylinder rather than triangle-accurate OBJ collision.
+
+Once Caelum Air reaches zero, continuous submersion deals one pulse per second
+equal to 1% of the character's current maximum-health capacity. Each following
+second adds 0.1 percentage points until the pulse reaches 10%; surfacing or
+otherwise breathing resets the progression. Damage keeps the established
+environmental path: it ignores armor and does not award Adrenaline or begin
+combat. The developer command `ca_debug_empty_air` makes the first pulses
+testable without waiting for the complete Air reserve to drain.
+
+MAP01 adds a native UDMF floor-slope prototype centred at `(600, -1100)` in an
+empty part of the south lawn. Eight continuous sloped sectors rise from z=0 to
+a 48-MU-high, roughly 192-MU-wide flat top inside a 640-MU octagonal footprint.
+The original MAP01 text blocks remain byte-identical and the hill appends 16
+vertices, 24 linedefs, 48 sidedefs and 9 sectors without new Things. MAP02 is
+byte-identical to 4.31.0c. Reproducibility, actor/model/material references,
+editor-number uniqueness, finite mesh geometry, map references, sector
+ownership and all slope-edge heights passed automated structural checks.
+
+The complete 3,896-file candidate also compiled and loaded MAP01 without a
+map, MODELDEF or ZScript warning in exact GZDoom 4.14.2. A temporary runtime
+audit measured the rounded damage sequence `18/20/21/178` at 1.0/1.1/1.2/10%
+for a 1,780-health profile and confirmed that breathing resets the next pulse
+to 18. The audit helper is not included in the release.
+
 ## Progressive underwater breathing and Argentine environment set 4.31.0c
 
 **Implemented and internally validated in exact GZDoom 4.14.2; focused author

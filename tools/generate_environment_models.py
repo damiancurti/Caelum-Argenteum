@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import math
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Dict, Iterable, List, Sequence, Tuple
 
@@ -222,6 +222,7 @@ class RockSpec:
     height: float
     depth: float
     texture: str
+    variation: int = 1
 
 
 @dataclass(frozen=True)
@@ -239,6 +240,21 @@ class TreeSpec:
     foliage: str
     lean_x: float = 0.0
     lean_z: float = 0.0
+    variation: int = 1
+
+
+@dataclass(frozen=True)
+class VisualVariant:
+    suffix: str
+    scale: float
+    seed_offset: int
+
+
+@dataclass(frozen=True)
+class RockSizeTier:
+    suffix: str
+    scale: float
+    spanish_name: str
 
 
 ROCKS: Tuple[RockSpec, ...] = (
@@ -273,6 +289,57 @@ TREES: Tuple[TreeSpec, ...] = (
     TreeSpec("ca_tree_city_tipa", "T", "tipa", "city", "umbrella", 431220, 226, 104, 15, "bark_city.png", "foliage_city_tipa.png", 4, 0),
     TreeSpec("ca_tree_city_plane", "U", "plátano", "city", "high", 431221, 244, 78, 14, "bark_city.png", "foliage_city_green.png", -3, 2),
 )
+
+
+# El nombre histórico sin sufijo sigue siendo la variante central. Los sufijos
+# 2 y 3 son, respectivamente, la versión 25% menor y 25% mayor solicitadas.
+VISUAL_VARIANTS: Tuple[VisualVariant, ...] = (
+    VisualVariant("", 1.0, 0),
+    VisualVariant("2", 0.75, 10000),
+    VisualVariant("3", 1.25, 20000),
+)
+
+# Cada forma de roca se ofrece en cinco escalas de paisaje. El sufijo de clase
+# describe la escala y el sufijo numérico final conserva la variante visual.
+ROCK_SIZE_TIERS: Tuple[RockSizeTier, ...] = (
+    RockSizeTier("Half", 0.5, "media"),
+    RockSizeTier("", 1.0, "normal"),
+    RockSizeTier("Double", 2.0, "doble"),
+    RockSizeTier("Giant", 5.0, "gigante"),
+    RockSizeTier("Colossal", 20.0, "colosal"),
+)
+
+ROCK_COLLISION_RADII: Dict[str, float] = {
+    "ca_rock_granite": 28.0,
+    "ca_rock_sandstone": 44.0,
+    "ca_rock_basalt": 28.0,
+    "ca_rock_quartz": 32.0,
+    "ca_rock_coastal": 45.0,
+}
+
+TREE_COLLISION_RADII: Dict[str, float] = {
+    "ca_tree_desert_cardon": 24.0,
+    "ca_tree_desert_churqui": 16.0,
+    "ca_tree_desert_chanar": 18.0,
+    "ca_tree_jungle_lapacho": 24.0,
+    "ca_tree_jungle_palo_rosa": 20.0,
+    "ca_tree_jungle_timbo": 32.0,
+    "ca_tree_tundra_lenga": 20.0,
+    "ca_tree_tundra_nire": 22.0,
+    "ca_tree_tundra_guindo": 14.0,
+    "ca_tree_mountain_pehuen": 18.0,
+    "ca_tree_mountain_cypress": 14.0,
+    "ca_tree_mountain_coihue": 20.0,
+    "ca_tree_plains_ombu": 35.0,
+    "ca_tree_plains_tala": 20.0,
+    "ca_tree_plains_espinillo": 16.0,
+    "ca_tree_coast_coronillo": 18.0,
+    "ca_tree_coast_willow": 20.0,
+    "ca_tree_coast_ceibo": 24.0,
+    "ca_tree_city_jacaranda": 20.0,
+    "ca_tree_city_tipa": 26.0,
+    "ca_tree_city_plane": 20.0,
+}
 
 
 ROCK_CROPS: Dict[str, Tuple[int, int, int, int]] = {
@@ -626,24 +693,41 @@ def build_multistem_tree(mesh: Mesh, spec: TreeSpec) -> None:
 
 
 def build_conifer(mesh: Mesh, spec: TreeSpec) -> None:
+    rng = random.Random(spec.seed + 700)
     bark = material(spec.bark)
     foliage = material(spec.foliage)
-    top = (spec.lean_x, spec.height, spec.lean_z)
+    layers = 8 if spec.style == "conifer" else 10
+    crown_top_ratio = 0.24 + 0.068 * (layers - 1) + 0.10
+    # El tronco termina dentro de la última capa y no atraviesa su cono.
+    trunk_top_ratio = crown_top_ratio - 0.10
+    top = trunk_position(spec, trunk_top_ratio)
     add_trunk_path(
         mesh,
         bark,
-        ((0.0, 0.0, 0.0), (spec.lean_x * 0.45, spec.height * 0.55, spec.lean_z * 0.45), top),
+        (
+            (0.0, 0.0, 0.0),
+            trunk_position(spec, min(0.55, trunk_top_ratio * 0.68)),
+            top,
+        ),
         spec.trunk_radius,
         spec.trunk_radius * 0.23,
         9,
     )
-    layers = 8 if spec.style == "conifer" else 10
     for layer in range(layers):
         ratio = 0.24 + 0.068 * layer
+        if spec.variation > 1:
+            ratio += rng.uniform(-0.008, 0.008)
         center = trunk_position(spec, ratio)
         radius = spec.crown_radius * (1.0 - layer / (layers + 1.5))
         if spec.style == "cypress":
             radius *= 0.66
+        if spec.variation > 1:
+            radius *= rng.uniform(0.92, 1.08)
+            center = (
+                center[0] + rng.uniform(-0.035, 0.035) * spec.crown_radius,
+                center[1],
+                center[2] + rng.uniform(-0.035, 0.035) * spec.crown_radius,
+            )
         lower = (center[0], center[1] - spec.height * 0.035, center[2])
         upper = (center[0], center[1] + spec.height * 0.10, center[2])
         mesh.add_frustum(
@@ -660,12 +744,18 @@ def build_conifer(mesh: Mesh, spec: TreeSpec) -> None:
 
 
 def build_araucaria(mesh: Mesh, spec: TreeSpec) -> None:
+    rng = random.Random(spec.seed + 800)
     bark = material(spec.bark)
     foliage = material(spec.foliage)
+    trunk_top_ratio = 0.875
     add_trunk_path(
         mesh,
         bark,
-        ((0.0, 0.0, 0.0), (0.0, spec.height * 0.60, 0.0), (0.0, spec.height, 0.0)),
+        (
+            (0.0, 0.0, 0.0),
+            (0.0, spec.height * 0.60, 0.0),
+            (0.0, spec.height * trunk_top_ratio, 0.0),
+        ),
         spec.trunk_radius,
         spec.trunk_radius * 0.24,
         10,
@@ -674,9 +764,18 @@ def build_araucaria(mesh: Mesh, spec: TreeSpec) -> None:
     for whorl in range(whorls):
         level = 0.42 + whorl * 0.085
         radius = spec.crown_radius * (1.0 - whorl * 0.10)
+        phase_jitter = 0.0
+        if spec.variation > 1:
+            level += rng.uniform(-0.009, 0.009)
+            radius *= rng.uniform(0.93, 1.07)
+            phase_jitter = rng.uniform(-0.14, 0.14)
         branch_count = 6
         for branch in range(branch_count):
-            angle = math.tau * branch / branch_count + whorl * 0.28
+            angle = (
+                math.tau * branch / branch_count
+                + whorl * 0.28
+                + phase_jitter
+            )
             origin = (0.0, spec.height * level, 0.0)
             endpoint = (
                 math.cos(angle) * radius,
@@ -725,7 +824,13 @@ def build_cardon(mesh: Mesh, spec: TreeSpec) -> None:
         (1.0, 0.52, -0.14, 0.31),
         (-0.72, 0.66, -0.42, 0.20),
     )
+    rng = random.Random(spec.seed + 850)
     for index, (side, level, depth, arm_height) in enumerate(arms):
+        if spec.variation > 1:
+            side *= rng.uniform(0.88, 1.12)
+            level += rng.uniform(-0.035, 0.035)
+            depth += rng.uniform(-0.12, 0.12)
+            arm_height *= rng.uniform(0.88, 1.12)
         origin = (0.0, spec.height * level, 0.0)
         elbow = (
             side * spec.crown_radius * (0.55 + index * 0.08),
@@ -762,26 +867,34 @@ def build_willow(mesh: Mesh, spec: TreeSpec) -> None:
     rng = random.Random(spec.seed + 900)
     for index in range(12):
         angle = math.tau * index / 12 + rng.uniform(-0.2, 0.2)
-        start = (
-            spec.lean_x + math.cos(angle) * spec.crown_radius * 0.38,
-            spec.height * rng.uniform(0.67, 0.83),
-            spec.lean_z + math.sin(angle) * spec.crown_radius * 0.38,
+        origin = trunk_position(spec, rng.uniform(0.52, 0.68))
+        shoulder = (
+            origin[0] + math.cos(angle) * spec.crown_radius * 0.58,
+            spec.height * rng.uniform(0.70, 0.84),
+            origin[2] + math.sin(angle) * spec.crown_radius * 0.58,
         )
         end = (
-            start[0] + math.cos(angle) * spec.crown_radius * 0.18,
-            spec.height * rng.uniform(0.22, 0.45),
-            start[2] + math.sin(angle) * spec.crown_radius * 0.18,
+            shoulder[0] + math.cos(angle) * spec.crown_radius * 0.16,
+            spec.height * rng.uniform(0.30, 0.49),
+            shoulder[2] + math.sin(angle) * spec.crown_radius * 0.16,
         )
-        mesh.add_frustum(bark, start, end, 1.2, 0.35, 5)
+        add_trunk_path(
+            mesh,
+            bark,
+            (origin, shoulder, end),
+            max(1.2, spec.trunk_radius * 0.15),
+            0.35,
+            5,
+        )
         center = (
-            (start[0] + end[0]) * 0.5,
-            (start[1] + end[1]) * 0.5,
-            (start[2] + end[2]) * 0.5,
+            (shoulder[0] + end[0]) * 0.5,
+            (shoulder[1] + end[1]) * 0.5,
+            (shoulder[2] + end[2]) * 0.5,
         )
         mesh.add_ellipsoid(
             foliage,
             center,
-            (9.0, abs(start[1] - end[1]) * 0.46, 7.0),
+            (9.0, abs(shoulder[1] - end[1]) * 0.46, 7.0),
             spec.seed + 600 + index,
             rings=3,
             segments=6,
@@ -861,6 +974,7 @@ def add_irregular_rock(
 def build_rock(spec: RockSpec, output: Path) -> Tuple[int, int]:
     mesh = Mesh(spec.file_stem)
     rock_material = material(spec.texture)
+    rng = random.Random(spec.seed + 950)
     if spec.style == "boulder":
         add_irregular_rock(
             mesh,
@@ -876,10 +990,20 @@ def build_rock(spec: RockSpec, output: Path) -> Tuple[int, int]:
     elif spec.style == "columns":
         columns = ((-16, 0, 17, 66), (3, 4, 20, 82), (20, -3, 15, 58), (-2, 17, 14, 52))
         for index, (x, z, radius, height) in enumerate(columns):
+            if spec.variation > 1:
+                x += rng.uniform(-4.0, 4.0)
+                z += rng.uniform(-4.0, 4.0)
+                radius *= rng.uniform(0.90, 1.10)
+                height *= rng.uniform(0.90, 1.10)
             mesh.add_frustum(
                 rock_material,
                 (x, 0.0, z),
-                (x + (index % 2) * 2.0, height, z),
+                (
+                    x + (index % 2) * 2.0
+                        + (rng.uniform(-2.0, 2.0) if spec.variation > 1 else 0.0),
+                    height,
+                    z,
+                ),
                 radius,
                 radius * 0.82,
                 6,
@@ -891,6 +1015,12 @@ def build_rock(spec: RockSpec, output: Path) -> Tuple[int, int]:
         add_irregular_rock(mesh, rock_material, (0.0, 0.0, 0.0), (72, 28, 64), spec.seed, 9)
         crystals = ((-19, 0, 7, 48, -4), (1, 4, 10, 67, 3), (18, -8, 7, 43, 7), (22, 13, 5, 34, -2), (-4, -19, 6, 39, 5))
         for index, (x, z, radius, height, lean) in enumerate(crystals):
+            if spec.variation > 1:
+                x += rng.uniform(-3.0, 3.0)
+                z += rng.uniform(-3.0, 3.0)
+                radius *= rng.uniform(0.90, 1.10)
+                height *= rng.uniform(0.90, 1.10)
+                lean += rng.uniform(-2.5, 2.5)
             mesh.add_frustum(
                 rock_material,
                 (x, 12.0, z),
@@ -912,6 +1042,233 @@ def build_rock(spec: RockSpec, output: Path) -> Tuple[int, int]:
 
 def make_transparent_sprite(path: Path) -> None:
     Image.new("RGBA", (1, 1), (0, 0, 0, 0)).save(path, optimize=True)
+
+
+def actor_name(file_stem: str) -> str:
+    words = file_stem.removeprefix("ca_").split("_")
+    return "Caelum" + "".join(word.title() for word in words)
+
+
+def scalar(value: float) -> str:
+    rounded = round(value)
+    if abs(value - rounded) <= 0.000001:
+        return str(rounded)
+    return f"{value:.6f}".rstrip("0").rstrip(".")
+
+
+def rock_variant_spec(spec: RockSpec, variant: VisualVariant) -> RockSpec:
+    return replace(
+        spec,
+        file_stem=f"{spec.file_stem}{variant.suffix}",
+        seed=spec.seed + variant.seed_offset,
+        variation=int(variant.suffix or "1"),
+    )
+
+
+def tree_variant_spec(spec: TreeSpec, variant: VisualVariant) -> TreeSpec:
+    return replace(
+        spec,
+        file_stem=f"{spec.file_stem}{variant.suffix}",
+        seed=spec.seed + variant.seed_offset,
+        variation=int(variant.suffix or "1"),
+    )
+
+
+def rock_records() -> List[dict[str, object]]:
+    records: List[dict[str, object]] = []
+    for spec in ROCKS:
+        base_actor = actor_name(spec.file_stem)
+        for tier in ROCK_SIZE_TIERS:
+            for variant in VISUAL_VARIANTS:
+                model_spec = rock_variant_spec(spec, variant)
+                scale = tier.scale * variant.scale
+                records.append({
+                    "actor": f"{base_actor}{tier.suffix}{variant.suffix}",
+                    "base_actor": base_actor,
+                    "model": f"{model_spec.file_stem}.obj",
+                    "frame_prefix": "CARK",
+                    "frame": spec.frame,
+                    "scale": scale,
+                    "radius": ROCK_COLLISION_RADII[spec.file_stem] * scale,
+                    "height": spec.height * scale,
+                    "tag": f"$CA_{spec.file_stem.removeprefix('ca_').upper()}",
+                    "is_base": tier.scale == 1.0 and variant.suffix == "",
+                })
+    return records
+
+
+def tree_records() -> List[dict[str, object]]:
+    records: List[dict[str, object]] = []
+    for spec in TREES:
+        base_actor = actor_name(spec.file_stem)
+        for variant in VISUAL_VARIANTS:
+            model_spec = tree_variant_spec(spec, variant)
+            records.append({
+                "actor": f"{base_actor}{variant.suffix}",
+                "base_actor": base_actor,
+                "model": f"{model_spec.file_stem}.obj",
+                "frame_prefix": "CAVT",
+                "frame": spec.frame,
+                "scale": variant.scale,
+                "radius": TREE_COLLISION_RADII[spec.file_stem] * variant.scale,
+                "height": spec.height * variant.scale,
+                "tag": f"$CA_{spec.file_stem.removeprefix('ca_').upper()}",
+                "is_base": variant.suffix == "",
+            })
+    return records
+
+
+def environment_records() -> List[dict[str, object]]:
+    return rock_records() + tree_records()
+
+
+def write_actor_definitions(runtime_root: Path) -> None:
+    lines = [
+        "// Objetos físicos originales para poblar los biomas. En esta etapa son",
+        "// geometría sólida y convocable: la recolección, herramientas, cantidades y",
+        "// regeneración se definirán cuando exista el sistema de nodos de recursos.",
+        "class CaelumEnvironmentProp : Actor",
+        "{",
+        "    Default",
+        "    {",
+        "        Mass 10000;",
+        "        +SOLID",
+        "        +CANNOTPUSH",
+        "        +DONTTHRUST",
+        "        RenderStyle \"Normal\";",
+        "    }",
+        "}",
+        "",
+    ]
+
+    for records in (rock_records(), tree_records()):
+        by_base: Dict[str, List[dict[str, object]]] = {}
+        for record in records:
+            by_base.setdefault(str(record["base_actor"]), []).append(record)
+        for base_actor, group in by_base.items():
+            base = next(record for record in group if record["is_base"])
+            lines.extend([
+                f"class {base_actor} : CaelumEnvironmentProp",
+                "{",
+                "    Default",
+                "    {",
+                f"        Tag \"{base['tag']}\";",
+                f"        Radius {scalar(float(base['radius']))};",
+                f"        Height {scalar(float(base['height']))};",
+                "    }",
+                "    States",
+                "    {",
+                f"        Spawn: {base['frame_prefix']} {base['frame']} -1; Stop;",
+                "    }",
+                "}",
+                "",
+            ])
+            for record in group:
+                if record["is_base"]:
+                    continue
+                lines.extend([
+                    f"class {record['actor']} : {base_actor}",
+                    "{",
+                    "    Default",
+                    "    {",
+                    f"        Radius {scalar(float(record['radius']))};",
+                    f"        Height {scalar(float(record['height']))};",
+                    "    }",
+                    "}",
+                    "",
+                ])
+
+    output = runtime_root / "caelum/world/CaelumEnvironmentProps.zs"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("\n".join(lines), encoding="utf-8")
+
+
+MODEL_BEGIN = "// --- BEGIN GENERATED CAELUM ENVIRONMENT MODELS ---"
+MODEL_END = "// --- END GENERATED CAELUM ENVIRONMENT MODELS ---"
+
+
+def write_model_definitions(runtime_root: Path) -> None:
+    path = runtime_root / "MODELDEF"
+    text = path.read_text(encoding="utf-8")
+    if MODEL_BEGIN in text:
+        prefix, rest = text.split(MODEL_BEGIN, 1)
+        _, suffix = rest.split(MODEL_END, 1)
+    else:
+        legacy = "// Cinco formaciones rocosas"
+        if legacy not in text:
+            raise ValueError("MODELDEF no contiene la sección ambiental esperada")
+        prefix = text.split(legacy, 1)[0]
+        suffix = ""
+
+    lines = [
+        MODEL_BEGIN,
+        "// Cinco formas rocosas en cinco escalas y tres variantes, más",
+        "// veintiuna especies regionales en tres variantes cada una.",
+    ]
+    for record in environment_records():
+        scale = scalar(float(record["scale"]))
+        lines.extend([
+            f"Model {record['actor']}",
+            "{",
+            f"    Path \"{MODEL_DIRECTORY}\"",
+            f"    Model 0 \"{record['model']}\"",
+            f"    Scale {scale} {scale} {scale}",
+            "    CorrectPixelStretch",
+            "    DontCullBackFaces",
+            f"    FrameIndex {record['frame_prefix']} {record['frame']} 0 0",
+            "}",
+            "",
+        ])
+    lines.append(MODEL_END)
+    path.write_text(
+        prefix.rstrip() + "\n\n" + "\n".join(lines) + suffix,
+        encoding="utf-8",
+    )
+
+
+MAPINFO_BEGIN = "    // --- BEGIN GENERATED CAELUM ENVIRONMENT DOOMEDNUMS ---"
+MAPINFO_END = "    // --- END GENERATED CAELUM ENVIRONMENT DOOMEDNUMS ---"
+
+
+def write_editor_numbers(runtime_root: Path) -> None:
+    path = runtime_root / "MAPINFO"
+    text = path.read_text(encoding="utf-8")
+    if MAPINFO_BEGIN in text:
+        prefix, rest = text.split(MAPINFO_BEGIN, 1)
+        _, suffix = rest.split(MAPINFO_END, 1)
+    else:
+        legacy = "    // Rocas y vegetación 3D"
+        following = "    // Variantes de diagnostico controlado de MAP02."
+        if legacy not in text or following not in text:
+            raise ValueError("MAPINFO no contiene la sección ambiental esperada")
+        prefix, rest = text.split(legacy, 1)
+        _, suffix_tail = rest.split(following, 1)
+        suffix = "\n\n" + following + suffix_tail
+
+    base_numbers: Dict[str, int] = {}
+    for index, spec in enumerate(ROCKS):
+        base_numbers[actor_name(spec.file_stem)] = 18041 + index
+    for index, spec in enumerate(TREES):
+        base_numbers[actor_name(spec.file_stem)] = 18050 + index
+
+    lines = [
+        MAPINFO_BEGIN,
+        "    // Repertorio físico ambiental; las asignaciones históricas se conservan.",
+    ]
+    next_number = 18300
+    for record in environment_records():
+        actor = str(record["actor"])
+        if record["is_base"]:
+            number = base_numbers[actor]
+        else:
+            number = next_number
+            next_number += 1
+        lines.append(f"    {number} = {actor}")
+    lines.append(MAPINFO_END)
+    path.write_text(
+        prefix.rstrip() + "\n" + "\n".join(lines) + suffix,
+        encoding="utf-8",
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -938,18 +1295,44 @@ def main() -> None:
 
     generate_textures(args.source, model_dir)
     results: List[Tuple[str, int, int]] = []
+
+    # Sólo se limpian las mallas que este generador posee. Las texturas y los
+    # modelos de otros sistemas permanecen fuera de este directorio dedicado.
+    for pattern in ("ca_rock_*.obj", "ca_tree_*.obj"):
+        for old_model in model_dir.glob(pattern):
+            old_model.unlink()
+
     for spec in ROCKS:
-        vertices, faces = build_rock(spec, model_dir / f"{spec.file_stem}.obj")
+        for variant in VISUAL_VARIANTS:
+            model_spec = rock_variant_spec(spec, variant)
+            vertices, faces = build_rock(
+                model_spec,
+                model_dir / f"{model_spec.file_stem}.obj",
+            )
+            results.append((model_spec.file_stem, vertices, faces))
         make_transparent_sprite(sprite_dir / f"CARK{spec.frame}0.png")
-        results.append((spec.file_stem, vertices, faces))
     for spec in TREES:
-        vertices, faces = build_tree(spec, model_dir / f"{spec.file_stem}.obj")
+        for variant in VISUAL_VARIANTS:
+            model_spec = tree_variant_spec(spec, variant)
+            vertices, faces = build_tree(
+                model_spec,
+                model_dir / f"{model_spec.file_stem}.obj",
+            )
+            results.append((model_spec.file_stem, vertices, faces))
         make_transparent_sprite(sprite_dir / f"CAVT{spec.frame}0.png")
-        results.append((spec.file_stem, vertices, faces))
+
+    write_actor_definitions(args.runtime_root)
+    write_model_definitions(args.runtime_root)
+    write_editor_numbers(args.runtime_root)
 
     for name, vertices, faces in results:
         print(f"{name}: {vertices} vertices, {faces} faces")
-    print(f"Generated {len(ROCKS)} rocks and {len(TREES)} vegetation models.")
+    print(
+        "Generated "
+        f"{len(ROCKS) * len(VISUAL_VARIANTS)} rock meshes, "
+        f"{len(TREES) * len(VISUAL_VARIANTS)} vegetation meshes and "
+        f"{len(environment_records())} actor definitions."
+    )
 
 
 if __name__ == "__main__":

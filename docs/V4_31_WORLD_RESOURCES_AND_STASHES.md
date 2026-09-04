@@ -94,6 +94,48 @@ regeneración. Pueden inspeccionarse con `summon <clase>` y colocarse en el
 editor mediante los DoomEdNums de la tabla; su conversión a nodos funcionales
 espera los valores de diseño enumerados al final de este documento.
 
+## Repertorio ampliado en 4.31.0d
+
+Las veintiuna especies tienen ahora tres actores y tres mallas propias. El
+nombre original conserva el tamaño 100%; el sufijo `2` indica 75% y el sufijo
+`3`, 125%. Las semillas deterministas cambian levemente ramas, inclinaciones o
+distribución de copa, pero conservan la forma básica y el follaje de la
+especie. Por ejemplo:
+
+| Tamaño | Sauce criollo | Pehuén |
+|---:|---|---|
+| 100% | `CaelumTreeCoastWillow` | `CaelumTreeMountainPehuen` |
+| 75% | `CaelumTreeCoastWillow2` | `CaelumTreeMountainPehuen2` |
+| 125% | `CaelumTreeCoastWillow3` | `CaelumTreeMountainPehuen3` |
+
+Las cinco formas de roca combinan cinco escalas nominales con esas mismas
+tres variantes geométricas. Los nombres de escala se insertan antes del
+sufijo visual:
+
+| Escala nominal | Modelo 1 | Variante 2 (75%) | Variante 3 (125%) |
+|---:|---|---|---|
+| 0.5× | `CaelumRockGraniteHalf` | `CaelumRockGraniteHalf2` | `CaelumRockGraniteHalf3` |
+| 1× | `CaelumRockGranite` | `CaelumRockGranite2` | `CaelumRockGranite3` |
+| 2× | `CaelumRockGraniteDouble` | `CaelumRockGraniteDouble2` | `CaelumRockGraniteDouble3` |
+| 5× | `CaelumRockGraniteGiant` | `CaelumRockGraniteGiant2` | `CaelumRockGraniteGiant3` |
+| 20× | `CaelumRockGraniteColossal` | `CaelumRockGraniteColossal2` | `CaelumRockGraniteColossal3` |
+
+El patrón se repite para `Sandstone`, `Basalt`, `Quartz` y `Coastal`. Son 63
+actores de árboles y 75 de rocas: 138 en total. Los 112 nuevos DoomEdNums usan
+el rango 18300–18411 sin alterar las asignaciones históricas. Hay 78 OBJ y
+44.976 caras; las cinco escalas de una roca reutilizan sus tres mallas mediante
+`MODELDEF`, por lo que no duplican geometría idéntica dentro del PK3. Todas las
+escalas comparten la textura de su forma base.
+
+La corrección visual de 4.31.0d une al tronco las ramas colgantes del sauce y
+oculta dentro de la copa el extremo superior de los troncos de ciprés, guindo
+y pehuén. Los demás modelos base permanecen byte-idénticos a 4.31.0c.
+
+La colisión continúa siendo cilíndrica y deliberadamente aproxima el núcleo de
+la roca o el tronco. Para rocas de escala 20× que deban funcionar como terreno
+recorrible o cuevas, conviene acompañar el modelo con geometría de mapa o
+líneas de bloqueo específicas; el OBJ no aporta colisión triangular al motor.
+
 Los nodos naturales regeneran con tiempo. El actor debe guardar como mínimo su
 identidad estable, estado disponible/depletado y tic/fecha de regeneración; el
 modelo sólo comunica ese estado y nunca decide la recompensa. En red, una única

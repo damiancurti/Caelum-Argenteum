@@ -14651,6 +14651,17 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
     }
 
+    // Vacía la reserva sólo para comprobar el daño submarino sin esperar a
+    // consumir miles de unidades mediante acciones ordinarias.
+    void EmptyDebugAir()
+    {
+        CurrentAir = 0.0;
+        UnderwaterDrowningTics = 0;
+        UnderwaterAirRecoveryDebt = 0.0;
+        UnderwaterAirRecoveryTicsRemaining = 0;
+        UpdateAirStateEffects();
+    }
+
     // Consume un costo de Anima de prueba ya expresado en la escala actual.
     void ConsumeDebugAnima()
     {
@@ -16174,8 +16185,17 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        int drowningDamage = CaelumConstants.DROWNING_BASE_DAMAGE
-            + UnderwaterDrowningTics / TICRATE;
+        int drowningSecond = Max(1, UnderwaterDrowningTics / TICRATE);
+        double drowningHealthPercent = Min(
+            CaelumConstants.DROWNING_MAX_HEALTH_PERCENT_PER_SECOND,
+            CaelumConstants.DROWNING_INITIAL_HEALTH_PERCENT_PER_SECOND
+                + (drowningSecond - 1)
+                    * CaelumConstants.DROWNING_HEALTH_PERCENT_INCREASE_PER_SECOND
+        );
+        int drowningDamage = Max(
+            1,
+            int(CaelumMaximumHealth * drowningHealthPercent / 100.0 + 0.5)
+        );
         DamageMobj(
             null,
             null,

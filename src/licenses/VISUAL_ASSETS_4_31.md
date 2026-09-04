@@ -56,3 +56,21 @@ CC0 evaluadas siguen documentadas en
 No se descargaron ni incorporaron modelos o texturas de terceros. Los OBJ,
 materiales y anclajes finales ya se distribuyen con el parche; Pillow sólo es
 necesario si un desarrollador decide regenerarlos desde el atlas maestro.
+
+## Variantes ambientales 4.31.0d
+
+- Las 21 mallas vegetales de 4.31.0c conservan su actor de tamaño base y suman
+  variantes propias al 75% y 125%, con cambios deterministas leves en ramas,
+  inclinación o copa.
+- Las cinco formas rocosas conservan su material y suman dos mallas geométricas
+  alternativas. `MODELDEF` combina las tres formas con escalas nominales 0.5×,
+  1×, 2×, 5× y 20×.
+- El repertorio final contiene 78 OBJ originales, 138 actores y 44.976 caras.
+- Se corrigen las ramas colgantes desconectadas del sauce y la prolongación
+  superior visible del tronco en ciprés, guindo y pehuén.
+- El atlas maestro y todos los PNG de material permanecen byte-idénticos a
+  4.31.0c; no se añade ningún recurso de terceros.
+
+La regeneración sigue siendo determinista mediante
+`tools/generate_environment_models.py`. Los OBJ resultantes ya están incluidos
+y no es necesario disponer de Python para instalar ni jugar el parche.

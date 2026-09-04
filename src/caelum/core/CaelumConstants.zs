@@ -850,10 +850,13 @@ class CaelumConstants : Object
     // el Aire que se perdió durante el último estado sin oxígeno.
     const UNDERWATER_AIR_RECOVERY_SECONDS = 3;
 
-    // Al agotarse el Aire conservamos la cadencia nativa de GZDoom: un pulso
-    // cada 32 tics cuyo daño aumenta lentamente con el tiempo sin respirar.
-    const DROWNING_DAMAGE_INTERVAL_TICS = 32;
-    const DROWNING_BASE_DAMAGE = 2;
+    // Al agotarse el Aire, el daño se expresa como porcentaje de vida máxima:
+    // 1% durante el primer segundo y +0,1 puntos porcentuales por cada segundo
+    // continuo posterior, con un límite de 10% por segundo.
+    const DROWNING_DAMAGE_INTERVAL_TICS = 35;
+    const DROWNING_INITIAL_HEALTH_PERCENT_PER_SECOND = 1.0;
+    const DROWNING_HEALTH_PERCENT_INCREASE_PER_SECOND = 0.1;
+    const DROWNING_MAX_HEALTH_PERCENT_PER_SECOND = 10.0;
 
     // Anima also takes eight minutes to refill at its base regeneration speed.
     const ANIMA_FULL_RECOVERY_SECONDS = 480;

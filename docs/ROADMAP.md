@@ -649,8 +649,19 @@ jungle, tundra, mountain, plains, coast and city. They are solid, summonable
 and editor-ready, but are not yet harvest nodes: rewards, tools, depletion and
 regeneration remain blocked on the values below.
 
+V4.31.0d expands the accepted visual prototypes before harvesting rules are
+attached. Each of the twenty-one regional tree species now has deterministic
+75/100/125% branch variants; the five rock forms combine those variants with
+0.5×/1×/2×/5×/20× tiers. The sauce, ciprés, guindo and pehuén receive the
+author-requested mesh corrections. MAP01 also receives a small native UDMF
+slope prototype in the empty south lawn, proving traversable non-flat terrain
+without changing the mansion or pool. Once Air is exhausted, drowning damage
+starts at 1% maximum health per second, rises 0.1 percentage points per
+continuous second and caps at 10%. These additions still do not authorize
+harvest yields, tools, depletion or regeneration values.
+
 - Add systematic material loot tables and container actors.
-- Convert the 26 physical rock/vegetation prototypes into renewable mine,
+- Convert the 138 physical rock/vegetation actors into renewable mine,
   tree and plant sources for gems/metals, wood and fiber; connect skins to
   appropriate animal/monster deaths.
 - Use 3D source/chest actors and release the existing material/item sprites

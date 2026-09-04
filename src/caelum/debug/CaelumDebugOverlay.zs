@@ -3954,6 +3954,10 @@ class CaelumDebugOverlay : EventHandler
         {
             requestingPlayer.ConsumeDebugAir();
         }
+        else if (e.Name == "ca_debug_empty_air")
+        {
+            requestingPlayer.EmptyDebugAir();
+        }
         else if (e.Name == "ca_debug_refill_air")
         {
             requestingPlayer.RefillAir();

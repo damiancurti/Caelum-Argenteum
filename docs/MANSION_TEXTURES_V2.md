@@ -120,10 +120,29 @@ completamente sumergida, el HUD muestra `sin oxígeno`. Al salir, únicamente el
 Aire perdido durante ese estado vuelve de forma uniforme en 105 tics; el Aire
 gastado por otras acciones conserva la regeneración normal.
 
-## Aplicación de 4.30.0i
+### Colina de pendiente nativa 4.31.0d
 
-1. Extraer el ZIP 4.30.0i sobre la raíz de un proyecto 4.30.0h.
-2. Aceptar el reemplazo de `src/maps/MAP01.wad` y
+GZDoom admite pisos no planos mediante planos inclinados de UDMF. El prototipo
+usa esa geometría nativa, no un modelo decorativo: se puede caminar sobre la
+superficie y los actores consultan su altura real.
+
+La colina se ubica en un sector vacío del jardín sur, centrada en
+`(600, -1100)`. Su contorno octagonal ocupa como máximo 640×640 MU; ocho
+sectores suben continuamente desde z=0 hasta z=48 y rodean una cima plana de
+aproximadamente 192 MU. Añade 16 vértices, 24 linedefs, 48 sidedefs y 9
+sectores, sin Things ni cambios a la mansión, las rejas o la piscina. Las ocho
+uniones exteriores calculan exactamente z=0 y las interiores z=48, evitando
+escalones ocultos entre planos.
+
+El constructor reproducible está en
+`tools/build_4_31_0d_map01_hill.py`. El parche ya incluye el WAD construido y
+no requiere Python para instalarlo. MAP02 permanece byte-idéntico a 4.31.0c.
+
+## Aplicación de parches
+
+1. Extraer el ZIP incremental correspondiente sobre la raíz de la versión base
+   indicada en su `APLICAR_*.txt`.
+2. Aceptar el reemplazo de los archivos bajo `src/` y de
    `build/caelum_argenteum_dev.pk3`.
 3. Ejecutar `run_dev.bat` normalmente.
 
