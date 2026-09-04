@@ -38,6 +38,25 @@ caelum/player/level_up = "sounds/caelum/player/progression/ca_level_up.ogg"
 caelum/player/anima_restored = "sounds/caelum/player/anima/ca_anima_restored.ogg"
 caelum/player/cough = "sounds/caelum/player/status/ca_player_cough.ogg"
 
+// Paquete 05: ambientes y clima listos para emisores de mapa/sistema.
+caelum/ambience/crowd_murmur = "sounds/caelum/ambience/ca_ambience_crowd_murmur_loop.ogg"
+caelum/ambience/rio_waves = "sounds/caelum/ambience/ca_ambience_rio_waves_loop.ogg"
+caelum/ambience/fire = "sounds/caelum/ambience/ca_ambience_fire_loop.ogg"
+caelum/ambience/fountain = "sounds/caelum/ambience/ca_ambience_fountain_loop.ogg"
+caelum/ambience/blacksmith = "sounds/caelum/ambience/ca_ambience_blacksmith_loop.ogg"
+caelum/ambience/sewer_water = "sounds/caelum/ambience/ca_ambience_sewer_water_loop.ogg"
+
+caelum/weather/thunder_distant = "sounds/caelum/weather/ca_weather_thunder_distant_01.ogg"
+caelum/weather/thunder_heavy = "sounds/caelum/weather/ca_weather_thunder_heavy_01.ogg"
+caelum/weather/thunder_roomy = "sounds/caelum/weather/ca_weather_thunder_roomy_01.ogg"
+$random caelum/weather/thunder { caelum/weather/thunder_distant caelum/weather/thunder_heavy caelum/weather/thunder_roomy }
+
+caelum/weather/rain_soft = "sounds/caelum/weather/ca_weather_rain_soft_loop.ogg"
+caelum/weather/rain_steady = "sounds/caelum/weather/ca_weather_rain_steady_loop.ogg"
+caelum/weather/rain_light = "sounds/caelum/weather/ca_weather_rain_light_loop.ogg"
+caelum/weather/rain_heavy = "sounds/caelum/weather/ca_weather_rain_heavy_loop.ogg"
+caelum/weather/wind = "sounds/caelum/weather/ca_weather_wind_loop.ogg"
+
 // Variantes aleatorias de recogida de monedas.
 caelum/items/coin_pickup_01 = "sounds/caelum/items/currency/ca_coin_pickup_01.ogg"
 caelum/items/coin_pickup_02 = "sounds/caelum/items/currency/ca_coin_pickup_02.ogg"

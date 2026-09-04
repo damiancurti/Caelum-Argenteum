@@ -543,7 +543,7 @@ for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
 
 The complete current specification is maintained
 in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The atomic
-transaction was implemented in 4.30.0b. Cumulative candidate 4.30.0i preserves
+transaction was implemented in 4.30.0b. The author-accepted 4.30.0i preserves
 the 4.30.0c compaction and 4.30.0d player-start correction, and replaces the
 provisional fixed task duration with recursive recipe display, independent
 efficiency per craftable layer and material-unit complexity time. It also
@@ -554,9 +554,13 @@ edge positions; V4.30.0h corrects their scaled vertical panning, expands
 crafting word spacing and completes the missing crafting menu sound calls.
 V4.30.0i applies the three focused railing traversal corrections and makes an
 efficiency factor cover the complete required branch, with nested layer
-factors accumulating. The author's previous 11-point matrix passed on 4.30.0h;
-only the changed railing points and branch timing require focused confirmation
-before V4.31 begins.
+factors accumulating. The author confirmed the complete result on Windows/
+GZDoom, including the previous 11-point matrix, all three railing corrections
+and branch-weighted time. V4.30.0j is an asset-only closing increment: it adds
+the registered package-05 ambience/weather library, retains unassigned stock
+outside the runtime build and changes no V4.30 transaction or map. The author
+passed its complete focused audio matrix; V4.30 is closed and 4.30.0j is the
+accepted V4.31 baseline.
 
 - Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
 - Refinement and equipment-material fabrication offer 25%/50%/100% material
@@ -619,10 +623,44 @@ before V4.31 begins.
 
 ### V4.31 — Loot, Materials and Economy Foundation
 
+V4.31.0a begins the environmental track without inventing economy values. It
+adds the accepted formal rear pool to MAP01 and fixes the representation
+contract for later resource sources: semirealistic CC0 3D models in the world,
+existing sprite actors for the items they release. Natural nodes persist as
+available/depleted state machines with saved timed regeneration. Animal and
+monster hides remain death-table loot, not harvest-node output. Player/NPC
+stashes share one container service with ownership and lock policy separate
+from the model. Exact yields, intervals, tool gates and container rules remain
+author-controlled.
+
 - Add systematic material loot tables and container actors.
-- Formalize basic wood and iron-ingot acquisition.
+- Place renewable mine, tree and plant sources for gems/metals, wood and
+  fiber; connect skins to appropriate animal/monster deaths.
+- Use 3D source/chest actors and release the existing material/item sprites
+  through authoritative interaction or death transactions.
+- Formalize basic wood and raw-metal acquisition; ingots remain processing
+  output unless the author assigns a separate source.
 - Add transaction-ready item values and buy/sell foundations without prematurely balancing a complete economy.
 - Continue replacing Doom-derived test placeholders with original or license-compatible assets.
+
+Author input required before implementation:
+
+- Define yields, harvest limits and regeneration intervals for mines, trees
+  and plants, plus any tool and skill requirements.
+- Define which animal/monster families yield each skin grade and whether death
+  loot uses fixed amounts, weighted ranges or both.
+- Define the first container set and its persistence rules: player/NPC/world
+  ownership, theft response, capacity, refill or one-time state, keys/lock
+  difficulty and multiplayer authority.
+- Fix whether a harvested source changes to a visibly depleted 3D model,
+  disappears, or keeps both behaviors by source type.
+- Fix whether basic metals enter inventory as ore requiring smelting, direct
+  metal, or both, plus the initial quantity scale.
+- Choose the economy's accounting unit and a small set of anchor values from
+  which item/material values can be derived. Merchant personalities, regional
+  prices and negotiation modifiers remain V4.32 content.
+- Identify the Doom-derived loot/container placeholders that must be replaced
+  in this milestone and provide or approve their license-compatible assets.
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 

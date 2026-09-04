@@ -1,9 +1,88 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Rear mansion pool and V4.31 world-source direction 4.31.0a
+
+**Pool implemented and validated in exact GZDoom 4.14.2; focused author
+visual/traversal acceptance pending; resource nodes and stashes remain design
+only**
+
+MAP01 now has a formal pool behind the eastern/rear façade. Its water footprint
+is exactly 1,280×1,440 MU (`x=2200..3480`, `y=-720..720`), the main basin floor
+is z=-256 and the water surface is z=0. A 96-MU terrace surrounds a raised
+32-MU stone coping. A centered 512-MU-wide entrance uses sixteen 32-MU treads
+whose floors descend in 16-MU increments from z=-8 to z=-248, ending at the
+deep basin without an impassable rise.
+
+The water is a translucent, fogged `Sector_Set3DFloor` type-2 volume targeting
+all seventeen basin/stair sectors through tag 940. The new `CAPOOL01` 256×256
+flat is an original project asset derived from the color language of the
+author-supplied `CMPW01`; it is mirror-tiled at its four edges and registered
+as liquid terrain. An attempted `ANIMDEFS` warp was rejected after the exact
+engine control test isolated an early-exit regression to that one directive;
+the accepted surface is static while swimming, translucency and underwater
+fog remain active.
+
+The map grows from `(1419, 1983, 3544, 618, 322)` to
+`(1469, 2049, 3672, 638, 322)`. All original vertex, linedef, sidedef, sector
+and Thing blocks remain byte-identical; the 322 Things and all accepted mansion
+railings are unchanged. There are no orphan sectors, invalid references,
+zero-length/coincident lines or mismatched bilateral flags. The final MAP01
+SHA-256 is
+`815f2ed0cd6f52fb03e63eaab3f8b8db560fc9b96c4fbe63a87b1e94e7ef8e60`.
+
+An exact-engine smoke run loaded MAP01 without map/resource warnings. A
+runtime audit resolved `CAPOOL01` as 256×256 and measured `WaterLevel=3` at the
+basin floor with `floorz=-256`; four exterior/underwater captures confirmed
+the rim, stairs, bottom and water volume. The remaining gate is the author's
+Windows/Doom II walk, especially entry/exit over the first step and visual
+scale from the rear doors.
+
+V4.31's resource direction is now fixed at the architecture level: natural
+sources and stashes use semirealistic CC0 3D models, while harvested/dropped
+inventory objects retain their existing sprites. Sources enter an available
+model state, spawn authoritative sprite pickups when used, then enter a
+depleted model state until their saved respawn time. Hides instead originate
+from authored animal/monster death tables. Chest ownership, locks, capacity,
+refill behavior, node yields, required tools and respawn intervals still need
+author values before implementation; no provisional balance was added here.
+
+## Audio package 05 and V4.30 acceptance 4.30.0j
+
+**V4.30 completely accepted by the author, including package-05 sound tests**
+
+The author confirmed the complete 4.30.0i result: both corrected balcony
+routes, railing heights, menu typography/sounds, all eleven earlier crafting
+checks and the cumulative branch-time relation behave correctly. V4.30's
+craft → use → deteriorate → repair/disassemble → recover-materials milestone
+is therefore accepted. No 4.30.0j file changes those mechanics, MAP01, MAP02,
+textures or interface code.
+
+Package 05 adds 14 OGG Vorbis resources at 48 kHz to the runtime library and
+registers 14 direct logical names plus the random
+`caelum/weather/thunder` alias. They cover crowd, river/coast, localized fire,
+fountain, blacksmith, sewer water, four rain intensities, wind and three
+thunder variants. Their loop state, attenuation, volume and map placement are
+deliberately left to the future environmental/weather emitters rather than
+being invented by this asset patch.
+
+Ten license-compatible but unassigned package-05 sounds are retained under
+`assets/audio_stock/pack05/`, outside `src` and therefore outside the PK3. Two
+additional files with unresolved third-party provenance are omitted entirely.
+The runtime build now contains 71 OGG effects/ambiences plus two MP3 music
+tracks. Including the external reserve, the project has 83 approved audio
+files (82 unique contents). `docs/INVENTARIO_AUDIO.md` enumerates every file
+and separates current automatic events, registered destinations, stock and
+music. Credits for package 05 ship in
+`src/licenses/AUDIO_PACK_05_CREDITS.md`.
+
+The author subsequently completed the focused GZDoom 4.14.2 listening matrix:
+the 14 direct names, randomized thunder alias and all loop candidates passed
+without an unknown-sound warning or audible seam. V4.30 is therefore closed;
+4.30.0j is the accepted baseline for V4.31.
+
 ## Focused railing traversal and branch-weighted crafting 4.30.0i
 
-**Implemented; MAP01 topology/property audit and focused timing regression
-completed; author Windows/GZDoom visual and gameplay confirmation pending**
+**Implemented, audited and accepted by the author on Windows/GZDoom**
 
 The author's three traversal observations are applied directly to existing
 MAP01 linedefs. The 96-MU first-floor railing at `y=-383, x=1209..1305` is

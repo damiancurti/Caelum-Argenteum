@@ -16,9 +16,12 @@ The current combat-input baseline uses **Zoom contextually**: it activates persi
 
 ## Implementation status
 
-The current cumulative candidate is V4.30.0i. It preserves the V4.30.0b
-gameplay correction, V4.30.0c MAP01 compaction and V4.30.0d player-start crash
-repair, then replaces the fixed crafting-test duration with material work.
+The current cumulative candidate is V4.30.0j. Its gameplay, interface and
+mansion baseline is the author-accepted V4.30.0i result; 4.30.0j is an
+asset-only increment that integrates audio package 05 without changing those
+systems. The accepted baseline preserves the V4.30.0b gameplay correction,
+V4.30.0c MAP01 compaction and V4.30.0d player-start crash repair, then replaces
+the fixed crafting-test duration with material work.
 Every recipe now exposes its complete recursive component-to-raw-material tree
 in Journal → Crafts, including owned/required quantities. Up/Down selects each
 craftable layer and X assigns that layer its own 25%, 50% or 100% efficiency;
@@ -72,6 +75,16 @@ edge.
 The integration and recoverable repository migration are documented in
 [`docs/MANSION_TEXTURES_V2.md`](docs/MANSION_TEXTURES_V2.md).
 
+Audio package 05 adds fourteen 48-kHz OGG ambience/weather files and registers
+their stable logical names, including a three-variant random thunder event.
+They are ready for future localized or zoned emitters; this patch does not
+invent loop lifetime, attenuation, volume or map placement. Ten additional
+license-compatible files remain in the repository-only stock library, outside
+`src` and the PK3, while two resources with unresolved provenance are excluded.
+The complete 83-file project inventory and the distinction between automatic
+events, registered destinations, stock and music are maintained in
+[`docs/INVENTARIO_AUDIO.md`](docs/INVENTARIO_AUDIO.md).
+
 The V4.29.0ax inventory foundation gives every non-stackable equipment instance
 a monotonically allocated persistent `ItemId`, so several pieces with the same
 type, tier and size can coexist with independent durability, storage and
@@ -96,14 +109,16 @@ so these counts remain stable. Its SHA-256 is
 
 MAP01's historical `CMGR01A` world-flat identifier now resolves to canonical
 v2 `CMGR01`; the compatibility names `CMGR01B` and `CMGR01C` resolve to the
-independent worn/dry `CMGR02` and `CMGR03` variants. The twenty-file
-selected-audio v3 catalogue is
-registered without duplicating its v2 subset. Seventeen effects have bounded
-runtime roles across UI, doors, weapons, player state, grass terrain, fire and
-character cues; three remain stock-only with no caller. Required audio
-attribution ships in
-[`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md). MAP02 remains
-byte-identical to the all-sewer 4.29.0af WAD and changes no actors or geometry.
+independent worn/dry `CMGR02` and `CMGR03` variants. The runtime audio library
+contains 71 OGG files: 27 already reached by automatic callers, 34 registered
+for approved/future destinations and 10 legacy stock resources. Two assigned
+MP3 tracks bring the PK3 total to 73 audio files; ten package-05 stock files
+remain outside the build. Required attribution ships in
+[`src/licenses/AUDIO_CREDITS.md`](src/licenses/AUDIO_CREDITS.md),
+[`src/licenses/AUDIO_PACK_04_CREDITS.md`](src/licenses/AUDIO_PACK_04_CREDITS.md)
+and [`src/licenses/AUDIO_PACK_05_CREDITS.md`](src/licenses/AUDIO_PACK_05_CREDITS.md).
+MAP02 remains byte-identical to the all-sewer 4.29.0af WAD and changes no actors
+or geometry.
 
 V4.29.0aw retains the three authored folklore gameplay
 profiles. Palomo uses the playable-character statistical model with all twelve
@@ -149,13 +164,12 @@ personal-document audit completed in 4.29.0ab remains authoritative for the
 already accepted crafting and persistence systems.
 
 The author accepted the new-character flow, focused sound mix/event checks,
-formal inventory and the V4.30.0a startup/ground-floor baseline. V4.30.0i is
-the cumulative correction candidate described above. The former address-0x58
-failure was reproduced with the exact GZDoom 4.14.2 engine; the corrected
-player start and the layered crafting implementation both complete bounded
-MAP01 smoke runs. The author completed all eleven 4.30.0h Windows/Doom II
-acceptance checks; only the three changed railing areas and the revised
-branch-weighted duration need focused confirmation for 4.30.0i.
+formal inventory and the complete V4.30.0i mansion/crafting result on Windows
+with GZDoom. The former address-0x58 failure was reproduced with the exact
+GZDoom 4.14.2 engine; the corrected player start and layered crafting both
+complete bounded MAP01 smoke runs. V4.30 has no remaining gameplay or mansion
+acceptance gate. Only the newly added package-05 resources need a focused load
+and listening pass before 4.30.0j is tagged and V4.31 work begins.
 
 ### Building the development PK3
 
@@ -200,7 +214,12 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
   floor, terrain, stair, door, gate, railing, carpet, pool, stable, terrace and
   detail resources are registered. The prior 85-file set is retired rather
   than mixed with the corrected crops.
-- Selected audio foundation: selected-audio v3 contributes twenty catalogued effects. Seventeen are wired to bounded UI, crafting, door, weapon, health, terrain, elemental and character events; three remain stock-only. Credits ship inside the PK3. Authenticated original downloads remain a final-release asset gate where documented.
+- Audio foundation: the cumulative catalogue contains 71 runtime OGG files,
+  two assigned MP3 tracks and ten repository-only stock OGG files. Package 05
+  contributes fourteen registered ambience/weather resources and keeps ten
+  unassigned resources outside the build. Credits ship inside the PK3 and the
+  complete status-by-file inventory is documented. Authenticated original
+  downloads remain a final-release asset gate where documented.
 - Original HUD-01 resource frames/icons plus HUD-03 bar and navigation laurels and a custom empty `BaseStatusBar` remove the inherited Doom face, weapon and ammunition panel. The Journal uses the same modular visual language, reads authoritative inventory/character state and now summarizes the persistent recipe book.
 - Development/debug overlay and test controls used to validate gameplay formulas.
 
@@ -241,28 +260,12 @@ The builder writes file entries only: ZIP directory records inside `sprites/`, `
 - Final modular third-person character/equipment sprite pipeline.
 - Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
 - Final standalone packaging and licensing audit.
-- V4.30 timed material conversion and durability loop. Candidate 4.30.0i uses
-  1/2/3/4 tics per employed material unit according to operation complexity,
-  with each independently selected 25%/50%/100% layer multiplying its whole
-  required branch by 1×/10×/100× before division by Dexterity Type-1 speed.
-  Nested layer factors accumulate. It retains one
-  base-material type per component, proportional same-station repair and
-  disassembly output equal to 50% of the base recipe multiplied by remaining
-  durability. Inputs round up and outputs round down to 0.001; cancellation
-  spends/produces nothing and exact alloy ratios are preserved.
-  Crafting cannot progress in combat or away from its valid station session;
-  these conditions pause rather than cancel it, and only an explicit user order
-  releases the reservation. Disassembly uses the item's complexity and the
-  same stations as crafting it; component recipes use the station network of
-  their target equipment recipe. Exact Minor-Arcana card assignments are
-  deferred until the Tarot-card implementation. A weapon may consume a
-  recursively resolved route from primary materials; its live preview sums
-  only the missing steps, while the expanded recipe also shows the theoretical
-  full route from raw materials. Required inputs are locked when the task
-  starts and consumed only by atomic completion. These transactions are
-  implemented and exact-engine smoke-tested in candidate 4.30.0f; author
-  runtime acceptance remains pending. The complete contract is recorded in
-  [`docs/V4_30_CRAFTING_DESIGN.md`](docs/V4_30_CRAFTING_DESIGN.md).
+- **V4.31 loot, materials and economy foundation.** With V4.30 accepted, the
+  next implementation milestone is systematic material loot/container data,
+  normal acquisition of basic wood and iron ingots, transaction-ready item
+  values and the buy/sell foundation. Exact drop tables, value anchors and
+  container behavior remain author-defined inputs and must be fixed before
+  balancing code is added.
 
 Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.
 

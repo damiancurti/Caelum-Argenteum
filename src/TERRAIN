@@ -16,8 +16,15 @@ Terrain CaelumWood
     StepSounds "caelum/player/footstep_wood"
 }
 
+Terrain CaelumPoolWater
+{
+    FootClip 8
+    Liquid
+}
+
 Floor CMGR01 CaelumGrass
 Floor CMGR01A CaelumGrass
 Floor CMGR01B CaelumGrass
 Floor CMGR01C CaelumGrass
 Floor CMWD01 CaelumWood
+Floor CAPOOL01 CaelumPoolWater

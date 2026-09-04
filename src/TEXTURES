@@ -266,6 +266,15 @@ Texture "CMPW02", 128, 64
     Patch "graphics/caelum/textures/mansion/CMPW02.png", 0, 0
 }
 
+// Superficie propia de la piscina de MAP01. El maestro fue generado a partir
+// de la paleta acuática de CMPW01 y recompuesto como mosaico especular para
+// que las cuatro aristas repitan sin costuras visibles.
+Flat "CAPOOL01", 256, 256
+{
+    WorldPanning
+    Patch "graphics/caelum/textures/mansion/CAPOOL01.png", 0, 0
+}
+
 Texture "CMBS01", 128, 128
 {
     Patch "graphics/caelum/textures/mansion/CMBS01.png", 0, 0

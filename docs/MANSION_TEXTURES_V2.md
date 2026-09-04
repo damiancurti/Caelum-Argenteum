@@ -1,4 +1,4 @@
-# Texturas de mansión v2 — integración 4.30.0i
+# Texturas de mansión v2 — integración hasta 4.31.0a
 
 ## Resultado integrado
 
@@ -86,6 +86,20 @@ piso y los tres segmentos que atravesaban el descanso oriental. Añade nueve:
 tres para completar `x=-569, y=-92..92` y seis para proteger
 `x=1689, y=-320..-64`. El trazado final contiene 123 linedefs y 246 sidedefs
 de reja: 41/7.364 MU en z=136 y 82/6.476 MU en z=264.
+
+## Piscina posterior 4.31.0a
+
+`CMPW01` permanece byte-idéntica y reviste los muros sumergidos del nuevo vaso.
+`CMST02`, `CMST03` y `CMTB02` cubren respectivamente fondo/peldaños, borde de
+piedra y terraza. La nueva `CAPOOL01` no aumenta las 58 imágenes canónicas del
+paquete v2: es un recurso adicional del proyecto, generado a partir de la
+paleta y el lenguaje de ondas de `CMPW01`, reducido y recompuesto como mosaico
+especular 256×256 para repetir sin costuras.
+
+La superficie permanece estática en 4.31.0a porque la prueba A/B de GZDoom
+4.14.2 aisló un cierre temprano al aplicar `warp2` por `ANIMDEFS` a este flat.
+El agua sigue siendo translúcida, tiene niebla submarina, está registrada como
+terreno líquido y forma un volumen nadable real de z=-256 a z=0.
 
 ## Aplicación de 4.30.0i
 

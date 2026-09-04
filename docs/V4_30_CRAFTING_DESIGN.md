@@ -1,8 +1,9 @@
 # V4.30: refinado, componentes, reparación y desarme
 
 **Estado:** régimen por material y eficiencia por ramas implementado en el
-candidato acumulativo 4.30.0i; auditorías de fórmulas y fuente verificadas.
-Validación manual enfocada del autor en Windows/Doom II pendiente.
+candidato acumulativo 4.30.0i; auditorías de fórmulas y fuente verificadas y
+validación manual del autor aprobada en Windows/Doom II. V4.30.0j sólo añade
+recursos de audio y no altera este contrato.
 
 Este documento fija las reglas introducidas en V4.30.0b y actualizadas en
 V4.30.0i. El catálogo conserva los 79 índices anteriores y anexa 50 recetas de
