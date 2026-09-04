@@ -755,6 +755,7 @@ class CaelumConstants : Object
     const KEY_ITEM_PROCESSING_MANUAL = 1;
     const KEY_ITEM_TYPE_COUNT = 2;
     const LOCK_CAELUM_SILVER = 200;
+    const LOCK_CAELUM_SILVER_STASH = 201;
 
     // Lucidity is a fixed 100-point resource that refills in one minute.
     const MAXIMUM_LUCIDITY = 100.0;
@@ -837,6 +838,17 @@ class CaelumConstants : Object
     // these as full-refill costs keeps the rule independent of maximum air.
     const AIR_FULL_RECOVERY_HUNGER_COST = 10.0;
     const AIR_FULL_RECOVERY_THIRST_COST = 20.0;
+
+    // Estar completamente sumergido consume la misma reserva de Aire que
+    // correr, saltar, bloquear y atacar. La masa corporal y la carga aplican
+    // mediante AirConsumptionMultiplier; con masa 100, carga cero y
+    // Resiliencia 0, las 1000 unidades base duran exactamente 20 segundos.
+    const UNDERWATER_AIR_COST_PER_SECOND = 50.0;
+
+    // Al agotarse el Aire conservamos la cadencia nativa de GZDoom: un pulso
+    // cada 32 tics cuyo daño aumenta lentamente con el tiempo sin respirar.
+    const DROWNING_DAMAGE_INTERVAL_TICS = 32;
+    const DROWNING_BASE_DAMAGE = 2;
 
     // Anima also takes eight minutes to refill at its base regeneration speed.
     const ANIMA_FULL_RECOVERY_SECONDS = 480;

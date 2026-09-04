@@ -92,6 +92,8 @@ DoomEdNums
     18036 = CaelumPalomo
     18037 = CaelumMandinga
     18038 = CaelumZupayColossus
+    18039 = CaelumStashChest
+    18040 = CaelumLockedStashChest
 
     // Variantes de diagnostico controlado de MAP02.
     18200 = CaelumDiagnosticLookRat

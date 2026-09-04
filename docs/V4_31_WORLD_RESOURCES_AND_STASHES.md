@@ -16,6 +16,33 @@ la presencia física del origen de la representación compacta de su contenido.
 | Animal/monstruo | Actor vivo y cadáver normal | Piel en su tabla de muerte |
 | Alijo | Baúl cerrado, abierto o bloqueado | Objetos persistentes del contenedor |
 
+## Prototipo implementado en 4.31.0b
+
+El primer alijo ya valida el tramo físico de esta arquitectura sin anticipar
+las reglas de inventario. `CaelumStashChest` conserva el estado abierto/cerrado
+y una variante `CaelumLockedStashChest` empieza bloqueada. La cerradura 201
+acepta la `CaelumSilverKey` existente, nunca la consume y queda desbloqueada en
+el actor después del primer uso correcto.
+
+Tres OBJ originales representan cerrado, abierto y bloqueado. Las mallas usan
+242, 254 y 266 caras respectivamente; sus texturas de madera, hierro, interior
+y candado también se generan dentro del proyecto. Como OBJ no contiene
+animación, un único actor sólido mantiene la lógica y crea un ayudante visual
+sin colisión para el estado correspondiente. Esto evita superponer modelos y
+deja el futuro contenido independiente de la representación.
+
+Comandos de prueba:
+
+```text
+summon CaelumStashChest
+summon CaelumLockedStashChest
+give CaelumSilverKey
+```
+
+No hay todavía contenido, capacidad, propietario, robo, reposición ni
+colocación permanente. Esos valores siguen reservados para la primera
+implementación funcional de contenedores.
+
 Los nodos naturales regeneran con tiempo. El actor debe guardar como mínimo su
 identidad estable, estado disponible/depletado y tic/fecha de regeneración; el
 modelo sólo comunica ese estado y nunca decide la recompensa. En red, una única

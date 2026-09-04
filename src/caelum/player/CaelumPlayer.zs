@@ -540,6 +540,7 @@ class CaelumPlayer : DoomPlayer
     bool AirResourceInitialized;
     int AirState;
     double AirStatePerformanceMultiplier;
+    int UnderwaterDrowningTics;
     double EffectiveEvasionChance;
     bool LastEvasionAttempted;
     bool LastEvasionSucceeded;
@@ -11059,6 +11060,46 @@ class CaelumPlayer : DoomPlayer
             return 0;
         }
 
+        // El ahogamiento es daño ambiental. Debe actualizar vida, dolor e
+        // interrupciones, pero no iniciar combate ni otorgar adrenalina.
+        if (mod == 'Drowning')
+        {
+            int healthBeforeDrowning = health;
+            double adrenalineRatioBeforeDrowning = 0.0;
+            if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
+            {
+                adrenalineRatioBeforeDrowning = Clamp(
+                    CurrentAdrenaline / DerivedStats.MaximumAdrenaline,
+                    0.0,
+                    1.0
+                );
+            }
+
+            int drowningResult = Super.DamageMobj(
+                inflictor,
+                source,
+                damage,
+                mod,
+                flags | DMG_NO_ARMOR,
+                angle
+            );
+            if (health < healthBeforeDrowning)
+            {
+                int actualDrowningHealthLost = healthBeforeDrowning - health;
+                TryInterruptPendingStaffCast(
+                    actualDrowningHealthLost,
+                    adrenalineRatioBeforeDrowning
+                );
+                UpdateHealthStateEffects();
+                CalculateAndTriggerPain(
+                    actualDrowningHealthLost,
+                    adrenalineRatioBeforeDrowning,
+                    false
+                );
+            }
+            return drowningResult;
+        }
+
         // Impacto cinemático: no puede evadirse, bloquearse ni localizarse por
         // armadura. Es trauma global basado en Δv y vida máxima.
         if (mod == 'CaelumImpact')
@@ -12270,6 +12311,7 @@ class CaelumPlayer : DoomPlayer
         UpdateCombatBlockMode();
         UpdateRangedReload();
         UpdateWeaponCharge();
+        UpdateUnderwaterAir();
         ApplyAirRegeneration();
 
         UpdateAirStateEffects();
@@ -14353,8 +14395,10 @@ class CaelumPlayer : DoomPlayer
         }
 
         // En un salto normal se conserva el momentum sin acelerar. Fly usa
-        // NOGRAVITY y debe conservar control lateral como soporte continuo.
-        if (!player.onground && !bNOGRAVITY) { return; }
+        // NOGRAVITY y el agua usa WaterLevel: ambos son medios con control
+        // lateral continuo. Sin esta excepción, al entrar nadando desde el
+        // aire el factor permanecía en cero hasta tocar el fondo del vaso.
+        if (!player.onground && !bNOGRAVITY && WaterLevel == 0) { return; }
 
         MovementAccelerationFactor +=
             (1.0 - MovementAccelerationFactor)
@@ -15915,6 +15959,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (!AirResourceInitialized
             || DerivedStats == null
+            || WaterLevel >= 3
             || IsSpendingRunningAir
             || DebugShieldBlocking
             || CurrentAir >= DerivedStats.MaximumAir
@@ -15953,6 +15998,65 @@ class CaelumPlayer : DoomPlayer
             CurrentThirst - recoveredAir * thirstCostPerAir
         );
         UpdateSurvivalStates();
+    }
+
+    // Sustituye el contador submarino paralelo de GZDoom. PlayerThink llama
+    // esta función virtual cada tic; al reiniciarlo sin sonido evitamos daño
+    // nativo y dejamos que CurrentAir sea la única fuente de respiración.
+    override void CheckAirSupply()
+    {
+        ResetAirSupply(false);
+    }
+
+    bool HasUnderwaterAirExemption()
+    {
+        return bInvulnerable
+            || player == null
+            || (player.cheats & (CF_GODMODE | CF_NOCLIP2))
+            || (player.cheats & CF_GODMODE2);
+    }
+
+    void UpdateUnderwaterAir()
+    {
+        if (!AirResourceInitialized
+            || DerivedStats == null
+            || player == null
+            || player.playerstate != PST_LIVE
+            || WaterLevel < 3
+            || HasUnderwaterAirExemption())
+        {
+            UnderwaterDrowningTics = 0;
+            return;
+        }
+
+        if (CurrentAir > 0.0)
+        {
+            double underwaterAirCost =
+                CaelumConstants.UNDERWATER_AIR_COST_PER_SECOND
+                * DerivedStats.AirConsumptionMultiplier
+                / TICRATE;
+            CurrentAir = Max(0.0, CurrentAir - underwaterAirCost);
+            UnderwaterDrowningTics = 0;
+            return;
+        }
+
+        UnderwaterDrowningTics++;
+        if ((UnderwaterDrowningTics
+                % CaelumConstants.DROWNING_DAMAGE_INTERVAL_TICS) != 0)
+        {
+            return;
+        }
+
+        int drowningDamage = CaelumConstants.DROWNING_BASE_DAMAGE
+            + UnderwaterDrowningTics / TICRATE;
+        DamageMobj(
+            null,
+            null,
+            drowningDamage,
+            'Drowning',
+            DMG_NO_ARMOR,
+            Angle
+        );
     }
 
     void LoseDebugHunger() { CurrentHunger = Max(0.0, CurrentHunger - CaelumConstants.DEBUG_SURVIVAL_LOSS); UpdateSurvivalStates(); }

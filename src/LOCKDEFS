@@ -9,3 +9,14 @@ Lock 200
     MapColor 192 192 208
     LockedSound "misc/keytry"
 }
+
+// El alijo reutiliza la misma llave, pero necesita un mensaje que no hable de
+// puertas. CheckKeys sólo comprueba posesión y nunca consume esta llave.
+Lock 201
+{
+    CaelumSilverKey
+    Message "$CA_LOCK_SILVER_STASH"
+    RemoteMessage "$CA_LOCK_SILVER_STASH"
+    MapColor 192 192 208
+    LockedSound "misc/keytry"
+}

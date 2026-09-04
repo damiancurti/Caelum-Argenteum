@@ -1,0 +1,29 @@
+Model CaelumStashChestClosedVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_closed.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumStashChestOpenVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_open.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC B 0 0
+}
+
+Model CaelumStashChestLockedVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_locked.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC C 0 0
+}

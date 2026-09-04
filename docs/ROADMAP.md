@@ -633,6 +633,12 @@ stashes share one container service with ownership and lock policy separate
 from the model. Exact yields, intervals, tool gates and container rules remain
 author-controlled.
 
+V4.31.0b makes the existing Caelum Air meter authoritative underwater and
+adds the first original low-poly stash prototype. The chest validates closed,
+open and silver-key-locked states, but intentionally has no stored contents or
+permanent map placement yet. Capacity, ownership, theft and refill rules remain
+author-controlled before the shared container service is implemented.
+
 - Add systematic material loot tables and container actors.
 - Place renewable mine, tree and plant sources for gems/metals, wood and
   fiber; connect skins to appropriate animal/monster deaths.
@@ -649,9 +655,10 @@ Author input required before implementation:
   and plants, plus any tool and skill requirements.
 - Define which animal/monster families yield each skin grade and whether death
   loot uses fixed amounts, weighted ranges or both.
-- Define the first container set and its persistence rules: player/NPC/world
-  ownership, theft response, capacity, refill or one-time state, keys/lock
-  difficulty and multiplayer authority.
+- Define the first functional container set and its persistence rules:
+  player/NPC/world ownership, theft response, capacity, refill or one-time
+  state and multiplayer authority. The physical open/close prototype and its
+  reusable silver-key lock are already validated.
 - Fix whether a harvested source changes to a visibly depleted 3D model,
   disappears, or keeps both behaviors by source type.
 - Fix whether basic metals enter inventory as ore requiring smelting, direct

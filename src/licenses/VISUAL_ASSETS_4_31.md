@@ -13,6 +13,21 @@
 - Restricciones visuales solicitadas: vista cenital, agua solamente, sin piedra,
   objetos, texto, bordes ni marcas de agua.
 
-`CMPW01.png` permanece sin cambios. V4.31.0a no incorpora todavía ningún modelo
-3D descargado de terceros; las bibliotecas CC0 evaluadas sólo se documentan en
+`CMPW01.png` permanece sin cambios.
+
+## Prototipo de alijo 3D 4.31.0b
+
+- Rutas: `models/caelum/props/stash/ca_stash_*.obj` y
+  `models/caelum/props/stash/ca_stash_*.png`.
+- Uso: estados cerrado, abierto y bloqueado del primer alijo físico.
+- Procedencia: mallas y texturas originales generadas específicamente para el
+  proyecto mediante `tools/generate_stash_models.py`.
+- Complejidad: 242/254/266 caras para cerrado/abierto/bloqueado.
+- Materiales: madera oscura, hierro, interior y candado; cuatro PNG generados
+  sin recursos de Doom, bibliotecas de modelos ni texturas de terceros.
+- Reproducción: el generador usa únicamente la biblioteca estándar de Python;
+  sus resultados ya están incluidos y no es necesario ejecutarlo para jugar.
+
+V4.31.0b no incorpora ningún modelo 3D descargado de terceros. Las bibliotecas
+CC0 evaluadas siguen documentadas en
 `docs/V4_31_WORLD_RESOURCES_AND_STASHES.md` para selección posterior.

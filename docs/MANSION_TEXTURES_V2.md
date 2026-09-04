@@ -101,6 +101,15 @@ La superficie permanece estática en 4.31.0a porque la prueba A/B de GZDoom
 El agua sigue siendo translúcida, tiene niebla submarina, está registrada como
 terreno líquido y forma un volumen nadable real de z=-256 a z=0.
 
+### Movimiento y respiración 4.31.0b
+
+La geometría y las texturas de la piscina permanecen byte-idénticas. El ajuste
+se limita al jugador: nadar ya admite aceleración antes de tocar fondo y estar
+completamente sumergido consume la barra Caelum de Aire a 50 unidades base por
+segundo, multiplicadas por masa y carga. El contador submarino paralelo del
+motor queda neutralizado; al agotarse la barra, el daño de ahogamiento no suma
+adrenalina ni inicia combate.
+
 ## Aplicación de 4.30.0i
 
 1. Extraer el ZIP 4.30.0i sobre la raíz de un proyecto 4.30.0h.

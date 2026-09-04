@@ -1,5 +1,54 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Shared underwater Air and first 3D stash prototype 4.31.0b
+
+**Implemented and internally validated in exact GZDoom 4.14.2; focused author
+swimming and Use/save validation pending**
+
+Fully submerged swimming now spends the authoritative Caelum `CurrentAir`
+resource at 50 base units per second multiplied by the existing body-mass and
+carried-load `AirConsumptionMultiplier`. With mass 100, no carried load and
+Resilience 0, the 1,000-unit reserve lasts 20 seconds; Resilience 100 raises
+the reserve to 3,000 and therefore lasts 60 seconds under the same conditions.
+Air cannot regenerate while `WaterLevel == 3` and resumes its existing
+eight-minute recovery route as soon as the player's head leaves the water.
+
+The parallel native GZDoom breath timer is reset silently every tic, so it can
+no longer damage the player while the Caelum meter still has Air. Once
+`CurrentAir` reaches zero, Caelum preserves the native drowning cadence: one
+damage pulse every 32 tics, starting at 2 and increasing with elapsed
+breathless time. Drowning updates health, pain and cast interruption but is
+explicitly environmental: it neither starts combat nor grants adrenaline.
+
+Entering the pool from the air no longer leaves movement acceleration at zero.
+Ordinary airborne jumps still preserve momentum without adding acceleration,
+while `WaterLevel > 0` and native flight remain controllable media. The exact
+A/B audit measured acceleration `0` before touching bottom on 4.31.0a and a
+progression from `0.055464` to `0.99` before bottom on 4.31.0b.
+
+The first original 3D stash prototype is present without third-party or Doom
+assets. Its closed/open/locked OBJ meshes contain 242/254/266 low-poly faces
+and use four generated project textures for wood, iron, interior and the
+visible lock. One solid authoritative `CaelumStashChest` actor owns state and
+interaction; a non-solid visual helper displays exactly one static mesh. The
+locked subclass uses LOCKDEFS 201 with the existing reusable
+`CaelumSilverKey`. A failed interaction shows a stash-specific localized
+message; a successful one permanently unlocks the actor, opens it and leaves
+the key in personal inventory.
+
+The prototype deliberately has no contents, capacity or ownership service and
+is not placed permanently in MAP01. It can be tested with
+`summon CaelumStashChest`, `summon CaelumLockedStashChest` and
+`give CaelumSilverKey`. MAP01 remains byte-identical to accepted 4.31.0a.
+
+Exact-engine automated checks passed for: 50-unit rate including the existing
+multiplier, suppression of premature native damage, two progressive drowning
+pulses, zero drowning adrenaline, recovery after surfacing, OBJ/material load,
+all three visual states, solid collision, rejection without a key, successful
+unlock and reusable-key retention. The model generator is deterministic and
+ships as a development helper; installing/running the patch requires no
+Python.
+
 ## Rear mansion pool and V4.31 world-source direction 4.31.0a
 
 **Pool implemented and validated in exact GZDoom 4.14.2; focused author
