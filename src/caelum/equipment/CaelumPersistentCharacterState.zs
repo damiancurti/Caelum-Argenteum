@@ -105,6 +105,9 @@ class CaelumPersistentCharacterState : Inventory
     int StoredHealth;
     double StoredAnima;
     double StoredAir;
+    int StoredUnderwaterNoBreathTics;
+    double StoredUnderwaterAirRecoveryDebt;
+    int StoredUnderwaterAirRecoveryTicsRemaining;
     double StoredAdrenaline;
     double StoredLucidity;
     double StoredHunger;

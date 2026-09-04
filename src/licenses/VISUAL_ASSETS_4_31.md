@@ -31,3 +31,28 @@
 V4.31.0b no incorpora ningún modelo 3D descargado de terceros. Las bibliotecas
 CC0 evaluadas siguen documentadas en
 `docs/V4_31_WORLD_RESOURCES_AND_STASHES.md` para selección posterior.
+
+## Rocas y vegetación regional 3D 4.31.0c
+
+- Rutas runtime: `models/caelum/world/environment/*.obj`, sus PNG de material
+  y los anclajes transparentes `sprites/CARK*.png`/`sprites/CAVT*.png`.
+- Fuente conservada fuera del runtime:
+  `assets/source/world/ca_environment_atlas_master.png`.
+- Uso: cinco formaciones rocosas y tres variantes de vegetación para cada uno
+  de los climas desierto, selva, tundra, montaña, llanura, costa y ciudad.
+- Procedencia del atlas: imagen nueva generada con la herramienta de imágenes
+  de OpenAI para el proyecto. Resumen del pedido visual: atlas cuadrado sin
+  texto ni marcas, con cinco superficies de roca, siete cortezas y siete
+  follajes de inspiración argentina, acabado semirrealista low-poly de fantasía
+  oscura y color difuso plano.
+- Transformación: recorte manual de 19 regiones útiles del atlas, mosaico
+  especular para bordes repetibles, normalización a 256×256 y variantes
+  procedurales de cactus, flores y follaje mediante Pillow.
+- Mallas: geometría original determinista generada por
+  `tools/generate_environment_models.py`; 26 OBJ y 14.932 caras totales.
+- SHA-256 del atlas maestro:
+  `943e347bcacc8d6845864bfa5e20b8078335f09fb56f9c916b5093bf316df309`.
+
+No se descargaron ni incorporaron modelos o texturas de terceros. Los OBJ,
+materiales y anclajes finales ya se distribuyen con el parche; Pillow sólo es
+necesario si un desarrollador decide regenerarlos desde el atlas maestro.

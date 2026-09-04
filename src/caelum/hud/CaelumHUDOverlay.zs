@@ -231,6 +231,11 @@ class CaelumHUDOverlay : EventHandler
     // Convert the stored play-scope state into a localized UI label.
     ui String GetAirStateKey(int airState)
     {
+        if (airState == CaelumConstants.AIR_STATE_NO_OXYGEN)
+        {
+            return "CA_AIR_STATE_NO_OXYGEN";
+        }
+
         if (airState == CaelumConstants.AIR_STATE_BREATHLESS)
         {
             return "CA_AIR_STATE_BREATHLESS";
@@ -247,6 +252,11 @@ class CaelumHUDOverlay : EventHandler
     // Match the visible color to the confirmed air thresholds.
     ui int GetAirColor(int airState)
     {
+        if (airState == CaelumConstants.AIR_STATE_NO_OXYGEN)
+        {
+            return Font.CR_LIGHTBLUE;
+        }
+
         if (airState == CaelumConstants.AIR_STATE_BREATHLESS)
         {
             return Font.CR_RED;
@@ -264,6 +274,11 @@ class CaelumHUDOverlay : EventHandler
     // código y el paquete HUD-01 aporta solamente el marco modular exterior.
     ui int GetAirBarColor(int airState)
     {
+        if (airState == CaelumConstants.AIR_STATE_NO_OXYGEN)
+        {
+            return 0x2877A8;
+        }
+
         if (airState == CaelumConstants.AIR_STATE_BREATHLESS)
         {
             return 0xB52A2A;

@@ -839,11 +839,16 @@ class CaelumConstants : Object
     const AIR_FULL_RECOVERY_HUNGER_COST = 10.0;
     const AIR_FULL_RECOVERY_THIRST_COST = 20.0;
 
-    // Estar completamente sumergido consume la misma reserva de Aire que
-    // correr, saltar, bloquear y atacar. La masa corporal y la carga aplican
-    // mediante AirConsumptionMultiplier; con masa 100, carga cero y
-    // Resiliencia 0, las 1000 unidades base duran exactamente 20 segundos.
-    const UNDERWATER_AIR_COST_PER_SECOND = 50.0;
+    // La falta de respiración empieza en 5 Aire/s y suma 1 Aire/s por cada
+    // segundo continuo bajo el agua hasta llegar a 20 Aire/s. La masa y la
+    // carga siguen aplicándose mediante AirConsumptionMultiplier.
+    const UNDERWATER_AIR_INITIAL_COST_PER_SECOND = 5.0;
+    const UNDERWATER_AIR_COST_INCREASE_PER_SECOND = 1.0;
+    const UNDERWATER_AIR_MAX_COST_PER_SECOND = 20.0;
+
+    // Al volver a respirar se devuelve, durante tres segundos exactos, sólo
+    // el Aire que se perdió durante el último estado sin oxígeno.
+    const UNDERWATER_AIR_RECOVERY_SECONDS = 3;
 
     // Al agotarse el Aire conservamos la cadencia nativa de GZDoom: un pulso
     // cada 32 tics cuyo daño aumenta lentamente con el tiempo sin respirar.
@@ -860,6 +865,7 @@ class CaelumConstants : Object
     const AIR_STATE_NORMAL = 0;
     const AIR_STATE_TIRED = 1;
     const AIR_STATE_BREATHLESS = 2;
+    const AIR_STATE_NO_OXYGEN = 3;
 
     // Movement, jump height, and evasion retain the same share in each
     // documented low-air state.

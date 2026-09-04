@@ -95,6 +95,35 @@ DoomEdNums
     18039 = CaelumStashChest
     18040 = CaelumLockedStashChest
 
+    // Rocas y vegetación 3D de los siete climas. En esta etapa son objetos
+    // físicos sin botín ni lógica de recolección.
+    18041 = CaelumRockGranite
+    18042 = CaelumRockSandstone
+    18043 = CaelumRockBasalt
+    18044 = CaelumRockQuartz
+    18045 = CaelumRockCoastal
+    18050 = CaelumTreeDesertCardon
+    18051 = CaelumTreeDesertChurqui
+    18052 = CaelumTreeDesertChanar
+    18053 = CaelumTreeJungleLapacho
+    18054 = CaelumTreeJunglePaloRosa
+    18055 = CaelumTreeJungleTimbo
+    18056 = CaelumTreeTundraLenga
+    18057 = CaelumTreeTundraNire
+    18058 = CaelumTreeTundraGuindo
+    18059 = CaelumTreeMountainPehuen
+    18060 = CaelumTreeMountainCypress
+    18061 = CaelumTreeMountainCoihue
+    18062 = CaelumTreePlainsOmbu
+    18063 = CaelumTreePlainsTala
+    18064 = CaelumTreePlainsEspinillo
+    18065 = CaelumTreeCoastCoronillo
+    18066 = CaelumTreeCoastWillow
+    18067 = CaelumTreeCoastCeibo
+    18068 = CaelumTreeCityJacaranda
+    18069 = CaelumTreeCityTipa
+    18070 = CaelumTreeCityPlane
+
     // Variantes de diagnostico controlado de MAP02.
     18200 = CaelumDiagnosticLookRat
     18201 = CaelumDiagnosticNativeChaseRat

@@ -639,9 +639,20 @@ open and silver-key-locked states, but intentionally has no stored contents or
 permanent map placement yet. Capacity, ownership, theft and refill rules remain
 author-controlled before the shared container service is implemented.
 
+V4.31.0c closes the author's twelve-point 4.31.0b acceptance pass and refines
+submersion into a 5→20 base Air/s ramp, increasing once per continuous second.
+The HUD exposes `sin oxígeno` while breathing is impossible and returns only
+the Air lost to that state over three seconds after surfacing. The existing
+mass/load multiplier remains authoritative. This increment also supplies five
+original rock models and three regional vegetation models for each of desert,
+jungle, tundra, mountain, plains, coast and city. They are solid, summonable
+and editor-ready, but are not yet harvest nodes: rewards, tools, depletion and
+regeneration remain blocked on the values below.
+
 - Add systematic material loot tables and container actors.
-- Place renewable mine, tree and plant sources for gems/metals, wood and
-  fiber; connect skins to appropriate animal/monster deaths.
+- Convert the 26 physical rock/vegetation prototypes into renewable mine,
+  tree and plant sources for gems/metals, wood and fiber; connect skins to
+  appropriate animal/monster deaths.
 - Use 3D source/chest actors and release the existing material/item sprites
   through authoritative interaction or death transactions.
 - Formalize basic wood and raw-metal acquisition; ingots remain processing

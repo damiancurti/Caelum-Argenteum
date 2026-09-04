@@ -43,6 +43,57 @@ No hay todavía contenido, capacidad, propietario, robo, reposición ni
 colocación permanente. Esos valores siguen reservados para la primera
 implementación funcional de contenedores.
 
+## Biblioteca física implementada en 4.31.0c
+
+La primera biblioteca regional ya aporta 26 actores sólidos y convocables: 5
+formaciones rocosas y 21 árboles o plantas, tres para cada clima solicitado.
+Las siluetas no son recolores de una sola malla: varían altura, anchura,
+ramificación, inclinación y copa. La colisión queda limitada al núcleo de la
+roca o al tronco para que una copa ancha no forme una pared invisible.
+
+| Grupo | Variantes | Clases | DoomEdNums |
+|---|---|---|---|
+| Rocas | Granito, estratos de arenisca, columnas de basalto, cuarzo, roca costera erosionada | `CaelumRockGranite`, `CaelumRockSandstone`, `CaelumRockBasalt`, `CaelumRockQuartz`, `CaelumRockCoastal` | 18041–18045 |
+| Desierto | Cardón, churqui, chañar | `CaelumTreeDesertCardon`, `CaelumTreeDesertChurqui`, `CaelumTreeDesertChanar` | 18050–18052 |
+| Selva | Lapacho, palo rosa, timbó | `CaelumTreeJungleLapacho`, `CaelumTreeJunglePaloRosa`, `CaelumTreeJungleTimbo` | 18053–18055 |
+| Tundra | Lenga, ñire, guindo | `CaelumTreeTundraLenga`, `CaelumTreeTundraNire`, `CaelumTreeTundraGuindo` | 18056–18058 |
+| Montaña | Pehuén, ciprés de la cordillera, coihue | `CaelumTreeMountainPehuen`, `CaelumTreeMountainCypress`, `CaelumTreeMountainCoihue` | 18059–18061 |
+| Llanura | Ombú, tala, espinillo | `CaelumTreePlainsOmbu`, `CaelumTreePlainsTala`, `CaelumTreePlainsEspinillo` | 18062–18064 |
+| Costa | Coronillo, sauce criollo, ceibo | `CaelumTreeCoastCoronillo`, `CaelumTreeCoastWillow`, `CaelumTreeCoastCeibo` | 18065–18067 |
+| Ciudad | Jacarandá, tipa, plátano | `CaelumTreeCityJacaranda`, `CaelumTreeCityTipa`, `CaelumTreeCityPlane` | 18068–18070 |
+
+La categoría jugable «tundra» usa vegetación del límite subantártico
+patagónico en vez de inventar árboles de una tundra estrictamente desarbolada.
+La selección regional se contrastó con la flora publicada por Parques
+Nacionales: cardonales y churqui en Los Cardones; lenga, ñire, guindo, coihue,
+ciprés y pehuén en Patagonia; tala, coronillo, ombú y espinillo en ambientes
+centrales y costeros. Para ciudad se tomaron como referencia jacarandá, tipa y
+plátano del arbolado porteño.
+
+Referencias oficiales:
+
+- https://www.argentina.gob.ar/ambiente/contenidos/areas-protegidas
+- https://www.argentina.gob.ar/parquesnacionales/region-noroeste/parque-nacional-los-cardones/biodiversidad
+- https://www.argentina.gob.ar/parquesnacionales/viveros-de-los-parques-nacionales/parque-nacional-nahuel-huapi-isla-victoria
+- https://www.argentina.gob.ar/parquesnacionales/patagonia-austral/parque-nacional-tierra-del-fuego
+- https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-campos-del-tuyu/biodiversidad
+- https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-ciervo-de-los-pantanos/ficha-del-area-protegida
+- https://buenosaires.gob.ar/gcaba_historico/noticias/los-arboles-mas-frecuentes-en-el-paisaje-porteno
+
+Los 26 OBJ suman 14.932 caras; la malla individual más detallada es el pehuén
+con 2.416. Cada actor usa un sprite transparente de anclaje, una malla estática
+y un material de 256×256. El atlas maestro se conserva en
+`assets/source/world/ca_environment_atlas_master.png`; el generador
+determinista está en `tools/generate_environment_models.py`. Los resultados ya
+se incluyen en `src/`, por lo que instalar, construir o probar el parche no
+requiere Python.
+
+En 4.31.0c estos objetos todavía no responden a Use ni entregan materiales. No
+se asignaron de forma arbitraria herramienta, rendimiento, agotamiento o
+regeneración. Pueden inspeccionarse con `summon <clase>` y colocarse en el
+editor mediante los DoomEdNums de la tabla; su conversión a nodos funcionales
+espera los valores de diseño enumerados al final de este documento.
+
 Los nodos naturales regeneran con tiempo. El actor debe guardar como mínimo su
 identidad estable, estado disponible/depletado y tic/fecha de regeneración; el
 modelo sólo comunica ese estado y nunca decide la recompensa. En red, una única

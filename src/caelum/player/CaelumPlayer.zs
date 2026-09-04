@@ -540,7 +540,15 @@ class CaelumPlayer : DoomPlayer
     bool AirResourceInitialized;
     int AirState;
     double AirStatePerformanceMultiplier;
+    // Estado respiratorio submarino separado de los umbrales normales de
+    // cansancio. La deuda recuerda únicamente el Aire perdido sin respirar.
+    int UnderwaterNoBreathTics;
     int UnderwaterDrowningTics;
+    double UnderwaterAirRecoveryDebt;
+    int UnderwaterAirRecoveryTicsRemaining;
+    double UnderwaterCurrentBaseCostPerSecond;
+    bool UnderwaterWithoutOxygen;
+    bool UnderwaterAirRecoveryAppliedThisTick;
     double EffectiveEvasionChance;
     bool LastEvasionAttempted;
     bool LastEvasionSucceeded;
@@ -989,6 +997,12 @@ class CaelumPlayer : DoomPlayer
         persistentState.StoredHealth = health;
         persistentState.StoredAnima = CurrentAnima;
         persistentState.StoredAir = CurrentAir;
+        persistentState.StoredUnderwaterNoBreathTics =
+            UnderwaterNoBreathTics;
+        persistentState.StoredUnderwaterAirRecoveryDebt =
+            UnderwaterAirRecoveryDebt;
+        persistentState.StoredUnderwaterAirRecoveryTicsRemaining =
+            UnderwaterAirRecoveryTicsRemaining;
         persistentState.StoredAdrenaline = CurrentAdrenaline;
         persistentState.StoredLucidity = CurrentLucidity;
         persistentState.StoredHunger = CurrentHunger;
@@ -1134,6 +1148,19 @@ class CaelumPlayer : DoomPlayer
         if (player != null) { player.health = health; }
         CurrentAnima = Clamp(persistentState.StoredAnima, 0.0, DerivedStats.MaximumAnima);
         CurrentAir = Clamp(persistentState.StoredAir, 0.0, DerivedStats.MaximumAir);
+        UnderwaterNoBreathTics = Max(
+            0, persistentState.StoredUnderwaterNoBreathTics
+        );
+        UnderwaterAirRecoveryDebt = Max(
+            0.0, persistentState.StoredUnderwaterAirRecoveryDebt
+        );
+        UnderwaterAirRecoveryTicsRemaining = Max(
+            0, persistentState.StoredUnderwaterAirRecoveryTicsRemaining
+        );
+        UnderwaterCurrentBaseCostPerSecond =
+            CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
+        UnderwaterWithoutOxygen = WaterLevel >= 3;
+        UnderwaterAirRecoveryAppliedThisTick = false;
         CurrentAdrenaline = Clamp(
             persistentState.StoredAdrenaline, 0.0, DerivedStats.MaximumAdrenaline
         );
@@ -15960,6 +15987,9 @@ class CaelumPlayer : DoomPlayer
         if (!AirResourceInitialized
             || DerivedStats == null
             || WaterLevel >= 3
+            || UnderwaterAirRecoveryDebt > 0.0
+            || UnderwaterAirRecoveryTicsRemaining > 0
+            || UnderwaterAirRecoveryAppliedThisTick
             || IsSpendingRunningAir
             || DebugShieldBlocking
             || CurrentAir >= DerivedStats.MaximumAir
@@ -16016,26 +16046,123 @@ class CaelumPlayer : DoomPlayer
             || (player.cheats & CF_GODMODE2);
     }
 
-    void UpdateUnderwaterAir()
+    // La velocidad base sube por escalones completos de un segundo: 5 durante
+    // los primeros 35 tics, 6 durante los siguientes 35, hasta el máximo 20.
+    double GetUnderwaterBaseAirCostPerSecond()
+    {
+        int completedSeconds = Max(0, (UnderwaterNoBreathTics - 1) / TICRATE);
+        return Min(
+            CaelumConstants.UNDERWATER_AIR_MAX_COST_PER_SECOND,
+            CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND
+                + completedSeconds
+                * CaelumConstants.UNDERWATER_AIR_COST_INCREASE_PER_SECOND
+        );
+    }
+
+    // Distribuye la deuda restante entre los tics restantes. Así, incluso si
+    // el máximo cambia o se carga una partida a mitad del proceso, el último
+    // tic devuelve exactamente el Aire submarino que todavía falta.
+    void RecoverUnderwaterAirDebt()
+    {
+        UnderwaterAirRecoveryAppliedThisTick = false;
+        if (UnderwaterAirRecoveryDebt <= 0.0
+            || UnderwaterAirRecoveryTicsRemaining <= 0
+            || DerivedStats == null
+            || CurrentAir >= DerivedStats.MaximumAir)
+        {
+            if (UnderwaterAirRecoveryDebt <= 0.0
+                || CurrentAir >= DerivedStats.MaximumAir)
+            {
+                UnderwaterAirRecoveryDebt = 0.0;
+                UnderwaterAirRecoveryTicsRemaining = 0;
+            }
+            return;
+        }
+
+        double recoveredAir = Min(
+            UnderwaterAirRecoveryDebt
+                / Max(1, UnderwaterAirRecoveryTicsRemaining),
+            DerivedStats.MaximumAir - CurrentAir
+        );
+        CurrentAir += recoveredAir;
+        UnderwaterAirRecoveryDebt = Max(
+            0.0, UnderwaterAirRecoveryDebt - recoveredAir
+        );
+        UnderwaterAirRecoveryTicsRemaining--;
+        UnderwaterAirRecoveryAppliedThisTick = recoveredAir > 0.0;
+
+        if (UnderwaterAirRecoveryTicsRemaining <= 0
+            || UnderwaterAirRecoveryDebt <= 0.000001
+            || CurrentAir >= DerivedStats.MaximumAir)
+        {
+            UnderwaterAirRecoveryDebt = 0.0;
+            UnderwaterAirRecoveryTicsRemaining = 0;
+        }
+    }
+
+    // El parámetro separado permite auditar la regla temporal sin depender de
+    // una geometría concreta. El juego normal lo obtiene de WaterLevel.
+    void UpdateUnderwaterAirForState(bool withoutOxygen)
     {
         if (!AirResourceInitialized
             || DerivedStats == null
             || player == null
-            || player.playerstate != PST_LIVE
-            || WaterLevel < 3
-            || HasUnderwaterAirExemption())
+            || player.playerstate != PST_LIVE)
         {
+            UnderwaterWithoutOxygen = false;
+            UnderwaterAirRecoveryAppliedThisTick = false;
+            UnderwaterNoBreathTics = 0;
             UnderwaterDrowningTics = 0;
+            UnderwaterCurrentBaseCostPerSecond =
+                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
             return;
         }
+
+        UnderwaterWithoutOxygen = withoutOxygen;
+        if (!UnderwaterWithoutOxygen)
+        {
+            UnderwaterNoBreathTics = 0;
+            UnderwaterDrowningTics = 0;
+            UnderwaterCurrentBaseCostPerSecond =
+                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
+
+            if (UnderwaterAirRecoveryDebt > 0.0
+                && UnderwaterAirRecoveryTicsRemaining <= 0)
+            {
+                UnderwaterAirRecoveryTicsRemaining =
+                    CaelumConstants.UNDERWATER_AIR_RECOVERY_SECONDS * TICRATE;
+            }
+            RecoverUnderwaterAirDebt();
+            return;
+        }
+
+        // Volver a sumergirse pausa la devolución; la deuda acumulada se
+        // conserva y se suma a cualquier pérdida submarina nueva.
+        UnderwaterAirRecoveryAppliedThisTick = false;
+        UnderwaterAirRecoveryTicsRemaining = 0;
+
+        if (HasUnderwaterAirExemption())
+        {
+            UnderwaterNoBreathTics = 0;
+            UnderwaterDrowningTics = 0;
+            UnderwaterCurrentBaseCostPerSecond =
+                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
+            return;
+        }
+
+        UnderwaterNoBreathTics++;
+        UnderwaterCurrentBaseCostPerSecond =
+            GetUnderwaterBaseAirCostPerSecond();
 
         if (CurrentAir > 0.0)
         {
             double underwaterAirCost =
-                CaelumConstants.UNDERWATER_AIR_COST_PER_SECOND
+                UnderwaterCurrentBaseCostPerSecond
                 * DerivedStats.AirConsumptionMultiplier
                 / TICRATE;
-            CurrentAir = Max(0.0, CurrentAir - underwaterAirCost);
+            double removedAir = Min(CurrentAir, underwaterAirCost);
+            CurrentAir -= removedAir;
+            UnderwaterAirRecoveryDebt += removedAir;
             UnderwaterDrowningTics = 0;
             return;
         }
@@ -16057,6 +16184,11 @@ class CaelumPlayer : DoomPlayer
             DMG_NO_ARMOR,
             Angle
         );
+    }
+
+    void UpdateUnderwaterAir()
+    {
+        UpdateUnderwaterAirForState(WaterLevel >= 3);
     }
 
     void LoseDebugHunger() { CurrentHunger = Max(0.0, CurrentHunger - CaelumConstants.DEBUG_SURVIVAL_LOSS); UpdateSurvivalStates(); }
@@ -16099,6 +16231,14 @@ class CaelumPlayer : DoomPlayer
         if (DerivedStats != null)
         {
             CurrentAir = DerivedStats.MaximumAir;
+            UnderwaterNoBreathTics = 0;
+            UnderwaterDrowningTics = 0;
+            UnderwaterAirRecoveryDebt = 0.0;
+            UnderwaterAirRecoveryTicsRemaining = 0;
+            UnderwaterCurrentBaseCostPerSecond =
+                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
+            UnderwaterWithoutOxygen = false;
+            UnderwaterAirRecoveryAppliedThisTick = false;
             UpdateAirStateEffects();
         }
     }
@@ -16133,6 +16273,13 @@ class CaelumPlayer : DoomPlayer
         {
             AirState = CaelumConstants.AIR_STATE_NORMAL;
             AirStatePerformanceMultiplier = 1.0;
+        }
+
+        // El texto "sin oxígeno" describe la imposibilidad de respirar. Las
+        // penalizaciones de rendimiento continúan dependiendo del Aire real.
+        if (UnderwaterWithoutOxygen)
+        {
+            AirState = CaelumConstants.AIR_STATE_NO_OXYGEN;
         }
 
         if (DerivedStats != null)
@@ -16590,7 +16737,7 @@ class CaelumPlayer : DoomPlayer
             health = CaelumMaximumHealth;
             if (player != null) { player.health = health; }
             CurrentAnima = DerivedStats.MaximumAnima;
-            CurrentAir = DerivedStats.MaximumAir;
+            RefillAir();
             CurrentAdrenaline = 0.0;
             CurrentLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
             RefillSurvivalResources();

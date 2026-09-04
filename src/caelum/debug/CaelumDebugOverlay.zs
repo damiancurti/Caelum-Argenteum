@@ -3667,7 +3667,12 @@ class CaelumDebugOverlay : EventHandler
         String airStateKey = "CA_AIR_STATE_NORMAL";
         int airColor = Font.CR_GREEN;
 
-        if (localPlayer.AirState == CaelumConstants.AIR_STATE_BREATHLESS)
+        if (localPlayer.AirState == CaelumConstants.AIR_STATE_NO_OXYGEN)
+        {
+            airStateKey = "CA_AIR_STATE_NO_OXYGEN";
+            airColor = Font.CR_LIGHTBLUE;
+        }
+        else if (localPlayer.AirState == CaelumConstants.AIR_STATE_BREATHLESS)
         {
             airStateKey = "CA_AIR_STATE_BREATHLESS";
             airColor = Font.CR_RED;

@@ -27,3 +27,265 @@ Model CaelumStashChestLockedVisual
     DontCullBackFaces
     FrameIndex CAHC C 0 0
 }
+
+// Cinco formaciones rocosas y veintiuna especies regionales originales.
+// Cada actor usa una sola malla estática; la textura se referencia desde OBJ.+
+Model CaelumRockGranite
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockSandstone
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockBasalt
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockQuartz
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockCoastal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumTreeDesertCardon
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertChurqui
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChanar
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeJungleLapacho
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJunglePaloRosa
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJungleTimbo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeTundraLenga
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraNire
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraGuindo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeMountainPehuen
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainCypress
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCoihue
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreePlainsOmbu
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsTala
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsEspinillo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreeCoastCoronillo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastWillow
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastCeibo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCityJacaranda
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityTipa
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityPlane
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}

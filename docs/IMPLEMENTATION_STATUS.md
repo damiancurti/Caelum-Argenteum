@@ -1,9 +1,49 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Shared underwater Air and first 3D stash prototype 4.31.0b
+## Progressive underwater breathing and Argentine environment set 4.31.0c
 
 **Implemented and internally validated in exact GZDoom 4.14.2; focused author
-swimming and Use/save validation pending**
+timing and visual-scale validation pending**
+
+The author accepted all twelve 4.31.0b swimming, drowning, stash, persistence
+and regression checks. Version 4.31.0c replaces the provisional fixed
+underwater cost with a continuous no-breath ramp. A full submersion starts at
+5 base Air per second, adds 1 base Air per second after each complete
+continuous second and stops increasing at 20. Body mass and carried load still
+multiply the resulting rate through the one existing
+`AirConsumptionMultiplier`; Resilience still expands capacity rather than
+creating a second breath resource.
+
+The HUD and debug view display `sin oxígeno` for the entire interval in which
+the character's head is fully submerged. Performance penalties remain derived
+from the actual Air ratio, so the label itself does not add a hidden debuff.
+Every unit actually removed by this state is recorded as respiratory debt.
+When the head leaves the water, that debt alone is returned evenly over
+exactly 105 tics (three seconds), without consuming Hunger or Thirst. Running,
+jumping, blocking, attacks and any Air missing before submersion are not
+included in the fast repayment; normal eight-minute recovery resumes
+afterwards. Re-entering the water pauses the repayment and preserves its debt.
+
+The first regional environment library adds five distinct solid rock models
+and twenty-one solid vegetation models: three for desert, jungle, tundra,
+mountain, plains, coast and city. The silhouettes, OBJ meshes and 26 runtime
+materials are original project assets; a generated source atlas and the
+deterministic Pillow-based model generator are included outside the runtime.
+All objects are summonable and have DoomEdNums 18041–18045 and 18050–18070.
+Their collision follows the rock core or trunk, not the full tree crown.
+
+This increment deliberately does not assign harvesting, yields, tools,
+depletion states or regeneration. The actors are physical/editor-ready visual
+prototypes until those author-controlled values are supplied. Automated
+checks passed the 5/6/20 rate steps, exact cumulative loss, no-oxygen state,
+three-second debt-only repayment, unchanged Hunger/Thirst and all 26
+MODELDEF/material/collision paths. MAP01 and MAP02 remain byte-identical to
+4.31.0b.
+
+## Shared underwater Air and first 3D stash prototype 4.31.0b
+
+**Accepted by the author after all twelve focused swimming, stash and
+regression checks**
 
 Fully submerged swimming now spends the authoritative Caelum `CurrentAir`
 resource at 50 base units per second multiplied by the existing body-mass and

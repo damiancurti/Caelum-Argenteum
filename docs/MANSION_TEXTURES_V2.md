@@ -110,6 +110,16 @@ segundo, multiplicadas por masa y carga. El contador submarino paralelo del
 motor queda neutralizado; al agotarse la barra, el daño de ahogamiento no suma
 adrenalina ni inicia combate.
 
+### Respiración progresiva 4.31.0c
+
+La piscina, `CAPOOL01` y toda la geometría de MAP01 permanecen byte-idénticas.
+El costo fijo de 50 se reemplaza por 5 Aire base/s durante el primer segundo,
+con un aumento de 1 por cada segundo continuo sin respirar hasta el máximo de
+20. Masa y carga continúan multiplicando esa base. Mientras la cabeza está
+completamente sumergida, el HUD muestra `sin oxígeno`. Al salir, únicamente el
+Aire perdido durante ese estado vuelve de forma uniforme en 105 tics; el Aire
+gastado por otras acciones conserva la regeneración normal.
+
 ## Aplicación de 4.30.0i
 
 1. Extraer el ZIP 4.30.0i sobre la raíz de un proyecto 4.30.0h.
