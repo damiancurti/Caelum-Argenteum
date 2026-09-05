@@ -1296,6 +1296,41 @@ def tree_age_alias_records() -> List[dict[str, object]]:
     return records
 
 
+def tree_young_alias_records() -> List[dict[str, object]]:
+    records: List[dict[str, object]] = []
+    selected = {
+        spec.file_stem: spec
+        for spec in TREES
+        if spec.file_stem in ADULT_TREE_HEIGHTS_METERS
+    }
+    for file_stem in ADULT_TREE_HEIGHTS_METERS:
+        spec = selected[file_stem]
+        base_actor = actor_name(spec.file_stem)
+        tag_root = f"CA_{spec.file_stem.removeprefix('ca_').upper()}"
+        for variant in VISUAL_VARIANTS:
+            model_spec = tree_variant_spec(spec, variant)
+            legacy_actor = f"{base_actor}{variant.suffix}"
+            records.append({
+                "actor": f"{base_actor}Young{variant.suffix}",
+                "legacy_actor": legacy_actor,
+                "model": f"{model_spec.file_stem}.obj",
+                "frame_prefix": "CAVT",
+                "frame": spec.frame,
+                "scale": variant.scale,
+                "radius": TREE_COLLISION_RADII[spec.file_stem] * variant.scale,
+                "height": spec.height * variant.scale,
+                "mass": cylinder_mass_kg(
+                    TREE_COLLISION_RADII[spec.file_stem] * variant.scale,
+                    spec.height * variant.scale,
+                    TREE_DENSITIES_KG_M3[spec.file_stem],
+                ),
+                "tag": f"${tag_root}_YOUNG",
+                "age": "young",
+                "kind": "tree",
+            })
+    return records
+
+
 def environment_records() -> List[dict[str, object]]:
     return rock_records() + tree_records()
 
@@ -1576,6 +1611,21 @@ def write_actor_definitions(runtime_root: Path) -> None:
             "",
         ])
 
+    # Las dieciséis especies con adultos ampliados ya usaban sus clases
+    # históricas como ejemplares jóvenes. Los alias explícitos no cambian su
+    # malla ni su física y mantienen válidos los nombres de partidas previas.
+    for record in tree_young_alias_records():
+        lines.extend([
+            f"class {record['actor']} : {record['legacy_actor']}",
+            "{",
+            "    Default",
+            "    {",
+            f"        Tag \"{record['tag']}\";",
+            "    }",
+            "}",
+            "",
+        ])
+
     output = runtime_root / "caelum/world/CaelumEnvironmentProps.zs"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines), encoding="utf-8")
@@ -1604,7 +1654,11 @@ def write_model_definitions(runtime_root: Path) -> None:
         "// veintiuna especies regionales en tres variantes cada una y",
         "// adultos y jóvenes que reutilizan esas mallas aprobadas.",
     ]
-    for record in environment_records() + tree_age_alias_records():
+    for record in (
+        environment_records()
+        + tree_age_alias_records()
+        + tree_young_alias_records()
+    ):
         scale = scalar(float(record["scale"]))
         lines.extend([
             f"Model {record['actor']}",
@@ -1653,18 +1707,26 @@ def write_editor_numbers(runtime_root: Path) -> None:
     lines = [
         MAPINFO_BEGIN,
         "    // Repertorio físico ambiental; las asignaciones históricas se conservan.",
-        "    // Cinco familias muestran Adult en sus números previos y suman Young.",
+        "    // Todos los árboles muestran ahora su edad sin cambiar sus DoomEdNums.",
     ]
     age_records = tree_age_alias_records()
+    young_alias_records = tree_young_alias_records()
     adult_replacements = {
         str(record["legacy_actor"]): str(record["actor"])
         for record in age_records
         if record["age"] == "adult"
     }
+    young_replacements = {
+        str(record["legacy_actor"]): str(record["actor"])
+        for record in young_alias_records
+    }
     next_number = 18300
     for record in environment_records():
         legacy_actor = str(record["actor"])
-        actor = adult_replacements.get(legacy_actor, legacy_actor)
+        actor = adult_replacements.get(
+            legacy_actor,
+            young_replacements.get(legacy_actor, legacy_actor),
+        )
         if record["is_base"]:
             number = base_numbers[legacy_actor]
         else:

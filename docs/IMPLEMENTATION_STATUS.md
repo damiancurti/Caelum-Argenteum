@@ -1,5 +1,34 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Explicit Young names and resource corrections 4.31.0g
+
+**Implemented; deterministic source, geometry and package audit passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+The 48 pre-adult actors belonging to the sixteen enlarged tree species now
+expose `Young`, `Young2` and `Young3` editor/class names. Their historical
+class names remain valid aliases and their existing DoomEdNums are reassigned
+without changing mesh, scale, collision or mass. Together with the five age
+families introduced in 4.31.0f, the editor therefore presents 63 Adult and 63
+Young tree actors across all twenty-one species.
+
+Successful harvesting no longer calls the attack-thrust path for rooted
+sources. Trees still release wood and wear the melee weapon, but only a source
+whose `IsEnvironmentMovable()` contract returns true can receive push. Mineral
+deposits retain their previous mass-dependent movement. Coal variant 3, silver
+variant 1 and gold variant 2 omit only the three long ore bands that protruded
+outside their host rock; their nine irregular inclusions, actor data, collision,
+capacity and yield are unchanged. Every other mineral mesh remains byte-identical.
+
+Crafting-station help once again exposes `F` repair and `D` dismantle, and the
+crafting page displays equipment-action rejection messages when no task starts.
+Repair remains an operation on the exact object selected in Inventory: it must
+be damaged and unequipped, with the complete recipe station network and scaled
+materials available. MAP01, MAP02, resource balance and regeneration do not
+change. The shipped capacity catalogue records the exact mass-derived maximums:
+117,000–669,509,000 wood units and 287,540–35,946,000 mineral units; scenic
+rocks remain at zero.
+
 ## Renewable trees and compact mineral veins 4.31.0f
 
 **Implemented; deterministic source, geometry and package audit passed;

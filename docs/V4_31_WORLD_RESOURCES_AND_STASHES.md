@@ -241,6 +241,26 @@ MAP01 y MAP02 no reciben vetas. Su colocación se reserva para regiones
 geológicas aprobadas y para las futuras reglas de profundidad; Buenos Aires no
 presenta minerales arbitrarios en superficie.
 
+## Nombres completos y correcciones de fuentes en 4.31.0g
+
+Las otras dieciséis especies conservan sus adultos ampliados y renombran en el
+editor sus 48 ejemplares anteriores como `Young`, `Young2` y `Young3`. Sus
+DoomEdNums, mallas, escalas, colisiones y masas permanecen iguales; las clases
+históricas sin edad siguen disponibles como alias de compatibilidad. El
+catálogo completo queda en 63 árboles Adult y 63 Young.
+
+La extracción válida desgasta el arma, pero consulta explícitamente
+`IsEnvironmentMovable()` antes de transmitir impulso. De este modo un árbol
+arraigado no se desplaza al entregar madera y una veta conserva su respuesta
+física basada en masa. Carbón 3, plata 1 y oro 2 omiten únicamente las bandas
+minerales largas que sobresalían fuera de la roca; las inclusiones irregulares,
+capacidad, abundancia, dureza y recompensa no se modifican.
+
+Las capacidades exactas derivadas de masa se publican en
+`CAPACIDADES_RECURSOS_4_31_0g.txt`. Las rocas escénicas continúan con capacidad
+cero. No se cambia la recuperación diaria de 0,1%, ni se agregan fuentes a los
+mapas de Buenos Aires.
+
 ## Fuentes recomendadas
 
 ### 1. Poly Haven — fuente principal semirrealista

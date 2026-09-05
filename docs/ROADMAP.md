@@ -681,6 +681,16 @@ day. The five previously full-size tree families acquire explicit Adult names
 and half-scale Young variants while retaining their historical class aliases.
 MAP01 and MAP02 remain unchanged, so Buenos Aires gains no surface mine.
 
+V4.31.0g makes the age vocabulary complete without changing the approved
+vegetation library. The 48 smaller actors from the sixteen enlarged species
+are exposed as `Young`, `Young2` and `Young3`, while their old names remain
+compatibility aliases at the same DoomEdNums. Rooted resource strikes no longer
+transmit attack push to trees. The three reported protruding ore bands are
+removed only from coal 3, silver 1 and gold 2. Repair remains attached to the
+exact Inventory selection, but the crafting footer and failure line now expose
+that `F` operation. Capacity and regeneration balance remain unchanged and are
+published as an exact per-variant catalogue.
+
 - Add systematic animal/plant loot tables and container actors.
 - Keep V4.31 focused on physical/editor-ready sources and container
   architecture. The compact tree/mineral slice is functional in 4.31.0f;

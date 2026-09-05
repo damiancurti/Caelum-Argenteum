@@ -31,6 +31,14 @@ MAPINFO_BEGIN = "    // --- BEGIN GENERATED CAELUM MINERAL VEIN DOOMEDNUMS ---"
 MAPINFO_END = "    // --- END GENERATED CAELUM MINERAL VEIN DOOMEDNUMS ---"
 ENVIRONMENT_MAPINFO_END = "    // --- END GENERATED CAELUM ENVIRONMENT DOOMEDNUMS ---"
 
+# Estas tres combinaciones mostraron una banda prismática fuera de la roca.
+# Conservan sus nueve inclusiones irregulares y omiten sólo las bandas largas.
+VEINS_WITHOUT_LONG_BANDS = {
+    ("coal", "3"),
+    ("silver", ""),
+    ("gold", "2"),
+}
+
 
 @dataclass(frozen=True)
 class VeinSpec:
@@ -191,18 +199,19 @@ def build_vein(spec: VeinSpec, variant: VeinVariant, output: Path) -> Tuple[int,
                 segments=7,
                 irregularity=0.18,
             )
-        for index in range(3):
-            start = (
-                rng.uniform(-34.0, -12.0),
-                rng.uniform(25.0, 40.0),
-                rng.uniform(-22.0, 22.0),
-            )
-            end = (
-                rng.uniform(13.0, 34.0),
-                start[1] + rng.uniform(-7.0, 8.0),
-                start[2] + rng.uniform(-11.0, 11.0),
-            )
-            mesh.add_frustum(ore, start, end, 2.8, 1.4, 6, True, True)
+        if (spec.stem, variant.suffix) not in VEINS_WITHOUT_LONG_BANDS:
+            for index in range(3):
+                start = (
+                    rng.uniform(-34.0, -12.0),
+                    rng.uniform(25.0, 40.0),
+                    rng.uniform(-22.0, 22.0),
+                )
+                end = (
+                    rng.uniform(13.0, 34.0),
+                    start[1] + rng.uniform(-7.0, 8.0),
+                    start[2] + rng.uniform(-11.0, 11.0),
+                )
+                mesh.add_frustum(ore, start, end, 2.8, 1.4, 6, True, True)
     mesh.write(output)
     return len(mesh.vertices), len(mesh.faces)
 

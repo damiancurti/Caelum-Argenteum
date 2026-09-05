@@ -6232,6 +6232,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
         }
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
+        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
         RefreshCraftingPreview();
         SetCraftingJournalState(true);
     }
@@ -8712,6 +8713,7 @@ class CaelumPlayer : DoomPlayer
 
     void BeginRepairSelectedEquipment()
     {
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         LastEquipmentAction =
             CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (!CanStartCraftingTask())
@@ -8781,6 +8783,7 @@ class CaelumPlayer : DoomPlayer
 
     void BeginDismantleSelectedEquipment()
     {
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         LastEquipmentAction =
             CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (!CanStartCraftingTask())
@@ -15298,18 +15301,26 @@ class CaelumPlayer : DoomPlayer
         else if (extractedResourceUnits > 0.0)
         {
             // Una fuente invulnerable no devuelve daño de salud, pero un golpe
-            // de extracción válido sí desgasta el arma y transmite su impulso.
+            // de extracción válido sí desgasta el arma. Sólo las fuentes
+            // declaradas movibles reciben impulso; los árboles están arraigados.
             ApplyWeaponDurabilityFromSuccessfulDamage(
                 integerDamage,
                 WeaponModel.WeaponType,
                 WeaponModel.Tier,
                 WeaponModel.Size
             );
-            ApplyAttackPushToTarget(
-                targetData.linetarget,
-                attackAngle,
-                DerivedStats.PhysicalPushMultiplier
-            );
+            if (resourceTarget.IsEnvironmentMovable())
+            {
+                ApplyAttackPushToTarget(
+                    targetData.linetarget,
+                    attackAngle,
+                    DerivedStats.PhysicalPushMultiplier
+                );
+            }
+            else
+            {
+                LastAttackPushForce = 0.0;
+            }
         }
     }
 

@@ -2477,3 +2477,387 @@ class CaelumTreeCoastCeiboYoung3 : CaelumTreeCoastCeibo3
         Mass 746;
     }
 }
+
+class CaelumTreeJungleLapachoYoung : CaelumTreeJungleLapacho
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_LAPACHO_YOUNG";
+    }
+}
+
+class CaelumTreeJungleLapachoYoung2 : CaelumTreeJungleLapacho2
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_LAPACHO_YOUNG";
+    }
+}
+
+class CaelumTreeJungleLapachoYoung3 : CaelumTreeJungleLapacho3
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_LAPACHO_YOUNG";
+    }
+}
+
+class CaelumTreeJunglePaloRosaYoung : CaelumTreeJunglePaloRosa
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_PALO_ROSA_YOUNG";
+    }
+}
+
+class CaelumTreeJunglePaloRosaYoung2 : CaelumTreeJunglePaloRosa2
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_PALO_ROSA_YOUNG";
+    }
+}
+
+class CaelumTreeJunglePaloRosaYoung3 : CaelumTreeJunglePaloRosa3
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_PALO_ROSA_YOUNG";
+    }
+}
+
+class CaelumTreeJungleTimboYoung : CaelumTreeJungleTimbo
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_TIMBO_YOUNG";
+    }
+}
+
+class CaelumTreeJungleTimboYoung2 : CaelumTreeJungleTimbo2
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_TIMBO_YOUNG";
+    }
+}
+
+class CaelumTreeJungleTimboYoung3 : CaelumTreeJungleTimbo3
+{
+    Default
+    {
+        Tag "$CA_TREE_JUNGLE_TIMBO_YOUNG";
+    }
+}
+
+class CaelumTreeTundraLengaYoung : CaelumTreeTundraLenga
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_LENGA_YOUNG";
+    }
+}
+
+class CaelumTreeTundraLengaYoung2 : CaelumTreeTundraLenga2
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_LENGA_YOUNG";
+    }
+}
+
+class CaelumTreeTundraLengaYoung3 : CaelumTreeTundraLenga3
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_LENGA_YOUNG";
+    }
+}
+
+class CaelumTreeTundraNireYoung : CaelumTreeTundraNire
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_NIRE_YOUNG";
+    }
+}
+
+class CaelumTreeTundraNireYoung2 : CaelumTreeTundraNire2
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_NIRE_YOUNG";
+    }
+}
+
+class CaelumTreeTundraNireYoung3 : CaelumTreeTundraNire3
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_NIRE_YOUNG";
+    }
+}
+
+class CaelumTreeTundraGuindoYoung : CaelumTreeTundraGuindo
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_GUINDO_YOUNG";
+    }
+}
+
+class CaelumTreeTundraGuindoYoung2 : CaelumTreeTundraGuindo2
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_GUINDO_YOUNG";
+    }
+}
+
+class CaelumTreeTundraGuindoYoung3 : CaelumTreeTundraGuindo3
+{
+    Default
+    {
+        Tag "$CA_TREE_TUNDRA_GUINDO_YOUNG";
+    }
+}
+
+class CaelumTreeMountainPehuenYoung : CaelumTreeMountainPehuen
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_PEHUEN_YOUNG";
+    }
+}
+
+class CaelumTreeMountainPehuenYoung2 : CaelumTreeMountainPehuen2
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_PEHUEN_YOUNG";
+    }
+}
+
+class CaelumTreeMountainPehuenYoung3 : CaelumTreeMountainPehuen3
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_PEHUEN_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCypressYoung : CaelumTreeMountainCypress
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_CYPRESS_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCypressYoung2 : CaelumTreeMountainCypress2
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_CYPRESS_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCypressYoung3 : CaelumTreeMountainCypress3
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_CYPRESS_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCoihueYoung : CaelumTreeMountainCoihue
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_COIHUE_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCoihueYoung2 : CaelumTreeMountainCoihue2
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_COIHUE_YOUNG";
+    }
+}
+
+class CaelumTreeMountainCoihueYoung3 : CaelumTreeMountainCoihue3
+{
+    Default
+    {
+        Tag "$CA_TREE_MOUNTAIN_COIHUE_YOUNG";
+    }
+}
+
+class CaelumTreePlainsOmbuYoung : CaelumTreePlainsOmbu
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_OMBU_YOUNG";
+    }
+}
+
+class CaelumTreePlainsOmbuYoung2 : CaelumTreePlainsOmbu2
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_OMBU_YOUNG";
+    }
+}
+
+class CaelumTreePlainsOmbuYoung3 : CaelumTreePlainsOmbu3
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_OMBU_YOUNG";
+    }
+}
+
+class CaelumTreePlainsTalaYoung : CaelumTreePlainsTala
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_TALA_YOUNG";
+    }
+}
+
+class CaelumTreePlainsTalaYoung2 : CaelumTreePlainsTala2
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_TALA_YOUNG";
+    }
+}
+
+class CaelumTreePlainsTalaYoung3 : CaelumTreePlainsTala3
+{
+    Default
+    {
+        Tag "$CA_TREE_PLAINS_TALA_YOUNG";
+    }
+}
+
+class CaelumTreeCoastCoronilloYoung : CaelumTreeCoastCoronillo
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_CORONILLO_YOUNG";
+    }
+}
+
+class CaelumTreeCoastCoronilloYoung2 : CaelumTreeCoastCoronillo2
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_CORONILLO_YOUNG";
+    }
+}
+
+class CaelumTreeCoastCoronilloYoung3 : CaelumTreeCoastCoronillo3
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_CORONILLO_YOUNG";
+    }
+}
+
+class CaelumTreeCoastWillowYoung : CaelumTreeCoastWillow
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_WILLOW_YOUNG";
+    }
+}
+
+class CaelumTreeCoastWillowYoung2 : CaelumTreeCoastWillow2
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_WILLOW_YOUNG";
+    }
+}
+
+class CaelumTreeCoastWillowYoung3 : CaelumTreeCoastWillow3
+{
+    Default
+    {
+        Tag "$CA_TREE_COAST_WILLOW_YOUNG";
+    }
+}
+
+class CaelumTreeCityJacarandaYoung : CaelumTreeCityJacaranda
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_JACARANDA_YOUNG";
+    }
+}
+
+class CaelumTreeCityJacarandaYoung2 : CaelumTreeCityJacaranda2
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_JACARANDA_YOUNG";
+    }
+}
+
+class CaelumTreeCityJacarandaYoung3 : CaelumTreeCityJacaranda3
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_JACARANDA_YOUNG";
+    }
+}
+
+class CaelumTreeCityTipaYoung : CaelumTreeCityTipa
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_TIPA_YOUNG";
+    }
+}
+
+class CaelumTreeCityTipaYoung2 : CaelumTreeCityTipa2
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_TIPA_YOUNG";
+    }
+}
+
+class CaelumTreeCityTipaYoung3 : CaelumTreeCityTipa3
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_TIPA_YOUNG";
+    }
+}
+
+class CaelumTreeCityPlaneYoung : CaelumTreeCityPlane
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_PLANE_YOUNG";
+    }
+}
+
+class CaelumTreeCityPlaneYoung2 : CaelumTreeCityPlane2
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_PLANE_YOUNG";
+    }
+}
+
+class CaelumTreeCityPlaneYoung3 : CaelumTreeCityPlane3
+{
+    Default
+    {
+        Tag "$CA_TREE_CITY_PLANE_YOUNG";
+    }
+}

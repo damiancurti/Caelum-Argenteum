@@ -1022,14 +1022,25 @@ class CaelumJournalOverlay : EventHandler
         }
         else
         {
+            bool showEquipmentAction = localPlayer.LastCraftingAction
+                    == CaelumConstants.CRAFTING_ACTION_NONE
+                && localPlayer.LastEquipmentAction
+                    != CaelumConstants.EQUIPMENT_ACTION_NONE;
             DrawTextLine(
                 SmallFont,
-                localPlayer.LastCraftingAction
+                !showEquipmentAction
+                    && localPlayer.LastCraftingAction
                         == CaelumConstants.CRAFTING_ACTION_NONE
                     ? Font.CR_GRAY : Font.CR_GOLD,
                 52.0, 304.0,
                 StringTable.Localize(
-                    GetCraftingActionKey(localPlayer.LastCraftingAction),
+                    showEquipmentAction
+                        ? GetEquipmentActionKey(
+                            localPlayer.LastEquipmentAction
+                        )
+                        : GetCraftingActionKey(
+                            localPlayer.LastCraftingAction
+                        ),
                     false
                 )
             );
