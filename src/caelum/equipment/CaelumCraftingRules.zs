@@ -438,9 +438,8 @@ class CaelumCraftingRules : Object
         double typeOneDexterityPercent, int efficiencyIndex
     )
     {
-        // Este es el coste propio de una operacion. Los planificadores de
-        // recetas aplican aparte los factores heredados de sus capas padre
-        // cuando la operacion forma parte de una rama recursiva.
+        // Cada operación aplica aquí su propia eficiencia una sola vez. Los
+        // planificadores recursivos sólo transmiten cantidades a las hijas.
         double baseTics = Max(0, employedMaterialUnits)
             * Clamp(
                 complexityTics,

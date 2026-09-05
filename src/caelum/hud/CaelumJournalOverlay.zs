@@ -262,6 +262,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED:
                 return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS:
+                return "CA_EQUIPMENT_ACTION_FAILED_MATERIALS";
             default: return "CA_EQUIPMENT_ACTION_NONE";
         }
     }
@@ -863,10 +865,15 @@ class CaelumJournalOverlay : EventHandler
                     == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
                 {
                     nodeLine = String.Format(
-                        "%s%s x%d · %d%% · %d t/u · %.1f s",
+                        "%s%s · %s: %d u (%.3f kg) · %d%% · %d t/u · %.1f s",
                         indentation,
                         nodeName,
+                        StringTable.Localize(
+                            "CA_JOURNAL_CRAFTING_MATERIAL_USED", false
+                        ),
                         localPlayer.CraftingBlueprintNodeInputUnits[node],
+                        localPlayer.CraftingBlueprintNodeInputUnits[node]
+                            * CaelumConstants.MATERIAL_UNIT_WEIGHT,
                         GetCraftingEfficiencyPercentForIndex(
                             localPlayer.CraftingBlueprintNodeEfficiency[node]
                         ),
@@ -1474,14 +1481,22 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage == 4) { DrawPlannedPage("CA_JOURNAL_QUESTS_PENDING"); }
         else { DrawPlannedPage("CA_JOURNAL_REPUTATION_PENDING"); }
 
-        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 322.0,
-            StringTable.Localize(
-                currentPage == 0
-                    ? "CA_JOURNAL_INVENTORY_HELP"
-                    : currentPage == 3 && localPlayer.CraftingMenuOpen
-                        ? "CA_JOURNAL_CRAFTING_HELP"
+        if (currentPage == 3 && localPlayer.CraftingMenuOpen)
+        {
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 316.0,
+                StringTable.Localize("CA_JOURNAL_CRAFTING_HELP", false));
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 328.0,
+                StringTable.Localize("CA_JOURNAL_CRAFTING_HELP_2", false));
+        }
+        else
+        {
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 322.0,
+                StringTable.Localize(
+                    currentPage == 0
+                        ? "CA_JOURNAL_INVENTORY_HELP"
                         : "CA_JOURNAL_NAVIGATION_HELP",
-                false
-            ));
+                    false
+                ));
+        }
     }
 }

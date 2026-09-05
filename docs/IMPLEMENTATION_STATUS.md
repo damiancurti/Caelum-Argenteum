@@ -1,5 +1,69 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Potable-water constant restoration 4.31.0j
+
+**Implemented; deterministic reference, source and package audit passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+Version 4.31.0i rebuilt its constants file from an incomplete source snapshot
+and omitted `POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND`, although the
+player code retained the potable-water thirst call introduced in 4.31.0h.
+GZDoom therefore rejected ZScript before entering a map. Version 4.31.0j
+restores the exact `0.01` ratio: one percentage point of Thirst per second while
+fully submerged in a sector explicitly marked as potable.
+
+The corrective runtime delta contains only `CaelumConstants.zs`. A new audit
+enumerates every `CaelumConstants.*` reference across the complete PK3 and
+rejects the build if any referenced member is undeclared. It also requires the
+candidate constant catalogue to equal the 4.31.0i catalogue plus exactly the
+restored potable-water member. Crafting efficiency, recursive repair, UI,
+maps, models, sounds, recipes, resources and save data remain byte-identical
+to 4.31.0i.
+
+## Independent operation efficiency and recursive repair 4.31.0i
+
+**Implemented; deterministic source and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+The efficiency selected for a recipe node now multiplies only that node's own
+work. Its 25%/50%/100% material rule and 1x/10x/100x time factors remain
+unchanged, but no factor is inherited by descendants. Material waste still
+propagates naturally: a less efficient parent requests more child units and a
+less efficient child requests more raw input. The theoretical tree and the
+current-inventory direct plan share the same rule:
+
+```text
+OperationTime(node) = AdjustedInputUnits(node)
+                    * ComplexityTics(node)
+                    * EfficiencyFactor(node)
+                    / 35
+                    * 100 / DexterityType1Percent
+
+FullTime = Sum(OperationTime(executed node))
+```
+
+This supersedes the inherited branch multiplication introduced in 4.30.0i.
+Changing a handle or blade component can still alter descendant quantities,
+but it can no longer multiply the independently selected duration of every
+subrecipe below it.
+
+Repair now uses the same recursive material resolver as direct weapon
+creation. It reserves finished components already owned, derives only the
+missing portion from known recipes and raw materials, adds each required
+intermediate operation once to the repair duration and consumes the complete
+reservation atomically on success. Explicit cancellation continues to release
+the reservation without spending material or changing durability. A failed
+repair reports a repair-specific material error instead of the misleading
+generic fabrication error.
+
+The Journal's crafting help is split into two readable lines and explicitly
+shows `B` for material/component batches and `C` for cancelling an active task.
+Final equipment remains a single output unless its header says otherwise.
+The former root label `x3000`, which actually meant three thousand material
+units rather than three thousand objects, now displays both units and kilograms
+as `material used: 3000 u (3.000 kg)`. No map, model, sound, inventory item,
+recipe quantity, resource source or save schema changes in this patch.
+
 ## Potable-water hydration and combat timeout correction 4.31.0h
 
 **Implemented; deterministic source, map and package audit passed; focused
@@ -353,6 +417,10 @@ without an unknown-sound warning or audible seam. V4.30 is therefore closed;
 ## Focused railing traversal and branch-weighted crafting 4.30.0i
 
 **Implemented, audited and accepted by the author on Windows/GZDoom**
+
+**Historical note:** its inherited branch-time equation is superseded by
+4.31.0i after the author isolated repeated multipliers in deep component trees.
+All railing work and the 25%/50%/100% material/time values remain valid.
 
 The author's three traversal observations are applied directly to existing
 MAP01 linedefs. The 96-MU first-floor railing at `y=-383, x=1209..1305` is

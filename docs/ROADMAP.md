@@ -4,6 +4,22 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
+V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
+potable-water recovery constant accidentally omitted from that package and
+adds a complete cross-reference audit for every `CaelumConstants.*` use. No
+gameplay value or content changes: the ratio remains the accepted 1% Thirst
+recovery per submerged second and all V4.31.0i crafting changes are preserved.
+
+V4.31.0i corrects the final recursive-crafting discrepancy found in deep
+component trees. Each 25%/50%/100% choice keeps its 1x/10x/100x factor but now
+applies it only to the selected operation; descendants retain their own
+independent choices while material-waste quantities continue to propagate.
+Repair shares the direct recursive resolver, so sufficient known raw-material
+routes work exactly as they do for creation. The Journal exposes `B` batch and
+`C` cancel on two help lines and labels final-assembly material units separately
+from the output count. This focused correction changes no maps, environmental
+resources, models, sounds or recipe quantities.
+
 V4.31.0h closes three focused survival/interface defects without expanding the
 resource catalog. MAP01's pool becomes the first explicitly potable UDMF water
 volume and restores one Thirst percentage point per fully submerged second.

@@ -276,6 +276,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_DURABILITY = 25;
     const EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE = 26;
     const EQUIPMENT_ACTION_FAILED_RESERVED = 27;
+    const EQUIPMENT_ACTION_FAILED_MATERIALS = 28;
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.
@@ -418,10 +419,9 @@ class CaelumConstants : Object
     const CRAFTING_EFFICIENCY_CAREFUL_PERCENT = 50;
     const CRAFTING_EFFICIENCY_PERFECT_PERCENT = 100;
     const CRAFTING_EFFICIENCY_FAST_TIME_FACTOR = 1.0;
-    // Cada grado adicional multiplica por diez el trabajo temporal. Desde
-    // 4.30.0i, el factor de una capa abarca también todos los requisitos que
-    // esa capa obliga a fabricar; factores de subcapas distintas se acumulan.
-    // La merma de materiales se sigue calculando por separado.
+    // Cada grado adicional multiplica por diez únicamente el trabajo de la
+    // operación elegida. Cada subcapa aplica luego su propia eficiencia una
+    // sola vez; la merma se sigue propagando mediante las cantidades.
     const CRAFTING_EFFICIENCY_CAREFUL_TIME_FACTOR = 10.0;
     const CRAFTING_EFFICIENCY_PERFECT_TIME_FACTOR = 100.0;
 
@@ -807,8 +807,8 @@ class CaelumConstants : Object
     const SURVIVAL_LOW_PERFORMANCE_MULTIPLIER = 0.75;
     const SURVIVAL_CRITICAL_PERFORMANCE_MULTIPLIER = 0.50;
 
-    // El agua marcada como potable reemplaza la pérdida pasiva de Sed por
-    // una recuperación neta de un punto porcentual por segundo sumergido.
+    // El agua marcada como potable reemplaza la perdida pasiva de Sed por
+    // una recuperacion neta de un punto porcentual por segundo sumergido.
     const POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND = 0.01;
 
     // Natural health recovery fills the current maximum in one real hour.

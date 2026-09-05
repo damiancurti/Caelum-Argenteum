@@ -1508,6 +1508,7 @@ CA_EQUIPMENT_ACTION_FAILED_COMBAT = "Cannot start this task in combat";
 CA_EQUIPMENT_ACTION_FAILED_DURABILITY = "Repair rejected: the item is already at full durability";
 CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE = "Use the complete station network required by this item";
 CA_EQUIPMENT_ACTION_FAILED_RESERVED = "The selected item or material stack is reserved by an active task";
+CA_EQUIPMENT_ACTION_FAILED_MATERIALS = "Cannot repair: insufficient components or raw materials";
 CA_EQUIPMENT_ACTION_DISMANTLED = "Disassembled: 50% of the recipe scaled by remaining durability recovered";
 CA_EQUIPMENT_ACTION_FAILED_EQUIPPED = "Unequip the exact item before repairing or disassembling it";
 CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = "This item does not participate in the durability loop";
@@ -1534,6 +1535,7 @@ CA_EQUIPMENT_ACTION_FAILED_COMBAT = "No se puede iniciar esta tarea en combate";
 CA_EQUIPMENT_ACTION_FAILED_DURABILITY = "Reparación rechazada: el objeto ya tiene durabilidad completa";
 CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE = "Usá la red completa de estaciones que requiere este objeto";
 CA_EQUIPMENT_ACTION_FAILED_RESERVED = "El objeto o la pila seleccionada están reservados por una tarea activa";
+CA_EQUIPMENT_ACTION_FAILED_MATERIALS = "No se puede reparar: faltan componentes o materias primas";
 CA_EQUIPMENT_ACTION_DISMANTLED = "Desarmado: recuperado el 50% de la receta según la durabilidad restante";
 CA_EQUIPMENT_ACTION_FAILED_EQUIPPED = "Desequipá el objeto exacto antes de repararlo o desarmarlo";
 CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED = "Este objeto no participa del ciclo de durabilidad";
@@ -1584,11 +1586,13 @@ CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED = "Debug: active task advanced by 10 minu
 CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED = "Debug advance rejected: attend the valid active station task";
 CA_JOURNAL_CRAFTING_FROM_RAW = "from raw materials";
 CA_JOURNAL_CRAFTING_FINAL_STEP = "Final assembly / operation";
+CA_JOURNAL_CRAFTING_MATERIAL_USED = "material used";
 CA_JOURNAL_CRAFTING_BREAKDOWN = "Expanded recipe";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "selected step";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "debug control: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · debug control advances 10 min";
-CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier | R size | E craft | F repair | D dismantle | T +10m | Q close";
+CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier | B material batch";
+CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T +10m | Q close";
 
 [es]
 CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Depuración: adelantar 10 minutos la tarea de crafteo";
@@ -1596,11 +1600,13 @@ CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED = "Depuración: tarea adelantada 10 minut
 CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED = "Avance rechazado: atendé la tarea activa en una estación válida";
 CA_JOURNAL_CRAFTING_FROM_RAW = "desde materias primas";
 CA_JOURNAL_CRAFTING_FINAL_STEP = "Montaje u operación final";
+CA_JOURNAL_CRAFTING_MATERIAL_USED = "material empleado";
 CA_JOURNAL_CRAFTING_BREAKDOWN = "Receta desplegada";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "paso elegido";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "control de depuración: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el control adelanta 10 min";
-CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier | R talle | E crear | F reparar | D desarmar | T +10m | Q cerrar";
+CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier | B lote de materiales";
+CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T +10m | Q cerrar";
 
 [enu default]
 CA_TREE_DESERT_CARDON_ADULT = "adult cardón cactus";

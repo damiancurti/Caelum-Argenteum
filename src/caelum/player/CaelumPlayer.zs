@@ -108,6 +108,7 @@ class CaelumPlayer : DoomPlayer
     bool CraftingDirectPlanAvailable;
     bool CraftingDirectPlanUsed;
     int CraftingDirectPlanStepCount;
+    int CraftingPreparedEquipmentInputUnits;
     int CraftingLayerChoiceRootRecipe;
     int CraftingLayerChoiceRootTier;
     int CraftingLayerChoiceRootSize;
@@ -4598,12 +4599,11 @@ class CaelumPlayer : DoomPlayer
 
     void ExpandCraftingBlueprintMaterial(
         int materialType, int materialTier, int requiredUnits,
-        double ancestorTimeFactor, int depth = 1
+        int depth = 1
     )
     {
-        // El factor de cada padre cubre toda la rama que ese padre necesita.
-        // Al entrar en una subreceta se acumula su propio factor, de modo que
-        // una eleccion precisa nunca queda abaratada por la menor merma.
+        // La merma modifica las cantidades transmitidas a cada subreceta. El
+        // tiempo de una operacion usa solo la eficiencia elegida en ese nodo.
         if (requiredUnits <= 0 || depth > 8) { return; }
         int resolvedTier = CaelumMaterialRules.ResolveTier(
             materialType, materialTier
@@ -4647,7 +4647,7 @@ class CaelumPlayer : DoomPlayer
                     efficiencyAdjustedOutput,
                     CraftingBlueprintNodeComplexityTics[node],
                     efficiencyIndex
-                ) * ancestorTimeFactor;
+                );
             ExpandCraftingBlueprintMaterial(
                 CaelumCraftingRules.GetComponentBaseMaterial(
                     materialType, resolvedTier
@@ -4656,10 +4656,6 @@ class CaelumPlayer : DoomPlayer
                     materialType, resolvedTier
                 ),
                 efficiencyAdjustedOutput,
-                ancestorTimeFactor
-                    * CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                        efficiencyIndex
-                    ),
                 depth + 1
             );
             return;
@@ -4686,16 +4682,11 @@ class CaelumPlayer : DoomPlayer
                 inputOneUnits + inputTwoUnits,
                 CraftingBlueprintNodeComplexityTics[node],
                 efficiencyIndex
-            ) * ancestorTimeFactor;
-        double childAncestorTimeFactor = ancestorTimeFactor
-            * CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                efficiencyIndex
             );
         ExpandCraftingBlueprintMaterial(
             CaelumCraftingRules.GetProcessingInputOneMaterial(recipeIndex),
             CaelumCraftingRules.GetProcessingInputOneTier(recipeIndex),
             inputOneUnits,
-            childAncestorTimeFactor,
             depth + 1
         );
         int inputTwoMaterial =
@@ -4706,7 +4697,6 @@ class CaelumPlayer : DoomPlayer
                 inputTwoMaterial,
                 CaelumCraftingRules.GetProcessingInputTwoTier(recipeIndex),
                 inputTwoUnits,
-                childAncestorTimeFactor,
                 depth + 1
             );
         }
@@ -4736,34 +4726,26 @@ class CaelumPlayer : DoomPlayer
             rootInputs, rootComplexity, CraftingEfficiencyIndex
         );
         CraftingBlueprintNodeExecuted[0] = true;
-        double rootBranchTimeFactor =
-            CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                CraftingEfficiencyIndex
-            );
 
         ExpandCraftingBlueprintMaterial(
             CraftingBasicMaterialType,
             CraftingBasicMaterialTier,
-            CraftingBasicRequired,
-            rootBranchTimeFactor
+            CraftingBasicRequired
         );
         ExpandCraftingBlueprintMaterial(
             CraftingTierMaterialType,
             CraftingTierMaterialTier,
-            CraftingTierRequired,
-            rootBranchTimeFactor
+            CraftingTierRequired
         );
         ExpandCraftingBlueprintMaterial(
             CaelumConstants.MATERIAL_SILVER_INGOT,
             1,
-            CraftingSilverRequired,
-            rootBranchTimeFactor
+            CraftingSilverRequired
         );
         ExpandCraftingBlueprintMaterial(
             CaelumConstants.MATERIAL_GOLD_INGOT,
             1,
-            CraftingGoldRequired,
-            rootBranchTimeFactor
+            CraftingGoldRequired
         );
 
         CraftingBlueprintFullSeconds = CraftingBlueprintNodeSeconds[0];
@@ -4863,6 +4845,7 @@ class CaelumPlayer : DoomPlayer
         CraftingDirectPlanAvailable = false;
         CraftingDirectPlanUsed = false;
         CraftingDirectPlanStepCount = 0;
+        CraftingPreparedEquipmentInputUnits = 0;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -4960,9 +4943,7 @@ class CaelumPlayer : DoomPlayer
         return step;
     }
 
-    void AddDirectCraftingStepWork(
-        int step, int employedMaterialUnits, double ancestorTimeFactor
-    )
+    void AddDirectCraftingStepWork(int step, int employedMaterialUnits)
     {
         if (step < 0 || step >= CraftingDirectPlanStepCount
             || employedMaterialUnits <= 0)
@@ -4974,7 +4955,7 @@ class CaelumPlayer : DoomPlayer
                 employedMaterialUnits,
                 CraftingPlanStepComplexityTics[step],
                 CraftingPlanStepEfficiency[step]
-            ) * ancestorTimeFactor;
+            );
         MarkCraftingBlueprintStepExecuted(
             CraftingPlanStepRecipe[step], CraftingPlanStepTier[step]
         );
@@ -5003,11 +4984,11 @@ class CaelumPlayer : DoomPlayer
 
     bool RequireDirectCraftingMaterial(
         int materialType, int materialTier, int requiredUnits,
-        double ancestorTimeFactor, int depth = 0
+        int depth = 0
     )
     {
-        // La ruta real conserva la misma ponderacion por rama que el arbol
-        // teorico, pero omite el tiempo de componentes ya existentes.
+        // La ruta real omite el trabajo de componentes ya existentes. Cada
+        // operacion pendiente aplica solo su propia eficiencia temporal.
         if (requiredUnits <= 0) { return true; }
         if (depth > 8) { return false; }
 
@@ -5060,17 +5041,11 @@ class CaelumPlayer : DoomPlayer
                     missingUnits,
                     CraftingPlanStepEfficiency[planStep]
                 );
-            AddDirectCraftingStepWork(
-                planStep, baseUnits, ancestorTimeFactor
-            );
+            AddDirectCraftingStepWork(planStep, baseUnits);
             return RequireDirectCraftingMaterial(
                 baseMaterial,
                 baseTier,
                 baseUnits,
-                ancestorTimeFactor
-                    * CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                        CraftingPlanStepEfficiency[planStep]
-                    ),
                 depth + 1
             );
         }
@@ -5127,18 +5102,12 @@ class CaelumPlayer : DoomPlayer
         );
         AddDirectCraftingStepWork(
             planStep,
-            inputOneUnits + inputTwoUnits,
-            ancestorTimeFactor
+            inputOneUnits + inputTwoUnits
         );
-        double childAncestorTimeFactor = ancestorTimeFactor
-            * CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                CraftingPlanStepEfficiency[planStep]
-            );
         if (!RequireDirectCraftingMaterial(
             CaelumCraftingRules.GetProcessingInputOneMaterial(processingRecipe),
             CaelumCraftingRules.GetProcessingInputOneTier(processingRecipe),
             inputOneUnits,
-            childAncestorTimeFactor,
             depth + 1
         ))
         {
@@ -5149,7 +5118,6 @@ class CaelumPlayer : DoomPlayer
             inputTwoMaterial,
             CaelumCraftingRules.GetProcessingInputTwoTier(processingRecipe),
             inputTwoUnits,
-            childAncestorTimeFactor,
             depth + 1
         );
     }
@@ -5172,33 +5140,25 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        double rootBranchTimeFactor =
-            CaelumCraftingRules.GetCraftingEfficiencyTimeFactor(
-                CraftingEfficiencyIndex
-            );
         bool valid = RequireDirectCraftingMaterial(
                 CraftingBasicMaterialType,
                 CraftingBasicMaterialTier,
-                CraftingBasicRequired,
-                rootBranchTimeFactor
+                CraftingBasicRequired
             )
             && RequireDirectCraftingMaterial(
                 CraftingTierMaterialType,
                 CraftingTierMaterialTier,
-                CraftingTierRequired,
-                rootBranchTimeFactor
+                CraftingTierRequired
             )
             && RequireDirectCraftingMaterial(
                 CaelumConstants.MATERIAL_SILVER_INGOT,
                 1,
-                CraftingSilverRequired,
-                rootBranchTimeFactor
+                CraftingSilverRequired
             )
             && RequireDirectCraftingMaterial(
                 CaelumConstants.MATERIAL_GOLD_INGOT,
                 1,
-                CraftingGoldRequired,
-                rootBranchTimeFactor
+                CraftingGoldRequired
             );
         CraftingDirectPlanAvailable = valid;
         CraftingDirectPlanUsed = valid && CraftingDirectPlanStepCount > 0;
@@ -8482,7 +8442,10 @@ class CaelumPlayer : DoomPlayer
                 materialType, materialTier, units
             );
         }
-        return AddCraftingTaskReservation(
+        // Reparar comparte el resolvedor recursivo de fabricacion: primero
+        // usa componentes existentes y completa solo lo faltante desde crudos.
+        CraftingPreparedEquipmentInputUnits += units;
+        return RequireDirectCraftingMaterial(
             materialType, materialTier, units
         );
     }
@@ -8758,26 +8721,46 @@ class CaelumPlayer : DoomPlayer
             (maximum - target.Durability) / double(maximum),
             0.0, 1.0
         );
+        ClearDirectCraftingPlan();
+        CraftingMissingStationType = CaelumConstants.CRAFTING_STATION_NONE;
+        bool repairPlanReady = BuildEquipmentTaskMaterials(
+            target, missingFraction, false
+        );
+        CraftingDirectPlanAvailable = repairPlanReady;
+        if (!repairPlanReady)
+        {
+            LastEquipmentAction = CraftingMissingStationType
+                    != CaelumConstants.CRAFTING_STATION_NONE
+                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
+                : CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS;
+            ClearDirectCraftingPlan();
+            return;
+        }
+        double repairSeconds = GetEquipmentTaskSeconds(
+            target,
+            CraftingPreparedEquipmentInputUnits,
+            CraftingEfficiencyIndex
+        );
+        for (int step = 0;
+            step < CraftingDirectPlanStepCount; step++)
+        {
+            repairSeconds += CraftingPlanStepSeconds[step];
+        }
         ClearCraftingTaskData();
-        if (!BuildEquipmentTaskMaterials(target, missingFraction, false)
-            || !ValidateCraftingTaskReservations())
+        if (!ReservePreparedDirectCraftingPlan())
         {
             ClearCraftingTaskData();
             LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS;
             return;
         }
+        CraftingTaskUsesDirectPlan = true;
         CraftingTaskTargetItemId = target.ItemId;
         LastEquipmentAction =
             CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED;
         StartPreparedCraftingTask(
             CaelumConstants.CRAFTING_TASK_REPAIR,
-            GetEquipmentTaskSeconds(
-                target, GetCraftingTaskReservedUnitTotal(),
-                CraftingEfficiencyIndex
-            )
+            repairSeconds
         );
     }
 
