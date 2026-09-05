@@ -95,7 +95,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetSpecialItemKey(int specialCategory, int specialType)
+    static clearscope String GetSpecialItemKey(int specialCategory, int specialType)
     {
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {

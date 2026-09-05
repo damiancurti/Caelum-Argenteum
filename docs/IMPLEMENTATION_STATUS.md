@@ -1,5 +1,33 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Potable-water hydration and combat timeout correction 4.31.0h
+
+**Implemented; deterministic source, map and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+Complete submersion now restores Thirst at a net rate of one percentage point
+per second only when the current sector carries the UDMF
+`user_ca_potable_water` marker. The seventeen target sectors of MAP01's pool
+receive that marker. The existing WaterLevel-3 breathing rule, progressive Air
+cost, drowning damage and three-second respiratory-debt recovery are unchanged.
+This explicit marker prevents future saltwater, polluted water or other liquid
+volumes from becoming drinkable merely because they support swimming.
+
+Combat still lasts thirty seconds after the latest confirmed action. The
+countdown now advances before checking whether CurrentAdrenaline is positive;
+therefore an attack that grants no Adrenaline, or a reserve that reaches zero,
+can no longer freeze the combat state and indefinitely block crafting. Once the
+countdown reaches zero, positive Adrenaline continues to decay at the existing
+ten points per second.
+
+`CaelumMaterialPickup` now overrides the native pickup-message method and
+combines the localized material name with the exact incoming stack amount.
+The underlying item class, type, tier, weight, stacking and crafting ownership
+remain unchanged. Tin continues to originate from `CaelumVeinTin`,
+`CaelumVeinTin2` and `CaelumVeinTin3` (DoomEdNums 18509–18511). MAP01 changes
+only by adding the seventeen potable flags; all vertices, lines, sides,
+sectors, Things and every other runtime asset are preserved.
+
 ## Explicit Young names and resource corrections 4.31.0g
 
 **Implemented; deterministic source, geometry and package audit passed;

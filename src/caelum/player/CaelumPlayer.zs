@@ -14834,11 +14834,12 @@ class CaelumPlayer : DoomPlayer
         CombatTimeRemaining = CaelumConstants.COMBAT_TIMEOUT_SECONDS;
     }
 
-    // Wait until combat ends, then remove ten points per second. TICRATE keeps
-    // the result independent of rendering speed and pauses it with the game.
+    // El tiempo de combate siempre avanza, aun cuando una acción no haya
+    // otorgado Adrenalina o ésta ya sea cero. Al terminar los treinta segundos,
+    // sólo la reserva positiva entra en su decadencia normal de diez por segundo.
     void UpdateAdrenalineDecay()
     {
-        if (!AdrenalineResourceInitialized || CurrentAdrenaline <= 0.0)
+        if (!AdrenalineResourceInitialized)
         {
             CombatTimeRemaining = Max(0.0, CombatTimeRemaining);
             return;
@@ -14853,6 +14854,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if (CurrentAdrenaline <= 0.0) { return; }
         CurrentAdrenaline = Max(
             0.0,
             CurrentAdrenaline
@@ -15894,6 +15896,16 @@ class CaelumPlayer : DoomPlayer
         return 1.0;
     }
 
+    // Sólo un volumen marcado por el mapa puede hidratar. WaterLevel 3 exige
+    // que la cabeza también esté bajo el agua y evita que futuros mares o
+    // líquidos peligrosos hereden esta propiedad por accidente.
+    bool IsSubmergedInPotableWater()
+    {
+        return WaterLevel >= 3
+            && CurSector != null
+            && CurSector.GetUDMFInt('user_ca_potable_water') != 0;
+    }
+
     // Apply base depletion time and the appropriate Type 3 loss multiplier.
     void UpdateSurvivalResources()
     {
@@ -15907,11 +15919,24 @@ class CaelumPlayer : DoomPlayer
             / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS
                 * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
             * DerivedStats.HungerThirstLossMultiplier / TICRATE);
-        CurrentThirst = Max(0.0, CurrentThirst
-            - CaelumConstants.SURVIVAL_MAXIMUM
-            / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
-                * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
-            * DerivedStats.HungerThirstLossMultiplier / TICRATE);
+        if (IsSubmergedInPotableWater())
+        {
+            CurrentThirst = Min(
+                CaelumConstants.SURVIVAL_MAXIMUM,
+                CurrentThirst
+                    + CaelumConstants.SURVIVAL_MAXIMUM
+                    * CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND
+                    / TICRATE
+            );
+        }
+        else
+        {
+            CurrentThirst = Max(0.0, CurrentThirst
+                - CaelumConstants.SURVIVAL_MAXIMUM
+                / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
+                    * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
+                * DerivedStats.HungerThirstLossMultiplier / TICRATE);
+        }
         CurrentSleep = Max(0.0, CurrentSleep
             - CaelumConstants.SURVIVAL_MAXIMUM
             / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS

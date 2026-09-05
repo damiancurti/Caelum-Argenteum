@@ -107,6 +107,24 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         return CaelumMaterialRules.ResolveTier(GetSpecialType(), args[1]);
     }
 
+    // GZDoom consulta este método en el actor original después de completar
+    // TryPickup, por lo que Amount conserva la cantidad exacta de la pila.
+    override String PickupMessage()
+    {
+        String materialName = StringTable.Localize(
+            CaelumDisplayNames.GetSpecialItemKey(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                GetSpecialType()
+            ),
+            false
+        );
+        return String.Format(
+            StringTable.Localize("CA_PICKUP_MATERIAL_DETAILED", false),
+            materialName,
+            Amount
+        );
+    }
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();

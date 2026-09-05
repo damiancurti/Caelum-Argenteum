@@ -807,6 +807,10 @@ class CaelumConstants : Object
     const SURVIVAL_LOW_PERFORMANCE_MULTIPLIER = 0.75;
     const SURVIVAL_CRITICAL_PERFORMANCE_MULTIPLIER = 0.50;
 
+    // El agua marcada como potable reemplaza la pérdida pasiva de Sed por
+    // una recuperación neta de un punto porcentual por segundo sumergido.
+    const POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND = 0.01;
+
     // Natural health recovery fills the current maximum in one real hour.
     // Critical hunger, thirst, and sleep each invert this unmodified base rate.
     const HEALTH_BASE_RECOVERY_REAL_SECONDS = 3600.0;

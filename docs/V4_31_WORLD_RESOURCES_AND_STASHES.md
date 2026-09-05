@@ -261,6 +261,29 @@ Las capacidades exactas derivadas de masa se publican en
 cero. No se cambia la recuperación diaria de 0,1%, ni se agregan fuentes a los
 mapas de Buenos Aires.
 
+## Agua potable, fin de combate y mensajes de material en 4.31.0h
+
+La potabilidad deja de inferirse de la apariencia o de `WaterLevel`. Cada
+sector nadable que deba hidratar declara `user_ca_potable_water = 1`; sólo con
+esa marca y `WaterLevel >= 3` se reemplaza la pérdida pasiva de Sed por una
+recuperación neta de 1% por segundo. MAP01 aplica la propiedad a los diecisiete
+sectores objetivo de la piscina 3D. No se alteran sus alturas, planos, texturas,
+líneas ni volumen de nado. Este contrato queda listo para que el futuro mar sea
+salado por defecto y para que lagos, cisternas o agua contaminada se definan de
+forma individual.
+
+El estado de combate conserva exactamente 30 segundos desde la última acción.
+El contador se actualiza aunque la Adrenalina sea cero; recién después de llegar
+a cero se decide si hay Adrenalina que deba decaer. Así, atacar al aire o agotar
+la reserva ya no bloquea indefinidamente fabricación y reparación.
+
+Las pilas `CaelumMaterialPickup` consultan el catálogo localizado de 79
+materiales al mostrar el mensaje nativo de recogida. El formato informa nombre
+y `Amount` exacto, por ejemplo `Recogiste madera x75.`. No modifica el actor
+recogido, el apilado, el tier ni la cantidad entregada por la fuente. La mena de
+estaño sigue asociada a `CaelumVeinTin`, variantes 2 y 3, con DoomEdNums
+18509–18511.
+
 ## Fuentes recomendadas
 
 ### 1. Poly Haven — fuente principal semirrealista

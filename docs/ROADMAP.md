@@ -4,6 +4,14 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
+V4.31.0h closes three focused survival/interface defects without expanding the
+resource catalog. MAP01's pool becomes the first explicitly potable UDMF water
+volume and restores one Thirst percentage point per fully submerged second.
+The thirty-second combat gate now expires even with zero Adrenaline, and native
+material pickups report localized name plus exact quantity. Future marine or
+contaminated waters remain non-potable until their sectors opt into the same
+marker; their implementation stays in the Version 5 biome track.
+
 The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
 
 ## 1. Reconciliation with the old roadmap
