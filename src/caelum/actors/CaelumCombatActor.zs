@@ -1802,6 +1802,12 @@ class CaelumCombatActor : Actor
 
     double GetOtherCollisionEffectiveMass(Actor other)
     {
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        if (environment != null)
+        {
+            return environment.GetEnvironmentMassKg();
+        }
+
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null) { return otherPlayer.GetCombatMass(); }
 
@@ -1821,6 +1827,12 @@ class CaelumCombatActor : Actor
 
     double GetOtherCollisionDamageMultiplier(Actor other)
     {
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        if (environment != null)
+        {
+            return Max(0.0, environment.GetEnvironmentImpactMultiplier());
+        }
+
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null)
         {
@@ -2186,23 +2198,125 @@ class CaelumCombatActor : Actor
         return ImpactResultScratch;
     }
 
+    // Los árboles conservan actor y masa descriptiva, pero sus raíces los
+    // convierten en un límite estático para la resolución cinemática.
+    void ResolveRootedEnvironmentImpact(CaelumEnvironmentProp environment)
+    {
+        if (environment == null || environment.health <= 0) { return; }
+
+        ImpactContactState contactState = GetImpactContactState(environment);
+        if (contactState != null)
+        {
+            contactState.RegisterCollision(level.time);
+            ImpactDiagnosticDuplicateCallbacks++;
+            return;
+        }
+
+        double dx = environment.Pos.X - Pos.X;
+        double dy = environment.Pos.Y - Pos.Y;
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
+        double normalX = dx / distance;
+        double normalY = dy / distance;
+        double closingSpeed = Vel.X * normalX + Vel.Y * normalY;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
+
+        ImpactBody selfBody = BuildImpactPhysicsBody();
+        ImpactResult impact = GetImpactResultScratch();
+        if (selfBody == null || impact == null) { return; }
+        ImpactPhysics.ResolveStatic(
+            selfBody,
+            (normalX, normalY, 0.0),
+            impact
+        );
+        if (!impact.Valid) { return; }
+
+        contactState = LatchImpactContact(environment);
+        if (contactState != null)
+        {
+            contactState.RegisterCollision(level.time);
+            contactState.LastClosingSpeed = impact.ClosingSpeed;
+            contactState.LastTransmittedImpulse = impact.Impulse;
+        }
+
+        Vel.X -= impact.Normal.X * impact.SourceDeltaSpeed;
+        Vel.Y -= impact.Normal.Y * impact.SourceDeltaSpeed;
+
+        double contactMinimum = 0.0;
+        double contactMaximum = 1.0;
+        double overlapBottom = Max(Pos.Z, environment.Pos.Z);
+        double overlapTop = Min(
+            Pos.Z + selfBody.Height,
+            environment.Pos.Z + Max(1.0, environment.Height)
+        );
+        if (overlapTop > overlapBottom)
+        {
+            contactMinimum = Clamp(
+                (overlapBottom - Pos.Z) / selfBody.Height,
+                0.0,
+                1.0
+            );
+            contactMaximum = Clamp(
+                (overlapTop - Pos.Z) / selfBody.Height,
+                0.0,
+                1.0
+            );
+        }
+
+        ReceiveCaelumImpact(
+            impact.SourceDeltaSpeed,
+            CaelumConstants.IMPACT_KIND_ACTOR,
+            environment,
+            environment.GetEnvironmentImpactMultiplier(),
+            selfBody.Mass,
+            environment.GetEnvironmentMassKg(),
+            impact.ClosingSpeed,
+            impact.Impulse,
+            contactMinimum,
+            contactMaximum
+        );
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
 
         CaelumCombatActor otherCombatActor = CaelumCombatActor(other);
-        if (passive || DisableCaelumImpactContacts
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        bool resolvePassiveRock = environment != null
+            && environment.IsEnvironmentMovable();
+        if ((passive && !resolvePassiveRock)
+            || DisableCaelumImpactContacts
             || (otherCombatActor != null
                 && otherCombatActor.DisableCaelumImpactContacts)
             || other == null || other == self
             || health <= 0 || other.health <= 0
             || (CaelumPlayer(other) == null
                 && CaelumCombatActor(other) == null
-                && CaelumTrainingDummy(other) == null))
+                && CaelumTrainingDummy(other) == null
+                && environment == null))
         {
             return;
         }
         ImpactDiagnosticCollisionCallbacks++;
+
+        if (environment != null && !environment.IsEnvironmentMovable())
+        {
+            ResolveRootedEnvironmentImpact(environment);
+            return;
+        }
+
         ImpactContactState contactState = GetImpactContactState(other);
         if (contactState != null)
         {

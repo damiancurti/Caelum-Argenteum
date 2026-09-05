@@ -660,10 +660,32 @@ starts at 1% maximum health per second, rises 0.1 percentage points per
 continuous second and caps at 10%. These additions still do not authorize
 harvest yields, tools, depletion or regeneration values.
 
-- Add systematic material loot tables and container actors.
-- Convert the 138 physical rock/vegetation actors into renewable mine,
-  tree and plant sources for gems/metals, wood and fiber; connect skins to
-  appropriate animal/monster deaths.
+V4.31.0e follows the author's complete twelve-test acceptance of 4.31.0d. It
+keeps every approved tree size and mesh, then adds `Adult`, `Adult2` and
+`Adult3` actors only for the sixteen species whose previous set represented
+young or low-range examples. Environmental mass is calculated from the
+collision cylinder at 32 MU/m and nominal material density. Trees remain
+rooted static collision surfaces; rocks become mass-proportional movable
+bodies and both participate in horizontal Impact Physics collisions. Natural
+extraction remains disabled.
+
+V4.31.0f follows the author's complete fourteen-test acceptance of 4.31.0e
+and brings forward the first self-contained slice of the resource expansion.
+Every tree becomes a renewable wood source for slashing melee attacks. Eleven
+identified mineral deposits, each with three original 3D variants, cover iron,
+mineral coal, copper, tin, silver, gold and five raw gems; they accept only
+piercing melee attacks. Hardness and the approved abundance factors determine
+deterministic output, with fractional carry on the node. Maximum capacity is
+mass-derived and each loaded node restores exactly 0.1% per canonical game
+day. The five previously full-size tree families acquire explicit Adult names
+and half-scale Young variants while retaining their historical class aliases.
+MAP01 and MAP02 remain unchanged, so Buenos Aires gains no surface mine.
+
+- Add systematic animal/plant loot tables and container actors.
+- Keep V4.31 focused on physical/editor-ready sources and container
+  architecture. The compact tree/mineral slice is functional in 4.31.0f;
+  plants, hides, marine nodes and unloaded-map calendar catch-up remain part
+  of the Version 5 resource expansion.
 - Use 3D source/chest actors and release the existing material/item sprites
   through authoritative interaction or death transactions.
 - Formalize basic wood and raw-metal acquisition; ingots remain processing
@@ -734,7 +756,8 @@ Closed-boundary degree validation remains a required check, but it is not suffic
 
 ### V4.36 — Movable Environment and Physical Hazards
 
-- Integrate movable environmental bodies with Impact Physics Core.
+- Extend the mass-proportional rock integration introduced in 4.31.0e to
+  rolling, falling and externally driven environmental bodies.
 - Add rolling rocks, falling objects and authored hazard surfaces first.
 - Prepare avalanches, rams, catapults and moving-sector hazards through `ResolveExternal`.
 - Package Impact Physics Core independently only after its Caelum validation track is complete.
@@ -787,6 +810,29 @@ on the V4.35 weather snapshot and the V5.0.0 modular transition.**
   final numeric curves.
 
 Detailed contract: [`V5_THERMAL_EXPOSURE_DESIGN.md`](V5_THERMAL_EXPOSURE_DESIGN.md).
+
+### V5.x — Resources and Marine Biomes
+
+**Author-approved scope; implementation follows the V5.0.0 modular transition.**
+
+- Convert the physical 3D trees, mineralized rocks and plants into persistent
+  sources that release the existing inventory sprites.
+- Permit extraction only through melee weapons: cutting for trees and piercing
+  for mineral deposits.
+- Apply the approved hardness multiplier before rarity, depth, region and
+  skill; generic scenery rocks never yield random metals.
+- Keep the compact catalog centred on iron, coal, copper, tin, silver, gold,
+  gems, sulfur and saltpeter; do not add common stone or sand until they have a
+  meaningful crafting chain.
+- Add marine biomes and 3D algae sources, providing a natural later route to
+  iodine while shops remain the early Buenos Aires source for remote goods.
+- Preserve shops as the buy/sell route for every material regardless of local
+  natural availability.
+- Validate depletion, regeneration, persistence, multiplayer authority and
+  pickup-count limits before populating complete biomes.
+
+Detailed contract:
+[`V5_RESOURCES_AND_MARINE_BIOMES.md`](V5_RESOURCES_AND_MARINE_BIOMES.md).
 
 ## 5. Parallel validation tracks
 

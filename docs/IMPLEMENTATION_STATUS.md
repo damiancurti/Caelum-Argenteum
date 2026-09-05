@@ -1,9 +1,89 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Renewable trees and compact mineral veins 4.31.0f
+
+**Implemented; deterministic source, geometry and package audit passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+The author accepted all fourteen 4.31.0e checks. Version 4.31.0f turns every
+tree family into a persistent renewable wood source and introduces eleven
+distinct mineral deposits: iron, mineral coal, copper, tin, silver, gold,
+opal, topaz, sapphire, ruby and emerald. Each mineral has three deterministic
+3D outcrop variants, for 33 new actors, 33 OBJ meshes, eleven 256x256 original
+materials and eleven transparent model anchors. No mineral node is placed in
+MAP01 or MAP02; Buenos Aires therefore retains the agreed mining scarcity.
+
+Extraction is connected only to the authoritative physical melee trace.
+Trees accept slashing damage and have hardness 2.5; deposits accept piercing
+damage. The released amount uses `strike damage × (1 - hardness/10) ×
+abundance`. Fractions are stored on the source rather than rerolled or lost,
+so rare deposits remain deterministic. Ranged attacks, magic, thrown
+javelins, blunt attacks and the five generic scenic rock families never
+produce materials. A successful resource strike still wears the equipped
+weapon and can transmit physical push to a movable deposit, but it does not
+create combat activity or Adrenaline.
+
+Maximum recoverable units derive from the physical cylinder mass and the
+resource concentration; the mapper can replace that maximum by supplying
+whole kilograms in actor argument 4. Since one material unit weighs 0.001 kg,
+the conversion remains dimensionally consistent. Every loaded partially
+depleted source recovers exactly 0.1% of its own maximum over the canonical
+24-hour game day (24 x 180 real seconds), in staggered one-second updates.
+Source capacity, remaining units and fractional carry are ordinary serialized
+actor fields and therefore survive save/load.
+
+Cardon, churqui, chanar, espinillo and ceibo now expose their approved current
+sizes under `Adult`, `Adult2` and `Adult3` names. Their previous class names
+remain valid compatibility aliases, while existing DoomEdNums point at the
+new adult names without changing appearance or collision. Fifteen new
+`Young` actors reuse the same three branch meshes at exactly half scale and
+use DoomEdNums 18460-18474. Mineral nodes use 18500-18532. All 78 previously
+approved environmental OBJ files and both maps remain byte-identical.
+
+## Adult vegetation and environmental impact bodies 4.31.0e
+
+**Implemented; deterministic structural and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+The author accepted all twelve 4.31.0d tests. Version 4.31.0e preserves every
+existing environmental mesh, texture, class scale and DoomEdNum, then adds 48
+adult tree actors for sixteen species. Names use `Adult`, `Adult2` and
+`Adult3`; their target sizes remain 100/75/125% around species-specific adult
+heights from 8 to 32 metres. Cardón, churqui, chañar, espinillo and ceibo keep
+only their original three variants because those already occupy useful real
+size ranges. Adult actors use DoomEdNums 18412–18459 and reuse the existing
+three OBJ meshes of each species through `MODELDEF`; no visual file is copied
+or regenerated.
+
+All 186 environmental actors now store a rounded kilogram mass derived from
+their collision cylinder using the project scale of 32 MU per metre and a
+nominal density for the represented rock or species. The generated range is
+449–303,009,143 kg and remains inside the signed 32-bit actor-mass range.
+Trees are rooted static targets: player and combat-actor collision resolves
+through the same `ResolveStatic` path as a wall, applies the normal Caelum
+impact damage curve and never changes tree velocity. Rocks are dynamic targets:
+`ResolveBodies` transfers action and reaction according to both masses. Use
+interaction requires `PhysicalPushMultiplier >= mass/100` and scales received
+thrust inversely with mass. Passive callbacks from a moving rock are accepted
+by player/NPC receivers so a rock can initiate the collision.
+
+The generator produces 75 rock actors, 111 tree actors, 186 unique class/model
+records and 186 unique environmental DoomEdNums: 26 historical base numbers
+plus 160 generated assignments in 18300–18459. Automated checks
+confirm exact preservation of all 78 OBJ and 26 environmental PNG assets,
+unchanged MAP01/MAP02 bytes, valid model paths, finite scales, adult height
+ratios, cylinder masses and stable DoomEdNums 18041–18070/18300–18459.
+
+Harvesting remains disabled. Only-melee extraction, cutting trees, piercing
+mineral deposits, hardness/rarity/depth rules, new menas, algae and marine
+biomes are now an explicit Version 5 track. Its fixed decisions are recorded
+in `V5_RESOURCES_AND_MARINE_BIOMES.md`; no provisional drops or probabilities
+enter the 4.31.0e runtime.
+
 ## Environmental variants, south hill and progressive drowning 4.31.0d
 
 **Implemented; exact GZDoom 4.14.2 compile, MAP01 load and drowning audit
-passed; focused Windows visual and traversal acceptance pending**
+passed; accepted by the author after all twelve focused tests**
 
 The regional library now contains 63 tree actors and 75 rock actors. Every one
 of the twenty-one accepted tree species retains its original class and adds a

@@ -341,6 +341,85 @@ TREE_COLLISION_RADII: Dict[str, float] = {
     "ca_tree_city_plane": 20.0,
 }
 
+# Alturas centrales de ejemplares adultos. Las cinco especies ausentes de esta
+# tabla ya tienen una escala utilizable dentro de su rango real en las tres
+# variantes originales. Cada adulto reutiliza la malla propia 1/2/3 de la
+# especie y sólo cambia la escala física y visual, de modo que los actores
+# aprobados de 4.31.0d permanecen byte-idénticos.
+ADULT_TREE_HEIGHTS_METERS: Dict[str, float] = {
+    "ca_tree_jungle_lapacho": 18.0,
+    "ca_tree_jungle_palo_rosa": 32.0,
+    "ca_tree_jungle_timbo": 18.0,
+    "ca_tree_tundra_lenga": 20.0,
+    "ca_tree_tundra_nire": 10.0,
+    "ca_tree_tundra_guindo": 20.0,
+    "ca_tree_mountain_pehuen": 32.0,
+    "ca_tree_mountain_cypress": 18.0,
+    "ca_tree_mountain_coihue": 30.0,
+    "ca_tree_plains_ombu": 12.0,
+    "ca_tree_plains_tala": 8.0,
+    "ca_tree_coast_coronillo": 8.0,
+    "ca_tree_coast_willow": 15.0,
+    "ca_tree_city_jacaranda": 15.0,
+    "ca_tree_city_tipa": 20.0,
+    "ca_tree_city_plane": 22.0,
+}
+
+# Estas cinco especies ya tenían una escala adulta correcta en 4.31.0e. Sus
+# nombres históricos se conservan como alias de compatibilidad, mientras el
+# editor pasa a mostrar Adult/Adult2/Adult3 y suma Young/Young2/Young3 a 50%.
+EXISTING_ADULT_TREE_STEMS: Tuple[str, ...] = (
+    "ca_tree_desert_cardon",
+    "ca_tree_desert_churqui",
+    "ca_tree_desert_chanar",
+    "ca_tree_plains_espinillo",
+    "ca_tree_coast_ceibo",
+)
+
+# Densidades nominales en kg/m3 para convertir el cilindro de colisión en masa
+# física. Son valores redondeados de tejido o madera representativa; el modelo
+# deliberadamente no intenta reconstruir huecos, raíces ni cada rama.
+ROCK_DENSITIES_KG_M3: Dict[str, float] = {
+    "ca_rock_granite": 2700.0,
+    "ca_rock_sandstone": 2300.0,
+    "ca_rock_basalt": 3000.0,
+    "ca_rock_quartz": 2650.0,
+    "ca_rock_coastal": 2500.0,
+}
+
+TREE_DENSITIES_KG_M3: Dict[str, float] = {
+    "ca_tree_desert_cardon": 300.0,
+    "ca_tree_desert_churqui": 850.0,
+    "ca_tree_desert_chanar": 850.0,
+    "ca_tree_jungle_lapacho": 1000.0,
+    "ca_tree_jungle_palo_rosa": 800.0,
+    "ca_tree_jungle_timbo": 450.0,
+    "ca_tree_tundra_lenga": 550.0,
+    "ca_tree_tundra_nire": 600.0,
+    "ca_tree_tundra_guindo": 550.0,
+    "ca_tree_mountain_pehuen": 550.0,
+    "ca_tree_mountain_cypress": 500.0,
+    "ca_tree_mountain_coihue": 600.0,
+    "ca_tree_plains_ombu": 400.0,
+    "ca_tree_plains_tala": 850.0,
+    "ca_tree_plains_espinillo": 850.0,
+    "ca_tree_coast_coronillo": 900.0,
+    "ca_tree_coast_willow": 450.0,
+    "ca_tree_coast_ceibo": 350.0,
+    "ca_tree_city_jacaranda": 500.0,
+    "ca_tree_city_tipa": 550.0,
+    "ca_tree_city_plane": 560.0,
+}
+
+MAP_UNITS_PER_METER = 32.0
+
+
+def cylinder_mass_kg(radius_mu: float, height_mu: float, density: float) -> int:
+    radius_m = radius_mu / MAP_UNITS_PER_METER
+    height_m = height_mu / MAP_UNITS_PER_METER
+    volume_m3 = math.pi * radius_m * radius_m * height_m
+    return max(1, round(volume_m3 * density))
+
 
 ROCK_CROPS: Dict[str, Tuple[int, int, int, int]] = {
     "rock_granite.png": (5, 5, 250, 310),
@@ -1091,8 +1170,14 @@ def rock_records() -> List[dict[str, object]]:
                     "scale": scale,
                     "radius": ROCK_COLLISION_RADII[spec.file_stem] * scale,
                     "height": spec.height * scale,
+                    "mass": cylinder_mass_kg(
+                        ROCK_COLLISION_RADII[spec.file_stem] * scale,
+                        spec.height * scale,
+                        ROCK_DENSITIES_KG_M3[spec.file_stem],
+                    ),
                     "tag": f"$CA_{spec.file_stem.removeprefix('ca_').upper()}",
                     "is_base": tier.scale == 1.0 and variant.suffix == "",
+                    "kind": "rock",
                 })
     return records
 
@@ -1112,8 +1197,101 @@ def tree_records() -> List[dict[str, object]]:
                 "scale": variant.scale,
                 "radius": TREE_COLLISION_RADII[spec.file_stem] * variant.scale,
                 "height": spec.height * variant.scale,
+                "mass": cylinder_mass_kg(
+                    TREE_COLLISION_RADII[spec.file_stem] * variant.scale,
+                    spec.height * variant.scale,
+                    TREE_DENSITIES_KG_M3[spec.file_stem],
+                ),
                 "tag": f"$CA_{spec.file_stem.removeprefix('ca_').upper()}",
                 "is_base": variant.suffix == "",
+                "kind": "tree",
+            })
+
+    # Los adultos se agregan después de las 63 clases históricas para conservar
+    # intactos todos los DoomEdNums 18370-18411 de las variantes existentes.
+    for spec in TREES:
+        adult_height_m = ADULT_TREE_HEIGHTS_METERS.get(spec.file_stem)
+        if adult_height_m is None:
+            continue
+        base_actor = actor_name(spec.file_stem)
+        adult_scale = adult_height_m * MAP_UNITS_PER_METER / spec.height
+        for variant in VISUAL_VARIANTS:
+            model_spec = tree_variant_spec(spec, variant)
+            scale = adult_scale * variant.scale
+            radius = TREE_COLLISION_RADII[spec.file_stem] * scale
+            height = spec.height * scale
+            records.append({
+                "actor": f"{base_actor}Adult{variant.suffix}",
+                "base_actor": base_actor,
+                "model": f"{model_spec.file_stem}.obj",
+                "frame_prefix": "CAVT",
+                "frame": spec.frame,
+                "scale": scale,
+                "radius": radius,
+                "height": height,
+                "mass": cylinder_mass_kg(
+                    radius,
+                    height,
+                    TREE_DENSITIES_KG_M3[spec.file_stem],
+                ),
+                "tag": f"$CA_{spec.file_stem.removeprefix('ca_').upper()}",
+                "is_base": False,
+                "kind": "tree",
+            })
+    return records
+
+
+def tree_age_alias_records() -> List[dict[str, object]]:
+    records: List[dict[str, object]] = []
+    selected = {
+        spec.file_stem: spec
+        for spec in TREES
+        if spec.file_stem in EXISTING_ADULT_TREE_STEMS
+    }
+    for file_stem in EXISTING_ADULT_TREE_STEMS:
+        spec = selected[file_stem]
+        base_actor = actor_name(spec.file_stem)
+        tag_root = f"CA_{spec.file_stem.removeprefix('ca_').upper()}"
+        for variant in VISUAL_VARIANTS:
+            model_spec = tree_variant_spec(spec, variant)
+            legacy_actor = f"{base_actor}{variant.suffix}"
+            adult_scale = variant.scale
+            young_scale = adult_scale * 0.5
+            records.append({
+                "actor": f"{base_actor}Adult{variant.suffix}",
+                "legacy_actor": legacy_actor,
+                "model": f"{model_spec.file_stem}.obj",
+                "frame_prefix": "CAVT",
+                "frame": spec.frame,
+                "scale": adult_scale,
+                "radius": TREE_COLLISION_RADII[spec.file_stem] * adult_scale,
+                "height": spec.height * adult_scale,
+                "mass": cylinder_mass_kg(
+                    TREE_COLLISION_RADII[spec.file_stem] * adult_scale,
+                    spec.height * adult_scale,
+                    TREE_DENSITIES_KG_M3[spec.file_stem],
+                ),
+                "tag": f"${tag_root}_ADULT",
+                "age": "adult",
+                "kind": "tree",
+            })
+            records.append({
+                "actor": f"{base_actor}Young{variant.suffix}",
+                "legacy_actor": legacy_actor,
+                "model": f"{model_spec.file_stem}.obj",
+                "frame_prefix": "CAVT",
+                "frame": spec.frame,
+                "scale": young_scale,
+                "radius": TREE_COLLISION_RADII[spec.file_stem] * young_scale,
+                "height": spec.height * young_scale,
+                "mass": cylinder_mass_kg(
+                    TREE_COLLISION_RADII[spec.file_stem] * young_scale,
+                    spec.height * young_scale,
+                    TREE_DENSITIES_KG_M3[spec.file_stem],
+                ),
+                "tag": f"${tag_root}_YOUNG",
+                "age": "young",
+                "kind": "tree",
             })
     return records
 
@@ -1124,19 +1302,209 @@ def environment_records() -> List[dict[str, object]]:
 
 def write_actor_definitions(runtime_root: Path) -> None:
     lines = [
-        "// Objetos físicos originales para poblar los biomas. En esta etapa son",
-        "// geometría sólida y convocable: la recolección, herramientas, cantidades y",
-        "// regeneración se definirán cuando exista el sistema de nodos de recursos.",
-        "class CaelumEnvironmentProp : Actor",
+        "// Objetos físicos originales para poblar los biomas. Las masas usan el",
+        "// cilindro de colisión a 32 MU/m y una densidad nominal del material.",
+        "// Los nodos renovables guardan capacidad, fracciones y regeneración.",
+        "class CaelumEnvironmentProp : CaelumMovableProp",
         "{",
+        "    bool ResourceStateInitialized;",
+        "    double ResourceRemainingUnits;",
+        "    double ResourceYieldCarry;",
+        "",
+        "    virtual bool IsEnvironmentMovable() { return false; }",
+        "    virtual bool IsNaturalResource() { return false; }",
+        "    virtual int GetResourceMaterialType() { return -1; }",
+        "    virtual int GetRequiredHarvestDamageType()",
+        "    {",
+        "        return CaelumConstants.CATALOGUE_DAMAGE_NONE;",
+        "    }",
+        "    virtual double GetResourceHardness() { return 0.0; }",
+        "    virtual double GetResourceAbundance() { return 1.0; }",
+        "",
+        "    double GetEnvironmentMassKg()",
+        "    {",
+        "        return Max(1.0, double(Mass));",
+        "    }",
+        "",
+        "    double GetEnvironmentImpactMultiplier() { return 1.0; }",
+        "",
+        "    double GetResourceCapacityUnits()",
+        "    {",
+        "        if (!IsNaturalResource()) { return 0.0; }",
+        "        // Arg4 permite al mapeador reemplazar la capacidad en kg.",
+        "        double capacityKg = args[4] > 0",
+        "            ? double(args[4])",
+        "            : GetEnvironmentMassKg() * Max(0.0, GetResourceAbundance());",
+        "        return capacityKg / CaelumConstants.MATERIAL_UNIT_WEIGHT;",
+        "    }",
+        "",
+        "    double GetResourceHardnessMultiplier()",
+        "    {",
+        "        return Clamp(1.0 - GetResourceHardness() / 10.0, 0.0, 1.0);",
+        "    }",
+        "",
+        "    void EnsureResourceState()",
+        "    {",
+        "        if (ResourceStateInitialized || !IsNaturalResource()) { return; }",
+        "        ResourceStateInitialized = true;",
+        "        ResourceRemainingUnits = GetResourceCapacityUnits();",
+        "        ResourceYieldCarry = 0.0;",
+        "    }",
+        "",
+        "    bool SpawnExtractedMaterial(Actor extractor, int amount)",
+        "    {",
+        "        if (extractor == null || amount <= 0) { return false; }",
+        "        double deltaX = extractor.Pos.X - Pos.X;",
+        "        double deltaY = extractor.Pos.Y - Pos.Y;",
+        "        double distance = Sqrt(deltaX * deltaX + deltaY * deltaY);",
+        "        if (distance <= 0.0001)",
+        "        {",
+        "            deltaX = Cos(Angle);",
+        "            deltaY = Sin(Angle);",
+        "            distance = 1.0;",
+        "        }",
+        "        double offset = Radius + 20.0;",
+        "        Vector3 dropPos = (",
+        "            Pos.X + deltaX / distance * offset,",
+        "            Pos.Y + deltaY / distance * offset,",
+        "            Pos.Z + 8.0",
+        "        );",
+        "        CaelumMaterialPickup material = CaelumMaterialPickup(",
+        "            Spawn(\"CaelumMaterialPickup\", dropPos, NO_REPLACE)",
+        "        );",
+        "        if (material == null) { return false; }",
+        "        material.args[0] = GetResourceMaterialType();",
+        "        material.args[1] = 1;",
+        "        material.Amount = amount;",
+        "        material.InMagicBox = false;",
+        "        material.UpdateMaterialVisuals();",
+        "        return true;",
+        "    }",
+        "",
+        "    double TryExtractResource(",
+        "        Actor extractor,",
+        "        int damageKind,",
+        "        double strikePower",
+        "    )",
+        "    {",
+        "        EnsureResourceState();",
+        "        if (!IsNaturalResource()",
+        "            || extractor == null",
+        "            || damageKind != GetRequiredHarvestDamageType()",
+        "            || strikePower <= 0.0",
+        "            || ResourceRemainingUnits <= 0.0)",
+        "        {",
+        "            return 0.0;",
+        "        }",
+        "",
+        "        // La abundancia fija la capacidad del yacimiento. La dureza y",
+        "        // la abundancia también determinan cuánto libera cada golpe.",
+        "        double released = strikePower",
+        "            * GetResourceHardnessMultiplier()",
+        "            * Max(0.0, GetResourceAbundance());",
+        "        double removed = Min(ResourceRemainingUnits, released);",
+        "        if (removed <= 0.0) { return 0.0; }",
+        "",
+        "        double combined = ResourceYieldCarry + removed;",
+        "        int wholeUnits = int(Floor(combined));",
+        "        if (wholeUnits > 0",
+        "            && !SpawnExtractedMaterial(extractor, wholeUnits))",
+        "        {",
+        "            return 0.0;",
+        "        }",
+        "        ResourceRemainingUnits -= removed;",
+        "        ResourceYieldCarry = combined - wholeUnits;",
+        "        return removed;",
+        "    }",
+        "",
+        "    override void PostBeginPlay()",
+        "    {",
+        "        Super.PostBeginPlay();",
+        "        EnsureResourceState();",
+        "    }",
+        "",
+        "    override void Tick()",
+        "    {",
+        "        Super.Tick();",
+        "        if (!IsNaturalResource()) { return; }",
+        "        EnsureResourceState();",
+        "        double capacity = GetResourceCapacityUnits();",
+        "        if (ResourceRemainingUnits >= capacity",
+        "            || (level.time + Mass) % TICRATE != 0)",
+        "        {",
+        "            return;",
+        "        }",
+        "        // Se actualiza una vez por segundo y se escalona por masa para",
+        "        // evitar que una arboleda completa haga trabajo el mismo tic.",
+        "        double recoveryPerUpdate = capacity",
+        "            * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY",
+        "            / (CaelumConstants.GAME_HOURS_PER_DAY",
+        "                * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR);",
+        "        ResourceRemainingUnits = Min(",
+        "            capacity, ResourceRemainingUnits + recoveryPerUpdate",
+        "        );",
+        "    }",
+        "",
+        "    override double GetRequiredPhysicalPower()",
+        "    {",
+        "        if (!IsEnvironmentMovable()) { return -1.0; }",
+        "        return GetEnvironmentMassKg() / 100.0;",
+        "    }",
+        "",
+        "    override bool TryPushFrom(",
+        "        Actor pusher,",
+        "        double physicalPower,",
+        "        double pushForce",
+        "    )",
+        "    {",
+        "        if (pusher == null || !CanBePushedWith(physicalPower))",
+        "        {",
+        "            return false;",
+        "        }",
+        "",
+        "        double pushAngle = VectorAngle(",
+        "            Pos.X - pusher.Pos.X,",
+        "            Pos.Y - pusher.Pos.Y",
+        "        );",
+        "        double massScale = 100.0 / GetEnvironmentMassKg();",
+        "        Thrust(Max(0.0, pushForce) * massScale, pushAngle);",
+        "        return true;",
+        "    }",
+        "",
         "    Default",
         "    {",
-        "        Mass 10000;",
+        "        Health 1;",
         "        +SOLID",
         "        +CANNOTPUSH",
         "        +DONTTHRUST",
         "        RenderStyle \"Normal\";",
         "    }",
+        "}",
+        "",
+        "class CaelumRockEnvironmentProp : CaelumEnvironmentProp",
+        "{",
+        "    override bool IsEnvironmentMovable() { return true; }",
+        "",
+        "    Default",
+        "    {",
+        "        -CANNOTPUSH",
+        "        -DONTTHRUST",
+        "    }",
+        "}",
+        "",
+        "class CaelumTreeEnvironmentProp : CaelumEnvironmentProp",
+        "{",
+        "    override bool IsEnvironmentMovable() { return false; }",
+        "    override bool IsNaturalResource() { return true; }",
+        "    override int GetResourceMaterialType()",
+        "    {",
+        "        return CaelumConstants.MATERIAL_WOOD;",
+        "    }",
+        "    override int GetRequiredHarvestDamageType()",
+        "    {",
+        "        return CaelumConstants.CATALOGUE_DAMAGE_SLASHING;",
+        "    }",
+        "    override double GetResourceHardness() { return 2.5; }",
         "}",
         "",
     ]
@@ -1147,14 +1515,20 @@ def write_actor_definitions(runtime_root: Path) -> None:
             by_base.setdefault(str(record["base_actor"]), []).append(record)
         for base_actor, group in by_base.items():
             base = next(record for record in group if record["is_base"])
+            environment_base = (
+                "CaelumRockEnvironmentProp"
+                if base["kind"] == "rock"
+                else "CaelumTreeEnvironmentProp"
+            )
             lines.extend([
-                f"class {base_actor} : CaelumEnvironmentProp",
+                f"class {base_actor} : {environment_base}",
                 "{",
                 "    Default",
                 "    {",
                 f"        Tag \"{base['tag']}\";",
                 f"        Radius {scalar(float(base['radius']))};",
                 f"        Height {scalar(float(base['height']))};",
+                f"        Mass {int(base['mass'])};",
                 "    }",
                 "    States",
                 "    {",
@@ -1173,10 +1547,34 @@ def write_actor_definitions(runtime_root: Path) -> None:
                     "    {",
                     f"        Radius {scalar(float(record['radius']))};",
                     f"        Height {scalar(float(record['height']))};",
+                    f"        Mass {int(record['mass'])};",
                     "    }",
                     "}",
                     "",
                 ])
+
+    # Los nombres históricos continúan siendo clases válidas para partidas y
+    # mapas existentes. Los alias Adult sustituyen su nombre de editor y las
+    # versiones Young reducen radio, altura y masa a la mitad de escala.
+    for record in tree_age_alias_records():
+        lines.extend([
+            f"class {record['actor']} : {record['legacy_actor']}",
+            "{",
+            "    Default",
+            "    {",
+            f"        Tag \"{record['tag']}\";",
+        ])
+        if record["age"] == "young":
+            lines.extend([
+                f"        Radius {scalar(float(record['radius']))};",
+                f"        Height {scalar(float(record['height']))};",
+                f"        Mass {int(record['mass'])};",
+            ])
+        lines.extend([
+            "    }",
+            "}",
+            "",
+        ])
 
     output = runtime_root / "caelum/world/CaelumEnvironmentProps.zs"
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -1203,9 +1601,10 @@ def write_model_definitions(runtime_root: Path) -> None:
     lines = [
         MODEL_BEGIN,
         "// Cinco formas rocosas en cinco escalas y tres variantes, más",
-        "// veintiuna especies regionales en tres variantes cada una.",
+        "// veintiuna especies regionales en tres variantes cada una y",
+        "// adultos y jóvenes que reutilizan esas mallas aprobadas.",
     ]
-    for record in environment_records():
+    for record in environment_records() + tree_age_alias_records():
         scale = scalar(float(record["scale"]))
         lines.extend([
             f"Model {record['actor']}",
@@ -1254,16 +1653,29 @@ def write_editor_numbers(runtime_root: Path) -> None:
     lines = [
         MAPINFO_BEGIN,
         "    // Repertorio físico ambiental; las asignaciones históricas se conservan.",
+        "    // Cinco familias muestran Adult en sus números previos y suman Young.",
     ]
+    age_records = tree_age_alias_records()
+    adult_replacements = {
+        str(record["legacy_actor"]): str(record["actor"])
+        for record in age_records
+        if record["age"] == "adult"
+    }
     next_number = 18300
     for record in environment_records():
-        actor = str(record["actor"])
+        legacy_actor = str(record["actor"])
+        actor = adult_replacements.get(legacy_actor, legacy_actor)
         if record["is_base"]:
-            number = base_numbers[actor]
+            number = base_numbers[legacy_actor]
         else:
             number = next_number
             next_number += 1
         lines.append(f"    {number} = {actor}")
+    for record in age_records:
+        if record["age"] != "young":
+            continue
+        lines.append(f"    {next_number} = {record['actor']}")
+        next_number += 1
     lines.append(MAPINFO_END)
     path.write_text(
         prefix.rstrip() + "\n" + "\n".join(lines) + suffix,

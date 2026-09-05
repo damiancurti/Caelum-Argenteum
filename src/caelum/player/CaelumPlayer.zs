@@ -10471,6 +10471,7 @@ class CaelumPlayer : DoomPlayer
     bool IsCaelumCollisionBody(Actor other)
     {
         CaelumCombatActor combatActor = CaelumCombatActor(other);
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
         return other != null
             && other != self
             && other.health > 0
@@ -10478,11 +10479,18 @@ class CaelumPlayer : DoomPlayer
                 || !combatActor.DisableCaelumImpactContacts)
             && (CaelumPlayer(other) != null
                 || combatActor != null
-                || CaelumTrainingDummy(other) != null);
+                || CaelumTrainingDummy(other) != null
+                || environment != null);
     }
 
     double GetOtherCollisionEffectiveMass(Actor other)
     {
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        if (environment != null)
+        {
+            return environment.GetEnvironmentMassKg();
+        }
+
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null) { return otherPlayer.GetCombatMass(); }
 
@@ -10502,6 +10510,12 @@ class CaelumPlayer : DoomPlayer
 
     double GetOtherCollisionDamageMultiplier(Actor other)
     {
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        if (environment != null)
+        {
+            return Max(0.0, environment.GetEnvironmentImpactMultiplier());
+        }
+
         CaelumPlayer otherPlayer = CaelumPlayer(other);
         if (otherPlayer != null)
         {
@@ -10867,17 +10881,121 @@ class CaelumPlayer : DoomPlayer
         return ImpactResultScratch;
     }
 
+    // Los árboles arraigados son actores, pero físicamente se comportan como
+    // el límite estático de una pared. Conservamos el actor para modelo, masa
+    // y futura recolección sin transmitirle velocidad ni repetir daño mientras
+    // el mismo contacto siga activo.
+    void ResolveRootedEnvironmentImpact(CaelumEnvironmentProp environment)
+    {
+        if (environment == null || environment.health <= 0) { return; }
+
+        ImpactContactState contactState = GetImpactContactState(environment);
+        if (contactState != null)
+        {
+            contactState.RegisterCollision(level.time);
+            ImpactDiagnosticDuplicateCallbacks++;
+            return;
+        }
+
+        double dx = environment.Pos.X - Pos.X;
+        double dy = environment.Pos.Y - Pos.Y;
+        double distanceSquared = dx * dx + dy * dy;
+        if (distanceSquared <= 0.00000001)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+
+        double distance = Sqrt(distanceSquared);
+        double normalX = dx / distance;
+        double normalY = dy / distance;
+        double closingSpeed = Vel.X * normalX + Vel.Y * normalY;
+        if (closingSpeed <= CaelumConstants.IMPACT_MIN_DELTA_SPEED)
+        {
+            ImpactDiagnosticRestingCallbacks++;
+            return;
+        }
+        ImpactDiagnosticUniquePairTicks++;
+
+        ImpactBody selfBody = BuildImpactPhysicsBody();
+        ImpactResult impact = GetImpactResultScratch();
+        if (selfBody == null || impact == null) { return; }
+        ImpactPhysics.ResolveStatic(
+            selfBody,
+            (normalX, normalY, 0.0),
+            impact
+        );
+        if (!impact.Valid) { return; }
+
+        contactState = LatchImpactContact(environment);
+        if (contactState != null)
+        {
+            contactState.RegisterCollision(level.time);
+            contactState.LastClosingSpeed = impact.ClosingSpeed;
+            contactState.LastTransmittedImpulse = impact.Impulse;
+        }
+
+        Vel.X -= impact.Normal.X * impact.SourceDeltaSpeed;
+        Vel.Y -= impact.Normal.Y * impact.SourceDeltaSpeed;
+
+        double contactMinimum = 0.0;
+        double contactMaximum = 1.0;
+        double overlapBottom = Max(Pos.Z, environment.Pos.Z);
+        double overlapTop = Min(
+            Pos.Z + selfBody.Height,
+            environment.Pos.Z + Max(1.0, environment.Height)
+        );
+        if (overlapTop > overlapBottom)
+        {
+            contactMinimum = Clamp(
+                (overlapBottom - Pos.Z) / selfBody.Height,
+                0.0,
+                1.0
+            );
+            contactMaximum = Clamp(
+                (overlapTop - Pos.Z) / selfBody.Height,
+                0.0,
+                1.0
+            );
+        }
+
+        ReceiveCaelumImpact(
+            impact.SourceDeltaSpeed,
+            CaelumConstants.IMPACT_KIND_ACTOR,
+            environment,
+            environment.GetEnvironmentImpactMultiplier(),
+            selfBody.Mass,
+            environment.GetEnvironmentMassKg(),
+            impact.ClosingSpeed,
+            impact.Impulse,
+            contactMinimum,
+            contactMaximum
+        );
+    }
+
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
 
-        // CollidedWith se ejecuta en ambos actores. Sólo el lado activo
-        // resuelve el par para evitar duplicar acción-reacción.
-        if (passive || !IsCaelumCollisionBody(other) || health <= 0)
+        // CollidedWith se ejecuta en ambos actores. Normalmente sólo el lado
+        // activo resuelve; una roca ambiental no posee receptor biológico, así
+        // que el jugador acepta el callback pasivo cuando la roca lo alcanza.
+        CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
+        bool resolvePassiveRock = environment != null
+            && environment.IsEnvironmentMovable();
+        if ((passive && !resolvePassiveRock)
+            || !IsCaelumCollisionBody(other) || health <= 0)
         {
             return;
         }
         ImpactDiagnosticCollisionCallbacks++;
+
+        if (environment != null && !environment.IsEnvironmentMovable())
+        {
+            ResolveRootedEnvironmentImpact(environment);
+            return;
+        }
+
         ImpactContactState contactState = GetImpactContactState(other);
         if (contactState != null)
         {
@@ -15138,6 +15256,18 @@ class CaelumPlayer : DoomPlayer
         );
         LastMeleeActualDamage = actualDamage;
 
+        int harvestDamageKind = secondaryAttack
+            ? CaelumWeaponCatalogue.GetSecondaryDamageType(catalogueWeapon)
+            : CaelumWeaponCatalogue.GetPrimaryDamageType(catalogueWeapon);
+        CaelumEnvironmentProp resourceTarget = CaelumEnvironmentProp(
+            targetData.linetarget
+        );
+        double extractedResourceUnits = resourceTarget != null
+            ? resourceTarget.TryExtractResource(
+                self, harvestDamageKind, integerDamage
+            )
+            : 0.0;
+
         if (LastMeleeHit && LastMeleeActualDamage > 0)
         {
             ApplyWeaponDurabilityFromSuccessfulDamage(
@@ -15164,6 +15294,22 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.ADRENALINE_EVENT_MELEE
             );
             MarkCombatActivity();
+        }
+        else if (extractedResourceUnits > 0.0)
+        {
+            // Una fuente invulnerable no devuelve daño de salud, pero un golpe
+            // de extracción válido sí desgasta el arma y transmite su impulso.
+            ApplyWeaponDurabilityFromSuccessfulDamage(
+                integerDamage,
+                WeaponModel.WeaponType,
+                WeaponModel.Tier,
+                WeaponModel.Size
+            );
+            ApplyAttackPushToTarget(
+                targetData.linetarget,
+                attackAngle,
+                DerivedStats.PhysicalPushMultiplier
+            );
         }
     }
 

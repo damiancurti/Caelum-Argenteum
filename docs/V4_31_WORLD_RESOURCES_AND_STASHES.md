@@ -136,10 +136,110 @@ la roca o el tronco. Para rocas de escala 20× que deban funcionar como terreno
 recorrible o cuevas, conviene acompañar el modelo con geometría de mapa o
 líneas de bloqueo específicas; el OBJ no aporta colisión triangular al motor.
 
+## Escala adulta y física ambiental en 4.31.0e
+
+El autor aprobó las doce pruebas de 4.31.0d. Los 63 árboles ya existentes
+conservan exactamente sus clases, mallas, materiales y escalas. En lugar de
+convertirlos retroactivamente, 4.31.0e añade 48 actores para ejemplares adultos
+de las dieciséis especies cuya altura anterior representaba un árbol joven o
+el extremo bajo de su rango. Cada familia reutiliza las tres mallas aprobadas:
+`Adult` es el tamaño central, `Adult2` mide 75% y `Adult3`, 125%.
+
+| Familia | `Adult2` | `Adult` | `Adult3` |
+|---|---:|---:|---:|
+| Lapacho | 13,5 m | 18 m | 22,5 m |
+| Palo rosa | 24 m | 32 m | 40 m |
+| Timbó | 13,5 m | 18 m | 22,5 m |
+| Lenga | 15 m | 20 m | 25 m |
+| Ñire | 7,5 m | 10 m | 12,5 m |
+| Guindo | 15 m | 20 m | 25 m |
+| Pehuén | 24 m | 32 m | 40 m |
+| Ciprés de la cordillera | 13,5 m | 18 m | 22,5 m |
+| Coihue | 22,5 m | 30 m | 37,5 m |
+| Ombú | 9 m | 12 m | 15 m |
+| Tala | 6 m | 8 m | 10 m |
+| Coronillo | 6 m | 8 m | 10 m |
+| Sauce criollo | 11,25 m | 15 m | 18,75 m |
+| Jacarandá | 11,25 m | 15 m | 18,75 m |
+| Tipa | 15 m | 20 m | 25 m |
+| Plátano | 16,5 m | 22 m | 27,5 m |
+
+El patrón de clase es `CaelumTree<Bioma><Especie>Adult`, seguido opcionalmente
+por `2` o `3`; por ejemplo, `CaelumTreeMountainPehuenAdult3`. Sus DoomEdNums
+ocupan 18412–18459 sin cambiar ninguna asignación previa. El catálogo alcanza
+111 actores arbóreos y conserva los mismos 63 OBJ de vegetación: las escalas
+adultas se expresan en `MODELDEF`, por lo que no duplican geometría.
+
+Todos los objetos ambientales reciben ahora una masa en kilogramos calculada
+como `densidad × π × (radio/32)^2 × (altura/32)`. El radio y la altura son los
+del cilindro de colisión, y las densidades nominales se redondean por especie o
+familia de roca. Esta aproximación deliberada no suma por separado raíces,
+ramas, huecos ni irregularidades invisibles del OBJ.
+
+Los árboles continúan arraigados: participan en Impact Physics como un límite
+estático equivalente a una pared, dañan por la desaceleración real y nunca
+reciben velocidad. Las rocas sí son cuerpos movibles. Una colisión horizontal
+resuelve acción y reacción con su masa real aproximada; al usar el comando de
+empuje frente a ellas, el requisito es `masa/100` de Potencia física y la
+velocidad recibida también disminuye con la masa. Una roca que alcanza al
+jugador o a un actor de combate se resuelve desde el receptor, incluso cuando
+el callback nativo llega por el lado pasivo.
+
+La extracción sigue desactivada. Dureza, daño cortante/punzante, recompensas,
+agotamiento, regeneración, menas especiales y algas pertenecen a la expansión
+de recursos de Versión 5 documentada en
+[`V5_RESOURCES_AND_MARINE_BIOMES.md`](V5_RESOURCES_AND_MARINE_BIOMES.md).
+
 Los nodos naturales regeneran con tiempo. El actor debe guardar como mínimo su
 identidad estable, estado disponible/depletado y tic/fecha de regeneración; el
 modelo sólo comunica ese estado y nunca decide la recompensa. En red, una única
 transacción consume el nodo o retira del baúl para impedir duplicaciones.
+
+## Fuentes renovables y vetas compactas en 4.31.0f
+
+Después de aprobar las catorce pruebas de 4.31.0e, todos los árboles pasan a
+ser fuentes renovables de madera. Sólo aceptan el tramo melee cortante. Las
+cinco rocas escénicas siguen sin entregar recursos; en su lugar se incorporan
+vetas 3D inequívocas para hierro, carbón mineral, cobre, estaño, plata, oro,
+ópalo, topacio, zafiro, rubí y esmeralda. Cada recurso tiene tres siluetas y
+escalas de afloramiento, para 33 actores con DoomEdNums 18500-18532.
+
+La extracción usa una sola fórmula:
+
+`unidades por golpe = daño melee x max(0, 1 - dureza/10) x abundancia`
+
+| Recurso | Dureza | Abundancia | Unidades por 100 de daño |
+|---|---:|---:|---:|
+| Madera | 2,5 | 100% | 75 |
+| Hierro | 5,5 | 60% | 27 |
+| Carbón mineral | 2,5 | 60% | 45 |
+| Cobre | 3,5 | 50% | 32,5 |
+| Estaño | 6,5 | 40% | 14 |
+| Plata | 3 | 20% | 14 |
+| Oro | 3 | 10% | 7 |
+| Ópalo | 6 | 7,5% | 3 |
+| Topacio | 8 | 5% | 1 |
+| Zafiro | 9 | 4% | 0,4 |
+| Rubí | 9 | 3% | 0,3 |
+| Esmeralda | 7,5 | 2% | 0,5 |
+
+El resultado no se tira al azar: toda fracción queda guardada hasta completar
+una unidad. La capacidad por defecto es la masa del cilindro convertida a
+gramos y multiplicada por abundancia; `arg4` permite que un mapa reemplace esa
+capacidad expresándola en kilogramos enteros. Cada fuente parcialmente agotada
+y cargada recupera 0,1% de su máximo durante las 24 horas canónicas de juego,
+equivalentes a 72 minutos reales. Desde cero, la recuperación completa requiere
+1.000 días de juego, consecuencia directa del porcentaje pedido.
+
+Cardón, churqui, chañar, espinillo y ceibo conservan visualmente sus tres
+tamaños, pero el editor los muestra como `Adult`, `Adult2` y `Adult3`. Los
+nombres viejos siguen resolviendo partidas o mapas existentes. Cada familia
+suma `Young`, `Young2` y `Young3` a 50% de la escala adulta correspondiente,
+con DoomEdNums 18460-18474.
+
+MAP01 y MAP02 no reciben vetas. Su colocación se reserva para regiones
+geológicas aprobadas y para las futuras reglas de profundidad; Buenos Aires no
+presenta minerales arbitrarios en superficie.
 
 ## Fuentes recomendadas
 

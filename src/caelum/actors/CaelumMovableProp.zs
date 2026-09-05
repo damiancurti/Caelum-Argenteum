@@ -5,13 +5,13 @@ class CaelumMovableProp : Actor
     // args[0] expresa el requisito como PhysicalPushMultiplier × 100.
     // Ejemplo de formato técnico: 150 representa un multiplicador 1.50.
     // Un valor <= 0 se considera sin configurar y bloquea el movimiento.
-    double GetRequiredPhysicalPower()
+    virtual double GetRequiredPhysicalPower()
     {
         if (args[0] <= 0) { return -1.0; }
         return args[0] / 100.0;
     }
 
-    bool CanBePushedWith(double physicalPower)
+    virtual bool CanBePushedWith(double physicalPower)
     {
         double requiredPower = GetRequiredPhysicalPower();
         return requiredPower > 0.0
@@ -20,7 +20,11 @@ class CaelumMovableProp : Actor
 
     // Aplica un único impulso reutilizando la potencia física calculada por el
     // jugador. No modifica la fórmula ni crea una segunda estadística de fuerza.
-    bool TryPushFrom(Actor pusher, double physicalPower, double pushForce)
+    virtual bool TryPushFrom(
+        Actor pusher,
+        double physicalPower,
+        double pushForce
+    )
     {
         if (pusher == null || !CanBePushedWith(physicalPower))
         {

@@ -791,6 +791,9 @@ class CaelumConstants : Object
 
     // Definitive world clock: one game hour equals three real minutes.
     const REAL_SECONDS_PER_GAME_HOUR = 180.0;
+    const GAME_HOURS_PER_DAY = 24.0;
+    // Every loaded natural source recovers 0.1% of its own maximum per day.
+    const NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY = 0.001;
     const HUNGER_EMPTY_GAME_HOURS = 24.0;
     const THIRST_EMPTY_GAME_HOURS = 12.0;
     const SLEEP_EMPTY_GAME_HOURS = 16.0;

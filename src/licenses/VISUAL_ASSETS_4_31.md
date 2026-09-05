@@ -74,3 +74,33 @@ necesario si un desarrollador decide regenerarlos desde el atlas maestro.
 La regeneración sigue siendo determinista mediante
 `tools/generate_environment_models.py`. Los OBJ resultantes ya están incluidos
 y no es necesario disponer de Python para instalar ni jugar el parche.
+
+## Árboles adultos y física ambiental 4.31.0e
+
+- Se añaden 48 actores `Adult`, `Adult2` y `Adult3` para las dieciséis especies
+  cuyo ejemplar maduro requiere una escala mayor.
+- Los nuevos actores reutilizan, sin alterarlos, los OBJ y materiales aprobados
+  en 4.31.0d. No se incorpora ninguna imagen, malla ni recurso de terceros.
+- Cardón, churqui, chañar, espinillo y ceibo mantienen únicamente sus tres
+  variantes existentes porque ya poseen una escala acorde.
+- Las masas físicas se calculan a partir del cilindro de colisión y una densidad
+  nominal; este dato no modifica las mallas ni las texturas.
+
+Los 78 OBJ y todos los PNG ambientales permanecen byte-idénticos a 4.31.0d.
+
+## Vetas minerales originales 4.31.0f
+
+- Rutas: `models/caelum/world/resources/ca_vein_*.obj` y `.png`, con anclajes
+  transparentes `sprites/CAVE*.png`.
+- Uso: hierro, carbón mineral, cobre, estaño, plata, oro, ópalo, topacio,
+  zafiro, rubí y esmeralda; tres afloramientos por recurso.
+- Procedencia: las 33 mallas y once materiales se generan de forma original y
+  determinista mediante `tools/generate_mineral_veins.py`. La roca anfitriona
+  reutiliza el material de granito original ya documentado en 4.31.0c.
+- Complejidad: 25.500 vértices declarados y 7.584 caras en total. Los metales
+  usan inclusiones/bandas y las gemas, cristales aflorantes de seis lados.
+- Licencias externas: ninguna. No se incorpora geometría, textura ni recurso
+  de Doom o de una biblioteca de terceros.
+
+Los 78 OBJ ambientales previos y sus PNG permanecen byte-idénticos a
+4.31.0e. Los nombres Adult/Young reutilizan esas mismas mallas por MODELDEF.
