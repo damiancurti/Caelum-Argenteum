@@ -12,11 +12,12 @@ Sell filtering and 500-MU return-home rule.
 The author accepted every non-framing test in V4.32.0f: normal
 Exit/`changemap` preserves Palomo's gift, `map MAP02` intentionally starts a
 new player, the real equipped sword retains its combat paths and the supplied
-shield remains conditional on actual equipment. V4.32.0g is the current
-focused visual candidate. It moves all five registered layers 160 logical
-units to the right and makes the idle blade point up-right while keeping its
-hilt between the unchanged palm and fingers. This does not authorize
-quest-stage relocation or any later V4.33 system.
+shield remains conditional on actual equipment. V4.32.0g's shared placement
+and diagonal blade were rejected visually. V4.32.0h is the current focused
+candidate: the shield is lateral only in repose, its frontal close Block pose
+holds without cycling, and the nearly vertical sword advances and retreats
+without changing angle. This does not authorize quest-stage relocation or any
+later V4.33 system.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -769,9 +770,10 @@ Author input required before implementation:
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-**V4.32.0a-r4 through V4.32.0f are author-accepted except for the two framing
-details superseded by the focused V4.32.0g visual candidate; 4.32.0e remains a
-discarded diagnostic because there was no Exit-travel regression.** The slice now
+**V4.32.0a-r4 through V4.32.0f are author-accepted. V4.32.0g was rejected as a
+visual candidate and is superseded by the focused V4.32.0h correction; 4.32.0e
+remains a discarded diagnostic because there was no Exit-travel regression.**
+The slice now
 contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
 gift, a finite buy/sell inventory, the first complete native dialogue check
 using the single physical-currency price service and a modular first-person
@@ -796,11 +798,13 @@ view connected to the real sword selector.
 - Validate the Domingo modular first-person framing on actual equipment.
   **V4.32.0f connects five depth layers to `CaelumSwordSelectorWeapon`, reuses
   authoritative attack/Block/Air/durability paths and conditions the supplied
-  shield on real equipped-shield validity. V4.32.0g moves the complete rig half
-  a 320-pixel logical canvas to the right and mirrors only the A/B idle, D
-  selection endpoint and G recovery blade art around their grips. Bob, timing,
-  shield logic and gameplay remain accepted; only this new position and
-  up-right idle inclination await the focused visual pass.**
+  shield on real equipped-shield validity. V4.32.0h supersedes the rejected
+  V4.32.0g composition: idle shield layers move to X=105, Block returns them to
+  X=160 and holds a 118% frontal I frame, the sword receives one near-vertical
+  grip rotation, and attack translates one constant-angle pose through
+  retraction/extension/recovery. The extended 480×240 right-arm canvas prevents
+  an internal panoramic cutoff. Gameplay remains accepted; only this focused
+  presentation awaits the author pass.**
 
 ### V4.33 — Quests, Reputation and Factions
 

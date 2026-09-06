@@ -548,6 +548,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
     // bloqueo y la durabilidad continúan perteneciendo a CaelumPlayer.
     bool CaelumSwordViewShieldVisible;
     bool CaelumSwordViewBlocking;
+    bool CaelumSwordViewAttacking;
 
     Default { Weapon.SelectionOrder 303; Weapon.SlotNumber 3; }
     override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_SWORD; }
@@ -560,18 +561,56 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     action void A_CaelumSwordPlaceView()
     {
-        // Las cinco capas comparten un único encuadre. El prototipo de
-        // 320 px quedaba pegado al borde izquierdo en formato panorámico;
-        // 160 unidades lo desplazan exactamente medio lienzo hacia la
-        // derecha sin alterar el bob ni el recorrido vertical del arma.
+        // El escudo usa dos encuadres deliberadamente distintos: lateral
+        // durante reposo/ataque y centrado sólo mientras Block está activo.
         if (invoker.HasCaelumSwordViewShield())
         {
-            A_OverlayOffset(10, 160.0, 0.0);
-            A_OverlayOffset(20, 160.0, 0.0);
+            double shieldX = invoker.CaelumSwordViewBlocking ? 160.0 : 105.0;
+            A_OverlayOffset(10, shieldX, 0.0);
+            A_OverlayOffset(20, shieldX, 0.0);
         }
-        A_OverlayOffset(25, 160.0, 0.0);
-        A_OverlayOffset(30, 160.0, 0.0);
-        A_OverlayOffset(40, 160.0, 0.0);
+
+        // E/F/G administran su propio avance y retroceso. Ready no debe
+        // pisar esos offsets mientras la animación de ataque siga activa.
+        if (!invoker.CaelumSwordViewAttacking)
+        {
+            A_OverlayOffset(25, 160.0, 0.0);
+            A_OverlayOffset(30, 160.0, 0.0);
+            A_OverlayOffset(40, 160.0, 0.0);
+        }
+
+        // La rotación es absoluta y pivota en la empuñadura. Así la hoja se
+        // mantiene casi vertical tanto en reposo como durante todo el golpe.
+        A_OverlayFlags(30, PSPF_PIVOTPERCENT, true);
+        A_OverlayPivot(30, 0.55625, 0.83);
+        A_OverlayRotate(30, 30.0);
+    }
+
+    action void A_CaelumSwordAttackRetract()
+    {
+        A_OverlayOffset(25, 174.0, 8.0);
+        A_OverlayOffset(30, 174.0, 8.0);
+        A_OverlayOffset(40, 174.0, 8.0);
+    }
+
+    action void A_CaelumSwordAttackExtend()
+    {
+        A_OverlayOffset(25, 132.0, -18.0);
+        A_OverlayOffset(30, 132.0, -18.0);
+        A_OverlayOffset(40, 132.0, -18.0);
+    }
+
+    action void A_CaelumSwordAttackRecover()
+    {
+        A_OverlayOffset(25, 148.0, -7.0);
+        A_OverlayOffset(30, 148.0, -7.0);
+        A_OverlayOffset(40, 148.0, -7.0);
+    }
+
+    action void A_CaelumSwordEndAttackView()
+    {
+        invoker.CaelumSwordViewAttacking = false;
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordEnsureBaseView()
@@ -586,6 +625,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     action void A_CaelumSwordStartIdleView()
     {
+        invoker.CaelumSwordViewAttacking = false;
         A_Overlay(25, "CA_SwordRightIdle");
         A_Overlay(30, "CA_SwordBladeIdle");
         A_Overlay(40, "CA_SwordFingersIdle");
@@ -613,6 +653,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
             return;
         }
 
+        invoker.CaelumSwordViewAttacking = false;
         A_Overlay(10, "CA_SwordShieldBlock");
         A_Overlay(20, "CA_SwordLeftBlock");
         A_Overlay(25, "CA_SwordRightBlock");
@@ -628,6 +669,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         // Ready detectará un Block que ya estuviera activo y pasará a H/I
         // después de completar la breve aparición C/D.
         invoker.CaelumSwordViewBlocking = false;
+        invoker.CaelumSwordViewAttacking = false;
 
         if (hasShield)
         {
@@ -657,6 +699,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_Overlay(40, "CA_SwordFingersHolster");
         invoker.CaelumSwordViewShieldVisible = false;
         invoker.CaelumSwordViewBlocking = false;
+        invoker.CaelumSwordViewAttacking = false;
         A_CaelumSwordPlaceView();
     }
 
@@ -665,6 +708,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_ClearOverlays(10, 40);
         invoker.CaelumSwordViewShieldVisible = false;
         invoker.CaelumSwordViewBlocking = false;
+        invoker.CaelumSwordViewAttacking = false;
     }
 
     action void A_CaelumSwordSyncView()
@@ -715,8 +759,8 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
             }
         }
 
-        // noOverride conserva E/F/G o H/I mientras esas secuencias están
-        // activas y sólo reconstruye una capa si realmente faltara.
+        // noOverride conserva la secuencia de ataque o H/I mientras esté
+        // activa y sólo reconstruye una capa si realmente faltara.
         if (!isBlocking)
         {
             A_CaelumSwordEnsureBaseView();
@@ -732,9 +776,12 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
     action void A_CaelumSwordStartAttackView()
     {
         invoker.CaelumSwordViewBlocking = false;
-        A_Overlay(25, "CA_SwordRightAttack");
+        invoker.CaelumSwordViewAttacking = true;
+        // La capa derecha se inicia al final: su primer estado coloca las
+        // tres piezas después de que espada y dedos ya existan.
         A_Overlay(30, "CA_SwordBladeAttack");
         A_Overlay(40, "CA_SwordFingersAttack");
+        A_Overlay(25, "CA_SwordRightAttack");
 
         if (invoker.HasCaelumSwordViewShield())
         {
@@ -881,51 +928,43 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         RFNG C -1;
 
     CA_SwordShieldAttack:
-        DSHD E 2;
-        DSHD F 3;
-        DSHD G 3;
+        DSHD A 8;
         Goto CA_SwordShieldIdle;
     CA_SwordLeftAttack:
-        LHND E 2;
-        LHND F 3;
-        LHND G 3;
+        LHND A 8;
         Goto CA_SwordLeftIdle;
     CA_SwordRightAttack:
-        RHND E 2;
-        RHND F 3;
-        RHND G 3;
+        RHND A 2 A_CaelumSwordAttackRetract;
+        RHND A 3 A_CaelumSwordAttackExtend;
+        RHND A 3 A_CaelumSwordAttackRecover;
+        TNT1 A 0 A_CaelumSwordEndAttackView;
         Goto CA_SwordRightIdle;
     CA_SwordBladeAttack:
-        DSWD E 2;
-        DSWD F 3;
-        DSWD G 3;
+        DSWD A 2;
+        DSWD A 3;
+        DSWD A 3;
         Goto CA_SwordBladeIdle;
     CA_SwordFingersAttack:
-        RFNG E 2;
-        RFNG F 3;
-        RFNG G 3;
+        RFNG A 2;
+        RFNG A 3;
+        RFNG A 3;
         Goto CA_SwordFingersIdle;
 
     CA_SwordShieldBlock:
         DSHD H 3;
-        DSHD I 1;
-        Loop;
+        DSHD I -1;
     CA_SwordLeftBlock:
         LHND H 3;
-        LHND I 1;
-        Loop;
+        LHND I -1;
     CA_SwordRightBlock:
         RHND H 3;
-        RHND I 1;
-        Loop;
+        RHND I -1;
     CA_SwordBladeBlock:
         DSWD H 3;
-        DSWD I 1;
-        Loop;
+        DSWD I -1;
     CA_SwordFingersBlock:
         RFNG H 3;
-        RFNG I 1;
-        Loop;
+        RFNG I -1;
     }
 }
 

@@ -1,59 +1,74 @@
-# Caelum Argenteum — Primera persona de Domingo V4.32.0g
+# Caelum Argenteum — Primera persona de Domingo V4.32.0h
 
 ## Alcance
 
-Los sprites corregidos de Domingo ya no viven en un arma especial de consola.
-V4.32.0f los conecta directamente con `CaelumSwordSelectorWeapon`, el selector
-de la espada que el jugador equipa desde el inventario real. No existe una
-segunda espada, un daño de prueba ni una ruta paralela de bloqueo.
+La vista modular continúa conectada exclusivamente con
+`CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
+existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
 
-La integración sólo reemplaza la presentación de esa espada. Fire, AltFire,
-Zoom/Block, Reload y User1–User4 conservan las funciones autoritativas de
-`CaelumPhysicalSelectorWeapon` y `CaelumPlayer`, incluidos daño, Aire,
-enfriamiento, durabilidad, sonidos y restricciones de equipo.
+V4.32.0h reemplaza la propuesta visual V4.32.0g después de la prueba del autor.
+No modifica Fire, AltFire, Zoom/Block, Aire, enfriamiento, durabilidad, sonidos,
+persistencia, equipo, HUD, mapas ni diálogos. Todo ese comportamiento permanece
+en las rutas autoritativas de `CaelumPlayer` ya aprobadas.
 
-Mientras este selector está activo, el HUD omite su icono provisional de arma y
-su antiguo dibujo provisional de bloqueo para no superponerlos a los PSprites.
-Los demás tipos de arma conservan la presentación anterior.
+## Encuadre por estado
 
-## Corrección de encuadre e inclinación 4.32.0g
+Las capas ya no comparten una única X:
 
-La prueba real de 4.32.0f confirmó todas las rutas mecánicas y aisló dos
-defectos visuales en reposo: el conjunto aparecía pegado a la izquierda y la
-hoja nacía desde el puño hacia arriba-izquierda. V4.32.0g aplica una corrección
-exclusivamente visual:
+| Estado | Escudo/mano izquierda (10/20) | Brazo/espada/dedos (25/30/40) |
+| --- | ---: | ---: |
+| Reposo y ataque | X=105 | X base=160 |
+| Block | X=160 | X=160 |
 
-- `A_CaelumSwordPlaceView` asigna X=160, Y=0 a las cinco capas. Son 160
-  unidades —medio lienzo lógico de 320 píxeles— hacia la derecha para todo el
-  conjunto, sin modificar su altura.
-- Como las capas conservan `PSPF_ADDWEAPON`, Y=0 mantiene el `WEAPONTOP`, el
-  alzado/descenso y el bob heredados del selector real; no se introduce un
-  segundo movimiento ni un anclaje independiente por pieza.
-- `DSWD A`, `B`, `D` y `G` se reflejan horizontalmente alrededor del punto de
-  agarre propio de cada cuadro. El pomo y el mango permanecen dentro del mismo
-  puño, pero la hoja sale hacia arriba-derecha durante reposo, el final de la
-  selección y la recuperación.
-- El cambio es una transformación exacta de píxeles sin rotación, reescalado o
-  regeneración. `RHND` sigue detrás del mango y `RFNG` delante de él.
-- `C`, `E`, `F`, `H` e `I`, los tiempos de A–I y todas las rutas de ataque y
-  Block quedan iguales a 4.32.0f.
+Por eso el escudo queda claramente lateral en reposo, sin arrastrar la espada
+hacia la izquierda. Al entrar en Block vuelve al centro. Todos los valores Y
+base siguen en 0 y conservan el alzado, descenso y bob del selector real.
 
-## Recursos integrados
+## Block frontal y sostenido
 
-- Los 45 PNG de 320×200 de la revisión 2 recibida reemplazan la entrega
-  anterior: 36 módulos `LHND`, `DSHD`, `DSWD` y `RHND`, más nueve composiciones
-  de referencia `DFPR`, `DFPS`, `DFPA` y `DFPB`.
-- Nueve PNG nuevos `RFNG` A–I contienen únicamente las zonas de dedos que
-  deben pasar por delante del mango. Se extrajeron de los cuadros `RHND`
-  corregidos sin recolorear ni regenerar el guante.
-- Los 54 archivos son RGBA de 8 bits, miden 320×200 y comparten el offset PNG
-  `grAb` X=160, Y=32. Los hashes están en
-  `DOMINGO_FP_4_32_0g_SHA256.txt`; ese manifiesto enumera los cuatro PNG
-  cambiados y los otros 50 permanecen idénticos a 4.32.0f.
-- Los compuestos suministrados se conservan como referencia artística, pero la
-  vista ejecutable utiliza las capas separadas.
+H sigue siendo la transición breve de alzar el escudo durante tres tics. I ya
+no vuelve a H: usa duración `-1` y queda fijo hasta que el estado real de Block
+termine. Esto elimina el ciclo H/I que hacía oscilar continuamente el escudo.
 
-## Profundidad y alineación
+El escudo y el brazo izquierdo del cuadro I se ampliaron juntos al 118 % sobre
+el mismo pivote. El resultado es una pose más cercana a la cara, frontal y
+perpendicular a la cámara, sin perder la alineación de la mano con la
+empuñadura. Los lienzos I son 360×240 y usan `grAb (160,48)` para conservar la
+posición lógica pese al margen adicional.
+
+## Espada casi vertical
+
+La hoja conserva el arte de V4.32.0g, pero el motor aplica una rotación absoluta
+de 30 grados alrededor de la empuñadura (`pivot 0.55625, 0.83`). La pose queda
+casi a 90 grados y el mango continúa entre la palma `RHND` y los dedos `RFNG`.
+La rotación es absoluta, no acumulativa, y se reaplica al sincronizar las capas.
+
+## Ataque de avance y retroceso
+
+E/F/G ya no cambian de dibujo ni de ángulo. Las tres fases muestran la misma
+pose A y sólo trasladan de forma conjunta el brazo, la espada y los dedos:
+
+| Fase | Tics | X | Y | Función visual |
+| --- | ---: | ---: | ---: | --- |
+| Preparación | 2 | 174 | 8 | Alejar la mano |
+| Extensión | 3 | 132 | -18 | Acercar la mano |
+| Recuperación | 3 | 148 | -7 | Regresar hacia reposo |
+| Reposo | — | 160 | 0 | Posición base |
+
+El movimiento resulta equivalente a un avance–retroceso de arma en primera
+persona: la hoja no se vuelca ni barre la pantalla cambiando de inclinación.
+El escudo y su mano permanecen en la pose lateral A durante esos ocho tics.
+
+## Manga panorámica extendida
+
+`RHNDA0` se reconstruyó sobre un maestro RGBA de 960×480. Se conservó el puño y
+el agarre originales y se prolongaron únicamente brazal, tela y manga hacia el
+borde derecho. La exportación de motor mide 480×240, usa `grAb (160,72)` y llega
+al extremo del lienzo. `RHNDB0` es la oscilación registrada un píxel abajo y a
+la derecha. Así el avance del ataque no revela un corte vertical antes del
+borde de una vista 16:9.
+
+## Profundidad y condición de equipo
 
 | Capa | Prefijo | Contenido | Regla |
 | ---: | --- | --- | --- |
@@ -63,45 +78,15 @@ exclusivamente visual:
 | 30 | `DSWD` | Espada | Atraviesa el centro del agarre |
 | 40 | `RFNG` | Dedos de cierre | Delante del mango |
 
-Este orden corrige el agarre sin desplazar arbitrariamente una capa completa:
-la palma queda detrás del arma y los dedos vuelven a cubrir sólo los tramos del
-mango que deben sujetar. Todas las capas mantienen el mismo lienzo y pivote en
-los nueve cuadros, por lo que reposo, cambio, ataque y bloqueo no pierden
-registro entre sí.
+`HasActiveBlockSource()` continúa siendo la única condición visual del escudo.
+Si se desequipa, se rompe o deja de ser compatible, `DSHD` y `LHND` desaparecen
+en el siguiente tic. Sin un escudo válido no se muestra el arte ni se habilita
+Block.
 
-## Escudo condicional
+## Estado de prueba
 
-El escudo y la mano izquierda sólo se crean cuando
-`CaelumPlayer.HasActiveBlockSource()` confirma, con la espada activa, un escudo
-equipado, compatible y con durabilidad positiva. Si el jugador desequipa el
-escudo, éste se rompe o deja de ser compatible, ambas capas se eliminan en el
-siguiente tic. Volver a equipar uno las reconstruye sin cambiar de espada.
-
-Zoom continúa siendo el interruptor real de Block. Al activarlo se reproduce
-H→I y el cuadro I permanece mientras el modo siga activo; al desactivarse,
-agotarse una condición válida o atacar, la vista vuelve a reposo/ataque de
-acuerdo con el estado real. Sin escudo no se puede entrar en Block y no aparece
-ningún escudo visual.
-
-## Cuadros conectados
-
-| Cuadro | Uso |
-| --- | --- |
-| A–B | Reposo y oscilación |
-| C–D | Sacar la espada; D–C al guardarla |
-| E–G | Ataque primario o secundario aceptado por la mecánica real |
-| H–I | Alzar y sostener Block real |
-
-La animación de ataque sólo comienza si la llamada autoritativa inicia un
-enfriamiento nuevo. Un ataque rechazado por enfriamiento, falta de Aire,
-durabilidad, menú o inmovilización no reinicia falsamente E–G.
-
-## Prueba dentro del juego
-
-No usar `give CA_DomingoFPSwordShield`: esa clase ya no existe. Equipar una
-espada normal desde el inventario y seleccionarla con la tecla de su familia.
-
-Comprobar, con y sin escudo, reposo A–B, ataque E–G, Zoom H–I y cambio C–D en
-4:3, 16:9, 16:10 y ultrawide. V4.32.0g sólo deja pendiente la aceptación del
-nuevo encuadre y de la inclinación hacia arriba-derecha: la jerarquía
-palma/espada/dedos, la condición de escudo y las mecánicas ya fueron validadas.
+La auditoría automática comprueba estructura ZScript, delta acotado, dimensiones,
+RGBA, offsets `grAb`, hashes y contenido exacto del ZIP fuente. La aceptación
+visual dentro de GZDoom 4.14.2 queda pendiente con
+`PRUEBAS_4_32_0h.txt`; no es necesario repetir los sistemas no visuales ya
+aprobados.

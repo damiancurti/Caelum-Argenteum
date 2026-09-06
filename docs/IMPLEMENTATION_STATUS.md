@@ -1,9 +1,38 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Centered first-person rig and right-leaning sword 4.32.0g
+## State-specific Domingo first-person correction 4.32.0h
 
 **Implemented; deterministic source, PNG and package audits passed; focused
 GZDoom 4.14.2 author validation pending**
+
+The author's V4.32.0g test accepted every regression case but rejected its
+visual composition. V4.32.0h therefore remains a presentation-only correction
+and leaves the approved combat, Block, Air, durability, persistence, economy,
+crafting, dialogue, HUD and map sources unchanged.
+
+Idle and attack now place only shield layers 10/20 at X=105 while the right
+hand, blade and finger layers stay based at X=160. Block returns the shield to
+X=160. Its H raise lasts three tics and its enlarged, frontal I pose then holds
+indefinitely instead of looping H/I. The I shield and left arm share an exact
+118% transform and registered `grAb (160,48)` canvases.
+
+The sword has one absolute 30-degree rotation about its grip, producing the
+requested near-vertical pose. Attack no longer consumes the rotating E/F/G
+art: the same A pose moves through (174,8), (132,-18) and (148,-7) for
+retraction, extension and recovery, then returns to (160,0). Because blade,
+right arm and foreground fingers receive each offset together, their depth and
+grip remain registered and the blade angle cannot change during the strike.
+
+`RHNDA0` and `RHNDB0` now use 480×240 RGBA canvases with
+`grAb (160,72)`. Their 960×480 source extends the armored sleeve through the
+panoramic edge, preventing the former 320-pixel canvas boundary from appearing
+when the hand moves forward. The original fist and occlusion layer remain in
+their accepted positions.
+
+## Centered first-person rig and right-leaning sword 4.32.0g
+
+**Mechanics/regressions accepted; visual proposal rejected and superseded by
+V4.32.0h**
 
 The author accepted every non-framing test from 4.32.0f. This follow-up changes
 only the two reported visual defects. All five modular PSprite layers now use
