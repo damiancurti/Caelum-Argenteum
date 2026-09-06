@@ -1,71 +1,84 @@
-# Caelum Argenteum — Prototipo de primera persona V4.32.0e
+# Caelum Argenteum — Primera persona de Domingo V4.32.0f
 
 ## Alcance
 
-Esta versión integra el prototipo visual suministrado para Domingo sin
-convertirlo todavía en la presentación definitiva del equipamiento. La clase
-de prueba `CA_DomingoFPSwordShield` sólo se obtiene por consola y queda aislada
-de los selectores normales. No modifica daño real, bloqueo real, Aire,
-durabilidad, recetas, inventario, modelos ni sonidos.
+Los sprites corregidos de Domingo ya no viven en un arma especial de consola.
+V4.32.0f los conecta directamente con `CaelumSwordSelectorWeapon`, el selector
+de la espada que el jugador equipa desde el inventario real. No existe una
+segunda espada, un daño de prueba ni una ruta paralela de bloqueo.
 
-Mientras el prototipo está seleccionado, el HUD omite únicamente sus dos
-representaciones provisionales —el icono de arma activa y el escudo de bloqueo—
-para no dibujarlas encima de los PSprites nuevos.
+La integración sólo reemplaza la presentación de esa espada. Fire, AltFire,
+Zoom/Block, Reload y User1–User4 conservan las funciones autoritativas de
+`CaelumPhysicalSelectorWeapon` y `CaelumPlayer`, incluidos daño, Aire,
+enfriamiento, durabilidad, sonidos y restricciones de equipo.
+
+Mientras este selector está activo, el HUD omite su icono provisional de arma y
+su antiguo dibujo provisional de bloqueo para no superponerlos a los PSprites.
+Los demás tipos de arma conservan la presentación anterior.
 
 ## Recursos integrados
 
-- 45 PNG de motor, todos de 320×200, RGBA de 8 bits y offset `grAb` X=160,
-  Y=32.
-- 36 capas modulares: `LHND`, `DSHD`, `DSWD` y `RHND`, con cuadros A–I.
-- Nueve composiciones `DFPR`, `DFPS`, `DFPA` y `DFPB`, conservadas como
-  referencia alternativa aunque la clase de prueba usa las capas modulares.
-- Los 45 archivos de `runtime/sprites` son idénticos byte por byte a los del
-  ZIP recibido. Sus hashes están en `DOMINGO_FP_4_32_0e_SHA256.txt`.
+- Los 45 PNG de 320×200 de la revisión 2 recibida reemplazan la entrega
+  anterior: 36 módulos `LHND`, `DSHD`, `DSWD` y `RHND`, más nueve composiciones
+  de referencia `DFPR`, `DFPS`, `DFPA` y `DFPB`.
+- Nueve PNG nuevos `RFNG` A–I contienen únicamente las zonas de dedos que
+  deben pasar por delante del mango. Se extrajeron de los cuadros `RHND`
+  corregidos sin recolorear ni regenerar el guante.
+- Los 54 archivos son RGBA de 8 bits, miden 320×200 y comparten el offset PNG
+  `grAb` X=160, Y=32. Los hashes están en
+  `DOMINGO_FP_4_32_0f_SHA256.txt`.
+- Los compuestos suministrados se conservan como referencia artística, pero la
+  vista ejecutable utiliza las capas separadas.
 
-Los maestros 640×400 y las previsualizaciones permanecen en el paquete de arte
-original. No se duplican en el runtime porque GZDoom sólo necesita los PNG de
-motor y el usuario indicó que éste es un prototipo sujeto a ajustes.
+## Profundidad y alineación
 
-## Capas y cuadros
+| Capa | Prefijo | Contenido | Regla |
+| ---: | --- | --- | --- |
+| 10 | `DSHD` | Reverso del escudo | Sólo con escudo válido equipado |
+| 20 | `LHND` | Mano/brazo que sostiene el escudo | Se oculta junto con el escudo |
+| 25 | `RHND` | Antebrazo, palma y base del puño | Detrás de la espada |
+| 30 | `DSWD` | Espada | Atraviesa el centro del agarre |
+| 40 | `RFNG` | Dedos de cierre | Delante del mango |
 
-| Capa | Prefijo | Contenido |
-| ---: | --- | --- |
-| 10 | `LHND` | Brazo izquierdo |
-| 20 | `DSHD` | Escudo solar de Domingo |
-| 30 | `DSWD` | Espada |
-| 40 | `RHND` | Brazo y mano derechos |
+Este orden corrige el agarre sin desplazar arbitrariamente una capa completa:
+la palma queda detrás del arma y los dedos vuelven a cubrir sólo los tramos del
+mango que deben sujetar. Todas las capas mantienen el mismo lienzo y pivote en
+los nueve cuadros, por lo que reposo, cambio, ataque y bloqueo no pierden
+registro entre sí.
 
-| Cuadro | Uso actual |
+## Escudo condicional
+
+El escudo y la mano izquierda sólo se crean cuando
+`CaelumPlayer.HasActiveBlockSource()` confirma, con la espada activa, un escudo
+equipado, compatible y con durabilidad positiva. Si el jugador desequipa el
+escudo, éste se rompe o deja de ser compatible, ambas capas se eliminan en el
+siguiente tic. Volver a equipar uno las reconstruye sin cambiar de espada.
+
+Zoom continúa siendo el interruptor real de Block. Al activarlo se reproduce
+H→I y el cuadro I permanece mientras el modo siga activo; al desactivarse,
+agotarse una condición válida o atacar, la vista vuelve a reposo/ataque de
+acuerdo con el estado real. Sin escudo no se puede entrar en Block y no aparece
+ningún escudo visual.
+
+## Cuadros conectados
+
+| Cuadro | Uso |
 | --- | --- |
-| A–B | Reposo/oscilación |
-| C–D | Aparición |
-| E–G | Ataque de prueba |
-| H–I | Bloqueo visual |
+| A–B | Reposo y oscilación |
+| C–D | Sacar la espada; D–C al guardarla |
+| E–G | Ataque primario o secundario aceptado por la mecánica real |
+| H–I | Alzar y sostener Block real |
+
+La animación de ataque sólo comienza si la llamada autoritativa inicia un
+enfriamiento nuevo. Un ataque rechazado por enfriamiento, falta de Aire,
+durabilidad, menú o inmovilización no reinicia falsamente E–G.
 
 ## Prueba dentro del juego
 
-Abrir la consola en una partida y ejecutar:
+No usar `give CA_DomingoFPSwordShield`: esa clase ya no existe. Equipar una
+espada normal desde el inventario y seleccionarla con la tecla de su familia.
 
-```text
-give CA_DomingoFPSwordShield
-use CA_DomingoFPSwordShield
-```
-
-- Fire reproduce el tajo y usa un `A_CustomPunch(30, true)` exclusivamente
-  para sentir la animación de esta arma de prueba.
-- AltFire alza y sostiene brevemente el escudo, pero no reduce daño ni consume
-  Aire.
-- Cambiar a un arma real debe limpiar las cuatro capas y restaurar el HUD
-  provisional habitual.
-
-Revisar el encuadre y el movimiento en 4:3, 16:9, 16:10 y ultrawide. Los
-ajustes posteriores deben conservar un origen común entre las cuatro capas;
-no debe corregirse el offset de una pieza de manera independiente.
-
-## Puerta de integración definitiva
-
-Antes de vincular este arte al inventario real hay que aprobar encuadre, bob,
-velocidades de aparición/ataque/bloqueo, solapamiento con HUD y comportamiento
-al cambiar de arma. Después podrá conectarse por módulos a tipo/tier de arma,
-escudo equipado y vestimenta, reutilizando las mecánicas autoritativas ya
-existentes en lugar del golpe de prueba.
+Comprobar, con y sin escudo, reposo A–B, ataque E–G, Zoom H–I y cambio C–D en
+4:3, 16:9, 16:10 y ultrawide. La revisión sigue siendo un prototipo visual:
+encuadre, bob y tiempos pueden ajustarse después de la prueba, pero la jerarquía
+palma/espada/dedos y la condición de escudo ya forman parte del contrato.

@@ -9,13 +9,13 @@ It preserves the accepted physical-currency economy and proportional-weight
 Magic Box, then closes Palomo's lot/mode controls, immediate-close behavior,
 Sell filtering and 500-MU return-home rule.
 
-V4.32.0e is the current focused manual-test candidate. It preserves the native
-USDF dialogue, persuasion and tier icons from 4.32.0d, then closes the travel
-regression found after accepting Palomo's gift. Magic Box ownership is now an
-irreversible, reconciled fact backed by the live player, the persistent record
-and a native travelling inventory marker. It also integrates the supplied
-Domingo first-person art as a console-only modular PSprite prototype; this
-visual test does not replace real combat or authorize later V4.33 systems.
+V4.32.0f is the current focused manual-test candidate. It confirms that the
+normal Exit/`changemap` path already preserves Palomo's gift and records that
+`map MAP02` intentionally starts a new player, then removes the redundant
+three-source repair added for that invalid reproduction. The corrected Domingo
+art is now connected to the real equipped sword: palm behind the blade, fingers
+in front, and shield layers only while a valid shield is equipped. This does
+not authorize quest-stage relocation or any later V4.33 system.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -768,12 +768,13 @@ Author input required before implementation:
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-**V4.32.0a-r4, V4.32.0b and V4.32.0c are author-accepted; V4.32.0e supersedes
-the 4.32.0d candidate after its travel-persistence regression.** The slice now
+**V4.32.0a-r4 through V4.32.0d are author-accepted; V4.32.0f supersedes the
+4.32.0e diagnostic candidate after confirming there was no Exit-travel
+regression.** The slice now
 contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
 gift, a finite buy/sell inventory, the first complete native dialogue check
-using the single physical-currency price service and an isolated modular
-first-person art prototype.
+using the single physical-currency price service and a modular first-person
+view connected to the real sword selector.
 
 - Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
 - Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
@@ -789,11 +790,13 @@ first-person art prototype.
 - Preserve multiplayer ownership and interaction authority. **V4.32.0b keeps
   gift, stock, cash and transaction authority per player character;
   V4.32.0d stores the successful negotiated margin in the same record;
-  V4.32.0e reconciles irreversible Magic Box ownership across travel.**
-- Validate the Domingo modular first-person framing before connecting it to
-  actual equipment. **V4.32.0e provides a console-only four-layer prototype;
-  weapon selection, authoritative attack/block logic, Air, durability and
-  final animation timing remain intentionally unchanged.**
+  V4.32.0f confirms normal Exit/`changemap` persistence and rejects `map` as a
+  persistence test because it starts a new player.**
+- Validate the Domingo modular first-person framing on actual equipment.
+  **V4.32.0f connects five depth layers to `CaelumSwordSelectorWeapon`, reuses
+  authoritative attack/Block/Air/durability paths and conditions the supplied
+  shield on real equipped-shield validity. Final framing, bob and timing remain
+  subject to the focused visual pass.**
 
 ### V4.33 — Quests, Reputation and Factions
 

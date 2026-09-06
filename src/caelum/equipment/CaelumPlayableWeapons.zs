@@ -544,8 +544,366 @@ class CaelumJavelinSelectorWeapon : CaelumPhysicalSelectorWeapon
 
 class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 {
+    // Estado exclusivamente visual de los PSprites. El daño, el Aire, el
+    // bloqueo y la durabilidad continúan perteneciendo a CaelumPlayer.
+    bool CaelumSwordViewShieldVisible;
+    bool CaelumSwordViewBlocking;
+
     Default { Weapon.SelectionOrder 303; Weapon.SlotNumber 3; }
     override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_SWORD; }
+
+    bool HasCaelumSwordViewShield()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
+        return caelumPlayer != null && caelumPlayer.HasActiveBlockSource();
+    }
+
+    action void A_CaelumSwordEnsureBaseView()
+    {
+        // Palma/antebrazo < espada < dedos: el mango atraviesa la mano y los
+        // dedos vuelven a taparlo solamente donde corresponde al agarre.
+        A_Overlay(25, "CA_SwordRightIdle", true);
+        A_Overlay(30, "CA_SwordBladeIdle", true);
+        A_Overlay(40, "CA_SwordFingersIdle", true);
+    }
+
+    action void A_CaelumSwordStartIdleView()
+    {
+        A_Overlay(25, "CA_SwordRightIdle");
+        A_Overlay(30, "CA_SwordBladeIdle");
+        A_Overlay(40, "CA_SwordFingersIdle");
+
+        if (invoker.HasCaelumSwordViewShield())
+        {
+            A_Overlay(10, "CA_SwordShieldIdle");
+            A_Overlay(20, "CA_SwordLeftIdle");
+        }
+        else
+        {
+            A_ClearOverlays(10, 10);
+            A_ClearOverlays(20, 20);
+        }
+    }
+
+    action void A_CaelumSwordStartBlockView()
+    {
+        if (!invoker.HasCaelumSwordViewShield())
+        {
+            invoker.CaelumSwordViewBlocking = false;
+            A_ClearOverlays(10, 10);
+            A_ClearOverlays(20, 20);
+            return;
+        }
+
+        A_Overlay(10, "CA_SwordShieldBlock");
+        A_Overlay(20, "CA_SwordLeftBlock");
+        A_Overlay(25, "CA_SwordRightBlock");
+        A_Overlay(30, "CA_SwordBladeBlock");
+        A_Overlay(40, "CA_SwordFingersBlock");
+    }
+
+    action void A_CaelumSwordSelectView()
+    {
+        bool hasShield = invoker.HasCaelumSwordViewShield();
+        invoker.CaelumSwordViewShieldVisible = hasShield;
+        // Ready detectará un Block que ya estuviera activo y pasará a H/I
+        // después de completar la breve aparición C/D.
+        invoker.CaelumSwordViewBlocking = false;
+
+        if (hasShield)
+        {
+            A_Overlay(10, "CA_SwordShieldSelect");
+            A_Overlay(20, "CA_SwordLeftSelect");
+        }
+        else
+        {
+            A_ClearOverlays(10, 10);
+            A_ClearOverlays(20, 20);
+        }
+        A_Overlay(25, "CA_SwordRightSelect");
+        A_Overlay(30, "CA_SwordBladeSelect");
+        A_Overlay(40, "CA_SwordFingersSelect");
+    }
+
+    action void A_CaelumSwordHolsterView()
+    {
+        if (invoker.HasCaelumSwordViewShield())
+        {
+            A_Overlay(10, "CA_SwordShieldHolster");
+            A_Overlay(20, "CA_SwordLeftHolster");
+        }
+        A_Overlay(25, "CA_SwordRightHolster");
+        A_Overlay(30, "CA_SwordBladeHolster");
+        A_Overlay(40, "CA_SwordFingersHolster");
+        invoker.CaelumSwordViewShieldVisible = false;
+        invoker.CaelumSwordViewBlocking = false;
+    }
+
+    action void A_CaelumSwordClearView()
+    {
+        A_ClearOverlays(10, 40);
+        invoker.CaelumSwordViewShieldVisible = false;
+        invoker.CaelumSwordViewBlocking = false;
+    }
+
+    action void A_CaelumSwordSyncView()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer == null)
+        {
+            A_CaelumSwordClearView();
+            return;
+        }
+
+        bool hasShield = caelumPlayer.HasActiveBlockSource();
+        bool isBlocking = hasShield && caelumPlayer.CombatBlockModeActive;
+
+        if (hasShield != invoker.CaelumSwordViewShieldVisible)
+        {
+            invoker.CaelumSwordViewShieldVisible = hasShield;
+            if (hasShield)
+            {
+                if (isBlocking)
+                {
+                    A_Overlay(10, "CA_SwordShieldBlock");
+                    A_Overlay(20, "CA_SwordLeftBlock");
+                }
+                else
+                {
+                    A_Overlay(10, "CA_SwordShieldIdle");
+                    A_Overlay(20, "CA_SwordLeftIdle");
+                }
+            }
+            else
+            {
+                A_ClearOverlays(10, 10);
+                A_ClearOverlays(20, 20);
+            }
+        }
+
+        if (isBlocking != invoker.CaelumSwordViewBlocking)
+        {
+            invoker.CaelumSwordViewBlocking = isBlocking;
+            if (isBlocking)
+            {
+                A_CaelumSwordStartBlockView();
+            }
+            else
+            {
+                A_CaelumSwordStartIdleView();
+            }
+        }
+
+        // noOverride conserva E/F/G o H/I mientras esas secuencias están
+        // activas y sólo reconstruye una capa si realmente faltara.
+        if (!isBlocking)
+        {
+            A_CaelumSwordEnsureBaseView();
+            if (hasShield)
+            {
+                A_Overlay(10, "CA_SwordShieldIdle", true);
+                A_Overlay(20, "CA_SwordLeftIdle", true);
+            }
+        }
+    }
+
+    action void A_CaelumSwordStartAttackView()
+    {
+        invoker.CaelumSwordViewBlocking = false;
+        A_Overlay(25, "CA_SwordRightAttack");
+        A_Overlay(30, "CA_SwordBladeAttack");
+        A_Overlay(40, "CA_SwordFingersAttack");
+
+        if (invoker.HasCaelumSwordViewShield())
+        {
+            A_Overlay(10, "CA_SwordShieldAttack");
+            A_Overlay(20, "CA_SwordLeftAttack");
+            invoker.CaelumSwordViewShieldVisible = true;
+        }
+        else
+        {
+            A_ClearOverlays(10, 10);
+            A_ClearOverlays(20, 20);
+            invoker.CaelumSwordViewShieldVisible = false;
+        }
+    }
+
+    action void A_CaelumSwordPrimaryView()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer == null) { return; }
+
+        double previousCooldown =
+            caelumPlayer.EquippedWeaponCooldownRemaining;
+        caelumPlayer.PerformWeaponFamilyPrimaryAttack(
+            invoker.GetCaelumWeaponType()
+        );
+        if (caelumPlayer.EquippedWeaponCooldownRemaining > previousCooldown)
+        {
+            A_CaelumSwordStartAttackView();
+        }
+    }
+
+    action void A_CaelumSwordSecondaryView()
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
+        if (caelumPlayer == null) { return; }
+
+        double previousCooldown =
+            caelumPlayer.EquippedWeaponCooldownRemaining;
+        caelumPlayer.PerformWeaponFamilySecondaryAction(
+            invoker.GetCaelumWeaponType()
+        );
+        if (caelumPlayer.EquippedWeaponCooldownRemaining > previousCooldown)
+        {
+            A_CaelumSwordStartAttackView();
+        }
+    }
+
+    States
+    {
+    Select:
+        TNT1 A 0 A_ZoomFactor(1.0, 1);
+        TNT1 A 0 A_CaelumActivateWeapon;
+        TNT1 A 0 A_CaelumSwordSelectView;
+    SelectRaise:
+        TNT1 A 1 A_Raise;
+        Goto SelectRaise;
+
+    Deselect:
+        TNT1 A 0 A_CaelumSwordHolsterView;
+        TNT1 A 6;
+        TNT1 A 0 A_CaelumSwordClearView;
+    DeselectLower:
+        TNT1 A 1 A_Lower;
+        Goto DeselectLower;
+
+    Ready:
+        TNT1 A 0 A_CaelumSwordSyncView;
+        TNT1 A 1 A_WeaponReady(
+            WRF_ALLOWZOOM
+            | WRF_ALLOWRELOAD
+            | WRF_ALLOWUSER1
+            | WRF_ALLOWUSER2
+            | WRF_ALLOWUSER3
+            | WRF_ALLOWUSER4
+        );
+        Loop;
+
+    Fire:
+        TNT1 A 0 A_CaelumSwordPrimaryView;
+        TNT1 A 1;
+        Goto Ready;
+    AltFire:
+        TNT1 A 0 A_CaelumSwordSecondaryView;
+        TNT1 A 1;
+        Goto Ready;
+    Zoom:
+        TNT1 A 0 A_CaelumContextZoomInput;
+        TNT1 A 0 A_CaelumSwordSyncView;
+        TNT1 A 1;
+        Goto Ready;
+
+    CA_SwordShieldIdle:
+        DSHD AB 8;
+        Loop;
+    CA_SwordLeftIdle:
+        LHND AB 8;
+        Loop;
+    CA_SwordRightIdle:
+        RHND AB 8;
+        Loop;
+    CA_SwordBladeIdle:
+        DSWD AB 8;
+        Loop;
+    CA_SwordFingersIdle:
+        RFNG AB 8;
+        Loop;
+
+    CA_SwordShieldSelect:
+        DSHD C 3;
+        DSHD D 3;
+        Goto CA_SwordShieldIdle;
+    CA_SwordLeftSelect:
+        LHND C 3;
+        LHND D 3;
+        Goto CA_SwordLeftIdle;
+    CA_SwordRightSelect:
+        RHND C 3;
+        RHND D 3;
+        Goto CA_SwordRightIdle;
+    CA_SwordBladeSelect:
+        DSWD C 3;
+        DSWD D 3;
+        Goto CA_SwordBladeIdle;
+    CA_SwordFingersSelect:
+        RFNG C 3;
+        RFNG D 3;
+        Goto CA_SwordFingersIdle;
+
+    CA_SwordShieldHolster:
+        DSHD D 3;
+        DSHD C -1;
+    CA_SwordLeftHolster:
+        LHND D 3;
+        LHND C -1;
+    CA_SwordRightHolster:
+        RHND D 3;
+        RHND C -1;
+    CA_SwordBladeHolster:
+        DSWD D 3;
+        DSWD C -1;
+    CA_SwordFingersHolster:
+        RFNG D 3;
+        RFNG C -1;
+
+    CA_SwordShieldAttack:
+        DSHD E 2;
+        DSHD F 3;
+        DSHD G 3;
+        Goto CA_SwordShieldIdle;
+    CA_SwordLeftAttack:
+        LHND E 2;
+        LHND F 3;
+        LHND G 3;
+        Goto CA_SwordLeftIdle;
+    CA_SwordRightAttack:
+        RHND E 2;
+        RHND F 3;
+        RHND G 3;
+        Goto CA_SwordRightIdle;
+    CA_SwordBladeAttack:
+        DSWD E 2;
+        DSWD F 3;
+        DSWD G 3;
+        Goto CA_SwordBladeIdle;
+    CA_SwordFingersAttack:
+        RFNG E 2;
+        RFNG F 3;
+        RFNG G 3;
+        Goto CA_SwordFingersIdle;
+
+    CA_SwordShieldBlock:
+        DSHD H 3;
+        DSHD I 1;
+        Loop;
+    CA_SwordLeftBlock:
+        LHND H 3;
+        LHND I 1;
+        Loop;
+    CA_SwordRightBlock:
+        RHND H 3;
+        RHND I 1;
+        Loop;
+    CA_SwordBladeBlock:
+        DSWD H 3;
+        DSWD I 1;
+        Loop;
+    CA_SwordFingersBlock:
+        RFNG H 3;
+        RFNG I 1;
+        Loop;
+    }
 }
 
 class CaelumAxeSelectorWeapon : CaelumPhysicalSelectorWeapon

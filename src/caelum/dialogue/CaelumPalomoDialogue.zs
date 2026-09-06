@@ -22,16 +22,7 @@ class CaelumPalomoDialogueMarker : Inventory abstract
     }
 }
 
-// Además de controlar el salto USDF, este comprobante viaja con Actor.Inv y
-// permite reconstruir la propiedad si un cambio de mapa restaura primero una
-// instantánea incompleta. La Caja nunca puede revocarse una vez recibida.
-class CaelumMagicBoxOwnershipToken : CaelumPalomoDialogueMarker
-{
-    Default
-    {
-        +INVENTORY.UNTOSSABLE
-    }
-}
+class CaelumMagicBoxOwnershipToken : CaelumPalomoDialogueMarker {}
 class CaelumPalomoDiscountGrantedToken : CaelumPalomoDialogueMarker {}
 class CaelumPalomoEloquenceEligibleToken : CaelumPalomoDialogueMarker {}
 

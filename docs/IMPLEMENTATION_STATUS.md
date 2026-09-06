@@ -1,29 +1,39 @@
 # Caelum Argenteum 4.0 — Implementation status
 
-## Travel-safe Magic Box ownership and Domingo FP prototype 4.32.0e
+## Real sword first-person layers and clarified travel semantics 4.32.0f
 
 **Implemented; deterministic source/asset audit passed; focused GZDoom 4.14.2
 author validation pending**
 
-Magic Box ownership is now monotonic because the design permits no operation
-that can revoke it. The live player flag, the travelling
-`CaelumPersistentCharacterState` record and an invisible native inventory
-receipt are reconciled with a logical OR. A positive result repairs all three
-copies before travel, after arrival, during restore and before dialogue token
-synchronization. This removes the one-way restore path that could overwrite an
-accepted gift with a stale false value, show the Box as unacquired in MAP02 and
-reopen Palomo's introduction after returning to MAP01. Existing 4.32.0d saves
-upgrade from ownership schema 1 to 2 without changing their stored value.
+The revised Domingo delivery is connected to the real
+`CaelumSwordSelectorWeapon`; the console-only `CA_DomingoFPSwordShield` test
+weapon and its independent punch are removed. Fire and AltFire call the same
+authoritative player attack paths as before, Zoom still toggles real Block,
+and inherited Reload/User inputs remain unchanged. The HUD suppresses only its
+two provisional first-person drawings while this real sword selector is ready.
 
-The supplied Domingo first-person prototype is integrated as the isolated
-console-only weapon `CA_DomingoFPSwordShield`. Its 45 engine PNGs remain byte
-identical to the delivery: 36 registered RGBA layers cover four modules and
-nine frames, while nine composite frames remain available for comparison. The
-prototype uses native PSprite overlays for appearance, idle, attack and visual
-block; the provisional active-weapon and block HUD images are suppressed only
-while this test weapon is selected. It deliberately does not replace Caelum's
-real equipment selection, damage, defense, Air, durability or sound systems.
-Exact scope and controls are recorded in `docs/FIRST_PERSON.md`.
+Five native PSprite layers now provide actual depth: shield at 10, its left
+hand at 20, right forearm/palm at 25, sword at 30 and a new right-finger
+occlusion layer at 40. Nine `RFNG` frames were extracted from the corrected
+right-hand art, so the blade and grip pass in front of the palm but behind the
+curled fingers in every A–I pose. The 45 supplied revision-2 PNGs replace the
+previous delivery byte for byte; together with the nine derived finger PNGs,
+all runtime frames are 320×200 RGBA with the common `(160,32)` `grAb` origin.
+
+The shield and its dedicated left hand are synchronized every tic with
+`HasActiveBlockSource()`. They are absent without an equipped, compatible,
+unbroken shield, appear when one becomes valid, and disappear immediately when
+it ceases to be valid. Block H→I holds for the full authoritative Block state;
+E→G starts only when a real sword attack actually begins its cooldown.
+
+The reported Magic Box travel failure was also reclassified after reproduction:
+the `map MAP02` console command starts a new game/player, whereas the map's
+normal Exit and `changemap MAP02` preserve the accepted travelling record.
+The redundant schema-2 three-source reconciliation from 4.32.0e is removed;
+`CaelumPersistentCharacterState` again remains the single persistent source,
+with the live flag and USDF marker derived from it. Schema-2 saves retain their
+stored boolean because version 2 already satisfies the original version-1
+initialization guard.
 
 ## Native Palomo dialogue, persuasion and tier icons 4.32.0d
 

@@ -139,10 +139,10 @@ class CaelumHUDOverlay : EventHandler
             || weaponType == CaelumConstants.WEAPON_TYPE_STATUETTE;
     }
 
-    ui bool IsDomingoFirstPersonPrototypeActive(CaelumPlayer localPlayer)
+    ui bool IsDomingoSwordViewActive(CaelumPlayer localPlayer)
     {
         return localPlayer != null && localPlayer.player != null
-            && localPlayer.player.ReadyWeapon is 'CA_DomingoFPSwordShield';
+            && localPlayer.player.ReadyWeapon is 'CaelumSwordSelectorWeapon';
     }
 
     // Presentación provisional en primera persona usando el mismo arte propio
@@ -150,9 +150,9 @@ class CaelumHUDOverlay : EventHandler
     // una sola fuente gráfica para inventario, suelo y vista del jugador.
     ui void DrawFirstPersonWeapon(CaelumPlayer localPlayer)
     {
-        // El prototipo usa PSprites nativos en cuatro capas. No superponerle
-        // el icono provisional que normalmente representa al arma activa.
-        if (IsDomingoFirstPersonPrototypeActive(localPlayer)) { return; }
+        // La espada real usa PSprites nativos modulares. No superponerle el
+        // icono provisional que normalmente representa al arma activa.
+        if (IsDomingoSwordViewActive(localPlayer)) { return; }
         if (!localPlayer.HUDHasActiveWeapon) { return; }
         TextureID weaponIcon = TexMan.CheckForTexture(
             CaelumIconResolver.ResolveTierPath(
@@ -196,7 +196,7 @@ class CaelumHUDOverlay : EventHandler
     // conserva una silueta/ocupacion distinta sin duplicar armas o personajes.
     ui void DrawFirstPersonBlockShield(CaelumPlayer localPlayer)
     {
-        if (IsDomingoFirstPersonPrototypeActive(localPlayer)) { return; }
+        if (IsDomingoSwordViewActive(localPlayer)) { return; }
         if (!localPlayer.HUDCombatBlockActive) { return; }
 
         String blockSpritePath = localPlayer.HUDCombatBlockUsesGauntlets

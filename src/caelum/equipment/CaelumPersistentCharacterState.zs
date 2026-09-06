@@ -7,7 +7,6 @@ class CaelumPersistentCharacterState : Inventory
     // V4.32.0b convierte la Caja Magica en una recompensa persistente. Los
     // perfiles confirmados anteriores a esta version la conservan durante la
     // migracion; los personajes nuevos quedan marcados explicitamente sin ella.
-    // V4.32.0e añade reconciliación monotónica con un comprobante Inventory.
     int MagicBoxOwnershipVersion;
     bool MagicBoxOwned;
     // El primer comercio es persistente por personaje. Así Palomo puede ser
@@ -149,21 +148,18 @@ class CaelumPersistentCharacterState : Inventory
 
     void InitializeNewMagicBoxOwnership()
     {
-        MagicBoxOwnershipVersion = 2;
+        MagicBoxOwnershipVersion = 1;
         MagicBoxOwned = false;
     }
 
     void EnsureMagicBoxOwnershipInitialized()
     {
-        if (MagicBoxOwnershipVersion >= 2) { return; }
+        if (MagicBoxOwnershipVersion >= 1) { return; }
 
         // Antes de 4.32.0b todo perfil confirmado poseia la caja de forma
         // implicita. Conservarla evita dejar inaccesible contenido ya guardado.
-        if (MagicBoxOwnershipVersion < 1)
-        {
-            MagicBoxOwned = ProfileCommitted;
-        }
-        MagicBoxOwnershipVersion = 2;
+        MagicBoxOwned = ProfileCommitted;
+        MagicBoxOwnershipVersion = 1;
     }
 
     bool GrantMagicBoxOwnership()
