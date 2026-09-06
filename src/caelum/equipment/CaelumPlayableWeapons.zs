@@ -558,6 +558,22 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         return caelumPlayer != null && caelumPlayer.HasActiveBlockSource();
     }
 
+    action void A_CaelumSwordPlaceView()
+    {
+        // Las cinco capas comparten un único encuadre. El prototipo de
+        // 320 px quedaba pegado al borde izquierdo en formato panorámico;
+        // 160 unidades lo desplazan exactamente medio lienzo hacia la
+        // derecha sin alterar el bob ni el recorrido vertical del arma.
+        if (invoker.HasCaelumSwordViewShield())
+        {
+            A_OverlayOffset(10, 160.0, 0.0);
+            A_OverlayOffset(20, 160.0, 0.0);
+        }
+        A_OverlayOffset(25, 160.0, 0.0);
+        A_OverlayOffset(30, 160.0, 0.0);
+        A_OverlayOffset(40, 160.0, 0.0);
+    }
+
     action void A_CaelumSwordEnsureBaseView()
     {
         // Palma/antebrazo < espada < dedos: el mango atraviesa la mano y los
@@ -565,6 +581,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_Overlay(25, "CA_SwordRightIdle", true);
         A_Overlay(30, "CA_SwordBladeIdle", true);
         A_Overlay(40, "CA_SwordFingersIdle", true);
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordStartIdleView()
@@ -583,6 +600,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
             A_ClearOverlays(10, 10);
             A_ClearOverlays(20, 20);
         }
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordStartBlockView()
@@ -600,6 +618,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_Overlay(25, "CA_SwordRightBlock");
         A_Overlay(30, "CA_SwordBladeBlock");
         A_Overlay(40, "CA_SwordFingersBlock");
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordSelectView()
@@ -623,6 +642,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_Overlay(25, "CA_SwordRightSelect");
         A_Overlay(30, "CA_SwordBladeSelect");
         A_Overlay(40, "CA_SwordFingersSelect");
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordHolsterView()
@@ -637,6 +657,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_Overlay(40, "CA_SwordFingersHolster");
         invoker.CaelumSwordViewShieldVisible = false;
         invoker.CaelumSwordViewBlocking = false;
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordClearView()
@@ -705,6 +726,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
                 A_Overlay(20, "CA_SwordLeftIdle", true);
             }
         }
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordStartAttackView()
@@ -726,6 +748,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
             A_ClearOverlays(20, 20);
             invoker.CaelumSwordViewShieldVisible = false;
         }
+        A_CaelumSwordPlaceView();
     }
 
     action void A_CaelumSwordPrimaryView()

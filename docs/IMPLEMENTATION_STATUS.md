@@ -1,9 +1,36 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Centered first-person rig and right-leaning sword 4.32.0g
+
+**Implemented; deterministic source, PNG and package audits passed; focused
+GZDoom 4.14.2 author validation pending**
+
+The author accepted every non-framing test from 4.32.0f. This follow-up changes
+only the two reported visual defects. All five modular PSprite layers now use
+one X=160, Y=0 placement helper, moving the registered 320-pixel rig exactly
+half a logical canvas to the right. The layers remain attached to the main
+weapon PSprite, so its accepted vertical raise/lower path and bob are inherited
+unchanged.
+
+`DSWDA0`, `DSWDB0`, `DSWDD0` and `DSWDG0` are exact horizontal pixel mirrors
+around per-frame grip pivots. This keeps each hilt seated at the same point
+between the unchanged palm and finger layers while making the idle blade point
+up-right; D and G prevent a left-facing discontinuity at the end of selection
+and attack recovery. C, E, F, H and I remain byte-identical to 4.32.0f, as do
+all hands, shield art, timings and gameplay sources outside the sword selector.
+
+The audit decodes the PNG scanlines with only the Python standard library and
+proves each of the four changed images is the exact expected grip-pivot mirror,
+retains 320×200 8-bit RGBA and preserves `grAb (160,32)`. It also proves that
+the runtime delta from 4.32.0f is exactly the selector plus those four images,
+and that removing the shared placement helper leaves the previous sword class
+semantically unchanged.
+
 ## Real sword first-person layers and clarified travel semantics 4.32.0f
 
-**Implemented; deterministic source/asset audit passed; focused GZDoom 4.14.2
-author validation pending**
+**Author test pass completed for dialogue, persistence, equipment, conditional
+shield and combat regressions; its two framing defects are superseded by
+4.32.0g.**
 
 The revised Domingo delivery is connected to the real
 `CaelumSwordSelectorWeapon`; the console-only `CA_DomingoFPSwordShield` test

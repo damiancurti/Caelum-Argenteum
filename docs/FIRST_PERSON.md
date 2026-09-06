@@ -1,4 +1,4 @@
-# Caelum Argenteum — Primera persona de Domingo V4.32.0f
+# Caelum Argenteum — Primera persona de Domingo V4.32.0g
 
 ## Alcance
 
@@ -16,6 +16,28 @@ Mientras este selector está activo, el HUD omite su icono provisional de arma y
 su antiguo dibujo provisional de bloqueo para no superponerlos a los PSprites.
 Los demás tipos de arma conservan la presentación anterior.
 
+## Corrección de encuadre e inclinación 4.32.0g
+
+La prueba real de 4.32.0f confirmó todas las rutas mecánicas y aisló dos
+defectos visuales en reposo: el conjunto aparecía pegado a la izquierda y la
+hoja nacía desde el puño hacia arriba-izquierda. V4.32.0g aplica una corrección
+exclusivamente visual:
+
+- `A_CaelumSwordPlaceView` asigna X=160, Y=0 a las cinco capas. Son 160
+  unidades —medio lienzo lógico de 320 píxeles— hacia la derecha para todo el
+  conjunto, sin modificar su altura.
+- Como las capas conservan `PSPF_ADDWEAPON`, Y=0 mantiene el `WEAPONTOP`, el
+  alzado/descenso y el bob heredados del selector real; no se introduce un
+  segundo movimiento ni un anclaje independiente por pieza.
+- `DSWD A`, `B`, `D` y `G` se reflejan horizontalmente alrededor del punto de
+  agarre propio de cada cuadro. El pomo y el mango permanecen dentro del mismo
+  puño, pero la hoja sale hacia arriba-derecha durante reposo, el final de la
+  selección y la recuperación.
+- El cambio es una transformación exacta de píxeles sin rotación, reescalado o
+  regeneración. `RHND` sigue detrás del mango y `RFNG` delante de él.
+- `C`, `E`, `F`, `H` e `I`, los tiempos de A–I y todas las rutas de ataque y
+  Block quedan iguales a 4.32.0f.
+
 ## Recursos integrados
 
 - Los 45 PNG de 320×200 de la revisión 2 recibida reemplazan la entrega
@@ -26,7 +48,8 @@ Los demás tipos de arma conservan la presentación anterior.
   corregidos sin recolorear ni regenerar el guante.
 - Los 54 archivos son RGBA de 8 bits, miden 320×200 y comparten el offset PNG
   `grAb` X=160, Y=32. Los hashes están en
-  `DOMINGO_FP_4_32_0f_SHA256.txt`.
+  `DOMINGO_FP_4_32_0g_SHA256.txt`; ese manifiesto enumera los cuatro PNG
+  cambiados y los otros 50 permanecen idénticos a 4.32.0f.
 - Los compuestos suministrados se conservan como referencia artística, pero la
   vista ejecutable utiliza las capas separadas.
 
@@ -79,6 +102,6 @@ No usar `give CA_DomingoFPSwordShield`: esa clase ya no existe. Equipar una
 espada normal desde el inventario y seleccionarla con la tecla de su familia.
 
 Comprobar, con y sin escudo, reposo A–B, ataque E–G, Zoom H–I y cambio C–D en
-4:3, 16:9, 16:10 y ultrawide. La revisión sigue siendo un prototipo visual:
-encuadre, bob y tiempos pueden ajustarse después de la prueba, pero la jerarquía
-palma/espada/dedos y la condición de escudo ya forman parte del contrato.
+4:3, 16:9, 16:10 y ultrawide. V4.32.0g sólo deja pendiente la aceptación del
+nuevo encuadre y de la inclinación hacia arriba-derecha: la jerarquía
+palma/espada/dedos, la condición de escudo y las mecánicas ya fueron validadas.

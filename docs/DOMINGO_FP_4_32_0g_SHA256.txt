@@ -1,0 +1,7 @@
+# Caelum Argenteum 4.32.0g — capas de espada reorientadas
+# Rutas relativas a src/. Los otros 50 PNG de primera persona son idénticos a 4.32.0f.
+
+af8d6890a53b016502cc476b79652c60020d874df414bb3b720e819a2dc30521  sprites/DSWDA0.png
+a3d6837109145a8ecd55454901b9a7f5482be2b1a6be25c4d0c9e88085fc06e7  sprites/DSWDB0.png
+04ef5f411ec20a3d72422058ef90b5a7be0e1427aa1bd8a17733c3c2b14423c4  sprites/DSWDD0.png
+2d7795225b1991628a4075c90de14b76c12d40b32f0399745a1288eab1da43d3  sprites/DSWDG0.png
