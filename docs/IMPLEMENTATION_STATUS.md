@@ -1,5 +1,30 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Travel-safe Magic Box ownership and Domingo FP prototype 4.32.0e
+
+**Implemented; deterministic source/asset audit passed; focused GZDoom 4.14.2
+author validation pending**
+
+Magic Box ownership is now monotonic because the design permits no operation
+that can revoke it. The live player flag, the travelling
+`CaelumPersistentCharacterState` record and an invisible native inventory
+receipt are reconciled with a logical OR. A positive result repairs all three
+copies before travel, after arrival, during restore and before dialogue token
+synchronization. This removes the one-way restore path that could overwrite an
+accepted gift with a stale false value, show the Box as unacquired in MAP02 and
+reopen Palomo's introduction after returning to MAP01. Existing 4.32.0d saves
+upgrade from ownership schema 1 to 2 without changing their stored value.
+
+The supplied Domingo first-person prototype is integrated as the isolated
+console-only weapon `CA_DomingoFPSwordShield`. Its 45 engine PNGs remain byte
+identical to the delivery: 36 registered RGBA layers cover four modules and
+nine frames, while nine composite frames remain available for comparison. The
+prototype uses native PSprite overlays for appearance, idle, attack and visual
+block; the provisional active-weapon and block HUD images are suppressed only
+while this test weapon is selected. It deliberately does not replace Caelum's
+real equipment selection, damage, defense, Air, durability or sound systems.
+Exact scope and controls are recorded in `docs/FIRST_PERSON.md`.
+
 ## Native Palomo dialogue, persuasion and tier icons 4.32.0d
 
 **Implemented; source, dialogue, pricing and supplied-asset audits passed;

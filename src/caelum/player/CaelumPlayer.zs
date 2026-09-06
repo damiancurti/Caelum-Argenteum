@@ -690,17 +690,43 @@ class CaelumPlayer : DoomPlayer
         return persistentState;
     }
 
-    void SyncLiveMagicBoxOwnershipFromPersistentState()
+    bool HasMagicBoxOwnershipToken()
+    {
+        Inventory token = FindInventory("CaelumMagicBoxOwnershipToken");
+        return token != null && token.Amount > 0;
+    }
+
+    // La Caja no puede venderse, soltarse ni perderse. Por eso su propiedad es
+    // monotónica: cualquier prueba positiva (campo vivo, registro viajero o
+    // comprobante nativo de inventario) reconstruye las otras dos. Esto evita
+    // que una restauración parcial de changemap vuelva a un valor falso.
+    void ReconcileMagicBoxOwnership(bool createState = true)
     {
         CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState == null)
+            GetPersistentCharacterState(createState);
+        if (persistentState != null)
         {
-            MagicBoxOwned = false;
-            return;
+            persistentState.EnsureMagicBoxOwnershipInitialized();
         }
-        persistentState.EnsureMagicBoxOwnershipInitialized();
-        MagicBoxOwned = persistentState.MagicBoxOwned;
+
+        bool resolvedOwnership = MagicBoxOwned
+            || HasMagicBoxOwnershipToken()
+            || (persistentState != null && persistentState.MagicBoxOwned);
+        MagicBoxOwned = resolvedOwnership;
+
+        if (persistentState != null && resolvedOwnership)
+        {
+            persistentState.MagicBoxOwned = true;
+        }
+
+        SetPalomoDialogueToken(
+            "CaelumMagicBoxOwnershipToken", resolvedOwnership
+        );
+    }
+
+    void SyncLiveMagicBoxOwnershipFromPersistentState()
+    {
+        ReconcileMagicBoxOwnership(true);
     }
 
     // Un perfil sin la recompensa nunca puede conservar banderas de contenido
@@ -724,10 +750,12 @@ class CaelumPlayer : DoomPlayer
 
     bool GrantMagicBoxFromPalomo(bool announce = true)
     {
+        ReconcileMagicBoxOwnership(true);
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
+        if (MagicBoxOwned) { return false; }
         if (!persistentState.GrantMagicBoxOwnership())
         {
             MagicBoxOwned = persistentState.MagicBoxOwned;
@@ -735,7 +763,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         MagicBoxOwned = true;
-        SetPalomoDialogueToken("CaelumMagicBoxOwnershipToken", true);
+        ReconcileMagicBoxOwnership(true);
         ApplyCharacterProfile();
         RefreshCarriedInventorySummary();
         RefreshFormalInventorySnapshot();
@@ -789,12 +817,12 @@ class CaelumPlayer : DoomPlayer
     // registro persistente del personaje, no en el actor de Palomo.
     void SyncPalomoDialogueTokens()
     {
+        ReconcileMagicBoxOwnership(true);
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
         persistentState.EnsurePalomoDiscountInitialized();
-        MagicBoxOwned = persistentState.MagicBoxOwned;
         PalomoMerchantDiscountGranted =
             persistentState.PalomoDiscountGranted;
 
@@ -1133,6 +1161,7 @@ class CaelumPlayer : DoomPlayer
     // del mapa. El mismo objeto queda incluido en guardados normales.
     void PersistCharacterState()
     {
+        ReconcileMagicBoxOwnership(true);
         if (!CharacterCreationComplete || CharacterProfile == null
             || CharacterAllocation == null)
         {
@@ -1236,7 +1265,7 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(false);
         if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
-        MagicBoxOwned = persistentState.MagicBoxOwned;
+        ReconcileMagicBoxOwnership(true);
         persistentState.EnsurePalomoDiscountInitialized();
         PalomoMerchantDiscountGranted =
             persistentState.PalomoDiscountGranted;
@@ -10990,7 +11019,9 @@ class CaelumPlayer : DoomPlayer
     override void Travelled()
     {
         Super.Travelled();
+        ReconcileMagicBoxOwnership(true);
         RestorePersistentCharacterState();
+        ReconcileMagicBoxOwnership(true);
     }
 
     // PostBeginPlay runs after this player actor has entered the game world.

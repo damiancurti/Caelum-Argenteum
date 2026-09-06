@@ -1,9 +1,11 @@
-# Caelum Argenteum — Caja Mágica V4.32.0d
+# Caelum Argenteum — Caja Mágica V4.32.0e
 
 V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
 cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
 comenzar. V4.32.0d formaliza el regalo dentro del diálogo USDF nativo de
-Palomo; la recompensa continúa siendo única y persiste en guardados y viajes.
+Palomo. V4.32.0e corrige la regresión observada al viajar: la propiedad es
+irreversible y monotónica, se reconcilia antes y después del cambio de mapa y no puede ser
+reemplazada por una instantánea falsa o incompleta.
 
 ## 1. Naturaleza y peso propio
 
@@ -88,10 +90,23 @@ causa explícita y no cambia el objeto.
 - El regalo añade sus 10 kg, habilita los slots y sólo puede ejecutarse una vez.
 - Después de poseerla, hablar con Palomo abre las opciones Comerciar, Hablar y
   la prueba de rebaja si se cumple su requisito.
-- La propiedad viaja en `CaelumPersistentCharacterState` y es independiente de
-  la ubicación física futura de Palomo.
+- La propiedad se conserva mediante tres pruebas redundantes: el campo vivo
+  del jugador, `CaelumPersistentCharacterState` y el marcador nativo
+  `CaelumMagicBoxOwnershipToken` que viaja dentro de `Actor.Inv`. Si cualquiera
+  indica que fue adquirida, las otras dos se reconstruyen como verdaderas.
+- La reconciliación se ejecuta antes de salir, al entrar al nuevo mapa, durante
+  la restauración del perfil y antes de abrir el diálogo. Como el diseño no
+  admite vender, soltar, guardar ni revocar la Caja, una propiedad verdadera
+  nunca vuelve a falsa.
+- El marcador de propiedad es invisible, no arrojable, no eliminable por una
+  limpieza normal y conserva una unidad entre mapas/hubs.
+- La propiedad es independiente de la ubicación física futura de Palomo.
 - Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
   la migración. Esto evita perder acceso a contenido que ya estaba guardado.
 - Una partida intermedia malformada que no posea la recompensa pero contenga
   banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
   se elimina ningún objeto.
+
+Para probar viajes por consola debe usarse `changemap MAP02`. El comando
+`map MAP02` inicia una partida nueva y, por definición del motor, no sirve como
+prueba de persistencia del personaje.

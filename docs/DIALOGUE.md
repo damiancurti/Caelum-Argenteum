@@ -1,4 +1,4 @@
-# Caelum Argenteum — Diálogo nativo de Palomo V4.32.0d
+# Caelum Argenteum — Diálogo nativo de Palomo V4.32.0e
 
 ## 1. Tecnología del motor
 
@@ -60,8 +60,13 @@ de Palomo: cobra 140% y paga 60% del valor base del lote.
 ## 4. Persistencia y movimiento futuro
 
 Propiedad de la Caja, stock, caja monetaria y rebaja pertenecen al personaje,
-no a la instancia física de Palomo. Por ello V4.33 podrá destruir, teletransportar
-o recrear al NPC según la etapa de misión, incluso en otro mapa, sin duplicar
-dinero ni reiniciar el acuerdo. Lo único pendiente para esa versión es definir
-y ejecutar la regla de ubicación por estado de misión.
+no a la instancia física de Palomo. V4.32.0e hace monotónica la propiedad de la
+Caja y la reconcilia desde el jugador, el registro persistente y un marcador
+nativo de inventario antes y después de cada viaje. Volver a MAP01 después de
+aceptarla debe entrar directamente en “¿Qué querés?” y nunca repetir la escena
+inicial.
 
+Por ello V4.33 podrá destruir, teletransportar o recrear al NPC según la etapa
+de misión, incluso en otro mapa, sin duplicar dinero ni reiniciar el acuerdo.
+Lo único pendiente para esa versión es definir y ejecutar la regla de ubicación
+por estado de misión.

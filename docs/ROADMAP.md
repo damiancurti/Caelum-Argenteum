@@ -9,16 +9,13 @@ It preserves the accepted physical-currency economy and proportional-weight
 Magic Box, then closes Palomo's lot/mode controls, immediate-close behavior,
 Sell filtering and 500-MU return-home rule.
 
-V4.32.0d is the current focused manual-test candidate. It replaces Palomo's
-direct gift/shop switch with a native GZDoom USDF conversation loaded
-additively in every map. The introductory Yes/No/confirmation branches grant
-the Magic Box only on acceptance. Once owned, the dialogue exposes Trade,
-Talk and a hidden persuasion option that requires raw Eloquence above 50. The
-check compares the accepted derived Dialogue Skill against difficulty 50;
-success permanently changes Palomo's player-specific margins from 150%/50% to
-140%/60%. The same slice integrates 23 corrected base icons and 98 supplied
-T2/T3 equipment icons through one tier-aware resolver used by inventory,
-crafting previews and the first-person equipment display.
+V4.32.0e is the current focused manual-test candidate. It preserves the native
+USDF dialogue, persuasion and tier icons from 4.32.0d, then closes the travel
+regression found after accepting Palomo's gift. Magic Box ownership is now an
+irreversible, reconciled fact backed by the live player, the persistent record
+and a native travelling inventory marker. It also integrates the supplied
+Domingo first-person art as a console-only modular PSprite prototype; this
+visual test does not replace real combat or authorize later V4.33 systems.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -771,11 +768,12 @@ Author input required before implementation:
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-**V4.32.0a-r4, V4.32.0b and V4.32.0c are author-accepted; V4.32.0d is the
-native-dialogue, persuasion and tier-icon candidate.** The slice now contains a
-reusable edge-triggered Use contract, Palomo's persistent Magic Box gift, a
-finite buy/sell inventory and the first complete native dialogue check using
-the single physical-currency price service.
+**V4.32.0a-r4, V4.32.0b and V4.32.0c are author-accepted; V4.32.0e supersedes
+the 4.32.0d candidate after its travel-persistence regression.** The slice now
+contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
+gift, a finite buy/sell inventory, the first complete native dialogue check
+using the single physical-currency price service and an isolated modular
+first-person art prototype.
 
 - Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
 - Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
@@ -790,7 +788,12 @@ the single physical-currency price service.
   Sell to currently eligible player products.**
 - Preserve multiplayer ownership and interaction authority. **V4.32.0b keeps
   gift, stock, cash and transaction authority per player character;
-  V4.32.0d stores the successful negotiated margin in the same record.**
+  V4.32.0d stores the successful negotiated margin in the same record;
+  V4.32.0e reconciles irreversible Magic Box ownership across travel.**
+- Validate the Domingo modular first-person framing before connecting it to
+  actual equipment. **V4.32.0e provides a console-only four-layer prototype;
+  weapon selection, authoritative attack/block logic, Air, durability and
+  final animation timing remain intentionally unchanged.**
 
 ### V4.33 — Quests, Reputation and Factions
 
