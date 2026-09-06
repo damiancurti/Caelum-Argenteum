@@ -1,9 +1,67 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Native Palomo dialogue, persuasion and tier icons 4.32.0d
+
+**Implemented; source, dialogue, pricing and supplied-asset audits passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+Palomo now enters GZDoom's native USDF conversation system instead of switching
+directly between a gift and the custom merchant panel. Before ownership, he
+introduces himself as the pigeon who owns the mansion and asks whether the
+player wants an adventure. Yes grants the Magic Box; No opens the requested
+confirmation, whose reconsideration also grants it and whose definitive Yes
+ends with “Qué lástima”. A later interaction reoffers the undecided branch, so
+refusing does not create an unauthorized permanent quest failure.
+
+After ownership, the native menu offers Trade and Talk. A third reply is shown
+only when raw Eloquence is strictly greater than 50 and disappears permanently
+after success. It displays difficulty 50 and the current chance calculated
+from the accepted Dialogue Skill formula
+`Eloquence × (Eloquence + 1) / 101`. Dialogue Skill at or above 50 succeeds
+automatically; otherwise the chance is `floor(skill / 50 × 100)`. A successful
+check is stored per character and changes Palomo's lot margins to 140% charged
+and 60% paid, preserving ceiling/floor rounding. Failure has no invented
+persistent penalty and may be attempted again.
+
+`CAPALOMO` is loaded with the native `GameInfo.AddDialogues` path on every map.
+The interaction synchronizes invisible native-inventory requirement markers,
+temporarily assigns conversation ID 43200 to the actor and calls
+`Actor.StartConversation`. This keeps USDF's native replies, item conditions,
+page links and give-item transactions while retaining per-player gift and
+discount authority. It also means V4.33 can move or recreate Palomo without
+copying the dialogue or resetting merchant state.
+
+The supplied art replaces 23 corrected T1/base PNGs and adds 49 T2 plus 49 T3
+PNGs. One `CaelumIconResolver` maps all 20 weapons, 16 armor variants, four
+shields, four amulets and five seals, and is used by equipment selection,
+crafting preview, jewelry inventory icons and the active-weapon display. The
+complete runtime icon tree matches the supplier checksums and contains 255 PNGs.
+
+## Accepted Palomo interaction corrections 4.32.0c
+
+**Author test pass completed: every focused interaction, Sell filter,
+return-home and regression case succeeded.**
+
+The merchant navigation now uses Left/Right to move bidirectionally through
+lots 1/5/20/50/100 and Space/X to toggle Buy/Sell. Sell mode builds a compact
+authoritative view containing only catalog products with at least one
+unreserved player unit and enough Palomo cash for a one-unit purchase; an
+explicit empty state replaces irrelevant rows.
+
+The shared folklore interaction latch now belongs to the player and remains
+armed while the merchant panel is open. Closing with Q, Tab, Escape or B cannot
+reopen Palomo under the crosshair during the same physical Use press; a new
+interaction requires closing and then releasing Use. The anchored MAP01
+instance also records its spawn as home: displacement below 500 MU is tolerated,
+while displacement at or above 500 MU makes Palomo return at the actor's normal
+running speed and stop at the original post. Quest-stage relocation remains a
+V4.33 responsibility.
+
 ## Palomo merchant and persistent Magic Box acquisition 4.32.0b
 
-**Implemented; deterministic source, map and package audit passed; focused
-GZDoom 4.14.2 author acceptance pending**
+**Author test pass completed: startup, gift, persistence, prices, physical
+transactions and regressions succeeded. Four interaction details are
+superseded by the focused V4.32.0c correction above.**
 
 New characters begin without the Magic Box: it contributes zero weight, has
 zero slots and rejects every direct or automatic storage route. Palomo is now
@@ -1137,14 +1195,15 @@ The three actor profiles now use the playable-character statistical model:
 
 | Actor | Collision | Mass | Twelve attributes | Authored behavior |
 | --- | --- | ---: | ---: | --- |
-| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Historical 4.29 behavior: wanders autonomously and has no attack. V4.32.0b anchors the MAP01 merchant instance. |
+| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Historical 4.29 behavior: wanders autonomously and has no attack. V4.32.0b anchors the MAP01 merchant; V4.32.0c makes it run home after a displacement of at least 500 MU. |
 | Mandinga | `Height 51.644444`, `Radius 14.755556` | 66 | 6 | Melee base 66; ranged action reuses the tier-1 Fire staff behavior. |
 | Zupay | `Height 93.333333`, `Radius 26.666667` | 666 | 33 | Ground slam base 66, 192-MU linear-falloff radius and +8 vertical launch; ranged action temporarily reuses the tier-1 Earth statuette behavior. |
 
 `CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus` retain editor
 numbers 18036–18038 and their console summon names. In historical 4.29.0ar none
-received a faction, loot table or MAP01/MAP02 placement. V4.32.0b now places
-only Palomo as the initial MAP01 merchant; the faction system remains a
+received a faction, loot table or MAP01/MAP02 placement. V4.32.0b places only
+Palomo as the initial MAP01 merchant and V4.32.0c adds bounded return behavior;
+the faction system remains a
 separate roadmap feature.
 
 Focused validation for this candidate is:

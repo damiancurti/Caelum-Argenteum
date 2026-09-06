@@ -4,24 +4,21 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
-V4.32.0b builds on the accepted V4.32.0a-r4 baseline and is the current
-manual-test candidate. R2 introduced the
-roadmap's required economic foundation and r3 revised the Magic Box; r4 fixes
-their GZDoom 4.14.2 startup compatibility without changing gameplay. The slice adds
-five nominal denominations (1/5/20/50/100) for each of copper, silver and gold,
-a 200:1 step between metals, authored material/food/water values, recursive
-prices derived from accepted recipes and station tiers, the 50%/150% merchant
-margins and the Inventory money summary. Its r3 storage revision makes the
-permanent Magic Box weigh 10 kg and reduces its aggregated contents by the
-current maximum slot count, rounded downward to 0.001 kg. V4.32.0b now connects
-the shared Use layer, Palomo's one-time Magic Box gift and the first complete
-bilateral physical-money transaction for food, water, wood, raw copper and raw
-tin. Palomo is placed in front of MAP01's start and his finite stock/cash state
-persists independently of the map actor.
+V4.32.0c is author-accepted after its complete focused GZDoom 4.14.2 test pass.
+It preserves the accepted physical-currency economy and proportional-weight
+Magic Box, then closes Palomo's lot/mode controls, immediate-close behavior,
+Sell filtering and 500-MU return-home rule.
 
-The author completed and approved the full cumulative GZDoom 4.14.2 test
-matrix for V4.32.0a-r4. That slice is closed; V4.32.0b requires its focused
-startup, gift, persistence and commerce tests before the next dialogue slice.
+V4.32.0d is the current focused manual-test candidate. It replaces Palomo's
+direct gift/shop switch with a native GZDoom USDF conversation loaded
+additively in every map. The introductory Yes/No/confirmation branches grant
+the Magic Box only on acceptance. Once owned, the dialogue exposes Trade,
+Talk and a hidden persuasion option that requires raw Eloquence above 50. The
+check compares the accepted derived Dialogue Skill against difficulty 50;
+success permanently changes Palomo's player-specific margins from 150%/50% to
+140%/60%. The same slice integrates 23 corrected base icons and 98 supplied
+T2/T3 equipment icons through one tier-aware resolver used by inventory,
+crafting previews and the first-person equipment display.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -774,28 +771,37 @@ Author input required before implementation:
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-**V4.32.0a-r4 economic prerequisite accepted. V4.32.0b is implemented as the
-focused manual-test candidate.** It adds a reusable edge-triggered Use contract,
-Palomo's persistent one-time Magic Box gift and a finite buy/sell inventory
-using the single physical-currency price service. Broader dialogue and merchant
-content remains gated behind acceptance of this end-to-end slice.
+**V4.32.0a-r4, V4.32.0b and V4.32.0c are author-accepted; V4.32.0d is the
+native-dialogue, persuasion and tier-icon candidate.** The slice now contains a
+reusable edge-triggered Use contract, Palomo's persistent Magic Box gift, a
+finite buy/sell inventory and the first complete native dialogue check using
+the single physical-currency price service.
 
 - Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
 - Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
-- Add a shared Use-based NPC interaction layer. **Implemented in V4.32.0b.**
-- Add data-driven dialogue foundations.
+- Add a shared Use-based NPC interaction layer. **Implemented in V4.32.0b and
+  corrected in V4.32.0c so closing requires a later physical Use release before
+  rearming.**
+- Add data-driven dialogue foundations. **Implemented in V4.32.0d with the
+  engine's native USDF/ConversationMenu path and an additive all-map dialogue
+  resource.**
 - Add merchant inventories and buy/sell transactions using V4.31 economy data.
-  **First five-item Palomo catalog implemented in V4.32.0b.**
+  **First five-item Palomo catalog implemented in V4.32.0b; V4.32.0c filters
+  Sell to currently eligible player products.**
 - Preserve multiplayer ownership and interaction authority. **V4.32.0b keeps
-  gift, stock, cash and transaction authority per player character.**
+  gift, stock, cash and transaction authority per player character;
+  V4.32.0d stores the successful negotiated margin in the same record.**
 
 ### V4.33 — Quests, Reputation and Factions
 
 - Add persistent quest state and objective tracking.
-- Resolve Palomo's one authoritative placement from quest stage. The V4.32.0b
-  MAP01 actor is an anchored initial location only; a stage transition may
+- Resolve Palomo's one authoritative placement from quest stage. The V4.32.0c
+  MAP01 actor is an anchored initial location that returns after a 500-MU
+  displacement; a quest-stage transition may
   remove/recreate or teleport him, including between maps, while reusing the
-  persistent merchant stock/cash instead of duplicating or resetting it.
+  persistent merchant stock/cash/discount instead of duplicating or resetting
+  it. V4.32.0d already loads his native dialogue in every map, so relocation
+  needs no duplicated DIALOGxx tree.
 - Add faction membership/standing and reputation changes.
 - Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
 - Four faction identifiers and a relation lookup do not materially increase

@@ -15,6 +15,10 @@ class CaelumPersistentCharacterState : Inventory
     int PalomoMerchantVersion;
     int PalomoMerchantStock[5];
     int PalomoMerchantWalletCopper;
+    // La negociación pertenece al personaje, igual que el stock y la caja.
+    // Una mudanza o recreación futura del actor no altera el acuerdo logrado.
+    int PalomoDiscountVersion;
+    bool PalomoDiscountGranted;
     int Race;
     int FirstClass;
     int SecondClass;
@@ -184,6 +188,20 @@ class CaelumPersistentCharacterState : Inventory
         PalomoMerchantWalletCopper =
             CaelumConstants.PALOMO_MERCHANT_START_COPPER;
         PalomoMerchantVersion = 1;
+    }
+
+    void InitializeNewPalomoDiscount()
+    {
+        PalomoDiscountVersion = 1;
+        PalomoDiscountGranted = false;
+    }
+
+    void EnsurePalomoDiscountInitialized()
+    {
+        if (PalomoDiscountVersion >= 1) { return; }
+        // Las partidas anteriores a 4.32.0d nunca pudieron negociar.
+        PalomoDiscountGranted = false;
+        PalomoDiscountVersion = 1;
     }
 
     void ObserveEquipmentItemId(int itemId)

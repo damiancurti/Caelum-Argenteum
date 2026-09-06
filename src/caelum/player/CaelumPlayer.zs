@@ -71,6 +71,10 @@ class CaelumPlayer : DoomPlayer
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
     bool PalomoMerchantMenuOpen;
+    bool PalomoMerchantDiscountGranted;
+    int PalomoDiscountChancePercent;
+    int PalomoDiscountLastRoll;
+    bool PalomoDiscountAutomaticSuccess;
     Actor ActivePalomoMerchant;
     int PalomoMerchantSessionValidationTics;
     int PalomoMerchantSelection;
@@ -81,6 +85,8 @@ class CaelumPlayer : DoomPlayer
     int PalomoMerchantWalletCopper;
     int PalomoMerchantStock[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
     int PalomoMerchantPlayerOwned[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
+    int PalomoMerchantVisibleItemCount;
+    int PalomoMerchantVisibleItems[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
     int LastPalomoMerchantAction;
     // Plan transaccional temporal. Contiene el saldo físico final por
     // denominación y permite validar peso/slots antes de mutar inventario.
@@ -301,6 +307,11 @@ class CaelumPlayer : DoomPlayer
     // rearma mientras el menú siga abierto; sólo vuelve a aceptar una nueva
     // activación después de cerrar el menú y detectar Use liberado.
     bool CraftingStationUseLatched;
+
+    // Se rearma únicamente tras cerrar toda interacción folclórica y soltar
+    // físicamente Use. Evita que Q cierre y reabra a Palomo en el mismo pulso.
+    bool FolkloreInteractionUseLatched;
+    int FolkloreInteractionReleaseGuardTics;
 
     // Último resultado del desgaste de arma para depuración y futuras UI.
     int LastWeaponDurabilityLoss;
@@ -711,7 +722,7 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    bool GrantMagicBoxFromPalomo()
+    bool GrantMagicBoxFromPalomo(bool announce = true)
     {
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -724,15 +735,135 @@ class CaelumPlayer : DoomPlayer
         }
 
         MagicBoxOwned = true;
+        SetPalomoDialogueToken("CaelumMagicBoxOwnershipToken", true);
         ApplyCharacterProfile();
         RefreshCarriedInventorySummary();
         RefreshFormalInventorySnapshot();
         PersistCharacterState();
         A_StartSound("caelum/items/pickup", CHAN_6, CHANF_LOCAL);
-        Console.Printf(
-            "%s",
-            StringTable.Localize("CA_PALOMO_MAGIC_BOX_RECEIVED", false)
+        if (announce)
+        {
+            Console.Printf(
+                "%s",
+                StringTable.Localize("CA_PALOMO_MAGIC_BOX_RECEIVED", false)
+            );
+        }
+        return true;
+    }
+
+    void SetPalomoDialogueToken(
+        class<Inventory> tokenClass, bool shouldHave
+    )
+    {
+        Inventory token = FindInventory(tokenClass);
+        if (shouldHave)
+        {
+            if (token == null) { GiveInventoryType(tokenClass); }
+            else if (token.Amount <= 0) { token.Amount = 1; }
+        }
+        else if (token != null && token.Amount > 0)
+        {
+            TakeInventory(tokenClass, token.Amount);
+        }
+    }
+
+    void RefreshPalomoDiscountOdds()
+    {
+        double dialogueSkill = Attributes == null ? 0.0
+            : Attributes.Eloquence * (Attributes.Eloquence + 1) / 101.0;
+        if (DerivedStats != null)
+        {
+            dialogueSkill = DerivedStats.DialogueSkillPercent;
+        }
+        PalomoDiscountAutomaticSuccess = dialogueSkill
+            >= CaelumConstants.PALOMO_DIALOGUE_DIFFICULTY;
+        PalomoDiscountChancePercent = PalomoDiscountAutomaticSuccess ? 100
+            : Clamp(int(
+                dialogueSkill * 100.0
+                    / CaelumConstants.PALOMO_DIALOGUE_DIFFICULTY
+            ), 0, 100);
+    }
+
+    // Mantiene los marcadores invisibles que el USDF nativo usa para sus
+    // saltos, requisitos y exclusiones. El estado autoritativo sigue en el
+    // registro persistente del personaje, no en el actor de Palomo.
+    void SyncPalomoDialogueTokens()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsureMagicBoxOwnershipInitialized();
+        persistentState.EnsurePalomoDiscountInitialized();
+        MagicBoxOwned = persistentState.MagicBoxOwned;
+        PalomoMerchantDiscountGranted =
+            persistentState.PalomoDiscountGranted;
+
+        SetPalomoDialogueToken(
+            "CaelumMagicBoxOwnershipToken", MagicBoxOwned
         );
+        SetPalomoDialogueToken(
+            "CaelumPalomoDiscountGrantedToken",
+            PalomoMerchantDiscountGranted
+        );
+        SetPalomoDialogueToken(
+            "CaelumPalomoEloquenceEligibleToken",
+            Attributes != null && Attributes.Eloquence
+                > CaelumConstants.PALOMO_DISCOUNT_MINIMUM_ELOQUENCE
+        );
+        RefreshPalomoDiscountOdds();
+    }
+
+    bool OpenPalomoDialogue(Actor speaker)
+    {
+        if (CreationWizardOpen || speaker == null || health <= 0)
+        {
+            return false;
+        }
+        SyncPalomoDialogueTokens();
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
+        EquipmentMenuOpen = false;
+        CloseCraftingStationSession();
+        if (PalomoMerchantMenuOpen) { ClosePalomoMerchant(); }
+        SetCraftingJournalState(false);
+
+        // Thing_SetConversation asigna temporalmente el USDF registrado sólo
+        // a este actor. StartConversation abre luego el menú nativo del motor.
+        Level.ExecuteSpecial(
+            CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+            speaker, null, false,
+            0, CaelumConstants.PALOMO_CONVERSATION_ID
+        );
+        if (!speaker.HasConversation()) { return false; }
+        return speaker.StartConversation(self, true, true);
+    }
+
+    bool ResolvePalomoDiscountRequest()
+    {
+        SyncPalomoDialogueTokens();
+        if (PalomoMerchantDiscountGranted) { return true; }
+        if (Attributes == null || Attributes.Eloquence
+            <= CaelumConstants.PALOMO_DISCOUNT_MINIMUM_ELOQUENCE)
+        {
+            return false;
+        }
+
+        RefreshPalomoDiscountOdds();
+        PalomoDiscountLastRoll = PalomoDiscountAutomaticSuccess ? 0
+            : Random[CaelumPalomoDiscount](1, 100);
+        bool success = PalomoDiscountAutomaticSuccess
+            || PalomoDiscountLastRoll <= PalomoDiscountChancePercent;
+        if (!success) { return false; }
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        persistentState.EnsurePalomoDiscountInitialized();
+        persistentState.PalomoDiscountGranted = true;
+        PalomoMerchantDiscountGranted = true;
+        SetPalomoDialogueToken(
+            "CaelumPalomoDiscountGrantedToken", true
+        );
+        PersistCharacterState();
         return true;
     }
 
@@ -1013,6 +1144,9 @@ class CaelumPlayer : DoomPlayer
         if (persistentState == null) { return; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
         persistentState.MagicBoxOwned = MagicBoxOwned;
+        persistentState.EnsurePalomoDiscountInitialized();
+        persistentState.PalomoDiscountGranted =
+            PalomoMerchantDiscountGranted;
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -1103,6 +1237,9 @@ class CaelumPlayer : DoomPlayer
         if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
         MagicBoxOwned = persistentState.MagicBoxOwned;
+        persistentState.EnsurePalomoDiscountInitialized();
+        PalomoMerchantDiscountGranted =
+            persistentState.PalomoDiscountGranted;
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -2305,6 +2442,9 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsurePalomoMerchantInitialized();
+        persistentState.EnsurePalomoDiscountInitialized();
+        PalomoMerchantDiscountGranted =
+            persistentState.PalomoDiscountGranted;
         for (int merchantItem = 0;
             merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT; merchantItem++)
         {
@@ -2315,12 +2455,48 @@ class CaelumPlayer : DoomPlayer
         }
         PalomoMerchantWalletCopper = Max(0,
             persistentState.PalomoMerchantWalletCopper);
+        PalomoMerchantVisibleItemCount = 0;
+        bool currentSelectionVisible = false;
+        for (int merchantItem = 0;
+            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
+            merchantItem++)
+        {
+            bool visible = PalomoMerchantMode
+                    == CaelumConstants.PALOMO_MERCHANT_MODE_BUY
+                || (PalomoMerchantPlayerOwned[merchantItem] > 0
+                    && PalomoMerchantWalletCopper
+                        >= CaelumEconomyRules.GetPalomoMerchantLotPrice(
+                            merchantItem, 1,
+                            CaelumConstants.PALOMO_MERCHANT_MODE_SELL,
+                            PalomoMerchantDiscountGranted
+                        ));
+            if (!visible) { continue; }
+
+            PalomoMerchantVisibleItems[PalomoMerchantVisibleItemCount] =
+                merchantItem;
+            PalomoMerchantVisibleItemCount++;
+            if (merchantItem == PalomoMerchantSelection)
+            {
+                currentSelectionVisible = true;
+            }
+        }
+        for (int visibleIndex = PalomoMerchantVisibleItemCount;
+            visibleIndex < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
+            visibleIndex++)
+        {
+            PalomoMerchantVisibleItems[visibleIndex] = -1;
+        }
+        if (!currentSelectionVisible && PalomoMerchantVisibleItemCount > 0)
+        {
+            PalomoMerchantSelection = PalomoMerchantVisibleItems[0];
+        }
         PalomoMerchantSelectedQuantity =
             GetPalomoMerchantQuantityForIndex(PalomoMerchantQuantityIndex);
-        PalomoMerchantSelectedLotPrice =
-            CaelumEconomyRules.GetPalomoMerchantLotPrice(
+        PalomoMerchantSelectedLotPrice = PalomoMerchantVisibleItemCount > 0
+            ? CaelumEconomyRules.GetPalomoMerchantLotPrice(
                 PalomoMerchantSelection, PalomoMerchantSelectedQuantity,
-                PalomoMerchantMode);
+                PalomoMerchantMode, PalomoMerchantDiscountGranted)
+            : 0;
         RefreshCarriedInventorySummary();
     }
 
@@ -2334,7 +2510,7 @@ class CaelumPlayer : DoomPlayer
 
     void OpenPalomoMerchant(Actor merchant)
     {
-        SyncLiveMagicBoxOwnershipFromPersistentState();
+        SyncPalomoDialogueTokens();
         if (CreationWizardOpen || !MagicBoxOwned || merchant == null) { return; }
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;
@@ -2357,6 +2533,11 @@ class CaelumPlayer : DoomPlayer
         PalomoMerchantMenuOpen = false;
         ActivePalomoMerchant = null;
         PalomoMerchantSessionValidationTics = 0;
+        if (FolkloreInteractionUseLatched)
+        {
+            FolkloreInteractionReleaseGuardTics =
+                CaelumConstants.PALOMO_INTERACTION_REARM_GUARD_TICS;
+        }
     }
 
     void UpdatePalomoMerchantSession()
@@ -2376,9 +2557,24 @@ class CaelumPlayer : DoomPlayer
     void CyclePalomoMerchantSelection(int direction)
     {
         if (!IsActivePalomoMerchantSessionValid()) { return; }
-        PalomoMerchantSelection = (PalomoMerchantSelection
-            + (direction < 0 ? CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1 : 1))
-            % CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
+        RefreshPalomoMerchantSnapshot();
+        if (PalomoMerchantVisibleItemCount <= 0) { return; }
+        int currentVisibleIndex = 0;
+        for (int visibleIndex = 0;
+            visibleIndex < PalomoMerchantVisibleItemCount; visibleIndex++)
+        {
+            if (PalomoMerchantVisibleItems[visibleIndex]
+                == PalomoMerchantSelection)
+            {
+                currentVisibleIndex = visibleIndex;
+                break;
+            }
+        }
+        currentVisibleIndex = (currentVisibleIndex
+            + (direction < 0 ? PalomoMerchantVisibleItemCount - 1 : 1))
+            % PalomoMerchantVisibleItemCount;
+        PalomoMerchantSelection =
+            PalomoMerchantVisibleItems[currentVisibleIndex];
         LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
         RefreshPalomoMerchantSnapshot();
     }
@@ -2394,10 +2590,13 @@ class CaelumPlayer : DoomPlayer
         RefreshPalomoMerchantSnapshot();
     }
 
-    void CyclePalomoMerchantQuantity()
+    void CyclePalomoMerchantQuantity(int direction)
     {
         if (!IsActivePalomoMerchantSessionValid()) { return; }
-        PalomoMerchantQuantityIndex = (PalomoMerchantQuantityIndex + 1)
+        PalomoMerchantQuantityIndex = (PalomoMerchantQuantityIndex
+            + (direction < 0
+                ? CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1
+                : 1))
             % CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT;
         LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
         RefreshPalomoMerchantSnapshot();
@@ -2418,9 +2617,18 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsurePalomoMerchantInitialized();
+        persistentState.EnsurePalomoDiscountInitialized();
+        PalomoMerchantDiscountGranted =
+            persistentState.PalomoDiscountGranted;
         int merchantItem = PalomoMerchantSelection;
         int quantity = PalomoMerchantSelectedQuantity;
         int price = PalomoMerchantSelectedLotPrice;
+        if (PalomoMerchantVisibleItemCount <= 0)
+        {
+            LastPalomoMerchantAction =
+                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK;
+            return;
+        }
         if (PalomoMerchantMode == CaelumConstants.PALOMO_MERCHANT_MODE_BUY)
         {
             if (persistentState.PalomoMerchantStock[merchantItem] < quantity)
@@ -6604,40 +6812,30 @@ class CaelumPlayer : DoomPlayer
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
         {
-            switch (CraftingSelectedShieldType)
-            {
-                case CaelumConstants.SHIELD_TYPE_KITE: return "graphics/caelum/icons/ca_shield_kite.png";
-                case CaelumConstants.SHIELD_TYPE_TOWER: return "graphics/caelum/icons/ca_shield_tower.png";
-                case CaelumConstants.SHIELD_TYPE_MAGIC: return "graphics/caelum/icons/ca_shield_magic.png";
-                default: return "graphics/caelum/icons/ca_shield_buckler.png";
-            }
+            return CaelumIconResolver.GetShieldBasePath(
+                CraftingSelectedShieldType
+            );
         }
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {
-            if (CraftingSelectedArmorSlot == CaelumConstants.ARMOR_SLOT_HEAD)
-            {
-                return "graphics/caelum/icons/ca_helmet.png";
-            }
-            if (CraftingSelectedArmorSlot == CaelumConstants.ARMOR_SLOT_HANDS)
-            {
-                return "graphics/caelum/icons/ca_gloves.png";
-            }
-            if (CraftingSelectedArmorSlot == CaelumConstants.ARMOR_SLOT_FEET)
-            {
-                return "graphics/caelum/icons/ca_boots.png";
-            }
-            return "graphics/caelum/icons/ca_armor_heavy.png";
+            return CaelumIconResolver.GetArmorBasePath(
+                CraftingSelectedArmorSlot, CraftingSelectedArmorType
+            );
         }
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {
-            return "graphics/caelum/icons/jewelry/ca_amulet_ruby.png";
+            return CaelumIconResolver.GetAmuletBasePath(
+                CraftingSelectedAmuletType
+            );
         }
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
         {
-            return "graphics/caelum/icons/jewelry/ca_seal_fire.png";
+            return CaelumIconResolver.GetSealBasePath(
+                CraftingSelectedSealType
+            );
         }
         return "";
     }
@@ -7120,6 +7318,23 @@ class CaelumPlayer : DoomPlayer
         BuildCraftingBlueprint();
         RefreshDirectWeaponCraftingPlan();
         CraftingPreviewIconPath = ResolveCraftingPreviewIconPath();
+        if (CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
+            || CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
+            || CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD
+            || CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
+            || CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+            || CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        {
+            CraftingPreviewIconPath = CaelumIconResolver.ResolveTierPath(
+                CraftingPreviewIconPath, CraftingSelectionTier
+            );
+        }
 
         RefreshCarriedInventorySummary();
     }
@@ -13479,6 +13694,23 @@ class CaelumPlayer : DoomPlayer
             CraftingStationUseLatched = false;
         }
 
+        // PlayerThink borra los botones mientras la tienda está abierta. Por
+        // eso este latch no se rearma hasta que el menú ya esté cerrado y el
+        // siguiente comando autoritativo confirme que Use fue liberado.
+        if (FolkloreInteractionUseLatched
+            && !PalomoMerchantMenuOpen
+            && player != null)
+        {
+            if (FolkloreInteractionReleaseGuardTics > 0)
+            {
+                FolkloreInteractionReleaseGuardTics--;
+            }
+            else if ((player.cmd.buttons & BT_USE) == 0)
+            {
+                FolkloreInteractionUseLatched = false;
+            }
+        }
+
         // AltFire de jabalina es de una acción por pulsación. Soltar el botón
         // rearma el lanzamiento; mantenerlo no puede crear un bucle por tic.
         if (player != null && (player.cmd.buttons & BT_ALTATTACK) == 0)
@@ -17876,8 +18108,20 @@ class CaelumPlayer : DoomPlayer
         {
             persistentState.NativeEquipmentMigrationComplete = true;
             persistentState.InitializeNewMagicBoxOwnership();
+            persistentState.InitializeNewPalomoDiscount();
         }
         MagicBoxOwned = false;
+        PalomoMerchantDiscountGranted = false;
+        PalomoDiscountChancePercent = 0;
+        PalomoDiscountLastRoll = 0;
+        PalomoDiscountAutomaticSuccess = false;
+        SetPalomoDialogueToken("CaelumMagicBoxOwnershipToken", false);
+        SetPalomoDialogueToken(
+            "CaelumPalomoDiscountGrantedToken", false
+        );
+        SetPalomoDialogueToken(
+            "CaelumPalomoEloquenceEligibleToken", false
+        );
         int startingSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(
             CharacterProfile.GetSizeTier()
         );

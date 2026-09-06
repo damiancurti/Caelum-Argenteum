@@ -1,9 +1,9 @@
-# Caelum Argenteum — Caja Mágica V4.32.0b
+# Caelum Argenteum — Caja Mágica V4.32.0d
 
 V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
-cambia únicamente la adquisición: un personaje nuevo ya no posee la Caja
-Mágica al comenzar. Palomo la entrega una sola vez mediante `Use` y la
-recompensa persiste en guardados y viajes.
+cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
+comenzar. V4.32.0d formaliza el regalo dentro del diálogo USDF nativo de
+Palomo; la recompensa continúa siendo única y persiste en guardados y viajes.
 
 ## 1. Naturaleza y peso propio
 
@@ -80,10 +80,14 @@ causa explícita y no cambia el objeto.
 ## 6. Adquisición y compatibilidad de guardados
 
 - Un perfil nuevo se marca explícitamente como no propietario.
-- El primer `Use` sobre Palomo concede la Caja, añade sus 10 kg y reproduce un
-  único mensaje de recompensa.
-- Mantener pulsado `Use` no repite el regalo. Después de soltar y volver a usar
-  a Palomo se abre su comercio.
+- El primer `Use` sobre Palomo abre su presentación. Responder Sí a la aventura
+  concede la Caja; responder No y luego reconsiderar también la concede.
+- Confirmar que no se desea la aventura termina con “Qué lástima” y no entrega
+  la Caja. Volver a hablar reofrece la decisión; no se inventa un rechazo
+  permanente.
+- El regalo añade sus 10 kg, habilita los slots y sólo puede ejecutarse una vez.
+- Después de poseerla, hablar con Palomo abre las opciones Comerciar, Hablar y
+  la prueba de rebaja si se cumple su requisito.
 - La propiedad viaja en `CaelumPersistentCharacterState` y es independiente de
   la ubicación física futura de Palomo.
 - Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante

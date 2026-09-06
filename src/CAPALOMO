@@ -1,0 +1,166 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43200;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "palomo_root";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_INTRO";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+        ifitem
+        {
+            item = "CaelumMagicBoxOwnershipToken";
+            amount = 1;
+        }
+        link = "palomo_main";
+
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_YES";
+            giveitem = "CaelumPalomoAcceptAdventureAction";
+            yesmessage = "$CA_PALOMO_DIALOGUE_GIFT";
+            closedialog = true;
+        }
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_NO";
+            nextpage = "palomo_are_you_sure";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_are_you_sure";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_ARE_YOU_SURE";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_YES_SURE";
+            yesmessage = "$CA_PALOMO_DIALOGUE_PITY";
+            nextpage = "palomo_root";
+            closedialog = true;
+        }
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_NO_RECONSIDER";
+            giveitem = "CaelumPalomoAcceptAdventureAction";
+            yesmessage = "$CA_PALOMO_DIALOGUE_GIFT";
+            nextpage = "palomo_root";
+            closedialog = true;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_main";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_MAIN";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_TRADE";
+            giveitem = "CaelumPalomoTradeAction";
+            closedialog = true;
+        }
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_TALK";
+            nextpage = "palomo_talk";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_REQUEST_DISCOUNT";
+            require
+            {
+                item = "CaelumPalomoEloquenceEligibleToken";
+                amount = 1;
+            }
+            exclude
+            {
+                item = "CaelumPalomoDiscountGrantedToken";
+                amount = 1;
+            }
+            nextpage = "palomo_discount_confirm";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_talk";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_TALK_TEXT";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_BACK";
+            nextpage = "palomo_main";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_discount_confirm";
+        name = "$CA_PALOMO_NAME";
+        userstring = "palomo_discount_confirm";
+        dialog = "$CA_PALOMO_DIALOGUE_DISCOUNT_CONFIRM";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_ATTEMPT";
+            giveitem = "CaelumPalomoDiscountAction";
+            nextpage = "palomo_discount_result";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_BACK";
+            nextpage = "palomo_main";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_discount_result";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_DISCOUNT_FAILURE";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+        ifitem
+        {
+            item = "CaelumPalomoDiscountGrantedToken";
+            amount = 1;
+        }
+        link = "palomo_discount_success";
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_BACK";
+            nextpage = "palomo_main";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "palomo_discount_success";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_PALOMO_DIALOGUE_DISCOUNT_SUCCESS";
+        goodbye = "$CA_PALOMO_DIALOGUE_LEAVE";
+        choice
+        {
+            text = "$CA_PALOMO_DIALOGUE_BACK";
+            nextpage = "palomo_main";
+            closedialog = false;
+        }
+    }
+}

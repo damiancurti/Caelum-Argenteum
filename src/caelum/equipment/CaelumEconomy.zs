@@ -281,16 +281,21 @@ class CaelumEconomyRules : Object
     // El margen se aplica una sola vez al lote completo. Comprar a Palomo
     // redondea hacia arriba; venderle redondea hacia abajo.
     static clearscope int GetPalomoMerchantLotPrice(
-        int merchantItem, int quantity, int merchantMode
+        int merchantItem, int quantity, int merchantMode,
+        bool negotiatedDiscount = false
     )
     {
         int baseLot = GetPalomoMerchantBaseValue(merchantItem)
             * Max(0, quantity);
         if (merchantMode == CaelumConstants.PALOMO_MERCHANT_MODE_SELL)
         {
-            return baseLot / 2;
+            int sellPercent = negotiatedDiscount
+                ? CaelumConstants.PALOMO_DISCOUNT_SELL_PERCENT : 50;
+            return baseLot * sellPercent / 100;
         }
-        return (baseLot * 3 + 1) / 2;
+        int buyPercent = negotiatedDiscount
+            ? CaelumConstants.PALOMO_DISCOUNT_BUY_PERCENT : 150;
+        return (baseLot * buyPercent + 99) / 100;
     }
 
     static clearscope int ResolveCurrencyType(int currencyType)

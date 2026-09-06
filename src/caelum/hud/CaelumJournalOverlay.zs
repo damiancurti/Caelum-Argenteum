@@ -1184,6 +1184,15 @@ class CaelumJournalOverlay : EventHandler
             TitleFont, Font.CR_GOLD, 320.0, 20.0,
             StringTable.Localize("CA_PALOMO_MERCHANT_TITLE", false)
         );
+        if (localPlayer.PalomoMerchantDiscountGranted)
+        {
+            DrawCenteredText(
+                SmallFont, Font.CR_CYAN, 320.0, 44.0,
+                StringTable.Localize(
+                    "CA_PALOMO_MERCHANT_DISCOUNT_ACTIVE", false
+                )
+            );
+        }
 
         String modeKey = localPlayer.PalomoMerchantMode
                 == CaelumConstants.PALOMO_MERCHANT_MODE_SELL
@@ -1223,13 +1232,14 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(InventoryFont, Font.CR_GRAY, 518.0, 116.0,
             StringTable.Localize("CA_PALOMO_MERCHANT_UNIT", false));
 
-        for (int merchantItem = 0;
-            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
-            merchantItem++)
+        for (int visibleRow = 0;
+            visibleRow < localPlayer.PalomoMerchantVisibleItemCount;
+            visibleRow++)
         {
+            int merchantItem = localPlayer.PalomoMerchantVisibleItems[visibleRow];
             bool selected = merchantItem
                 == localPlayer.PalomoMerchantSelection;
-            double rowY = 142.0 + merchantItem * 27.0;
+            double rowY = 142.0 + visibleRow * 27.0;
             String itemName = StringTable.Localize(
                 GetPalomoMerchantItemKey(merchantItem), false
             );
@@ -1254,8 +1264,18 @@ class CaelumJournalOverlay : EventHandler
                 String.Format(
                     "%d c",
                     CaelumEconomyRules.GetPalomoMerchantLotPrice(
-                        merchantItem, 1, localPlayer.PalomoMerchantMode
+                        merchantItem, 1, localPlayer.PalomoMerchantMode,
+                        localPlayer.PalomoMerchantDiscountGranted
                     )
+                )
+            );
+        }
+        if (localPlayer.PalomoMerchantVisibleItemCount <= 0)
+        {
+            DrawCenteredText(
+                InventoryFont, Font.CR_GRAY, 320.0, 154.0,
+                StringTable.Localize(
+                    "CA_PALOMO_MERCHANT_NOTHING_TO_SELL", false
                 )
             );
         }
@@ -1333,17 +1353,21 @@ class CaelumJournalOverlay : EventHandler
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
             else if (e.KeyScan == InputEvent.Key_LeftArrow
-                || e.KeyScan == InputEvent.Key_RightArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Left
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
+            {
+                SendNetworkEvent("ca_palomo_merchant_quantity_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_RightArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
             {
-                SendNetworkEvent("ca_palomo_merchant_mode");
+                SendNetworkEvent("ca_palomo_merchant_quantity_next");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
             else if (e.KeyScan == InputEvent.Key_Space
                 || e.KeyScan == InputEvent.Key_Pad_X)
             {
-                SendNetworkEvent("ca_palomo_merchant_quantity");
+                SendNetworkEvent("ca_palomo_merchant_mode");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
             else if (e.KeyScan == InputEvent.Key_Enter
@@ -1671,9 +1695,13 @@ class CaelumJournalOverlay : EventHandler
         {
             requestingPlayer.TogglePalomoMerchantMode();
         }
-        else if (e.Name == "ca_palomo_merchant_quantity")
+        else if (e.Name == "ca_palomo_merchant_quantity_previous")
         {
-            requestingPlayer.CyclePalomoMerchantQuantity();
+            requestingPlayer.CyclePalomoMerchantQuantity(-1);
+        }
+        else if (e.Name == "ca_palomo_merchant_quantity_next")
+        {
+            requestingPlayer.CyclePalomoMerchantQuantity(1);
         }
         else if (e.Name == "ca_palomo_merchant_transact")
         {

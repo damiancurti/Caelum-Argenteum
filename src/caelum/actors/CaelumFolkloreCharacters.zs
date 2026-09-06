@@ -34,39 +34,31 @@ class CaelumFolkloreCombatActor : CaelumCombatActor abstract
 // deja que cada personaje implemente una única operación autoritativa.
 class CaelumInteractiveFolkloreActor : CaelumFolkloreCombatActor abstract
 {
-    bool InteractionUseLatched;
-    Actor LastInteractionPlayer;
-
     virtual bool InteractWithCaelumPlayer(CaelumPlayer user)
     {
         return false;
     }
 
-    override void Tick()
-    {
-        Super.Tick();
-        if (!InteractionUseLatched) { return; }
-        PlayerPawn userPawn = PlayerPawn(LastInteractionPlayer);
-        if (userPawn == null
-            || userPawn.player == null
-            || (userPawn.player.cmd.buttons & BT_USE) == 0)
-        {
-            InteractionUseLatched = false;
-            LastInteractionPlayer = null;
-        }
-    }
-
     override bool Used(Actor user)
     {
-        if (InteractionUseLatched && LastInteractionPlayer == user)
+        CaelumPlayer caelumPlayer = CaelumPlayer(user);
+        if (caelumPlayer == null || caelumPlayer.player == null)
+        {
+            return false;
+        }
+
+        // La interacción sólo nace de una pulsación física de Use. El latch
+        // vive en el jugador porque PlayerThink limpia BT_USE mientras la
+        // tienda está abierta; así Q no puede cerrar y reabrirla en el mismo
+        // pulso cuando Palomo continúa bajo la mira.
+        if ((caelumPlayer.player.cmd.buttons & BT_USE) == 0
+            || caelumPlayer.FolkloreInteractionUseLatched)
         {
             return true;
         }
-        InteractionUseLatched = true;
-        LastInteractionPlayer = user;
-        CaelumPlayer caelumPlayer = CaelumPlayer(user);
-        return caelumPlayer != null
-            && InteractWithCaelumPlayer(caelumPlayer);
+        caelumPlayer.FolkloreInteractionUseLatched = true;
+        caelumPlayer.FolkloreInteractionReleaseGuardTics = 0;
+        return InteractWithCaelumPlayer(caelumPlayer);
     }
 }
 
@@ -77,6 +69,8 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     int WanderDirectionTics;
     bool WanderEnabled;
     bool MerchantAnchored;
+    bool MerchantReturningHome;
+    double MerchantHomeAngle;
 
     Default
     {
@@ -100,6 +94,8 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         MerchantAnchored = args[0]
             == CaelumConstants.PALOMO_MERCHANT_ANCHORED;
         WanderEnabled = !MerchantAnchored;
+        MerchantReturningHome = false;
+        MerchantHomeAngle = Angle;
     }
 
     action void A_EnablePalomoWander()
@@ -123,14 +119,54 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     override void Tick()
     {
         Super.Tick();
-        if (!WanderEnabled || health <= 0
-            || CombatLucidityPhysicalStunRemaining > 0.0)
+        // CAPALOMO no queda unido permanentemente a la clase. Tras cerrar la
+        // conversación, retirar el nodo devuelve la siguiente pulsación a
+        // Actor.Used, donde se resincronizan estado y requisitos por jugador.
+        if (!bInConversation && HasConversation())
+        {
+            Level.ExecuteSpecial(
+                CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self, null, false, 0, 0
+            );
+        }
+        if (health <= 0 || CombatLucidityPhysicalStunRemaining > 0.0)
         {
             return;
         }
 
         Vector2 homeOffset = WanderHome.XY - Pos.XY;
         double homeDistance = homeOffset.Length();
+        if (MerchantAnchored)
+        {
+            if (!MerchantReturningHome
+                && homeDistance
+                    >= CaelumConstants.PALOMO_MERCHANT_RETURN_DISTANCE)
+            {
+                MerchantReturningHome = true;
+            }
+
+            if (!MerchantReturningHome) { return; }
+            if (homeDistance <= 1.0)
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+                Angle = MerchantHomeAngle;
+                MerchantReturningHome = false;
+                return;
+            }
+
+            double returnDirection = VectorAngle(homeOffset.X, homeOffset.Y);
+            double returnSpeed = CombatBaseSpeed
+                * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+                / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+            double resolvedSpeed = Min(Max(0.0, returnSpeed), homeDistance);
+            Angle = returnDirection;
+            Vel.X = Cos(returnDirection) * resolvedSpeed;
+            Vel.Y = Sin(returnDirection) * resolvedSpeed;
+            return;
+        }
+
+        if (!WanderEnabled) { return; }
         if (homeDistance > CaelumConstants.PALOMO_TEST_WANDER_RADIUS)
         {
             WanderDirection = VectorAngle(homeOffset.X, homeOffset.Y);
@@ -162,12 +198,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
     override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
     {
-        if (caelumPlayer.GrantMagicBoxFromPalomo())
-        {
-            return true;
-        }
-        caelumPlayer.OpenPalomoMerchant(self);
-        return true;
+        return caelumPlayer.OpenPalomoDialogue(self);
     }
 
     States

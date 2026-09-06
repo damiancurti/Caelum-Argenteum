@@ -498,10 +498,10 @@ class CaelumAmuletPickup : CaelumEquipmentItem
     String GetJewelryIconPath()
     {
         int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
-        if (t == CaelumConstants.AMULET_SAPPHIRE) return "graphics/caelum/icons/jewelry/ca_amulet_sapphire.png";
-        if (t == CaelumConstants.AMULET_EMERALD) return "graphics/caelum/icons/jewelry/ca_amulet_emerald.png";
-        if (t == CaelumConstants.AMULET_TOPAZ) return "graphics/caelum/icons/jewelry/ca_amulet_topaz.png";
-        return "graphics/caelum/icons/jewelry/ca_amulet_ruby.png";
+        int tier = PickupDataInitialized ? Tier : Clamp(args[1], 1, 3);
+        return CaelumIconResolver.ResolveTierPath(
+            CaelumIconResolver.GetAmuletBasePath(t), tier
+        );
     }
     String GetJewelrySpriteName()
     {
@@ -556,11 +556,10 @@ class CaelumSealPickup : CaelumEquipmentItem
     String GetJewelryIconPath()
     {
         int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
-        if (t == CaelumConstants.SEAL_WATER) return "graphics/caelum/icons/jewelry/ca_seal_water.png";
-        if (t == CaelumConstants.SEAL_EARTH) return "graphics/caelum/icons/jewelry/ca_seal_earth.png";
-        if (t == CaelumConstants.SEAL_AIR) return "graphics/caelum/icons/jewelry/ca_seal_air.png";
-        if (t == CaelumConstants.SEAL_QUINTESSENCE) return "graphics/caelum/icons/jewelry/ca_seal_quintessence.png";
-        return "graphics/caelum/icons/jewelry/ca_seal_fire.png";
+        int tier = PickupDataInitialized ? Tier : Clamp(args[1], 1, 3);
+        return CaelumIconResolver.ResolveTierPath(
+            CaelumIconResolver.GetSealBasePath(t), tier
+        );
     }
     String GetJewelrySpriteName()
     {
@@ -790,7 +789,7 @@ class CaelumJavelinTierTwoAmmo : CaelumJavelinAmmo
 {
     Default
     {
-        Inventory.Icon "graphics/caelum/icons/ca_javelin.png";
+        Inventory.Icon "graphics/caelum/icons/ca_javelin_t2.png";
         // Cada proyectil recuperado crea exactamente una unidad recogible.
         Inventory.Amount 1;
     }
@@ -816,7 +815,7 @@ class CaelumJavelinTierThreeAmmo : CaelumJavelinAmmo
 {
     Default
     {
-        Inventory.Icon "graphics/caelum/icons/ca_javelin.png";
+        Inventory.Icon "graphics/caelum/icons/ca_javelin_t3.png";
         // Cada proyectil recuperado crea exactamente una unidad recogible.
         Inventory.Amount 1;
     }

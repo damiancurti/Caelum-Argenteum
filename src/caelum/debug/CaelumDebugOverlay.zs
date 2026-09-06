@@ -1147,6 +1147,25 @@ class CaelumDebugOverlay : EventHandler
     // recursos gráficos de Doom.
     ui String GetEquipmentSelectionIcon(CaelumPlayer localPlayer)
     {
+        int selectedKind = localPlayer.EquipmentSelectionKind;
+        int selectedType = -1;
+        if (selectedKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+            selectedType = localPlayer.EquipmentSelectionWeaponType;
+        else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+            selectedType = localPlayer.EquipmentSelectionShieldType;
+        else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+            selectedType = localPlayer.EquipmentSelectionArmorType;
+        else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+            selectedType = localPlayer.EquipmentSelectionAmuletType;
+        else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            selectedType = localPlayer.EquipmentSelectionSealType;
+
+        String tierIcon = CaelumIconResolver.ResolveEquipmentPath(
+            selectedKind, selectedType, localPlayer.EquipmentSelectionSlot,
+            localPlayer.EquipmentSelectionTier
+        );
+        if (tierIcon.Length() > 0) { return tierIcon; }
+
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             switch (localPlayer.EquipmentSelectionWeaponType)

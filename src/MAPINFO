@@ -16,6 +16,11 @@ GameInfo
 
     // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
     EventHandlers = "CaelumMassAIScheduler", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
+
+    // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
+    // trasladar o recrear a Palomo durante futuras etapas de misión sin
+    // duplicar el árbol de conversación en cada DIALOGxx.
+    AddDialogues = "CAPALOMO"
 }
 
 // Caelum administra su progresión dentro del personaje. Las cinco dificultades

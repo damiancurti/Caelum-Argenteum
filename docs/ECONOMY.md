@@ -1,11 +1,14 @@
-# Caelum Argenteum — Economía y primer comerciante V4.32.0b
+# Caelum Argenteum — Economía y primer comerciante V4.32.0d
 
 V4.32.0a-r4 conserva sin cambios todos los valores y fórmulas de r3. Su única
 corrección funcional declara en `play scope` los helpers que inspeccionan
 instancias vivas de inventario, requisito de GZDoom 4.14.2 durante `LoadActors`.
 La matriz acumulativa de pruebas fue completada y aprobada por el autor. Sobre
-esa base, V4.32.0b conecta a Palomo como primer comerciante bilateral sin
-alterar ningún valor de materiales, recetas o monedas.
+esa base, V4.32.0b conectó a Palomo como primer comerciante bilateral y la
+revisión V4.32.0c corrige su navegación, cierre y retorno al puesto sin alterar
+ningún valor de materiales, recetas, stock o monedas. V4.32.0d añade la primera
+rebaja negociada sin modificar los valores base: un éxito cambia solamente los
+márgenes de Palomo a 140%/60% y persiste por personaje.
 
 ## 1. Unidad monetaria
 
@@ -164,16 +167,25 @@ Los métodos autoritativos son:
 - `CaelumEconomyRules.GetPricePaidByMerchant`
 - `CaelumEconomyRules.GetPriceChargedByMerchant`
 
-Personalidades, reputación, regateo y diferencias regionales no modifican
-estos valores base en V4.32.0b. Se conectarán después sobre esta única capa
-de precios, sin duplicar fórmulas dentro de cada NPC.
+La primera excepción autorizada es la negociación con Palomo en V4.32.0d:
+
+```text
+Sin acuerdo:  NPC paga piso(lote × 0,50); cobra techo(lote × 1,50)
+Con acuerdo:  NPC paga piso(lote × 0,60); cobra techo(lote × 1,40)
+```
+
+La opción requiere Elocuencia cruda mayor que 50. Su prueba enfrenta la
+estadística derivada Labia a dificultad 50; el acuerdo exitoso queda guardado
+por personaje. Personalidades adicionales, reputación y diferencias regionales
+seguirán conectándose sobre esta única capa, sin duplicar fórmulas por NPC.
 
 ## 5. Palomo: catálogo y transacción física
 
-Palomo aparece anclado 64 unidades frente al inicio de MAP01. El primer `Use`
-regala la Caja Mágica; una interacción posterior abre el comercio. Compra y
-vende los cinco objetos autorizados. Estos valores iniciales de stock y caja
-están centralizados para el balance posterior:
+Palomo aparece anclado 64 unidades frente al inicio de MAP01. `Use` abre su
+conversación USDF nativa: aceptar la aventura entrega la Caja Mágica y las
+interacciones posteriores ofrecen Comercio, Hablar y, cuando corresponde,
+Pedir una rebaja. Compra y vende los cinco objetos autorizados. Estos valores
+iniciales de stock y caja están centralizados para el balance posterior:
 
 | Objeto | Valor base | Palomo cobra por 1 | Palomo paga por 1 | Stock inicial |
 | --- | ---: | ---: | ---: | ---: |
@@ -183,11 +195,33 @@ están centralizados para el balance posterior:
 | Cobre bruto | 5 | 8 | 2 | 50 |
 | Estaño bruto | 5 | 8 | 2 | 50 |
 
+Después de negociar exitosamente, los precios unitarios de esa misma tabla son:
+
+| Objeto | Palomo cobra al 140% | Palomo paga al 60% |
+| --- | ---: | ---: |
+| Ración de comida | 6 | 2 |
+| Ración de agua | 9 | 3 |
+| Madera | 3 | 1 |
+| Cobre bruto | 7 | 3 |
+| Estaño bruto | 7 | 3 |
+
+Los porcentajes se aplican al lote completo; los valores unitarios sólo ilustran
+el redondeo. Por ejemplo, cinco cobres brutos pasan de costar 38 a 35 cobres y
+de pagar 12 a 15 cobres.
+
 La caja inicial de Palomo contiene **200 cobres**. Stock y dinero son finitos,
 se actualizan en ambas direcciones y persisten por personaje. Guardarlos fuera
 del actor del mapa permite reubicar a Palomo mediante una futura etapa de
 misión sin reiniciarlos y evita que una transacción de un jugador duplique o
 consuma el estado autoritativo de otro.
+
+En modo **Comprar** aparecen los cinco productos del catálogo. En modo
+**Vender** la lista se compacta y muestra solamente productos que el jugador
+posee en cantidad no reservada y que Palomo puede pagar al menos por una
+unidad con su caja actual. Si no existe ninguno, la interfaz lo indica en lugar
+de presentar filas inútiles. El tamaño de lote elegido sigue pudiendo superar
+las unidades o el dinero disponibles; en ese caso la confirmación se rechaza
+de forma atómica y explica la causa.
 
 Los lotes disponibles son 1, 5, 20, 50 y 100. El 50%/150% se aplica al valor
 base del lote completo y recién después se redondea; por eso cinco unidades de
@@ -200,10 +234,17 @@ cambio con las denominaciones existentes. Antes de mutar inventario valida en
 conjunto dinero, stock, materiales reservados por crafting, carga final y slots
 de Caja Mágica. Una operación rechazada no altera dinero ni mercancía.
 
-Controles: Arriba/Abajo selecciona objeto; Izquierda/Derecha alterna comprar o
-vender; Espacio/X recorre el tamaño de lote; Enter/A confirma; Q, Tab, Escape o
-B cierran. Alejarse más de 160 unidades, viajar o perder a Palomo cierra la
-sesión.
+Controles: Arriba/Abajo selecciona objeto; Izquierda/Derecha reduce o aumenta
+el lote entre 1/5/20/50/100; Espacio/X alterna Comprar/Vender; Enter/A confirma;
+Q, Tab, Escape o B cierran. El cierre conserva un latch autoritativo hasta que
+se suelta físicamente `Use`, por lo que mirar a Palomo o cerrar inmediatamente
+después de hablarle no puede reabrir la tienda.
+
+El Palomo colocado en MAP01 conserva como hogar su posición inicial. Los
+empujes menores a 500 MU se toleran; al alcanzar o superar **500 MU** de
+distancia horizontal, vuelve por sus propios medios a velocidad de carrera y
+se detiene nuevamente en el puesto. Alejarse más de 160 unidades, viajar o
+perder a Palomo cierra la sesión.
 
 ## 6. Presentación en inventario
 

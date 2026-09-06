@@ -146,7 +146,10 @@ class CaelumHUDOverlay : EventHandler
     {
         if (!localPlayer.HUDHasActiveWeapon) { return; }
         TextureID weaponIcon = TexMan.CheckForTexture(
-            GetActiveWeaponIconPath(localPlayer.HUDActiveWeaponType),
+            CaelumIconResolver.ResolveTierPath(
+                GetActiveWeaponIconPath(localPlayer.HUDActiveWeaponType),
+                localPlayer.HUDActiveWeaponTier
+            ),
             TexMan.Type_MiscPatch
         );
         if (!weaponIcon.IsValid()) { return; }

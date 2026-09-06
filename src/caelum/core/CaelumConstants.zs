@@ -68,6 +68,22 @@ class CaelumConstants : Object
     // de misión posterior podrá recrearlo o trasladarlo sin cambiar su estado.
     const PALOMO_MERCHANT_ANCHORED = 1;
     const PALOMO_MERCHANT_SESSION_DISTANCE = 160.0;
+    // El comerciante anclado tolera empujes menores. A partir de 500 MU
+    // regresa a velocidad de carrera a su punto de aparición original.
+    const PALOMO_MERCHANT_RETURN_DISTANCE = 500.0;
+    // Evita interpretar el comando limpiado por el menú como una liberación
+    // real de Use en el mismo tic de cierre.
+    const PALOMO_INTERACTION_REARM_GUARD_TICS = 2;
+    // La conversación se registra como USDF independiente de MAP01. Palomo
+    // la asigna sólo durante la interacción para que Actor.Used conserve el
+    // control del flanco físico de Use entre aperturas.
+    const PALOMO_CONVERSATION_ID = 43200;
+    const GZDOOM_THING_SET_CONVERSATION_SPECIAL = 79;
+    const PALOMO_DIALOGUE_DIFFICULTY = 50;
+    // El requisito es estricto: nivel 50 todavía no revela la opción.
+    const PALOMO_DISCOUNT_MINIMUM_ELOQUENCE = 50;
+    const PALOMO_DISCOUNT_BUY_PERCENT = 140;
+    const PALOMO_DISCOUNT_SELL_PERCENT = 60;
     const BULL_GORE_BASE_DAMAGE = 45.0;
     const MANDINGA_MACHETE_BASE_DAMAGE = 66.0;
     const ZUPAY_SLAM_BASE_DAMAGE = 66.0;
