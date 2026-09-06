@@ -1,9 +1,130 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Palomo merchant and persistent Magic Box acquisition 4.32.0b
+
+**Implemented; deterministic source, map and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+New characters begin without the Magic Box: it contributes zero weight, has
+zero slots and rejects every direct or automatic storage route. Palomo is now
+an anchored NPC 64 map units in front of the MAP01 player-1 start. The shared
+`CaelumInteractiveFolkloreActor` contract edge-triggers `Use`, so the first
+interaction grants the box once and a later interaction opens commerce. The
+accepted 10 kg structure and aggregate `floor(raw weight / maximum slots)`
+rule begin only after that reward. Confirmed pre-4.32.0b profiles migrate as
+owners so previously boxed inventory remains accessible.
+
+Palomo trades food, water, wood, raw copper and raw tin in both directions.
+The player selects lots of 1/5/20/50/100; the existing 150% charge and 50%
+payment apply once to the whole lot. Transactions consume the player's real
+fifteen currency classes, accept mixed metal/denominations and materialize
+canonical physical change. Stock, player ownership, both cash balances,
+crafting reservations, final carry load and Magic Box slots are checked before
+commit. The initial test balance is 20 food, 20 water, 100 wood, 50 raw copper,
+50 raw tin and a 200-copper merchant wallet.
+
+Merchant stock/cash is stored in each character's persistent inventory record,
+not in the MAP01 actor. This keeps server authority isolated per player and is
+the compatibility seam for V4.33: Palomo may later move or respawn according
+to quest stage without resetting or duplicating the trade state. The current
+actor remains stationary because `arg0 = 1` marks the narrative merchant
+anchor; unanchored debug summons retain their former wandering behavior.
+
+The Inventory category uses the silver coin image, while copper/silver/gold
+totals retain their own icons. The supplied 64×64 RGBA Magic Box sprite appears
+next to its status and is dimmed before acquisition. Trade input and rendering
+reuse `CaelumJournalOverlay`; the authoritative mutations remain play-scope
+network events and the player cannot move while the merchant panel is open.
+
+## ZScript startup-scope compatibility 4.32.0a-r4
+
+**Accepted by the author after the complete cumulative GZDoom 4.14.2 test
+pass; deterministic source and package audit passed**
+
+GZDoom 4.14.2 rejected r3 during `LoadActors` because
+`CaelumEconomyRules.GetInventoryUnitBaseValue`, a function compiled in data
+scope, called `play` methods on live currency, consumable and special-item
+instances. R4 explicitly declares the three inventory-dependent pricing
+helpers as `play static`, including the stack wrapper and equipment helper, and
+adds a build-audit requirement for those declarations.
+
+This is a startup-only compatibility correction. Economy values, recipes,
+merchant margins, currency, Magic Box behavior, UI, maps, resources, crafting,
+equipment and save data remain identical to r3. The r4 package supersedes r3.
+
+## Permanent proportional-weight Magic Box 4.32.0a-r3
+
+**Accepted by the author in r4 after the complete cumulative GZDoom 4.14.2
+test pass; deterministic source and package audit passed**
+
+The Magic Box remains a permanent character capability rather than a new
+inventory actor. It cannot be dropped, sold, destroyed or stored, and its
+structure always contributes 10.000 kg to carried load, including while empty.
+Its Intelligence-derived maximum slot count is the weight divisor: all real
+weights inside are summed, divided once by the current maximum slots and then
+rounded downward to the game's 0.001-kg precision. The base 10 kg is never
+divided. Stacks still consume one slot regardless of Amount, but every unit
+contributes before the aggregate division.
+
+Load transitions are prospective. New pickups, additions to boxed stacks,
+retrieval, direct equipping, processing/component output, final-equipment
+assembly and disassembly compare the complete resulting load against carrying
+capacity. Retrieval subtracts the item's former reduced share before adding its
+full personal weight. Splitting weight across piles cannot exploit per-stack
+rounding because only the total box content is rounded.
+
+The existing storage whitelist is unchanged. Native keys, arrows and bolts
+remain outside the box; all previously admitted equipment and stacks retain
+their behavior. If Intelligence lowers capacity beneath current occupancy,
+contents remain intact and the reduced weight is recalculated with the new
+divisor. Further deposits are blocked until enough slots are freed. The Journal
+Inventory line now displays used/maximum slots plus total box weight, while the
+selected item continues to display its unreduced real weight. Exact rules and
+examples are recorded in `docs/MAGIC_BOX.md`.
+
+## Physical currency and recursive economy foundation 4.32.0a-r2
+
+**Accepted by the author in r4 after the complete cumulative GZDoom 4.14.2
+test pass; deterministic source and package audit passed**
+
+Copper, silver and gold now exist as fifteen physical, stackable native
+inventory items: each metal has nominal denominations 1, 5, 20, 50 and 100.
+One silver unit equals 200 copper units and one gold unit equals 200 silver
+units (40,000 copper). Every physical coin weighs 0.001 kg regardless of metal
+or denomination. Coins cannot be crafted, minted or smelted by the player; the
+face-value ladder is deliberately independent from material prices. The five
+denominations of a metal reuse its accepted 64x64 icon and world sprite and
+remain distinguishable through localized inventory names and pickup messages.
+
+The Journal Currency filter enumerates every denomination and shows, beside
+Load and Magic Box, the total copper-equivalent balance plus aggregate physical
+coin counts for copper, silver and gold. Money stored in the Magic Box remains
+owned and visible in the total. The former zero-weight storage contract in this
+r2 historical entry is superseded by the proportional rule in 4.32.0a-r3.
+
+The authored raw-material anchors now set wood to 2; plant fiber and cow hide
+to 3; coal, copper and tin to 5; iron to 7; silver to 100; every current raw gem
+(opal, topaz, emerald, sapphire and ruby) to 500; and gold to 1,000 copper per
+0.001 kg unit. Food and water rations receive authorized per-item values of 4
+and 6. Natural-resource hardness and abundance still control extraction but no
+longer overwrite these monetary choices. Processing uses each real recipe at
+100% material efficiency and adds 25%. Components then use processed-material
+values and add 25%, 50% or 100% according to their cumulative T1/T2/T3 station
+network. Final equipment values its manufactured components and existing
+precious-metal details, then applies the same tier markup once for assembly.
+
+Merchant helpers pay 50% of the complete lot value, rounded down to whole
+copper, and charge 150%, rounded up. The actual NPC interaction, merchant
+stock and transfer transaction remain the next V4.32 increment; this revision
+does not invent dialogue or place merchants. Consumables other than food and
+water, ammunition, keys and key items intentionally remain unpriced until they
+receive an authorized recipe or base value. No crafting quantity, efficiency,
+operation time, repair, disassembly, resource or map changes in this revision.
+
 ## Potable-water constant restoration 4.31.0j
 
-**Implemented; deterministic reference, source and package audit passed;
-focused GZDoom 4.14.2 author acceptance pending**
+**Accepted by the author after the complete cumulative GZDoom test pass;
+deterministic reference, source and package audit passed**
 
 Version 4.31.0i rebuilt its constants file from an incomplete source snapshot
 and omitted `POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND`, although the
@@ -1016,13 +1137,14 @@ The three actor profiles now use the playable-character statistical model:
 
 | Actor | Collision | Mass | Twelve attributes | Authored behavior |
 | --- | --- | ---: | ---: | --- |
-| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Wanders autonomously; has no attack. |
+| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Historical 4.29 behavior: wanders autonomously and has no attack. V4.32.0b anchors the MAP01 merchant instance. |
 | Mandinga | `Height 51.644444`, `Radius 14.755556` | 66 | 6 | Melee base 66; ranged action reuses the tier-1 Fire staff behavior. |
 | Zupay | `Height 93.333333`, `Radius 26.666667` | 666 | 33 | Ground slam base 66, 192-MU linear-falloff radius and +8 vertical launch; ranged action temporarily reuses the tier-1 Earth statuette behavior. |
 
 `CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus` retain editor
-numbers 18036–18038 and their console summon names. None receives a faction,
-loot table or MAP01/MAP02 placement in 4.29.0ar. The faction system remains a
+numbers 18036–18038 and their console summon names. In historical 4.29.0ar none
+received a faction, loot table or MAP01/MAP02 placement. V4.32.0b now places
+only Palomo as the initial MAP01 merchant; the faction system remains a
 separate roadmap feature.
 
 Focused validation for this candidate is:

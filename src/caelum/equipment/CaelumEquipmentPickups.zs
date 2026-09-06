@@ -181,6 +181,8 @@ class CaelumEquipmentItem : Inventory
 
     double GetCarriedWeight()
     {
+        // El peso reducido compartido de la Caja Mágica pertenece al resumen
+        // agregado del jugador, no a una pieza individual.
         return InMagicBox ? 0.0 : Max(0.0, UnitWeight) * Amount;
     }
 
@@ -602,8 +604,8 @@ class CaelumSealPickup : CaelumEquipmentItem
     }
 }
 
-// Toda la pila ocupa un único slot de Caja Mágica. Fuera de ella cada bala
-// pesa 0,003; dentro, la pila completa pesa cero sin importar Amount.
+// Toda la pila ocupa un único slot de Caja Mágica. Cada bala conserva su peso
+// de 0,003; dentro, la pila participa del cálculo agregado reducido.
 class CaelumCarbineAmmo : Ammo
 {
     bool InMagicBox;
@@ -633,6 +635,8 @@ class CaelumCarbineAmmo : Ammo
 
     double GetCarriedWeight()
     {
+        // El peso reducido compartido de la Caja Mágica pertenece al resumen
+        // agregado del jugador, no a esta pila individual.
         return InMagicBox ? 0.0 : Amount * GetUnitWeight();
     }
 

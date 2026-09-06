@@ -365,6 +365,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_COMBAT";
             case CaelumConstants.CRAFTING_ACTION_FAILED_TARGET:
                 return "CA_CRAFTING_ACTION_FAILED_TARGET";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_CRAFTING_ACTION_FAILED_CARRY_CAPACITY";
             case CaelumConstants.CRAFTING_ACTION_REPAIRED:
                 return "CA_CRAFTING_ACTION_REPAIRED";
             case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
@@ -463,6 +465,12 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_KEY_ITEM_PROCESSING_MANUAL";
             }
             return "CA_KEY_ITEM_SEALED_LETTER";
+        }
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            return CaelumDisplayNames.GetSpecialItemKey(
+                specialCategory, specialType
+            );
         }
         switch (specialType)
         {
@@ -686,6 +694,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED:
                 return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }
@@ -1257,6 +1267,22 @@ class CaelumDebugOverlay : EventHandler
                 ? "graphics/caelum/icons/ca_book.png"
                 : "graphics/caelum/icons/ca_sealed_letter.png";
         }
+        if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            int currencyMetal = CaelumEconomyRules.GetCurrencyMetalType(
+                localPlayer.EquipmentSelectionSpecialType
+            );
+            if (currencyMetal == CaelumConstants.CURRENCY_METAL_SILVER)
+            {
+                return "graphics/caelum/icons/currency/ca_coin_silver.png";
+            }
+            if (currencyMetal == CaelumConstants.CURRENCY_METAL_GOLD)
+            {
+                return "graphics/caelum/icons/currency/ca_coin_gold.png";
+            }
+            return "graphics/caelum/icons/currency/ca_coin_copper.png";
+        }
         return "";
     }
 
@@ -1354,6 +1380,11 @@ class CaelumDebugOverlay : EventHandler
         {
             categoryKey = "CA_EQUIPMENT_CATEGORY_SEAL";
         }
+        else if (localPlayer.EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            categoryKey = "CA_EQUIPMENT_CATEGORY_CURRENCY";
+        }
         String category = StringTable.Localize(categoryKey, false);
         String selection;
         if (localPlayer.EquipmentSelectionKind
@@ -1404,7 +1435,9 @@ class CaelumDebugOverlay : EventHandler
         else if (localPlayer.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_KEY
             || localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
         {
             selection = String.Format(
                 "%s x%d",
@@ -1593,7 +1626,9 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_KEY
             || localPlayer.EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || localPlayer.EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
         {
             detail = String.Format(
                 "%s %d | %s %.3f",
@@ -1666,7 +1701,7 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.HUDCarryCapacity
         );
         String totals = String.Format(
-            "%s:%d %s:%d %s:%d   %s:%d %s:%d %s:%d/%d",
+            "%s:%d %s:%d %s:%d   %s:%d %s:%d %s:%d/%d (%.3f kg)",
             StringTable.Localize("CA_EQUIPMENT_COUNT_ARMOR", false),
             localPlayer.OwnedArmorCount,
             StringTable.Localize("CA_EQUIPMENT_COUNT_SHIELD", false),
@@ -1679,7 +1714,8 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.EquippedItemSlotCount,
             StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
             localPlayer.MagicBoxUsedSlots,
-            localPlayer.MagicBoxMaximumSlots
+            localPlayer.MagicBoxMaximumSlots,
+            localPlayer.HUDMagicBoxTotalWeight
         );
         String actionResult = StringTable.Localize(
             GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
@@ -2022,10 +2058,11 @@ class CaelumDebugOverlay : EventHandler
         }
 
         String boxLine = String.Format(
-            "%s: %d / %d",
+            "%s: %d / %d · %.3f kg",
             StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
             localPlayer.MagicBoxUsedSlots,
-            localPlayer.MagicBoxMaximumSlots
+            localPlayer.MagicBoxMaximumSlots,
+            localPlayer.HUDMagicBoxTotalWeight
         );
         String actionText = localPlayer.CraftingTaskActive
             ? String.Format(
@@ -2095,7 +2132,9 @@ class CaelumDebugOverlay : EventHandler
             || localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT
             || localPlayer.LastCraftingAction
-                == CaelumConstants.CRAFTING_ACTION_FAILED_TARGET)
+                == CaelumConstants.CRAFTING_ACTION_FAILED_TARGET
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY)
         {
             actionColor = Font.CR_RED;
         }

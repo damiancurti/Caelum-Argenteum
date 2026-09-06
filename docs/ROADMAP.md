@@ -4,6 +4,25 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
+V4.32.0b builds on the accepted V4.32.0a-r4 baseline and is the current
+manual-test candidate. R2 introduced the
+roadmap's required economic foundation and r3 revised the Magic Box; r4 fixes
+their GZDoom 4.14.2 startup compatibility without changing gameplay. The slice adds
+five nominal denominations (1/5/20/50/100) for each of copper, silver and gold,
+a 200:1 step between metals, authored material/food/water values, recursive
+prices derived from accepted recipes and station tiers, the 50%/150% merchant
+margins and the Inventory money summary. Its r3 storage revision makes the
+permanent Magic Box weigh 10 kg and reduces its aggregated contents by the
+current maximum slot count, rounded downward to 0.001 kg. V4.32.0b now connects
+the shared Use layer, Palomo's one-time Magic Box gift and the first complete
+bilateral physical-money transaction for food, water, wood, raw copper and raw
+tin. Palomo is placed in front of MAP01's start and his finite stock/cash state
+persists independently of the map actor.
+
+The author completed and approved the full cumulative GZDoom 4.14.2 test
+matrix for V4.32.0a-r4. That slice is closed; V4.32.0b requires its focused
+startup, gift, persistence and commerce tests before the next dialogue slice.
+
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
 adds a complete cross-reference audit for every `CaelumConstants.*` use. No
@@ -37,7 +56,7 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 | V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All seven current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
 | V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
 | V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability and material-recovery foundations exist. Complete same-station proportional repair and durability-scaled disassembly; elemental equipment returns its corresponding recipe materials rather than an essence/base-implement choice. |
-| V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
+| V4.25 — Loot, Materials & Economy Foundation | Economy and revised Magic Box foundation implemented and accepted in V4.32.0a-r4; physical content remains partial | Material actors, natural anchors, physical currency and transaction-ready base-price helpers exist. Add systematic loot tables, functional containers and remaining basic-material sources. Replace copyrighted development placeholders before release. |
 | V4.26 — NPC Interaction, Quests and Factions | Not implemented as a complete system | Build interaction and dialogue first, then merchants, quests, reputation and factions. Do not begin large social content before the shared infrastructure is stable. |
 
 ## 2. Authoritative combat input contract
@@ -724,7 +743,9 @@ published as an exact per-variant catalogue.
   through authoritative interaction or death transactions.
 - Formalize basic wood and raw-metal acquisition; ingots remain processing
   output unless the author assigns a separate source.
-- Add transaction-ready item values and buy/sell foundations without prematurely balancing a complete economy.
+- Transaction-ready material/equipment values and buy/sell price helpers are
+  implemented and accepted in V4.32.0a-r4 without altering the accepted
+  crafting rules.
 - Continue replacing Doom-derived test placeholders with original or license-compatible assets.
 
 Author input required before implementation:
@@ -741,24 +762,40 @@ Author input required before implementation:
   disappears, or keeps both behaviors by source type.
 - Fix whether basic metals enter inventory as ore requiring smelting, direct
   metal, or both, plus the initial quantity scale.
-- Choose the economy's accounting unit and a small set of anchor values from
-  which item/material values can be derived. Merchant personalities, regional
-  prices and negotiation modifiers remain V4.32 content.
+- **Resolved and accepted in V4.32.0a-r4:** copper is the accounting unit; every metal has
+  nominal coins of 1/5/20/50/100; silver and gold each advance 200× from the
+  preceding metal; coins weigh 0.001 kg and cannot be minted or smelted by the
+  player. Wood is worth 2, the authored material table supplies the raw anchors
+  and recipe/station labor supplies the recursive manufactured values.
+  Merchant personalities, regional prices and negotiation modifiers remain
+  later V4.32 content.
 - Identify the Doom-derived loot/container placeholders that must be replaced
   in this milestone and provide or approve their license-compatible assets.
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
+**V4.32.0a-r4 economic prerequisite accepted. V4.32.0b is implemented as the
+focused manual-test candidate.** It adds a reusable edge-triggered Use contract,
+Palomo's persistent one-time Magic Box gift and a finite buy/sell inventory
+using the single physical-currency price service. Broader dialogue and merchant
+content remains gated behind acceptance of this end-to-end slice.
+
 - Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
 - Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
-- Add a shared Use-based NPC interaction layer.
+- Add a shared Use-based NPC interaction layer. **Implemented in V4.32.0b.**
 - Add data-driven dialogue foundations.
 - Add merchant inventories and buy/sell transactions using V4.31 economy data.
-- Preserve multiplayer ownership and interaction authority.
+  **First five-item Palomo catalog implemented in V4.32.0b.**
+- Preserve multiplayer ownership and interaction authority. **V4.32.0b keeps
+  gift, stock, cash and transaction authority per player character.**
 
 ### V4.33 — Quests, Reputation and Factions
 
 - Add persistent quest state and objective tracking.
+- Resolve Palomo's one authoritative placement from quest stage. The V4.32.0b
+  MAP01 actor is an anchored initial location only; a stage transition may
+  remove/recreate or teleport him, including between maps, while reusing the
+  persistent merchant stock/cash instead of duplicating or resetting it.
 - Add faction membership/standing and reputation changes.
 - Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
 - Four faction identifiers and a relation lookup do not materially increase

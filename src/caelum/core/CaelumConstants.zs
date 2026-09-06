@@ -64,6 +64,10 @@ class CaelumConstants : Object
     // Balance provisional de los tres personajes folclóricos. El radio de
     // Palomo pertenece sólo al entorno de prueba y puede ajustarse aquí.
     const PALOMO_TEST_WANDER_RADIUS = 192.0;
+    // args[0] = 1 fija al comerciante en el punto narrativo actual. Una etapa
+    // de misión posterior podrá recrearlo o trasladarlo sin cambiar su estado.
+    const PALOMO_MERCHANT_ANCHORED = 1;
+    const PALOMO_MERCHANT_SESSION_DISTANCE = 160.0;
     const BULL_GORE_BASE_DAMAGE = 45.0;
     const MANDINGA_MACHETE_BASE_DAMAGE = 66.0;
     const ZUPAY_SLAM_BASE_DAMAGE = 66.0;
@@ -234,7 +238,87 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_KEY_ITEM = 7;
     const EQUIPMENT_KIND_AMULET = 8;
     const EQUIPMENT_KIND_SEAL = 9;
-    const EQUIPMENT_KIND_COUNT = 10;
+    const EQUIPMENT_KIND_CURRENCY = 10;
+    const EQUIPMENT_KIND_COUNT = 11;
+
+    // La Caja Mágica es una capacidad permanente del personaje: su estructura
+    // pesa siempre 10 kg. El contenido comparte una reducción igual a la
+    // capacidad máxima actual y se trunca una sola vez a precisión de gramos.
+    const MAGIC_BOX_BASE_WEIGHT = 10.0;
+    const MAGIC_BOX_WEIGHT_PRECISION = 0.001;
+
+    // Economía física 4.32.0a-r2. Cada metal ofrece monedas nominales de
+    // 1/5/20/50/100. Los metales avanzan 200:1 y no son fundibles ni
+    // acuñables por el jugador. Toda valoración se expresa en cobres.
+    const CURRENCY_COPPER = 0;
+    const CURRENCY_COPPER_FIVE = 1;
+    const CURRENCY_COPPER_TWENTY = 2;
+    const CURRENCY_COPPER_FIFTY = 3;
+    const CURRENCY_COPPER_HUNDRED = 4;
+    const CURRENCY_SILVER = 5;
+    const CURRENCY_SILVER_FIVE = 6;
+    const CURRENCY_SILVER_TWENTY = 7;
+    const CURRENCY_SILVER_FIFTY = 8;
+    const CURRENCY_SILVER_HUNDRED = 9;
+    const CURRENCY_GOLD = 10;
+    const CURRENCY_GOLD_FIVE = 11;
+    const CURRENCY_GOLD_TWENTY = 12;
+    const CURRENCY_GOLD_FIFTY = 13;
+    const CURRENCY_GOLD_HUNDRED = 14;
+    const CURRENCY_TYPE_COUNT = 15;
+    const CURRENCY_DENOMINATION_COUNT = 5;
+    const CURRENCY_METAL_COPPER = 0;
+    const CURRENCY_METAL_SILVER = 1;
+    const CURRENCY_METAL_GOLD = 2;
+    const CURRENCY_METAL_TYPE_COUNT = 3;
+    const CURRENCY_COPPER_VALUE = 1;
+    const CURRENCY_SILVER_VALUE = 200;
+    const CURRENCY_GOLD_VALUE = 40000;
+    const CURRENCY_UNIT_WEIGHT = 0.001;
+
+    // Valores autorizados por unidad de consumible.
+    const ECONOMY_FOOD_RATION_VALUE = 4;
+    const ECONOMY_WATER_RATION_VALUE = 6;
+
+    // La valoración de receta usa la salida real al 100 % de eficiencia.
+    // Procesar añade 25 %; componentes y objetos finales usan el margen del
+    // tier de estaciones acumulativo que exige cada operación.
+    const ECONOMY_REFERENCE_EFFICIENCY_INDEX = 2;
+    const ECONOMY_PROCESSING_MARKUP_PERCENT = 25;
+    const ECONOMY_TIER_ONE_MARKUP_PERCENT = 25;
+    const ECONOMY_TIER_TWO_MARKUP_PERCENT = 50;
+    const ECONOMY_TIER_THREE_MARKUP_PERCENT = 100;
+    const ECONOMY_MERCHANT_PAYS_MULTIPLIER = 0.50;
+    const ECONOMY_MERCHANT_CHARGES_MULTIPLIER = 1.50;
+
+    // Primer catálogo comercial completo. El stock y la caja de Palomo se
+    // guardan por personaje para que una futura reubicación por misión no los
+    // reinicie ni genere competencia o duplicación entre jugadores.
+    const PALOMO_MERCHANT_ITEM_FOOD = 0;
+    const PALOMO_MERCHANT_ITEM_WATER = 1;
+    const PALOMO_MERCHANT_ITEM_WOOD = 2;
+    const PALOMO_MERCHANT_ITEM_RAW_COPPER = 3;
+    const PALOMO_MERCHANT_ITEM_RAW_TIN = 4;
+    const PALOMO_MERCHANT_ITEM_COUNT = 5;
+    const PALOMO_MERCHANT_MODE_BUY = 0;
+    const PALOMO_MERCHANT_MODE_SELL = 1;
+    const PALOMO_MERCHANT_QUANTITY_OPTION_COUNT = 5;
+    const PALOMO_MERCHANT_START_FOOD = 20;
+    const PALOMO_MERCHANT_START_WATER = 20;
+    const PALOMO_MERCHANT_START_WOOD = 100;
+    const PALOMO_MERCHANT_START_RAW_COPPER = 50;
+    const PALOMO_MERCHANT_START_RAW_TIN = 50;
+    const PALOMO_MERCHANT_START_COPPER = 200;
+    const PALOMO_MERCHANT_ACTION_NONE = 0;
+    const PALOMO_MERCHANT_ACTION_BOUGHT = 1;
+    const PALOMO_MERCHANT_ACTION_SOLD = 2;
+    const PALOMO_MERCHANT_ACTION_FAILED_STOCK = 3;
+    const PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY = 4;
+    const PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK = 5;
+    const PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY = 6;
+    const PALOMO_MERCHANT_ACTION_FAILED_CAPACITY = 7;
+    const PALOMO_MERCHANT_ACTION_FAILED_RESERVED = 8;
+    const PALOMO_MERCHANT_ACTION_FAILED_SESSION = 9;
 
     const AMULET_RUBY = 0;
     const AMULET_SAPPHIRE = 1;
@@ -277,6 +361,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE = 26;
     const EQUIPMENT_ACTION_FAILED_RESERVED = 27;
     const EQUIPMENT_ACTION_FAILED_MATERIALS = 28;
+    const EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED = 29;
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.
@@ -387,6 +472,7 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_DISMANTLED = 16;
     const CRAFTING_ACTION_DEBUG_TIME_ADVANCED = 17;
     const CRAFTING_ACTION_DEBUG_TIME_BLOCKED = 18;
+    const CRAFTING_ACTION_FAILED_CARRY_CAPACITY = 19;
 
     // Una sola tarea autoritativa por jugador. Los huecos adicionales permiten
     // reservar de forma atómica los materiales primarios de una ruta directa
@@ -635,7 +721,8 @@ class CaelumConstants : Object
     const CATALOGUE_ACTION_BLOCK = 5;
 
     // Consumibles 4.9. Las pilas conservan peso en el inventario personal y
-    // ocupan un solo slot, con peso cero, dentro de la Caja Magica.
+    // ocupan un solo slot dentro de la Caja Mágica. Su contribución reducida
+    // se calcula junto con el resto del contenido, no pila por pila.
     const CONSUMABLE_LIFE_POTION = 0;
     const CONSUMABLE_ANIMA_POTION = 1;
     const CONSUMABLE_ENERGY_DRINK = 2;

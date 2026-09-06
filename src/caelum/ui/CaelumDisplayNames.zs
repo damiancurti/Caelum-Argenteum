@@ -107,6 +107,41 @@ class CaelumDisplayNames : Object
                 ? "CA_KEY_ITEM_PROCESSING_MANUAL"
                 : "CA_KEY_ITEM_SEALED_LETTER";
         }
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            switch (specialType)
+            {
+                case CaelumConstants.CURRENCY_COPPER_FIVE:
+                    return "CA_CURRENCY_COPPER_COIN_5";
+                case CaelumConstants.CURRENCY_COPPER_TWENTY:
+                    return "CA_CURRENCY_COPPER_COIN_20";
+                case CaelumConstants.CURRENCY_COPPER_FIFTY:
+                    return "CA_CURRENCY_COPPER_COIN_50";
+                case CaelumConstants.CURRENCY_COPPER_HUNDRED:
+                    return "CA_CURRENCY_COPPER_COIN_100";
+                case CaelumConstants.CURRENCY_SILVER:
+                    return "CA_CURRENCY_SILVER_COIN";
+                case CaelumConstants.CURRENCY_SILVER_FIVE:
+                    return "CA_CURRENCY_SILVER_COIN_5";
+                case CaelumConstants.CURRENCY_SILVER_TWENTY:
+                    return "CA_CURRENCY_SILVER_COIN_20";
+                case CaelumConstants.CURRENCY_SILVER_FIFTY:
+                    return "CA_CURRENCY_SILVER_COIN_50";
+                case CaelumConstants.CURRENCY_SILVER_HUNDRED:
+                    return "CA_CURRENCY_SILVER_COIN_100";
+                case CaelumConstants.CURRENCY_GOLD:
+                    return "CA_CURRENCY_GOLD_COIN";
+                case CaelumConstants.CURRENCY_GOLD_FIVE:
+                    return "CA_CURRENCY_GOLD_COIN_5";
+                case CaelumConstants.CURRENCY_GOLD_TWENTY:
+                    return "CA_CURRENCY_GOLD_COIN_20";
+                case CaelumConstants.CURRENCY_GOLD_FIFTY:
+                    return "CA_CURRENCY_GOLD_COIN_50";
+                case CaelumConstants.CURRENCY_GOLD_HUNDRED:
+                    return "CA_CURRENCY_GOLD_COIN_100";
+                default: return "CA_CURRENCY_COPPER_COIN";
+            }
+        }
         switch (specialType)
         {
             case CaelumConstants.MATERIAL_BLADE: return "CA_MATERIAL_BLADE";

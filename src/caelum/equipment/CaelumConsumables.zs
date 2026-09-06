@@ -49,6 +49,8 @@ class CaelumConsumableItem : PowerupGiver
 
     double GetCarriedWeight()
     {
+        // La contribución compartida del contenido de la Caja Mágica se suma
+        // en CaelumPlayer; aquí sólo se informa la carga personal directa.
         return InMagicBox ? 0.0 : Amount * GetUnitWeight();
     }
 

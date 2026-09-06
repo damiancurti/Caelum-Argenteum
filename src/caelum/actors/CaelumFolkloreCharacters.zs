@@ -30,12 +30,53 @@ class CaelumFolkloreCombatActor : CaelumCombatActor abstract
     }
 }
 
-class CaelumPalomo : CaelumFolkloreCombatActor
+// Contrato compartido de interacción para NPC. Centraliza el flanco de Use y
+// deja que cada personaje implemente una única operación autoritativa.
+class CaelumInteractiveFolkloreActor : CaelumFolkloreCombatActor abstract
+{
+    bool InteractionUseLatched;
+    Actor LastInteractionPlayer;
+
+    virtual bool InteractWithCaelumPlayer(CaelumPlayer user)
+    {
+        return false;
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        if (!InteractionUseLatched) { return; }
+        PlayerPawn userPawn = PlayerPawn(LastInteractionPlayer);
+        if (userPawn == null
+            || userPawn.player == null
+            || (userPawn.player.cmd.buttons & BT_USE) == 0)
+        {
+            InteractionUseLatched = false;
+            LastInteractionPlayer = null;
+        }
+    }
+
+    override bool Used(Actor user)
+    {
+        if (InteractionUseLatched && LastInteractionPlayer == user)
+        {
+            return true;
+        }
+        InteractionUseLatched = true;
+        LastInteractionPlayer = user;
+        CaelumPlayer caelumPlayer = CaelumPlayer(user);
+        return caelumPlayer != null
+            && InteractWithCaelumPlayer(caelumPlayer);
+    }
+}
+
+class CaelumPalomo : CaelumInteractiveFolkloreActor
 {
     Vector3 WanderHome;
     double WanderDirection;
     int WanderDirectionTics;
     bool WanderEnabled;
+    bool MerchantAnchored;
 
     Default
     {
@@ -56,13 +97,18 @@ class CaelumPalomo : CaelumFolkloreCombatActor
         WanderHome = Pos;
         WanderDirection = Angle;
         WanderDirectionTics = 0;
-        WanderEnabled = true;
+        MerchantAnchored = args[0]
+            == CaelumConstants.PALOMO_MERCHANT_ANCHORED;
+        WanderEnabled = !MerchantAnchored;
     }
 
     action void A_EnablePalomoWander()
     {
         CaelumPalomo palomo = CaelumPalomo(self);
-        if (palomo != null) { palomo.WanderEnabled = true; }
+        if (palomo != null && !palomo.MerchantAnchored)
+        {
+            palomo.WanderEnabled = true;
+        }
     }
 
     action void A_StopPalomoWander()
@@ -112,6 +158,16 @@ class CaelumPalomo : CaelumFolkloreCombatActor
         Angle = WanderDirection;
         Vel.X = Cos(WanderDirection) * Speed;
         Vel.Y = Sin(WanderDirection) * Speed;
+    }
+
+    override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
+    {
+        if (caelumPlayer.GrantMagicBoxFromPalomo())
+        {
+            return true;
+        }
+        caelumPlayer.OpenPalomoMerchant(self);
+        return true;
     }
 
     States

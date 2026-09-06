@@ -4,6 +4,17 @@
 class CaelumPersistentCharacterState : Inventory
 {
     bool ProfileCommitted;
+    // V4.32.0b convierte la Caja Magica en una recompensa persistente. Los
+    // perfiles confirmados anteriores a esta version la conservan durante la
+    // migracion; los personajes nuevos quedan marcados explicitamente sin ella.
+    int MagicBoxOwnershipVersion;
+    bool MagicBoxOwned;
+    // El primer comercio es persistente por personaje. Así Palomo puede ser
+    // recolocado por una etapa de misión sin restablecer stock ni dinero y el
+    // servidor conserva una autoridad independiente para cada jugador.
+    int PalomoMerchantVersion;
+    int PalomoMerchantStock[5];
+    int PalomoMerchantWalletCopper;
     int Race;
     int FirstClass;
     int SecondClass;
@@ -48,8 +59,8 @@ class CaelumPersistentCharacterState : Inventory
     int SizedWeaponEssenceType[300];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
-    // false significa que el objeto viaja con el personaje (inventario o
-    // ranura equipada); true lo deja fuera de su carga, en la Caja Magica.
+    // false significa inventario personal o ranura equipada; true lo coloca en
+    // la Caja Mágica, cuya contribución reducida se calcula de forma agregada.
     bool SizedArmorInMagicBox[300];
     bool SizedShieldInMagicBox[60];
     bool SizedWeaponInMagicBox[300];
@@ -129,6 +140,50 @@ class CaelumPersistentCharacterState : Inventory
     Spawn:
         TNT1 A -1;
         Stop;
+    }
+
+    void InitializeNewMagicBoxOwnership()
+    {
+        MagicBoxOwnershipVersion = 1;
+        MagicBoxOwned = false;
+    }
+
+    void EnsureMagicBoxOwnershipInitialized()
+    {
+        if (MagicBoxOwnershipVersion >= 1) { return; }
+
+        // Antes de 4.32.0b todo perfil confirmado poseia la caja de forma
+        // implicita. Conservarla evita dejar inaccesible contenido ya guardado.
+        MagicBoxOwned = ProfileCommitted;
+        MagicBoxOwnershipVersion = 1;
+    }
+
+    bool GrantMagicBoxOwnership()
+    {
+        EnsureMagicBoxOwnershipInitialized();
+        if (MagicBoxOwned) { return false; }
+        MagicBoxOwned = true;
+        return true;
+    }
+
+    void EnsurePalomoMerchantInitialized()
+    {
+        if (PalomoMerchantVersion >= 1) { return; }
+        PalomoMerchantStock[CaelumConstants.PALOMO_MERCHANT_ITEM_FOOD] =
+            CaelumConstants.PALOMO_MERCHANT_START_FOOD;
+        PalomoMerchantStock[CaelumConstants.PALOMO_MERCHANT_ITEM_WATER] =
+            CaelumConstants.PALOMO_MERCHANT_START_WATER;
+        PalomoMerchantStock[CaelumConstants.PALOMO_MERCHANT_ITEM_WOOD] =
+            CaelumConstants.PALOMO_MERCHANT_START_WOOD;
+        PalomoMerchantStock[
+            CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_COPPER
+        ] = CaelumConstants.PALOMO_MERCHANT_START_RAW_COPPER;
+        PalomoMerchantStock[
+            CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_TIN
+        ] = CaelumConstants.PALOMO_MERCHANT_START_RAW_TIN;
+        PalomoMerchantWalletCopper =
+            CaelumConstants.PALOMO_MERCHANT_START_COPPER;
+        PalomoMerchantVersion = 1;
     }
 
     void ObserveEquipmentItemId(int itemId)

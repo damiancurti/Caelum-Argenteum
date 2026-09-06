@@ -87,8 +87,9 @@ DoomEdNums
     18034 = CaelumPassiveBull
     18035 = CaelumPassiveGiantRat
 
-    // Perfiles folclóricos 4.29.0ar; conservan estos números aunque todavía
-    // no tengan facción, botín ni colocación permanente en los mapas.
+    // Perfiles folclóricos 4.29.0ar. Palomo estrena el contrato compartido de
+    // Use y una colocación comercial anclada frente al inicio de MAP01; las
+    // ubicaciones por etapa de misión llegarán con el sistema V4.33.
     18036 = CaelumPalomo
     18037 = CaelumMandinga
     18038 = CaelumZupayColossus

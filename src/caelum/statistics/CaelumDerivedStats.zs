@@ -129,8 +129,8 @@ class CaelumDerivedStats : Object
         RefreshCarriedWeightTotals();
     }
 
-    // El inventario nativo es la fuente autoritativa: todo objeto que no esta
-    // en la Caja Magica cuenta una sola vez, equipado o no.
+    // El inventario nativo es la fuente autoritativa. El jugador entrega aquí
+    // la carga personal y la contribución agregada de la Caja Mágica una vez.
     void SetCarriedLoadBreakdown(
         double newArmorWeight,
         double newShieldWeight,

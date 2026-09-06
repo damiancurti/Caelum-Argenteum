@@ -6,7 +6,7 @@
 class CaelumPlayer : DoomPlayer
 {
     const FORMAL_INVENTORY_VISIBLE_ROWS = 6;
-    const FORMAL_INVENTORY_FILTER_COUNT = 9;
+    const FORMAL_INVENTORY_FILTER_COUNT = 10;
 
     // This object owns the twelve primary attributes for this player.
     // Each player receives a separate instance, including in multiplayer.
@@ -25,6 +25,12 @@ class CaelumPlayer : DoomPlayer
     double HUDCarriedWeight;
     double HUDCarryCapacity;
     double HUDLoadRatio;
+    // Total monetario poseído. La Caja Mágica conserva el valor y reduce el
+    // peso mediante su cálculo agregado, igual que con cualquier otra pila.
+    int HUDCopperCoinCount;
+    int HUDSilverCoinCount;
+    int HUDGoldCoinCount;
+    double HUDTotalMoneyCopperValue;
     // Copias simples para que el HUD pueda leer el arma activa sin invocar
     // funciones de play scope desde el contexto de interfaz.
     bool HUDHasActiveWeapon;
@@ -61,8 +67,26 @@ class CaelumPlayer : DoomPlayer
     int OwnedArmorCount;
     int OwnedShieldCount;
     int OwnedWeaponCount;
+    bool MagicBoxOwned;
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
+    bool PalomoMerchantMenuOpen;
+    Actor ActivePalomoMerchant;
+    int PalomoMerchantSessionValidationTics;
+    int PalomoMerchantSelection;
+    int PalomoMerchantMode;
+    int PalomoMerchantQuantityIndex;
+    int PalomoMerchantSelectedQuantity;
+    int PalomoMerchantSelectedLotPrice;
+    int PalomoMerchantWalletCopper;
+    int PalomoMerchantStock[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
+    int PalomoMerchantPlayerOwned[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
+    int LastPalomoMerchantAction;
+    // Plan transaccional temporal. Contiene el saldo físico final por
+    // denominación y permite validar peso/slots antes de mutar inventario.
+    int PalomoCurrencyPlanAmount[CaelumConstants.CURRENCY_TYPE_COUNT];
+    bool PalomoCurrencyPlanInMagicBox[CaelumConstants.CURRENCY_TYPE_COUNT];
+    bool PalomoIncomingItemInMagicBox;
     int ActiveCraftingStationType;
     Actor ActiveCraftingStationActor;
     int CraftingSessionValidationTics;
@@ -217,6 +241,9 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionStackAmount;
     int MagicBoxUsedSlots;
     int MagicBoxMaximumSlots;
+    double HUDMagicBoxRawContentWeight;
+    double HUDMagicBoxReducedContentWeight;
+    double HUDMagicBoxTotalWeight;
     int PersonalInventoryItemCount;
     int EquippedItemSlotCount;
     int LastEquipmentAction;
@@ -652,6 +679,63 @@ class CaelumPlayer : DoomPlayer
         return persistentState;
     }
 
+    void SyncLiveMagicBoxOwnershipFromPersistentState()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(false);
+        if (persistentState == null)
+        {
+            MagicBoxOwned = false;
+            return;
+        }
+        persistentState.EnsureMagicBoxOwnershipInitialized();
+        MagicBoxOwned = persistentState.MagicBoxOwned;
+    }
+
+    // Un perfil sin la recompensa nunca puede conservar banderas de contenido
+    // oculto. También sanea partidas de desarrollo creadas a mitad del cambio.
+    void NormalizeUnownedMagicBoxStorage()
+    {
+        if (MagicBoxOwned) { return; }
+        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
+        {
+            CaelumEquipmentItem equipment = CaelumEquipmentItem(cursor);
+            if (equipment != null) { equipment.InMagicBox = false; }
+            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
+            if (ammunition != null) { ammunition.InMagicBox = false; }
+            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
+            if (consumable != null) { consumable.InMagicBox = false; }
+            CaelumSpecialInventoryItem special =
+                CaelumSpecialInventoryItem(cursor);
+            if (special != null) { special.InMagicBox = false; }
+        }
+    }
+
+    bool GrantMagicBoxFromPalomo()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        persistentState.EnsureMagicBoxOwnershipInitialized();
+        if (!persistentState.GrantMagicBoxOwnership())
+        {
+            MagicBoxOwned = persistentState.MagicBoxOwned;
+            return false;
+        }
+
+        MagicBoxOwned = true;
+        ApplyCharacterProfile();
+        RefreshCarriedInventorySummary();
+        RefreshFormalInventorySnapshot();
+        PersistCharacterState();
+        A_StartSound("caelum/items/pickup", CHAN_6, CHANF_LOCAL);
+        Console.Printf(
+            "%s",
+            StringTable.Localize("CA_PALOMO_MAGIC_BOX_RECEIVED", false)
+        );
+        return true;
+    }
+
     int ReadNewCharacterDraft(Name setting, int fallback)
     {
         if (player == null) { return fallback; }
@@ -927,6 +1011,8 @@ class CaelumPlayer : DoomPlayer
         RepairActiveEquipmentItemReferences();
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
+        persistentState.EnsureMagicBoxOwnershipInitialized();
+        persistentState.MagicBoxOwned = MagicBoxOwned;
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -1015,6 +1101,8 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState = GetPersistentCharacterState(false);
         if (persistentState == null || !persistentState.ProfileCommitted) { return false; }
+        persistentState.EnsureMagicBoxOwnershipInitialized();
+        MagicBoxOwned = persistentState.MagicBoxOwned;
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -1548,6 +1636,7 @@ class CaelumPlayer : DoomPlayer
 
     int CountNativeMagicBoxSlots()
     {
+        if (!MagicBoxOwned) { return 0; }
         int total = 0;
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -1585,9 +1674,82 @@ class CaelumPlayer : DoomPlayer
         return total;
     }
 
-    bool HasNativeMagicBoxSlotAvailable()
+    int GetMagicBoxWeightDivisor()
+    {
+        if (!MagicBoxOwned || DerivedStats == null) { return 1; }
+        return Max(1, DerivedStats.MagicBoxCapacity);
+    }
+
+    // Todo el contenido se suma antes de dividir y truncar. Así dos pilas con
+    // el mismo peso total producen exactamente la misma carga que una sola y
+    // separar objetos nunca permite aprovechar redondeos independientes.
+    double CalculateMagicBoxReducedContentWeight(double rawContentWeight)
+    {
+        if (!MagicBoxOwned) { return 0.0; }
+        double precision = CaelumConstants.MAGIC_BOX_WEIGHT_PRECISION;
+        double reducedWeight = Max(0.0, rawContentWeight)
+            / GetMagicBoxWeightDivisor();
+        return Floor(reducedWeight / precision + 0.0000001) * precision;
+    }
+
+    double CalculateMagicBoxTotalWeight(double rawContentWeight)
+    {
+        if (!MagicBoxOwned) { return 0.0; }
+        return CaelumConstants.MAGIC_BOX_BASE_WEIGHT
+            + CalculateMagicBoxReducedContentWeight(rawContentWeight);
+    }
+
+    // Evalúa una transición completa sin modificar Actor.Inv. personalDelta
+    // describe lo que entra o sale del inventario normal y boxRawDelta el peso
+    // real que entra o sale del contenido de la caja.
+    bool CanApplyInventoryWeightTransition(
+        double personalDelta, double boxRawDelta
+    )
     {
         if (DerivedStats == null) { return false; }
+        if (!MagicBoxOwned && boxRawDelta > 0.0) { return false; }
+        double projectedRawWeight = Max(
+            0.0, HUDMagicBoxRawContentWeight + boxRawDelta
+        );
+        double projectedCarriedWeight = DerivedStats.CarriedWeight
+            + personalDelta
+            + CalculateMagicBoxTotalWeight(projectedRawWeight)
+            - HUDMagicBoxTotalWeight;
+        return projectedCarriedWeight
+            <= DerivedStats.CarryCapacity + 0.0005;
+    }
+
+    bool CanAddRawWeightToMagicBox(double rawWeight)
+    {
+        if (!MagicBoxOwned) { return false; }
+        return CanApplyInventoryWeightTransition(
+            0.0, Max(0.0, rawWeight)
+        );
+    }
+
+    bool CanMoveRawWeightFromMagicBoxToPersonal(double rawWeight)
+    {
+        if (!MagicBoxOwned) { return false; }
+        double resolvedWeight = Max(0.0, rawWeight);
+        return CanApplyInventoryWeightTransition(
+            resolvedWeight, -resolvedWeight
+        );
+    }
+
+    bool CanMovePersonalStackWithIncomingToMagicBox(
+        double existingRawWeight, double incomingRawWeight
+    )
+    {
+        double existingWeight = Max(0.0, existingRawWeight);
+        double incomingWeight = Max(0.0, incomingRawWeight);
+        return CanApplyInventoryWeightTransition(
+            -existingWeight, existingWeight + incomingWeight
+        );
+    }
+
+    bool HasNativeMagicBoxSlotAvailable()
+    {
+        if (!MagicBoxOwned || DerivedStats == null) { return false; }
         int reserved = CraftingTaskCompleting
             ? 0 : CraftingTaskReservedBoxSlots;
         return CountNativeMagicBoxSlots() + reserved
@@ -1648,7 +1810,8 @@ class CaelumPlayer : DoomPlayer
                 * GetAmmunitionUnitWeight(ammunitionType);
             if (!CanAddWeightToPersonalInventory(incomingWeight))
             {
-                if (!HasNativeMagicBoxSlotAvailable())
+                if (!HasNativeMagicBoxSlotAvailable()
+                    || !CanAddRawWeightToMagicBox(incomingWeight))
                 {
                     return false;
                 }
@@ -1710,6 +1873,632 @@ class CaelumPlayer : DoomPlayer
         return null;
     }
 
+    CaelumCurrencyItem FindNativeCurrency(int currencyType)
+    {
+        return CaelumCurrencyItem(FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_CURRENCY,
+            CaelumEconomyRules.ResolveCurrencyType(currencyType)
+        ));
+    }
+
+    int GetOwnedCurrencyAmount(int currencyType)
+    {
+        CaelumCurrencyItem currency = FindNativeCurrency(currencyType);
+        return currency != null ? Max(0, currency.Amount) : 0;
+    }
+
+    double GetOwnedMoneyCopperValue()
+    {
+        double totalValue = 0.0;
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT;
+            currencyType++)
+        {
+            totalValue += double(GetOwnedCurrencyAmount(currencyType))
+                * CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+        }
+        return totalValue;
+    }
+
+    int GetPalomoMerchantQuantityForIndex(int quantityIndex)
+    {
+        switch (Clamp(quantityIndex, 0,
+            CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1))
+        {
+            case 1: return 5;
+            case 2: return 20;
+            case 3: return 50;
+            case 4: return 100;
+            default: return 1;
+        }
+    }
+
+    int GetPalomoMerchantConsumableType(int merchantItem)
+    {
+        if (merchantItem == CaelumConstants.PALOMO_MERCHANT_ITEM_FOOD)
+        { return CaelumConstants.CONSUMABLE_FOOD_RATION; }
+        if (merchantItem == CaelumConstants.PALOMO_MERCHANT_ITEM_WATER)
+        { return CaelumConstants.CONSUMABLE_WATER_RATION; }
+        return -1;
+    }
+
+    int GetPalomoMerchantMaterialType(int merchantItem)
+    {
+        switch (merchantItem)
+        {
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_WOOD:
+                return CaelumConstants.MATERIAL_WOOD;
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_COPPER:
+                return CaelumConstants.MATERIAL_RAW_COPPER;
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_TIN:
+                return CaelumConstants.MATERIAL_RAW_TIN;
+            default: return -1;
+        }
+    }
+
+    Inventory FindPalomoMerchantProduct(int merchantItem)
+    {
+        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
+        if (consumableType >= 0)
+        { return FindNativeConsumableItem(consumableType); }
+        int materialType = GetPalomoMerchantMaterialType(merchantItem);
+        if (materialType < 0) { return null; }
+        return FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL, materialType,
+            CaelumMaterialRules.ResolveTier(materialType, 1));
+    }
+
+    bool IsPalomoMerchantProductInMagicBox(Inventory product)
+    {
+        CaelumConsumableItem consumable = CaelumConsumableItem(product);
+        if (consumable != null) { return consumable.InMagicBox; }
+        CaelumSpecialInventoryItem special = CaelumSpecialInventoryItem(product);
+        return special != null && special.InMagicBox;
+    }
+
+    int CountPalomoMerchantProduct(int merchantItem, bool includeReserved)
+    {
+        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
+        if (consumableType >= 0)
+        {
+            CaelumConsumableItem consumable = FindNativeConsumableItem(consumableType);
+            return consumable != null ? Max(0, consumable.Amount) : 0;
+        }
+        int materialType = GetPalomoMerchantMaterialType(merchantItem);
+        if (materialType < 0) { return 0; }
+        int tier = CaelumMaterialRules.ResolveTier(materialType, 1);
+        return includeReserved ? CountRawCraftingMaterial(materialType, tier)
+            : CountCraftingMaterial(materialType, tier);
+    }
+
+    double GetPalomoMerchantProductUnitWeight(int merchantItem)
+    {
+        return GetPalomoMerchantConsumableType(merchantItem) >= 0
+            ? CaelumConstants.CONSUMABLE_RATION_WEIGHT
+            : CaelumConstants.MATERIAL_UNIT_WEIGHT;
+    }
+
+    void ResetPalomoCurrencyPlan()
+    {
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            PalomoCurrencyPlanAmount[currencyType] = existing != null
+                ? Max(0, existing.Amount) : 0;
+            PalomoCurrencyPlanInMagicBox[currencyType] = existing != null
+                && existing.InMagicBox;
+        }
+    }
+
+    bool BuildPalomoCurrencyPaymentPlan(int copperAmount)
+    {
+        if (copperAmount < 0
+            || GetOwnedMoneyCopperValue() + 0.0001 < copperAmount)
+        { return false; }
+        ResetPalomoCurrencyPlan();
+        int remaining = copperAmount;
+        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
+            currencyType >= 0 && remaining > 0; currencyType--)
+        {
+            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+            int take = Min(PalomoCurrencyPlanAmount[currencyType],
+                remaining / faceValue);
+            PalomoCurrencyPlanAmount[currencyType] -= take;
+            remaining -= take * faceValue;
+        }
+
+        int change = 0;
+        if (remaining > 0)
+        {
+            for (int currencyType = 0;
+                currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+            {
+                int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+                if (PalomoCurrencyPlanAmount[currencyType] <= 0
+                    || faceValue <= remaining) { continue; }
+                PalomoCurrencyPlanAmount[currencyType]--;
+                change = faceValue - remaining;
+                remaining = 0;
+                break;
+            }
+        }
+        if (remaining > 0) { return false; }
+        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
+            currencyType >= 0 && change > 0; currencyType--)
+        {
+            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+            int returnedCoins = change / faceValue;
+            PalomoCurrencyPlanAmount[currencyType] += returnedCoins;
+            change -= returnedCoins * faceValue;
+        }
+        return change == 0;
+    }
+
+    bool BuildPalomoCurrencyCreditPlan(int copperAmount)
+    {
+        if (copperAmount < 0) { return false; }
+        ResetPalomoCurrencyPlan();
+        int remaining = copperAmount;
+        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
+            currencyType >= 0 && remaining > 0; currencyType--)
+        {
+            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+            int addedCoins = remaining / faceValue;
+            if (addedCoins <= 0) { continue; }
+            if (PalomoCurrencyPlanAmount[currencyType]
+                > 2147483647 - addedCoins) { return false; }
+            PalomoCurrencyPlanAmount[currencyType] += addedCoins;
+            remaining -= addedCoins * faceValue;
+        }
+        return remaining == 0;
+    }
+
+    void RoutePalomoCurrencyGainsToMagicBox()
+    {
+        if (!MagicBoxOwned) { return; }
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            if (PalomoCurrencyPlanAmount[currencyType]
+                > GetOwnedCurrencyAmount(currencyType))
+            { PalomoCurrencyPlanInMagicBox[currencyType] = true; }
+        }
+    }
+
+    double GetPalomoCurrencyPlanPersonalWeightDelta()
+    {
+        double delta = 0.0;
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            int oldAmount = existing != null ? Max(0, existing.Amount) : 0;
+            if (existing != null && !existing.InMagicBox)
+            { delta -= oldAmount * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
+            if (PalomoCurrencyPlanAmount[currencyType] > 0
+                && !PalomoCurrencyPlanInMagicBox[currencyType])
+            { delta += PalomoCurrencyPlanAmount[currencyType]
+                    * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
+        }
+        return delta;
+    }
+
+    double GetPalomoCurrencyPlanBoxRawWeightDelta()
+    {
+        double delta = 0.0;
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            int oldAmount = existing != null ? Max(0, existing.Amount) : 0;
+            if (existing != null && existing.InMagicBox)
+            { delta -= oldAmount * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
+            if (PalomoCurrencyPlanAmount[currencyType] > 0
+                && PalomoCurrencyPlanInMagicBox[currencyType])
+            { delta += PalomoCurrencyPlanAmount[currencyType]
+                    * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
+        }
+        return delta;
+    }
+
+    int GetPalomoCurrencyPlanBoxSlotDelta()
+    {
+        int delta = 0;
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            bool oldSlot = existing != null && existing.Amount > 0
+                && existing.InMagicBox;
+            bool newSlot = PalomoCurrencyPlanAmount[currencyType] > 0
+                && PalomoCurrencyPlanInMagicBox[currencyType];
+            if (oldSlot && !newSlot) { delta--; }
+            else if (!oldSlot && newSlot) { delta++; }
+        }
+        return delta;
+    }
+
+    bool PalomoTransactionCapacityFits(
+        double personalDelta, double boxRawDelta, int boxSlotDelta)
+    {
+        if (!MagicBoxOwned && (boxRawDelta > 0.0 || boxSlotDelta > 0))
+        { return false; }
+        int currentSlots = CountNativeMagicBoxSlots()
+            + (CraftingTaskCompleting ? 0 : CraftingTaskReservedBoxSlots);
+        int projectedSlots = currentSlots + boxSlotDelta;
+        int maximumSlots = MagicBoxOwned && DerivedStats != null
+            ? Max(0, DerivedStats.MagicBoxCapacity) : 0;
+        if (projectedSlots > maximumSlots && projectedSlots > currentSlots)
+        { return false; }
+        return CanApplyInventoryWeightTransition(personalDelta, boxRawDelta);
+    }
+
+    bool PreparePalomoPurchaseCapacity(
+        int merchantItem, int quantity, int price)
+    {
+        Inventory product = FindPalomoMerchantProduct(merchantItem);
+        bool productAlreadyBoxed = IsPalomoMerchantProductInMagicBox(product);
+        double unitWeight = GetPalomoMerchantProductUnitWeight(merchantItem);
+        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
+        {
+            if (!BuildPalomoCurrencyPaymentPlan(price)) { return false; }
+            if (currencyRoute == 1)
+            {
+                if (!MagicBoxOwned) { continue; }
+                RoutePalomoCurrencyGainsToMagicBox();
+            }
+            for (int productRoute = 0; productRoute < 2; productRoute++)
+            {
+                bool sendProductToBox = productAlreadyBoxed || productRoute == 1;
+                if (sendProductToBox && !MagicBoxOwned) { continue; }
+                if (productAlreadyBoxed && productRoute == 1) { continue; }
+                double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
+                double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
+                int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
+                double incomingWeight = quantity * unitWeight;
+                if (product == null)
+                {
+                    if (sendProductToBox)
+                    { boxRawDelta += incomingWeight; boxSlotDelta++; }
+                    else { personalDelta += incomingWeight; }
+                }
+                else if (productAlreadyBoxed) { boxRawDelta += incomingWeight; }
+                else if (sendProductToBox)
+                {
+                    double oldWeight = Max(0, product.Amount) * unitWeight;
+                    personalDelta -= oldWeight;
+                    boxRawDelta += oldWeight + incomingWeight;
+                    boxSlotDelta++;
+                }
+                else { personalDelta += incomingWeight; }
+                if (PalomoTransactionCapacityFits(
+                    personalDelta, boxRawDelta, boxSlotDelta))
+                {
+                    PalomoIncomingItemInMagicBox = sendProductToBox;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    bool PreparePalomoSaleCapacity(
+        int merchantItem, int quantity, int price)
+    {
+        Inventory product = FindPalomoMerchantProduct(merchantItem);
+        if (product == null || product.Amount < quantity) { return false; }
+        bool productBoxed = IsPalomoMerchantProductInMagicBox(product);
+        double removedWeight = quantity
+            * GetPalomoMerchantProductUnitWeight(merchantItem);
+        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
+        {
+            if (!BuildPalomoCurrencyCreditPlan(price)) { return false; }
+            if (currencyRoute == 1)
+            {
+                if (!MagicBoxOwned) { continue; }
+                RoutePalomoCurrencyGainsToMagicBox();
+            }
+            double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
+            double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
+            int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
+            if (productBoxed)
+            {
+                boxRawDelta -= removedWeight;
+                if (product.Amount == quantity) { boxSlotDelta--; }
+            }
+            else { personalDelta -= removedWeight; }
+            if (PalomoTransactionCapacityFits(
+                personalDelta, boxRawDelta, boxSlotDelta)) { return true; }
+        }
+        return false;
+    }
+
+    bool ApplyPalomoCurrencyPlan()
+    {
+        for (int currencyType = 0;
+            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
+        {
+            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            int finalAmount = PalomoCurrencyPlanAmount[currencyType];
+            if (finalAmount <= 0)
+            {
+                if (existing != null) { existing.Destroy(); }
+                continue;
+            }
+            if (existing == null)
+            {
+                existing = CaelumCurrencyItem(Spawn(
+                    CaelumEconomyRules.GetCurrencyClassName(currencyType),
+                    Pos, NO_REPLACE));
+                if (existing == null) { return false; }
+                existing.Amount = finalAmount;
+                existing.InMagicBox = PalomoCurrencyPlanInMagicBox[currencyType];
+                existing.AttachToOwner(self);
+            }
+            else
+            {
+                existing.Amount = finalAmount;
+                existing.InMagicBox = PalomoCurrencyPlanInMagicBox[currencyType];
+            }
+        }
+        return true;
+    }
+
+    bool AddPalomoMerchantProduct(int merchantItem, int quantity)
+    {
+        Inventory existing = FindPalomoMerchantProduct(merchantItem);
+        if (existing != null)
+        {
+            existing.Amount += quantity;
+            CaelumConsumableItem consumable = CaelumConsumableItem(existing);
+            if (consumable != null)
+            { consumable.InMagicBox = PalomoIncomingItemInMagicBox; }
+            CaelumSpecialInventoryItem special = CaelumSpecialInventoryItem(existing);
+            if (special != null)
+            { special.InMagicBox = PalomoIncomingItemInMagicBox; }
+            return true;
+        }
+        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
+        if (consumableType >= 0)
+        {
+            CaelumConsumableItem created = CaelumConsumableItem(Spawn(
+                GetConsumableClassName(consumableType), Pos, NO_REPLACE));
+            if (created == null) { return false; }
+            created.Amount = quantity;
+            created.InMagicBox = PalomoIncomingItemInMagicBox;
+            created.AttachToOwner(self);
+            return true;
+        }
+        int materialType = GetPalomoMerchantMaterialType(merchantItem);
+        if (materialType < 0) { return false; }
+        CaelumMaterialPickup material = CaelumMaterialPickup(
+            Spawn("CaelumMaterialPickup", Pos, NO_REPLACE));
+        if (material == null) { return false; }
+        material.args[0] = materialType;
+        material.args[1] = CaelumMaterialRules.ResolveTier(materialType, 1);
+        material.Amount = quantity;
+        material.InMagicBox = PalomoIncomingItemInMagicBox;
+        material.AttachToOwner(self);
+        return true;
+    }
+
+    bool RemovePalomoMerchantProduct(int merchantItem, int quantity)
+    {
+        Inventory product = FindPalomoMerchantProduct(merchantItem);
+        if (product == null || product.Amount < quantity) { return false; }
+        product.Amount -= quantity;
+        if (product.Amount <= 0) { product.Destroy(); }
+        return true;
+    }
+
+    void RefreshPalomoMerchantSnapshot()
+    {
+        PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
+            CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1);
+        PalomoMerchantMode = Clamp(PalomoMerchantMode,
+            CaelumConstants.PALOMO_MERCHANT_MODE_BUY,
+            CaelumConstants.PALOMO_MERCHANT_MODE_SELL);
+        PalomoMerchantQuantityIndex = Clamp(PalomoMerchantQuantityIndex, 0,
+            CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1);
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsurePalomoMerchantInitialized();
+        for (int merchantItem = 0;
+            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT; merchantItem++)
+        {
+            PalomoMerchantStock[merchantItem] = Max(0,
+                persistentState.PalomoMerchantStock[merchantItem]);
+            PalomoMerchantPlayerOwned[merchantItem] =
+                CountPalomoMerchantProduct(merchantItem, false);
+        }
+        PalomoMerchantWalletCopper = Max(0,
+            persistentState.PalomoMerchantWalletCopper);
+        PalomoMerchantSelectedQuantity =
+            GetPalomoMerchantQuantityForIndex(PalomoMerchantQuantityIndex);
+        PalomoMerchantSelectedLotPrice =
+            CaelumEconomyRules.GetPalomoMerchantLotPrice(
+                PalomoMerchantSelection, PalomoMerchantSelectedQuantity,
+                PalomoMerchantMode);
+        RefreshCarriedInventorySummary();
+    }
+
+    bool IsActivePalomoMerchantSessionValid()
+    {
+        if (!PalomoMerchantMenuOpen || ActivePalomoMerchant == null
+            || ActivePalomoMerchant.health <= 0 || health <= 0) { return false; }
+        return Distance3D(ActivePalomoMerchant)
+            <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE;
+    }
+
+    void OpenPalomoMerchant(Actor merchant)
+    {
+        SyncLiveMagicBoxOwnershipFromPersistentState();
+        if (CreationWizardOpen || !MagicBoxOwned || merchant == null) { return; }
+        if (StaffCastPending) { CancelPendingStaffCast(false); }
+        EquipmentMenuOpen = false;
+        CloseCraftingStationSession();
+        SetCraftingJournalState(false);
+        ActivePalomoMerchant = merchant;
+        PalomoMerchantMenuOpen = true;
+        PalomoMerchantSessionValidationTics = 0;
+        PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
+            CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1);
+        PalomoMerchantMode = Clamp(PalomoMerchantMode,
+            CaelumConstants.PALOMO_MERCHANT_MODE_BUY,
+            CaelumConstants.PALOMO_MERCHANT_MODE_SELL);
+        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
+        RefreshPalomoMerchantSnapshot();
+    }
+
+    void ClosePalomoMerchant()
+    {
+        PalomoMerchantMenuOpen = false;
+        ActivePalomoMerchant = null;
+        PalomoMerchantSessionValidationTics = 0;
+    }
+
+    void UpdatePalomoMerchantSession()
+    {
+        if (!PalomoMerchantMenuOpen) { return; }
+        PalomoMerchantSessionValidationTics++;
+        if (PalomoMerchantSessionValidationTics < 4) { return; }
+        PalomoMerchantSessionValidationTics = 0;
+        if (!IsActivePalomoMerchantSessionValid())
+        {
+            LastPalomoMerchantAction =
+                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
+            ClosePalomoMerchant();
+        }
+    }
+
+    void CyclePalomoMerchantSelection(int direction)
+    {
+        if (!IsActivePalomoMerchantSessionValid()) { return; }
+        PalomoMerchantSelection = (PalomoMerchantSelection
+            + (direction < 0 ? CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1 : 1))
+            % CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
+        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
+        RefreshPalomoMerchantSnapshot();
+    }
+
+    void TogglePalomoMerchantMode()
+    {
+        if (!IsActivePalomoMerchantSessionValid()) { return; }
+        PalomoMerchantMode = PalomoMerchantMode
+            == CaelumConstants.PALOMO_MERCHANT_MODE_BUY
+            ? CaelumConstants.PALOMO_MERCHANT_MODE_SELL
+            : CaelumConstants.PALOMO_MERCHANT_MODE_BUY;
+        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
+        RefreshPalomoMerchantSnapshot();
+    }
+
+    void CyclePalomoMerchantQuantity()
+    {
+        if (!IsActivePalomoMerchantSessionValid()) { return; }
+        PalomoMerchantQuantityIndex = (PalomoMerchantQuantityIndex + 1)
+            % CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT;
+        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
+        RefreshPalomoMerchantSnapshot();
+    }
+
+    void ExecutePalomoMerchantTransaction()
+    {
+        if (!IsActivePalomoMerchantSessionValid())
+        {
+            LastPalomoMerchantAction =
+                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
+            ClosePalomoMerchant();
+            return;
+        }
+        RefreshCarriedInventorySummary();
+        RefreshPalomoMerchantSnapshot();
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsurePalomoMerchantInitialized();
+        int merchantItem = PalomoMerchantSelection;
+        int quantity = PalomoMerchantSelectedQuantity;
+        int price = PalomoMerchantSelectedLotPrice;
+        if (PalomoMerchantMode == CaelumConstants.PALOMO_MERCHANT_MODE_BUY)
+        {
+            if (persistentState.PalomoMerchantStock[merchantItem] < quantity)
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK;
+                return;
+            }
+            if (GetOwnedMoneyCopperValue() + 0.0001 < price)
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY;
+                return;
+            }
+            if (!PreparePalomoPurchaseCapacity(merchantItem, quantity, price))
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;
+                return;
+            }
+            if (!ApplyPalomoCurrencyPlan()
+                || !AddPalomoMerchantProduct(merchantItem, quantity))
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
+                return;
+            }
+            persistentState.PalomoMerchantStock[merchantItem] -= quantity;
+            if (persistentState.PalomoMerchantWalletCopper > 2147483647 - price)
+            { persistentState.PalomoMerchantWalletCopper = 2147483647; }
+            else { persistentState.PalomoMerchantWalletCopper += price; }
+            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT;
+        }
+        else
+        {
+            int available = CountPalomoMerchantProduct(merchantItem, false);
+            if (available < quantity)
+            {
+                int physical = CountPalomoMerchantProduct(merchantItem, true);
+                LastPalomoMerchantAction = physical >= quantity
+                    ? CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_RESERVED
+                    : CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK;
+                return;
+            }
+            if (persistentState.PalomoMerchantWalletCopper < price)
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY;
+                return;
+            }
+            if (!PreparePalomoSaleCapacity(merchantItem, quantity, price))
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;
+                return;
+            }
+            if (!RemovePalomoMerchantProduct(merchantItem, quantity)
+                || !ApplyPalomoCurrencyPlan())
+            {
+                LastPalomoMerchantAction =
+                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
+                return;
+            }
+            if (persistentState.PalomoMerchantStock[merchantItem]
+                > 2147483647 - quantity)
+            { persistentState.PalomoMerchantStock[merchantItem] = 2147483647; }
+            else { persistentState.PalomoMerchantStock[merchantItem] += quantity; }
+            persistentState.PalomoMerchantWalletCopper -= price;
+            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD;
+        }
+        ApplyCharacterProfile();
+        RefreshCarriedInventorySummary();
+        RefreshFormalInventorySnapshot();
+        RefreshPalomoMerchantSnapshot();
+        PersistCharacterState();
+        A_StartSound("caelum/ui/menu_select", CHAN_6, CHANF_LOCAL | CHANF_UI);
+    }
+
     CaelumWeightedKey FindNativeKey(int keyType)
     {
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
@@ -1732,7 +2521,8 @@ class CaelumPlayer : DoomPlayer
         item.InMagicBox = false;
         if (!CanAddWeightToPersonalInventory(item.UnitWeight))
         {
-            if (!HasNativeMagicBoxSlotAvailable())
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(item.UnitWeight))
             {
                 return false;
             }
@@ -1761,7 +2551,8 @@ class CaelumPlayer : DoomPlayer
         double incomingWeight = ammunition.Amount * ammunition.GetUnitWeight();
         if (!CanAddWeightToPersonalInventory(incomingWeight))
         {
-            if (!HasNativeMagicBoxSlotAvailable())
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(incomingWeight))
             {
                 return false;
             }
@@ -1777,17 +2568,28 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (ammunition == null || DerivedStats == null) { return false; }
-        if (ammunition.InMagicBox) { return true; }
         RefreshCarriedInventorySummary();
         double incomingWeight = Max(0, incomingAmount)
             * ammunition.GetUnitWeight();
+        if (ammunition.InMagicBox)
+        {
+            return CanAddRawWeightToMagicBox(incomingWeight);
+        }
         if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
         if (!HasNativeMagicBoxSlotAvailable())
         {
             return false;
         }
+        double existingWeight = ammunition.Amount
+            * ammunition.GetUnitWeight();
+        if (!CanMovePersonalStackWithIncomingToMagicBox(
+                existingWeight, incomingWeight
+            ))
+        {
+            return false;
+        }
         // La munición es una sola pila: al desbordar, la pila completa pasa a
-        // ocupar un slot y todo su Amount queda sin peso.
+        // ocupar un slot y participa del peso agregado reducido de la caja.
         ammunition.InMagicBox = true;
         LastEquipmentPickupWentToMagicBox = true;
         return true;
@@ -1809,7 +2611,10 @@ class CaelumPlayer : DoomPlayer
         consumable.InMagicBox = false;
         if (!CanAddWeightToPersonalInventory(consumable.GetCarriedWeight()))
         {
-            if (!HasNativeMagicBoxSlotAvailable())
+            double incomingWeight = consumable.Amount
+                * consumable.GetUnitWeight();
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(incomingWeight))
             {
                 return false;
             }
@@ -1825,16 +2630,28 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (consumable == null || DerivedStats == null) { return false; }
-        if (consumable.InMagicBox) { return true; }
         RefreshCarriedInventorySummary();
         double incomingWeight = Max(0, incomingAmount)
             * consumable.GetUnitWeight();
+        if (consumable.InMagicBox)
+        {
+            return CanAddRawWeightToMagicBox(incomingWeight);
+        }
         if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
         if (!HasNativeMagicBoxSlotAvailable())
         {
             return false;
         }
-        // Una pila completa ocupa un unico slot, sin importar su Amount.
+        double existingWeight = consumable.Amount
+            * consumable.GetUnitWeight();
+        if (!CanMovePersonalStackWithIncomingToMagicBox(
+                existingWeight, incomingWeight
+            ))
+        {
+            return false;
+        }
+        // Una pila completa ocupa un único slot, sin importar su Amount, y su
+        // peso real entra una sola vez en el cálculo agregado de la caja.
         consumable.InMagicBox = true;
         LastEquipmentPickupWentToMagicBox = true;
         return true;
@@ -1850,7 +2667,9 @@ class CaelumPlayer : DoomPlayer
         if (existing != null)
         {
             if (specialItem.GetSpecialCategory()
-                == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+                    == CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                || specialItem.GetSpecialCategory()
+                    == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
             {
                 return PrepareNativeSpecialStackPickup(
                     existing, specialItem.Amount
@@ -1862,7 +2681,10 @@ class CaelumPlayer : DoomPlayer
         specialItem.InMagicBox = false;
         if (!CanAddWeightToPersonalInventory(specialItem.GetCarriedWeight()))
         {
-            if (!HasNativeMagicBoxSlotAvailable())
+            double incomingWeight = specialItem.Amount
+                * specialItem.GetUnitWeight();
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(incomingWeight))
             {
                 return false;
             }
@@ -1878,12 +2700,23 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (specialItem == null || DerivedStats == null) { return false; }
-        if (specialItem.InMagicBox) { return true; }
         RefreshCarriedInventorySummary();
         double incomingWeight = Max(0, incomingAmount)
             * specialItem.GetUnitWeight();
+        if (specialItem.InMagicBox)
+        {
+            return CanAddRawWeightToMagicBox(incomingWeight);
+        }
         if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
         if (!HasNativeMagicBoxSlotAvailable())
+        {
+            return false;
+        }
+        double existingWeight = specialItem.Amount
+            * specialItem.GetUnitWeight();
+        if (!CanMovePersonalStackWithIncomingToMagicBox(
+                existingWeight, incomingWeight
+            ))
         {
             return false;
         }
@@ -1913,6 +2746,7 @@ class CaelumPlayer : DoomPlayer
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
         RefreshFormalInventorySnapshot();
+        if (PalomoMerchantMenuOpen) { RefreshPalomoMerchantSnapshot(); }
         if (CraftingMenuOpen) { RefreshCraftingPreview(); }
         PersistCharacterState();
     }
@@ -3016,20 +3850,33 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Actor.Inv es la fuente única de propiedad y carga. Equipar no cambia el
-    // peso; la Caja Mágica sí lo vuelve cero. Las pilas usan Amount.
+    // peso. La Caja Mágica suma 10 kg y reduce el peso agregado de su contenido
+    // según la capacidad máxima actual. Las pilas usan Amount.
     void RefreshCarriedInventorySummary()
     {
+        SyncLiveMagicBoxOwnershipFromPersistentState();
+        NormalizeUnownedMagicBoxStorage();
         PersonalInventoryItemCount = 0;
         OwnedArmorCount = 0;
         OwnedShieldCount = 0;
         OwnedWeaponCount = 0;
         EquippedItemSlotCount = 0;
         MagicBoxUsedSlots = 0;
+        MagicBoxMaximumSlots = MagicBoxOwned && DerivedStats != null
+            ? Max(0, DerivedStats.MagicBoxCapacity) : 0;
+        HUDMagicBoxRawContentWeight = 0.0;
+        HUDMagicBoxReducedContentWeight = 0.0;
+        HUDMagicBoxTotalWeight = 0.0;
+        HUDCopperCoinCount = 0;
+        HUDSilverCoinCount = 0;
+        HUDGoldCoinCount = 0;
+        HUDTotalMoneyCopperValue = 0.0;
         double personalInventoryWeight = 0.0;
         double carriedItemWeight = 0.0;
         double armorWeight = 0.0;
         double shieldWeight = 0.0;
         double weaponWeight = 0.0;
+        double magicBoxRawContentWeight = 0.0;
 
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -3051,6 +3898,8 @@ class CaelumPlayer : DoomPlayer
             if (item.InMagicBox)
             {
                 MagicBoxUsedSlots++;
+                magicBoxRawContentWeight += Max(0.0, item.UnitWeight)
+                    * Max(0, item.Amount);
                 continue;
             }
 
@@ -3089,7 +3938,12 @@ class CaelumPlayer : DoomPlayer
             {
                 CarbineAmmoCount = ammunition.Amount;
             }
-            if (ammunition.InMagicBox) { MagicBoxUsedSlots++; }
+            if (ammunition.InMagicBox)
+            {
+                MagicBoxUsedSlots++;
+                magicBoxRawContentWeight += ammunition.Amount
+                    * ammunition.GetUnitWeight();
+            }
             else
             {
                 PersonalInventoryItemCount += ammunition.Amount;
@@ -3125,6 +3979,8 @@ class CaelumPlayer : DoomPlayer
             if (consumable.InMagicBox)
             {
                 MagicBoxUsedSlots++;
+                magicBoxRawContentWeight += consumable.Amount
+                    * consumable.GetUnitWeight();
                 continue;
             }
             PersonalInventoryItemCount += consumable.Amount;
@@ -3138,9 +3994,34 @@ class CaelumPlayer : DoomPlayer
             CaelumSpecialInventoryItem specialItem =
                 CaelumSpecialInventoryItem(cursor);
             if (specialItem == null || specialItem.Amount <= 0) { continue; }
+            if (specialItem.GetSpecialCategory()
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+            {
+                int coinAmount = Max(0, specialItem.Amount);
+                int currencyType = specialItem.GetSpecialType();
+                int currencyMetal =
+                    CaelumEconomyRules.GetCurrencyMetalType(currencyType);
+                if (currencyMetal == CaelumConstants.CURRENCY_METAL_SILVER)
+                {
+                    HUDSilverCoinCount += coinAmount;
+                }
+                else if (currencyMetal
+                    == CaelumConstants.CURRENCY_METAL_GOLD)
+                {
+                    HUDGoldCoinCount += coinAmount;
+                }
+                else
+                {
+                    HUDCopperCoinCount += coinAmount;
+                }
+                HUDTotalMoneyCopperValue += double(coinAmount)
+                    * CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
+            }
             if (specialItem.InMagicBox)
             {
                 MagicBoxUsedSlots++;
+                magicBoxRawContentWeight += specialItem.Amount
+                    * specialItem.GetUnitWeight();
                 continue;
             }
             PersonalInventoryItemCount += specialItem.Amount;
@@ -3158,6 +4039,18 @@ class CaelumPlayer : DoomPlayer
             personalInventoryWeight += keyWeight;
             carriedItemWeight += keyWeight;
         }
+
+        HUDMagicBoxRawContentWeight = Max(0.0, magicBoxRawContentWeight);
+        HUDMagicBoxReducedContentWeight =
+            CalculateMagicBoxReducedContentWeight(
+                HUDMagicBoxRawContentWeight
+            );
+        HUDMagicBoxTotalWeight = MagicBoxOwned
+            ? CaelumConstants.MAGIC_BOX_BASE_WEIGHT
+                + HUDMagicBoxReducedContentWeight
+            : 0.0;
+        personalInventoryWeight += HUDMagicBoxTotalWeight;
+        carriedItemWeight += HUDMagicBoxTotalWeight;
         if (DerivedStats != null)
         {
             DerivedStats.SetCarriedLoadBreakdown(
@@ -3179,7 +4072,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     bool IsSpecialInventoryKind(int k)
-    { return k==CaelumConstants.EQUIPMENT_KIND_MATERIAL || k==CaelumConstants.EQUIPMENT_KIND_KEY || k==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM; }
+    { return k==CaelumConstants.EQUIPMENT_KIND_MATERIAL || k==CaelumConstants.EQUIPMENT_KIND_KEY || k==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM || k==CaelumConstants.EQUIPMENT_KIND_CURRENCY; }
     bool IsUniversalJewelryKind(int k)
     { return k==CaelumConstants.EQUIPMENT_KIND_AMULET || k==CaelumConstants.EQUIPMENT_KIND_SEAL; }
 
@@ -3220,6 +4113,7 @@ class CaelumPlayer : DoomPlayer
         if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return 7; }
         if (kind == CaelumConstants.EQUIPMENT_KIND_KEY
             || kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM) { return 8; }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_CURRENCY) { return 9; }
         return -1;
     }
 
@@ -3702,6 +4596,11 @@ class CaelumPlayer : DoomPlayer
         {
             specialTypeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
         }
+        else if (EquipmentSelectionKind
+            == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            specialTypeCount = CaelumConstants.CURRENCY_TYPE_COUNT;
+        }
         int firstSpecialType = 0;
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
@@ -3738,7 +4637,7 @@ class CaelumPlayer : DoomPlayer
         EquipmentSelectionAnimaCost = 0.0;
         EquipmentSelectionAttackTics = 0;
         EquipmentSelectionStackAmount = 0;
-        MagicBoxMaximumSlots = DerivedStats != null
+        MagicBoxMaximumSlots = MagicBoxOwned && DerivedStats != null
             ? DerivedStats.MagicBoxCapacity : 0;
         RefreshCarriedInventorySummary();
 
@@ -3760,7 +4659,8 @@ class CaelumPlayer : DoomPlayer
             if (carbineStack != null)
             {
                 EquipmentSelectionInMagicBox = carbineStack.InMagicBox;
-                EquipmentSelectionWeight = carbineStack.GetCarriedWeight();
+                EquipmentSelectionWeight = carbineStack.Amount
+                    * carbineStack.GetUnitWeight();
             }
             return;
         }
@@ -3794,7 +4694,9 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
         {
             CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
                 EquipmentSelectionKind, EquipmentSelectionSpecialType,
@@ -3810,7 +4712,10 @@ class CaelumPlayer : DoomPlayer
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
                 * (specialItem != null
                     ? specialItem.GetUnitWeight()
-                    : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT);
+                    : (EquipmentSelectionKind
+                            == CaelumConstants.EQUIPMENT_KIND_CURRENCY
+                        ? CaelumConstants.CURRENCY_UNIT_WEIGHT
+                        : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT));
             return;
         }
 
@@ -3991,13 +4896,17 @@ class CaelumPlayer : DoomPlayer
             resolvedSlot, resolvedType, resolvedTier, resolvedSize
         );
         bool sendToMagicBox = false;
-        if (!alreadyOwned && !CanAddWeightToPersonalInventory(
-            ArmorModel.GetWeightFor(
-                resolvedSlot, resolvedType, resolvedTier, resolvedSize
-            )
-        ))
+        double pickupWeight = ArmorModel.GetWeightFor(
+            resolvedSlot, resolvedType, resolvedTier, resolvedSize
+        );
+        if (!alreadyOwned
+            && !CanAddWeightToPersonalInventory(pickupWeight))
         {
-            if (!HasNativeMagicBoxSlotAvailable()) { return false; }
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(pickupWeight))
+            {
+                return false;
+            }
             sendToMagicBox = true;
         }
         int pickupDurability = encodedDurability > 0
@@ -4062,11 +4971,17 @@ class CaelumPlayer : DoomPlayer
             resolvedType, resolvedTier, resolvedSize
         );
         bool sendToMagicBox = false;
-        if (!alreadyOwned && !CanAddWeightToPersonalInventory(
-            ShieldModel.GetWeightFor(resolvedType, resolvedTier, resolvedSize)
-        ))
+        double pickupWeight = ShieldModel.GetWeightFor(
+            resolvedType, resolvedTier, resolvedSize
+        );
+        if (!alreadyOwned
+            && !CanAddWeightToPersonalInventory(pickupWeight))
         {
-            if (!HasNativeMagicBoxSlotAvailable()) { return false; }
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(pickupWeight))
+            {
+                return false;
+            }
             sendToMagicBox = true;
         }
         int pickupDurability = encodedDurability > 0
@@ -4128,11 +5043,17 @@ class CaelumPlayer : DoomPlayer
             resolvedType, resolvedTier, resolvedSize
         );
         bool sendToMagicBox = false;
-        if (!alreadyOwned && !CanAddWeightToPersonalInventory(
-            WeaponModel.GetWeightFor(resolvedType, resolvedTier, resolvedSize)
-        ))
+        double pickupWeight = WeaponModel.GetWeightFor(
+            resolvedType, resolvedTier, resolvedSize
+        );
+        if (!alreadyOwned
+            && !CanAddWeightToPersonalInventory(pickupWeight))
         {
-            if (!HasNativeMagicBoxSlotAvailable()) { return false; }
+            if (!HasNativeMagicBoxSlotAvailable()
+                || !CanAddRawWeightToMagicBox(pickupWeight))
+            {
+                return false;
+            }
             sendToMagicBox = true;
         }
         int pickupDurability = encodedDurability > 0
@@ -4339,9 +5260,9 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
-    int GetPreparedMaterialOutputBoxSlots()
+    bool CanCompletePreparedMaterialOutput(bool outputToMagicBox)
     {
-        if (DerivedStats == null) { return 0; }
+        if (DerivedStats == null) { return false; }
         int outputSlot = -1;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
@@ -4352,17 +5273,16 @@ class CaelumPlayer : DoomPlayer
                 break;
             }
         }
-        if (outputSlot < 0) { return 0; }
+        if (outputSlot < 0) { return false; }
 
         CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_MATERIAL,
             CraftingTaskOutputType[outputSlot],
             CraftingTaskOutputTier[outputSlot]
         );
-        if (existingOutput != null && existingOutput.InMagicBox) { return 0; }
-
         RefreshCarriedInventorySummary();
-        double releasedWeight = 0.0;
+        double personalDelta = 0.0;
+        double boxRawDelta = 0.0;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -4372,17 +5292,106 @@ class CaelumPlayer : DoomPlayer
                 CraftingTaskReservedType[slot],
                 CraftingTaskReservedTier[slot]
             );
-            if (inputStack != null && !inputStack.InMagicBox)
+            if (inputStack == null) { return false; }
+            double inputWeight = CraftingTaskReservedUnits[slot]
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            if (inputStack.InMagicBox)
             {
-                releasedWeight += CraftingTaskReservedUnits[slot]
-                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                boxRawDelta -= inputWeight;
+            }
+            else
+            {
+                personalDelta -= inputWeight;
             }
         }
+
         double outputWeight = CraftingTaskOutputUnits[outputSlot]
             * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-        return HUDCarriedWeight - releasedWeight + outputWeight
-                > HUDCarryCapacity + 0.0005
-            ? 1 : 0;
+        if (outputToMagicBox)
+        {
+            if (existingOutput != null && !existingOutput.InMagicBox)
+            {
+                int remainingUnits = Max(
+                    0,
+                    existingOutput.Amount - GetReservedCraftingMaterialUnits(
+                        CraftingTaskOutputType[outputSlot],
+                        CraftingTaskOutputTier[outputSlot]
+                    )
+                );
+                double remainingWeight = remainingUnits
+                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                personalDelta -= remainingWeight;
+                boxRawDelta += remainingWeight;
+            }
+            boxRawDelta += outputWeight;
+        }
+        else
+        {
+            if (existingOutput != null && existingOutput.InMagicBox)
+            {
+                boxRawDelta += outputWeight;
+            }
+            else
+            {
+                personalDelta += outputWeight;
+            }
+        }
+        return CanApplyInventoryWeightTransition(
+            personalDelta, boxRawDelta
+        );
+    }
+
+    int GetPreparedMaterialOutputBoxSlots()
+    {
+        int outputSlot = -1;
+        for (int slot = 0;
+            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
+        {
+            if (CraftingTaskOutputUnits[slot] > 0)
+            {
+                outputSlot = slot;
+                break;
+            }
+        }
+        if (outputSlot < 0) { return -1; }
+
+        CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            CraftingTaskOutputType[outputSlot],
+            CraftingTaskOutputTier[outputSlot]
+        );
+        if (existingOutput != null && existingOutput.InMagicBox)
+        {
+            return CanCompletePreparedMaterialOutput(true) ? 0 : -1;
+        }
+        if (CanCompletePreparedMaterialOutput(false)) { return 0; }
+        return CanCompletePreparedMaterialOutput(true) ? 1 : -1;
+    }
+
+    bool CanCompletePreparedEquipmentOutput(double outputRawWeight)
+    {
+        if (DerivedStats == null) { return false; }
+        RefreshCarriedInventorySummary();
+        double personalDelta = 0.0;
+        double boxRawDelta = Max(0.0, outputRawWeight);
+        for (int slot = 0;
+            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
+        {
+            if (CraftingTaskReservedUnits[slot] <= 0) { continue; }
+            CaelumSpecialInventoryItem inputStack = FindNativeSpecialItem(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                CraftingTaskReservedType[slot],
+                CraftingTaskReservedTier[slot]
+            );
+            if (inputStack == null) { return false; }
+            double inputWeight = CraftingTaskReservedUnits[slot]
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            if (inputStack.InMagicBox) { boxRawDelta -= inputWeight; }
+            else { personalDelta -= inputWeight; }
+        }
+        return CanApplyInventoryWeightTransition(
+            personalDelta, boxRawDelta
+        );
     }
 
     double GetCraftingDexterityPercent()
@@ -5340,12 +6349,25 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
                 return;
             }
-            CraftingTaskReservedBoxSlots =
-                GetPreparedMaterialOutputBoxSlots();
+            CraftingTaskReservedBoxSlots = GetPreparedMaterialOutputBoxSlots();
+            if (CraftingTaskReservedBoxSlots < 0)
+            {
+                ClearCraftingTaskData();
+                LastCraftingAction =
+                    CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
+                return;
+            }
         }
         else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
         {
             CraftingTaskReservedBoxSlots = 1;
+            if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
+            {
+                ClearCraftingTaskData();
+                LastCraftingAction =
+                    CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
+                return;
+            }
         }
         if (DerivedStats == null
             || CountNativeMagicBoxSlots() + CraftingTaskReservedBoxSlots
@@ -6181,6 +7203,7 @@ class CaelumPlayer : DoomPlayer
         if (resolvedStation == CaelumConstants.CRAFTING_STATION_NONE) { return; }
 
         if (StaffCastPending) { CancelPendingStaffCast(false); }
+        ClosePalomoMerchant();
         EquipmentMenuOpen = false;
         CraftingMenuOpen = true;
         ActiveCraftingStationType = resolvedStation;
@@ -6555,8 +7578,14 @@ class CaelumPlayer : DoomPlayer
         );
         bool sendOutputToMagicBox = existingOutput != null
             && existingOutput.InMagicBox;
-        if (!sendOutputToMagicBox
-            && GetPreparedMaterialOutputBoxSlots() > 0)
+        int outputBoxSlots = GetPreparedMaterialOutputBoxSlots();
+        if (outputBoxSlots < 0)
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
+            return;
+        }
+        if (!sendOutputToMagicBox && outputBoxSlots > 0)
         {
             if (DerivedStats == null
                 || CountNativeMagicBoxSlots()
@@ -7021,6 +8050,17 @@ class CaelumPlayer : DoomPlayer
         }
 
         if (CraftingSelectedRecipeKind
+                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            && CraftingSelectedRecipeKind
+                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT
+            && !CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
+        {
+            LastCraftingAction =
+                CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
+            return;
+        }
+
+        if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {
             CraftSelectedArmorRecipe();
@@ -7261,6 +8301,10 @@ class CaelumPlayer : DoomPlayer
 
     Name GetSpecialItemClassName(int specialCategory, int specialType)
     {
+        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+        {
+            return CaelumEconomyRules.GetCurrencyClassName(specialType);
+        }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
             return 'CaelumSilverKey';
@@ -7352,6 +8396,12 @@ class CaelumPlayer : DoomPlayer
                 typeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
                 firstType = 0;
             }
+            else if (EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+            {
+                typeCount = CaelumConstants.CURRENCY_TYPE_COUNT;
+                firstType = 0;
+            }
             int selectableTypeCount = typeCount - firstType;
             EquipmentSelectionSpecialType = firstType + (
                 EquipmentSelectionSpecialType - firstType + direction
@@ -7403,7 +8453,9 @@ class CaelumPlayer : DoomPlayer
                 == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
             || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM) { return; }
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY) { return; }
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && !CaelumMaterialRules.HasTier(
                 EquipmentSelectionSpecialType
@@ -7635,6 +8687,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         SyncActiveModelsToNativeInventory();
+        RefreshCarriedInventorySummary();
         CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
         if (item == null) { return; }
         if (IsEquipmentItemCraftingLocked(item.ItemId))
@@ -7644,7 +8697,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         if (item.InMagicBox
-            && !CanAddWeightToPersonalInventory(item.UnitWeight))
+            && !CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
         {
             LastEquipmentAction =
                 CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -7809,6 +8862,13 @@ class CaelumPlayer : DoomPlayer
     void ToggleSelectedMagicBox()
     {
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        SyncLiveMagicBoxOwnershipFromPersistentState();
+        if (!MagicBoxOwned)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED;
+            return;
+        }
         RefreshCarriedInventorySummary();
         if (IsSelectedMaterialCraftingLocked()
             || IsEquipmentItemCraftingLocked(EquipmentSelectionItemId))
@@ -7826,7 +8886,9 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
         {
             CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
                 EquipmentSelectionKind, EquipmentSelectionSpecialType,
@@ -7837,7 +8899,7 @@ class CaelumPlayer : DoomPlayer
                 * specialItem.GetUnitWeight();
             if (specialItem.InMagicBox)
             {
-                if (!CanAddWeightToPersonalInventory(stackWeight))
+                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
                 {
                     LastEquipmentAction =
                         CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -7875,7 +8937,7 @@ class CaelumPlayer : DoomPlayer
                 * consumable.GetUnitWeight();
             if (consumable.InMagicBox)
             {
-                if (!CanAddWeightToPersonalInventory(stackWeight))
+                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
                 {
                     LastEquipmentAction =
                         CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -7921,10 +8983,11 @@ class CaelumPlayer : DoomPlayer
                 return;
             }
 
-            double stackWeight = carbineStack.GetCarriedWeight();
+            double stackWeight = carbineStack.Amount
+                * carbineStack.GetUnitWeight();
             if (carbineStack.InMagicBox)
             {
-                if (!CanAddWeightToPersonalInventory(stackWeight))
+                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
                 {
                     LastEquipmentAction =
                         CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -7956,7 +9019,7 @@ class CaelumPlayer : DoomPlayer
         if (item == null) { return; }
         if (item.InMagicBox)
         {
-            if (!CanAddWeightToPersonalInventory(item.UnitWeight))
+            if (!CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
             {
                 LastEquipmentAction =
                     CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -8005,7 +9068,9 @@ class CaelumPlayer : DoomPlayer
         }
         ApplyCharacterProfile();
         if (EquipmentSelectionInMagicBox
-            && !CanAddWeightToPersonalInventory(EquipmentSelectionWeight))
+            && !CanMoveRawWeightFromMagicBoxToPersonal(
+                EquipmentSelectionWeight
+            ))
         {
             LastEquipmentAction =
                 CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -8289,6 +9354,12 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[0] = EquipmentSelectionSpecialType;
                 pickup.args[1] = EquipmentSelectionTier;
                 Inventory(pickup).Amount = 10;
+            }
+            else if (pickup != null
+                && EquipmentSelectionKind
+                    == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
+            {
+                Inventory(pickup).Amount = 100;
             }
         }
         else if (EquipmentSelectionKind
@@ -8596,13 +9667,19 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
-    int GetDismantleNetBoxSlots(CaelumEquipmentItem target)
+    bool CanCompletePreparedDismantle(
+        CaelumEquipmentItem target, bool sendOutputsToMagicBox
+    )
     {
-        if (target == null || DerivedStats == null) { return 0; }
+        if (target == null || DerivedStats == null) { return false; }
         RefreshCarriedInventorySummary();
-        double personalWeight = Max(
-            0.0, HUDCarriedWeight - target.GetCarriedWeight()
-        );
+        double personalDelta = 0.0;
+        double boxRawDelta = 0.0;
+        double targetWeight = Max(0.0, target.UnitWeight)
+            * Max(0, target.Amount);
+        if (target.InMagicBox) { boxRawDelta -= targetWeight; }
+        else { personalDelta -= targetWeight; }
+
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -8612,13 +9689,38 @@ class CaelumPlayer : DoomPlayer
                 CraftingTaskOutputType[slot],
                 CraftingTaskOutputTier[slot]
             );
-            if (existing == null || !existing.InMagicBox)
+            double outputWeight = CraftingTaskOutputUnits[slot]
+                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            if (sendOutputsToMagicBox)
             {
-                personalWeight += CraftingTaskOutputUnits[slot]
-                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                if (existing != null && !existing.InMagicBox)
+                {
+                    double existingWeight = existing.Amount
+                        * existing.GetUnitWeight();
+                    personalDelta -= existingWeight;
+                    boxRawDelta += existingWeight;
+                }
+                boxRawDelta += outputWeight;
+            }
+            else if (existing != null && existing.InMagicBox)
+            {
+                boxRawDelta += outputWeight;
+            }
+            else
+            {
+                personalDelta += outputWeight;
             }
         }
-        if (personalWeight <= HUDCarryCapacity + 0.0005) { return 0; }
+        return CanApplyInventoryWeightTransition(
+            personalDelta, boxRawDelta
+        );
+    }
+
+    int GetDismantleNetBoxSlots(CaelumEquipmentItem target)
+    {
+        if (target == null || DerivedStats == null) { return -1; }
+        if (CanCompletePreparedDismantle(target, false)) { return 0; }
+        if (!CanCompletePreparedDismantle(target, true)) { return -1; }
 
         int requiredSlots = 0;
         for (int slot = 0;
@@ -8814,6 +9916,13 @@ class CaelumPlayer : DoomPlayer
         }
         CraftingTaskTargetItemId = target.ItemId;
         CraftingTaskReservedBoxSlots = GetDismantleNetBoxSlots(target);
+        if (CraftingTaskReservedBoxSlots < 0)
+        {
+            ClearCraftingTaskData();
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
+            return;
+        }
         RefreshCarriedInventorySummary();
         if (MagicBoxUsedSlots + CraftingTaskReservedBoxSlots
             > MagicBoxMaximumSlots)
@@ -8892,6 +10001,12 @@ class CaelumPlayer : DoomPlayer
             return false;
         }
         int netSlots = GetDismantleNetBoxSlots(target);
+        if (netSlots < 0)
+        {
+            LastEquipmentAction =
+                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
+            return false;
+        }
         RefreshCarriedInventorySummary();
         if (MagicBoxUsedSlots + netSlots > MagicBoxMaximumSlots)
         {
@@ -8900,26 +10015,8 @@ class CaelumPlayer : DoomPlayer
             return false;
         }
 
-        double personalWeight = Max(
-            0.0, HUDCarriedWeight - target.GetCarriedWeight()
-        );
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] <= 0) { continue; }
-            CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskOutputType[slot],
-                CraftingTaskOutputTier[slot]
-            );
-            if (existing == null || !existing.InMagicBox)
-            {
-                personalWeight += CraftingTaskOutputUnits[slot]
-                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            }
-        }
-        bool sendToMagicBox = personalWeight
-            > HUDCarryCapacity + 0.0005;
+        bool sendToMagicBox =
+            !CanCompletePreparedDismantle(target, false);
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(false);
@@ -9204,24 +10301,56 @@ class CaelumPlayer : DoomPlayer
         );
 
         RefreshCarriedInventorySummary();
-        double personalWeightAfterRemoval = Max(
-            0.0,
-            HUDCarriedWeight - weapon.GetCarriedWeight()
+        double weaponWeight = Max(0.0, weapon.UnitWeight)
+            * Max(0, weapon.Amount);
+        double basicWeight = basicAmount
+            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        double tierWeight = tierAmount
+            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        double personalDelta = weapon.InMagicBox ? 0.0 : -weaponWeight;
+        double boxRawDelta = weapon.InMagicBox ? -weaponWeight : 0.0;
+        if (existingBasic != null && existingBasic.InMagicBox)
+        {
+            boxRawDelta += basicWeight;
+        }
+        else { personalDelta += basicWeight; }
+        if (existingTier != null && existingTier.InMagicBox)
+        {
+            boxRawDelta += tierWeight;
+        }
+        else { personalDelta += tierWeight; }
+        bool sendToMagicBox = !CanApplyInventoryWeightTransition(
+            personalDelta, boxRawDelta
         );
-        double recoveredPersonalWeight = 0.0;
-        if (existingBasic == null || !existingBasic.InMagicBox)
+
+        if (sendToMagicBox)
         {
-            recoveredPersonalWeight += basicAmount
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            personalDelta = weapon.InMagicBox ? 0.0 : -weaponWeight;
+            boxRawDelta = weapon.InMagicBox ? -weaponWeight : 0.0;
+            if (existingBasic != null && !existingBasic.InMagicBox)
+            {
+                double existingBasicWeight = existingBasic.Amount
+                    * existingBasic.GetUnitWeight();
+                personalDelta -= existingBasicWeight;
+                boxRawDelta += existingBasicWeight;
+            }
+            if (existingTier != null && !existingTier.InMagicBox)
+            {
+                double existingTierWeight = existingTier.Amount
+                    * existingTier.GetUnitWeight();
+                personalDelta -= existingTierWeight;
+                boxRawDelta += existingTierWeight;
+            }
+            boxRawDelta += basicWeight + tierWeight;
+            if (!CanApplyInventoryWeightTransition(
+                    personalDelta, boxRawDelta
+                ))
+            {
+                LastEquipmentAction =
+                    CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
+                return;
+            }
         }
-        if (existingTier == null || !existingTier.InMagicBox)
-        {
-            recoveredPersonalWeight += tierAmount
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-        }
-        bool sendToMagicBox = personalWeightAfterRemoval
-                + recoveredPersonalWeight
-            > HUDCarryCapacity + 0.0005;
 
         int requiredBoxSlots = 0;
         if (sendToMagicBox)
@@ -9320,7 +10449,9 @@ class CaelumPlayer : DoomPlayer
         else if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
+                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            || EquipmentSelectionKind
+                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
         {
             CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
                 EquipmentSelectionKind, EquipmentSelectionSpecialType,
@@ -9636,6 +10767,7 @@ class CaelumPlayer : DoomPlayer
         );
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
+        ClosePalomoMerchant();
         PersistCharacterState();
         Super.PreTravelled();
     }
@@ -12236,6 +13368,7 @@ class CaelumPlayer : DoomPlayer
             if (!channelPressed) CombatChannelInputLatched = false;
         }
         if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
+                || PalomoMerchantMenuOpen
                 || CombatChannelModeActive)
             && player != null)
         {
@@ -12269,6 +13402,7 @@ class CaelumPlayer : DoomPlayer
 
         Super.Tick();
         UpdateCraftingTask();
+        UpdatePalomoMerchantSession();
 
         bool groundedNow = player != null && player.onground;
         if (!ImpactGroundTrackingInitialized)
@@ -14689,6 +15823,12 @@ class CaelumPlayer : DoomPlayer
             }
             RefreshCarriedInventorySummary();
             DerivedStats.Recalculate(Attributes, CharacterProfile);
+            // La capacidad de la caja depende de Inteligencia. Una segunda
+            // lectura aplica inmediatamente el nuevo divisor a su contenido;
+            // el recálculo final actualiza masa, movimiento y aire con esa
+            // carga corregida en el mismo tic.
+            RefreshCarriedInventorySummary();
+            DerivedStats.Recalculate(Attributes, CharacterProfile);
             SyncHUDLoadState();
             // La masa nativa representa la masa total para que el motor y los
             // ataques externos respeten tambien el peso equipado del jugador.
@@ -16735,7 +17875,9 @@ class CaelumPlayer : DoomPlayer
         if (persistentState != null)
         {
             persistentState.NativeEquipmentMigrationComplete = true;
+            persistentState.InitializeNewMagicBoxOwnership();
         }
+        MagicBoxOwned = false;
         int startingSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(
             CharacterProfile.GetSizeTier()
         );

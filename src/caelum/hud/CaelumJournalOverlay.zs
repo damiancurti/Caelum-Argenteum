@@ -109,6 +109,16 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui String GetInventoryCategoryIconPath(int category)
+    {
+        if (category == 9)
+        {
+            return "graphics/caelum/icons/currency/ca_coin_silver.png";
+        }
+        return "graphics/caelum/ui/journal/icons/"
+            .. GetInventoryCategoryIcon(category);
+    }
+
     ui String GetInventoryFilterKey(int category)
     {
         switch (category)
@@ -121,6 +131,7 @@ class CaelumJournalOverlay : EventHandler
             case 6: return "CA_JOURNAL_FILTER_MATERIALS";
             case 7: return "CA_JOURNAL_FILTER_AMMUNITION";
             case 8: return "CA_JOURNAL_FILTER_KEY_ITEMS";
+            case 9: return "CA_JOURNAL_FILTER_CURRENCY";
             default: return "CA_JOURNAL_FILTER_ALL";
         }
     }
@@ -181,6 +192,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_CRAFTING_ACTION_FAILED_COMBAT";
             case CaelumConstants.CRAFTING_ACTION_FAILED_TARGET:
                 return "CA_CRAFTING_ACTION_FAILED_TARGET";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_CRAFTING_ACTION_FAILED_CARRY_CAPACITY";
             case CaelumConstants.CRAFTING_ACTION_REPAIRED:
                 return "CA_CRAFTING_ACTION_REPAIRED";
             case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
@@ -264,7 +277,55 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS:
                 return "CA_EQUIPMENT_ACTION_FAILED_MATERIALS";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED";
             default: return "CA_EQUIPMENT_ACTION_NONE";
+        }
+    }
+
+    ui String GetPalomoMerchantItemKey(int merchantItem)
+    {
+        switch (merchantItem)
+        {
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_FOOD:
+                return "CA_CONSUMABLE_FOOD_RATION";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_WATER:
+                return "CA_CONSUMABLE_WATER_RATION";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_WOOD:
+                return "CA_MATERIAL_WOOD";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_COPPER:
+                return "CA_MATERIAL_RAW_COPPER";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_TIN:
+                return "CA_MATERIAL_RAW_TIN";
+            default:
+                return "CA_PALOMO_MERCHANT_UNKNOWN_ITEM";
+        }
+    }
+
+    ui String GetPalomoMerchantActionKey(int actionCode)
+    {
+        switch (actionCode)
+        {
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT:
+                return "CA_PALOMO_MERCHANT_ACTION_BOUGHT";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD:
+                return "CA_PALOMO_MERCHANT_ACTION_SOLD";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_STOCK";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_CAPACITY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_RESERVED:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_RESERVED";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_SESSION";
+            default:
+                return "CA_PALOMO_MERCHANT_ACTION_NONE";
         }
     }
 
@@ -439,11 +500,11 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawInventoryPage(CaelumPlayer localPlayer)
     {
-        for (int index = 0; index < 9; index++)
+        for (int index = 0;
+            index < CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT; index++)
         {
             DrawTexture(
-                "graphics/caelum/ui/journal/icons/"
-                    .. GetInventoryCategoryIcon(index),
+                GetInventoryCategoryIconPath(index),
                 54.0 + index * 57.0,
                 124.0,
                 28.0,
@@ -530,16 +591,62 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize("CA_HUD_LOAD", false),
                 localPlayer.HUDCarriedWeight,
                 localPlayer.HUDCarryCapacity));
-        DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 190.0,
-            String.Format("%s: %d / %d",
-                StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
-                localPlayer.MagicBoxUsedSlots,
-                localPlayer.MagicBoxMaximumSlots));
+        DrawTexture(
+            "graphics/caelum/ui/journal/icons/ca_ui_magic_box.png",
+            414.0, 188.0, 16.0, 16.0,
+            localPlayer.MagicBoxOwned ? 1.0 : 0.35
+        );
+        if (localPlayer.MagicBoxOwned)
+        {
+            DrawTextLine(InventoryFont, Font.CR_WHITE, 432.0, 190.0,
+                String.Format("%s: %d/%d · %.3f kg",
+                    StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                    localPlayer.MagicBoxUsedSlots,
+                    localPlayer.MagicBoxMaximumSlots,
+                    localPlayer.HUDMagicBoxTotalWeight));
+        }
+        else
+        {
+            DrawTextLine(InventoryFont, Font.CR_GRAY, 432.0, 190.0,
+                String.Format("%s: %s",
+                    StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                    StringTable.Localize(
+                        "CA_MAGIC_BOX_NOT_ACQUIRED", false
+                    )));
+        }
+        DrawTextLine(InventoryFont, Font.CR_GOLD, 414.0, 210.0,
+            String.Format("%s: %.0f c",
+                StringTable.Localize("CA_ECONOMY_TOTAL_MONEY", false),
+                localPlayer.HUDTotalMoneyCopperValue));
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_copper.png",
+            414.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 432.0, 230.0,
+            String.Format("%d", localPlayer.HUDCopperCoinCount)
+        );
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_silver.png",
+            480.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 498.0, 230.0,
+            String.Format("%d", localPlayer.HUDSilverCoinCount)
+        );
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_gold.png",
+            546.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 564.0, 230.0,
+            String.Format("%d", localPlayer.HUDGoldCoinCount)
+        );
         if (selectedRow >= 0
             && selectedRow < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
             && localPlayer.FormalInventoryRowKind[selectedRow] >= 0)
         {
-            DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 220.0,
+            DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 258.0,
                 String.Format("%s: %.3f",
                     StringTable.Localize(
                         "CA_JOURNAL_INVENTORY_WEIGHT", false
@@ -548,7 +655,7 @@ class CaelumJournalOverlay : EventHandler
             if (localPlayer.FormalInventoryRowMaximumDurability[selectedRow]
                 > 0)
             {
-                DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 240.0,
+                DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 278.0,
                     String.Format("%s: %d / %d",
                         StringTable.Localize(
                             "CA_JOURNAL_INVENTORY_DURABILITY", false
@@ -572,7 +679,7 @@ class CaelumJournalOverlay : EventHandler
         if (localPlayer.CraftingTaskActive)
         {
             DrawTextLine(
-                InventoryFont, Font.CR_CYAN, 414.0, 278.0,
+                InventoryFont, Font.CR_CYAN, 414.0, 298.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
                     StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
@@ -983,13 +1090,20 @@ class CaelumJournalOverlay : EventHandler
         );
 
         DrawCraftingBlueprint(localPlayer);
+        String magicBoxCraftingSummary = localPlayer.MagicBoxOwned
+            ? String.Format(
+                "%d/%d",
+                localPlayer.MagicBoxUsedSlots,
+                localPlayer.MagicBoxMaximumSlots
+            )
+            : StringTable.Localize("CA_MAGIC_BOX_NOT_ACQUIRED", false);
         DrawTextLine(
             SmallFont,
             localPlayer.CraftingSelectedInfrastructureAvailable
                 ? Font.CR_GREEN : Font.CR_RED,
             52.0, 288.0,
             String.Format(
-                "%s  ·  %s: %d  ·  %s: %d/%d",
+                "%s  ·  %s: %d  ·  %s: %s",
                 StringTable.Localize(
                     localPlayer.CraftingSelectedInfrastructureAvailable
                         ? "CA_CRAFTING_INFRASTRUCTURE_READY"
@@ -1001,8 +1115,7 @@ class CaelumJournalOverlay : EventHandler
                 ),
                 localPlayer.CraftingDirectPlanStepCount,
                 StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
-                localPlayer.MagicBoxUsedSlots,
-                localPlayer.MagicBoxMaximumSlots
+                magicBoxCraftingSummary
             )
         );
 
@@ -1062,12 +1175,184 @@ class CaelumJournalOverlay : EventHandler
             StringTable.Localize("CA_JOURNAL_NO_FAKE_DATA", false));
     }
 
+    ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
+    {
+        Screen.Dim(0x05070A, 0.92, 0, 0,
+            Screen.GetWidth(), Screen.GetHeight());
+        DrawPanel(16.0, 12.0, 608.0, 336.0);
+        DrawCenteredText(
+            TitleFont, Font.CR_GOLD, 320.0, 20.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_TITLE", false)
+        );
+
+        String modeKey = localPlayer.PalomoMerchantMode
+                == CaelumConstants.PALOMO_MERCHANT_MODE_SELL
+            ? "CA_PALOMO_MERCHANT_MODE_SELL"
+            : "CA_PALOMO_MERCHANT_MODE_BUY";
+        DrawTextLine(
+            TextFont, Font.CR_GOLD, 54.0, 62.0,
+            String.Format(
+                "%s: %s",
+                StringTable.Localize("CA_PALOMO_MERCHANT_MODE", false),
+                StringTable.Localize(modeKey, false)
+            )
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 54.0, 88.0,
+            String.Format(
+                "%s: %.0f c",
+                StringTable.Localize("CA_PALOMO_MERCHANT_YOUR_MONEY", false),
+                localPlayer.HUDTotalMoneyCopperValue
+            )
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 360.0, 88.0,
+            String.Format(
+                "%s: %d c",
+                StringTable.Localize("CA_PALOMO_MERCHANT_CASH", false),
+                localPlayer.PalomoMerchantWalletCopper
+            )
+        );
+
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 54.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_ITEM", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 346.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_STOCK", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 432.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_YOURS", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 518.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_UNIT", false));
+
+        for (int merchantItem = 0;
+            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
+            merchantItem++)
+        {
+            bool selected = merchantItem
+                == localPlayer.PalomoMerchantSelection;
+            double rowY = 142.0 + merchantItem * 27.0;
+            String itemName = StringTable.Localize(
+                GetPalomoMerchantItemKey(merchantItem), false
+            );
+            DrawTextLine(
+                InventoryFont,
+                selected ? Font.CR_GOLD : Font.CR_WHITE,
+                54.0, rowY,
+                (selected ? "> " : "  ") .. itemName
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 366.0, rowY,
+                String.Format("%d", localPlayer.PalomoMerchantStock[merchantItem])
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 452.0, rowY,
+                String.Format(
+                    "%d", localPlayer.PalomoMerchantPlayerOwned[merchantItem]
+                )
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 518.0, rowY,
+                String.Format(
+                    "%d c",
+                    CaelumEconomyRules.GetPalomoMerchantLotPrice(
+                        merchantItem, 1, localPlayer.PalomoMerchantMode
+                    )
+                )
+            );
+        }
+
+        DrawTextLine(
+            InventoryFont, Font.CR_CYAN, 54.0, 282.0,
+            String.Format(
+                "%s: %d  |  %s: %d c",
+                StringTable.Localize("CA_PALOMO_MERCHANT_QUANTITY", false),
+                localPlayer.PalomoMerchantSelectedQuantity,
+                StringTable.Localize("CA_PALOMO_MERCHANT_TOTAL", false),
+                localPlayer.PalomoMerchantSelectedLotPrice
+            )
+        );
+        DrawCenteredText(
+            InventoryFont,
+            localPlayer.LastPalomoMerchantAction
+                    == CaelumConstants.PALOMO_MERCHANT_ACTION_NONE
+                ? Font.CR_GRAY : Font.CR_GOLD,
+            320.0, 306.0,
+            StringTable.Localize(
+                GetPalomoMerchantActionKey(
+                    localPlayer.LastPalomoMerchantAction
+                ),
+                false
+            )
+        );
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 329.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_HELP", false)
+        );
+    }
+
     override bool InputProcess(InputEvent e)
     {
         // El slot nativo sólo conoce clases de Weapon. Caelum mantiene varias
         // instancias exactas (acabado, tier y durabilidad propios), por lo que
         // el 2 cicla sus objetos equipados antes de que Doom seleccione Pistol.
         bool slotTwo = e.KeyChar == 50 || e.KeyString ~== "2";
+        CaelumPlayer localPlayer = consoleplayer >= 0
+            ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
+        {
+            if (e.Type != InputEvent.Type_KeyDown
+                && e.Type != InputEvent.Type_KeyUp)
+            {
+                return false;
+            }
+            if (e.KeyScan == InputEvent.Key_Grave
+                || e.KeyScan == InputEvent.Key_Pad_Start)
+            {
+                return false;
+            }
+            if (e.Type == InputEvent.Type_KeyUp) { return true; }
+
+            if (e.KeyScan == InputEvent.Key_Escape
+                || e.KeyScan == InputEvent.Key_Tab
+                || e.KeyScan == InputEvent.Key_Pad_B
+                || e.KeyChar == 113 || e.KeyChar == 81
+                || e.KeyString ~== "q")
+            {
+                SendNetworkEvent("ca_palomo_merchant_close");
+                SendNetworkEvent("ca_journal_menu_select_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_DownArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+            {
+                SendNetworkEvent("ca_palomo_merchant_next");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_UpArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Up)
+            {
+                SendNetworkEvent("ca_palomo_merchant_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_LeftArrow
+                || e.KeyScan == InputEvent.Key_RightArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Left
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
+            {
+                SendNetworkEvent("ca_palomo_merchant_mode");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_Space
+                || e.KeyScan == InputEvent.Key_Pad_X)
+            {
+                SendNetworkEvent("ca_palomo_merchant_quantity");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (e.KeyScan == InputEvent.Key_Enter
+                || e.KeyScan == InputEvent.Key_Pad_A)
+            {
+                SendNetworkEvent("ca_palomo_merchant_transact");
+            }
+            return true;
+        }
         if (!IsJournalOpen())
         {
             if (menuactive == 0 && slotTwo
@@ -1095,7 +1380,6 @@ class CaelumJournalOverlay : EventHandler
         if (e.Type == InputEvent.Type_KeyUp) { return true; }
 
         int currentPage = GetJournalPage();
-        CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
         bool craftingSession = currentPage == 3
             && localPlayer != null && localPlayer.CraftingMenuOpen;
 
@@ -1318,6 +1602,13 @@ class CaelumJournalOverlay : EventHandler
     {
         if (e.Name ~== "ca_journal_toggle")
         {
+            CaelumPlayer localPlayer = consoleplayer >= 0
+                ? CaelumPlayer(players[consoleplayer].mo) : null;
+            if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
+            {
+                SendNetworkEvent("ca_palomo_merchant_close");
+                return;
+            }
             bool opening = !IsJournalOpen();
             if (!opening && GetJournalPage() == 3)
             {
@@ -1363,6 +1654,30 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_inventory_drop")
         {
             requestingPlayer.DropFormalInventorySelection();
+        }
+        else if (e.Name == "ca_palomo_merchant_close")
+        {
+            requestingPlayer.ClosePalomoMerchant();
+        }
+        else if (e.Name == "ca_palomo_merchant_next")
+        {
+            requestingPlayer.CyclePalomoMerchantSelection(1);
+        }
+        else if (e.Name == "ca_palomo_merchant_previous")
+        {
+            requestingPlayer.CyclePalomoMerchantSelection(-1);
+        }
+        else if (e.Name == "ca_palomo_merchant_mode")
+        {
+            requestingPlayer.TogglePalomoMerchantMode();
+        }
+        else if (e.Name == "ca_palomo_merchant_quantity")
+        {
+            requestingPlayer.CyclePalomoMerchantQuantity();
+        }
+        else if (e.Name == "ca_palomo_merchant_transact")
+        {
+            requestingPlayer.ExecutePalomoMerchantTransaction();
         }
         else if (e.Name == "ca_journal_menu_move_sound")
         {
@@ -1456,7 +1771,7 @@ class CaelumJournalOverlay : EventHandler
 
     override void RenderOverlay(RenderEvent event)
     {
-        if (!IsJournalOpen() || consoleplayer < 0
+        if (consoleplayer < 0
             || TitleFont == null || TextFont == null || SmallFont == null
             || InventoryFont == null)
         {
@@ -1464,6 +1779,12 @@ class CaelumJournalOverlay : EventHandler
         }
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
         if (localPlayer == null) { return; }
+        if (localPlayer.PalomoMerchantMenuOpen)
+        {
+            DrawPalomoMerchant(localPlayer);
+            return;
+        }
+        if (!IsJournalOpen()) { return; }
         int currentPage = GetJournalPage();
 
         Screen.Dim(0x05070A, 0.92, 0, 0, Screen.GetWidth(), Screen.GetHeight());
