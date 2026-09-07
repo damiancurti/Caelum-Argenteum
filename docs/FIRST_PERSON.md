@@ -1,4 +1,4 @@
-# Caelum Argenteum — Primera persona de Domingo V4.32.0k
+# Caelum Argenteum — Primera persona de Domingo V4.32.0o
 
 ## Alcance
 
@@ -6,127 +6,142 @@ La vista modular continúa conectada exclusivamente con
 `CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
 existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
 
-V4.32.0k corrige la interpretación de las referencias de V4.32.0j: el escudo
-normal debe acompañar a su mano izquierda; la mano derecha y el mango tienen
-destinos azules distintos; y el golpe debe recorrer la curva negra antes de
-volver en línea recta. No modifica Fire, AltFire, Zoom/Block, Aire,
-enfriamiento, durabilidad, sonidos, persistencia, equipo, HUD, mapas ni
-diálogos. Todo ese comportamiento permanece en las rutas autoritativas de
-`CaelumPlayer` ya aprobadas.
+V4.32.0o conserva la altura, el pulgar completo y la trayectoria de V4.32.0n,
+pero corrige el cuadro que mostraba dos puños. El código anterior calculó los
+pivotes con el tamaño completo del PNG; GZDoom aplica `PSPF_PIVOTPERCENT` a la
+caja visible de cada textura. Como `RHND`, `DSWD` y `RFNG` tienen cajas alfa
+distintas, las dos representaciones complementarias de la misma mano se
+separaban al girar. Los nuevos porcentajes compensan esas cajas y hacen que
+las tres transformaciones resuelvan al pivote real ya usado por la espada.
+No modifica sprites, daño, Aire, enfriamiento, durabilidad, sonidos,
+persistencia, equipo, HUD, mapas, economía, Palomo ni diálogos.
 
 ## Encuadre por estado
 
 | Estado | Escudo (10) | Mano izquierda (20) | Mano/dedos derechos (25/40) | Espada (30) |
 | --- | ---: | ---: | ---: | ---: |
-| Reposo | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=280, Y=4 |
-| Block sostenido | X=160, Y=100 | X=160, Y=100 | X=160, Y=0 | X=160, Y=0 |
+| Reposo | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=260, Y=0 |
+| Block sostenido | X=160, Y=100 | X=160, Y=100 | Ocultas | Oculta |
 
-En reposo, escudo y mano izquierda comparten X=82, Y=45; así ambos llegan a la
-marca azul inferior izquierda. A la derecha, palma y dedos quedan en (282,32),
-mientras la hoja usa (280,4). Esta separación registrada corrige el mango que
-V4.32.0j dejaba demasiado abajo: respecto de aquella prueba, la mano se mueve
-6 unidades a la izquierda y 4 hacia abajo, y la espada 8 a la izquierda y 24
-hacia arriba.
+En reposo, escudo y mano izquierda continúan juntos en la marca inferior
+izquierda aceptada. La palma y el pulgar derechos permanecen en (282,32). La
+espada pasa de (260,4) a (260,0), por lo que sube ligeramente sin cambiar su
+registro horizontal aprobado.
 
 ## Block frontal, cercano y sostenido
 
-H sigue siendo la transición breve de tres tics. I usa duración `-1` y queda
-fijo hasta que termine el estado real de Block; no existe un ciclo H/I. El
-arte del escudo y su escala permanecen byte por byte iguales a V4.32.0i. Sus
-offsets de Block también permanecen en (160,100); sólo cambia su pose normal.
+El Block no cambia respecto de V4.32.0m. H sigue siendo una transición breve
+de tres tics e I usa duración `-1`, fija hasta terminar el estado real de
+Block. El escudo y su mano correcta permanecen en las capas 10 y 20 a
+(160,100); las capas de la mano hábil 25/30/40 se limpian para evitar una
+segunda mano. Al soltar Block, el conjunto derecho se reconstruye de inmediato.
 
-El cuadro I del escudo se reconstruyó como una vista ortogonal del reverso:
-plano perpendicular a la cámara, aro circular, tablones verticales y sin la
-perspectiva oblicua heredada. El arte compensa en X el pixel aspect 1,2 de Doom,
-por lo que su exportación parece ancha en el PNG pero recupera un círculo en
-pantalla.
+La exportación `DSHDI0` conserva 450×300, `grAb (225,48)` y una caja visible
+de 293×244. `LHNDI0` comparte lienzo y origen y conserva su caja visible de
+213×169. No cambian perspectiva, tamaño, altura ni condición de equipo.
 
-La exportación `DSHDI0` mide 450×300, usa `grAb (225,48)` y tiene una caja
-visible de 293×244. Los 244 píxeles verticales representan el aumento lineal
-solicitado: 244/195 = 1,251 respecto del cuadro I de V4.32.0h. Los 293 píxeles
-horizontales neutralizan la relación 1,2 del motor (293/244 = 1,201), no son un
-segundo aumento de distancia. `LHNDI0` comparte lienzo y origen; su caja visible
-213×169 también equivale, con redondeo de ráster, al 125 % de los 170×135
-anteriores y permanece registrada con el nuevo agarre.
+## Pulgar completo delante del mango
 
-La mano horizontal que queda visible bajo el escudo proviene de las capas de
-Block `RHND`/`DSWD`/`RFNG`. Sus cuadros H/I ahora son reflejos horizontales
-exactos y conjuntos, de modo que el antebrazo entra desde la izquierda sin
-alterar el registro entre palma, transición de espada y dedos.
+`RFNGA0` y `RFNGB0` mantienen lienzo RGBA 320×200 y `grAb (160,32)`, pero la
+máscara frontal ahora incluye todo el pulgar visible que ya existe en la capa
+de mano `RHND`. La ampliación A añade exactamente 443 píxeles visibles con el
+color original de Domingo: 413 conservan también su alfa exacto y 30 reducen
+sólo el alfa en el borde suavizado de la máscara. No repinta ni desplaza ningún
+píxel que ya pertenecía a `RFNG`. B es la misma pose desplazada exactamente
+(+1,+1), tal como ocurre entre `RHNDA0` y `RHNDB0`.
 
-## Ángulo y altura de la espada
+La caja alfa inclusiva pasa a (148,92)–(210,151) en A y
+(149,93)–(211,152) en B. De este modo, el mango queda detrás del pulgar entero
+y ya no parece cortar el dedo.
 
-La hoja conserva el arte acumulativo de V4.32.0g y el pivote de empuñadura
-`(0.55625, 0.83)`. El dibujo aporta aproximadamente 61 grados antes de la
-rotación del motor. V4.32.0k conserva los extremos absolutos aprobados y agrega
-interpolaciones para que el cambio acompañe todo el recorrido:
+## Giro sincronizado sin duplicación
 
-| Momento | Rotación del motor | Ángulo visual aproximado |
-| --- | ---: | ---: |
-| Reposo | 18° | 79° |
-| Salida 1 | 21° | 82° |
-| Ápice | 24° | 85° |
-| Barrido 1 | 31° | 92° |
-| Barrido 2 | 38° | 99° |
-| Impacto | 43° | 104° |
-| Retorno 1 | 39° | 100° |
-| Retorno 2 | 31° | 92° |
-| Retorno 3 | 24° | 85° |
-| Reposo recuperado | 18° | 79° |
+La espada conserva exactamente su pivote y movimiento aceptados. Para mano y
+pulgar, los porcentajes se calculan sobre sus cajas alfa reales, no sobre el
+lienzo transparente. El resultado de cada fila, después de compensar `grAb` y
+el desplazamiento espada–mano (-22,-32), es el mismo punto de pantalla
+(56.64375,84.57):
 
-Así el reposo queda dentro del intervalo 75–80° indicado por el autor y el
-golpe cruza ligeramente la vertical dentro del intervalo 95–110°. Cada valor
-es absoluto, no acumulativo, y se reaplica durante la sincronización.
+| Capa | Caja alfa A / tamaño | Pivote porcentual | Punto efectivo del PNG | Punto de pantalla común |
+| ---: | --- | ---: | ---: | ---: |
+| 25 `RHND` | (147,128)–(479,239) / 333×112 | (0.2091403904, 0.2550892857) | (216.64375,156.57) | (56.64375,84.57) |
+| 30 `DSWD` | (168,0)–(294,178) / 127×179 | (0.55625, 0.83) | (238.64375,148.57) | (56.64375,84.57) |
+| 40 `RFNG` | (148,92)–(210,151) / 63×60 | (1.0895833333, 0.4095) | (216.64375,116.57) | (56.64375,84.57) |
+
+El X de `RFNG` supera 1 porque el punto compartido queda apenas fuera de su
+caja visible; el motor permite pivotes porcentuales fuera del intervalo
+0–1. La compensación mantiene los tres píxeles de anclaje coincidentes hasta
+el máximo giro y elimina la silueta duplicada del puño.
+
+La hoja conserva sus ángulos absolutos. La mano y el pulgar reciben solamente
+la variación respecto del reposo: `rotación_mano = rotación_espada - 18°`.
+Así, el arte de la mano no cambia en reposo y durante el ataque acompaña tanto
+la posición como el giro de la espada sin perder el agarre.
+El delta total de la mano va de 0→25° entre reposo e impacto.
+
+| Momento | Hoja absoluta | Mano/pulgar | Ángulo visual aproximado |
+| --- | ---: | ---: | ---: |
+| Reposo | 18° | 0° | 79° |
+| Salida 1 | 21° | 3° | 82° |
+| Ápice | 24° | 6° | 85° |
+| Barrido 1 | 31° | 13° | 92° |
+| Barrido 2 | 38° | 20° | 99° |
+| Impacto | 43° | 25° | 104° |
+| Retorno 1 | 39° | 21° | 100° |
+| Retorno 2 | 31° | 13° | 92° |
+| Retorno 3 | 24° | 6° | 85° |
+| Reposo recuperado | 18° | 0° | 79° |
+
+Cada valor es absoluto y se reaplica durante la sincronización; no se acumula
+entre tics.
 
 ## Curva de ataque y retorno recto
 
-Los ocho tics continúan reutilizando la pose A: no regresan los cuadros E/F/G
-ni el movimiento de volcar la espada. Cinco puntos llevan la mano desde reposo
-por la curva negra hasta el impacto. Los tres puntos posteriores están
-colineales con impacto y reposo, por lo que la mano vuelve directamente.
+Los ocho tics continúan reutilizando la pose A. Cinco puntos llevan la mano
+por la curva aprobada hasta el impacto y tres puntos colineales la devuelven en
+línea recta. La espada mantiene en todo momento el registro constante
+(-22,-32) respecto de la traslación de palma y pulgar:
 
-| Tic | Fase | Mano/dedos X,Y | Espada X,Y | Rotación |
+| Tic | Fase | Mano/dedos X,Y | Espada X,Y | Hoja / mano |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | Salida | (300,15) | (298,-13) | 21° |
-| 2 | Ápice derecho | (318,-4) | (316,-32) | 24° |
-| 3 | Barrido alto | (287,-1) | (285,-29) | 31° |
-| 4 | Aproximación | (236,11) | (234,-17) | 38° |
-| 5 | Impacto izquierdo | (201,21) | (199,-7) | 43° |
-| 6 | Retorno 1 | (228,25) | (226,-3) | 39° |
-| 7 | Retorno 2 | (255,28) | (253,0) | 31° |
-| 8 | Retorno 3 | (275,31) | (273,3) | 24° |
-| — | Reposo | (282,32) | (280,4) | 18° |
+| 1 | Salida | (300,15) | (278,-17) | 21° / 3° |
+| 2 | Ápice derecho | (318,-4) | (296,-36) | 24° / 6° |
+| 3 | Barrido alto | (287,-1) | (265,-33) | 31° / 13° |
+| 4 | Aproximación | (236,11) | (214,-21) | 38° / 20° |
+| 5 | Impacto izquierdo | (201,21) | (179,-11) | 43° / 25° |
+| 6 | Retorno 1 | (228,25) | (206,-7) | 39° / 21° |
+| 7 | Retorno 2 | (255,28) | (233,-4) | 31° / 13° |
+| 8 | Retorno 3 | (275,31) | (253,-1) | 24° / 6° |
+| — | Reposo | (282,32) | (260,0) | 18° / 0° |
 
-En la referencia 1920×1080, el anclaje de la mano pasa aproximadamente por el
-ápice (1739,610), llega al impacto (1212,745) y vuelve a (1577,805). La
-diferencia constante de la espada respecto de palma/dedos es (-2,-28), de modo
-que el mango permanece en su marca azul durante todo el recorrido.
+La subida uniforme de cuatro unidades afecta únicamente a la hoja; no altera
+la curva de la mano ni el retorno recto ya aceptados.
 
-## Manga panorámica extendida
+## Manga panorámica, profundidad y equipo
 
-`RHNDA0` y `RHNDB0` conservan sin cambios los lienzos RGBA 480×240 con
-`grAb (160,72)` aceptados en V4.32.0h. La manga llega al extremo derecho del
-lienzo, por lo que el avance no revela un corte interno en 16:9.
-
-## Profundidad y condición de equipo
+`RHNDA0` y `RHNDB0` conservan los lienzos RGBA 480×240 con `grAb (160,72)`
+aceptados en V4.32.0h. La manga llega al extremo derecho del lienzo y no revela
+un corte interno en 16:9.
 
 | Capa | Prefijo | Contenido | Regla |
 | ---: | --- | --- | --- |
 | 10 | `DSHD` | Reverso del escudo | Sólo con escudo válido equipado |
-| 20 | `LHND` | Mano/brazo que sostiene el escudo | Se oculta junto con el escudo |
-| 25 | `RHND` | Antebrazo, palma y base del puño | Detrás de la espada |
-| 30 | `DSWD` | Espada | Atraviesa el centro del agarre |
-| 40 | `RFNG` | Dedos de cierre | Delante del mango |
+| 20 | `LHND` | Mano/brazo del escudo | Visible con el escudo, incluido Block |
+| 25 | `RHND` | Antebrazo, palma y base del puño | Oculta en Block; detrás de la espada fuera de él |
+| 30 | `DSWD` | Espada | Oculta en Block; atraviesa el agarre fuera de él |
+| 40 | `RFNG` | Pulgar y dedos de cierre | Ocultos en Block; delante del mango fuera de él |
 
 `HasActiveBlockSource()` continúa siendo la única condición visual del escudo.
-Si se desequipa, se rompe o deja de ser compatible, `DSHD` y `LHND` desaparecen
-en el siguiente tic. Sin un escudo válido no se muestra el arte ni se habilita
-Block.
+Si se desequipa, se rompe o deja de ser compatible, `DSHD` y `LHND`
+desaparecen en el siguiente tic. Sin escudo válido no se muestra el arte ni se
+habilita Block.
 
 ## Estado de prueba
 
 La auditoría automática comprueba estructura ZScript, delta acotado,
-dimensiones RGBA, offsets `grAb`, cajas alfa, proporciones, hashes, los seis
-reflejos píxel por píxel y el contenido exacto del ZIP fuente. La aceptación
-visual dentro de GZDoom 4.14.2 queda pendiente con `PRUEBAS_4_32_0k.txt`; no es
-necesario repetir los sistemas no visuales ya aprobados.
+dimensiones RGBA, offsets `grAb`, cajas alfa, hashes, ampliación exacta del
+pulgar, desplazamiento A→B, pivote de pantalla común, rotación sincronizada,
+registro (-22,-32), Block correcto y contenido reproducible del ZIP fuente.
+La aceptación visual dentro de GZDoom 4.14.2 queda pendiente con
+`PRUEBAS_4_32_0o.txt`; no es necesario repetir los sistemas no visuales ya
+aprobados.

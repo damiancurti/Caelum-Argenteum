@@ -1,9 +1,111 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Alpha-bounds compensated grip pivots 4.32.0o
+
+**Implemented; deterministic source, alpha-geometry and package audits passed;
+one focused GZDoom 4.14.2 author validation remains before V4.33**
+
+The V4.32.0n screenshot exposed one duplicated-hand attack frame. `RHND` and
+`RFNG` are complementary layers of the same right hand, but their rotations
+separated because the previous pivot conversion used full transparent PNG
+canvas dimensions while GZDoom evaluated the percentages against each
+texture's different visible bounds.
+
+The already accepted blade pivot remains `(0.55625,0.83)`. The palm pivot is
+recalibrated to `(0.2091403904,0.2550892857)` and the foreground thumb/finger
+pivot to `(1.0895833333,0.4095)`. With each layer's alpha box, `grAb` and the
+blade's (-22,-32) translation included, all three resolve exactly to screen
+point `(56.64375,84.57)`. Their 0→25-degree attack delta can therefore no
+longer split the hand into two silhouettes.
+
+No sprite, path point, timing, angle or gameplay source changed. To close
+V4.32, only the focused ten-point visual check in `PRUEBAS_4_32_0o.txt`
+remains; already approved systems stay closed.
+
+## Raised idle sword, complete thumb and synchronized grip 4.32.0n
+
+**Height and complete-thumb assets retained; full-canvas pivot conversion
+superseded by V4.32.0o**
+
+The author accepted V4.32.0m except for three details in the right-hand rig:
+the idle sword was slightly low, the foreground finger layer covered only part
+of the thumb, and the hand translated with the sword but did not share its
+changing rotation.
+
+The sword is raised four logical units in every state. It now rests at
+(260,0), and every attack point retains a constant (-22,-32) translational
+registration to the already accepted hand path. `RFNGA0` gains exactly 443
+visible pixels using the unchanged underlying `RHNDA0` thumb colours; 413 also
+retain exact alpha and 30 use reduced alpha only at the antialiased boundary.
+No existing foreground pixel is altered. `RFNGB0` is the exact (+1,+1)
+counterpart.
+
+Layers 25, 30 and 40 now use local pivots that resolve to the same screen-space
+grip point (-4,102). The blade retains the absolute
+18→21→24→31→38→43→39→31→24→18-degree sequence, while palm and foreground
+thumb apply its 0→3→6→13→20→25→21→13→6→0-degree delta from idle. Position and
+rotation therefore remain registered throughout the strike without changing
+the approved idle hand pose, attack curve or straight-line return.
+
+Held Block is unchanged from V4.32.0m: shield and its left hand remain on
+layers 10/20, and the lower-right layers 25/30/40 are hidden. No gameplay,
+equipment, persistence, HUD, map, dialogue, economy or crafting source changed.
+
+## Correct Block hand and quadrupled blade adjustment 4.32.0m
+
+**Block correction and horizontal blade registration retained; idle height,
+thumb mask and attack-rig synchronization superseded by V4.32.0n**
+
+The V4.32.0l screenshots showed that it removed the wrong Block hand. The
+correct held composition is shield layer 10 plus its registered left-hand
+layer 20, both at (160,100). V4.32.0m restores `CA_SwordLeftBlock` and clears
+the lower-right main-hand assembly—layers 25, 30 and 40—on both normal Block
+entry and equipment resynchronization. The obsolete right-hand Block states
+are removed. Leaving Block reconstructs all normal main-hand layers.
+
+V4.32.0l moved the blade four logical units left. This revision moves it an
+additional sixteen units left, four times that previous adjustment. The blade
+now rests at (260,4), twenty units left of its V4.32.0k position, while the
+approved palm/fingers remain at (282,32). Every attack blade point receives
+the same additional -16 X delta, producing a constant (-22,-28) blade-to-hand
+registration.
+
+All hand positions, Y coordinates, eight-tic timing, outgoing curve,
+straight-line return and the
+18→21→24→31→38→43→39→31→24→18-degree rotation sequence are unchanged. No
+sprite bytes or gameplay systems changed.
+
+## Single-hand Block and finger-covered sword grip 4.32.0l
+
+**Blade adjustment retained as the first increment; Block-hand selection and
+final blade registration superseded by V4.32.0m**
+
+The author accepted V4.32.0k's complete attack motion and identified two final
+composition details. Held Block showed a redundant hand at the lower-left
+edge, and the sword needed a slight leftward registration change so the
+foreground fingers cover more of its handle.
+
+Layer 20 is now explicitly cleared on every entry into Block, including the
+equipment-resynchronization path, and the unused `CA_SwordLeftBlock` state is
+removed. The accepted shield, remaining hand, H(3)→I(-1) hold and (160,100)
+Block framing are unchanged. Leaving Block restores the normal left-hand layer
+when a valid shield remains equipped.
+
+The normal blade and every attack blade point move exactly four logical units
+left. Palm/finger positions, all Y coordinates, the eight-tic timing, the
+five-point outgoing curve, straight return and
+18→21→24→31→38→43→39→31→24→18-degree rotation sequence remain unchanged.
+The blade-to-hand offset is therefore (-6,-28), keeping the accepted motion
+while placing the handle farther beneath the foreground finger layer.
+
+No sprite bytes, gameplay source, damage, Air, durability, Block rules,
+equipment, HUD, persistence, Palomo, Magic Box, economy, crafting, dialogue or
+map source changed.
+
 ## Coupled idle shield, registered grip and authored attack path 4.32.0k
 
-**Implemented; deterministic source, geometry and package audits passed;
-focused GZDoom 4.14.2 author validation pending**
+**Attack path accepted; Block layering and blade registration superseded by
+V4.32.0l**
 
 The V4.32.0j screenshot exposed one misunderstood mark and one registration
 problem. The idle shield was supposed to follow its left hand into the lower

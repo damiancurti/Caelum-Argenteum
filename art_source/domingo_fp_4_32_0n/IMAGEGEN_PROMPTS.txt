@@ -1,0 +1,68 @@
+CAELUM ARGENTEUM 4.32.0n — REGISTRO DE EDICIÓN DEL PULGAR
+==========================================================
+
+Objetivo
+--------
+
+Completar en la capa frontal RFNG el pulgar ya dibujado en RHND, sin cambiar
+la pose, escala, paleta ni los cuatro dedos aceptados.
+
+Primera edición: precise-object-edit
+------------------------------------
+
+Use case: precise-object-edit.
+Asset type: modular first-person foreground finger/thumb sprite layer for
+Caelum Argenteum, frame A.
+Input images: Image 1 is the exact edit target and registration reference;
+Image 2 is a supporting anatomical and texture reference showing the complete
+matching armored right hand.
+Primary request: Extend only the thumb in Image 1 so the entire
+leather-and-metal armored thumb is present in the foreground layer, including
+the missing base/knuckle portion that currently ends abruptly. Follow the
+exact thumb anatomy, pose, lighting, scale, colors, gritty dark-fantasy
+rendering and pixel-art edge treatment shown in Image 2.
+Composition/framing: preserve the exact 640x400 canvas, exact existing hand
+position, scale, pose and registration from Image 1. Keep all four curled
+fingers and every existing pixel outside the missing thumb area visually
+unchanged.
+Background: genuinely transparent RGBA across the entire canvas except the
+hand fragment.
+Constraints: add only the missing continuation of the existing thumb; retain a
+clean alpha edge; no sword, no weapon, no arm, no extra palm beyond what is
+necessary to complete the thumb, no new fingers, no text, no shadow, no
+background, no crop, no resize, no reposition, no rotation.
+
+Segunda edición: corrección focalizada
+--------------------------------------
+
+La primera salida se utilizó sólo como referencia anatómica porque alteró
+escala y rasterizó el damero. Se repitió el pedido sobre el maestro original,
+exigiendo preservar el lienzo y prohibiendo copiar fondo o escala de la salida
+descartada.
+
+Tercera edición: background-extraction
+---------------------------------------
+
+Use case: background-extraction.
+Asset type: modular first-person foreground thumb/finger sprite layer for
+Caelum Argenteum.
+Primary request: Remove the entire black background and replace it with
+genuine transparent alpha.
+Constraints: preserve every hand pixel, silhouette, position, scale, lighting,
+armor, leather, colors and edge detail exactly; change only the background
+transparency. Output RGBA with zero alpha outside the hand. No black pixels or
+black haze outside the hand, no checkerboard pattern, no opaque background,
+no shadow, no crop, no resize, no reposition, no rotation, no text, no
+watermark.
+
+Posproducción determinista
+--------------------------
+
+La generación sólo definió la silueta semántica del pulgar completo. Para el
+recurso final se descartaron sus píxeles y se extrajo esa misma región del
+maestro original RHND de Domingo, alineado por los orígenes comunes. Luego se
+recolocó RFNG original encima. Por ello, todos los píxeles preexistentes se
+conservan exactamente y el cuadro A suma únicamente 443 píxeles visibles con
+el RGB del pulgar original. De ellos, 413 conservan también el alfa exacto y
+30 reducen sólo el alfa para suavizar el límite semántico. El cuadro B deriva
+de A mediante (+1,+1).

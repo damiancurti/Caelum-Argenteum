@@ -18,10 +18,20 @@ lateral idle shield, static held Block and advance/retract strike. V4.32.0i
 then established the accepted 79→104-degree sword range and the orthographic,
 25%-closer shield at Y=100. V4.32.0j corrected the Block-hand orientation but
 misread the idle-shield and grip marks. V4.32.0k is the current focused
-candidate: idle shield and left hand move together; right hand and handle use
-their independent blue targets; and the black attack curve ends in a
-straight-line return. This does not authorize quest-stage relocation or any
-later V4.33 system.
+attack baseline: its black attack curve, straight-line return, timing and
+rotation are author-accepted. V4.32.0l removed the wrong Block hand and its
+four-unit blade shift was insufficient. V4.32.0m corrected both points: held
+Block retains the shield and its lower-left `LHND`, removes the lower-right
+main-hand assembly and shifts the blade another 16 logical units left.
+V4.32.0n raised the sword four logical units and expanded `RFNG` over the
+complete thumb, but one attack frame exposed a duplicated right hand because
+its percentage pivots were derived from transparent canvas sizes. V4.32.0o is
+the current closure candidate: it compensates the actual alpha bounds so
+`RHND`, `DSWD` and `RFNG` resolve to the same effective blade pivot without
+changing art, trajectory, timing, angles, Block composition or gameplay. Only
+the focused visual matrix remains before V4.33; already accepted systems do
+not reopen. This does not authorize quest-stage relocation or any later
+V4.33 system.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
