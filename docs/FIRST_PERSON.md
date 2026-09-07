@@ -1,4 +1,4 @@
-# Caelum Argenteum — Primera persona de Domingo V4.32.0j
+# Caelum Argenteum — Primera persona de Domingo V4.32.0k
 
 ## Alcance
 
@@ -6,34 +6,34 @@ La vista modular continúa conectada exclusivamente con
 `CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
 existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
 
-V4.32.0j reemplaza solamente el encuadre de manos de V4.32.0i según la captura
-marcada por el autor y corrige la orientación de la mano visible al bloquear.
-No modifica Fire, AltFire, Zoom/Block, Aire, enfriamiento, durabilidad, sonidos,
-persistencia, equipo, HUD, mapas ni diálogos. Todo ese comportamiento permanece
-en las rutas autoritativas de `CaelumPlayer` ya aprobadas.
+V4.32.0k corrige la interpretación de las referencias de V4.32.0j: el escudo
+normal debe acompañar a su mano izquierda; la mano derecha y el mango tienen
+destinos azules distintos; y el golpe debe recorrer la curva negra antes de
+volver en línea recta. No modifica Fire, AltFire, Zoom/Block, Aire,
+enfriamiento, durabilidad, sonidos, persistencia, equipo, HUD, mapas ni
+diálogos. Todo ese comportamiento permanece en las rutas autoritativas de
+`CaelumPlayer` ya aprobadas.
 
 ## Encuadre por estado
 
-| Estado | Escudo (10) | Mano izquierda (20) | Brazo/espada/dedos (25/30/40) |
-| --- | ---: | ---: | ---: |
-| Reposo | X=105, Y=0 | X=82, Y=45 | X=288, Y=28 |
-| Preparación | X=105, Y=0 | X=82, Y=45 | X=302, Y=36 |
-| Extensión | X=105, Y=0 | X=82, Y=45 | X=260, Y=10 |
-| Recuperación | X=105, Y=0 | X=82, Y=45 | X=276, Y=21 |
-| Block sostenido | X=160, Y=100 | X=160, Y=100 | X=160, Y=0 |
+| Estado | Escudo (10) | Mano izquierda (20) | Mano/dedos derechos (25/40) | Espada (30) |
+| --- | ---: | ---: | ---: | ---: |
+| Reposo | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=280, Y=4 |
+| Block sostenido | X=160, Y=100 | X=160, Y=100 | X=160, Y=0 | X=160, Y=0 |
 
-El escudo sigue claramente lateral en reposo y conserva exactamente su
-encuadre aprobado. La mano izquierda ya no comparte su offset: baja 45 unidades
-y se desplaza 23 a la izquierda hasta la marca azul. Mano derecha, espada y
-dedos se trasladan juntos 128 unidades a la derecha y 46 hacia abajo respecto
-de V4.32.0i. El mango no se desregistra entre capas.
+En reposo, escudo y mano izquierda comparten X=82, Y=45; así ambos llegan a la
+marca azul inferior izquierda. A la derecha, palma y dedos quedan en (282,32),
+mientras la hoja usa (280,4). Esta separación registrada corrige el mango que
+V4.32.0j dejaba demasiado abajo: respecto de aquella prueba, la mano se mueve
+6 unidades a la izquierda y 4 hacia abajo, y la espada 8 a la izquierda y 24
+hacia arriba.
 
 ## Block frontal, cercano y sostenido
 
 H sigue siendo la transición breve de tres tics. I usa duración `-1` y queda
 fijo hasta que termine el estado real de Block; no existe un ciclo H/I. El
-escudo, su escala y sus offsets permanecen byte por byte y valor por valor
-iguales a V4.32.0i.
+arte del escudo y su escala permanecen byte por byte iguales a V4.32.0i. Sus
+offsets de Block también permanecen en (160,100); sólo cambia su pose normal.
 
 El cuadro I del escudo se reconstruyó como una vista ortogonal del reverso:
 plano perpendicular a la cámara, aro circular, tablones verticales y sin la
@@ -58,35 +58,49 @@ alterar el registro entre palma, transición de espada y dedos.
 
 La hoja conserva el arte acumulativo de V4.32.0g y el pivote de empuñadura
 `(0.55625, 0.83)`. El dibujo aporta aproximadamente 61 grados antes de la
-rotación del motor. V4.32.0j conserva los ángulos absolutos aprobados:
+rotación del motor. V4.32.0k conserva los extremos absolutos aprobados y agrega
+interpolaciones para que el cambio acompañe todo el recorrido:
 
 | Momento | Rotación del motor | Ángulo visual aproximado |
 | --- | ---: | ---: |
 | Reposo | 18° | 79° |
-| Preparación | 24° | 85° |
-| Impacto/extensión | 43° | 104° |
-| Recuperación | 31° | 92° |
+| Salida 1 | 21° | 82° |
+| Ápice | 24° | 85° |
+| Barrido 1 | 31° | 92° |
+| Barrido 2 | 38° | 99° |
+| Impacto | 43° | 104° |
+| Retorno 1 | 39° | 100° |
+| Retorno 2 | 31° | 92° |
+| Retorno 3 | 24° | 85° |
+| Reposo recuperado | 18° | 79° |
 
 Así el reposo queda dentro del intervalo 75–80° indicado por el autor y el
 golpe cruza ligeramente la vertical dentro del intervalo 95–110°. Cada valor
 es absoluto, no acumulativo, y se reaplica durante la sincronización.
 
-## Ataque de avance, inclinación y retroceso
+## Curva de ataque y retorno recto
 
-Las tres fases continúan reutilizando la pose A. El movimiento principal sigue
-siendo acercar y alejar la mano al estilo Hexen; la variación angular acompaña
-ese avance sin volver a usar el vuelco de los cuadros E/F/G.
+Los ocho tics continúan reutilizando la pose A: no regresan los cuadros E/F/G
+ni el movimiento de volcar la espada. Cinco puntos llevan la mano desde reposo
+por la curva negra hasta el impacto. Los tres puntos posteriores están
+colineales con impacto y reposo, por lo que la mano vuelve directamente.
 
-| Fase | Tics | X | Y | Rotación |
-| --- | ---: | ---: | ---: | ---: |
-| Preparación | 2 | 302 | 36 | 24° |
-| Extensión | 3 | 260 | 10 | 43° |
-| Recuperación | 3 | 276 | 21 | 31° |
-| Reposo | — | 288 | 28 | 18° |
+| Tic | Fase | Mano/dedos X,Y | Espada X,Y | Rotación |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | Salida | (300,15) | (298,-13) | 21° |
+| 2 | Ápice derecho | (318,-4) | (316,-32) | 24° |
+| 3 | Barrido alto | (287,-1) | (285,-29) | 31° |
+| 4 | Aproximación | (236,11) | (234,-17) | 38° |
+| 5 | Impacto izquierdo | (201,21) | (199,-7) | 43° |
+| 6 | Retorno 1 | (228,25) | (226,-3) | 39° |
+| 7 | Retorno 2 | (255,28) | (253,0) | 31° |
+| 8 | Retorno 3 | (275,31) | (273,3) | 24° |
+| — | Reposo | (282,32) | (280,4) | 18° |
 
-Los desplazamientos conservan exactamente las diferencias de avance y
-retroceso de V4.32.0i alrededor de la nueva base (288,28). El escudo permanece
-en su pose lateral A y la mano izquierda en (82,45) durante esos ocho tics.
+En la referencia 1920×1080, el anclaje de la mano pasa aproximadamente por el
+ápice (1739,610), llega al impacto (1212,745) y vuelve a (1577,805). La
+diferencia constante de la espada respecto de palma/dedos es (-2,-28), de modo
+que el mango permanece en su marca azul durante todo el recorrido.
 
 ## Manga panorámica extendida
 
@@ -114,5 +128,5 @@ Block.
 La auditoría automática comprueba estructura ZScript, delta acotado,
 dimensiones RGBA, offsets `grAb`, cajas alfa, proporciones, hashes, los seis
 reflejos píxel por píxel y el contenido exacto del ZIP fuente. La aceptación
-visual dentro de GZDoom 4.14.2 queda pendiente con `PRUEBAS_4_32_0j.txt`; no es
+visual dentro de GZDoom 4.14.2 queda pendiente con `PRUEBAS_4_32_0k.txt`; no es
 necesario repetir los sistemas no visuales ya aprobados.

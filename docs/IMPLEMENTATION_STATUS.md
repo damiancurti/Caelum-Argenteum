@@ -1,9 +1,41 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Coupled idle shield, registered grip and authored attack path 4.32.0k
+
+**Implemented; deterministic source, geometry and package audits passed;
+focused GZDoom 4.14.2 author validation pending**
+
+The V4.32.0j screenshot exposed one misunderstood mark and one registration
+problem. The idle shield was supposed to follow its left hand into the lower
+blue zone, while the right hand and sword handle had separate blue targets.
+The author also supplied a black reference path for the attack and requested a
+straight-line return after impact, while explicitly accepting the changing
+sword rotation.
+
+Idle shield and left-hand layers now share (82,45). Held Block remains
+unchanged at (160,100). The normal right palm/fingers rest at (282,32), while
+the sword rests at (280,4); relative to V4.32.0j this moves the hand slightly
+left/down and raises the handle by 24 logical units into its marked target.
+Layer depth is unchanged: palm remains behind the blade and fingers remain in
+front of its handle.
+
+The eight-tic A-frame attack now samples five points along the marked curve:
+(300,15), (318,-4), (287,-1), (236,11) and impact at (201,21). It then uses
+three nearly collinear positions—(228,25), (255,28) and (275,31)—before rest
+at (282,32). This produces the requested straight-line return instead of
+retracing the outgoing arc. The blade keeps a constant (-2,-28) registered
+offset from the palm path.
+
+Rotation continues throughout the animation at
+18→21→24→31→38→43→39→31→24→18 degrees. Thus the accepted visual endpoints
+remain approximately 79 degrees at rest and 104 at impact. No gameplay timing,
+damage, Air, durability, Block, equipment, HUD, persistence or map source
+changed.
+
 ## Marked-zone hand placement and corrected Block hand 4.32.0j
 
-**Implemented; deterministic source, exact-mirror and package audits passed;
-focused GZDoom 4.14.2 author validation pending**
+**Block-hand orientation retained; idle placement and attack path superseded
+by V4.32.0k**
 
 The author accepted the V4.32.0i shield and identified two remaining visual
 corrections. The horizontal hand visible beneath held Block was inverted, and

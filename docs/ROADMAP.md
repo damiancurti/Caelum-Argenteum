@@ -16,11 +16,12 @@ shield remains conditional on actual equipment. V4.32.0g's shared placement
 and diagonal blade were rejected visually. V4.32.0h established the accepted
 lateral idle shield, static held Block and advance/retract strike. V4.32.0i
 then established the accepted 79→104-degree sword range and the orthographic,
-25%-closer shield at Y=100. V4.32.0j is the current focused candidate: the
-shield is unchanged, the two normal hands/sword move into the author's marked
-blue zones, and the visible Block hand is mirrored into the correct
-orientation. This does not authorize quest-stage relocation or any later
-V4.33 system.
+25%-closer shield at Y=100. V4.32.0j corrected the Block-hand orientation but
+misread the idle-shield and grip marks. V4.32.0k is the current focused
+candidate: idle shield and left hand move together; right hand and handle use
+their independent blue targets; and the black attack curve ends in a
+straight-line return. This does not authorize quest-stage relocation or any
+later V4.33 system.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -775,9 +776,9 @@ Author input required before implementation:
 
 **V4.32.0a-r4 through V4.32.0f are author-accepted. V4.32.0g was rejected as a
 visual candidate; V4.32.0h mechanics/motion and V4.32.0i shield/angles are
-accepted. Their remaining hand presentation is superseded by the focused
-V4.32.0j correction. 4.32.0e remains a discarded diagnostic because there was
-no Exit-travel regression.**
+accepted. V4.32.0j's Block-hand mirror is retained, while its misunderstood
+idle framing and attack path are superseded by V4.32.0k. 4.32.0e remains a
+discarded diagnostic because there was no Exit-travel regression.**
 The slice now
 contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
 gift, a finite buy/sell inventory, the first complete native dialogue check
@@ -811,9 +812,14 @@ view connected to the real sword selector.
   1.2 pixel aspect and is 25% larger in visible diameter. V4.32.0j leaves that
   shield untouched, separates the idle left hand to (82,45), moves the right
   rig to (288,28) in the marked blue zones and mirrors the complete H/I Block
-  hand subassembly. The accepted extended 480×240 right-arm canvas still
-  prevents an internal panoramic cutoff. Gameplay remains accepted; only this
-  focused presentation awaits the author pass.**
+  hand subassembly. V4.32.0k corrects that interpretation: idle shield and left
+  hand now share (82,45); right palm/fingers use (282,32), while the blade uses
+  (280,4) so its handle reaches the separate blue mark. The eight-tic attack
+  follows five samples of the black attack curve and returns through three
+  collinear samples to rest without changing the accepted rotation endpoints.
+  The extended 480×240 right-arm canvas still prevents an internal panoramic
+  cutoff. Gameplay remains accepted; only this focused presentation awaits the
+  author pass.**
 
 ### V4.33 — Quests, Reputation and Factions
 

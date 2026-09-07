@@ -562,13 +562,13 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     action void A_CaelumSwordPlaceView()
     {
-        // El escudo conserva los dos encuadres aceptados en 4.32.0i. La mano
-        // izquierda se posiciona por separado: en reposo baja hacia el borde
-        // inferior sin arrastrar el escudo; durante Block mantiene el agarre.
+        // En reposo, escudo y mano izquierda comparten la posición inferior
+        // indicada por el autor. Block conserva el encuadre aceptado en
+        // 4.32.0i y la orientación de mano corregida en 4.32.0j.
         if (invoker.HasCaelumSwordViewShield())
         {
-            double shieldX = invoker.CaelumSwordViewBlocking ? 160.0 : 105.0;
-            double shieldY = invoker.CaelumSwordViewBlocking ? 100.0 : 0.0;
+            double shieldX = invoker.CaelumSwordViewBlocking ? 160.0 : 82.0;
+            double shieldY = invoker.CaelumSwordViewBlocking ? 100.0 : 45.0;
             A_OverlayOffset(10, shieldX, shieldY);
 
             double leftX = invoker.CaelumSwordViewBlocking ? 160.0 : 82.0;
@@ -576,18 +576,19 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
             A_OverlayOffset(20, leftX, leftY);
         }
 
-        // Los tres momentos A administran su propio avance, ángulo y
-        // retroceso. Ready no debe pisarlos mientras el ataque siga activo.
+        // Los ocho momentos A administran la curva de salida y el retorno
+        // recto. Ready no debe pisarlos mientras el ataque siga activo.
         if (!invoker.CaelumSwordViewAttacking)
         {
-            // En reposo, mano, espada y dedos se trasladan juntos a la zona
-            // inferior derecha marcada por el autor. Block conserva su
-            // encuadre aprobado y usa sus cuadros H/I reflejados en 4.32.0j.
-            double rightX = invoker.CaelumSwordViewBlocking ? 160.0 : 288.0;
-            double rightY = invoker.CaelumSwordViewBlocking ? 0.0 : 28.0;
-            A_OverlayOffset(25, rightX, rightY);
-            A_OverlayOffset(30, rightX, rightY);
-            A_OverlayOffset(40, rightX, rightY);
+            // Palma/dedos y hoja requieren bases distintas: así el mango se
+            // registra dentro del puño pese a la rotación absoluta de capa 30.
+            double handX = invoker.CaelumSwordViewBlocking ? 160.0 : 282.0;
+            double handY = invoker.CaelumSwordViewBlocking ? 0.0 : 32.0;
+            double swordX = invoker.CaelumSwordViewBlocking ? 160.0 : 280.0;
+            double swordY = invoker.CaelumSwordViewBlocking ? 0.0 : 4.0;
+            A_OverlayOffset(25, handX, handY);
+            A_OverlayOffset(30, swordX, swordY);
+            A_OverlayOffset(40, handX, handY);
         }
 
         // La rotación absoluta pivota en la empuñadura. El arte aporta unos
@@ -601,30 +602,75 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         A_OverlayRotate(30, swordRotation);
     }
 
-    action void A_CaelumSwordAttackRetract()
+    action void A_CaelumSwordAttackCurveStart()
+    {
+        invoker.CaelumSwordViewRotation = 21.0;
+        A_OverlayOffset(25, 300.0, 15.0);
+        A_OverlayOffset(30, 298.0, -13.0);
+        A_OverlayOffset(40, 300.0, 15.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackCurveApex()
     {
         invoker.CaelumSwordViewRotation = 24.0;
-        A_OverlayOffset(25, 302.0, 36.0);
-        A_OverlayOffset(30, 302.0, 36.0);
-        A_OverlayOffset(40, 302.0, 36.0);
+        A_OverlayOffset(25, 318.0, -4.0);
+        A_OverlayOffset(30, 316.0, -32.0);
+        A_OverlayOffset(40, 318.0, -4.0);
         A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
     }
 
-    action void A_CaelumSwordAttackExtend()
-    {
-        invoker.CaelumSwordViewRotation = 43.0;
-        A_OverlayOffset(25, 260.0, 10.0);
-        A_OverlayOffset(30, 260.0, 10.0);
-        A_OverlayOffset(40, 260.0, 10.0);
-        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
-    }
-
-    action void A_CaelumSwordAttackRecover()
+    action void A_CaelumSwordAttackCurveSweep()
     {
         invoker.CaelumSwordViewRotation = 31.0;
-        A_OverlayOffset(25, 276.0, 21.0);
-        A_OverlayOffset(30, 276.0, 21.0);
-        A_OverlayOffset(40, 276.0, 21.0);
+        A_OverlayOffset(25, 287.0, -1.0);
+        A_OverlayOffset(30, 285.0, -29.0);
+        A_OverlayOffset(40, 287.0, -1.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackCurveNearImpact()
+    {
+        invoker.CaelumSwordViewRotation = 38.0;
+        A_OverlayOffset(25, 236.0, 11.0);
+        A_OverlayOffset(30, 234.0, -17.0);
+        A_OverlayOffset(40, 236.0, 11.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackImpact()
+    {
+        invoker.CaelumSwordViewRotation = 43.0;
+        A_OverlayOffset(25, 201.0, 21.0);
+        A_OverlayOffset(30, 199.0, -7.0);
+        A_OverlayOffset(40, 201.0, 21.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackReturnOne()
+    {
+        invoker.CaelumSwordViewRotation = 39.0;
+        A_OverlayOffset(25, 228.0, 25.0);
+        A_OverlayOffset(30, 226.0, -3.0);
+        A_OverlayOffset(40, 228.0, 25.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackReturnTwo()
+    {
+        invoker.CaelumSwordViewRotation = 31.0;
+        A_OverlayOffset(25, 255.0, 28.0);
+        A_OverlayOffset(30, 253.0, 0.0);
+        A_OverlayOffset(40, 255.0, 28.0);
+        A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
+    }
+
+    action void A_CaelumSwordAttackReturnThree()
+    {
+        invoker.CaelumSwordViewRotation = 24.0;
+        A_OverlayOffset(25, 275.0, 31.0);
+        A_OverlayOffset(30, 273.0, 3.0);
+        A_OverlayOffset(40, 275.0, 31.0);
         A_OverlayRotate(30, invoker.CaelumSwordViewRotation);
     }
 
@@ -962,20 +1008,21 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         LHND A 8;
         Goto CA_SwordLeftIdle;
     CA_SwordRightAttack:
-        RHND A 2 A_CaelumSwordAttackRetract;
-        RHND A 3 A_CaelumSwordAttackExtend;
-        RHND A 3 A_CaelumSwordAttackRecover;
+        RHND A 1 A_CaelumSwordAttackCurveStart;
+        RHND A 1 A_CaelumSwordAttackCurveApex;
+        RHND A 1 A_CaelumSwordAttackCurveSweep;
+        RHND A 1 A_CaelumSwordAttackCurveNearImpact;
+        RHND A 1 A_CaelumSwordAttackImpact;
+        RHND A 1 A_CaelumSwordAttackReturnOne;
+        RHND A 1 A_CaelumSwordAttackReturnTwo;
+        RHND A 1 A_CaelumSwordAttackReturnThree;
         TNT1 A 0 A_CaelumSwordEndAttackView;
         Goto CA_SwordRightIdle;
     CA_SwordBladeAttack:
-        DSWD A 2;
-        DSWD A 3;
-        DSWD A 3;
+        DSWD A 8;
         Goto CA_SwordBladeIdle;
     CA_SwordFingersAttack:
-        RFNG A 2;
-        RFNG A 3;
-        RFNG A 3;
+        RFNG A 8;
         Goto CA_SwordFingersIdle;
 
     CA_SwordShieldBlock:
