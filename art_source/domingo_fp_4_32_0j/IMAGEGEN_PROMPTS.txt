@@ -1,0 +1,23 @@
+CAELUM ARGENTEUM — DIAGNÓSTICO ARTÍSTICO 4.32.0j
+================================================
+
+Use case: precise-object-edit
+Asset type: modular first-person Block hand sprite for Caelum Argenteum
+Input images: Image 1 is the exact edit target.
+Primary request: correct the inverted anatomy by horizontally reversing only
+the armored hand and forearm. Preserve a fixed fist/grip anchor, size, height
+and angle while making the forearm enter from the opposite side.
+Preserve exactly: finger arrangement, glove, steel bracer, brass rivets, red
+cuff, materials, dark-fantasy painted style, lighting, colors, wear, sharpness
+and composition.
+Background: genuine transparent RGBA.
+Constraints: one arm only; no new shield, sword, weapon, hand, body,
+background, checkerboard, text, border, logo or watermark.
+
+RESULT
+------
+
+The generated diagnostic was discarded: it correctly suggested the opposite
+orientation but repainted the arm and did not preserve the source pixels. The
+shipping H/I assets therefore use an exact horizontal mirror of the original
+registered RHND, DSWD and RFNG layers.

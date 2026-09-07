@@ -1,0 +1,34 @@
+CAELUM ARGENTEUM — DOMINGO FP V4.32.0i
+========================================
+
+Modo: edición con la herramienta integrada de generación de imágenes.
+Entrada: art_source/domingo_fp_4_32_0h/DSHDI0_2x_720x480.png
+
+PROMPT 1 — precise-object-edit
+------------------------------
+
+Use case: precise-object-edit
+Input images: Image 1 is the current isolated first-person blocking shield sprite and is the edit target.
+Primary request: redraw only this same shield so its inner/back face is viewed unmistakably straight-on and perpendicular to the player's line of sight, as if held flat directly in front of the camera during a defensive block.
+Perspective and geometry: true orthographic front view; perfectly circular outer silhouette; no three-quarter angle, no tilt, no skew, no elliptical foreshortening; left/right rim thickness symmetrical and top/bottom rim thickness symmetrical; vertical wooden planks remain vertical.
+Identity and details to preserve: the exact same dark weathered oak round shield, forged iron rim, brass mounting plates and rivets, central metal boss, broad brown leather forearm strap on the left half, and leather-wrapped vertical hand grip on the right half. Preserve the established realistic painted game-sprite style, material colors, wear, lighting direction, and high-detail texture. Keep the strap and grip layout compatible with a separate gloved left hand layer.
+Composition: one complete isolated shield centered with generous transparent padding; show the entire rim without cropping.
+Background: genuinely transparent RGBA alpha, not black, white, checkerboard, or a background scene.
+Constraints: change only the viewing perspective of the shield; no hand, no arm, no sword, no person, no extra object, no text, no logo, no watermark, no cast shadow outside the object.
+
+PROMPT 2 — background-extraction
+--------------------------------
+
+Use case: background-extraction
+Input images: Image 1 is the exact finished shield artwork to preserve.
+Primary request: remove only the gray-and-white checkerboard background and return a clean isolated cutout of the exact same shield on genuinely transparent RGBA alpha.
+Preserve exactly: shield silhouette, perfectly circular straight-on perspective, dimensions and proportions, every wood plank, iron rim, brass plate and rivet, central boss, leather forearm strap, vertical grip, colors, lighting, texture, wear, sharpness, and composition.
+Edges: retain the complete outer rim with clean anti-aliased edges; no white fringe, gray halo, checkerboard residue, shadow, or cropped pixels.
+Constraints: do not redraw, restyle, rotate, scale, move, recolor, simplify, or add anything; no background, no hand, no arm, no sword, no text, no logo, no watermark. Output must contain true transparency outside the shield, not a painted transparency pattern.
+
+NOTA DE INTEGRACIÓN
+-------------------
+
+Ambas salidas integradas regresaron como RGB con el damero dibujado. La
+composición elegida se conservó y el fondo se convirtió de forma determinista
+a alfa real antes del escalado, registro y exportación.

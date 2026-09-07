@@ -1,9 +1,71 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## Marked-zone hand placement and corrected Block hand 4.32.0j
+
+**Implemented; deterministic source, exact-mirror and package audits passed;
+focused GZDoom 4.14.2 author validation pending**
+
+The author accepted the V4.32.0i shield and identified two remaining visual
+corrections. The horizontal hand visible beneath held Block was inverted, and
+the normal hands/sword still occupied the red-marked positions rather than the
+two marked blue zones. V4.32.0j changes only the sword selector's visual
+offsets and the six H/I sublayers needed to reverse that Block hand.
+
+Shield layer 10 remains exactly at (105,0) when idle and (160,100) while
+blocking; `DSHDI0` is byte-identical to V4.32.0i. Left-hand layer 20 now has an
+independent normal offset (82,45), so it can move down and left without moving
+the shield. The complete right rig now rests at (288,28). Its accepted motion
+deltas remain unchanged, producing (302,36), (260,10) and (276,21) during
+retraction, extension and recovery.
+
+`RHNDH0`, `RHNDI0`, `DSWDH0`, `DSWDI0`, `RFNGH0` and `RFNGI0` are each the
+exact horizontal mirror of the corresponding V4.32.0f pixels. Mirroring the
+three registered layers together makes the Block forearm enter from the left
+without disconnecting palm, transitional blade or foreground fingers. Canvas,
+RGBA encoding and `grAb (160,32)` remain unchanged.
+
+The accepted 18/24/43/31-degree sword rotations, static H(3)→I(-1) Block,
+orthographic 125% shield, panoramic arm, conditional shield visibility and all
+gameplay systems remain unchanged.
+
+## Raised variable-angle sword and orthographic Block 4.32.0i
+
+**Shield and angle targets accepted; remaining hand presentation superseded by
+V4.32.0j**
+
+The author accepted the V4.32.0h mechanics and attack motion, then identified
+three remaining presentation defects: the sword rig began too low, its strike
+needed a small angular change from roughly 75–80 degrees at rest to 95–110
+degrees at impact, and the held shield had neither the requested camera
+perspective nor the correct vertical placement and proximity. V4.32.0i changes
+only `CaelumSwordSelectorWeapon` and the held-I shield/left-hand artwork.
+
+The complete right-hand rig now rests at Y=-18. Its existing translation deltas
+are preserved at (174,-10), (132,-36) and (148,-25), while the absolute
+grip-pivot rotation progresses through 24, 43 and 31 degrees before returning
+to 18. Given the supplied blade's approximately 61-degree baked angle, those
+states render near 85, 104, 92 and 79 degrees respectively. The same A artwork
+still supplies all three attack phases, so the strike remains an
+advance/retract motion and cannot expose the rejected E/F/G overturn.
+
+Held Block remains a static H(3)→I(-1) sequence. I now places the shield layers
+at X=160, Y=100. The shield reverse was redrawn in an orthographic,
+straight-on camera view, then widened in source space to compensate Doom's 1.2
+pixel aspect. Its 450×300 RGBA export uses `grAb (225,48)` and a 293×244
+visible box: the 244-pixel displayed diameter is 125.1% of V4.32.0h's
+195-pixel height, while 293/244 restores a circular screen silhouette. The
+registered left-hand layer has a 213×169 visible box, the raster-equivalent
+125% of 170×135. This makes the shield genuinely perpendicular, 25% closer and
+low enough to leave the reference horizon unobstructed.
+
+Idle shield X=105, conditional equipment visibility, the accepted extended
+480×240 right arm, all layer depths and every combat/gameplay path remain
+unchanged.
+
 ## State-specific Domingo first-person correction 4.32.0h
 
-**Implemented; deterministic source, PNG and package audits passed; focused
-GZDoom 4.14.2 author validation pending**
+**Mechanics and motion accepted; remaining presentation superseded by
+V4.32.0i**
 
 The author's V4.32.0g test accepted every regression case but rejected its
 visual composition. V4.32.0h therefore remains a presentation-only correction
