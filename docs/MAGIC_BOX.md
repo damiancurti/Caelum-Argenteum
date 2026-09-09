@@ -1,12 +1,12 @@
-# Caelum Argenteum — Caja Mágica V4.32.0f
+# Caelum Argenteum — Caja Mágica y misión V4.33.0b
 
 V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
 cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
-comenzar. V4.32.0d formaliza el regalo dentro del diálogo USDF nativo de
-Palomo. La prueba posterior confirmó que la salida normal del mapa conserva la
-Caja correctamente; `map MAP02` había creado un jugador nuevo y no constituía
-un viaje del personaje. V4.32.0f retira la reconciliación redundante añadida
-para aquel diagnóstico y mantiene el registro viajero autoritativo aceptado.
+comenzar. Las revisiones V4.32 usaron a Palomo para validar el regalo; esa ruta
+era un entorno de prueba y V4.33.0b la retira del diálogo canónico. La Caja se
+entregará al final de MAP01, después de las cuatro ramas. La prueba anterior
+también confirmó que la salida normal conserva la Caja; `map MAP02` crea un
+personaje nuevo y no constituye un viaje del personaje.
 
 ## 1. Naturaleza y peso propio
 
@@ -83,25 +83,38 @@ causa explícita y no cambia el objeto.
 ## 6. Adquisición y compatibilidad de guardados
 
 - Un perfil nuevo se marca explícitamente como no propietario.
-- El primer `Use` sobre Palomo abre su presentación. Responder Sí a la aventura
-  concede la Caja; responder No y luego reconsiderar también la concede.
-- Confirmar que no se desea la aventura termina con “Qué lástima” y no entrega
-  la Caja. Volver a hablar reofrece la decisión; no se inventa un rechazo
-  permanente.
-- El regalo añade sus 10 kg, habilita los slots y sólo puede ejecutarse una vez.
-- Después de poseerla, hablar con Palomo abre las opciones Comerciar, Hablar y
-  la prueba de rebaja si se cumple su requisito.
+- El primer encuentro canónico con Palomo no concede la Caja ni abre comercio.
+- La entrega queda reservada a `MAIN_M00_STATE_BOX_RECEIVED`, tras completar la
+  rama de combate y encontrar a Palomo en el segundo piso.
+- Cuando se conecte esa fase, el regalo añadirá sus 10 kg, habilitará los slots
+  y sólo podrá ejecutarse una vez mediante `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`.
 - `CaelumPersistentCharacterState` es la fuente persistente de propiedad. Se
   guarda en `PreTravelled` y se restaura en `Travelled`; el campo vivo y el
-  marcador USDF se sincronizan desde ese registro.
-- `CaelumMagicBoxOwnershipToken` sigue siendo un requisito invisible del árbol
-  de diálogo, no una segunda fuente de verdad ni una recompensa física.
+  marcador técnico se sincronizan desde ese registro.
 - La propiedad es independiente de la ubicación física futura de Palomo.
 - Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
   la migración. Esto evita perder acceso a contenido que ya estaba guardado.
 - Una partida intermedia malformada que no posea la recompensa pero contenga
   banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
   se elimina ningún objeto.
+
+## 7. Integración con el registro de misión V4.33.0b
+
+`GrantMagicBoxFromPalomo()` deja de alterar el registro de misión por sí sola.
+La misión canónica **Donde despiertan los perdidos** comienza al despertar y
+su primer objetivo es buscar ayuda. Poseer una Caja de una partida anterior no
+salta la Voz, la presentación de Palomo ni la orientación hacia Argento.
+
+Al migrar V4.33.0a se reinicia únicamente el relato comercial descartado. La
+Caja existente no se duplica ni se quita, y conserva exactamente contenido,
+slots, peso y reducción. Esto permite probar el nuevo prólogo sin destruir
+inventario de desarrollo y mantiene a los personajes nuevos en la progresión
+canónica sin Caja.
+
+El resolvedor de ubicación mantiene a Palomo oculto antes de la Voz, lo muestra
+en el recibidor durante el encuentro, vuelve a ocultarlo al orientar hacia
+Argento y reserva el segundo piso para la futura fase de entrega. La coordenada
+y el traslado físico final todavía deben añadirse al mapa.
 
 La prueba válida es cruzar el `Exit` del mapa o usar `changemap MAP02`. El
 comando `map MAP02` comienza una partida nueva, crea otro jugador y debe mostrar

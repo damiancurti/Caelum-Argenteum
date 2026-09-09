@@ -1,76 +1,95 @@
-# Caelum Argenteum — Diálogo nativo de Palomo V4.32.0f
+# Caelum Argenteum — Diálogos iniciales de MAP01 V4.33.0c
 
-## 1. Tecnología del motor
+## Tecnología nativa
 
-La conversación usa el formato USDF y `ConversationMenu` nativos de GZDoom
-4.14.2. `GameInfo.AddDialogues` carga `CAPALOMO` en cada mapa. Al pulsar `Use`,
-el jugador sincroniza marcadores invisibles de inventario, asigna temporalmente
-el ID 43200 mediante `Thing_SetConversation` y llama a
-`Actor.StartConversation`. Al cerrar, Palomo libera el nodo temporal para que
-la siguiente pulsación vuelva a pasar por el control autoritativo del jugador.
+`GameInfo.AddDialogues` carga `CAPALOMO` en todos los mapas. La apertura usa
+USDF, `Thing_SetConversation`, `Actor.StartConversation` y
+`ConversationMenu` de GZDoom 4.14.2. No se superpone un menú de diálogo
+propietario.
 
-Se aprovechan directamente estas funciones del motor:
+El archivo contiene dos conversaciones:
 
-- páginas y enlaces USDF;
-- respuestas ocultas mediante `require` y `exclude`;
-- salto de página mediante `ifitem`;
-- acciones atómicas de respuesta mediante `giveitem`/`TryPickup`;
-- cierre, selección y respuesta en el `ConversationMenu` nativo.
+| ID | Interlocutor | Uso |
+| ---: | --- | --- |
+| 43300 | Voz desconocida | Apertura automática, mediante un hablante técnico invisible |
+| 43200 | Palomo | Interacción física con `Use` en el recibidor |
 
-Q se traduce a la acción nativa Atrás para mantener el control ya aceptado en
-los demás paneles. Escape y el botón Atrás del mando conservan su conducta
-normal del motor.
+El hablante invisible de la Voz sólo mantiene viva la conversación nativa y se
+destruye al cerrarla. No existe como persona visible, no bloquea el mapa y no
+guarda progreso. Q conserva el cierre equivalente a Atrás; Escape y mando
+mantienen la conducta normal del motor.
 
-## 2. Árbol antes de obtener la Caja Mágica
+## Apertura y Voz desconocida
 
-1. Palomo se presenta como un palomo y dueño de la mansión.
-2. Pregunta si el jugador quiere una aventura.
-3. **Sí:** entrega una vez la Caja Mágica y explica que servirá para la aventura.
-4. **No:** pregunta si está seguro.
-5. **Sí, estoy seguro:** responde “Qué lástima”, cierra y no entrega la Caja.
-6. **No, cambié de idea:** entrega la Caja y muestra el mismo mensaje de regalo.
+Al confirmar un personaje nuevo en MAP01, el controlador:
 
-El rechazo definitivo no se guarda como fracaso permanente porque no se
-autorizó una consecuencia irreversible. Mientras no posea la Caja, una futura
-conversación vuelve a ofrecer la aventura.
+1. activa **Donde despiertan los perdidos**;
+2. aplica un fundido breve desde negro y un sonido tenue ya existente;
+3. abre una sola vez `CA_DLG_M01_UNKNOWN_VOICE_WAKE`;
+4. registra `UNKNOWN_VOICE_HEARD` al abrir correctamente el diálogo;
+5. avanza a la fase 20 y permite que Palomo se revele.
 
-## 3. Árbol después del regalo
+La página presenta dos respuestas explícitas —**¿Quién sos?** y **¿Dónde
+estoy?**— y una única salida nativa USDF, **[Guardar silencio.]**. V4.33.0c
+retira la segunda copia explícita de esa salida. Ninguna opción altera el orden
+de la misión. Cerrar con Q después de haber leído la primera intervención
+tampoco repite la Voz: el hecho registrado es haberla oído, no haber elegido
+una respuesta concreta.
 
-Palomo pregunta “¿Qué querés?” y ofrece:
+Ninguna línea identifica a la mujer ni explica la naturaleza del lugar.
 
-- **Comerciar:** cierra el diálogo y abre la interfaz bilateral ya aceptada.
-- **Hablar:** muestra la primera línea social de Palomo y permite volver.
-- **Pedir una rebaja:** sólo aparece con Elocuencia cruda mayor que 50 y se
-  oculta tras lograr el acuerdo.
+## Primer diálogo de Palomo
 
-La opción de rebaja muestra dificultad 50 y la probabilidad antes de confirmar.
-La estadística usada es la Labia autoritativa:
+Palomo comienza con:
 
-```text
-Labia = Elocuencia × (Elocuencia + 1) / 101
-probabilidad = piso(Labia / 50 × 100), limitada a 0..100
-éxito automático si Labia >= 50
-```
+> Buen día. O algo suficientemente parecido como para no discutir con el reloj.
 
-La tirada usa el flujo aleatorio nombrado `CaelumPalomoDiscount`. Un fallo no
-añade castigos ni bloqueos no especificados y permite otro intento. Un éxito
-persiste en `CaelumPersistentCharacterState` y cambia únicamente los márgenes
-de Palomo: cobra 140% y paga 60% del valor base del lote.
+El jugador puede preguntar, en cualquier orden:
 
-## 4. Persistencia y movimiento futuro
+- dónde se encuentran;
+- qué le pasó;
+- por qué no recuerda cómo llegó;
+- por la voz de una mujer.
 
-Propiedad de la Caja, stock, caja monetaria y rebaja pertenecen al personaje,
-no a la instancia física de Palomo. El registro
-`CaelumPersistentCharacterState` viaja con el jugador y vuelve a generar los
-marcadores invisibles que USDF necesita. Volver normalmente a MAP01 después de
-aceptarla entra directamente en “¿Qué querés?” y no repite la escena inicial.
+Cada pregunta agotada deja un flag persistente y se oculta durante esa
+conversación y las siguientes. Mencionar la Voz registra además que Palomo la
+calificó como una alucinación. Esa rama incluye la réplica opcional **No parece
+una alucinación** y la respuesta prescrita **Las buenas nunca lo parecen**. Las
+respuestas son corteses, metafóricas y evasivas, y nunca convierten la
+interpretación del autor en conocimiento del personaje.
 
-`map MAP02` no es un viaje: empieza una partida nueva y reinicia al personaje.
-Para comprobar continuidad hay que cruzar el `Exit` o usar `changemap MAP02`.
-V4.32.0f elimina la reconciliación de tres fuentes incorporada al confundir ese
-reinicio esperado con una regresión.
+**¿Qué debería hacer?** puede elegirse sin agotar las preguntas opcionales.
+Palomo sugiere hablar con Argento y explica, sin formular una orden directa,
+que señalar cada baldosa convertiría el camino en el suyo. Esa respuesta:
 
-Por ello V4.33 podrá destruir, teletransportar o recrear al NPC según la etapa
-de misión, incluso en otro mapa, sin duplicar dinero ni reiniciar el acuerdo.
-Lo único pendiente para esa versión es definir y ejecutar la regla de ubicación
-por estado de misión.
+- completa **Buscar ayuda dentro de la propiedad** en 1/1;
+- registra `PALOMO_MET`;
+- avanza exactamente de fase 20 a `ARGENTO_ACTIVE`;
+- actualiza el Diario y guarda el personaje;
+- sustituye cualquier segunda activación inmediata por una línea ambiental que
+  recuerda a Argento.
+
+Una segunda activación no repite la presentación ni concede otra transición.
+Al cerrar, Palomo permanece mientras cualquier jugador todavía pueda verlo; al
+quedar fuera de todos los campos visuales se oculta sin destello y no reaparece
+en el recibidor. Una carga posterior reconstruye directamente ese resultado.
+
+## Palomo y el comercio
+
+Palomo no es comerciante en la historia. `CAPALOMO` ya no ofrece comerciar,
+pedir rebaja ni recibir la Caja al comienzo. Las clases del comercio, su stock,
+monedas, márgenes y menú permanecen intactos como infraestructura reutilizable
+para un NPC comerciante posterior y para pruebas aisladas; no tienen una ruta
+de acceso desde el diálogo canónico de Palomo.
+
+Las viejas claves localizadas y acciones de respuesta se conservan por
+compatibilidad con guardados que pudieran haberse realizado dentro de la
+conversación de V4.33.0a. No definen el comportamiento de una partida nueva.
+
+## Persistencia
+
+USDF consulta marcadores invisibles regenerados desde
+`CaelumPersistentCharacterState`. Los marcadores sólo deciden qué nodo
+mostrar; no son una segunda fuente de verdad. Las etapas y preguntas sobreviven
+guardado/carga y `Exit`/`changemap`. El actor físico puede perder su nodo
+temporal al cerrar y volver a sincronizarlo en la próxima pulsación de `Use`.

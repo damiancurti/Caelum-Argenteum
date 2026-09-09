@@ -88,6 +88,29 @@ class CaelumPlayer : DoomPlayer
     int PalomoMerchantVisibleItemCount;
     int PalomoMerchantVisibleItems[CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT];
     int LastPalomoMerchantAction;
+
+    // Instantánea simple para el Diario. La interfaz sólo lee estos campos y
+    // nunca invoca funciones de inventario de ámbito play durante el render.
+    int JournalKnownQuestCount;
+    int JournalQuestState[CaelumConstants.QUEST_DEFINED_COUNT];
+    int JournalQuestStage[CaelumConstants.QUEST_DEFINED_COUNT];
+    bool JournalQuestObjectiveKnown[
+        CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
+    ];
+    int JournalQuestObjectiveProgress[
+        CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
+    ];
+    int JournalQuestObjectiveTarget[
+        CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
+    ];
+    int JournalPalomoPlacement;
+    // Estado transitorio de presentación. El progreso autoritativo vive en
+    // CaelumPersistentCharacterState y el controlador lo reconstruye al cargar.
+    Actor MainM00UnknownVoiceSpeaker;
+    int MainM00UnknownVoiceDelayTics;
+    bool MainM00AwakeningVisualStarted;
+    bool JournalFactionMember[CaelumConstants.FACTION_COUNT];
+    int JournalFactionReputation[CaelumConstants.FACTION_COUNT];
     // Plan transaccional temporal. Contiene el saldo físico final por
     // denominación y permite validar peso/slots antes de mutar inventario.
     int PalomoCurrencyPlanAmount[CaelumConstants.CURRENCY_TYPE_COUNT];
@@ -690,6 +713,147 @@ class CaelumPlayer : DoomPlayer
         return persistentState;
     }
 
+    void RefreshSocialJournalSnapshot()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        JournalKnownQuestCount = 0;
+        if (persistentState == null) { return; }
+
+        persistentState.EnsureQuestStateInitialized();
+        persistentState.EnsureFactionStateInitialized();
+        for (int questId = 0;
+            questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
+        {
+            JournalQuestState[questId] =
+                persistentState.QuestState[questId];
+            JournalQuestStage[questId] =
+                persistentState.QuestStage[questId];
+            if (JournalQuestState[questId]
+                != CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            {
+                JournalKnownQuestCount++;
+            }
+        }
+        for (int objective = 0;
+            objective
+                < CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT;
+            objective++)
+        {
+            JournalQuestObjectiveKnown[objective] =
+                persistentState.QuestObjectiveKnown[objective];
+            JournalQuestObjectiveProgress[objective] =
+                persistentState.QuestObjectiveProgress[objective];
+            JournalQuestObjectiveTarget[objective] =
+                persistentState.QuestObjectiveTarget[objective];
+        }
+        JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
+        for (int factionId = 0;
+            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+        {
+            JournalFactionMember[factionId] =
+                persistentState.FactionMember[factionId];
+            JournalFactionReputation[factionId] =
+                persistentState.FactionReputation[factionId];
+        }
+    }
+
+    bool HasMainM00Flag(int flagId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        return persistentState.HasMainM00Flag(flagId);
+    }
+
+    bool BeginMainM00Prologue()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.BeginMainM00Prologue();
+        RefreshSocialJournalSnapshot();
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool RecordMainM00UnknownVoiceHeard()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.RecordMainM00UnknownVoiceHeard();
+        RefreshSocialJournalSnapshot();
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool RecordMainM00PalomoDialogueFlag(int flagId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.RecordMainM00PalomoDialogueFlag(flagId);
+        SyncPalomoDialogueTokens();
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool RecordMainM00PalomoMet()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.RecordMainM00PalomoMet();
+        SyncPalomoDialogueTokens();
+        RefreshSocialJournalSnapshot();
+        if (changed)
+        {
+            PersistCharacterState();
+            Console.Printf(
+                "%s",
+                StringTable.Localize("CA_Q_M01_OBJ_TALK_ARGENTO", false)
+            );
+        }
+        return changed;
+    }
+
+    bool SetPlayerFactionMembership(int factionId, bool isMember)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.SetFactionMembership(
+            factionId, isMember
+        );
+        RefreshSocialJournalSnapshot();
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool ChangePlayerFactionReputation(int factionId, int amount)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.ChangeFactionReputation(
+            factionId, amount
+        );
+        RefreshSocialJournalSnapshot();
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    void ResetPlayerFactionStateForDebug()
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.InitializeNewFactionState();
+        RefreshSocialJournalSnapshot();
+        PersistCharacterState();
+    }
+
     void SyncLiveMagicBoxOwnershipFromPersistentState()
     {
         CaelumPersistentCharacterState persistentState =
@@ -728,7 +892,10 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
-        if (MagicBoxOwned) { return false; }
+        if (MagicBoxOwned)
+        {
+            return false;
+        }
         if (!persistentState.GrantMagicBoxOwnership())
         {
             MagicBoxOwned = persistentState.MagicBoxOwned;
@@ -736,6 +903,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         MagicBoxOwned = true;
+        RefreshSocialJournalSnapshot();
         ApplyCharacterProfile();
         RefreshCarriedInventorySummary();
         RefreshFormalInventorySnapshot();
@@ -794,6 +962,7 @@ class CaelumPlayer : DoomPlayer
         if (persistentState == null) { return; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
         persistentState.EnsurePalomoDiscountInitialized();
+        persistentState.EnsureQuestStateInitialized();
         PalomoMerchantDiscountGranted =
             persistentState.PalomoDiscountGranted;
 
@@ -809,12 +978,151 @@ class CaelumPlayer : DoomPlayer
             Attributes != null && Attributes.Eloquence
                 > CaelumConstants.PALOMO_DISCOUNT_MINIMUM_ELOQUENCE
         );
+        SetPalomoDialogueToken(
+            "CaelumMainM00PalomoMetToken",
+            persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_PALOMO_MET
+            )
+        );
+        SetPalomoDialogueToken(
+            "CaelumMainM00AskedPalomoWhereToken",
+            persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_ASKED_PALOMO_WHERE
+            )
+        );
+        SetPalomoDialogueToken(
+            "CaelumMainM00AskedPalomoWhatHappenedToken",
+            persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_ASKED_PALOMO_WHAT_HAPPENED
+            )
+        );
+        SetPalomoDialogueToken(
+            "CaelumMainM00NoticedMemoryGapToken",
+            persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_NOTICED_MEMORY_GAP
+            )
+        );
+        SetPalomoDialogueToken(
+            "CaelumMainM00ToldPalomoAboutVoiceToken",
+            persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_TOLD_PALOMO_ABOUT_VOICE
+            )
+        );
         RefreshPalomoDiscountOdds();
+    }
+
+    bool OpenMainM00UnknownVoiceDialogue()
+    {
+        if (CreationWizardOpen || health <= 0
+            || HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+            ))
+        {
+            return false;
+        }
+
+        Actor voice = Spawn(
+            "CaelumUnknownVoiceSpeaker", Pos, NO_REPLACE
+        );
+        if (voice == null) { return false; }
+        Level.ExecuteSpecial(
+            CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+            voice, null, false,
+            0, CaelumConstants.MAIN_M00_UNKNOWN_VOICE_CONVERSATION_ID
+        );
+        if (!voice.HasConversation())
+        {
+            voice.Destroy();
+            return false;
+        }
+        if (!voice.StartConversation(self, false, false))
+        {
+            voice.Destroy();
+            return false;
+        }
+
+        MainM00UnknownVoiceSpeaker = voice;
+        CaelumUnknownVoiceSpeaker prologueVoice =
+            CaelumUnknownVoiceSpeaker(voice);
+        if (prologueVoice != null) { prologueVoice.MarkConversationOpened(); }
+        RecordMainM00UnknownVoiceHeard();
+        return true;
+    }
+
+    // CA_M01QuestController llama a esta reconstrucción sin conservar estado de
+    // misión propio. Una carga antes de la Voz reanuda el fundido; una carga
+    // posterior nunca repite la conversación ni adelanta otra etapa.
+    void UpdateMainM00Prologue()
+    {
+        if (level.MapName != "MAP01" || !CharacterCreationComplete
+            || CreationWizardOpen || player == null
+            || player.playerstate != PST_LIVE || health <= 0)
+        {
+            return;
+        }
+
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return; }
+        persistentState.EnsureQuestStateInitialized();
+
+        if (persistentState.BeginMainM00Prologue())
+        {
+            RefreshSocialJournalSnapshot();
+            PersistCharacterState();
+        }
+
+        int questStage = persistentState.QuestStage[
+            CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+        ];
+        if (questStage != CaelumConstants.MAIN_M00_STATE_AWAKENED
+            || persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+            ))
+        {
+            return;
+        }
+
+        if (!MainM00AwakeningVisualStarted)
+        {
+            MainM00AwakeningVisualStarted = true;
+            MainM00UnknownVoiceDelayTics =
+                CaelumConstants.MAIN_M00_UNKNOWN_VOICE_DELAY_TICS;
+            A_SetBlend(
+                Color(0, 0, 0), 1.0,
+                CaelumConstants.MAIN_M00_AWAKEN_FADE_TICS,
+                Color(0, 0, 0), 0.0
+            );
+            A_StartSound(
+                "caelum/ui/map_transition", CHAN_7,
+                CHANF_LOCAL | CHANF_UI, 0.25, ATTN_NONE
+            );
+            return;
+        }
+
+        if (MainM00UnknownVoiceDelayTics > 0)
+        {
+            MainM00UnknownVoiceDelayTics--;
+            return;
+        }
+        if (MainM00UnknownVoiceSpeaker == null)
+        {
+            OpenMainM00UnknownVoiceDialogue();
+        }
     }
 
     bool OpenPalomoDialogue(Actor speaker)
     {
         if (CreationWizardOpen || speaker == null || health <= 0)
+        {
+            return false;
+        }
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null
+            || !persistentState.HasMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+            ))
         {
             return false;
         }
@@ -1146,6 +1454,8 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsurePalomoDiscountInitialized();
         persistentState.PalomoDiscountGranted =
             PalomoMerchantDiscountGranted;
+        persistentState.EnsureQuestStateInitialized();
+        persistentState.EnsureFactionStateInitialized();
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -1228,6 +1538,7 @@ class CaelumPlayer : DoomPlayer
         persistentState.StoredHunger = CurrentHunger;
         persistentState.StoredThirst = CurrentThirst;
         persistentState.StoredSleep = CurrentSleep;
+        RefreshSocialJournalSnapshot();
     }
 
     bool RestorePersistentCharacterState()
@@ -1239,6 +1550,8 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsurePalomoDiscountInitialized();
         PalomoMerchantDiscountGranted =
             persistentState.PalomoDiscountGranted;
+        persistentState.EnsureQuestStateInitialized();
+        persistentState.EnsureFactionStateInitialized();
         persistentState.EnsureEquipmentSizeInitialized();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
@@ -1405,6 +1718,7 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
         UpdateLucidityState();
         UpdateSurvivalStates();
+        RefreshSocialJournalSnapshot();
         return true;
     }
 
@@ -11163,6 +11477,7 @@ class CaelumPlayer : DoomPlayer
         );
         RefreshEquipmentSelectionPreview();
         RefreshFormalInventorySnapshot();
+        RefreshSocialJournalSnapshot();
 
         if (initializedNewCharacter)
         {
@@ -18108,6 +18423,8 @@ class CaelumPlayer : DoomPlayer
             persistentState.NativeEquipmentMigrationComplete = true;
             persistentState.InitializeNewMagicBoxOwnership();
             persistentState.InitializeNewPalomoDiscount();
+            persistentState.InitializeNewQuestState();
+            persistentState.InitializeNewFactionState();
         }
         MagicBoxOwned = false;
         PalomoMerchantDiscountGranted = false;

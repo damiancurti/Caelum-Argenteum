@@ -1,0 +1,2319 @@
+CAELUM ARGENTEUM
+HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
+Versión 1.0 — 8 de septiembre de 2026
+
+Autor del proyecto: Damián Curti
+Estado: diseño narrativo y técnico previo a implementación.
+
+===============================================================================
+ÍNDICE
+===============================================================================
+
+PARTE I — RECOPILACIÓN DE LA HISTORIA
+
+1. Convenciones y jerarquía de información
+2. Premisa general
+3. Alegoría social y cultural
+4. Historia anterior al comienzo del juego
+5. El Tarot y La Dispersión
+6. Palomo y la Caja Mágica
+7. El protagonista y los cuatro habitantes de la mansión
+8. Verdad autoral y conocimiento de los personajes
+9. Estructura completa de la campaña
+10. Relato consolidado de la historia
+11. Reglas para conservar el misterio
+
+PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
+
+12. Alcance y objetivo de la implementación
+13. Flujo completo de la misión
+14. Arquitectura de datos y estados
+15. Requisitos del mapa y actores
+16. Apertura: despertar, voz desconocida y Palomo
+17. Prueba 1: Argento — rama social
+18. Prueba 2: Caella — rama mágica
+19. Prueba 3: Ronnie — rama de supervivencia
+20. Preparación del arma inicial
+21. Prueba 4: Rulo — rama de combate
+22. Palomo, la Caja Mágica y El Loco
+23. Transición a MAP02 — alcantarillas
+24. Diálogos obligatorios de MAP01
+25. Inventario, objetos temporales y persistencia
+26. Localización, diario y presentación
+27. Guardado y multijugador
+28. Pruebas de aceptación
+29. Decisiones todavía pendientes
+
+===============================================================================
+PARTE I — RECOPILACIÓN DE LA HISTORIA
+===============================================================================
+
+-------------------------------------------------------------------------------
+1. CONVENCIONES Y JERARQUÍA DE INFORMACIÓN
+-------------------------------------------------------------------------------
+
+Este documento distingue tres niveles de información:
+
+[CANON]
+Hecho confirmado para la historia del proyecto.
+
+[PROPUESTA OPERATIVA]
+Solución necesaria para convertir el canon en una misión programable. Puede
+ajustarse sin modificar la premisa principal.
+
+[PENDIENTE]
+Decisión que todavía requiere definición antes de cerrar versiones posteriores.
+
+También deben distinguirse dos perspectivas narrativas:
+
+VERDAD AUTORAL
+Es lo que realmente ocurre en el universo. Puede conocerse durante el desarrollo
+y utilizarse para evitar contradicciones, aunque el jugador tarde muchas horas
+en descubrirlo.
+
+CONOCIMIENTO DEL JUGADOR
+Es aquello que la interfaz, los diálogos, las escenas y los acontecimientos le
+permiten saber en un momento determinado.
+
+Regla fundamental de MAP01:
+
+La documentación interna puede decir “Limbo”, “muerte”, “alma” y “resurrección”.
+Los textos visibles durante MAP01 no deben presentar ninguna de esas palabras
+como explicaciones confirmadas. El misterio se construye mostrando síntomas y
+contradicciones antes de proporcionar nombres.
+
+-------------------------------------------------------------------------------
+2. PREMISA GENERAL
+-------------------------------------------------------------------------------
+
+[CANON]
+
+Caelum Argenteum transcurre en un mundo de fantasía oscura inspirado en la
+Argentina del siglo XIX. La nación recién formada se encuentra dividida por
+intereses políticos, sociales y territoriales mientras enfrenta dos invasiones
+simultáneas.
+
+La primera invasión es exterior. Los Caelith, habitantes originarios de la Luna,
+descienden sobre la Tierra bajo el mando de la reina Selene.
+
+La segunda invasión es interior. El Tarot, un poder procedente del Infierno, se
+infiltra en personas, criaturas, objetos, lugares y conflictos. El Culto del
+Tarot utiliza esa influencia para exacerbar las divisiones existentes y debilitar
+la resistencia de la nación.
+
+Ambas amenazas provienen del plan de un príncipe infernal. Tras fracasar una y
+otra vez en su intento de conquistar la Tierra por la fuerza, comprendió que los
+Guerreros del Sol podían detenerlo mientras los pueblos argentinos conservaran
+la posibilidad de reunirse bajo el Sol de Mayo. Por eso decidió corromper la Luna
+y quebrar a la Tierra desde dentro antes de intentar dominarla otra vez.
+
+El protagonista no comienza como un héroe ni como miembro declarado de una
+facción. Es un errante que intentaba escapar del conflicto. Muere en circunstancias
+que no recuerda y despierta en una mansión imposible, sin saber que se encuentra
+en el Limbo.
+
+-------------------------------------------------------------------------------
+3. ALEGORÍA SOCIAL Y CULTURAL
+-------------------------------------------------------------------------------
+
+[CANON]
+
+Las especies principales poseen las siguientes correspondencias alegóricas:
+
+- Los Hombres Bestia representan a los pueblos nativos americanos.
+- Los Caelith representan a los europeos y al colonialismo europeo.
+- Los duendes representan a los gauchos y a la cultura rural.
+- Los humanos representan principalmente a los porteños y a la sociedad urbana.
+
+Estas correspondencias son flexibles. Expresan historias colectivas, prejuicios,
+posiciones sociales y tensiones culturales; no determinan automáticamente la
+moral, la ideología ni la facción de cada individuo.
+
+Por lo tanto:
+
+- Un Caelith puede rechazar la invasión, huir de la dictadura y luchar contra
+  Selene.
+- Un humano puede oponerse a la Capital o solidarizarse con los pueblos nativos.
+- Un duende puede abandonar la vida rural, integrarse en una ciudad o rechazar
+  cualquier bando.
+- Un Hombre Bestia puede preservar su cultura, negociar una integración parcial,
+  adoptar costumbres urbanas o combatir a quienes dicen querer civilizarlo.
+
+3.1. HOMBRES BESTIA
+
+[CANON]
+
+Los Hombres Bestia no son humanos degradados ni criaturas cuya inteligencia fue
+destruida por la corrupción. Ocurrió lo contrario: distintas especies animales
+recibieron la influencia del Tarot y adquirieron mayor inteligencia, conciencia,
+lenguaje y formas homínidas.
+
+El origen sobrenatural de esa transformación no vuelve malignos a sus pueblos.
+La voluntad que desarrollaron les pertenece. Con el paso del tiempo construyeron
+comunidades, memorias, costumbres y decisiones políticas propias.
+
+Los sectores que se consideran “civilizados” continúan llamándolos bestias y
+utilizan su origen animal para negarles derechos. Otros humanos, duendes, Caelith
+disidentes y grupos políticos intentan incorporarlos a la sociedad común. Esa
+integración puede ser genuina o paternalista, según la persona y la facción.
+
+La influencia del Tarot cumple así una función ambigua: puede corromper, pero
+también produjo conciencia y nuevas formas de vida. Reunir las cartas no debe
+presentarse automáticamente como eliminar todo lo que el Tarot haya creado.
+
+3.2. CAELITH
+
+[CANON]
+
+Los Caelith vivieron durante toda su historia conocida en la Luna. Su sociedad
+desarrolló una identidad propia, una monarquía y formas de magia adaptadas a su
+mundo. Bajo Selene, una parte de esa civilización se convirtió en potencia
+colonial y descendió sobre la Tierra.
+
+No todos obedecieron. Muchos fueron corrompidos, adoctrinados o sometidos por el
+régimen. Otros participaron por miedo, interés o convicción. Los disidentes se
+autoexiliaron en Argentina buscando paz, pero suelen ser tratados como invasores,
+espías o traidores tanto por los terrestres como por los Caelith leales.
+
+3.3. DUENDES
+
+[CANON]
+
+Los duendes son criaturas mágicas vinculadas alegóricamente con los gauchos. No
+son malignos por naturaleza. Su relación con el territorio, la vida rural, la
+independencia y los márgenes de la autoridad urbana los coloca en tensión con la
+Capital y con los proyectos de uniformidad política.
+
+Son especialmente sensibles a la magia. Pueden percibir antes que otros la
+presencia del Tarot, pero esa misma apertura los vuelve vulnerables a su
+influencia. Caella encarna esa doble condición: su sensibilidad es talento y
+peligro al mismo tiempo.
+
+3.4. HUMANOS
+
+[CANON]
+
+Los humanos representan principalmente a los porteños y a la sociedad urbana.
+Poseen mayor cercanía con las instituciones de la Capital, la Gendarmería, el
+comercio y los discursos de civilización. Esa asociación tampoco es absoluta:
+existen humanos rurales, federales, perseguidos, disidentes y aliados de otros
+pueblos.
+
+-------------------------------------------------------------------------------
+4. HISTORIA ANTERIOR AL COMIENZO DEL JUEGO
+-------------------------------------------------------------------------------
+
+4.1. LA LUNA ANTES DE LA CAÍDA
+
+[CANON]
+
+Los Caelith vivieron durante generaciones en la Luna. Observaban la Tierra desde
+la distancia y consideraban imposible que sus conflictos alcanzaran las ciudades
+lunares. Selene gobernaba como reina antes de quedar sometida a la influencia del
+príncipe infernal.
+
+4.2. LOS GUERREROS DEL SOL
+
+[CANON]
+
+El príncipe infernal intentó conquistar la Tierra en repetidas ocasiones. Fue
+detenido por los Guerreros del Sol, representación mítica de los pueblos
+argentinos que podían reunirse bajo el Sol de Mayo.
+
+[PROPUESTA OPERATIVA]
+
+“Guerreros del Sol” no necesita designar una única orden secreta. Puede ser el
+nombre con que los relatos infernales y lunares agrupan a soldados, milicias,
+campesinos, curas, pueblos aliados y figuras populares de distintas épocas. El
+Sol representa la capacidad colectiva de resistir, no una sangre ni una clase
+privilegiada.
+
+4.3. LA CORRUPCIÓN DE SELENE
+
+[CANON]
+
+Incapaz de vencer al Sol mediante una invasión directa, el príncipe infernal
+dirigió su influencia hacia la Luna. Manipuló a Selene y corrompió sus temores,
+deseos y decisiones. Ella instauró una dictadura, persiguió disidentes y preparó
+la invasión de Argentina.
+
+La corrupción explica su transformación, pero no elimina su responsabilidad.
+Selene conserva voluntad suficiente para sostener el régimen, utilizar a su
+pueblo y convertirse en la antagonista final.
+
+4.4. LA INVASIÓN CAELITH
+
+[CANON]
+
+Los Caelith leales a la corona comenzaron a ocupar territorios terrestres. Su
+llegada agudizó conflictos sobre centralización, autonomía, propiedad, defensa e
+integración. La Capital vio en ellos una amenaza y, al mismo tiempo, una posible
+fuente de alianzas y poder. Los Pueblos Libres defendieron su autonomía mientras
+negociaban apoyos contradictorios. Los pueblos nativos, los Híbridos y los
+exiliados quedaron atrapados entre proyectos que pretendían utilizarlos.
+
+4.5. EL CULTO DEL TAROT
+
+[CANON]
+
+Mientras la invasión avanzaba desde afuera, el Culto del Tarot se infiltró dentro
+de todas las facciones. Sus miembros son capaces de percibir o manipular las
+esencias. No necesitan inventar cada enfrentamiento: encuentran una herida real,
+impiden que cierre y convencen a cada bando de que el otro es la causa absoluta
+de su sufrimiento.
+
+El resultado es la grieta. La nación no se divide sólo por magia, pero la magia
+convierte diferencias negociables en enemistades que parecen inevitables.
+
+-------------------------------------------------------------------------------
+5. EL TAROT Y LA DISPERSIÓN
+-------------------------------------------------------------------------------
+
+[CANON DE TRABAJO]
+
+El Tarot proviene del Infierno y se manifiesta a través de 78 esencias: 22
+Arcanos Mayores y 56 Arcanos Menores.
+
+Selene y el príncipe infernal intentaron utilizar el Tarot completo para unir la
+Luna, la Tierra y el Infierno bajo un mismo dominio. El ritual no pudo completarse.
+Las esencias se dispersaron y quedaron ligadas a personas, criaturas, objetos,
+lugares y conflictos que expresan el significado de cada carta. Este
+acontecimiento recibe el nombre de La Dispersión.
+
+[PROPUESTA OPERATIVA PENDIENTE DE REVELACIÓN]
+
+Palomo pudo haber intervenido en el ritual e impedido su estabilización, sin
+poseer poder suficiente para destruir el Tarot. Esta explicación conecta su
+conflicto con Selene, la existencia de las esencias dispersas y su decisión de
+ceder una parte de sí mediante la Caja. No debe revelarse en MAP01.
+
+Una esencia no es un objeto coleccionable colocado al azar. La carta se adhiere a
+un acontecimiento o ser que encarna su arquetipo. Resolver, transformar o
+comprender ese conflicto permite que la esencia se manifieste.
+
+El don místico permite percibir las esencias, pero no capturarlas de manera
+segura. La Caja Mágica es el instrumento que puede contenerlas.
+
+-------------------------------------------------------------------------------
+6. PALOMO Y LA CAJA MÁGICA
+-------------------------------------------------------------------------------
+
+6.1. PALOMO
+
+[CANON]
+
+Palomo representa al Espíritu Santo y procura proteger la patria argentina. Es
+una figura mítica visible únicamente para personas que poseen sensibilidad
+mística. Esa sensibilidad también les permite percibir la esencia del Tarot.
+
+Palomo mantiene un perfil bajo. No se presenta como salvador, profeta ni dueño de
+la verdad. No ordena: guía. Prefiere colocar a alguien ante una decisión antes
+que decirle qué debe elegir.
+
+Su personalidad combina tres rasgos:
+
+- Amabilidad genuina.
+- Lenguaje metafórico y filosófico.
+- Humor burlón, sarcástico e irónico cuando le exigen respuestas directas sobre
+  el lugar, la muerte o su propia naturaleza.
+
+Palomo conoce la identidad de Selene y comprende la función de la mansión, pero
+no revela esas verdades directamente. Cuando el protagonista cuenta que oye una
+voz femenina, Palomo afirma que probablemente se trate de alucinaciones y le
+aconseja desconfiar. La advertencia es auténtica; la explicación es una mentira
+protectora.
+
+6.2. LA MANSIÓN
+
+[CANON]
+
+MAP01 representa el Limbo. La mansión existe dentro de ese espacio y funciona
+como refugio, prueba y punto de encuentro para almas que no han logrado regresar.
+
+Los personajes no conocen este hecho. Para ellos, la mansión es una casa extraña
+de la que ningún camino conduce correctamente al exterior. Las distancias pueden
+no coincidir, las habitaciones pueden cambiar y algunos detalles carecen de una
+explicación natural, pero nada confirma todavía una vida después de la muerte.
+
+6.3. LA CAJA MÁGICA
+
+[CANON]
+
+“Caja Mágica” es el nombre irónico que Palomo da al artefacto. No es una caja
+encantada ordinaria: contiene una parte de la esencia de Palomo y, por ello,
+posee un poder inmenso que el jugador podrá explotar durante la campaña.
+
+Funciones confirmadas:
+
+- Aligera el peso efectivo de los objetos almacenados.
+- Captura y conserva las esencias del Tarot.
+- Permite volver del Limbo al cuerpo.
+- Transporta el equipamiento básico que el protagonista llevará al mundo físico.
+- No puede soltarse, venderse ni guardarse dentro de otro contenedor.
+
+La Caja no concede el don de percibir. El protagonista y los cuatro habitantes
+pueden advertir a Palomo y las esencias porque ya poseen sensibilidad mística.
+El don ve; la Caja captura.
+
+-------------------------------------------------------------------------------
+7. EL PROTAGONISTA Y LOS CUATRO HABITANTES DE LA MANSIÓN
+-------------------------------------------------------------------------------
+
+7.1. EL PROTAGONISTA
+
+[CANON]
+
+El protagonista era un errante que intentaba escapar del conflicto. Fue
+emboscado, asesinado y arrojado a las alcantarillas. No recuerda la emboscada, su
+muerte ni los instantes inmediatamente anteriores. Conserva su identidad, su
+lugar de origen, capacidades y recuerdos anteriores, pero su memoria termina
+antes del acontecimiento fatal.
+
+Selene detectó su potencial y utilizó su poder para reanimar su vínculo con el
+cuerpo. Sin embargo, su influencia fuera de la Luna es demasiado tenue para
+devolverlo por sus propios medios. El alma despierta en el Limbo y necesita la
+esencia de Palomo contenida en la Caja para regresar.
+
+Durante MAP01, el protagonista no sabe que la voz pertenece a Selene ni que está
+muerto. La interfaz debe identificarla únicamente como Voz desconocida.
+
+7.2. RULO
+
+[CANON]
+
+Rulo es un Ucumar y representa la rama Guerrero. Enseña las mecánicas de combate.
+Su prueba culmina cuando el protagonista derrota al Toro.
+
+Rulo recuerda de dónde proviene y que despertó en la mansión. No recuerda cómo
+llegó ni los instantes anteriores a su muerte. No sabe que es un alma atrapada ni
+que su cuerpo se encuentra bajo la influencia de Selene.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Uno puede perder mucho después de haber ganado.”
+
+Rulo ya consiguió vencer al Toro en alguno de sus intentos. La victoria no le
+permitió salir porque dominar su propia rama no bastaba para superar la prueba
+completa.
+
+7.3. RONNIE
+
+[CANON]
+
+Ronnie es un Caelith exiliado y representa la rama Explorador. Enseña
+supervivencia, administración de recursos y preparación. Su prueba culmina al
+reunir los materiales necesarios para el arma inicial.
+
+Conserva recuerdos de su origen lunar y de su vida anterior al vacío de memoria.
+No sabe cómo llegó a la mansión ni qué ocurrió con su cuerpo.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Sobrevivir no es permanecer donde nada puede alcanzarlo. A veces eso sólo
+recibe otro nombre: quedarse.”
+
+7.4. ARGENTO
+
+[CANON]
+
+Argento es clérigo y representa la rama Sacerdote y las mecánicas sociales. Es el
+primer guía de la secuencia. Su prueba culmina cuando el protagonista convence a
+Rulo, Ronnie y Caella de que deben ayudarlo.
+
+Argento recuerda su procedencia y sus convicciones, pero no los instantes
+anteriores a despertar. No sabe que murió ni que su cuerpo fue tomado por Selene.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Convencer no consiste en encontrar las palabras que obliguen al otro. Consiste
+en descubrir qué está intentando proteger.”
+
+7.5. CAELLA
+
+[CANON]
+
+Caella es una duende y representa la rama Mago. Enseña Ánima, implementos,
+sellos, canalización y percepción mágica. Su prueba culmina al resolver un
+acertijo y revelar un pasadizo secreto.
+
+Su sensibilidad le permite advertir que la mansión y el protagonista poseen una
+resonancia anormal, pero no conoce su causa. Recuerda su origen y que despertó en
+la casa; no recuerda su muerte.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“No hay pared más firme que aquella que todos han decidido dejar de mirar.”
+
+7.6. LA VERDAD SOBRE LOS CUATRO
+
+[VERDAD AUTORAL; NO REVELAR EN MAP01]
+
+Rulo, Ronnie, Argento y Caella también murieron. Palomo los sometió a pruebas,
+pero ninguno logró integrar las cuatro ramas y encontrar la salida. Sus almas
+auténticas permanecen en la mansión del Limbo.
+
+Selene recibió o recuperó sus cuerpos en la Tierra y los animó con versiones o
+fragmentos corrompidos de sus almas. Durante el primer capítulo guiará al jugador
+hacia esos cuerpos. Las cuatro versiones corrompidas serán los primeros jefes de
+la campaña.
+
+Al derrotar cada cuerpo, la Caja Mágica podrá extraer la corrupción y permitir
+que el alma auténtica abandone el Limbo y se reintegre. De esta manera, vencerlos
+es un acto de liberación y puede habilitarlos posteriormente como compañeros.
+
+-------------------------------------------------------------------------------
+8. VERDAD AUTORAL Y CONOCIMIENTO DE LOS PERSONAJES
+-------------------------------------------------------------------------------
+
+8.1. LO QUE EL AUTOR SABE AL COMENZAR MAP01
+
+- El protagonista y los cuatro NPC están muertos.
+- MAP01 es el Limbo.
+- La mansión pertenece a la esfera de influencia de Palomo.
+- Selene revivió el vínculo del protagonista con su cadáver, pero no puede
+  devolverlo a la Tierra.
+- Palomo sabe quién es la voz.
+- Palomo está evaluando al protagonista mediante los cuatro residentes.
+- La Caja contiene parte de la esencia de Palomo.
+- Los cuerpos de los cuatro residentes están en la Tierra bajo corrupción.
+- El Loco será la primera esencia capturada por la Caja.
+
+8.2. LO QUE EL PROTAGONISTA SABE AL DESPERTAR
+
+- Su nombre, origen y capacidades anteriores.
+- Que despertó en una mansión desconocida.
+- Que no posee objetos.
+- Que una voz femenina le habla sin identificarse.
+- Que hay personas cerca que parecen compartir una experiencia extraña.
+
+8.3. LO QUE LOS CUATRO RESIDENTES SABEN
+
+- Quiénes eran y de dónde procedían.
+- Que despertaron en la mansión sin recordar cómo llegaron.
+- Que no han encontrado una salida estable.
+- Que Palomo aparece, desaparece y les ha dejado frases difíciles de interpretar.
+- Que cada uno domina especialmente una de las cuatro ramas.
+
+8.4. LO QUE EL JUGADOR PUEDE INFERIR AL TERMINAR MAP01
+
+- La mansión no obedece por completo a las reglas del mundo ordinario.
+- Palomo conoce más de lo que admite.
+- La voz desconocida tiene interés en su recorrido.
+- Los cuatro residentes no pueden utilizar la misma salida.
+- La Caja puede contener una esencia y abrir un tránsito imposible.
+- Su cuerpo se encontraba en una alcantarilla y había sido despojado.
+
+El final puede sugerir que murió, pero todavía no debe explicar el funcionamiento
+completo del Limbo, la relación entre Selene y los otros cuerpos ni el plan del
+Tarot.
+
+-------------------------------------------------------------------------------
+9. ESTRUCTURA COMPLETA DE LA CAMPAÑA
+-------------------------------------------------------------------------------
+
+[CANON]
+
+La campaña se divide en un prólogo y tres capítulos principales. Cada capítulo
+corresponde a un tier de progresión.
+
+PRÓLOGO — MAP01 — EL LOCO
+
+- El protagonista despierta en la mansión del Limbo.
+- Supera las cuatro pruebas.
+- Recibe la Caja Mágica.
+- Captura El Loco.
+- Regresa a su cadáver en las alcantarillas de MAP02.
+
+CAPÍTULO I — TIER 1 — SIETE ARCANOS MAYORES
+
+- Primera parte de la campaña terrestre.
+- Selene guía al jugador hacia Rulo, Ronnie, Argento y Caella corrompidos.
+- Los cuatro son los primeros jefes.
+- La Caja libera sus cuerpos y permite reintegrar sus almas verdaderas.
+- Tres Arcanos Mayores adicionales completan los siete del capítulo.
+- El jugador conoce las facciones, la invasión Caelith y las primeras pruebas de
+  la infiltración del Culto.
+
+CAPÍTULO II — TIER 2 — SIETE ARCANOS MAYORES
+
+- El objetivo central es encontrar al príncipe infernal.
+- El jugador descubre su intervención en la Luna, el origen de la corrupción de
+  Selene y la función del Culto.
+- El capítulo culmina con el destierro del príncipe demonio.
+- Desterrarlo no elimina automáticamente la dictadura ni deshace las decisiones
+  tomadas por Selene.
+
+CAPÍTULO III — TIER 3 — SIETE ARCANOS MAYORES
+
+- El jugador obtiene los medios para viajar a la Luna.
+- Enfrenta el régimen Caelith, las consecuencias de sus alianzas terrestres y la
+  verdad completa sobre La Dispersión.
+- El Mundo es la última carta.
+- La campaña culmina con el viaje para matar a Selene y decidir el destino del
+  Tarot y de los pueblos implicados.
+
+DISTRIBUCIÓN TOTAL DE ARCANOS MAYORES
+
+- Prólogo: 1 — El Loco.
+- Capítulo I: 7.
+- Capítulo II: 7.
+- Capítulo III: 7.
+- Total: 22.
+
+Los 56 Arcanos Menores se obtienen mediante misiones secundarias distribuidas a
+lo largo de los tres capítulos. Cada misión formal de Tarot entrega exactamente
+una carta; las tareas internas de MAP01 son etapas de una sola misión y no
+otorgan cartas independientes.
+
+-------------------------------------------------------------------------------
+10. RELATO CONSOLIDADO DE LA HISTORIA
+-------------------------------------------------------------------------------
+
+Antes de que la guerra aprendiera a mirar hacia el cielo, los Caelith habían
+vivido toda su existencia en la Luna.
+
+Desde la Tierra parecían inmóviles. Desde sus ciudades de piedra pálida,
+contemplaban generaciones enteras sucederse bajo un mundo azul y ruidoso. Su
+reina era Selene y su seguridad descansaba sobre una certeza antigua: ninguna
+disputa terrestre podía atravesar el vacío.
+
+El Infierno sí podía.
+
+Un príncipe infernal había intentado conquistar la Tierra más de una vez. En las
+tierras argentinas encontró pueblos capaces de enfrentarse entre sí durante años
+y reunirse, aun así, cuando el peligro amenazaba con consumirlos a todos. El
+príncipe llamó Guerreros del Sol a quienes combatían bajo el rostro del Sol de
+Mayo. No eran una raza ni una orden única. Eran la posibilidad de reconocerse en
+un emblema común cuando la derrota parecía segura.
+
+Después de cada fracaso, el príncipe comprendió que no bastaba con destruir un
+ejército. Mientras esa posibilidad sobreviviera, otro ocuparía su lugar. Decidió
+entonces quebrar el vínculo entre los pueblos antes de volver a atacarlos y
+dirigió su mirada hacia la Luna.
+
+No conquistó a Selene en una sola noche. Llegó como advertencia, consejo y temor.
+Le mostró futuros donde la Tierra alcanzaba la Luna, donde los Caelith eran
+perseguidos y donde la reina era recordada como la última de su pueblo. Algunas
+visiones eran falsas. Otras podían llegar a ser ciertas. Selene llamó previsión a
+la paranoia, unidad a la obediencia y defensa a la conquista preventiva.
+
+La reina concentró el poder, silenció a sus opositores y convirtió la monarquía
+en una dictadura. Muchos Caelith obedecieron porque el Tarot ya había tocado sus
+almas. Otros lo hicieron por miedo, por interés o porque creyeron sinceramente
+que la invasión salvaría a la Luna. Los disidentes huyeron hacia la Tierra, donde
+fueron recibidos como refugiados por unos y vigilados como espías por otros.
+
+Cuando las fuerzas lunares descendieron, Argentina no respondió con una sola
+voz. La Capital quiso centralizar la defensa y descubrió que negociar con ciertos
+Caelith también podía fortalecer su poder. Los Pueblos Libres defendieron su
+autonomía, aunque sus alianzas con otros pueblos no siempre fueron desinteresadas.
+Los humanos urbanos hablaron de civilización; los duendes defendieron la vida
+rural y la libertad de los caminos; los Hombres Bestia rechazaron que quienes
+acababan de conocerlos decidieran si eran personas.
+
+Los Hombres Bestia constituían una prueba viva de que el Tarot no actuaba de una
+única manera. Su influencia había elevado a distintas especies animales,
+otorgándoles conciencia, lenguaje y cuerpos homínidos. Para los sectores que se
+consideraban civilizados, aquella procedencia bastaba para llamarlos monstruos.
+Para quienes estaban dispuestos a reconocerlos, eran nuevos pueblos capaces de
+construir su propio lugar en la historia.
+
+En medio de esas tensiones creció el Culto del Tarot. Sus agentes aparecieron en
+salones, templos, cuarteles, campamentos y rutas comerciales. Allí donde existía
+una disputa, ofrecían una razón para volverla irreconciliable. Allí donde alguien
+temía perder poder, prometían conservarlo. La invasión Caelith debilitaba a la
+nación desde afuera; el Culto se aseguraba de que nadie pudiera responder unido
+desde adentro.
+
+Selene y el príncipe intentaron reunir las 78 esencias en un ritual capaz de
+alinear la Luna, la Tierra y el Infierno. El rito fue interrumpido. Las cartas se
+dispersaron y buscaron conflictos, lugares, personas y criaturas capaces de
+encarnar su significado. Desde entonces, una traición podía adquirir la forma
+del Tres de Espadas; una comunidad abandonada, la del Cinco de Oros; una ciudad
+condenada a caer, la de La Torre.
+
+Fue después de La Dispersión cuando comenzaron a multiplicarse los relatos sobre
+Palomo.
+
+Algunos hablaban de un caballero con galera y monóculo visto en caminos donde no
+quedaban huellas. Otros recordaban a una figura de modales amables que formulaba
+una pregunta y desaparecía antes de escuchar la respuesta. La mayoría no veía a
+nadie. Sólo quienes poseían cierta sensibilidad podían percibirlo y advertir, al
+mismo tiempo, el brillo imposible de las esencias.
+
+Palomo reunió parte de su poder dentro de una caja. La llamó Caja Mágica con el
+mismo tono con que otro habría escrito “objeto” sobre una reliquia. El artefacto
+podía aligerar cargas, contener el Tarot y tender un camino entre el Limbo y el
+cuerpo. Cada uso exponía una porción de la esencia de su creador, por lo que no
+podía entregársela a cualquiera.
+
+Rulo, Ronnie, Argento y Caella llegaron a la mansión por separado. Ninguno
+recordaba el viaje. Cada uno conservaba su nombre, su lugar de origen y una vida
+que parecía terminar antes de una página arrancada. Palomo los guio mediante
+frases y pruebas, pero cada uno se apoyó en aquello que ya dominaba. Rulo venció
+al Toro. Ronnie aprendió a sobrevivir a los caminos internos. Argento entendió
+las voluntades de los demás. Caella encontró aquello que la casa escondía.
+Ninguno consiguió salir.
+
+Mientras sus almas permanecían en la mansión, Selene alcanzó sus cuerpos. Los
+devolvió al movimiento con fragmentos corrompidos y los convirtió en instrumentos
+que el protagonista encontraría más adelante.
+
+El protagonista también había intentado escapar de la guerra. Una emboscada
+terminó con su vida y su cadáver fue arrojado a las alcantarillas. Los responsables
+se llevaron sus pertenencias. Su memoria conservó la vida anterior, pero no el
+rostro de sus asesinos ni el instante de la muerte.
+
+Selene percibió su capacidad y reanimó el vínculo entre cuerpo y alma. Desde la
+Luna no pudo completar el regreso. El protagonista abrió los ojos en la mansión
+sin saber que respiraba sólo por recuerdo. Una voz femenina le indicó que se
+levantara y buscara ayuda.
+
+Palomo no explicó dónde estaba. Cuando le preguntaron, habló del recibidor. Cuando
+le contaron sobre la voz, recomendó desconfiar de las alucinaciones. Luego dejó
+que Argento, Caella, Ronnie y Rulo lo guiaran a través de las cuatro ramas que
+ellos mismos representaban.
+
+El protagonista convenció a los tres residentes de colaborar con Argento,
+resolvió el acertijo de Caella, encontró con Ronnie los materiales para un arma y
+derrotó al Toro bajo la mirada de Rulo. No demostró ser mejor que todos ellos en
+cada especialidad. Demostró aceptar aquello que cada uno podía enseñarle.
+
+Palomo lo esperaba en el segundo piso. Le entregó la Caja y permitió que su
+esencia reconociera al nuevo portador. El artefacto guardó el equipo básico de su
+clase, capturó la primera carta —El Loco— y abrió un camino que ninguno de los
+residentes pudo cruzar.
+
+El protagonista volvió a abrir los ojos entre agua sucia, ladrillos y oscuridad.
+Estaba dentro de las alcantarillas, junto al lugar donde habían abandonado su
+cuerpo. No llevaba nada salvo la Caja Mágica y aquello que ésta había conservado.
+
+La voz seguía allí, ahora mucho más tenue.
+
+Durante el primer capítulo, esa voz lo conduciría hacia cuatro enemigos que le
+resultarían extrañamente familiares. Al derrotarlos, la Caja arrancaría la
+corrupción de sus cuerpos y permitiría que Rulo, Ronnie, Argento y Caella
+regresaran del lugar que todavía no sabían nombrar.
+
+Después vendría la búsqueda del príncipe infernal, su destierro y, finalmente,
+el viaje a la Luna para matar a Selene.
+
+-------------------------------------------------------------------------------
+11. REGLAS PARA CONSERVAR EL MISTERIO
+-------------------------------------------------------------------------------
+
+11.1. VOCABULARIO PROHIBIDO EN MAP01
+
+No utilizar como explicación confirmada en diario, HUD o diálogo:
+
+- Limbo.
+- Muerto / muerte del protagonista.
+- Alma atrapada.
+- Resurrección.
+- Cadáver en las alcantarillas.
+- Cuerpo corrompido de los NPC.
+- Selene como nombre de la voz.
+- Prueba de Palomo.
+- Parte de la esencia de Palomo dentro de la Caja.
+
+Los términos pueden existir en nombres internos de clases, flags y scripts, pero
+nunca filtrarse a la localización visible.
+
+11.2. INDICIOS PERMITIDOS
+
+- Relojes que no avanzan o muestran horas distintas.
+- Caminos exteriores que regresan a la propiedad.
+- Habitaciones cuyas medidas internas no coinciden con el exterior.
+- Necesidades físicas que se sienten, aunque ningún personaje pueda precisar
+  cuánto tiempo ha pasado.
+- Ausencia de recuerdos inmediatamente anteriores al despertar.
+- Objetos temporales que se deshacen al alejarlos de su zona.
+- Palomo que aparece después de perderse de vista, sin efecto espectacular.
+- Frases suyas que cada NPC recuerda de forma aislada.
+- La voz femenina que sólo escucha el protagonista.
+- Caella percibiendo una resonancia que no sabe interpretar.
+- La imposibilidad de los cuatro residentes para cruzar la salida final.
+
+11.3. CONDUCTA DE PALOMO
+
+- Nunca ordena completar una misión.
+- Sugiere a quién podría convenir escuchar.
+- Responde con metáforas que contienen una verdad comprobable.
+- Utiliza sarcasmo e ironía ante preguntas que exigen revelar el misterio.
+- Es amigable y no humilla al protagonista por no comprender.
+- Cuando la voz es mencionada, la llama alucinación y recomienda prudencia.
+- No pronuncia el nombre Selene en MAP01.
+- No dice “superaste la prueba”. Reconoce únicamente las acciones realizadas.
+- No entrega la Caja como premio heroico; pide que el protagonista la cuide.
+
+11.4. CONDUCTA DE LA VOZ DESCONOCIDA
+
+- No pronuncia su propio nombre.
+- No menciona la Luna durante MAP01.
+- Habla poco debido a su influencia tenue.
+- Ofrece instrucciones útiles y simples para construir confianza.
+- No acusa directamente a Palomo.
+- Puede sugerir que él oculta algo, pero no revelar qué.
+- Su identificación visible es siempre VOZ DESCONOCIDA.
+
+===============================================================================
+PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
+===============================================================================
+
+-------------------------------------------------------------------------------
+12. ALCANCE Y OBJETIVO DE LA IMPLEMENTACIÓN
+-------------------------------------------------------------------------------
+
+Nombre visible provisional: DONDE DESPIERTAN LOS PERDIDOS
+ID interno: CA_Q_MAIN_M00_THE_FOOL
+Tipo: misión principal / prólogo / Arcano Mayor
+Mapa: MAP01
+Destino: MAP02 — alcantarillas
+Carta: Arcano Mayor 0 — El Loco
+
+Objetivo de experiencia:
+
+MAP01 debe enseñar las cuatro ramas fundamentales mediante una única misión
+lineal, presentar a Palomo y los cuatro futuros jefes, otorgar la Caja Mágica,
+enseñar la primera captura de Tarot y terminar con el regreso al cuerpo.
+
+Orden obligatorio:
+
+1. Argento — social — convencer a Rulo, Ronnie y Caella.
+2. Caella — magia — resolver el acertijo y abrir el pasadizo.
+3. Ronnie — supervivencia — reunir materiales para un arma.
+4. Rulo — combate — derrotar al Toro.
+5. Palomo — recibir la Caja, capturar El Loco y salir.
+
+Fuera de alcance para la primera implementación:
+
+- Revelar que MAP01 es el Limbo.
+- Revelar la identidad de la voz.
+- Mostrar los cuerpos corrompidos de los cuatro NPC.
+- Implementar los jefes del Capítulo I.
+- Explicar el origen completo del Tarot o La Dispersión.
+- Permitir regresar normalmente a MAP01 después de entrar en MAP02.
+
+Prioridades técnicas:
+
+- Robustez en GZDoom 4.14.2.
+- Estados idempotentes: una acción repetida no duplica progreso ni objetos.
+- Código en inglés y comentarios en español.
+- Textos visibles mediante claves de localización.
+- Sin assets heredados de Doom.
+- Guardado/carga seguros en cada etapa.
+- La misión no puede bloquearse por fallar una tirada social, perder un objeto
+  temporal o ser derrotado por el Toro.
+
+-------------------------------------------------------------------------------
+13. FLUJO COMPLETO DE LA MISIÓN
+-------------------------------------------------------------------------------
+
+FASE 00 — INITIALIZE
+
+- Cargar o crear al personaje.
+- Retirar del inventario exterior cualquier objeto que no corresponda al estado
+  inicial de MAP01.
+- Conservar datos de clase, especie, atributos y apariencia.
+- Establecer el inventario inicial visible en vacío.
+- Marcar todos los objetos concedidos durante el Limbo como temporales hasta que
+  la Caja los convierta o preserve expresamente.
+
+FASE 10 — AWAKEN
+
+- Reproducir pantalla oscura, sonido tenue y primera línea de Voz desconocida.
+- Devolver control al jugador.
+- Activar la misión y la primera entrada del diario.
+- No mostrar la emboscada ni explicar la muerte.
+
+FASE 20 — MEET_PALOMO
+
+- Detectar llegada del jugador al área del recibidor.
+- Hacer aparecer a Palomo de manera discreta.
+- Ejecutar diálogo introductorio.
+- Palomo orienta hacia Argento sin utilizar imperativos de misión.
+
+FASE 30 — ARGENTO_SOCIAL
+
+- Argento explica que los otros residentes poseen conocimientos necesarios.
+- Activar tres conversaciones de reclutamiento.
+- Convencer a Rulo, Ronnie y Caella.
+- Al conseguir 3/3, completar la rama social.
+
+FASE 40 — CAELLA_MAGIC
+
+- Caella conduce a la sala del acertijo.
+- Entregar implemento y sello mágicos temporales cuando sean necesarios.
+- Enseñar Ánima, Fire, AltFire y Channel/Reload.
+- Resolver la secuencia elemental.
+- Abrir el pasadizo secreto de manera persistente.
+
+FASE 50 — RONNIE_SURVIVAL
+
+- Ronnie habilita la ruta detrás del pasadizo.
+- Determinar el arma inicial según la clase del jugador.
+- Derivar de su receta la lista de materias primas necesarias.
+- Enseñar recursos, carga, Aire y necesidades.
+- Reunir todos los materiales del arma.
+
+FASE 60 — PREPARE_WEAPON
+
+- Utilizar los materiales reunidos para crear o preparar el arma inicial.
+- La pieza debe conservar un ItemId válido.
+- Marcarla como candidata a ser guardada dentro de la Caja al final.
+- Habilitar el acceso al recinto del Toro.
+
+FASE 70 — RULO_COMBAT
+
+- Rulo introduce el combate de práctica.
+- Activar el Toro y cerrar temporalmente el recinto.
+- Registrar acciones tutoriales y victoria.
+- Si el jugador es derrotado, reiniciar el encuentro sin perder progreso previo.
+- Al vencer, completar la cuarta rama y habilitar a Palomo arriba.
+
+FASE 80 — PALOMO_FINAL
+
+- Hacer aparecer a Palomo en el segundo piso.
+- Ejecutar conversación final sin revelar la naturaleza del lugar.
+- Entregar la Caja Mágica exactamente una vez.
+- Transferir el equipo inicial autorizado al interior de la Caja.
+
+FASE 90 — CAPTURE_THE_FOOL
+
+- Manifestar El Loco.
+- Enseñar la interacción de captura mediante la Caja.
+- Otorgar la carta, su progreso y bonificación una sola vez.
+- Activar la salida.
+
+FASE 100 — RETURN_TO_BODY
+
+- Solicitar confirmación antes de abandonar MAP01.
+- Limpiar objetos temporales del Limbo.
+- Garantizar que el inventario exterior sólo contenga la Caja.
+- Garantizar que el equipo inicial esté dentro de la Caja.
+- Guardar estado de misión y Tarot.
+- Cambiar a MAP02 en el punto de aparición de las alcantarillas.
+- Marcar MAP01 como inaccesible por medios normales.
+
+-------------------------------------------------------------------------------
+14. ARQUITECTURA DE DATOS Y ESTADOS
+-------------------------------------------------------------------------------
+
+14.1. SEPARACIÓN RECOMENDADA
+
+QuestDefinition:
+
+- Identidad y textos.
+- Orden de etapas.
+- Condiciones de entrada y salida.
+- Objetivos y recompensas.
+
+QuestState:
+
+- Etapa actual.
+- Objetivos completados.
+- Resultados de diálogo.
+- Objetos concedidos.
+- Carta y Caja otorgadas.
+- Confirmación de salida.
+
+MapController:
+
+- Activa actores y sectores según QuestState.
+- Reconstruye el estado correcto al cargar MAP01.
+- No conserva por sí mismo datos autoritativos que puedan perderse al cambiar de
+  mapa.
+
+InventoryTransferController:
+
+- Etiqueta objetos temporales.
+- Reserva los materiales de misión.
+- Introduce el equipo inicial dentro de la Caja.
+- Limpia el inventario antes de MAP02.
+
+14.2. ESTADOS PRINCIPALES
+
+Usar nombres estables, no depender únicamente de un entero sin enumeración:
+
+CA_M01_STATE_INITIALIZE
+CA_M01_STATE_AWAKENED
+CA_M01_STATE_MET_PALOMO
+CA_M01_STATE_ARGENTO_ACTIVE
+CA_M01_STATE_ARGENTO_COMPLETE
+CA_M01_STATE_CAELLA_ACTIVE
+CA_M01_STATE_CAELLA_COMPLETE
+CA_M01_STATE_RONNIE_ACTIVE
+CA_M01_STATE_RONNIE_COMPLETE
+CA_M01_STATE_WEAPON_READY
+CA_M01_STATE_RULO_ACTIVE
+CA_M01_STATE_RULO_COMPLETE
+CA_M01_STATE_BOX_RECEIVED
+CA_M01_STATE_FOOL_CAPTURED
+CA_M01_STATE_EXIT_CONFIRMED
+CA_M01_STATE_COMPLETE
+
+Cada transición debe comprobar el estado esperado. Una llamada duplicada no debe
+saltar etapas, entregar objetos adicionales ni volver a reproducir recompensas.
+
+Pseudológica:
+
+TryAdvance(expectedState, nextState)
+{
+    if (CurrentState != expectedState)
+        return false;
+
+    CurrentState = nextState;
+    ApplyEnterActionsOnce(nextState);
+    SaveAuthoritativeQuestState();
+    return true;
+}
+
+14.3. FLAGS DE PROGRESO
+
+CA_F_M01_STARTED
+CA_F_M01_UNKNOWN_VOICE_HEARD
+CA_F_M01_PALOMO_MET
+
+CA_F_M01_ARGENTO_STARTED
+CA_F_M01_RULO_CONVINCED
+CA_F_M01_RONNIE_CONVINCED
+CA_F_M01_CAELLA_CONVINCED
+CA_F_M01_ARGENTO_COMPLETE
+
+CA_F_M01_CAELLA_STARTED
+CA_F_M01_MAGIC_IMPLEMENT_GIVEN
+CA_F_M01_MAGIC_SEAL_GIVEN
+CA_F_M01_MAGIC_PRIMARY_USED
+CA_F_M01_MAGIC_SECONDARY_USED
+CA_F_M01_MAGIC_CHANNEL_USED
+CA_F_M01_RUNE_EARTH
+CA_F_M01_RUNE_AIR
+CA_F_M01_RUNE_FIRE
+CA_F_M01_RUNE_WATER
+CA_F_M01_SECRET_PASSAGE_OPEN
+CA_F_M01_CAELLA_COMPLETE
+
+CA_F_M01_RONNIE_STARTED
+CA_F_M01_REPAIR_TUTORIAL_COMPLETE
+CA_F_M01_SURVIVAL_FOOD_USED
+CA_F_M01_SURVIVAL_WATER_USED
+CA_F_M01_SURVIVAL_AIR_SEEN
+CA_F_M01_SURVIVAL_LOAD_SEEN
+CA_F_M01_MATERIALS_COMPLETE
+CA_F_M01_RONNIE_COMPLETE
+
+CA_F_M01_STARTER_WEAPON_CRAFTED
+CA_F_M01_STARTER_WEAPON_PRESERVED
+
+CA_F_M01_RULO_STARTED
+CA_F_M01_COMBAT_PRIMARY_USED
+CA_F_M01_COMBAT_SECONDARY_USED
+CA_F_M01_COMBAT_DEFENSE_USED
+CA_F_M01_COMBAT_CHARGED_USED
+CA_F_M01_BULL_STARTED
+CA_F_M01_BULL_DEFEATED
+CA_F_M01_RULO_COMPLETE
+
+CA_F_M01_PALOMO_UPSTAIRS_ENABLED
+CA_F_M01_MAGIC_BOX_GRANTED
+CA_F_M01_THE_FOOL_CAPTURED
+CA_F_M01_EXIT_READY
+CA_F_M01_EXIT_CONFIRMED
+CA_F_M01_INVENTORY_SANITIZED
+CA_F_M01_COMPLETE
+
+14.4. FLAGS DE DIÁLOGO Y CONOCIMIENTO
+
+CA_F_M01_ASKED_PALOMO_WHERE
+CA_F_M01_ASKED_PALOMO_WHAT_HAPPENED
+CA_F_M01_TOLD_PALOMO_ABOUT_VOICE
+CA_F_M01_PALOMO_CALLED_IT_HALLUCINATION
+
+CA_F_M01_HEARD_ARGENTO_QUOTE
+CA_F_M01_HEARD_CAELLA_QUOTE
+CA_F_M01_HEARD_RONNIE_QUOTE
+CA_F_M01_HEARD_RULO_QUOTE
+
+CA_F_M01_NOTICED_MEMORY_GAP
+CA_F_M01_NOTICED_LOOPING_PATH
+CA_F_M01_NOTICED_WRONG_CLOCKS
+CA_F_M01_NOTICED_ROOM_GEOMETRY
+
+Estos flags permiten que futuras conversaciones reconozcan qué pistas vio cada
+jugador sin afirmar que su interpretación sea correcta.
+
+14.5. ESTADO DE OBJETOS ÚNICOS
+
+Registrar por separado:
+
+- LimboMagicImplementItemId.
+- LimboMagicSealItemId.
+- SurvivalToolItemId.
+- StarterWeaponItemId.
+- MagicBoxItemId.
+
+No seleccionar piezas por clase y nombre cuando la misión exige una instancia
+concreta. Utilizar ItemId para reparación, crafteo y transferencia.
+
+-------------------------------------------------------------------------------
+15. REQUISITOS DEL MAPA Y ACTORES
+-------------------------------------------------------------------------------
+
+15.1. TAGS DE POSICIÓN RECOMENDADOS
+
+CA_M01_START_SPOT
+CA_M01_UNKNOWN_VOICE_TRIGGER
+CA_M01_PALOMO_FOYER_SPOT
+CA_M01_ARGENTO_SPOT
+CA_M01_RULO_SPOT
+CA_M01_RONNIE_SPOT
+CA_M01_CAELLA_SPOT
+CA_M01_MAGIC_PUZZLE_CENTER
+CA_M01_RUNE_EARTH_SPOT
+CA_M01_RUNE_AIR_SPOT
+CA_M01_RUNE_FIRE_SPOT
+CA_M01_RUNE_WATER_SPOT
+CA_M01_SECRET_DOOR
+CA_M01_SURVIVAL_ROUTE_START
+CA_M01_SURVIVAL_ROUTE_END
+CA_M01_REPAIR_STATION
+CA_M01_CRAFT_STATION
+CA_M01_BULL_PLAYER_START
+CA_M01_BULL_SPAWN
+CA_M01_BULL_GATE
+CA_M01_PALOMO_UPSTAIRS_SPOT
+CA_M01_FOOL_ESSENCE_SPOT
+CA_M01_EXIT_PORTAL_SPOT
+
+Los nombres son orientativos. Si UDB requiere TID numérico, mantener una tabla
+única nombre → TID para evitar números mágicos en los scripts.
+
+15.2. ACTORES NECESARIOS
+
+- CA_PalomoM01.
+- CA_ArgentoM01.
+- CA_CaellaM01.
+- CA_RonnieM01.
+- CA_RuloM01.
+- CA_UnknownVoiceEmitter, no visible.
+- CA_MagicPuzzleRune, cuatro instancias configuradas por elemento.
+- CA_LimboMagicImplement.
+- CA_LimboMagicSeal.
+- CA_LimboSurvivalTool.
+- CA_LimboResourceNode.
+- CA_LimboBull, basado en el Toro aprobado pero con control de reinicio.
+- CA_TheFoolEssence.
+- CA_MagicBox, ampliada con captura y retorno.
+- CA_M01QuestController.
+
+Todos los NPC principales deben ser invulnerables, no bloqueables y excluidos de
+infighting durante MAP01.
+
+15.3. SECTORES FUNCIONALES
+
+- Zona de despertar.
+- Recibidor de Palomo.
+- Área social de Argento.
+- Sala del acertijo mágico.
+- Pasadizo secreto.
+- Ruta de supervivencia y materiales.
+- Estación de reparación básica.
+- Estación de crafteo del arma inicial.
+- Recinto cerrado del Toro.
+- Segundo piso para Palomo.
+- Ancla de salida del Limbo.
+
+15.4. LLAVE DE PLATA EXISTENTE
+
+[PENDIENTE]
+
+La puerta con Llave de Plata ya presente en MAP01 no debe impedir llegar a
+Argento, porque su prueba es obligatoriamente la primera. Opciones compatibles:
+
+1. Dejar esa puerta abierta durante el prólogo y reservar la llave para otro uso.
+2. Colocar la llave antes de Argento como hallazgo ambiental, sin convertirla en
+   una quinta prueba.
+3. Hacer que el pasadizo de Caella conduzca al lado cerrado de esa puerta.
+
+Recomendación: opción 3. Integra la geometría existente con la segunda prueba y
+permite conservar la utilidad de la llave para volver a abrir el paso desde el
+lado opuesto. La llave será un objeto temporal del Limbo salvo que Palomo la
+introduzca expresamente en la Caja.
+
+-------------------------------------------------------------------------------
+16. APERTURA: DESPERTAR, VOZ DESCONOCIDA Y PALOMO
+-------------------------------------------------------------------------------
+
+16.1. ESTADO INICIAL
+
+- Pantalla negra durante un intervalo breve y saltable.
+- Sonido amortiguado, sin reproducción explícita del asesinato.
+- No mostrar cadáver, atacantes ni alcantarillas.
+- Inventario exterior vacío.
+- Posición en CA_M01_START_SPOT.
+- Salud y necesidades en valores tutoriales seguros.
+- Activar CA_Q_MAIN_M00_THE_FOOL.
+
+Texto inicial del diario:
+
+“Desperté en una propiedad que no reconozco. Recuerdo quién soy y de dónde vengo,
+pero no cómo llegué. Una voz que nadie más parece oír insiste en que busque una
+salida.”
+
+16.2. VOZ DESCONOCIDA
+
+Identificador del hablante visible:
+
+$CA_SPEAKER_UNKNOWN_VOICE = “Voz desconocida”
+
+Primera intervención:
+
+VOZ DESCONOCIDA:
+“Despertá. No intentes recordar todavía. Hay alguien cerca que puede ayudarte a
+encontrar el camino.”
+
+Respuesta opcional del jugador:
+
+1. “¿Quién sos?”
+   VOZ: “Alguien demasiado lejos para hacer más que hablar.”
+
+2. “¿Dónde estoy?”
+   VOZ: “En un lugar que no puede retenerte para siempre.”
+
+3. “[Guardar silencio.]”
+   La voz no insiste.
+
+No conceder conocimiento sobre Selene. Marcar únicamente
+CA_F_M01_UNKNOWN_VOICE_HEARD.
+
+16.3. APARICIÓN DE PALOMO
+
+Palomo aparece al entrar en el recibidor o al volver la cámara después de
+examinar un elemento cercano. Evitar teletransportarlo con un destello evidente.
+Usar el sonido de desaparición existente sólo cuando corresponda y con volumen
+moderado.
+
+Diálogo base:
+
+PALOMO:
+“Buen día. O algo suficientemente parecido como para no discutir con el reloj.”
+
+Preguntas:
+
+JUGADOR: “¿Dónde estamos?”
+
+PALOMO:
+“En el recibidor, si busca precisión. Si busca respuestas más ambiciosas, temo
+que la arquitectura no será de mucha ayuda.”
+
+JUGADOR: “¿Qué me pasó?”
+
+PALOMO:
+“Se despertó. Suele ocurrir después de cerrar los ojos, aunque admito que usted
+le dio bastante dramatismo.”
+
+JUGADOR: “No recuerdo cómo llegué.”
+
+PALOMO:
+“La memoria es una anfitriona selectiva. A veces deja el abrigo en la entrada y
+se lleva al invitado.”
+
+JUGADOR: “Escucho la voz de una mujer.”
+
+PALOMO:
+“Las alucinaciones son huéspedes descorteses: llegan sin invitación y pronto
+quieren decidir dónde ponemos los muebles. Tenga cuidado.”
+
+JUGADOR: “No parece una alucinación.”
+
+PALOMO:
+“Las buenas nunca lo parecen.”
+
+Orientación hacia Argento:
+
+PALOMO:
+“Argento lleva tiempo intentando que esta casa escuche razones. Quizá le resulte
+agradable descubrir que una persona es más receptiva que una pared.”
+
+No mostrar “Nueva misión de Palomo”. Palomo sólo actualiza el objetivo existente:
+“Hablar con Argento”.
+
+Al terminar, Palomo desaparece cuando queda fuera del campo visual. Establecer
+CA_F_M01_PALOMO_MET.
+
+-------------------------------------------------------------------------------
+17. PRUEBA 1: ARGENTO — RAMA SOCIAL
+-------------------------------------------------------------------------------
+
+17.1. OBJETIVO
+
+Convencer a Rulo, Ronnie y Caella de que ayuden al protagonista.
+
+La prueba debe enseñar:
+
+- Empatía / Emoción.
+- Elocuencia / Labia.
+- Carisma / Persuasión.
+- Opciones bloqueadas y requisitos visibles.
+- Fallo social con ruta alternativa.
+- Información como recurso.
+
+17.2. INICIO
+
+ARGENTO:
+“También despertaste sin recordar el camino. Eso nos da una pregunta en común,
+pero todavía no una respuesta.”
+
+ARGENTO:
+“Rulo conoce aquello que puede enfrentarte. Ronnie sabe qué necesita un viaje.
+Caella percibe lo que esta casa intenta esconder. Ninguno tiene motivos para
+acompañarte sólo porque se lo pidas.”
+
+ARGENTO:
+“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+obliguen al otro. Consiste en descubrir qué está intentando proteger’. Nunca
+aclaró qué esperaba que hiciéramos con eso.”
+
+Al aceptar:
+
+- CA_F_M01_ARGENTO_STARTED = true.
+- Mostrar objetivo “Conseguir la ayuda de los residentes: 0/3”.
+- Habilitar los nodos de reclutamiento.
+
+17.3. DISTRIBUCIÓN DE MECÁNICAS
+
+Rulo introduce Empatía:
+
+- Motivo visible: no quiere participar en otra tarea sin sentido.
+- Lectura exitosa: en realidad teme poner en peligro a los demás y ser utilizado
+  únicamente por su fuerza.
+- Respuesta adecuada: admitir que el jugador necesita su ayuda, sin reducirlo a
+  un arma.
+- Resultado: CA_F_M01_RULO_CONVINCED = true.
+
+Ronnie introduce Elocuencia:
+
+- Motivo visible: considera que no existe un plan ni provisiones.
+- Una opción bloqueada por Labia permite exponer una secuencia concreta: reunir
+  información, abrir un camino, conseguir recursos y prepararse antes de luchar.
+- Si el umbral no se alcanza, el jugador puede obtener esa estructura hablando
+  nuevamente con Argento y volver con información nueva.
+- Resultado: CA_F_M01_RONNIE_CONVINCED = true.
+
+Caella introduce Persuasión:
+
+- Motivo visible: la anomalía mágica alrededor del protagonista podría ser
+  peligrosa.
+- El jugador puede intentar persuadirla de examinarla y ayudar a buscar el paso.
+- Un fallo no puede cerrar la ruta. Tras fallar, una reacción de la sala o una
+  observación de Argento aporta una nueva opción determinista: reconocer el
+  peligro y ofrecer que Caella establezca las condiciones de seguridad.
+- Resultado: CA_F_M01_CAELLA_CONVINCED = true.
+
+17.4. REGLA DE FALLO
+
+Cada tirada aleatoria posee CheckOnceKey. Si falla:
+
+- Registrar el fallo.
+- Cambiar el diálogo.
+- Proporcionar una tarea breve, información nueva o respuesta alternativa.
+- No permitir repetir inmediatamente la misma tirada.
+- No volver hostil al NPC.
+- No bloquear la misión.
+
+17.5. FINAL
+
+Cuando las tres flags estén activas:
+
+- Actualizar 3/3.
+- Volver con Argento.
+- Establecer CA_F_M01_ARGENTO_COMPLETE.
+- Avanzar a CA_M01_STATE_ARGENTO_COMPLETE.
+- Habilitar el diálogo de Caella.
+
+ARGENTO:
+“No los convenciste de lo mismo. A cada uno le diste una razón distinta para
+avanzar. Tal vez eso era lo que Palomo intentaba decir.”
+
+-------------------------------------------------------------------------------
+18. PRUEBA 2: CAELLA — RAMA MÁGICA
+-------------------------------------------------------------------------------
+
+18.1. OBJETIVO
+
+Aprender las acciones mágicas básicas, resolver un acertijo elemental y revelar
+el pasadizo secreto.
+
+18.2. INICIO
+
+CAELLA:
+“Hay una pared que suena vacía cuando nadie la toca y sólida cuando intento
+abrirla. La casa tiene un sentido del humor horrible. Debe de llevarse bien con
+Palomo.”
+
+CAELLA:
+“Él me dijo: ‘No hay pared más firme que aquella que todos han decidido dejar de
+mirar’. Pensé que se burlaba de mí. Todavía lo pienso, pero quizá además dejaba
+una pista.”
+
+Establecer CA_F_M01_CAELLA_STARTED.
+
+18.3. EQUIPO TEMPORAL
+
+Si el jugador no posee equipo mágico compatible:
+
+- Entregar CA_LimboMagicImplement.
+- Entregar CA_LimboMagicSeal.
+- Asignar ItemId a ambas instancias.
+- Etiquetarlas CA_ITEMFLAG_LIMBO_TEMP.
+- No permitir vender, soltar fuera de la sala ni transferir a contenedores.
+
+Todas las clases pueden completar la prueba. Los atributos mágicos modifican la
+eficiencia, pero no el acceso a las acciones tutoriales.
+
+18.4. ACCIONES DE ENSEÑANZA
+
+Antes del acertijo, registrar:
+
+- Un lanzamiento primario válido: Fire.
+- Una función mágica secundaria válida: AltFire.
+- Una canalización válida con el Sello: Reload/Channel.
+- Consumo y recuperación visible de Ánima.
+
+No exigir daño contra un enemigo. Utilizar blancos o runas que respondan a la
+acción correcta.
+
+18.5. ACERTIJO
+
+Texto visible:
+
+“La tierra lo sostiene.
+El aire lo delata.
+El fuego lo revela.
+El agua borra sus huellas.
+Cuando los cuatro hablen, la pared recordará que fue puerta.”
+
+Solución operativa:
+
+1. Activar Tierra.
+2. Activar Aire.
+3. Activar Fuego.
+4. Activar Agua.
+
+Cada runa exige una interacción o ataque mágico del elemento correspondiente.
+Si la herramienta temporal utiliza un selector elemental, Caella enseña a
+cambiarlo antes de iniciar la secuencia.
+
+18.6. ERROR Y REINICIO
+
+Al activar una runa incorrecta:
+
+- Reproducir feedback visual y sonoro breve.
+- Apagar todas las runas.
+- Reiniciar PuzzleSequenceIndex a 0.
+- No causar daño permanente.
+- No retirar Ánima adicional como castigo.
+- Caella ofrece una pista progresiva después de dos y cuatro errores.
+
+Pista 1:
+
+“No enumera objetos. Describe lo que cada elemento hace con el camino.”
+
+Pista 2:
+
+“Empieza por aquello que sostiene la casa. Terminá con lo que puede borrar una
+huella.”
+
+18.7. APERTURA DEL PASADIZO
+
+Al completar la secuencia:
+
+- Establecer CA_F_M01_SECRET_PASSAGE_OPEN.
+- Ejecutar una sola vez el movimiento de sector o reemplazo de geometría.
+- Mantener el pasadizo abierto al guardar y cargar.
+- Habilitar la ruta de Ronnie.
+- Establecer CA_F_M01_CAELLA_COMPLETE.
+
+CAELLA:
+“La pared sabía que era una puerta. Sólo necesitaba que alguien se lo recordara
+en el idioma correcto.”
+
+-------------------------------------------------------------------------------
+19. PRUEBA 3: RONNIE — RAMA DE SUPERVIVENCIA
+-------------------------------------------------------------------------------
+
+19.1. OBJETIVO
+
+Atravesar la ruta revelada, administrar recursos y reunir las materias primas
+necesarias para el arma inicial de la clase elegida.
+
+19.2. INICIO
+
+RONNIE:
+“Encontrar una salida no sirve si llegás a ella sin agua, sin aire y cargando
+todo lo que no supiste abandonar.”
+
+RONNIE:
+“Palomo me dijo: ‘Sobrevivir no es permanecer donde nada puede alcanzarlo. A
+veces eso sólo recibe otro nombre: quedarse’. Nunca supe si hablaba de esta casa
+o de mí.”
+
+Establecer CA_F_M01_RONNIE_STARTED.
+
+19.3. SELECCIÓN DEL ARMA Y RECETA
+
+No escribir listas de materiales duplicadas dentro de la misión. Resolver el
+arma mediante una tabla autoritativa:
+
+GetStarterLoadout(PlayerClass) → StarterLoadoutDefinition
+StarterLoadoutDefinition.PrimaryWeaponRecipe → RecipeId
+RecipeId.GetRawRequirements() → MaterialRequirement[]
+
+Perfiles requeridos:
+
+CA_STARTER_LOADOUT_WARRIOR
+CA_STARTER_LOADOUT_EXPLORER
+CA_STARTER_LOADOUT_PRIEST
+CA_STARTER_LOADOUT_MAGE
+
+Los objetos exactos permanecen [PENDIENTES]. La misión debe poder cambiar de
+loadout sin modificar scripts de mapa.
+
+19.4. CONTENIDOS DE LA RUTA
+
+Tramo A — preparación:
+
+- Mostrar la carga actual y el coste de Aire.
+- Entregar una herramienta dañada o localizarla cerca de la entrada.
+- Enseñar a inspeccionar su condición e ItemId.
+- Proporcionar materiales controlados para repararla.
+- Completar una reparación real en CA_M01_REPAIR_STATION.
+
+Tramo B — necesidades:
+
+- Colocar agua y alimento suficientes, sin convertirlos en recursos vendibles
+  fuera del Limbo.
+- Llevar Sed y Hambre a valores tutoriales que permitan usar una unidad sin
+  colocar al jugador en estado crítico.
+- Registrar una utilización correcta de alimento y agua.
+
+Tramo C — Aire y movimiento:
+
+- Crear una distancia corta donde correr reduzca el Aire de forma visible.
+- Incluir una alternativa lenta para demostrar que no es obligatorio agotarse.
+- Permitir recuperación completa antes de cualquier peligro.
+
+Tramo D — carga:
+
+- Colocar materiales necesarios y objetos prescindibles más pesados.
+- Mostrar la diferencia entre capacidad de recoger y conveniencia de cargar.
+- No impedir el progreso si el jugador decide volver varias veces.
+
+Tramo E — respiración o paso inundado:
+
+- Utilizar un sector de agua breve y seguro para presentar el Aire compartido.
+- Evitar una distancia capaz de matar a un jugador que entra con Aire completo.
+- Colocar salida clara y zona de recuperación.
+- No depender de inmovilidad o bugs previos de entrada al agua.
+
+19.5. MATERIALES DE MISIÓN
+
+- Cada recurso necesario debe proceder de al menos un nodo garantizado.
+- Los nodos sólo conceden la cantidad requerida más un margen mínimo de seguridad.
+- Los materiales llevan CA_ITEMFLAG_LIMBO_QUEST hasta ser convertidos.
+- No pueden venderse ni guardarse fuera del flujo de misión.
+- Si un material se pierde en geometría inaccesible, el controlador lo recupera
+  o repone sin duplicar el total autorizado.
+- El progreso utiliza cantidades reservadas, no simples mensajes de pickup.
+
+19.6. FINAL
+
+Cuando todos los requisitos de RecipeId estén disponibles:
+
+- Establecer CA_F_M01_MATERIALS_COMPLETE.
+- Volver con Ronnie.
+- Establecer CA_F_M01_RONNIE_COMPLETE.
+- Habilitar CA_M01_STATE_PREPARE_WEAPON.
+
+RONNIE:
+“Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
+parte importante.”
+
+-------------------------------------------------------------------------------
+20. PREPARACIÓN DEL ARMA INICIAL
+-------------------------------------------------------------------------------
+
+Esta fase conecta supervivencia y combate. No pertenece a una quinta rama.
+
+20.1. CRAFTEO
+
+- Abrir la receta del arma inicial derivada en la fase anterior.
+- Permitir el crafteo directo desde materias primas.
+- Mostrar los subcomponentes y sus eficiencias vigentes.
+- Reservar materiales al comenzar la tarea.
+- Hacer avanzar la tarea sólo mientras el jugador permanezca activamente en la
+  estación y la infraestructura esté lista.
+- Detener el progreso al cerrar la interacción o abandonar la estación, de
+  acuerdo con las reglas generales actuales.
+- No duplicar materiales al cancelar, guardar o cargar.
+
+20.2. RESULTADO
+
+- Crear una única instancia con StarterWeaponItemId.
+- Marcarla CA_ITEMFLAG_LIMBO_PRESERVABLE.
+- Equiparla o pedir al jugador que la equipe.
+- Registrar CA_F_M01_STARTER_WEAPON_CRAFTED.
+- Conservar la eficiencia real de la pieza.
+- No crear todavía una segunda copia dentro de la Caja.
+
+Si el diseño final decide que la Caja genera el arma automáticamente, esta fase
+puede reemplazarse por una preparación guiada. Sin embargo, mantener un crafteo
+real aprovecha MAP01 para enseñar una mecánica central ya implementada.
+
+-------------------------------------------------------------------------------
+21. PRUEBA 4: RULO — RAMA DE COMBATE
+-------------------------------------------------------------------------------
+
+21.1. OBJETIVO
+
+Demostrar las acciones fundamentales de combate y derrotar al Toro.
+
+21.2. INICIO
+
+RULO:
+“El arma está lista. Eso no significa que vos lo estés.”
+
+RULO:
+“Yo ya le gané al Toro. Cuando terminó, Palomo me dijo: ‘Uno puede perder mucho
+después de haber ganado’. Si entendés qué quiso decir, guardate la explicación
+para cuando salgamos.”
+
+Establecer CA_F_M01_RULO_STARTED.
+
+21.3. ACCIONES PREVIAS
+
+Antes de liberar al Toro, utilizar blancos de práctica para registrar:
+
+- Fire: ataque primario.
+- AltFire: función secundaria del arma.
+- Zoom o defensa equivalente.
+- Ataque cargado o maniobra avanzada equivalente.
+- Consumo y recuperación de Aire.
+
+La validación debe reconocer familias distintas. No exigir bloqueo con escudo a
+una combinación que no pueda equiparlo; utilizar la defensa equivalente o
+proporcionar equipo temporal compatible.
+
+21.4. ACTOR DEL TORO
+
+CA_LimboBull debe reutilizar comportamiento aprobado del Toro siempre que sea
+posible y añadir únicamente:
+
+- Vinculación con CA_M01QuestController.
+- Escalado tutorial.
+- Reinicio controlado.
+- Imposibilidad de abandonar el recinto durante el encuentro.
+- Supresión de drops explotables.
+- Estado final de disipación apropiado para el Limbo.
+
+La cornada debe conservar su identidad y señales anticipatorias. El jugador
+necesita tiempo suficiente para reconocerla, defenderse o salir de la trayectoria.
+
+21.5. DERROTA DEL JUGADOR
+
+Para no revelar una nueva resurrección ni obligar a perder toda la misión:
+
+- Interceptar la derrota dentro del recinto antes de una muerte definitiva.
+- Fundir la pantalla brevemente.
+- Restaurar al jugador en CA_M01_BULL_PLAYER_START.
+- Restaurar valores tutoriales de salud, Aire y Ánima.
+- Reiniciar al Toro.
+- Conservar acciones previas y objetos de misión.
+- No incrementar recompensas ni contadores.
+
+Texto opcional de Rulo después del primer fracaso:
+
+“Ahora sabés cómo empieza. Eso vale más que fingir que no ocurrió.”
+
+21.6. VICTORIA
+
+Al derrotar al Toro:
+
+- Establecer CA_F_M01_BULL_DEFEATED.
+- Abrir el recinto.
+- Reproducir estado de disipación una sola vez.
+- Establecer CA_F_M01_RULO_COMPLETE.
+- Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED.
+- Habilitar a Palomo en el segundo piso.
+- Actualizar diario: “Buscar nuevamente a Palomo”.
+
+RULO:
+“Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
+
+-------------------------------------------------------------------------------
+22. PALOMO, LA CAJA MÁGICA Y EL LOCO
+-------------------------------------------------------------------------------
+
+22.1. APARICIÓN FINAL
+
+Palomo no debe aparecer delante del jugador mediante un efecto ostentoso. Al
+habilitarse la etapa, colocarlo en CA_M01_PALOMO_UPSTAIRS_SPOT antes de que el
+jugador tenga línea de visión. Si se encuentra mirando el punto, esperar a que
+gire, cruce una puerta o cambie de sector.
+
+PALOMO:
+“Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
+confundir ninguno con el camino completo.”
+
+Opciones:
+
+JUGADOR: “¿Todo esto fue idea suya?”
+
+PALOMO:
+“Sería vanidoso adjudicarme una casa, cuatro voluntades y un Toro particularmente
+malhumorado. Digamos que hice algunas presentaciones.”
+
+JUGADOR: “¿Por qué ellos no pueden salir?”
+
+PALOMO:
+“Tal vez porque todavía llaman salida a una puerta. Tal vez porque la casa es
+caprichosa. Si encuentra una respuesta menos incómoda, compártala.”
+
+JUGADOR: “¿Ahora me va a decir dónde estamos?”
+
+PALOMO:
+“En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas
+ambiciosas.”
+
+JUGADOR: “La voz volvió a hablarme.”
+
+PALOMO:
+“Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado
+conviene tenerles.”
+
+22.2. ENTREGA DE LA CAJA
+
+PALOMO:
+“Voy a pedirle un favor. Cuide esta caja mientras atiendo asuntos menos cómodos
+de transportar.”
+
+JUGADOR: “¿Qué tiene de mágica?”
+
+PALOMO:
+“Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable
+atrae ladrones.”
+
+JUGADOR: “¿Qué contiene?”
+
+PALOMO:
+“Espacio. Una cantidad sorprendentemente difícil de guardar.”
+
+JUGADOR: “¿Por qué me la entrega?”
+
+PALOMO:
+“Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien
+que todavía pregunta antes de obedecer.”
+
+Al aceptar:
+
+- Si CA_F_M01_MAGIC_BOX_GRANTED es falso, crear exactamente una Caja.
+- Asignar MagicBoxItemId.
+- Establecer propietario.
+- Aplicar las restricciones de soltar, vender y guardar.
+- Establecer CA_F_M01_MAGIC_BOX_GRANTED.
+- Si el flag ya era verdadero, localizar o recuperar la instancia existente; no
+  crear otra.
+
+22.3. FUNCIONES MECÁNICAS DE LA CAJA
+
+Funciones generales confirmadas:
+
+- Peso propio: 10 kg.
+- Reducción de carga: aplicar la fórmula vigente que divide el peso total de su
+  contenido por la cantidad de slots, con el redondeo definido por el sistema.
+- Contenedor persistente por ItemId.
+- No puede soltarse.
+- No puede venderse.
+- No puede almacenarse dentro de otro contenedor.
+- Puede capturar esencias del Tarot.
+- Puede abrir el retorno desde el Limbo.
+
+Funciones mínimas requeridas para MAP01:
+
+CaptureTarotEssence(EssenceActor, TarotCardId)
+StorePreservedItem(ItemId)
+ValidateStarterLoadout(PlayerClass)
+OpenLimboReturn(DestinationMap, DestinationSpot)
+
+Las funciones deben validar propiedad y autoridad. Una llamada duplicada a
+CaptureTarotEssence para El Loco devuelve “ya capturada” sin volver a aplicar
+bonificaciones.
+
+22.4. MANIFESTACIÓN DE EL LOCO
+
+Después de recibir la Caja, manifestar CA_TheFoolEssence en
+CA_M01_FOOL_ESSENCE_SPOT.
+
+Presentación:
+
+- Silenciar parcialmente el ambiente.
+- Mostrar primero una carta sin ilustración completa.
+- Hacer que la figura y el nombre aparezcan al acercar o utilizar la Caja.
+- Evitar que Palomo diga “El Loco” antes de que la carta lo muestre.
+
+Interacción:
+
+1. El jugador selecciona o utiliza la Caja sobre la esencia.
+2. La Caja reproduce su primera animación de captura.
+3. La esencia desaparece sólo después de confirmar el guardado.
+4. Se concede Arcano Mayor 0 — El Loco.
+5. Se aplica una sola vez la bonificación global vigente de Arcano Mayor.
+6. Se actualiza el registro de Tarot.
+7. Se establece CA_F_M01_THE_FOOL_CAPTURED.
+
+Si el inventario, la animación o el cambio de estado falla, la esencia permanece
+disponible. Nunca consumir el actor antes de confirmar el estado autoritativo.
+
+Palomo después de la captura:
+
+“Parece que la caja estaba menos vacía de lo que ambos suponíamos. O usted más
+lleno. Conviene desconfiar de las medidas sencillas.”
+
+22.5. REACCIÓN DE LOS RESIDENTES
+
+Los cuatro pueden advertir la manifestación desde la distancia o reaccionar al
+cambio de la mansión. No comprenden qué ocurrió.
+
+- Argento percibe que una decisión quedó fijada.
+- Caella reconoce una esencia, pero nunca había visto una capturada.
+- Ronnie nota que apareció una ruta donde antes no había ninguna.
+- Rulo comprueba que la puerta final sólo responde al protagonista.
+
+Ninguno afirma estar muerto ni exige una explicación completa. Pueden pedir al
+jugador que recuerde el camino por si consigue regresar.
+
+22.6. APERTURA DE LA SALIDA
+
+Tras capturar El Loco:
+
+- Establecer CA_F_M01_EXIT_READY.
+- Activar CA_M01_EXIT_PORTAL_SPOT.
+- La salida debe parecer un corredor, puerta o interrupción del espacio, no un
+  menú de selección de mapa.
+- Sólo el portador de la Caja puede iniciar la transición.
+
+Palomo:
+
+“Encontró una salida. No prometí que condujera al lugar que espera ni que siguiera
+allí cuando quisiera volver.”
+
+-------------------------------------------------------------------------------
+23. TRANSICIÓN A MAP02 — ALCANTARILLAS
+-------------------------------------------------------------------------------
+
+23.1. CONFIRMACIÓN
+
+Antes de cruzar:
+
+SISTEMA:
+“El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?”
+
+Opciones:
+
+1. “Sí. Cruzar.”
+2. “No. Todavía no.”
+
+La segunda opción cierra el aviso sin cambiar flags. La primera establece
+CA_F_M01_EXIT_CONFIRMED y comienza la transferencia.
+
+23.2. ORDEN ATÓMICO DE TRANSFERENCIA
+
+Ejecutar en este orden:
+
+1. Bloquear temporalmente nuevas interacciones.
+2. Confirmar que la Caja existe y pertenece al jugador.
+3. Confirmar que El Loco fue capturado.
+4. Resolver el StarterLoadoutDefinition de la clase.
+5. Mover StarterWeaponItemId al interior de la Caja.
+6. Crear dentro de la Caja cualquier elemento básico adicional del loadout que
+   no se haya obtenido durante la misión.
+7. Validar que cada objeto del loadout exista exactamente una vez.
+8. Eliminar del inventario exterior todos los objetos LIMBO_TEMP y
+   LIMBO_QUEST.
+9. Eliminar sobrantes de misión y herramientas de práctica.
+10. Conservar fuera de la Caja únicamente la propia Caja.
+11. Normalizar estados tutoriales de Hambre, Sed, Sueño, Aire, Ánima y salud
+    según valores que se definan para el inicio real.
+12. Establecer CA_F_M01_INVENTORY_SANITIZED.
+13. Guardar misión, Tarot, ItemId, contenido de la Caja y clase.
+14. Establecer CA_F_M01_COMPLETE.
+15. Ejecutar ChangeLevel hacia MAP02 y CA_M02_SEWER_PLAYER_START.
+
+Si cualquier validación entre 2 y 13 falla:
+
+- No cambiar de mapa.
+- Desbloquear las interacciones.
+- Mostrar un mensaje localizado no narrativo.
+- Mantener la salida activa para reintentar.
+- No duplicar objetos al reanudar.
+
+23.3. APARICIÓN EN LAS ALCANTARILLAS
+
+Al entrar en MAP02:
+
+- El jugador aparece en el lugar donde fue arrojado su cadáver.
+- El entorno muestra agua sucia, ladrillos, restos y señales de abandono.
+- No reproducir un flashback completo de la emboscada.
+- Puede haber sangre seca, roturas en la ropa o una herida cerrada como indicios.
+- El inventario exterior contiene únicamente la Caja.
+- El equipo básico se encuentra dentro de ella.
+- MAP01 no figura como destino disponible.
+
+Intervención breve de la Voz desconocida:
+
+“Ahora sí. Movete antes de que descubran que seguís respirando.”
+
+La frase confirma que alguien puede buscarlo, pero no explica quién lo mató ni
+cómo regresó.
+
+23.4. FINALIZACIÓN DE LA MISIÓN
+
+La recompensa debe quedar registrada antes del cambio de mapa, pero la
+notificación final puede aparecer al recuperar control en MAP02:
+
+“Misión completada: Donde despiertan los perdidos.”
+“Arcano obtenido: El Loco.”
+
+No revelar “Regresaste del Limbo”.
+
+-------------------------------------------------------------------------------
+24. DIÁLOGOS OBLIGATORIOS DE MAP01
+-------------------------------------------------------------------------------
+
+24.1. IDENTIFICADORES MÍNIMOS
+
+CA_DLG_M01_UNKNOWN_VOICE_WAKE
+CA_DLG_M01_PALOMO_FOYER
+CA_DLG_M01_ARGENTO_START
+CA_DLG_M01_RECRUIT_RULO
+CA_DLG_M01_RECRUIT_RONNIE
+CA_DLG_M01_RECRUIT_CAELLA
+CA_DLG_M01_ARGENTO_COMPLETE
+CA_DLG_M01_CAELLA_START
+CA_DLG_M01_CAELLA_HINT_1
+CA_DLG_M01_CAELLA_HINT_2
+CA_DLG_M01_CAELLA_COMPLETE
+CA_DLG_M01_RONNIE_START
+CA_DLG_M01_RONNIE_PROGRESS
+CA_DLG_M01_RONNIE_COMPLETE
+CA_DLG_M01_RULO_START
+CA_DLG_M01_RULO_RETRY
+CA_DLG_M01_RULO_COMPLETE
+CA_DLG_M01_PALOMO_UPSTAIRS
+CA_DLG_M01_PALOMO_BOX
+CA_DLG_M01_PALOMO_EXIT
+
+24.2. REGLAS DE SELECCIÓN DE NODO
+
+Prioridad al interactuar con un NPC:
+
+1. Reacción única a un acontecimiento recién ocurrido.
+2. Entrega o finalización de la etapa activa.
+3. Progreso o pista de la etapa activa.
+4. Oferta de la etapa siguiente.
+5. Diálogo ambiental repetible.
+
+No utilizar únicamente “habló/no habló”. Registrar nodos agotados y flags de
+conocimiento para que el NPC no repita su presentación después de avanzar.
+
+24.3. TONO DE CADA PERSONAJE
+
+Palomo:
+
+- Cortés, metafórico, filosófico, amigable y burlón.
+- Evasivo con propósito.
+- Niega conocer la voz y la llama alucinación.
+
+Argento:
+
+- Sereno y atento a motivaciones.
+- Enseña sin manipular la tirada para que el jugador siempre tenga éxito.
+- Reconoce que distintas personas necesitan distintas razones.
+
+Caella:
+
+- Rápida, curiosa y ligeramente nerviosa ante anomalías.
+- Usa humor para contener el miedo.
+- No explica como certeza aquello que sólo percibe.
+
+Ronnie:
+
+- Práctico, preciso y desconfiado de planes sin preparación.
+- Su origen Caelith puede aparecer en preguntas opcionales, no como exposición
+  obligatoria.
+
+Rulo:
+
+- Directo, material y protector.
+- No habla como una criatura ingenua.
+- Distingue fuerza de decisión táctica.
+
+24.4. FRASES DE PALOMO RECORDADAS
+
+Estas líneas deben atribuirse expresamente a Palomo y no presentarse como una
+conclusión consciente del NPC:
+
+ARGENTO:
+“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+obliguen al otro. Consiste en descubrir qué está intentando proteger’. No sé qué
+esperaba que hiciéramos con eso.”
+
+CAELLA:
+“Palomo dijo: ‘No hay pared más firme que aquella que todos han decidido dejar
+de mirar’. Pensé que se estaba burlando. Sigo pensándolo.”
+
+RONNIE:
+“Palomo me dijo que sobrevivir no es permanecer donde nada puede alcanzarte, que
+a veces eso sólo recibe otro nombre: quedarse. Nunca aclaró de qué hablaba.”
+
+RULO:
+“Yo le gané al Toro. Palomo miró el recinto y dijo: ‘Uno puede perder mucho
+después de haber ganado’. Después se fue.”
+
+24.5. PROTECCIÓN DEL MISTERIO EN DIÁLOGO
+
+Antes de empaquetar la versión, buscar y revisar toda aparición visible de:
+
+Selene
+Limbo
+muerte
+muerto
+alma
+resurrección
+cadáver
+cuerpo corrompido
+
+Las palabras pueden aparecer en comentarios y nombres internos, pero no en
+claves de diálogo o diario accesibles durante MAP01.
+
+-------------------------------------------------------------------------------
+25. INVENTARIO, OBJETOS TEMPORALES Y PERSISTENCIA
+-------------------------------------------------------------------------------
+
+25.1. FLAGS DE OBJETO
+
+CA_ITEMFLAG_LIMBO_TEMP
+
+- Objeto de práctica.
+- Se elimina al salir.
+- No puede venderse, almacenarse ni convertirse en recompensa.
+
+CA_ITEMFLAG_LIMBO_QUEST
+
+- Material u objeto necesario para una etapa.
+- Se reserva de forma autoritativa.
+- Se elimina o consume antes de MAP02.
+
+CA_ITEMFLAG_LIMBO_PRESERVABLE
+
+- Pieza que puede trasladarse al interior de la Caja.
+- Debe aparecer en la lista del StarterLoadoutDefinition.
+- Conserva ItemId, condición y eficiencia.
+
+CA_ITEMFLAG_UNIQUE_BOUND
+
+- Caja Mágica y futuros objetos equivalentes.
+- No puede soltarse, venderse ni guardarse.
+
+25.2. REGLA DEL EQUIPO INICIAL
+
+Al salir de MAP01:
+
+- Inventario exterior: únicamente CA_MagicBox.
+- Interior de la Caja: equipamiento básico de la clase.
+- No conservar consumibles infinitos, materiales sobrantes, herramientas de
+  práctica ni runas.
+- No crear dos copias del arma si la fabricada ya fue preservada.
+- Si el arma se perdió, recuperar por ItemId antes de decidir que falta.
+- Si realmente fue destruida, reconstruir una única instancia desde el registro
+  de misión sin devolver los materiales.
+
+25.3. CONTENIDO POR CLASE
+
+[PENDIENTE DE CATÁLOGO DEFINITIVO]
+
+Definir en datos, no en el controlador de MAP01:
+
+StarterLoadoutDefinition
+{
+    PlayerClass;
+    PrimaryWeaponRecipe;
+    ArmorItem;
+    SecondaryItem;
+    CompatibleAmmo[];
+    BasicConsumables[];
+}
+
+La especificación sólo exige que existan cuatro definiciones:
+
+- Guerrero.
+- Explorador.
+- Sacerdote.
+- Mago.
+
+-------------------------------------------------------------------------------
+26. LOCALIZACIÓN, DIARIO Y PRESENTACIÓN
+-------------------------------------------------------------------------------
+
+26.1. CLAVES PRINCIPALES
+
+$CA_Q_M01_TITLE
+$CA_Q_M01_SUMMARY
+$CA_Q_M01_OBJ_FIND_HELP
+$CA_Q_M01_OBJ_TALK_ARGENTO
+$CA_Q_M01_OBJ_CONVINCE_RESIDENTS
+$CA_Q_M01_OBJ_FOLLOW_CAELLA
+$CA_Q_M01_OBJ_SOLVE_RIDDLE
+$CA_Q_M01_OBJ_FOLLOW_RONNIE
+$CA_Q_M01_OBJ_GATHER_MATERIALS
+$CA_Q_M01_OBJ_PREPARE_WEAPON
+$CA_Q_M01_OBJ_TALK_RULO
+$CA_Q_M01_OBJ_DEFEAT_BULL
+$CA_Q_M01_OBJ_FIND_PALOMO
+$CA_Q_M01_OBJ_CAPTURE_FOOL
+$CA_Q_M01_OBJ_LEAVE_MANSION
+$CA_Q_M01_COMPLETE
+
+$CA_SPEAKER_UNKNOWN_VOICE
+$CA_M01_EXIT_CONFIRM
+$CA_M01_ERROR_TRANSFER
+
+26.2. TEXTOS DE OBJETIVOS
+
+Inicio:
+“Buscar ayuda dentro de la propiedad.”
+
+Argento:
+“Convencer a los residentes de colaborar: {count}/3.”
+
+Caella:
+“Seguir a Caella.”
+“Resolver el acertijo de los cuatro elementos.”
+
+Ronnie:
+“Prepararse para explorar el pasadizo.”
+“Reunir materiales para el arma: {collected}/{required}.”
+
+Preparación:
+“Preparar el arma inicial.”
+
+Rulo:
+“Aprender las acciones básicas de combate.”
+“Derrotar al Toro.”
+
+Final:
+“Buscar nuevamente a Palomo.”
+“Examinar la aparición mediante la Caja.”
+“Abandonar la mansión.”
+
+26.3. INTERFAZ
+
+- El diario muestra progreso y estado.
+- No mantener un tracker permanente en el HUD.
+- Utilizar notificaciones breves al cambiar de etapa.
+- Las opciones sociales bloqueadas aparecen en gris con su requisito.
+- La tirada de Emoción es privada para quien la realiza.
+- No mostrar nombres internos ni claves sin resolver.
+- La primera captura debe explicar el control de la Caja sin describir su origen.
+
+-------------------------------------------------------------------------------
+27. GUARDADO Y MULTIJUGADOR
+-------------------------------------------------------------------------------
+
+27.1. GUARDADO
+
+Puntos mínimos de reconstrucción correcta:
+
+- Antes y después de conocer a Palomo.
+- Durante cualquiera de las tres conversaciones de Argento.
+- Con una tirada social fallida.
+- A mitad de la secuencia de runas.
+- Con el pasadizo abierto.
+- Con materiales parciales.
+- Durante una reparación o crafteo detenido.
+- Antes del Toro.
+- Durante el Toro, si el motor permite guardar.
+- Después de derrotarlo.
+- Con la Caja recibida pero El Loco sin capturar.
+- Con El Loco capturado pero sin cruzar.
+- Después de entrar en MAP02.
+
+Al cargar, CA_M01QuestController reconstruye actores y sectores a partir del
+estado autoritativo. No volver a disparar recompensas OnEnter ya consumidas.
+
+27.2. MULTIJUGADOR
+
+Recomendación inicial:
+
+- Estado de misión compartido por la party.
+- Elección social tomada por el jugador que inicia el diálogo.
+- Resultados de Emoción privados.
+- Materiales y objetivos colectivos, evitando que cada jugador deba vaciar los
+  mismos nodos.
+- Toro escalado por cantidad de jugadores activos.
+- Cada personaje recibe su propia Caja y su loadout de clase.
+- El Loco se registra en cada personaje elegible y una sola vez en el mundo.
+- Salida con comprobación de que toda la party esté lista.
+
+[PENDIENTE]
+
+Si la Caja debe ser literalmente única en la ficción, el cooperativo necesitará
+una explicación adicional. Para la implementación robusta se recomienda una
+instancia vinculada por personaje que represente el mismo artefacto compartido.
+
+-------------------------------------------------------------------------------
+28. PRUEBAS DE ACEPTACIÓN
+-------------------------------------------------------------------------------
+
+28.1. INICIO Y MISTERIO
+
+[ ] El jugador inicia MAP01 sin objetos, conservando clase, especie y atributos.
+[ ] No se reproduce la emboscada ni se muestra el asesino.
+[ ] La voz figura como “Voz desconocida”.
+[ ] Ningún texto visible llama Limbo al mapa.
+[ ] Ningún NPC afirma saber cómo llegó.
+[ ] Palomo responde sin confirmar muerte, alma o resurrección.
+[ ] Si el jugador menciona la voz, Palomo la llama alucinación y aconseja cuidado.
+
+28.2. ORDEN DE ETAPAS
+
+[ ] Argento es siempre la primera prueba.
+[ ] Caella no inicia hasta completar Argento.
+[ ] Ronnie no inicia hasta abrir el pasadizo.
+[ ] Rulo no libera al Toro hasta reunir y preparar el arma.
+[ ] Palomo no aparece arriba hasta derrotar al Toro.
+[ ] No es posible saltar etapas mediante carga, diálogo repetido o cooperativo.
+
+28.3. ARGENTO
+
+[ ] El objetivo muestra 0/3, 1/3, 2/3 y 3/3 correctamente.
+[ ] Rulo introduce una lectura de Empatía.
+[ ] Ronnie introduce una opción de Elocuencia/Labia.
+[ ] Caella introduce Persuasión.
+[ ] Fallar cualquier tirada habilita una ruta alternativa.
+[ ] Ningún NPC se vuelve hostil por un fallo tutorial.
+[ ] Guardar y cargar conserva tiradas agotadas y conocimiento adquirido.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.4. CAELLA
+
+[ ] Todas las clases reciben herramientas temporales si las necesitan.
+[ ] Fire, AltFire y Channel se registran correctamente.
+[ ] El consumo de Ánima es visible y recuperable.
+[ ] La solución Tierra → Aire → Fuego → Agua abre el paso.
+[ ] Una secuencia incorrecta se reinicia sin bloquear.
+[ ] Las pistas aparecen sólo después de los errores definidos.
+[ ] El pasadizo continúa abierto después de guardar y cargar.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.5. RONNIE
+
+[ ] La receta se deriva de la clase y del catálogo autoritativo.
+[ ] La herramienta de supervivencia conserva ItemId al repararse.
+[ ] El progreso de reparación se detiene según las reglas de estación.
+[ ] Existen alimento y agua suficientes sin generar recursos explotables.
+[ ] La sección de Aire es segura para un personaje inicial.
+[ ] La carga enseña una decisión, pero no obliga a descartar un objeto único.
+[ ] Todos los materiales poseen una fuente garantizada.
+[ ] Perder un material no bloquea ni duplica la misión.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.6. ARMA
+
+[ ] El crafteo directo usa las materias primas reunidas.
+[ ] La vista previa coincide con materiales, eficiencias y tiempo reales.
+[ ] Cerrar o abandonar la estación detiene el progreso como corresponda.
+[ ] Cancelar, guardar y cargar no duplica materiales.
+[ ] El arma resultante posee ItemId único.
+[ ] La misma instancia puede introducirse después en la Caja.
+
+28.7. RULO Y TORO
+
+[ ] Todas las familias iniciales pueden completar las acciones de combate.
+[ ] El jugador recibe defensa equivalente si no puede usar escudo.
+[ ] El Toro anticipa la cornada de forma legible.
+[ ] El recinto impide huir durante el combate sin atrapar al jugador después.
+[ ] Perder reinicia sólo el encuentro y no toda la misión.
+[ ] El Toro no concede drops ni experiencia explotables.
+[ ] Vencer activa una sola vez el estado final.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.8. CAJA, TAROT Y SALIDA
+
+[ ] Palomo entrega una única Caja.
+[ ] La Caja pesa 10 kg y aplica la fórmula vigente a sus contenidos.
+[ ] No puede soltarse, venderse ni guardarse.
+[ ] El Loco no puede capturarse sin la Caja.
+[ ] La captura concede la carta y bonificación una sola vez.
+[ ] La esencia no desaparece si falla el guardado.
+[ ] La salida sólo se habilita después de la captura.
+[ ] “Todavía no” cancela la transición sin penalización.
+[ ] La limpieza deja sólo la Caja en el inventario exterior.
+[ ] El loadout correcto se encuentra dentro de la Caja.
+[ ] MAP02 abre en las alcantarillas.
+[ ] MAP01 queda bloqueado como destino normal.
+
+28.9. REGRESIÓN
+
+[ ] MAP01 abre en GZDoom 4.14.2 sin errores ni warnings nuevos.
+[ ] No aparece ninguna clave CA_* sin localizar.
+[ ] Los NPC no participan en infighting.
+[ ] La piscina, agua y geometría existente siguen funcionando.
+[ ] El Toro base utilizado fuera del prólogo no cambia de comportamiento.
+[ ] El sistema de crafteo general no recibe tiempos o recetas codificados sólo
+    para esta misión.
+[ ] Los ItemId continúan siendo únicos tras cambiar a MAP02 y volver a cargar.
+
+-------------------------------------------------------------------------------
+29. DECISIONES TODAVÍA PENDIENTES
+-------------------------------------------------------------------------------
+
+Estas decisiones no impiden programar la estructura, pero deben resolverse antes
+de fijar todos los datos finales:
+
+1. Nombre definitivo de la misión.
+   Propuesta actual: “Donde despiertan los perdidos”.
+
+2. Lugar exacto de aparición dentro de MAP01.
+   Recomendación: exterior inmediato o recibidor apartado, sin visión directa de
+   los cuatro NPC.
+
+3. Contenido exacto de los cuatro StarterLoadoutDefinition.
+
+4. Uso definitivo de la Llave de Plata.
+   Recomendación: abrir desde el pasadizo de Caella una puerta ya existente.
+
+5. Texto definitivo y presentación visual del acertijo.
+   La solución operativa propuesta es Tierra → Aire → Fuego → Agua.
+
+6. Si el Toro es una criatura real atrapada, una manifestación del Limbo o una
+   construcción de Palomo.
+   Recomendación: dejarlo sin explicación durante MAP01.
+
+7. Valores de salud y necesidades al despertar en MAP02.
+
+8. Momento exacto en que el jugador descubre que murió.
+   Recomendación: permitir la inferencia en las alcantarillas y confirmar la
+   verdad durante el encuentro con el primero de los cuatro jefes.
+
+9. Arcano Mayor correspondiente a cada uno de los cuatro jefes.
+
+10. Motivo individual por el que cada residente no pudo integrar las otras ramas.
+
+11. Tratamiento cooperativo de una Caja narrativamente única.
+
+12. Nombre e identidad del príncipe infernal.
+
+===============================================================================
+FIN DEL DOCUMENTO — VERSIÓN 1.0
+===============================================================================

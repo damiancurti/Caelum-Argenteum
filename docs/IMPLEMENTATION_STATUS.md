@@ -1,9 +1,146 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## MAP01 resident placement and secret survival cave 4.33.0c
+
+**Implemented; deterministic source/map audits and GZDoom 4.14.2 parser plus
+MAP01 load checks passed; focused author validation pending**
+
+The complete V4.33.0b matrix was accepted by the author. This revision changes
+only the reported dialogue duplication and the physical MAP01 preparation for
+the already reserved phases 30–60; it does not advance the quest beyond the
+prepared Argento state.
+
+The Unknown Voice opening now exposes two explicit questions and one native
+USDF goodbye labelled **[Guardar silencio.]**. The redundant explicit silence
+choice was removed, so the visible option occurs exactly once while preserving
+Q/Escape closure and the same persistent `UNKNOWN_VOICE_HEARD` fact.
+
+MAP01 now contains one anchored story instance of each resident:
+
+| Resident | Position | Angle |
+| --- | ---: | ---: |
+| Argento | `(1040, -378, 136)` | 90° |
+| Caella | `(-290, -378, 136)` | 90° |
+| Rulo | `(-290, 378, 136)` | 270° |
+| Ronnie | `(1036, 378, 136)` | 270° |
+
+These instances remain solid and tangible, but are friendly, invulnerable and
+do not acquire targets. A displacement below 500 MU is tolerated. At 500 MU or
+more they use their running animation and return in a straight line to the
+exact stored spawn point and angle. Debug summons without `args[0]=1` retain
+their accepted combat behavior.
+
+The east side of MAP01 adds two mansion-textured, double-sided false wall
+panels at `(1842,-360,0)` and `(1944,-87,0)`. They are visible but have no
+collision. The solid back wall is centered at `(1842,366,0)`. An 84×88-MU
+platform centered at `(1917,316,0)` connects, without a map or character
+restart, to a closed lower cave and a return platform. Its footprint remains
+inside sector 92 and exceeds the maximum XL character diameter of 42.67 MU.
+
+The cave contains three renewable young trees, tutorial iron/coal/copper/tin
+veins and exactly one T1 hatchet pickup. That pickup resolves its size from the
+character at collection time, so XS through XL characters can equip the same
+physical tool. Fire preserves the global slashing rule for trees; AltFire uses
+the hatchet's blunt side on these four tutorial veins only. Ordinary world
+veins continue to require piercing damage.
+
+## Canonical MAP01 prologue foundation 4.33.0b
+
+**Implemented; cumulative source reconstruction and deterministic audits passed;
+the complete focused author matrix passed; accepted and extended physically by
+V4.33.0c**
+
+The supplied `MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` is now part of the
+project documentation and supersedes the test-only Palomo adventure. Quest ID
+0 is renamed internally to `QUEST_MAIN_M00_THE_FOOL`, while its persistent
+index and the accepted 32×8 storage layout remain stable. The full MAP01
+sequence has named states from 00 through 100 and 64 reserved factual flags;
+only phases 00–20 advance in this subpatch.
+
+After character confirmation in MAP01, a stateless EventHandler begins
+**Donde despiertan los perdidos**, applies a short black wake-up fade and opens
+the Unknown Voice through GZDoom's native USDF conversation system. The voice
+is represented only by a temporary invisible technical speaker. Hearing its
+opening line is recorded once, independently of the optional answer or Q exit,
+then reveals the anchored Palomo with a discreet alpha fade.
+
+Palomo's foyer conversation replaces the old gift/shop tree. Four optional
+questions are exhausted through persistent knowledge flags; mentioning the
+woman's voice records Palomo's hallucination answer and exposes the prescribed
+“The good ones never do” follow-up. Asking for guidance completes the initial
+1/1 objective and advances exactly from phase 20 to the prepared Argento phase
+30. An immediate second activation uses an ambient reminder; once Palomo leaves
+every active field of view he disappears and a load reconstructs him as hidden.
+No production route from Palomo opens commerce, negotiates a discount or grants
+the Magic Box.
+
+The accepted merchant implementation remains unchanged as reusable/debug
+infrastructure for a future merchant NPC. `GrantMagicBoxFromPalomo()` is now
+independent from quest advancement so an isolated grant cannot skip narrative
+states. New characters remain without the Box; migrated development saves keep
+their existing Box and contents but restart only the discarded quest record.
+Faction and reputation behavior is unchanged.
+
+The Journal shows the canonical title, localized current phase, broad milestone
+objective and Palomo's derived hidden/foyer/hidden/upstairs placement. Visible
+MAP01 text preserves the mystery and does not identify the location, the
+speaker or the protagonist's prior fate.
+
+## Persistent quests, reputation and faction registry 4.33.0a
+
+**Implemented; cumulative source, deterministic audits and the complete focused
+GZDoom 4.14.2 author matrix passed; accepted and superseded narratively by
+V4.33.0b**
+
+V4.33 begins with a deliberately content-light persistent foundation. The
+travelling `CaelumPersistentCharacterState` now reserves 32 stable quest slots
+with eight objective counters each. Every quest stores discovery/state, an
+integer stage and objective known/progress/target fields. Only one production
+identifier is currently defined: accepting Palomo's already-authored adventure
+records an active quest, stage `Adventure accepted` and the completed factual
+objective `Receive the Magic Box from Palomo`. Refusal still creates no
+irreversible failure. Saves that already own the box migrate that fact into the
+same quest record; new characters remain undiscovered until they accept.
+
+The Journal's two former placeholder pages now read authoritative player
+snapshots. Missions shows no entries before acceptance, then displays the
+Palomo record and its 1/1 objective. Reputation lists four stable technical
+domains—Gendarmeria, settlements, caravans and political actors—with separate
+membership booleans and reputation integers clamped to -1,000..1,000. All begin
+unaffiliated at zero. No political names, rewards, ranks, hostility thresholds
+or starting allegiances were invented.
+
+`CaelumFactionRules` provides an O(1) relation lookup: identity is friendly and
+every unauthored cross-domain relation remains neutral. It performs no actor
+iteration, line-of-sight test, pathing call or per-combatant global search. Five
+zero-capacity, auto-activating debug actions allow Gendarmeria membership,
++25/-50 reputation and reset to be tested through `give`; none has a DoomEdNum
+or remains in inventory, and normal gameplay has no provisional reputation
+mutation.
+
+Palomo's current location is no longer represented as an independent mutable
+quest fact: `ResolvePalomoPlacement()` derives it from the quest record. The
+only authorized result in 4.33.0a is his accepted mansion starting post, so the
+physical MAP01 actor and 500-MU return-home behavior remain unchanged. Adding a
+second map/stage destination and executing the one-instance move are explicitly
+reserved for a later V4.33 revision after those coordinates and narrative
+conditions are authored. Merchant stock, wallet and negotiated discount remain
+in the same per-character record and therefore cannot reset when that move is
+implemented.
+
+## Author-accepted V4.32 closure 4.32.0o
+
+**All focused GZDoom 4.14.2 tests passed; V4.32 is closed.**
+
+The author confirmed rest, every attack frame, repeated strikes, Block and
+equipment switching after the alpha-bounds pivot correction. The modular
+Domingo sword/hand/shield implementation is now the accepted reference for a
+later expansion to all weapons; that expansion is not a V4.33 blocker.
+
 ## Alpha-bounds compensated grip pivots 4.32.0o
 
 **Implemented; deterministic source, alpha-geometry and package audits passed;
-one focused GZDoom 4.14.2 author validation remains before V4.33**
+focused GZDoom 4.14.2 author validation passed**
 
 The V4.32.0n screenshot exposed one duplicated-hand attack frame. `RHND` and
 `RFNG` are complementary layers of the same right hand, but their rotations
@@ -18,9 +155,9 @@ blade's (-22,-32) translation included, all three resolve exactly to screen
 point `(56.64375,84.57)`. Their 0→25-degree attack delta can therefore no
 longer split the hand into two silhouettes.
 
-No sprite, path point, timing, angle or gameplay source changed. To close
-V4.32, only the focused ten-point visual check in `PRUEBAS_4_32_0o.txt`
-remains; already approved systems stay closed.
+No sprite, path point, timing, angle or gameplay source changed. The focused
+visual check in `PRUEBAS_4_32_0o.txt` passed and closed V4.32; already approved
+systems stay closed.
 
 ## Raised idle sword, complete thumb and synchronized grip 4.32.0n
 

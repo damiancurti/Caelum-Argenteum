@@ -1,10 +1,16 @@
-# Caelum Argenteum — Primera persona de Domingo V4.32.0o
+# Caelum Argenteum — Primera persona de Domingo V4.32.0o (aceptada)
 
 ## Alcance
 
 La vista modular continúa conectada exclusivamente con
 `CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
 existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
+
+El autor completó con éxito toda la matriz de `PRUEBAS_4_32_0o.txt`; por ello
+esta composición queda cerrada como referencia. Más adelante se aplicará el
+mismo enfoque modular a todas las armas, con arte y movimiento propios de cada
+familia. Esa ampliación no forma parte de V4.33.0a y no reabre las pruebas ya
+aceptadas de la espada.
 
 V4.32.0o conserva la altura, el pulgar completo y la trayectoria de V4.32.0n,
 pero corrige el cuadro que mostraba dos puños. El código anterior calculó los
@@ -142,6 +148,7 @@ La auditoría automática comprueba estructura ZScript, delta acotado,
 dimensiones RGBA, offsets `grAb`, cajas alfa, hashes, ampliación exacta del
 pulgar, desplazamiento A→B, pivote de pantalla común, rotación sincronizada,
 registro (-22,-32), Block correcto y contenido reproducible del ZIP fuente.
-La aceptación visual dentro de GZDoom 4.14.2 queda pendiente con
-`PRUEBAS_4_32_0o.txt`; no es necesario repetir los sistemas no visuales ya
-aprobados.
+La matriz visual de `PRUEBAS_4_32_0o.txt` fue completada con éxito por el
+autor. Esta composición queda aceptada como referencia cerrada; V4.33.0a sólo
+requiere una comprobación breve de regresión para confirmar que la nueva base
+social no alteró presentación, daño ni Block.

@@ -1,5 +1,6 @@
-// Caella posee un perfil de combate propio como duende cleriga predefinida.
-class CaelumCaella : CaelumCombatActor
+// Caella conserva su perfil de combate para pruebas aisladas. En MAP01 se
+// coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
+class CaelumCaella : CaelumAnchoredResident
 {
     Default
     {
@@ -12,7 +13,6 @@ class CaelumCaella : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 96;
         MaxTargetRange 1024;
-        // 72/176 conserva la altura visual mundial anterior.
         Scale 0.409091;
         Monster;
         +FLOORCLIP
@@ -21,7 +21,6 @@ class CaelumCaella : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Duende cleriga: fisico 9, tecnico 7, social 11 y mental 18.
         InitializeCombatProfile(9, 9, 9, 7, 7, 7, 11, 11, 11, 18, 18, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MAGIC, 1);
         ConfigureCombatMagicalRange();
@@ -30,11 +29,11 @@ class CaelumCaella : CaelumCombatActor
     States
     {
     Spawn:
-        CAEL A 10 A_CaelumBudgetedLook;
+        CAEL A 10 A_CaelumResidentLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        CAEL BCDC 4 A_CaelumBudgetedChase;
+        CAEL BCDC 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         CAEL A 1;

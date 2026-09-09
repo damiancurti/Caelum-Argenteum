@@ -19,6 +19,32 @@ class CaelumPersistentCharacterState : Inventory
     // Una mudanza o recreación futura del actor no altera el acuerdo logrado.
     int PalomoDiscountVersion;
     bool PalomoDiscountGranted;
+
+    // Estado social V4.33. Los arreglos fijos mantienen índices estables en
+    // guardados y viajes; sólo QUEST_DEFINED_COUNT posiciones tienen contenido
+    // visible hoy. Cada objetivo conserva conocimiento, progreso y meta para
+    // admitir contadores sin guardar texto narrativo dentro de la partida.
+    int QuestStateVersion;
+    int QuestState[CaelumConstants.QUEST_CAPACITY];
+    int QuestStage[CaelumConstants.QUEST_CAPACITY];
+    bool QuestObjectiveKnown[
+        CaelumConstants.QUEST_OBJECTIVE_STORAGE_COUNT
+    ];
+    int QuestObjectiveProgress[
+        CaelumConstants.QUEST_OBJECTIVE_STORAGE_COUNT
+    ];
+    int QuestObjectiveTarget[
+        CaelumConstants.QUEST_OBJECTIVE_STORAGE_COUNT
+    ];
+    // La misión principal necesita hechos idempotentes además de su etapa. Esta
+    // tabla incluye tanto progreso jugable como conocimiento de diálogo.
+    bool MainM00Flag[CaelumConstants.MAIN_M00_FLAG_CAPACITY];
+
+    // Membresía y reputación pertenecen al personaje. Las relaciones entre
+    // dominios son una tabla de reglas compartida, no estado duplicado por NPC.
+    int FactionStateVersion;
+    bool FactionMember[CaelumConstants.FACTION_COUNT];
+    int FactionReputation[CaelumConstants.FACTION_COUNT];
     int Race;
     int FirstClass;
     int SecondClass;
@@ -202,6 +228,418 @@ class CaelumPersistentCharacterState : Inventory
         // Las partidas anteriores a 4.32.0d nunca pudieron negociar.
         PalomoDiscountGranted = false;
         PalomoDiscountVersion = 1;
+    }
+
+    bool IsValidQuestId(int questId)
+    {
+        return questId >= 0 && questId < CaelumConstants.QUEST_CAPACITY;
+    }
+
+    bool IsValidQuestObjectiveId(int objectiveId)
+    {
+        return objectiveId >= 0
+            && objectiveId < CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+    }
+
+    int GetQuestObjectiveStorageIndex(int questId, int objectiveId)
+    {
+        if (!IsValidQuestId(questId)
+            || !IsValidQuestObjectiveId(objectiveId))
+        {
+            return -1;
+        }
+        return questId * CaelumConstants.QUEST_OBJECTIVE_CAPACITY
+            + objectiveId;
+    }
+
+    void ClearMainM00QuestRecord()
+    {
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        QuestState[questId] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
+        QuestStage[questId] = CaelumConstants.MAIN_M00_STATE_INITIALIZE;
+        for (int objectiveId = 0;
+            objectiveId < CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+            objectiveId++)
+        {
+            int objective = GetQuestObjectiveStorageIndex(
+                questId, objectiveId
+            );
+            QuestObjectiveKnown[objective] = false;
+            QuestObjectiveProgress[objective] = 0;
+            QuestObjectiveTarget[objective] = 0;
+        }
+        for (int flagId = 0;
+            flagId < CaelumConstants.MAIN_M00_FLAG_CAPACITY; flagId++)
+        {
+            MainM00Flag[flagId] = false;
+        }
+    }
+
+    void InitializeNewQuestState()
+    {
+        for (int questId = 0;
+            questId < CaelumConstants.QUEST_CAPACITY; questId++)
+        {
+            QuestState[questId] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
+            QuestStage[questId] = 0;
+        }
+        for (int objective = 0;
+            objective < CaelumConstants.QUEST_OBJECTIVE_STORAGE_COUNT;
+            objective++)
+        {
+            QuestObjectiveKnown[objective] = false;
+            QuestObjectiveProgress[objective] = 0;
+            QuestObjectiveTarget[objective] = 0;
+        }
+        for (int flagId = 0;
+            flagId < CaelumConstants.MAIN_M00_FLAG_CAPACITY; flagId++)
+        {
+            MainM00Flag[flagId] = false;
+        }
+        QuestStateVersion = 2;
+    }
+
+    void EnsureQuestStateInitialized()
+    {
+        if (QuestStateVersion >= 2) { return; }
+
+        if (QuestStateVersion < 1)
+        {
+            InitializeNewQuestState();
+            return;
+        }
+
+        // V4.33.0a registraba una aventura comercial de prueba en el mismo
+        // índice. Esa historia dejó de ser canónica: la migración conserva la
+        // Caja y todos sus contenidos, pero reinicia únicamente este registro
+        // narrativo para que MAP01 comience por el despertar real.
+        ClearMainM00QuestRecord();
+        QuestStateVersion = 2;
+    }
+
+    bool IsValidMainM00FlagId(int flagId)
+    {
+        return flagId >= 0
+            && flagId < CaelumConstants.MAIN_M00_FLAG_CAPACITY;
+    }
+
+    bool HasMainM00Flag(int flagId)
+    {
+        EnsureQuestStateInitialized();
+        return IsValidMainM00FlagId(flagId) && MainM00Flag[flagId];
+    }
+
+    bool SetMainM00Flag(int flagId, bool value = true)
+    {
+        EnsureQuestStateInitialized();
+        if (!IsValidMainM00FlagId(flagId)
+            || MainM00Flag[flagId] == value)
+        {
+            return false;
+        }
+        MainM00Flag[flagId] = value;
+        return true;
+    }
+
+    bool BeginMainM00Prologue()
+    {
+        EnsureQuestStateInitialized();
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
+            || QuestState[questId] == CaelumConstants.QUEST_STATE_FAILED)
+        {
+            return false;
+        }
+
+        bool changed = false;
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+        {
+            QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
+            changed = true;
+        }
+        if (QuestStage[questId]
+            == CaelumConstants.MAIN_M00_STATE_INITIALIZE)
+        {
+            QuestStage[questId] = CaelumConstants.MAIN_M00_STATE_AWAKENED;
+            changed = true;
+        }
+        if (!MainM00Flag[CaelumConstants.MAIN_M00_FLAG_STARTED])
+        {
+            MainM00Flag[CaelumConstants.MAIN_M00_FLAG_STARTED] = true;
+            changed = true;
+        }
+
+        int objective = GetQuestObjectiveStorageIndex(
+            questId,
+            CaelumConstants.MAIN_M00_OBJECTIVE_FIND_HELP
+        );
+        if (!QuestObjectiveKnown[objective])
+        {
+            QuestObjectiveKnown[objective] = true;
+            QuestObjectiveProgress[objective] = 0;
+            QuestObjectiveTarget[objective] = 1;
+            changed = true;
+        }
+        else
+        {
+            int normalizedProgress = Clamp(
+                QuestObjectiveProgress[objective], 0, 1
+            );
+            if (QuestObjectiveProgress[objective] != normalizedProgress
+                || QuestObjectiveTarget[objective] != 1)
+            {
+                QuestObjectiveProgress[objective] = normalizedProgress;
+                QuestObjectiveTarget[objective] = 1;
+                changed = true;
+            }
+        }
+        return changed;
+    }
+
+    bool TryAdvanceMainM00State(int expectedState, int nextState)
+    {
+        EnsureQuestStateInitialized();
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        if (QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+            || QuestStage[questId] != expectedState
+            || nextState <= expectedState)
+        {
+            return false;
+        }
+        QuestStage[questId] = nextState;
+        return true;
+    }
+
+    bool RecordMainM00UnknownVoiceHeard()
+    {
+        EnsureQuestStateInitialized();
+        if (MainM00Flag[
+                CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+            ])
+        {
+            return false;
+        }
+        if (!TryAdvanceMainM00State(
+                CaelumConstants.MAIN_M00_STATE_AWAKENED,
+                CaelumConstants.MAIN_M00_STATE_MET_PALOMO
+            ))
+        {
+            return false;
+        }
+        MainM00Flag[
+            CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+        ] = true;
+        return true;
+    }
+
+    bool RecordMainM00PalomoDialogueFlag(int flagId)
+    {
+        EnsureQuestStateInitialized();
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        bool supportedFlag = flagId
+                == CaelumConstants.MAIN_M00_FLAG_ASKED_PALOMO_WHERE
+            || flagId
+                == CaelumConstants.MAIN_M00_FLAG_ASKED_PALOMO_WHAT_HAPPENED
+            || flagId
+                == CaelumConstants.MAIN_M00_FLAG_TOLD_PALOMO_ABOUT_VOICE
+            || flagId
+                == CaelumConstants.MAIN_M00_FLAG_NOTICED_MEMORY_GAP;
+        if (!supportedFlag
+            || QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+            || QuestStage[questId] < CaelumConstants.MAIN_M00_STATE_MET_PALOMO
+            || QuestStage[questId]
+                >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+        {
+            return false;
+        }
+
+        bool changed = SetMainM00Flag(flagId);
+        if (flagId
+            == CaelumConstants.MAIN_M00_FLAG_TOLD_PALOMO_ABOUT_VOICE)
+        {
+            changed = SetMainM00Flag(
+                CaelumConstants.MAIN_M00_FLAG_PALOMO_CALLED_IT_HALLUCINATION
+            ) || changed;
+        }
+        return changed;
+    }
+
+    bool RecordMainM00PalomoMet()
+    {
+        EnsureQuestStateInitialized();
+        if (MainM00Flag[CaelumConstants.MAIN_M00_FLAG_PALOMO_MET]
+            || !MainM00Flag[
+                CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+            ])
+        {
+            return false;
+        }
+        if (!TryAdvanceMainM00State(
+                CaelumConstants.MAIN_M00_STATE_MET_PALOMO,
+                CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE
+            ))
+        {
+            return false;
+        }
+
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_PALOMO_MET] = true;
+        int objective = GetQuestObjectiveStorageIndex(
+            CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
+            CaelumConstants.MAIN_M00_OBJECTIVE_FIND_HELP
+        );
+        QuestObjectiveKnown[objective] = true;
+        QuestObjectiveProgress[objective] = 1;
+        QuestObjectiveTarget[objective] = 1;
+        return true;
+    }
+
+    bool SetQuestStage(int questId, int stage)
+    {
+        EnsureQuestStateInitialized();
+        if (!IsValidQuestId(questId) || stage < 0) { return false; }
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+        {
+            QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
+        }
+        if (QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+            || stage <= QuestStage[questId])
+        {
+            return false;
+        }
+        QuestStage[questId] = stage;
+        return true;
+    }
+
+    bool SetQuestObjectiveProgress(
+        int questId, int objectiveId, int progress, int target
+    )
+    {
+        EnsureQuestStateInitialized();
+        int objective = GetQuestObjectiveStorageIndex(
+            questId, objectiveId
+        );
+        if (objective < 0 || target <= 0) { return false; }
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+        {
+            QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
+        }
+        int normalizedProgress = Clamp(progress, 0, target);
+        bool changed = !QuestObjectiveKnown[objective]
+            || QuestObjectiveProgress[objective] != normalizedProgress
+            || QuestObjectiveTarget[objective] != target;
+        QuestObjectiveKnown[objective] = true;
+        QuestObjectiveProgress[objective] = normalizedProgress;
+        QuestObjectiveTarget[objective] = target;
+        return changed;
+    }
+
+    bool SetQuestTerminalState(int questId, int terminalState)
+    {
+        EnsureQuestStateInitialized();
+        if (!IsValidQuestId(questId)
+            || (terminalState != CaelumConstants.QUEST_STATE_COMPLETED
+                && terminalState != CaelumConstants.QUEST_STATE_FAILED)
+            || QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+        {
+            return false;
+        }
+        if (QuestState[questId] == terminalState) { return false; }
+        QuestState[questId] = terminalState;
+        return true;
+    }
+
+    // Única fuente de ubicación narrativa. Antes de la Voz, Palomo permanece
+    // oculto; ocupa el recibidor durante la fase 20 y vuelve a quedar fuera de
+    // vista después de orientar hacia Argento. La fase final ya puede resolver
+    // el segundo piso, aunque su traslado físico llegará en otro parche.
+    int ResolvePalomoPlacement()
+    {
+        EnsureQuestStateInitialized();
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED
+            || QuestStage[questId]
+                < CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
+        {
+            return CaelumConstants.PALOMO_PLACEMENT_HIDDEN;
+        }
+        if (QuestStage[questId]
+            >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
+        {
+            return CaelumConstants.PALOMO_PLACEMENT_MANSION_UPSTAIRS;
+        }
+        if (QuestStage[questId]
+            >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+        {
+            return CaelumConstants.PALOMO_PLACEMENT_HIDDEN;
+        }
+        return CaelumConstants.PALOMO_PLACEMENT_MANSION_FOYER;
+    }
+
+    bool IsValidFactionId(int factionId)
+    {
+        return CaelumFactionRules.IsValidFactionId(factionId);
+    }
+
+    void InitializeNewFactionState()
+    {
+        for (int factionId = 0;
+            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+        {
+            FactionMember[factionId] = false;
+            FactionReputation[factionId] = 0;
+        }
+        FactionStateVersion = 1;
+    }
+
+    void EnsureFactionStateInitialized()
+    {
+        if (FactionStateVersion >= 1) { return; }
+        InitializeNewFactionState();
+    }
+
+    bool SetFactionMembership(int factionId, bool isMember)
+    {
+        EnsureFactionStateInitialized();
+        if (!IsValidFactionId(factionId)
+            || FactionMember[factionId] == isMember)
+        {
+            return false;
+        }
+        FactionMember[factionId] = isMember;
+        return true;
+    }
+
+    bool ChangeFactionReputation(int factionId, int amount)
+    {
+        EnsureFactionStateInitialized();
+        if (!IsValidFactionId(factionId) || amount == 0) { return false; }
+        int previous = FactionReputation[factionId];
+        int next = previous;
+        if (amount > 0)
+        {
+            int room = CaelumConstants.FACTION_REPUTATION_MAXIMUM - previous;
+            next = amount >= room
+                ? CaelumConstants.FACTION_REPUTATION_MAXIMUM
+                : previous + amount;
+        }
+        else
+        {
+            int room = CaelumConstants.FACTION_REPUTATION_MINIMUM - previous;
+            next = amount <= room
+                ? CaelumConstants.FACTION_REPUTATION_MINIMUM
+                : previous + amount;
+        }
+        FactionReputation[factionId] = next;
+        return FactionReputation[factionId] != previous;
+    }
+
+    // Consulta O(1): una facción siempre se reconoce como propia y las
+    // relaciones cruzadas quedan neutrales hasta que el autor defina la tabla.
+    int GetFactionRelation(int sourceFactionId, int targetFactionId)
+    {
+        return CaelumFactionRules.GetRelation(
+            sourceFactionId, targetFactionId
+        );
     }
 
     void ObserveEquipmentItemId(int itemId)

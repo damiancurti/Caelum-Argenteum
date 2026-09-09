@@ -1,5 +1,6 @@
-// Ronnie es el caelith explorador norteno predefinido, veloz y orientado al rango.
-class CaelumRonnie : CaelumCombatActor
+// Ronnie conserva su perfil de combate para pruebas aisladas. En MAP01 se
+// coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
+class CaelumRonnie : CaelumAnchoredResident
 {
     Default
     {
@@ -12,8 +13,6 @@ class CaelumRonnie : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 64;
         MaxTargetRange 1280;
-        // 72/176 conserva la altura visual mundial previa con el maestro
-        // 256x256 y deja el ajuste físico separado del tamaño del lienzo.
         Scale 0.409091;
         Monster;
         +FLOORCLIP
@@ -22,7 +21,6 @@ class CaelumRonnie : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Fisico 20, tecnico 18, social 5 y mental 7.
         InitializeCombatProfile(20, 20, 20, 18, 18, 18, 5, 5, 5, 7, 7, 7);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MEDIUM, 1);
         ConfigureCombatMagicalRange();
@@ -31,11 +29,11 @@ class CaelumRonnie : CaelumCombatActor
     States
     {
     Spawn:
-        RONI A 10 A_CaelumBudgetedLook;
+        RONI A 10 A_CaelumResidentLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RONI BCDC 4 A_CaelumBudgetedChase;
+        RONI BCDC 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         RONI A 1;

@@ -71,6 +71,10 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     bool MerchantAnchored;
     bool MerchantReturningHome;
     double MerchantHomeAngle;
+    bool NarrativeRevealInitialized;
+    bool NarrativeRevealRequired;
+    bool NarrativeRevealed;
+    bool NarrativeDismissed;
 
     Default
     {
@@ -96,6 +100,72 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         WanderEnabled = !MerchantAnchored;
         MerchantReturningHome = false;
         MerchantHomeAngle = Angle;
+        InitializeNarrativeReveal();
+    }
+
+    bool IsNarrativeRevealReady()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer != null && caelumPlayer.HasMainM00Flag(
+                    CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+                ))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool IsNarrativeFoyerComplete()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer != null && caelumPlayer.HasMainM00Flag(
+                    CaelumConstants.MAIN_M00_FLAG_PALOMO_MET
+                ))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool IsVisibleToAnyActivePlayer()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer == null || caelumPlayer.health <= 0
+                || !caelumPlayer.CheckSight(self))
+            {
+                continue;
+            }
+            double viewOffset = Abs(DeltaAngle(
+                caelumPlayer.Angle, caelumPlayer.AngleTo(self)
+            ));
+            if (viewOffset <= 70.0) { return true; }
+        }
+        return false;
+    }
+
+    void InitializeNarrativeReveal()
+    {
+        NarrativeRevealInitialized = true;
+        NarrativeRevealRequired = MerchantAnchored
+            && level.MapName == "MAP01";
+        NarrativeDismissed = NarrativeRevealRequired
+            && IsNarrativeFoyerComplete();
+        NarrativeRevealed = !NarrativeRevealRequired
+            || (IsNarrativeRevealReady() && !NarrativeDismissed);
+        Alpha = NarrativeRevealed ? 1.0 : 0.0;
+        bSolid = NarrativeRevealed;
+        bShootable = NarrativeRevealed;
     }
 
     action void A_EnablePalomoWander()
@@ -119,6 +189,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     override void Tick()
     {
         Super.Tick();
+        if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
         // CAPALOMO no queda unido permanentemente a la clase. Tras cerrar la
         // conversación, retirar el nodo devuelve la siguiente pulsación a
         // Actor.Used, donde se resincronizan estado y requisitos por jugador.
@@ -128,6 +199,45 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
                 CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
                 self, null, false, 0, 0
             );
+        }
+        if (NarrativeRevealRequired)
+        {
+            // Después de la orientación, Palomo espera a quedar fuera del
+            // campo visual de todos los jugadores antes de retirarse. Al
+            // cargar una partida ya avanzada nace oculto y no reaparece.
+            if (IsNarrativeFoyerComplete())
+            {
+                if (NarrativeDismissed
+                    || (!bInConversation
+                        && !IsVisibleToAnyActivePlayer()))
+                {
+                    NarrativeDismissed = true;
+                    NarrativeRevealed = false;
+                    Alpha = 0.0;
+                    bSolid = false;
+                    bShootable = false;
+                    Vel.X = 0.0;
+                    Vel.Y = 0.0;
+                    return;
+                }
+            }
+            if (!NarrativeRevealed)
+            {
+                if (!IsNarrativeRevealReady())
+                {
+                    Vel.X = 0.0;
+                    Vel.Y = 0.0;
+                    return;
+                }
+                NarrativeRevealed = true;
+                bSolid = true;
+                bShootable = true;
+            }
+            if (Alpha < 1.0)
+            {
+                // Aparición sobria, sin destello ni teletransporte explícito.
+                Alpha = Min(1.0, Alpha + 0.08);
+            }
         }
         if (health <= 0 || CombatLucidityPhysicalStunRemaining > 0.0)
         {

@@ -1,5 +1,6 @@
-// Argento es un enemigo humanoide de prueba con un perfil inicial valido.
-class CaelumArgento : CaelumCombatActor
+// Argento conserva su perfil de combate para pruebas aisladas. En MAP01 se
+// coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
+class CaelumArgento : CaelumAnchoredResident
 {
     Default
     {
@@ -12,7 +13,6 @@ class CaelumArgento : CaelumCombatActor
         MeleeRange 64;
         MinMissileChance 96;
         MaxTargetRange 1024;
-        // 72/176 conserva la altura visual mundial anterior.
         Scale 0.409091;
         Monster;
         +FLOORCLIP
@@ -21,7 +21,6 @@ class CaelumArgento : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Humano Mago de Batalla: fisico 9, tecnico 7, social 11 y mental 18.
         InitializeCombatProfile(9, 9, 9, 7, 7, 7, 11, 11, 11, 18, 18, 18);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_LIGHT, 1);
         ConfigureCombatMagicalRange();
@@ -30,11 +29,11 @@ class CaelumArgento : CaelumCombatActor
     States
     {
     Spawn:
-        ARGO A 10 A_CaelumBudgetedLook;
+        ARGO A 10 A_CaelumResidentLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        ARGO BCDC 4 A_CaelumBudgetedChase;
+        ARGO BCDC 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         ARGO A 1;

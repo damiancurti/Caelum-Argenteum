@@ -93,6 +93,111 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui String GetQuestNameKey(int questId)
+    {
+        switch (questId)
+        {
+            case CaelumConstants.QUEST_MAIN_M00_THE_FOOL:
+                return "CA_Q_M01_TITLE";
+            default: return "CA_JOURNAL_QUESTS";
+        }
+    }
+
+    ui String GetQuestStateKey(int questState)
+    {
+        switch (questState)
+        {
+            case CaelumConstants.QUEST_STATE_COMPLETED:
+                return "CA_QUEST_STATUS_COMPLETED";
+            case CaelumConstants.QUEST_STATE_FAILED:
+                return "CA_QUEST_STATUS_FAILED";
+            default: return "CA_QUEST_STATUS_ACTIVE";
+        }
+    }
+
+    ui String GetQuestStageKey(int questId, int questStage)
+    {
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+        {
+            return "CA_QUEST_STATUS_ACTIVE";
+        }
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_COMPLETE)
+            return "CA_Q_M01_STATE_COMPLETE";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+            return "CA_Q_M01_STATE_RETURN_TO_BODY";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)
+            return "CA_Q_M01_STATE_CAPTURE_THE_FOOL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
+            return "CA_Q_M01_STATE_PALOMO_FINAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return "CA_Q_M01_STATE_RULO_COMBAT";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_WEAPON_READY)
+            return "CA_Q_M01_STATE_PREPARE_WEAPON";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE)
+            return "CA_Q_M01_STATE_RONNIE_SURVIVAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
+            return "CA_Q_M01_STATE_CAELLA_MAGIC";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+            return "CA_Q_M01_STATE_ARGENTO_SOCIAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
+            return "CA_Q_M01_STATE_MEET_PALOMO";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_AWAKENED)
+            return "CA_Q_M01_STATE_AWAKEN";
+        return "CA_Q_M01_STATE_INITIALIZE";
+    }
+
+    ui String GetQuestObjectiveKey(int questId, int objectiveId)
+    {
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+        {
+            return "CA_QUEST_OBJECTIVES_LABEL";
+        }
+        switch (objectiveId)
+        {
+            case CaelumConstants.MAIN_M00_OBJECTIVE_FIND_HELP:
+                return "CA_Q_M01_OBJ_FIND_HELP";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_CONVINCE_RESIDENTS:
+                return "CA_Q_M01_OBJ_CONVINCE_RESIDENTS";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_SOLVE_RIDDLE:
+                return "CA_Q_M01_OBJ_SOLVE_RIDDLE";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS:
+                return "CA_Q_M01_OBJ_GATHER_MATERIALS";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_PREPARE_WEAPON:
+                return "CA_Q_M01_OBJ_PREPARE_WEAPON";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL:
+                return "CA_Q_M01_OBJ_DEFEAT_BULL";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL:
+                return "CA_Q_M01_OBJ_CAPTURE_FOOL";
+            default: return "CA_Q_M01_OBJ_LEAVE_MANSION";
+        }
+    }
+
+    ui String GetFactionNameKey(int factionId)
+    {
+        switch (factionId)
+        {
+            case CaelumConstants.FACTION_GENDARMERIA:
+                return "CA_FACTION_GENDARMERIA";
+            case CaelumConstants.FACTION_SETTLEMENTS:
+                return "CA_FACTION_SETTLEMENTS";
+            case CaelumConstants.FACTION_CARAVANS:
+                return "CA_FACTION_CARAVANS";
+            default: return "CA_FACTION_POLITICAL_ACTORS";
+        }
+    }
+
+    ui String GetPalomoPlacementKey(int placement)
+    {
+        switch (placement)
+        {
+            case CaelumConstants.PALOMO_PLACEMENT_MANSION_FOYER:
+                return "CA_PALOMO_PLACEMENT_MANSION_FOYER";
+            case CaelumConstants.PALOMO_PLACEMENT_MANSION_UPSTAIRS:
+                return "CA_PALOMO_PLACEMENT_MANSION_UPSTAIRS";
+            default: return "CA_PALOMO_PLACEMENT_HIDDEN";
+        }
+    }
+
     ui String GetInventoryCategoryIcon(int category)
     {
         switch (category)
@@ -714,6 +819,149 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize("CA_ATTRIBUTE_INTELLIGENCE", false), values.Intelligence,
                 StringTable.Localize("CA_ATTRIBUTE_PATIENCE", false), values.Patience,
                 StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
+    }
+
+    ui void DrawQuestPage(CaelumPlayer localPlayer)
+    {
+        if (localPlayer.JournalKnownQuestCount <= 0)
+        {
+            DrawCenteredText(
+                TextFont, Font.CR_WHITE, 320.0, 164.0,
+                StringTable.Localize("CA_JOURNAL_QUESTS_EMPTY", false)
+            );
+        }
+        else
+        {
+            for (int questId = 0;
+                questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
+            {
+                int questState = localPlayer.JournalQuestState[questId];
+                if (questState == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+                {
+                    continue;
+                }
+
+                DrawTextLine(
+                    TextFont, Font.CR_GOLD, 64.0, 132.0,
+                    StringTable.Localize(GetQuestNameKey(questId), false)
+                );
+                DrawTextLine(
+                    SmallFont, Font.CR_WHITE, 64.0, 158.0,
+                    String.Format(
+                        "%s: %s  |  %s: %s",
+                        StringTable.Localize("CA_QUEST_STATUS_LABEL", false),
+                        StringTable.Localize(
+                            GetQuestStateKey(questState), false
+                        ),
+                        StringTable.Localize("CA_QUEST_STAGE_LABEL", false),
+                        StringTable.Localize(
+                            GetQuestStageKey(
+                                questId,
+                                localPlayer.JournalQuestStage[questId]
+                            ),
+                            false
+                        )
+                    )
+                );
+                DrawTextLine(
+                    SmallFont, Font.CR_GRAY, 64.0, 190.0,
+                    StringTable.Localize("CA_QUEST_OBJECTIVES_LABEL", false)
+                );
+
+                int objectiveBase = questId
+                    * CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+                for (int objectiveId = 0;
+                    objectiveId < CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+                    objectiveId++)
+                {
+                    int objective = objectiveBase + objectiveId;
+                    if (objective
+                            >= CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
+                        || !localPlayer.JournalQuestObjectiveKnown[objective])
+                    {
+                        continue;
+                    }
+                    int progress =
+                        localPlayer.JournalQuestObjectiveProgress[objective];
+                    int target = Max(
+                        1,
+                        localPlayer.JournalQuestObjectiveTarget[objective]
+                    );
+                    DrawTextLine(
+                        SmallFont,
+                        progress >= target ? Font.CR_GREEN : Font.CR_WHITE,
+                        78.0, 212.0 + objectiveId * 18.0,
+                        String.Format(
+                            "[%d/%d] %s",
+                            progress, target,
+                            StringTable.Localize(
+                                GetQuestObjectiveKey(questId, objectiveId),
+                                false
+                            )
+                        )
+                    );
+                }
+                break;
+            }
+        }
+
+        DrawTextLine(
+            SmallFont, Font.CR_WHITE, 64.0, 270.0,
+            String.Format(
+                "%s: %s",
+                StringTable.Localize(
+                    "CA_QUEST_PALOMO_LOCATION_LABEL", false
+                ),
+                StringTable.Localize(
+                    GetPalomoPlacementKey(
+                        localPlayer.JournalPalomoPlacement
+                    ),
+                    false
+                )
+            )
+        );
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 298.0,
+            StringTable.Localize("CA_QUEST_FOUNDATION_NOTE", false)
+        );
+    }
+
+    ui void DrawReputationPage(CaelumPlayer localPlayer)
+    {
+        for (int factionId = 0;
+            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+        {
+            double rowY = 132.0 + factionId * 40.0;
+            DrawTextLine(
+                TextFont, Font.CR_GOLD, 64.0, rowY,
+                StringTable.Localize(GetFactionNameKey(factionId), false)
+            );
+            DrawTextLine(
+                SmallFont, Font.CR_WHITE, 250.0, rowY + 4.0,
+                String.Format(
+                    "%s: %s  |  %s: %d",
+                    StringTable.Localize(
+                        "CA_FACTION_MEMBERSHIP_LABEL", false
+                    ),
+                    StringTable.Localize(
+                        localPlayer.JournalFactionMember[factionId]
+                            ? "CA_FACTION_MEMBER_YES"
+                            : "CA_FACTION_MEMBER_NO",
+                        false
+                    ),
+                    StringTable.Localize(
+                        "CA_REPUTATION_VALUE_LABEL", false
+                    ),
+                    localPlayer.JournalFactionReputation[factionId]
+                )
+            );
+        }
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 298.0,
+            StringTable.Localize(
+                "CA_REPUTATION_FOUNDATION_NOTE", false
+            )
+        );
     }
 
     ui void DrawCraftingSummary(CaelumPlayer localPlayer)
@@ -1602,6 +1850,10 @@ class CaelumJournalOverlay : EventHandler
             {
                 SendNetworkEvent("ca_inventory_refresh");
             }
+            if (nextPage == 4 || nextPage == 5)
+            {
+                SendNetworkEvent("ca_social_refresh");
+            }
         }
         else if (e.KeyScan == InputEvent.Key_LeftArrow
             || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
@@ -1617,6 +1869,10 @@ class CaelumJournalOverlay : EventHandler
             if (nextPage == 0)
             {
                 SendNetworkEvent("ca_inventory_refresh");
+            }
+            if (nextPage == 4 || nextPage == 5)
+            {
+                SendNetworkEvent("ca_social_refresh");
             }
         }
         return true;
@@ -1639,7 +1895,11 @@ class CaelumJournalOverlay : EventHandler
                 SendNetworkEvent("ca_crafting_session_close");
             }
             SetJournalOpen(opening);
-            if (opening) { SendNetworkEvent("ca_inventory_refresh"); }
+            if (opening)
+            {
+                SendNetworkEvent("ca_inventory_refresh");
+                SendNetworkEvent("ca_social_refresh");
+            }
         }
     }
 
@@ -1650,6 +1910,10 @@ class CaelumJournalOverlay : EventHandler
         if (e.Name == "ca_inventory_refresh")
         {
             requestingPlayer.RefreshFormalInventorySnapshot();
+        }
+        else if (e.Name == "ca_social_refresh")
+        {
+            requestingPlayer.RefreshSocialJournalSnapshot();
         }
         else if (e.Name == "ca_inventory_next")
         {
@@ -1827,8 +2091,8 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage == 1) { DrawCharacterPage(localPlayer); }
         else if (currentPage == 2) { DrawPlannedPage("CA_JOURNAL_WORLD_PENDING"); }
         else if (currentPage == 3) { DrawCraftsPage(localPlayer); }
-        else if (currentPage == 4) { DrawPlannedPage("CA_JOURNAL_QUESTS_PENDING"); }
-        else { DrawPlannedPage("CA_JOURNAL_REPUTATION_PENDING"); }
+        else if (currentPage == 4) { DrawQuestPage(localPlayer); }
+        else { DrawReputationPage(localPlayer); }
 
         if (currentPage == 3 && localPlayer.CraftingMenuOpen)
         {

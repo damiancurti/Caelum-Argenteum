@@ -1,5 +1,6 @@
-// Rulo es el hombre bestia guerrero sureno predefinido, pesado y cuerpo a cuerpo.
-class CaelumRulo : CaelumCombatActor
+// Rulo conserva su perfil de combate para pruebas aisladas. En MAP01 se coloca
+// con args[0]=1 y adopta el contrato tangible/anclado del residente.
+class CaelumRulo : CaelumAnchoredResident
 {
     Default
     {
@@ -12,8 +13,6 @@ class CaelumRulo : CaelumCombatActor
         MeleeRange 72;
         MinMissileChance 128;
         MaxTargetRange 768;
-        // El maestro 256x256 conserva 176 px visibles; 80/176 mantiene el
-        // tamaño mundial aprobado de los sprites anteriores sin reescalarlos.
         Scale 0.454545;
         Monster;
         +FLOORCLIP
@@ -22,7 +21,6 @@ class CaelumRulo : CaelumCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        // Fisico 20, tecnico 18, social 9 y mental 3.
         InitializeCombatProfile(20, 20, 20, 18, 18, 18, 9, 9, 9, 3, 3, 3);
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_HEAVY, 1);
         for (int slot = 0; CombatArmor != null
@@ -42,11 +40,11 @@ class CaelumRulo : CaelumCombatActor
     States
     {
     Spawn:
-        RULO A 10 A_CaelumBudgetedLook;
+        RULO A 10 A_CaelumResidentLook;
         Loop;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RULO BCDC 4 A_CaelumBudgetedChase;
+        RULO BCDC 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         RULO A 1;

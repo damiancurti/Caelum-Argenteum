@@ -14,8 +14,9 @@ GameInfo
     // permanente se compone con los recursos propios HUD-01.
     StatusBarClass = "CaelumStatusBar"
 
-    // Los EventHandlers observan eventos del motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumMassAIScheduler", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
+    // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
+    // demás EventHandlers observan el motor sin convertirse en actores del mapa.
+    EventHandlers = "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 
     // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
     // trasladar o recrear a Palomo durante futuras etapas de misión sin
@@ -36,9 +37,9 @@ skill Caelum
     SpawnFilter = Normal
 }
 
-// Los mapas permanecen separados durante la consolidación: MAP01 valida
-// arquitectura y MAP02 valida actores, IA, colisiones y efectos de área.
-map MAP01 "Mansión — prueba arquitectónica"
+// MAP01 comienza a asumir su función narrativa final. MAP02 todavía conserva
+// el campo independiente de actores durante la construcción de las alcantarillas.
+map MAP01 "$CA_MAP01_NAME"
 {
     music = "CA_MUS01"
 
@@ -341,6 +342,16 @@ DoomEdNums
     18531 = CaelumVeinEmerald2
     18532 = CaelumVeinEmerald3
     // --- END GENERATED CAELUM MINERAL VEIN DOOMEDNUMS ---
+
+    // MAP01: variantes tutoriales extraíbles con el golpe romo de la hachuela,
+    // paredes falsas visibles y ascensor del pasadizo secreto.
+    18533 = CaelumM01VeinIron
+    18534 = CaelumM01VeinCoal
+    18535 = CaelumM01VeinCopper
+    18536 = CaelumM01VeinTin
+    18537 = CaelumWalkThroughWallPanel
+    18538 = CaelumSecretElevator
+    18539 = CaelumM01HatchetPickup
 
     // Variantes de diagnostico controlado de MAP02.
     18200 = CaelumDiagnosticLookRat

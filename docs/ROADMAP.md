@@ -4,10 +4,12 @@ This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the origina
 
 The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
 
-V4.32.0c is author-accepted after its complete focused GZDoom 4.14.2 test pass.
-It preserves the accepted physical-currency economy and proportional-weight
-Magic Box, then closes Palomo's lot/mode controls, immediate-close behavior,
-Sell filtering and 500-MU return-home rule.
+V4.32 is closed. V4.32.0o passed the complete focused GZDoom 4.14.2 visual
+matrix after preserving the accepted economy, proportional-weight Magic Box,
+test merchant/dialogue behavior and every real combat path. V4.33.0b later
+removes that test commerce from Palomo's canonical role without deleting the
+reusable merchant system. The modular Domingo sword/hand/shield rig is the
+accepted reference for a later all-weapon expansion, not a V4.33 blocker.
 
 The author accepted every non-framing test in V4.32.0f: normal
 Exit/`changemap` preserves Palomo's gift, `map MAP02` intentionally starts a
@@ -25,13 +27,11 @@ Block retains the shield and its lower-left `LHND`, removes the lower-right
 main-hand assembly and shifts the blade another 16 logical units left.
 V4.32.0n raised the sword four logical units and expanded `RFNG` over the
 complete thumb, but one attack frame exposed a duplicated right hand because
-its percentage pivots were derived from transparent canvas sizes. V4.32.0o is
-the current closure candidate: it compensates the actual alpha bounds so
+its percentage pivots were derived from transparent canvas sizes. V4.32.0o
+compensates the actual alpha bounds so
 `RHND`, `DSWD` and `RFNG` resolve to the same effective blade pivot without
-changing art, trajectory, timing, angles, Block composition or gameplay. Only
-the focused visual matrix remains before V4.33; already accepted systems do
-not reopen. This does not authorize quest-stage relocation or any later
-V4.33 system.
+changing art, trajectory, timing, angles, Block composition or gameplay. The
+author passed its complete matrix, so already accepted systems do not reopen.
 
 V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
 potable-water recovery constant accidentally omitted from that package and
@@ -67,7 +67,7 @@ The MAP01 level-construction prototype now also preserves a reusable architectur
 | V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
 | V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability and material-recovery foundations exist. Complete same-station proportional repair and durability-scaled disassembly; elemental equipment returns its corresponding recipe materials rather than an essence/base-implement choice. |
 | V4.25 — Loot, Materials & Economy Foundation | Economy and revised Magic Box foundation implemented and accepted in V4.32.0a-r4; physical content remains partial | Material actors, natural anchors, physical currency and transaction-ready base-price helpers exist. Add systematic loot tables, functional containers and remaining basic-material sources. Replace copyrighted development placeholders before release. |
-| V4.26 — NPC Interaction, Quests and Factions | Not implemented as a complete system | Build interaction and dialogue first, then merchants, quests, reputation and factions. Do not begin large social content before the shared infrastructure is stable. |
+| V4.26 — NPC Interaction, Quests and Factions | Registry accepted in V4.33.0a; canonical MAP01 phases 00–20 implemented in V4.33.0b | Continue the authored MAP01 branches in order, then add concrete reputation consequences before large social content. |
 
 ## 2. Authoritative combat input contract
 
@@ -784,10 +784,11 @@ Author input required before implementation:
 
 ### V4.32 — NPC Interaction, Dialogue and Merchants
 
-**V4.32.0a-r4 through V4.32.0f are author-accepted. V4.32.0g was rejected as a
+**V4.32 is author-accepted and closed at V4.32.0o. V4.32.0g was rejected as a
 visual candidate; V4.32.0h mechanics/motion and V4.32.0i shield/angles are
 accepted. V4.32.0j's Block-hand mirror is retained, while its misunderstood
-idle framing and attack path are superseded by V4.32.0k. 4.32.0e remains a
+idle framing and attack path are superseded by V4.32.0k. V4.32.0o closes the
+final doubled-hand frame by compensating the real alpha bounds. 4.32.0e remains a
 discarded diagnostic because there was no Exit-travel regression.**
 The slice now
 contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
@@ -828,26 +829,59 @@ view connected to the real sword selector.
   follows five samples of the black attack curve and returns through three
   collinear samples to rest without changing the accepted rotation endpoints.
   The extended 480×240 right-arm canvas still prevents an internal panoramic
-  cutoff. Gameplay remains accepted; only this focused presentation awaits the
-  author pass.**
+  cutoff. V4.32.0o's compensated pivots passed the final author matrix and
+  close this presentation slice.**
 
 ### V4.33 — Quests, Reputation and Factions
 
+**V4.33.0a and V4.33.0b accepted; V4.33.0c physical MAP01 preparation
+implemented and awaiting focused author validation.** V4.33.0a established 32 stable persistent
+quest slots with eight objectives each, functional Journal pages and four
+technical faction domains. V4.33.0b incorporates the supplied MAP01 story and
+programming specification, supersedes the test-only “Palomo's adventure” and
+uses the same stable quest index for `CA_Q_MAIN_M00_THE_FOOL` / **Donde
+despiertan los perdidos**.
+
+V4.33.0b names all MAP01 states and factual flags without activating unfinished
+content. Its playable slice covers phases 00–20: short wake-up fade, native
+Unknown Voice dialogue, discreet Palomo reveal, persistent optional foyer
+questions, the authored hallucination follow-up, an exact transition to the
+prepared Argento phase 30 and Palomo's out-of-view departure. Palomo no longer
+grants the Box or opens commerce in production. Merchant code remains reusable
+for a later merchant NPC, and legacy saves retain their Box/content while only
+the discarded quest record is restarted.
+
+V4.33.0c removes the duplicated native/explicit **[Guardar silencio.]** entry,
+places Argento, Caella, Rulo and Ronnie at the authored room centers, and gives
+their MAP01 instances solid passive 500-MU return anchors. It also constructs
+the east false-wall route, an XL-safe 84×88-MU lift connection and a lower
+tutorial cave with renewable trees, iron/coal/copper/tin and one size-adaptive
+T1 hatchet. This is physical preparation only: phases 30–60 are not advanced
+and no unfinished dialogue or quest reward is invented.
+
 - Add persistent quest state and objective tracking.
+  **Foundation accepted in V4.33.0a; MAP01 enumerated states, flags and first
+  transition implemented in V4.33.0b; V4.33.0c adds map preparation without a
+  new transition.**
+- Implement MAP01 in authored order: Argento social branch, Caella magic branch,
+  Ronnie survival branch, starter weapon, Rulo/Toro, Palomo final, Magic Box,
+  capture of The Fool and confirmed transition to MAP02. Each subpatch must
+  preserve save reconstruction and may activate only its own acceptance slice.
 - Resolve Palomo's one authoritative placement from quest stage. The V4.32.0c
   MAP01 actor is an anchored initial location that returns after a 500-MU
-  displacement; a quest-stage transition may
-  remove/recreate or teleport him, including between maps, while reusing the
-  persistent merchant stock/cash/discount instead of duplicating or resetting
-  it. V4.32.0d already loads his native dialogue in every map, so relocation
-  needs no duplicated DIALOGxx tree.
+  displacement while present. **V4.33.0b resolves hidden → foyer → hidden,
+  then reserves upstairs for phase 80.** The final coordinate/physical
+  relocation remains map work.
 - Add faction membership/standing and reputation changes.
+  **Persistent storage, bounded mutations and isolated debug validation are
+  accepted in V4.33.0a; gameplay consequences remain authored content.**
 - Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
 - Four faction identifiers and a relation lookup do not materially increase
   map data load by themselves. Reuse the budgeted perception scheduler,
   spatial candidate filtering and staggered target reacquisition; never run a
   global actor search for every combatant. LOS tests, pathing, projectiles and
   dense collision are the freeze risks, not the four-entry faction relation.
+  **Accepted in V4.33.0a without actor iteration or AI hot-path changes.**
 
 ### V4.34 — Architectural Modules and World/Travel Foundation
 

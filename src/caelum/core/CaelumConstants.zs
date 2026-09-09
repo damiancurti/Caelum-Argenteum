@@ -9,6 +9,143 @@ class CaelumConstants : Object
     const PRIMARY_ATTRIBUTE_COUNT = 12;
     const ATTRIBUTE_LAYER_COUNT = 4;
 
+    // V4.33 reserva índices estables para el registro social persistente. La
+    // capacidad permite añadir contenido sin desplazar partidas; por ahora el
+    // único contenido definido es la misión principal del prólogo de MAP01.
+    const QUEST_CAPACITY = 32;
+    const QUEST_OBJECTIVE_CAPACITY = 8;
+    const QUEST_OBJECTIVE_STORAGE_COUNT =
+        QUEST_CAPACITY * QUEST_OBJECTIVE_CAPACITY;
+    const QUEST_DEFINED_COUNT = 1;
+    const QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT =
+        QUEST_DEFINED_COUNT * QUEST_OBJECTIVE_CAPACITY;
+    const QUEST_MAIN_M00_THE_FOOL = 0;
+    // Alias de compatibilidad interna: no vuelve canónico el antiguo nombre.
+    const QUEST_PALOMO_ADVENTURE = QUEST_MAIN_M00_THE_FOOL;
+    const QUEST_STATE_UNDISCOVERED = 0;
+    const QUEST_STATE_ACTIVE = 1;
+    const QUEST_STATE_COMPLETED = 2;
+    const QUEST_STATE_FAILED = 3;
+
+    // Estados enumerados de CA_Q_MAIN_M00_THE_FOOL. Los hitos principales
+    // conservan las fases 00–100 del documento; los cierres intermedios usan el
+    // espacio entre decenas para que cada transición pueda validarse por nombre.
+    const MAIN_M00_STATE_INITIALIZE = 0;
+    const MAIN_M00_STATE_AWAKENED = 10;
+    const MAIN_M00_STATE_MET_PALOMO = 20;
+    const MAIN_M00_STATE_ARGENTO_ACTIVE = 30;
+    const MAIN_M00_STATE_ARGENTO_COMPLETE = 35;
+    const MAIN_M00_STATE_CAELLA_ACTIVE = 40;
+    const MAIN_M00_STATE_CAELLA_COMPLETE = 45;
+    const MAIN_M00_STATE_RONNIE_ACTIVE = 50;
+    const MAIN_M00_STATE_RONNIE_COMPLETE = 55;
+    const MAIN_M00_STATE_WEAPON_READY = 60;
+    const MAIN_M00_STATE_RULO_ACTIVE = 70;
+    const MAIN_M00_STATE_RULO_COMPLETE = 75;
+    const MAIN_M00_STATE_BOX_RECEIVED = 80;
+    const MAIN_M00_STATE_FOOL_CAPTURED = 90;
+    const MAIN_M00_STATE_EXIT_CONFIRMED = 95;
+    const MAIN_M00_STATE_COMPLETE = 100;
+
+    // Ocho objetivos persistentes resumen los hitos de la misión. Las acciones
+    // inmediatas (hablar con Argento, seguir a Caella, etc.) se expresan con la
+    // etapa actual, sin cambiar el tamaño aceptado de los guardados V4.33.0a.
+    const MAIN_M00_OBJECTIVE_FIND_HELP = 0;
+    const MAIN_M00_OBJECTIVE_CONVINCE_RESIDENTS = 1;
+    const MAIN_M00_OBJECTIVE_SOLVE_RIDDLE = 2;
+    const MAIN_M00_OBJECTIVE_GATHER_MATERIALS = 3;
+    const MAIN_M00_OBJECTIVE_PREPARE_WEAPON = 4;
+    const MAIN_M00_OBJECTIVE_DEFEAT_BULL = 5;
+    const MAIN_M00_OBJECTIVE_CAPTURE_FOOL = 6;
+    const MAIN_M00_OBJECTIVE_LEAVE_MANSION = 7;
+
+    // Flags estables del prólogo. El arreglo tiene margen reservado, pero cada
+    // índice definido proviene de la especificación narrativa de MAP01.
+    const MAIN_M00_FLAG_CAPACITY = 64;
+    const MAIN_M00_FLAG_STARTED = 0;
+    const MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD = 1;
+    const MAIN_M00_FLAG_PALOMO_MET = 2;
+    const MAIN_M00_FLAG_ARGENTO_STARTED = 3;
+    const MAIN_M00_FLAG_RULO_CONVINCED = 4;
+    const MAIN_M00_FLAG_RONNIE_CONVINCED = 5;
+    const MAIN_M00_FLAG_CAELLA_CONVINCED = 6;
+    const MAIN_M00_FLAG_ARGENTO_COMPLETE = 7;
+    const MAIN_M00_FLAG_CAELLA_STARTED = 8;
+    const MAIN_M00_FLAG_MAGIC_IMPLEMENT_GIVEN = 9;
+    const MAIN_M00_FLAG_MAGIC_SEAL_GIVEN = 10;
+    const MAIN_M00_FLAG_MAGIC_PRIMARY_USED = 11;
+    const MAIN_M00_FLAG_MAGIC_SECONDARY_USED = 12;
+    const MAIN_M00_FLAG_MAGIC_CHANNEL_USED = 13;
+    const MAIN_M00_FLAG_RUNE_EARTH = 14;
+    const MAIN_M00_FLAG_RUNE_AIR = 15;
+    const MAIN_M00_FLAG_RUNE_FIRE = 16;
+    const MAIN_M00_FLAG_RUNE_WATER = 17;
+    const MAIN_M00_FLAG_SECRET_PASSAGE_OPEN = 18;
+    const MAIN_M00_FLAG_CAELLA_COMPLETE = 19;
+    const MAIN_M00_FLAG_RONNIE_STARTED = 20;
+    const MAIN_M00_FLAG_REPAIR_TUTORIAL_COMPLETE = 21;
+    const MAIN_M00_FLAG_SURVIVAL_FOOD_USED = 22;
+    const MAIN_M00_FLAG_SURVIVAL_WATER_USED = 23;
+    const MAIN_M00_FLAG_SURVIVAL_AIR_SEEN = 24;
+    const MAIN_M00_FLAG_SURVIVAL_LOAD_SEEN = 25;
+    const MAIN_M00_FLAG_MATERIALS_COMPLETE = 26;
+    const MAIN_M00_FLAG_RONNIE_COMPLETE = 27;
+    const MAIN_M00_FLAG_STARTER_WEAPON_CRAFTED = 28;
+    const MAIN_M00_FLAG_STARTER_WEAPON_PRESERVED = 29;
+    const MAIN_M00_FLAG_RULO_STARTED = 30;
+    const MAIN_M00_FLAG_COMBAT_PRIMARY_USED = 31;
+    const MAIN_M00_FLAG_COMBAT_SECONDARY_USED = 32;
+    const MAIN_M00_FLAG_COMBAT_DEFENSE_USED = 33;
+    const MAIN_M00_FLAG_COMBAT_CHARGED_USED = 34;
+    const MAIN_M00_FLAG_BULL_STARTED = 35;
+    const MAIN_M00_FLAG_BULL_DEFEATED = 36;
+    const MAIN_M00_FLAG_RULO_COMPLETE = 37;
+    const MAIN_M00_FLAG_PALOMO_UPSTAIRS_ENABLED = 38;
+    const MAIN_M00_FLAG_MAGIC_BOX_GRANTED = 39;
+    const MAIN_M00_FLAG_THE_FOOL_CAPTURED = 40;
+    const MAIN_M00_FLAG_EXIT_READY = 41;
+    const MAIN_M00_FLAG_EXIT_CONFIRMED = 42;
+    const MAIN_M00_FLAG_INVENTORY_SANITIZED = 43;
+    const MAIN_M00_FLAG_COMPLETE = 44;
+    const MAIN_M00_FLAG_ASKED_PALOMO_WHERE = 45;
+    const MAIN_M00_FLAG_ASKED_PALOMO_WHAT_HAPPENED = 46;
+    const MAIN_M00_FLAG_TOLD_PALOMO_ABOUT_VOICE = 47;
+    const MAIN_M00_FLAG_PALOMO_CALLED_IT_HALLUCINATION = 48;
+    const MAIN_M00_FLAG_HEARD_ARGENTO_QUOTE = 49;
+    const MAIN_M00_FLAG_HEARD_CAELLA_QUOTE = 50;
+    const MAIN_M00_FLAG_HEARD_RONNIE_QUOTE = 51;
+    const MAIN_M00_FLAG_HEARD_RULO_QUOTE = 52;
+    const MAIN_M00_FLAG_NOTICED_MEMORY_GAP = 53;
+    const MAIN_M00_FLAG_NOTICED_LOOPING_PATH = 54;
+    const MAIN_M00_FLAG_NOTICED_WRONG_CLOCKS = 55;
+    const MAIN_M00_FLAG_NOTICED_ROOM_GEOMETRY = 56;
+
+    const MAIN_M00_UNKNOWN_VOICE_CONVERSATION_ID = 43300;
+    const MAIN_M00_AWAKEN_FADE_TICS = 28;
+    const MAIN_M00_UNKNOWN_VOICE_DELAY_TICS = 18;
+
+    // La ubicación de Palomo es un resultado de la etapa, no otro dato mutable.
+    // El recibidor es la única ubicación activa en este subparche; el segundo
+    // piso ya tiene índice reservado para la fase final sin activarla todavía.
+    const PALOMO_PLACEMENT_HIDDEN = 0;
+    const PALOMO_PLACEMENT_MANSION_FOYER = 1;
+    const PALOMO_PLACEMENT_MANSION_UPSTAIRS = 2;
+    const PALOMO_PLACEMENT_MANSION = PALOMO_PLACEMENT_MANSION_FOYER;
+    const PALOMO_PLACEMENT_COUNT = 3;
+
+    // Cuatro dominios sociales baratos y estables. Son identificadores de
+    // infraestructura, no nombres definitivos de partidos o asentamientos.
+    const FACTION_GENDARMERIA = 0;
+    const FACTION_SETTLEMENTS = 1;
+    const FACTION_CARAVANS = 2;
+    const FACTION_POLITICAL_ACTORS = 3;
+    const FACTION_COUNT = 4;
+    const FACTION_REPUTATION_MINIMUM = -1000;
+    const FACTION_REPUTATION_MAXIMUM = 1000;
+    const FACTION_RELATION_HOSTILE = -1;
+    const FACTION_RELATION_NEUTRAL = 0;
+    const FACTION_RELATION_FRIENDLY = 1;
+
     // Character creation allocation limits from the design document.
     const FREE_LAYER_POINTS = 4;
     const MAX_LAYER_BASE = 15;
@@ -71,6 +208,19 @@ class CaelumConstants : Object
     // El comerciante anclado tolera empujes menores. A partir de 500 MU
     // regresa a velocidad de carrera a su punto de aparición original.
     const PALOMO_MERCHANT_RETURN_DISTANCE = 500.0;
+    // args[0] = 1 convierte a Argento, Caella, Rulo o Ronnie en residentes
+    // narrativos: siguen siendo tangibles, pero no combaten y regresan al
+    // punto exacto del mapa cuando un empujón los aleja 500 MU.
+    const STORY_NPC_ANCHORED = 1;
+    const STORY_NPC_RETURN_DISTANCE = 500.0;
+    const STORY_NPC_HOME_TOLERANCE = 1.0;
+    // El ascensor ocupa 84x88 MU. Incluso el cuerpo XL máximo (42.67 MU de
+    // diámetro) cabe con margen y el rectángulo permanece dentro del sector 92.
+    const M01_SECRET_ELEVATOR_WIDTH = 84;
+    const M01_SECRET_ELEVATOR_DEPTH = 88;
+    const M01_SECRET_CAVE_X = -20000.0;
+    const M01_SECRET_CAVE_Y = 32000.0;
+    const M01_SECRET_CAVE_FLOOR_Z = -256.0;
     // Evita interpretar el comando limpiado por el menú como una liberación
     // real de Use en el mismo tic de cierre.
     const PALOMO_INTERACTION_REARM_GUARD_TICS = 2;
