@@ -1,0 +1,8 @@
+Revisión de perspectiva y anatomía.
+99 PNG: 49 T2 + 49 T3 + ca_giant_gauntlets.png.
+Correspondencia exacta con los 99 nombres y rutas del parche anterior.
+99/99 PNG legibles, RGBA, 128x128, alfa 0..255, contenido no vacío.
+Margen transparente de al menos 7 px en cada borde.
+Control visual realizado sobre másteres y PNG exportados.
+Las vistas previas son láminas de consulta, no sprites para el motor.
+No se ejecutó una prueba dentro del juego en esta revisión.

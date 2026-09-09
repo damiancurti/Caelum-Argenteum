@@ -1,4 +1,4 @@
-# Caelum Argenteum — Diálogos iniciales de MAP01 V4.33.0c
+# Caelum Argenteum — Diálogos iniciales de MAP01 V4.33.0d
 
 ## Tecnología nativa
 
@@ -37,6 +37,12 @@ tampoco repite la Voz: el hecho registrado es haberla oído, no haber elegido
 una respuesta concreta.
 
 Ninguna línea identifica a la mujer ni explica la naturaleza del lugar.
+
+V4.33.0d corrige además las páginas que responden **¿Quién sos?** y **¿Dónde
+estoy?**: cada una conserva un único **Continuar** mediante `goodbye` nativo.
+Se retiraron sus dos copias explícitas `choice`; el cierre y el registro de
+haber oído la Voz mantienen el mismo comportamiento. La validación debe
+recorrer ambas respuestas, además del silencio ya aprobado.
 
 ## Primer diálogo de Palomo
 

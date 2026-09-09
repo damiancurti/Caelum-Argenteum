@@ -1,5 +1,10 @@
 # MAP01 — residentes y pasadizo secreto V4.33.0c
 
+Documento histórico. La prueba del autor requirió corregir la orientación de
+la falsa pared, reemplazar el traslado instantáneo por un ascensor físico y
+cambiar los recursos y herramienta. El contrato vigente está en
+`MAP01_SECRET_PASSAGE_4_33_0d.md`; el umbral de retorno actual es 100 MU.
+
 ## Coordenadas autoritativas
 
 | Elemento | X | Y | Z | Ángulo | Referencia |

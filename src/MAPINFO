@@ -343,15 +343,10 @@ DoomEdNums
     18532 = CaelumVeinEmerald3
     // --- END GENERATED CAELUM MINERAL VEIN DOOMEDNUMS ---
 
-    // MAP01: variantes tutoriales extraíbles con el golpe romo de la hachuela,
-    // paredes falsas visibles y ascensor del pasadizo secreto.
-    18533 = CaelumM01VeinIron
-    18534 = CaelumM01VeinCoal
-    18535 = CaelumM01VeinCopper
-    18536 = CaelumM01VeinTin
-    18537 = CaelumWalkThroughWallPanel
+    // MAP01: piso móvil nativo y espada normal adaptada al talle del jugador.
+    // Las vetas usan directamente el catálogo visible de cobre y estaño.
     18538 = CaelumSecretElevator
-    18539 = CaelumM01HatchetPickup
+    18539 = CaelumM01SwordPickup
 
     // Variantes de diagnostico controlado de MAP02.
     18200 = CaelumDiagnosticLookRat

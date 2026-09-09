@@ -1,9 +1,68 @@
 # Caelum Argenteum 4.0 — Implementation status
 
+## MAP01 south lift-shaft texture correction 4.33.0e
+
+**Implemented; file-level validation completed; focused GZDoom 4.14.2 visual
+validation pending.** The author accepted every V4.33.0d test except the
+invisible interior wall near `(1922,338,0)`, facing 270 degrees.
+
+The south edge at `Y=272`, `X=1875..1959` reuses an older boundary whose floors
+were initially both at zero. Its lift-facing sidedef 1637 retained an empty
+lower texture, unlike the newly created west and east shaft edges. Lowering
+the platform exposes that untextured surface. V4.33.0e assigns `CACVROCK` to
+that lower texture, matching the adjacent shaft walls.
+
+The runtime delta is exactly one sidedef property in `src/maps/MAP01.wad`.
+Vertices, linedefs, sectors, Things, upper/middle textures, native lift calls
+and all gameplay scripts remain byte-equivalent or semantically identical to
+0d as applicable. The upper entrance remains open when both floors are at zero.
+
+See `docs/VALIDACION_4_33_0e.txt` for the actual file-level checks and
+`PRUEBAS_4_33_0e.txt` for the remaining engine check. GZDoom is unavailable in
+this environment; no new engine run is claimed. MAP01's Argento and subsequent
+mission phases remain pending according to the existing roadmap.
+
+## Physical MAP01 lift, corrected secret facade and equipment art 4.33.0d
+
+**Author validation passed except for the south interior lift-shaft texture,
+corrected in V4.33.0e.** The author accepted the other V4.33.0c tests and
+requested the corrections below.
+
+- Both Unknown Voice answer pages now expose exactly one native Continue
+  goodbye; the explicit duplicate choices are removed.
+- The four residents and tangible Palomo return after 100 MU instead of 500.
+  Their accepted coordinates and straight running return remain unchanged.
+- A native mansion-textured facade at X=1842 runs parallel to the east wall.
+  Its southern 96-MU section is pass-through; a second hidden midtexture crosses
+  the 119-MU-wide passage at Y=-87. The rest of the facade blocks at ground level.
+- The 84×88-MU platform centered at (1917,316) is a native sector floor. It
+  descends continuously from 0 to -384 at 2 MU/tic, waits 175 tics, then rises.
+  Native Use specials recall it from below. No player SetOrigin or map change
+  exists in the production transport code.
+- The lower tunnel joins a contiguous 1024×800-MU cave with three trees, one
+  normal copper vein, one normal tin vein and one size-adaptive T1 sword.
+  Fire harvests trees; AltFire pierces the veins. Normal vein classes retain
+  their registered 3D models, fixing the invisible 0c subclasses. The hatchet,
+  iron, coal and local blunt-harvesting exception are removed from this cave.
+- New 3D slabs retain the original ground surfaces and roof tags above the
+  excavation. Existing bottom-pegged railings receive height compensation so
+  they remain at their accepted upper-floor heights. Cave rock reuses the
+  project's granite texture.
+- All 99 supplied PNGs are imported byte-for-byte: 49 T2, 49 T3 and the
+  corrected base giant gauntlets. The existing tier resolver uses their same
+  paths; they are equipment icons, not first-person animation frames.
+
+An isolated runtime probe observed platform/player heights -70, -210, -384
+and finally 0 at fixed X/Y. It also walked the player through the lower tunnel
+into the cave at floor -384 / ceiling -64. A rendered GZDoom screenshot
+confirmed that the copper vein is visible. The probe is excluded from the
+delivered runtime. Narrative advancement still ends at the prepared Argento
+phase; this correction does not implement the next dialogue branch.
+
 ## MAP01 resident placement and secret survival cave 4.33.0c
 
-**Implemented; deterministic source/map audits and GZDoom 4.14.2 parser plus
-MAP01 load checks passed; focused author validation pending**
+**Historical prototype; author feedback is corrected by V4.33.0d. All other
+focused author tests passed.**
 
 The complete V4.33.0b matrix was accepted by the author. This revision changes
 only the reported dialogue duplication and the physical MAP01 preparation for

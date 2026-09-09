@@ -205,22 +205,23 @@ class CaelumConstants : Object
     // de misión posterior podrá recrearlo o trasladarlo sin cambiar su estado.
     const PALOMO_MERCHANT_ANCHORED = 1;
     const PALOMO_MERCHANT_SESSION_DISTANCE = 160.0;
-    // El comerciante anclado tolera empujes menores. A partir de 500 MU
+    // El residente anclado tolera empujes menores. A partir de 100 MU
     // regresa a velocidad de carrera a su punto de aparición original.
-    const PALOMO_MERCHANT_RETURN_DISTANCE = 500.0;
+    const PALOMO_MERCHANT_RETURN_DISTANCE = 100.0;
     // args[0] = 1 convierte a Argento, Caella, Rulo o Ronnie en residentes
     // narrativos: siguen siendo tangibles, pero no combaten y regresan al
-    // punto exacto del mapa cuando un empujón los aleja 500 MU.
+    // punto exacto del mapa cuando un empujón los aleja 100 MU.
     const STORY_NPC_ANCHORED = 1;
-    const STORY_NPC_RETURN_DISTANCE = 500.0;
+    const STORY_NPC_RETURN_DISTANCE = 100.0;
     const STORY_NPC_HOME_TOLERANCE = 1.0;
     // El ascensor ocupa 84x88 MU. Incluso el cuerpo XL máximo (42.67 MU de
     // diámetro) cabe con margen y el rectángulo permanece dentro del sector 92.
     const M01_SECRET_ELEVATOR_WIDTH = 84;
     const M01_SECRET_ELEVATOR_DEPTH = 88;
-    const M01_SECRET_CAVE_X = -20000.0;
-    const M01_SECRET_CAVE_Y = 32000.0;
-    const M01_SECRET_CAVE_FLOOR_Z = -256.0;
+    const M01_SECRET_ELEVATOR_TAG = 12000;
+    const M01_SECRET_ELEVATOR_SPEED = 16;
+    const M01_SECRET_ELEVATOR_WAIT = 175;
+    const M01_SECRET_CAVE_FLOOR_Z = -384.0;
     // Evita interpretar el comando limpiado por el menú como una liberación
     // real de Use en el mismo tic de cierre.
     const PALOMO_INTERACTION_REARM_GUARD_TICS = 2;

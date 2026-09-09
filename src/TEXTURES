@@ -1,3 +1,9 @@
+// Roca propia del catálogo ambiental para paredes y techo de la cueva.
+Texture "CACVROCK", 256, 256
+{
+    Patch "models/caelum/world/environment/rock_granite.png", 0, 0
+}
+
 // One texture pixel equals one map unit at the default sprite scale. Matching
 // this 72-pixel canvas to the actor's 72-unit Height keeps every visible body
 // region inside the collision cylinder.

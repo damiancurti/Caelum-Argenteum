@@ -33,11 +33,6 @@ conversation
         name = "$CA_SPEAKER_UNKNOWN_VOICE";
         dialog = "$CA_DLG_M01_UNKNOWN_VOICE_WHO_REPLY";
         goodbye = "$CA_DLG_M01_CONTINUE";
-        choice
-        {
-            text = "$CA_DLG_M01_CONTINUE";
-            closedialog = true;
-        }
     }
 
     page
@@ -46,11 +41,6 @@ conversation
         name = "$CA_SPEAKER_UNKNOWN_VOICE";
         dialog = "$CA_DLG_M01_UNKNOWN_VOICE_WHERE_REPLY";
         goodbye = "$CA_DLG_M01_CONTINUE";
-        choice
-        {
-            text = "$CA_DLG_M01_CONTINUE";
-            closedialog = true;
-        }
     }
 }
 

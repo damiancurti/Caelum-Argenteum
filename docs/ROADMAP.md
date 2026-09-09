@@ -834,8 +834,9 @@ view connected to the real sword selector.
 
 ### V4.33 — Quests, Reputation and Factions
 
-**V4.33.0a and V4.33.0b accepted; V4.33.0c physical MAP01 preparation
-implemented and awaiting focused author validation.** V4.33.0a established 32 stable persistent
+**V4.33.0a and V4.33.0b accepted; V4.33.0d passed every author test except
+the south interior lift-shaft wall. V4.33.0e restores its missing lower texture;
+only the focused visual/return check remains pending.** V4.33.0a established 32 stable persistent
 quest slots with eight objectives each, functional Journal pages and four
 technical faction domains. V4.33.0b incorporates the supplied MAP01 story and
 programming specification, supersedes the test-only “Palomo's adventure” and
@@ -856,8 +857,20 @@ places Argento, Caella, Rulo and Ronnie at the authored room centers, and gives
 their MAP01 instances solid passive 500-MU return anchors. It also constructs
 the east false-wall route, an XL-safe 84×88-MU lift connection and a lower
 tutorial cave with renewable trees, iron/coal/copper/tin and one size-adaptive
-T1 hatchet. This is physical preparation only: phases 30–60 are not advanced
-and no unfinished dialogue or quest reward is invented.
+T1 hatchet. V4.33.0d supersedes that prototype with 100-MU anchors, a native
+false facade parallel to the east wall, a physical sector lift and contiguous
+underground cave. Only copper/tin and a normal size-adaptive T1 sword remain
+as mineral/tool content. The native models fix the invisible tutorial veins.
+It also removes the duplicate Continue choices after the Unknown Voice's two
+answers and imports all 99 author-supplied equipment icons. This is physical
+preparation only: phases 30–60 are not advanced and no unfinished dialogue or
+quest reward is invented.
+
+V4.33.0e changes only the lower texture of the lift-facing south sidedef in
+MAP01. It preserves the accepted geometry, lift movement, tunnel, resources,
+dialogue and equipment art. File-level validation is complete; the engine
+visual check remains pending. The next authored mission slice is still
+Argento's social branch; this texture correction does not close MAP01.
 
 - Add persistent quest state and objective tracking.
   **Foundation accepted in V4.33.0a; MAP01 enumerated states, flags and first
@@ -868,7 +881,7 @@ and no unfinished dialogue or quest reward is invented.
   capture of The Fool and confirmed transition to MAP02. Each subpatch must
   preserve save reconstruction and may activate only its own acceptance slice.
 - Resolve Palomo's one authoritative placement from quest stage. The V4.32.0c
-  MAP01 actor is an anchored initial location that returns after a 500-MU
+  MAP01 actor is an anchored initial location that returns after a 100-MU
   displacement while present. **V4.33.0b resolves hidden → foyer → hidden,
   then reserves upstairs for phase 80.** The final coordinate/physical
   relocation remains map work.

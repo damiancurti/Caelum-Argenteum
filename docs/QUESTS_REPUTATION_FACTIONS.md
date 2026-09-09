@@ -1,11 +1,12 @@
-# Caelum Argenteum — Misiones, reputación y facciones V4.33.0c
+# Caelum Argenteum — Misiones, reputación y facciones V4.33.0d
 
 ## Estado de la revisión
 
 V4.33.0a y V4.33.0b fueron aceptadas después de superar íntegramente sus
 matrices manuales en GZDoom 4.14.2. V4.33.0b sustituyó la aventura comercial de
 prueba por la misión principal canónica de MAP01; V4.33.0c prepara sus actores
-y espacios físicos sin adelantar las transiciones narrativas:
+y espacios físicos sin adelantar las transiciones narrativas. V4.33.0d corrige
+esa preparación a partir de la prueba del autor:
 
 - ID estable: `QUEST_MAIN_M00_THE_FOOL`;
 - nombre visible provisional: **Donde despiertan los perdidos**;
@@ -29,23 +30,31 @@ en esta revisión; todavía no completa objetivos ni concede progreso de Ronnie.
 | Caella | `(-290,-378,136)`, 90° | Tangible, anclada, pasiva |
 | Rulo | `(-290,378,136)`, 270° | Tangible, anclado, pasivo |
 | Ronnie | `(1036,378,136)`, 270° | Tangible, anclado, pasivo |
-| Entrada falsa | `(1842,-360,0)`, 90° | Visible por ambas caras y atravesable |
-| Segunda pared falsa | `(1944,-87,0)`, 180° | Visible por ambas caras y atravesable |
-| Fondo | `(1842,366,0)`, 270° | Pared sólida |
-| Ascensor | `(1917,316,0)`, 90° | Huella 84×88 MU; enlace de ida y vuelta |
+| Falsa fachada | `x=1842`, `y=-383..383` | Paralela al muro oriental; textura nativa de mansión |
+| Entrada oculta | `x=1842`, `y=-383..-287` | Tramo atravesable de 96 MU, cerca del punto indicado |
+| Segunda pared falsa | `y=-87`, `x=1842..1961` | Atraviesa el pasillo oculto; visible y sin colisión |
+| Ascensor | `(1917,316,0)`, 90° | Piso nativo 84×88 MU; descenso a Z=-384 y retorno |
 
 La instrucción posterior del autor que exige NPC tangibles reemplaza para estas
 cuatro instancias la frase “no bloqueables” de la especificación v1.0. Se
 mantienen invulnerables y fuera del combate. `args[0]=1` activa el contrato
-narrativo y almacena posición/ángulo de origen; al alcanzar 500 MU de
+narrativo y almacena posición/ángulo de origen; al alcanzar 100 MU de
 desplazamiento regresan corriendo en línea recta. Una invocación de depuración
-sin ese argumento continúa funcionando como combatiente.
+sin ese argumento continúa funcionando como combatiente. Palomo comparte el
+nuevo umbral de 100 MU mientras está presente y tangible.
 
-La cueva inferior es un recinto cerrado de 1000×800 MU, con tres árboles, una
-veta de hierro, carbón, cobre y estaño, y una única hachuela T1 cuyo talle se
-adapta al personaje al recogerla. Sus vetas tutoriales aceptan AltFire romo de
-la hachuela. Esta excepción es local: no modifica el catálogo ni la extracción
-perforante de ninguna veta normal.
+La cueva inferior ocupa un contorno de 1024×800 MU con esquinas recortadas,
+piso a Z=-384 y techo a Z=-64. Un túnel continuo la une al pozo. Contiene tres
+árboles, cobre bruto, estaño bruto y una espada T1 cuyo talle se adapta al
+personaje al recogerla. Fire permite talar; AltFire permite extraer de las
+vetas normales, con sus modelos 3D ya registrados. Se eliminan la hachuela,
+hierro, carbón y las clases especiales de extracción roma de la cueva de 0c.
+
+El ascensor baja al entrar completamente en la plataforma, espera cinco
+segundos abajo y regresa. Desde el acceso inferior se llama con **Usar** sobre
+la cara de la plataforma. Su movimiento, colisión y guardado pertenecen al
+motor; no hay teletransporte ni cambio de mapa. Ver
+`docs/MAP01_SECRET_PASSAGE_4_33_0d.md`.
 
 ## Separación de responsabilidades
 
