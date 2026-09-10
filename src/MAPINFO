@@ -6,7 +6,12 @@ GameInfo
 
     // Pantalla de presentación oficial suministrada por el autor.
     TitlePage = "TITLEPIC"
-    TitleMusic = "CA_MUS01"
+    TitleMusic = "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg"
+    // La salida del juego no debe heredar los gritos aleatorios de Doom.
+    QuitSound = "caelum/ui/menu_select"
+    // GZDoom reproduce ChatSound al abrir y al avanzar una conversación.
+    // Una sola emisión nativa evita superponer el sonido heredado.
+    ChatSound = "caelum/ui/dialogue_open"
     // Evita que el ciclo del título vuelva a mostrar los créditos de Doom II.
     CreditPage = "TITLEPIC"
 
@@ -16,7 +21,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
+    EventHandlers = "CaelumMenuAudio", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 
     // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
     // trasladar o recrear a Palomo durante futuras etapas de misión sin

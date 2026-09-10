@@ -1,32 +1,147 @@
-# Stop immediately if PowerShell encounters an error.
+﻿param(
+    [string]$Source = "src",
+    [string]$Destination = "build/caelum_argenteum_dev.pk3"
+)
+
 $ErrorActionPreference = "Stop"
 
-# $PSScriptRoot is the folder containing this PowerShell script.
-$projectRoot = $PSScriptRoot
-$sourceDirectory = Join-Path $projectRoot "src"
-$buildDirectory = Join-Path $projectRoot "build"
-$outputPk3 = Join-Path $buildDirectory "caelum_argenteum_dev.pk3"
-$temporaryZip = Join-Path $buildDirectory "caelum_argenteum_dev.zip"
+$ProjectRoot = $PSScriptRoot
+$SourcePath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Source))
+$DestinationPath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Destination))
 
-# Verify that the source folder exists before attempting to package it.
-if (-not (Test-Path $sourceDirectory -PathType Container)) {
-    throw "The source directory does not exist: $sourceDirectory"
+if (-not (Test-Path -LiteralPath $SourcePath -PathType Container)) {
+    throw "No existe la carpeta de fuentes: $SourcePath"
 }
 
-# Create the build folder the first time the project is run.
-New-Item -ItemType Directory -Path $buildDirectory -Force | Out-Null
+$Files = @(Get-ChildItem -LiteralPath $SourcePath -Recurse -File | Sort-Object FullName)
+if ($Files.Count -eq 0) {
+    throw "La carpeta de fuentes no contiene archivos: $SourcePath"
+}
 
-# Remove only the previous generated development packages.
-Remove-Item $outputPk3 -Force -ErrorAction SilentlyContinue
-Remove-Item $temporaryZip -Force -ErrorAction SilentlyContinue
+foreach ($File in $Files) {
+    if ($File.Length -eq 0) {
+        throw "Archivo vacío no permitido dentro del PK3: $($File.FullName)"
+    }
 
-# PK3 files are ZIP archives with a different extension. Compress-Archive
-# packages the contents of src, not the src folder itself.
-Compress-Archive -Path (Join-Path $sourceDirectory "*") -DestinationPath $temporaryZip -CompressionLevel Optimal
+    if ($File.Extension -ieq ".png") {
+        $Stream = [System.IO.File]::OpenRead($File.FullName)
+        try {
+            $Header = New-Object byte[] 24
+            if ($Stream.Read($Header, 0, 24) -ne 24) {
+                throw "PNG incompleto: $($File.FullName)"
+            }
 
-# Rename the generated ZIP archive to the extension expected by GZDoom mods.
-Move-Item $temporaryZip $outputPk3
+            $Signature = [byte[]](137, 80, 78, 71, 13, 10, 26, 10)
+            for ($Index = 0; $Index -lt 8; $Index++) {
+                if ($Header[$Index] -ne $Signature[$Index]) {
+                    throw "PNG inválido: $($File.FullName)"
+                }
+            }
 
-Write-Host "Development PK3 created successfully:"
-Write-Host $outputPk3
+            $Width = [System.Net.IPAddress]::NetworkToHostOrder(
+                [BitConverter]::ToInt32($Header, 16)
+            )
+            $Height = [System.Net.IPAddress]::NetworkToHostOrder(
+                [BitConverter]::ToInt32($Header, 20)
+            )
+            if ($Width -le 0 -or $Height -le 0) {
+                throw "PNG con dimensiones inválidas: $($File.FullName)"
+            }
+        }
+        finally {
+            $Stream.Dispose()
+        }
+    }
+}
 
+$DestinationDirectory = Split-Path -Parent $DestinationPath
+[System.IO.Directory]::CreateDirectory($DestinationDirectory) | Out-Null
+$TemporaryPath = Join-Path $DestinationDirectory (
+    [System.IO.Path]::GetRandomFileName() + ".pk3.tmp"
+)
+
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+try {
+    $OutputStream = [System.IO.File]::Open(
+        $TemporaryPath,
+        [System.IO.FileMode]::CreateNew,
+        [System.IO.FileAccess]::ReadWrite,
+        [System.IO.FileShare]::None
+    )
+    try {
+        $Archive = [System.IO.Compression.ZipArchive]::new(
+            $OutputStream,
+            [System.IO.Compression.ZipArchiveMode]::Create,
+            $true
+        )
+        try {
+            foreach ($File in $Files) {
+                $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
+                    [char[]]@('\', '/')
+                )
+                $EntryName = $RelativePath.Replace('\', '/')
+                $Entry = $Archive.CreateEntry(
+                    $EntryName,
+                    [System.IO.Compression.CompressionLevel]::Optimal
+                )
+                $EntryStream = $Entry.Open()
+                $InputStream = [System.IO.File]::OpenRead($File.FullName)
+                try {
+                    $InputStream.CopyTo($EntryStream)
+                }
+                finally {
+                    $InputStream.Dispose()
+                    $EntryStream.Dispose()
+                }
+            }
+        }
+        finally {
+            $Archive.Dispose()
+        }
+    }
+    finally {
+        $OutputStream.Dispose()
+    }
+
+    $CheckStream = [System.IO.File]::OpenRead($TemporaryPath)
+    try {
+        $CheckArchive = [System.IO.Compression.ZipArchive]::new(
+            $CheckStream,
+            [System.IO.Compression.ZipArchiveMode]::Read,
+            $false
+        )
+        try {
+            foreach ($Entry in $CheckArchive.Entries) {
+                if ($Entry.FullName.EndsWith("/")) {
+                    throw "El PK3 contiene una entrada de directorio: $($Entry.FullName)"
+                }
+                if ($Entry.Length -eq 0) {
+                    throw "El PK3 contiene una entrada vacía: $($Entry.FullName)"
+                }
+            }
+        }
+        finally {
+            $CheckArchive.Dispose()
+        }
+    }
+    finally {
+        $CheckStream.Dispose()
+    }
+
+    # Reemplazo atómico: el PK3 anterior sigue disponible si falla el build.
+    if (Test-Path -LiteralPath $DestinationPath) {
+        [System.IO.File]::Replace($TemporaryPath, $DestinationPath, [NullString]::Value)
+    } else {
+        [System.IO.File]::Move($TemporaryPath, $DestinationPath)
+    }
+    Write-Host "PK3 creado correctamente: $DestinationPath"
+    Write-Host "Archivos incluidos: $($Files.Count)"
+    Write-Host "Entradas de directorio: 0"
+}
+finally {
+    if (Test-Path -LiteralPath $TemporaryPath) {
+        Remove-Item -LiteralPath $TemporaryPath -Force
+    }
+}

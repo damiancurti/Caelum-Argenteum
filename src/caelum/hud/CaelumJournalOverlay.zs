@@ -115,7 +115,7 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
-    ui String GetQuestStageKey(int questId, int questStage)
+    ui String GetQuestStageKey(int questId, int questStage, bool argentoStarted, int residents)
     {
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
@@ -137,8 +137,15 @@ class CaelumJournalOverlay : EventHandler
             return "CA_Q_M01_STATE_RONNIE_SURVIVAL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
             return "CA_Q_M01_STATE_CAELLA_MAGIC";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
+            return "CA_Q_M01_STATE_TALK_CAELLA";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
-            return "CA_Q_M01_STATE_ARGENTO_SOCIAL";
+        {
+            if (residents == CaelumConstants.MAIN_M00_RESIDENT_COUNT)
+                return "CA_Q_M01_STATE_RETURN_ARGENTO";
+            return argentoStarted ? "CA_Q_M01_STATE_RECRUIT_RESIDENTS"
+                : "CA_Q_M01_STATE_ARGENTO_SOCIAL";
+        }
         if (questStage >= CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
             return "CA_Q_M01_STATE_MEET_PALOMO";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_AWAKENED)
@@ -857,7 +864,9 @@ class CaelumJournalOverlay : EventHandler
                         StringTable.Localize(
                             GetQuestStageKey(
                                 questId,
-                                localPlayer.JournalQuestStage[questId]
+                                localPlayer.JournalQuestStage[questId],
+                                localPlayer.JournalMainM00ArgentoStarted,
+                                localPlayer.MainM00ConvincedCountSnapshot
                             ),
                             false
                         )

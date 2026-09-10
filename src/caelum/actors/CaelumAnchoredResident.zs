@@ -26,6 +26,18 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         }
     }
 
+    override bool Used(Actor user)
+    {
+        if (!StoryAnchored || level.MapName != "MAP01") { return Super.Used(user); }
+        CaelumPlayer traveler = CaelumPlayer(user);
+        if (traveler == null || traveler.player == null) { return false; }
+        if ((traveler.player.cmd.buttons & BT_USE) == 0
+            || traveler.FolkloreInteractionUseLatched) { return true; }
+        traveler.FolkloreInteractionUseLatched = true;
+        traveler.FolkloreInteractionReleaseGuardTics = 0;
+        return CaelumMainM00SocialDialogue.Open(traveler, self);
+    }
+
     action void A_CaelumResidentLook()
     {
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
@@ -52,6 +64,18 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         Super.Tick();
         if (!StoryAnchored || health <= 0) { return; }
+        // El próximo Use debe reconstruir el nodo desde el personaje que habla.
+        if (!bInConversation && HasConversation())
+        {
+            Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self, null, false, 0, 0);
+        }
+        if (bInConversation)
+        {
+            Vel.X = 0.0;
+            Vel.Y = 0.0;
+            return;
+        }
 
         target = null;
         bSolid = true;

@@ -2,7 +2,7 @@
 
 Estos 10 archivos pasaron la validación técnica y tienen licencias compatibles,
 pero todavía no poseen un evento aprobado en Caelum Argenteum. Se guardan fuera
-de `src/`, por lo que `tools/build_pk3.py` no los incorpora al juego y no
+de `src/`, por lo que `build_dev.ps1` no los incorpora al juego y no
 alteran ningún sonido actual.
 
 Para aprobar uno:

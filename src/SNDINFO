@@ -6,6 +6,29 @@ caelum/ui/menu_select = "sounds/caelum/ui/ca_menu_select.ogg"
 caelum/ui/recipe_learned = "sounds/caelum/ui/ca_recipe_learned.ogg"
 caelum/ui/crafting_page_turn = "sounds/caelum/ui/ca_crafting_page_turn.ogg"
 caelum/ui/map_transition = "sounds/caelum/ui/ca_map_transition.ogg"
+caelum/ui/dialogue_open = "sounds/caelum/ui/ca_dialogue_open.ogg"
+$limit caelum/ui/dialogue_open 1
+// Si se avanza muy rápido, terminar la frase en curso sin apilar copias.
+$singular caelum/ui/dialogue_open
+
+// El motor también llama estos nombres al abrir el primer menú, confirmar,
+// cancelar, cambiar opciones y salir. Redirigirlos cubre los menús nativos.
+$alias menu/activate caelum/ui/menu_open
+$alias menu/backup caelum/ui/menu_open
+$alias menu/prompt caelum/ui/menu_open
+$alias menu/cursor caelum/ui/menu_move
+$alias menu/change caelum/ui/menu_move
+$alias menu/invalid caelum/ui/menu_move
+$alias menu/dismiss caelum/ui/menu_open
+$alias menu/choose caelum/ui/menu_select
+$alias menu/clear caelum/ui/menu_open
+$alias menu/advance caelum/ui/menu_select
+$alias menu/quit1 caelum/ui/menu_select
+$alias menu/quit2 caelum/ui/menu_select
+
+// Cubre también el botón Exit físico del mapa y sus interruptores nativos.
+$alias switches/normbutn caelum/ui/menu_select
+$alias switches/exitbutn caelum/ui/map_transition
 
 caelum/world/door_open = "sounds/caelum/world/doors/ca_door_open.ogg"
 caelum/world/door_large_open = "sounds/caelum/world/doors/ca_door_large_open.ogg"
@@ -83,7 +106,8 @@ caelum/player/footstep_wood_07 = "sounds/caelum/player/footsteps/wood/ca_footste
 caelum/player/footstep_wood_08 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_08.ogg"
 $random caelum/player/footstep_wood { caelum/player/footstep_wood_01 caelum/player/footstep_wood_02 caelum/player/footstep_wood_03 caelum/player/footstep_wood_04 caelum/player/footstep_wood_05 caelum/player/footstep_wood_06 caelum/player/footstep_wood_07 caelum/player/footstep_wood_08 }
 
-// Stock del paquete 04: catalogado, pero sin llamadas desde ZScript.
+// Stock del paquete 04. menu_strings_start también es la música de portada;
+// el primer segundo de tarot_harp_loop se deriva a caelum/ui/dialogue_open.
 caelum/stock/piano_progression = "sounds/caelum/stock/music/ca_stock_piano_progression.ogg"
 caelum/stock/npc_mumble_male = "sounds/caelum/stock/voices/ca_stock_npc_mumble_male.ogg"
 caelum/stock/menu_strings_start = "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg"

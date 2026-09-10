@@ -1,0 +1,16402 @@
+# Caelum Argenteum — Historial consolidado
+
+Versión documental: 4.33.0h — 2026-09-10.
+
+## Registro vigente de versiones recientes
+
+| Versión | Resultado |
+| --- | --- |
+| 4.33.0h | Corrige el audio según el informe del autor: ChatSound único en cada página, primera frase de arpa con caída y bucle explícito de portada. Audita todas las carpetas, traslada fuentes/generadores útiles y entrega limpieza transaccional más roadmap completo. Pendiente de aceptación del autor. |
+| 4.33.0g | El autor informó portada sin música, sonido nativo y añadido superpuestos, ausencia del arpa al avanzar y corte abrupto. La comprobación anterior sólo acreditaba carga/referencias con salida nula: no validaba sonido audible ni bucle real. Esos resultados no constituyen aceptación. La consolidación documental se conserva. |
+| 4.33.0f | El autor confirmó que todas las pruebas de hablar con NPC fueron exitosas. La prueba de Argento queda aceptada. |
+| 4.33.0e | Todas las pruebas confirmadas por el autor: pared sur del ascensor corregida. |
+| 4.33.0d | Resto de las pruebas aprobado; su única objeción fue corregida en 0e. |
+| 4.33.0b | Prólogo canónico aceptado; Palomo deja de ser comerciante narrativo. |
+| 4.32.0o | Matriz de la espada, mano y escudo aceptada por el autor. |
+
+## Decisiones 4.33.0h
+
+- La carpeta completa aportada por el autor reemplaza la reconstrucción parcial
+  usada en las pruebas de 0g. Contiene 4.276 archivos de runtime antes de 0h.
+- El arpa debe acompañar cada página de diálogo y completar su frase; queda
+  reemplazada la interpretación de 0g de limitarla a la apertura y a un segundo.
+- El constructor que usa run_dev sale de tools y se convierte en build_dev.ps1.
+  Se conserva el verificador general en raíz y tres generadores bajo assets.
+  Se retiran los scripts de revisiones antiguas tras verificar su respaldo.
+- Los 20 originales de art_source se trasladan a assets/source/art sin cambios.
+- Se ratifica que V5.0 reorganizará los módulos de programación. Esta limpieza
+  no divide CaelumPlayer ni cambia la arquitectura de gameplay.
+- El roadmap completo vuelve a ser vigente en PROJECT.md. Los hitos históricos
+  V4.34–V4.37 y V5 no se pierden al consolidar archivos. Los números no son fechas.
+- La confirmación de todas las conversaciones de 0f se mantiene como aceptación
+  del autor. No se vuelven a balancear ni a sortear las tiradas sociales.
+
+## Cómo leer el archivo
+
+Los bloques siguientes conservan registros completos y sus huellas SHA-256.
+Son testimonios de lo que se documentó en cada momento. Sus expresiones
+«actual», «pendiente» o «validado» se refieren a aquella revisión y NO prevalecen
+sobre README.md, PROJECT.md, SYSTEMS.md, ASSETS.md o MAP01.txt.
+Las fórmulas o propuestas reemplazadas se conservan para rastrear decisiones,
+no para volver a aplicarlas. Los enlaces dentro de estos bloques son históricos.
+
+El instalador conserva además los documentos encontrados en la instalación del
+autor en un único archivo bajo `archive/`, antes de retirar sus copias activas.
+Esto incluye archivos locales que no estuvieran en las fuentes recuperadas.
+Los parches históricos y sus auditores sólo se ejecutan con su base original.
+
+
+## Registro: README.md
+
+SHA-256: `d8158e29b6c36ba6bb05fbb580d9fd825f4167ad561d2e979eac59e503cb0e98`
+
+````text
+# Caelum Argenteum
+
+**Caelum Argenteum** is an independent dark-fantasy FPS-RPG developed in GZDoom/ZScript. The project is designed to become a standalone distributable game rather than remain dependent on Doom content.
+
+**Author and game designer:** Damian Curti
+
+## Project status at a glance
+
+The project is in active implementation. Core player statistics, survival resources, equipment, combat foundations, weapon families, elemental weapons, durability, inventory/crafting foundations, and development tooling already exist in ZScript. Large world systems such as the full calendar/weather simulation, factions, dialogue, travel, sieges, and the complete Tarot/TCG layer are planned but are not yet fully implemented.
+
+This README is the public technical entry point for collaborators. The author's private design documentation remains the authoritative source for detailed balance, lore, formulas, and unresolved design decisions.
+
+The reconciled implementation order and authoritative target input mapping are maintained in [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
+The current combat-input baseline uses **Zoom contextually**: it activates persistent Block only when the equipped weapon can share the off hand with a shield, and activates real ADS/FOV zoom for ranged weapons. Ranged **AltFire** remains an alternate Aim input. **Reload** reloads ranged magazines and charges the next melee or magical attack for compatible weapons. User1 is connected to the future racial-ability hook; User2 activates the equipped Seal Channel; User3 reaches equipped Tarot activation; and User4 reaches the class-ability hook. Tarot, racial and class content remain reservation interfaces until their authored mechanics are implemented.
+
+## Implementation status
+
+The current V4.28.0bh build keeps architecture and actor tests separate. MAP01 uses finite first-floor walls with independently rendered front and rear faces. MAP02 preserves its 16,384×16,384 MU enclosure and doubles the validated stress population to 1,874 combatants. Impact Physics represents simultaneous pairs through persistent shared contact records: connected contacts form implicit islands, continued pressure transfers momentum without repeating impact trauma, and each sustained second applies the existing walking-speed collision damage after biological absorption. NPC elemental attacks use straight explosive projectiles whose attack and travel distance share the authoritative Eloquence-derived magical range.
+
+### Building the development PK3
+
+Build from the repository root with:
+
+```text
+python tools/build_pk3.py src build/caelum_argenteum_dev.pk3
+```
+
+The builder writes file entries only: ZIP directory records inside `sprites/`, `graphics/`, `flats/` or `textures/` are forbidden because GZDoom may inspect them as zero-sized texture resources. It also rejects empty files, zero-sized PNG dimensions and corrupt ZIP entries before replacing the existing development PK3.
+
+### Implemented and tested
+
+- Character creation foundation with race, dual-class/profession, sex, height, attribute layers, and twelve primary attributes.
+- Derived statistics and non-linear attribute scaling.
+- Player mass/size model and equipment-weight integration.
+- Health, Anima, Air, Adrenaline, Lucidity, Hunger, Thirst, and Sleep resources.
+- Air consumption for running and jumping, including load penalties and low-Air performance states.
+- Movement speed, jump height, evasion, load effects, crouching, and physical immobilization states.
+- Health-state penalties, pain logic, stun behavior, Adrenaline generation/decay, and natural regeneration foundations.
+- Physical weapon catalogue and family/slot cycling.
+- Melee attacks with accuracy, critical chance, vulnerability grades, physical damage scaling, push force, and Air costs.
+- Contextual charged Reload for melee and essence weapons: a speed-scaled 2-second base charge creates a 3-second empowered window; the next attack doubles resource cost and damage, while magical area doubles geometrically.
+- Shields, armor pieces, blocking, defense, weight, durability, and repair/debug support. Block is a persistent contextual Zoom-mode toggle for shield-compatible weapons, consumes Air continuously, suppresses Air regeneration, and supports shield-specific effects. Ranged and other two-handed physical weapons cannot block merely because a shield remains equipped.
+- Weapon durability using the shared damage-based wear logic.
+- Javelin secondary throw: Air cost, fixed `-1` durability per successful throw, physical damage scaling, material recovery after impact, and one-action-per-button-press protection.
+- Ranged family (standard bow, longbow, crossbow, carbine) with native ammunition/projectiles, tier-scaled damage and critical chance, normalized spread categories, per-weapon magazines, timed Reload, contextual Zoom ADS, alternate AltFire aiming, and a live magazine/reserve HUD readout.
+- Essence weapons: staff, bell, book, and statuette foundations.
+- Equipped-Seal Channeling through User2: exact tiered Adrenaline drain, interruption, action lock, cooldown and Fire/Earth/Air/Water/Quintessence area effects. Weather-dependent tier extensions are reserved for Version 5.
+- Giant Rat test enemy: quadruped anatomy, mass 10, approximately 40 cm height, all primary attributes at 1 and base bite damage 60. MAP01 carries an approximately twenty-rat group for mass-area testing.
+- Attached elemental presentation for burn, poison, freeze and lightning, plus vertical-strike and horizontal-propagation lightning sequences. These visuals follow the authoritative status/damage systems rather than applying duplicate damage.
+- Primary/secondary elemental attacks, elemental projectile behaviors, homing book projectile, bell spread, and statuette explosion behavior.
+- Elemental projectile visuals for Fire, Light, Water, Ice, Earth, Poison, Air/Wind, Lightning, and Quintessence.
+- Inventory/equipment development interface, Magic Box foundation, consumables, ammunition, keys, and equipment pickup/drop foundations.
+- Crafting and dismantling foundations used by current physical equipment and material recovery systems.
+- Physical crafting-station interaction core: Forge and Bow Workshop filter and execute their currently supported physical recipes through the shared crafting transaction.
+- Modular item/world sprites for current weapons, shields, armor pieces, consumables, ammunition, crafting materials, the sealed letter, and projectiles. Essence-weapon UI icons are composed from a base weapon icon plus a small elemental badge instead of duplicating one texture for every combination.
+- Original mansion-environment texture foundation: 81 cropped wall, floor, ceiling, door, roof, terrain, trim, carpet and modular-pool resources are registered for later level-art replacement.
+- Custom player HUD face replacing the Doomguy face states in the current development HUD. The HUD also uses the equipped weapon art as a provisional first-person weapon representation, so the permanent top-left active-weapon label is no longer required.
+- Development/debug overlay and test controls used to validate gameplay formulas.
+
+### Implemented foundation — still expanding
+
+- Crafting content and material catalogue: physical weapons, armor, essence weapons, jewelry, seals, and the connected station network are implemented foundations. Recipe coverage and final material balancing remain active work. The carbine belongs to the Ranged Weapons Workshop together with bows and crossbows.
+- Original asset replacement: many original icons and projectile sprites are integrated, but the development build still contains placeholders and inherited engine/game resources that must be removed before release.
+- Inventory presentation: functional development UI exists, but final UX and art are not complete.
+- Equipment visuals: item icons/world pickups are being replaced with original art; character equipment will use modular visual layers rather than complete sprites for every combination.
+- Persistence: character/equipment persistence foundations exist, but the complete final save/profile/world-state design is not yet finished.
+- Movable world props: a strength-gated base actor is implemented; individual rocks, fallen trees, furniture, etc. still require their final assets, collision dimensions, masses, and designer-defined physical-power requirements.
+
+### Planned / not yet fully implemented
+
+- **Calendar-driven weather system.** Weather must react to the game calendar/season and eventually also to location/biome. The final calendar structure, seasonal boundaries, starting date, and weather distributions are author-defined design data and must not be invented by contributors.
+- Full day/night/world calendar presentation and world-state integration beyond the current gameplay time scale.
+- Complete world/biome implementation, travel routes, terrestrial/maritime/aerial/submarine travel, Hell and Moon regions.
+- Factions, reputation, diplomacy, and political world-state systems.
+- Dialogue and NPC interaction system.
+- Quest/journal system and authored quest content.
+- Siege and dynamic world-event systems.
+- Complete Tarot collection/progression system and Tarot-based TCG.
+- Final stealth/AI systems and full NPC/enemy roster.
+- Final modular third-person character/equipment sprite pipeline.
+- Final independent asset pass for sprites, sounds, music, textures, fonts, HUD, menus, and maps.
+- Final standalone packaging and licensing audit.
+
+Version 5 begins only after the ordered Version 4 roadmap is complete. Its first patch, V5.0.0, is reserved for the incremental modular source reorganization documented in `docs/ROADMAP.md`; it is not an authorization for an all-at-once rewrite.
+
+
+
+## Ranged weapon rules (V4.25.0)
+
+The current ranged family uses the authoritative spread ladder: Minimum 10°, Very Low 30°, Low 50°, Medium 70°, High 90°, Very High 110°, Maximum 130°. Minimum spread is always 10% of maximum spread.
+
+Current assignments are Standard Bow = Very High (11°–110°), Longbow = Medium (7°–70°), Crossbow = High (9°–90°), and Carbine = Maximum (13°–130°).
+
+Ranged damage uses its own tier scale: T1 = 100%, T2 = 160%, T3 = 250%. The definitive T1 bases are 1200 / 1800 / 1400 / 3600 for Standard Bow / Longbow / Crossbow / Carbine. Ranged base critical chance uses the same tier scale: 10% / 12% / 8% / 6% at T1 respectively.
+
+Magazine capacities do not change by tier: bows 50, crossbow 20, carbine 10. Base reload times are 3 / 3 / 5 / 5 seconds and are divided by the Dexterity Type-4 attack-speed modifier. Zoom toggles ranged ADS with a real ×2 FOV factor; AltFire remains an alternate Aim toggle. Aim multiplies physical accuracy ×2, and crouching also multiplies it ×2, so both effects stack. The HUD displays loaded rounds, capacity, reserve ammunition and active Reload time.
+
+The effective Reload duration is recalculated from the player's current effective Dexterity when Reload begins: `base seconds × 100 / Type-4 attack-speed percent`. This keeps equipment/debug attribute changes from reusing an older cached duration multiplier.
+
+Contextual Zoom is latched to one transition per physical key press; holding the key cannot repeatedly alternate ADS or Block. Native Fly is recognized by the acceleration layer as supported no-gravity movement, preserving lateral controls without adding ground-style acceleration to ordinary jumps.
+
+While shield Block is active, the equipped shield is rendered as a modular first-person HUD layer. All four shield types use the same medium, left-offset Kite framing so none is excessively large or centered. The Magic Shield retains a translucent halo as its only type-specific composition difference. The layer is visual feedback only; mechanical coverage, defense and mobility continue to come from the shield model.
+
+MAP01 now defines the reusable **trap-door room** (`habitación con puerta trampa`) architectural template. Its definitive configuration combines a usable interior, finite 128-MU walls, a solid `Sector_3DFloor` roof slab from 128 to 136 MU under the 512-MU outdoor sky, one finite retracting floor door, solid sight-blocking jamb pillars and clear upper traversal boundaries. The roof remains continuously walkable above the doorway because the moving closure is independent of the base ceiling and roof slab.
+
+The template doorway now keeps its base ceiling at the 512-MU sky and its shared 3D-floor roof permanently static. Its finite 128-MU stone panel is represented by a raised floor that uses `Plat_DownWaitUpStay`: USE retracts it from 128 to 0 MU, waits for the existing 150-tic interval and raises it again. This separates the moving closure from the roof, prevents any panel from extending toward the sky and keeps the upper surface above the doorway continuously walkable. Manual USE remains repeatable from both sides.
+
+The two jamb partitions are finite solid 128-MU pillars with lower `STARTAN3` faces. Together with the raised door floor, they form a recessed three-sided frame that blocks lateral sight and prevents actors inside a closed room from acquiring targets through the doorway edges. No jamb uses a middle texture, so nothing extends into the 512-MU upper space.
+
+All eight MAP01 rooms instantiate this template: four central test rooms, two eastern test rooms, the NPC room and the rear room. Their doors face their corresponding corridors. The NPC instance applies silver lock 200 to both usable thresholds while retaining the same platform mechanism. The rear room faces west toward the main corridor. Its former east staircase and raised block are removed; two six-step side staircases now occupy the corridor beside the new front and reach the 136-MU roof level.
+
+The rear staircases share their eastern boundary directly with the room front where required by the doorway frame. All six shared boundaries are open partitions, so no wall fragment projects along the climb or across roof access. The other repeated stair modules retain a 1-MU safety clearance from conventional room walls to avoid overlapping linedefs. The NPC-room exit switch is an authored segment of its western wall rather than a floating two-sided middle texture.
+
+V4.26.5q expands roof access into three uniformly separated complete staircase pairs across the intermediate room corridors. The eastern room pair and rear room move 24 MU east to accommodate the repeated module, and pickups inside the eastern pair preserve their local arrangement through the same translation. Every rear-room stair boundary is now free of projecting middle textures along the full six-step climb.
+
+V4.26.5r completes the alignment pass. Every staircase pair is 119 MU wide, begins 665 MU after the preceding module, starts at the common y=±80 corridor boundaries and reaches y=±272. The western and eastern room pairs move with their pickups to maintain 1-MU conventional clearances. The rear room is centered between its flights, and finite lower wall faces close each stair boundary only up to its local tread height.
+
+V4.26.5s renders the rear staircase walls above each tread through individually scaled finite 3D middle textures ending at the 128-MU roof underside. The final 136-MU boundaries remain open. A second standalone trap-door gate at the beginning of the test corridor reuses the complete finite panel/frame/roof mechanism without a lock, independently of the silver-key NPC room.
+
+V4.26.5t replaces that provisional stair-owned rendering with two real structural wall strips belonging to the rear room. Their 136-MU floor produces visible finite wall faces on both sides and a roof-aligned walkable top; the stairs contain no wall middle textures. The entry gate moves to 32 MU ahead of the Player Start, and the training dummies move as one row to y=-900.
+
+For repeated development sessions, character creation includes a localized `Debug` / `Depuración` option on the race page. It skips the allocation pages and produces exactly 30 in all twelve primary attributes, a 1.8-m body and 100-kg base body mass. Equipment mass remains additional, as in ordinary profiles.
+
+V4.26.5u removes the isolated gate beside the spawn and integrates its panel/frame directly into the western entrance between the nearest room pair. Four roofed connectors fill only the rear spaces behind the first two north/south stair pairs, joining the six paired-room roofs into one continuous terrace. The complete central corridor and every staircase approach remain open to the sky.
+
+V4.26.5v closes two malformed structural-wall contours that allowed a roof surface to escape toward the spawn. Every non-exterior MAP01 sector now passes a degree-2 closed-boundary check. The integrated entrance uses the exact room-frame decomposition—16-MU jamb plus 16-MU wall extension on each side—so no section remains transparent.
+
+V4.27.0a replaces the failed self-referencing terrace partitions with ordinary closed sectors and a finite door module. Each north/south terrace row remains divided into three connected rooms, while every internal wall, jamb, floor and roof target has its own conventional polygon. The same patch begins the V4.27 input contract: native User1–User4 are connected to racial, Seal, Tarot and class hooks, and Reload remains ranged-only.
+
+V4.27.0b supersedes every post-V4.26.5r MAP01 construction experiment after a reproducible GZDoom access violation inside a terrace connector. MAP01 is restored byte-for-byte to the pre-gate V4.26.5r baseline: no main corridor gate, rear terrace fill or internal terrace divider remains. The V4.27 input contract and confirmed magic-weapon Zoom latch remain active.
+
+V4.27.0g closes only the four intermediate stair-back gaps with finite conventional raised sectors aligned to the rooms, and applies the atlas's large weathered cobblestone to the arena perimeter. It also makes Giant Gauntlets AltFire an equal-stat uppercut, adds the charged Block dash at 150% maximum run speed, preserves charged melee doubling through final hit localization, and fixes Seal/Amulet inventory presentation by retaining the crafted equipment family. Mansion assets now use the Windows-safe `graphics/caelum/textures/mansion` path instead of colliding with the root `TEXTURES` lump.
+
+Caelum NPCs use the same twelve primary attributes as player characters while intentionally omitting player-only survival resources. They also carry current and maximum Anima using the player formula based on effective Patience after equipment. Intelligence bonuses improve magical performance but do not directly increase Anima capacity: Caella's magic helmet supplies +5 Intelligence, while her separate +5 Patience gloves raise maximum Anima from the 2710 base at Patience 18 to 3760 at effective Patience 23.
+
+## Collision and impact physics (V4.25.1)
+
+Characters now use a momentum/impulse collision foundation. Actor-to-actor contact resolves an action/reaction impulse along the collision normal with coefficient of restitution `e = 0`, using effective combat mass. The resulting forced velocity change (`Delta-v`) is converted into an equivalent time to traverse half the receiver's height. More than 35 equivalent tics causes no impact damage; each step below that threshold adds 3% of maximum health, capped at 105%.
+
+The same `Delta-v` severity model is used experimentally for wall impacts and landings, allowing future ramming, movable-object impacts and falling damage to share one physical rule. See `docs/PHYSICS_COLLISION_SYSTEM.md` for the complete formulas and design rationale.
+
+## Impact mitigation and calibration (V4.25.2)
+
+Collision damage now applies Toughness and global armor defense after raw kinetic severity. Global impact armor defense is the mean of the four functional armor slots; collision trauma remains non-localized and cannot be evaded or shield-blocked.
+
+Player wall impacts are normalized against `EffectiveMovementPercent` rather than treating raw Doom velocity as physical meters. A full frontal stop at 100% movement corresponds to the 35-tic damage threshold, while load and movement modifiers alter severity naturally. Wall contact is latched so holding movement against a wall does not cause repeated impacts.
+
+Landing detection stores the last downward vertical velocity across tics and uses the stable body-height reference. The training dummy is now movable with mass 10000 and participates in momentum collision tests.
+
+## Acceleration, contact latch and biological landing damping (V4.25.3)
+
+Player locomotion no longer reaches the current movement limit immediately. Continuous grounded movement follows an exponential approach to maximum speed and reaches exactly 95% after 3.0 seconds. The current factor is multiplied into the already-calculated Caelum movement percentage, so Agility, load, health/Air/survival states and shield mobility remain the source of the final maximum speed.
+
+Actor-to-actor impact now uses a real contact latch. Once a Caelum collision pair has resolved one action/reaction impulse, maintaining contact does not create new impacts. The pair rearms only after physical separation beyond the combined collision radii plus a small engine tolerance.
+
+Living actors now receive biological landing damping before Toughness and armor. For the player, the safe landing absorption speed equals the current normal `JumpZ`; an ordinary self-generated jump therefore does not become traumatic merely because the engine reports a large raw vertical velocity. If the player is physically stunned/immobilized, this absorption becomes zero, representing a rigid uncontrolled fall. Caelum NPCs use a geometrically scaled biological landing speed based on their body height and lose it while lucidity-stunned.
+
+The debug overlay now exposes acceleration percentage/time, contact-latch state, raw landing delta-v and the biological delta-v absorption.
+
+## Energy impact curve and robust contact rearm (V4.25.4)
+
+Impact damage is now continuous and energy-shaped rather than a discrete 3%-per-tic staircase. Equivalent time still defines the kinematic severity, but damage follows specific kinetic energy (`E/m ∝ Delta-v²`). Because `Delta-v ∝ 1/T_eq`, the damage curve is proportional to `1/T_eq²`.
+
+The curve is normalized so 35 equivalent tics = 0% raw max-HP damage and 1 equivalent tic = 100%. It continues above 100% below one tic instead of clamping, allowing genuinely extreme impacts to remain catastrophic before biological damping, Toughness and armor mitigation.
+
+Sustained actor contact also uses a stronger rearm rule. A previously collided pair must separate by the combined radii plus 25% of the smaller body's reference height, and remain beyond that distance for 5 consecutive tics, before another collision impact is eligible. Small engine recoil/separation oscillations no longer count as a new charge.
+
+## Impact Physics Core API (V4.26.0)
+
+The collision mathematics are now isolated in `impactphysics/ImpactPhysics.zs`. This core is intentionally project-agnostic: it knows mass, height, velocity, collision normal, restitution, equivalent impact time and energy severity, but it does not know Caelum attributes, armor, biology, HP, classes or Tarot.
+
+Public data structures are `ImpactBody` and `ImpactResult`. Public solver entry points are `ImpactPhysics.ResolveBodies(...)`, `ImpactPhysics.ResolveStatic(...)`, and `ImpactPhysics.ResolveExternal(...)`. `ResolveStatic` is the infinite-mass limit for walls/doors/static geometry; `ResolveExternal` is the adapter point for future non-Actor moving hazards such as avalanches or moving sectors.
+
+CaelumPlayer and CaelumCombatActor now act as integration adapters: they build generic bodies, call the core, apply returned velocity changes, then interpret energy severity through biological damping, Toughness, armor and health.
+
+Wall/door collision no longer uses the provisional EffectiveMovementPercent calibration from V4.25.2. The engine-observed lost velocity supplies an effective impact normal and the static solver uses the same `Delta-v -> equivalent tics -> v² energy` path as body collisions. A very massive movable body should therefore converge toward static-geometry behavior as its mass approaches infinity.
+
+The core is structured so it can later be packaged as a standalone `ImpactPhysics.pk3` for another GZDoom project without importing Caelum-specific systems.
+
+## Impact response refinement (V4.26.1)
+
+Kinetic impact Toughness is now subtractive in **percentage points of maximum health**, not a multiplicative damage-resistance factor. After the energy curve and source-surface multiplier:
+
+`PostToughness% = max(0, RawImpact% - Toughness)`
+
+Only the remaining percentage is converted to HP, then global armor defense remains multiplicative. Toughness 100 therefore ignores impacts up to 100% raw max-HP severity but does not make the body immune to extreme 200%+ collisions.
+
+Static geometry now rejects grazing contact when the engine removes less than 25% of the actor's pre-impact horizontal speed. Static collision also requires five consecutive clear tics before rearming, preventing narrow corridors and contact flicker from repeatedly generating wall impacts.
+
+Wall/floor environmental impact damage no longer grants the generic received-damage Adrenaline gain. Actor-to-actor impact retains that response.
+
+## Universal impact scale and weighted anatomical response (V4.26.2)
+
+Impact Physics Core now uses a universal **28 map-unit reference distance** for equivalent-time severity:
+
+`T_impact = 28 / |Delta-v|`
+
+28 MU is half the standard 56-MU / 1.8-m Caelum humanoid reference height. Individual body height no longer changes kinetic severity, preventing size from being counted both through inertial mass and through the energy conversion. `ImpactBody.Height` remains available for neutral contact geometry and integration-specific biomechanics.
+
+The generic API now also returns normalized vertical contact intervals for both finite bodies. These values contain no Caelum anatomy semantics. For two cylindrical actors they are derived from their actual vertical overlap. Static vertical geometry defaults to a full-height contact interval. Floor integration supplies a bottom point contact.
+
+Caelum maps the neutral interval onto its authored anatomy regions. Region overlap lengths are normalized into weights, so vulnerability and armor are applied proportionally rather than selecting one arbitrary body part. If an impact is 80% torso, 10% head and 10% legs, torso vulnerability/armor contributes eight times as much as each 10% region.
+
+Impact Lucidity loss uses the same normalized anatomical weights. Only naturally critical/head regions contribute the existing critical-point Lucidity loss, multiplied by their contact share and their localized armor protection. A 50% head / 50% torso impact therefore produces half the head-contact Lucidity contribution of a 100% head impact.
+
+Fall biological damping is Agility/jump based. Player damping remains the current normal `JumpZ`; Caelum NPC damping now uses `8 × sqrt(Type1(Agility)/100)`. Physical stun removes this controlled-landing damping.
+
+## Buckler acrobatics and fall-test map (V4.26.3)
+
+While actively blocking with the buckler, collision Toughness is doubled and Agility/JumpZ impact absorption is doubled. Buckler acrobatic absorption also applies to horizontal wall/actor trauma. It reduces traumatic Delta-v only, never the momentum/displacement already resolved by Impact Physics. Physical/Lucidity stun disables this Agility absorption.
+
+MAP01 adds two test rooms matching the four central rooms. The four original rooms, two new rooms and west NPC room are roofed at 128 MU. Outdoor ceiling height is raised from 256 to 512 MU, doubling vertical fall-test space and exterior wall height.
+
+## V4.26.3b — Buckler calibration, grounded jewelry drops and MAP01 room rebuild
+
+Buckler horizontal acrobatic damping no longer subtracts `2 × JumpZ` directly from horizontal Delta-v. That mixed two numerical scales and could force traumatic Delta-v to zero, producing the debug sentinel of effectively infinite equivalent tics. Horizontal buckler damping now derives from the **Agility jump bonus above the base GZDoom jump**, doubles that bonus as requested, and converts it to a damping fraction capped at 50% of the physical horizontal Delta-v. Floor damping remains the already-validated direct JumpZ-based rule.
+
+The debug overlay now shows `RawDV`, `TraumaDV` and absorbed `Bio` separately so physical displacement and post-acrobatic trauma can be distinguished.
+
+Jewelry drops preserve TossItem horizontal movement but seals and amulets have their upward Z toss removed and begin falling immediately.
+
+MAP01 rooms were rebuilt from the clean pre-roof layout. Their walls use finite 3D middle textures instead of infinitely wrapped blocking textures, while a shared solid `Sector_Set3DFloor` slab provides a true walkable roof at 136 MU with an underside at 128 MU. A six-step exterior stair reaches the east test-room roof. All seven rooms use the same roof system, the two new rooms face the central corridor, the exterior remains 512 MU tall, and pickups are redistributed by family inside the six test rooms. Excess magic-shield duplicates are removed.
+
+## Crouched impact damping, movement noise and rebuilt fall-test rooms (V4.26.4)
+
+Crouching now allows the normal Agility-derived biological response to reduce **wall** collision trauma. It uses the same calibrated horizontal fraction introduced for the buckler but without the buckler's x2 bonus. If the buckler is also active, the stronger buckler fraction wins rather than stacking. Physical/Lucidity stun still removes all active Agility damping.
+
+Stealth is now materialized as the documented Type-2 Agility derivative:
+
+`Stealth% = clamp(Agility × (Agility + 1) / 101, 0, 100)`
+
+Crouching keeps its existing x2 Stealth bonus, capped at 100%. Movement-hearing noise is reduced by exactly the resulting Stealth percentage, so 100% effective Stealth produces no movement `SoundAlert`. Walking uses the 20 m reference hearing range, running uses x1.5 range, and crouching uses x0.5 before the Stealth reduction.
+
+MAP01 buildings are rebuilt with real finite-height sector walls: wall strips have a 136-MU raised floor, producing visible solid walls only up to roof height rather than blocking to the 512-MU sky. Room interiors remain at floor 0 and receive a shared solid 3D-floor roof slab from 128 to 136 MU. The roof top therefore aligns with the wall tops and is physically walkable. Two side staircases provide roof access: one beside the eastern test rooms and one beside the NPC room. The exterior vertical test space remains 512 MU.
+
+## Bilateral wall rendering, dual-use door and ranged-ammunition correction (V4.26.5e)
+
+The template's bilateral room walls now use the same explicit wrapped middle-texture vocabulary already proven by the visible MAP01 test walls. Both room/exterior sides carry `STARTAN3`, while the finite room ceiling remains available for the next architectural pass. The inner threshold now carries the same manual `Door_Raise` action as the exterior door line, allowing USE from inside and outside.
+
+Ranged ammunition pickups explicitly grant 20 units. A ranged shot now treats the loaded magazine as its immediate ammunition source; reserve inventory is consulted during Reload and decremented when present, but it cannot invalidate a projectile that is already loaded. Manual Reload and the existing 3/3/5/5-second base timings remain authoritative.
+
+## Visible architectural shell, usable door and environmental Adrenaline correction (V4.26.5d)
+
+The isolated template room is now a true bilateral sector module inside exterior sector 0. Its five room walls and two door jambs carry exterior back sides with finite upper textures, so the building is visible from the field while retaining solid collision. The outer door line faces the exterior for manual USE, targets door sector 5 on its back, and no longer carries a permanent blocking flag; the raised door can therefore be crossed.
+
+Wall and floor impacts still produce health loss, Pain and stun when their physical severity requires it, but environmental Pain no longer grants Adrenaline. Actor-to-actor impacts retain the authored received-damage and Pain Adrenaline behavior.
+
+## Final stair front-side correction (V4.26.5c)
+
+The only remaining node-builder failure was linedef 82, the closing edge of the sixth raised stair sector. MAP01 now removes the two orphan door sidedefs left by the earlier topology experiment, remaps every live sidedef reference, and represents line 82 in an equivalent reversed form with exterior sector 0 as its explicit front and stair sector 12 as its back. The physical sector relationship, textures and stair dimensions remain unchanged.
+
+## Canonical architectural topology correction (V4.26.5b)
+
+MAP01 removes the provisional appended sidedefs introduced while diagnosing the template door. The door now uses the canonical original sidedef set: three consistently oriented one-sided door boundaries and one two-sided room/door threshold. Explicit negative back-side placeholders are removed. This addresses the node-builder failures reported for lines 53, 54 and 82, plus the disconnected right edge reported for line 52, without changing room dimensions, door timing, stairs, physics or gameplay systems.
+
+## Architectural template room topology correction (V4.26.5a)
+
+The isolated MAP01 template now uses a closed, conventional door-sector topology. The two door jamb lines no longer expose invalid back sides into the room sector, the three one-sided door boundaries follow a consistent clockwise loop, and the inner threshold correctly faces the room with the door sector on its back. The previous branching and reversed boundaries caused the node builder to report line 54 as lacking a valid front side. This corrective pass changes no dimensions, textures, specials, physics or gameplay behavior.
+
+## Architectural template room (V4.26.5)
+
+MAP01 now includes one isolated architectural test room built from ordinary Doom/GZDoom sector geometry rather than experimental generated 3D-floor room shells. The template validates the basic building vocabulary before replication:
+
+- finite ordinary room sector;
+- visible wall/jamb opening;
+- classic manually-activated vertical door using the player's standard USE key;
+- a separate raised roof-access platform at 136 MU;
+- six isolated stair sectors at 24/48/72/96/120/136 MU.
+
+The door is intentionally unlocked. Its front linedef uses `Door_Raise` with local tag 0, so a player facing the door and pressing USE should raise it, wait, and close again. Once this template is validated in-engine, it becomes the source pattern for locked variants, keyed doors, real roofed rooms and later multi-floor modules.
+
+## Development test map
+
+`MAP01` is currently a purpose-built combat/crafting test range rather than production level content. It contains a large flat field, a central cluster of open-roof test rooms, four training dummies placed along the main firing axis, and the five crafting-station actors. This map exists to make distance, projectile, combat, inventory, actor-spawn, and crafting tests reproducible. Its inherited Doom textures are development placeholders and are not release assets.
+
+The four central rooms are also a visual pickup gallery: they expose all current weapon types, every essence combination for the four essence weapons, all shield types, all sixteen equipable armor pieces, current ammunition and consumables, the complete material catalogue, the Silver Key, and the sealed letter. This is intentionally redundant development content so a collaborator can perform a fast visual sweep for incorrect sprites or pickup behavior.
+
+A Silver-Key-locked room is placed behind the player start. It contains the current Rulo, Argento, Caella, and Ronnie test actors plus the level-exit switch. The Silver Key required to enter is displayed in the central gallery.
+
+The training dummies on the main east-west axis are placed approximately 512, 1024, 2048, and 3072 map units from the player start so projectile-range changes are easier to compare.
+
+## World time, calendar, and weather
+
+The current gameplay time scale is already defined as:
+
+- **1 game hour = 3 real minutes.**
+
+This timing is already used by survival systems. A complete calendar/weather simulation is planned but is intentionally not hard-coded yet because its design data is still author-controlled.
+
+The intended architecture is:
+
+`game clock -> calendar/date -> season -> biome/location -> allowed weather -> gameplay/visual effects`
+
+Contributors should not choose month lengths, season dates, weather probabilities, biome distributions, or gameplay penalties without approval from the author.
+
+## Movable world props
+
+`CaelumMovableProp` is the common ZScript foundation for strength-gated scenery interaction.
+
+The system intentionally uses the existing player **PhysicalPushMultiplier** rather than creating a second strength statistic. The player interacts with a movable prop through the normal `+use` control and the native `Player.UseRange`. A prop only moves if the player's physical power reaches the requirement configured for that placed actor.
+
+### Map argument
+
+- `arg0`: required physical power encoded as `PhysicalPushMultiplier × 100`.
+- `arg0 <= 0`: unconfigured; the prop cannot be moved.
+
+Example: a designer requirement of `1.50` is stored as `150` in `arg0`. The gameplay value itself must be chosen by the author/map designer; the base class does not invent a default threshold.
+
+Concrete subclasses should define their own original sprite, radius, height, mass, sounds, and other presentation data. Good candidates include rocks, fallen trees/logs, crates, furniture, rubble, and other grounded objects. Upright rooted trees should normally remain static unless a specific gameplay interaction requires otherwise.
+
+## Development principles
+
+- **Independent final product.** The release version must not depend on Doom sprites, textures, sounds, music, fonts, maps, or other copyrighted assets that cannot legally ship with the game.
+- **Development placeholders are temporary.** Temporary Doom/inherited assets may exist during implementation, but systems must not be architecturally dependent on them.
+- **Native engine features first.** Prefer stable GZDoom/ZScript facilities over custom parallel systems when the engine already provides the required behavior.
+- **Robustness before spectacle.** Prefer simple, testable, maintainable implementations over visually elaborate but fragile solutions.
+- **Scalable architecture.** Shared behavior belongs in reusable classes/functions/data instead of near-identical copies for each weapon, item, actor, or element.
+- **Modular graphics.** Character bodies and visible equipment should use independent layers where practical. UI icons may also be composed from a base icon plus overlays when the custom UI supports it.
+- **Separate balance from logic.** Damage, costs, durability, weight, ranges, and other design values should remain easy to rebalance without rewriting system logic.
+- **Do not invent design values.** Missing gameplay values, content decisions, calendar rules, recipes, requirements, or balance choices must be brought to the author. Contributors may propose alternatives and explain trade-offs, but must not silently make them canonical.
+- **Protect tested systems.** Once a feature has been validated, later work should avoid modifying it unless required and should include regression tests when it is touched.
+- **Incremental but meaningful patches.** Prefer coherent implementation packages with explicit test cases rather than many tiny unrelated edits.
+
+## Code conventions
+
+- Classes, functions, variables, identifiers, filenames, and implementation-facing terminology are written in **English**.
+- Explanatory comments inside code are written in **Spanish**, so the author can quickly understand the purpose and boundaries of each system.
+- Comments should explain systems, decisions, assumptions, and extension points rather than narrate every line.
+- Code should remain readable for a developer who is still learning ZScript.
+- Avoid local absolute paths, machine-specific assumptions, and undocumented dependencies.
+
+## Asset and licensing policy
+
+Every asset intended for the public repository/release must have a known origin and a license compatible with redistribution. Before any public alpha/release, the repository must receive an independence/licensing audit classifying assets as:
+
+- original/project-owned;
+- externally licensed and redistributable;
+- development placeholder requiring replacement.
+
+The final product must not require Doom-owned assets or other incompatible copyrighted material.
+
+## Current development dependency note
+
+The current development player class still inherits from `DoomPlayer`, and the test environment may load Doom II/resources while systems are being built. This is a **development convenience only**, not the intended final dependency structure. The standalone asset/player-class replacement remains part of the planned independence pass.
+
+## Suggested contributor workflow
+
+1. Read this README and identify the feature's current status.
+2. Check whether the change affects a system already marked as tested.
+3. Reuse existing base classes, constants, catalogue data, and native engine functionality whenever possible.
+4. Ask the author about any undefined gameplay value or design choice before implementing it.
+5. Keep code in English and explanatory comments in Spanish.
+6. Provide a focused regression-test list with gameplay changes.
+7. Do not mark a feature as tested merely because it compiles; runtime validation is required.
+
+## Public repository goal
+
+The repository is intended to be public on GitHub. Code and project structure should therefore remain understandable, reproducible, reviewable, and suitable for collaboration without access to the author's private design document.
+
+## Asset directory layout
+
+The development source keeps game sprites grouped by function. GZDoom supports deeper folders inside `/sprites/`, while sprite basenames must remain unique across the namespace.
+
+- `sprites/caelum/weapons/physical/` — physical melee/thrown weapon pickups.
+- `sprites/caelum/weapons/ranged/` — bows, crossbows and firearms.
+- `sprites/caelum/weapons/magic/` — staff, bell, book and statuette.
+- `sprites/caelum/armor/{body,head,hands,feet}/` — armor pieces by slot.
+- `sprites/caelum/shields/` — shield pickups.
+- `sprites/caelum/ammunition/` — ammunition pickups.
+- `sprites/caelum/consumables/` — consumable world sprites.
+- `sprites/caelum/items/` — keys, Tarot and quest/special items.
+- `sprites/caelum/materials/` — crafting materials.
+- `sprites/caelum/projectiles/elemental/` — elemental projectile rotations/static references.
+- character-specific folders remain separated by character name.
+
+````
+
+
+## Registro: legacy/ASSET_REGISTER.md
+
+SHA-256: `82243a4cd7bad71009c7604ceb9d4cf81244aa491984a54751cf89baa7cb6f7e`
+
+````text
+# Asset register
+
+## 4.28.0af compatibility note
+
+V4.28.0af changes ZScript invocation and documentation only. It introduces no artwork or external release dependency beyond the assets registered for V4.28.0ae.
+
+## 4.28.0ae elemental effects and Giant Rat
+
+The author-supplied elemental-effects atlas is divided into 60 original in-game sprites: twelve frames each for vertical lightning, horizontal lightning, burn, poison and freeze. The effects are presentation layers attached to the authoritative gameplay status; they do not add an independent damage tick.
+
+The author-supplied Giant Rat sheet contributes 48 original eight-direction quadruped frames covering idle, walk, run, bite, Pain and Death. These files remain project-source assets supplied by the author. Final public release still requires the normal asset/licensing audit.
+
+## V4.27.0g weathered cobblestone and Windows-safe resource layout
+
+`CMWV01` is a deterministic crop of the large cobblestone sample in the author-supplied atlas section **Variantes de tiempo / daño**. It is normalized to 128×128 and assigned to the four MAP01 perimeter walls. All 82 mansion resources now reside in `graphics/caelum/textures/mansion`, avoiding the Windows filename collision between the root `TEXTURES` lump and the former `textures` directory.
+
+## V4.27.0f mansion texture atlas
+
+The source atlas was supplied by Damian Curti as an original Caelum Argenteum project asset. This patch performs deterministic crop and normalization only; no third-party artwork is introduced.
+
+| Asset family | Files | Author | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Mansion exterior walls | `CMEX01`–`CMEX06` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Plaster, brick, stone and vegetation variants. |
+| Mansion interior walls | `CMIN01`–`CMIN05` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Wainscot and wallpaper variants. |
+| Foundations, damaged and basement walls | `CMFD01`–`CMFD04`, `CMDM01`–`CMDM07`, `CMBS01`–`CMBS05` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Structural, wet and damaged variants. |
+| Ceilings and door leaves | `CMCL01`–`CMCL06`, `CMDR01`–`CMDR05` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Door leaves remain separate from map-built frames. |
+| Stone and wood floors | `CMST01`–`CMST08`, `CMWD01`–`CMWD08` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Normalized 128×128 map textures. |
+| Carpets, roofs and terrain | `CMCR01`–`CMCR06`, `CMRF01`–`CMRF04`, `CMGR01`–`CMGR04` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Carpet, tile/slate roof and terrain families. |
+| Modular pool | `CMPC01`, `CMPW01`, `CMPF01`–`CMPF02`, `CMWA01`–`CMWA03` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Separate coping, repeating wall, submerged floor and water flats. |
+| Mansion trim | `CMTR01`–`CMTR06` | Damian Curti / project-directed generation | Author-supplied mansion atlas | Project-owned original | Yes | Horizontal 128×32 molding bands. |
+
+## V4.27.0b asset note
+
+V4.27.0b restores the earlier V4.26.5r MAP01 binary and updates public documentation only. It introduces no new artwork or external release dependency.
+
+## V4.27.0a asset note
+
+V4.27.0a changes native input routing, localized control labels and MAP01 sector geometry only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5w asset note
+
+V4.26.5w restores internal MAP01 room divisions, adds four trap-door connections and seals the entrance frame. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5v asset note
+
+V4.26.5v closes terrace/wall topology and rebuilds the entrance frame with opaque structural sectors. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5n asset note
+
+V4.26.5n rebuilds and replicates existing MAP01 room, door, roof and staircase geometry and updates public documentation. It reuses current Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5m asset note
+
+V4.26.5m removes invalid MAP01 partition texture assignments and updates public documentation only. It introduces no new external artwork or release dependency.
+
+## V4.26.5l asset note
+
+V4.26.5l changes MAP01 door-sector motion, texture placement and public documentation only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5k asset note
+
+V4.26.5k changes MAP01 door-frame sector geometry and public documentation only. It reuses existing Doom development-placeholder textures and introduces no new external artwork or release dependency.
+
+## V4.26.5j asset note
+
+V4.26.5j changes existing shield render placement, MAP01 sector/control geometry and documentation only. It reuses the registered shield sprites and Doom development-placeholder textures; no new external asset or release dependency is introduced.
+
+## V4.26.5i asset note
+
+V4.26.5i reuses the already registered `CBUCA0`, `CSHKA0`, `CSHTA0` and `CSHMA0` project shield sprites as provisional first-person Block layers. No new external artwork or license dependency is introduced.
+
+## V4.26.5h asset note
+
+V4.26.5h changes Zoom input handling, native Fly movement compatibility and documentation only. It introduces no new external art assets.
+
+## V4.26.5g asset note
+
+V4.26.5g changes MAP01 texture/special fields, ranged Reload timing code and documentation only. It introduces no new external art assets.
+
+## V4.26.5f asset note
+
+V4.26.5f changes MAP01 line behavior, ranged HUD/control code and documentation only. It introduces no new external art assets.
+
+## V4.26.5e asset note
+
+V4.26.5e changes MAP01 wall presentation, ranged-ammunition logic and documentation only. It reuses existing project textures and projectile sprites; no new external art assets are introduced.
+
+## V4.26.5d asset note
+
+V4.26.5d changes MAP01 geometry, environmental-impact response code and documentation only. No new external art assets are introduced.
+
+## V4.26.5c asset note
+
+V4.26.5c corrects MAP01 sidedef ownership and roadmap documentation only. No new external art assets are introduced.
+
+## V4.26.5b asset note
+
+V4.26.5b corrects MAP01 topology and adds roadmap/documentation updates only. No new external art assets are introduced.
+
+## V4.26.5a asset note
+
+V4.26.5a corrects MAP01 topology and updates documentation only. No new external art assets are introduced.
+
+## V4.26.5 asset note
+
+V4.26.5 adds only MAP01 geometry and documentation. No new external art assets are introduced.
+
+## V4.26.4 asset note
+
+V4.26.4 changes movement physics, stealth/noise logic, MAP01 geometry and documentation only. No new external art assets are introduced.
+
+## V4.26.3b asset note
+
+V4.26.3b changes physics calibration, inventory-drop behavior, MAP01 geometry and documentation only. No new external art assets are introduced.
+
+## V4.26.3 asset note
+
+V4.26.3 changes physics, MAP01 geometry and documentation only. No new external art assets are introduced.
+
+## V4.26.2 asset note
+
+V4.26.2 changes generic impact geometry, Caelum anatomy response and documentation only. No new external art assets are introduced.
+
+## V4.26.1 asset note
+
+V4.26.1 changes physics response, combat integration and documentation only. No new external art assets are introduced.
+
+## V4.26.0 asset note
+
+V4.26.0 is an architecture/physics/documentation refactor and introduces no new external art assets.
+
+## V4.25.4 asset note
+
+V4.25.4 changes physics/balance code and documentation only. No new external art assets are introduced.
+
+## V4.25.3 asset note
+
+V4.25.3 changes movement/physics code and documentation only. No new external art assets are introduced.
+
+## V4.25.1 asset note
+
+V4.25.1 is a physics/code/documentation patch and introduces no new external art assets.
+
+## V4.25.0 asset note
+
+V4.25.0 introduces no new external artwork. The ranged refactor reuses the already registered arrow, bolt, carbine-ammunition, projectile, weapon, shield, and UI assets. This entry exists so code-only balance patches remain traceable in the public asset audit.
+
+Every external asset must be recorded here before it can enter a public build.
+
+| Asset | File | Author | Source | License | Final use allowed? | Notes |
+|---|---|---|---|---|---|---|
+| Training dummy sprite | `sprites/caelum/CDMYA0.png` | OpenAI image generation, directed by Damian Curti | Original project generation | Project-owned original | Yes | Opaque humanoid test target. |
+| Argento idle rotations | `sprites/caelum/argento/ARGOA1.png`–`ARGOA8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied character sheet | Project-owned original adaptation | Yes | Eight transparent rotations normalized to 72 units. |
+| Argento melee rotations | `sprites/caelum/argento/ARGOB1.png`–`ARGOB8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied character sheet | Project-owned original adaptation | Yes | Eight transparent sword-attack rotations. |
+| Caella idle rotations | `sprites/caelum/caella/CAELA1.png`–`CAELA8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight transparent rotations normalized to 72 units. |
+| Caella melee rotations | `sprites/caelum/caella/CAELB1.png`–`CAELB8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight transparent sword-attack rotations. |
+| Argento extended states | `sprites/caelum/argento/ARGOC1.png`–`ARGOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
+| Caella extended states | `sprites/caelum/caella/CAELC1.png`–`CAELF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied female character sheet | Project-owned original adaptation | Yes | Eight rotations each for stride, ranged cast, pain, and death. |
+| Test magic bolts | `sprites/caelum/projectiles/CAMGA0.png`, `CAMGB0.png` | OpenAI image generation, directed by Damian Curti | Original project generation matching the supplied character sheets | Project-owned original | Yes | Compact transparent blue and violet bolts. |
+| Rulo complete state set | `sprites/caelum/rulo/RULOA1.png`–`RULOF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied bear-warrior character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, axe melee, axe throw, pain, and death. |
+| Ronnie complete state set | `sprites/caelum/ronnie/RONIA1.png`–`RONIF8.png` | OpenAI image generation, directed by Damian Curti | Based on Damian Curti's supplied Caelith character sheet | Project-owned original adaptation | Yes | Forty-eight transparent sprites: eight rotations each for idle, stride, sword melee, golden cast, pain, and death. |
+| Rulo/Ronnie projectiles | `sprites/caelum/projectiles/CARUA0.png`, `CAROB0.png` | OpenAI image generation, directed by Damian Curti | Extracted from the project-owned ranged state atlases | Project-owned original adaptation | Yes | Thrown axe and straight golden Caelith bolt. |
+
+## Rules
+
+- Never copy assets from `DOOM2.WAD` into this project.
+- A download being free does not mean it is copyright-free.
+- Preserve the original license file for every third-party asset pack.
+- Record modifications without removing the original author's credit.
+- Prefer original work, commissioned work with written rights, or CC0 assets.
+## Version 0.58.0 generation notes
+
+- `sprites/caelum/argento/ARGOC1.png` through `ARGOF8.png`: thirty-two
+  transparent eight-direction frames covering stride, blue ranged cast, pain,
+  and death. Generated from the user-provided Argento visual reference and
+  normalized to a common 128×80 canvas with baseline 78.
+- `sprites/caelum/caella/CAELC1.png` through `CAELF8.png`: thirty-two
+  transparent eight-direction frames covering stride, violet ranged cast,
+  pain, and death. Generated from the user-provided Caella visual reference and
+  normalized to the same canvas and baseline.
+- `sprites/caelum/projectiles/CAMGA0.png` and `CAMGB0.png`: compact blue and
+  violet magic-bolt visuals on transparent 64×32 canvases.
+- Source-generation mode: built-in image generation, followed by deterministic
+  atlas extraction, alpha preservation, baseline normalization, and visual
+  inspection of every resulting state/direction.
+
+## Version 0.59.0 generation notes
+
+- Rulo was generated as a seven-row six-state atlas plus a dedicated missing
+  northwest row; the final authored set contains all eight unique directions.
+- Ronnie was generated as two four-row six-state atlases to preserve all eight
+  directions and consistent state order.
+- Light neutral generated backgrounds were removed deterministically. Cell-edge
+  debris was discarded, alpha preserved, and every final frame normalized to a
+  common baseline before visual inspection.
+- Source-generation mode: built-in image generation based on the two supplied
+  character sheets, followed by project-local atlas extraction and validation.
+
+## Crafting stations — V4.23.2
+
+The following station sprites are original project assets supplied by the
+author from ChatGPT-generated source images and processed for in-game use.
+The title plaques were removed, baked checkerboard backgrounds were cleaned
+where necessary, and the objects were normalized to transparent 128×128
+sprites without redrawing the station artwork.
+
+| Sprite | Asset |
+| --- | --- |
+| `CWBKA0` | Workbench |
+| `CFRGA0` | Forge |
+| `CANVA0` | Anvil |
+| `CRNGA0` | Ranged Weapons Workshop |
+| `CSAWA0` | Sawmill |
+| `CARMA0` | Armor Workshop |
+| `CSEWA0` | Sewing Machine |
+| `CESAA0` | Essence Altar |
+| `CGLBA0` | Globe |
+| `CJWLA0` | Jeweler Bench |
+| `CFINA0` | Fine-tools Bench |
+| `CMSTA0` | Master Bench |
+
+Source/status: author-supplied AI-generated artwork; project-local asset.
+Final product policy remains independent of Doom copyrighted art.
+
+````
+
+
+## Registro: legacy/CHANGELOG.md
+
+SHA-256: `73749d649441ea3ccd54942e464e0e7ac8bbdc77a825ada833a9dbb34c581c68`
+
+````text
+# Changelog
+
+## 4.28.0bh — Doubled post-island stress population
+
+- Doubled MAP02 from the validated 937-actor population to exactly 1,874
+  combatants without changing its enclosure, entrance or geometry.
+- Placed 126 Rulo, 126 Caella, 124 Ronnie, 124 Argento, 124 Bulls and 1,250
+  Giant Rats, preserving the deterministic proportional distribution.
+- Changed no physics, projectile, menu, typography or Debug-profile code so
+  this test isolates the load difference under the 4.28.0bf/4.28.0bg systems.
+
+## 4.28.0bf — Range-bounded projectiles and UI-safe contact telemetry
+
+- Supersedes the unloadable 4.28.0be draft. The debug HUD now reads a contact
+  count cached during player `Tick` instead of calling a play-scope function
+  from UI scope.
+- Connected NPC magical range to the same authoritative rule as the player:
+  3,200 MU base multiplied by Eloquence Type 4 `AbilityRangePercent`.
+- Applied that distance both to `MaxTargetRange` and to projectile travel.
+  Explosive missiles destroy themselves when they exhaust the caster's range;
+  the ten-second lifetime remains an independent absolute safeguard.
+
+## 4.28.0be — Contact islands, crushing and explosive NPC projectiles
+
+- Supersedes the unloadable 4.28.0bd draft. Renamed every contact-local
+  `state` identifier because `state` is reserved by the ZScript parser.
+
+- Restored MAP02 to its validated 937-actor population after the doubled
+  1,874-actor field froze during combined combat.
+- Replaced the single `ImpactContactActor` latch with a shared multi-contact
+  graph. Every touching pair owns one persistent `ImpactContactState`, and
+  both bodies reference the same state until five true separation tics pass.
+- Made connected contact graphs act as implicit physical islands: bodies can
+  retain every simultaneous neighbour instead of overwriting an older pair.
+- Added allocation-free sustained momentum transfer for already-latched
+  contacts. Continued pressure propagates through a crowd without repeating
+  impact trauma or recreating `ImpactBody` and `ImpactResult` every tic.
+- Added one crushing evaluation per 35 sustained-contact tics. Its damage is
+  exactly the existing collision result at the pusher's current walking speed,
+  with both effective masses and the receiver's biological absorption applied.
+- Replaced the four NPC homing elemental missiles with the existing explosive
+  projectile model: straight flight, Statuette radius/direct-damage rules and
+  the same absolute ten-second lifetime.
+- Updated the physics debug line to report the player's active contact count.
+- Kept the ten-second NPC-projectile lifetime unchanged.
+
+## 4.28.0az — Render-linked wall backs and zero-size texture packaging fix
+
+- Replaced `NOINTERACTION` on finite-wall reverse panels with non-solid `NOBLOCKMAP`, keeping the actor linked to its sector so GZDoom can render it from the rear.
+- Preserved the 0.25-MU separation between the two visual faces and retained one collision owner.
+- Tightened direct font families to kerning `-4`, added one more pixel to every word space and reduced each glyph canvas by one transparent right-hand column.
+- Updated `FONTDEFS` word-space values so modern menu aliases no longer ignore the spacing configured by the font directories.
+- Replaced the five classic Doom main-menu label patches with Spanish labels composed from `CaelumText`; those items were images and could not respond to font metrics.
+- Added a deterministic PK3 builder that never emits directory entries, rejects empty files, validates non-zero PNG dimensions and verifies the resulting ZIP.
+- Audited 3,166 PNG resources: every decoded successfully and every declared texture has positive dimensions; the concrete invalid resource in the supplied log was the zero-byte directory entry `sprites/caelum/weapons/`.
+- Kept MAP02 at 937 actors because the reported fatal error is now an actionable texture/package failure rather than a non-diagnostic freeze.
+
+## 4.28.0ay — Closed central connector ends, wider spaces and 937-actor step
+
+- Preserved kerning `-3` and increased every bitmap family's `SpaceWidth` by two pixels.
+- Identified the visible black strip as the open 64-MU ends of the obsolete central connector band, not the previously adjusted dividing-wall endpoints.
+- Added one continuous 64-MU finite wall panel to the front and rear end of each central wing, closing all four openings only at first-floor height.
+- Avoided infinitely tall blocking linedefs, preserving ground-floor traversal and keeping collision limited to the upper rooms.
+- Reduced MAP02 from 1,875 to exactly 937 stress actors while preserving its complete enclosure and geometry.
+- Kept the validated Debug profile at 90 and made no push/contact-island physics changes.
+
+## 4.28.0ax — Exact central wall spans, tighter kerning and 1,875-actor step
+
+- Tightened all Caelum bitmap families from kerning `-2` to `-3`, preserving every word-space width.
+- Replaced the four 136-MU central first-floor wall segments with exact 140-MU spans, covering each boundary continuously from its exterior edge to the internal doorway.
+- Repositioned the four segment centers by 2 MU so their endpoints meet the mansion geometry exactly without overlapping the 64-MU door openings.
+- Reduced MAP02 from 3,750 to 1,875 stress actors without changing its vertices, linedefs, sidedefs, sector or enclosure size.
+- Changed the Debug creation profile from 30 to 90 in all twelve attributes through the central creation constant.
+- Made no change to push/contact-island physics and did not update the private/personal design document.
+
+## 4.28.0aw — Direct transition, tighter type and 3,750-actor limit search
+
+- Disabled MAP01's inherited Doom intermission; Exit now transitions directly to MAP02.
+- Tightened every Caelum bitmap family from kerning `-1` to `-2` while preserving word-space widths.
+- Separated the reverse visual face of finite first-floor walls by 0.25 MU on each horizontal axis, preventing coplanar depth rejection without adding collision.
+- Added the existing 210×103 `CAMLOGO` project resource as a high-resolution `M_DOOM` replacement, preserving the menu's 132×65 logical layout.
+- Preserved MAP02's complete 16,384×16,384 MU room and reduced its population from 7,500 to 3,750 actors: 250 of each NPC and Bull plus 2,500 Giant Rats.
+- Made no change to push/contact-island physics and did not update the private/personal design document.
+
+## 4.28.0av — Restored native menus and contrast-safe typography
+
+- Removed the empty `MainMenu` override introduced in 4.28.0au; it replaced the native menu without declaring any selectable items.
+- Preserved the Caelum logo through the `M_DOOM` replacement while restoring every native main-menu action.
+- Kept a non-destructive `DefaultListMenu` style so project typography can apply without replacing menu contents or behavior.
+- Increased ordinary text and console families by one point and added a one-pixel dark outline around bright glyphs for stable contrast.
+- Reduced the large/intermission families from 15 to 12 points so the MAP01 completion screen remains proportionate.
+- Produced a source-only patch and did not update the private/personal design document.
+
+## 4.28.0au — Explicit Caelum menu, mirrored central rooms and reduced stress population
+
+- Added explicit `MENUDEF` and `FONTDEFS` mappings so the main and configuration menus request Caelum typography instead of inheriting Doom II patches/fonts.
+- Replaced the main-menu Doom II logo with the supplied Caelum Argenteum emblem after extracting a true transparent background.
+- Assigned the official `TITLEPIC` as the credit page too, preventing the title loop from showing Doom II credits.
+- Activated the reserved south-central 3D-floor sectors and mirrored the validated two-equal-room topology, including two exterior doors and one internal dividing door.
+- Preserved the remote coordinate-30,000 geometry because it consists of required 3D-floor control sectors, not misplaced playable rooms.
+- Kept MAP02's titanic enclosure unchanged while halving every population: 500 each of Rulo, Caella, Ronnie, Argento and Bull, plus 5,000 Giant Rats (7,500 actors total).
+- Deferred every contact-island, continuous-push and crushing-damage change to the next physics patch.
+
+## 4.28.0at — Two-sided finite walls and titanic MAP02 stress field
+
+- Added a non-solid synchronized reverse face to finite first-floor wall panels, removing the interior transparency without duplicating blockers, contacts or collision mass.
+- Increased all Caelum font roles moderately, changed compact/interface families to bold variants and enabled a standard shadow on gameplay HUD text.
+- Replaced MAP02's seven small populations with one remote 16,384×16,384 MU enclosure reached through a two-turn sight-breaking corridor.
+- Distributed 1,000 Rulo, 1,000 Caella, 1,000 Ronnie, 1,000 Argento, 1,000 Bulls and 10,000 Giant Rats at unique positions: 15,000 test actors plus the player start.
+- Kept every test actor in ambush mode so neither sight nor remote sound activates the population from the initial chamber.
+- Produced a source-only patch; no complete development PK3 or private/personal document update is part of this revision.
+
+## 4.28.0as — Corrected room entrances and baseline-safe typography
+
+- Closed the erroneous exterior opening placed on the same axis as the north-central dividing wall.
+- Restored the two original 64-MU exterior doorways, one per room, and added one lateral sliding leaf to each.
+- Preserved the separate internal 64-MU door in the midpoint wall; the pair now has two exterior entrances and one internal connection.
+- Regenerated every Caelum glyph on a fixed-height transparent cell with a shared typographic baseline instead of top-aligning tightly cropped images.
+- Reduced classic HUD font height from 18 to 10 pixels and assigned `CaelumMono` explicitly to the gameplay HUD and debug overlay.
+- Added the GZDoom 4.14.2 modern aliases `NewSmallFont`, `NewConsoleFont`, `AlternativeSmallFont` and `AlternativeBigFont`, allowing menus and the modern console to use the supplied family.
+
+## 4.28.0ar — Contiguous north-central room pair and global typography
+
+- Rejected the 4.28.0aq central-room interpretation: the two rooms may not be joined by a third corridor-shaped space.
+- Rebuilt only the north-central pair as a single 336×336 MU exterior volume divided into two equal 168×336 MU rooms.
+- Added one finite internal dividing wall with a single 64-MU lateral door; the former narrow connector no longer exists as a room or passage.
+- Kept the south-central and lateral rooms neutral for the next two-room validation patches.
+- Integrated the supplied Unicode bitmap font family globally: `BigFont`, `SmallFont`, `ConsoleFont`, `IndexFont`, `CaelumDisplay`, `CaelumText`, `CaelumSmall` and `CaelumMono`.
+- Added the supplied typography guide and the bundled DejaVu copyright/license notice.
+- Recorded a successful full MAP02 stress test: every actor group converged and fought in the center, rats were killed through impacts, and no freeze occurred.
+
+## 4.28.0aq — Central first-floor repair, authored music and isolated actor diagnostics
+
+- Restored the native 3D floor, roof and wall controls for the four central MAP01 first-floor rooms, including the two missing 64×64 floor links; no finite actor-wall grid was reintroduced.
+- Assigned `01` to the title screen and MAP01, and `02` to MAP02. Both files identify `marjaja197` as artist in their embedded metadata and carry the title `The Argentine Omen`.
+- Marked all MAP02 test actors as ambush/deaf so a remote pistol shot cannot wake every room through the shared sound region before its individual test begins.
+- Added a ten-second lifetime to NPC homing elemental projectiles. Previously their `Spawn` state looped indefinitely, allowing lost projectiles to accumulate after mass awakening.
+- Preserved the seven isolated populations of twenty actors each and made no change to Impact Physics collision formulas or the current one-reference contact latch.
+
+## 4.28.0ap — Restored rat test room and official title screen
+
+- Restored twenty Giant Rats in a seventh isolated MAP02 room reached through its own sight-breaking zigzag corridor.
+- Preserved the six 20-actor rooms from 4.28.0ao; MAP02 now contains 140 test actors plus the player start.
+- Added the author-supplied 1920×1080 Caelum Argenteum image as the explicit `TITLEPIC` presentation screen.
+- Recorded the strongest current freeze hypothesis: the one-reference contact latch loses pair state when dense moving bodies repeatedly overwrite both ends, causing unresolved pairs to allocate and resolve again without true separation.
+- Changed no collision or Impact Physics behavior so the isolated rooms remain a controlled reproduction environment for the future multi-contact/island implementation.
+
+## 4.28.0ao — Compartmentalized large-scale MAP02
+
+- Superseded the unapplied 4.28.0an package and restored the Windows-safe source order under `src/graphics/caelum/textures/sewer`; no `src/textures` directory is created.
+- Expanded MAP02 into a large connected test field with a central safe start and six distant rooms reached through sight-breaking dogleg corridors.
+- Removed every Giant Rat from MAP02.
+- Added twenty Training Dummies, twenty Rulo, twenty Argento, twenty Caella, twenty Ronnie and twenty Bulls: 120 test actors plus one player start.
+- Confirmed geometrically that every actor starts on valid floor and that no room has direct line of sight to the player start.
+- Connected MAP01's existing Exit to MAP02 through MAPINFO while preserving MAP01.wad byte-for-byte.
+- Kept the native `CAF*` and `STF*` status-face lumps in the graphics namespace; their location cannot register them as equipment, so the reported face/equipment symptom remains a separate diagnostic item.
+
+## 4.28.0am — Separate architecture and actor test maps
+
+- Reserved MAP01 exclusively for mansion architecture and preserved its validated 4.28.0al actor-free state byte-for-byte.
+- Added MAP02 as a single-sector flat actor test arena without 3D floors, doors, stations, pickups, finite panels or mansion geometry.
+- Placed one player start, four Training Dummies, Rulo, Argento, Caella, Ronnie, one Bull and twenty active Giant Rats in separated test zones.
+- Registered descriptive MAP01 and MAP02 names in MAPINFO; both remain directly accessible through the console.
+- Established that architecture and actor systems must pass independent validation before they are recombined.
+
+## 4.28.0al — Actor-free MAP01 architecture diagnostic
+
+- Removed every MAP01 combatant and character: twenty Giant Rats, the Bull, Rulo, Argento, Caella, Ronnie and four Training Dummies.
+- Removed the two now-unused barred diagnostic enclosures from 4.28.0ak, restoring the prior 498-vertex, 611-linedef and 1188-sidedef architecture.
+- Preserved the player start, pickups, ammunition, consumables, crafting stations, sliding doors and all current first-floor architecture.
+- Changed no Impact Physics, AI, Seal, inventory or first-floor implementation code.
+- Establishes a clean architectural test after the freeze also occurred while `noclip` was active.
+
+## 4.28.0ak — Isolated bull and rat collision enclosures
+
+- Added two completely separate barred diagnostic enclosures to MAP01: one retains all twenty active Giant Rats and the other contains the Bull.
+- Moved the Bull out of the rat crowd so its charge and mass displacement cannot create rat/rat or bull/rat contacts during the crowd test.
+- Made every enclosure boundary player- and monster-blocking while keeping direct visibility through the bars.
+- Preserved rat AI, bite damage 60, mass 10, `THRUSPECIES`, Bull behavior, Impact Physics and the current two-room first-floor construction state.
+- Recorded that approaching with `noclip` did not initially reproduce the freeze, making physical contact the current diagnostic boundary without yet treating that observation as a final root cause.
+
+## 4.28.0aj — Bilateral Impact Physics contact latch
+
+- Rejected actor count and pursuit AI as the freeze cause after the stationary twenty-rat group still locked up following physical contact.
+- Made player/actor and actor/actor contact checks bilateral: a pair is already resolved when either body retains the other as its active contact.
+- Prevented repeated per-tic allocation of two `ImpactBody` objects and one `ImpactResult` for older simultaneous contacts whose player-side pointer had been replaced.
+- Restored all twenty MAP01 actors to the normal active Giant Rat with pursuit and base bite damage 60.
+- Removed the temporary stationary test subclass and DoomEdNum 18030.
+- Preserved `THRUSPECIES`, mass 10, anatomy, collision rearm and all current mansion geometry.
+
+## 4.28.0ai — Stable twenty-rat area-test subclass
+
+- Identified the freeze boundary as simultaneous acquisition/chase by the complete twenty-rat group, independent of inventory opening.
+- Added `CaelumGiantRatAreaTest`, a stationary but fully damageable Giant Rat subclass for deterministic mass-effect tests.
+- Converted all twenty MAP01 crowd actors to DoomEdNum 18030 and left normal `CaelumGiantRat` registered at 18029.
+- Preserved mass 10, approximately 40 cm height, all attributes at 1, quadruped anatomy, elemental status handling, Pain and Death.
+- Normal Giant Rats retain pursuit and base bite damage 60; only the MAP01 stress-test crowd omits AI and melee.
+- Added no first-floor rooms or architectural changes relative to 4.28.0ah.
+
+## 4.28.0ah — Ground-floor ceilings and Giant Rat crowd stability
+
+- Restored native 3D-floor slabs over all eight room footprints, returning the missing ground-floor ceilings without constructing additional upper rooms.
+- Excluded both obsolete 64×64 central connector polygons so the corridor remains completely clear above and below.
+- Added `THRUSPECIES` to Giant Rats to prevent the approximately twenty-rat test group from forming an expensive same-species collision pile while menus immobilize the player.
+- Preserved rat/player collision, bite damage 60, mass 10, AI and area-effect eligibility.
+- Kept upper walls and sliding doors restricted to the validated western pair; no second room pair is added.
+
+## 4.28.0ag — Incremental first-floor rebuild, pair 1
+
+- Rejected and removed the complete actor-surface first-floor reconstruction after the reported freeze beneath its central elevated span.
+- Removed every upper finite floor, roof and wall panel and every upper sliding leaf except the two exterior double doors of the first room pair.
+- Restricted the native 3D-floor targets to the two western rooms, one in each wing; the remaining upper polygons use untagged neutral sectors and produce no volume.
+- Left the central corridor and stair landing completely free of upper actor bridges and blocker grids.
+- Preserved the ground floor, Seal functionality, elemental effects and Giant Rat test group.
+- Establishes the four-patch construction rule: exactly two rooms per manually validated patch.
+
+## 4.28.0af — GZDoom 4.14.2 elemental-visual parser correction
+
+- Changed the status-visual class parameter to `class<Actor>` and invoked the native static actor factory as `Actor.Spawn`.
+- Corrects the `Call to unknown function 'Spawn'` parser failure reported at `CaelumElementalStatus.zs:192`.
+- Preserves all 4.28.0ae gameplay, map, rat, effect-art and balance behavior.
+- Updated README, public implementation/roadmap/asset documentation and the private design document.
+
+## 4.28.0ae — Seal Channel effects, Giant Rat test group and first-floor rebuild
+
+- Replaced the User2 reservation hook with an interruptible channel driven by the equipped Seal.
+- Added exact T1/T2/T3 Adrenaline costs of 3/6/9 per tic (105/210/315 per second) and a 60-second cooldown after every completed or interrupted use.
+- Channeling immobilizes the player and cancels Block, Aim, Reload, weapon charge and pending spell casts; ordinary attacks, movement, Tarot, racial/class hooks and inventory actions are suppressed.
+- Added a channel-area actor with a base radius ten times the statuette explosion radius, scaled by the existing ability-range statistic.
+- Fire continuously renews burn; Earth renews poison, 25% remaining movement and 50% remaining accuracy; Air pushes continuously with combined physical and magical power; Water calls one random lightning strike per second; Quintessence attracts continuously and expels on release.
+- Water uses a 10,000-point total damage pool, modified by magical damage and divided between every valid actor inside an impact radius twice the base statuette explosion radius.
+- Quintessence release uses `10 × (trapped total mass / expelled actor mass)` as radial launch speed.
+- Target filtering includes living combatants, allies, neutral NPCs, corpses and projectiles, while excluding the channeler, inventory/pickups, stations, doors and architecture.
+- Weather-dependent tier additions remain deferred to the Version 5 weather integration.
+- Added Seal HUD feedback for equipped element/tier, active use and cooldown; the debug Adrenaline action now adds 100 and removes 10 seconds of Seal cooldown.
+- Added the Giant Rat with quadruped anatomy, mass 10, approximately 40 cm height, all attributes at 1 and base bite damage 60; MAP01 contains an approximately twenty-rat group for area-effect tests.
+- Added attached twelve-frame burn, poison, freeze and lightning visuals plus vertical and horizontal lightning sequences from the author-supplied atlas; visuals do not duplicate damage.
+- Rebuilt the mansion first floor as two four-room wings around a clear stair landing, restored real 3D-floor floor/roof controls and corrected sliding-door axes; manual architectural validation remains pending.
+
+## 4.27.0g — Intermediate stair closures, charged Block dash and gauntlet uppercut
+
+- Closed the four gaps behind the intermediate staircase pairs with ordinary 8-MU-deep elevated sectors aligned to the room backs at `y=±640`.
+- Replaced the four outer arena wall faces with the author-supplied large weathered cobblestone variant `CMWV01`.
+- Moved the mansion atlas resources from the Windows-conflicting `src/textures` directory to `src/graphics/caelum/textures/mansion`; the root `TEXTURES` lump remains a file.
+- Stopped the equipment menu from forcing the Armor/head category whenever it opens, so crafted Seals and Amulets remain selected and visible as their actual native item classes.
+- Added a Giant Gauntlets secondary uppercut with exactly the primary attack's damage, range and Air cost, plus an equal vertical physical impulse on a successful damaging hit.
+- Starting shield Block with a compatible weapon while the charged state is active now produces a forward dash at 150% of the character's current maximum run speed without consuming the charged attack.
+- Restored the charged damage multiplier after localized hit recalculation so melee charge remains doubled at the final damage application stage.
+- MAP01 now contains 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## 4.27.0f — Charge HUD, jewelry selection, finite rear walls and mansion textures
+
+- Added a centered HUD countdown while a melee/magical weapon is charging and during the remaining charged-potentiator window.
+- After crafting an amulet or seal, the inventory selection now points to that exact jewelry item instead of retaining the default helmet category.
+- Removed middle textures from the six rear-wall closure linedefs, preserving the validated lower wall faces without rendering duplicate wall patches in the air.
+- Extracted 81 original mansion texture resources from the author-supplied atlas: exterior/interior/damaged/basement walls, foundations, ceilings, doors, stone/wood floors, carpets, exterior roofs, terrain, moldings and modular pool surfaces.
+- Added the Version 5 transition to the roadmap: V5.0.0 begins with incremental modular source reorganization only after all pending Version 4 work is completed.
+- MAP01 remains at 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+
+## 4.27.0e — Static charged-projectile classes for GZDoom 4.14.2
+
+- Replaced the unavailable Actor `SetSize` call with three charged projectile subclasses whose collision dimensions and visual scale are defined in `Default`.
+- Added charged variants for the standard, homing-book and explosive-statuette projectiles while preserving their inherited behavior.
+- Corrects the `Unknown function SetSize` parser failure reported at `CaelumPlayer.zs:9061`.
+- Preserves the intended `sqrt(2)` linear multiplier and doubled projectile area.
+- Added no balance, map or external-asset changes relative to 4.27.0d.
+
+## 4.27.0d — GZDoom 4.14.2 charged-projectile compatibility
+
+- Replaced direct writes to the read-only Actor `Radius` and `Height` properties with native `SetSize` when scaling charged magical projectiles.
+- Replaced component writes to `Scale.X` and `Scale.Y` with one complete vector assignment.
+- Corrects the `GExpression must be a modifiable value` parser failure reported at `CaelumPlayer.zs:9057`.
+- Added no balance, map or asset changes relative to 4.27.0c.
+
+## 4.27.0c — Rear-wall restoration and contextual charged Reload
+
+- Restored only the two finite structural wall strips beside the rear-room door, using the accepted V4.26.5r MAP01 baseline and leaving the rejected main gate and terrace experiments absent.
+- Moved the four training dummies from the corridor center to the lateral test line at `y=-900`.
+- Extended native Reload contextually: ranged weapons retain magazine reload; melee and essence weapons charge their next attack.
+- Added a 2-second base charge modified by the live physical attack-speed or magical casting-speed duration multiplier, followed by a 3-second charged window.
+- Charged attacks consume twice the normal Air or Anima and deal twice the normal damage. Charged magical projectiles and explosions use `sqrt(2)` linear dimensions, producing twice the area rather than four times the area.
+- Movement during ranged Reload or weapon charging halves movement speed and halves reload/charge progress; standing still restores the live full rate.
+- Pain and weapon switching cancel charging and the charged state. Starting an attack cancels shield Block.
+- Ranged Fire with an empty magazine now requests Reload automatically when compatible ammunition remains in inventory.
+- Rebuilt MAP01 as 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+- Added no external assets.
+
+## 4.27.0b — MAP01 rollback to the pre-gate baseline
+
+- Restored MAP01 byte-for-byte from V4.26.5r, the last version before any standalone or integrated main corridor gate.
+- Removed the entrance gate, rear terrace connectors, three-room terrace partitions and every map-sector experiment added in V4.26.5s through V4.27.0a.
+- Preserved the eight validated trap-door rooms, the locked NPC-room variant, three aligned staircase pairs, room/item placement and 186 things from V4.26.5r.
+- Preserved all V4.27.0a input work, including ranged-only Reload, User1–User4 routing and the confirmed magic-weapon Zoom latch.
+- Diagnosed the supplied GZDoom crash as a runtime access violation after successful script parsing and map startup, at player coordinates inside the new western terrace connector; no ZScript parse error was reported.
+- Restored MAP01 to 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with no invalid references or open conventional-sector boundaries.
+- Added no external assets.
+
+## 4.27.0a — Native input contract and conventional terrace partitions
+
+- Began V4.27 by connecting native User1 to the racial-ability reservation hook and User2 to the Seal Channel reservation hook across physical, ranged and magic selector weapons.
+- Kept Reload exclusive to ranged magazine reload; melee and magic weapons no longer reinterpret Reload as Channel.
+- Preserved User3 for the equipped Tarot card and User4 for the class ability without inventing gameplay effects or balance values.
+- Added localized Customize Controls entries for all four native User inputs.
+- Applied the existing Zoom release latch to magic weapons as well, preventing held Zoom from toggling shield Block repeatedly.
+- Removed all four self-referencing 3D-middle-texture terrace partitions introduced in 4.26.5w.
+- Rebuilt each terrace connector from seven conventional closed sectors: two room extensions, two structural wall spans, two jambs and one finite retracting panel.
+- Replaced the segmented western entrance frame with one closed continuous jamb sector on each side, removing its internal seam and transparent section.
+- Rebuilt MAP01 as 252 vertices, 350 linedefs, 692 sidedefs, 103 sectors and 186 things; 26 bilateral platform-door activators and 63 roof targets remain intentional.
+- Validated every sector as a closed degree-2 contour with no invalid references, duplicate segments, collinear overlap or non-vertex crossing.
+- Added no external assets.
+
+## 4.26.5w — Three-room terrace divisions and sealed entrance frame
+
+- Restored four internal cross-walls across the north and south terrace connectors, dividing each formerly merged large zone into three similarly sized rooms.
+- Added one centered 128-MU reusable trap door to every cross-wall, for four new bilateral repeatable connections between the rooms.
+- Built the opaque wall spans as finite 3D middle textures under the 128-MU roof underside, without adding roof sectors or blocking traversal above the terrace.
+- Rebuilt the two entrance-frame extensions at the same 128-MU floor height and roof-control ID as their jambs, closing the transparent frame sections without lengthening the gate.
+- Preserved the uncovered central corridor, six staircase flights, existing room doors, locked NPC room, item positions and all 186 things.
+- Rebuilt MAP01 as 256 vertices, 340 linedefs, 672 sidedefs, 93 sectors and 186 things.
+- Validated all non-self-referencing sector contours as closed degree-2 boundaries, with no invalid references, duplicate segments, collinear overlaps or non-vertex crossings; deterministic regeneration produces the same SHA-256.
+- Added no external assets or gameplay changes.
+
+## 4.26.5v — Closed terrace topology and opaque entrance frame
+
+- Fixed two open rear structural-wall contours whose dangling jamb connections allowed 3D-floor geometry to leak toward the Player Start.
+- Restored the rear jamb connections to the correct adjacent stair sectors, closing both the stair polygons and the independent room-wall strips.
+- Rebuilt the integrated corridor entrance frame as exact 16-MU jamb sectors plus separate 16-MU solid wall extensions instead of stretched 32-MU jambs.
+- Added finite lower faces to every side of the jamb and extension polygons, eliminating the transparent frame section.
+- Preserved the four rear terrace connectors, uncovered central corridor, door mechanisms, dummy row and all 186 things.
+- Rebuilt MAP01 as 208 vertices, 284 linedefs, 560 sidedefs, 81 sectors and 186 things.
+- Validated every one of the 80 non-exterior sectors as a closed degree-2 boundary, with no collinear overlap or non-vertex crossing.
+- Added no external assets or gameplay changes.
+
+## 4.26.5u — Integrated corridor entrance and continuous rear terrace
+
+- Removed the isolated trap-door structure beside the Player Start.
+- Rebuilt the unkeyed panel and frame directly into the true western corridor entrance at x=-593…-569, joining the two nearest rooms across the complete 192-MU passage width.
+- Preserved the validated 128-MU retracting panel, 24-MU depth, bilateral repeatable USE and finite frame/roof behavior.
+- Added four roofed connector sectors behind the two intermediate north/south staircase pairs, extending from y=±272 to the room backs at y=±640.
+- Shared connector side boundaries with the existing rooms and shared their fronts with the 136-MU final steps, avoiding duplicate linedefs and closing the former small gaps.
+- Kept the central corridor, all stair flights and their approach zones without a roof.
+- Rebuilt MAP01 as 204 vertices, 278 linedefs, 548 sidedefs, 79 sectors and 186 things with 39 roof targets and no overlap or non-vertex crossing.
+- Added no external assets or gameplay changes.
+
+## 4.26.5t — Structural rear walls, compact entry gate and debug creation
+
+- Replaced all stair-owned rear middle textures with two real 8-MU-thick room-wall sectors at floor height 136.
+- Made the restored room walls visible from both interior and exterior, flush with the roof and traversable from the 136-MU final steps.
+- Moved the standalone entry gate to 32 MU ahead of the Player Start while retaining only its 24-MU panel/frame depth.
+- Moved all four training dummies off the central corridor into one southern test row at y=-900 without changing their x spacing.
+- Added `Depuración` / `Debug` as a fifth race-page creation option that jumps directly to summary.
+- Made the debug creation profile set all twelve attributes exactly to 30, body height to 1.8 m and base body mass to 100 kg.
+- Rebuilt MAP01 as 198 vertices, 258 linedefs, 508 sidedefs, 75 sectors and 186 things with no scaled stair middle textures, overlap or non-vertex crossing.
+- Added no external assets.
+
+## 4.26.5s — Visible stepped rear walls and corridor trap door
+
+- Replaced the invisible lower faces beside the rear stairs with individually scaled finite 3D middle walls from each tread to the 128-MU roof underside.
+- Left both 136-MU final-step boundaries open so roof access remains unobstructed.
+- Added a standalone reusable trap-door gate 104 MU in front of the Player Start at the beginning of the test corridor.
+- Reused the validated 128-MU retracting floor panel, bilateral repeatable USE, 16-MU solid jambs and 128–136-MU finite roof slab.
+- Kept the silver-key NPC-room door, training dummies and all 186 thing positions unchanged.
+- Rebuilt MAP01 as 194 vertices, 252 linedefs, 496 sidedefs, 73 sectors and 186 things with 18 platform-door activators and no overlap or non-vertex crossing.
+- Added no external assets or gameplay balance changes.
+
+## 4.26.5r — Aligned staircase modules and restored rear walls
+
+- Standardized all three north/south staircase pairs to exactly 119 MU wide, with starts separated by exactly 665 MU.
+- Aligned every low step to the common corridor boundaries at y=±80 and every high step to y=±272.
+- Centered the rear room on y=0 so its two front corners coincide with the final north and south steps.
+- Restored the six rear-room staircase walls as finite lower wall faces that stop at each step height instead of projecting above it.
+- Moved the western room pair 71 MU east and its contained pickups by the same translation, leaving a 1-MU conventional clearance beside the first staircase.
+- Moved the eastern pair and its pickups 1 additional MU east; shifted the rear room 1 MU east to preserve the repeated 119/665-MU layout.
+- Preserved 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with deterministic regeneration and no invalid overlap or crossing.
+- Added no external assets or gameplay balance changes.
+
+## 4.26.5q — Complete NPC attributes and uniform corridor stairs
+
+- Expanded `CaelumCombatActor` from eight combat attributes to the same twelve primary attributes used by player characters.
+- Added current and maximum Anima to Caelum NPCs, using the player formula `10 × Type1(effective Patience)` after equipment and full initialization without changing the formula to Intelligence.
+- Assigned complete authored layer values to Rulo, Ronnie, Argento and Caella; Caella's helmet adds +5 effective Intelligence while her separate +5 Patience gloves correctly raise maximum Anima to 3760.
+- Added three complete north/south staircase pairs at uniformly separated x centers across the intermediate room corridors.
+- Moved both eastern rooms and the rear room 24 MU east; moved every pickup inside the eastern pair by the same 24 MU.
+- Removed the protruding wall middle textures from all six rear-room stair boundaries, not only the roof landing.
+- Rebuilt MAP01 as 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things with no collinear overlap or non-vertex crossing.
+- Added no external assets.
+
+## 4.26.5p — Clear rear roof access and NPC-archetype audit
+
+- Removed the finite wall face from the two 136-MU rear-stair landing boundaries, clearing both routes onto the rear-room roof while retaining the closed lower staircase sides.
+- Registered the corrected solid jamb frame, retracting panel, continuous roof and sight-blocking doorway together as the definitive `habitación con puerta trampa` template.
+- Audited the shared Caelum NPC combat model: eight primary combat attributes, health, lucidity, adrenaline, accuracy, critical chance, evasion, armor, pain, anatomy and impact physics are active.
+- Recorded Constitution, Charisma, Empathy, Eloquence and Anima as required gaps before the combat actor can serve as the complete non-survival NPC archetype.
+- Added no external assets and changed no NPC balance values.
+
+## 4.26.5o — Solid door frames, flush stairs and mounted exit
+
+- Converted all sixteen auxiliary jamb sectors into solid finite 128-MU frame pillars.
+- Added finite lower wall faces to the frames, closing lateral sight around every trap door without introducing middle-texture strips.
+- Shared the rear staircases' eastern edges directly with the rear-room wall and reduced their western clearance to 1 MU.
+- Integrated the NPC exit switch into a 128-MU segment of the room's western wall at x=-2464 instead of leaving a freestanding line at x=-2448.
+- Preserved all eight trap-door mechanisms, the NPC silver lock, all roof targets, items and shifted dummy positions.
+- Updated MAP01 to 130 vertices, 166 linedefs, 324 sidedefs, 46 sectors and 186 things with no overlaps or non-vertex crossings.
+- Added no external assets or balance values.
+
+## 4.26.5n — Reusable one-trap-door room replication
+
+- Registered the validated architecture as the reusable `habitación con 1 puerta trampa` / one-trap-door room template.
+- Rebuilt all eight MAP01 rooms with finite walls, independent retracting floor doors and solid walkable 3D-floor roofs.
+- Oriented the four central, two eastern and rear-room doors toward their corresponding corridors.
+- Preserved the NPC-room silver lock through UDMF `locknumber = 200` on both platform-door thresholds.
+- Removed the provisional east staircase and raised block.
+- Added two lateral six-step staircases beside the rear room's west-facing front, reusing heights 24/48/72/96/120/136 MU.
+- Preserved all item positions and shifted the four training dummies 128 MU toward the player start.
+- Rebuilt MAP01 as 132 vertices, 167 linedefs, 326 sidedefs, 46 sectors and 186 things with no collinear overlaps or non-vertex crossings.
+- Added no new external assets or balance values.
+
+## 4.26.5m — Door partition texture cleanup
+
+- Removed the sixteen middle-texture assignments from the auxiliary jamb partitions and their exterior counterparts.
+- Removed 3D-middle-texture flags from the two moving-door side boundaries.
+- Retained `BIGDOOR2` only as finite lower textures generated by the 0–128 MU door-floor difference.
+- Preserved the validated retracting door, continuous walkable roof, topology and gameplay behavior.
+- Added no external assets or balance values.
+
+## 4.26.5l — Independent finite door and continuous roof
+
+- Replaced the door ceiling action with a finite 128-MU raised-floor panel using `Plat_DownWaitUpStay`.
+- Kept the doorway's base ceiling at 512 MU so the roof slab retains valid playable space above it in every door state.
+- Applied the roof target to the door and both jamb sectors, keeping the upper surface continuous across the complete entrance.
+- Moved the visible `BIGDOOR2` panel from upper textures to the correct lower textures for raised-floor geometry.
+- Preserved bilateral repeatable USE, speed 16, the 150-tic wait and the existing room dimensions.
+- Superseded the 4.26.5k ceiling-limiter solution, which still coupled the moving door ceiling to the roof space.
+
+## 4.26.5k — Finite framed template door
+
+- Added two narrow structural jamb sectors beside the template-room door.
+- Set their ceiling reference to 132 MU so the existing `Door_Raise` four-unit clearance opens exactly to the 128-MU roof underside.
+- Prevented the door from deriving its raised position from the 512-MU outdoor sky and appearing infinitely tall.
+- Preserved the existing 128-MU doorway, two-sided manual USE, repeat-special behavior, speed, delay and walkable roof.
+- Added no scripts, gameplay balance values or external assets.
+
+## 4.26.5j — Unified shield framing and true walkable room roof
+
+- Standardized Buckler, Kite, Tower and Magic Shield Block layers on the validated medium Kite framing: left-offset, 210×230 virtual pixels.
+- Preserved the Magic Shield's translucent halo without returning it to the center of the screen.
+- Replaced the template room's low conventional sector ceiling with a solid `Sector_3DFloor` slab from 128 to 136 MU.
+- Raised the room's base ceiling to the 512-MU outdoor sky so the upper side of the slab is a real playable space.
+- Applied the roof target to both the room interior and door recess, covering the complete module footprint.
+- Added a closed off-map control sector and one initialization special without external scripts or assets.
+- Preserved finite wall midtextures, the six-step 136-MU access platform and repeatable two-sided `Door_Raise` activation.
+
+## 4.26.5i — Equipped shield first-person Block layer
+
+- Added a first-person HUD shield layer that appears only while contextual Zoom Block is active.
+- Reused the equipped Buckler, Kite, Tower and Magic Shield project sprites; no new external assets were added.
+- Differentiated provisional shield framing: Buckler centered/lower, Kite left and broad, Tower very large on the far left, and Magic Shield centered with a translucent halo layer.
+- Kept the active weapon visible underneath the modular shield layer.
+- Recorded Fly lateral control, ranged visual Zoom and Dexterity-scaled Reload as user-validated.
+
+## 4.26.5h — Zoom input latch, Fly lateral movement and roof diagnosis
+
+- Added one-action-per-press latching to the contextual Zoom input.
+- Prevented a held Zoom key from repeatedly toggling ADS or Block.
+- Rearmed Zoom only after the native `BT_ZOOM` button is released.
+- Allowed the movement-acceleration layer to treat native `NOGRAVITY` Fly as continuously supported movement.
+- Preserved airborne momentum rules for ordinary jumps.
+- Documented why the adjacent stair block is walkable while the current room ceiling is not: the block is a raised floor sector, whereas a normal sector ceiling has no walkable upper surface.
+- Deferred the room roof conversion to a true solid 3D-floor slab so it can retain both an interior and a walkable roof.
+
+## 4.26.5g — Upper-wall removal, true repeatable door and live Dexterity reload
+
+- Removed the upper `STARTAN3` textures that continued above the finite room-wall middle textures.
+- Corrected both door thresholds from the ignored custom field `repeatable` to the valid UDMF field `repeatspecial`.
+- Preserved front/back USE support and the existing `Door_Raise` speed and delay.
+- Confirmed ranged Aim/ADS multiplies effective physical accuracy by ×2 and continues to stack with crouching ×2.
+- Recalculated ranged Reload duration from current effective Dexterity whenever Reload begins: `base seconds × 100 / Type-4 attack-speed percent`.
+- Preserved the 3/3/5/5-second base durations and introduced no new balance values.
+
+## 4.26.5f — Finite room walls, repeatable door and contextual ranged Zoom
+
+- Replaced the template room's infinitely wrapped middle textures with bottom-pegged finite 3D middle textures.
+- Removed the permanent full-height blocking flag from those seven finite wall/jamb textures.
+- Enabled back-side USE activation on both repeatable `Door_Raise` thresholds.
+- Made Zoom contextual: ranged weapons toggle real ×2 ADS/FOV zoom, while only shield-compatible weapons can enter Block.
+- Prevented ranged and other two-handed physical weapons from blocking through an equipped shield.
+- Preserved ranged AltFire as an alternate Aim input.
+- Added a live HUD line for loaded magazine, capacity, reserve ammunition and Reload countdown.
+- Added no new assets or balance values.
+
+## 4.26.5e — Bilateral wall rendering, dual-use door and ranged ammunition
+
+- Added explicit wrapped middle textures to both sides of the five template-room walls and two jambs.
+- Preserved bilateral room/exterior sector ownership and solid wall collision.
+- Added the manual `Door_Raise` special to the inner threshold, allowing USE from inside and outside.
+- Added an explicit pickup amount of 20 to carbine ammunition, arrows and bolts.
+- Made the loaded magazine the immediate ranged-fire ammunition source.
+- Prevented reserve-stack location/exhaustion from invalidating an already loaded projectile.
+- Preserved manual Reload, magazine capacities, Reload durations, Air costs, damage, spread and critical formulas.
+
+## 4.26.5d — Visible room, usable door and environmental Adrenaline correction
+
+- Converted the five template-room perimeter walls into bilateral room/exterior lines.
+- Added exterior sidedefs and finite upper textures so the room renders from the field.
+- Converted both door jambs into bilateral door/exterior boundaries.
+- Reversed the outer door line so exterior sector 0 is its front and door sector 5 is its back.
+- Removed the door line's permanent blocking flag so `Door_Raise` can create a passable opening.
+- Preserved room, door, stairs and platform dimensions.
+- Added an explicit Pain-Adrenaline permission to player and Caelum NPC pain processing.
+- Disabled Pain Adrenaline for wall and floor impacts while preserving health loss, Pain/stun and actor-impact Adrenaline.
+- Changed no impact-energy, Toughness, armor, anatomy or acceleration formulas.
+
+## 4.26.5c — Final stair front side and input-roadmap audit
+
+- Removed the two orphan sidedefs left by the template-door correction.
+- Remapped all subsequent sidedef references into a compact 154-sidedef map.
+- Reversed linedef 82 together with its side assignments, preserving geometry while exposing exterior sector 0 as the explicit front.
+- Preserved the sixth stair's sector 12, height, dimensions and textures.
+- Corrected the roadmap to preserve the implemented Zoom Block, ranged AltFire Aim and ranged Reload systems.
+- Reserved User1 for racial ability, User2 for Seal Channel, User3 for Tarot and User4 for class ability.
+- Reframed V4.27 as completion/validation of the existing input architecture rather than a destructive remapping.
+
+## 4.26.5b — Canonical MAP01 topology and roadmap reconciliation
+
+- Removed four provisional appended sidedefs from the architectural template experiment.
+- Removed explicit negative back-side placeholders from the one-sided door lines.
+- Reconnected the door to its canonical sidedef indices and consistently oriented the three one-sided door boundaries.
+- Restored the original room-front/door-back threshold sidedef pair.
+- Addressed the engine-reported front-sector/front-sidedef failures on lines 53, 54 and 82 and the disconnected right edge on line 52.
+- Added `docs/ROADMAP.md`, reconciling the old crafting/economy/NPC roadmap with the current partial implementations.
+- Added the initial V4.27 input-remapping draft; V4.26.5c supersedes that draft after auditing the already implemented Zoom Block, ranged AltFire Aim and ranged Reload behavior.
+- Initially proposed a dedicated racial-action key; V4.26.5c supersedes it by reserving the actually available User1 input for racial ability.
+- Changed no combat physics, balance values, crafting formulas, room dimensions or external assets.
+
+## 4.26.5a — Architectural template topology correction
+
+- Removed invalid room-sector back sides from the two template door jambs.
+- Restored the outer manual door line as a one-sided boundary of the door sector.
+- Reoriented the jamb and outer door linedefs into one continuous clockwise door-sector loop.
+- Corrected the inner threshold orientation so its front faces the room and its back faces the door sector.
+- Restored closed directed boundaries for the room and door sectors.
+- Removed the structural cause of the node-builder `line 54 has no front side` error.
+- Preserved the existing `Door_Raise` special, dimensions, textures, stair geometry, physics and gameplay systems unchanged.
+
+## 4.26.5 — Architectural template room
+
+- Returned MAP01 structural experimentation to the last known loadable safe map.
+- Added one isolated building template for controlled validation instead of modifying all seven structures at once.
+- Added a standard room sector with a 136-MU ceiling.
+- Added a 128-MU-wide doorway with side jamb geometry.
+- Added an unlocked classic vertical door using manual `Door_Raise` on player USE.
+- Added a separate 136-MU raised roof-access platform.
+- Added six isolated stair sectors at 24, 48, 72, 96, 120 and 136 MU.
+- Kept V4.26.4 crouch wall damping, Stealth movement-noise and buckler behavior unchanged.
+
+## 4.26.4 — Crouched impact damping, movement noise and finite test buildings
+
+- Crouching now enables Agility-derived biological damping for wall collisions.
+- Crouched wall damping uses the calibrated horizontal Agility-bonus fraction; it does not subtract raw JumpZ units.
+- Buckler and crouch wall damping do not stack: the larger active fraction is used.
+- Physical/Lucidity stun disables crouched and buckler Agility damping.
+- Added `StealthPercent` as the documented Type-2 derivative of Agility.
+- Existing crouch x2 Stealth bonus now applies to the effective Stealth percentage, capped at 100%.
+- Movement-hearing noise is multiplied by `(1 - EffectiveStealth/100)`; 100% Stealth produces no movement SoundAlert.
+- Walking uses the 20 m reference hearing range; running x1.5; crouching x0.5, before Stealth reduction.
+- Rebuilt all six test rooms and the NPC room using finite raised-floor wall sectors rather than infinitely blocking middle textures.
+- Added a shared solid 3D-floor roof slab at 128–136 MU to all room interiors.
+- Added two lateral six-step staircases reaching 136 MU for roof access.
+- Preserved 512-MU exterior height, categorized item distribution and reduced shield duplicates.
+
+## 4.26.3b — Buckler calibration and MAP01 structural rebuild
+
+- Fixed buckler horizontal damping producing `Delta-v = 0` and effectively infinite equivalent tics.
+- Horizontal buckler damping now uses the Agility-derived jump **bonus**, doubled by the buckler, as a fraction of horizontal trauma rather than subtracting raw JumpZ units.
+- Capped buckler horizontal acrobatic damping at 50% of physical Delta-v; momentum/displacement remain unchanged.
+- Floor damping remains direct JumpZ-based and still doubles with active buckler block.
+- Debug overlay now separates physical `RawDV`, post-acrobatics `TraumaDV` and absorbed amount.
+- Fixed seals and amulets being tossed upward when dropped; horizontal toss remains, vertical velocity begins downward.
+- Rebuilt MAP01 rooms from the clean pre-roof geometry.
+- Replaced infinitely wrapped blocking room walls with finite `midtex3d` walls.
+- Added genuine solid 3D-floor roof slabs (128–136 MU), making the roof top physically walkable.
+- Added a six-step exterior roof-access staircase.
+- Corrected both new room entrances to face the central corridor.
+- Preserved the 512-MU outdoor ceiling/exterior wall height.
+- Redistributed pickups into six rooms by type and removed 16 redundant shield pickups.
+- Kept the west NPC room on the same finite-wall/3D-roof system while preserving its existing door assembly.
+
+## 4.26.3 — Buckler acrobatics and fall-test map
+
+- Buckler block doubles collision Toughness.
+- Buckler block doubles Agility/JumpZ impact absorption and extends it to horizontal actor/wall trauma.
+- Stun disables the Agility absorption, including the buckler bonus.
+- Momentum, 0.5× buckler effective mass and displacement remain unchanged.
+- Added two equal MAP01 test rooms.
+- Roofed the four original rooms, two new rooms and west NPC room at 128 MU.
+- Raised outdoor ceiling/exterior wall height from 256 to 512 MU for fall testing.
+
+## 4.26.2 — Universal impact scale and weighted anatomical response
+
+- Replaced actor-height-dependent equivalent-time severity with a universal 28-map-unit reference distance.
+- Individual height no longer directly reduces/increases kinetic severity; mass continues to affect impulse and Delta-v.
+- Kept `ImpactBody.Height` as neutral geometry metadata rather than an energy multiplier.
+- Extended generic `ImpactResult` with source/target normalized vertical contact intervals.
+- `ResolveBodies` derives those intervals from the vertical overlap of the two generic bodies.
+- Caelum integration converts contact intervals into normalized anatomy-region weights.
+- Collision vulnerability is now weighted by contacted-region proportion.
+- Collision armor defense is now localized and weighted by the same proportions instead of using global average armor.
+- Collision Lucidity loss is weighted by critical/head contact share and localized head armor.
+- Floor impacts use bottom-point contact; vertical static geometry uses full-height contact until the engine can provide more precise Z contact data.
+- Player biological landing damping remains based on current JumpZ/Agility.
+- NPC biological landing damping now derives from CombatAgility Type-1 jump scaling rather than body height.
+- Updated debug telemetry with contact band, weighted vulnerability, weighted armor, head-contact share and collision Lucidity loss.
+
+## 4.26.1 — Impact response refinement
+
+- Changed collision Toughness from multiplicative mitigation to subtractive maximum-HP percentage-point tolerance.
+- New impact order: energy severity × surface multiplier -> subtract Toughness percentage points -> convert remaining percentage to HP -> apply global armor defense.
+- Toughness 100 is no longer absolute immunity: a 200% raw collision still leaves 100% max-HP severity before armor.
+- Added a 25% minimum lost-horizontal-speed fraction for static geometry impacts; lower values are treated as grazing/sliding contact.
+- Added a five-clear-tic static-contact rearm latch to prevent repeated wall damage from collision-state flicker in narrow spaces.
+- Removed generic damage Adrenaline gain from wall and floor impacts.
+- Actor-to-actor collision damage still grants the normal received-damage Adrenaline response.
+- Updated impact debug telemetry to display Toughness in percentage points and post-Toughness severity.
+
+## 4.26.0 — Impact Physics Core API
+
+- Extracted generic impact mathematics into `impactphysics/ImpactPhysics.zs`.
+- Added project-neutral `ImpactBody` and `ImpactResult` data structures.
+- Added `ResolveBodies` for two finite-mass moving bodies.
+- Added `ResolveStatic` for the infinite-mass static-geometry limit.
+- Added `ResolveExternal` as an integration point for moving hazards that are not conventional Caelum actors.
+- Refactored CaelumPlayer and CaelumCombatActor actor collisions to use the shared core solver.
+- Removed the provisional V4.25.2 player-wall severity calibration based on EffectiveMovementPercent.
+- Walls and doors now derive a normal from the velocity actually lost during the engine movement step and use the same static-impact core path.
+- Delegated equivalent-tic and kinetic-energy severity calculations to the core, removing duplicated Caelum implementations.
+- Preserved V4.25.4 energy curve, acceleration, contact rearm, biological damping, Toughness and armor response unchanged.
+- Prepared the architecture for future standalone `ImpactPhysics.pk3`, rolling rocks, avalanches, rams, catapults and moving-map hazards.
+
+## 4.25.4 — Energy impact curve and robust contact rearm
+
+- Replaced the discrete 3%-per-equivalent-tic collision damage staircase with a continuous kinetic-energy-shaped curve.
+- The new curve uses specific kinetic energy (`E/m ∝ Delta-v²`) so mass remains in the impulse/momentum solution and is not double-counted in injury severity.
+- Normalization points: 35 equivalent tics = 0% raw max-HP damage; 1 tic = 100%.
+- The curve continues naturally below one tic: ~156% at 0.8 tics, ~400% at 0.5 tics, ~1600% at 0.25 tics, before biological/Toughness/armor mitigation.
+- Removed the previous 105% hard cap from the active impact-damage calculation.
+- Strengthened actor-contact rearm: separation must exceed combined radii plus 25% of the smaller reference height.
+- Required that separation to persist for 5 consecutive tics before the pair can generate a new collision impact.
+- Added debug display for contact separation progress and the active `v²` energy curve.
+
+## 4.25.3 — Acceleration, contact latch and biological damping
+
+- Added exponential player acceleration. Continuous grounded movement reaches exactly 95% of its currently available maximum after 3.0 seconds.
+- The acceleration factor multiplies the existing Caelum movement result instead of replacing Agility/load/status/shield calculations.
+- Wall-impact severity now includes the current acceleration factor, so a half-step approach and a long run no longer carry the same self-powered wall momentum.
+- Added actor-pair contact latching: one confirmed collision produces one impulse/impact until the bodies physically separate.
+- Added biological landing damping before Toughness and armor.
+- Player biological landing absorption equals the current normal `JumpZ`, making ordinary controlled jumps naturally safe.
+- Physical stun/immobilization removes player landing absorption, so a stunned body lands rigidly and can take substantially more floor-impact damage.
+- Caelum NPC biological landing absorption scales as `8 × sqrt(Height / 56)` and becomes zero while lucidity-stunned.
+- Added debug telemetry for acceleration, contact latch, raw delta-v and biological absorption.
+
+## 4.25.2 — Impact mitigation and calibration
+
+- Added Toughness mitigation to `CaelumImpact` using the existing Caelum body-resistance curve.
+- Added global impact armor defense as the mean defense of all four functional armor slots.
+- Kept impact trauma non-localized: no evasion and no shield Block interception.
+- Switched player impact-height normalization to stable `DerivedStats.ActorHeight`.
+- Reworked landing detection to preserve the last falling vertical speed across tics and detect airborne-to-grounded transitions reliably.
+- Normalized self-powered player wall impacts against `EffectiveMovementPercent`; a complete stop at 100% movement maps to the 35-tic threshold.
+- Added wall-contact latching so holding forward against a wall does not repeatedly deal impact damage.
+- Made the training dummy movable, set its mass to 10000, and added it to the Caelum momentum collision whitelist.
+- Documented the exact Rulo/Caella/Ronnie/Argento combat profiles and their current T1 armor.
+- Ordinary Doom actors remain outside the Caelum collision adapter pending a generic-actor design.
+
+## 4.25.1 — Momentum collision and impact physics
+
+- Corrected Carbine base Reload from 10 s to 5 s; ranged Reload bases are now 3/3/5/5 s.
+- Added action/reaction actor collisions through GZDoom `CollidedWith()`.
+- Added effective-mass two-body impulse resolution using a coefficient of restitution of 0.0.
+- Added independent `Delta-v` impact evaluation for both collision participants.
+- Added the universal half-height equivalent-time damage rule: over 35 tics = 0 damage; each step down to 1 tic adds 3% max-HP damage, capped at 105%.
+- Added experimental wall-impact detection from before/after horizontal velocity on blocked world movement.
+- Added landing/fall impact detection from before/after vertical velocity.
+- Added a future-facing `CollisionDamageMultiplier` surface parameter for spikes and similar contact effects.
+- Added compact impact telemetry to the debug overlay.
+- Added `docs/PHYSICS_COLLISION_SYSTEM.md` with the full real-physics basis, gameplay conventions, formulas, engine integration and planned extensions.
+
+## 4.25.0 — Ranged weapon architecture and balance
+
+- Added dedicated magazines: 50 rounds for Standard Bow and Longbow, 20 for Crossbow, 10 for Carbine; capacities are identical across tiers.
+- Added timed Reload for the ranged family. Base times are 3 s for both bows, 5 s for Crossbow, and 10 s for Carbine, divided by Dexterity Type-4 attack speed.
+- Changed ranged AltFire to a persistent Aim toggle. Aim grants ×2 physical accuracy and stacks multiplicatively with crouching ×2.
+- Kept native Zoom as the independent shield Block input, avoiding the previous input conflict.
+- Rebalanced ranged damage to a dedicated T1/T2/T3 scale of 100% / 160% / 250%, then increased all four ranged T1 base damages ×10: Standard Bow 1200, Longbow 1800, Crossbow 1400, Carbine 3600.
+- Ranged base critical chance now follows the same tier scale. T1 bases are Standard Bow 10%, Longbow 12%, Crossbow 8%, Carbine 6%.
+- Restored the authoritative seven-level spread ladder (10/30/50/70/90/110/130° maximum; minimum = 10%). Standard Bow moved two tiers to Very High (110°), Longbow to Medium (70°), Crossbow to High (90°), and Carbine remains Maximum (130°).
+- Audited documentation against executable equipment data, including all physical-weapon values and definitive shield T1 weights (Magic 4, Buckler 8, Kite 12, Tower 16).
+- Updated README, implementation status, asset register, and private design documentation to preserve these balance values as authoritative project data.
+
+## 4.23.4 — Jewelry and seals
+
+- Added universal amulets and seals, jewelry crafting, bonuses, sprites, and MAP01 test objects.
+- Added raw ruby, sapphire, emerald, topaz, opal, copper ingot, tin ingot, and coal as reserved future materials; they currently have no recipe function.
+
+
+## 4.23.3a — Unified recipe field declaration fix
+
+- Added the five missing `CaelumPlayer` fields used by the 4.23.3 unified
+  recipe system: recipe kind, armor type, armor slot, essence weapon type,
+  and essence type.
+- No recipe formulas, material ratios, infrastructure requirements, MAP01,
+  sprites, or input behavior changed.
+
+
+## 4.23.3 — Armor and essence crafting recipes
+
+- Expanded the unified Workbench list from 16 to 52 recipes:
+  16 physical weapons, 16 armor pieces, and 20 imbued essence weapons.
+- Added armor recipes for Magic, Light, Medium, and Heavy armor across Head,
+  Body, Hands, and Feet.
+- Armor always uses Strap as the base material. Magic uses Fabric, Light uses
+  Leather, Medium uses Chainmail, and Heavy uses Plate as the tier material.
+- Head and Body recipes use 20% base / 80% tier material by final weight.
+  Hands and Feet use 60% base / 40% tier material.
+- Magic and Light armor use Armor Workshop + Sewing Machine; Medium and Heavy
+  use Forge + Anvil. Tier 3 additionally requires the Master Bench.
+- Added twenty essence recipes: Staff, Bell, Book, and Statuette, each with
+  Fire, Water, Earth, Wind, or Quintessence.
+- Essence recipes retain the documented 90% weapon-base / 10% essence weight
+  split. Their infrastructure is Essence Altar at tier 1, plus Globe at tier
+  2, plus Master Bench at tier 3.
+- Existing material spawning, transactional consumption, Magic Box routing,
+  tier/size weight scaling, and the validated station-use latch are reused
+  rather than duplicated.
+
+
+## 4.23.2j — Self-contained station activation hotfix
+
+- Repackaged the station activation fix with both required source files:
+  `CaelumPlayer.zs` now includes the `CraftingStationUseLatched` field and
+  rearm logic, while `CaelumCraftingStation.zs` contains the real-`BT_USE`
+  activation guard.
+- This removes the hidden dependency on having applied 4.23.2h before
+  4.23.2i.
+- No MAP01, TEXTURES, sprite, recipe, or crafting-network changes.
+
+
+## 4.23.2i — Require real Use for station activation
+
+- Confirmed from menu-state behavior that `Q` was closing crafting and the
+  focused station was immediately reopening it. Reopening resets only the
+  recipe index to Dagger while preserving tier and size, matching the observed
+  regression exactly.
+- `CaelumCraftingStation.OpenForActivator()` now requires the activator's
+  current command to contain `BT_USE`. Activate/Deactivate reentries caused
+  while pressing `Q` are therefore ignored.
+- The existing per-player Use latch remains as protection against repeated
+  activation during one physical Use press.
+- No cooldown or arbitrary timing value was introduced.
+
+
+## 4.23.2h — Crafting station Use latch
+
+- Added a station-specific Use latch. The station that opens crafting consumes
+  that activation and ignores further `+USESPECIAL` activations from the same
+  player while crafting remains open.
+- The latch rearms only after crafting has closed and the player command shows
+  `BT_USE` released. This prevents a station under the crosshair from reopening
+  immediately after `Q` closes the menu.
+- The fix is local to crafting interaction and does not use a global UI
+  processor or change MAP01, sprites, TEXTURES, or crafting-network rules.
+
+
+## 4.23.2g — UserCmd field-write parser fix
+
+- Replaced the unsupported whole-structure assignment
+  `player.cmd = creationCommand` with direct writes to the native UserCmd
+  fields (`forwardmove`, `sidemove`, `upmove`, and `buttons`).
+- The intent remains unchanged: suppress residual `BT_USE` while custom menus
+  are open so a station cannot immediately reopen after `Q`.
+- No crafting rules, MAP01, sprites, TEXTURES, or station-network logic changed.
+
+
+## 4.23.2f — Station reactivation fix
+
+- Fixed `CaelumPlayer.PlayerThink()` menu command suppression. The sanitized
+  `UserCmd` was previously modified only as a local copy and never assigned
+  back to `player.cmd`.
+- While character creation, equipment, or crafting UI is open, the cleared
+  command is now written back before `Super.PlayerThink()`.
+- This prevents the original held `BT_USE` from immediately reactivating the
+  station after `Q` closes crafting while the player is still looking at it.
+- No crafting rules, network distances, MAP01, sprites, or TEXTURES changed.
+
+
+## 4.23.2e — Crafting Q input fallback
+
+- Added `InputEvent.KeyString` as a fallback for the crafting close key.
+  `KeyChar` may be empty or unstable immediately after station interaction;
+  `KeyString` is derived from the key scan and avoids requiring Escape or a
+  successful craft before `Q` is recognized.
+- No UI processor, MAP01, crafting-network, sprite, or TEXTURES changes.
+
+
+## 4.23.2d — UI processor rollback
+
+- Removed `CaelumCraftingUIInput` and its global `IsUiProcessor` registration.
+  The processor interfered with the character-creation UI from map start and
+  could leave the game without responsive controls.
+- Restored the stable 4.23.2 `CaelumDebugOverlay` input path.
+- Kept the complete MAP01 DoomEdNum restoration, validated sprite offsets,
+  station artwork, crafting-network logic, and ranged-workshop changes.
+- The post-station `Q` close issue is reopened and will be solved without a
+  global UI processor.
+
+
+## 4.23.2c — GZDoom 4.14.2 UI override parser fix
+
+- Fixed `CaelumCraftingUIInput.UiProcess` overriding syntax. The inherited
+  virtual already carries UI scope, so the override now uses
+  `override bool UiProcess(UiEvent e)` instead of attempting to redeclare
+  the scope.
+- No crafting rules, MAP01 geometry, sprite alignment, or network logic changed.
+
+
+## 4.23.2b — Regression fix for gallery sprites and crafting close input
+
+- Restored the complete validated `TEXTURES` alignment set from 4.22.4c,
+  including the corrected training-dummy path and explicit offsets for world
+  weapons, armor, shields, materials, ammunition, consumables, and key items.
+- Preserved the twelve dedicated crafting-station sprite definitions from
+  4.23.2.
+- Added `CaelumCraftingUIInput`, a dedicated UI event processor that receives
+  `UiProcess` events while GZDoom routes keyboard input to its GUI. Pressing
+  `Q` now sends the normal crafting close network event even when
+  `menuactive` is non-zero.
+- Kept the full MAP01 `DoomEdNums` restored in 4.23.2a.
+
+
+## 4.23.2 — Crafting station art and menu-input fix
+
+- Added dedicated project sprites for all twelve crafting infrastructure
+  actors and removed their temporary weapon/equipment visual placeholders.
+- Processed the author-supplied source cards into transparent 128×128
+  in-world sprites, removing title plaques and baked checkerboard backgrounds
+  where present.
+- Added station sprite definitions and offsets to `TEXTURES`.
+- Fixed crafting input capture so `Q` can close the crafting interface
+  immediately after interacting with a station even when GZDoom still reports
+  `menuactive`.
+- Kept the 4.23.1 connected-network rules, two-metre links, cumulative tier
+  requirements, and sixteen physical recipes unchanged.
+
+
+## 4.23.1 — Crafting network parser fix and ranged workshop
+
+- Fixed the missing `CaelumPlayer` declarations for crafting-network
+  capabilities, scan token, selected infrastructure availability, and missing
+  station state. These omissions prevented 4.23.0 from parsing.
+- Moved the `hasPrimaryStation` local declaration to the start of
+  `OpenCraftingNetwork()` for GZDoom 4.14.2 compatibility.
+- Renamed Bow Workshop to Ranged Weapons Workshop in code, localization,
+  editor mapping, UI, and collaborator documentation.
+- Added the carbine as the fourth Ranged Weapons Workshop recipe. The unified
+  Workbench menu now exposes all sixteen authoritative physical weapons.
+- Ranged-weapons tier requirements are cumulative: Workbench + Ranged Weapons
+  Workshop at tier 1, plus Sawmill at tier 2, plus Master Bench at tier 3.
+
+
+## 4.23.0 — Connected crafting infrastructure
+
+- Reworked crafting stations into a proximity network with an exact maximum
+  link distance of 64 map units (2 development metres). Connectivity is
+  transitive: stations do not need to be within two metres of the workbench
+  itself as long as every link in the chain remains within the limit.
+- Made the Workbench the logical root of the crafting interface. Interacting
+  with any station in a connected network resolves the same workbench menu;
+  an isolated auxiliary station reports that a workbench is missing.
+- Added seven infrastructure actors: Anvil, Sawmill, Sewing Machine, Globe,
+  Jeweler Bench, Fine-tools Bench, and Master Bench. Together with Forge,
+  Bow Workshop, Armor Workshop, Essence Altar, and Workbench this produces
+  twelve physical crafting actors.
+- Made every crafting station inherit `CaelumMovableProp`. Mobility remains
+  intentionally disabled because station mass and physical-power requirements
+  have not yet been authored; this keeps the actors compatible with the future
+  movable-world-object system without inventing balance values.
+- Added cumulative tier requirements. Current metal recipes need Workbench +
+  Forge at tier 1, add Anvil at tier 2, and add Master Bench at tier 3.
+  Current bow/crossbow recipes use Workbench + Bow Workshop, add Sawmill at
+  tier 2, and add Master Bench at tier 3.
+- Prepared the same infrastructure model for Armor Workshop + Sewing Machine,
+  Essence Altar + Globe, and Jeweler Bench + Fine-tools Bench. Their recipe
+  families remain pending rather than receiving invented recipes.
+- Unified the fifteen currently playable physical recipes in the Workbench
+  menu and added a visible infrastructure-ready/missing requirement line.
+- Expanded MAP01 with a complete connected network, a tier-1 metal test
+  cluster, a tier-2 metal test cluster, and an isolated forge for missing-
+  workbench validation.
+- Kept the carbine crafting station unresolved; no station assignment was
+  invented.
+
+
+## 4.12.0
+
+- Added an authoritative data catalogue for the sixteen definitive physical
+  weapons across families 2–5, including both attack profiles, damage types,
+  cadence, range, spread, critical chance, air cost, and shield behavior.
+- Added structural recipes and tier-source rules for every physical weapon.
+- Added small weapon head for the hatchet and a generic tierless chain for the
+  flail; every one of the 41 active materials now has at least one recipe use.
+- Replaced the one-handed mace with the flail and removed the saber and
+  two-handed mace from the definitive roster. The large family is greatsword,
+  war axe, halberd, and giant gauntlets.
+- Made the point determine both spear and javelin tier, and normalized all
+  weapon-component terminology from stick to handle/long handle.
+- Hid the legacy iron-ingot prototype from the active material selector while
+  preserving its original identifier and class for old-save compatibility.
+- Updated the v66 design document with matching recipes, disassembly entries,
+  material uses, and obsolete-reference corrections while retaining its
+  typography and highlighting changed passages.
+- Left material quantities and inventory consumption pending instead of
+  inventing a crafting-cost formula that has not yet been specified.
+- Added `ca_debug_audit_crafting_catalogue`; its expected result is 16 recipes,
+  41 active materials, and zero unused entries.
+
+## 4.11.0
+
+- Expanded the native material prototype into a 40-entry data-driven catalogue
+  covering weapon parts, shield plates, armor resources, elemental essences,
+  secondary components, and magical-item bases.
+- Added material families and three grade labels for metal, wood, essence,
+  leather, and fabric. Generic secondary components remain tier-independent.
+- Made material stack identity depend on both type and tier. Matching instances
+  stack natively; different materials or grades remain separate inventory items.
+- Preserved the validated 0.1 unit weight, carried-load overflow, one Magic Box
+  slot per complete stack, retrieval, and dropping behavior for every material.
+- Added `ca_debug_test_silver_lock`, which invokes GZDoom's native lock-200
+  check and therefore tests the real `LOCKDEFS` rule without a custom map door.
+- Corrected the old crafting-table weights for the kite and tower shields from
+  14/18 to their definitive tier-one values of 12/16.
+- Marked the manually tested 4.10 inventory categories, weight, stacking, and
+  Magic Box behavior as validated.
+
+## 4.10.0
+
+- Added native Materials, Keys, and Key Items inventory categories. The compact
+  inventory now exposes eight separate filters instead of mixing special items
+  with equipment or consumables.
+- Added a stackable iron-ingot prototype, a non-stackable native silver key,
+  and a unique sealed-letter key item. Each uses the default 0.1 unit weight.
+- Integrated materials and key items into carried load, automatic overweight
+  routing, one-slot-per-stack Magic Box storage, retrieval, and dropping.
+- Kept native keys in personal inventory because `LOCKDEFS` checks possession,
+  not Caelum's internal Magic Box state. Their weight still contributes to load.
+- Added lock 200 for `CaelumSilverKey`, including localized door and remote
+  action messages. It is ready for native locked doors and ACS locked actions.
+- Marked the complete 4.9 consumable pass as manually validated.
+
+## 4.9.0
+
+- Added native, stackable life and Anima potions, energy drinks, food rations,
+  and water rations with unit weights 0.25/0.25/0.25/0.10/0.10.
+- Added ten-second native Powerup effects with one 1%-of-maximum pulse per
+  second. Energy drinks restore both air and sleep; using another item of the
+  same type refreshes duration rather than stacking intensity.
+- Integrated consumable stacks into authoritative carried load and the Magic
+  Box. A whole stack uses one box slot and weighs zero while stored there.
+- Added a Consumables filter to the compact test interface with create, use,
+  box/unbox, and drop actions.
+- Exposed GZDoom's native previous, next, and use-inventory commands in the
+  Caelum Argenteum control section.
+- Marked the 4.8.0/4.8.1 native inventory and weight behavior as previously
+  validated after the complete manual collection, equipment, and Magic Box
+  test pass.
+
+## 4.8.1
+
+- Fixed ZScript's case-insensitive parameter shadowing in the native equipment
+  matcher. One armor instance now matches only its real slot, type, tier, and
+  size instead of appearing owned in every tier.
+- Fixed the same shadowing in every carried-load setter. Native inventory,
+  equipped, ammunition, and total item weights now reach the derived-stat
+  fields, permanent HUD, total mass, and load penalties instead of being
+  written back into temporary parameters.
+
+## 4.8.0
+
+- Replaced simulated armor, shield, and weapon ownership with real native
+  GZDoom inventory instances. `printinv` can now report every collected
+  equipment pickup instead of only native weapon selectors and ammunition.
+- Made `Actor.Inv` the single source for carried weight: each non-boxed item
+  contributes its stored unit weight whether equipped or unequipped.
+- Added persistent equipped and Magic Box states to each native equipment
+  instance without deleting the object when either state changes.
+- Made carbine ammunition a native stack whose weight is `Amount × 0.003`.
+  The whole stack occupies one Magic Box slot and weighs zero while boxed.
+- Changed the initial development loadout to spawn nine pickups on the floor
+  in front of the newly confirmed character instead of granting hidden data.
+- Added an Ammunition category and a Magic Box toggle to the equipment menu.
+- Updated the v62 design document while preserving its typography and
+  highlighting only the changed inventory passages.
+
+## 4.7.8
+
+- Made persistent ownership outside the Magic Box the authoritative source for
+  carried item weight, so equipped and unequipped objects cannot disappear
+  from load because of a stale category transition.
+- Rebuilt armor, shield, weapon, inventory, ammunition, and total item weight
+  in one atomic pass on every load refresh.
+- Added the localized `normal`, `overload`, or `capacity exceeded` state to the
+  permanent load HUD, including the exact 75% and 100% boundaries.
+
+## 4.7.7
+
+- Replaced the provisional armor weights with the authoritative per-piece
+  table. Size-M full sets now weigh 5/7/10 for magic armor, 10/15/20 for
+  light armor, 20/30/40 for medium armor, and 40/60/80 for heavy armor at
+  tiers 1/2/3.
+- Preserved the confirmed XS/S/M/L/XL size multipliers after applying the
+  exact armor table.
+- Added a player-owned load snapshot synchronized every tic and after every
+  profile recalculation; the permanent HUD and debug overlay now read this
+  stable value instead of traversing the derived-stat object from UI scope.
+- Confirmed that tier-one shield weights already match the final table:
+  magic 4, buckler 8, kite 12, and tower 16.
+
+## 4.7.6
+
+- Fixed stale carried load by making every equipment, inventory, ammunition,
+  and development-weight setter refresh totals atomically.
+- Separated equipped weapons from the single active weapon; equipping one
+  family no longer unequips another.
+- Added native family selectors: sword on slot 3, carbine on slot 5, and staff
+  on slot 6.
+- Added persistent per-weapon equipped flags and migration of the previous
+  single active weapon into the new multi-weapon loadout.
+- Included every simultaneously equipped weapon in equipped weight while
+  keeping inventory-to-equipment changes neutral to total carried load.
+- Changed the pure priest starting loadout to magic armor and magic shield.
+
+## 4.7.5
+
+- Removed all provisional armor, shield, weapon, and carbine ammunition from
+  unconfirmed characters.
+- Added a one-time post-creation development loadout with sword, staff,
+  carbine, and 100 bullets at 0.003 weight each.
+- Added profession-based tier-one starting armor and shields using the
+  character's compatible equipment size.
+- Included live ammunition quantity in personal-inventory weight, carried
+  load, the HUD bar, total mass, and every existing load penalty.
+- Corrected armor weight so its tier multiplier applies both while equipped
+  and while stored in personal inventory.
+- Changed the visible ammunition term from cartridges/cartuchos to
+  bullets/balas.
+
+## 4.7.4
+
+- Fixed the GZDoom 4.14.2 parser error caused by using reserved identifier
+  `action` as an equipment-overlay parameter.
+- Added an unlimited-slot personal inventory whose contents contribute weight.
+- Redirected pickups to the Magic Box only when adding their weight would
+  exceed carry capacity; a full box now rejects only those overflow pickups.
+- Added persistent per-object storage location and migration of 4.7.3
+  unequipped equipment into the Magic Box.
+- Made equipment, personal inventory, and development weight combine into the
+  carried load used by the HUD and all mass/load penalties.
+- Added storage location, inventory count, box usage, and full carried-weight
+  diagnostics to the compact equipment menu.
+- Updated the main v58 design document with the corrected inventory rule while
+  preserving typography and highlighting the changed passages in yellow.
+
+## 4.7.3
+
+- Clarified the implemented inventory rule: unequipped objects live in the
+  Magic Box, while equipped objects occupy one of the six current equipment
+  slots and no longer count against the box.
+- Added explicit success and rejection feedback for create, equip, remove,
+  break, and drop actions, including incompatible-size and full-box causes.
+- Added reliable `E`/`U` shortcuts alongside Enter/Backspace and gamepad input.
+- Added an equipped-slot counter and a live armor + shield + weapon weight
+  breakdown to make every load change directly verifiable.
+- Corrected Magic Box accounting so only owned objects that are actually
+  equipped are excluded from its used-slot total.
+
+## 4.7.2
+
+- Replaced unreliable equipment-menu letter checks with `InputEvent.KeyChar`
+  handling compatible with GZDoom 4.14.2.
+- Changed `P` development creation to add the selected object directly to the
+  Magic Box instead of hiding a world pickup behind the open menu.
+- Changed the menu close key from Escape to `Q`, avoiding the native options
+  menu, and allowed `D` to unequip and drop an equipped object in one action.
+- Added automatic equipped-weight synchronization so armor, shield, and weapon
+  changes immediately update load, total mass, movement, evasion, and air use.
+
+## 4.7.1
+
+- Added a source-compatibility alias from the retired
+  `ARMOR_TYPE_UNARMORED` identifier to `ARMOR_TYPE_MAGIC`. This keeps mixed
+  incremental 4.6/4.7 source trees compilable without restoring the old UI
+  terminology or changing saved numeric equipment data.
+- Made both weapon-state actions resolve their owner explicitly through
+  `invoker`, removing GZDoom 4.14.2's ambiguous `self` parsing error.
+
+## 4.7.0
+
+- Confirmed carry capacity as `BaseMass × Type4Percent(Strength) / 100`:
+  mass 200 produces 200 at Strength 0 and 600 at Strength 100.
+- Added a persistent main-hand weapon model for sword, staff, and carbine.
+- Added weapon tier, XS–XL size, weight, durability, ownership, migration,
+  Magic Box accounting, pickups, equip/remove, break, and drop actions.
+- Added a Weapons filter to the compact equipment menu with damage, attack
+  time, costs, weight, durability, compatibility, and cartridge data.
+- Connected native Fire to sword, staff, or carbine according to the equipped
+  item; AltFire now toggles the equipped secondary-hand shield.
+- Added the 60 m carbine projectile, accuracy-scaled 30°/200° spread, 48-tic
+  cadence, 360 base damage, physical push, cartridge use, and 20-air reload.
+- Added automatic migration from the old provisional weapon-weight record.
+
+## 4.6.2 — Mass-scaled load, magic armor terminology, and equipment testing
+
+- Set the tier-one carbine weight to 12 at size M.
+- Multiplied Strength Type 4 carry capacity by `BaseMass / 100`, so characters
+  with greater body mass can carry proportionally more equipment.
+- Renamed the complete basic equippable category to “magic armor” without
+  changing its numeric identity, defense, durability, weight, or bonuses.
+- Added `P` inside the equipment interface to spawn the selected armor or shield
+  pickup directly, completing the collect/equip/remove/drop test loop without
+  closing the menu.
+
+## 4.6.1 — GZDoom compatibility, load HUD, and base clothing
+
+- Removed unsupported ZScript method overloads that made GZDoom 4.14.2 report
+  duplicate `GetMaximumDurabilityFor` definitions.
+- Replaced the short bow catalogue entry with the tier-one carbine: 360 damage,
+  48-tic fire time, 60 m range, 30°/200° spread, 0% base critical chance, and
+  -20 air. Its size-M tier-one weight is 12.
+- Added a right-side load bar showing equipped weight, carry capacity, and load
+  percentage, with green/yellow/orange/red states.
+- Added a true unequipped state per armor slot: nothing, nothing, shirt, and
+  pants. These entries have zero defense, zero weight, no durability, and do
+  not occupy Magic Box slots.
+- Corrected Magic Box counting so genuinely unequipped armor slots are not
+  subtracted as if they still held owned equipment.
+
+## 4.6.0 — Equipment sizes, tiered weights, and Magic Box actions
+
+- Added XS/S/M/L/XL equipment sizes with the confirmed 50%/75%/100%/125%/150%
+  weight and durability factors and exact character-size compatibility ranges.
+- Added automatic migration of all pre-size owned equipment and current loadouts
+  to size M without deleting the previous persistence fields.
+- Changed weapon and shield weight scaling to 100%/150%/200% at tiers 1/2/3;
+  the provisional sword now contributes its confirmed base weight of 6.
+- Corrected tier-1 shield bases to magic 4, buckler 8, kite 12, and tower 16.
+- Aligned armor piece weights with the documented per-slot table and applied
+  size scaling without adding an armor-tier weight multiplier.
+- Changed Strength carry capacity to Type 4 and Agility jump scaling to Type 1;
+  the Magic Box keeps its original Intelligence Type 1 slot formula.
+- Expanded the equipment interface with a size selector, compatibility result,
+  three-decimal weight, Magic Box usage/capacity, filters, break, and drop.
+- Full Magic Box pickups now remain in the world; dropped equipment preserves
+  its size and current durability.
+
+## 4.5.1 — Documentation terminology correction
+
+- Restored `Resilience` as the definitive attribute name throughout the main
+  design document while retaining “survival” only for hunger, thirst, and
+  sleep as a collective resource system.
+- Replaced obsolete origin/identity creation references and legacy tables with
+  the current Race + two Class selections and resulting profession model.
+- Preserved the document's existing typography and highlighted the corrected
+  passages in yellow as changes from the previous version.
+
+## 4.5.0 — Persistent equipment inventory and world pickups
+
+- Added configurable armor and shield world pickups without duplicating one
+  actor class for every slot/type/tier combination.
+- Expanded ownership persistence so all 48 armor and 12 shield combinations
+  retain independent durability while unequipped.
+- Added automatic migration for ownership records and shield state created by
+  versions 4.3 and 4.4.
+- Added a compact localized equipment interface with keyboard/gamepad controls
+  for category, slot, type, tier, equip, remove, and close.
+- Made shield removal affect defense, coverage, blocking, air cost, and weight;
+  removing armor returns that slot to its base clothing state.
+- Added a development control that spawns the currently previewed pickup for
+  collection, duplicate-repair, save/load, and map-travel tests.
+- Preserved each outgoing equipped item's current durability before switching
+  and immediately recalculated mass and attribute-derived statistics.
+
+## 4.4.0 — Multi-region area damage
+
+- Fixed the ZScript parser failure caused by using the reserved `state` token
+  as the local name of the travelling character record.
+- Added spherical explosion/anatomy intersection for players and original
+  Caelum actors.
+- Applied the distance-adjusted explosion base independently to every touched
+  region, including its own vulnerability, reinforcement, defense, Toughness,
+  and armor durability calculation.
+- Unified both arms as one explosion region while preserving separate authored
+  heads and other future anatomy entries.
+- Evaluated pain and damage adrenaline once from the combined health loss and
+  retained critical-region lucidity loss and Caelum projectile push.
+- Added the last explosion's touched-region count and resolved radius to the
+  compact armor diagnostics.
+
+## 4.3.0 — Travelling profile and persistent equipment foundation
+
+- Added an invisible GZDoom inventory record that preserves the confirmed
+  profile, allocations, resources, armor, shield, durability, and ownership
+  across ordinary map travel.
+- Restored the travelling record after a level transition so the mandatory
+  creator does not reopen for an already-confirmed character. Normal save/load
+  continues to preserve the same state.
+- Made debug-selected armor and shields enter a persistent owned-equipment
+  registry and displayed the number of owned pieces on the armor page.
+- Extended mass-based push to magical attacks. Physical push uses Strength and
+  body mass; magical push uses Intelligence; both use the receiver's total-mass
+  knockback multiplier.
+- Connected the staff and the magical projectiles of Argento, Caella, and
+  Ronnie to the same confirmed-damage push rule.
+- Documented the current area-damage inconsistency: players use GZDoom's
+  non-localized route, while original Caelum actors fall back to sensitive
+  torso/body armor when no authored impact metadata exists.
+
+## 4.2.0 — Mass-based physical push
+
+- Connected physical push to the player sword, Caelum actor melee attacks,
+  and physical Caelum projectiles.
+- Applied push only after positive health damage; misses, evasion, full damage
+  prevention, and magical attacks do not produce it.
+- Scaled outgoing force from body mass and incoming knockback from total mass,
+  including the player's armor, shield, and development weight.
+- Mirrored total player mass into GZDoom's native actor mass so external engine
+  interactions use the equipped value too.
+- Added the last applied sword-push force to compact combat diagnostics.
+- Added a separate, mutually exclusive development option for setting every
+  attribute to 100 while retaining the existing level-75 option.
+
+## 4.1.0 — Initial character-creation flow
+
+- Opened the eight-page creator automatically for every new character and
+  prevented cancelling the mandatory first pass.
+- Added direct keyboard and gamepad input, independent from custom bindings.
+- Blocked movement, attacks, resource simulation, and incoming damage until
+  the initial profile is confirmed.
+- Initialized health, Anima, air, lucidity, adrenaline, hunger, thirst, and
+  sleep from the final confirmed profile without granting free refills on edits.
+- Preserved the completion flag and profile fields through ordinary saves.
+- Corrected Rulo to 20/18/9/3 and Ronnie to 20/18/5/7. Ronnie's Intelligence
+  correction raises his magical projectile base damage from 132 to 154.
+
+## 4.0.1 — GZDoom 4.14.2 parser repair
+
+- Replaced the incompatible explicit actor action scope with state-compatible
+  actions that cast `self` to `CaelumCombatActor` before using custom members.
+- Replaced direct assignment to readonly `Radius` with GZDoom's `A_SetSize`,
+  which safely updates player radius and height in the world.
+- Restored Resilience as the definitive attribute name in code and localization.
+
+## 4.0.0 — Character creation, mass, size, and Anima overhaul
+
+- Fixed the GZDoom 4.14.2 actor-action scope and UI/play-context parse errors.
+- Replaced Origin + Identity + Class with Race + two Classes/Profession + Sex
+  + Height, expanding character creation from six to eight pages.
+- Added all ten order-independent professions and the documented family and
+  individual point limits.
+- Added ten mass tiers and seven size tiers, including live player/actor
+  collision dimensions and body-mass scaling for health, physical power, air,
+  hunger, and thirst.
+- Added exact per-piece armor weights and included armor plus shield weight in
+  equipped load while preserving separate debug-added weight.
+- Renamed Mana to Anima and retained Resilience as the technical recovery
+  attribute throughout current code and localization.
+- Connected Eloquence to staff casting time and Anima cost, and prepared its
+  ability-range and dialogue values.
+- Rebuilt Rulo, Ronnie, Argento, and Caella from the authoritative final 4.0
+  table, including independent profiles, armor, dimensions, health, and damage.
+- Updated the main design document, README, implementation status, controls,
+  English localization, and Spanish localization for version 4.0.
+
+## 0.63.0 — Complete offensive state for the four predefined actors
+
+- Gave Argento, Caella, Rulo, and Ronnie their own Dexterity and Insight,
+  including live armor bonuses, Type-1 physical/magical accuracy, and
+  `5% + Type2` physical/magical critical chance.
+- Made melee and ranged damage use each actor's real wounded-state performance:
+  healthy x1, wounded x0.75, and badly wounded x0.25 before Patience and
+  adrenaline progressively mitigate the harmful portion.
+- Applied the same health performance to actual actor movement speed and kept
+  the documented x2/x4 pain and earned-adrenaline intensity.
+- Connected Mareado to the actor's own attack accuracy and made the two-second
+  Aturdido interval stop horizontal movement and offensive attempts.
+- Made real actor criticals add damage only. Melee attacks transfer a
+  single-use critical result; projectiles retain their own result until impact.
+- Routed those criticals through the player's real shield, selected anatomy
+  region, armor, Dureza, health, lucidity, pain, adrenaline, and durability
+  pipeline. The effective region multiplier also governs critical head
+  lucidity loss after armor reinforcement.
+- Added a sixth compact actor page with current/base speed, health performance,
+  pain/adrenaline intensity, evasion, effective offensive attributes,
+  accuracy, critical chances, last attack damage, and both attack rolls.
+- Added localized controls to cycle the last inspected actor through health and
+  lucidity test states without inventing actor air, hunger, thirst, or sleep.
+
+## 0.62.0 — Shared lucidity for all predefined combat actors
+
+- Added a 100-point lucidity resource to Argento, Caella, Rulo, and Ronnie,
+  with complete regeneration over one real minute.
+- Made damage to a naturally critical anatomy region remove 25 base lucidity
+  even when armor reinforcement lowers its effective vulnerability grade.
+- Applied armor defense and the actor's Toughness Type-3 multiplier to that
+  loss, matching the player rule's mitigation order.
+- Made critical sword and staff hits transmit their real critical result to the
+  actor and multiply lucidity loss from the reinforced effective grade.
+- Added Mareado at 50% or less, represented by half of actor offensive attempts
+  failing until final actor aim cones exist.
+- Added Aturdido at 10% or less: entering the state from above immobilizes the
+  actor and prevents attacks for two seconds without restarting the timer while
+  it remains in critical lucidity.
+- Extended compact actor diagnostics with current lucidity, state, accuracy
+  factor, last localized loss, and remaining physical-stun time.
+
+## 0.61.0 — Ordinary attacks use the complete player defense pipeline
+
+- Routed directed melee, hitscan, bullet, physical-projectile, and magical-
+  projectile damage through Caelum shield, armor, Dureza, health, lucidity,
+  pain, and adrenaline rules automatically.
+- Kept explosions, survival damage, floors, telefrags, and other unclassified
+  hazards on GZDoom's native damage route.
+- Made shield coverage use the attacker's real direction relative to the
+  player's facing instead of the diagnostic angle control.
+- Selected physical or magical shield defense from the incoming Caelum damage
+  type, without adding any extra air cost when struck.
+- Reused the currently selected armor region as the temporary incoming hit
+  location until authored player hit volumes are implemented.
+- Prevented successful evasion and invulnerability from damaging shield or
+  armor durability.
+- Kept the compact armor page as the diagnostic view for both debug hits and
+  ordinary attacks.
+
+## 0.60.1 — GZDoom 4.14.2 armor parser correction
+
+- Renamed the uniform-loadout parameters that collided case-insensitively with
+  the `ArmorType[]` and `Tier[]` fields in ZScript.
+- Preserved every 0.60.0 armor value and behavior while allowing GZDoom 4.14.2
+  to parse the shared actor armor initializer.
+
+## 0.60.0 — Common actor armor, reinforcement, and durability
+
+- Connected the existing four-slot armor model to every predefined Caelum
+  actor instead of keeping it exclusive to the player diagnostic.
+- Assigned light tier-1 armor to Argento, Caella, and Ronnie, and heavy tier-1
+  armor to Rulo, matching their documented visual/equipment profiles.
+- Made authored anatomy impacts select head, body, hands, or feet, apply that
+  piece's reinforcement and percentage defense, and wear only its durability.
+- Preserved natural and reinforced vulnerability separately in diagnostics.
+- Applied armor-derived Agility and Patience bonuses to actor evasion and
+  wounded-state penalty mitigation.
+- Extended compact combat diagnostics with the last actor armor slot, defense,
+  absorbed damage, remaining durability, and durability loss.
+
+## 0.59.0 — Rulo and Ronnie predefined characters
+
+- Added Rulo, the documented Southern Beast Warrior, with physical/technical/
+  social/mental attributes 20/18/7/5, 3100 health, mass 95, and a wider
+  28-radius/80-height body.
+- Added Ronnie, the documented Northern Caelith Explorer, with attributes
+  5/18/7/20, 1150 health, mass 60, and a 20-radius/72-height body.
+- Added forty-eight original transparent frames per character: eight rotations
+  each for idle, stride, melee, ranged attack, pain, and death.
+- Gave Rulo a 372-damage axe strike and deterministic 372-damage thrown axe;
+  his heavy movement speed is 8 and the projectile speed is 20.
+- Gave Ronnie a 138-damage sword strike and deterministic 372-damage golden
+  magic bolt; his movement speed is 12 and projectile speed is 28.
+- Connected both actors to shared anatomy, evasion, pain, adrenaline, wounded
+  state, enemy-kill reward, directional corpse, and compact diagnostics.
+- Added independent localized spawn controls for Rulo and Ronnie, and corrected
+  actor-name diagnostics so all four predefined characters identify properly.
+
+## 0.58.0 — Anatomy profiles and complete test-enemy state art
+
+- Added an ordered reusable anatomy profile with up to sixteen normalized
+  regions, independently assigned locations and vulnerability grades.
+- Connected sword and staff impact classification to original actors' anatomy
+  without applying the location multiplier twice; ordinary actors retain the
+  verified humanoid fallback.
+- Added compact diagnostics for the last anatomy region, vulnerability grade,
+  relative height, and lateral position struck on Argento or Caella.
+- Added eight-direction walking, ranged-cast, pain, and death frames for both
+  test enemies while preserving their 72-unit body and collision dimensions.
+- Made actor pain use the new eight-tic hurt pose and death finish in the new
+  direction-aware corpse pose.
+- Added blue and violet magic-bolt actors and ranged monster states. Each bolt
+  travels at 24 units per tic and deals a deterministic 138 base magical damage
+  before the target's defenses, with no secondary effect.
+
+## 0.57.0 — Shared defensive combat layer for original actors
+
+- Added `CaelumCombatActor` as the reusable base class for original enemies
+  and future non-player combatants.
+- Gave Argento and Caella their documented Toughness 20, Resilience 16,
+  Agility 16, and Patience 5 defensive profile instead of native Doom pain.
+- Applied directed-attack evasion before damage, including the normal +8
+  adrenaline reward and combat-timer restart on success.
+- Applied post-damage pain chance from percentage health lost, Toughness,
+  current adrenaline, and the wounded/badly-wounded intensity rules.
+- Applied Toughness Type 3 to incoming health damage before the resulting
+  health-loss percentage enters pain chance.
+- Added actor-owned Type-4 maximum adrenaline, damage/pain/evasion gains,
+  thirty-second combat timing, and unchanged ten-per-second decay.
+- Added compact combat diagnostics for the last damaged Caelum actor: health,
+  adrenaline, evasion roll, health-loss percentage, and pain result.
+
+## 0.56.0 — Caella hostile test enemy
+
+- Added Caella as a second independently invocable hostile humanoid test enemy.
+- Created and normalized sixteen original transparent sprites from the supplied
+  visual reference: eight idle rotations and eight sword-attack rotations.
+- Made Caella inherit Argento's complete legal Southern Federal Warrior test
+  profile, preserving 3100 health, 372 base melee damage, movement, mass,
+  hitbox, pain, hostility, death, and enemy-kill adrenaline behavior.
+- Added localized English and Spanish spawn controls and documented the new
+  project-owned sprite assets.
+
+## 0.55.0 — Argento hostile test enemy
+
+- Added Argento as the first hostile humanoid test enemy, invocable from a new
+  localized development control.
+- Built original transparent eight-direction idle and melee sprite rotations
+  from the user-supplied visual reference, with a 72-unit humanoid body.
+- Based Argento on a legal newly-created Southern Federal Warrior: physical 15,
+  technical 11, social 9, mental 5; combat allocation produces Strength,
+  Toughness, and Constitution 20 plus Dexterity, Resilience, and Agility 16.
+- Set 3100 health and 372 base melee damage from the same Type-1 formulas used
+  by a starting player, before target mitigation or vulnerability.
+- Recorded the completed staff and shield tests as user-confirmed.
+
+## 0.54.0 — Unified debug resource restoration
+
+- Expanded the existing debug healing control so one press restores health,
+  mana, and air to their current calculated maximums.
+- Updated the localized control name in English and Spanish to describe all
+  three resources.
+- Verified that shield blocking already consumes air continuously, independently
+  of incoming hits, at `ShieldWeight × 10% × AirMultiplier` per second.
+## 0.53.0 — Functional straight-line staff test
+
+- Added a real long-range line attack for the staff with documented 120 base
+  damage, 18-tic casting interval, and current-scale 500 mana cost.
+- Made Intelligence Type 1 scale magical damage and Insight Type 1 control
+  magical accuracy; crouching still doubles accuracy.
+- Added staff critical chance from its 8% weapon base plus Insight Type 2,
+  including crouching's x2 critical factor and localized critical damage only.
+- Applied health/survival offensive penalties, spent mana at cast start, blocked
+  recasting during the 18-tic interval, and granted +2 adrenaline on real damage.
+- Added a fifth compact debug page for magical damage, mana, accuracy, aim
+  offsets, critical roll, hit result, and remaining cast time.
+- Corrected documented magical-weapon mana costs to the established x10 scale:
+  staff/campana 500, book 700, and statuette 1000.
+
+## 0.52.0 — Shield horizontal coverage angles
+
+- Added a configurable horizontal incoming-attack angle to the shield test,
+  cycling from 0° to 180° in ten-degree steps.
+- Made blocking require the attack to fall within half of the shield's total
+  frontal arc: ±60° rodela/magic, ±70° kite, and ±80° tower.
+- Routed out-of-coverage hits past the shield with zero shield absorption,
+  durability loss, or block adrenaline, while preserving the complete
+  armor–Dureza–health pipeline.
+- Added localized angle control and compact covered/bypassed diagnostics.
+
+## 0.51.0 — Dureza damage-resistance stage
+
+- Added Dureza Type 3 as the final retained-damage multiplier in the shared
+  shield/armor test pipeline: `1 - Dureza × (Dureza + 1) / 10100`.
+- Applied it after armor defense, so it changes real health loss without
+  changing how much damage shield or armor absorbed for durability.
+- Kept Dureza's existing pain-chance and localized-lucidity multipliers as
+  independent calculations; they are not replaced by direct damage resistance.
+- Added post-defense damage, Dureza multiplier, and final health damage to the
+  compact armor diagnostic.
+
+## 0.50.0 — Shield-to-armor damage routing
+
+- Routed every point not absorbed by the debug shield into the selected
+  humanoid armor region instead of stopping at a diagnostic value.
+- Reused the complete armor pipeline: vulnerability and reinforcement,
+  defense absorption, armor durability, real health loss, localized lucidity,
+  pain chance, damage adrenaline, and combat timer.
+- Made an inactive or broken shield pass the complete 1000-point test impact
+  into armor, while a 100% block leaves armor, health, lucidity, and pain untouched.
+- Preserved the shield's separate durability calculation and +5 base
+  adrenaline reward whenever it absorbs positive damage.
+
+## 0.49.1 — Corrected shield defense tiers
+
+- Reclassified the original shield defenses as tier-2 values.
+- Made tier 1 subtract ten percentage points and tier 3 add ten percentage
+  points to both physical and magical defense for every shield.
+- Preserved shield weight, coverage, adrenaline reward, air cost, and
+  durability scaling x1/x3/x9.
+- Updated compact diagnostics, test instructions, and design-document tables.
+
+## 0.49.0 — Functional shield-blocking test
+
+- Added rodela, kite, tower, and magic shield models with their documented
+  weight, physical/magical defense, durability, and frontal coverage.
+- Added all three tiers: defense scales x1/x2/x3, durability x1/x3/x9, and
+  effective absorption is capped at 100% so values above 100% cannot heal.
+- Added a blocking toggle that suspends air regeneration and consumes 10% of
+  shield weight per second, adjusted by the existing equipment-load factor.
+- Added a frontal 1000-damage physical/magical diagnostic hit, the armor
+  durability-loss formula, shield repair, and +5 base adrenaline on a
+  successful block.
+- Added compact shield diagnostics and six localized test controls without
+  expanding the panel horizontally.
+- Recorded user confirmation that the corrected training dummy now aligns its
+  visible body with its hit regions.
+
+## 0.48.1 — Training-dummy visual and hitbox alignment
+
+- Reduced the dummy sprite canvas from 96×128 to 48×72 so its displayed height
+  exactly matches the actor's 72-unit collision height.
+- Matched the 42-pixel-wide visible silhouette with a 21-unit actor radius.
+- Converted the final small sprite to binary transparency: the dummy is fully
+  opaque and only its exterior background is transparent.
+- Preserved the one-million health, immobility, test control, and humanoid
+  location thresholds from 0.48.0.
+
+## 0.48.0 — Crouching bonuses and training dummy
+
+- Made crouching multiply accuracy, critical chance, and stealth by x2.
+- Applied the crouching accuracy and critical factors to the provisional sword;
+  critical chance remains capped at 100%.
+- Exposed the live crouching factors in compact resources/combat diagnostics.
+- Added an original stationary training dummy with 1,000,000 health, maximum
+  mass, no damage thrust, and a localized control that spawns it ahead.
+- Corrected sword calculated-damage diagnostics so health/survival penalties
+  update live even before a target is hit or when the latest attempt misses.
+- Recorded user confirmation of the running-accuracy implementation.
+
+## 0.47.0 — Running accuracy penalty
+
+- Applied the documented running penalty to the provisional sword: attacks
+  made while running retain 25% of physical accuracy.
+- Kept standing and walking attacks at 100% of their post-lucidity accuracy.
+- Applied movement after attribute and lucidity factors, so running while dizzy
+  combines multiplicatively to retain 12.5% before the weapon's aim formula.
+- Added the movement-accuracy factor to the compact combat diagnostic.
+- Recorded user confirmation of survival penalties on offensive sword damage.
+
+## 0.46.0 — Survival penalties on offensive damage
+
+- Connected the existing cumulative hunger, thirst, and sleep performance
+  factor to the provisional sword's real outgoing damage.
+- Combined health-state and survival damage penalties multiplicatively through
+  one stored offensive-damage factor for reuse by later weapons and spells.
+- Preserved adrenaline's percentage-based restoration of survival penalties:
+  full adrenaline restores the survival portion to x1.
+- Added the combined offensive-damage factor to compact resource diagnostics.
+- Recorded user confirmation of direct lucidity-state testing and 25-point loss.
+
+## 0.45.0 — Direct lucidity-state test and 25-point base loss
+
+- Raised localized critical-region lucidity loss from 15 to 25 base points.
+- Added one localized control that cycles exact clear, dizzy, and stunned
+  lucidity states so the accuracy penalty and visual distortion are immediately testable.
+- Kept the ten-point incremental loss and refill controls for timing tests.
+- Clarified where effective accuracy and sword aim offsets appear in the compact panel.
+- Recorded user confirmation of the 0.44.0 implementation before this adjustment.
+
+## 0.44.0 — Dizzy accuracy and visual distortion
+
+- Made physical accuracy use Dexterity Type 1 and magical accuracy use Insight
+  Type 1 through shared calculated values.
+- Made dizzy and stunned lucidity states retain 50% of both effective accuracy
+  values without changing damage or critical chance.
+- Connected effective physical accuracy to the provisional sword as a small
+  horizontal and vertical angular error; losing half accuracy doubles that error.
+- Added a restrained full-screen violet tint with opposing cyan/red edge bands
+  while dizzy or stunned, leaving HUD text crisp.
+- Added effective accuracy, lucidity factor, and the sword's latest horizontal
+  and vertical offsets to compact diagnostics.
+- Recorded user confirmation of natural critical-region lucidity mitigation.
+
+## 0.43.0 — Natural critical regions and lucidity mitigation
+
+- Raised localized critical-region lucidity loss from 10 to 15 base points.
+- Kept natural anatomy responsible for lucidity loss even when armor
+  reinforcement lowers the effective vulnerability grade.
+- Applied armor defense as equal percentage mitigation to health and localized
+  lucidity loss.
+- Made reinforcement reduce a critical hit's lucidity factor through the ratio
+  between effective critical and normal vulnerability multipliers.
+- Made low and critical sleep multiply lucidity loss and stun duration by x2
+  and x4, with Patience Type 3 mitigating the harmful amount above x1.
+- Added sleep factor to armor diagnostics and rendered armor defense as a percent.
+- Recorded user confirmation of damage-only criticals and critical-region lucidity loss.
+
+## 0.42.0 — Critical-point lucidity loss
+
+- Made critical hits damage-only for every damage type; they no longer grant
+  secondary bleeding, stun, penetration, or elemental effects.
+- Added a shared localized lucidity-loss rule for confirmed damage of any type.
+- Made only regions that remain critical points remove localized lucidity.
+- Reused the ten-point lucidity test base, multiplied by the same localized
+  damage multiplier and then by Toughness Type 3 resistance.
+- Added critical-point lucidity loss to the armor hit test and its diagnostics.
+- Recorded user confirmation of Type 2 JumpZ growth.
+
+## 0.41.0 — Type 2 JumpZ growth
+
+- Changed Agility's base JumpZ scale from Type 4 to `100% + Type 2`.
+- Kept level 0 at 100% and set level 100 to exactly 200% JumpZ.
+- Preserved the existing mass, air, survival, health, stun, and pain factors.
+- Clarified that doubling vertical launch velocity produces approximately four
+  times the geometric jump height under constant gravity.
+- Recorded user confirmation of automatic physical critical rolls.
+
+## 0.40.0 — Automatic physical critical rolls
+
+- Added the documented 5% base physical critical chance plus Dexterity Type 2.
+- Rolled critical chance once after each sword trace reaches a valid actor.
+- Applied the existing localized critical formula `V × (V + 1)` instead of an
+  unrelated global damage multiplier.
+- Added chance, roll, and normal/critical result to compact combat diagnostics.
+- Reserved magical critical chance as 5% plus Insight Type 2 for the future
+  magical-attack stage, without rolling it prematurely.
+- At this stage, secondary critical effects were still outside the prototype;
+  version 0.42.0 later removed them from the final design entirely.
+
+## 0.39.0 — Animation-matched pain immobilization
+
+- Added a physical pain lock when the custom pain roll succeeds.
+- Derived the lock duration from the actor's finite `Pain` state sequence; the
+  current DoomPlayer sequence lasts eight tics, approximately 0.229 seconds.
+- Disabled movement, jumping, running, and the sword test during that duration.
+- Displayed remaining and total pain-animation duration in combat diagnostics.
+- Documented that jump scaling modifies `JumpZ` linearly while approximate
+  geometric height changes quadratically under constant gravity.
+
+## 0.38.3 — Reliable kill credit and narrower debug pages
+
+- Recorded the last player responsible for real damage to each actor and used
+  that record first when awarding enemy-kill adrenaline.
+- Kept monster target and death inflictor as compatible fallback attribution.
+- Split every remaining wide diagnostic group into shorter stacked lines and
+  shortened the panel heading so Spanish text stays inside the virtual screen.
+- Preserved every confirmed gameplay system and design rule.
+
+## 0.38.2 — GZDoom 4.14.2 monster-flag compatibility
+
+- Replaced the invalid `bMonster` identifier with GZDoom 4.14.2's exposed
+  ZScript actor flag `bIsMonster` in the enemy-kill adrenaline detector.
+- Verified the other new death-event members against the g4.14.2 source.
+- Preserved every gameplay and documentation rule from 0.38.0.
+
+## 0.38.1 — Debug-overlay parser correction
+
+- Moved the compact overlay method's closing brace outside the disabled legacy
+  reference block so GZDoom 4.14.2 can parse the following `NetworkProcess`
+  override correctly.
+- Preserved every gameplay and documentation rule from 0.38.0.
+
+## 0.38.0 — Compact diagnostics and adrenaline event rewards
+
+- Split the development overlay into four compact pages: character,
+  resources/states, combat, and armor.
+- Added localized controls to change panel page and heal current health fully.
+- Restored gameplay adrenaline gains to their original values: damage 10, pain
+  20, melee 3, and evasion 8; post-combat decay remains 10 per second.
+- Added 5 adrenaline for killing a hostile monster.
+- Added 10 adrenaline to living allies within 10 development meters when an
+  allied actor dies.
+- Added last adrenaline source, base gain, and health-state-adjusted gain to
+  combat diagnostics.
+- Applied Patience Type 3 to detrimental wounded/badly-wounded penalties before
+  existing adrenaline mitigation without weakening their beneficial gain bonus.
+- Recorded user confirmation of health-bar interpolation and armor tests.
+
+## 0.37.0 — Vulnerability grades and armor durability
+
+- Replaced head/torso/arms/legs damage multipliers with seven fixed
+  vulnerability grades: x2.00, x1.60, x1.30, x1.00, x0.80, x0.60, and x0.40.
+- Derived critical-hit multipliers with `V × (V + 1)`.
+- Assigned humanoid head/body/hands/feet to critical/sensitive/weak/neutral.
+- Added four independent armor slots with uniform defense by type/tier,
+  slot-specific reinforcement, and live attribute bonuses.
+- Added the new 5/10/15, 10/20/30, 20/40/60, and 30/60/90 defense tables.
+- Preserved base durability and x3-per-tier scaling.
+- Applied percentage defense after vulnerability and based durability loss on
+  absorbed damage: one guaranteed point per 1000 plus 1% per ten remainder.
+- Reserved a durability-damage multiplier for future mitigation and the same
+  formula for future shield blocking.
+- Added localized armor configuration, hit, critical-mode, repair controls, and diagnostics.
+
+## 0.36.0 — Wounded and badly wounded health states
+
+- Added wounded at 50% health or less and badly wounded at 10% or less.
+- Set raw pain and combat-adrenaline gains to x2/x4 in those states.
+- Set raw outgoing damage, air recovery, movement, evasion, and jump performance
+  to x0.75/x0.25 respectively.
+- Applied the existing percentage-based adrenaline relief to every new health penalty.
+- Added localized health-state text and development-panel diagnostic factors.
+- Added a no-impact control that cycles exact health thresholds for testing.
+- Changed the health bar to interpolate green at 100%, gold at 50%, and red at 10%.
+- Documented configurable anatomy profiles, multiple weak points, and contextual
+  Tarot effects for players and enemies as future architecture.
+
+## 0.35.0 — Sword attack air cost
+
+- Connected the documented five-air sword primary cost to the live attack test.
+- Multiplied attack cost by the existing equipped-load air-use factor.
+- Charged the effort when a valid attack begins, including attacks that miss.
+- Prevented the attack entirely when current air cannot pay its complete cost.
+- Displayed final attack cost and insufficient-air result in the development panel.
+
+## 0.34.1 — Reversible level-75 development attributes
+
+- Added one localized control that toggles all twelve attributes to level 75.
+- Kept the real character profile and point allocation untouched underneath.
+- Recalculated all derived statistics and live limits immediately on each toggle.
+- Restored the ordinary creation-derived attributes when the override is disabled.
+
+## 0.34.0 — Passive evasion on directed attacks
+
+- Connected effective evasion chance to incoming melee, hitscan, and missile damage.
+- Rolled before GZDoom damage so a successful evasion prevents health loss,
+  pain, armor interaction, and damage-derived adrenaline.
+- Granted sixteen adrenaline and restarted combat time on successful evasion.
+- Excluded explosions, environmental damage, telefrags, and unclassified damage.
+- Added a localized directed-attack test and displayed the last roll, chance,
+  applicability, and result in the development panel.
+
+## 0.33.0 — Height-based localized melee damage
+
+- Replaced the provisional fixed torso hit with crosshair-driven body location.
+- Classified head at 80%-100%, torso at 40%-80%, lateral arms at 30%-50%,
+  and legs at 0%-30% of the target's actor height.
+- Applied the documented x2.0 head, x1.0 torso, x0.6 arms, and x0.5 legs
+  multipliers before sending damage through GZDoom.
+- Resolved the arms/torso height overlap by requiring an arms hit to pass
+  through the outer half of the target cylinder; central hits remain torso.
+- Displayed the selected body zone, multiplier, and relative impact height in
+  the localized development panel.
+- Kept armor by body part and temporary limb effects pending for Caelum actors.
+
+## 0.32.0 — Base melee damage functional test
+
+- Added an isolated sword torso attack with a base damage of 120 and a
+  64-unit melee range.
+- Applied Strength Type 1 directly to the weapon base damage and rounded the
+  final engine damage to the nearest whole point.
+- Used a provisional torso multiplier of x1, without location, critical,
+  Caelum armor, survival-damage, or attack-air stages.
+- Granted six adrenaline and restarted the combat timer only when the reached
+  actor actually received positive damage.
+- Displayed calculated damage, real damage, and hit or miss in the development
+  panel, with localized English and Spanish controls.
+
+## 0.31.0 — Type 4 adrenaline capacity and pain test damage
+
+- Replaced maximum-adrenaline Type 1 growth with Resilience Type 4 growth.
+- Defined maximum adrenaline as `1000 × Type4Percent / 100`, from 1000 to 3000.
+- Preserved current adrenaline percentage effects, gains, decay, and clamping.
+- Added a localized test action that removes 5% of maximum health, rounded to
+  whole health and limited to leave at least one point.
+- Routed test damage through the same pain chance and adrenaline logic as a
+  real mitigated hit while deliberately bypassing provisional Doom armor.
+
+## 0.30.0 — Health-percentage pain chance
+
+- Disabled DoomPlayer's independent native pain roll for Caelum players.
+- Calculated one custom pain chance after real mitigated health loss.
+- Set base chance to ten times the percentage of maximum health lost.
+- Applied Dureza Type 3 and the pre-hit adrenaline percentage multiplicatively.
+- Made 100% pre-hit adrenaline grant complete pain immunity.
+- Awarded 40 additional adrenaline when pain actually triggers, after the roll.
+- Displayed the latest health-loss percentage, final chance, Dureza multiplier,
+  and result in the development panel.
+
+## 0.29.0 — Physical lucidity stun
+
+- Triggered one two-second physical stun when lucidity crosses from above 10%
+  to 10% or less.
+- Prevented the stun from restarting merely because lucidity remains critical.
+- Disabled movement and jumping and stopped horizontal sliding during the stun.
+- Prevented stunned input from spending running or jumping air.
+- Displayed the remaining stun time in the gameplay HUD and development panel.
+- Preserved the remaining timer through ordinary saves.
+
+## 0.28.0 — Adrenaline rescale and survival-funded air recovery
+
+- Increased the complete adrenaline-capacity formula to ten times its prior scale.
+- Doubled confirmed-damage and test gains from 10 to 20 points per event.
+- Doubled post-combat decay from 5 to 10 points per second.
+- Preserved every percentage-based adrenaline effect and the 30-second timeout.
+- Made a complete air refill consume 10% hunger and 20% thirst.
+- Limited air recovery proportionally when hunger or thirst cannot fund it.
+
+## 0.27.0 — Ten-times combat scale and natural health recovery
+
+- Increased base health and mana from 100 to 1000 without changing percentages.
+- Increased the provisional mana cost from 10 to 100.
+- Defined all final base damage and mana costs as ten times their former values.
+- Added natural health recovery over one real hour at base speed.
+- Applied Resilience Type 4 to natural recovery.
+- Stopped natural recovery while any survival resource is critical.
+- Spent hunger and thirst proportionally while naturally recovering health.
+- Corrected critical survival damage to one real-hour base rate.
+
+## 0.26.0 — Progressive adrenaline relief and survival damage
+
+- Changed adrenaline relief from a fixed 100-point threshold to current percentage.
+- Restored the same percentage of performance that adrenaline currently holds.
+- Added cumulative critical health loss at the negative base health-regeneration rate.
+- Kept survival damage independent from armor and ordinary damage adrenaline gains.
+- Mixed each survival bar's base hue with gold or red instead of replacing it.
+
+## 0.25.0 — Cumulative survival movement penalties
+
+- Applied 75% retained movement and jump height for each low survival state.
+- Applied 50% retained movement and jump height for each critical state.
+- Multiplied simultaneous hunger, thirst, and sleep penalties together.
+- Combined survival with the existing mass and air-state movement pipeline.
+- Ignored survival performance penalties while adrenaline is at least 100.
+- Displayed the final survival factor and adrenaline exception in the panel.
+
+## 0.24.1 — Survival HUD parser correction
+
+- Renamed the survival-bar local variable `color` to `barColor`.
+- Fixed GZDoom 4.14.2's `Unexpected '='; Expecting identifier` errors because
+  `color` is a reserved ZScript type name.
+- Preserved every survival resource value, timer, state, and HUD position.
+
+## 0.24.0 — Survival resources and definitive world-time scale
+
+- Defined one game hour as three real minutes.
+- Added hunger depletion over 24 game hours, thirst over 12, and sleep over 16.
+- Applied Constitution Type 3 to hunger/thirst loss and Resilience Type 3 to sleep loss.
+- Added persistent values and normal, low, and critical states for all three resources.
+- Added localized test controls, HUD bars, and state labels.
+- Kept accumulated penalties and progressive damage pending until state tests pass.
+
+## 0.23.0 — Live lucidity resource and states
+
+- Added a persistent 100-point lucidity resource that begins full.
+- Added the documented one-minute empty-to-full recovery speed.
+- Added normal, dizzy at 50% or less, and stunned at 10% or less states.
+- Calculated Dureza's Type 3 future lucidity-loss multiplier.
+- Added localized test controls to lose ten lucidity or refill the resource.
+- Added a permanent cyan lucidity bar with gold and red critical colors.
+- Kept accuracy penalties and physical stun pending for their real systems.
+
+## 0.22.1 — Damage override declaration correction
+
+- Removed repeated default parameter values from the `DamageMobj` override.
+- Fixed GZDoom 4.14.2's `Default values for parameter of virtual override not
+  allowed` compilation error.
+- Preserved every adrenaline formula and gameplay behavior from version 0.22.0.
+
+## 0.22.0 — Live adrenaline and combat timeout
+
+- Added Resilience-derived maximum adrenaline using the documented formula.
+- Started new players at zero adrenaline and preserved it in ordinary saves.
+- Awarded ten adrenaline only when GZDoom confirms actual health loss.
+- Added a thirty-second combat timeout that restarts on each confirmed event.
+- Added five-adrenaline-per-second decay after the timeout reaches zero.
+- Added localized test controls to add ten adrenaline or clear the resource.
+- Added a permanent gold adrenaline bar, exact values, and visible timer.
+- Updated the main design document to define the thirty-second rule.
+
+## 0.21.0 — Live mana resource
+
+- Added persistent current mana with a Patience-derived Type 1 maximum.
+- Added Type 4 mana regeneration from Patience.
+- Applied the documented eight-minute base refill time before the regeneration
+  multiplier.
+- Added localized debug controls to spend ten mana and refill the resource.
+- Added a permanent violet mana bar and exact current/maximum values.
+- Displayed mana regeneration speed and percentage in the development panel.
+- Prevented profile recalculation from granting free mana.
+
+## 0.20.0 — Constitution-based live health
+
+- Connected Constitution's calculated maximum health to GZDoom's real player
+  health resource.
+- Overrode the engine maximum-health query so ordinary healing respects the
+  current Caelum limit.
+- Added a permanent localized health bar and exact current/maximum values.
+- Preserved native GZDoom damage, death, and healing behavior.
+- Prevented profile recalculation from granting free healing: a higher maximum
+  keeps current health unchanged, while a lower maximum only clamps it.
+- Drew the health display entirely through code without external artwork.
+
+## 0.19.0 — Functional air bar
+
+- Added a proportional bar to the permanent air HUD.
+- Kept the exact current and maximum values below the bar.
+- Matched the fill color to normal, tired, and breathless states.
+- Drew the bar entirely through code without external graphical assets.
+- Converted the virtual HUD position to real pixels for consistent widescreen
+  placement.
+
+## 0.18.0 — First permanent gameplay HUD element
+
+- Added a permanent current-air display separate from the debug panel.
+- Displayed current and maximum air together with the localized air state.
+- Used light blue, gold, and red for normal, tired, and breathless states.
+- Kept the HUD resolution-independent through a 640x360 virtual canvas.
+- Used only GZDoom's temporary built-in font, without distributing Doom art.
+
+## 0.17.0 — Larger air pool and correct Always Run detection
+
+- Increased base air capacity from 100 to 1000.
+- Preserved Type 4 Resilience growth, producing 1000 air at level 0 and 3000
+  air at level 100.
+- Preserved all action costs, load multipliers, thresholds, and the eight-minute
+  full-refill duration.
+- Replaced physical speed-key detection with GZDoom's effective run command.
+- Supported running-air consumption with Always Run both enabled and disabled.
+
+## 0.16.0 — Air cost while running
+
+- Connected the documented running cost to real grounded running movement.
+- Spent two base air units per second, adjusted by equipped load.
+- Kept walking, standing, swimming, flying, falling, and airborne input free.
+- Paused air regeneration while running so the displayed cost remains exact.
+- Added localized running-cost and active-state information to the panel.
+- Marked the two manual air-consumption controls clearly as debug tools.
+
+## 0.15.0 — Air cost on physical jumps
+
+- Detected successful grounded-to-rising jumps from the real jump control.
+- Spent five base air units once per successful takeoff.
+- Applied the existing equipment-load multiplier to the physical jump cost.
+- Ignored falling, lifts, airborne input, held-button tics, and predicted tics.
+- Retained the jump-cost debug control as an optional testing aid.
+
+## 0.14.0 — Physical movement and jump application
+
+- Applied effective movement to GZDoom's forward and sideways player fields.
+- Applied effective jump height to GZDoom's `JumpZ` player field.
+- Used fixed engine baselines to prevent multiplication accumulating per tic.
+- Displayed applied movement and `JumpZ` in the localized debug panel.
+- Kept jump air spending on its test control until valid physical jumps can be
+  distinguished from failed jump input.
+
+## 0.13.0 — Unified movement and jump model
+
+- Confirmed that evasion uses the same total-mass formula as movement, with no
+  separate overload penalty.
+- Unified ground, swimming, and flight speed under one Agility movement stat.
+- Replaced redundant swim/flight speed with Type 4 jump height.
+- Applied the same mass and air-state factors to movement and jump height.
+- Added a provisional five-unit base air cost for jumping.
+- Added a localized jump-cost test control and displayed movement and jump
+  calculations in the debug panel.
+- Kept physical movement and jump-height changes data-only until verified.
+
+## 0.12.0 — Evasion calculation pipeline
+
+- Added Type 2 growth calculations for Agility-based base evasion.
+- Applied the documented total-mass multiplier to base evasion.
+- Applied 75% retained evasion while tired and 25% while breathless.
+- Stored the current air state in play scope so UI rendering requires no
+  cross-context function calls.
+- Displayed base, mass-adjusted, and effective evasion in the debug panel.
+- Applied mass to evasion through the same formula used by movement.
+- Kept actual attack-evasion rolls pending for the combat system.
+
+## 0.11.1 — UI context correction
+
+- Marked the read-only air ratio and state helpers as UI-callable.
+- Fixed GZDoom's `Can't call play function IsBreathless from ui context`
+  startup error.
+- No formulas, resource values, or gameplay behavior changed.
+
+## 0.11.0 — Air regeneration and resource states
+
+- Added automatic air regeneration based on the documented eight-minute full
+  recovery time.
+- Scaled regeneration per second with maximum air so larger pools still take
+  eight minutes to refill completely.
+- Added normal, tired, and breathless state detection.
+- Set tired at 50% air or less and breathless at 10% or less.
+- Displayed localized air state and regeneration rate in the debug panel.
+- Kept movement and evasion penalties inactive until state detection is tested.
+
+## 0.10.0 — Live air-resource test
+
+- Corrected the overload threshold from above 80% to above 75% capacity.
+- Distinguished overload from exceeding the absolute 100% capacity.
+- Added persistent current air alongside calculated maximum air.
+- Added provisional controls to consume one ten-unit base action and refill air.
+- Applied the confirmed carry-load multiplier to the test action cost.
+- Displayed current air and adjusted action cost in the localized debug panel.
+
+## 0.9.0 — Carry-load air consumption
+
+- Replaced the provisional mass-based air factor with the confirmed
+  carry-load formula.
+- Increased air use by the equipped-load percentage through 75% capacity.
+- Doubled only the excess above 75% capacity.
+- Confirmed test factors: 50% = x1.50, 75% = x1.75, 80% = x1.85, and
+  100% = x2.25.
+- Added a separate implementation-status guide for beginners.
+
+## 0.8.0 — Mass and equipment-load calculations
+
+- Added provisional equipped weight in five-unit test steps.
+- Calculated total mass and equipped-load percentage.
+- Added normal, heavy, and overloaded load states.
+- Calculated push resistance, knockback, movement, air-consumption, and
+  evasion mass multipliers from the documented formulas.
+- Displayed localized mass values and states in the debug panel.
+- Kept all effects data-only until their calculations are verified in GZDoom.
+
+## 0.7.0 — First derived character statistics
+
+- Added reusable Type 1 and Type 4 growth calculations.
+- Calculated maximum health from Constitution.
+- Calculated maximum mana from Patience.
+- Calculated maximum air from Resilience.
+- Calculated carry capacity from its confirmed base of 100 and Strength.
+- Calculated base mass from identity and class.
+- Displayed all five localized values in the debug panel.
+
+## 0.6.0 — Complete six-page character creation wizard
+
+- Connected layer allocation, individual allocation, and summary pages.
+- Required all four layer points and all thirty individual points before advancing.
+- Added a dedicated add-point action for allocation pages.
+- Added transactional editing: cancelling restores the last confirmed profile and points.
+- Added final confirmation state and localized six-page navigation.
+
+## 0.5.0 — Character creation wizard, first three pages
+
+- Added a localized step-by-step character creation overlay.
+- Added origin, identity, and class selection pages.
+- Added open, cycle, confirm, and back actions using synchronized events.
+- Reused the previously validated profile and attribute calculation functions.
+- Reserved the remaining three pages for layer points, individual points, and summary.
+
+## 0.4.0 — Character point allocation rules
+
+- Added four free points assignable among the four attribute layers.
+- Enforced a maximum base value of 15 for every layer.
+- Added thirty individual points assignable among twelve attributes.
+- Enforced the +5 individual cap and the twice-base cap.
+- Added localized debug selectors, point counters, allocation controls, and reset.
+- Profile changes now reset allocations so an earlier bonus cannot invalidate a new base.
+
+## 0.3.0 — Origin, identity, and class profiles
+
+- Added the four documented origins, identities, and classes.
+- Applied their 5/3/3/1 distribution patterns to the four attribute layers.
+- Added multiplayer-aware debug commands for cycling each profile choice.
+- Displayed the current profile in the localized attribute debug panel.
+- Removed the conflicting provisional F7 default binding.
+
+## 0.2.0 — Toggleable attribute debug panel
+
+- Added a localized overlay displaying all twelve primary attributes.
+- Added a user CVar that remembers whether the panel is visible.
+- Added a provisional F7 control and a Customize Controls entry.
+- Registered the debug overlay as a GZDoom event handler.
+
+## 0.1.1 — ZScript constant syntax correction
+
+- Removed the invalid explicit `int` type from class constants.
+- No gameplay values or attribute behavior changed.
+
+## 0.1.0 — Primary attribute data model
+
+- Added the twelve documented primary attributes.
+- Added a separate attribute container for each player.
+- Added neutral test initialization at level 3 per attribute.
+- Added a total-level calculation whose expected test result is 36.
+- Added English and Spanish names for every primary attribute.
+
+## 0.0.3 — Windows filename compatibility
+
+- Renamed the ZScript source folder from `zscript` to `caelum`.
+- Fixed a Windows case-insensitive filename collision between the root
+  `ZSCRIPT` file and the former `zscript` folder.
+- Corrected the player-class include path.
+
+## 0.0.2 — Windows launcher correction
+
+- Corrected batch parsing of paths containing parentheses, such as
+  `C:\Program Files (x86)`.
+- Kept explicit error messages for missing GZDoom and IWAD files.
+
+## 0.0.1 — Initial scaffold
+
+- Added a repeatable Windows development build.
+- Added the custom `CaelumPlayer` ZScript class.
+- Added English and Spanish localization.
+- Added an asset-license register.
+
+````
+
+
+## Registro: legacy/IMPLEMENTATION_STATUS.md
+
+SHA-256: `44576c1d56efde58ee970b4e5779062941401d1cb2406925c23215cdcefdc360`
+
+````text
+# Caelum Argenteum 4.0 — Implementation status
+
+## Doubled post-island stress population 4.28.0bh
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now contains exactly 1,874 combatants: 126 Rulo, 126 Caella, 124
+Ronnie, 124 Argento, 124 Bulls and 1,250 Giant Rats. Its geometry is identical
+to the validated 937-actor field. Contact islands, once-per-second crushing,
+straight explosive projectiles, Eloquence-derived range and the 350-tic
+absolute projectile safeguard remain unchanged.
+
+Validation focus:
+
+1. Confirm the initial chamber remains responsive before acquisition.
+2. Wake the complete population and record the first sustained frame drop.
+3. Distinguish stable low frame rate from progressive loss of responsiveness.
+4. Continue after projectiles expire and verify whether performance recovers.
+5. Enter the central contact pile and monitor active contact count.
+
+## Range-bounded projectiles and UI-safe contact telemetry 4.28.0bf
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 returns to the previously validated population of 937 combatants: 63
+Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats. Its
+16,384×16,384 MU enclosure, dogleg entrance and actor positions are unchanged.
+
+Player and combat actors now store an array of shared `ImpactContactState`
+objects rather than one replaceable actor reference. Each state is the edge
+between two bodies; connected edges therefore form an implicit contact island.
+The state remains active until its bodies exceed the established release
+distance for five consecutive tics.
+
+An initial collision still uses `ImpactPhysics.ResolveBodies` and may apply
+ordinary collision trauma. Later collision callbacks for the same pair perform
+an allocation-free inelastic momentum transfer and cannot apply a second
+impact while contact persists. Every 35 sustained-contact tics, crushing
+resolves a synthetic collision at the pusher's current walking speed. It uses
+the existing source and receiver effective masses, contact-height interval,
+anatomy, Toughness and armor pipeline; the receiver's biological landing
+absorption is subtracted before the damage curve. There is no independent
+crushing base damage or arbitrary multiplier.
+
+Rulo, Caella, Argento and Ronnie now fire straight explosive elemental
+projectiles instead of calling `A_SeekerMissile` every tic. Their explosion
+uses the same base radius and direct-damage ratio as the player's Statuette.
+Their magical attack decision and projectile distance now share the player's
+authoritative range rule: 3,200 MU multiplied by Eloquence Type 4
+`AbilityRangePercent`. Unimpacted projectiles self-destruct as soon as they
+exhaust that distance, while 350 tics remains an absolute safeguard.
+
+The debug UI no longer calls the play-scope `GetImpactContactCount` function.
+Player `Tick` caches `ImpactContactCountForUI`, and the overlay only reads that
+numeric field, preserving GZDoom's play/UI context boundary.
+
+Validation focus:
+
+1. Confirm MAP02 loads with exactly 937 combatants and remains quiet at spawn.
+2. Wake all populations and let them collide and exchange projectiles.
+3. Run through the central pile and confirm the game remains responsive.
+4. Observe `Contacts` on the physics debug page while touching several bodies.
+5. Confirm one collision causes at most one trauma event until true separation.
+6. Confirm sustained pushing can propagate through several touching actors.
+7. Hold a heavy actor against a lighter body for several seconds and compare
+   the once-per-second Crush result with a walking-speed collision.
+8. Confirm NPC projectiles fly straight, explode on impact and disappear after
+   ten seconds when they miss.
+
+## Wall reverse rendering and texture-package validation 4.28.0az
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The repeated first-floor slit persisted because `CaelumFiniteWallBackPanel` used `NOINTERACTION`. The reverse actor therefore failed to remain available to the sector renderer. It now remains render-linked while `NOBLOCKMAP`, absence of `SOLID`, `CANNOTPUSH` and `DONTTHRUST` keep it outside collision and Impact Physics. Front and rear visuals remain separated by 0.25 MU to avoid coplanar depth rejection.
+
+Font directories use kerning `-4` and one additional pixel of `SpaceWidth`. One transparent right column was also removed from every glyph, so template fonts created by `FONTDEFS` receive the same one-pixel tightening even when they do not consume `font.inf`. `FONTDEFS` now carries the matching larger word spaces. The five classic main-menu actions are patch graphics rather than live text, so `M_NGAME`, `M_OPTION`, `M_LOADG`, `M_SAVEG` and `M_QUITG` are replaced by CaelumText-rendered Spanish labels.
+
+The supplied startup log identifies `sprites/caelum/weapons/` as invalid texture data. The existing development archives contain explicit zero-byte ZIP directory records in texture namespaces, while all 3,166 PNG files decode successfully and have positive dimensions. `tools/build_pk3.py` packages files only, validates PNG headers and dimensions, rejects every empty source file, verifies the ZIP and atomically replaces the output. This directly removes the only invalid texture resource exposed by the log and addresses the later `Trying to create zero size texture` fatal at its concrete package-level source.
+
+Manual validation:
+
+1. Build exclusively with `python tools/build_pk3.py src build/caelum_argenteum_dev.pk3`.
+2. Confirm startup no longer prints `Invalid data encountered for texture`.
+3. Inspect the central first-floor wall from both directions.
+4. Verify spacing in HUD, options and the main-menu labels.
+5. Repeat the 937-actor projectile test. If the fatal recurs, preserve the new log and crash stack because no zero-sized package entry should remain.
+
+## Closed connector ends and 937-actor stress step 4.28.0ay
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The black vertical strip visible through the central first-floor rooms belongs to the old 64-MU connector band between the two equal rooms. Its front and rear ends remained visually open. Four new 64-MU finite panels now close those ends at coordinates `x=368`, `y=±196/±540`, height 136. Each is a single smooth wall section using the existing finite-wall renderer and collision, so the closure does not extend infinitely through the ground floor.
+
+Letter kerning remains `-3`. Only `SpaceWidth` increases by two pixels in every family, making word boundaries clearer without reopening the spacing between individual letters. The Debug profile remains unchanged at twelve attributes of 90.
+
+MAP02 retains its 17 vertices, 17 linedefs, 17 sidedefs, one sector and original enclosure. Its new total is exactly 937 stress actors: 63 Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats, plus the player start. The two equal fractional remainders were assigned deterministically to Rulo and Caella.
+
+Manual validation:
+
+1. Stand at the position shown in the supplied screenshot and verify that neither end of the obsolete connector reveals the map background.
+2. Inspect the same four closures from the opposite side and from the ground floor.
+3. Confirm menu and HUD word spacing while individual letter spacing remains unchanged.
+4. Wake all 937 MAP02 actors and note whether projectile activity still causes a freeze.
+
+## Exact wall spans and 1,875-actor stress step 4.28.0ax
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor finite wall panels previously covered 136 MU each, leaving 4-MU slits at the exterior endpoints. They now use exact 140-MU spans. Their centers move from ±268/±468 to ±266/±470, producing continuous ranges 196–336 and 400–540 on both wings while preserving the 64-MU central doorway from 336 to 400. No extra overlapping panel or collision layer is introduced.
+
+Every bitmap family now uses kerning `-3`; `SpaceWidth` remains unchanged. The Debug creation profile's central attribute constant is 90, so all twelve attributes are reset to exactly 90 after equipment bonuses whenever the Debug profile is applied or recalculated.
+
+MAP02 retains the 17 vertices, 17 linedefs, 17 sidedefs, one sector and original 16,384×16,384 MU stress enclosure. Its population is now 125 Rulo, 125 Caella, 125 Ronnie, 125 Argento, 125 Bulls and 1,250 Giant Rats: 1,875 test actors plus the player start.
+
+Manual validation:
+
+1. Inspect the four endpoints of both central wall dividers from inside and outside.
+2. Verify both 64-MU internal door openings remain unobstructed.
+3. Check menu, options, console and HUD letter spacing without losing word separation.
+4. Create a Debug character and confirm all twelve attributes read 90.
+5. Wake all 1,875 MAP02 actors and record whether the engine freezes or remains responsive.
+
+## Direct transition and 3,750-actor stress step 4.28.0aw
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 now uses `nointermission`, bypassing Doom's inherited completion statistics and moving directly to MAP02. This is provisional: a future Caelum intermission may report project-specific information such as elapsed time, exploration, objectives, casualties and resource use.
+
+Typography keeps the validated size and contrast from 4.28.0av, but all letter pairs use kerning `-2` instead of `-1`; `SpaceWidth` remains unchanged so word separation stays visibly greater than letter separation. The native main menu remains intact and its title uses the higher-resolution `CAMLOGO` through `hires/M_DOOM.png`, retaining the original 132×65 logical footprint so it cannot overlap the options.
+
+The central-room reverse wall face no longer occupies exactly the same rendering plane as its forward face. It is offset by 0.25 MU in X and Y, which is visually negligible but prevents coplanar depth rejection. Collision remains exclusively on the master panel and its blockers.
+
+MAP02 preserves its entire enclosure and reduces each population exactly by half: 250 Rulo, 250 Caella, 250 Ronnie, 250 Argento, 250 Bulls and 2,500 Giant Rats. The result contains 3,750 stress actors plus the player start.
+
+Manual validation:
+
+1. Confirm MAP01 Exit reaches MAP02 without showing Doom statistics.
+2. Check that letters are tighter while spaces between words remain clear.
+3. Inspect every central finite wall from both sides and confirm one collision surface.
+4. Verify the larger menu logo does not overlap selectable items.
+5. Wake all 3,750 MAP02 actors and record whether the engine freezes or remains responsive.
+
+## Native-menu recovery and legibility pass 4.28.0av
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The 4.28.0au `ListMenu "MainMenu"` declaration contained a logo but no selectable items. In MENUDEF, that declaration replaces the inherited menu definition rather than decorating it, so the game displayed only the logo and directional input produced sounds without a usable selection. The override has been removed. `M_DOOM` continues to provide the Caelum logo, while GZDoom supplies the complete native menu structure and actions.
+
+The bitmap families retain their fixed cell height and shared baseline. Ordinary serif and monospaced roles increase by one point and gain a dark one-pixel outline behind a bright translated foreground. Large/intermission roles decrease from 15 to 12 points to correct the oversized MAP01 completion presentation.
+
+Manual validation:
+
+1. Start the game and confirm that every main-menu entry is visible, selectable and functional.
+2. Check main, options, controls, video, audio and console screens for the Caelum family and adequate contrast.
+3. Verify HUD and dialogue text at the normal gameplay resolution.
+4. Finish MAP01 and confirm the intermission typography is smaller than in 4.28.0au.
+
+## Explicit menus, complete central pairs and 7,500-actor field 4.28.0au
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The main menu now has a project-owned `MENUDEF`: it draws the transparent `CAMLOGO` emblem and requests `CaelumText` directly. `FONTDEFS` explicitly rebinds `NewSmallFont`, `NewConsoleFont`, `SmallFont`, `ConsoleFont` and `BigFont`, covering the modern option menus as well as classic list menus. `GameInfo.CreditPage` points to `TITLEPIC`, so Doom II's inherited credit image no longer alternates with the project title screen.
+
+MAP01 activates the previously reserved sectors 93-95 for the south-central pair using control tags 510-512. It mirrors the validated north topology: one continuous exterior volume, two equal rooms, two independent exterior sliding doors and one door through the midpoint divider. Geometry near coordinate ±30,000 remains deliberately remote because it supplies the stacked-sector control planes used by GZDoom's 3D floors.
+
+MAP02 keeps exactly the same room, start chamber, dogleg and unique-position distribution from 4.28.0at. Only population counts change: 500 Rulo, 500 Caella, 500 Ronnie, 500 Argento, 500 Bulls and 5,000 Giant Rats. The 7,500 actors remain deaf/ambush until acquiring sight.
+
+Manual validation:
+
+1. Confirm the main menu shows `CAMLOGO`, never `M_DOOM`, and the title loop never shows Doom II credits.
+2. Open the main, settings, controls, video and audio menus and verify the Caelum typeface in every one.
+3. Inspect both central MAP01 pairs: equal floor areas, continuous exterior walls, two exterior entrances and one midpoint door per pair.
+4. Confirm the distant control geometry remains inaccessible during normal play and all first-floor surfaces remain present.
+5. Wake the 7,500 MAP02 combatants and record whether the engine remains responsive. No push/contact-island code changed in this revision.
+
+## Titanic isolated stress field and finite-wall reverse faces 4.28.0at
+
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The narrow first-floor section that was visible externally but transparent internally was the reverse side of a one-sided `WALLSPRITE`. Every finite wall panel now creates one synchronized visual reverse face. The reverse actor has no interaction and creates no collision blockers, so physical behavior remains owned solely by the original panel.
+
+Typography retains the shared-baseline cells introduced in 4.28.0as but increases each role moderately. Compact interface and monospaced families use bold faces, and all gameplay HUD labels request the engine's standard text shadow to remain readable against bright or detailed surfaces.
+
+MAP02 now contains one remote 16,384×16,384 MU enclosure with 15,000 mixed combatants: 1,000 each of Rulo, Caella, Ronnie, Argento and Bull, plus 10,000 Giant Rats. A two-turn corridor blocks every initial line of sight, and `ambush` prevents remote sounds from waking them. Initial positions are unique, reproducibly shuffled and spaced 96 MU apart.
+
+The earlier freeze has not been reproduced since remote awakening was isolated and NPC homing projectiles gained a ten-second lifetime. Infinite lost projectiles remain the leading causal candidate, but the two corrections were introduced together and therefore do not constitute a single-variable proof. An unbounded projectile population adds permanent thinkers whose seeking, movement and collision work executes every tic; a saturation freeze may leave no script error because the main loop is overloaded rather than throwing an exception.
+
+Manual validation:
+
+1. Inspect the corrected MAP01 wall from inside and outside; both faces must be opaque while collision remains single and finite.
+2. Review HUD, menus, character creation and console for baseline, size and contrast.
+3. Start MAP02 and remain in the initial chamber; no combatant may see, hear or attack the player.
+4. Traverse the dogleg and enter the single enclosure; verify all six populations are interspersed rather than stacked.
+5. Record frame rate, responsiveness, actor activation time and whether finite-lifetime projectiles disappear. With 15,000 active AI actors, severe slowdown may represent an engine capacity limit rather than the former unbounded-growth defect.
+
+## Corrected north-pair entrances and font metrics 4.28.0as
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The first 4.28.0ar room placement incorrectly aligned the midpoint divider with the only newly closed exterior gap. V4.28.0as closes that central opening as wall and restores both original 64-MU entrance positions. Each of the two equal rooms now has one exterior single-leaf sliding door, while the midpoint wall retains a third single-leaf door for internal communication.
+
+The original supplied glyph PNGs were tightly cropped to different heights. GZDoom draws Unicode glyph patches from a common top origin, so lowercase, capitals, accents and descenders did not share a baseline. Every family is now regenerated on fixed-height transparent cells with one baseline. The classic HUD/console family is reduced to 10 pixels, `CaelumMono` is requested explicitly by both project overlays, and the modern engine aliases are supplied for menus and the console.
+
+Manual validation:
+
+1. Confirm each north-central room has its own exterior sliding entrance.
+2. Confirm the central exterior face is solid and the midpoint divider does not intersect either entrance.
+3. Open and close both exterior doors and the internal door from both sides.
+4. Check that capitals, lowercase letters, accents and descenders share one baseline in HUD and character creation.
+5. Confirm the HUD fits around every bar and that menus and console visibly use the new family.
+
+## North-central room prototype and typography 4.28.0ar
+
+**Implemented — pending manual GZDoom 4.14.2 architectural/font validation**
+
+The 4.28.0aq interpretation of the central rooms is superseded. The north-central pair is now one continuous 336×336 MU exterior body. A finite wall at its exact midpoint divides it into two equal 168×336 MU rooms and contains one 64-MU single-leaf lateral door. There is no connector room or narrow passage between them. Only this pair is active; the mirrored south pair and lateral rooms remain neutral until the prototype passes manual validation.
+
+The supplied font package is merged into the main PK3. Standard GZDoom font names are replaced globally, while the named Caelum variants remain available for later role-specific ZScript and MENUDEF use. Coverage includes printable ASCII, Latin-1 and Spanish punctuation. The supplied guide is stored as `docs/TYPOGRAPHY.md`, and the DejaVu redistribution notice is included under `licenses/DejaVu-copyright.txt`.
+
+The complete MAP02 stress sequence passed: sound did not wake unopened rooms; Bulls crowded and collided; Caella, Argento, Rulo and Ronnie were introduced sequentially; Giant Rats were killed through impacts; and the surviving actors fought centrally without freezing. The 4.28.0aq containment is therefore validated. Contact-island physics remains a planned robustness improvement rather than the current reproduced cause of the freeze.
+
+Manual validation:
+
+1. Inspect the north-central pair from every exterior side: it must read as one large rectangular room volume.
+2. Confirm the interior consists of exactly two equal rooms separated by one wall and one sliding door, with no intermediate passage.
+3. Check floor, ceiling and outer walls from both floors and verify the stair landing remains clear.
+4. Review main menu, character creation, HUD, inventory, console and debug overlay at 640×360 and 320×200 for missing accented glyphs or unreadable sizes.
+5. After approval, reflect this exact room topology into the south-central pair.
+
+## Central rooms, authored music and bounded MAP02 projectiles 4.28.0aq
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor rooms in MAP01 again target the existing native 3D-floor controls: the two 64×64 links use floor/roof tag 510, their walls use tag 511 and their door/threshold regions use tag 512. This repairs the reported holes, irregular floor and absent walls without placing actor panels over the stair landing.
+
+The title screen and MAP01 use `CA_MUS01`; MAP02 uses `CA_MUS02`. The embedded files identify the work as `The Argentine Omen` and the artist as `marjaja197` (metadata also notes creation with Suno).
+
+The latest freeze sequence exposed two test-contamination risks. Because all MAP02 populations share a connected sound region, one pistol shot could alert actors outside the room being tested. Every test actor is now marked ambush/deaf and therefore ignores remote sound until it sees the player. NPC homing elemental projectiles also had an unbounded one-tic `Spawn` loop; each now self-destructs after 350 tics (ten seconds) if it has not impacted first. This patch does not yet replace the one-reference contact latch with contact islands.
+
+Manual validation:
+
+1. Inspect all four central MAP01 rooms from above and below: continuous floor, regular roof, complete walls and a clear stair landing.
+2. Confirm `01` plays on the title screen and MAP01, while `02` plays on MAP02.
+3. Fire inside one MAP02 room and confirm actors in unopened rooms remain asleep.
+4. Wake Caella, Argento, Rulo and Ronnie populations individually and verify lost projectiles disappear within ten seconds.
+5. Repeat the previous multi-group sequence; if it still freezes, record which populations are simultaneously visible/contacting so the contact-island implementation can be scoped.
+
+## Rat room restoration, title screen and freeze diagnosis 4.28.0ap
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now has a seventh isolated room containing twenty Giant Rats. Its dedicated zigzag corridor blocks every initial sight line, as do the six previous rooms. Total population is 140 test actors: twenty each of Training Dummy, Rulo, Argento, Caella, Ronnie, Bull and Giant Rat, plus one player start.
+
+The author-supplied 1920×1080 presentation image is registered explicitly as `TITLEPIC` through MAPINFO and stored in the graphics namespace.
+
+The inventory is no longer a supported freeze hypothesis because the failure reproduced without opening it. Actor count alone is also insufficient: ranged NPC crowds and the initial Bull pile remained responsive. The strongest code-level hypothesis is the single-reference contact latch. Every body stores only one `ImpactContactActor`; in a dense moving pile, new contacts overwrite older references. Once both members of an older pair point elsewhere, that still-touching pair is treated as new and allocates two `ImpactBody` objects plus one `ImpactResult`, resolves another impulse and may overwrite more links. Bull pursuit, charge mass and a narrow corridor continuously rearrange neighbors, creating a feedback loop capable of producing allocation and impulse churn.
+
+No physics change is included in 4.28.0ap. The next physics correction should replace the one-contact pointer with bounded multi-contact or island state, retain separation-based rearming and avoid per-contact heap allocation during collision callbacks.
+
+Manual validation:
+
+1. Confirm the new title screen appears before starting a game.
+2. Enter only the Giant Rat room and repeat the prior twenty-rat tests.
+3. Reproduce the Bull sequence: enter, allow crowding, leave, then approach the corridor again.
+4. Do not mix groups during the reproduction; record whether the freeze occurs while Bulls contact one another, a wall or the player.
+5. Confirm the other six rooms remain initially unaware of the player.
+
+## Compartmentalized large-scale MAP02 4.28.0ao
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The unapplied 4.28.0an package is superseded. Sewer source assets now follow the Windows-safe project order `src/graphics/caelum/textures/sewer`; the patch does not create a directory beside the root `TEXTURES` file.
+
+MAP02 is now a large connected field with a central empty start and six distant rooms connected through two-turn corridors. It contains no Giant Rats. Each room contains twenty instances of exactly one test type: Training Dummy, Rulo, Argento, Caella, Ronnie or Bull. All 120 test actors begin behind native sight-blocking walls and have no direct line of sight to the player start.
+
+MAP01.wad remains byte-identical to 4.28.0al/4.28.0am. MAPINFO assigns MAP02 as its next map so the existing normal Exit advances to the separate actor field.
+
+The loose `CAF*` and `STF*` graphics are native status-face lumps selected by name. Files in the graphics namespace do not become inventory actors, and no face file is referenced by the equipment catalogue. The reported appearance of faces as equipable items therefore remains open for reproduction and must not be treated as a folder-placement fix.
+
+Manual validation:
+
+1. Start MAP02 and remain in the central chamber; confirm no actor attacks or acquires the player immediately.
+2. Enter one room at a time and verify its population remains isolated from the other five groups.
+3. Stress-test twenty actors of one type before opening a second room or using area effects.
+4. Confirm there are no Giant Rats anywhere in MAP02.
+5. Test MAP01's existing Exit and confirm it changes to MAP02.
+6. If a face appears as equipment, record its inventory category, displayed name and icon before changing face assets.
+
+## Separate architecture and actor maps 4.28.0am
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 is now the architecture-only mansion test and remains byte-identical to its stable 4.28.0al state. MAP02 is a new independent actor arena built from one flat sector, four ordinary outer boundaries and no mansion or actor-based architecture.
+
+MAP02 contains one player start, four Training Dummies, the four elemental NPCs, one Bull and twenty active Giant Rats. The groups begin separated so AI acquisition, collisions, inventory behavior, Seal effects and mass attacks can be observed without 3D-floor or sliding-door interactions.
+
+Manual validation:
+
+1. Load MAP01 and confirm its architecture-only stability remains unchanged.
+2. Enter `map map02` in the console and remain stationary while the active actors acquire targets.
+3. Test `noclip`, inventory, rat contacts, the Bull and area attacks independently.
+4. Do not recombine actors with MAP01 until both maps remain stable separately.
+
+## Actor-free architecture diagnostic 4.28.0al
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The freeze also occurred while native `noclip` was active, so physical contact is no longer the primary hypothesis. MAP01 temporarily contains no monster, NPC or Training Dummy. The twenty Giant Rats, Bull, Rulo, Argento, Caella, Ronnie and four dummies are absent. The barred enclosures introduced only for 4.28.0ak are also removed.
+
+The current first-floor room pair, ground-floor ceiling slabs, stairs, landing, doors, pickups and crafting infrastructure remain unchanged. This isolates the map architecture and non-combat world actors without modifying Impact Physics or gameplay code.
+
+Manual validation:
+
+1. Remain at the player start for several minutes.
+2. Traverse the ground floor, stairs, landing and both implemented upper rooms with and without `noclip`.
+3. Open the inventory in several areas.
+4. If the freeze remains, remove the current upper-room pair for a direct architectural comparison.
+
+## Isolated collision test enclosures 4.28.0ak
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The Bull previously stood inside the approximately twenty-rat group and could push many bodies simultaneously, preventing a clean distinction between player/rat crowd contacts and Bull-driven displacement. MAP01 now has two closed, non-adjacent barred enclosures. All twenty normal active Giant Rats remain together in the western enclosure; the Bull is centered in a separate eastern enclosure. The bars block players and monsters while preserving visibility.
+
+No collision formula or latch behavior changes in this diagnostic patch. The observed `noclip` result points to physical contact, but remains provisional until the two groups are tested independently.
+
+Manual validation:
+
+1. Remain outside both enclosures and confirm the Bull cannot touch or push any rat.
+2. Enter only the rat enclosure with `noclip`, disable it inside and test the complete crowd without Bull interference.
+3. Enter the Bull enclosure separately and test one Bull/player collision.
+4. Confirm both barred contours remain closed and neither actor group escapes.
+
+## Bilateral multi-contact latch for actor crowds 4.28.0aj
+
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The stationary-rat test still froze after physical contact, disproving both AI load and ordinary actor count as the root cause. Impact Physics stored only one `ImpactContactActor` on each body. When a player contacted several rats, the player's pointer moved to the newest rat while earlier rats still pointed to the player. The player-side test then treated those older pairs as new every tic and repeatedly allocated `ImpactBody`, `ImpactBody` and `ImpactResult` objects.
+
+Player and combat actors now treat a pair as latched when either side still references the other. This preserves the existing separation/rearm rule while preventing repeated allocation and impulse delivery for simultaneous crowd contacts. The twenty MAP01 actors are restored to the normal pursuing `CaelumGiantRat`; the diagnostic stationary subclass and DoomEdNum 18030 are removed.
+
+Manual validation:
+
+1. Remain near the complete active rat group for at least two minutes.
+2. Let the group surround and physically push against the player.
+3. Walk through the group repeatedly and open inventory while surrounded.
+4. Confirm each rat still pursues and bites for base damage 60.
+5. Confirm a separated rat can collide again after the established contact-rearm interval.
+
+## Stable twenty-target Giant Rat area test 4.28.0ai
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The freeze is confirmed to occur without opening inventory when the complete rat group enters its simultaneous `A_Look`/`A_Chase` range. MAP01 now uses `CaelumGiantRatAreaTest` for its twenty-target cluster. This subclass retains the Giant Rat body, mass 10, combat profile, quadruped anatomy, elemental statuses, Pain and Death, but deliberately has no target acquisition, chase or melee state.
+
+The normal `CaelumGiantRat` remains available as the actual enemy with chase and base bite damage 60. The stationary test subclass exists only to make Fire, Earth, Air, Water, Quintessence and other mass attacks reproducible without mixing the measurement with twenty concurrent AI routes.
+
+Manual validation:
+
+1. Approach and circle the complete group without a freeze.
+2. Open inventory beside the group.
+3. Apply each Seal effect and confirm all authorized targets respond.
+4. Confirm Pain and Death function and Quintaesencia still uses each rat's mass 10.
+5. Spawn a normal `CaelumGiantRat` separately and confirm it still chases and bites for base 60.
+
+## Ground-floor ceiling restoration and Giant Rat crowd fix 4.28.0ah
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Native 3D-floor slabs again cover the eight actual room footprints, restoring the ground-floor ceilings and reserving the future first-floor walking surfaces. The two obsolete 64×64 central connectors remain untagged, so no slab or collision crosses the central corridor. Upper walls and doors remain limited to the manually accepted western pair from 4.28.0ag.
+
+Opening the custom inventory does not enumerate nearby actors, but it immobilizes the player while the simulation continues. The approximately twenty test rats could therefore converge into one same-species collision pile. Giant Rats now use `THRUSPECIES`: they continue colliding with and attacking the player while passing through other Giant Rats. Mass, bite damage, targeting and elemental-area eligibility are unchanged.
+
+Manual validation:
+
+1. Inspect every ground-floor room ceiling and confirm its footprint matches the room above it.
+2. Cross beneath the central corridor; confirm both former 64×64 connector slabs are absent.
+3. Approach the full rat group and open/close inventory repeatedly while they converge.
+4. Confirm rats still attack and collide with the player but no longer block one another.
+
+## Incremental first-floor rebuild: pair 1 4.28.0ag
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The complete actor-surface first floor from 4.28.0ae is rejected after a runtime freeze while the player crossed beneath its central elevated span. All upper finite floor, roof and wall panels are removed. Native 3D-floor controls now target only the two western rooms, one per wing; every other former upper polygon is assigned to an untagged neutral sector and therefore creates no upper volume.
+
+Only four upper sliding leaves remain: the two exterior doors of the western north/south pair. The central corridor contains no upper actor bridge or blocker grid. Ground-floor geometry, doors, lintel, Seal systems and the approximately twenty Giant Rats are unchanged.
+
+Manual validation:
+
+1. Cross the entire central corridor and the stair landing repeatedly without a freeze or pause.
+2. Inspect both western upper rooms from below, inside and above.
+3. Confirm each room has a continuous floor and correctly oriented roof.
+4. Open both double doors from each side and confirm both leaves slide laterally.
+5. Confirm no wall, collision or invisible floor belonging to the other six rooms remains.
+
+## GZDoom 4.14.2 elemental-visual compatibility 4.28.0af
+
+**Implemented — pending parser and manual gameplay validation**
+
+The elemental-status visual helper now receives a typed `class<Actor>` and calls the native static factory as `Actor.Spawn`. This replaces the object-scope call that GZDoom 4.14.2 rejected at `CaelumElementalStatus.zs:192`. No elemental damage, duration, target filtering or balance value changes in this compatibility patch.
+
+Manual validation:
+
+1. Confirm the PK3 parses and MAP01 starts in GZDoom 4.14.2.
+2. Apply burn, poison, freeze and lightning and confirm the attached effects follow their owner and disappear with the status.
+3. Confirm horizontal lightning projectiles and vertical Water-channel strikes retain their correct orientation.
+
+## Seal Channel, Giant Rat tests and first-floor rebuild 4.28.0ae
+
+**Implemented — parser correction supplied in 4.28.0af; manual GZDoom 4.14.2 validation pending**
+
+User2 now starts the area effect defined by the equipped Seal and a second press interrupts it. Channeling spends exactly 3/6/9 Adrenaline each 35-Hz tic for T1/T2/T3, cannot begin without the first tic's cost, and starts a 60-second cooldown whenever it ends. Pain, death, losing/changing the Seal or reaching insufficient Adrenaline also ends it.
+
+The player is stationary and cannot attack, Block, Aim, Reload, charge, cast, use consumables, Tarot, racial or class abilities while channeling. Fire, Earth, Air, Water and Quintessence have their authored non-weather effects. The area selector accepts living combatants of every allegiance, neutral NPCs, corpses and missiles; it does not accept inventory, pickups, stations, doors or map architecture.
+
+Manual validation:
+
+1. Equip each Seal tier and confirm exact consumption of 105/210/315 Adrenaline over one second.
+2. Confirm User2 starts/stops the effect and every termination path starts a 60-second cooldown.
+3. Confirm movement, attacks, Reload/charge, Zoom/Block, AltFire, User1, User3, User4, Use and consumables are suppressed.
+4. Confirm Pain, death, zero Adrenaline, unequipping or changing the Seal interrupts immediately.
+5. Test each elemental effect against enemies, allies, neutral NPCs, corpses and projectiles; verify pickups, doors and stations remain untouched.
+6. For Water, place 1/2/4 actors inside the impact area and confirm the modified 10,000 pool is divided once across them.
+7. For Quintaesencia, compare actors of different mass and verify release follows `10 × total trapped mass / individual mass`.
+
+Climate modifiers by Seal tier are intentionally pending the Version 5 calendar/weather module.
+
+The Seal HUD identifies the equipped element/tier, active channel and remaining cooldown. The development Adrenaline control adds 100 Adrenaline and removes 10 seconds from the Seal cooldown. MAP01 contains approximately twenty Giant Rats for mass-area testing; each rat uses quadruped anatomy, mass 10, approximately 40 cm height, all twelve attributes at 1 and base bite damage 60.
+
+The first floor is an experimental full-wing rebuild with four similarly sized rooms per wing, one internal connection per adjacent pair and a clear stair-landing corridor. Original 3D-floor room-floor/roof controls were restored, finite bridge surfaces remain only where a real span is required, and door leaves choose their lateral axis from doorway orientation. Manual validation of floor continuity, roof orientation, lateral door travel and landing clearance remains mandatory.
+
+## Stair-back closures, contextual Block dash and Giant Gauntlets AltFire 4.27.0g
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The two north and two south gaps behind the intermediate staircase pairs are each closed by an independent conventional sector. Every strip is eight map units deep, has a 136-MU walkable floor and is aligned with the established room-back plane at `y=±640`; no free-standing middle texture or self-referencing sector is used. The four arena perimeter walls now display the large weathered cobblestone atlas crop `CMWV01`.
+
+Mansion PNGs now live under `graphics/caelum/textures/mansion`. This avoids the case-insensitive Windows collision between the root `TEXTURES` lump file and a sibling `textures` directory while retaining engine-visible eight-character resource names.
+
+The jewelry failure was a presentation-state reset: crafting instantiated `CaelumSealPickup` or `CaelumAmuletPickup`, but opening the equipment menu immediately replaced the selection with Armor/head. The menu now synchronizes armor fields only when Armor is the selected family, so a newly crafted Seal or Amulet remains visible and selectable.
+
+Giant Gauntlets AltFire uses the same catalogue damage, reach and Air cost as Fire. A successful damaging uppercut applies the normal horizontal physical push and adds that calculated push force to vertical velocity; it therefore continues to respect the attacker's push multiplier and the target's effective mass instead of introducing an unrelated launch constant.
+
+When Zoom begins a valid shield Block while the next attack is charged, horizontal velocity is set forward to 150% of the character's live maximum run speed. Attribute and elemental movement multipliers are read at activation; Pain/immobilization prevents the dash. The charged state is not consumed, because it remains attached to the next attack.
+
+Manual validation:
+
+1. Inspect and cross all four intermediate stair-back strips from ground, stair and roof level; confirm no side or upper plane escapes.
+2. Confirm all four outer perimeter walls use the large cobblestone and room interiors retain their current material.
+3. Craft a Seal and an Amulet separately, reopen equipment and verify the proper family/icon instead of Armor/head.
+4. Compare Giant Gauntlets Fire/AltFire range, Air and damage, then confirm only AltFire launches a living target upward.
+5. Charge a compatible melee or magic weapon, press Zoom with a shield equipped and confirm Block plus one forward 150%-maximum-speed impulse; confirm the next attack still consumes the charge.
+
+MAP01 structure: 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## Charge HUD, jewelry selection, rear-wall faces and mansion textures 4.27.0f
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The combat HUD now displays `Charging: N.Ns` during the speed-scaled preparation and `Charged/Potenciador: N.Ns` during the three-second empowered window. The value reads the authoritative state timer rather than estimating it from animation frames.
+
+Amulet and Seal crafting already spawned the correct native subclasses. The apparent helmet result came from the equipment menu always reopening on its default armor/head selection. Successful jewelry crafting now selects the created kind, type and tier before refreshing the inventory preview.
+
+The two rear structural strips retain their closed 8-MU geometry and lower `STARTAN3` faces. Their new closure sidedefs no longer carry middle textures, removing the duplicate patches rendered above the intended wall height.
+
+The author-supplied 1536×1024 mansion atlas was separated into 81 engine-ready PNG resources, subsequently relocated in 4.27.0g to `graphics/caelum/textures/mansion` for Windows compatibility. Every filename is an eight-character map-texture identifier.
+
+Manual validation:
+
+1. Inspect both restored rear walls from ground and roof level; confirm no wall patch floats above them.
+2. Charge a melee and magical weapon while stationary and moving; confirm the countdown follows actual progress.
+3. Let the charge complete and confirm the potentiator countdown begins at three seconds and disappears on attack, Pain, switch or expiry.
+4. Craft one amulet and one seal; open inventory and confirm each created item is selected instead of a helmet.
+5. Inspect the `CMEX`, `CMIN`, `CMST`, `CMWD`, `CMRF`, `CMGR`, `CMPW`, `CMPF` and `CMWA` families in SLADE or the map editor before assigning them to production geometry.
+
+## Static charged-projectile classes 4.27.0e
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+GZDoom 4.14.2 does not expose Actor `SetSize` to ZScript. Charged standard, homing and explosive magical projectiles therefore use dedicated subclasses with `Radius`, `Height` and `Scale` fixed in each `Default` block. Attack routing selects the corresponding charged class before spawning it, retaining all parent homing, elemental, damage, durability and explosion behavior without runtime geometry mutation.
+
+## GZDoom 4.14.2 charged-projectile compatibility 4.27.0d
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+The charged magical projectile now changes collision dimensions through Actor `SetSize` and replaces the complete visual `Scale` vector. ZScript does not permit direct compound assignment to the exposed `Radius`, `Height`, `Scale.X` or `Scale.Y` values. This revision fixes the parser error at `CaelumPlayer.zs:9057` without changing the intended `sqrt(2)` linear multiplier or any 4.27.0c gameplay value.
+
+## Rear-wall restoration and contextual charged Reload 4.27.0c
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 remains on the V4.26.5r pre-gate baseline. This patch adds only two closed, 8-MU-deep structural strips beside the rear-room door so the missing wall faces return on the stair and room sides. The four training dummies are moved laterally to `y=-900`. No main gate, connector corridor or terrace partition has been restored.
+
+Reload is now contextual. Ranged weapons retain their existing magazine reload. Melee and essence weapons begin a 2-second base charge multiplied by the current physical attack-duration or casting-duration multiplier. Moving during either reload or charge applies a 50% movement multiplier and a 50% progress multiplier. On completion, the charged state lasts 3 seconds.
+
+The next valid charged attack consumes 200% Air or Anima and inflicts 200% damage. Magical projectile collision/visual dimensions and explosion radius use a `sqrt(2)` linear multiplier, which doubles planar area. Pain, charge expiry and weapon switching remove the state. Fire/AltFire cancel an active shield Block before attacking. Empty ranged Fire automatically requests Reload if compatible inventory ammunition remains.
+
+Manual validation:
+
+1. Inspect both sides of the restored rear-room wall strips and cross the room roof without obstruction.
+2. Confirm all four training dummies stand on the lateral line and no main entrance gate exists.
+3. Time melee and magical charge at baseline attributes, then compare high physical attack speed and high casting speed.
+4. Move during ranged Reload and both charge types; confirm movement and progress are each halved only while directional input is present.
+5. Confirm Pain, weapon switching and the 3-second timeout remove the charge.
+6. Compare normal/charged Air or Anima cost, damage, projectile size and statuette explosion radius.
+7. Activate Block, press Fire and confirm Block drops while the attack continues.
+8. Empty a ranged magazine while retaining reserve ammunition and confirm Fire begins Reload automatically.
+
+MAP01 structure: 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+
+## MAP01 rollback to the pre-gate baseline 4.27.0b
+
+**Implemented — pending confirmation that the crash is gone in GZDoom 4.14.2**
+
+The supplied crash report shows that GZDoom completed actor parsing, initialized MAP01 and entered gameplay before raising access violation `C0000005`. The recorded position (`x=-14.09`, `y=536.57`) lies inside the new western/northern terrace connector introduced after the stable staircase layout. This is treated as an engine-level failure triggered by the experimental map geometry rather than a ZScript compile error.
+
+MAP01 is therefore restored byte-for-byte from V4.26.5r. It contains no main corridor gate, no rear terrace connector fill and no internal terrace-partition doors. The rollback also removes every map experiment from V4.26.5s through V4.27.0a instead of attempting another local repair. Construction will resume incrementally from the aligned-room/stair baseline.
+
+Restored structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references and closed degree-2 boundaries for all 69 non-exterior sectors.
+
+V4.27 input work is not rolled back. The user has manually confirmed that held Zoom behaves correctly with a magic weapon and shield. Ranged-only Reload and User1–User4 reservation routing remain pending broader manual validation.
+
+Manual validation:
+
+1. Start MAP01 and revisit the former crash coordinates around the first north connector/stair pair.
+2. Confirm there is no main entrance gate or associated frame near the Player Start.
+3. Confirm the later terrace fills, internal divider doors and lateral black strips are absent.
+4. Verify the original eight room doors, silver-key NPC room and three aligned staircase pairs still work.
+5. Retest ranged Reload and the four User bindings separately from map construction.
+
+## Native input contract and conventional terrace partitions 4.27.0a
+
+**Superseded for MAP01 by 4.27.0b; input changes remain active**
+
+V4.27 has begun without assigning unauthored ability effects. Every physical, ranged and magic selector now exposes the complete native input contract: User1 reaches the racial-ability service hook, User2 reaches Seal Channel, User3 reaches the equipped-Tarot hook and User4 reaches the class-ability hook. Reload exclusively requests a magazine reload for ranged weapons. The four abilities remain reservation interfaces until their authored content patches; the control menu now names all four bindings in English and Spanish.
+
+Magic weapons now share the same release latch used by physical/ranged contextual Zoom. Holding Zoom therefore produces only one Block toggle until the key is released. Ranged Zoom/ADS and its physical accuracy multiplier are unchanged.
+
+The failed 4.26.5w internal-wall technique has been removed completely. Each of the four terrace connectors is now a set of seven ordinary sectors: west/east floor spaces at height 0, wall spans at 136, jambs and moving panel at 128. No self-referencing middle texture participates in the room division. This preserves three connected rooms per north/south row while preventing a wall face or 3D-floor plane from escaping laterally. The main western entrance similarly uses two continuous closed jamb polygons rather than a jamb/extension seam.
+
+Updated MAP01 structure: 252 vertices, 350 linedefs, 692 sidedefs, 103 sectors and 186 things. Static validation confirms 102 closed non-exterior sector contours, valid references, no duplicated/overlapping segment and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both terrace rows from below and above; confirm the left roof is complete and no black or textured strip escapes laterally.
+2. Inspect the four internal doors from both rooms, including their floor edges and all jamb faces.
+3. Cycle every internal panel at least four times from both sides and cross above every partition on the terrace.
+4. Inspect and cycle the western entrance from both directions; confirm both jambs are complete and opaque.
+5. Bind User1–User4 through Customize Controls and confirm each weapon family accepts the proper native state without attacking or reloading unexpectedly.
+6. Hold Zoom with a shield-compatible magic weapon and confirm Block toggles only once until release.
+7. Confirm Reload affects ranged magazines only and User2 does not consume Anima yet.
+
+## Three-room terrace divisions and sealed entrance frame 4.26.5w
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The two roofed areas behind the intermediate staircases are no longer continuous hall-like spaces. Each north/south row is divided at the centers of its two connector modules, producing three similarly sized rooms connected in sequence. Every new partition contains a centered 128-MU retracting panel with bilateral repeatable USE. The remaining partition spans are self-referencing finite 3D middle walls from floor 0 to the underside of the 128-MU roof, so they close sight and movement at room level without creating another ceiling/control strip or obstructing terrace traversal above.
+
+The western corridor gate retains its established position and dimensions. Its two outer frame extensions now use floor 128 and roof-control ID 100 like the adjacent jambs. This makes the complete jamb/extension assembly opaque and finite while preserving the open roof route above the panel.
+
+Updated structure: 256 vertices, 340 linedefs, 672 sidedefs, 93 sectors and 186 things. Static validation confirms valid references, 26 platform-door activators, 53 roof targets, closed boundaries for every conventional sector, no duplicate or overlapping segments, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Enter each north/south terrace interior and confirm it is now a sequence of three rooms rather than one large hall.
+2. Cycle all four new internal doors repeatedly from both sides and confirm they block sight while closed.
+3. Inspect every partition from floor level and then cross the uninterrupted terrace above it.
+4. View the western entrance frame obliquely from both sides and confirm there are no transparent triangles, black extensions or infinite faces.
+5. Confirm the central corridor remains uncovered and all six staircase routes still reach the terrace.
+
+## Closed terrace topology and opaque entrance frame 4.26.5v
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The screenshot from 4.26.5u exposed a topology leak rather than an intentionally authored corridor: the two 136-MU rear structural-wall strips each inherited one extra jamb edge, leaving an open contour. Their floor surface could consequently extend as a long black strip toward the spawn and make the left/right terrace fill appear asymmetric. Those connections now return to the correct low stair sectors; wall strips, stairs, connectors, rooms and gate components all form independent closed polygons.
+
+The western entrance retains the same location and 128-MU panel. Its frame is now structurally identical to the room pattern: 16-MU north/south jamb sectors at floor 128, followed by separate 16-MU wall-extension sectors at floor 136 to reach y=±96. Every exposed edge carries a finite lower face, removing the transparent section without enlarging the door or covering the corridor.
+
+Updated structure: 208 vertices, 284 linedefs, 560 sidedefs, 81 sectors and 186 things. Static validation confirms all 80 non-exterior sectors have closed degree-2 boundaries, plus no collinear overlap or non-vertex crossing.
+
+Manual validation:
+
+1. Return to the screenshot viewpoint and confirm no black roof strip extends toward the Player Start.
+2. Compare the northern/southern and western/eastern terrace connectors for symmetric fill and roof continuity.
+3. Inspect all four faces of both entrance jambs and wall extensions for transparency.
+4. Cycle the entrance panel repeatedly from both sides and confirm the corrected frame remains finite.
+
+## Integrated corridor entrance and continuous rear terrace 4.26.5u
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The standalone gate at x≈-1556 is removed completely. Its mechanism now occupies the actual western entrance between the nearest north/south rooms: west threshold x=-593, east threshold x=-569, panel width 128 MU and solid frame spanning the remaining corridor width to y=±96. No separate gate sector remains near the Player Start.
+
+Four new connector sectors fill only the areas behind the first two north/south staircase pairs. Northern connectors cover y=272…640; southern connectors cover y=-640…-272. Their 128–136 MU solid roof target joins the neighboring room roofs into one terrace. Existing room-side linedefs are split and shared with the connector sectors, while the 136-MU final steps provide their front boundary. The central y=-272…272 corridor/stair zone remains open to the sky.
+
+Updated structure: 204 vertices, 278 linedefs, 548 sidedefs, 79 sectors and 186 things. Static validation confirms deterministic regeneration, 18 platform-door activators, 39 roof-target sectors, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Confirm there is no gate, jamb, roof strip or collision remnant near the Player Start.
+2. Approach the western room pair and verify a single framed trap door closes the real corridor entrance.
+3. Complete at least four opening cycles from both sides and inspect the frame obliquely.
+4. Climb the first two northern and southern stair pairs and cross their final steps onto the new connector roofs.
+5. Walk the joined terrace across all six paired rooms and confirm no 1-MU holes remain behind the stairs.
+6. Look upward throughout the central corridor and confirm it remains completely unroofed.
+
+## Structural rear walls, compact entry gate and debug creation 4.26.5t
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The rear staircases no longer own wall middle textures. Two 8-MU structural strips now belong to the rear room itself. Their conventional floor is 136 MU, producing visible lower wall faces from the room floor and from every adjacent tread while aligning their walkable top with the roof. This restores the interior wall and prevents stair textures from projecting above the building.
+
+The entry trap gate moves from x=-1496…-1472 to x=-1568…-1544. Its west face is 32 MU ahead of the Player Start and its total depth remains 24 MU; panel, jambs, roof target and bilateral activation are unchanged. The four training dummies retain x=-1216/-704/320/1344 but move together to y=-900, clearing the central corridor.
+
+Character creation now exposes `Depuración` / `Debug` as a fifth option on the race page. Confirming it jumps directly to the summary. The resulting profile overrides all twelve post-equipment primary attributes to exactly 30 and forces mass tier 6 / size tier 4: 100 kg base body mass and 1.8 m body height. A second confirmation completes creation and initializes resources normally. Carried equipment weight remains additional to the documented 100-kg body mass.
+
+Updated MAP01 structure: 198 vertices, 258 linedefs, 508 sidedefs, 75 sectors and 186 things. Static validation confirms deterministic regeneration, no scaled stair middle textures, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both faces of the rear-room walls from inside, from every tread and from the roof.
+2. Confirm the stairs themselves have no wall texture and their final steps transition onto the wall/roof top.
+3. Spawn facing east and verify the compact gate is immediately ahead without overlapping the player; complete four bilateral cycles.
+4. Confirm all four dummies form a usable row south of the buildings and no longer obstruct the corridor.
+5. Select `Depuración`, confirm twice, and verify twelve attributes at 30, 1.8 m height and 100 kg base mass.
+
+## Visible stepped rear walls and corridor trap door 4.26.5s
+
+**Implemented — pending manual visual/activation validation in GZDoom 4.14.2**
+
+The ten rear-room wall sections beside treads below roof level now use individually scaled `STARTAN3` 3D middle textures. Each section begins at its adjacent stair floor and ends at the 128-MU roof underside; it therefore closes the room above the tread without becoming invisible below it or projecting through the roof. The two boundaries adjacent to the 136-MU final steps remain open for traversal.
+
+A standalone trap-door gate now crosses the beginning of the test corridor at x=-1496…-1472, 104 MU ahead of the Player Start at x=-1600. It combines a 128-MU-wide retracting panel, two 16-MU solid jambs, bilateral repeatable special 62 activation and the same finite 128–136 MU roof target as the room template. It is unlocked and independent of the silver-key NPC door.
+
+Updated structure: 194 vertices, 252 linedefs, 496 sidedefs, 73 sectors and 186 things. Static validation confirms 18 platform-door activators, 35 roof-target sectors, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Climb both rear staircases and confirm every wall is visible above its tread and terminates at the roof underside.
+2. Cross from both 136-MU final steps onto the roof without invisible collision.
+3. Open the new corridor door from the Player Start side, cross it, wait for closure and reopen it from the opposite side for at least four cycles.
+4. Inspect its jambs obliquely and confirm the panel and frame do not extend above the roof slab.
+
+## Aligned staircase modules and restored rear walls 4.26.5r
+
+**Implemented — pending manual visual/collision validation in GZDoom 4.14.2**
+
+The three complete north/south staircase pairs now share one exact module: 119 MU width, 665 MU start-to-start horizontal spacing, low corridor boundary at y=±80 and high roof boundary at y=±272. No flight protrudes farther into the central passage than another.
+
+The western rooms move 71 MU east and the eastern rooms move one additional MU east, with all contained pickups translated identically. Conventional modules retain a 1-MU anti-overlap clearance. The rear room moves one additional MU east and is centered on y=0; its y=±272 corners coincide with the two high steps.
+
+All six boundaries between the rear room and its stairs again carry `STARTAN3` lower faces. These close the room only across the local floor-height difference and stop at each corresponding step height, replacing both the missing walls from 4.26.5q and the projecting 128-MU middle textures from 4.26.5o.
+
+MAP01 remains at 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Walk the central corridor and confirm all six first steps begin on the same north/south line.
+2. Compare all three staircase widths and verify none projects into the passage.
+3. Climb both rear flights and confirm the final steps meet the room corners and roof without a gap or obstruction.
+4. Look into the rear room from every step and confirm its side walls are restored without rising above the current tread.
+5. Verify pickups in the western and eastern rooms retained their internal arrangements.
+
+## Complete NPC attributes and uniform corridor stairs 4.26.5q
+
+**Implemented — pending manual gameplay validation in GZDoom 4.14.2**
+
+`CaelumCombatActor` now stores Constitution, Charisma, Empathy and Eloquence alongside its previous eight attributes, completing the same twelve-field primary model used by `CaelumAttributes`. It also stores current and maximum Anima. Maximum Anima uses the player rule `HEALTH_ANIMA_DAMAGE_SCALE × Type1(Patience)` and every predefined NPC initializes at maximum.
+
+The resulting equipped test values are: Rulo 1060 Anima (Patience 3), Ronnie 1280 (Patience 7), Argento 2710 (Patience 18), and Caella 3760 (effective Patience 23). Caella's tier-1 magic helmet raises effective Intelligence by five but does not directly alter Anima; her separate magic-glove +5 Patience bonus is what increases the reserve. NPC statistics now recalculate after armor initialization, matching the player's equipment order.
+
+MAP01 now contains three complete mirrored staircase pairs in the intermediate vertical corridors. Their centers are separated by approximately 664 MU on the integer map grid. The eastern north/south rooms and rear room move 24 MU east; pickups inside the eastern rooms move with them. All six shared rear-stair boundaries are textureless two-sided partitions, eliminating the protruding wall along the full climb.
+
+Updated structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, no collinear overlap, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Climb every north and south staircase and confirm all six steps are free of projecting wall strips.
+2. Cross onto the roofs from each staircase pair and check the 1-MU safety clearances beside conventional room walls.
+3. Confirm eastern-room pickups retained their relative positions after the 24-MU move.
+4. Inspect Rulo, Ronnie, Argento and Caella diagnostics for all twelve attributes and full Anima.
+
+## Clear roof landings and NPC-archetype audit 4.26.5p
+
+**Map fix implemented — pending manual collision validation in GZDoom 4.14.2**
+
+The two boundaries shared by the rear room and the 136-MU top stair sectors remain valid two-sided partitions but no longer render or collide as finite wall faces. Both lateral routes can now reach the roof; the five lower boundaries on each staircase retain their closed wall faces.
+
+The definitive **`habitación con puerta trampa`** configuration is the complete 4.26.5p form: finite 128-MU room walls, solid walkable 128–136 MU roof, independent retracting floor panel, bilateral repeatable USE, solid jamb pillars that block lateral sight, and an unobstructed upper traversal plane. The keyed NPC room is the locked variant of the same template.
+
+The 4.26.5p audit identified `CaelumCombatActor` as a combat-capable subset rather than a complete general NPC archetype. Constitution, Charisma, Empathy, Eloquence and Anima were its five missing fields; 4.26.5q implements them. Survival-only Hunger, Thirst, Sleep, Carry Load and Air remain intentionally player-only.
+
+No missing attribute values are assigned in this patch: Rulo, Ronnie, Argento and Caella retain their existing balance exactly.
+
+Manual validation:
+
+1. Climb both rear stairs and walk onto the roof without catching on a narrow wall fragment.
+2. Confirm the lower outer sides of both staircases remain closed.
+3. Recheck the rear door, jamb sight blocking and roof traversal after the boundary change.
+
+## Solid door frames, flush stairs and mounted exit 4.26.5o
+
+**Implemented — pending manual visibility and collision validation in GZDoom 4.14.2**
+
+The invisible 16×24-MU jamb partitions from 4.26.5n left a lateral sight slit beside each closed floor panel. Their sectors now begin at floor height 128 MU and carry finite `STARTAN3` lower textures on every exposed boundary. Each doorway therefore has a real two-pillar frame whose closed volume blocks sight and projectile targeting below the roof while retaining the 512-MU base ceiling and shared 128–136 MU roof slab above it.
+
+The rear staircases now reach x=1400 and use the rear-room wall as their shared eastern boundary; no duplicate line is authored. Their western edge moves from x=1288 to x=1281, leaving only 1 MU before the pre-existing eastern-room wall at x=1280. Zero clearance would require splitting and sharing that older wall across the individual step sectors; 1 MU is the closest conventional integer-grid placement that avoids overlaps while making the gap visually negligible.
+
+The freestanding NPC exit line at x=-2448 is removed. `SW1EXIT` and special 243 now occupy the central 128-MU segment of the actual western room wall at x=-2464, y=-64…64. It inherits the same finite wall collision and cannot float inside the room.
+
+Updated MAP01 structure: 130 vertices, 166 linedefs, 324 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced sector boundaries, no collinear overlap and no intersection outside shared vertices.
+
+Manual validation:
+
+1. Stand at oblique angles beside several closed doors and confirm the interior cannot be seen through either jamb.
+2. Confirm NPCs do not acquire or attack the player through a closed doorway, then acquire normally after opening it.
+3. Open every door and confirm both frame pillars remain finite and do not obstruct the central passage.
+4. Climb both rear staircases and inspect the 1-MU western clearance and flush shared eastern wall.
+5. Use the exit switch on the NPC room's western wall and confirm it no longer floats.
+
+## Reusable one-trap-door room replication 4.26.5n
+
+**Implemented — pending complete manual validation in GZDoom 4.14.2**
+
+The architecture validated through 4.26.5m is now named **`habitación con 1 puerta trampa`** in the project vocabulary. One instance consists of an interior sector, a 128–136 MU solid 3D-floor roof, a finite floor panel that retracts through `Plat_DownWaitUpStay`, and two invisible jamb partitions. Its base ceiling remains at 512 MU, so wall and door geometry never extends into the upper playable space and the roof remains traversable in every door state.
+
+MAP01 now contains eight instances: four central rooms, two eastern rooms, the NPC room and the rear room. Every door faces the corridor serving that room. The rear-room entrance has rotated from south to west. The NPC room retains silver lock 200 using the native UDMF `locknumber` field on both special-62 thresholds; the underlying trap-door motion is identical to the unlocked instances.
+
+The provisional staircase and 136-MU raised block east of the rear room are removed. Two staircases flank its new west-facing entrance. Each contains six 32-MU-deep steps and reuses the established floor heights 24, 48, 72, 96, 120 and 136 MU. They occupy the passage between the eastern rooms and the exterior face of the rear door, and their upper steps provide the roof-access jump across the existing 24-MU door depth.
+
+All 186 things remain present. Item coordinates are unchanged. The four `CaelumTrainingDummy` instances move 128 MU west, toward the player start, leaving the rear room empty without changing their common firing axis.
+
+Updated MAP01 structure: 132 vertices, 167 linedefs, 326 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced boundaries, no overlapping collinear linedefs and no intersections outside authored vertices.
+
+Manual validation:
+
+1. Open every unlocked room from outside and inside, then complete at least two full cycles per door.
+2. Confirm all seven unlocked doors face their corridors and none produces suspended or infinitely tall textures.
+3. Approach the NPC door without and with `CaelumSilverKey`; verify the localized lock response and successful opening only with the key.
+4. Enter every room and walk across representative roof areas, including all eight doorway roofs.
+5. Climb both new side staircases and cross from each 136-MU upper step onto the rear-room roof.
+6. Confirm the old eastern staircase and raised block are absent.
+7. Verify all pickups remain in their prior positions and all four training dummies are outside rooms on the shifted firing axis.
+
+## Door partition texture cleanup 4.26.5m
+
+**Implemented — pending visual validation in GZDoom 4.14.2**
+
+The 4.26.5l geometry and motion behaved correctly, but the auxiliary sectors introduced around the jambs still carried `STARTAN3` middle textures. After their base ceilings were raised to 512 MU for continuous roof traversal, those partition textures rendered as narrow suspended strips above the door.
+
+All sixteen middle-texture assignments belonging to the auxiliary partition boundaries and the moving-door side partitions are removed. The two side lines no longer use `midtex3d` or bottom-pegged middle-texture flags. Their finite `BIGDOOR2` lower textures remain, appearing only across the actual 128-MU floor-height difference while the panel is closed.
+
+MAP01 remains at 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Reference and closed-boundary validation pass; door motion and roof targets are unchanged.
+
+Manual validation:
+
+1. Inspect the doorway from outside and inside and confirm no narrow strips float above it.
+2. Open and close the door and confirm its finite front and side faces remain visible while closed.
+3. Walk over the complete roof and confirm the entrance remains traversable above.
+
+## Independent finite door and continuous roof 4.26.5l
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The 4.26.5k limiter shortened the vertical ceiling motion but did not solve the underlying coupling: door sector 5 was still both the moving closure and a target for the solid roof 3D floor. Lowering its base ceiling to the 128-MU roof underside removed the playable upper volume over the doorway, while the ceiling-based panel could still render against the complete vertical sector.
+
+The closure is now independent of the ceiling. Door sector 5 has a fixed 512-MU sky ceiling and a closed floor at 128 MU. Both USE thresholds call native `Plat_DownWaitUpStay` (special 62): the floor panel lowers to the surrounding 0-MU floor, waits 150 tics and returns to its authored 128-MU closed position. The existing speed remains 16. `BIGDOOR2` is assigned as a lower texture, so only the finite floor-height difference renders as the door face.
+
+Room sector 4, door sector 5 and jamb sectors 14–15 all retain the 512-MU base ceiling and target ID 100. The solid 3D-floor slab from 128 to 136 MU therefore remains valid and walkable above the complete entrance regardless of door position. The map structure remains 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things; static topology and reference validation pass.
+
+Manual validation:
+
+1. Confirm the closed panel ends at the 128-MU lintel and has no continuation toward the sky.
+2. Open from outside, cross, wait for closure and reopen from inside.
+3. Complete at least four alternating cycles and confirm the panel returns to the same closed height.
+4. Walk continuously across the roof above the door while it is closed and while it is open.
+5. Stand clear during closure and confirm the passage does not remain visually or physically blocked after reopening.
+
+## Finite framed template door 4.26.5k
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+**Superseded by 4.26.5l.** The limiter corrected the target height but kept the moving ceiling coupled to the roof target, so the upper doorway remained non-traversable.
+
+The template door previously opened against sectors whose base ceilings were at the 512-MU outdoor sky. Because the standard vertical `Door_Raise` action stops four map units below the lowest adjacent ceiling, the moving door sector rose far above the visible 128-MU doorway and appeared infinitely tall.
+
+Two 16×24-MU structural jamb sectors now flank the existing 128-MU-wide door recess. Their ceilings are 132 MU, providing a deterministic 128-MU open position after the native four-unit clearance. The door remains a conventional vertical stone door rather than a polyobject: this preserves finite collision beneath the walkable 3D-floor roof and avoids an infinitely tall rotating polyobject blocking traversal above the doorway.
+
+The room, roof, door width, activation lines, speed and 150-tic delay are unchanged. Both thresholds retain front/back player USE and `repeatspecial = true`. Updated MAP01 structure: 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Static validation confirms valid references and balanced sector boundaries.
+
+Manual validation:
+
+1. Open the door from outside and confirm its visible panel disappears at the 128-MU lintel instead of rising toward the sky.
+2. Cross the threshold, wait for closure and reopen it from inside.
+3. Complete at least four full cycles while alternating sides.
+4. Walk over the roof above the doorway and confirm there is no new invisible obstruction.
+5. Confirm the two narrow jamb extensions render as part of the doorway rather than as gaps.
+
+## Unified shield framing and true walkable room roof 4.26.5j
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+All four equipped-shield Block layers now use the same medium framing previously validated for the Kite Shield: virtual position `(90, 125)` and rendered size `210×230`. This keeps every shield left of center without the Buckler becoming too central or the Tower becoming excessively large. The Magic Shield retains only its larger translucent halo pass as a type-specific visual distinction.
+
+The room is no longer a sector capped at 136 MU. Room sector 4 now has a 512-MU sky ceiling and shares target ID 100 with door sector 5. A closed control sector outside the playable field defines a solid opaque 3D-floor slab with underside at 128 MU and walkable top at 136 MU. Its initialization line uses `Sector_3DFloor` (special 160) for target 100. The existing finite 3D middle-texture walls end below the slab, so the player can cross their upper edge onto the roof rather than colliding with an infinitely tall boundary.
+
+The adjacent raised platform and final stair remain at 136 MU. They provide the current access/calibration point for crossing onto the new roof at the same elevation. The door recess receives the same slab, avoiding an uncovered strip above the doorway. `Door_Raise` remains front/back usable and uses the valid `repeatspecial` field.
+
+Updated MAP01 structure: 90 vertices, 87 linedefs, 166 sidedefs and 14 sectors. The added control geometry is a conventional closed four-line sector and is outside the playable field.
+
+Manual validation:
+
+1. Enter the room and confirm the ceiling underside remains at 128 MU.
+2. Use the six steps to reach 136 MU and cross/jump from the adjacent platform onto the room roof.
+3. Walk across the complete roof, including above the doorway, without falling through or meeting an invisible wall.
+4. Drop from the roof into the field and confirm collision/landing physics still operate.
+5. Complete at least four door cycles from alternating sides.
+6. Test all four shields and confirm they share the same medium left-offset framing.
+
+## Equipped shield first-person Block layer 4.26.5i
+
+**Implemented — pending visual calibration in GZDoom 4.14.2**
+
+Persistent Block now exposes the equipped shield as a modular first-person HUD layer. The layer is driven by a play-scope snapshot of `CombatBlockModeActive` and the live equipped shield type, and disappears immediately when Block ends, the shield breaks or the shield is unequipped.
+
+The four provisional compositions preserve the authored visual distinction:
+
+- Buckler: near the center and lower in the frame.
+- Kite Shield: shifted left and covering a broader part of the screen.
+- Tower Shield: far left and substantially larger.
+- Magic Shield: more centered, with a second translucent sprite pass acting as a temporary magical halo.
+
+The existing original 64×64 project shield sprites are reused and enlarged at render time. Exact HUD coordinates and sizes are provisional visual calibration values, not combat coverage or balance values. Mechanical coverage remains 120° / 140° / 160° / 120° according to shield type.
+
+User-validated in the preceding test pass: native Fly lateral movement, ranged visual Zoom/ADS, ADS physical-accuracy behavior and Dexterity-scaled ranged Reload.
+
+Manual validation:
+
+1. Enter/leave Block once with each shield and confirm the layer follows the equipped type.
+2. Confirm ranged ADS never displays a shield layer.
+3. Confirm large/two-handed physical weapons still cannot enter Block.
+4. Check that Buckler, Kite, Tower and Magic Shield remain readable at 1920×1080 without hiding critical HUD resources.
+5. Break or unequip the shield and confirm the layer disappears.
+
+## Zoom input latch, Fly lateral movement and roof diagnosis 4.26.5h
+
+**Input/movement fixes implemented — roof rebuild pending**
+
+Contextual Zoom now accepts exactly one transition per physical key press. GZDoom may revisit a weapon's native Zoom state while the button remains held; `CombatZoomInputLatched` ignores those repeated pulses and is cleared only when `BT_ZOOM` is released. This applies equally to ranged ADS and shield Block.
+
+Native Fly sets the player to a no-gravity movement state. The Caelum acceleration layer previously required ground contact before increasing its movement factor, leaving Fly at factor zero if it began while stationary. `NOGRAVITY` movement is now treated as continuously supported for lateral acceleration, while ordinary jumping retains its existing no-air-acceleration rule.
+
+The block beside the stairs is sector 6: its floor is physically raised to 136 MU and its ceiling remains at 512 MU. The player stands on that raised floor, so its top is a native walkable plane. The room is sector 4: its floor is 0 and its ceiling is 136 MU. A Doom-sector ceiling renders the underside, but its opposite side is not a second walkable plane. Consequently the room can have an interior ceiling without providing a roof surface above it.
+
+A room with both usable interior space and a walkable roof requires a solid 3D-floor slab (planned from 128 to 136 MU) controlled by separate geometry. Simply raising the room floor would reproduce the stair block but destroy the interior; simply retaining the low ceiling cannot create a walkable upper surface. The next architectural pass must replace the current ceiling with that control-sector 3D floor and revalidate the door's target height.
+
+Manual validation:
+
+1. Hold Zoom for several seconds: ADS/Block changes only once.
+2. Release and press Zoom again: the state toggles once in the opposite direction.
+3. Enable native Fly while stationary and verify forward, backward and lateral movement.
+4. Verify ordinary airborne movement still preserves momentum without ground-style acceleration.
+
+## Upper-wall removal, true repeatable door and live Dexterity reload 4.26.5g
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The finite middle textures introduced in 4.26.5f ended at roof height, but both sidedefs still carried upper `STARTAN3` textures. Those upper textures filled the room/outdoor ceiling difference and visually recreated the wall above the roof. They are now removed from both sides of all five room walls and both jambs.
+
+The door-cycle limit was caused by using `repeatable`, which is not the valid UDMF repeat-special field. Both door thresholds now use `repeatspecial = true`, retain front/back player USE activation and operate the same door sector with the existing speed and 150-tic delay.
+
+Ranged Aim is verified in the attack path: `RangedAimModeActive` multiplies `EffectivePhysicalAccuracyPercent` by ×2. Crouching supplies its own ×2 multiplier, so Aim + crouch still produces ×4 before the weapon spread calculation.
+
+Reload now derives its effective duration from the player's current effective Dexterity at the moment Reload starts. The formula remains the authored Type-4 rule:
+
+`effective seconds = base seconds × 100 / Type4(Dexterity)%`
+
+The base durations remain Standard Bow 3 s, Longbow 3 s, Crossbow 5 s and Carbine 5 s.
+
+Manual validation:
+
+1. Verify that no wall texture reappears above the roof cut.
+2. Complete at least four full door open/close cycles, alternating approaches.
+3. Compare Reload at ordinary Dexterity and debug Dexterity 75 while observing the HUD countdown.
+4. Verify that Zoom ADS remains visual and that ranged shots become more accurate.
+
+## Finite room walls, repeatable door and contextual ranged Zoom 4.26.5f
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The template room no longer uses infinitely wrapped blocking middle textures. Its five wall lines and two jambs now use bottom-pegged finite 3D middle textures, allowing their visible and physical height to follow the authored texture instead of extending to the outdoor 512-MU ceiling.
+
+Both door thresholds retain repeatable tag-0 `Door_Raise` and now accept USE from their back side as well as their front side. This pass specifically targets the reported failure to begin a second open/close cycle.
+
+Zoom is now contextual. Standard Bow, Longbow, Crossbow and Carbine toggle Aim with a real native ×2 FOV zoom. For non-ranged weapons, Zoom enters persistent Block only when the equipped weapon uses one-handed shield rules. Large and ranged two-handed physical weapons therefore cannot block through a shield that remains equipped. Ranged AltFire remains an alternate Aim input.
+
+The normal HUD now displays `Magazine: loaded / capacity | Reserve: amount` while a ranged weapon is active, plus the remaining Reload time while reloading. Reserve excludes the rounds already represented by the loaded magazine.
+
+Manual validation:
+
+1. Room walls stop at their finite authored height instead of reaching the outdoor sky.
+2. Complete at least three door open/close cycles, testing USE from both sides.
+3. Equip a shield with a large or ranged weapon and verify that Zoom does not enter Block.
+4. Equip a one-handed shield-compatible weapon and verify that Zoom still toggles Block.
+5. Equip each ranged weapon and verify that Zoom changes FOV and the HUD reports magazine, capacity and reserve.
+6. Fire and Reload while watching the HUD counts and Reload countdown.
+
+## Bilateral wall rendering, dual-use door and ranged ammunition 4.26.5e
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The room/exterior sector split from V4.26.5d was structurally valid, but an upper texture only fills the height difference above the lower ceiling; it does not draw the required wall from floor level. The five room walls and two jambs now retain bilateral sector ownership while also using explicit wrapped `STARTAN3` middle textures on both sides, matching MAP01's already visible test-wall vocabulary.
+
+The inner room/door threshold now carries the same tag-0 manual `Door_Raise` special, speed and delay as the exterior-facing line. The exterior line remains non-blocking and the door sector remains the physical closure, so USE is available from both approaches.
+
+Ranged ammo actors now declare `Inventory.Amount 20`. Firing checks the loaded magazine rather than requiring both a loaded magazine and a simultaneously accessible reserve stack. Reserve ammo remains the Reload source and is decremented when a shot consumes a physical round, but moving/exhausting the reserve cannot cancel a round already loaded in the magazine.
+
+Manual validation:
+
+1. All room walls and jambs render from exterior and interior.
+2. USE opens the door from both approaches and the raised opening is passable.
+3. Pickups provide 20 bullets/arrows/bolts.
+4. Press Reload and wait for the weapon's 3/3/5/5-second base time.
+5. Standard Bow, Longbow, Crossbow and Carbine each spawn the correct projectile and reduce the loaded magazine by one.
+6. Empty magazines still require Reload; reserve ammunition alone is not a loaded shot.
+
+## Bilateral room shell, usable door and environmental Adrenaline 4.26.5d
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated room's one-sided walls faced inward, leaving no exterior sidedefs to render from the field. The five room perimeter lines and two door jambs now separate their authored interior sectors from exterior sector 0 and use finite upper textures. They remain blocking walls, but both sides have valid sector ownership and visibility.
+
+The outer manual door line is reversed so sector 0 is its front and door sector 5 is its back. `Door_Raise` therefore receives USE from the exterior-facing side and operates on the door sector behind the line. The permanent linedef blocking flag has been removed from this opening; the closed door sector supplies collision until its ceiling rises.
+
+Environmental impact damage already skipped the direct received-damage Adrenaline event, but its shared Pain calculation could still grant Pain Adrenaline. Pain resolution now receives an explicit permission flag. Wall/floor impacts pass `false`; actor impacts and ordinary combat damage pass `true`. Environmental impacts may still cause Pain/stun, but neither their damage nor their Pain grants Adrenaline.
+
+Manual validation:
+
+1. The isolated room is visible from the exterior on every wall and jamb.
+2. USE from outside raises the door, which becomes passable, waits and closes.
+3. Walls remain solid and the room interior renders normally.
+4. A damaging wall collision may reduce HP/cause Pain but never increases Adrenaline.
+5. Actor-to-actor damage and Pain still grant their intended Adrenaline.
+
+## Final stair front-side correction and input-roadmap audit 4.26.5c
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+After V4.26.5b, the engine accepted the door repair and reported only linedef 82 as lacking a front. That line closes the sixth 136-MU stair sector.
+
+MAP01 now removes the two unreferenced door sidedefs left at indices 94 and 96 and remaps all subsequent live references. Linedef 82 is reversed together with its front/back assignment, preserving the same physical sector adjacency while making exterior sector 0 its explicit front and stair sector 12 its back. The map now contains 86 vertices, 83 linedefs, 154 sidedefs and 13 sectors; every sidedef is referenced exactly once and every sector boundary remains balanced.
+
+Manual validation:
+
+1. MAP01 loads without a line-82/front-sidedef error.
+2. The sixth stair remains visible, solid and climbable.
+3. The 136-MU platform remains walkable.
+4. The template door retains its V4.26.5b behavior.
+
+The roadmap input audit preserves the already implemented architecture: Zoom = Block, ranged AltFire = Aim and ranged Reload = magazine reload. User1 is the remaining slot for the future racial ability; User2 remains Seal Channel; User3 Tarot; User4 class ability.
+
+## Canonical MAP01 topology correction and roadmap reconciliation 4.26.5b
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The V4.26.5a diagnostic pass left four provisional appended sidedefs and explicit `sideback = -1` placeholders in the UDMF map. Although local index/boundary validation could parse them, the engine node builder still rejected lines 53, 54 and 82 and reported line 52's right edge as disconnected.
+
+MAP01 now uses the canonical 156-sidedef set. Door jambs and the outer manual door line are true one-sided boundaries with no synthetic back-side field. The outer door uses its original sector-5 sidedef; the inner threshold uses the original room-front/door-back pair. All three one-sided door edges are consistently oriented around the sector.
+
+Static validation confirms 86 vertices, 83 linedefs, 156 sidedefs and 13 sectors, with valid references and balanced sector boundaries. Manual engine validation remains authoritative:
+
+1. MAP01 loads without the reported front-sector/front-sidedef errors.
+2. No disconnected edge is reported for the template doorway.
+3. USE raises the door; it waits and closes normally.
+4. The last stair sector and 136-MU platform remain valid and walkable.
+
+The former V4.22–V4.26 roadmap has been reconciled with current implementation status in `docs/ROADMAP.md`. The next major implementation block is V4.27 Combat Input Architecture and Mode Separation.
+
+## Architectural template topology correction 4.26.5a
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated template door had been converted to branching two-sided geometry: both jamb lines incorrectly continued into the room sector and the outer manual door line exposed an unnecessary exterior back side. Although all referenced sidedefs existed, those branches broke the closed boundaries expected by the node builder; it consequently reported human-facing line 54 as lacking a valid front side.
+
+The jambs and outer door line are now consistently oriented one-sided front boundaries of door sector 5. The inner threshold is a two-sided transition facing room sector 4, with door sector 5 on its back. Static validation confirms that every linedef has an existing front sidedef, every referenced sector exists, and every sector boundary has balanced incoming/outgoing endpoints.
+
+Manual validation remains:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. Facing the unlocked template door and pressing USE raises it.
+3. The door waits and closes normally.
+4. The room, jambs, six stair sectors and 136-MU platform remain physically valid.
+
+## Architectural template room 4.26.5
+
+**Implemented — pending manual validation**
+
+A single MAP01 template room is used to validate architecture before replication.
+
+Validation sequence:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. The room walls render and block normally.
+3. The doorway has visible jambs/opening.
+4. Facing the door and pressing USE triggers the manual `Door_Raise`.
+5. The door opens, waits, then closes.
+6. The six stair sectors can be climbed from 24 to 136 MU.
+7. The 136-MU platform is walkable.
+
+No attempt is made in this patch to retrofit all existing rooms with the template. Replication is deferred until this exact module works correctly in GZDoom 4.14.2.
+
+## Crouch physics, movement noise and MAP01 building rebuild 4.26.4
+
+**Implemented — pending manual validation**
+
+For wall impacts while crouching:
+
+`AgilityBonusRatio = max(0, JumpZ/BaseJumpZ - 1)`
+
+`CrouchWallFraction = clamp(AgilityBonusRatio, 0, 0.50)`
+
+The physical collision and displacement remain unchanged. Only traumatic Delta-v is reduced. If buckler block is also active, its doubled fraction is compared against the crouch fraction and the maximum is used; the two effects do not stack.
+
+Sigilo is now explicitly calculated from Agility Type 2:
+
+`Stealth% = clamp(Agility(Agility+1)/101, 0, 100)`
+
+Crouch x2 remains authoritative and is capped at 100%. Movement hearing:
+
+`NoiseRange = BaseRange × MovementMode × (1 - EffectiveStealth/100)`
+
+with BaseRange = 20 m reference (622.22 MU), walking = 1.0, running = 1.5, crouching = 0.5. At EffectiveStealth = 100%, no movement alert is emitted.
+
+MAP01 uses finite wall sectors with floor 136 MU and sky ceiling 512 MU. Interior sectors remain floor 0 and receive the shared 3D roof slab 128–136 MU. Two staircases reach roof level. All generated sectors pass closed-loop endpoint validation and every linedef has valid front/back sidedef and sector references.
+
+## Buckler/map corrective pass 4.26.3b
+
+**Implemented — pending manual validation**
+
+The rodela no longer mixes direct JumpZ units with horizontal collision Delta-v. For horizontal impacts:
+
+`AgilityBonusRatio = max(0, JumpZ / BaseJumpZ - 1)`
+
+`BucklerHorizontalFraction = clamp(2 × AgilityBonusRatio, 0, 0.50)`
+
+`TraumaticDeltaV = RawDeltaV × (1 - BucklerHorizontalFraction)`
+
+This means the buckler can at most halve horizontal traumatic Delta-v; it can no longer manufacture `Delta-v = 0` / infinite equivalent tics. Its `2 × Toughness` rule remains unchanged, so a sufficiently tough buckler user may still end with zero final HP damage after the kinematic calculation. Stun continues to disable Agility damping.
+
+MAP01 validation focus: finite room-wall height, real walkable 3D roofs, east-room door orientation, roof staircase, NPC-room roof bounds, item placement and absence of invisible room barriers.
+
+## Buckler acrobatics and fall-test map 4.26.3
+
+**Implemented — pending manual validation**
+
+Active buckler block uses `2 × Toughness` for CaelumImpact tolerance and `2 × JumpZ` as Agility absorption. The latter applies to floor, actor and wall trauma. Stun sets active Agility absorption to zero. The buckler still uses 0.5× effective combat mass, so it remains easier to launch while making that displacement defensively survivable.
+
+At V4.26.3, MAP01 had seven roofed structures: six equal test rooms plus the west NPC room. V4.26.5n supersedes that count with eight one-trap-door room instances. Outdoor vertical space remains 512 MU.
+
+## Universal impact scale and anatomy response 4.26.2
+
+**Implemented — pending manual validation**
+
+The kinetic reference distance is now fixed at 28 MU for every body:
+
+`T_impact = 28 / |Delta-v|`
+
+This removes the previous double size effect in which large actors benefited both from greater mass during impulse resolution and from a larger height numerator during severity conversion.
+
+Impact Physics Core remains anatomy-agnostic. It exposes only normalized contact-height intervals. Caelum interprets those intervals using `CaelumAnatomyProfile`, normalizes all overlapping region spans, and applies vulnerability and armor proportionally.
+
+For each contacted region `i`:
+
+`w_i = overlap_i / sum(overlap)`
+
+After the V4.26.1 subtractive Toughness threshold:
+
+`S_i = S_postToughness × w_i × Vulnerability_i × (1 - ArmorDefense_i)`
+
+`S_final = sum(S_i)`
+
+Critical/head Lucidity contribution uses the same `w_i`; non-critical regions contribute zero critical-point Lucidity loss. Local armor defense reduces the corresponding contribution.
+
+Floor contact is represented as normalized height 0.0 and therefore maps to the lowest authored anatomy region. Actor-to-actor contact uses actual vertical cylinder overlap. Static vertical geometry currently uses 0.0-1.0 because native GZDoom line collision does not provide an anatomical Z contact point.
+
+NPC controlled-landing absorption now follows Agility Type-1 jump scaling, matching the player design concept instead of scaling by actor height.
+
+## Impact response refinement 4.26.1
+
+**Implemented — pending manual validation**
+
+Impact Toughness is now a threshold/tolerance measured in percentage points of maximum health. If the energy curve produces `S%` after the source-surface modifier:
+
+`S_post = max(0, S - Toughness)`
+
+`D_preArmor = HP_max × S_post / 100`
+
+`D_final = D_preArmor × (1 - GlobalImpactArmor/100)`
+
+This deliberately makes high Toughness completely ignore ordinary kinetic trauma while preserving vulnerability to sufficiently extreme impacts.
+
+Static geometry requires at least 25% of pre-impact horizontal speed to be lost before the contact is considered an impact. Once static contact occurs, it remains latched until five consecutive unblocked tics have passed.
+
+Environmental wall/floor impacts do not generate received-damage Adrenaline. Actor-to-actor impacts continue to do so.
+
+## Impact Physics Core API 4.26.0
+
+**Implemented — pending manual validation**
+
+Generic physics is now separated from Caelum damage interpretation. `ImpactPhysics` resolves finite-body, static and external-source impacts and returns a neutral `ImpactResult`. Caelum adapters remain responsible for effective shield mass, biological landing damping, Toughness, armor and HP.
+
+Static geometry is now modeled as the infinite-mass limit of the same physical model. The player-wall exception introduced during early calibration has been removed. The velocity component actually lost by native GZDoom movement defines the effective static collision normal.
+
+**Convergence validation:** a character hitting increasingly massive movable bodies should approach the result of hitting static geometry. The existing mass-10000 training dummy is the primary MAP01 comparison against walls/doors.
+
+**Export status:** the core source is isolated under `/impactphysics/` and contains no Caelum-specific class references. Packaging/licensing/versioning it as a standalone PK3 is planned after the API survives this validation pass.
+
+**Melee integration:** intentionally deferred. Weapon mass can eventually feed an impact model, but melee also needs swing velocity, effective striking mass, contact area/edge geometry, material penetration, sharpness and attack technique. Existing melee damage remains authoritative until those variables are designed.
+
+## Energy impact curve and contact rearm 4.25.4
+
+**Implemented — pending manual validation**
+
+Impact severity no longer uses discrete 3% damage steps. For `T_eq < 35`:
+
+`R_v = 35 / T_eq`
+
+`R_E = R_v²`
+
+`Damage% = 100 × (R_E - 1) / (35² - 1)`
+
+At or above 35 tics the result is zero. This normalization produces exactly 100% raw max-HP damage at one equivalent tic. Below one tic the same continuous quadratic curve remains active and may exceed 100%.
+
+This is intentionally based on **specific kinetic energy** rather than total `1/2 m v²`. Mass already determines the action/reaction impulse and each body's resulting `Delta-v`; multiplying injury by mass again would double-count mass.
+
+Contact rearm now requires true disengagement. A collision pair stays latched until center separation exceeds `RadiusA + RadiusB + 0.25 × min(HeightA, HeightB) + 2` for five consecutive tics. This is designed to reject tiny recoil gaps produced while holding movement against another body.
+
+Existing V4.25.3 acceleration, biological landing damping, Toughness, armor mitigation and actor-to-actor momentum equations are unchanged.
+
+## Acceleration and biological impact response 4.25.3
+
+**Implemented — pending manual validation**
+
+Player horizontal locomotion now uses an exponential acceleration state. With uninterrupted grounded directional input:
+
+`A(n) = 1 - (1 - 0.028127624)^n`
+
+At 105 tics (3 seconds) the factor is exactly 0.95. `A` multiplies the existing movement result, so the final maximum remains determined by Agility, LoadRatio, health/Air/survival state and shield mobility.
+
+Self-powered wall impact severity also multiplies by this acceleration state. This makes run-up distance physically meaningful without changing the already validated actor-to-actor impulse equation.
+
+Actor collisions now latch by contact pair. A collision is not eligible to resolve again while the same bodies remain touching; separation beyond their combined radii plus a small technical margin rearms the next impact.
+
+Floor impacts now have a biological-damping layer before Toughness and armor. Player controlled landing absorption equals current `JumpZ`. Stun/physical immobilization sets that absorption to zero. CaelumCombatActor NPCs use height-scaled biological absorption and likewise lose it while lucidity-stunned.
+
+**Validation focus:** acceleration feel and 95%-at-3s timing; short-run vs long-run wall impacts; sustained push against the 10000-mass dummy; ordinary jump landing; stunned landing; high falls that exceed biological absorption.
+
+## Impact mitigation and calibration 4.25.2
+
+**Implemented — pending manual validation**
+
+Raw impact severity now passes through Toughness and global armor defense before health loss. The armor term is the simple arithmetic mean of all four armor-slot defenses; this avoids inventing location weights before a separate impact-location design exists.
+
+Player wall-impact severity is normalized against effective movement percentage rather than raw GZDoom velocity. A 100% full frontal stop maps to 35 equivalent tics; load and movement-state penalties therefore reduce self-powered wall severity. A contact latch prevents repeated damage while continuously pressing against the same blocking geometry.
+
+Landing detection now stores falling vertical velocity from prior tics and resolves damage on the next grounded state. Player impact reference height is the stable derived actor height.
+
+Training dummy: movable, mass 10000, valid collision body.
+
+Rulo/Caella/Ronnie/Argento already carry `CaelumCombatActor` profiles and T1 armor; V4.25.2 now allows these statistics to mitigate impact damage too. Generic Doom actors do not yet have a Caelum profile adapter.
+
+## Momentum collision and impact physics 4.25.1
+
+**Implemented — pending manual validation**
+
+The collision foundation now resolves Caelum character/NPC contacts through a two-body impulse model. Effective combat mass participates in the impulse, so Buckler (`x0.5`) and Tower Shield (`x2`) naturally change both outgoing and self collision response. The normal coefficient of restitution is currently `e = 0`, producing an inelastic character collision rather than a bounce.
+
+Each body independently converts its forced `Delta-v` into an equivalent time to cover half of its own height. More than 35 equivalent tics is non-damaging. From 35 down to 1 tic, each discrete threshold adds 3% maximum-health base damage, reaching 105% at one tic or less.
+
+The same impact evaluator is connected experimentally to blocked horizontal world movement and floor landings. Impact damage currently bypasses evasion, shield Block and localized armor so the test build exposes the raw physical scale without hidden mitigation.
+
+The debug overlay displays last impact kind, Delta-v, equivalent tics, damage percent and base damage. Internal fields also preserve effective masses, closing speed and impulse for calibration.
+
+Carbine Reload base time is corrected to 5 seconds. Ranged Reload bases are now 3/3/5/5 seconds.
+
+Detailed design: `docs/PHYSICS_COLLISION_SYSTEM.md`.
+
+## Ranged weapon architecture 4.25.0
+
+**Implemented — pending manual validation**
+
+The four definitive ranged weapons now have independent magazine state and Reload behavior. Standard Bow and Longbow each hold 50 shots, Crossbow 20, and Carbine 10. Magazine capacity does not scale with tier. Reload base durations are 3 seconds for both bows, 5 seconds for Crossbow, and 10 seconds for Carbine; effective duration is divided by the Dexterity Type-4 attack-speed multiplier.
+
+AltFire now toggles Aim for ranged weapons rather than trying to reuse the shield input. Aim multiplies physical accuracy by 2.0 and stacks with the existing crouch accuracy multiplier of 2.0. Native Zoom remains the independent persistent Block toggle.
+
+Ranged damage is intentionally attribute-independent at the base-damage layer and therefore has been raised substantially. T1 bases are Standard Bow 1200, Longbow 1800, Crossbow 1400, and Carbine 3600. Ranged tiers use 100% / 160% / 250%, producing T2/T3 damage of 1920/3000, 2880/4500, 2240/3500, and 5760/9000 respectively.
+
+Base critical chance scales with the same 100% / 160% / 250% tier multipliers before the Dexterity critical bonus is added. T1 bases are Standard Bow 10%, Longbow 12%, Crossbow 8%, and Carbine 6%.
+
+The authoritative spread ladder is Minimum 10°, Very Low 30°, Low 50°, Medium 70°, High 90°, Very High 110°, Maximum 130°. Minimum spread is always 10% of maximum. Current ranged assignments are Standard Bow Very High (11°–110°), Longbow Medium (7°–70°), Crossbow High (9°–90°), and Carbine Maximum (13°–130°).
+
+### Equipment-data audit
+
+The executable remains the source checked for equipment values. Shield T1 weights are Magic 4, Buckler 8, Kite 12, Tower 16; documentation entries using older 14/18 values for Kite/Tower are obsolete. Physical-weapon T1 weights and catalogue combat values have been rechecked against `CaelumWeaponModel` and `CaelumWeaponCatalogue`.
+
+## Connected crafting infrastructure 4.23.3a
+
+**Implemented — pending validation**
+
+The world-sprite alignment table has been restored from the validated 4.22.4c
+configuration while retaining the twelve crafting-station sprites. The
+training dummy and floor gallery therefore again use their corrected paths and
+offsets.
+
+Crafting close input now has a dedicated UI processor. This is necessary
+because GZDoom routes input through `UiProcess` instead of `InputProcess` while
+its GUI owns keyboard focus; `Q` is forwarded to the existing networked
+crafting toggle in either input mode.
+
+All twelve infrastructure actors now use dedicated project-local station
+sprites rather than temporary weapon/equipment placeholders. Their source
+cards were normalized for the sprite namespace and registered in
+`ASSET_REGISTER.md`.
+
+The crafting overlay now accepts its close command while GZDoom retains
+`menuactive`, removing the previous requirement to press Escape before `Q`.
+
+### Input regression note
+
+The experimental global crafting UI processor has been removed because it
+interfered with character creation at map start. Crafting input is temporarily
+back on the stable 4.23.2 path; the requirement to close residual native menu
+focus before `Q` may still occur and remains pending a safer implementation.
+
+
+Crafting infrastructure forms a graph at interaction time. Two
+`CaelumCraftingStation` actors are directly linked when their three-dimensional
+distance is at most 64 map units, equal to exactly two development metres.
+Connectivity is transitive, so a station can belong to the same workshop even
+when it is farther than two metres from the Workbench if connected stations
+bridge the distance.
+
+The Workbench is the logical root of the interface. Using any station scans
+its complete connected component and opens the same Workbench menu. A
+component without a Workbench is rejected with a localized message. The scan
+runs only on interaction and uses a per-player token to avoid recursion cycles
+and cross-player scan collisions.
+
+The twelve planned infrastructure actors currently exist: Workbench, Forge,
+Anvil, Ranged Weapons Workshop, Sawmill, Armor Workshop, Sewing Machine,
+Essence Altar, Globe, Jeweler Bench, Fine-tools Bench, and Master Bench. All
+inherit `CaelumMovableProp`; their push requirement remains unset, so they
+cannot yet be moved. Final station mass and physical-power requirements remain
+deliberately pending for the later environment pass.
+
+Tier requirements are cumulative. Forge recipes require Workbench + Forge at
+tier 1, additionally Anvil at tier 2, and additionally Master Bench at tier 3.
+Ranged-weapon recipes require Workbench + Ranged Weapons Workshop at tier 1,
+additionally Sawmill at tier 2, and additionally Master Bench at tier 3. The
+same architecture is reserved for Armor Workshop/Sewing Machine, Essence
+Altar/Globe, and Jeweler Bench/Fine-tools Bench once those recipe families are
+authored.
+
+The Workbench menu currently exposes sixteen physical recipes: twelve Forge
+recipes plus standard bow, carbine, longbow, and crossbow from the Ranged
+Weapons Workshop. The interface reports whether the selected recipe's
+infrastructure is ready and names the first missing station. Material
+requirements, ownership checks, Magic Box routing, and the existing crafting
+transaction remain unchanged.
+
+MAP01 contains four infrastructure tests: a full twelve-station network, a
+Workbench+Forge tier-1 network, a Workbench+Forge+Anvil tier-2 network, and an
+isolated Forge that must reject interaction because no Workbench is connected.
+
+
+### Armor and essence recipes
+
+The unified Workbench currently exposes 52 recipes. Recipes 1–16 are the
+physical weapon catalogue. The next 16 cover all four armor types across all
+four body slots. The final 20 cover the four essence weapons with each of the
+five elemental essences.
+
+Armor material logic is weight-based and uses the existing material-unit
+rounding system. Strap is always the base component. Fabric, Leather,
+Chainmail, and Plate are the tier components for Magic, Light, Medium, and
+Heavy armor respectively. Head/Body use 20% Strap and 80% tier material;
+Hands/Feet use 60% Strap and 40% tier material.
+
+Magic and Light armor require Workbench + Armor Workshop at tier 1, add Sewing
+Machine at tier 2, and add Master Bench at tier 3. Medium and Heavy armor use
+Workbench + Forge, add Anvil at tier 2, and add Master Bench at tier 3.
+
+Essence weapons use 90% of their corresponding base material and 10% elemental
+essence by final weapon weight. Tier 1 requires Workbench + Essence Altar,
+tier 2 additionally requires Globe, and tier 3 additionally requires Master
+Bench. The resulting weapon stores the selected essence on the native
+equipment item.
+
+
+
+This file describes the current executable prototype. The main design document
+remains the authority for rules not yet connected to gameplay.
+
+## Definitive physical weapon and recipe catalogue 4.12.0
+
+**Implemented as authoritative data — pending playable crafting**
+
+The code now defines all sixteen physical weapons in families 2 through 5:
+dagger, hatchet, machete, javelin, sword, axe, flail, spear, greatsword, war
+axe, halberd, giant gauntlets, standard bow, carbine, longbow, and crossbow.
+Each entry centralizes primary/secondary damage, damage type or special action,
+attack cadence, range, spread, critical chance, air cost, family, and shield
+interaction. The carbine retains 360 damage/48 tics/60 m/30°–200°/0%/-20;
+the longbow retains 180 damage/24 tics/30 m/10°–120°/12%/-10.
+
+Every physical recipe now names one main component, one secondary component,
+and the exact component that supplies its tier. Spear and javelin use shaft +
+point and take the point's tier. Flail replaces the discarded one-handed mace
+and uses round head + generic chain. Giant gauntlets remain the fourth large
+weapon; the two-handed mace, saber, and their unused unique parts are absent.
+
+Small weapon head and chain complete the active material catalogue. All 41
+active material types are referenced by at least one physical, armor, shield,
+or essence recipe. The old iron-ingot prototype is hidden from new selections
+but its class and identifier remain available for save compatibility. Exact
+component quantities and actual inventory consumption remain pending until the
+global material-requirement formula is defined.
+
+The console command `ca_debug_audit_crafting_catalogue` performs a read-only
+runtime audit. Its expected result is 16 weapon recipes, 41 active materials,
+and 0 unused materials.
+
+## Native material catalogue and lock test 4.11.0
+
+**Implemented — pending validation**
+
+The Materials filter now exposes a data-driven catalogue of weapon parts,
+shield plates, armor resources, elemental essences, secondary components, and
+magical-item bases. Metal, wood, essence, leather, and fabric use three
+localized grades; generic secondary components remain tier-independent.
+
+Every material is a native `Inventory` instance. Type and tier together define
+stack identity, so identical units merge while different grades remain
+separate. Each unit weighs 0.1 by default, participates in automatic overweight
+routing, and a complete stack occupies one Magic Box slot and weighs zero while
+stored there.
+
+`ca_debug_test_silver_lock` invokes `CheckKeys(200, true, false)`. This follows
+the same native `LOCKDEFS` path used by locked map specials: without the silver
+key it prints the configured remote failure message; with the key it confirms
+access. A real door still declares lock number 200 in its map-line special.
+
+## Categorized special inventory and native locks 4.10.0
+
+**Implemented and manually validated**
+
+The authoritative `Actor.Inv` chain now includes three additional categories:
+Materials, Keys, and Key Items. The compact inventory cycles through eight
+separate filters: armor, shields, weapons, ammunition, consumables, materials,
+keys, and key items. Equipment retains its equipped/unequipped state and every
+eligible object can still expose its Magic Box location.
+
+The first test catalogue contains a stackable iron ingot, a native silver key,
+and a unique sealed letter. Their default unit weight is 0.1. Materials use
+their `Amount` as the load multiplier and a complete stack occupies one Magic
+Box slot. Key items are non-stackable and can also enter the box.
+
+The silver key derives from GZDoom's native `Key`, so the engine itself prevents
+duplicates and recognizes it through `LOCKDEFS`. Lock number 200 can be passed
+to locked door specials or ACS locked actions. Keys deliberately remain in
+personal inventory: GZDoom's lock check only tests ownership and cannot see
+Caelum's `InMagicBox` field, so boxing the same native key would otherwise leave
+the lock usable. Its 0.1 weight always contributes to carried load.
+
+GZDoom also provides `PuzzleItem`, Strife quest/dialogue infrastructure, HUD
+messages, and programmable ZScript UI. These are reusable foundations for the
+future mission pass, while Caelum will still own the general objective tracker
+and presentation layer.
+
+## Native consumables and timed regeneration 4.9.0
+
+**Implemented and manually validated**
+
+Life potion, Anima potion, energy drink, food ration, and water ration are now
+stackable native GZDoom inventory objects. Their respective unit weights are
+0.25, 0.25, 0.25, 0.10, and 0.10. Personal-inventory stacks contribute
+`Amount × unit weight`; a complete stack occupies one Magic Box slot and weighs
+zero while boxed. An overweight pickup follows the already validated native
+overflow rule, and a full Magic Box leaves it in the world.
+
+Using an item consumes one unit through GZDoom's native inventory path and
+creates a ten-second Powerup. It applies one pulse per second: life restores 1%
+of maximum health, Anima restores 1% of maximum Anima, the energy drink restores
+1% of maximum air plus one sleep point, and each ration restores one hunger or
+thirst point. Reusing the same item refreshes its remaining duration to ten
+seconds instead of adding a second simultaneous intensity.
+
+The compact inventory interface includes a Consumables filter. Left/Right
+selects the item, `P` creates a five-unit test stack on the floor, Enter/E uses
+one unit, `C` moves the complete stack between personal inventory and the Magic
+Box, and `D` drops it. Native previous/next/use inventory commands are also
+available under Customize Controls.
+
+## Native inventory shadowing correction 4.8.1
+
+**Implemented and previously validated**
+
+The 4.8.0 native objects were collected correctly, as confirmed by `printinv`,
+but ZScript's case-insensitive identifiers caused two parameter/field name
+collisions. The equipment matcher compared its tier/type/slot/size parameters
+against themselves, and the carried-load setter wrote calculated weights back
+into its temporary parameters. Both interfaces now use unambiguous parameter
+names, so ownership selection and weight propagation retain the values stored
+in each native inventory instance.
+
+## Native inventory and Magic Box object state 4.8.0
+
+**Implemented and previously validated**
+
+Armor pieces, shields, weapons, and carbine bullets are now real GZDoom
+inventory objects. The player's native `Actor.Inv` chain is the single source
+of ownership, quantity, and carried weight; collecting equipment no longer
+deletes the pickup and replaces it with a parallel boolean record. Every
+non-stackable instance stores its own slot/type, tier, size, durability,
+equipped flag, Magic Box flag, and unit weight.
+
+Equipping and removing only changes the equipped flag. Moving an object to the
+Magic Box changes its carried contribution to zero while retaining the same
+native object. A non-stackable instance uses one box slot. Carbine ammunition
+uses its native `Amount`: any quantity remains one stack and therefore uses one
+box slot. Outside the box its weight is `Amount × 0.003`; inside it weighs zero.
+
+Immediately after the first character-creation confirmation, the four armor
+pieces, profession shield, sword, staff, carbine, and 100-bullet stack appear
+as nine pickups on the floor in front of the character. The character owns
+nothing until those pickups are collected. If a pickup would exceed capacity,
+it enters the Magic Box when a slot exists; otherwise it stays in the world.
+
+The compact equipment menu can inspect the native objects, equip or remove
+them, move them to or from the Magic Box, break them, and drop them. Its load
+breakdown and the permanent HUD are rebuilt directly from native inventory on
+every refresh. Legacy persistent equipment can be migrated once into native
+instances for save compatibility.
+
+## Authoritative persistent carried load 4.7.8
+
+**Implemented — pending validation**
+
+Every owned armor piece, shield, weapon, and bullet outside the Magic Box is
+now summed exactly once from the persistent object registry. Equipped state is
+used only to divide that authoritative value into equipped and personal
+inventory subtotals; it can no longer decide whether an object contributes to
+total carried weight. The complete breakdown is written atomically before mass,
+movement, jump, evasion, air consumption, and HUD values are recalculated.
+
+The permanent load display now prints its localized state next to the
+percentage: normal below 75%, overload from 75%, and capacity exceeded from
+100%. Its thresholds match the bar colors and gameplay state helpers.
+
+## Atomic carried load and multi-weapon equipment 4.7.6
+
+**Implemented — pending validation**
+
+Inventory weight, equipped weight, ammunition weight, and development weight
+now refresh `EquippedWeight`, `CarriedWeight`, `TotalMass`, and `LoadRatio`
+atomically. This removes the stale-value route where opening the equipment menu
+updated the inventory subtotal before the next gameplay tick and prevented that
+tick from recognizing that a complete recalculation was still required.
+
+Equipped and active weapons are now separate states. Any owned weapon can be
+equipped without removing weapons from other families. Every equipped weapon
+contributes its weight, but only one is active in the player's hands. Native
+weapon-family buttons select the active test weapon: `3` sword, `5` carbine,
+and `6` staff. Unequipping the active weapon automatically selects another
+equipped family when one exists.
+
+The equipped flags persist independently for every weapon/type/tier/size
+combination. Saves from the single-weapon implementation migrate their previous
+active weapon as equipped. Moving a weapon between personal inventory and an
+equipment slot does not change total carried weight; moving it from the Magic
+Box does.
+
+## Post-creation starting equipment and ammunition weight 4.7.5
+
+**Implemented — pending validation**
+
+A new player owns no armor, shield, weapon, or carbine ammunition while the
+character creator is open. Confirming the final page grants the development
+loadout exactly once, using tier 1 and the default compatible size calculated
+from the completed character.
+
+Sword, staff, and carbine are always granted for testing. Sword begins equipped;
+staff and carbine begin in personal inventory. The carbine begins with 100
+bullets. Each bullet weighs 0.003, and current ammunition now contributes to
+personal-inventory and carried weight, so firing reduces load by 0.003.
+
+Starting armor and shield depend on the resulting profession:
+
+- Warrior: heavy armor and tower shield.
+- Mercenary, cleric, and battle mage: medium armor and kite shield.
+- Explorer, pilgrim, and investigator: light armor and buckler.
+- Pure priest, mage, and arcanist: magic armor and magic shield.
+
+Armor uses its authoritative per-piece tier table in both equipped and
+personal-inventory calculations, followed only by the established size
+multiplier. This keeps previewed item weight and actual carried load identical.
+
+## Personal inventory and overflow Magic Box 4.7.4
+
+**Implemented — pending validation**
+
+The personal inventory now exists independently from equipment and the Magic
+Box. It has no item-slot limit: every unequipped object stored there contributes
+its complete tier/size weight to carried load. Equipped weight, personal-
+inventory weight, and development test weight form the load used by the HUD,
+movement, evasion, air consumption, total mass, and push resistance.
+
+When collecting or creating an object, the system first checks whether its
+weight fits without exceeding carry capacity. If it fits, it enters personal
+inventory. Otherwise it is redirected to the Magic Box; only this overflow
+storage consumes its Intelligence-derived slots. If overflow is required while
+the box is full, the pickup remains in the world.
+
+Equipping an inventory object only changes its location and therefore does not
+change carried weight. Equipping directly from the Magic Box adds its weight
+and is rejected when capacity is insufficient. Unequipping returns the object
+to personal inventory. The compact menu reports location, inventory count,
+equipped slots, box usage, and the complete weight breakdown. Saves from 4.7.3
+migrate their previously unequipped objects to the Magic Box.
+
+## Persistent playable weapons 4.7
+
+**Implemented — pending validation**
+
+Sword, staff, and carbine are now real main-hand equipment records rather than
+an isolated weight placeholder. Every weapon/type/tier/size combination owns
+independent durability, uses XS–XL compatibility, records its current storage
+location, and survives save/load and map travel. Existing 4.6 profiles
+migrate their provisional weapon weight to a size-aware sword, staff, or
+carbine without invalidating the earlier equipment data.
+
+The compact equipment menu has a third Weapons filter. It previews damage,
+attack time, base air/Anima cost, weight, compatibility, durability, and
+carbine bullets. `P`, `Enter`, `Backspace`, `B`, and `D` use the same spawn,
+equip, remove, break, and drop flow already used by armor and shields.
+
+Every owned weapon may be equipped independently. Numeric family slots choose
+only the active weapon: sword uses 3, carbine uses 5, and staff uses 6. Sword
+retains physical Strength/mass damage and its 14-tic cadence; staff retains
+Intelligence damage, Insight accuracy/critical, adjusted Anima cost, and
+Eloquence casting speed. Carbine uses 360 tier-one damage without an attribute
+damage multiplier, 48 tics, 60 m, 30°/200° accuracy-scaled spread, 0% weapon
+critical base, 20 air per reload, physical push, and one bullet per shot.
+The confirmed starting loadout grants 100 test bullets. AltFire toggles the
+equipped secondary-hand shield; weapon secondary attacks remain reserved.
+
+Tier damage uses the documented 1.00/1.20/1.50 material progression. Weapon
+weight uses 1.00/1.50/2.00 and size 0.50/0.75/1.00/1.25/1.50. Test durability
+bases are sword 100, staff 80, and carbine 120, followed by the existing
+×1/×3/×9 tier rule and size multiplier.
+
+Carry capacity is written directly as
+`BaseMass × Type4Percent(Strength) / 100`. Therefore a 200-mass character has
+200 capacity at Strength 0 and 600 at Strength 100.
+
+## Carry capacity, magic armor, and equipment testing 4.6.2
+
+**Implemented — pending validation**
+
+Carry capacity is now `Strength Type 4 × (BaseMass / 100)`. Equipment weight
+remains excluded from that multiplier and continues to form the numerator of
+the load percentage. The tier-one, size-M carbine weight is now 12.
+
+The basic equippable category is now named “magic armor” in
+source, UI, tables, and documentation. This is a terminology-only migration:
+its stored numeric value remains zero, so existing saves and owned equipment
+records stay compatible. It remains separate from the zero-stat base clothing
+used when a slot is genuinely empty.
+
+The equipment menu accepts `P` to create its selected object through the pickup
+rules. It enters personal inventory when its weight fits or the Magic Box when
+it does not; `E`/`Enter` equips, `U`/`Backspace` removes, and `D` drops it.
+
+## Compatibility and equipment HUD 4.6.1
+
+**Implemented — pending validation**
+
+GZDoom 4.14.2 does not accept the two `GetMaximumDurabilityFor` signatures as
+overloads. The unused two-argument wrappers were removed; every active caller
+uses the size-aware three-argument function.
+
+The right-side HUD now includes carried weight, carry capacity, and percentage
+in a dedicated bar. Its fill changes from green to yellow at 50%, orange at the
+75% overload threshold, and red at 100% or more.
+
+Removing armor now equips a non-item baseline according to slot: nothing on
+head and torso, shirt on hands, and pants on feet. Baseline entries have zero
+defense, weight, reinforcement, and durability, are never damaged, and do not
+occupy the Magic Box. The existing equippable magic-armor set remains separate.
+
+The short bow catalogue entry is replaced by the tier-one carbine. Its
+values are 360 damage, 48 tics, 60 m, 30°/200° spread, 0% base critical chance,
+-20 air, and size-M weight 12. Version 4.7 connects this record to its playable
+projectile, bullets, inventory ownership, and persistent equipment model.
+
+Status legend:
+
+- **Implemented — pending validation:** compiled into the 4.0 source and ready
+  for Damian's GZDoom 4.14.2 test pass.
+- **Implemented and previously validated:** retained behavior that had already
+  passed manual testing before 4.0.
+- **Prepared:** a calculated value exists, but no final gameplay consumer exists.
+
+## 4.0 compatibility repair
+
+**Implemented — pending validation**
+
+- Actor states use unscoped actions compatible with monster state chains. Each
+  action casts `self` to `CaelumCombatActor` before accessing custom members.
+- Player collision dimensions use GZDoom's `A_SetSize`; `Radius` itself is a
+  readonly ZScript field and cannot be assigned directly.
+- Effective actor Dexterity and Insight are cached in play scope. The UI overlay
+  reads those fields instead of illegally calling play functions.
+- The cascading unknown identifiers reported in actor debug page six are
+  consequently removed.
+
+## Character creation 4.1
+
+**Implemented — pending validation**
+
+The legacy three-layer creation model is replaced by eight pages. The only
+structural character categories are Race and two Class selections; the second
+class resolves the resulting profession:
+
+1. Race.
+2. First class.
+3. Second class and resulting profession.
+4. Sex.
+5. Height.
+6. Four family points.
+7. Thirty individual points.
+8. Summary and confirmation.
+
+New characters now open this flow automatically. Until confirmation, ordinary
+movement and attacks are blocked, resource simulation is paused, and the
+unfinished character cannot receive damage. Keyboard controls are Right/Down,
+Enter, Space, and Backspace/Left; gamepads use D-pad, A, X, and B. The confirmed
+profile and completion flag persist in saves and in an inventory-backed travel
+record. Changing maps therefore restores the confirmed character instead of
+opening the creator again.
+
+Races contribute Physical / Technical / Social / Mental values:
+
+| Race | Values | Mass tier | Size tier |
+|---|---:|---:|---:|
+| Beast Man | 5/3/3/1 | +2 | +1 |
+| Caelith | 3/5/1/3 | +1 | 0 |
+| Human | 3/1/5/3 | 0 | 0 |
+| Goblin | 1/3/3/5 | -1 | -1 |
+
+Classes use Warrior 5/3/3/1, Explorer 3/5/1/3, Priest 3/1/5/3 and Mage
+1/3/3/5. The two selections are order-independent and resolve to Warrior,
+Explorer, Priest, Mage, Mercenary, Cleric, Battle Mage, Pilgrim, Investigator,
+or Arcanist.
+
+The family allocation keeps four points and a base limit of 15. Individual
+allocation keeps thirty points, at most +5 per attribute and never above twice
+the attribute's family base.
+
+## Attributes, Anima, and Eloquence
+
+**Implemented — pending validation**
+
+- The attribute retains its definitive `Resilience` name in source and UI.
+  Internal “survival resources” still refer collectively to hunger, thirst,
+  and sleep and are not the attribute name.
+- `Mana` is renamed `Anima` throughout the executable prototype.
+- Eloquence Type 4 increases casting speed. The test staff duration is
+  `18 tics × 100 / Type4Percent(Eloquence)`.
+- Eloquence Type 2 reduces Anima cost by `n(n+1)/101%`; cost reaches zero at
+  level 100 and cannot become negative.
+- Eloquence Type 4 ability range and Type 2 dialogue skill are calculated and
+  visible on the magic debug page. They are **Prepared** for later abilities
+  and dialogue consumers.
+
+## Mass and size tiers
+
+**Implemented — pending validation**
+
+Mass tier is clamped from 1 to 10 and maps to 50, 55, 60, 70, 80, 100, 120,
+140, 170, or 200 kg. Size tier is clamped from 1 to 7 and maps to:
+
+| Tier | Height in metres | Actor Height | Actor Radius |
+|---:|---:|---:|---:|
+| 1 | 1.20 | 37.3 | 10.7 |
+| 2 | 1.40 | 43.6 | 12.4 |
+| 3 | 1.60 | 49.8 | 14.2 |
+| 4 | 1.80 | 56.0 | 16.0 |
+| 5 | 2.00 | 62.2 | 17.8 |
+| 6 | 2.20 | 68.4 | 19.6 |
+| 7 | 2.40 | 74.7 | 21.3 |
+
+The body-mass multiplier is `BaseMassKg / 100`. It affects maximum health,
+physical attack power, physical push, carry capacity, air consumption, hunger
+loss, and thirst loss. Equipment remains separate and continues to affect
+load, movement, evasion, knockback, and additional air use.
+
+Push is live for the player's sword and staff, Caelum actor melee attacks, and
+physical or magical Caelum projectiles. Physical attacks use
+`Strength Type 1 × body mass`; magical attacks use `Intelligence Type 1`.
+The final force is `8 × attack push multiplier × receiver knockback multiplier`.
+It only occurs after positive health damage; misses, evasion, and fully
+prevented damage do not push. The training dummy's exceptional native mass keeps
+it stationary. The combat page displays the last player-attack push force.
+
+The development controls provide separate level-75 and level-100 attribute
+overrides. Enabling one disables the other; toggling the active option again
+restores the character's ordinary profile.
+
+## Armor and equipped mass
+
+**Implemented — pending validation**
+
+Every armor piece now exposes its documented weight. At size M, full-set totals
+for tiers 1/2/3 are 5/7/10 magic armor, 10/15/20 light, 20/30/40 medium, and
+40/60/80 heavy. The exact per-piece tier table is applied before the equipment-
+size multiplier. Broken pieces retain their weight. Shield and equipped-weapon
+weights are included automatically, and debug-added mass is shown separately.
+
+The current loadout is mirrored into an invisible, undroppable GZDoom inventory
+record. It preserves profile, allocations, resources, equipped items, ownership,
+and the individual durability of every armor/shield type, tier, and size
+combination across saves and map travel. Existing pre-size ownership records
+migrate automatically to size M.
+
+`CaelumArmorPickup` and `CaelumShieldPickup` are functional world pickups. Map
+authors configure armor with args `slot/type/tier/size/durability` and shields
+with `type/tier/size/durability`; size zero remains a backwards-compatible M
+default. Duplicate pickups retain ownership and repair that stored copy up to
+maximum durability. A separate compact equipment interface cycles owned or
+unowned previews, equips selected compatible objects, removes armor to its
+zero-stat base clothing, and can fully unequip shields. Every change immediately
+recalculates attribute bonuses, defense, reinforcement, mass, movement,
+evasion, air cost, and shield blocking. A development control spawns the
+currently previewed pickup.
+
+## Area damage
+
+**Implemented — pending validation**
+
+Damage carrying `DMG_EXPLOSION` cannot be evaded. GZDoom first supplies the
+distance-adjusted radial damage for the actor; Caelum then intersects the
+explosion sphere with that actor's authored anatomy volumes. The supplied base
+damage is applied once per touched region, and each application independently
+resolves natural vulnerability, armor reinforcement, defense, Toughness, and
+durability. The resulting health damage is summed into one final hit.
+
+For the humanoid profile this produces at most four applications: head, torso,
+arms, and legs. Both arms are one logical region: touching either or both counts
+only once. A low explosion may therefore affect only legs, a larger wave from
+below may affect legs and torso, and a full-body intersection resolves all four.
+Separate authored non-arm regions remain independent, allowing future actors to
+define multiple heads, tails, or weak points without changing this pipeline.
+
+Pain and damage-based adrenaline are evaluated once from the total health loss.
+A naturally critical region touched by the explosion can reduce lucidity, with
+its own armor absorption mitigating that loss. Shields do not currently block
+radial damage.
+
+Defense percentages, reinforcement, bonuses, durability loss, and shield
+behavior remain **Implemented and previously validated**.
+
+## Predefined hostile characters
+
+**Implemented — pending validation**
+
+The final-value table in the 4.0 specification is authoritative:
+
+| Actor | Profile | Attributes F/T/S/M | Mass / size | Armor | Health |
+|---|---|---:|---|---|---:|
+| Rulo | Beast Man Warrior, male, tall | 20/18/9/3 | 200 kg / 2.40 m | Heavy | 6200 |
+| Ronnie | Caelith Mercenary, male, tall | 20/18/5/7 | 140 kg / 2.00 m | Medium | 4340 |
+| Argento | Human Battle Mage, male, tall | 9/7/16/18 | 120 kg / 2.00 m | Light | 1740 |
+| Caella | Goblin Cleric, female, tall | 9/7/16/18 | 80 kg / 1.60 m | Magic armor | 1160 |
+
+Physical actor attacks apply body mass; magical attacks do not. Caella owns an
+independent profile rather than inheriting Argento's combat setup.
+
+## Equipment sizes and Magic Box 4.6
+
+**Implemented — pending validation**
+
+Equipment now records XS, S, M, L, or XL independently for every owned armor
+piece and shield. Weight and maximum durability use the size factors 0.50,
+0.75, 1.00, 1.25, and 1.50. Compatibility is exact: XS accepts character size
+tiers 1–2, S accepts 2–3, M accepts 3–5, L accepts 5–6, and XL accepts 6–7.
+Older ownership records and equipped objects migrate to M once.
+
+Shield tier-one weights are magic 4, buckler 8, kite 12, and tower 16. Shields
+then use tier factors 1.00/1.50/2.00 before size. The same tier/size weight rule
+is centralized for weapons; the sword contributes base weight 6.
+Armor retains its documented per-piece weights and applies size only.
+
+The compact equipment interface is the first functional catalogue view:
+armor/shield filters, storage location, current and maximum box slots, size
+compatibility, three-decimal item weight, equip/remove, development break, and
+drop. Pickups remain on the ground only when their weight exceeds capacity and
+the box has no free slot. Dropped objects preserve size and durability. The box formula remains
+`2 + floor(Type1Percent(Intelligence) / 50)`; Tarot bonuses remain reserved.
+
+Strength carry capacity uses Type 4 multiplied by `BaseMass / 100`. Agility
+jump scaling is Type 1.
+
+## Retained validated systems
+
+**Implemented and previously validated**
+
+- Seven vulnerability grades, localized armor, reinforcement, durability, and
+  critical damage-only behavior.
+- Natural critical-region lucidity loss, armor absorption mitigation, sleep
+  multipliers, dizzy accuracy, stun, and pain-animation immobilization.
+- Health-state penalties, Patience mitigation, survival penalties, progressive
+  health-bar color, evasion, crouch bonuses, jump scaling, and air costs.
+- Adrenaline events, enemy-kill and nearby-ally-death gains, and unchanged
+  out-of-combat decay.
+- Training dummy, sword, staff, shields, ranged actor attacks, four actor sprite
+  sets, and six compact debug pages.
+
+## Required 4.0 test pass
+
+1. Build and start GZDoom 4.14.2; confirm ZScript parses without errors.
+2. Open creation and traverse all eight pages in both orders for mixed classes.
+3. Confirm four family points and thirty individual points remain mandatory.
+4. Cycle race, sex, and height; verify mass/size tiers and player collision size.
+5. Compare armor type/tier changes with equipped, inventory, debug, and total
+   carried weights shown on character page one.
+6. Spend and refill Anima; verify HUD, staff cost reduction, and faster casting
+   at higher Eloquence.
+7. Spawn all four actors and verify dimensions, health, armor, physical damage,
+   magical damage, pain, death, and actor debug page values.
+8. Re-run the previously validated shield, armor, lucidity, pain, adrenaline,
+   movement, jump, survival, and resource controls to catch regressions.
+9. Change maps after confirming a character; verify the creator stays closed
+   and profile, resources, armor, shield, durability, and owned counts persist.
+10. Compare sword/staff push and Rulo/Ronnie projectiles. Both physical and
+    magical confirmed hits should push; misses and evasion should not.
+11. Assign the equipment and equipment-pickup test controls. Spawn several
+    armor/shield combinations, collect them, equip and remove them, then verify
+    individual durability and ownership survive save/load and map travel.
+12. Trigger explosions at low, middle, lateral, and full-body positions. Verify
+    the armor page's touched-region count and independent piece durability.
+13. In equipment, cycle XS through XL and verify incompatible sizes cannot be
+    equipped for the current character size tier.
+14. Check shield weights at M: magic 4/6/8, buckler 8/12/16, kite 12/18/24,
+    and tower 16/24/32 for tiers 1/2/3; then verify size multipliers.
+15. Collect objects below capacity and confirm they enter personal inventory
+    and increase carried weight without consuming box slots.
+    Fire the carbine and confirm that each bullet lowers load by 0.003.
+16. Exceed capacity and confirm the next object enters the Magic Box without
+    increasing load; fill the box and confirm another overweight pickup stays
+    on the ground.
+17. Cycle to Weapons, spawn sword/staff/carbine variants, collect them, and
+    confirm incompatible sizes cannot be equipped.
+18. Equip sword, staff, and carbine simultaneously. Confirm that equipping one
+    does not unequip the others; use 3/5/6 to activate sword/carbine/staff and
+    Fire to confirm their respective air, bullet, and adjusted Anima costs.
+19. Compare carbine fire while standing, running, crouching, and Mareado;
+    inspect its visible spread and verify the 48-tic firing limit.
+20. Break an equipped weapon and confirm it retains weight but cannot attack;
+    then drop/recollect an unequipped weapon and verify durability and size.
+21. Save/load and change maps with objects equipped, in personal inventory, and
+    in the Magic Box; verify location, load, durability, bullets, and counts.
+
+## Not yet implemented
+
+- Final buffs, debuffs, healing abilities, and dialogue consumers for the new
+  Eloquence range/Labia values.
+- Save migration from profiles created with the legacy three-layer format.
+- Remaining weapon families, material catalogue, Tarot, and final visual
+  inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
+  item actions are functional.
+
+## Jewelry crafting — 4.23.4
+
+Implemented universal amulets and elemental seals with tier-based weight, attribute bonuses, Jeweler Bench infrastructure, and MAP01 test placement. Raw gems, copper, tin, and coal are registered for future systems and intentionally have no current recipe function.
+
+````
+
+
+## Registro: legacy/PHYSICS_COLLISION_SYSTEM.md
+
+SHA-256: `fd5e21fdc6cd2b94d311efd5c2df708f6e77420359ce92e472d3e9ca19f923d0`
+
+````text
+# Caelum Argenteum — Collision, Momentum and Impact Physics
+
+## V4.26.5d — Environmental Pain does not grant Adrenaline
+
+Wall and floor impacts already bypass the direct received-damage Adrenaline event. V4.26.5d closes the remaining shared-path leak: if environmental impact damage triggers the Pain state, that Pain may still immobilize/stun the body but does not grant Pain Adrenaline. Actor-to-actor impacts and ordinary combat damage retain their authored Pain Adrenaline behavior. No kinematic, energy, Toughness, armor, anatomy or damping formula changes in this correction.
+
+## Status
+
+**V4.25.1 — implemented, pending manual validation**
+
+This system gives physical contact a gameplay meaning independent of weapon attacks. Actor-to-actor collisions use a simplified momentum/impulse model; impacts against the floor and blocking map geometry use the forced change in velocity measured by the engine.
+
+The design intentionally separates **real-world physics concepts** from **gameplay conventions**.
+
+## 1. Physical concepts used
+
+### Linear momentum
+
+For a body of mass `m` and velocity `v`:
+
+`p = m v`
+
+Momentum is directional. In actor-to-actor collisions Caelum resolves only the component along the collision normal; tangential motion is preserved as much as possible.
+
+### Impulse
+
+An impulse changes momentum:
+
+`J = Δp = m Δv`
+
+This is the central quantity behind action/reaction. A collision does not only push the receiver: both participants receive an opposite velocity change.
+
+### Relative velocity and collision normal
+
+For actor A colliding with actor B, the normalized contact direction is:
+
+`n = (x_B - x_A) / |x_B - x_A|`
+
+The closing speed along that direction is:
+
+`v_close = (v_A - v_B) · n`
+
+Only `v_close > 0` is treated as an approaching collision.
+
+### Two-body impulse
+
+The normal impulse magnitude is:
+
+`J = (1 + e) v_close / (1/m_A + 1/m_B)`
+
+where `e` is the coefficient of restitution.
+
+V4.25.1 uses:
+
+`e = 0`
+
+This is a **perfectly inelastic normal collision**. The bodies do not behave like rubber balls; their normal velocities tend toward a common value after impact. Tangential velocity is not deliberately cancelled.
+
+The resulting normal velocity changes are:
+
+`Δv_A = J / m_A`
+
+`Δv_B = J / m_B`
+
+and are applied in opposite directions, satisfying the action/reaction interpretation.
+
+## 2. Effective combat mass
+
+Caelum distinguishes physical carried load from **effective combat mass**.
+
+Normal:
+
+`m_eff = m`
+
+Buckler while blocking:
+
+`m_eff = 0.5 m`
+
+Tower shield while blocking:
+
+`m_eff = 2 m`
+
+These factors do **not** modify carry capacity or current carried weight. They represent how well the character braces against forced movement.
+
+This makes ramming strategically asymmetric:
+
+- A buckler user loses more velocity in a collision and is a poor rammer.
+- A tower-shield user loses less velocity and transfers more velocity to the other body.
+- The tower shield therefore reduces collision self-trauma naturally through a smaller `Δv`; it does not need a separate collision-damage reduction rule.
+
+## 3. Impact severity from forced velocity change
+
+Collision damage is not based on distance actually traveled after the impact.
+
+For each actor Caelum measures the magnitude of the **forced velocity change**:
+
+`|Δv| = |v_after - v_before|`
+
+This allows the same severity model to describe:
+
+- actor versus actor;
+- actor versus wall;
+- landing after a fall;
+- future movable-object impacts;
+- future explosions or abilities that launch bodies.
+
+## 4. Height-normalized equivalent time
+
+Each body uses half its own actor height as a reference distance:
+
+`d_ref = H / 2`
+
+GZDoom actor velocity is used in map units per game tic for this calculation. Therefore the number of equivalent tics required to cover half the actor's height at the measured `|Δv|` is:
+
+`T_eq = (H / 2) / |Δv|`
+
+This does **not** mean the actor must actually travel that distance. It is a normalization question:
+
+> At the velocity change suffered by this body, how many tics would it take to traverse half its own height?
+
+A short equivalent time means an abrupt, violent change in motion.
+
+## 5. Universal damage threshold
+
+The universal threshold is:
+
+`T_eq > 35 tics -> no impact damage`
+
+At or below the threshold, each damage step represents 3% of maximum health.
+
+V4.25.1 uses discrete conservative steps:
+
+`T_step = ceil(max(1, T_eq))`
+
+`N_steps = clamp(36 - T_step, 0, 35)`
+
+`DamagePercent = 3% × N_steps`
+
+This gives the intended reference values:
+
+| Equivalent time | Base impact damage |
+| ---: | ---: |
+| > 35 tics | 0% max HP |
+| 35 tics | 3% max HP |
+| 30 tics | 18% max HP |
+| 20 tics | 48% max HP |
+| 10 tics | 78% max HP |
+| 5 tics | 93% max HP |
+| 2 tics | 102% max HP |
+| 1 tic or less | 105% max HP |
+
+The maximum is intentionally capped at 105% of maximum health.
+
+## 6. Base impact damage
+
+The current base formula is:
+
+`D_base = HP_max × DamagePercent × SurfaceMultiplier`
+
+`SurfaceMultiplier` defaults to `1.0`.
+
+The field exists now so later equipment and anatomy can modify contact trauma. Examples planned for future content include spikes, horns, reinforced surfaces, padding, or other collision-specific equipment.
+
+A spiked surface can therefore increase injury without changing momentum:
+
+`D_spiked = D_base × SpikeMultiplier`
+
+Momentum determines **how violently velocities changed**. Surface properties determine **how dangerous the contact surface is**.
+
+## 7. Impact mitigation (V4.25.2)
+
+`CaelumImpact` remains global kinetic trauma, but raw collision severity is no longer final health damage.
+
+The raw impact result is:
+
+`D_raw = HP_max × DamagePercent × SurfaceMultiplier`
+
+Then Toughness applies the same body-resistance curve already used by Caelum combat:
+
+`M_toughness = clamp(1 - T(T+1)/10100, 0, 1)`
+
+Global impact armor defense is the arithmetic mean of the four currently functional armor slots:
+
+`A_impact = (A_head + A_body + A_hands + A_feet) / 4`
+
+Broken/base-clothing pieces contribute zero because the normal `GetDefense(slot)` rule already returns zero.
+
+Final health damage is:
+
+`D_final = D_raw × M_toughness × (1 - A_impact/100)`
+
+Impact still cannot be evaded and is not intercepted by shield Block. It also does not choose one localized hit region because wall/ground/body trauma is treated as distributed kinetic load.
+
+Armor durability is **not yet consumed by global impact absorption**. This is deliberate: a later balance decision is needed for how a distributed collision should divide durability loss among the four pieces.
+
+## 8. Actor-to-actor collision flow
+
+GZDoom calls `CollidedWith(Actor other, bool passive)` after two solid actors actually collide. Caelum processes the pair only from the active side so the action/reaction impulse is not applied twice.
+
+Flow:
+
+1. Confirm both bodies belong to the Caelum character/NPC physics system.
+2. Calculate collision normal.
+3. Calculate relative closing speed.
+4. Resolve effective masses.
+5. Calculate the shared impulse.
+6. Change both velocities in opposite directions.
+7. Measure `Δv_A` and `Δv_B`.
+8. Independently calculate impact damage for A and B.
+
+Equal masses moving toward each other at equal and opposite speeds tend to cancel their normal motion rather than bounce.
+
+Different masses produce different velocity changes. The heavier/effectively braced actor suffers less `Δv`; the lighter actor suffers more.
+
+## 9. Walls and map geometry
+
+Raw GZDoom horizontal velocity is intentionally **not** interpreted directly as physical meters per tic. The first V4.25.1 test produced values such as 0.53 equivalent tics from an ordinary short run into a wall, demonstrating that the engine movement scale is unsuitable as a direct physical scale for self-propelled wall impacts.
+
+V4.25.2 therefore normalizes wall severity against the character's already calculated effective movement percentage.
+
+The fraction of horizontal velocity actually lost is:
+
+`F_lost = clamp(Δv_wall / |v_xy,before|, 0, 1)`
+
+Movement severity is:
+
+`S_wall = (EffectiveMovementPercent / 100) × F_lost`
+
+and:
+
+`T_eq,wall = 35 / S_wall`
+
+Therefore a complete frontal stop at exactly 100% effective movement lands at the 35-tic threshold. Load, Agility and health/Air/survival movement modifiers already change `EffectiveMovementPercent`, so a heavily encumbered slow character generates a less severe self-powered wall collision while superhuman movement can move far below the threshold.
+
+Wall damage is only registered on the transition from unblocked to blocked movement. Holding forward against a wall does not reapply collision damage every tic.
+
+## 10. Falling and floor impacts
+
+Caelum does not need a separate arbitrary fall-height damage table.
+
+V4.25.2 stores the latest downward `v_z` while the actor is airborne and detects the transition from airborne on the previous tic to grounded on the current tic. This avoids relying on an intra-`Tick()` ground-state transition that V4.25.1 failed to observe reliably.
+
+At landing:
+
+`Δv_floor ≈ |v_z,last_falling|`
+
+and:
+
+`T_eq = (H_ref/2) / Δv_floor`
+
+Player `H_ref` is the stable body height from `DerivedStats.ActorHeight`, not the transient actor cylinder height. NPC Caelum actors use their class-defined base `Height`.
+
+This means fall damage depends on **landing speed**, not directly on fall distance.
+
+That matches the real physical interpretation better than a pure height table: once a body reaches a terminal velocity, additional fall distance does not increase impact speed, so the model naturally reaches a maximum falling severity determined by the engine's terminal velocity.
+
+Short falls have a smaller `Δv`; long falls approach the terminal-speed limit.
+
+## 11. Engine relationship
+
+The implementation uses GZDoom's collision and movement state rather than replacing the engine physics:
+
+- `CollidedWith()` identifies confirmed actor collisions.
+- actor velocity (`Vel`) supplies the velocity state;
+- `MovementBlockingLine` / `BlockingLine` identify blocked horizontal world movement;
+- ground state and vertical velocity identify landings.
+
+The impulse layer changes velocity after confirmed actor contact, while the impact layer interprets the resulting forced `Δv`.
+
+## 12. Debug telemetry
+
+The player debug overlay exposes the last impact:
+
+- impact kind: none / actor / wall / floor;
+- `Δv`;
+- equivalent tics;
+- predicted/base damage percentage;
+- calculated base damage.
+
+Internally the system also stores:
+
+- effective self mass;
+- effective other mass;
+- closing speed;
+- impulse magnitude.
+
+These values are intended for MAP01 calibration before the system is considered fully validated.
+
+## 13. Current ranged correction
+
+V4.25.1 also corrects the Carbine base Reload time from 10 seconds to **5 seconds**.
+
+Current ranged base Reload times:
+
+- Standard Bow: 3 s
+- Longbow: 3 s
+- Crossbow: 5 s
+- Carbine: 5 s
+
+All are divided by the Dexterity Type-4 attack-speed modifier.
+
+## 14. Planned extensions
+
+The same infrastructure is intended to support:
+
+- movable rocks and logs;
+- heavy creatures and charging attacks;
+- spiked armor/shields;
+- horned or armored monsters;
+- objects launched into characters;
+- wall slams caused by knockback;
+- collision-specific damage types;
+- configurable coefficients of restitution for genuinely bouncy objects;
+- surface materials that alter damage without altering momentum.
+
+
+## 15. Current Caelum test-actor physical/defensive profiles
+
+| Actor | HP | Mass | Height | Toughness | Resilience | Agility | Patience | Dexterity | Insight | Strength | Intelligence | Armor | Impact armor | Toughness multiplier |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: |
+| Rulo | 6200 | 200 | 74.7 | 20 | 18 | 18 | 3 | 18 | 3 | 20 | 3 | Heavy T1 | 30% | 0.9584 |
+| Caella | 1160 | 80 | 49.8 | 9 | 7 | 7 | 18 | 7 | 18 | 9 | 18 | Magic T1 | 5% | 0.9911 |
+| Ronnie | 4340 | 140 | 62.2 | 20 | 18 | 18 | 7 | 18 | 7 | 20 | 7 | Medium T1 | 20% | 0.9584 |
+| Argento | 1740 | 120 | 62.2 | 9 | 7 | 7 | 18 | 7 | 18 | 9 | 18 | Light T1 | 10% | 0.9911 |
+
+These four actors are **not full player character sheets**. `CaelumCombatActor` stores the eight combat-relevant attributes listed above. Their health, native mass, height and speed are explicitly authored in their actor classes rather than reconstructed from a complete race/class/Constitution profile.
+
+Ordinary Doom actors such as `Demon` do not yet enter this Caelum collision pipeline because they lack `CaelumPlayer`, `CaelumCombatActor`, or the explicit training-dummy adapter. They continue to use native GZDoom collision behavior.
+
+## 16. Training dummy
+
+The training dummy is now movable and uses native `Mass 10000`. It no longer clears horizontal velocity every tic and no longer carries `CANNOTPUSH`. It is accepted as a valid Caelum collision body for momentum calculations.
+
+The dummy intentionally remains a diagnostic native actor rather than a full `CaelumCombatActor`; its role is to behave as an extremely massive movable object so action/reaction against near-immovable mass can be observed cleanly.
+
+## 17. V4.25.3 — Acceleration and biological damping
+
+### Horizontal acceleration
+
+The character's maximum movement speed is still produced by the existing Caelum stat/load/status pipeline. V4.25.3 adds a dimensionless acceleration state `A` between 0 and 1.
+
+For each grounded tic with directional input:
+
+`A_(n+1) = A_n + (1 - A_n) alpha`
+
+with:
+
+`alpha = 0.028127624`
+
+Therefore:
+
+`A_n = 1 - (1 - alpha)^n`
+
+and after 105 tics (3 seconds):
+
+`A_105 = 0.95`
+
+The movement multiplier applied to GZDoom is:
+
+`Movement_final = Movement_existing × A`
+
+This is an exponential approach to the existing maximum, not a replacement for Agility or load rules.
+
+When movement input is released or the actor becomes physically immobilized, the active acceleration state is reset. While airborne, the reached acceleration state is preserved but does not continue to build.
+
+### Run-up and wall impacts
+
+The V4.25.2 wall severity formula now includes `A`:
+
+`S_wall = (EffectiveMovementPercent × A / 100) × F_lost`
+
+`T_eq,wall = 35 / S_wall`
+
+Consequently, taking a half-step into a wall and running into it after a long acceleration period are physically different events even if both ultimately become blocked by the same map line.
+
+### Contact latching
+
+A sustained push is not a sequence of fresh impacts.
+
+When actor A and actor B resolve a valid closing collision, both store the other actor as their current impact contact. Further `CollidedWith()` callbacks for that same pair are ignored.
+
+The contact rearms only once center distance exceeds:
+
+`R_A + R_B + technical_margin`
+
+The margin is 2 map units and exists only to avoid contact-state flicker caused by collision precision.
+
+This preserves continuous pushing while eliminating repeated collision trauma from simply holding movement against another body.
+
+### Biological landing damping
+
+Living tissue is not modeled as a perfectly rigid body. Controlled landings extend the effective stopping process through muscles, tendons and joints.
+
+V4.25.3 therefore separates:
+
+`raw floor Delta-v`
+
+from:
+
+`effective traumatic Delta-v`
+
+For the player:
+
+`Delta-v_bio = current normal JumpZ`
+
+unless the player is physically immobilized/stunned, in which case:
+
+`Delta-v_bio = 0`
+
+The traumatic vertical change becomes:
+
+`Delta-v_effective = max(0, Delta-v_raw - Delta-v_bio)`
+
+Only `Delta-v_effective` enters the equivalent-tic damage equation.
+
+Using current `JumpZ` makes a normal self-generated jump the natural reference for a controlled safe landing while automatically respecting the already-defined jump scaling.
+
+### Stunned falls
+
+A stunned body cannot deliberately flex the legs or coordinate posture. Therefore biological landing absorption is removed while physical stun/immobilization is active.
+
+The same fall can consequently produce very different trauma:
+
+- conscious/controlled landing -> biological absorption -> remaining Delta-v -> Toughness -> armor;
+- stunned/uncontrolled landing -> no biological absorption -> full Delta-v -> Toughness -> armor.
+
+### Caelum NPC biological scale
+
+`CaelumCombatActor` does not use PlayerPawn `JumpZ`, so its living-body landing absorption uses geometric scaling:
+
+`Delta-v_bio,NPC = 8 × sqrt(H / 56)`
+
+where 8 is the standard Caelum/GZDoom jump-velocity reference and 56 is the standard actor-height reference already used by the player size conversion.
+
+This square-root length scaling follows the characteristic velocity scale `v ~ sqrt(g L)` for geometrically similar bodies under the same gravity.
+
+Lucidity-stunned NPCs receive zero biological landing absorption.
+
+### Damage pipeline after V4.25.3
+
+For a floor impact:
+
+`raw Delta-v`
+-> `biological absorption`
+-> `effective Delta-v`
+-> `equivalent tics`
+-> `raw % max HP`
+-> `Toughness`
+-> `global armor`
+-> `final health damage`
+
+For actor-to-actor collisions the existing impulse/action-reaction calculation is unchanged.
+
+
+## 18. V4.25.4 — Specific kinetic energy damage curve
+
+### Why the previous linear staircase was replaced
+
+The former rule mapped each equivalent-tic step directly to another 3% maximum-health damage. This made moderate actor collisions too destructive and introduced abrupt discontinuities between adjacent speeds.
+
+Kinetic energy does not scale linearly with speed:
+
+`E_k = 1/2 m v²`
+
+For injury severity Caelum uses **specific kinetic energy**:
+
+`E_k / m = 1/2 v²`
+
+Mass is deliberately omitted from this second stage because it has already participated in the two-body impulse equation and therefore already determines each actor's resulting `Delta-v`. Reintroducing `m` in injury would count the mass advantage twice.
+
+### Relationship with equivalent tics
+
+The existing size-normalized relation is:
+
+`T_eq = (H/2) / |Delta-v|`
+
+Therefore:
+
+`|Delta-v| ∝ 1 / T_eq`
+
+and specific kinetic energy scales as:
+
+`E_specific ∝ 1 / T_eq²`
+
+### Continuous normalized damage function
+
+The reference points are:
+
+`T_eq = 35 -> 0% raw max-HP damage`
+
+`T_eq = 1 -> 100% raw max-HP damage`
+
+For `T_eq < 35`:
+
+`R_v = 35 / T_eq`
+
+`R_E = R_v²`
+
+`DamagePercent = 100 × (R_E - 1) / (35² - 1)`
+
+For `T_eq >= 35`:
+
+`DamagePercent = 0`
+
+There is no upper clamp at one tic. The same energy law continues below one tic.
+
+Reference values:
+
+| Equivalent tics | Raw max-HP damage |
+| ---: | ---: |
+| 35 | 0% |
+| 30 | 0.03% |
+| 25 | 0.08% |
+| 20 | 0.17% |
+| 15 | 0.36% |
+| 10 | 0.92% |
+| 5 | 3.92% |
+| 3 | 11.04% |
+| 2 | 24.94% |
+| 1 | 100% |
+| 0.8 | 156.30% |
+| 0.5 | 400.25% |
+| 0.25 | 1601.23% |
+
+These are **raw** values. Biological landing damping, Toughness, global armor defense and surface multipliers remain later stages of the pipeline.
+
+### Robust contact rearm
+
+A temporary gap caused by the inelastic impulse is no longer enough to define a new charge.
+
+After a valid actor collision, the pair remains latched until:
+
+`distance > Radius_A + Radius_B + 0.25 × min(H_A, H_B) + 2`
+
+and this condition remains true for:
+
+`5 consecutive tics`
+
+Only then is the pair eligible to generate a fresh impact.
+
+This creates a physical distinction between:
+
+- continuing to push after one collision;
+- tiny recoil/engine oscillation while still engaged;
+- actually disengaging, taking space, and charging again.
+
+The 25% body-height term is gameplay geometry tied to character scale. The two-unit margin and five-tic persistence are technical anti-flicker parameters rather than physical constants.
+
+## 19. V4.26.0 — Impact Physics Core API
+
+### Architectural separation
+
+The physics solver is now independent of Caelum gameplay systems.
+
+`impactphysics/ImpactPhysics.zs` contains only generic mechanics:
+
+- inertial mass;
+- body height;
+- velocity;
+- collision normal;
+- coefficient of restitution;
+- impulse;
+- forced velocity change;
+- equivalent impact tics;
+- specific kinetic-energy severity.
+
+It contains no references to CaelumPlayer, CaelumCombatActor, attributes, armor, biology, HP, Tarot or equipment.
+
+### ImpactBody
+
+A generic body describes the physical input:
+
+- `Mass`
+- `Height`
+- `Velocity`
+- `Restitution`
+- `SurfaceMultiplier`
+
+The core does not decide what SurfaceMultiplier means to a game's damage system; it is metadata available to integrations.
+
+### ImpactResult
+
+A resolved impact returns:
+
+- validity;
+- static/finite target flag;
+- collision normal;
+- closing speed;
+- impulse magnitude;
+- source Delta-v;
+- target Delta-v;
+- equivalent tics for each body;
+- energy severity percentage for each body.
+
+The result is descriptive. The core does not remove HP or apply armor.
+
+### ResolveBodies
+
+Two finite masses use the normal impulse equation:
+
+`J = (1+e) v_close / (1/m_A + 1/m_B)`
+
+`Delta-v_A = J/m_A`
+
+`Delta-v_B = J/m_B`
+
+The resulting Delta-v values are converted to equivalent tics and the V4.25.4 energy curve.
+
+### ResolveStatic
+
+Static geometry is defined as the limit:
+
+`m_target -> infinity`
+
+The target does not change velocity. The source loses the velocity component normal to the surface.
+
+`Delta-v_source = |v_source dot n|`
+
+`J_static = m_source × Delta-v_source`
+
+The same equivalent-tic and energy functions then apply. There is no special wall damage curve.
+
+### Engine-derived effective wall normal
+
+GZDoom map-line geometry is not reimplemented by the core. The Caelum adapter compares horizontal velocity before and after the native movement step:
+
+`v_lost = v_before - v_after`
+
+The normalized lost-velocity direction becomes the effective collision normal passed to `ResolveStatic`.
+
+This naturally ignores preserved tangential/sliding velocity and evaluates only the motion the engine actually removed.
+
+### Convergence property
+
+A required validation property is:
+
+`lim(m_B -> infinity) ResolveBodies(A,B) = ResolveStatic(A)`
+
+The mass-10000 training dummy is therefore not only a gameplay object but a convergence test. Its effect on the player should be close to, but not exactly equal to, static geometry.
+
+### ResolveExternal
+
+`ResolveExternal` accepts a target body plus an externally supplied source mass, source velocity, normal and restitution.
+
+This is the intended bridge for systems that may not be ordinary Actor-to-Actor collisions:
+
+- avalanches;
+- moving sectors;
+- scripted machinery;
+- collapsing structures;
+- rams;
+- catapult payload systems;
+- other project-specific hazards.
+
+The external system supplies physical state rather than arbitrary attack damage.
+
+### Standalone export target
+
+After validation, `/impactphysics/ImpactPhysics.zs` can become the basis of a standalone `ImpactPhysics.pk3`.
+
+A consuming project should be able to:
+
+1. include the core;
+2. construct `ImpactBody` values from its own actors/objects;
+3. call a solver;
+4. interpret `ImpactResult` using its own health, armor, structural-integrity or breakage rules.
+
+Caelum is therefore an adapter/client of the API rather than the owner of the underlying mathematics.
+
+### Melee boundary
+
+Melee is deliberately outside V4.26.0.
+
+A physical melee model would need more than player and weapon mass. At minimum it requires:
+
+- swing/strike velocity rather than locomotion velocity;
+- effective weapon mass at the contact point;
+- lever arm and rotational contribution;
+- contact area;
+- edge sharpness or point geometry;
+- target material/armor response;
+- penetration/cutting versus blunt energy transfer;
+- attack technique.
+
+Therefore current melee damage remains the authoritative combat model. A future melee-physics layer can consume Impact Physics Core outputs once these additional variables are explicitly designed.
+
+## 20. V4.26.1 — Toughness tolerance and static-contact filtering
+
+### Toughness as kinetic-trauma tolerance
+
+For collision damage, Toughness is no longer interpreted as a multiplicative percentage reduction.
+
+After energy severity and the impacting surface modifier:
+
+`S_surface = S_energy × SurfaceMultiplier`
+
+Toughness removes percentage points directly:
+
+`S_postToughness = max(0, S_surface - Toughness)`
+
+The remaining severity is converted to health:
+
+`D_preArmor = HP_max × S_postToughness / 100`
+
+and armor remains proportional:
+
+`D_final = D_preArmor × (1 - A_impact/100)`
+
+Examples:
+
+- raw 10%, Toughness 5 -> 5% remains;
+- raw 10%, Toughness 50 -> 0%;
+- raw 100%, Toughness 100 -> 0%;
+- raw 200%, Toughness 100 -> 100% remains before armor.
+
+This models Toughness as a structural/biological trauma threshold rather than conventional damage resistance.
+
+### Static grazing filter
+
+Static geometry is still solved through the infinite-mass Impact Physics Core path, but the Caelum adapter distinguishes impact from ordinary sliding.
+
+`F_lost = |Delta-v_horizontal| / |v_horizontal,before|`
+
+If:
+
+`F_lost < 0.25`
+
+the event is treated as grazing contact and does not enter the damage solver.
+
+The 25% threshold is a gameplay contact classifier, not a physical constant. It prevents narrow corridors and shallow wall contact from becoming a source of constant trauma.
+
+### Static contact rearm
+
+After a wall/static collision state begins, another static impact is not eligible until the actor has been unblocked for five consecutive tics.
+
+This protects against one-tic gaps in GZDoom's blocking-line state while sliding along irregular geometry.
+
+### Adrenaline
+
+Environmental kinetic trauma is separated from combat damage response:
+
+- actor collision -> normal received-damage Adrenaline remains;
+- wall/static geometry -> no received-damage Adrenaline;
+- floor/fall impact -> no received-damage Adrenaline.
+
+Pain and health-state consequences still occur when environmental impact actually removes HP.
+
+## 21. V4.26.2 — Universal 28-MU scale and weighted contact anatomy
+
+### Universal severity distance
+
+Equivalent impact time no longer uses half of the individual body's height.
+
+The fixed reference is:
+
+`L_ref = 28 map units`
+
+This originates from half the standard 56-MU Caelum humanoid height (the 1.8 m reference character), but it is an engine-space calibration constant, not a claim that Doom map units universally equal real-world meters.
+
+For every body:
+
+`T_impact = 28 / |Delta-v|`
+
+The V4.25.4 specific-energy curve remains unchanged after this conversion.
+
+This prevents body size from entering severity twice. Mass already affects impulse and therefore the Delta-v received by each body. Toughness and biological damping then describe resistance/controlled absorption separately.
+
+### Generic contact geometry
+
+Impact Physics Core remains independent of anatomy.
+
+`ImpactBody` now includes world `Position` in addition to Height. `ImpactResult` exposes:
+
+- `SourceContactMinimumHeightRatio`
+- `SourceContactMaximumHeightRatio`
+- `TargetContactMinimumHeightRatio`
+- `TargetContactMaximumHeightRatio`
+
+All are neutral normalized values from 0.0 (bottom) to 1.0 (top).
+
+For two finite cylindrical bodies, the core intersects their vertical spans and reports the overlap relative to each body independently.
+
+No result field is named head, torso, arm, leg, armor or vulnerability.
+
+### Caelum anatomy adapter
+
+Caelum takes the neutral contact interval and intersects it with every authored `CaelumAnatomyProfile` region.
+
+For region `i`:
+
+`overlap_i = length(ContactBand intersect Region_i)`
+
+Because authored regions may overlap (for example arms and torso bands), the overlaps are normalized:
+
+`w_i = overlap_i / sum(overlap_j)`
+
+Therefore:
+
+`sum(w_i) = 1`
+
+These weights are then used for both vulnerability and armor.
+
+After surface severity and subtractive Toughness:
+
+`S_post = max(0, S_surface - Toughness)`
+
+Each region contributes:
+
+`S_i = S_post × w_i × M_vulnerability,i × (1 - Defense_i/100)`
+
+Final collision severity is:
+
+`S_final = sum(S_i)`
+
+This means an 80/10/10 contact distribution makes the 80% region's vulnerability and armor eight times as influential as either 10% region.
+
+### Lucidity
+
+Collision Lucidity uses the same contact weights rather than selecting a single arbitrary region.
+
+Only regions whose **natural** vulnerability is Critical contribute the existing critical-point Lucidity loss. For each such region:
+
+`Lucidity_i = BaseCriticalLucidityLoss × w_i × (1 - localArmorDefense_i)`
+
+The contributions are summed, then the player's existing Lucidity-loss and sleep modifiers apply.
+
+Thus a 50% head / 50% torso collision produces approximately half the critical-point Lucidity contribution of an otherwise identical 100% head collision, before armor and player-specific Lucidity modifiers.
+
+### Floor and static geometry
+
+A controlled floor landing is supplied to the anatomy adapter as a point contact at normalized height `0.0`, mapping naturally to the lowest authored body region (humanoid legs/feet).
+
+GZDoom vertical wall/door collision does not provide an exact Z contact point for the cylindrical actor. Therefore static vertical geometry currently reports the full 0.0-1.0 band. Caelum weights all anatomy regions intersecting that band rather than inventing a torso-only hit.
+
+Future geometry systems that know a real contact Z may supply a narrower neutral band without changing the anatomy adapter.
+
+### Biological landing damping
+
+Player controlled landing absorption remains:
+
+`Delta-v_bio = current JumpZ`
+
+which already derives from the player's Agility jump scaling.
+
+CaelumCombatActor now mirrors the same principle:
+
+`Type1Agility% = 100 + Agility(Agility+1)/2`
+
+`Delta-v_bio,NPC = 8 × sqrt(Type1Agility% / 100)`
+
+Physical/Lucidity stun still sets controlled biological damping to zero.
+
+### Final floor-impact order
+
+`raw vertical Delta-v`
+-> `Agility/JumpZ biological damping`
+-> `effective Delta-v`
+-> `28-MU equivalent time`
+-> `specific-energy severity`
+-> `surface modifier`
+-> `subtract Toughness`
+-> `weighted anatomy vulnerability`
+-> `weighted localized armor`
+-> `HP`
+
+The same contact weights separately feed Lucidity response.
+
+
+## 22. V4.26.3 — Buckler acrobatic impact response
+
+The buckler preserves its 0.5 effective-combat-mass rule, making its user easier to displace. While actively blocking, Caelum then applies two defensive responses after the physical impulse has already been solved:
+
+`ImpactToughness = 2 × Toughness`
+
+`AgilityAbsorption = 2 × JumpZ`
+
+The doubled Agility absorption applies to floor, actor and wall traumatic Delta-v. It does **not** change impulse, momentum, resulting velocity or displacement; it represents rolling, yielding and acrobatic body control after being launched.
+
+If physical/Lucidity stun is active:
+
+`AgilityAbsorption = 0`
+
+Thus the rodela rewards an agile conscious defender but does not protect an incapacitated body from uncontrolled impact.
+
+
+## 23. V4.26.3b — Horizontal acrobatic damping calibration
+
+The first horizontal buckler implementation reused `2 × JumpZ` as a direct subtraction from collision Delta-v. Although both values are engine velocities, their practical gameplay scales differ: a normal high-Agility JumpZ can exceed the entire Delta-v of a full-speed horizontal collision. The result was artificial complete cancellation and the no-impact sentinel:
+
+`TraumaticDeltaV = 0 -> EquivalentTics ≈ infinity`
+
+Horizontal buckler damping now uses only the **relative Agility jump bonus above the base jump**:
+
+`B_agility = max(0, JumpZ / BaseJumpZ - 1)`
+
+The requested buckler doubling becomes:
+
+`F_acrobatic = clamp(2 × B_agility, 0, 0.50)`
+
+and horizontal trauma becomes:
+
+`DeltaV_traumatic = DeltaV_raw × (1 - F_acrobatic)`
+
+The 50% cap is deliberately a response-layer limit: it never modifies the impulse, momentum, physical post-collision velocity or displacement produced by Impact Physics Core.
+
+Vertical landing remains different because JumpZ is already the validated reference for controlled landing velocity:
+
+`DeltaV_traumatic,floor = max(0, DeltaV_raw - JumpZ)` normally
+
+and with active buckler:
+
+`DeltaV_traumatic,floor = max(0, DeltaV_raw - 2 JumpZ)`
+
+Stun removes both active forms of Agility damping.
+
+The rodela's doubled subtractive Toughness is unchanged and is applied later. Therefore a character can still receive zero **final** damage because `2 × Toughness` exceeds the remaining energy severity, but equivalent tics should remain finite whenever a real horizontal Delta-v occurred.
+
+
+## 24. V4.26.4 — Crouched wall damping and careful movement
+
+Crouching now has a physical defensive meaning in addition to accuracy and Stealth.
+
+A conscious crouching character can yield, brace, roll the shoulder and move cautiously against static geometry. This does **not** change the physical collision impulse. It changes only the traumatic response to a wall Delta-v.
+
+The same normalized Agility bonus used by the calibrated buckler response is reused:
+
+`B_agility = max(0, JumpZ/BaseJumpZ - 1)`
+
+For crouched wall contact:
+
+`F_crouch = clamp(B_agility, 0, 0.50)`
+
+For active buckler block:
+
+`F_buckler = clamp(2 B_agility, 0, 0.50)`
+
+If both apply:
+
+`F_horizontal = max(F_crouch, F_buckler)`
+
+They do not add together.
+
+`DeltaV_traumatic = DeltaV_raw × (1 - F_horizontal)`
+
+Actor-to-actor horizontal damping remains a buckler specialty; crouching alone only adds the careful-movement response to walls/static geometry.
+
+Physical/Lucidity stun sets active Agility damping to zero.
+
+### Movement noise and Sigilo
+
+The documented Sigilo rule is now materialized:
+
+`Stealth = Type2(Agility) = Agility(Agility+1)/101`
+
+and clamped to 0–100%.
+
+Crouching retains the previously documented x2 Stealth modifier:
+
+`EffectiveStealth = clamp(Stealth × CrouchStealthMultiplier, 0, 100)`
+
+Movement noise heard by AI uses:
+
+`NoiseMultiplier = 1 - EffectiveStealth/100`
+
+The base movement-hearing reference is 20 m = 622.22 MU under the project's 56 MU = 1.8 m scale.
+
+Movement-mode factors:
+
+- walking: 1.0
+- running: 1.5
+- crouching: 0.5
+
+Thus:
+
+`NoiseRange = 622.22 × ModeFactor × NoiseMultiplier`
+
+At EffectiveStealth = 100%, movement emits no SoundAlert.
+
+This is a hearing/noise rule; visual detection remains a separate future stealth/AI layer.
+
+
+## 25. V4.26.5 — Architectural validation module
+
+MAP architecture testing is now isolated from the physics core.
+
+The first validated building module uses only conventional sector/linedef/sidedef concepts:
+
+- one ordinary room sector;
+- an opening framed by the wall geometry;
+- one thin door sector;
+- a manually activated `Door_Raise` linedef using the standard player USE input;
+- ordinary raised sectors for stairs and a roof-height access platform.
+
+This is deliberately simpler than the earlier generated 3D-floor building attempts. The purpose is to establish a topology that GZDoom's node builder accepts reliably before reintroducing walkable roofs over occupied interiors.
+
+A locked door will later use the same geometry but a locked-door action/key requirement. The physical layout does not need to change.
+
+````
+
+
+## Registro: legacy/ROADMAP.md
+
+SHA-256: `d22324688950cdc3b0235ac1ec7ddc9f0f147a4892be34d4cb7bddaec1d2bf5e`
+
+````text
+# Caelum Argenteum — Implementation Roadmap
+
+This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the original dependency logic, but reconciles it with the systems that are already implemented or partially implemented in the current codebase.
+
+The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
+
+The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
+
+## 1. Reconciliation with the old roadmap
+
+| Old block | Current status | Remaining work |
+| --- | --- | --- |
+| V4.22 — Crafting Stations & Crafting Core | Partially implemented | The shared station/transaction foundation exists. Forge and Ranged Weapon Workshop support current physical recipes; Workbench and the wider station network exist in partial form. Complete station filters, infrastructure requirements and the missing Armor/Essence/Workbench workflows. |
+| V4.23 — Recipe Book & Crafting Persistence | Partially implemented | The recipe catalogue and unified crafting interface exist, but permanent recipe knowledge and unlock sources are not complete. Add persistent unlocks from sheets, merchants, NPCs and discovery, without level restrictions. |
+| V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability, several repairs and material recovery foundations exist. Complete the authoritative craft → use → deteriorate → repair/disassemble loop, preserving tier and essence/base-item recovery choices. |
+| V4.25 — Loot, Materials & Economy Foundation | Partially implemented | Material actors and many pickups exist. Add systematic loot tables, containers, formal basic-material sources and transaction-ready buy/sell data. Replace remaining copyrighted development placeholders before release. |
+| V4.26 — NPC Interaction, Quests and Factions | Not implemented as a complete system | Build interaction and dialogue first, then merchants, quests, reputation and factions. Do not begin large social content before the shared infrastructure is stable. |
+
+## 2. Authoritative combat input contract
+
+The target combat layout is:
+
+| Input | Target function |
+| --- | --- |
+| `Fire` | Weapon primary attack. |
+| `AltFire` | Weapon-specific secondary attack; ranged weapons retain it as an alternate Aim input. |
+| `Reload` | Ranged magazine reload; melee/magic next-attack charge. |
+| `Zoom` | Contextual action: persistent shield Block for compatible weapons; real ADS/FOV zoom for ranged weapons. |
+| `User1` | Racial ability. |
+| `User2` | Seal Channel mode. |
+| `User3` | Active Tarot card activation. |
+| `User4` | Class ability. |
+
+The current implementation uses native Zoom contextually. It enters persistent Block only when the active weapon supports one-handed shield rules; ranged weapons instead enter Aim and apply a real FOV zoom. Ranged AltFire remains an alternate Aim path. Independent magazines and the magazine/reserve HUD are implemented. Reload preserves ranged magazine behavior and charges the next melee/magical attack, including movement slowdown, interruption and empowered cost/damage/area rules. User1–User4 are connected to explicit racial, Seal Channel, Tarot and class reservation hooks across every weapon family. Their authored gameplay effects remain pending.
+
+User1 is the remaining native User input and is reserved for the racial ability. Its gameplay behavior remains pending the authored race-by-race designs; no arbitrary effects or values may be introduced.
+
+## 3. Ordered major patches
+
+### V4.27 — Combat Input Completion and Validation
+
+**In progress since V4.27.0a.** Native User1–User4 routing, contextual Reload and the magic-weapon Zoom latch are implemented; full manual matrix validation remains pending.
+
+- Preserve Fire and AltFire weapon behavior.
+- Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
+- Preserve ranged Aim on AltFire as an alternate input and ranged magazines on Reload.
+- Validate the melee/magic charged Reload window, speed scaling, Pain/switch cancellation and doubled next-attack cost/damage/area.
+- Connect User1 to the racial-ability service hook without inventing race effects.
+- Connect Seal Channel to User2 without replacing ranged Reload.
+- Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
+- Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
+
+### V4.28 — Seal Channeling and Active-Ability Hooks
+
+Core and non-weather elemental effects are implemented through 4.28.0af. The 4.28.0af compatibility pass corrects the GZDoom 4.14.2 static actor-spawn call; parser confirmation and complete manual effect validation remain pending. Weather-dependent Seal tier additions are deferred to Version 5.
+
+Current acceptance work:
+
+- Validate burn, poison, freeze and both lightning orientations with the new visual sequences.
+- Complete the remaining Quintaesencia mass/expulsion tests.
+- Confirm Seal HUD state, exact 105/210/315-per-second drain, interruption paths and 60-second cooldown.
+- Confirm the debug Adrenaline action adds 100 and reduces Seal cooldown by 10 seconds.
+- Validate the rebuilt first-floor floors, roofs, lateral doors and unobstructed stair landing before adding more mansion content.
+
+First-floor construction is now an explicit four-patch gate after the complete build froze beneath the central span:
+
+1. V4.28.0ag: western north/south pair only; verify corridor safety and native 3D floors.
+   - V4.28.0ah corrective gate: restore all ground-floor ceiling slabs, exclude the obsolete central connectors and validate inventory stability beside the rat crowd. This does not count as pair 2.
+   - V4.28.0ai diagnostic gate: use a stationary twenty-rat subclass for deterministic area-effect testing while retaining the normal pursuing Giant Rat separately. This does not count as pair 2.
+   - V4.28.0aj supersedes the stationary workaround: fix the bilateral multi-contact latch and restore all twenty normal active rats. Stress validation remains required before pair 2.
+   - V4.28.0ak isolates the active rat crowd and Bull in separate closed barred enclosures. Validate player/rat and player/Bull contacts independently before changing Impact Physics or beginning pair 2.
+   - V4.28.0al removes every MAP01 monster, NPC and dummy plus the temporary barred enclosures after `noclip` also froze. Validate architecture alone; if it freezes, compare against a map without the current upper-room pair.
+   - V4.28.0am makes the separation permanent during development: MAP01 is architecture-only and MAP02 is the flat actor/AI/combat arena. Consolidate both independently before recombination.
+   - V4.28.0ao supersedes the unapplied 4.28.0an package: MAP02 becomes a large six-room field with twenty instances of each non-rat test actor and no initial sight line; sewer assets follow `src/graphics/caelum/textures`.
+   - V4.28.0ap restores twenty rats in a seventh isolated room and adds the official title image. The Bull corridor result prioritizes replacement of the one-reference latch with multi-contact/island state before architectural pair 2.
+2. Pair 2: add exactly two rooms after pair 1 passes manual GZDoom validation.
+3. Pair 3: add exactly two more rooms after pair 2 passes.
+4. Pair 4: add the final two rooms and only then validate inter-room connections as a complete wing system.
+
+No later pair may be added while the current pair has a freeze, missing floor, rotated roof, incorrect door axis or stair-landing obstruction.
+
+- Validate equipped-Seal selection, exact Adrenaline drain, interruption, action lock and cooldown in GZDoom 4.14.2.
+- Validate Fire, Earth, Air, Water and Quintessence target filtering, damage, control, attraction and mass-scaled release.
+- Add final Channel HUD/UX feedback after the mechanical tests establish which diagnostics must remain visible.
+- Add stable Tarot, class-ability and racial-ability service interfaces; content values remain design-controlled.
+- Defer all weather-dependent Seal-tier extensions to the Version 5 calendar/weather integration.
+
+### V4.29 — Crafting Completion and Persistent Recipe Book
+
+- Complete the shared interface for Forge, Ranged Weapon Workshop, Armor Workshop, Essence Altar and Workbench.
+- Preserve the expanded station-network requirements already documented for higher tiers.
+- Complete recipe filtering instead of creating five independent crafting systems.
+- Add permanent recipe knowledge and save/load persistence.
+- Support unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
+
+### V4.30 — Repair, Disassembly and Durability Loop
+
+- Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
+- Preserve item tier during authorized recovery.
+- Implement the authored essence-weapon choice between recovering the essence or the base implement.
+- Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
+
+### V4.31 — Loot, Materials and Economy Foundation
+
+- Add systematic material loot tables and container actors.
+- Formalize basic wood and iron-ingot acquisition.
+- Add transaction-ready item values and buy/sell foundations without prematurely balancing a complete economy.
+- Continue replacing Doom-derived test placeholders with original or license-compatible assets.
+
+### V4.32 — NPC Interaction, Dialogue and Merchants
+
+- Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
+- Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
+- Add a shared Use-based NPC interaction layer.
+- Add data-driven dialogue foundations.
+- Add merchant inventories and buy/sell transactions using V4.31 economy data.
+- Preserve multiplayer ownership and interaction authority.
+
+### V4.33 — Quests, Reputation and Factions
+
+- Add persistent quest state and objective tracking.
+- Add faction membership/standing and reputation changes.
+- Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
+
+### V4.34 — Architectural Modules and World/Travel Foundation
+
+- Replicate only the MAP01 architectural template that has passed manual validation.
+- Add locked/keyed door variants, roofed rooms and later multi-floor modules.
+
+The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive door/roof configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel and continuous traversable roof. V4.26.5r adds a validated 119-MU staircase companion module whose finite lower side faces stop at each tread height. All eight MAP01 rooms use the room template, including the silver-key NPC variant. Future level work should instantiate or rotate these patterns instead of recreating their topology independently.
+
+V4.27.0b restores V4.26.5r as the sole accepted MAP01 baseline. The standalone/integrated main gates, rear terrace connectors and internal terrace divisions from V4.26.5s through V4.27.0a are rejected modules and must not be replicated. Future construction adds one isolated module at a time and requires both static topology checks and manual GZDoom traversal before the next module begins.
+
+Closed-boundary degree validation remains a required check, but it is not sufficient by itself: the V4.27.0a crash demonstrated that a statically closed UDMF structure can still be unsafe for the runtime renderer or 3D-floor system.
+- Establish world locations, travel links and caravan/event integration points.
+
+### V4.35 — Calendar, Weather and Dynamic Events
+
+- Expand the existing time scale into the authored calendar.
+- Add weather state and environmental modifiers.
+- Add travel and world-event scheduling on top of the stable location/faction layer.
+
+### V4.36 — Movable Environment and Physical Hazards
+
+- Integrate movable environmental bodies with Impact Physics Core.
+- Add rolling rocks, falling objects and authored hazard surfaces first.
+- Prepare avalanches, rams, catapults and moving-sector hazards through `ResolveExternal`.
+- Package Impact Physics Core independently only after its Caelum validation track is complete.
+
+### V4.37 — Tarot Activation and TCG Expansion
+
+- Connect User3 to owned/selected active Tarot cards.
+- Implement card activation costs, cooldowns and persistence before broad content.
+- Expand toward the occasional Tarot-based Truco TCG only after inventory, NPC and world-event dependencies are stable.
+
+## 4. Version 5 transition
+
+### V5.0.0 — Modular Source Architecture
+
+**Scheduled as the first Version 5 patch, after every pending Version 4 block above is completed and validated.**
+
+- Reorganize the source tree into explicit `core`, `character`, `attributes`, `statistics`, `player`, `equipment`, `combat`, `anatomy`, `actors`, `survival`, `crafting`, `tarot`, `dialogue`, `factions`, `world`, `events`, `multiplayer`, `hud` and `debug` modules.
+- Reduce `CaelumPlayer.zs` to player-state coordination instead of retaining complete combat, survival, crafting and inventory implementations in one class.
+- Move formulas and state machines through incremental compatibility wrappers; do not perform an untestable all-at-once rewrite.
+- Preserve one authoritative inventory, player and Tarot implementation. The multiplayer module handles authority, ownership, validation and synchronization rather than duplicating those systems.
+- Keep save compatibility and native selector/input behavior across the transition.
+- Require parser, single-player, multiplayer and persistence regression tests before removing compatibility wrappers.
+
+## 5. Parallel validation tracks
+
+V4.28.0au mirrors the validated central-room topology into the second central pair, explicitly owns the main/options font mappings and presentation logo, and reduces the unchanged MAP02 field to 7,500 actors after the 15,000-actor test saturated the engine. The next patch is reserved for contact-island state, continuous post-contact pushing and the future crushing-damage input; those physics changes must not be mixed into this architectural/UI revision.
+
+V4.28.0at preserves the validated north-central layout, adds a visual reverse face to finite walls, and moves actor validation to one remote mixed population of 15,000 combatants. This is a deliberate ceiling test for bounded projectiles, AI and dense collision; it does not replace the planned contact-island redesign. Typography validation continues with moderately larger bold metrics and HUD contrast shadows.
+
+V4.28.0as corrects the first north-central prototype: two independent exterior doors replace the divider-aligned opening, while the midpoint keeps a separate internal door. The typography validation restarts with fixed baseline cells, reduced HUD metrics and the modern GZDoom font aliases.
+
+V4.28.0ar supersedes the 4.28.0aq central-room shape. The north-central two-room prototype uses one continuous exterior footprint, equal interior areas and one internal dividing wall/door. Once manually approved it will be mirrored south, then the lateral pairs will be connected so each complete wing reads as one exterior architectural volume. The global Caelum font family also enters visual validation at 640×360 and 320×200.
+
+V4.28.0aq introduced the acoustically isolated MAP02 rooms and ten-second NPC-projectile lifetime that passed the later combined stress test. Its four-room MAP01 interpretation is rejected and replaced incrementally by the V4.28.0ar two-room template. These diagnostic containment measures do not complete the planned multi-contact/contact-island physics redesign.
+
+These tracks continue without displacing the ordered major patches:
+
+1. **Architecture:** MAP01 must load, the template door must open/close, stairs must be climbable and the 136-MU platform must be walkable before replication.
+2. **Impact physics:** validate actor, wall and floor impacts; Toughness; localized armor/anatomy response; buckler/crouch damping; contact rearm; and the mass-10000 convergence test.
+3. **Combat controls:** the existing Zoom/Block, ranged AltFire Aim and ranged Reload behavior remains subject to V4.27 completion and full weapon-family testing.
+4. **Release independence:** Doom assets may remain temporary test dependencies but cannot become final standalone-game dependencies.
+
+## 6. Deferred design gates
+
+- Concrete class abilities require authored class-by-class definitions.
+- Concrete racial abilities require authored race-by-race definitions and use User1.
+- Melee physics remains deferred until swing velocity, effective striking mass, contact area/edge geometry, material penetration, sharpness and technique are designed.
+- Full economy balance, quest content, factions, calendar data and Tarot card values remain author-controlled.
+
+````
+
+
+## Registro: legacy/TYPOGRAPHY.md
+
+SHA-256: `6ef2c9d0539df62b25dcda2836b04529170868ead0c872c8f50a95f3891f71a3`
+
+````text
+# Sistema tipográfico — Caelum Argenteum
+
+La identidad usa una familia coordinada de cuatro funciones. El logotipo conserva su lettering propio y no debe reconstruirse escribiendo el nombre con estas fuentes.
+
+| Fuente | Uso principal |
+| --- | --- |
+| `CaelumDisplay` | títulos, episodios, cartas de arcano y opciones principales |
+| `CaelumText` | diálogos, objetivos, inventario y menús secundarios |
+| `CaelumSmall` | ayudas, etiquetas compactas y texto de baja jerarquía |
+| `CaelumMono` | HUD, contadores, estadísticas, consola y depuración |
+
+El PK3 también incluye copias con los nombres estándar `BigFont`, `SmallFont`, `ConsoleFont` e `IndexFont`, además de los alias modernos `NewSmallFont`, `NewConsoleFont`, `AlternativeSmallFont` y `AlternativeBigFont`, para sustituir la tipografía general de GZDoom 4.14.2. Los glifos son PNG blancos y traducibles por los colores de texto del motor; plata y oro se eligen en ZScript/MENUDEF, no se hornean dentro de las letras.
+
+Todos los PNG usan una celda transparente de altura fija y una línea base compartida. Los recortes de altura variable quedan prohibidos porque GZDoom los alinearía por su borde superior.
+
+## Cobertura
+
+ASCII imprimible y Latin-1 completo: mayúsculas, minúsculas, cifras, puntuación, `ÁÉÍÓÚÜÑ`, `áéíóúüñ`, `¿` y `¡`.
+
+## Instalación
+
+1. Añadir `Caelum_Argenteum_Typography.pk3` después del IWAD y antes de paquetes que también reemplacen fuentes.
+2. En código propio, solicitar `CaelumDisplay`, `CaelumText`, `CaelumSmall` o `CaelumMono` por nombre.
+3. Verificar menús a 640×360 y HUD a 320×200 antes de cerrar tamaños y espaciados.
+
+## Dirección visual
+
+- Serif romana sobria para relacionarse con el isologotipo y la gráfica institucional rioplatense.
+- Contraste moderado: conserva el carácter editorial sin perder trazos al reducirse.
+- Nada de runas, textura envejecida ni ornamentos dentro del texto corriente.
+- Plata para información normal; oro reservado para arcanos mayores, selección y jerarquía excepcional.
+
+## Licencia y procedencia
+
+Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y DejaVu Sans Mono Bold. La licencia y avisos de redistribución se incluyen en `licenses/DejaVu-copyright.txt` dentro del paquete. El generador reproducible se conserva en las herramientas de construcción del proyecto.
+
+## Estado
+
+La revisión V4.28.0az reduce el kerning directo a `-4`, recorta una columna transparente derecha de cada glifo y suma otro píxel a `SpaceWidth`. `FONTDEFS` recibe los mismos anchos de palabra para sus alias modernos. Los cinco rótulos clásicos del menú principal, que GZDoom trataba como imágenes en lugar de texto, se reemplazan por gráficos españoles compuestos con `CaelumText` y estas mismas métricas.
+
+````
+
+
+## Registro: legacy/WEAPON_INPUT_MATRIX.md
+
+SHA-256: `ff64dd6258130a2dc86cda4539a95ad235f21e797f75bfa7997b0e7b1474af9f`
+
+````text
+# Weapon input validation matrix
+
+This document records the currently implemented function of `Fire`, `AltFire`, `Reload` and `Zoom` for every playable Caelum weapon. Tiers change authored statistics, durability and costs; they do not change input routing unless stated.
+
+## Shared rules
+
+- `Fire` always uses the weapon's primary attack and cancels an active Block before attacking.
+- `AltFire` belongs to the active weapon; it no longer activates a shield.
+- `Reload` on melee weapons charges the next attack. Its two-second base duration is modified by attack speed; the completed state lasts three seconds and doubles the next attack's Air cost and damage.
+- `Reload` on magical weapons performs the same charge using casting speed and doubles the next attack's Anima cost and damage. Charged explosive radius uses `sqrt(2)` linear scale, producing twice the area.
+- `Reload` on ranged weapons reloads their independent magazine. Trying to fire an empty magazine automatically requests Reload when reserve ammunition exists.
+- `Zoom` is contextual. Ranged weapons toggle real ADS/FOV and doubled physical accuracy. Shield-compatible weapons toggle Block only when a usable shield is equipped. Giant Gauntlets provide their own Buckler-equivalent Block.
+- `User1`, `User2`, `User3` and `User4` route identically from every weapon to racial ability, Seal Channel, active Tarot and class ability respectively; V4.27 only requires their visible acknowledgement.
+
+## Physical melee weapons
+
+| Weapon | Fire | AltFire | Reload | Zoom |
+| --- | --- | --- | --- | --- |
+| Dagger | Piercing primary stab. | Stronger slashing attack with shorter range. | Charge next melee attack. | Shield Block. |
+| Hatchet | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Shield Block. |
+| Machete | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Shield Block. |
+| Javelin | Piercing melee thrust. | Throws the javelin; if a valid melee target is close, automatically uses the melee fallback. A real throw costs Air and one durability. | Charge next melee attack. | Shield Block. |
+| Sword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Shield Block. |
+| Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Shield Block. |
+| Flail | Blunt primary attack. | Stronger blunt attack at the same range. | Charge next melee attack. | Shield Block. |
+| Spear | Piercing primary thrust. | No authored secondary attack in the current catalogue. | Charge next melee attack. | Shield Block. |
+| Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | No Block: large/two-handed weapon. |
+| War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | No Block: large/two-handed weapon. |
+| Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | No Block: large/two-handed weapon. |
+| Giant Gauntlets | Blunt primary punch. | Same damage, range and Air cost as Fire, with additional upward push. | Charge next melee attack. | Weapon-based Block using Buckler coverage, defense and special rules. |
+
+## Ranged weapons
+
+| Weapon | Fire | AltFire | Reload | Zoom |
+| --- | --- | --- | --- | --- |
+| Standard Bow | Fires its native arrow from the magazine. | Toggles Aim/ADS. | Reloads the bow magazine; duration uses the ranged reload-speed bonus. | Toggles the same Aim/ADS mode, real FOV and doubled physical accuracy. |
+| Longbow | Fires its native longbow arrow. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
+| Crossbow | Fires its native bolt. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
+| Carbine | Fires its native carbine projectile. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
+
+## Magical implements
+
+Every magical variant below exists at T1, T2 and T3 for Fire/Light, Water/Ice, Earth/Poison, Air/Lightning and Quintessence. `Fire` selects the primary side of the equipped essence and `AltFire` selects its secondary side.
+
+| Implement | Fire and AltFire delivery | Reload | Zoom |
+| --- | --- | --- | --- |
+| Staff | One normal-speed direct magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
+| Bell | Seven slow projectiles in a broad cone; every projectile rolls its own critical. Uses the confirmed half-damage/double-Anima baseline. | Charge next magical attack. | Shield Block when a shield is equipped. |
+| Book | One fast homing magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
+| Statuette | One explosive magical projectile; charged attacks double explosion area. | Charge next magical attack. | Shield Block when a shield is equipped. |
+
+## Essence function used by every magical implement
+
+| Essence | Fire | AltFire |
+| --- | --- | --- |
+| Fire / Light | Fire damage with Burn damage-over-time. | Light effect with Dazzle control and player illumination. |
+| Water / Ice | Water projectile with extreme physical push. | Ice effect with Freeze control. |
+| Earth / Poison | Earth effect that reduces target Lucidity. | Poison damage-over-time. |
+| Air / Lightning | Air effect with Cut damage-over-time and moderate push. | Lightning Stun control. |
+| Quintessence | Double-damage primary projectile. | Independently rolls the available Fire, Light, Water, Earth, Poison, Air and Lightning secondary effects. |
+
+## Complete magical variant list
+
+The following twenty implement/essence combinations each have T1, T2 and T3 selectors, totaling sixty magical weapons:
+
+| Essence | Staff | Bell | Book | Statuette |
+| --- | --- | --- | --- | --- |
+| Fire / Light | Fire Staff T1–T3 | Fire Bell T1–T3 | Fire Book T1–T3 | Fire Statuette T1–T3 |
+| Water / Ice | Water Staff T1–T3 | Water Bell T1–T3 | Water Book T1–T3 | Water Statuette T1–T3 |
+| Earth / Poison | Earth Staff T1–T3 | Earth Bell T1–T3 | Earth Book T1–T3 | Earth Statuette T1–T3 |
+| Air / Lightning | Air Staff T1–T3 | Air Bell T1–T3 | Air Book T1–T3 | Air Statuette T1–T3 |
+| Quintessence | Quintessence Staff T1–T3 | Quintessence Bell T1–T3 | Quintessence Book T1–T3 | Quintessence Statuette T1–T3 |
+
+## Minimum V4.27 smoke test
+
+Test every physical row once. For magical weapons, test every implement with at least one essence, then test all five essence rows using any implement. Test one T1/T2/T3 sequence to verify tier cycling without repeating the complete sixty-weapon matrix.
+
+````
+
+
+## Registro: before_4.33.0g/DIALOGUE.md
+
+SHA-256: `557fdc567d7646fd9826618d2b33e3fccf93eafda1266e1b8364ab78f60fb694`
+
+````text
+# Caelum Argenteum — Diálogos de MAP01 V4.33.0f
+
+## Tecnología nativa
+
+`GameInfo.AddDialogues` carga `CAPALOMO` en todos los mapas. La apertura usa
+USDF, `Thing_SetConversation`, `Actor.StartConversation` y
+`ConversationMenu` de GZDoom 4.14.2. No se superpone un menú de diálogo
+propietario.
+
+El archivo contiene seis conversaciones:
+
+| ID | Interlocutor | Uso |
+| ---: | --- | --- |
+| 43300 | Voz desconocida | Apertura automática, mediante un hablante técnico invisible |
+| 43200 | Palomo | Interacción física con `Use` en el recibidor |
+| 43310 | Argento | Encargo social, consejos y cierre |
+| 43311 | Rulo | Lectura de Emoción y respuesta respetuosa |
+| 43312 | Ronnie | Plan con Labia o información aprendida |
+| 43313 | Caella | Persuasión, condiciones y siguiente conversación |
+
+El hablante invisible de la Voz sólo mantiene viva la conversación nativa y se
+destruye al cerrarla. No existe como persona visible, no bloquea el mapa y no
+guarda progreso. Q conserva el cierre equivalente a Atrás; Escape y mando
+mantienen la conducta normal del motor.
+
+## Apertura y Voz desconocida
+
+Al confirmar un personaje nuevo en MAP01, el controlador:
+
+1. activa **Donde despiertan los perdidos**;
+2. aplica un fundido breve desde negro y un sonido tenue ya existente;
+3. abre una sola vez `CA_DLG_M01_UNKNOWN_VOICE_WAKE`;
+4. registra `UNKNOWN_VOICE_HEARD` al abrir correctamente el diálogo;
+5. avanza a la fase 20 y permite que Palomo se revele.
+
+La página presenta dos respuestas explícitas —**¿Quién sos?** y **¿Dónde
+estoy?**— y una única salida nativa USDF, **[Guardar silencio.]**. V4.33.0c
+retira la segunda copia explícita de esa salida. Ninguna opción altera el orden
+de la misión. Cerrar con Q después de haber leído la primera intervención
+tampoco repite la Voz: el hecho registrado es haberla oído, no haber elegido
+una respuesta concreta.
+
+Ninguna línea identifica a la mujer ni explica la naturaleza del lugar.
+
+V4.33.0d corrige además las páginas que responden **¿Quién sos?** y **¿Dónde
+estoy?**: cada una conserva un único **Continuar** mediante `goodbye` nativo.
+Se retiraron sus dos copias explícitas `choice`; el cierre y el registro de
+haber oído la Voz mantienen el mismo comportamiento. La validación debe
+recorrer ambas respuestas, además del silencio ya aprobado.
+
+## Primer diálogo de Palomo
+
+Palomo comienza con:
+
+> Buen día. O algo suficientemente parecido como para no discutir con el reloj.
+
+El jugador puede preguntar, en cualquier orden:
+
+- dónde se encuentran;
+- qué le pasó;
+- por qué no recuerda cómo llegó;
+- por la voz de una mujer.
+
+Cada pregunta agotada deja un flag persistente y se oculta durante esa
+conversación y las siguientes. Mencionar la Voz registra además que Palomo la
+calificó como una alucinación. Esa rama incluye la réplica opcional **No parece
+una alucinación** y la respuesta prescrita **Las buenas nunca lo parecen**. Las
+respuestas son corteses, metafóricas y evasivas, y nunca convierten la
+interpretación del autor en conocimiento del personaje.
+
+**¿Qué debería hacer?** puede elegirse sin agotar las preguntas opcionales.
+Palomo sugiere hablar con Argento y explica, sin formular una orden directa,
+que señalar cada baldosa convertiría el camino en el suyo. Esa respuesta:
+
+- completa **Buscar ayuda dentro de la propiedad** en 1/1;
+- registra `PALOMO_MET`;
+- avanza exactamente de fase 20 a `ARGENTO_ACTIVE`;
+- actualiza el Diario y guarda el personaje;
+- sustituye cualquier segunda activación inmediata por una línea ambiental que
+  recuerda a Argento.
+
+Una segunda activación no repite la presentación ni concede otra transición.
+Al cerrar, Palomo permanece mientras cualquier jugador todavía pueda verlo; al
+quedar fuera de todos los campos visuales se oculta sin destello y no reaparece
+en el recibidor. Una carga posterior reconstruye directamente ese resultado.
+
+## Palomo y el comercio
+
+Palomo no es comerciante en la historia. `CAPALOMO` ya no ofrece comerciar,
+pedir rebaja ni recibir la Caja al comienzo. Las clases del comercio, su stock,
+monedas, márgenes y menú permanecen intactos como infraestructura reutilizable
+para un NPC comerciante posterior y para pruebas aisladas; no tienen una ruta
+de acceso desde el diálogo canónico de Palomo.
+
+Las viejas claves localizadas y acciones de respuesta se conservan por
+compatibilidad con guardados que pudieran haberse realizado dentro de la
+conversación de V4.33.0a. No definen el comportamiento de una partida nueva.
+
+## Persistencia
+
+USDF consulta marcadores invisibles regenerados desde
+`CaelumPersistentCharacterState`. Los marcadores sólo deciden qué nodo
+mostrar; no son una segunda fuente de verdad. Las etapas y preguntas sobreviven
+guardado/carga y `Exit`/`changemap`. El actor físico puede perder su nodo
+temporal al cerrar y volver a sincronizarlo en la próxima pulsación de `Use`.
+
+
+## Prueba social de Argento — V4.33.0f
+
+`CaelumMainM00SocialDialogue` proyecta los hechos del Inventory viajero en
+tokens de condición USDF. Las cuatro conversaciones añaden 30 páginas y 56
+claves EN/ES; las conversaciones y traducciones anteriores se conservan.
+
+Aceptar con Argento activa el objetivo 0/3. Cada residente suma como máximo
+una vez y el orden es libre. Rulo usa Emoción y exige después una respuesta
+respetuosa; leerlo correctamente no equivale a obtener su consentimiento.
+Ronnie acepta un plan ordenado con Labia >= 1. Caella usa Persuasión. Las dos
+tiradas se ejecutan una sola vez por personaje y conservan resultado,
+probabilidad y dado. Cerrar y reabrir no las renueva.
+
+Tras fallar con Rulo o Caella, Argento ofrece una orientación y desbloquea una
+respuesta sin otra tirada. Ronnie ofrece la misma alternativa de conocimiento
+después de visitarlo, incluso con Labia insuficiente. Sus requisitos se vuelven
+a comprobar en el ámbito `play` antes de conceder progreso.
+
+El menú conserva el cierre Q/Atrás y la salida nativa. La opción directa de
+Ronnie se ve gris y muestra el requisito cuando está bloqueada. Una lectura
+correcta de Rulo muestra **[Preocupado]** dentro del diálogo privado; no crea
+un indicador mundial compartido. Las probabilidades se muestran antes de
+aceptar las tiradas. No se añade un rastreador permanente al HUD.
+
+Con 3/3, Argento habilita la respuesta de cierre. Esa respuesta fija fase 35,
+marca `ARGENTO_COMPLETE` y cambia el Diario a **Hablar con Caella**. Caella
+ofrece entonces la línea autoral sobre la pared. La rama mágica se implementará
+en el siguiente tramo y no se activa anticipadamente.
+
+La persistencia es por personaje, igual que la base aceptada. Compartir el
+progreso con un grupo cooperativo sigue pendiente de implementación; tampoco
+se transmiten la lectura emocional ni el conocimiento privado entre jugadores.
+
+````
+
+
+## Registro: before_4.33.0g/ECONOMY.md
+
+SHA-256: `b718f8d76b87d578b1979bb9b6d58cf9276b38e6b114608a0d0bb91bd20bcb56`
+
+````text
+# Caelum Argenteum — Economía base V4.32.0a-r4
+
+V4.32.0a-r4 conserva sin cambios todos los valores y fórmulas de r3. Su única
+corrección funcional declara en `play scope` los helpers que inspeccionan
+instancias vivas de inventario, requisito de GZDoom 4.14.2 durante `LoadActors`.
+
+## 1. Unidad monetaria
+
+La unidad contable es el **cobre monetario**. Todas las cantidades económicas
+internas se expresan primero en equivalentes de cobre. Una unidad monetaria de
+plata equivale a 200 cobres y una unidad monetaria de oro equivale a 200
+platas, es decir, 40.000 cobres.
+
+Cada metal tiene monedas nominales de 1, 5, 20, 50 y 100:
+
+| Metal | Denominación | Valor en cobre | Peso por moneda |
+| --- | ---: | ---: | ---: |
+| Cobre | 1 | 1 | 0,001 kg |
+| Cobre | 5 | 5 | 0,001 kg |
+| Cobre | 20 | 20 | 0,001 kg |
+| Cobre | 50 | 50 | 0,001 kg |
+| Cobre | 100 | 100 | 0,001 kg |
+| Plata | 1 | 200 | 0,001 kg |
+| Plata | 5 | 1.000 | 0,001 kg |
+| Plata | 20 | 4.000 | 0,001 kg |
+| Plata | 50 | 10.000 | 0,001 kg |
+| Plata | 100 | 20.000 | 0,001 kg |
+| Oro | 1 | 40.000 | 0,001 kg |
+| Oro | 5 | 200.000 | 0,001 kg |
+| Oro | 20 | 800.000 | 0,001 kg |
+| Oro | 50 | 2.000.000 | 0,001 kg |
+| Oro | 100 | 4.000.000 | 0,001 kg |
+
+Las monedas son objetos físicos apilables de `Actor.Inv`. Persisten en
+guardados y viajes, pueden recogerse y soltarse, y obedecen las mismas reglas
+de carga y Caja Mágica que los demás objetos. El total visible del Diario suma
+todas las monedas poseídas, incluidas las guardadas en la Caja Mágica. Las que
+están fuera aportan su peso completo; las guardadas entran en el peso real total
+que la caja divide por sus slots máximos y trunca a 0,001 kg.
+
+Son objetos monetarios nominales: el jugador no puede fundirlos ni acuñarlos y
+su valor facial no se deriva del valor de la plata u oro usados como materiales.
+
+Clases nativas:
+
+- Cobre: `CaelumCopperCoin`, `CaelumCopperCoin5`,
+  `CaelumCopperCoin20`, `CaelumCopperCoin50`, `CaelumCopperCoin100`.
+- Plata: `CaelumSilverCoin`, `CaelumSilverCoin5`,
+  `CaelumSilverCoin20`, `CaelumSilverCoin50`, `CaelumSilverCoin100`.
+- Oro: `CaelumGoldCoin`, `CaelumGoldCoin5`, `CaelumGoldCoin20`,
+  `CaelumGoldCoin50`, `CaelumGoldCoin100`.
+
+## 2. Valores base de materias primas y consumibles
+
+Los precios siguientes son anclas de diseño autorizadas. La dureza y la
+abundancia aceptadas en V4.31 continúan determinando cuánto cuesta obtener un
+recurso en tiempo y esfuerzo, pero ya no recalculan automáticamente su valor
+monetario.
+
+| Materia prima | Cobres por unidad de 0,001 kg |
+| --- | ---: |
+| Madera común | 2 |
+| Fibra vegetal | 3 |
+| Piel de vaca | 3 |
+| Carbón mineral | 5 |
+| Cobre bruto | 5 |
+| Estaño bruto | 5 |
+| Hierro bruto | 7 |
+| Plata bruta | 100 |
+| Ópalo bruto | 500 |
+| Topacio bruto | 500 |
+| Esmeralda bruta | 500 |
+| Zafiro bruto | 500 |
+| Rubí bruto | 500 |
+| Oro bruto | 1.000 |
+
+Lana, algodón, seda bruta, piel de depredador y piel de monstruo conservan por
+ahora sus anclas provisionales anteriores:
+
+| Familia | Grado 1 | Grado 2 | Grado 3 |
+| --- | ---: | ---: | ---: |
+| Fibra: lana / algodón / seda bruta | 2 | 4 | 8 |
+| Piel: vaca / depredador / monstruo | 3 | 4 | 8 |
+
+Cambiar esos valores pendientes requerirá una decisión de diseño explícita; la
+abundancia de la fuente no los sobrescribirá sola.
+
+Los siguientes valores corresponden a una unidad completa del objeto
+consumible, no a un gramo de contenido:
+
+| Consumible | Valor base en cobre |
+| --- | ---: |
+| Ración de comida | 4 |
+| Ración de agua | 6 |
+
+## 3. Valor recursivo de manufactura
+
+El sistema calcula el valor con las recetas reales y siempre toma como
+referencia la **eficiencia material de 100 %**. Las eficiencias jugables de
+25/50/100 % y sus tiempos 1×/10×/100× permanecen intactos; la merma elegida por
+el jugador no redefine el precio base del objeto.
+
+### 3.1 Procesamiento básico
+
+Para lingotes, aleaciones, tejido, cuerda y cuero:
+
+```text
+valor unitario de salida =
+    suma(valor unitario de cada insumo × unidades requeridas)
+    × 1,25
+    / unidades de salida al 100 %
+```
+
+El recargo de esta etapa es siempre **25 %**.
+
+### 3.2 Componentes
+
+Cada componente toma el valor del material **ya procesado** que consume, no el
+de su materia prima original. Luego aplica el recargo correspondiente a la red
+de estaciones de su tier:
+
+| Tier | Infraestructura acumulativa | Valor agregado |
+| --- | --- | ---: |
+| T1 | Banco de trabajo + estación principal | 25 % |
+| T2 | Red T1 + estación especializada | 50 % |
+| T3 | Red T2 + Banco Maestro | 100 % |
+
+Los escudos conservan su requisito adicional de yunque; no cambia el tier ni
+duplica el recargo.
+
+### 3.3 Objetos finales
+
+Armas físicas, armas de esencia, armaduras, escudos, amuletos y sellos suman
+el valor de sus componentes ya manufacturados, incluidos los detalles de
+plata y oro existentes en la receta. Sobre esa suma vuelven a aplicar el
+recargo T1/T2/T3 de la tabla anterior. Por lo tanto, cada etapa conserva su
+propia mano de obra y el valor se acumula de forma recursiva.
+
+`CaelumEconomyRules` expone el cálculo por material, por familia de objeto y
+por instancia nativa de inventario. Las raciones de comida y agua ya poseen
+valor base autorizado. Munición, demás consumibles, llaves y objetos clave no
+entran todavía al catálogo comercial porque carecen de receta o de un valor
+base autorizado; devolverles un precio inventado violaría esta regla.
+
+## 4. Márgenes de comerciante
+
+El margen se aplica una sola vez al total del lote:
+
+```text
+NPC compra al jugador = piso(valor base total × 0,50)
+NPC vende al jugador  = techo(valor base total × 1,50)
+```
+
+El piso al pagar y el techo al cobrar evitan crear cobre por redondeo. Aplicar
+el margen después de sumar el lote permite, por ejemplo, que dos unidades de
+valor base 1 se vendan juntas por 1 cobre aunque una unidad aislada produzca
+una fracción no representable.
+
+Los métodos autoritativos son:
+
+- `CaelumEconomyRules.GetPricePaidByMerchant`
+- `CaelumEconomyRules.GetPriceChargedByMerchant`
+
+Personalidades, reputación, regateo y diferencias regionales no modifican
+estos valores base en V4.32.0a-r4. Se conectarán después sobre esta única capa
+de precios, sin duplicar fórmulas dentro de cada NPC.
+
+## 5. Presentación en inventario
+
+El Diario incorpora un filtro de monedas y, junto a **Carga** y **Caja
+Mágica**, muestra:
+
+- valor total expresado en cobres;
+- cantidad física total de monedas de cobre, sumando sus cinco denominaciones;
+- cantidad física total de monedas de plata, sumando sus cinco denominaciones;
+- cantidad física total de monedas de oro, sumando sus cinco denominaciones.
+
+La línea de Caja Mágica muestra además sus slots usados/máximos y su peso total:
+10,000 kg propios más la contribución reducida de todo el contenido. La fórmula,
+las restricciones y los casos de cambio de Inteligencia están documentados en
+`docs/MAGIC_BOX.md`.
+
+Los tres iconos RGBA 64×64 suministrados para Caelum Argenteum se conservan sin
+redibujar en `graphics/caelum/icons/currency/`. Las cinco denominaciones de un
+mismo metal comparten imagen y se distinguen por su nombre localizado y valor
+facial. Las copias registradas como `CCOP`, `CSIL` y `CGOL` permiten también que
+cada moneda exista como pickup visible en el mundo.
+
+````
+
+
+## Registro: before_4.33.0g/EQUIPMENT_ICONS_4_33_0d.md
+
+SHA-256: `6580d538c62e511b912bea6dd459fb00498457961b2200e635ee0556ebe4af54`
+
+````text
+# Iconos de equipo — importación V4.33.0d
+
+Fuente autoral: `Caelum_Argenteum_tiers_2_3_argentinos_REHECHOS.zip`.
+
+Se incorporan sus 99 PNG sin modificar sus bytes, dimensiones, proporciones,
+transparencia ni nombres: 49 variantes T2, 49 variantes T3 y
+`ca_giant_gauntlets.png` corregido. Incluye armas, armaduras, guantes, botas,
+cascos, escudos, amuletos y sellos.
+
+Destino: `src/graphics/caelum/icons/`, preservando `jewelry/`. El resolver de
+iconos existente selecciona `_t2` y `_t3`; los archivos sustituyen sus versiones
+anteriores en el inventario, equipo, comercio y menús que usan ese resolver.
+No son cuadros del rig de manos/espada de primera persona.
+
+Cada PNG es RGBA 128×128 y tiene alfa transparente y contenido visible. La
+auditoría compara los 99 archivos contra los bytes del adjunto y contra el
+runtime completo. El manifiesto y las instrucciones de autor se conservan en
+`art_source/tiers_2_3_rehechos_4_33_0d/`.
+
+Los adornos T2/T3 argentinos y la pareja corregida de guanteletes reemplazan
+los iconos anteriores. Estadísticas, valores, recetas, pesos y mecánicas no
+dependen de esta importación gráfica.
+
+````
+
+
+## Registro: before_4.33.0g/FIRST_PERSON.md
+
+SHA-256: `e3b23c122ab9e0891258d5c14d5f2be40604ca346df1e0ea9ad2b721990d913f`
+
+````text
+# Caelum Argenteum — Primera persona de Domingo V4.32.0o (aceptada)
+
+## Alcance
+
+La vista modular continúa conectada exclusivamente con
+`CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
+existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
+
+El autor completó con éxito toda la matriz de `PRUEBAS_4_32_0o.txt`; por ello
+esta composición queda cerrada como referencia. Más adelante se aplicará el
+mismo enfoque modular a todas las armas, con arte y movimiento propios de cada
+familia. Esa ampliación no forma parte de V4.33.0a y no reabre las pruebas ya
+aceptadas de la espada.
+
+V4.32.0o conserva la altura, el pulgar completo y la trayectoria de V4.32.0n,
+pero corrige el cuadro que mostraba dos puños. El código anterior calculó los
+pivotes con el tamaño completo del PNG; GZDoom aplica `PSPF_PIVOTPERCENT` a la
+caja visible de cada textura. Como `RHND`, `DSWD` y `RFNG` tienen cajas alfa
+distintas, las dos representaciones complementarias de la misma mano se
+separaban al girar. Los nuevos porcentajes compensan esas cajas y hacen que
+las tres transformaciones resuelvan al pivote real ya usado por la espada.
+No modifica sprites, daño, Aire, enfriamiento, durabilidad, sonidos,
+persistencia, equipo, HUD, mapas, economía, Palomo ni diálogos.
+
+## Encuadre por estado
+
+| Estado | Escudo (10) | Mano izquierda (20) | Mano/dedos derechos (25/40) | Espada (30) |
+| --- | ---: | ---: | ---: | ---: |
+| Reposo | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=260, Y=0 |
+| Block sostenido | X=160, Y=100 | X=160, Y=100 | Ocultas | Oculta |
+
+En reposo, escudo y mano izquierda continúan juntos en la marca inferior
+izquierda aceptada. La palma y el pulgar derechos permanecen en (282,32). La
+espada pasa de (260,4) a (260,0), por lo que sube ligeramente sin cambiar su
+registro horizontal aprobado.
+
+## Block frontal, cercano y sostenido
+
+El Block no cambia respecto de V4.32.0m. H sigue siendo una transición breve
+de tres tics e I usa duración `-1`, fija hasta terminar el estado real de
+Block. El escudo y su mano correcta permanecen en las capas 10 y 20 a
+(160,100); las capas de la mano hábil 25/30/40 se limpian para evitar una
+segunda mano. Al soltar Block, el conjunto derecho se reconstruye de inmediato.
+
+La exportación `DSHDI0` conserva 450×300, `grAb (225,48)` y una caja visible
+de 293×244. `LHNDI0` comparte lienzo y origen y conserva su caja visible de
+213×169. No cambian perspectiva, tamaño, altura ni condición de equipo.
+
+## Pulgar completo delante del mango
+
+`RFNGA0` y `RFNGB0` mantienen lienzo RGBA 320×200 y `grAb (160,32)`, pero la
+máscara frontal ahora incluye todo el pulgar visible que ya existe en la capa
+de mano `RHND`. La ampliación A añade exactamente 443 píxeles visibles con el
+color original de Domingo: 413 conservan también su alfa exacto y 30 reducen
+sólo el alfa en el borde suavizado de la máscara. No repinta ni desplaza ningún
+píxel que ya pertenecía a `RFNG`. B es la misma pose desplazada exactamente
+(+1,+1), tal como ocurre entre `RHNDA0` y `RHNDB0`.
+
+La caja alfa inclusiva pasa a (148,92)–(210,151) en A y
+(149,93)–(211,152) en B. De este modo, el mango queda detrás del pulgar entero
+y ya no parece cortar el dedo.
+
+## Giro sincronizado sin duplicación
+
+La espada conserva exactamente su pivote y movimiento aceptados. Para mano y
+pulgar, los porcentajes se calculan sobre sus cajas alfa reales, no sobre el
+lienzo transparente. El resultado de cada fila, después de compensar `grAb` y
+el desplazamiento espada–mano (-22,-32), es el mismo punto de pantalla
+(56.64375,84.57):
+
+| Capa | Caja alfa A / tamaño | Pivote porcentual | Punto efectivo del PNG | Punto de pantalla común |
+| ---: | --- | ---: | ---: | ---: |
+| 25 `RHND` | (147,128)–(479,239) / 333×112 | (0.2091403904, 0.2550892857) | (216.64375,156.57) | (56.64375,84.57) |
+| 30 `DSWD` | (168,0)–(294,178) / 127×179 | (0.55625, 0.83) | (238.64375,148.57) | (56.64375,84.57) |
+| 40 `RFNG` | (148,92)–(210,151) / 63×60 | (1.0895833333, 0.4095) | (216.64375,116.57) | (56.64375,84.57) |
+
+El X de `RFNG` supera 1 porque el punto compartido queda apenas fuera de su
+caja visible; el motor permite pivotes porcentuales fuera del intervalo
+0–1. La compensación mantiene los tres píxeles de anclaje coincidentes hasta
+el máximo giro y elimina la silueta duplicada del puño.
+
+La hoja conserva sus ángulos absolutos. La mano y el pulgar reciben solamente
+la variación respecto del reposo: `rotación_mano = rotación_espada - 18°`.
+Así, el arte de la mano no cambia en reposo y durante el ataque acompaña tanto
+la posición como el giro de la espada sin perder el agarre.
+El delta total de la mano va de 0→25° entre reposo e impacto.
+
+| Momento | Hoja absoluta | Mano/pulgar | Ángulo visual aproximado |
+| --- | ---: | ---: | ---: |
+| Reposo | 18° | 0° | 79° |
+| Salida 1 | 21° | 3° | 82° |
+| Ápice | 24° | 6° | 85° |
+| Barrido 1 | 31° | 13° | 92° |
+| Barrido 2 | 38° | 20° | 99° |
+| Impacto | 43° | 25° | 104° |
+| Retorno 1 | 39° | 21° | 100° |
+| Retorno 2 | 31° | 13° | 92° |
+| Retorno 3 | 24° | 6° | 85° |
+| Reposo recuperado | 18° | 0° | 79° |
+
+Cada valor es absoluto y se reaplica durante la sincronización; no se acumula
+entre tics.
+
+## Curva de ataque y retorno recto
+
+Los ocho tics continúan reutilizando la pose A. Cinco puntos llevan la mano
+por la curva aprobada hasta el impacto y tres puntos colineales la devuelven en
+línea recta. La espada mantiene en todo momento el registro constante
+(-22,-32) respecto de la traslación de palma y pulgar:
+
+| Tic | Fase | Mano/dedos X,Y | Espada X,Y | Hoja / mano |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | Salida | (300,15) | (278,-17) | 21° / 3° |
+| 2 | Ápice derecho | (318,-4) | (296,-36) | 24° / 6° |
+| 3 | Barrido alto | (287,-1) | (265,-33) | 31° / 13° |
+| 4 | Aproximación | (236,11) | (214,-21) | 38° / 20° |
+| 5 | Impacto izquierdo | (201,21) | (179,-11) | 43° / 25° |
+| 6 | Retorno 1 | (228,25) | (206,-7) | 39° / 21° |
+| 7 | Retorno 2 | (255,28) | (233,-4) | 31° / 13° |
+| 8 | Retorno 3 | (275,31) | (253,-1) | 24° / 6° |
+| — | Reposo | (282,32) | (260,0) | 18° / 0° |
+
+La subida uniforme de cuatro unidades afecta únicamente a la hoja; no altera
+la curva de la mano ni el retorno recto ya aceptados.
+
+## Manga panorámica, profundidad y equipo
+
+`RHNDA0` y `RHNDB0` conservan los lienzos RGBA 480×240 con `grAb (160,72)`
+aceptados en V4.32.0h. La manga llega al extremo derecho del lienzo y no revela
+un corte interno en 16:9.
+
+| Capa | Prefijo | Contenido | Regla |
+| ---: | --- | --- | --- |
+| 10 | `DSHD` | Reverso del escudo | Sólo con escudo válido equipado |
+| 20 | `LHND` | Mano/brazo del escudo | Visible con el escudo, incluido Block |
+| 25 | `RHND` | Antebrazo, palma y base del puño | Oculta en Block; detrás de la espada fuera de él |
+| 30 | `DSWD` | Espada | Oculta en Block; atraviesa el agarre fuera de él |
+| 40 | `RFNG` | Pulgar y dedos de cierre | Ocultos en Block; delante del mango fuera de él |
+
+`HasActiveBlockSource()` continúa siendo la única condición visual del escudo.
+Si se desequipa, se rompe o deja de ser compatible, `DSHD` y `LHND`
+desaparecen en el siguiente tic. Sin escudo válido no se muestra el arte ni se
+habilita Block.
+
+## Estado de prueba
+
+La auditoría automática comprueba estructura ZScript, delta acotado,
+dimensiones RGBA, offsets `grAb`, cajas alfa, hashes, ampliación exacta del
+pulgar, desplazamiento A→B, pivote de pantalla común, rotación sincronizada,
+registro (-22,-32), Block correcto y contenido reproducible del ZIP fuente.
+La matriz visual de `PRUEBAS_4_32_0o.txt` fue completada con éxito por el
+autor. Esta composición queda aceptada como referencia cerrada; V4.33.0a sólo
+requiere una comprobación breve de regresión para confirmar que la nueva base
+social no alteró presentación, daño ni Block.
+
+````
+
+
+## Registro: before_4.33.0g/IMPLEMENTATION_STATUS.md
+
+SHA-256: `050da9ee46019013278c831d0e7258babaef0988c66ae2d1ec681da335054809`
+
+````text
+# Caelum Argenteum 4.0 — Implementation status
+
+
+## MAP01 Argento social branch 4.33.0f
+
+**Implemented; isolated GZDoom 4.14.2 state and dialogue checks passed;
+author acceptance and save/load traversal pending.** The author accepted all
+4.33.0e tests, closing the south lift-shaft correction.
+
+Argento now offers the authored social task. Rulo requires understanding and
+a respectful answer; Ronnie requires a concrete plan; Caella requires
+persuasion or informed safety conditions. Failed checks persist and lead to
+Argento's advice, opening deterministic alternatives. The Journal follows
+0/3 through 3/3, requires returning to Argento, and then points to Caella at
+exact phase 35. The magic tutorial at phase 40 remains a later slice.
+
+The author's balance decision for this patch uses Type 4 for Emotion and
+Persuasion, difficulty 120 for both checks, and Type 2 Labia with a minimum
+of 1 for Ronnie's direct option. The option remains visible and gray below
+the threshold and is independently guarded in play scope.
+
+The isolated engine probe passed 1189 assertions over the actual persistent
+class and action handlers, including six visit orders and four random-outcome
+combinations. Native UI checks confirmed the gray/blocked Ronnie option,
+private Rulo feedback, and consent through a real USDF action. Testing used a
+reconstructed source tree with two unrelated missing-dependency fixtures;
+it does not certify the unavailable complete 4.32.0o runtime. No fixtures are
+included in the production source delta. See `docs/VALIDACION_4_33_0f.txt`.
+
+All nine changed/new runtime files are listed with base and output hashes in
+`PATCH_MANIFEST_4_33_0f.json`. The accepted MAP01 WAD is unchanged and is not
+included again. Equipment artwork, weapons and commerce are outside this delta.
+
+## MAP01 south lift-shaft texture correction 4.33.0e
+
+**Accepted: the author confirmed all focused tests passed before 4.33.0f.** The author accepted every V4.33.0d test except the
+invisible interior wall near `(1922,338,0)`, facing 270 degrees.
+
+The south edge at `Y=272`, `X=1875..1959` reuses an older boundary whose floors
+were initially both at zero. Its lift-facing sidedef 1637 retained an empty
+lower texture, unlike the newly created west and east shaft edges. Lowering
+the platform exposes that untextured surface. V4.33.0e assigns `CACVROCK` to
+that lower texture, matching the adjacent shaft walls.
+
+The runtime delta is exactly one sidedef property in `src/maps/MAP01.wad`.
+Vertices, linedefs, sectors, Things, upper/middle textures, native lift calls
+and all gameplay scripts remain byte-equivalent or semantically identical to
+0d as applicable. The upper entrance remains open when both floors are at zero.
+
+The original file-level checks remain in `docs/VALIDACION_4_33_0e.txt`.
+The author has now accepted the visual and return checks. The next implemented
+slice is Argento in 4.33.0f; later mission phases remain on the roadmap.
+
+## Physical MAP01 lift, corrected secret facade and equipment art 4.33.0d
+
+**Author validation passed except for the south interior lift-shaft texture,
+corrected in V4.33.0e.** The author accepted the other V4.33.0c tests and
+requested the corrections below.
+
+- Both Unknown Voice answer pages now expose exactly one native Continue
+  goodbye; the explicit duplicate choices are removed.
+- The four residents and tangible Palomo return after 100 MU instead of 500.
+  Their accepted coordinates and straight running return remain unchanged.
+- A native mansion-textured facade at X=1842 runs parallel to the east wall.
+  Its southern 96-MU section is pass-through; a second hidden midtexture crosses
+  the 119-MU-wide passage at Y=-87. The rest of the facade blocks at ground level.
+- The 84×88-MU platform centered at (1917,316) is a native sector floor. It
+  descends continuously from 0 to -384 at 2 MU/tic, waits 175 tics, then rises.
+  Native Use specials recall it from below. No player SetOrigin or map change
+  exists in the production transport code.
+- The lower tunnel joins a contiguous 1024×800-MU cave with three trees, one
+  normal copper vein, one normal tin vein and one size-adaptive T1 sword.
+  Fire harvests trees; AltFire pierces the veins. Normal vein classes retain
+  their registered 3D models, fixing the invisible 0c subclasses. The hatchet,
+  iron, coal and local blunt-harvesting exception are removed from this cave.
+- New 3D slabs retain the original ground surfaces and roof tags above the
+  excavation. Existing bottom-pegged railings receive height compensation so
+  they remain at their accepted upper-floor heights. Cave rock reuses the
+  project's granite texture.
+- All 99 supplied PNGs are imported byte-for-byte: 49 T2, 49 T3 and the
+  corrected base giant gauntlets. The existing tier resolver uses their same
+  paths; they are equipment icons, not first-person animation frames.
+
+An isolated runtime probe observed platform/player heights -70, -210, -384
+and finally 0 at fixed X/Y. It also walked the player through the lower tunnel
+into the cave at floor -384 / ceiling -64. A rendered GZDoom screenshot
+confirmed that the copper vein is visible. The probe is excluded from the
+delivered runtime. Narrative advancement still ends at the prepared Argento
+phase; this correction does not implement the next dialogue branch.
+
+## MAP01 resident placement and secret survival cave 4.33.0c
+
+**Historical prototype; author feedback is corrected by V4.33.0d. All other
+focused author tests passed.**
+
+The complete V4.33.0b matrix was accepted by the author. This revision changes
+only the reported dialogue duplication and the physical MAP01 preparation for
+the already reserved phases 30–60; it does not advance the quest beyond the
+prepared Argento state.
+
+The Unknown Voice opening now exposes two explicit questions and one native
+USDF goodbye labelled **[Guardar silencio.]**. The redundant explicit silence
+choice was removed, so the visible option occurs exactly once while preserving
+Q/Escape closure and the same persistent `UNKNOWN_VOICE_HEARD` fact.
+
+MAP01 now contains one anchored story instance of each resident:
+
+| Resident | Position | Angle |
+| --- | ---: | ---: |
+| Argento | `(1040, -378, 136)` | 90° |
+| Caella | `(-290, -378, 136)` | 90° |
+| Rulo | `(-290, 378, 136)` | 270° |
+| Ronnie | `(1036, 378, 136)` | 270° |
+
+These instances remain solid and tangible, but are friendly, invulnerable and
+do not acquire targets. A displacement below 500 MU is tolerated. At 500 MU or
+more they use their running animation and return in a straight line to the
+exact stored spawn point and angle. Debug summons without `args[0]=1` retain
+their accepted combat behavior.
+
+The east side of MAP01 adds two mansion-textured, double-sided false wall
+panels at `(1842,-360,0)` and `(1944,-87,0)`. They are visible but have no
+collision. The solid back wall is centered at `(1842,366,0)`. An 84×88-MU
+platform centered at `(1917,316,0)` connects, without a map or character
+restart, to a closed lower cave and a return platform. Its footprint remains
+inside sector 92 and exceeds the maximum XL character diameter of 42.67 MU.
+
+The cave contains three renewable young trees, tutorial iron/coal/copper/tin
+veins and exactly one T1 hatchet pickup. That pickup resolves its size from the
+character at collection time, so XS through XL characters can equip the same
+physical tool. Fire preserves the global slashing rule for trees; AltFire uses
+the hatchet's blunt side on these four tutorial veins only. Ordinary world
+veins continue to require piercing damage.
+
+## Canonical MAP01 prologue foundation 4.33.0b
+
+**Implemented; cumulative source reconstruction and deterministic audits passed;
+the complete focused author matrix passed; accepted and extended physically by
+V4.33.0c**
+
+The supplied `MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` is now part of the
+project documentation and supersedes the test-only Palomo adventure. Quest ID
+0 is renamed internally to `QUEST_MAIN_M00_THE_FOOL`, while its persistent
+index and the accepted 32×8 storage layout remain stable. The full MAP01
+sequence has named states from 00 through 100 and 64 reserved factual flags;
+only phases 00–20 advance in this subpatch.
+
+After character confirmation in MAP01, a stateless EventHandler begins
+**Donde despiertan los perdidos**, applies a short black wake-up fade and opens
+the Unknown Voice through GZDoom's native USDF conversation system. The voice
+is represented only by a temporary invisible technical speaker. Hearing its
+opening line is recorded once, independently of the optional answer or Q exit,
+then reveals the anchored Palomo with a discreet alpha fade.
+
+Palomo's foyer conversation replaces the old gift/shop tree. Four optional
+questions are exhausted through persistent knowledge flags; mentioning the
+woman's voice records Palomo's hallucination answer and exposes the prescribed
+“The good ones never do” follow-up. Asking for guidance completes the initial
+1/1 objective and advances exactly from phase 20 to the prepared Argento phase
+30. An immediate second activation uses an ambient reminder; once Palomo leaves
+every active field of view he disappears and a load reconstructs him as hidden.
+No production route from Palomo opens commerce, negotiates a discount or grants
+the Magic Box.
+
+The accepted merchant implementation remains unchanged as reusable/debug
+infrastructure for a future merchant NPC. `GrantMagicBoxFromPalomo()` is now
+independent from quest advancement so an isolated grant cannot skip narrative
+states. New characters remain without the Box; migrated development saves keep
+their existing Box and contents but restart only the discarded quest record.
+Faction and reputation behavior is unchanged.
+
+The Journal shows the canonical title, localized current phase, broad milestone
+objective and Palomo's derived hidden/foyer/hidden/upstairs placement. Visible
+MAP01 text preserves the mystery and does not identify the location, the
+speaker or the protagonist's prior fate.
+
+## Persistent quests, reputation and faction registry 4.33.0a
+
+**Implemented; cumulative source, deterministic audits and the complete focused
+GZDoom 4.14.2 author matrix passed; accepted and superseded narratively by
+V4.33.0b**
+
+V4.33 begins with a deliberately content-light persistent foundation. The
+travelling `CaelumPersistentCharacterState` now reserves 32 stable quest slots
+with eight objective counters each. Every quest stores discovery/state, an
+integer stage and objective known/progress/target fields. Only one production
+identifier is currently defined: accepting Palomo's already-authored adventure
+records an active quest, stage `Adventure accepted` and the completed factual
+objective `Receive the Magic Box from Palomo`. Refusal still creates no
+irreversible failure. Saves that already own the box migrate that fact into the
+same quest record; new characters remain undiscovered until they accept.
+
+The Journal's two former placeholder pages now read authoritative player
+snapshots. Missions shows no entries before acceptance, then displays the
+Palomo record and its 1/1 objective. Reputation lists four stable technical
+domains—Gendarmeria, settlements, caravans and political actors—with separate
+membership booleans and reputation integers clamped to -1,000..1,000. All begin
+unaffiliated at zero. No political names, rewards, ranks, hostility thresholds
+or starting allegiances were invented.
+
+`CaelumFactionRules` provides an O(1) relation lookup: identity is friendly and
+every unauthored cross-domain relation remains neutral. It performs no actor
+iteration, line-of-sight test, pathing call or per-combatant global search. Five
+zero-capacity, auto-activating debug actions allow Gendarmeria membership,
++25/-50 reputation and reset to be tested through `give`; none has a DoomEdNum
+or remains in inventory, and normal gameplay has no provisional reputation
+mutation.
+
+Palomo's current location is no longer represented as an independent mutable
+quest fact: `ResolvePalomoPlacement()` derives it from the quest record. The
+only authorized result in 4.33.0a is his accepted mansion starting post, so the
+physical MAP01 actor and 500-MU return-home behavior remain unchanged. Adding a
+second map/stage destination and executing the one-instance move are explicitly
+reserved for a later V4.33 revision after those coordinates and narrative
+conditions are authored. Merchant stock, wallet and negotiated discount remain
+in the same per-character record and therefore cannot reset when that move is
+implemented.
+
+## Author-accepted V4.32 closure 4.32.0o
+
+**All focused GZDoom 4.14.2 tests passed; V4.32 is closed.**
+
+The author confirmed rest, every attack frame, repeated strikes, Block and
+equipment switching after the alpha-bounds pivot correction. The modular
+Domingo sword/hand/shield implementation is now the accepted reference for a
+later expansion to all weapons; that expansion is not a V4.33 blocker.
+
+## Alpha-bounds compensated grip pivots 4.32.0o
+
+**Implemented; deterministic source, alpha-geometry and package audits passed;
+focused GZDoom 4.14.2 author validation passed**
+
+The V4.32.0n screenshot exposed one duplicated-hand attack frame. `RHND` and
+`RFNG` are complementary layers of the same right hand, but their rotations
+separated because the previous pivot conversion used full transparent PNG
+canvas dimensions while GZDoom evaluated the percentages against each
+texture's different visible bounds.
+
+The already accepted blade pivot remains `(0.55625,0.83)`. The palm pivot is
+recalibrated to `(0.2091403904,0.2550892857)` and the foreground thumb/finger
+pivot to `(1.0895833333,0.4095)`. With each layer's alpha box, `grAb` and the
+blade's (-22,-32) translation included, all three resolve exactly to screen
+point `(56.64375,84.57)`. Their 0→25-degree attack delta can therefore no
+longer split the hand into two silhouettes.
+
+No sprite, path point, timing, angle or gameplay source changed. The focused
+visual check in `PRUEBAS_4_32_0o.txt` passed and closed V4.32; already approved
+systems stay closed.
+
+## Raised idle sword, complete thumb and synchronized grip 4.32.0n
+
+**Height and complete-thumb assets retained; full-canvas pivot conversion
+superseded by V4.32.0o**
+
+The author accepted V4.32.0m except for three details in the right-hand rig:
+the idle sword was slightly low, the foreground finger layer covered only part
+of the thumb, and the hand translated with the sword but did not share its
+changing rotation.
+
+The sword is raised four logical units in every state. It now rests at
+(260,0), and every attack point retains a constant (-22,-32) translational
+registration to the already accepted hand path. `RFNGA0` gains exactly 443
+visible pixels using the unchanged underlying `RHNDA0` thumb colours; 413 also
+retain exact alpha and 30 use reduced alpha only at the antialiased boundary.
+No existing foreground pixel is altered. `RFNGB0` is the exact (+1,+1)
+counterpart.
+
+Layers 25, 30 and 40 now use local pivots that resolve to the same screen-space
+grip point (-4,102). The blade retains the absolute
+18→21→24→31→38→43→39→31→24→18-degree sequence, while palm and foreground
+thumb apply its 0→3→6→13→20→25→21→13→6→0-degree delta from idle. Position and
+rotation therefore remain registered throughout the strike without changing
+the approved idle hand pose, attack curve or straight-line return.
+
+Held Block is unchanged from V4.32.0m: shield and its left hand remain on
+layers 10/20, and the lower-right layers 25/30/40 are hidden. No gameplay,
+equipment, persistence, HUD, map, dialogue, economy or crafting source changed.
+
+## Correct Block hand and quadrupled blade adjustment 4.32.0m
+
+**Block correction and horizontal blade registration retained; idle height,
+thumb mask and attack-rig synchronization superseded by V4.32.0n**
+
+The V4.32.0l screenshots showed that it removed the wrong Block hand. The
+correct held composition is shield layer 10 plus its registered left-hand
+layer 20, both at (160,100). V4.32.0m restores `CA_SwordLeftBlock` and clears
+the lower-right main-hand assembly—layers 25, 30 and 40—on both normal Block
+entry and equipment resynchronization. The obsolete right-hand Block states
+are removed. Leaving Block reconstructs all normal main-hand layers.
+
+V4.32.0l moved the blade four logical units left. This revision moves it an
+additional sixteen units left, four times that previous adjustment. The blade
+now rests at (260,4), twenty units left of its V4.32.0k position, while the
+approved palm/fingers remain at (282,32). Every attack blade point receives
+the same additional -16 X delta, producing a constant (-22,-28) blade-to-hand
+registration.
+
+All hand positions, Y coordinates, eight-tic timing, outgoing curve,
+straight-line return and the
+18→21→24→31→38→43→39→31→24→18-degree rotation sequence are unchanged. No
+sprite bytes or gameplay systems changed.
+
+## Single-hand Block and finger-covered sword grip 4.32.0l
+
+**Blade adjustment retained as the first increment; Block-hand selection and
+final blade registration superseded by V4.32.0m**
+
+The author accepted V4.32.0k's complete attack motion and identified two final
+composition details. Held Block showed a redundant hand at the lower-left
+edge, and the sword needed a slight leftward registration change so the
+foreground fingers cover more of its handle.
+
+Layer 20 is now explicitly cleared on every entry into Block, including the
+equipment-resynchronization path, and the unused `CA_SwordLeftBlock` state is
+removed. The accepted shield, remaining hand, H(3)→I(-1) hold and (160,100)
+Block framing are unchanged. Leaving Block restores the normal left-hand layer
+when a valid shield remains equipped.
+
+The normal blade and every attack blade point move exactly four logical units
+left. Palm/finger positions, all Y coordinates, the eight-tic timing, the
+five-point outgoing curve, straight return and
+18→21→24→31→38→43→39→31→24→18-degree rotation sequence remain unchanged.
+The blade-to-hand offset is therefore (-6,-28), keeping the accepted motion
+while placing the handle farther beneath the foreground finger layer.
+
+No sprite bytes, gameplay source, damage, Air, durability, Block rules,
+equipment, HUD, persistence, Palomo, Magic Box, economy, crafting, dialogue or
+map source changed.
+
+## Coupled idle shield, registered grip and authored attack path 4.32.0k
+
+**Attack path accepted; Block layering and blade registration superseded by
+V4.32.0l**
+
+The V4.32.0j screenshot exposed one misunderstood mark and one registration
+problem. The idle shield was supposed to follow its left hand into the lower
+blue zone, while the right hand and sword handle had separate blue targets.
+The author also supplied a black reference path for the attack and requested a
+straight-line return after impact, while explicitly accepting the changing
+sword rotation.
+
+Idle shield and left-hand layers now share (82,45). Held Block remains
+unchanged at (160,100). The normal right palm/fingers rest at (282,32), while
+the sword rests at (280,4); relative to V4.32.0j this moves the hand slightly
+left/down and raises the handle by 24 logical units into its marked target.
+Layer depth is unchanged: palm remains behind the blade and fingers remain in
+front of its handle.
+
+The eight-tic A-frame attack now samples five points along the marked curve:
+(300,15), (318,-4), (287,-1), (236,11) and impact at (201,21). It then uses
+three nearly collinear positions—(228,25), (255,28) and (275,31)—before rest
+at (282,32). This produces the requested straight-line return instead of
+retracing the outgoing arc. The blade keeps a constant (-2,-28) registered
+offset from the palm path.
+
+Rotation continues throughout the animation at
+18→21→24→31→38→43→39→31→24→18 degrees. Thus the accepted visual endpoints
+remain approximately 79 degrees at rest and 104 at impact. No gameplay timing,
+damage, Air, durability, Block, equipment, HUD, persistence or map source
+changed.
+
+## Marked-zone hand placement and corrected Block hand 4.32.0j
+
+**Block-hand orientation retained; idle placement and attack path superseded
+by V4.32.0k**
+
+The author accepted the V4.32.0i shield and identified two remaining visual
+corrections. The horizontal hand visible beneath held Block was inverted, and
+the normal hands/sword still occupied the red-marked positions rather than the
+two marked blue zones. V4.32.0j changes only the sword selector's visual
+offsets and the six H/I sublayers needed to reverse that Block hand.
+
+Shield layer 10 remains exactly at (105,0) when idle and (160,100) while
+blocking; `DSHDI0` is byte-identical to V4.32.0i. Left-hand layer 20 now has an
+independent normal offset (82,45), so it can move down and left without moving
+the shield. The complete right rig now rests at (288,28). Its accepted motion
+deltas remain unchanged, producing (302,36), (260,10) and (276,21) during
+retraction, extension and recovery.
+
+`RHNDH0`, `RHNDI0`, `DSWDH0`, `DSWDI0`, `RFNGH0` and `RFNGI0` are each the
+exact horizontal mirror of the corresponding V4.32.0f pixels. Mirroring the
+three registered layers together makes the Block forearm enter from the left
+without disconnecting palm, transitional blade or foreground fingers. Canvas,
+RGBA encoding and `grAb (160,32)` remain unchanged.
+
+The accepted 18/24/43/31-degree sword rotations, static H(3)→I(-1) Block,
+orthographic 125% shield, panoramic arm, conditional shield visibility and all
+gameplay systems remain unchanged.
+
+## Raised variable-angle sword and orthographic Block 4.32.0i
+
+**Shield and angle targets accepted; remaining hand presentation superseded by
+V4.32.0j**
+
+The author accepted the V4.32.0h mechanics and attack motion, then identified
+three remaining presentation defects: the sword rig began too low, its strike
+needed a small angular change from roughly 75–80 degrees at rest to 95–110
+degrees at impact, and the held shield had neither the requested camera
+perspective nor the correct vertical placement and proximity. V4.32.0i changes
+only `CaelumSwordSelectorWeapon` and the held-I shield/left-hand artwork.
+
+The complete right-hand rig now rests at Y=-18. Its existing translation deltas
+are preserved at (174,-10), (132,-36) and (148,-25), while the absolute
+grip-pivot rotation progresses through 24, 43 and 31 degrees before returning
+to 18. Given the supplied blade's approximately 61-degree baked angle, those
+states render near 85, 104, 92 and 79 degrees respectively. The same A artwork
+still supplies all three attack phases, so the strike remains an
+advance/retract motion and cannot expose the rejected E/F/G overturn.
+
+Held Block remains a static H(3)→I(-1) sequence. I now places the shield layers
+at X=160, Y=100. The shield reverse was redrawn in an orthographic,
+straight-on camera view, then widened in source space to compensate Doom's 1.2
+pixel aspect. Its 450×300 RGBA export uses `grAb (225,48)` and a 293×244
+visible box: the 244-pixel displayed diameter is 125.1% of V4.32.0h's
+195-pixel height, while 293/244 restores a circular screen silhouette. The
+registered left-hand layer has a 213×169 visible box, the raster-equivalent
+125% of 170×135. This makes the shield genuinely perpendicular, 25% closer and
+low enough to leave the reference horizon unobstructed.
+
+Idle shield X=105, conditional equipment visibility, the accepted extended
+480×240 right arm, all layer depths and every combat/gameplay path remain
+unchanged.
+
+## State-specific Domingo first-person correction 4.32.0h
+
+**Mechanics and motion accepted; remaining presentation superseded by
+V4.32.0i**
+
+The author's V4.32.0g test accepted every regression case but rejected its
+visual composition. V4.32.0h therefore remains a presentation-only correction
+and leaves the approved combat, Block, Air, durability, persistence, economy,
+crafting, dialogue, HUD and map sources unchanged.
+
+Idle and attack now place only shield layers 10/20 at X=105 while the right
+hand, blade and finger layers stay based at X=160. Block returns the shield to
+X=160. Its H raise lasts three tics and its enlarged, frontal I pose then holds
+indefinitely instead of looping H/I. The I shield and left arm share an exact
+118% transform and registered `grAb (160,48)` canvases.
+
+The sword has one absolute 30-degree rotation about its grip, producing the
+requested near-vertical pose. Attack no longer consumes the rotating E/F/G
+art: the same A pose moves through (174,8), (132,-18) and (148,-7) for
+retraction, extension and recovery, then returns to (160,0). Because blade,
+right arm and foreground fingers receive each offset together, their depth and
+grip remain registered and the blade angle cannot change during the strike.
+
+`RHNDA0` and `RHNDB0` now use 480×240 RGBA canvases with
+`grAb (160,72)`. Their 960×480 source extends the armored sleeve through the
+panoramic edge, preventing the former 320-pixel canvas boundary from appearing
+when the hand moves forward. The original fist and occlusion layer remain in
+their accepted positions.
+
+## Centered first-person rig and right-leaning sword 4.32.0g
+
+**Mechanics/regressions accepted; visual proposal rejected and superseded by
+V4.32.0h**
+
+The author accepted every non-framing test from 4.32.0f. This follow-up changes
+only the two reported visual defects. All five modular PSprite layers now use
+one X=160, Y=0 placement helper, moving the registered 320-pixel rig exactly
+half a logical canvas to the right. The layers remain attached to the main
+weapon PSprite, so its accepted vertical raise/lower path and bob are inherited
+unchanged.
+
+`DSWDA0`, `DSWDB0`, `DSWDD0` and `DSWDG0` are exact horizontal pixel mirrors
+around per-frame grip pivots. This keeps each hilt seated at the same point
+between the unchanged palm and finger layers while making the idle blade point
+up-right; D and G prevent a left-facing discontinuity at the end of selection
+and attack recovery. C, E, F, H and I remain byte-identical to 4.32.0f, as do
+all hands, shield art, timings and gameplay sources outside the sword selector.
+
+The audit decodes the PNG scanlines with only the Python standard library and
+proves each of the four changed images is the exact expected grip-pivot mirror,
+retains 320×200 8-bit RGBA and preserves `grAb (160,32)`. It also proves that
+the runtime delta from 4.32.0f is exactly the selector plus those four images,
+and that removing the shared placement helper leaves the previous sword class
+semantically unchanged.
+
+## Real sword first-person layers and clarified travel semantics 4.32.0f
+
+**Author test pass completed for dialogue, persistence, equipment, conditional
+shield and combat regressions; its two framing defects are superseded by
+4.32.0g.**
+
+The revised Domingo delivery is connected to the real
+`CaelumSwordSelectorWeapon`; the console-only `CA_DomingoFPSwordShield` test
+weapon and its independent punch are removed. Fire and AltFire call the same
+authoritative player attack paths as before, Zoom still toggles real Block,
+and inherited Reload/User inputs remain unchanged. The HUD suppresses only its
+two provisional first-person drawings while this real sword selector is ready.
+
+Five native PSprite layers now provide actual depth: shield at 10, its left
+hand at 20, right forearm/palm at 25, sword at 30 and a new right-finger
+occlusion layer at 40. Nine `RFNG` frames were extracted from the corrected
+right-hand art, so the blade and grip pass in front of the palm but behind the
+curled fingers in every A–I pose. The 45 supplied revision-2 PNGs replace the
+previous delivery byte for byte; together with the nine derived finger PNGs,
+all runtime frames are 320×200 RGBA with the common `(160,32)` `grAb` origin.
+
+The shield and its dedicated left hand are synchronized every tic with
+`HasActiveBlockSource()`. They are absent without an equipped, compatible,
+unbroken shield, appear when one becomes valid, and disappear immediately when
+it ceases to be valid. Block H→I holds for the full authoritative Block state;
+E→G starts only when a real sword attack actually begins its cooldown.
+
+The reported Magic Box travel failure was also reclassified after reproduction:
+the `map MAP02` console command starts a new game/player, whereas the map's
+normal Exit and `changemap MAP02` preserve the accepted travelling record.
+The redundant schema-2 three-source reconciliation from 4.32.0e is removed;
+`CaelumPersistentCharacterState` again remains the single persistent source,
+with the live flag and USDF marker derived from it. Schema-2 saves retain their
+stored boolean because version 2 already satisfies the original version-1
+initialization guard.
+
+## Native Palomo dialogue, persuasion and tier icons 4.32.0d
+
+**Implemented; source, dialogue, pricing and supplied-asset audits passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+Palomo now enters GZDoom's native USDF conversation system instead of switching
+directly between a gift and the custom merchant panel. Before ownership, he
+introduces himself as the pigeon who owns the mansion and asks whether the
+player wants an adventure. Yes grants the Magic Box; No opens the requested
+confirmation, whose reconsideration also grants it and whose definitive Yes
+ends with “Qué lástima”. A later interaction reoffers the undecided branch, so
+refusing does not create an unauthorized permanent quest failure.
+
+After ownership, the native menu offers Trade and Talk. A third reply is shown
+only when raw Eloquence is strictly greater than 50 and disappears permanently
+after success. It displays difficulty 50 and the current chance calculated
+from the accepted Dialogue Skill formula
+`Eloquence × (Eloquence + 1) / 101`. Dialogue Skill at or above 50 succeeds
+automatically; otherwise the chance is `floor(skill / 50 × 100)`. A successful
+check is stored per character and changes Palomo's lot margins to 140% charged
+and 60% paid, preserving ceiling/floor rounding. Failure has no invented
+persistent penalty and may be attempted again.
+
+`CAPALOMO` is loaded with the native `GameInfo.AddDialogues` path on every map.
+The interaction synchronizes invisible native-inventory requirement markers,
+temporarily assigns conversation ID 43200 to the actor and calls
+`Actor.StartConversation`. This keeps USDF's native replies, item conditions,
+page links and give-item transactions while retaining per-player gift and
+discount authority. It also means V4.33 can move or recreate Palomo without
+copying the dialogue or resetting merchant state.
+
+The supplied art replaces 23 corrected T1/base PNGs and adds 49 T2 plus 49 T3
+PNGs. One `CaelumIconResolver` maps all 20 weapons, 16 armor variants, four
+shields, four amulets and five seals, and is used by equipment selection,
+crafting preview, jewelry inventory icons and the active-weapon display. The
+complete runtime icon tree matches the supplier checksums and contains 255 PNGs.
+
+## Accepted Palomo interaction corrections 4.32.0c
+
+**Author test pass completed: every focused interaction, Sell filter,
+return-home and regression case succeeded.**
+
+The merchant navigation now uses Left/Right to move bidirectionally through
+lots 1/5/20/50/100 and Space/X to toggle Buy/Sell. Sell mode builds a compact
+authoritative view containing only catalog products with at least one
+unreserved player unit and enough Palomo cash for a one-unit purchase; an
+explicit empty state replaces irrelevant rows.
+
+The shared folklore interaction latch now belongs to the player and remains
+armed while the merchant panel is open. Closing with Q, Tab, Escape or B cannot
+reopen Palomo under the crosshair during the same physical Use press; a new
+interaction requires closing and then releasing Use. The anchored MAP01
+instance also records its spawn as home: displacement below 500 MU is tolerated,
+while displacement at or above 500 MU makes Palomo return at the actor's normal
+running speed and stop at the original post. Quest-stage relocation remains a
+V4.33 responsibility.
+
+## Palomo merchant and persistent Magic Box acquisition 4.32.0b
+
+**Author test pass completed: startup, gift, persistence, prices, physical
+transactions and regressions succeeded. Four interaction details are
+superseded by the focused V4.32.0c correction above.**
+
+New characters begin without the Magic Box: it contributes zero weight, has
+zero slots and rejects every direct or automatic storage route. Palomo is now
+an anchored NPC 64 map units in front of the MAP01 player-1 start. The shared
+`CaelumInteractiveFolkloreActor` contract edge-triggers `Use`, so the first
+interaction grants the box once and a later interaction opens commerce. The
+accepted 10 kg structure and aggregate `floor(raw weight / maximum slots)`
+rule begin only after that reward. Confirmed pre-4.32.0b profiles migrate as
+owners so previously boxed inventory remains accessible.
+
+Palomo trades food, water, wood, raw copper and raw tin in both directions.
+The player selects lots of 1/5/20/50/100; the existing 150% charge and 50%
+payment apply once to the whole lot. Transactions consume the player's real
+fifteen currency classes, accept mixed metal/denominations and materialize
+canonical physical change. Stock, player ownership, both cash balances,
+crafting reservations, final carry load and Magic Box slots are checked before
+commit. The initial test balance is 20 food, 20 water, 100 wood, 50 raw copper,
+50 raw tin and a 200-copper merchant wallet.
+
+Merchant stock/cash is stored in each character's persistent inventory record,
+not in the MAP01 actor. This keeps server authority isolated per player and is
+the compatibility seam for V4.33: Palomo may later move or respawn according
+to quest stage without resetting or duplicating the trade state. The current
+actor remains stationary because `arg0 = 1` marks the narrative merchant
+anchor; unanchored debug summons retain their former wandering behavior.
+
+The Inventory category uses the silver coin image, while copper/silver/gold
+totals retain their own icons. The supplied 64×64 RGBA Magic Box sprite appears
+next to its status and is dimmed before acquisition. Trade input and rendering
+reuse `CaelumJournalOverlay`; the authoritative mutations remain play-scope
+network events and the player cannot move while the merchant panel is open.
+
+## ZScript startup-scope compatibility 4.32.0a-r4
+
+**Accepted by the author after the complete cumulative GZDoom 4.14.2 test
+pass; deterministic source and package audit passed**
+
+GZDoom 4.14.2 rejected r3 during `LoadActors` because
+`CaelumEconomyRules.GetInventoryUnitBaseValue`, a function compiled in data
+scope, called `play` methods on live currency, consumable and special-item
+instances. R4 explicitly declares the three inventory-dependent pricing
+helpers as `play static`, including the stack wrapper and equipment helper, and
+adds a build-audit requirement for those declarations.
+
+This is a startup-only compatibility correction. Economy values, recipes,
+merchant margins, currency, Magic Box behavior, UI, maps, resources, crafting,
+equipment and save data remain identical to r3. The r4 package supersedes r3.
+
+## Permanent proportional-weight Magic Box 4.32.0a-r3
+
+**Accepted by the author in r4 after the complete cumulative GZDoom 4.14.2
+test pass; deterministic source and package audit passed**
+
+The Magic Box remains a permanent character capability rather than a new
+inventory actor. It cannot be dropped, sold, destroyed or stored, and its
+structure always contributes 10.000 kg to carried load, including while empty.
+Its Intelligence-derived maximum slot count is the weight divisor: all real
+weights inside are summed, divided once by the current maximum slots and then
+rounded downward to the game's 0.001-kg precision. The base 10 kg is never
+divided. Stacks still consume one slot regardless of Amount, but every unit
+contributes before the aggregate division.
+
+Load transitions are prospective. New pickups, additions to boxed stacks,
+retrieval, direct equipping, processing/component output, final-equipment
+assembly and disassembly compare the complete resulting load against carrying
+capacity. Retrieval subtracts the item's former reduced share before adding its
+full personal weight. Splitting weight across piles cannot exploit per-stack
+rounding because only the total box content is rounded.
+
+The existing storage whitelist is unchanged. Native keys, arrows and bolts
+remain outside the box; all previously admitted equipment and stacks retain
+their behavior. If Intelligence lowers capacity beneath current occupancy,
+contents remain intact and the reduced weight is recalculated with the new
+divisor. Further deposits are blocked until enough slots are freed. The Journal
+Inventory line now displays used/maximum slots plus total box weight, while the
+selected item continues to display its unreduced real weight. Exact rules and
+examples are recorded in `docs/MAGIC_BOX.md`.
+
+## Physical currency and recursive economy foundation 4.32.0a-r2
+
+**Accepted by the author in r4 after the complete cumulative GZDoom 4.14.2
+test pass; deterministic source and package audit passed**
+
+Copper, silver and gold now exist as fifteen physical, stackable native
+inventory items: each metal has nominal denominations 1, 5, 20, 50 and 100.
+One silver unit equals 200 copper units and one gold unit equals 200 silver
+units (40,000 copper). Every physical coin weighs 0.001 kg regardless of metal
+or denomination. Coins cannot be crafted, minted or smelted by the player; the
+face-value ladder is deliberately independent from material prices. The five
+denominations of a metal reuse its accepted 64x64 icon and world sprite and
+remain distinguishable through localized inventory names and pickup messages.
+
+The Journal Currency filter enumerates every denomination and shows, beside
+Load and Magic Box, the total copper-equivalent balance plus aggregate physical
+coin counts for copper, silver and gold. Money stored in the Magic Box remains
+owned and visible in the total. The former zero-weight storage contract in this
+r2 historical entry is superseded by the proportional rule in 4.32.0a-r3.
+
+The authored raw-material anchors now set wood to 2; plant fiber and cow hide
+to 3; coal, copper and tin to 5; iron to 7; silver to 100; every current raw gem
+(opal, topaz, emerald, sapphire and ruby) to 500; and gold to 1,000 copper per
+0.001 kg unit. Food and water rations receive authorized per-item values of 4
+and 6. Natural-resource hardness and abundance still control extraction but no
+longer overwrite these monetary choices. Processing uses each real recipe at
+100% material efficiency and adds 25%. Components then use processed-material
+values and add 25%, 50% or 100% according to their cumulative T1/T2/T3 station
+network. Final equipment values its manufactured components and existing
+precious-metal details, then applies the same tier markup once for assembly.
+
+Merchant helpers pay 50% of the complete lot value, rounded down to whole
+copper, and charge 150%, rounded up. The actual NPC interaction, merchant
+stock and transfer transaction remain the next V4.32 increment; this revision
+does not invent dialogue or place merchants. Consumables other than food and
+water, ammunition, keys and key items intentionally remain unpriced until they
+receive an authorized recipe or base value. No crafting quantity, efficiency,
+operation time, repair, disassembly, resource or map changes in this revision.
+
+## Potable-water constant restoration 4.31.0j
+
+**Accepted by the author after the complete cumulative GZDoom test pass;
+deterministic reference, source and package audit passed**
+
+Version 4.31.0i rebuilt its constants file from an incomplete source snapshot
+and omitted `POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND`, although the
+player code retained the potable-water thirst call introduced in 4.31.0h.
+GZDoom therefore rejected ZScript before entering a map. Version 4.31.0j
+restores the exact `0.01` ratio: one percentage point of Thirst per second while
+fully submerged in a sector explicitly marked as potable.
+
+The corrective runtime delta contains only `CaelumConstants.zs`. A new audit
+enumerates every `CaelumConstants.*` reference across the complete PK3 and
+rejects the build if any referenced member is undeclared. It also requires the
+candidate constant catalogue to equal the 4.31.0i catalogue plus exactly the
+restored potable-water member. Crafting efficiency, recursive repair, UI,
+maps, models, sounds, recipes, resources and save data remain byte-identical
+to 4.31.0i.
+
+## Independent operation efficiency and recursive repair 4.31.0i
+
+**Implemented; deterministic source and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+The efficiency selected for a recipe node now multiplies only that node's own
+work. Its 25%/50%/100% material rule and 1x/10x/100x time factors remain
+unchanged, but no factor is inherited by descendants. Material waste still
+propagates naturally: a less efficient parent requests more child units and a
+less efficient child requests more raw input. The theoretical tree and the
+current-inventory direct plan share the same rule:
+
+```text
+OperationTime(node) = AdjustedInputUnits(node)
+                    * ComplexityTics(node)
+                    * EfficiencyFactor(node)
+                    / 35
+                    * 100 / DexterityType1Percent
+
+FullTime = Sum(OperationTime(executed node))
+```
+
+This supersedes the inherited branch multiplication introduced in 4.30.0i.
+Changing a handle or blade component can still alter descendant quantities,
+but it can no longer multiply the independently selected duration of every
+subrecipe below it.
+
+Repair now uses the same recursive material resolver as direct weapon
+creation. It reserves finished components already owned, derives only the
+missing portion from known recipes and raw materials, adds each required
+intermediate operation once to the repair duration and consumes the complete
+reservation atomically on success. Explicit cancellation continues to release
+the reservation without spending material or changing durability. A failed
+repair reports a repair-specific material error instead of the misleading
+generic fabrication error.
+
+The Journal's crafting help is split into two readable lines and explicitly
+shows `B` for material/component batches and `C` for cancelling an active task.
+Final equipment remains a single output unless its header says otherwise.
+The former root label `x3000`, which actually meant three thousand material
+units rather than three thousand objects, now displays both units and kilograms
+as `material used: 3000 u (3.000 kg)`. No map, model, sound, inventory item,
+recipe quantity, resource source or save schema changes in this patch.
+
+## Potable-water hydration and combat timeout correction 4.31.0h
+
+**Implemented; deterministic source, map and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+Complete submersion now restores Thirst at a net rate of one percentage point
+per second only when the current sector carries the UDMF
+`user_ca_potable_water` marker. The seventeen target sectors of MAP01's pool
+receive that marker. The existing WaterLevel-3 breathing rule, progressive Air
+cost, drowning damage and three-second respiratory-debt recovery are unchanged.
+This explicit marker prevents future saltwater, polluted water or other liquid
+volumes from becoming drinkable merely because they support swimming.
+
+Combat still lasts thirty seconds after the latest confirmed action. The
+countdown now advances before checking whether CurrentAdrenaline is positive;
+therefore an attack that grants no Adrenaline, or a reserve that reaches zero,
+can no longer freeze the combat state and indefinitely block crafting. Once the
+countdown reaches zero, positive Adrenaline continues to decay at the existing
+ten points per second.
+
+`CaelumMaterialPickup` now overrides the native pickup-message method and
+combines the localized material name with the exact incoming stack amount.
+The underlying item class, type, tier, weight, stacking and crafting ownership
+remain unchanged. Tin continues to originate from `CaelumVeinTin`,
+`CaelumVeinTin2` and `CaelumVeinTin3` (DoomEdNums 18509–18511). MAP01 changes
+only by adding the seventeen potable flags; all vertices, lines, sides,
+sectors, Things and every other runtime asset are preserved.
+
+## Explicit Young names and resource corrections 4.31.0g
+
+**Implemented; deterministic source, geometry and package audit passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+The 48 pre-adult actors belonging to the sixteen enlarged tree species now
+expose `Young`, `Young2` and `Young3` editor/class names. Their historical
+class names remain valid aliases and their existing DoomEdNums are reassigned
+without changing mesh, scale, collision or mass. Together with the five age
+families introduced in 4.31.0f, the editor therefore presents 63 Adult and 63
+Young tree actors across all twenty-one species.
+
+Successful harvesting no longer calls the attack-thrust path for rooted
+sources. Trees still release wood and wear the melee weapon, but only a source
+whose `IsEnvironmentMovable()` contract returns true can receive push. Mineral
+deposits retain their previous mass-dependent movement. Coal variant 3, silver
+variant 1 and gold variant 2 omit only the three long ore bands that protruded
+outside their host rock; their nine irregular inclusions, actor data, collision,
+capacity and yield are unchanged. Every other mineral mesh remains byte-identical.
+
+Crafting-station help once again exposes `F` repair and `D` dismantle, and the
+crafting page displays equipment-action rejection messages when no task starts.
+Repair remains an operation on the exact object selected in Inventory: it must
+be damaged and unequipped, with the complete recipe station network and scaled
+materials available. MAP01, MAP02, resource balance and regeneration do not
+change. The shipped capacity catalogue records the exact mass-derived maximums:
+117,000–669,509,000 wood units and 287,540–35,946,000 mineral units; scenic
+rocks remain at zero.
+
+## Renewable trees and compact mineral veins 4.31.0f
+
+**Implemented; deterministic source, geometry and package audit passed;
+focused GZDoom 4.14.2 author acceptance pending**
+
+The author accepted all fourteen 4.31.0e checks. Version 4.31.0f turns every
+tree family into a persistent renewable wood source and introduces eleven
+distinct mineral deposits: iron, mineral coal, copper, tin, silver, gold,
+opal, topaz, sapphire, ruby and emerald. Each mineral has three deterministic
+3D outcrop variants, for 33 new actors, 33 OBJ meshes, eleven 256x256 original
+materials and eleven transparent model anchors. No mineral node is placed in
+MAP01 or MAP02; Buenos Aires therefore retains the agreed mining scarcity.
+
+Extraction is connected only to the authoritative physical melee trace.
+Trees accept slashing damage and have hardness 2.5; deposits accept piercing
+damage. The released amount uses `strike damage × (1 - hardness/10) ×
+abundance`. Fractions are stored on the source rather than rerolled or lost,
+so rare deposits remain deterministic. Ranged attacks, magic, thrown
+javelins, blunt attacks and the five generic scenic rock families never
+produce materials. A successful resource strike still wears the equipped
+weapon and can transmit physical push to a movable deposit, but it does not
+create combat activity or Adrenaline.
+
+Maximum recoverable units derive from the physical cylinder mass and the
+resource concentration; the mapper can replace that maximum by supplying
+whole kilograms in actor argument 4. Since one material unit weighs 0.001 kg,
+the conversion remains dimensionally consistent. Every loaded partially
+depleted source recovers exactly 0.1% of its own maximum over the canonical
+24-hour game day (24 x 180 real seconds), in staggered one-second updates.
+Source capacity, remaining units and fractional carry are ordinary serialized
+actor fields and therefore survive save/load.
+
+Cardon, churqui, chanar, espinillo and ceibo now expose their approved current
+sizes under `Adult`, `Adult2` and `Adult3` names. Their previous class names
+remain valid compatibility aliases, while existing DoomEdNums point at the
+new adult names without changing appearance or collision. Fifteen new
+`Young` actors reuse the same three branch meshes at exactly half scale and
+use DoomEdNums 18460-18474. Mineral nodes use 18500-18532. All 78 previously
+approved environmental OBJ files and both maps remain byte-identical.
+
+## Adult vegetation and environmental impact bodies 4.31.0e
+
+**Implemented; deterministic structural and package audit passed; focused
+GZDoom 4.14.2 author acceptance pending**
+
+The author accepted all twelve 4.31.0d tests. Version 4.31.0e preserves every
+existing environmental mesh, texture, class scale and DoomEdNum, then adds 48
+adult tree actors for sixteen species. Names use `Adult`, `Adult2` and
+`Adult3`; their target sizes remain 100/75/125% around species-specific adult
+heights from 8 to 32 metres. Cardón, churqui, chañar, espinillo and ceibo keep
+only their original three variants because those already occupy useful real
+size ranges. Adult actors use DoomEdNums 18412–18459 and reuse the existing
+three OBJ meshes of each species through `MODELDEF`; no visual file is copied
+or regenerated.
+
+All 186 environmental actors now store a rounded kilogram mass derived from
+their collision cylinder using the project scale of 32 MU per metre and a
+nominal density for the represented rock or species. The generated range is
+449–303,009,143 kg and remains inside the signed 32-bit actor-mass range.
+Trees are rooted static targets: player and combat-actor collision resolves
+through the same `ResolveStatic` path as a wall, applies the normal Caelum
+impact damage curve and never changes tree velocity. Rocks are dynamic targets:
+`ResolveBodies` transfers action and reaction according to both masses. Use
+interaction requires `PhysicalPushMultiplier >= mass/100` and scales received
+thrust inversely with mass. Passive callbacks from a moving rock are accepted
+by player/NPC receivers so a rock can initiate the collision.
+
+The generator produces 75 rock actors, 111 tree actors, 186 unique class/model
+records and 186 unique environmental DoomEdNums: 26 historical base numbers
+plus 160 generated assignments in 18300–18459. Automated checks
+confirm exact preservation of all 78 OBJ and 26 environmental PNG assets,
+unchanged MAP01/MAP02 bytes, valid model paths, finite scales, adult height
+ratios, cylinder masses and stable DoomEdNums 18041–18070/18300–18459.
+
+Harvesting remains disabled. Only-melee extraction, cutting trees, piercing
+mineral deposits, hardness/rarity/depth rules, new menas, algae and marine
+biomes are now an explicit Version 5 track. Its fixed decisions are recorded
+in `V5_RESOURCES_AND_MARINE_BIOMES.md`; no provisional drops or probabilities
+enter the 4.31.0e runtime.
+
+## Environmental variants, south hill and progressive drowning 4.31.0d
+
+**Implemented; exact GZDoom 4.14.2 compile, MAP01 load and drowning audit
+passed; accepted by the author after all twelve focused tests**
+
+The regional library now contains 63 tree actors and 75 rock actors. Every one
+of the twenty-one accepted tree species retains its original class and adds a
+75% variant suffixed `2` plus a 125% variant suffixed `3`; their branch or
+crown distribution changes deterministically without changing the species'
+basic silhouette or material. The five rock forms now combine five nominal
+size tiers (0.5×, 1×, 2×, 5× and 20×) with the same three 75/100/125% visual
+variants. All variants share the material of their source form.
+
+The runtime therefore exposes 138 solid environmental actors backed by 78 OBJ
+meshes and 44,976 faces. Historical base DoomEdNums 18041–18045 and
+18050–18070 remain unchanged; the 112 new actors use 18300–18411. The sauce's
+hanging branches now originate continuously at the trunk, and the ciprés,
+guindo and pehuén trunks terminate inside their crowns instead of projecting
+through the top. Collision scales with each actor, but remains GZDoom's simple
+rock/trunk cylinder rather than triangle-accurate OBJ collision.
+
+Once Caelum Air reaches zero, continuous submersion deals one pulse per second
+equal to 1% of the character's current maximum-health capacity. Each following
+second adds 0.1 percentage points until the pulse reaches 10%; surfacing or
+otherwise breathing resets the progression. Damage keeps the established
+environmental path: it ignores armor and does not award Adrenaline or begin
+combat. The developer command `ca_debug_empty_air` makes the first pulses
+testable without waiting for the complete Air reserve to drain.
+
+MAP01 adds a native UDMF floor-slope prototype centred at `(600, -1100)` in an
+empty part of the south lawn. Eight continuous sloped sectors rise from z=0 to
+a 48-MU-high, roughly 192-MU-wide flat top inside a 640-MU octagonal footprint.
+The original MAP01 text blocks remain byte-identical and the hill appends 16
+vertices, 24 linedefs, 48 sidedefs and 9 sectors without new Things. MAP02 is
+byte-identical to 4.31.0c. Reproducibility, actor/model/material references,
+editor-number uniqueness, finite mesh geometry, map references, sector
+ownership and all slope-edge heights passed automated structural checks.
+
+The complete 3,896-file candidate also compiled and loaded MAP01 without a
+map, MODELDEF or ZScript warning in exact GZDoom 4.14.2. A temporary runtime
+audit measured the rounded damage sequence `18/20/21/178` at 1.0/1.1/1.2/10%
+for a 1,780-health profile and confirmed that breathing resets the next pulse
+to 18. The audit helper is not included in the release.
+
+## Progressive underwater breathing and Argentine environment set 4.31.0c
+
+**Implemented and internally validated in exact GZDoom 4.14.2; focused author
+timing and visual-scale validation pending**
+
+The author accepted all twelve 4.31.0b swimming, drowning, stash, persistence
+and regression checks. Version 4.31.0c replaces the provisional fixed
+underwater cost with a continuous no-breath ramp. A full submersion starts at
+5 base Air per second, adds 1 base Air per second after each complete
+continuous second and stops increasing at 20. Body mass and carried load still
+multiply the resulting rate through the one existing
+`AirConsumptionMultiplier`; Resilience still expands capacity rather than
+creating a second breath resource.
+
+The HUD and debug view display `sin oxígeno` for the entire interval in which
+the character's head is fully submerged. Performance penalties remain derived
+from the actual Air ratio, so the label itself does not add a hidden debuff.
+Every unit actually removed by this state is recorded as respiratory debt.
+When the head leaves the water, that debt alone is returned evenly over
+exactly 105 tics (three seconds), without consuming Hunger or Thirst. Running,
+jumping, blocking, attacks and any Air missing before submersion are not
+included in the fast repayment; normal eight-minute recovery resumes
+afterwards. Re-entering the water pauses the repayment and preserves its debt.
+
+The first regional environment library adds five distinct solid rock models
+and twenty-one solid vegetation models: three for desert, jungle, tundra,
+mountain, plains, coast and city. The silhouettes, OBJ meshes and 26 runtime
+materials are original project assets; a generated source atlas and the
+deterministic Pillow-based model generator are included outside the runtime.
+All objects are summonable and have DoomEdNums 18041–18045 and 18050–18070.
+Their collision follows the rock core or trunk, not the full tree crown.
+
+This increment deliberately does not assign harvesting, yields, tools,
+depletion states or regeneration. The actors are physical/editor-ready visual
+prototypes until those author-controlled values are supplied. Automated
+checks passed the 5/6/20 rate steps, exact cumulative loss, no-oxygen state,
+three-second debt-only repayment, unchanged Hunger/Thirst and all 26
+MODELDEF/material/collision paths. MAP01 and MAP02 remain byte-identical to
+4.31.0b.
+
+## Shared underwater Air and first 3D stash prototype 4.31.0b
+
+**Accepted by the author after all twelve focused swimming, stash and
+regression checks**
+
+Fully submerged swimming now spends the authoritative Caelum `CurrentAir`
+resource at 50 base units per second multiplied by the existing body-mass and
+carried-load `AirConsumptionMultiplier`. With mass 100, no carried load and
+Resilience 0, the 1,000-unit reserve lasts 20 seconds; Resilience 100 raises
+the reserve to 3,000 and therefore lasts 60 seconds under the same conditions.
+Air cannot regenerate while `WaterLevel == 3` and resumes its existing
+eight-minute recovery route as soon as the player's head leaves the water.
+
+The parallel native GZDoom breath timer is reset silently every tic, so it can
+no longer damage the player while the Caelum meter still has Air. Once
+`CurrentAir` reaches zero, Caelum preserves the native drowning cadence: one
+damage pulse every 32 tics, starting at 2 and increasing with elapsed
+breathless time. Drowning updates health, pain and cast interruption but is
+explicitly environmental: it neither starts combat nor grants adrenaline.
+
+Entering the pool from the air no longer leaves movement acceleration at zero.
+Ordinary airborne jumps still preserve momentum without adding acceleration,
+while `WaterLevel > 0` and native flight remain controllable media. The exact
+A/B audit measured acceleration `0` before touching bottom on 4.31.0a and a
+progression from `0.055464` to `0.99` before bottom on 4.31.0b.
+
+The first original 3D stash prototype is present without third-party or Doom
+assets. Its closed/open/locked OBJ meshes contain 242/254/266 low-poly faces
+and use four generated project textures for wood, iron, interior and the
+visible lock. One solid authoritative `CaelumStashChest` actor owns state and
+interaction; a non-solid visual helper displays exactly one static mesh. The
+locked subclass uses LOCKDEFS 201 with the existing reusable
+`CaelumSilverKey`. A failed interaction shows a stash-specific localized
+message; a successful one permanently unlocks the actor, opens it and leaves
+the key in personal inventory.
+
+The prototype deliberately has no contents, capacity or ownership service and
+is not placed permanently in MAP01. It can be tested with
+`summon CaelumStashChest`, `summon CaelumLockedStashChest` and
+`give CaelumSilverKey`. MAP01 remains byte-identical to accepted 4.31.0a.
+
+Exact-engine automated checks passed for: 50-unit rate including the existing
+multiplier, suppression of premature native damage, two progressive drowning
+pulses, zero drowning adrenaline, recovery after surfacing, OBJ/material load,
+all three visual states, solid collision, rejection without a key, successful
+unlock and reusable-key retention. The model generator is deterministic and
+ships as a development helper; installing/running the patch requires no
+Python.
+
+## Rear mansion pool and V4.31 world-source direction 4.31.0a
+
+**Pool implemented and validated in exact GZDoom 4.14.2; focused author
+visual/traversal acceptance pending; resource nodes and stashes remain design
+only**
+
+MAP01 now has a formal pool behind the eastern/rear façade. Its water footprint
+is exactly 1,280×1,440 MU (`x=2200..3480`, `y=-720..720`), the main basin floor
+is z=-256 and the water surface is z=0. A 96-MU terrace surrounds a raised
+32-MU stone coping. A centered 512-MU-wide entrance uses sixteen 32-MU treads
+whose floors descend in 16-MU increments from z=-8 to z=-248, ending at the
+deep basin without an impassable rise.
+
+The water is a translucent, fogged `Sector_Set3DFloor` type-2 volume targeting
+all seventeen basin/stair sectors through tag 940. The new `CAPOOL01` 256×256
+flat is an original project asset derived from the color language of the
+author-supplied `CMPW01`; it is mirror-tiled at its four edges and registered
+as liquid terrain. An attempted `ANIMDEFS` warp was rejected after the exact
+engine control test isolated an early-exit regression to that one directive;
+the accepted surface is static while swimming, translucency and underwater
+fog remain active.
+
+The map grows from `(1419, 1983, 3544, 618, 322)` to
+`(1469, 2049, 3672, 638, 322)`. All original vertex, linedef, sidedef, sector
+and Thing blocks remain byte-identical; the 322 Things and all accepted mansion
+railings are unchanged. There are no orphan sectors, invalid references,
+zero-length/coincident lines or mismatched bilateral flags. The final MAP01
+SHA-256 is
+`815f2ed0cd6f52fb03e63eaab3f8b8db560fc9b96c4fbe63a87b1e94e7ef8e60`.
+
+An exact-engine smoke run loaded MAP01 without map/resource warnings. A
+runtime audit resolved `CAPOOL01` as 256×256 and measured `WaterLevel=3` at the
+basin floor with `floorz=-256`; four exterior/underwater captures confirmed
+the rim, stairs, bottom and water volume. The remaining gate is the author's
+Windows/Doom II walk, especially entry/exit over the first step and visual
+scale from the rear doors.
+
+V4.31's resource direction is now fixed at the architecture level: natural
+sources and stashes use semirealistic CC0 3D models, while harvested/dropped
+inventory objects retain their existing sprites. Sources enter an available
+model state, spawn authoritative sprite pickups when used, then enter a
+depleted model state until their saved respawn time. Hides instead originate
+from authored animal/monster death tables. Chest ownership, locks, capacity,
+refill behavior, node yields, required tools and respawn intervals still need
+author values before implementation; no provisional balance was added here.
+
+## Audio package 05 and V4.30 acceptance 4.30.0j
+
+**V4.30 completely accepted by the author, including package-05 sound tests**
+
+The author confirmed the complete 4.30.0i result: both corrected balcony
+routes, railing heights, menu typography/sounds, all eleven earlier crafting
+checks and the cumulative branch-time relation behave correctly. V4.30's
+craft → use → deteriorate → repair/disassemble → recover-materials milestone
+is therefore accepted. No 4.30.0j file changes those mechanics, MAP01, MAP02,
+textures or interface code.
+
+Package 05 adds 14 OGG Vorbis resources at 48 kHz to the runtime library and
+registers 14 direct logical names plus the random
+`caelum/weather/thunder` alias. They cover crowd, river/coast, localized fire,
+fountain, blacksmith, sewer water, four rain intensities, wind and three
+thunder variants. Their loop state, attenuation, volume and map placement are
+deliberately left to the future environmental/weather emitters rather than
+being invented by this asset patch.
+
+Ten license-compatible but unassigned package-05 sounds are retained under
+`assets/audio_stock/pack05/`, outside `src` and therefore outside the PK3. Two
+additional files with unresolved third-party provenance are omitted entirely.
+The runtime build now contains 71 OGG effects/ambiences plus two MP3 music
+tracks. Including the external reserve, the project has 83 approved audio
+files (82 unique contents). `docs/INVENTARIO_AUDIO.md` enumerates every file
+and separates current automatic events, registered destinations, stock and
+music. Credits for package 05 ship in
+`src/licenses/AUDIO_PACK_05_CREDITS.md`.
+
+The author subsequently completed the focused GZDoom 4.14.2 listening matrix:
+the 14 direct names, randomized thunder alias and all loop candidates passed
+without an unknown-sound warning or audible seam. V4.30 is therefore closed;
+4.30.0j is the accepted baseline for V4.31.
+
+## Focused railing traversal and branch-weighted crafting 4.30.0i
+
+**Implemented, audited and accepted by the author on Windows/GZDoom**
+
+**Historical note:** its inherited branch-time equation is superseded by
+4.31.0i after the author isolated repeated multipliers in deep component trees.
+All railing work and the 25%/50%/100% material/time values remain valid.
+
+The author's three traversal observations are applied directly to existing
+MAP01 linedefs. The 96-MU first-floor railing at `y=-383, x=1209..1305` is
+removed. At the eastern second-floor stair, the obstructing route
+`x=1697, y=-128..64` is removed and the protected edge becomes
+`x=1689, y=-320..-64`. The missing western edge is filled at
+`x=-569, y=-92..92`. The result has 41 first-floor and 82 second-floor railing
+linedefs, spanning 7,364 and 6,476 MU respectively. All bases remain exactly
+at z=136 or z=264. Vertex, linedef, sidedef, sector and Thing counts remain
+`(1419, 1983, 3544, 618, 322)`; no sector is orphaned. MAP01 SHA-256 is
+`dc5eb73f7b876d5c70b9b2ae7862ac21c617b2c10ef879d508b89c096281a36e`.
+
+Crafting retains independent 25%/50%/100% choices, material waste and
+1×/10×/100× factors. The time of a recursive branch is now evaluated as:
+
+```text
+BranchTime(node) = EfficiencyFactor(node)
+                 * (OwnMaterialTime(node) + Sum(BranchTime(child)))
+```
+
+Consequently, the final weapon's factor also covers every component and
+refining step that it requires from raw materials; a selected child factor is
+then accumulated inside that branch. The current-inventory route omits child
+work for components already owned. Using the author's rounded dagger readings
+as a regression fixture changes the full-from-raw preview from
+`270.0 / 155.0 / 177.5 s` to approximately
+`270.0 / 1350.2 / 6761.0 s` when only the weapon layer changes from
+25% to 50% to 100%. This closes the reported inversion while preserving the
+actual material quantities and Type-1 Dexterity scaling.
+
+## Railing height, 25/50/100 crafting and menu legibility 4.30.0h
+
+**Implemented; superseded cumulatively by 4.30.0i; texture-resource audit,
+MAP01 topology/railing-height audit and crafting formula/source audit
+completed; author passed the complete 11-point Windows/Doom II matrix**
+
+The mansion environment now uses the author-supplied v2 package as one
+canonical 58-PNG set. The previous 85-file collection is not mixed into the
+new folder. `TEXTURES` registers every supplied exterior wall, stone floor,
+interior wall, wood floor, terrain, stair, door, gate, railing, carpet,
+pool/fountain wall, stable, terrace and detail resource through the project's
+Windows-safe `graphics/caelum/textures/mansion` path. Historical MAP01 names
+that the v2 package retires resolve only through explicit v2-based
+compatibility composites; no retired PNG remains in the complete PK3.
+
+MAP01 places an iron railing derived from supplied `CMRL02` on existing balcony
+boundary linedefs. Its logical module is 32×48 MU. Three one-pixel-offset
+layers preserve the supplied image while keeping its fine bars visible under
+world-texture filtering. V4.30.0g removes every provisional 4.30.0f railing
+and snaps the author's 23 supplied viewpoints to the actual inner balcony
+edges. The first-floor route covers 42 linedefs/7,460 MU and the second-floor
+route covers 76 linedefs/6,228 MU. The western central opening and eastern
+stair access stay open. V4.30.0h compensates `offsety_mid` for the composite's
+2.583333 vertical texture scale: GZDoom now resolves every first-floor base to
+z=136 and every second-floor base to z=264 instead of dividing the intended
+world displacement by the texture scale. No vertex, sector, Thing or navigable
+floor was added or removed: MAP01 remains `(1419, 1983, 3544, 618, 322)` and
+now has SHA-256
+`aef653d161697746883ddd5d74c71ac1bac35ba01191e3325b28c3e7f1a8c578`.
+
+Inventory text now uses `CaelumMono`, the same physically doubled monospaced
+face used by the HUD, so its character spacing no longer collapses relative to
+the surrounding interface. Inventory movement/filter events play
+`caelum/ui/menu_move`; accepted inventory, storage and drop actions play
+`caelum/ui/menu_select`. V4.30.0h connects the same two events to every
+crafting navigation/option and accepted-action branch that was still silent.
+`CaelumSmall` also raises `SpaceWidth` from 5 to 8, matching the main menu's
+word-space metric without changing glyph art, line height or kerning.
+
+The per-material crafting model from 4.30.0e is retained, but efficiency now
+uses 25%/50%/100% while preserving the explicit time factors
+25%=1×, 50%=10× and 100%=100×. The
+factor is applied independently to every executed recipe layer after material
+waste and operation complexity are known, and before Dexterity Type-1 speed is
+applied. For an otherwise identical 100-unit layer, material use is
+400/200/100 while its own work scales as 400/2,000/10,000 before Dexterity.
+Creation, direct recursive routes and repair use the selected
+layer/tier factor; disassembly has no efficiency selection and remains on the
+1× baseline. Common standalone processing/component batches now use four
+theoretical units at x1, yielding exactly 1/2/4 at 25/50/100; alloy lot sizes
+and ratios remain unchanged.
+
+## Recursive layered crafting and material work 4.30.0e
+
+**Implemented; exact-engine load, formula audit, complete recipe-tree audit and
+visual capture passed in GZDoom 4.14.2; efficiency percentages and time
+relation superseded by the 4.30.0i branch-weighted regime above; the author
+later passed the complete 11-point Windows/Doom II matrix on 4.30.0h**
+
+Journal → Crafts now expands the selected recipe through every producible
+component and processing dependency until it reaches raw materials. Each
+material row includes its owned/required amount. The view shows four
+scrollable rows, keeps the final operation and every craftable
+intermediate selectable with Up/Down, and changes only the selected layer's
+25%/50%/100% efficiency with X. It presents both the route that uses current
+inventory and the theoretical route from raw materials. Direct physical and
+elemental weapon plans continue to consume existing components first and now
+carry the selected efficiency, input-unit count, complexity and duration for
+each missing layer.
+
+Fixed ten-second transactions are removed. Each executed recipe layer costs
+one, two, three or four engine tics per employed material unit and then applies
+`100 / Type1DexterityPercent`. Type-1 remains
+`100 + Dexterity * (Dexterity + 1) / 2`, so Dexterity 100 supplies 5150% and
+completes the same material work 51.5 times faster than Dexterity 0. Simple
+processing, structural parts and ordinary blade/pole weapons use one tic;
+bows and flails use two; armor, shields, giant gauntlets and crossbows use
+three; essence/gem/jewelry work, elemental implements, amulets, seals and the
+carbine use four.
+
+Standalone processing and component batches use their 25%/50%/100% output
+yield. Indivisible assembly and repair always complete the result and apply
+efficiency as material waste: each theoretical input becomes
+`ceil(input * 100 / efficiency)`, and the extra units also add time. Repair
+uses the reserved proportional inputs and the item's complexity. Disassembly
+keeps its durability-scaled 50% recovery and now uses the corresponding item
+complexity instead of the retired fixed duration.
+
+The `ca_debug_advance_crafting_time` network command and its Customize
+Controls entry subtract exactly 600 seconds from a valid attended active task.
+It respects the normal station, distance, infrastructure and pause checks and
+uses the same atomic completion path when the remainder reaches zero. T invokes
+it directly while the Crafts station page is open.
+
+The exact 4.14.2 audit measured a 51.500 speed ratio, verified independent
+layer preview changes, verified that 50% doubles the final-operation inputs,
+and verified a 1000-second task becoming 400 seconds after one debug advance.
+All 129 catalogue recipes at all three tiers built valid recursive trees; the
+largest used 16 of the 32 reserved nodes and the invalid count was zero. An
+offscreen Journal capture confirmed that the tree, selected-layer highlight,
+two time previews and task status fit the 640×360 virtual layout. The test PK3
+loaded MAP01 and remained running for the bounded smoke interval. MAP01,
+MAP02, actors and art are unchanged by this patch.
+
+## Player start-weapon repair 4.30.0d
+
+**Implemented; crash reproduced and repair smoke-tested in exact GZDoom
+4.14.2; focused Windows/Doom II confirmation pending**
+
+The post-4.30.0c report no longer contains orphan-sector warnings, but retains
+the same address-`0x58` access violation. Symbols for the exact engine build
+place the failure in `PlayerPawn.BringUpWeapon`: `ReadyWeapon.GetReadyState()`
+receives GZDoom's `WP_NOCHANGE` sentinel instead of a real `Weapon`.
+
+`CaelumPlayer.GiveDefaultInventory()` formerly called the DoomPlayer method
+and then removed its inherited Pistol. Removing the selected weapon can finish
+the fallback selection with `PendingWeapon = WP_NOCHANGE`; `PlayerReborn`
+subsequently copies `PendingWeapon` into `ReadyWeapon` before psprite setup.
+The sentinel is a valid generic `DObject`, but it has no `Weapon` virtual entry
+for `GetReadyState`, which produced the null function access.
+
+V4.30.0d declares `Player.StartItem "Fist"` in `CaelumPlayer.Default`. The
+first subclass start-item declaration replaces DoomPlayer's inherited list,
+so Pistol and Clip are never granted and no active weapon is removed during
+rebirth. The redundant `TakeInventory` calls and override are gone. A control
+run reproduced the crash with the cumulative 4.30.0c PK3; the corrected PK3
+loaded MAP01, initialized the safe direct-start profile and remained alive for
+the complete bounded smoke interval on GZDoom 4.14.2. MAP01, MAP02, gameplay
+systems and assets are otherwise unchanged.
+
+## MAP01 orphan-sector compaction 4.30.0c
+
+**Implemented and independently structurally validated; runtime warnings
+cleared, superseded by the 4.30.0d player-start correction above**
+
+The first V4.30.0b MAP01 runtime attempt reached level setup after successful
+ZScript parsing, then reported 17 sector records with no lines before the
+player was initialized. They were sector indexes 30, 31, 33, 34, 75, 82, 84,
+94, 96, 244, 245, 268, 271, 322, 323, 346 and 349, carrying the residual tags
+510, 546, 580, 581 and 562. The thick-wall carving had removed their complete
+boundaries but had not compacted the sector table.
+
+V4.30.0c removes exactly those unreferenced records and remaps every live
+sidedef sector index in original order. Independent before/after validation
+confirms that all 1,419 vertices, 1,983 linedefs, 3,544 sidedefs and 322 Things
+are retained; vertex, linedef and Thing blocks are byte-identical, and every
+retained sector and every non-index sidedef property is unchanged. All 618
+remaining sectors have at least one sidedef. There are no invalid front/back,
+vertex or sector references, no orphaned/shared sidedefs, no zero-length or
+coincident linedefs and no `sideback`/`twosided` disagreement. Corrected MAP01
+SHA-256 is
+`b333acc001de94d9d1342f62c92596e7e521ff007da620432e0bbdabbfabddfe`.
+
+`tools/rebuild_4_30_0c_maps.py` accepts only the exact rejected V4.30.0b WAD or
+the exact corrected WAD, performs an atomic replacement and is idempotent.
+This patch changes no ZScript, LANGUAGE, crafting, inventory, actors, MAP02 or
+assets. Its next load removed every orphan-sector warning and exposed the
+independent ready-weapon failure corrected in V4.30.0d.
+
+## Journal crafting, exact weapon cycling and solid mansion walls 4.30.0b
+
+**Implemented and statically validated in 4.30.0b; fixed-duration behavior
+superseded by the 4.30.0e material-work regime above**
+
+The V4.30.0a runtime report is addressed in one incremental candidate. Missing
+Journal inventory, filter, weight and help strings now have English and Spanish
+LANGUAGE entries. Using a connected station opens Journal → Oficios directly;
+the former debug presentation no longer intercepts or renders crafting. The
+Oficios page displays the selected output icon, recipe, tier, size, batch,
+efficiency, material availability, cumulative infrastructure, direct-route
+steps and running/paused task state.
+
+In 4.30.0b every normal craft, refinement or component transaction took 10
+seconds at all three efficiencies and all four batch multipliers. Candidate
+4.30.0e replaces that provisional duration with the per-unit complexity model
+documented above. In both versions, an active task only
+advances while its Journal station session remains open, the player is within
+96 MU, the snapshotted infrastructure is still available and the player is out
+of combat. Closing/leaving, missing infrastructure or later combat pauses the
+clock; none consumes inputs or cancels the task. Its exact reservations remain
+blocked until the player resumes and completes it or explicitly cancels it.
+
+Physical and elemental weapon assembly can consume a recursively resolved
+primary-material plan when direct components are missing. Existing components
+are used first and the complete primary input route is reserved atomically.
+The path requires the same cumulative stations and does not create intermediate
+inventory objects. In 4.30.0e, independently selected material work replaces
+the former ten-second increment for every skipped component/refining recipe.
+
+Inventory Left/Right walks filters and Right enters Personaje after the last;
+F always advances the filter. Numeric slot 2 cycles exact equipped small-family
+instances by `ItemId`, so equal daggers with different durability or finish are
+distinguishable in the active-weapon HUD. The inherited Doom Pistol and Clip are
+removed from every default inventory grant.
+
+MAP01 converts the 31 remaining thin mansion `CMIN01` panels into 19 closed,
+8-MU-thick z=0..128 wall volumes. Doors, stairs, the 91 material piles, upper
+floor occupancy/profile and MAP02 are unchanged. MAP01 now contains 1,419
+vertices, 1,983 linedefs, 3,544 sidedefs, 635 sectors and 322 Things; SHA-256 is
+`ebc4c8aa654bdfc7c3ccd4eb60a8aa9bc4a745f85715189325612cf7bdec6f90`.
+The reconstruction is deterministic and idempotent.
+
+## Version 5 thermal exposure design
+
+**Author-approved and scheduled; not implemented**
+
+V5.1.0 will consume the stable weather snapshot planned for V4.35 after the
+V5.0.0 modular transition. The approved player model combines ambient climate,
+tagged indoor/outdoor environmental zones, activity derived from real Air
+expenditure, wind, persistent 0–100 wetness, exact equipped-item thermal
+properties and temporary food/drink effects. Resilience widens the base
+comfort band.
+
+Thermal excess accumulates with recovery and hysteresis across comfortable,
+mild, intense and extreme states. Heat increases Thirst loss, drains Lucidity
+and slows Air recovery. Cold increases Hunger loss, drains Anima and increases
+Health lost when damaged. Exact degrees, curves, multipliers and caps remain
+author-controlled numeric gates and must not be invented during implementation.
+
+The initial system affects only the player at a bounded low update frequency,
+persists exposure and wetness, recalculates the local environment after load,
+and displays normal HUD feedback only outside the comfortable band.
+
+The author also approved activity/ventilation-driven sweat and delayed cooling;
+shelter, heating and drying supplied by camps and properties; thermal effects
+on rest; bounded gradual acclimatization across seasonal change; data-driven
+species/race climate profiles; Fire/Water/Ice/Air environmental interaction;
+and reduced equipment thermal protection as durability falls. Persistent
+medical conditions remain unapproved. Detailed design is recorded in
+`docs/V5_THERMAL_EXPOSURE_DESIGN.md`.
+
+## Atomic crafting and durability loop 4.30.0a
+
+**Implemented and runtime-tested by the author; superseded by the focused
+4.30.0b corrections above**
+
+One serializable task now owns the complete refine/component/assembly/repair/
+disassembly transaction. It snapshots recipe configuration and infrastructure,
+reserves exact type+tier input amounts and any required Magic Box output slot,
+and blocks the exact repair/disassembly `ItemId`. Only explicit cancellation
+releases the reservation; completion consumes and produces atomically.
+
+The 129-entry recipe book preserves indices 0–78 and appends 50 component
+recipes at 79–128. Component recipes use one base material and the cumulative
+station network of their equipment family. Their exact Minor-Arcana sources
+remain deliberately unassigned; `ca_debug_crafting_learn_all_recipes` is the
+QA-only unlock.
+
+MAP01 receives 91 non-solid 10,000-unit material stacks in six ground-floor
+clusters. Vertex, linedef, sidedef and sector digests are unchanged from
+4.29.0bd, MAP02 remains byte-identical, and no character sprite or unrelated
+asset is part of this candidate.
+
+Focused acceptance requires: all 25/50/100 efficiencies at all four batch
+sizes, start-in-combat rejection, manual cancellation, save/load and map travel
+during a task, carry/Box overflow, every equipment family at tiers 1–3 and
+sizes 1–5, proportional repair, durability-scaled disassembly, duplicate item
+IDs, elemental outputs, decorative silver/gold and zero-durability recovery.
+
+## HUD-03 laurels, selected audio v3 and parser repair 4.29.0ay
+
+**Implemented and structurally validated; focused runtime GZDoom validation
+remains pending**
+
+The reported GZDoom 4.14.2 parser failure is repaired at its exact source:
+`action` was a reserved token and is no longer used as the equipment-action
+parameter. HUD-03 contributes exactly four final runtime PNGs. Resource
+laurels decorate Health, Anima, Adrenaline, Lucidity and Air after their fills;
+the normal/selected Journal laurels compose behind each navigation frame.
+
+Selected-audio v3 supersedes v2 without duplicating its shared files. Thirteen
+new OGG assets complete the twenty-file author package. Event-bound sounds have
+bounded lifetime or replay rules; the three `caelum/stock/*` names are declared
+only for future use. `TERRAIN` plus the native `PlayerPawn.MakeFootsteps` flag
+select the grass step sound without a per-tic custom scanner.
+
+Focused validation for this candidate is:
+
+1. Start GZDoom 4.14.2 and require ZScript to load past
+   `CaelumJournalOverlay.zs` with no parser or unknown-resource error.
+2. Open the Journal and visit all six pages; require the active gold laurel and
+   inactive silver laurels to stay behind the original frame/icon layers.
+3. Inspect the five left resource bars at 16:9 and 4:3; require both laurels to
+   align without changing the bar fill geometry.
+4. Exercise each connected sound once, including held-use on a locked door,
+   and require no per-tic repetition or lingering burn/Zupay loop.
+5. Run `playsound` for the three stock names, but require no automatic caller.
+
+MAP01 and MAP02 remain outside this patch and preserve their 4.29.0ax hashes.
+
+## Formal inventory and per-piece identity 4.29.0ax
+
+**Implemented and structurally validated; focused runtime GZDoom validation
+remains pending**
+
+`Actor.Inv` remains the sole authoritative source for ownership. Every
+`CaelumEquipmentItem` now carries a persistent positive `ItemId`, allocated by
+the character's travelling state and preserved through native copies, drops,
+pickups, crafting, migration, saves and map travel. Equal equipment recipes no
+longer collapse into one ownership flag: several identical pieces can coexist
+and their active armor/shield/weapon/accessory references retain the exact ID.
+
+Materials, consumables and ammunition remain amount-based native stacks. A
+material stack is keyed by type+tier and occupies one Magic Box slot regardless
+of amount; a non-stackable piece occupies one slot. The Journal Inventory page
+now reads a play-scope snapshot of the real chain, displays six rows at a time,
+filters all eight authored categories, and sends synchronized actions for
+equip/use, storage and dropping. It no longer depends on the debug catalogue
+selector and does not invent unowned entries.
+
+Focused validation for this candidate is:
+
+1. Create or collect two identical equipment pieces; require different stable
+   `#ID` values and independent durability/storage state.
+2. Save, load and travel between maps; require both IDs and the selected active
+   piece to remain unchanged.
+3. Put material stacks of different type/tier in the Magic Box; require one
+   slot per stack and no slot increase when `Amount` increases.
+4. Exercise every Journal filter and the equip/use, transfer and drop actions;
+   require actions to affect only the selected real entry.
+5. Recheck crafting with a duplicate recipe; require a new piece instead of a
+   duplicate rejection.
+
+MAP01 and MAP02 are outside this patch. Their hashes remain the exact 0aw
+values, so the next coordinate-guided MAP01 pass can be applied independently.
+
+## Solid north walls and lower-U removal 4.29.0aw
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+The two supplied north-wing views identify complementary missing closures: the
+surviving thin curtain beside door 804 with its cleared continuation, and the
+exterior wall that must meet the eastern flight. The door-side replacement is
+a real z=0..128 wall, 24 MU thick, extending from the existing x=1113 jamb to
+the stair face at x=1306. Its four physical footprints share one new lower-wall
+profile while retaining the exact z=128..136 and z=256..264 slabs. Every
+coplanar middle texture is empty, including the former line-608 `midtex3d`
+curtain.
+
+The exterior north closure uses seven existing 8-MU footprints arranged as
+three continuous runs: x=1201..1209/y=391..544,
+x=1201..1689/y=383..391 and x=1689..1697/y=320..391. They receive only the
+z=0..128 wall profile and meet the eastern flight without altering any stair
+sector. The five curtains at x=1697..1969, y=-272..272 that formed the lower
+eastern U are empty, and the two group-807 leaves are removed. The group-913
+leaves remain unchanged at z=136.
+
+The deterministic rebuild from an exact 0av MAP01 is idempotent. MAP01 now has
+1,052 vertices, 1,448 linedefs, 2,606 sidedefs, 441 sectors and 223 Things;
+SHA-256 is
+`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+The stair digest remains `5862699c73c2511c4db249c483b6a198b82ab8b3ea7ca467d52df6442fc04b76`
+and first-/second-floor occupancy remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+The previously reported grass appearance is deliberately unchanged.
+
+Focused validation for this candidate is:
+
+1. Inspect both north-wall viewpoints; require a solid 24-MU door-to-stair
+   wall and a continuous 8-MU exterior closure with no thin duplicate panel.
+2. Walk the former eastern U and group-807 opening; require no curtain,
+   collision, door leaf or HOM at ground level.
+3. Recheck both stair flights and group 913 at z=136.
+4. Recheck the first and second floors and require no material, wall, floor or
+   collision change. The grass defect remains outside this pass.
+
+## Legacy-curtain removal and door alignment 4.29.0av
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+The 0au profile audit did not model two-sided 3D middle textures, so 36
+ground-level `CMIN01` curtains around the rear stair flights and two exterior
+continuations remained visible and collidable. V4.29.0av clears exactly these
+38 `midtex3d` flags and their 76 middle textures. Each source line was
+lower-unpegged between floor-zero hosts, making the removed curtain occupy
+z=0..128. No sector, vertex, stair tread or upper profile changes.
+
+The two group-807 leaves move from x=1413 to x=1693 while retaining y=-32/+32,
+z=0, orientation, group and motion arguments. They now sit directly below the
+group-913 leaves and align with the eastern stair landing. The lower door ends
+before the preserved z=128..136 slab and group 913 begins at z=136.
+
+The complete sector and vertex digests remain identical to 0au, and the
+first-/second-floor occupancy digest remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+MAP01 stays at 1,045/1,438/2,590/437/225 and has SHA-256
+`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+The grass appearance remains explicitly deferred.
+
+Focused validation for this candidate is:
+
+1. Walk through all former panels surrounding both stair flights and the two
+   exterior continuations; require no curtain, collision or HOM.
+2. Verify the two stair flights and all necessary step/landing faces remain
+   textured and usable.
+3. Verify door 807 is at the eastern landing axis directly below group 913.
+4. Recheck the first and second floors and require no geometry, material or
+   collision change; ignore the separately deferred grass defect.
+
+## Complete rear ground-floor opening 4.29.0au
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+V4.29.0au removes every remaining wall shown in the two author captures while
+the rear ground floor awaits reconstruction. The complete south, north and
+east perimeter U and both stepped exterior joins are open throughout z=0..128.
+The two leaves of door group 807 remain at x=1413, y=-32/+32, and sectors 1–12
+of the two stair flights remain unchanged.
+
+The solid-profile change covers 18 physical sectors. The same mask touches 102
+two-sided linedefs, whose 204 `CMIN01` middle textures are now empty; all eight
+associated `midtex3d` flags are removed so no visual or collidable curtain
+survives the opening. Profiles, materials and occupancy from z=128 upward are
+identical to 0at, including the first and second floors. The exterior-grass
+visual defect is explicitly deferred and receives no additional change here.
+
+The deterministic MAP01 result remains 1,045 vertices, 1,438 linedefs, 2,590
+sidedefs, 437 sectors and 225 Things; SHA-256 is
+`835e1f113fa24b8b646f2dfccd712f603d1de91d8434c72b48a1b1367560fb74`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+Focused validation for this candidate is:
+
+1. Walk through every former north/east/south wall and both exterior joins at
+   ground level; require no collision, visible middle-texture curtain or HOM.
+2. Confirm both 807 leaves and both stair flights remain present and usable.
+3. Recheck the first and second floors and require no material, wall, floor,
+   cover or collision change.
+4. Ignore the outstanding exterior-grass appearance until its later focused
+   pass; it is outside 0au.
+
+## Ground-floor rear correction 4.29.0at
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+V4.29.0at corrects the inversion found in the 0as author test. The two group
+807 leaves are restored at their original x=1413, y=-32/+32 positions, while
+the four surrounding wall and jamb hosts remain open throughout z=0..128.
+No other ground-floor barrier exists inside the rear room outside the two
+existing stair flights.
+
+The exposed corner in the supplied capture was the pair of stepped 8-MU joins
+at x=1201..1209, y=-544..-391 and y=391..544. Their former profile contained
+only the z=128..256 upper wall. Each join now reuses the existing profile 516,
+closing z=0..128 with the same `CMIN01` material while preserving identical
+occupancy from z=128 upward. The adjacent exterior ground sectors 19 and 22
+now use `CMGR01A`; their z=128..136 `CMWD01` slabs are unchanged. MAP01's
+first- and second-floor occupancy digest remains
+`cde1b9a7074268a0643bc6375cb65b8babff3c617847c67c5db66f58bd0420b0`.
+
+The deterministic MAP01 result is 1,045 vertices, 1,438 linedefs, 2,590
+sidedefs, 437 sectors and 225 Things; SHA-256 is
+`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+Focused validation for this candidate is:
+
+1. Verify both leaves of door 807 remain usable while no wall or jamb crosses
+   the rear ground-floor room.
+2. Inspect both stepped exterior joins from ground level and require continuous
+   wall, collision and no floating upper volume.
+3. Verify the adjacent exterior base floors show `CMGR01A` with no checkerboard
+   or HOM; their first-floor wood surfaces must remain wood.
+4. Recheck the first and second floors and require no geometric, collision or
+   material change.
+
+## Rear-room shell and actor balance 4.29.0as
+
+**Implemented and deterministically validated; focused visual/combat GZDoom
+traversal remains pending**
+
+The author capture proved that the wall still crossing the rear ground-floor
+room was the historical group-807 construction, not the group-914 divider
+removed by 4.29.0ar. Its two long sectors used a base floor of 136 MU and its
+two jamb sectors used a base floor of 128 MU, so they remained opaque and
+solid below the first floor despite the newer 3D-floor profiles.
+
+V4.29.0as removes both 807 leaves and lowers only those four host floors to
+zero. The former top surface is replaced by the same `CMWD01` z=128..136 slab,
+and the z=256..264 cover is retained. A band-by-band occupancy digest across
+every induced cell confirms no first- or second-floor volume changed. The rear
+ground-floor interior now contains no barrier outside the two accepted stair
+flights, while its north, east and south perimeter is continuously solid from
+z=0 to 128. The group-913 and group-915 doors, stairs, upper walls, balconies
+and gabled room remain unchanged.
+
+The deterministic MAP01 result is 1,045 vertices, 1,436 linedefs, 2,586
+sidedefs, 435 sectors and 223 Things; SHA-256 is
+`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The Bull retains its existing charge and now applies a direct profiled gore at
+the end of that advance. Its authored base damage is 45. Physical and
+technical attributes are all 20; social and mental attributes remain 2.
+Zupay's ground slam retains base 66, 192-MU falloff and +8 vertical launch,
+but its state lasts 20 tics instead of 10: 12 before impact and 8 after.
+
+Focused validation for this candidate is:
+
+1. Traverse the rear ground-floor room and require an uninterrupted interior,
+   with no group-807 wall or leaves and no new seam at the former wall line.
+2. Inspect the complete exterior north/east/south shell from both sides and
+   require continuous wall and collision at z=0..128.
+3. Recheck the first and second floors, especially the old wall footprint;
+   floor, cover, stairs, doors and movement must be unchanged.
+4. Summon a Bull and verify the charge ends with a 45-base gore and that its
+   six physical/technical attributes report 20.
+5. Summon Zupay and verify the same slam effect now takes twice as long.
+
+## V4.30 material-processing and durability definition through 4.29.0aw
+
+**Author-specified design only; no V4.30 transaction is implemented**
+
+The design now fixes directional 0.001-unit rounding, complete-transaction
+batch timing, exact alloy ratios, zero-spend/zero-output cancellation,
+missing-durability repair time, Minor-Arcana learning, persistent wood tiers,
+decorative-metal proportionality, the javelin exception boundary and the lack
+of durability on amulets/seals. A task cannot begin in combat and, once active,
+only an explicit user order cancels it. Disassembly uses exactly the crafting
+time and station network of the corresponding object. Each component recipe
+uses the cumulative station network of the target equipment recipe. Exact
+component-to-card assignments are deliberately deferred until the Tarot-card
+implementation. Required inputs are calculated and locked as a reservation
+when the task starts. They cannot be used by another transaction and are
+consumed only on atomic completion; explicit user cancellation releases the
+full reservation without spending anything or generating output. All rules
+needed for the V4.30 transaction are now defined. The authoritative formulas
+and mappings remain in
+[`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
+
+## MAP01 topology cleanup and folklore gameplay profiles 4.29.0ar
+
+**Implemented and deterministically validated; focused visual GZDoom
+traversal remains pending**
+
+The MAP01 correction is deliberately limited to the defects shown in the
+three author captures. It removes the isolated floating floor fragment, closes
+two open profiles so their visible planes remain within the intended house
+footprint, restores the affected floor material and surrounding closure,
+closes the exposed exterior section and removes the unintended wall crossing
+the rear ground-floor room. The rear room remains a single continuous space;
+the second-floor room, gabled-roof orientation, balconies, stairs and existing
+door groups are not redesigned by this pass. The final output is 1,045
+vertices, 1,436 linedefs, 2,586 sidedefs, 435 sectors and 225 Things; SHA-256 is
+`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+Only its focused visual traversal in GZDoom remains pending.
+
+The supplied character package still contributes 380 individual runtime
+frames: 224 for Palomo, 54 for Mandinga and 102 for Zupay. Ten atlas images
+remain review sources outside the PK3; eight README/manifest files remain
+auditable under `docs/assets/characters`. The package importer continues to
+validate paths, dimensions, RGBA format, manifest totals and the exact
+224/54/102 distribution before generating runtime aliases.
+
+The three actor profiles now use the playable-character statistical model:
+
+| Actor | Collision | Mass | Twelve attributes | Authored behavior |
+| --- | --- | ---: | ---: | --- |
+| Palomo | `Height 56`, `Radius 16` | 700 | 100 | Historical 4.29 behavior: wanders autonomously and has no attack. V4.32.0b anchors the MAP01 merchant; V4.32.0c makes it run home after a displacement of at least 500 MU. |
+| Mandinga | `Height 51.644444`, `Radius 14.755556` | 66 | 6 | Melee base 66; ranged action reuses the tier-1 Fire staff behavior. |
+| Zupay | `Height 93.333333`, `Radius 26.666667` | 666 | 33 | Ground slam base 66, 192-MU linear-falloff radius and +8 vertical launch; ranged action temporarily reuses the tier-1 Earth statuette behavior. |
+
+`CaelumPalomo`, `CaelumMandinga` and `CaelumZupayColossus` retain editor
+numbers 18036–18038 and their console summon names. In historical 4.29.0ar none
+received a faction, loot table or MAP01/MAP02 placement. V4.32.0b places only
+Palomo as the initial MAP01 merchant and V4.32.0c adds bounded return behavior;
+the faction system remains a
+separate roadmap feature.
+
+Focused validation for this candidate is:
+
+1. Inspect the three reported MAP01 viewpoints and require no floating piece,
+   runaway plane, checkerboard/missing material, HOM or open exterior seam.
+2. Traverse the complete rear ground-floor room and require one continuous
+   interior with no crossing divider; recheck the adjacent stairs, doors,
+   balconies and roof access.
+3. Summon each actor and verify collision height/radius, mass and all twelve
+   attributes. Palomo must move without producing an attack.
+4. Confirm Mandinga's 66-base melee and tier-1 Fire-staff ranged behavior.
+5. Confirm Zupay's 66-base slam, 192-MU linear falloff, +8 vertical launch and
+   tier-1 Earth-statuette ranged behavior.
+6. Build the PK3 without parser or missing-resource errors and verify MAP02
+   remains byte-identical to its accepted all-sewer source.
+
+## V4.30 material-processing and durability definition through 4.29.0ar
+
+**Author-specified design only; no V4.30 transaction is implemented**
+
+The complete current definition, recipe-family mapping and unresolved gates
+are maintained in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md).
+
+Refinement and equipment-material fabrication offer 25%, 50% and 100%
+material yield. For a fixed base-material input `B`, their outputs are
+`0.50B`, `0.75B` and `1.00B`; elapsed-time factors are ×1, ×3 and ×9. The
+test environment uses a 9-second base, so the three unaccelerated durations
+are 9, 27 and 81 seconds. Effective duration will later be divided by the
+Dexterity Type-1 physical-precision task-speed percentage; its test modifier
+is currently neutral.
+
+Every equipment component is fabricated from exactly one base-material type.
+Metal components, including bells, use their corresponding ingot; elemental
+essences use their assigned gem; staffs, statuettes and sticks use wood; books
+and cords use fiber; straps use the simplest leather; and armor uses the
+leather grade corresponding to its tier. This restriction does not redefine
+multi-input alloy-refining recipes.
+
+Repair reuses the complete item recipe and the same station infrastructure,
+with material cost scaled by missing durability:
+
+`RepairInput = BaseRecipeMaterial × (MaximumDurability - CurrentDurability) / MaximumDurability`.
+
+Disassembly always returns half of the base recipe, then scales that recovery
+by remaining durability:
+
+`DisassemblyOutput = BaseRecipeMaterial × 0.50 × CurrentDurability / MaximumDurability`.
+
+Elemental weapons return their corresponding recipe materials. The established
+0.001 material unit remains the quantity convention, but rounding proportional
+results to integer inventory units is still undefined. Batch timing,
+interruption/cancellation and the other gates listed in the design document
+also remain open. Existing immediate processing and repair/debug foundations
+remain unchanged in 4.29.0ar.
+
+## Exact eastern roof and stair-run walls 4.29.0ap
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ap preserves both symmetric transverse walls from 0ao and adds the two
+8-MU stair-run walls leading from them to the 128-MU group-913 opening. Its
+z=256..264 cover is rebuilt as the exact x=1209..1697, y=-328..328 interior
+slab plus the existing landing and two upper stair treads. Side balconies and
+all lower treads remain outside the slab. MAP01 is
+`(1029, 1424, 2578, 431, 227)` with SHA-256
+`d7c54872c3de2f7bf4dc1800bded68909cf3484ddb6e82fb00812cf203ec46d7`.
+MAP02 remains byte-identical at
+`47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The author accepted the character-creation flow, sound mix/event mapping and
+the final non-house MAP01/MAP02 smoke before this saved house revision. Only
+focused traversal of the latest stair walls and exact roof remains pending;
+the V4.30 rules above are still definition-only.
+
+## Open balcony perimeter, gabled roof and selected audio 4.29.0am
+
+**Implemented and runtime-loaded; focused author QA pending**
+
+V4.29.0am preserves the approved x=-371..1055 upper room, group-915 door at
+x=1051, direct corridor, lower shell, exterior stairs, tunnel and door groups.
+The latest capture identified the remaining obstruction as the long outer
+balcony wall, not only the two terminal sectors corrected in 0al. The north,
+east and south sectors of that U now retain the z=0–128 ground-floor facade and
+z=128–136 walkable floor while omitting every z=136–256 wall and z=256–264
+cover. The western joins and two lower 8×8 corner closures remain unchanged.
+
+The same upper-room footprint now carries a two-slope roof with an east-west
+ridge, perpendicular to the eastern balcony. Each solid plane is 8 MU thick:
+the eaves occupy z=392..400 at y=±391 and the author-selected 64-MU rise places
+the ridge at z=456..464 on y=0. The exterior face uses `CMRF01`; the underside
+uses `CMCL01`. The room split at y=0 increases its exact closed partition from
+186 to 188 target sectors without moving its walls, floor, doorway or actors.
+
+The former three-band grass repeat is no longer assigned to MAP01. The world
+sector uses standalone `CMGR01A`; `CMGR01B` and `CMGR01C` are separately named
+128×128 variants for later worn and dry sectors.
+
+Eight OGG effects have stable logical names and active callers: menu open and
+confirmation, first recipe unlock, ordinary and multi-leaf sliding doors,
+carbine discharge, item pickup and local low-health heartbeat. The heartbeat
+uses a 42-tic timer for its 1.055-second file, plays only in the existing badly
+wounded state and stops on recovery, death or character creation. Mandatory
+CC BY 4.0 attribution and CC0 traceability ship in
+`src/licenses/AUDIO_CREDITS.md`; preview files remain development assets until
+their authenticated Freesound originals replace them before release.
+
+Deterministic map outputs are:
+
+- MAP01 `(927, 1286, 2362, 382, 227)`, SHA-256
+  `1fbc9638c7b0b454ed7b443e64b50989ee89d854e19ed730433eb44cf0e26cc7`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The clean-base reconstruction, second execution, topology/references, exact
+roof equations and resource decoders pass. GZDoom 4.14.2 compiles the complete
+ZScript/SNDINFO set, enters MAP01 without loader errors and renders the open
+outer wall and both roof slopes in automated viewpoints. Author acceptance
+must still traverse the complete balcony, inspect the interior roof collision
+and verify every sound at the intended mix before this candidate is accepted.
+
+## Open first-floor balcony ends 4.29.0al
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0al preserves the accepted 4.29.0ak second-floor room at
+x=-371..1055, group-915 double door at x=1051, roof, direct corridor, exterior
+grass, closed lower corners, ground-floor rooms, stairs, tunnel and existing
+door groups.
+
+The screenshot from the 0ak visual pass identified the remaining blockers as
+the symmetric 8×96-MU sectors at x=1689..1697, y=-391..-295 and y=295..391.
+They stood across the ends of the two side balconies before the eastern
+exterior platform. Their new profile retains the z=0–128 mansion wall below
+the balcony and the z=128–136 walkable wood slab, but contains no z=136–256
+wall and no z=256–264 cover. The lower facade therefore remains closed while
+the first-floor route and sky become continuous.
+
+Validation samples cover both terminal sectors and the platform side of the
+x=1697 seam. They independently require the lower wall, balcony floor, open
+first-floor volume and absence of overhead cover. The parsed 227-Thing table
+is unchanged from 0ak, including the accepted second-floor door coordinates.
+Deterministic outputs are:
+
+- MAP01 `(940, 1297, 2368, 384, 227)`, SHA-256
+  `fa51876850a0ab2ca2ec13cdb75e5e0cba989d6c65abce39313ec6137a658719`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The count increase from 0ak is restricted to two off-map 3D-floor control
+sectors and their eight vertices/linedefs/sidedefs. Runtime acceptance is
+limited to walking both balcony ends and confirming the already approved
+second floor remains visually unchanged.
+
+## Free balconies, closed lower corners and western upper room 4.29.0ak
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ak reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. It
+preserves the accepted lower rooms, ground divider and group-914 door,
+external stairs and landing, tunnel, group-913 access, mansion materials and
+`CMGR01` exterior terrain.
+
+The complete 1426×782-MU upper room moves exactly 150 MU west from its 0aj
+position: x=-371..1055, y=-391..391. Its floor, 8-MU perimeter, roof and
+centered eastern opening move as one unit. The two group-915 leaves are now at
+`(1051,-32,264)` and `(1051,32,264)`; every other Thing is unchanged. The
+128-MU-wide direct corridor covers x=1055..1697 and continues to the unchanged
+stair landing.
+
+The six inherited pieces at x=1306..1689, y=±287..295 and x=1306..1314 no
+longer produce z=128–256 walls. Their complete footprints share the open-
+balcony profile: a z=128–136 wood floor, no obstruction above it and no
+z=256–264 cover. Both 96-MU balconies therefore connect across their full
+width instead of through a single narrow opening.
+
+The two missing lower corner cells at x=1201..1209, y=-391..-383 and
+y=383..391 now use the same z=0–256 exterior-wall profile as their adjacent
+perimeter. This closes the ground-floor shell symmetrically without adding an
+internal wall to either expanded rear room.
+
+The room's 186 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's eight targets cover exactly 82,176 MU². Both partitions stay inside
+their declared bounds, contain no positive-area overlap and fill their
+rectangles exactly. Deterministic outputs are:
+
+- MAP01 `(932, 1289, 2360, 382, 227)`, SHA-256
+  `378c8de65607ccb7a135f25a063e06daeb495b1c52b4102e09c3d76aade7005e`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The constructor validates both corner links, every balcony transition sample,
+the room/roof/door displacement, closed target topology, references and
+idempotence. Runtime acceptance is restricted to these MAP01 geometry points;
+MAP02 and all gameplay systems are unchanged.
+
+## West-shifted upper room, uncovered balconies and grass 4.29.0aj
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0aj reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. It
+preserves the accepted ground-floor and first-floor walls, rooms, balcony
+passages, external stairs, tunnel and groups 913/914. An exhaustive cell
+comparison against 0ai finds zero changes in physical coverage at z=0–128,
+128–136 and 136–256.
+
+The complete 1426×782-MU upper room moves exactly 100 MU west, from
+x=-121..1305 to x=-221..1205. Its floor, 8-MU perimeter, roof and centered
+eastern opening move as one unit. The two group-915 leaves move from x=1301 to
+x=1201 at y=-32/32 and z=264; every other Thing remains identical to 0ai. The
+128-MU-wide direct corridor now covers x=1205..1697 and joins the unchanged
+stair landing.
+
+The two lateral first-floor balconies are again exterior and uncovered. Four
+dedicated physical targets retain only the z=128–136 wood slab; they contain no
+z=136–256 obstruction and no z=256–264 upper cover. The middle platform,
+stair landings and direct corridor retain their upper walking surface.
+
+MAP01's world sector now uses the project-owned 128×128 `CMGR01` grass-and-soil
+terrain master. `TEXTURES` registers it as a native flat, and no MAP01 sector
+retains Doom's `FLOOR0_1`. Interior floors and all mansion 3D floors remain on
+their existing mansion materials.
+
+The room's 193 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's seven targets cover exactly 62,976 MU². Both partitions stay inside
+their declared bounds, have zero positive-area overlap and exactly fill their
+rectangles. Deterministic outputs are:
+
+- MAP01 `(976, 1335, 2412, 396, 227)`, SHA-256
+  `f743acf7a08a27d5e511bd067218a00a8ea1bf19376bb6703dbd8866ec843858`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent reconstruction from 4.29.0ad reproduces both WADs byte for
+byte, a second execution is idempotent and the complete development PK3 passes
+its ZIP/UDMF gates. Runtime acceptance is limited to the room position and
+group-915 door, both uncovered balconies and the exterior grass. MAP02 and all
+gameplay systems are unchanged.
+
+## Restored upper platform and rear-aligned room 4.29.0ai
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ai corrects the two regressions observed in the 0ah runtime capture. It
+again reconstructs MAP01 directly from the exact clean 4.29.0ad WAD. The
+accepted ground-floor and first-floor shell from 0ah is byte-semantically
+preserved: exterior walls remain z=0–256, balcony returns remain z=128–256,
+both centered balcony passages stay open and groups 913/914 keep their actors,
+positions and arguments.
+
+The 1426×782-MU upper room moves another 40 MU toward the rear, from
+x=-161..1265 to x=-121..1305. This restores its structurally aligned eastern
+edge at x=1305, a total rearward correction of 104 MU from the rejected 0ag
+position. Its complete footprint receives floor z=256–264 and roof z=392–400;
+the 8-MU perimeter receives wall z=264–392 except for the centered y=-64..64
+opening. Group-915 leaves move with that facade to `(1301,-32,264)` and
+`(1301,32,264)`.
+
+The eastern upper platform is no longer reduced to the central corridor. Every
+legacy platform sector and every lower-shell profile again includes the
+z=256–264 walkable slab. The 128-MU corridor remains the direct route from
+x=1305 to the accepted landing at x=1697, but lateral platform floor is also
+present. The constructor does not recreate any room target west of x=-121, so
+the obsolete strip associated with the earlier x=-225 room position is absent.
+
+The room's 180 closed rectangular targets cover exactly 1,115,132 MU². The
+corridor's five targets cover exactly 50,176 MU². Each partition remains inside
+its declared bounds, has zero positive-area overlap and exactly fills its
+rectangle. A cell-by-cell comparison across the eastern platform finds no
+upper-floor omission relative to 0ag; the only two differences add floor where
+the rear-aligned room now overlaps the platform. Separate lower-volume
+comparisons against 0ah find zero differences at z=0–128, 128–136 and 136–256.
+
+Deterministic outputs are:
+
+- MAP01 `(950, 1282, 2302, 373, 227)`, SHA-256
+  `7c5514798969abc83fce0faf6702af99fbb359b1f8aa39d6e19fb18b427f9d01`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent reconstruction from 4.29.0ad reproduces both WADs byte for
+byte, and a second execution is idempotent. Runtime acceptance is limited to
+walking the restored upper platform, confirming the room's new position,
+opening group 915 from both sides and inspecting the underside for only the
+intended platform. MAP02 and all gameplay systems are unchanged.
+
+## Rebuilt lower shell, upper door and removed legacy awning 4.29.0ah
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ah rejects the wall heights and extended upper slab from 4.29.0ag and
+reconstructs MAP01 directly from clean 4.29.0ad. Existing rooms, both balcony
+footprints, the ground-floor group-914 divider, external stair pair, tunnel,
+shared landing and group-913 gate preserve their coordinates and arguments.
+
+The eastern exterior shell now uses one consistent z=0–256 profile across its
+north, south and east perimeter pieces. The west divider remains z=0–128 with
+its centered group-914 door. The two x=1306 balcony returns are no longer
+ground-floor walls: they occupy only z=128–256, so the rooms connect beneath
+the balconies while the first-floor corners close. Each y=±291 interior wall
+contains a centered x=1512..1576 passage into its balcony.
+
+The upper room keeps 1426×782 MU but moves one 64-MU module toward the rear to
+x=-161..1265. Its z=264–392 perimeter has a centered y=-64..64 eastern opening
+with group-915 leaves at `(1261,-32,264)` and `(1261,32,264)`. A six-sector
+128-MU-wide corridor runs from x=1265 to 1697 and joins the accepted landing.
+Every other z=256–264 target east of x=1265 is removed.
+
+The room's 190 rectangular targets cover exactly 1,115,132 MU²; the corridor's
+six targets cover 55,296 MU². Neither partition has overlap or escapes its
+bounds, and an exhaustive target audit finds no legacy upper slab outside the
+corridor. Deterministic outputs are:
+
+- MAP01 `(946, 1297, 2356, 383, 227)`, SHA-256
+  `faf38441d47a3bc0db36d5b069aff082451e4ddabeb38251cf996396f16ed2f3`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+An independent clean reconstruction matches both WADs byte for byte. The
+3,314-entry development PK3 passes the ZIP and UDMF structural gates.
+
+Runtime acceptance is limited to MAP01: inspect the ground and first-floor
+shell, all balcony corners and passages, the room position and group-915 door,
+and the complete underside of the new corridor. No crafting, creator,
+`changemap`, MAP02, IA or perception test needs repetition for this map-only
+corrective increment.
+
+## Closed upper perimeter and continuous eastern platform 4.29.0ag
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ag supersedes only the second-floor room and eastern upper-platform
+surfaces from 4.29.0af. It is reconstructed directly from the clean 4.29.0ad
+WAD, not incrementally from the rejected visual result. The first-floor rooms
+already accepted by the author, both balconies, the ground divider and its
+group-914 door, the exterior stairs, tunnel, shared landing and group-913 door
+retain their geometry and actor arguments.
+
+The 1426×782-MU upper room moves 104 MU west to x=-225..1201 and remains
+y=-391..391. Its complete 8-MU perimeter now receives the finite z=264–392
+wall volume; there is no remaining east-side opening. Floor z=256–264 and roof
+z=392–400 cover the full footprint. The resulting 179 physical rectangles
+cover exactly 1,115,132 MU², have no positive-area overlap and stay inside the
+intended bounds.
+
+The eastern platform no longer relies on profiles that stopped below the
+upper level. Six explicit profile families cover its ground walls, lower
+balcony returns, full walls, upper walls, open balconies and floor-only strips.
+All 26 corrected target sectors now include the z=256–264 floor. The balcony
+returns retain walls only at z=0–128, so their lower corners close while the
+z=136–256 balcony passages remain open.
+
+Deterministic outputs are:
+
+- MAP01 `(898, 1231, 2252, 362, 225)`, SHA-256
+  `4efe597c8a5b632e8211d4afca6699db001d548e4145c4546491888f5adbd57e`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The remaining runtime gate is visual and local: confirm the reported wall is
+closed, the shifted upper room is fully supported, the eastern upper platform
+has no floating strips or floor gaps, and both balcony corners close below
+without blocking passage. MAP02 and all gameplay systems are unchanged and do
+not require functional repetition for this corrective patch.
+
+## Rear-wing closure, lower divider and centered second floor 4.29.0af
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0af supersedes the rejected MAP01 construction from 4.29.0ae and is
+rebuilt directly from the clean 4.29.0ad geometry. The accepted external stair
+pair, its shared landing, the tunnel beneath it and the group-913 double door
+retain their positions, heights and arguments.
+
+The missing return at x=1201..1209 now closes both rear wings through z=0–256.
+The wall segments at x=1306 no longer block either balcony: the northern and
+southern 96-MU strips retain only their z=128–136 walkable slab. The lower
+outer corners use finite z=0–128 walls, so the spaces below those slabs belong
+to the rear ground-floor rooms instead of reading as unsupported awnings.
+
+The two former fins between the lower rooms are replaced by one continuous
+divider along x=1201..1209. It is solid from z=0 to 128 except for a centered
+y=-64..64 opening. Two 64-MU leaves at `(1205,-32,0)` and `(1205,32,0)` form
+one group-914 sliding door; obsolete group 915 is absent.
+
+The second-floor room no longer occupies the eastern edge. Its structural
+rectangle is x=-121..1305, y=-391..391, centered within approximately 20 MU
+of the main building axis and more than three times the rejected room's
+length. An 8-MU perimeter receives finite z=264–392 walls. The complete area
+receives a z=256–264 floor and z=392–400 roof, while the central 128-MU east
+opening remains aligned with the accepted stair landing. The four internal
+stair landings remain open inside the room rather than becoming wall volumes.
+
+MAP02 keeps the same 112 vertices, 110 linedefs, 212 sidedefs, nine sectors and
+16,508 Things. Every sector floor now uses `CASWRFLR`; every non-empty upper,
+middle and lower wall face uses `CASWRWAL`. Its sky ceilings, actors, arguments
+and all non-texture geometry are unchanged.
+
+Deterministic outputs are:
+
+- MAP01 `(884, 1206, 2206, 352, 225)`, SHA-256
+  `dc56f1b681bb9d80bedaaa5ce37734f8137b2aabee3fe0c1f05dd1f3e4d36334`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `47e0804417f03e7e913fd2aab47cc7654c61e280f3d42671fd4287e90557cffe`.
+
+The constructor consumes only the exact 4.29.0ad hashes. Its 180 physical
+upper-room subdivisions collapse unused hosts and preserve canonical sector,
+sidedef and vertex references. An independent clean reconstruction matched
+both WADs byte for byte; a repeated execution is idempotent. The development
+PK3 contains 3,314 entries and passes the ZIP and UDMF structural gates.
+
+Focused runtime validation remains: inspect both closed lower returns, open
+and traverse the group-914 divider door, enter both balconies without hitting
+an invisible wall, verify the centered upper room and its eastern opening, and
+inspect every MAP02 room for sewer surfaces. Creator, `changemap`, recipes,
+inventory, crafting and AI behavior do not require repetition because this
+increment changes only maps and public status files.
+
+## Rear-room perimeter, balconies and second-floor room 4.29.0ae
+
+**Implemented and statically validated; focused author QA pending**
+
+V4.29.0ae supersedes only the rejected MAP01 partitions/perimeter from
+4.29.0ad. Door groups 914/915 and their two internal divider walls are gone.
+The ground-floor rear room now extends through both northern and southern
+wings and is closed at its true exterior boundary by finite z=0–128 walls. No
+wall control for that perimeter reaches into the balcony or upper floors.
+
+The first-floor side walls are inset at y=±295. Beyond them, four sectors form
+two symmetric 96-MU uncovered balconies with only the z=128–136 walkable slab.
+The accepted external stair pair, shared landing, tunnel and group-913 double
+door are unchanged. The thin internal contours left by the rejected dividers
+remain only as harmless sector boundaries and receive no wall volume.
+
+One new room is centered on the stair axis and aligned to the structural
+rectangle x=1306..1697, y=-295..295. Its usable floor is z=264, its clear
+interior reaches z=392 and its roof slab occupies z=392–400. Finite west,
+north, south and east wall volumes enclose it. The central east strip remains
+open above the existing lintel, providing a direct entrance from the
+second-floor landing without adding another door group.
+
+MAP02 again uses `CASWRWAL` and `CASWRFLR`. Its Things digest and non-texture
+geometry digest remain unchanged, and the WAD matches the accepted 4.29.0ac
+sewer version byte for byte. Deterministic outputs are:
+
+- MAP01 `(756, 1017, 1904, 252, 223)`, SHA-256
+  `d0e50dea403b8b1291a4b5ba513d6c3bd014735804e73f3687b1077ba75bf107`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `88956e5074fe4e0ae097cfb539b67a4e0a3b6f33407bddcfcdfb7b73ce8180a9`.
+
+The constructor accepts only the exact 4.29.0ad WAD hashes, validates every
+new control range and closed wall sector, and reproduced both maps byte for
+byte in an independent clean rebuild. The complete development PK3 passes its
+ZIP and UDMF structural gates. Because no ZScript, MENUDEF, persistence or
+crafting source changed, the accepted `Nuevo personaje`/`changemap` result and
+crafting cases 5–13 do not require repetition.
+
+Focused manual validation remains: inspect both lower wings as one continuous
+rear room, verify both balconies from above and below, traverse the second-
+floor room and its centered entrance, and confirm MAP02 presents sewer
+surfaces. Any HOM, floating face, internal solid cut or asymmetric balcony
+rejects this architecture.
+
+## First-floor tunnel, mansion materials and pre-game creator 4.29.0ad
+
+**Implemented and statically/runtime-load validated; focused author QA pending**
+
+MAP01 no longer places the new eastern door at the second-floor landing. The
+two group-913 leaves stand at z=136 inside an opening from z=136 through 256.
+The shared stair landing has a thin traversable floor at 128–136 and an upper
+landing/ceiling at 256–264, so its underside is a tunnel instead of a solid
+pedestal. The upper 264–392 facade volume is gone, removing the reported
+floating bars.
+
+Rear-room sectors 160/161 and the ten false retraction/fin sectors are part of
+the rooms again. The side U closes the exterior perimeter. Two first-floor
+dividers occupy y=-286..-278 and y=278..286 with centered 64-MU openings and
+independent door groups 914/915. Their topology is validated against the
+correct adjacent room sectors and is forbidden from touching world sector 0.
+
+MAP01 uses `CMIN01`, `CMWD01`, `CMCL01` and `CMDR03` instead of its inherited
+Doom ground-floor surfaces. MAP02 changes only sewer material fields to the
+mansion wall/floor set; a semantic digest proves its 16,508 Things and its
+diagnostic geometry are unchanged. Deterministic outputs are:
+
+- MAP01 `(696, 942, 1798, 226, 225)`, SHA-256
+  `7bc0519a11adf058848a7986e456cd0ea8a97457f7e6ec963310a1ed3dbbc3a2`.
+- MAP02 `(112, 110, 212, 9, 16508)`, SHA-256
+  `2f4568f60512ff3656476f32c506ac2547f6b4949b58b20d2f9b6de8c5fc0b54`.
+
+The title-screen `Nuevo personaje` action now opens
+`CaelumCharacterCreationMenu`, not the native Doom class/episode/skill chain
+and not the old in-game overlay. It collects all eight existing creation pages
+before starting MAP01. A one-use user-CVar draft bridges UI scope to the first
+`CaelumPlayer`; committed persistent state always has priority. `map MAP02`
+remains a new developer session and therefore receives a safe test profile,
+whereas normal exits and `changemap` preserve the current character. Native
+save loading supplies `Cargar personaje`.
+
+The new code parses and its menu Drawer executes under GZDoom 4.14.2. An
+automated keyboard pass completed all eight pages, verified the one-use CVar
+draft and loaded MAP01. Both maps also load with the expected actor counts.
+The incremental source omission in `ImpactContactState` is repaired: the
+documented collision-refresh and once-per-pair-per-tic resolution methods are
+present again, and stale edges expire after five collision-free tics.
+
+### 4.29.0ac evidence audit
+
+The group-16 control without follower movement closed normally. The moving
+run did not: its incremental logfile retains exactly 1,024 complete reports,
+or 17:04 simulated, and has no closing timestamp. The tester places the freeze
+at about 18 real minutes. `logfile` therefore preserves everything flushed
+before a freeze when enabled in advance, but cannot reconstruct a previous
+unlogged freeze or provide a missing wall-clock end time.
+
+Both runs kept 16,506 actors, 1,875 shared targets, 126 leaders, 1,749
+followers, bounded projectiles and zero retained custom references/contacts.
+Leader Chase stayed near 85–86 calls/s and peaked at eight per tic. The moving
+run alone added 15,669,314 follower decisions (about 15,302/s) outside the
+leader budget and drove up to all 1,875 active actors inside 512 MU around only
+128 formation destinations. The final report is ordinary rather than a rising
+counter spike. The best-supported cause is a pathological native movement or
+collision tic in the compacted crowd, not a leak. That algorithm is rejected;
+4.29.0ad leaves `ca_diag_mass_follower_movement=false` and does not authorize
+3,750/7,500/15,000 active stages.
+
+Perception arithmetic is internally coherent: all 455 logged rows satisfy
+`detected = LOS && roll < visual probability`. Aperture produced 26/354 and
+semicone 10/101, compatible with their expected probability sums. It is not a
+valid angular A/B: 436/455 samples are within 30 degrees, semicone reaches only
+36.6 degrees, and rooms 3/6 always report LOS 0/1 respectively. Hearing ranges
+match the planned arithmetic, but only one positive event exists and the
+diagnostic compares direct event serial/distance rather than validating real
+sector `SoundAlert` propagation. Controlled angle markers, symmetric
+occlusion and event-position/SoundAlert instrumentation are the next isolated
+perception gate.
+
+## Mansion correction and isolated perception/group prototype 4.29.0ac
+
+**Implemented and structurally validated; GZDoom runtime validation required**
+
+MAP01 is rebuilt only from the exact 4.29.0ab hash. The two mistakenly opened
+rear-room wall pieces return to target 511 while the intended three-piece
+central opening remains target 510. A new target-510 slab closes the unroofed
+stair-origin cell. The enclosure moves inward from y=±391 to y=±295, leaving
+96 MU of open balcony beyond the new full-height walls. The lower extension is
+therefore part of the rear ground-floor room, while the side balcony remains
+outside it. Every enclosed first-floor cell retains both the 128–136 floor and
+256–264 roof slabs.
+
+Two symmetric external stair flights occupy x=1697..1816. Each contains eight
+32-MU-deep treads whose tops rise from z=152 to z=264. Their inner ends meet a
+128×128-MU solid landing. The center of the inherited front wall contains a
+128-MU opening above z=264; two `CaelumSlidingDoorLeaf` actors form independent
+group 913 and cannot activate any earlier door group. MAP01 has 676 vertices,
+918 linedefs, 1,754 sidedefs, 221 sectors and 223 Things; SHA-256 is
+`41085aa4eafffae7d4d24706b31f3aa8e6900c22103d9b2bde0ed40c8498fd67`.
+
+MAP02 removes the 108 local actors and 42 lines that implemented the obsolete
+Look/Chase/projectile rooms. Six U-shaped raised-sector rooms and two interior
+occluders replace them. The remote three-way Quintessence comparison is
+unchanged. The mass field still contains exactly 15,000 actors: 13,125 passive
+visual bodies plus 1,875 active actors. MAP02 has 112 vertices, 110 linedefs,
+212 sidedefs, 9 sectors and 16,508 Things; SHA-256 is
+`88956e5074fe4e0ae097cfb539b67a4e0a3b6f33407bddcfcdfb7b73ce8180a9`.
+
+`CaelumDiagnosticPerceptionObserver` samples once per second and logs the
+complete calculation. Its visual base is
+`1000 / (1 + 9 × (distance metres / 20)²)` percent, with values below 1% set
+to zero. The result then applies current target height / 56 MU, Insight
+`1 + level/100`, retained Stealth and the angular factor before clamping to
+100%. Native `CheckSight` must also pass. The default angular test interprets
+60°/120° as total apertures (full strength through ±30°, quadratic fade to
+zero at ±60°); `ca_diag_perception_wide_half_angles true` compares ±60°/±120°.
+This CVar records an unresolved design interpretation rather than selecting a
+final rule silently.
+
+Walking now starts from the approved 50-dB base `50²/4 = 625 MU`; total mass
+is divided by 100 kg, running is ×2 and crouching ×0.5. Stealth is applied
+once, so crouching no longer doubles the Stealth stat and then also reduces
+noise. Each observer consumes the player's latest event serial once and adds
+its own auditory allowance before applying mass/movement/Stealth:
+`(50+L) × [1 + 2L(L+1)/10100]`, producing 50/approximately 150.5/450 MU at
+Insight 0/50/100. Listener height does not enter hearing.
+
+The mass scheduler now publishes one live MAP02 target. Other field actors
+adopt it by direct reference and enter `See` without an additional native
+Look. Leaders retain the accepted ten-call native Chase ceiling. With
+`ca_diag_mass_follower_movement true`, followers update a deterministic
+32-direction/four-radius destination around that target and set local velocity
+without native Chase, TryMove or actor searches. The default remains false so
+the previously accepted baseline can be replayed first. This prototype does
+not yet implement faction-specific target stores, sleeping distance tiers,
+navigation around complex buildings or follower attacks.
+
+Required runtime gates are listed in the roadmap. No stability, probability or
+architectural result in this section is accepted merely from static validation.
+
+The personal-document audit delivered with 4.29.0ab remains authoritative for
+the already implemented systems: native saves plus
+`CaelumPersistentCharacterState`, 0/79 new profiles, the 14-recipe processing
+manual, localized armor, contextual Zoom Block and internal equipment levels
+with base/silver/gold client names. Only 4.29.0ab's rejected house description
+is superseded. The private document is deliberately not revised again until
+the new architecture and diagnostic perception/group behavior pass runtime QA.
+
+## Processing recipes and precious-metal finish costs 4.29.0aa
+
+**Implemented and structurally validated; focused GZDoom gameplay/save validation pending**
+
+The persistent Workbench catalogue contains 79 entries. The original 65
+equipment indices are unchanged and the 14 processing recipes occupy the final
+contiguous block. Recipe-book schema 3 preserves every schema-2 equipment flag
+and initializes only the new processing block as unknown. A fresh character
+therefore remains at 0/79.
+
+`Manual de Procesamiento (LORE-0001)` is a real MAP01 key item placed at
+x=-364, y=800, immediately left of the main station row. Picking it up once
+unlocks the complete processing block. The tutorial's chosen starter-weapon
+recipe and material handoff remain separate authored NPC work.
+
+Five ore recipes and six fiber/hide recipes use the initial 50% conversion
+rate: two raw units produce one refined unit. Bronze is 9 copper ingots plus 1
+tin ingot for 10 bronze ingots. Weapon-grade steel is 497 iron ingots plus 3
+coal units for 500 steel ingots (0.6% carbon by mass). Every transformation
+supports batches ×1, ×10, ×100 and ×1000. Metals and alloys require the Forge;
+fabrics, rope and leather require the Sewing Machine; both branches also
+require the connected Workbench.
+
+All crafted equipment shares one finish rule. Silver configurations consume
+extra silver ingots equal to 10% of final item weight. Gold configurations
+consume extra silver equal to 20% and gold equal to 10%. Quantities use the
+existing 0.001-weight material unit and round upward; decorative metals never
+increase the finished item's recorded weight.
+
+Seventeen supplied 128×128 sprites cover raw copper/tin/iron/silver/gold,
+bronze/steel/silver/gold ingots, wool, cotton, raw silk, plant fiber, rope and
+the three hides. Existing copper/tin/iron and coal assets remain authoritative
+for their earlier catalogue entries. MAP01 keeps the accepted 544 vertices,
+730 linedefs, 1,430 sidedefs and 159 sectors and now contains 221 Things.
+
+No AI, detection, combat, MAP02 or mansion geometry changed in this increment.
+
+## Character-first menu, equipment finishes and eastern stair walls 4.29.0z
+
+**Implemented and exercised in GZDoom 4.14.2; focused manual visual/save validation pending**
+
+Successful Caelum weapon pickups now select, equip and activate the collected
+configuration automatically when its size matches the character and the item
+remains in personal inventory. Overweight pickups routed to the Magic Box and
+incompatible sizes retain their normal storage behavior instead of being
+forced onto the player.
+
+The focused runtime test collected a silver sword, then a silver Water staff:
+both became the active native selector and the staff ended on
+`CaelumWaterStaffT2Weapon`. A deliberately incompatible crossbow was collected
+without replacing that active staff.
+
+The numeric equipment grade remains stable in saves and formulas but is no
+longer presented to the player as T1/T2/T3. Weapons, essence implements,
+shields, armor, amulets and seals use their base name, then localized silver
+and gold finishes. Crafting and inventory navigation call the same finish a
+finish/acabado. Processed components are labelled as item materials, while
+wood, iron/copper/tin ingots, coal and raw gems keep their raw-resource names.
+
+The main list menu is now text-based and uses `CaelumText` for New Character,
+Load Character, Save Character, Options and Quit. Doom's five skill presets
+are cleared and replaced by one neutral Caelum mode, so GZDoom starts MAP01
+without showing a difficulty page. New Character still creates the player in
+MAP01 and immediately opens the full-screen Caelum creation wizard; Load
+Character uses native save loading. A stock PK3 cannot replace the hardcoded
+`NewSmallFont` used by native OptionMenu rows, so Controls/Options keep the
+engine font until those menus are reimplemented or a project executable is
+maintained.
+
+MAP01 adds an 8-MU-thick U around the eastern stair pair at x=1306..1697 and
+y=-391..391. The three wall volumes use the existing tag-511 3D wall control
+from z=128 to 256, leaving the twelve treads, continuous roof and central access
+unchanged. Structure is 544 vertices, 730 linedefs, 1,430 sidedefs, 159 sectors
+and 220 Things; SHA-256 is
+`700a1f2c5bd7e99b2d36f5e3a033809301e58022836ee34880dd6f94f90dfae4`.
+
+The raw sprite audit found ready assets for wood, iron/copper/tin ingots, coal
+and raw ruby, sapphire, emerald, topaz and opal. Original raw/ingot sprites for
+silver and gold are still required. A bronze sprite is required only if bronze
+becomes a persistent intermediate item rather than consuming copper and tin
+directly. No raw-resource conversion recipes are introduced in this patch.
+
+## Shield recipes, empty new-profile book and stair cover 4.29.0y
+
+**Implemented and structurally validated; focused runtime/save validation pending**
+
+The unified Workbench catalogue now contains 65 recipes. Four appended shield
+entries preserve all prior indices and craft Buckler, Kite, Tower and Magic
+Shield configurations for every tier and size. Each transaction consumes its
+named tiered plate plus a tier-1 strap, using the existing physical 70/30
+plate/strap weight split. Every shield tier requires a connected Workbench,
+Forge and Anvil; tier 3 additionally retains the cumulative Master Bench rule.
+The result is a real `CaelumShieldPickup`, is registered persistently and is
+routed unequipped to the Magic Box like the other crafted equipment families.
+
+Recipe-book schema version 2 changes only new-profile policy. A newly created
+character starts with zero known recipes. Existing 4.29.0x saves preserve their
+exact 61 knowledge flags, while the four appended shield recipes begin locked.
+Older committed development profiles retain the 61 recipes that were open
+before knowledge existed. `LearnPhysicalWeaponRecipe(catalogueWeaponId)` gives
+the tutorial/NPC layer a stable way to unlock exactly the starter weapon chosen
+by the player; no provisional NPC dialogue, task or reward sequence is claimed
+by this patch.
+
+All twelve bitmap font families are rerasterized at twice their physical
+resolution and declare `Scale 2`, preserving their established logical height,
+advance, spacing and UI layout. MAP01 assigns the same roof-only tag used by the
+other flights to the twelve eastern stair sectors. Structural counts remain
+536/718/1,406/156/220 and MAP01 SHA-256 is
+`1223bafec960be9c14018af07867e6ec2e216975f1c44b0415ff4002973c51de`.
+
+The focused runtime pass must confirm: a new profile reports 0/65; an existing
+4.29.0x save keeps its former known recipes; each shield stays hidden until
+learned, requires Forge plus Anvil even at tier 1, consumes the displayed plate
+and strap amounts, and reaches the Magic Box with correct tier/size/durability;
+and the eastern stair pair is covered without blocking either ascent.
+
+## Persistent recipe book and unified filters 4.29.0x
+
+**Implemented and structurally validated; manual runtime/save validation pending**
+
+The Workbench remains the only authoritative catalogue and transaction. Its 61
+recipes are now browsed through six views: All, Physical Weapons, Armor, Essence
+Weapons, Amulets and Seals. `Tab`/controller Y changes the family; Left/Right
+cycles only entries in the active family. Tier, size, materials, box routing and
+cumulative station requirements retain their existing code paths.
+
+`CaelumPersistentCharacterState` stores one knowledge flag per unified recipe
+and a recipe-book schema version. Schema-0 development profiles initialize as
+version 1 with all recipes known, preserving the access current saves and tests
+had before recipe knowledge existed. An unknown entry appears without its name, weight or components and is
+rejected before either material spawning or the crafting transaction can run.
+`CaelumPlayer.LearnCraftingRecipe(index)` is the shared authoritative entry point
+for later sheets, merchants, NPC dialogue and discoveries.
+
+The Journal Crafts page is no longer provisional: it reports known/total counts
+for all 61 recipes and for the 16/16/20/4/5 family split. It remains read-only;
+crafting still requires Use on a valid connected station. Runtime commands for
+this isolated test are:
+
+- `ca_debug_crafting_forget_all_recipes`
+- `ca_debug_crafting_learn_selected_recipe`
+- `ca_debug_crafting_learn_all_recipes`
+
+This increment changes no recipe formula, balance value, map, AI, perception or
+combat behavior. Final starting recipes are deliberately unresolved rather than
+inferred from class or profession.
+
+## Accepted MAP01 corrective follow-up 4.29.0w
+
+**Implemented and manually accepted**
+
+The author confirmed that the eight actual stair-side gaps are covered. Rear
+landings remain under the continuous roof and the upper western canopy is
+supported by two solid 8×8-MU columns that do not narrow the gate opening. This
+acceptance closes the focused MAP01 correction and does not reopen MAP02 tests.
+
+## Final endurance acceptance and MAP01 correction 4.29.0v
+
+**Implemented and structurally validated; one focused MAP01 manual retest remains**
+
+The supplied `ca_physics_4_29_0u_final.log` closes both remaining diagnostic
+tests. Its first MAP02 session produces 1,033 consecutive reports, equivalent
+to 17 minutes 13 seconds of simulation inside an approximately 22-minute-
+36-second file window. The log cannot timestamp the boundary between its two
+sessions, so it cannot assign exact real seconds to the first one alone; the
+combined timing, uninterrupted telemetry and the author's live observation
+are sufficient to accept the requested approximately twenty-real-minute run.
+
+All 16,608 combat actors remain present and all 1,983 active AI actors reach a
+target. The group-16 split stays fixed at 126 leaders and 1,749 followers.
+Admitted native Chase totals 93,211 calls, averages 90.2 per simulated second,
+peaks at 146 per second and at nine in one tic, below the ten-call budget.
+Custom contacts, maximum contacts, callbacks, duplicate callbacks and retained
+references remain zero in every report. At most one projectile is live; all 26
+spawned projectiles impact and are destroyed, with no expiry or failure.
+
+The second MAP02 session is the short Quintaessence release test. Its affected
+population peaks at 2,086, then descends to zero across eleven nonzero reports
+and remains zero for seven further reports. The author observed a slight frame-
+rate reduction only when releasing the black hole. FPS itself is not recorded,
+but the bounded population and clean terminal counters show a transient density
+cost rather than a persistent leak or freeze. Repeated simultaneous releases
+may be optimized later; they do not block this acceptance.
+
+MAP01 incorporates the corrections found during the manual V4.29.0u walk.
+The 128-MU upper western opening now contains two 64-MU sliding leaves at
+height 136 MU. They share new group 912 and remain independent of ground-floor
+group 808. Eight narrow joints beside the four stair modules and all four
+landings now use the complete tag-510 floor/roof volume. The twenty-four real
+stair sectors keep tag 515, so their ascent remains open and only their overhead
+cover is added. The resulting map has 516/690/1,350/146/220 structural counts
+and SHA-256 `cd285dcebe7b92245ec42851ef988fe35849e0be7d0d1f618682b117dbb4c70d`.
+
+The future auditory allowance is now fixed as:
+
+`HearingAllowanceMU(L) = (50 + L) × [1 + 2L(L + 1) / 10100]`
+
+where `L` is effective Perspicacity from 0 to 100 and the bracket is its Type-4
+multiplier from x1 to x3. The allowance is 50 MU at level 0, about 84.7 at 25,
+150.5 at 50, 266.1 at 75 and 450 MU at 100. Final hearing reach is planned as
+`dB² / 4 + HearingAllowanceMU`; listener height is excluded. Target height
+remains relevant only to visual exposure. This formula, native `SoundAlert`
+propagation and the dynamic faction/species group controller remain planned;
+V4.29.0v contains no new perception ZScript.
+
+### V4.29.0v runtime procedure
+
+Only MAP01 needs another test because V4.29.0v changes no runtime code or
+MAP02 content. From both sides, use the upper western portón and confirm that
+its two halves retract in opposite directions, close normally and do not move
+the ground-floor gate. Walk all four staircases and their landings without
+`noclip`; verify continuous floor at every one-MU joint, no hole in any landing
+and continuous cover above all four landings. Confirm that no added slab blocks
+the climb or closes a real stair shaft. Finally recheck the western threshold,
+interior roof and uncovered eastern balcony. The accepted MAP02 endurance and
+single-release Quintaessence tests do not need repetition for this map-only
+patch.
+
+## Accepted squad margin and first-floor enclosure 4.29.0u
+
+**Implemented and structurally validated; manual MAP01 traversal and one final mixed endurance run remain**
+
+The two requested V4.29.0t comparisons both remained responsive. Group 16
+produced 1,087 complete telemetry intervals, or 18.1 simulated minutes; group
+8 produced 995, or 16.6 simulated minutes. Both preserve 16,608 combat actors,
+1,983 active AI actors and eventual target acquisition by every active actor.
+Contacts, maximum contacts per actor, custom callbacks, unique/duplicate
+callbacks and retained references remain exactly zero. Live projectiles stay
+between zero and two and no projectile spawn failure is reported.
+
+Group 16 uses 126 leaders and 1,749 followers. After acquisition its native
+Chase execution averages 85.8 calls per simulated second and peaks at 121.
+Group 8 uses 230 leaders and 1,645 followers, averages 164.7 and peaks at 243.
+The latter nearly doubles the admitted movement work while preserving the same
+active population and target coverage. Group 16 is therefore retained as the
+baseline for the future formation controller. The result is not evidence that
+16 is a universal gameplay formation size: authored formations may subdivide
+visually while sharing a smaller set of movement owners.
+
+MAP01 now closes the first-floor shell needed before authoring a second floor.
+The complete western 96×192-MU gap behind the main threshold receives the
+128–136-MU floor slab and the 256–264-MU roof slab. A 128-MU opening aligned
+with the entry remains traversable. Finite walls connect the northern and
+southern wings at the west and east. At the east, the wall stays inside a
+96-MU continuous balcony; its connecting floor remains exterior and uncovered.
+Every newly enclosed central strip, existing upper door threshold, stair tread
+and landing receives the required roof without duplicating the pre-existing
+tag-100 landing floor.
+
+The perception design was also reconciled during this audit, but remains
+deliberately separate from runtime code. Its accepted base curve is
+`1000 / (1 + 9(d / 20 m)^2)%`, with values below 1% treated as zero. Sight uses
+current height/1.8 m and a 60-degree core fading quadratically to zero at the
+120-degree limit; hearing uses total mass/100 kg in 360 degrees. Perspicacity
+scales from x1 to x2 and Stealth multiplies both channels by
+`1 - Stealth/100`, including complete visual and auditory concealment at 100%.
+Walking, running and crouching emit x1, x2 and x0.5 movement noise. Visual
+checks will be phased at one per NPC per second and hearing will be event
+driven. The exact angular convention —full aperture or half-angle— remains an
+author decision and must be settled before implementation. V4.29.0u still
+uses the legacy V4.26.4 movement `SoundAlert` and diagnostic/native target
+acquisition.
+
+The generated WAD contains 516 vertices, 690 linedefs, 1,350 sidedefs, 146
+sectors and 218 Things. Its accepted SHA-256 is
+`cd5db426b51570a2a4715223cd0a6bb8afb9373192b67d64fe7263371bcf7d9b`.
+The constructor is deterministic and refuses any base other than the accepted
+4.29.0t MAP01.
+
+### V4.29.0u runtime procedure
+
+In MAP01, cross the main threshold without `noclip`, walk the whole new western
+vestibule and pass through its centered opening. Traverse every old/new floor
+seam, all four stair landings and every upper door. Confirm that the eastern
+balcony is 96 MU wide, walkable, exterior and open to the sky; the interior
+side must be closed by the finite east wall. Finally use `fly` or `noclip` only
+for inspection and verify that the complete enclosed portion has a continuous
+roof suitable as the next floor base.
+
+In MAP02, perform one final 20-real-minute group-16 run with Look, Chase and
+attacks enabled, including ordinary player movement through the main field but
+without Quintaessence. A separate short Quintaessence density test belongs to
+collision calibration and must not be mixed with this AI endurance result.
+
+## Accepted squad endurance and AirCapacity audit 4.29.0t
+
+**Implemented and structurally validated; one repeated manual endurance run remains recommended**
+
+The supplied `ca_physics_4_29_0s.log` completes 1,328 internally consistent
+telemetry reports without a stop, approximately 22 simulated minutes. It keeps
+16,608 combat actors alive and reaches targets on all 1,983 active AI actors.
+Custom contacts, collision callbacks, maximum contacts per actor and retained
+contact references stay at zero for the entire run. Live projectiles remain
+between zero and one and continue reaching their bounded destruction path.
+
+With groups of 16, admitted native Chase averages 96.6 calls per simulated
+second and peaks at 161, versus the previous saturated ~350. This is 7.1 times
+longer than the failed 148-report V4.29.0r run and is the strongest controlled
+result so far. It does not prove which internal branch of `A_Chase`/`TryMove`
+produced the abrupt stalls; it does establish that actor count, target count,
+custom contacts and projectile retention are not sufficient causes. Production
+AI should therefore retain shared squad goals, distance/sleep tiers and a small
+number of movement owners instead of restoring independent pursuit to every
+member.
+
+The V4.29.0s telemetry accidentally included 13,125 passive field bodies in
+the squad totals. V4.29.0t corrects only that report path. The expected active
+line is `escuadras_activas tamano=16 lideres=126 seguidores=1749`; gameplay
+behavior is unchanged.
+
+MAP01 restores the four requested finite leaves at the end-of-corridor room
+connections: groups 906–909. No geometry changed, and the output is
+byte-identical to the previously validated 4.29.0r map. Groups 902/905 and the
+double front entrances 910/911 also remain.
+
+The inherited engine property `Player.AirCapacity` is not Caelum's HUD meter.
+GZDoom defines it as a multiplier for the native underwater air supply and it
+remains at its default value of 1. Caelum separately stores `CurrentAir`,
+derives `MaximumAir` from the 1,000-unit base and Resilience, spends it on
+running/jumping/combat/blocking and refills it over the authored eight-minute
+cycle. A future underwater rule must either make `CurrentAir` authoritative or
+explicitly keep breath separate; merely copying the maximum into
+`Player.AirCapacity` would leave two unsynchronized resources.
+
+### V4.29.0t runtime procedure
+
+Run one clean MAP02 repetition with the same group size 16 for at least fifteen
+real minutes. Confirm `126/1749`, nonzero follower pulses, zero custom contacts
+and bounded projectile counts. A second high-value comparison changes only
+`ca_diag_mass_squad_size` to 8; it should report 230 leaders and 1,645
+followers. This measures the scalability margin without returning immediately
+to the unsafe one-agent-per-actor path.
+
+In MAP01, test the four end-of-corridor leaves 906–909, the two middle divider
+doors 902/905 and the two double front entries 910/911. No room contour needs
+to be reaccepted.
+
+## Leader/follower pursuit isolation and canonical character art 4.29.0s
+
+**Implemented and structurally validated; manual GZDoom endurance and visual acceptance pending**
+
+The supplied `ca_physics_4_29_0r.log` contains 148 complete telemetry reports
+before the same abrupt stop. Its stable invariants are decisive: 13,125 passive
+fillers are already outside the blockmap, all 1,983 active AI actors have a
+target, custom contacts/callbacks/references remain zero, and live projectiles
+stay between zero and two. The final report is ordinary rather than a rising
+curve. Passive blockmap enumeration, projectile accumulation and the custom
+contact graph are therefore not sufficient causes. The remaining common path
+is repeated native `A_Chase`/`TryMove`, whose internal work can vary sharply by
+actor position even under the ten-call-per-tic gate.
+
+V4.29.0s isolates independent movers rather than lowering the same global
+number again. The 1,875 active main-field actors form deterministic diagnostic
+groups of 16. Exactly 126 are leaders and 1,749 are followers in the current
+field; leaders can use the existing
+13-phase Chase plus ten-call ceiling. Followers retain perception and targets,
+but only face their target on a phased 64-tic pulse; they do not request native
+movement or range/attack checks. The new telemetry line reports group size,
+leader/follower counts and pulses. This affects only the MAP02 main field.
+
+MAP01's four side portals were already valid geometry; only their finite door
+Things were embedded unnecessarily in the wall thickness. Groups 906–909 are
+removed without touching a vertex, linedef, sidedef or sector. The divider and
+front-entry groups 902, 905, 910 and 911 remain. The final structure is
+468/587/1,144/101/214 for vertices/linedefs/sidedefs/sectors/Things.
+
+World pickups no longer maintain a stale second art catalogue. `TEXTURES`
+maps all ordinary equipment, ammunition, consumables, materials and jewelry
+directly to the 128×128 icon masters and applies world-only scale. The PK3 omits
+the superseded legacy directories. Domingo contributes 39 gameplay frames and
+is now CaelumPlayer's third-person/world appearance; unused banners, blood,
+faces, weapon cutouts and slash effects are not loaded.
+
+### V4.29.0s runtime procedure
+
+Set all mass CVars before loading MAP02, including
+`ca_diag_mass_squad_size 16`. Warp to the main field and move through it for at
+least fifteen real minutes. The squad line must show `lideres=126`,
+`seguidores=1749` and nonzero follower pulses; admitted Chase must fall
+well below the old constant 350 calls per simulated second. Do not invoke
+Quintaessence in this run. If it remains stable, repeat from a fresh map with
+group size 1 only as a short A/B confirmation.
+
+In MAP01, cross all four side connections and confirm that no visible or
+invisible leaf remains, then test the divider and front doors. Inspect pickups
+from every major category for updated art and correct floor scale. Use a
+third-person view to inspect Domingo standing, moving, attacking, crouching,
+taking Pain and dying.
+
+## Blockmap-isolated endurance candidate and final central entries 4.29.0r
+
+**Implemented and structurally validated; manual GZDoom endurance and visual acceptance pending**
+
+The supplied `ca_physics_4_29_0q_C.log` ends after 193 complete telemetry
+reports. Every final report is internally consistent: 16,608 combat actors,
+1,983 active AI actors with targets, 10 admitted native Chase calls per tic,
+350 per simulated second, zero custom contacts/callbacks/references and zero
+live projectiles. The stop is abrupt and the preceding V4.29.0p full-combat run
+survived 548 reports with the same settings. Ten calls is therefore not a
+universal safety boundary and no monitored gameplay object grows toward the
+failure.
+
+V4.29.0r changes one spatial property. The 13,125 passive fillers of the main
+15,000-actor field are still visible and still exist as lightweight actors,
+but are omitted from the native blockmap. The 1,875 active field actors remain
+linked and continue using the same Look, Chase and attack settings. The three
+500-rat Quintaessence rooms explicitly re-enable blockmap membership, so their
+collision tests are unchanged. If the endurance run now remains stable, native
+movement was spending pathological time enumerating passive blockmap residents;
+if it still stops, independent `A_Chase`/TryMove work remains sufficient.
+
+MAP01 receives the only missing entrances approved by the author. Each central
+T room now has a 128-MU front portal and two normal 64-MU sliding leaves:
+group 910 at Y=196 and group 911 at Y=-196. The doors align at X=336 and 400,
+matching the established double-door layout. No room footprint, divider,
+connection, stair, balcony passage or 119×119-MU landing moves. The resulting
+map has 468 vertices, 587 linedefs, 1,144 sidedefs, 101 sectors and 218 Things.
+
+The graphics recomposition is integrated selectively by runtime use. All 137
+inventory, equipment, crafting and elemental icons now use the supplied
+128×128 masters. Rulo, Ronnie, Argento and Caella each provide 48 directional
+A–F frames and six common G–L death stages on 256×256 RGBA canvases. Explicit
+baseline offsets and actor scales preserve the previous world height. This
+patch does not import preview sheets, unused sewer/Domingo art or the package's
+unchanged/Doom-compatible preservation copies. Pre-existing compatibility
+lumps are unaffected. The permanent sizing rules are documented in
+`docs/GRAPHICS_SIZE_GUIDE.md`.
+
+### V4.29.0r runtime procedure
+
+Load MAP01 and test both new double entrances from the central corridor and
+from inside each room. Confirm that both leaves open, that the complete 128-MU
+threshold is passable, that closing does not crush the player, and that the
+central divider and side-room connections behave exactly as before. Inspect
+Rulo, Ronnie, Argento and Caella from all eight directions, then trigger their
+attack, Pain and complete Death states; no frame may jump vertically, float,
+clip or revert to the previous artwork.
+
+For MAP02, keep the same Look 7/20, Chase 13/10 and full-combat settings. The
+first report must show `ligeros=16500 blockmap=3375 visuales=13125`. Move among
+several positions in the main field for ten real minutes. This is one controlled
+comparison; do not change the budget or run Quintaessence during it.
+
+## Connected upper rooms and stable 10-call load 4.29.0q
+
+**Implemented and structurally validated; manual MAP01 door acceptance pending**
+
+The supplied V4.29.0p pair validates the reduced scheduler gate. Test A runs
+for 368 complete reports with mass attacks disabled; test B immediately reloads
+MAP02 in the same process and runs for 548 with full combat. Both acquire all
+1,983 field targets, cap native Chase at 10 calls per tic and 350 per simulated
+second, and retain exactly 16,500 lightweight actors. Contacts, callbacks and
+contact references remain zero throughout.
+
+Test B spawns 40 bounded projectiles and records all 40 impacts/destructions,
+never retains more than one live missile and reports no spawn failure. It also
+reaches 502 targets within 512 MU, whereas the failed V4.29.0p input run reached
+only 175 before stopping at a 20-call gate. Local actor density and projectiles
+therefore cannot be sufficient causes of the abrupt freeze. The variable that
+still tracks stability is the number of native `A_Chase`/movement queries
+admitted in one world tic.
+
+MAP01 keeps the accepted two continuous T rooms. The old extreme-room openings
+spanned Y=304..432 and Y=-432..-304; after the T reconstruction only 41 MU of
+each opening actually overlapped a shared room wall. V4.29.0q closes those
+obsolete portals, then creates four exact 64-MU connections at Y=400..464 and
+Y=-464..-400. Each connection crosses both 8-MU wall rings and receives one
+finite sliding leaf, groups 906–909, which retracts into the longer rear wall.
+
+The original central dividers remain at X=364..372. Their 64-MU openings and
+door groups 902/905 are validated rather than duplicated. All four 119×119-MU
+landings, stairs, room footprints and the previous 210 Things remain fixed;
+only four connection doors are added. MAP01 now has 460 vertices, 575 linedefs,
+1,120 sidedefs, 99 sectors and 214 Things.
+
+### V4.29.0q runtime procedure
+
+In MAP01, open every new door from both sides and wait for it to close. Cross
+each threshold while the door is open, stand in it through the close timer and
+confirm the anti-crush hold. Walk the formerly open lower portions of all four
+extreme-room walls and confirm they are now solid. Test both central divider
+doors and all four stair landings without `noclip`.
+
+For the final 10-call endurance gate, use full combat and move the player among
+several points of the mass field for at least eight real minutes. This tests
+reconvergence and different blockmap paths. Do not increase the Chase budget;
+the next architectural step after acceptance is distance-tiered or shared
+squad scheduling, not searching for the highest unsafe count.
+
+## Continuous central rooms and lower pursuit gate 4.29.0p
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The V4.29.0o endurance file contains 119 complete telemetry intervals before
+the abrupt stop. All 1,983 active AI actors had targets; custom contacts,
+callbacks and retained references remained zero; the lightweight population
+remained exactly 16,500 and live projectiles stayed between zero and one. The
+last complete interval admitted 20 native Chase calls per tic and 699 during
+the simulated second. No monitored counter grows toward the stop.
+
+This invalidates 20 as a universally stable diagnostic ceiling. More
+importantly, it reproduces the exact 119-report duration previously observed at
+40 calls with main-field attacks disabled. Attack delivery, guided projectile
+logic, custom collision and RPG helper objects are not necessary causes. The
+shared active path is native `A_Chase` and spatial convergence. The next gate
+therefore uses a hard default of 10 Chase calls per tic (350 per simulated
+second at most), while Look remains at 7 phases and 20 calls per tic.
+
+MAP01 is reconstructed from the accepted V4.29.0i/0n hash. The four separate
+V4.29.0o blocks are not merged or patched. Instead, the old north and south
+central contours are removed completely and rebuilt as two continuous T-shaped
+rooms. Each room absorbs both rear wings, uses one tag-510 floor/roof component
+and one tag-511 wall component, and has no residual seam at X=192 or X=544 in
+the rear bar. The original middle dividers and their 64-MU door openings are
+recreated after the continuous rooms.
+
+The internal stairs still end at Y=±272. Their room fronts remain at Y=±391,
+so the four reserved landings remain exact independent 119×119-MU squares.
+Side rooms, six stair flights, passages and all 210 Things retain their accepted
+positions. MAP01 contains 448 vertices, 559 linedefs, 1,088 sidedefs and 99
+sectors.
+
+### V4.29.0p runtime procedure
+
+Set all server CVars before loading MAP02. First run Look and Chase with
+main-field attacks disabled for five real minutes at Look 7/20, Chase 13/10.
+Only if it remains responsive, start a fresh MAP02 load with attacks enabled
+and repeat for five real minutes. The first report must literally show
+`chase ... cupo/tic=10`; stop any invalid run. Do not increase the budget.
+
+In MAP01, enter both T-shaped rooms with `noclip`, then disable `noclip` and
+walk their entire inner floor, both halves and the two central door openings.
+Walk all four green-reserved landing areas and verify that no invisible surface,
+wall seam or fall-through remains. Existing side rooms and stairs must behave
+as in V4.29.0n.
+
+## Four closed upper blocks and stable pursuit boundary 4.29.0o
+
+**Implemented and structurally validated; manual MAP01 acceptance pending**
+
+The two V4.29.0n logs validate the reduced pursuit ceiling under both required
+loads. The no-attack session supplies 319 complete telemetry reports and the
+full-combat session supplies 506. Both reach all 1,983 target-bearing AI actors,
+hold native Look and Chase peaks at 20 per tic and Chase throughput at 700 per
+simulated second. Contacts, callbacks and references remain zero. The enabled
+run retains at most two bounded projectiles. No counter trends toward a stop,
+so 20 is now the accepted diagnostic ceiling; 40 remains rejected.
+
+MAP01 retains the complete V4.29.0i/0n rooms and inserts four new closed blocks
+only in the two gaps between rooms on each side of the central passage. Their
+outer footprints are 313×153 MU; 8-MU native wall rings leave 297×137-MU
+interiors. The north façades begin at Y=391 and the south façades at Y=-391.
+Because the internal stairs end at Y=±272, each one retains an exact 119-MU
+setback and a separate 119×119-MU landing aligned to its 119-MU flight.
+
+The blocks end at Y=±544 and use the full available rear depth without moving
+an accepted room. They are individual tag-510/tag-511 components, not another
+continuous-row reconstruction. Existing side openings and door actors are not
+repurposed, and every new block remains physically closed until the author
+specifies its connections. MAP01 now has 454 vertices, 569 linedefs, 1,108
+sidedefs, 107 sectors and 210 Things.
+
+### V4.29.0o runtime procedure
+
+Load MAP01 and inspect all four new blocks from roof level, ground level and
+inside with `noclip`. Walk every 119×119 landing and the central passage without
+crossing an invisible wall, falling through a surface or entering a new block.
+Confirm the six stairs, existing rooms and all prior doors still behave exactly
+as in V4.29.0n. Connections are deliberately absent.
+
+For AI endurance, keep the accepted 7/20 Look, 13/20 Chase and 64-phase attack
+settings. Run one three-load sequence with full combat: five minutes in MAP02,
+reload MAP02, repeat, then reload once more and repeat while changing the
+player's position. This tests map cleanup and repeated convergence; do not raise
+the Chase budget above 20.
+
+## MAP01 rollback and pursuit isolation 4.29.0n
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+MAP01 is restored byte-for-byte to V4.29.0i, the accepted state immediately
+before the continuous-room expansion. This rejects the complete V4.29.0l and
+V4.29.0m geometry passes instead of trying to repair their overlapping walls,
+missing landing space and open surfaces. The restored map has 398 vertices,
+489 linedefs, 948 sidedefs, 99 sectors and 210 Things. Its valid divider and
+rear-door additions remain; none of the later enlarged rows remains.
+
+The four supplied V4.29.0m logs also correct the previous runtime assumption.
+The server CVars entered after `map map02` were not live; their effective value
+appeared on the next map load. Consequently the runs actually were: all
+enabled for 34 reports, all disabled for 249, Look-only for 495, and Look plus
+Chase with main-field attacks disabled for 119. Only the last run stopped.
+Its final report retained zero contacts and callbacks, 16,500 lightweight
+actors and a 40-update Chase peak. The isolated-room actors explain its single
+projectile; the main field explicitly reported `ataques_masivos=0`.
+
+This isolates sustained native pursuit/convergence as the next boundary. The
+diagnostic Chase ceiling is reduced from 40 to 20 calls per tic. The scheduler
+captures server settings once per map, and state actions no longer copy every
+setting on every Look, Chase or attack attempt. This is both a stricter test
+and a universal hot-path optimization for the diagnostic. Gameplay maps and
+the nine isolated MAP02 rooms remain unchanged.
+
+### V4.29.0n runtime procedure
+
+Enter every server CVar before `map map02`. The first report after loading is
+the authority; do not continue if its active flags differ from the requested
+test. Run Chase without attacks for five real minutes. Only if it remains
+responsive, repeat with attacks enabled. Both tests use Look 7/20, Chase 13/20
+and attack stagger 64. If the first test freezes, stop there and repeat later
+with a Chase budget of 10 instead of enabling attacks.
+
+In MAP01 verify only the rollback: both central pairs, their middle divisions,
+rear first-floor doors, balcony strips and stair landings must match V4.29.0i.
+Do not extend or connect rooms in this patch.
+
+## Live mass-AI controls and straight landing corridor 4.29.0m
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The three V4.29.0l logs stop after different durations but share the same
+stable boundary: 16,608 combat actors, 1,983 active AI, zero custom contacts,
+zero callbacks, zero to two projectiles and at most 40 admitted Chase updates
+in any tic. No monitored value rises toward the abrupt stop. However, the two
+intended disabled sessions did not actually disable their systems: the console
+changed the CVars after the actors had cached their initial `true` values.
+Consequently all three files are enabled-Chase samples, not a valid A/B result.
+
+V4.29.0m moves those settings into `CaelumMassAIScheduler`. It reads CVars once
+per world tic and every field actor reads only cached coordinator fields.
+Look, Chase and attacks can now be changed while MAP02 is running, and the
+telemetry shows the effective state on the next line. Look also receives a
+hard default ceiling of 20 native calls per tic; Chase remains capped at 40.
+
+The variable abrupt timing, stable counters and very large fixed ZScript object
+graph make a collector/main-thread pause more plausible than contact or missile
+growth. The diagnostic-only population is therefore lightweight: 16,500
+mass/passive stress actors keep native thinker/state execution but do not own
+permanent anatomy, armor or elemental-state objects and do not run the complete
+Caelum RPG/contact Tick. The isolated test actors and all normal-map NPCs retain
+the full model. Telemetry reports both lightweight and remaining helper counts.
+
+MAP01 replaces the stair-shaped room fronts with straight façades at Y=±368.
+Since all six upper landings end at Y=±272, the path between stairs and rooms is
+exactly 96 MU and uninterrupted. Front doors move to Y=±372; middle doors move
+to Y=±456. The rear balcony keeps its existing 96-MU offset, all stair modules
+remain 119 MU wide and lateral room divisions stay closed for the next gate.
+
+The colored HUD resource fills are manually accepted.
+
+### V4.29.0m runtime procedure
+
+Run four fresh MAP02 sessions: all three systems disabled; Look only; Look plus
+Chase; then full combat. CVars are live, so a valid report must literally show
+`look activo=0/1`, `chase activo=0/1` and `ataques_masivos=0/1` as requested.
+The lightweight line should report approximately 16,500 actors and only the
+isolated-room population should retain helper objects. Look peak must stay at
+or below 20 and Chase peak at or below 40.
+
+In MAP01 walk the full corridor behind every staircase, then inspect both
+façades and roofs from above and below. No wall return may point toward a
+landing; the front and rear balcony gaps must both measure visually alike.
+
+## Bounded chase, colored HUD fills and continuous room rows 4.29.0l
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The supplied V4.29.0i log freezes after approximately 120 reported seconds
+with 1,605 target-bearing actors and roughly 1,924 real `A_Chase` executions
+per second. Contacts and custom callbacks remain zero, only four projectiles
+are alive and no attack is accepted in the final interval. Every family reaches
+a similar target saturation; rats dominate only because they are the largest
+population. The earlier V4.29.0h run survived more cumulative Chase calls, so
+the actionable boundary is concurrent native pursuit work rather than a simple
+per-call memory leak.
+
+V4.29.0l keeps dormant perception at seven phases and moves pursuit to an
+independent thirteen-phase schedule. One registered `CaelumMassAIScheduler`
+also caps the whole field at 40 admitted Chase calls per tic. Each actor caches
+the handler and all CVar values once in `PostBeginPlay`. `ca_diag_mass_chase_enabled`
+provides a target-retaining, no-movement control. Telemetry now reports the
+actual peak per tic, phase/budget/pause deferrals, family updates and target
+distance bands.
+
+MAP01 no longer consists of six isolated room rectangles. The two first-floor
+rows are clean, disconnected components of one tag-510 interior and one
+tag-511 wall sector. Their fronts remain at Y=±192, preserving 96 MU of balcony;
+the rooms expand behind the stair landings at Y=±272. Every flight remains
+119 MU wide. Closed native dividers yield four rooms per row. Balcony doors
+700/716/717/718 and middle doors 902/905 remain; obsolete side leaves
+900/901/903/904 are removed until lateral openings are authored.
+
+HUD-01 frames render before 164-MU inset fills, restoring every resource color
+without painting over end caps. `CaelumText`, `NewSmallFont`, `SmallFont` and
+their alternative small alias use `SpaceWidth 8`; letter kerning and HUD
+`CaelumMono` are unchanged.
+
+### V4.29.0l runtime procedure
+
+Run three fresh MAP02 sessions for five simulated minutes each: Chase disabled
+and attacks disabled; Chase enabled and attacks disabled; then both enabled.
+Use Look 7, Chase 13, budget 40 and attack stagger 64 in all three. A stable
+disabled run proves target ownership alone is safe; a stable no-attack Chase
+run validates the native pursuit ceiling; the final run restores combat.
+
+In MAP01 inspect all eight rooms, both balcony edges and all six stair modules
+from above and below. Lateral dividers are expected to be closed. No room floor,
+landing or exterior strip may be missing, collision-solid but invisible, or
+crossed by a coincident wall.
+
+
+## Cached perception scheduling, MAP01 doors and UI foundation 4.29.0i
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The stable V4.29.0h run shows that chase/attack phase separation can keep the
+1,875 active actors responsive. V4.29.0i moves the remaining dormant cost—the
+native `A_Look` scan—behind the same seven-phase schedule. Each main-field
+actor captures the three diagnostic CVars and both deterministic phase keys
+once at map load. The hot Look, Chase and attack paths therefore contain no
+CVar lookup and no coordinate hash. Normal maps and the nine isolated MAP02
+rooms execute their original native AI timing.
+
+The monitor now separates Look attempts, updates and deferrals from Chase. At
+the default value, a ten-tic Spawn loop admitted once per seven phases yields
+one sight check per actor approximately every 70 tics. This is a diagnostic
+foundation for the later stealth/group scheduler, not its final alert model:
+formations, shared sightings, proximity wake-up and fair group attack tokens
+remain future authored behavior.
+
+MAP01 retains the author-accepted central first-floor shells byte-for-byte and
+adds only four thin native divider targets around the two existing central
+doors. The targets reuse sector 511 and its already working 3D-floor controls.
+Four rear-room leaves form two additional double doors without changing room
+footprints. Current structure is 398 vertices, 489 linedefs, 948 sidedefs, 99
+sectors and 210 Things.
+
+HUD/UI-01 supplies 94 independent runtime PNGs. `CaelumStatusBar` removes the
+Doom face/status bar, while the permanent overlay keeps real resource values
+and applies modular frames/icons. Tab opens a local six-section Journal and M
+preserves the native automap. Inventory ownership and quantities are not
+copied into UI storage. Only the existing active weapon/load and twelve
+attributes are exposed now; the four not-yet-authored sections state that they
+are pending.
+
+### V4.29.0i runtime procedure
+
+Set the diagnostic values before loading MAP02 because actors cache them in
+`PostBeginPlay`:
+
+```text
+logfile ca_physics_4_29_0i.log
+ca_diag_mass_attacks true
+ca_diag_mass_ai_stagger 7
+ca_diag_mass_attack_stagger 64
+map map02
+sv_cheats 1
+warp 16368 -16 0
+```
+
+Run the field for at least three minutes. Do not lower the stagger values in
+this candidate. Confirm that `[CA-AI] ... look` and `... chase` each report
+attempted/executed/deferred counts, no custom contact graph grows, and input
+remains responsive. Separately load MAP01 and validate both new divider walls
+and both rear double doors from above, below and on both sides.
+
+
+## Canonical MAP01 sector ownership and budgeted mass AI 4.29.0h
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+The V4.29.0g rectangles were topologically closed but twelve of their edges
+placed the intended front sector on the geometric left. The lower tag-510
+control therefore existed while GZDoom resolved the tagged interior outside
+the visible room, producing the photographed hole and ground-floor fall.
+V4.29.0h gives both outer and inner contours one clockwise winding: sector 510
+is on the right/front inside the room and sector 511 is on the right/front
+inside the wall ring. No new surface or control sector was added.
+
+The supplied stagger-3 run froze after its second complete report with 958
+target-bearing actors, 16 live projectiles, zero contacts and zero custom
+collision callbacks. The last combat interval contained only 57 attempts,
+19 projectile spawns and three impacts. The remaining synchronous threshold is
+the arrival of 634 rats at melee range and the native chase/collision work
+around one player, not projectile retention or the Caelum contact graph.
+
+Only MAP02's main field now uses `THRUACTORS`. Its `A_Chase` invocations are
+distributed across seven deterministic phases and its attack deliveries across
+64 phases. Rooms 1–9 and all normal maps use the original AI/collision timing.
+The monitor reports chase attempts, updates and deferrals separately.
+
+### V4.29.0h runtime procedure
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0h.log
+sv_cheats 1
+ca_diag_mass_attacks true
+ca_diag_mass_ai_stagger 7
+ca_diag_mass_attack_stagger 64
+warp 16368 -16 0
+```
+
+Run one 60-second session. Do not repeat the rejected stagger values 3, 2 or 1.
+For MAP01, load `map map01`, enable `noclip` and verify both central interiors
+from below, above, inside and outside before any door or divider is restored.
+
+
+## Clean MAP01 modules and staggered mass combat 4.29.0g
+
+**Implemented and structurally validated; manual GZDoom acceptance pending**
+
+MAP01's two central first-floor rooms no longer contain any part of the
+V4.29.0c–f divider, threshold or door topology. Sixty lines and their 120
+sidedefs were removed as one unit. Each replacement now consists of exactly
+eight bilateral lines: four around one 336×336-MU interior and four around its
+continuous 8-MU wall ring. The working end rooms and the common 3D-floor
+controls for tags 510 and 511 were not rebuilt.
+
+MAP02's main field now separates AI stress from island-physics stress. Its
+15,000 bodies share a diagnostic species and `THRUSPECIES`; Rooms 7–9 still
+retain full collisions for Quintaesencia. When attacks are enabled, the default
+`ca_diag_mass_attack_stagger 3` distributes attempts between three deterministic
+phases derived from each spawn cell. Straight projectiles and melee actions do
+not damage another main-field actor, so one intercepted shot cannot trigger an
+infighting cascade. A value of `1` restores the unthrottled V4.29.0f behavior.
+
+The supplied no-attack log reached 1,983 targeted actors and 42,415 collision
+callbacks/s without ending at that point. The attack run stopped after the
+first second containing 97 projectile spawns and 28 impacts, while only 69
+missiles remained live. This makes synchronous attack/impact work and crowd
+cross-collision the actionable causes; retained projectiles and contact-list
+growth are not required to reproduce the abrupt stop.
+
+The mapping workflow is documented in
+`docs/ULTIMATE_DOOM_BUILDER_TUTORIAL.md`. Doors and dividers remain intentionally
+absent from the new central shells until visual and traversal acceptance.
+
+### V4.29.0g runtime procedure
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0g.log
+sv_cheats 1
+ca_diag_mass_attacks true
+ca_diag_mass_attack_stagger 3
+warp 16368 -16 0
+```
+
+Run for 60 seconds or until a freeze. On a fresh `map map02`, repeat with
+stagger values `2` and `1`, in that order, stopping after the first unstable
+setting. Do not continue to a more aggressive setting after a freeze.
+
+For MAP01, use `map map01` and inspect both central shells from ground floor,
+first floor, exterior and below the slab. Closed walls are expected in this
+candidate; doors and the divider are not.
+
+
+## Continuous MAP01 slabs and isolated mass-AI combat 4.29.0f
+
+**Implemented and load-validated in GZDoom 4.14.2; manual visual/performance acceptance pending**
+
+The V4.29.0e threshold repair still treated the visible room surface and each
+door/exterior band as different 3D-floor targets. Their lower and upper
+controls could occupy the same height while remaining different render links,
+which reproduced the reported solid-but-invisible surface from both the room
+and its exterior. V4.29.0f removes that distinction instead of adding another
+plane: every former tag-512 target is now tag 510 and therefore uses the same
+128–136-MU floor slab and 256–264-MU roof slab as the adjacent room.
+
+The independent 512 control rectangle, its upper duplicate link and an empty
+sector inherited from the earlier rebuild are removed. The mansion surface
+PNGs are also registered explicitly in flat/texture namespaces rather than
+being available only through their sprite aliases. Current MAP01 structure is
+510 vertices, 517 linedefs, 1,004 sidedefs, 98 sectors and 206 Things. Every
+linedef has a valid front sidedef, bilateral flags agree exactly with back
+sides, and there is no target or 3D-floor link 512.
+
+MAP02 keeps all 16,608 combat actors and the exact 1,875-active main-field
+stage. One native wall at X=8192 blocks actors, monsters and sight between the
+spawn/test-room side and the mass field. GZDoom 4.14.2 runtime loading reports
+zero main-field targets at baseline. The new server CVar
+`ca_diag_mass_attacks` changes only attack execution inside that field:
+
+- `false`: perception and chase remain active, but melee, Bull charge and
+  projectile actions are counted and suppressed;
+- `true`: the same actors execute their normal attacks using the existing
+  bounded straight projectiles;
+- all nine small diagnostic rooms ignore the gate and retain their authored
+  behavior.
+
+The monitor now prints family target/active counts and a combat line:
+
+```text
+[CA-AI] campo objetivos/activos ratas=0/1250 rulo=0/125 argento=0/125 caella=0/125 ronnie=0/125 toros=0/125
+[CA-COMBAT] ataques_masivos=1 intentos/s=0 anulados/s=0 proj +0 impacto=0 vencido=0 destruido=0 fallo=0
+```
+
+Counters are integer increments on the existing actors/projectiles; no new
+per-tic actor search was added. The MAP02-only monitor still performs its one
+aggregate Thinker traversal per second.
+
+### V4.29.0f runtime procedure
+
+Start each logged session from the console:
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0f.log
+```
+
+Wait ten seconds at spawn. Every family numerator in `[CA-AI]` must remain
+zero, `ia_objetivos=0` and `proyectiles=0`. Then run two fresh-map sessions:
+
+```text
+ca_diag_mass_attacks false
+map map02
+warp 16368 -16 0
+```
+
+and:
+
+```text
+ca_diag_mass_attacks true
+map map02
+warp 16368 -16 0
+```
+
+Observe each for 30 seconds or until a freeze. The first run should report
+attack attempts under `anulados/s` with `proj +0`; the second exposes the
+actual projectile creation/completion rate. The final complete line written
+before a freeze is diagnostic evidence even if the failing tic never reaches
+the next one-second report.
+
+MAP01 acceptance is independent: walk over both central first-floor rooms,
+the exterior bands at their lateral doors and the internal divider doorway;
+inspect all six doors from both faces and verify every surface from above and
+below. A visually absent but collision-solid band still fails acceptance.
+
+## Central threshold closure and valid MAP02 coordinates 4.29.0e
+
+**Implemented — pending GZDoom 4.14.2 runtime validation**
+
+The supplied screenshots expose two independent construction regressions.
+MAP01's four exterior leaves used `arg2=0`: their vertical WALLSPRITE faced the
+authored opening, but their blocker row and displacement ran along X,
+perpendicular to the wall. MAP01's target tag 512 also received only the lower
+128–136-MU slab, leaving its six doorway sectors absent from the 256–264-MU
+walkable roof. MAP02 failed before gameplay because Room 7 Things reached
+approximately X=-50,288 and Room 8 vertices reached X=-32,800, outside the
+engine-supported `-32768..32768` coordinate range.
+
+Current corrections:
+
+- door groups `900`, `901`, `903` and `904` now use `arg2=1`, matching the two
+  divider groups `902` and `905`; all six slide parallel to their Y-axis wall;
+- linedef 325 applies the existing upper 256–264-MU control slab to target tag
+  512, while the original 128–136-MU threshold slab remains unchanged;
+- Rooms 7–9 move to centers `(-24000,-18000)`, `(-24000,0)` and
+  `(-24000,18000)` respectively;
+- each room retains exactly 500 actors and remains 18,000 MU from its neighbor;
+- MAP02 now ranges only from X=-24,800..24,576 and Y=-18,700..18,900 for
+  vertices, and X=-24,288..24,288 and Y=-18,228..18,228 for Things.
+
+The PK3 builder now checks the coordinate range of every UDMF vertex and Thing.
+It rejects the V4.29.0d MAP02 at vertex 56 before packaging and accepts both
+current maps. MAP01 remains 514 vertices, 521 linedefs, 1,008 sidedefs, 100
+sectors and 206 Things. MAP02 remains 80 vertices, 71 linedefs, 134 sidedefs,
+one sector and 16,610 Things.
+
+### V4.29.0e runtime procedure
+
+Start logging before each MAP02 session:
+
+```text
+map map02
+con_notifytime 10
+logfile ca_physics_4_29_0e.log
+```
+
+Use a fresh `map map02` before each position:
+
+| Test | Command | Expected Seal count |
+| --- | --- | ---: |
+| Room 7 — native collision | `warp -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `warp -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `warp -24000 18000 0` | 500 |
+| 1,875-AI main field | `warp 16368 -16 0` | Not a Seal-isolation test |
+
+The fresh-map telemetry baseline should still be approximately
+`actores=16608 ia=1983 ia_objetivos=0 objetivos=0 proyectiles=0`.
+
+## Canonical MAP01 side table and bilateral-line repair 4.29.0d
+
+**Implemented — pending GZDoom 4.14.2 runtime validation**
+
+The V4.29.0c MAP01 retained 316 unreferenced sidedefs from removed room
+iterations. Although every linedef contained a numeric `sidefront`, the live
+references after linedef 420 jumped across those dead index ranges. In
+addition, linedefs 461–520 carried `sideback` but did not declare
+`twosided = true`. An editor or node builder that normalizes the side table can
+therefore reject or reinterpret the later references.
+
+V4.29.0d performs one canonical repair over the complete WAD:
+
+- retain only sidedefs referenced by a live linedef;
+- remap every `sidefront` and `sideback` to the compact table;
+- require exactly one owner for each sidedef;
+- add `twosided = true` to every linedef with `sideback`;
+- reject `twosided = true` when no `sideback` exists.
+
+Current MAP01 structure: 514 vertices, 521 linedefs, 1,008 sidedefs, 100
+sectors and 206 Things. All 1,008 side references are unique and cover the
+continuous range `0..1007`; every linedef has an in-range front sidedef; every
+sidedef has an in-range sector; every line with a back side is explicitly
+two-sided; and no one-sided line carries that flag. The room geometry, sector
+heights, six door Things and their TIDs `900–905` remain unchanged from the
+V4.29.0c reconstruction.
+
+`tools/build_pk3.py` now applies these UDMF invariants to every embedded
+`TEXTMAP`. It rejects the V4.29.0c MAP01 at linedef 461 and accepts current
+MAP01/MAP02 before writing the PK3, so the earlier shallow range-only check can
+no longer certify this failure mode.
+
+Manual validation remains authoritative: load MAP01 in GZDoom 4.14.2, confirm
+that node construction reports no missing front sides, and inspect both
+central pairs plus all six doors from both faces.
+
+## Native central-room rebuild and historical mass-AI replay 4.29.0c
+
+**Superseded structurally by V4.29.0d; MAP02 staging remains current**
+
+The V4.29.0b log contains five fresh-map sessions in the declared order:
+Rooms 5, 6, 7, 8 and the main-field center. Its results separate three costs
+that had previously appeared together.
+
+| Session | Relevant peak/result | Interpretation |
+| --- | --- | --- |
+| Room 5 — straight projectile | 4 targets, 18 missiles, 1 callback | The mass-safe projectile route is bounded and adds no sustained contact work. |
+| Room 6 — explosive projectile | Targets grow 4 → 199; 18 missiles; 0 callbacks | `A_Explode` propagates damage/targets and infighting even without moving bodies. |
+| Room 7 — native Rat collision | 1,103 Seal targets; 240 callbacks once | The test was contaminated beyond its authored 500 Rats. |
+| Room 8 — complete contacts | 1,755 Seal targets; 33,232 callbacks; 815 edges; max 12/actor | The room and neighboring populations were pulled together; pair duplication is measurable but bounded. |
+| Main center | 2,065 Seal targets; 37,144 callback peak | Density, rather than retained historical edges, is the dominant trigger. |
+
+At the end of the main-center session, after Channel release, the log still
+shows 4,718 raw callbacks but only 18 retained edges, `max/actor=4`, 503 unique
+pair-tic attempts, 28 duplicates and 4,599 resting rejections. This validates
+the V4.29.0b cleanup: the former large retained graph and per-callback object
+allocation are no longer the principal post-release cost. GZDoom continues to
+report thousands of native collisions while solid bodies remain physically
+stacked, so low simulated-time FPS can persist without a logical contact leak.
+
+### MAP01 reconstruction
+
+The finite-panel approach is retired for the two central first-floor pairs.
+Each north/south pair is rebuilt in this order:
+
+1. one continuous exterior rectangle from `x=192` to `544`, spanning
+   `y=192..544` north or `y=-544..-192` south;
+2. one 8-MU native outer wall ring;
+3. two interiors divided only by the native `x=364..372` wall;
+4. one centered 64-MU door sector in that divider;
+5. one centered 64-MU exterior door on each lateral wall.
+
+The four former front doors move to `(196, ±368)` and `(540, ±368)` at angle
+0. Internal doors remain at `(368, ±368)`. Their TIDs `900–905`, first-floor
+height 136 and sliding-door arguments are unchanged.
+
+The V4.29.0c artifact contained 514 vertices, 521 linedefs, 1,324 sidedefs, 100
+sectors and 206 Things. Its geometry and removal of `CaelumFiniteWallPanel`
+remain current, but the 316 orphaned sidedefs and missing bilateral flags are
+corrected by V4.29.0d.
+
+### MAP02 staged AI and isolated Quintessence rooms
+
+The total main-field population remains 15,000, but it now contains the exact
+historical 1,875 active-AI stage:
+
+- 125 Rulo;
+- 125 Argento;
+- 125 Caella;
+- 125 Ronnie;
+- 125 Bulls;
+- 1,250 active Giant Rats;
+- 13,125 remaining passive stress actors.
+
+The active actors closest to `(16368, -16)` are selected deterministically;
+the farthest is approximately 3,417 MU from that center. Including Rooms 1–6,
+the fresh-map telemetry baseline should be approximately:
+
+`actores=16608 ia=1983 ia_objetivos=0 objetivos=0 proyectiles=0`
+
+`ia` counts living classes that execute perception, chase or attacks.
+`ia_objetivos` counts only those active classes with a target. `objetivos`
+still counts every actor with a target, including passive bodies affected by
+damage; the difference exposes the exact contamination observed in Room 6.
+
+The three 500-Rat matrices keep their collision variants and remain separated
+by 18,000 MU. V4.29.0e replaces the invalid V4.29.0c positions with these
+in-range console positions after every fresh `map map02`:
+
+| Test | Command | Expected Seal count |
+| --- | --- | ---: |
+| Room 7 — native collision | `warp -24000 -18000 0` | 500 |
+| Room 8 — complete Caelum contacts | `warp -24000 0 0` | 500 |
+| Room 9 — same-species pass-through | `warp -24000 18000 0` | 500 |
+| 1,875-AI main field | `warp 16368 -16 0` | Not a Seal-isolation test |
+
+Manual validation order:
+
+1. Load MAP01 and inspect both central pairs from every room, corridor, ground
+   floor and roof. Confirm continuous walls, correct floors/roofs and all six
+   doors opening from both sides.
+2. Load a fresh MAP02 and record ten seconds of the baseline above.
+3. Run Rooms 7, 8 and 9 separately from a fresh map. Channel Quintessence for
+   five seconds and observe twenty seconds after release. Each run must report
+   exactly 500 affected actors; otherwise the isolation still failed.
+4. Load MAP02 again, use `warp 16368 -16 0`, do not Channel, and let the
+   1,875-AI population pursue and attack for sixty real seconds. Record FPS,
+   input responsiveness and all three telemetry lines until either stabilization
+   or the first abrupt freeze.
+5. If this exact historical stage remains responsive, increase later patches
+   in the prior sequence: 3,750 → 7,500 → 15,000 active AI. Do not combine the
+   stages, because the first failing population is diagnostic evidence.
+
+Validated Seal behavior/formulas, crafting and V4.27 input deferral remain
+unchanged.
+
+## Simple mass projectiles and collision hot-path reduction 4.29.0b
+
+**Implemented — pending controlled GZDoom 4.14.2 runtime validation**
+
+The V4.29.0a telemetry rejects the retained-contact graph as the sole cause of
+the post-Quintessence slowdown. In the 2,000-actor sample, callbacks reached
+approximately 30,000 per reported simulated second and remained high while
+the bodies stayed physically stacked, but the retained graph stayed much
+smaller. Explosive Argento fire also produced a clear callback increase,
+especially after radial damage caused infighting. These are real repeated
+native collision events, not merely historical contact references.
+
+V4.29.0b therefore reduces the amount of Caelum work performed for every such
+event. A shared pair resolves once per tic; later callbacks only refresh its
+liveness. Coincident, separating or effectively resting callbacks return
+before body construction, normalization and square root. Every player and
+combat actor lazily owns three reusable work objects (`ImpactBody` source,
+`ImpactBody` target and `ImpactResult`) instead of allocating them in the
+collision hot path. Native collision detection still has an unavoidable cost,
+but duplicate callbacks no longer multiply the custom impulse calculation or
+temporary-object churn.
+
+Rulo, Caella, Ronnie and Argento now use the mass-safe projectile route. It is
+straight, finite-range, single-impact and non-explosive. It preserves the
+prepared attack result, critical flag, elemental payload, magical push and
+Eloquence-derived maximum range. It performs no seeker target lookup, steering
+or radial victim search. The old explosive behavior remains as an explicit
+class for authored explosive weapons and the controlled Room 6 comparison.
+
+The MAP02 monitor now writes three `[CA-PHYS]` lines per simulated second. In
+addition to actors, targets, missiles, contacts and reference churn, it reports:
+
+- `unicos`: contact pairs on which Caelum actually began one resolution tic;
+- `duplicados`: later callbacks for a pair already resolved that tic;
+- `reposo`: callbacks rejected as coincident, separating or below threshold;
+- `sello_afectados`: actors in the current player's Channel target set.
+
+Rooms 7–9 form an equal three-way Quintessence comparison with 500 passive
+Rats in each room:
+
+| Room | Collision configuration | Purpose |
+| --- | --- | --- |
+| 7 | Native solid collision; Caelum contacts disabled | Native-engine baseline |
+| 8 | Native solid collision plus complete Caelum contacts | Exact custom-physics increment |
+| 9 | Caelum contacts disabled plus same-species pass-through | Channel scan/force cost without pair collisions |
+
+The original 15,000 passive stress actors remain outside these isolated rooms.
+All nine rooms share one valid UDMF sector with 71 linedefs, 134 sidedefs and
+no missing front sides.
+
+MAP01 retains its finite-wall architecture. The four central first-floor
+panels at `x=368` now all cover 72 MU, and each interior reverse face receives
+only a 0.25-MU offset along the panel normal. The previous global X/Y shift
+moved an angle-90 reverse face partly along its width and exposed its endpoint
+from inside; that diagonal displacement is removed.
+
+Manual validation for this candidate:
+
+1. In MAP01, inspect both central first-floor room pairs from inside and from
+   the corridor. The four wall endpoints must remain closed with no flicker or
+   duplicate collision surface.
+2. Reload MAP02 before each test. Compare Rooms 5 and 6 for thirty seconds;
+   Room 5 must use straight single-impact shots, while Room 6 retains the
+   intentionally expensive explosion/infighting case.
+3. Test Rooms 7, 8 and 9 separately with a five-second Quintessence channel,
+   then observe twenty seconds after release. Record FPS and all three
+   telemetry lines. Room 8 minus Room 7 estimates Caelum contact cost; Room 7
+   minus Room 9 estimates native Rat-to-Rat collision cost.
+4. Repeat the 2,000-actor pile once. High raw `callbacks/s` may remain because
+   the engine is still resolving stacked solid bodies, but `unicos` must be
+   bounded to at most one resolution per pair/tic and custom allocations must
+   no longer scale with callbacks.
+
+Validated Seal effects/formulas and crafting behavior are unchanged.
+
+## Bounded contact pressure and controlled MAP02 rooms 4.29.0a
+
+**Implemented — pending controlled GZDoom 4.14.2 runtime matrix**
+
+The reported Quintessence cluster exposed two independent conditions. First,
+Giant Rats inherited `THRUSPECIES`, so Rat-to-Rat overlap could not generate
+the contact graph required for pressure or crushing. Second, every historical
+pair remained in both actors' arrays while its centers stayed inside a broad
+release distance, even when the engine had stopped reporting actual
+collisions. A converging `A_Chase` crowd could therefore retain increasingly
+large arrays and linearly search them on later callbacks.
+
+V4.29.0a removes Rat species pass-through and makes collision callbacks the
+authoritative liveness signal. A shared edge expires after five complete tics
+without another callback; the existing distance test remains as an additional
+release condition. Sustained contact records at most one impulse sample per
+tic, sums the real transmitted impulse for 35 tics, and converts that sum back
+to its two-body equivalent closing speed for the existing mass/anatomy/impact
+pipeline. No fixed walking speed is substituted.
+
+This correction deliberately remains a bounded pair graph. Repeated
+action/reaction impulses can propagate through adjacent edges, but the code
+does not yet solve every connected member and constraint simultaneously as a
+single aggregate-mass island. That larger solver remains conditional on the
+results below because a full component traversal could itself increase crowd
+cost.
+
+MAP02 preserves the original 15,000 passive actors and adds eight rooms. The
+north row is numbered 1–4 west to east; the south row is numbered 5–8 west to
+east. Every room uses ordinary two-sided blocking walls, an internal
+sight-breaking baffle and an invisible player-passable/monster-blocking
+threshold. All 64 linedefs have valid front sides.
+
+| Room | Population | Isolated variable |
+| --- | ---: | --- |
+| 1 | 25 Rats | `A_Look`/target acquisition only; no chase or attack |
+| 2 | 25 Rats | `A_Chase`, native solid collision, no Caelum contacts/attack |
+| 3 | 25 Rats | Same chase as Room 2 plus bounded Caelum contacts |
+| 4 | 25 Rats | Complete current Rat AI, melee and Caelum contacts |
+| 5 | 4 Argento | Stationary shooting; projectile Death omits `A_Explode` |
+| 6 | 4 Argento | Identical stationary shooting with normal `A_Explode` |
+| 7 | 100 passive Rats | Controlled Quintessence pressure |
+| 8 | 500 passive Rats | Larger Quintessence pressure and cancellation load |
+
+The MAP02 monitor writes two `[CA-PHYS]` console lines each second: actor and
+target totals, live projectile count, approximate shared contact edges,
+maximum contacts held by one actor, collision callbacks per second, and
+created/removed contact references. The original passive field is expected to
+keep `objetivos=0` and contribute no contacts until physically disturbed.
+
+Manual validation must run each room from a fresh `map map02` load:
+
+1. Record the untouched baseline for ten seconds; contacts and projectiles
+   should remain zero and controls must be responsive.
+2. Enter Room 1 and wait thirty seconds. If this alone freezes, investigate
+   target acquisition/base actor Tick rather than movement or collisions.
+3. Repeat separately in Rooms 2 and 3. Room 2 must report zero Caelum contacts;
+   any large regression appearing only in Room 3 identifies the custom graph.
+4. In Room 4, let all Rats converge, then run directly into the cluster from
+   several angles. Verify mass-dependent displacement, pressure damage along
+   contacted neighbors, and bounded `max/actor` rather than historical growth.
+5. Compare Rooms 5 and 6 for thirty seconds each. A regression unique to Room
+   6 isolates explosion/status/area-contact churn from perception and firing.
+6. In Rooms 7 and 8, channel Quintessence for five seconds while centered,
+   cancel it manually, and record affected count, cancellation response,
+   contact peak, `max/actor`, deaths and recovery. Rat-to-Rat contacts and
+   some pressure damage are now expected; complete overlap without contact is
+   not.
+7. Repeat the worst room three times from a fresh map and compare the same
+   baseline. If performance degrades while live contacts/projectiles return to
+   baseline, inspect allocation/GC or engine caches; if the counters remain
+   elevated, inspect the corresponding logical subsystem first.
+
+MAP01, all author-validated Seal effects and crafting behavior are unchanged.
+The V4.29 crafting roadmap remains authorized but receives no recipe-content
+change in this diagnostic patch.
+
+## MAP01 safe rollback and V4.29 authorization 4.28.0bp
+
+**Seal track validated; MAP01 parallel; V4.29 authorized**
+
+- The author validated Fire, Earth, Air, Water and Quintessence Seal behavior,
+  including the corrected element binding, mass response and gravity handling.
+- V4.28 Seal mechanics are accepted. Weather extensions remain deferred to
+  the Version 5 calendar/weather module as planned.
+- The V4.28.0bo MAP01 geometry is rejected because GZDoom's node builder
+  reported linedefs 569–590 without usable front sides.
+- MAP01 is restored byte-for-byte to the loadable V4.28.0bn version and no
+  longer blocks major-version progression. Its large-room reconstruction is a
+  parallel architecture task.
+- Material and special-item HUD isolation is retained and awaits a short
+  pickup regression test.
+- The complete V4.27 input matrix is deferred by author decision until the
+  crafting system is complete.
+- V4.29 Crafting Completion and Persistent Recipe Book may now begin.
+
+## Geometry-native first-floor rooms and material HUD isolation 4.28.0bo
+
+**Rejected — invalid GZDoom node-builder result; superseded by 4.28.0bp**
+
+- Both mirrored central first-floor modules in MAP01 are now large rectangular
+  rooms built from UDMF geometry, without finite wall actors.
+- Each room has one centered door in its left wall, one in its right wall and
+  one in the central dividing wall.
+- The two former front entrances are closed with the standard wall sector.
+- Coincident internal linedefs were removed during consolidation to prevent
+  duplicated faces and z-fighting.
+- `CaelumSpecialInventoryItem` is excluded from the native inventory bar, so
+  materials and key/special items cannot replace the player face.
+- Consumables and ammunition remain available through their independent
+  native-bar definitions.
+- Bull sprites, Seal effects and MAP02 are unchanged.
+
+Pending runtime validation: inspect all wall faces and three doors from both
+sides, confirm correct door collision/opening, and collect several material
+types while watching the player face.
+
+## MAP01 wall orientation, equipment HUD isolation and Bull sprites 4.28.0bn
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+- MAP01 contains the four valid finite wall panels at `x=368`, angle 90, and
+  no angle-0 perpendicular finite wall panels.
+- `CaelumEquipmentItem` is excluded from the native inventory bar, covering
+  weapons, armor, shields, amulets and Seals through their common base class.
+- Consumables remain available through their independent native inventory
+  class and `INVBAR` flag.
+- Bull rear Charge frames `BULLF5` and `BULLG5` now show the authored rear
+  views.
+- Bull Death frames `BULLI0` through `BULLN0` use transparent 96x64 PNGs; the
+  final frame has a complete head and no duplicated or clipped face.
+- MAP02 remains unchanged with 15,000 passive stress actors.
+
+Pending runtime validation: confirm the intended walls from both sides in
+MAP01, verify that no custom equipment pickup replaces the player face, and
+check Bull rear Charge rotation and Death offsets in motion.
+
+## Mass-resisted Seals and elevated Quintessence epicenter 4.28.0bm
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Quintessence now centers its sphere 160 map units above the player: exactly
+five meters at the established 32-units-per-meter development scale. Targets
+therefore converge overhead instead of through the owner's collision volume.
+Continuous attraction and Air's clockwise tangential/vertical acceleration
+divide the applied force by each target's authoritative mass. The existing
+Quintessence release formula remains `10 × trapped mass / expelled mass`.
+
+Earth channeling no longer calls either Freeze or Dazzle. Poison remains its
+only elemental status and visual, while a new presentation-independent Earth
+penalty preserves the radial reduction of movement and accuracy: 100% at the
+center, 50% at half radius and 0% at the boundary. Actual Ice attacks continue
+to own Freeze and its visual exclusively.
+
+Seal pickups no longer participate in GZDoom's native inventory bar. Caelum's
+own inventory and equipment system remains authoritative, and collecting a
+Seal cannot replace the native HUD face with that Seal's icon.
+
+Validation focus:
+
+1. Channel Quintessence among a crowd and confirm targets gather overhead
+   without crossing and collision-killing the player.
+2. Compare a Giant Rat and Bull under Air and Quintessence; the Bull must
+   accelerate substantially less because of its greater mass.
+3. Channel Earth and confirm Poison plus radial statistic reduction with no
+   Freeze state, frozen visual or Ice presentation.
+4. Collect all five Seals and confirm the player face remains unchanged.
+
+## MAP01 panel rollback and authoritative Seal binding 4.28.0bl
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The bilateral visual reconstruction from `4.28.0bk` is reverted. MAP01 no
+longer places any of its eight `CaelumFiniteWallPanel` actors, including the
+interior wall indicated in the supplied screenshot and the panels adjoining
+the entrances. They are deliberately open rather than covered by another
+actor-wall experiment. Sliding doors again have one visual leaf, eliminating
+the second coincident-looking texture introduced in the previous patch.
+
+Seal channel actors now retain the exact Seal inventory object that created
+them. Every tic validates that this object is still the equipped Seal and
+reads the effect type from it; unequipping or replacing it destroys the old
+channel. The HUD selection and the applied element can therefore no longer
+diverge through a surviving Fire channel actor.
+
+MAP02 is unchanged from `4.28.0bk`: 15,000 passive, solid and damageable stress
+actors with no target acquisition, chase, facing or attack calls.
+
+Validation focus:
+
+1. View and operate MAP01 doors from both sides; each leaf must show one
+   texture, with no doubled rear leaf.
+2. Inspect the eight removed panel positions; they must be empty and must not
+   retain an invisible collision wall.
+3. Channel Fire, stop, equip each other Seal and channel again. The applied
+   mechanic must always match the equipped element shown by the HUD.
+4. Confirm MAP02 retains 15,000 passive actors and its validated responsiveness.
+
+## Rebuilt bilateral walls/doors and passive stress population 4.28.0bk
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The first-floor actor walls no longer place their reverse visuals at a fixed
+diagonal offset. Each back panel is reconstructed from its master's actual
+orientation, positioned 0.5 MU along the local normal and rotated 180 degrees.
+Sliding doors now use the same two-visual representation: one master front
+leaf owns the existing collision/blockers and a synchronized non-solid rear
+leaf follows every opening and closing movement.
+
+MAP02 now uses six passive stress subclasses. All 15,000 actors retain their
+normal profiles, mass, radius, height, solidity, anatomy, elemental response,
+Pain and Death states, but Spawn/See/Melee/Missile contain no `A_Look`,
+`A_Chase`, target facing, charge or projectile/melee call. This isolates actor
+count, rendering, collision and Seal processing from AI and combat decisions.
+
+Validation focus:
+
+1. Inspect every rebuilt upper wall and door from both sides, particularly the
+   room shown in the supplied screenshot and the entrance-facing doors.
+2. Open and close each rebuilt door from either side and confirm both faces
+   move together without doubled collision.
+3. Start MAP02 and approach the entire population: no actor may acquire,
+   pursue, turn toward or attack the player or another actor.
+4. Damage representatives of all six passive types and confirm Pain, Death,
+   solidity, physics and Seal effects still operate.
+5. Compare responsiveness while viewing and entering the passive 15,000-actor
+   crowd against the previous active-AI result.
+
+## Southern tornado Seal and first-floor seam closure 4.28.0bj
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The Air Seal now adds clockwise horizontal tangent velocity and positive
+vertical velocity instead of radial expulsion. Its direction is viewed from
+above and follows the project's southern-hemisphere convention. Air and
+Quintessence record each target's original `NOGRAVITY` flag, suspend gravity
+only while that target remains affected, and restore the original value when
+the target leaves, the owner is interrupted or channeling ends normally.
+
+The Earth Seal computes Freeze and Dazzle power from distance to the channel
+center. A continuous piecewise squared curve produces exactly 100% at the
+center, 50% at half radius and 0% at the boundary. The existing 1.1-second
+refresh, poison damage, channel radius, tier costs and cooldown are unchanged.
+
+The remaining MAP01 slit shown from inside the central first-floor room was a
+terminal render seam behind the nominal 64-MU closure. The mirrored terminal
+panels at `x=368`, `y=±540`, height 136 now span 72 MU. Their 4-MU overlap at
+each endpoint closes the visible joint while retaining finite upper-floor-only
+collision and the existing first-floor topology.
+
+Validation focus:
+
+1. View the indicated central-room wall from the supplied firing position and
+   confirm no black vertical seam remains.
+2. Inspect both mirrored closures from either side and from the ground floor.
+3. Channel Air beside several masses and confirm clockwise orbit plus lift.
+4. Walk or throw a target outside Air and verify gravity resumes immediately.
+5. Repeat with Quintessence, including normal release and Pain interruption.
+6. Compare Earth targets at center, half radius and boundary for approximately
+   100%, 50% and 0% movement/accuracy penalties.
+7. Confirm MAP02 still contains and can awaken all 15,000 combatants.
+
+## Full post-island stress population 4.28.0bi
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now contains exactly 15,000 combatants: 1,000 each of Rulo, Caella,
+Ronnie, Argento and Bull, plus 10,000 Giant Rats. Every actor occupies a unique
+position on the existing 96 MU grid, and the enclosure, entrance and geometry
+remain unchanged. Contact islands, once-per-second crushing, straight explosive
+projectiles, Eloquence-derived range and the 350-tic absolute projectile
+safeguard remain unchanged.
+
+Validation focus:
+
+1. Confirm the initial chamber remains responsive before acquisition.
+2. Wake all 15,000 combatants and record the first sustained frame drop.
+3. Distinguish stable low frame rate from progressive loss of responsiveness.
+4. Continue after projectiles expire and verify whether performance recovers.
+5. Enter the central contact pile and monitor active contact count.
+
+## Range-bounded projectiles and UI-safe contact telemetry 4.28.0bf
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 returns to the previously validated population of 937 combatants: 63
+Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats. Its
+16,384×16,384 MU enclosure, dogleg entrance and actor positions are unchanged.
+
+Player and combat actors now store an array of shared `ImpactContactState`
+objects rather than one replaceable actor reference. Each state is the edge
+between two bodies; connected edges therefore form an implicit contact island.
+The state remains active until its bodies exceed the established release
+distance for five consecutive tics.
+
+An initial collision still uses `ImpactPhysics.ResolveBodies` and may apply
+ordinary collision trauma. Later collision callbacks for the same pair perform
+an allocation-free inelastic momentum transfer and cannot apply a second
+impact while contact persists. Every 35 sustained-contact tics, crushing
+resolves a synthetic collision at the pusher's current walking speed. It uses
+the existing source and receiver effective masses, contact-height interval,
+anatomy, Toughness and armor pipeline; the receiver's biological landing
+absorption is subtracted before the damage curve. There is no independent
+crushing base damage or arbitrary multiplier.
+
+Rulo, Caella, Argento and Ronnie now fire straight explosive elemental
+projectiles instead of calling `A_SeekerMissile` every tic. Their explosion
+uses the same base radius and direct-damage ratio as the player's Statuette.
+Their magical attack decision and projectile distance now share the player's
+authoritative range rule: 3,200 MU multiplied by Eloquence Type 4
+`AbilityRangePercent`. Unimpacted projectiles self-destruct as soon as they
+exhaust that distance, while 350 tics remains an absolute safeguard.
+
+The debug UI no longer calls the play-scope `GetImpactContactCount` function.
+Player `Tick` caches `ImpactContactCountForUI`, and the overlay only reads that
+numeric field, preserving GZDoom's play/UI context boundary.
+
+Validation focus:
+
+1. Confirm MAP02 loads with exactly 937 combatants and remains quiet at spawn.
+2. Wake all populations and let them collide and exchange projectiles.
+3. Run through the central pile and confirm the game remains responsive.
+4. Observe `Contacts` on the physics debug page while touching several bodies.
+5. Confirm one collision causes at most one trauma event until true separation.
+6. Confirm sustained pushing can propagate through several touching actors.
+7. Hold a heavy actor against a lighter body for several seconds and compare
+   the once-per-second Crush result with a walking-speed collision.
+8. Confirm NPC projectiles fly straight, explode on impact and disappear after
+   ten seconds when they miss.
+
+## Wall reverse rendering and texture-package validation 4.28.0az
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The repeated first-floor slit persisted because `CaelumFiniteWallBackPanel` used `NOINTERACTION`. The reverse actor therefore failed to remain available to the sector renderer. It now remains render-linked while `NOBLOCKMAP`, absence of `SOLID`, `CANNOTPUSH` and `DONTTHRUST` keep it outside collision and Impact Physics. Front and rear visuals remain separated by 0.25 MU to avoid coplanar depth rejection.
+
+Font directories use kerning `-4` and one additional pixel of `SpaceWidth`. One transparent right column was also removed from every glyph, so template fonts created by `FONTDEFS` receive the same one-pixel tightening even when they do not consume `font.inf`. `FONTDEFS` now carries the matching larger word spaces. The five classic main-menu actions are patch graphics rather than live text, so `M_NGAME`, `M_OPTION`, `M_LOADG`, `M_SAVEG` and `M_QUITG` are replaced by CaelumText-rendered Spanish labels.
+
+The supplied startup log identifies `sprites/caelum/weapons/` as invalid texture data. The existing development archives contain explicit zero-byte ZIP directory records in texture namespaces, while all 3,166 PNG files decode successfully and have positive dimensions. `tools/build_pk3.py` packages files only, validates PNG headers and dimensions, rejects every empty source file, verifies the ZIP and atomically replaces the output. This directly removes the only invalid texture resource exposed by the log and addresses the later `Trying to create zero size texture` fatal at its concrete package-level source.
+
+Manual validation:
+
+1. Build exclusively with `python tools/build_pk3.py src build/caelum_argenteum_dev.pk3`.
+2. Confirm startup no longer prints `Invalid data encountered for texture`.
+3. Inspect the central first-floor wall from both directions.
+4. Verify spacing in HUD, options and the main-menu labels.
+5. Repeat the 937-actor projectile test. If the fatal recurs, preserve the new log and crash stack because no zero-sized package entry should remain.
+
+## Closed connector ends and 937-actor stress step 4.28.0ay
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The black vertical strip visible through the central first-floor rooms belongs to the old 64-MU connector band between the two equal rooms. Its front and rear ends remained visually open. Four new 64-MU finite panels now close those ends at coordinates `x=368`, `y=±196/±540`, height 136. Each is a single smooth wall section using the existing finite-wall renderer and collision, so the closure does not extend infinitely through the ground floor.
+
+Letter kerning remains `-3`. Only `SpaceWidth` increases by two pixels in every family, making word boundaries clearer without reopening the spacing between individual letters. The Debug profile remains unchanged at twelve attributes of 90.
+
+MAP02 retains its 17 vertices, 17 linedefs, 17 sidedefs, one sector and original enclosure. Its new total is exactly 937 stress actors: 63 Rulo, 63 Caella, 62 Ronnie, 62 Argento, 62 Bulls and 625 Giant Rats, plus the player start. The two equal fractional remainders were assigned deterministically to Rulo and Caella.
+
+Manual validation:
+
+1. Stand at the position shown in the supplied screenshot and verify that neither end of the obsolete connector reveals the map background.
+2. Inspect the same four closures from the opposite side and from the ground floor.
+3. Confirm menu and HUD word spacing while individual letter spacing remains unchanged.
+4. Wake all 937 MAP02 actors and note whether projectile activity still causes a freeze.
+
+## Exact wall spans and 1,875-actor stress step 4.28.0ax
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor finite wall panels previously covered 136 MU each, leaving 4-MU slits at the exterior endpoints. They now use exact 140-MU spans. Their centers move from ±268/±468 to ±266/±470, producing continuous ranges 196–336 and 400–540 on both wings while preserving the 64-MU central doorway from 336 to 400. No extra overlapping panel or collision layer is introduced.
+
+Every bitmap family now uses kerning `-3`; `SpaceWidth` remains unchanged. The Debug creation profile's central attribute constant is 90, so all twelve attributes are reset to exactly 90 after equipment bonuses whenever the Debug profile is applied or recalculated.
+
+MAP02 retains the 17 vertices, 17 linedefs, 17 sidedefs, one sector and original 16,384×16,384 MU stress enclosure. Its population is now 125 Rulo, 125 Caella, 125 Ronnie, 125 Argento, 125 Bulls and 1,250 Giant Rats: 1,875 test actors plus the player start.
+
+Manual validation:
+
+1. Inspect the four endpoints of both central wall dividers from inside and outside.
+2. Verify both 64-MU internal door openings remain unobstructed.
+3. Check menu, options, console and HUD letter spacing without losing word separation.
+4. Create a Debug character and confirm all twelve attributes read 90.
+5. Wake all 1,875 MAP02 actors and record whether the engine freezes or remains responsive.
+
+## Direct transition and 3,750-actor stress step 4.28.0aw
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 now uses `nointermission`, bypassing Doom's inherited completion statistics and moving directly to MAP02. This is provisional: a future Caelum intermission may report project-specific information such as elapsed time, exploration, objectives, casualties and resource use.
+
+Typography keeps the validated size and contrast from 4.28.0av, but all letter pairs use kerning `-2` instead of `-1`; `SpaceWidth` remains unchanged so word separation stays visibly greater than letter separation. The native main menu remains intact and its title uses the higher-resolution `CAMLOGO` through `hires/M_DOOM.png`, retaining the original 132×65 logical footprint so it cannot overlap the options.
+
+The central-room reverse wall face no longer occupies exactly the same rendering plane as its forward face. It is offset by 0.25 MU in X and Y, which is visually negligible but prevents coplanar depth rejection. Collision remains exclusively on the master panel and its blockers.
+
+MAP02 preserves its entire enclosure and reduces each population exactly by half: 250 Rulo, 250 Caella, 250 Ronnie, 250 Argento, 250 Bulls and 2,500 Giant Rats. The result contains 3,750 stress actors plus the player start.
+
+Manual validation:
+
+1. Confirm MAP01 Exit reaches MAP02 without showing Doom statistics.
+2. Check that letters are tighter while spaces between words remain clear.
+3. Inspect every central finite wall from both sides and confirm one collision surface.
+4. Verify the larger menu logo does not overlap selectable items.
+5. Wake all 3,750 MAP02 actors and record whether the engine freezes or remains responsive.
+
+## Native-menu recovery and legibility pass 4.28.0av
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The 4.28.0au `ListMenu "MainMenu"` declaration contained a logo but no selectable items. In MENUDEF, that declaration replaces the inherited menu definition rather than decorating it, so the game displayed only the logo and directional input produced sounds without a usable selection. The override has been removed. `M_DOOM` continues to provide the Caelum logo, while GZDoom supplies the complete native menu structure and actions.
+
+The bitmap families retain their fixed cell height and shared baseline. Ordinary serif and monospaced roles increase by one point and gain a dark one-pixel outline behind a bright translated foreground. Large/intermission roles decrease from 15 to 12 points to correct the oversized MAP01 completion presentation.
+
+Manual validation:
+
+1. Start the game and confirm that every main-menu entry is visible, selectable and functional.
+2. Check main, options, controls, video, audio and console screens for the Caelum family and adequate contrast.
+3. Verify HUD and dialogue text at the normal gameplay resolution.
+4. Finish MAP01 and confirm the intermission typography is smaller than in 4.28.0au.
+
+## Explicit menus, complete central pairs and 7,500-actor field 4.28.0au
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The main menu now has a project-owned `MENUDEF`: it draws the transparent `CAMLOGO` emblem and requests `CaelumText` directly. `FONTDEFS` explicitly rebinds `NewSmallFont`, `NewConsoleFont`, `SmallFont`, `ConsoleFont` and `BigFont`, covering the modern option menus as well as classic list menus. `GameInfo.CreditPage` points to `TITLEPIC`, so Doom II's inherited credit image no longer alternates with the project title screen.
+
+MAP01 activates the previously reserved sectors 93-95 for the south-central pair using control tags 510-512. It mirrors the validated north topology: one continuous exterior volume, two equal rooms, two independent exterior sliding doors and one door through the midpoint divider. Geometry near coordinate ±30,000 remains deliberately remote because it supplies the stacked-sector control planes used by GZDoom's 3D floors.
+
+MAP02 keeps exactly the same room, start chamber, dogleg and unique-position distribution from 4.28.0at. Only population counts change: 500 Rulo, 500 Caella, 500 Ronnie, 500 Argento, 500 Bulls and 5,000 Giant Rats. The 7,500 actors remain deaf/ambush until acquiring sight.
+
+Manual validation:
+
+1. Confirm the main menu shows `CAMLOGO`, never `M_DOOM`, and the title loop never shows Doom II credits.
+2. Open the main, settings, controls, video and audio menus and verify the Caelum typeface in every one.
+3. Inspect both central MAP01 pairs: equal floor areas, continuous exterior walls, two exterior entrances and one midpoint door per pair.
+4. Confirm the distant control geometry remains inaccessible during normal play and all first-floor surfaces remain present.
+5. Wake the 7,500 MAP02 combatants and record whether the engine remains responsive. No push/contact-island code changed in this revision.
+
+## Titanic isolated stress field and finite-wall reverse faces 4.28.0at
+
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The narrow first-floor section that was visible externally but transparent internally was the reverse side of a one-sided `WALLSPRITE`. Every finite wall panel now creates one synchronized visual reverse face. The reverse actor has no interaction and creates no collision blockers, so physical behavior remains owned solely by the original panel.
+
+Typography retains the shared-baseline cells introduced in 4.28.0as but increases each role moderately. Compact interface and monospaced families use bold faces, and all gameplay HUD labels request the engine's standard text shadow to remain readable against bright or detailed surfaces.
+
+MAP02 now contains one remote 16,384×16,384 MU enclosure with 15,000 mixed combatants: 1,000 each of Rulo, Caella, Ronnie, Argento and Bull, plus 10,000 Giant Rats. A two-turn corridor blocks every initial line of sight, and `ambush` prevents remote sounds from waking them. Initial positions are unique, reproducibly shuffled and spaced 96 MU apart.
+
+The earlier freeze has not been reproduced since remote awakening was isolated and NPC homing projectiles gained a ten-second lifetime. Infinite lost projectiles remain the leading causal candidate, but the two corrections were introduced together and therefore do not constitute a single-variable proof. An unbounded projectile population adds permanent thinkers whose seeking, movement and collision work executes every tic; a saturation freeze may leave no script error because the main loop is overloaded rather than throwing an exception.
+
+Manual validation:
+
+1. Inspect the corrected MAP01 wall from inside and outside; both faces must be opaque while collision remains single and finite.
+2. Review HUD, menus, character creation and console for baseline, size and contrast.
+3. Start MAP02 and remain in the initial chamber; no combatant may see, hear or attack the player.
+4. Traverse the dogleg and enter the single enclosure; verify all six populations are interspersed rather than stacked.
+5. Record frame rate, responsiveness, actor activation time and whether finite-lifetime projectiles disappear. With 15,000 active AI actors, severe slowdown may represent an engine capacity limit rather than the former unbounded-growth defect.
+
+## Corrected north-pair entrances and font metrics 4.28.0as
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The first 4.28.0ar room placement incorrectly aligned the midpoint divider with the only newly closed exterior gap. V4.28.0as closes that central opening as wall and restores both original 64-MU entrance positions. Each of the two equal rooms now has one exterior single-leaf sliding door, while the midpoint wall retains a third single-leaf door for internal communication.
+
+The original supplied glyph PNGs were tightly cropped to different heights. GZDoom draws Unicode glyph patches from a common top origin, so lowercase, capitals, accents and descenders did not share a baseline. Every family is now regenerated on fixed-height transparent cells with one baseline. The classic HUD/console family is reduced to 10 pixels, `CaelumMono` is requested explicitly by both project overlays, and the modern engine aliases are supplied for menus and the console.
+
+Manual validation:
+
+1. Confirm each north-central room has its own exterior sliding entrance.
+2. Confirm the central exterior face is solid and the midpoint divider does not intersect either entrance.
+3. Open and close both exterior doors and the internal door from both sides.
+4. Check that capitals, lowercase letters, accents and descenders share one baseline in HUD and character creation.
+5. Confirm the HUD fits around every bar and that menus and console visibly use the new family.
+
+## North-central room prototype and typography 4.28.0ar
+
+**Implemented — pending manual GZDoom 4.14.2 architectural/font validation**
+
+The 4.28.0aq interpretation of the central rooms is superseded. The north-central pair is now one continuous 336×336 MU exterior body. A finite wall at its exact midpoint divides it into two equal 168×336 MU rooms and contains one 64-MU single-leaf lateral door. There is no connector room or narrow passage between them. Only this pair is active; the mirrored south pair and lateral rooms remain neutral until the prototype passes manual validation.
+
+The supplied font package is merged into the main PK3. Standard GZDoom font names are replaced globally, while the named Caelum variants remain available for later role-specific ZScript and MENUDEF use. Coverage includes printable ASCII, Latin-1 and Spanish punctuation. The supplied guide is stored as `docs/TYPOGRAPHY.md`, and the DejaVu redistribution notice is included under `licenses/DejaVu-copyright.txt`.
+
+The complete MAP02 stress sequence passed: sound did not wake unopened rooms; Bulls crowded and collided; Caella, Argento, Rulo and Ronnie were introduced sequentially; Giant Rats were killed through impacts; and the surviving actors fought centrally without freezing. The 4.28.0aq containment is therefore validated. Contact-island physics remains a planned robustness improvement rather than the current reproduced cause of the freeze.
+
+Manual validation:
+
+1. Inspect the north-central pair from every exterior side: it must read as one large rectangular room volume.
+2. Confirm the interior consists of exactly two equal rooms separated by one wall and one sliding door, with no intermediate passage.
+3. Check floor, ceiling and outer walls from both floors and verify the stair landing remains clear.
+4. Review main menu, character creation, HUD, inventory, console and debug overlay at 640×360 and 320×200 for missing accented glyphs or unreadable sizes.
+5. After approval, reflect this exact room topology into the south-central pair.
+
+## Central rooms, authored music and bounded MAP02 projectiles 4.28.0aq
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The four central first-floor rooms in MAP01 again target the existing native 3D-floor controls: the two 64×64 links use floor/roof tag 510, their walls use tag 511 and their door/threshold regions use tag 512. This repairs the reported holes, irregular floor and absent walls without placing actor panels over the stair landing.
+
+The title screen and MAP01 use `CA_MUS01`; MAP02 uses `CA_MUS02`. The embedded files identify the work as `The Argentine Omen` and the artist as `marjaja197` (metadata also notes creation with Suno).
+
+The latest freeze sequence exposed two test-contamination risks. Because all MAP02 populations share a connected sound region, one pistol shot could alert actors outside the room being tested. Every test actor is now marked ambush/deaf and therefore ignores remote sound until it sees the player. NPC homing elemental projectiles also had an unbounded one-tic `Spawn` loop; each now self-destructs after 350 tics (ten seconds) if it has not impacted first. This patch does not yet replace the one-reference contact latch with contact islands.
+
+Manual validation:
+
+1. Inspect all four central MAP01 rooms from above and below: continuous floor, regular roof, complete walls and a clear stair landing.
+2. Confirm `01` plays on the title screen and MAP01, while `02` plays on MAP02.
+3. Fire inside one MAP02 room and confirm actors in unopened rooms remain asleep.
+4. Wake Caella, Argento, Rulo and Ronnie populations individually and verify lost projectiles disappear within ten seconds.
+5. Repeat the previous multi-group sequence; if it still freezes, record which populations are simultaneously visible/contacting so the contact-island implementation can be scoped.
+
+## Rat room restoration, title screen and freeze diagnosis 4.28.0ap
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP02 now has a seventh isolated room containing twenty Giant Rats. Its dedicated zigzag corridor blocks every initial sight line, as do the six previous rooms. Total population is 140 test actors: twenty each of Training Dummy, Rulo, Argento, Caella, Ronnie, Bull and Giant Rat, plus one player start.
+
+The author-supplied 1920×1080 presentation image is registered explicitly as `TITLEPIC` through MAPINFO and stored in the graphics namespace.
+
+The inventory is no longer a supported freeze hypothesis because the failure reproduced without opening it. Actor count alone is also insufficient: ranged NPC crowds and the initial Bull pile remained responsive. The strongest code-level hypothesis is the single-reference contact latch. Every body stores only one `ImpactContactActor`; in a dense moving pile, new contacts overwrite older references. Once both members of an older pair point elsewhere, that still-touching pair is treated as new and allocates two `ImpactBody` objects plus one `ImpactResult`, resolves another impulse and may overwrite more links. Bull pursuit, charge mass and a narrow corridor continuously rearrange neighbors, creating a feedback loop capable of producing allocation and impulse churn.
+
+No physics change is included in 4.28.0ap. The next physics correction should replace the one-contact pointer with bounded multi-contact or island state, retain separation-based rearming and avoid per-contact heap allocation during collision callbacks.
+
+Manual validation:
+
+1. Confirm the new title screen appears before starting a game.
+2. Enter only the Giant Rat room and repeat the prior twenty-rat tests.
+3. Reproduce the Bull sequence: enter, allow crowding, leave, then approach the corridor again.
+4. Do not mix groups during the reproduction; record whether the freeze occurs while Bulls contact one another, a wall or the player.
+5. Confirm the other six rooms remain initially unaware of the player.
+
+## Compartmentalized large-scale MAP02 4.28.0ao
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The unapplied 4.28.0an package is superseded. Sewer source assets now follow the Windows-safe project order `src/graphics/caelum/textures/sewer`; the patch does not create a directory beside the root `TEXTURES` file.
+
+MAP02 is now a large connected field with a central empty start and six distant rooms connected through two-turn corridors. It contains no Giant Rats. Each room contains twenty instances of exactly one test type: Training Dummy, Rulo, Argento, Caella, Ronnie or Bull. All 120 test actors begin behind native sight-blocking walls and have no direct line of sight to the player start.
+
+MAP01.wad remains byte-identical to 4.28.0al/4.28.0am. MAPINFO assigns MAP02 as its next map so the existing normal Exit advances to the separate actor field.
+
+The loose `CAF*` and `STF*` graphics are native status-face lumps selected by name. Files in the graphics namespace do not become inventory actors, and no face file is referenced by the equipment catalogue. The reported appearance of faces as equipable items therefore remains open for reproduction and must not be treated as a folder-placement fix.
+
+Manual validation:
+
+1. Start MAP02 and remain in the central chamber; confirm no actor attacks or acquires the player immediately.
+2. Enter one room at a time and verify its population remains isolated from the other five groups.
+3. Stress-test twenty actors of one type before opening a second room or using area effects.
+4. Confirm there are no Giant Rats anywhere in MAP02.
+5. Test MAP01's existing Exit and confirm it changes to MAP02.
+6. If a face appears as equipment, record its inventory category, displayed name and icon before changing face assets.
+
+## Separate architecture and actor maps 4.28.0am
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 is now the architecture-only mansion test and remains byte-identical to its stable 4.28.0al state. MAP02 is a new independent actor arena built from one flat sector, four ordinary outer boundaries and no mansion or actor-based architecture.
+
+MAP02 contains one player start, four Training Dummies, the four elemental NPCs, one Bull and twenty active Giant Rats. The groups begin separated so AI acquisition, collisions, inventory behavior, Seal effects and mass attacks can be observed without 3D-floor or sliding-door interactions.
+
+Manual validation:
+
+1. Load MAP01 and confirm its architecture-only stability remains unchanged.
+2. Enter `map map02` in the console and remain stationary while the active actors acquire targets.
+3. Test `noclip`, inventory, rat contacts, the Bull and area attacks independently.
+4. Do not recombine actors with MAP01 until both maps remain stable separately.
+
+## Actor-free architecture diagnostic 4.28.0al
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The freeze also occurred while native `noclip` was active, so physical contact is no longer the primary hypothesis. MAP01 temporarily contains no monster, NPC or Training Dummy. The twenty Giant Rats, Bull, Rulo, Argento, Caella, Ronnie and four dummies are absent. The barred enclosures introduced only for 4.28.0ak are also removed.
+
+The current first-floor room pair, ground-floor ceiling slabs, stairs, landing, doors, pickups and crafting infrastructure remain unchanged. This isolates the map architecture and non-combat world actors without modifying Impact Physics or gameplay code.
+
+Manual validation:
+
+1. Remain at the player start for several minutes.
+2. Traverse the ground floor, stairs, landing and both implemented upper rooms with and without `noclip`.
+3. Open the inventory in several areas.
+4. If the freeze remains, remove the current upper-room pair for a direct architectural comparison.
+
+## Isolated collision test enclosures 4.28.0ak
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The Bull previously stood inside the approximately twenty-rat group and could push many bodies simultaneously, preventing a clean distinction between player/rat crowd contacts and Bull-driven displacement. MAP01 now has two closed, non-adjacent barred enclosures. All twenty normal active Giant Rats remain together in the western enclosure; the Bull is centered in a separate eastern enclosure. The bars block players and monsters while preserving visibility.
+
+No collision formula or latch behavior changes in this diagnostic patch. The observed `noclip` result points to physical contact, but remains provisional until the two groups are tested independently.
+
+Manual validation:
+
+1. Remain outside both enclosures and confirm the Bull cannot touch or push any rat.
+2. Enter only the rat enclosure with `noclip`, disable it inside and test the complete crowd without Bull interference.
+3. Enter the Bull enclosure separately and test one Bull/player collision.
+4. Confirm both barred contours remain closed and neither actor group escapes.
+
+## Bilateral multi-contact latch for actor crowds 4.28.0aj
+
+**Implemented — pending manual GZDoom 4.14.2 stress validation**
+
+The stationary-rat test still froze after physical contact, disproving both AI load and ordinary actor count as the root cause. Impact Physics stored only one `ImpactContactActor` on each body. When a player contacted several rats, the player's pointer moved to the newest rat while earlier rats still pointed to the player. The player-side test then treated those older pairs as new every tic and repeatedly allocated `ImpactBody`, `ImpactBody` and `ImpactResult` objects.
+
+Player and combat actors now treat a pair as latched when either side still references the other. This preserves the existing separation/rearm rule while preventing repeated allocation and impulse delivery for simultaneous crowd contacts. The twenty MAP01 actors are restored to the normal pursuing `CaelumGiantRat`; the diagnostic stationary subclass and DoomEdNum 18030 are removed.
+
+Manual validation:
+
+1. Remain near the complete active rat group for at least two minutes.
+2. Let the group surround and physically push against the player.
+3. Walk through the group repeatedly and open inventory while surrounded.
+4. Confirm each rat still pursues and bites for base damage 60.
+5. Confirm a separated rat can collide again after the established contact-rearm interval.
+
+## Stable twenty-target Giant Rat area test 4.28.0ai
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The freeze is confirmed to occur without opening inventory when the complete rat group enters its simultaneous `A_Look`/`A_Chase` range. MAP01 now uses `CaelumGiantRatAreaTest` for its twenty-target cluster. This subclass retains the Giant Rat body, mass 10, combat profile, quadruped anatomy, elemental statuses, Pain and Death, but deliberately has no target acquisition, chase or melee state.
+
+The normal `CaelumGiantRat` remains available as the actual enemy with chase and base bite damage 60. The stationary test subclass exists only to make Fire, Earth, Air, Water, Quintessence and other mass attacks reproducible without mixing the measurement with twenty concurrent AI routes.
+
+Manual validation:
+
+1. Approach and circle the complete group without a freeze.
+2. Open inventory beside the group.
+3. Apply each Seal effect and confirm all authorized targets respond.
+4. Confirm Pain and Death function and Quintaesencia still uses each rat's mass 10.
+5. Spawn a normal `CaelumGiantRat` separately and confirm it still chases and bites for base 60.
+
+## Ground-floor ceiling restoration and Giant Rat crowd fix 4.28.0ah
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+Native 3D-floor slabs again cover the eight actual room footprints, restoring the ground-floor ceilings and reserving the future first-floor walking surfaces. The two obsolete 64×64 central connectors remain untagged, so no slab or collision crosses the central corridor. Upper walls and doors remain limited to the manually accepted western pair from 4.28.0ag.
+
+Opening the custom inventory does not enumerate nearby actors, but it immobilizes the player while the simulation continues. The approximately twenty test rats could therefore converge into one same-species collision pile. Giant Rats now use `THRUSPECIES`: they continue colliding with and attacking the player while passing through other Giant Rats. Mass, bite damage, targeting and elemental-area eligibility are unchanged.
+
+Manual validation:
+
+1. Inspect every ground-floor room ceiling and confirm its footprint matches the room above it.
+2. Cross beneath the central corridor; confirm both former 64×64 connector slabs are absent.
+3. Approach the full rat group and open/close inventory repeatedly while they converge.
+4. Confirm rats still attack and collide with the player but no longer block one another.
+
+## Incremental first-floor rebuild: pair 1 4.28.0ag
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The complete actor-surface first floor from 4.28.0ae is rejected after a runtime freeze while the player crossed beneath its central elevated span. All upper finite floor, roof and wall panels are removed. Native 3D-floor controls now target only the two western rooms, one per wing; every other former upper polygon is assigned to an untagged neutral sector and therefore creates no upper volume.
+
+Only four upper sliding leaves remain: the two exterior doors of the western north/south pair. The central corridor contains no upper actor bridge or blocker grid. Ground-floor geometry, doors, lintel, Seal systems and the approximately twenty Giant Rats are unchanged.
+
+Manual validation:
+
+1. Cross the entire central corridor and the stair landing repeatedly without a freeze or pause.
+2. Inspect both western upper rooms from below, inside and above.
+3. Confirm each room has a continuous floor and correctly oriented roof.
+4. Open both double doors from each side and confirm both leaves slide laterally.
+5. Confirm no wall, collision or invisible floor belonging to the other six rooms remains.
+
+## GZDoom 4.14.2 elemental-visual compatibility 4.28.0af
+
+**Implemented — pending parser and manual gameplay validation**
+
+The elemental-status visual helper now receives a typed `class<Actor>` and calls the native static factory as `Actor.Spawn`. This replaces the object-scope call that GZDoom 4.14.2 rejected at `CaelumElementalStatus.zs:192`. No elemental damage, duration, target filtering or balance value changes in this compatibility patch.
+
+Manual validation:
+
+1. Confirm the PK3 parses and MAP01 starts in GZDoom 4.14.2.
+2. Apply burn, poison, freeze and lightning and confirm the attached effects follow their owner and disappear with the status.
+3. Confirm horizontal lightning projectiles and vertical Water-channel strikes retain their correct orientation.
+
+## Seal Channel, Giant Rat tests and first-floor rebuild 4.28.0ae
+
+**Implemented — parser correction supplied in 4.28.0af; manual GZDoom 4.14.2 validation pending**
+
+User2 now starts the area effect defined by the equipped Seal and a second press interrupts it. Channeling spends exactly 3/6/9 Adrenaline each 35-Hz tic for T1/T2/T3, cannot begin without the first tic's cost, and starts a 60-second cooldown whenever it ends. Pain, death, losing/changing the Seal or reaching insufficient Adrenaline also ends it.
+
+The player is stationary and cannot attack, Block, Aim, Reload, charge, cast, use consumables, Tarot, racial or class abilities while channeling. Fire, Earth, Air, Water and Quintessence have their authored non-weather effects. The area selector accepts living combatants of every allegiance, neutral NPCs, corpses and missiles; it does not accept inventory, pickups, stations, doors or map architecture.
+
+Manual validation:
+
+1. Equip each Seal tier and confirm exact consumption of 105/210/315 Adrenaline over one second.
+2. Confirm User2 starts/stops the effect and every termination path starts a 60-second cooldown.
+3. Confirm movement, attacks, Reload/charge, Zoom/Block, AltFire, User1, User3, User4, Use and consumables are suppressed.
+4. Confirm Pain, death, zero Adrenaline, unequipping or changing the Seal interrupts immediately.
+5. Test each elemental effect against enemies, allies, neutral NPCs, corpses and projectiles; verify pickups, doors and stations remain untouched.
+6. For Water, place 1/2/4 actors inside the impact area and confirm the modified 10,000 pool is divided once across them.
+7. For Quintaesencia, compare actors of different mass and verify release follows `10 × total trapped mass / individual mass`.
+
+Climate modifiers by Seal tier are intentionally pending the Version 5 calendar/weather module.
+
+The Seal HUD identifies the equipped element/tier, active channel and remaining cooldown. The development Adrenaline control adds 100 Adrenaline and removes 10 seconds from the Seal cooldown. MAP01 contains approximately twenty Giant Rats for mass-area testing; each rat uses quadruped anatomy, mass 10, approximately 40 cm height, all twelve attributes at 1 and base bite damage 60.
+
+The first floor is an experimental full-wing rebuild with four similarly sized rooms per wing, one internal connection per adjacent pair and a clear stair-landing corridor. Original 3D-floor room-floor/roof controls were restored, finite bridge surfaces remain only where a real span is required, and door leaves choose their lateral axis from doorway orientation. Manual validation of floor continuity, roof orientation, lateral door travel and landing clearance remains mandatory.
+
+## Stair-back closures, contextual Block dash and Giant Gauntlets AltFire 4.27.0g
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The two north and two south gaps behind the intermediate staircase pairs are each closed by an independent conventional sector. Every strip is eight map units deep, has a 136-MU walkable floor and is aligned with the established room-back plane at `y=±640`; no free-standing middle texture or self-referencing sector is used. The four arena perimeter walls now display the large weathered cobblestone atlas crop `CMWV01`.
+
+Mansion PNGs now live under `graphics/caelum/textures/mansion`. This avoids the case-insensitive Windows collision between the root `TEXTURES` lump file and a sibling `textures` directory while retaining engine-visible eight-character resource names.
+
+The jewelry failure was a presentation-state reset: crafting instantiated `CaelumSealPickup` or `CaelumAmuletPickup`, but opening the equipment menu immediately replaced the selection with Armor/head. The menu now synchronizes armor fields only when Armor is the selected family, so a newly crafted Seal or Amulet remains visible and selectable.
+
+Giant Gauntlets AltFire uses the same catalogue damage, reach and Air cost as Fire. A successful damaging uppercut applies the normal horizontal physical push and adds that calculated push force to vertical velocity; it therefore continues to respect the attacker's push multiplier and the target's effective mass instead of introducing an unrelated launch constant.
+
+When Zoom begins a valid shield Block while the next attack is charged, horizontal velocity is set forward to 150% of the character's live maximum run speed. Attribute and elemental movement multipliers are read at activation; Pain/immobilization prevents the dash. The charged state is not consumed, because it remains attached to the next attack.
+
+Manual validation:
+
+1. Inspect and cross all four intermediate stair-back strips from ground, stair and roof level; confirm no side or upper plane escapes.
+2. Confirm all four outer perimeter walls use the large cobblestone and room interiors retain their current material.
+3. Craft a Seal and an Amulet separately, reopen equipment and verify the proper family/icon instead of Armor/head.
+4. Compare Giant Gauntlets Fire/AltFire range, Air and damage, then confirm only AltFire launches a living target upward.
+5. Charge a compatible melee or magic weapon, press Zoom with a shield equipped and confirm Block plus one forward 150%-maximum-speed impulse; confirm the next attack still consumes the charge.
+
+MAP01 structure: 198 vertices, 264 linedefs, 520 sidedefs, 76 sectors and 186 things.
+
+## Charge HUD, jewelry selection, rear-wall faces and mansion textures 4.27.0f
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The combat HUD now displays `Charging: N.Ns` during the speed-scaled preparation and `Charged/Potenciador: N.Ns` during the three-second empowered window. The value reads the authoritative state timer rather than estimating it from animation frames.
+
+Amulet and Seal crafting already spawned the correct native subclasses. The apparent helmet result came from the equipment menu always reopening on its default armor/head selection. Successful jewelry crafting now selects the created kind, type and tier before refreshing the inventory preview.
+
+The two rear structural strips retain their closed 8-MU geometry and lower `STARTAN3` faces. Their new closure sidedefs no longer carry middle textures, removing the duplicate patches rendered above the intended wall height.
+
+The author-supplied 1536×1024 mansion atlas was separated into 81 engine-ready PNG resources, subsequently relocated in 4.27.0g to `graphics/caelum/textures/mansion` for Windows compatibility. Every filename is an eight-character map-texture identifier.
+
+Manual validation:
+
+1. Inspect both restored rear walls from ground and roof level; confirm no wall patch floats above them.
+2. Charge a melee and magical weapon while stationary and moving; confirm the countdown follows actual progress.
+3. Let the charge complete and confirm the potentiator countdown begins at three seconds and disappears on attack, Pain, switch or expiry.
+4. Craft one amulet and one seal; open inventory and confirm each created item is selected instead of a helmet.
+5. Inspect the `CMEX`, `CMIN`, `CMST`, `CMWD`, `CMRF`, `CMGR`, `CMPW`, `CMPF` and `CMWA` families in SLADE or the map editor before assigning them to production geometry.
+
+## Static charged-projectile classes 4.27.0e
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+GZDoom 4.14.2 does not expose Actor `SetSize` to ZScript. Charged standard, homing and explosive magical projectiles therefore use dedicated subclasses with `Radius`, `Height` and `Scale` fixed in each `Default` block. Attack routing selects the corresponding charged class before spawning it, retaining all parent homing, elemental, damage, durability and explosion behavior without runtime geometry mutation.
+
+## GZDoom 4.14.2 charged-projectile compatibility 4.27.0d
+
+**Implemented — pending parser confirmation in GZDoom 4.14.2**
+
+The charged magical projectile now changes collision dimensions through Actor `SetSize` and replaces the complete visual `Scale` vector. ZScript does not permit direct compound assignment to the exposed `Radius`, `Height`, `Scale.X` or `Scale.Y` values. This revision fixes the parser error at `CaelumPlayer.zs:9057` without changing the intended `sqrt(2)` linear multiplier or any 4.27.0c gameplay value.
+
+## Rear-wall restoration and contextual charged Reload 4.27.0c
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+MAP01 remains on the V4.26.5r pre-gate baseline. This patch adds only two closed, 8-MU-deep structural strips beside the rear-room door so the missing wall faces return on the stair and room sides. The four training dummies are moved laterally to `y=-900`. No main gate, connector corridor or terrace partition has been restored.
+
+Reload is now contextual. Ranged weapons retain their existing magazine reload. Melee and essence weapons begin a 2-second base charge multiplied by the current physical attack-duration or casting-duration multiplier. Moving during either reload or charge applies a 50% movement multiplier and a 50% progress multiplier. On completion, the charged state lasts 3 seconds.
+
+The next valid charged attack consumes 200% Air or Anima and inflicts 200% damage. Magical projectile collision/visual dimensions and explosion radius use a `sqrt(2)` linear multiplier, which doubles planar area. Pain, charge expiry and weapon switching remove the state. Fire/AltFire cancel an active shield Block before attacking. Empty ranged Fire automatically requests Reload if compatible inventory ammunition remains.
+
+Manual validation:
+
+1. Inspect both sides of the restored rear-room wall strips and cross the room roof without obstruction.
+2. Confirm all four training dummies stand on the lateral line and no main entrance gate exists.
+3. Time melee and magical charge at baseline attributes, then compare high physical attack speed and high casting speed.
+4. Move during ranged Reload and both charge types; confirm movement and progress are each halved only while directional input is present.
+5. Confirm Pain, weapon switching and the 3-second timeout remove the charge.
+6. Compare normal/charged Air or Anima cost, damage, projectile size and statuette explosion radius.
+7. Activate Block, press Fire and confirm Block drops while the attack continues.
+8. Empty a ranged magazine while retaining reserve ammunition and confirm Fire begins Reload automatically.
+
+MAP01 structure: 190 vertices, 248 linedefs, 488 sidedefs, 72 sectors and 186 things.
+
+## MAP01 rollback to the pre-gate baseline 4.27.0b
+
+**Implemented — pending confirmation that the crash is gone in GZDoom 4.14.2**
+
+The supplied crash report shows that GZDoom completed actor parsing, initialized MAP01 and entered gameplay before raising access violation `C0000005`. The recorded position (`x=-14.09`, `y=536.57`) lies inside the new western/northern terrace connector introduced after the stable staircase layout. This is treated as an engine-level failure triggered by the experimental map geometry rather than a ZScript compile error.
+
+MAP01 is therefore restored byte-for-byte from V4.26.5r. It contains no main corridor gate, no rear terrace connector fill and no internal terrace-partition doors. The rollback also removes every map experiment from V4.26.5s through V4.27.0a instead of attempting another local repair. Construction will resume incrementally from the aligned-room/stair baseline.
+
+Restored structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references and closed degree-2 boundaries for all 69 non-exterior sectors.
+
+V4.27 input work is not rolled back. The user has manually confirmed that held Zoom behaves correctly with a magic weapon and shield. Ranged-only Reload and User1–User4 reservation routing remain pending broader manual validation.
+
+Manual validation:
+
+1. Start MAP01 and revisit the former crash coordinates around the first north connector/stair pair.
+2. Confirm there is no main entrance gate or associated frame near the Player Start.
+3. Confirm the later terrace fills, internal divider doors and lateral black strips are absent.
+4. Verify the original eight room doors, silver-key NPC room and three aligned staircase pairs still work.
+5. Retest ranged Reload and the four User bindings separately from map construction.
+
+## Native input contract and conventional terrace partitions 4.27.0a
+
+**Superseded for MAP01 by 4.27.0b; input changes remain active**
+
+V4.27 has begun without assigning unauthored ability effects. Every physical, ranged and magic selector now exposes the complete native input contract: User1 reaches the racial-ability service hook, User2 reaches Seal Channel, User3 reaches the equipped-Tarot hook and User4 reaches the class-ability hook. Reload exclusively requests a magazine reload for ranged weapons. The four abilities remain reservation interfaces until their authored content patches; the control menu now names all four bindings in English and Spanish.
+
+Magic weapons now share the same release latch used by physical/ranged contextual Zoom. Holding Zoom therefore produces only one Block toggle until the key is released. Ranged Zoom/ADS and its physical accuracy multiplier are unchanged.
+
+The failed 4.26.5w internal-wall technique has been removed completely. Each of the four terrace connectors is now a set of seven ordinary sectors: west/east floor spaces at height 0, wall spans at 136, jambs and moving panel at 128. No self-referencing middle texture participates in the room division. This preserves three connected rooms per north/south row while preventing a wall face or 3D-floor plane from escaping laterally. The main western entrance similarly uses two continuous closed jamb polygons rather than a jamb/extension seam.
+
+Updated MAP01 structure: 252 vertices, 350 linedefs, 692 sidedefs, 103 sectors and 186 things. Static validation confirms 102 closed non-exterior sector contours, valid references, no duplicated/overlapping segment and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both terrace rows from below and above; confirm the left roof is complete and no black or textured strip escapes laterally.
+2. Inspect the four internal doors from both rooms, including their floor edges and all jamb faces.
+3. Cycle every internal panel at least four times from both sides and cross above every partition on the terrace.
+4. Inspect and cycle the western entrance from both directions; confirm both jambs are complete and opaque.
+5. Bind User1–User4 through Customize Controls and confirm each weapon family accepts the proper native state without attacking or reloading unexpectedly.
+6. Hold Zoom with a shield-compatible magic weapon and confirm Block toggles only once until release.
+7. Confirm Reload affects ranged magazines only and User2 does not consume Anima yet.
+
+## Three-room terrace divisions and sealed entrance frame 4.26.5w
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The two roofed areas behind the intermediate staircases are no longer continuous hall-like spaces. Each north/south row is divided at the centers of its two connector modules, producing three similarly sized rooms connected in sequence. Every new partition contains a centered 128-MU retracting panel with bilateral repeatable USE. The remaining partition spans are self-referencing finite 3D middle walls from floor 0 to the underside of the 128-MU roof, so they close sight and movement at room level without creating another ceiling/control strip or obstructing terrace traversal above.
+
+The western corridor gate retains its established position and dimensions. Its two outer frame extensions now use floor 128 and roof-control ID 100 like the adjacent jambs. This makes the complete jamb/extension assembly opaque and finite while preserving the open roof route above the panel.
+
+Updated structure: 256 vertices, 340 linedefs, 672 sidedefs, 93 sectors and 186 things. Static validation confirms valid references, 26 platform-door activators, 53 roof targets, closed boundaries for every conventional sector, no duplicate or overlapping segments, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Enter each north/south terrace interior and confirm it is now a sequence of three rooms rather than one large hall.
+2. Cycle all four new internal doors repeatedly from both sides and confirm they block sight while closed.
+3. Inspect every partition from floor level and then cross the uninterrupted terrace above it.
+4. View the western entrance frame obliquely from both sides and confirm there are no transparent triangles, black extensions or infinite faces.
+5. Confirm the central corridor remains uncovered and all six staircase routes still reach the terrace.
+
+## Closed terrace topology and opaque entrance frame 4.26.5v
+
+**Implemented — pending visual confirmation in GZDoom 4.14.2**
+
+The screenshot from 4.26.5u exposed a topology leak rather than an intentionally authored corridor: the two 136-MU rear structural-wall strips each inherited one extra jamb edge, leaving an open contour. Their floor surface could consequently extend as a long black strip toward the spawn and make the left/right terrace fill appear asymmetric. Those connections now return to the correct low stair sectors; wall strips, stairs, connectors, rooms and gate components all form independent closed polygons.
+
+The western entrance retains the same location and 128-MU panel. Its frame is now structurally identical to the room pattern: 16-MU north/south jamb sectors at floor 128, followed by separate 16-MU wall-extension sectors at floor 136 to reach y=±96. Every exposed edge carries a finite lower face, removing the transparent section without enlarging the door or covering the corridor.
+
+Updated structure: 208 vertices, 284 linedefs, 560 sidedefs, 81 sectors and 186 things. Static validation confirms all 80 non-exterior sectors have closed degree-2 boundaries, plus no collinear overlap or non-vertex crossing.
+
+Manual validation:
+
+1. Return to the screenshot viewpoint and confirm no black roof strip extends toward the Player Start.
+2. Compare the northern/southern and western/eastern terrace connectors for symmetric fill and roof continuity.
+3. Inspect all four faces of both entrance jambs and wall extensions for transparency.
+4. Cycle the entrance panel repeatedly from both sides and confirm the corrected frame remains finite.
+
+## Integrated corridor entrance and continuous rear terrace 4.26.5u
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The standalone gate at x≈-1556 is removed completely. Its mechanism now occupies the actual western entrance between the nearest north/south rooms: west threshold x=-593, east threshold x=-569, panel width 128 MU and solid frame spanning the remaining corridor width to y=±96. No separate gate sector remains near the Player Start.
+
+Four new connector sectors fill only the areas behind the first two north/south staircase pairs. Northern connectors cover y=272…640; southern connectors cover y=-640…-272. Their 128–136 MU solid roof target joins the neighboring room roofs into one terrace. Existing room-side linedefs are split and shared with the connector sectors, while the 136-MU final steps provide their front boundary. The central y=-272…272 corridor/stair zone remains open to the sky.
+
+Updated structure: 204 vertices, 278 linedefs, 548 sidedefs, 79 sectors and 186 things. Static validation confirms deterministic regeneration, 18 platform-door activators, 39 roof-target sectors, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Confirm there is no gate, jamb, roof strip or collision remnant near the Player Start.
+2. Approach the western room pair and verify a single framed trap door closes the real corridor entrance.
+3. Complete at least four opening cycles from both sides and inspect the frame obliquely.
+4. Climb the first two northern and southern stair pairs and cross their final steps onto the new connector roofs.
+5. Walk the joined terrace across all six paired rooms and confirm no 1-MU holes remain behind the stairs.
+6. Look upward throughout the central corridor and confirm it remains completely unroofed.
+
+## Structural rear walls, compact entry gate and debug creation 4.26.5t
+
+**Implemented — pending manual GZDoom 4.14.2 validation**
+
+The rear staircases no longer own wall middle textures. Two 8-MU structural strips now belong to the rear room itself. Their conventional floor is 136 MU, producing visible lower wall faces from the room floor and from every adjacent tread while aligning their walkable top with the roof. This restores the interior wall and prevents stair textures from projecting above the building.
+
+The entry trap gate moves from x=-1496…-1472 to x=-1568…-1544. Its west face is 32 MU ahead of the Player Start and its total depth remains 24 MU; panel, jambs, roof target and bilateral activation are unchanged. The four training dummies retain x=-1216/-704/320/1344 but move together to y=-900, clearing the central corridor.
+
+Character creation now exposes `Depuración` / `Debug` as a fifth option on the race page. Confirming it jumps directly to the summary. The resulting profile overrides all twelve post-equipment primary attributes to exactly 30 and forces mass tier 6 / size tier 4: 100 kg base body mass and 1.8 m body height. A second confirmation completes creation and initializes resources normally. Carried equipment weight remains additional to the documented 100-kg body mass.
+
+Updated MAP01 structure: 198 vertices, 258 linedefs, 508 sidedefs, 75 sectors and 186 things. Static validation confirms deterministic regeneration, no scaled stair middle textures, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Inspect both faces of the rear-room walls from inside, from every tread and from the roof.
+2. Confirm the stairs themselves have no wall texture and their final steps transition onto the wall/roof top.
+3. Spawn facing east and verify the compact gate is immediately ahead without overlapping the player; complete four bilateral cycles.
+4. Confirm all four dummies form a usable row south of the buildings and no longer obstruct the corridor.
+5. Select `Depuración`, confirm twice, and verify twelve attributes at 30, 1.8 m height and 100 kg base mass.
+
+## Visible stepped rear walls and corridor trap door 4.26.5s
+
+**Implemented — pending manual visual/activation validation in GZDoom 4.14.2**
+
+The ten rear-room wall sections beside treads below roof level now use individually scaled `STARTAN3` 3D middle textures. Each section begins at its adjacent stair floor and ends at the 128-MU roof underside; it therefore closes the room above the tread without becoming invisible below it or projecting through the roof. The two boundaries adjacent to the 136-MU final steps remain open for traversal.
+
+A standalone trap-door gate now crosses the beginning of the test corridor at x=-1496…-1472, 104 MU ahead of the Player Start at x=-1600. It combines a 128-MU-wide retracting panel, two 16-MU solid jambs, bilateral repeatable special 62 activation and the same finite 128–136 MU roof target as the room template. It is unlocked and independent of the silver-key NPC door.
+
+Updated structure: 194 vertices, 252 linedefs, 496 sidedefs, 73 sectors and 186 things. Static validation confirms 18 platform-door activators, 35 roof-target sectors, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Climb both rear staircases and confirm every wall is visible above its tread and terminates at the roof underside.
+2. Cross from both 136-MU final steps onto the roof without invisible collision.
+3. Open the new corridor door from the Player Start side, cross it, wait for closure and reopen it from the opposite side for at least four cycles.
+4. Inspect its jambs obliquely and confirm the panel and frame do not extend above the roof slab.
+
+## Aligned staircase modules and restored rear walls 4.26.5r
+
+**Implemented — pending manual visual/collision validation in GZDoom 4.14.2**
+
+The three complete north/south staircase pairs now share one exact module: 119 MU width, 665 MU start-to-start horizontal spacing, low corridor boundary at y=±80 and high roof boundary at y=±272. No flight protrudes farther into the central passage than another.
+
+The western rooms move 71 MU east and the eastern rooms move one additional MU east, with all contained pickups translated identically. Conventional modules retain a 1-MU anti-overlap clearance. The rear room moves one additional MU east and is centered on y=0; its y=±272 corners coincide with the two high steps.
+
+All six boundaries between the rear room and its stairs again carry `STARTAN3` lower faces. These close the room only across the local floor-height difference and stop at each corresponding step height, replacing both the missing walls from 4.26.5q and the projecting 128-MU middle textures from 4.26.5o.
+
+MAP01 remains at 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, deterministic regeneration, no collinear overlap and no non-vertex crossing.
+
+Manual validation:
+
+1. Walk the central corridor and confirm all six first steps begin on the same north/south line.
+2. Compare all three staircase widths and verify none projects into the passage.
+3. Climb both rear flights and confirm the final steps meet the room corners and roof without a gap or obstruction.
+4. Look into the rear room from every step and confirm its side walls are restored without rising above the current tread.
+5. Verify pickups in the western and eastern rooms retained their internal arrangements.
+
+## Complete NPC attributes and uniform corridor stairs 4.26.5q
+
+**Implemented — pending manual gameplay validation in GZDoom 4.14.2**
+
+`CaelumCombatActor` now stores Constitution, Charisma, Empathy and Eloquence alongside its previous eight attributes, completing the same twelve-field primary model used by `CaelumAttributes`. It also stores current and maximum Anima. Maximum Anima uses the player rule `HEALTH_ANIMA_DAMAGE_SCALE × Type1(Patience)` and every predefined NPC initializes at maximum.
+
+The resulting equipped test values are: Rulo 1060 Anima (Patience 3), Ronnie 1280 (Patience 7), Argento 2710 (Patience 18), and Caella 3760 (effective Patience 23). Caella's tier-1 magic helmet raises effective Intelligence by five but does not directly alter Anima; her separate magic-glove +5 Patience bonus is what increases the reserve. NPC statistics now recalculate after armor initialization, matching the player's equipment order.
+
+MAP01 now contains three complete mirrored staircase pairs in the intermediate vertical corridors. Their centers are separated by approximately 664 MU on the integer map grid. The eastern north/south rooms and rear room move 24 MU east; pickups inside the eastern rooms move with them. All six shared rear-stair boundaries are textureless two-sided partitions, eliminating the protruding wall along the full climb.
+
+Updated structure: 186 vertices, 242 linedefs, 476 sidedefs, 70 sectors and 186 things. Static validation confirms valid references, no collinear overlap, no non-vertex crossing and deterministic regeneration.
+
+Manual validation:
+
+1. Climb every north and south staircase and confirm all six steps are free of projecting wall strips.
+2. Cross onto the roofs from each staircase pair and check the 1-MU safety clearances beside conventional room walls.
+3. Confirm eastern-room pickups retained their relative positions after the 24-MU move.
+4. Inspect Rulo, Ronnie, Argento and Caella diagnostics for all twelve attributes and full Anima.
+
+## Clear roof landings and NPC-archetype audit 4.26.5p
+
+**Map fix implemented — pending manual collision validation in GZDoom 4.14.2**
+
+The two boundaries shared by the rear room and the 136-MU top stair sectors remain valid two-sided partitions but no longer render or collide as finite wall faces. Both lateral routes can now reach the roof; the five lower boundaries on each staircase retain their closed wall faces.
+
+The definitive **`habitación con puerta trampa`** configuration is the complete 4.26.5p form: finite 128-MU room walls, solid walkable 128–136 MU roof, independent retracting floor panel, bilateral repeatable USE, solid jamb pillars that block lateral sight, and an unobstructed upper traversal plane. The keyed NPC room is the locked variant of the same template.
+
+The 4.26.5p audit identified `CaelumCombatActor` as a combat-capable subset rather than a complete general NPC archetype. Constitution, Charisma, Empathy, Eloquence and Anima were its five missing fields; 4.26.5q implements them. Survival-only Hunger, Thirst, Sleep, Carry Load and Air remain intentionally player-only.
+
+No missing attribute values are assigned in this patch: Rulo, Ronnie, Argento and Caella retain their existing balance exactly.
+
+Manual validation:
+
+1. Climb both rear stairs and walk onto the roof without catching on a narrow wall fragment.
+2. Confirm the lower outer sides of both staircases remain closed.
+3. Recheck the rear door, jamb sight blocking and roof traversal after the boundary change.
+
+## Solid door frames, flush stairs and mounted exit 4.26.5o
+
+**Implemented — pending manual visibility and collision validation in GZDoom 4.14.2**
+
+The invisible 16×24-MU jamb partitions from 4.26.5n left a lateral sight slit beside each closed floor panel. Their sectors now begin at floor height 128 MU and carry finite `STARTAN3` lower textures on every exposed boundary. Each doorway therefore has a real two-pillar frame whose closed volume blocks sight and projectile targeting below the roof while retaining the 512-MU base ceiling and shared 128–136 MU roof slab above it.
+
+The rear staircases now reach x=1400 and use the rear-room wall as their shared eastern boundary; no duplicate line is authored. Their western edge moves from x=1288 to x=1281, leaving only 1 MU before the pre-existing eastern-room wall at x=1280. Zero clearance would require splitting and sharing that older wall across the individual step sectors; 1 MU is the closest conventional integer-grid placement that avoids overlaps while making the gap visually negligible.
+
+The freestanding NPC exit line at x=-2448 is removed. `SW1EXIT` and special 243 now occupy the central 128-MU segment of the actual western room wall at x=-2464, y=-64…64. It inherits the same finite wall collision and cannot float inside the room.
+
+Updated MAP01 structure: 130 vertices, 166 linedefs, 324 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced sector boundaries, no collinear overlap and no intersection outside shared vertices.
+
+Manual validation:
+
+1. Stand at oblique angles beside several closed doors and confirm the interior cannot be seen through either jamb.
+2. Confirm NPCs do not acquire or attack the player through a closed doorway, then acquire normally after opening it.
+3. Open every door and confirm both frame pillars remain finite and do not obstruct the central passage.
+4. Climb both rear staircases and inspect the 1-MU western clearance and flush shared eastern wall.
+5. Use the exit switch on the NPC room's western wall and confirm it no longer floats.
+
+## Reusable one-trap-door room replication 4.26.5n
+
+**Implemented — pending complete manual validation in GZDoom 4.14.2**
+
+The architecture validated through 4.26.5m is now named **`habitación con 1 puerta trampa`** in the project vocabulary. One instance consists of an interior sector, a 128–136 MU solid 3D-floor roof, a finite floor panel that retracts through `Plat_DownWaitUpStay`, and two invisible jamb partitions. Its base ceiling remains at 512 MU, so wall and door geometry never extends into the upper playable space and the roof remains traversable in every door state.
+
+MAP01 now contains eight instances: four central rooms, two eastern rooms, the NPC room and the rear room. Every door faces the corridor serving that room. The rear-room entrance has rotated from south to west. The NPC room retains silver lock 200 using the native UDMF `locknumber` field on both special-62 thresholds; the underlying trap-door motion is identical to the unlocked instances.
+
+The provisional staircase and 136-MU raised block east of the rear room are removed. Two staircases flank its new west-facing entrance. Each contains six 32-MU-deep steps and reuses the established floor heights 24, 48, 72, 96, 120 and 136 MU. They occupy the passage between the eastern rooms and the exterior face of the rear door, and their upper steps provide the roof-access jump across the existing 24-MU door depth.
+
+All 186 things remain present. Item coordinates are unchanged. The four `CaelumTrainingDummy` instances move 128 MU west, toward the player start, leaving the rear room empty without changing their common firing axis.
+
+Updated MAP01 structure: 132 vertices, 167 linedefs, 326 sidedefs, 46 sectors and 186 things. Static validation confirms valid references, balanced boundaries, no overlapping collinear linedefs and no intersections outside authored vertices.
+
+Manual validation:
+
+1. Open every unlocked room from outside and inside, then complete at least two full cycles per door.
+2. Confirm all seven unlocked doors face their corridors and none produces suspended or infinitely tall textures.
+3. Approach the NPC door without and with `CaelumSilverKey`; verify the localized lock response and successful opening only with the key.
+4. Enter every room and walk across representative roof areas, including all eight doorway roofs.
+5. Climb both new side staircases and cross from each 136-MU upper step onto the rear-room roof.
+6. Confirm the old eastern staircase and raised block are absent.
+7. Verify all pickups remain in their prior positions and all four training dummies are outside rooms on the shifted firing axis.
+
+## Door partition texture cleanup 4.26.5m
+
+**Implemented — pending visual validation in GZDoom 4.14.2**
+
+The 4.26.5l geometry and motion behaved correctly, but the auxiliary sectors introduced around the jambs still carried `STARTAN3` middle textures. After their base ceilings were raised to 512 MU for continuous roof traversal, those partition textures rendered as narrow suspended strips above the door.
+
+All sixteen middle-texture assignments belonging to the auxiliary partition boundaries and the moving-door side partitions are removed. The two side lines no longer use `midtex3d` or bottom-pegged middle-texture flags. Their finite `BIGDOOR2` lower textures remain, appearing only across the actual 128-MU floor-height difference while the panel is closed.
+
+MAP01 remains at 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Reference and closed-boundary validation pass; door motion and roof targets are unchanged.
+
+Manual validation:
+
+1. Inspect the doorway from outside and inside and confirm no narrow strips float above it.
+2. Open and close the door and confirm its finite front and side faces remain visible while closed.
+3. Walk over the complete roof and confirm the entrance remains traversable above.
+
+## Independent finite door and continuous roof 4.26.5l
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The 4.26.5k limiter shortened the vertical ceiling motion but did not solve the underlying coupling: door sector 5 was still both the moving closure and a target for the solid roof 3D floor. Lowering its base ceiling to the 128-MU roof underside removed the playable upper volume over the doorway, while the ceiling-based panel could still render against the complete vertical sector.
+
+The closure is now independent of the ceiling. Door sector 5 has a fixed 512-MU sky ceiling and a closed floor at 128 MU. Both USE thresholds call native `Plat_DownWaitUpStay` (special 62): the floor panel lowers to the surrounding 0-MU floor, waits 150 tics and returns to its authored 128-MU closed position. The existing speed remains 16. `BIGDOOR2` is assigned as a lower texture, so only the finite floor-height difference renders as the door face.
+
+Room sector 4, door sector 5 and jamb sectors 14–15 all retain the 512-MU base ceiling and target ID 100. The solid 3D-floor slab from 128 to 136 MU therefore remains valid and walkable above the complete entrance regardless of door position. The map structure remains 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things; static topology and reference validation pass.
+
+Manual validation:
+
+1. Confirm the closed panel ends at the 128-MU lintel and has no continuation toward the sky.
+2. Open from outside, cross, wait for closure and reopen from inside.
+3. Complete at least four alternating cycles and confirm the panel returns to the same closed height.
+4. Walk continuously across the roof above the door while it is closed and while it is open.
+5. Stand clear during closure and confirm the passage does not remain visually or physically blocked after reopening.
+
+## Finite framed template door 4.26.5k
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+**Superseded by 4.26.5l.** The limiter corrected the target height but kept the moving ceiling coupled to the roof target, so the upper doorway remained non-traversable.
+
+The template door previously opened against sectors whose base ceilings were at the 512-MU outdoor sky. Because the standard vertical `Door_Raise` action stops four map units below the lowest adjacent ceiling, the moving door sector rose far above the visible 128-MU doorway and appeared infinitely tall.
+
+Two 16×24-MU structural jamb sectors now flank the existing 128-MU-wide door recess. Their ceilings are 132 MU, providing a deterministic 128-MU open position after the native four-unit clearance. The door remains a conventional vertical stone door rather than a polyobject: this preserves finite collision beneath the walkable 3D-floor roof and avoids an infinitely tall rotating polyobject blocking traversal above the doorway.
+
+The room, roof, door width, activation lines, speed and 150-tic delay are unchanged. Both thresholds retain front/back player USE and `repeatspecial = true`. Updated MAP01 structure: 94 vertices, 93 linedefs, 178 sidedefs, 16 sectors and 186 things. Static validation confirms valid references and balanced sector boundaries.
+
+Manual validation:
+
+1. Open the door from outside and confirm its visible panel disappears at the 128-MU lintel instead of rising toward the sky.
+2. Cross the threshold, wait for closure and reopen it from inside.
+3. Complete at least four full cycles while alternating sides.
+4. Walk over the roof above the doorway and confirm there is no new invisible obstruction.
+5. Confirm the two narrow jamb extensions render as part of the doorway rather than as gaps.
+
+## Unified shield framing and true walkable room roof 4.26.5j
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+All four equipped-shield Block layers now use the same medium framing previously validated for the Kite Shield: virtual position `(90, 125)` and rendered size `210×230`. This keeps every shield left of center without the Buckler becoming too central or the Tower becoming excessively large. The Magic Shield retains only its larger translucent halo pass as a type-specific visual distinction.
+
+The room is no longer a sector capped at 136 MU. Room sector 4 now has a 512-MU sky ceiling and shares target ID 100 with door sector 5. A closed control sector outside the playable field defines a solid opaque 3D-floor slab with underside at 128 MU and walkable top at 136 MU. Its initialization line uses `Sector_3DFloor` (special 160) for target 100. The existing finite 3D middle-texture walls end below the slab, so the player can cross their upper edge onto the roof rather than colliding with an infinitely tall boundary.
+
+The adjacent raised platform and final stair remain at 136 MU. They provide the current access/calibration point for crossing onto the new roof at the same elevation. The door recess receives the same slab, avoiding an uncovered strip above the doorway. `Door_Raise` remains front/back usable and uses the valid `repeatspecial` field.
+
+Updated MAP01 structure: 90 vertices, 87 linedefs, 166 sidedefs and 14 sectors. The added control geometry is a conventional closed four-line sector and is outside the playable field.
+
+Manual validation:
+
+1. Enter the room and confirm the ceiling underside remains at 128 MU.
+2. Use the six steps to reach 136 MU and cross/jump from the adjacent platform onto the room roof.
+3. Walk across the complete roof, including above the doorway, without falling through or meeting an invisible wall.
+4. Drop from the roof into the field and confirm collision/landing physics still operate.
+5. Complete at least four door cycles from alternating sides.
+6. Test all four shields and confirm they share the same medium left-offset framing.
+
+## Equipped shield first-person Block layer 4.26.5i
+
+**Implemented — pending visual calibration in GZDoom 4.14.2**
+
+Persistent Block now exposes the equipped shield as a modular first-person HUD layer. The layer is driven by a play-scope snapshot of `CombatBlockModeActive` and the live equipped shield type, and disappears immediately when Block ends, the shield breaks or the shield is unequipped.
+
+The four provisional compositions preserve the authored visual distinction:
+
+- Buckler: near the center and lower in the frame.
+- Kite Shield: shifted left and covering a broader part of the screen.
+- Tower Shield: far left and substantially larger.
+- Magic Shield: more centered, with a second translucent sprite pass acting as a temporary magical halo.
+
+The existing original 64×64 project shield sprites are reused and enlarged at render time. Exact HUD coordinates and sizes are provisional visual calibration values, not combat coverage or balance values. Mechanical coverage remains 120° / 140° / 160° / 120° according to shield type.
+
+User-validated in the preceding test pass: native Fly lateral movement, ranged visual Zoom/ADS, ADS physical-accuracy behavior and Dexterity-scaled ranged Reload.
+
+Manual validation:
+
+1. Enter/leave Block once with each shield and confirm the layer follows the equipped type.
+2. Confirm ranged ADS never displays a shield layer.
+3. Confirm large/two-handed physical weapons still cannot enter Block.
+4. Check that Buckler, Kite, Tower and Magic Shield remain readable at 1920×1080 without hiding critical HUD resources.
+5. Break or unequip the shield and confirm the layer disappears.
+
+## Zoom input latch, Fly lateral movement and roof diagnosis 4.26.5h
+
+**Input/movement fixes implemented — roof rebuild pending**
+
+Contextual Zoom now accepts exactly one transition per physical key press. GZDoom may revisit a weapon's native Zoom state while the button remains held; `CombatZoomInputLatched` ignores those repeated pulses and is cleared only when `BT_ZOOM` is released. This applies equally to ranged ADS and shield Block.
+
+Native Fly sets the player to a no-gravity movement state. The Caelum acceleration layer previously required ground contact before increasing its movement factor, leaving Fly at factor zero if it began while stationary. `NOGRAVITY` movement is now treated as continuously supported for lateral acceleration, while ordinary jumping retains its existing no-air-acceleration rule.
+
+The block beside the stairs is sector 6: its floor is physically raised to 136 MU and its ceiling remains at 512 MU. The player stands on that raised floor, so its top is a native walkable plane. The room is sector 4: its floor is 0 and its ceiling is 136 MU. A Doom-sector ceiling renders the underside, but its opposite side is not a second walkable plane. Consequently the room can have an interior ceiling without providing a roof surface above it.
+
+A room with both usable interior space and a walkable roof requires a solid 3D-floor slab (planned from 128 to 136 MU) controlled by separate geometry. Simply raising the room floor would reproduce the stair block but destroy the interior; simply retaining the low ceiling cannot create a walkable upper surface. The next architectural pass must replace the current ceiling with that control-sector 3D floor and revalidate the door's target height.
+
+Manual validation:
+
+1. Hold Zoom for several seconds: ADS/Block changes only once.
+2. Release and press Zoom again: the state toggles once in the opposite direction.
+3. Enable native Fly while stationary and verify forward, backward and lateral movement.
+4. Verify ordinary airborne movement still preserves momentum without ground-style acceleration.
+
+## Upper-wall removal, true repeatable door and live Dexterity reload 4.26.5g
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The finite middle textures introduced in 4.26.5f ended at roof height, but both sidedefs still carried upper `STARTAN3` textures. Those upper textures filled the room/outdoor ceiling difference and visually recreated the wall above the roof. They are now removed from both sides of all five room walls and both jambs.
+
+The door-cycle limit was caused by using `repeatable`, which is not the valid UDMF repeat-special field. Both door thresholds now use `repeatspecial = true`, retain front/back player USE activation and operate the same door sector with the existing speed and 150-tic delay.
+
+Ranged Aim is verified in the attack path: `RangedAimModeActive` multiplies `EffectivePhysicalAccuracyPercent` by ×2. Crouching supplies its own ×2 multiplier, so Aim + crouch still produces ×4 before the weapon spread calculation.
+
+Reload now derives its effective duration from the player's current effective Dexterity at the moment Reload starts. The formula remains the authored Type-4 rule:
+
+`effective seconds = base seconds × 100 / Type4(Dexterity)%`
+
+The base durations remain Standard Bow 3 s, Longbow 3 s, Crossbow 5 s and Carbine 5 s.
+
+Manual validation:
+
+1. Verify that no wall texture reappears above the roof cut.
+2. Complete at least four full door open/close cycles, alternating approaches.
+3. Compare Reload at ordinary Dexterity and debug Dexterity 75 while observing the HUD countdown.
+4. Verify that Zoom ADS remains visual and that ranged shots become more accurate.
+
+## Finite room walls, repeatable door and contextual ranged Zoom 4.26.5f
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The template room no longer uses infinitely wrapped blocking middle textures. Its five wall lines and two jambs now use bottom-pegged finite 3D middle textures, allowing their visible and physical height to follow the authored texture instead of extending to the outdoor 512-MU ceiling.
+
+Both door thresholds retain repeatable tag-0 `Door_Raise` and now accept USE from their back side as well as their front side. This pass specifically targets the reported failure to begin a second open/close cycle.
+
+Zoom is now contextual. Standard Bow, Longbow, Crossbow and Carbine toggle Aim with a real native ×2 FOV zoom. For non-ranged weapons, Zoom enters persistent Block only when the equipped weapon uses one-handed shield rules. Large and ranged two-handed physical weapons therefore cannot block through a shield that remains equipped. Ranged AltFire remains an alternate Aim input.
+
+The normal HUD now displays `Magazine: loaded / capacity | Reserve: amount` while a ranged weapon is active, plus the remaining Reload time while reloading. Reserve excludes the rounds already represented by the loaded magazine.
+
+Manual validation:
+
+1. Room walls stop at their finite authored height instead of reaching the outdoor sky.
+2. Complete at least three door open/close cycles, testing USE from both sides.
+3. Equip a shield with a large or ranged weapon and verify that Zoom does not enter Block.
+4. Equip a one-handed shield-compatible weapon and verify that Zoom still toggles Block.
+5. Equip each ranged weapon and verify that Zoom changes FOV and the HUD reports magazine, capacity and reserve.
+6. Fire and Reload while watching the HUD counts and Reload countdown.
+
+## Bilateral wall rendering, dual-use door and ranged ammunition 4.26.5e
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The room/exterior sector split from V4.26.5d was structurally valid, but an upper texture only fills the height difference above the lower ceiling; it does not draw the required wall from floor level. The five room walls and two jambs now retain bilateral sector ownership while also using explicit wrapped `STARTAN3` middle textures on both sides, matching MAP01's already visible test-wall vocabulary.
+
+The inner room/door threshold now carries the same tag-0 manual `Door_Raise` special, speed and delay as the exterior-facing line. The exterior line remains non-blocking and the door sector remains the physical closure, so USE is available from both approaches.
+
+Ranged ammo actors now declare `Inventory.Amount 20`. Firing checks the loaded magazine rather than requiring both a loaded magazine and a simultaneously accessible reserve stack. Reserve ammo remains the Reload source and is decremented when a shot consumes a physical round, but moving/exhausting the reserve cannot cancel a round already loaded in the magazine.
+
+Manual validation:
+
+1. All room walls and jambs render from exterior and interior.
+2. USE opens the door from both approaches and the raised opening is passable.
+3. Pickups provide 20 bullets/arrows/bolts.
+4. Press Reload and wait for the weapon's 3/3/5/5-second base time.
+5. Standard Bow, Longbow, Crossbow and Carbine each spawn the correct projectile and reduce the loaded magazine by one.
+6. Empty magazines still require Reload; reserve ammunition alone is not a loaded shot.
+
+## Bilateral room shell, usable door and environmental Adrenaline 4.26.5d
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated room's one-sided walls faced inward, leaving no exterior sidedefs to render from the field. The five room perimeter lines and two door jambs now separate their authored interior sectors from exterior sector 0 and use finite upper textures. They remain blocking walls, but both sides have valid sector ownership and visibility.
+
+The outer manual door line is reversed so sector 0 is its front and door sector 5 is its back. `Door_Raise` therefore receives USE from the exterior-facing side and operates on the door sector behind the line. The permanent linedef blocking flag has been removed from this opening; the closed door sector supplies collision until its ceiling rises.
+
+Environmental impact damage already skipped the direct received-damage Adrenaline event, but its shared Pain calculation could still grant Pain Adrenaline. Pain resolution now receives an explicit permission flag. Wall/floor impacts pass `false`; actor impacts and ordinary combat damage pass `true`. Environmental impacts may still cause Pain/stun, but neither their damage nor their Pain grants Adrenaline.
+
+Manual validation:
+
+1. The isolated room is visible from the exterior on every wall and jamb.
+2. USE from outside raises the door, which becomes passable, waits and closes.
+3. Walls remain solid and the room interior renders normally.
+4. A damaging wall collision may reduce HP/cause Pain but never increases Adrenaline.
+5. Actor-to-actor damage and Pain still grant their intended Adrenaline.
+
+## Final stair front-side correction and input-roadmap audit 4.26.5c
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+After V4.26.5b, the engine accepted the door repair and reported only linedef 82 as lacking a front. That line closes the sixth 136-MU stair sector.
+
+MAP01 now removes the two unreferenced door sidedefs left at indices 94 and 96 and remaps all subsequent live references. Linedef 82 is reversed together with its front/back assignment, preserving the same physical sector adjacency while making exterior sector 0 its explicit front and stair sector 12 its back. The map now contains 86 vertices, 83 linedefs, 154 sidedefs and 13 sectors; every sidedef is referenced exactly once and every sector boundary remains balanced.
+
+Manual validation:
+
+1. MAP01 loads without a line-82/front-sidedef error.
+2. The sixth stair remains visible, solid and climbable.
+3. The 136-MU platform remains walkable.
+4. The template door retains its V4.26.5b behavior.
+
+The roadmap input audit preserves the already implemented architecture: Zoom = Block, ranged AltFire = Aim and ranged Reload = magazine reload. User1 is the remaining slot for the future racial ability; User2 remains Seal Channel; User3 Tarot; User4 class ability.
+
+## Canonical MAP01 topology correction and roadmap reconciliation 4.26.5b
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The V4.26.5a diagnostic pass left four provisional appended sidedefs and explicit `sideback = -1` placeholders in the UDMF map. Although local index/boundary validation could parse them, the engine node builder still rejected lines 53, 54 and 82 and reported line 52's right edge as disconnected.
+
+MAP01 now uses the canonical 156-sidedef set. Door jambs and the outer manual door line are true one-sided boundaries with no synthetic back-side field. The outer door uses its original sector-5 sidedef; the inner threshold uses the original room-front/door-back pair. All three one-sided door edges are consistently oriented around the sector.
+
+Static validation confirms 86 vertices, 83 linedefs, 156 sidedefs and 13 sectors, with valid references and balanced sector boundaries. Manual engine validation remains authoritative:
+
+1. MAP01 loads without the reported front-sector/front-sidedef errors.
+2. No disconnected edge is reported for the template doorway.
+3. USE raises the door; it waits and closes normally.
+4. The last stair sector and 136-MU platform remain valid and walkable.
+
+The former V4.22–V4.26 roadmap has been reconciled with current implementation status in `docs/ROADMAP.md`. The next major implementation block is V4.27 Combat Input Architecture and Mode Separation.
+
+## Architectural template topology correction 4.26.5a
+
+**Implemented — pending manual validation in GZDoom 4.14.2**
+
+The isolated template door had been converted to branching two-sided geometry: both jamb lines incorrectly continued into the room sector and the outer manual door line exposed an unnecessary exterior back side. Although all referenced sidedefs existed, those branches broke the closed boundaries expected by the node builder; it consequently reported human-facing line 54 as lacking a valid front side.
+
+The jambs and outer door line are now consistently oriented one-sided front boundaries of door sector 5. The inner threshold is a two-sided transition facing room sector 4, with door sector 5 on its back. Static validation confirms that every linedef has an existing front sidedef, every referenced sector exists, and every sector boundary has balanced incoming/outgoing endpoints.
+
+Manual validation remains:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. Facing the unlocked template door and pressing USE raises it.
+3. The door waits and closes normally.
+4. The room, jambs, six stair sectors and 136-MU platform remain physically valid.
+
+## Architectural template room 4.26.5
+
+**Implemented — pending manual validation**
+
+A single MAP01 template room is used to validate architecture before replication.
+
+Validation sequence:
+
+1. MAP01 loads without node/front-sidedef errors.
+2. The room walls render and block normally.
+3. The doorway has visible jambs/opening.
+4. Facing the door and pressing USE triggers the manual `Door_Raise`.
+5. The door opens, waits, then closes.
+6. The six stair sectors can be climbed from 24 to 136 MU.
+7. The 136-MU platform is walkable.
+
+No attempt is made in this patch to retrofit all existing rooms with the template. Replication is deferred until this exact module works correctly in GZDoom 4.14.2.
+
+## Crouch physics, movement noise and MAP01 building rebuild 4.26.4
+
+**Implemented — pending manual validation**
+
+For wall impacts while crouching:
+
+`AgilityBonusRatio = max(0, JumpZ/BaseJumpZ - 1)`
+
+`CrouchWallFraction = clamp(AgilityBonusRatio, 0, 0.50)`
+
+The physical collision and displacement remain unchanged. Only traumatic Delta-v is reduced. If buckler block is also active, its doubled fraction is compared against the crouch fraction and the maximum is used; the two effects do not stack.
+
+Sigilo is now explicitly calculated from Agility Type 2:
+
+`Stealth% = clamp(Agility(Agility+1)/101, 0, 100)`
+
+Crouch x2 remains authoritative and is capped at 100%. Movement hearing:
+
+`NoiseRange = BaseRange × MovementMode × (1 - EffectiveStealth/100)`
+
+with BaseRange = 20 m reference (622.22 MU), walking = 1.0, running = 1.5, crouching = 0.5. At EffectiveStealth = 100%, no movement alert is emitted.
+
+MAP01 uses finite wall sectors with floor 136 MU and sky ceiling 512 MU. Interior sectors remain floor 0 and receive the shared 3D roof slab 128–136 MU. Two staircases reach roof level. All generated sectors pass closed-loop endpoint validation and every linedef has valid front/back sidedef and sector references.
+
+## Buckler/map corrective pass 4.26.3b
+
+**Implemented — pending manual validation**
+
+The rodela no longer mixes direct JumpZ units with horizontal collision Delta-v. For horizontal impacts:
+
+`AgilityBonusRatio = max(0, JumpZ / BaseJumpZ - 1)`
+
+`BucklerHorizontalFraction = clamp(2 × AgilityBonusRatio, 0, 0.50)`
+
+`TraumaticDeltaV = RawDeltaV × (1 - BucklerHorizontalFraction)`
+
+This means the buckler can at most halve horizontal traumatic Delta-v; it can no longer manufacture `Delta-v = 0` / infinite equivalent tics. Its `2 × Toughness` rule remains unchanged, so a sufficiently tough buckler user may still end with zero final HP damage after the kinematic calculation. Stun continues to disable Agility damping.
+
+MAP01 validation focus: finite room-wall height, real walkable 3D roofs, east-room door orientation, roof staircase, NPC-room roof bounds, item placement and absence of invisible room barriers.
+
+## Buckler acrobatics and fall-test map 4.26.3
+
+**Implemented — pending manual validation**
+
+Active buckler block uses `2 × Toughness` for CaelumImpact tolerance and `2 × JumpZ` as Agility absorption. The latter applies to floor, actor and wall trauma. Stun sets active Agility absorption to zero. The buckler still uses 0.5× effective combat mass, so it remains easier to launch while making that displacement defensively survivable.
+
+At V4.26.3, MAP01 had seven roofed structures: six equal test rooms plus the west NPC room. V4.26.5n supersedes that count with eight one-trap-door room instances. Outdoor vertical space remains 512 MU.
+
+## Universal impact scale and anatomy response 4.26.2
+
+**Implemented — pending manual validation**
+
+The kinetic reference distance is now fixed at 28 MU for every body:
+
+`T_impact = 28 / |Delta-v|`
+
+This removes the previous double size effect in which large actors benefited both from greater mass during impulse resolution and from a larger height numerator during severity conversion.
+
+Impact Physics Core remains anatomy-agnostic. It exposes only normalized contact-height intervals. Caelum interprets those intervals using `CaelumAnatomyProfile`, normalizes all overlapping region spans, and applies vulnerability and armor proportionally.
+
+For each contacted region `i`:
+
+`w_i = overlap_i / sum(overlap)`
+
+After the V4.26.1 subtractive Toughness threshold:
+
+`S_i = S_postToughness × w_i × Vulnerability_i × (1 - ArmorDefense_i)`
+
+`S_final = sum(S_i)`
+
+Critical/head Lucidity contribution uses the same `w_i`; non-critical regions contribute zero critical-point Lucidity loss. Local armor defense reduces the corresponding contribution.
+
+Floor contact is represented as normalized height 0.0 and therefore maps to the lowest authored anatomy region. Actor-to-actor contact uses actual vertical cylinder overlap. Static vertical geometry currently uses 0.0-1.0 because native GZDoom line collision does not provide an anatomical Z contact point.
+
+NPC controlled-landing absorption now follows Agility Type-1 jump scaling, matching the player design concept instead of scaling by actor height.
+
+## Impact response refinement 4.26.1
+
+**Implemented — pending manual validation**
+
+Impact Toughness is now a threshold/tolerance measured in percentage points of maximum health. If the energy curve produces `S%` after the source-surface modifier:
+
+`S_post = max(0, S - Toughness)`
+
+`D_preArmor = HP_max × S_post / 100`
+
+`D_final = D_preArmor × (1 - GlobalImpactArmor/100)`
+
+This deliberately makes high Toughness completely ignore ordinary kinetic trauma while preserving vulnerability to sufficiently extreme impacts.
+
+Static geometry requires at least 25% of pre-impact horizontal speed to be lost before the contact is considered an impact. Once static contact occurs, it remains latched until five consecutive unblocked tics have passed.
+
+Environmental wall/floor impacts do not generate received-damage Adrenaline. Actor-to-actor impacts continue to do so.
+
+## Impact Physics Core API 4.26.0
+
+**Implemented — pending manual validation**
+
+Generic physics is now separated from Caelum damage interpretation. `ImpactPhysics` resolves finite-body, static and external-source impacts and returns a neutral `ImpactResult`. Caelum adapters remain responsible for effective shield mass, biological landing damping, Toughness, armor and HP.
+
+Static geometry is now modeled as the infinite-mass limit of the same physical model. The player-wall exception introduced during early calibration has been removed. The velocity component actually lost by native GZDoom movement defines the effective static collision normal.
+
+**Convergence validation:** a character hitting increasingly massive movable bodies should approach the result of hitting static geometry. The existing mass-10000 training dummy is the primary MAP01 comparison against walls/doors.
+
+**Export status:** the core source is isolated under `/impactphysics/` and contains no Caelum-specific class references. Packaging/licensing/versioning it as a standalone PK3 is planned after the API survives this validation pass.
+
+**Melee integration:** intentionally deferred. Weapon mass can eventually feed an impact model, but melee also needs swing velocity, effective striking mass, contact area/edge geometry, material penetration, sharpness and attack technique. Existing melee damage remains authoritative until those variables are designed.
+
+## Energy impact curve and contact rearm 4.25.4
+
+**Implemented — pending manual validation**
+
+Impact severity no longer uses discrete 3% damage steps. For `T_eq < 35`:
+
+`R_v = 35 / T_eq`
+
+`R_E = R_v²`
+
+`Damage% = 100 × (R_E - 1) / (35² - 1)`
+
+At or above 35 tics the result is zero. This normalization produces exactly 100% raw max-HP damage at one equivalent tic. Below one tic the same continuous quadratic curve remains active and may exceed 100%.
+
+This is intentionally based on **specific kinetic energy** rather than total `1/2 m v²`. Mass already determines the action/reaction impulse and each body's resulting `Delta-v`; multiplying injury by mass again would double-count mass.
+
+Contact rearm now requires true disengagement. A collision pair stays latched until center separation exceeds `RadiusA + RadiusB + 0.25 × min(HeightA, HeightB) + 2` for five consecutive tics. This is designed to reject tiny recoil gaps produced while holding movement against another body.
+
+Existing V4.25.3 acceleration, biological landing damping, Toughness, armor mitigation and actor-to-actor momentum equations are unchanged.
+
+## Acceleration and biological impact response 4.25.3
+
+**Implemented — pending manual validation**
+
+Player horizontal locomotion now uses an exponential acceleration state. With uninterrupted grounded directional input:
+
+`A(n) = 1 - (1 - 0.028127624)^n`
+
+At 105 tics (3 seconds) the factor is exactly 0.95. `A` multiplies the existing movement result, so the final maximum remains determined by Agility, LoadRatio, health/Air/survival state and shield mobility.
+
+Self-powered wall impact severity also multiplies by this acceleration state. This makes run-up distance physically meaningful without changing the already validated actor-to-actor impulse equation.
+
+Actor collisions now latch by contact pair. A collision is not eligible to resolve again while the same bodies remain touching; separation beyond their combined radii plus a small technical margin rearms the next impact.
+
+Floor impacts now have a biological-damping layer before Toughness and armor. Player controlled landing absorption equals current `JumpZ`. Stun/physical immobilization sets that absorption to zero. CaelumCombatActor NPCs use height-scaled biological absorption and likewise lose it while lucidity-stunned.
+
+**Validation focus:** acceleration feel and 95%-at-3s timing; short-run vs long-run wall impacts; sustained push against the 10000-mass dummy; ordinary jump landing; stunned landing; high falls that exceed biological absorption.
+
+## Impact mitigation and calibration 4.25.2
+
+**Implemented — pending manual validation**
+
+Raw impact severity now passes through Toughness and global armor defense before health loss. The armor term is the simple arithmetic mean of all four armor-slot defenses; this avoids inventing location weights before a separate impact-location design exists.
+
+Player wall-impact severity is normalized against effective movement percentage rather than raw GZDoom velocity. A 100% full frontal stop maps to 35 equivalent tics; load and movement-state penalties therefore reduce self-powered wall severity. A contact latch prevents repeated damage while continuously pressing against the same blocking geometry.
+
+Landing detection now stores falling vertical velocity from prior tics and resolves damage on the next grounded state. Player impact reference height is the stable derived actor height.
+
+Training dummy: movable, mass 10000, valid collision body.
+
+Rulo/Caella/Ronnie/Argento already carry `CaelumCombatActor` profiles and T1 armor; V4.25.2 now allows these statistics to mitigate impact damage too. Generic Doom actors do not yet have a Caelum profile adapter.
+
+## Momentum collision and impact physics 4.25.1
+
+**Implemented — pending manual validation**
+
+The collision foundation now resolves Caelum character/NPC contacts through a two-body impulse model. Effective combat mass participates in the impulse, so Buckler (`x0.5`) and Tower Shield (`x2`) naturally change both outgoing and self collision response. The normal coefficient of restitution is currently `e = 0`, producing an inelastic character collision rather than a bounce.
+
+Each body independently converts its forced `Delta-v` into an equivalent time to cover half of its own height. More than 35 equivalent tics is non-damaging. From 35 down to 1 tic, each discrete threshold adds 3% maximum-health base damage, reaching 105% at one tic or less.
+
+The same impact evaluator is connected experimentally to blocked horizontal world movement and floor landings. Impact damage currently bypasses evasion, shield Block and localized armor so the test build exposes the raw physical scale without hidden mitigation.
+
+The debug overlay displays last impact kind, Delta-v, equivalent tics, damage percent and base damage. Internal fields also preserve effective masses, closing speed and impulse for calibration.
+
+Carbine Reload base time is corrected to 5 seconds. Ranged Reload bases are now 3/3/5/5 seconds.
+
+Detailed design: `docs/PHYSICS_COLLISION_SYSTEM.md`.
+
+## Ranged weapon architecture 4.25.0
+
+**Implemented — pending manual validation**
+
+The four definitive ranged weapons now have independent magazine state and Reload behavior. Standard Bow and Longbow each hold 50 shots, Crossbow 20, and Carbine 10. Magazine capacity does not scale with tier. Reload base durations are 3 seconds for both bows, 5 seconds for Crossbow, and 10 seconds for Carbine; effective duration is divided by the Dexterity Type-4 attack-speed multiplier.
+
+AltFire now toggles Aim for ranged weapons rather than trying to reuse the shield input. Aim multiplies physical accuracy by 2.0 and stacks with the existing crouch accuracy multiplier of 2.0. Native Zoom remains the independent persistent Block toggle.
+
+Ranged damage is intentionally attribute-independent at the base-damage layer and therefore has been raised substantially. T1 bases are Standard Bow 1200, Longbow 1800, Crossbow 1400, and Carbine 3600. Ranged tiers use 100% / 160% / 250%, producing T2/T3 damage of 1920/3000, 2880/4500, 2240/3500, and 5760/9000 respectively.
+
+Base critical chance scales with the same 100% / 160% / 250% tier multipliers before the Dexterity critical bonus is added. T1 bases are Standard Bow 10%, Longbow 12%, Crossbow 8%, and Carbine 6%.
+
+The authoritative spread ladder is Minimum 10°, Very Low 30°, Low 50°, Medium 70°, High 90°, Very High 110°, Maximum 130°. Minimum spread is always 10% of maximum. Current ranged assignments are Standard Bow Very High (11°–110°), Longbow Medium (7°–70°), Crossbow High (9°–90°), and Carbine Maximum (13°–130°).
+
+### Equipment-data audit
+
+The executable remains the source checked for equipment values. Shield T1 weights are Magic 4, Buckler 8, Kite 12, Tower 16; documentation entries using older 14/18 values for Kite/Tower are obsolete. Physical-weapon T1 weights and catalogue combat values have been rechecked against `CaelumWeaponModel` and `CaelumWeaponCatalogue`.
+
+## Connected crafting infrastructure 4.23.3a
+
+**Implemented — pending validation**
+
+The world-sprite alignment table has been restored from the validated 4.22.4c
+configuration while retaining the twelve crafting-station sprites. The
+training dummy and floor gallery therefore again use their corrected paths and
+offsets.
+
+Crafting close input now has a dedicated UI processor. This is necessary
+because GZDoom routes input through `UiProcess` instead of `InputProcess` while
+its GUI owns keyboard focus; `Q` is forwarded to the existing networked
+crafting toggle in either input mode.
+
+All twelve infrastructure actors now use dedicated project-local station
+sprites rather than temporary weapon/equipment placeholders. Their source
+cards were normalized for the sprite namespace and registered in
+`ASSET_REGISTER.md`.
+
+The crafting overlay now accepts its close command while GZDoom retains
+`menuactive`, removing the previous requirement to press Escape before `Q`.
+
+### Input regression note
+
+The experimental global crafting UI processor has been removed because it
+interfered with character creation at map start. Crafting input is temporarily
+back on the stable 4.23.2 path; the requirement to close residual native menu
+focus before `Q` may still occur and remains pending a safer implementation.
+
+
+Crafting infrastructure forms a graph at interaction time. Two
+`CaelumCraftingStation` actors are directly linked when their three-dimensional
+distance is at most 64 map units, equal to exactly two development metres.
+Connectivity is transitive, so a station can belong to the same workshop even
+when it is farther than two metres from the Workbench if connected stations
+bridge the distance.
+
+The Workbench is the logical root of the interface. Using any station scans
+its complete connected component and opens the same Workbench menu. A
+component without a Workbench is rejected with a localized message. The scan
+runs only on interaction and uses a per-player token to avoid recursion cycles
+and cross-player scan collisions.
+
+The twelve planned infrastructure actors currently exist: Workbench, Forge,
+Anvil, Ranged Weapons Workshop, Sawmill, Armor Workshop, Sewing Machine,
+Essence Altar, Globe, Jeweler Bench, Fine-tools Bench, and Master Bench. All
+inherit `CaelumMovableProp`; their push requirement remains unset, so they
+cannot yet be moved. Final station mass and physical-power requirements remain
+deliberately pending for the later environment pass.
+
+Tier requirements are cumulative. Forge recipes require Workbench + Forge at
+tier 1, additionally Anvil at tier 2, and additionally Master Bench at tier 3.
+Ranged-weapon recipes require Workbench + Ranged Weapons Workshop at tier 1,
+additionally Sawmill at tier 2, and additionally Master Bench at tier 3. The
+same architecture is reserved for Armor Workshop/Sewing Machine, Essence
+Altar/Globe, and Jeweler Bench/Fine-tools Bench once those recipe families are
+authored.
+
+The Workbench menu currently exposes sixteen physical recipes: twelve Forge
+recipes plus standard bow, carbine, longbow, and crossbow from the Ranged
+Weapons Workshop. The interface reports whether the selected recipe's
+infrastructure is ready and names the first missing station. Material
+requirements, ownership checks, Magic Box routing, and the existing crafting
+transaction remain unchanged.
+
+MAP01 contains four infrastructure tests: a full twelve-station network, a
+Workbench+Forge tier-1 network, a Workbench+Forge+Anvil tier-2 network, and an
+isolated Forge that must reject interaction because no Workbench is connected.
+
+
+### Armor and essence recipes
+
+The unified Workbench currently exposes 52 recipes. Recipes 1–16 are the
+physical weapon catalogue. The next 16 cover all four armor types across all
+four body slots. The final 20 cover the four essence weapons with each of the
+five elemental essences.
+
+Armor material logic is weight-based and uses the existing material-unit
+rounding system. Strap is always the base component. Fabric, Leather,
+Chainmail, and Plate are the tier components for Magic, Light, Medium, and
+Heavy armor respectively. Head/Body use 20% Strap and 80% tier material;
+Hands/Feet use 60% Strap and 40% tier material.
+
+Magic and Light armor require Workbench + Armor Workshop at tier 1, add Sewing
+Machine at tier 2, and add Master Bench at tier 3. Medium and Heavy armor use
+Workbench + Forge, add Anvil at tier 2, and add Master Bench at tier 3.
+
+Essence weapons use 90% of their corresponding base material and 10% elemental
+essence by final weapon weight. Tier 1 requires Workbench + Essence Altar,
+tier 2 additionally requires Globe, and tier 3 additionally requires Master
+Bench. The resulting weapon stores the selected essence on the native
+equipment item.
+
+
+
+This file describes the current executable prototype. The main design document
+remains the authority for rules not yet connected to gameplay.
+
+## Definitive physical weapon and recipe catalogue 4.12.0
+
+**Implemented as authoritative data — pending playable crafting**
+
+The code now defines all sixteen physical weapons in families 2 through 5:
+dagger, hatchet, machete, javelin, sword, axe, flail, spear, greatsword, war
+axe, halberd, giant gauntlets, standard bow, carbine, longbow, and crossbow.
+Each entry centralizes primary/secondary damage, damage type or special action,
+attack cadence, range, spread, critical chance, air cost, family, and shield
+interaction. The carbine retains 360 damage/48 tics/60 m/30°–200°/0%/-20;
+the longbow retains 180 damage/24 tics/30 m/10°–120°/12%/-10.
+
+Every physical recipe now names one main component, one secondary component,
+and the exact component that supplies its tier. Spear and javelin use shaft +
+point and take the point's tier. Flail replaces the discarded one-handed mace
+and uses round head + generic chain. Giant gauntlets remain the fourth large
+weapon; the two-handed mace, saber, and their unused unique parts are absent.
+
+Small weapon head and chain complete the active material catalogue. All 41
+active material types are referenced by at least one physical, armor, shield,
+or essence recipe. The old iron-ingot prototype is hidden from new selections
+but its class and identifier remain available for save compatibility. Exact
+component quantities and actual inventory consumption remain pending until the
+global material-requirement formula is defined.
+
+The console command `ca_debug_audit_crafting_catalogue` performs a read-only
+runtime audit. Its expected result is 16 weapon recipes, 41 active materials,
+and 0 unused materials.
+
+## Native material catalogue and lock test 4.11.0
+
+**Implemented — pending validation**
+
+The Materials filter now exposes a data-driven catalogue of weapon parts,
+shield plates, armor resources, elemental essences, secondary components, and
+magical-item bases. Metal, wood, essence, leather, and fabric use three
+localized grades; generic secondary components remain tier-independent.
+
+Every material is a native `Inventory` instance. Type and tier together define
+stack identity, so identical units merge while different grades remain
+separate. Each unit weighs 0.1 by default, participates in automatic overweight
+routing, and a complete stack occupies one Magic Box slot and weighs zero while
+stored there.
+
+`ca_debug_test_silver_lock` invokes `CheckKeys(200, true, false)`. This follows
+the same native `LOCKDEFS` path used by locked map specials: without the silver
+key it prints the configured remote failure message; with the key it confirms
+access. A real door still declares lock number 200 in its map-line special.
+
+## Categorized special inventory and native locks 4.10.0
+
+**Implemented and manually validated**
+
+The authoritative `Actor.Inv` chain now includes three additional categories:
+Materials, Keys, and Key Items. The compact inventory cycles through eight
+separate filters: armor, shields, weapons, ammunition, consumables, materials,
+keys, and key items. Equipment retains its equipped/unequipped state and every
+eligible object can still expose its Magic Box location.
+
+The first test catalogue contains a stackable iron ingot, a native silver key,
+and a unique sealed letter. Their default unit weight is 0.1. Materials use
+their `Amount` as the load multiplier and a complete stack occupies one Magic
+Box slot. Key items are non-stackable and can also enter the box.
+
+The silver key derives from GZDoom's native `Key`, so the engine itself prevents
+duplicates and recognizes it through `LOCKDEFS`. Lock number 200 can be passed
+to locked door specials or ACS locked actions. Keys deliberately remain in
+personal inventory: GZDoom's lock check only tests ownership and cannot see
+Caelum's `InMagicBox` field, so boxing the same native key would otherwise leave
+the lock usable. Its 0.1 weight always contributes to carried load.
+
+GZDoom also provides `PuzzleItem`, Strife quest/dialogue infrastructure, HUD
+messages, and programmable ZScript UI. These are reusable foundations for the
+future mission pass, while Caelum will still own the general objective tracker
+and presentation layer.
+
+## Native consumables and timed regeneration 4.9.0
+
+**Implemented and manually validated**
+
+Life potion, Anima potion, energy drink, food ration, and water ration are now
+stackable native GZDoom inventory objects. Their respective unit weights are
+0.25, 0.25, 0.25, 0.10, and 0.10. Personal-inventory stacks contribute
+`Amount × unit weight`; a complete stack occupies one Magic Box slot and weighs
+zero while boxed. An overweight pickup follows the already validated native
+overflow rule, and a full Magic Box leaves it in the world.
+
+Using an item consumes one unit through GZDoom's native inventory path and
+creates a ten-second Powerup. It applies one pulse per second: life restores 1%
+of maximum health, Anima restores 1% of maximum Anima, the energy drink restores
+1% of maximum air plus one sleep point, and each ration restores one hunger or
+thirst point. Reusing the same item refreshes its remaining duration to ten
+seconds instead of adding a second simultaneous intensity.
+
+The compact inventory interface includes a Consumables filter. Left/Right
+selects the item, `P` creates a five-unit test stack on the floor, Enter/E uses
+one unit, `C` moves the complete stack between personal inventory and the Magic
+Box, and `D` drops it. Native previous/next/use inventory commands are also
+available under Customize Controls.
+
+## Native inventory shadowing correction 4.8.1
+
+**Implemented and previously validated**
+
+The 4.8.0 native objects were collected correctly, as confirmed by `printinv`,
+but ZScript's case-insensitive identifiers caused two parameter/field name
+collisions. The equipment matcher compared its tier/type/slot/size parameters
+against themselves, and the carried-load setter wrote calculated weights back
+into its temporary parameters. Both interfaces now use unambiguous parameter
+names, so ownership selection and weight propagation retain the values stored
+in each native inventory instance.
+
+## Native inventory and Magic Box object state 4.8.0
+
+**Implemented and previously validated**
+
+Armor pieces, shields, weapons, and carbine bullets are now real GZDoom
+inventory objects. The player's native `Actor.Inv` chain is the single source
+of ownership, quantity, and carried weight; collecting equipment no longer
+deletes the pickup and replaces it with a parallel boolean record. Every
+non-stackable instance stores its own slot/type, tier, size, durability,
+equipped flag, Magic Box flag, and unit weight.
+
+Equipping and removing only changes the equipped flag. Moving an object to the
+Magic Box changes its carried contribution to zero while retaining the same
+native object. A non-stackable instance uses one box slot. Carbine ammunition
+uses its native `Amount`: any quantity remains one stack and therefore uses one
+box slot. Outside the box its weight is `Amount × 0.003`; inside it weighs zero.
+
+Immediately after the first character-creation confirmation, the four armor
+pieces, profession shield, sword, staff, carbine, and 100-bullet stack appear
+as nine pickups on the floor in front of the character. The character owns
+nothing until those pickups are collected. If a pickup would exceed capacity,
+it enters the Magic Box when a slot exists; otherwise it stays in the world.
+
+The compact equipment menu can inspect the native objects, equip or remove
+them, move them to or from the Magic Box, break them, and drop them. Its load
+breakdown and the permanent HUD are rebuilt directly from native inventory on
+every refresh. Legacy persistent equipment can be migrated once into native
+instances for save compatibility.
+
+## Authoritative persistent carried load 4.7.8
+
+**Implemented — pending validation**
+
+Every owned armor piece, shield, weapon, and bullet outside the Magic Box is
+now summed exactly once from the persistent object registry. Equipped state is
+used only to divide that authoritative value into equipped and personal
+inventory subtotals; it can no longer decide whether an object contributes to
+total carried weight. The complete breakdown is written atomically before mass,
+movement, jump, evasion, air consumption, and HUD values are recalculated.
+
+The permanent load display now prints its localized state next to the
+percentage: normal below 75%, overload from 75%, and capacity exceeded from
+100%. Its thresholds match the bar colors and gameplay state helpers.
+
+## Atomic carried load and multi-weapon equipment 4.7.6
+
+**Implemented — pending validation**
+
+Inventory weight, equipped weight, ammunition weight, and development weight
+now refresh `EquippedWeight`, `CarriedWeight`, `TotalMass`, and `LoadRatio`
+atomically. This removes the stale-value route where opening the equipment menu
+updated the inventory subtotal before the next gameplay tick and prevented that
+tick from recognizing that a complete recalculation was still required.
+
+Equipped and active weapons are now separate states. Any owned weapon can be
+equipped without removing weapons from other families. Every equipped weapon
+contributes its weight, but only one is active in the player's hands. Native
+weapon-family buttons select the active test weapon: `3` sword, `5` carbine,
+and `6` staff. Unequipping the active weapon automatically selects another
+equipped family when one exists.
+
+The equipped flags persist independently for every weapon/type/tier/size
+combination. Saves from the single-weapon implementation migrate their previous
+active weapon as equipped. Moving a weapon between personal inventory and an
+equipment slot does not change total carried weight; moving it from the Magic
+Box does.
+
+## Post-creation starting equipment and ammunition weight 4.7.5
+
+**Implemented — pending validation**
+
+A new player owns no armor, shield, weapon, or carbine ammunition while the
+character creator is open. Confirming the final page grants the development
+loadout exactly once, using tier 1 and the default compatible size calculated
+from the completed character.
+
+Sword, staff, and carbine are always granted for testing. Sword begins equipped;
+staff and carbine begin in personal inventory. The carbine begins with 100
+bullets. Each bullet weighs 0.003, and current ammunition now contributes to
+personal-inventory and carried weight, so firing reduces load by 0.003.
+
+Starting armor and shield depend on the resulting profession:
+
+- Warrior: heavy armor and tower shield.
+- Mercenary, cleric, and battle mage: medium armor and kite shield.
+- Explorer, pilgrim, and investigator: light armor and buckler.
+- Pure priest, mage, and arcanist: magic armor and magic shield.
+
+Armor uses its authoritative per-piece tier table in both equipped and
+personal-inventory calculations, followed only by the established size
+multiplier. This keeps previewed item weight and actual carried load identical.
+
+## Personal inventory and overflow Magic Box 4.7.4
+
+**Implemented — pending validation**
+
+The personal inventory now exists independently from equipment and the Magic
+Box. It has no item-slot limit: every unequipped object stored there contributes
+its complete tier/size weight to carried load. Equipped weight, personal-
+inventory weight, and development test weight form the load used by the HUD,
+movement, evasion, air consumption, total mass, and push resistance.
+
+When collecting or creating an object, the system first checks whether its
+weight fits without exceeding carry capacity. If it fits, it enters personal
+inventory. Otherwise it is redirected to the Magic Box; only this overflow
+storage consumes its Intelligence-derived slots. If overflow is required while
+the box is full, the pickup remains in the world.
+
+Equipping an inventory object only changes its location and therefore does not
+change carried weight. Equipping directly from the Magic Box adds its weight
+and is rejected when capacity is insufficient. Unequipping returns the object
+to personal inventory. The compact menu reports location, inventory count,
+equipped slots, box usage, and the complete weight breakdown. Saves from 4.7.3
+migrate their previously unequipped objects to the Magic Box.
+
+## Persistent playable weapons 4.7
+
+**Implemented — pending validation**
+
+Sword, staff, and carbine are now real main-hand equipment records rather than
+an isolated weight placeholder. Every weapon/type/tier/size combination owns
+independent durability, uses XS–XL compatibility, records its current storage
+location, and survives save/load and map travel. Existing 4.6 profiles
+migrate their provisional weapon weight to a size-aware sword, staff, or
+carbine without invalidating the earlier equipment data.
+
+The compact equipment menu has a third Weapons filter. It previews damage,
+attack time, base air/Anima cost, weight, compatibility, durability, and
+carbine bullets. `P`, `Enter`, `Backspace`, `B`, and `D` use the same spawn,
+equip, remove, break, and drop flow already used by armor and shields.
+
+Every owned weapon may be equipped independently. Numeric family slots choose
+only the active weapon: sword uses 3, carbine uses 5, and staff uses 6. Sword
+retains physical Strength/mass damage and its 14-tic cadence; staff retains
+Intelligence damage, Insight accuracy/critical, adjusted Anima cost, and
+Eloquence casting speed. Carbine uses 360 tier-one damage without an attribute
+damage multiplier, 48 tics, 60 m, 30°/200° accuracy-scaled spread, 0% weapon
+critical base, 20 air per reload, physical push, and one bullet per shot.
+The confirmed starting loadout grants 100 test bullets. AltFire toggles the
+equipped secondary-hand shield; weapon secondary attacks remain reserved.
+
+Tier damage uses the documented 1.00/1.20/1.50 material progression. Weapon
+weight uses 1.00/1.50/2.00 and size 0.50/0.75/1.00/1.25/1.50. Test durability
+bases are sword 100, staff 80, and carbine 120, followed by the existing
+×1/×3/×9 tier rule and size multiplier.
+
+Carry capacity is written directly as
+`BaseMass × Type4Percent(Strength) / 100`. Therefore a 200-mass character has
+200 capacity at Strength 0 and 600 at Strength 100.
+
+## Carry capacity, magic armor, and equipment testing 4.6.2
+
+**Implemented — pending validation**
+
+Carry capacity is now `Strength Type 4 × (BaseMass / 100)`. Equipment weight
+remains excluded from that multiplier and continues to form the numerator of
+the load percentage. The tier-one, size-M carbine weight is now 12.
+
+The basic equippable category is now named “magic armor” in
+source, UI, tables, and documentation. This is a terminology-only migration:
+its stored numeric value remains zero, so existing saves and owned equipment
+records stay compatible. It remains separate from the zero-stat base clothing
+used when a slot is genuinely empty.
+
+The equipment menu accepts `P` to create its selected object through the pickup
+rules. It enters personal inventory when its weight fits or the Magic Box when
+it does not; `E`/`Enter` equips, `U`/`Backspace` removes, and `D` drops it.
+
+## Compatibility and equipment HUD 4.6.1
+
+**Implemented — pending validation**
+
+GZDoom 4.14.2 does not accept the two `GetMaximumDurabilityFor` signatures as
+overloads. The unused two-argument wrappers were removed; every active caller
+uses the size-aware three-argument function.
+
+The right-side HUD now includes carried weight, carry capacity, and percentage
+in a dedicated bar. Its fill changes from green to yellow at 50%, orange at the
+75% overload threshold, and red at 100% or more.
+
+Removing armor now equips a non-item baseline according to slot: nothing on
+head and torso, shirt on hands, and pants on feet. Baseline entries have zero
+defense, weight, reinforcement, and durability, are never damaged, and do not
+occupy the Magic Box. The existing equippable magic-armor set remains separate.
+
+The short bow catalogue entry is replaced by the tier-one carbine. Its
+values are 360 damage, 48 tics, 60 m, 30°/200° spread, 0% base critical chance,
+-20 air, and size-M weight 12. Version 4.7 connects this record to its playable
+projectile, bullets, inventory ownership, and persistent equipment model.
+
+Status legend:
+
+- **Implemented — pending validation:** compiled into the 4.0 source and ready
+  for Damian's GZDoom 4.14.2 test pass.
+- **Implemented and previously validated:** retained behavior that had already
+  passed manual testing before 4.0.
+- **Prepared:** a calculated value exists, but no final gameplay consumer exists.
+
+## 4.0 compatibility repair
+
+**Implemented — pending validation**
+
+- Actor states use unscoped actions compatible with monster state chains. Each
+  action casts `self` to `CaelumCombatActor` before accessing custom members.
+- Player collision dimensions use GZDoom's `A_SetSize`; `Radius` itself is a
+  readonly ZScript field and cannot be assigned directly.
+- Effective actor Dexterity and Insight are cached in play scope. The UI overlay
+  reads those fields instead of illegally calling play functions.
+- The cascading unknown identifiers reported in actor debug page six are
+  consequently removed.
+
+## Character creation 4.1
+
+**Implemented — pending validation**
+
+The legacy three-layer creation model is replaced by eight pages. The only
+structural character categories are Race and two Class selections; the second
+class resolves the resulting profession:
+
+1. Race.
+2. First class.
+3. Second class and resulting profession.
+4. Sex.
+5. Height.
+6. Four family points.
+7. Thirty individual points.
+8. Summary and confirmation.
+
+New characters now open this flow automatically. Until confirmation, ordinary
+movement and attacks are blocked, resource simulation is paused, and the
+unfinished character cannot receive damage. Keyboard controls are Right/Down,
+Enter, Space, and Backspace/Left; gamepads use D-pad, A, X, and B. The confirmed
+profile and completion flag persist in saves and in an inventory-backed travel
+record. Changing maps therefore restores the confirmed character instead of
+opening the creator again.
+
+Races contribute Physical / Technical / Social / Mental values:
+
+| Race | Values | Mass tier | Size tier |
+|---|---:|---:|---:|
+| Beast Man | 5/3/3/1 | +2 | +1 |
+| Caelith | 3/5/1/3 | +1 | 0 |
+| Human | 3/1/5/3 | 0 | 0 |
+| Goblin | 1/3/3/5 | -1 | -1 |
+
+Classes use Warrior 5/3/3/1, Explorer 3/5/1/3, Priest 3/1/5/3 and Mage
+1/3/3/5. The two selections are order-independent and resolve to Warrior,
+Explorer, Priest, Mage, Mercenary, Cleric, Battle Mage, Pilgrim, Investigator,
+or Arcanist.
+
+The family allocation keeps four points and a base limit of 15. Individual
+allocation keeps thirty points, at most +5 per attribute and never above twice
+the attribute's family base.
+
+## Attributes, Anima, and Eloquence
+
+**Implemented — pending validation**
+
+- The attribute retains its definitive `Resilience` name in source and UI.
+  Internal “survival resources” still refer collectively to hunger, thirst,
+  and sleep and are not the attribute name.
+- `Mana` is renamed `Anima` throughout the executable prototype.
+- Eloquence Type 4 increases casting speed. The test staff duration is
+  `18 tics × 100 / Type4Percent(Eloquence)`.
+- Eloquence Type 2 reduces Anima cost by `n(n+1)/101%`; cost reaches zero at
+  level 100 and cannot become negative.
+- Eloquence Type 4 ability range and Type 2 dialogue skill are calculated and
+  visible on the magic debug page. They are **Prepared** for later abilities
+  and dialogue consumers.
+
+## Mass and size tiers
+
+**Implemented — pending validation**
+
+Mass tier is clamped from 1 to 10 and maps to 50, 55, 60, 70, 80, 100, 120,
+140, 170, or 200 kg. Size tier is clamped from 1 to 7 and maps to:
+
+| Tier | Height in metres | Actor Height | Actor Radius |
+|---:|---:|---:|---:|
+| 1 | 1.20 | 37.3 | 10.7 |
+| 2 | 1.40 | 43.6 | 12.4 |
+| 3 | 1.60 | 49.8 | 14.2 |
+| 4 | 1.80 | 56.0 | 16.0 |
+| 5 | 2.00 | 62.2 | 17.8 |
+| 6 | 2.20 | 68.4 | 19.6 |
+| 7 | 2.40 | 74.7 | 21.3 |
+
+The body-mass multiplier is `BaseMassKg / 100`. It affects maximum health,
+physical attack power, physical push, carry capacity, air consumption, hunger
+loss, and thirst loss. Equipment remains separate and continues to affect
+load, movement, evasion, knockback, and additional air use.
+
+Push is live for the player's sword and staff, Caelum actor melee attacks, and
+physical or magical Caelum projectiles. Physical attacks use
+`Strength Type 1 × body mass`; magical attacks use `Intelligence Type 1`.
+The final force is `8 × attack push multiplier × receiver knockback multiplier`.
+It only occurs after positive health damage; misses, evasion, and fully
+prevented damage do not push. The training dummy's exceptional native mass keeps
+it stationary. The combat page displays the last player-attack push force.
+
+The development controls provide separate level-75 and level-100 attribute
+overrides. Enabling one disables the other; toggling the active option again
+restores the character's ordinary profile.
+
+## Armor and equipped mass
+
+**Implemented — pending validation**
+
+Every armor piece now exposes its documented weight. At size M, full-set totals
+for tiers 1/2/3 are 5/7/10 magic armor, 10/15/20 light, 20/30/40 medium, and
+40/60/80 heavy. The exact per-piece tier table is applied before the equipment-
+size multiplier. Broken pieces retain their weight. Shield and equipped-weapon
+weights are included automatically, and debug-added mass is shown separately.
+
+The current loadout is mirrored into an invisible, undroppable GZDoom inventory
+record. It preserves profile, allocations, resources, equipped items, ownership,
+and the individual durability of every armor/shield type, tier, and size
+combination across saves and map travel. Existing pre-size ownership records
+migrate automatically to size M.
+
+`CaelumArmorPickup` and `CaelumShieldPickup` are functional world pickups. Map
+authors configure armor with args `slot/type/tier/size/durability` and shields
+with `type/tier/size/durability`; size zero remains a backwards-compatible M
+default. Duplicate pickups retain ownership and repair that stored copy up to
+maximum durability. A separate compact equipment interface cycles owned or
+unowned previews, equips selected compatible objects, removes armor to its
+zero-stat base clothing, and can fully unequip shields. Every change immediately
+recalculates attribute bonuses, defense, reinforcement, mass, movement,
+evasion, air cost, and shield blocking. A development control spawns the
+currently previewed pickup.
+
+## Area damage
+
+**Implemented — pending validation**
+
+Damage carrying `DMG_EXPLOSION` cannot be evaded. GZDoom first supplies the
+distance-adjusted radial damage for the actor; Caelum then intersects the
+explosion sphere with that actor's authored anatomy volumes. The supplied base
+damage is applied once per touched region, and each application independently
+resolves natural vulnerability, armor reinforcement, defense, Toughness, and
+durability. The resulting health damage is summed into one final hit.
+
+For the humanoid profile this produces at most four applications: head, torso,
+arms, and legs. Both arms are one logical region: touching either or both counts
+only once. A low explosion may therefore affect only legs, a larger wave from
+below may affect legs and torso, and a full-body intersection resolves all four.
+Separate authored non-arm regions remain independent, allowing future actors to
+define multiple heads, tails, or weak points without changing this pipeline.
+
+Pain and damage-based adrenaline are evaluated once from the total health loss.
+A naturally critical region touched by the explosion can reduce lucidity, with
+its own armor absorption mitigating that loss. Shields do not currently block
+radial damage.
+
+Defense percentages, reinforcement, bonuses, durability loss, and shield
+behavior remain **Implemented and previously validated**.
+
+## Predefined hostile characters
+
+**Implemented — pending validation**
+
+The final-value table in the 4.0 specification is authoritative:
+
+| Actor | Profile | Attributes F/T/S/M | Mass / size | Armor | Health |
+|---|---|---:|---|---|---:|
+| Rulo | Beast Man Warrior, male, tall | 20/18/9/3 | 200 kg / 2.40 m | Heavy | 6200 |
+| Ronnie | Caelith Mercenary, male, tall | 20/18/5/7 | 140 kg / 2.00 m | Medium | 4340 |
+| Argento | Human Battle Mage, male, tall | 9/7/16/18 | 120 kg / 2.00 m | Light | 1740 |
+| Caella | Goblin Cleric, female, tall | 9/7/16/18 | 80 kg / 1.60 m | Magic armor | 1160 |
+
+Physical actor attacks apply body mass; magical attacks do not. Caella owns an
+independent profile rather than inheriting Argento's combat setup.
+
+## Equipment sizes and Magic Box 4.6
+
+**Implemented — pending validation**
+
+Equipment now records XS, S, M, L, or XL independently for every owned armor
+piece and shield. Weight and maximum durability use the size factors 0.50,
+0.75, 1.00, 1.25, and 1.50. Compatibility is exact: XS accepts character size
+tiers 1–2, S accepts 2–3, M accepts 3–5, L accepts 5–6, and XL accepts 6–7.
+Older ownership records and equipped objects migrate to M once.
+
+Shield tier-one weights are magic 4, buckler 8, kite 12, and tower 16. Shields
+then use tier factors 1.00/1.50/2.00 before size. The same tier/size weight rule
+is centralized for weapons; the sword contributes base weight 6.
+Armor retains its documented per-piece weights and applies size only.
+
+The compact equipment interface is the first functional catalogue view:
+armor/shield filters, storage location, current and maximum box slots, size
+compatibility, three-decimal item weight, equip/remove, development break, and
+drop. Pickups remain on the ground only when their weight exceeds capacity and
+the box has no free slot. Dropped objects preserve size and durability. The box formula remains
+`2 + floor(Type1Percent(Intelligence) / 50)`; Tarot bonuses remain reserved.
+
+Strength carry capacity uses Type 4 multiplied by `BaseMass / 100`. Agility
+jump scaling is Type 1.
+
+## Retained validated systems
+
+**Implemented and previously validated**
+
+- Seven vulnerability grades, localized armor, reinforcement, durability, and
+  critical damage-only behavior.
+- Natural critical-region lucidity loss, armor absorption mitigation, sleep
+  multipliers, dizzy accuracy, stun, and pain-animation immobilization.
+- Health-state penalties, Patience mitigation, survival penalties, progressive
+  health-bar color, evasion, crouch bonuses, jump scaling, and air costs.
+- Adrenaline events, enemy-kill and nearby-ally-death gains, and unchanged
+  out-of-combat decay.
+- Training dummy, sword, staff, shields, ranged actor attacks, four actor sprite
+  sets, and six compact debug pages.
+
+## Required 4.0 test pass
+
+1. Build and start GZDoom 4.14.2; confirm ZScript parses without errors.
+2. Open creation and traverse all eight pages in both orders for mixed classes.
+3. Confirm four family points and thirty individual points remain mandatory.
+4. Cycle race, sex, and height; verify mass/size tiers and player collision size.
+5. Compare armor type/tier changes with equipped, inventory, debug, and total
+   carried weights shown on character page one.
+6. Spend and refill Anima; verify HUD, staff cost reduction, and faster casting
+   at higher Eloquence.
+7. Spawn all four actors and verify dimensions, health, armor, physical damage,
+   magical damage, pain, death, and actor debug page values.
+8. Re-run the previously validated shield, armor, lucidity, pain, adrenaline,
+   movement, jump, survival, and resource controls to catch regressions.
+9. Change maps after confirming a character; verify the creator stays closed
+   and profile, resources, armor, shield, durability, and owned counts persist.
+10. Compare sword/staff push and Rulo/Ronnie projectiles. Both physical and
+    magical confirmed hits should push; misses and evasion should not.
+11. Assign the equipment and equipment-pickup test controls. Spawn several
+    armor/shield combinations, collect them, equip and remove them, then verify
+    individual durability and ownership survive save/load and map travel.
+12. Trigger explosions at low, middle, lateral, and full-body positions. Verify
+    the armor page's touched-region count and independent piece durability.
+13. In equipment, cycle XS through XL and verify incompatible sizes cannot be
+    equipped for the current character size tier.
+14. Check shield weights at M: magic 4/6/8, buckler 8/12/16, kite 12/18/24,
+    and tower 16/24/32 for tiers 1/2/3; then verify size multipliers.
+15. Collect objects below capacity and confirm they enter personal inventory
+    and increase carried weight without consuming box slots.
+    Fire the carbine and confirm that each bullet lowers load by 0.003.
+16. Exceed capacity and confirm the next object enters the Magic Box without
+    increasing load; fill the box and confirm another overweight pickup stays
+    on the ground.
+17. Cycle to Weapons, spawn sword/staff/carbine variants, collect them, and
+    confirm incompatible sizes cannot be equipped.
+18. Equip sword, staff, and carbine simultaneously. Confirm that equipping one
+    does not unequip the others; use 3/5/6 to activate sword/carbine/staff and
+    Fire to confirm their respective air, bullet, and adjusted Anima costs.
+19. Compare carbine fire while standing, running, crouching, and Mareado;
+    inspect its visible spread and verify the 48-tic firing limit.
+20. Break an equipped weapon and confirm it retains weight but cannot attack;
+    then drop/recollect an unequipped weapon and verify durability and size.
+21. Save/load and change maps with objects equipped, in personal inventory, and
+    in the Magic Box; verify location, load, durability, bullets, and counts.
+
+## Not yet implemented
+
+- Final buffs, debuffs, healing abilities, and dialogue consumers for the new
+  Eloquence range/Labia values.
+- Save migration from profiles created with the legacy three-layer format.
+- Remaining weapon families, material catalogue, Tarot, and final visual
+  inventory tabs; armor/shield/weapon Magic Box capacity, filters, and core
+  item actions are functional.
+
+## Jewelry crafting — 4.23.4
+
+Implemented universal amulets and elemental seals with tier-based weight, attribute bonuses, Jeweler Bench infrastructure, and MAP01 test placement. Raw gems, copper, tin, and coal are registered for future systems and intentionally have no current recipe function.
+
+````
+
+
+## Registro: before_4.33.0g/MAGIC_BOX.md
+
+SHA-256: `c8b2b84f1286762e0a5a7687863c54044aca2514965c12646ec4b8efa3a3bdf3`
+
+````text
+# Caelum Argenteum — Caja Mágica y misión V4.33.0b
+
+V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
+cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
+comenzar. Las revisiones V4.32 usaron a Palomo para validar el regalo; esa ruta
+era un entorno de prueba y V4.33.0b la retira del diálogo canónico. La Caja se
+entregará al final de MAP01, después de las cuatro ramas. La prueba anterior
+también confirmó que la salida normal conserva la Caja; `map MAP02` crea un
+personaje nuevo y no constituye un viaje del personaje.
+
+## 1. Naturaleza y peso propio
+
+La Caja Mágica es una capacidad persistente del personaje una vez recibida. No
+existe como objeto seleccionable: no puede soltarse, venderse, destruirse ni
+guardarse dentro de sí misma. Antes de recibirla no aporta peso, no ofrece
+slots y ninguna ruta de pickup, crafting o interfaz puede guardar objetos en
+ella. Al recibirla, su estructura aporta **10,000 kg** a la carga incluso
+cuando está vacía.
+
+La cantidad máxima de slots continúa derivándose de Inteligencia. Cada pieza
+individual de equipo y cada pila admitida consume un slot, sin importar cuántas
+unidades contenga la pila.
+
+## 2. Reducción de peso
+
+El contenido no pierde todo su peso. La carga se calcula con una sola operación
+agregada:
+
+```text
+peso reducido del contenido =
+    piso_a_0,001 kg(peso real total guardado / slots máximos actuales)
+
+peso total de la Caja Mágica =
+    10,000 kg + peso reducido del contenido
+```
+
+Se usan los **slots máximos**, no los ocupados. Todos los objetos y pilas se
+suman antes de dividir y redondear. Esto evita que separar un mismo peso entre
+varias pilas elimine carga mediante redondeos individuales.
+
+Ejemplo: con 20 slots máximos y 10,000 kg reales guardados, el contenido aporta
+0,500 kg y la caja completa aporta 10,500 kg. Con 0,380 kg guardados, el
+contenido aporta 0,019 kg.
+
+## 3. Contenido y restricciones
+
+Se conservan las reglas existentes:
+
+- equipo, consumibles, materiales, monedas, objetos clave admitidos y la pila
+  personalizada de munición pueden guardarse;
+- las llaves comunes no pueden guardarse, porque GZDoom comprueba su posesión
+  nativa para puertas y `LOCKDEFS`;
+- flechas y virotes nativos permanecen en el inventario personal;
+- una pila completa sigue contando como un único slot, pero todas sus unidades
+  aportan al peso real previo a la reducción;
+- las monedas guardadas conservan íntegramente su valor y participan del peso
+  reducido como cualquier otra pila.
+
+## 4. Transacciones y cambios de capacidad
+
+Recoger, depositar, recuperar, equipar, fabricar y desarmar evalúan la carga
+final completa. Una operación se rechaza si, después de retirar el peso de su
+ubicación anterior y añadirlo a la nueva, la carga superaría la capacidad del
+personaje. Mover un objeto del inventario personal a la caja continúa permitido
+cuando libera carga.
+
+Si un cambio de Inteligencia reduce los slots máximos por debajo de los ya
+ocupados, el contenido se conserva: no se elimina ni se expulsa. Se recalculan
+de inmediato el divisor y la carga, y se bloquean nuevos depósitos hasta que la
+ocupación vuelva a estar dentro del máximo. Recuperar o soltar contenido sigue
+siendo la vía para liberar slots.
+
+## 5. Interfaz
+
+El Inventario muestra `slots usados/máximos` y el peso total actual de la caja,
+incluidos sus 10,000 kg propios. La línea general de Carga incorpora exactamente
+el mismo valor. El peso individual seleccionado continúa mostrando el peso real
+del objeto o pila antes de la reducción. El icono 64×64 suministrado se muestra
+junto a esta línea; antes del regalo aparece atenuado con el texto `No
+adquirida`. Intentar almacenar desde Inventario antes del regalo devuelve una
+causa explícita y no cambia el objeto.
+
+## 6. Adquisición y compatibilidad de guardados
+
+- Un perfil nuevo se marca explícitamente como no propietario.
+- El primer encuentro canónico con Palomo no concede la Caja ni abre comercio.
+- La entrega queda reservada a `MAIN_M00_STATE_BOX_RECEIVED`, tras completar la
+  rama de combate y encontrar a Palomo en el segundo piso.
+- Cuando se conecte esa fase, el regalo añadirá sus 10 kg, habilitará los slots
+  y sólo podrá ejecutarse una vez mediante `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`.
+- `CaelumPersistentCharacterState` es la fuente persistente de propiedad. Se
+  guarda en `PreTravelled` y se restaura en `Travelled`; el campo vivo y el
+  marcador técnico se sincronizan desde ese registro.
+- La propiedad es independiente de la ubicación física futura de Palomo.
+- Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
+  la migración. Esto evita perder acceso a contenido que ya estaba guardado.
+- Una partida intermedia malformada que no posea la recompensa pero contenga
+  banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
+  se elimina ningún objeto.
+
+## 7. Integración con el registro de misión V4.33.0b
+
+`GrantMagicBoxFromPalomo()` deja de alterar el registro de misión por sí sola.
+La misión canónica **Donde despiertan los perdidos** comienza al despertar y
+su primer objetivo es buscar ayuda. Poseer una Caja de una partida anterior no
+salta la Voz, la presentación de Palomo ni la orientación hacia Argento.
+
+Al migrar V4.33.0a se reinicia únicamente el relato comercial descartado. La
+Caja existente no se duplica ni se quita, y conserva exactamente contenido,
+slots, peso y reducción. Esto permite probar el nuevo prólogo sin destruir
+inventario de desarrollo y mantiene a los personajes nuevos en la progresión
+canónica sin Caja.
+
+El resolvedor de ubicación mantiene a Palomo oculto antes de la Voz, lo muestra
+en el recibidor durante el encuentro, vuelve a ocultarlo al orientar hacia
+Argento y reserva el segundo piso para la futura fase de entrega. La coordenada
+y el traslado físico final todavía deben añadirse al mapa.
+
+La prueba válida es cruzar el `Exit` del mapa o usar `changemap MAP02`. El
+comando `map MAP02` comienza una partida nueva, crea otro jugador y debe mostrar
+la Caja como no adquirida; por definición del motor no prueba persistencia.
+
+````
+
+
+## Registro: before_4.33.0g/MAP01_ARGENTO_4_33_0f.md
+
+SHA-256: `1d28f831733edb5db966a5d0bf3d4c9ac0a756793fbd4499792ccea7c7ef2cd8`
+
+````text
+# MAP01 — Prueba social de Argento, 4.33.0f
+
+La especificación narrativa es `MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt`,
+especialmente su sección 17. La elección posterior del autor para esta
+implementación reemplaza los ejemplos de curvas incompatibles del capítulo
+10 de la documentación anterior: Persuasión y Emoción Tipo 4; Labia Tipo 2.
+
+| Interlocutor | Habilidad y atributo | Requisito | Alternativa |
+| --- | --- | --- | --- |
+| Rulo | Emoción / Empatía, Tipo 4 | Dificultad 120; luego respuesta respetuosa | Consejo de Argento tras fallar |
+| Ronnie | Labia / Elocuencia, Tipo 2 | Labia >= 1 | Aprender el plan de Argento después de visitar a Ronnie |
+| Caella | Persuasión / Carisma, Tipo 4 | Dificultad 120 | Consejo tras fallar y aceptación de condiciones |
+
+Se reutilizan las funciones existentes de `CaelumDerivedStats`:
+
+- Tipo 4: `100 + 2 × atributo × (atributo + 1) / 101`.
+- Tipo 2: `atributo × (atributo + 1) / 101`.
+- Probabilidad: redondear `habilidad × 100 / dificultad` al entero más próximo
+  y limitar a 0..100. Reputación neutra porque estos residentes no tienen una
+  facción asignada. No se toma la reputación de la Gendarmería.
+- En 1..99%, dado uniforme de 1 a 100 y éxito cuando `dado <= probabilidad`.
+  En 100% no se consume RNG; se registra éxito automático. En 0%, fallo.
+
+Elocuencia 9 da Labia 90/101, insuficiente; Elocuencia 10 da 110/101,
+suficiente. Empatía/Carisma 3 dan 84% frente a dificultad 120; nivel 100 da
+éxito automático. No se modifica la curva general de otras habilidades.
+
+Los índices estables de CheckOnceKey son Rulo=0 y Caella=2; Ronnie=1 no tira.
+`MainM00SocialResult`, `Roll` y `Chance` registran el primer intento.
+`MainM00ResidentMet` y `MainM00SocialAdvice` registran conocimiento nuevo.
+Todo pertenece al Inventory persistente del personaje; los NPC y tokens USDF
+no son la autoridad. Una visita repetida no suma ni vuelve a consumir RNG.
+
+La ayuda de los residentes se representa con tres flags ya reservados y el
+contador se deriva de ellos. Sólo Argento puede cerrar, sólo con 3/3 y sólo
+desde etapa 30. El cierre lleva exactamente a 35, deja la misión activa y
+habilita la siguiente conversación de Caella. No activa el tutorial mágico,
+concede objetos ni completa la misión principal.
+
+En UI se muestran probabilidades, la opción bloqueada de Ronnie y el estado
+emocional privado [Preocupado]. El Diario muestra el objetivo actual y su
+contador sin añadir seguimiento permanente al HUD. Los diálogos permanecen
+en USDF nativo y el cierre Q hereda el menú ya aceptado.
+
+El progreso cooperativo compartido sigue pendiente. Esta entrega conserva
+estado por personaje y no convierte el conocimiento privado en información
+de todos los jugadores.
+
+````
+
+
+## Registro: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt
+
+SHA-256: `9bc00b885dc04bbaa1bc0813c1764533813a9a9475573a832dd980452ce5f7b0`
+
+````text
+CAELUM ARGENTEUM
+HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
+Versión 1.0 — 8 de septiembre de 2026
+
+Autor del proyecto: Damián Curti
+Estado: diseño narrativo y técnico previo a implementación.
+
+===============================================================================
+ÍNDICE
+===============================================================================
+
+PARTE I — RECOPILACIÓN DE LA HISTORIA
+
+1. Convenciones y jerarquía de información
+2. Premisa general
+3. Alegoría social y cultural
+4. Historia anterior al comienzo del juego
+5. El Tarot y La Dispersión
+6. Palomo y la Caja Mágica
+7. El protagonista y los cuatro habitantes de la mansión
+8. Verdad autoral y conocimiento de los personajes
+9. Estructura completa de la campaña
+10. Relato consolidado de la historia
+11. Reglas para conservar el misterio
+
+PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
+
+12. Alcance y objetivo de la implementación
+13. Flujo completo de la misión
+14. Arquitectura de datos y estados
+15. Requisitos del mapa y actores
+16. Apertura: despertar, voz desconocida y Palomo
+17. Prueba 1: Argento — rama social
+18. Prueba 2: Caella — rama mágica
+19. Prueba 3: Ronnie — rama de supervivencia
+20. Preparación del arma inicial
+21. Prueba 4: Rulo — rama de combate
+22. Palomo, la Caja Mágica y El Loco
+23. Transición a MAP02 — alcantarillas
+24. Diálogos obligatorios de MAP01
+25. Inventario, objetos temporales y persistencia
+26. Localización, diario y presentación
+27. Guardado y multijugador
+28. Pruebas de aceptación
+29. Decisiones todavía pendientes
+
+===============================================================================
+PARTE I — RECOPILACIÓN DE LA HISTORIA
+===============================================================================
+
+-------------------------------------------------------------------------------
+1. CONVENCIONES Y JERARQUÍA DE INFORMACIÓN
+-------------------------------------------------------------------------------
+
+Este documento distingue tres niveles de información:
+
+[CANON]
+Hecho confirmado para la historia del proyecto.
+
+[PROPUESTA OPERATIVA]
+Solución necesaria para convertir el canon en una misión programable. Puede
+ajustarse sin modificar la premisa principal.
+
+[PENDIENTE]
+Decisión que todavía requiere definición antes de cerrar versiones posteriores.
+
+También deben distinguirse dos perspectivas narrativas:
+
+VERDAD AUTORAL
+Es lo que realmente ocurre en el universo. Puede conocerse durante el desarrollo
+y utilizarse para evitar contradicciones, aunque el jugador tarde muchas horas
+en descubrirlo.
+
+CONOCIMIENTO DEL JUGADOR
+Es aquello que la interfaz, los diálogos, las escenas y los acontecimientos le
+permiten saber en un momento determinado.
+
+Regla fundamental de MAP01:
+
+La documentación interna puede decir “Limbo”, “muerte”, “alma” y “resurrección”.
+Los textos visibles durante MAP01 no deben presentar ninguna de esas palabras
+como explicaciones confirmadas. El misterio se construye mostrando síntomas y
+contradicciones antes de proporcionar nombres.
+
+-------------------------------------------------------------------------------
+2. PREMISA GENERAL
+-------------------------------------------------------------------------------
+
+[CANON]
+
+Caelum Argenteum transcurre en un mundo de fantasía oscura inspirado en la
+Argentina del siglo XIX. La nación recién formada se encuentra dividida por
+intereses políticos, sociales y territoriales mientras enfrenta dos invasiones
+simultáneas.
+
+La primera invasión es exterior. Los Caelith, habitantes originarios de la Luna,
+descienden sobre la Tierra bajo el mando de la reina Selene.
+
+La segunda invasión es interior. El Tarot, un poder procedente del Infierno, se
+infiltra en personas, criaturas, objetos, lugares y conflictos. El Culto del
+Tarot utiliza esa influencia para exacerbar las divisiones existentes y debilitar
+la resistencia de la nación.
+
+Ambas amenazas provienen del plan de un príncipe infernal. Tras fracasar una y
+otra vez en su intento de conquistar la Tierra por la fuerza, comprendió que los
+Guerreros del Sol podían detenerlo mientras los pueblos argentinos conservaran
+la posibilidad de reunirse bajo el Sol de Mayo. Por eso decidió corromper la Luna
+y quebrar a la Tierra desde dentro antes de intentar dominarla otra vez.
+
+El protagonista no comienza como un héroe ni como miembro declarado de una
+facción. Es un errante que intentaba escapar del conflicto. Muere en circunstancias
+que no recuerda y despierta en una mansión imposible, sin saber que se encuentra
+en el Limbo.
+
+-------------------------------------------------------------------------------
+3. ALEGORÍA SOCIAL Y CULTURAL
+-------------------------------------------------------------------------------
+
+[CANON]
+
+Las especies principales poseen las siguientes correspondencias alegóricas:
+
+- Los Hombres Bestia representan a los pueblos nativos americanos.
+- Los Caelith representan a los europeos y al colonialismo europeo.
+- Los duendes representan a los gauchos y a la cultura rural.
+- Los humanos representan principalmente a los porteños y a la sociedad urbana.
+
+Estas correspondencias son flexibles. Expresan historias colectivas, prejuicios,
+posiciones sociales y tensiones culturales; no determinan automáticamente la
+moral, la ideología ni la facción de cada individuo.
+
+Por lo tanto:
+
+- Un Caelith puede rechazar la invasión, huir de la dictadura y luchar contra
+  Selene.
+- Un humano puede oponerse a la Capital o solidarizarse con los pueblos nativos.
+- Un duende puede abandonar la vida rural, integrarse en una ciudad o rechazar
+  cualquier bando.
+- Un Hombre Bestia puede preservar su cultura, negociar una integración parcial,
+  adoptar costumbres urbanas o combatir a quienes dicen querer civilizarlo.
+
+3.1. HOMBRES BESTIA
+
+[CANON]
+
+Los Hombres Bestia no son humanos degradados ni criaturas cuya inteligencia fue
+destruida por la corrupción. Ocurrió lo contrario: distintas especies animales
+recibieron la influencia del Tarot y adquirieron mayor inteligencia, conciencia,
+lenguaje y formas homínidas.
+
+El origen sobrenatural de esa transformación no vuelve malignos a sus pueblos.
+La voluntad que desarrollaron les pertenece. Con el paso del tiempo construyeron
+comunidades, memorias, costumbres y decisiones políticas propias.
+
+Los sectores que se consideran “civilizados” continúan llamándolos bestias y
+utilizan su origen animal para negarles derechos. Otros humanos, duendes, Caelith
+disidentes y grupos políticos intentan incorporarlos a la sociedad común. Esa
+integración puede ser genuina o paternalista, según la persona y la facción.
+
+La influencia del Tarot cumple así una función ambigua: puede corromper, pero
+también produjo conciencia y nuevas formas de vida. Reunir las cartas no debe
+presentarse automáticamente como eliminar todo lo que el Tarot haya creado.
+
+3.2. CAELITH
+
+[CANON]
+
+Los Caelith vivieron durante toda su historia conocida en la Luna. Su sociedad
+desarrolló una identidad propia, una monarquía y formas de magia adaptadas a su
+mundo. Bajo Selene, una parte de esa civilización se convirtió en potencia
+colonial y descendió sobre la Tierra.
+
+No todos obedecieron. Muchos fueron corrompidos, adoctrinados o sometidos por el
+régimen. Otros participaron por miedo, interés o convicción. Los disidentes se
+autoexiliaron en Argentina buscando paz, pero suelen ser tratados como invasores,
+espías o traidores tanto por los terrestres como por los Caelith leales.
+
+3.3. DUENDES
+
+[CANON]
+
+Los duendes son criaturas mágicas vinculadas alegóricamente con los gauchos. No
+son malignos por naturaleza. Su relación con el territorio, la vida rural, la
+independencia y los márgenes de la autoridad urbana los coloca en tensión con la
+Capital y con los proyectos de uniformidad política.
+
+Son especialmente sensibles a la magia. Pueden percibir antes que otros la
+presencia del Tarot, pero esa misma apertura los vuelve vulnerables a su
+influencia. Caella encarna esa doble condición: su sensibilidad es talento y
+peligro al mismo tiempo.
+
+3.4. HUMANOS
+
+[CANON]
+
+Los humanos representan principalmente a los porteños y a la sociedad urbana.
+Poseen mayor cercanía con las instituciones de la Capital, la Gendarmería, el
+comercio y los discursos de civilización. Esa asociación tampoco es absoluta:
+existen humanos rurales, federales, perseguidos, disidentes y aliados de otros
+pueblos.
+
+-------------------------------------------------------------------------------
+4. HISTORIA ANTERIOR AL COMIENZO DEL JUEGO
+-------------------------------------------------------------------------------
+
+4.1. LA LUNA ANTES DE LA CAÍDA
+
+[CANON]
+
+Los Caelith vivieron durante generaciones en la Luna. Observaban la Tierra desde
+la distancia y consideraban imposible que sus conflictos alcanzaran las ciudades
+lunares. Selene gobernaba como reina antes de quedar sometida a la influencia del
+príncipe infernal.
+
+4.2. LOS GUERREROS DEL SOL
+
+[CANON]
+
+El príncipe infernal intentó conquistar la Tierra en repetidas ocasiones. Fue
+detenido por los Guerreros del Sol, representación mítica de los pueblos
+argentinos que podían reunirse bajo el Sol de Mayo.
+
+[PROPUESTA OPERATIVA]
+
+“Guerreros del Sol” no necesita designar una única orden secreta. Puede ser el
+nombre con que los relatos infernales y lunares agrupan a soldados, milicias,
+campesinos, curas, pueblos aliados y figuras populares de distintas épocas. El
+Sol representa la capacidad colectiva de resistir, no una sangre ni una clase
+privilegiada.
+
+4.3. LA CORRUPCIÓN DE SELENE
+
+[CANON]
+
+Incapaz de vencer al Sol mediante una invasión directa, el príncipe infernal
+dirigió su influencia hacia la Luna. Manipuló a Selene y corrompió sus temores,
+deseos y decisiones. Ella instauró una dictadura, persiguió disidentes y preparó
+la invasión de Argentina.
+
+La corrupción explica su transformación, pero no elimina su responsabilidad.
+Selene conserva voluntad suficiente para sostener el régimen, utilizar a su
+pueblo y convertirse en la antagonista final.
+
+4.4. LA INVASIÓN CAELITH
+
+[CANON]
+
+Los Caelith leales a la corona comenzaron a ocupar territorios terrestres. Su
+llegada agudizó conflictos sobre centralización, autonomía, propiedad, defensa e
+integración. La Capital vio en ellos una amenaza y, al mismo tiempo, una posible
+fuente de alianzas y poder. Los Pueblos Libres defendieron su autonomía mientras
+negociaban apoyos contradictorios. Los pueblos nativos, los Híbridos y los
+exiliados quedaron atrapados entre proyectos que pretendían utilizarlos.
+
+4.5. EL CULTO DEL TAROT
+
+[CANON]
+
+Mientras la invasión avanzaba desde afuera, el Culto del Tarot se infiltró dentro
+de todas las facciones. Sus miembros son capaces de percibir o manipular las
+esencias. No necesitan inventar cada enfrentamiento: encuentran una herida real,
+impiden que cierre y convencen a cada bando de que el otro es la causa absoluta
+de su sufrimiento.
+
+El resultado es la grieta. La nación no se divide sólo por magia, pero la magia
+convierte diferencias negociables en enemistades que parecen inevitables.
+
+-------------------------------------------------------------------------------
+5. EL TAROT Y LA DISPERSIÓN
+-------------------------------------------------------------------------------
+
+[CANON DE TRABAJO]
+
+El Tarot proviene del Infierno y se manifiesta a través de 78 esencias: 22
+Arcanos Mayores y 56 Arcanos Menores.
+
+Selene y el príncipe infernal intentaron utilizar el Tarot completo para unir la
+Luna, la Tierra y el Infierno bajo un mismo dominio. El ritual no pudo completarse.
+Las esencias se dispersaron y quedaron ligadas a personas, criaturas, objetos,
+lugares y conflictos que expresan el significado de cada carta. Este
+acontecimiento recibe el nombre de La Dispersión.
+
+[PROPUESTA OPERATIVA PENDIENTE DE REVELACIÓN]
+
+Palomo pudo haber intervenido en el ritual e impedido su estabilización, sin
+poseer poder suficiente para destruir el Tarot. Esta explicación conecta su
+conflicto con Selene, la existencia de las esencias dispersas y su decisión de
+ceder una parte de sí mediante la Caja. No debe revelarse en MAP01.
+
+Una esencia no es un objeto coleccionable colocado al azar. La carta se adhiere a
+un acontecimiento o ser que encarna su arquetipo. Resolver, transformar o
+comprender ese conflicto permite que la esencia se manifieste.
+
+El don místico permite percibir las esencias, pero no capturarlas de manera
+segura. La Caja Mágica es el instrumento que puede contenerlas.
+
+-------------------------------------------------------------------------------
+6. PALOMO Y LA CAJA MÁGICA
+-------------------------------------------------------------------------------
+
+6.1. PALOMO
+
+[CANON]
+
+Palomo representa al Espíritu Santo y procura proteger la patria argentina. Es
+una figura mítica visible únicamente para personas que poseen sensibilidad
+mística. Esa sensibilidad también les permite percibir la esencia del Tarot.
+
+Palomo mantiene un perfil bajo. No se presenta como salvador, profeta ni dueño de
+la verdad. No ordena: guía. Prefiere colocar a alguien ante una decisión antes
+que decirle qué debe elegir.
+
+Su personalidad combina tres rasgos:
+
+- Amabilidad genuina.
+- Lenguaje metafórico y filosófico.
+- Humor burlón, sarcástico e irónico cuando le exigen respuestas directas sobre
+  el lugar, la muerte o su propia naturaleza.
+
+Palomo conoce la identidad de Selene y comprende la función de la mansión, pero
+no revela esas verdades directamente. Cuando el protagonista cuenta que oye una
+voz femenina, Palomo afirma que probablemente se trate de alucinaciones y le
+aconseja desconfiar. La advertencia es auténtica; la explicación es una mentira
+protectora.
+
+6.2. LA MANSIÓN
+
+[CANON]
+
+MAP01 representa el Limbo. La mansión existe dentro de ese espacio y funciona
+como refugio, prueba y punto de encuentro para almas que no han logrado regresar.
+
+Los personajes no conocen este hecho. Para ellos, la mansión es una casa extraña
+de la que ningún camino conduce correctamente al exterior. Las distancias pueden
+no coincidir, las habitaciones pueden cambiar y algunos detalles carecen de una
+explicación natural, pero nada confirma todavía una vida después de la muerte.
+
+6.3. LA CAJA MÁGICA
+
+[CANON]
+
+“Caja Mágica” es el nombre irónico que Palomo da al artefacto. No es una caja
+encantada ordinaria: contiene una parte de la esencia de Palomo y, por ello,
+posee un poder inmenso que el jugador podrá explotar durante la campaña.
+
+Funciones confirmadas:
+
+- Aligera el peso efectivo de los objetos almacenados.
+- Captura y conserva las esencias del Tarot.
+- Permite volver del Limbo al cuerpo.
+- Transporta el equipamiento básico que el protagonista llevará al mundo físico.
+- No puede soltarse, venderse ni guardarse dentro de otro contenedor.
+
+La Caja no concede el don de percibir. El protagonista y los cuatro habitantes
+pueden advertir a Palomo y las esencias porque ya poseen sensibilidad mística.
+El don ve; la Caja captura.
+
+-------------------------------------------------------------------------------
+7. EL PROTAGONISTA Y LOS CUATRO HABITANTES DE LA MANSIÓN
+-------------------------------------------------------------------------------
+
+7.1. EL PROTAGONISTA
+
+[CANON]
+
+El protagonista era un errante que intentaba escapar del conflicto. Fue
+emboscado, asesinado y arrojado a las alcantarillas. No recuerda la emboscada, su
+muerte ni los instantes inmediatamente anteriores. Conserva su identidad, su
+lugar de origen, capacidades y recuerdos anteriores, pero su memoria termina
+antes del acontecimiento fatal.
+
+Selene detectó su potencial y utilizó su poder para reanimar su vínculo con el
+cuerpo. Sin embargo, su influencia fuera de la Luna es demasiado tenue para
+devolverlo por sus propios medios. El alma despierta en el Limbo y necesita la
+esencia de Palomo contenida en la Caja para regresar.
+
+Durante MAP01, el protagonista no sabe que la voz pertenece a Selene ni que está
+muerto. La interfaz debe identificarla únicamente como Voz desconocida.
+
+7.2. RULO
+
+[CANON]
+
+Rulo es un Ucumar y representa la rama Guerrero. Enseña las mecánicas de combate.
+Su prueba culmina cuando el protagonista derrota al Toro.
+
+Rulo recuerda de dónde proviene y que despertó en la mansión. No recuerda cómo
+llegó ni los instantes anteriores a su muerte. No sabe que es un alma atrapada ni
+que su cuerpo se encuentra bajo la influencia de Selene.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Uno puede perder mucho después de haber ganado.”
+
+Rulo ya consiguió vencer al Toro en alguno de sus intentos. La victoria no le
+permitió salir porque dominar su propia rama no bastaba para superar la prueba
+completa.
+
+7.3. RONNIE
+
+[CANON]
+
+Ronnie es un Caelith exiliado y representa la rama Explorador. Enseña
+supervivencia, administración de recursos y preparación. Su prueba culmina al
+reunir los materiales necesarios para el arma inicial.
+
+Conserva recuerdos de su origen lunar y de su vida anterior al vacío de memoria.
+No sabe cómo llegó a la mansión ni qué ocurrió con su cuerpo.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Sobrevivir no es permanecer donde nada puede alcanzarlo. A veces eso sólo
+recibe otro nombre: quedarse.”
+
+7.4. ARGENTO
+
+[CANON]
+
+Argento es clérigo y representa la rama Sacerdote y las mecánicas sociales. Es el
+primer guía de la secuencia. Su prueba culmina cuando el protagonista convence a
+Rulo, Ronnie y Caella de que deben ayudarlo.
+
+Argento recuerda su procedencia y sus convicciones, pero no los instantes
+anteriores a despertar. No sabe que murió ni que su cuerpo fue tomado por Selene.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“Convencer no consiste en encontrar las palabras que obliguen al otro. Consiste
+en descubrir qué está intentando proteger.”
+
+7.5. CAELLA
+
+[CANON]
+
+Caella es una duende y representa la rama Mago. Enseña Ánima, implementos,
+sellos, canalización y percepción mágica. Su prueba culmina al resolver un
+acertijo y revelar un pasadizo secreto.
+
+Su sensibilidad le permite advertir que la mansión y el protagonista poseen una
+resonancia anormal, pero no conoce su causa. Recuerda su origen y que despertó en
+la casa; no recuerda su muerte.
+
+Frase de Palomo que recuerda sin comprender por completo:
+
+“No hay pared más firme que aquella que todos han decidido dejar de mirar.”
+
+7.6. LA VERDAD SOBRE LOS CUATRO
+
+[VERDAD AUTORAL; NO REVELAR EN MAP01]
+
+Rulo, Ronnie, Argento y Caella también murieron. Palomo los sometió a pruebas,
+pero ninguno logró integrar las cuatro ramas y encontrar la salida. Sus almas
+auténticas permanecen en la mansión del Limbo.
+
+Selene recibió o recuperó sus cuerpos en la Tierra y los animó con versiones o
+fragmentos corrompidos de sus almas. Durante el primer capítulo guiará al jugador
+hacia esos cuerpos. Las cuatro versiones corrompidas serán los primeros jefes de
+la campaña.
+
+Al derrotar cada cuerpo, la Caja Mágica podrá extraer la corrupción y permitir
+que el alma auténtica abandone el Limbo y se reintegre. De esta manera, vencerlos
+es un acto de liberación y puede habilitarlos posteriormente como compañeros.
+
+-------------------------------------------------------------------------------
+8. VERDAD AUTORAL Y CONOCIMIENTO DE LOS PERSONAJES
+-------------------------------------------------------------------------------
+
+8.1. LO QUE EL AUTOR SABE AL COMENZAR MAP01
+
+- El protagonista y los cuatro NPC están muertos.
+- MAP01 es el Limbo.
+- La mansión pertenece a la esfera de influencia de Palomo.
+- Selene revivió el vínculo del protagonista con su cadáver, pero no puede
+  devolverlo a la Tierra.
+- Palomo sabe quién es la voz.
+- Palomo está evaluando al protagonista mediante los cuatro residentes.
+- La Caja contiene parte de la esencia de Palomo.
+- Los cuerpos de los cuatro residentes están en la Tierra bajo corrupción.
+- El Loco será la primera esencia capturada por la Caja.
+
+8.2. LO QUE EL PROTAGONISTA SABE AL DESPERTAR
+
+- Su nombre, origen y capacidades anteriores.
+- Que despertó en una mansión desconocida.
+- Que no posee objetos.
+- Que una voz femenina le habla sin identificarse.
+- Que hay personas cerca que parecen compartir una experiencia extraña.
+
+8.3. LO QUE LOS CUATRO RESIDENTES SABEN
+
+- Quiénes eran y de dónde procedían.
+- Que despertaron en la mansión sin recordar cómo llegaron.
+- Que no han encontrado una salida estable.
+- Que Palomo aparece, desaparece y les ha dejado frases difíciles de interpretar.
+- Que cada uno domina especialmente una de las cuatro ramas.
+
+8.4. LO QUE EL JUGADOR PUEDE INFERIR AL TERMINAR MAP01
+
+- La mansión no obedece por completo a las reglas del mundo ordinario.
+- Palomo conoce más de lo que admite.
+- La voz desconocida tiene interés en su recorrido.
+- Los cuatro residentes no pueden utilizar la misma salida.
+- La Caja puede contener una esencia y abrir un tránsito imposible.
+- Su cuerpo se encontraba en una alcantarilla y había sido despojado.
+
+El final puede sugerir que murió, pero todavía no debe explicar el funcionamiento
+completo del Limbo, la relación entre Selene y los otros cuerpos ni el plan del
+Tarot.
+
+-------------------------------------------------------------------------------
+9. ESTRUCTURA COMPLETA DE LA CAMPAÑA
+-------------------------------------------------------------------------------
+
+[CANON]
+
+La campaña se divide en un prólogo y tres capítulos principales. Cada capítulo
+corresponde a un tier de progresión.
+
+PRÓLOGO — MAP01 — EL LOCO
+
+- El protagonista despierta en la mansión del Limbo.
+- Supera las cuatro pruebas.
+- Recibe la Caja Mágica.
+- Captura El Loco.
+- Regresa a su cadáver en las alcantarillas de MAP02.
+
+CAPÍTULO I — TIER 1 — SIETE ARCANOS MAYORES
+
+- Primera parte de la campaña terrestre.
+- Selene guía al jugador hacia Rulo, Ronnie, Argento y Caella corrompidos.
+- Los cuatro son los primeros jefes.
+- La Caja libera sus cuerpos y permite reintegrar sus almas verdaderas.
+- Tres Arcanos Mayores adicionales completan los siete del capítulo.
+- El jugador conoce las facciones, la invasión Caelith y las primeras pruebas de
+  la infiltración del Culto.
+
+CAPÍTULO II — TIER 2 — SIETE ARCANOS MAYORES
+
+- El objetivo central es encontrar al príncipe infernal.
+- El jugador descubre su intervención en la Luna, el origen de la corrupción de
+  Selene y la función del Culto.
+- El capítulo culmina con el destierro del príncipe demonio.
+- Desterrarlo no elimina automáticamente la dictadura ni deshace las decisiones
+  tomadas por Selene.
+
+CAPÍTULO III — TIER 3 — SIETE ARCANOS MAYORES
+
+- El jugador obtiene los medios para viajar a la Luna.
+- Enfrenta el régimen Caelith, las consecuencias de sus alianzas terrestres y la
+  verdad completa sobre La Dispersión.
+- El Mundo es la última carta.
+- La campaña culmina con el viaje para matar a Selene y decidir el destino del
+  Tarot y de los pueblos implicados.
+
+DISTRIBUCIÓN TOTAL DE ARCANOS MAYORES
+
+- Prólogo: 1 — El Loco.
+- Capítulo I: 7.
+- Capítulo II: 7.
+- Capítulo III: 7.
+- Total: 22.
+
+Los 56 Arcanos Menores se obtienen mediante misiones secundarias distribuidas a
+lo largo de los tres capítulos. Cada misión formal de Tarot entrega exactamente
+una carta; las tareas internas de MAP01 son etapas de una sola misión y no
+otorgan cartas independientes.
+
+-------------------------------------------------------------------------------
+10. RELATO CONSOLIDADO DE LA HISTORIA
+-------------------------------------------------------------------------------
+
+Antes de que la guerra aprendiera a mirar hacia el cielo, los Caelith habían
+vivido toda su existencia en la Luna.
+
+Desde la Tierra parecían inmóviles. Desde sus ciudades de piedra pálida,
+contemplaban generaciones enteras sucederse bajo un mundo azul y ruidoso. Su
+reina era Selene y su seguridad descansaba sobre una certeza antigua: ninguna
+disputa terrestre podía atravesar el vacío.
+
+El Infierno sí podía.
+
+Un príncipe infernal había intentado conquistar la Tierra más de una vez. En las
+tierras argentinas encontró pueblos capaces de enfrentarse entre sí durante años
+y reunirse, aun así, cuando el peligro amenazaba con consumirlos a todos. El
+príncipe llamó Guerreros del Sol a quienes combatían bajo el rostro del Sol de
+Mayo. No eran una raza ni una orden única. Eran la posibilidad de reconocerse en
+un emblema común cuando la derrota parecía segura.
+
+Después de cada fracaso, el príncipe comprendió que no bastaba con destruir un
+ejército. Mientras esa posibilidad sobreviviera, otro ocuparía su lugar. Decidió
+entonces quebrar el vínculo entre los pueblos antes de volver a atacarlos y
+dirigió su mirada hacia la Luna.
+
+No conquistó a Selene en una sola noche. Llegó como advertencia, consejo y temor.
+Le mostró futuros donde la Tierra alcanzaba la Luna, donde los Caelith eran
+perseguidos y donde la reina era recordada como la última de su pueblo. Algunas
+visiones eran falsas. Otras podían llegar a ser ciertas. Selene llamó previsión a
+la paranoia, unidad a la obediencia y defensa a la conquista preventiva.
+
+La reina concentró el poder, silenció a sus opositores y convirtió la monarquía
+en una dictadura. Muchos Caelith obedecieron porque el Tarot ya había tocado sus
+almas. Otros lo hicieron por miedo, por interés o porque creyeron sinceramente
+que la invasión salvaría a la Luna. Los disidentes huyeron hacia la Tierra, donde
+fueron recibidos como refugiados por unos y vigilados como espías por otros.
+
+Cuando las fuerzas lunares descendieron, Argentina no respondió con una sola
+voz. La Capital quiso centralizar la defensa y descubrió que negociar con ciertos
+Caelith también podía fortalecer su poder. Los Pueblos Libres defendieron su
+autonomía, aunque sus alianzas con otros pueblos no siempre fueron desinteresadas.
+Los humanos urbanos hablaron de civilización; los duendes defendieron la vida
+rural y la libertad de los caminos; los Hombres Bestia rechazaron que quienes
+acababan de conocerlos decidieran si eran personas.
+
+Los Hombres Bestia constituían una prueba viva de que el Tarot no actuaba de una
+única manera. Su influencia había elevado a distintas especies animales,
+otorgándoles conciencia, lenguaje y cuerpos homínidos. Para los sectores que se
+consideraban civilizados, aquella procedencia bastaba para llamarlos monstruos.
+Para quienes estaban dispuestos a reconocerlos, eran nuevos pueblos capaces de
+construir su propio lugar en la historia.
+
+En medio de esas tensiones creció el Culto del Tarot. Sus agentes aparecieron en
+salones, templos, cuarteles, campamentos y rutas comerciales. Allí donde existía
+una disputa, ofrecían una razón para volverla irreconciliable. Allí donde alguien
+temía perder poder, prometían conservarlo. La invasión Caelith debilitaba a la
+nación desde afuera; el Culto se aseguraba de que nadie pudiera responder unido
+desde adentro.
+
+Selene y el príncipe intentaron reunir las 78 esencias en un ritual capaz de
+alinear la Luna, la Tierra y el Infierno. El rito fue interrumpido. Las cartas se
+dispersaron y buscaron conflictos, lugares, personas y criaturas capaces de
+encarnar su significado. Desde entonces, una traición podía adquirir la forma
+del Tres de Espadas; una comunidad abandonada, la del Cinco de Oros; una ciudad
+condenada a caer, la de La Torre.
+
+Fue después de La Dispersión cuando comenzaron a multiplicarse los relatos sobre
+Palomo.
+
+Algunos hablaban de un caballero con galera y monóculo visto en caminos donde no
+quedaban huellas. Otros recordaban a una figura de modales amables que formulaba
+una pregunta y desaparecía antes de escuchar la respuesta. La mayoría no veía a
+nadie. Sólo quienes poseían cierta sensibilidad podían percibirlo y advertir, al
+mismo tiempo, el brillo imposible de las esencias.
+
+Palomo reunió parte de su poder dentro de una caja. La llamó Caja Mágica con el
+mismo tono con que otro habría escrito “objeto” sobre una reliquia. El artefacto
+podía aligerar cargas, contener el Tarot y tender un camino entre el Limbo y el
+cuerpo. Cada uso exponía una porción de la esencia de su creador, por lo que no
+podía entregársela a cualquiera.
+
+Rulo, Ronnie, Argento y Caella llegaron a la mansión por separado. Ninguno
+recordaba el viaje. Cada uno conservaba su nombre, su lugar de origen y una vida
+que parecía terminar antes de una página arrancada. Palomo los guio mediante
+frases y pruebas, pero cada uno se apoyó en aquello que ya dominaba. Rulo venció
+al Toro. Ronnie aprendió a sobrevivir a los caminos internos. Argento entendió
+las voluntades de los demás. Caella encontró aquello que la casa escondía.
+Ninguno consiguió salir.
+
+Mientras sus almas permanecían en la mansión, Selene alcanzó sus cuerpos. Los
+devolvió al movimiento con fragmentos corrompidos y los convirtió en instrumentos
+que el protagonista encontraría más adelante.
+
+El protagonista también había intentado escapar de la guerra. Una emboscada
+terminó con su vida y su cadáver fue arrojado a las alcantarillas. Los responsables
+se llevaron sus pertenencias. Su memoria conservó la vida anterior, pero no el
+rostro de sus asesinos ni el instante de la muerte.
+
+Selene percibió su capacidad y reanimó el vínculo entre cuerpo y alma. Desde la
+Luna no pudo completar el regreso. El protagonista abrió los ojos en la mansión
+sin saber que respiraba sólo por recuerdo. Una voz femenina le indicó que se
+levantara y buscara ayuda.
+
+Palomo no explicó dónde estaba. Cuando le preguntaron, habló del recibidor. Cuando
+le contaron sobre la voz, recomendó desconfiar de las alucinaciones. Luego dejó
+que Argento, Caella, Ronnie y Rulo lo guiaran a través de las cuatro ramas que
+ellos mismos representaban.
+
+El protagonista convenció a los tres residentes de colaborar con Argento,
+resolvió el acertijo de Caella, encontró con Ronnie los materiales para un arma y
+derrotó al Toro bajo la mirada de Rulo. No demostró ser mejor que todos ellos en
+cada especialidad. Demostró aceptar aquello que cada uno podía enseñarle.
+
+Palomo lo esperaba en el segundo piso. Le entregó la Caja y permitió que su
+esencia reconociera al nuevo portador. El artefacto guardó el equipo básico de su
+clase, capturó la primera carta —El Loco— y abrió un camino que ninguno de los
+residentes pudo cruzar.
+
+El protagonista volvió a abrir los ojos entre agua sucia, ladrillos y oscuridad.
+Estaba dentro de las alcantarillas, junto al lugar donde habían abandonado su
+cuerpo. No llevaba nada salvo la Caja Mágica y aquello que ésta había conservado.
+
+La voz seguía allí, ahora mucho más tenue.
+
+Durante el primer capítulo, esa voz lo conduciría hacia cuatro enemigos que le
+resultarían extrañamente familiares. Al derrotarlos, la Caja arrancaría la
+corrupción de sus cuerpos y permitiría que Rulo, Ronnie, Argento y Caella
+regresaran del lugar que todavía no sabían nombrar.
+
+Después vendría la búsqueda del príncipe infernal, su destierro y, finalmente,
+el viaje a la Luna para matar a Selene.
+
+-------------------------------------------------------------------------------
+11. REGLAS PARA CONSERVAR EL MISTERIO
+-------------------------------------------------------------------------------
+
+11.1. VOCABULARIO PROHIBIDO EN MAP01
+
+No utilizar como explicación confirmada en diario, HUD o diálogo:
+
+- Limbo.
+- Muerto / muerte del protagonista.
+- Alma atrapada.
+- Resurrección.
+- Cadáver en las alcantarillas.
+- Cuerpo corrompido de los NPC.
+- Selene como nombre de la voz.
+- Prueba de Palomo.
+- Parte de la esencia de Palomo dentro de la Caja.
+
+Los términos pueden existir en nombres internos de clases, flags y scripts, pero
+nunca filtrarse a la localización visible.
+
+11.2. INDICIOS PERMITIDOS
+
+- Relojes que no avanzan o muestran horas distintas.
+- Caminos exteriores que regresan a la propiedad.
+- Habitaciones cuyas medidas internas no coinciden con el exterior.
+- Necesidades físicas que se sienten, aunque ningún personaje pueda precisar
+  cuánto tiempo ha pasado.
+- Ausencia de recuerdos inmediatamente anteriores al despertar.
+- Objetos temporales que se deshacen al alejarlos de su zona.
+- Palomo que aparece después de perderse de vista, sin efecto espectacular.
+- Frases suyas que cada NPC recuerda de forma aislada.
+- La voz femenina que sólo escucha el protagonista.
+- Caella percibiendo una resonancia que no sabe interpretar.
+- La imposibilidad de los cuatro residentes para cruzar la salida final.
+
+11.3. CONDUCTA DE PALOMO
+
+- Nunca ordena completar una misión.
+- Sugiere a quién podría convenir escuchar.
+- Responde con metáforas que contienen una verdad comprobable.
+- Utiliza sarcasmo e ironía ante preguntas que exigen revelar el misterio.
+- Es amigable y no humilla al protagonista por no comprender.
+- Cuando la voz es mencionada, la llama alucinación y recomienda prudencia.
+- No pronuncia el nombre Selene en MAP01.
+- No dice “superaste la prueba”. Reconoce únicamente las acciones realizadas.
+- No entrega la Caja como premio heroico; pide que el protagonista la cuide.
+
+11.4. CONDUCTA DE LA VOZ DESCONOCIDA
+
+- No pronuncia su propio nombre.
+- No menciona la Luna durante MAP01.
+- Habla poco debido a su influencia tenue.
+- Ofrece instrucciones útiles y simples para construir confianza.
+- No acusa directamente a Palomo.
+- Puede sugerir que él oculta algo, pero no revelar qué.
+- Su identificación visible es siempre VOZ DESCONOCIDA.
+
+===============================================================================
+PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
+===============================================================================
+
+-------------------------------------------------------------------------------
+12. ALCANCE Y OBJETIVO DE LA IMPLEMENTACIÓN
+-------------------------------------------------------------------------------
+
+Nombre visible provisional: DONDE DESPIERTAN LOS PERDIDOS
+ID interno: CA_Q_MAIN_M00_THE_FOOL
+Tipo: misión principal / prólogo / Arcano Mayor
+Mapa: MAP01
+Destino: MAP02 — alcantarillas
+Carta: Arcano Mayor 0 — El Loco
+
+Objetivo de experiencia:
+
+MAP01 debe enseñar las cuatro ramas fundamentales mediante una única misión
+lineal, presentar a Palomo y los cuatro futuros jefes, otorgar la Caja Mágica,
+enseñar la primera captura de Tarot y terminar con el regreso al cuerpo.
+
+Orden obligatorio:
+
+1. Argento — social — convencer a Rulo, Ronnie y Caella.
+2. Caella — magia — resolver el acertijo y abrir el pasadizo.
+3. Ronnie — supervivencia — reunir materiales para un arma.
+4. Rulo — combate — derrotar al Toro.
+5. Palomo — recibir la Caja, capturar El Loco y salir.
+
+Fuera de alcance para la primera implementación:
+
+- Revelar que MAP01 es el Limbo.
+- Revelar la identidad de la voz.
+- Mostrar los cuerpos corrompidos de los cuatro NPC.
+- Implementar los jefes del Capítulo I.
+- Explicar el origen completo del Tarot o La Dispersión.
+- Permitir regresar normalmente a MAP01 después de entrar en MAP02.
+
+Prioridades técnicas:
+
+- Robustez en GZDoom 4.14.2.
+- Estados idempotentes: una acción repetida no duplica progreso ni objetos.
+- Código en inglés y comentarios en español.
+- Textos visibles mediante claves de localización.
+- Sin assets heredados de Doom.
+- Guardado/carga seguros en cada etapa.
+- La misión no puede bloquearse por fallar una tirada social, perder un objeto
+  temporal o ser derrotado por el Toro.
+
+-------------------------------------------------------------------------------
+13. FLUJO COMPLETO DE LA MISIÓN
+-------------------------------------------------------------------------------
+
+FASE 00 — INITIALIZE
+
+- Cargar o crear al personaje.
+- Retirar del inventario exterior cualquier objeto que no corresponda al estado
+  inicial de MAP01.
+- Conservar datos de clase, especie, atributos y apariencia.
+- Establecer el inventario inicial visible en vacío.
+- Marcar todos los objetos concedidos durante el Limbo como temporales hasta que
+  la Caja los convierta o preserve expresamente.
+
+FASE 10 — AWAKEN
+
+- Reproducir pantalla oscura, sonido tenue y primera línea de Voz desconocida.
+- Devolver control al jugador.
+- Activar la misión y la primera entrada del diario.
+- No mostrar la emboscada ni explicar la muerte.
+
+FASE 20 — MEET_PALOMO
+
+- Detectar llegada del jugador al área del recibidor.
+- Hacer aparecer a Palomo de manera discreta.
+- Ejecutar diálogo introductorio.
+- Palomo orienta hacia Argento sin utilizar imperativos de misión.
+
+FASE 30 — ARGENTO_SOCIAL
+
+- Argento explica que los otros residentes poseen conocimientos necesarios.
+- Activar tres conversaciones de reclutamiento.
+- Convencer a Rulo, Ronnie y Caella.
+- Al conseguir 3/3, completar la rama social.
+
+FASE 40 — CAELLA_MAGIC
+
+- Caella conduce a la sala del acertijo.
+- Entregar implemento y sello mágicos temporales cuando sean necesarios.
+- Enseñar Ánima, Fire, AltFire y Channel/Reload.
+- Resolver la secuencia elemental.
+- Abrir el pasadizo secreto de manera persistente.
+
+FASE 50 — RONNIE_SURVIVAL
+
+- Ronnie habilita la ruta detrás del pasadizo.
+- Determinar el arma inicial según la clase del jugador.
+- Derivar de su receta la lista de materias primas necesarias.
+- Enseñar recursos, carga, Aire y necesidades.
+- Reunir todos los materiales del arma.
+
+FASE 60 — PREPARE_WEAPON
+
+- Utilizar los materiales reunidos para crear o preparar el arma inicial.
+- La pieza debe conservar un ItemId válido.
+- Marcarla como candidata a ser guardada dentro de la Caja al final.
+- Habilitar el acceso al recinto del Toro.
+
+FASE 70 — RULO_COMBAT
+
+- Rulo introduce el combate de práctica.
+- Activar el Toro y cerrar temporalmente el recinto.
+- Registrar acciones tutoriales y victoria.
+- Si el jugador es derrotado, reiniciar el encuentro sin perder progreso previo.
+- Al vencer, completar la cuarta rama y habilitar a Palomo arriba.
+
+FASE 80 — PALOMO_FINAL
+
+- Hacer aparecer a Palomo en el segundo piso.
+- Ejecutar conversación final sin revelar la naturaleza del lugar.
+- Entregar la Caja Mágica exactamente una vez.
+- Transferir el equipo inicial autorizado al interior de la Caja.
+
+FASE 90 — CAPTURE_THE_FOOL
+
+- Manifestar El Loco.
+- Enseñar la interacción de captura mediante la Caja.
+- Otorgar la carta, su progreso y bonificación una sola vez.
+- Activar la salida.
+
+FASE 100 — RETURN_TO_BODY
+
+- Solicitar confirmación antes de abandonar MAP01.
+- Limpiar objetos temporales del Limbo.
+- Garantizar que el inventario exterior sólo contenga la Caja.
+- Garantizar que el equipo inicial esté dentro de la Caja.
+- Guardar estado de misión y Tarot.
+- Cambiar a MAP02 en el punto de aparición de las alcantarillas.
+- Marcar MAP01 como inaccesible por medios normales.
+
+-------------------------------------------------------------------------------
+14. ARQUITECTURA DE DATOS Y ESTADOS
+-------------------------------------------------------------------------------
+
+14.1. SEPARACIÓN RECOMENDADA
+
+QuestDefinition:
+
+- Identidad y textos.
+- Orden de etapas.
+- Condiciones de entrada y salida.
+- Objetivos y recompensas.
+
+QuestState:
+
+- Etapa actual.
+- Objetivos completados.
+- Resultados de diálogo.
+- Objetos concedidos.
+- Carta y Caja otorgadas.
+- Confirmación de salida.
+
+MapController:
+
+- Activa actores y sectores según QuestState.
+- Reconstruye el estado correcto al cargar MAP01.
+- No conserva por sí mismo datos autoritativos que puedan perderse al cambiar de
+  mapa.
+
+InventoryTransferController:
+
+- Etiqueta objetos temporales.
+- Reserva los materiales de misión.
+- Introduce el equipo inicial dentro de la Caja.
+- Limpia el inventario antes de MAP02.
+
+14.2. ESTADOS PRINCIPALES
+
+Usar nombres estables, no depender únicamente de un entero sin enumeración:
+
+CA_M01_STATE_INITIALIZE
+CA_M01_STATE_AWAKENED
+CA_M01_STATE_MET_PALOMO
+CA_M01_STATE_ARGENTO_ACTIVE
+CA_M01_STATE_ARGENTO_COMPLETE
+CA_M01_STATE_CAELLA_ACTIVE
+CA_M01_STATE_CAELLA_COMPLETE
+CA_M01_STATE_RONNIE_ACTIVE
+CA_M01_STATE_RONNIE_COMPLETE
+CA_M01_STATE_WEAPON_READY
+CA_M01_STATE_RULO_ACTIVE
+CA_M01_STATE_RULO_COMPLETE
+CA_M01_STATE_BOX_RECEIVED
+CA_M01_STATE_FOOL_CAPTURED
+CA_M01_STATE_EXIT_CONFIRMED
+CA_M01_STATE_COMPLETE
+
+Cada transición debe comprobar el estado esperado. Una llamada duplicada no debe
+saltar etapas, entregar objetos adicionales ni volver a reproducir recompensas.
+
+Pseudológica:
+
+TryAdvance(expectedState, nextState)
+{
+    if (CurrentState != expectedState)
+        return false;
+
+    CurrentState = nextState;
+    ApplyEnterActionsOnce(nextState);
+    SaveAuthoritativeQuestState();
+    return true;
+}
+
+14.3. FLAGS DE PROGRESO
+
+CA_F_M01_STARTED
+CA_F_M01_UNKNOWN_VOICE_HEARD
+CA_F_M01_PALOMO_MET
+
+CA_F_M01_ARGENTO_STARTED
+CA_F_M01_RULO_CONVINCED
+CA_F_M01_RONNIE_CONVINCED
+CA_F_M01_CAELLA_CONVINCED
+CA_F_M01_ARGENTO_COMPLETE
+
+CA_F_M01_CAELLA_STARTED
+CA_F_M01_MAGIC_IMPLEMENT_GIVEN
+CA_F_M01_MAGIC_SEAL_GIVEN
+CA_F_M01_MAGIC_PRIMARY_USED
+CA_F_M01_MAGIC_SECONDARY_USED
+CA_F_M01_MAGIC_CHANNEL_USED
+CA_F_M01_RUNE_EARTH
+CA_F_M01_RUNE_AIR
+CA_F_M01_RUNE_FIRE
+CA_F_M01_RUNE_WATER
+CA_F_M01_SECRET_PASSAGE_OPEN
+CA_F_M01_CAELLA_COMPLETE
+
+CA_F_M01_RONNIE_STARTED
+CA_F_M01_REPAIR_TUTORIAL_COMPLETE
+CA_F_M01_SURVIVAL_FOOD_USED
+CA_F_M01_SURVIVAL_WATER_USED
+CA_F_M01_SURVIVAL_AIR_SEEN
+CA_F_M01_SURVIVAL_LOAD_SEEN
+CA_F_M01_MATERIALS_COMPLETE
+CA_F_M01_RONNIE_COMPLETE
+
+CA_F_M01_STARTER_WEAPON_CRAFTED
+CA_F_M01_STARTER_WEAPON_PRESERVED
+
+CA_F_M01_RULO_STARTED
+CA_F_M01_COMBAT_PRIMARY_USED
+CA_F_M01_COMBAT_SECONDARY_USED
+CA_F_M01_COMBAT_DEFENSE_USED
+CA_F_M01_COMBAT_CHARGED_USED
+CA_F_M01_BULL_STARTED
+CA_F_M01_BULL_DEFEATED
+CA_F_M01_RULO_COMPLETE
+
+CA_F_M01_PALOMO_UPSTAIRS_ENABLED
+CA_F_M01_MAGIC_BOX_GRANTED
+CA_F_M01_THE_FOOL_CAPTURED
+CA_F_M01_EXIT_READY
+CA_F_M01_EXIT_CONFIRMED
+CA_F_M01_INVENTORY_SANITIZED
+CA_F_M01_COMPLETE
+
+14.4. FLAGS DE DIÁLOGO Y CONOCIMIENTO
+
+CA_F_M01_ASKED_PALOMO_WHERE
+CA_F_M01_ASKED_PALOMO_WHAT_HAPPENED
+CA_F_M01_TOLD_PALOMO_ABOUT_VOICE
+CA_F_M01_PALOMO_CALLED_IT_HALLUCINATION
+
+CA_F_M01_HEARD_ARGENTO_QUOTE
+CA_F_M01_HEARD_CAELLA_QUOTE
+CA_F_M01_HEARD_RONNIE_QUOTE
+CA_F_M01_HEARD_RULO_QUOTE
+
+CA_F_M01_NOTICED_MEMORY_GAP
+CA_F_M01_NOTICED_LOOPING_PATH
+CA_F_M01_NOTICED_WRONG_CLOCKS
+CA_F_M01_NOTICED_ROOM_GEOMETRY
+
+Estos flags permiten que futuras conversaciones reconozcan qué pistas vio cada
+jugador sin afirmar que su interpretación sea correcta.
+
+14.5. ESTADO DE OBJETOS ÚNICOS
+
+Registrar por separado:
+
+- LimboMagicImplementItemId.
+- LimboMagicSealItemId.
+- SurvivalToolItemId.
+- StarterWeaponItemId.
+- MagicBoxItemId.
+
+No seleccionar piezas por clase y nombre cuando la misión exige una instancia
+concreta. Utilizar ItemId para reparación, crafteo y transferencia.
+
+-------------------------------------------------------------------------------
+15. REQUISITOS DEL MAPA Y ACTORES
+-------------------------------------------------------------------------------
+
+15.1. TAGS DE POSICIÓN RECOMENDADOS
+
+CA_M01_START_SPOT
+CA_M01_UNKNOWN_VOICE_TRIGGER
+CA_M01_PALOMO_FOYER_SPOT
+CA_M01_ARGENTO_SPOT
+CA_M01_RULO_SPOT
+CA_M01_RONNIE_SPOT
+CA_M01_CAELLA_SPOT
+CA_M01_MAGIC_PUZZLE_CENTER
+CA_M01_RUNE_EARTH_SPOT
+CA_M01_RUNE_AIR_SPOT
+CA_M01_RUNE_FIRE_SPOT
+CA_M01_RUNE_WATER_SPOT
+CA_M01_SECRET_DOOR
+CA_M01_SURVIVAL_ROUTE_START
+CA_M01_SURVIVAL_ROUTE_END
+CA_M01_REPAIR_STATION
+CA_M01_CRAFT_STATION
+CA_M01_BULL_PLAYER_START
+CA_M01_BULL_SPAWN
+CA_M01_BULL_GATE
+CA_M01_PALOMO_UPSTAIRS_SPOT
+CA_M01_FOOL_ESSENCE_SPOT
+CA_M01_EXIT_PORTAL_SPOT
+
+Los nombres son orientativos. Si UDB requiere TID numérico, mantener una tabla
+única nombre → TID para evitar números mágicos en los scripts.
+
+15.2. ACTORES NECESARIOS
+
+- CA_PalomoM01.
+- CA_ArgentoM01.
+- CA_CaellaM01.
+- CA_RonnieM01.
+- CA_RuloM01.
+- CA_UnknownVoiceEmitter, no visible.
+- CA_MagicPuzzleRune, cuatro instancias configuradas por elemento.
+- CA_LimboMagicImplement.
+- CA_LimboMagicSeal.
+- CA_LimboSurvivalTool.
+- CA_LimboResourceNode.
+- CA_LimboBull, basado en el Toro aprobado pero con control de reinicio.
+- CA_TheFoolEssence.
+- CA_MagicBox, ampliada con captura y retorno.
+- CA_M01QuestController.
+
+Todos los NPC principales deben ser invulnerables, no bloqueables y excluidos de
+infighting durante MAP01.
+
+15.3. SECTORES FUNCIONALES
+
+- Zona de despertar.
+- Recibidor de Palomo.
+- Área social de Argento.
+- Sala del acertijo mágico.
+- Pasadizo secreto.
+- Ruta de supervivencia y materiales.
+- Estación de reparación básica.
+- Estación de crafteo del arma inicial.
+- Recinto cerrado del Toro.
+- Segundo piso para Palomo.
+- Ancla de salida del Limbo.
+
+15.4. LLAVE DE PLATA EXISTENTE
+
+[PENDIENTE]
+
+La puerta con Llave de Plata ya presente en MAP01 no debe impedir llegar a
+Argento, porque su prueba es obligatoriamente la primera. Opciones compatibles:
+
+1. Dejar esa puerta abierta durante el prólogo y reservar la llave para otro uso.
+2. Colocar la llave antes de Argento como hallazgo ambiental, sin convertirla en
+   una quinta prueba.
+3. Hacer que el pasadizo de Caella conduzca al lado cerrado de esa puerta.
+
+Recomendación: opción 3. Integra la geometría existente con la segunda prueba y
+permite conservar la utilidad de la llave para volver a abrir el paso desde el
+lado opuesto. La llave será un objeto temporal del Limbo salvo que Palomo la
+introduzca expresamente en la Caja.
+
+-------------------------------------------------------------------------------
+16. APERTURA: DESPERTAR, VOZ DESCONOCIDA Y PALOMO
+-------------------------------------------------------------------------------
+
+16.1. ESTADO INICIAL
+
+- Pantalla negra durante un intervalo breve y saltable.
+- Sonido amortiguado, sin reproducción explícita del asesinato.
+- No mostrar cadáver, atacantes ni alcantarillas.
+- Inventario exterior vacío.
+- Posición en CA_M01_START_SPOT.
+- Salud y necesidades en valores tutoriales seguros.
+- Activar CA_Q_MAIN_M00_THE_FOOL.
+
+Texto inicial del diario:
+
+“Desperté en una propiedad que no reconozco. Recuerdo quién soy y de dónde vengo,
+pero no cómo llegué. Una voz que nadie más parece oír insiste en que busque una
+salida.”
+
+16.2. VOZ DESCONOCIDA
+
+Identificador del hablante visible:
+
+$CA_SPEAKER_UNKNOWN_VOICE = “Voz desconocida”
+
+Primera intervención:
+
+VOZ DESCONOCIDA:
+“Despertá. No intentes recordar todavía. Hay alguien cerca que puede ayudarte a
+encontrar el camino.”
+
+Respuesta opcional del jugador:
+
+1. “¿Quién sos?”
+   VOZ: “Alguien demasiado lejos para hacer más que hablar.”
+
+2. “¿Dónde estoy?”
+   VOZ: “En un lugar que no puede retenerte para siempre.”
+
+3. “[Guardar silencio.]”
+   La voz no insiste.
+
+No conceder conocimiento sobre Selene. Marcar únicamente
+CA_F_M01_UNKNOWN_VOICE_HEARD.
+
+16.3. APARICIÓN DE PALOMO
+
+Palomo aparece al entrar en el recibidor o al volver la cámara después de
+examinar un elemento cercano. Evitar teletransportarlo con un destello evidente.
+Usar el sonido de desaparición existente sólo cuando corresponda y con volumen
+moderado.
+
+Diálogo base:
+
+PALOMO:
+“Buen día. O algo suficientemente parecido como para no discutir con el reloj.”
+
+Preguntas:
+
+JUGADOR: “¿Dónde estamos?”
+
+PALOMO:
+“En el recibidor, si busca precisión. Si busca respuestas más ambiciosas, temo
+que la arquitectura no será de mucha ayuda.”
+
+JUGADOR: “¿Qué me pasó?”
+
+PALOMO:
+“Se despertó. Suele ocurrir después de cerrar los ojos, aunque admito que usted
+le dio bastante dramatismo.”
+
+JUGADOR: “No recuerdo cómo llegué.”
+
+PALOMO:
+“La memoria es una anfitriona selectiva. A veces deja el abrigo en la entrada y
+se lleva al invitado.”
+
+JUGADOR: “Escucho la voz de una mujer.”
+
+PALOMO:
+“Las alucinaciones son huéspedes descorteses: llegan sin invitación y pronto
+quieren decidir dónde ponemos los muebles. Tenga cuidado.”
+
+JUGADOR: “No parece una alucinación.”
+
+PALOMO:
+“Las buenas nunca lo parecen.”
+
+Orientación hacia Argento:
+
+PALOMO:
+“Argento lleva tiempo intentando que esta casa escuche razones. Quizá le resulte
+agradable descubrir que una persona es más receptiva que una pared.”
+
+No mostrar “Nueva misión de Palomo”. Palomo sólo actualiza el objetivo existente:
+“Hablar con Argento”.
+
+Al terminar, Palomo desaparece cuando queda fuera del campo visual. Establecer
+CA_F_M01_PALOMO_MET.
+
+-------------------------------------------------------------------------------
+17. PRUEBA 1: ARGENTO — RAMA SOCIAL
+-------------------------------------------------------------------------------
+
+17.1. OBJETIVO
+
+Convencer a Rulo, Ronnie y Caella de que ayuden al protagonista.
+
+La prueba debe enseñar:
+
+- Empatía / Emoción.
+- Elocuencia / Labia.
+- Carisma / Persuasión.
+- Opciones bloqueadas y requisitos visibles.
+- Fallo social con ruta alternativa.
+- Información como recurso.
+
+17.2. INICIO
+
+ARGENTO:
+“También despertaste sin recordar el camino. Eso nos da una pregunta en común,
+pero todavía no una respuesta.”
+
+ARGENTO:
+“Rulo conoce aquello que puede enfrentarte. Ronnie sabe qué necesita un viaje.
+Caella percibe lo que esta casa intenta esconder. Ninguno tiene motivos para
+acompañarte sólo porque se lo pidas.”
+
+ARGENTO:
+“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+obliguen al otro. Consiste en descubrir qué está intentando proteger’. Nunca
+aclaró qué esperaba que hiciéramos con eso.”
+
+Al aceptar:
+
+- CA_F_M01_ARGENTO_STARTED = true.
+- Mostrar objetivo “Conseguir la ayuda de los residentes: 0/3”.
+- Habilitar los nodos de reclutamiento.
+
+17.3. DISTRIBUCIÓN DE MECÁNICAS
+
+Rulo introduce Empatía:
+
+- Motivo visible: no quiere participar en otra tarea sin sentido.
+- Lectura exitosa: en realidad teme poner en peligro a los demás y ser utilizado
+  únicamente por su fuerza.
+- Respuesta adecuada: admitir que el jugador necesita su ayuda, sin reducirlo a
+  un arma.
+- Resultado: CA_F_M01_RULO_CONVINCED = true.
+
+Ronnie introduce Elocuencia:
+
+- Motivo visible: considera que no existe un plan ni provisiones.
+- Una opción bloqueada por Labia permite exponer una secuencia concreta: reunir
+  información, abrir un camino, conseguir recursos y prepararse antes de luchar.
+- Si el umbral no se alcanza, el jugador puede obtener esa estructura hablando
+  nuevamente con Argento y volver con información nueva.
+- Resultado: CA_F_M01_RONNIE_CONVINCED = true.
+
+Caella introduce Persuasión:
+
+- Motivo visible: la anomalía mágica alrededor del protagonista podría ser
+  peligrosa.
+- El jugador puede intentar persuadirla de examinarla y ayudar a buscar el paso.
+- Un fallo no puede cerrar la ruta. Tras fallar, una reacción de la sala o una
+  observación de Argento aporta una nueva opción determinista: reconocer el
+  peligro y ofrecer que Caella establezca las condiciones de seguridad.
+- Resultado: CA_F_M01_CAELLA_CONVINCED = true.
+
+17.4. REGLA DE FALLO
+
+Cada tirada aleatoria posee CheckOnceKey. Si falla:
+
+- Registrar el fallo.
+- Cambiar el diálogo.
+- Proporcionar una tarea breve, información nueva o respuesta alternativa.
+- No permitir repetir inmediatamente la misma tirada.
+- No volver hostil al NPC.
+- No bloquear la misión.
+
+17.5. FINAL
+
+Cuando las tres flags estén activas:
+
+- Actualizar 3/3.
+- Volver con Argento.
+- Establecer CA_F_M01_ARGENTO_COMPLETE.
+- Avanzar a CA_M01_STATE_ARGENTO_COMPLETE.
+- Habilitar el diálogo de Caella.
+
+ARGENTO:
+“No los convenciste de lo mismo. A cada uno le diste una razón distinta para
+avanzar. Tal vez eso era lo que Palomo intentaba decir.”
+
+-------------------------------------------------------------------------------
+18. PRUEBA 2: CAELLA — RAMA MÁGICA
+-------------------------------------------------------------------------------
+
+18.1. OBJETIVO
+
+Aprender las acciones mágicas básicas, resolver un acertijo elemental y revelar
+el pasadizo secreto.
+
+18.2. INICIO
+
+CAELLA:
+“Hay una pared que suena vacía cuando nadie la toca y sólida cuando intento
+abrirla. La casa tiene un sentido del humor horrible. Debe de llevarse bien con
+Palomo.”
+
+CAELLA:
+“Él me dijo: ‘No hay pared más firme que aquella que todos han decidido dejar de
+mirar’. Pensé que se burlaba de mí. Todavía lo pienso, pero quizá además dejaba
+una pista.”
+
+Establecer CA_F_M01_CAELLA_STARTED.
+
+18.3. EQUIPO TEMPORAL
+
+Si el jugador no posee equipo mágico compatible:
+
+- Entregar CA_LimboMagicImplement.
+- Entregar CA_LimboMagicSeal.
+- Asignar ItemId a ambas instancias.
+- Etiquetarlas CA_ITEMFLAG_LIMBO_TEMP.
+- No permitir vender, soltar fuera de la sala ni transferir a contenedores.
+
+Todas las clases pueden completar la prueba. Los atributos mágicos modifican la
+eficiencia, pero no el acceso a las acciones tutoriales.
+
+18.4. ACCIONES DE ENSEÑANZA
+
+Antes del acertijo, registrar:
+
+- Un lanzamiento primario válido: Fire.
+- Una función mágica secundaria válida: AltFire.
+- Una canalización válida con el Sello: Reload/Channel.
+- Consumo y recuperación visible de Ánima.
+
+No exigir daño contra un enemigo. Utilizar blancos o runas que respondan a la
+acción correcta.
+
+18.5. ACERTIJO
+
+Texto visible:
+
+“La tierra lo sostiene.
+El aire lo delata.
+El fuego lo revela.
+El agua borra sus huellas.
+Cuando los cuatro hablen, la pared recordará que fue puerta.”
+
+Solución operativa:
+
+1. Activar Tierra.
+2. Activar Aire.
+3. Activar Fuego.
+4. Activar Agua.
+
+Cada runa exige una interacción o ataque mágico del elemento correspondiente.
+Si la herramienta temporal utiliza un selector elemental, Caella enseña a
+cambiarlo antes de iniciar la secuencia.
+
+18.6. ERROR Y REINICIO
+
+Al activar una runa incorrecta:
+
+- Reproducir feedback visual y sonoro breve.
+- Apagar todas las runas.
+- Reiniciar PuzzleSequenceIndex a 0.
+- No causar daño permanente.
+- No retirar Ánima adicional como castigo.
+- Caella ofrece una pista progresiva después de dos y cuatro errores.
+
+Pista 1:
+
+“No enumera objetos. Describe lo que cada elemento hace con el camino.”
+
+Pista 2:
+
+“Empieza por aquello que sostiene la casa. Terminá con lo que puede borrar una
+huella.”
+
+18.7. APERTURA DEL PASADIZO
+
+Al completar la secuencia:
+
+- Establecer CA_F_M01_SECRET_PASSAGE_OPEN.
+- Ejecutar una sola vez el movimiento de sector o reemplazo de geometría.
+- Mantener el pasadizo abierto al guardar y cargar.
+- Habilitar la ruta de Ronnie.
+- Establecer CA_F_M01_CAELLA_COMPLETE.
+
+CAELLA:
+“La pared sabía que era una puerta. Sólo necesitaba que alguien se lo recordara
+en el idioma correcto.”
+
+-------------------------------------------------------------------------------
+19. PRUEBA 3: RONNIE — RAMA DE SUPERVIVENCIA
+-------------------------------------------------------------------------------
+
+19.1. OBJETIVO
+
+Atravesar la ruta revelada, administrar recursos y reunir las materias primas
+necesarias para el arma inicial de la clase elegida.
+
+19.2. INICIO
+
+RONNIE:
+“Encontrar una salida no sirve si llegás a ella sin agua, sin aire y cargando
+todo lo que no supiste abandonar.”
+
+RONNIE:
+“Palomo me dijo: ‘Sobrevivir no es permanecer donde nada puede alcanzarlo. A
+veces eso sólo recibe otro nombre: quedarse’. Nunca supe si hablaba de esta casa
+o de mí.”
+
+Establecer CA_F_M01_RONNIE_STARTED.
+
+19.3. SELECCIÓN DEL ARMA Y RECETA
+
+No escribir listas de materiales duplicadas dentro de la misión. Resolver el
+arma mediante una tabla autoritativa:
+
+GetStarterLoadout(PlayerClass) → StarterLoadoutDefinition
+StarterLoadoutDefinition.PrimaryWeaponRecipe → RecipeId
+RecipeId.GetRawRequirements() → MaterialRequirement[]
+
+Perfiles requeridos:
+
+CA_STARTER_LOADOUT_WARRIOR
+CA_STARTER_LOADOUT_EXPLORER
+CA_STARTER_LOADOUT_PRIEST
+CA_STARTER_LOADOUT_MAGE
+
+Los objetos exactos permanecen [PENDIENTES]. La misión debe poder cambiar de
+loadout sin modificar scripts de mapa.
+
+19.4. CONTENIDOS DE LA RUTA
+
+Tramo A — preparación:
+
+- Mostrar la carga actual y el coste de Aire.
+- Entregar una herramienta dañada o localizarla cerca de la entrada.
+- Enseñar a inspeccionar su condición e ItemId.
+- Proporcionar materiales controlados para repararla.
+- Completar una reparación real en CA_M01_REPAIR_STATION.
+
+Tramo B — necesidades:
+
+- Colocar agua y alimento suficientes, sin convertirlos en recursos vendibles
+  fuera del Limbo.
+- Llevar Sed y Hambre a valores tutoriales que permitan usar una unidad sin
+  colocar al jugador en estado crítico.
+- Registrar una utilización correcta de alimento y agua.
+
+Tramo C — Aire y movimiento:
+
+- Crear una distancia corta donde correr reduzca el Aire de forma visible.
+- Incluir una alternativa lenta para demostrar que no es obligatorio agotarse.
+- Permitir recuperación completa antes de cualquier peligro.
+
+Tramo D — carga:
+
+- Colocar materiales necesarios y objetos prescindibles más pesados.
+- Mostrar la diferencia entre capacidad de recoger y conveniencia de cargar.
+- No impedir el progreso si el jugador decide volver varias veces.
+
+Tramo E — respiración o paso inundado:
+
+- Utilizar un sector de agua breve y seguro para presentar el Aire compartido.
+- Evitar una distancia capaz de matar a un jugador que entra con Aire completo.
+- Colocar salida clara y zona de recuperación.
+- No depender de inmovilidad o bugs previos de entrada al agua.
+
+19.5. MATERIALES DE MISIÓN
+
+- Cada recurso necesario debe proceder de al menos un nodo garantizado.
+- Los nodos sólo conceden la cantidad requerida más un margen mínimo de seguridad.
+- Los materiales llevan CA_ITEMFLAG_LIMBO_QUEST hasta ser convertidos.
+- No pueden venderse ni guardarse fuera del flujo de misión.
+- Si un material se pierde en geometría inaccesible, el controlador lo recupera
+  o repone sin duplicar el total autorizado.
+- El progreso utiliza cantidades reservadas, no simples mensajes de pickup.
+
+19.6. FINAL
+
+Cuando todos los requisitos de RecipeId estén disponibles:
+
+- Establecer CA_F_M01_MATERIALS_COMPLETE.
+- Volver con Ronnie.
+- Establecer CA_F_M01_RONNIE_COMPLETE.
+- Habilitar CA_M01_STATE_PREPARE_WEAPON.
+
+RONNIE:
+“Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
+parte importante.”
+
+-------------------------------------------------------------------------------
+20. PREPARACIÓN DEL ARMA INICIAL
+-------------------------------------------------------------------------------
+
+Esta fase conecta supervivencia y combate. No pertenece a una quinta rama.
+
+20.1. CRAFTEO
+
+- Abrir la receta del arma inicial derivada en la fase anterior.
+- Permitir el crafteo directo desde materias primas.
+- Mostrar los subcomponentes y sus eficiencias vigentes.
+- Reservar materiales al comenzar la tarea.
+- Hacer avanzar la tarea sólo mientras el jugador permanezca activamente en la
+  estación y la infraestructura esté lista.
+- Detener el progreso al cerrar la interacción o abandonar la estación, de
+  acuerdo con las reglas generales actuales.
+- No duplicar materiales al cancelar, guardar o cargar.
+
+20.2. RESULTADO
+
+- Crear una única instancia con StarterWeaponItemId.
+- Marcarla CA_ITEMFLAG_LIMBO_PRESERVABLE.
+- Equiparla o pedir al jugador que la equipe.
+- Registrar CA_F_M01_STARTER_WEAPON_CRAFTED.
+- Conservar la eficiencia real de la pieza.
+- No crear todavía una segunda copia dentro de la Caja.
+
+Si el diseño final decide que la Caja genera el arma automáticamente, esta fase
+puede reemplazarse por una preparación guiada. Sin embargo, mantener un crafteo
+real aprovecha MAP01 para enseñar una mecánica central ya implementada.
+
+-------------------------------------------------------------------------------
+21. PRUEBA 4: RULO — RAMA DE COMBATE
+-------------------------------------------------------------------------------
+
+21.1. OBJETIVO
+
+Demostrar las acciones fundamentales de combate y derrotar al Toro.
+
+21.2. INICIO
+
+RULO:
+“El arma está lista. Eso no significa que vos lo estés.”
+
+RULO:
+“Yo ya le gané al Toro. Cuando terminó, Palomo me dijo: ‘Uno puede perder mucho
+después de haber ganado’. Si entendés qué quiso decir, guardate la explicación
+para cuando salgamos.”
+
+Establecer CA_F_M01_RULO_STARTED.
+
+21.3. ACCIONES PREVIAS
+
+Antes de liberar al Toro, utilizar blancos de práctica para registrar:
+
+- Fire: ataque primario.
+- AltFire: función secundaria del arma.
+- Zoom o defensa equivalente.
+- Ataque cargado o maniobra avanzada equivalente.
+- Consumo y recuperación de Aire.
+
+La validación debe reconocer familias distintas. No exigir bloqueo con escudo a
+una combinación que no pueda equiparlo; utilizar la defensa equivalente o
+proporcionar equipo temporal compatible.
+
+21.4. ACTOR DEL TORO
+
+CA_LimboBull debe reutilizar comportamiento aprobado del Toro siempre que sea
+posible y añadir únicamente:
+
+- Vinculación con CA_M01QuestController.
+- Escalado tutorial.
+- Reinicio controlado.
+- Imposibilidad de abandonar el recinto durante el encuentro.
+- Supresión de drops explotables.
+- Estado final de disipación apropiado para el Limbo.
+
+La cornada debe conservar su identidad y señales anticipatorias. El jugador
+necesita tiempo suficiente para reconocerla, defenderse o salir de la trayectoria.
+
+21.5. DERROTA DEL JUGADOR
+
+Para no revelar una nueva resurrección ni obligar a perder toda la misión:
+
+- Interceptar la derrota dentro del recinto antes de una muerte definitiva.
+- Fundir la pantalla brevemente.
+- Restaurar al jugador en CA_M01_BULL_PLAYER_START.
+- Restaurar valores tutoriales de salud, Aire y Ánima.
+- Reiniciar al Toro.
+- Conservar acciones previas y objetos de misión.
+- No incrementar recompensas ni contadores.
+
+Texto opcional de Rulo después del primer fracaso:
+
+“Ahora sabés cómo empieza. Eso vale más que fingir que no ocurrió.”
+
+21.6. VICTORIA
+
+Al derrotar al Toro:
+
+- Establecer CA_F_M01_BULL_DEFEATED.
+- Abrir el recinto.
+- Reproducir estado de disipación una sola vez.
+- Establecer CA_F_M01_RULO_COMPLETE.
+- Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED.
+- Habilitar a Palomo en el segundo piso.
+- Actualizar diario: “Buscar nuevamente a Palomo”.
+
+RULO:
+“Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
+
+-------------------------------------------------------------------------------
+22. PALOMO, LA CAJA MÁGICA Y EL LOCO
+-------------------------------------------------------------------------------
+
+22.1. APARICIÓN FINAL
+
+Palomo no debe aparecer delante del jugador mediante un efecto ostentoso. Al
+habilitarse la etapa, colocarlo en CA_M01_PALOMO_UPSTAIRS_SPOT antes de que el
+jugador tenga línea de visión. Si se encuentra mirando el punto, esperar a que
+gire, cruce una puerta o cambie de sector.
+
+PALOMO:
+“Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
+confundir ninguno con el camino completo.”
+
+Opciones:
+
+JUGADOR: “¿Todo esto fue idea suya?”
+
+PALOMO:
+“Sería vanidoso adjudicarme una casa, cuatro voluntades y un Toro particularmente
+malhumorado. Digamos que hice algunas presentaciones.”
+
+JUGADOR: “¿Por qué ellos no pueden salir?”
+
+PALOMO:
+“Tal vez porque todavía llaman salida a una puerta. Tal vez porque la casa es
+caprichosa. Si encuentra una respuesta menos incómoda, compártala.”
+
+JUGADOR: “¿Ahora me va a decir dónde estamos?”
+
+PALOMO:
+“En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas
+ambiciosas.”
+
+JUGADOR: “La voz volvió a hablarme.”
+
+PALOMO:
+“Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado
+conviene tenerles.”
+
+22.2. ENTREGA DE LA CAJA
+
+PALOMO:
+“Voy a pedirle un favor. Cuide esta caja mientras atiendo asuntos menos cómodos
+de transportar.”
+
+JUGADOR: “¿Qué tiene de mágica?”
+
+PALOMO:
+“Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable
+atrae ladrones.”
+
+JUGADOR: “¿Qué contiene?”
+
+PALOMO:
+“Espacio. Una cantidad sorprendentemente difícil de guardar.”
+
+JUGADOR: “¿Por qué me la entrega?”
+
+PALOMO:
+“Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien
+que todavía pregunta antes de obedecer.”
+
+Al aceptar:
+
+- Si CA_F_M01_MAGIC_BOX_GRANTED es falso, crear exactamente una Caja.
+- Asignar MagicBoxItemId.
+- Establecer propietario.
+- Aplicar las restricciones de soltar, vender y guardar.
+- Establecer CA_F_M01_MAGIC_BOX_GRANTED.
+- Si el flag ya era verdadero, localizar o recuperar la instancia existente; no
+  crear otra.
+
+22.3. FUNCIONES MECÁNICAS DE LA CAJA
+
+Funciones generales confirmadas:
+
+- Peso propio: 10 kg.
+- Reducción de carga: aplicar la fórmula vigente que divide el peso total de su
+  contenido por la cantidad de slots, con el redondeo definido por el sistema.
+- Contenedor persistente por ItemId.
+- No puede soltarse.
+- No puede venderse.
+- No puede almacenarse dentro de otro contenedor.
+- Puede capturar esencias del Tarot.
+- Puede abrir el retorno desde el Limbo.
+
+Funciones mínimas requeridas para MAP01:
+
+CaptureTarotEssence(EssenceActor, TarotCardId)
+StorePreservedItem(ItemId)
+ValidateStarterLoadout(PlayerClass)
+OpenLimboReturn(DestinationMap, DestinationSpot)
+
+Las funciones deben validar propiedad y autoridad. Una llamada duplicada a
+CaptureTarotEssence para El Loco devuelve “ya capturada” sin volver a aplicar
+bonificaciones.
+
+22.4. MANIFESTACIÓN DE EL LOCO
+
+Después de recibir la Caja, manifestar CA_TheFoolEssence en
+CA_M01_FOOL_ESSENCE_SPOT.
+
+Presentación:
+
+- Silenciar parcialmente el ambiente.
+- Mostrar primero una carta sin ilustración completa.
+- Hacer que la figura y el nombre aparezcan al acercar o utilizar la Caja.
+- Evitar que Palomo diga “El Loco” antes de que la carta lo muestre.
+
+Interacción:
+
+1. El jugador selecciona o utiliza la Caja sobre la esencia.
+2. La Caja reproduce su primera animación de captura.
+3. La esencia desaparece sólo después de confirmar el guardado.
+4. Se concede Arcano Mayor 0 — El Loco.
+5. Se aplica una sola vez la bonificación global vigente de Arcano Mayor.
+6. Se actualiza el registro de Tarot.
+7. Se establece CA_F_M01_THE_FOOL_CAPTURED.
+
+Si el inventario, la animación o el cambio de estado falla, la esencia permanece
+disponible. Nunca consumir el actor antes de confirmar el estado autoritativo.
+
+Palomo después de la captura:
+
+“Parece que la caja estaba menos vacía de lo que ambos suponíamos. O usted más
+lleno. Conviene desconfiar de las medidas sencillas.”
+
+22.5. REACCIÓN DE LOS RESIDENTES
+
+Los cuatro pueden advertir la manifestación desde la distancia o reaccionar al
+cambio de la mansión. No comprenden qué ocurrió.
+
+- Argento percibe que una decisión quedó fijada.
+- Caella reconoce una esencia, pero nunca había visto una capturada.
+- Ronnie nota que apareció una ruta donde antes no había ninguna.
+- Rulo comprueba que la puerta final sólo responde al protagonista.
+
+Ninguno afirma estar muerto ni exige una explicación completa. Pueden pedir al
+jugador que recuerde el camino por si consigue regresar.
+
+22.6. APERTURA DE LA SALIDA
+
+Tras capturar El Loco:
+
+- Establecer CA_F_M01_EXIT_READY.
+- Activar CA_M01_EXIT_PORTAL_SPOT.
+- La salida debe parecer un corredor, puerta o interrupción del espacio, no un
+  menú de selección de mapa.
+- Sólo el portador de la Caja puede iniciar la transición.
+
+Palomo:
+
+“Encontró una salida. No prometí que condujera al lugar que espera ni que siguiera
+allí cuando quisiera volver.”
+
+-------------------------------------------------------------------------------
+23. TRANSICIÓN A MAP02 — ALCANTARILLAS
+-------------------------------------------------------------------------------
+
+23.1. CONFIRMACIÓN
+
+Antes de cruzar:
+
+SISTEMA:
+“El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?”
+
+Opciones:
+
+1. “Sí. Cruzar.”
+2. “No. Todavía no.”
+
+La segunda opción cierra el aviso sin cambiar flags. La primera establece
+CA_F_M01_EXIT_CONFIRMED y comienza la transferencia.
+
+23.2. ORDEN ATÓMICO DE TRANSFERENCIA
+
+Ejecutar en este orden:
+
+1. Bloquear temporalmente nuevas interacciones.
+2. Confirmar que la Caja existe y pertenece al jugador.
+3. Confirmar que El Loco fue capturado.
+4. Resolver el StarterLoadoutDefinition de la clase.
+5. Mover StarterWeaponItemId al interior de la Caja.
+6. Crear dentro de la Caja cualquier elemento básico adicional del loadout que
+   no se haya obtenido durante la misión.
+7. Validar que cada objeto del loadout exista exactamente una vez.
+8. Eliminar del inventario exterior todos los objetos LIMBO_TEMP y
+   LIMBO_QUEST.
+9. Eliminar sobrantes de misión y herramientas de práctica.
+10. Conservar fuera de la Caja únicamente la propia Caja.
+11. Normalizar estados tutoriales de Hambre, Sed, Sueño, Aire, Ánima y salud
+    según valores que se definan para el inicio real.
+12. Establecer CA_F_M01_INVENTORY_SANITIZED.
+13. Guardar misión, Tarot, ItemId, contenido de la Caja y clase.
+14. Establecer CA_F_M01_COMPLETE.
+15. Ejecutar ChangeLevel hacia MAP02 y CA_M02_SEWER_PLAYER_START.
+
+Si cualquier validación entre 2 y 13 falla:
+
+- No cambiar de mapa.
+- Desbloquear las interacciones.
+- Mostrar un mensaje localizado no narrativo.
+- Mantener la salida activa para reintentar.
+- No duplicar objetos al reanudar.
+
+23.3. APARICIÓN EN LAS ALCANTARILLAS
+
+Al entrar en MAP02:
+
+- El jugador aparece en el lugar donde fue arrojado su cadáver.
+- El entorno muestra agua sucia, ladrillos, restos y señales de abandono.
+- No reproducir un flashback completo de la emboscada.
+- Puede haber sangre seca, roturas en la ropa o una herida cerrada como indicios.
+- El inventario exterior contiene únicamente la Caja.
+- El equipo básico se encuentra dentro de ella.
+- MAP01 no figura como destino disponible.
+
+Intervención breve de la Voz desconocida:
+
+“Ahora sí. Movete antes de que descubran que seguís respirando.”
+
+La frase confirma que alguien puede buscarlo, pero no explica quién lo mató ni
+cómo regresó.
+
+23.4. FINALIZACIÓN DE LA MISIÓN
+
+La recompensa debe quedar registrada antes del cambio de mapa, pero la
+notificación final puede aparecer al recuperar control en MAP02:
+
+“Misión completada: Donde despiertan los perdidos.”
+“Arcano obtenido: El Loco.”
+
+No revelar “Regresaste del Limbo”.
+
+-------------------------------------------------------------------------------
+24. DIÁLOGOS OBLIGATORIOS DE MAP01
+-------------------------------------------------------------------------------
+
+24.1. IDENTIFICADORES MÍNIMOS
+
+CA_DLG_M01_UNKNOWN_VOICE_WAKE
+CA_DLG_M01_PALOMO_FOYER
+CA_DLG_M01_ARGENTO_START
+CA_DLG_M01_RECRUIT_RULO
+CA_DLG_M01_RECRUIT_RONNIE
+CA_DLG_M01_RECRUIT_CAELLA
+CA_DLG_M01_ARGENTO_COMPLETE
+CA_DLG_M01_CAELLA_START
+CA_DLG_M01_CAELLA_HINT_1
+CA_DLG_M01_CAELLA_HINT_2
+CA_DLG_M01_CAELLA_COMPLETE
+CA_DLG_M01_RONNIE_START
+CA_DLG_M01_RONNIE_PROGRESS
+CA_DLG_M01_RONNIE_COMPLETE
+CA_DLG_M01_RULO_START
+CA_DLG_M01_RULO_RETRY
+CA_DLG_M01_RULO_COMPLETE
+CA_DLG_M01_PALOMO_UPSTAIRS
+CA_DLG_M01_PALOMO_BOX
+CA_DLG_M01_PALOMO_EXIT
+
+24.2. REGLAS DE SELECCIÓN DE NODO
+
+Prioridad al interactuar con un NPC:
+
+1. Reacción única a un acontecimiento recién ocurrido.
+2. Entrega o finalización de la etapa activa.
+3. Progreso o pista de la etapa activa.
+4. Oferta de la etapa siguiente.
+5. Diálogo ambiental repetible.
+
+No utilizar únicamente “habló/no habló”. Registrar nodos agotados y flags de
+conocimiento para que el NPC no repita su presentación después de avanzar.
+
+24.3. TONO DE CADA PERSONAJE
+
+Palomo:
+
+- Cortés, metafórico, filosófico, amigable y burlón.
+- Evasivo con propósito.
+- Niega conocer la voz y la llama alucinación.
+
+Argento:
+
+- Sereno y atento a motivaciones.
+- Enseña sin manipular la tirada para que el jugador siempre tenga éxito.
+- Reconoce que distintas personas necesitan distintas razones.
+
+Caella:
+
+- Rápida, curiosa y ligeramente nerviosa ante anomalías.
+- Usa humor para contener el miedo.
+- No explica como certeza aquello que sólo percibe.
+
+Ronnie:
+
+- Práctico, preciso y desconfiado de planes sin preparación.
+- Su origen Caelith puede aparecer en preguntas opcionales, no como exposición
+  obligatoria.
+
+Rulo:
+
+- Directo, material y protector.
+- No habla como una criatura ingenua.
+- Distingue fuerza de decisión táctica.
+
+24.4. FRASES DE PALOMO RECORDADAS
+
+Estas líneas deben atribuirse expresamente a Palomo y no presentarse como una
+conclusión consciente del NPC:
+
+ARGENTO:
+“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+obliguen al otro. Consiste en descubrir qué está intentando proteger’. No sé qué
+esperaba que hiciéramos con eso.”
+
+CAELLA:
+“Palomo dijo: ‘No hay pared más firme que aquella que todos han decidido dejar
+de mirar’. Pensé que se estaba burlando. Sigo pensándolo.”
+
+RONNIE:
+“Palomo me dijo que sobrevivir no es permanecer donde nada puede alcanzarte, que
+a veces eso sólo recibe otro nombre: quedarse. Nunca aclaró de qué hablaba.”
+
+RULO:
+“Yo le gané al Toro. Palomo miró el recinto y dijo: ‘Uno puede perder mucho
+después de haber ganado’. Después se fue.”
+
+24.5. PROTECCIÓN DEL MISTERIO EN DIÁLOGO
+
+Antes de empaquetar la versión, buscar y revisar toda aparición visible de:
+
+Selene
+Limbo
+muerte
+muerto
+alma
+resurrección
+cadáver
+cuerpo corrompido
+
+Las palabras pueden aparecer en comentarios y nombres internos, pero no en
+claves de diálogo o diario accesibles durante MAP01.
+
+-------------------------------------------------------------------------------
+25. INVENTARIO, OBJETOS TEMPORALES Y PERSISTENCIA
+-------------------------------------------------------------------------------
+
+25.1. FLAGS DE OBJETO
+
+CA_ITEMFLAG_LIMBO_TEMP
+
+- Objeto de práctica.
+- Se elimina al salir.
+- No puede venderse, almacenarse ni convertirse en recompensa.
+
+CA_ITEMFLAG_LIMBO_QUEST
+
+- Material u objeto necesario para una etapa.
+- Se reserva de forma autoritativa.
+- Se elimina o consume antes de MAP02.
+
+CA_ITEMFLAG_LIMBO_PRESERVABLE
+
+- Pieza que puede trasladarse al interior de la Caja.
+- Debe aparecer en la lista del StarterLoadoutDefinition.
+- Conserva ItemId, condición y eficiencia.
+
+CA_ITEMFLAG_UNIQUE_BOUND
+
+- Caja Mágica y futuros objetos equivalentes.
+- No puede soltarse, venderse ni guardarse.
+
+25.2. REGLA DEL EQUIPO INICIAL
+
+Al salir de MAP01:
+
+- Inventario exterior: únicamente CA_MagicBox.
+- Interior de la Caja: equipamiento básico de la clase.
+- No conservar consumibles infinitos, materiales sobrantes, herramientas de
+  práctica ni runas.
+- No crear dos copias del arma si la fabricada ya fue preservada.
+- Si el arma se perdió, recuperar por ItemId antes de decidir que falta.
+- Si realmente fue destruida, reconstruir una única instancia desde el registro
+  de misión sin devolver los materiales.
+
+25.3. CONTENIDO POR CLASE
+
+[PENDIENTE DE CATÁLOGO DEFINITIVO]
+
+Definir en datos, no en el controlador de MAP01:
+
+StarterLoadoutDefinition
+{
+    PlayerClass;
+    PrimaryWeaponRecipe;
+    ArmorItem;
+    SecondaryItem;
+    CompatibleAmmo[];
+    BasicConsumables[];
+}
+
+La especificación sólo exige que existan cuatro definiciones:
+
+- Guerrero.
+- Explorador.
+- Sacerdote.
+- Mago.
+
+-------------------------------------------------------------------------------
+26. LOCALIZACIÓN, DIARIO Y PRESENTACIÓN
+-------------------------------------------------------------------------------
+
+26.1. CLAVES PRINCIPALES
+
+$CA_Q_M01_TITLE
+$CA_Q_M01_SUMMARY
+$CA_Q_M01_OBJ_FIND_HELP
+$CA_Q_M01_OBJ_TALK_ARGENTO
+$CA_Q_M01_OBJ_CONVINCE_RESIDENTS
+$CA_Q_M01_OBJ_FOLLOW_CAELLA
+$CA_Q_M01_OBJ_SOLVE_RIDDLE
+$CA_Q_M01_OBJ_FOLLOW_RONNIE
+$CA_Q_M01_OBJ_GATHER_MATERIALS
+$CA_Q_M01_OBJ_PREPARE_WEAPON
+$CA_Q_M01_OBJ_TALK_RULO
+$CA_Q_M01_OBJ_DEFEAT_BULL
+$CA_Q_M01_OBJ_FIND_PALOMO
+$CA_Q_M01_OBJ_CAPTURE_FOOL
+$CA_Q_M01_OBJ_LEAVE_MANSION
+$CA_Q_M01_COMPLETE
+
+$CA_SPEAKER_UNKNOWN_VOICE
+$CA_M01_EXIT_CONFIRM
+$CA_M01_ERROR_TRANSFER
+
+26.2. TEXTOS DE OBJETIVOS
+
+Inicio:
+“Buscar ayuda dentro de la propiedad.”
+
+Argento:
+“Convencer a los residentes de colaborar: {count}/3.”
+
+Caella:
+“Seguir a Caella.”
+“Resolver el acertijo de los cuatro elementos.”
+
+Ronnie:
+“Prepararse para explorar el pasadizo.”
+“Reunir materiales para el arma: {collected}/{required}.”
+
+Preparación:
+“Preparar el arma inicial.”
+
+Rulo:
+“Aprender las acciones básicas de combate.”
+“Derrotar al Toro.”
+
+Final:
+“Buscar nuevamente a Palomo.”
+“Examinar la aparición mediante la Caja.”
+“Abandonar la mansión.”
+
+26.3. INTERFAZ
+
+- El diario muestra progreso y estado.
+- No mantener un tracker permanente en el HUD.
+- Utilizar notificaciones breves al cambiar de etapa.
+- Las opciones sociales bloqueadas aparecen en gris con su requisito.
+- La tirada de Emoción es privada para quien la realiza.
+- No mostrar nombres internos ni claves sin resolver.
+- La primera captura debe explicar el control de la Caja sin describir su origen.
+
+-------------------------------------------------------------------------------
+27. GUARDADO Y MULTIJUGADOR
+-------------------------------------------------------------------------------
+
+27.1. GUARDADO
+
+Puntos mínimos de reconstrucción correcta:
+
+- Antes y después de conocer a Palomo.
+- Durante cualquiera de las tres conversaciones de Argento.
+- Con una tirada social fallida.
+- A mitad de la secuencia de runas.
+- Con el pasadizo abierto.
+- Con materiales parciales.
+- Durante una reparación o crafteo detenido.
+- Antes del Toro.
+- Durante el Toro, si el motor permite guardar.
+- Después de derrotarlo.
+- Con la Caja recibida pero El Loco sin capturar.
+- Con El Loco capturado pero sin cruzar.
+- Después de entrar en MAP02.
+
+Al cargar, CA_M01QuestController reconstruye actores y sectores a partir del
+estado autoritativo. No volver a disparar recompensas OnEnter ya consumidas.
+
+27.2. MULTIJUGADOR
+
+Recomendación inicial:
+
+- Estado de misión compartido por la party.
+- Elección social tomada por el jugador que inicia el diálogo.
+- Resultados de Emoción privados.
+- Materiales y objetivos colectivos, evitando que cada jugador deba vaciar los
+  mismos nodos.
+- Toro escalado por cantidad de jugadores activos.
+- Cada personaje recibe su propia Caja y su loadout de clase.
+- El Loco se registra en cada personaje elegible y una sola vez en el mundo.
+- Salida con comprobación de que toda la party esté lista.
+
+[PENDIENTE]
+
+Si la Caja debe ser literalmente única en la ficción, el cooperativo necesitará
+una explicación adicional. Para la implementación robusta se recomienda una
+instancia vinculada por personaje que represente el mismo artefacto compartido.
+
+-------------------------------------------------------------------------------
+28. PRUEBAS DE ACEPTACIÓN
+-------------------------------------------------------------------------------
+
+28.1. INICIO Y MISTERIO
+
+[ ] El jugador inicia MAP01 sin objetos, conservando clase, especie y atributos.
+[ ] No se reproduce la emboscada ni se muestra el asesino.
+[ ] La voz figura como “Voz desconocida”.
+[ ] Ningún texto visible llama Limbo al mapa.
+[ ] Ningún NPC afirma saber cómo llegó.
+[ ] Palomo responde sin confirmar muerte, alma o resurrección.
+[ ] Si el jugador menciona la voz, Palomo la llama alucinación y aconseja cuidado.
+
+28.2. ORDEN DE ETAPAS
+
+[ ] Argento es siempre la primera prueba.
+[ ] Caella no inicia hasta completar Argento.
+[ ] Ronnie no inicia hasta abrir el pasadizo.
+[ ] Rulo no libera al Toro hasta reunir y preparar el arma.
+[ ] Palomo no aparece arriba hasta derrotar al Toro.
+[ ] No es posible saltar etapas mediante carga, diálogo repetido o cooperativo.
+
+28.3. ARGENTO
+
+[ ] El objetivo muestra 0/3, 1/3, 2/3 y 3/3 correctamente.
+[ ] Rulo introduce una lectura de Empatía.
+[ ] Ronnie introduce una opción de Elocuencia/Labia.
+[ ] Caella introduce Persuasión.
+[ ] Fallar cualquier tirada habilita una ruta alternativa.
+[ ] Ningún NPC se vuelve hostil por un fallo tutorial.
+[ ] Guardar y cargar conserva tiradas agotadas y conocimiento adquirido.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.4. CAELLA
+
+[ ] Todas las clases reciben herramientas temporales si las necesitan.
+[ ] Fire, AltFire y Channel se registran correctamente.
+[ ] El consumo de Ánima es visible y recuperable.
+[ ] La solución Tierra → Aire → Fuego → Agua abre el paso.
+[ ] Una secuencia incorrecta se reinicia sin bloquear.
+[ ] Las pistas aparecen sólo después de los errores definidos.
+[ ] El pasadizo continúa abierto después de guardar y cargar.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.5. RONNIE
+
+[ ] La receta se deriva de la clase y del catálogo autoritativo.
+[ ] La herramienta de supervivencia conserva ItemId al repararse.
+[ ] El progreso de reparación se detiene según las reglas de estación.
+[ ] Existen alimento y agua suficientes sin generar recursos explotables.
+[ ] La sección de Aire es segura para un personaje inicial.
+[ ] La carga enseña una decisión, pero no obliga a descartar un objeto único.
+[ ] Todos los materiales poseen una fuente garantizada.
+[ ] Perder un material no bloquea ni duplica la misión.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.6. ARMA
+
+[ ] El crafteo directo usa las materias primas reunidas.
+[ ] La vista previa coincide con materiales, eficiencias y tiempo reales.
+[ ] Cerrar o abandonar la estación detiene el progreso como corresponda.
+[ ] Cancelar, guardar y cargar no duplica materiales.
+[ ] El arma resultante posee ItemId único.
+[ ] La misma instancia puede introducirse después en la Caja.
+
+28.7. RULO Y TORO
+
+[ ] Todas las familias iniciales pueden completar las acciones de combate.
+[ ] El jugador recibe defensa equivalente si no puede usar escudo.
+[ ] El Toro anticipa la cornada de forma legible.
+[ ] El recinto impide huir durante el combate sin atrapar al jugador después.
+[ ] Perder reinicia sólo el encuentro y no toda la misión.
+[ ] El Toro no concede drops ni experiencia explotables.
+[ ] Vencer activa una sola vez el estado final.
+[ ] La frase recordada se atribuye a Palomo.
+
+28.8. CAJA, TAROT Y SALIDA
+
+[ ] Palomo entrega una única Caja.
+[ ] La Caja pesa 10 kg y aplica la fórmula vigente a sus contenidos.
+[ ] No puede soltarse, venderse ni guardarse.
+[ ] El Loco no puede capturarse sin la Caja.
+[ ] La captura concede la carta y bonificación una sola vez.
+[ ] La esencia no desaparece si falla el guardado.
+[ ] La salida sólo se habilita después de la captura.
+[ ] “Todavía no” cancela la transición sin penalización.
+[ ] La limpieza deja sólo la Caja en el inventario exterior.
+[ ] El loadout correcto se encuentra dentro de la Caja.
+[ ] MAP02 abre en las alcantarillas.
+[ ] MAP01 queda bloqueado como destino normal.
+
+28.9. REGRESIÓN
+
+[ ] MAP01 abre en GZDoom 4.14.2 sin errores ni warnings nuevos.
+[ ] No aparece ninguna clave CA_* sin localizar.
+[ ] Los NPC no participan en infighting.
+[ ] La piscina, agua y geometría existente siguen funcionando.
+[ ] El Toro base utilizado fuera del prólogo no cambia de comportamiento.
+[ ] El sistema de crafteo general no recibe tiempos o recetas codificados sólo
+    para esta misión.
+[ ] Los ItemId continúan siendo únicos tras cambiar a MAP02 y volver a cargar.
+
+-------------------------------------------------------------------------------
+29. DECISIONES TODAVÍA PENDIENTES
+-------------------------------------------------------------------------------
+
+Estas decisiones no impiden programar la estructura, pero deben resolverse antes
+de fijar todos los datos finales:
+
+1. Nombre definitivo de la misión.
+   Propuesta actual: “Donde despiertan los perdidos”.
+
+2. Lugar exacto de aparición dentro de MAP01.
+   Recomendación: exterior inmediato o recibidor apartado, sin visión directa de
+   los cuatro NPC.
+
+3. Contenido exacto de los cuatro StarterLoadoutDefinition.
+
+4. Uso definitivo de la Llave de Plata.
+   Recomendación: abrir desde el pasadizo de Caella una puerta ya existente.
+
+5. Texto definitivo y presentación visual del acertijo.
+   La solución operativa propuesta es Tierra → Aire → Fuego → Agua.
+
+6. Si el Toro es una criatura real atrapada, una manifestación del Limbo o una
+   construcción de Palomo.
+   Recomendación: dejarlo sin explicación durante MAP01.
+
+7. Valores de salud y necesidades al despertar en MAP02.
+
+8. Momento exacto en que el jugador descubre que murió.
+   Recomendación: permitir la inferencia en las alcantarillas y confirmar la
+   verdad durante el encuentro con el primero de los cuatro jefes.
+
+9. Arcano Mayor correspondiente a cada uno de los cuatro jefes.
+
+10. Motivo individual por el que cada residente no pudo integrar las otras ramas.
+
+11. Tratamiento cooperativo de una Caja narrativamente única.
+
+12. Nombre e identidad del príncipe infernal.
+
+===============================================================================
+FIN DEL DOCUMENTO — VERSIÓN 1.0
+===============================================================================
+
+````
+
+
+## Registro: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0c.md
+
+SHA-256: `88ab3bf247eed3935a8fe21e874d0c5481936961113a3e38c3538b6a0c1a5156`
+
+````text
+# MAP01 — residentes y pasadizo secreto V4.33.0c
+
+Documento histórico. La prueba del autor requirió corregir la orientación de
+la falsa pared, reemplazar el traslado instantáneo por un ascensor físico y
+cambiar los recursos y herramienta. El contrato vigente está en
+`MAP01_SECRET_PASSAGE_4_33_0d.md`; el umbral de retorno actual es 100 MU.
+
+## Coordenadas autoritativas
+
+| Elemento | X | Y | Z | Ángulo | Referencia |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Argento | 1040 | -378 | 136 | 90° | sector aproximado 350 |
+| Caella | -290 | -378 | 136 | 90° | sector aproximado 189 |
+| Rulo | -290 | 378 | 136 | 270° | sector aproximado 212 |
+| Ronnie | 1036 | 378 | 136 | 270° | sector aproximado 351 |
+| Pared falsa de entrada | 1842 | -360 | 0 | 90° | sector aproximado 90 |
+| Segunda pared falsa | 1944 | -87 | 0 | 180° | sector aproximado 91 |
+| Pared de fondo | 1842 | 366 | 0 | 270° | sector aproximado 92 |
+| Ascensor | 1917 | 316 | 0 | 90° | sector aproximado 92 |
+
+La asignación de las tres coordenadas occidentales sigue el orden proporcionado
+por el autor: Caella, Rulo y Ronnie.
+
+## Colisión de residentes
+
+Las cuatro instancias de historia usan `args[0]=1`. Son sólidas, tangibles,
+amistosas e invulnerables. No buscan blancos. Conservan posición y ángulo de
+aparición como ancla y sólo comienzan a regresar cuando su distancia horizontal
+al origen llega a 500 MU; desplazamientos menores se toleran. El regreso usa la
+velocidad de carrera, mantiene la animación correspondiente y termina en el
+punto/ángulo original.
+
+## Geometría y enlace vertical
+
+Las paredes falsas emplean la misma textura interior `CMIN01`, visible por ambos
+lados mediante dos WALLSPRITE separados 0.25 MU. Ninguna cara entra en el
+blockmap, por lo que se atraviesan sin una línea invisible residual. La pared
+del fondo sí usa la pared finita sólida aprobada.
+
+El ascensor mide 84×88 MU y ocupa `x=1875..1959`, `y=272..360`: permanece
+dentro de los límites comprobados del sector 92 y deja libre la pared de fondo.
+El personaje XL máximo tiene radio 21.33 MU (42.67 de diámetro), por lo que la
+cabina dispone de margen en ambos ejes. Pisar la plataforma conecta con la
+cabina inferior sin cambiar de mapa ni reconstruir el personaje; la plataforma
+inferior permite regresar y ambos destinos quedan fuera del volumen opuesto
+para evitar rebotes.
+
+## Cueva de materiales
+
+La cueva es un recinto UDMF cerrado de 1000×800 MU, a cota de piso -256. Incluye:
+
+- tres Espinillos jóvenes renovables;
+- vetas tutoriales de hierro, carbón, cobre y estaño;
+- una hachuela T1 única, cuyo talle se resuelve al recogerla según el tamaño del
+  personaje.
+
+Fire de la hachuela conserva daño cortante y tala los árboles. AltFire conserva
+el daño romo aprobado y extrae las cuatro vetas tutoriales. No se cambian las
+reglas de las vetas comunes, que siguen requiriendo daño perforante.
+
+La disposición está lista para las fases de Caella/Ronnie, pero V4.33.0c no
+abre el pasadizo mediante misión ni registra materiales reunidos. No completa objetivos:
+esas conexiones se implementarán en su subparche narrativo.
+
+````
+
+
+## Registro: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0d.md
+
+SHA-256: `4ed12be6c44bb08a7e0cf3f126f89975a4ded10e0850074b826d2523fa94aef3`
+
+````text
+# MAP01 — pasadizo y ascensor físico V4.33.0d
+
+## Contrato vigente
+
+La devolución del autor sustituye el prototipo V4.33.0c. La cueva ya no ocupa
+una habitación remota: se excava bajo el terreno de MAP01 y se conecta mediante
+un túnel al pozo del ascensor.
+
+| Elemento | Posición o extensión | Comportamiento |
+| --- | --- | --- |
+| Falsa fachada | X=1842, Y=-383..383, Z=0..128 | Paralela al muro oriental X=1961 |
+| Entrada secreta | X=1842, Y=-383..-287 | Misma textura; 96 MU atravesables |
+| Fachada restante | X=1842, Y=-287..383 | Midtexture nativa sólida a nivel del suelo |
+| Segundo tabique | Y=-87, X=1842..1961 | Misma textura; atravesable |
+| Pasillo oculto | X=1842..1961 | Ancho libre 119 MU |
+| Ascensor | Centro (1917,316); X=1875..1959, Y=272..360 | 84×88 MU |
+| Recorrido vertical | Z=0 a Z=-384 | Piso móvil nativo, 2 MU/tic |
+| Túnel inferior | X=1875..1959, Y=360..480 | Continuo; piso -384, techo -64 |
+| Cueva | X=975..1999, Y=480..1280 | Contorno 1024×800 MU, esquinas recortadas |
+
+Los extremos de la fachada se prolongan hasta los muros existentes a Y=±383
+para que no queden huecos por los costados. Las texturas se repiten con escala
+normal en vez de estirar un sprite de pared sobre todo el largo.
+
+## Funcionamiento del ascensor
+
+1. Entrar completamente sobre la plataforma de madera inicia el descenso.
+2. El piso lleva físicamente al personaje hasta -384; X/Y y su orientación
+   no se fuerzan ni se reemplaza al jugador.
+3. Abajo espera 175 tics (cinco segundos) y vuelve al nivel de la mansión.
+4. Para regresar desde la cueva, mirar la cara de la plataforma desde el túnel
+   inferior y pulsar **Usar**. Esperar a que baje, subir y dejar que regrese.
+5. Si se permanece sobre ella durante todo el ciclo, se desciende y asciende
+   sin salir. Hay que salir y volver a entrar, o usar una cara, para otro ciclo.
+
+`Plat_DownWaitUpStayLip` controla movimiento, espera, colisión y guardado. El
+actor de activación sólo comprueba que el radio completo del jugador quepa
+en la plataforma. Las cuatro caras permiten la llamada nativa repetible.
+
+## Recursos y herramienta
+
+| Recurso | Clase normal / posición | Ataque de la espada |
+| --- | --- | --- |
+| Árboles jóvenes | (1170,680), (1500,845), (1740,1040) | Fire, cortante |
+| Cobre bruto | CaelumVeinCopper2, (1860,1150) | AltFire, punzante |
+| Estaño bruto | CaelumVeinTin2, (1100,1100) | AltFire, punzante |
+| Espada T1 | CaelumM01SwordPickup, (1860,575) | Se recoge y equipa normalmente |
+
+Todos están sobre el piso de la cueva, Z=-384. La espada ajusta su talle al
+personaje al recogerla. Las vetas son las mismas clases del catálogo mundial
+y tienen sus registros en MODELDEF; se elimina la excepción roma y las cuatro
+subclases invisibles de 0c. La cueva no contiene hachuela, hierro ni carbón.
+
+## Conservación de la mansión
+
+La excavación conserva la cota, textura y control de los pisos superiores:
+sectores derivados mantienen los tags previos mediante `moreids`; losas entre
+-64 y 0 reconstruyen el suelo original. Las barandas nativas inferiores
+ancladas al suelo compensan los 384 MU de excavación con su escala de textura
+existente. El pozo deja libre únicamente la huella de la plataforma.
+
+Argento, Caella, Rulo y Ronnie conservan las coordenadas aprobadas. Ellos y
+Palomo regresan corriendo al alejarse **100 MU** de su origen. El resto del
+comportamiento físico aceptado se conserva.
+
+## Validación y límite narrativo
+
+GZDoom 4.14.2 ejecutó un ciclo completo, con jugador transportado por el suelo,
+y el paso caminando desde el túnel hasta la cueva. La revisión visual del
+motor comprobó la veta de cobre. La validación manual del autor se concentra
+en los accesos, la llamada inferior, el tamaño XL, guardar/cargar en tránsito
+y extraer madera/cobre/estaño con la espada.
+
+Esta revisión no completa objetivos de Argento, Caella o Ronnie. Esas fases
+continúan reservadas hasta implementar sus diálogos y condiciones de misión.
+
+````
+
+
+## Registro: before_4.33.0g/QUESTS_REPUTATION_FACTIONS.md
+
+SHA-256: `ebd7c54a3e91de89c23c49ff89a6c44cb915357e6c48141f123b03dd4c910484`
+
+````text
+# Caelum Argenteum — Misiones, reputación y facciones V4.33.0f
+
+## Estado de la revisión
+
+V4.33.0a y V4.33.0b fueron aceptadas después de superar íntegramente sus
+matrices manuales en GZDoom 4.14.2. V4.33.0b sustituyó la aventura comercial de
+prueba por la misión principal canónica de MAP01; V4.33.0c prepara sus actores
+y espacios físicos sin adelantar las transiciones narrativas. V4.33.0d corrige
+esa preparación a partir de la prueba del autor. Todas las pruebas de 0e
+fueron aceptadas. V4.33.0f incorpora la prueba social de Argento:
+
+- ID estable: `QUEST_MAIN_M00_THE_FOOL`;
+- nombre visible provisional: **Donde despiertan los perdidos**;
+- recorrido completo reservado: fases 00–100;
+- recorrido jugable: despertar, Voz desconocida, primer encuentro con Palomo y
+  orientación hacia Argento, reclutamiento de los tres residentes y cierre
+  de Argento en fase 35;
+- preparación física nueva: posiciones de los cuatro residentes y cueva de
+  materiales tras el pasadizo secreto.
+
+Todavía quedan pendientes las ramas mágica de Caella, supervivencia de
+Ronnie, preparación de arma, combate de Rulo, Caja, El Loco y salida. Sus estados quedan
+nombrados para evitar renumeraciones posteriores, pero ninguna transición los
+activa antes de que exista su contenido. La cueva puede recorrerse y probarse
+en esta revisión; todavía no completa objetivos ni concede progreso de Ronnie.
+
+## Actores y espacios preparados en MAP01
+
+| Actor o elemento | Ubicación | Contrato |
+| --- | --- | --- |
+| Argento | `(1040,-378,136)`, 90° | Tangible, anclado, pasivo |
+| Caella | `(-290,-378,136)`, 90° | Tangible, anclada, pasiva |
+| Rulo | `(-290,378,136)`, 270° | Tangible, anclado, pasivo |
+| Ronnie | `(1036,378,136)`, 270° | Tangible, anclado, pasivo |
+| Falsa fachada | `x=1842`, `y=-383..383` | Paralela al muro oriental; textura nativa de mansión |
+| Entrada oculta | `x=1842`, `y=-383..-287` | Tramo atravesable de 96 MU, cerca del punto indicado |
+| Segunda pared falsa | `y=-87`, `x=1842..1961` | Atraviesa el pasillo oculto; visible y sin colisión |
+| Ascensor | `(1917,316,0)`, 90° | Piso nativo 84×88 MU; descenso a Z=-384 y retorno |
+
+La instrucción posterior del autor que exige NPC tangibles reemplaza para estas
+cuatro instancias la frase “no bloqueables” de la especificación v1.0. Se
+mantienen invulnerables y fuera del combate. `args[0]=1` activa el contrato
+narrativo y almacena posición/ángulo de origen; al alcanzar 100 MU de
+desplazamiento regresan corriendo en línea recta. Una invocación de depuración
+sin ese argumento continúa funcionando como combatiente. Palomo comparte el
+nuevo umbral de 100 MU mientras está presente y tangible.
+
+La cueva inferior ocupa un contorno de 1024×800 MU con esquinas recortadas,
+piso a Z=-384 y techo a Z=-64. Un túnel continuo la une al pozo. Contiene tres
+árboles, cobre bruto, estaño bruto y una espada T1 cuyo talle se adapta al
+personaje al recogerla. Fire permite talar; AltFire permite extraer de las
+vetas normales, con sus modelos 3D ya registrados. Se eliminan la hachuela,
+hierro, carbón y las clases especiales de extracción roma de la cueva de 0c.
+
+El ascensor baja al entrar completamente en la plataforma, espera cinco
+segundos abajo y regresa. Desde el acceso inferior se llama con **Usar** sobre
+la cara de la plataforma. Su movimiento, colisión y guardado pertenecen al
+motor; no hay teletransporte ni cambio de mapa. Ver
+`docs/MAP01_SECRET_PASSAGE_4_33_0d.md`.
+
+## Separación de responsabilidades
+
+| Componente | Responsabilidad |
+| --- | --- |
+| `CaelumPersistentCharacterState` | Etapa, objetivos y flags autoritativos que viajan con el personaje |
+| `CaelumMainM00QuestController` | Reconstruir presentaciones pendientes de MAP01 desde el estado persistente |
+| `CaelumPlayer` | Ejecutar transiciones, sincronizar el Diario y abrir conversaciones |
+| `CAPALOMO` | Árboles USDF localizados de la Voz, Palomo y cuatro residentes |
+| `CaelumMainM00SocialDialogue` | Requisitos, tiradas y acciones de la prueba social |
+| `CaelumJournalOverlay` | Mostrar una instantánea simple, sin llamadas de ámbito `play` durante el render |
+
+El controlador de mapa no conserva progreso propio. Cargar, guardar o volver a
+MAP01 siempre consulta el Inventory viajero; de ese modo una presentación
+duplicada no puede otorgar progreso u objetos por segunda vez.
+
+## Estados principales reservados
+
+| Valor | Estado | Fase |
+| ---: | --- | --- |
+| 0 | `MAIN_M00_STATE_INITIALIZE` | Preparación |
+| 10 | `MAIN_M00_STATE_AWAKENED` | Despertar y Voz desconocida |
+| 20 | `MAIN_M00_STATE_MET_PALOMO` | Encuentro del recibidor |
+| 30 / 35 | `ARGENTO_ACTIVE / COMPLETE` | Rama social |
+| 40 / 45 | `CAELLA_ACTIVE / COMPLETE` | Rama mágica |
+| 50 / 55 | `RONNIE_ACTIVE / COMPLETE` | Rama de supervivencia |
+| 60 | `WEAPON_READY` | Preparación del arma |
+| 70 / 75 | `RULO_ACTIVE / COMPLETE` | Rama de combate |
+| 80 | `BOX_RECEIVED` | Palomo final y Caja |
+| 90 | `FOOL_CAPTURED` | Captura de El Loco |
+| 95 / 100 | `EXIT_CONFIRMED / COMPLETE` | Salida y cierre |
+
+`TryAdvanceMainM00State(expected, next)` sólo acepta la etapa esperada y un
+valor posterior. Las operaciones de apertura son idempotentes: repetir una
+llamada no salta estados ni duplica recompensas.
+
+## Objetivos y flags
+
+Se mantienen los ocho objetivos por misión aceptados en V4.33.0a. Para MAP01
+representan los hitos amplios: buscar ayuda, convencer residentes, resolver el
+acertijo, reunir materiales, preparar el arma, derrotar al Toro, capturar El
+Loco y abandonar la mansión. Las acciones más breves se expresan mediante la
+etapa actual y claves localizadas; así no se cambia el tamaño de los arreglos
+de guardado.
+
+La tabla `MainM00Flag[64]` reserva los hechos descritos en la especificación:
+progreso de cada rama, objetos únicos, acciones tutoriales, runas, pasadizo,
+Toro, Caja, carta, salida y conocimiento de diálogo. En V4.33.0b sólo se mutan:
+
+- `STARTED`;
+- `UNKNOWN_VOICE_HEARD`;
+- `PALOMO_MET`;
+- las cuatro preguntas opcionales del recibidor;
+- `PALOMO_CALLED_IT_HALLUCINATION` cuando se menciona la Voz.
+
+El objetivo inicial comienza en 0/1 y pasa a 1/1 al terminar la conversación
+del recibidor. La etapa queda entonces en `ARGENTO_ACTIVE`, cuyo texto visible
+es **Hablar con Argento**. V4.33.0f añade `ARGENTO_STARTED`,
+`RULO_CONVINCED`, `RONNIE_CONVINCED`, `CAELLA_CONVINCED`,
+`HEARD_ARGENTO_QUOTE` y `ARGENTO_COMPLETE`. El objetivo de residentes se
+deriva de esos tres flags: 0/3, 1/3, 2/3, 3/3. Llegar a 3/3 pide volver con
+Argento; sólo la respuesta final avanza a 35 y pide hablar con Caella.
+
+`MainM00SocialVersion=1` incorpora visitas, consejos y resultados de las dos
+tiradas con índices estables. Migrar desde 0e inicializa únicamente estos
+campos y conserva el prólogo, la misión, la Caja y el inventario existentes.
+El guardado/carga real con el paquete completo sigue en la matriz manual.
+
+## Migración desde V4.33.0a
+
+La versión del registro sube de 1 a 2. El índice 0 se conserva, pero el relato
+anterior era infraestructura de prueba y no una etapa canónica:
+
+- se limpia únicamente aquel registro de misión y sus objetivos;
+- al estar en MAP01, el controlador inicia el nuevo prólogo;
+- la Caja ya poseída, sus 10 kg, contenido, slots, stock monetario y demás
+  inventario no se eliminan ni duplican;
+- tener una Caja de una partida antigua no salta la Voz ni el diálogo inicial;
+- un personaje nuevo sigue comenzando sin Caja.
+
+`GrantMagicBoxFromPalomo()` queda desacoplado del avance de misión. La entrega
+canónica se conectará en la fase 80 junto con su flag propio; conceder la Caja
+desde una herramienta de desarrollo ya no puede completar otra etapa.
+
+`map MAP02` crea un personaje nuevo, mientras `Exit` o `changemap`
+transfieren el existente. Esta distinción del motor no cambia.
+
+## Ubicación autoritativa de Palomo
+
+`ResolvePalomoPlacement()` produce tres resultados estables:
+
+| Resultado | Condición |
+| --- | --- |
+| Oculto | Antes de oír la Voz y después de completar el encuentro del recibidor |
+| Recibidor | Durante la fase 20 |
+| Segundo piso | Reservado desde la fase 80 |
+
+El Palomo anclado de MAP01 comienza invisible y sin colisión. Cuando cualquier
+jugador elegible oye la Voz, aparece con un fundido breve, sin destello de
+teletransporte, recupera colisión y conserva el retorno a su origen si lo
+desplazan 100 MU. Después de orientar hacia Argento espera a quedar fuera de
+todos los campos visuales, se oculta y una carga reconstruye ese resultado. El
+traslado real al segundo piso necesita todavía el punto de mapa correspondiente.
+
+## Facciones y reputación
+
+La base aceptada en V4.33.0a no cambia:
+
+| ID | Dominio técnico | Membresía inicial | Reputación inicial |
+| ---: | --- | --- | ---: |
+| 0 | Gendarmería | No | 0 |
+| 1 | Asentamientos | No | 0 |
+| 2 | Caravanas | No | 0 |
+| 3 | Actores políticos | No | 0 |
+
+Membresía y reputación siguen siendo variables independientes por personaje,
+limitadas a -1000..1000. Las relaciones cruzadas no autorizadas permanecen
+neutrales y la consulta O(1) no añade búsquedas de actores, visión ni pathfinding.
+Las cinco acciones de consola de V4.33.0a continúan disponibles sólo para
+validación aislada. Los residentes de esta rama no tienen una facción asignada:
+el modificador de reputación se mantiene neutro. No se toma la reputación de
+Gendarmería ni se añade una consecuencia de facción no definida por el autor.
+
+## Fuente narrativa
+
+`docs/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` se incorpora sin alteraciones
+como especificación autoral. Los textos visibles de este subparche preservan el
+misterio: no identifican la naturaleza de la mansión, el destino del
+protagonista ni a la mujer que habla.
+
+````
+
+
+## Registro: before_4.33.0g/ROADMAP.md
+
+SHA-256: `f6b316da2a7e6a88229f7ecf1fc23acd589ab6cc9a7d3c3bc8bf5288bc1f8f52`
+
+````text
+# Caelum Argenteum — Implementation Roadmap
+
+This roadmap supersedes the old V4.22–V4.26 sequence. It preserves the original dependency logic, but reconciles it with the systems that are already implemented or partially implemented in the current codebase.
+
+The private design documentation supplied by Damian Curti remains authoritative for lore, balance values and unresolved mechanics. A roadmap entry does not authorize arbitrary design values.
+
+V4.32 is closed. V4.32.0o passed the complete focused GZDoom 4.14.2 visual
+matrix after preserving the accepted economy, proportional-weight Magic Box,
+test merchant/dialogue behavior and every real combat path. V4.33.0b later
+removes that test commerce from Palomo's canonical role without deleting the
+reusable merchant system. The modular Domingo sword/hand/shield rig is the
+accepted reference for a later all-weapon expansion, not a V4.33 blocker.
+
+The author accepted every non-framing test in V4.32.0f: normal
+Exit/`changemap` preserves Palomo's gift, `map MAP02` intentionally starts a
+new player, the real equipped sword retains its combat paths and the supplied
+shield remains conditional on actual equipment. V4.32.0g's shared placement
+and diagonal blade were rejected visually. V4.32.0h established the accepted
+lateral idle shield, static held Block and advance/retract strike. V4.32.0i
+then established the accepted 79→104-degree sword range and the orthographic,
+25%-closer shield at Y=100. V4.32.0j corrected the Block-hand orientation but
+misread the idle-shield and grip marks. V4.32.0k is the current focused
+attack baseline: its black attack curve, straight-line return, timing and
+rotation are author-accepted. V4.32.0l removed the wrong Block hand and its
+four-unit blade shift was insufficient. V4.32.0m corrected both points: held
+Block retains the shield and its lower-left `LHND`, removes the lower-right
+main-hand assembly and shifts the blade another 16 logical units left.
+V4.32.0n raised the sword four logical units and expanded `RFNG` over the
+complete thumb, but one attack frame exposed a duplicated right hand because
+its percentage pivots were derived from transparent canvas sizes. V4.32.0o
+compensates the actual alpha bounds so
+`RHND`, `DSWD` and `RFNG` resolve to the same effective blade pivot without
+changing art, trajectory, timing, angles, Block composition or gameplay. The
+author passed its complete matrix, so already accepted systems do not reopen.
+
+V4.31.0j is a minimal startup correction over V4.31.0i. It restores the
+potable-water recovery constant accidentally omitted from that package and
+adds a complete cross-reference audit for every `CaelumConstants.*` use. No
+gameplay value or content changes: the ratio remains the accepted 1% Thirst
+recovery per submerged second and all V4.31.0i crafting changes are preserved.
+
+V4.31.0i corrects the final recursive-crafting discrepancy found in deep
+component trees. Each 25%/50%/100% choice keeps its 1x/10x/100x factor but now
+applies it only to the selected operation; descendants retain their own
+independent choices while material-waste quantities continue to propagate.
+Repair shares the direct recursive resolver, so sufficient known raw-material
+routes work exactly as they do for creation. The Journal exposes `B` batch and
+`C` cancel on two help lines and labels final-assembly material units separately
+from the output count. This focused correction changes no maps, environmental
+resources, models, sounds or recipe quantities.
+
+V4.31.0h closes three focused survival/interface defects without expanding the
+resource catalog. MAP01's pool becomes the first explicitly potable UDMF water
+volume and restores one Thirst percentage point per fully submerged second.
+The thirty-second combat gate now expires even with zero Adrenaline, and native
+material pickups report localized name plus exact quantity. Future marine or
+contaminated waters remain non-potable until their sectors opt into the same
+marker; their implementation stays in the Version 5 biome track.
+
+The MAP01 level-construction prototype now also preserves a reusable architectural baseline: finite walkable roofs, aligned six-step access, the `habitación con 1 puerta trampa` mechanism and terrace rows partitioned into three connected rooms. These map iterations validate construction techniques and do not replace the ordered gameplay patches below.
+
+## 1. Reconciliation with the old roadmap
+
+| Old block | Current status | Remaining work |
+| --- | --- | --- |
+| V4.22 — Crafting Stations & Crafting Core | Implemented foundation; acceptance pending | All seven current families share the Workbench transaction, cumulative infrastructure requirements and family filters. Complete the permanent Journal interaction layer and the manual station matrix. |
+| V4.23 — Recipe Book & Crafting Persistence | Implemented foundation; content pending | Per-recipe knowledge persists with the character and blocks unknown recipes authoritatively. Define new-character starting knowledge and add authored sheets, merchants, NPC and discovery sources without level restrictions. |
+| V4.24 — Repair, Disassembly & Durability Loop | Partially implemented | Durability and material-recovery foundations exist. Complete same-station proportional repair and durability-scaled disassembly; elemental equipment returns its corresponding recipe materials rather than an essence/base-implement choice. |
+| V4.25 — Loot, Materials & Economy Foundation | Economy and revised Magic Box foundation implemented and accepted in V4.32.0a-r4; physical content remains partial | Material actors, natural anchors, physical currency and transaction-ready base-price helpers exist. Add systematic loot tables, functional containers and remaining basic-material sources. Replace copyrighted development placeholders before release. |
+| V4.26 — NPC Interaction, Quests and Factions | Registry and MAP01 foundation accepted; Argento phase 30–35 implemented in V4.33.0f | Continue the authored MAP01 branches in order, then add concrete reputation consequences before large social content. |
+
+## 2. Authoritative combat input contract
+
+The target combat layout is:
+
+| Input | Target function |
+| --- | --- |
+| `Fire` | Weapon primary attack. |
+| `AltFire` | Weapon-specific secondary attack; ranged weapons retain it as an alternate Aim input. |
+| `Reload` | Ranged magazine reload; melee/magic next-attack charge. |
+| `Zoom` | Contextual action: persistent shield Block for compatible weapons; real ADS/FOV zoom for ranged weapons. |
+| `User1` | Racial ability. |
+| `User2` | Seal Channel mode. |
+| `User3` | Active Tarot card activation. |
+| `User4` | Class ability. |
+
+The current implementation uses native Zoom contextually. It enters persistent Block only when the active weapon supports one-handed shield rules; ranged weapons instead enter Aim and apply a real FOV zoom. Ranged AltFire remains an alternate Aim path. Independent magazines and the magazine/reserve HUD are implemented. Reload preserves ranged magazine behavior and charges the next melee/magical attack, including movement slowdown, interruption and empowered cost/damage/area rules. User1–User4 are connected to explicit racial, Seal Channel, Tarot and class reservation hooks across every weapon family. Their authored gameplay effects remain pending.
+
+User1 is the remaining native User input and is reserved for the racial ability. Its gameplay behavior remains pending the authored race-by-race designs; no arbitrary effects or values may be introduced.
+
+## 3. Ordered major patches
+
+### V4.27 — Combat Input Completion and Validation
+
+**Implementation present; complete matrix validation deferred by author decision until V4.29 crafting is complete.** Native User1–User4 routing, contextual Reload and the magic-weapon Zoom latch are implemented. This deferred QA no longer blocks the start of V4.29.
+
+- Preserve Fire and AltFire weapon behavior.
+- Preserve contextual Zoom: shield Block only for compatible weapons and ADS/FOV zoom for ranged weapons.
+- Preserve ranged Aim on AltFire as an alternate input and ranged magazines on Reload.
+- Validate the melee/magic charged Reload window, speed scaling, Pain/switch cancellation and doubled next-attack cost/damage/area.
+- Connect User1 to the racial-ability service hook without inventing race effects.
+- Connect Seal Channel to User2 without replacing ranged Reload.
+- Keep User3 and User4 connected to explicit Tarot and class-ability interfaces.
+- Validate Block compatibility, ranged visual ADS, magazine HUD, ranged Reload and every reserved User input across every weapon family.
+
+### V4.28 — Seal Channeling and Active-Ability Hooks
+
+**Functionally validated and closed in V4.28.0bp.** The author validated every current non-weather Seal effect and its corrected equipment binding, mass response and gravity handling. Weather-dependent Seal tier additions remain deferred to Version 5. MAP01 continues as a parallel architectural track and does not block V4.29.
+
+Current acceptance work:
+
+- Validate burn, poison, freeze and both lightning orientations with the new visual sequences.
+- Complete the remaining Quintaesencia mass/expulsion tests.
+- Confirm Seal HUD state, exact 105/210/315-per-second drain, interruption paths and 60-second cooldown.
+- Confirm the debug Adrenaline action adds 100 and reduces Seal cooldown by 10 seconds.
+- Validate the rebuilt first-floor floors, roofs, lateral doors and unobstructed stair landing before adding more mansion content.
+
+First-floor construction is now an explicit four-patch gate after the complete build froze beneath the central span:
+
+1. V4.28.0ag: western north/south pair only; verify corridor safety and native 3D floors.
+   - V4.28.0ah corrective gate: restore all ground-floor ceiling slabs, exclude the obsolete central connectors and validate inventory stability beside the rat crowd. This does not count as pair 2.
+   - V4.28.0ai diagnostic gate: use a stationary twenty-rat subclass for deterministic area-effect testing while retaining the normal pursuing Giant Rat separately. This does not count as pair 2.
+   - V4.28.0aj supersedes the stationary workaround: fix the bilateral multi-contact latch and restore all twenty normal active rats. Stress validation remains required before pair 2.
+   - V4.28.0ak isolates the active rat crowd and Bull in separate closed barred enclosures. Validate player/rat and player/Bull contacts independently before changing Impact Physics or beginning pair 2.
+   - V4.28.0al removes every MAP01 monster, NPC and dummy plus the temporary barred enclosures after `noclip` also froze. Validate architecture alone; if it freezes, compare against a map without the current upper-room pair.
+   - V4.28.0am makes the separation permanent during development: MAP01 is architecture-only and MAP02 is the flat actor/AI/combat arena. Consolidate both independently before recombination.
+   - V4.28.0ao supersedes the unapplied 4.28.0an package: MAP02 becomes a large six-room field with twenty instances of each non-rat test actor and no initial sight line; sewer assets follow `src/graphics/caelum/textures`.
+   - V4.28.0ap restores twenty rats in a seventh isolated room and adds the official title image. The Bull corridor result prioritizes replacement of the one-reference latch with multi-contact/island state before architectural pair 2.
+2. Pair 2: add exactly two rooms after pair 1 passes manual GZDoom validation.
+3. Pair 3: add exactly two more rooms after pair 2 passes.
+4. Pair 4: add the final two rooms and only then validate inter-room connections as a complete wing system.
+
+No later pair may be added while the current pair has a freeze, missing floor, rotated roof, incorrect door axis or stair-landing obstruction.
+
+- Validate equipped-Seal selection, exact Adrenaline drain, interruption, action lock and cooldown in GZDoom 4.14.2.
+- Validate Fire, Earth, Air, Water and Quintessence target filtering, damage, control, attraction and mass-scaled release.
+- Add final Channel HUD/UX feedback after the mechanical tests establish which diagnostics must remain visible.
+- Add stable Tarot, class-ability and racial-ability service interfaces; content values remain design-controlled.
+- Defer all weather-dependent Seal-tier extensions to the Version 5 calendar/weather integration.
+
+### V4.29 — Crafting Completion and Persistent Recipe Book
+
+**Authorized to begin after V4.28.0bp.** MAP01 reconstruction continues in
+parallel, and the deferred V4.27 combat-input matrix will be revisited after
+this crafting block is complete.
+
+V4.29.0a is a parallel physics-diagnostic gate requested before new crafting
+content: bounded contact cleanup, real accumulated-pressure damage and eight
+controlled MAP02 A/B rooms. It does not reopen the validated V4.28 Seal track,
+does not modify MAP01 and does not count as completion of any crafting item
+below. Its runtime results determine whether the later collision work needs a
+true connected-component island solver or only targeted AI/projectile
+optimization.
+
+V4.29.0b applies the first telemetry-directed robustness pass without adding a
+connected-component solver. Mass-test NPCs use bounded straight projectiles
+without homing or explosion; repeated contact resolves each shared pair at
+most once per tic; non-closing callbacks leave before expensive work; and
+physics bodies/results are reused. MAP02 adds an equal native/full/pass-through
+Quintessence comparison. MAP01 independently closes the visible endpoints of
+the four existing central finite panels. These changes do not reopen validated
+Seal behavior and do not count as crafting completion.
+
+V4.29.0c replaces the rejected central finite-panel accumulation with two clean
+native exterior volumes and one divider per mirrored pair. Its MAP02 gate
+replays the former 1,875-AI failure population with the straight-projectile
+route, adds active-AI telemetry and physically isolates the three Quintessence
+matrices. If 1,875 passes, later diagnostic patches advance through 3,750,
+7,500 and 15,000 active AI without mixing stages. This remains a parallel
+robustness/architecture gate and does not count as crafting completion.
+
+V4.29.0d canonically compacts MAP01's complete sidedef table after the native
+room replacement and restores the required `twosided` flag on every bilateral
+line. The PK3 build now rejects orphaned or shared sidedefs, missing front
+sides, invalid vertex/sector references and any disagreement between
+`sideback` and `twosided`. It changes no MAP02 test stage and does not count as
+crafting completion.
+
+V4.29.0e closes the upper slabs of MAP01's six rebuilt doorway sectors and
+aligns all door movement with the wall plane. It also moves MAP02 Rooms 7–9 to
+three valid Y-separated centers after the former Room-7 X coordinate exceeded
+GZDoom's UDMF range. Coordinate-range validation is now part of every PK3
+build. The 1,875-AI stage and later 3,750 → 7,500 → 15,000 progression remain
+unchanged; this repair does not count as crafting completion.
+
+V4.29.0f supersedes the remaining overlapping slab repair: the central-room
+interiors and exterior door bands share one 3D-floor target and the redundant
+threshold control is removed. MAP02 gains a spawn sight barrier, a main-field
+attack A/B gate and family/projectile lifecycle telemetry so the 1,875-AI stage
+can distinguish chase/collision from synchronous combat work. Guided and
+explosive projectiles remain excluded from mass NPCs. This robustness and
+architecture gate does not count as crafting completion; the next AI stage is
+authorized only after the enabled/disabled 1,875 comparison completes.
+
+V4.29.0i extends the accepted seven-phase mass-AI budget to dormant perception
+and caches all diagnostic scheduling data once per actor. It also begins the
+permanent interface as a transverse V4.29 track: HUD-01 replaces the inherited
+Doom status bar/face, Tab opens the shared Journal shell and M retains the
+native automap. Inventory and Character expose only existing authoritative
+data; World, Crafts, Quests and Reputation receive their final navigation
+slots but no fabricated state. MAP01 continues independently with native
+divider geometry and rear first-floor doors. These robustness, architecture
+and UI foundations do not complete the crafting requirements below.
+
+V4.29.0l responds to the later 1,605-target freeze by separating Look and Chase,
+using thirteen coprime Chase phases and enforcing a global 40-update ceiling
+per tic. It also restores visible HUD resource colors and clearer Journal word
+spacing. MAP01 replaces the isolated first-floor rectangles with two continuous
+native rows that preserve the 96-MU balcony setback and every 119-MU stair;
+lateral room openings remain the next manual-acceptance gate. This remains a
+parallel robustness/architecture/UI increment and does not complete crafting.
+
+V4.29.0m corrects the invalid disabled comparison discovered in the supplied
+logs: mass Look, Chase and attack controls become live coordinator state and
+Look gains its own 20-call per-tic ceiling. MAP02 stress-only actors use a
+lightweight representation so the extreme 16,500-body diagnostic does not
+allocate or tick unused full RPG submodels; gameplay NPCs remain complete.
+MAP01 moves both continuous façades behind the upper stair landings, producing
+an uninterrupted 96-MU corridor while keeping 119-MU flights and closed lateral
+divisions. The colored HUD bars are accepted. This remains a robustness/map/UI
+acceptance increment and does not complete crafting.
+
+V4.29.0n supersedes the V4.29.0m map and live-CVar conclusions. MAP01 returns
+byte-for-byte to the accepted V4.29.0i pre-expansion layout; continuous first-
+floor enlargement will be redesigned from that clean boundary. MAP02 server
+diagnostic settings are map-load configuration, not live state. The corrected
+four-run sequence isolates the abrupt stop to sustained native pursuit with
+main-field attacks disabled, so the global Chase ceiling falls from 40 to 20
+and repeated hot-path setting synchronization is removed. A stable 20-call
+run is required before enabling attacks or beginning squad/formation AI.
+
+V4.29.0o accepts the 20-call diagnostic pursuit ceiling after stable 319-report
+and 506-report runs without and with main-field attacks. The next AI gate is a
+three-load endurance/reconvergence test at the same ceiling; no higher budget
+is required. MAP01 adds four closed 313×153-MU upper blocks to the clean 0i/0n
+base. Each preserves a separate 119×119-MU stair landing, existing architecture
+and central passage. Their door and room connections await explicit author
+direction and must not be inferred from the rejected continuous-row maps.
+
+V4.29.0p records that the first repeated-convergence run at 20 calls stopped
+after 119 reports, with zero custom contacts and at most one projectile. Twenty
+is therefore rejected as a robust boundary and the next gate uses 10 native
+Chase calls per tic. MAP01 again starts from the clean 0i/0n WAD: each central
+upper room becomes one continuous T-shaped component containing both new rear
+wings, then receives its original middle divider and 64-MU door opening. The
+four 119×119-MU stair landings and all accepted side architecture remain fixed.
+
+V4.29.0q accepts the initial 10-call A/B pair after 368 and 548 reports. The
+second run follows a MAP02 reload in the same process, completes 40 projectile
+lifecycles and reaches greater local density than the failed 20-call run. The
+next and final stress gate at this stage is moving-target reconvergence at 10;
+after that, mass gameplay AI advances through distance tiers and shared squad
+updates instead of raising the per-tic ceiling. MAP01 closes the four obsolete
+extreme-room gaps, inserts four 64-MU sliding connections wholly inside shared
+walls and preserves the accepted central divider doors and 119-MU landings.
+
+V4.29.0r records that the moving-target run still stops after 193 reports at
+the 10-call gate, so no fixed Chase count is considered universally safe. Its
+single diagnostic change removes the 13,125 passive visual fillers from the
+native blockmap while retaining the same 1,875 active field actors and full
+combat. A stable result advances directly to distance-tiered squad perception;
+a failed result advances to leader/follower movement isolation. The patch also
+adds the two missing central front entrances and integrates the 353 approved
+runtime replacements —137 icons and 216 actor frames— without adding previews,
+unused future art or Doom-derived assets.
+
+V4.29.0s records that the blockmap-isolated run still stops after 148 reports:
+passive spatial residency is not sufficient. MAP02 now performs the first
+leader/follower isolation with one native movement leader per configurable
+group of 16 and slow phased orientation for followers. This is the bridge to
+the planned perception/squad architecture; it does not yet implement shared
+formation steering. The same patch removes the four redundant side-door actors
+from MAP01, makes the recomposed icon masters authoritative for UI and world
+pickups, and adopts Domingo as the player's world appearance.
+
+V4.29.0t accepts the first leader/follower endurance run after 1,328 complete
+reports without a stop, the longest controlled mass-AI result in this series.
+The active field uses 126 movement leaders for 1,875 actors and averages 96.6
+admitted Chase calls per simulated second while contacts remain zero. Shared
+movement ownership, distance tiers and sleeping therefore become the production
+direction; restoring independent `A_Chase` for every crowd member is no longer
+a target. One group-size-16 repetition and a group-size-8 margin test precede
+formation steering. MAP01 restores the four requested side-connection doors
+without altering any accepted geometry. The inherited underwater
+`Player.AirCapacity` remains separate from Caelum's authoritative action
+resource until underwater consumption is explicitly designed.
+
+V4.29.0u accepts both requested margin runs: group 16 completes 1,087 reports
+and group 8 completes 995 without a stop, with 16,608 actors, full acquisition,
+zero custom contacts and bounded projectiles. Group 16 admits an average 85.8
+native Chase calls per simulated second versus 164.7 for group 8, so 16 remains
+the mass-AI baseline while formation steering is designed. MAP01 fills and
+roofs the complete western entry gap, connects both upper wings with finite
+walls, covers all newly enclosed first-floor sectors and preserves an exterior,
+uncovered 96-MU eastern balcony. The continuous roof is the base plane for the
+second-floor mapping phase.
+
+V4.29.0v closes the diagnostic test gate with the supplied final log. Its
+group-16 session contains 1,033 uninterrupted reports, 16,608 actors, full
+1,983-actor acquisition, zero custom contact/reference state and a nine-call
+per-tic Chase maximum. The separate Quintaessence release peaks at 2,086
+affected actors and returns cleanly to zero; the observed frame-rate dip is
+brief and does not block acceptance. MAP01 receives the missing independent
+two-leaf upper western portón and converts the eight stair joints plus four
+landings to complete floor/roof slabs without closing the real stair shafts.
+After the focused MAP01 retest, further perception, hierarchy and dynamic-group
+work remains planning-only until it receives its own isolated implementation
+and validation patch. The next house-construction increment may continue in
+parallel under the existing one-variable-at-a-time rule.
+
+V4.29.0w is accepted by the author after the focused MAP01 walk. It closes the
+eight actual 96×191-MU stair-side holes, covers the rear landings and supports
+the upper western canopy with two solid 8×8-MU columns. No gameplay code or
+MAP02 state changed.
+
+V4.29.0x begins the crafting-completion track. The single 61-recipe Workbench
+catalogue gains All/Physical/Armor/Essence/Amulet/Seal filters, persistent
+per-recipe knowledge and an authoritative unknown-recipe rejection. The Journal
+Crafts page reads real known-recipe totals by family. Schema-0 profiles initialize
+with all recipes known as a development-compatibility baseline; starting
+knowledge for the final new-profile flow remains an author decision. Public `LearnCraftingRecipe` state is
+ready for later sheets, merchants, NPC dialogue and discovery hooks, but those
+authored sources are not claimed as implemented by this increment.
+
+V4.29.0y appends four shield recipes, bringing the unified catalogue to 65
+without changing any existing recipe index. The named plate supplies 70% of
+each shield's final weight and the generic strap 30%; all tiers require Forge
+and Anvil, while tier 3 also requires the cumulative Master Bench. Recipe-book
+schema 2 gives new characters an empty book and preserves the exact 61 knowledge
+flags of 4.29.0x saves. A stable physical-weapon unlock method prepares the
+MAP01 tutorial choice, but the NPC tasks, dialogue and reward handoff remain
+authored content. This increment also upgrades bitmap fonts to physical 2x and
+extends the existing roof control across the twelve eastern stair sectors.
+
+V4.29.0z turns the native front door into a character-first flow: New Character
+starts the full-screen creation wizard in MAP01, Load/Save Character reuse the
+native save lineage, and one neutral Caelum skill removes Doom's obsolete
+difficulty page. Compatible weapon pickups auto-equip. Numeric equipment tiers
+remain internal but all player-facing names use base, silver and gold finishes.
+The eastern stair pair receives its three U-shaped enclosing walls. The next
+raw-material crafting layer is intentionally blocked until original silver and
+gold raw/ingot sprites are supplied; every other requested raw sprite is ready.
+
+V4.29.0aa integrates the supplied raw-material art and appends 14 processing
+recipes without renumbering the 65 equipment entries. Base refinement is 2→1
+(50%), bronze is 9 copper + 1 tin → 10 and steel is 497 iron + 3 coal → 500;
+all recipes support ×1/×10/×100/×1000 batches. Forge handles ores/alloys and
+Sewing Machine handles fibers/hides. A MAP01 manual unlocks this complete
+tutorial family. Silver-finish equipment additionally consumes 10% of final
+weight in silver; gold finish consumes 20% silver plus 10% gold, without
+changing final equipment weight.
+
+V4.29.0ab completed the full personal-document audit and established the
+following thirteen-case closing gate. Its recipe/manual result is accepted,
+but its house expansion is not: the author found two rear-room wall sections
+removed, one stair-origin slab still open, an incomplete lower enclosure and
+no usable side balcony.
+
+1. Traverse the new ground and first floors; verify the wall join, open internal
+   passage and absence of invisible/internal cuts.
+2. Inspect the new floor from below and roof from above; verify solid perimeter
+   walls, continuous cover and a fully uncovered balcony.
+3. Traverse eastern stairs, bridge, landings, balcony and both existing
+   portones; verify continued access to the manual and station network.
+4. Create a character: one neutral skill, wizard once in MAP01 and 0/79 recipes.
+5. Save/load creation, resources, materials, recipes, equipment, active weapon,
+   durability and Magic Box state.
+6. Load a V4.29.0x save: preserve 61 legacy flags and append locked shield and
+   processing entries according to the current schema.
+7. Validate every recipe filter/total and hidden data for unknown recipes.
+8. Pick up the processing manual twice: the first changes 0/79 to 14/79 and
+   the second is idempotent.
+9. Exercise all 14 processing recipes at ×1 and representative ×10/×100/×1000
+   batches; verify 2→1, bronze 9:1, steel 497:3 and atomic failure.
+10. Validate cumulative station requirements and all shields with Workbench,
+    Forge and Anvil; gold additionally requires Master Bench.
+11. Craft representative base/silver/gold equipment in every family; verify
+    precious-metal rounding and unchanged final weight.
+12. Regress compatible-weapon autoequip and incompatible/Magic-Box/capacity
+    non-replacement behavior.
+13. Build a clean PK3, start GZDoom 4.14.2 without ZScript errors and load MAP01.
+
+The author accepted cases 5–13 on the preceding candidate. Cases 1–4 remain
+open because the visual inspection rejected the house result. Case 13 must also
+receive a short parse/load regression after 4.29.0ac because this candidate
+does change ZScript and MAP02.
+
+V4.29.0ac supersedes only that geometry and begins the next isolated AI gate.
+MAP01 restores the two unintended openings, fills the stair-origin slab,
+retracts the enclosure to a 96-MU side balcony and adds paired external flights
+converging on a second-floor landing and group-913 door. MAP02 preserves the
+15,000-actor field but replaces its local rooms with six physical perception
+tests. One shared diagnostic target removes redundant Look acquisition;
+optional cheap follower steering moves 1,749 followers without native Chase or
+neighbor searches. The accepted group-16/no-follower-movement run remains the
+mandatory control. This patch does not claim 15,000 independently thinking or
+pathfinding actors, and no later active-population stage begins before its A/B
+logs pass.
+
+- **4.29.0ac house gate:** repeat cases 1–4 on MAP01, including the restored
+  rear rooms, filled stair-origin slab, complete lower extension, side balcony,
+  both new stair flights, landing and group-913 door.
+- **4.29.0ac load regression:** build and load both MAP01 and MAP02 without a
+  parser/node-builder failure. The accepted crafting/persistence cases 5–12 do
+  not need repetition because this patch does not touch those systems.
+- **Perception gate:** in rooms 1–6 compare standing/crouched and
+  walking/running results at Insight 0/50/100; verify occluders force visual
+  chance to zero while hearing remains listener-specific. Run both angular CVar
+  conventions and choose the authoritative interpretation from their logs.
+- **Mass-AI A/B gate:** first replay group 16 with follower movement false;
+  then reload MAP02 with follower movement true and keep the player moving for
+  at least 20 real minutes. Require 15,000 field actors, 126 leaders, 1,749
+  followers, native Chase peak ≤10/tic, bounded projectiles, zero retained
+  custom contacts and no accumulating frame degradation.
+- After that A/B passes, expand active simulation in separate 3,750 → 7,500 →
+  15,000 stages. Do not label the current 15,000 loaded actors as 15,000 full
+  AI: 13,125 remain passive visual bodies in 4.29.0ac.
+- Complete the permanent Journal interaction layer for inventory and the
+  shared station interface in its own reversible increment; the read-only
+  recipe book and authoritative crafting transactions are already accepted.
+- Add authored efficiency bonuses on top of the explicit 50% processing base; no bonus value or progression source is assigned yet.
+- Author the MAP01 NPC task sequence that unlocks one chosen starter weapon recipe and grants its exact materials.
+- Add authored unlock sources from found sheets, merchants, NPCs and discovery, without level restrictions.
+
+V4.29.0ad supersedes the rejected 4.29.0ac house result and closes the first
+analysis pass on its logs. MAP01 moves the eastern group-913 door into the
+first-floor tunnel, removes the solid landing block/floating facade, restores
+the rear rooms, adds two real room dividers and replaces inherited ground-floor
+materials. MAP02 receives mansion materials only. A real pre-game eight-page
+creator replaces the repeatedly opened in-map wizard.
+
+The 4.29.0ac moving-follower candidate is rejected: it froze after 1,024
+simulated seconds while all leak indicators remained bounded and nearly every
+active actor had converged into a 512-MU crowd. Do not enable it for the next
+baseline or advance to 3,750/7,500/15,000 active IA. The next movement design
+must budget follower updates too, use many more spatial destinations, limit
+local density and test non-converging routes before any combat convergence.
+
+V4.29.0ae supersedes the rejected group-914/915 dividers and side-wing
+interpretation from 4.29.0ad. It keeps the accepted creator, group-913 tunnel,
+landing and exterior stairs; turns the complete lower extension into one
+continuous rear room; restores two symmetric uncovered balconies; adds one
+centered rectangular second-floor room; and restores MAP02's sewer materials.
+It changes no gameplay or diagnostic actor code.
+
+The author's visual pass rejected that construction: one return remained open,
+the opposite wall blocked a balcony, the upper room was short and displaced to
+the east, two fins remained instead of a lower divider and MAP02 kept mansion
+materials on its interior faces.
+
+V4.29.0af rebuilds those surfaces directly from the clean 4.29.0ad WAD. It
+closes both lower wings, opens both 96-MU balconies, replaces the fins with one
+ground-floor divider and group-914 double door, and places a 1426×782-MU room
+near the main building's true center. MAP02 applies sewer materials to all
+nine floors and every non-empty sidedef texture. The accepted group-913
+stairs/tunnel and all gameplay source remain unchanged.
+
+The author accepted the first-floor rooms but found four upper-level defects:
+one remaining open wall, an eastward unsupported room overhang, floating
+platform strips/floor gaps and an uncovered balcony corner. V4.29.0ag again
+starts from 4.29.0ad, shifts the same-size room 104 MU toward the main entrance,
+closes its complete perimeter and assigns a z=256–264 slab to every corrected
+eastern platform sector. The balcony returns close below z=128 but remain open
+at the walkable balcony level. MAP02 is byte-identical to 4.29.0af.
+
+The 0ag runtime pass proved that interpretation inverted the needed vertical
+layers: the returns remained open on the first floor, their ground-floor walls
+cut the rooms, exterior corners did not close and the completed upper slab read
+as a floating awning. The upper room also needed to move back and receive an
+actual entrance door.
+
+V4.29.0ah reconstructs those layers from 4.29.0ad. Exterior walls occupy
+z=0–256; balcony returns occupy only z=128–256; the room moves 64 MU east and
+receives group-915 double leaves. The obsolete upper platform is removed except
+for a 128-MU corridor between that door and the accepted stair landing.
+
+The 0ah runtime capture proved that the room still stopped 40 MU short of the
+intended rear structural line and that removing the platform wholesale was too
+broad. V4.29.0ai therefore preserves the accepted 0ah lower shell, moves the
+same room to x=-121..1305 and moves group 915 to x=1301. It restores the full
+z=256–264 eastern platform while continuing to omit the obsolete room strip
+west of x=-121. The central 128-MU corridor remains the direct access route but
+is no longer the only upper-floor surface.
+
+The 0ai runtime pass then established two final author corrections: move the
+upper room exactly 100 MU west and recover the intended uncovered state of the
+two 96-MU first-floor balconies. V4.29.0aj moves the room to x=-221..1205,
+moves group 915 to x=1201 and lengthens only the central access corridor. It
+removes z=256–264 solely from the two balcony strips, preserving their wood
+floor and the rest of the upper platform. The MAP01 world sector also adopts
+the existing project-owned `CMGR01` grass terrain instead of Doom `FLOOR0_1`.
+
+The 0aj visual pass found that six inherited wall/return pieces still narrowed
+the balconies, both 8×8-MU links between the old shell and the lower extension
+remained open, and the upper room needed another 150-MU westward correction.
+V4.29.0ak moves the complete room to x=-371..1055 and group 915 to x=1051,
+extends the direct corridor, gives all six balcony-transition pieces the open
+z=128–136-only profile and closes the two lower corner cells with the adjacent
+z=0–256 exterior-wall profile. MAP02 and gameplay code remain unchanged.
+
+The 0ak visual pass approved the complete second floor but exposed two remaining
+8×96-MU terminal walls at x=1689..1697 across the ends of the side balconies.
+V4.29.0al keeps their z=0–128 ground-floor facade and z=128–136 wood floor,
+while removing only the z=136–256 obstruction and z=256–264 cover. The side
+balconies now join the eastern exterior platform without changing the approved
+upper room, door, corridor, lower corners or grass.
+
+The 0al visual pass confirmed that those terminal walls were not the complete
+blocker: the long north/east/south wall around the outside of the balcony
+remained. V4.29.0am applies the same lower-facade/open-upper profile to all
+seven sectors in that outer U while preserving the western joins and lower
+corner closures. It also replaces the accepted room's flat roof with the
+author-selected two-slope form: an east-west ridge perpendicular to the
+eastern balcony and a 64-MU rise. The separately supplied grass files enter as
+`CMGR01A/B/C`, with A replacing the three-band composite on MAP01. The selected
+audio package and Freesound #332629 are connected to their intended runtime
+events and carry in-package license records. This audiovisual integration does
+not authorize later sound mixing values or new terrain placement beyond the
+explicit assignments above.
+
+V4.29.0an cleared the eastern flat roof and added the first requested wall at
+the stair base. V4.29.0ao replaced that provisional result with two reflected
+488×8-MU solid transverse walls. V4.29.0ap completes the symmetric U with two
+8-MU stair-side walls and replaces fragmented inherited roof profiles with an
+exact z=256..264 rectangle over x=1209..1697, y=-328..328. The central landing,
+final steps, side balconies and accepted upper gabled room remain unchanged.
+
+The author traversal rejected that 0ap result as the final house baseline: one
+floor fragment floated, two open profiles projected planes outside the intended
+footprint, an affected floor lost its material/closure, one exterior section
+remained open and an unintended divider crossed the rear ground-floor room.
+V4.29.0ar corrects only those topology defects and keeps the rear room as one
+undivided interior. Its deterministic MAP01 output is 1,045 vertices, 1,436
+linedefs, 2,586 sidedefs, 435 sectors and 225 Things; SHA-256 is
+`35e52122f54ce9490005e2de8e574afd02fc9dcf4a0f40fb0374e16f37bd79ce`.
+Only the focused visual traversal in GZDoom remains pending for this map pass.
+
+The next author capture identified a different surviving divider: the
+historical group-807 wall still used raised base floors, so 0ar's profile-only
+opening did not remove it. V4.29.0as removes both 807 leaves, lowers only its
+four ground-floor wall/jamb hosts and restores their z=128..136 surface as a
+3D floor. It then enforces an undivided rear ground-floor interior and a
+continuous north/east/south exterior shell. First- and second-floor occupancy
+is unchanged. The same increment restores the Bull's 45-base direct gore,
+sets all six physical/technical Bull attributes to 20 and doubles Zupay's slam
+cycle to 20 tics. Its MAP01 result is 1,045/1,436/2,586/435/223 with SHA-256
+`8a4e55a4808002ccb0aa5ae3c4c66b94750a68b38874aef939148cfaaae1f1da`.
+
+The 0as author test rejected removal of the group-807 leaves and exposed the
+actual open corner: two stepped 8-MU exterior joins retained only their
+z=128..256 upper wall. V4.29.0at restores both 807 leaves without restoring
+any surrounding ground-floor wall, closes only z=0..128 in those two exterior
+joins and assigns `CMGR01A` to the adjacent exterior base floors. Their
+z=128..136 wood slabs and every first-/second-floor occupancy cell remain
+unchanged. MAP01 becomes 1,045/1,438/2,590/437/225 with SHA-256
+`13e931502f0385e5115c32189f603ad32fefe92d2f10d4ab1d3819ad732f1d90`.
+
+The following author review requires a temporary complete teardown before the
+rear ground floor is rebuilt. V4.29.0au therefore opens only z=0..128 across
+the full north/east/south perimeter U and the two stepped exterior joins. It
+also clears 204 `CMIN01` middle textures and eight `midtex3d` flags from the
+102 affected lines. Door 807, both stair flights and all profiles/materials
+from z=128 upward remain unchanged. The unsuccessful visible grass correction
+is deferred. MAP01 remains 1,045/1,438/2,590/437/225 with SHA-256
+`835e1f113fa24b8b646f2dfccd712f603d1de91d8434c72b48a1b1367560fb74`.
+
+The next traversal exposed a separate legacy layer that the sector-profile
+audit did not cover: 36 `CMIN01` `midtex3d` curtains around the two rear stair
+flights and two exterior continuations. V4.29.0av removes exactly those 38
+ground-level curtains and leaves every sector, stair and z>=128 profile
+unchanged. It also moves both group-807 leaves from x=1413 to x=1693, directly
+below group 913 and on the eastern stair-landing axis. MAP01 remains
+1,045/1,438/2,590/437/225 with SHA-256
+`fb9c487be494c70ec309b68a180ab781f631185aa0f82aa817a0f0760f4a0ec0`.
+
+The 0av author review restores only two intended northern closures before the
+ground floor is redesigned: one continuous 8-MU exterior wall to the eastern
+flight and one 24-MU solid wall from door 804 to the inner stair. V4.29.0aw
+uses a ground-only profile for both and clears the former coplanar panel. It
+also removes the unique five-sided lower eastern U and both group-807 leaves,
+while preserving group 913 and every z>=128 occupancy cell. MAP01 becomes
+1,052/1,448/2,606/441/223 with SHA-256
+`e704fa8f8e9419839ae1dc0a5081001bb5ef0c3286f80f3f0b50a61d3e270fb1`.
+The exterior-grass appearance remains deferred.
+
+The author has accepted the new-character case, focused menu/world sound mix
+and event mapping, and the non-house MAP01/MAP02 smoke. The 0ar house geometry
+remains a parallel focused visual/traversal review and does not reopen those
+accepted cases.
+
+Controlled perception-angle work and a replacement mass-AI movement
+experiment remain valuable isolated diagnostics. They are not prerequisites
+for defining V4.30. No V4.30 transaction is implemented by 4.29.0aw.
+
+### V4.30 — Repair, Disassembly and Durability Loop
+
+The complete current specification is maintained
+in [`V4_30_CRAFTING_DESIGN.md`](V4_30_CRAFTING_DESIGN.md). The atomic
+transaction was implemented in 4.30.0b. The author-accepted 4.30.0i preserves
+the 4.30.0c compaction and 4.30.0d player-start correction, and replaces the
+provisional fixed task duration with recursive recipe display, independent
+efficiency per craftable layer and material-unit complexity time. It also
+closes the efficiency-time inversion with 1×/10×/100× work multipliers for the
+25%/50%/100% choices. V4.30.0g additionally relocates both balcony railing
+routes from the provisional exterior outline to the 23 author-specified inner
+edge positions; V4.30.0h corrects their scaled vertical panning, expands
+crafting word spacing and completes the missing crafting menu sound calls.
+V4.30.0i applies the three focused railing traversal corrections and makes an
+efficiency factor cover the complete required branch, with nested layer
+factors accumulating. The author confirmed the complete result on Windows/
+GZDoom, including the previous 11-point matrix, all three railing corrections
+and branch-weighted time. V4.30.0j is an asset-only closing increment: it adds
+the registered package-05 ambience/weather library, retains unassigned stock
+outside the runtime build and changes no V4.30 transaction or map. The author
+passed its complete focused audio matrix; V4.30 is closed and 4.30.0j is the
+accepted V4.31 baseline.
+
+- Close the craft → use → deteriorate → repair/disassemble → recover-materials loop.
+- Refinement and equipment-material fabrication offer 25%/50%/100% material
+  yield. Indivisible assembly and repair express the same choices as material
+  waste while still completing the object. Every craftable layer retains its
+  own choice and updates the live route preview immediately.
+- Charge 1/2/3/4 tics per employed material unit according to operation
+  complexity, multiply the complete required branch by 1×/10×/100× at each
+  independently selected 25%/50%/100% layer, then multiply by
+  `100 / DexterityType1Percent`. Dexterity 0 is
+  100%; Dexterity 100 is 5150% and therefore 51.5 times faster.
+- Fabricate every equipment component from exactly one base-material type;
+  component recipes never mix multiple base materials.
+- Map component families as follows: metal parts, including bells, use the
+  corresponding ingot; elemental essences use their assigned gem; staffs,
+  statuettes and sticks use wood; books and cords use fiber; straps always use
+  the simplest leather; armor uses the leather grade matching its tier.
+- Repair through the same station infrastructure as crafting. Consume the
+  complete recipe proportionally to missing durability:
+  `(MaximumDurability - CurrentDurability) / MaximumDurability`.
+- Disassembly always starts from 50% of the base recipe and then scales output
+  by remaining durability:
+  `BaseRecipeMaterial × 0.50 × CurrentDurability / MaximumDurability`,
+  preserving corresponding material identity and tier.
+- Elemental weapons disassemble into their corresponding recipe materials;
+  remove the former essence-versus-intact-base-implement branch.
+- Audit armor, shields, physical weapons, ranged weapons and essence weapons under one transaction model.
+- Round every input cost up and every output/recovery down to the established
+  0.001 material unit. Count every employed unit in task time and preserve
+  exact 9:1 and 497:3 alloy input ratios.
+- Cancel with no spend and no output; scale repair duration by missing
+  durability; learn component recipes through Minor-Arcana Tarot cards.
+- Progress only while the player actively attends the valid connected station,
+  remains within its 96-MU interaction radius and is out of combat. Closing the
+  Journal, leaving, losing infrastructure or entering combat pauses the task
+  without releasing inputs. Only an explicit user order cancels it.
+- Give disassembly exactly the same time and cumulative station requirements
+  as crafting the corresponding object.
+- Give each component recipe the same cumulative stations as the target
+  weapon/equipment recipe that will use it. Defer the exact Minor-Arcana card
+  assigned to each component until the Tarot-card implementation.
+- Persist hard, ebony and magical wood as tiers 1/2/3; scale decorative
+  silver/gold like every other recipe ingredient; keep thrown-javelin recovery
+  separate; exclude amulets and seals from durability.
+- Calculate and lock all required inputs as a reservation when a task starts.
+  Reserved inputs cannot serve another transaction and are consumed only on
+  atomic completion. Explicit user cancellation releases the entire reserve
+  without spend or output.
+- Permit direct physical/elemental weapon assembly from primary materials when
+  every recursively required recipe is known and the complete station network
+  is available. Consume existing components first, reserve the remaining raw
+  route atomically and sum the independently configured material time of every
+  executed intermediate recipe.
+- Display the complete selected recipe down to raw materials, plus both the
+  actual inventory-aware time and the theoretical full-from-raw time. Provide
+  a debug control that advances a valid attended active task by 600 seconds.
+- Treat all transaction rules needed by V4.30 as closed. Exact component/card
+  mapping is deliberately deferred until the Tarot-card implementation and
+  must not be invented during transaction work.
+
+### V4.31 — Loot, Materials and Economy Foundation
+
+V4.31.0a begins the environmental track without inventing economy values. It
+adds the accepted formal rear pool to MAP01 and fixes the representation
+contract for later resource sources: semirealistic CC0 3D models in the world,
+existing sprite actors for the items they release. Natural nodes persist as
+available/depleted state machines with saved timed regeneration. Animal and
+monster hides remain death-table loot, not harvest-node output. Player/NPC
+stashes share one container service with ownership and lock policy separate
+from the model. Exact yields, intervals, tool gates and container rules remain
+author-controlled.
+
+V4.31.0b makes the existing Caelum Air meter authoritative underwater and
+adds the first original low-poly stash prototype. The chest validates closed,
+open and silver-key-locked states, but intentionally has no stored contents or
+permanent map placement yet. Capacity, ownership, theft and refill rules remain
+author-controlled before the shared container service is implemented.
+
+V4.31.0c closes the author's twelve-point 4.31.0b acceptance pass and refines
+submersion into a 5→20 base Air/s ramp, increasing once per continuous second.
+The HUD exposes `sin oxígeno` while breathing is impossible and returns only
+the Air lost to that state over three seconds after surfacing. The existing
+mass/load multiplier remains authoritative. This increment also supplies five
+original rock models and three regional vegetation models for each of desert,
+jungle, tundra, mountain, plains, coast and city. They are solid, summonable
+and editor-ready, but are not yet harvest nodes: rewards, tools, depletion and
+regeneration remain blocked on the values below.
+
+V4.31.0d expands the accepted visual prototypes before harvesting rules are
+attached. Each of the twenty-one regional tree species now has deterministic
+75/100/125% branch variants; the five rock forms combine those variants with
+0.5×/1×/2×/5×/20× tiers. The sauce, ciprés, guindo and pehuén receive the
+author-requested mesh corrections. MAP01 also receives a small native UDMF
+slope prototype in the empty south lawn, proving traversable non-flat terrain
+without changing the mansion or pool. Once Air is exhausted, drowning damage
+starts at 1% maximum health per second, rises 0.1 percentage points per
+continuous second and caps at 10%. These additions still do not authorize
+harvest yields, tools, depletion or regeneration values.
+
+V4.31.0e follows the author's complete twelve-test acceptance of 4.31.0d. It
+keeps every approved tree size and mesh, then adds `Adult`, `Adult2` and
+`Adult3` actors only for the sixteen species whose previous set represented
+young or low-range examples. Environmental mass is calculated from the
+collision cylinder at 32 MU/m and nominal material density. Trees remain
+rooted static collision surfaces; rocks become mass-proportional movable
+bodies and both participate in horizontal Impact Physics collisions. Natural
+extraction remains disabled.
+
+V4.31.0f follows the author's complete fourteen-test acceptance of 4.31.0e
+and brings forward the first self-contained slice of the resource expansion.
+Every tree becomes a renewable wood source for slashing melee attacks. Eleven
+identified mineral deposits, each with three original 3D variants, cover iron,
+mineral coal, copper, tin, silver, gold and five raw gems; they accept only
+piercing melee attacks. Hardness and the approved abundance factors determine
+deterministic output, with fractional carry on the node. Maximum capacity is
+mass-derived and each loaded node restores exactly 0.1% per canonical game
+day. The five previously full-size tree families acquire explicit Adult names
+and half-scale Young variants while retaining their historical class aliases.
+MAP01 and MAP02 remain unchanged, so Buenos Aires gains no surface mine.
+
+V4.31.0g makes the age vocabulary complete without changing the approved
+vegetation library. The 48 smaller actors from the sixteen enlarged species
+are exposed as `Young`, `Young2` and `Young3`, while their old names remain
+compatibility aliases at the same DoomEdNums. Rooted resource strikes no longer
+transmit attack push to trees. The three reported protruding ore bands are
+removed only from coal 3, silver 1 and gold 2. Repair remains attached to the
+exact Inventory selection, but the crafting footer and failure line now expose
+that `F` operation. Capacity and regeneration balance remain unchanged and are
+published as an exact per-variant catalogue.
+
+- Add systematic animal/plant loot tables and container actors.
+- Keep V4.31 focused on physical/editor-ready sources and container
+  architecture. The compact tree/mineral slice is functional in 4.31.0f;
+  plants, hides, marine nodes and unloaded-map calendar catch-up remain part
+  of the Version 5 resource expansion.
+- Use 3D source/chest actors and release the existing material/item sprites
+  through authoritative interaction or death transactions.
+- Formalize basic wood and raw-metal acquisition; ingots remain processing
+  output unless the author assigns a separate source.
+- Transaction-ready material/equipment values and buy/sell price helpers are
+  implemented and accepted in V4.32.0a-r4 without altering the accepted
+  crafting rules.
+- Continue replacing Doom-derived test placeholders with original or license-compatible assets.
+
+Author input required before implementation:
+
+- Define yields, harvest limits and regeneration intervals for mines, trees
+  and plants, plus any tool and skill requirements.
+- Define which animal/monster families yield each skin grade and whether death
+  loot uses fixed amounts, weighted ranges or both.
+- Define the first functional container set and its persistence rules:
+  player/NPC/world ownership, theft response, capacity, refill or one-time
+  state and multiplayer authority. The physical open/close prototype and its
+  reusable silver-key lock are already validated.
+- Fix whether a harvested source changes to a visibly depleted 3D model,
+  disappears, or keeps both behaviors by source type.
+- Fix whether basic metals enter inventory as ore requiring smelting, direct
+  metal, or both, plus the initial quantity scale.
+- **Resolved and accepted in V4.32.0a-r4:** copper is the accounting unit; every metal has
+  nominal coins of 1/5/20/50/100; silver and gold each advance 200× from the
+  preceding metal; coins weigh 0.001 kg and cannot be minted or smelted by the
+  player. Wood is worth 2, the authored material table supplies the raw anchors
+  and recipe/station labor supplies the recursive manufactured values.
+  Merchant personalities, regional prices and negotiation modifiers remain
+  later V4.32 content.
+- Identify the Doom-derived loot/container placeholders that must be replaced
+  in this milestone and provide or approve their license-compatible assets.
+
+### V4.32 — NPC Interaction, Dialogue and Merchants
+
+**V4.32 is author-accepted and closed at V4.32.0o. V4.32.0g was rejected as a
+visual candidate; V4.32.0h mechanics/motion and V4.32.0i shield/angles are
+accepted. V4.32.0j's Block-hand mirror is retained, while its misunderstood
+idle framing and attack path are superseded by V4.32.0k. V4.32.0o closes the
+final doubled-hand frame by compensating the real alpha bounds. 4.32.0e remains a
+discarded diagnostic because there was no Exit-travel regression.**
+The slice now
+contains a reusable edge-triggered Use contract, Palomo's persistent Magic Box
+gift, a finite buy/sell inventory, the first complete native dialogue check
+using the single physical-currency price service and a modular first-person
+view connected to the real sword selector.
+
+- Build dialogue and faction behavior on the complete non-survival NPC stat archetype delivered in V4.26.5q. Constitution, Charisma, Empathy, Eloquence and Anima now coexist with the previous combat fields; Hunger, Thirst, Sleep, Carry Load and Air remain player-only.
+- Connect Charisma, Empathy and Eloquence to authored dialogue, disposition and persuasion consequences instead of treating their stored values as passive metadata.
+- Add a shared Use-based NPC interaction layer. **Implemented in V4.32.0b and
+  corrected in V4.32.0c so closing requires a later physical Use release before
+  rearming.**
+- Add data-driven dialogue foundations. **Implemented in V4.32.0d with the
+  engine's native USDF/ConversationMenu path and an additive all-map dialogue
+  resource.**
+- Add merchant inventories and buy/sell transactions using V4.31 economy data.
+  **First five-item Palomo catalog implemented in V4.32.0b; V4.32.0c filters
+  Sell to currently eligible player products.**
+- Preserve multiplayer ownership and interaction authority. **V4.32.0b keeps
+  gift, stock, cash and transaction authority per player character;
+  V4.32.0d stores the successful negotiated margin in the same record;
+  V4.32.0f confirms normal Exit/`changemap` persistence and rejects `map` as a
+  persistence test because it starts a new player.**
+- Validate the Domingo modular first-person framing on actual equipment.
+  **V4.32.0f connects five depth layers to `CaelumSwordSelectorWeapon`, reuses
+  authoritative attack/Block/Air/durability paths and conditions the supplied
+  shield on real equipped-shield validity. V4.32.0h established the accepted
+  X=105 idle shield, non-looping H→I Block and A-frame
+  retraction/extension/recovery. V4.32.0i fixed the absolute grip range at
+  about 79 degrees at rest and 104 degrees at impact. Held Block remains at
+  (160,100); its 293×244 shield frame is orthographic, corrects the engine's
+  1.2 pixel aspect and is 25% larger in visible diameter. V4.32.0j leaves that
+  shield untouched, separates the idle left hand to (82,45), moves the right
+  rig to (288,28) in the marked blue zones and mirrors the complete H/I Block
+  hand subassembly. V4.32.0k corrects that interpretation: idle shield and left
+  hand now share (82,45); right palm/fingers use (282,32), while the blade uses
+  (280,4) so its handle reaches the separate blue mark. The eight-tic attack
+  follows five samples of the black attack curve and returns through three
+  collinear samples to rest without changing the accepted rotation endpoints.
+  The extended 480×240 right-arm canvas still prevents an internal panoramic
+  cutoff. V4.32.0o's compensated pivots passed the final author matrix and
+  close this presentation slice.**
+
+### V4.33 — Quests, Reputation and Factions
+
+**V4.33.0e accepted after all author tests passed. V4.33.0f implements
+Argento's social branch; isolated engine checks passed and author validation
+is pending.** V4.33.0a established 32 stable persistent
+quest slots with eight objectives each, functional Journal pages and four
+technical faction domains. V4.33.0b incorporates the supplied MAP01 story and
+programming specification, supersedes the test-only “Palomo's adventure” and
+uses the same stable quest index for `CA_Q_MAIN_M00_THE_FOOL` / **Donde
+despiertan los perdidos**.
+
+V4.33.0b names all MAP01 states and factual flags without activating unfinished
+content. Its playable slice covers phases 00–20: short wake-up fade, native
+Unknown Voice dialogue, discreet Palomo reveal, persistent optional foyer
+questions, the authored hallucination follow-up, an exact transition to the
+prepared Argento phase 30 and Palomo's out-of-view departure. Palomo no longer
+grants the Box or opens commerce in production. Merchant code remains reusable
+for a later merchant NPC, and legacy saves retain their Box/content while only
+the discarded quest record is restarted.
+
+V4.33.0c removes the duplicated native/explicit **[Guardar silencio.]** entry,
+places Argento, Caella, Rulo and Ronnie at the authored room centers, and gives
+their MAP01 instances solid passive 500-MU return anchors. It also constructs
+the east false-wall route, an XL-safe 84×88-MU lift connection and a lower
+tutorial cave with renewable trees, iron/coal/copper/tin and one size-adaptive
+T1 hatchet. V4.33.0d supersedes that prototype with 100-MU anchors, a native
+false facade parallel to the east wall, a physical sector lift and contiguous
+underground cave. Only copper/tin and a normal size-adaptive T1 sword remain
+as mineral/tool content. The native models fix the invisible tutorial veins.
+It also removes the duplicate Continue choices after the Unknown Voice's two
+answers and imports all 99 author-supplied equipment icons. This is physical
+preparation only: phases 30–60 are not advanced and no unfinished dialogue or
+quest reward is invented.
+
+V4.33.0e changes only the lower texture of the lift-facing south sidedef in
+MAP01. It preserves the accepted geometry, lift movement, tunnel, resources,
+dialogue and equipment art. All author tests passed.
+
+V4.33.0f implements Argento's phase 30–35: accept the task, gain the help of
+Rulo/Ronnie/Caella in any order, track 0/3–3/3 and return to Argento. Emotion
+and Persuasion use Type 4 at difficulty 120; Ronnie's direct option requires
+Type 2 Labia >= 1. Failed checks are persistent and unlock advice-based routes.
+The next authored slice is Caella's magic branch. Her next dialogue is
+available at phase 35, but no phase-40 tutorial or reward starts yet.
+
+- Add persistent quest state and objective tracking.
+  **Foundation accepted in V4.33.0a; MAP01 enumerated states, flags and first
+  transitions implemented through Argento completion at phase 35 in V4.33.0f.**
+- Implement MAP01 in authored order: Argento social branch, Caella magic branch,
+  Ronnie survival branch, starter weapon, Rulo/Toro, Palomo final, Magic Box,
+  capture of The Fool and confirmed transition to MAP02. Each subpatch must
+  preserve save reconstruction and may activate only its own acceptance slice.
+- Resolve Palomo's one authoritative placement from quest stage. The V4.32.0c
+  MAP01 actor is an anchored initial location that returns after a 100-MU
+  displacement while present. **V4.33.0b resolves hidden → foyer → hidden,
+  then reserves upstairs for phase 80.** The final coordinate/physical
+  relocation remains map work.
+- Add faction membership/standing and reputation changes.
+  **Persistent storage, bounded mutations and isolated debug validation are
+  accepted in V4.33.0a; gameplay consequences remain authored content.**
+- Prepare Gendarmeria, settlements, caravans and political actors without hard-coding unfinished narrative content.
+- Four faction identifiers and a relation lookup do not materially increase
+  map data load by themselves. Reuse the budgeted perception scheduler,
+  spatial candidate filtering and staggered target reacquisition; never run a
+  global actor search for every combatant. LOS tests, pathing, projectiles and
+  dense collision are the freeze risks, not the four-entry faction relation.
+  **Accepted in V4.33.0a without actor iteration or AI hot-path changes.**
+
+### V4.34 — Architectural Modules and World/Travel Foundation
+
+- Replicate only the MAP01 architectural template that has passed manual validation.
+- Add locked/keyed door variants, roofed rooms and later multi-floor modules.
+
+The validated reusable template is now named **`habitación con puerta trampa`** / **trap-door room**. Its definitive door/roof configuration includes the corrected solid sight-blocking jamb frame, finite retracting panel and continuous traversable roof. V4.26.5r adds a validated 119-MU staircase companion module whose finite lower side faces stop at each tread height. All eight MAP01 rooms use the room template, including the silver-key NPC variant. Future level work should instantiate or rotate these patterns instead of recreating their topology independently.
+
+V4.27.0b restores V4.26.5r as the sole accepted MAP01 baseline. The standalone/integrated main gates, rear terrace connectors and internal terrace divisions from V4.26.5s through V4.27.0a are rejected modules and must not be replicated. Future construction adds one isolated module at a time and requires both static topology checks and manual GZDoom traversal before the next module begins.
+
+Closed-boundary degree validation remains a required check, but it is not sufficient by itself: the V4.27.0a crash demonstrated that a statically closed UDMF structure can still be unsafe for the runtime renderer or 3D-floor system.
+- Establish world locations, travel links and caravan/event integration points.
+
+### V4.35 — Calendar, Weather and Dynamic Events
+
+- Expand the existing time scale into the authored calendar.
+- Add weather state and environmental modifiers.
+- Publish one stable weather snapshot containing ambient temperature, wind,
+  precipitation and humidity. V4.35 owns those environmental facts but does
+  not yet apply the complete player thermoregulation model.
+- Add travel and world-event scheduling on top of the stable location/faction layer.
+
+### V4.36 — Movable Environment and Physical Hazards
+
+- Extend the mass-proportional rock integration introduced in 4.31.0e to
+  rolling, falling and externally driven environmental bodies.
+- Add rolling rocks, falling objects and authored hazard surfaces first.
+- Prepare avalanches, rams, catapults and moving-sector hazards through `ResolveExternal`.
+- Package Impact Physics Core independently only after its Caelum validation track is complete.
+
+### V4.37 — Tarot Activation and TCG Expansion
+
+- Connect User3 to owned/selected active Tarot cards.
+- Implement card activation costs, cooldowns and persistence before broad content.
+- Expand toward the occasional Tarot-based Truco TCG only after inventory, NPC and world-event dependencies are stable.
+
+## 4. Version 5 transition
+
+### V5.0.0 — Modular Source Architecture
+
+**Scheduled as the first Version 5 patch, after every pending Version 4 block above is completed and validated.**
+
+- Reorganize the source tree into explicit `core`, `character`, `attributes`, `statistics`, `player`, `equipment`, `combat`, `anatomy`, `actors`, `survival`, `crafting`, `tarot`, `dialogue`, `factions`, `world`, `events`, `multiplayer`, `hud` and `debug` modules.
+- Reduce `CaelumPlayer.zs` to player-state coordination instead of retaining complete combat, survival, crafting and inventory implementations in one class.
+- Move formulas and state machines through incremental compatibility wrappers; do not perform an untestable all-at-once rewrite.
+- Preserve one authoritative inventory, player and Tarot implementation. The multiplayer module handles authority, ownership, validation and synchronization rather than duplicating those systems.
+- Keep save compatibility and native selector/input behavior across the transition.
+- Require parser, single-player, multiplayer and persistence regression tests before removing compatibility wrappers.
+
+### V5.1.0 — Thermal Exposure and Thermoregulation
+
+**Author-approved design; implementation and numeric balance pending. Depends
+on the V4.35 weather snapshot and the V5.0.0 modular transition.**
+
+- Combine climate, tagged environmental zones, activity-derived heat,
+  persistent wetness, wind, exact equipped items and temporary consumables
+  into one bounded player thermal-exposure state.
+- Use Resilience to widen the comfortable temperature band.
+- Apply the approved heat consequences to Thirst, Lucidity and Air recovery;
+  apply the approved cold consequences to Hunger, Anima and damage received.
+- Accumulate and recover exposure over time with hysteresis instead of
+  switching conditions directly at a temperature boundary.
+- Persist player exposure/wetness, recalculate ambient conditions after load,
+  and display compact HUD feedback only outside the comfortable band.
+- Derive sweat from activity and equipment ventilation; let wet equipment
+  create delayed cooling after movement stops.
+- Make camps and authored properties provide shelter, heating and drying, and
+  connect thermal comfort to rest quality and recovery.
+- Add bounded gradual acclimatization so seasonal calendar transitions remain
+  meaningful without being permanently punitive.
+- Apply data-driven species/race climate profiles, elemental Fire/Water/Ice/Air
+  influences and durability-dependent equipment protection.
+- Begin with one low-frequency player calculation. Any later NPC simulation
+  uses simplified profiles and staggered scheduler updates.
+- Implement the diagnostic controls and acceptance matrix before balancing
+  final numeric curves.
+
+Detailed contract: [`V5_THERMAL_EXPOSURE_DESIGN.md`](V5_THERMAL_EXPOSURE_DESIGN.md).
+
+### V5.x — Resources and Marine Biomes
+
+**Author-approved scope; implementation follows the V5.0.0 modular transition.**
+
+- Convert the physical 3D trees, mineralized rocks and plants into persistent
+  sources that release the existing inventory sprites.
+- Permit extraction only through melee weapons: cutting for trees and piercing
+  for mineral deposits.
+- Apply the approved hardness multiplier before rarity, depth, region and
+  skill; generic scenery rocks never yield random metals.
+- Keep the compact catalog centred on iron, coal, copper, tin, silver, gold,
+  gems, sulfur and saltpeter; do not add common stone or sand until they have a
+  meaningful crafting chain.
+- Add marine biomes and 3D algae sources, providing a natural later route to
+  iodine while shops remain the early Buenos Aires source for remote goods.
+- Preserve shops as the buy/sell route for every material regardless of local
+  natural availability.
+- Validate depletion, regeneration, persistence, multiplayer authority and
+  pickup-count limits before populating complete biomes.
+
+Detailed contract:
+[`V5_RESOURCES_AND_MARINE_BIOMES.md`](V5_RESOURCES_AND_MARINE_BIOMES.md).
+
+## 5. Parallel validation tracks
+
+V4.28.0au mirrors the validated central-room topology into the second central pair, explicitly owns the main/options font mappings and presentation logo, and reduces the unchanged MAP02 field to 7,500 actors after the 15,000-actor test saturated the engine. The next patch is reserved for contact-island state, continuous post-contact pushing and the future crushing-damage input; those physics changes must not be mixed into this architectural/UI revision.
+
+V4.28.0at preserves the validated north-central layout, adds a visual reverse face to finite walls, and moves actor validation to one remote mixed population of 15,000 combatants. This is a deliberate ceiling test for bounded projectiles, AI and dense collision; it does not replace the planned contact-island redesign. Typography validation continues with moderately larger bold metrics and HUD contrast shadows.
+
+V4.28.0as corrects the first north-central prototype: two independent exterior doors replace the divider-aligned opening, while the midpoint keeps a separate internal door. The typography validation restarts with fixed baseline cells, reduced HUD metrics and the modern GZDoom font aliases.
+
+V4.28.0ar supersedes the 4.28.0aq central-room shape. The north-central two-room prototype uses one continuous exterior footprint, equal interior areas and one internal dividing wall/door. Once manually approved it will be mirrored south, then the lateral pairs will be connected so each complete wing reads as one exterior architectural volume. The global Caelum font family also enters visual validation at 640×360 and 320×200.
+
+V4.28.0aq introduced the acoustically isolated MAP02 rooms and ten-second NPC-projectile lifetime that passed the later combined stress test. Its four-room MAP01 interpretation is rejected and replaced incrementally by the V4.28.0ar two-room template. These diagnostic containment measures do not complete the planned multi-contact/contact-island physics redesign.
+
+These tracks continue without displacing the ordered major patches:
+
+1. **Architecture:** MAP01 must load, the template door must open/close, stairs must be climbable and the 136-MU platform must be walkable before replication.
+2. **Impact physics:** validate actor, wall and floor impacts; Toughness; localized armor/anatomy response; buckler/crouch damping; contact rearm; and the mass-10000 convergence test.
+3. **Combat controls:** the existing Zoom/Block, ranged AltFire Aim and ranged Reload behavior remains subject to V4.27 completion and full weapon-family testing.
+4. **Release independence:** Doom assets may remain temporary test dependencies but cannot become final standalone-game dependencies.
+
+## 6. Deferred design gates
+
+- Concrete class abilities require authored class-by-class definitions.
+- Concrete racial abilities require authored race-by-race definitions and use User1.
+- Melee physics remains deferred until swing velocity, effective striking mass, contact area/edge geometry, material penetration, sharpness and technique are designed.
+- Full economy balance, quest content, factions, calendar data and Tarot card values remain author-controlled.
+
+````
+
+
+## Registro: before_4.33.0g/VALIDACION_4_33_0e.txt
+
+SHA-256: `46673b631853d0753f3c28dbd3f8a97cacecb4cf92c9b7bc88ba7627cf0759d5`
+
+````text
+CAELUM ARGENTEUM — VALIDACIÓN DE ARCHIVOS V4.33.0e
+
+BASE
+MAP01.wad V4.33.0d
+SHA256: a2cb4f74391bd71e1256ff460bb407e0fc2afafa64a4c685f2c63fece07f4cb9
+
+RESULTADO
+MAP01.wad V4.33.0e
+SHA256: c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c
+
+COMPROBACIONES REALIZADAS
+[OK] WAD válido con MAP01, TEXTMAP y ENDMAP; conserva los otros lumps.
+[OK] Cambio semántico exacto: sidedef 1637, texturebottom '-' -> 'CACVROCK'.
+[OK] El resto del TEXTMAP conserva literalmente sus bytes originales.
+[OK] Mismos vértices (1525), líneas (2131), caras (3828),
+     sectores (659) y Things (334).
+[OK] El rayo horizontal desde (1922,338) hacia 270° corta la línea 835
+     en (1922,272), a 66 MU; su cara hacia el ascensor es la 1637.
+[OK] Revisión estática de las cuatro caras del ascensor en 193 alturas,
+     desde 0 hasta -384 MU en pasos de 2 MU: 768 superficies inferiores
+     expuestas revisadas. 0d carece de material en la cara sur en 192 alturas;
+     0e no presenta ningún faltante en esas superficies.
+[OK] Textura CACVROCK definida en el TEXTURES ya entregado con 0d.
+[OK] Conservados los especiales 206, tag 12000, velocidad 16 y espera 175.
+[OK] Entrada superior sin nueva midtexture ni nueva bandera de bloqueo.
+[OK] Sectores, suelo móvil, túnel, losas, barandas y Things sin cambios.
+
+ALCANCE
+Estas son comprobaciones sobre los datos del mapa y las alturas previstas,
+no una simulación del motor ni capturas renderizadas. GZDoom no está instalado
+en este entorno. Falta comprobar visualmente en GZDoom 4.14.2 el descenso,
+la pared al fondo y el ascenso; también la llamada y el regreso desde el túnel.
+El resto de las pruebas de 0d fue aprobado por el autor.
+
+````
+
+
+## Registro: before_4.33.0g/VALIDACION_4_33_0f.txt
+
+SHA-256: `b5c3ec651042dd9a0ebdccc52d853c12464d615e8e5fb1546c0933550275a6b7`
+
+````text
+VALIDACIÓN REAL — 4.33.0f
+
+BASE
+Todas las pruebas de 4.33.0e fueron aceptadas por el autor.
+MAP01.wad conserva SHA-256:
+c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c
+El WAD no se incluye ni modifica en este delta.
+
+GZDOOM 4.14.2 — PRUEBA AISLADA
+Ejecutable oficial g4.14.2, Freedoom2 como IWAD de prueba y SDL offscreen.
+ZScript se analizó y MAP01 cargó correctamente. Los avisos de sockets/audio
+del entorno no impidieron ejecutar la sonda de estado y UI.
+
+ARGENTO_STATE_DONE: checks=1189 failures=0
+Incluye seis órdenes de visita × cuatro combinaciones éxito/fallo; guardas de
+inicio y cierre; resultado único; probabilidad congelada; consejos tras fallar;
+contador derivado y sin duplicados; transición exacta 30→35; ninguna fase 40;
+inicialización de campos sociales conservando etapa e inventario; índices
+inválidos; límites de Labia 9/10; Tipo 4 y éxito automático; guardas de las
+acciones reales contra interlocutor incorrecto o conocimiento insuficiente.
+
+La sonda ejecutó métodos de las clases de producción, no una reimplementación
+de esas reglas. Los escenarios sintéticos modificaron sólo la partida de
+prueba. No se incluye esta sonda en src ni en el ZIP.
+
+UI NATIVA
+ARGENTO_UI: page=ronnie_offer replies=3
+ARGENTO_UI_GRAY: 1
+ARGENTO_UI_BLOCK: same_menu=1
+ARGENTO_UI_RULO_OPEN: 1
+ARGENTO_UI_EMOTION: [Worried]
+ARGENTO_UI_CONSENT: 1
+ARGENTO_PROBE_DONE
+
+Las conversaciones fueron cargadas por el analizador USDF real. La sonda abrió
+Ronnie con Labia insuficiente y comprobó el prefijo gris y que seleccionar la
+opción no cerraba el menú. Después abrió Rulo, recorrió páginas reales mediante
+MenuEvent y confirmó el indicador privado y el progreso de su respuesta.
+
+AUDITORÍA DE FUENTES
+tools/audit_4_33_0f.py: nueve archivos de ejecución; cuatro conversaciones
+nuevas; 30 páginas; 56 claves en inglés/español; destinos, condiciones, clases,
+ausencia de ciclos automáticos, curvas acordadas, tirada única y hashes.
+CAPALOMO y LANGUAGE conservan íntegro el prefijo de la versión aceptada.
+No se modifican geometría, equipo, arte, armas, minería, comercio ni recetas.
+
+LÍMITES
+La reconstrucción local no dispone de todos los cambios antiguos 4.32.0b–0o.
+Para ejecutar esta prueba se proporcionaron fixtures aislados de dos
+dependencias ajenas al delta: CaelumIconResolver y GetPalomoMerchantLotPrice.
+No se distribuyen esos fixtures, ni se afirma haber probado los sistemas de
+arte/comercio/armas de la base completa que conserva el autor.
+
+No se ejecutó un ciclo real de save/load ni una partida cooperativa. La sonda
+de migración verifica inicialización en memoria, no serialización del motor.
+La presentación completa, Q/ratón/mando y el guardado/carga sobre el paquete
+completo se verifican con PRUEBAS_4_33_0f.txt. MAP01 aún no está terminado.
+
+````
+
+
+## Registro: release_4.33.0f/APLICAR_4_33_0f.txt
+
+SHA-256: `2359c1ace695582aef8ccbdabbae6ecdb7f4725b36fa1d22871b6dec9c086d31`
+
+````text
+CAELUM ARGENTEUM — APLICAR 4.33.0f
+
+Base: proyecto completo y aceptado de 4.33.0e.
+El ZIP es un delta de fuentes; no es un PK3 ni reemplaza la base completa.
+
+1. Conservá una copia de la base 4.33.0e y de tu partida de prueba.
+2. Extraé el ZIP sobre la raíz del proyecto, combinando las carpetas src,
+   docs y tools y reemplazando los archivos coincidentes.
+3. Empaquetá src con el procedimiento habitual del proyecto. No agregues
+   docs, tools ni los manifiestos al contenido de ejecución del PK3.
+4. Probalo en GZDoom 4.14.2 y seguí PRUEBAS_4_33_0f.txt.
+
+Hay nueve archivos de ejecución nuevos/modificados. El manifiesto indica sus
+hashes de entrada y salida. MAP01.wad no se vuelve a distribuir: se conserva
+el de 0e, incluida la pared interior del ascensor que ya aprobaste.
+
+La migración permite retomar una partida 0e después de Palomo: los campos
+sociales nuevos se inicializan sin reiniciar el prólogo ni el inventario.
+La compatibilidad real de ese guardado debe verificarse en la prueba manual.
+Para empezar una prueba limpia podés usar el flujo normal de Nueva partida.
+
+Python no es necesario para aplicar ni jugar. La auditoría opcional se ejecuta
+con: python tools/audit_4_33_0f.py
+También se puede pasar la raíz de una copia completa de 0e mediante
+--baseline RUTA_A_LA_BASE_0E antes de sobrescribirla.
+
+````
+
+
+## Registro: release_4.33.0f/PRUEBAS_4_33_0f.txt
+
+SHA-256: `5eb8f5daee8615f49781eef02019a2549c7933636a3cf976e1001cbd85a55078`
+
+````text
+CAELUM ARGENTEUM — PRUEBA FOCALIZADA 4.33.0f
+
+1. CONTINUIDAD
+   Cargá una partida 0e después del encuentro con Palomo. Deben conservarse
+   personaje, equipo y recursos, y el Diario debe pedir hablar con Argento.
+   Si probás desde Nueva partida, Voz y Palomo deben conservar su flujo.
+
+2. ARGENTO Y ORDEN LIBRE
+   Hablá con Argento y aceptá hablar con los tres. El Diario debe mostrar
+   conseguir la ayuda de los residentes, 0/3. Se pueden visitar en cualquier
+   orden. Cerrar con Q, Escape o la salida del diálogo no debe duplicar menús.
+
+3. RULO
+   Antes de la tirada se muestran dificultad 120 y probabilidad. Con éxito
+   aparece [Preocupado] en tu diálogo; todavía hace falta elegir la respuesta
+   respetuosa para obtener su ayuda. Si falla, hablá con Argento, pedile consejo
+   y volvé a Rulo: la nueva respuesta debe resolverlo sin otra tirada.
+
+4. RONNIE
+   La opción del plan exige Labia >= 1 (atributo Elocuencia 10 o más).
+   Por debajo de ese mínimo debe verse gris, con requisito visible, y no
+   conceder progreso al seleccionarla con teclado, ratón o mando.
+   Después de visitarlo, hablá con Argento sobre el plan y regresá: la opción
+   aprendida debe funcionar también con Labia baja.
+
+5. CAELLA
+   La tirada muestra Persuasión, dificultad 120 y probabilidad. Un éxito
+   obtiene su ayuda. Si falla, pedí consejo a Argento y volvé con la respuesta
+   que reconoce el peligro y le permite fijar condiciones. No hay otra tirada.
+
+6. PERSISTENCIA Y FALLOS
+   Si obtenés un fallo con Rulo o Caella, guardá DESPUÉS del resultado, cargá
+   y volvé a hablar: no debe aparecer una tirada nueva ni cambiar el resultado.
+   Repetí guardado/carga después de aprender un consejo y después de convencer
+   a alguien: consejo y contador deben conservarse. Una partida guardada antes
+   de la decisión representa ese estado anterior; este parche no implementa
+   persistencia externa al archivo de guardado.
+
+7. CIERRE
+   Cada residente suma una sola vez: 1/3, 2/3, 3/3. Repetir su diálogo no suma.
+   Con 3/3, el Diario pide volver con Argento. Elegí la respuesta de cierre:
+   debe pasar a hablar con Caella. Guardá, cargá y comprobá que el cierre no se
+   repite ni desaparece. Caella ofrece la frase sobre la pared; su tutorial
+   mágico y sus recompensas pertenecen al próximo tramo.
+
+8. PRESENTACIÓN
+   Revisá los textos en español e inglés, las probabilidades y el contador.
+   El indicador de Rulo debe verse sólo dentro de la conversación de quien
+   hizo la lectura. Los residentes conservan su posición, colisión y retorno
+   a 100 MU. No hace falta repetir toda la matriz de ascensor, minería o arte
+   ya aprobada: este delta no cambia esos archivos.
+
+Para cubrir los fallos naturales pueden usarse distintos personajes de prueba.
+Cerrar y reabrir la misma conversación no vuelve a lanzar los dados. Las
+combinaciones de éxito/fallo ya se forzaron únicamente en la sonda aislada de
+desarrollo; no se incorpora ningún comando nuevo de depuración al juego.
+
+````
+
+
+## Registro: release_4.33.0f/README_4_33_0f.md
+
+SHA-256: `82c97c590130b335177ab239fc0a7e8db16a69850550f8659dc6c42d76be8e1c`
+
+````text
+# Caelum Argenteum — 4.33.0f source patch
+
+Apply over the complete, author-accepted 4.33.0e project. This ZIP contains
+only changed/new source files and patch documentation. It is not a standalone
+game and does not include a compiled PK3. See `APLICAR_4_33_0f.txt`.
+
+## Implemented
+
+- Argento's social task: recruit Rulo, Ronnie and Caella in any order, track
+  0/3–3/3 in the Journal, and return to Argento to complete phase 35.
+- One persistent Emotion check for Rulo and one Persuasion check for Caella.
+  Both use the author-selected Type 4 curve at difficulty 120.
+- Ronnie's direct plan requires Type 2 Labia >= 1. The native menu displays
+  the unmet requirement in gray and the action also validates it in play scope.
+- Advice from Argento opens deterministic alternatives after failed checks or
+  insufficient Labia. Results and knowledge belong to the persistent character.
+- Native USDF dialogue, private emotional feedback, and English/Spanish text.
+- Caella's next conversation and Journal instruction at phase 35.
+
+## Planned
+
+Caella's magic tutorial and riddle; Ronnie's survival/tutorial branch; starter
+weapon preparation; Rulo and the Bull; final Palomo, Magic Box, The Fool and
+the confirmed transition to MAP02, in the authored order.
+
+## Pending
+
+- Author acceptance of `PRUEBAS_4_33_0f.txt`, including actual save/load across
+  failed attempts, advice and completed recruitment on the full 4.33.0e base.
+- Full visual, input and cooperative gameplay validation. Progress remains
+  per character; party sharing is not implemented in this patch.
+- Later authored phases. Completing Argento does not complete MAP01.
+
+## Validation performed
+
+GZDoom 4.14.2 loaded MAP01 and passed 1189 assertions against the actual
+persistent class and action handlers, including all six visit orders and all
+four Rulo/Caella success/failure combinations. Native UI checks verified the
+gray/blocked Ronnie option, Rulo's private reading and consent through USDF.
+The static audit checks all four new conversations, 30 pages, 56 bilingual
+keys, class/condition links and hashes for all nine runtime delta files.
+
+The isolated engine run used a reconstructed source tree and test fixtures for
+two unavailable, unrelated older dependencies (icon resolver and legacy
+merchant price helper). These fixtures are excluded from the ZIP. This run
+does not certify the complete accepted weapon/commerce/art runtime. The patch
+replaces only the latest available complete files from 4.33.0b–0e.
+
+The accepted 4.33.0e MAP01 WAD is unchanged. No new game is required by the
+quest-state migration; save compatibility still needs the focused manual test.
+
+````

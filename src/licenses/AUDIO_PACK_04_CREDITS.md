@@ -90,6 +90,10 @@ Conservar este documento junto al juego y trasladar las atribuciones obligatoria
 - Obligación aplicada en el paquete: `CC-BY-4.0`
 - Archivos derivados: `ca_stock_tarot_harp_loop.ogg`
 - Modificación: renombrado de la previsualización OGG; audio no recodificado.
+- Derivado vigente V4.33.0h: `ca_dialogue_open.ogg`, primera frase
+  (0–2,571429 s; 113.400 muestras), fundido de salida de 450 ms,
+  Vorbis calidad 5, 44.100 Hz estéreo. Se reproduce al abrir y avanzar una
+  conversación. Sustituye el recorte de un segundo de V4.33.0g.
 - Texto recomendado:
 
 > “Simple Harp Loop” by Roloxi — Freesound #639113 — CC-BY-4.0. Adaptado para Caelum Argenteum.

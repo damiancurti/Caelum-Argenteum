@@ -39,6 +39,14 @@ class CaelumPersistentCharacterState : Inventory
     // La misión principal necesita hechos idempotentes además de su etapa. Esta
     // tabla incluye tanto progreso jugable como conocimiento de diálogo.
     bool MainM00Flag[CaelumConstants.MAIN_M00_FLAG_CAPACITY];
+    // CheckOnceKey estables: Rulo=0 y Caella=2. Ronnie no lanza dados.
+    // Estos datos viajan con el personaje y no se guardan en el actor del NPC.
+    int MainM00SocialVersion;
+    bool MainM00ResidentMet[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
+    bool MainM00SocialAdvice[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
+    int MainM00SocialResult[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
+    int MainM00SocialRoll[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
+    int MainM00SocialChance[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
 
     // Membresía y reputación pertenecen al personaje. Las relaciones entre
     // dominios son una tabla de reglas compartida, no estado duplicado por NPC.
@@ -254,6 +262,7 @@ class CaelumPersistentCharacterState : Inventory
 
     void ClearMainM00QuestRecord()
     {
+        ResetMainM00SocialState();
         int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
         QuestState[questId] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
         QuestStage[questId] = CaelumConstants.MAIN_M00_STATE_INITIALIZE;
@@ -277,6 +286,7 @@ class CaelumPersistentCharacterState : Inventory
 
     void InitializeNewQuestState()
     {
+        ResetMainM00SocialState();
         for (int questId = 0;
             questId < CaelumConstants.QUEST_CAPACITY; questId++)
         {
@@ -490,6 +500,147 @@ class CaelumPersistentCharacterState : Inventory
         QuestObjectiveKnown[objective] = true;
         QuestObjectiveProgress[objective] = 1;
         QuestObjectiveTarget[objective] = 1;
+        return true;
+    }
+
+    void ResetMainM00SocialState()
+    {
+        for (int i = 0; i < CaelumConstants.MAIN_M00_RESIDENT_COUNT; i++)
+        {
+            MainM00ResidentMet[i] = false;
+            MainM00SocialAdvice[i] = false;
+            MainM00SocialResult[i] = CaelumConstants.MAIN_M00_SOCIAL_UNTRIED;
+            MainM00SocialRoll[i] = 0;
+            MainM00SocialChance[i] = 0;
+        }
+        MainM00SocialVersion = 1;
+    }
+
+    void EnsureMainM00SocialState()
+    {
+        EnsureQuestStateInitialized();
+        // Una partida 0e conserva íntegros prólogo, inventario y geometría.
+        if (MainM00SocialVersion < 1) { ResetMainM00SocialState(); }
+    }
+
+    bool IsMainM00RecruitmentActive()
+    {
+        EnsureMainM00SocialState();
+        return QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                == CaelumConstants.QUEST_STATE_ACTIVE
+            && QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                == CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE
+            && MainM00Flag[CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED];
+    }
+
+    bool IsValidMainM00Resident(int resident)
+    {
+        return resident >= 0 && resident < CaelumConstants.MAIN_M00_RESIDENT_COUNT;
+    }
+
+    bool IsMainM00ResidentConvinced(int resident)
+    {
+        return IsValidMainM00Resident(resident)
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_CONVINCED + resident);
+    }
+
+    int CountMainM00ConvincedResidents()
+    {
+        int count = 0;
+        for (int i = 0; i < CaelumConstants.MAIN_M00_RESIDENT_COUNT; i++)
+        {
+            if (IsMainM00ResidentConvinced(i)) { count++; }
+        }
+        return count;
+    }
+
+    void RefreshMainM00RecruitmentObjective()
+    {
+        if (!HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED)) { return; }
+        int objective = GetQuestObjectiveStorageIndex(
+            CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
+            CaelumConstants.MAIN_M00_OBJECTIVE_CONVINCE_RESIDENTS);
+        QuestObjectiveKnown[objective] = true;
+        QuestObjectiveProgress[objective] = CountMainM00ConvincedResidents();
+        QuestObjectiveTarget[objective] = CaelumConstants.MAIN_M00_RESIDENT_COUNT;
+    }
+
+    bool BeginMainM00Argento()
+    {
+        EnsureMainM00SocialState();
+        if (QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                != CaelumConstants.QUEST_STATE_ACTIVE
+            || QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                != CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE
+            || !MainM00Flag[CaelumConstants.MAIN_M00_FLAG_PALOMO_MET]
+            || MainM00Flag[CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED]) { return false; }
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED] = true;
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_HEARD_ARGENTO_QUOTE] = true;
+        RefreshMainM00RecruitmentObjective();
+        return true;
+    }
+
+    bool RecordMainM00ResidentMet(int resident)
+    {
+        if (!IsMainM00RecruitmentActive() || !IsValidMainM00Resident(resident)
+            || MainM00ResidentMet[resident]) { return false; }
+        MainM00ResidentMet[resident] = true;
+        return true;
+    }
+
+    bool CanReceiveMainM00Advice(int resident)
+    {
+        if (!IsMainM00RecruitmentActive() || !IsValidMainM00Resident(resident)
+            || !MainM00ResidentMet[resident] || IsMainM00ResidentConvinced(resident)
+            || MainM00SocialAdvice[resident]) { return false; }
+        return resident == CaelumConstants.MAIN_M00_RESIDENT_RONNIE
+            || MainM00SocialResult[resident] == CaelumConstants.MAIN_M00_SOCIAL_FAILURE;
+    }
+
+    bool RecordMainM00Advice(int resident)
+    {
+        if (!CanReceiveMainM00Advice(resident)) { return false; }
+        MainM00SocialAdvice[resident] = true;
+        return true;
+    }
+
+    bool CanAttemptMainM00SocialCheck(int resident)
+    {
+        return IsMainM00RecruitmentActive() && IsValidMainM00Resident(resident)
+            && resident != CaelumConstants.MAIN_M00_RESIDENT_RONNIE
+            && MainM00ResidentMet[resident] && !IsMainM00ResidentConvinced(resident)
+            && MainM00SocialResult[resident] == CaelumConstants.MAIN_M00_SOCIAL_UNTRIED;
+    }
+
+    bool RecordMainM00SocialCheck(int resident, int roll, int chance)
+    {
+        if (!CanAttemptMainM00SocialCheck(resident)) { return false; }
+        MainM00SocialRoll[resident] = Clamp(roll, 0, 101);
+        MainM00SocialChance[resident] = Clamp(chance, 0, 100);
+        MainM00SocialResult[resident] = MainM00SocialRoll[resident]
+            <= MainM00SocialChance[resident]
+            ? CaelumConstants.MAIN_M00_SOCIAL_SUCCESS
+            : CaelumConstants.MAIN_M00_SOCIAL_FAILURE;
+        return true;
+    }
+
+    bool ConvinceMainM00Resident(int resident)
+    {
+        if (!IsMainM00RecruitmentActive() || !IsValidMainM00Resident(resident)
+            || IsMainM00ResidentConvinced(resident)) { return false; }
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_RULO_CONVINCED + resident] = true;
+        RefreshMainM00RecruitmentObjective();
+        return true;
+    }
+
+    bool CompleteMainM00Argento()
+    {
+        if (!IsMainM00RecruitmentActive()
+            || CountMainM00ConvincedResidents() != CaelumConstants.MAIN_M00_RESIDENT_COUNT
+            || !TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE,
+                CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)) { return false; }
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE] = true;
+        RefreshMainM00RecruitmentObjective();
         return true;
     }
 

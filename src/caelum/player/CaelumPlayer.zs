@@ -331,6 +331,11 @@ class CaelumPlayer : DoomPlayer
     // activación después de cerrar el menú y detectar Use liberado.
     bool CraftingStationUseLatched;
 
+    // Instantáneas de sólo lectura para Diario y conversaciones sociales.
+    bool JournalMainM00ArgentoStarted;
+    int MainM00ConvincedCountSnapshot;
+    int MainM00SocialChanceSnapshot[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
+    double MainM00LabiaSnapshot;
     // Se rearma únicamente tras cerrar toda interacción folclórica y soltar
     // físicamente Use. Evita que Q cierre y reabra a Palomo en el mismo pulso.
     bool FolkloreInteractionUseLatched;
@@ -748,6 +753,9 @@ class CaelumPlayer : DoomPlayer
                 persistentState.QuestObjectiveTarget[objective];
         }
         JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
+        JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
+            CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED);
+        MainM00ConvincedCountSnapshot = persistentState.CountMainM00ConvincedResidents();
         for (int factionId = 0;
             factionId < CaelumConstants.FACTION_COUNT; factionId++)
         {
@@ -1141,7 +1149,8 @@ class CaelumPlayer : DoomPlayer
             0, CaelumConstants.PALOMO_CONVERSATION_ID
         );
         if (!speaker.HasConversation()) { return false; }
-        return speaker.StartConversation(self, true, true);
+        if (!speaker.StartConversation(self, true, true)) { return false; }
+        return true;
     }
 
     bool ResolvePalomoDiscountRequest()

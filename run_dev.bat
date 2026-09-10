@@ -1,20 +1,19 @@
 @echo off
 
-REM Delayed expansion prevents parentheses in paths such as "Program Files
-REM (x86)" from being interpreted as batch-file syntax inside IF blocks.
+REM La expansion retardada conserva rutas con parentesis dentro de IF.
 setlocal EnableDelayedExpansion
 
-REM This is the full path to the GZDoom executable on Damian's computer.
+REM Ruta del motor en la instalacion suministrada por el autor.
 set "GZDOOM_EXE=C:\Users\dcc70\OneDrive\Documentos\GZDooM\gzdoom.exe"
 
-REM This is the legally installed Doom II IWAD used during development.
+REM IWAD de desarrollo instalado por el autor.
 set "DOOM2_IWAD=C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD"
 
-REM %~dp0 means the folder in which this batch file is located.
+REM La raiz del proyecto es la carpeta de este archivo.
 set "PROJECT_ROOT=%~dp0"
 set "PROJECT_PK3=%PROJECT_ROOT%build\caelum_argenteum_dev.pk3"
 
-REM Stop here and explain the problem if GZDoom cannot be found.
+REM Comprobar que exista el motor.
 if not exist "!GZDOOM_EXE!" (
     echo ERROR: gzdoom.exe was not found at:
     echo !GZDOOM_EXE!
@@ -23,7 +22,7 @@ if not exist "!GZDOOM_EXE!" (
     exit /b 1
 )
 
-REM Stop here and explain the problem if DOOM2.WAD cannot be found.
+REM Comprobar que exista el IWAD de desarrollo.
 if not exist "!DOOM2_IWAD!" (
     echo ERROR: DOOM2.WAD was not found at:
     echo !DOOM2_IWAD!
@@ -32,14 +31,13 @@ if not exist "!DOOM2_IWAD!" (
     exit /b 1
 )
 
-REM Build from the project root with the clean PK3 builder.
-REM This avoids empty directory entries inside texture and sprite namespaces.
+REM Compilar con el constructor unico de la raiz.
 pushd "!PROJECT_ROOT!"
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "!PROJECT_ROOT!tools\build_pk3.ps1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "!PROJECT_ROOT!build_dev.ps1"
 set "BUILD_EXIT=!ERRORLEVEL!"
 popd
 
-REM Do not start GZDoom if the build script reported an error.
+REM Detener el inicio si falla la compilacion.
 if not "!BUILD_EXIT!"=="0" (
     echo.
     echo ERROR: The development PK3 could not be built.
@@ -47,7 +45,7 @@ if not "!BUILD_EXIT!"=="0" (
     exit /b 1
 )
 
-REM Launch GZDoom, select Doom II, and load the newly generated PK3.
+REM Iniciar GZDoom con el PK3 recien reconstruido.
 "!GZDOOM_EXE!" -iwad "!DOOM2_IWAD!" -file "!PROJECT_PK3!"
 
 endlocal

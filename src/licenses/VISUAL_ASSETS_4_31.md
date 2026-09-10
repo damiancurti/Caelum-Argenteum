@@ -21,7 +21,7 @@
   `models/caelum/props/stash/ca_stash_*.png`.
 - Uso: estados cerrado, abierto y bloqueado del primer alijo físico.
 - Procedencia: mallas y texturas originales generadas específicamente para el
-  proyecto mediante `tools/generate_stash_models.py`.
+  proyecto mediante `assets/generators/generate_stash_models.py`.
 - Complejidad: 242/254/266 caras para cerrado/abierto/bloqueado.
 - Materiales: madera oscura, hierro, interior y candado; cuatro PNG generados
   sin recursos de Doom, bibliotecas de modelos ni texturas de terceros.
@@ -49,7 +49,7 @@ CC0 evaluadas siguen documentadas en
   especular para bordes repetibles, normalización a 256×256 y variantes
   procedurales de cactus, flores y follaje mediante Pillow.
 - Mallas: geometría original determinista generada por
-  `tools/generate_environment_models.py`; 26 OBJ y 14.932 caras totales.
+  `assets/generators/generate_environment_models.py`; 26 OBJ y 14.932 caras totales.
 - SHA-256 del atlas maestro:
   `943e347bcacc8d6845864bfa5e20b8078335f09fb56f9c916b5093bf316df309`.
 
@@ -72,7 +72,7 @@ necesario si un desarrollador decide regenerarlos desde el atlas maestro.
   4.31.0c; no se añade ningún recurso de terceros.
 
 La regeneración sigue siendo determinista mediante
-`tools/generate_environment_models.py`. Los OBJ resultantes ya están incluidos
+`assets/generators/generate_environment_models.py`. Los OBJ resultantes ya están incluidos
 y no es necesario disponer de Python para instalar ni jugar el parche.
 
 ## Árboles adultos y física ambiental 4.31.0e
@@ -95,7 +95,7 @@ Los 78 OBJ y todos los PNG ambientales permanecen byte-idénticos a 4.31.0d.
 - Uso: hierro, carbón mineral, cobre, estaño, plata, oro, ópalo, topacio,
   zafiro, rubí y esmeralda; tres afloramientos por recurso.
 - Procedencia: las 33 mallas y once materiales se generan de forma original y
-  determinista mediante `tools/generate_mineral_veins.py`. La roca anfitriona
+  determinista mediante `assets/generators/generate_mineral_veins.py`. La roca anfitriona
   reutiliza el material de granito original ya documentado en 4.31.0c.
 - Complejidad: 25.500 vértices declarados y 7.584 caras en total. Los metales
   usan inclusiones/bandas y las gemas, cristales aflorantes de seis lados.
