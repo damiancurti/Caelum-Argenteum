@@ -1,22 +1,104 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0h — 2026-09-10.
+Versión documental: 4.33.0l — 2026-09-10.
+
+## Arbusto de fibra 2D (4.33.0l)
+
+Actor CaelumFiberBush; tres ejemplares en la cueva de MAP01. Es un billboard
+con transparencia real, sin MODELDEF. Escala 0,07; radio 24 MU y altura 54 MU.
+Se reutiliza la extracción de CaelumTreeEnvironmentProp, con fibra como salida.
+
+- Fuente: `assets/source/art/ca_fiber_bush.png`. PNG RGBA 1430×1100, generado con la herramienta integrada
+  de generación de imágenes de OpenAI, modo imagen nueva a partir de texto.
+- Runtime: `src/sprites/caelum/world/CFBHA0.png`. Conserva exactamente los píxeles de la fuente y añade
+  sólo el chunk PNG grAb (715,1018) para apoyar el tallo en el suelo.
+- Prompt de creación: un solo arbusto silvestre fibroso, vista frontal para
+  sprite de un RPG/FPS de fantasía oscura ambientado en Argentina del siglo XIX;
+  follaje denso verde oliva apagado con hojas estrechas y tallos de paja claros,
+  arbusto completo, iluminación neutra desde arriba a la izquierda, pintura
+  semirrealista coherente con árboles/rocas del juego, fondo transparente real,
+  sin texto, sin objetos adicionales, sin suelo ni sombra rectangular.
+- La versión elegida es la primera generación con alfa auténtico. Las dos
+  pruebas posteriores con transparencia simulada se descartaron y no se entregan.
+- SHA-256 fuente: `efe14e3da2f2789c00cdf6cfdde9ae10655a75911b78570f239358d36ae936d0`.
+- SHA-256 runtime: `83e902028d41dc5ba922489b831b311a85800f62ba98d63c1fddb67eecfc7b7a`.
+
+La captura en GZDoom confirma silueta legible, fondo transparente y apoyo en
+el piso. El cofre de suministros hereda el modelo y animación del alijo existente;
+no duplica malla, textura ni sonido. Los modelos de estaciones siguen aceptados.
 
 ## Audio de interfaz vigente
 
 | Acción | Recurso o alias | Tratamiento |
 | --- | --- | --- |
 | Abrir y avanzar diálogo | `caelum/ui/dialogue_open` → `sounds/caelum/ui/ca_dialogue_open.ogg` | Primera frase de `ca_stock_tarot_harp_loop.ogg`: 113.400 muestras a 44.100 Hz (2,571429 s), estéreo, Vorbis q5; caída de 450 ms hasta silencio. GameInfo.ChatSound es el único emisor; singular evita apilar frases al avanzar rápido. |
-| Portada / menú antes de comenzar | `sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg` | Pieza completa de 4,0222 s, elegida por TitleMusic; CaelumMenuAudio habilita el bucle que la secuencia nativa no activa. Es el stock de arranque identificado, no una canción larga adicional. |
+| Portada / menú antes de comenzar | `sounds/caelum/stock/music/ca_stock_war_drums.ogg` | Stock completo de 6 s; una reproducción, sin bucle, por entrada a la portada. |
 | Abrir/cerrar/volver/pregunta de menú | `caelum/ui/menu_open` | Redirecciones nativas activate, backup, prompt, dismiss y clear. |
 | Mover/cambiar opción | `caelum/ui/menu_move` | cursor, change e invalid. |
-| Confirmar/avanzar/Salir | `caelum/ui/menu_select` | choose, advance, quit1, quit2 y GameInfo.QuitSound. |
+| Confirmar/avanzar | `caelum/ui/menu_select` | choose y advance. |
+| Salir del juego | `caelum/stock/menu_strings_start` | CaelumExitMenu reproduce la pieza al abrir la confirmación nativa. QuitSound y los alias quedan como cobertura de salida; singular evita superposición. Stock de 4,0222 s sin recortar. |
 | Interruptor de mapa | `caelum/ui/menu_select` | switches/normbutn. |
-| Botón Exit de mapa | `caelum/ui/map_transition` | switches/exitbutn. |
+| Botón Exit de mapa | `caelum/stock/menu_strings_start` | switches/exitbutn. |
 
 La música de MAP01 conserva CA_MUS01 y la de MAP02 CA_MUS02. Abrir el menú
 de pausa durante una partida conserva la música de ese mapa. El original del
 arpa se conserva íntegro; el recorte es otro archivo. No se importan sonidos Doom.
+
+### Asignaciones y emblemas vigentes (4.33.0j)
+
+Por pedido del autor, TitleMusic apunta al War Drums completo de 6 s. El
+observador ahora pide reproducción sin bucle; los mapas conservan CA_MUS01/02.
+QuitSound y menu/quit1, menu/quit2, switches/exitbutn usan menu_strings_start.
+No se recodifican ni recortan estos archivos. La frase de arpa de 2,571 s y la
+protección singular de conversación permanecen como en 0h.
+
+Las cuatro runas de Caella reutilizan los emblemas de Sellos SLWA, SLFI, SLEA y
+SLAI a escala 0,20, con opacidad de estado. Su presentación del
+acertijo quedó aceptada con las pruebas de 0k; no cambia en 0l.
+
+## Modelos sencillos de estaciones (4.33.0j)
+
+Aceptados por el autor en 0j. La revisión 0l conserva todos sus archivos,
+texturas y asociaciones; tampoco modifica el HUD aceptado ni el audio.
+La limpieza de salas retira instancias del surtido, no recursos gráficos.
+
+
+Doce OBJ originales, con once texturas compartidas de 128×128, derivados por
+geometría procedural de los rasgos de los doce sprites existentes. No se usan
+modelos externos ni sprites planos como sustituto de herramientas 3D.
+`src/models/caelum/props/stations/` contiene sólo recursos de ejecución.
+`assets/generators/generate_station_models.py` conserva la fuente y reutiliza
+las primitivas de los generadores ambientales y de cofres (Python + Pillow).
+
+| Estación | Silueta y elementos |
+| --- | --- |
+| Banco de trabajo | Mesa, tornillo de banco, martillo, formón y vela. |
+| Forja | Hogar de mampostería con carbón, chimenea y pala; sin mesa. |
+| Yunque | Yunque de hierro, cuerno y martillo sobre tocón; sin mesa. |
+| Taller de distancia | Mesa, arcos, flechas, herramienta y plantilla. |
+| Aserradero | Banco con sierra circular manual, manivela, tronco y tablones. |
+| Taller de armaduras | Mesa, peto sobre soporte, cuero y martillo. |
+| Máquina de coser | Mesa con máquina, volante, aguja, carrete y tela. |
+| Altar de esencias | Pedestal de piedra, cristal, aro, velas y libro. |
+| Globo terráqueo | Globo sobre pie propio con aros de latón y mapa esquemático. |
+| Banco joyero | Mesa, gemas, lupa de soporte, útiles y vela. |
+| Herramientas finas | Mesa con paño, estuche abierto, lupa y herramientas. |
+| Banco maestro | Mesa con cajones, panel de herramientas, plano, libro y tornillo. |
+
+MODELDEF contiene doce modelos y un enlace adicional del alias antiguo
+CaelumBowWorkshopStation al modelo de distancia. Mantiene los sprites como
+alternativa si el motor desactiva modelos. La escala compensa el Scale 0.5
+existente; todas las mallas caben en Radius 20 / Height 48. No cambia actores,
+recetas, capacidades, proximidad de red ni tiempos de crafting.
+
+Para regenerar desde la raíz: `python assets/generators/generate_station_models.py`.
+El bloque generado de MODELDEF se reemplaza de forma idempotente. Las texturas
+son propias del generador; los sprites de referencia conservan sus archivos y
+su procedencia. No se añaden dependencias al constructor ni al juego.
+
+El indicador del Sello reutiliza su icono existente, incluido el tier, y aplica
+la desaturación nativa al dibujarlo. No guarda otra copia del icono ni modifica
+sus píxeles. Se verifica con el renderizador OpenGL moderno de GZDoom 4.14.2.
 
 ## Atribuciones de los recursos de interfaz
 
@@ -89,8 +171,8 @@ existencia de un archivo no implica que ya exista un emisor de clima o escena.
 | `sounds/caelum/stock/ambient/ca_stock_cricket.ogg` | Reserva sin evento narrativo asignado. |
 | `sounds/caelum/stock/music/ca_stock_piano_progression.ogg` | Reserva sin evento narrativo asignado. |
 | `sounds/caelum/stock/music/ca_stock_tarot_harp_loop.ogg` | Original de arpa conservado; fuente del recorte. |
-| `sounds/caelum/stock/music/ca_stock_war_drums.ogg` | Reserva sin evento narrativo asignado. |
-| `sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg` | Música de portada. |
+| `sounds/caelum/stock/music/ca_stock_war_drums.ogg` | Música de portada, una sola reproducción (6 s). |
+| `sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg` | Salir del juego y botón Exit de mapa (4,022 s). |
 | `sounds/caelum/stock/ui/ca_stock_reveal_sting.ogg` | Reserva sin evento narrativo asignado. |
 | `sounds/caelum/stock/voices/ca_stock_evil_laugh.ogg` | Reserva sin evento narrativo asignado. |
 | `sounds/caelum/stock/voices/ca_stock_ghoul_laugh.ogg` | Reserva sin evento narrativo asignado. |
@@ -101,7 +183,7 @@ existencia de un archivo no implica que ya exista un emisor de clima o escena.
 | `sounds/caelum/ui/ca_map_transition.ogg` | Prólogo, transición y Exit. |
 | `sounds/caelum/ui/ca_menu_move.ogg` | Movimiento/cambio de opciones. |
 | `sounds/caelum/ui/ca_menu_open.ogg` | Apertura/cierre y navegación de retorno. |
-| `sounds/caelum/ui/ca_menu_select.ogg` | Confirmar/Salir e interruptores. |
+| `sounds/caelum/ui/ca_menu_select.ogg` | Confirmar/avanzar e interruptores normales. |
 | `sounds/caelum/ui/ca_recipe_learned.ogg` | Registrado; uso según llamadas de actor, sistema o TERRAIN. |
 | `sounds/caelum/weapons/ca_carabine_fire.ogg` | Registrado; uso según llamadas de actor, sistema o TERRAIN. |
 | `sounds/caelum/weather/ca_weather_rain_heavy_loop.ogg` | Registrado; uso según llamadas de actor, sistema o TERRAIN. |

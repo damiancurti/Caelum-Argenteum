@@ -46,6 +46,7 @@ class CaelumPlayer : DoomPlayer
     bool HUDCombatBlockUsesGauntlets;
     int HUDActiveShieldType;
     bool HUDHasEquippedSeal;
+    bool HUDSealChannelAvailable;
     int HUDEquippedSealType;
     int HUDEquippedSealTier;
     int HUDChannelAffectedCount;
@@ -231,6 +232,7 @@ class CaelumPlayer : DoomPlayer
     int CraftingTaskNetworkCapabilities;
     int CraftingTaskReservedBoxSlots;
     bool CraftingTaskUsesDirectPlan;
+    bool CraftingTaskUsesLimboMaterials;
     double CraftingTaskTotalSeconds;
     double CraftingTaskRemainingSeconds;
     int CraftingTaskReservedType[CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT];
@@ -334,6 +336,16 @@ class CaelumPlayer : DoomPlayer
     // Instantáneas de sólo lectura para Diario y conversaciones sociales.
     bool JournalMainM00ArgentoStarted;
     int MainM00ConvincedCountSnapshot;
+    int MainM00MagicPracticeSnapshot;
+    int MainM00RuneSequenceSnapshot;
+    int MainM00StarterOptionSnapshot;
+    int MainM00StarterSizeSnapshot;
+    int MainM00StarterWeaponSnapshot;
+    bool MainM00RonnieFinishedSnapshot;
+    int MainM00StarterRequiredSnapshot[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00StarterMissingSnapshot[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00SupplySnapshot[6];
+    bool JournalMainM00MagicPracticeDone[5];
     int MainM00SocialChanceSnapshot[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
     double MainM00LabiaSnapshot;
     // Se rearma únicamente tras cerrar toda interacción folclórica y soltar
@@ -756,6 +768,20 @@ class CaelumPlayer : DoomPlayer
         JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
             CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED);
         MainM00ConvincedCountSnapshot = persistentState.CountMainM00ConvincedResidents();
+        MainM00MagicPracticeSnapshot = persistentState.CountMainM00MagicPractice();
+        MainM00RuneSequenceSnapshot = persistentState.MainM00RuneSequenceIndex;
+        MainM00StarterOptionSnapshot = persistentState.MainM00StarterChosen ? persistentState.MainM00StarterOption : -1;
+        MainM00StarterSizeSnapshot = persistentState.MainM00StarterSize;
+        MainM00StarterWeaponSnapshot = persistentState.MainM00StarterWeaponId;
+        MainM00RonnieFinishedSnapshot = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE);
+        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
+            MainM00StarterRequiredSnapshot[i] = persistentState.MainM00StarterRequired[i];
+        for (int i = 0; i < 6; i++) MainM00SupplySnapshot[i] = persistentState.MainM00SupplyRemaining[i];
+        JournalMainM00MagicPracticeDone[0] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED);
+        JournalMainM00MagicPracticeDone[1] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED);
+        JournalMainM00MagicPracticeDone[2] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_CHANNEL_USED);
+        JournalMainM00MagicPracticeDone[3] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT);
+        JournalMainM00MagicPracticeDone[4] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED);
         for (int factionId = 0;
             factionId < CaelumConstants.FACTION_COUNT; factionId++)
         {
@@ -1382,6 +1408,7 @@ class CaelumPlayer : DoomPlayer
             CraftingTaskReservedBoxSlots;
         persistentState.CraftingTaskUsesDirectPlan =
             CraftingTaskUsesDirectPlan;
+        persistentState.CraftingTaskUsesLimboMaterials = CraftingTaskUsesLimboMaterials;
         persistentState.CraftingTaskTotalSeconds = CraftingTaskTotalSeconds;
         persistentState.CraftingTaskRemainingSeconds =
             CraftingTaskRemainingSeconds;
@@ -1423,6 +1450,7 @@ class CaelumPlayer : DoomPlayer
             persistentState.CraftingTaskReservedBoxSlots;
         CraftingTaskUsesDirectPlan =
             persistentState.CraftingTaskUsesDirectPlan;
+        CraftingTaskUsesLimboMaterials = persistentState.CraftingTaskUsesLimboMaterials;
         CraftingTaskTotalSeconds = persistentState.CraftingTaskTotalSeconds;
         CraftingTaskRemainingSeconds =
             persistentState.CraftingTaskRemainingSeconds;
@@ -4255,6 +4283,7 @@ class CaelumPlayer : DoomPlayer
     void SyncHUDActiveWeaponState()
     {
         HUDHasEquippedSeal = false;
+        HUDSealChannelAvailable = CombatChannelModeActive || CanStartSealChannel();
         HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
         HUDEquippedSealTier = 0;
         for (Inventory sealCursor = Inv; sealCursor != null;
@@ -5693,6 +5722,7 @@ class CaelumPlayer : DoomPlayer
         CraftingTaskNetworkCapabilities = 0;
         CraftingTaskReservedBoxSlots = 0;
         CraftingTaskUsesDirectPlan = false;
+        CraftingTaskUsesLimboMaterials = false;
         CraftingTaskTotalSeconds = 0.0;
         CraftingTaskRemainingSeconds = 0.0;
         for (int slot = 0;
@@ -5902,8 +5932,9 @@ class CaelumPlayer : DoomPlayer
     {
         if (DerivedStats == null) { return false; }
         RefreshCarriedInventorySummary();
-        double personalDelta = 0.0;
-        double boxRawDelta = Max(0.0, outputRawWeight);
+        bool personalOutput = CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
+        double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
+        double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -6797,6 +6828,14 @@ class CaelumPlayer : DoomPlayer
 
     void StartPreparedCraftingTask(int taskKind, double durationSeconds)
     {
+        CraftingTaskUsesLimboMaterials = false;
+        for (int slot = 0; slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
+        {
+            if (CraftingTaskReservedUnits[slot] <= 0) continue;
+            let input = FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                CraftingTaskReservedType[slot], CraftingTaskReservedTier[slot]);
+            if (input != null && input.LimboQuestUnits > 0) CraftingTaskUsesLimboMaterials = true;
+        }
         CraftingTaskKind = taskKind;
         CraftingTaskRecipeIndex = CraftingSelectionRecipe;
         CraftingTaskTier = CraftingSelectionTier;
@@ -6844,6 +6883,7 @@ class CaelumPlayer : DoomPlayer
 
         RefreshCarriedInventorySummary();
         if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY
+            && !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)
             && MagicBoxUsedSlots + 1 > MagicBoxMaximumSlots)
         {
             LastCraftingAction =
@@ -6890,7 +6930,7 @@ class CaelumPlayer : DoomPlayer
         }
         else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
         {
-            CraftingTaskReservedBoxSlots = 1;
+            CraftingTaskReservedBoxSlots = CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) ? 0 : 1;
             if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
             {
                 ClearCraftingTaskData();
@@ -7980,6 +8020,8 @@ class CaelumPlayer : DoomPlayer
         {
             return false;
         }
+        material.LimboSupplyUnits = Max(0, material.LimboSupplyUnits - requiredAmount);
+        material.LimboQuestUnits = Max(0, material.LimboQuestUnits - requiredAmount);
         material.Amount -= requiredAmount;
         if (material.Amount <= 0) { material.Destroy(); }
         return true;
@@ -8171,10 +8213,12 @@ class CaelumPlayer : DoomPlayer
         if (existingOutput != null)
         {
             existingOutput.Amount += CraftingOutputAmount;
+            if (CraftingTaskUsesLimboMaterials) existingOutput.LimboQuestUnits += CraftingOutputAmount;
             if (sendOutputToMagicBox) { existingOutput.InMagicBox = true; }
         }
         else
         {
+            if (CraftingTaskUsesLimboMaterials) detachedOutput.LimboQuestUnits = CraftingOutputAmount;
             detachedOutput.InMagicBox = sendOutputToMagicBox;
             detachedOutput.AttachToOwner(self);
         }
@@ -8420,7 +8464,7 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
             return;
         }
-        if (!HasNativeMagicBoxSlotAvailable())
+        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
@@ -8468,7 +8512,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionSize
         );
         result.Equipped = false;
-        result.InMagicBox = true;
+        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
@@ -8487,7 +8531,7 @@ class CaelumPlayer : DoomPlayer
                 CraftingSelectedEssenceWeaponType,
                 CraftingSelectionTier,
                 CraftingSelectionSize,
-                true
+                result.InMagicBox
             );
             persistentState.SetWeaponEquipped(
                 CraftingSelectedEssenceWeaponType,
@@ -8497,6 +8541,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
 
+        CaelumMainM00RonnieTrial.RecordCraft(self, result);
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
         ApplyCharacterProfile();
         PersistCharacterState();
@@ -8654,7 +8699,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectedWeapon
         );
         if (playableWeaponType < 0 || WeaponModel == null) { return; }
-        if (!HasNativeMagicBoxSlotAvailable())
+        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
@@ -8704,7 +8749,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionSize
         );
         result.Equipped = false;
-        result.InMagicBox = true;
+        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
@@ -8723,7 +8768,7 @@ class CaelumPlayer : DoomPlayer
                 playableWeaponType,
                 CraftingSelectionTier,
                 CraftingSelectionSize,
-                true
+                result.InMagicBox
             );
             persistentState.SetWeaponEquipped(
                 playableWeaponType,
@@ -8733,6 +8778,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
 
+        CaelumMainM00RonnieTrial.RecordCraft(self, result);
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
         ApplyCharacterProfile();
         PersistCharacterState();
@@ -9398,6 +9444,21 @@ class CaelumPlayer : DoomPlayer
 
     void ToggleSelectedMagicBox()
     {
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
+            if (material != null && material.LimboQuestUnits > 0)
+            { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+              CaelumMainM00RonnieTrial.Feedback(self, "CA_M01_SUPPLY_RESERVED"); return; }
+        }
+
+        let loan = GetSelectedNativeEquipmentItem();
+        if (loan != null && loan.IsLimboTemporary())
+        {
+            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_LOAN_RESERVED", true);
+            return;
+        }
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         SyncLiveMagicBoxOwnershipFromPersistentState();
         if (!MagicBoxOwned)
@@ -9985,7 +10046,7 @@ class CaelumPlayer : DoomPlayer
 
     bool IsDurabilityTaskEquipment(CaelumEquipmentItem item)
     {
-        return item != null
+        return item != null && !item.IsLimboTemporary()
             && (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
                 || item.EquipmentKind
                     == CaelumConstants.EQUIPMENT_KIND_ARMOR
@@ -10425,6 +10486,8 @@ class CaelumPlayer : DoomPlayer
         }
         CaelumEquipmentItem target = GetSelectedNativeEquipmentItem();
         if (!IsDurabilityTaskEquipment(target)) { return; }
+        if (target.IsLimboFirstWeapon())
+        { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED; return; }
         if (target.Equipped)
         {
             LastEquipmentAction =
@@ -10787,7 +10850,7 @@ class CaelumPlayer : DoomPlayer
         LastDismantledBasicUnits = 0;
         LastDismantledTierUnits = 0;
         CaelumEquipmentItem weapon = GetSelectedNativeEquipmentItem();
-        if (weapon == null
+        if (weapon == null || weapon.IsLimboTemporary() || weapon.IsLimboFirstWeapon()
             || weapon.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             return;
@@ -10966,6 +11029,21 @@ class CaelumPlayer : DoomPlayer
 
     void DropSelectedNativeInventoryItem()
     {
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
+            if (material != null && material.LimboQuestUnits > 0)
+            { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+              CaelumMainM00RonnieTrial.Feedback(self, "CA_M01_SUPPLY_RESERVED"); return; }
+        }
+
+        let loan = GetSelectedNativeEquipmentItem();
+        if (loan != null && loan.IsLimboTemporary())
+        {
+            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_LOAN_RESERVED", true);
+            return;
+        }
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (IsSelectedMaterialCraftingLocked()
             || IsEquipmentItemCraftingLocked(EquipmentSelectionItemId))
@@ -15395,6 +15473,7 @@ class CaelumPlayer : DoomPlayer
             chargedAttack
         );
         LastStaffCastCompleted = true;
+        CaelumMainM00MagicTrial.RecordCast(self, secondaryAttack, animaCost);
     }
 
     void PerformDebugStaffAttack(bool secondaryAttack)
@@ -15953,6 +16032,7 @@ class CaelumPlayer : DoomPlayer
         }
         CurrentAdrenaline = Max(0.0,
             CurrentAdrenaline - CombatChannelAdrenalinePerTic);
+        CaelumMainM00MagicTrial.RecordChannel(self);
         Vel.X = 0.0; Vel.Y = 0.0;
         CancelCombatBlockMode();
         CancelRangedAim();
@@ -15961,6 +16041,20 @@ class CaelumPlayer : DoomPlayer
         CancelPendingStaffCast(false);
         // El actor del canal mantiene su propio epicentro; Quintaesencia lo
         // sitúa por encima del jugador en vez de atravesar su cuerpo.
+    }
+
+    // Una única regla alimenta User2 y el icono del HUD, incluida la ayuda
+    // inicial de Caella. La consulta no consume ni concede Adrenalina.
+    bool CanStartSealChannel()
+    {
+        if (CombatChannelCooldownRemaining > 0.0 || player == null
+            || player.playerstate != PST_LIVE || health <= 0
+            || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
+            || IsPhysicallyImmobilized() || StaffCastPending) return false;
+        CaelumEquipmentItem seal = GetEquippedSeal();
+        if (seal == null) return false;
+        return CurrentAdrenaline >= GetSealChannelAdrenalinePerTic(seal.Tier)
+            || CaelumMainM00MagicTrial.CanPrepareChannel(self, seal);
     }
 
     // User2 alterna la canalizacion; Reload conserva sus funciones propias.
@@ -15972,10 +16066,7 @@ class CaelumPlayer : DoomPlayer
             StopSealChannel(true);
             return;
         }
-        if (CombatChannelCooldownRemaining > 0.0 || player == null
-            || player.playerstate != PST_LIVE || health <= 0
-            || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
-            || IsPhysicallyImmobilized() || StaffCastPending) return;
+        if (!CanStartSealChannel()) return;
         CaelumEquipmentItem seal = GetEquippedSeal();
         if (seal == null) return;
         CombatChannelSealType = Clamp(seal.ItemType, 0,
@@ -15983,6 +16074,7 @@ class CaelumPlayer : DoomPlayer
         CombatChannelSealTier = Clamp(seal.Tier, 1, 3);
         CombatChannelAdrenalinePerTic =
             GetSealChannelAdrenalinePerTic(CombatChannelSealTier);
+        CaelumMainM00MagicTrial.PrepareChannel(self, seal);
         if (CurrentAdrenaline < CombatChannelAdrenalinePerTic) return;
         CombatChannelRadius = CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
             * CaelumConstants.SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER
@@ -15999,7 +16091,7 @@ class CaelumPlayer : DoomPlayer
         CancelRangedAim();
         CancelRangedReload();
         CancelWeaponCharge();
-        ShowAbilitySuccessMessage();
+        // El propio icono del Sello muestra su estado; no tapa el centro.
     }
 
     // User1/User3/User4 quedan conectados al arma pero no ejecutan mecánicas

@@ -108,6 +108,8 @@ class CaelumMainM00SocialDialogue : Object play
         int conversation = GetConversationId(resident);
         if (conversation == 0) { return false; }
         Sync(user);
+        CaelumMainM00MagicTrial.Sync(user);
+        CaelumMainM00RonnieTrial.Sync(user);
         if (user.StaffCastPending) { user.CancelPendingStaffCast(false); }
         user.EquipmentMenuOpen = false;
         user.CloseCraftingStationSession();
@@ -236,6 +238,11 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
             text.Replace("%RULO_CHANCE%", String.Format("%d", user.MainM00SocialChanceSnapshot[0]));
             text.Replace("%CAELLA_CHANCE%", String.Format("%d", user.MainM00SocialChanceSnapshot[2]));
             text.Replace("%LABIA%", String.Format("%.2f", user.MainM00LabiaSnapshot));
+            text.Replace("%MAGIC_COUNT%", String.Format("%d", user.MainM00MagicPracticeSnapshot));
+            text.Replace("%RUNES%", String.Format("%d", user.MainM00RuneSequenceSnapshot));
+            text.Replace("%STARTER%", CaelumMainM00StarterRules.GetName(user.MainM00StarterOptionSnapshot));
+            for (int i = 0; i < 6; i++)
+                text.Replace(String.Format("%%SUPPLY%d%%", i), String.Format("%d", user.MainM00SupplySnapshot[i]));
         }
         if (mCurNode.UserData ~== "rulo_read_success")
         {

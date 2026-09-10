@@ -782,6 +782,40 @@ class CaelumHUDOverlay : EventHandler
         Screen.Dim(0xA45A62, strength * 0.75, width - bandWidth, 0, bandWidth, height);
     }
 
+    // Indicador lateral: utiliza el icono real del Sello y su disponibilidad
+    // autoritativa. La escala de grises conserva la transparencia y el detalle.
+    ui void DrawSealIndicator(CaelumPlayer localPlayer)
+    {
+        if (!localPlayer.HUDHasEquippedSeal) return;
+        String path = CaelumIconResolver.ResolveEquipmentPath(
+            CaelumConstants.EQUIPMENT_KIND_SEAL,
+            localPlayer.HUDEquippedSealType, -1,
+            localPlayer.HUDEquippedSealTier
+        );
+        let icon = TexMan.CheckForTexture(path, TexMan.Type_Any);
+        if (!icon.IsValid()) return;
+        bool available = localPlayer.HUDSealChannelAvailable;
+        Screen.DrawTexture(icon, false, 580.0, 132.0,
+            DTA_DESTWIDTHF, 44.0, DTA_DESTHEIGHTF, 44.0,
+            DTA_LEFTOFFSETF, 0.0, DTA_TOPOFFSETF, 0.0,
+            DTA_DESATURATE, available ? 0 : 255,
+            DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true
+        );
+        // Si falta Adrenalina no hay un tiempo de recuperación garantizado:
+        // sólo la recarga real produce una cuenta regresiva.
+        if (localPlayer.CombatChannelCooldownRemaining > 0.0)
+        {
+            int seconds = Max(1, int(Ceil(localPlayer.CombatChannelCooldownRemaining)));
+            String countdown = String.Format("%ds", seconds);
+            double x = 602.0 - HUDFont.StringWidth(countdown) * 0.5;
+            Screen.DrawText(HUDFont, Font.CR_WHITE, x, 180.0, countdown,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true, DTA_SHADOW, true
+            );
+        }
+    }
+
     // RenderOverlay draws only client-side information and never changes the
     // gameplay resource. A 640x360 virtual canvas keeps the placement stable
     // on Damian's 1920x1080 display and other aspect ratios.
@@ -953,55 +987,7 @@ class CaelumHUDOverlay : EventHandler
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
 
-        if (localPlayer.HUDHasEquippedSeal)
-        {
-            String sealName = CaelumDisplayNames.FormatSealName(
-                localPlayer.HUDEquippedSealType,
-                localPlayer.HUDEquippedSealTier
-            );
-            String channelLine;
-            int channelColor = Font.CR_WHITE;
-            if (localPlayer.CombatChannelModeActive)
-            {
-                channelLine = String.Format(
-                    "%s: %s | %s: %d",
-                    StringTable.Localize("CA_HUD_SEAL_CHANNEL_ACTIVE", false),
-                    sealName,
-                    StringTable.Localize("CA_HUD_SEAL_TARGETS", false),
-                    localPlayer.HUDChannelAffectedCount
-                );
-                channelColor = Font.CR_GREEN;
-            }
-            else if (localPlayer.CombatChannelCooldownRemaining > 0.0)
-            {
-                channelLine = String.Format(
-                    "%s: %s | %s: %.1fs",
-                    StringTable.Localize("CA_HUD_EQUIPPED_SEAL", false),
-                    sealName,
-                    StringTable.Localize("CA_HUD_SEAL_COOLDOWN", false),
-                    localPlayer.CombatChannelCooldownRemaining
-                );
-                channelColor = Font.CR_GOLD;
-            }
-            else
-            {
-                channelLine = String.Format(
-                    "%s: %s | %s",
-                    StringTable.Localize("CA_HUD_EQUIPPED_SEAL", false),
-                    sealName,
-                    StringTable.Localize("CA_HUD_SEAL_READY", false)
-                );
-            }
-            double channelX = 320.0
-                - HUDFont.StringWidth(channelLine) * 0.5;
-            Screen.DrawText(
-                HUDFont, channelColor, channelX, 84.0, channelLine,
-                DTA_VIRTUALWIDTHF, 640.0,
-                DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true,
-                DTA_SHADOW, true
-            );
-        }
+        DrawSealIndicator(localPlayer);
 
         if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
         {

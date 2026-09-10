@@ -42,6 +42,21 @@ class CaelumPersistentCharacterState : Inventory
     // CheckOnceKey estables: Rulo=0 y Caella=2. Ronnie no lanza dados.
     // Estos datos viajan con el personaje y no se guardan en el actor del NPC.
     int MainM00SocialVersion;
+    int MainM00RuneSequenceIndex;
+    int MainM00RuneErrors;
+    double MainM00AnimaAfterCast;
+    int MainM00PreviousWeaponId;
+    int MainM00PreviousSealId;
+    // La elección, el préstamo y el stock no viven en el NPC/cofre recreable.
+    bool MainM00StarterChosen;
+    int MainM00StarterOption;
+    int MainM00StarterSize;
+    int MainM00RonnieSwordId;
+    int MainM00StarterWeaponId;
+    bool MainM00SuppliesInitialized;
+    int MainM00StarterRequired[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00SupplyInitial[6];
+    int MainM00SupplyRemaining[6];
     bool MainM00ResidentMet[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
     bool MainM00SocialAdvice[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
     int MainM00SocialResult[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
@@ -142,6 +157,7 @@ class CaelumPersistentCharacterState : Inventory
     int CraftingTaskNetworkCapabilities;
     int CraftingTaskReservedBoxSlots;
     bool CraftingTaskUsesDirectPlan;
+    bool CraftingTaskUsesLimboMaterials;
     double CraftingTaskTotalSeconds;
     double CraftingTaskRemainingSeconds;
     int CraftingTaskReservedType[16];
@@ -263,6 +279,19 @@ class CaelumPersistentCharacterState : Inventory
     void ClearMainM00QuestRecord()
     {
         ResetMainM00SocialState();
+        MainM00RuneSequenceIndex = 0;
+        MainM00RuneErrors = 0;
+        MainM00AnimaAfterCast = 0.0;
+        MainM00PreviousWeaponId = 0;
+        MainM00PreviousSealId = 0;
+        MainM00StarterChosen = false;
+        MainM00StarterOption = 0;
+        MainM00StarterSize = 0;
+        MainM00RonnieSwordId = 0;
+        MainM00StarterWeaponId = 0;
+        MainM00SuppliesInitialized = false;
+        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++) MainM00StarterRequired[i] = 0;
+        for (int i = 0; i < 6; i++) { MainM00SupplyInitial[i] = 0; MainM00SupplyRemaining[i] = 0; }
         int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
         QuestState[questId] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
         QuestStage[questId] = CaelumConstants.MAIN_M00_STATE_INITIALIZE;
@@ -287,6 +316,11 @@ class CaelumPersistentCharacterState : Inventory
     void InitializeNewQuestState()
     {
         ResetMainM00SocialState();
+        MainM00RuneSequenceIndex = 0;
+        MainM00RuneErrors = 0;
+        MainM00AnimaAfterCast = 0.0;
+        MainM00PreviousWeaponId = 0;
+        MainM00PreviousSealId = 0;
         for (int questId = 0;
             questId < CaelumConstants.QUEST_CAPACITY; questId++)
         {
@@ -642,6 +676,81 @@ class CaelumPersistentCharacterState : Inventory
         MainM00Flag[CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE] = true;
         RefreshMainM00RecruitmentObjective();
         return true;
+    }
+
+    bool IsMainM00MagicActive()
+    {
+        EnsureQuestStateInitialized();
+        return QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] == CaelumConstants.QUEST_STATE_ACTIVE
+            && QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] == CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
+            && MainM00Flag[CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED];
+    }
+
+    bool BeginMainM00Caella()
+    {
+        if (!HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE)
+            || !TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE,
+                CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)) return false;
+        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED);
+        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_HEARD_CAELLA_QUOTE);
+        RefreshMainM00MagicObjective();
+        return true;
+    }
+
+    int CountMainM00MagicPractice()
+    {
+        int count = 0;
+        for (int flag = CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED;
+            flag <= CaelumConstants.MAIN_M00_FLAG_MAGIC_CHANNEL_USED; flag++)
+            if (HasMainM00Flag(flag)) count++;
+        if (HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT)) count++;
+        if (HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED)) count++;
+        return count;
+    }
+
+    bool IsMainM00MagicPracticeComplete() { return CountMainM00MagicPractice() == 5; }
+
+    void RefreshMainM00MagicObjective()
+    {
+        if (!HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED)) return;
+        int index = GetQuestObjectiveStorageIndex(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
+            CaelumConstants.MAIN_M00_OBJECTIVE_SOLVE_RIDDLE);
+        QuestObjectiveKnown[index] = true;
+        QuestObjectiveTarget[index] = 9;
+        QuestObjectiveProgress[index] = CountMainM00MagicPractice() + MainM00RuneSequenceIndex;
+    }
+
+    static int GetMainM00RuneElement(int index)
+    {
+        if (index == 0) return CaelumConstants.ESSENCE_EARTH;
+        if (index == 1) return CaelumConstants.ESSENCE_WIND;
+        if (index == 2) return CaelumConstants.ESSENCE_FIRE;
+        if (index == 3) return CaelumConstants.ESSENCE_WATER;
+        return -1;
+    }
+
+    // -1: error; 0: intento inválido; 1: avance; 2: cierre único de la rama.
+    int ActivateMainM00Rune(int element)
+    {
+        if (!IsMainM00MagicActive() || !IsMainM00MagicPracticeComplete()
+            || MainM00RuneSequenceIndex < 0 || MainM00RuneSequenceIndex >= 4) return 0;
+        if (element != GetMainM00RuneElement(MainM00RuneSequenceIndex))
+        {
+            MainM00RuneErrors = Min(MainM00RuneErrors + 1, 1000000);
+            MainM00RuneSequenceIndex = 0;
+            for (int i = 0; i < 4; i++) MainM00Flag[CaelumConstants.MAIN_M00_FLAG_RUNE_EARTH + i] = false;
+            RefreshMainM00MagicObjective();
+            return -1;
+        }
+        MainM00Flag[CaelumConstants.MAIN_M00_FLAG_RUNE_EARTH + MainM00RuneSequenceIndex] = true;
+        MainM00RuneSequenceIndex++;
+        RefreshMainM00MagicObjective();
+        if (MainM00RuneSequenceIndex < 4) return 1;
+        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN);
+        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE);
+        TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE,
+            CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE);
+        return 2;
     }
 
     bool SetQuestStage(int questId, int stage)

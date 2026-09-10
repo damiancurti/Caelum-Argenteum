@@ -120,6 +120,12 @@ class CaelumConstants : Object
     const MAIN_M00_FLAG_NOTICED_WRONG_CLOCKS = 55;
     const MAIN_M00_FLAG_NOTICED_ROOM_GEOMETRY = 56;
 
+    // Extensiones aditivas de Caella: no desplazan los flags aceptados.
+    const MAIN_M00_FLAG_MAGIC_ANIMA_SPENT = 57;
+    const MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED = 58;
+    const CA_ITEMFLAG_LIMBO_TEMP = 1;
+    const CA_ITEMFLAG_LIMBO_PRESERVABLE = 2;
+
     // Prueba de Argento: valores elegidos por el autor para V4.33.0f.
     // Persuasión y Emoción siguen Tipo 4; Labia conserva Tipo 2.
     const MAIN_M00_RESIDENT_RULO = 0;

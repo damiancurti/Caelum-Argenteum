@@ -6,6 +6,8 @@ user bool ca_debug_attributes = false;
 // CVars desde ámbito UI sin convertir navegación visual en estado de juego.
 user bool ca_journal_open = false;
 user int ca_journal_page = 0;
+user bool ca_journal_quest_detail = false;
+user int ca_journal_quest_scroll = 0;
 
 // Puente local entre el creador previo a la partida y el primer CaelumPlayer.
 // El inventario persistente toma el relevo apenas comienza el mapa.

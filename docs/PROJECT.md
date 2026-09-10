@@ -1,18 +1,32 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0h — 2026-09-10.
+Versión documental: 4.33.0l — 2026-09-10.
 
 ## Estado actual
 
-**4.33.0f es la base jugable aceptada.** El autor confirmó todas las pruebas
-de conversaciones. La prueba de Argento termina en fase 35: el Diario indica
-Hablar con Caella. La geometría de MAP01 está aceptada hasta 0e.
+**4.33.0k aceptado:** el autor confirmó que todas las pruebas dieron bien.
+Quedan aceptados Caella y sus runas, Detalle con F, limpieza de las seis salas,
+y las correcciones anteriores de HUD, idioma, estaciones y audio.
 
-**4.33.0h es el siguiente parche de corrección y limpieza.** El informe del
-autor sobre 0g dejó pendientes el audio de portada, la superposición nativa,
-el arpa al avanzar y su corte. 0h los corrige sobre el ZIP completo aportado,
-reordena archivos auxiliares y recupera el roadmap completo. La siguiente
-ampliación narrativa es la prueba mágica de Caella; no se activa en 0h.
+**4.33.0l implementa elección, recolección y primera arma de Ronnie.** Ofrece
+16 armas físicas y 20 variantes de esencia T1, independientemente de la clase.
+Cada opción se explica antes de confirmar. Enseña la receta y sus dependencias;
+presta la espada, incorpora tres arbustos 2D y un cofre de gemas/cuero de vaca.
+El crafting real entrega el arma al inventario personal, sin adelantar la Caja.
+Al volver, Ronnie retira sólo su espada. Se conserva la primera arma fabricada.
+
+El cofre deriva sus cantidades de las recetas vigentes, al talle del personaje
+y al 25% en todas las capas. Stock, elección, tareas e identidades persisten.
+Detalle muestra faltantes, componentes ya disponibles y referencias del lugar.
+No cambian recetas, costes de extracción, WAD, audio, HUD ni modelos aceptados.
+
+La parte material llega a fase 60. **No acredita todavía toda la supervivencia
+de la especificación:** faltan lecciones de comida, bebida, Aire, agua y una
+reparación real; revisar el préstamo con Ronnie no equivale a esa reparación.
+Rulo/Toro, Palomo final, Caja, El Loco y salida narrativa siguen por implementar.
+
+Formato: sólo archivos nuevos/modificados para copiar, más un TXT de pruebas.
+La migración 0h aceptada se conserva; V5 reorganizará el código de programación.
 
 ## Premisas permanentes
 
@@ -28,7 +42,8 @@ ampliación narrativa es la prueba mágica de Caella; no se activa en 0h.
    El diseño del autor y sus correcciones posteriores fijan esos datos.
 5. Proteger lo ya aceptado y validar sólo lo afectado por una revisión.
    Distinguir análisis estático, prueba aislada del motor y aceptación del autor.
-6. Entregar únicamente archivos nuevos/modificados y una aplicación reproducible.
+6. Entregar únicamente archivos nuevos/modificados para copiar y pegar, más
+   un TXT con aplicación y pruebas necesarias; sin instaladores del parche.
    No incluir IWAD, ejecutables, fixtures de prueba ni un PK3 completo como si
    fuera la base definitiva cuando sólo se dispone de un delta.
 7. **Documentación consolidada y actualizada en cada parche.** README.md es la
@@ -45,8 +60,8 @@ ampliación narrativa es la prueba mágica de Caella; no se activa en 0h.
 
 10. **Carpetas con una responsabilidad clara.** Antes de retirar archivos,
     comprobar consumidores y procedencia. Conservar fuentes útiles en assets,
-    empaquetar sólo src y respaldar retiradas conocidas. Los scripts temporales
-    de cada entrega no se acumulan en el proyecto activo. V5.0 reorganiza el
+    empaquetar sólo src y respaldar retiradas conocidas. El TXT de pruebas
+    de cada entrega no se acumula en los cinco documentos activos. V5.0 reorganiza el
     código mediante cambios pequeños con compatibilidad de guardado.
 
 ## Mapa de documentos
@@ -72,14 +87,13 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 
 | Orden | Bloque | Alcance restante / criterio de cierre |
 | --- | --- | --- |
-| 0 | 4.33.0h: audio y limpieza | Portada audible y continua; una frase de arpa por página; constructor funcionando tras limpieza; documentación vigente. |
-| 1 | Caella: prueba mágica, fases 40–45 | Diálogo, acertijo, magia y acceso al pasadizo según MAP01.txt; reconstrucción al guardar/cargar y alternativas previstas. |
-| 2 | Ronnie: supervivencia y recolección, fases 50–55 | Necesidades, recursos de la cueva y materiales; objetivos claros y registro persistente. La geometría y los recursos aceptados se reutilizan. |
-| 3 | Preparar el arma inicial, fase 60 | Elegir/desbloquear la receta autorizada, entregar materiales exactos y fabricar/equipar el arma; evitar duplicados y bloqueos del tutorial. |
-| 4 | Rulo y Toro, fases 70–75 | Entrenamiento, combate y resolución de la prueba conforme al diseño. Mantener las rutas de armas y daño ya aceptadas. |
-| 5 | Palomo final, fase 80 | Aparición y ubicación final, cierre de las cuatro ramas y entrega única de la Caja Mágica. Palomo conserva su papel de guía. |
-| 6 | El Loco y salida, fases 90–100 | Captura/recompensa única, misión completada y transición narrativa a MAP02; persistencia del personaje y sus objetos. |
-| 7 | Alcantarillas de MAP02 | Construir el siguiente mapa narrativo; mantener disponible un campo independiente de diagnóstico de actores. El MAP02 actual todavía es ese campo. |
+| 0 | Base hasta 4.33.0k | Aceptada por el autor: prólogo, Argento, Caella, geometría, HUD/audio, estaciones y Detalle. Migración 0h conservada. |
+| 1 | 4.33.0l: materiales y primera arma, fases 50–60 | Implementado; validar elección libre, recetas, arbustos, cofre, préstamo, crafting y persistencia. |
+| 2 | Completar enseñanza de supervivencia de Ronnie | Reparación real, alimento/agua, Aire y paso de agua seguro; integrar los objetivos antes de habilitar Rulo. Fijar valores tutoriales pendientes sin cambiar el balance general. |
+| 3 | Rulo y Toro, fases 70–75 | Entrenamiento, combate y resolución; contemplar todas las armas elegibles y asignar munición tutorial a las que la requieren. |
+| 4 | Palomo final, fase 80 | Aparición/ubicación final, cierre de las cuatro ramas y entrega única de la Caja Mágica. |
+| 5 | El Loco y salida, fases 90–100 | Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
+| 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -100,7 +114,7 @@ no significa que todo el contenido de ese sistema esté terminado.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Falta comerciante canónico posterior y contenido de tiendas. Extender la vista modular de espada/manos/escudo 0o a las demás armas con arte propio. |
 | V4.33: misiones, reputación y facciones | Registro por personaje aceptado; terminar MAP01, desarrollar misiones secundarias/cadenas y consecuencias jugables de pertenencia/reputación. Los cuatro dominios técnicos actuales no equivalen a las ocho facciones narrativas completas. |
 | V4.34: arquitectura del mundo y viajes | Reutilizar módulos de habitación/escalera ya validados; puertas cerradas/con llave y pisos adicionales. Definir ubicaciones, conexiones, caravanas y puntos de integración de viajes/eventos. No confundir arquitectura de mapas con refactor de código. |
-| V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
+| V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Activación de cartas poseídas/seleccionadas con User3, costes/cooldowns/persistencia y progresión; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar los bloques V4 pendientes. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
@@ -188,76 +202,56 @@ antes de escribir y se informa con su ruta.
 
 ## Aplicación y mantenimiento
 
-Extraer el parche fuera del proyecto y ejecutar APLICAR_4_33_0h.cmd, indicando
-la carpeta completa 0g. Primero se comprueban los hashes; luego se crea y
-verifica un ZIP en archive; se instala, traslada y retira; finalmente se
-reconstruye el PK3 con build_dev.ps1. Si una copia o el build falla, se restauran
-los archivos originales. Una reaplicación completa no crea otro respaldo.
+Con GZDoom cerrado, copiar src, assets, docs y README.md del parche sobre la carpeta
+completa 0k y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0l.txt.
 
-run_dev.bat sigue usando las rutas del motor/IWAD de la instalación aportada.
-build_dev.ps1 funciona desde cualquier directorio y no requiere Python.
-validate_project.py es una comprobación de mantenimiento opcional para jugar,
-obligatoria al preparar entregas: documentación, referencias y estructura.
-Los generadores en assets tampoco son dependencias de ejecución.
+Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
+instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
+del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
+pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0h
+## Validación de 4.33.0l
 
-Resultados sobre la revisión final:
+- GZDoom 4.14.2 compila y carga los 4.151 archivos de runtime sin errores ni
+  advertencias nuevas. La matriz central pasó 102 comprobaciones: préstamo,
+  cierre de Caella sin retirar la espada de Ronnie, receta/dependencias, stock,
+  protección de suministros, resultados personales y primera arma por ItemId.
+- Se compararon 180 planes (36 armas por cinco talles) con el blueprint real
+  del motor, al 25% en cada capa. Coinciden todos; el cofre cubre cada opción.
+  Los nodos existentes alcanzan los máximos: madera 336.000, cobre 4.838.400,
+  estaño 537.600 y fibra 144.000 unidades. No se aumentaron vetas ni árboles.
+- Se completaron 36 transacciones reales de crafting, una por elección en M,
+  sin Caja Mágica. El ensayo inyecta materias primas y adelanta el reloj de la
+  tarea para verificar reservas/salida; no acredita el ritmo de recolección ni
+  la duración de una partida manual. Siete comprobaciones adicionales verifican
+  procedencia temporal de un componente real, protección y cálculo de faltantes.
+- Diez comprobaciones de interfaz nativa: Usar abre Ronnie y cofre, elegir
+  Libro/Aire llega a la receta correcta y retirar topacio cambia el stock.
+  Capturas revisadas: familias, explicación/confirmación, préstamo, ambas
+  páginas del cofre, Detalle paginado y arbusto transparente en la cueva.
+- 42 comprobaciones de persistencia y viaje, cero fallos: guardar con 0k en
+  fase 45 y espada de cueva recogida; actualizar la misma instalación a 0l;
+  adoptar esa instancia, retirar gemas y guardar con tarea/reservas activas;
+  cargar, cancelar y devolver sólo suministros, preservando 123 unidades propias;
+  fabricar, devolver la espada, guardar/cargar con arma inicial y una adicional;
+  cambiar de mapa conservando la primera y retirando temporales. El arma activa
+  temporal se sustituye por la inicial sin referencias a equipo destruido.
+- La espada también se ensayó por la ruta real de ataque/LineAttack: el
+  principal alcanza el arbusto y produce fibra; el secundario no la produce.
+  La dispersión existente sigue aplicándose: hay que alcanzar la planta.
+- README y cinco docs actualizados; validación de recursos/traducciones sin
+  errores. WAD, 74 archivos de audio y modelos aceptados mantienen sus huellas.
+  El ZIP se coteja contra 0k y sólo contiene el delta y su TXT de pruebas.
 
-- GZDoom 4.14.2 cargó las 4.277 entradas del runtime completo y MAP01 sin
-  sustitutos de dependencias. La prueba enfocada de audio pasó **19
-  comprobaciones y cero fallos**: frase de arpa, 14 alias nativos, intro y
-  tres valores de probabilidad social conservados. MAP01 informó CA_MUS01
-  en bucle; la portada no reemplazó su música.
-- Captura OpenAL Wave File Writer de la portada durante 21,65 s: cinco
-  repeticiones audibles de la pieza; el menú se abrió durante la captura.
-  El motor informó bucle activo y manejador de reproducción válido a los
-  ticks UI 50, 250 y 500. La señal siguió presente después de los primeros
-  cuatro segundos, a diferencia de lo que comprobaba 0g.
-- Conversación nativa de Argento abierta con éxito y avance real por
-  argento_offer → argento_residents → argento_quote. La captura mostró tres
-  frases independientes de unos 2,57 s: apertura y dos páginas siguientes.
-  No se agregó una segunda llamada manual ni se usó el ChatSound heredado.
-- Avance rápido por esas tres páginas: una sola frase continuó hasta terminar,
-  sin superposición. La marca singular evita apilar copias cuando la anterior
-  aún suena; un nuevo avance después de terminar vuelve a emitir el arpa.
-- El derivado conserva 113.400 muestras, 44.100 Hz, dos canales y caída de
-  450 ms. La intro y el loop de arpa original conservan sus hashes.
-- Aplicador ejecutado con PowerShell 7.6.2: **38 comprobaciones, cero fallos**.
-  CheckOnly sin mutación; instalación de los 22 archivos nuevos/modificados;
-  20 traslados con hashes idénticos; retiro de tools/art_source; respaldo
-  completo y verificado; archivos locales desconocidos conservados;
-  reaplicación idempotente; base alterada rechazada antes de escribir;
-  fallo de copia después de varios traslados con restauración exacta;
-  fallo del build después de toda la limpieza con restauración exacta y PK3
-  anterior intacto. Se corrigió el argumento nulo del reemplazo .NET y las
-  salidas tempranas usan return para permitir invocación reutilizable.
-- El PK3 reconstruido coincidió byte por byte, por entrada, con los 4.277
-  archivos de src y no contiene entradas de directorio. El constructor se
-  ejecutó desde fuera de la raíz. Los tres generadores cargan sus dependencias
-  y muestran --help desde sus nuevas rutas.
-- Mapas, CAPALOMO, constantes, estado persistente y fuentes de arte conservan
-  los hashes aprobados. El verificador de proyecto comprueba documentación,
-  enlaces, 74 audios, registros nativos y referencias de construcción.
+Pruebas del autor: recorrer una elección física y otra de esencia usando
+guardados separados; recoger fibra con el principal de la espada y comprobar
+que el secundario no la entrega; retirar/devolver suministros; fabricar en
+la red exterior, por capas si hace falta; guardar/cargar antes y después de
+devolver el préstamo. El TXT del ZIP contiene los pasos concretos.
 
-
-La base completa se probó con GZDoom 4.14.2 y Freedoom como IWAD de desarrollo,
-sin los dos sustitutos de dependencias usados en la reconstrucción anterior.
-La salida OpenAL se capturó a WAV; las comprobaciones de señal no sustituyen
-la valoración musical del autor. El motor/IWAD y los observadores de prueba
-quedan fuera del parche. La ejecución de CMD/Windows PowerShell 5.1 permanece
-pendiente en Windows; se prueba el aplicador con PowerShell real sobre Linux.
-
-Pruebas breves del autor para aceptar 0h:
-
-1. Ejecutar el CMD sobre 0g. Debe terminar con el PK3 reconstruido; run_dev.bat
-   debe seguir iniciando y tools/art_source dejar de estar en la raíz auditada.
-2. Abrir el juego, esperar más de diez segundos y abrir el menú: intro audible
-   y repetida. Comenzar/cargar una partida: vuelve la música de su mapa; el
-   menú de pausa la conserva.
-3. Abrir diálogo y avanzar varias páginas con NPC: una frase de arpa por página,
-   sin sonido heredado simultáneo ni corte de un segundo. Probar también avance
-   rápido y una opción bloqueada de Ronnie.
-4. Primera apertura del menú, cancelar/confirmar Salir y botón Exit físico:
-   sonidos del proyecto. Confirmar que el Diario conserva el progreso aceptado;
-   no hace falta repetir todas las combinaciones de la prueba de Argento.
+Los ensayos usan una base reconstruida de 0k con archivos cotejados y GZDoom
+4.14.2/OpenGL. No sustituyen la revisión visual/jugable en Windows del autor.
+No incluyen pruebas de cooperativo. Motor, IWAD, fixtures y guardados de ensayo
+permanecen fuera del parche. Registros técnicos de 0i–0k: HISTORY.md.

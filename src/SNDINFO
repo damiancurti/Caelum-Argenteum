@@ -23,12 +23,12 @@ $alias menu/dismiss caelum/ui/menu_open
 $alias menu/choose caelum/ui/menu_select
 $alias menu/clear caelum/ui/menu_open
 $alias menu/advance caelum/ui/menu_select
-$alias menu/quit1 caelum/ui/menu_select
-$alias menu/quit2 caelum/ui/menu_select
+$alias menu/quit1 caelum/stock/menu_strings_start
+$alias menu/quit2 caelum/stock/menu_strings_start
 
 // Cubre también el botón Exit físico del mapa y sus interruptores nativos.
 $alias switches/normbutn caelum/ui/menu_select
-$alias switches/exitbutn caelum/ui/map_transition
+$alias switches/exitbutn caelum/stock/menu_strings_start
 
 caelum/world/door_open = "sounds/caelum/world/doors/ca_door_open.ogg"
 caelum/world/door_large_open = "sounds/caelum/world/doors/ca_door_large_open.ogg"
@@ -106,11 +106,12 @@ caelum/player/footstep_wood_07 = "sounds/caelum/player/footsteps/wood/ca_footste
 caelum/player/footstep_wood_08 = "sounds/caelum/player/footsteps/wood/ca_footstep_wood_08.ogg"
 $random caelum/player/footstep_wood { caelum/player/footstep_wood_01 caelum/player/footstep_wood_02 caelum/player/footstep_wood_03 caelum/player/footstep_wood_04 caelum/player/footstep_wood_05 caelum/player/footstep_wood_06 caelum/player/footstep_wood_07 caelum/player/footstep_wood_08 }
 
-// Stock del paquete 04. menu_strings_start también es la música de portada;
-// el primer segundo de tarot_harp_loop se deriva a caelum/ui/dialogue_open.
+// Stock del paquete 04. menu_strings_start acompaña Salir/Exit;
+// una frase completa de tarot_harp_loop se deriva a caelum/ui/dialogue_open.
 caelum/stock/piano_progression = "sounds/caelum/stock/music/ca_stock_piano_progression.ogg"
 caelum/stock/npc_mumble_male = "sounds/caelum/stock/voices/ca_stock_npc_mumble_male.ogg"
 caelum/stock/menu_strings_start = "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg"
+$singular caelum/stock/menu_strings_start
 caelum/stock/reveal_sting = "sounds/caelum/stock/ui/ca_stock_reveal_sting.ogg"
 caelum/stock/tarot_harp_loop = "sounds/caelum/stock/music/ca_stock_tarot_harp_loop.ogg"
 caelum/stock/war_drums = "sounds/caelum/stock/music/ca_stock_war_drums.ogg"

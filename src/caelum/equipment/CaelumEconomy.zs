@@ -707,7 +707,7 @@ class CaelumEconomyRules : Object
 
     play static double GetEquipmentItemBaseValue(CaelumEquipmentItem item)
     {
-        if (item == null) { return 0.0; }
+        if (item == null || item.IsLimboTemporary() || item.IsLimboFirstWeapon()) { return 0.0; }
         int tier = Clamp(item.Tier, 1, 3);
         double finalWeight = Max(0.0, item.UnitWeight);
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
@@ -779,6 +779,7 @@ class CaelumEconomyRules : Object
         }
         CaelumSpecialInventoryItem specialItem =
             CaelumSpecialInventoryItem(item);
+        if (specialItem != null && specialItem.LimboQuestUnits > 0) return 0.0;
         if (specialItem != null
             && specialItem.GetSpecialCategory()
                 == CaelumConstants.EQUIPMENT_KIND_MATERIAL)

@@ -35,6 +35,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void SetJournalOpen(bool value)
     {
+        SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
         CVar openState = CVar.GetCVar(
             "ca_journal_open",
@@ -56,6 +57,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void SetJournalPage(int page)
     {
+        SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
         CVar pageState = CVar.GetCVar(
             "ca_journal_page",
@@ -65,6 +67,159 @@ class CaelumJournalOverlay : EventHandler
         {
             pageState.SetInt(Clamp(page, 0, JOURNAL_PAGE_COUNT - 1));
         }
+    }
+
+    ui bool IsQuestDetailOpen()
+    {
+        if (consoleplayer < 0) return false;
+        let detailState = CVar.GetCVar("ca_journal_quest_detail", players[consoleplayer]);
+        return detailState != null && detailState.GetBool();
+    }
+
+    ui void SetQuestDetailOpen(bool value)
+    {
+        if (consoleplayer < 0) return;
+        let detailState = CVar.GetCVar("ca_journal_quest_detail", players[consoleplayer]);
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        if (detailState != null) detailState.SetBool(value);
+        if (scroll != null) scroll.SetInt(0);
+    }
+
+    ui int GetVisibleQuestId(CaelumPlayer localPlayer)
+    {
+        if (localPlayer == null) return -1;
+        for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
+            if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
+                return id;
+        return -1;
+    }
+
+    ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
+    {
+        if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED)
+            return "CA_Q_DETAIL_COMPLETE";
+        if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_FAILED)
+            return "CA_Q_DETAIL_FAILED";
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+            return "CA_Q_DETAIL_GENERIC";
+        int stage = localPlayer.JournalQuestStage[questId];
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return localPlayer.MainM00RonnieFinishedSnapshot ? "CA_M01_DETAIL_DONE"
+                : localPlayer.MainM00StarterWeaponSnapshot > 0 ? "CA_M01_DETAIL_READY" : "CA_M01_DETAIL_GATHER";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
+            return stage < CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+                ? "CA_Q_DETAIL_M01_RONNIE" : "CA_Q_DETAIL_GENERIC";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
+            return localPlayer.MainM00MagicPracticeSnapshot < 5
+                ? "CA_Q_DETAIL_M01_PRACTICE" : "CA_Q_DETAIL_M01_RUNES";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
+            return "CA_Q_DETAIL_M01_CAELLA";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+        {
+            if (localPlayer.MainM00ConvincedCountSnapshot == CaelumConstants.MAIN_M00_RESIDENT_COUNT)
+                return "CA_Q_DETAIL_M01_RETURN_ARGENTO";
+            return localPlayer.JournalMainM00ArgentoStarted
+                ? "CA_Q_DETAIL_M01_RESIDENTS" : "CA_Q_DETAIL_M01_ARGENTO";
+        }
+        return "CA_Q_DETAIL_M01_PALOMO";
+    }
+
+    // Sólo lee la instantánea del registro. Abrir Detalle no inicia, completa
+    // ni concede nada; las indicaciones cambian con el progreso del personaje.
+    ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
+    {
+        String text = StringTable.Localize("CA_QUEST_STAGE_LABEL", false) .. ": "
+            .. StringTable.Localize(GetQuestDetailStageKey(localPlayer, questId), false);
+        text.Replace("%COUNT%", String.Format("%d", localPlayer.MainM00ConvincedCountSnapshot));
+        text.Replace("%MAGIC_COUNT%", String.Format("%d", localPlayer.MainM00MagicPracticeSnapshot));
+        text.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));
+        text.Replace("%STARTER%", CaelumMainM00StarterRules.GetName(localPlayer.MainM00StarterOptionSnapshot));
+        int stage = localPlayer.JournalQuestStage[questId];
+        bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
+            && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE;
+        if (magicActive)
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_LOCATION", false)
+                .. "\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_LOCATION", false)
+                .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_PRACTICE", false);
+            for (int practiceAction = 0; practiceAction < 5; practiceAction++)
+            {
+                String key = practiceAction == 0 ? "CA_Q_DETAIL_PRIMARY"
+                    : practiceAction == 1 ? "CA_Q_DETAIL_SECONDARY"
+                    : practiceAction == 2 ? "CA_Q_DETAIL_CHANNEL"
+                    : practiceAction == 3 ? "CA_Q_DETAIL_ANIMA_SPENT" : "CA_Q_DETAIL_ANIMA_RECOVERED";
+                text = text .. "\n" .. StringTable.Localize(
+                    localPlayer.JournalMainM00MagicPracticeDone[practiceAction]
+                        ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false)
+                    .. ": " .. StringTable.Localize(key, false);
+            }
+            if (localPlayer.MainM00MagicPracticeSnapshot >= 5)
+            {
+                String riddle = StringTable.Localize("CA_DLG_M01_MAGIC_RIDDLE", false);
+                riddle.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));
+                text = text .. "\n\n" .. riddle;
+            }
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE
+            && localPlayer.MainM00StarterWeaponSnapshot == 0)
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_LOCATION", false)
+                .. "\n" .. StringTable.Localize("CA_M01_RONNIE_LOCATION", false)
+                .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_MATERIALS", false);
+            for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
+            {
+                if (localPlayer.MainM00StarterRequiredSnapshot[i] <= 0) continue;
+                text = text .. "\n" .. StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(
+                    CaelumConstants.EQUIPMENT_KIND_MATERIAL, i), false)
+                    .. String.Format(": %d (%s %d)", localPlayer.MainM00StarterRequiredSnapshot[i],
+                        StringTable.Localize("CA_M01_DETAIL_MISSING", false), localPlayer.MainM00StarterMissingSnapshot[i]);
+            }
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_LOAD", false);
+        }
+        text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
+            .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+                ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);
+        return text;
+    }
+
+    ui int GetQuestDetailLineCount()
+    {
+        return Max(1, int(134 / Max(12, SmallFont.GetHeight() + 2)));
+    }
+
+    ui void ScrollQuestDetail(CaelumPlayer localPlayer, int direction)
+    {
+        int questId = GetVisibleQuestId(localPlayer);
+        if (questId < 0 || SmallFont == null) return;
+        let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+        int count = GetQuestDetailLineCount();
+        int last = Max(0, (lines.Count() - 1) / count) * count;
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        if (scroll != null) scroll.SetInt(Clamp(scroll.GetInt() + direction * count, 0, last));
+    }
+
+    ui void DrawQuestDetail(CaelumPlayer localPlayer)
+    {
+        int questId = GetVisibleQuestId(localPlayer);
+        if (questId < 0) return;
+        DrawTextLine(TextFont, Font.CR_GOLD, 64, 132,
+            StringTable.Localize("CA_Q_DETAIL_TITLE", false) .. " - "
+            .. StringTable.Localize(GetQuestNameKey(questId), false));
+        let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+        int count = GetQuestDetailLineCount();
+        int pages = Max(1, (lines.Count() + count - 1) / count);
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        int first = Clamp(scroll != null ? scroll.GetInt() : 0, 0, (pages - 1) * count);
+        for (int row = 0; row < count && first + row < lines.Count(); row++)
+            DrawTextLine(SmallFont, Font.CR_WHITE, 64,
+                156 + row * Max(12, SmallFont.GetHeight() + 2), lines.StringAt(first + row));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 298,
+            String.Format("%d / %d", first / count + 1, pages));
     }
 
     ui String GetPageKey(int page)
@@ -135,6 +290,8 @@ class CaelumJournalOverlay : EventHandler
             return "CA_Q_M01_STATE_PREPARE_WEAPON";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE)
             return "CA_Q_M01_STATE_RONNIE_SURVIVAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
+            return "CA_Q_M01_STATE_TALK_RONNIE";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
             return "CA_Q_M01_STATE_CAELLA_MAGIC";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
@@ -830,6 +987,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawQuestPage(CaelumPlayer localPlayer)
     {
+        if (IsQuestDetailOpen()) { DrawQuestDetail(localPlayer); return; }
         if (localPlayer.JournalKnownQuestCount <= 0)
         {
             DrawCenteredText(
@@ -1667,6 +1825,11 @@ class CaelumJournalOverlay : EventHandler
         if (e.KeyScan == InputEvent.Key_Escape
             || e.KeyScan == InputEvent.Key_Pad_B)
         {
+            if (currentPage == 4 && IsQuestDetailOpen())
+            {
+                SetQuestDetailOpen(false);
+                return true;
+            }
             if (craftingSession)
             {
                 SendNetworkEvent("ca_crafting_session_close");
@@ -1692,6 +1855,29 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage != 3 && e.KeyScan == InputEvent.Key_Tab)
         {
             SetJournalOpen(false);
+        }
+        else if (currentPage == 4
+            && (e.KeyChar == 102 || e.KeyChar == 70 || e.KeyString ~== "f"
+                || e.KeyScan == InputEvent.Key_Pad_Y))
+        {
+            if (GetVisibleQuestId(localPlayer) >= 0)
+            {
+                SetQuestDetailOpen(!IsQuestDetailOpen());
+                SendNetworkEvent("ca_social_refresh");
+                SendNetworkEvent("ca_journal_menu_select_sound");
+            }
+        }
+        else if (currentPage == 4 && IsQuestDetailOpen()
+            && (e.KeyScan == InputEvent.Key_DownArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
+        {
+            ScrollQuestDetail(localPlayer, 1);
+        }
+        else if (currentPage == 4 && IsQuestDetailOpen()
+            && (e.KeyScan == InputEvent.Key_UpArrow
+                || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
+        {
+            ScrollQuestDetail(localPlayer, -1);
         }
         else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_DownArrow
@@ -2114,9 +2300,10 @@ class CaelumJournalOverlay : EventHandler
         {
             DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 322.0,
                 StringTable.Localize(
-                    currentPage == 0
-                        ? "CA_JOURNAL_INVENTORY_HELP"
-                        : "CA_JOURNAL_NAVIGATION_HELP",
+                    currentPage == 0 ? "CA_JOURNAL_INVENTORY_HELP"
+                        : currentPage == 4 && localPlayer.JournalKnownQuestCount > 0
+                            ? IsQuestDetailOpen() ? "CA_Q_DETAIL_HELP" : "CA_QUEST_LIST_HELP"
+                            : "CA_JOURNAL_NAVIGATION_HELP",
                     false
                 ));
         }

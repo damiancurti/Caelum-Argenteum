@@ -6,9 +6,9 @@ GameInfo
 
     // Pantalla de presentación oficial suministrada por el autor.
     TitlePage = "TITLEPIC"
-    TitleMusic = "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg"
+    TitleMusic = "sounds/caelum/stock/music/ca_stock_war_drums.ogg"
     // La salida del juego no debe heredar los gritos aleatorios de Doom.
-    QuitSound = "caelum/ui/menu_select"
+    QuitSound = "caelum/stock/menu_strings_start"
     // GZDoom reproduce ChatSound al abrir y al avanzar una conversación.
     // Una sola emisión nativa evita superponer el sonido heredado.
     ChatSound = "caelum/ui/dialogue_open"

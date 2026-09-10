@@ -122,6 +122,13 @@ class CaelumEquipmentItem : Inventory
     // soltar, equipar y guardar. El contador vive en el estado persistente
     // del personaje; cero queda reservado para objetos todavía no adquiridos.
     int ItemId;
+    int ItemFlags;
+
+    bool IsLimboTemporary() { return (ItemFlags & CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP) != 0; }
+    bool IsLimboFirstWeapon()
+    {
+        return level.MapName == "MAP01" && (ItemFlags & CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE) != 0;
+    }
     int EquipmentKind;
     int ItemType;
     int ArmorSlot;
@@ -201,6 +208,7 @@ class CaelumEquipmentItem : Inventory
         {
             copy.EquipmentKind = EquipmentKind;
             copy.ItemId = ItemId;
+            copy.ItemFlags = ItemFlags;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
             copy.Tier = Tier;
@@ -217,12 +225,14 @@ class CaelumEquipmentItem : Inventory
 
     override Inventory CreateTossable(int tossAmount)
     {
+        if (IsLimboTemporary() || IsLimboFirstWeapon()) return null;
         CaelumEquipmentItem copy = CaelumEquipmentItem(
             Super.CreateTossable(tossAmount)
         );
         if (copy != null && copy != self)
         {
             copy.ItemId = ItemId;
+            copy.ItemFlags = ItemFlags;
             copy.EquipmentKind = EquipmentKind;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;

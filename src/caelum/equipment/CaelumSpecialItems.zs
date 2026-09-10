@@ -3,6 +3,10 @@
 class CaelumSpecialInventoryItem : Inventory
 {
     bool InMagicBox;
+    // Cantidades temporales dentro de una pila normal: no se pierde el stock
+    // previo al retirarlas al salir del Limbo. Supply identifica lo devolvible.
+    int LimboQuestUnits;
+    int LimboSupplyUnits;
 
     Default
     {
@@ -55,6 +59,8 @@ class CaelumSpecialInventoryItem : Inventory
         if (copy != null && copy != self)
         {
             copy.InMagicBox = InMagicBox;
+            copy.LimboQuestUnits = LimboQuestUnits;
+            copy.LimboSupplyUnits = LimboSupplyUnits;
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
@@ -63,12 +69,15 @@ class CaelumSpecialInventoryItem : Inventory
 
     override Inventory CreateTossable(int tossAmount)
     {
+        if (LimboQuestUnits > 0) return null;
         CaelumSpecialInventoryItem copy = CaelumSpecialInventoryItem(
             Super.CreateTossable(tossAmount)
         );
         if (copy != null && copy != self)
         {
             copy.InMagicBox = InMagicBox;
+            copy.LimboQuestUnits = LimboQuestUnits;
+            copy.LimboSupplyUnits = LimboSupplyUnits;
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
@@ -267,6 +276,11 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     override bool TryPickup(in out Actor toucher)
     {
         UpdateMaterialVisuals();
+        if (LimboQuestUnits > 0)
+        {
+            let user = CaelumPlayer(toucher);
+            if (user == null || !user.CanAddWeightToPersonalInventory(Amount * GetUnitWeight())) return false;
+        }
         return Super.TryPickup(toucher);
     }
 
@@ -294,6 +308,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
             {
                 Amount = MaxAmount;
             }
+            LimboQuestUnits = Min(Amount, LimboQuestUnits + material.LimboQuestUnits);
+            LimboSupplyUnits = Min(LimboQuestUnits, LimboSupplyUnits + material.LimboSupplyUnits);
             incoming.bPickupGood = true;
         }
         return true;

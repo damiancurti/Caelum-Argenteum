@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comprueba documentación canónica y referencias de audio sin modificar archivos."""
+"""Comprueba documentación, traducciones y recursos sin modificar archivos."""
 from pathlib import Path
 import argparse
 import json
@@ -60,13 +60,49 @@ def validate(root):
     chat = re.search(r'ChatSound\s*=\s*"([^"]+)"', mapinfo)
     check(chat is not None and chat.group(1) == 'caelum/ui/dialogue_open', 'ChatSound: debe usar una sola frase de arpa nativa')
     check('$singular caelum/ui/dialogue_open' in sndinfo, 'Falta la proteccion de frases superpuestas')
-    check('CaelumMenuAudio' in mapinfo and (root/'src/caelum/ui/CaelumMenuAudio.zs').is_file(), 'Falta el bucle de portada')
+    check('CaelumMenuAudio' in mapinfo and (root/'src/caelum/ui/CaelumMenuAudio.zs').is_file(), 'Falta el observador de audio de portada')
     code = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (root/'src/caelum').rglob('*.zs'))
     check('PlayDialogueOpenSound' not in code, 'Quedo una llamada duplicada al arpa')
     check('tools\\build_pk3.ps1' not in (root/'run_dev.bat').read_text(), 'run_dev aun depende de tools')
     check((root/'build_dev.ps1').is_file(), 'Falta el constructor en raiz')
-    for name in ('generate_environment_models.py', 'generate_mineral_veins.py', 'generate_stash_models.py'):
+    for name in ('generate_environment_models.py', 'generate_mineral_veins.py', 'generate_stash_models.py', 'generate_station_models.py'):
         check((root/'assets/generators'/name).is_file(), 'Falta un generador fuente: '+name)
+    # Una sección con un código de idioma distinto puede compilar y aun así
+    # dejar una conversación entera en inglés. Comprobar las claves de Caella.
+    language = (root/'src/LANGUAGE').read_text(encoding='utf-8-sig')
+    localized = {'default': set(), 'es': set()}
+    for section, body in re.findall(r'^\[([^\]]+)\]\s*\n(.*?)(?=^\[|\Z)', language, re.M | re.S):
+        keys = set(re.findall(r'^(CA_\w+)\s*=', body, re.M))
+        for locale in localized:
+            if locale in section.split():
+                localized[locale].update(keys)
+    magic_keys = {key for key in localized['default'] if key.startswith('CA_DLG_M01_MAGIC_')}
+    check(bool(magic_keys), 'LANGUAGE: faltan las claves de Caella')
+    check(magic_keys <= localized['es'], 'LANGUAGE: faltan traducciones es de Caella: '+', '.join(sorted(magic_keys-localized['es'])))
+    # Los OBJ por sí solos no activan los modelos: cada clase concreta necesita
+    # su asociación, incluidos los nombres conservados por compatibilidad.
+    station_source = (root/'src/caelum/crafting/CaelumCraftingStation.zs').read_text()
+    station_classes = set(re.findall(r'^class (Caelum\w+Station)\s*:', station_source, re.M)) - {'CaelumCraftingStation'}
+    modeldef = (root/'src/MODELDEF').read_text()
+    station_bindings = set()
+    station_models = set()
+    for actor, body in re.findall(r'^Model\s+(\w+)\s*\{([^}]+)\}', modeldef, re.M):
+        if actor not in station_classes:
+            continue
+        station_bindings.add(actor)
+        path = re.search(r'\bPath\s+"([^"]+)"', body)
+        model = re.search(r'\bModel\s+0\s+"([^"]+)"', body)
+        check(path is not None and model is not None, 'MODELDEF: definición incompleta de '+actor)
+        if path is None or model is None:
+            continue
+        resource = root/'src'/path.group(1)/model.group(1)
+        check(resource.is_file(), 'MODELDEF: falta '+str(resource.relative_to(root)))
+        station_models.add(resource)
+    check(station_classes == station_bindings, 'MODELDEF: estaciones sin modelo: '+', '.join(sorted(station_classes-station_bindings)))
+    for resource in station_models:
+        if resource.is_file():
+            for material in re.findall(r'^usemtl\s+(\S+)', resource.read_text(), re.M):
+                check((root/'src'/material).is_file(), resource.name+': falta el material '+material)
     for include in re.findall(r'#include\s+"([^"]+)"', (root/'src/ZSCRIPT').read_text()):
         check((root/'src'/include).is_file(), 'ZSCRIPT: include inexistente '+include)
     # Vorbis conserva la posición final en muestras en la última página Ogg.
@@ -89,7 +125,8 @@ def validate(root):
     assets = (root/'docs/ASSETS.md').read_text(encoding='utf-8-sig')
     count = re.search(r'contiene (\d+) archivos de runtime', assets)
     check(count is not None and int(count.group(1)) == audio_count, 'ASSETS.md: actualizar el inventario de audio')
-    return {'version':version, 'documents':len(actual_docs), 'audio_files':audio_count, 'errors':errors}
+    return {'version':version, 'documents':len(actual_docs), 'audio_files':audio_count,
+            'station_models':len(station_models), 'spanish_caella_keys':len(magic_keys), 'errors':errors}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

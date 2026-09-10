@@ -1,10 +1,94 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0h — 2026-09-10.
+Versión documental: 4.33.0l — 2026-09-10.
 
 Esta referencia consolida reglas implementadas. El alcance narrativo está en
 [MAP01.txt](MAP01.txt), el estado de aceptación en [PROJECT.md](PROJECT.md) y
 las variantes históricas en [HISTORY.md](HISTORY.md).
+
+## Prueba de Caella (4.33.0i)
+
+Se habilita al cerrar Argento en fase 35. Fire/AltFire usan sus lanzamientos
+reales; User2 conserva Channel del Sello con gasto de Adrenalina. La indicación
+antigua Reload/Channel de MAP01 queda sustituida por User2. El Ánima se gasta
+al completar un lanzamiento y su recuperación se observa en la reserva real.
+
+La práctica exige cinco hechos y después cuatro runas; el Diario cuenta 0/9
+hasta 9/9. Usar sobre una runa con un implemento activo conduce su elemento.
+Tierra → Aire → Fuego → Agua abre la entrada existente, devuelve los préstamos
+y avanza a fase 45. Error: sólo reinicia las runas; pistas a los 2 y 4 errores.
+
+Las dos instancias temporales reutilizan T1 del catálogo. Conservan ItemId y
+la marca CA_ITEMFLAG_LIMBO_TEMP; no se venden, sueltan, desarman ni almacenan
+en la Caja. No hay duplicación al preparar otra vez. Para enseñar Channel sin
+atacar a nadie, el primer User2 puede completar la reserva hasta un segundo de
+su coste nativo, limitada por MaximumAdrenaline. La ayuda termina al registrar
+consumo real. Los cooldowns, el combate general y los atributos no cambian.
+
+La persistencia añade índice de secuencia, errores, referencia de Ánima y IDs
+del equipo previo; usa flags libres 57–58. No desplaza campos/índices aceptados.
+La colocación, compatibilidad, pruebas y límites están en PROJECT.md.
+
+## Ronnie: elección, materiales y primera arma (4.33.0l)
+
+Tras Caella, Ronnie ofrece 36 elecciones T1: 16 armas físicas y cuatro formas
+mágicas por cinco esencias. La clase no restringe la elección. Se puede leer y
+volver antes de confirmar; confirmar fija la opción y el talle del personaje.
+Se aprenden la receta final y todos sus pasos de procesamiento/componentes.
+Las cantidades se calculan mediante CaelumCraftingRules; no hay otra tabla
+de recetas dentro de la misión. El plan de referencia usa 25% en cada capa.
+
+| Armas | Materias primas del catálogo T1 |
+| --- | --- |
+| Daga, hachuela, machete, jabalina, espada, hacha, lanza, espadón, hacha de guerra, alabarda | Madera, cobre bruto y estaño bruto. |
+| Mangual y carabina | Cobre bruto y estaño bruto. |
+| Puños gigantes | Cobre bruto, estaño bruto y cuero de vaca ya curtido. |
+| Arco común, arco largo y ballesta | Madera y fibra vegetal. |
+| Bastón y estatuilla | Madera y gema bruta de la esencia elegida. |
+| Campana | Cobre bruto, estaño bruto y gema bruta. |
+| Libro | Fibra vegetal y gema bruta. |
+
+Gemas: rubí/Fuego, zafiro/Agua, esmeralda/Tierra, topacio/Aire y ópalo/Quintaesencia.
+El cofre contiene las cinco y cuero T1; no entrega piel cruda para curtir.
+Su stock por material es el máximo entre las 36 recetas al talle del jugador,
+con eficiencia mínima en cada transformación; no suma 36 armas.
+Ejemplo talle M: 12.800 unidades de cada gema y 96.000 de cuero. Una unidad
+pesa 0,001 kg. Son límites de stock; se retira sólo lo que requiere la elección
+y cabe en la carga actual. No es necesario llevar el contenido completo.
+
+El stock pertenece al registro del personaje. Reabrir/cargar no lo repone.
+Devolver retorna sólo cantidades retiradas de ese cofre que siguen sin gastar
+y no están reservadas por una tarea. Cancelar libera reservas; cerrar la
+estación pausa el trabajo. Se pueden procesar materiales por etapas o elegir
+una eficiencia mayor para reducir necesidades. Los faltantes del Diario
+descuentan también componentes y procesados que ya posee el jugador.
+
+Tres arbustos 2D de la cueva usan la extracción vegetal existente: daño
+cortante produce fibra; perforante/contundente no. Conservan dureza 2,5 y
+regeneración general; capacidad 100 kg cada uno. La espada T1 prestada usa
+principal cortante y secundario perforante para las vetas de cobre/estaño.
+Si ya existe la antigua espada de cueva en inventario, se adopta su ItemId.
+Revisarla restaura/equipa la misma pieza. Caella devuelve sólo sus préstamos.
+
+La primera fabricación T1 dentro de esta prueba entrega una instancia personal
+con CA_ITEMFLAG_LIMBO_PRESERVABLE. No requiere Caja Mágica, conserva sus
+eficiencias y pasa a fase 60. El préstamo se devuelve al hablar con Ronnie.
+Antes de salir del Limbo el arma inicial no se vende, descarta ni desarma.
+Las armas fabricadas después son temporales y no reemplazan su ItemId.
+Fuera de MAP01 se quitan esas instancias y cantidades de materiales de misión;
+se preservan materiales propios anteriores aunque compartan pila. Al salir,
+el arma inicial puede usarse como equipo ordinario. La transferencia narrativa
+de fase 100 a la Caja permanece pendiente.
+
+Las pilas usan LimboQuestUnits y LimboSupplyUnits; consumir descuenta primero
+la porción tutorial. El crafting conserva esa procedencia en sus resultados
+intermedios y en las reservas al guardar/cargar. No se venden, descartan ni
+envían a la Caja pilas con porción tutorial. La salida cancela tareas pendientes
+que usaban esos materiales antes de retirarlos. No elimina existencias propias
+por coincidencia de nombre ni concede de nuevo un préstamo ya devuelto.
+
+Esta revisión no incorpora munición ni las lecciones pendientes de necesidades,
+Aire, agua y reparación. Esas reglas se integran antes del entrenamiento de Rulo.
 
 ## Probabilidad social
 
@@ -68,6 +152,54 @@ Las colisiones usan los módulos de física del proyecto y las restricciones
 nativas de movimiento. No convertir las fórmulas de impulso en una segunda
 ruta de daño de las armas. Las calibraciones históricas completas se conservan
 en HISTORY.md; las pruebas de multitudes permanecen separadas en MAP02.
+
+## Detalle de misiones (4.33.0k–0l)
+
+En Diario → Misiones, F (Y en mando) alterna resumen y Detalle de la misión
+visible. Describe de qué trata y qué corresponde hacer en la etapa actual.
+Arriba/Abajo recorre el texto; TAB cierra. La navegación es local, no cambia
+progreso ni otorga objetos. Las misiones aún desconocidas no aparecen.
+
+Durante Caella enumera primario, secundario, canalización, gasto de Ánima y
+recuperación como Hecho/Pendiente. A 5/5 cambia a la secuencia de runas y al
+acertijo. A fase 45 indica hablar con Ronnie. La fuente es el registro persistente,
+no contadores independientes del menú. La misma indicación de ubicación se
+usa en la conversación de Caella y en Detalle para evitar contradicciones.
+
+Ruta: entrada → pasillo central → escalera del fondo. Permanecer en planta
+baja, rodearla por la derecha/sur y mirar la pared trasera detrás de ese lado,
+cerca del piso. Aceptar la prueba hace aparecer las marcas; práctica 5/5
+permite usarlas. Acercarse con bastón activo, apuntar y pulsar Usar. El Sello
+de fuego basta; no se dispara para activar las runas.
+
+Durante Ronnie, Detalle muestra el arma elegida, el plan de materias primas
+al 25%, las cantidades faltantes y las ubicaciones de cofre, arbustos, vetas y
+Banco de Trabajo. Tras fabricar pide devolver la espada; después muestra la
+preparación terminada. La lista de misiones indica Arma inicial preparada.
+
+## Presentación del Sello y runas (4.33.0j)
+
+El Sello equipado se ve en el costado derecho del HUD. Conserva sus colores si
+User2 puede iniciar la canalización o si ya está canalizando; aparece en escala
+de grises si hay recarga, falta Adrenalina o existe otro bloqueo del sistema.
+La misma consulta de disponibilidad alimenta la acción y el HUD; observarla
+no concede ni consume recursos. La ayuda inicial de Caella cuenta como disponible.
+
+Durante la recarga se muestran debajo los segundos restantes, redondeados
+hacia arriba, hasta desaparecer al llegar a cero. La espera conserva los 60 s
+existentes. Sin Adrenalina queda gris y sin contador: ese recurso no tiene una
+hora garantizada de recuperación. User2 deja de generar el texto central de
+estado y el aviso central genérico de habilidad. Los otros controles conservan
+su comportamiento.
+
+Caella usa la sección española [es], igual que las conversaciones anteriores.
+La práctica exige primario, secundario, canalización, gasto y recuperación de
+Ánima. Después, con el implemento mágico activo, Usar activa cada runa. Un solo
+Sello y el bastón prestado sirven para Tierra → Aire → Fuego → Agua. El Sello
+no determina el elemento de la runa y no se exige dispararle. El progreso y
+la devolución del préstamo siguen en el registro persistente existente.
+
+Las estaciones reciben modelos 3D sin modificar su lógica de infraestructura.
 
 ## Crafting y reparación
 
@@ -503,6 +635,10 @@ la frase en curso si se avanza muy rápido; evita acumular acordes superpuestos.
 ChatSound también es la notificación nativa del chat del motor; no se modifica
 su alcance local ni su autoridad. Véase ASSETS.md para procedencia y edición.
 
-La portada usa la pieza de cuerdas existente. CaelumMenuAudio habilita su
-bucle al entrar en la portada; no cambia volúmenes, música de mapas ni listas
-personales. Los menús de pausa conservan la música de la partida.
+La portada reproduce una vez el War Drums de 6 s. CaelumMenuAudio solicita
+reproducción sin bucle al entrar; no cambia volúmenes, música de mapas ni
+listas personales. Los menús de pausa conservan la música de la partida.
+Al elegir Salir/Exit en el menú principal, CaelumExitMenu abre la confirmación
+nativa y reproduce menu_strings_start mientras el audio sigue activo. Cancelar
+regresa al menú padre. QuitSound y el botón Exit del mapa conservan el mismo
+recurso; la marca singular evita superponer dos instancias de las cuerdas.

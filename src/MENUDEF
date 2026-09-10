@@ -20,6 +20,13 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+    TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
+}
+
+// Reenvío inmediato a la confirmación nativa, con el audio propio de Salir.
+ListMenu "CaelumExitMenu"
+{
+    Class "CaelumExitMenu"
     TextItem "$MNU_QUITGAME", "s", "QuitMenu"
 }
 

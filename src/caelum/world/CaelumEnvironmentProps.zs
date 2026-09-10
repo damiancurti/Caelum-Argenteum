@@ -72,6 +72,8 @@ class CaelumEnvironmentProp : CaelumMovableProp
         material.args[0] = GetResourceMaterialType();
         material.args[1] = 1;
         material.Amount = amount;
+        if (level.MapName == "MAP01" && CaelumMainM00RonnieTrial.IsStarted(CaelumPlayer(extractor)))
+            material.LimboQuestUnits = amount;
         material.InMagicBox = false;
         material.UpdateMaterialVisuals();
         return true;

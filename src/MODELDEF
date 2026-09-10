@@ -3007,3 +3007,136 @@ Model CaelumVeinEmerald3
 }
 
 // --- END GENERATED CAELUM MINERAL VEIN MODELS ---
+
+// --- BEGIN GENERATED CAELUM STATION MODELS ---
+// Doce estaciones sencillas; fuentes y sprites de referencia en assets.
+Model CaelumWorkbenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_workbench.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CWBK A 0 0
+}
+
+Model CaelumForgeStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_forge.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFRG A 0 0
+}
+
+Model CaelumAnvilStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_anvil.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CANV A 0 0
+}
+
+Model CaelumRangedWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_ranged.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRNG A 0 0
+}
+
+Model CaelumBowWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_ranged.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRNG A 0 0
+}
+
+Model CaelumSawmillStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_sawmill.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSAW A 0 0
+}
+
+Model CaelumArmorWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_armor.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARM A 0 0
+}
+
+Model CaelumSewingMachineStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_sewing.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSEW A 0 0
+}
+
+Model CaelumEssenceAltarStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_altar.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CESA A 0 0
+}
+
+Model CaelumGlobeStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_globe.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CGLB A 0 0
+}
+
+Model CaelumJewelerBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_jeweler.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CJWL A 0 0
+}
+
+Model CaelumFineToolsBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_fine_tools.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFIN A 0 0
+}
+
+Model CaelumMasterBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_master.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CMST A 0 0
+}
+// --- END GENERATED CAELUM STATION MODELS ---

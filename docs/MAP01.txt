@@ -1,11 +1,47 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0h — 2026-09-10.
+Versión documental: 4.33.0l — 2026-09-10.
+
+REVISIÓN 4.33.0l
+El autor aceptó todas las pruebas de 0k. Caella, las runas, Detalle, limpieza,
+HUD, idioma, estaciones y audio quedan como base aceptada.
+
+Ronnie pregunta qué arma T1 se desea, explica sus características y permite
+confirmar tras explorar las familias. Son 16 físicas y 20 de esencia, sin
+restricción por clase. Enseña la receta y todas sus dependencias. La espada
+para extraer es prestada y se devuelve después de fabricar el arma elegida.
+
+Tres arbustos 2D dan fibra con daño cortante en la cueva; se mantienen árboles,
+cobre y estaño. Un cofre cerca de la entrada almacena las cinco gemas brutas y
+cuero de vaca para cualquier elección T1 al talle del personaje y a eficiencia
+25% en cada capa. Permite viajes parciales y devolver sobrantes sin reponer stock.
+
+La fabricación real funciona sin Caja: el resultado va al inventario personal.
+Sólo la primera arma se conserva por ItemId; las posteriores y los sobrantes de
+misión son temporales. El Diario muestra materiales, faltantes, ubicaciones y
+devolución. Se guardan elección, recetas, reservas, stock y préstamos.
+
+La parte material cubre fases 50–60; falta integrar comida, bebida, reparación
+real, Aire/agua y la cita de Palomo antes de Rulo. No se incorporan municiones,
+combate del Toro, Caja final, El Loco ni salida narrativa en esta revisión.
+La especificación posterior conserva esos contenidos como plan, no como hechos
+ya implementados. La elección libre sustituye la antigua arma fijada por clase.
+
+Se conserva el WAD y la compatibilidad con guardados 0k. Las nuevas instancias
+se preparan una sola vez por mapa. La espada antigua ya recogida conserva su
+identidad y pasa a préstamo; la espada antigua de suelo deja de estar disponible.
+Ubicaciones: cofre (1780,640,-384); arbustos (1250,820,-384), (1440,1080,-384)
+y (1670,700,-384). Estaciones de fabricación: red exterior de la mansión.
+
+Formato: archivos nuevos/modificados para copiar y un TXT de pruebas. README
+y cinco docs actualizados; sin instalador por parche ni refactor anticipado de V5.
 
 ALCANCE ACTUAL Y DECISIONES POSTERIORES A LA ESPECIFICACIÓN ORIGINAL
 
 Aceptado hasta 4.33.0f: despertar, Voz desconocida, Palomo del recibidor y
 prueba social de Argento. Diario 0/3 a 3/3; volver a Argento cierra en fase 35.
-La rama mágica de Caella y todas las fases posteriores siguen pendientes.
+Caella, fases 40–45, está aceptada con todas las pruebas de 0k.
+0l incorpora elección, recolección y arma de Ronnie hasta fase 60; pendientes
+sus lecciones restantes y las ramas posteriores. Migración de 0h aceptada.
 
 Valores sociales aprobados: Emoción=Empatía Tipo 4; Persuasión=Carisma Tipo 4;
 dificultad 120 para ambas; Labia Tipo 2 >= 1 en la opción directa de Ronnie.
@@ -15,17 +51,25 @@ cerrar/abrir. Atributo 10 → 85%, atributo 30 → 99% contra dificultad 120.
 Correcciones físicas aprobadas: NPC sólidos, retorno al alcanzar 100 MU;
 fachada paralela al muro de fondo, entrada atravesable de 96 MU; ascensor
 sectorial continuo a Z=-384 y retorno, sin teletransporte. Cueva con tres
-árboles, cobre, estaño y espada T1 adaptada al talle. No hachuela especial,
+árboles, cobre y estaño; 0l añade arbustos y cofre, y traslada la espada T1
+adaptada al talle al préstamo de Ronnie. No hachuela especial,
 carbón ni hierro en esta cueva. La cara sur del pozo quedó corregida en 0e.
 
 Palomo es guía amistoso, filosófico y burlón; no es el comerciante canónico.
 La Caja Mágica se reserva al cierre de las cuatro ramas. Los personajes no
 conocen su muerte ni identifican el lugar; separar verdad autoral de diálogo.
 
-4.33.0h: una frase de arpa al abrir y avanzar cada conversación. No cambia historia,
-estadísticas, dificultad, progreso, mapas ni los textos USDF aceptados.
+4.33.0i: práctica de cinco hechos (primario, secundario, Channel, gasto y
+recuperación de Ánima), cuatro runas y apertura persistente de la entrada
+existente. Diario 0/9–9/9; fase 45 indica Hablar con Ronnie. El texto/orden
+propuesto en 18.5 se usa para esta prueba, aceptada después en 0k. Emblemas existentes de Sellos, Usar con implemento
+mágico activo; las runas aportan su elemento sin transformar el arma propia.
+La reserva tutorial de Channel se calcula desde el coste nativo del Sello.
+War Drums en portada; menu_strings_start para Salir/Exit; arpa nativa por página.
+Detalles técnicos, coordenadas y validación vigente: PROJECT.md.
 
-REGISTRO TÉCNICO VIGENTE
+REGISTRO HISTÓRICO DE LA BASE HASTA 4.33.0f
+Los pendientes de este registro describen 0f; prevalece el alcance de 0l indicado arriba.
 
 # Caelum Argenteum — Misiones, reputación y facciones V4.33.0f
 
@@ -1076,7 +1120,7 @@ FASE 40 — CAELLA_MAGIC
 FASE 50 — RONNIE_SURVIVAL
 
 - Ronnie habilita la ruta detrás del pasadizo.
-- Determinar el arma inicial según la clase del jugador.
+- Preguntar qué arma inicial quiere el jugador; no restringirla por clase.
 - Derivar de su receta la lista de materias primas necesarias.
 - Enseñar recursos, carga, Aire y necesidades.
 - Reunir todos los materiales del arma.
@@ -1602,7 +1646,7 @@ Antes del acertijo, registrar:
 
 - Un lanzamiento primario válido: Fire.
 - Una función mágica secundaria válida: AltFire.
-- Una canalización válida con el Sello: Reload/Channel.
+- Una canalización válida con el Sello: User2/Channel (control vigente).
 - Consumo y recuperación visible de Ánima.
 
 No exigir daño contra un enemigo. Utilizar blancos o runas que respondan a la
@@ -1670,7 +1714,7 @@ en el idioma correcto.”
 19.1. OBJETIVO
 
 Atravesar la ruta revelada, administrar recursos y reunir las materias primas
-necesarias para el arma inicial de la clase elegida.
+necesarias para el arma inicial elegida libremente por el jugador.
 
 19.2. INICIO
 
@@ -1687,24 +1731,23 @@ Establecer CA_F_M01_RONNIE_STARTED.
 
 19.3. SELECCIÓN DEL ARMA Y RECETA
 
-No escribir listas de materiales duplicadas dentro de la misión. Resolver el
-arma mediante una tabla autoritativa:
+Actualizado por decisión del autor en 4.33.0l: preguntar qué arma quiere entre
+las 16 físicas y 20 variantes mágicas T1 existentes, sin fijarla por clase.
+Explicar características antes de confirmar; para esencia elegir también su
+elemento. Enseñar la receta final y todas las recetas de sus componentes.
 
-GetStarterLoadout(PlayerClass) → StarterLoadoutDefinition
-StarterLoadoutDefinition.PrimaryWeaponRecipe → RecipeId
-RecipeId.GetRawRequirements() → MaterialRequirement[]
+CaelumMainM00StarterRules.GetRecipe(opción) → RecipeId
+CaelumMainM00StarterMaterials.Build(opción, talle, eficiencia) → requisitos
 
-Perfiles requeridos:
-
-CA_STARTER_LOADOUT_WARRIOR
-CA_STARTER_LOADOUT_EXPLORER
-CA_STARTER_LOADOUT_PRIEST
-CA_STARTER_LOADOUT_MAGE
-
-Los objetos exactos permanecen [PENDIENTES]. La misión debe poder cambiar de
-loadout sin modificar scripts de mapa.
+El cálculo reutiliza CaelumCraftingRules y considera las capas de procesamiento,
+componentes y montaje. No duplicar materiales ni costes en los scripts del mapa.
+Referencia del cofre y Diario: 25% en cada capa, al talle actual del personaje.
+La elección se fija al confirmar; leer o retroceder no entrega recetas ni equipo.
 
 19.4. CONTENIDOS DE LA RUTA
+
+Plan de lecciones: aún no completo en 0l. La recolección/carga y fabricación
+son jugables; revisar el préstamo con Ronnie no acredita reparación manual.
 
 Tramo A — preparación:
 
@@ -1743,22 +1786,28 @@ Tramo E — respiración o paso inundado:
 
 19.5. MATERIALES DE MISIÓN
 
-- Cada recurso necesario debe proceder de al menos un nodo garantizado.
-- Los nodos sólo conceden la cantidad requerida más un margen mínimo de seguridad.
-- Los materiales llevan CA_ITEMFLAG_LIMBO_QUEST hasta ser convertidos.
-- No pueden venderse ni guardarse fuera del flujo de misión.
-- Si un material se pierde en geometría inaccesible, el controlador lo recupera
-  o repone sin duplicar el total autorizado.
-- El progreso utiliza cantidades reservadas, no simples mensajes de pickup.
+- Madera, cobre y estaño proceden de los nodos aceptados de la cueva.
+- Tres arbustos 2D dan fibra sólo mediante daño cortante. Comparten las reglas
+  vegetales vigentes, sin receta ni herramienta de extracción especial.
+- El cofre almacena rubí, zafiro, esmeralda, topacio, ópalo y cuero de vaca T1
+  ya curtido. Sus máximos cubren cualquier elección a eficiencia mínima.
+- Stock por personaje, sin reposición al reabrir; sólo se retira lo necesario
+  para la elección y lo que cabe. Se devuelven sobrantes no gastados/reservados.
+- Materiales de misión controlados por cantidades dentro de cada pila; no se
+  venden, descartan ni guardan en la Caja. No se eliminan materiales propios.
+- El Diario consulta cantidades reales y componentes ya fabricados. Las
+  reservas nativas impiden gastar dos veces la misma unidad al fabricar.
+- Procesar por etapas permite trabajar sin cargar todas las materias primas.
+- La recuperación de drops naturales inaccesibles y el control adicional de
+  márgenes de cada nodo siguen pendientes; se conserva la regeneración vigente.
 
-19.6. FINAL
+19.6. FINAL DE LA PARTE MATERIAL (4.33.0l)
 
-Cuando todos los requisitos de RecipeId estén disponibles:
-
-- Establecer CA_F_M01_MATERIALS_COMPLETE.
-- Volver con Ronnie.
-- Establecer CA_F_M01_RONNIE_COMPLETE.
-- Habilitar CA_M01_STATE_PREPARE_WEAPON.
+Al completar la primera fabricación real se registran MATERIALS_COMPLETE y
+STARTER_WEAPON_CRAFTED; se conserva el ItemId y se alcanza fase 60. El Diario
+pide volver con Ronnie. Devolver la espada retira su instancia y fija
+RONNIE_COMPLETE una sola vez; no vuelve a prestarla al reabrir el diálogo.
+Rulo no se activa todavía. Antes se integran las lecciones pendientes de 19.4.
 
 RONNIE:
 “Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
@@ -1784,16 +1833,16 @@ Esta fase conecta supervivencia y combate. No pertenece a una quinta rama.
 
 20.2. RESULTADO
 
-- Crear una única instancia con StarterWeaponItemId.
+- Registrar como StarterWeaponItemId sólo la primera instancia fabricada;
+  las adicionales son temporales y no la reemplazan.
 - Marcarla CA_ITEMFLAG_LIMBO_PRESERVABLE.
 - Equiparla o pedir al jugador que la equipe.
 - Registrar CA_F_M01_STARTER_WEAPON_CRAFTED.
 - Conservar la eficiencia real de la pieza.
 - No crear todavía una segunda copia dentro de la Caja.
 
-Si el diseño final decide que la Caja genera el arma automáticamente, esta fase
-puede reemplazarse por una preparación guiada. Sin embargo, mantener un crafteo
-real aprovecha MAP01 para enseñar una mecánica central ya implementada.
+Decisión vigente 0l: crafteo real y salida personal sin Caja. No reemplazarlo
+por una entrega automática ni conceder otra copia al recibir la Caja.
 
 -------------------------------------------------------------------------------
 21. PRUEBA 4: RULO — RAMA DE COMBATE
@@ -2058,7 +2107,8 @@ Ejecutar en este orden:
 1. Bloquear temporalmente nuevas interacciones.
 2. Confirmar que la Caja existe y pertenece al jugador.
 3. Confirmar que El Loco fue capturado.
-4. Resolver el StarterLoadoutDefinition de la clase.
+4. Resolver la elección libre de arma por StarterWeaponItemId; el equipo
+   adicional de clase sigue pendiente de definición y no sustituye esa arma.
 5. Mover StarterWeaponItemId al interior de la Caja.
 6. Crear dentro de la Caja cualquier elemento básico adicional del loadout que
    no se haya obtenido durante la misión.
@@ -2242,7 +2292,8 @@ CA_ITEMFLAG_LIMBO_QUEST
 CA_ITEMFLAG_LIMBO_PRESERVABLE
 
 - Pieza que puede trasladarse al interior de la Caja.
-- Debe aparecer en la lista del StarterLoadoutDefinition.
+- El arma se identifica por StarterWeaponItemId, elegido y fabricado en 0l;
+  no se sustituye por el arma automática de un StarterLoadoutDefinition.
 - Conserva ItemId, condición y eficiencia.
 
 CA_ITEMFLAG_UNIQUE_BOUND
@@ -2255,7 +2306,8 @@ CA_ITEMFLAG_UNIQUE_BOUND
 Al salir de MAP01:
 
 - Inventario exterior: únicamente CA_MagicBox.
-- Interior de la Caja: equipamiento básico de la clase.
+- Interior de la Caja: primera arma elegida/fabricada y equipo adicional
+  autorizado para la clase. Esta transferencia sigue pendiente después de 0l.
 - No conservar consumibles infinitos, materiales sobrantes, herramientas de
   práctica ni runas.
 - No crear dos copias del arma si la fabricada ya fue preservada.
@@ -2272,7 +2324,7 @@ Definir en datos, no en el controlador de MAP01:
 StarterLoadoutDefinition
 {
     PlayerClass;
-    PrimaryWeaponRecipe;
+    PrimaryWeaponRecipe; // Resolver desde la elección de Ronnie, no desde PlayerClass.
     ArmorItem;
     SecondaryItem;
     CompatibleAmmo[];
@@ -2443,7 +2495,11 @@ instancia vinculada por personaje que represente el mismo artefacto compartido.
 
 28.5. RONNIE
 
-[ ] La receta se deriva de la clase y del catálogo autoritativo.
+[ ] Ronnie explica las opciones y enseña la elegida con sus dependencias,
+    desde el catálogo autoritativo y sin restringirla por clase.
+[ ] Los arbustos 2D dan fibra con cortes, no con perforaciones.
+[ ] El cofre conserva stock, respeta carga y admite devolver suministros sin usar.
+[ ] La espada prestada conserva ItemId y Ronnie la retira al volver tras fabricar.
 [ ] La herramienta de supervivencia conserva ItemId al repararse.
 [ ] El progreso de reparación se detiene según las reglas de estación.
 [ ] Existen alimento y agua suficientes sin generar recursos explotables.
@@ -2513,13 +2569,14 @@ de fijar todos los datos finales:
    PlayerStart = (-1600, 0, 0), ángulo 0°, en el exterior de la mansión.
    Conservar esta posición mientras no exista otra decisión del autor.
 
-3. Contenido exacto de los cuatro StarterLoadoutDefinition.
+3. Equipo adicional y municiones de los cuatro StarterLoadoutDefinition.
+   El arma principal ya está resuelta: elección libre y primera fabricación (0l).
 
 4. Uso definitivo de la Llave de Plata.
    Recomendación: abrir desde el pasadizo de Caella una puerta ya existente.
 
-5. Texto definitivo y presentación visual del acertijo.
-   La solución operativa propuesta es Tierra → Aire → Fuego → Agua.
+5. Acertijo resuelto y aceptado en 0k: Tierra → Aire → Fuego → Agua con los
+   emblemas existentes. Conservar su texto, orden y presentación aceptados.
 
 6. Si el Toro es una criatura real atrapada, una manifestación del Limbo o una
    construcción de Palomo.

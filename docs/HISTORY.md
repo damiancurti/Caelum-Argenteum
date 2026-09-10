@@ -1,18 +1,100 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0h — 2026-09-10.
+Versión documental: 4.33.0l — 2026-09-10.
+
+## Decisiones y correcciones 4.33.0l
+
+- El autor confirmó todas las pruebas de 0k. Se acepta el recorrido de Caella,
+  Detalle y limpieza; las objeciones anteriores quedan resueltas en esa base.
+- Reemplaza la asignación automática de arma por clase: Ronnie pregunta qué
+  arma quiere el jugador, explica características y enseña esa receta y todos
+  sus componentes. Las 36 variantes T1 usan el catálogo existente.
+- La espada para extraer pasa a ser préstamo de Ronnie. Se adopta la antigua
+  instancia si ya estaba en inventario y se retira al volver tras fabricar.
+- Sólo se conserva la primera arma fabricada. Se entrega al inventario personal
+  para no exigir prematuramente la Caja; las demás son temporales.
+- El autor pide arbustos como sprites 2D que den fibra mediante daño cortante.
+  Se incorpora un recurso original con alfa, tres ejemplares y extracción nativa.
+- Un cofre en el sótano aporta gemas y cuero de vaca: máximos por material entre
+  las recetas T1 al talle del personaje y 25% en todas las capas. Stock finito,
+  retirada por falta/carga, devolución de sobrantes y persistencia por personaje.
+- Se conservan mapa, recetas, costes y audio. Los registros siguen siendo README
+  más cinco docs; la validación antigua de PROJECT se archiva aquí para dejar
+  allí sólo el estado y los ensayos actuales. Entrega sin instalador, un solo TXT.
+- La parte material de Ronnie llega a fase 60. Comida/bebida, reparación real,
+  Aire/agua y su cita de Palomo siguen pendientes antes de Rulo; el flag de una
+  cita no oída no se activa. Tampoco se agrega munición ni se adelanta la Caja.
+
+## Decisiones y correcciones 4.33.0k
+
+- El autor acepta expresamente HUD del Sello, idioma de Caella y modelos de
+  estaciones de 0j. La prueba de runas y el audio no quedan aceptados por esa
+  declaración: sigue faltando localizar las runas.
+- Se vuelve al formato de fuentes modificadas para copiar y pegar más un TXT
+  con pruebas. Se abandonan aplicadores CMD/PS1 y manifiestos por parche. El
+  constructor existente en raíz conserva su utilidad; la migración 0h queda.
+- A pedido del autor se retiran los 250 objetos del surtido de prueba de las
+  seis primeras habitaciones de planta baja. Incluye la llave plateada y la
+  carta sellada colocadas allí para pruebas; sus futuros usos siguen sin fijar.
+- Se conserva el WAD para cargar partidas previas. El controlador limpia una
+  vez las instancias originales; preserva inventario, descartes y actores de
+  otros lugares. No se reutiliza ese filtro como regla permanente de la zona.
+- Misiones incorpora Detalle con F/Y, lectura con Arriba/Abajo y regreso con F.
+  Muestra contexto y acciones actuales, práctica pendiente/completa, ruta a
+  las runas y transición a Ronnie según el registro persistente.
+- Caella y Detalle comparten la ruta desde la entrada, usando el pasillo,
+  escalera del fondo, derecha/sur y pared trasera como referencias visibles.
+- Pruebas de esta revisión en PROJECT.md; contenido de Ronnie aún pendiente.
+
+## Decisiones y correcciones 4.33.0j
+
+- El autor reportó Caella sólo en inglés. El bloque nuevo usaba [esp] y el
+  resto del proyecto [es]; se corrige el identificador y se comprueba la
+  resolución real de cadenas en español dentro de GZDoom.
+- Se aclara que el Sello de fuego basta: las cuatro runas se usan con el
+  implemento activo, sin equipar otros Sellos ni disparar a los emblemas.
+- El autor reemplaza el texto central del Sello por icono lateral: color si
+  puede usarse, gris cuando está bloqueado y segundos debajo durante recarga.
+- Se crean los doce modelos de estaciones según sus sprites, con geometría
+  sencilla y herramientas características. El yunque conserva tocón y la
+  forja una base de mampostería; no se colocan sobre mesas.
+- War Drums cambia de bucle a una reproducción. Salir inicia menu_strings_start
+  al abrir la confirmación; cancelar debe volver al menú padre. No se recortan
+  los stocks y no se asignan cuerdas a otras confirmaciones del juego.
+- La aceptación de 0i sigue pendiente. Sus comprobaciones anteriores no
+  detectaron el identificador español incorrecto ni acreditaron la salida en
+  la instalación del autor. Los resultados de esta revisión están en PROJECT.md.
+
 
 ## Registro vigente de versiones recientes
 
 | Versión | Resultado |
 | --- | --- |
-| 4.33.0h | Corrige el audio según el informe del autor: ChatSound único en cada página, primera frase de arpa con caída y bucle explícito de portada. Audita todas las carpetas, traslada fuentes/generadores útiles y entrega limpieza transaccional más roadmap completo. Pendiente de aceptación del autor. |
+| 4.33.0l | Elección libre, recetas dependientes, préstamo, arbustos 2D, cofre finito y primera arma; pendiente del recorrido del autor. |
+| 4.33.0k | Todas las pruebas aceptadas por el autor: Detalle, limpieza, Caella y orientación a runas. |
+| 4.33.0j | HUD, idioma y modelos aceptados; las comprobaciones restantes se cerraron con la aceptación posterior de 0k. |
+| 4.33.0i | Introdujo Caella, fases 40–45. Audio, idioma y orientación se corrigieron en 0j/0k; aceptación posterior de 0k. |
+| 4.33.0h | Corrige el audio según el informe del autor: ChatSound único en cada página, primera frase de arpa con caída y bucle explícito de portada. Audita todas las carpetas, traslada fuentes/generadores útiles y entrega limpieza transaccional más roadmap completo. El autor confirmó que toda la migración de archivos funcionó bien. No se extiende esa aceptación a audio/contenido nuevo. |
 | 4.33.0g | El autor informó portada sin música, sonido nativo y añadido superpuestos, ausencia del arpa al avanzar y corte abrupto. La comprobación anterior sólo acreditaba carga/referencias con salida nula: no validaba sonido audible ni bucle real. Esos resultados no constituyen aceptación. La consolidación documental se conserva. |
 | 4.33.0f | El autor confirmó que todas las pruebas de hablar con NPC fueron exitosas. La prueba de Argento queda aceptada. |
 | 4.33.0e | Todas las pruebas confirmadas por el autor: pared sur del ascensor corregida. |
 | 4.33.0d | Resto de las pruebas aprobado; su única objeción fue corregida en 0e. |
 | 4.33.0b | Prólogo canónico aceptado; Palomo deja de ser comerciante narrativo. |
 | 4.32.0o | Matriz de la espada, mano y escudo aceptada por el autor. |
+
+## Decisiones 4.33.0i
+
+- Autor: menu_strings_start pasa a Exit/Salir; War Drums pasa al inicio.
+- Autor: toda la migración de archivos funcionó bien. Se acepta ese alcance.
+- Autor: avanzar y aplicar el siguiente parche. Se desarrolla Caella con el
+  acertijo ya propuesto y la entrada física existente; presentación final
+  pendiente de revisión, sin inventar recetas de Ronnie ni uso de la llave.
+- Se reconcilia la especificación antigua de Channel con User2 y Adrenalina,
+  preservando el comportamiento aceptado del sistema general de Sellos.
+- README y cinco documentos actualizados; arquitectura de programación V5.0.
+- Validación de entrega: 52 comprobaciones de la rama, 20 de audio, recorrido
+  nativo de Usar y guardado/carga (46 comprobaciones), compatibilidad desde 0h
+  y 12 comprobaciones del aplicador. Alcance y pruebas del autor en PROJECT.md.
 
 ## Decisiones 4.33.0h
 
@@ -30,6 +112,189 @@ Versión documental: 4.33.0h — 2026-09-10.
   V4.34–V4.37 y V5 no se pierden al consolidar archivos. Los números no son fechas.
 - La confirmación de todas las conversaciones de 0f se mantiene como aceptación
   del autor. No se vuelven a balancear ni a sortear las tiradas sociales.
+
+## Archivo de validaciones 0i–0k trasladado desde PROJECT
+
+Se conserva a continuación el registro tal como estaba al cerrar 0k. Las
+menciones de pendientes son históricas; la aceptación posterior de 0k y el
+estado vigente de 0l se encuentran al comienzo de este archivo y en PROJECT.
+
+## Alcance y decisiones de Caella 4.33.0i
+
+- Usa el texto y el orden elemental ya propuestos en MAP01.txt. Los emblemas
+  existentes de Sellos son una presentación jugable para revisar; no se declara
+  aprobada una nueva ilustración ni el texto final pendiente del autor.
+- Reutiliza la abertura de 96 MU: X=1842, Y=-383 a -287, planta baja. Las cuatro
+  runas están delante, en X=1826, Z=38. Al empezar la prueba, la textura central
+  adquiere la misma colisión por altura que el resto de la fachada. Al terminar
+  desaparece en sus dos caras. El WAD y el ascensor aceptados conservan su hash.
+- Una partida anterior que ya esté dentro de la cueva puede regresar: el cierre
+  sólo se activa al comenzar la prueba con Caella. Recorrer la cueva antes no
+  completa la misión. La Llave de Plata y su destino siguen pendientes.
+- Se mantienen Fire/AltFire y el Channel nativo en User2. Channel consume
+  Adrenalina; se corrige la referencia antigua a Reload. Para su primera
+  demostración se prepara, al activar User2, como máximo la reserva equivalente
+  a un segundo del coste nativo del Sello, limitada por el máximo del personaje.
+  Después de registrar un tic real de consumo no se vuelve a conceder esa ayuda.
+  No cambian costes generales, efectos, cooldown ni estadísticas.
+- La práctica observa cinco hechos: primario, secundario, canalización, gasto y
+  recuperación de Ánima. Sólo un lanzamiento completado cuenta; fallar por
+  falta de recurso o cancelarlo no cuenta. Las cuatro runas usan Usar con un
+  implemento mágico activo: el elemento propio de la runa resuena a través de
+  él. No se cambia la esencia ni se exige disponer de cuatro armas diferentes.
+- Si falta equipo compatible, se prestan instancias T1 del catálogo existente,
+  con ItemId único y CA_ITEMFLAG_LIMBO_TEMP. Reabrir/preparar no duplica objetos;
+  un préstamo roto se repone en la misma instancia. No puede venderse, soltarse,
+  desarmarse ni guardarse en la Caja. Se devuelve al completar Caella o salir de
+  MAP01. El equipo propio se conserva; se recupera el arma anterior si procede.
+- El Diario resume 5 acciones + 4 runas, 0/9–9/9. Un error reinicia sólo las
+  runas; conserva práctica, errores e identidad del equipo. Hints a los 2 y 4
+  errores. Finalizar lleva a fase 45 y Hablar con Ronnie, con cierre único.
+- El progreso vive en CaelumPersistentCharacterState; se añaden campos y se
+  usan flags libres 57–58 sin desplazar los existentes. Los actores y la pared
+  reconstruyen su presentación desde ese registro. La validación es individual;
+  no acredita todavía el cooperativo planificado para 2–8 jugadores.
+
+## Registro de validación de 4.33.0i (anterior)
+
+- GZDoom 4.14.2 cargó el runtime completo de 4.278 archivos sin errores ni
+  advertencias nuevas. La prueba de Caella pasó 52 comprobaciones: inicio USDF,
+  préstamos e identidad, acciones inválidas/canceladas, lanzamientos reales,
+  Ánima, canalización, pistas, secuencia, devolución, Diario y apertura única.
+- Una segunda prueba ejercitó el recorrido nativo de Usar, no sólo la llamada
+  directa al actor. Detectó y corrigió la activación de las runas. Tras guardar
+  con dos runas, se activó la tercera, se cargó y se recuperaron índice 2,
+  fase 40 y ambos ItemId. Después se activaron Fuego/Agua con Usar, se guardó
+  y cargó la fase 45: índice 4, pared abierta y préstamos ausentes. La matriz
+  de ese recorrido terminó con 46 comprobaciones y cero fallos. Se inspeccionó
+  la imagen del guardado antes y después de abrir: runas visibles y abertura real.
+- Compatibilidad: se creó un guardado real con el runtime 0h en fase 35,
+  se actualizó esa misma instalación a 0i y se cargó el archivo anterior.
+  Conservó Argento 3/3 y fase 35; los nuevos campos empezaron en cero. Caella
+  inició fase 40 y asignó ItemId diferentes a ambos préstamos. No hace falta
+  reiniciar MAP01 para esta ampliación.
+- Audio: 20 comprobaciones de alias/duraciones y reglas sociales conservadas.
+  El motor informó War Drums en bucle con manejador activo en los ticks UI 50,
+  250 y 500. La captura OpenAL de 21,65 s mantuvo señal en los tres tramos
+  0–6, 6–12 y 12–18 s. MAP01 conservó CA_MUS01 en bucle. Los originales de
+  War Drums, menu_strings_start y la frase de arpa conservaron sus hashes.
+- Aplicador con PowerShell 7.6.2: 12 comprobaciones, cero fallos. CheckOnly,
+  ruta con espacios/paréntesis, delta completo, mapas/audio conservados,
+  archivo local desconocido, PK3 idéntico a src, respaldo verificado,
+  reaplicación, rechazo de conflicto y dos restauraciones exactas ante fallo
+  de copia o build. No cambia el aplicador transaccional validado salvo versión
+  y mensajes; el manifiesto no contiene retiros ni traslados.
+- Se mantienen README y cinco docs, sin enlaces de páginas USDF ni claves de
+  localización nuevas ausentes. La revisión final pasa validate_project.py.
+
+Las pruebas usan GZDoom 4.14.2 y Freedoom como dependencia de desarrollo,
+no incluidos en el ZIP. Los observadores y guardados de prueba tampoco se
+entregan. La salida gráfica y el audio se verificaron en un motor aislado;
+quedan la valoración del autor y la ejecución del CMD/PowerShell 5.1 en Windows.
+
+## Validación de 4.33.0j (anterior)
+
+- GZDoom 4.14.2 compiló y cargó los cambios en una base 0i reconstruida con
+  las fuentes y parches disponibles. Las huellas de los archivos afectados
+  se cotejan con esa base; esta revisión no repite la auditoría del ZIP
+  completo realizada en 0h.
+- 21 comprobaciones dirigidas, cero fallos: ayuda inicial de Caella sin conceder
+  recursos al consultar el HUD, canalización real, desaparición del aviso de
+  éxito del Sello, cooldown, bloqueo sin Adrenalina, recuperación y crafting.
+  También se comprobó la secuencia Tierra/Aire/Fuego/Agua con el Sello de
+  fuego, apertura en fase 45 y devolución del préstamo. En esta revisión las
+  runas se ejercitaron mediante su función de uso; el recorrido nativo Usar
+  y los guardados completos constan en la validación anterior de 0i.
+- Capturas del motor: icono a color, gris con 60 s de recarga y gris sin
+  Adrenalina. Los doce modelos se inspeccionaron en una galería aislada con
+  OpenGL: entre 308 y 818 triángulos por estación, trece asociaciones contando
+  el alias antiguo de distancia. El ensayo detectó una asociación ausente
+  durante el armado; se corrigió y el verificador ahora comprueba cada clase
+  y sus recursos. No cambia la colisión ni las recetas.
+- El motor resolvió los textos de Caella en español. El verificador coteja las
+  22 claves de diálogo de la prueba con la sección es para evitar otra caída
+  silenciosa al inglés.
+- Audio capturado durante 22,68 s: War Drums sin bucle, silencio tras terminar
+  (tramo 8–13 s), cuerdas presentes al abrir Salir. La confirmación nativa
+  conserva el menú padre; cancelar vuelve a él y confirmar terminó el proceso
+  con código 0. Música, cuerdas y arpa conservan sus archivos originales.
+- Aplicador: se conserva el algoritmo transaccional probado en 0i, cambiando
+  versión y mensajes. Se verifican el manifiesto, las huellas de base/destino,
+  la aplicación completa del delta y los archivos conservados. No hay retiros
+  ni traslados. La ejecución del CMD en Windows sigue pendiente del autor.
+- README y cinco docs actualizados; referencias de audio, traducciones,
+  asociaciones de estaciones y materiales comprobadas por validate_project.py.
+  MAP01/MAP02 y los 74 archivos de audio conservan sus huellas. El ZIP contiene
+  sólo fuentes nuevas/modificadas y los cuatro archivos temporales de aplicación;
+  no contiene motor, IWAD, guardados ni observadores de prueba.
+
+## Cambios y validación de 4.33.0k
+
+El controlador retira una sola vez 250 pickups del surtido original de las seis
+salas de planta baja, tres a cada lado del pasillo. Son 36 armas, 16 armaduras,
+8 escudos, 12 amuletos, 15 Sellos, 153 pilas de materiales, tres municiones,
+cinco consumibles, la llave plateada y la carta sellada de prueba. Sus clases
+siguen disponibles para contenido futuro; no se fija otro destino de la llave.
+
+La limpieza identifica actores del mapa por clase, origen y altura. Excluye
+objetos en un inventario y objetos soltados; no es una zona que borra todo lo
+que entra. Su marca se serializa con el controlador. Se conserva el checksum
+del WAD para cargar guardados previos; alterar sus Things impediría esa carga
+en GZDoom. Puertas, estaciones del exterior, NPC, ascensor y recursos de la
+cueva permanecen. Al abrir una partida 0j, la marca nueva aplica esta retirada.
+
+El detalle consulta el registro de misión mediante la instantánea del jugador.
+Describe la etapa actual, el contexto y, durante Caella, cada acción de práctica,
+la ubicación y el uso de runas. El texto cambia al llegar a práctica 5/5 y fase
+45. F/Y alterna resumen y detalle, Arriba/Abajo cambia página y TAB cierra.
+Los textos se ajustan al ancho y se paginan para no sobreponer el pie del Diario.
+
+- GZDoom 4.14.2: 32 comprobaciones de limpieza, gameplay e interfaz y
+  15 comprobaciones de compatibilidad entre 0j y 0k; cero fallos en la
+  ejecución final. Se verificó compilación sin errores ni advertencias nuevas.
+- Inventario de la escena: 250 pickups originales antes y cero después.
+  Se conservaron las 18 estaciones externas, cuatro residentes, ascensor,
+  espada y vetas de la cueva. Objetos en inventario y descartes sobrevivieron
+  a una limpieza repetida de prueba.
+- Entrada real de teclado: F abrió y cerró Detalle, Arriba/Abajo cambió página
+  y TAB cerró el Diario. Cambiar de sección restableció el resumen. Las capturas
+  muestran texto ajustado y paginado, práctica pendiente/completa y la etapa
+  posterior. Se verificaron las 25 claves nuevas en español e inglés.
+- Se activaron las cuatro runas con el recorrido nativo CheckUse/P_UseLines,
+  incluyendo el botón Usar y su estado de pulsación, con un único Sello de
+  fuego. Se comprobaron fase 45 y devolución de préstamos.
+- Guardado real creado con 0j: práctica 5/5, dos runas, ambos préstamos, un
+  objeto llevado y otro soltado. Se actualizó la misma instalación de ensayo
+  a 0k y se cargó: conservó ese estado, retiró el surtido antiguo y permitió
+  activar Fuego/Agua con Usar para completar Caella. No hace falta reiniciar.
+- README y cinco documentos revisados; validate_project.py sin errores.
+  MAP01/MAP02 mantienen sus checksums, y HUD, idioma ya corregido, modelos
+  y audio de 0j conservan su implementación salvo la ayuda textual ampliada.
+- Ensayos sobre la base reconstruida de 0j y sus archivos cotejados, con
+  OpenGL y dependencias locales de desarrollo. No se incluyen motor, IWAD,
+  guardados, observadores, instaladores ni manifiestos en el ZIP. La valoración
+  final en la instalación Windows del autor sigue pendiente.
+
+Pruebas necesarias del autor:
+
+1. Copiar el delta sobre 0j y abrir con run_dev.bat. Cargar una partida previa:
+   las seis primeras salas de planta baja quedan sin el surtido antiguo; el
+   inventario conserva lo que ya habías recogido y los objetos que soltaste.
+   Revisar también una partida nueva. Puertas y estaciones exteriores funcionan.
+2. Diario → Misiones → F: aparece Detalle con descripción e indicaciones de la
+   etapa actual. Arriba/Abajo recorre las páginas; F vuelve al resumen y TAB
+   cierra. Cambiar de sección y volver no deja un detalle abierto por error.
+3. Durante Caella, comprobar que cada acción pasa de Pendiente a Hecho.
+   Al completar 5/5, el detalle pide activar runas y muestra su progreso 0/4–4/4.
+4. Desde la entrada, ir por el pasillo central a la escalera del fondo, quedarse
+   en planta baja y rodearla por la derecha (sur). Buscar las cuatro marcas
+   juntas en la pared trasera, detrás de ese lado de la escalera, cerca del piso.
+   Con el bastón activo, acercarse, apuntar y pulsar Usar sobre Tierra, Aire,
+   Fuego y Agua. El mismo Sello de fuego alcanza. Las runas aparecen después de
+   aceptar la prueba; para activarlas hay que completar primero la práctica.
+5. Guardar/cargar con runas a medias. Deben conservarse el avance, el préstamo
+   y la limpieza. Al completar, el pasadizo se abre, se devuelve el préstamo
+   y Detalle pasa a Hablar con Ronnie. Sus materiales son el siguiente bloque.
 
 ## Cómo leer el archivo
 
@@ -16400,3 +16665,70 @@ The accepted 4.33.0e MAP01 WAD is unchanged. No new game is required by the
 quest-state migration; save compatibility still needs the focused manual test.
 
 ````
+
+## Validación histórica de 0h (registro preservado)
+
+### Resultado técnico de 4.33.0h
+
+Resultados sobre la revisión final:
+
+- GZDoom 4.14.2 cargó las 4.277 entradas del runtime completo y MAP01 sin
+  sustitutos de dependencias. La prueba enfocada de audio pasó **19
+  comprobaciones y cero fallos**: frase de arpa, 14 alias nativos, intro y
+  tres valores de probabilidad social conservados. MAP01 informó CA_MUS01
+  en bucle; la portada no reemplazó su música.
+- Captura OpenAL Wave File Writer de la portada durante 21,65 s: cinco
+  repeticiones audibles de la pieza; el menú se abrió durante la captura.
+  El motor informó bucle activo y manejador de reproducción válido a los
+  ticks UI 50, 250 y 500. La señal siguió presente después de los primeros
+  cuatro segundos, a diferencia de lo que comprobaba 0g.
+- Conversación nativa de Argento abierta con éxito y avance real por
+  argento_offer → argento_residents → argento_quote. La captura mostró tres
+  frases independientes de unos 2,57 s: apertura y dos páginas siguientes.
+  No se agregó una segunda llamada manual ni se usó el ChatSound heredado.
+- Avance rápido por esas tres páginas: una sola frase continuó hasta terminar,
+  sin superposición. La marca singular evita apilar copias cuando la anterior
+  aún suena; un nuevo avance después de terminar vuelve a emitir el arpa.
+- El derivado conserva 113.400 muestras, 44.100 Hz, dos canales y caída de
+  450 ms. La intro y el loop de arpa original conservan sus hashes.
+- Aplicador ejecutado con PowerShell 7.6.2: **38 comprobaciones, cero fallos**.
+  CheckOnly sin mutación; instalación de los 22 archivos nuevos/modificados;
+  20 traslados con hashes idénticos; retiro de tools/art_source; respaldo
+  completo y verificado; archivos locales desconocidos conservados;
+  reaplicación idempotente; base alterada rechazada antes de escribir;
+  fallo de copia después de varios traslados con restauración exacta;
+  fallo del build después de toda la limpieza con restauración exacta y PK3
+  anterior intacto. Se corrigió el argumento nulo del reemplazo .NET y las
+  salidas tempranas usan return para permitir invocación reutilizable.
+- El PK3 reconstruido coincidió byte por byte, por entrada, con los 4.277
+  archivos de src y no contiene entradas de directorio. El constructor se
+  ejecutó desde fuera de la raíz. Los tres generadores cargan sus dependencias
+  y muestran --help desde sus nuevas rutas.
+- Mapas, CAPALOMO, constantes, estado persistente y fuentes de arte conservan
+  los hashes aprobados. El verificador de proyecto comprueba documentación,
+  enlaces, 74 audios, registros nativos y referencias de construcción.
+
+
+La base completa se probó con GZDoom 4.14.2 y Freedoom como IWAD de desarrollo,
+sin los dos sustitutos de dependencias usados en la reconstrucción anterior.
+La salida OpenAL se capturó a WAV; las comprobaciones de señal no sustituyen
+la valoración musical del autor. El motor/IWAD y los observadores de prueba
+quedan fuera del parche. La ejecución de CMD/Windows PowerShell 5.1 permanece
+pendiente en Windows; se prueba el aplicador con PowerShell real sobre Linux.
+
+Pruebas breves del autor para aceptar 0h:
+
+1. Ejecutar el CMD sobre 0g. Debe terminar con el PK3 reconstruido; run_dev.bat
+   debe seguir iniciando y tools/art_source dejar de estar en la raíz auditada.
+2. Abrir el juego, esperar más de diez segundos y abrir el menú: intro audible
+   y repetida. Comenzar/cargar una partida: vuelve la música de su mapa; el
+   menú de pausa la conserva.
+3. Abrir diálogo y avanzar varias páginas con NPC: una frase de arpa por página,
+   sin sonido heredado simultáneo ni corte de un segundo. Probar también avance
+   rápido y una opción bloqueada de Ronnie.
+4. Primera apertura del menú, cancelar/confirmar Salir y botón Exit físico:
+   sonidos del proyecto. Confirmar que el Diario conserva el progreso aceptado;
+   no hace falta repetir todas las combinaciones de la prueba de Argento.
+
+Nota posterior: la migración fue aceptada por el autor; los pasos manuales
+anteriores se conservan como historial de esa entrega.
