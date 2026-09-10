@@ -161,6 +161,18 @@ class CaelumMainM00MagicTrial : Object play
         return true;
     }
 
+    static bool Complete(CaelumPlayer user)
+    {
+        if (!IsActive(user)) return false;
+        let speaker = CaelumCaella(user.player.ConversationNPC);
+        if (speaker == null || !speaker.StoryAnchored) return false;
+        let record = user.GetPersistentCharacterState(true);
+        if (!record.CompleteMainM00Caella()) return false;
+        ReturnLoans(user);
+        Sync(user);
+        return true;
+    }
+
     static void RecordCast(CaelumPlayer user, bool secondary, double spent)
     {
         if (!IsActive(user)) return;
@@ -247,8 +259,7 @@ class CaelumMainM00MagicTrial : Object play
         }
         else if (result == 2)
         {
-            ReturnLoans(user);
-            Feedback(user, "CA_M01_MAGIC_PASSAGE_OPEN");
+            Feedback(user, "CA_M01_MAGIC_RUNES_READY");
         }
         else Feedback(user, "CA_M01_MAGIC_RUNE_OK");
         return true;
@@ -260,6 +271,7 @@ class CaelumMainM00MagicTrial : Object play
         record.RefreshMainM00MagicObjective();
         user.SetPalomoDialogueToken("CaelumM00MagicStartedToken", record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED));
         user.SetPalomoDialogueToken("CaelumM00MagicPracticeToken", record.IsMainM00MagicPracticeComplete());
+        user.SetPalomoDialogueToken("CaelumM00MagicRunesReadyToken", record.MainM00RuneSequenceIndex == 4);
         user.SetPalomoDialogueToken("CaelumM00MagicCompleteToken", record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE));
         user.SetPalomoDialogueToken("CaelumM00MagicHint1Token", record.MainM00RuneErrors >= 2);
         user.SetPalomoDialogueToken("CaelumM00MagicHint2Token", record.MainM00RuneErrors >= 4);
@@ -274,6 +286,11 @@ class CA_LimboMagicImplement : CaelumWeaponPickup {}
 class CA_LimboMagicSeal : CaelumSealPickup {}
 class CaelumM00MagicStartedToken : CaelumPalomoDialogueMarker {}
 class CaelumM00MagicPracticeToken : CaelumPalomoDialogueMarker {}
+class CaelumM00MagicRunesReadyToken : CaelumPalomoDialogueMarker {}
+class CaelumM00FinishMagicAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00MagicTrial.Complete(CaelumPlayer(Owner)); }
+}
 class CaelumM00MagicCompleteToken : CaelumPalomoDialogueMarker {}
 class CaelumM00MagicHint1Token : CaelumPalomoDialogueMarker {}
 class CaelumM00MagicHint2Token : CaelumPalomoDialogueMarker {}

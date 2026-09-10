@@ -1,0 +1,2583 @@
+{
+  "sprites": 240,
+  "per_character": 48,
+  "seated": 40,
+  "crouched_idle": 40,
+  "crouch_walk": 160,
+  "walk_phases": 4,
+  "rotations": 8,
+  "png_checks": "PASS",
+  "lying_v2_unchanged": [
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB1.png",
+      "sha256": "50db40b9f66aa522b0510a1e3f8c44cd4b90ce56fece159d50e15d1350aa54f6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB2.png",
+      "sha256": "e0350db788334b7d11868ec203b48afbe3ad28ff3ed5a2f0baf171980e1c63e6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB3.png",
+      "sha256": "b5bcdd6fe6539d264b3734e4993777506f8df2d7ce91384a9fc9534b8d38420e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB4.png",
+      "sha256": "a0c84d1a1b2b9e2a36509f8d27ee9e893f590fda82ec6cd468543074cc3950b1"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB5.png",
+      "sha256": "285209ef15807545bd5c2c86f168ef70bab4526a3235935f70e4045d677ab811"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB6.png",
+      "sha256": "2d8c6e43e7bef14665cb9a6ecabeeec3da1b3cdfa5832e8c1f86b0cf87fd8e85"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB7.png",
+      "sha256": "72971bc7ca20beb050f5841bd0c6456d92f15e1b9f9a39d174422ae1e4229391"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARB8.png",
+      "sha256": "7bf7748c3098f62e935a70d71d68196c48ffb2c30aacd24d1b8f5085333db38a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB1.png",
+      "sha256": "91dfde9074afd0ece4b3bfc1e59f7c0eed247cb7b4a8f19d335d30aaa2b5207d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB2.png",
+      "sha256": "e19f636d1fb7250c0a06974cdab2f1d5f16b06bcdb41bb38d5a011dcda72121a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB3.png",
+      "sha256": "264275d3ff7fdcc1fc74d6407c9b2beeb9ffaf0a0aa2ecf3ebc83f89625b92e7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB4.png",
+      "sha256": "f6c5a4759caa91f774cf067e2f1eed79cae04507e7412e3ad5cf6831602ca71a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB5.png",
+      "sha256": "f07ba9723eef59402332a23582fc16f382678bbf2872299ed1bdd2c4985c43b8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB6.png",
+      "sha256": "1510f3652a95ebf7cdeb450f3bc43a6c31af421cf908d677f237942a38b0a8f8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB7.png",
+      "sha256": "28b9427af43d8e2b5e82c743723c1cdddf977450180fdaab4c4dbf03a22d1e2e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAB8.png",
+      "sha256": "af69576990070066aea529b8bff6d9209426df40beed93556dcca1d86a487d41"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB1.png",
+      "sha256": "59b11fcbeeb0048f7c44bb6e9c9669e447930001dab1aeae73f6682dec7b0257"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB2.png",
+      "sha256": "ddc9969a2107eab289d1fe290d3b204b966f45bd2c424eb2b0165d94276083d5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB3.png",
+      "sha256": "a73d30b6f7d5c959633e0536afa13080db38eb044224239cae308542b032bb32"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB4.png",
+      "sha256": "73bc7028dc6a85c693d57c1b76f6b6459a4e7756180aed677d15bba5648d3995"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB5.png",
+      "sha256": "181974f139d1cc492bb52e617c91b6a9adfd19d018e587236df5d02ea96a44c9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB6.png",
+      "sha256": "45164f1ff2554a063eda3b13c7a63ef7c54959bf020b52bdc924c70a4cf0a994"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB7.png",
+      "sha256": "5073e9cfbfe00089bf59f1a86a23248948028df042c9f2ca38041ce720ca60bb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOB8.png",
+      "sha256": "b85d4c316e053e8d5edc5412156d8cca0d85e6aad8ef23bcda80e3a19daa43fc"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB1.png",
+      "sha256": "15d9ebeaedb4302e81209a6d7b3c1defca7c1785fbadd9a329372558ab8dfd79"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB2.png",
+      "sha256": "2bd4ea10cd5a4d326cf7b5e208d8286d6271947fae5e90227e1d64d9a0f7f147"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB3.png",
+      "sha256": "69cb5fd5b45edc0fc486f38a71d3f67440b92e8d05a00742d9c6daea27bb1219"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB4.png",
+      "sha256": "b97f3c98a242bbfd603c1c5123116a9765f9ebd69274e3b26673cc4e00b35b55"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB5.png",
+      "sha256": "ae68e3bf3a0f96c763cefe731e692b95eecd02100d811ded427fc06d0ee50c4b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB6.png",
+      "sha256": "269dae41231f6928ffb7d458be72717cf2d5b26f55ba918d15683341b56c7fe7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB7.png",
+      "sha256": "b78635ac9a38b81f1622cfe6dbef486e5cd218ac3436f256c83d11366067ed2e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROB8.png",
+      "sha256": "18097ba204c00b124b97da058257935e45fc8c9c8a3cdbe11c1a4f313e53cf09"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB1.png",
+      "sha256": "b80112d76dd5935544fec15c5c2694da6cd26b0ea55d0e1f81ebde77b12dec19"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB2.png",
+      "sha256": "8ffc1090bdacf670e0d1d3bb66c01d9972c851bec0f4fd3e8e881327f87e87ae"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB3.png",
+      "sha256": "daab454b11a2923059cd3629a2022f609c7613bb5a42124eb461013626768740"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB4.png",
+      "sha256": "ea491c066e262e5a2c90e1c280ac636a9abfa4ec409bc5de8e0c90839fd98c4e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB5.png",
+      "sha256": "6d30cd9ddb6a4ab38233fc2e6fc8c3e3516be2a47ccc8752a723d6ce35e9f69f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB6.png",
+      "sha256": "efaa1146af16a96b388f762692911533f72cb604ea940def4f703a70b1be43b9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB7.png",
+      "sha256": "54f84819d8940f0b504ced8636ff9406091774d15b939be6a487cb9b0d5f407e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUB8.png",
+      "sha256": "4bceb2091171e1924cbd1f95d0d6751f48b669f95623a5b09b5c8875a2eaae65"
+    }
+  ],
+  "animation_previews": [
+    "assets/art_source/poses_v3/CAMINATA_AGACHADA.gif",
+    "assets/art_source/poses_v3/previews/caella_caminar_agachado.gif",
+    "assets/art_source/poses_v3/previews/argento_caminar_agachado.gif",
+    "assets/art_source/poses_v3/previews/rulo_caminar_agachado.gif",
+    "assets/art_source/poses_v3/previews/domingo_caminar_agachado.gif",
+    "assets/art_source/poses_v3/previews/ronnie_caminar_agachado.gif"
+  ],
+  "engine_test": "NOT_RUN",
+  "files": [
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA1.png",
+      "visible_bounds": [
+        78,
+        104,
+        177,
+        244
+      ],
+      "sha256": "59eafeacd03d6a03b841a9d01f2c9101db07400d38b4ed245096d99d79a496b6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA2.png",
+      "visible_bounds": [
+        76,
+        99,
+        180,
+        244
+      ],
+      "sha256": "e9b25c32da1bea8b32140a9405fbb2d04ca2b9ece147154a812069b46521f86c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA3.png",
+      "visible_bounds": [
+        77,
+        100,
+        178,
+        244
+      ],
+      "sha256": "ebbfdc368b4288e1f418db18dd246bf14b44b0c11a3b854998426fb6db768ca3"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA4.png",
+      "visible_bounds": [
+        79,
+        105,
+        176,
+        244
+      ],
+      "sha256": "45a008a1dc7a46539695133fc22f99efad6d2d1d2e88d8735c27d9cc0e5ac22f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA5.png",
+      "visible_bounds": [
+        82,
+        110,
+        173,
+        244
+      ],
+      "sha256": "f6a30b9110b7749371e2db2c8b96b34c6a37740952d72f93ac6e9bcddc4170af"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA6.png",
+      "visible_bounds": [
+        75,
+        108,
+        180,
+        244
+      ],
+      "sha256": "f89a9e3da7478e6b0989140b11f690bf3bcec416ce5ef0d1ee3b7f4a928c0a98"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA7.png",
+      "visible_bounds": [
+        76,
+        104,
+        179,
+        244
+      ],
+      "sha256": "019487ffd1f46dfece6eb3caacc0675c688a35975634aff8fab9eb7831863a2d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARA8.png",
+      "visible_bounds": [
+        76,
+        101,
+        179,
+        244
+      ],
+      "sha256": "f94ebc668ff6c6d901a95aa7cc9c21f80dbd9321eb597c5505229babb4ffe9cf"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC1.png",
+      "visible_bounds": [
+        76,
+        133,
+        180,
+        244
+      ],
+      "sha256": "e57f44e4631dc26b138eecb871717f72e4177ab1c0aaa9f158ff230917ffb00b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC2.png",
+      "visible_bounds": [
+        78,
+        132,
+        177,
+        244
+      ],
+      "sha256": "8eadb1c11879a4703e8d703536df00dcd2cd5ca5277057a40abff0150a47821c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC3.png",
+      "visible_bounds": [
+        81,
+        129,
+        175,
+        244
+      ],
+      "sha256": "ec5ff6aa44238511b0fc5d0764c94171f4d9dbbbbfa205389e4efe4f65bb6e41"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC4.png",
+      "visible_bounds": [
+        78,
+        133,
+        177,
+        244
+      ],
+      "sha256": "1ac8ab37747a7a34985b98f1a6cb50282649a70970415411bc70118c32a77edf"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC5.png",
+      "visible_bounds": [
+        76,
+        132,
+        180,
+        244
+      ],
+      "sha256": "59e0a7227f8b56b014523feeb5cd39946c303b445914c5cbf73e4937de5a3e56"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC6.png",
+      "visible_bounds": [
+        78,
+        132,
+        178,
+        244
+      ],
+      "sha256": "81187ffb0d02f135ff7c2383077a7f1cebd72d801bdcd0457c3f5026dd2ca176"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC7.png",
+      "visible_bounds": [
+        80,
+        131,
+        176,
+        244
+      ],
+      "sha256": "fd67d894c00a1d4eb498a145c312522d687a8c3473f0f4935a81e7a583c75eb6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARC8.png",
+      "visible_bounds": [
+        76,
+        129,
+        180,
+        244
+      ],
+      "sha256": "4d6ce4d4001f3cb40ba529c7c846955e762d2f41de03bfd44cae064b67f65def"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD1.png",
+      "visible_bounds": [
+        81,
+        135,
+        174,
+        244
+      ],
+      "sha256": "8a04566d7edc113ffff775499d49e0f51c2dd92b4ee87a437bf7c35fabab4eab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD2.png",
+      "visible_bounds": [
+        73,
+        132,
+        181,
+        244
+      ],
+      "sha256": "34df41757b5cf85605be7b57666b907c918289bad62423c43c0906f4d6ab05c8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD3.png",
+      "visible_bounds": [
+        76,
+        135,
+        177,
+        244
+      ],
+      "sha256": "313e714a35715dd12a07943e51848638a46a70225935d0dfb9642d737d80263b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD4.png",
+      "visible_bounds": [
+        74,
+        132,
+        188,
+        244
+      ],
+      "sha256": "dd4590b7d34a90f3d1a29bd53db6994140416892addaee7a90ec804fbaed457e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD5.png",
+      "visible_bounds": [
+        79,
+        129,
+        172,
+        244
+      ],
+      "sha256": "8c0637e6effc7a91856369ccd7cbc28b054e4da528d727fc949492442d136532"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD6.png",
+      "visible_bounds": [
+        78,
+        132,
+        176,
+        244
+      ],
+      "sha256": "08ebed25a12cc0d9059025a77cd5f01761228ba84d099c735654927952c00ae9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD7.png",
+      "visible_bounds": [
+        75,
+        129,
+        183,
+        244
+      ],
+      "sha256": "677d6ef6141711000e089e2704aa5f7cac317e899309a7f6bea78f8a894ef5fe"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARD8.png",
+      "visible_bounds": [
+        79,
+        130,
+        182,
+        244
+      ],
+      "sha256": "f82d3191cf2e800bc4ec9509f6bf4633b75e1aa1288d4c2f675a96e1e31bd25c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE1.png",
+      "visible_bounds": [
+        83,
+        137,
+        171,
+        244
+      ],
+      "sha256": "f68ca9d3aec98e70a5fa7150781f49868b2de5ad52b1509376a7c2ac079a5d3c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE2.png",
+      "visible_bounds": [
+        76,
+        132,
+        180,
+        244
+      ],
+      "sha256": "894eef1d6246ad710f5f5671bd285fe95800048a6c615b20a4cf1409b2734ae8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE3.png",
+      "visible_bounds": [
+        80,
+        134,
+        176,
+        244
+      ],
+      "sha256": "51cf58cbceee8e8027e7fa89d8a95bb9e6ed9de6e0c3d490c467e78b64662fb7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE4.png",
+      "visible_bounds": [
+        73,
+        130,
+        187,
+        244
+      ],
+      "sha256": "283c0e4fbe629e2b26c91cd716e8169a0422fc53b981d952e9f76c5c7b4a69a4"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE5.png",
+      "visible_bounds": [
+        83,
+        131,
+        172,
+        244
+      ],
+      "sha256": "51b00b25701d0511a7305807fc8a803fd86c9809c5f0b195467fdb650c691970"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE6.png",
+      "visible_bounds": [
+        82,
+        133,
+        175,
+        244
+      ],
+      "sha256": "0b5878e8393f9cb63d1e695f210424e556607c1d5b94acda00b2f75f3d0af5c0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE7.png",
+      "visible_bounds": [
+        83,
+        131,
+        182,
+        244
+      ],
+      "sha256": "2fef16c8a51caa4b825f4735ce02f474b74ed301bb854202009a940c53afef95"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARE8.png",
+      "visible_bounds": [
+        80,
+        135,
+        182,
+        244
+      ],
+      "sha256": "fe2d8693a92bc48ca46e4a49a075336dfc203024d4bd8a959615adf77c62ec23"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF1.png",
+      "visible_bounds": [
+        72,
+        135,
+        177,
+        244
+      ],
+      "sha256": "759e2273c77c1d62e9a3a88db57c0f0792be051ed19fe17995b3b51f2bc75680"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF2.png",
+      "visible_bounds": [
+        72,
+        129,
+        185,
+        244
+      ],
+      "sha256": "f544a4a1f4960c98460f8e13904cb595fc96353902d2593d98427f353cff33cf"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF3.png",
+      "visible_bounds": [
+        79,
+        132,
+        184,
+        244
+      ],
+      "sha256": "588942124fd973e722032ac568a82338ba62c834006878c5cdd42395ae244160"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF4.png",
+      "visible_bounds": [
+        78,
+        132,
+        185,
+        244
+      ],
+      "sha256": "24daf2f414cc0323c18d600eba226a2694eae8f6ddfc880ac53a9a68100f33d9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF5.png",
+      "visible_bounds": [
+        80,
+        130,
+        180,
+        244
+      ],
+      "sha256": "87b39d19b7193405fa0e8c711f754219d7f7d66b66cab9d1a72e51cf60408c8f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF6.png",
+      "visible_bounds": [
+        75,
+        133,
+        173,
+        244
+      ],
+      "sha256": "bcdaad582f715ea4ceb6792393ad31151f5d2a73ab9398f9cc334c6e97acf402"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF7.png",
+      "visible_bounds": [
+        72,
+        129,
+        183,
+        244
+      ],
+      "sha256": "711b5939ee10f4d83de33aee15b1a560c3193224a361d300f060390240bcc41e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARF8.png",
+      "visible_bounds": [
+        76,
+        131,
+        175,
+        244
+      ],
+      "sha256": "4bb17ed59deab3c7de1d3810f9cf424917cf56fa88f2f2a342bf9241e67b0341"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG1.png",
+      "visible_bounds": [
+        82,
+        135,
+        169,
+        244
+      ],
+      "sha256": "c4a0fa42b31cfeb999980571a17fbe3b9ceda86115c7bb82018fed34cf4c3b23"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG2.png",
+      "visible_bounds": [
+        78,
+        132,
+        176,
+        244
+      ],
+      "sha256": "71f9d87abbac7e99da5549524d86bf24ad759a7731f61c7c24b19057f00ba49f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG3.png",
+      "visible_bounds": [
+        82,
+        133,
+        178,
+        244
+      ],
+      "sha256": "e10ed4c563dae364f0300d332fef34431f32451d2893f42815cb8889d8a7123c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG4.png",
+      "visible_bounds": [
+        74,
+        132,
+        182,
+        244
+      ],
+      "sha256": "ee57bd6e89072b2b725537e6475183a884c4792c94f4bb2f60deb1b33a46beb8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG5.png",
+      "visible_bounds": [
+        85,
+        131,
+        182,
+        244
+      ],
+      "sha256": "7ad6de30db6eb8342ec15933299c61cca7af9b2e6869a2b0875c9d863d73f6b7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG6.png",
+      "visible_bounds": [
+        81,
+        132,
+        175,
+        244
+      ],
+      "sha256": "bbd967cddf4c512ffef1c2f4b9d8364849815470a77e6455fd6047fab33f9bc9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG7.png",
+      "visible_bounds": [
+        81,
+        131,
+        183,
+        244
+      ],
+      "sha256": "638d40f19a2e662a23e2b688e8789c1084724b0d97fc919c0bf10c923430d454"
+    },
+    {
+      "file": "src/sprites/caelum/rest/argento/RSARG8.png",
+      "visible_bounds": [
+        82,
+        138,
+        184,
+        244
+      ],
+      "sha256": "b7b975fc927807070a0d34e2b657150e84a4621f165ebcf6081c4b439eb2be4b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA1.png",
+      "visible_bounds": [
+        82,
+        104,
+        174,
+        244
+      ],
+      "sha256": "2246a05160ef58554e79873bfa78affcd7f319cd49175c3ad8a0b8a48c0ad6b5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA2.png",
+      "visible_bounds": [
+        76,
+        102,
+        179,
+        244
+      ],
+      "sha256": "eecbe4be6693a1c92a7fe04702ce4cb3f2164ca96bfcd2c7570140137d07eeb6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA3.png",
+      "visible_bounds": [
+        79,
+        104,
+        177,
+        244
+      ],
+      "sha256": "1026b6fe2157c4a82d2b4579648b0e0233f508fb969c082e6c0f34b79d78147e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA4.png",
+      "visible_bounds": [
+        77,
+        108,
+        178,
+        244
+      ],
+      "sha256": "6b7a8e3fb7ab442dbe95af43aa273aeea5f168ae4a7ed0919327962c7f15f9c6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA5.png",
+      "visible_bounds": [
+        80,
+        107,
+        175,
+        244
+      ],
+      "sha256": "f7adff418cb3a07b63d6959d3596e390c5acef70a9ad4f641219a0b567882719"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA6.png",
+      "visible_bounds": [
+        76,
+        106,
+        179,
+        244
+      ],
+      "sha256": "57f81ca285e3211fca5ec9370990e09cdc321fa0d965752a7868749f16c4fb38"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA7.png",
+      "visible_bounds": [
+        79,
+        102,
+        176,
+        244
+      ],
+      "sha256": "cc65d724352917ff94d1ecb4bfe351000f3416031cc769d84651b3e0d31a8afb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAA8.png",
+      "visible_bounds": [
+        76,
+        100,
+        180,
+        244
+      ],
+      "sha256": "d510a94e5f71663645f5fe6f51dd0b5556bcb931cbee5da41ba28aa03f9c12fd"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC1.png",
+      "visible_bounds": [
+        78,
+        135,
+        178,
+        244
+      ],
+      "sha256": "27eb3414cd44b7119ce383add60ac350cfdf86a672e4bb9ca3e17a3dddd0789e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC2.png",
+      "visible_bounds": [
+        82,
+        132,
+        173,
+        244
+      ],
+      "sha256": "e6398c471e30be92718acecd9a435113fe8ca233ba80c4664bef5274ee7f6141"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC3.png",
+      "visible_bounds": [
+        86,
+        131,
+        169,
+        244
+      ],
+      "sha256": "862fd0a7d94d8859b2c00bded2465a42f0d50b763185c3a5e7ab0e77dcdd8312"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC4.png",
+      "visible_bounds": [
+        82,
+        132,
+        174,
+        244
+      ],
+      "sha256": "78a253f1a8056f2bbe73e35900ebb695cdf2fa4295404e875bd4e33fb2386d66"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC5.png",
+      "visible_bounds": [
+        78,
+        134,
+        177,
+        244
+      ],
+      "sha256": "11cac1f1e0f96b0608eb0cd9b1a16075269dca3868d9a233979c1e400dd1b806"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC6.png",
+      "visible_bounds": [
+        78,
+        132,
+        177,
+        244
+      ],
+      "sha256": "33ffceecd0869968138ce978292bc6ad0e934997c6616ddcd1f5ef1ce462513d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC7.png",
+      "visible_bounds": [
+        84,
+        131,
+        171,
+        244
+      ],
+      "sha256": "72b158a3031ca3d790718a07d57d8c9b2af3273a51ab316148f8161886fc0dcf"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAC8.png",
+      "visible_bounds": [
+        80,
+        130,
+        176,
+        244
+      ],
+      "sha256": "9f27846c349bd20d509ed6ed937af451f05faf3e9abbb8c1a0eae3f8a4ed1e78"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD1.png",
+      "visible_bounds": [
+        77,
+        137,
+        181,
+        244
+      ],
+      "sha256": "1849b332eb0c343131a4056de2f0b919a0d214c9ca53fee508edaed44cadb726"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD2.png",
+      "visible_bounds": [
+        79,
+        131,
+        179,
+        244
+      ],
+      "sha256": "e0accb0d6a488ea5f3b1c75fb57c556d9f8a594d33efebb60bbd4f90c86bae3f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD3.png",
+      "visible_bounds": [
+        84,
+        134,
+        180,
+        244
+      ],
+      "sha256": "9650ca489747d511bb82ef61abdfca5c851d14820fbf77b6ab50fdef2ed34bde"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD4.png",
+      "visible_bounds": [
+        80,
+        129,
+        182,
+        244
+      ],
+      "sha256": "ee61c2bcbac84219cefc7953c1c159d4b604b01689110a6b6c07464a3ec671fc"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD5.png",
+      "visible_bounds": [
+        77,
+        135,
+        180,
+        244
+      ],
+      "sha256": "1338cae0735897ee3971954b6879e8261285e4467d0cffd60e4e12f43f3ffb68"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD6.png",
+      "visible_bounds": [
+        75,
+        135,
+        183,
+        244
+      ],
+      "sha256": "13c380bf4b4e00fb6ea8046987e3e148d87ade9a3691e4abfdf8904a83c306c6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD7.png",
+      "visible_bounds": [
+        71,
+        130,
+        188,
+        244
+      ],
+      "sha256": "ff9ca459759fdac3a8d5946b5c44af9e2e566260454806eafafda5bdd8272f33"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAD8.png",
+      "visible_bounds": [
+        75,
+        130,
+        185,
+        244
+      ],
+      "sha256": "80b98ebb37cb50cc4a192e8da7f8b118e325d765b92d70c3c7754c4d896cb432"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE1.png",
+      "visible_bounds": [
+        79,
+        142,
+        178,
+        244
+      ],
+      "sha256": "0c98f7dd9e337ca3c212792726df6a2c605a85ae1ead431b3b7ca65deddd2d0f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE2.png",
+      "visible_bounds": [
+        80,
+        132,
+        179,
+        244
+      ],
+      "sha256": "61eb5f3f4c9f8d44fab98cacd63bd8d12a61b112a1f4758acd260b6f31d871ed"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE3.png",
+      "visible_bounds": [
+        86,
+        136,
+        180,
+        244
+      ],
+      "sha256": "fb2670027e92c5b71357d828c0cd42f048da289fef18b167f209acfade6e333d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE4.png",
+      "visible_bounds": [
+        79,
+        129,
+        177,
+        244
+      ],
+      "sha256": "22c8093a8bfddd28041a96d8207c68e352cfa3f95f0de2cbd251b6f0933b0794"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE5.png",
+      "visible_bounds": [
+        86,
+        137,
+        175,
+        244
+      ],
+      "sha256": "057ef1457ffeea1bffdc681ded2e0d11fc2ae01906e5a9ca51036dc13b8509c6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE6.png",
+      "visible_bounds": [
+        82,
+        135,
+        182,
+        244
+      ],
+      "sha256": "8d92cafa442770ce47b75cc2e460086314bb19db8c757b8966aee2186a54047b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE7.png",
+      "visible_bounds": [
+        76,
+        132,
+        183,
+        244
+      ],
+      "sha256": "63564a470ab88b40631826de2677927d582880248a58007bd66ba5dca9a11d38"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAE8.png",
+      "visible_bounds": [
+        75,
+        130,
+        185,
+        244
+      ],
+      "sha256": "05432ae93235bd488752d617200b3cf4297240aa1a81617dcf419102f88675a3"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF1.png",
+      "visible_bounds": [
+        77,
+        136,
+        179,
+        244
+      ],
+      "sha256": "4687bc1176570fa46c1236ef1bc59af6dabb2ba1498d2b4b1f4009bedddba3ed"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF2.png",
+      "visible_bounds": [
+        81,
+        131,
+        181,
+        244
+      ],
+      "sha256": "ebddd472ed631d9fbe5c57430a1fc183d26b2911d14d4e8057c92e216ae0ae69"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF3.png",
+      "visible_bounds": [
+        85,
+        134,
+        183,
+        244
+      ],
+      "sha256": "0bb2c13bc8f1a932352588692164cabfb6e30ecc08da40e8c753aedd6b99ba0a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF4.png",
+      "visible_bounds": [
+        78,
+        129,
+        180,
+        244
+      ],
+      "sha256": "d0c580ed31f3f71d02e62c6c6f625359b51f23040686c63088c6e7fc8bd0b60b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF5.png",
+      "visible_bounds": [
+        78,
+        134,
+        177,
+        244
+      ],
+      "sha256": "e1b9e54db64828a45706a80b20bfbd3e5a41f1beedd43184865589abfd061133"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF6.png",
+      "visible_bounds": [
+        75,
+        129,
+        182,
+        244
+      ],
+      "sha256": "c8b3e3b988b011200fa5b31382169f4f69597b1fd45cdd7fbcab0559b69e9512"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF7.png",
+      "visible_bounds": [
+        73,
+        130,
+        186,
+        244
+      ],
+      "sha256": "b6fff3eab7cf9388776245e80950efe77f087b80acbc0fa1299524bacd339fc4"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAF8.png",
+      "visible_bounds": [
+        75,
+        131,
+        184,
+        244
+      ],
+      "sha256": "31a08a614c7b05d77a3947dcacc2d98e134d3a38742cc9ae7a6a41ed3aea4bda"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG1.png",
+      "visible_bounds": [
+        78,
+        141,
+        180,
+        244
+      ],
+      "sha256": "27830602144ec97f324e88a850d1391f493f4edb2878c94d628f8c5b6e766869"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG2.png",
+      "visible_bounds": [
+        81,
+        132,
+        176,
+        244
+      ],
+      "sha256": "a59cb44734ec0feec22ba6bca9c4a44f19868526f53acff6d72472e1551af0f7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG3.png",
+      "visible_bounds": [
+        84,
+        134,
+        173,
+        244
+      ],
+      "sha256": "aa06e65522e242eda5f1ec44bf3c80f211bf2fb445a32fb153cfac5242c0c409"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG4.png",
+      "visible_bounds": [
+        79,
+        128,
+        180,
+        244
+      ],
+      "sha256": "0b9e3d686849cedd8098830fd32705200312e43fad9ccd5c4e4a1d004a3f1549"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG5.png",
+      "visible_bounds": [
+        82,
+        135,
+        177,
+        244
+      ],
+      "sha256": "27339ffc0b37f93ef92e5d7df8990caf97c8e2b809c9857b9a5de21b30129a65"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG6.png",
+      "visible_bounds": [
+        81,
+        135,
+        181,
+        244
+      ],
+      "sha256": "b1594fb8bbea2d7c8a4936e75c643543b463bac476c400cc470d4d0e5a546374"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG7.png",
+      "visible_bounds": [
+        78,
+        130,
+        181,
+        244
+      ],
+      "sha256": "a2d60f8be629d64978fa038dc22ffaf85f55a7a1cf7a41a129d9484bcb241dc5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/caella/RSCAG8.png",
+      "visible_bounds": [
+        80,
+        130,
+        181,
+        244
+      ],
+      "sha256": "00527e53f56f1c1c5030306b02b36cd98e2c675b2d85758a86084bfb8f0fec24"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA1.png",
+      "visible_bounds": [
+        83,
+        102,
+        173,
+        244
+      ],
+      "sha256": "d0556989cb5bf633d27febae1f7c8dc112628d2f4bdfb258c9cc026390854a1f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA2.png",
+      "visible_bounds": [
+        79,
+        102,
+        176,
+        244
+      ],
+      "sha256": "5f4c803fcc4e6d5beade8b9ce9bb65f1cb15a05b83ba2d97d3aeb9203255316c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA3.png",
+      "visible_bounds": [
+        84,
+        103,
+        172,
+        244
+      ],
+      "sha256": "b1b3ae85aa1cbd6db6828a7d3c03f2c578d2644df4a41049a735c96c509cc373"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA4.png",
+      "visible_bounds": [
+        78,
+        107,
+        178,
+        244
+      ],
+      "sha256": "cf1412661eeb52fa2353d3474b60d52ee9cbc4f84cd32be83efd3a8e67f0023d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA5.png",
+      "visible_bounds": [
+        84,
+        106,
+        172,
+        244
+      ],
+      "sha256": "61eea0bb3f106af40fe077e4c247f69bd1ce1bc16baa6b9886f2c66545df2e71"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA6.png",
+      "visible_bounds": [
+        77,
+        105,
+        178,
+        244
+      ],
+      "sha256": "460964b70cb43d098ebff7d832839ac27170753a2ec0973897eb2cc1264e4094"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA7.png",
+      "visible_bounds": [
+        81,
+        105,
+        174,
+        244
+      ],
+      "sha256": "804448fd47b137573dd05e2416d9aa5c56f3603349c4c286b20446c3f5318543"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOA8.png",
+      "visible_bounds": [
+        80,
+        101,
+        175,
+        244
+      ],
+      "sha256": "ddc026e1b8bbe6c3cc8c1cacb2c1f7e9aca6497d957fb141e2751e6173278de4"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC1.png",
+      "visible_bounds": [
+        80,
+        135,
+        175,
+        244
+      ],
+      "sha256": "64a33a488170536b5507feed42d8832e1aad1600673d32dc7b8a37b59f5d6d6d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC2.png",
+      "visible_bounds": [
+        79,
+        134,
+        176,
+        244
+      ],
+      "sha256": "1b41b31941375753e04d19902cac5cbc30b8cd684c1296d1eb3b19bbb06e1186"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC3.png",
+      "visible_bounds": [
+        84,
+        134,
+        172,
+        244
+      ],
+      "sha256": "5f6baa4797d741146cc15e92a128daf49209f4f4f9c7b21c3ba472d1e000baa9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC4.png",
+      "visible_bounds": [
+        77,
+        134,
+        178,
+        244
+      ],
+      "sha256": "fb0dd6ce4b1e45d94420bd88fc61a5918d39a80a18e1e3712d41fd3e95a23e66"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC5.png",
+      "visible_bounds": [
+        79,
+        128,
+        177,
+        244
+      ],
+      "sha256": "8f0d276c53c60e826b8bfadf66c5d4cfcb537fd8175420d9e53c1c150720a6ce"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC6.png",
+      "visible_bounds": [
+        76,
+        130,
+        179,
+        244
+      ],
+      "sha256": "faf879c80125e1dd6c394edc918aa4a88d81eb0b64f0aed92037767d8afacdab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC7.png",
+      "visible_bounds": [
+        82,
+        130,
+        173,
+        244
+      ],
+      "sha256": "171bed4558ecb1d1ce425b1b19756f94fa721a0960cb3d082799d610b131ddbd"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOC8.png",
+      "visible_bounds": [
+        80,
+        129,
+        175,
+        244
+      ],
+      "sha256": "9cade913652498d3c9fbb7bc18c5106c2ac219ad33a8dfef9698a601ef9dcf48"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD1.png",
+      "visible_bounds": [
+        83,
+        124,
+        176,
+        244
+      ],
+      "sha256": "8494a8ef1dce93db34132f462ce15fcf751755e70c8db183d5a6ff08a019f3ab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD2.png",
+      "visible_bounds": [
+        75,
+        126,
+        187,
+        244
+      ],
+      "sha256": "25cfd183fa68263595c372030cea8eded9b3d816ab7e24b8d37978b01942e0fc"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD3.png",
+      "visible_bounds": [
+        74,
+        132,
+        175,
+        244
+      ],
+      "sha256": "b1b830050671703169f30a2503c2b34429b32cb9d73d79f7d99fcd0d3d4d09b6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD4.png",
+      "visible_bounds": [
+        70,
+        124,
+        179,
+        244
+      ],
+      "sha256": "d8cd43ed5c2d5a93a0066b0d79e6335c1c704fdf2eabb96f628883bc88942d63"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD5.png",
+      "visible_bounds": [
+        87,
+        133,
+        170,
+        244
+      ],
+      "sha256": "f9d4259fc259cbe24428cb043539e29dc6b627145cae4152736167cf6c7698f0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD6.png",
+      "visible_bounds": [
+        76,
+        133,
+        182,
+        244
+      ],
+      "sha256": "0869841e688916b11f2714c15998f93f516a65b154c5a0d2f0f10e4caa3d0ae5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD7.png",
+      "visible_bounds": [
+        79,
+        136,
+        188,
+        244
+      ],
+      "sha256": "ca50b4e6cf10bba22f6f3e33fc6a101b5d146ad197a90d0e34687dccf3025f85"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOD8.png",
+      "visible_bounds": [
+        77,
+        134,
+        185,
+        244
+      ],
+      "sha256": "cb82eef2ca05ca05f486e02c106682a4a9f783f1aa77c2e9447387d35e6e7609"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE1.png",
+      "visible_bounds": [
+        87,
+        131,
+        171,
+        244
+      ],
+      "sha256": "b75ac388587e314d18ddccd8ea03a121addafa9f796195dd32293e3588f3ff2d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE2.png",
+      "visible_bounds": [
+        78,
+        131,
+        180,
+        244
+      ],
+      "sha256": "3d57c71e57b5f63137a7dd7cb1acee5b5357023021063122ad8bb891977aa219"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE3.png",
+      "visible_bounds": [
+        75,
+        131,
+        176,
+        244
+      ],
+      "sha256": "f872d651c14f8708d3f6dece3ad6b12b3f8c390b1364d820e653bbee5623a084"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE4.png",
+      "visible_bounds": [
+        74,
+        127,
+        176,
+        244
+      ],
+      "sha256": "224ec00f31b95e6b5e6a7ec25618c81f74d8b9f64ef84753384e7e9d3b97e21d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE5.png",
+      "visible_bounds": [
+        89,
+        140,
+        167,
+        244
+      ],
+      "sha256": "c341b11218c49c5eff634ef43c52cef181fce605f328ef3c84d1f5da3ffb0b19"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE6.png",
+      "visible_bounds": [
+        83,
+        138,
+        177,
+        244
+      ],
+      "sha256": "2f5baad972fc7adc0cb5de60d01da225e7914c284302cd54834202cd3600b18b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE7.png",
+      "visible_bounds": [
+        83,
+        141,
+        182,
+        244
+      ],
+      "sha256": "eacb6734b86f47382d907be2c8552180a265ba78eb7a5f4f0150b12ad644b27a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOE8.png",
+      "visible_bounds": [
+        80,
+        136,
+        181,
+        244
+      ],
+      "sha256": "0a5c044920b9e1948254160adbc757f4f1d5c1328b912ae3eca3efe7de10ab7e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF1.png",
+      "visible_bounds": [
+        84,
+        125,
+        174,
+        244
+      ],
+      "sha256": "2d4e428c84f8c08b24b78a4ff53fb99d1c56233f01b9b892f01c918836836a00"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF2.png",
+      "visible_bounds": [
+        71,
+        127,
+        183,
+        244
+      ],
+      "sha256": "bf5e191489d4e34b4327cf94d936428ff5786a554d114ce0ec4af745bb36e6f3"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF3.png",
+      "visible_bounds": [
+        75,
+        132,
+        173,
+        244
+      ],
+      "sha256": "4253cbabd21b7b440972ae30f974aaf405ae6694611688cb28b3fbdb0bc01e68"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF4.png",
+      "visible_bounds": [
+        71,
+        123,
+        182,
+        244
+      ],
+      "sha256": "4c146697d945aa852294e598ae80856bfc5c29072aecfab65bd8ca5cd3115324"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF5.png",
+      "visible_bounds": [
+        87,
+        132,
+        170,
+        244
+      ],
+      "sha256": "27aff07ada8d9953a84dba800f2d885bec12739095a367a5ac44da6cfba6e537"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF6.png",
+      "visible_bounds": [
+        78,
+        133,
+        182,
+        244
+      ],
+      "sha256": "7e696ed43808209109216abf70bbdce01a01441fe7cf6a63d6a4e018f5257c3e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF7.png",
+      "visible_bounds": [
+        80,
+        136,
+        187,
+        244
+      ],
+      "sha256": "82d870d9dc032d2a9e245e1276cad935f183188906fc677127ec2f2072592e0d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOF8.png",
+      "visible_bounds": [
+        78,
+        133,
+        188,
+        244
+      ],
+      "sha256": "6585ad08997210b29a490e0888769244ef6dbe5c08cea876df06204519427821"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG1.png",
+      "visible_bounds": [
+        85,
+        129,
+        174,
+        244
+      ],
+      "sha256": "7e44b1d189eaa336b37e7b61b900a73585da68b8faf023e8c83272985f436cab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG2.png",
+      "visible_bounds": [
+        74,
+        125,
+        184,
+        244
+      ],
+      "sha256": "3d2c4d52fbedd674a3f3a99e53ef27c56b1db29666ba1d170b484c43e96b952a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG3.png",
+      "visible_bounds": [
+        76,
+        131,
+        173,
+        244
+      ],
+      "sha256": "3285f810b8c6db8adfe0f1a072f36d0b0333454a745d3ad031ef255e7be8365c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG4.png",
+      "visible_bounds": [
+        72,
+        124,
+        177,
+        244
+      ],
+      "sha256": "a8652f61e1c804ff23eae4eb5c29bb0450361ff01b27773ed9ee69d940dc6065"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG5.png",
+      "visible_bounds": [
+        88,
+        139,
+        169,
+        244
+      ],
+      "sha256": "3ecd61102bb7ef6fca393910e35488a7740ca19935c67f2149829cd41a92bb46"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG6.png",
+      "visible_bounds": [
+        80,
+        136,
+        179,
+        244
+      ],
+      "sha256": "88b59d7e96dd858d01e680d4db71b1e17ac7d1a13edca01d4ba22f09b77889c0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG7.png",
+      "visible_bounds": [
+        80,
+        140,
+        182,
+        244
+      ],
+      "sha256": "31b4d563662ac964cef33de6bebf7c8be967b17c70d23d91c7f9ac1c3121f4d8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/domingo/RSDOG8.png",
+      "visible_bounds": [
+        83,
+        136,
+        183,
+        244
+      ],
+      "sha256": "e7b9c1a5aa4e113b5614bf86b5c0a18d029a77f615f31275be3a4fcd970f08cf"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA1.png",
+      "visible_bounds": [
+        83,
+        104,
+        173,
+        244
+      ],
+      "sha256": "4f7f68c8b487710a9411c1da168dd2293e1f24c22bbfa94954e946b8d06c1363"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA2.png",
+      "visible_bounds": [
+        82,
+        102,
+        173,
+        244
+      ],
+      "sha256": "f8e285d3a35ca0ebc2edaffb6e0ede9770fbdf1526557b03c2ca5e5baafecef0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA3.png",
+      "visible_bounds": [
+        84,
+        104,
+        172,
+        244
+      ],
+      "sha256": "714c00de3ea45b450de37f2b6710a086e8c516fe6e41df55532b9499071c7b2c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA4.png",
+      "visible_bounds": [
+        81,
+        110,
+        174,
+        244
+      ],
+      "sha256": "1a8b47855c9cc08a7536c2444268b81a5bbad2a7726349b7e481903b8597a4fb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA5.png",
+      "visible_bounds": [
+        84,
+        108,
+        172,
+        244
+      ],
+      "sha256": "40cc0981d3da8190b03903aee51c061ddae52de7f623322cc4268fe889ca4996"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA6.png",
+      "visible_bounds": [
+        84,
+        108,
+        172,
+        244
+      ],
+      "sha256": "886f872895877bd424779decea62a1ee71941521d50f6968c2ad09173d5e2853"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA7.png",
+      "visible_bounds": [
+        84,
+        103,
+        172,
+        244
+      ],
+      "sha256": "72e5ab77d2d36ecbada3e84f8759dea30047703f0b620d3d24e31c31ff7566f2"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROA8.png",
+      "visible_bounds": [
+        81,
+        102,
+        174,
+        244
+      ],
+      "sha256": "e0dcfd15d7b129af0f21166ee830d4a77e4105b7b7a2e407c83f839944daf748"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC1.png",
+      "visible_bounds": [
+        83,
+        134,
+        172,
+        244
+      ],
+      "sha256": "91d3c138b87a0c45b70d792b903df7d48c1f8bb9c117b5a9c138a1b7bb37af11"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC2.png",
+      "visible_bounds": [
+        84,
+        133,
+        172,
+        244
+      ],
+      "sha256": "5daf3c056149e806f17f3d557420a49b709ba7ec6ddb290ddd1a4273fe91602f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC3.png",
+      "visible_bounds": [
+        86,
+        131,
+        169,
+        244
+      ],
+      "sha256": "6b4a07b82a7a3e48e14eaf8877305ccf3b0760962b18b9d2bc37e47c81991310"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC4.png",
+      "visible_bounds": [
+        82,
+        134,
+        173,
+        244
+      ],
+      "sha256": "d00912564abbc5c47dd26602f6e34d11e6469cb1e69a827621d94cd9221bd457"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC5.png",
+      "visible_bounds": [
+        83,
+        134,
+        172,
+        244
+      ],
+      "sha256": "07898b18fdcdae4d7dd08e2ba602051d73680ce8942e80cca2a1be2a15c02824"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC6.png",
+      "visible_bounds": [
+        82,
+        131,
+        173,
+        244
+      ],
+      "sha256": "e935de34fdd2584f831bc9e2db594704e1b11eaf6471ac60b204abdbbf81d6b4"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC7.png",
+      "visible_bounds": [
+        86,
+        131,
+        170,
+        244
+      ],
+      "sha256": "da3c17ec6fc28bec99ebef1ed5a121e6f9394bba2935587322e956017ca4c7c4"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROC8.png",
+      "visible_bounds": [
+        84,
+        131,
+        171,
+        244
+      ],
+      "sha256": "1a7893422735ad77cf4309acf8df0d5e5902d58c522fb99bb0b197b440ab98cc"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD1.png",
+      "visible_bounds": [
+        82,
+        137,
+        166,
+        244
+      ],
+      "sha256": "c20824169c5b969bed3bf689f89e1b031bb446757fed1fd92350152792ae2fab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD2.png",
+      "visible_bounds": [
+        78,
+        131,
+        180,
+        244
+      ],
+      "sha256": "d565742922e8eb9cb5368bcd647f2d52ae826dfb7dd200d7b06d1e423a614783"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD3.png",
+      "visible_bounds": [
+        78,
+        132,
+        178,
+        244
+      ],
+      "sha256": "d2aa9ee217823effdd68c07364991478d792a82de1159856a6cc921f845b3e76"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD4.png",
+      "visible_bounds": [
+        80,
+        132,
+        177,
+        244
+      ],
+      "sha256": "6f029aee373bbd2c2c824e6f65637e5a664bc3a855120159dcfb43ec9720e91c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD5.png",
+      "visible_bounds": [
+        78,
+        129,
+        174,
+        244
+      ],
+      "sha256": "27c1958b331b2bfcc8a9bca9e01eb6ff35fe6a364e2a28b88a857dfa9975524d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD6.png",
+      "visible_bounds": [
+        70,
+        132,
+        184,
+        244
+      ],
+      "sha256": "ef3fb3cc202bb4ad4dd19ba176ab5d3a393f0ade6b367a8c60287382f5a2e58e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD7.png",
+      "visible_bounds": [
+        75,
+        128,
+        184,
+        244
+      ],
+      "sha256": "e484d25e3d59a573febba242718171e9173b2518f6b8a4f022c792562c515b51"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROD8.png",
+      "visible_bounds": [
+        74,
+        131,
+        180,
+        244
+      ],
+      "sha256": "145d68ef810616efa842cce4f78ac2fffb8712bafd9a576fde2e2e521403fbf8"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE1.png",
+      "visible_bounds": [
+        83,
+        137,
+        169,
+        244
+      ],
+      "sha256": "f6445ecfae5df7e5769776ece83bb0dbf83d57ab1f81e4dbaed4938fe4b0d5b1"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE2.png",
+      "visible_bounds": [
+        81,
+        135,
+        182,
+        244
+      ],
+      "sha256": "6598ac64eb6136f1be283132c03489b56c2ea0dbdaa4ee6d5ba005aff9489b5a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE3.png",
+      "visible_bounds": [
+        81,
+        132,
+        176,
+        244
+      ],
+      "sha256": "5918373337e5a8d1a98337f3973091eaf9f59b8203718b06bd0917fbc2c4d1f1"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE4.png",
+      "visible_bounds": [
+        85,
+        136,
+        175,
+        244
+      ],
+      "sha256": "65d6c85be92124a27a62ce255a695d48b9fbd9a201c8f1ecfe88de8a2210f601"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE5.png",
+      "visible_bounds": [
+        81,
+        134,
+        173,
+        244
+      ],
+      "sha256": "bad613f3dfb8df391d8b748f6782565ced892734f527ff82bac1bafb8e28693b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE6.png",
+      "visible_bounds": [
+        76,
+        131,
+        181,
+        244
+      ],
+      "sha256": "249d6fefec4aebbf85ad02295ce6915d2465bc32d5b516a0fd1b0deec7fe014f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE7.png",
+      "visible_bounds": [
+        78,
+        129,
+        182,
+        244
+      ],
+      "sha256": "f8c690bbaa4125f616b52c32a12c2d24e98a42fe3b25537bbb958e4bcf95483a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROE8.png",
+      "visible_bounds": [
+        78,
+        132,
+        181,
+        244
+      ],
+      "sha256": "21328524bfb6c0fb480820ad5411f0d93db4db6c52a3ccb82337be98e1ad478b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF1.png",
+      "visible_bounds": [
+        85,
+        136,
+        173,
+        244
+      ],
+      "sha256": "85c0d66060b7aa38de7e9df1a612f1feb552423885d21839c9a4da0e2d575d01"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF2.png",
+      "visible_bounds": [
+        78,
+        129,
+        171,
+        244
+      ],
+      "sha256": "fa392217e88ba78a4fd3da3e069af1920bf8895de2a7f934591d2e35c2c2cc7d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF3.png",
+      "visible_bounds": [
+        75,
+        132,
+        181,
+        244
+      ],
+      "sha256": "bfc24f0c098fe5ff9624d2fe3c8b51076b605d30be3197143da8452d4f3a01b7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF4.png",
+      "visible_bounds": [
+        82,
+        130,
+        179,
+        244
+      ],
+      "sha256": "1a56f4df8c3f3fe3d6aad3821cd926ee2cdb3baa1c72cccd2967e0dcb963b71f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF5.png",
+      "visible_bounds": [
+        77,
+        129,
+        173,
+        244
+      ],
+      "sha256": "a7f628597054a73afd2a0b1c61e4451fd94610660cf9b97fc183690a6111a6ab"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF6.png",
+      "visible_bounds": [
+        77,
+        131,
+        183,
+        244
+      ],
+      "sha256": "4527d20619313262ffac2de44db3c16f719ce7194ceda983e05860a3573fb739"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF7.png",
+      "visible_bounds": [
+        76,
+        127,
+        185,
+        244
+      ],
+      "sha256": "455c536338614460878c2f6b60d31e8032123244c97e3773f57167bfb6aa11c2"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROF8.png",
+      "visible_bounds": [
+        70,
+        130,
+        184,
+        244
+      ],
+      "sha256": "49faf2b1c5e08a75de82ec89a2b18ee031341f4c6c35a71c6f8fda0e72f208fa"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG1.png",
+      "visible_bounds": [
+        85,
+        139,
+        171,
+        244
+      ],
+      "sha256": "dabc10e4359a21508b9a6b1d44d5d7d0ff8173b08dd6544c844c832037118eba"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG2.png",
+      "visible_bounds": [
+        81,
+        132,
+        178,
+        244
+      ],
+      "sha256": "aaa8e16b1add58a8f0914914687699d07721fa31a51e200f9c53e0ada728bbc0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG3.png",
+      "visible_bounds": [
+        82,
+        135,
+        172,
+        244
+      ],
+      "sha256": "c55c489db21add4dcfe9aa97cc3d45e589fe5d49a8c408a365c29ee336b076ac"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG4.png",
+      "visible_bounds": [
+        79,
+        135,
+        175,
+        244
+      ],
+      "sha256": "c486d4394088641dedc569ceaabe81072a85bb147e4154b1b1e4bac26ee2813b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG5.png",
+      "visible_bounds": [
+        77,
+        134,
+        173,
+        244
+      ],
+      "sha256": "c4e39b436ca50bc9703387690158c13d3c1d2f631778110f81719b77cd339c1b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG6.png",
+      "visible_bounds": [
+        76,
+        131,
+        180,
+        244
+      ],
+      "sha256": "b92b23d4116d07c5d357995a4a2cb65bd705921b40da2cae23386fce26afaf6c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG7.png",
+      "visible_bounds": [
+        74,
+        128,
+        182,
+        244
+      ],
+      "sha256": "5c22fec337c1443a489affcfe569c297cbc1b7d0e87bb0a8669c4ff603cda618"
+    },
+    {
+      "file": "src/sprites/caelum/rest/ronnie/RSROG8.png",
+      "visible_bounds": [
+        72,
+        133,
+        180,
+        244
+      ],
+      "sha256": "7f405c35783b7f2ba5d39cb38bbc553feac8d4a703288f500d1e65bd07fde393"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA1.png",
+      "visible_bounds": [
+        76,
+        108,
+        180,
+        244
+      ],
+      "sha256": "e3938d3971f6982c4758b8821f80888ac31238fdc766f8a87d568c255d75998b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA2.png",
+      "visible_bounds": [
+        73,
+        103,
+        183,
+        244
+      ],
+      "sha256": "3b8b0f21d0908301461721116251bfdebee71e76b16ee1d0f370e0034ac5546d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA3.png",
+      "visible_bounds": [
+        81,
+        105,
+        175,
+        244
+      ],
+      "sha256": "f2476f2e7e2f9fb3a0523fd2245c0a3eb30a11883e5bddb68b938bc3e3c56882"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA4.png",
+      "visible_bounds": [
+        75,
+        105,
+        181,
+        244
+      ],
+      "sha256": "88a5fc0848027e4032b56a729218a2469b6caa19e7b74ee9949f3a24c43c1f7e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA5.png",
+      "visible_bounds": [
+        76,
+        107,
+        180,
+        244
+      ],
+      "sha256": "4b29e689cae7690123771ea019cab30bc1f20f3f8930921e9f3e73ec4e862de6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA6.png",
+      "visible_bounds": [
+        74,
+        100,
+        182,
+        244
+      ],
+      "sha256": "8568b04eb4c2e3fb802088f86cab6d5353c0e3e4672d84ab3400d2c530c193fb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA7.png",
+      "visible_bounds": [
+        77,
+        99,
+        179,
+        244
+      ],
+      "sha256": "2fa456f7e8b88592eed1941303521733cfc32ad779fb89f57bb366cc0873250e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUA8.png",
+      "visible_bounds": [
+        72,
+        97,
+        184,
+        244
+      ],
+      "sha256": "34c22f1edc827324640b11a8eba151b3875c2f87b219eb33f1f9581a004d9422"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC1.png",
+      "visible_bounds": [
+        72,
+        137,
+        184,
+        244
+      ],
+      "sha256": "fabd4454c409a1b98883a034fb808f03b5de523963beecc934e4ceb8f570900b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC2.png",
+      "visible_bounds": [
+        76,
+        132,
+        180,
+        244
+      ],
+      "sha256": "be87578aa3869cee3e0edfbd7957a3a7ab39be4e3e662af68412c3527679efa9"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC3.png",
+      "visible_bounds": [
+        77,
+        133,
+        178,
+        244
+      ],
+      "sha256": "420f34cbde561e5baa0a716149f970e012d6b42812c0f55f8af9c6eac3ed762d"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC4.png",
+      "visible_bounds": [
+        74,
+        132,
+        182,
+        244
+      ],
+      "sha256": "e38bc2b9f9648c1ff7f37acb2488ae5d035cd4618fa646c2b988cc7a72abd1e3"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC5.png",
+      "visible_bounds": [
+        73,
+        135,
+        182,
+        244
+      ],
+      "sha256": "7c29cd9933e176beb7ea22836adf18e53ed78414d6129a0a7d73ad81576e2b88"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC6.png",
+      "visible_bounds": [
+        76,
+        131,
+        180,
+        244
+      ],
+      "sha256": "ac3afba1ad42484090f365d6aefe2f95760451e35cf052a58fe496081f091f0a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC7.png",
+      "visible_bounds": [
+        77,
+        130,
+        178,
+        244
+      ],
+      "sha256": "a4b10d6a3f1a727b86cb4bb4a7f011e29e2cf4f06a57f5b306957f03dc6a200c"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUC8.png",
+      "visible_bounds": [
+        71,
+        131,
+        184,
+        244
+      ],
+      "sha256": "8e2ee7ba7a753a14b629188008f270349cb549c13b17fee06bb5fdd038b153ad"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD1.png",
+      "visible_bounds": [
+        73,
+        129,
+        183,
+        244
+      ],
+      "sha256": "26b71e9bf35363de00efbd609348bfe3b3ad3d8589507c9ffef5f31c160f22e7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD2.png",
+      "visible_bounds": [
+        77,
+        124,
+        185,
+        244
+      ],
+      "sha256": "8bd8aa04e99199847fc4fc3c29aa437144788e067e3fc6192b806749abecfc4f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD3.png",
+      "visible_bounds": [
+        78,
+        132,
+        187,
+        244
+      ],
+      "sha256": "747f4f04bf89f44d708d557217c2eea1fb3620cdbd0d9fd5770020ce4a95e105"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD4.png",
+      "visible_bounds": [
+        76,
+        125,
+        186,
+        244
+      ],
+      "sha256": "abf203a9f2f220a5dcd1a8f3df3b3bbefe8e3abc8d12b4d3459e88de9e25a2b0"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD5.png",
+      "visible_bounds": [
+        79,
+        135,
+        180,
+        244
+      ],
+      "sha256": "3d37ce90ac4a67503f123a647bf3954aefae36cc9c245913eefff53f28ec6b0a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD6.png",
+      "visible_bounds": [
+        72,
+        131,
+        179,
+        244
+      ],
+      "sha256": "8e337fc80d14e2593189373d840482f367fa414e3240bd5a654075b95eddb58e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD7.png",
+      "visible_bounds": [
+        74,
+        136,
+        179,
+        244
+      ],
+      "sha256": "12e2982f647a27fac1983ebafd59b06aaa8fd44ead6ee3d172afe57335d67f34"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUD8.png",
+      "visible_bounds": [
+        75,
+        128,
+        182,
+        244
+      ],
+      "sha256": "be4b697e0e2b464112475b8a1e56221503a3cdcfbc4416829b24c5fbac03373f"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE1.png",
+      "visible_bounds": [
+        76,
+        136,
+        180,
+        244
+      ],
+      "sha256": "e4b9dac2eda130968db6f3ec952a30a18c20ca212b952ba8ef7dd4dbcd4b56f7"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE2.png",
+      "visible_bounds": [
+        78,
+        125,
+        183,
+        244
+      ],
+      "sha256": "c15463a07e948e08db224861cf0908ebda265cbfd4176b3f583faa22bf5f3aa5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE3.png",
+      "visible_bounds": [
+        82,
+        132,
+        186,
+        244
+      ],
+      "sha256": "f40be26f98458462c468f5f5d17a3ac0478d9d961ad6b00f6717ef6bf01f995e"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE4.png",
+      "visible_bounds": [
+        78,
+        123,
+        186,
+        244
+      ],
+      "sha256": "4f919ad07bc571adb00fc470b80d0f91caa065f2ee58caed82020b12c8dea12a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE5.png",
+      "visible_bounds": [
+        78,
+        143,
+        178,
+        244
+      ],
+      "sha256": "5019c0081eed4cc061dc60364e3697f33cf2590483a74905008d1ccc34e86ad5"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE6.png",
+      "visible_bounds": [
+        74,
+        133,
+        175,
+        244
+      ],
+      "sha256": "9d369109c48b13f8e86e6f67c3bc573b219ca790a2628e2b0bd2dc992512f1f6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE7.png",
+      "visible_bounds": [
+        74,
+        136,
+        179,
+        244
+      ],
+      "sha256": "19297f92a45644c5899a5f0fd2ce8403769b83751066a611e0a3059da23c2938"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUE8.png",
+      "visible_bounds": [
+        78,
+        132,
+        177,
+        244
+      ],
+      "sha256": "fa0ba54bb053ebf0bd7f14b461c939c94e72b825ba3a061bf95ea94784f32c91"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF1.png",
+      "visible_bounds": [
+        74,
+        129,
+        185,
+        244
+      ],
+      "sha256": "50d0d99aae1af9f54dfa558997b6ab8581466d8f50194bb94d3d3fa9b7c22bbe"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF2.png",
+      "visible_bounds": [
+        79,
+        125,
+        184,
+        244
+      ],
+      "sha256": "20cb9a0a8eb099ee04323e0c2ef63b102876adacc14c5753f8c5807d452bad05"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF3.png",
+      "visible_bounds": [
+        82,
+        132,
+        185,
+        244
+      ],
+      "sha256": "4fc780a979c2d5ac21987f3a7eb393905c40e91bbbe1baa092a00f7fbbe06927"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF4.png",
+      "visible_bounds": [
+        74,
+        126,
+        192,
+        244
+      ],
+      "sha256": "6cccd9d2dbe49116f8133d33cf9a6acb27f687b7fac959d6993e1aa048e26dbb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF5.png",
+      "visible_bounds": [
+        76,
+        135,
+        179,
+        244
+      ],
+      "sha256": "005558c639e6d3a7620a17f7fdaba1c379f396fd7d973c28d4672d137b4d6c9b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF6.png",
+      "visible_bounds": [
+        75,
+        131,
+        178,
+        244
+      ],
+      "sha256": "56f48b359c4a140c7ab034b6630278c8e29b7f7efff89c743ee4517cc864ff7a"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF7.png",
+      "visible_bounds": [
+        73,
+        135,
+        185,
+        244
+      ],
+      "sha256": "f057eb02a0ee6239ffb71c1dec957e100684318fbc887b3211c3df7a4c7be34b"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUF8.png",
+      "visible_bounds": [
+        75,
+        129,
+        182,
+        244
+      ],
+      "sha256": "24136f7dd7cd68aa13337a692ce90371970a859d695f298ef9dffffd079f4ed6"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG1.png",
+      "visible_bounds": [
+        76,
+        136,
+        181,
+        244
+      ],
+      "sha256": "d791f477fef8d3b8751676d7178c3a85f1882768412c01ba10a1a01c2eefdc91"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG2.png",
+      "visible_bounds": [
+        77,
+        125,
+        183,
+        244
+      ],
+      "sha256": "7e34abcb2bae5aa52409be35722d49c5551b338beb6db33975c2aeb944c5a659"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG3.png",
+      "visible_bounds": [
+        82,
+        132,
+        183,
+        244
+      ],
+      "sha256": "45d415fdbdcf0d24f16782f36bbeb0f6b97f058586afb86d538ef52e06654281"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG4.png",
+      "visible_bounds": [
+        78,
+        123,
+        186,
+        244
+      ],
+      "sha256": "21a80f2798ab9ecbf194e64b1ffdd412068e46f9a4a65b83eeac7f434e08fd73"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG5.png",
+      "visible_bounds": [
+        78,
+        142,
+        178,
+        244
+      ],
+      "sha256": "b8407a39b228bff9c414b75563eecae290de4b827f7901f3a009ce5d6a2ed0af"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG6.png",
+      "visible_bounds": [
+        75,
+        132,
+        175,
+        244
+      ],
+      "sha256": "c8278487aa9b185fa66baa4d734680a7094c5acbb0927f9945b2a98abc53c8bb"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG7.png",
+      "visible_bounds": [
+        75,
+        135,
+        181,
+        244
+      ],
+      "sha256": "10eaaad9fc2ac36e2466299ceb4bcab881c1d5c4172c410928ba81d7e85da083"
+    },
+    {
+      "file": "src/sprites/caelum/rest/rulo/RSRUG8.png",
+      "visible_bounds": [
+        74,
+        128,
+        184,
+        244
+      ],
+      "sha256": "8eb63a8bd685ab861364f369d18a29c2e50c4cfa097c6729ad468fffd32c1bb5"
+    }
+  ]
+}

@@ -37,6 +37,8 @@ class CaelumRulo : CaelumAnchoredResident
         return "caelum/npcs/rulo_alert";
     }
 
+    // Poses anexadas al final: preservan los índices de estados de guardados previos.
+    // No simulan descanso ni cambian la colisión de combate por sí solas.
     States
     {
     Spawn:
@@ -72,5 +74,17 @@ class CaelumRulo : CaelumAnchoredResident
         RULO JK 5;
         RULO L -1;
         Stop;
+    RestSeated:
+        RSRU A -1;
+        Stop;
+    RestLying:
+        RSRU B -1;
+        Stop;
+    CrouchIdle:
+        RSRU C -1;
+        Stop;
+    CrouchWalk:
+        RSRU DEFG 6;
+        Loop;
     }
 }

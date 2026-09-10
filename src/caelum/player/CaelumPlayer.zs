@@ -671,8 +671,8 @@ class CaelumPlayer : DoomPlayer
         Player.Face "CAF";
 
         // Domingo reemplaza la apariencia mundial heredada de DoomPlayer. El
-        // rango 0,0 conserva su paleta original y "None" elimina PLYC: al
-        // agacharse el motor comprime el mismo sprite en vez de volver a Doom.
+        // rango 0,0 conserva su paleta original. "None" elimina PLYC; la
+        // locomoción agachada usa los estados RSDO de UpdateCrouchVisual.
         Scale 0.409091;
         Player.CrouchSprite "None";
         Player.ColorRange 0, 0;
@@ -683,6 +683,7 @@ class CaelumPlayer : DoomPlayer
 
     }
 
+    // Las poses sentada/acostada quedan listas para el sistema de descanso.
     States
     {
     Spawn:
@@ -714,6 +715,18 @@ class CaelumPlayer : DoomPlayer
     Raise:
         DOMI ZYXWVUTS 5;
         Goto Spawn;
+    RestSeated:
+        RSDO A -1;
+        Stop;
+    RestLying:
+        RSDO B -1;
+        Stop;
+    CrouchIdle:
+        RSDO C -1;
+        Stop;
+    CrouchWalk:
+        RSDO DEFG 6;
+        Loop;
     }
 
     CaelumPersistentCharacterState GetPersistentCharacterState(bool createState)
@@ -14243,8 +14256,29 @@ class CaelumPlayer : DoomPlayer
         return hasMovementInput && runIsActive;
     }
 
+    // Sólo sustituye la locomoción mundial; no interrumpe ataques, dolor,
+    // muerte ni las futuras poses de descanso. El motor conserva altura y paso.
+    void UpdateCrouchVisual()
+    {
+        // La pose ya está dibujada agachada: el renderer no debe comprimirla
+        // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
+        crouchsprite = 0;
+        if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
+        State idle = FindState("CrouchIdle");
+        State walk = FindState("CrouchWalk");
+        bool posed = InStateSequence(CurState, idle) || InStateSequence(CurState, walk);
+        if (!posed && !InStateSequence(CurState, SpawnState)
+            && !InStateSequence(CurState, SeeState)) return;
+        bool moving = Vel.X * Vel.X + Vel.Y * Vel.Y > 0.01;
+        State wanted = player.crouchfactor < 0.75 ? moving ? walk : idle
+            : moving ? SeeState : SpawnState;
+        if (wanted == idle || wanted == walk) crouchsprite = GetSpriteIndex("RSDO");
+        if (!InStateSequence(CurState, wanted)) SetState(wanted);
+    }
+
     void UpdateCrouchEffects()
     {
+        UpdateCrouchVisual();
         IsCrouching = player != null && player.crouchfactor < 0.99;
         CrouchAccuracyMultiplier = IsCrouching
             ? CaelumConstants.CROUCH_ACCURACY_MULTIPLIER

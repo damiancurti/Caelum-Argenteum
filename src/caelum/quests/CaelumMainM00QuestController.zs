@@ -10,6 +10,150 @@ class CaelumMainM00QuestController : EventHandler
     bool GroundFloorStockRetired;
     bool RonnieWorldPrepared;
     CaelumMainM00SupplyChest RonnieSupplyChest;
+    bool MansionLayoutPrepared;
+    bool PassageTextureRestored;
+
+    // Se reutilizan las estaciones de las dos filas exteriores: así las
+    // referencias de tareas guardadas siguen apuntando al mismo actor.
+    CaelumCraftingStation PlaceStation(Class<CaelumCraftingStation> kind,
+        Vector3 origin, int group, double facing)
+    {
+        CaelumCraftingStation station = null;
+        let iterator = ThinkerIterator.Create("CaelumCraftingStation");
+        CaelumCraftingStation candidate;
+        while ((candidate = CaelumCraftingStation(iterator.Next())) != null)
+        {
+            if (candidate.GetClass() == kind && candidate.CraftingRoomGroup == 0
+                && candidate.Pos.X >= -500 && candidate.Pos.X <= 500
+                && candidate.Pos.Y >= 780 && candidate.Pos.Y <= 1060
+                && Abs(candidate.Pos.Z) < 1)
+            { station = candidate; break; }
+        }
+        if (station == null) station = CaelumCraftingStation(Actor.Spawn(kind, origin, NO_REPLACE));
+        if (station != null)
+        {
+            station.SetOrigin(origin, false);
+            station.Angle = facing;
+            station.Vel = (0, 0, 0);
+            station.CraftingRoomGroup = group;
+        }
+        return station;
+    }
+
+    void PlaceRoomStations(int group, Vector3 origin, int yDirection)
+    {
+        // Componentes y procesamiento cuentan: una armadura pesada también
+        // necesita correas y tejido. Sin mesa maestra en las cuatro habitaciones.
+        Class<CaelumCraftingStation> kinds[12];
+        kinds[0] = "CaelumWorkbenchStation";
+        kinds[1] = "CaelumForgeStation";
+        kinds[2] = "CaelumAnvilStation";
+        kinds[3] = "CaelumArmorWorkshopStation";
+        kinds[4] = "CaelumSewingMachineStation";
+        int count = 5;
+        if (group == 2)
+        {
+            kinds[5] = "CaelumRangedWorkshopStation";
+            kinds[6] = "CaelumSawmillStation";
+            count = 7;
+        }
+        if (group == 4 || group == 5)
+        {
+            kinds[5] = "CaelumEssenceAltarStation";
+            kinds[6] = "CaelumGlobeStation";
+            kinds[7] = "CaelumJewelerBenchStation";
+            kinds[8] = "CaelumFineToolsBenchStation";
+            count = 9;
+        }
+        if (group == 5)
+        {
+            kinds[9] = "CaelumRangedWorkshopStation";
+            kinds[10] = "CaelumSawmillStation";
+            kinds[11] = "CaelumMasterBenchStation";
+            count = 12;
+        }
+        int columns = group == 5 ? 6 : 3;
+        for (int i = 0; i < count; i++)
+            PlaceStation(kinds[i], origin + (double(i % columns) * 56,
+                double(i / columns) * 56 * yDirection, 0), group,
+                yDirection > 0 ? 270 : 90);
+    }
+
+    void PlantGardenNode(Class<CaelumTreeEnvironmentProp> kind, Vector3 origin, double remaining)
+    {
+        let plant = CaelumTreeEnvironmentProp(Actor.Spawn(kind, origin, NO_REPLACE));
+        if (plant == null) return;
+        plant.EnsureResourceState();
+        plant.ResourceRemainingUnits = plant.GetResourceCapacityUnits() * Clamp(remaining, 0.0, 1.0);
+    }
+
+    void PrepareMansionLayout()
+    {
+        if (MansionLayoutPrepared || level.MapName != "MAP01") return;
+        MansionLayoutPrepared = true;
+        // Primero la red completa: las doce estaciones originales mantienen
+        // su identidad. Las seis de prueba también se trasladan a dormitorios.
+        PlaceRoomStations(5, (240, 224, 264), 1);
+        PlaceRoomStations(1, (-318, 230, 136), 1);   // Rulo.
+        PlaceRoomStations(2, (900, 230, 136), 1);    // Ronnie.
+        PlaceRoomStations(3, (900, -230, 136), -1);  // Argento.
+        PlaceRoomStations(4, (-318, -230, 136), -1); // Caella.
+        // Trasladar cualquier estación de prueba que no consumió la red anterior.
+        let stations = ThinkerIterator.Create("CaelumCraftingStation");
+        CaelumCraftingStation extra;
+        int spare = 0;
+        while ((extra = CaelumCraftingStation(stations.Next())) != null)
+            if (extra.CraftingRoomGroup == 0 && extra.Pos.X >= -500 && extra.Pos.X <= 500
+                && extra.Pos.Y >= 780 && extra.Pos.Y <= 1060 && Abs(extra.Pos.Z) < 1)
+            {
+                extra.SetOrigin((320 + spare * 56, 144, 264), false);
+                extra.CraftingRoomGroup = 5;
+                spare++;
+            }
+        // No se cancelan las tareas ni se consumen reservas al cambiar el lugar.
+        for (int i = 0; i < MAXPLAYERS; i++)
+        {
+            if (!playeringame[i]) continue;
+            let user = CaelumPlayer(players[i].mo);
+            if (user != null && user.ActiveCraftingStationActor != null)
+                user.RefreshActiveCraftingStationSession();
+        }
+
+        double bushCapacity = 0, bushRemaining = 0;
+        double treeCapacity = 0, treeRemaining = 0;
+        let plants = ThinkerIterator.Create("CaelumTreeEnvironmentProp");
+        CaelumTreeEnvironmentProp old;
+        while ((old = CaelumTreeEnvironmentProp(plants.Next())) != null)
+        {
+            if (old.Pos.Z >= -100) continue;
+            old.EnsureResourceState();
+            if (old is "CaelumFiberBush")
+            {
+                // GZDoom omite propiedades iguales al Default en el guardado.
+                // Al cargar 0l con el Default nuevo, Mass ya puede ser 10 aunque
+                // su reserva siga expresada contra los 100 kg originales.
+                double legacyCapacity = (old.args[4] > 0 ? double(old.args[4]) : 100.0)
+                    / CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                bushCapacity += legacyCapacity;
+                bushRemaining += Clamp(old.ResourceRemainingUnits, 0.0, legacyCapacity);
+            }
+            else
+            { treeCapacity += old.GetResourceCapacityUnits(); treeRemaining += old.ResourceRemainingUnits; }
+            old.Destroy();
+        }
+        // Conservar la proporción agotada de guardados anteriores, sin rellenar
+        // por cargar. La masa ya no representa un volumen de follaje macizo.
+        double fiberFraction = bushCapacity > 0 ? bushRemaining / bushCapacity : 1;
+        double woodFraction = treeCapacity > 0 ? treeRemaining / treeCapacity : 1;
+        PlantGardenNode("CaelumTreeCoastCeiboYoung", (-780, -270, 0), woodFraction);
+        PlantGardenNode("CaelumTreeCoastCeiboYoung", (-780, 270, 0), woodFraction);
+        PlantGardenNode("CaelumTreeCoastCeiboYoung2", (-1260, -430, 0), woodFraction);
+        PlantGardenNode("CaelumTreeCoastCeiboYoung3", (-1260, 430, 0), woodFraction);
+        for (int side = -1; side <= 1; side += 2)
+            for (int i = 0; i < 10; i++)
+                PlantGardenNode("CaelumFiberBush", (-720.0 - double(i % 5) * 125.0,
+                    double(side) * (160.0 + double(i / 5) * 160.0), 0), fiberFraction);
+    }
 
     void PrepareRonnieWorld()
     {
@@ -24,9 +168,6 @@ class CaelumMainM00QuestController : EventHandler
         RonnieSupplyChest = CaelumMainM00SupplyChest(Actor.Spawn("CaelumMainM00SupplyChest",
             (1780.0, 640.0, -384.0), NO_REPLACE));
         if (RonnieSupplyChest != null) RonnieSupplyChest.Angle = 270;
-        Actor.Spawn("CaelumFiberBush", (1250.0, 820.0, -384.0), NO_REPLACE);
-        Actor.Spawn("CaelumFiberBush", (1440.0, 1080.0, -384.0), NO_REPLACE);
-        Actor.Spawn("CaelumFiberBush", (1670.0, 700.0, -384.0), NO_REPLACE);
     }
 
     // Retira una sola vez el antiguo surtido de las seis primeras salas.
@@ -82,14 +223,21 @@ class CaelumMainM00QuestController : EventHandler
     {
         PrepareWorld();
         if (Passage == null) return;
+        if (!PassageTextureRestored)
+        {
+            // CMIN01 es la cara original del WAD. Recupera también guardados
+            // 0l donde ya se había borrado la textura del pasadizo completado.
+            for (int sideIndex = 0; sideIndex < 2; sideIndex++)
+                Passage.sidedef[sideIndex].SetTexture(Side.mid,
+                    TexMan.CheckForTexture("CMIN01", TexMan.Type_Wall));
+            PassageTextureRestored = true;
+        }
         if (opened && !PassageOpen)
         {
             Passage.flags &= ~(Line.ML_3DMIDTEX | Line.ML_3DMIDTEX_IMPASS);
-            for (int sideIndex = 0; sideIndex < 2; sideIndex++)
-                Passage.sidedef[sideIndex].SetTexture(Side.mid, TexMan.CheckForTexture("-", TexMan.Type_Wall));
             PassageOpen = true;
         }
-        else if (started && !opened && !PassageSealed)
+        else if (!opened && !PassageSealed)
         {
             // Colisión limitada a la altura de la textura, igual que el resto
             // de la fachada. No levanta una barrera hasta el cielo/upstairs.
@@ -110,7 +258,7 @@ class CaelumMainM00QuestController : EventHandler
             }
             Runes[slot].bSolid = !opened;
             Runes[slot].Lit = sequence > slot;
-            Runes[slot].Alpha = opened ? 0.0 : Runes[slot].Lit ? 1.0 : 0.45;
+            Runes[slot].Alpha = Runes[slot].Lit ? 1.0 : 0.45;
         }
     }
 
@@ -118,6 +266,7 @@ class CaelumMainM00QuestController : EventHandler
     {
         RetireGroundFloorStock();
         PrepareRonnieWorld();
+        PrepareMansionLayout();
         bool started = false;
         bool opened = false;
         int sequence = 0;

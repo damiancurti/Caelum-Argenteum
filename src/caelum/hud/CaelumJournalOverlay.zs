@@ -94,7 +94,7 @@ class CaelumJournalOverlay : EventHandler
         return -1;
     }
 
-    ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
+    static ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
     {
         if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED)
             return "CA_Q_DETAIL_COMPLETE";
@@ -111,7 +111,8 @@ class CaelumJournalOverlay : EventHandler
             return stage < CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
                 ? "CA_Q_DETAIL_M01_RONNIE" : "CA_Q_DETAIL_GENERIC";
         if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
-            return localPlayer.MainM00MagicPracticeSnapshot < 5
+            return localPlayer.MainM00RuneSequenceSnapshot == 4 ? "CA_Q_DETAIL_M01_RETURN_CAELLA"
+                : localPlayer.MainM00MagicPracticeSnapshot < 5
                 ? "CA_Q_DETAIL_M01_PRACTICE" : "CA_Q_DETAIL_M01_RUNES";
         if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
             return "CA_Q_DETAIL_M01_CAELLA";
@@ -168,8 +169,7 @@ class CaelumJournalOverlay : EventHandler
             && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE
             && localPlayer.MainM00StarterWeaponSnapshot == 0)
         {
-            text = text .. "\n\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_LOCATION", false)
-                .. "\n" .. StringTable.Localize("CA_M01_RONNIE_LOCATION", false)
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_RONNIE_LOCATION", false)
                 .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_MATERIALS", false);
             for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             {

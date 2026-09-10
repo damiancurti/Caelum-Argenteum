@@ -1,46 +1,53 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0l — 2026-09-10.
+Versión documental: 4.33.0m — 2026-09-10.
 
-REVISIÓN 4.33.0l
-El autor aceptó todas las pruebas de 0k. Caella, las runas, Detalle, limpieza,
-HUD, idioma, estaciones y audio quedan como base aceptada.
+REVISIÓN 4.33.0m
+Base para aplicar: 4.33.0l. La aceptación completa anterior es 0k; las nuevas
+observaciones del autor se corrigen aquí, sin declarar 0l íntegramente aceptado.
 
-Ronnie pregunta qué arma T1 se desea, explica sus características y permite
-confirmar tras explorar las familias. Son 16 físicas y 20 de esencia, sin
-restricción por clase. Enseña la receta y todas sus dependencias. La espada
-para extraer es prestada y se devuelve después de fabricar el arma elegida.
+Se conserva la elección libre de Ronnie: 36 armas T1, explicación, receta y
+componentes, espada prestada, cofre finito de gemas/cuero y primera arma por
+ItemId. Sólo esa arma se conserva; etapas posteriores siguen pendientes.
 
-Tres arbustos 2D dan fibra con daño cortante en la cueva; se mantienen árboles,
-cobre y estaño. Un cofre cerca de la entrada almacena las cinco gemas brutas y
-cuero de vaca para cualquier elección T1 al talle del personaje y a eficiencia
-25% en cada capa. Permite viajes parciales y devolver sobrantes sin reponer stock.
+JARDÍN: cuatro ceibos jóvenes y veinte arbustos rodean la entrada exterior.
+Arbustos de 10 kg de masa aérea estimada, dureza 2,5, escala 0,05, fibra cortante.
+Veinte nodos aportan 200.000 unidades de capacidad; máximo T1/XL = 144.000.
+Cueva sin vegetación; allí quedan cobre/estaño y cofre (1780,640,-384).
+Ceibos: (-780,-270,0), (-780,270,0), (-1260,-430,0), (-1260,430,0).
+Arbustos: x=-720,-845,-970,-1095,-1220; y=-320,-160,160,320; z=0.
+La senda central queda despejada. La masa se documenta como estimación en SYSTEMS.
 
-La fabricación real funciona sin Caja: el resultado va al inventario personal.
-Sólo la primera arma se conserva por ItemId; las posteriores y los sobrantes de
-misión son temporales. El Diario muestra materiales, faltantes, ubicaciones y
-devolución. Se guardan elección, recetas, reservas, stock y préstamos.
+TALLERES: los cuatro dormitorios, en el primer piso, reciben infraestructura
+completa T1–T2 según familia: Rulo/pesada (5), Ronnie/mediana y distancia (7),
+Argento/liviana (5), Caella/mágica (9). Se incluyen componentes/procesamiento.
+En la habitación INTERIOR del segundo piso van las doce estaciones juntas:
+x=240,296,352,408,464,520; y=224,280; z=264. No van en la terraza trasera.
+Se retiran las filas exteriores. La agrupación nativa separa cinco redes.
+Las estaciones trasladadas mantienen su identidad para no perder tareas.
 
-La parte material cubre fases 50–60; falta integrar comida, bebida, reparación
-real, Aire/agua y la cita de Palomo antes de Rulo. No se incorporan municiones,
-combate del Toro, Caja final, El Loco ni salida narrativa en esta revisión.
-La especificación posterior conserva esos contenidos como plan, no como hechos
-ya implementados. La elección libre sustituye la antigua arma fijada por clase.
+CAELLA: práctica 5/5, secuencia Tierra/Aire/Fuego/Agua 4/4, volver con ella,
+confirmar devolución del bastón/Sello prestados y escuchar que hay que atravesar
+la pared. Hasta hablarle, fase 40 con pared sólida y préstamos presentes.
+Después, fase 45, pared CMIN01 aún visible y atravesable; marcas encendidas.
+La apertura ya completada de un guardado anterior conserva su progreso.
+Argento y Detalle señalan la fase vigente; todos los residentes explican dónde
+están los recursos y talleres. No se pide buscar vegetación en la cueva.
 
-Se conserva el WAD y la compatibilidad con guardados 0k. Las nuevas instancias
-se preparan una sola vez por mapa. La espada antigua ya recogida conserva su
-identidad y pasa a préstamo; la espada antigua de suelo deja de estar disponible.
-Ubicaciones: cofre (1780,640,-384); arbustos (1250,820,-384), (1440,1080,-384)
-y (1670,700,-384). Estaciones de fabricación: red exterior de la mansión.
+POSES: 240 sprites de v3 + 40 acostados de v2 recuperada. Ocho vistas por cuadro,
+cinco personajes. Domingo usa los cuadros agachados en su locomoción; estados
+sentado/acostado disponibles, sin implementar todavía la mecánica de descanso.
 
-Formato: archivos nuevos/modificados para copiar y un TXT de pruebas. README
-y cinco docs actualizados; sin instalador por parche ni refactor anticipado de V5.
+Se conserva el WAD. La migración sólo corre una vez y mantiene el porcentaje
+agotado de recursos; cargar no repuebla ni rellena. Tareas/reservas y materiales
+recogidos se conservan. Formato: delta para copiar y un TXT, README y cinco docs.
 
 ALCANCE ACTUAL Y DECISIONES POSTERIORES A LA ESPECIFICACIÓN ORIGINAL
 
 Aceptado hasta 4.33.0f: despertar, Voz desconocida, Palomo del recibidor y
 prueba social de Argento. Diario 0/3 a 3/3; volver a Argento cierra en fase 35.
 Caella, fases 40–45, está aceptada con todas las pruebas de 0k.
-0l incorpora elección, recolección y arma de Ronnie hasta fase 60; pendientes
+0l incorpora elección, recolección y arma de Ronnie hasta fase 60; 0m corrige
+Caella, guía, jardín y talleres sin avanzar esa fase. Permanecen pendientes
 sus lecciones restantes y las ramas posteriores. Migración de 0h aceptada.
 
 Valores sociales aprobados: Emoción=Empatía Tipo 4; Persuasión=Carisma Tipo 4;
@@ -50,9 +57,9 @@ cerrar/abrir. Atributo 10 → 85%, atributo 30 → 99% contra dificultad 120.
 
 Correcciones físicas aprobadas: NPC sólidos, retorno al alcanzar 100 MU;
 fachada paralela al muro de fondo, entrada atravesable de 96 MU; ascensor
-sectorial continuo a Z=-384 y retorno, sin teletransporte. Cueva con tres
-árboles, cobre y estaño; 0l añade arbustos y cofre, y traslada la espada T1
-adaptada al talle al préstamo de Ronnie. No hachuela especial,
+sectorial continuo a Z=-384 y retorno, sin teletransporte. Cueva con cobre,
+estaño y cofre; 0m lleva los árboles y arbustos al jardín. La espada T1
+adaptada al talle es un préstamo de Ronnie desde 0l. No hachuela especial,
 carbón ni hierro en esta cueva. La cara sur del pozo quedó corregida en 0e.
 
 Palomo es guía amistoso, filosófico y burlón; no es el comerciante canónico.
@@ -69,7 +76,7 @@ War Drums en portada; menu_strings_start para Salir/Exit; arpa nativa por págin
 Detalles técnicos, coordenadas y validación vigente: PROJECT.md.
 
 REGISTRO HISTÓRICO DE LA BASE HASTA 4.33.0f
-Los pendientes de este registro describen 0f; prevalece el alcance de 0l indicado arriba.
+Los pendientes de este registro describen 0f; prevalece el alcance de 0m indicado arriba.
 
 # Caelum Argenteum — Misiones, reputación y facciones V4.33.0f
 

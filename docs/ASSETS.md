@@ -1,11 +1,12 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0l — 2026-09-10.
+Versión documental: 4.33.0m — 2026-09-10.
 
 ## Arbusto de fibra 2D (4.33.0l)
 
-Actor CaelumFiberBush; tres ejemplares en la cueva de MAP01. Es un billboard
-con transparencia real, sin MODELDEF. Escala 0,07; radio 24 MU y altura 54 MU.
+Actor CaelumFiberBush; veinte ejemplares alrededor de la entrada de MAP01.
+Billboard con transparencia real, sin MODELDEF. En 0m: escala 0,05, radio 20 MU,
+altura 48 MU, masa aérea estimada 10 kg (SYSTEMS.md). No se retocan los PNG.
 Se reutiliza la extracción de CaelumTreeEnvironmentProp, con fibra como salida.
 
 - Fuente: `assets/source/art/ca_fiber_bush.png`. PNG RGBA 1430×1100, generado con la herramienta integrada
@@ -26,6 +27,35 @@ Se reutiliza la extracción de CaelumTreeEnvironmentProp, con fibra como salida.
 La captura en GZDoom confirma silueta legible, fondo transparente y apoyo en
 el piso. El cofre de suministros hereda el modelo y animación del alijo existente;
 no duplica malla, textura ni sonido. Los modelos de estaciones siguen aceptados.
+
+## Poses entregadas por el autor (4.33.0m)
+
+Se integran Caelum_Argenteum_Poses_Agachados_v3.zip y los cuadros B acostados
+de Caelum_Argenteum_Poses_Descanso_v2.zip, que v3 mantenía como dependencia.
+Los 280 PNG de runtime son copias byte a byte de las entregas: 256×256 RGBA,
+ocho direcciones, offset grAb (128,244). A sentado sin silla; B acostado;
+C agachado quieto; D/E/F/G caminata agachada. No se genera ni redibuja arte.
+
+| Personaje | Prefijo | Actor |
+| --- | --- | --- |
+| Rulo | RSRU | CaelumRulo |
+| Ronnie | RSRO | CaelumRonnie |
+| Argento | RSAR | CaelumArgento |
+| Caella | RSCA | CaelumCaella |
+| Domingo | RSDO | CaelumPlayer |
+
+- Runtime: `src/sprites/caelum/rest/` con las cinco subcarpetas de personajes.
+- Fuentes v3: `assets/source/art/poses_v3/`; maestros y atlas de 15 conjuntos.
+- Fuentes v2: `assets/source/art/rest_poses_v2/`; maestros/atlas para los acostados.
+  Los cuadros A con silla de v2 quedan sustituidos por A sin silla de v3.
+- Se conservan PROMPTS, EXPORTACION, MANIFIESTO y VALIDACION originales como
+  procedencia de cada entrega. Describen sus exportaciones originales; no son
+  la validación de esta integración ni cambian la raíz assets/source/art.
+- Las vistas generales y GIF de revisión quedan en los ZIP artísticos originales;
+  no se duplican dentro del runtime. No se agregan README o TXT de arte a docs.
+
+Estados y conexión de juego: SYSTEMS.md. El código conserva las escalas de cada
+actor. Sentado/acostado no activa por sí mismo curación, cámara ni calendario.
 
 ## Audio de interfaz vigente
 
@@ -54,11 +84,12 @@ protección singular de conversación permanecen como en 0h.
 
 Las cuatro runas de Caella reutilizan los emblemas de Sellos SLWA, SLFI, SLEA y
 SLAI a escala 0,20, con opacidad de estado. Su presentación del
-acertijo quedó aceptada con las pruebas de 0k; no cambia en 0l.
+acertijo quedó aceptada con las pruebas de 0k. En 0m las cuatro permanecen
+encendidas tras resolverlas y la pared conserva su textura CMIN01 al habilitar el paso.
 
 ## Modelos sencillos de estaciones (4.33.0j)
 
-Aceptados por el autor en 0j. La revisión 0l conserva todos sus archivos,
+Aceptados por el autor en 0j. La revisión 0m conserva todos sus archivos,
 texturas y asociaciones; tampoco modifica el HUD aceptado ni el audio.
 La limpieza de salas retira instancias del surtido, no recursos gráficos.
 

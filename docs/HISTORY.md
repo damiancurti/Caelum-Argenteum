@@ -1,6 +1,85 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0l — 2026-09-10.
+Versión documental: 4.33.0m — 2026-09-10.
+
+## Decisiones y correcciones 4.33.0m
+
+- El autor solicita masa vegetal realista y dureza de madera. Los arbustos
+  dejan los 100 kg de 0l: 10 kg estimados de parte aérea para un ejemplar mediano,
+  dureza heredada 2,5, escala 0,05. Veinte ejemplares aportan 200 kg de capacidad.
+  No es un pesaje ni un valor universal de todas las especies (SYSTEMS.md).
+- Ceibos y arbustos rodean la entrada. Se retira toda la vegetación de la cueva;
+  permanecen cobre, estaño y el cofre de gemas/cuero. Se conserva la fracción
+  agotada al migrar 0l, teniendo en cuenta los Default omitidos por GZDoom.
+- Las estaciones se trasladan a los dormitorios: Rulo/pesado, Ronnie/mediano
+  y distancia, Argento/liviano, Caella/magia, con componentes/procesamiento T1–T2.
+  La habitación interior del segundo piso reúne las doce. Sin estaciones afuera.
+  Se reutilizan las instancias anteriores y se preservan las reservas de tareas.
+- Argento consulta la misma indicación de etapa que Detalle: Caella pendiente,
+  devolver el préstamo, ir a Ronnie, recolectar o devolver la espada, según avance.
+  Todos los residentes pueden indicar talleres y nuevas ubicaciones de recursos.
+- Las cuatro runas ya no retiran el equipo ni completan Caella. A 4/4 se vuelve
+  a hablar con ella, se confirma la devolución y entonces habilita atravesar la
+  pared visible. Los guardados ya completados conservan su progreso y recuperan
+  la textura original. Las marcas permanecen encendidas.
+- Se integran 240 sprites de Poses_Agachados_v3 y los 40 acostados recuperados
+  de Poses_Descanso_v2. Los PNG se copian sin cambiar píxeles ni offsets.
+  Fuentes en assets/source/art; estados de los cinco personajes, locomoción
+  agachada de Domingo y preparación gráfica para futuras sillas/camas.
+- Compatibilidad: los estados nuevos se añaden al final para conservar los
+  índices de estados de los NPC en guardados anteriores. El agachado de Domingo
+  declara su sprite al renderer para que no se comprima verticalmente dos veces.
+- Validación técnica: 767 comprobaciones sin fallos en GZDoom 4.14.2, incluidas
+  interfaz nativa, recetas T1/T2 y cuatro recorridos de guardado/carga. Se conserva
+  y completa una fabricación 0l pendiente tras trasladar su estación. Alcance
+  y límites en PROJECT.md; la prueba de juego del autor sigue pendiente.
+- README y cinco docs actualizados. Mismo formato de delta y un TXT, sin scripts
+  de instalación. Las pruebas de 0l no se declaran aceptadas por el autor: sus
+  nuevas observaciones originan esta revisión.
+
+### Registro técnico archivado de 4.33.0l
+
+- GZDoom 4.14.2 compila y carga los 4.151 archivos de runtime sin errores ni
+  advertencias nuevas. La matriz central pasó 102 comprobaciones: préstamo,
+  cierre de Caella sin retirar la espada de Ronnie, receta/dependencias, stock,
+  protección de suministros, resultados personales y primera arma por ItemId.
+- Se compararon 180 planes (36 armas por cinco talles) con el blueprint real
+  del motor, al 25% en cada capa. Coinciden todos; el cofre cubre cada opción.
+  Los nodos existentes alcanzan los máximos: madera 336.000, cobre 4.838.400,
+  estaño 537.600 y fibra 144.000 unidades. No se aumentaron vetas ni árboles.
+- Se completaron 36 transacciones reales de crafting, una por elección en M,
+  sin Caja Mágica. El ensayo inyecta materias primas y adelanta el reloj de la
+  tarea para verificar reservas/salida; no acredita el ritmo de recolección ni
+  la duración de una partida manual. Siete comprobaciones adicionales verifican
+  procedencia temporal de un componente real, protección y cálculo de faltantes.
+- Diez comprobaciones de interfaz nativa: Usar abre Ronnie y cofre, elegir
+  Libro/Aire llega a la receta correcta y retirar topacio cambia el stock.
+  Capturas revisadas: familias, explicación/confirmación, préstamo, ambas
+  páginas del cofre, Detalle paginado y arbusto transparente en la cueva.
+- 42 comprobaciones de persistencia y viaje, cero fallos: guardar con 0k en
+  fase 45 y espada de cueva recogida; actualizar la misma instalación a 0l;
+  adoptar esa instancia, retirar gemas y guardar con tarea/reservas activas;
+  cargar, cancelar y devolver sólo suministros, preservando 123 unidades propias;
+  fabricar, devolver la espada, guardar/cargar con arma inicial y una adicional;
+  cambiar de mapa conservando la primera y retirando temporales. El arma activa
+  temporal se sustituye por la inicial sin referencias a equipo destruido.
+- La espada también se ensayó por la ruta real de ataque/LineAttack: el
+  principal alcanza el arbusto y produce fibra; el secundario no la produce.
+  La dispersión existente sigue aplicándose: hay que alcanzar la planta.
+- README y cinco docs actualizados; validación de recursos/traducciones sin
+  errores. WAD, 74 archivos de audio y modelos aceptados mantienen sus huellas.
+  El ZIP se coteja contra 0k y sólo contiene el delta y su TXT de pruebas.
+
+Pruebas del autor: recorrer una elección física y otra de esencia usando
+guardados separados; recoger fibra con el principal de la espada y comprobar
+que el secundario no la entrega; retirar/devolver suministros; fabricar en
+la red exterior, por capas si hace falta; guardar/cargar antes y después de
+devolver el préstamo. El TXT del ZIP contiene los pasos concretos.
+
+Los ensayos usan una base reconstruida de 0k con archivos cotejados y GZDoom
+4.14.2/OpenGL. No sustituyen la revisión visual/jugable en Windows del autor.
+No incluyen pruebas de cooperativo. Motor, IWAD, fixtures y guardados de ensayo
+permanecen fuera del parche. Registros técnicos de 0i–0k: HISTORY.md.
 
 ## Decisiones y correcciones 4.33.0l
 

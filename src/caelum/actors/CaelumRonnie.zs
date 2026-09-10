@@ -26,6 +26,8 @@ class CaelumRonnie : CaelumAnchoredResident
         ConfigureCombatMagicalRange();
     }
 
+    // Poses anexadas al final: preservan los índices de estados de guardados previos.
+    // No simulan descanso ni cambian la colisión de combate por sí solas.
     States
     {
     Spawn:
@@ -61,5 +63,17 @@ class CaelumRonnie : CaelumAnchoredResident
         RONI JK 5;
         RONI L -1;
         Stop;
+    RestSeated:
+        RSRO A -1;
+        Stop;
+    RestLying:
+        RSRO B -1;
+        Stop;
+    CrouchIdle:
+        RSRO C -1;
+        Stop;
+    CrouchWalk:
+        RSRO DEFG 6;
+        Loop;
     }
 }

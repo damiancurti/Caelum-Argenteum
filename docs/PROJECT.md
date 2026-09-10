@@ -1,6 +1,6 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0l — 2026-09-10.
+Versión documental: 4.33.0m — 2026-09-10.
 
 ## Estado actual
 
@@ -8,24 +8,29 @@ Versión documental: 4.33.0l — 2026-09-10.
 Quedan aceptados Caella y sus runas, Detalle con F, limpieza de las seis salas,
 y las correcciones anteriores de HUD, idioma, estaciones y audio.
 
-**4.33.0l implementa elección, recolección y primera arma de Ronnie.** Ofrece
-16 armas físicas y 20 variantes de esencia T1, independientemente de la clase.
-Cada opción se explica antes de confirmar. Enseña la receta y sus dependencias;
-presta la espada, incorpora tres arbustos 2D y un cofre de gemas/cuero de vaca.
-El crafting real entrega el arma al inventario personal, sin adelantar la Caja.
-Al volver, Ronnie retira sólo su espada. Se conserva la primera arma fabricada.
+**4.33.0m revisa la preparación de MAP01.** Conserva la elección de Ronnie,
+las 36 armas T1, recetas/componentes, espada prestada, cofre finito y primera
+arma por ItemId de 0l. Corrige las observaciones recibidas; 0l no se declara
+íntegramente aceptado.
 
-El cofre deriva sus cantidades de las recetas vigentes, al talle del personaje
-y al 25% en todas las capas. Stock, elección, tareas e identidades persisten.
-Detalle muestra faltantes, componentes ya disponibles y referencias del lugar.
-No cambian recetas, costes de extracción, WAD, audio, HUD ni modelos aceptados.
+- Jardín de entrada: cuatro ceibos y veinte arbustos 2D de 10 kg estimados cada
+  uno, dureza 2,5. La cueva conserva cofre, cobre y estaño; ya no tiene vegetación.
+- Talleres dentro de cada dormitorio, completos para su familia hasta T2;
+  las doce estaciones juntas en la habitación interior del segundo piso.
+- Cuatro runas → volver con Caella → devolver su préstamo → atravesar la pared
+  visible. Argento y Detalle siguen la fase vigente, incluida la parte de Ronnie.
+- 280 sprites de poses de los cinco personajes: v3 más acostados v2. Domingo
+  usa las poses al agacharse; sentarse/acostarse quedan como estados gráficos
+  disponibles para las futuras interacciones, sin simular descanso todavía.
 
-La parte material llega a fase 60. **No acredita todavía toda la supervivencia
-de la especificación:** faltan lecciones de comida, bebida, Aire, agua y una
-reparación real; revisar el préstamo con Ronnie no equivale a esa reparación.
-Rulo/Toro, Palomo final, Caja, El Loco y salida narrativa siguen por implementar.
+El código migra instancias al cargar, conserva tareas/reservas y agotamiento
+proporcional. No cambia los WAD, recetas, audio, HUD ni modelos aceptados.
+La masa vegetal es una estimación de un tamaño concreto; detalles en SYSTEMS.md.
+La parte material llega a fase 60. Faltan las lecciones de comida, bebida,
+Aire, agua y una reparación real; revisar la espada no acredita esa reparación.
+Rulo/Toro, Palomo final, Caja, El Loco y salida narrativa siguen pendientes.
 
-Formato: sólo archivos nuevos/modificados para copiar, más un TXT de pruebas.
+Formato: archivos nuevos/modificados para copiar, más un TXT de pruebas.
 La migración 0h aceptada se conserva; V5 reorganizará el código de programación.
 
 ## Premisas permanentes
@@ -88,7 +93,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | Orden | Bloque | Alcance restante / criterio de cierre |
 | --- | --- | --- |
 | 0 | Base hasta 4.33.0k | Aceptada por el autor: prólogo, Argento, Caella, geometría, HUD/audio, estaciones y Detalle. Migración 0h conservada. |
-| 1 | 4.33.0l: materiales y primera arma, fases 50–60 | Implementado; validar elección libre, recetas, arbustos, cofre, préstamo, crafting y persistencia. |
+| 1 | 4.33.0m: revisión de Caella, jardín, talleres y poses sobre Ronnie 0l | Implementado; validar retorno de Caella, guía de Argento, ubicaciones, recetas T1/T2 y guardados. |
 | 2 | Completar enseñanza de supervivencia de Ronnie | Reparación real, alimento/agua, Aire y paso de agua seguro; integrar los objetivos antes de habilitar Rulo. Fijar valores tutoriales pendientes sin cambiar el balance general. |
 | 3 | Rulo y Toro, fases 70–75 | Entrenamiento, combate y resolución; contemplar todas las armas elegibles y asignar munición tutorial a las que la requieren. |
 | 4 | Palomo final, fase 80 | Aparición/ubicación final, cierre de las cuatro ramas y entrega única de la Caja Mágica. |
@@ -203,55 +208,42 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, assets, docs y README.md del parche sobre la carpeta
-completa 0k y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0l y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0l.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0m.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0l
+## Validación de 4.33.0m
 
-- GZDoom 4.14.2 compila y carga los 4.151 archivos de runtime sin errores ni
-  advertencias nuevas. La matriz central pasó 102 comprobaciones: préstamo,
-  cierre de Caella sin retirar la espada de Ronnie, receta/dependencias, stock,
-  protección de suministros, resultados personales y primera arma por ItemId.
-- Se compararon 180 planes (36 armas por cinco talles) con el blueprint real
-  del motor, al 25% en cada capa. Coinciden todos; el cofre cubre cada opción.
-  Los nodos existentes alcanzan los máximos: madera 336.000, cobre 4.838.400,
-  estaño 537.600 y fibra 144.000 unidades. No se aumentaron vetas ni árboles.
-- Se completaron 36 transacciones reales de crafting, una por elección en M,
-  sin Caja Mágica. El ensayo inyecta materias primas y adelanta el reloj de la
-  tarea para verificar reservas/salida; no acredita el ritmo de recolección ni
-  la duración de una partida manual. Siete comprobaciones adicionales verifican
-  procedencia temporal de un componente real, protección y cálculo de faltantes.
-- Diez comprobaciones de interfaz nativa: Usar abre Ronnie y cofre, elegir
-  Libro/Aire llega a la receta correcta y retirar topacio cambia el stock.
-  Capturas revisadas: familias, explicación/confirmación, préstamo, ambas
-  páginas del cofre, Detalle paginado y arbusto transparente en la cueva.
-- 42 comprobaciones de persistencia y viaje, cero fallos: guardar con 0k en
-  fase 45 y espada de cueva recogida; actualizar la misma instalación a 0l;
-  adoptar esa instancia, retirar gemas y guardar con tarea/reservas activas;
-  cargar, cancelar y devolver sólo suministros, preservando 123 unidades propias;
-  fabricar, devolver la espada, guardar/cargar con arma inicial y una adicional;
-  cambiar de mapa conservando la primera y retirando temporales. El arma activa
-  temporal se sustituye por la inicial sin referencias a equipo destruido.
-- La espada también se ensayó por la ruta real de ataque/LineAttack: el
-  principal alcanza el arbusto y produce fibra; el secundario no la produce.
-  La dispersión existente sigue aplicándose: hay que alcanzar la planta.
-- README y cinco docs actualizados; validación de recursos/traducciones sin
-  errores. WAD, 74 archivos de audio y modelos aceptados mantienen sus huellas.
-  El ZIP se coteja contra 0k y sólo contiene el delta y su TXT de pruebas.
+- GZDoom 4.14.2: **767 comprobaciones, sin fallos**, en ensayos aislados del
+  runtime completo. La matriz central contiene 458: jardín, extracción,
+  colocación y colisión de las 38 estaciones, redes separadas por habitación,
+  devolución a Caella y paso por la pared visible. Incluye 208 vistas previas
+  nativas de recetas de armas/armaduras T1 y T2, en el taller de su familia y
+  en la sala común, con los requisitos de componentes y procesamiento.
+- Interfaz nativa: 12 comprobaciones de conversaciones y respuestas. Caella
+  exige confirmar la devolución; Argento indica Ronnie después de Caella y
+  recolección durante su etapa; Ronnie explica las nuevas ubicaciones.
+- Poses: 22 comprobaciones de agachado quieto, animación al andar, recuperación
+  al ponerse de pie, prioridad del daño y estados de los cuatro residentes.
+  Capturas revisadas; el sprite agachado evita una segunda compresión vertical.
+- Guardado/carga: 275 comprobaciones en cuatro recorridos nativos. Un guardado
+  0l con tres runas conserva el progreso, los cuatro residentes y el agotamiento
+  vegetal; se guarda/carga con cuatro runas y bastón pendiente, y después de
+  devolverlo. Otro guardado 0l conserva elección de arma, stock y fabricación
+  pendiente, incluidas 9.600 unidades de rubí reservadas; la tarea se reanuda y termina
+  en el banco trasladado. El ensayo adelanta su reloj, no mide tiempo de trabajo.
+- Los 280 PNG de poses mantienen los bytes y offsets de los originales.
+  MAP01 conserva su WAD; audio y modelos previamente aceptados no cambian.
+  Validación documental y de referencias sin errores. El ZIP se comprueba
+  como delta sobre 0l, con cinco documentos activos y un TXT de pruebas.
 
-Pruebas del autor: recorrer una elección física y otra de esencia usando
-guardados separados; recoger fibra con el principal de la espada y comprobar
-que el secundario no la entrega; retirar/devolver suministros; fabricar en
-la red exterior, por capas si hace falta; guardar/cargar antes y después de
-devolver el préstamo. El TXT del ZIP contiene los pasos concretos.
-
-Los ensayos usan una base reconstruida de 0k con archivos cotejados y GZDoom
-4.14.2/OpenGL. No sustituyen la revisión visual/jugable en Windows del autor.
-No incluyen pruebas de cooperativo. Motor, IWAD, fixtures y guardados de ensayo
-permanecen fuera del parche. Registros técnicos de 0i–0k: HISTORY.md.
+Validación del autor pendiente: recorrido completo, carga de su guardado,
+acceso a talleres por las puertas, extracción y revisión visual en Windows.
+Los ensayos aislados usan GZDoom 4.14.2/OpenGL con instrumentación privada.
+No acreditan duración de una partida ni cooperativo. Motor, IWAD, fixtures,
+capturas y guardados de ensayo quedan fuera del parche; registros previos en HISTORY.md.

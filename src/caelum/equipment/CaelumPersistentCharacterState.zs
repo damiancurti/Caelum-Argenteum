@@ -729,7 +729,7 @@ class CaelumPersistentCharacterState : Inventory
         return -1;
     }
 
-    // -1: error; 0: intento inválido; 1: avance; 2: cierre único de la rama.
+    // -1: error; 0: intento inválido; 1: avance; 2: volver con Caella.
     int ActivateMainM00Rune(int element)
     {
         if (!IsMainM00MagicActive() || !IsMainM00MagicPracticeComplete()
@@ -746,11 +746,18 @@ class CaelumPersistentCharacterState : Inventory
         MainM00RuneSequenceIndex++;
         RefreshMainM00MagicObjective();
         if (MainM00RuneSequenceIndex < 4) return 1;
+        return 2;
+    }
+
+    bool CompleteMainM00Caella()
+    {
+        if (!IsMainM00MagicActive() || !IsMainM00MagicPracticeComplete()
+            || MainM00RuneSequenceIndex != 4) return false;
+        if (!TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE,
+            CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)) return false;
         SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN);
         SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE);
-        TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE,
-            CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE);
-        return 2;
+        return true;
     }
 
     bool SetQuestStage(int questId, int stage)

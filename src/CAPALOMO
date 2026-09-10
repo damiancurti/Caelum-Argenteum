@@ -412,6 +412,7 @@ conversation
             nextpage = "argento_next";
             closedialog = false;
         }
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "argento_workshop"; }
     }
     page
     {
@@ -421,6 +422,24 @@ conversation
         dialog = "$CA_DLG_M01_ARGENTO_NEXT_REPLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
+    page
+    {
+        pagename = "argento_workshop";
+        userstring = "argento_workshop";
+        name = "$CA_ARGENTO_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_ARGENTO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "argento_resources"; }
+    }
+    page
+    {
+        pagename = "argento_resources";
+        userstring = "argento_resources";
+        name = "$CA_ARGENTO_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
 }
 
 conversation
@@ -560,7 +579,26 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_ACCEPTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "rulo_workshop"; }
     }
+    page
+    {
+        pagename = "rulo_workshop";
+        userstring = "rulo_workshop";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_RULO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "rulo_resources"; }
+    }
+    page
+    {
+        pagename = "rulo_resources";
+        userstring = "rulo_resources";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
 }
 
 conversation
@@ -1842,6 +1880,7 @@ conversation
             closedialog = true;
             giveitem = "CaelumM00RepairRonnieLoanAction";
         }
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
     }
     page
     {
@@ -1880,6 +1919,25 @@ conversation
         userstring = "ronnie_finished";
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
+    }
+
+    page
+    {
+        pagename = "ronnie_workshop";
+        userstring = "ronnie_workshop";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
+    }
+    page
+    {
+        pagename = "ronnie_resources";
+        userstring = "ronnie_resources";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
@@ -2072,7 +2130,33 @@ conversation
         choice
         {
             text = "$CA_DLG_M01_MAGIC_CONTINUE";
-            nextpage = "caella_magic_practice";
+            nextpage = "caella_magic_return_gate";
+        }
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "caella_workshop"; }
+    }
+    page
+    {
+        pagename = "caella_magic_return_gate";
+        userstring = "caella_magic_return_gate";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_STATUS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicRunesReadyToken"; amount = 1; }
+        link = "caella_magic_return";
+        choice { text = "$CA_DLG_M01_MAGIC_CONTINUE"; nextpage = "caella_magic_practice"; }
+    }
+    page
+    {
+        pagename = "caella_magic_return";
+        userstring = "caella_magic_return";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RETURN_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_RETURN_LOAN";
+            giveitem = "CaelumM00FinishMagicAction";
+            nextpage = "caella_magic_done";
         }
     }
     page
@@ -2216,7 +2300,26 @@ conversation
         name = "$CA_CAELLA_NAME";
         dialog = "$CA_DLG_M01_MAGIC_DONE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "caella_workshop"; }
     }
+    page
+    {
+        pagename = "caella_workshop";
+        userstring = "caella_workshop";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_CAELLA";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "caella_resources"; }
+    }
+    page
+    {
+        pagename = "caella_resources";
+        userstring = "caella_resources";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
 }
 
 conversation

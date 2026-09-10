@@ -26,6 +26,8 @@ class CaelumArgento : CaelumAnchoredResident
         ConfigureCombatMagicalRange();
     }
 
+    // Poses anexadas al final: preservan los índices de estados de guardados previos.
+    // No simulan descanso ni cambian la colisión de combate por sí solas.
     States
     {
     Spawn:
@@ -61,5 +63,17 @@ class CaelumArgento : CaelumAnchoredResident
         ARGO JK 5;
         ARGO L -1;
         Stop;
+    RestSeated:
+        RSAR A -1;
+        Stop;
+    RestLying:
+        RSAR B -1;
+        Stop;
+    CrouchIdle:
+        RSAR C -1;
+        Stop;
+    CrouchWalk:
+        RSAR DEFG 6;
+        Loop;
     }
 }

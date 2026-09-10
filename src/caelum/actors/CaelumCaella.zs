@@ -26,6 +26,8 @@ class CaelumCaella : CaelumAnchoredResident
         ConfigureCombatMagicalRange();
     }
 
+    // Poses anexadas al final: preservan los índices de estados de guardados previos.
+    // No simulan descanso ni cambian la colisión de combate por sí solas.
     States
     {
     Spawn:
@@ -61,5 +63,17 @@ class CaelumCaella : CaelumAnchoredResident
         CAEL JK 5;
         CAEL L -1;
         Stop;
+    RestSeated:
+        RSCA A -1;
+        Stop;
+    RestLying:
+        RSCA B -1;
+        Stop;
+    CrouchIdle:
+        RSCA C -1;
+        Stop;
+    CrouchWalk:
+        RSCA DEFG 6;
+        Loop;
     }
 }

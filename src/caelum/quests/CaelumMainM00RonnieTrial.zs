@@ -400,10 +400,12 @@ class CaelumFiberBush : CaelumTreeEnvironmentProp
     Default
     {
         Tag "$CA_M01_FIBER_BUSH";
-        Radius 24;
-        Height 54;
-        Mass 100;
-        Scale 0.07;
+        // Arbusto mediano (~1.5 m), masa aérea estimada: no cilindro macizo.
+        // 10 kg = 10000 unidades; dureza 2.5 heredada de la madera.
+        Radius 20;
+        Height 48;
+        Mass 10;
+        Scale 0.05;
     }
     States { Spawn: CFBH A -1; Stop; }
 }

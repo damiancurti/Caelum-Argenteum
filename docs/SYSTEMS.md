@@ -1,12 +1,12 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0l — 2026-09-10.
+Versión documental: 4.33.0m — 2026-09-10.
 
 Esta referencia consolida reglas implementadas. El alcance narrativo está en
 [MAP01.txt](MAP01.txt), el estado de aceptación en [PROJECT.md](PROJECT.md) y
 las variantes históricas en [HISTORY.md](HISTORY.md).
 
-## Prueba de Caella (4.33.0i)
+## Prueba de Caella (4.33.0i–0m)
 
 Se habilita al cerrar Argento en fase 35. Fire/AltFire usan sus lanzamientos
 reales; User2 conserva Channel del Sello con gasto de Adrenalina. La indicación
@@ -15,8 +15,13 @@ al completar un lanzamiento y su recuperación se observa en la reserva real.
 
 La práctica exige cinco hechos y después cuatro runas; el Diario cuenta 0/9
 hasta 9/9. Usar sobre una runa con un implemento activo conduce su elemento.
-Tierra → Aire → Fuego → Agua abre la entrada existente, devuelve los préstamos
-y avanza a fase 45. Error: sólo reinicia las runas; pistas a los 2 y 4 errores.
+Tierra → Aire → Fuego → Agua registra 4/4 y pide volver con Caella. Sigue en
+fase 40, con equipo prestado y pared sólida. La respuesta de devolución ante
+Caella retira sólo CA_LimboMagicImplement/Seal, avanza a fase 45 y habilita el
+paso. La pared conserva CMIN01 por ambas caras y las runas quedan encendidas:
+el jugador camina a través de ella. Equipo propio no se retira. Error: sólo
+reinicia las runas; pistas a los 2 y 4 errores. Un guardado ya completado en 0l
+conserva fase y devoluciones; se repone la textura sin volver a bloquearlo.
 
 Las dos instancias temporales reutilizan T1 del catálogo. Conservan ItemId y
 la marca CA_ITEMFLAG_LIMBO_TEMP; no se venden, sueltan, desarman ni almacenan
@@ -63,9 +68,10 @@ estación pausa el trabajo. Se pueden procesar materiales por etapas o elegir
 una eficiencia mayor para reducir necesidades. Los faltantes del Diario
 descuentan también componentes y procesados que ya posee el jugador.
 
-Tres arbustos 2D de la cueva usan la extracción vegetal existente: daño
-cortante produce fibra; perforante/contundente no. Conservan dureza 2,5 y
-regeneración general; capacidad 100 kg cada uno. La espada T1 prestada usa
+Veinte arbustos 2D rodean la entrada junto con cuatro ceibos: daño cortante
+produce fibra de arbustos y madera de árboles; perforante/contundente no.
+La vegetación se retira de la cueva. Cada arbusto tiene 10 kg y dureza 2,5,
+igual que la madera, y conserva la regeneración general. La espada T1 prestada usa
 principal cortante y secundario perforante para las vetas de cobre/estaño.
 Si ya existe la antigua espada de cueva en inventario, se adopta su ItemId.
 Revisarla restaura/equipa la misma pieza. Caella devuelve sólo sus préstamos.
@@ -89,6 +95,66 @@ por coincidencia de nombre ni concede de nuevo un préstamo ya devuelto.
 
 Esta revisión no incorpora munición ni las lecciones pendientes de necesidades,
 Aire, agua y reparación. Esas reglas se integran antes del entrenamiento de Rulo.
+
+## Masa de arbustos y migración del jardín (4.33.0m)
+
+El arbusto representa aproximadamente 1,5 m de alto y 2,2 m de copa; la masa
+adoptada es **10 kg de biomasa aérea fresca**, una estimación para ese ejemplar,
+no el peso universal de una especie ni un pesaje. No se incluyen raíces o tierra.
+El follaje tiene aire: no se calcula como un cilindro de madera maciza.
+Como modelo orientativo de esa estimación, 0,012 m³ de tallos/ramas a una densidad
+supuesta de 650 kg/m³ suman 7,8 kg, más 2,2 kg de hojas/tallos finos. Estas son
+hipótesis de modelado, no mediciones botánicas; una especie/tamaño documentado
+permitiría sustituirlas por una estimación alométrica específica.
+
+El sistema del juego convierte esa masa a capacidad con 1 unidad = 0,001 kg:
+10.000 unidades por arbusto y 200.000 entre veinte. Es una reserva acumulada,
+no el rendimiento por golpe ni una afirmación de que una planta real se convierta
+íntegramente en fibra textil. Cada impacto cortante libera potencia × (1−2,5/10),
+limitada por la reserva restante, acumulando fracciones. La masa limita el total;
+la dureza y la potencia determinan la extracción por impacto.
+El peor plan T1/XL existente necesita 144.000 unidades de fibra al 25% en cada
+capa, por lo que el jardín inicial alcanza sin aumentar la masa de cada planta.
+
+Al cargar 0l se traslada la proporción restante de los tres nodos antiguos a los
+veinte nuevos. Se usa su capacidad original de 100 kg: GZDoom puede omitir Mass
+cuando coincide con el Default y aplicar el Default nuevo al deserializar.
+Los materiales ya recogidos no se quitan. Las cargas siguientes no repueblan ni
+rellenan nada; la regeneración nativa continúa. Las vetas y el cofre no se mueven.
+
+## Talleres de MAP01 (4.33.0m)
+
+Cada habitación tiene una red propia; sólo vecinos a 64 MU o menos y con el
+mismo CraftingRoomGroup suman infraestructura. El grupo cero conserva las redes
+libres de otros mapas. No hay préstamos de capacidad entre paredes o pisos.
+
+| Habitación | Infraestructura física | Cobertura |
+| --- | --- | --- |
+| Rulo, norte junto a entrada, Z136 | Banco, forja, yunque, taller de armaduras, máquina de coser | Armas y armaduras pesadas T1–T2, con sus componentes. |
+| Ronnie, norte junto a escalera, Z136 | Las cinco anteriores, taller de distancia y aserradero | Armas/armaduras medianas T1–T2 y armas a distancia. |
+| Argento, sur junto a escalera, Z136 | Banco, forja, yunque, taller de armaduras, máquina de coser | Armas y armaduras livianas T1–T2, con sus componentes. |
+| Caella, sur junto a entrada, Z136 | Las cinco comunes, altar, globo, joyero y herramientas finas | Armas y armaduras mágicas T1–T2, procesamiento de gemas/esencias/telas. |
+| Habitación interior del segundo piso, Z264 | Las doce estaciones, incluido Banco Maestro | Red completa; las recetas y materiales siguen siendo necesarios. |
+
+Son especializaciones narrativas e infraestructura, no nuevas restricciones
+por clase/familia. Las familias físicas comparten forja/yunque según el catálogo.
+No hay Banco Maestro en dormitorios. Se mantienen las 18 instancias exteriores
+al trasladarlas y se agregan 20: total 38. Una tarea que estaba en una estación
+trasladada queda pausada al alejarse, conservando progreso, materiales y reservas;
+se reanuda desde la infraestructura adecuada. No se modifica la economía T2 ni
+se regalan materiales T2 como parte de la primera arma T1 de Ronnie.
+
+## Poses de personajes (4.33.0m)
+
+Rulo/RSRU, Ronnie/RSRO, Argento/RSAR, Caella/RSCA y Domingo/RSDO comparten:
+RestSeated=A, RestLying=B, CrouchIdle=C, CrouchWalk=D–G (6 tics por fase), ocho
+rotaciones por cuadro. Domingo cambia entre C y D–G con la locomoción agachada;
+se preservan el crouch físico nativo, ataques, dolor, muerte y la vuelta a pie.
+El renderer recibe el sprite agachado para evitar una segunda compresión. Los
+estados nuevos se anexan al final: no desplazan índices de estados guardados.
+Las poses sentada/acostada son estados gráficos preparados, no una interacción
+que restaure Sueño ni un calendario. Sillas, camas, inmovilización y cámara de
+descanso se conectarán al bloque correspondiente; la secuencia está en PROJECT.md.
 
 ## Probabilidad social
 
@@ -162,7 +228,9 @@ progreso ni otorga objetos. Las misiones aún desconocidas no aparecen.
 
 Durante Caella enumera primario, secundario, canalización, gasto de Ánima y
 recuperación como Hecho/Pendiente. A 5/5 cambia a la secuencia de runas y al
-acertijo. A fase 45 indica hablar con Ronnie. La fuente es el registro persistente,
+acertijo. A 4/4 pide volver con Caella; tras la devolución en fase 45 indica
+hablar con Ronnie. Argento usa ese mismo selector cuando se le pregunta con
+quién seguir, incluyendo recolección y devolución de Ronnie. La fuente es el registro persistente,
 no contadores independientes del menú. La misma indicación de ubicación se
 usa en la conversación de Caella y en Detalle para evitar contradicciones.
 

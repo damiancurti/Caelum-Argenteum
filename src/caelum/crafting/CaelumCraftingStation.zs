@@ -3,6 +3,8 @@
 // movilidad cuando se implemente el sistema ambiental de objetos empujables.
 class CaelumCraftingStation : CaelumMovableProp
 {
+    // Cero conserva las redes libres de otros mapas. MAP01 separa habitaciones.
+    int CraftingRoomGroup;
     int LastCraftingNetworkScanToken;
     Actor LastCraftingNetworkScanPlayer;
 
@@ -25,6 +27,7 @@ class CaelumCraftingStation : CaelumMovableProp
     bool IsNetworkNeighbor(CaelumCraftingStation other)
     {
         if (other == null || other == self) { return false; }
+        if (CraftingRoomGroup != other.CraftingRoomGroup) return false;
 
         double dx = other.Pos.X - Pos.X;
         double dy = other.Pos.Y - Pos.Y;

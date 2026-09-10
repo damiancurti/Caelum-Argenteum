@@ -234,6 +234,11 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "argento_next")
+            {
+                text = StringTable.Localize(CaelumJournalOverlay.GetQuestDetailStageKey(user,
+                    CaelumConstants.QUEST_MAIN_M00_THE_FOOL), false);
+            }
             text.Replace("%COUNT%", String.Format("%d", user.MainM00ConvincedCountSnapshot));
             text.Replace("%RULO_CHANCE%", String.Format("%d", user.MainM00SocialChanceSnapshot[0]));
             text.Replace("%CAELLA_CHANCE%", String.Format("%d", user.MainM00SocialChanceSnapshot[2]));

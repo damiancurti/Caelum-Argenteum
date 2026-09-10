@@ -4,19 +4,29 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.33.0l.** Last accepted gameplay base: **4.33.0k**.
+**Current release: 4.33.0m.** Last accepted gameplay base: **4.33.0k**.
 Documentation reviewed: 2026-09-10. The author confirmed all 0k tests.
-This patch adds Ronnie's free starter-weapon choice, recipe dependencies,
-a borrowed gathering sword, 2D fiber shrubs and a finite supply chest.
+This patch revises Caella's turn-in, Argento's directions, the entrance garden,
+indoor workshops and the supplied character poses. It builds on 0l's starter
+weapon choice, recipe dependencies, gathering loan and finite supply chest.
 The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
 
 - Ronnie offers all 16 physical and 20 magical T1 weapons, with explanations
   before confirmation. He teaches the chosen recipe and its component recipes.
-- Three 2D shrubs in the cave yield fiber to slashing attacks. Existing trees,
-  copper and tin remain; Ronnie lends the gathering sword and takes it back
-  after the first craft. An already owned cave sword keeps its ItemId.
+- Twenty 2D shrubs and four ceibos surround the entrance. Each shrub represents
+  an estimated 10 kg of aboveground biomass, with the same hardness as wood.
+  Slashing yields fiber; the cave retains copper, tin and the supply chest.
+  Ronnie lends the gathering sword and takes it back after the first craft.
+- Each resident's room supports its equipment family through T2, including
+  components. The indoor second-floor room contains all twelve stations;
+  the exterior rows are relocated. Saved tasks and reservations are preserved.
+- Argento shares the journal's current-stage guidance. All residents can
+  explain the new resource and workshop locations.
+- The five characters have 280 supplied pose sprites and native states.
+  Domingo uses crouch idle/walk art; seated/lying states prepare future furniture
+  interactions. They do not implement rest or calendar simulation yet.
 - The basement chest supplies raw gems and cow leather. Stock is calculated
   for any T1 choice at the character's size and 25% efficiency in every layer;
   withdrawal respects recipe needs and carrying capacity. Unused supplies
@@ -35,7 +45,8 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
   residents, persist results/failure alternatives, return at 3/3 to phase 35.
 - Caella's magic trial: real primary/secondary casts, Seal Channel, Anima
   spending/recovery, four elemental runes, hints after mistakes and a persistent
-  passage opening at phase 45. Temporary equipment is returned automatically.
+  turn-in at phase 45. The fourth rune keeps the staff and wall intact; return
+  to Caella, hand back her loan, then walk through the still-visible wall.
 - Correct Spanish localization for Caella. The magic implement and one Seal
   suffice: complete practice, then press Use on Earth, Air, Fire and Water.
 - Side HUD Seal icon: normal colors when available, grayscale when blocked,
@@ -54,7 +65,7 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: author validation of 0l, then Ronnie's remaining survival lessons
+Next: author validation of 0m, then Ronnie's remaining survival lessons
 (food, water, Air and a real repair), Rulo/Bull combat, final Palomo encounter,
 Magic Box, The Fool and narrative exit. Starter ammunition for the combat
 lesson still needs its tutorial allocation; this patch does not add ammo.
@@ -69,17 +80,17 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-Author playthrough of 0l: weapon explanations/choice, recipe tree, sword loan,
-fiber harvesting, finite chest stock, crafting in stages, save/load and return.
-All 0k tests are accepted, including Caella, rune directions and quest Detail.
-Engine checks and their limits are recorded in PROJECT.md.
+Author playthrough of 0m: Caella's return step, Argento after each stage,
+entrance harvesting, all five indoor workshops, crouch art and save/load.
+The earlier 0k acceptance remains recorded; 0l's new observations are addressed
+here. Engine checks and their limits are recorded in PROJECT.md.
 
 ## Build and run
 
-Close GZDoom. Extract the 0l patch and copy its **src**, **assets**, **docs** and
-**README.md** into the full **4.33.0k** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0m patch and copy its **src**, **assets**, **docs** and
+**README.md** into the full **4.33.0l** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0l.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0m.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
