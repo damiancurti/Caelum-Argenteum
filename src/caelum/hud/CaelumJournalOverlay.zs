@@ -423,6 +423,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_SEALS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
                 return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMMUNITION:
+                return "CA_CRAFTING_FILTER_AMMUNITION";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
                 return "CA_CRAFTING_FILTER_COMPONENTS";
             default: return "CA_CRAFTING_FILTER_ALL";
@@ -1216,6 +1218,8 @@ class CaelumJournalOverlay : EventHandler
         {
             return StringTable.Localize("CA_CRAFTING_RECIPE_UNKNOWN", false);
         }
+        if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
+            return StringTable.Localize("CA_CRAFTING_TEN_ARROWS", false);
         if (localPlayer.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {
@@ -1823,7 +1827,7 @@ class CaelumJournalOverlay : EventHandler
             && localPlayer != null && localPlayer.CraftingMenuOpen;
 
         if (e.KeyScan == InputEvent.Key_Escape
-            || e.KeyScan == InputEvent.Key_Pad_B)
+            || e.KeyScan == InputEvent.Key_Tab || e.KeyScan == InputEvent.Key_Pad_B)
         {
             if (currentPage == 4 && IsQuestDetailOpen())
             {
@@ -1846,7 +1850,7 @@ class CaelumJournalOverlay : EventHandler
             SetJournalOpen(false);
         }
         else if (currentPage == 3 && craftingSession
-            && (e.KeyScan == InputEvent.Key_Tab
+            && (e.KeyChar == 103 || e.KeyChar == 71 || e.KeyString ~== "g"
                 || e.KeyScan == InputEvent.Key_Pad_Y))
         {
             SendNetworkEvent("ca_crafting_filter");

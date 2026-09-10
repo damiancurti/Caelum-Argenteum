@@ -4,12 +4,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.33.0m.** Last accepted gameplay base: **4.33.0k**.
-Documentation reviewed: 2026-09-10. The author confirmed all 0k tests.
-This patch revises Caella's turn-in, Argento's directions, the entrance garden,
-indoor workshops and the supplied character poses. It builds on 0l's starter
-weapon choice, recipe dependencies, gathering loan and finite supply chest.
-The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
+
+**Current release: 4.33.0n.** Applied over 4.33.0m. Last fully accepted gameplay
+base: **4.33.0k**; the author also accepted 0m's station models/infrastructure.
+Documentation reviewed: 2026-09-10. This patch moves workshops away from doors,
+prevents Use across floors, adds arrow crafting and updates T1 supplies.
+Palomo now runs upstairs through the mansion. The complete roadmap is in
+[PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
 
@@ -17,20 +18,33 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
   before confirmation. He teaches the chosen recipe and its component recipes.
 - Twenty 2D shrubs and four ceibos surround the entrance. Each shrub represents
   an estimated 10 kg of aboveground biomass, with the same hardness as wood.
-  Slashing yields fiber; the cave retains copper, tin and the supply chest.
+  Slashing yields fiber; the cave contains copper, tin, five gemstone veins
+  and a finite leather chest.
   Ronnie lends the gathering sword and takes it back after the first craft.
 - Each resident's room supports its equipment family through T2, including
   components. The indoor second-floor room contains all twelve stations;
-  the exterior rows are relocated. Saved tasks and reservations are preserved.
+  all twelve form one row against the back wall. Bedroom stations occupy
+  corners. Use checks height and visibility; saved tasks/reservations persist.
 - Argento shares the journal's current-stage guidance. All residents can
   explain the new resource and workshop locations.
 - The five characters have 280 supplied pose sprites and native states.
   Domingo uses crouch idle/walk art; seated/lying states prepare future furniture
   interactions. They do not implement rest or calendar simulation yet.
-- The basement chest supplies raw gems and cow leather. Stock is calculated
-  for any T1 choice at the character's size and 25% efficiency in every layer;
-  withdrawal respects recipe needs and carrying capacity. Unused supplies
-  can be returned. Reopening or loading never refills the chest.
+- The basement chest holds only cow leather, enough for giant gauntlets at
+  the character's size and 25% efficiency in every layer: **96 kg for size M**.
+  Withdrawals respect carrying capacity; unused leather can be returned.
+  Reopening/loading does not refill it. Gems come from the five cave veins.
+- Bow and longbow choices also teach a native recipe for ten arrows and all
+  its dependencies. Arrows enter personal inventory and do not replace the
+  first crafted weapon. Tab closes Trades; G changes its recipe filter.
+- Argento holds the silver key; the Bull is placed in the locked starting room.
+  Delivery requires Caella/Ronnie completion and Rulo's combat practices.
+  Rulo's playable lesson remains the next narrative block. The Bull's finite
+  leather reward is prepared to cover one complete T1 armor family at minimum
+  efficiency. MAP01 supply coverage targets T1; T2 workshop infrastructure stays.
+- Palomo remains visible and solid during his fifteen-waypoint departure to
+  the second floor, using stairs, doors and normal movement. Save/load resumes
+  the route. His final conversation and Magic Box reward remain pending.
 - The first crafted weapon goes to personal inventory without requiring the
   Magic Box. Its ItemId is preserved; extra crafted weapons and mission
   material quantities are removed on leaving MAP01. Quest Detail tracks
@@ -65,10 +79,10 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: author validation of 0m, then Ronnie's remaining survival lessons
-(food, water, Air and a real repair), Rulo/Bull combat, final Palomo encounter,
-Magic Box, The Fool and narrative exit. Starter ammunition for the combat
-lesson still needs its tutorial allocation; this patch does not add ammo.
+Next: author validation of 0n, then Ronnie's remaining survival lessons
+(food, water, Air and a real repair), Rulo's complete combat lesson/Bull turn-in,
+final Palomo encounter, Magic Box, The Fool and narrative exit. Arrow crafting
+is available; cartridge/bolt recipes or tutorial allocation remain pending.
 MAP02 is currently an actor test field; story sewers are still pending.
 
 The established sequence continues through V4.34 world/travel foundations,
@@ -80,17 +94,17 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-Author playthrough of 0m: Caella's return step, Argento after each stage,
-entrance harvesting, all five indoor workshops, crouch art and save/load.
-The earlier 0k acceptance remains recorded; 0l's new observations are addressed
-here. Engine checks and their limits are recorded in PROJECT.md.
+Author playthrough of 0n: workshop access, Use on separate floors, Tab/G,
+leather withdrawal, harvesting the five veins, arrow crafting and Palomo's
+route. Native engine/UI/save checks are recorded in PROJECT.md; they do not
+replace the author's Windows playthrough.
 
 ## Build and run
 
-Close GZDoom. Extract the 0m patch and copy its **src**, **assets**, **docs** and
-**README.md** into the full **4.33.0l** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0n patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0m** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0m.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0n.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

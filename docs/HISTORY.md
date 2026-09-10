@@ -1,6 +1,32 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0m — 2026-09-10.
+Versión documental: 4.33.0n — 2026-09-10.
+
+## Decisiones y correcciones 4.33.0n
+
+- El autor acepta las estaciones de 0m y pide ubicarlas contra esquinas y,
+  arriba, en una fila al fondo. Se conservan 38 instancias y cinco redes.
+- Las activaciones de puertas/estaciones ahora comprueban altura y visibilidad.
+  Tab cierra Oficios; filtro pasa a G. Mismo comportamiento de pausa/reservas.
+- Caella deja de referirse a sí misma en la indicación de la pared. Todos los
+  residentes describen recursos actuales, cajón y vetas.
+- Gemas trasladadas a cinco vetas al fondo. La petición inicial de quitar el
+  cajón queda sustituida por la última corrección: sólo cuero de vaca suficiente
+  para los guanteletes gigantes, al talle y 25 % por capa (96 kg en M).
+  El alcance de abastecimiento se limita a T1; se mantiene infraestructura T2.
+- Arco/arco largo enseñan diez flechas y todas sus dependencias. Receta 129;
+  conocimiento anterior preservado. Salida personal, sin reclamar primera arma.
+- Argento guarda la llave y el Toro ocupa la sala cerrada inicial. Preparadas
+  transferencia única, activación posterior a las prácticas y muerte con
+  cuero para un conjunto completo T1 de cualquier familia. La lección de Rulo
+  aún debe conectarse; no se declara jugable ese tramo por colocar los actores.
+- Palomo corre visible por ambas escaleras hasta el segundo piso, conserva
+  colisión y guarda su recorrido. Se corrige la ocultación previa con el flag
+  nativo INVISIBLE: Alpha=0 no ocultaba su RenderStyle Normal.
+- Validación de esta entrega y límites en PROJECT.md. README y los cinco docs
+  actualizados; delta sobre 0m con un TXT, sin instaladores ni cambios al WAD.
+- El problema de herramientas que interrumpió la preparación quedó resuelto;
+  no queda una decisión pendiente sobre el cuero ni sobre incluir T2.
 
 ## Decisiones y correcciones 4.33.0m
 

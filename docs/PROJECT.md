@@ -1,35 +1,42 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0m — 2026-09-10.
+Versión documental: 4.33.0n — 2026-09-10.
 
-## Estado actual
+## Estado actual: 4.33.0n
 
-**4.33.0k aceptado:** el autor confirmó que todas las pruebas dieron bien.
-Quedan aceptados Caella y sus runas, Detalle con F, limpieza de las seis salas,
-y las correcciones anteriores de HUD, idioma, estaciones y audio.
+Base de aplicación: **0m**. Aceptación completa anterior: **0k**. El autor
+aceptó las estaciones de 0m y pidió corregir su ubicación y el uso entre pisos.
+Esta entrega implementa esas correcciones y las observaciones posteriores:
 
-**4.33.0m revisa la preparación de MAP01.** Conserva la elección de Ronnie,
-las 36 armas T1, recetas/componentes, espada prestada, cofre finito y primera
-arma por ItemId de 0l. Corrige las observaciones recibidas; 0l no se declara
-íntegramente aceptado.
+- Las 38 estaciones conservan sus instancias: esquinas en dormitorios y una
+  fila de doce contra la pared del fondo del segundo piso. Puertas y estaciones
+  rechazan activaciones desde otro nivel o sin línea de visión.
+- Tab cierra Oficios, también durante una tarea; G filtra. Cerrar pausa la tarea.
+- Arco y arco largo enseñan diez flechas por lote y sus componentes, usando
+  crafting e inventario nativos. No consumen el lugar de la primera arma.
+- Cinco vetas de gemas al fondo de la cueva. El cajón queda sólo con cuero de
+  vaca para guanteletes gigantes al 25 % por capa y al talle del personaje:
+  96 kg en M. La corrección final del autor limita el abastecimiento a T1.
+- Toro colocado tras la puerta de plata y Argento como custodio de la llave.
+  La entrega exige las preparaciones con los cuatro: las prácticas de Rulo
+  preceden al Toro. Botín preparado para un conjunto completo T1 de cualquier
+  familia, con presupuesto máximo calculado del conjunto pesado.
+- Palomo corre visible por quince puntos, abre las puertas libres necesarias
+  y sube por ambas escaleras hasta la habitación del segundo piso. No se
+  teletransporta ni desaparece; continúa desde su punto al cargar.
+- Indicación compartida neutral sobre la pared marcada y diálogos de recursos
+  actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-- Jardín de entrada: cuatro ceibos y veinte arbustos 2D de 10 kg estimados cada
-  uno, dureza 2,5. La cueva conserva cofre, cobre y estaño; ya no tiene vegetación.
-- Talleres dentro de cada dormitorio, completos para su familia hasta T2;
-  las doce estaciones juntas en la habitación interior del segundo piso.
-- Cuatro runas → volver con Caella → devolver su préstamo → atravesar la pared
-  visible. Argento y Detalle siguen la fase vigente, incluida la parte de Ronnie.
-- 280 sprites de poses de los cinco personajes: v3 más acostados v2. Domingo
-  usa las poses al agacharse; sentarse/acostarse quedan como estados gráficos
-  disponibles para las futuras interacciones, sin simular descanso todavía.
+**Límite narrativo:** la preparación de arma sigue llegando a fase 60. El
+entrenamiento jugable de Rulo aún no emite las banderas necesarias para la
+llave: no se habilita el Toro antes de tiempo. Su entrega/botín se verificaron
+con las precondiciones preparadas en un ensayo privado. Falta conectar las
+lecciones de supervivencia de Ronnie, entrenamiento y devolución ante Rulo,
+Palomo final, Caja, El Loco y salida. Estar físicamente arriba no habilita aún
+el diálogo final de Palomo.
 
-El código migra instancias al cargar, conserva tareas/reservas y agotamiento
-proporcional. No cambia los WAD, recetas, audio, HUD ni modelos aceptados.
-La masa vegetal es una estimación de un tamaño concreto; detalles en SYSTEMS.md.
-La parte material llega a fase 60. Faltan las lecciones de comida, bebida,
-Aire, agua y una reparación real; revisar la espada no acredita esa reparación.
-Rulo/Toro, Palomo final, Caja, El Loco y salida narrativa siguen pendientes.
-
+Se conservan WAD, audio, modelos, jardín y poses aceptados. Las estaciones
+siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
 Formato: archivos nuevos/modificados para copiar, más un TXT de pruebas.
 La migración 0h aceptada se conserva; V5 reorganizará el código de programación.
 
@@ -93,10 +100,10 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | Orden | Bloque | Alcance restante / criterio de cierre |
 | --- | --- | --- |
 | 0 | Base hasta 4.33.0k | Aceptada por el autor: prólogo, Argento, Caella, geometría, HUD/audio, estaciones y Detalle. Migración 0h conservada. |
-| 1 | 4.33.0m: revisión de Caella, jardín, talleres y poses sobre Ronnie 0l | Implementado; validar retorno de Caella, guía de Argento, ubicaciones, recetas T1/T2 y guardados. |
+| 1 | 4.33.0n: accesos, suministros T1, flechas y retirada de Palomo | Implementado sobre 0m; validar juego manual. La llave y el botín están preparados para conectar Rulo. |
 | 2 | Completar enseñanza de supervivencia de Ronnie | Reparación real, alimento/agua, Aire y paso de agua seguro; integrar los objetivos antes de habilitar Rulo. Fijar valores tutoriales pendientes sin cambiar el balance general. |
-| 3 | Rulo y Toro, fases 70–75 | Entrenamiento, combate y resolución; contemplar todas las armas elegibles y asignar munición tutorial a las que la requieren. |
-| 4 | Palomo final, fase 80 | Aparición/ubicación final, cierre de las cuatro ramas y entrega única de la Caja Mágica. |
+| 3 | Rulo y Toro, fases 70–75 | Implementar entrenamiento y resolución; conectar las cuatro prácticas con la llave de Argento y el Toro ya colocado. Flechas disponibles; resolver cartuchos/virotes para las demás armas. |
+| 4 | Palomo final, fase 80 | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
 | 5 | El Loco y salida, fases 90–100 | Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
 | 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
@@ -207,43 +214,43 @@ antes de escribir y se informa con su ruta.
 
 ## Aplicación y mantenimiento
 
-Con GZDoom cerrado, copiar src, assets, docs y README.md del parche sobre la carpeta
-completa 0l y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
+completa 0m y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0m.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0n.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0m
+## Validación de 4.33.0n
 
-- GZDoom 4.14.2: **767 comprobaciones, sin fallos**, en ensayos aislados del
-  runtime completo. La matriz central contiene 458: jardín, extracción,
-  colocación y colisión de las 38 estaciones, redes separadas por habitación,
-  devolución a Caella y paso por la pared visible. Incluye 208 vistas previas
-  nativas de recetas de armas/armaduras T1 y T2, en el taller de su familia y
-  en la sala común, con los requisitos de componentes y procesamiento.
-- Interfaz nativa: 12 comprobaciones de conversaciones y respuestas. Caella
-  exige confirmar la devolución; Argento indica Ronnie después de Caella y
-  recolección durante su etapa; Ronnie explica las nuevas ubicaciones.
-- Poses: 22 comprobaciones de agachado quieto, animación al andar, recuperación
-  al ponerse de pie, prioridad del daño y estados de los cuatro residentes.
-  Capturas revisadas; el sprite agachado evita una segunda compresión vertical.
-- Guardado/carga: 275 comprobaciones en cuatro recorridos nativos. Un guardado
-  0l con tres runas conserva el progreso, los cuatro residentes y el agotamiento
-  vegetal; se guarda/carga con cuatro runas y bastón pendiente, y después de
-  devolverlo. Otro guardado 0l conserva elección de arma, stock y fabricación
-  pendiente, incluidas 9.600 unidades de rubí reservadas; la tarea se reanuda y termina
-  en el banco trasladado. El ensayo adelanta su reloj, no mide tiempo de trabajo.
-- Los 280 PNG de poses mantienen los bytes y offsets de los originales.
-  MAP01 conserva su WAD; audio y modelos previamente aceptados no cambian.
-  Validación documental y de referencias sin errores. El ZIP se comprueba
-  como delta sobre 0l, con cinco documentos activos y un TXT de pruebas.
+- Runtime completo en GZDoom 4.14.2: carga sin errores. 281 comprobaciones
+  de las 38 estaciones, colisión/altura, puertas, cajón único y cinco vetas.
+- 48 comprobaciones de cantidades por talle, retiro/devolución y migración
+  de cuero, recetas/fabricación/cancelación de flechas, consumo real de materias
+  primas, primera arma, custodia/transferencia de llave y botín único del Toro.
+- Entrada nativa: 11 comprobaciones. Tab cierra Oficios sin estación y con
+  ella; G filtra; Usar abre banco/cajón/Argento y las respuestas cambian inventario.
+  Capturas revisadas de cajón, receta de flechas, llave y fila de estaciones.
+- Palomo recorre ambos tramos de escalera con movimiento y colisión reales,
+  llega a (500,120,264) visible/sólido y sin teletransporte. La ruta tardó unos
+  21 segundos en el ensayo sin obstrucciones; el jugador puede bloquearlo.
+- Tres recorridos de guardado/carga, 138 comprobaciones: cargar 0m conservando
+  Caella y residentes; guardar una tarea de flechas pausada y a Palomo en marcha;
+  reanudar y completar ambos; transferir llave, derrotar Toro, guardar/cargar
+  de nuevo. Recetas 128/129, munición, stock gastado, llave y botín persisten.
+  No se duplica el Toro ni se devuelve la llave al custodio.
+- Todos los ensayos anteriores terminaron sin fallos. Las pruebas de recetas
+  inyectan materias primas y adelantan el reloj de fabricación; las de la llave
+  preparan las banderas futuras de Rulo. No acreditan ese capítulo jugable.
+- README y cinco documentos coherentes con 0n. WAD, 74 archivos de audio,
+  doce modelos de estación y arte sin cambios. Delta exacto sobre 0m; un TXT
+  adicional con aplicación/pruebas. No se incluyen herramientas de ensayo.
 
 Validación del autor pendiente: recorrido completo, carga de su guardado,
 acceso a talleres por las puertas, extracción y revisión visual en Windows.
 Los ensayos aislados usan GZDoom 4.14.2/OpenGL con instrumentación privada.
 No acreditan duración de una partida ni cooperativo. Motor, IWAD, fixtures,
-capturas y guardados de ensayo quedan fuera del parche; registros previos en HISTORY.md.
+capturas y guardados quedan fuera del parche; validación de 0m en HISTORY.md.

@@ -189,6 +189,8 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if (recipeIndex == CaelumConstants.CRAFTING_ARROW_RECIPE)
+            return CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
         int resolved = Clamp(recipeIndex, 0,
             CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1);
         int armorStart = CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT;
@@ -694,7 +696,7 @@ class CaelumCraftingRules : Object
     static int FindComponentRecipeForOutput(int materialType)
     {
         for (int recipeIndex = GetComponentRecipeStart();
-            recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
+            recipeIndex < GetComponentRecipeStart() + CaelumConstants.CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT;
             recipeIndex++)
         {
             if (GetComponentOutputMaterial(recipeIndex) == materialType)

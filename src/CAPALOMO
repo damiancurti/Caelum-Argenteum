@@ -413,6 +413,7 @@ conversation
             closedialog = false;
         }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "argento_workshop"; }
+        choice { text = "$CA_M01_KEY_ASK"; nextpage = "argento_key_gate"; closedialog = false; }
     }
     page
     {
@@ -437,6 +438,36 @@ conversation
         userstring = "argento_resources";
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "argento_key_gate";
+        userstring = "argento_key_gate";
+        name = "$CA_ARGENTO_NAME";
+        dialog = "$CA_M01_KEY_WAIT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00SilverKeyReadyToken"; amount = 1; }
+        link = "argento_key_ready";
+    }
+    page
+    {
+        pagename = "argento_key_ready";
+        userstring = "argento_key_ready";
+        name = "$CA_ARGENTO_NAME";
+        dialog = "$CA_M01_KEY_READY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00SilverKeyHeldToken"; amount = 1; }
+        link = "argento_key_given";
+        choice { text = "$CA_M01_KEY_TAKE"; nextpage = "argento_key_given"; closedialog = false; giveitem = "CaelumM00TakeSilverKeyAction"; }
+    }
+    page
+    {
+        pagename = "argento_key_given";
+        userstring = "argento_key_given";
+        name = "$CA_ARGENTO_NAME";
+        dialog = "$CA_M01_KEY_GIVEN";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
@@ -2333,81 +2364,7 @@ conversation
         name = "$CA_M01_CHEST_NAME";
         dialog = "$CA_M01_SUPPLY_PAGE1";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_0";
-            nextpage = "ronnie_chest_0";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply0";
-        }
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_1";
-            nextpage = "ronnie_chest_0";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply1";
-        }
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_2";
-            nextpage = "ronnie_chest_0";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply2";
-        }
-        choice
-        {
-            text = "$CA_M01_SUPPLY_NEXT";
-            nextpage = "ronnie_chest_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_SUPPLY_DEPOSIT";
-            nextpage = "ronnie_chest_0";
-            closedialog = false;
-            giveitem = "CaelumM00ReturnSupplies";
-        }
-    }
-    page
-    {
-        pagename = "ronnie_chest_1";
-        userstring = "ronnie_chest_1";
-        name = "$CA_M01_CHEST_NAME";
-        dialog = "$CA_M01_SUPPLY_PAGE2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_3";
-            nextpage = "ronnie_chest_1";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply3";
-        }
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_4";
-            nextpage = "ronnie_chest_1";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply4";
-        }
-        choice
-        {
-            text = "$CA_M01_TAKE_SUPPLY_5";
-            nextpage = "ronnie_chest_1";
-            closedialog = false;
-            giveitem = "CaelumM00TakeSupply5";
-        }
-        choice
-        {
-            text = "$CA_M01_SUPPLY_NEXT";
-            nextpage = "ronnie_chest_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_SUPPLY_DEPOSIT";
-            nextpage = "ronnie_chest_1";
-            closedialog = false;
-            giveitem = "CaelumM00ReturnSupplies";
-        }
+        choice { text = "$CA_M01_TAKE_SUPPLY_5"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00TakeSupply5"; }
+        choice { text = "$CA_M01_SUPPLY_DEPOSIT"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00ReturnSupplies"; }
     }
 }

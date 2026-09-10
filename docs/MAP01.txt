@@ -1,7 +1,40 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0m — 2026-09-10.
+Versión documental: 4.33.0n — 2026-09-10.
 
-REVISIÓN 4.33.0m
+
+REVISIÓN 4.33.0n — BASE 0m
+Abastecimiento limitado a objetos T1. Cajón (1780,640,-384): sólo cuero de vaca
+para guanteletes gigantes a la mínima eficiencia por capa; 96 kg en talle M,
+calculado para los demás talles. Mantiene retiros/devoluciones, no se rellena.
+Cinco vetas en Z=-384, Y=1210: rubí X=1080, zafiro 1260, esmeralda 1440,
+topacio 1620, ópalo 1760. Cobre/estaño y materiales recogidos se conservan.
+
+Talleres: esquinas de dormitorios; sala del segundo piso X=-336,
+Y=-308+56*i (i=0..11), Z=264, mirando a 0 grados. Cada habitación conserva
+su red y las instancias de las estaciones. Uso bloqueado desde otros pisos.
+Tab cierra Oficios; G filtra. Arco/arco largo enseñan diez flechas y componentes.
+NPC con indicación neutral de la pared marcada; recursos actualizados.
+
+Toro en (-2180,0,0), tras puerta de plata X=-1788. Argento conserva la llave
+hasta las preparaciones con los cuatro: Rulo exige sus prácticas antes del
+Toro, no derrotarlo para obtener la llave. Botín de cuero finito para un conjunto
+T1 completo de cualquier familia, al talle del personaje y mínima eficiencia.
+Falta conectar la lección jugable de Rulo; esta preparación no adelanta la fase.
+Esta decisión sustituye las alternativas históricas de la sección 15.4.
+
+Palomo sale corriendo al cerrar su diálogo inicial. Ruta física:
+(-650,0,0) -> (1360,0,0) -> (1360,260,136) -> (1456,260,136) ->
+(1600,260,136) -> (1600,0,136) -> (1848,0,136) -> (1848,344,136) ->
+(1750,344,136) -> (1750,0,264) -> (1600,0,264) -> (1200,0,264) ->
+(1000,0,264) -> (500,0,264) -> (500,120,264).
+Sigue visible y sólido; usa ambas escaleras y abre las puertas sin llave.
+Guardar/cargar retoma la ruta. El diálogo final y la Caja siguen pendientes.
+
+La revisión vigente reemplaza sólo las ubicaciones/recursos indicados abajo.
+WAD, devolución de Caella, jardín, poses y primera arma de 0m se conservan.
+
+REGISTRO DE LA REVISIÓN 4.33.0m (UBICACIONES REEMPLAZADAS ARRIBA)
+
 Base para aplicar: 4.33.0l. La aceptación completa anterior es 0k; las nuevas
 observaciones del autor se corrigen aquí, sin declarar 0l íntegramente aceptado.
 

@@ -1812,7 +1812,7 @@ CA_JOURNAL_CRAFTING_TIME = "Time";
 CA_JOURNAL_CRAFTING_DIRECT_STEPS = "Automatic prior steps";
 CA_JOURNAL_CRAFTING_RUNNING = "working at station";
 CA_JOURNAL_CRAFTING_PAUSED = "paused";
-CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Tab family | Space tier/batch | R size | X efficiency | E craft | C cancel | Q close";
+CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | G family | Space tier/batch | R size | X efficiency | E craft | C cancel | Q close";
 
 [es]
 CA_JOURNAL_FILTER_ALL = "Todo";
@@ -1832,7 +1832,7 @@ CA_JOURNAL_CRAFTING_TIME = "Tiempo";
 CA_JOURNAL_CRAFTING_DIRECT_STEPS = "Pasos previos automáticos";
 CA_JOURNAL_CRAFTING_RUNNING = "trabajando en la estación";
 CA_JOURNAL_CRAFTING_PAUSED = "en pausa";
-CA_JOURNAL_CRAFTING_HELP = "Izq./Der. receta | Tab familia | Espacio tier/lote | R talle | X eficiencia | E fabricar | C cancelar | Q cerrar";
+CA_JOURNAL_CRAFTING_HELP = "Izq./Der. receta | G familia | Espacio tier/lote | R talle | X eficiencia | E fabricar | C cancelar | Q cerrar";
 
 [enu default]
 CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Debug: advance active crafting task by 10 minutes";
@@ -1846,7 +1846,7 @@ CA_JOURNAL_CRAFTING_SELECTED_STEP = "selected step";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "debug control: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · debug control advances 10 min";
 CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier | B material batch";
-CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T +10m | Q close";
+CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T +10m | G family | Tab/Q close";
 
 [es]
 CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Depuración: adelantar 10 minutos la tarea de crafteo";
@@ -1860,7 +1860,7 @@ CA_JOURNAL_CRAFTING_SELECTED_STEP = "paso elegido";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "control de depuración: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el control adelanta 10 min";
 CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier | B lote de materiales";
-CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T +10m | Q cerrar";
+CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T +10m | G familia | Tab/Q cerrar";
 
 [enu default]
 CA_TREE_DESERT_CARDON_ADULT = "adult cardón cactus";
@@ -2127,7 +2127,7 @@ CA_DLG_M01_MAGIC_WHERE = "Where and how do I activate the runes?";
 CA_DLG_M01_MAGIC_LOCATION = "From the mansion entrance, follow the central hall to the stairs at the far end. Stay on the ground floor and go around their right side (south). The four marks are together on the rear wall, behind that side of the stairs, near the floor. They appear after accepting the trial. Finish practice, approach with the magic staff active, aim at each mark and press Use. The fire Seal is enough.";
 CA_DLG_M01_MAGIC_TRY = "I will try the order.";
 CA_DLG_M01_MAGIC_DONE = "Thank you for returning my equipment. The wall will still look solid: walk straight through the four marks. The passage leads to the lift and the cave. Then speak with Ronnie about preparing your weapon.";
-CA_DLG_M01_RONNIE_MAGIC_READY = "Caella's wall is now passable, although it still looks solid. It leads to the cave's chest and mineral veins. The ceibos and fiber shrubs grow around the mansion entrance.";
+CA_DLG_M01_RONNIE_MAGIC_READY = "Caella's wall is now passable, although it still looks solid. It leads to the cave's copper, tin and gemstone veins. The ceibos and fiber shrubs grow around the mansion entrance.";
 CA_M01_MAGIC_PRIMARY_DONE = "Primary spell recorded.";
 CA_M01_MAGIC_SECONDARY_DONE = "Secondary spell recorded.";
 CA_M01_MAGIC_CHANNEL_DONE = "Seal channel recorded.";
@@ -2164,7 +2164,7 @@ CA_DLG_M01_MAGIC_WHERE = "¿Dónde y cómo activo las runas?";
 CA_DLG_M01_MAGIC_LOCATION = "Desde la entrada de la mansión, seguí el pasillo central hasta la escalera del fondo. Quedate en planta baja y rodeala por la derecha (sur). Las cuatro marcas están juntas en la pared trasera, detrás de ese lado de la escalera, cerca del piso. Aparecen al aceptar la prueba. Completá la práctica, acercate con el bastón activo, apuntá a cada marca y pulsá Usar. El Sello de fuego alcanza.";
 CA_DLG_M01_MAGIC_TRY = "Voy a probar el orden.";
 CA_DLG_M01_MAGIC_DONE = "Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con Ronnie para preparar tu arma.";
-CA_DLG_M01_RONNIE_MAGIC_READY = "La pared de Caella ya se puede atravesar, aunque siga pareciendo sólida. Lleva al cofre y a las vetas de la cueva. Los ceibos y los arbustos de fibra crecen alrededor de la entrada de la mansión.";
+CA_DLG_M01_RONNIE_MAGIC_READY = "La pared de Caella ya se puede atravesar, aunque siga pareciendo sólida. Lleva a las vetas de cobre, estaño y gemas de la cueva. Los ceibos y los arbustos de fibra crecen alrededor de la entrada de la mansión.";
 CA_M01_MAGIC_PRIMARY_DONE = "Lanzamiento primario registrado.";
 CA_M01_MAGIC_SECONDARY_DONE = "Lanzamiento secundario registrado.";
 CA_M01_MAGIC_CHANNEL_DONE = "Canalización con Sello registrada.";
@@ -2251,17 +2251,17 @@ CA_M01_RONNIE_SELECT_HELP = "Read the characteristics before confirming. Your ch
 CA_M01_RONNIE_CONFIRM = "Learn this recipe and borrow the sword.";
 CA_M01_RONNIE_BACK = "Back to the families.";
 CA_M01_RONNIE_COLLECT = "Chosen weapon: %STARTER%. You know its recipe and components. My sword is a loan: cut trees and shrubs with primary attack; pierce veins with secondary. Gather what you need, craft your weapon, then bring my sword back.";
-CA_M01_RONNIE_LOCATION = "Cut the ceibos and shrubs around the mansion entrance for wood and fiber. Walk through Caella's marked wall behind the right side of the far staircase and descend by the lift. The chest holds gems and cow leather; copper and tin veins are farther inside. The residents' rooms have workshops; the second-floor room has every station together.";
+CA_M01_RONNIE_LOCATION = "Cut the ceibos and shrubs around the mansion entrance for wood and fiber. Walk through the marked wall behind the right side of the far staircase and descend by the lift. The cave has copper and tin; the five gemstone veins are at the far end. The chest holds cow leather for giant gauntlets. The Bull will yield more leather after its defeat. Workshops are in the residents' rooms and together on the second floor.";
 CA_M01_RONNIE_ROUTE_CHOICE = "Where do I find the resources?";
 CA_M01_RONNIE_LOAN_CHOICE = "Check and equip your borrowed sword.";
 CA_M01_RONNIE_CRAFTED = "You have crafted your first weapon. Keep that one; I will take my sword back.";
 CA_M01_RONNIE_RETURN = "Return the borrowed sword.";
 CA_M01_RONNIE_FINISHED = "You have what you need. If you also kept enough strength to use it, you learned the important part. Keep your weapon for the combat trial.";
-CA_M01_SUPPLY_PAGE1 = "Stored units: ruby %SUPPLY0%, sapphire %SUPPLY1%, emerald %SUPPLY2%. Withdraw what your chosen recipe needs and you can carry. Stock covers one weapon at 25% efficiency in every layer.";
-CA_M01_SUPPLY_PAGE2 = "Stored units: topaz %SUPPLY3%, opal %SUPPLY4%, cow leather %SUPPLY5%. Unused supplies can be returned here. This chest does not refill when reopened.";
+CA_M01_SUPPLY_PAGE1 = "Cow leather remaining: %SUPPLY5% units (1000 units = 1 kg). This finite stock covers giant gauntlets in your size at 25% efficiency in every layer. Withdraw only what you can carry; return unused leather here.";
+CA_M01_SUPPLY_PAGE2 = "Only cow leather is stored here. Gemstones come from the five veins at the far end of the cave.";
 CA_M01_SUPPLY_NEXT = "Other supplies.";
 CA_M01_SUPPLY_DEPOSIT = "Return unused chest supplies.";
-CA_M01_DETAIL_GATHER = "Gather materials and craft %STARTER%. You know its recipe and all components. Ceibos and shrubs are at the entrance; the cave holds the chest and veins. Use a resident's workshop or the complete workshop on the second floor. Return Ronnie's sword after crafting.";
+CA_M01_DETAIL_GATHER = "Gather materials and craft %STARTER%. You know its recipe and all components. Ceibos and shrubs are at the entrance; the cave holds copper, tin and gemstone veins. Use a resident's workshop or the complete workshop on the second floor. Return Ronnie's sword after crafting.";
 CA_M01_DETAIL_READY = "Your first weapon is ready. Return to Ronnie to hand back his borrowed sword.";
 CA_M01_DETAIL_DONE = "Weapon preparation is complete. Keep your first crafted weapon for the combat trial.";
 CA_M01_DETAIL_MATERIALS = "Raw-material plan at 25% in every layer. Missing amounts also count components you have already made. Higher efficiencies need fewer materials.";
@@ -2307,9 +2307,9 @@ CA_M01_WEAPON_DESC_8 = "Greatsword: Longer reach and stronger attacks than the s
 CA_M01_WEAPON_DESC_9 = "War axe: Strong, slow cutting attacks and a blunt secondary. High Air use. No shield blocking.";
 CA_M01_WEAPON_DESC_10 = "Halberd: Combines cutting and piercing with very long reach. A large weapon; no shield blocking.";
 CA_M01_WEAPON_DESC_11 = "Giant gauntlets: Heavy blunt attacks. The secondary adds upward push. The gauntlets also provide their own blocking mode.";
-CA_M01_WEAPON_DESC_12 = "Bow: Uses arrows. Aim with Zoom or secondary; reload with Reload. Requires ammunition.";
+CA_M01_WEAPON_DESC_12 = "Bow: Uses arrows. Aim with Zoom or secondary; reload with Reload. I will also teach you to craft batches of ten arrows and their components.";
 CA_M01_WEAPON_DESC_13 = "Carbine: Strong ranged shots with high Air use and slower cadence. Aim and reload; requires cartridges.";
-CA_M01_WEAPON_DESC_14 = "Longbow: Greater range and tighter spread than the bow, with higher Air use. Requires arrows.";
+CA_M01_WEAPON_DESC_14 = "Longbow: Greater range and tighter spread than the bow, with higher Air use. I will also teach you to craft batches of ten arrows and their components.";
 CA_M01_WEAPON_DESC_15 = "Crossbow: Uses bolts; aim with Zoom or secondary and reload with Reload. Slower than the bow.";
 CA_M01_WEAPON_DESC_16 = "Staff: An essence implement with directed primary and secondary attacks. Casting spends Anima.";
 CA_M01_ELEMENT_0 = "Fire";
@@ -2362,17 +2362,17 @@ CA_M01_RONNIE_SELECT_HELP = "Lee las características antes de confirmar. La ele
 CA_M01_RONNIE_CONFIRM = "Aprender esta receta y recibir la espada.";
 CA_M01_RONNIE_BACK = "Volver a las familias.";
 CA_M01_RONNIE_COLLECT = "Arma elegida: %STARTER%. Ya conoces su receta y componentes. Mi espada es un préstamo: corta árboles y arbustos con el principal; perfora las vetas con el secundario. Reúne lo necesario, fabrica tu arma y después devuélveme la espada.";
-CA_M01_RONNIE_LOCATION = "Cortá los ceibos y arbustos alrededor de la entrada de la mansión para obtener madera y fibra. Atravesá la pared marcada de Caella, detrás del lado derecho de la escalera del fondo, y bajá por el ascensor. El cofre guarda gemas y cuero de vaca; más adentro están las vetas de cobre y estaño. Hay talleres en las habitaciones de los residentes y todas las estaciones juntas en la habitación del segundo piso.";
+CA_M01_RONNIE_LOCATION = "Cortá los ceibos y arbustos de la entrada para obtener madera y fibra. Atravesá la pared marcada detrás del lado derecho de la escalera del fondo y bajá por el ascensor. La cueva tiene cobre y estaño; las cinco vetas de gemas están al fondo. El cajón guarda cuero de vaca para los guanteletes gigantes. El Toro dará más cuero al morir. Hay talleres en las habitaciones de los residentes y todos juntos en el segundo piso.";
 CA_M01_RONNIE_ROUTE_CHOICE = "¿Dónde encuentro los recursos?";
 CA_M01_RONNIE_LOAN_CHOICE = "Revisar y equipar tu espada prestada.";
 CA_M01_RONNIE_CRAFTED = "Ya fabricaste tu primera arma. Conserva esa; yo recuperaré mi espada.";
 CA_M01_RONNIE_RETURN = "Devolver la espada prestada.";
 CA_M01_RONNIE_FINISHED = "Tienes lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la parte importante. Conserva tu arma para la prueba de combate.";
-CA_M01_SUPPLY_PAGE1 = "Unidades almacenadas: rubí %SUPPLY0%, zafiro %SUPPLY1%, esmeralda %SUPPLY2%. Retira lo que necesita tu receta y puedas cargar. El stock cubre un arma con 25% de eficiencia en cada capa.";
-CA_M01_SUPPLY_PAGE2 = "Unidades almacenadas: topacio %SUPPLY3%, ópalo %SUPPLY4%, cuero de vaca %SUPPLY5%. Puedes devolver aquí los suministros sin usar. Este cofre no se repone al abrirlo otra vez.";
+CA_M01_SUPPLY_PAGE1 = "Cuero de vaca restante: %SUPPLY5% unidades (1000 unidades = 1 kg). Esta reserva finita alcanza para los guanteletes gigantes de tu talle al 25% de eficiencia en cada etapa. Retirá lo que puedas cargar y devolvé aquí el cuero sin usar.";
+CA_M01_SUPPLY_PAGE2 = "Aquí sólo se guarda cuero de vaca. Las gemas salen de las cinco vetas del fondo de la cueva.";
 CA_M01_SUPPLY_NEXT = "Otros suministros.";
 CA_M01_SUPPLY_DEPOSIT = "Devolver suministros del cofre sin usar.";
-CA_M01_DETAIL_GATHER = "Reuní materiales y fabricá %STARTER%. Ya conocés la receta y sus componentes. Ceibos y arbustos en la entrada; cofre y vetas en la cueva. Usá los talleres de los residentes o el taller completo del segundo piso. Después devolvé la espada de Ronnie.";
+CA_M01_DETAIL_GATHER = "Reuní materiales y fabricá %STARTER%. Ya conocés la receta y sus componentes. Ceibos y arbustos en la entrada; vetas de cobre, estaño y gemas en la cueva. Usá los talleres de los residentes o el taller completo del segundo piso. Después devolvé la espada de Ronnie.";
 CA_M01_DETAIL_READY = "Tu primera arma está lista. Vuelve con Ronnie para devolverle la espada prestada.";
 CA_M01_DETAIL_DONE = "La preparación del arma está completa. Conserva tu primera arma fabricada para la prueba de combate.";
 CA_M01_DETAIL_MATERIALS = "Plan de materias primas al 25% en cada capa. Las cantidades faltantes también consideran los componentes que ya fabricaste. Eficiencias mayores requieren menos materiales.";
@@ -2418,9 +2418,9 @@ CA_M01_WEAPON_DESC_8 = "Mandoble: Más alcance y fuerza que la espada, con más 
 CA_M01_WEAPON_DESC_9 = "Hacha de guerra: Cortes fuertes y lentos, con un secundario contundente. Alto gasto de Aire. No permite bloquear con escudo.";
 CA_M01_WEAPON_DESC_10 = "Alabarda: Combina daño cortante y perforante con mucho alcance. Arma grande; no permite bloquear con escudo.";
 CA_M01_WEAPON_DESC_11 = "Guanteletes gigantes: Ataques contundentes pesados. El secundario agrega empuje hacia arriba. Los guanteletes tienen su propio modo de bloqueo.";
-CA_M01_WEAPON_DESC_12 = "Arco: Usa flechas. Apunta con Zoom o el secundario; recarga con Reload. Necesita munición.";
+CA_M01_WEAPON_DESC_12 = "Arco: usa flechas. Apuntá con Zoom o el ataque secundario; recargá con Recargar. También te enseñaré a fabricar lotes de diez flechas y sus componentes.";
 CA_M01_WEAPON_DESC_13 = "Carabina: Disparos potentes, con alto gasto de Aire y menor cadencia. Permite apuntar y recargar; necesita cartuchos.";
-CA_M01_WEAPON_DESC_14 = "Arco largo: Más alcance y menor dispersión que el arco, con mayor gasto de Aire. Necesita flechas.";
+CA_M01_WEAPON_DESC_14 = "Arco largo: mayor alcance y precisión que el arco, con mayor gasto de Aire. También te enseñaré a fabricar lotes de diez flechas y sus componentes.";
 CA_M01_WEAPON_DESC_15 = "Ballesta: Usa virotes; apunta con Zoom o el secundario y recarga con Reload. Es más lenta que el arco.";
 CA_M01_WEAPON_DESC_16 = "Bastón: Implemento de esencia con ataques principal y secundario dirigidos. Lanzar magia consume Ánima.";
 CA_M01_ELEMENT_0 = "Fuego";
@@ -2483,3 +2483,21 @@ CA_DLG_M01_WORKSHOP_RULO = "En mi habitación tenés la infraestructura para arm
 CA_DLG_M01_WORKSHOP_RONNIE = "Mi habitación tiene lo necesario para armas y armaduras medianas hasta tier 2, además de arcos, ballestas y carabinas. Rulo tiene equipo pesado; Argento, liviano; Caella, mágico. En la habitación del segundo piso están todas las estaciones juntas.";
 CA_DLG_M01_WORKSHOP_ARGENTO = "En mi habitación están las herramientas para armas y armaduras livianas hasta tier 2, incluidos sus componentes. Rulo prepara equipo pesado; Ronnie, mediano y a distancia; Caella, mágico. En la habitación del segundo piso están todas las estaciones juntas.";
 CA_DLG_M01_WORKSHOP_CAELLA = "Mi habitación tiene las estaciones para armas y armaduras mágicas hasta tier 2, incluidas esencias, gemas y telas. Rulo tiene equipo pesado; Ronnie, mediano; Argento, liviano. También están todas las estaciones en la habitación del segundo piso.";
+
+[enu default]
+CA_CRAFTING_TEN_ARROWS = "10 arrows";
+CA_CRAFTING_FILTER_AMMUNITION = "Ammunition";
+CA_M01_KEY_ASK = "What is behind the silver-locked door?";
+CA_M01_KEY_WAIT = "The Bull is in the locked room behind the place where you woke. I hold the silver key. Finish preparing with Caella and Ronnie, then practice with Rulo before asking me for it.";
+CA_M01_KEY_READY = "You have prepared with all four of us. Take the silver key and return to the locked room behind the place where you woke. The Bull waits there.";
+CA_M01_KEY_TAKE = "Take the silver key.";
+CA_M01_KEY_GIVEN = "You have the silver key. The locked room is behind the place where you woke, opposite the mansion entrance. Defeat the Bull, then return to Rulo.";
+
+[es]
+CA_CRAFTING_TEN_ARROWS = "10 flechas";
+CA_CRAFTING_FILTER_AMMUNITION = "Municiones";
+CA_M01_KEY_ASK = "¿Qué hay detrás de la puerta de plata?";
+CA_M01_KEY_WAIT = "El Toro está en la habitación cerrada detrás del lugar donde despertaste. Yo guardo la llave de plata. Terminá de prepararte con Caella y Ronnie y completá las prácticas con Rulo antes de pedírmela.";
+CA_M01_KEY_READY = "Ya te preparaste con los cuatro. Llevate la llave de plata y volvé a la habitación cerrada detrás del lugar donde despertaste. Ahí te espera el Toro.";
+CA_M01_KEY_TAKE = "Recibir la llave de plata.";
+CA_M01_KEY_GIVEN = "Tenés la llave de plata. La habitación cerrada queda detrás del lugar donde despertaste, en dirección contraria a la entrada de la mansión. Derrotá al Toro y volvé con Rulo.";

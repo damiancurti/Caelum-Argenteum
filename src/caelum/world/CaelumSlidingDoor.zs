@@ -90,6 +90,10 @@ class CaelumSlidingDoorLeaf : Actor
 
     bool RequestDoorGroup(Actor user)
     {
+        // La petición valida la hoja antes de consultar llaves o emitir sonido.
+        if (user == null || Abs(user.Pos.Z - Pos.Z) > 64
+            || user.Pos.Z >= Pos.Z + Height || user.Pos.Z + user.Height <= Pos.Z
+            || !user.CheckSight(self)) return false;
         // args[3] conserva el número de LOCKDEFS. CheckKeys presenta el
         // mensaje localizado del bloqueo y no consume la llave reutilizable.
         if (args[3] > 0 && (user == null || !user.CheckKeys(args[3], false)))

@@ -15,6 +15,7 @@ class CaelumCraftingStation : CaelumMovableProp
         Scale 0.5;
         // args[0] queda en 0: la movilidad existe por herencia, pero se
         // mantiene desactivada hasta definir masa y requisito físico.
+        +CANPASS
         +USESPECIAL
         Activation THINGSPEC_Switch;
     }
@@ -68,10 +69,18 @@ class CaelumCraftingStation : CaelumMovableProp
         }
     }
 
+    // Usar no comprueba por sí solo la altura de actores en todos los mapas.
+    bool CanReachFrom(Actor user)
+    {
+        return user != null && Abs(user.Pos.Z - Pos.Z) <= 64
+            && user.Pos.Z < Pos.Z + Height && user.Pos.Z + user.Height > Pos.Z
+            && user.CheckSight(self);
+    }
+
     void OpenForActivator(Actor activator)
     {
         CaelumPlayer user = CaelumPlayer(activator);
-        if (user == null || user.player == null) { return; }
+        if (user == null || user.player == null || !CanReachFrom(user)) { return; }
 
         // Una estación sólo puede abrirse por una pulsación REAL de Use.
         // Al cerrar crafting con Q, GZDoom puede volver a invocar la ruta

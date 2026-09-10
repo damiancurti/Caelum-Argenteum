@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0m — 2026-09-10.
+Versión documental: 4.33.0n — 2026-09-10.
+
+## Recursos reutilizados en 4.33.0n
+
+Cinco vetas 3D CaelumVeinRuby, Sapphire, Emerald, Topaz y Opal se colocan al fondo
+de la cueva; conservan masas, durezas y abundancias. El cajón existente queda
+para cuero y mantiene modelo/animación. La munición reutiliza CaelumArrowAmmo
+y su icono. El Toro conserva su arte; Palomo corre con PALM B/C y espera con A.
+No se genera ni modifica arte, audio, modelos o poses. Las estaciones sólo
+cambian colocación y guardas de interacción. No hay archivos de assets en este
+delta porque sus contenidos mantienen las huellas de 0m.
 
 ## Arbusto de fibra 2D (4.33.0l)
 

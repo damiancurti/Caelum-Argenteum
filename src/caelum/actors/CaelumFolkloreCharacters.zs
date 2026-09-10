@@ -75,6 +75,9 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     bool NarrativeRevealRequired;
     bool NarrativeRevealed;
     bool NarrativeDismissed;
+    bool DepartureStarted;
+    bool DepartureDone;
+    int DepartureWaypoint;
 
     Default
     {
@@ -159,13 +162,73 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         NarrativeRevealInitialized = true;
         NarrativeRevealRequired = MerchantAnchored
             && level.MapName == "MAP01";
-        NarrativeDismissed = NarrativeRevealRequired
-            && IsNarrativeFoyerComplete();
-        NarrativeRevealed = !NarrativeRevealRequired
-            || (IsNarrativeRevealReady() && !NarrativeDismissed);
-        Alpha = NarrativeRevealed ? 1.0 : 0.0;
+        NarrativeDismissed = false;
+        NarrativeRevealed = !NarrativeRevealRequired || IsNarrativeRevealReady();
+        Alpha = 1.0;
+        bInvisible = !NarrativeRevealed;
         bSolid = NarrativeRevealed;
         bShootable = NarrativeRevealed;
+        if (NarrativeRevealRequired) bInvulnerable = true;
+    }
+
+    Vector3 GetDepartureWaypoint(int index)
+    {
+        switch (index)
+        {
+            case 0: return (-650,0,0);
+            case 1: return (1360,0,0);
+            case 2: return (1360,260,136);
+            case 3: return (1456,260,136);
+            case 4: return (1600,260,136);
+            case 5: return (1600,0,136);
+            case 6: return (1848,0,136);
+            case 7: return (1848,344,136);
+            case 8: return (1750,344,136);
+            case 9: return (1750,0,264);
+            case 10: return (1600,0,264);
+            case 11: return (1200,0,264);
+            case 12: return (1000,0,264);
+            case 13: return (500,0,264);
+            default: return (500,120,264);
+        }
+    }
+
+    void UpdateDeparture()
+    {
+        if (bInConversation) { Vel.X = 0; Vel.Y = 0; return; }
+        // Alpha no oculta actores de RenderStyle Normal. La visibilidad se
+        // controla con INVISIBLE; durante la retirada nunca se oculta.
+        bInvisible = false; Alpha = 1; bSolid = true; bShootable = true;
+        bInvulnerable = true; bCanPass = true;
+        if (!DepartureStarted)
+        {
+            DepartureStarted = true; NarrativeDismissed = false;
+            NarrativeRevealed = true; DepartureWaypoint = 0;
+            SetStateLabel("DepartureRun");
+        }
+        if (DepartureDone) { Vel.X = 0; Vel.Y = 0; return; }
+        Vector3 goal = GetDepartureWaypoint(DepartureWaypoint);
+        Vector2 offset = goal.XY - Pos.XY;
+        if (offset.Length() < 8 && Abs(Pos.Z-goal.Z) < 20)
+        {
+            DepartureWaypoint++;
+            if (DepartureWaypoint > 14)
+            {
+                DepartureDone = true; NarrativeDismissed = true;
+                WanderHome = Pos; Vel.X = 0; Vel.Y = 0;
+                SetStateLabel("DepartureWait"); return;
+            }
+            goal = GetDepartureWaypoint(DepartureWaypoint);
+            offset = goal.XY - Pos.XY;
+        }
+        // Abrir únicamente puertas sin llave cercanas y en su propio nivel.
+        let doors = ThinkerIterator.Create("CaelumSlidingDoorLeaf"); CaelumSlidingDoorLeaf door;
+        while ((door = CaelumSlidingDoorLeaf(doors.Next())) != null)
+            if (door.args[3] == 0 && Abs(door.Pos.Z-Pos.Z) < 32 && Distance2D(door) < 100)
+                door.RequestDoorGroup(self);
+        Angle = VectorAngle(offset.X,offset.Y);
+        double pace = Min(8.0,offset.Length());
+        Vel.X = Cos(Angle)*pace; Vel.Y = Sin(Angle)*pace;
     }
 
     action void A_EnablePalomoWander()
@@ -202,42 +265,14 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         }
         if (NarrativeRevealRequired)
         {
-            // Después de la orientación, Palomo espera a quedar fuera del
-            // campo visual de todos los jugadores antes de retirarse. Al
-            // cargar una partida ya avanzada nace oculto y no reaparece.
-            if (IsNarrativeFoyerComplete())
-            {
-                if (NarrativeDismissed
-                    || (!bInConversation
-                        && !IsVisibleToAnyActivePlayer()))
-                {
-                    NarrativeDismissed = true;
-                    NarrativeRevealed = false;
-                    Alpha = 0.0;
-                    bSolid = false;
-                    bShootable = false;
-                    Vel.X = 0.0;
-                    Vel.Y = 0.0;
-                    return;
-                }
-            }
+            if (IsNarrativeFoyerComplete()) { UpdateDeparture(); return; }
             if (!NarrativeRevealed)
             {
                 if (!IsNarrativeRevealReady())
-                {
-                    Vel.X = 0.0;
-                    Vel.Y = 0.0;
-                    return;
-                }
+                { bInvisible = true; bSolid = false; bShootable = false; Vel.X = 0; Vel.Y = 0; return; }
                 NarrativeRevealed = true;
-                bSolid = true;
-                bShootable = true;
             }
-            if (Alpha < 1.0)
-            {
-                // Aparición sobria, sin destello ni teletransporte explícito.
-                Alpha = Min(1.0, Alpha + 0.08);
-            }
+            bInvisible = false; Alpha = 1; bSolid = true; bShootable = true;
         }
         if (health <= 0 || CombatLucidityPhysicalStunRemaining > 0.0)
         {
@@ -308,6 +343,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
     override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
     {
+        if (NarrativeRevealRequired && IsNarrativeFoyerComplete()) return false;
         return caelumPlayer.OpenPalomoDialogue(self);
     }
 
@@ -360,6 +396,12 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         PALM A 0 A_StopPalomoWander;
         PALM A 5 A_Scream;
         PALM A 0 A_NoBlocking;
+        PALM A -1;
+        Stop;
+    DepartureRun:
+        PALM BC 4;
+        Loop;
+    DepartureWait:
         PALM A -1;
         Stop;
     }

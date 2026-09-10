@@ -1,6 +1,44 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0m — 2026-09-10.
+Versión documental: 4.33.0n — 2026-09-10.
+
+## Abastecimiento T1 y auditoría de materiales (4.33.0n)
+
+Fuente: blueprint nativo de GZDoom 4.14.2, talle M, eficiencia 25 % en cada
+capa, inventario vacío. Cada conjunto incluye cabeza, torso, manos y pies;
+"sellos" comprende los cinco elementos. No se cambian las recetas vigentes.
+
+| Familia T1 | Cuero de vaca ya curtido para el conjunto M |
+| --- | ---: |
+| Mágica | 41,6 kg |
+| Liviana | 78,4 kg |
+| Mediana | 156,8 kg |
+| Pesada | 313,6 kg |
+
+Son 590,4 kg para los cuatro conjuntos. Si se parte de piel cruda y se curte al
+25 %, esas cantidades se multiplican por cuatro. No confundir unidades de
+material (0,001 kg) con objetos enteros. El Toro de MAP01 tiene un presupuesto
+finito igual al conjunto pesado del talle del personaje: cubre UN conjunto
+completo de cualquier familia, no los cuatro a la vez. Es botín tutorial
+calculado de recetas, no una estimación biológica de cuero aprovechable.
+Se entrega ya curtido, en pilas de hasta 10 kg, una sola vez al morir.
+
+Sellos T1: 460,8 kg cobre bruto, 51,2 kg estaño bruto y 9,6 kg de cada gema.
+Las cinco vetas cubren esos tipos y cantidades. Por decisión del autor, el
+abastecimiento de MAP01 se limita a T1. Como referencia fuera de ese alcance,
+sellos T2: 256 kg hierro
+bruto, 16 kg plata bruta y 19,2 kg de cada gema; faltan fuentes de hierro/plata.
+Las armaduras T2 usan cuero de depredador, además de cuero de vaca para correas
+y plata para detalles. T3 suma cuero de monstruo para armaduras y oro;
+los sellos T3 requieren también acero (hierro/carbón), plata y oro.
+Infraestructura disponible no implica recetas aprendidas ni materiales.
+
+Guanteletes gigantes T1/M al 25 %: 96 kg de cuero ya curtido para sus correas.
+Es la única elección inicial con cuero. El cajón conserva una reserva para
+esa receta antes del Toro, calculada al talle elegido. No se modifica la receta.
+La migración retira sólo el stock de gemas del cajón, conserva lo ya recogido
+y descuenta el cuero retirado antes de actualizar. No repone consumos.
+
 
 Esta referencia consolida reglas implementadas. El alcance narrativo está en
 [MAP01.txt](MAP01.txt), el estado de aceptación en [PROJECT.md](PROJECT.md) y
@@ -54,12 +92,11 @@ de recetas dentro de la misión. El plan de referencia usa 25% en cada capa.
 | Libro | Fibra vegetal y gema bruta. |
 
 Gemas: rubí/Fuego, zafiro/Agua, esmeralda/Tierra, topacio/Aire y ópalo/Quintaesencia.
-El cofre contiene las cinco y cuero T1; no entrega piel cruda para curtir.
-Su stock por material es el máximo entre las 36 recetas al talle del jugador,
-con eficiencia mínima en cada transformación; no suma 36 armas.
-Ejemplo talle M: 12.800 unidades de cada gema y 96.000 de cuero. Una unidad
-pesa 0,001 kg. Son límites de stock; se retira sólo lo que requiere la elección
-y cabe en la carga actual. No es necesario llevar el contenido completo.
+Las cinco gemas se extraen de vetas al fondo de la cueva. El cajón contiene
+sólo cuero T1 ya curtido. Su reserva cubre los guanteletes gigantes al talle del
+jugador con eficiencia mínima por transformación: 96.000 unidades en M.
+Cada unidad pesa 0,001 kg. Se retira sólo lo que requiere la elección y cabe
+en la carga actual; no es necesario llevar todo a la vez.
 
 El stock pertenece al registro del personaje. Reabrir/cargar no lo repone.
 Devolver retorna sólo cantidades retiradas de ese cofre que siguen sin gastar
@@ -93,8 +130,43 @@ envían a la Caja pilas con porción tutorial. La salida cancela tareas pendient
 que usaban esos materiales antes de retirarlos. No elimina existencias propias
 por coincidencia de nombre ni concede de nuevo un préstamo ya devuelto.
 
-Esta revisión no incorpora munición ni las lecciones pendientes de necesidades,
-Aire, agua y reparación. Esas reglas se integran antes del entrenamiento de Rulo.
+0n incorpora flechas; siguen pendientes cartuchos/virotes y las lecciones de
+necesidades, Aire, agua y reparación antes del entrenamiento de Rulo.
+
+### Flechas y controles de Oficios (4.33.0n)
+
+Elegir arco o arco largo enseña la receta 129 y sus dependencias. Se aplica
+también a guardados con esas elecciones. Las 129 recetas anteriores conservan
+sus índices y conocimiento; el catálogo pasa a 130 entradas. Filtro Municiones.
+
+Un lote produce diez CaelumArrowAmmo de 50 g cada una. Composición incorporada:
+350 unidades de asta y 150 de punta de bronce por lote antes de merma; al 25 %
+el montaje consume 1.400/600, y cada componente/procesamiento añade su propia
+merma. Usa banco, carpintería/forja y taller de distancia de Ronnie mediante
+el sistema nativo de dependencias. La tarea reserva, pausa, cancela y persiste
+como las demás. No exige Caja y no registra ni sustituye la primera arma.
+Las flechas tienen tier fijo 1 y lote fijo de diez; B no aumenta ese lote.
+
+Tab cierra Oficios con o sin estación. G filtra familias durante la sesión
+(el botón Y de mando conserva esa función). Q/Escape siguen cerrando la sesión.
+Puertas y estaciones exigen solapamiento vertical, diferencia de pies <=64 MU
+y CheckSight antes de ejecutar la interacción. La estación también comprueba
+alcance al mantener la sesión; cambiar de piso la cierra y pausa la tarea.
+
+### Llave, Toro y retirada de Palomo (4.33.0n)
+
+Argento posee una instancia de llave de plata; se transfiere al jugador sin
+recrear otra. Requiere Argento/Caella/Ronnie completos y las cuatro prácticas
+de Rulo (o su rama ya completa). Exigir el Toro derrotado sería circular.
+Rulo todavía no tiene su lección jugable conectada: el acceso permanece cerrado
+hasta ese bloque. El Toro espera inactivo en su recinto y se activa al entregar
+la llave. Su muerte registra el resultado y produce el presupuesto finito de
+cuero descrito arriba. Guardar no duplica llave, actor ni botín.
+
+Tras terminar el diálogo inicial, Palomo mantiene SOLID activado e INVISIBLE desactivado. Corre usando velocidad XY,
+física vertical, escaleras y puertas sin llave; queda esperando arriba. La ruta
+se guarda. Los estados nuevos se añaden al final para conservar índices de
+sprites en guardados antiguos. La conversación final se conecta después de Rulo.
 
 ## Masa de arbustos y migración del jardín (4.33.0m)
 
@@ -122,7 +194,7 @@ cuando coincide con el Default y aplicar el Default nuevo al deserializar.
 Los materiales ya recogidos no se quitan. Las cargas siguientes no repueblan ni
 rellenan nada; la regeneración nativa continúa. Las vetas y el cofre no se mueven.
 
-## Talleres de MAP01 (4.33.0m)
+## Talleres de MAP01 (4.33.0m–0n)
 
 Cada habitación tiene una red propia; sólo vecinos a 64 MU o menos y con el
 mismo CraftingRoomGroup suman infraestructura. El grupo cero conserva las redes
@@ -135,6 +207,9 @@ libres de otros mapas. No hay préstamos de capacidad entre paredes o pisos.
 | Argento, sur junto a escalera, Z136 | Banco, forja, yunque, taller de armaduras, máquina de coser | Armas y armaduras livianas T1–T2, con sus componentes. |
 | Caella, sur junto a entrada, Z136 | Las cinco comunes, altar, globo, joyero y herramientas finas | Armas y armaduras mágicas T1–T2, procesamiento de gemas/esencias/telas. |
 | Habitación interior del segundo piso, Z264 | Las doce estaciones, incluido Banco Maestro | Red completa; las recetas y materiales siguen siendo necesarios. |
+
+En 0n los dormitorios usan sus esquinas; arriba las doce forman una fila
+contra la pared del fondo, X=-336. Se conserva la red de cada habitación.
 
 Son especializaciones narrativas e infraestructura, no nuevas restricciones
 por clase/familia. Las familias físicas comparten forja/yunque según el catálogo.

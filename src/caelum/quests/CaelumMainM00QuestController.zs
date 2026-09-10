@@ -12,6 +12,10 @@ class CaelumMainM00QuestController : EventHandler
     CaelumMainM00SupplyChest RonnieSupplyChest;
     bool MansionLayoutPrepared;
     bool PassageTextureRestored;
+    bool CornerLayoutPrepared;
+    bool NaturalSuppliesPrepared;
+    bool BullRoomPrepared;
+    CaelumM00Bull TrialBull;
 
     // Se reutilizan las estaciones de las dos filas exteriores: así las
     // referencias de tareas guardadas siguen apuntando al mismo actor.
@@ -23,10 +27,11 @@ class CaelumMainM00QuestController : EventHandler
         CaelumCraftingStation candidate;
         while ((candidate = CaelumCraftingStation(iterator.Next())) != null)
         {
-            if (candidate.GetClass() == kind && candidate.CraftingRoomGroup == 0
-                && candidate.Pos.X >= -500 && candidate.Pos.X <= 500
-                && candidate.Pos.Y >= 780 && candidate.Pos.Y <= 1060
-                && Abs(candidate.Pos.Z) < 1)
+            if (candidate.GetClass() == kind && (candidate.CraftingRoomGroup == group
+                || candidate.CraftingRoomGroup == 0
+                    && candidate.Pos.X >= -500 && candidate.Pos.X <= 500
+                    && candidate.Pos.Y >= 780 && candidate.Pos.Y <= 1060
+                    && Abs(candidate.Pos.Z) < 1))
             { station = candidate; break; }
         }
         if (station == null) station = CaelumCraftingStation(Actor.Spawn(kind, origin, NO_REPLACE));
@@ -36,6 +41,7 @@ class CaelumMainM00QuestController : EventHandler
             station.Angle = facing;
             station.Vel = (0, 0, 0);
             station.CraftingRoomGroup = group;
+            station.bCanPass = true;
         }
         return station;
     }
@@ -72,11 +78,24 @@ class CaelumMainM00QuestController : EventHandler
             kinds[11] = "CaelumMasterBenchStation";
             count = 12;
         }
-        int columns = group == 5 ? 6 : 3;
+        int across = count > 7 ? 5 : 3;
+        int xDirection = group == 2 || group == 3 ? -1 : 1;
         for (int i = 0; i < count; i++)
-            PlaceStation(kinds[i], origin + (double(i % columns) * 56,
-                double(i / columns) * 56 * yDirection, 0), group,
-                yDirection > 0 ? 270 : 90);
+        {
+            Vector3 position;
+            double facing;
+            if (group == 5)
+            { position = (-336, -308 + i * 56, 264); facing = 0; }
+            else
+            {
+                // Dos paredes contiguas, lejos del umbral central.
+                position = origin + (i < across ? i * 56 * xDirection : 0,
+                    i < across ? 0 : -(i - across + 1) * 56 * yDirection, 0);
+                facing = i < across ? (yDirection > 0 ? 270 : 90)
+                    : (xDirection > 0 ? 0 : 180);
+            }
+            PlaceStation(kinds[i], position, group, facing);
+        }
     }
 
     void PlantGardenNode(Class<CaelumTreeEnvironmentProp> kind, Vector3 origin, double remaining)
@@ -155,6 +174,53 @@ class CaelumMainM00QuestController : EventHandler
                     double(side) * (160.0 + double(i / 5) * 160.0), 0), fiberFraction);
     }
 
+    void PrepareCornerLayout()
+    {
+        if (CornerLayoutPrepared || level.MapName != "MAP01") return;
+        CornerLayoutPrepared = true;
+        PlaceRoomStations(1, (-432, 512, 136), 1);
+        PlaceRoomStations(2, (1176, 512, 136), 1);
+        PlaceRoomStations(3, (1176, -512, 136), -1);
+        PlaceRoomStations(4, (-432, -512, 136), -1);
+        PlaceRoomStations(5, (-336, 0, 264), 1);
+        for (int i = 0; i < MAXPLAYERS; i++)
+            if (playeringame[i] && players[i].mo is "CaelumPlayer")
+                CaelumPlayer(players[i].mo).RefreshActiveCraftingStationSession();
+    }
+
+    void PrepareNaturalSupplies()
+    {
+        if (NaturalSuppliesPrepared || level.MapName != "MAP01") return;
+        NaturalSuppliesPrepared = true;
+        // Reutilizar el cajón serializado: ahora sólo administra cuero.
+        let old = ThinkerIterator.Create("CaelumMainM00SupplyChest");
+        RonnieSupplyChest = CaelumMainM00SupplyChest(old.Next());
+        if (RonnieSupplyChest == null)
+            RonnieSupplyChest = CaelumMainM00SupplyChest(Actor.Spawn("CaelumMainM00SupplyChest", (1780,640,-384), NO_REPLACE));
+        if (RonnieSupplyChest != null) RonnieSupplyChest.Angle = 270;
+        Class<CaelumMineralVeinEnvironmentProp> kinds[5];
+        kinds[0] = "CaelumVeinRuby"; kinds[1] = "CaelumVeinSapphire";
+        kinds[2] = "CaelumVeinEmerald"; kinds[3] = "CaelumVeinTopaz";
+        kinds[4] = "CaelumVeinOpal";
+        for (int i = 0; i < 5; i++)
+            Actor.Spawn(kinds[i], (i == 4 ? 1760 : 1080 + i * 180, 1210, -384), NO_REPLACE);
+    }
+
+    void PrepareBullRoom()
+    {
+        if (BullRoomPrepared || level.MapName != "MAP01") return;
+        BullRoomPrepared = true;
+        TrialBull = CaelumM00Bull(Actor.Spawn("CaelumM00Bull", (-2180,0,0), NO_REPLACE));
+        let it = ThinkerIterator.Create("CaelumArgento"); let keeper = Actor(it.Next());
+        if (keeper != null && keeper.FindInventory("CaelumSilverKey") == null)
+        {
+            // TryPickup de las llaves exige jugador: el custodio recibe la
+            // instancia directamente, sin simular una recogida del mundo.
+            let key = Inventory(Actor.Spawn("CaelumSilverKey", keeper.Pos, NO_REPLACE));
+            if (key != null) key.AttachToOwner(keeper);
+        }
+    }
+
     void PrepareRonnieWorld()
     {
         if (RonnieWorldPrepared || level.MapName != "MAP01") return;
@@ -165,9 +231,7 @@ class CaelumMainM00QuestController : EventHandler
         CaelumM01SwordPickup sword;
         while ((sword = CaelumM01SwordPickup(iterator.Next())) != null)
             if (sword.Owner == null) sword.Destroy();
-        RonnieSupplyChest = CaelumMainM00SupplyChest(Actor.Spawn("CaelumMainM00SupplyChest",
-            (1780.0, 640.0, -384.0), NO_REPLACE));
-        if (RonnieSupplyChest != null) RonnieSupplyChest.Angle = 270;
+        // 0n: gemas en vetas; el cajón conserva cuero para los guanteletes.
     }
 
     // Retira una sola vez el antiguo surtido de las seis primeras salas.
@@ -267,6 +331,9 @@ class CaelumMainM00QuestController : EventHandler
         RetireGroundFloorStock();
         PrepareRonnieWorld();
         PrepareMansionLayout();
+        PrepareCornerLayout();
+        PrepareNaturalSupplies();
+        PrepareBullRoom();
         bool started = false;
         bool opened = false;
         int sequence = 0;
@@ -290,5 +357,63 @@ class CaelumMainM00QuestController : EventHandler
             sequence = Max(sequence, record.MainM00RuneSequenceIndex);
         }
         if (level.MapName == "MAP01") PresentMagicTrial(started, opened, sequence);
+    }
+}
+
+class CaelumM00Bull : CaelumBull
+{
+    bool TrialReleased;
+    bool LeatherDropped;
+    int LeatherBudgetUnits;
+
+    static int GetArmorLeatherBudget(CaelumPlayer user)
+    {
+        if (user == null || user.ArmorModel == null) return 0;
+        int size = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
+        int total = 0;
+        // Un conjunto T1 completo de cualquier familia: presupuesto máximo,
+        // con merma al 25 % tanto al hacer correas como al montar cada pieza.
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            double weight = user.ArmorModel.GetWeightFor(slot, CaelumConstants.ARMOR_TYPE_HEAVY, 1, size);
+            total += CaelumCraftingRules.GetRequiredArmorTierUnits(slot, weight) * 4;
+            total += CaelumCraftingRules.GetRequiredArmorBaseUnits(slot, weight) * 16;
+        }
+        return total;
+    }
+
+    override void Tick()
+    {
+        if (!TrialReleased && health > 0)
+        { Vel = (0,0,0); Target = null; bShootable = false; return; }
+        Super.Tick();
+        if (health > 0 || LeatherDropped) return;
+        LeatherDropped = true;
+        // Botín tutorial finito, no una estimación biológica de curtido.
+        // Pilas de 10 kg permiten recogerlo sin exigir cargar todo de una vez.
+        int remaining = LeatherBudgetUnits;
+        int i = 0;
+        while (remaining > 0)
+        {
+            int amount = Min(10000, remaining);
+            double direction = (i % 12) * 30.0;
+            double radius = 4;
+            let leather = CaelumMaterialPickup(Spawn("CaelumMaterialPickup",
+                Pos + (Cos(direction)*radius,Sin(direction)*radius,8), NO_REPLACE));
+            if (leather != null)
+            {
+                leather.args[0] = CaelumConstants.MATERIAL_LEATHER;
+                leather.args[1] = 1; leather.Amount = amount;
+                leather.LimboQuestUnits = amount; leather.bDropped = true;
+            }
+            remaining -= amount; i++;
+        }
+        for (int n = 0; n < MAXPLAYERS; n++)
+            if (playeringame[n] && players[n].mo is "CaelumPlayer")
+            {
+                let user = CaelumPlayer(players[n].mo);
+                user.GetPersistentCharacterState(true).SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED);
+                user.PersistCharacterState();
+            }
     }
 }

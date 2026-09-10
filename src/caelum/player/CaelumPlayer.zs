@@ -5945,7 +5945,8 @@ class CaelumPlayer : DoomPlayer
     {
         if (DerivedStats == null) { return false; }
         RefreshCarriedInventorySummary();
-        bool personalOutput = CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
+        bool personalOutput = CraftingSelectionRecipe == CaelumConstants.CRAFTING_ARROW_RECIPE
+            || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
         double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
         for (int slot = 0;
@@ -6707,7 +6708,8 @@ class CaelumPlayer : DoomPlayer
 
     bool IsDirectWeaponCraftingRecipe()
     {
-        return CraftingSelectedRecipeKind
+        return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
+            || CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             || CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
@@ -6896,6 +6898,7 @@ class CaelumPlayer : DoomPlayer
 
         RefreshCarriedInventorySummary();
         if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY
+            && CraftingSelectedRecipeKind != CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
             && !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)
             && MagicBoxUsedSlots + 1 > MagicBoxMaximumSlots)
         {
@@ -6943,7 +6946,7 @@ class CaelumPlayer : DoomPlayer
         }
         else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
         {
-            CraftingTaskReservedBoxSlots = CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) ? 0 : 1;
+            CraftingTaskReservedBoxSlots = (CraftingSelectionRecipe == CaelumConstants.CRAFTING_ARROW_RECIPE || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
             if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
             {
                 ClearCraftingTaskData();
@@ -7033,6 +7036,8 @@ class CaelumPlayer : DoomPlayer
                     break;
                 case CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING:
                     CraftingKnownProcessingRecipeCount++;
+                    break;
+                case CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION:
                     break;
                 case CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT:
                     CraftingKnownComponentRecipeCount++;
@@ -7159,6 +7164,8 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
+            return "graphics/caelum/icons/ca_arrow_ammo.png";
         if (CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
             || CraftingSelectedRecipeKind
@@ -7587,6 +7594,19 @@ class CaelumPlayer : DoomPlayer
                     CraftingOutputMaterialType
                 );
         }
+        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
+        {
+            // Diez flechas nativas de 50 g: 70 % asta y 30 % punta de bronce.
+            // La merma se calcula en el bloque común y en cada dependencia.
+            CraftingSelectionTier = 1; CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            CraftingFinalWeight = CaelumConstants.ARROW_AMMO_UNIT_WEIGHT * CaelumConstants.CRAFTING_ARROW_BATCH;
+            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SHAFT;
+            CraftingTierMaterialType = CaelumConstants.MATERIAL_POINT;
+            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, 0.7);
+            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, 0.3);
+            CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
+                CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW);
+        }
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {
             CraftingSelectedAmuletType = CaelumCraftingRules.GetUnifiedAmuletType(CraftingSelectionRecipe);
@@ -7839,7 +7859,7 @@ class CaelumPlayer : DoomPlayer
         double dz = station.Pos.Z - Pos.Z;
         double maximumDistance =
             CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
-        if (dx * dx + dy * dy + dz * dz
+        if (!station.CanReachFrom(self) || dx * dx + dy * dy + dz * dz
             > maximumDistance * maximumDistance)
         {
             CloseCraftingStationSession();
@@ -8627,6 +8647,29 @@ class CaelumPlayer : DoomPlayer
         RefreshEquipmentSelectionPreview();
     }
 
+    void CraftSelectedArrows()
+    {
+        if (!CraftingTaskCompleting || !CraftingSelectedInfrastructureAvailable
+            || !ValidateCraftingTaskReservations())
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
+        let arrows = Inventory(FindInventory("CaelumArrowAmmo"));
+        bool created = arrows == null;
+        if (created) arrows = Inventory(Spawn("CaelumArrowAmmo", Pos, NO_REPLACE));
+        if (arrows == null) return;
+        int oldAmount = created ? 0 : arrows.Amount;
+        if (oldAmount > arrows.MaxAmount - CaelumConstants.CRAFTING_ARROW_BATCH
+            || !ConsumeCraftingTaskReservations())
+        {
+            if (created) arrows.Destroy();
+            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return;
+        }
+        arrows.Amount = oldAmount + CaelumConstants.CRAFTING_ARROW_BATCH;
+        if (created) arrows.AttachToOwner(self);
+        // Munición no cuenta como primera arma ni sustituye su ItemId.
+        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
+        OnNativeInventoryChanged();
+    }
+
     void CraftSelectedPhysicalWeapon()
     {
         RefreshCraftingPreview();
@@ -8655,6 +8698,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
+        { CraftSelectedArrows(); return; }
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {

@@ -397,6 +397,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_SEALS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
                 return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMMUNITION:
+                return "CA_CRAFTING_FILTER_AMMUNITION";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
                 return "CA_CRAFTING_FILTER_COMPONENTS";
             default:

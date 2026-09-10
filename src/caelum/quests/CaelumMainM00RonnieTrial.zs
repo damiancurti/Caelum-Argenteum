@@ -139,23 +139,38 @@ class CaelumMainM00RonnieTrial : Object play
         return true;
     }
 
+    static void TeachArrows(CaelumPlayer user)
+    {
+        if (user == null) return;
+        let record = user.GetPersistentCharacterState(false);
+        if (record == null || !record.MainM00StarterChosen
+            || (record.MainM00StarterOption != 12 && record.MainM00StarterOption != 14)
+            || record.KnowsCraftingRecipe(CaelumConstants.CRAFTING_ARROW_RECIPE)) return;
+        record.LearnCraftingRecipe(CaelumConstants.CRAFTING_ARROW_RECIPE);
+        let dependencies = new("CaelumMainM00StarterMaterials");
+        dependencies.Build(record.MainM00StarterOption, record.MainM00StarterSize);
+        dependencies.Expand(CaelumConstants.MATERIAL_SHAFT, 1400);
+        dependencies.Expand(CaelumConstants.MATERIAL_POINT, 600);
+        for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
+            if (dependencies.Recipes[i]) record.LearnCraftingRecipe(i);
+    }
+
     static void EnsureSupplies(CaelumPlayer user)
     {
         if (!IsStarted(user)) return;
         let record = user.GetPersistentCharacterState(true);
-        if (record.MainM00SuppliesInitialized) return;
+        if (record.MainM00LeatherSuppliesPrepared) return;
         let requirements = new("CaelumMainM00StarterMaterials");
-        // Máximo por material para UNA elección, no suma de 36 armas.
-        for (int option = 0; option < CaelumMainM00StarterRules.OPTION_COUNT; option++)
-        {
-            requirements.Build(option, record.MainM00StarterSize);
-            for (int slot = 0; slot < CaelumMainM00StarterRules.SUPPLY_COUNT; slot++)
-                record.MainM00SupplyInitial[slot] = Max(record.MainM00SupplyInitial[slot],
-                    requirements.Units[CaelumMainM00StarterRules.GetSupplyMaterial(slot)]);
-        }
-        for (int slot = 0; slot < CaelumMainM00StarterRules.SUPPLY_COUNT; slot++)
-            record.MainM00SupplyRemaining[slot] = record.MainM00SupplyInitial[slot];
+        requirements.Build(11, record.MainM00StarterSize);
+        int leather = requirements.Units[CaelumConstants.MATERIAL_LEATHER];
+        int spent = record.MainM00SuppliesInitialized
+            ? Max(0, record.MainM00SupplyInitial[5] - record.MainM00SupplyRemaining[5]) : 0;
+        for (int slot = 0; slot < 5; slot++)
+        { record.MainM00SupplyInitial[slot] = 0; record.MainM00SupplyRemaining[slot] = 0; }
+        record.MainM00SupplyInitial[5] = leather;
+        record.MainM00SupplyRemaining[5] = Max(0, leather - spent);
         record.MainM00SuppliesInitialized = true;
+        record.MainM00LeatherSuppliesPrepared = true;
     }
 
     static bool OpenChest(CaelumPlayer user, CaelumMainM00SupplyChest chest)
@@ -176,10 +191,11 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (!CanInteract(user) || !IsStarted(user)
             || !(user.player.ConversationNPC is "CaelumMainM00SupplyChest")) return false;
+        EnsureSupplies(user);
         let record = user.GetPersistentCharacterState(true);
         if (slot < 0)
         {
-            for (int i = 0; i < CaelumMainM00StarterRules.SUPPLY_COUNT; i++)
+            for (int i = 5; i < CaelumMainM00StarterRules.SUPPLY_COUNT; i++)
             {
                 let item = user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,
                     CaelumMainM00StarterRules.GetSupplyMaterial(i), 1);
@@ -198,14 +214,14 @@ class CaelumMainM00RonnieTrial : Object play
         }
         else
         {
-            if (slot >= CaelumMainM00StarterRules.SUPPLY_COUNT) return false;
+            if (slot != 5) return false;
             user.RefreshCarriedInventorySummary();
             int capacity = Max(0, int(Floor((user.DerivedStats.CarryCapacity - user.DerivedStats.CarriedWeight)
                 / CaelumConstants.MATERIAL_UNIT_WEIGHT)));
             int amount = Min(capacity, record.MainM00SupplyRemaining[slot]);
             int material = CaelumMainM00StarterRules.GetSupplyMaterial(slot);
-            // Extrae sólo la falta de la receta elegida. El resto queda en el
-            // cofre, visible, y no sobrecarga al jugador con gemas que no usa.
+            // Extrae sólo el cuero que falta para la receta elegida. El resto
+            // queda en el cajón y cada retirada respeta la carga disponible.
             amount = Min(amount, Max(0, record.MainM00StarterRequired[material]
                 - user.CountRawCraftingMaterial(material, 1)));
             if (amount <= 0) { Feedback(user, "CA_M01_CHEST_NO_TRANSFER"); return true; }
@@ -280,6 +296,7 @@ class CaelumMainM00RonnieTrial : Object play
         if (user == null) return;
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return;
+        TeachArrows(user);
         user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", record.MainM00StarterChosen);
         user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
         user.SetPalomoDialogueToken("CaelumM00RonnieFinishedToken",
@@ -339,6 +356,7 @@ class CaelumMainM00RonnieTrial : Object play
             return;
         }
         if (!CanInteract(user) || level.time % TICRATE != 0) return;
+        TeachArrows(user);
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00StarterWeaponId == 0)
         {
@@ -378,6 +396,7 @@ class CaelumMainM00SupplyChest : CaelumStashChest
 {
     override bool Used(Actor user)
     {
+        if (user == null || Abs(user.Pos.Z - Pos.Z) > 64 || !user.CheckSight(self)) return false;
         if (UseLatched && LastChestUser == user) return true;
         UseLatched = true;
         LastChestUser = user;

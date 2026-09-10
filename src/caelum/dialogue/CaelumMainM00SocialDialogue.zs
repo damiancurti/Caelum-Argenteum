@@ -55,12 +55,52 @@ class CaelumMainM00SocialDialogue : Object play
         return Clamp(int(Floor(ability * 100.0 / difficulty + 0.5)), 0, 100);
     }
 
+    static bool CanReceiveSilverKey(CaelumPlayer user)
+    {
+        if (user == null || level.MapName != "MAP01") return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE)
+            || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE)
+            || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)) return false;
+        // Las prácticas de Rulo preceden al Toro; no exigir derrotarlo para
+        // obtener la llave del propio recinto. La rama completa también vale.
+        if (r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_COMPLETE)) return true;
+        for (int f = CaelumConstants.MAIN_M00_FLAG_COMBAT_PRIMARY_USED;
+            f <= CaelumConstants.MAIN_M00_FLAG_COMBAT_CHARGED_USED; f++)
+            if (!r.HasMainM00Flag(f)) return false;
+        return r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_STARTED);
+    }
+
+    static bool GiveSilverKey(CaelumPlayer user)
+    {
+        if (!CanReceiveSilverKey(user) || user.player == null || user.health <= 0) return false;
+        let keeper = CaelumArgento(user.player.ConversationNPC);
+        if (keeper == null || !keeper.StoryAnchored) return false;
+        if (user.FindInventory("CaelumSilverKey") == null)
+        {
+            let key = keeper.FindInventory("CaelumSilverKey");
+            if (key == null || !user.PrepareNativeKeyPickup(CaelumWeightedKey(key))) return false;
+            key.DetachFromOwner(); key.AttachToOwner(user);
+        }
+        let controller = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
+        if (controller != null && controller.TrialBull != null)
+        {
+            controller.TrialBull.LeatherBudgetUnits = CaelumM00Bull.GetArmorLeatherBudget(user);
+            controller.TrialBull.TrialReleased = true;
+            controller.TrialBull.bShootable = true;
+        }
+        user.OnNativeInventoryChanged();
+        Sync(user); return true;
+    }
+
     static void Sync(CaelumPlayer user)
     {
         if (user == null) { return; }
         CaelumPersistentCharacterState persistentState = user.GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsureMainM00SocialState();
+        user.SetPalomoDialogueToken("CaelumM00SilverKeyReadyToken", CanReceiveSilverKey(user));
+        user.SetPalomoDialogueToken("CaelumM00SilverKeyHeldToken", user.FindInventory("CaelumSilverKey") != null);
         persistentState.RefreshMainM00RecruitmentObjective();
         int stage = persistentState.QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL];
         user.MainM00LabiaSnapshot = GetLabia(user);
@@ -150,6 +190,8 @@ class CaelumMainM00SocialDialogue : Object play
         CaelumPersistentCharacterState persistentState = user.GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureMainM00SocialState();
+        user.SetPalomoDialogueToken("CaelumM00SilverKeyReadyToken", CanReceiveSilverKey(user));
+        user.SetPalomoDialogueToken("CaelumM00SilverKeyHeldToken", user.FindInventory("CaelumSilverKey") != null);
         bool changed = false;
         if (resident == CaelumConstants.MAIN_M00_RESIDENT_ARGENTO)
         {
@@ -367,4 +409,11 @@ class CaelumM00CaellaSafetyAction : CaelumPalomoDialogueAction
     {
         return CaelumMainM00SocialDialogue.Apply(CaelumPlayer(Owner), 'CaellaSafety');
     }
+}
+
+class CaelumM00SilverKeyReadyToken : CaelumPalomoDialogueMarker {}
+class CaelumM00SilverKeyHeldToken : CaelumPalomoDialogueMarker {}
+class CaelumM00TakeSilverKeyAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SocialDialogue.GiveSilverKey(CaelumPlayer(Owner)); }
 }

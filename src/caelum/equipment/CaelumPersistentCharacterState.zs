@@ -141,7 +141,8 @@ class CaelumPersistentCharacterState : Inventory
     // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
     // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
-    bool KnownCraftingRecipe[129];
+    bool KnownCraftingRecipe[130];
+    bool MainM00LeatherSuppliesPrepared;
 
     // Instantánea viajera de la única tarea 4.30. Los guardados normales ya
     // serializan al jugador; esta copia adicional conserva el estado durante
