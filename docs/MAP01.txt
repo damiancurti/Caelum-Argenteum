@@ -1,6 +1,61 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0o — 2026-09-11.
+Versión documental: 4.33.0q — 2026-09-11.
 
+
+REVISIÓN VIGENTE 4.33.0q — TORO CON LOS CUATRO RESIDENTES
+Prevalece sobre las variantes anteriores del combate y botín. Base: 0p.
+El autor aprobó el resto de las pruebas; 0q atiende sus tres observaciones.
+
+Los cuatro residentes existentes se reúnen dentro del recinto durante la
+preparación del combate. Rulo/Ronnie atacan en melee; Argento/Caella conservan
+sus ataques nativos y proyectiles. El Toro puede atacar a cualquiera del grupo.
+Un compañero caído queda agachado, sin colisión ni ataques; se recupera al
+terminar el intento. Caer el jugador reinicia también a los compañeros.
+Victoria: recoger 12,5 kg de cuero de vaca y hablar con Rulo ALLÍ MISMO.
+Después del cierre y fuera de vista, los residentes vuelven a sus dormitorios.
+No se crean duplicados ni se cambia la ruta física de Palomo.
+
+El cuero se calcula desde la masa de 900 kg, no desde el talle o las recetas:
+54 kg de piel fresca estimada -> 12,5 kg de cuero acabado. Supuestos y fuente
+en SYSTEMS. El cajón conserva la reserva para guanteletes. El nuevo botín ya
+no garantiza una armadura completa a eficiencia mínima; revisar cobertura T1
+al cerrar el tutorial. Una victoria ya guardada no pierde cuero ni se repite.
+
+Argento orienta según la etapa actual con texto propio en primera persona.
+Un combate guardado en 0p incorpora los compañeros sin borrar el daño al Toro.
+Una victoria pendiente reúne a Rulo para el cierre; fase 75 ya completa se respeta.
+La próxima implementación es Palomo final/Caja y luego El Loco/salida.
+
+REGISTRO DE LA REVISIÓN 4.33.0p — CORREGIDO ARRIBA
+Esta revisión prevalece sobre las descripciones preliminares de fases 70–75.
+Base: carpeta completa 0o. El autor pidió continuar con Rulo después de las
+pruebas aceptadas anteriores. Resto de 0p aprobado; sus tres observaciones se resuelven en 0q.
+
+Recorrido: devolver la espada a Ronnie -> Rulo (60 a 70) -> blanco debajo de
+su dormitorio, (-290,480,0) -> seis prácticas -> Argento/llave de plata -> puerta
+806 detrás del lugar de despertar -> Toro -> volver a Rulo (70 a 75).
+Rulo permanece en (-290,378,136); Argento en (1040,-378,136).
+Inicio del combate: jugador (-1900,0,0), Toro (-2180,0,0). Sólo se activa tras
+entrar completamente; entregar la llave no despierta al Toro desde afuera.
+
+Las cuatro acciones se adaptan al equipo: Fire, AltFire/equivalente,
+bloqueo/ADS/esquiva lateral, carga/magia en desplazamiento/recarga. Se suman
+Aire gastado y recuperado. El Diario y la respuesta de Argento dan direcciones
+concretas. No se exige fabricar un escudo ni aumentar Anima para terminar.
+Rulo reacondiciona la primera arma y entrega munición de práctica de distancia;
+el préstamo se repone durante el Toro si se agota y se devuelve al cerrar.
+
+Ante derrota: oscurecimiento breve, mismo jugador vivo, ambos actores en sus
+posiciones iniciales, recursos restaurados y 2 segundos para prepararse.
+Conserva prácticas y arma inicial; no hay recompensa, cuero ni muerte definitiva.
+Victoria: banderín BULL_DEFEATED, puerta abierta, cuero finito de 0n y disipación
+del Toro. RULO_COMPLETE y PALOMO_UPSTAIRS_ENABLED se fijan al hablar con Rulo y
+cerrar la prueba; no al morir el Toro. Su frase de victoria se conserva.
+
+La fase 75 orienta hacia Palomo arriba, pero su conversación final/Caja,
+El Loco y la salida pertenecen al próximo cierre narrativo, aún no implementado.
+Las lecciones adicionales de supervivencia de Ronnie permanecen previstas,
+sin bloquear el acceso solicitado a Rulo. WAD y distribución aceptada intactos.
 
 REVISIÓN 4.33.0o — BASE 0n APROBADA
 El autor confirmó exitosas todas las pruebas de 0n el 2026-09-11.
@@ -1831,13 +1886,14 @@ Tramo E — respiración o paso inundado:
 - Colocar salida clara y zona de recuperación.
 - No depender de inmovilidad o bugs previos de entrada al agua.
 
-19.5. MATERIALES DE MISIÓN
+19.5. MATERIALES DE MISIÓN (ACTUALIZADO A 0n)
 
-- Madera, cobre y estaño proceden de los nodos aceptados de la cueva.
-- Tres arbustos 2D dan fibra sólo mediante daño cortante. Comparten las reglas
-  vegetales vigentes, sin receta ni herramienta de extracción especial.
-- El cofre almacena rubí, zafiro, esmeralda, topacio, ópalo y cuero de vaca T1
-  ya curtido. Sus máximos cubren cualquier elección a eficiencia mínima.
+- Madera y fibra proceden del jardín de la entrada: cuatro ceibos y veinte
+  arbustos 2D; cada arbusto representa 10 kg de biomasa aérea y dureza de madera.
+  Los arbustos entregan fibra mediante ataques cortantes.
+- Cobre, estaño y cinco vetas de gemas están en la cueva. El cajón sólo almacena
+  cuero T1 para guanteletes gigantes al talle del personaje y mínima eficiencia;
+  desde 0q el Toro concede 12,5 kg de cuero, sin garantizar un conjunto completo T1.
 - Stock por personaje, sin reposición al reabrir; sólo se retira lo necesario
   para la elección y lo que cabe. Se devuelven sobrantes no gastados/reservados.
 - Materiales de misión controlados por cantidades dentro de cada pila; no se
@@ -1848,13 +1904,14 @@ Tramo E — respiración o paso inundado:
 - La recuperación de drops naturales inaccesibles y el control adicional de
   márgenes de cada nodo siguen pendientes; se conserva la regeneración vigente.
 
-19.6. FINAL DE LA PARTE MATERIAL (4.33.0l)
+19.6. FINAL DE LA PARTE MATERIAL (4.33.0p)
 
 Al completar la primera fabricación real se registran MATERIALS_COMPLETE y
 STARTER_WEAPON_CRAFTED; se conserva el ItemId y se alcanza fase 60. El Diario
 pide volver con Ronnie. Devolver la espada retira su instancia y fija
 RONNIE_COMPLETE una sola vez; no vuelve a prestarla al reabrir el diálogo.
-Rulo no se activa todavía. Antes se integran las lecciones pendientes de 19.4.
+Desde 0p, RONNIE_COMPLETE permite iniciar a Rulo. Las lecciones de 19.4 se
+conservan como ampliación prevista; no bloquean esta continuación.
 
 RONNIE:
 “Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
@@ -1963,10 +2020,14 @@ Al derrotar al Toro:
 - Establecer CA_F_M01_BULL_DEFEATED.
 - Abrir el recinto.
 - Reproducir estado de disipación una sola vez.
-- Establecer CA_F_M01_RULO_COMPLETE.
-- Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED.
-- Habilitar a Palomo en el segundo piso.
-- Actualizar diario: “Buscar nuevamente a Palomo”.
+- Actualizar diario: recoger el cuero y hablar con Rulo en el recinto (0q).
+
+Al cerrar la devolución en el diálogo con Rulo (0p):
+- Establecer CA_F_M01_RULO_COMPLETE y avanzar de fase 70 a 75.
+- Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED para enlazar la siguiente rama.
+- Devolver la munición prestada sobrante.
+- Actualizar diario: “Buscar nuevamente a Palomo”. Su conversación final y la
+  recompensa de Caja siguen pendientes del siguiente bloque.
 
 RULO:
 “Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
@@ -1977,10 +2038,10 @@ RULO:
 
 22.1. APARICIÓN FINAL
 
-Palomo no debe aparecer delante del jugador mediante un efecto ostentoso. Al
-habilitarse la etapa, colocarlo en CA_M01_PALOMO_UPSTAIRS_SPOT antes de que el
-jugador tenga línea de visión. Si se encuentra mirando el punto, esperar a que
-gire, cruce una puerta o cambie de sector.
+Desde 0n, Palomo llega al segundo piso corriendo por su ruta visible de quince
+puntos, con colisión, puertas y escaleras nativas. Allí espera. Al habilitarse
+la etapa final se conectará su conversación sobre esa misma instancia; no se
+lo reaparece, oculta ni teletransporta. Este diálogo final aún está pendiente.
 
 PALOMO:
 “Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no

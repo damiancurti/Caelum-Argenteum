@@ -1,6 +1,49 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0o — 2026-09-11.
+Versión documental: 4.33.0q — 2026-09-11.
+
+## Correcciones de Rulo/Toro — 4.33.0q, 2026-09-11
+
+El autor confirmó exitoso el resto de 0p y señaló: demasiado cuero, Argento
+pidiendo hablar con Argento y necesidad de estar acompañado por los cuatro.
+Se sustituye el presupuesto por recetas (313,6 kg para talle M) por 12,5 kg de
+cuero acabado: estimación de piel fresca y procesamiento detallada en SYSTEMS.
+Se conserva el cajón de guanteletes; queda obsoleta la garantía de un conjunto
+T1 completo por el botín del Toro. Se revisará cobertura en la auditoría final.
+No se confisca material de victorias anteriores.
+
+Los cuatro NPC originales se incorporan al encuentro, pueden recibir cornadas
+y quedar fuera de combate, se recuperan al reintentar o ganar y permiten cerrar
+con Rulo dentro del recinto. Un golpe final de un compañero acredita la victoria
+al jugador. Tras cerrar y dejar de verse, vuelven a sus dormitorios. Las nuevas
+referencias/estado usan guardado nativo. Argento tiene voz propia para orientar
+sin nombrarse como un tercero. El motor y MAP01.wad permanecen iguales.
+
+Siguiente bloque: Palomo final y Caja Mágica; después El Loco y salida. La
+arquitectura de código sigue reservada a V5. Se actualizan README y cinco docs;
+delta sobre 0p más un TXT de pruebas, sin instalador. Prueba del autor de 0q pendiente.
+
+## Prueba de Rulo — 4.33.0p, 2026-09-11
+
+El autor pidió seguir con la misión y señaló a Rulo como la parte restante.
+Se implementa sobre 0o: prácticas en el blanco debajo de su dormitorio,
+seguimiento en Detalle, entrega de llave por Argento, Toro encerrado durante
+el encuentro, recuperación tras derrota, cuero único y cierre al volver a Rulo.
+Las 36 opciones iniciales tienen acciones o equivalencias realizables; la
+magia en movimiento evita un bloqueo por coste de carga. Se incorpora munición
+prestada para armas de distancia y se preserva la munición que ya era propia.
+
+La prueba encontró y corrigió dos problemas: el blanco recibía empuje después
+de un impacto melee y la jabalina tenía alcance cero en su fallback de AltFire.
+El Toro usa un estado quieto durante la preparación para evitar un paso de IA
+antes de comenzar. Estados nuevos se anexan, WAD y assets se conservan.
+
+Validación en GZDoom, matriz de armas y guardado nativo documentados en PROJECT.
+Resto aprobado por el autor; las tres observaciones se corrigen en 0q.
+El cierre con Palomo/Caja/El Loco/salida
+continúa en el roadmap; la ampliación de supervivencia de Ronnie no bloquea
+retroactivamente el avance solicitado. README y los cinco docs actualizados;
+formato de archivos para copiar más un único TXT, sin instalador.
 
 ## Aprobación de 4.33.0n y corrección 4.33.0o — 2026-09-11
 

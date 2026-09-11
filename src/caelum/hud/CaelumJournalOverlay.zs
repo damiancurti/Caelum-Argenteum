@@ -103,9 +103,15 @@ class CaelumJournalOverlay : EventHandler
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
             return "CA_Q_DETAIL_GENERIC";
         int stage = localPlayer.JournalQuestStage[questId];
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE) return "CA_M01_RULO_DETAIL_DONE";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return localPlayer.MainM00BullDefeatedSnapshot ? "CA_M01_RULO_DETAIL_RETURN"
+                : localPlayer.MainM00BullStartedSnapshot ? "CA_M01_RULO_DETAIL_FIGHT"
+                : localPlayer.MainM00RuloPracticeSnapshot < 6 ? "CA_M01_RULO_DETAIL_PRACTICE"
+                : localPlayer.MainM00SilverKeySnapshot ? "CA_M01_RULO_DETAIL_DOOR" : "CA_M01_RULO_DETAIL_KEY";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
             && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
-            return localPlayer.MainM00RonnieFinishedSnapshot ? "CA_M01_DETAIL_DONE"
+            return localPlayer.MainM00RonnieFinishedSnapshot ? "CA_M01_RULO_DETAIL_OFFER"
                 : localPlayer.MainM00StarterWeaponSnapshot > 0 ? "CA_M01_DETAIL_READY" : "CA_M01_DETAIL_GATHER";
         if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
             return stage < CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
@@ -137,6 +143,19 @@ class CaelumJournalOverlay : EventHandler
         text.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));
         text.Replace("%STARTER%", CaelumMainM00StarterRules.GetName(localPlayer.MainM00StarterOptionSnapshot));
         int stage = localPlayer.JournalQuestStage[questId];
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage == CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE && localPlayer.MainM00RuloPracticeSnapshot < 6)
+        {
+            for (int n = 0; n < 6; n++)
+            {
+                String key = n == 0 ? "CA_M01_RULO_CHECK_PRIMARY" : n == 1 ? "CA_M01_RULO_CHECK_SECONDARY"
+                    : n == 2 ? "CA_M01_RULO_CHECK_DEFENSE" : n == 3 ? "CA_M01_RULO_CHECK_ADVANCED"
+                    : n == 4 ? "CA_M01_RULO_CHECK_AIR" : "CA_M01_RULO_CHECK_RECOVERY";
+                text = text .. "\n" .. StringTable.Localize(localPlayer.JournalMainM00RuloPracticeDone[n]
+                    ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false) .. ": " .. StringTable.Localize(key, false);
+            }
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_RULO_EQUIVALENT_TEXT", false);
+        }
         bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
             && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
@@ -283,6 +302,8 @@ class CaelumJournalOverlay : EventHandler
         if (questStage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)
             return "CA_Q_M01_STATE_CAPTURE_THE_FOOL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
+            return "CA_Q_M01_STATE_PALOMO_FINAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
             return "CA_Q_M01_STATE_PALOMO_FINAL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
             return "CA_Q_M01_STATE_RULO_COMBAT";

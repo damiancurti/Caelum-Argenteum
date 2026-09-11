@@ -2,6 +2,7 @@
 // Inventory viajero de cada personaje y sólo ejecuta presentaciones pendientes.
 class CaelumMainM00QuestController : EventHandler
 {
+    bool RuloWorldPrepared;
     Line Passage;
     CaelumM00ElementRune Runes[4];
     bool WorldPrepared;
@@ -368,6 +369,7 @@ class CaelumMainM00QuestController : EventHandler
             caelumPlayer.UpdateMainM00Prologue();
             CaelumMainM00MagicTrial.Update(caelumPlayer);
             CaelumMainM00RonnieTrial.Update(caelumPlayer);
+            CaelumMainM00RuloTrial.Update(caelumPlayer);
             if (level.MapName != "MAP01") continue;
             let record = caelumPlayer.GetPersistentCharacterState(false);
             if (record == null) continue;
@@ -382,39 +384,84 @@ class CaelumMainM00QuestController : EventHandler
 class CaelumM00Bull : CaelumBull
 {
     bool TrialReleased;
+    CaelumPlayer TrialFighter;
+    int TrialGraceTicks;
+
+    void ResetAttempt(CaelumPlayer user)
+    {
+        StopBullCharge();
+        SetOrigin((-2180,0,0), false); Vel = (0,0,0); Angle = 0;
+        health = CombatMaximumHealth;
+        CurrentCombatAir = MaximumCombatAir; CurrentCombatAnima = MaximumCombatAnima;
+        CurrentCombatLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
+        CombatLucidityPhysicalStunRemaining = 0;
+        ElementalStatus = new("CaelumElementalStatus");
+        Target = user; TrialFighter = user; TrialReleased = true;
+        TrialGraceTicks = 2 * TICRATE; bShootable = false;
+        SetStateLabel("TrialIdle");
+    }
+
     bool LeatherDropped;
     int LeatherBudgetUnits;
 
-    static int GetArmorLeatherBudget(CaelumPlayer user)
+    // Se conserva LeatherBudgetUnits al leer 0p; ya no decide el rendimiento.
+    bool RuloPartyPrepared;
+
+    int GetLeatherYieldUnits()
     {
-        if (user == null || user.ArmorModel == null) return 0;
-        int size = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
-        int total = 0;
-        // Un conjunto T1 completo de cualquier familia: presupuesto máximo,
-        // con merma al 25 % tanto al hacer correas como al montar cada pieza.
-        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
-        {
-            double weight = user.ArmorModel.GetWeightFor(slot, CaelumConstants.ARMOR_TYPE_HEAVY, 1, size);
-            total += CaelumCraftingRules.GetRequiredArmorTierUnits(slot, weight) * 4;
-            total += CaelumCraftingRules.GetRequiredArmorBaseUnits(slot, weight) * 16;
-        }
-        return total;
+        // Modelo explícito: piel fresca = 6 % de la masa. Curtido acabado:
+        // 255 / 1100 del peso fresco (balance UNIDO), redondeado a 0,1 kg.
+        // Para 900 kg: 54 kg de piel fresca -> 12,5 kg de cuero utilizable.
+        return int(Floor(Mass * 0.06 * (255.0 / 1100.0) * 10.0 + 0.5)) * 100;
+    }
+
+    bool IsTrialOpponent(Actor candidate)
+    {
+        if (candidate == null || candidate.health <= 0 || !CaelumMainM00RuloTrial.InArena(candidate)) return false;
+        if (candidate == TrialFighter) return true;
+        let ally = CaelumAnchoredResident(candidate);
+        return ally != null && ally.RuloPartyBull == self && ally.IsRuloPartyFighting();
+    }
+
+    Actor FindTrialOpponent()
+    {
+        Actor closest = TrialFighter;
+        double distance = closest != null ? Distance2D(closest) : 999999.0;
+        let it = ThinkerIterator.Create("CaelumAnchoredResident"); CaelumAnchoredResident ally;
+        while ((ally = CaelumAnchoredResident(it.Next())) != null)
+            if (IsTrialOpponent(ally) && Distance2D(ally) < distance)
+            { closest = ally; distance = Distance2D(ally); }
+        return closest;
     }
 
     override void Tick()
     {
-        if (!TrialReleased && health > 0)
-        { Vel = (0,0,0); Target = null; bShootable = false; return; }
+        if (health > 0)
+        {
+            if (!TrialReleased) { Vel = (0,0,0); Target = null; bShootable = false; return; }
+            if (TrialGraceTicks > 0)
+            {
+                TrialGraceTicks--; Vel = (0,0,0); bShootable = false;
+                if (TrialGraceTicks == 0) SetStateLabel("See");
+                return;
+            }
+            bShootable = true;
+            if (!IsTrialOpponent(Target)) Target = FindTrialOpponent();
+            if (!CaelumMainM00RuloTrial.InArena(self))
+            { StopBullCharge(); SetOrigin((-2180,0,0), false); }
+        }
         Super.Tick();
         if (health > 0 || LeatherDropped) return;
         LeatherDropped = true;
-        // Botín tutorial finito, no una estimación biológica de curtido.
-        // Pilas de 10 kg permiten recogerlo sin exigir cargar todo de una vez.
+        CaelumMainM00RuloTrial.SetArenaDoors(false, true);
+        // La masa y la merma gobiernan el botín, nunca el talle del viajero.
+        // Pilas de 2,5 kg para no exigir cargar todo de una vez.
+        LeatherBudgetUnits = GetLeatherYieldUnits();
         int remaining = LeatherBudgetUnits;
         int i = 0;
         while (remaining > 0)
         {
-            int amount = Min(10000, remaining);
+            int amount = Min(2500, remaining);
             double direction = (i % 12) * 30.0;
             double radius = 4;
             let leather = CaelumMaterialPickup(Spawn("CaelumMaterialPickup",
@@ -432,7 +479,31 @@ class CaelumM00Bull : CaelumBull
             {
                 let user = CaelumPlayer(players[n].mo);
                 user.GetPersistentCharacterState(true).SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED);
-                user.PersistCharacterState();
+                CaelumMainM00RuloTrial.Sync(user);
+                CaelumMainM00MagicTrial.Feedback(user, "CA_M01_RULO_BULL_WON");
             }
+    }
+
+    // Anticipación más legible del ejemplar tutorial; la cornada conserva
+    // su daño, anatomía y consumo nativos. El cadáver se disipa una sola vez.
+    States
+    {
+    Melee:
+        BULL F 18 A_FaceTarget;
+        BULL G 5 A_CaelumBeginBullCharge;
+        BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
+        BULL G 0 A_CaelumEndBullCharge;
+        Goto See;
+    Death:
+        BULL I 0 A_CaelumEndBullCharge;
+        BULL I 5 A_Scream;
+        BULL JKLM 5;
+        BULL N 35 A_NoBlocking;
+    Dissipate:
+        BULL N 4 A_FadeOut(0.1);
+        Loop;
+    TrialIdle:
+        BULL A -1;
+        Stop;
     }
 }

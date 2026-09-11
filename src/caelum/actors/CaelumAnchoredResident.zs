@@ -7,6 +7,102 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     bool StoryAnchored;
     bool StoryReturningHome;
 
+    // Estado del mismo residente durante la prueba; serialización nativa.
+    // 0: dormitorio, 1: preparación, 2: combate, 3: cierre junto a Rulo.
+    int RuloPartyMode;
+    bool RuloPartyDowned;
+    CaelumPlayer RuloPartyTraveler;
+    CaelumM00Bull RuloPartyBull;
+
+    Vector3 GetRuloPartyPosition()
+    {
+        if (self is "CaelumRulo") return (-2010,-155,0);
+        if (self is "CaelumRonnie") return (-2010,155,0);
+        if (self is "CaelumArgento") return (-1900,-220,0);
+        return (-1900,220,0);
+    }
+
+    void RestoreRuloPartyHealth()
+    {
+        health = CombatMaximumHealth;
+        CurrentCombatAir = MaximumCombatAir;
+        CurrentCombatAnima = MaximumCombatAnima;
+        CurrentCombatLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
+        CombatLucidityPhysicalStunRemaining = 0;
+        ElementalStatus = new("CaelumElementalStatus");
+        for (int slot = 0; CombatArmor != null && slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+            CombatArmor.Durability[slot] = CombatArmor.GetMaximumDurability(slot);
+        RuloPartyDowned = false; bSolid = true; bShootable = true;
+    }
+
+    void JoinRuloParty(CaelumPlayer traveler, CaelumM00Bull bull)
+    {
+        RuloPartyTraveler = traveler; RuloPartyBull = bull;
+        RuloPartyMode = 1; StoryReturningHome = false;
+        RestoreRuloPartyHealth();
+        // Reunión durante la preparación del encuentro; no crear dobles.
+        SetOrigin(GetRuloPartyPosition(), false); Vel = (0,0,0); Angle = 180;
+        bFriendly = true; bInvulnerable = true; Target = null;
+        SetStateLabel("Spawn");
+    }
+
+    bool IsRuloPartyFighting()
+    {
+        return RuloPartyMode == 2 && !RuloPartyDowned && RuloPartyBull != null
+            && RuloPartyBull.health > 0 && RuloPartyBull.TrialGraceTicks == 0;
+    }
+
+    override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
+    {
+        if (RuloPartyMode != 0 && (!IsRuloPartyFighting()
+            || (source != RuloPartyBull && inflictor != RuloPartyBull))) return 0;
+        return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+    }
+
+    override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
+    {
+        if (RuloPartyMode == 2 && RuloPartyBull != null && RuloPartyBull.health > 0)
+        {
+            health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);
+            bInvulnerable = true; bShootable = false; bSolid = false;
+            SetStateLabel("CrouchIdle");
+            return;
+        }
+        Super.Die(source, inflictor, dmgflags, MeansOfDeath);
+    }
+
+    void UpdateRuloParty()
+    {
+        bFriendly = true;
+        if (RuloPartyBull != null && RuloPartyBull.health > 0)
+        {
+            if (RuloPartyDowned) { Vel = (0,0,0); Target = null; return; }
+            if (RuloPartyBull.TrialGraceTicks > 0 || !RuloPartyBull.TrialReleased)
+            { Vel = (0,0,0); Target = null; bInvulnerable = true; return; }
+            if (RuloPartyMode == 1) { RuloPartyMode = 2; Target = RuloPartyBull; SetStateLabel("See"); }
+            bInvulnerable = false; Target = RuloPartyBull;
+            if (!CaelumMainM00RuloTrial.InArena(self))
+            { SetOrigin(GetRuloPartyPosition(), false); Vel = (0,0,0); }
+            return;
+        }
+        if (RuloPartyMode != 3)
+        {
+            RuloPartyMode = 3; RestoreRuloPartyHealth();
+            SetStateLabel("Spawn");
+        }
+        bInvulnerable = true; Target = null; Vel = (0,0,0);
+        // El cierre se habla aquí. Una vez que el viajero sale y deja de ver
+        // al grupo, recuperar los dormitorios y las mismas instancias.
+        if (RuloPartyTraveler == null || !RuloPartyTraveler.HasMainM00Flag(
+            CaelumConstants.MAIN_M00_FLAG_RULO_COMPLETE)) return;
+        for (int n = 0; n < MAXPLAYERS; n++)
+            if (playeringame[n] && players[n].mo != null
+                && (CaelumMainM00RuloTrial.InArena(players[n].mo) || players[n].mo.CheckSight(self))) return;
+        SetOrigin(StoryHome, false); Angle = StoryHomeAngle;
+        RuloPartyMode = 0; RuloPartyBull = null; RuloPartyTraveler = null;
+        SetStateLabel("Spawn");
+    }
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
@@ -35,6 +131,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             || traveler.FolkloreInteractionUseLatched) { return true; }
         traveler.FolkloreInteractionUseLatched = true;
         traveler.FolkloreInteractionReleaseGuardTics = 0;
+        if (RuloPartyMode == 1 || RuloPartyMode == 2) return true;
         return CaelumMainM00SocialDialogue.Open(traveler, self);
     }
 
@@ -43,7 +140,14 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
         if (resident != null && resident.StoryAnchored)
         {
-            resident.target = null;
+            if (resident.IsRuloPartyFighting())
+            {
+                resident.Target = resident.RuloPartyBull;
+                if (resident is "CaelumRulo" || resident is "CaelumRonnie")
+                    resident.A_Chase("Melee", null);
+                else resident.A_CaelumBudgetedChase();
+            }
+            else resident.Target = null;
             return;
         }
         A_CaelumBudgetedLook();
@@ -54,7 +158,14 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
         if (resident != null && resident.StoryAnchored)
         {
-            resident.target = null;
+            if (resident.IsRuloPartyFighting())
+            {
+                resident.Target = resident.RuloPartyBull;
+                if (resident is "CaelumRulo" || resident is "CaelumRonnie")
+                    resident.A_Chase("Melee", null);
+                else resident.A_CaelumBudgetedChase();
+            }
+            else resident.Target = null;
             return;
         }
         A_CaelumBudgetedChase();
@@ -62,6 +173,15 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override void Tick()
     {
+        if (RuloPartyMode != 0)
+        {
+            UpdateRuloParty();
+            Super.Tick();
+            if (!bInConversation && HasConversation())
+                Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                    self, null, false, 0, 0);
+            return;
+        }
         Super.Tick();
         if (!StoryAnchored || health <= 0) { return; }
         // El próximo Use debe reconstruir el nodo desde el personaje que habla.

@@ -69,6 +69,7 @@ class CaelumSlidingDoorLeaf : Actor
     int HoldTimer;
     int LockedSoundCooldown;
     bool DoorRequested;
+    bool RuloArenaLocked;
 
     override void PostBeginPlay()
     {
@@ -90,6 +91,7 @@ class CaelumSlidingDoorLeaf : Actor
 
     bool RequestDoorGroup(Actor user)
     {
+        if (RuloArenaLocked) return false;
         // La petición valida la hoja antes de consultar llaves o emitir sonido.
         if (user == null || Abs(user.Pos.Z - Pos.Z) > 64
             || user.Pos.Z >= Pos.Z + Height || user.Pos.Z + user.Height <= Pos.Z
@@ -181,6 +183,11 @@ class CaelumSlidingDoorLeaf : Actor
     {
         Super.Tick();
 
+        if (RuloArenaLocked)
+        {
+            DoorRequested = false; HoldTimer = 0; SlideProgress = 0;
+            PlaceAtProgress(); return;
+        }
         if (LockedSoundCooldown > 0) { LockedSoundCooldown--; }
 
         if (DoorRequested && SlideProgress < 64)

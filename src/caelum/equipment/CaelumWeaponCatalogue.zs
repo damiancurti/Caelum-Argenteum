@@ -176,6 +176,9 @@ class CaelumWeaponCatalogue : Object
     {
         switch (ResolveWeapon(weaponId))
         {
+            // AltFire de jabalina usa el alcance melee al tener un blanco cerca.
+            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
+                return GetPrimaryRange(weaponId);
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 40.0;
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return 58.0;

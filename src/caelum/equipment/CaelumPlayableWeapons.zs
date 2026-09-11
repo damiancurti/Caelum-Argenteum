@@ -2797,7 +2797,8 @@ class CaelumCarbineProjectile : CaelumActorProjectile
             int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE)
         );
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
-        if (weaponOwner != null && CaelumWeaponWearPrepared)
+        if (weaponOwner != null && CaelumWeaponWearPrepared
+            && !(victim is "CaelumM00TrainingDummy"))
         {
             weaponOwner.ApplyWeaponDurabilityFromSuccessfulDamage(
                 preparedDamage,
@@ -2935,6 +2936,8 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
 
     void DropBrokenJavelinMaterials()
     {
+        // El reacondicionamiento de Rulo no puede convertirse en materiales.
+        if (CaelumMainM00RuloTrial.IsActive(CaelumPlayer(Target))) return;
         if (!JavelinBreakageConfigured) { return; }
 
         int weaponId = CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
@@ -3026,7 +3029,8 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
     {
         int preparedDamage = GetCaelumPreparedDamage(1);
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
-        if (weaponOwner != null && CaelumWeaponWearPrepared)
+        if (weaponOwner != null && CaelumWeaponWearPrepared
+            && !(victim is "CaelumM00TrainingDummy"))
         {
             weaponOwner.ApplyWeaponDurabilityFromSuccessfulDamage(
                 preparedDamage,

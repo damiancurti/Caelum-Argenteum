@@ -123,6 +123,8 @@ class CaelumConstants : Object
     // Extensiones aditivas de Caella: no desplazan los flags aceptados.
     const MAIN_M00_FLAG_MAGIC_ANIMA_SPENT = 57;
     const MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED = 58;
+    const MAIN_M00_FLAG_COMBAT_AIR_SPENT = 59;
+    const MAIN_M00_FLAG_COMBAT_AIR_RECOVERED = 60;
     const CA_ITEMFLAG_LIMBO_TEMP = 1;
     const CA_ITEMFLAG_LIMBO_PRESERVABLE = 2;
 

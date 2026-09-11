@@ -1,6 +1,95 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0o — 2026-09-11.
+Versión documental: 4.33.0q — 2026-09-11.
+
+## Combate acompañado y rendimiento del Toro (4.33.0q)
+
+El Toro conserva 900 kg y su perfil ofensivo. Al entrar, se colocan los cuatro
+residentes existentes en la formación durante los dos segundos de preparación:
+Rulo (-2010,-155,0), Ronnie (-2010,155,0), Argento (-1900,-220,0),
+Caella (-1900,220,0). Rulo/Ronnie usan melee; Argento/Caella conservan melee y
+sus proyectiles elementales nativos. No se agregan estadísticas ni armas.
+El Toro conserva un objetivo válido del grupo y busca otro si éste cae.
+
+RuloPartyMode y las referencias al jugador/Toro viven en cada residente y se
+serializan por el motor. Modo 1 prepara, 2 combate y 3 espera el cierre. Una
+cornada letal deja al residente con 1 de salud, agachado, sin bloqueo ni ataques.
+Reintento y victoria restauran salud, Aire, Anima, Lucidez y armadura. El grupo
+no inflige daño al jugador ni entre sí: sus proyectiles atraviesan aliados y
+los receptores filtran el daño. La derrota del jugador retira también los
+proyectiles de los compañeros antes del reinicio. No se pierde el NPC narrativo.
+Tras ganar, Rulo recibe la devolución allí. Al completar y salir de la vista de
+todos, las mismas instancias recuperan sus dormitorios. Esta reunión no agrega
+una ruta de viaje ni cambia el recorrido físico de Palomo.
+
+Rendimiento de referencia, no peso exacto deducible sólo de la masa viva:
+
+| Concepto | Modelo para el Toro de 900 kg |
+| --- | ---: |
+| Piel fresca, húmeda y sin procesar | 54 kg: supuesto de diseño de 6 % de masa viva. |
+| Cuero acabado aprovechable | 54 × 255 / 1100 = 12,518 kg. |
+| Botín nativo | 12,5 kg; 12.500 unidades, cinco pilas de 2,5 kg. |
+
+El 6 % es una estimación explícita para este animal ficticio; no una medición
+ni un porcentaje universal validado para un toro de raza/edad conocidas.
+El curtido se aproxima con el balance de UNIDO de pieles bovinas: 1100 kg de
+piel fresca producen 195 kg de cuero de flor y 60 kg de serraje. Es un caso de
+fabricación de cuero para calzado, no una constante para todos los curtidos.
+Fuente: Buljan, Reich y Ludvik, *Mass Balance in Leather Processing*, 2000,
+página 4, https://leatherpanel.org/sites/default/files/publications-attachments/mass_balance.pdf
+
+La entrega automática de cuero acabado mantiene la abstracción de botín ya
+usada. No modifica la receta global de curtido ni aplica otra merma al recoger.
+GetLeatherYieldUnits usa Mass y redondea a 100 g; el talle del jugador no influye.
+El antiguo LeatherBudgetUnits se conserva para leer guardados, pero se
+recalcula al morir; LeatherDropped sigue garantizando una sola entrega.
+El cuero producido/recogido en una victoria anterior no se retira.
+
+Argento usa las mismas etapas del Diario; las instrucciones que lo nombraban
+a él se resuelven a textos propios en primera persona, en español e inglés.
+
+## Prueba de combate de Rulo (4.33.0p)
+
+Autoridad: Inventory viajero y banderas existentes 30–38; se incorporan 59–60
+para Aire gastado/recuperado sin ampliar el arreglo de 64 ni reenumerar banderas.
+Fase 60 + Argento/Caella/Ronnie completos habilita el inicio ante Rulo (70).
+La derrota del Toro marca 36; volver a Rulo marca 37/38 y avanza a 75.
+
+| Práctica | Confirmación real |
+| --- | --- |
+| Principal | Impacto en el blanco con Fire, melee o proyectil. |
+| Secundaria | Impacto AltFire; apuntado en distancia; lanza sin secundario, golpe avanzando. |
+| Defensa | Activar bloqueo compatible/ADS o recorrer 48 MU de costado dentro de la sala. |
+| Avanzada | Impacto cargado, impacto mágico lanzado en desplazamiento lateral o recarga terminada. |
+| Aire gastado | Descenso real del recurso dentro de la sala. |
+| Aire recuperado | Incremento posterior al gasto. |
+
+La magia en movimiento evita exigir un ataque cargado cuyo coste supere el
+Anima máximo de algunos personajes. No se modifican costes, daño ni atributos.
+Las marcas no se reinician al reabrir el diálogo o cargar. La llave requiere
+las seis prácticas. El blanco no da experiencia, adrenalina, botín ni desgaste
+por impactos; conserva el arte y volumen del TrainingDummy existente.
+
+Rulo reacondiciona el arma inicial sobre su mismo ItemId y presta 24 unidades
+de la munición nativa necesaria. El préstamo se gasta primero, se repone si se
+agota dentro del recinto y al preparar un nuevo intento, y no puede soltarse
+por el inventario mientras quede munición prestada. La devolución retira sólo
+el remanente y ajusta cargadores; conserva las unidades propias. Se comprueba
+capacidad de carga antes de entregar. La jabalina no produce materiales
+recuperados mientras está activa esta prueba: no se puede convertir el
+reacondicionamiento en materias primas. Su AltFire melee reutiliza ahora el
+alcance principal existente, corrigiendo el antiguo valor cero del fallback.
+
+El Toro tutorial conserva perfil, masa, anatomía y daño nativos. Ajustes de
+esta entrega para comprobar en juego: 18 tics de anticipación de cornada,
+2 segundos de preparación inicial/reintento. La entrada inicia la prueba; la
+llave sola no despierta al Toro. Las dos hojas de puerta 806 se bloquean y el
+Toro queda contenido en su sala. La muerte del jugador se intercepta antes de
+Die nativo y el reinicio se completa al siguiente WorldTick: posiciones,
+Salud/Aire/Anima/Lucidez, estados elementales y arma inicial. Se retiran los
+proyectiles del intento; no se genera cuero ni se incrementa una victoria.
+El Toro vencido abre el recinto, suelta una vez los 12,5 kg de cuero de 0q
+y se disipa. Se habla con Rulo dentro del recinto para cerrar.
 
 ## Conocimiento de recetas y retiro del manual (4.33.0o)
 
@@ -26,11 +115,12 @@ capa, inventario vacío. Cada conjunto incluye cabeza, torso, manos y pies;
 
 Son 590,4 kg para los cuatro conjuntos. Si se parte de piel cruda y se curte al
 25 %, esas cantidades se multiplican por cuatro. No confundir unidades de
-material (0,001 kg) con objetos enteros. El Toro de MAP01 tiene un presupuesto
-finito igual al conjunto pesado del talle del personaje: cubre UN conjunto
-completo de cualquier familia, no los cuatro a la vez. Es botín tutorial
-calculado de recetas, no una estimación biológica de cuero aprovechable.
-Se entrega ya curtido, en pilas de hasta 10 kg, una sola vez al morir.
+material (0,001 kg) con objetos enteros. Esos valores describen el COSTE de
+fabricación, no el botín actual del Toro. Desde 0q, sus 12,5 kg ya no cubren un
+conjunto completo al 25 % por capa. El cajón conserva 96 kg en M para los
+primeros guanteletes. No se garantiza simultáneamente arma + cualquier conjunto
+completo: por ejemplo, guanteletes M consumen la reserva y una armadura pesada M
+necesita otros 313,6 kg; faltarían 301,1 kg después del nuevo botín.
 
 Sellos T1: 460,8 kg cobre bruto, 51,2 kg estaño bruto y 9,6 kg de cada gema.
 Las cinco vetas cubren esos tipos y cantidades. Por decisión del autor, el
@@ -165,12 +255,12 @@ alcance al mantener la sesión; cambiar de piso la cierra y pausa la tarea.
 ### Llave, Toro y retirada de Palomo (4.33.0n)
 
 Argento posee una instancia de llave de plata; se transfiere al jugador sin
-recrear otra. Requiere Argento/Caella/Ronnie completos y las cuatro prácticas
+recrear otra. Requiere Argento/Caella/Ronnie completos y las seis prácticas
 de Rulo (o su rama ya completa). Exigir el Toro derrotado sería circular.
-Rulo todavía no tiene su lección jugable conectada: el acceso permanece cerrado
-hasta ese bloque. El Toro espera inactivo en su recinto y se activa al entregar
-la llave. Su muerte registra el resultado y produce el presupuesto finito de
-cuero descrito arriba. Guardar no duplica llave, actor ni botín.
+La lección está conectada desde 0p. El Toro espera inactivo hasta ENTRAR en el
+recinto con la llave y la preparación terminada. Desde 0q se reúne el grupo
+antes del primer ataque. La muerte registra el resultado y produce el cuero
+basado en masa descrito arriba. Guardar no duplica llave, actor ni botín.
 
 Tras terminar el diálogo inicial, Palomo mantiene SOLID activado e INVISIBLE desactivado. Corre usando velocidad XY,
 física vertical, escaleras y puertas sin llave; queda esperando arriba. La ruta

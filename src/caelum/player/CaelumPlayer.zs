@@ -576,6 +576,12 @@ class CaelumPlayer : DoomPlayer
     // Lucidity is stored independently from health and begins at its fixed
     // maximum. LucidityState is cached so UI code never calls play functions.
     double CurrentLucidity;
+    bool JournalMainM00RuloPracticeDone[6];
+    int MainM00RuloPracticeSnapshot;
+    bool MainM00BullDefeatedSnapshot;
+    bool MainM00BullStartedSnapshot;
+    bool MainM00SilverKeySnapshot;
+
     bool LucidityResourceInitialized;
     int LucidityState;
     double LucidityPhysicalStunRemaining;
@@ -11087,6 +11093,15 @@ class CaelumPlayer : DoomPlayer
 
     void DropSelectedNativeInventoryItem()
     {
+        let training = GetPersistentCharacterState(false);
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
+            && training != null && training.MainM00AmmoLoanRemaining > 0
+            && EquipmentSelectionAmmunitionType == training.MainM00AmmoLoanType)
+        {
+            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_RULO_AMMO_RESERVED", true);
+            return;
+        }
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
@@ -12982,6 +12997,14 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
+    // El combate tutorial intercepta la muerte antes de los efectos nativos.
+    // El reinicio se difiere al WorldTick para terminar primero el daño actual.
+    override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
+    {
+        if (CaelumMainM00RuloTrial.PreventDefeat(self)) return;
+        Super.Die(source, inflictor, dmgflags, MeansOfDeath);
+    }
+
     override int DamageMobj(
         Actor inflictor,
         Actor source,
@@ -12991,6 +13014,8 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
+        if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
+
         // El mundo no puede dañar al personaje antes de confirmar su creación.
         if (CreationWizardOpen && !CharacterCreationComplete)
         {
@@ -14911,6 +14936,7 @@ class CaelumPlayer : DoomPlayer
         if (chargedAttack) { ConsumeWeaponChargedState(); }
 
         projectile.Target = self;
+        projectile.MainM00ChargedPractice = chargedAttack;
         projectile.Angle = attackAngle;
         projectile.Pitch = attackPitch;
         // La distancia útil del lanzamiento usa la raíz cuadrada de la
@@ -15100,6 +15126,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         RangedAimModeActive = !RangedAimModeActive;
+        if (RangedAimModeActive) CaelumMainM00RuloTrial.RecordAim(self);
     }
 
     void CancelRangedReload()
@@ -15276,6 +15303,7 @@ class CaelumPlayer : DoomPlayer
             RangedReloadWeaponType,
             Min(GetRangedMagazineCapacity(RangedReloadWeaponType), available)
         );
+        CaelumMainM00RuloTrial.RecordPractice(self, CaelumConstants.MAIN_M00_FLAG_COMBAT_CHARGED_USED);
         CancelRangedReload();
     }
 
@@ -15449,6 +15477,7 @@ class CaelumPlayer : DoomPlayer
         if (rangedAmmo != null && rangedAmmo.Amount > 0)
         {
             rangedAmmo.Amount = Max(0, rangedAmmo.Amount - 1);
+            CaelumMainM00RuloTrial.ConsumeLoanRound(self, requiredAmmoType);
         }
         SetRangedMagazineCount(
             WeaponModel.WeaponType,
@@ -15790,6 +15819,9 @@ class CaelumPlayer : DoomPlayer
             }
             if (projectile == null) { continue; }
             projectile.Target = self;
+            projectile.MainM00ChargedPractice = chargedAttack;
+            projectile.MainM00MobilePractice = player.cmd.sidemove != 0
+                && Vel.XY.Length() > 0.25;
             projectile.Angle = projectileAngle;
             projectile.Pitch = projectilePitch;
             double projectileSpeed = CaelumConstants.PROJECTILE_SPEED_NORMAL;
@@ -15993,6 +16025,7 @@ class CaelumPlayer : DoomPlayer
         CancelRangedReload();
         CombatBlockInputGraceTics = 0;
         CombatBlockModeActive = true;
+        CaelumMainM00RuloTrial.RecordPractice(self, CaelumConstants.MAIN_M00_FLAG_COMBAT_DEFENSE_USED);
         DebugShieldBlocking = true;
         if (WeaponChargedStateActive)
         {
@@ -17051,6 +17084,11 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if (targetData.linetarget is "CaelumM00TrainingDummy")
+        {
+            CaelumMainM00RuloTrial.RecordHit(self, secondaryAttack, chargedAttack);
+            return;
+        }
         CalculateDebugMeleeHitLocation(
             targetData.linetarget,
             attackAngle,

@@ -1,16 +1,33 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0o — 2026-09-11.
+Versión documental: 4.33.0q — 2026-09-11.
 
-## Estado actual: 4.33.0o
+## Estado actual: 4.33.0q
 
-**4.33.0n aprobado:** el 2026-09-11 el autor confirmó que todas las pruebas
-fueron exitosas. Esa es la base aceptada para esta entrega.
+**Base:** carpeta completa 0p. El autor aprobó las demás pruebas y señaló tres
+correcciones: exceso de cuero, Argento refiriéndose a sí mismo como otro NPC y
+la necesidad de combatir acompañado por los cuatro residentes.
 
-0o retira el Manual de Procesamiento (LORE-0001) que quedó al costado de los
-antiguos talleres exteriores, en (-364,800,0). La limpieza se aplica al iniciar
-MAP01 y al cargar 0n. Conserva recetas aprendidas y objetos ya recogidos; no
-cambia el WAD. Ronnie sigue enseñando las dependencias de cada elección.
+0q conserva el recorrido hasta fase 75 y lo corrige: Rulo, Ronnie, Argento y
+Caella se reúnen dentro del recinto antes del primer ataque. Son sus mismas
+instancias, con perfiles, armaduras y ataques nativos. El Toro puede elegirlos
+como objetivo; un compañero caído queda fuera de combate hasta el reintento o
+la victoria. Si cae el jugador, se recupera el grupo completo. No hay fuego
+amigo ni muerte definitiva de residentes. Se habla con Rulo allí al ganar;
+tras cerrar y salir de su vista, los cuatro vuelven a sus dormitorios.
+
+El botín pasa de 313,6 kg en talle M a **12,5 kg de cuero utilizable** para el
+Toro de 900 kg. SYSTEMS documenta supuestos y fuente: 54 kg de piel fresca
+estimada, no medida, y merma de procesamiento. Ya no depende del talle ni de
+recetas. El cajón para guanteletes conserva su reserva, pero el Toro deja de
+cubrir un conjunto T1 completo a mínima eficiencia. Revisar esa cobertura en
+la auditoría final; no inflar otro recurso para ocultar el cambio.
+
+Argento conserva la etapa del Diario con textos propios en primera persona.
+Guardar antes/durante/después del encuentro conserva las instancias y el
+progreso. Un combate 0p incorpora el grupo sin reiniciar la salud del Toro.
+Una victoria 0p pendiente de devolución reúne a Rulo para el cierre. Una rama
+ya completada permanece completada; el cuero ya obtenido no se confisca.
 
 La base 0n aprobada incluye:
 
@@ -25,21 +42,19 @@ La base 0n aprobada incluye:
   96 kg en M. La corrección final del autor limita el abastecimiento a T1.
 - Toro colocado tras la puerta de plata y Argento como custodio de la llave.
   La entrega exige las preparaciones con los cuatro: las prácticas de Rulo
-  preceden al Toro. Botín preparado para un conjunto completo T1 de cualquier
-  familia, con presupuesto máximo calculado del conjunto pesado.
+  preceden al Toro. El presupuesto de cuero por recetas de 0n queda sustituido
+  por el rendimiento basado en masa de 0q.
 - Palomo corre visible por quince puntos, abre las puertas libres necesarias
   y sube por ambas escaleras hasta la habitación del segundo piso. No se
   teletransporta ni desaparece; continúa desde su punto al cargar.
 - Indicación compartida neutral sobre la pared marcada y diálogos de recursos
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-**Límite narrativo:** la preparación de arma sigue llegando a fase 60. El
-entrenamiento jugable de Rulo aún no emite las banderas necesarias para la
-llave: no se habilita el Toro antes de tiempo. Su entrega/botín se verificaron
-con las precondiciones preparadas en un ensayo privado. Falta conectar las
-lecciones de supervivencia de Ronnie, entrenamiento y devolución ante Rulo,
-Palomo final, Caja, El Loco y salida. Estar físicamente arriba no habilita aún
-el diálogo final de Palomo.
+**Límite narrativo:** Rulo llega a fase 75. Palomo ya está arriba, pero su
+conversación final, la Caja, El Loco y la salida siguen pendientes. La nueva
+bandera de Palomo prepara ese enlace y no entrega recompensas anticipadas.
+Las lecciones adicionales de supervivencia de Ronnie siguen planificadas como
+ampliación del tutorial: no bloquean retroactivamente el avance solicitado.
 
 Se conservan WAD, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -106,11 +121,11 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | Orden | Bloque | Alcance restante / criterio de cierre |
 | --- | --- | --- |
 | 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
-| 1 | 4.33.0o: retiro del manual exterior | Corrección puntual sobre 0n; verificar ausencia del manual. La llave y el botín siguen preparados para conectar Rulo. |
-| 2 | Completar enseñanza de supervivencia de Ronnie | Reparación real, alimento/agua, Aire y paso de agua seguro; integrar los objetivos antes de habilitar Rulo. Fijar valores tutoriales pendientes sin cambiar el balance general. |
-| 3 | Rulo y Toro, fases 70–75 | Implementar entrenamiento y resolución; conectar las cuatro prácticas con la llave de Argento y el Toro ya colocado. Flechas disponibles; resolver cartuchos/virotes para las demás armas. |
-| 4 | Palomo final, fase 80 | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
-| 5 | El Loco y salida, fases 90–100 | Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
+| 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
+| 2 | 4.33.0p y corrección 0q: Rulo/Toro | Resto de 0p aprobado. 0q corrige cuero, voz de Argento y combate con los cuatro residentes; pendiente comprobación del autor. |
+| 3 | **Siguiente bloque: Palomo final, fase 80** | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
+| 4 | El Loco y salida, fases 90–100 | Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
+| 5 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones previstas de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
 | 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
@@ -221,14 +236,61 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0n y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0p y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0o.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0q.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
+
+## Validación de 4.33.0q
+
+- 146 comprobaciones aprobadas en GZDoom 4.14.2: 36 de la rama/reintento,
+  37 del grupo, 7 de USDF/Usar y 66 de migración/guardados.
+- Los cuatro infligen daño nativo al Toro; éste ataca compañeros y puede
+  dejarlos agachados. El reintento restaura los cuatro y una baja causada por
+  un compañero acredita victoria al jugador. Fuego amigo rechazado.
+- Usar real: orientación de Argento en primera persona, entrega de llave y
+  devolución a Rulo dentro del recinto. Capturas inspeccionadas en español.
+- Guardado nativo 0p en combate: conserva daño del Toro, prácticas, munición
+  propia/prestada, ItemId, consumo del cajón y 38 estaciones; incorpora el grupo.
+- Guardado 0q: conserva un aliado caído y las referencias del grupo; permite
+  reintentar, vencer, cerrar y volver a cargar con 12.500 unidades de cuero.
+- Guardado 0p completado: conserva su cuero anterior y las cuatro instancias
+  en casa. También se ensaya la precondición de victoria pendiente sin Toro.
+- Las pruebas usan una copia privada, precondiciones de misión preparadas y
+  daño/temporizadores controlados para los límites; el ensayo de participación
+  deja actuar a la IA y registra impactos reales. No sustituye el balance del
+  autor ni afirma haber completado una partida normal de principio a fin.
+
+Guardados anteriores ya completados conservan el botín que habían producido:
+la nueva cantidad se aplica a victorias todavía pendientes, sin retirar cuero
+propio ni rellenar el cajón. El WAD mantiene la misma huella de 0p.
+La comodidad y dificultad final requieren la prueba del autor con su personaje.
+
+## Validación de 4.33.0p — resto aprobado por el autor
+
+- GZDoom 4.14.2: carga completa, 36 comprobaciones de la rama/recinto/reintento;
+  116 comprobaciones con las 36 opciones iniciales y acciones nativas.
+  La reposición de munición se comprueba sin gastar la reserva propia ni curar.
+- Uso/USDF reales: inicio de Rulo, páginas de prácticas, llave de Argento y
+  devolución final. Detalle se verifica con F y capturas del motor.
+- Guardado nativo de 0n: conserva etapa, fabricación pausada, gasto del cajón y
+  38 estaciones. Sobre esa partida se prueba el enlace a la nueva rama.
+- Guardado en combate: conserva daño del Toro, seis prácticas, propietario del
+  encuentro, ItemId y munición gastada. Derrota y reinicio funcionan tras cargar.
+- Guardado en fase 75: conserva sólo la munición propia, arma inicial y una
+  única cantidad de cuero. El Toro disipado no reaparece.
+- El WAD conserva SHA-256
+  `c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c`.
+  No se redistribuyen motor, IWAD, PK3, guardados ni fixtures de ensayo.
+
+Los ensayos preparan precondiciones y aceleran temporizadores en copias privadas;
+validan transiciones y acciones del motor, no sustituyen la partida del autor.
+El autor confirmó el resto de sus pruebas; las tres observaciones se atienden
+en 0q. El epílogo sigue pendiente. No se declara MAP01 terminado.
 
 ## Validación de 4.33.0o
 

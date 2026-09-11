@@ -30,6 +30,8 @@ class CaelumSilentDetectionPuff : BulletPuff
 class CaelumActorProjectile : Actor
 {
     bool CaelumAttackPrepared;
+    bool MainM00ChargedPractice;
+    bool MainM00MobilePractice;
     bool CaelumCriticalHit;
     bool CaelumAttackAccuracySucceeded;
     bool CaelumMagicalAttack;
@@ -152,6 +154,10 @@ class CaelumActorProjectile : Actor
 
     override int SpecialMissileHit(Actor victim)
     {
+        let ally = CaelumAnchoredResident(Target);
+        if (ally != null && ally.RuloPartyMode != 0
+            && (victim == ally.RuloPartyTraveler
+                || CaelumMainM00RuloTrial.IsPartyMember(victim, ally.RuloPartyTraveler))) return MHIT_PASS;
         CaelumPlayer playerVictim = CaelumPlayer(victim);
         if (playerVictim != null
             && playerVictim.CombatBlockModeActive

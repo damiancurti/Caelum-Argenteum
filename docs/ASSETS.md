@@ -1,6 +1,23 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0o — 2026-09-11.
+Versión documental: 4.33.0q — 2026-09-11.
+
+## Reutilización en 4.33.0q
+
+Los cuatro residentes conservan sus actores, sprites, escala, animaciones de
+ataque y sonidos. La caída temporal en la prueba reutiliza CrouchIdle y las
+poses agachadas entregadas por el autor; la recuperación vuelve a Spawn/See.
+El cuero usa CaelumMaterialPickup y su icono actual. No se crean ni sustituyen
+assets; el WAD y las 38 estaciones siguen iguales. Resto de 0p aprobado.
+
+## Reutilización en 4.33.0p
+
+El blanco de Rulo reutiliza CaelumTrainingDummy y su sprite CDMY, radio 21 y
+altura 72; se coloca en (-290,480,0), debajo del dormitorio del personaje.
+El Toro reutiliza BULL y sus fotogramas de preparación/cornada/muerte; se
+extiende la anticipación y se añade desvanecimiento al cadáver. No hay dibujos,
+modelos, texturas, poses ni audio nuevos. Los diálogos mantienen el arpa nativa
+y los avisos usan la interfaz ya existente. No se distribuyen assets en el delta.
 
 ## Revisión 4.33.0o
 

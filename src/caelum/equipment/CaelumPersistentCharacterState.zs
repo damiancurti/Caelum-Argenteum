@@ -45,6 +45,16 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00RuneSequenceIndex;
     int MainM00RuneErrors;
     double MainM00AnimaAfterCast;
+    // 0p: progreso y préstamo de munición viajan con el personaje.
+    double MainM00PracticeLastAir;
+    double MainM00PracticeLowestAir;
+    Vector3 MainM00PracticeLastPosition;
+    double MainM00PracticeSideDistance;
+    int MainM00AmmoLoanType;
+    int MainM00AmmoLoanRemaining;
+    int MainM00BullFailures;
+    bool MainM00BullResetPending;
+
     int MainM00PreviousWeaponId;
     int MainM00PreviousSealId;
     // La elección, el préstamo y el stock no viven en el NPC/cofre recreable.

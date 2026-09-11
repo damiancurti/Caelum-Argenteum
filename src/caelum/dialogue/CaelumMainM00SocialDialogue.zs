@@ -68,7 +68,9 @@ class CaelumMainM00SocialDialogue : Object play
         for (int f = CaelumConstants.MAIN_M00_FLAG_COMBAT_PRIMARY_USED;
             f <= CaelumConstants.MAIN_M00_FLAG_COMBAT_CHARGED_USED; f++)
             if (!r.HasMainM00Flag(f)) return false;
-        return r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_STARTED);
+        return r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_STARTED)
+            && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMBAT_AIR_SPENT)
+            && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMBAT_AIR_RECOVERED);
     }
 
     static bool GiveSilverKey(CaelumPlayer user)
@@ -81,13 +83,6 @@ class CaelumMainM00SocialDialogue : Object play
             let key = keeper.FindInventory("CaelumSilverKey");
             if (key == null || !user.PrepareNativeKeyPickup(CaelumWeightedKey(key))) return false;
             key.DetachFromOwner(); key.AttachToOwner(user);
-        }
-        let controller = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
-        if (controller != null && controller.TrialBull != null)
-        {
-            controller.TrialBull.LeatherBudgetUnits = CaelumM00Bull.GetArmorLeatherBudget(user);
-            controller.TrialBull.TrialReleased = true;
-            controller.TrialBull.bShootable = true;
         }
         user.OnNativeInventoryChanged();
         Sync(user); return true;
@@ -150,6 +145,7 @@ class CaelumMainM00SocialDialogue : Object play
         Sync(user);
         CaelumMainM00MagicTrial.Sync(user);
         CaelumMainM00RonnieTrial.Sync(user);
+        CaelumMainM00RuloTrial.Sync(user);
         if (user.StaffCastPending) { user.CancelPendingStaffCast(false); }
         user.EquipmentMenuOpen = false;
         user.CloseCraftingStationSession();
@@ -270,6 +266,18 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         return Super.MenuEvent(mkey, fromcontroller);
     }
 
+    static ui String GetArgentoGuidanceKey(CaelumPlayer user)
+    {
+        String key = CaelumJournalOverlay.GetQuestDetailStageKey(user, CaelumConstants.QUEST_MAIN_M00_THE_FOOL);
+        // El Diario habla al jugador desde fuera; Argento habla en primera persona.
+        if (key == "CA_Q_DETAIL_M01_ARGENTO") return "CA_M01_ARGENTO_NEXT_BEGIN";
+        if (key == "CA_Q_DETAIL_M01_RESIDENTS") return "CA_M01_ARGENTO_NEXT_RESIDENTS";
+        if (key == "CA_Q_DETAIL_M01_RETURN_ARGENTO") return "CA_M01_ARGENTO_NEXT_RETURN";
+        if (key == "CA_M01_RULO_DETAIL_KEY") return "CA_M01_ARGENTO_NEXT_KEY";
+        if (key == "CA_M01_RULO_DETAIL_DOOR") return "CA_M01_KEY_GIVEN";
+        return key;
+    }
+
     override void FormatSpeakerMessage()
     {
         String text = StringTable.Localize(mCurNode.Dialogue);
@@ -278,8 +286,7 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         {
             if (mCurNode.UserData ~== "argento_next")
             {
-                text = StringTable.Localize(CaelumJournalOverlay.GetQuestDetailStageKey(user,
-                    CaelumConstants.QUEST_MAIN_M00_THE_FOOL), false);
+                text = StringTable.Localize(GetArgentoGuidanceKey(user), false);
             }
             text.Replace("%COUNT%", String.Format("%d", user.MainM00ConvincedCountSnapshot));
             text.Replace("%RULO_CHANCE%", String.Format("%d", user.MainM00SocialChanceSnapshot[0]));
