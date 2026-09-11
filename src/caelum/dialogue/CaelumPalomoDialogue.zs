@@ -23,6 +23,7 @@ class CaelumPalomoDialogueMarker : Inventory abstract
 }
 
 class CaelumMagicBoxOwnershipToken : CaelumPalomoDialogueMarker {}
+class CaelumMainM00MagicBoxGrantedToken : CaelumPalomoDialogueMarker {}
 class CaelumPalomoDiscountGrantedToken : CaelumPalomoDialogueMarker {}
 class CaelumPalomoEloquenceEligibleToken : CaelumPalomoDialogueMarker {}
 class CaelumMainM00PalomoMetToken : CaelumPalomoDialogueMarker {}
@@ -60,6 +61,50 @@ class CaelumPalomoAcceptAdventureAction : CaelumPalomoDialogueAction
         if (caelumPlayer == null) { return false; }
         caelumPlayer.GrantMagicBoxFromPalomo(false);
         return caelumPlayer.MagicBoxOwned;
+    }
+}
+
+// El diálogo USDF es una vista; volver atrás o repetir GiveItem nunca vuelve
+// a premiar al personaje. La autoridad está en su registro y en el Inventory.
+class CaelumMainM00PalomoFinal : Object play
+{
+    static bool AcceptMagicBox(CaelumPlayer user)
+    {
+        if (user == null || user.player == null || user.health <= 0
+            || !user.CharacterCreationComplete || user.CreationWizardOpen
+            || level.MapName != "MAP01" || (user.player.cheats & CF_PREDICTING)) return false;
+        let palomo = CaelumPalomo(user.player.ConversationNPC);
+        if (palomo == null || !palomo.NarrativeRevealRequired || !palomo.DepartureDone
+            || !palomo.bInConversation || Abs(palomo.Pos.Z-user.Pos.Z) > 48
+            || user.Distance2D(palomo) > CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
+            || !user.CheckSight(palomo)) return false;
+        let record = user.GetPersistentCharacterState(true);
+        if (record == null) return false;
+        if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED))
+        {
+            user.SyncLiveMagicBoxOwnershipFromPersistentState();
+            user.SyncPalomoDialogueTokens();
+            return record.MagicBoxOwned && CaelumMagicBox.EnsureOwned(user) != null;
+        }
+        if (!record.CanReceiveMainM00MagicBox()) return false;
+        // Una Caja heredada de pruebas conserva identidad, contenido y peso.
+        user.GrantMagicBoxFromPalomo(false);
+        if (!user.MagicBoxOwned || CaelumMagicBox.EnsureOwned(user) == null
+            || !record.RecordMainM00MagicBoxGranted()) return false;
+        user.SyncPalomoDialogueTokens();
+        user.RefreshSocialJournalSnapshot();
+        user.RefreshCarriedInventorySummary();
+        user.RefreshFormalInventorySnapshot();
+        user.PersistCharacterState();
+        return true;
+    }
+}
+
+class CaelumMainM00AcceptMagicBoxAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00PalomoFinal.AcceptMagicBox(CaelumPlayer(Owner));
     }
 }
 
@@ -214,6 +259,15 @@ class CaelumPalomoConversationMenu : ConversationMenu
 {
     override void FormatSpeakerMessage()
     {
+        if (mCurNode.UserData ~== "palomo_upstairs_wait")
+        {
+            let user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
+            String text = StringTable.Localize(mCurNode.Dialogue);
+            if (user != null) text = text .. "\n\n" .. StringTable.Localize(
+                CaelumJournalOverlay.GetQuestDetailStageKey(user, CaelumConstants.QUEST_MAIN_M00_THE_FOOL), false);
+            mDialogueLines = displayFont.BreakLines(text, SpeechWidth);
+            return;
+        }
         if (!(mCurNode.UserData ~== "palomo_discount_confirm"))
         {
             Super.FormatSpeakerMessage();

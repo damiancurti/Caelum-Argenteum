@@ -918,6 +918,7 @@ class CaelumPlayer : DoomPlayer
         }
         persistentState.EnsureMagicBoxOwnershipInitialized();
         MagicBoxOwned = persistentState.MagicBoxOwned;
+        if (MagicBoxOwned) CaelumMagicBox.EnsureOwned(self);
     }
 
     // Un perfil sin la recompensa nunca puede conservar banderas de contenido
@@ -945,6 +946,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureMagicBoxOwnershipInitialized();
+        SyncLiveMagicBoxOwnershipFromPersistentState();
         if (MagicBoxOwned)
         {
             return false;
@@ -956,6 +958,12 @@ class CaelumPlayer : DoomPlayer
         }
 
         MagicBoxOwned = true;
+        if (CaelumMagicBox.EnsureOwned(self) == null)
+        {
+            MagicBoxOwned = false;
+            persistentState.MagicBoxOwned = false;
+            return false;
+        }
         RefreshSocialJournalSnapshot();
         ApplyCharacterProfile();
         RefreshCarriedInventorySummary();
@@ -1022,6 +1030,9 @@ class CaelumPlayer : DoomPlayer
         SetPalomoDialogueToken(
             "CaelumMagicBoxOwnershipToken", MagicBoxOwned
         );
+        SetPalomoDialogueToken("CaelumMainM00MagicBoxGrantedToken",
+            persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED)
+                && MagicBoxOwned);
         SetPalomoDialogueToken(
             "CaelumPalomoDiscountGrantedToken",
             PalomoMerchantDiscountGranted
@@ -1166,7 +1177,7 @@ class CaelumPlayer : DoomPlayer
 
     bool OpenPalomoDialogue(Actor speaker)
     {
-        if (CreationWizardOpen || speaker == null || health <= 0)
+        if (CreationWizardOpen || !CharacterCreationComplete || speaker == null || health <= 0)
         {
             return false;
         }
@@ -1178,6 +1189,20 @@ class CaelumPlayer : DoomPlayer
             ))
         {
             return false;
+        }
+        let palomo = CaelumPalomo(speaker);
+        if (palomo == null || player == null || speaker.bInConversation) return false;
+        if (palomo.NarrativeRevealRequired && (Abs(palomo.Pos.Z-Pos.Z) > 48
+            || Distance2D(palomo) > CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
+            || !CheckSight(palomo))) return false;
+        int conversationId = CaelumConstants.PALOMO_CONVERSATION_ID;
+        if (palomo.NarrativeRevealRequired && palomo.IsNarrativeFoyerComplete())
+        {
+            if (!palomo.DepartureDone) return false;
+            bool finalStage = persistentState.CanReceiveMainM00MagicBox()
+                || persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED);
+            conversationId = finalStage ? CaelumConstants.MAIN_M00_PALOMO_FINAL_CONVERSATION_ID
+                : CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID;
         }
         SyncPalomoDialogueTokens();
         if (StaffCastPending) { CancelPendingStaffCast(false); }
@@ -1191,7 +1216,7 @@ class CaelumPlayer : DoomPlayer
         Level.ExecuteSpecial(
             CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
             speaker, null, false,
-            0, CaelumConstants.PALOMO_CONVERSATION_ID
+            0, conversationId
         );
         if (!speaker.HasConversation()) { return false; }
         if (!speaker.StartConversation(self, true, true)) { return false; }
@@ -1851,7 +1876,8 @@ class CaelumPlayer : DoomPlayer
         {
             CaelumEquipmentItem collision =
                 FindOtherNativeEquipmentItemById(item.ItemId, item);
-            if (collision == null)
+            if (collision == null && (!persistentState.MagicBoxOwned
+                || item.ItemId != persistentState.MagicBoxItemId))
             {
                 persistentState.ObserveEquipmentItemId(item.ItemId);
                 return item.ItemId;

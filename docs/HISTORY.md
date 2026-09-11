@@ -1,6 +1,24 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0r — 2026-09-11.
+Versión documental: 4.33.0s — 2026-09-11.
+
+## Palomo final y Caja — 4.33.0s, 2026-09-11
+
+El autor aprobó todas las pruebas de 0r y pidió el siguiente parche. Se conecta
+el diálogo final del Palomo existente en el segundo piso y la entrega de una
+Caja única, de fase 75 a 80, siguiendo el bloque inmediato de PROJECT.
+Incluye las preguntas opcionales de la especificación, aceptación/reapertura,
+instrucciones de almacenamiento y orientación hacia la cueva bajo la mansión.
+
+La propiedad anterior de la Caja era un booleano con almacenamiento funcional;
+se añade la instancia nativa con ItemId/Owner sin duplicar los 10 kg ni perder
+contenido legado. Guardados y acciones repetidas mantienen una sola Caja.
+El Diario deja de mandar a buscar a Palomo después de recibirla. Los idiomas
+español/inglés se actualizan juntos. La captura de El Loco y salida permanecen
+como el siguiente bloque, sin adelantar la misión ni recompensar Tarot.
+
+README y los cinco docs se sincronizan. Entrega: sólo archivos nuevos o
+modificados para copiar y un TXT de pruebas, sin instalador ni cambios al WAD.
 
 ## Supervivencia y cierre de Rulo — 4.33.0r, 2026-09-11
 

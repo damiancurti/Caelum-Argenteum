@@ -1,8 +1,30 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0r — 2026-09-11.
+Versión documental: 4.33.0s — 2026-09-11.
 
 
-REVISIÓN VIGENTE 4.33.0r — RESIDENTES, LIDERAZGO Y EL LOCO
+REVISIÓN VIGENTE 4.33.0s — PALOMO FINAL Y CAJA, FASE 80
+Base: 0r. Todas sus pruebas fueron aprobadas por el autor.
+Se habilita la charla final en el Palomo que ya llegó físicamente al segundo
+piso. Las cuatro ramas deben estar cerradas; hablar antes sólo orienta sobre
+la etapa actual. El diálogo conserva las preguntas y metáforas de 22.1/22.2.
+
+Sólo aceptar la Caja avanza 75 -> 80 y fija MAGIC_BOX_GRANTED. Preguntar o
+cerrar antes no concede nada; reabrir después ofrece uso y ruta hacia la cueva.
+La Caja tiene una instancia nativa única con ItemId/Owner y reutiliza el
+almacenamiento/peso vigente. Migrar una propiedad anterior no duplica los
+10 kg ni vacía su contenido. No se cambia el arma inicial ni su identidad.
+
+Detalle explica Inventario (Tab), C para guardar/retirar y la ruta del pasaje
+descubierto con Caella, pared atravesable, ascensor y cueva. Los objetos
+equipados, prestados y reservados conservan sus restricciones. Palomo indica
+llevar la Caja allí sin anunciar una esencia que todavía no se ha manifestado.
+
+LÍMITE JUGABLE: termina en fase 80 con la Caja. El Loco, su captura/recompensa
+y la salida son el siguiente bloque. No hay una aparición capturable en 0s.
+La cueva sigue como su lugar canónico, Z=-384; seleccionar el punto exacto
+al implementar el actor, sin bloquear ascensor, cajón o vetas.
+
+REGISTRO 4.33.0r — RESIDENTES, LIDERAZGO Y EL LOCO
 Base: 0q. El autor completó el Toro y aprobó el resto de las pruebas.
 Caella y Argento quedaban vivos pero con INCOMBAT tras sus disparos, bloqueando
 StartConversation. Se limpia al terminar el intento y al cargar guardados.
@@ -1267,10 +1289,14 @@ FASE 70 — RULO_COMBAT
 
 FASE 80 — PALOMO_FINAL
 
-- Hacer aparecer a Palomo en el segundo piso.
+- Hablar con la misma instancia de Palomo que subió al segundo piso.
 - Ejecutar conversación final sin revelar la naturaleza del lugar.
 - Entregar la Caja Mágica exactamente una vez.
 - Transferir el equipo inicial autorizado al interior de la Caja.
+
+Estado 0s: diálogo y entrega implementados. La transferencia automática del
+equipo inicial todavía forma parte del cierre pendiente; puede guardarse
+manualmente si está desequipado y cumple las reglas de almacenamiento.
 
 FASE 90 — CAPTURE_THE_FOOL
 
@@ -2068,8 +2094,9 @@ al lado.”
 
 Desde 0n, Palomo llega al segundo piso corriendo por su ruta visible de quince
 puntos, con colisión, puertas y escaleras nativas. Allí espera. Al habilitarse
-la etapa final se conectará su conversación sobre esa misma instancia; no se
-lo reaparece, oculta ni teletransporta. Este diálogo final aún está pendiente.
+la etapa final, 0s abre la conversación sobre esa misma instancia; no se
+lo reaparece, oculta ni teletransporta. El diálogo y la entrega de 22.2 ya
+están implementados. Durante el recorrido no se lo detiene con esta charla.
 
 PALOMO:
 “Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
@@ -2095,7 +2122,9 @@ PALOMO:
 “En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas
 ambiciosas.”
 
-JUGADOR: “La voz volvió a hablarme.”
+JUGADOR: “¿Y la voz que escuché?”
+
+(0s: la formulación no presupone una segunda intervención aún no implementada.)
 
 PALOMO:
 “Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado
@@ -2148,7 +2177,9 @@ Funciones generales confirmadas:
 - Puede capturar esencias del Tarot.
 - Puede abrir el retorno desde el Limbo.
 
-Funciones mínimas requeridas para MAP01:
+En 0s ya funcionan propiedad, identidad, almacenamiento, peso y restricciones.
+Las siguientes funciones de captura/retorno todavía deben implementarse para
+cerrar MAP01:
 
 CaptureTarotEssence(EssenceActor, TarotCardId)
 StorePreservedItem(ItemId)
@@ -2165,7 +2196,7 @@ Decisión del autor incorporada en 0r: después de recibir la Caja, manifestar
 CA_TheFoolEssence en CA_M01_FOOL_ESSENCE_SPOT, dentro de la cámara principal
 de la cueva bajo la mansión, en el nivel Z=-384. Elegir el punto exacto al
 implementar el actor, con suelo libre y sin tapar el ascensor, el cajón o las
-vetas. Su captura todavía no está implementada en 0r.
+vetas. Su captura todavía no está implementada en 0s.
 
 Tras entregar la Caja, Palomo debe indicar volver al pasaje descubierto con
 Caella y bajar en el ascensor hasta la cueva. El Diario/Detalle repite esa ruta

@@ -1,34 +1,39 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0r — 2026-09-11.
+Versión documental: 4.33.0s — 2026-09-11.
 
-## Estado actual: 4.33.0r
+## Estado actual: 4.33.0s
 
-**Base:** carpeta completa 0q. El autor completó el Toro y aprobó todas las
-demás pruebas. Caella y Argento dejaron de responder después del encuentro.
-Reproducción: ambos siguen vivos y recuperados, pero el flag nativo INCOMBAT
-permanece después de sus ataques a distancia; StartConversation los rechaza.
+**Base:** carpeta completa 0r. El autor confirmó correctas todas sus pruebas.
+Se implementa el siguiente bloque acordado: Palomo final y Caja, fase 75 a 80.
+Palomo usa la misma instancia que ya llegó arriba por las escaleras. No se
+cambia la ruta, la visibilidad, las estaciones ni la supervivencia aceptada.
 
-0r limpia ese estado al terminar y en guardados anteriores. Los cuatro
-residentes narrativos tienen BUDDHA nativo en MAP01: el daño letal los deja en
-1 de salud y fuera de combate hasta el reintento o la victoria. Una protección
-adicional intercepta daño forzado. Si un guardado conserva una instancia
-muerta, se recupera esa misma instancia, su altura y su interacción. No se
-repite el Toro ni se modifican el progreso o el cuero obtenido.
+Tras cerrar Argento, Caella, Ronnie y Rulo, hablar con Palomo en el segundo
+piso abre su diálogo final. Conserva las metáforas y las preguntas opcionales
+de MAP01.txt. Sólo aceptar explícitamente concede la Caja y cambia de etapa.
+Salir antes permite retomarlo. Volver después ofrece ayuda de almacenamiento
+y la ruta hacia la cueva. Una visita temprana orienta según la etapa actual.
 
-El cierre y Detalle de Rulo reconocen la fuerza innata del protagonista y su
-capacidad para reunir y liderar a los cuatro. La finalidad narrativa del
-encuentro incluye cuidar a quienes lo acompañan. No cambia sus atributos.
+La Caja tiene un Inventory nativo único, propietario e ItemId persistente,
+con el almacenamiento existente. Sus 10 kg se cuentan una sola vez. Los
+personajes que ya la poseían conservan contenido/peso al migrar; la entrega
+narrativa sigue pendiente hasta aceptar la conversación. La repetición no
+duplica objetos ni identidad. Los objetos equipados, prestados o reservados
+mantienen las restricciones anteriores. El arma inicial conserva su ItemId.
 
-El Loco queda fijado en la cueva bajo la mansión, accesible por el pasaje de
-Caella y el ascensor. Su manifestación tras recibir la Caja, captura y salida
-siguen perteneciendo al siguiente bloque; no se añade una aparición sin una
-interacción completa ni se entrega anticipadamente la carta.
+El Diario y Detalle registran la adquisición y el uso de C en Inventario.
+Argento toma esa etapa actual. Palomo aparece como ubicado arriba desde la
+fase 75. La Caja no inicia comercio ni resuelve automáticamente El Loco.
 
-Se conservan las cuatro instancias, formación, reintento y regreso a casa de
-0q; también el botín de 12,5 kg y el cajón de guanteletes. Ese botín no garantiza
-una armadura T1 completa a mínima eficiencia; la auditoría final de recursos
-continúa pendiente. No se confiscan materiales de victorias anteriores.
+**Límite de 0s:** fase 80. El Loco se manifestará en la cueva bajo la mansión,
+accesible por el pasaje descubierto con Caella y el ascensor. Palomo da esa
+ruta; la aparición/captura, recompensa de Tarot y salida son el próximo bloque.
+No buscar una esencia capturable en 0s ni declarar terminado MAP01.
+
+Se conservan el grupo con Buddha de 0r, los diálogos de liderazgo/fuerza innata,
+los 12,5 kg de cuero y el cajón de guanteletes. La cobertura T1 completa y la
+auditoría final del tutorial siguen pendientes, sin agregar bloqueos nuevos.
 
 La base 0n aprobada incluye:
 
@@ -51,11 +56,8 @@ La base 0n aprobada incluye:
 - Indicación compartida neutral sobre la pared marcada y diálogos de recursos
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-**Límite narrativo:** Rulo llega a fase 75. Palomo ya está arriba, pero su
-conversación final, la Caja, El Loco y la salida siguen pendientes. La nueva
-bandera de Palomo prepara ese enlace y no entrega recompensas anticipadas.
-Las lecciones adicionales de supervivencia de Ronnie siguen planificadas como
-ampliación del tutorial: no bloquean retroactivamente el avance solicitado.
+Las lecciones adicionales de supervivencia de Ronnie siguen planificadas
+como ampliación del tutorial; no bloquean retroactivamente las ramas aceptadas.
 
 Se conservan WAD, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -123,9 +125,9 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | --- | --- | --- |
 | 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
 | 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
-| 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Validación del autor de 0r pendiente. |
-| 3 | **Siguiente bloque: Palomo final, fase 80** | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
-| 4 | El Loco en la cueva y salida, fases 90–100 | Manifestación en la cueva bajo la mansión tras recibir la Caja; indicaciones de acceso en diálogo/Detalle. Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
+| 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Todas las pruebas de 0r aprobadas por el autor. |
+| 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única implementados sobre la misma instancia. Pendiente aceptación del autor. |
+| 4 | **Siguiente bloque: El Loco en la cueva y salida, fases 90–100** | Manifestación en la cueva bajo la mansión tras recibir la Caja; indicaciones de acceso en diálogo/Detalle. Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
 | 5 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones previstas de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
 | 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
@@ -237,16 +239,48 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0q y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0r y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0r.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0s.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0r
+## Validación de 4.33.0s
+
+- 130 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2: 61 del
+  diálogo/recompensa/almacenamiento, 17 al recargar un guardado 0s y 26 por
+  cada variante de guardado 0r (sin Caja y con propiedad anterior).
+- Usar y USDF nativos recorren las trece páginas nuevas: visita temprana,
+  preguntas opcionales, volver atrás, cerrar antes de aceptar, aceptar y
+  reabrir después. Cada requisito de misión ausente rechaza la recompensa;
+  también se rechaza abrir desde otro piso o fuera de alcance.
+- La aceptación avanza 75 a 80, concede una sola instancia con Owner/ItemId
+  y suma 10 kg una vez. La acción repetida conserva identidad, etapa y peso.
+  El almacenamiento y retiro de una pila personal de 5 kg conserva cantidad,
+  slots y reducción de peso. La Caja no consume un slot de su contenido.
+- Se crean guardados nativos con fuente 0r y se cargan con fuente 0s en la
+  misma ruta. Se preservan el Palomo original, la primera arma (ItemId 1),
+  su contenido y la etapa. La Caja recibe ItemId 2 una sola vez. En la
+  variante ya propietaria, cargar y aceptar conservan la carga de 12,2 kg;
+  en la variante sin Caja, la entrega cambia de 6,2 a 16,2 kg.
+- Recargar el guardado 0s conserva Caja, contenido, propietario y fase 80;
+  Palomo abre la ayuda posterior a la entrega. Captura y salida siguen sin
+  premiarse y la misión permanece activa.
+- El validador del proyecto pasa: versión/README, cinco docs, 74 archivos de
+  audio, 12 modelos de estación y 24 claves de Caella en español. Las 27
+  claves nuevas tienen versiones en español e inglés. MAP01.wad conserva
+  SHA256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+
+Los escenarios preparan las etapas y sitúan la instancia original de Palomo
+en su destino, con la ruta terminada. Usar, las páginas USDF, almacenamiento
+y guardados sí se ejecutan en el motor. No se repite el recorrido de escaleras
+ya aceptado ni una partida completa; la inspección visual y la aceptación
+del autor de 0s quedan pendientes en PRUEBAS_4_33_0s.txt.
+
+## Validación de 4.33.0r — aprobada por el autor
 
 - GZDoom 4.14.2 reproduce el bloqueo de 0q: Argento y Caella conservan toda
   su salud, pero INCOMBAT=1 hace fallar StartConversation. Rulo/Ronnie responden.
@@ -267,8 +301,8 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
 
 Son escenarios controlados con precondiciones de misión y daño preparado;
 Usar, USDF y guardados sí pasan por el motor. No sustituyen la partida del
-usuario ni una inspección visual del encuentro. Prueba del autor pendiente:
-cargar su guardado afectado, hablar con los cuatro y repetir una vez el Toro.
+usuario ni una inspección visual del encuentro. El autor confirmó correctas
+todas las pruebas de 0r y pidió proseguir con el siguiente bloque.
 Un actor ya destruido no puede repararse a partir de una instancia inexistente;
 los residentes base dejan cuerpos persistentes y la variante probada se recupera.
 

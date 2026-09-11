@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0r — 2026-09-11.
+Versión documental: 4.33.0s — 2026-09-11.
+
+## Reutilización en 4.33.0s
+
+0r aceptado por el autor. Palomo conserva sprites, escala, estados y recorrido.
+El nuevo diálogo usa ConversationMenu/USDF, LANGUAGE en español e inglés y el
+arpa nativa existente al abrir/avanzar. La entrega reutiliza el sonido de pickup.
+La Caja conserva la interfaz/icono actual; su nueva instancia de identidad es
+invisible en el mundo y no añade una fila ni un dibujo duplicados. No hay
+sprites, modelos, música o texturas nuevos; MAP01.wad permanece idéntico.
+La representación de El Loco en la cueva sigue con el bloque de captura.
 
 ## Reutilización en 4.33.0r
 

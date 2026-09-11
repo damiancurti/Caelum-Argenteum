@@ -2585,3 +2585,63 @@ CA_M01_ARGENTO_NEXT_RESIDENTS = "Conseguí la ayuda de Rulo, Ronnie y Caella. Si
 CA_M01_ARGENTO_NEXT_RETURN = "Los tres aceptaron colaborar. Contame cómo te fue para que terminemos esta prueba.";
 CA_M01_ARGENTO_NEXT_KEY = "Ya completaste las prácticas. Yo tengo la llave de plata: preguntame por la puerta cerrada y te la doy. Los cuatro vamos a acompañarte contra el Toro.";
 CA_M01_RULO_PARTY_JOINED = "Los cuatro compañeros ya están con vos. Preparáte para continuar el combate.";
+
+// 4.33.0s: Palomo final y entrega persistente de la Caja.
+
+[enu default]
+CA_M01_PALOMO_FINAL = "Curious. Each of them showed you the path they knew, and you had the courtesy not to mistake any one of them for the whole road.";
+CA_M01_PALOMO_FAVOR_ASK = "What now?";
+CA_M01_PALOMO_IDEA_ASK = "Was all of this your idea?";
+CA_M01_PALOMO_IDEA = "It would be vain to claim credit for a house, four wills and a particularly ill-tempered Bull. Let us say I made a few introductions.";
+CA_M01_PALOMO_EXIT_ASK = "Why can they not leave?";
+CA_M01_PALOMO_EXIT = "Perhaps because they still call a door an exit. Perhaps because the house is fickle. If you find a less uncomfortable answer, do share it.";
+CA_M01_PALOMO_WHERE_ASK = "Will you tell me where we are now?";
+CA_M01_PALOMO_WHERE = "On the second floor. I warned you that architecture would not help with ambitious questions.";
+CA_M01_PALOMO_VOICE_ASK = "And the voice I heard?";
+CA_M01_PALOMO_VOICE = "Hallucinations hate being ignored. The more useful they seem, the more careful you should be with them.";
+CA_M01_PALOMO_OFFER = "I am going to ask you a favor. Look after this box while I attend to matters less convenient to carry.";
+CA_M01_PALOMO_ACCEPT = "I will look after it. [Receive the Magic Box]";
+CA_M01_PALOMO_MAGIC_ASK = "What is magical about it?";
+CA_M01_PALOMO_MAGIC = "Mostly the name. Box was too short, and Immeasurable Relic attracts thieves.";
+CA_M01_PALOMO_CONTENTS_ASK = "What does it contain?";
+CA_M01_PALOMO_CONTENTS = "Space. An amount surprisingly difficult to store.";
+CA_M01_PALOMO_WHY_ASK = "Why are you giving it to me?";
+CA_M01_PALOMO_WHY = "Because you found things you need to carry, and because I found someone who still asks before obeying.";
+CA_M01_PALOMO_RECEIVED = "It is in your care now. Do not judge what it can hold by the space it seems to occupy. The house should already have taught you to distrust such proportions.";
+CA_M01_PALOMO_USE_ASK = "How do I store my belongings?";
+CA_M01_PALOMO_USE = "The Box weighs ten kilograms; its contents weigh less when stored. Its space has a limit.\n\nOpen inventory with Tab, select an item and press C to store or retrieve it. Unequip it first if necessary. Loans and materials reserved for the trials stay outside. The Box itself stays with you.";
+CA_M01_PALOMO_CAVE_ASK = "Where should I take it?";
+CA_M01_PALOMO_CAVE = "Sometimes it helps to return to a place carrying something different. The cave beneath this mansion, for example.\n\nReturn to the passage you discovered with Caella, behind the wall you could walk through. The lift takes you down to the cave. Bring the Box; space tends to recognize its relatives.";
+CA_M01_PALOMO_WAIT = "There are still a few introductions to finish. I would not want a box to make you forget the people.";
+CA_M01_PALOMO_BACK = "Back.";
+CA_M01_PALOMO_DETAIL_BOX = "Palomo gave you the Magic Box. It weighs 10 kg and stores contents at reduced weight according to its capacity. In Inventory (Tab), select an item and press C to store or retrieve it; unequip it first if needed.\n\nPalomo suggested bringing it to the cave beneath the mansion. Use the passage discovered with Caella: walk through the rear wall and take the lift down. You can speak with him again on the second floor to review its use and the route.";
+CA_M01_STATE_BOX_RECEIVED = "The Magic Box is yours";
+
+[es]
+CA_M01_PALOMO_FINAL = "Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no confundir ninguno con el camino completo.";
+CA_M01_PALOMO_FAVOR_ASK = "¿Y ahora?";
+CA_M01_PALOMO_IDEA_ASK = "¿Todo esto fue idea suya?";
+CA_M01_PALOMO_IDEA = "Sería vanidoso adjudicarme una casa, cuatro voluntades y un Toro particularmente malhumorado. Digamos que hice algunas presentaciones.";
+CA_M01_PALOMO_EXIT_ASK = "¿Por qué ellos no pueden salir?";
+CA_M01_PALOMO_EXIT = "Tal vez porque todavía llaman salida a una puerta. Tal vez porque la casa es caprichosa. Si encuentra una respuesta menos incómoda, compártala.";
+CA_M01_PALOMO_WHERE_ASK = "¿Ahora me va a decir dónde estamos?";
+CA_M01_PALOMO_WHERE = "En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas ambiciosas.";
+CA_M01_PALOMO_VOICE_ASK = "¿Y la voz que escuché?";
+CA_M01_PALOMO_VOICE = "Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado conviene tenerles.";
+CA_M01_PALOMO_OFFER = "Voy a pedirle un favor. Cuide esta caja mientras atiendo asuntos menos cómodos de transportar.";
+CA_M01_PALOMO_ACCEPT = "Voy a cuidarla. [Recibir la Caja Mágica]";
+CA_M01_PALOMO_MAGIC_ASK = "¿Qué tiene de mágica?";
+CA_M01_PALOMO_MAGIC = "Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable atrae ladrones.";
+CA_M01_PALOMO_CONTENTS_ASK = "¿Qué contiene?";
+CA_M01_PALOMO_CONTENTS = "Espacio. Una cantidad sorprendentemente difícil de guardar.";
+CA_M01_PALOMO_WHY_ASK = "¿Por qué me la entrega?";
+CA_M01_PALOMO_WHY = "Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien que todavía pregunta antes de obedecer.";
+CA_M01_PALOMO_RECEIVED = "Ahora está a su cuidado. No juzgue lo que puede guardar por lo que parece ocupar. La casa ya debería haberle enseñado a desconfiar de esas proporciones.";
+CA_M01_PALOMO_USE_ASK = "¿Cómo guardo mis cosas?";
+CA_M01_PALOMO_USE = "La Caja pesa diez kilos; el contenido pesa menos al guardarlo. Su espacio tiene un límite.\n\nAbra el inventario con Tab, elija un objeto y pulse C para guardarlo o retirarlo. Si lo tiene equipado, desequípelo primero. Los préstamos y materiales reservados para las pruebas permanecen fuera. La propia Caja permanece con usted.";
+CA_M01_PALOMO_CAVE_ASK = "¿Adónde debería llevarla?";
+CA_M01_PALOMO_CAVE = "A veces conviene volver a un sitio llevando algo distinto. La cueva bajo esta mansión, por ejemplo.\n\nVuelva al pasaje que descubrió con Caella, detrás de la pared que pudo atravesar. El ascensor lo lleva hasta la cueva. Lleve la Caja; el espacio suele reconocer a sus parientes.";
+CA_M01_PALOMO_WAIT = "Todavía quedan algunas presentaciones por terminar. No quisiera que una caja le hiciera olvidar a las personas.";
+CA_M01_PALOMO_BACK = "Volver.";
+CA_M01_PALOMO_DETAIL_BOX = "Palomo te entregó la Caja Mágica. Pesa 10 kg y permite guardar contenido con peso reducido según su capacidad. En Inventario (Tab), seleccioná un objeto y pulsá C para guardarlo o retirarlo; desequipalo primero si hace falta.\n\nPalomo sugirió llevarla a la cueva bajo la mansión. Se llega por el pasaje descubierto con Caella: atravesá la pared del fondo y bajá con el ascensor. Podés volver a hablar con él en el segundo piso para repasar su uso y esa ruta.";
+CA_M01_STATE_BOX_RECEIVED = "La Caja Mágica está en tu poder";

@@ -103,6 +103,7 @@ class CaelumJournalOverlay : EventHandler
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
             return "CA_Q_DETAIL_GENERIC";
         int stage = localPlayer.JournalQuestStage[questId];
+        if (stage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED) return "CA_M01_PALOMO_DETAIL_BOX";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE) return "CA_M01_RULO_DETAIL_DONE";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
             return localPlayer.MainM00BullDefeatedSnapshot ? "CA_M01_RULO_DETAIL_RETURN"
@@ -302,7 +303,7 @@ class CaelumJournalOverlay : EventHandler
         if (questStage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)
             return "CA_Q_M01_STATE_CAPTURE_THE_FOOL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
-            return "CA_Q_M01_STATE_PALOMO_FINAL";
+            return "CA_M01_STATE_BOX_RECEIVED";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
             return "CA_Q_M01_STATE_PALOMO_FINAL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)

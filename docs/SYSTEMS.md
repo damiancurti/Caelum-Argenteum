@@ -1,6 +1,40 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0r — 2026-09-11.
+Versión documental: 4.33.0s — 2026-09-11.
+
+## Palomo final y Caja única (4.33.0s)
+
+La conversación final usa USDF 43316; una visita temprana arriba usa 43317.
+Se anexan páginas para conservar los índices de los diálogos guardados.
+DepartureDone habilita hablar con la misma instancia, sin moverla. La entrega
+exige MAP01, jugador vivo/creado, conversación activa con Palomo, rango/altura/
+visibilidad y registro activo en fase 75 con las cuatro ramas cerradas.
+
+Sólo CaelumMainM00AcceptMagicBoxAction confirma la recompensa narrativa.
+CanReceiveMainM00MagicBox valida los requisitos; RecordMainM00MagicBoxGranted
+avanza 75 -> 80 y fija la bandera 39 tras confirmar propiedad e identidad.
+Preguntar, volver atrás o cerrar no concede nada. Un segundo intento conserva
+la Caja y la etapa. Los tokens USDF reflejan el registro, no lo sustituyen.
+
+CaelumMagicBox es un Inventory nativo sin entrada duplicada en la lista; la
+interfaz existente de la Caja sigue siendo su presentación. Tiene ItemId y
+Owner, MaxAmount/InterHubAmount 1, UNDROPPABLE y UNCLEARABLE. No entra en los
+catálogos de venta ni en las clases de contenido almacenable. El peso sigue
+sumándose sólo en CalculateMagicBoxTotalWeight: 10 kg más el peso reducido
+global del contenido, con divisor/redondeo vigentes. No agrega otro slot.
+
+EnsureOwned recupera la instancia si falta y asigna identidad a la propiedad
+antigua sin duplicar contenidos. Usa el contador de IDs existente y protege
+la identidad de la Caja frente a equipo importado con el mismo número. No
+adelanta una misión por poseer una Caja heredada: hay que aceptar ante Palomo.
+La Caja viaja con Inventory; la captura de esencias y retorno entre mundos
+siguen pendientes. No se implementan aún poderes ni bonificaciones de Tarot.
+
+En Inventario, C guarda/retira el objeto seleccionado. Se conservan límites
+de slots/carga y restricciones de equipo puesto, préstamos, reservas de misión
+y crafting. La entrega permite al jugador reorganizar su contenido aunque
+los 10 kg iniciales aumenten temporalmente su carga. El texto da instrucciones
+y la ruta del pasaje/ascensor/cueva; no afirma que haya aparecido una esencia.
 
 ## Residentes esenciales y diálogo poscombate (4.33.0r)
 
@@ -27,8 +61,8 @@ monstruos al reparar. Un actor ya destruido no es una instancia recuperable.
 
 Rulo reconoce liderazgo y fuerza innata en victoria, repetición y Detalle.
 No hay bonificación estadística nueva ni exposición del secreto del Limbo.
-El Loco se manifestará en la cueva tras la entrega de la Caja; la propiedad,
-captura única y bonificación de Arcano Mayor siguen en el bloque pendiente.
+El Loco se manifestará en la cueva tras la entrega de la Caja; el registro de
+cartas, captura única y bonificación de Arcano Mayor siguen en el bloque pendiente.
 
 ## Combate acompañado y rendimiento del Toro (4.33.0q)
 
@@ -770,15 +804,17 @@ cada moneda exista como pickup visible en el mundo.
 V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
 cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
 comenzar. Las revisiones V4.32 usaron a Palomo para validar el regalo; esa ruta
-era un entorno de prueba y V4.33.0b la retira del diálogo canónico. La Caja se
-entregará al final de MAP01, después de las cuatro ramas. La prueba anterior
+era un entorno de prueba y V4.33.0b la retira del diálogo canónico. V4.33.0s
+implementa la entrega después de las cuatro ramas, al aceptar ante Palomo en
+el segundo piso; avanza de fase 75 a 80. La prueba anterior
 también confirmó que la salida normal conserva la Caja; `map MAP02` crea un
 personaje nuevo y no constituye un viaje del personaje.
 
 ### 1. Naturaleza y peso propio
 
-La Caja Mágica es una capacidad persistente del personaje una vez recibida. No
-existe como objeto seleccionable: no puede soltarse, venderse, destruirse ni
+La Caja Mágica tiene una instancia Inventory con propietario e ItemId desde
+0s; su contenido y peso siguen centralizados en el personaje. No añade una
+entrada seleccionable a la lista: no puede soltarse, venderse, destruirse ni
 guardarse dentro de sí misma. Antes de recibirla no aporta peso, no ofrece
 slots y ninguna ruta de pickup, crafting o interfaz puede guardar objetos en
 ella. Al recibirla, su estructura aporta **10,000 kg** a la carga incluso
@@ -851,23 +887,25 @@ causa explícita y no cambia el objeto.
 
 - Un perfil nuevo se marca explícitamente como no propietario.
 - El primer encuentro canónico con Palomo no concede la Caja ni abre comercio.
-- La entrega queda reservada a `MAIN_M00_STATE_BOX_RECEIVED`, tras completar la
-  rama de combate y encontrar a Palomo en el segundo piso.
-- Cuando se conecte esa fase, el regalo añadirá sus 10 kg, habilitará los slots
-  y sólo podrá ejecutarse una vez mediante `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`.
+- Aceptar ante Palomo, tras cerrar las cuatro ramas en fase 75, avanza a
+  `MAIN_M00_STATE_BOX_RECEIVED`. Las preguntas y el cierre no entregan nada.
+- El regalo añade sus 10 kg y habilita los slots una sola vez mediante
+  `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`; una Caja heredada conserva su peso.
 - `CaelumPersistentCharacterState` es la fuente persistente de propiedad. Se
   guarda en `PreTravelled` y se restaura en `Travelled`; el campo vivo y el
   marcador técnico se sincronizan desde ese registro.
-- La propiedad es independiente de la ubicación física futura de Palomo.
+- La propiedad es independiente de la ubicación física de Palomo.
 - Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
   la migración. Esto evita perder acceso a contenido que ya estaba guardado.
 - Una partida intermedia malformada que no posea la recompensa pero contenga
   banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
   se elimina ningún objeto.
 
-### 7. Integración con el registro de misión V4.33.0b
+### 7. Integración con el registro de misión
 
-`GrantMagicBoxFromPalomo()` deja de alterar el registro de misión por sí sola.
+`GrantMagicBoxFromPalomo()` no altera el registro de misión por sí sola.
+En 0s, AcceptMagicBox valida la conversación y RecordMainM00MagicBoxGranted
+confirma fase/bandera después de comprobar propiedad e identidad.
 La misión canónica **Donde despiertan los perdidos** comienza al despertar y
 su primer objetivo es buscar ayuda. Poseer una Caja de una partida anterior no
 salta la Voz, la presentación de Palomo ni la orientación hacia Argento.
@@ -878,10 +916,11 @@ slots, peso y reducción. Esto permite probar el nuevo prólogo sin destruir
 inventario de desarrollo y mantiene a los personajes nuevos en la progresión
 canónica sin Caja.
 
-El resolvedor de ubicación mantiene a Palomo oculto antes de la Voz, lo muestra
-en el recibidor durante el encuentro, vuelve a ocultarlo al orientar hacia
-Argento y reserva el segundo piso para la futura fase de entrega. La coordenada
-y el traslado físico final todavía deben añadirse al mapa.
+Palomo permanece oculto antes de la Voz y se revela en el recibidor. Desde
+0n recorre visiblemente las escaleras después del diálogo inicial; se conserva
+esa misma instancia arriba. El resolvedor del Diario lo indica en el segundo
+piso desde fase 75. En 0s puede hablar allí: orienta si faltan pruebas, ofrece
+la Caja al cerrarlas y ayuda a utilizarla después de recibirla.
 
 La prueba válida es cruzar el `Exit` del mapa o usar `changemap MAP02`. El
 comando `map MAP02` comienza una partida nueva, crea otro jugador y debe mostrar

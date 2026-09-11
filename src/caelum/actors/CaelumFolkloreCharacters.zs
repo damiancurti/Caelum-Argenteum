@@ -343,7 +343,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
     override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
     {
-        if (NarrativeRevealRequired && IsNarrativeFoyerComplete()) return false;
+        if (NarrativeRevealRequired && IsNarrativeFoyerComplete() && !DepartureDone) return false;
         return caelumPlayer.OpenPalomoDialogue(self);
     }
 

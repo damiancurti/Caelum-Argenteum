@@ -227,16 +227,16 @@ class CaelumConstants : Object
     // Balance provisional de los tres personajes folclóricos. El radio de
     // Palomo pertenece sólo al entorno de prueba y puede ajustarse aquí.
     const PALOMO_TEST_WANDER_RADIUS = 192.0;
-    // args[0] = 1 fija al comerciante en el punto narrativo actual. Una etapa
-    // de misión posterior podrá recrearlo o trasladarlo sin cambiar su estado.
+    // args[0] = 1 marca al Palomo narrativo: la ruta y el diálogo final
+    // reutilizan la misma instancia; no se recrea para conceder la Caja.
     const PALOMO_MERCHANT_ANCHORED = 1;
     const PALOMO_MERCHANT_SESSION_DISTANCE = 160.0;
     // El residente anclado tolera empujes menores. A partir de 100 MU
     // regresa a velocidad de carrera a su punto de aparición original.
     const PALOMO_MERCHANT_RETURN_DISTANCE = 100.0;
     // args[0] = 1 convierte a Argento, Caella, Rulo o Ronnie en residentes
-    // narrativos: siguen siendo tangibles, pero no combaten y regresan al
-    // punto exacto del mapa cuando un empujón los aleja 100 MU.
+    // narrativos: tangibles y protegidos. Fuera de la prueba del Toro regresan
+    // a su punto del mapa cuando un empujón los aleja 100 MU.
     const STORY_NPC_ANCHORED = 1;
     const STORY_NPC_RETURN_DISTANCE = 100.0;
     const STORY_NPC_HOME_TOLERANCE = 1.0;
@@ -255,6 +255,8 @@ class CaelumConstants : Object
     // la asigna sólo durante la interacción para que Actor.Used conserve el
     // control del flanco físico de Use entre aperturas.
     const PALOMO_CONVERSATION_ID = 43200;
+    const MAIN_M00_PALOMO_FINAL_CONVERSATION_ID = 43316;
+    const MAIN_M00_PALOMO_WAIT_CONVERSATION_ID = 43317;
     const GZDOOM_THING_SET_CONVERSATION_SPECIAL = 79;
     const PALOMO_DIALOGUE_DIFFICULTY = 50;
     // El requisito es estricto: nivel 50 todavía no revela la opción.

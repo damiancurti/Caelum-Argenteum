@@ -9,6 +9,8 @@ class CaelumPersistentCharacterState : Inventory
     // migracion; los personajes nuevos quedan marcados explicitamente sin ella.
     int MagicBoxOwnershipVersion;
     bool MagicBoxOwned;
+    // Identidad estable de la Caja, separada de los objetos que contiene.
+    int MagicBoxItemId;
     // El primer comercio es persistente por personaje. Así Palomo puede ser
     // recolocado por una etapa de misión sin restablecer stock ni dinero y el
     // servidor conserva una autoridad independiente para cada jugador.
@@ -211,6 +213,7 @@ class CaelumPersistentCharacterState : Inventory
     {
         MagicBoxOwnershipVersion = 1;
         MagicBoxOwned = false;
+        MagicBoxItemId = 0;
     }
 
     void EnsureMagicBoxOwnershipInitialized()
@@ -826,10 +829,32 @@ class CaelumPersistentCharacterState : Inventory
         return true;
     }
 
-    // Única fuente de ubicación narrativa. Antes de la Voz, Palomo permanece
-    // oculto; ocupa el recibidor durante la fase 20 y vuelve a quedar fuera de
-    // vista después de orientar hacia Argento. La fase final ya puede resolver
-    // el segundo piso, aunque su traslado físico llegará en otro parche.
+    bool CanReceiveMainM00MagicBox()
+    {
+        EnsureQuestStateInitialized();
+        return QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                == CaelumConstants.QUEST_STATE_ACTIVE
+            && QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                == CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE)
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE)
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_COMPLETE)
+            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_UPSTAIRS_ENABLED)
+            && !HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED);
+    }
+
+    bool RecordMainM00MagicBoxGranted()
+    {
+        if (!MagicBoxOwned || MagicBoxItemId <= 0 || !CanReceiveMainM00MagicBox()) return false;
+        if (!TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE,
+            CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)) return false;
+        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED);
+        return true;
+    }
+
+    // Ubicación para el Diario; el actor recorre las escaleras físicamente.
+    // Al cerrar Rulo ya hay que buscarlo arriba, antes de recibir la Caja.
     int ResolvePalomoPlacement()
     {
         EnsureQuestStateInitialized();
@@ -841,7 +866,7 @@ class CaelumPersistentCharacterState : Inventory
             return CaelumConstants.PALOMO_PLACEMENT_HIDDEN;
         }
         if (QuestStage[questId]
-            >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
+                >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
         {
             return CaelumConstants.PALOMO_PLACEMENT_MANSION_UPSTAIRS;
         }

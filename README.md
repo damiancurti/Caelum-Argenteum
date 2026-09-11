@@ -5,14 +5,25 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0r.** Apply over the complete **4.33.0q** project.
-Documentation reviewed: 2026-09-11. This patch fixes residents refusing dialogue
-after the Bull fight and protects all four story residents with native Buddha.
-Rulo now recognizes the protagonist's innate strength and leadership.
-The author accepted the remaining 0q checks. The roadmap and validation record
-are in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0s.** Apply over the complete **4.33.0r** project.
+Documentation reviewed: 2026-09-11. The author accepted every 0r check.
+This patch adds Palomo's final upstairs conversation and the one-time Magic
+Box reward, advancing the story from phase 75 to 80. The roadmap and validation
+record are in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- Palomo's original actor speaks on the second floor after all four trials.
+  His final dialogue keeps the author's mysterious tone, optional questions,
+  and explicit acceptance of the Magic Box. Leaving before acceptance gives
+  no reward; reopening after acceptance offers storage help and cave directions.
+- The Box now has one native Inventory instance, an owner and a stable ItemId.
+  Existing storage/weight rules remain authoritative: 10 kg for the Box plus
+  reduced content weight. It cannot be dropped, sold or stored inside itself.
+  Old owned Boxes migrate without a second weight charge or lost contents.
+- Quest Detail and Argento's guidance reflect phase 80. Palomo remains upstairs,
+  and its location is correctly listed already at phase 75. An early upstairs
+  visit gives current-stage guidance and cannot award the Box.
 
 - The Bull party uses the four original residents. Lethal damage leaves them
   resting at 1 Health until the attempt ends. Victory/retry restores them.
@@ -68,7 +79,7 @@ are in [PROJECT.md](docs/PROJECT.md).
   its existing primary reach instead of zero.
 - Palomo remains visible and solid during his fifteen-waypoint departure to
   the second floor, using stairs, doors and normal movement. Save/load resumes
-  the route. His final conversation and Magic Box reward remain pending.
+  the route. His final conversation and unique Magic Box reward are now playable.
 - The first crafted weapon goes to personal inventory without requiring the
   Magic Box. Its ItemId is preserved; extra crafted weapons and mission
   material quantities are removed on leaving MAP01. Quest Detail tracks
@@ -103,11 +114,11 @@ are in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: the final Palomo encounter and one Magic Box, then The Fool in the
-mansion's underground cave and the narrative exit. The cave location is now
-canonical; the essence's manifestation/capture still belongs to that next block.
-Rulo's phase 75 points toward Palomo upstairs; his final conversation is still
-pending. Ronnie's additional survival lessons (food, water and a real repair)
+Next: manifest and capture The Fool in the mansion's underground cave,
+then implement the narrative exit. Phase 80 now ends with the Box acquired;
+the cave directions prepare that next block. There is no apparition to capture
+in this patch, and the mission is not marked complete.
+Ronnie's additional survival lessons (food, water and a real repair)
 remain a tutorial expansion, without a new gate on the accepted starter branch.
 Arrow crafting is available; cartridge/bolt recipes remain planned, while
 Rulo now supplies the ammunition needed by those starter weapons in his trial.
@@ -122,18 +133,18 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-The author completed the Bull encounter and accepted all other 0q checks.
-Native 4.14.2 reproduced the dialogue rejection on living Argento/Caella and
-verifies the correction. Follow PRUEBAS_4_33_0r.txt on the affected save and on
-one new Bull attempt: all four must survive and speak again. See PROJECT.md
-for the exact automated coverage. Palomo's epilogue is not playable yet.
+All 0r checks were accepted by the author. The supplied PRUEBAS_4_33_0s.txt
+covers the upstairs conversation, optional questions, accepting once, storage,
+and saving/reloading. The engine evidence is recorded in PROJECT.md; the
+author's gameplay validation of 0s remains pending. Tarot capture and exit
+are outside this patch's playable scope.
 
 ## Build and run
 
-Close GZDoom. Extract the 0r patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0q** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0s patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0r** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0r.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0s.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

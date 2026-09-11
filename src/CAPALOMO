@@ -2434,3 +2434,119 @@ conversation
         choice { text = "$CA_M01_SUPPLY_DEPOSIT"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00ReturnSupplies"; }
     }
 }
+
+// 4.33.0s: anexado para conservar los índices de páginas anteriores.
+conversation
+{
+    id = 43316;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "palomo_final"; userstring = "palomo_final";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_FINAL";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        ifitem { item = "CaelumMainM00MagicBoxGrantedToken"; amount = 1; }
+        link = "palomo_box_received";
+        choice { text = "$CA_M01_PALOMO_FAVOR_ASK"; nextpage = "palomo_box_offer"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_IDEA_ASK"; nextpage = "palomo_final_idea"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_EXIT_ASK"; nextpage = "palomo_final_exit"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_WHERE_ASK"; nextpage = "palomo_final_where"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_VOICE_ASK"; nextpage = "palomo_final_voice"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_final_idea"; userstring = "palomo_final_idea";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_IDEA";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_final"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_final_exit"; userstring = "palomo_final_exit";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_EXIT";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_final"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_final_where"; userstring = "palomo_final_where";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WHERE";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_final"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_final_voice"; userstring = "palomo_final_voice";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_VOICE";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_final"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_offer"; userstring = "palomo_box_offer";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_OFFER";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        ifitem { item = "CaelumMainM00MagicBoxGrantedToken"; amount = 1; }
+        link = "palomo_box_received";
+        choice { text = "$CA_M01_PALOMO_ACCEPT"; nextpage = "palomo_box_received"; closedialog = false; giveitem = "CaelumMainM00AcceptMagicBoxAction"; }
+        choice { text = "$CA_M01_PALOMO_MAGIC_ASK"; nextpage = "palomo_box_magic"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_CONTENTS_ASK"; nextpage = "palomo_box_contents"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_WHY_ASK"; nextpage = "palomo_box_why"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_final"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_magic"; userstring = "palomo_box_magic";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_MAGIC";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_contents"; userstring = "palomo_box_contents";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_CONTENTS";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_why"; userstring = "palomo_box_why";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WHY";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_received"; userstring = "palomo_box_received";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_RECEIVED";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_box_use"; closedialog = false; }
+        choice { text = "$CA_M01_PALOMO_CAVE_ASK"; nextpage = "palomo_box_cave"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_use"; userstring = "palomo_box_use";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_USE";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_received"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_box_cave"; userstring = "palomo_box_cave";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_CAVE";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_received"; closedialog = false; }
+    }
+}
+
+conversation
+{
+    id = 43317;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "palomo_upstairs_wait"; userstring = "palomo_upstairs_wait";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WAIT";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+    }
+}

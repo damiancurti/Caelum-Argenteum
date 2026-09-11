@@ -1,3 +1,54 @@
+// La Caja ya tiene almacenamiento y peso centralizados en el jugador. Este
+// Inventory representa identidad/propietario, sin sumar otra vez sus 10 kg.
+class CaelumMagicBox : Inventory
+{
+    int ItemId;
+
+    Default
+    {
+        Inventory.Amount 1;
+        Inventory.MaxAmount 1;
+        Inventory.InterHubAmount 1;
+        +INVENTORY.UNDROPPABLE
+        +INVENTORY.UNCLEARABLE
+        -INVENTORY.INVBAR
+    }
+
+    States
+    {
+    Spawn:
+        TNT1 A -1;
+        Stop;
+    }
+
+    override Inventory CreateTossable(int tossAmount) { return null; }
+    override bool TryPickup(in out Actor toucher) { return false; }
+
+    static CaelumMagicBox EnsureOwned(CaelumPlayer user)
+    {
+        if (user == null) return null;
+        let record = user.GetPersistentCharacterState(true);
+        if (record == null || !record.MagicBoxOwned) return null;
+        let box = CaelumMagicBox(user.FindInventory("CaelumMagicBox"));
+        if (box != null && record.MagicBoxItemId > 0 && box.ItemId == record.MagicBoxItemId)
+            return box;
+        if (box == null)
+        {
+            box = CaelumMagicBox(Actor.Spawn("CaelumMagicBox", user.Pos, NO_REPLACE));
+            if (box == null) return null;
+            box.AttachToOwner(user);
+        }
+        // Migrar una Caja anterior sin tocar el contenido ni sus ItemId.
+        user.EnsureAllEquipmentItemIds();
+        if (record.MagicBoxItemId <= 0)
+            record.MagicBoxItemId = record.AllocateEquipmentItemId();
+        record.ObserveEquipmentItemId(record.MagicBoxItemId);
+        box.ItemId = record.MagicBoxItemId;
+        box.Amount = 1;
+        return box;
+    }
+}
+
 // Materiales y objetos clave usan Inventory nativo. La categoria se conserva
 // en la clase y la ubicacion en la instancia, igual que el resto del sistema.
 class CaelumSpecialInventoryItem : Inventory
