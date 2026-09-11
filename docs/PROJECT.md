@@ -1,33 +1,34 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0q — 2026-09-11.
+Versión documental: 4.33.0r — 2026-09-11.
 
-## Estado actual: 4.33.0q
+## Estado actual: 4.33.0r
 
-**Base:** carpeta completa 0p. El autor aprobó las demás pruebas y señaló tres
-correcciones: exceso de cuero, Argento refiriéndose a sí mismo como otro NPC y
-la necesidad de combatir acompañado por los cuatro residentes.
+**Base:** carpeta completa 0q. El autor completó el Toro y aprobó todas las
+demás pruebas. Caella y Argento dejaron de responder después del encuentro.
+Reproducción: ambos siguen vivos y recuperados, pero el flag nativo INCOMBAT
+permanece después de sus ataques a distancia; StartConversation los rechaza.
 
-0q conserva el recorrido hasta fase 75 y lo corrige: Rulo, Ronnie, Argento y
-Caella se reúnen dentro del recinto antes del primer ataque. Son sus mismas
-instancias, con perfiles, armaduras y ataques nativos. El Toro puede elegirlos
-como objetivo; un compañero caído queda fuera de combate hasta el reintento o
-la victoria. Si cae el jugador, se recupera el grupo completo. No hay fuego
-amigo ni muerte definitiva de residentes. Se habla con Rulo allí al ganar;
-tras cerrar y salir de su vista, los cuatro vuelven a sus dormitorios.
+0r limpia ese estado al terminar y en guardados anteriores. Los cuatro
+residentes narrativos tienen BUDDHA nativo en MAP01: el daño letal los deja en
+1 de salud y fuera de combate hasta el reintento o la victoria. Una protección
+adicional intercepta daño forzado. Si un guardado conserva una instancia
+muerta, se recupera esa misma instancia, su altura y su interacción. No se
+repite el Toro ni se modifican el progreso o el cuero obtenido.
 
-El botín pasa de 313,6 kg en talle M a **12,5 kg de cuero utilizable** para el
-Toro de 900 kg. SYSTEMS documenta supuestos y fuente: 54 kg de piel fresca
-estimada, no medida, y merma de procesamiento. Ya no depende del talle ni de
-recetas. El cajón para guanteletes conserva su reserva, pero el Toro deja de
-cubrir un conjunto T1 completo a mínima eficiencia. Revisar esa cobertura en
-la auditoría final; no inflar otro recurso para ocultar el cambio.
+El cierre y Detalle de Rulo reconocen la fuerza innata del protagonista y su
+capacidad para reunir y liderar a los cuatro. La finalidad narrativa del
+encuentro incluye cuidar a quienes lo acompañan. No cambia sus atributos.
 
-Argento conserva la etapa del Diario con textos propios en primera persona.
-Guardar antes/durante/después del encuentro conserva las instancias y el
-progreso. Un combate 0p incorpora el grupo sin reiniciar la salud del Toro.
-Una victoria 0p pendiente de devolución reúne a Rulo para el cierre. Una rama
-ya completada permanece completada; el cuero ya obtenido no se confisca.
+El Loco queda fijado en la cueva bajo la mansión, accesible por el pasaje de
+Caella y el ascensor. Su manifestación tras recibir la Caja, captura y salida
+siguen perteneciendo al siguiente bloque; no se añade una aparición sin una
+interacción completa ni se entrega anticipadamente la carta.
+
+Se conservan las cuatro instancias, formación, reintento y regreso a casa de
+0q; también el botín de 12,5 kg y el cajón de guanteletes. Ese botín no garantiza
+una armadura T1 completa a mínima eficiencia; la auditoría final de recursos
+continúa pendiente. No se confiscan materiales de victorias anteriores.
 
 La base 0n aprobada incluye:
 
@@ -122,9 +123,9 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | --- | --- | --- |
 | 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
 | 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
-| 2 | 4.33.0p y corrección 0q: Rulo/Toro | Resto de 0p aprobado. 0q corrige cuero, voz de Argento y combate con los cuatro residentes; pendiente comprobación del autor. |
+| 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Validación del autor de 0r pendiente. |
 | 3 | **Siguiente bloque: Palomo final, fase 80** | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
-| 4 | El Loco y salida, fases 90–100 | Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
+| 4 | El Loco en la cueva y salida, fases 90–100 | Manifestación en la cueva bajo la mansión tras recibir la Caja; indicaciones de acceso en diálogo/Detalle. Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
 | 5 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones previstas de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
 | 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
@@ -236,16 +237,42 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0p y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0q y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0q.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0r.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0q
+## Validación de 4.33.0r
+
+- GZDoom 4.14.2 reproduce el bloqueo de 0q: Argento y Caella conservan toda
+  su salud, pero INCOMBAT=1 hace fallar StartConversation. Rulo/Ronnie responden.
+- 57 comprobaciones de protección/recuperación/USDF: daño letal normal y
+  forzado para los cuatro, 1 de vida, cero eventos de muerte, reparación de
+  cuerpo/altura sin alterar totales, ocho aperturas con Usar real y cierre
+  de Rulo desde el menú nativo hasta fase 75.
+- 32 comprobaciones al cargar un guardado nativo 0q en la misma ruta de juego:
+  Argento bloqueado por combate y Caella como cadáver real (salud -898840,
+  CORPSE/KILLED). Ambos se reparan; permanecen cuatro instancias, con altura
+  correcta, protección, ocho aperturas/cierres de diálogo y fase 75 conservada.
+- 32 comprobaciones al cargar el guardado 0r posterior al cierre: protección,
+  salud, cuatro residentes, etapa 75 y apertura/reapertura de sus diálogos.
+- El validador del proyecto pasa: README/versión, cinco docs, 74 archivos de
+  audio, 12 modelos de estación y 24 claves de Caella en español. El delta
+  cambia sólo LANGUAGE, CaelumAnchoredResident y documentación. MAP01.wad
+  mantiene SHA256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+
+Son escenarios controlados con precondiciones de misión y daño preparado;
+Usar, USDF y guardados sí pasan por el motor. No sustituyen la partida del
+usuario ni una inspección visual del encuentro. Prueba del autor pendiente:
+cargar su guardado afectado, hablar con los cuatro y repetir una vez el Toro.
+Un actor ya destruido no puede repararse a partir de una instancia inexistente;
+los residentes base dejan cuerpos persistentes y la variante probada se recupera.
+
+## Validación de 4.33.0q — resto aprobado por el autor
 
 - 146 comprobaciones aprobadas en GZDoom 4.14.2: 36 de la rama/reintento,
   37 del grupo, 7 de USDF/Usar y 66 de migración/guardados.
@@ -268,7 +295,8 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
 Guardados anteriores ya completados conservan el botín que habían producido:
 la nueva cantidad se aplica a victorias todavía pendientes, sin retirar cuero
 propio ni rellenar el cajón. El WAD mantiene la misma huella de 0p.
-La comodidad y dificultad final requieren la prueba del autor con su personaje.
+El autor aprobó las demás pruebas de 0q. La apertura poscombate con Argento y
+Caella no estaba cubierta: 0r reproduce y corrige esa omisión.
 
 ## Validación de 4.33.0p — resto aprobado por el autor
 

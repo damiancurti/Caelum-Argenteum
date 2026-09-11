@@ -1,6 +1,24 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0q — 2026-09-11.
+Versión documental: 4.33.0r — 2026-09-11.
+
+## Supervivencia y cierre de Rulo — 4.33.0r, 2026-09-11
+
+El autor terminó el Toro y aprobó las demás pruebas de 0q. Observó que Caella
+y Argento no hablaban y supuso que habían muerto. GZDoom 4.14.2 reprodujo el
+rechazo en ambos vivos, recuperados y con INCOMBAT persistente tras disparar.
+0r limpia ese estado y añade BUDDHA nativo para los cuatro residentes. Quedan
+en 1 de vida y descansan hasta terminar el intento; también se reparan flags
+de guardados y cuerpos existentes sin duplicar NPC, progreso o botín.
+
+Se sustituye el cierre anterior de Rulo: el encuentro demuestra fuerza innata
+y capacidad de reunir y liderar a los cuatro. Se fija la cueva de la mansión
+como lugar de manifestación de El Loco, después de recibir la Caja de Palomo.
+Ese epílogo sigue pendiente de implementación; no se presenta como jugable.
+
+Se corrige también el README entregado en 0q que todavía anunciaba 0p y la
+antigua garantía de una armadura T1 por el cuero del Toro. README y cinco docs
+quedan sincronizados; sólo archivos para copiar más el TXT, sin instalador.
 
 ## Correcciones de Rulo/Toro — 4.33.0q, 2026-09-11
 
@@ -21,7 +39,7 @@ sin nombrarse como un tercero. El motor y MAP01.wad permanecen iguales.
 
 Siguiente bloque: Palomo final y Caja Mágica; después El Loco y salida. La
 arquitectura de código sigue reservada a V5. Se actualizan README y cinco docs;
-delta sobre 0p más un TXT de pruebas, sin instalador. Prueba del autor de 0q pendiente.
+delta sobre 0p más un TXT de pruebas, sin instalador. Resto de 0q aprobado por el autor; bloqueo poscombate tratado en 0r.
 
 ## Prueba de Rulo — 4.33.0p, 2026-09-11
 

@@ -1,6 +1,34 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0q — 2026-09-11.
+Versión documental: 4.33.0r — 2026-09-11.
+
+## Residentes esenciales y diálogo poscombate (4.33.0r)
+
+En MAP01, los cuatro CaelumAnchoredResident con StoryAnchored activan el flag
+nativo BUDDHA antes de DamageMobj y al cargar. El motor limita el daño normal
+a 1 de salud antes de entrar en muerte. En la prueba, alcanzar ese mínimo
+activa CrouchIdle y retira temporalmente colisión, ataques y recepción de daño.
+Reintentar o ganar restaura recursos, armadura, postura e interacción. Die
+mantiene un respaldo para daño forzado/telefrag, que ignora BUDDHA nativo.
+Las instancias de diagnóstico sin anclaje conservan sus reglas normales.
+
+A_Chase puede dejar INCOMBAT tras un ataque de proyectil. StartConversation
+rechaza ese flag aunque el actor tenga toda su salud. Se limpia al salir del
+combate y en el estado de espera/casa, junto con Target/LastEnemy y los flags
+de ataque. No se interrumpe una conversación que aún pertenece a un jugador.
+Los guardados 0q recuperan la interacción sin repetir la prueba.
+
+Una instancia narrativa guardada con health <= 0, CORPSE o KILLED se repara
+mediante Revive y restauración de tamaño, recursos y protección; conserva
+identidad, coordenadas de casa, referencias y estado de misión. Si la prueba
+sigue activa, permanece fuera de combate con 1 de vida hasta terminarla.
+No respawnear copias, alterar botín, adelantar fases ni aumentar el total de
+monstruos al reparar. Un actor ya destruido no es una instancia recuperable.
+
+Rulo reconoce liderazgo y fuerza innata en victoria, repetición y Detalle.
+No hay bonificación estadística nueva ni exposición del secreto del Limbo.
+El Loco se manifestará en la cueva tras la entrega de la Caja; la propiedad,
+captura única y bonificación de Arcano Mayor siguen en el bloque pendiente.
 
 ## Combate acompañado y rendimiento del Toro (4.33.0q)
 

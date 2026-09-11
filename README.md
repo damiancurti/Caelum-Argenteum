@@ -5,14 +5,22 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0q.** Apply over the complete **4.33.0p** project.
-Documentation reviewed: 2026-09-11. This correction adds all four residents to
-the Bull encounter, fixes Argento's self-reference and bases leather loot on
-animal mass. The author accepted the other 0p gameplay checks. Validation of
-these corrections in the author's game remains pending.
-The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0r.** Apply over the complete **4.33.0q** project.
+Documentation reviewed: 2026-09-11. This patch fixes residents refusing dialogue
+after the Bull fight and protects all four story residents with native Buddha.
+Rulo now recognizes the protagonist's innate strength and leadership.
+The author accepted the remaining 0q checks. The roadmap and validation record
+are in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- The Bull party uses the four original residents. Lethal damage leaves them
+  resting at 1 Health until the attempt ends. Victory/retry restores them.
+  The native combat flag that blocked Argento/Caella dialogue is cleared after
+  combat, including existing saves. A surviving corpse instance from an old
+  save is repaired in place; progress and loot are preserved.
+- Rulo's victory, repeat dialogue and Quest Detail recognize innate strength
+  and the ability to unite and lead the group.
 
 - The obsolete processing manual outside MAP01 is retired. Ronnie continues
   to teach the selected weapon and its recipe dependencies.
@@ -28,7 +36,7 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
   components. The indoor second-floor room contains all twelve stations;
   all twelve form one row against the back wall. Bedroom stations occupy
   corners. Use checks height and visibility; saved tasks/reservations persist.
-- Argento follows the journal's current stage and speaks in the first person. All residents can
+- Argento shares the journal's current-stage guidance. All residents can
   explain the new resource and workshop locations.
 - The five characters have 280 supplied pose sprites and native states.
   Domingo uses crouch idle/walk art; seated/lying states prepare future furniture
@@ -48,16 +56,11 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
   requires all six checks. Entry starts the Bull fight and locks the room.
   A defeat restores Health/Air/Anima and restarts the same Bull, preserving
   progress and the first weapon. Victory opens the room and drops the finite
-  leather once; speaking with Rulo inside the arena completes phase 75.
-  Rulo, Ronnie, Argento and Caella join before the first attack, using their
-  existing actors, armor and attacks. The Bull can target them. Downed allies
-  recover on retry or victory; party attacks do not hurt the traveler or allies.
-  Residents return to their rooms once the trial is complete and out of view.
-  The 900 kg Bull now yields **12.5 kg of finished cow leather**, independent
-  of character size. This uses an explicit estimate of 54 kg fresh hide and a
-  documented processing mass balance. It replaces the old 313.6 kg size-M loot.
-  The chest still reserves 96 kg for size-M giant gauntlets; the Bull no longer
-  guarantees an entire T1 armor family at minimum crafting efficiency.
+  leather budget once; speaking with Rulo completes phase 75.
+  The 900 kg Bull yields 12.5 kg of usable leather, following the documented
+  hide/processing estimate. It no longer guarantees a complete T1 armor set
+  at minimum efficiency. The gauntlet chest remains; supply coverage will be
+  audited before tutorial closure. T2 workshop infrastructure stays.
 - Ranged trainees receive 24 borrowed rounds, replenished when exhausted in
   the arena. Unused rounds return at turn-in; pre-existing ammunition remains.
   Rulo restores the first weapon for practice. Javelin practice cannot yield
@@ -100,7 +103,9 @@ The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: the final Palomo encounter, Magic Box, The Fool and narrative exit.
+Next: the final Palomo encounter and one Magic Box, then The Fool in the
+mansion's underground cave and the narrative exit. The cave location is now
+canonical; the essence's manifestation/capture still belongs to that next block.
 Rulo's phase 75 points toward Palomo upstairs; his final conversation is still
 pending. Ronnie's additional survival lessons (food, water and a real repair)
 remain a tutorial expansion, without a new gate on the accepted starter branch.
@@ -117,18 +122,18 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-The author accepted 0p except excessive leather, Argento's self-reference and
-the solo encounter. Follow the supplied TXT to check the four companions,
-retry, dialogue, finite loot and save/load. Native engine checks and their
-limits are recorded in PROJECT.md. The next narrative block is Palomo's final
-conversation, followed by the Magic Box, The Fool and the MAP01 exit.
+The author completed the Bull encounter and accepted all other 0q checks.
+Native 4.14.2 reproduced the dialogue rejection on living Argento/Caella and
+verifies the correction. Follow PRUEBAS_4_33_0r.txt on the affected save and on
+one new Bull attempt: all four must survive and speak again. See PROJECT.md
+for the exact automated coverage. Palomo's epilogue is not playable yet.
 
 ## Build and run
 
-Close GZDoom. Extract the 0q patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0p** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0r patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0q** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0q.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0r.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

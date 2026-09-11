@@ -1,9 +1,31 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0q — 2026-09-11.
+Versión documental: 4.33.0r — 2026-09-11.
 
 
-REVISIÓN VIGENTE 4.33.0q — TORO CON LOS CUATRO RESIDENTES
-Prevalece sobre las variantes anteriores del combate y botín. Base: 0p.
+REVISIÓN VIGENTE 4.33.0r — RESIDENTES, LIDERAZGO Y EL LOCO
+Base: 0q. El autor completó el Toro y aprobó el resto de las pruebas.
+Caella y Argento quedaban vivos pero con INCOMBAT tras sus disparos, bloqueando
+StartConversation. Se limpia al terminar el intento y al cargar guardados.
+Los cuatro residentes tienen protección BUDDHA: mínimo 1 de salud, caída
+temporal y recuperación al finalizar. Una instancia muerta de un guardado se
+repara en el lugar, sin repetir Toro, botín ni misión. No crear dobles.
+
+Finalidad del encuentro: demostrar fuerza innata y capacidad del protagonista
+para reunir y liderar al grupo. Rulo lo reconoce en su victoria, conversación
+posterior y Detalle. La fuerza no nace del entrenamiento ni se concede como
+una nueva bonificación; el combate acompañado da sentido al esfuerzo previo
+por lograr la colaboración de los cuatro.
+
+El Loco se manifestará en la cueva bajo la mansión, después de recibir la Caja.
+La bajada será por el pasaje descubierto con Caella y su ascensor; Palomo y
+Detalle deberán orientar hacia allí. Esta localización es canónica, pero la
+manifestación, captura y salida aún pertenecen al siguiente bloque jugable.
+Rulo termina en fase 75; la entrega de la Caja y la captura no están añadidas
+por este parche. Se actualiza la especificación de 22.4 abajo.
+
+REGISTRO 4.33.0q — TORO CON LOS CUATRO RESIDENTES
+Prevaleció sobre las variantes anteriores; la protección y el cierre de 0r
+corrigen este registro. Base original: 0p.
 El autor aprobó el resto de las pruebas; 0q atiende sus tres observaciones.
 
 Los cuatro residentes existentes se reúnen dentro del recinto durante la
@@ -50,7 +72,8 @@ posiciones iniciales, recursos restaurados y 2 segundos para prepararse.
 Conserva prácticas y arma inicial; no hay recompensa, cuero ni muerte definitiva.
 Victoria: banderín BULL_DEFEATED, puerta abierta, cuero finito de 0n y disipación
 del Toro. RULO_COMPLETE y PALOMO_UPSTAIRS_ENABLED se fijan al hablar con Rulo y
-cerrar la prueba; no al morir el Toro. Su frase de victoria se conserva.
+cerrar la prueba; no al morir el Toro. La frase original de victoria quedó
+revisada en 0r para expresar liderazgo y fuerza innata.
 
 La fase 75 orienta hacia Palomo arriba, pero su conversación final/Caja,
 El Loco y la salida pertenecen al próximo cierre narrativo, aún no implementado.
@@ -2030,7 +2053,12 @@ Al cerrar la devolución en el diálogo con Rulo (0p):
   recompensa de Caja siguen pendientes del siguiente bloque.
 
 RULO:
-“Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
+“Vos nos reuniste, y entre todos lo bajamos. Esa fuerza que tenés ya estaba ahí
+antes de que yo te enseñara nada. Pero hoy también lograste que cuatro
+cabezaduras te siguieran. Eso es saber liderar.
+
+Quizá Palomo se refería a eso: ganar sirve de poco si perdés a quienes tenés
+al lado.”
 
 -------------------------------------------------------------------------------
 22. PALOMO, LA CAJA MÁGICA Y EL LOCO
@@ -2133,8 +2161,17 @@ bonificaciones.
 
 22.4. MANIFESTACIÓN DE EL LOCO
 
-Después de recibir la Caja, manifestar CA_TheFoolEssence en
-CA_M01_FOOL_ESSENCE_SPOT.
+Decisión del autor incorporada en 0r: después de recibir la Caja, manifestar
+CA_TheFoolEssence en CA_M01_FOOL_ESSENCE_SPOT, dentro de la cámara principal
+de la cueva bajo la mansión, en el nivel Z=-384. Elegir el punto exacto al
+implementar el actor, con suelo libre y sin tapar el ascensor, el cajón o las
+vetas. Su captura todavía no está implementada en 0r.
+
+Tras entregar la Caja, Palomo debe indicar volver al pasaje descubierto con
+Caella y bajar en el ascensor hasta la cueva. El Diario/Detalle repite esa ruta
+y el objetivo actual de examinar la aparición con la Caja. Palomo mantiene
+su ubicación del segundo piso; no se traslada ni nombra la carta antes de
+que ésta se revele.
 
 Presentación:
 

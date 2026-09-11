@@ -14,6 +14,58 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     CaelumPlayer RuloPartyTraveler;
     CaelumM00Bull RuloPartyBull;
 
+    bool IsProtectedStoryResident()
+    {
+        return StoryAnchored && level.MapName == "MAP01";
+    }
+
+    void ClearStoryCombatState()
+    {
+        // A_Chase marca INCOMBAT al disparar. StartConversation lo rechaza
+        // incluso con salud completa; no basta con soltar el Target.
+        bInCombat = false;
+        bJustHit = false;
+        bJustAttacked = false;
+        Target = null;
+        LastEnemy = null;
+        // Reparar un cierre interrumpido sin quitarle la conversación a otro
+        // jugador que todavía esté hablando con esta misma instancia.
+        bool speaking = false;
+        for (int n = 0; n < MAXPLAYERS; n++)
+            if (playeringame[n] && players[n].ConversationNPC == self)
+                speaking = true;
+        if (!speaking) bInConversation = false;
+    }
+
+    void DownRuloPartyMember()
+    {
+        health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);
+        bInvulnerable = true; bShootable = false; bSolid = false;
+        SetStateLabel("CrouchIdle");
+    }
+
+    void EnsureStorySurvival()
+    {
+        if (!IsProtectedStoryResident()) return;
+        // También se ejecuta al cargar: los flags nativos se serializan y un
+        // guardado anterior todavía no tiene BUDDHA.
+        bBuddha = true;
+        if (health > 0 && !bCorpse && !bKilled) return;
+        // Recuperar el actor original si una partida anterior sí registró
+        // muerte. Revive restaura flags/veneno, pero no la altura del cuerpo.
+        int monsterTotal = level.total_monsters;
+        Revive();
+        // Es la reparación de una instancia narrativa, no un monstruo nuevo.
+        level.total_monsters = monsterTotal;
+        let profile = GetDefaultByType(GetClass());
+        A_SetSize(profile.Radius, profile.Height);
+        bBuddha = true; bFriendly = true; bInvulnerable = true;
+        RestoreRuloPartyHealth();
+        if (RuloPartyMode == 2 && RuloPartyBull != null && RuloPartyBull.health > 0)
+            DownRuloPartyMember();
+        else SetStateLabel("Spawn");
+    }
+
     Vector3 GetRuloPartyPosition()
     {
         if (self is "CaelumRulo") return (-2010,-155,0);
@@ -33,6 +85,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         for (int slot = 0; CombatArmor != null && slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
             CombatArmor.Durability[slot] = CombatArmor.GetMaximumDurability(slot);
         RuloPartyDowned = false; bSolid = true; bShootable = true;
+        ClearStoryCombatState();
+        UpdateCombatHealthEffects();
     }
 
     void JoinRuloParty(CaelumPlayer traveler, CaelumM00Bull bull)
@@ -54,18 +108,29 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
     {
+        if (IsProtectedStoryResident()) bBuddha = true;
         if (RuloPartyMode != 0 && (!IsRuloPartyFighting()
             || (source != RuloPartyBull && inflictor != RuloPartyBull))) return 0;
-        return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+        int received = Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+        if (IsProtectedStoryResident() && RuloPartyMode == 2 && health <= 1)
+            DownRuloPartyMember();
+        return received;
     }
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
-        if (RuloPartyMode == 2 && RuloPartyBull != null && RuloPartyBull.health > 0)
+        if (IsProtectedStoryResident())
         {
-            health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);
-            bInvulnerable = true; bShootable = false; bSolid = false;
-            SetStateLabel("CrouchIdle");
+            // Respaldo para daño forzado/telefrag, que omite BUDDHA nativo.
+            // No llamar a Die del motor: no cadáver, drop ni evento de muerte.
+            health = 1;
+            if (RuloPartyMode == 2 && RuloPartyBull != null && RuloPartyBull.health > 0)
+                DownRuloPartyMember();
+            else
+            {
+                bInvulnerable = true; bSolid = true; bShootable = true;
+                ClearStoryCombatState(); SetStateLabel("Spawn");
+            }
             return;
         }
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
@@ -90,7 +155,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             RuloPartyMode = 3; RestoreRuloPartyHealth();
             SetStateLabel("Spawn");
         }
-        bInvulnerable = true; Target = null; Vel = (0,0,0);
+        bInvulnerable = true; ClearStoryCombatState(); Vel = (0,0,0);
         // El cierre se habla aquí. Una vez que el viajero sale y deja de ver
         // al grupo, recuperar los dormitorios y las mismas instancias.
         if (RuloPartyTraveler == null || !RuloPartyTraveler.HasMainM00Flag(
@@ -118,6 +183,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             bShootable = true;
             bInvulnerable = true;
             bFriendly = true;
+            bBuddha = level.MapName == "MAP01";
             target = null;
         }
     }
@@ -173,6 +239,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override void Tick()
     {
+        EnsureStorySurvival();
         if (RuloPartyMode != 0)
         {
             UpdateRuloParty();
@@ -184,6 +251,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         }
         Super.Tick();
         if (!StoryAnchored || health <= 0) { return; }
+        ClearStoryCombatState();
         // El próximo Use debe reconstruir el nodo desde el personaje que habla.
         if (!bInConversation && HasConversation())
         {

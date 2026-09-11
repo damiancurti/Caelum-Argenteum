@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0q — 2026-09-11.
+Versión documental: 4.33.0r — 2026-09-11.
+
+## Reutilización en 4.33.0r
+
+0q aprobado salvo la interacción poscombate. Se mantienen sprites, voces,
+modelos, música y MAP01.wad. La caída protegida reutiliza CrouchIdle; la
+recuperación usa Spawn y restaura la altura física si un guardado la redujo.
+No se alteran índices de estados ni se añaden assets. El texto de Rulo cambia
+en español e inglés. La aparición/carta de El Loco en la cueva se preparará
+con el bloque Palomo/Caja; no hay un nuevo sprite de esencia en este delta.
 
 ## Reutilización en 4.33.0q
 
