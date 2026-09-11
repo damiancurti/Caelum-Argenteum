@@ -16,6 +16,7 @@ class CaelumMainM00QuestController : EventHandler
     bool NaturalSuppliesPrepared;
     bool BullRoomPrepared;
     CaelumM00Bull TrialBull;
+    bool ProcessingManualRetired;
 
     // Se reutilizan las estaciones de las dos filas exteriores: así las
     // referencias de tareas guardadas siguen apuntando al mismo actor.
@@ -264,6 +265,23 @@ class CaelumMainM00QuestController : EventHandler
         }
     }
 
+    void RetireLegacyProcessingManual()
+    {
+        if (ProcessingManualRetired || level.MapName != "MAP01") return;
+        ProcessingManualRetired = true;
+        // Quita el ejemplar de los antiguos talleres exteriores, también al
+        // cargar 0n. No altera el WAD, el inventario ni las recetas aprendidas.
+        let iterator = ThinkerIterator.Create("CaelumProcessingManual");
+        CaelumProcessingManual manual;
+        while ((manual = CaelumProcessingManual(iterator.Next())) != null)
+        {
+            if (manual.Owner != null || manual.bDropped) continue;
+            Vector3 origin = manual.SpawnPoint;
+            if (origin.X == -364 && origin.Y == 800 && Abs(origin.Z) < 0.01)
+                manual.Destroy();
+        }
+    }
+
     void PrepareWorld()
     {
         if (WorldPrepared) return;
@@ -329,6 +347,7 @@ class CaelumMainM00QuestController : EventHandler
     override void WorldTick()
     {
         RetireGroundFloorStock();
+        RetireLegacyProcessingManual();
         PrepareRonnieWorld();
         PrepareMansionLayout();
         PrepareCornerLayout();

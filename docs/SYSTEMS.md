@@ -1,6 +1,15 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0n — 2026-09-10.
+Versión documental: 4.33.0o — 2026-09-11.
+
+## Conocimiento de recetas y retiro del manual (4.33.0o)
+
+La prueba de Ronnie enseña la receta elegida y sus componentes/procesamientos.
+Se retira el Manual de Procesamiento exterior de MAP01 (LORE-0001); cargar una
+partida anterior también quita ese ejemplar del mundo. No se revocan recetas
+aprendidas ni se retiran objetos del inventario. La clase del manual permanece
+para compatibilidad y otros usos; no se modifican las reglas de aprendizaje.
+0n quedó aprobado por el autor el 2026-09-11.
 
 ## Abastecimiento T1 y auditoría de materiales (4.33.0n)
 

@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0n — 2026-09-10.
+Versión documental: 4.33.0o — 2026-09-11.
+
+## Revisión 4.33.0o
+
+0n aprobado por el autor. Se retira del mundo el manual exterior de MAP01;
+su sprite CBOO y el icono ca_book.png siguen usados por libros y otros objetos.
+No se elimina ni modifica ningún recurso visual, modelo o audio.
 
 ## Recursos reutilizados en 4.33.0n
 

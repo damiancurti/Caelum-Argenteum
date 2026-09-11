@@ -1,8 +1,15 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0n — 2026-09-10.
+Versión documental: 4.33.0o — 2026-09-11.
 
 
-REVISIÓN 4.33.0n — BASE 0m
+REVISIÓN 4.33.0o — BASE 0n APROBADA
+El autor confirmó exitosas todas las pruebas de 0n el 2026-09-11.
+Se retira el Manual de Procesamiento de los antiguos talleres exteriores:
+CaelumProcessingManual, tipo 18106, en (-364,800,0). La limpieza actúa al
+iniciar MAP01 o cargar 0n y conserva las recetas aprendidas. El WAD no cambia.
+Las lecciones restantes de Ronnie/Rulo y el cierre narrativo siguen pendientes.
+
+REGISTRO DE LA REVISIÓN 4.33.0n
 Abastecimiento limitado a objetos T1. Cajón (1780,640,-384): sólo cuero de vaca
 para guanteletes gigantes a la mínima eficiencia por capa; 96 kg en talle M,
 calculado para los demás talles. Mantiene retiros/devoluciones, no se rellena.

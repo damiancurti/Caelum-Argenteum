@@ -1,6 +1,16 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0n — 2026-09-10.
+Versión documental: 4.33.0o — 2026-09-11.
+
+## Aprobación de 4.33.0n y corrección 4.33.0o — 2026-09-11
+
+El autor confirmó: «Todas las pruebas dieron exitosas». 0n queda como base
+completa aceptada, con el alcance narrativo documentado en esa entrega.
+Pidió quitar el manual de materiales básicos que quedó al costado: corresponde
+al Manual de Procesamiento en (-364,800,0), junto a los antiguos talleres.
+0o retira sólo ese ejemplar del mundo, tanto en partida nueva como al cargar,
+sin revocar conocimiento ni alterar el WAD. Se actualizan README y cinco docs;
+se entrega delta sobre 0n y un único TXT de pruebas.
 
 ## Decisiones y correcciones 4.33.0n
 

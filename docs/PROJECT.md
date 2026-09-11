@@ -1,12 +1,18 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0n — 2026-09-10.
+Versión documental: 4.33.0o — 2026-09-11.
 
-## Estado actual: 4.33.0n
+## Estado actual: 4.33.0o
 
-Base de aplicación: **0m**. Aceptación completa anterior: **0k**. El autor
-aceptó las estaciones de 0m y pidió corregir su ubicación y el uso entre pisos.
-Esta entrega implementa esas correcciones y las observaciones posteriores:
+**4.33.0n aprobado:** el 2026-09-11 el autor confirmó que todas las pruebas
+fueron exitosas. Esa es la base aceptada para esta entrega.
+
+0o retira el Manual de Procesamiento (LORE-0001) que quedó al costado de los
+antiguos talleres exteriores, en (-364,800,0). La limpieza se aplica al iniciar
+MAP01 y al cargar 0n. Conserva recetas aprendidas y objetos ya recogidos; no
+cambia el WAD. Ronnie sigue enseñando las dependencias de cada elección.
+
+La base 0n aprobada incluye:
 
 - Las 38 estaciones conservan sus instancias: esquinas en dormitorios y una
   fila de doce contra la pared del fondo del segundo piso. Puertas y estaciones
@@ -99,8 +105,8 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 
 | Orden | Bloque | Alcance restante / criterio de cierre |
 | --- | --- | --- |
-| 0 | Base hasta 4.33.0k | Aceptada por el autor: prólogo, Argento, Caella, geometría, HUD/audio, estaciones y Detalle. Migración 0h conservada. |
-| 1 | 4.33.0n: accesos, suministros T1, flechas y retirada de Palomo | Implementado sobre 0m; validar juego manual. La llave y el botín están preparados para conectar Rulo. |
+| 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
+| 1 | 4.33.0o: retiro del manual exterior | Corrección puntual sobre 0n; verificar ausencia del manual. La llave y el botín siguen preparados para conectar Rulo. |
 | 2 | Completar enseñanza de supervivencia de Ronnie | Reparación real, alimento/agua, Aire y paso de agua seguro; integrar los objetivos antes de habilitar Rulo. Fijar valores tutoriales pendientes sin cambiar el balance general. |
 | 3 | Rulo y Toro, fases 70–75 | Implementar entrenamiento y resolución; conectar las cuatro prácticas con la llave de Argento y el Toro ya colocado. Flechas disponibles; resolver cartuchos/virotes para las demás armas. |
 | 4 | Palomo final, fase 80 | Palomo ya llega físicamente arriba. Habilitar diálogo final tras las cuatro ramas y entregar una única Caja Mágica. |
@@ -215,16 +221,30 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0m y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0n y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0n.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0o.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0n
+## Validación de 4.33.0o
+
+- GZDoom 4.14.2 compila y carga MAP01 nuevo y un guardado real de 0n sin
+  errores de scripts ni de carga. No se repite la matriz de juego ya aprobada.
+- El WAD contiene un único manual tipo 18106, en (-364,800,0); el guardado
+  conserva ese mismo origen. El retiro apunta sólo a ese ejemplar del mundo,
+  con un marcador independiente para migrar guardados ya preparados por 0n.
+- WAD y demás archivos de runtime conservan su contenido; sólo cambia el
+  controlador de MAP01. README y los cinco documentos quedan en versión 0o.
+  ZIP cotejado contra 0n: siete archivos modificados y un TXT de pruebas.
+
+Prueba del autor pendiente sólo para esta corrección: comprobar que el manual
+exterior desaparezca y que se conserven las recetas aprendidas.
+
+## Validación de 4.33.0n — aceptada el 2026-09-11
 
 - Runtime completo en GZDoom 4.14.2: carga sin errores. 281 comprobaciones
   de las 38 estaciones, colisión/altura, puertas, cajón único y cinco vetas.
@@ -249,8 +269,8 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
   doce modelos de estación y arte sin cambios. Delta exacto sobre 0m; un TXT
   adicional con aplicación/pruebas. No se incluyen herramientas de ensayo.
 
-Validación del autor pendiente: recorrido completo, carga de su guardado,
-acceso a talleres por las puertas, extracción y revisión visual en Windows.
+El autor confirmó exitosas todas las pruebas de 0n. La aceptación cubre el
+alcance implementado; no convierte en jugables las ramas todavía pendientes.
 Los ensayos aislados usan GZDoom 4.14.2/OpenGL con instrumentación privada.
 No acreditan duración de una partida ni cooperativo. Motor, IWAD, fixtures,
 capturas y guardados quedan fuera del parche; validación de 0m en HISTORY.md.

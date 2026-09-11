@@ -5,14 +5,16 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0n.** Applied over 4.33.0m. Last fully accepted gameplay
-base: **4.33.0k**; the author also accepted 0m's station models/infrastructure.
-Documentation reviewed: 2026-09-10. This patch moves workshops away from doors,
-prevents Use across floors, adds arrow crafting and updates T1 supplies.
-Palomo now runs upstairs through the mansion. The complete roadmap is in
-[PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0o.** Applied over **4.33.0n**, now fully accepted by
+the author after successful testing. Documentation reviewed: 2026-09-11.
+This patch removes the old basic-processing manual beside the former outdoor
+workshops in MAP01, including existing saves. Learned recipes are preserved.
+The complete roadmap is in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- The obsolete processing manual outside MAP01 is retired. Ronnie continues
+  to teach the selected weapon and its recipe dependencies.
 
 - Ronnie offers all 16 physical and 20 magical T1 weapons, with explanations
   before confirmation. He teaches the chosen recipe and its component recipes.
@@ -79,7 +81,7 @@ Palomo now runs upstairs through the mansion. The complete roadmap is in
 
 ## Planned
 
-Next: author validation of 0n, then Ronnie's remaining survival lessons
+Next: Ronnie's remaining survival lessons
 (food, water, Air and a real repair), Rulo's complete combat lesson/Bull turn-in,
 final Palomo encounter, Magic Box, The Fool and narrative exit. Arrow crafting
 is available; cartridge/bolt recipes or tutorial allocation remain pending.
@@ -94,17 +96,16 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-Author playthrough of 0n: workshop access, Use on separate floors, Tab/G,
-leather withdrawal, harvesting the five veins, arrow crafting and Palomo's
-route. Native engine/UI/save checks are recorded in PROJECT.md; they do not
-replace the author's Windows playthrough.
+The author confirmed all 0n checks passed. For 0o, only verify that the manual
+is gone in a fresh MAP01 and an existing save, with learned recipes intact.
+Engine loading and documentation checks are recorded in PROJECT.md.
 
 ## Build and run
 
-Close GZDoom. Extract the 0n patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0m** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0o patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0n** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0n.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0o.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
