@@ -1,6 +1,22 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0w — 2026-09-12.
+Versión documental: 4.33.0x — 2026-09-12.
+
+## Necesidades y prioridad de sistemas — 4.33.0x
+
+El autor confirmó la descarga y prueba exitosa del acumulativo 0u → 0w,
+incluidos salida, llegada y reparación. Quedan aprobados 0v y 0w. Aclaró que
+construir mapas no es prioritario: seguir el roadmap de sistemas y usar MAP01
+para comprobar mecánicas. La ampliación de alcantarillas queda diferida.
+
+Se agrega práctica opcional de alimento/agua con confirmación, preparación
+única al 90%, entregas independientes de una ración por tipo y consumo nativo.
+Se conserva progreso al guardar y viajar. No requiere volver ni modifica la
+misión principal. El ensayo detectó que PowerupGiver rechazaba un refresco
+antes del parpadeo: se habilita la ruta nativa durante Use, preservando diez
+segundos no acumulables y las reglas habituales de recogida.
+README y los cinco documentos se actualizan juntos. Sólo archivos modificados
+más PRUEBAS_4_33_0x.txt, para copiar sobre 0w. Ningún mapa o asset cambia.
 
 ## Corrección de entrega acumulativa 0u → 0w
 

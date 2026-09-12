@@ -224,6 +224,15 @@ class CaelumJournalOverlay : EventHandler
             text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00RepairLessonCompleteSnapshot
                 ? "CA_M01_REPAIR_DETAIL_DONE" : "CA_M01_REPAIR_DETAIL", false);
         }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00NeedsLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || (localPlayer.MainM00NeedsFoodUsedSnapshot && localPlayer.MainM00NeedsWaterUsedSnapshot)))
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_NEEDS_DETAIL", false)
+                .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsFoodUsedSnapshot ? "CA_M01_NEEDS_FOOD_DONE" : "CA_M01_NEEDS_FOOD_WAIT", false)
+                .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsWaterUsedSnapshot ? "CA_M01_NEEDS_WATER_DONE" : "CA_M01_NEEDS_WATER_WAIT", false);
+        }
         text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
             .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
                 ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);

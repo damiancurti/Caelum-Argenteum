@@ -55,6 +55,47 @@ class CaelumMainM00RonnieTrial : Object play
         user.RefreshSocialJournalSnapshot();
     }
 
+    // La confirmación prepara una demostración segura una sola vez. No cura
+    // estados previos bajos ni vuelve a reducir necesidades al reabrir.
+    static bool StartNeedsLesson(CaelumPlayer user)
+    {
+        if (!IsRonnie(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
+        if (!r.MainM00NeedsLessonStarted)
+        {
+            r.MainM00NeedsLessonStarted = true;
+            user.CurrentHunger = Min(user.CurrentHunger, 90.0);
+            user.CurrentThirst = Min(user.CurrentThirst, 90.0);
+            user.UpdateSurvivalStates();
+        }
+        // Flags independientes: si la carga impide recibir una ración, volver
+        // a confirmar sólo reintenta esa entrega. Nunca duplica la otra.
+        if (!r.MainM00NeedsFoodGiven)
+            r.MainM00NeedsFoodGiven = user.GiveInventoryType("CaelumFoodRation") != null;
+        if (!r.MainM00NeedsWaterGiven)
+            r.MainM00NeedsWaterGiven = user.GiveInventoryType("CaelumWaterRation") != null;
+        user.OnNativeInventoryChanged();
+        user.PersistCharacterState();
+        return true;
+    }
+
+    static void RecordNeedsUse(CaelumPlayer user, int kind)
+    {
+        if (!CanInteract(user)) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.MainM00NeedsLessonStarted
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return;
+        if (kind == CaelumConstants.CONSUMABLE_FOOD_RATION
+            && user.CurrentHunger < CaelumConstants.SURVIVAL_MAXIMUM)
+            r.MainM00NeedsFoodUsed = true;
+        if (kind == CaelumConstants.CONSUMABLE_WATER_RATION
+            && user.CurrentThirst < CaelumConstants.SURVIVAL_MAXIMUM)
+            r.MainM00NeedsWaterUsed = true;
+        user.PersistCharacterState();
+    }
+
     static void Feedback(CaelumPlayer user, String key)
     {
         if (user != null) user.A_Print(StringTable.Localize(key, false));
@@ -465,5 +506,13 @@ class CaelumM00RepairLessonAction : CaelumPalomoDialogueAction
     override bool Use(bool pickup)
     {
         return CaelumMainM00RonnieTrial.OfferRepairLesson(CaelumPlayer(Owner));
+    }
+}
+
+class CaelumM00NeedsLessonAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00RonnieTrial.StartNeedsLesson(CaelumPlayer(Owner));
     }
 }

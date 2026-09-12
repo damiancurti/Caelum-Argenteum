@@ -58,7 +58,12 @@ class CaelumConsumableItem : PowerupGiver
     {
         // El contenido de la Caja Magica no puede usarse hasta recuperarlo.
         if (InMagicBox) { return false; }
+        // Permitir el refresco nativo también antes del parpadeo del efecto.
+        // Se limita al uso, sin alterar la recogida ni los objetos de guardados.
+        bool previousAlwaysPickup = bAlwaysPickup;
+        bAlwaysPickup = true;
         bool used = Super.Use(pickup);
+        bAlwaysPickup = previousAlwaysPickup;
         if (used && Owner != null)
         {
             CaelumRegenerationPower power = CaelumRegenerationPower(
@@ -73,6 +78,9 @@ class CaelumConsumableItem : PowerupGiver
                 power.PulseTics = 0;
             }
         }
+        // Sólo un uso nativo aceptado acredita la práctica; recoger, mirar o
+        // intentar consumir desde la Caja no llega a este observador.
+        if (used) CaelumMainM00RonnieTrial.RecordNeedsUse(CaelumPlayer(Owner), GetConsumableType());
         return used;
     }
 

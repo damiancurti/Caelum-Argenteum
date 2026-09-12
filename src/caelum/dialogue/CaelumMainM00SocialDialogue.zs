@@ -284,6 +284,9 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "ronnie_needs_practice")
+                text = StringTable.Localize(user.MainM00NeedsFoodUsedSnapshot && user.MainM00NeedsWaterUsedSnapshot
+                    ? "CA_M01_NEEDS_DONE" : "CA_M01_NEEDS_PRACTICE", false);
             if (mCurNode.UserData ~== "ronnie_repair")
                 text = StringTable.Localize(user.MainM00RepairLessonCompleteSnapshot
                     ? "CA_M01_REPAIR_DONE" : "CA_M01_REPAIR_INTRO", false);

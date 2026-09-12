@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0w — 2026-09-12.
+Versión documental: 4.33.0x — 2026-09-12.
+
+## Revisión 4.33.0x
+
+Sin cambios en los tres WAD, arte, audio, modelos ni generadores. La práctica
+reutiliza raciones, iconos y diálogos existentes. No se construyen mapas nuevos.
+La entrega 0w acumulativa fue aprobada por el autor.
 
 Este acumulativo sobre 0u incluye MAP02, CADEV02 y el generador de 0v.
 MAP01 permanece idéntico a 0u.

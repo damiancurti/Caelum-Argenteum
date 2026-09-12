@@ -2784,3 +2784,37 @@ CA_M01_REPAIR_COST = "El banco reserva los materiales necesarios. Cerrar la inte
 CA_M01_REPAIR_DONE = "Recuperaste la misma arma en lugar de reemplazarla. Esa es la lección: mirar el desgaste, prever los materiales y mantener tu equipo en condiciones.\n\nLa práctica opcional está completa. Podés pedirme que repasemos los pasos cuando lo necesites.";
 CA_M01_REPAIR_DETAIL = "Práctica opcional — Ronnie: repará tu primera arma fabricada si tiene desgaste. Seleccioná esa pieza en Inventario y desequipala. Usá el Banco de Trabajo de la habitación del segundo piso; en Oficios, pulsá F. Debe terminar la tarea real. Cerrar o alejarte la pausa; sólo vos la cancelás. No bloquea a Rulo ni la salida.";
 CA_M01_REPAIR_DETAIL_DONE = "Práctica opcional completada: reparaste tu primera arma fabricada.";
+
+// 4.33.0x: práctica opcional de necesidades.
+[default]
+CA_M01_NEEDS_ASK = "How do I eat and drink?";
+CA_M01_NEEDS_INTRO = "Hunger and Thirst bars show your reserves: higher is better. This practice is optional. Accepting lowers reserves above 90% to that value, once only. I give you one food ration and one water ration. You do not need this practice to continue the quest.";
+CA_M01_NEEDS_START = "Let us practice.";
+CA_M01_NEEDS_PRACTICE = "Open Inventory with Tab, select a food or water ration and press Enter to consume it. Retrieve it first if it is in the Box. Each restores one point per second for ten seconds. Watch the bars after closing the menu. Quest Detail tracks each use separately; no return visit is required.";
+CA_M01_NEEDS_SAFE_ASK = "What about water in the world?";
+CA_M01_NEEDS_SAFE = "Use an inventory water ration for this practice. Swimming in the pool does not mean drinking. Collecting and purifying water are not part of this lesson yet. Using another ration before its effect ends restarts the ten seconds; it does not stack two simultaneous recoveries.";
+CA_M01_NEEDS_RETRY = "Check the ration delivery.";
+CA_M01_NEEDS_BACK = "Back to the practice.";
+CA_M01_NEEDS_DONE = "You used food and water when your reserves needed them. Keep watching the bars and allow time for recovery. The practice is complete; you can carry on.";
+CA_M01_NEEDS_DETAIL = "Optional Ronnie practice: food and water. Tab > Inventory, select a ration and press Enter. Retrieve it from the Box first if needed. If weight prevented delivery, free space and ask Ronnie to check it.";
+CA_M01_NEEDS_FOOD_DONE = "Food: correctly consumed.";
+CA_M01_NEEDS_FOOD_WAIT = "Food: consume a ration with reserves below 100%.";
+CA_M01_NEEDS_WATER_DONE = "Water: correctly consumed.";
+CA_M01_NEEDS_WATER_WAIT = "Water: consume a ration with reserves below 100%.";
+
+// 4.33.0x: práctica opcional de necesidades.
+[es]
+CA_M01_NEEDS_ASK = "¿Cómo me alimento y bebo?";
+CA_M01_NEEDS_INTRO = "Las barras de Hambre y Sed muestran tu reserva: cuanto más altas, mejor. Te propongo una práctica opcional. Al aceptar, las reservas que superen el 90% bajarán a ese valor, una sola vez. Te doy una ración de alimento y una de agua. No hace falta hacerlo para seguir con la misión.";
+CA_M01_NEEDS_START = "Hagamos la práctica.";
+CA_M01_NEEDS_PRACTICE = "Abrí Inventario con Tab, seleccioná la ración de alimento o agua y pulsá Enter para consumirla. Si está en la Caja, recuperala primero. Cada una recupera un punto por segundo durante diez segundos. Mirá las barras al cerrar el menú. Detalle registra cada uso por separado; no hace falta volver para completarlo.";
+CA_M01_NEEDS_SAFE_ASK = "¿Y el agua del entorno?";
+CA_M01_NEEDS_SAFE = "Para esta práctica usá la ración de agua del inventario. Nadar en la piscina no equivale a beber. Recolectar agua y potabilizarla todavía no forman parte de esta lección. Repetir una ración antes de terminar su efecto reinicia los diez segundos; no suma dos recuperaciones simultáneas.";
+CA_M01_NEEDS_RETRY = "Comprobar la entrega de las raciones.";
+CA_M01_NEEDS_BACK = "Volvamos a la práctica.";
+CA_M01_NEEDS_DONE = "Ya usaste alimento y agua cuando tus reservas lo necesitaban. Acordate de mirar las barras y dar tiempo a la recuperación. La práctica está completa; podés seguir con lo tuyo.";
+CA_M01_NEEDS_DETAIL = "Práctica opcional de Ronnie: alimento y agua. Tab > Inventario, seleccionar ración y Enter. Recuperarla antes si está en la Caja. Si faltó una entrega por carga, liberá espacio y pedile comprobarla.";
+CA_M01_NEEDS_FOOD_DONE = "Alimento: consumido correctamente.";
+CA_M01_NEEDS_FOOD_WAIT = "Alimento: falta consumir una ración con la reserva por debajo del 100%.";
+CA_M01_NEEDS_WATER_DONE = "Agua: consumida correctamente.";
+CA_M01_NEEDS_WATER_WAIT = "Agua: falta consumir una ración con la reserva por debajo del 100%.";

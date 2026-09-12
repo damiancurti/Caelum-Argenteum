@@ -70,6 +70,11 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00RonnieSwordId;
     int MainM00StarterWeaponId;
     // Salida 0v: condición de la pieza y transición reanudable al cargar.
+    bool MainM00NeedsLessonStarted;
+    bool MainM00NeedsFoodUsed;
+    bool MainM00NeedsWaterUsed;
+    bool MainM00NeedsFoodGiven;
+    bool MainM00NeedsWaterGiven;
     bool MainM00RepairLessonOffered;
     bool MainM00RepairLessonComplete;
     bool MainM00StarterConditionKnown;

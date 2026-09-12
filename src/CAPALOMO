@@ -2017,6 +2017,7 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
         choice { text = "$CA_M01_REPAIR_ASK"; nextpage = "ronnie_repair"; giveitem = "CaelumM00RepairLessonAction"; }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
     }
@@ -2065,6 +2066,38 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+
+    page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+
+    page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
     }
 
 }

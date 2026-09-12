@@ -5,13 +5,25 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0w.** Cumulative patch: apply directly over the complete **4.33.0u** project.
-Documentation reviewed: 2026-09-12. 0u is the last author-approved release. Changes from 0v and 0w await author testing.
-Ronnie now offers an optional lesson on repairing the first crafted weapon.
-It observes real crafting and does not add another requirement for the quest.
-The T1 supply audit and roadmap are in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0x.** Apply over the complete **4.33.0w** project,
+including the cumulative 0u → 0w delivery. The author approved all those changes.
+This release adds Ronnie's optional food/water practice in MAP01. New map
+construction is deferred: MAP01 remains the test environment for mechanics.
 
 ## Implemented
+
+- After returning Ronnie's sword, ask how to eat and drink. Reading the proposal
+  changes nothing. Explicitly accepting starts an optional practice, lowers only
+  reserves above 90% once, and offers one food ration plus one water ration.
+- Consume them through Inventory. Each successful use below full reserves is
+  recorded separately in Quest Detail; the native ten-second recovery remains.
+  Talking, collecting, using a boxed item or consuming at full reserves does
+  not count. Reopening never duplicates delivered supplies or resets reserves.
+- If weight blocks a ration delivery, free space and ask Ronnie to check it.
+  Each delivery has its own persistent flag. Completion survives saving and
+  travel; no quest gate, mandatory return visit or new recipe reward is added.
+- Native consumable use now permits refreshing an active effect before its
+  blinking phase, as the existing non-stacking ten-second rule requires.
 
 - After returning Ronnie's sword, ask him how to maintain your weapon. He
   explains condition, selecting/unequipping the piece, the upstairs Workbench,
@@ -168,11 +180,12 @@ The T1 supply audit and roadmap are in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: validate the optional repair lesson, then continue the remaining tutorial
-content and expand the sewer route with encounters and narrative continuation.
-Food/water and safe-water lessons, cartridge/bolt recipes, and acquisition of
-armor/Seal recipe knowledge remain planned. Material coverage is now quantified;
-no new leather source or revised loot amount has been defined in this patch.
+Next: finish the remaining mechanics and tutorial coverage in MAP01, following
+PROJECT.md. Cartridge/bolt recipes, armor/Seal recipe acquisition and safe-water
+collection/processing remain planned. The food/water consumption lesson is now
+implemented. New maps, sewer encounters and campaign layout are deferred while
+systems testing is the priority; MAP02 keeps its accepted arrival.
+Material coverage remains quantified, with no new leather source or loot change.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
 crafted weapon only, inside the Box.
@@ -186,15 +199,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-Only 0u is author-approved. The cumulative 0v/0w changes await author testing. Focused native engine checks cover the optional
-repair, cancellation, pauses, saved tasks, completion, both languages and travel.
-PRUEBAS_4_33_0w_DESDE_0u.txt lists the author's remaining checks. MAP01 and audiovisual assets are unchanged; MAP02 and CADEV02 are included. The full sewer route remains future content.
+0w, including the cumulative 0v changes, is author-approved. The focused 0x
+checks are in PRUEBAS_4_33_0x.txt. Engine evidence is recorded in PROJECT.md.
+All three WAD files and audiovisual resources remain byte-identical to 0w.
 
 ## Build and run
 
-Close GZDoom. Extract the 0w patch and copy **src**, **assets**, **docs** and **README.md**
-into the complete **4.33.0u** project, merging folders and replacing matching
-files. Keep the supplied **PRUEBAS_4_33_0w_DESDE_0u.txt** beside the ZIP, outside docs.
+Close GZDoom. Extract the 0x patch and copy **src**, **docs** and **README.md**
+into the complete **4.33.0w** project, merging folders and replacing matching
+files. Keep the supplied **PRUEBAS_4_33_0x.txt** beside the ZIP, outside docs.
 A MAP01 save before the exit lets you try the optional lesson. A character
 already in the sewers can continue normally; this patch adds no return route.
 

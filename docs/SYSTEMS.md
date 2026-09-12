@@ -1,6 +1,36 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0w — 2026-09-12.
+Versión documental: 4.33.0x — 2026-09-12.
+
+## Necesidades: práctica opcional de Ronnie (4.33.0x)
+
+Después del préstamo de Ronnie se ofrece «¿Cómo me alimento y bebo?». Leer la
+propuesta no inicia la práctica. Confirmarla una vez aplica Min(actual, 90) a
+Hambre y Sed: no reduce reservas ya bajas ni cura estados anteriores. Se entregan
+una CaelumFoodRation y una CaelumWaterRation mediante el inventario nativo.
+MainM00NeedsFoodGiven/WaterGiven registran cada entrega exitosa por separado;
+una entrega fallida por carga puede reintentarse, sin duplicar la otra.
+Las raciones pesan 0,10 kg cada una. Conservan las reglas de apilado/Caja.
+
+Usar desde Inventario consume una unidad y activa diez pulsos de un punto,
+uno por segundo. El observador sólo marca alimento/agua si Use fue aceptado,
+la práctica comenzó y la reserva correspondiente estaba por debajo de 100.
+Recoger, hablar, rechazar el uso desde la Caja o consumir al 100 no acredita.
+La acreditación registra el consumo; la recuperación sigue siendo gradual.
+Una segunda unidad reinicia el efecto, nunca suma intensidades o duraciones.
+Se habilita bAlwaysPickup sólo durante Super.Use para permitir ese refresco
+nativo antes del parpadeo; se restaura el flag para no alterar la recogida.
+
+MainM00NeedsLessonStarted, FoodUsed, WaterUsed y los dos flags de entrega viajan
+en el registro persistente; guardados anteriores los inicializan a false.
+Detalle refleja los dos consumos. La práctica completa se conserva al salir;
+un pendiente opcional se oculta fuera del Limbo. No hay requisito de misión,
+receta extra ni recompensa por volver. Las raciones restantes se retiran con
+los demás objetos físicos en la salida ya aprobada: no se exportan a MAP02.
+
+Esta entrega enseña el consumo. No implementa recolección ni potabilización:
+la piscina no es un dispensador de agua. Tampoco altera ritmos de necesidades,
+regeneración, descanso o calendario. No amplía mapas.
 
 ## Mantenimiento opcional con Ronnie (4.33.0w)
 

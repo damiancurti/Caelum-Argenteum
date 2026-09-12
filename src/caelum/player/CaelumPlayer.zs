@@ -343,6 +343,9 @@ class CaelumPlayer : DoomPlayer
     int MainM00StarterSizeSnapshot;
     int MainM00StarterWeaponSnapshot;
     bool MainM00RonnieFinishedSnapshot;
+    bool MainM00NeedsLessonStartedSnapshot;
+    bool MainM00NeedsFoodUsedSnapshot;
+    bool MainM00NeedsWaterUsedSnapshot;
     bool MainM00RepairLessonOfferedSnapshot;
     bool MainM00RepairLessonCompleteSnapshot;
     int MainM00StarterRequiredSnapshot[CaelumConstants.MATERIAL_TYPE_COUNT];
@@ -760,6 +763,9 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
+        MainM00NeedsLessonStartedSnapshot = persistentState != null && persistentState.MainM00NeedsLessonStarted;
+        MainM00NeedsFoodUsedSnapshot = persistentState != null && persistentState.MainM00NeedsFoodUsed;
+        MainM00NeedsWaterUsedSnapshot = persistentState != null && persistentState.MainM00NeedsWaterUsed;
         MainM00RepairLessonOfferedSnapshot = persistentState != null && persistentState.MainM00RepairLessonOffered;
         MainM00RepairLessonCompleteSnapshot = persistentState != null && persistentState.MainM00RepairLessonComplete;
         JournalKnownQuestCount = 0;

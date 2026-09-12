@@ -1,11 +1,31 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0w — 2026-09-12.
+Versión documental: 4.33.0x — 2026-09-12.
 
-## Estado actual: 4.33.0w
+## Estado actual: 4.33.0x
 
-**Base de entrega:** carpeta completa 0u, última versión aprobada por el autor.
-Este acumulativo incluye 0v y 0w; ambas quedan pendientes de sus pruebas.
+Base: 0w completo, incluido el acumulativo desde 0u. El autor descargó y aprobó
+TODOS esos cambios. La rectificación anterior de entrega queda resuelta.
+Prioridad confirmada: sistemas y mecánicas según roadmap, usando MAP01 para
+pruebas. Construir mapas y ampliar las alcantarillas queda diferido.
+
+Ronnie enseña alimento/agua después de devolver su espada. La propuesta requiere
+confirmación; sólo entonces ajusta reservas superiores al 90% una vez y entrega
+una ración de cada tipo. Registra usos nativos bajo el 100%, sin exigir retorno
+ni añadir bloqueos. Detalle muestra alimento y agua por separado. Si no puede
+entregar por carga, reintenta únicamente la ración pendiente al pedírselo.
+El refresco nativo de consumibles respeta diez segundos sin acumulación incluso
+antes del parpadeo del efecto. Mapas, arte y audio no cambian.
+
+Aplicar src, docs y README.md sobre 0w, combinando carpetas, y reconstruir con
+run_dev.bat. PRUEBAS_4_33_0x.txt contiene sólo las comprobaciones nuevas.
+
+## Base 4.33.0w — aprobada por el autor
+
+
+**Base histórica del acumulativo 0w:** carpeta completa 0u.
+La versión aprobada actual es 0w.
+El acumulativo incluyó 0v y 0w; posteriormente el autor aprobó ambas.
 0w amplía el tutorial con una práctica opcional de reparación de Ronnie,
 disponible después de devolver su espada. No exige repetir ramas ni añade
 un bloqueo al cierre implementado. Se usa la primera arma real, por su ItemId.
@@ -28,7 +48,7 @@ Los tres WAD, los sonidos, modelos y texturas mantienen sus hashes de 0v.
 Quien ya salió puede continuar en MAP02; para probar esta ampliación se usa
 un guardado anterior al cruce. No se abre un regreso artificial a la mansión.
 
-### Cambios 4.33.0v incluidos, pendientes de validación del autor: salida y regreso al cuerpo
+### Cambios 4.33.0v incluidos y aprobados por el autor: salida y regreso al cuerpo
 
 **Base:** carpeta completa 0u, con todas las pruebas aprobadas por el autor.
 Se conservan la espada sin escudo fantasma, la defensa contextual de Rulo y
@@ -87,8 +107,8 @@ La base 0n aprobada incluye:
 - Indicación compartida neutral sobre la pared marcada y diálogos de recursos
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-Las lecciones adicionales de supervivencia de Ronnie siguen planificadas
-como ampliación del tutorial; no bloquean retroactivamente las ramas aceptadas.
+Reparación y consumo de alimento/agua están implementados como prácticas
+opcionales. Las demás lecciones siguen planificadas; no bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -160,10 +180,10 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única. Todas las pruebas aprobadas por el autor. |
 | 4 | 4.33.0t: El Loco en la cueva, fase 90 | Captura, colección y +2% fraccionario implementados; resto de pruebas aprobado por el autor. Sus dos observaciones se corrigen en 0u. |
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
-| 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Pendiente de pruebas del autor. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
-| 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Pendiente aprobación del autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
-| 9 | Alcantarillas de MAP02 | Ampliar la llegada de 0v con recorrido, encuentros y continuación narrativa. El campo de diagnóstico se conserva como CADEV02. |
+| 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
+| 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
+| 8 | Ampliaciones restantes del tutorial | Consumo de alimento/agua implementado en 0x, pendiente de prueba. Quedan paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -272,17 +292,32 @@ antes de escribir y se informa con su ruta.
 
 ## Aplicación y mantenimiento
 
-Con GZDoom cerrado, copiar src, assets, docs y README.md del parche sobre la carpeta
-completa 0u y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
+completa 0w y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0w_DESDE_0u.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0x.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0w
+## Validación de 4.33.0x
+
+108 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 nativo Linux/Freedoom:
+32 en español, 32 en inglés, 17 desde guardado parcial, 4 desde guardado completo,
+15 de capacidad/reintentos/estados bajos/refresco de los cinco consumibles y 8
+al cargar un guardado real generado con fuentes 0w. Se utilizó Inventario nativo
+para consumir; se esperaron los diez segundos reales de pulsos. El cruce a MAP02
+fue nativo y conservó progreso y primera arma. Captura del diálogo revisada a
+1280×720. Escenarios aislados preparan etapas, carga y reservas para ejercitar
+estas condiciones; no sustituyen las pruebas del autor en Windows.
+
+El validador pasa. Los tres WAD y todos los recursos audiovisuales son idénticos
+a la base aprobada. El ZIP se comprueba por CRC y por reconstrucción exacta de
+archivos modificados sobre 0w. Queda pendiente PRUEBAS_4_33_0x.txt.
+
+## Validación de 4.33.0w — aprobada por el autor
 
 Escenarios enfocados en GZDoom 4.14.2 nativo, Linux/Freedoom. Se preparan etapa,
 primera arma con desgaste y componentes; los objetos/tareas de producción son
@@ -309,9 +344,9 @@ de compatibilidad desde un guardado 0v. Captura del diálogo en español revisad
 a 1280×720. Validador del proyecto aprobado; nueve claves nuevas en ambos
 idiomas. Los tres mapas y los recursos audiovisuales conservan sus bytes de 0v.
 El paquete se verifica por CRC y por reconstrucción del acumulativo sobre 0u.
-La prueba del autor de 0w queda pendiente: PRUEBAS_4_33_0w_DESDE_0u.txt.
+El autor confirmó la descarga, aplicación y aprobación de todos los cambios de 0w.
 
-## Validación de 4.33.0v — pendiente del autor
+## Validación de 4.33.0v — aprobada dentro del acumulativo 0w
 
 GZDoom 4.14.2 nativo, Linux, Freedoom 0.13, con escenarios aislados que preparan
 las etapas e inventarios. Se verifica el viaje real; no se simula cambiando el
@@ -345,7 +380,7 @@ cinco documentos, 74 audios, 12 modelos de estaciones y referencias conservadas.
 Las 17 claves del retorno están presentes una vez en cada idioma. MAP01.wad
 mantiene SHA-256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
 Corrección de registro: el autor confirmó que su última versión recibida fue 0u.
-0v no está aprobado; sus cambios se entregan junto con 0w en el acumulativo.
+Luego se entregó el acumulativo y el autor aprobó todos sus cambios, incluidos 0v y 0w.
 
 ## Validación de 4.33.0u — aprobada por el autor
 

@@ -1,9 +1,17 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0w — 2026-09-12.
+Versión documental: 4.33.0x — 2026-09-12.
 
 
-REVISIÓN VIGENTE 4.33.0w — REPARACIÓN OPCIONAL Y AUDITORÍA T1
-Base de entrega 0u aprobada; 0v y 0w pendientes de pruebas del autor. Ronnie ofrece mantenimiento después de devolver
+REVISIÓN VIGENTE 4.33.0x — ALIMENTO/AGUA, PRUEBAS DE SISTEMAS
+Base 0w, incluido el acumulativo 0v, aprobada por el autor. MAP01 permanece
+como entorno de prueba. Nuevos mapas y extensión de alcantarillas diferidos.
+Ronnie propone una práctica opcional, explícitamente aceptada, después de su
+préstamo. Prepara reservas superiores a 90 una vez; entrega una ración por tipo.
+Inventario consume y regenera de forma nativa; Detalle registra los dos usos.
+No cambia etapas, condiciones de salida, geometría, recursos T1 ni estaciones.
+
+BASE 4.33.0w APROBADA — REPARACIÓN OPCIONAL Y AUDITORÍA T1
+Acumulativo 0u → 0w aprobado por el autor. Ronnie ofrece mantenimiento después de devolver
 su espada. La práctica usa la primera arma fabricada, su desgaste real y la
 reparación nativa. No concede una restauración gratuita ni agrega un requisito
 a Rulo o a la salida. Los pasos y el estado aparecen en Detalle.
@@ -13,7 +21,7 @@ recetas limitan los conjuntos completos; las cinco gemas y metales existen.
 Se conservan botín, cajón, estaciones y todos los WAD. El mapa de alcantarillas
 sigue siendo la llegada de 0v, sin una ruta nueva en esta revisión.
 
-CAMBIOS 4.33.0v INCLUIDOS, PENDIENTES DEL AUTOR — SALIDA Y REGRESO AL CUERPO
+CAMBIOS 4.33.0v INCLUIDOS Y APROBADOS — SALIDA Y REGRESO AL CUERPO
 Base: 0u, todas las pruebas aprobadas por el autor. Tras capturar El Loco,
 la puerta al fondo de la sala del Toro (planta baja) exige confirmación.
 Detalle (F) y los diálogos orientan; despedirse de Palomo es opcional.
@@ -457,7 +465,7 @@ Especificación v1.0 consolidada en 4.33.0g — 2026-09-10
 
 Autor del proyecto: Damián Curti
 Estado: fases 00–100 y llegada a MAP02 implementadas hasta 0v. Base 0u aprobada
-por el autor. El cruce 0v y la práctica opcional 0w esperan validación del autor. El mapa
+por el autor. El cruce 0v y la práctica opcional 0w fueron aprobados por el autor. El mapa
 completo de alcantarillas y las ampliaciones de supervivencia son futuros bloques.
 Las listas del diseño describen el destino completo. El alcance de ejecución
 y las correcciones posteriores se detallan al comienzo de este archivo.
@@ -1960,13 +1968,18 @@ Tramo A — mantenimiento opcional (implementado en 0w):
 - La versión inicial del diseño proponía otra herramienta dañada y materiales
   dedicados. 0w utiliza la pieza y recursos existentes sin fijar otro préstamo.
 
-Tramo B — necesidades:
+Tramo B — necesidades (consumo implementado en 0x):
 
-- Colocar agua y alimento suficientes, sin convertirlos en recursos vendibles
-  fuera del Limbo.
-- Llevar Sed y Hambre a valores tutoriales que permitan usar una unidad sin
-  colocar al jugador en estado crítico.
-- Registrar una utilización correcta de alimento y agua.
+- Ofrecer la práctica después de devolver el préstamo. Leer no la inicia.
+- Al confirmar, limitar reservas superiores a 90 una sola vez, sin curar ni
+  reducir reservas ya inferiores. Explicarlo antes de aceptar.
+- Entregar una ración de alimento y una de agua, con registro independiente
+  para reintentar sólo entregas fallidas por carga. No reaparecen al consumirlas.
+- Consumir desde Inventario por debajo de 100 acredita cada tipo; la reserva
+  se recupera gradualmente diez segundos. Detalle muestra ambos resultados.
+- Guardar/cargar conserva entregas y progreso; no exigir retorno ni bloquear
+  salida. Las existencias sobrantes no viajan fuera del Limbo.
+- Recolección de agua y potabilización permanecen pendientes de su mecánica.
 
 Tramo C — Aire y movimiento:
 
