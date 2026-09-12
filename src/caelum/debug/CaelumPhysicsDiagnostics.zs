@@ -1,4 +1,4 @@
-// Actores exclusivos de MAP02. Cada variante elimina una sola capa del
+// Actores exclusivos de CADEV02. Cada variante elimina una sola capa del
 // comportamiento para que las pruebas de rendimiento sean comparables.
 
 class CaelumDiagnosticLookRat : CaelumGiantRat
@@ -257,7 +257,7 @@ class CaelumDiagnosticPerceptionObserver : CaelumPassiveGiantRat
     override void Tick()
     {
         Super.Tick();
-        if (level.MapName != "MAP02") { return; }
+        if (level.MapName != "CADEV02") { return; }
 
         PerceptionReportAccumulator++;
         if (PerceptionReportAccumulator < TICRATE) { return; }
@@ -335,7 +335,7 @@ class CaelumDiagnosticPerceptionObserver : CaelumPassiveGiantRat
     }
 }
 
-// Un monitor colocado una sola vez en MAP02 informa cada segundo. Los
+// Un monitor colocado una sola vez en CADEV02 informa cada segundo. Los
 // contactos se guardan como una referencia en cada cuerpo; por eso se divide
 // el total por dos para mostrar aristas fisicas aproximadas.
 class CaelumPhysicsDiagnosticMonitor : Actor
@@ -360,7 +360,7 @@ class CaelumPhysicsDiagnosticMonitor : Actor
             "[CA-PERCEP] Salas: 1 warp 300 2000 0; 2 warp 2900 1500 0; 3 warp 6100 2100 0; 4 warp 300 -2000 0; 5 warp 2900 -1500 0; 6 warp 6100 -2100 0."
         );
         Console.Printf(
-            "[CA-AI] Base aceptada: ca_diag_mass_follower_movement false. Movimiento barato: true antes de map map02; después warp 16368 -16 0."
+            "[CA-AI] Base aceptada: ca_diag_mass_follower_movement false. Movimiento barato: true antes de map CADEV02; después warp 16368 -16 0."
         );
         Console.Printf(
             "[CA-PHYS] Quintaesencia: warp -24000 -18000 0; warp -24000 0 0; warp -24000 18000 0."

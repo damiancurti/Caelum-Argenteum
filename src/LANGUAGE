@@ -2669,7 +2669,7 @@ CA_TAROT_FOOL_NAME = "The Fool of the Pampas";
 CA_TAROT_FOOL_DESCRIPTION = "Major Arcana 0. Air, Chaos, Freedom.\nA beginning without a certain path.\nIts +2% applies to all twelve primary attribute levels and preserves fractions.";
 CA_TAROT_BONUS = "Tarot: +%d%% to attributes";
 CA_M01_FOOL_STATE_FIND = "Examine the apparition in the cave";
-CA_M01_FOOL_STATE_OBTAINED = "The Fool captured; speak with Palomo";
+CA_M01_FOOL_STATE_OBTAINED = "The Fool captured; the way out is ready";
 CA_M01_FOOL_DETAIL_FIND = "Take the Magic Box into the cave beneath the mansion. Return to the passage you opened during Caella's trial, walk through the rear wall and take the lift down.\n\nAn apparition floats in the centre of the cave, in front of the veins along the back wall. Approach it and press Use to examine it with the Box.";
 CA_M01_FOOL_DETAIL_REVEALED = "The Box revealed The Fool of the Pampas, Major Arcana 0. Examine the apparition again and choose Capture with the Magic Box. Stay close until the animation finishes.\n\nLeaving before it finishes interrupts the capture without consuming the essence. Once captured, its card and attribute bonus appear in the Journal's Tarot page.";
 CA_M01_FOOL_DETAIL_DONE = "The Fool is in your collection. Its permanent +2% applies to all twelve primary attribute levels, preserving fractions. Check the Tarot and Character pages in the Journal.\n\nReturn to Palomo on the second floor and speak about the capture. You can also ask the four residents what they noticed.";
@@ -2683,8 +2683,8 @@ CA_M01_FOOL_COLLECTION_ASK = "What did the card change?";
 CA_M01_FOOL_COLLECTION_HELP = "Look at Tarot in your Journal. A Major Arcana increases all twelve primary attribute levels by 2%; a Minor Arcana by 1%. These bonuses add together, and fractions are preserved.\n\nThe Fool already grants its bonus. You do not need to equip it or activate it.";
 CA_M01_FOOL_ARGENTO = "I felt something settle into place. You brought us together, and now even that essence chose to follow you. I want to understand what that means as much as you do.";
 CA_M01_FOOL_CAELLA = "So the apparition let you capture it... I could sense it, but I never managed that. Keep the Box close. I want to know how your bond with that essence develops.";
-CA_M01_FOOL_RONNIE = "Something has changed since you went down there. Keep the weapon you made ready; choosing your next step deserves as much care as choosing a tool.";
-CA_M01_FOOL_RULO = "You already had strength when you arrived. Against the bull, you showed you could lead us too. Whatever that card adds, remember what you did with us.";
+CA_M01_FOOL_RONNIE = "Something has changed since you went down there. Keep the weapon you made ready; choosing your next step deserves as much care as choosing a tool. The way out is at the back of the Bull room, on the ground floor.";
+CA_M01_FOOL_RULO = "You already had strength when you arrived. Against the bull, you showed you could lead us too. Whatever that card adds, remember what you did with us. The door at the back of the Bull room now responds to you. I cannot make it do the same for me.";
 
 [es]
 // 4.33.0t: captura y colección de Arcanos.
@@ -2695,7 +2695,7 @@ CA_TAROT_FOOL_NAME = "El Loco de las Pampas";
 CA_TAROT_FOOL_DESCRIPTION = "Arcano Mayor 0. Aire, Caos, Libertad.\nUn comienzo sin un camino seguro.\nSu +2% se aplica al nivel de los doce atributos primarios y conserva decimales.";
 CA_TAROT_BONUS = "Tarot: +%d%% a los atributos";
 CA_M01_FOOL_STATE_FIND = "Examiná la aparición en la cueva";
-CA_M01_FOOL_STATE_OBTAINED = "El Loco capturado; hablá con Palomo";
+CA_M01_FOOL_STATE_OBTAINED = "El Loco capturado; la salida está disponible";
 CA_M01_FOOL_DETAIL_FIND = "Llevá la Caja Mágica a la cueva bajo la mansión. Volvé al pasaje que abriste en la prueba de Caella, atravesá la pared del fondo y bajá con el ascensor.\n\nUna aparición flota en el centro de la cueva, delante de las vetas de la pared del fondo. Acercate y pulsá Usar para examinarla con la Caja.";
 CA_M01_FOOL_DETAIL_REVEALED = "La Caja reveló a El Loco de las Pampas, Arcano Mayor 0. Volvé a examinar la aparición y elegí Capturar con la Caja Mágica. Permanecé cerca hasta que termine la animación.\n\nAlejarte antes de que termine interrumpe la captura sin consumir la esencia. Una vez obtenida, la carta y su bonificación aparecen en la sección Tarot del Diario.";
 CA_M01_FOOL_DETAIL_DONE = "El Loco está en tu colección. Su +2% permanente se aplica al nivel de los doce atributos primarios, conservando decimales. Podés revisarlo en Tarot y Personaje, en el Diario.\n\nVolvé con Palomo en el segundo piso y hablá sobre la captura. También podés hablar con los cuatro residentes para conocer sus reacciones.";
@@ -2709,8 +2709,8 @@ CA_M01_FOOL_COLLECTION_ASK = "¿Qué cambió con la carta?";
 CA_M01_FOOL_COLLECTION_HELP = "Mire Tarot en su Diario. Un Arcano Mayor aumenta un 2% el nivel de los doce atributos primarios; un Arcano Menor, un 1%. Las bonificaciones se suman y se conservan los decimales.\n\nEl Loco ya concede su bonificación. No necesita equiparlo ni activarlo.";
 CA_M01_FOOL_ARGENTO = "Sentí que algo quedó decidido. Lograste reunirnos y ahora hasta esa esencia eligió seguirte. Quiero entender qué significa tanto como vos.";
 CA_M01_FOOL_CAELLA = "Así que la aparición se dejó capturar... Yo podía sentirla, pero nunca logré eso. Conservá la Caja cerca. Quiero saber cómo evoluciona tu vínculo con esa esencia.";
-CA_M01_FOOL_RONNIE = "Algo cambió desde que bajaste. Tené preparada el arma que hiciste; elegir el próximo paso merece tanto cuidado como elegir una herramienta.";
-CA_M01_FOOL_RULO = "Fuerza ya tenías cuando llegaste. Contra el toro demostraste que también podés guiarnos. Sea lo que sea que sume esa carta, acordate de lo que hiciste con nosotros.";
+CA_M01_FOOL_RONNIE = "Algo cambió desde que bajaste. Tené preparada el arma que hiciste; elegir el próximo paso merece tanto cuidado como elegir una herramienta. La salida está al fondo de la sala del Toro, en planta baja.";
+CA_M01_FOOL_RULO = "Fuerza ya tenías cuando llegaste. Contra el toro demostraste que también podés guiarnos. Sea lo que sea que sume esa carta, acordate de lo que hiciste con nosotros. La puerta al fondo de la sala del Toro ahora te responde. A mí sigue sin hacerme caso.";
 
 [enu default]
 CA_M01_FOOL_HINT_FIND = "Use the apparition to examine it with the Box.";
@@ -2718,3 +2718,69 @@ CA_M01_FOOL_HINT_DONE = "Your card and its bonus are shown in Tarot.";
 [es]
 CA_M01_FOOL_HINT_FIND = "Usá la aparición para examinarla con la Caja.";
 CA_M01_FOOL_HINT_DONE = "La carta y su bonificación están en Tarot.";
+
+// 4.33.0v: puerta de retorno y llegada a las alcantarillas.
+[enu default]
+CA_MAP02_SEWER_NAME = "Sewers — the awakening";
+CA_M01_RETURN_TITLE = "The threshold";
+CA_M01_RETURN_CONFIRM = "The path could close behind you. Leave the mansion?\n\nThe Box will carry the first weapon you made. Other equipment, materials, ammunition and supplies will remain here, including anything else stored in the Box. Your Tarot cards and learned recipes remain with you.";
+CA_M01_RETURN_YES = "Yes. Cross.";
+CA_M01_RETURN_NO = "No. Not yet.";
+CA_M01_RETURN_ERROR = "The crossing could not be prepared. Your items remain with you; you can try again.";
+CA_M01_RETURN_FINISH_TASK = "Finish or cancel your crafting task before crossing.";
+CA_M01_RETURN_SOLO = "This story crossing is currently available only in a single-player game.";
+CA_M01_RETURN_ASK = "Where does the way out lead?";
+CA_M01_RETURN_PALOMO = "You found a way out. I did not promise it would lead where you expect, or remain there when you wished to return.\n\nAt the back of the room where you faced the Bull. Bring the Box. It has made room for the first weapon you fashioned; the other belongings will stay here. You may still say goodbye before crossing.";
+CA_M01_RETURN_DETAIL_READY = "The way out is at the back of the Bull room, behind the silver-key door west of the place where you awoke. On the ground floor, enter that room, go to its back wall and use the marked door.\n\nYou can speak with Palomo upstairs or say goodbye to the residents first. Crossing requires explicit confirmation. Only the Box and the first weapon you crafted will travel; other carried and stored objects stay behind. Your Tarot collection and learned recipes are preserved.";
+CA_M01_RETURN_DETAIL_CROSSING = "You chose to cross. Stay beside the marked door while the Box prepares the passage.";
+CA_M01_RETURN_VOICE = "Now. Move before they discover you are still breathing.";
+CA_M01_RETURN_LOOK = "Look around.";
+CA_M01_RETURN_CONTINUE = "Continue.";
+CA_M01_RETURN_COMPLETE = "Quest completed: Where the Lost Awaken.\n\nArcana obtained: The Fool.\n\nThe Box is beside you. Your first weapon is inside; retrieve and equip it from Inventory. You remember the recipes you learned.";
+CA_M01_RETURN_DETAIL_COMPLETE = "You left the mansion and awoke in the sewers. The Box and your first crafted weapon made the crossing. Other belongings stayed behind.\n\nOpen Inventory to retrieve and equip the weapon from the Box. Your Tarot collection, attribute bonus and learned recipes remain with you.";
+
+// 4.33.0v: puerta de retorno y llegada a las alcantarillas.
+[es]
+CA_MAP02_SEWER_NAME = "Alcantarillas — el despertar";
+CA_M01_RETURN_TITLE = "El umbral";
+CA_M01_RETURN_CONFIRM = "El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?\n\nLa Caja llevará la primera arma que fabricaste. El resto del equipo, materiales, munición y provisiones quedarán aquí, incluido lo demás que guardaste en la Caja. Conservás tus cartas del Tarot y las recetas aprendidas.";
+CA_M01_RETURN_YES = "Sí. Cruzar.";
+CA_M01_RETURN_NO = "No. Todavía no.";
+CA_M01_RETURN_ERROR = "No se pudo preparar el cruce. Conservás tus objetos y podés volver a intentarlo.";
+CA_M01_RETURN_FINISH_TASK = "Terminá o cancelá tu tarea de fabricación antes de cruzar.";
+CA_M01_RETURN_SOLO = "Este cruce narrativo está disponible por ahora en una partida individual.";
+CA_M01_RETURN_ASK = "¿Adónde lleva la salida?";
+CA_M01_RETURN_PALOMO = "Encontró una salida. No prometí que condujera al lugar que espera ni que siguiera allí cuando quisiera volver.\n\nAl fondo de la sala donde enfrentó al Toro. Lleve la Caja: ha hecho lugar para la primera arma que fabricó; las otras pertenencias quedarán aquí. Todavía puede despedirse antes de cruzar.";
+CA_M01_RETURN_DETAIL_READY = "La salida está al fondo de la sala del Toro, detrás de la puerta de plata al oeste del lugar donde despertaste. En planta baja, entrá en esa sala, avanzá hasta la pared del fondo y usá la puerta marcada.\n\nPodés hablar con Palomo arriba o despedirte de los residentes antes. Cruzar requiere confirmación. Viajarán la Caja y tu primera arma fabricada; los demás objetos, tanto llevados como almacenados, quedan atrás. Conservás el Tarot y las recetas aprendidas.";
+CA_M01_RETURN_DETAIL_CROSSING = "Elegiste cruzar. Permanecé junto a la puerta marcada mientras la Caja prepara el paso.";
+CA_M01_RETURN_VOICE = "Ahora sí. Movete antes de que descubran que seguís respirando.";
+CA_M01_RETURN_LOOK = "Mirar alrededor.";
+CA_M01_RETURN_CONTINUE = "Continuar.";
+CA_M01_RETURN_COMPLETE = "Misión completada: Donde despiertan los perdidos.\n\nArcano obtenido: El Loco.\n\nLa Caja está con vos. Tu primera arma está dentro: recuperala y equipala desde Inventario. Recordás las recetas que aprendiste.";
+CA_M01_RETURN_DETAIL_COMPLETE = "Dejaste la mansión y despertaste en las alcantarillas. La Caja y tu primera arma fabricada cruzaron con vos. Las otras pertenencias quedaron atrás.\n\nAbrí Inventario para recuperar y equipar el arma desde la Caja. Conservás tu colección de Tarot, la bonificación a los atributos y las recetas aprendidas.";
+
+
+[default]
+// 4.33.0w: mantenimiento opcional de la primera arma.
+CA_M01_REPAIR_ASK = "How do I maintain my weapon?";
+CA_M01_REPAIR_INTRO = "Making it was only the beginning. Inspect the first weapon you crafted: its condition shows the wear. If it is damaged, you can learn to repair that same piece. If it is intact, there is nothing to repair yet.\n\nThis practice is optional. You can continue with Rulo or leave when the way opens.";
+CA_M01_REPAIR_STEPS_ASK = "Where and how do I repair it?";
+CA_M01_REPAIR_STEPS = "Select your damaged weapon in Inventory and unequip it. Upstairs, in the second-floor room, all the workstations are together against the back wall. Use the Workbench; in Trades, press F to repair the selected piece. Check the required materials first.\n\nThe cost follows its actual wear. Keep the same piece; making another weapon is not repairing it.";
+CA_M01_REPAIR_COST_ASK = "What happens to materials and pauses?";
+CA_M01_REPAIR_COST = "The workbench reserves the materials it needs. Closing the interface or leaving pauses the work; it does not cancel it. You choose whether to resume or cancel. A saved game keeps the task.\n\nWood and fiber come from the entrance garden. Metals and gems are in the cave; the Bull provides leather. Higher efficiency saves material, but takes longer.";
+CA_M01_REPAIR_DONE = "You restored the same weapon instead of replacing it. That is the lesson: inspect its wear, plan your materials and keep your equipment working.\n\nThe optional practice is complete. You can ask me to review the steps whenever you need.";
+CA_M01_REPAIR_DETAIL = "Optional practice — Ronnie: repair your first crafted weapon if it is worn. Select it in Inventory and unequip it. Use the Workbench in the second-floor room, then press F in Trades. The existing task must finish. Closing or leaving pauses it; only you cancel it. This does not block Rulo or the exit.";
+CA_M01_REPAIR_DETAIL_DONE = "Optional practice completed: you repaired your first crafted weapon.";
+
+
+[es]
+// 4.33.0w: mantenimiento opcional de la primera arma.
+CA_M01_REPAIR_ASK = "¿Cómo mantengo mi arma?";
+CA_M01_REPAIR_INTRO = "Fabricarla fue el principio. Inspeccioná la primera arma que hiciste: su condición muestra el desgaste. Si está dañada, podés aprender a reparar esa misma pieza. Si está intacta, todavía no necesita reparación.\n\nEsta práctica es opcional. Podés seguir con Rulo o irte cuando se abra el camino.";
+CA_M01_REPAIR_STEPS_ASK = "¿Dónde y cómo la reparo?";
+CA_M01_REPAIR_STEPS = "Seleccioná el arma dañada en Inventario y desequipala. En la habitación del segundo piso están todas las estaciones juntas contra la pared del fondo. Usá el Banco de Trabajo; en Oficios, F repara la pieza seleccionada. Revisá los materiales necesarios primero.\n\nEl coste depende del desgaste real. Conservá la pieza: fabricar otra arma no equivale a repararla.";
+CA_M01_REPAIR_COST_ASK = "¿Qué pasa con los materiales y las pausas?";
+CA_M01_REPAIR_COST = "El banco reserva los materiales necesarios. Cerrar la interfaz o alejarte pausa el trabajo; no lo cancela. Vos decidís si lo retomás o cancelás. La partida guardada conserva la tarea.\n\nMadera y fibra: jardín de la entrada. Metales y gemas: cueva. El Toro aporta cuero. Más eficiencia ahorra material, pero tarda más.";
+CA_M01_REPAIR_DONE = "Recuperaste la misma arma en lugar de reemplazarla. Esa es la lección: mirar el desgaste, prever los materiales y mantener tu equipo en condiciones.\n\nLa práctica opcional está completa. Podés pedirme que repasemos los pasos cuando lo necesites.";
+CA_M01_REPAIR_DETAIL = "Práctica opcional — Ronnie: repará tu primera arma fabricada si tiene desgaste. Seleccioná esa pieza en Inventario y desequipala. Usá el Banco de Trabajo de la habitación del segundo piso; en Oficios, pulsá F. Debe terminar la tarea real. Cerrar o alejarte la pausa; sólo vos la cancelás. No bloquea a Rulo ni la salida.";
+CA_M01_REPAIR_DETAIL_DONE = "Práctica opcional completada: reparaste tu primera arma fabricada.";

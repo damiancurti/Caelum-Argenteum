@@ -1,53 +1,70 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0u — 2026-09-12.
+Versión documental: 4.33.0w — 2026-09-12.
 
-## Estado actual: 4.33.0u
+## Estado actual: 4.33.0w
 
-**Base:** carpeta completa 0t. El autor aprobó las demás pruebas y señaló dos
-observaciones: escudo visible sin equipar uno y falta de claridad para hacer
-la defensa de Rulo con mandoble. Ambas se atienden en esta corrección.
+**Base de entrega:** carpeta completa 0u, última versión aprobada por el autor.
+Este acumulativo incluye 0v y 0w; ambas quedan pendientes de sus pruebas.
+0w amplía el tutorial con una práctica opcional de reparación de Ronnie,
+disponible después de devolver su espada. No exige repetir ramas ni añade
+un bloqueo al cierre implementado. Se usa la primera arma real, por su ItemId.
 
-El estado de escudo se contrasta con el objeto equipado del inventario nativo.
-Un estado obsoleto sin objeto, desequipado o almacenado deja de aportar peso,
-bloqueo y vista de escudo. La espada elimina además las capas izquierdas
-residuales aunque el indicador visual anterior ya fuera falso. No se conceden
-escudos ni se retiran piezas reales. El préstamo conserva su ItemId.
+Ronnie explica cómo inspeccionar el desgaste, seleccionar/desequipar la pieza,
+usar el Banco de Trabajo del segundo piso y pulsar F en Oficios. La reparación
+nativa conserva costes, materiales, eficiencias, tiempos y reservas. La práctica
+se registra sólo al restaurar realmente esa pieza; hablar no la arregla, no
+la daña artificialmente y no acredita una tarea iniciada/cancelada/pausada.
+Detalle muestra el estado opcional. Guardar y viajar conservan su resultado.
+Si se abandona la mansión sin hacerla, no se muestra un pendiente imposible.
 
-Rulo y Misiones > Detalle (F) explican la defensa según el equipo actual.
-Mandoble: desplazamiento lateral frente al blanco de la planta baja; no requiere
-Zoom. La detección existente de 48 MU y las seis prácticas se conservan.
-Bloqueo compatible/guanteletes y apuntado a distancia siguen siendo válidos.
-La carga desde 0t repara el estado sin reiniciar misión ni inventario.
+El inventario de materiales T1 se auditó usando el catálogo vigente en GZDoom.
+El cuello de botella es el cuero, no la presencia de las cinco gemas. Las
+cantidades y límites están en SYSTEMS.md. No se aumenta el botín del Toro ni
+el cajón autorizado para los guanteletes; tampoco se conceden recetas nuevas.
+La distribución narrativa de conocimiento para armaduras/sellos aún falta.
 
-**Base 0t aceptada, salvo estas observaciones:** El Loco en la cueva,
-manifestación, revelación con Usar, captura explícita y recompensa única,
-de fase 80 a 90, con colección y bonificación fraccionaria.
+Los tres WAD, los sonidos, modelos y texturas mantienen sus hashes de 0v.
+Quien ya salió puede continuar en MAP02; para probar esta ampliación se usa
+un guardado anterior al cruce. No se abre un regreso artificial a la mansión.
 
-Tras recibir la Caja de Palomo, la aparición queda en el centro de la cueva,
-delante de las vetas del fondo. Se llega atravesando la pared del pasaje de
-Caella y bajando con el ascensor. Examinarla revela nombre e ilustración;
-salir del diálogo la deja disponible. Al aceptar, la carta se acerca al jugador
-hasta desaparecer en la Caja. Alejarse, perder la Caja o morir antes de acabar
-interrumpe sin recompensa y deja la esencia para reintentar.
+### Cambios 4.33.0v incluidos, pendientes de validación del autor: salida y regreso al cuerpo
 
-El registro viajero conserva las cartas y la revelación. El Diario incorpora
-Tarot: ilustración original de El Loco de las Pampas, contador y bonificación.
-Regla canónica recuperada de Documentación V4.25.2, sección 7, pág. 20:
-Mayor +2%, Menor +1%, sumados sobre los doce niveles primarios. Se conservan
-fracciones antes de las fórmulas derivadas. Creación/equipo se recalculan antes
-de aplicar el factor; guardar/cargar no lo multiplica de nuevo. No se obtiene
-salud gratuita ni se modifica la distribución base del creador.
+**Base:** carpeta completa 0u, con todas las pruebas aprobadas por el autor.
+Se conservan la espada sin escudo fantasma, la defensa contextual de Rulo y
+los bloques anteriores. 0v implementa el cierre de MAP01: fases 90 -> 95 -> 100.
 
-Detalle y la orientación de Argento muestran el estado actual. Palomo conserva
-su tono y ofrece hablar sobre la captura arriba; los cuatro residentes tienen
-reacciones propias. No adelantan la verdad del Limbo ni exigen otra prueba.
+Tras capturar El Loco, la salida responde al fondo de la sala del Toro, en
+planta baja. Misiones > Detalle (F), Palomo, Ronnie y Rulo orientan hacia allí.
+Sólo el portador de la Caja, con carta y pruebas completadas, puede activarla.
+El aviso enumera qué se conserva y permite decir «No. Todavía no» sin cambios.
+Una fabricación pendiente exige terminarla o cancelarla personalmente.
 
-**Límite vigente de 0u:** fase 90, carta obtenida y reacciones disponibles. Sigue pendiente
-la salida narrativa, transferencia automática del arma elegida, limpieza final,
-regreso al cuerpo y misión completada. MAP02 sigue siendo el campo diagnóstico;
-no se presenta como alcantarillas terminadas. User3 no incorpora poderes activos
-en este bloque. Se mantienen todas las funciones aprobadas de 0s y anteriores.
+Confirmar inicia una breve transición guardable. Al finalizar se guarda la
+primera arma por su ItemId dentro de la misma Caja; conserva tipo, tamaño,
+esencia y condición. Se retiran los demás objetos físicos, incluidos los que
+estaban almacenados. Se mantienen Tarot, recetas, personaje y recursos actuales;
+al retirar equipo sólo se aplican los máximos que correspondan. El catálogo de
+equipo adicional por clase y valores especiales al despertar siguen sin definir:
+no se conceden piezas adicionales ni una curación gratuita.
+
+La misión se completa antes del viaje nativo. MAP02 presenta una llegada breve
+a las alcantarillas, con una plataforma seca, canal central, pasarelas y la Voz
+que advierte al protagonista. Inventario permite recuperar y equipar el arma.
+Todavía no incluye el recorrido completo, encuentros ni salida de alcantarillas.
+MAP01 no tiene un camino de regreso normal desde esta llegada.
+
+El campo de pruebas anterior se conserva como CADEV02, con el mismo TEXTMAP y
+sus 16.508 cosas. Sus filtros de diagnóstico usan ahora ese nombre. MAP01.wad
+permanece idéntico a 0u: el controlador retira el Exit provisional y presenta
+la puerta al iniciar o cargar. Esto evita invalidar los guardados por cambiar
+el checksum del mapa. No se reorganiza la arquitectura de programación de V5.
+
+La colección de Tarot conserva el +2% fraccionario de El Loco, sobre los doce
+atributos y sin acumulación al cargar. Las recetas y objetos siguen teniendo
+una única fuente autoritativa; no se duplica la Caja ni el arma al reintentar.
+El cruce actual es individual: ante otros jugadores presentes se informa y
+no se inicia el traslado global. La salida cooperativa queda en el roadmap.
 
 La base 0n aprobada incluye:
 
@@ -73,7 +90,7 @@ La base 0n aprobada incluye:
 Las lecciones adicionales de supervivencia de Ronnie siguen planificadas
 como ampliación del tutorial; no bloquean retroactivamente las ramas aceptadas.
 
-Se conservan WAD, audio, modelos, jardín y poses aceptados. Las estaciones
+Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
 Formato: archivos nuevos/modificados para copiar, más un TXT de pruebas.
 La migración 0h aceptada se conserva; V5 reorganizará el código de programación.
@@ -142,10 +159,11 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Todas las pruebas de 0r aprobadas por el autor. |
 | 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única. Todas las pruebas aprobadas por el autor. |
 | 4 | 4.33.0t: El Loco en la cueva, fase 90 | Captura, colección y +2% fraccionario implementados; resto de pruebas aprobado por el autor. Sus dos observaciones se corrigen en 0u. |
-| 5 | 4.33.0u: escudo real y guía de Rulo | Corrección y pruebas de motor terminadas. Pendiente confirmación del autor sobre espada, mandoble y guardado. |
-| 6 | **Siguiente bloque: salida y regreso al cuerpo, fase 100** | Confirmación, transferir el arma inicial por ItemId a la Caja, limpiar temporales, completar misión y transición narrativa. Definir destino de alcantarillas y valores iniciales pendientes antes de conectar el retorno. La limpieza técnica existente no implementa por sí sola la salida. |
-| 7 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
-| 8 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
+| 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
+| 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Pendiente de pruebas del autor. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
+| 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Pendiente aprobación del autor. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 9 | Alcantarillas de MAP02 | Ampliar la llegada de 0v con recorrido, encuentros y continuación narrativa. El campo de diagnóstico se conserva como CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -236,7 +254,7 @@ Detalle de todos los directorios inmediatos de src, antes del parche:
 | caelum | 59 | Módulos de gameplay y UI enlazados desde ZSCRIPT; añadir un observador UI, sin dividir/reubicar los módulos existentes. |
 | impactphysics | 1 | Núcleo físico incluido por ZSCRIPT; conservar. |
 | crafting | 1 | Catálogo de recetas cargado por el sistema; conservar. |
-| maps | 2 | MAP01 y campo de pruebas MAP02; hashes invariantes. |
+| maps | 3 | MAP01 invariable; llegada narrativa MAP02 y campo de pruebas preservado como CADEV02 desde 0v. |
 | graphics | 556 | UI, iconos/texturas y registros de gráficos; conservar contenido y convenciones del motor. |
 | hires | 1 | Recurso gráfico de alta resolución del proyecto; conservar. |
 | sprites | 1.129 | Estados de actores/armas y sprites base de modelos; conservar, incluidos marcadores transparentes necesarios. |
@@ -254,17 +272,82 @@ antes de escribir y se informa con su ruta.
 
 ## Aplicación y mantenimiento
 
-Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0t y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+Con GZDoom cerrado, copiar src, assets, docs y README.md del parche sobre la carpeta
+completa 0u y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0u.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0w_DESDE_0u.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0u
+## Validación de 4.33.0w
+
+Escenarios enfocados en GZDoom 4.14.2 nativo, Linux/Freedoom. Se preparan etapa,
+primera arma con desgaste y componentes; los objetos/tareas de producción son
+los reales. Sólo se adelanta el tiempo mediante la función de depuración para
+no esperar el ciclo completo. No se declara medido el ritmo de juego en Windows.
+
+- Usar abre al Ronnie original. La pregunta opcional, pasos, pausas y respuesta
+  posterior se comprueban en español e inglés. Detalle reconoce la finalización.
+- Selección y desequipado mediante Inventario nativo; persiste la selección en
+  Oficios. La red real del segundo piso abre con Usar y reserva materiales.
+- Iniciar, cancelar y pausar no acreditan la práctica. Cancelar libera reservas
+  sin consumir materiales; cerrar detiene el contador de la misma tarea.
+- Terminar la reparación consume materiales y restaura el mismo ItemId, sin
+  objetos, recetas o cambios de etapa añadidos como recompensa.
+- Guardados reales con tarea pausada y práctica terminada; continuar desde ellos
+  y cruzar conserva el registro y la primera arma. Compatibilidad desde 0v.
+- Auditoría de cuatro conjuntos de armadura y cinco sellos T1, talle M, con
+  25/50/100% en todas las capas. Capacidades de vetas leídas del mapa en el motor.
+  Estos cálculos no simulan tiempo de extracción, mermas previas ni stock usado.
+
+Resultados: 83 comprobaciones aprobadas, cero fallos: 27 en español, 27 en
+inglés, 11 al cargar la tarea pausada, 5 al cargar la práctica completada y 13
+de compatibilidad desde un guardado 0v. Captura del diálogo en español revisada
+a 1280×720. Validador del proyecto aprobado; nueve claves nuevas en ambos
+idiomas. Los tres mapas y los recursos audiovisuales conservan sus bytes de 0v.
+El paquete se verifica por CRC y por reconstrucción del acumulativo sobre 0u.
+La prueba del autor de 0w queda pendiente: PRUEBAS_4_33_0w_DESDE_0u.txt.
+
+## Validación de 4.33.0v — pendiente del autor
+
+GZDoom 4.14.2 nativo, Linux, Freedoom 0.13, con escenarios aislados que preparan
+las etapas e inventarios. Se verifica el viaje real; no se simula cambiando el
+nombre del mapa ni se afirma haber repetido el tutorial completo.
+
+- Confirmación y cancelación mediante Usar/USDF nativos; fabricación pendiente,
+  distancia/altura, propiedad, ausencia de limpieza antes de completar el fundido.
+- ChangeLevel real: misión completada, misma Caja/ItemId/Owner, arma guardada con
+  su condición, eliminación de extras personales y almacenados, Tarot y recetas.
+  Sin escudo/capas fantasma ni reposición completa de recursos. Recuperación y
+  equipamiento del arma desde el inventario nativo después de llegar.
+- Guardado real durante el fundido y carga para continuar el mismo traslado;
+  guardado tras equipar en alcantarillas y carga sin repetir la Voz.
+- Guardado generado con fuente 0u y cargado sobre la misma ruta con 0v. La
+  comprobación detectó incompatibilidad al modificar TEXTMAP; se conservó
+  MAP01.wad exacto y se pasó la modificación al controlador. La versión final
+  debe conservar ese hash para admitir partidas existentes.
+- Presentación y localización español/inglés; capturas nativas de puerta y
+  alcantarillas. TEXTMAP diagnóstico preservado y referencias movidas a CADEV02.
+
+Resultados finales: 89 comprobaciones aprobadas, cero fallos: recorrido nativo
+38, reanudar fundido 22, cargar llegada 2, migración 0u -> 0v 12 y salvaguardas
+15. El contador serializado de una partida incluye las comprobaciones previas;
+no se cuentan de nuevo al cargar. El save de origen se creó con fuente 0u real.
+Las salvaguardas cubren también pieza caída, pieza destruida sin reparación
+regalada, cuatro familias mágicas, requisito de Caja/carta/Rulo e interrupción.
+
+CADEV02 abrió en GZDoom con IA masiva desactivada para comprobar el cambio de
+nombre; no se repitió la prueba de rendimiento de multitudes. El validador pasó:
+cinco documentos, 74 audios, 12 modelos de estaciones y referencias conservadas.
+Las 17 claves del retorno están presentes una vez en cada idioma. MAP01.wad
+mantiene SHA-256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+Corrección de registro: el autor confirmó que su última versión recibida fue 0u.
+0v no está aprobado; sus cambios se entregan junto con 0w en el acumulativo.
+
+## Validación de 4.33.0u — aprobada por el autor
 
 - GZDoom 4.14.2 nativo, Linux, Freedoom 0.13: 42 comprobaciones de equipo,
   cero fallos. Préstamo sin escudo; reparación de modelo obsoleto; escudo real,
@@ -289,8 +372,8 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
   recursos existentes y CRC del ZIP comprobados. MAP01.wad no cambia.
 
 Son escenarios enfocados que preparan inventario y etapas; no se repite todo
-el tutorial ya aceptado. Quedan sólo las comprobaciones del autor enumeradas
-en PRUEBAS_4_33_0u.txt. La siguiente ampliación sigue siendo la salida narrativa.
+el tutorial ya aceptado. El autor confirmó exitosas todas las comprobaciones
+de 0u; la ampliación de salida se implementa en 0v.
 
 ## Validación de 4.33.0t — resto aprobado por el autor
 
@@ -324,7 +407,7 @@ en PRUEBAS_4_33_0u.txt. La siguiente ampliación sigue siendo la salida narrativ
 Los escenarios preparan etapas y condiciones ya aprobadas, y sitúan a Palomo
 en su destino para comprobar la conversación. No reemplazan una partida
 completa ni la escucha en Windows del autor. El autor aprobó las demás pruebas
-de 0t; el escudo fantasma y la guía de defensa se atienden en 0u. La salida y
+de 0t; el escudo fantasma y la guía de defensa se atendieron en 0u. La salida y
 poderes activos no se prueban como funciones implementadas.
 
 ## Validación de 4.33.0s — aprobada por el autor
@@ -431,7 +514,8 @@ Caella no estaba cubierta: 0r reproduce y corrige esa omisión.
 Los ensayos preparan precondiciones y aceleran temporizadores en copias privadas;
 validan transiciones y acciones del motor, no sustituyen la partida del autor.
 El autor confirmó el resto de sus pruebas; las tres observaciones se atienden
-en 0q. El epílogo sigue pendiente. No se declara MAP01 terminado.
+en 0q. Ese bloque dejaba el epílogo pendiente; 0s–0v incorporan su cierre.
+La auditoría final del tutorial continúa en el roadmap.
 
 ## Validación de 4.33.0o
 
@@ -446,7 +530,7 @@ en 0q. El epílogo sigue pendiente. No se declara MAP01 terminado.
 
 Comprobación solicitada en 0o: desaparición del manual exterior y conservación
 de recetas. El autor continuó con Rulo y aprobó después las demás pruebas de
-la base; las observaciones pendientes actuales son las de 0u.
+la base; las observaciones de 0u ya fueron aprobadas por el autor.
 
 ## Validación de 4.33.0n — aceptada el 2026-09-11
 

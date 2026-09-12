@@ -1,6 +1,32 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0u — 2026-09-12.
+Versión documental: 4.33.0w — 2026-09-12.
+
+Este acumulativo sobre 0u incluye MAP02, CADEV02 y el generador de 0v.
+MAP01 permanece idéntico a 0u.
+
+## Revisión 4.33.0w
+
+No se agregan ni modifican arte, audio, modelos o mapas. La lección de Ronnie
+reutiliza el diálogo nativo y la frase de arpa aceptada. Se conservan los 74
+audios, las doce estaciones y sus fuentes. Los tres WAD mantienen sus hashes.
+
+## Puerta de retorno y llegada a alcantarillas (4.33.0v)
+
+MAP01.wad conserva exactamente el archivo aprobado. Al cargar, el controlador
+sustituye visualmente el panel SW1EXIT por la puerta propia CMDR03 y, después
+de capturar El Loco, coloca el marcador CTAR ya existente. No se modifican
+sprites, texturas, modelos ni sonidos aceptados.
+
+MAP02 reutiliza CASWRWAL (ladrillo), CASWRFLR (piedra), CAPOOL01 (agua, teñida
+por el sector) y CMGT02 (reja del fondo). La llegada tiene 84 sectores,
+187 líneas y un inicio de jugador, sin enemigos ni objetos del diagnóstico.
+El generador reproducible es assets/generators/build_sewer_arrival.py; sólo
+reescribe src/maps/MAP02.wad. La ambientación completa se amplía después.
+
+CADEV02 conserva el TEXTMAP anterior de MAP02 con sus 16.508 cosas: sólo cambia
+el marcador de nombre del WAD. MAP02 y CADEV02 reutilizan CA_MUS02. Los 74
+archivos de audio, 12 modelos de estaciones y sus fuentes siguen sin cambios.
 
 ## Vista de espada (4.33.0u)
 

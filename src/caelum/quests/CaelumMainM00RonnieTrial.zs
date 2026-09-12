@@ -24,6 +24,37 @@ class CaelumMainM00RonnieTrial : Object play
         return speaker != null && speaker.StoryAnchored;
     }
 
+    // Ampliación opcional: observar la reparación nativa, sin otra tarea,
+    // otro coste ni un requisito nuevo para completar la misión principal.
+    static bool OfferRepairLesson(CaelumPlayer user)
+    {
+        if (!IsRonnie(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.MainM00StarterWeaponId <= 0 || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+            return false;
+        r.MainM00RepairLessonOffered = true;
+        user.PersistCharacterState();
+        return true;
+    }
+
+    static void RecordRepairLesson(CaelumPlayer user, CaelumEquipmentItem item, int previousDurability)
+    {
+        if (!CanInteract(user) || item == null || item.Owner != user
+            || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || !user.CraftingTaskActive || !user.CraftingTaskCompleting
+            || user.CraftingTaskKind != CaelumConstants.CRAFTING_TASK_REPAIR
+            || user.CraftingTaskTargetItemId != item.ItemId
+            || previousDurability >= item.Durability) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.MainM00RepairLessonOffered || r.MainM00RepairLessonComplete
+            || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.MainM00StarterWeaponId != item.ItemId) return;
+        r.MainM00RepairLessonComplete = true;
+        // CompleteCraftingTask persiste después de cerrar reservas y tarea.
+        user.RefreshSocialJournalSnapshot();
+    }
+
     static void Feedback(CaelumPlayer user, String key)
     {
         if (user != null) user.A_Print(StringTable.Localize(key, false));
@@ -427,4 +458,12 @@ class CaelumFiberBush : CaelumTreeEnvironmentProp
         Scale 0.05;
     }
     States { Spawn: CFBH A -1; Stop; }
+}
+
+class CaelumM00RepairLessonAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00RonnieTrial.OfferRepairLesson(CaelumPlayer(Owner));
+    }
 }

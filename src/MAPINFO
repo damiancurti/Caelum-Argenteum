@@ -42,20 +42,26 @@ skill Caelum
     SpawnFilter = Normal
 }
 
-// MAP01 comienza a asumir su función narrativa final. MAP02 todavía conserva
-// el campo independiente de actores durante la construcción de las alcantarillas.
+// MAP01 cierra el prólogo; MAP02 contiene la llegada a las alcantarillas.
+// El campo diagnóstico completo se conserva aparte en CADEV02.
 map MAP01 "$CA_MAP01_NAME"
 {
     music = "CA_MUS01"
 
-    // Transición provisional directa: las estadísticas Doom no se muestran.
+    // La puerta de retorno valida inventario y progreso antes de ChangeLevel.
     nointermission
 
-    // El Exit existente conduce al campo independiente de actores.
+    // El avance sólo se ejecuta desde la confirmación narrativa.
     next = "MAP02"
 }
 
-map MAP02 "Campo de pruebas de actores"
+map MAP02 "$CA_MAP02_SEWER_NAME"
+{
+    music = "CA_MUS02"
+    nointermission
+}
+
+map CADEV02 "Campo de pruebas de actores"
 {
     music = "CA_MUS02"
 }

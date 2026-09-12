@@ -1,4 +1,4 @@
-// Rellenos visuales exclusivos del campo masivo de MAP02. Conservan actor,
+// Rellenos visuales exclusivos del campo masivo de CADEV02. Conservan actor,
 // render y estados heredados, pero no ocupan el blockmap: la prueba 4.29.0r
 // separa así el coste de dibujar 15.000 cuerpos del coste de consultar 13.125
 // obstáculos pasivos durante cada movimiento nativo A_Chase.

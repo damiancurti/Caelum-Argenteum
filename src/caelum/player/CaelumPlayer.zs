@@ -343,6 +343,8 @@ class CaelumPlayer : DoomPlayer
     int MainM00StarterSizeSnapshot;
     int MainM00StarterWeaponSnapshot;
     bool MainM00RonnieFinishedSnapshot;
+    bool MainM00RepairLessonOfferedSnapshot;
+    bool MainM00RepairLessonCompleteSnapshot;
     int MainM00StarterRequiredSnapshot[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00StarterMissingSnapshot[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00SupplySnapshot[6];
@@ -758,6 +760,8 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
+        MainM00RepairLessonOfferedSnapshot = persistentState != null && persistentState.MainM00RepairLessonOffered;
+        MainM00RepairLessonCompleteSnapshot = persistentState != null && persistentState.MainM00RepairLessonComplete;
         JournalKnownQuestCount = 0;
         if (persistentState == null) { return; }
 
@@ -1631,6 +1635,12 @@ class CaelumPlayer : DoomPlayer
         persistentState.StoredHunger = CurrentHunger;
         persistentState.StoredThirst = CurrentThirst;
         persistentState.StoredSleep = CurrentSleep;
+        let starter = FindNativeEquipmentItemById(persistentState.MainM00StarterWeaponId);
+        if (starter != null && starter.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            persistentState.MainM00StarterConditionKnown = true;
+            persistentState.MainM00StarterDurability = starter.Durability;
+        }
         RefreshSocialJournalSnapshot();
     }
 
@@ -10658,7 +10668,9 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
             return false;
         }
+        int previousDurability = target.Durability;
         target.Durability = GetEquipmentTaskMaximumDurability(target);
+        CaelumMainM00RonnieTrial.RecordRepairLesson(self, target, previousDurability);
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_REPAIRED;
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_REPAIRED;
         ApplyCharacterProfile();

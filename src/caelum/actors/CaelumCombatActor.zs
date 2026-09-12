@@ -352,9 +352,9 @@ class CaelumCombatActor : Actor
 
     bool IsCaelumMassDiagnosticActor()
     {
-        // La pared de aislamiento de MAP02 empieza en X=8192. Esta condición
+        // La pared de aislamiento de CADEV02 empieza en X=8192. Esta condición
         // excluye los nueve recintos y no afecta ningún mapa de juego normal.
-        return level.MapName == "MAP02"
+        return level.MapName == "CADEV02"
             && Pos.X >= 8192.0
             && Pos.X <= 24576.0
             && Pos.Y >= -8192.0
@@ -363,7 +363,7 @@ class CaelumCombatActor : Actor
 
     bool BeginCaelumDiagnosticAttack()
     {
-        if (level.MapName != "MAP02") { return true; }
+        if (level.MapName != "CADEV02") { return true; }
         ImpactDiagnosticAttackAttempts++;
         if (!CaelumMassAIScheduleActive) { return true; }
         if (CaelumMassScheduler == null)

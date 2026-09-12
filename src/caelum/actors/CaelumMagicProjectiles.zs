@@ -71,7 +71,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
 }
 
 // Variante explosiva conservada para armas que realmente la requieran y para
-// la comparación A/B de MAP02. Tampoco ejecuta búsqueda guiada por tic.
+// la comparación A/B de CADEV02. Tampoco ejecuta búsqueda guiada por tic.
 class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 {
     int CaelumLifetimeTicks;

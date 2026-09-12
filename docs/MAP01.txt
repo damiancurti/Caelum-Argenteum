@@ -1,8 +1,35 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0u — 2026-09-12.
+Versión documental: 4.33.0w — 2026-09-12.
 
 
-REVISIÓN VIGENTE 4.33.0u — ESCUDO REAL Y GUÍA DE DEFENSA
+REVISIÓN VIGENTE 4.33.0w — REPARACIÓN OPCIONAL Y AUDITORÍA T1
+Base de entrega 0u aprobada; 0v y 0w pendientes de pruebas del autor. Ronnie ofrece mantenimiento después de devolver
+su espada. La práctica usa la primera arma fabricada, su desgaste real y la
+reparación nativa. No concede una restauración gratuita ni agrega un requisito
+a Rulo o a la salida. Los pasos y el estado aparecen en Detalle.
+
+La cobertura T1 se cuantifica en SYSTEMS.md: cuero finito y conocimiento de
+recetas limitan los conjuntos completos; las cinco gemas y metales existen.
+Se conservan botín, cajón, estaciones y todos los WAD. El mapa de alcantarillas
+sigue siendo la llegada de 0v, sin una ruta nueva en esta revisión.
+
+CAMBIOS 4.33.0v INCLUIDOS, PENDIENTES DEL AUTOR — SALIDA Y REGRESO AL CUERPO
+Base: 0u, todas las pruebas aprobadas por el autor. Tras capturar El Loco,
+la puerta al fondo de la sala del Toro (planta baja) exige confirmación.
+Detalle (F) y los diálogos orientan; despedirse de Palomo es opcional.
+No/Todavía no deja todo intacto. Sí inicia fase 95 y, al terminar, fase 100.
+Sólo cruzan la Caja y la primera arma fabricada, dentro de ella. Los demás
+objetos físicos, incluso almacenados, quedan atrás; el aviso lo explica.
+Se conservan Tarot, recetas, personaje y recursos actuales. No hay equipo
+adicional por clase ni valores especiales de recuperación definidos.
+
+MAP02 ofrece la llegada a las alcantarillas con una intervención de la Voz;
+el recorrido y encuentros posteriores quedan por construir. CADEV02 conserva
+el campo diagnóstico anterior. MAP01.wad es idéntico a 0u: la puerta se prepara
+en runtime y el Exit anterior se desactiva también en guardados existentes.
+Los capítulos 13, 22, 23, 25 y 27 describen ahora la implementación vigente.
+
+BASE 4.33.0u ACEPTADA — ESCUDO REAL Y GUÍA DE DEFENSA
 Base: 0t. El autor aprobó las demás pruebas; se corrigen sus observaciones
 sobre el escudo fantasma de la espada prestada y la guía de Rulo con mandoble.
 Ronnie no presta un escudo. La vista y defensa exigen uno real equipado;
@@ -26,9 +53,8 @@ revelación y etapa; recalcular o cargar no acumula la bonificación de nuevo.
 Detalle distingue encontrar, revelar y capturar; luego orienta hacia Palomo
 en el segundo piso. Los cuatro residentes reaccionan sin revelar la verdad.
 
-LÍMITE JUGABLE: fase 90. La salida, transferencia automática del arma inicial,
-regreso al cuerpo y alcantarillas quedan pendientes del cierre siguiente.
-La misión sigue activa. No se añaden poderes activos de cartas ni Trucazo.
+LÍMITE DE 0t: fase 90; 0v lo amplía al cierre de fase 100 y llegada a MAP02.
+No se añaden poderes activos de cartas ni Trucazo.
 
 BASE 4.33.0s ACEPTADA — PALOMO FINAL Y CAJA
 Diálogo del Palomo original en el segundo piso, aceptación explícita 75 -> 80,
@@ -255,7 +281,7 @@ hablar con los NPC de 0f. V4.33.0f incorpora la prueba social de Argento:
 
 Los estados conservan sus índices originales. Las cuatro ramas, la entrega
 de la Caja y captura de El Loco ya tienen contenido jugable. La cueva sirve
-a Ronnie y a la captura. Permanecen pendientes la salida y el regreso al cuerpo.
+a Ronnie y a la captura. 0v añade salida, regreso al cuerpo y cierre de fase 100.
 
 ## Actores y espacios preparados en MAP01
 
@@ -430,9 +456,9 @@ HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
 Especificación v1.0 consolidada en 4.33.0g — 2026-09-10
 
 Autor del proyecto: Damián Curti
-Estado: diseño narrativo y técnico; fase 90 implementada en 0t. El autor aprobó
-las demás pruebas. Sus observaciones de escudo y guía de defensa se corrigen
-en 0u y son las comprobaciones pendientes actuales.
+Estado: fases 00–100 y llegada a MAP02 implementadas hasta 0v. Base 0u aprobada
+por el autor. El cruce 0v y la práctica opcional 0w esperan validación del autor. El mapa
+completo de alcantarillas y las ampliaciones de supervivencia son futuros bloques.
 Las listas del diseño describen el destino completo. El alcance de ejecución
 y las correcciones posteriores se detallan al comienzo de este archivo.
 
@@ -1309,21 +1335,21 @@ FASE 80 — PALOMO_FINAL
 - Entregar la Caja Mágica exactamente una vez.
 - Transferir el equipo inicial autorizado al interior de la Caja.
 
-Estado vigente: diálogo y entrega implementados desde 0s. La transferencia automática del
-equipo inicial todavía forma parte del cierre pendiente; puede guardarse
-manualmente si está desequipado y cumple las reglas de almacenamiento.
+Estado vigente: diálogo y entrega implementados desde 0s. La transferencia
+narrativa de la primera arma se realiza al confirmar la salida en 0v; antes
+puede guardarse manualmente si cumple las reglas de almacenamiento.
 
 FASE 90 — CAPTURE_THE_FOOL
 
 - Manifestar El Loco.
 - Enseñar la interacción de captura mediante la Caja.
 - Otorgar la carta, su progreso y bonificación una sola vez.
-- Registrar EXIT_READY. La activación física de la salida queda para el cierre.
+- Registrar EXIT_READY. Desde 0v habilita la puerta al fondo de la sala del Toro.
 
 Estado 0t: captura, colección, +2% fraccionario y reacciones implementados.
 La misión permanece activa en fase 90.
 
-FASE 100 — RETURN_TO_BODY (PENDIENTE)
+FASES 95 / 100 — EXIT_CONFIRMED / RETURN_TO_BODY (IMPLEMENTADO EN 0v)
 
 - Solicitar confirmación antes de abandonar MAP01.
 - Limpiar objetos temporales del Limbo.
@@ -1915,16 +1941,24 @@ La elección se fija al confirmar; leer o retroceder no entrega recetas ni equip
 
 19.4. CONTENIDOS DE LA RUTA
 
-Plan de lecciones: aún no completo en 0l. La recolección/carga y fabricación
-son jugables; revisar el préstamo con Ronnie no acredita reparación manual.
+Estado 0w: recolección/carga y fabricación aceptadas. Se añade una reparación
+opcional de la primera arma, después de devolver el préstamo; revisar aquel
+préstamo no acredita reparación manual. Los demás tramos siguen planificados.
 
-Tramo A — preparación:
+Tramo A — mantenimiento opcional (implementado en 0w):
 
-- Mostrar la carga actual y el coste de Aire.
-- Entregar una herramienta dañada o localizarla cerca de la entrada.
-- Enseñar a inspeccionar su condición e ItemId.
-- Proporcionar materiales controlados para repararla.
-- Completar una reparación real en CA_M01_REPAIR_STATION.
+- Hablar con Ronnie después de devolver su espada: «¿Cómo mantengo mi arma?».
+- Inspeccionar la primera arma fabricada. Si está intacta, no necesita reparación;
+  no se introduce daño artificial ni se obliga a deteriorarla.
+- Seleccionar/desequipar la pieza en Inventario. Usar el Banco de Trabajo de la
+  habitación del segundo piso; pulsar F en Oficios para reparar la seleccionada.
+- Usar los costes nativos según desgaste, eficiencia e infraestructura.
+- Registrar sólo una reparación terminada de ese ItemId. Cerrar/alejarse pausa;
+  cancelar es decisión del jugador y no concede finalización.
+- Mostrar estado opcional en Detalle. Guardar/cargar conserva tarea y registro.
+- No modificar etapas, recompensas ni condiciones de Rulo/Palomo/El Loco/salida.
+- La versión inicial del diseño proponía otra herramienta dañada y materiales
+  dedicados. 0w utiliza la pieza y recursos existentes sin fijar otro préstamo.
 
 Tramo B — necesidades:
 
@@ -1978,7 +2012,7 @@ STARTER_WEAPON_CRAFTED; se conserva el ItemId y se alcanza fase 60. El Diario
 pide volver con Ronnie. Devolver la espada retira su instancia y fija
 RONNIE_COMPLETE una sola vez; no vuelve a prestarla al reabrir el diálogo.
 Desde 0p, RONNIE_COMPLETE permite iniciar a Rulo. Las lecciones de 19.4 se
-conservan como ampliación prevista; no bloquean esta continuación.
+incluyen reparación opcional desde 0w y el resto previsto; no bloquean esta continuación.
 
 RONNIE:
 “Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
@@ -2259,18 +2293,20 @@ cambio de la mansión. No comprenden qué ocurrió.
 - Caella reconoce una esencia, pero nunca había visto una capturada.
 - Ronnie nota un cambio y aconseja preparar el arma y elegir el próximo paso.
 - Rulo recuerda la fuerza innata y la capacidad de liderar ante el Toro.
-- Al implementar la salida: Ronnie podrá señalar la nueva ruta y Rulo
-  comprobar que la puerta final sólo responde al protagonista.
+- Desde 0v, Ronnie señala la ruta y Rulo dice en primera persona que la puerta
+  final responde al protagonista y a él no le hace caso.
 
 Ninguno afirma estar muerto ni exige una explicación completa. Pueden pedir al
 jugador que recuerde el camino por si consigue regresar.
 
-22.6. APERTURA DE LA SALIDA (PENDIENTE DESPUÉS DE 0t)
+22.6. APERTURA DE LA SALIDA (IMPLEMENTADO EN 0v)
 
 Tras capturar El Loco:
 
 - Establecer CA_F_M01_EXIT_READY.
-- Activar CA_M01_EXIT_PORTAL_SPOT.
+- Presentar CaelumM00ReturnDoor en (-2438,0,0), ante la pared del fondo de
+  la sala del Toro. El controlador conserva una sola instancia y retira el
+  Exit provisional serializado, sin modificar MAP01.wad.
 - La salida debe parecer un corredor, puerta o interrupción del espacio, no un
   menú de selección de mapa.
 - Sólo el portador de la Caja puede iniciar la transición.
@@ -2299,37 +2335,35 @@ Opciones:
 La segunda opción cierra el aviso sin cambiar flags. La primera establece
 CA_F_M01_EXIT_CONFIRMED y comienza la transferencia.
 
-23.2. ORDEN ATÓMICO DE TRANSFERENCIA
+23.2. ORDEN ATÓMICO DE TRANSFERENCIA — IMPLEMENTADO EN 0v
 
-Ejecutar en este orden:
+El aviso explica que sólo se conservan Caja y primera arma, además del Tarot
+y conocimientos. Los demás objetos físicos, incluso dentro de la Caja, quedan
+atrás. No iniciar con tareas de fabricación activas ni otros jugadores presentes.
 
-1. Bloquear temporalmente nuevas interacciones.
-2. Confirmar que la Caja existe y pertenece al jugador.
-3. Confirmar que El Loco fue capturado.
-4. Resolver la elección libre de arma por StarterWeaponItemId; el equipo
-   adicional de clase sigue pendiente de definición y no sustituye esa arma.
-5. Mover StarterWeaponItemId al interior de la Caja.
-6. Crear dentro de la Caja cualquier elemento básico adicional del loadout que
-   no se haya obtenido durante la misión.
-7. Validar que cada objeto del loadout exista exactamente una vez.
-8. Eliminar del inventario exterior todos los objetos LIMBO_TEMP y
-   LIMBO_QUEST.
-9. Eliminar sobrantes de misión y herramientas de práctica.
-10. Conservar fuera de la Caja únicamente la propia Caja.
-11. Normalizar estados tutoriales de Hambre, Sed, Sueño, Aire, Ánima y salud
-    según valores que se definan para el inicio real.
-12. Establecer CA_F_M01_INVENTORY_SANITIZED.
-13. Guardar misión, Tarot, ItemId, contenido de la Caja y clase.
-14. Establecer CA_F_M01_COMPLETE.
-15. Ejecutar ChangeLevel hacia MAP02 y CA_M02_SEWER_PLAYER_START.
+1. Confirmar vida, etapa, pruebas, El Loco, Caja nativa con ItemId/Owner,
+   proximidad, altura, visibilidad y existencia de MAP02.
+2. Registrar fase 95, confirmación y 18 tics de fundido, guardables. Esperar
+   al cierre del diálogo. Interrumpir acciones de combate, cerrar interfaces
+   y bloquear temporalmente entrada, conservando bloqueos ajenos.
+3. Revalidar requisitos y resolver la primera arma por StarterWeaponItemId.
+   Recuperar la misma pieza si existe. Sólo si falta, reconstruir la elección
+   con los datos y última condición guardados, sin devolver materiales.
+4. Después de todas las comprobaciones fallables, poner el arma en la Caja,
+   sin equipar, y retirar los demás objetos físicos personales/almacenados.
+5. Limpiar referencias de equipo, selectores residuales y cargadores. Conservar
+   el personaje, las recetas y el Tarot. No hay catálogo adicional autorizado.
+6. Conservar salud y necesidades actuales, ajustadas a los máximos reales tras
+   retirar equipo; no definir una recuperación especial ni reponer recursos.
+7. Registrar preservación, limpieza, fase 100, objetivo de salida y misión
+   completada. Liberar sólo el bloqueo de entrada propio y persistir.
+8. ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION), sin reiniciar inventario
+   ni salud. Inicio nativo en (-236,32,0), ángulo 90°, sobre plataforma seca.
 
-Si cualquier validación entre 2 y 13 falla:
-
-- No cambiar de mapa.
-- Desbloquear las interacciones.
-- Mostrar un mensaje localizado no narrativo.
-- Mantener la salida activa para reintentar.
-- No duplicar objetos al reanudar.
+Si una comprobación falla antes de limpiar, cancelar fase 95 y volver a 90,
+sin tocar los objetos. Mostrar una respuesta localizada y permitir reintento.
+No se cede ejecución entre limpieza y registro final. La fabricación pendiente
+se termina o cancela por decisión del jugador; la salida nunca la cancela sola.
 
 23.3. APARICIÓN EN LAS ALCANTARILLAS
 
@@ -2340,7 +2374,7 @@ Al entrar en MAP02:
 - No reproducir un flashback completo de la emboscada.
 - Puede haber sangre seca, roturas en la ropa o una herida cerrada como indicios.
 - El inventario exterior contiene únicamente la Caja.
-- El equipo básico se encuentra dentro de ella.
+- La primera arma fabricada se encuentra dentro de ella; no se concede equipo adicional.
 - MAP01 no figura como destino disponible.
 
 Intervención breve de la Voz desconocida:
@@ -2349,6 +2383,11 @@ Intervención breve de la Voz desconocida:
 
 La frase confirma que alguien puede buscarlo, pero no explica quién lo mató ni
 cómo regresó.
+
+Alcance de 0v: galería de llegada con ladrillo, piedra, canal central y pasos
+secos. La reja al fondo no conduce aún a otro tramo. No incluye enemigos, restos
+corporales ni el recorrido completo. El diagnóstico anterior conserva sus
+16.508 cosas como CADEV02 y no se carga en la transición narrativa.
 
 23.4. FINALIZACIÓN DE LA MISIÓN
 
@@ -2493,7 +2532,9 @@ CA_ITEMFLAG_LIMBO_PRESERVABLE
 - Pieza que puede trasladarse al interior de la Caja.
 - El arma se identifica por StarterWeaponItemId, elegido y fabricado en 0l;
   no se sustituye por el arma automática de un StarterLoadoutDefinition.
-- Conserva ItemId, condición y eficiencia.
+- Conserva ItemId y todos los datos nativos de la pieza: tipo, esencia, talle,
+  tier y condición. La eficiencia ya se aplicó al fabricar (materiales/tiempo);
+  el objeto nativo actual no guarda otro campo independiente de eficiencia.
 
 CA_ITEMFLAG_UNIQUE_BOUND
 
@@ -2505,8 +2546,8 @@ CA_ITEMFLAG_UNIQUE_BOUND
 Al salir de MAP01:
 
 - Inventario exterior: únicamente CA_MagicBox.
-- Interior de la Caja: primera arma elegida/fabricada y equipo adicional
-  autorizado para la clase. Esta transferencia sigue pendiente después de 0l.
+- Interior de la Caja: únicamente la primera arma elegida/fabricada, transferida
+  en 0v. El equipo adicional por clase sigue pendiente de definición del autor.
 - No conservar consumibles infinitos, materiales sobrantes, herramientas de
   práctica ni runas.
 - No crear dos copias del arma si la fabricada ya fue preservada.
@@ -2516,7 +2557,10 @@ Al salir de MAP01:
 
 25.3. CONTENIDO POR CLASE
 
-[PENDIENTE DE CATÁLOGO DEFINITIVO]
+[PENDIENTE DE CATÁLOGO DEFINITIVO; NO SE OTORGA EN 0v]
+
+La salida funciona con la primera arma elegida y recursos actuales. Las
+siguientes definiciones describen una ampliación aún sin datos autorizados.
 
 Definir en datos, no en el controlador de MAP01:
 
@@ -2622,12 +2666,17 @@ Puntos mínimos de reconstrucción correcta:
 - Después de derrotarlo.
 - Con la Caja recibida pero El Loco sin capturar.
 - Con El Loco capturado pero sin cruzar.
+- Durante los 18 tics de transición de salida y después de recuperar el arma.
 - Después de entrar en MAP02.
 
 Al cargar, CA_M01QuestController reconstruye actores y sectores a partir del
 estado autoritativo. No volver a disparar recompensas OnEnter ya consumidas.
 
 27.2. MULTIJUGADOR
+
+Estado 0v: cruce individual. Si hay otro jugador, informar y rechazar antes de
+confirmar/limpiar. ChangeLevel transporta la sesión completa; la salida conjunta
+no está implementada. Lo siguiente continúa como diseño futuro:
 
 Recomendación inicial:
 
@@ -2739,7 +2788,8 @@ instancia vinculada por personaje que represente el mismo artefacto compartido.
 [ ] La salida sólo se habilita después de la captura.
 [ ] “Todavía no” cancela la transición sin penalización.
 [ ] La limpieza deja sólo la Caja en el inventario exterior.
-[ ] El loadout correcto se encuentra dentro de la Caja.
+[ ] La primera arma con su ItemId y condición está dentro de la Caja.
+[ ] El equipo adicional no definido no se concede automáticamente.
 [ ] MAP02 abre en las alcantarillas.
 [ ] MAP01 queda bloqueado como destino normal.
 
@@ -2771,8 +2821,8 @@ de fijar todos los datos finales:
 3. Equipo adicional y municiones de los cuatro StarterLoadoutDefinition.
    El arma principal ya está resuelta: elección libre y primera fabricación (0l).
 
-4. Uso definitivo de la Llave de Plata.
-   Recomendación: abrir desde el pasadizo de Caella una puerta ya existente.
+4. Uso de la Llave de Plata: RESUELTO en 0n–0p. Argento la entrega tras las
+   prácticas; abre la sala del Toro, cuyo fondo aloja la salida final desde 0v.
 
 5. Acertijo resuelto y aceptado en 0k: Tierra → Aire → Fuego → Agua con los
    emblemas existentes. Conservar su texto, orden y presentación aceptados.
@@ -2781,7 +2831,9 @@ de fijar todos los datos finales:
    construcción de Palomo.
    Recomendación: dejarlo sin explicación durante MAP01.
 
-7. Valores de salud y necesidades al despertar en MAP02.
+7. Valores especiales de salud y necesidades al despertar en MAP02.
+   En 0v se conservan los actuales, sujetos a los máximos después de retirar
+   equipo. No fijar una curación o reposición adicional sin decisión del autor.
 
 8. Momento exacto en que el jugador descubre que murió.
    Recomendación: permitir la inferencia en las alcantarillas y confirmar la

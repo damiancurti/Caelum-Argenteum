@@ -97,13 +97,14 @@ class CaelumJournalOverlay : EventHandler
     static ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
     {
         if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED)
-            return "CA_Q_DETAIL_COMPLETE";
+            return questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL ? "CA_M01_RETURN_DETAIL_COMPLETE" : "CA_Q_DETAIL_COMPLETE";
         if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_FAILED)
             return "CA_Q_DETAIL_FAILED";
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
             return "CA_Q_DETAIL_GENERIC";
         int stage = localPlayer.JournalQuestStage[questId];
-        if (stage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED) return "CA_M01_FOOL_DETAIL_DONE";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return "CA_M01_RETURN_DETAIL_CROSSING";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED) return "CA_M01_RETURN_DETAIL_READY";
         if (stage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED) return localPlayer.MainM00FoolRevealedSnapshot
             ? "CA_M01_FOOL_DETAIL_REVEALED" : "CA_M01_FOOL_DETAIL_FIND";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE) return "CA_M01_RULO_DETAIL_DONE";
@@ -214,6 +215,14 @@ class CaelumJournalOverlay : EventHandler
                         StringTable.Localize("CA_M01_DETAIL_MISSING", false), localPlayer.MainM00StarterMissingSnapshot[i]);
             }
             text = text .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_LOAD", false);
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00RepairLessonOfferedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || localPlayer.MainM00RepairLessonCompleteSnapshot))
+        {
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00RepairLessonCompleteSnapshot
+                ? "CA_M01_REPAIR_DETAIL_DONE" : "CA_M01_REPAIR_DETAIL", false);
         }
         text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
             .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL

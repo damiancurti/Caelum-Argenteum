@@ -69,6 +69,14 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00StarterSize;
     int MainM00RonnieSwordId;
     int MainM00StarterWeaponId;
+    // Salida 0v: condición de la pieza y transición reanudable al cargar.
+    bool MainM00RepairLessonOffered;
+    bool MainM00RepairLessonComplete;
+    bool MainM00StarterConditionKnown;
+    int MainM00StarterDurability;
+    int MainM00ReturnTics;
+    bool MainM00ReturnOwnsFreeze;
+    bool MainM00SewerVoiceHeard;
     bool MainM00SuppliesInitialized;
     int MainM00StarterRequired[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00SupplyInitial[6];

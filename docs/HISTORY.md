@@ -1,6 +1,55 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0u — 2026-09-12.
+Versión documental: 4.33.0w — 2026-09-12.
+
+## Corrección de entrega acumulativa 0u → 0w
+
+El autor confirmó 0u como última versión recibida. La aceptación de 0v se
+registró por error y queda rectificada. Este ZIP reúne ambos incrementos,
+con un solo TXT de pruebas y sin exigir aplicar 0v por separado.
+
+## Mantenimiento opcional y cobertura T1 — 4.33.0w, 2026-09-12
+
+La última versión recibida y aprobada por el autor fue 0u. Se amplía
+la enseñanza de Ronnie con una práctica opcional: reparar la primera arma real
+mediante la tarea nativa. Hablar no repara, iniciar no completa y cancelar no
+premia. Se conserva la identidad de la pieza, reservas, pausas y guardados.
+El estado viaja al salir; no bloquea ninguna rama o cierre ya aceptados.
+
+La auditoría T1 usa las fórmulas actuales en el motor. En M, los cuatro conjuntos
+de armadura necesitan juntos 590,4/198,4/75 kg de cuero al 25/50/100% por capa;
+el stock inicial conjunto de cajón y Toro es 108,5 kg antes de otros gastos.
+No se altera ese botín ni se afirma que alcanza para cualquier equipo. Las
+materias primas de los cinco sellos existen; enseñar todas las recetas de
+armaduras/sellos sigue pendiente. Tablas y alcance en SYSTEMS.md.
+
+README y cinco documentos actualizados. Entrega por copia de archivos nuevos
+o modificados y PRUEBAS_4_33_0w_DESDE_0u.txt. Los WAD y recursos audiovisuales no cambian.
+Validación nativa y pruebas pendientes del autor en PROJECT.md.
+
+## Salida de la mansión y regreso al cuerpo — 4.33.0v, 2026-09-12
+
+El autor aprobó todas las pruebas de 0u y pidió el siguiente parche. Se cierra
+MAP01: puerta al fondo de la sala del Toro, confirmación explícita, fase 95
+guardable y fase 100 completada antes del viaje nativo a las alcantarillas.
+Sólo cruzan la misma Caja y la primera arma fabricada por ItemId; la pieza
+conserva sus datos y queda almacenada. Los demás objetos físicos, incluso en
+la Caja, quedan atrás. Se preservan Tarot, recetas, personaje y recursos actuales.
+El equipo adicional por clase y valores especiales al despertar no estaban
+fijados: no se inventan ni se añaden recompensas o curaciones automáticas.
+
+La llegada de MAP02 es breve, con la Voz y ayuda para recuperar el arma. El
+recorrido completo queda en el roadmap. El diagnóstico anterior se conserva
+como CADEV02, con TEXTMAP idéntico. La prueba con un save real de 0u mostró que
+cambiar TEXTMAP invalidaba la carga; MAP01.wad se dejó intacto y el controlador
+retira el Exit provisional/panel y presenta la puerta durante la ejecución.
+
+Cancelar o fallar requisitos no limpia objetos; una tarea de fabricación activa
+impide cruzar y no se cancela sola. El cruce simultáneo cooperativo queda pendiente.
+Localización español/inglés, README y los cinco documentos se actualizan juntos.
+Entrega: sólo archivos nuevos/modificados para copiar más PRUEBAS_4_33_0v.txt.
+Evidencia nativa y aceptación pendiente del autor en PROJECT.md. El resto de
+este documento conserva los registros con el estado que tenían al publicarse.
 
 ## Escudo real y guía de Rulo — 4.33.0u, 2026-09-12
 

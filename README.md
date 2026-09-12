@@ -5,14 +5,46 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0u.** Apply over the complete **4.33.0t** project.
-Documentation reviewed: 2026-09-12. The author accepted the other 0t checks and
-reported a phantom shield on Ronnie's loan and unclear greatsword defense.
-This patch reconciles shield state with actual equipped inventory and explains
-Rulo's defense exercise for the current weapon. Existing 0t saves are supported.
-The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0w.** Cumulative patch: apply directly over the complete **4.33.0u** project.
+Documentation reviewed: 2026-09-12. 0u is the last author-approved release. Changes from 0v and 0w await author testing.
+Ronnie now offers an optional lesson on repairing the first crafted weapon.
+It observes real crafting and does not add another requirement for the quest.
+The T1 supply audit and roadmap are in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- After returning Ronnie's sword, ask him how to maintain your weapon. He
+  explains condition, selecting/unequipping the piece, the upstairs Workbench,
+  F in Trades, material reservations, pauses and cancellation.
+- The optional practice completes only when native Repair actually restores
+  the first crafted ItemId. Talking, starting, pausing or cancelling cannot
+  complete it. No free repair, forced damage, extra equipment or recipe reward.
+- Quest Detail records the lesson and completion. It survives saving/loading
+  and the narrative exit; leaving without doing it is allowed. The normal
+  Rulo/Palomo/Fool/exit progression stays unchanged.
+- T1 supply audit: leather limits complete armor sets at low efficiency.
+  The existing 96 kg chest (size M, before withdrawals) plus 12.5 kg Bull loot
+  is shared with the first weapon and repairs. All four armor sets together
+  need 590.4 / 198.4 / 75 kg at 25 / 50 / 100% in every layer. Source materials
+  for all five T1 Seals exist in the cave. Recipe access is a separate pending
+  content requirement; the audit does not grant the armor or Seal recipes.
+
+- After capturing The Fool, Quest Detail points to the marked door at the back
+  of the Bull room on the ground floor. Palomo, Ronnie and Rulo also give
+  directions. The door requires the owned Box, completed trials and the card.
+- Crossing requires explicit confirmation. Declining keeps the inventory and
+  quest unchanged. An unfinished crafting task must be finished or cancelled
+  by the player before crossing. The transition can resume from a saved game.
+- Only the Box and the first crafted weapon cross; all other carried and stored
+  physical items stay behind. The same weapon retains its ItemId and condition
+  inside the Box. Tarot, learned recipes, character progression and current
+  resources are retained, with no extra class loadout or automatic refill.
+- The quest completes at phase 100. MAP02 opens on a dry sewer walkway, with a
+  brief Unknown Voice conversation and instructions to retrieve/equip the weapon.
+  This is the arrival area; the full sewer route and encounters are still planned.
+- The unchanged diagnostic map content is now available through `map CADEV02`.
+  Its 16,508 things are separate from the narrative arrival. That console command
+  starts a new test character and is not a substitute for the quest transition.
 
 - Ronnie lends only the sword. A shield appears and blocks only when an actual,
   usable, compatible shield is equipped. Stale shield state and left-hand layers
@@ -32,8 +64,8 @@ The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
   levels before derived formulas. Fractions are retained: 15 becomes 15.30.
   Recalculation starts from creation/equipment; loading cannot compound bonuses.
 - Quest Detail tracks finding, revealing and capturing the essence. Palomo and
-  the four residents react to the capture. The quest stays active at phase 90;
-  the narrative exit and return to the body remain the next implementation.
+  the four residents react to the capture. Phase 90 now leads to the marked
+  door, phase 95 to the crossing and phase 100 to the completed quest.
 
 - Palomo's original actor speaks on the second floor after all four trials.
   His final dialogue keeps the author's mysterious tone, optional questions,
@@ -92,8 +124,8 @@ The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
   leather budget once; speaking with Rulo completes phase 75.
   The 900 kg Bull yields 12.5 kg of usable leather, following the documented
   hide/processing estimate. It no longer guarantees a complete T1 armor set
-  at minimum efficiency. The gauntlet chest remains; supply coverage will be
-  audited before tutorial closure. T2 workshop infrastructure stays.
+  at minimum efficiency. The gauntlet chest remains; T1 supply limits are quantified in SYSTEMS.md.
+  Additional supply and recipe teaching remain planned. T2 infrastructure stays.
 - Ranged trainees receive 24 borrowed rounds, replenished when exhausted in
   the arena. Unused rounds return at turn-in; pre-existing ammunition remains.
   Rulo restores the first weapon for practice. Javelin practice cannot yield
@@ -136,15 +168,14 @@ The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: implement the narrative exit and return to the body, with explicit
-confirmation, preserving the selected starter weapon by ItemId inside the Box,
-clearing temporary Limbo items, and completing the quest. The present playable
-limit is phase 90: The Fool captured and post-capture conversations available.
-Ronnie's additional survival lessons (food, water and a real repair)
-remain a tutorial expansion, without a new gate on the accepted starter branch.
-Arrow crafting is available; cartridge/bolt recipes remain planned, while
-Rulo now supplies the ammunition needed by those starter weapons in his trial.
-MAP02 is currently an actor test field; story sewers are still pending.
+Next: validate the optional repair lesson, then continue the remaining tutorial
+content and expand the sewer route with encounters and narrative continuation.
+Food/water and safe-water lessons, cartridge/bolt recipes, and acquisition of
+armor/Seal recipe knowledge remain planned. Material coverage is now quantified;
+no new leather source or revised loot amount has been defined in this patch.
+Additional equipment by class and special post-awakening resource values await
+author design. The accepted exit still preserves current resources and the first
+crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
@@ -155,19 +186,17 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-The other 0t checks were accepted by the author. PRUEBAS_4_33_0u.txt covers
-the corrected sword view, contextual defense instructions and loading existing
-saves. Focused native engine checks passed; the author's confirmation of these
-corrections remains pending. Card powers and narrative exit are separate future
-work; The Fool and its passive attribute bonus remain implemented.
+Only 0u is author-approved. The cumulative 0v/0w changes await author testing. Focused native engine checks cover the optional
+repair, cancellation, pauses, saved tasks, completion, both languages and travel.
+PRUEBAS_4_33_0w_DESDE_0u.txt lists the author's remaining checks. MAP01 and audiovisual assets are unchanged; MAP02 and CADEV02 are included. The full sewer route remains future content.
 
 ## Build and run
 
-Close GZDoom. Extract the 0u patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0t** project, accepting replacement of matching files.
-Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0u.txt** for the required checks; keep patch instructions outside
-the active documentation. Patches contain changed source files and that TXT.
+Close GZDoom. Extract the 0w patch and copy **src**, **assets**, **docs** and **README.md**
+into the complete **4.33.0u** project, merging folders and replacing matching
+files. Keep the supplied **PRUEBAS_4_33_0w_DESDE_0u.txt** beside the ZIP, outside docs.
+A MAP01 save before the exit lets you try the optional lesson. A character
+already in the sewers can continue normally; this patch adds no return route.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

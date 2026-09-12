@@ -2017,9 +2017,38 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_REPAIR_ASK"; nextpage = "ronnie_repair"; giveitem = "CaelumM00RepairLessonAction"; }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
     }
 
+    page
+    {
+        pagename = "ronnie_repair";
+        userstring = "ronnie_repair";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_REPAIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_REPAIR_STEPS_ASK"; nextpage = "ronnie_repair_steps"; }
+        choice { text = "$CA_M01_REPAIR_COST_ASK"; nextpage = "ronnie_repair_cost"; }
+    }
+    page
+    {
+        pagename = "ronnie_repair_steps";
+        userstring = "ronnie_repair_steps";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_REPAIR_STEPS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_REPAIR_COST_ASK"; nextpage = "ronnie_repair_cost"; }
+    }
+    page
+    {
+        pagename = "ronnie_repair_cost";
+        userstring = "ronnie_repair_cost";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_REPAIR_COST";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_REPAIR_STEPS_ASK"; nextpage = "ronnie_repair_steps"; }
+    }
     page
     {
         pagename = "ronnie_workshop";
@@ -2573,6 +2602,7 @@ conversation
         pagename = "palomo_fool_received"; userstring = "palomo_fool_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_FOOL_PALOMO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_RETURN_ASK"; nextpage = "palomo_return_door"; closedialog = false; }
         choice { text = "$CA_M01_FOOL_COLLECTION_ASK"; nextpage = "palomo_fool_collection"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_fool_box_use"; closedialog = false; }
     }
@@ -2589,5 +2619,45 @@ conversation
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_USE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
         choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_fool_received"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_return_door"; userstring = "palomo_return_door";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_RETURN_PALOMO";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_fool_received"; closedialog = false; }
+    }
+
+}
+
+// 4.33.0v: confirmación del umbral y Voz al llegar a MAP02.
+conversation
+{
+    id = 43320;
+    class = "CaelumReturnConversationMenu";
+    page
+    {
+        pagename = "return_confirm"; userstring = "return_confirm";
+        name = "$CA_M01_RETURN_TITLE"; dialog = "$CA_M01_RETURN_CONFIRM";
+        goodbye = "$CA_M01_RETURN_NO";
+        choice { text = "$CA_M01_RETURN_YES"; giveitem = "CaelumM00CrossReturnAction"; closedialog = true; }
+    }
+}
+conversation
+{
+    id = 43321;
+    class = "CaelumReturnConversationMenu";
+    page
+    {
+        pagename = "sewer_voice"; userstring = "sewer_voice";
+        name = "$CA_SPEAKER_UNKNOWN_VOICE"; dialog = "$CA_M01_RETURN_VOICE";
+        goodbye = "$CA_M01_RETURN_CONTINUE";
+        choice { text = "$CA_M01_RETURN_LOOK"; nextpage = "sewer_arrival"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "sewer_arrival"; userstring = "sewer_arrival";
+        name = "$CA_MAP02_SEWER_NAME"; dialog = "$CA_M01_RETURN_COMPLETE";
+        goodbye = "$CA_M01_RETURN_CONTINUE";
     }
 }

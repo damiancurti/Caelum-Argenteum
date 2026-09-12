@@ -1,6 +1,112 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0u — 2026-09-12.
+Versión documental: 4.33.0w — 2026-09-12.
+
+## Mantenimiento opcional con Ronnie (4.33.0w)
+
+Después de devolver el préstamo, «¿Cómo mantengo mi arma?» registra que se
+ofreció la lección. Los pasos están en ese diálogo y en Misiones > Detalle (F).
+Seleccionar la primera arma en Inventario y desequiparla; usar el Banco de
+Trabajo del segundo piso y pulsar F en Oficios. Mantener seleccionada la pieza.
+
+Se reutiliza BeginRepairSelectedEquipment/CompleteRepairTask. El observador sólo
+acredita una reparación nativa terminada que aumentó la durabilidad del ItemId
+inicial, propiedad del jugador, después de recibir la lección y cerrar Ronnie.
+Hablar, reparar otro objeto, usar una restauración de depuración o cancelar no
+acredita esta práctica. El guardado almacena MainM00RepairLessonOffered y
+MainM00RepairLessonComplete; dos instantáneas alimentan diálogo y Diario.
+
+No añade recetas, recompensa, daño tutorial ni una tarea paralela. No cambia
+requisitos de Rulo ni de la salida. El estado completado viaja con el personaje;
+el pendiente opcional deja de mostrarse después de abandonar la mansión.
+Una tarea real que siga activa sí conserva la restricción de salida de 0v:
+el jugador debe terminarla o cancelarla personalmente antes de cruzar.
+
+## Cobertura de materiales T1 — auditoría 4.33.0w
+
+Cálculo con las funciones de recetas del motor, talle M, sin existencias previas,
+una pieza por ranura y eficiencias uniformes en todas las capas. Las cifras son
+cuero ya curtido: 1 unidad de material = 0,001 kg. No son nuevos costes de balance.
+
+| Conjunto T1 completo | 25% | 50% | 100% |
+| --- | ---: | ---: | ---: |
+| Mágico | 41,6 kg | 13,6 kg | 5 kg |
+| Liviano | 78,4 kg | 26,4 kg | 10 kg |
+| Mediano | 156,8 kg | 52,8 kg | 20 kg |
+| Pesado | 313,6 kg | 105,6 kg | 40 kg |
+| Los cuatro conjuntos | 590,4 kg | 198,4 kg | 75 kg |
+
+El código vigente usa cuero y correas también para estos cuatro tipos de
+armadura; la tabla refleja ese catálogo, sin sustituirlo por metales o telas.
+La apariencia/peso/estaciones del tipo no cambian su material en las recetas.
+
+Oferta inicial de cuero en M: 96 kg del cajón más 12,5 kg del Toro = 108,5 kg,
+antes de gastar en el arma inicial, reparación u otros objetos. No son dos
+reservas nuevas: es el stock ya aprobado. Si se gastaron los 96 kg en guanteletes
+al 25%, quedan sólo 12,5 kg del Toro. Por eso no se garantiza cualquier conjunto
+ni todos juntos a mínima eficiencia. Usar 100% puede reducir la necesidad,
+pero depende de lo ya consumido; las cifras no implican una reposición del cajón.
+
+Para fabricar una vez cada uno de los cinco sellos T1:
+
+| Materia prima | 25% | 50% | 100% |
+| --- | ---: | ---: | ---: |
+| Cobre bruto total | 460,8 kg | 28,8 kg | 1,8 kg |
+| Estaño bruto total | 51,2 kg | 3,2 kg | 0,2 kg |
+| Cada gema bruta: rubí, zafiro, esmeralda, topacio y ópalo | 9,6 kg | 2,4 kg | 0,6 kg |
+
+Las vetas iniciales del mapa superan esos requisitos: cobre 6.470,5 kg, estaño
+5.176,4 kg; rubí 1.022,34 kg, zafiro 1.363,12 kg, esmeralda 681,56 kg,
+topacio 1.703,9 kg y ópalo 2.555,85 kg. Son capacidades calculadas a partir
+de los actores; no se midió aquí tiempo de extracción ni se garantiza que un
+save ya explotado conserve esas reservas. Los nodos mantienen su regeneración.
+
+Disponibilidad de materiales, infraestructura y conocimiento son requisitos
+separados. Las doce estaciones del segundo piso cubren la infraestructura;
+Ronnie enseña la primera arma y dependencias, pero no se entregan automáticamente
+todas las recetas de armaduras y sellos. Su adquisición narrativa sigue en el
+roadmap. No usar «hay materiales» como sinónimo de «todo se puede fabricar ya».
+
+## Salida narrativa, inventario y llegada (4.33.0v)
+
+La puerta del fondo de la sala del Toro exige fase 90, las pruebas completas,
+El Loco y la misma Caja nativa del jugador. Usar comprueba visibilidad,
+distancia de hasta 112 MU y diferencia vertical de hasta 48 MU. El antiguo
+Exit directo y su panel se retiran en runtime, también en guardados 0u.
+
+USDF 43320 presenta la advertencia y dos decisiones. Cancelar no cambia nada.
+Aceptar inicia fase 95 y 18 tics de fundido después de cerrar el diálogo.
+Una tarea activa impide iniciar; no se cancela automáticamente ni se tocan sus
+reservas. Se interrumpen bloqueo, apuntado, recarga, carga y Channel. El bloqueo
+temporal de entrada se quita sólo si esta transición fue quien lo añadió.
+Distancia, vida, propiedad y requisitos se revalidan antes de limpiar.
+
+La primera arma se resuelve por MainM00StarterWeaponId, primero en inventario,
+luego como instancia caída. Sólo si desapareció se reconstruye la elección T1,
+con tamaño/esencia originales y última durabilidad conocida. No devuelve
+materiales ni reemplaza una instancia válida. La durabilidad se registra al
+persistir el personaje; en un save antiguo sin pieza ni instantánea se usa
+la durabilidad máxima de la receta como recuperación excepcional.
+
+Confirmado el cruce, se coloca esa pieza en la Caja, sin equipar, y se retiran
+los demás objetos físicos personales y almacenados. La limpieza histórica de
+porciones de misión no sustituye esta regla narrativa: aquí sólo viajan la Caja
+y la primera arma. Quedan Tarot, conocimientos y registro del personaje. No hay
+loadout adicional definido. Salud y necesidades se conservan con los máximos
+vigentes tras retirar equipo; no se reinician por viajar.
+
+Antes de ChangeLevel se guardan fase 100, misión completada, objetivo de salida,
+banderas de limpieza/preservación y modelos coherentes sin equipo. GZDoom lleva
+el inventario nativo, sin RESETINVENTORY ni RESETHEALTH. MAP02 inicia en la
+pasarela seca; USDF 43321 presenta una vez la Voz y una página de cierre/ayuda.
+Se puede recuperar el arma desde Inventario y usarla normalmente. El campo de
+pruebas de actores ahora es CADEV02 y sus objetos no aparecen en la llegada.
+
+MainM00ReturnTics, MainM00ReturnOwnsFreeze y MainM00SewerVoiceHeard se guardan
+junto al registro viajero. Se conservan índices anteriores. La presentación
+se reconstruye al cargar y no vuelve a conceder cartas ni objetos. La llegada
+no ofrece regreso normal a MAP01. Con más de un jugador se rechaza el cruce
+antes de mutar el estado; la variante cooperativa necesita diseño conjunto.
 
 ## Tarot: colección y captura de El Loco (4.33.0t)
 
@@ -35,7 +141,7 @@ El actor original permanece quieto; una imagen sin colisión se acerca al
 jugador. Cada tic revalida distancia, vida, misión, imagen y la misma Caja.
 Una interrupción borra sólo la imagen y restaura la esencia. Al terminar,
 RecordMainM00FoolCapture cambia 80 -> 90, registra la carta, bandera 40,
-objetivo 6 a 1/1 y EXIT_READY como requisito latente del siguiente bloque.
+objetivo 6 a 1/1 y EXIT_READY, que desde 0v habilita la puerta final.
 Se persiste antes de retirar la esencia. Repetir no vuelve a premiar.
 El guardado nativo conserva también la animación y sus referencias.
 
@@ -344,20 +450,24 @@ con CA_ITEMFLAG_LIMBO_PRESERVABLE. No requiere Caja Mágica, conserva sus
 eficiencias y pasa a fase 60. El préstamo se devuelve al hablar con Ronnie.
 Antes de salir del Limbo el arma inicial no se vende, descarta ni desarma.
 Las armas fabricadas después son temporales y no reemplazan su ItemId.
-Fuera de MAP01 se quitan esas instancias y cantidades de materiales de misión;
-se preservan materiales propios anteriores aunque compartan pila. Al salir,
-el arma inicial puede usarse como equipo ordinario. La transferencia narrativa
-de fase 100 a la Caja permanece pendiente.
+La limpieza técnica de viajes de desarrollo quita esas instancias y cantidades
+de misión, preservando porciones propias anteriores. La salida narrativa 0v
+aplica la regla final más estricta: sólo Caja y primera arma, incluyendo la
+limpieza de los demás objetos almacenados. Al llegar, el arma puede recuperarse
+y usarse como equipo ordinario.
 
 Las pilas usan LimboQuestUnits y LimboSupplyUnits; consumir descuenta primero
 la porción tutorial. El crafting conserva esa procedencia en sus resultados
 intermedios y en las reservas al guardar/cargar. No se venden, descartan ni
-envían a la Caja pilas con porción tutorial. La salida cancela tareas pendientes
-que usaban esos materiales antes de retirarlos. No elimina existencias propias
-por coincidencia de nombre ni concede de nuevo un préstamo ya devuelto.
+envían a la Caja pilas con porción tutorial. La salida narrativa requiere que
+el jugador termine o cancele personalmente la tarea; no borra reservas activas.
+La limpieza técnica de viajes de desarrollo no elimina existencias propias por
+coincidencia de nombre ni concede otra vez préstamos devueltos. La confirmación
+narrativa sí advierte y retira todos los otros objetos físicos.
 
-0n incorpora flechas; siguen pendientes cartuchos/virotes y las lecciones de
-necesidades, Aire, agua y reparación antes del entrenamiento de Rulo.
+0n incorpora flechas y 0w añade reparación opcional después de cerrar Ronnie.
+Siguen pendientes cartuchos/virotes y lecciones de necesidades, Aire y agua;
+no son requisitos nuevos para empezar a Rulo.
 
 ### Flechas y controles de Oficios (4.33.0n)
 
@@ -518,7 +628,7 @@ El progreso cooperativo compartido todavía no está implementado.
 Las colisiones usan los módulos de física del proyecto y las restricciones
 nativas de movimiento. No convertir las fórmulas de impulso en una segunda
 ruta de daño de las armas. Las calibraciones históricas completas se conservan
-en HISTORY.md; las pruebas de multitudes permanecen separadas en MAP02.
+en HISTORY.md; las pruebas de multitudes permanecen separadas en CADEV02.
 
 ## Detalle de misiones (4.33.0k–0l)
 
@@ -987,15 +1097,17 @@ esa misma instancia arriba. El resolvedor del Diario lo indica en el segundo
 piso desde fase 75. En 0s puede hablar allí: orienta si faltan pruebas, ofrece
 la Caja al cerrarlas y ayuda a utilizarla después de recibirla.
 
-La prueba válida es cruzar el `Exit` del mapa o usar `changemap MAP02`. El
-comando `map MAP02` comienza una partida nueva, crea otro jugador y debe mostrar
-la Caja como no adquirida; por definición del motor no prueba persistencia.
+La prueba de la misión es usar la puerta final tras capturar El Loco y confirmar
+el cruce. `changemap MAP02` prueba viaje de desarrollo, pero omite la transacción
+narrativa. `map MAP02` comienza otro personaje sin Caja y tampoco prueba esa
+persistencia. Para pruebas de actores independientes se usa `map CADEV02`.
 
 ## Diálogos nativos y audio
 
 `GameInfo.AddDialogues` carga CAPALOMO; Thing_SetConversation y StartConversation
 abren los menús nativos. Q equivale a Atrás; Escape y mando mantienen sus
-controles del motor. Las páginas de la Voz tienen una sola salida Continuar.
+controles del motor. La Voz del prólogo conserva su única salida Continuar.
+En alcantarillas, Mirar alrededor abre la ayuda final y Continuar permite cerrar.
 Las probabilidades aparecen antes de elegir; el requisito de Ronnie permanece
 visible y gris cuando está bloqueado. La emoción de Rulo es información privada.
 

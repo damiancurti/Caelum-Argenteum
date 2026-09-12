@@ -19,6 +19,37 @@ class CaelumMainM00QuestController : EventHandler
     CaelumM00Bull TrialBull;
     bool ProcessingManualRetired;
     CaelumM00FoolEssence FoolEssence;
+    bool ReturnDoorPrepared;
+    CaelumM00ReturnDoor ReturnDoor;
+
+    void PresentReturnDoor(bool ready)
+    {
+        if (!ReturnDoorPrepared)
+        {
+            // Retira también el Exit provisional serializado en saves 0u.
+            for (int i = 0; i < level.lines.Size(); i++)
+            {
+                let line = level.lines[i];
+                if (line.v1.p == (-2464.0, -64.0) && line.v2.p == (-2464.0, 64.0))
+                {
+                    line.special = 0;
+                    line.sidedef[0].SetTexture(Side.mid,
+                        TexMan.CheckForTexture("CMDR03", TexMan.Type_Wall));
+                    break;
+                }
+            }
+            ReturnDoorPrepared = true;
+        }
+        if (!ready) return;
+        if (ReturnDoor == null)
+        {
+            let it = ThinkerIterator.Create("CaelumM00ReturnDoor");
+            ReturnDoor = CaelumM00ReturnDoor(it.Next());
+            if (ReturnDoor == null)
+                ReturnDoor = CaelumM00ReturnDoor(Actor.Spawn("CaelumM00ReturnDoor", (-2438,0,0), NO_REPLACE));
+            if (ReturnDoor != null) ReturnDoor.StoryPlaced = true;
+        }
+    }
 
     void PresentFool(bool needed, bool revealed)
     {
@@ -382,6 +413,7 @@ class CaelumMainM00QuestController : EventHandler
         PrepareBullRoom();
         bool foolNeeded = false;
         bool foolRevealed = false;
+        bool returnReady = false;
         bool started = false;
         bool opened = false;
         int sequence = 0;
@@ -399,11 +431,13 @@ class CaelumMainM00QuestController : EventHandler
             CaelumMainM00RonnieTrial.Update(caelumPlayer);
             CaelumMainM00RuloTrial.Update(caelumPlayer);
             CaelumMainM00FoolCapture.Sync(caelumPlayer);
+            CaelumMainM00Return.Update(caelumPlayer);
             if (level.MapName != "MAP01") continue;
             let record = caelumPlayer.GetPersistentCharacterState(false);
             if (record == null) continue;
             foolNeeded = foolNeeded || record.CanCaptureMainM00Fool();
             foolRevealed = foolRevealed || record.MainM00FoolRevealed;
+            returnReady = returnReady || record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_EXIT_READY);
             started = started || record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED);
             opened = opened || record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN);
             sequence = Max(sequence, record.MainM00RuneSequenceIndex);
@@ -412,6 +446,7 @@ class CaelumMainM00QuestController : EventHandler
         {
             PresentMagicTrial(started, opened, sequence);
             PresentFool(foolNeeded, foolRevealed);
+            PresentReturnDoor(returnReady);
         }
     }
 }

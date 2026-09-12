@@ -113,7 +113,7 @@ class CaelumActorProjectile : Actor
         if (CaelumDiagnosticCompletionRecorded) { return; }
         CaelumDiagnosticCompletionRecorded = true;
         CaelumCombatActor projectileOwner = CaelumCombatActor(target);
-        if (projectileOwner == null || level.MapName != "MAP02") { return; }
+        if (projectileOwner == null || level.MapName != "CADEV02") { return; }
         if (impact) { projectileOwner.ImpactDiagnosticProjectileImpacts++; }
         if (expired) { projectileOwner.ImpactDiagnosticProjectilesExpired++; }
         projectileOwner.ImpactDiagnosticProjectilesDestroyed++;
