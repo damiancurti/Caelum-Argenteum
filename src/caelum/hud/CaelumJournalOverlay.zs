@@ -244,6 +244,12 @@ class CaelumJournalOverlay : EventHandler
             && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00LoadLessonCompleteSnapshot))
             text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00LoadLessonCompleteSnapshot
                 ? "CA_M01_LOAD_DETAIL_DONE" : "CA_M01_LOAD_DETAIL", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00SwimLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00SwimLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00SwimLessonCompleteSnapshot
+                ? "CA_M01_SWIM_DETAIL_DONE" : localPlayer.MainM00SwimLessonSubmergedSnapshot
+                ? "CA_M01_SWIM_DETAIL_RECOVER" : "CA_M01_SWIM_DETAIL_DIVE", false);
         text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
             .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
                 ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);
@@ -1074,7 +1080,7 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(SmallFont, Font.CR_GOLD, 56, 130,
             String.Format(StringTable.Localize("CA_TAROT_COLLECTION_COUNT", false),
                 localPlayer.TarotOwnedCountSnapshot, CaelumConstants.TAROT_CARD_COUNT));
-        if (!owned)
+        if (localPlayer.TarotOwnedCountSnapshot <= 0)
         {
             DrawTexture("graphics/caelum/icons/ca_tarot_back.png", 78, 166, 100, 100);
             DrawParagraph(TextFont, Font.CR_WHITE, 226, 170, 330,
@@ -1086,12 +1092,37 @@ class CaelumJournalOverlay : EventHandler
         double ratio = (double(Screen.GetWidth()) / Screen.GetHeight()) / (640.0 / 360.0);
         double cardWidth = 104 / Max(1.0, ratio);
         double cardHeight = 156 * Min(1.0, ratio);
-        DrawTexture("graphics/caelum/tarot/ca_tarot_fool.png",
+        DrawTexture(owned ? "graphics/caelum/tarot/ca_tarot_fool.png"
+            : "graphics/caelum/icons/ca_tarot_back.png",
             76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
         DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
-            StringTable.Localize("CA_TAROT_FOOL_NAME", false));
+            StringTable.Localize(owned ? "CA_TAROT_FOOL_NAME" : "CA_TAROT_COLLECTION_LABEL", false));
+        bool hasMinorBonus = false;
+        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+            if (localPlayer.TarotMinorBaseSnapshot[attribute] > 0.0) hasMinorBonus = true;
+        if (hasMinorBonus)
+        {
+            DrawTextLine(SmallFont, Font.CR_WHITE, 210, 181,
+                StringTable.Localize("CA_TAROT_MINOR_ORDER", false));
+            for (int family = 0; family < CaelumConstants.ATTRIBUTE_LAYER_COUNT; family++)
+            {
+                String key = family == CaelumConstants.LAYER_PHYSICAL ? "CA_LAYER_PHYSICAL"
+                    : family == CaelumConstants.LAYER_TECHNICAL ? "CA_LAYER_TECHNICAL"
+                    : family == CaelumConstants.LAYER_SOCIAL ? "CA_LAYER_SOCIAL" : "CA_LAYER_MENTAL";
+                int first = family * 3;
+                DrawTextLine(SmallFont, Font.CR_WHITE, 210, 201 + family * 18,
+                    String.Format("%s: +%.1f / +%.1f / +%.1f", StringTable.Localize(key, false),
+                        localPlayer.TarotMinorBaseSnapshot[first],
+                        localPlayer.TarotMinorBaseSnapshot[first + 1],
+                        localPlayer.TarotMinorBaseSnapshot[first + 2]));
+            }
+            DrawParagraph(SmallFont, Font.CR_GOLD, 210, 282, 352,
+                String.Format(StringTable.Localize("CA_TAROT_COLLECTION_FACTOR", false),
+                    localPlayer.TarotAttributeBonusSnapshot));
+            return;
+        }
         DrawParagraph(SmallFont, Font.CR_WHITE, 210, 183, 352,
-            StringTable.Localize("CA_TAROT_FOOL_DESCRIPTION", false));
+            StringTable.Localize(owned ? "CA_TAROT_FOOL_DESCRIPTION" : "CA_TAROT_COLLECTION_RULE", false));
         DrawParagraph(SmallFont, Font.CR_GOLD, 210, 244, 352,
             String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
     }

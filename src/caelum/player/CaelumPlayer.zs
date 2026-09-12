@@ -343,6 +343,9 @@ class CaelumPlayer : DoomPlayer
     int MainM00StarterSizeSnapshot;
     int MainM00StarterWeaponSnapshot;
     bool MainM00RonnieFinishedSnapshot;
+    bool MainM00SwimLessonStartedSnapshot;
+    bool MainM00SwimLessonSubmergedSnapshot;
+    bool MainM00SwimLessonCompleteSnapshot;
     bool MainM00LoadLessonStartedSnapshot;
     bool MainM00LoadLessonCompleteSnapshot;
     double MainM00LoadWeightSnapshot;
@@ -443,6 +446,8 @@ class CaelumPlayer : DoomPlayer
     bool CombatTarotInputReserved;
     int TarotOwnedCountSnapshot;
     int TarotAttributeBonusSnapshot;
+    int AttributeBalanceVersion;
+    double TarotMinorBaseSnapshot[CaelumConstants.PRIMARY_ATTRIBUTE_COUNT];
     bool TarotFoolOwnedSnapshot;
     bool MainM00FoolRevealedSnapshot;
     bool CombatClassAbilityInputReserved;
@@ -488,6 +493,7 @@ class CaelumPlayer : DoomPlayer
     // Latest isolated melee test data shown by the development panel.
     double LastMeleeCalculatedDamage;
     int LastMeleeActualDamage;
+    int LastMeleeSweepHitCount;
     bool LastMeleeHit;
     int LastMeleeHitLocation;
     int LastMeleeVulnerabilityGrade;
@@ -771,6 +777,9 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
+        MainM00SwimLessonStartedSnapshot = persistentState != null && persistentState.MainM00SwimLessonStarted;
+        MainM00SwimLessonSubmergedSnapshot = persistentState != null && persistentState.MainM00SwimLessonSubmerged;
+        MainM00SwimLessonCompleteSnapshot = persistentState != null && persistentState.MainM00SwimLessonComplete;
         MainM00LoadLessonStartedSnapshot = persistentState != null && persistentState.MainM00LoadLessonStarted;
         MainM00LoadLessonCompleteSnapshot = persistentState != null && persistentState.MainM00LoadLessonComplete;
         MainM00LoadWeightSnapshot = DerivedStats == null ? 0 : DerivedStats.CarriedWeight;
@@ -816,6 +825,8 @@ class CaelumPlayer : DoomPlayer
         }
         TarotOwnedCountSnapshot = persistentState.CountTarotCards();
         TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
+        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
+            TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
         TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
         MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
         JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
@@ -11901,7 +11912,9 @@ class CaelumPlayer : DoomPlayer
     double GetImpactToughnessMultiplier()
     {
         if (DerivedStats == null) { return 1.0; }
-        return Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0);
+        // Consulta heredada: no adopta el divisor de daño general. La ruta
+        // de colisión vigente resta Toughness al porcentaje de impacto.
+        return Clamp(DerivedStats.PainChanceMultiplier, 0.0, 1.0);
     }
 
     double GetImpactArmorDefensePercent()
@@ -14156,6 +14169,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        EnsureCurrentAttributeBalance();
         Vector3 prePhysicsVelocity = Vel;
 
         // Los saves antiguos pueden conservar el modelo sin su objeto. Se
@@ -14646,6 +14660,31 @@ class CaelumPlayer : DoomPlayer
                 }
                 break;
         }
+    }
+
+    bool SupportsLargeWeaponSweep(int weaponType)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_GREATSWORD
+            || weaponType == CaelumConstants.WEAPON_TYPE_WAR_AXE
+            || weaponType == CaelumConstants.WEAPON_TYPE_HALBERD;
+    }
+
+    // Zoom comparte alcance, daño y recuperación con Fire, y paga una vez
+    // triple Aire. Los guanteletes siguen usando su bloqueo contextual.
+    void PerformLargeWeaponSweep(int weaponType)
+    {
+        if (!SupportsLargeWeaponSweep(weaponType)
+            || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
+            || CombatChannelModeActive || StaffCastPending || WeaponChargeActive
+            || EquippedWeaponCooldownRemaining > 0.0
+            || IsPhysicallyImmobilized()
+            || !ActivateEquippedWeaponType(weaponType)
+            || WeaponModel == null || !WeaponModel.Equipped
+            || WeaponModel.Durability <= 0) return;
+        CancelCombatBlockMode();
+        PerformDebugSwordAttack(false, true);
+        if (LastMeleeHadEnoughAir)
+            EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics() / double(TICRATE);
     }
 
     // AltFire pertenece exclusivamente al arma activa. El escudo ya no
@@ -16640,6 +16679,16 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    // Un save 0z contiene estadísticas y costes de lanzamiento ya calculados.
+    // Se reconstruyen una sola vez, sin conceder cartas ni reiniciar recursos.
+    void EnsureCurrentAttributeBalance()
+    {
+        if (AttributeBalanceVersion >= 1 || !CharacterCreationComplete
+            || Attributes == null || DerivedStats == null) return;
+        ApplyCharacterProfile();
+
+    }
+
     void ApplyCharacterProfile()
     {
         if (Attributes != null
@@ -16647,6 +16696,7 @@ class CaelumPlayer : DoomPlayer
             && CharacterAllocation != null
             && DerivedStats != null)
         {
+            bool migrateBalance = AttributeBalanceVersion < 1;
             Attributes.InitializeFromCreation(CharacterProfile, CharacterAllocation);
             if (ArmorModel != null)
             {
@@ -16655,7 +16705,7 @@ class CaelumPlayer : DoomPlayer
             ApplyJewelryAttributeBonuses(Attributes);
             if (CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
             {
-                // La base del perfil rápido queda en 30 incluso con equipo.
+                // La base del perfil rápido usa DEBUG_CREATION_ATTRIBUTE_LEVEL incluso con equipo.
                 // La colección de Tarot se aplica después, como en las demás razas.
                 Attributes.SetAllForDebug(
                     CaelumConstants.DEBUG_CREATION_ATTRIBUTE_LEVEL
@@ -16672,6 +16722,7 @@ class CaelumPlayer : DoomPlayer
                 Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_75);
             }
             let tarotRecord = GetPersistentCharacterState(false);
+            Attributes.ApplyTarotMinorBonuses(tarotRecord);
             Attributes.ApplyTarotBonus(tarotRecord == null ? 0 : tarotRecord.GetTarotAttributeBonusPercent());
             RefreshCarriedInventorySummary();
             DerivedStats.Recalculate(Attributes, CharacterProfile);
@@ -16681,6 +16732,18 @@ class CaelumPlayer : DoomPlayer
             // carga corregida en el mismo tic.
             RefreshCarriedInventorySummary();
             DerivedStats.Recalculate(Attributes, CharacterProfile);
+            if (migrateBalance)
+            {
+                if (StaffCastPending && WeaponModel != null)
+                {
+                    double tierFactor = PendingStaffWeaponTier >= 3 ? 2.5
+                        : PendingStaffWeaponTier == 2 ? 1.6 : 1.0;
+                    PendingStaffAnimaCost = WeaponModel.GetAnimaCostFor(PendingStaffWeaponType)
+                        * tierFactor * DerivedStats.StaffAnimaCost / CaelumConstants.DEBUG_STAFF_ANIMA_COST
+                        * (PendingStaffChargedAttack ? CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER : 1.0);
+                }
+                AttributeBalanceVersion = 1;
+            }
             SyncHUDLoadState();
             // La masa nativa representa la masa total para que el motor y los
             // ataques externos respeten tambien el peso equipado del jugador.
@@ -17050,10 +17113,11 @@ class CaelumPlayer : DoomPlayer
     // LineAttack supplies the actor actually reached and the damage remaining
     // after the target's current engine mitigation. The physical critical roll
     // is live; status effects and the final Caelum armor stage remain separate.
-    void PerformDebugSwordAttack(bool secondaryAttack)
+    void PerformDebugSwordAttack(bool secondaryAttack, bool areaSweep = false)
     {
         LastMeleeCalculatedDamage = 0.0;
         LastMeleeActualDamage = 0;
+        LastMeleeSweepHitCount = 0;
         LastMeleeHit = false;
         LastMeleeHitLocation = CaelumConstants.HIT_LOCATION_NONE;
         LastMeleeVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
@@ -17087,10 +17151,12 @@ class CaelumPlayer : DoomPlayer
                 activeWeaponType
             );
         if (catalogueWeapon < 0) { return; }
+        if (areaSweep && (secondaryAttack || !SupportsLargeWeaponSweep(activeWeaponType))) return;
         LastMeleeAirCost = (secondaryAttack
             ? CaelumWeaponCatalogue.GetSecondaryAirCost(catalogueWeapon)
             : CaelumWeaponCatalogue.GetPrimaryAirCost(catalogueWeapon))
             * DerivedStats.AirConsumptionMultiplier;
+        if (areaSweep) LastMeleeAirCost *= CaelumConstants.LARGE_SWEEP_AIR_MULTIPLIER;
         bool chargedAttack = WeaponChargedStateActive;
         if (chargedAttack)
         {
@@ -17137,6 +17203,11 @@ class CaelumPlayer : DoomPlayer
             EffectivePhysicalAccuracyPercent
                 * LastMeleeMovementAccuracyMultiplier
         );
+        if (areaSweep)
+        {
+            ResolveLargeWeaponSweepHits(catalogueWeapon, physicalWeaponDamageScale, chargedAttack);
+            return;
+        }
         double maximumAimError = CaelumWeaponCatalogue.GetMaximumSpread(
             catalogueWeapon
         ) * 100.0 / LastMeleeAccuracyPercent;
@@ -17303,6 +17374,90 @@ class CaelumPlayer : DoomPlayer
             {
                 LastAttackPushForce = 0.0;
             }
+        }
+    }
+
+    bool IsLargeSweepEnemy(Actor candidate)
+    {
+        if (candidate == null || candidate == self || candidate.health <= 0
+            || !candidate.bSHOOTABLE || candidate.bCORPSE
+            || candidate.bFRIENDLY || candidate.player != null
+            || candidate is "CaelumAnchoredResident") return false;
+        // El blanco es una excepción de entrenamiento, no un objeto extraíble.
+        return candidate.bISMONSTER || candidate is "CaelumTrainingDummy";
+    }
+
+    // Filtro espacial nativo y un trazado geométrico por enemigo. Atravesar
+    // actores permite alcanzar a todos, pero nunca ignora paredes ni pisos 3D.
+    void ResolveLargeWeaponSweepHits(int catalogueWeapon, double damageScale, bool chargedAttack)
+    {
+        double reach = CaelumWeaponCatalogue.GetPrimaryRange(catalogueWeapon);
+        double originZ = Pos.Z + ViewHeight;
+        let search = BlockThingsIterator.Create(self, reach);
+        int totalDamage = 0;
+        Array<Actor> visited;
+        while (search.Next())
+        {
+            Actor candidate = search.thing;
+            if (!IsLargeSweepEnemy(candidate)) continue;
+            bool duplicate = false;
+            for (int index = 0; index < visited.Size(); index++)
+                if (visited[index] == candidate) { duplicate = true; break; }
+            if (duplicate) continue;
+            visited.Push(candidate);
+            Vector2 delta = candidate.Pos.XY - Pos.XY;
+            double horizontal = delta.Length();
+            double contactDistance = Max(0.0, horizontal - candidate.Radius);
+            double contactZ = Clamp(originZ, candidate.Pos.Z + 0.1,
+                candidate.Pos.Z + Max(0.1, candidate.Height - 0.1));
+            double vertical = contactZ - originZ;
+            double distance = Sqrt(contactDistance * contactDistance + vertical * vertical);
+            if (distance > reach || !CheckSight(candidate, SF_IGNOREVISIBILITY)) continue;
+            double attackAngle = horizontal > 0.001 ? VectorAngle(delta.X, delta.Y) : Angle;
+            double attackPitch = -VectorAngle(Max(0.001, contactDistance), vertical);
+            FLineTraceData trace;
+            if (LineTrace(attackAngle, distance + 0.05, attackPitch,
+                TRF_THRUACTORS | TRF_ABSPOSITION, originZ, Pos.X, Pos.Y, trace)) continue;
+
+            LastMeleeHit = true;
+            LastMeleeSweepHitCount++;
+            if (candidate is "CaelumM00TrainingDummy")
+            {
+                CaelumMainM00RuloTrial.RecordHit(self, false, chargedAttack);
+                continue;
+            }
+            CalculateDebugMeleeHitLocation(candidate, attackAngle, attackPitch);
+            LastMeleeCriticalAttempted = true;
+            LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
+            LastMeleeCriticalChancePercent = Clamp(
+                (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
+                    + Max(0.0, DerivedStats.PhysicalCriticalChance
+                        - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
+                    * LastMeleeCrouchCriticalMultiplier, 0.0, 100.0);
+            LastMeleeCriticalRollPercent = Random[CaelumPhysicalCritical](0, 999999) / 10000.0;
+            LastMeleeCriticalHit = LastMeleeCriticalRollPercent < LastMeleeCriticalChancePercent;
+            CaelumCombatActor combatTarget = CaelumCombatActor(candidate);
+            if (combatTarget != null) combatTarget.RegisterPendingCriticalHit(LastMeleeCriticalHit);
+            LastMeleeLocationMultiplier = GetVulnerabilityMultiplier(
+                LastMeleeVulnerabilityGrade, LastMeleeCriticalHit);
+            LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage * damageScale
+                * LastMeleeLocationMultiplier * EffectiveOffensiveDamageMultiplier
+                * (chargedAttack ? CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER : 1.0);
+            int actualDamage = candidate.DamageMobj(self, self,
+                Max(1, int(LastMeleeCalculatedDamage + 0.5)), 'CaelumMeleeTest',
+                DMG_THRUSTLESS | DMG_PLAYERATTACK | DMG_USEANGLE, attackAngle);
+            totalDamage += Max(0, actualDamage);
+            if (actualDamage > 0)
+                ApplyAttackPushToTarget(candidate, attackAngle, DerivedStats.PhysicalPushMultiplier);
+        }
+        LastMeleeActualDamage = totalDamage;
+        if (totalDamage > 0)
+        {
+            ApplyWeaponDurabilityFromSuccessfulDamage(totalDamage,
+                WeaponModel.WeaponType, WeaponModel.Tier, WeaponModel.Size);
+            AddCombatAdrenaline(CaelumConstants.ADRENALINE_GAIN_ON_MELEE_DAMAGE,
+                CaelumConstants.ADRENALINE_EVENT_MELEE);
+            MarkCombatActivity();
         }
     }
 
@@ -18272,6 +18427,7 @@ class CaelumPlayer : DoomPlayer
             UnderwaterAirRecoveryDebt = 0.0;
             UnderwaterAirRecoveryTicsRemaining = 0;
         }
+        CaelumMainM00RonnieTrial.RecordSwimLesson(self, recoveredAir, false);
     }
 
     // El parámetro separado permite auditar la regla temporal sin depender de
@@ -18338,6 +18494,7 @@ class CaelumPlayer : DoomPlayer
             CurrentAir -= removedAir;
             UnderwaterAirRecoveryDebt += removedAir;
             UnderwaterDrowningTics = 0;
+            CaelumMainM00RonnieTrial.RecordSwimLesson(self, removedAir, true);
             return;
         }
 

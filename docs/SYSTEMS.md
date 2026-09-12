@@ -1,6 +1,36 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0z — 2026-09-12.
+Versión documental: 4.33.0ab — 2026-09-12.
+
+## Respiración: práctica opcional de Ronnie (4.33.0ab)
+
+Después de devolver la espada, «¿Cómo respiro al nadar?» propone la práctica.
+Confirmar con Ronnie marca MainM00SwimLessonStarted; volver a aceptar conserva
+las fases. El diálogo indica piscina detrás de la mansión al este y escalones
+anchos del lado de la mansión. Preparar Aire, cubrir la cabeza un segundo junto
+a ellos y volver a subir. No requiere cruzar toda la piscina ni agotar Aire.
+
+UpdateUnderwaterAirForState informa sólo la cantidad realmente gastada. El
+observador requiere MAP01, partida viva sin predicción/diálogo, aceptación,
+WaterLevel >= 3, sector potable de la piscina, ausencia de exención submarina
+y UnderwaterNoBreathTics >= TICRATE (35). Marca Submerged. No agrega contador:
+una inmersión menor a un segundo no acumula tiempo de inmersiones separadas.
+El primer intervalo conserva coste base 5 Aire/s por el multiplicador vigente;
+el aumento posterior y el daño de ahogamiento no cambian.
+
+RecoverUnderwaterAirDebt informa recuperación positiva después de actualizar
+su deuda y tics. Con cabeza fuera del agua, Submerged y deuda final cero marca
+Complete. Usa la devolución existente de tres segundos; reentrar pausa y
+reanuda según la regla nativa. No añade regeneración ni gasta Hambre/Sed por
+esta devolución. Llenar Aire por otra vía no dispara la observación de respirar.
+La devolución submarina tampoco acredita la práctica separada de correr.
+
+Tres bools en CaelumPersistentCharacterState conservan Started/Submerged/Complete;
+los contadores y deuda submarinos ya se guardaban. En partidas anteriores los
+nuevos bools empiezan falsos. Snapshots alimentan Detalle y diálogo. No se
+modifican recetas, recompensas ni bloqueos de misión. Al salir se conserva
+lo completado y se oculta el pendiente, igual que las otras prácticas.
+La lección no implementa recolección ni potabilización de agua.
 
 ## Carga: práctica opcional de Ronnie (4.33.0z)
 
@@ -193,19 +223,48 @@ antes de mutar el estado; la variante cooperativa necesita diseño conjunto.
 
 ## Tarot: colección y captura de El Loco (4.33.0t)
 
-Regla vigente: 22 Mayores de +2% y 56 Menores de +1%; colección completa = +100%.
-El porcentaje es aditivo y afecta el nivel de los doce atributos antes de
-Tipo 1/2/4 y sus efectos. Ejemplo: nivel 15 con El Loco = 15,30. No redondear
-el nivel ni alterar los puntos de creación. Fuente: Documentación actualizada
-V4.25.2, sección 7, pág. 20, y guardados de personaje, pág. 78. La colección
-no añade XP por derrotar enemigos. Poderes activos/Trucazo siguen pendientes.
+Regla vigente desde 0aa: cada Menor aporta exclusivamente una pasiva de base,
+además de su +1% por colección. Mayores: +2% por carta. Los 22 Mayores y 56
+Menores suman +100% de colección, de forma aditiva, antes de Tipo 1/2/4.
+No redondear el nivel ni alterar puntos de creación. No hay XP por combatir.
+Poderes activos y Trucazo siguen pendientes; sólo El Loco se obtiene en el
+contenido jugable actual. Los otros 77 requieren sus misiones/recompensas.
+
+| Palo | Familia | Primer / segundo / tercer atributo |
+| --- | --- | --- |
+| Espadas | Mental | Inteligencia / Paciencia / Perspicacia |
+| Copas | Social | Carisma / Empatía / Elocuencia |
+| Bastos | Física | Fuerza / Dureza / Constitución |
+| Oros | Técnica | Agilidad / Destreza / Resiliencia |
+
+| Carta de cada palo | Bono base por carta |
+| --- | --- |
+| 2, 3, 4 | +0,3 al primer atributo |
+| 5, 6, 7 | +0,3 al segundo |
+| 8, 9, 10 | +0,3 al tercero |
+| Caballero | +0,6 al primero |
+| Sota | +0,6 al segundo |
+| Reina | +0,6 al tercero |
+| Rey | +0,5 a los tres |
+| Ancho | +1 a los tres |
+
+Cada palo completo da +3 a sus tres atributos. Orden: creación + equipo +
+pasivas menores, luego multiplicación por (1 + porcentaje de colección/100).
+Ejemplo sin armadura: 20 creación +18 amuleto T3 +9 sello T3 +3 menores =50;
+con las 78 cartas resulta 100 en los atributos que reciben esos bonos.
+No es un tope impuesto al atributo ni se inventan pasivas de Mayores.
 
 TarotOwned[78] vive en CaelumPersistentCharacterState, Inventory viajero.
-Índices 0–21: Mayores; 22–77: Menores. El Loco ocupa 0. El porcentaje y contador
-se derivan de cartas poseídas; no son acumuladores guardados. Los doce atributos
-usan double. ApplyCharacterProfile reconstruye creación/equipo, aplica Tarot
-y recién entonces recalcula capacidades, masa de contenido y fórmulas derivadas.
-Los perfiles de depuración también reciben el factor sin cambiar su base.
+Índices estables 0–21: Mayores de Marsella; El Loco =0. Menores: Espadas
+22–35, Copas 36–49, Bastos 50–63, Oros 64–77. En cada palo: Ancho, 2..10,
+Caballero, Sota, Reina, Rey. El código suma décimas enteras y entrega double.
+Contador, pasivas y porcentaje se derivan de propiedad; no son acumuladores.
+ApplyCharacterProfile reconstruye creación/equipo, suma Menores, multiplica
+colección y recalcula estadísticas/carga. Los perfiles de depuración siguen
+el mismo orden después de su base forzada. Reequipar, cargar o viajar no duplica
+bonos. El Diario separa base menor y porcentaje usando los atributos en el
+mismo orden que Personaje. Cargar 0z reconstruye también los valores derivados
+serializados y el coste de un hechizo pendiente, manteniendo recursos/progreso.
 
 El controlador manifiesta CaelumM00FoolEssence en (1420,1050,-370), sobre el
 suelo Z=-384. Consulta la fase 80, las cuatro ramas terminadas y entrega/propiedad
@@ -549,8 +608,10 @@ coincidencia de nombre ni concede otra vez préstamos devueltos. La confirmació
 narrativa sí advierte y retira todos los otros objetos físicos.
 
 0n incorpora flechas y 0w añade reparación opcional después de cerrar Ronnie.
-Siguen pendientes cartuchos/virotes y lecciones de necesidades, Aire y agua;
-no son requisitos nuevos para empezar a Rulo.
+Necesidades (0x), Aire/movimiento (0y), carga (0z) y respiración en piscina
+(0ab) tienen prácticas opcionales. Siguen pendientes cartuchos/virotes, acceso
+a recetas de armaduras/sellos y recolección/potabilización de agua; ninguna
+de estas ampliaciones se incorpora como requisito nuevo para empezar a Rulo.
 
 ### Flechas y controles de Oficios (4.33.0n)
 
@@ -790,7 +851,7 @@ y durabilidad; equipo elemental devuelve sus materiales correspondientes.
 | Fire | Ataque principal del arma; cancela Block al atacar. |
 | AltFire | Ataque secundario del arma; en distancia, Aim alternativo. |
 | Reload | Recarga en distancia; carga del próximo ataque cuerpo a cuerpo/mágico. |
-| Zoom | Block con arma/escudo compatibles; ADS real en distancia. |
+| Zoom | Barrido con espadón/hacha de guerra/alabarda; Block con equipo compatible (incluidos guanteletes gigantes); ADS en distancia. |
 | User1 | Interfaz reservada para habilidad racial; contenido pendiente. |
 | User2 | Channel del Sello equipado. |
 | User3 | Interfaz de Tarot activo; contenido completo pendiente. |
@@ -804,6 +865,52 @@ El siguiente ataque duplica daño y coste, y las explosiones duplican área
 La espada usa Fire cortante y AltFire punzante, por lo que sirve para árboles
 y vetas del tutorial. No se necesita la hachuela especial retirada en 0d.
 
+
+## Daño y coste de Ánima: divisor Tipo 4 (4.33.0aa)
+
+F(A) = 1 + 2 × A × (A + 1) / 10100.
+Daño general recibido = daño posterior a vulnerabilidad y armadura / F(Dureza).
+Coste mágico = coste base × modificador de tier × carga / F(Elocuencia).
+T2 conserva ×1,6 y T3 ×2,5; una carga preparada conserva ×2. La campana y la
+estatuilla mantienen sus bases. Jugador y NPC usan la misma curva, también
+para explosiones; se conserva el redondeo entero de Salud del motor.
+
+| Atributo | Divisor | Porcentaje restante |
+| --- | --- | --- |
+| 0 | 1 | 100% |
+| 25 | 1,128713 | 88,5965% |
+| 50 | 1,504950 | 66,4474% |
+| 100 | 3 | 33,3333% |
+
+El porcentaje de reducción que muestra depuración es el equivalente
+100 × (1 − 1/F), no la antigua curva Tipo 2. Dureza 100 ya no anula el daño
+general y Elocuencia 100 ya no permite lanzar gratis. Valores mayores siguen
+el divisor sin límite artificial de 100. Se conserva Labia Tipo 2.
+Dolor y pérdida de Lucidez conservan sus fórmulas anteriores, tanto en jugador
+como NPC; el cambio de daño real puede afectar indirectamente su entrada.
+
+Colisiones: se conserva exactamente max(0, porcentaje de impacto × superficie
+− Dureza), después vulnerabilidad por contacto, armadura y Salud máxima.
+También se mantiene el bono acrobático de la rodela y las reglas de aplastamiento.
+No se aplica otra vez el divisor de daño general al resultado de colisión.
+
+## Barrido de armas grandes (4.33.0aa)
+
+Zoom ejecuta un barrido de 360° con espadón, hacha de guerra y alabarda. Alcance
+primario: 80, 76 y 84 MU, respectivamente, hasta la superficie del blanco.
+Usa el daño primario del tier, Fuerza, vulnerabilidad y crítico por enemigo;
+conserva armadura, empuje y desgaste sobre el daño causado. No es una explosión.
+La búsqueda es espacial; cada enemigo cercano recibe como máximo un impacto.
+Un trazado comprueba paredes y pisos 3D; aliados, residentes, jugadores y
+recursos quedan excluidos. Los blancos de práctica son una excepción explícita.
+
+Se paga 3 × coste primario real de Aire una sola vez por ejecución, incluso
+sin blancos. No se paga por enemigo. Aire insuficiente o cooldown impiden el
+ataque sin consumirlo. La recuperación es la del primario. Mantener Zoom no
+repite: soltar y volver a presionar. Una carga ya preparada se consume y conserva
+×2 daño/coste, por lo que un barrido cargado cuesta 6 primarios sin carga.
+Guanteletes gigantes mantienen Zoom/Block; Rulo sigue contando la esquiva
+lateral como defensa del mandoble. El barrido no reemplaza esa prueba.
 
 ## Matriz detallada de armas
 
@@ -822,9 +929,9 @@ no modifica estas rutas de combate.
 | Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Shield Block. |
 | Flail | Blunt primary attack. | Stronger blunt attack at the same range. | Charge next melee attack. | Shield Block. |
 | Spear | Piercing primary thrust. | No authored secondary attack in the current catalogue. | Charge next melee attack. | Shield Block. |
-| Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | No Block: large/two-handed weapon. |
-| War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | No Block: large/two-handed weapon. |
-| Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | No Block: large/two-handed weapon. |
+| Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
+| War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
+| Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
 | Giant Gauntlets | Blunt primary punch. | Same damage, range and Air cost as Fire, with additional upward push. | Charge next melee attack. | Weapon-based Block using Buckler coverage, defense and special rules. |
 
 ### Ranged weapons

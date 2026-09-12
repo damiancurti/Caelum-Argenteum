@@ -284,6 +284,9 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "ronnie_swim_practice")
+                text = StringTable.Localize(user.MainM00SwimLessonCompleteSnapshot ? "CA_M01_SWIM_DONE"
+                    : user.MainM00SwimLessonSubmergedSnapshot ? "CA_M01_SWIM_RECOVER" : "CA_M01_SWIM_PRACTICE", false);
             if (mCurNode.UserData ~== "ronnie_load_practice")
                 text = StringTable.Localize(user.MainM00LoadLessonCompleteSnapshot ? "CA_M01_LOAD_DONE" : "CA_M01_LOAD_PRACTICE", false);
             text.Replace("%LOADKG%", String.Format("%.3f", user.MainM00LoadWeightSnapshot));

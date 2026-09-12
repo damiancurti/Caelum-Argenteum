@@ -15,7 +15,7 @@ def validate(root):
             errors.append(message)
 
     readme = (root / 'README.md').read_text(encoding='utf-8-sig')
-    match = re.search(r'Current release: ([0-9]+\.[0-9]+\.[0-9]+[a-z]?)\.', readme)
+    match = re.search(r'Current release: ([0-9]+\.[0-9]+\.[0-9]+[a-z]*)\.', readme)
     check(match is not None, 'README: falta Current release.')
     version = match.group(1) if match else ''
     actual_docs = {p.relative_to(root/'docs').as_posix() for p in (root/'docs').rglob('*') if p.is_file()}

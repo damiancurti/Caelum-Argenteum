@@ -234,7 +234,9 @@ class CaelumDerivedStats : Object
         PainChanceMultiplier = Clamp(1.0
             - attributes.Toughness * (attributes.Toughness + 1) / 10100.0,
             0.0, 1.0);
-        DamageResistanceMultiplier = PainChanceMultiplier;
+        // El daño divide por Tipo 4. Dolor y Lucidez conservan su curva.
+        DamageResistanceMultiplier = 100.0
+            / CalculateType4Percent(Max(0.0, attributes.Toughness));
         LucidityLossMultiplier = PainChanceMultiplier;
         HealthPenaltyMultiplier = Clamp(1.0
             - attributes.Patience * (attributes.Patience + 1) / 10100.0,
@@ -251,9 +253,11 @@ class CaelumDerivedStats : Object
         AnimaRegenerationPerSecond = MaximumAnima
             / CaelumConstants.ANIMA_FULL_RECOVERY_SECONDS
             * AnimaRegenerationPercent / 100.0;
-        AnimaCostReductionPercent = Clamp(CalculateType2Percent(attributes.Eloquence), 0.0, 100.0);
-        StaffAnimaCost = CaelumConstants.DEBUG_STAFF_ANIMA_COST
-            * (1.0 - AnimaCostReductionPercent / 100.0);
+        double animaCostMultiplier = 100.0
+            / CalculateType4Percent(Max(0.0, attributes.Eloquence));
+        // El porcentaje sólo informa la reducción equivalente en depuración.
+        AnimaCostReductionPercent = 100.0 * (1.0 - animaCostMultiplier);
+        StaffAnimaCost = CaelumConstants.DEBUG_STAFF_ANIMA_COST * animaCostMultiplier;
         CastingSpeedPercent = CalculateType4Percent(attributes.Eloquence);
         CastingDurationMultiplier = 100.0 / CastingSpeedPercent;
         AbilityRangePercent = CastingSpeedPercent;

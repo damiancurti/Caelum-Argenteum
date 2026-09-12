@@ -1,8 +1,44 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0z — 2026-09-12.
+Versión documental: 4.33.0ab — 2026-09-12.
 
-## Estado actual: 4.33.0z
+## Estado actual: 4.33.0ab
+
+El autor aprobó todas las pruebas de 0aa. Se implementa el siguiente tramo
+pendiente de Ronnie: respiración en la piscina existente, detrás de la mansión
+al este. Leer la propuesta no inicia; aceptar habilita una práctica opcional.
+Sumergir la cabeza un segundo cerca de los escalones registra gasto real de
+Aire. Volver a sacar la cabeza y completar la devolución submarina nativa de
+tres segundos registra recuperación. Detalle y Ronnie reconocen cada fase.
+
+El registro persiste durante inmersión, recuperación y después de completarla.
+Mojarse sin cubrir la cabeza, nadar antes de aceptar o rellenar Aire por debug
+no sustituyen los eventos. No se exige cruzar la piscina ni volver con Ronnie.
+No modifica recursos, costes, geometría, requisitos de Rulo o salida.
+MAP01 continúa como entorno de pruebas; nuevos mapas siguen diferidos.
+
+Aplicar sobre 0aa combinando carpetas. Sólo archivos nuevos/modificados y
+PRUEBAS_4_33_0ab.txt. Evidencia de validación más abajo.
+
+## Base 4.33.0aa — aprobada por el autor
+
+Los Menores suman sólo atributos base por palo/rango antes del porcentaje de
+colección. Un palo completo da +3 a sus tres atributos. Espadas: mentales;
+Copas: sociales; Bastos: físicos; Oros: técnicos. El registro de 78 índices
+conserva propiedad; el Diario separa pasiva y colección. El Loco sigue siendo
+la única carta obtenible en el contenido actual; no se adelantan otras misiones.
+
+Zoom añade barrido de 360° a espadón, hacha de guerra y alabarda por triple
+Aire del primario, conservando daño, alcance y recuperación. Un impacto por
+enemigo, con geometría y aliados respetados; guanteletes mantienen bloqueo.
+Daño general recibido y coste de Ánima dividen por Tipo 4 de Dureza/Elocuencia.
+A 100, divisor 3. Colisiones, Dolor y Lucidez conservan las reglas anteriores.
+Se reconstruyen estadísticas antiguas al cargar sin duplicar bonos/progreso.
+
+Aplicar sobre 0z combinando carpetas. Entrega sólo archivos modificados más
+PRUEBAS_4_33_0aa.txt; el validador acepta ahora sufijos de varias letras.
+
+## Base 4.33.0z — incluida en la base 0aa aprobada
 
 Base 0y aprobada: el autor confirmó que todas las pruebas dieron correcto y
 que el desacuerdo informado era un error de interpretación. No se aplica una
@@ -143,8 +179,10 @@ La base 0n aprobada incluye:
 - Indicación compartida neutral sobre la pared marcada y diálogos de recursos
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-Reparación, consumo de alimento/agua y Aire/movimiento están implementados como prácticas
-opcionales. Las demás lecciones siguen planificadas; no bloquean las ramas aceptadas.
+Reparación, alimento/agua, Aire/movimiento, carga y respiración en piscina están
+implementados como prácticas opcionales. Quedan adquisición de recetas de
+cartuchos/virotes, armaduras/sellos y recolección/potabilización de agua; no
+bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -202,7 +240,7 @@ Los avisos redistributivos de `src/licenses/` permanecen junto a los assets.
 No son duplicados administrativos y la reorganización no los elimina.
 
 
-## Roadmap inmediato: terminar MAP01
+## Roadmap inmediato: cerrar sistemas y pruebas en MAP01
 
 Cada bloque termina con pruebas enfocadas y aceptación del autor antes de
 ampliar el siguiente. La numeración de las correcciones intermedias depende
@@ -218,7 +256,8 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Consumo de alimento/agua 0x aprobado. Aire/movimiento 0y aprobado; carga implementada en 0z, pendiente de prueba. Quedan paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga incluidos en la base 0aa aprobada. Respiración en piscina implementada en 0ab, pendiente de prueba del autor. Quedan cartuchos/virotes, acceso a recetas de armaduras/sellos y recolección/potabilización de agua. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
@@ -233,7 +272,7 @@ no significa que todo el contenido de ese sistema esté terminado.
 
 | Hito | Estado y trabajo pendiente |
 | --- | --- |
-| V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS y User1–4. Completar/registrar la matriz pendiente por familia cuando corresponda; conservar lo aceptado. |
+| V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS/barrido y User1–4. Completar/registrar la matriz pendiente por familia cuando corresponda; conservar lo aceptado. |
 | V4.28: Channel de Sellos | Efectos actuales sin clima aceptados en 0bp. Extensiones dependientes de clima pasan a V5; no reabrir los efectos cerrados. |
 | V4.29–V4.31: crafting y ciclo de equipo | Base de recetas, reservas, lotes, eficiencias independientes, reparación y desarme aceptada. Quedan distribución narrativa de conocimiento, recompensas/hojas/tiendas/descubrimientos y bonos de eficiencia todavía sin valores autorizados. |
 | V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
@@ -242,7 +281,7 @@ no significa que todo el contenido de ese sistema esté terminado.
 | V4.34: arquitectura del mundo y viajes | Reutilizar módulos de habitación/escalera ya validados; puertas cerradas/con llave y pisos adicionales. Definir ubicaciones, conexiones, caravanas y puntos de integración de viajes/eventos. No confundir arquitectura de mapas con refactor de código. |
 | V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
-| V4.37: Tarot y Trucazo | Extender la colección y bonificación base iniciadas en 0t; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
+| V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar los bloques V4 pendientes. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
 | V5.1: exposición térmica | Modelo de calor/frío basado en clima, zonas, actividad, humedad persistente, viento y equipo real; Resiliencia, consumibles, refugios, secado, descanso y aclimatación. Curvas numéricas pendientes de balance autoral. |
 | V5.x: recursos y biomas marinos | Fuentes 3D persistentes, extracción cuerpo a cuerpo cortante/perforante, dureza/rareza/profundidad/región/habilidad, agotamiento y regeneración. Biomas marinos, algas/yodo y aguas no potables; tiendas mantienen acceso a materiales remotos. |
@@ -267,7 +306,7 @@ implementación se ubica cuando estén disponibles sus dependencias.
 | Asedios | Director de batalla, refuerzos, tácticas, comandantes, aliados, máquinas/artillería/barricadas, sabotaje y rutas alternativas; límite temporal y consecuencias permanentes sobre ciudades, rutas y facciones. Depende de IA, física, mundo y calendario estables. |
 | Física | Completar validación de impactos/contactos múltiples, empuje sostenido, aplastamiento y anatomía/armadura. La futura física de golpes cuerpo a cuerpo requiere velocidad, masa efectiva, área/filo, material, penetración y técnica definidos; no reemplazar el combate aceptado sin ese diseño. |
 | Habilidades | Efectos concretos de User1 racial y User4 clase, definidos raza por raza y clase por clase. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
-| Tarot | Colección persistente y bonificación global iniciadas con El Loco en 0t. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
+| Tarot | Colección persistente y porcentaje global iniciados con El Loco en 0t; pasivas base por palo/rango de todos los Menores en 0aa. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
 | Trucazo | Truco con Tarot: Mayores modificadores, Menores jugables/filas, Envido/Truco/Retruco/Vale 4, daño y vida, Sentidos Mágicos, apuestas y consecuencias; casual/ranked y equipos 1v1 a 4v4. Implementar por capas tras reglas base de Tarot y autoridad multijugador. |
 | Cooperativo y PvP | Objetivo 2–8 jugadores, autoridad del anfitrión, propiedad/validación/sincronización, misiones y mundo compartidos, viajes, conexión/desconexión y compañeros. La persistencia individual actual no acredita estos modos. |
 | Guardado | Mantener guardado nativo e Inventory viajero. Perfil externo independiente, autoguardado narrativo y estado compartido del mundo permanecen pendientes; ensayar compatibilidad antes de retirar adaptadores de V5. |
@@ -328,15 +367,87 @@ antes de escribir y se informa con su ruta.
 
 ## Aplicación y mantenimiento
 
-Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0y y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
+completa 0aa y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0z.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ab.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
+
+## Validación de 4.33.0ab
+
+109 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+33 en español, 33 en inglés, 15 al recargar durante la inmersión, 11 durante
+la devolución y 8 después de completarla; 9 al actualizar un guardado auténtico
+0aa, hacer la práctica, subir la escalera y viajar a MAP02. Las cifras de
+recarga cuentan sólo comprobaciones ejecutadas después de cargar, sin sumar
+otra vez el contador que guardó la escena.
+
+Se abrió Ronnie con Usar y se recorrieron las páginas USDF reales. Lectura y
+rechazo no inician; confirmar registra; Detalle y diálogo usan el resultado.
+La piscina real acreditó WaterLevel 3 y gasto nativo. Mojarse sin cubrir la
+cabeza, ejecutar el helper diagnóstico en seco, exenciones sin gasto y llenar
+Aire por depuración no completaron. Menos de un segundo queda pendiente;
+la devolución parcial tampoco completa. No se confundió con recuperación de
+Aire al correr. Reabrir conserva la práctica y el viaje conserva las lecciones.
+
+Guardado antiguo creado con fuentes 0aa antes de superponer el delta en la
+misma ruta: tres bools nuevos falsos, etapas, equipo, lecciones y 78 cartas
+conservados. Se aceptó la práctica, se registró inmersión y se subieron los
+escalones mediante movimiento con colisiones nativas hasta x2190/z8, WaterLevel
+0, sin perder salud. La recuperación completó la práctica. Las escenas privadas
+preparan etapas, atributos y equipo para cubrir casos; no añaden contenido ni
+sustituyen el recorrido manual del autor con su personaje.
+
+Revisión visual a 1280×720: las siete opciones de Ronnie y las instrucciones de
+la piscina se leen completas. Textos de diálogo y Detalle comprobados en ambos
+idiomas. Validador aprobado: cinco documentos, 74 audios, doce modelos de
+estaciones y 24 textos españoles de Caella. Los tres WAD y todos los recursos
+audiovisuales conservan los bytes de 0aa. La revisión de código confirma que
+los observadores no modifican costes, regeneración o requisitos de misión.
+El delta pasa CRC y reconstrucción exacta sobre 0aa: trece archivos modificados
+y PRUEBAS_4_33_0ab.txt, sin ejecutores, escenas privadas ni PK3.
+Pendiente del autor: pruebas del TXT en Windows con su personaje y guardados.
+
+## Validación de 4.33.0aa — aprobada por el autor
+
+1271 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+1259 de reglas/acciones, 10 al actualizar un guardado real de 0z y viajar,
+y 2 al recargar el guardado resultante de 0aa y volver a viajar.
+
+Cobertura: las 78 cartas individualmente sobre los doce atributos, colección
+completa, base antes de porcentaje, decimales, recálculo sin acumulación y
+snapshots del Diario. Divisores con atributo 0, 0,3, 1, 10, 25, 50, 100 y 150;
+daño real de jugador/NPC y conservación de la curva de Dolor/Lucidez. Se
+compararon colisiones nativas con su expresión sustractiva; además, los cuerpos
+de ReceiveCaelumImpact en jugador y NPC son idénticos a 0z.
+
+Barrido: cuatro direcciones, daño igual al primario bajo condiciones de crítico
+y precisión controladas, coste único triple, recuperación, Aire insuficiente,
+obstáculos sólidos y piso 3D, aliados y alcance. Se ejecutaron los estados Zoom
+de los selectores nativos de las tres armas y guanteletes; mantener el botón
+no repite. Barrido cargado consume la carga y cuesta seis primarios sin carga.
+Magia: gastos reales de los cuatro implementos, T1/T2/T3, normal/cargado y
+rechazo por Ánima insuficiente a Elocuencia 100. Se conservan las bases propias.
+
+El guardado 0z se generó con sus fuentes auténticas antes de superponer el delta.
+Conservó cartas/equipo/etapa/lecciones y reconstruyó atributos y un hechizo
+cargado pendiente que antes costaba cero. Se guardó con 0aa, recargó y verificó
+viaje real a MAP02 sin duplicar bases ni perder el arma. Las escenas preparan
+cartas y equipo para estos ensayos: no añaden contenido al juego entregado.
+Revisión visual del Diario a 1280×720: colección completa y un Menor sin El Loco,
+con la tabla de base y porcentaje separada. La adquisición restante de cartas
+continúa planificada, no se declara terminada.
+
+Validador del proyecto aprobado: cinco documentos, 74 definiciones de audio,
+12 modelos de estaciones y 24 textos españoles de Caella. Los tres mapas y
+todos los recursos audiovisuales mantienen los bytes de 0z. El ZIP pasa CRC
+y reconstrucción exacta del delta sobre esa base; incluye sólo 16 archivos
+modificados y PRUEBAS_4_33_0aa.txt. No contiene ejecutores, mapas privados o PK3.
+El autor confirmó que todas las pruebas de 0aa dieron correcto.
 
 ## Validación de 4.33.0z
 
@@ -351,7 +462,7 @@ preparan etapa y sobrantes para comprobar estas rutas; no sustituyen el recorrid
 del autor. Captura de valores de carga revisada a 1280×720.
 Validador aprobado; los tres WAD y recursos audiovisuales conservan sus bytes
 de 0y. El ZIP pasa CRC y reconstrucción exacta del delta sobre esa base.
-Pendiente del autor: PRUEBAS_4_33_0z.txt en Windows.
+0z quedó integrado en la base completa 0aa cuya prueba el autor aprobó.
 
 ## Validación de 4.33.0y — aprobada por el autor
 

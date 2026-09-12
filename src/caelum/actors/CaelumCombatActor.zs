@@ -872,13 +872,8 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(
                 CaelumConstants.ATTRIBUTE_ELOQUENCE
             );
-        double reductionPercent = Clamp(
-            CalculateActorType2Percent(effectiveEloquence),
-            0.0,
-            100.0
-        );
-        return GetTierOneMagicBaseAnimaCost(weaponType)
-            * (1.0 - reductionPercent / 100.0);
+        return GetTierOneMagicBaseAnimaCost(weaponType) * 100.0
+            / CalculateActorType4Percent(Max(0, effectiveEloquence));
     }
 
     bool TrySpendTierOneMagicAnima(int weaponType)
@@ -2598,11 +2593,8 @@ class CaelumCombatActor : Actor
         bool localizedCriticalHit = PendingLocalizedCriticalHit;
         ResolveActorArmorImpact(damage);
         PendingLocalizedCriticalHit = false;
-        LastCombatToughnessDamageMultiplier = Clamp(
-            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
-            0.0,
-            1.0
-        );
+        LastCombatToughnessDamageMultiplier = 100.0
+            / CalculateActorType4Percent(Max(0, CombatToughness));
         int retainedDamage = Max(
             0,
             int(LastCombatArmorPostDefenseDamage
@@ -2728,11 +2720,8 @@ class CaelumCombatActor : Actor
         LastCombatArmorDurabilityLoss = 0;
         LastCombatArmorDurabilityChancePercent = 0.0;
         LastCombatArmorDurabilityRollPercent = 0.0;
-        LastCombatToughnessDamageMultiplier = Clamp(
-            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
-            0.0,
-            1.0
-        );
+        LastCombatToughnessDamageMultiplier = 100.0
+            / CalculateActorType4Percent(Max(0, CombatToughness));
 
         int totalHealthDamage = 0;
         int lucidityNaturalGrade = -1;
@@ -2903,13 +2892,20 @@ class CaelumCombatActor : Actor
             CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
                 * LastCombatLucidityCriticalFactor
                 * (1.0 - defenseRatio)
-                * LastCombatToughnessDamageMultiplier
+                * GetActorPainLucidityMultiplier()
         );
         CurrentCombatLucidity = Max(
             0.0,
             CurrentCombatLucidity - LastCombatLucidityLoss
         );
         UpdateActorLucidityState();
+    }
+
+    // Dolor y pérdida de Lucidez no adoptan el nuevo divisor de daño.
+    double GetActorPainLucidityMultiplier()
+    {
+        return Clamp(1.0 - CombatToughness * (CombatToughness + 1)
+            / 10100.0, 0.0, 1.0);
     }
 
     void UpdateActorLucidityState()
@@ -3089,7 +3085,7 @@ class CaelumCombatActor : Actor
             * actualHealthLost / CombatMaximumHealth;
         LastCombatPainChancePercent = Clamp(
             10.0 * LastCombatHealthLossPercent
-                * LastCombatToughnessDamageMultiplier
+                * GetActorPainLucidityMultiplier()
                 * CombatHealthPainMultiplier
                 * (1.0 - adrenalineRatioBeforeDamage),
             0.0,

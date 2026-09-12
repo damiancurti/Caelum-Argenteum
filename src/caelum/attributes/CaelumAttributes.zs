@@ -72,6 +72,24 @@ class CaelumAttributes : Object
         Insight = mental + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_INSIGHT];
     }
 
+    // Las pasivas menores suman base antes del porcentaje de colección.
+    play void ApplyTarotMinorBonuses(CaelumPersistentCharacterState record)
+    {
+        if (record == null) return;
+        Strength += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_STRENGTH);
+        Toughness += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_TOUGHNESS);
+        Constitution += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_CONSTITUTION);
+        Agility += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_AGILITY);
+        Dexterity += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
+        Resilience += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_RESILIENCE);
+        Charisma += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_CHARISMA);
+        Empathy += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_EMPATHY);
+        Eloquence += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_ELOQUENCE);
+        Intelligence += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_INTELLIGENCE);
+        Patience += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
+        Insight += record.GetTarotMinorBaseBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
+    }
+
     // Recalcular siempre desde creación/equipo antes de aplicar el factor.
     // Nunca multiplicar la asignación guardada ni truncar fracciones de nivel.
     void ApplyTarotBonus(int percent)

@@ -1,6 +1,23 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0z — 2026-09-12.
+Versión documental: 4.33.0ab — 2026-09-12.
+
+## Revisión 4.33.0ab
+
+Se reutilizan la piscina y sus dieciséis escalones, el diálogo nativo de Ronnie,
+el sonido de arpa y las fuentes de Detalle. No se crean iconos ni marcadores.
+Los tres WAD, modelos, sprites, música, audio y fuentes de arte conservan los
+bytes de la base 0aa aprobada. La indicación de ubicación está en el diálogo
+y el Diario. Pruebas y revisión visual documentadas en PROJECT.md.
+
+## Revisión 4.33.0aa
+
+No se añaden ni modifican archivos de arte, sonido, música, modelos o mapas.
+El Diario reutiliza El Loco y el reverso existente; muestra texto de pasivas
+menores con las fuentes actuales. El barrido utiliza el selector nativo de las
+armas grandes y su presentación provisional; el arte de primera persona de
+esas armas permanece planificado. No se generan ilustraciones de cartas aún
+sin contenido jugable. Revisión visual del Diario en PROJECT.md.
 
 ## Revisión 4.33.0z
 

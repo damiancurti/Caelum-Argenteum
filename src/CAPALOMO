@@ -2017,6 +2017,7 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
         choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
         choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
         choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
@@ -2135,6 +2136,24 @@ conversation
         userstring = "ronnie_load_practice";
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 

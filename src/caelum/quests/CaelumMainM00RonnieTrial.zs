@@ -172,6 +172,45 @@ class CaelumMainM00RonnieTrial : Object play
         user.PersistCharacterState();
     }
 
+    static bool StartSwimLesson(CaelumPlayer user)
+    {
+        if (!IsRonnie(user) || user.DerivedStats == null || user.WaterLevel >= 3) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+            || user.DerivedStats.MaximumAir <= 0) return false;
+        r.MainM00SwimLessonStarted = true;
+        user.PersistCharacterState();
+        return true;
+    }
+
+    // Observa el gasto submarino y su devolución nativa; no agrega un reloj
+    // ni modifica costes. Sólo la piscina de MAP01 acredita la inmersión.
+    static void RecordSwimLesson(CaelumPlayer user, double amount, bool submerged)
+    {
+        if (!CanInteract(user) || amount <= 0 || user.player.ConversationNPC != null) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.MainM00SwimLessonStarted || r.MainM00SwimLessonComplete
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return;
+        if (submerged)
+        {
+            if (r.MainM00SwimLessonSubmerged || !user.IsSubmergedInPotableWater()
+                || !user.UnderwaterWithoutOxygen || user.HasUnderwaterAirExemption()
+                || user.UnderwaterNoBreathTics < TICRATE) return;
+            r.MainM00SwimLessonSubmerged = true;
+        }
+        else
+        {
+            if (!r.MainM00SwimLessonSubmerged || user.WaterLevel >= 3
+                || user.UnderwaterWithoutOxygen || !user.UnderwaterAirRecoveryAppliedThisTick
+                || user.UnderwaterAirRecoveryDebt > 0.000001
+                || user.UnderwaterAirRecoveryTicsRemaining > 0) return;
+            r.MainM00SwimLessonComplete = true;
+        }
+        // El Inventory y los contadores submarinos ya viajan y se guardan.
+        user.RefreshSocialJournalSnapshot();
+    }
+
     static void Feedback(CaelumPlayer user, String key)
     {
         if (user != null) user.A_Print(StringTable.Localize(key, false));
@@ -606,5 +645,13 @@ class CaelumM00LoadLessonAction : CaelumPalomoDialogueAction
     override bool Use(bool pickup)
     {
         return CaelumMainM00RonnieTrial.StartLoadLesson(CaelumPlayer(Owner));
+    }
+}
+
+class CaelumM00SwimLessonAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00RonnieTrial.StartSwimLesson(CaelumPlayer(Owner));
     }
 }

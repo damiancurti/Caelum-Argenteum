@@ -406,8 +406,7 @@ class CaelumPhysicalSelectorWeapon : Weapon
         if (caelumPlayer.CombatZoomInputLatched) { return; }
         caelumPlayer.CombatZoomInputLatched = true;
 
-        // Zoom es contextual: ADS para distancia y Block para armas que
-        // realmente pueden compartir la mano secundaria con un escudo.
+        // Zoom es contextual: ADS, barrido de armas grandes o bloqueo.
         if (caelumPlayer.IsRangedWeaponType(invoker.GetCaelumWeaponType()))
         {
             caelumPlayer.ToggleRangedAim(invoker.GetCaelumWeaponType());
@@ -418,6 +417,11 @@ class CaelumPhysicalSelectorWeapon : Weapon
         }
 
         A_ZoomFactor(1.0);
+        if (caelumPlayer.SupportsLargeWeaponSweep(invoker.GetCaelumWeaponType()))
+        {
+            caelumPlayer.PerformLargeWeaponSweep(invoker.GetCaelumWeaponType());
+            return;
+        }
         caelumPlayer.ToggleCombatBlockMode();
     }
 
@@ -812,13 +816,6 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         bool hasShield = caelumPlayer.HasActiveBlockSource();
         bool isBlocking = hasShield && caelumPlayer.CombatBlockModeActive;
 
-        // Un save puede conservar capas aunque el indicador visual ya sea
-        // falso. Sin escudo real se retiran siempre las dos capas izquierdas.
-        if (!hasShield)
-        {
-            A_ClearOverlays(10, 10);
-            A_ClearOverlays(20, 20);
-        }
         if (hasShield != invoker.CaelumSwordViewShieldVisible)
         {
             invoker.CaelumSwordViewShieldVisible = hasShield;

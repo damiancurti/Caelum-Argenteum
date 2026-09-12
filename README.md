@@ -5,12 +5,35 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0z.** Apply over the complete **4.33.0y** project.
-The author approved every 0y test and clarified that the reported mission issue
-was a misunderstanding. This release adds optional load management with Ronnie.
-MAP01 remains the systems test environment; new maps are deferred.
+**Current release: 4.33.0ab.** Apply over the complete **4.33.0aa** project.
+The author approved all 0aa tests. This release adds Ronnie's optional pool
+breathing practice, the next tutorial block. MAP01 remains the systems test environment.
 
 ## Implemented
+
+- After returning Ronnie's sword, ask how to breathe while swimming and accept
+  the optional practice. The pool behind the mansion has wide steps on the
+  mansion-facing side. With Air replenished, submerge your head near the steps
+  for one second, then come back up and breathe for three seconds.
+- Native underwater Air spending and debt recovery drive the two steps. Wading,
+  reading the proposal or a debug refill cannot complete them. Quest Detail and
+  Ronnie show progress; partial saves and completion persist. No return visit
+  or new requirement for Rulo/the exit is added. Pool geometry is unchanged.
+
+- Each Minor Arcana grants only the specified base attribute passive, before
+  collection percentage: Swords = Mental, Cups = Social, Wands = Physical,
+  Coins = Technical. All fourteen cards in a suit add +3 to each of its three
+  attributes; all 78 cards still add +100% through collection. Journal shows
+  the minor base separately. Only the Fool is obtainable in current content;
+  the remaining cards need their planned acquisition content.
+- Greatsword, war axe and halberd use Zoom for a 360-degree sweep: primary
+  damage, reach and recovery, with triple primary Air per execution. Nearby
+  enemies can all be hit once; walls, solid 3D floors and allies are respected.
+  Giant gauntlets retain Block. Charged sweeps consume the existing charge.
+- General incoming damage after armor divides by Type 4 Toughness; magical
+  Anima cost divides by Type 4 Eloquence. At 100 the divisor is 3. Physical
+  collisions keep their subtractive Toughness rule; pain and Lucidity retain
+  their previous curves. Existing saved character statistics are refreshed.
 
 - Ronnie now shows current carried kilograms, capacity and the load-only Air
   multiplier. He explains why carrying less can help even below full capacity.
@@ -172,7 +195,7 @@ MAP01 remains the systems test environment; new maps are deferred.
 
 - Character creation, attributes, survival resources, inventory/equipment,
   crafting, repair/disassembly, physical currency and merchant infrastructure.
-- Physical/ranged/magical combat, contextual Block/ADS, charged attacks and
+- Physical/ranged/magical combat, contextual Block/ADS/sweep, charged attacks and
   equipped-Seal Channel. Sword/hand/shield framing 4.32.0o remains accepted.
 - MAP01 mansion, secret facade, native moving lift and resource cave.
 - Prologue, Unknown Voice, Palomo and Argento's social task: recruit the three
@@ -201,7 +224,7 @@ MAP01 remains the systems test environment; new maps are deferred.
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
 PROJECT.md. Cartridge/bolt recipes, armor/Seal recipe acquisition and safe-water
-collection/processing remain planned. Food/water, Air/movement and load-management lessons are now
+collection/processing remain planned. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
 Material coverage remains quantified, with no new leather source or loot change.
@@ -218,17 +241,16 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0y is author-approved. Focused 0z checks are in PRUEBAS_4_33_0z.txt.
-Engine evidence is recorded in PROJECT.md. All three maps and audiovisual
-resources remain byte-identical to 0y.
+0aa is author-approved. Focused 0ab checks are in PRUEBAS_4_33_0ab.txt;
+native engine evidence and limits are in PROJECT.md.
+All maps and audiovisual resources remain byte-identical to 0aa.
 
 ## Build and run
 
-Close GZDoom. Extract the 0z patch and copy **src**, **docs** and **README.md**
-into the complete **4.33.0y** project, merging folders and replacing matching
-files. Keep the supplied **PRUEBAS_4_33_0z.txt** beside the ZIP, outside docs.
-A MAP01 save before the exit lets you try the optional lesson. A character
-already in the sewers can continue normally; this patch adds no return route.
+Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ab patch
+into the complete **4.33.0aa** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ab.txt** outside docs.
+Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

@@ -1,6 +1,40 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0z — 2026-09-12.
+Versión documental: 4.33.0ab — 2026-09-12.
+
+## Respiración en piscina — 4.33.0ab
+
+El autor aprobó todas las pruebas de 0aa y pidió continuar el roadmap. Se
+implementa el tramo E opcional de Ronnie con la piscina existente de MAP01:
+un segundo de inmersión con gasto real y devolución del Aire submarino al
+respirar tres segundos. Confirmación, fases en Detalle, reconocimiento de
+Ronnie y persistencia; sin ampliar mapas ni imponer un bloqueo de misión.
+Se mantienen los cinco documentos y README actualizados junto al código.
+Entrega sobre 0aa por copia con PRUEBAS_4_33_0ab.txt; evidencia en PROJECT.md.
+Siguiente cobertura pendiente: municiones y adquisición de recetas T1;
+recolección/potabilización de agua requiere su mecánica. Arquitectura en V5.
+
+## Pasivas menores, barrido y divisores — 4.33.0aa
+
+Decisiones del autor: Espadas mentales, Copas sociales, Bastos físicos y Oros
+técnicos. Menores: 2–4/5–7/8–10 dan +0,3 al 1.º/2.º/3.º; Caballero/Sota/Reina
++0,6 respectivamente; Rey +0,5 a los tres y Ancho +1 a los tres. Un palo =+3
+a sus atributos. Son bases previas a colección; no hay otras pasivas menores.
+Se conserva +2% por Mayor, +1% por Menor. El orden de los 78 índices se fija
+sin desplazar El Loco ni alterar las banderas existentes.
+
+Espadón, hacha de guerra y alabarda ganan Zoom/barrido de 360° con daño, alcance
+y recuperación primarios, coste de Aire ×3 por ejecución. Guanteletes mantienen
+bloqueo. La geometría impide atravesar paredes/pisos; los aliados se excluyen.
+Daño general/Ánima abandonan la resta porcentual y dividen por Tipo 4 de
+Dureza/Elocuencia: 1 + 2A(A+1)/10100. A 100 queda un tercio. Colisiones, Dolor
+y Lucidez mantienen sus reglas. Las tablas históricas previas que indiquen
+anulación de daño o Ánima con atributo 100 quedan sustituidas por SYSTEMS.md.
+
+0z es base entregada; no se inventa una aprobación de sus pruebas. Se actualiza
+README y los cinco documentos, con parche por copia y un TXT de pruebas.
+No hay nuevas lecciones, misiones, mapas ni activos. V5 conserva el refactor
+previsto. Evidencia técnica y límites en PROJECT.md.
 
 ## Carga y cierre de observaciones — 4.33.0z
 

@@ -1,8 +1,26 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0z — 2026-09-12.
+Versión documental: 4.33.0ab — 2026-09-12.
 
 
-REVISIÓN VIGENTE 4.33.0z — CARGA
+REVISIÓN VIGENTE 4.33.0ab — RESPIRACIÓN EN PISCINA
+El autor aprobó todas las pruebas de 0aa. Se implementa el tramo E opcional
+de Ronnie después de devolver su espada. Piscina detrás de la mansión al este;
+usar la escalera ancha del lado de la mansión, cubrir la cabeza un segundo y
+volver a subir para respirar tres segundos. No requiere cruzar la piscina.
+Detalle y Ronnie reconocen inmersión/recuperación; el progreso se guarda.
+No cambia ningún WAD ni recursos. Se mantienen los requisitos aceptados de
+Rulo y salida. Recolección y potabilización de agua siguen planificadas.
+
+BASE 4.33.0aa APROBADA — BALANCE Y PASIVAS
+El autor confirmó que todas sus pruebas dieron correcto. Se conservan las
+pasivas de Menores, Zoom/barrido de espadón, hacha de guerra y alabarda y
+divisores Tipo 4 de daño/Ánima. Detalle de valores en SYSTEMS.md. Ronnie explica
+el barrido al elegir esas armas; Rulo aclara que la defensa del mandoble sigue
+siendo la esquiva lateral. El Loco sigue aportando su +2% de colección.
+Colisiones, geometría, recursos y etapas conservan las reglas aceptadas.
+Se continúa con sistemas: mapas nuevos y ampliación de alcantarillas diferidos.
+
+BASE ENTREGADA 4.33.0z — CARGA
 0y aprobado por el autor. Tramo D opcional con Ronnie: lectura de carga real
 y decisión de aligerar mediante inventario. No modifica mapas o recursos.
 
@@ -2013,12 +2031,21 @@ Tramo D — carga (implementado en 0z):
 - Préstamos y materiales reservados conservan restricciones. Guardar/cargar
   conserva la práctica; volver a recoger no la invalida. No bloquea la misión.
 
-Tramo E — respiración o paso inundado:
+Tramo E — respiración (implementado en 0ab):
 
-- Utilizar un sector de agua breve y seguro para presentar el Aire compartido.
-- Evitar una distancia capaz de matar a un jugador que entra con Aire completo.
-- Colocar salida clara y zona de recuperación.
-- No depender de inmovilidad o bugs previos de entrada al agua.
+- Práctica opcional tras devolver la espada. Leer no inicia; confirmar sí.
+- Piscina existente detrás de la mansión, al este. Escalera ancha en el borde
+  oeste, del lado de la mansión. No requiere cruzar el volumen profundo.
+- Entrar con Aire recuperado, cubrir la cabeza un segundo junto a los escalones
+  y volver por ellos hasta sacar la cabeza. Registrar sólo gasto submarino real.
+- Completar la devolución nativa del Aire gastado al respirar tres segundos.
+  Mojarse sin cubrir la cabeza, exenciones sin gasto o rellenar por depuración
+  no sustituyen las dos fases. No añade costes ni recompensas.
+- Mostrar inmersión/recuperación/completado en Detalle. Guardar durante ambos
+  pasos conserva el progreso; no exige retorno ni bloquea Rulo/salida.
+- Geometría de referencia para auditoría: sector 620, x2200..3480/y-720..720;
+  dieciséis escalones 621..636, x2200..2712/y-256..256. WAD sin cambios.
+- Recolección y potabilización del agua permanecen fuera de esta práctica.
 
 19.5. MATERIALES DE MISIÓN (ACTUALIZADO A 0n)
 

@@ -2303,9 +2303,9 @@ CA_M01_WEAPON_DESC_4 = "Sword: Primary cuts, secondary thrusts farther. Useful f
 CA_M01_WEAPON_DESC_5 = "Axe: Primary cuts; secondary is a shorter blunt strike. Uses more Air than the sword. Compatible with a shield.";
 CA_M01_WEAPON_DESC_6 = "Flail: Both attacks are blunt; the secondary is stronger. Compatible with a shield. It cannot cut plants.";
 CA_M01_WEAPON_DESC_7 = "Spear: A long piercing attack that can be used while blocking. No secondary attack.";
-CA_M01_WEAPON_DESC_8 = "Greatsword: Longer reach and stronger attacks than the sword, with more Air use and a slower swing. No shield blocking.";
-CA_M01_WEAPON_DESC_9 = "War axe: Strong, slow cutting attacks and a blunt secondary. High Air use. No shield blocking.";
-CA_M01_WEAPON_DESC_10 = "Halberd: Combines cutting and piercing with very long reach. A large weapon; no shield blocking.";
+CA_M01_WEAPON_DESC_8 = "Greatsword: Longer reach and stronger attacks than the sword, with more Air use and a slower swing. No shield blocking. Zoom: 360-degree sweep, primary damage and range, triple Air cost.";
+CA_M01_WEAPON_DESC_9 = "War axe: Strong, slow cutting attacks and a blunt secondary. High Air use. No shield blocking. Zoom: 360-degree sweep, primary damage and range, triple Air cost.";
+CA_M01_WEAPON_DESC_10 = "Halberd: Combines cutting and piercing with very long reach. A large weapon; no shield blocking. Zoom: 360-degree sweep, primary damage and range, triple Air cost.";
 CA_M01_WEAPON_DESC_11 = "Giant gauntlets: Heavy blunt attacks. The secondary adds upward push. The gauntlets also provide their own blocking mode.";
 CA_M01_WEAPON_DESC_12 = "Bow: Uses arrows. Aim with Zoom or secondary; reload with Reload. I will also teach you to craft batches of ten arrows and their components.";
 CA_M01_WEAPON_DESC_13 = "Carbine: Strong ranged shots with high Air use and slower cadence. Aim and reload; requires cartridges.";
@@ -2414,9 +2414,9 @@ CA_M01_WEAPON_DESC_4 = "Espada: El principal corta y el secundario da una estoca
 CA_M01_WEAPON_DESC_5 = "Hacha: El principal corta; el secundario es un golpe contundente más corto. Gasta más Aire que la espada. Compatible con escudo.";
 CA_M01_WEAPON_DESC_6 = "Mangual: Ambos ataques son contundentes; el secundario es más fuerte. Compatible con escudo. No sirve para cortar plantas.";
 CA_M01_WEAPON_DESC_7 = "Lanza: Un ataque perforante largo que puede usarse mientras bloqueas. No tiene ataque secundario.";
-CA_M01_WEAPON_DESC_8 = "Mandoble: Más alcance y fuerza que la espada, con más gasto de Aire y golpes más lentos. No permite bloquear con escudo.";
-CA_M01_WEAPON_DESC_9 = "Hacha de guerra: Cortes fuertes y lentos, con un secundario contundente. Alto gasto de Aire. No permite bloquear con escudo.";
-CA_M01_WEAPON_DESC_10 = "Alabarda: Combina daño cortante y perforante con mucho alcance. Arma grande; no permite bloquear con escudo.";
+CA_M01_WEAPON_DESC_8 = "Mandoble: Más alcance y fuerza que la espada, con más gasto de Aire y golpes más lentos. No permite bloquear con escudo. Zoom: barrido de 360 grados, mismo alcance y daño del primario, triple Aire.";
+CA_M01_WEAPON_DESC_9 = "Hacha de guerra: Cortes fuertes y lentos, con un secundario contundente. Alto gasto de Aire. No permite bloquear con escudo. Zoom: barrido de 360 grados, mismo alcance y daño del primario, triple Aire.";
+CA_M01_WEAPON_DESC_10 = "Alabarda: Combina daño cortante y perforante con mucho alcance. Arma grande; no permite bloquear con escudo. Zoom: barrido de 360 grados, mismo alcance y daño del primario, triple Aire.";
 CA_M01_WEAPON_DESC_11 = "Guanteletes gigantes: Ataques contundentes pesados. El secundario agrega empuje hacia arriba. Los guanteletes tienen su propio modo de bloqueo.";
 CA_M01_WEAPON_DESC_12 = "Arco: usa flechas. Apuntá con Zoom o el ataque secundario; recargá con Recargar. También te enseñaré a fabricar lotes de diez flechas y sus componentes.";
 CA_M01_WEAPON_DESC_13 = "Carabina: Disparos potentes, con alto gasto de Aire y menor cadencia. Permite apuntar y recargar; necesita cartuchos.";
@@ -2539,7 +2539,7 @@ CA_M01_RULO_CHECK_AIM = "Defense: aim with AltFire or Zoom in the target room.";
 CA_M01_RULO_CHECK_EVADE = "Defense: take sideways steps in front of the target.";
 CA_M01_RULO_DEFENSE_BLOCK = "Your equipped gear can block: press Zoom in the target room. You can also evade by moving sideways.";
 CA_M01_RULO_DEFENSE_AIM = "With your ranged weapon, aiming with AltFire or Zoom in the target room counts as defense.";
-CA_M01_RULO_DEFENSE_GREATSWORD = "With the greatsword, practice defense by evading. Stand in front of the target and walk a few steps sideways while keeping your view facing it. Zoom is not required: the greatsword cannot block. Detail (F) marks the exercise when you have moved far enough.";
+CA_M01_RULO_DEFENSE_GREATSWORD = "With the greatsword, practice defense by evading. Stand in front of the target and walk a few steps sideways while keeping your view facing it. Zoom performs a circular sweep for triple the primary Air cost; it is an attack, so use sideways movement for this defense practice. Detail (F) marks the exercise when you have moved far enough.";
 CA_M01_RULO_DEFENSE_EVADE = "Your current gear cannot block. In front of the target, walk a few steps sideways while keeping your view facing it. Turning the camera alone does not count. Detail (F) marks the exercise when you have moved far enough.";
 CA_M01_RULO_CHECK_ADVANCED = "Land a charged hit, cast while moving, or reload a ranged weapon.";
 CA_M01_RULO_CHECK_AIR = "Spend Air through attacks or running.";
@@ -2580,7 +2580,7 @@ CA_M01_RULO_CHECK_AIM = "Defensa: apuntar con AltFire o Zoom en la sala del blan
 CA_M01_RULO_CHECK_EVADE = "Defensa: dar pasos de costado frente al blanco.";
 CA_M01_RULO_DEFENSE_BLOCK = "Tu equipo permite bloquear: presioná Zoom en la sala del blanco. También podés esquivar desplazándote de costado.";
 CA_M01_RULO_DEFENSE_AIM = "Con tu arma a distancia, apuntar con AltFire o Zoom en la sala del blanco cuenta como defensa.";
-CA_M01_RULO_DEFENSE_GREATSWORD = "Con el mandoble, practicá la defensa esquivando. Frente al blanco, caminá unos pasos de costado sin dejar de mirarlo. No necesitás Zoom: el mandoble no bloquea. Detalle (F) marca la práctica cuando completás el recorrido.";
+CA_M01_RULO_DEFENSE_GREATSWORD = "Con el mandoble, practicá la defensa esquivando. Frente al blanco, caminá unos pasos de costado sin dejar de mirarlo. Zoom hace un barrido circular por el triple de Aire del primario; es un ataque. Para esta defensa, usá el desplazamiento lateral. Detalle (F) marca la práctica cuando completás el recorrido.";
 CA_M01_RULO_DEFENSE_EVADE = "Tu equipo actual no permite bloquear. Frente al blanco, caminá unos pasos de costado sin dejar de mirarlo. Girar la cámara sin desplazarte no cuenta. Detalle (F) marca la práctica cuando completás el recorrido.";
 CA_M01_RULO_CHECK_ADVANCED = "Acertar cargado, lanzar magia desplazándose o recargar distancia.";
 CA_M01_RULO_CHECK_AIR = "Gastar Aire con ataques o carrera.";
@@ -2862,3 +2862,38 @@ CA_M01_LOAD_PRACTICE = "Conservá tu primera arma. En Tab > Inventario elegí un
 CA_M01_LOAD_DONE = "Ya redujiste tu carga mediante el inventario. Podés recoger de nuevo lo que dejaste cuando te convenga. Ahora llevás %LOADKG% kg sobre %LOADCAP% kg; el factor de Aire por carga es %LOADAIR%. No hace falta llevar todo de una sola vez.";
 CA_M01_LOAD_DETAIL = "Práctica opcional de carga: conservá la primera arma. En Inventario, D deja un sobrante propio en el suelo; C lo guarda en la Caja si la tenés. Debe reducir el peso transportado. No exige sobrecarga ni volver con Ronnie.";
 CA_M01_LOAD_DETAIL_DONE = "Práctica opcional de carga completada: aligeraste el inventario.";
+
+[enu default]
+CA_TAROT_COLLECTION_LABEL = "Tarot collection";
+CA_TAROT_COLLECTION_RULE = "Each Major adds 2% and each Minor 1% to all attributes. Minor base passives apply first.";
+CA_TAROT_MINOR_ORDER = "Minor base: 1st / 2nd / 3rd attribute";
+CA_TAROT_COLLECTION_FACTOR = "Then collection: +%d%% to all attributes";
+
+[es]
+CA_TAROT_COLLECTION_LABEL = "Colección de Tarot";
+CA_TAROT_COLLECTION_RULE = "Cada Mayor suma 2% y cada Menor 1% a todos los atributos. Las pasivas base de los Menores se suman primero.";
+CA_TAROT_MINOR_ORDER = "Base menor: 1.er / 2.º / 3.er atributo";
+CA_TAROT_COLLECTION_FACTOR = "Después, colección: +%d%% a todos los atributos";
+
+// 4.33.0ab: respiración en la piscina, con gasto y devolución nativos.
+[enu default]
+CA_M01_SWIM_ASK = "How do I breathe while swimming?";
+CA_M01_SWIM_INTRO = "Underwater you use the same Air reserve as when running or attacking. Come up for breath and the Air spent underwater returns over three seconds. Let us try a brief immersion beside the pool steps. This is optional; Rulo and the exit do not depend on it.";
+CA_M01_SWIM_START = "I want to practice in the pool.";
+CA_M01_SWIM_PRACTICE = "The pool is behind the mansion, to the east. Its wide steps face the mansion. Replenish your Air first, then descend only until your head is underwater. Stay submerged for one second and return up the same steps. Do not cross the pool: Quest Detail tells you when to come up for breath.";
+CA_M01_SWIM_RECOVER = "You have spent Air underwater. Come back up the pool steps until your head is out, then breathe for three seconds. Quest Detail marks the practice complete when that Air returns. You do not need to come back to me; an energy drink does not replace breathing.";
+CA_M01_SWIM_DONE = "You submerged, spent Air and recovered it by breathing. Before entering water, check your reserve and locate the exit. You have completed this optional practice.";
+CA_M01_SWIM_DETAIL_DIVE = "Optional breathing practice: pool behind the mansion, east side. Take the wide steps facing the mansion. With Air replenished, cover your head for one second near the steps, then come back up. No need to cross the pool.";
+CA_M01_SWIM_DETAIL_RECOVER = "Optional breathing practice: immersion recorded. Come up the same pool steps until your head is out and breathe for three seconds to recover the Air spent underwater. No return visit is required.";
+CA_M01_SWIM_DETAIL_DONE = "Optional breathing practice completed: immersion and recovery of the Air spent underwater.";
+
+[es]
+CA_M01_SWIM_ASK = "¿Cómo respiro al nadar?";
+CA_M01_SWIM_INTRO = "Bajo el agua usás la misma reserva de Aire que al correr o atacar. Al sacar la cabeza, el Aire gastado bajo el agua vuelve durante tres segundos. Probemos una inmersión breve junto a los escalones de la piscina. Es opcional; no hace falta para seguir con Rulo ni para salir.";
+CA_M01_SWIM_START = "Quiero practicar en la piscina.";
+CA_M01_SWIM_PRACTICE = "La piscina está detrás de la mansión, al este. Los escalones anchos están del lado que mira a la mansión. Recuperá tu Aire primero y bajá sólo hasta cubrir la cabeza. Quedate un segundo sumergido y volvé por los mismos escalones. No cruces la piscina: Detalle te indica cuándo salir a respirar.";
+CA_M01_SWIM_RECOVER = "Ya gastaste Aire bajo el agua. Volvé por los escalones de la piscina hasta sacar la cabeza y respirá durante tres segundos. Detalle marca la práctica completa cuando se devuelve ese Aire. No hace falta volver conmigo; una bebida energética no sustituye la respiración.";
+CA_M01_SWIM_DONE = "Ya te sumergiste, gastaste Aire y lo recuperaste al respirar. Antes de entrar al agua, mirá tu reserva y ubicá la salida. Completaste esta práctica opcional.";
+CA_M01_SWIM_DETAIL_DIVE = "Práctica opcional de respiración: piscina detrás de la mansión, al este. Bajá por los escalones anchos del lado de la mansión. Con el Aire recuperado, cubrí la cabeza un segundo cerca de la escalera y volvé a subir. No hace falta cruzar la piscina.";
+CA_M01_SWIM_DETAIL_RECOVER = "Práctica opcional de respiración: inmersión registrada. Volvé por los mismos escalones hasta sacar la cabeza y respirá tres segundos para recuperar el Aire gastado bajo el agua. No hace falta volver con Ronnie.";
+CA_M01_SWIM_DETAIL_DONE = "Práctica opcional de respiración completada: inmersión y recuperación del Aire gastado bajo el agua.";

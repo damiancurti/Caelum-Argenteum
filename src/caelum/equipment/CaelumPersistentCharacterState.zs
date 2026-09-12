@@ -69,6 +69,10 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00StarterSize;
     int MainM00RonnieSwordId;
     int MainM00StarterWeaponId;
+    // 0ab: práctica opcional de respiración; falso en guardados anteriores.
+    bool MainM00SwimLessonStarted;
+    bool MainM00SwimLessonSubmerged;
+    bool MainM00SwimLessonComplete;
     // Salida 0v: condición de la pieza y transición reanudable al cargar.
     bool MainM00LoadLessonStarted;
     bool MainM00LoadLessonComplete;
@@ -874,6 +878,35 @@ class CaelumPersistentCharacterState : Inventory
             if (TarotOwned[card]) percent += card < CaelumConstants.TAROT_MAJOR_COUNT
                 ? CaelumConstants.TAROT_MAJOR_ATTRIBUTE_PERCENT : CaelumConstants.TAROT_MINOR_ATTRIBUTE_PERCENT;
         return percent;
+    }
+
+    // Se deriva de las cartas poseídas; no acumula bonos al cargar o equipar.
+    // Las décimas enteras evitan que un palo completo quede en 2,999... .
+    double GetTarotMinorBaseBonus(int attribute)
+    {
+        if (attribute < 0 || attribute >= CaelumConstants.PRIMARY_ATTRIBUTE_COUNT)
+            return 0.0;
+        int family = attribute / 3;
+        int suit = family == CaelumConstants.LAYER_PHYSICAL
+            ? CaelumConstants.TAROT_SUIT_WANDS
+            : family == CaelumConstants.LAYER_TECHNICAL
+                ? CaelumConstants.TAROT_SUIT_COINS
+                : family == CaelumConstants.LAYER_SOCIAL
+                    ? CaelumConstants.TAROT_SUIT_CUPS
+                    : CaelumConstants.TAROT_SUIT_SWORDS;
+        int position = attribute % 3;
+        int tenths = 0;
+        for (int rank = 0; rank < CaelumConstants.TAROT_MINOR_RANK_COUNT; rank++)
+        {
+            int card = CaelumConstants.TAROT_MAJOR_COUNT
+                + suit * CaelumConstants.TAROT_MINOR_RANK_COUNT + rank;
+            if (!HasTarotCard(card)) continue;
+            if (rank == 0) tenths += 10; // Ancho.
+            else if (rank == 13) tenths += 5; // Rey.
+            else if (rank >= 10 && rank - 10 == position) tenths += 6;
+            else if (rank <= 9 && (rank - 1) / 3 == position) tenths += 3;
+        }
+        return tenths / 10.0;
     }
 
     bool CanCaptureMainM00Fool()
