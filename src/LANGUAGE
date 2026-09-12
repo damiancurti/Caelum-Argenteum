@@ -1438,7 +1438,7 @@ CA_Q_M01_OBJ_PREPARE_WEAPON = "Prepare the starting weapon";
 CA_Q_M01_OBJ_TALK_RULO = "Speak with Rulo";
 CA_Q_M01_OBJ_DEFEAT_BULL = "Defeat the Bull";
 CA_Q_M01_OBJ_FIND_PALOMO = "Find Palomo again";
-CA_Q_M01_OBJ_CAPTURE_FOOL = "Examine the apparition using the Magic Box";
+CA_Q_M01_OBJ_CAPTURE_FOOL = "Capture The Fool";
 CA_Q_M01_OBJ_LEAVE_MANSION = "Leave the mansion";
 CA_Q_M01_COMPLETE = "Quest completed: Where the Lost Awaken.";
 CA_QUEST_PALOMO_LOCATION_LABEL = "Palomo's location";
@@ -1506,7 +1506,7 @@ CA_Q_M01_OBJ_PREPARE_WEAPON = "Preparar el arma inicial";
 CA_Q_M01_OBJ_TALK_RULO = "Hablar con Rulo";
 CA_Q_M01_OBJ_DEFEAT_BULL = "Derrotar al Toro";
 CA_Q_M01_OBJ_FIND_PALOMO = "Buscar nuevamente a Palomo";
-CA_Q_M01_OBJ_CAPTURE_FOOL = "Examinar la aparición mediante la Caja";
+CA_Q_M01_OBJ_CAPTURE_FOOL = "Capturar El Loco";
 CA_Q_M01_OBJ_LEAVE_MANSION = "Abandonar la mansión";
 CA_Q_M01_COMPLETE = "Misión completada: Donde despiertan los perdidos.";
 CA_QUEST_PALOMO_LOCATION_LABEL = "Ubicación de Palomo";
@@ -2611,7 +2611,7 @@ CA_M01_PALOMO_RECEIVED = "It is in your care now. Do not judge what it can hold 
 CA_M01_PALOMO_USE_ASK = "How do I store my belongings?";
 CA_M01_PALOMO_USE = "The Box weighs ten kilograms; its contents weigh less when stored. Its space has a limit.\n\nOpen inventory with Tab, select an item and press C to store or retrieve it. Unequip it first if necessary. Loans and materials reserved for the trials stay outside. The Box itself stays with you.";
 CA_M01_PALOMO_CAVE_ASK = "Where should I take it?";
-CA_M01_PALOMO_CAVE = "Sometimes it helps to return to a place carrying something different. The cave beneath this mansion, for example.\n\nReturn to the passage you discovered with Caella, behind the wall you could walk through. The lift takes you down to the cave. Bring the Box; space tends to recognize its relatives.";
+CA_M01_PALOMO_CAVE = "Sometimes it helps to return to a place carrying something different. The cave beneath this mansion, for example.\n\nReturn to the passage you discovered with Caella, walk through the rear wall and take the lift down. The apparition floats in the centre of the cave, in front of the veins along its back wall. Approach it and examine it with the Box.";
 CA_M01_PALOMO_WAIT = "There are still a few introductions to finish. I would not want a box to make you forget the people.";
 CA_M01_PALOMO_BACK = "Back.";
 CA_M01_PALOMO_DETAIL_BOX = "Palomo gave you the Magic Box. It weighs 10 kg and stores contents at reduced weight according to its capacity. In Inventory (Tab), select an item and press C to store or retrieve it; unequip it first if needed.\n\nPalomo suggested bringing it to the cave beneath the mansion. Use the passage discovered with Caella: walk through the rear wall and take the lift down. You can speak with him again on the second floor to review its use and the route.";
@@ -2640,8 +2640,67 @@ CA_M01_PALOMO_RECEIVED = "Ahora está a su cuidado. No juzgue lo que puede guard
 CA_M01_PALOMO_USE_ASK = "¿Cómo guardo mis cosas?";
 CA_M01_PALOMO_USE = "La Caja pesa diez kilos; el contenido pesa menos al guardarlo. Su espacio tiene un límite.\n\nAbra el inventario con Tab, elija un objeto y pulse C para guardarlo o retirarlo. Si lo tiene equipado, desequípelo primero. Los préstamos y materiales reservados para las pruebas permanecen fuera. La propia Caja permanece con usted.";
 CA_M01_PALOMO_CAVE_ASK = "¿Adónde debería llevarla?";
-CA_M01_PALOMO_CAVE = "A veces conviene volver a un sitio llevando algo distinto. La cueva bajo esta mansión, por ejemplo.\n\nVuelva al pasaje que descubrió con Caella, detrás de la pared que pudo atravesar. El ascensor lo lleva hasta la cueva. Lleve la Caja; el espacio suele reconocer a sus parientes.";
+CA_M01_PALOMO_CAVE = "A veces conviene volver a un sitio llevando algo distinto. La cueva bajo esta mansión, por ejemplo.\n\nVuelva al pasaje que descubrió con Caella, atraviese la pared del fondo y baje con el ascensor. La aparición flota en el centro de la cueva, delante de las vetas de la pared del fondo. Acérquese y examínela con la Caja.";
 CA_M01_PALOMO_WAIT = "Todavía quedan algunas presentaciones por terminar. No quisiera que una caja le hiciera olvidar a las personas.";
 CA_M01_PALOMO_BACK = "Volver.";
 CA_M01_PALOMO_DETAIL_BOX = "Palomo te entregó la Caja Mágica. Pesa 10 kg y permite guardar contenido con peso reducido según su capacidad. En Inventario (Tab), seleccioná un objeto y pulsá C para guardarlo o retirarlo; desequipalo primero si hace falta.\n\nPalomo sugirió llevarla a la cueva bajo la mansión. Se llega por el pasaje descubierto con Caella: atravesá la pared del fondo y bajá con el ascensor. Podés volver a hablar con él en el segundo piso para repasar su uso y esa ruta.";
 CA_M01_STATE_BOX_RECEIVED = "La Caja Mágica está en tu poder";
+
+[enu default]
+// 4.33.0t: captura y colección de Arcanos.
+CA_JOURNAL_TAROT = "Tarot";
+CA_TAROT_COLLECTION_COUNT = "Collection: %d / %d cards";
+CA_TAROT_COLLECTION_EMPTY = "No captured Arcana yet. The Magic Box can reveal and capture an essence when you examine it.";
+CA_TAROT_FOOL_NAME = "The Fool of the Pampas";
+CA_TAROT_FOOL_DESCRIPTION = "Major Arcana 0. Air, Chaos, Freedom.\nA beginning without a certain path.\nIts +2% applies to all twelve primary attribute levels and preserves fractions.";
+CA_TAROT_BONUS = "Tarot: +%d%% to attributes";
+CA_M01_FOOL_STATE_FIND = "Examine the apparition in the cave";
+CA_M01_FOOL_STATE_OBTAINED = "The Fool captured; speak with Palomo";
+CA_M01_FOOL_DETAIL_FIND = "Take the Magic Box into the cave beneath the mansion. Return to the passage you opened during Caella's trial, walk through the rear wall and take the lift down.\n\nAn apparition floats in the centre of the cave, in front of the veins along the back wall. Approach it and press Use to examine it with the Box.";
+CA_M01_FOOL_DETAIL_REVEALED = "The Box revealed The Fool of the Pampas, Major Arcana 0. Examine the apparition again and choose Capture with the Magic Box. Stay close until the animation finishes.\n\nLeaving before it finishes interrupts the capture without consuming the essence. Once captured, its card and attribute bonus appear in the Journal's Tarot page.";
+CA_M01_FOOL_DETAIL_DONE = "The Fool is in your collection. Its permanent +2% applies to all twelve primary attribute levels, preserving fractions. Check the Tarot and Character pages in the Journal.\n\nReturn to Palomo on the second floor and speak about the capture. You can also ask the four residents what they noticed.";
+CA_M01_FOOL_REVEAL = "The Magic Box responds to the apparition. Its shape resolves into a card: The Fool of the Pampas.\n\nThe essence waits before you. You may capture it now, or leave it here and return.";
+CA_M01_FOOL_CAPTURE = "Capture with the Magic Box.";
+CA_M01_FOOL_LATER = "Leave it here for now.";
+CA_M01_FOOL_INTERRUPTED = "Capture interrupted. Approach the essence to try again.";
+CA_M01_FOOL_OBTAINED = "Arcana obtained: The Fool. +2% to attributes.";
+CA_M01_FOOL_PALOMO = "It seems the Box was less empty than we both supposed. Or you were fuller. Simple measures warrant distrust.\n\nThe Fool has found a place in your collection. You may find its beginning easier to recognize than its destination.";
+CA_M01_FOOL_COLLECTION_ASK = "What did the card change?";
+CA_M01_FOOL_COLLECTION_HELP = "Look at Tarot in your Journal. A Major Arcana increases all twelve primary attribute levels by 2%; a Minor Arcana by 1%. These bonuses add together, and fractions are preserved.\n\nThe Fool already grants its bonus. You do not need to equip it or activate it.";
+CA_M01_FOOL_ARGENTO = "I felt something settle into place. You brought us together, and now even that essence chose to follow you. I want to understand what that means as much as you do.";
+CA_M01_FOOL_CAELLA = "So the apparition let you capture it... I could sense it, but I never managed that. Keep the Box close. I want to know how your bond with that essence develops.";
+CA_M01_FOOL_RONNIE = "Something has changed since you went down there. Keep the weapon you made ready; choosing your next step deserves as much care as choosing a tool.";
+CA_M01_FOOL_RULO = "You already had strength when you arrived. Against the bull, you showed you could lead us too. Whatever that card adds, remember what you did with us.";
+
+[es]
+// 4.33.0t: captura y colección de Arcanos.
+CA_JOURNAL_TAROT = "Tarot";
+CA_TAROT_COLLECTION_COUNT = "Colección: %d / %d cartas";
+CA_TAROT_COLLECTION_EMPTY = "Todavía no capturaste ningún Arcano. La Caja Mágica permite revelar y capturar una esencia al examinarla.";
+CA_TAROT_FOOL_NAME = "El Loco de las Pampas";
+CA_TAROT_FOOL_DESCRIPTION = "Arcano Mayor 0. Aire, Caos, Libertad.\nUn comienzo sin un camino seguro.\nSu +2% se aplica al nivel de los doce atributos primarios y conserva decimales.";
+CA_TAROT_BONUS = "Tarot: +%d%% a los atributos";
+CA_M01_FOOL_STATE_FIND = "Examiná la aparición en la cueva";
+CA_M01_FOOL_STATE_OBTAINED = "El Loco capturado; hablá con Palomo";
+CA_M01_FOOL_DETAIL_FIND = "Llevá la Caja Mágica a la cueva bajo la mansión. Volvé al pasaje que abriste en la prueba de Caella, atravesá la pared del fondo y bajá con el ascensor.\n\nUna aparición flota en el centro de la cueva, delante de las vetas de la pared del fondo. Acercate y pulsá Usar para examinarla con la Caja.";
+CA_M01_FOOL_DETAIL_REVEALED = "La Caja reveló a El Loco de las Pampas, Arcano Mayor 0. Volvé a examinar la aparición y elegí Capturar con la Caja Mágica. Permanecé cerca hasta que termine la animación.\n\nAlejarte antes de que termine interrumpe la captura sin consumir la esencia. Una vez obtenida, la carta y su bonificación aparecen en la sección Tarot del Diario.";
+CA_M01_FOOL_DETAIL_DONE = "El Loco está en tu colección. Su +2% permanente se aplica al nivel de los doce atributos primarios, conservando decimales. Podés revisarlo en Tarot y Personaje, en el Diario.\n\nVolvé con Palomo en el segundo piso y hablá sobre la captura. También podés hablar con los cuatro residentes para conocer sus reacciones.";
+CA_M01_FOOL_REVEAL = "La Caja Mágica responde a la aparición. Su forma se define en una carta: El Loco de las Pampas.\n\nLa esencia espera frente a vos. Podés capturarla ahora o dejarla aquí y volver.";
+CA_M01_FOOL_CAPTURE = "Capturar con la Caja Mágica.";
+CA_M01_FOOL_LATER = "Dejarla aquí por ahora.";
+CA_M01_FOOL_INTERRUPTED = "Captura interrumpida. Acercate a la esencia para volver a intentarlo.";
+CA_M01_FOOL_OBTAINED = "Arcano obtenido: El Loco. +2% a los atributos.";
+CA_M01_FOOL_PALOMO = "Parece que la caja estaba menos vacía de lo que ambos suponíamos. O usted más lleno. Conviene desconfiar de las medidas sencillas.\n\nEl Loco encontró un lugar en su colección. Quizá le resulte más fácil reconocer su comienzo que su destino.";
+CA_M01_FOOL_COLLECTION_ASK = "¿Qué cambió con la carta?";
+CA_M01_FOOL_COLLECTION_HELP = "Mire Tarot en su Diario. Un Arcano Mayor aumenta un 2% el nivel de los doce atributos primarios; un Arcano Menor, un 1%. Las bonificaciones se suman y se conservan los decimales.\n\nEl Loco ya concede su bonificación. No necesita equiparlo ni activarlo.";
+CA_M01_FOOL_ARGENTO = "Sentí que algo quedó decidido. Lograste reunirnos y ahora hasta esa esencia eligió seguirte. Quiero entender qué significa tanto como vos.";
+CA_M01_FOOL_CAELLA = "Así que la aparición se dejó capturar... Yo podía sentirla, pero nunca logré eso. Conservá la Caja cerca. Quiero saber cómo evoluciona tu vínculo con esa esencia.";
+CA_M01_FOOL_RONNIE = "Algo cambió desde que bajaste. Tené preparada el arma que hiciste; elegir el próximo paso merece tanto cuidado como elegir una herramienta.";
+CA_M01_FOOL_RULO = "Fuerza ya tenías cuando llegaste. Contra el toro demostraste que también podés guiarnos. Sea lo que sea que sume esa carta, acordate de lo que hiciste con nosotros.";
+
+[enu default]
+CA_M01_FOOL_HINT_FIND = "Use the apparition to examine it with the Box.";
+CA_M01_FOOL_HINT_DONE = "Your card and its bonus are shown in Tarot.";
+[es]
+CA_M01_FOOL_HINT_FIND = "Usá la aparición para examinarla con la Caja.";
+CA_M01_FOOL_HINT_DONE = "La carta y su bonificación están en Tarot.";

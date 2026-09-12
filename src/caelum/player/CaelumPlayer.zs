@@ -427,6 +427,10 @@ class CaelumPlayer : DoomPlayer
     bool CombatChannelInputLatched;
     bool CombatRacialAbilityInputReserved;
     bool CombatTarotInputReserved;
+    int TarotOwnedCountSnapshot;
+    int TarotAttributeBonusSnapshot;
+    bool TarotFoolOwnedSnapshot;
+    bool MainM00FoolRevealedSnapshot;
     bool CombatClassAbilityInputReserved;
     double HUDAbilitySuccessRemaining;
 
@@ -783,6 +787,10 @@ class CaelumPlayer : DoomPlayer
             JournalQuestObjectiveTarget[objective] =
                 persistentState.QuestObjectiveTarget[objective];
         }
+        TarotOwnedCountSnapshot = persistentState.CountTarotCards();
+        TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
+        TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
+        MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
         JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
         JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
             CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED);
@@ -1201,8 +1209,11 @@ class CaelumPlayer : DoomPlayer
             if (!palomo.DepartureDone) return false;
             bool finalStage = persistentState.CanReceiveMainM00MagicBox()
                 || persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED);
-            conversationId = finalStage ? CaelumConstants.MAIN_M00_PALOMO_FINAL_CONVERSATION_ID
-                : CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID;
+            conversationId = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_THE_FOOL_CAPTURED)
+                && persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL)
+                ? CaelumConstants.MAIN_M00_PALOMO_FOOL_CONVERSATION_ID
+                : finalStage ? CaelumConstants.MAIN_M00_PALOMO_FINAL_CONVERSATION_ID
+                    : CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID;
         }
         SyncPalomoDialogueTokens();
         if (StaffCastPending) { CancelPendingStaffCast(false); }
@@ -11658,7 +11669,7 @@ class CaelumPlayer : DoomPlayer
         // Report the current calculated sum. It begins at 108 before allocating
         // free points and increases as the player customizes the character.
         Console.Printf(
-            "[Caelum] Character creation values loaded. Attribute total: %d",
+            "[Caelum] Character creation values loaded. Attribute total: %.2f",
             Attributes.GetTotalPrimaryLevels()
         );
         RefreshEquipmentSelectionPreview();
@@ -16590,8 +16601,8 @@ class CaelumPlayer : DoomPlayer
             ApplyJewelryAttributeBonuses(Attributes);
             if (CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
             {
-                // El perfil rápido debe quedar exactamente en 30 incluso si
-                // el equipo inicial concede bonificaciones de atributo.
+                // La base del perfil rápido queda en 30 incluso con equipo.
+                // La colección de Tarot se aplica después, como en las demás razas.
                 Attributes.SetAllForDebug(
                     CaelumConstants.DEBUG_CREATION_ATTRIBUTE_LEVEL
                 );
@@ -16602,10 +16613,12 @@ class CaelumPlayer : DoomPlayer
             }
             else if (DebugAttributesAt75)
             {
-                // The probability-test override is deliberately the final
-                // value; equipment bonuses remain active only in normal play.
+                // La base de prueba sustituye las bonificaciones del equipo;
+                // el porcentaje del Tarot se calcula después.
                 Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_75);
             }
+            let tarotRecord = GetPersistentCharacterState(false);
+            Attributes.ApplyTarotBonus(tarotRecord == null ? 0 : tarotRecord.GetTarotAttributeBonusPercent());
             RefreshCarriedInventorySummary();
             DerivedStats.Recalculate(Attributes, CharacterProfile);
             // La capacidad de la caja depende de Inteligencia. Una segunda

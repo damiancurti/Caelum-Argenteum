@@ -1,28 +1,31 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0s — 2026-09-11.
+Versión documental: 4.33.0t — 2026-09-11.
 
 
-REVISIÓN VIGENTE 4.33.0s — PALOMO FINAL Y CAJA, FASE 80
-Base: 0r. Todas sus pruebas fueron aprobadas por el autor.
-Se habilita la charla final en el Palomo que ya llegó físicamente al segundo
-piso. Las cuatro ramas deben estar cerradas; hablar antes sólo orienta sobre
-la etapa actual. El diálogo conserva las preguntas y metáforas de 22.1/22.2.
+REVISIÓN VIGENTE 4.33.0t — EL LOCO, FASE 90
+Base: 0s. Todas sus pruebas fueron aprobadas por el autor.
+La Caja de Palomo habilita una aparición en el centro de la cueva, delante de
+las vetas del fondo, en (1420,1050,-370), 14 MU sobre el suelo. El pasaje de
+Caella y el ascensor conservan su recorrido. Usar revela El Loco de las Pampas;
+confirmar inicia una captura de 35 tics. Cerrar antes o interrumpir no consume
+la esencia. La carta sólo se otorga al terminar y una sola vez.
 
-Sólo aceptar la Caja avanza 75 -> 80 y fija MAGIC_BOX_GRANTED. Preguntar o
-cerrar antes no concede nada; reabrir después ofrece uso y ruta hacia la cueva.
-La Caja tiene una instancia nativa única con ItemId/Owner y reutiliza el
-almacenamiento/peso vigente. Migrar una propiedad anterior no duplica los
-10 kg ni vacía su contenido. No se cambia el arma inicial ni su identidad.
+El Loco queda en Tarot, nueva sección del Diario. Aporta +2% al nivel de los
+doce atributos, manteniendo decimales. El registro viajero conserva colección,
+revelación y etapa; recalcular o cargar no acumula la bonificación de nuevo.
+Detalle distingue encontrar, revelar y capturar; luego orienta hacia Palomo
+en el segundo piso. Los cuatro residentes reaccionan sin revelar la verdad.
 
-Detalle explica Inventario (Tab), C para guardar/retirar y la ruta del pasaje
-descubierto con Caella, pared atravesable, ascensor y cueva. Los objetos
-equipados, prestados y reservados conservan sus restricciones. Palomo indica
-llevar la Caja allí sin anunciar una esencia que todavía no se ha manifestado.
+LÍMITE JUGABLE: fase 90. La salida, transferencia automática del arma inicial,
+regreso al cuerpo y alcantarillas quedan pendientes del cierre siguiente.
+La misión sigue activa. No se añaden poderes activos de cartas ni Trucazo.
 
-LÍMITE JUGABLE: termina en fase 80 con la Caja. El Loco, su captura/recompensa
-y la salida son el siguiente bloque. No hay una aparición capturable en 0s.
-La cueva sigue como su lugar canónico, Z=-384; seleccionar el punto exacto
-al implementar el actor, sin bloquear ascensor, cajón o vetas.
+BASE 4.33.0s ACEPTADA — PALOMO FINAL Y CAJA
+Diálogo del Palomo original en el segundo piso, aceptación explícita 75 -> 80,
+Caja única de 10 kg con ItemId/Owner, almacenamiento y orientación a la cueva.
+Preguntar o salir no concede otra Caja; los guardados conservan su contenido.
+Los registros siguientes documentan revisiones previas; los capítulos 13 y 22
+reflejan la implementación actual y separan lo que queda por construir.
 
 REGISTRO 4.33.0r — RESIDENTES, LIDERAZGO Y EL LOCO
 Base: 0q. El autor completó el Toro y aprobó el resto de las pruebas.
@@ -235,15 +238,14 @@ hablar con los NPC de 0f. V4.33.0f incorpora la prueba social de Argento:
 - recorrido completo reservado: fases 00–100;
 - recorrido jugable: despertar, Voz desconocida, primer encuentro con Palomo y
   orientación hacia Argento, reclutamiento de los tres residentes y cierre
-  de Argento en fase 35;
+  de Argento en fase 35; desde los parches siguientes, Caella, Ronnie, Rulo,
+  Palomo/Caja (0s, fase 80) y captura de El Loco (0t, fase 90);
 - preparación física nueva: posiciones de los cuatro residentes y cueva de
   materiales tras el pasadizo secreto.
 
-Todavía quedan pendientes las ramas mágica de Caella, supervivencia de
-Ronnie, preparación de arma, combate de Rulo, Caja, El Loco y salida. Sus estados quedan
-nombrados para evitar renumeraciones posteriores, pero ninguna transición los
-activa antes de que exista su contenido. La cueva puede recorrerse y probarse
-en esta revisión; todavía no completa objetivos ni concede progreso de Ronnie.
+Los estados conservan sus índices originales. Las cuatro ramas, la entrega
+de la Caja y captura de El Loco ya tienen contenido jugable. La cueva sirve
+a Ronnie y a la captura. Permanecen pendientes la salida y el regreso al cuerpo.
 
 ## Actores y espacios preparados en MAP01
 
@@ -360,7 +362,7 @@ anterior era infraestructura de prueba y no una etapa canónica:
 - un personaje nuevo sigue comenzando sin Caja.
 
 `GrantMagicBoxFromPalomo()` queda desacoplado del avance de misión. La entrega
-canónica se conectará en la fase 80 junto con su flag propio; conceder la Caja
+canónica quedó conectada en 0s a la fase 80 con su flag propio; conceder la Caja
 desde una herramienta de desarrollo ya no puede completar otra etapa.
 
 `map MAP02` crea un personaje nuevo, mientras `Exit` o `changemap`
@@ -372,16 +374,17 @@ transfieren el existente. Esta distinción del motor no cambia.
 
 | Resultado | Condición |
 | --- | --- |
-| Oculto | Antes de oír la Voz y después de completar el encuentro del recibidor |
-| Recibidor | Durante la fase 20 |
-| Segundo piso | Reservado desde la fase 80 |
+| Oculto | Antes de oír la Voz |
+| Recibidor | Encuentro inicial y tramo de salida hacia las escaleras |
+| Segundo piso | Destino del recorrido; búsqueda final desde fase 75 y charla posterior a la captura |
 
 El Palomo anclado de MAP01 comienza invisible y sin colisión. Cuando cualquier
 jugador elegible oye la Voz, aparece con un fundido breve, sin destello de
 teletransporte, recupera colisión y conserva el retorno a su origen si lo
-desplazan 100 MU. Después de orientar hacia Argento espera a quedar fuera de
-todos los campos visuales, se oculta y una carga reconstruye ese resultado. El
-traslado real al segundo piso necesita todavía el punto de mapa correspondiente.
+desplazan 100 MU. Después de orientar hacia Argento corre visible por el
+recorrido de quince puntos y ambas escaleras. Al cargar conserva el punto
+actual. Llegado al segundo piso, la misma instancia espera y orienta según
+la etapa, entrega la Caja en 0s y reacciona a El Loco desde 0t.
 
 ## Facciones y reputación
 
@@ -404,8 +407,8 @@ Gendarmería ni se añade una consecuencia de facción no definida por el autor.
 
 ## Fuente narrativa
 
-`MAP01.txt` se incorpora sin alteraciones
-como especificación autoral. Los textos visibles de este subparche preservan el
+`MAP01.txt` conserva la especificación autoral, actualizada con las decisiones
+y bloques implementados posteriores. Los textos visibles preservan el
 misterio: no identifican la naturaleza de la mansión, el destino del
 protagonista ni a la mujer que habla.
 
@@ -417,7 +420,8 @@ HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
 Especificación v1.0 consolidada en 4.33.0g — 2026-09-10
 
 Autor del proyecto: Damián Curti
-Estado: diseño narrativo y técnico; implementación aceptada hasta la fase 35.
+Estado: diseño narrativo y técnico; implementación aceptada hasta 0s, fase 80.
+0t implementa la fase 90 y queda pendiente de validación del autor.
 Las listas del diseño describen el destino completo. El alcance de ejecución
 y las correcciones posteriores se detallan al comienzo de este archivo.
 
@@ -1294,7 +1298,7 @@ FASE 80 — PALOMO_FINAL
 - Entregar la Caja Mágica exactamente una vez.
 - Transferir el equipo inicial autorizado al interior de la Caja.
 
-Estado 0s: diálogo y entrega implementados. La transferencia automática del
+Estado vigente: diálogo y entrega implementados desde 0s. La transferencia automática del
 equipo inicial todavía forma parte del cierre pendiente; puede guardarse
 manualmente si está desequipado y cumple las reglas de almacenamiento.
 
@@ -1303,9 +1307,12 @@ FASE 90 — CAPTURE_THE_FOOL
 - Manifestar El Loco.
 - Enseñar la interacción de captura mediante la Caja.
 - Otorgar la carta, su progreso y bonificación una sola vez.
-- Activar la salida.
+- Registrar EXIT_READY. La activación física de la salida queda para el cierre.
 
-FASE 100 — RETURN_TO_BODY
+Estado 0t: captura, colección, +2% fraccionario y reacciones implementados.
+La misión permanece activa en fase 90.
+
+FASE 100 — RETURN_TO_BODY (PENDIENTE)
 
 - Solicitar confirmación antes de abandonar MAP01.
 - Limpiar objetos temporales del Limbo.
@@ -2076,7 +2083,7 @@ Al cerrar la devolución en el diálogo con Rulo (0p):
 - Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED para enlazar la siguiente rama.
 - Devolver la munición prestada sobrante.
 - Actualizar diario: “Buscar nuevamente a Palomo”. Su conversación final y la
-  recompensa de Caja siguen pendientes del siguiente bloque.
+  recompensa de Caja se implementaron en 0s; captura de El Loco en 0t.
 
 RULO:
 “Vos nos reuniste, y entre todos lo bajamos. Esa fuerza que tenés ya estaba ahí
@@ -2177,11 +2184,9 @@ Funciones generales confirmadas:
 - Puede capturar esencias del Tarot.
 - Puede abrir el retorno desde el Limbo.
 
-En 0s ya funcionan propiedad, identidad, almacenamiento, peso y restricciones.
-Las siguientes funciones de captura/retorno todavía deben implementarse para
-cerrar MAP01:
-
-CaptureTarotEssence(EssenceActor, TarotCardId)
+Desde 0s funcionan propiedad, identidad, almacenamiento, peso y restricciones.
+0t implementa la captura con CaelumMainM00FoolCapture (BeginCapture/CommitCapture)
+y RecordMainM00FoolCapture. Quedan para cerrar MAP01:
 StorePreservedItem(ItemId)
 ValidateStarterLoadout(PlayerClass)
 OpenLimboReturn(DestinationMap, DestinationSpot)
@@ -2194,9 +2199,9 @@ bonificaciones.
 
 Decisión del autor incorporada en 0r: después de recibir la Caja, manifestar
 CA_TheFoolEssence en CA_M01_FOOL_ESSENCE_SPOT, dentro de la cámara principal
-de la cueva bajo la mansión, en el nivel Z=-384. Elegir el punto exacto al
-implementar el actor, con suelo libre y sin tapar el ascensor, el cajón o las
-vetas. Su captura todavía no está implementada en 0s.
+de la cueva bajo la mansión, sobre el suelo Z=-384. En 0t el actor concreto
+es CaelumM00FoolEssence: (1420,1050,-370), delante de las vetas del fondo,
+sin ocupar ascensor, cajón ni vetas. Revelación y captura están implementadas.
 
 Tras entregar la Caja, Palomo debe indicar volver al pasaje descubierto con
 Caella y bajar en el ascensor hasta la cueva. El Diario/Detalle repite esa ruta
@@ -2213,14 +2218,17 @@ Presentación:
 
 Interacción:
 
-1. El jugador selecciona o utiliza la Caja sobre la esencia.
+1. Con la Caja propia, Usar sobre la esencia revela la carta. Se elige
+   explícitamente Capturar con la Caja Mágica; salir permite volver después.
 2. La Caja reproduce su primera animación de captura.
 3. La esencia desaparece sólo después de confirmar el guardado.
 4. Se concede Arcano Mayor 0 — El Loco.
-5. Se aplica una sola vez la bonificación global vigente de Arcano Mayor.
+5. La colección añade +2% a los doce atributos antes de sus fórmulas,
+   conservando decimales. La asignación base de creación no se modifica.
 6. Se actualiza el registro de Tarot.
 7. Se establece CA_F_M01_THE_FOOL_CAPTURED.
 
+En 0t la animación dura 35 tics con acercamiento/reducción de la carta.
 Si el inventario, la animación o el cambio de estado falla, la esencia permanece
 disponible. Nunca consumir el actor antes de confirmar el estado autoritativo.
 
@@ -2236,13 +2244,15 @@ cambio de la mansión. No comprenden qué ocurrió.
 
 - Argento percibe que una decisión quedó fijada.
 - Caella reconoce una esencia, pero nunca había visto una capturada.
-- Ronnie nota que apareció una ruta donde antes no había ninguna.
-- Rulo comprueba que la puerta final sólo responde al protagonista.
+- Ronnie nota un cambio y aconseja preparar el arma y elegir el próximo paso.
+- Rulo recuerda la fuerza innata y la capacidad de liderar ante el Toro.
+- Al implementar la salida: Ronnie podrá señalar la nueva ruta y Rulo
+  comprobar que la puerta final sólo responde al protagonista.
 
 Ninguno afirma estar muerto ni exige una explicación completa. Pueden pedir al
 jugador que recuerde el camino por si consigue regresar.
 
-22.6. APERTURA DE LA SALIDA
+22.6. APERTURA DE LA SALIDA (PENDIENTE DESPUÉS DE 0t)
 
 Tras capturar El Loco:
 

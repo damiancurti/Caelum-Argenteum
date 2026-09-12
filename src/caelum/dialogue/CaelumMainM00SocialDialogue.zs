@@ -36,7 +36,7 @@ class CaelumMainM00SocialDialogue : Object play
     static int GetChance(CaelumPlayer user, int resident)
     {
         if (user == null || user.Attributes == null || user.DerivedStats == null) { return 0; }
-        int attribute;
+        double attribute;
         double difficulty;
         if (resident == CaelumConstants.MAIN_M00_RESIDENT_RULO)
         {
@@ -284,6 +284,15 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (user.TarotFoolOwnedSnapshot)
+            {
+                String reaction = "";
+                if (mCurNode.UserData ~== "argento_complete") reaction = "CA_M01_FOOL_ARGENTO";
+                else if (mCurNode.UserData ~== "caella_magic_done") reaction = "CA_M01_FOOL_CAELLA";
+                else if (mCurNode.UserData ~== "ronnie_finished") reaction = "CA_M01_FOOL_RONNIE";
+                else if (mCurNode.UserData ~== "rulo_trial_done") reaction = "CA_M01_FOOL_RULO";
+                if (reaction != "") text = StringTable.Localize(reaction, false);
+            }
             if (mCurNode.UserData ~== "argento_next")
             {
                 text = StringTable.Localize(GetArgentoGuidanceKey(user), false);

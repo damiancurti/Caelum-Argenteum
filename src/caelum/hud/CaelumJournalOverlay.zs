@@ -3,7 +3,7 @@
 // cada sección abandone su pantalla provisional.
 class CaelumJournalOverlay : EventHandler
 {
-    const JOURNAL_PAGE_COUNT = 6;
+    const JOURNAL_PAGE_COUNT = 7;
 
     Font TitleFont;
     Font TextFont;
@@ -103,7 +103,9 @@ class CaelumJournalOverlay : EventHandler
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
             return "CA_Q_DETAIL_GENERIC";
         int stage = localPlayer.JournalQuestStage[questId];
-        if (stage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED) return "CA_M01_PALOMO_DETAIL_BOX";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED) return "CA_M01_FOOL_DETAIL_DONE";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED) return localPlayer.MainM00FoolRevealedSnapshot
+            ? "CA_M01_FOOL_DETAIL_REVEALED" : "CA_M01_FOOL_DETAIL_FIND";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE) return "CA_M01_RULO_DETAIL_DONE";
         if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
             return localPlayer.MainM00BullDefeatedSnapshot ? "CA_M01_RULO_DETAIL_RETURN"
@@ -251,6 +253,7 @@ class CaelumJournalOverlay : EventHandler
             case 3: return "CA_JOURNAL_CRAFTS";
             case 4: return "CA_JOURNAL_QUESTS";
             case 5: return "CA_JOURNAL_REPUTATION";
+            case 6: return "CA_JOURNAL_TAROT";
             default: return "CA_JOURNAL_INVENTORY";
         }
     }
@@ -264,6 +267,7 @@ class CaelumJournalOverlay : EventHandler
             case 3: return "graphics/caelum/ui/journal/icons/ca_ui_nav_crafts.png";
             case 4: return "graphics/caelum/ui/journal/icons/ca_ui_nav_quests.png";
             case 5: return "graphics/caelum/ui/journal/icons/ca_ui_nav_reputation.png";
+            case 6: return "graphics/caelum/ui/journal/icons/ca_ui_slot_tarot.png";
             default: return "graphics/caelum/ui/journal/icons/ca_ui_nav_inventory.png";
         }
     }
@@ -301,9 +305,9 @@ class CaelumJournalOverlay : EventHandler
         if (questStage >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
             return "CA_Q_M01_STATE_RETURN_TO_BODY";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)
-            return "CA_Q_M01_STATE_CAPTURE_THE_FOOL";
+            return "CA_M01_FOOL_STATE_OBTAINED";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
-            return "CA_M01_STATE_BOX_RECEIVED";
+            return "CA_M01_FOOL_STATE_FIND";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
             return "CA_Q_M01_STATE_PALOMO_FINAL";
         if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
@@ -728,6 +732,17 @@ class CaelumJournalOverlay : EventHandler
         );
     }
 
+    ui void DrawParagraph(Font font, int textColor, double x, double y,
+        int width, String text)
+    {
+        if (font == null) return;
+        let lines = font.BreakLines(text, width);
+        for (int row = 0; row < lines.Count(); row++)
+            DrawTextLine(font, textColor, x, y + row * Max(12, font.GetHeight() + 2),
+                lines.StringAt(row));
+        lines.Destroy();
+    }
+
     ui void DrawCenteredText(Font font, int textColor, double centerX,
         double y, String text)
     {
@@ -770,7 +785,7 @@ class CaelumJournalOverlay : EventHandler
         int currentPage = GetJournalPage();
         for (int page = 0; page < JOURNAL_PAGE_COUNT; page++)
         {
-            double centerX = 80.0 + page * 96.0;
+            double centerX = 68.0 + page * 84.0;
             String laurel = page == currentPage
                 ? "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_selected.png"
                 : "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_normal.png";
@@ -988,25 +1003,55 @@ class CaelumJournalOverlay : EventHandler
         if (localPlayer.Attributes == null) { return; }
         CaelumAttributes values = localPlayer.Attributes;
         DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 132.0,
-            String.Format("%s: %d | %s: %d | %s: %d",
+            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
                 StringTable.Localize("CA_ATTRIBUTE_STRENGTH", false), values.Strength,
                 StringTable.Localize("CA_ATTRIBUTE_TOUGHNESS", false), values.Toughness,
                 StringTable.Localize("CA_ATTRIBUTE_CONSTITUTION", false), values.Constitution));
         DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 164.0,
-            String.Format("%s: %d | %s: %d | %s: %d",
+            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
                 StringTable.Localize("CA_ATTRIBUTE_AGILITY", false), values.Agility,
                 StringTable.Localize("CA_ATTRIBUTE_DEXTERITY", false), values.Dexterity,
                 StringTable.Localize("CA_ATTRIBUTE_RESILIENCE", false), values.Resilience));
         DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 196.0,
-            String.Format("%s: %d | %s: %d | %s: %d",
+            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
                 StringTable.Localize("CA_ATTRIBUTE_CHARISMA", false), values.Charisma,
                 StringTable.Localize("CA_ATTRIBUTE_EMPATHY", false), values.Empathy,
                 StringTable.Localize("CA_ATTRIBUTE_ELOQUENCE", false), values.Eloquence));
         DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 228.0,
-            String.Format("%s: %d | %s: %d | %s: %d",
+            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
                 StringTable.Localize("CA_ATTRIBUTE_INTELLIGENCE", false), values.Intelligence,
                 StringTable.Localize("CA_ATTRIBUTE_PATIENCE", false), values.Patience,
                 StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 56.0, 270.0,
+            String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
+    }
+
+    ui void DrawTarotPage(CaelumPlayer localPlayer)
+    {
+        bool owned = localPlayer.TarotFoolOwnedSnapshot;
+        DrawTextLine(SmallFont, Font.CR_GOLD, 56, 130,
+            String.Format(StringTable.Localize("CA_TAROT_COLLECTION_COUNT", false),
+                localPlayer.TarotOwnedCountSnapshot, CaelumConstants.TAROT_CARD_COUNT));
+        if (!owned)
+        {
+            DrawTexture("graphics/caelum/icons/ca_tarot_back.png", 78, 166, 100, 100);
+            DrawParagraph(TextFont, Font.CR_WHITE, 226, 170, 330,
+                StringTable.Localize("CA_TAROT_COLLECTION_EMPTY", false));
+            return;
+        }
+        // El Diario usa un lienzo virtual 640x360. Encajar la carta sin
+        // estirarla cuando la ventana real es 4:3 o ultrapanorámica.
+        double ratio = (double(Screen.GetWidth()) / Screen.GetHeight()) / (640.0 / 360.0);
+        double cardWidth = 104 / Max(1.0, ratio);
+        double cardHeight = 156 * Min(1.0, ratio);
+        DrawTexture("graphics/caelum/tarot/ca_tarot_fool.png",
+            76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
+        DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
+            StringTable.Localize("CA_TAROT_FOOL_NAME", false));
+        DrawParagraph(SmallFont, Font.CR_WHITE, 210, 183, 352,
+            StringTable.Localize("CA_TAROT_FOOL_DESCRIPTION", false));
+        DrawParagraph(SmallFont, Font.CR_GOLD, 210, 244, 352,
+            String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
     }
 
     ui void DrawQuestPage(CaelumPlayer localPlayer)
@@ -1081,12 +1126,15 @@ class CaelumJournalOverlay : EventHandler
                     DrawTextLine(
                         SmallFont,
                         progress >= target ? Font.CR_GREEN : Font.CR_WHITE,
-                        78.0, 212.0 + objectiveId * 18.0,
+                        56.0 + (objectiveId / 4)*284.0, 208.0 + (objectiveId % 4)*18.0,
                         String.Format(
                             "[%d/%d] %s",
                             progress, target,
                             StringTable.Localize(
-                                GetQuestObjectiveKey(questId, objectiveId),
+                                questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+                                    && objectiveId == CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL
+                                    && !localPlayer.MainM00FoolRevealedSnapshot
+                                    ? "CA_M01_FOOL_STATE_FIND" : GetQuestObjectiveKey(questId, objectiveId),
                                 false
                             )
                         )
@@ -1097,7 +1145,7 @@ class CaelumJournalOverlay : EventHandler
         }
 
         DrawTextLine(
-            SmallFont, Font.CR_WHITE, 64.0, 270.0,
+            SmallFont, Font.CR_WHITE, 56.0, 288.0,
             String.Format(
                 "%s: %s",
                 StringTable.Localize(
@@ -1112,8 +1160,12 @@ class CaelumJournalOverlay : EventHandler
             )
         );
         DrawCenteredText(
-            SmallFont, Font.CR_GRAY, 320.0, 298.0,
-            StringTable.Localize("CA_QUEST_FOUNDATION_NOTE", false)
+            SmallFont, Font.CR_GRAY, 320.0, 304.0,
+            StringTable.Localize(localPlayer.TarotFoolOwnedSnapshot
+                ? "CA_M01_FOOL_HINT_DONE"
+                : localPlayer.JournalQuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                    >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED
+                    ? "CA_M01_FOOL_HINT_FIND" : "CA_QUEST_FOUNDATION_NOTE", false)
         );
     }
 
@@ -2313,7 +2365,8 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage == 2) { DrawPlannedPage("CA_JOURNAL_WORLD_PENDING"); }
         else if (currentPage == 3) { DrawCraftsPage(localPlayer); }
         else if (currentPage == 4) { DrawQuestPage(localPlayer); }
-        else { DrawReputationPage(localPlayer); }
+        else if (currentPage == 5) { DrawReputationPage(localPlayer); }
+        else { DrawTarotPage(localPlayer); }
 
         if (currentPage == 3 && localPlayer.CraftingMenuOpen)
         {

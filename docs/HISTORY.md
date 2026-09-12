@@ -1,6 +1,25 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0s — 2026-09-11.
+Versión documental: 4.33.0t — 2026-09-11.
+
+## El Loco y colección de Tarot — 4.33.0t, 2026-09-11
+
+El autor aprobó todas las pruebas de 0s. Tras fallar el envío del ZIP completo,
+entregó src/assets/docs y archivos raíz por separado; se recuperó una base
+coherente. Se implementa el siguiente bloque: aparición en la cueva, revelación,
+captura con aceptación e interrupción segura, recompensa única y fase 90.
+
+La ilustración es El Loco de las Pampas original. Tarot añade una página al
+Diario. Se recupera la regla canónica de V4.25.2, sección 7: Mayor +2%, Menor
++1% a los doce atributos, porcentajes aditivos, decimales antes de fórmulas.
+Los atributos pasan a double; el porcentaje se deriva de la colección viajera
+al recalcular y no altera la base del creador. Diálogos y Detalle se actualizan
+en español/inglés, incluyendo Palomo y reacciones de los cuatro residentes.
+
+El alcance termina en fase 90: salida, arma preservada, retorno al cuerpo y
+alcantarillas permanecen en el roadmap. No se implementa activación de poderes.
+README y los cinco docs se sincronizan; evidencia técnica en PROJECT. Entrega:
+sólo archivos para copiar y TXT de pruebas; sin instalador ni modificación WAD.
 
 ## Palomo final y Caja — 4.33.0s, 2026-09-11
 

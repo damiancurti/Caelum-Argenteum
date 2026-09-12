@@ -6,24 +6,24 @@
 class CaelumAttributes : Object
 {
     // Physical layer.
-    int Strength;
-    int Toughness;
-    int Constitution;
+    double Strength;
+    double Toughness;
+    double Constitution;
 
     // Technical layer.
-    int Agility;
-    int Dexterity;
-    int Resilience;
+    double Agility;
+    double Dexterity;
+    double Resilience;
 
     // Social layer.
-    int Charisma;
-    int Empathy;
-    int Eloquence;
+    double Charisma;
+    double Empathy;
+    double Eloquence;
 
     // Mental layer.
-    int Intelligence;
-    int Patience;
-    int Insight;
+    double Intelligence;
+    double Patience;
+    double Insight;
 
     // Development-only shortcut. It deliberately bypasses character-creation
     // budgets without changing the saved allocation that will be restored.
@@ -72,9 +72,28 @@ class CaelumAttributes : Object
         Insight = mental + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_INSIGHT];
     }
 
+    // Recalcular siempre desde creación/equipo antes de aplicar el factor.
+    // Nunca multiplicar la asignación guardada ni truncar fracciones de nivel.
+    void ApplyTarotBonus(int percent)
+    {
+        double factor = 1.0 + Max(0, percent) / 100.0;
+        Strength *= factor;
+        Toughness *= factor;
+        Constitution *= factor;
+        Agility *= factor;
+        Dexterity *= factor;
+        Resilience *= factor;
+        Charisma *= factor;
+        Empathy *= factor;
+        Eloquence *= factor;
+        Intelligence *= factor;
+        Patience *= factor;
+        Insight *= factor;
+    }
+
     // Returns the sum of all twelve primary attributes. For neutral test values
     // of 3, the expected result is 36.
-    int GetTotalPrimaryLevels()
+    double GetTotalPrimaryLevels()
     {
         return Strength + Toughness + Constitution
             + Agility + Dexterity + Resilience

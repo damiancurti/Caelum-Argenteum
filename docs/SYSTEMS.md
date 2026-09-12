@@ -1,6 +1,49 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0s — 2026-09-11.
+Versión documental: 4.33.0t — 2026-09-11.
+
+## Tarot: colección y captura de El Loco (4.33.0t)
+
+Regla vigente: 22 Mayores de +2% y 56 Menores de +1%; colección completa = +100%.
+El porcentaje es aditivo y afecta el nivel de los doce atributos antes de
+Tipo 1/2/4 y sus efectos. Ejemplo: nivel 15 con El Loco = 15,30. No redondear
+el nivel ni alterar los puntos de creación. Fuente: Documentación actualizada
+V4.25.2, sección 7, pág. 20, y guardados de personaje, pág. 78. La colección
+no añade XP por derrotar enemigos. Poderes activos/Trucazo siguen pendientes.
+
+TarotOwned[78] vive en CaelumPersistentCharacterState, Inventory viajero.
+Índices 0–21: Mayores; 22–77: Menores. El Loco ocupa 0. El porcentaje y contador
+se derivan de cartas poseídas; no son acumuladores guardados. Los doce atributos
+usan double. ApplyCharacterProfile reconstruye creación/equipo, aplica Tarot
+y recién entonces recalcula capacidades, masa de contenido y fórmulas derivadas.
+Los perfiles de depuración también reciben el factor sin cambiar su base.
+
+El controlador manifiesta CaelumM00FoolEssence en (1420,1050,-370), sobre el
+suelo Z=-384. Consulta la fase 80, las cuatro ramas terminadas y entrega/propiedad
+de la Caja. Reutiliza la instancia StoryPlaced al cargar; no pone actores en
+el WAD. MainM00FoolRevealed conserva la revelación individual. El render mundial
+muestra reverso CTAR y después el recurso CFLF, también usado en el Diario.
+
+Usar exige jugador creado/vivo en MAP01, distancia <=128, diferencia Z <=48 y
+CheckSight, además de Caja nativa con Owner e ItemId coincidentes. El alcance
+efectivo de Usar también respeta el trazado nativo del jugador. USDF 43318
+permite confirmar o dejarla allí. La música baja durante el diálogo y el
+destructor nativo restaura Level.MusicVolume; no se cambia el volumen elegido.
+
+La aceptación inicia 35 tics de animación después de cerrar la conversación.
+El actor original permanece quieto; una imagen sin colisión se acerca al
+jugador. Cada tic revalida distancia, vida, misión, imagen y la misma Caja.
+Una interrupción borra sólo la imagen y restaura la esencia. Al terminar,
+RecordMainM00FoolCapture cambia 80 -> 90, registra la carta, bandera 40,
+objetivo 6 a 1/1 y EXIT_READY como requisito latente del siguiente bloque.
+Se persiste antes de retirar la esencia. Repetir no vuelve a premiar.
+El guardado nativo conserva también la animación y sus referencias.
+
+Tarot es la séptima página del Diario. Cuenta cartas, muestra la ilustración
+obtenida y el porcentaje; Personaje muestra decimales. Detalle diferencia
+buscar/revelar/capturar. Palomo usa USDF 43319 después de obtenerla; los cuatro
+residentes adaptan sus páginas de finalización. Se anexan nodos USDF para
+mantener los índices existentes. No hay cambio de mapa en este parche.
 
 ## Palomo final y Caja única (4.33.0s)
 
@@ -27,14 +70,14 @@ EnsureOwned recupera la instancia si falta y asigna identidad a la propiedad
 antigua sin duplicar contenidos. Usa el contador de IDs existente y protege
 la identidad de la Caja frente a equipo importado con el mismo número. No
 adelanta una misión por poseer una Caja heredada: hay que aceptar ante Palomo.
-La Caja viaja con Inventory; la captura de esencias y retorno entre mundos
-siguen pendientes. No se implementan aún poderes ni bonificaciones de Tarot.
+La Caja viaja con Inventory. 0t añade la captura de El Loco y la bonificación
+de atributos descritas arriba; retorno entre mundos y poderes siguen pendientes.
 
 En Inventario, C guarda/retira el objeto seleccionado. Se conservan límites
 de slots/carga y restricciones de equipo puesto, préstamos, reservas de misión
 y crafting. La entrega permite al jugador reorganizar su contenido aunque
 los 10 kg iniciales aumenten temporalmente su carga. El texto da instrucciones
-y la ruta del pasaje/ascensor/cueva; no afirma que haya aparecido una esencia.
+y la ruta del pasaje/ascensor/cueva. Desde 0t indica dónde examinar la aparición.
 
 ## Residentes esenciales y diálogo poscombate (4.33.0r)
 
@@ -61,8 +104,8 @@ monstruos al reparar. Un actor ya destruido no es una instancia recuperable.
 
 Rulo reconoce liderazgo y fuerza innata en victoria, repetición y Detalle.
 No hay bonificación estadística nueva ni exposición del secreto del Limbo.
-El Loco se manifestará en la cueva tras la entrega de la Caja; el registro de
-cartas, captura única y bonificación de Arcano Mayor siguen en el bloque pendiente.
+0t añade El Loco en la cueva, captura y bonificación de Arcano Mayor. Esa
+recompensa pertenece a la carta, no a la práctica de Rulo.
 
 ## Combate acompañado y rendimiento del Toro (4.33.0q)
 
@@ -537,8 +580,8 @@ y durabilidad; equipo elemental devuelve sus materiales correspondientes.
 | User2 | Channel del Sello equipado. |
 | User3 | Interfaz de Tarot activo; contenido completo pendiente. |
 | User4 | Interfaz de habilidad de clase; contenido pendiente. |
-| Use | Interacción nativa con NPC, estaciones, puertas y ascensor. |
-| Tab | Diario/Inventario. |
+| Use | Interacción nativa con NPC, estaciones, puertas, ascensor y aparición de El Loco. |
+| Tab | Diario/Inventario; Tarot muestra la colección desde 0t. |
 
 La carga base dura 2 s ajustados por velocidad; la ventana preparada dura 3 s.
 El siguiente ataque duplica daño y coste, y las explosiones duplican área

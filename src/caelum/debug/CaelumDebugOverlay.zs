@@ -816,10 +816,10 @@ class CaelumDebugOverlay : EventHandler
     // DrawAttribute prints one localized attribute label and its current value.
     // The virtual 640x360 coordinate system keeps the layout consistent across
     // different screen resolutions and aspect ratios.
-    ui void DrawAttribute(String languageKey, int value, double x, double y)
+    ui void DrawAttribute(String languageKey, double value, double x, double y)
     {
         String label = StringTable.Localize(languageKey, false);
-        String line = String.Format("%s: %d", label, value);
+        String line = String.Format("%s: %.2f", label, value);
 
         Screen.DrawText(
             DebugFont,

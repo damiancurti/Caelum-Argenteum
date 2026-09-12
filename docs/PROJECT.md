@@ -1,39 +1,38 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0s — 2026-09-11.
+Versión documental: 4.33.0t — 2026-09-11.
 
-## Estado actual: 4.33.0s
+## Estado actual: 4.33.0t
 
-**Base:** carpeta completa 0r. El autor confirmó correctas todas sus pruebas.
-Se implementa el siguiente bloque acordado: Palomo final y Caja, fase 75 a 80.
-Palomo usa la misma instancia que ya llegó arriba por las escaleras. No se
-cambia la ruta, la visibilidad, las estaciones ni la supervivencia aceptada.
+**Base:** carpeta completa 0s. El autor confirmó correctas todas sus pruebas.
+Los archivos separados recibidos coinciden entre sí y pasan el validador.
+Se implementa El Loco en la cueva: manifestación, revelación con Usar, elección
+explícita de capturar, animación y recompensa única, de fase 80 a 90.
 
-Tras cerrar Argento, Caella, Ronnie y Rulo, hablar con Palomo en el segundo
-piso abre su diálogo final. Conserva las metáforas y las preguntas opcionales
-de MAP01.txt. Sólo aceptar explícitamente concede la Caja y cambia de etapa.
-Salir antes permite retomarlo. Volver después ofrece ayuda de almacenamiento
-y la ruta hacia la cueva. Una visita temprana orienta según la etapa actual.
+Tras recibir la Caja de Palomo, la aparición queda en el centro de la cueva,
+delante de las vetas del fondo. Se llega atravesando la pared del pasaje de
+Caella y bajando con el ascensor. Examinarla revela nombre e ilustración;
+salir del diálogo la deja disponible. Al aceptar, la carta se acerca al jugador
+hasta desaparecer en la Caja. Alejarse, perder la Caja o morir antes de acabar
+interrumpe sin recompensa y deja la esencia para reintentar.
 
-La Caja tiene un Inventory nativo único, propietario e ItemId persistente,
-con el almacenamiento existente. Sus 10 kg se cuentan una sola vez. Los
-personajes que ya la poseían conservan contenido/peso al migrar; la entrega
-narrativa sigue pendiente hasta aceptar la conversación. La repetición no
-duplica objetos ni identidad. Los objetos equipados, prestados o reservados
-mantienen las restricciones anteriores. El arma inicial conserva su ItemId.
+El registro viajero conserva las cartas y la revelación. El Diario incorpora
+Tarot: ilustración original de El Loco de las Pampas, contador y bonificación.
+Regla canónica recuperada de Documentación V4.25.2, sección 7, pág. 20:
+Mayor +2%, Menor +1%, sumados sobre los doce niveles primarios. Se conservan
+fracciones antes de las fórmulas derivadas. Creación/equipo se recalculan antes
+de aplicar el factor; guardar/cargar no lo multiplica de nuevo. No se obtiene
+salud gratuita ni se modifica la distribución base del creador.
 
-El Diario y Detalle registran la adquisición y el uso de C en Inventario.
-Argento toma esa etapa actual. Palomo aparece como ubicado arriba desde la
-fase 75. La Caja no inicia comercio ni resuelve automáticamente El Loco.
+Detalle y la orientación de Argento muestran el estado actual. Palomo conserva
+su tono y ofrece hablar sobre la captura arriba; los cuatro residentes tienen
+reacciones propias. No adelantan la verdad del Limbo ni exigen otra prueba.
 
-**Límite de 0s:** fase 80. El Loco se manifestará en la cueva bajo la mansión,
-accesible por el pasaje descubierto con Caella y el ascensor. Palomo da esa
-ruta; la aparición/captura, recompensa de Tarot y salida son el próximo bloque.
-No buscar una esencia capturable en 0s ni declarar terminado MAP01.
-
-Se conservan el grupo con Buddha de 0r, los diálogos de liderazgo/fuerza innata,
-los 12,5 kg de cuero y el cajón de guanteletes. La cobertura T1 completa y la
-auditoría final del tutorial siguen pendientes, sin agregar bloqueos nuevos.
+**Límite de 0t:** fase 90, carta obtenida y reacciones disponibles. Sigue pendiente
+la salida narrativa, transferencia automática del arma elegida, limpieza final,
+regreso al cuerpo y misión completada. MAP02 sigue siendo el campo diagnóstico;
+no se presenta como alcantarillas terminadas. User3 no incorpora poderes activos
+en este bloque. Se mantienen todas las funciones aprobadas de 0s y anteriores.
 
 La base 0n aprobada incluye:
 
@@ -126,10 +125,11 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
 | 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
 | 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Todas las pruebas de 0r aprobadas por el autor. |
-| 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única implementados sobre la misma instancia. Pendiente aceptación del autor. |
-| 4 | **Siguiente bloque: El Loco en la cueva y salida, fases 90–100** | Manifestación en la cueva bajo la mansión tras recibir la Caja; indicaciones de acceso en diálogo/Detalle. Captura/recompensa única, transferir el arma elegida por ItemId, completar misión y transición narrativa. La limpieza técnica de temporales de 0l no implementa por sí sola esta salida. |
-| 5 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones previstas de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
-| 6 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
+| 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única. Todas las pruebas aprobadas por el autor. |
+| 4 | 4.33.0t: El Loco en la cueva, fase 90 | Manifestación, revelación, captura interrumpible/reintentable, carta única, colección y +2% fraccionario implementados. Pendiente aceptación del autor. |
+| 5 | **Siguiente bloque: salida y regreso al cuerpo, fase 100** | Confirmación, transferir el arma inicial por ItemId a la Caja, limpiar temporales, completar misión y transición narrativa. Definir destino de alcantarillas y valores iniciales pendientes antes de conectar el retorno. La limpieza técnica existente no implementa por sí sola la salida. |
+| 6 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
+| 7 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -152,7 +152,7 @@ no significa que todo el contenido de ese sistema esté terminado.
 | V4.34: arquitectura del mundo y viajes | Reutilizar módulos de habitación/escalera ya validados; puertas cerradas/con llave y pisos adicionales. Definir ubicaciones, conexiones, caravanas y puntos de integración de viajes/eventos. No confundir arquitectura de mapas con refactor de código. |
 | V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
-| V4.37: Tarot y Trucazo | Activación de cartas poseídas/seleccionadas con User3, costes/cooldowns/persistencia y progresión; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
+| V4.37: Tarot y Trucazo | Extender la colección y bonificación base iniciadas en 0t; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar los bloques V4 pendientes. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
 | V5.1: exposición térmica | Modelo de calor/frío basado en clima, zonas, actividad, humedad persistente, viento y equipo real; Resiliencia, consumibles, refugios, secado, descanso y aclimatación. Curvas numéricas pendientes de balance autoral. |
 | V5.x: recursos y biomas marinos | Fuentes 3D persistentes, extracción cuerpo a cuerpo cortante/perforante, dureza/rareza/profundidad/región/habilidad, agotamiento y regeneración. Biomas marinos, algas/yodo y aguas no potables; tiendas mantienen acceso a materiales remotos. |
@@ -177,7 +177,7 @@ implementación se ubica cuando estén disponibles sus dependencias.
 | Asedios | Director de batalla, refuerzos, tácticas, comandantes, aliados, máquinas/artillería/barricadas, sabotaje y rutas alternativas; límite temporal y consecuencias permanentes sobre ciudades, rutas y facciones. Depende de IA, física, mundo y calendario estables. |
 | Física | Completar validación de impactos/contactos múltiples, empuje sostenido, aplastamiento y anatomía/armadura. La futura física de golpes cuerpo a cuerpo requiere velocidad, masa efectiva, área/filo, material, penetración y técnica definidos; no reemplazar el combate aceptado sin ese diseño. |
 | Habilidades | Efectos concretos de User1 racial y User4 clase, definidos raza por raza y clase por clase. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
-| Tarot | Colección, posesión, selección, activación, bonificaciones y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
+| Tarot | Colección persistente y bonificación global iniciadas con El Loco en 0t. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
 | Trucazo | Truco con Tarot: Mayores modificadores, Menores jugables/filas, Envido/Truco/Retruco/Vale 4, daño y vida, Sentidos Mágicos, apuestas y consecuencias; casual/ranked y equipos 1v1 a 4v4. Implementar por capas tras reglas base de Tarot y autoridad multijugador. |
 | Cooperativo y PvP | Objetivo 2–8 jugadores, autoridad del anfitrión, propiedad/validación/sincronización, misiones y mundo compartidos, viajes, conexión/desconexión y compañeros. La persistencia individual actual no acredita estos modos. |
 | Guardado | Mantener guardado nativo e Inventory viajero. Perfil externo independiente, autoguardado narrativo y estado compartido del mundo permanecen pendientes; ensayar compatibilidad antes de retirar adaptadores de V5. |
@@ -239,16 +239,51 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0r y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0s y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0s.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0t.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0s
+## Validación de 4.33.0t
+
+- GZDoom 4.14.2, ejecución nativa en Linux con Freedoom 0.13 como IWAD de
+  prueba: 65 comprobaciones del flujo y las conversaciones, cero fallos.
+  Usar abre el USDF real; cerrar deja la esencia, una captura interrumpida
+  permite reintentar, la completa otorga una carta y cambia 80 -> 90.
+- Las doce cifras conservan exactamente base ×1,02. Cinco recálculos seguidos
+  no acumulan el factor, no se regala salud, y la Caja conserva Owner/ItemId.
+  Dos Mayores más un Menor dan 5%; las 78 cartas dan 100%, no interés compuesto.
+  Estas últimas combinaciones son pruebas del registro, no contenido obtenido
+  durante el tutorial. Tras comprobarlas se restaura sólo El Loco.
+- Guardar durante la animación y cargar reanuda la captura: 24 comprobaciones
+  posteriores aprobadas. Un guardado ya completado conserva colección, etapa,
+  Caja y atributos; la inspección visual parte de ese guardado.
+- Migración real desde fuente 0s hacia 0t en la misma ruta: 14 comprobaciones
+  aprobadas. La Caja, 500 unidades de material almacenado, masa total y primera
+  arma (ItemId 2) se conservan. Los atributos enteros de 0s cargan como double
+  sin pérdida. Aparece la esencia y puede capturarse sin empezar partida nueva.
+- Los cinco actores originales abren sus conversaciones posteriores mediante
+  Usar nativo. Se recorren también las preguntas de Palomo sobre colección y
+  almacenamiento; las páginas muestran sus textos localizados correctos.
+- Inspección de la aparición en la cueva y del Diario en español a 1280×720
+  y en inglés a 1024×768. La carta conserva proporciones en 16:9 y 4:3.
+  Personaje muestra decimales; Misiones y F/Detalle reflejan la captura.
+- Validador: versión/README y cinco docs sincronizados; 74 audios, 12 modelos
+  de estaciones, claves de Caella conservadas y 25 claves nuevas en ambos
+  idiomas. MAP01.wad idéntico a 0s, SHA256:
+  c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+
+Los escenarios preparan etapas y condiciones ya aprobadas, y sitúan a Palomo
+en su destino para comprobar la conversación. No reemplazan una partida
+completa ni la escucha en Windows del autor. Su aceptación de 0t queda
+pendiente en PRUEBAS_4_33_0t.txt. La salida y poderes activos no se prueban
+como funciones implementadas.
+
+## Validación de 4.33.0s — aprobada por el autor
 
 - 130 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2: 61 del
   diálogo/recompensa/almacenamiento, 17 al recargar un guardado 0s y 26 por
@@ -277,8 +312,8 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
 Los escenarios preparan las etapas y sitúan la instancia original de Palomo
 en su destino, con la ruta terminada. Usar, las páginas USDF, almacenamiento
 y guardados sí se ejecutan en el motor. No se repite el recorrido de escaleras
-ya aceptado ni una partida completa; la inspección visual y la aceptación
-del autor de 0s quedan pendientes en PRUEBAS_4_33_0s.txt.
+ya aceptado ni una partida completa. El autor confirmó después que todas
+las pruebas de 0s fueron correctas y autorizó continuar con 0t.
 
 ## Validación de 4.33.0r — aprobada por el autor
 

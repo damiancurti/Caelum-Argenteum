@@ -70,17 +70,17 @@ class CaelumDerivedStats : Object
     double MassAdjustedJumpHeightPercent;
     double StealthPercent;
 
-    double CalculateType1Percent(int level)
+    double CalculateType1Percent(double level)
     {
         return 100.0 + level * (level + 1) / 2.0;
     }
 
-    double CalculateType4Percent(int level)
+    double CalculateType4Percent(double level)
     {
         return 100.0 + 2.0 * level * (level + 1) / 101.0;
     }
 
-    double CalculateType2Percent(int level)
+    double CalculateType2Percent(double level)
     {
         return level * (level + 1) / 101.0;
     }

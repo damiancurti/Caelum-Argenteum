@@ -1587,3 +1587,12 @@ Sprite "ZUPYJ0", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_c
 Sprite "ZUPYK0", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_colossus/ZUPYK0.png", 0, 0 }
 Sprite "ZUPYL0", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_colossus/ZUPYL0.png", 0, 0 }
 // END GENERATED 4.29.0aq CHARACTER SPRITES
+
+// 4.33.0t: carta original, sin recortar ni volver a dibujar.
+Sprite "CFLFA0", 1024, 1536
+{
+    XScale 8
+    YScale 8
+    Offset 512, 1536
+    Patch "graphics/caelum/tarot/ca_tarot_fool.png", 0, 0
+}

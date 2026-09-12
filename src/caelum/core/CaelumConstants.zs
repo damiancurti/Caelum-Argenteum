@@ -12,6 +12,14 @@ class CaelumConstants : Object
     // V4.33 reserva índices estables para el registro social persistente. La
     // capacidad permite añadir contenido sin desplazar partidas; por ahora el
     // único contenido definido es la misión principal del prólogo de MAP01.
+    const TAROT_CARD_COUNT = 78;
+    const TAROT_MAJOR_COUNT = 22;
+    const TAROT_THE_FOOL = 0;
+    const TAROT_MAJOR_ATTRIBUTE_PERCENT = 2;
+    const TAROT_MINOR_ATTRIBUTE_PERCENT = 1;
+    const MAIN_M00_FOOL_CONVERSATION_ID = 43318;
+    const MAIN_M00_PALOMO_FOOL_CONVERSATION_ID = 43319;
+    const MAIN_M00_FOOL_CAPTURE_TICS = 35;
     const QUEST_CAPACITY = 32;
     const QUEST_OBJECTIVE_CAPACITY = 8;
     const QUEST_OBJECTIVE_STORAGE_COUNT =

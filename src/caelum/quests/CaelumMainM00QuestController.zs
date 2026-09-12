@@ -18,6 +18,32 @@ class CaelumMainM00QuestController : EventHandler
     bool BullRoomPrepared;
     CaelumM00Bull TrialBull;
     bool ProcessingManualRetired;
+    CaelumM00FoolEssence FoolEssence;
+
+    void PresentFool(bool needed, bool revealed)
+    {
+        if (!needed)
+        {
+            if (FoolEssence != null) FoolEssence.Destroy();
+            FoolEssence = null;
+            return;
+        }
+        if (FoolEssence == null)
+        {
+            let iterator = ThinkerIterator.Create("CaelumM00FoolEssence");
+            CaelumM00FoolEssence found;
+            while ((found = CaelumM00FoolEssence(iterator.Next())) != null)
+                if (found.StoryPlaced) { FoolEssence = found; break; }
+            if (FoolEssence == null)
+            {
+                FoolEssence = CaelumM00FoolEssence(Actor.Spawn("CaelumM00FoolEssence",
+                    CaelumMainM00FoolCapture.GetSpot(), NO_REPLACE));
+                if (FoolEssence != null) FoolEssence.StoryPlaced = true;
+            }
+        }
+        if (FoolEssence != null && FoolEssence.CaptureUser == null)
+            FoolEssence.SetRevealed(revealed);
+    }
 
     // Se reutilizan las estaciones de las dos filas exteriores: así las
     // referencias de tareas guardadas siguen apuntando al mismo actor.
@@ -354,6 +380,8 @@ class CaelumMainM00QuestController : EventHandler
         PrepareCornerLayout();
         PrepareNaturalSupplies();
         PrepareBullRoom();
+        bool foolNeeded = false;
+        bool foolRevealed = false;
         bool started = false;
         bool opened = false;
         int sequence = 0;
@@ -370,14 +398,21 @@ class CaelumMainM00QuestController : EventHandler
             CaelumMainM00MagicTrial.Update(caelumPlayer);
             CaelumMainM00RonnieTrial.Update(caelumPlayer);
             CaelumMainM00RuloTrial.Update(caelumPlayer);
+            CaelumMainM00FoolCapture.Sync(caelumPlayer);
             if (level.MapName != "MAP01") continue;
             let record = caelumPlayer.GetPersistentCharacterState(false);
             if (record == null) continue;
+            foolNeeded = foolNeeded || record.CanCaptureMainM00Fool();
+            foolRevealed = foolRevealed || record.MainM00FoolRevealed;
             started = started || record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED);
             opened = opened || record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN);
             sequence = Max(sequence, record.MainM00RuneSequenceIndex);
         }
-        if (level.MapName == "MAP01") PresentMagicTrial(started, opened, sequence);
+        if (level.MapName == "MAP01")
+        {
+            PresentMagicTrial(started, opened, sequence);
+            PresentFool(foolNeeded, foolRevealed);
+        }
     }
 }
 

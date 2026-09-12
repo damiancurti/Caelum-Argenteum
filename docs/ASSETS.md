@@ -1,6 +1,23 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0s — 2026-09-11.
+Versión documental: 4.33.0t — 2026-09-11.
+
+## El Loco de las Pampas (4.33.0t)
+
+0s aceptado por el autor. Se reutiliza su ilustración original aprobada
+“El Loco de las Pampas.png”, 1024×1536, sin cambiar píxeles. Runtime:
+src/graphics/caelum/tarot/ca_tarot_fool.png. TEXTURES registra CFLFA0 con
+XScale/YScale 8 y Offset 512,1536; la esencia usa Scale 0.25 (32×48 MU).
+El Diario encaja el mismo archivo en 104×156 unidades virtuales, conservando
+la proporción de la ilustración en 16:9 y 4:3. No hay copia
+adicional en assets porque el original y la versión runtime son idénticos.
+
+Antes de examinarla se reutiliza ca_tarot_back.png/CTARA0. La captura genera
+una imagen CFLF sin colisión que se acerca y reduce durante 35 tics. Se
+reutilizan reveal_sting y player/level_up, además del arpa nativa del diálogo.
+La música se atenúa durante la revelación y se restaura al cerrar. No se
+agregan audios ni modelos. MAP01.wad sigue idéntico a 0s; el controlador
+reconstruye la aparición a partir del estado de misión.
 
 ## Reutilización en 4.33.0s
 
@@ -10,7 +27,7 @@ arpa nativa existente al abrir/avanzar. La entrega reutiliza el sonido de pickup
 La Caja conserva la interfaz/icono actual; su nueva instancia de identidad es
 invisible en el mundo y no añade una fila ni un dibujo duplicados. No hay
 sprites, modelos, música o texturas nuevos; MAP01.wad permanece idéntico.
-La representación de El Loco en la cueva sigue con el bloque de captura.
+La representación de El Loco se incorpora en 0t, descrita arriba.
 
 ## Reutilización en 4.33.0r
 

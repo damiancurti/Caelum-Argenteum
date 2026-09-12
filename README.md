@@ -5,13 +5,26 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0s.** Apply over the complete **4.33.0r** project.
-Documentation reviewed: 2026-09-11. The author accepted every 0r check.
-This patch adds Palomo's final upstairs conversation and the one-time Magic
-Box reward, advancing the story from phase 75 to 80. The roadmap and validation
-record are in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0t.** Apply over the complete **4.33.0s** project.
+Documentation reviewed: 2026-09-11. The author accepted every 0s check.
+This patch manifests The Fool in the mansion cave and adds its explicit capture,
+persistent Tarot collection and fractional attribute bonus, advancing phase 80
+to 90. The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- After receiving the Magic Box, an apparition appears in the centre of the
+  underground cave, in front of the back-wall veins. Use reveals the original
+  Fool of the Pampas artwork; the player explicitly confirms capture.
+  Leaving or losing the Box during the animation interrupts safely and allows
+  a retry. The essence disappears only after the persistent reward is recorded.
+- The Journal has a Tarot page with the card, collection count and bonus.
+  Each Major adds 2%, each Minor 1%, additively, to all twelve primary attribute
+  levels before derived formulas. Fractions are retained: 15 becomes 15.30.
+  Recalculation starts from creation/equipment; loading cannot compound bonuses.
+- Quest Detail tracks finding, revealing and capturing the essence. Palomo and
+  the four residents react to the capture. The quest stays active at phase 90;
+  the narrative exit and return to the body remain the next implementation.
 
 - Palomo's original actor speaks on the second floor after all four trials.
   His final dialogue keeps the author's mysterious tone, optional questions,
@@ -114,10 +127,10 @@ record are in [PROJECT.md](docs/PROJECT.md).
 
 ## Planned
 
-Next: manifest and capture The Fool in the mansion's underground cave,
-then implement the narrative exit. Phase 80 now ends with the Box acquired;
-the cave directions prepare that next block. There is no apparition to capture
-in this patch, and the mission is not marked complete.
+Next: implement the narrative exit and return to the body, with explicit
+confirmation, preserving the selected starter weapon by ItemId inside the Box,
+clearing temporary Limbo items, and completing the quest. The present playable
+limit is phase 90: The Fool captured and post-capture conversations available.
 Ronnie's additional survival lessons (food, water and a real repair)
 remain a tutorial expansion, without a new gate on the accepted starter branch.
 Arrow crafting is available; cartridge/bolt recipes remain planned, while
@@ -133,18 +146,18 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0r checks were accepted by the author. The supplied PRUEBAS_4_33_0s.txt
-covers the upstairs conversation, optional questions, accepting once, storage,
-and saving/reloading. The engine evidence is recorded in PROJECT.md; the
-author's gameplay validation of 0s remains pending. Tarot capture and exit
-are outside this patch's playable scope.
+All 0s checks were accepted by the author. The supplied PRUEBAS_4_33_0t.txt
+covers cave access, reveal/decline/retry/capture, the Tarot bonus, conversations
+and saves. Native engine evidence is recorded in PROJECT.md; the author's
+playthrough of 0t remains pending. Card powers and narrative exit are separate
+future work; the passive attribute bonus is already active.
 
 ## Build and run
 
-Close GZDoom. Extract the 0s patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0r** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0t patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0s** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0s.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0t.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
