@@ -1,8 +1,17 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0x — 2026-09-12.
+Versión documental: 4.33.0z — 2026-09-12.
 
 
-REVISIÓN VIGENTE 4.33.0x — ALIMENTO/AGUA, PRUEBAS DE SISTEMAS
+REVISIÓN VIGENTE 4.33.0z — CARGA
+0y aprobado por el autor. Tramo D opcional con Ronnie: lectura de carga real
+y decisión de aligerar mediante inventario. No modifica mapas o recursos.
+
+BASE 4.33.0y APROBADA — AIRE Y MOVIMIENTO
+0x aprobado por el autor. Tramo C de Ronnie: práctica opcional tras devolver
+el préstamo, objetivo pequeño de gasto al correr y recuperación natural.
+No impone recorrido ni amplía mapas. MAP01 sigue siendo entorno de pruebas.
+
+BASE 4.33.0x APROBADA — ALIMENTO/AGUA, PRUEBAS DE SISTEMAS
 Base 0w, incluido el acumulativo 0v, aprobada por el autor. MAP01 permanece
 como entorno de prueba. Nuevos mapas y extensión de alcantarillas diferidos.
 Ronnie propone una práctica opcional, explícitamente aceptada, después de su
@@ -1981,17 +1990,28 @@ Tramo B — necesidades (consumo implementado en 0x):
   salida. Las existencias sobrantes no viajan fuera del Limbo.
 - Recolección de agua y potabilización permanecen pendientes de su mecánica.
 
-Tramo C — Aire y movimiento:
+Tramo C — Aire y movimiento (implementado en 0y):
 
-- Crear una distancia corta donde correr reduzca el Aire de forma visible.
-- Incluir una alternativa lenta para demostrar que no es obligatorio agotarse.
-- Permitir recuperación completa antes de cualquier peligro.
+- Práctica opcional ofrecida por Ronnie después de devolver la espada.
+- Confirmar fija un objetivo de gasto igual al 1% del Aire máximo actual,
+  sin cobrarlo ni rellenar recursos. Correr en un pasillo despejado; tramos
+  cortos acumulan. Se comprueba gasto nativo con desplazamiento horizontal.
+- Tras ese gasto, caminar o detenerse para recuperar naturalmente la misma
+  cantidad. Mantener reservas de alimento/agua; no sustituir por una bebida.
+- Mostrar cada fase en Detalle; conservar progreso parcial al guardar.
+- No exigir retorno, agotamiento, una ruta, combate o inmersión. No bloquear
+  la misión principal ni cambiar los costes/ritmos existentes.
 
-Tramo D — carga:
+Tramo D — carga (implementado en 0z):
 
-- Colocar materiales necesarios y objetos prescindibles más pesados.
-- Mostrar la diferencia entre capacidad de recoger y conveniencia de cargar.
-- No impedir el progreso si el jugador decide volver varias veces.
+- Ronnie muestra peso, capacidad y factor de gasto de Aire por carga reales.
+- Aceptar una práctica opcional; usar sobrantes propios, conservando la primera
+  arma. Inventario D deja en el suelo; C guarda en la Caja si ya se posee.
+- Registrar sólo una reducción real de peso por esas acciones confirmadas.
+  Consumir, fabricar, cambiar atributos o una acción rechazada no acreditan.
+- No imponer sobrecarga ni suministros nuevos; se puede continuar sin sobrantes.
+- Préstamos y materiales reservados conservan restricciones. Guardar/cargar
+  conserva la práctica; volver a recoger no la invalida. No bloquea la misión.
 
 Tramo E — respiración o paso inundado:
 
@@ -2025,7 +2045,7 @@ STARTER_WEAPON_CRAFTED; se conserva el ItemId y se alcanza fase 60. El Diario
 pide volver con Ronnie. Devolver la espada retira su instancia y fija
 RONNIE_COMPLETE una sola vez; no vuelve a prestarla al reabrir el diálogo.
 Desde 0p, RONNIE_COMPLETE permite iniciar a Rulo. Las lecciones de 19.4 se
-incluyen reparación opcional desde 0w y el resto previsto; no bloquean esta continuación.
+incluyen reparación 0w, alimento/agua 0x, Aire/movimiento 0y, carga 0z y el resto previsto; no bloquean esta continuación.
 
 RONNIE:
 “Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la

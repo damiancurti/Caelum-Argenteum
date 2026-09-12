@@ -284,6 +284,14 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "ronnie_load_practice")
+                text = StringTable.Localize(user.MainM00LoadLessonCompleteSnapshot ? "CA_M01_LOAD_DONE" : "CA_M01_LOAD_PRACTICE", false);
+            text.Replace("%LOADKG%", String.Format("%.3f", user.MainM00LoadWeightSnapshot));
+            text.Replace("%LOADCAP%", String.Format("%.3f", user.MainM00LoadCapacitySnapshot));
+            text.Replace("%LOADAIR%", String.Format("%.2f", user.MainM00LoadAirFactorSnapshot));
+            if (mCurNode.UserData ~== "ronnie_air_practice")
+                text = StringTable.Localize(user.MainM00AirLessonCompleteSnapshot ? "CA_M01_AIR_DONE"
+                    : user.MainM00AirLessonRanSnapshot ? "CA_M01_AIR_RECOVER" : "CA_M01_AIR_PRACTICE", false);
             if (mCurNode.UserData ~== "ronnie_needs_practice")
                 text = StringTable.Localize(user.MainM00NeedsFoodUsedSnapshot && user.MainM00NeedsWaterUsedSnapshot
                     ? "CA_M01_NEEDS_DONE" : "CA_M01_NEEDS_PRACTICE", false);

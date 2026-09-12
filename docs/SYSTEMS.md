@@ -1,6 +1,59 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0x — 2026-09-12.
+Versión documental: 4.33.0z — 2026-09-12.
+
+## Carga: práctica opcional de Ronnie (4.33.0z)
+
+Después de devolver la espada, «¿Cómo organizo mi carga?» muestra las
+instantáneas actuales de CarriedWeight, CarryCapacity y el multiplicador
+CalculateLoadAirMultiplier. Leer no inicia; aceptar marca Started sin dar
+objetos ni modificar peso. La masa corporal participa por separado en el coste
+final de Aire; el valor del diálogo representa sólo el factor de carga.
+
+La regla actual se conserva: para proporción r <= 0,75, factor = 1 + r;
+por encima, factor = 1,75 + 2 * (r - 0,75). HasOverload se activa en r >= 0,75.
+No se duplica todo el coste al cruzar el umbral: aumenta la pendiente del
+exceso. La capacidad de recoger y la conveniencia de cargar son distintas.
+
+ToggleSelectedMagicBox conserva su lógica en ToggleSelectedMagicBoxNative y
+observa antes/después la masa CarriedItemWeight. DropSelectedEquipment observa
+su llamada nativa de soltar. Sólo una acción confirmada STORED_IN_MAGIC_BOX o
+DROPPED con reducción superior a 0,000001 kg puede acreditar. Se excluye el
+ItemId de la primera arma. CarriedItemWeight no incluye DebugWeight: cambios
+de atributos, retirada de carga de depuración, consumos o fabricación no son
+estas acciones. Tampoco cuenta recuperar de la Caja ni guardar sin reducción.
+
+MainM00LoadLessonStarted y Complete se serializan con el Inventory persistente;
+sus valores iniciales en partidas anteriores son false. Diálogo y Detalle usan
+instantáneas. No añade costes, recompensas o requisitos a Rulo/salida. Puede
+recogerse de nuevo el sobrante: la lección registra la decisión realizada.
+Después de salir, el pendiente opcional se oculta y el completado se conserva.
+No agrega materiales prescindibles de prueba: reutiliza sobrantes propios del
+recorrido. Sin sobrantes, se permite continuar sin hacer la práctica.
+
+## Aire y movimiento: práctica opcional (4.33.0y)
+
+Después de devolver el préstamo, Ronnie ofrece «¿Cómo administro mi Aire?».
+Leer no inicia. Confirmar fija MainM00AirLessonTarget = MaximumAir * 0.01,
+una sola vez. No rellena ni reduce Aire, necesidades o salud. El objetivo se
+conserva aunque después cambie el máximo; no es un coste adicional.
+
+ConsumeRunningAir informa la diferencia real entre Aire anterior y posterior.
+Sólo acredita con la práctica activa, sin diálogo, corriendo sobre suelo y con
+velocidad horizontal no nula. MainM00AirLessonSpent acumula y se limita al
+objetivo. Al alcanzarlo marca Ran. Tramos cortos cuentan; no pide agotamiento.
+ApplyAirRegeneration informa después el Aire efectivamente recuperado, conserva
+sus requisitos y costes nativos de Hambre/Sed, y acumula Recovered. Al llegar al
+objetivo marca Complete. Recuperar antes de terminar el primer paso no cuenta.
+Una bebida energética, ataque, salto o ajuste de depuración no invoca esos
+observadores. La regeneración puede exigir reponer reservas si están vacías.
+
+Tres flags Started/Ran/Complete y tres doubles Target/Spent/Recovered viven en
+el registro Inventory serializado. Los nuevos campos valen cero en guardados
+anteriores. Diálogo y Detalle usan instantáneas; al cruzar conserva lo completado
+y oculta el pendiente opcional. No hay recompensa ni requisito nuevo de misión.
+La misma lógica nativa de BT_RUN respeta Correr siempre y la tecla de velocidad.
+No se modifica la movilidad ni se incorporan inmovilidad, descanso o calendario.
 
 ## Necesidades: práctica opcional de Ronnie (4.33.0x)
 

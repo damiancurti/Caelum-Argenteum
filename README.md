@@ -5,12 +5,31 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0x.** Apply over the complete **4.33.0w** project,
-including the cumulative 0u → 0w delivery. The author approved all those changes.
-This release adds Ronnie's optional food/water practice in MAP01. New map
-construction is deferred: MAP01 remains the test environment for mechanics.
+**Current release: 4.33.0z.** Apply over the complete **4.33.0y** project.
+The author approved every 0y test and clarified that the reported mission issue
+was a misunderstanding. This release adds optional load management with Ronnie.
+MAP01 remains the systems test environment; new maps are deferred.
 
 ## Implemented
+
+- Ronnie now shows current carried kilograms, capacity and the load-only Air
+  multiplier. He explains why carrying less can help even below full capacity.
+- An optional practice records an actual carried-item weight reduction through
+  Inventory D (drop) or C (Box storage, when owned). The first crafted weapon
+  is excluded. Reading, consuming, crafting, increasing attributes or failed
+  inventory actions cannot complete it. No extra burden or supplies are given.
+- Quest Detail and Ronnie recognize completion; saved games and actual map
+  travel retain it. Loans, reserved materials and native inventory limits keep
+  their restrictions. The practice never blocks the main quest.
+
+- After returning Ronnie's sword, ask how to manage Air. Reading the proposal
+  changes nothing; accepting starts an optional two-step practice. Running must
+  spend 1% of maximum Air at acceptance, then natural recovery must restore that
+  amount. Short running stretches accumulate; exhaustion is unnecessary.
+- Quest Detail tracks running and recovery. Real native costs and recovery are
+  observed without free Air, extra costs, a new timer or a quest requirement.
+  Energy drinks cannot complete natural recovery. Reopening does not reset
+  progress; saves preserve partial progress and completion travels with you.
 
 - After returning Ronnie's sword, ask how to eat and drink. Reading the proposal
   changes nothing. Explicitly accepting starts an optional practice, lowers only
@@ -182,7 +201,7 @@ construction is deferred: MAP01 remains the test environment for mechanics.
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
 PROJECT.md. Cartridge/bolt recipes, armor/Seal recipe acquisition and safe-water
-collection/processing remain planned. The food/water consumption lesson is now
+collection/processing remain planned. Food/water, Air/movement and load-management lessons are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
 Material coverage remains quantified, with no new leather source or loot change.
@@ -199,15 +218,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0w, including the cumulative 0v changes, is author-approved. The focused 0x
-checks are in PRUEBAS_4_33_0x.txt. Engine evidence is recorded in PROJECT.md.
-All three WAD files and audiovisual resources remain byte-identical to 0w.
+0y is author-approved. Focused 0z checks are in PRUEBAS_4_33_0z.txt.
+Engine evidence is recorded in PROJECT.md. All three maps and audiovisual
+resources remain byte-identical to 0y.
 
 ## Build and run
 
-Close GZDoom. Extract the 0x patch and copy **src**, **docs** and **README.md**
-into the complete **4.33.0w** project, merging folders and replacing matching
-files. Keep the supplied **PRUEBAS_4_33_0x.txt** beside the ZIP, outside docs.
+Close GZDoom. Extract the 0z patch and copy **src**, **docs** and **README.md**
+into the complete **4.33.0y** project, merging folders and replacing matching
+files. Keep the supplied **PRUEBAS_4_33_0z.txt** beside the ZIP, outside docs.
 A MAP01 save before the exit lets you try the optional lesson. A character
 already in the sewers can continue normally; this patch adds no return route.
 

@@ -343,6 +343,14 @@ class CaelumPlayer : DoomPlayer
     int MainM00StarterSizeSnapshot;
     int MainM00StarterWeaponSnapshot;
     bool MainM00RonnieFinishedSnapshot;
+    bool MainM00LoadLessonStartedSnapshot;
+    bool MainM00LoadLessonCompleteSnapshot;
+    double MainM00LoadWeightSnapshot;
+    double MainM00LoadCapacitySnapshot;
+    double MainM00LoadAirFactorSnapshot;
+    bool MainM00AirLessonStartedSnapshot;
+    bool MainM00AirLessonRanSnapshot;
+    bool MainM00AirLessonCompleteSnapshot;
     bool MainM00NeedsLessonStartedSnapshot;
     bool MainM00NeedsFoodUsedSnapshot;
     bool MainM00NeedsWaterUsedSnapshot;
@@ -763,6 +771,14 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
+        MainM00LoadLessonStartedSnapshot = persistentState != null && persistentState.MainM00LoadLessonStarted;
+        MainM00LoadLessonCompleteSnapshot = persistentState != null && persistentState.MainM00LoadLessonComplete;
+        MainM00LoadWeightSnapshot = DerivedStats == null ? 0 : DerivedStats.CarriedWeight;
+        MainM00LoadCapacitySnapshot = DerivedStats == null ? 0 : DerivedStats.CarryCapacity;
+        MainM00LoadAirFactorSnapshot = DerivedStats == null ? 1 : DerivedStats.CalculateLoadAirMultiplier(DerivedStats.LoadRatio);
+        MainM00AirLessonStartedSnapshot = persistentState != null && persistentState.MainM00AirLessonStarted;
+        MainM00AirLessonRanSnapshot = persistentState != null && persistentState.MainM00AirLessonRan;
+        MainM00AirLessonCompleteSnapshot = persistentState != null && persistentState.MainM00AirLessonComplete;
         MainM00NeedsLessonStartedSnapshot = persistentState != null && persistentState.MainM00NeedsLessonStarted;
         MainM00NeedsFoodUsedSnapshot = persistentState != null && persistentState.MainM00NeedsFoodUsed;
         MainM00NeedsWaterUsedSnapshot = persistentState != null && persistentState.MainM00NeedsWaterUsed;
@@ -9536,6 +9552,15 @@ class CaelumPlayer : DoomPlayer
 
     void ToggleSelectedMagicBox()
     {
+        RefreshCarriedInventorySummary();
+        double previousWeight = DerivedStats == null ? 0 : DerivedStats.CarriedItemWeight;
+        int selectedId = EquipmentSelectionItemId;
+        ToggleSelectedMagicBoxNative();
+        CaelumMainM00RonnieTrial.RecordLoadLesson(self, previousWeight, selectedId);
+    }
+
+    void ToggleSelectedMagicBoxNative()
+    {
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
@@ -11364,7 +11389,11 @@ class CaelumPlayer : DoomPlayer
 
     void DropSelectedEquipment()
     {
+        RefreshCarriedInventorySummary();
+        double previousWeight = DerivedStats == null ? 0 : DerivedStats.CarriedItemWeight;
+        int selectedId = EquipmentSelectionItemId;
         DropSelectedNativeInventoryItem();
+        CaelumMainM00RonnieTrial.RecordLoadLesson(self, previousWeight, selectedId);
         return;
         LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (!EquipmentSelectionOwned) { return; }
@@ -15937,7 +15966,9 @@ class CaelumPlayer : DoomPlayer
 
         double finalCostPerSecond = CaelumConstants.RUN_AIR_COST_PER_SECOND
             * DerivedStats.AirConsumptionMultiplier;
+        double previousAir = CurrentAir;
         CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond / TICRATE);
+        CaelumMainM00RonnieTrial.RecordAirLesson(self, previousAir - CurrentAir, true);
         UpdateAirStateEffects();
     }
 
@@ -18161,6 +18192,7 @@ class CaelumPlayer : DoomPlayer
         if (recoveredAir <= 0.0) return;
 
         CurrentAir += recoveredAir;
+        CaelumMainM00RonnieTrial.RecordAirLesson(self, recoveredAir, false);
         CurrentHunger = Max(
             0.0,
             CurrentHunger - recoveredAir * hungerCostPerAir

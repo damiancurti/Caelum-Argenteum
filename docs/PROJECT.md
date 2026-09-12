@@ -1,8 +1,44 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0x — 2026-09-12.
+Versión documental: 4.33.0z — 2026-09-12.
 
-## Estado actual: 4.33.0x
+## Estado actual: 4.33.0z
+
+Base 0y aprobada: el autor confirmó que todas las pruebas dieron correcto y
+que el desacuerdo informado era un error de interpretación. No se aplica una
+reparación de estados de misión ni se cambia el modo de atributos en 100.
+
+Tramo D de Ronnie: carga. Diálogo con peso, capacidad y factor de Aire por
+carga reales. Práctica opcional: aligerar mediante soltar un sobrante o guardarlo
+en la Caja si reduce el peso. Excluye la primera arma. No entrega objetos,
+impone sobrecarga, altera costes o añade un bloqueo. Consume la misma interfaz
+de inventario; préstamos y reservas mantienen sus reglas. Guardados y viaje
+conservan el resultado. MAP01 sigue siendo el entorno de pruebas de sistemas.
+
+Aplicar src, docs y README.md sobre 0y, combinando carpetas, y reconstruir con
+run_dev.bat. PRUEBAS_4_33_0z.txt contiene sólo las comprobaciones nuevas.
+
+## Base 4.33.0y — aprobada por el autor
+
+
+Base: 0x completo, todas las pruebas aprobadas por el autor. Continúa el tramo
+C del tutorial de supervivencia: Aire y movimiento. Construcción de mapas y
+ampliación de alcantarillas siguen diferidas; MAP01 es el entorno de pruebas.
+
+Ronnie ofrece la práctica después de devolver la espada. Aceptar registra un
+objetivo equivalente al 1% del Aire máximo actual, sin modificar recursos.
+El gasto nativo al correr y moverse acumula la primera parte. La recuperación
+natural posterior acumula la segunda. No exige agotarse, una ruta concreta,
+volver con Ronnie ni completar para seguir la misión. El estado parcial y los
+resultados se conservan en el Inventory persistente. Detalle muestra qué falta.
+Bebidas, ataques, saltos, inmersión y restauraciones de depuración no sustituyen
+los dos puntos observados. No cambia costes, ritmos o recursos del mundo.
+
+Aplicar src, docs y README.md sobre 0x, combinando carpetas, y reconstruir con
+run_dev.bat. PRUEBAS_4_33_0y.txt contiene las pruebas nuevas.
+
+## Base 4.33.0x — aprobada por el autor
+
 
 Base: 0w completo, incluido el acumulativo desde 0u. El autor descargó y aprobó
 TODOS esos cambios. La rectificación anterior de entrega queda resuelta.
@@ -107,7 +143,7 @@ La base 0n aprobada incluye:
 - Indicación compartida neutral sobre la pared marcada y diálogos de recursos
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
-Reparación y consumo de alimento/agua están implementados como prácticas
+Reparación, consumo de alimento/agua y Aire/movimiento están implementados como prácticas
 opcionales. Las demás lecciones siguen planificadas; no bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
@@ -182,7 +218,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Consumo de alimento/agua implementado en 0x, pendiente de prueba. Quedan paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Consumo de alimento/agua 0x aprobado. Aire/movimiento 0y aprobado; carga implementada en 0z, pendiente de prueba. Quedan paso de agua seguro, cartuchos/virotes y acceso a recetas de armaduras/sellos. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
@@ -293,16 +329,46 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0w y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0y y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0x.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0z.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0x
+## Validación de 4.33.0z
+
+75 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+25 en español, 25 en inglés, 13 al cargar la práctica pendiente, 5 al cargarla
+completa y 7 al actualizar un guardado real generado con fuentes 0y.
+Se abrió Ronnie con Usar, se recorrió el diálogo y se ejecutaron las acciones
+nativas de Inventario D/C sobre objetos reales. Se verificaron rechazo de
+material reservado y Caja no poseída, exclusión de consumo y primera arma,
+reducción efectiva de masa, persistencia y transición real a MAP02. Las escenas
+preparan etapa y sobrantes para comprobar estas rutas; no sustituyen el recorrido
+del autor. Captura de valores de carga revisada a 1280×720.
+Validador aprobado; los tres WAD y recursos audiovisuales conservan sus bytes
+de 0y. El ZIP pasa CRC y reconstrucción exacta del delta sobre esa base.
+Pendiente del autor: PRUEBAS_4_33_0z.txt en Windows.
+
+## Validación de 4.33.0y — aprobada por el autor
+
+80 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+27 en español, 27 en inglés, 15 al cargar progreso parcial, 4 al cargar la
+práctica completa y 7 al cargar un guardado real generado con fuentes 0x.
+Se abrió al Ronnie original con Usar y se recorrió el diálogo nativo. Los
+escenarios inyectan condiciones de movimiento y llaman a las funciones reales
+de gasto/recuperación en ciclos acelerados: comprueban contabilización, no el
+ritmo de una caminata manual. Se verificaron exclusión de bebida energética,
+movimiento nulo y reservas vacías; costes de recuperación; guardados parciales
+y completos; viaje real a MAP02 y conservación de la primera arma.
+Captura en español revisada a 1280×720. Los tres WAD y los recursos audiovisuales
+son idénticos a 0x. Validador aprobado; CRC y reconstrucción del delta verificados.
+El autor aprobó controles y recorrido manual en Windows de 0y. No se declara probado un nuevo mapa ni una ruta de obstáculos.
+
+## Validación de 4.33.0x — aprobada por el autor
 
 108 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 nativo Linux/Freedoom:
 32 en español, 32 en inglés, 17 desde guardado parcial, 4 desde guardado completo,
@@ -315,7 +381,7 @@ estas condiciones; no sustituyen las pruebas del autor en Windows.
 
 El validador pasa. Los tres WAD y todos los recursos audiovisuales son idénticos
 a la base aprobada. El ZIP se comprueba por CRC y por reconstrucción exacta de
-archivos modificados sobre 0w. Queda pendiente PRUEBAS_4_33_0x.txt.
+archivos modificados sobre 0w. Todas las pruebas de 0x fueron aprobadas por el autor.
 
 ## Validación de 4.33.0w — aprobada por el autor
 

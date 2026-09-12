@@ -233,6 +233,17 @@ class CaelumJournalOverlay : EventHandler
                 .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsFoodUsedSnapshot ? "CA_M01_NEEDS_FOOD_DONE" : "CA_M01_NEEDS_FOOD_WAIT", false)
                 .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsWaterUsedSnapshot ? "CA_M01_NEEDS_WATER_DONE" : "CA_M01_NEEDS_WATER_WAIT", false);
         }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00AirLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00AirLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00AirLessonCompleteSnapshot
+                ? "CA_M01_AIR_DETAIL_DONE" : localPlayer.MainM00AirLessonRanSnapshot
+                ? "CA_M01_AIR_DETAIL_RECOVER" : "CA_M01_AIR_DETAIL_RUN", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00LoadLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00LoadLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00LoadLessonCompleteSnapshot
+                ? "CA_M01_LOAD_DETAIL_DONE" : "CA_M01_LOAD_DETAIL", false);
         text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
             .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
                 ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0x — 2026-09-12.
+Versión documental: 4.33.0z — 2026-09-12.
+
+## Revisión 4.33.0z
+
+Mapas, audio, arte, modelos y generadores idénticos a 0y aprobado. La práctica
+de carga usa sobrantes propios y los controles existentes del inventario.
+No agrega objetos de tutorial ni construye mapas. Alcantarillas diferidas.
+
+## Revisión 4.33.0y
+
+Sin cambios de WAD, arte, modelos, audio o generadores respecto de 0x aprobado.
+La práctica usa pasillos existentes y el diálogo habitual de Ronnie. No agrega
+marcadores, consumibles o una ruta de mapa. Las alcantarillas siguen diferidas.
 
 ## Revisión 4.33.0x
 

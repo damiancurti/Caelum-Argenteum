@@ -1,6 +1,28 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0x — 2026-09-12.
+Versión documental: 4.33.0z — 2026-09-12.
+
+## Carga y cierre de observaciones — 4.33.0z
+
+El autor aclaró que el desacuerdo de misión informado era un error suyo y
+aprobó todas las pruebas de 0y. No se modifica ni repara progreso por esa
+observación. Se continúa con el tramo D de Ronnie: lectura de carga y decisión
+opcional de aligerar por inventario. Se registran acciones nativas de soltar o
+guardar con reducción real, excluyendo la primera arma. No se concede equipo
+ni se cambia la misión. Persistencia, Diario y diálogo comparten el resultado.
+README y las cinco fuentes documentales se actualizan; entrega sobre 0y con
+PRUEBAS_4_33_0z.txt. Los mapas permanecen idénticos. Validación en PROJECT.md.
+
+## Aire y movimiento — 4.33.0y
+
+El autor aprobó todas las pruebas de 0x y pidió continuar. Se implementa el
+tramo C de supervivencia con Ronnie: gasto real de un objetivo del 1% del Aire
+máximo al aceptar, seguido de recuperación natural de esa cantidad. Es opcional,
+permite tramos cortos y no cambia recursos ni requisitos de misión. Detalle y
+diálogo reconocen fases; el registro conserva progreso parcial y final.
+No se amplían mapas. Se mantienen prioridades del roadmap y las cinco fuentes
+documentales. Entrega por copia sobre 0x, con PRUEBAS_4_33_0y.txt. Evidencia y
+límites de validación en PROJECT.md.
 
 ## Necesidades y prioridad de sistemas — 4.33.0x
 

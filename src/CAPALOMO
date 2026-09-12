@@ -2017,6 +2017,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
         choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
         choice { text = "$CA_M01_REPAIR_ASK"; nextpage = "ronnie_repair"; giveitem = "CaelumM00RepairLessonAction"; }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
@@ -2098,6 +2100,42 @@ conversation
         dialog = "$CA_M01_NEEDS_SAFE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+
+    page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
 }

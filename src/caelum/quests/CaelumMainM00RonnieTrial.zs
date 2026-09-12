@@ -96,6 +96,82 @@ class CaelumMainM00RonnieTrial : Object play
         user.PersistCharacterState();
     }
 
+    static bool StartAirLesson(CaelumPlayer user)
+    {
+        if (!IsRonnie(user) || user.DerivedStats == null) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+            || user.DerivedStats.MaximumAir <= 0) return false;
+        if (!r.MainM00AirLessonStarted)
+        {
+            r.MainM00AirLessonStarted = true;
+            r.MainM00AirLessonTarget = user.DerivedStats.MaximumAir * 0.01;
+        }
+        user.PersistCharacterState();
+        return true;
+    }
+
+    // Observa los dos puntos nativos: gasto al correr y recuperación natural.
+    // El registro Inventory se serializa con la partida; no duplica el reloj.
+    static void RecordAirLesson(CaelumPlayer user, double amount, bool running)
+    {
+        if (!CanInteract(user) || amount <= 0 || user.player.ConversationNPC != null) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.MainM00AirLessonStarted || r.MainM00AirLessonComplete
+            || r.MainM00AirLessonTarget <= 0
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return;
+        if (running)
+        {
+            if (r.MainM00AirLessonRan || !user.IsRunningOnGround()
+                || user.Vel.X * user.Vel.X + user.Vel.Y * user.Vel.Y < 0.01) return;
+            r.MainM00AirLessonSpent = Min(r.MainM00AirLessonTarget, r.MainM00AirLessonSpent + amount);
+            if (r.MainM00AirLessonSpent >= r.MainM00AirLessonTarget)
+            {
+                r.MainM00AirLessonRan = true;
+                user.RefreshSocialJournalSnapshot();
+            }
+        }
+        else if (r.MainM00AirLessonRan)
+        {
+            r.MainM00AirLessonRecovered = Min(r.MainM00AirLessonTarget, r.MainM00AirLessonRecovered + amount);
+            if (r.MainM00AirLessonRecovered >= r.MainM00AirLessonTarget)
+            {
+                r.MainM00AirLessonComplete = true;
+                user.RefreshSocialJournalSnapshot();
+            }
+        }
+    }
+
+    static bool StartLoadLesson(CaelumPlayer user)
+    {
+        if (!IsRonnie(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
+        r.MainM00LoadLessonStarted = true;
+        user.RefreshCarriedInventorySummary();
+        user.PersistCharacterState();
+        return true;
+    }
+
+    // Sólo observa guardar/soltar mediante el inventario: consumir, fabricar,
+    // subir atributos o retirar peso de depuración no completan la práctica.
+    static void RecordLoadLesson(CaelumPlayer user, double previousWeight, int selectedId)
+    {
+        if (!CanInteract(user) || user.DerivedStats == null) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.MainM00LoadLessonStarted || r.MainM00LoadLessonComplete
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+            || (selectedId > 0 && selectedId == r.MainM00StarterWeaponId)) return;
+        if (user.LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_DROPPED
+            && user.LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX) return;
+        user.RefreshCarriedInventorySummary();
+        if (user.DerivedStats.CarriedItemWeight >= previousWeight - 0.000001) return;
+        r.MainM00LoadLessonComplete = true;
+        user.PersistCharacterState();
+    }
+
     static void Feedback(CaelumPlayer user, String key)
     {
         if (user != null) user.A_Print(StringTable.Localize(key, false));
@@ -514,5 +590,21 @@ class CaelumM00NeedsLessonAction : CaelumPalomoDialogueAction
     override bool Use(bool pickup)
     {
         return CaelumMainM00RonnieTrial.StartNeedsLesson(CaelumPlayer(Owner));
+    }
+}
+
+class CaelumM00AirLessonAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00RonnieTrial.StartAirLesson(CaelumPlayer(Owner));
+    }
+}
+
+class CaelumM00LoadLessonAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        return CaelumMainM00RonnieTrial.StartLoadLesson(CaelumPlayer(Owner));
     }
 }

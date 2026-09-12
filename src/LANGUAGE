@@ -2818,3 +2818,47 @@ CA_M01_NEEDS_FOOD_DONE = "Alimento: consumido correctamente.";
 CA_M01_NEEDS_FOOD_WAIT = "Alimento: falta consumir una ración con la reserva por debajo del 100%.";
 CA_M01_NEEDS_WATER_DONE = "Agua: consumida correctamente.";
 CA_M01_NEEDS_WATER_WAIT = "Agua: falta consumir una ración con la reserva por debajo del 100%.";
+
+// 4.33.0y: Aire y movimiento.
+[default]
+CA_M01_AIR_ASK = "How do I manage my Air?";
+CA_M01_AIR_INTRO = "Running consumes Air; walking lets you advance calmly and recover it. We can practice without exhausting you: run until you spend 1% of your maximum Air, then recover that amount naturally. This is optional. You do not need to jump, fight or enter water.";
+CA_M01_AIR_START = "Let us practice Air management.";
+CA_M01_AIR_PRACTICE = "Find a clear corridor in the mansion. Move with Run active until Quest Detail asks you to recover Air. You can use short stretches without exhausting yourself. With Always Run enabled, holding the run key switches to walking.";
+CA_M01_AIR_RECOVER = "You have observed the running cost. Walk or stand still on dry ground to recover that small amount. Natural recovery uses some food and water reserves; replenish them first if empty. An energy drink does not replace this step.";
+CA_M01_AIR_DONE = "You have seen running consume Air and recovered it naturally. You do not need to move at full speed all the time: walking also gets you ahead. The practice is complete.";
+CA_M01_AIR_DETAIL_RUN = "Optional Air practice: run in a clear corridor to spend 1% of your maximum. Short stretches accumulate; exhaustion is unnecessary.";
+CA_M01_AIR_DETAIL_RECOVER = "Optional Air practice: walk or stop on dry ground to recover the observed amount naturally. Food and water reserves are needed; no return visit is required.";
+CA_M01_AIR_DETAIL_DONE = "Optional Air practice completed: running and natural recovery.";
+
+// 4.33.0y: Aire y movimiento.
+[es]
+CA_M01_AIR_ASK = "¿Cómo administro mi Aire?";
+CA_M01_AIR_INTRO = "Correr consume Aire; caminar te permite avanzar con calma y recuperarlo. Podemos practicar sin agotarte: corré hasta gastar un 1% de tu Aire máximo y después recuperá esa cantidad de forma natural. Es opcional. No tenés que saltar, pelear ni meterte al agua.";
+CA_M01_AIR_START = "Hagamos la práctica de Aire.";
+CA_M01_AIR_PRACTICE = "Buscá un pasillo despejado de la mansión. Movete con Correr activo hasta que Detalle te pida recuperar Aire. No hace falta agotarte: podés hacerlo en tramos cortos. Si usás Correr siempre, la tecla de correr alterna a caminar mientras la mantenés.";
+CA_M01_AIR_RECOVER = "Ya observaste el gasto al correr. Ahora caminá o quedate quieto en suelo seco hasta recuperar esa pequeña cantidad. La recuperación natural consume algo de alimento y agua; si tus reservas están vacías, atendelas primero. Una bebida energética no sustituye esta parte.";
+CA_M01_AIR_DONE = "Ya comprobaste cómo correr consume Aire y cómo recuperarlo naturalmente. No hace falta moverse siempre al máximo: caminar también te permite avanzar. La práctica está completa.";
+CA_M01_AIR_DETAIL_RUN = "Práctica opcional de Aire: corré en un pasillo despejado hasta gastar un 1% de tu máximo. Se acumulan tramos cortos; no hace falta agotarte.";
+CA_M01_AIR_DETAIL_RECOVER = "Práctica opcional de Aire: caminá o detenete en suelo seco para recuperar naturalmente la cantidad observada. Necesitás reservas de alimento y agua; no hace falta volver con Ronnie.";
+CA_M01_AIR_DETAIL_DONE = "Práctica opcional de Aire completada: correr y recuperar naturalmente.";
+
+// 4.33.0z: carga y decisiones de inventario.
+[default]
+CA_M01_LOAD_ASK = "How do I manage my load?";
+CA_M01_LOAD_INTRO = "You carry %LOADKG% kg and your capacity is %LOADCAP% kg. Load alone multiplies Air consumption by %LOADAIR%. Being able to lift something does not mean carrying everything is useful. At 75% you are overloaded and extra weight raises the cost more steeply. We can practice reducing your load; it is optional.";
+CA_M01_LOAD_START = "I want to practice reducing my load.";
+CA_M01_LOAD_PRACTICE = "Keep your first weapon. In Tab > Inventory select a spare item you own: D leaves it on the ground. If you have the Box, C stores it; this counts if carried weight decreases. Loans and reserved materials keep their restrictions. Quest Detail records the actual reduction. With no spare items, you can continue without this practice.";
+CA_M01_LOAD_DONE = "You reduced your load through Inventory. You can pick up what you left when convenient. You now carry %LOADKG% kg out of %LOADCAP% kg; the load Air factor is %LOADAIR%. You do not have to carry everything in one trip.";
+CA_M01_LOAD_DETAIL = "Optional load practice: keep your first weapon. In Inventory, D drops a spare item; C stores it in the Box if owned. Carried weight must decrease. Overloading and a return visit are unnecessary.";
+CA_M01_LOAD_DETAIL_DONE = "Optional load practice completed: you lightened your inventory.";
+
+// 4.33.0z: carga y decisiones de inventario.
+[es]
+CA_M01_LOAD_ASK = "¿Cómo organizo mi carga?";
+CA_M01_LOAD_INTRO = "Llevás %LOADKG% kg y tu capacidad es %LOADCAP% kg. Sólo por esa carga, el consumo de Aire se multiplica por %LOADAIR%. Poder levantar algo no significa que convenga llevarlo todo. Desde el 75% estás sobrecargado y el peso adicional aumenta más el gasto. Podemos practicar cómo aligerarte; es opcional.";
+CA_M01_LOAD_START = "Quiero practicar cómo aligerarme.";
+CA_M01_LOAD_PRACTICE = "Conservá tu primera arma. En Tab > Inventario elegí un sobrante propio: D lo deja en el suelo. Si ya tenés la Caja, C permite guardarlo; contará si reduce el peso que llevás. Los préstamos y materiales reservados conservan sus restricciones. Detalle registra la reducción real. Si no tenés sobrantes, podés seguir sin hacer esta práctica.";
+CA_M01_LOAD_DONE = "Ya redujiste tu carga mediante el inventario. Podés recoger de nuevo lo que dejaste cuando te convenga. Ahora llevás %LOADKG% kg sobre %LOADCAP% kg; el factor de Aire por carga es %LOADAIR%. No hace falta llevar todo de una sola vez.";
+CA_M01_LOAD_DETAIL = "Práctica opcional de carga: conservá la primera arma. En Inventario, D deja un sobrante propio en el suelo; C lo guarda en la Caja si la tenés. Debe reducir el peso transportado. No exige sobrecarga ni volver con Ronnie.";
+CA_M01_LOAD_DETAIL_DONE = "Práctica opcional de carga completada: aligeraste el inventario.";
