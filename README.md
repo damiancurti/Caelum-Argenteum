@@ -5,13 +5,22 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0t.** Apply over the complete **4.33.0s** project.
-Documentation reviewed: 2026-09-11. The author accepted every 0s check.
-This patch manifests The Fool in the mansion cave and adds its explicit capture,
-persistent Tarot collection and fractional attribute bonus, advancing phase 80
-to 90. The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
+**Current release: 4.33.0u.** Apply over the complete **4.33.0t** project.
+Documentation reviewed: 2026-09-12. The author accepted the other 0t checks and
+reported a phantom shield on Ronnie's loan and unclear greatsword defense.
+This patch reconciles shield state with actual equipped inventory and explains
+Rulo's defense exercise for the current weapon. Existing 0t saves are supported.
+The roadmap and validation record are in [PROJECT.md](docs/PROJECT.md).
 
 ## Implemented
+
+- Ronnie lends only the sword. A shield appears and blocks only when an actual,
+  usable, compatible shield is equipped. Stale shield state and left-hand layers
+  are cleared automatically, including on load; real items retain their identity.
+- Rulo's dialogue and Quest Detail describe defense for the current equipment:
+  shield/giant-gauntlet blocking, ranged aiming, or lateral evasion. A greatsword
+  uses evasion: walk sideways in the ground-floor target room until the defense
+  check is complete. Zoom is not required and the greatsword does not gain Block.
 
 - After receiving the Magic Box, an apparition appears in the centre of the
   underground cave, in front of the back-wall veins. Use reveals the original
@@ -146,18 +155,18 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0s checks were accepted by the author. The supplied PRUEBAS_4_33_0t.txt
-covers cave access, reveal/decline/retry/capture, the Tarot bonus, conversations
-and saves. Native engine evidence is recorded in PROJECT.md; the author's
-playthrough of 0t remains pending. Card powers and narrative exit are separate
-future work; the passive attribute bonus is already active.
+The other 0t checks were accepted by the author. PRUEBAS_4_33_0u.txt covers
+the corrected sword view, contextual defense instructions and loading existing
+saves. Focused native engine checks passed; the author's confirmation of these
+corrections remains pending. Card powers and narrative exit are separate future
+work; The Fool and its passive attribute bonus remain implemented.
 
 ## Build and run
 
-Close GZDoom. Extract the 0t patch and copy its **src**, **docs** and
-**README.md** into the full **4.33.0s** project, accepting replacement of matching files.
+Close GZDoom. Extract the 0u patch and copy its **src**, **docs** and
+**README.md** into the full **4.33.0t** project, accepting replacement of matching files.
 Merge folders without deleting their existing contents. Read the supplied
-**PRUEBAS_4_33_0t.txt** for the required checks; keep patch instructions outside
+**PRUEBAS_4_33_0u.txt** for the required checks; keep patch instructions outside
 the active documentation. Patches contain changed source files and that TXT.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0t — 2026-09-11.
+Versión documental: 4.33.0u — 2026-09-12.
 
 ## Tarot: colección y captura de El Loco (4.33.0t)
 
@@ -153,7 +153,23 @@ El cuero producido/recogido en una victoria anterior no se retira.
 Argento usa las mismas etapas del Diario; las instrucciones que lo nombraban
 a él se resuelven a textos propios en primera persona, en español e inglés.
 
-## Prueba de combate de Rulo (4.33.0p)
+## Escudo real y vista de espada (4.33.0u)
+
+Ronnie presta exclusivamente una espada. FindActiveNativeShield exige una
+instancia nativa equipada, fuera de la Caja y coincidente en tipo/tier/talle.
+RepairActiveShieldReference recupera su ItemId si corresponde; sin instancia
+válida limpia el modelo. Se ejecuta antes del Tick de vista y al sincronizar
+inventario/guardar; la migración antigua ocurre antes de reparar referencias.
+HasActiveBlockSource exige además durabilidad y compatibilidad con el arma.
+Los guanteletes gigantes conservan su bloqueo propio.
+
+La vista modular de espada retira siempre las capas 10/20 sin escudo válido,
+aunque el indicador visual guardado ya diga que no hay escudo. Equipar uno
+real restaura esas capas. Las reglas de mano, costes y defensa no cambian.
+HUDHasActiveBlockSource es una lectura para las instrucciones de la UI;
+no concede equipo ni es autoridad de combate.
+
+## Prueba de combate de Rulo (4.33.0p; guía actualizada en 0u)
 
 Autoridad: Inventory viajero y banderas existentes 30–38; se incorporan 59–60
 para Aire gastado/recuperado sin ampliar el arreglo de 64 ni reenumerar banderas.
@@ -164,10 +180,16 @@ La derrota del Toro marca 36; volver a Rulo marca 37/38 y avanza a 75.
 | --- | --- |
 | Principal | Impacto en el blanco con Fire, melee o proyectil. |
 | Secundaria | Impacto AltFire; apuntado en distancia; lanza sin secundario, golpe avanzando. |
-| Defensa | Activar bloqueo compatible/ADS o recorrer 48 MU de costado dentro de la sala. |
+| Defensa | Bloqueo con equipo real compatible/guanteletes, ADS a distancia o 48 MU de desplazamiento lateral dentro de la sala de planta baja. El mandoble usa esquiva; Zoom no bloquea. |
 | Avanzada | Impacto cargado, impacto mágico lanzado en desplazamiento lateral o recarga terminada. |
 | Aire gastado | Descenso real del recurso dentro de la sala. |
 | Aire recuperado | Incremento posterior al gasto. |
+
+Rulo y Detalle eligen la indicación desde el equipo activo: apuntado, bloqueo
+o esquiva. El mandoble recibe una explicación explícita. Mover la cámara sin
+caminar no cuenta; deben usarse los controles de desplazamiento lateral frente
+al blanco. La marca se actualiza al superar el recorrido y persiste al cargar.
+No se añade un botón de esquiva ni una defensa nueva al mandoble.
 
 La magia en movimiento evita exigir un ataque cargado cuyo coste supere el
 Anima máximo de algunos personajes. No se modifican costes, daño ni atributos.

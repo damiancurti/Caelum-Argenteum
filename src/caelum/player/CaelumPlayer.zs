@@ -43,6 +43,7 @@ class CaelumPlayer : DoomPlayer
     int HUDRangedMagazineCapacity;
     int HUDRangedReserveCount;
     bool HUDCombatBlockActive;
+    bool HUDHasActiveBlockSource;
     bool HUDCombatBlockUsesGauntlets;
     int HUDActiveShieldType;
     bool HUDHasEquippedSeal;
@@ -1972,23 +1973,7 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
-        CaelumEquipmentItem shield =
-            FindNativeEquipmentItemById(EquippedShieldItemId);
-        if (shield == null || !shield.Equipped
-            || ShieldModel == null || !shield.Matches(
-                CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                ShieldModel.ShieldType, -1,
-                ShieldModel.Tier, ShieldModel.Size
-            ))
-        {
-            shield = ShieldModel != null && ShieldModel.Equipped
-                ? FindEquippedNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                    ShieldModel.ShieldType, -1,
-                    ShieldModel.Tier, ShieldModel.Size
-                ) : null;
-            EquippedShieldItemId = shield != null ? shield.ItemId : 0;
-        }
+        RepairActiveShieldReference();
 
         CaelumEquipmentItem weapon =
             FindNativeEquipmentItemById(ActiveWeaponItemId);
@@ -4397,7 +4382,8 @@ class CaelumPlayer : DoomPlayer
             ? GetRangedMagazineCapacity(activeType) : 0;
         HUDRangedReserveCount = HUDActiveWeaponIsRanged
             ? GetEquippedRangedReserveCount() : 0;
-        HUDCombatBlockActive = CombatBlockModeActive && HasActiveBlockSource();
+        HUDHasActiveBlockSource = HasActiveBlockSource();
+        HUDCombatBlockActive = CombatBlockModeActive && HUDHasActiveBlockSource;
         HUDCombatBlockUsesGauntlets = HUDCombatBlockActive
             && IsGiantGauntletsBlockSource();
         HUDActiveShieldType = HUDCombatBlockActive
@@ -9251,22 +9237,11 @@ class CaelumPlayer : DoomPlayer
                 }
             }
         }
+        RepairActiveShieldReference();
         if (ShieldModel != null && ShieldModel.Equipped)
         {
             CaelumEquipmentItem shield =
                 FindNativeEquipmentItemById(EquippedShieldItemId);
-            if (shield == null || !shield.Equipped || !shield.Matches(
-                CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                ShieldModel.ShieldType, -1,
-                ShieldModel.Tier, ShieldModel.Size
-            ))
-            {
-                shield = FindEquippedNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                    ShieldModel.ShieldType, -1,
-                    ShieldModel.Tier, ShieldModel.Size
-                );
-            }
             if (shield != null && shield.Equipped)
             {
                 EquippedShieldItemId = shield.ItemId;
@@ -14136,6 +14111,9 @@ class CaelumPlayer : DoomPlayer
     {
         Vector3 prePhysicsVelocity = Vel;
 
+        // Los saves antiguos pueden conservar el modelo sin su objeto. Se
+        // reconcilia antes de actualizar la vista, el peso y el bloqueo.
+        RepairActiveShieldReference();
         Super.Tick();
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
@@ -15971,11 +15949,38 @@ class CaelumPlayer : DoomPlayer
             && WeaponModel.Durability > 0;
     }
 
+    CaelumEquipmentItem FindActiveNativeShield()
+    {
+        if (ShieldModel == null || !ShieldModel.Equipped) { return null; }
+        CaelumEquipmentItem shield = FindNativeEquipmentItemById(EquippedShieldItemId);
+        if (shield == null || !shield.Equipped || shield.InMagicBox
+            || !shield.Matches(CaelumConstants.EQUIPMENT_KIND_SHIELD,
+                ShieldModel.ShieldType, -1, ShieldModel.Tier, ShieldModel.Size))
+        {
+            shield = FindEquippedNativeEquipmentItem(
+                CaelumConstants.EQUIPMENT_KIND_SHIELD, ShieldModel.ShieldType,
+                -1, ShieldModel.Tier, ShieldModel.Size);
+        }
+        return shield;
+    }
+
+    void RepairActiveShieldReference()
+    {
+        CaelumEquipmentItem shield = FindActiveNativeShield();
+        EquippedShieldItemId = shield != null ? shield.ItemId : 0;
+        if (shield == null && ShieldModel != null && ShieldModel.Equipped)
+        {
+            // Nunca crea equipo para justificar un estado obsoleto. La
+            // migración de inventarios antiguos ocurre antes de este paso.
+            ShieldModel.Equipped = false;
+            if (!IsGiantGauntletsBlockSource()) { CancelCombatBlockMode(); }
+        }
+    }
+
     bool HasActiveBlockSource()
     {
         if (IsGiantGauntletsBlockSource()) { return true; }
-        return ShieldModel != null
-            && ShieldModel.Equipped
+        return FindActiveNativeShield() != null
             && ShieldModel.Durability > 0
             && CanUseShieldWithEquippedWeapon();
     }

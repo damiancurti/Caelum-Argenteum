@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0t — 2026-09-11.
+Versión documental: 4.33.0u — 2026-09-12.
+
+## Vista de espada (4.33.0u)
+
+Se conserva todo el arte aprobado. DSHD y LHND son capas independientes de
+escudo/mano izquierda; no forman parte del sprite de la espada DSWD.
+La corrección elimina las capas 10/20 cuando no existe un escudo utilizable
+equipado y las restaura para un objeto real. No se retocan sprites, modelos,
+sonidos, mapa ni fuentes. El prototipo visual de consola sigue separado del
+selector de arma que usa el préstamo de Ronnie.
 
 ## El Loco de las Pampas (4.33.0t)
 

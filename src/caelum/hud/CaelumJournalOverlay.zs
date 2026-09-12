@@ -137,6 +137,18 @@ class CaelumJournalOverlay : EventHandler
 
     // Sólo lee la instantánea del registro. Abrir Detalle no inicia, completa
     // ni concede nada; las indicaciones cambian con el progreso del personaje.
+    static ui String GetRuloDefenseKey(CaelumPlayer user, bool checklist = false)
+    {
+        if (user.HUDActiveWeaponIsRanged)
+            return checklist ? "CA_M01_RULO_CHECK_AIM" : "CA_M01_RULO_DEFENSE_AIM";
+        if (user.HUDHasActiveBlockSource)
+            return checklist ? "CA_M01_RULO_CHECK_BLOCK" : "CA_M01_RULO_DEFENSE_BLOCK";
+        if (!checklist && user.HUDHasActiveWeapon
+            && user.HUDActiveWeaponType == CaelumConstants.WEAPON_TYPE_GREATSWORD)
+            return "CA_M01_RULO_DEFENSE_GREATSWORD";
+        return checklist ? "CA_M01_RULO_CHECK_EVADE" : "CA_M01_RULO_DEFENSE_EVADE";
+    }
+
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
         String text = StringTable.Localize("CA_QUEST_STAGE_LABEL", false) .. ": "
@@ -152,7 +164,7 @@ class CaelumJournalOverlay : EventHandler
             for (int n = 0; n < 6; n++)
             {
                 String key = n == 0 ? "CA_M01_RULO_CHECK_PRIMARY" : n == 1 ? "CA_M01_RULO_CHECK_SECONDARY"
-                    : n == 2 ? "CA_M01_RULO_CHECK_DEFENSE" : n == 3 ? "CA_M01_RULO_CHECK_ADVANCED"
+                    : n == 2 ? GetRuloDefenseKey(localPlayer, true) : n == 3 ? "CA_M01_RULO_CHECK_ADVANCED"
                     : n == 4 ? "CA_M01_RULO_CHECK_AIR" : "CA_M01_RULO_CHECK_RECOVERY";
                 text = text .. "\n" .. StringTable.Localize(localPlayer.JournalMainM00RuloPracticeDone[n]
                     ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false) .. ": " .. StringTable.Localize(key, false);
@@ -206,6 +218,7 @@ class CaelumJournalOverlay : EventHandler
         text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
             .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
                 ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);
+        text.Replace("%DEFENSE%", StringTable.Localize(GetRuloDefenseKey(localPlayer), false));
         return text;
     }
 

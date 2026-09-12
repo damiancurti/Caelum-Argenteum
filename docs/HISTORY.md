@@ -1,6 +1,23 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0t — 2026-09-11.
+Versión documental: 4.33.0u — 2026-09-12.
+
+## Escudo real y guía de Rulo — 4.33.0u, 2026-09-12
+
+El autor aprobó las otras pruebas de 0t y reportó escudo visible con la espada
+prestada sin escudo en inventario, y dudas sobre Zoom usando mandoble.
+Se reprodujo el primer síntoma con un modelo de escudo obsoleto sin instancia.
+La comprobación usa ahora inventario nativo, repara referencias al cargar y
+limpia capas izquierdas residuales. Un escudo real y los guanteletes conservan
+su bloqueo; la espada prestada conserva su identidad.
+
+El mandoble ya admitía esquiva lateral en la sala del blanco. La guía de Rulo
+y Detalle pasa a depender del equipo actual, con explicación expresa para
+mandoble en español e inglés. No cambia la detección ni se exige repetir
+marcas ya obtenidas. Evidencia de motor y carga 0t -> 0u en PROJECT.md.
+
+Se mantienen README inglés y cinco docs actualizados. Entrega por copia:
+archivos modificados y un TXT de pruebas. Fase 90 y roadmap de salida vigentes.
 
 ## El Loco y colección de Tarot — 4.33.0t, 2026-09-11
 

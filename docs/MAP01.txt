@@ -1,9 +1,19 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0t — 2026-09-11.
+Versión documental: 4.33.0u — 2026-09-12.
 
 
-REVISIÓN VIGENTE 4.33.0t — EL LOCO, FASE 90
-Base: 0s. Todas sus pruebas fueron aprobadas por el autor.
+REVISIÓN VIGENTE 4.33.0u — ESCUDO REAL Y GUÍA DE DEFENSA
+Base: 0t. El autor aprobó las demás pruebas; se corrigen sus observaciones
+sobre el escudo fantasma de la espada prestada y la guía de Rulo con mandoble.
+Ronnie no presta un escudo. La vista y defensa exigen uno real equipado;
+un estado obsoleto se repara al cargar conservando inventario y progreso.
+
+Con mandoble, ir al blanco de la primera habitación norte de planta baja,
+debajo del cuarto de Rulo, y caminar de costado sin dejar de mirar al blanco.
+Al completar 48 MU se marca defensa. No requiere Zoom. Rulo, el repaso y
+Detalle (F) muestran esta alternativa según el arma actual.
+
+BASE 4.33.0t — EL LOCO, FASE 90
 La Caja de Palomo habilita una aparición en el centro de la cueva, delante de
 las vetas del fondo, en (1420,1050,-370), 14 MU sobre el suelo. El pasaje de
 Caella y el ascensor conservan su recorrido. Usar revela El Loco de las Pampas;
@@ -420,8 +430,9 @@ HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
 Especificación v1.0 consolidada en 4.33.0g — 2026-09-10
 
 Autor del proyecto: Damián Curti
-Estado: diseño narrativo y técnico; implementación aceptada hasta 0s, fase 80.
-0t implementa la fase 90 y queda pendiente de validación del autor.
+Estado: diseño narrativo y técnico; fase 90 implementada en 0t. El autor aprobó
+las demás pruebas. Sus observaciones de escudo y guía de defensa se corrigen
+en 0u y son las comprobaciones pendientes actuales.
 Las listas del diseño describen el destino completo. El alcance de ejecución
 y las correcciones posteriores se detallan al comienzo de este archivo.
 
@@ -2030,13 +2041,15 @@ Antes de liberar al Toro, utilizar blancos de práctica para registrar:
 
 - Fire: ataque primario.
 - AltFire: función secundaria del arma.
-- Zoom o defensa equivalente.
+- Defensa según equipo: bloqueo con Zoom, apuntado a distancia o esquiva
+  lateral en la sala. El mandoble requiere caminar de costado, no Zoom.
 - Ataque cargado o maniobra avanzada equivalente.
 - Consumo y recuperación de Aire.
 
 La validación debe reconocer familias distintas. No exigir bloqueo con escudo a
-una combinación que no pueda equiparlo; utilizar la defensa equivalente o
-proporcionar equipo temporal compatible.
+una combinación que no pueda equiparlo. La solución vigente es la defensa
+equivalente: 48 MU de movimiento lateral para mandoble y equipo sin bloqueo.
+No se presta un escudo para resolver esta práctica.
 
 21.4. ACTOR DEL TORO
 

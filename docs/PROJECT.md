@@ -1,13 +1,28 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0t — 2026-09-11.
+Versión documental: 4.33.0u — 2026-09-12.
 
-## Estado actual: 4.33.0t
+## Estado actual: 4.33.0u
 
-**Base:** carpeta completa 0s. El autor confirmó correctas todas sus pruebas.
-Los archivos separados recibidos coinciden entre sí y pasan el validador.
-Se implementa El Loco en la cueva: manifestación, revelación con Usar, elección
-explícita de capturar, animación y recompensa única, de fase 80 a 90.
+**Base:** carpeta completa 0t. El autor aprobó las demás pruebas y señaló dos
+observaciones: escudo visible sin equipar uno y falta de claridad para hacer
+la defensa de Rulo con mandoble. Ambas se atienden en esta corrección.
+
+El estado de escudo se contrasta con el objeto equipado del inventario nativo.
+Un estado obsoleto sin objeto, desequipado o almacenado deja de aportar peso,
+bloqueo y vista de escudo. La espada elimina además las capas izquierdas
+residuales aunque el indicador visual anterior ya fuera falso. No se conceden
+escudos ni se retiran piezas reales. El préstamo conserva su ItemId.
+
+Rulo y Misiones > Detalle (F) explican la defensa según el equipo actual.
+Mandoble: desplazamiento lateral frente al blanco de la planta baja; no requiere
+Zoom. La detección existente de 48 MU y las seis prácticas se conservan.
+Bloqueo compatible/guanteletes y apuntado a distancia siguen siendo válidos.
+La carga desde 0t repara el estado sin reiniciar misión ni inventario.
+
+**Base 0t aceptada, salvo estas observaciones:** El Loco en la cueva,
+manifestación, revelación con Usar, captura explícita y recompensa única,
+de fase 80 a 90, con colección y bonificación fraccionaria.
 
 Tras recibir la Caja de Palomo, la aparición queda en el centro de la cueva,
 delante de las vetas del fondo. Se llega atravesando la pared del pasaje de
@@ -28,7 +43,7 @@ Detalle y la orientación de Argento muestran el estado actual. Palomo conserva
 su tono y ofrece hablar sobre la captura arriba; los cuatro residentes tienen
 reacciones propias. No adelantan la verdad del Limbo ni exigen otra prueba.
 
-**Límite de 0t:** fase 90, carta obtenida y reacciones disponibles. Sigue pendiente
+**Límite vigente de 0u:** fase 90, carta obtenida y reacciones disponibles. Sigue pendiente
 la salida narrativa, transferencia automática del arma elegida, limpieza final,
 regreso al cuerpo y misión completada. MAP02 sigue siendo el campo diagnóstico;
 no se presenta como alcantarillas terminadas. User3 no incorpora poderes activos
@@ -126,10 +141,11 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
 | 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Todas las pruebas de 0r aprobadas por el autor. |
 | 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única. Todas las pruebas aprobadas por el autor. |
-| 4 | 4.33.0t: El Loco en la cueva, fase 90 | Manifestación, revelación, captura interrumpible/reintentable, carta única, colección y +2% fraccionario implementados. Pendiente aceptación del autor. |
-| 5 | **Siguiente bloque: salida y regreso al cuerpo, fase 100** | Confirmación, transferir el arma inicial por ItemId a la Caja, limpiar temporales, completar misión y transición narrativa. Definir destino de alcantarillas y valores iniciales pendientes antes de conectar el retorno. La limpieza técnica existente no implementa por sí sola la salida. |
-| 6 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
-| 7 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
+| 4 | 4.33.0t: El Loco en la cueva, fase 90 | Captura, colección y +2% fraccionario implementados; resto de pruebas aprobado por el autor. Sus dos observaciones se corrigen en 0u. |
+| 5 | 4.33.0u: escudo real y guía de Rulo | Corrección y pruebas de motor terminadas. Pendiente confirmación del autor sobre espada, mandoble y guardado. |
+| 6 | **Siguiente bloque: salida y regreso al cuerpo, fase 100** | Confirmación, transferir el arma inicial por ItemId a la Caja, limpiar temporales, completar misión y transición narrativa. Definir destino de alcantarillas y valores iniciales pendientes antes de conectar el retorno. La limpieza técnica existente no implementa por sí sola la salida. |
+| 7 | Auditoría final del tutorial | Recorrido completo, balance acompañado, cobertura T1 con botín realista y guardados. Ampliaciones de Ronnie: reparación, alimento/agua y paso de agua; cartuchos/virotes. No bloquear retroactivamente las ramas aceptadas. |
+| 8 | Alcantarillas de MAP02 | Construir el mapa narrativo; el MAP02 actual continúa como campo de diagnóstico de actores. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -239,16 +255,44 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md del parche sobre la carpeta
-completa 0s y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0t y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0t.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0u.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0t
+## Validación de 4.33.0u
+
+- GZDoom 4.14.2 nativo, Linux, Freedoom 0.13: 42 comprobaciones de equipo,
+  cero fallos. Préstamo sin escudo; reparación de modelo obsoleto; escudo real,
+  bloqueo, desequipado, referencia perdida, mandoble, regreso a espada,
+  almacenamiento, rotura, reparación, retirada y capas residuales; guanteletes
+  gigantes conservan su defensa propia. Se mantienen las identidades reales.
+- Esquiva y UI: 13 comprobaciones en español y 13 en inglés, cero fallos.
+  Entrada nativa de movimiento lateral, Zoom y giro. Moverse en otra sala
+  o piso y girar la cámara no conceden la marca. Caminar de costado 48 MU
+  en la sala sí la concede y actualiza el Diario. Usar abre al Rulo original;
+  inicio, repaso y equivalencias muestran la indicación del mandoble.
+- Un save creado realmente con fuente 0t y estado de escudo obsoleto se carga
+  con 0u sobre la misma ruta: 9 comprobaciones, cero fallos. Desaparecen capas
+  y bloqueo fantasma; conserva préstamo, Owner, ItemId y etapa de la misión.
+  El registro viajero almacena el estado reparado sin crear otro objeto.
+- Reproducción acotada: en partida limpia 0t el préstamo no daba un escudo.
+  El síntoma se reprodujo preparando el estado incoherente en el motor; no
+  se recibió el guardado concreto del autor. La corrección cubre también capas
+  residuales sin estado lógico activo.
+- Revisión visual del Diario y compilación sin errores del código entregado.
+  Versión y cinco documentos sincronizados, traducciones de ambos idiomas,
+  recursos existentes y CRC del ZIP comprobados. MAP01.wad no cambia.
+
+Son escenarios enfocados que preparan inventario y etapas; no se repite todo
+el tutorial ya aceptado. Quedan sólo las comprobaciones del autor enumeradas
+en PRUEBAS_4_33_0u.txt. La siguiente ampliación sigue siendo la salida narrativa.
+
+## Validación de 4.33.0t — resto aprobado por el autor
 
 - GZDoom 4.14.2, ejecución nativa en Linux con Freedoom 0.13 como IWAD de
   prueba: 65 comprobaciones del flujo y las conversaciones, cero fallos.
@@ -279,9 +323,9 @@ pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos
 
 Los escenarios preparan etapas y condiciones ya aprobadas, y sitúan a Palomo
 en su destino para comprobar la conversación. No reemplazan una partida
-completa ni la escucha en Windows del autor. Su aceptación de 0t queda
-pendiente en PRUEBAS_4_33_0t.txt. La salida y poderes activos no se prueban
-como funciones implementadas.
+completa ni la escucha en Windows del autor. El autor aprobó las demás pruebas
+de 0t; el escudo fantasma y la guía de defensa se atienden en 0u. La salida y
+poderes activos no se prueban como funciones implementadas.
 
 ## Validación de 4.33.0s — aprobada por el autor
 
@@ -400,8 +444,9 @@ en 0q. El epílogo sigue pendiente. No se declara MAP01 terminado.
   controlador de MAP01. README y los cinco documentos quedan en versión 0o.
   ZIP cotejado contra 0n: siete archivos modificados y un TXT de pruebas.
 
-Prueba del autor pendiente sólo para esta corrección: comprobar que el manual
-exterior desaparezca y que se conserven las recetas aprendidas.
+Comprobación solicitada en 0o: desaparición del manual exterior y conservación
+de recetas. El autor continuó con Rulo y aprobó después las demás pruebas de
+la base; las observaciones pendientes actuales son las de 0u.
 
 ## Validación de 4.33.0n — aceptada el 2026-09-11
 

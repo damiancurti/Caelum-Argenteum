@@ -812,6 +812,13 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
         bool hasShield = caelumPlayer.HasActiveBlockSource();
         bool isBlocking = hasShield && caelumPlayer.CombatBlockModeActive;
 
+        // Un save puede conservar capas aunque el indicador visual ya sea
+        // falso. Sin escudo real se retiran siempre las dos capas izquierdas.
+        if (!hasShield)
+        {
+            A_ClearOverlays(10, 10);
+            A_ClearOverlays(20, 20);
+        }
         if (hasShield != invoker.CaelumSwordViewShieldVisible)
         {
             invoker.CaelumSwordViewShieldVisible = hasShield;
