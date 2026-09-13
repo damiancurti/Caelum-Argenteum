@@ -1,6 +1,48 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0an — 2026-09-13.
+Versión documental: 4.33.0ao — 2026-09-13.
+
+## Contrato de integración y consulta (4.33.0ao)
++
++El observador estático CaelumConversationResume recibe la carga de guardados,
++incluidos los anteriores a 0ao. WorldLoaded marca únicamente IsSaveGame y el
++primer WorldTick consume esa marca. Para un personaje vivo/creado, fuera de
++predicción, reabre sólo el interlocutor nativo activo cuyo ConversationPC es
++ese mismo jugador. StartConversation conserva el árbol disponible y utiliza
++ConversationFaceTalker con saveAngle=false. No ejecuta Used ni respuestas.
++Una referencia inactiva sigue inactiva; la entrada normal de mapa no se reabre.
++El observador no serializa referencias ni progreso y no sustituye los cierres
++de conversación nativos. La necesidad se reproduce con el autoguardado de la
++Voz de MAP02: el actor sigue activo al cargar aunque su menú haya desaparecido.
++
++
+netevent ca_debug_integration_report usa NetworkProcess del Diario y consulta
+al jugador de ese evento. CaelumIntegrationDiagnostics lee el Inventory
+persistente con create=false y recorre sólo las dos misiones de diagnóstico
+definidas. No usa setters, Sync, Ensure, Persist ni acciones de recompensa;
+no crea campos guardados. El observador de reanudación anterior es independiente de esta consulta. Las clases de servicio
+siguen validando sus peticiones por sus rutas autoritativas existentes.
+
+La consulta muestra estados, objetivos, entrega y posesión de constancia
+por separado: perder una constancia después de recibirla no borra la entrega.
+Una misión activa con objetivo completo sigue requiriendo confirmación para
+terminar/cobrar. Muestra requisitos de facción y su resultado actual sin cerrar
+sesiones ni recomponer una cotización. Un resultado transitorio del diagnóstico
+no sustituye la validación en la operación comercial o de puerta.
+
+La salida narrativa conserva sus reglas: confirmación explícita, Caja propia,
+El Loco y primera arma identificada; tarea de fabricación debe estar resuelta.
+El fundido cierra comercio y actividades; la limpieza retira equipo/objetos
+físicos temporales, incluidas monedas y productos comprados en la prueba.
+CaelumQuestRouteReceipt, CaelumQuestWaitReceipt y CaelumReputationTrialState
+son marcadores Inventory independientes de esas clases físicas y sobreviven,
+junto al registro de misiones/facciones. La primera arma queda en la Caja.
+La pertenencia/reputación no se deriva del equipo que se retira.
+
+Espera usa tics activos de juego y su progreso guardado, sin entregar constancia
+hasta confirmar. La llegada narrativa tiene prioridad sobre abrir la prueba
+de reputación; después su guía se reconstruye para el dueño en MAP02. No se
+cambia la política de fracaso de Recorrido ni se crean misiones automáticamente.
 
 ## Condiciones de reputación y servicios (4.33.0an)
 

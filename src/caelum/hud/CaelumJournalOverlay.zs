@@ -2435,6 +2435,10 @@ class CaelumJournalOverlay : EventHandler
         {
             CaelumMainM00FoolCapture.Report(requestingPlayer);
         }
+        else if (e.Name == "ca_debug_integration_report")
+        {
+            CaelumIntegrationDiagnostics.Report(requestingPlayer);
+        }
         else if (e.Name == "ca_social_refresh")
         {
             requestingPlayer.RefreshSocialJournalSnapshot();

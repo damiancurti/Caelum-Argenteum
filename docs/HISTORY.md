@@ -1,6 +1,32 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0an — 2026-09-13.
+Versión documental: 4.33.0ao — 2026-09-13.
+
+## Integración de 4.33 y roadmap restante — 4.33.0ao
+
+El autor confirma todas las pruebas de 0an y autoriza el siguiente parche,
+pidiendo conocer antes el roadmap completo de V4. Se detalla la secuencia hasta
+4.37, trabajos heredados, alcance transversal sin versión asignada y las reservas
+expresas de V5. Se corrige el resumen antiguo que seguía marcando MAP01 como
+pendiente y las instrucciones de aplicación antiguas de 0ae.
+
+La última recarga identifica un autoguardado de llegada con interlocutor
++nativo activo y sin menú. Se añade un observador estático de carga que vuelve
++a abrir el diálogo mediante StartConversation, conservando dueño y orientación,
++sin respuestas automáticas. Referencias inactivas y entradas normales de mapa
++mantienen su comportamiento. El autoguardado anterior al arreglo se recupera.
++
++0ao incorpora una consulta de consola de la integración: misiones, objetivos,
+recompensas, reputación/pertenencia, Caja, primera arma, Tarot, condiciones de
+comercio y salida/llegada. Sólo lee registros existentes y no activa pruebas.
+Se verifica un guardado creado con 0an con comercio y encargos simultáneos,
+seguido por la captura y la salida narrativa real a MAP02. Evidencia y límites
+en PROJECT.md. El informe de El Loco conserva su función y actualiza cabecera.
+
+Se mantienen las reglas y datos serializados de 0an, controles, atributos,
+historia, mapas y assets. README y cinco documentos canónicos se actualizan;
+PRUEBAS_4_33_0ao.txt contiene aplicación y comprobación conjunta. Pendiente de
+aceptación de este cierre antes de iniciar 4.34.
 
 ## Condiciones reutilizables de reputación — 4.33.0an
 
@@ -25,7 +51,7 @@ serialización de condiciones nuevas y viaje a MAP02; detalle y límites en
 PROJECT.md. El cierre del comercio de prueba se indica con Q/B, respetando
 Esc como pausa del motor. Se conservan controles de extremos, captura, sellos,
 misiones, atributos, mapas y recursos. Entrega delta sobre 0am, README, cinco
-documentos canónicos y PRUEBAS_4_33_0an.txt. Aceptación de 0an pendiente.
+documentos canónicos y PRUEBAS_4_33_0an.txt. El autor aprueba después todas las pruebas de 0an.
 
 ## Referencia inactiva de conversación y extremos del Diario — 4.33.0am
 

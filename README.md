@@ -5,20 +5,33 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0an.** Apply over the complete **4.33.0am** project.
-The author approved the capture, Seal and Journal corrections and the optional
-quest chain, including rewards, abandonment prerequisites and map-change failure.
-0an connects reputation and independent membership to reusable dialogue, door
-and trade requirements. Existing attribute rules remain accepted.
+**Current release: 4.33.0ao.** Apply over the complete **4.33.0an** project.
+The author approved every 0an test. 0ao restores active native conversations
+when loading a save, including the arrival autosave that could lose its menu.
+It also checks the combined narrative return and adds an explicit console report. The accepted gameplay rules and controls remain the baseline.
 
-To try the new block, save first, then enter `give CaelumDebugReputationTrial`
-in the console. After activation, **Journal > Reputation > F/Y** reopens it.
-The test menu offers information, a physical door, trade and five selectable
-standings. Presets change the saved Gendarmeria standing; trading uses real
-items and coins. The trial does not give the Box or money. See
-**PRUEBAS_4_33_0an.txt** for the complete Spanish test sequence.
+Console `netevent ca_debug_integration_report` reports the requesting player's
+quest endings, objective progress, reward claims, factions, Box, Tarot,
+merchant conditions and return state. It only reads existing data; it does not
+enable trials, grant items or repair saves. Spanish application and focused
+checks are in **PRUEBAS_4_33_0ao.txt**. The complete roadmap remains in PROJECT.md.
 
 ## Implemented
++
++- Loading a save with an active native conversation reconstructs its menu for
++  the same speaker/player, using StartConversation. An inactive reference is
++  left inactive. The restore does not select a reply or grant a reward, and
++  normal map changes do not trigger it. Existing saves are supported.
++
++
+- A combined native 0an save exercises completed and active side quests,
+  faction standing, membership and a real discounted purchase before capture
+  and the existing narrative return to MAP02. Detailed evidence and limits are
+  recorded in PROJECT.md; this does not declare the full campaign complete.
+- The integration console report presents existing records together and
+  distinguishes a recorded reward claim from possession of its receipt.
+  It reports current service conditions without changing the live session.
+
 
 - Optional serializable faction conditions declare a stable faction id, an
   inclusive reputation minimum and an independent membership requirement.
@@ -370,8 +383,9 @@ items and coins. The trial does not give the Box or money. See
 
 ## Planned
 
-After author acceptance of 0an, close the V4.33 integration checks for quests,
-reputation, saves and travel before starting the V4.34 world/travel foundations.
+After author acceptance of the 0ao integration closeout, begin the V4.34
+world/location/connection/travel foundations. New campaign maps remain deferred
+while systems are the priority.
 Narrative faction assignments, rank thresholds and cross-faction relations
 still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
@@ -393,17 +407,16 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0am and its optional quest tests are author-approved. 0an passes native
-GZDoom 4.14.2 checks for conditions, transactions, controls, old saves, new
-condition serialization and MAP02 travel; scenarios and limits are recorded
-in PROJECT.md. The author's Windows playtest of 0an remains pending.
-Maps, art, audio, approved attributes and campaign progression are unchanged.
+All 0an tests are author-approved. 0ao's native GZDoom 4.14.2 integration
+checks and their limits are recorded in PROJECT.md. The focused author check
+on Windows remains pending. The numbered V4 sequence continues through 4.37;
+unassigned cross-system content is tracked separately from those milestones.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0an
-patch into the complete **4.33.0am** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0an.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ao
+patch into the complete **4.33.0an** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ao.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

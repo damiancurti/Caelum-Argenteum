@@ -1,7 +1,28 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0an — 2026-09-13.
+Versión documental: 4.33.0ao — 2026-09-13.
 
-ACTUAL 4.33.0an — CONDICIONES DE REPUTACIÓN
+ACTUAL 4.33.0ao — CIERRE DE INTEGRACIÓN
+El autor aprueba todas las pruebas de 0an. Se comprueba un guardado combinado
+con reputación, comercio, Recorrido terminado y Espera activa hasta la captura,
+puerta de salida, limpieza del Limbo y Voz de llegada a MAP02. Se conservan
+las reglas narrativas aprobadas: Caja, primera arma y Tarot; las constancias
+de prueba y los registros sociales no se confunden con equipo temporal.
+
+La recarga del autoguardado de llegada puede conservar la Voz activa sin
++su menú. 0ao reconstruye esa conversación con StartConversation para continuar;
++no confirma respuestas, concede cartas ni vuelve a ejecutar el regreso.
++netevent ca_debug_integration_report consulta esos registros sin modificarlos.
+Aplicación y comprobación enfocada: PRUEBAS_4_33_0ao.txt. La geografía, diálogos,
+actores, recursos y música permanecen iguales a 0an. No se construye contenido
+nuevo de alcantarillas. El siguiente bloque de sistemas es 4.34: ubicaciones,
+conexiones y viajes, tras aceptar la integración.
+
+El roadmap numerado V4 continúa por 4.35 calendario/clima/eventos, 4.36 entorno
+y peligros físicos y 4.37 Tarot/Trucazo. El objetivo de campaña de 78 cartas
+y al menos 78 mapas se conserva como alcance general, sin asignar su finalización
+a este cierre. El detalle completo y las dependencias están en PROJECT.md.
+
+BASE ACEPTADA 4.33.0an — CONDICIONES DE REPUTACIÓN
 El autor acepta 0am y valida los encargos opcionales: recompensas, bloqueo de
 Espera tras abandonar Recorrido y fallo de Recorrido al salir sin su objetivo.
 Se conservan captura, salida, controles e infraestructura aceptados.

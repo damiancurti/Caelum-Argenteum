@@ -1,8 +1,84 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0an — 2026-09-13.
+Versión documental: 4.33.0ao — 2026-09-13.
 
-## Estado actual: 4.33.0an — condiciones de reputación
+## Estado actual: 4.33.0ao — cierre de integración
+
+El autor confirma que todas las pruebas de 0an dieron correcto y autoriza el
+siguiente parche, solicitando primero el roadmap completo de V4. Quedan
+aceptados requisitos de reputación/pertenencia, diálogo, acceso, comercio,
+guardado y controles de la prueba. 0ao verifica su convivencia con misiones,
+captura y salida narrativa, conservando las reglas aprobadas.
+
+Se añade `netevent ca_debug_integration_report`: consulta de los registros
+existentes del jugador que la solicita. Muestra MAIN_M00, objetivos y finales
+de los dos encargos, entrega registrada y constancia presente por separado,
+las cuatro reputaciones/pertenencias, Caja, primera arma, Tarot, condiciones
+comerciales, pruebas habilitadas y estado de salida/llegada. No crea ni repara
+registros, concede recompensas, cambia reputación ni activa demostraciones.
+El informe detallado de El Loco sigue disponible, con cabecera 4.33.0ao.
+
+### Conversación activa al cargar
++
++La recarga del autoguardado de llegada reproduce una diferencia concreta:
++ConversationNPC y bInConversation siguen activos, pero no existe menú USDF.
++La Voz queda marcada como iniciada y la prueba de reputación espera ese diálogo
++invisible. Con la función nativa StartConversation se vuelve a mostrar el diálogo
++del mismo interlocutor sin elegir respuestas ni ejecutar recompensas.
++
++CaelumConversationResume es un StaticEventHandler registrado en MAPINFO.
++Recibe WorldLoaded con IsSaveGame y difiere la reapertura al primer WorldTick.
++Comprueba personaje vivo/creado, interlocutor activo con conversación y
++ConversationPC igual al jugador. Usa la orientación guardada y saveAngle=false;
++no llama a Used, reasigna un árbol, borra referencias ni modifica registros.
++No se ejecuta en una entrada normal de mapa ni sobre referencias inactivas.
++Su marcador es estático y no añade datos al guardado. Se corrige también la
++recarga del autoguardado creado antes de este arreglo.
++
++### Comprobación conjunta y límites
+
+Se crea un guardado nativo con las fuentes originales 0an: Caja recibida en
+el diálogo de Palomo, una compra real de cinco maderas por 14 cobres, comercio
+con condición/rebaja activos, reputaciones y pertenencias distintas, Recorrido
+terminado con constancia y Espera activa con tiempo transcurrido. Al cargarlo
+con 0ao se comprueba conservación y ausencia de repetición de la transacción.
+Se cierra el comercio con Q y se recorre con teclado nativo la revelación,
+cancelación y captura explícita de El Loco, su animación y bonificación única.
+
+La salida se confirma por la puerta y el diálogo existentes. El fundido y
+la limpieza del Limbo preceden al viaje: se conservan Caja, primera arma en
+ella, carta, registros sociales y constancias; se retiran los objetos físicos
+de prueba sujetos a esa limpieza, incluidos monedas y madera comprada. El
+comercio se cierra y su rebaja temporal no se convierte en una rebaja negociada.
+La prueba de reputación no puede interrumpir la Voz de llegada; después se
+reabre en MAP02. Espera conserva su estado hasta completar/cobrar, y los
+finales/recompensas permanecen únicos. Retirar la prueba conserva los registros.
+
+Se recarga también el guardado final de MAP02: ambos encargos y constancias,
+reputaciones, Caja/arma/carta, existencias comerciales y retirada de la prueba
+se conservan. No vuelve a abrirse el diálogo ya cerrado. La consulta de
+integración deja intactos inventario, salud, reloj y registros examinados.
+
+Pasan 39 comprobaciones de integración: 17 nuevas al continuar el guardado
+0an en MAP01, 16 de llegada/encargos y seis de recarga final. Los cuatro
+controles de preparación guardados con 0an no se suman otra vez. Las seis
+comprobaciones repetidas al reabrir diferentes páginas tampoco se duplican;
+se verifica por el menú nativo la recuperación de ambas páginas guardadas.
+
+Las escenas privadas parten después de las pruebas de residentes y preparan
+el objetivo de Recorrido y el registro de primera arma para ensayar contratos.
+No repiten toda la campaña ni su fabricación. El motor, IWAD, entradas SDL y
+guardados de QA quedan fuera del parche. Entorno: GZDoom 4.14.2, Freedoom y
+llvmpipe en Linux; la comprobación del autor en Windows de 0ao queda pendiente.
+La evidencia de bloques anteriores ya aprobados se conserva y no se vuelve a
+contar como pruebas nuevas. El cierre de 4.33 requiere aceptar esta integración.
+
+Entrega delta sobre 0an con README, cinco documentos canónicos y
+PRUEBAS_4_33_0ao.txt. Mapas, assets, fórmulas de atributos, estados serializados,
+condiciones de reputación y lógica de misiones se conservan. El próximo bloque
+previsto tras aceptar este cierre es 4.34: ubicaciones, conexiones y viajes.
+
+## Base aceptada: 4.33.0an — condiciones de reputación
 
 El autor confirma que 0am funciona y valida los dos encargos opcionales:
 completarlos entrega las constancias, abandonar Recorrido impide aceptar
@@ -70,13 +146,13 @@ bloquea la transacción sin gasto; el viaje nativo a MAP02 conserva los registro
 y permite reconstruir la presentación de la prueba allí.
 
 Entorno: GZDoom 4.14.2, Freedoom y llvmpipe en Linux; escenarios controlados,
-no una repetición completa de campaña ni un guardado del autor. La aceptación
-de 0an en Windows queda pendiente. Auxiliares, partidas y motor de QA quedan
+no una repetición completa de campaña ni un guardado del autor. El autor
+confirma posteriormente que todas las pruebas de 0an dieron correcto. Auxiliares, partidas y motor de QA quedan
 fuera del delta. Aplicación e instrucciones en PRUEBAS_4_33_0an.txt.
 
 Entrega sobre el proyecto completo 0am con README y cinco documentos canónicos.
-Tras su aceptación, el bloque inmediato es la integración final de 4.33 antes
-de iniciar las bases de ubicaciones/conexiones/viajes de 4.34.
+Su aceptación habilita la integración final 0ao antes de iniciar las bases
+de ubicaciones/conexiones/viajes de 4.34.
 
 ## Base aceptada: 4.33.0am — conversación inactiva y extremos del Diario
 
@@ -681,8 +757,8 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 8b | Auditoría de atributos 0ai — pospuesta por el autor | Mantener los atributos actuales. Para una revisión futura, precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no bloquean 0aj ni el paso a V4.34. |
 | 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Aprobado por el autor: entrega de recompensas, bloqueo tras abandono y fallo al salir antes del objetivo. |
 | 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Aprobado por el autor en 0am. |
-| 8d.1 | 4.33.0an: reputación y condiciones | Implementadas condiciones reutilizables de diálogo, acceso y comercio, con prueba opcional accesible desde Reputación. Guardados y viaje verificados técnicamente; pendiente de aceptación del autor. Relaciones, rangos y asignaciones narrativas siguen sin inventarse. |
-| 8e | Cierre de 4.33 e inicio de 4.34 | Integrar misiones/reputación, guardado y viajes; correctivos según pruebas. Tras aceptar la base, comenzar ubicaciones/conexiones/viajes. Balas y potabilización permanecen como ampliaciones pendientes de definición, sin bloquear este avance. |
+| 8d.1 | 4.33.0an: reputación y condiciones | Implementadas condiciones reutilizables de diálogo, acceso y comercio, con prueba opcional accesible desde Reputación. Todas las pruebas aprobadas por el autor. Relaciones, rangos y asignaciones narrativas siguen sin inventarse. |
+| 8e | 4.33.0ao: cierre de integración | Guardado combinado 0an, captura y salida narrativa hacia MAP02 comprobados; reanudación de conversación activa al cargar, informe explícito y roadmap actualizado. Pendiente de aceptación del autor. Después comienza 4.34 con ubicaciones/conexiones/viajes. Balas y potabilización quedan pendientes de definición. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
@@ -695,6 +771,13 @@ Esta es la secuencia ya planificada, reconciliada con lo implementado. Los
 registros originales siguen completos en HISTORY.md. “Base implementada”
 no significa que todo el contenido de ese sistema esté terminado.
 
+La secuencia numerada de V4 termina en 4.37. No hay bloques 4.38 y posteriores
+aprobados en este roadmap. El cierre de integración 0ao sólo cierra 4.33;
+después quedan 4.34, 4.35, 4.36 y 4.37. Los compromisos transversales sin número
+son trabajo del proyecto aún por ubicar; no se consideran automáticamente
+requisitos de terminar V4 ni se trasladan a V5 sin una decisión de planificación.
+Los bloques expresamente reservados para V5 se indican en la misma tabla.
+
 | Hito | Estado y trabajo pendiente |
 | --- | --- |
 | V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS/barrido y User1–4. Completar/registrar la matriz pendiente por familia cuando corresponda; conservar lo aceptado. |
@@ -702,7 +785,7 @@ no significa que todo el contenido de ese sistema esté terminado.
 | V4.29–V4.31: crafting y ciclo de equipo | Base de recetas, reservas, lotes, eficiencias independientes, reparación y desarme aceptada. Quedan distribución narrativa de conocimiento, recompensas/hojas/tiendas/descubrimientos y bonos de eficiencia todavía sin valores autorizados. |
 | V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Falta comerciante canónico posterior y contenido de tiendas. Extender la vista modular de espada/manos/escudo 0o a las demás armas con arte propio. |
-| V4.33: misiones, reputación y facciones | Registro por personaje aceptado; terminar MAP01, desarrollar misiones secundarias/cadenas y consecuencias jugables de pertenencia/reputación. Los cuatro dominios técnicos actuales no equivalen a las ocho facciones narrativas completas. |
+| V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas quedan como contenido pendiente; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | Reutilizar módulos de habitación/escalera ya validados; puertas cerradas/con llave y pisos adicionales. Definir ubicaciones, conexiones, caravanas y puntos de integración de viajes/eventos. No confundir arquitectura de mapas con refactor de código. |
 | V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
@@ -714,7 +797,9 @@ no significa que todo el contenido de ese sistema esté terminado.
 ### Todo el alcance transversal pendiente
 
 Estos compromisos no desaparecen por carecer de un número de parche. Su
-implementación se ubica cuando estén disponibles sus dependencias.
+implementación se ubica cuando estén disponibles sus dependencias. No tienen
+todos una versión asignada; la tabla conserva el alcance completo sin prometer
+que campaña, multijugador o asedios se terminen antes de V5.
 
 | Área | Alcance planificado y límites actuales |
 | --- | --- |
@@ -793,9 +878,9 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
-completa 0ad y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0an y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ae.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ao.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD

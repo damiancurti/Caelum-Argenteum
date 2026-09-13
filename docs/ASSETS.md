@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0an — 2026-09-13.
+Versión documental: 4.33.0ao — 2026-09-13.
+
+0ao conserva byte a byte todos los mapas, modelos, gráficos, fuentes, música,
+audio y LANGUAGE de 0an. El diagnóstico nuevo sólo escribe en consola a petición;
+no incorpora imágenes, voces ni elementos permanentes del HUD. La reapertura
+de conversaciones guardadas reutiliza el menú y su sonido nativos existentes. La comprobación
+de integración usa las conversaciones y la salida ya aceptadas. No se regeneran
+assets ni se redistribuyen el motor o el IWAD empleados en QA.
 
 0an conserva byte a byte mapas, modelos, gráficos, fuentes, música y audio
 de 0am. La prueba de reputación reutiliza la hoja de puerta deslizante y los
