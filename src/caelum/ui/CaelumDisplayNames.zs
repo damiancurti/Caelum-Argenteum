@@ -63,6 +63,12 @@ class CaelumDisplayNames : Object
 
     static ui String GetConsumableKey(int consumableType)
     {
+        if (consumableType == 5) return "CA_WATER_BOTTLE_SMALL";
+        if (consumableType == 6) return "CA_WATER_BOTTLE_NORMAL";
+        if (consumableType == 7) return "CA_WATER_BOTTLE_LARGE";
+        if (consumableType == 8) return "CA_WATER_CANTEEN_SMALL";
+        if (consumableType == 9) return "CA_WATER_CANTEEN_NORMAL";
+        if (consumableType == 10) return "CA_WATER_CANTEEN_LARGE";
         switch (consumableType)
         {
             case CaelumConstants.CONSUMABLE_ANIMA_POTION:

@@ -1,8 +1,63 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ae — 2026-09-13.
+Versión documental: 4.33.0ah — 2026-09-13.
 
-## Enseñanza y cupos de sellos T1 — 4.33.0ae
+## Supervivencia con divisores Tipo 4 y críticos restaurados — 4.33.0ah
+
+El autor aprobó todas las pruebas de 0ag y aclaró que el drenaje de vida con
+reservas por debajo del umbral crítico sí formaba parte del diseño. Se retira
+la excepción de Sed positiva de 0ag y vuelve el umbral nativo del 10% o menos,
+con bloqueo de regeneración natural y daño acumulable por cada reserva crítica.
+
+Constitución para Hambre/Sed y Paciencia para Sueño usan ahora divisores Tipo 4:
+1 + 2*A*(A+1)/10100, con atributo no negativo. A 0 divide por 1; a 100, por 3.
+Se conserva el factor de masa corporal de Hambre/Sed. Antes el código usaba
+Resiliencia para Sueño; se cambia a Paciencia conforme a la indicación actual.
+Los costes de Hambre/Sed por regenerar vida/Aire continúan por separado: podían
+producir gasto aun con la reducción pasiva anterior a cero por Constitución 100.
+
+Los factores se actualizan también al cargar partidas previas sin alterar sus
+reservas, atributos, elecciones, inventario o misiones. Se conservan piscina,
+recargas y sorbos aprobados. Diálogo de Ronnie, README y cinco docs actualizados;
+entrega de archivos modificados y TXT de pruebas sobre 0ag.
+
+## Corrección de hidratación, sorbos y Sed positiva — 4.33.0ag
+
+El autor aprobó las demás pruebas de 0af y aclaró que la piscina debe conservar
+su hidratación directa y completar recipientes aunque tengan agua. La retirada
+de hidratación automática en 0af fue una interpretación incorrecta. Se restaura
+su tasa previa de un punto por segundo con cabeza sumergida, sin recipiente
+obligatorio. La recarga necesita cargar sólo el agua faltante más el margen de
+1 g, mantiene el contenido si no cabe y respeta la Caja y el ingreso al agua.
+
+Cada sorbo pasa de 100 ml fijos a masa corporal / 500 litros para diez puntos
+en diez segundos; el remanente menor recupera su proporción. La ración de agua
+separada conserva su volumen. Se corrige además la condición de daño por Sed:
+antes usaba el estado crítico <=10%, que también impedía regenerar vida a 1–2%.
+Ahora requiere reserva cero. Se conservan las penalizaciones de rendimiento,
+las reglas de Hambre/Sueño y los costes de regeneración de vida y Aire.
+Diálogos/Detalle en ambos idiomas, README y cinco documentos actualizados.
+No cambian mapas, imágenes, modelos, audio, misiones ni cupos de materiales.
+
+## Recipientes, elección de accesorios y cupos — 4.33.0af
+
+El autor aprobó 0ae, aportó su base y definió agua únicamente con recipientes
+vacíos al sumergirse en agua potable: botellas/cantimploras 1/2,5/5 L, y 1 L
+por 50 kg de masa corporal para 100% de Sed. Se incorporan seis sprites,
+volumen/peso persistentes, uso de 100 ml sobre la ración y efecto de diez
+segundos existentes, entrega única de cantimplora normal por Ronnie y Detalle.
+Se retira la hidratación automática por inmersión. Tara reutiliza el valor
+genérico existente de 0,10 kg; no hay receta de tratamiento de agua insegura.
+
+Caella pasa de cinco sellos a elección confirmada de un sello y un amuleto,
+con sus recetas/componentes y materiales al 100%. Cofre con plata bruta y
+cuero limitado; gemas en las vetas. Se conservan objetos, conocimiento y gasto
+previos. Se corrige el validador de versiones para sufijos de varias letras.
+README y cinco documentos actualizados. Evidencia y límites en PROJECT.md.
+
+## Enseñanza y cupos de sellos T1 — 4.33.0ae (aprobado)
+
+El autor confirmó posteriormente que todas las pruebas de 0ae fueron correctas.
 
 El autor aprobó todas las pruebas de 0ad y pidió continuar. Caella ofrece las
 cinco recetas de sellos T1 y dependencias después de su prueba, con aceptación

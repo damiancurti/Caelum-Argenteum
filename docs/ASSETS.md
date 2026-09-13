@@ -1,6 +1,36 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ae — 2026-09-13.
+Versión documental: 4.33.0ah — 2026-09-13.
+
+0ah conserva sin cambios las imágenes, mapas, audio, modelos y fuentes de
+0ag. Esta entrega modifica sólo reglas de supervivencia, textos y documentos.
+
+## Recipientes nuevos — 4.33.0af
+
+Seis ilustraciones originales generadas con la herramienta integrada de imagen,
+una por modelo; sin recursos de Doom. Fuentes PNG RGBA en
+assets/art_source/water_0af/{bottle_small,bottle_normal,bottle_large,
+canteen_small,canteen_normal,canteen_large}.png.
+Iconos RGBA de 128x128 con alfa conservado en src/graphics/caelum/icons/water/,
+mismos seis nombres. Sprites de suelo src/sprites/CW0XA0.png a CW5XA0.png,
+orden botellas pequeña/normal/grande, cantimploras pequeña/normal/grande;
+offsets grAb (64,128), escala mundial 0,25 heredada del consumible.
+No se sustituyen imágenes existentes. Audio, modelos y mapas conservados.
+
+Prompt común de generación: "One game inventory sprite. Nineteenth-century
+Argentina dark fantasy, semi-realistic hand-painted pixel art matching
+Darkest Dungeon and Blasphemous; dark warm brown outlines, aged materials,
+top-left light; single upright centered object, three-quarter frontal view,
+readable at 96 pixels, 15% transparent padding, genuine RGBA transparency.
+No text, numbers, plastic, weapons, cups, scenery or grid."
+Variantes: small narrow olive-green corked glass bottle with neck twine;
+normal broad amber corked glass bottle with leather base sleeve; large green
+corked demijohn with wicker basket and handle; small round leather-covered tin
+canteen; normal oval stitched leather-covered tin canteen with looped strap;
+large rounded rectangular reinforced leather-covered tin canteen, brass cap
+and folded strap. Capacidades 1/2,5/5 L respectivamente por familia.
+Adaptación técnica: reducción a 128x128 y offsets PNG de GZDoom; no repintado.
+
 
 ## Revisión 4.33.0ae
 

@@ -48,6 +48,7 @@ class CaelumMainM00StarterRules : Object
 
     static int GetSupplyMaterial(int index)
     {
+        if (index == 0) return CaelumConstants.MATERIAL_RAW_SILVER;
         if (index >= 0 && index < 5) return CaelumConstants.MATERIAL_RAW_RUBY + index;
         return CaelumConstants.MATERIAL_LEATHER;
     }
@@ -186,6 +187,18 @@ class CaelumMainM00StarterMaterials : Object play
             CaelumCraftingRules.GetRequiredSealTierUnits(weight)));
     }
 
+    void AddAmulet(int amuletType)
+    {
+        Recipes[CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT + amuletType] = true;
+        double weight = CaelumCraftingRules.GetJewelryWeight(1);
+        Expand(CaelumConstants.MATERIAL_SILVER_CHAIN, ScaleUnits(
+            CaelumCraftingRules.GetRequiredAmuletBaseUnits(weight)));
+        Expand(CaelumCraftingRules.GetAmuletTierMaterial(amuletType), ScaleUnits(
+            CaelumCraftingRules.GetRequiredAmuletTierUnits(weight)));
+    }
+
     void AddStarterAmmunition(int option)
     {
         if (option != 12 && option != 14 && option != 15) return;
@@ -235,9 +248,14 @@ class CaelumMainM00SupplyRules : Object play
             r.MainM00StarterRequired[i] = needs.Units[i];
         needs.AddStarterAmmunition(r.MainM00StarterOption);
         if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
-        if (r.MainM00SealRecipesLearned)
-            for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
-                if (!r.MainM00SealOwnedAtLearning[element]) needs.AddSeal(element);
+        // Preservar lo gastado en los sellos ya preparados en 0ae, pero no
+        // mantener cupos sin usar para los otros cuatro elementos.
+        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
+            if (!r.MainM00SealOwnedAtLearning[element]
+                && (r.MainM00SealChoice == element + 1 || r.MainM00SealsPrepared[element]))
+                needs.AddSeal(element);
+        if (r.MainM00AmuletChoice > 0 && !r.MainM00AmuletOwnedAtLearning)
+            needs.AddAmulet(r.MainM00AmuletChoice - 1);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             r.MainM00SupplyLimit[i] = needs.Units[i] + r.MainM00RepairSupply[i];
         RefreshChest(user);
@@ -249,6 +267,9 @@ class CaelumMainM00SupplyRules : Object play
         if (r == null) return;
         for (int slot = 0; slot < 5; slot++)
         { r.MainM00SupplyInitial[slot] = 0; r.MainM00SupplyRemaining[slot] = 0; }
+        int silver = CaelumConstants.MATERIAL_RAW_SILVER;
+        r.MainM00SupplyInitial[0] = r.MainM00SupplyLimit[silver];
+        r.MainM00SupplyRemaining[0] = Max(0, r.MainM00SupplyLimit[silver] - r.MainM00SupplyIssued[silver]);
         int material = CaelumConstants.MATERIAL_LEATHER;
         r.MainM00SupplyInitial[5] = r.MainM00SupplyLimit[material];
         r.MainM00SupplyRemaining[5] = Max(0, r.MainM00SupplyLimit[material] - r.MainM00SupplyIssued[material]);

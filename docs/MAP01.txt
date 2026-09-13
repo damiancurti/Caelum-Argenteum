@@ -1,5 +1,38 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ae — 2026-09-13.
+Versión documental: 4.33.0ah — 2026-09-13.
+
+ACTUAL 4.33.0ah — SUPERVIVENCIA Y ESTADOS CRÍTICOS
+El autor aprobó 0ag. Hambre/Sed usan Constitución; Sueño usa Paciencia.
+El consumo pasivo se divide por Tipo 4: por 1 al 0 y por 3 al 100.
+La masa corporal conserva su efecto sobre Hambre/Sed; regenerar vida/Aire
+mantiene su gasto separado de esas reservas.
+Usar partidas existentes o nuevas. Ronnie > talleres > cómo recolectar agua,
+tras devolver su espada: cantimplora normal vacía de 2,5 L, entrega única.
+Sumergir la cabeza en la piscina potable detrás de la mansión recupera Sed
+a un punto por segundo, incluso sin recipiente. En cada ingreso se llenan o
+completan los recipientes fuera de la Caja si se puede cargar el agua faltante
+más 1 g. Un recipiente parcialmente lleno ya no obliga a vaciarlo primero.
+Inventario > Consumibles > Enter: sorbo de masa corporal / 500 litros para
+recuperar 10 puntos en diez segundos. Si queda menos agua, recupera su parte.
+Ejemplo: a 100 kg bebe 0,2 L; 2,5 L alcanzan para doce sorbos completos y uno
+menor de 5 puntos. Detalle registra llenar y beber. El recipiente es reutilizable.
+Hambre, Sed o Sueño al 10% o menos vuelven a drenar vida y detienen su
+regeneración natural. Deben superar ese umbral para dejar el estado crítico.
+La carga de partidas previas actualiza los factores sin rellenar las reservas.
+
+Caella, tras completar su prueba: elegir y confirmar un sello, luego un
+amuleto. Enseña sus recetas T1/componentes; la elección queda fija. Trabajar
+al 100% en cada capa. Cofre del sótano: 200 g de plata bruta del amuleto,
+además del cuero correspondiente al equipo. Gemas en vetas del fondo: 600 g
+para el sello y 800 g para el amuleto; se suman si es la misma gema.
+Cobre/estaño para el sello: 360/40 g. Detalle informa cada pieza 0/1.
+Se conserva equipo/conocimiento previo, gasto emitido y misiones aceptadas.
+Pruebas de Windows en PRUEBAS_4_33_0ah.txt. Sin cambios de geometría.
+
+Los bloques de versiones previas a continuación son registro de evolución;
+estas reglas 0ah restauran los estados críticos; las de agua de 0ag sustituyen
+las de 0af. La elección de accesorios
+de 0af sustituye el cupo de cinco sellos de 0ae.
 
 
 REVISIÓN VIGENTE 4.33.0ae — SELLOS T1

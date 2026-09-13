@@ -1,6 +1,128 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ae — 2026-09-13.
+Versión documental: 4.33.0ah — 2026-09-13.
+
+## Consumo de supervivencia — vigente en 4.33.0ah
+
+Constitución controla el consumo pasivo de Hambre y Sed. Paciencia controla
+el de Sueño, conforme a la indicación actual del autor; hasta 0ag el código
+usaba Resiliencia para Sueño. Los tres consumos pasan a división por Tipo 4.
+
+    A = máximo(0, atributo efectivo)
+    divisor D(A) = 1 + 2 * A * (A + 1) / 10100
+    factor de Hambre/Sed = (masa corporal / 100 kg) / D(Constitución)
+    factor de Sueño = 1 / D(Paciencia)
+
+| Atributo | Divisor | Consumo respecto al atributo 0, misma masa |
+| --- | ---: | ---: |
+| 0 | 1 | 100% |
+| 50 | 1,5049505 | 66,4474% |
+| 100 | 3 | 33,3333% |
+
+Tipo 4 no es lineal. Se conservan niveles fraccionarios y el crecimiento por
+encima de 100 sin llegar a consumo cero. La fórmula usa atributos efectivos,
+con sus bonificaciones vigentes; el peso del equipo no es masa corporal.
+
+Tiempos base hasta vaciar una reserva completa, sin otras causas de gasto:
+Hambre 24 horas de juego, Sed 12, Sueño 16; una hora de juego son 180 segundos
+reales. A 100 kg y atributo 0 equivalen a 72/36/48 minutos reales. A atributo
+100 pasan a 216/108/144 minutos. Otras masas sólo modifican Hambre/Sed.
+
+Esta división afecta al consumo pasivo. Regenerar vida y Aire mantiene sus
+costes separados de Hambre/Sed, que pueden explicar gasto visible incluso
+cuando la antigua reducción de Constitución anulaba el consumo pasivo.
+La piscina potable mantiene su recuperación de Sed de un punto por segundo;
+los sorbos y sus volúmenes conservan las reglas aprobadas de 0ag.
+
+Al reanudar una partida anterior se recalculan sólo ambos factores antes del
+siguiente consumo, sin reiniciar reservas, atributos, misiones o inventario.
+No se vuelve a dividir el valor almacenado: se reconstruye desde el atributo
+y la masa, evitando acumulación y corrigiendo ceros serializados antiguos.
+
+Hambre, Sed y Sueño al 10% o menos son críticos: cada uno añade drenaje de vida
+al ritmo base de regeneración sin modificadores y bloquea la regeneración
+natural. Se restaura la regla anterior a 0ag a pedido del autor. Para volver
+a regenerar vida, las tres reservas deben estar por encima del 10%. Las
+penalizaciones de rendimiento y los costes de regeneración siguen vigentes.
+
+## Recipientes de agua y accesorios elegidos — vigente en 4.33.0ah
+
+La corrección del autor conserva la hidratación directa de la piscina y permite
+completar recipientes parcialmente llenos. Seis modelos: pequeña 1 L, normal
+2,5 L y grande 5 L, tanto botella como cantimplora. Se conservan al vaciarse.
+
+Cada sorbo usa agua para recuperar diez puntos de Sed en los diez segundos
+nativos (un punto por segundo). La cantidad se ajusta a la masa corporal:
+
+    litros para 100% = masa corporal en kg / 50
+    litros por sorbo de 10 puntos = masa corporal en kg / 500
+    agua usada = mínimo(litros por sorbo, litros restantes)
+    recuperación en puntos = 100 * agua usada / (masa corporal / 50)
+    por pulso (diez pulsos) = recuperación / 10
+
+BaseMass es la masa corporal, determinada por el personaje; no incluye equipo.
+Ejemplos: 50/100/200 kg usan 0,1/0,2/0,4 L por sorbo. Todos recuperan diez
+puntos si queda suficiente agua. El último sorbo menor recupera sólo su parte.
+La cantidad de usos por llenado depende de la masa y capacidad; 10/25/50 usos
+completos corresponde sólo a 50 kg. A 100 kg: botella pequeña = 5 sorbos,
+normal = 12 sorbos completos y uno de 5 puntos, grande = 25 sorbos.
+
+La reserva se limita a 100. No se bebe al máximo ni desde la Caja. Repetir una
+dosis reinicia el efecto sin apilarlo; esperar sus diez segundos permite
+aprovecharla completamente. La ración de agua anterior conserva sus 100 ml
+y su recuperación por masa; no cambia su peso ni crea agua extra.
+
+Cada recipiente es Inventory nativo con volumen propio. Tara provisional:
+0,10 kg, reutilizando SPECIAL_ITEM_DEFAULT_WEIGHT (el autor no fijó taras
+separadas por modelo); contenido a 1 kg/L. Un ejemplar de cada modelo por
+personaje en esta entrega; no se fusionan líquidos ni se aceptan duplicados.
+El inventario muestra litros restantes. Peso, Caja, soltar/recoger y guardado
+conservan ese volumen. La salida del Limbo mantiene su limpieza de objetos.
+
+Un nuevo ingreso con WaterLevel >= 3 y user_ca_potable_water llena o completa
+los recipientes fuera de la Caja. Sólo el volumen faltante añade peso: para
+completar una cantimplora de 2,5 L con 1,25 L basta poder cargar 1,25 kg más
+el margen de 1 g. Si no cabe todo, mantiene el contenido actual; liberar carga,
+salir y volver a sumergirse. No rellena continuamente al beber bajo el agua.
+La geometría de la piscina y las reglas de Aire no cambian.
+
+Sumergir la cabeza en la piscina potable vuelve a recuperar Sed directamente
+a un punto por segundo, reemplazando la pérdida pasiva mientras dura la
+inmersión, incluso sin recipiente. El recipiente permite guardar agua para
+llevar; sólo se llena en agua marcada como potable, nunca por pisar tierra.
+
+El estado crítico de las tres reservas y su drenaje de vida se rigen por la
+sección anterior. La excepción de Sed positiva introducida en 0ag fue retirada
+por el autor en 0ah. Beber recupera la reserva, sin dar inmunidad al daño ni
+recuperación gratuita de vida.
+
+Ronnie, tras devolver la espada, ofrece una cantimplora normal vacía por
+su charla de talleres. Confirmar entrega una sola; falta de carga permite
+reintentar. Detalle registra llenado y uso real, sin bloquear otras misiones.
+La potabilización de agua contaminada/salada no está definida ni implementada:
+el alcance actual es recolectar el agua ya marcada como potable.
+
+Caella ofrece elegir y confirmar un sello T1 (cinco elementos) y un amuleto T1
+(rubí, zafiro, esmeralda o topacio). Cada elección queda fija por personaje;
+consultar o volver no asigna una opción. Enseña sólo la receta escogida y sus
+componentes, conservando cualquier conocimiento anterior. Fabricación nativa
+recursiva, reservas, pausa/cancelación, salida personal y equipo existentes.
+Detalle muestra elecciones y preparación independiente 0/1 para cada pieza.
+
+Materias primas al 100% en cada capa, usando las recetas existentes:
+- Sello: 360 g cobre bruto + 40 g estaño bruto + 600 g de la gema elegida.
+- Amuleto: 200 g plata bruta + 800 g de la gema elegida.
+- Si coinciden las gemas, el cupo suma 1400 g. No se añaden otras gemas.
+El cofre aporta plata bruta y el cuero del equipo elegido, limitados por lo
+ya emitido y la carga disponible. Gemas, cobre y estaño siguen en las vetas.
+La plata reutiliza el slot 0 antes inactivo del cofre; no crece su array.
+
+Compatibilidad 0ae: no se borran recetas, materiales ni sellos previos. Los
+sellos ya fabricados mantienen su gasto contabilizado; se retiran los cupos
+no usados de elementos no elegidos. Una tarea de sello anterior ya iniciada
+mantiene su salida personal. Los nuevos flags/campos usan valores iniciales
+vacíos y no reinician misiones ni los cupos emitidos. Una pieza que ya era
+propia al aprender no concede otro juego de materiales para esa pieza.
 
 ## Sellos T1: enseñanza y abastecimiento — 4.33.0ae
 

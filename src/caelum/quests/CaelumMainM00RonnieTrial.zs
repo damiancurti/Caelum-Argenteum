@@ -390,7 +390,7 @@ class CaelumMainM00RonnieTrial : Object play
         let record = user.GetPersistentCharacterState(true);
         if (slot < 0)
         {
-            for (int i = 5; i < CaelumMainM00StarterRules.SUPPLY_COUNT; i++)
+            for (int i = 0; i < CaelumMainM00StarterRules.SUPPLY_COUNT; i++)
             {
                 let item = user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,
                     CaelumMainM00StarterRules.GetSupplyMaterial(i), 1);
@@ -410,7 +410,7 @@ class CaelumMainM00RonnieTrial : Object play
         }
         else
         {
-            if (slot != 5) return false;
+            if (slot != 0 && slot != 5) return false;
             user.RefreshCarriedInventorySummary();
             int capacity = CaelumMainM00SupplyRules.CarryRoom(user);
             int amount = Min(capacity, record.MainM00SupplyRemaining[slot]);
@@ -694,3 +694,27 @@ class CaelumM00ReturnRepairSwordAction : CaelumPalomoDialogueAction
         return true;
     }
 }
+
+class CaelumM00WaterContainerAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        let user = CaelumPlayer(Owner);
+        if (!CaelumMainM00RonnieTrial.IsRonnie(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
+        if (r.MainM00WaterContainerGiven) return true;
+        if (user.FindInventory("CaelumCanteenNormal") != null) return false;
+        if (!user.CanAddWeightToPersonalInventory(CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT + 0.001)) return false;
+        let item = CaelumWaterContainer(user.GiveInventoryType("CaelumCanteenNormal"));
+        if (item == null) return false;
+        item.InMagicBox = false;
+        r.MainM00WaterContainerGiven = true;
+        user.OnNativeInventoryChanged(); user.PersistCharacterState();
+        return true;
+    }
+}
+
+class CaelumM00TakeSilver : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00RonnieTrial.UseSupply(CaelumPlayer(Owner), 0); } }

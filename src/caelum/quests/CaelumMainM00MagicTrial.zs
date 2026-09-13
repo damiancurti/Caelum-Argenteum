@@ -367,34 +367,58 @@ class CaelumMainM00SealCrafting : Object play
             && r.QuestStage[0] < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED;
     }
 
-    static bool Learn(CaelumPlayer user)
+    static void EnsureMigration(CaelumPlayer user)
+    {
+        if (user == null) return;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null) return;
+        if (r.MainM00SealRecipesLearned && r.MainM00SealChoice == 0 && r.MainM00LegacySealTaskRecipe == 0)
+        {
+            int pending = user.CraftingTaskActive ? user.CraftingTaskRecipeIndex
+                : (r.CraftingTaskActive ? r.CraftingTaskRecipeIndex : -1);
+            if (pending >= 56 && pending <= 60) r.MainM00LegacySealTaskRecipe = pending + 1;
+        }
+        if (!r.MainM00AccessoryLimitsUpdated)
+        { r.MainM00AccessoryLimitsUpdated = true; CaelumMainM00SupplyRules.UpdateLimits(user); }
+    }
+
+    // Compatibilidad de clase para partidas anteriores; no elige por el jugador.
+    static bool Learn(CaelumPlayer user) { return false; }
+
+    static bool Choose(CaelumPlayer user, bool amulet, int type)
     {
         if (!CanLearn(user)) return false;
         let speaker = CaelumCaella(user.player.ConversationNPC);
-        if (speaker == null || !speaker.StoryAnchored) return false;
+        if (speaker == null || !speaker.StoryAnchored || type < 0
+            || type >= (amulet ? CaelumConstants.AMULET_TYPE_COUNT : CaelumConstants.SEAL_TYPE_COUNT)) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r.MainM00SealRecipesLearned) return true;
+        EnsureMigration(user);
+        int oldChoice = amulet ? r.MainM00AmuletChoice : r.MainM00SealChoice;
+        if (oldChoice > 0) return oldChoice == type + 1;
         CaelumMainM00SupplyRules.Ensure(user);
+        bool previousSealLesson = r.MainM00SealRecipesLearned;
+        if (amulet) r.MainM00AmuletChoice = type + 1;
+        else r.MainM00SealChoice = type + 1;
         r.MainM00SealRecipesLearned = true;
         let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
-        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++) needs.AddSeal(element);
+        if (amulet) needs.AddAmulet(type); else needs.AddSeal(type);
         for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
             if (needs.Recipes[recipe]) r.LearnCraftingRecipe(recipe);
-        // Reconoce una pieza propia por elemento en guardados anteriores.
-        // El sello prestado de la prueba nunca ocupa este cupo.
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             let item = CaelumEquipmentItem(cursor);
-            if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
-                || item.Tier != 1 || item is "CA_LimboMagicSeal"
-                || item.ItemType < 0 || item.ItemType >= CaelumConstants.SEAL_TYPE_COUNT
-                || r.MainM00SealsPrepared[item.ItemType]) continue;
-            r.MainM00SealsPrepared[item.ItemType] = true;
-            r.MainM00SealOwnedAtLearning[item.ItemType] = true;
+            if (item == null || item.EquipmentKind != (amulet ? CaelumConstants.EQUIPMENT_KIND_AMULET
+                : CaelumConstants.EQUIPMENT_KIND_SEAL) || item.Tier != 1 || item.ItemType != type
+                || item is "CA_LimboMagicSeal") continue;
+            if (amulet) { r.MainM00AmuletPrepared = true; r.MainM00AmuletOwnedAtLearning = true; }
+            else
+            {
+                r.MainM00SealsPrepared[type] = true;
+                if (!previousSealLesson) r.MainM00SealOwnedAtLearning[type] = true;
+            }
         }
         CaelumMainM00SupplyRules.UpdateLimits(user);
-        if (!user.CraftingTaskActive)
-        { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
+        if (!user.CraftingTaskActive) { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
         user.RefreshCraftingRecipeBookSummary();
         Sync(user); user.RefreshSocialJournalSnapshot(); user.PersistCharacterState();
         return true;
@@ -402,10 +426,16 @@ class CaelumMainM00SealCrafting : Object play
 
     static bool IsLearnedRecipe(CaelumPlayer user)
     {
+        EnsureMigration(user);
         let r = user.GetPersistentCharacterState(false);
-        return r != null && r.MainM00SealRecipesLearned && user.CraftingSelectionTier == 1
-            && CaelumCraftingRules.GetUnifiedRecipeKind(user.CraftingSelectionRecipe)
-                == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
+        if (r == null || user.CraftingSelectionTier != 1) return false;
+        int kind = CaelumCraftingRules.GetUnifiedRecipeKind(user.CraftingSelectionRecipe);
+        if (r.MainM00LegacySealTaskRecipe == user.CraftingSelectionRecipe + 1
+            && user.CraftingTaskActive && kind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL) return true;
+        return (kind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL && r.MainM00SealChoice > 0
+            && CaelumCraftingRules.GetUnifiedSealType(user.CraftingSelectionRecipe) == r.MainM00SealChoice - 1)
+            || (kind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET && r.MainM00AmuletChoice > 0
+            && CaelumCraftingRules.GetUnifiedAmuletType(user.CraftingSelectionRecipe) == r.MainM00AmuletChoice - 1);
     }
 
     static bool CanGather(CaelumPlayer user)
@@ -414,8 +444,9 @@ class CaelumMainM00SealCrafting : Object play
         let r = user.GetPersistentCharacterState(false);
         if (!r.MainM00SealRecipesLearned || !r.MainM00StarterChosen) return false;
         let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
-        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
-            if (!r.MainM00SealsPrepared[element]) needs.AddSeal(element);
+        if (r.MainM00SealChoice > 0 && !r.MainM00SealsPrepared[r.MainM00SealChoice - 1])
+            needs.AddSeal(r.MainM00SealChoice - 1);
+        if (r.MainM00AmuletChoice > 0 && !r.MainM00AmuletPrepared) needs.AddAmulet(r.MainM00AmuletChoice - 1);
         for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
             if (needs.Units[material] > 0 && CaelumMainM00SupplyRules.Remaining(user, material) > 0) return true;
         return false;
@@ -425,10 +456,12 @@ class CaelumMainM00SealCrafting : Object play
     {
         if (!CaelumMainM00SupplyRules.IsLimited(user) || !IsLearnedRecipe(user)
             || !user.CraftingTaskCompleting || item == null
-            || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+            || (item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+                && item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_AMULET)
             || item.ItemType < 0 || item.ItemType >= CaelumConstants.SEAL_TYPE_COUNT) return;
         let r = user.GetPersistentCharacterState(false);
-        r.MainM00SealsPrepared[item.ItemType] = true;
+        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET) r.MainM00AmuletPrepared = true;
+        else r.MainM00SealsPrepared[item.ItemType] = true;
         item.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         user.RefreshSocialJournalSnapshot();
     }
@@ -437,7 +470,9 @@ class CaelumMainM00SealCrafting : Object play
     {
         let r = user.GetPersistentCharacterState(false);
         if (r == null) return;
-        user.SetPalomoDialogueToken("CaelumM00SealsLearnedToken", r.MainM00SealRecipesLearned);
+        user.SetPalomoDialogueToken("CaelumM00SealsLearnedToken", r.MainM00SealChoice > 0);
+        user.SetPalomoDialogueToken("CaelumM00AmuletChosenToken", r.MainM00AmuletChoice > 0);
+        EnsureMigration(user);
         user.SetPalomoDialogueToken("CaelumM00SealGatherReadyToken", CanGather(user));
         user.SetPalomoDialogueToken("CaelumM00SealGatherPracticeToken", CanLearn(user)
             && r.MainM00SealRecipesLearned && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE));
@@ -463,3 +498,23 @@ class CaelumM00BorrowSealSwordAction : CaelumPalomoDialogueAction
         return result;
     }
 }
+
+class CaelumM00AmuletChosenToken : CaelumPalomoDialogueMarker {}
+class CaelumM00ChooseSeal0 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), false, 0); } }
+class CaelumM00ChooseSeal1 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), false, 1); } }
+class CaelumM00ChooseSeal2 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), false, 2); } }
+class CaelumM00ChooseSeal3 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), false, 3); } }
+class CaelumM00ChooseSeal4 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), false, 4); } }
+class CaelumM00ChooseAmulet0 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), true, 0); } }
+class CaelumM00ChooseAmulet1 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), true, 1); } }
+class CaelumM00ChooseAmulet2 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), true, 2); } }
+class CaelumM00ChooseAmulet3 : CaelumPalomoDialogueAction
+{ override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Choose(CaelumPlayer(Owner), true, 3); } }

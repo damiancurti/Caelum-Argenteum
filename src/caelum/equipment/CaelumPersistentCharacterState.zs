@@ -67,6 +67,15 @@ class CaelumPersistentCharacterState : Inventory
     // 0ad: elección y cupo finito; los campos nuevos nacen vacíos en 0ac.
     // 0ae: enseñanza y piezas existentes al aceptarla, sin reiniciar cupos.
     bool MainM00SealRecipesLearned;
+    int MainM00SealChoice;
+    bool MainM00AccessoryLimitsUpdated;
+    int MainM00LegacySealTaskRecipe;
+    int MainM00AmuletChoice;
+    bool MainM00AmuletPrepared;
+    bool MainM00AmuletOwnedAtLearning;
+    bool MainM00WaterContainerGiven;
+    bool MainM00WaterFilled;
+    bool MainM00WaterDrank;
     bool MainM00SealOwnedAtLearning[CaelumConstants.SEAL_TYPE_COUNT];
     bool MainM00SealsPrepared[CaelumConstants.SEAL_TYPE_COUNT];
     bool MainM00ArmorChosen;
@@ -341,6 +350,10 @@ class CaelumPersistentCharacterState : Inventory
         MainM00PreviousWeaponId = 0;
         MainM00PreviousSealId = 0;
         MainM00SealRecipesLearned = false;
+        MainM00AccessoryLimitsUpdated = false; MainM00LegacySealTaskRecipe = 0;
+        MainM00SealChoice = 0; MainM00AmuletChoice = 0;
+        MainM00AmuletPrepared = false; MainM00AmuletOwnedAtLearning = false;
+        MainM00WaterContainerGiven = false; MainM00WaterFilled = false; MainM00WaterDrank = false;
         for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
         { MainM00SealsPrepared[element] = false; MainM00SealOwnedAtLearning[element] = false; }
         MainM00ArmorChosen = false;

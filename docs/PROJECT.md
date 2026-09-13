@@ -1,8 +1,70 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ae — 2026-09-13.
+Versión documental: 4.33.0ah — 2026-09-13.
 
-## Estado actual: 4.33.0ae
+## Estado actual: 4.33.0ah — pendiente de aceptación del autor
+
+El autor aprobó todas las pruebas de 0ag y pidió restaurar la regla de drenaje
+de vida por reservas críticas. 0ah vuelve al umbral anterior del 10% o menos
+para Hambre/Sed/Sueño. La piscina, recarga parcial y sorbos de 0ag se mantienen.
+
+El consumo pasivo divide por Tipo 4 (1 a atributo 0; 3 a 100), usando
+Constitución para Hambre/Sed y Paciencia para Sueño. El código anterior usaba
+Resiliencia para Sueño: se alinea con la indicación actual. Los gastos de
+regenerar vida/Aire siguen separados, conservando sus costes. Una partida
+previa actualiza los factores sin reiniciar reservas, elecciones ni progreso.
+SYSTEMS.md fija fórmulas y ejemplos. Entrega delta sobre 0ag más TXT de pruebas.
+
+Tras aceptar 0ah, cerrar la revisión del tutorial y continuar los fundamentos
+de mundo/viajes del roadmap, sin ampliar mapas. Tratamiento de aguas inseguras
+y composición/proceso de balas requieren definición. Calendario precede
+Descanso; V5 mantiene el refactor de arquitectura de programación.
+
+### Validación técnica de 0ah
+
+96 comprobaciones aprobadas en GZDoom 4.14.2, Freedoom y llvmpipe en Linux.
+88 comprueban la curva en 0/50/100 con Constitución y Paciencia independientes,
+masas 50/100/200, atributos fraccionarios y límites, consumo nativo de un segundo,
+refresco de factores antiguos, umbrales 0/1/2/9,9/10/10,1/50 para las tres
+reservas, daño combinado y bloqueo de regeneración. La piscina, la recarga
+parcial y el sorbo aprobado de 0ag también pasan su regresión.
+
+Se creó un guardado con código original 0ag, atributos 100 y factores cero;
+otras ocho comprobaciones lo cargan con 0ah y verifican consumo positivo sin
+reiniciar reservas, atributos, litros o elecciones. El divisor no se acumula.
+El validador documental y de recursos termina sin errores. Queda la aceptación
+del autor en Windows siguiendo PRUEBAS_4_33_0ah.txt.
+
+### Validación técnica de 0ag
+
+161 comprobaciones nativas aprobadas en GZDoom 4.14.2 con Freedoom y llvmpipe,
+Linux. El bloque de agua suma 153: los seis modelos a 50/100/200 kg, volumen
+por sorbo y remanente, diez pulsos reales durante diez segundos, piscina de
+MAP01 con/sin recipiente, recarga parcial y límites de carga/Caja, daño a Sed
+cero, regeneración a 1 y 2 puntos y reglas previas de Hambre/Sueño.
+
+Otras ocho comprobaciones cargan un guardado creado con el código entregado
+0af: litros, efecto de bebida pendiente, progreso y elecciones/cupo de plata
+conservados; nuevo sorbo ajustado a masa y recarga/hidratación real en piscina.
+La prueba aísla el prólogo para que su diálogo automático no pause el tiempo.
+El validador de documentación y recursos terminó sin errores. El autor aprobó
+todas las pruebas de 0ag; la regla de Sed positiva se revierte en 0ah a su pedido.
+
+### Validación técnica de 0af
+
+GZDoom 4.14.2 con Freedoom, renderizado por software en Linux: pasan las
+combinaciones de las cinco elecciones de sello por cuatro amuletos, los seis
+recipientes, fórmula por masa, entrega de Ronnie, plata limitada, fabricación
+personal y persistencia. Se cargó además un guardado generado con el código
+original 0ae y se terminó su sello pendiente antes de elegir los accesorios.
+Los menús nativos se recorrieron en español e inglés. Sprites RGBA revisados
+como imágenes; las pruebas posteriores del autor aprobaron estos recursos.
+El validador documental y de recursos termina sin errores.
+
+## Base 4.33.0ae — aprobado por el autor
+
+El autor confirmó que todas las pruebas de 0ae fueron correctas.
+La base completa de 0ae fue recuperada desde los adjuntos del autor.
 
 El autor aprobó todas las pruebas de 0ad. Caella ofrece enseñar los cinco sellos
 T1 y sus componentes después de completar su prueba. Leer o posponer no cambia
@@ -333,7 +395,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos implementados en 0ae, pendiente de prueba del autor. Quedan composición/proceso de balas y recolección/potabilización de agua. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ah restaura estados críticos y divide consumos pasivos por Tipo 4, pendiente de aceptación. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 

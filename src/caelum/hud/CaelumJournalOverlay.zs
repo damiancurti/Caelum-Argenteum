@@ -192,10 +192,21 @@ class CaelumJournalOverlay : EventHandler
             && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE
             && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
         {
-            String sealText = StringTable.Localize(localPlayer.MainM00SealRecipesSnapshot
-                ? "CA_M01_SEALS_DETAIL" : "CA_M01_SEALS_DETAIL_LEARN", false);
+            String sealText = StringTable.Localize("CA_AF_ACCESSORY_DETAIL", false);
+            sealText.Replace("%SEAL%", localPlayer.MainM00ChosenSealSnapshot < 0 ? "-"
+                : StringTable.Localize(String.Format("CA_AF_SEAL_%d", localPlayer.MainM00ChosenSealSnapshot), false));
+            sealText.Replace("%AMULET%", localPlayer.MainM00ChosenAmuletSnapshot < 0 ? "-"
+                : StringTable.Localize(String.Format("CA_AF_AMULET_%d", localPlayer.MainM00ChosenAmuletSnapshot), false));
             sealText.Replace("%SEALS%", String.Format("%d", localPlayer.MainM00SealsPreparedSnapshot));
+            sealText.Replace("%AMULETDONE%", localPlayer.MainM00AmuletPreparedSnapshot ? "1" : "0");
             text = text .. "\n\n" .. sealText;
+            if (localPlayer.MainM00WaterGivenSnapshot)
+            {
+                String water = StringTable.Localize("CA_WATER_DETAIL", false);
+                water.Replace("%FILLED%", localPlayer.MainM00WaterFilledSnapshot ? "1/1" : "0/1");
+                water.Replace("%DRANK%", localPlayer.MainM00WaterDrankSnapshot ? "1/1" : "0/1");
+                text = text .. "\n\n" .. water;
+            }
         }
         bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
@@ -934,6 +945,8 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.FormalInventoryRowAmount[row]
                 );
             }
+            if (localPlayer.FormalInventoryRowWaterLiters[row] >= 0)
+                entryLabel = entryLabel .. String.Format("  %.2f L", localPlayer.FormalInventoryRowWaterLiters[row]);
             if (localPlayer.FormalInventoryRowEquipped[row])
             {
                 entryLabel = entryLabel .. "  [E]";

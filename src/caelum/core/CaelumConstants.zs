@@ -946,7 +946,7 @@ class CaelumConstants : Object
     const CONSUMABLE_ENERGY_DRINK = 2;
     const CONSUMABLE_FOOD_RATION = 3;
     const CONSUMABLE_WATER_RATION = 4;
-    const CONSUMABLE_TYPE_COUNT = 5;
+    const CONSUMABLE_TYPE_COUNT = 11;
     const CONSUMABLE_POTION_WEIGHT = 0.25;
     const CONSUMABLE_RATION_WEIGHT = 0.10;
     const CONSUMABLE_REGENERATION_SECONDS = 10;
@@ -1116,8 +1116,8 @@ class CaelumConstants : Object
     // una recuperacion neta de un punto porcentual por segundo sumergido.
     const POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND = 0.01;
 
-    // Natural health recovery fills the current maximum in one real hour.
-    // Critical hunger, thirst, and sleep each invert this unmodified base rate.
+    // La recuperación base llena la vida máxima en una hora real.
+    // Hambre, Sed y Sueño críticos invierten esta tasa sin modificadores.
     const HEALTH_BASE_RECOVERY_REAL_SECONDS = 3600.0;
 
     // Every successful physical jump spends five base air units. Equipment

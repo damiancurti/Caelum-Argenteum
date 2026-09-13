@@ -80,6 +80,17 @@ class CaelumDerivedStats : Object
         return 100.0 + 2.0 * level * (level + 1) / 101.0;
     }
 
+    // El consumo pasivo se divide por Tipo 4: /1 a 0 y /3 a 100.
+    // Hambre/Sed conservan su factor de masa corporal; Sueño usa Paciencia.
+    void RefreshSurvivalLossMultipliers(CaelumAttributes attributes)
+    {
+        if (attributes == null) { return; }
+        HungerThirstLossMultiplier = BaseMassMultiplier * 100.0
+            / CalculateType4Percent(Max(0.0, attributes.Constitution));
+        SleepLossMultiplier = 100.0
+            / CalculateType4Percent(Max(0.0, attributes.Patience));
+    }
+
     double CalculateType2Percent(double level)
     {
         return level * (level + 1) / 101.0;
@@ -242,12 +253,7 @@ class CaelumDerivedStats : Object
             - attributes.Patience * (attributes.Patience + 1) / 10100.0,
             0.0, 1.0);
 
-        HungerThirstLossMultiplier = Clamp(1.0
-            - attributes.Constitution * (attributes.Constitution + 1) / 10100.0,
-            0.0, 1.0) * BaseMassMultiplier;
-        SleepLossMultiplier = Clamp(1.0
-            - attributes.Resilience * (attributes.Resilience + 1) / 10100.0,
-            0.0, 1.0);
+        RefreshSurvivalLossMultipliers(attributes);
 
         AnimaRegenerationPercent = CalculateType4Percent(attributes.Patience);
         AnimaRegenerationPerSecond = MaximumAnima

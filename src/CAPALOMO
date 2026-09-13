@@ -2060,6 +2060,7 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
         choice { text = "$CA_M01_ARMOR_ASK"; nextpage = "ronnie_armor"; }
         choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
@@ -2232,6 +2233,14 @@ conversation
         choice { text = "$CA_M01_REPAIR_LOAN_RETURN"; closedialog = true; giveitem = "CaelumM00ReturnRepairSwordAction";
             require { item = "CaelumM00GatheringLoanHeldToken"; amount = 1; } }
     }
+    page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
+    }
+
 }
 
 conversation
@@ -2620,7 +2629,7 @@ conversation
         name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_OFFER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         ifitem { item = "CaelumM00SealsLearnedToken"; amount = 1; } link = "caella_seals_ready";
-        choice { text = "$CA_M01_SEALS_LEARN"; nextpage = "caella_seals_ready"; giveitem = "CaelumM00LearnSealsAction"; }
+        choice { text = "$CA_M01_SEALS_LEARN"; nextpage = "caella_choose_seal"; }
         choice { text = "$CA_M01_SEALS_LATER"; closedialog = true; }
     }
     page
@@ -2628,6 +2637,7 @@ conversation
         pagename = "caella_seals_ready"; userstring = "caella_seals_ready";
         name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_READY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_AMULET_ASK"; nextpage = "caella_choose_amulet"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "caella_seals_resources"; }
         choice { text = "$CA_M01_SEALS_USE_ASK"; nextpage = "caella_seals_use"; }
     }
@@ -2644,6 +2654,69 @@ conversation
         name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_USE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
+    page { pagename = "caella_choose_seal"; userstring = "caella_choose_seal";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CHOOSE_SEAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00SealsLearnedToken"; amount = 1; } link = "caella_seals_ready";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "caella_confirm_seal_0"; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "caella_confirm_seal_1"; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "caella_confirm_seal_2"; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "caella_confirm_seal_3"; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "caella_confirm_seal_4"; }
+    }
+    page { pagename = "caella_confirm_seal_0"; userstring = "caella_confirm_seal_0";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_0"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal0"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
+    }
+    page { pagename = "caella_confirm_seal_1"; userstring = "caella_confirm_seal_1";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_1"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal1"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
+    }
+    page { pagename = "caella_confirm_seal_2"; userstring = "caella_confirm_seal_2";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_2"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal2"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
+    }
+    page { pagename = "caella_confirm_seal_3"; userstring = "caella_confirm_seal_3";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_3"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal3"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
+    }
+    page { pagename = "caella_confirm_seal_4"; userstring = "caella_confirm_seal_4";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_4"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal4"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
+    }
+    page { pagename = "caella_choose_amulet"; userstring = "caella_choose_amulet";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CHOOSE_AMULET"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00AmuletChosenToken"; amount = 1; } link = "caella_seals_ready";
+        choice { text = "$CA_AF_AMULET_0"; nextpage = "caella_confirm_amulet_0"; }
+        choice { text = "$CA_AF_AMULET_1"; nextpage = "caella_confirm_amulet_1"; }
+        choice { text = "$CA_AF_AMULET_2"; nextpage = "caella_confirm_amulet_2"; }
+        choice { text = "$CA_AF_AMULET_3"; nextpage = "caella_confirm_amulet_3"; }
+    }
+    page { pagename = "caella_confirm_amulet_0"; userstring = "caella_confirm_amulet_0";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_0"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet0"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+    }
+    page { pagename = "caella_confirm_amulet_1"; userstring = "caella_confirm_amulet_1";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_1"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet1"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+    }
+    page { pagename = "caella_confirm_amulet_2"; userstring = "caella_confirm_amulet_2";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_2"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet2"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+    }
+    page { pagename = "caella_confirm_amulet_3"; userstring = "caella_confirm_amulet_3";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_3"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet3"; nextpage = "caella_seals_ready"; }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+    }
+
 }
 
 conversation
@@ -2657,6 +2730,7 @@ conversation
         name = "$CA_M01_CHEST_NAME";
         dialog = "$CA_M01_SUPPLY_PAGE1";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_TAKE_SILVER"; nextpage = "ronnie_chest_0"; giveitem = "CaelumM00TakeSilver"; }
         choice { text = "$CA_M01_TAKE_SUPPLY_5"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00TakeSupply5"; }
         choice { text = "$CA_M01_SUPPLY_DEPOSIT"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00ReturnSupplies"; }
         choice { text = "$CA_M01_SUPPLY_SURPLUS"; nextpage = "ronnie_chest_0"; giveitem = "CaelumM00ReturnSurplus"; }

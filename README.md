@@ -5,29 +5,43 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ae.** Apply over the complete **4.33.0ad** project.
-The author approved all 0ad tests. Caella now teaches the five T1 seals and
-components, with finite raw-material allowances at 100% in every layer.
+**Current release: 4.33.0ah.** Apply over the complete **4.33.0ag** project.
+The author approved all 0ag tests; 0ah applies the revised survival rules.
 MAP01 remains the systems test environment.
 
 ## Implemented
 
-- After completing Caella's trial, ask her to teach the five T1 seals. Reading
-  or declining changes nothing; accepting teaches existing recipes/dependencies.
-  Quest Detail tracks preparation from 0/5 to 5/5. This is optional and keeps
-  completed trials, rune access and the first crafted weapon unchanged.
-- At 100% in every layer, all five need 1.8 kg raw copper, 0.2 kg raw tin and
-  0.6 kg each of ruby, sapphire, emerald, topaz and opal. This allowance extends
-  the chosen loadout's existing pool once, without replenishing issued stock.
-  A previously owned T1 seal reduces only the new allowance for its element.
-- Use Caella's Workbench or the complete upstairs workshop, Crafts > Seals.
-  T1 seals support recursive raw-material crafting, native task reservations,
-  pause/cancel and personal output without the Box. Equip one through Inventory;
-  the existing Channel, Adrenaline, HUD and cooldown rules apply.
-- When more seal materials are needed after returning the sword, Ronnie's
-  workshop dialogue can lend it again and accept its return. No repair lesson
-  or damaged first weapon is required for this gathering loan. Existing carry
-  capacity, finite extraction and loan identity rules remain in force.
+- Passive Hunger/Thirst depletion uses Constitution; passive Sleep depletion
+  uses Patience. Each is divided by Type 4: 1 at attribute 0, 3 at 100. The
+  consumption stays positive; Hunger/Thirst retain their body-mass factor.
+  Health and Air regeneration retain their separate Hunger/Thirst costs.
+- Hunger, Thirst or Sleep at 10% or less again drains health and blocks natural
+  healing, restoring the original critical rule. Loading older saves refreshes
+  only the passive-depletion factors, preserving reserves and progression.
+
+- Six reusable bottles/canteens: small 1 L, normal 2.5 L and large 5 L,
+  each with its original 0af sprite. Empty or partially filled containers outside
+  the Box top up on entering potable water with the head submerged. Only the
+  missing water must fit the remaining carrying capacity.
+- Each sip spends body mass / 500 liters to restore 10 Thirst points over ten
+  seconds: 0.1 / 0.2 / 0.4 L at 50 / 100 / 200 kg. A smaller remaining amount
+  restores proportionally less. Inventory displays liters; empty containers
+  remain reusable, and Box storage, dropping and saves preserve their contents.
+  The separate 100 ml water ration retains its mass-dependent recovery.
+- Potable immersion again restores one Thirst point per second, including
+  without a container. Low-reserve performance penalties remain in effect.
+- After returning the sword, Ronnie's workshop dialogue offers one empty normal
+  canteen. Retry if carrying capacity blocked delivery. Quest Detail records
+  filling and drinking; this optional practice adds no main-quest requirement.
+- Caella offers a confirmed choice of one T1 seal and one T1 amulet, teaching
+  the selected recipes and components. At 100% per layer, the seal requires
+  360 g raw copper, 40 g raw tin and 600 g of its gem; the amulet needs 200 g
+  raw silver and 800 g of its gem. Matching gems share the summed allowance.
+  The basement chest supplies needed silver and leather; cave veins supply gems.
+- Native recursive crafting, reservations, pause/cancel and personal output
+  support the chosen accessories. Detail tracks both pieces. Previous 0ae items,
+  knowledge and issued stock are retained; unused allowances for other seals
+  are removed. A previously started seal task retains its personal output.
 
 - After the weapon choice, Ronnie offers magic, light, medium or heavy armor
   with descriptions and confirmation. He teaches the chosen family's four T1
@@ -38,7 +52,7 @@ MAP01 remains the systems test environment.
   Native tasks, reservations, pause/cancel, weight and saves remain authoritative.
 - MAP01 grants only the raw-material allowance for one chosen weapon, one
   chosen armor set and one ten-arrow/bolt batch when appropriate, plus the
-  optional seal allowance after learning from Caella, at 100% in
+  chosen seal and amulet allowances after learning from Caella, at 100% in
   every layer and the chosen equipment size. New choices default to 100%.
   At size M, armor leather is 5/10/20/40 kg; giant gauntlets add 6 kg.
 - Sources share a per-character allowance, charged when materials are generated
@@ -278,7 +292,7 @@ MAP01 remains the systems test environment.
 ## Planned
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
-PROJECT.md. Safe-water collection/processing remains planned. Bullet crafting still needs its material composition and process
+PROJECT.md. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
@@ -296,15 +310,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0ad is author-approved. Focused 0ae checks are in PRUEBAS_4_33_0ae.txt;
+All 0ag tests are author-approved. Focused 0ah checks are in PRUEBAS_4_33_0ah.txt;
 native engine evidence and limits are in PROJECT.md.
-All maps and audiovisual resources remain byte-identical to 0ad.
+Maps, audio, models and sprites remain unchanged in 0ah.
 
 ## Build and run
 
-Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ae patch
-into the complete **4.33.0ad** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ae.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ah
+patch into the complete **4.33.0ag** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ah.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
