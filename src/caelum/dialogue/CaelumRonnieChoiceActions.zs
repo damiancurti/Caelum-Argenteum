@@ -213,3 +213,26 @@ class CaelumM00ReturnSupplies : CaelumPalomoDialogueAction
 {
     override bool Use(bool pickup) { return CaelumMainM00RonnieTrial.UseSupply(CaelumPlayer(Owner), -1); }
 }
+
+class CaelumM00ArmorChosenToken : CaelumPalomoDialogueMarker {}
+class CaelumM00ChooseArmor0 : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SupplyRules.ChooseArmor(CaelumPlayer(Owner), 0); }
+}
+class CaelumM00ChooseArmor1 : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SupplyRules.ChooseArmor(CaelumPlayer(Owner), 1); }
+}
+class CaelumM00ChooseArmor2 : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SupplyRules.ChooseArmor(CaelumPlayer(Owner), 2); }
+}
+class CaelumM00ChooseArmor3 : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SupplyRules.ChooseArmor(CaelumPlayer(Owner), 3); }
+}
+
+class CaelumM00ReturnSurplus : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SupplyRules.ReturnSurplus(CaelumPlayer(Owner)); }
+}

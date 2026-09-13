@@ -527,7 +527,10 @@ class CaelumM00Bull : CaelumBull
         // La masa y la merma gobiernan el botín, nunca el talle del viajero.
         // Pilas de 2,5 kg para no exigir cargar todo de una vez.
         LeatherBudgetUnits = GetLeatherYieldUnits();
-        int remaining = LeatherBudgetUnits;
+        let recipient = CaelumPlayer(TrialFighter);
+        bool limited = CaelumMainM00SupplyRules.IsLimited(recipient);
+        int remaining = limited ? Min(LeatherBudgetUnits,
+            CaelumMainM00SupplyRules.Remaining(recipient, CaelumConstants.MATERIAL_LEATHER)) : LeatherBudgetUnits;
         int i = 0;
         while (remaining > 0)
         {
@@ -541,6 +544,12 @@ class CaelumM00Bull : CaelumBull
                 leather.args[0] = CaelumConstants.MATERIAL_LEATHER;
                 leather.args[1] = 1; leather.Amount = amount;
                 leather.LimboQuestUnits = amount; leather.bDropped = true;
+                if (limited)
+                {
+                    leather.LimboQuotaReserved = true;
+                    leather.LimboQuotaPlayer = recipient.PlayerNumber();
+                    CaelumMainM00SupplyRules.Issue(recipient, CaelumConstants.MATERIAL_LEATHER, amount);
+                }
             }
             remaining -= amount; i++;
         }

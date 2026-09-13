@@ -5,11 +5,37 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ac.** Apply over the complete **4.33.0ab** project.
-The author approved all 0ab tests. This release adds crossbow bolt crafting and
-Ronnie's ammunition guidance. MAP01 remains the systems test environment.
+**Current release: 4.33.0ad.** Apply over the complete **4.33.0ac** project.
+The author approved all 0ac tests. This release adds an armor-family choice,
+its T1 recipes and finite material allowances calculated at 100% efficiency.
+MAP01 remains the systems test environment.
 
 ## Implemented
+
+- After the weapon choice, Ronnie offers magic, light, medium or heavy armor
+  with descriptions and confirmation. He teaches the chosen family's four T1
+  pieces and component recipes. Existing choices can ask under his workshop
+  dialogue. Armor preparation is optional; its 0/4–4/4 count appears in Detail.
+- Armor now uses the same recursive native crafting path as weapons. Chosen
+  T1 pieces go to personal inventory before the Box reward and can be equipped.
+  Native tasks, reservations, pause/cancel, weight and saves remain authoritative.
+- MAP01 grants only the raw-material allowance for one chosen weapon, one
+  chosen armor set and one ten-arrow/bolt batch when appropriate, at 100% in
+  every layer and the chosen equipment size. New choices default to 100%.
+  At size M, armor leather is 5/10/20/40 kg; giant gauntlets add 6 kg.
+- Sources share a per-character allowance, charged when materials are generated
+  or withdrawn. Another node, consumption, save/load or node regeneration cannot
+  refill it. The chest and Bull share the leather allowance; the Bull's physical
+  12.5 kg yield is a ceiling. Unneeded material cannot be harvested or collected.
+- Large floor stacks allow partial pickup within the allowance and free carry
+  capacity, with a one-gram movement margin. Old inventory is retained and
+  counted; the chest can accept its unreserved surplus. Unused chest leather
+  remains returnable. Pending tasks retain their saved costs and reservations.
+- The accepted optional repair lesson reserves only the first weapon's current
+  damage at 100% when requested; repeating the request does not add stock.
+  Ronnie can lend the gathering sword again for this repair; return it through
+  the same conversation. General crafting efficiencies and work times are unchanged. The narrative
+  exit still carries only the Box and first weapon; armor remains Limbo equipment.
 
 - Choosing Ronnie's crossbow also teaches the 10-bolt recipe and its component
   dependencies. Previous crossbow choices receive that knowledge on load,
@@ -90,12 +116,10 @@ Ronnie's ammunition guidance. MAP01 remains the systems test environment.
 - Quest Detail records the lesson and completion. It survives saving/loading
   and the narrative exit; leaving without doing it is allowed. The normal
   Rulo/Palomo/Fool/exit progression stays unchanged.
-- T1 supply audit: leather limits complete armor sets at low efficiency.
-  The existing 96 kg chest (size M, before withdrawals) plus 12.5 kg Bull loot
-  is shared with the first weapon and repairs. All four armor sets together
-  need 590.4 / 198.4 / 75 kg at 25 / 50 / 100% in every layer. Source materials
-  for all five T1 Seals exist in the cave. Recipe access is a separate pending
-  content requirement; the audit does not grant the armor or Seal recipes.
+- T1 recipe costs remain quantified in SYSTEMS.md. Tutorial supply now covers
+  the selected armor set at 100%, as specified above. Seal teaching and its
+  material allowance are still pending; the existence of veins alone does
+  not grant unrestricted access to every T1 recipe.
 
 - After capturing The Fool, Quest Detail points to the marked door at the back
   of the Bull room on the ground floor. Palomo, Ronnie and Rulo also give
@@ -174,10 +198,10 @@ Ronnie's ammunition guidance. MAP01 remains the systems test environment.
 - The five characters have 280 supplied pose sprites and native states.
   Domingo uses crouch idle/walk art; seated/lying states prepare future furniture
   interactions. They do not implement rest or calendar simulation yet.
-- The basement chest holds only cow leather, enough for giant gauntlets at
-  the character's size and 25% efficiency in every layer: **96 kg for size M**.
-  Withdrawals respect carrying capacity; unused leather can be returned.
-  Reopening/loading does not refill it. Gems come from the five cave veins.
+- The basement chest holds cow leather for the chosen armor and, when chosen,
+  giant gauntlets, at 100% in every layer. It shares its allowance with the Bull.
+  Withdrawals respect carry capacity; unused leather can be returned.
+  Reopening/loading does not refill it. Needed gems come from the cave veins.
 - Bow and longbow choices also teach a native recipe for ten arrows and all
   its dependencies. Arrows enter personal inventory and do not replace the
   first crafted weapon. Tab closes Trades; G changes its recipe filter.
@@ -190,10 +214,9 @@ Ronnie's ammunition guidance. MAP01 remains the systems test environment.
   A defeat restores Health/Air/Anima and restarts the same Bull, preserving
   progress and the first weapon. Victory opens the room and drops the finite
   leather budget once; speaking with Rulo completes phase 75.
-  The 900 kg Bull yields 12.5 kg of usable leather, following the documented
-  hide/processing estimate. It no longer guarantees a complete T1 armor set
-  at minimum efficiency. The gauntlet chest remains; T1 supply limits are quantified in SYSTEMS.md.
-  Additional supply and recipe teaching remain planned. T2 infrastructure stays.
+  The 900 kg Bull can yield up to 12.5 kg of usable leather, following the
+  documented hide/processing estimate, limited by the unissued leather allowance.
+  The chest supplies the rest of the chosen set. T2 infrastructure stays.
 - Ranged trainees receive 24 borrowed rounds, replenished when exhausted in
   the arena. Unused rounds return at turn-in; pre-existing ammunition remains.
   Rulo restores the first weapon for practice. Javelin practice cannot yield
@@ -237,12 +260,12 @@ Ronnie's ammunition guidance. MAP01 remains the systems test environment.
 ## Planned
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
-PROJECT.md. Armor/Seal recipe acquisition and safe-water collection/processing remain
-planned. Bullet crafting still needs its material composition and process
+PROJECT.md. Seal recipe acquisition/allowances and safe-water collection/processing
+remain planned. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
-Material coverage remains quantified, with no new leather source or loot change.
+Material coverage uses the finite 100% allowance for the chosen loadout.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
 crafted weapon only, inside the Box.
@@ -256,15 +279,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0ab is author-approved. Focused 0ac checks are in PRUEBAS_4_33_0ac.txt;
+0ac is author-approved. Focused 0ad checks are in PRUEBAS_4_33_0ad.txt;
 native engine evidence and limits are in PROJECT.md.
-All maps and audiovisual resources remain byte-identical to 0ab.
+All maps and audiovisual resources remain byte-identical to 0ac.
 
 ## Build and run
 
-Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ac patch
-into the complete **4.33.0ab** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ac.txt** outside docs.
+Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ad patch
+into the complete **4.33.0ac** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ad.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

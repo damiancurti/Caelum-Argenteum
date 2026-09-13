@@ -64,6 +64,15 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00PreviousWeaponId;
     int MainM00PreviousSealId;
     // La elección, el préstamo y el stock no viven en el NPC/cofre recreable.
+    // 0ad: elección y cupo finito; los campos nuevos nacen vacíos en 0ac.
+    bool MainM00ArmorChosen;
+    int MainM00ArmorType;
+    int MainM00ArmorSize;
+    bool MainM00ArmorCrafted[4];
+    bool MainM00SupplyQuotaReady;
+    int MainM00RepairSupply[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00SupplyLimit[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00SupplyIssued[CaelumConstants.MATERIAL_TYPE_COUNT];
     bool MainM00StarterChosen;
     int MainM00StarterOption;
     int MainM00StarterSize;
@@ -327,6 +336,13 @@ class CaelumPersistentCharacterState : Inventory
         MainM00AnimaAfterCast = 0.0;
         MainM00PreviousWeaponId = 0;
         MainM00PreviousSealId = 0;
+        MainM00ArmorChosen = false;
+        MainM00ArmorType = 0;
+        MainM00ArmorSize = 0;
+        MainM00SupplyQuotaReady = false;
+        for (int slot = 0; slot < 4; slot++) MainM00ArmorCrafted[slot] = false;
+        for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
+        { MainM00SupplyLimit[material] = 0; MainM00SupplyIssued[material] = 0; MainM00RepairSupply[material] = 0; }
         MainM00StarterChosen = false;
         MainM00StarterOption = 0;
         MainM00StarterSize = 0;

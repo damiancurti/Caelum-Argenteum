@@ -339,6 +339,8 @@ class CaelumPlayer : DoomPlayer
     int MainM00ConvincedCountSnapshot;
     int MainM00MagicPracticeSnapshot;
     int MainM00RuneSequenceSnapshot;
+    int MainM00ArmorTypeSnapshot;
+    int MainM00ArmorPiecesSnapshot;
     int MainM00StarterOptionSnapshot;
     int MainM00StarterSizeSnapshot;
     int MainM00StarterWeaponSnapshot;
@@ -835,6 +837,9 @@ class CaelumPlayer : DoomPlayer
         MainM00ConvincedCountSnapshot = persistentState.CountMainM00ConvincedResidents();
         MainM00MagicPracticeSnapshot = persistentState.CountMainM00MagicPractice();
         MainM00RuneSequenceSnapshot = persistentState.MainM00RuneSequenceIndex;
+        MainM00ArmorTypeSnapshot = persistentState.MainM00ArmorChosen ? persistentState.MainM00ArmorType : -1;
+        MainM00ArmorPiecesSnapshot = 0;
+        for (int slot = 0; slot < 4; slot++) if (persistentState.MainM00ArmorCrafted[slot]) MainM00ArmorPiecesSnapshot++;
         MainM00StarterOptionSnapshot = persistentState.MainM00StarterChosen ? persistentState.MainM00StarterOption : -1;
         MainM00StarterSizeSnapshot = persistentState.MainM00StarterSize;
         MainM00StarterWeaponSnapshot = persistentState.MainM00StarterWeaponId;
@@ -6781,6 +6786,7 @@ class CaelumPlayer : DoomPlayer
     bool IsDirectWeaponCraftingRecipe()
     {
         return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
             || CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             || CraftingSelectedRecipeKind
@@ -8354,15 +8360,13 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
             return;
         }
-        if (!HasNativeMagicBoxSlotAvailable())
+        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
             return;
         }
-        if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired
-            || !HasCraftingFinishMaterials())
+        if (!HasSelectedWeaponCraftingMaterials())
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
@@ -8379,17 +8383,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        if (!ConsumeCraftingMaterial(
-                CraftingBasicMaterialType,
-                CraftingBasicMaterialTier,
-                CraftingBasicRequired
-            )
-            || !ConsumeCraftingMaterial(
-                CraftingTierMaterialType,
-                CraftingTierMaterialTier,
-                CraftingTierRequired
-            )
-            || !ConsumeCraftingFinishMaterials())
+        if (!ConsumeSelectedWeaponCraftingMaterials())
         {
             result.Destroy();
             LastCraftingAction =
@@ -8415,7 +8409,7 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionSize
         );
         result.Equipped = false;
-        result.InMagicBox = true;
+        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
@@ -8436,10 +8430,11 @@ class CaelumPlayer : DoomPlayer
                 CraftingSelectedArmorType,
                 CraftingSelectionTier,
                 CraftingSelectionSize,
-                true
+                result.InMagicBox
             );
         }
 
+        CaelumMainM00SupplyRules.RecordArmor(self, result);
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
         ApplyCharacterProfile();
         PersistCharacterState();

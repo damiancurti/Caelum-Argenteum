@@ -1,6 +1,21 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ac — 2026-09-12.
+Versión documental: 4.33.0ad — 2026-09-13.
+
+## Armadura elegida y cupos al 100% — 4.33.0ad
+
+El autor aprobó 0ac y pidió que Ronnie pregunte qué armadura desea usar, enseñe
+sus recetas T1 y reduzca recursos/cofre a lo necesario al 100% de eficiencia.
+Se implementan cuatro familias con descripción/confirmación y cuatro piezas,
+componentes y Detalle. Crafting recursivo nativo, salida personal y equipo.
+Cupo por personaje para arma, conjunto y diez flechas/virotes cuando corresponda;
+masa y dureza de las fuentes permanecen. Generación y recogida evitan excedentes,
+cofre/Toro comparten cuero y la recogida parcial conserva capacidad de movimiento.
+Guardados conservan tareas y existencias; el cajón acepta excedentes no reservados.
+La reparación opcional obtiene sólo cupo proporcional al daño observado.
+No se cambia el equipo que sale del Limbo. Próximo: sellos T1 y sus cupos;
+balas/agua conservan sus definiciones pendientes. Formato delta sobre 0ac más
+PRUEBAS_4_33_0ad.txt; README/cinco documentos al día. Evidencia en PROJECT.md.
 
 ## Virotes de ballesta — 4.33.0ac
 

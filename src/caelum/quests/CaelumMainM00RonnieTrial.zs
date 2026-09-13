@@ -34,6 +34,7 @@ class CaelumMainM00RonnieTrial : Object play
             || r.MainM00StarterWeaponId <= 0 || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
             return false;
         r.MainM00RepairLessonOffered = true;
+        CaelumMainM00SupplyRules.PrepareRepairSupply(user);
         user.PersistCharacterState();
         return true;
     }
@@ -225,11 +226,17 @@ class CaelumMainM00RonnieTrial : Object play
         return loan != null && loan.IsLimboTemporary() ? loan : null;
     }
 
-    static bool PrepareLoan(CaelumPlayer user)
+    static bool PrepareLoan(CaelumPlayer user, bool forRepair = false)
     {
         if (!CanInteract(user) || !IsStarted(user) || user.WeaponModel == null) return false;
         let record = user.GetPersistentCharacterState(true);
-        if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)) return false;
+        if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE))
+        {
+            let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
+            if (!forRepair || !record.MainM00RepairLessonOffered || record.MainM00RepairLessonComplete
+                || record.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || first == null || first.Durability >= user.GetEquipmentTaskMaximumDurability(first)) return false;
+        }
         user.SyncActiveModelsToNativeInventory();
         let loan = FindLoan(user);
         if (loan == null)
@@ -252,6 +259,8 @@ class CaelumMainM00RonnieTrial : Object play
                 loan.EssenceType = CaelumConstants.ESSENCE_FIRE;
                 loan.UnitWeight = user.WeaponModel.GetWeightFor(loan.ItemType, 1, loan.EquipmentSize);
                 loan.PickupDataInitialized = true;
+                if (forRepair && !user.CanAddWeightToPersonalInventory(loan.UnitWeight + CaelumConstants.MATERIAL_UNIT_WEIGHT))
+                { loan.Destroy(); Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
                 loan.AttachToOwner(user);
                 user.EnsureEquipmentItemId(loan);
             }
@@ -300,7 +309,7 @@ class CaelumMainM00RonnieTrial : Object play
             || record.MainM00StarterChosen || record.MainM00StarterWeaponId > 0) return false;
         int size = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
         let requirements = new("CaelumMainM00StarterMaterials");
-        if (!requirements.Build(option, size)) return false;
+        if (!requirements.Build(option, size, 2)) return false;
         if (!record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE,
             CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE)) return false;
         record.MainM00StarterChosen = true;
@@ -320,7 +329,7 @@ class CaelumMainM00RonnieTrial : Object play
         user.CraftingSelectionRecipe = CaelumMainM00StarterRules.GetRecipe(option);
         user.CraftingSelectionTier = 1;
         user.CraftingSelectionSize = size;
-        user.CraftingEfficiencyIndex = 0;
+        user.CraftingEfficiencyIndex = 2;
         user.ResetCraftingLayerChoices();
         Sync(user);
         return true;
@@ -353,18 +362,8 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (!IsStarted(user)) return;
         let record = user.GetPersistentCharacterState(true);
-        if (record.MainM00LeatherSuppliesPrepared) return;
-        let requirements = new("CaelumMainM00StarterMaterials");
-        requirements.Build(11, record.MainM00StarterSize);
-        int leather = requirements.Units[CaelumConstants.MATERIAL_LEATHER];
-        int spent = record.MainM00SuppliesInitialized
-            ? Max(0, record.MainM00SupplyInitial[5] - record.MainM00SupplyRemaining[5]) : 0;
-        for (int slot = 0; slot < 5; slot++)
-        { record.MainM00SupplyInitial[slot] = 0; record.MainM00SupplyRemaining[slot] = 0; }
-        record.MainM00SupplyInitial[5] = leather;
-        record.MainM00SupplyRemaining[5] = Max(0, leather - spent);
-        record.MainM00SuppliesInitialized = true;
-        record.MainM00LeatherSuppliesPrepared = true;
+        CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SupplyRules.RefreshChest(user);
     }
 
     static bool OpenChest(CaelumPlayer user, CaelumMainM00SupplyChest chest)
@@ -399,7 +398,8 @@ class CaelumMainM00RonnieTrial : Object play
                     CaelumMainM00StarterRules.GetSupplyMaterial(i), 1)));
                 returned = Min(returned, record.MainM00SupplyInitial[i] - record.MainM00SupplyRemaining[i]);
                 if (returned <= 0) continue;
-                record.MainM00SupplyRemaining[i] += returned;
+                record.MainM00SupplyIssued[CaelumMainM00StarterRules.GetSupplyMaterial(i)] = Max(0,
+                    record.MainM00SupplyIssued[CaelumMainM00StarterRules.GetSupplyMaterial(i)] - returned);
                 item.LimboSupplyUnits -= returned;
                 item.LimboQuestUnits = Max(0, item.LimboQuestUnits - returned);
                 item.Amount -= returned;
@@ -410,14 +410,11 @@ class CaelumMainM00RonnieTrial : Object play
         {
             if (slot != 5) return false;
             user.RefreshCarriedInventorySummary();
-            int capacity = Max(0, int(Floor((user.DerivedStats.CarryCapacity - user.DerivedStats.CarriedWeight)
-                / CaelumConstants.MATERIAL_UNIT_WEIGHT)));
+            int capacity = CaelumMainM00SupplyRules.CarryRoom(user);
             int amount = Min(capacity, record.MainM00SupplyRemaining[slot]);
             int material = CaelumMainM00StarterRules.GetSupplyMaterial(slot);
-            // Extrae sólo el cuero que falta para la receta elegida. El resto
-            // queda en el cajón y cada retirada respeta la carga disponible.
-            amount = Min(amount, Max(0, record.MainM00StarterRequired[material]
-                - user.CountRawCraftingMaterial(material, 1)));
+            // El cupo ya incluye arma, conjunto elegido y todo lo retirado.
+            amount = Min(amount, CaelumMainM00SupplyRules.Remaining(user, material));
             if (amount <= 0) { Feedback(user, "CA_M01_CHEST_NO_TRANSFER"); return true; }
             let item = user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL, material, 1);
             if (item == null)
@@ -434,8 +431,9 @@ class CaelumMainM00RonnieTrial : Object play
             }
             item.LimboQuestUnits += amount;
             item.LimboSupplyUnits += amount;
-            record.MainM00SupplyRemaining[slot] -= amount;
+            CaelumMainM00SupplyRules.Issue(user, material, amount);
         }
+        CaelumMainM00SupplyRules.RefreshChest(user);
         user.OnNativeInventoryChanged();
         Sync(user);
         return true;
@@ -444,12 +442,14 @@ class CaelumMainM00RonnieTrial : Object play
     static bool CanUsePersonalCraftingOutput(CaelumPlayer user)
     {
         return CanInteract(user) && IsStarted(user) && user.CraftingSelectionTier == 1
-            && CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe);
+            && (CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe)
+                || CaelumMainM00SupplyRules.IsChosenArmorRecipe(user));
     }
 
     static void RecordCraft(CaelumPlayer user, CaelumEquipmentItem result)
     {
-        if (!CanUsePersonalCraftingOutput(user) || result == null) return;
+        if (!CanUsePersonalCraftingOutput(user) || result == null
+            || result.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON) return;
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00StarterWeaponId > 0)
         {
@@ -491,6 +491,8 @@ class CaelumMainM00RonnieTrial : Object play
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return;
         TeachStarterAmmunition(user);
+        CaelumMainM00SupplyRules.Ensure(user);
+        user.SetPalomoDialogueToken("CaelumM00ArmorChosenToken", record.MainM00ArmorChosen);
         user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", record.MainM00StarterChosen);
         user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
         user.SetPalomoDialogueToken("CaelumM00RonnieFinishedToken",
@@ -557,7 +559,7 @@ class CaelumMainM00RonnieTrial : Object play
         if (record.MainM00StarterWeaponId == 0)
         {
             let requirements = new("CaelumMainM00StarterMaterials");
-            requirements.Build(record.MainM00StarterOption, record.MainM00StarterSize, 0, user);
+            requirements.Build(record.MainM00StarterOption, record.MainM00StarterSize, 2, user);
             bool ready = requirements.IsSatisfied();
             record.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
                 CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS, ready ? 1 : 0, 1);
@@ -662,5 +664,29 @@ class CaelumM00SwimLessonAction : CaelumPalomoDialogueAction
     override bool Use(bool pickup)
     {
         return CaelumMainM00RonnieTrial.StartSwimLesson(CaelumPlayer(Owner));
+    }
+}
+
+
+class CaelumM00BorrowRepairSwordAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        let user = CaelumPlayer(Owner);
+        if (!CaelumMainM00RonnieTrial.IsRonnie(user)) return false;
+        CaelumMainM00SupplyRules.PrepareRepairSupply(user);
+        return CaelumMainM00RonnieTrial.PrepareLoan(user, true);
+    }
+}
+
+class CaelumM00ReturnRepairSwordAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        let user = CaelumPlayer(Owner);
+        if (!CaelumMainM00RonnieTrial.IsRonnie(user)
+            || !user.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)) return false;
+        CaelumMainM00RonnieTrial.ReturnLoan(user);
+        return true;
     }
 }

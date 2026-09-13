@@ -1,8 +1,36 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ac — 2026-09-12.
+Versión documental: 4.33.0ad — 2026-09-13.
 
-## Estado actual: 4.33.0ac
+## Estado actual: 4.33.0ad
+
+El autor aprobó todas las pruebas de 0ac. Ronnie pregunta qué familia de
+armadura se desea después de elegir arma: mágica, liviana, mediana o pesada,
+con descripción y confirmación. Enseña las cuatro piezas T1 y componentes;
+quien ya eligió arma puede acceder por su conversación sobre talleres. No
+obliga a repetir misiones ni añade un requisito al Toro o a la salida.
+
+Se sustituye el abastecimiento al 25% por un cupo finito al 100% en cada capa:
+un arma elegida, un conjunto elegido y diez flechas/virotes cuando corresponda,
+al talle elegido. Cuero M: conjuntos 5/10/20/40 kg, más 6 kg si el arma son
+los guanteletes gigantes. Cada fuente descuenta el mismo cupo por personaje.
+El Toro conserva su rendimiento físico máximo, pero comparte cupo con el cajón.
+Pilas anteriores también respetan el límite al recoger; las nuevas no generan
+excedentes. La recogida parcial y el cofre dejan un gramo libre de capacidad.
+
+Los inventarios anteriores no se borran al actualizar: cuentan al 100% junto
+con componentes y primera arma ya hecha. El cajón permite dejar sobrantes sin
+reservar. Las tareas anteriores mantienen eficiencia, tiempo y reservas. La
+práctica opcional de reparación habilita sólo el faltante proporcional del daño
+observado; no repone un lote completo. Se puede pedir y devolver la espada de
+recolección para esa práctica. Fabricación, equipo y progresión nativos.
+
+Aplicar sobre 0ac: archivos nuevos/modificados y PRUEBAS_4_33_0ad.txt, sin
+aplicadores ni PK3. README y cinco documentos actualizados. Próximo bloque:
+enseñanza de sellos T1 y sus cupos; balas necesitan composición/proceso y el
+agua su recolección/potabilización. Mapas nuevos diferidos; V5 mantiene refactor.
+
+## Base 4.33.0ac — aprobada por el autor
 
 El autor aprobó todas las pruebas de 0ab. Se incorpora fabricación de virotes:
 Ronnie enseña la receta y dependencias al elegir ballesta. También se incorpora
@@ -117,7 +145,7 @@ run_dev.bat. PRUEBAS_4_33_0x.txt contiene sólo las comprobaciones nuevas.
 
 
 **Base histórica del acumulativo 0w:** carpeta completa 0u.
-La versión aprobada actual es 0w.
+La versión 0w fue aprobada por el autor.
 El acumulativo incluyó 0v y 0w; posteriormente el autor aprobó ambas.
 0w amplía el tutorial con una práctica opcional de reparación de Ronnie,
 disponible después de devolver su espada. No exige repetir ramas ni añade
@@ -135,7 +163,8 @@ El inventario de materiales T1 se auditó usando el catálogo vigente en GZDoom.
 El cuello de botella es el cuero, no la presencia de las cinco gemas. Las
 cantidades y límites están en SYSTEMS.md. No se aumenta el botín del Toro ni
 el cajón autorizado para los guanteletes; tampoco se conceden recetas nuevas.
-La distribución narrativa de conocimiento para armaduras/sellos aún falta.
+En ese hito faltaba distribuir recetas de armaduras/sellos. 0ad resuelve la
+elección de armadura; sellos y su abastecimiento continúan pendientes.
 
 Los tres WAD, los sonidos, modelos y texturas mantienen sus hashes de 0v.
 Quien ya salió puede continuar en MAP02; para probar esta ampliación se usa
@@ -187,9 +216,9 @@ La base 0n aprobada incluye:
 - Tab cierra Oficios, también durante una tarea; G filtra. Cerrar pausa la tarea.
 - Arco y arco largo enseñan diez flechas por lote y sus componentes, usando
   crafting e inventario nativos. No consumen el lugar de la primera arma.
-- Cinco vetas de gemas al fondo de la cueva. El cajón queda sólo con cuero de
-  vaca para guanteletes gigantes al 25 % por capa y al talle del personaje:
-  96 kg en M. La corrección final del autor limita el abastecimiento a T1.
+- Cinco vetas de gemas al fondo de la cueva. El cajón conserva sólo cuero T1.
+  El abastecimiento histórico de 96 kg M para guanteletes al 25% queda
+  sustituido en 0ad por el cupo del equipo elegido al 100%.
 - Toro colocado tras la puerta de plata y Argento como custodio de la llave.
   La entrega exige las preparaciones con los cuatro: las prácticas de Rulo
   preceden al Toro. El presupuesto de cuero por recetas de 0n queda sustituido
@@ -202,8 +231,9 @@ La base 0n aprobada incluye:
 
 Reparación, alimento/agua, Aire/movimiento, carga y respiración en piscina están
 implementados como prácticas opcionales. Virotes y su conocimiento están
-implementados en 0ac. Quedan recetas de armaduras/sellos, composición y receta
-de balas y recolección/potabilización de agua; no bloquean las ramas aceptadas.
+aprobados en 0ac. Elección de armadura y cupos al 100% implementados en 0ad.
+Quedan recetas/cupos de sellos, composición y receta de balas y recolección/
+potabilización de agua; no bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -277,7 +307,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga incluidos en la base 0aa aprobada. Respiración en piscina 0ab aprobada. Virotes y enseñanza a la ballesta implementados en 0ac, pendiente de prueba del autor. Quedan acceso a recetas de armaduras/sellos, definir composición/proceso de balas para su receta y recolección/potabilización de agua. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. 0ad implementa elección/recetas de armadura y cupos para equipo elegido al 100%, pendiente de prueba del autor. Quedan enseñanza/cupos de sellos, composición/proceso de balas y recolección/potabilización de agua. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
@@ -389,16 +419,57 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
-completa 0ab y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0ac y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ac.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ad.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0ac
+## Validación de 4.33.0ad
+
+394 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+62 en español, 62 en inglés, 217 de familias/cupos, 15 al actualizar un guardado
+auténtico de 0ac y 38 al recargar una fabricación de armadura pausada. Sólo se
+cuentan las comprobaciones nuevas de las recargas, no sus contadores guardados.
+
+Conversaciones USDF nativas: elección de arma, lectura de las cuatro familias,
+confirmación de armadura, cajón y talleres. Se fabricaron y equiparon las cuatro
+piezas de cada familia. Los cupos del arma se compararon con las reservas del
+plan nativo para las 36 opciones y cinco talles (180 casos); el cuero del conjunto
+se contrastó con las cuatro masas nativas en las 20 combinaciones familia/talle.
+Ballesta, diez virotes y conjunto mediano consumieron sus materias primas exactas.
+
+Extracción limitada antes de agotar la fuente o generar objetos, cupo compartido
+entre arbustos, pilas antiguas, recogida parcial de pilas nuevas/antiguas con un
+gramo libre, retirada/devolución del cajón y reparto Toro/cajón. La práctica de
+reparación reservó y consumió el faltante proporcional al daño; pedirla de nuevo
+no sumó otro lote. Préstamo y devolución de la espada conservan la primera arma.
+
+La migración se probó creando el guardado con fuentes auténticas 0ac y
+superponiendo 0ad en la misma ruta. Conservó recetas, primera arma, prácticas,
+El Loco y una tarea de flechas al 25% con sus reservas y tiempo. Conservó los
+96 kg de cuero anteriores hasta dejar voluntariamente el excedente en el cajón;
+quedó el cuero útil para la armadura y no se tocaron componentes reservados.
+La tarea antigua produjo una sola vez su munición antes de fabricar armadura.
+Pausa, guardado, reanudación y cancelación de armadura mantienen cupos y reservas.
+
+Revisión visual de la guía de Ronnie y el árbol de fabricación en capturas
+de 819×614: textos y controles legibles. El validador comprueba cinco documentos,
+74 audios, 12 modelos de estaciones y 24 claves españolas de Caella, sin errores.
+El delta contiene 18 archivos modificados y un TXT nuevo; CRC y superposición
+verificados contra el árbol completo utilizado por el motor. No cambia mapas,
+modelos, sprites, música ni sonidos.
+
+Las escenas privadas preparan etapas, materiales y atributos y adelantan tiempo
+mediante el helper diagnóstico existente. Comprueban el proceso nativo y su
+persistencia; no sustituyen una ruta completa ni la espera de fabricación a
+tiempo real. Falta la prueba habitual del autor en Windows; 0ad no se registra
+como aprobado por el autor hasta recibirla.
+
+## Validación de 4.33.0ac — aprobada por el autor
 
 129 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
 47 en español, 47 en inglés, 17 al recargar una tarea pendiente, 2 tras guardar
@@ -438,8 +509,8 @@ su icono, árbol y estaciones legibles. Validador aprobado: cinco documentos,
 
 Mapas y recursos audiovisuales conservan los bytes de 0ab. El delta pasa CRC
 y reconstrucción exacta sobre esa base: quince archivos modificados más
-PRUEBAS_4_33_0ac.txt, sin ejecutores, escenas privadas ni PK3. Queda la prueba
-del autor en Windows con sus guardados, controles y tiempos habituales.
+PRUEBAS_4_33_0ac.txt, sin ejecutores, escenas privadas ni PK3. El autor
+confirmó que todas las pruebas de 0ac dieron correcto.
 
 ## Validación de 4.33.0ab — aprobada por el autor
 

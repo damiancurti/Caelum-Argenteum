@@ -1,8 +1,26 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ac — 2026-09-12.
+Versión documental: 4.33.0ad — 2026-09-13.
 
 
-REVISIÓN VIGENTE 4.33.0ac — VIROTES DE BALLESTA
+REVISIÓN VIGENTE 4.33.0ad — ARMADURA Y RECURSOS AL 100%
+0ac aprobado por el autor. Ronnie pregunta por una familia de armadura después
+del arma: mágica, liviana, mediana o pesada. Descripción antes de confirmar;
+enseña cuatro piezas T1 y componentes. Quien ya terminó Ronnie accede por su
+conversación de talleres. Detalle muestra elección y piezas hechas. Opcional.
+
+Recursos para un arma, un conjunto y diez flechas/virotes si corresponde,
+al 100% en todas las capas y al talle elegido. Cupo compartido por personaje:
+otra fuente, regeneración, consumo o guardado no repone cantidades. Cofre y
+Toro comparten cuero; 12,5 kg del Toro son techo físico, no suministro extra.
+Pilas antiguas respetan el cupo al recoger. Recogida parcial según carga;
+el cajón permite dejar excedentes no reservados de partidas anteriores.
+
+Se puede fabricar armadura directamente desde cuero mediante el crafting
+nativo, recibirla sin Caja y equiparla. Guardados conservan tareas y progreso.
+La salida conserva su regla Caja/primera arma. No se modifican WAD, ubicaciones,
+masas físicas de fuentes ni estaciones. Siguiente: recetas/cupos de sellos T1.
+
+BASE 4.33.0ac APROBADA — VIROTES DE BALLESTA
 El autor aprobó todas las pruebas de 0ab. Ronnie enseña 10 virotes y sus
 componentes al elegir ballesta, también en guardados previos con esa elección.
 Se fabrica en su Banco de Trabajo o en el del segundo piso, filtro Municiones.
@@ -11,7 +29,7 @@ por capa. Se puede partir de madera/cobre/estaño con las recetas aprendidas.
 Guía en Detalle y en el apartado de taller de Ronnie. Tarea nativa, pausa,
 cancelación y guardado; no requiere Caja ni reemplaza la primera arma.
 No cambia WAD, recursos, botín o bloqueos de misión. Balas y adquisición de
-recetas de armaduras/sellos continúan en el roadmap con sus límites definidos.
+recetas de armaduras se incorporan en 0ad; sellos continúan en el roadmap.
 
 BASE 4.33.0ab APROBADA — RESPIRACIÓN EN PISCINA
 El autor aprobó todas las pruebas de 0aa. Se implementa el tramo E opcional
@@ -140,7 +158,7 @@ preparación del combate. Rulo/Ronnie atacan en melee; Argento/Caella conservan
 sus ataques nativos y proyectiles. El Toro puede atacar a cualquiera del grupo.
 Un compañero caído queda agachado, sin colisión ni ataques; se recupera al
 terminar el intento. Caer el jugador reinicia también a los compañeros.
-Victoria: recoger 12,5 kg de cuero de vaca y hablar con Rulo ALLÍ MISMO.
+Victoria: recoger cuero si quedaba cupo (hasta 12,5 kg) y hablar con Rulo ALLÍ MISMO.
 Después del cierre y fuera de vista, los residentes vuelven a sus dormitorios.
 No se crean duplicados ni se cambia la ruta física de Palomo.
 
@@ -195,6 +213,7 @@ iniciar MAP01 o cargar 0n y conserva las recetas aprendidas. El WAD no cambia.
 Las lecciones restantes de Ronnie/Rulo y el cierre narrativo siguen pendientes.
 
 REGISTRO DE LA REVISIÓN 4.33.0n
+Las cantidades de este registro histórico se sustituyen por los cupos de 0ad.
 Abastecimiento limitado a objetos T1. Cajón (1780,640,-384): sólo cuero de vaca
 para guanteletes gigantes a la mínima eficiencia por capa; 96 kg en talle M,
 calculado para los demás talles. Mantiene retiros/devoluciones, no se rellena.
@@ -1982,7 +2001,8 @@ CaelumMainM00StarterMaterials.Build(opción, talle, eficiencia) → requisitos
 
 El cálculo reutiliza CaelumCraftingRules y considera las capas de procesamiento,
 componentes y montaje. No duplicar materiales ni costes en los scripts del mapa.
-Referencia del cofre y Diario: 25% en cada capa, al talle actual del personaje.
+Referencia vigente del cofre y Diario: 100% en cada capa, al talle elegido
+por el personaje. Cofre/Toro/fuentes comparten cupo desde 0ad.
 La elección se fija al confirmar; leer o retroceder no entrega recetas ni equipo.
 
 19.4. CONTENIDOS DE LA RUTA
@@ -2076,7 +2096,7 @@ Cobertura de municiones — virotes (implementada en 0ac):
   Los arbustos entregan fibra mediante ataques cortantes.
 - Cobre, estaño y cinco vetas de gemas están en la cueva. El cajón sólo almacena
   cuero T1 para guanteletes gigantes al talle del personaje y mínima eficiencia;
-  desde 0q el Toro concede 12,5 kg de cuero, sin garantizar un conjunto completo T1.
+  desde 0q el techo físico del Toro es 12,5 kg; en 0ad se limita al cupo compartido.
 - Stock por personaje, sin reposición al reabrir; sólo se retira lo necesario
   para la elección y lo que cabe. Se devuelven sobrantes no gastados/reservados.
 - Materiales de misión controlados por cantidades dentro de cada pila; no se

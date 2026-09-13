@@ -58,6 +58,8 @@ class CaelumSpecialInventoryItem : Inventory
     // previo al retirarlas al salir del Limbo. Supply identifica lo devolvible.
     int LimboQuestUnits;
     int LimboSupplyUnits;
+    bool LimboQuotaReserved;
+    int LimboQuotaPlayer;
 
     Default
     {
@@ -112,6 +114,8 @@ class CaelumSpecialInventoryItem : Inventory
             copy.InMagicBox = InMagicBox;
             copy.LimboQuestUnits = LimboQuestUnits;
             copy.LimboSupplyUnits = LimboSupplyUnits;
+            copy.LimboQuotaReserved = LimboQuotaReserved;
+            copy.LimboQuotaPlayer = LimboQuotaPlayer;
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
@@ -129,6 +133,8 @@ class CaelumSpecialInventoryItem : Inventory
             copy.InMagicBox = InMagicBox;
             copy.LimboQuestUnits = LimboQuestUnits;
             copy.LimboSupplyUnits = LimboSupplyUnits;
+            copy.LimboQuotaReserved = LimboQuotaReserved;
+            copy.LimboQuotaPlayer = LimboQuotaPlayer;
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
@@ -140,6 +146,63 @@ class CaelumSpecialInventoryItem : Inventory
 // su tipo y tier en args. HandlePickup solo combina pilas identicas.
 class CaelumMaterialPickup : CaelumSpecialInventoryItem
 {
+    override bool TryPickup(in out Actor toucher)
+    {
+        UpdateMaterialVisuals();
+        let user = CaelumPlayer(toucher);
+        int material = GetSpecialType();
+        if (!CaelumMainM00SupplyRules.IsLimited(user) || GetSpecialTier() != 1
+            || !CaelumMainM00SupplyRules.IsRawSupply(material))
+        {
+            if (LimboQuestUnits > 0 && (user == null
+                || !user.CanAddWeightToPersonalInventory(Amount * GetUnitWeight()))) return false;
+            return Super.TryPickup(toucher);
+        }
+        if (LimboQuotaReserved && LimboQuotaPlayer != user.PlayerNumber()) return false;
+        // Lo generado por 0ad ya tiene su cupo. Pilas antiguas y otros drops
+        // lo solicitan al tocar: no pueden saltarse el límite por ser anteriores.
+        int quota = LimboQuotaReserved ? Amount : CaelumMainM00SupplyRules.Remaining(user, material);
+        int kept = Min(Amount, quota);
+        int accepted = Min(kept, CaelumMainM00SupplyRules.CarryRoom(user));
+        if (accepted <= 0) return false;
+        int oldAmount = Amount;
+        int oldQuest = LimboQuestUnits;
+        int oldSupply = LimboSupplyUnits;
+        bool prepaid = LimboQuotaReserved;
+        // Preparar el resto antes de transferir evita perder cupo si falla
+        // la creación del actor. La recogida nativa sigue decidiendo el éxito.
+        CaelumMaterialPickup rest = null;
+        if (kept > accepted)
+        {
+            rest = CaelumMaterialPickup(Spawn("CaelumMaterialPickup", Pos, NO_REPLACE));
+            if (rest == null) return false;
+        }
+        Amount = accepted;
+        LimboQuestUnits = accepted;
+        LimboSupplyUnits = Min(accepted, oldSupply);
+        if (!Super.TryPickup(toucher))
+        {
+            Amount = oldAmount; LimboQuestUnits = oldQuest; LimboSupplyUnits = oldSupply;
+            if (rest != null) rest.Destroy();
+            return false;
+        }
+        if (!prepaid) CaelumMainM00SupplyRules.Issue(user, material, accepted);
+        // Una pila mayor que el espacio libre se recoge parcialmente. Sólo
+        // queda en el suelo lo que todavía pertenece al cupo útil.
+        if (rest != null)
+        {
+            rest.args[0] = material; rest.args[1] = 1; rest.Amount = kept - accepted;
+            rest.LimboQuestUnits = rest.Amount;
+            rest.LimboSupplyUnits = Max(0, Min(rest.Amount, oldSupply - accepted));
+            rest.LimboQuotaReserved = prepaid;
+            rest.LimboQuotaPlayer = user.PlayerNumber();
+            rest.bDropped = true;
+            rest.UpdateMaterialVisuals();
+        }
+        user.RefreshSocialJournalSnapshot();
+        return true;
+    }
+
     Default
     {
         Tag "$CA_MATERIAL_GENERIC";
@@ -322,17 +385,6 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     {
         Super.Tick();
         UpdateMaterialVisuals();
-    }
-
-    override bool TryPickup(in out Actor toucher)
-    {
-        UpdateMaterialVisuals();
-        if (LimboQuestUnits > 0)
-        {
-            let user = CaelumPlayer(toucher);
-            if (user == null || !user.CanAddWeightToPersonalInventory(Amount * GetUnitWeight())) return false;
-        }
-        return Super.TryPickup(toucher);
     }
 
     override bool HandlePickup(Inventory incoming)

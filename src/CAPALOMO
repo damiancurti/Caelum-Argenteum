@@ -1033,7 +1033,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter0";
         }
@@ -1054,7 +1054,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter1";
         }
@@ -1075,7 +1075,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter2";
         }
@@ -1096,7 +1096,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter3";
         }
@@ -1117,7 +1117,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter4";
         }
@@ -1138,7 +1138,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter5";
         }
@@ -1159,7 +1159,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter6";
         }
@@ -1180,7 +1180,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter7";
         }
@@ -1201,7 +1201,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter8";
         }
@@ -1222,7 +1222,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter9";
         }
@@ -1243,7 +1243,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter10";
         }
@@ -1264,7 +1264,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter11";
         }
@@ -1285,7 +1285,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter12";
         }
@@ -1306,7 +1306,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter13";
         }
@@ -1327,7 +1327,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter14";
         }
@@ -1348,7 +1348,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter15";
         }
@@ -1413,7 +1413,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter16";
         }
@@ -1434,7 +1434,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter17";
         }
@@ -1455,7 +1455,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter18";
         }
@@ -1476,7 +1476,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter19";
         }
@@ -1497,7 +1497,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter20";
         }
@@ -1562,7 +1562,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter21";
         }
@@ -1583,7 +1583,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter22";
         }
@@ -1604,7 +1604,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter23";
         }
@@ -1625,7 +1625,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter24";
         }
@@ -1646,7 +1646,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter25";
         }
@@ -1711,7 +1711,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter26";
         }
@@ -1732,7 +1732,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter27";
         }
@@ -1753,7 +1753,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter28";
         }
@@ -1774,7 +1774,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter29";
         }
@@ -1795,7 +1795,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter30";
         }
@@ -1860,7 +1860,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter31";
         }
@@ -1881,7 +1881,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter32";
         }
@@ -1902,7 +1902,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter33";
         }
@@ -1923,7 +1923,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter34";
         }
@@ -1944,7 +1944,7 @@ conversation
         choice
         {
             text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_collect";
+            nextpage = "ronnie_armor";
             closedialog = false;
             giveitem = "CaelumM00ChooseStarter35";
         }
@@ -2060,6 +2060,7 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_ASK"; nextpage = "ronnie_armor"; }
         choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
     }
@@ -2164,6 +2165,59 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_AMMO_GENERAL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "ronnie_armor"; userstring = "ronnie_armor";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_OFFER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00ArmorChosenToken"; amount = 1; }
+        link = "ronnie_armor_ready";
+        choice { text = "$CA_M01_ARMOR_NAME_0"; nextpage = "ronnie_armor_0"; }
+        choice { text = "$CA_M01_ARMOR_NAME_1"; nextpage = "ronnie_armor_1"; }
+        choice { text = "$CA_M01_ARMOR_NAME_2"; nextpage = "ronnie_armor_2"; }
+        choice { text = "$CA_M01_ARMOR_NAME_3"; nextpage = "ronnie_armor_3"; }
+    }
+    page
+    {
+        pagename = "ronnie_armor_0"; userstring = "ronnie_armor_0";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_0";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor0"; }
+        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
+    }
+    page
+    {
+        pagename = "ronnie_armor_1"; userstring = "ronnie_armor_1";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_1";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor1"; }
+        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
+    }
+    page
+    {
+        pagename = "ronnie_armor_2"; userstring = "ronnie_armor_2";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_2";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor2"; }
+        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
+    }
+    page
+    {
+        pagename = "ronnie_armor_3"; userstring = "ronnie_armor_3";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_3";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor3"; }
+        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
+    }
+    page
+    {
+        pagename = "ronnie_armor_ready"; userstring = "ronnie_armor_ready";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_READY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
+        choice { text = "$CA_M01_RONNIE_ROUTE_CHOICE"; nextpage = "ronnie_resources"; }
     }
 
 }
@@ -2560,6 +2614,7 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         choice { text = "$CA_M01_TAKE_SUPPLY_5"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00TakeSupply5"; }
         choice { text = "$CA_M01_SUPPLY_DEPOSIT"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00ReturnSupplies"; }
+        choice { text = "$CA_M01_SUPPLY_SURPLUS"; nextpage = "ronnie_chest_0"; giveitem = "CaelumM00ReturnSurplus"; }
     }
 }
 

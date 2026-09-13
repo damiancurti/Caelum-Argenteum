@@ -177,6 +177,17 @@ class CaelumJournalOverlay : EventHandler
             && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
             && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
             text = text .. "\n\n" .. StringTable.Localize("CA_M01_BOLTS_DETAIL", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+        {
+            String armorText = StringTable.Localize(localPlayer.MainM00ArmorTypeSnapshot < 0
+                ? "CA_M01_ARMOR_DETAIL_CHOOSE" : "CA_M01_ARMOR_DETAIL", false);
+            armorText.Replace("%ARMOR%", StringTable.Localize(String.Format("CA_M01_ARMOR_NAME_%d",
+                Max(0, localPlayer.MainM00ArmorTypeSnapshot)), false));
+            armorText.Replace("%PIECES%", String.Format("%d", localPlayer.MainM00ArmorPiecesSnapshot));
+            text = text .. "\n\n" .. armorText;
+        }
         bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
             && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE

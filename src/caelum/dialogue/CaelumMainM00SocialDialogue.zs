@@ -325,6 +325,7 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
             text.Replace("%MAGIC_COUNT%", String.Format("%d", user.MainM00MagicPracticeSnapshot));
             text.Replace("%RUNES%", String.Format("%d", user.MainM00RuneSequenceSnapshot));
             text.Replace("%STARTER%", CaelumMainM00StarterRules.GetName(user.MainM00StarterOptionSnapshot));
+            text.Replace("%ARMOR%", StringTable.Localize(String.Format("CA_M01_ARMOR_NAME_%d", Max(0, user.MainM00ArmorTypeSnapshot)), false));
             text.Replace("%DEFENSE%", StringTable.Localize(CaelumJournalOverlay.GetRuloDefenseKey(user), false));
             for (int i = 0; i < 6; i++)
                 text.Replace(String.Format("%%SUPPLY%d%%", i), String.Format("%d", user.MainM00SupplySnapshot[i]));

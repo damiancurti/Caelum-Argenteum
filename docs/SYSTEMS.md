@@ -1,6 +1,73 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ac — 2026-09-12.
+Versión documental: 4.33.0ad — 2026-09-13.
+
+## Elección de armadura y cupos de MAP01 (4.33.0ad)
+
+Ronnie ofrece mágica, liviana, mediana o pesada después del arma. Leer/volver
+no elige; confirmar fija una familia por personaje. Se enseñan las cuatro
+recetas existentes (cabeza, torso, manos, pies) y componentes. El catálogo y
+versión del libro no cambian. En un guardado con arma elegida se accede desde
+su diálogo sobre talleres. Detalle muestra elección y 0/4–4/4, sin nuevo bloqueo.
+
+Las armaduras comparten ahora el resolvedor recursivo de armas: pueden partir
+de cuero sin fabricar correas separadamente. Las piezas T1 elegidas se entregan
+al inventario personal sin Caja obligatoria; se equipan mediante Inventario.
+Son equipo temporal del Limbo. La salida sigue conservando sólo Caja/primera
+arma; elegir armadura no reemplaza ItemId de arma ni completa su objetivo.
+
+Cupo = materias primas de un arma elegida + cuatro piezas de la familia elegida
++ un lote de diez flechas/virotes si el arma usa esa munición. Se calcula al
+100% en TODAS las capas, al talle elegido, mediante las funciones de recetas
+existentes. Se corrige el parámetro que ocultaba el campo Efficiency en el
+resolvedor de suministros. Nuevas elecciones preparan 100% y limpian opciones
+de capas anteriores sólo si no hay una tarea activa. Los costes y tiempos
+25/50/100% generales no cambian; bajar eficiencia puede agotar el cupo antes.
+
+| Cuero ya curtido, talle M | Conjunto | Con guanteletes gigantes elegidos |
+| --- | ---: | ---: |
+| Mágico | 5 kg | 11 kg |
+| Liviano | 10 kg | 16 kg |
+| Mediano | 20 kg | 26 kg |
+| Pesado | 40 kg | 46 kg |
+
+El cuero incluye las correas necesarias. Otros talles usan el multiplicador
+vigente y redondeos nativos. Cada unidad de material sigue pesando un gramo.
+Armaduras usan el cuero del catálogo vigente, también las pesadas; este parche
+no cambia composición, defensa, atributos ni masa de ninguna receta/armadura.
+
+MainM00SupplyLimit/MainM00SupplyIssued viven en el Inventory viajero. Se
+reserva cupo al generar el pickup o retirar del cajón. Otra fuente, consumo,
+recarga de partida o regeneración del nodo no lo repone. El recurso ajeno a la
+elección no se extrae. La masa/dureza/capacidad física de árboles, arbustos y
+vetas permanecen; se limita la cantidad entregada antes de descontar el nodo.
+
+El cajón y el Toro comparten el cupo de cuero. El Toro produce como máximo
+su rendimiento físico de 12,5 kg en 900 kg de masa, limitado al cupo sin emitir.
+Si ya se retiró todo del cajón, no añade cuero. Si primero genera 12,5 kg para
+un conjunto pesado M, el cajón ofrece 27,5 kg restantes. No son dos reservas.
+Devolver cuero sin gastar retira esas unidades del jugador y libera su cupo.
+
+Los pickups nuevos identifican el jugador y el cupo ya reservado. No se
+contabilizan otra vez al recoger. Pilas antiguas piden cupo al tocarlas y no
+permiten el excedente. Si falta capacidad de carga, se recoge una parte y el
+resto útil queda en el suelo. Se deja un gramo de margen para no alcanzar la
+inmovilidad al 100% de carga; no se alteran las reglas generales de velocidad.
+
+Migración 0ac: conservar recetas, atributos, tareas, equipo y progreso. Contar
+materias primas/componentes existentes al 100%, primera arma ya fabricada y
+munición inicial presente contra el cupo. No borrar inventario al cargar.
+«Dejar aquí los materiales sobrantes» en el cajón retira sólo excedentes de
+materias primas sin reservar; conserva el cupo útil. No recupera lo ya gastado.
+
+La reparación opcional aceptada conserva acceso: al consultar a Ronnie con
+la primera arma dañada, se habilita únicamente el coste proporcional al 100%
+del daño observado. Repetir la consulta usa el máximo ya habilitado, no lo
+suma otra vez. No restaura durabilidad, no da materiales y no repone equipo.
+Si el arma elegida no sirve para extraer esos recursos, la conversación de
+reparación permite pedir de nuevo la espada y devolvérsela a Ronnie. Se verifica
+daño, práctica pendiente y espacio de carga; se reutiliza el mismo préstamo.
+Los cinco sellos, balas y abastecimiento T2 siguen fuera de este cupo inicial.
 
 ## Virotes y conocimiento de municiones (4.33.0ac)
 
@@ -199,12 +266,10 @@ El código vigente usa cuero y correas también para estos cuatro tipos de
 armadura; la tabla refleja ese catálogo, sin sustituirlo por metales o telas.
 La apariencia/peso/estaciones del tipo no cambian su material en las recetas.
 
-Oferta inicial de cuero en M: 96 kg del cajón más 12,5 kg del Toro = 108,5 kg,
-antes de gastar en el arma inicial, reparación u otros objetos. No son dos
-reservas nuevas: es el stock ya aprobado. Si se gastaron los 96 kg en guanteletes
-al 25%, quedan sólo 12,5 kg del Toro. Por eso no se garantiza cualquier conjunto
-ni todos juntos a mínima eficiencia. Usar 100% puede reducir la necesidad,
-pero depende de lo ya consumido; las cifras no implican una reposición del cajón.
+La oferta histórica hasta 0ac era 96 kg del cajón M más 12,5 kg del Toro.
+Desde 0ad rige el cupo al 100% de la elección indicado al comienzo; los costes
+comparativos de la tabla siguen siendo válidos, pero no son el stock disponible.
+No se abastecen los cuatro conjuntos simultáneamente ni al 25%.
 
 Para fabricar una vez cada uno de los cinco sellos T1:
 
@@ -218,13 +283,14 @@ Las vetas iniciales del mapa superan esos requisitos: cobre 6.470,5 kg, estaño
 5.176,4 kg; rubí 1.022,34 kg, zafiro 1.363,12 kg, esmeralda 681,56 kg,
 topacio 1.703,9 kg y ópalo 2.555,85 kg. Son capacidades calculadas a partir
 de los actores; no se midió aquí tiempo de extracción ni se garantiza que un
-save ya explotado conserve esas reservas. Los nodos mantienen su regeneración.
+save ya explotado conserve esas reservas. Los nodos mantienen su regeneración, pero desde 0ad el cupo de entrega es
+independiente: estas masas físicas no habilitan recoger excedentes.
 
 Disponibilidad de materiales, infraestructura y conocimiento son requisitos
 separados. Las doce estaciones del segundo piso cubren la infraestructura;
-Ronnie enseña la primera arma y dependencias, pero no se entregan automáticamente
-todas las recetas de armaduras y sellos. Su adquisición narrativa sigue en el
-roadmap. No usar «hay materiales» como sinónimo de «todo se puede fabricar ya».
+Ronnie enseña la primera arma y, desde 0ad, una familia de armadura con sus
+componentes. Enseñanza/cupos de sellos siguen en el roadmap. No usar «hay
+vetas» como sinónimo de «todo se puede fabricar ya».
 
 ## Salida narrativa, inventario y llegada (4.33.0v)
 
@@ -439,7 +505,8 @@ página 4, https://leatherpanel.org/sites/default/files/publications-attachments
 
 La entrega automática de cuero acabado mantiene la abstracción de botín ya
 usada. No modifica la receta global de curtido ni aplica otra merma al recoger.
-GetLeatherYieldUnits usa Mass y redondea a 100 g; el talle del jugador no influye.
+GetLeatherYieldUnits usa Mass y redondea a 100 g; el talle no influye en ese
+techo físico. Desde 0ad se entrega Min(techo físico, cupo de cuero sin emitir).
 El antiguo LeatherBudgetUnits se conserva para leer guardados, pero se
 recalcula al morir; LeatherDropped sigue garantizando una sola entrega.
 El cuero producido/recogido en una victoria anterior no se retira.
@@ -509,8 +576,8 @@ Toro queda contenido en su sala. La muerte del jugador se intercepta antes de
 Die nativo y el reinicio se completa al siguiente WorldTick: posiciones,
 Salud/Aire/Anima/Lucidez, estados elementales y arma inicial. Se retiran los
 proyectiles del intento; no se genera cuero ni se incrementa una victoria.
-El Toro vencido abre el recinto, suelta una vez los 12,5 kg de cuero de 0q
-y se disipa. Se habla con Rulo dentro del recinto para cerrar.
+El Toro vencido abre el recinto, entrega una vez el cuero dentro del cupo
+actual (hasta 12,5 kg desde 0q) y se disipa. Se habla con Rulo dentro del recinto para cerrar.
 
 ## Conocimiento de recetas y retiro del manual (4.33.0o)
 
@@ -521,7 +588,10 @@ aprendidas ni se retiran objetos del inventario. La clase del manual permanece
 para compatibilidad y otros usos; no se modifican las reglas de aprendizaje.
 0n quedó aprobado por el autor el 2026-09-11.
 
-## Abastecimiento T1 y auditoría de materiales (4.33.0n)
+## Referencia histórica de costes y abastecimiento (4.33.0n–0ac)
+
+El stock descrito en este apartado fue sustituido por los cupos de 0ad.
+Las fórmulas de coste no cambian; sólo la entrega de materias primas.
 
 Fuente: blueprint nativo de GZDoom 4.14.2, talle M, eficiencia 25 % en cada
 capa, inventario vacío. Cada conjunto incluye cabeza, torso, manos y pies;
@@ -599,7 +669,7 @@ mágicas por cinco esencias. La clase no restringe la elección. Se puede leer y
 volver antes de confirmar; confirmar fija la opción y el talle del personaje.
 Se aprenden la receta final y todos sus pasos de procesamiento/componentes.
 Las cantidades se calculan mediante CaelumCraftingRules; no hay otra tabla
-de recetas dentro de la misión. El plan de referencia usa 25% en cada capa.
+de recetas dentro de la misión. Desde 0ad el plan de referencia usa 100% en cada capa.
 
 | Armas | Materias primas del catálogo T1 |
 | --- | --- |
@@ -613,16 +683,16 @@ de recetas dentro de la misión. El plan de referencia usa 25% en cada capa.
 
 Gemas: rubí/Fuego, zafiro/Agua, esmeralda/Tierra, topacio/Aire y ópalo/Quintaesencia.
 Las cinco gemas se extraen de vetas al fondo de la cueva. El cajón contiene
-sólo cuero T1 ya curtido. Su reserva cubre los guanteletes gigantes al talle del
-jugador con eficiencia mínima por transformación: 96.000 unidades en M.
-Cada unidad pesa 0,001 kg. Se retira sólo lo que requiere la elección y cabe
-en la carga actual; no es necesario llevar todo a la vez.
+sólo cuero T1 ya curtido. Desde 0ad cubre el conjunto elegido y, cuando
+corresponde, los guanteletes gigantes, al 100% por transformación: éstos usan
+6.000 unidades en M. Cada unidad pesa 0,001 kg. Se retira sólo el cupo sin
+emitir que cabe en la carga actual; no es necesario llevarlo todo de una vez.
 
 El stock pertenece al registro del personaje. Reabrir/cargar no lo repone.
 Devolver retorna sólo cantidades retiradas de ese cofre que siguen sin gastar
 y no están reservadas por una tarea. Cancelar libera reservas; cerrar la
-estación pausa el trabajo. Se pueden procesar materiales por etapas o elegir
-una eficiencia mayor para reducir necesidades. Los faltantes del Diario
+estación pausa el trabajo. Se pueden procesar materiales por etapas; el
+abastecimiento de 0ad exige 100% en cada capa para cubrir el conjunto completo. Los faltantes del Diario
 descuentan también componentes y procesados que ya posee el jugador.
 
 Veinte arbustos 2D rodean la entrada junto con cuatro ceibos: daño cortante

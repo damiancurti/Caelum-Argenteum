@@ -74,6 +74,12 @@ class CaelumEnvironmentProp : CaelumMovableProp
         material.Amount = amount;
         if (level.MapName == "MAP01" && CaelumMainM00RonnieTrial.IsStarted(CaelumPlayer(extractor)))
             material.LimboQuestUnits = amount;
+        if (CaelumMainM00SupplyRules.IsLimited(CaelumPlayer(extractor)))
+        {
+            material.LimboQuotaReserved = true;
+            material.LimboQuotaPlayer = extractor.PlayerNumber();
+            CaelumMainM00SupplyRules.Issue(CaelumPlayer(extractor), GetResourceMaterialType(), amount);
+        }
         material.InMagicBox = false;
         material.UpdateMaterialVisuals();
         return true;
@@ -103,6 +109,13 @@ class CaelumEnvironmentProp : CaelumMovableProp
         double removed = Min(ResourceRemainingUnits, released);
         if (removed <= 0.0) { return 0.0; }
 
+        let user = CaelumPlayer(extractor);
+        if (CaelumMainM00SupplyRules.IsLimited(user))
+        {
+            int available = CaelumMainM00SupplyRules.Remaining(user, GetResourceMaterialType());
+            if (available <= 0) return 0.0;
+            removed = Min(removed, Max(0.0, available - ResourceYieldCarry));
+        }
         double combined = ResourceYieldCarry + removed;
         int wholeUnits = int(Floor(combined));
         if (wholeUnits > 0

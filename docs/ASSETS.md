@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ac — 2026-09-12.
+Versión documental: 4.33.0ad — 2026-09-13.
+
+## Revisión 4.33.0ad
+
+Se reutilizan los iconos T1 de las cuatro familias de armadura, modelos de
+estaciones, cajón, árboles, arbustos y vetas existentes. No se añaden recursos
+visuales ni sonidos. MAP01/MAP02/CADEV02 y todos los audiovisuales mantienen
+los bytes de 0ac aprobado. La limitación de recolección no cambia las masas
+físicas ni la dureza de sus actores. Evidencia visual y técnica en PROJECT.md.
 
 ## Revisión 4.33.0ac
 
