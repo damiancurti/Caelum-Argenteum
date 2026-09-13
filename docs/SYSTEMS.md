@@ -1,6 +1,69 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ai — 2026-09-13.
+Versión documental: 4.33.0aj — 2026-09-13.
+
+## Misiones opcionales — vigente en 4.33.0aj
+
+Estado por personaje en CaelumPersistentCharacterState, conservando sus 32
+slots y ocho objetivos por misión. Índices: MAIN_M00=0, prueba Recorrido=1,
+prueba Espera=2. El Diario amplía sólo su instantánea a tres entradas.
+
+| Estado | Valor estable | Transiciones permitidas |
+| --- | ---: | --- |
+| Desconocida | 0 | Ofrecida al descubrirla explícitamente |
+| Activa | 1 | Completada con objetivos listos, Fallida por su controlador o Abandonada si lo permite |
+| Completada | 2 | Ninguna; la entrega pendiente se gestiona aparte |
+| Fallida | 3 | Ninguna |
+| Ofrecida | 4 | Activa al aceptar y cumplir el requisito |
+| Abandonada | 5 | Ninguna |
+
+Los valores 0–3 anteriores no cambian. MAIN_M00 conserva su activación propia;
+los setters heredados quedan limitados a esa misión y no permiten cambiar un
+final ni sus objetivos después. Las misiones nuevas usan CaelumSideQuestRules:
+metadatos de requisito/objetivos/recompensa/abandono y operaciones de ciclo de
+vida. Un evento no puede progresar una misión ofrecida o terminada, cambiar
+la meta o sobrepasarla. Completar requiere todos sus objetivos conocidos y
+alcanzados. La base demuestra una dependencia de misión completada; condiciones
+compuestas, varios prerrequisitos y recompensas económicas/Tarot no se añaden
+en este bloque. No se migra el controlador narrativo de MAIN_M00 a otra arquitectura.
+
+Cada recompensa actual es un Inventory nativo único. QuestRewardClaimed[32]
+registra la entrega, independientemente de conservar el objeto. Una recepción
+rechazada no marca el cobro y permite reintentarlo; completar y cobrar son
+operaciones distintas. Las dos constancias de prueba son clases diferentes,
+con MaxAmount/InterHubAmount 1, sin peso, precio, atributos ni consumo. Se
+informa su entrega en el Diario; no aparecen entre el equipo utilizable.
+No se conceden XP, cartas, monedas, recetas ni materiales de campaña.
+
+Prueba habilitada únicamente mediante give CaelumDebugQuestTrial. Repetirlo
+sólo descubre ofertas aún desconocidas: no reinicia encargos o recompensas.
+- Recorrido: aceptar registra posición/mapa. Alejarse al menos 128 MU en XY,
+  con diferencia de Z menor a 32 MU, deja su objetivo listo. Cambiar de mapa
+  antes de lograrlo, o morir antes, produce fracaso. Enter completa y cobra.
+- Espera: requiere Recorrido completado. Aceptar inicia cinco segundos de
+  tics del juego. Una disminución observada de vida o la muerte antes de
+  lograrlo produce fracaso. El contador y su progreso permanecen al guardar
+  o viajar; no se usa reloj real ni se acelera tiempo global. Con el objetivo
+  listo, Enter completa y cobra. give CaelumDebugFailQuestTrial permite
+  provocar ese final directamente para diagnóstico, sin causar daño.
+
+Ambas pruebas permiten abandono y carecen de reinicio en la misma línea de
+partida. Para comparar finales se carga un guardado previo a la aceptación.
+Los tiempos/distancias son parámetros diagnósticos, no balance de la campaña.
+La observación de salud compara la vida entre tics; no representa todavía
+un sistema universal de condiciones basado en todos los eventos de daño.
+
+Diario → Misiones: Arriba/Abajo selecciona; F/Y abre el Detalle seleccionado;
+Enter/A acepta o completa/cobra; G/X pide abandono y otra pulsación separada
+lo confirma. Mantener la tecla no confirma. Cerrar, cambiar de misión/sección
+u ocultar Detalle cancela la confirmación. En Detalle, Arriba/Abajo conserva
+su paginación. MAIN_M00 no se puede abandonar por estos controles. La UI envía
+el índice seleccionado por evento y el lado autoritativo valida estado/requisito.
+
+Los nuevos campos parten vacíos en 0ai: no se habilita la prueba al cargar ni
+se reinician perfil, atributos, misiones anteriores, recipientes o elecciones.
+La persistencia usa guardado nativo y el mismo Inventory viajero. Los modos de
+prueba automatizados permanecen fuera de la entrega.
 
 ## Consumo y regeneración de supervivencia — vigente en 4.33.0ai
 
@@ -114,6 +177,9 @@ Referencias para verificar o continuar la implementación:
 - [Estados elementales](../src/caelum/actors/CaelumElementalStatus.zs), [proyectiles](../src/caelum/actors/CaelumActorProjectile.zs) y [Channel](../src/caelum/actors/CaelumChannelEffect.zs): aplicación de duración, potencia y radios.
 - [Fabricación](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds usa el Tipo 1 de Destreza.
 - [Diagnóstico de percepción](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): observador experimental, distinto de los sentidos del jugador.
+
+Decisión posterior del autor, tras aprobar 0ai: mantener los atributos tal
+como están. La auditoría siguiente queda pospuesta y no bloquea V4.34.
 
 Estado de diseño: conservar la tabla del autor como intención y esta matriz
 como estado comprobado. Queda decidir/implementar las diferencias de lógica
@@ -1139,7 +1205,8 @@ en HISTORY.md; las pruebas de multitudes permanecen separadas en CADEV02.
 
 ## Detalle de misiones (4.33.0k–0l)
 
-En Diario → Misiones, F (Y en mando) alterna resumen y Detalle de la misión
+Desde 0aj, Arriba/Abajo selecciona una misión conocida. En Diario → Misiones,
+F (Y en mando) alterna resumen y Detalle de la misión seleccionada. La descripción
 visible. Describe de qué trata y qué corresponde hacer en la etapa actual.
 Arriba/Abajo recorre el texto; TAB cierra. La navegación es local, no cambia
 progreso ni otorga objetos. Las misiones aún desconocidas no aparecen.

@@ -2182,7 +2182,7 @@ CA_DLG_M01_MAGIC_RIDDLE_HINT2 = "La tierra lo sostiene.\nEl aire lo delata.\nEl 
 
 [enu default]
 CA_Q_DETAIL_TITLE = "Detail";
-CA_QUEST_LIST_HELP = "F / Y: detail  |  Left/Right: section  |  TAB/Esc: close";
+CA_QUEST_LIST_HELP = "Up/Down: quest | F/Y: detail | Left/Right: section | TAB/Esc: close";
 CA_Q_DETAIL_HELP = "Up/Down: read  |  F / Y: back  |  TAB: close";
 CA_Q_DETAIL_ABOUT = "About this quest";
 CA_Q_DETAIL_LOCATION = "Where to find and use the runes";
@@ -2209,7 +2209,7 @@ CA_Q_DETAIL_FAILED = "This quest has failed. Check the known objectives and spea
 
 [es]
 CA_Q_DETAIL_TITLE = "Detalle";
-CA_QUEST_LIST_HELP = "F / Y: detalle  |  Izq./Der.: sección  |  TAB/Esc: cerrar";
+CA_QUEST_LIST_HELP = "Arriba/Abajo: misión | F/Y: detalle | Izq./Der.: sección | TAB/Esc: cerrar";
 CA_Q_DETAIL_HELP = "Arriba/Abajo: leer  |  F / Y: volver  |  TAB: cerrar";
 CA_Q_DETAIL_ABOUT = "De qué trata";
 CA_Q_DETAIL_LOCATION = "Dónde están las runas y cómo usarlas";
@@ -3064,3 +3064,49 @@ CA_AF_AMULET_2 = "Esmeralda";
 CA_AF_CONFIRM_AMULET_2 = "Tu elección: Esmeralda. Al confirmar aprendés la receta T1 y sus componentes y queda reservado el cupo correspondiente al 100%. Podés volver antes de confirmar.";
 CA_AF_AMULET_3 = "Topacio";
 CA_AF_CONFIRM_AMULET_3 = "Tu elección: Topacio. Al confirmar aprendés la receta T1 y sus componentes y queda reservado el cupo correspondiente al 100%. Podés volver antes de confirmar.";
+
+[default]
+CA_QUEST_STATUS_OFFERED = "Offered";
+CA_QUEST_STATUS_ABANDONED = "Abandoned";
+CA_Q_SIDE_ROUTE_TITLE = "Trial: route";
+CA_Q_SIDE_WAIT_TITLE = "Trial: wait";
+CA_Q_SIDE_STAGE = "Optional trial";
+CA_Q_SIDE_ROUTE_OBJECTIVE = "Move away from the starting point";
+CA_Q_SIDE_WAIT_OBJECTIVE = "Seconds without losing health";
+CA_Q_SIDE_CONFIRM_ABANDON = "Press G / X again to abandon; Esc cancels.";
+CA_Q_SIDE_ACCEPT = "Enter / A: accept this quest";
+CA_Q_SIDE_LOCKED = "First complete Trial: route.";
+CA_Q_SIDE_FINISH = "Enter / A: complete and claim | G / X: abandon";
+CA_Q_SIDE_PROGRESS = "Complete the objective | G / X: abandon";
+CA_Q_SIDE_REWARDED = "Reward delivered once.";
+CA_Q_SIDE_CLAIM = "Enter / A: claim pending reward";
+CA_Q_SIDE_TERMINAL = "Closed without a reward.";
+CA_Q_SIDE_DETAIL_ROUTE = "Optional quest-system trial. Accept with Enter, close the Journal and move away from where you accepted, on the same floor. The objective records your displacement. Return to this quest and press Enter to complete it. Changing maps before reaching the objective fails this trial.";
+CA_Q_SIDE_DETAIL_WAIT = "Requires Trial: route completed. Accept with Enter, then keep your health from decreasing for five seconds of active play. A decrease before reaching the objective fails the trial. Saving retains elapsed time. Once ready, press Enter here to complete it.";
+CA_Q_SIDE_DETAIL_FAILED = "The trial failed before its objective was ready. This ending is permanent in this save and grants no reward. Reload a save from before acceptance to test another ending.";
+CA_Q_SIDE_DETAIL_ABANDONED = "You confirmed abandonment. Progress remains recorded, but this quest cannot continue or pay a reward. Reload a save from before acceptance to test another ending.";
+CA_Q_SIDE_DETAIL_COMPLETE = "Quest completed. Its reward can be claimed once. Opening the Journal, repeating the action or travelling does not create another reward.";
+CA_Q_SIDE_REWARD_NOTE = "Reward: one test receipt, recorded here. It has no weight, price, attributes or use in the campaign.";
+
+[es]
+CA_QUEST_STATUS_OFFERED = "Ofrecida";
+CA_QUEST_STATUS_ABANDONED = "Abandonada";
+CA_Q_SIDE_ROUTE_TITLE = "Prueba: recorrido";
+CA_Q_SIDE_WAIT_TITLE = "Prueba: espera";
+CA_Q_SIDE_STAGE = "Prueba opcional";
+CA_Q_SIDE_ROUTE_OBJECTIVE = "Alejarse del punto inicial";
+CA_Q_SIDE_WAIT_OBJECTIVE = "Segundos sin perder vida";
+CA_Q_SIDE_CONFIRM_ABANDON = "Otra vez G / X para abandonar; Esc cancela.";
+CA_Q_SIDE_ACCEPT = "Enter / A: aceptar esta misión";
+CA_Q_SIDE_LOCKED = "Primero completá Prueba: recorrido.";
+CA_Q_SIDE_FINISH = "Enter / A: completar y cobrar | G / X: abandonar";
+CA_Q_SIDE_PROGRESS = "Completá el objetivo | G / X: abandonar";
+CA_Q_SIDE_REWARDED = "Recompensa entregada una vez.";
+CA_Q_SIDE_CLAIM = "Enter / A: cobrar recompensa pendiente";
+CA_Q_SIDE_TERMINAL = "Cerrada sin recompensa.";
+CA_Q_SIDE_DETAIL_ROUTE = "Prueba opcional del sistema de misiones. Aceptá con Enter, cerrá el Diario y alejate del punto donde aceptaste, en la misma planta. El objetivo registra tu desplazamiento. Volvé a esta misión y pulsá Enter para completarla. Cambiar de mapa antes de alcanzar el objetivo hace fracasar esta prueba.";
+CA_Q_SIDE_DETAIL_WAIT = "Requiere Prueba: recorrido completada. Aceptá con Enter y conservá tu vida sin que disminuya durante cinco segundos de juego activo. Si baja antes de alcanzar el objetivo, la prueba fracasa. Guardar conserva el tiempo transcurrido. Cuando esté lista, pulsá Enter aquí para completarla.";
+CA_Q_SIDE_DETAIL_FAILED = "La prueba fracasó antes de alcanzar el objetivo. Este final queda registrado en la partida y no entrega recompensa. Para probar otro final, cargá una partida anterior a la aceptación.";
+CA_Q_SIDE_DETAIL_ABANDONED = "Confirmaste el abandono. El progreso queda registrado, pero la misión no puede continuar ni entregar recompensa. Para probar otro final, cargá una partida anterior a la aceptación.";
+CA_Q_SIDE_DETAIL_COMPLETE = "Misión completada. Su recompensa se puede cobrar una sola vez. Abrir el Diario, repetir la acción o viajar no genera otra recompensa.";
+CA_Q_SIDE_REWARD_NOTE = "Recompensa: una constancia de prueba, registrada aquí. No tiene peso, precio, atributos ni uso en la campaña.";

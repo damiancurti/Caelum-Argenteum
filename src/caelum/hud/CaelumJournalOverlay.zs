@@ -37,6 +37,8 @@ class CaelumJournalOverlay : EventHandler
     {
         SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
+        let held = CVar.GetCVar("ca_journal_quest_abandon_held", players[consoleplayer]);
+        if (held != null) held.SetBool(false);
         CVar openState = CVar.GetCVar(
             "ca_journal_open",
             players[consoleplayer]
@@ -81,6 +83,8 @@ class CaelumJournalOverlay : EventHandler
         if (consoleplayer < 0) return;
         let detailState = CVar.GetCVar("ca_journal_quest_detail", players[consoleplayer]);
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+        if (confirm != null) confirm.SetInt(-1);
         if (detailState != null) detailState.SetBool(value);
         if (scroll != null) scroll.SetInt(0);
     }
@@ -88,10 +92,44 @@ class CaelumJournalOverlay : EventHandler
     ui int GetVisibleQuestId(CaelumPlayer localPlayer)
     {
         if (localPlayer == null) return -1;
+        let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
+        int chosen = selection == null ? 0 : selection.GetInt();
+        if (chosen >= 0 && chosen < CaelumConstants.QUEST_DEFINED_COUNT
+            && localPlayer.JournalQuestState[chosen] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            return chosen;
         for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
-            if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
-                return id;
+            if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED) return id;
         return -1;
+    }
+
+    ui void CycleQuest(CaelumPlayer user, int direction)
+    {
+        int current = GetVisibleQuestId(user);
+        if (current < 0) return;
+        let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
+        if (selection == null) return;
+        for (int step = 1; step <= CaelumConstants.QUEST_DEFINED_COUNT; step++)
+        {
+            int id = (current + direction * step + CaelumConstants.QUEST_DEFINED_COUNT * 2)
+                % CaelumConstants.QUEST_DEFINED_COUNT;
+            if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_UNDISCOVERED) continue;
+            selection.SetInt(id);
+            SetQuestDetailOpen(false);
+            return;
+        }
+    }
+
+    ui String GetSideQuestHelp(CaelumPlayer user, int id)
+    {
+        let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+        if (confirm != null && confirm.GetInt() == id) return "CA_Q_SIDE_CONFIRM_ABANDON";
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_OFFERED)
+            return user.JournalQuestCanStart[id] ? "CA_Q_SIDE_ACCEPT" : "CA_Q_SIDE_LOCKED";
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_ACTIVE)
+            return user.JournalQuestReady[id] ? "CA_Q_SIDE_FINISH" : "CA_Q_SIDE_PROGRESS";
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_COMPLETED)
+            return user.JournalQuestRewardClaimed[id] ? "CA_Q_SIDE_REWARDED" : "CA_Q_SIDE_CLAIM";
+        return "CA_Q_SIDE_TERMINAL";
     }
 
     static ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
@@ -152,6 +190,17 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
+        if (CaelumSideQuestRules.IsDefined(questId))
+        {
+            int state = localPlayer.JournalQuestState[questId];
+            String key = state == CaelumConstants.QUEST_STATE_FAILED ? "CA_Q_SIDE_DETAIL_FAILED"
+                : state == CaelumConstants.QUEST_STATE_ABANDONED ? "CA_Q_SIDE_DETAIL_ABANDONED"
+                : state == CaelumConstants.QUEST_STATE_COMPLETED ? "CA_Q_SIDE_DETAIL_COMPLETE"
+                : questId == CaelumConstants.QUEST_TRIAL_ROUTE ? "CA_Q_SIDE_DETAIL_ROUTE" : "CA_Q_SIDE_DETAIL_WAIT";
+            return StringTable.Localize(key, false) .. "\n\n"
+                .. StringTable.Localize(GetSideQuestHelp(localPlayer, questId), false)
+                .. "\n\n" .. StringTable.Localize("CA_Q_SIDE_REWARD_NOTE", false);
+        }
         String text = StringTable.Localize("CA_QUEST_STAGE_LABEL", false) .. ": "
             .. StringTable.Localize(GetQuestDetailStageKey(localPlayer, questId), false);
         text.Replace("%COUNT%", String.Format("%d", localPlayer.MainM00ConvincedCountSnapshot));
@@ -362,6 +411,8 @@ class CaelumJournalOverlay : EventHandler
         {
             case CaelumConstants.QUEST_MAIN_M00_THE_FOOL:
                 return "CA_Q_M01_TITLE";
+            case CaelumConstants.QUEST_TRIAL_ROUTE: return "CA_Q_SIDE_ROUTE_TITLE";
+            case CaelumConstants.QUEST_TRIAL_WAIT: return "CA_Q_SIDE_WAIT_TITLE";
             default: return "CA_JOURNAL_QUESTS";
         }
     }
@@ -374,6 +425,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_QUEST_STATUS_COMPLETED";
             case CaelumConstants.QUEST_STATE_FAILED:
                 return "CA_QUEST_STATUS_FAILED";
+            case CaelumConstants.QUEST_STATE_OFFERED: return "CA_QUEST_STATUS_OFFERED";
+            case CaelumConstants.QUEST_STATE_ABANDONED: return "CA_QUEST_STATUS_ABANDONED";
             default: return "CA_QUEST_STATUS_ACTIVE";
         }
     }
@@ -382,7 +435,7 @@ class CaelumJournalOverlay : EventHandler
     {
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
-            return "CA_QUEST_STATUS_ACTIVE";
+            return "CA_Q_SIDE_STAGE";
         }
         if (questStage >= CaelumConstants.MAIN_M00_STATE_COMPLETE)
             return "CA_Q_M01_STATE_COMPLETE";
@@ -424,7 +477,8 @@ class CaelumJournalOverlay : EventHandler
     {
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
-            return "CA_QUEST_OBJECTIVES_LABEL";
+            return questId == CaelumConstants.QUEST_TRIAL_ROUTE
+                ? "CA_Q_SIDE_ROUTE_OBJECTIVE" : "CA_Q_SIDE_WAIT_OBJECTIVE";
         }
         switch (objectiveId)
         {
@@ -1181,7 +1235,8 @@ class CaelumJournalOverlay : EventHandler
                 questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
             {
                 int questState = localPlayer.JournalQuestState[questId];
-                if (questState == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+                if (questState == CaelumConstants.QUEST_STATE_UNDISCOVERED
+                    || questId != GetVisibleQuestId(localPlayer))
                 {
                     continue;
                 }
@@ -1255,6 +1310,21 @@ class CaelumJournalOverlay : EventHandler
             }
         }
 
+        int selected = GetVisibleQuestId(localPlayer);
+        if (selected >= 0)
+        {
+            int ordinal = 0;
+            for (int id = 0; id <= selected; id++)
+                if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED) ordinal++;
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 560, 132,
+                String.Format("%d/%d", ordinal, localPlayer.JournalKnownQuestCount));
+        }
+        if (CaelumSideQuestRules.IsDefined(selected))
+        {
+            DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 288,
+                StringTable.Localize(GetSideQuestHelp(localPlayer, selected), false));
+            return;
+        }
         DrawTextLine(
             SmallFont, Font.CR_WHITE, 56.0, 288.0,
             String.Format(
@@ -2006,6 +2076,21 @@ class CaelumJournalOverlay : EventHandler
         {
             return false;
         }
+        bool abandonKey = e.KeyChar == 103 || e.KeyChar == 71 || e.KeyString ~== "g"
+            || e.KeyScan == InputEvent.Key_Pad_X;
+        let abandonScan = CVar.GetCVar("ca_journal_quest_abandon_scan", players[consoleplayer]);
+        if (abandonKey || (e.Type == InputEvent.Type_KeyUp && abandonScan != null
+            && e.KeyScan == abandonScan.GetInt()))
+        {
+            let held = CVar.GetCVar("ca_journal_quest_abandon_held", players[consoleplayer]);
+            if (held != null)
+            {
+                if (e.Type == InputEvent.Type_KeyUp) { held.SetBool(false); return true; }
+                if (held.GetBool()) return true;
+                held.SetBool(true);
+                if (abandonScan != null) abandonScan.SetInt(e.KeyScan);
+            }
+        }
         if (e.Type == InputEvent.Type_KeyUp) { return true; }
 
         int currentPage = GetJournalPage();
@@ -2068,6 +2153,42 @@ class CaelumJournalOverlay : EventHandler
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
         {
             ScrollQuestDetail(localPlayer, -1);
+        }
+        else if (currentPage == 4 && !IsQuestDetailOpen()
+            && (e.KeyScan == InputEvent.Key_DownArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
+        {
+            CycleQuest(localPlayer, 1);
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 4 && !IsQuestDetailOpen()
+            && (e.KeyScan == InputEvent.Key_UpArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Up))
+        {
+            CycleQuest(localPlayer, -1);
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 4
+            && (e.KeyScan == InputEvent.Key_Enter || e.KeyScan == InputEvent.Key_Pad_A))
+        {
+            let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+            if (confirm != null) confirm.SetInt(-1);
+            SendNetworkEvent("ca_quest_activate", GetVisibleQuestId(localPlayer));
+        }
+        else if (currentPage == 4
+            && (e.KeyChar == 103 || e.KeyChar == 71 || e.KeyString ~== "g"
+                || e.KeyScan == InputEvent.Key_Pad_X))
+        {
+            int id = GetVisibleQuestId(localPlayer);
+            let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+            if (confirm != null && CaelumSideQuestRules.IsDefined(id)
+                && localPlayer.JournalQuestState[id] == CaelumConstants.QUEST_STATE_ACTIVE)
+            {
+                if (confirm.GetInt() == id)
+                {
+                    confirm.SetInt(-1);
+                    SendNetworkEvent("ca_quest_abandon", id);
+                }
+                else confirm.SetInt(id);
+            }
         }
         else if (currentPage == 0
             && (e.KeyScan == InputEvent.Key_DownArrow
@@ -2299,6 +2420,18 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_social_refresh")
         {
             requestingPlayer.RefreshSocialJournalSnapshot();
+        }
+        else if (e.Name == "ca_quest_activate")
+        {
+            CaelumSideQuestRules.Activate(requestingPlayer, e.Args[0]);
+        }
+        else if (e.Name == "ca_quest_abandon")
+        {
+            if (CaelumSideQuestRules.End(requestingPlayer.GetPersistentCharacterState(false), e.Args[0], true))
+            {
+                requestingPlayer.RefreshSocialJournalSnapshot();
+                requestingPlayer.PersistCharacterState();
+            }
         }
         else if (e.Name == "ca_inventory_next")
         {

@@ -74,3 +74,9 @@ server int ca_diag_mass_follower_speed_percent = 25;
 // o el semicono. false prueba aperturas totales (±30°/±60°); true compara la
 // lectura amplia (±60°/±120°) sin cambiar código ni documentación canónica.
 server bool ca_diag_perception_wide_half_angles = false;
+
+// Navegación local: nunca modifica el registro autoritativo.
+user int ca_journal_quest_selected = 0;
+user int ca_journal_quest_abandon = -1;
+user bool ca_journal_quest_abandon_held = false;
+user int ca_journal_quest_abandon_scan = -1;

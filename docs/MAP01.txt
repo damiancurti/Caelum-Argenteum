@@ -1,7 +1,19 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ai — 2026-09-13.
+Versión documental: 4.33.0aj — 2026-09-13.
 
-ACTUAL 4.33.0ai — RESILIENCIA, CONSTITUCIÓN Y AUDITORÍA DE ATRIBUTOS
+ACTUAL 4.33.0aj — MISIONES OPCIONALES DE PRUEBA
+El autor aprobó todas las pruebas de 0ai y mantiene los atributos actuales.
+La cadena opcional sólo aparece al ejecutar give CaelumDebugQuestTrial.
+Diario > Misiones: Arriba/Abajo selecciona Recorrido o Espera; F da Detalle;
+Enter acepta o completa/cobra. G pide abandono y otra pulsación lo confirma.
+Se puede probar en MAP01/MAP02 sin añadir NPC, objetos o geometría al mapa.
+No forma parte de la historia ni cambia los requisitos de la salida del Limbo.
+Sus constancias no tienen peso, precio ni bonificaciones. Repetir el comando
+no reinicia estados ni recompensas. Guardar antes de aceptar permite comprobar
+éxito, fracaso y abandono en ramas distintas. Aplicación y pruebas detalladas
+en PRUEBAS_4_33_0aj.txt; reglas y límites en SYSTEMS.md.
+
+BASE APROBADA 4.33.0ai — RESILIENCIA, CONSTITUCIÓN Y AUDITORÍA DE ATRIBUTOS
 El autor corrigió la atribución de Sueño: usa Resiliencia, no Paciencia.
 Hambre/Sed usan Constitución, también al gastarlas para regenerar vida/Aire.
 El consumo pasivo se divide por Tipo 4: por 1 al 0 y por 3 al 100.

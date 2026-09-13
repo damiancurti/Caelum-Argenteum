@@ -94,6 +94,9 @@ class CaelumPlayer : DoomPlayer
     // Instantánea simple para el Diario. La interfaz sólo lee estos campos y
     // nunca invoca funciones de inventario de ámbito play durante el render.
     int JournalKnownQuestCount;
+    bool JournalQuestRewardClaimed[CaelumConstants.QUEST_DEFINED_COUNT];
+    bool JournalQuestCanStart[CaelumConstants.QUEST_DEFINED_COUNT];
+    bool JournalQuestReady[CaelumConstants.QUEST_DEFINED_COUNT];
     int JournalQuestState[CaelumConstants.QUEST_DEFINED_COUNT];
     int JournalQuestStage[CaelumConstants.QUEST_DEFINED_COUNT];
     bool JournalQuestObjectiveKnown[
@@ -812,6 +815,9 @@ class CaelumPlayer : DoomPlayer
         for (int questId = 0;
             questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
         {
+            JournalQuestRewardClaimed[questId] = persistentState.QuestRewardClaimed[questId];
+            JournalQuestCanStart[questId] = CaelumSideQuestRules.CanStart(persistentState, questId);
+            JournalQuestReady[questId] = CaelumSideQuestRules.ObjectivesComplete(persistentState, questId);
             JournalQuestState[questId] =
                 persistentState.QuestState[questId];
             JournalQuestStage[questId] =

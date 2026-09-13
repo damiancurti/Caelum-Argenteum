@@ -427,6 +427,7 @@ class CaelumMainM00QuestController : EventHandler
                 continue;
             }
             caelumPlayer.UpdateMainM00Prologue();
+            CaelumSideQuestRules.Update(caelumPlayer);
             CaelumMainM00MagicTrial.Update(caelumPlayer);
             CaelumMainM00RonnieTrial.Update(caelumPlayer);
             CaelumMainM00RuloTrial.Update(caelumPlayer);

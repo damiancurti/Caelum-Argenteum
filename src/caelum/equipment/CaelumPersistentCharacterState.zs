@@ -31,6 +31,13 @@ class CaelumPersistentCharacterState : Inventory
     // visible hoy. Cada objetivo conserva conocimiento, progreso y meta para
     // admitir contadores sin guardar texto narrativo dentro de la partida.
     int QuestStateVersion;
+    // Autoridad de recompensa: persistente, no depende del objeto ni del mapa.
+    bool QuestRewardClaimed[CaelumConstants.QUEST_CAPACITY];
+    bool QuestTrialEnabled;
+    Vector3 QuestTrialOrigin;
+    String QuestTrialMap;
+    int QuestTrialWaitTics;
+    int QuestTrialLastHealth;
     int QuestState[CaelumConstants.QUEST_CAPACITY];
     int QuestStage[CaelumConstants.QUEST_CAPACITY];
     bool QuestObjectiveKnown[
@@ -394,6 +401,8 @@ class CaelumPersistentCharacterState : Inventory
 
     void InitializeNewQuestState()
     {
+        QuestTrialEnabled = false;
+        QuestTrialWaitTics = 0;
         ResetMainM00SocialState();
         MainM00RuneSequenceIndex = 0;
         MainM00RuneErrors = 0;
@@ -405,6 +414,7 @@ class CaelumPersistentCharacterState : Inventory
         {
             QuestState[questId] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
             QuestStage[questId] = 0;
+            QuestRewardClaimed[questId] = false;
         }
         for (int objective = 0;
             objective < CaelumConstants.QUEST_OBJECTIVE_STORAGE_COUNT;
@@ -842,7 +852,7 @@ class CaelumPersistentCharacterState : Inventory
     bool SetQuestStage(int questId, int stage)
     {
         EnsureQuestStateInitialized();
-        if (!IsValidQuestId(questId) || stage < 0) { return false; }
+        if (!IsValidQuestId(questId) || questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL || stage < 0) { return false; }
         if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
         {
             QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
@@ -864,7 +874,10 @@ class CaelumPersistentCharacterState : Inventory
         int objective = GetQuestObjectiveStorageIndex(
             questId, objectiveId
         );
-        if (objective < 0 || target <= 0) { return false; }
+        if (objective < 0 || questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL || target <= 0) { return false; }
+        if (QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+            && QuestState[questId] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            return false;
         if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
         {
             QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
@@ -883,9 +896,10 @@ class CaelumPersistentCharacterState : Inventory
     {
         EnsureQuestStateInitialized();
         if (!IsValidQuestId(questId)
+            || questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             || (terminalState != CaelumConstants.QUEST_STATE_COMPLETED
                 && terminalState != CaelumConstants.QUEST_STATE_FAILED)
-            || QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            || QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE)
         {
             return false;
         }

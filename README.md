@@ -5,12 +5,31 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ai.** Apply over the complete **4.33.0ah** project.
-The author corrected Sleep's attribute to Resilience and extended Constitution
-to the Hunger/Thirst costs of natural Health and Air recovery.
+**Current release: 4.33.0aj.** Apply over the complete **4.33.0ai** project.
+The author approved all 0ai tests and keeps the current attributes unchanged.
+0aj adds the optional quest lifecycle and an explicitly enabled trial chain.
 MAP01 remains the systems test environment.
 
 ## Implemented
+
+- Optional quests have explicit offers, prerequisite completion, acceptance,
+  capped objective progress, completion, failure and confirmed abandonment.
+  Terminal records cannot restart or change ending. MAIN_M00 keeps its stable
+  index, story and progression; its legacy setters now reject terminal changes.
+- Each test quest grants one native Inventory receipt. A persistent per-quest
+  claim flag prevents duplicates after reopening, item removal or travel. A
+  refused receipt remains claimable after the receiving condition is resolved.
+- Journal Up/Down selects known quests, F/Y opens the selected detail, Enter/A
+  accepts or completes/claims, and two separate G/X presses confirm abandonment.
+  Cancel/close/navigation clears confirmation; holding the key cannot confirm.
+  The server validates the quest id and state for each action.
+- Console `give CaelumDebugQuestTrial` reveals two optional diagnostic offers.
+  Route requires moving 128 map units from its acceptance point on the same
+  floor; changing maps before that objective fails it. Wait requires Route
+  completed and five active seconds without an observed decrease in health.
+  The timer and quest records survive saves/travel. Receipts have no weight,
+  price or bonuses; the campaign gains no extra quest requirement or rewards.
+
 
 - Hunger/Thirst depletion uses Constitution; Sleep depletion uses Resilience.
   Each is divided by Type 4: 1 at attribute 0, 3 at 100. Consumption stays
@@ -299,8 +318,10 @@ MAP01 remains the systems test environment.
 
 ## Planned
 
-Next: finish the remaining mechanics and tutorial coverage in MAP01, following
-PROJECT.md. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
+Next: connect reputation to reusable dialogue/access/trade conditions in 0ak,
+then verify integration before starting the V4.34 world/travel foundations.
+The attribute audit is deferred by the author; the current rules stay accepted.
+Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
@@ -318,15 +339,17 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0ag tests are author-approved. Focused 0ai checks are in PRUEBAS_4_33_0ai.txt;
-native engine evidence and limits are in PROJECT.md.
-Maps, audio, models and sprites remain unchanged in 0ai.
+All 0ai tests are author-approved. The 0aj native scenarios passed 119 checks,
+including old and partial saves, map travel and the Journal in both languages.
+Author validation on Windows remains pending. Focused checks are in
+PRUEBAS_4_33_0aj.txt; engine evidence and limits are in PROJECT.md.
+Maps, audio, models and sprites remain unchanged in 0aj.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ai
-patch into the complete **4.33.0ah** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ai.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0aj
+patch into the complete **4.33.0ai** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0aj.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

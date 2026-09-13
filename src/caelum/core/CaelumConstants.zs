@@ -32,7 +32,9 @@ class CaelumConstants : Object
     const QUEST_OBJECTIVE_CAPACITY = 8;
     const QUEST_OBJECTIVE_STORAGE_COUNT =
         QUEST_CAPACITY * QUEST_OBJECTIVE_CAPACITY;
-    const QUEST_DEFINED_COUNT = 1;
+    const QUEST_DEFINED_COUNT = 3;
+    const QUEST_TRIAL_ROUTE = 1;
+    const QUEST_TRIAL_WAIT = 2;
     const QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT =
         QUEST_DEFINED_COUNT * QUEST_OBJECTIVE_CAPACITY;
     const QUEST_MAIN_M00_THE_FOOL = 0;
@@ -42,6 +44,9 @@ class CaelumConstants : Object
     const QUEST_STATE_ACTIVE = 1;
     const QUEST_STATE_COMPLETED = 2;
     const QUEST_STATE_FAILED = 3;
+    // Se añaden estados sin renumerar los guardados anteriores.
+    const QUEST_STATE_OFFERED = 4;
+    const QUEST_STATE_ABANDONED = 5;
 
     // Estados enumerados de CA_Q_MAIN_M00_THE_FOOL. Los hitos principales
     // conservan las fases 00–100 del documento; los cierres intermedios usan el

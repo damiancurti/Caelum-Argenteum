@@ -1,8 +1,72 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ai — 2026-09-13.
+Versión documental: 4.33.0aj — 2026-09-13.
 
-## Estado actual: 4.33.0ai — pendiente de aceptación del autor
+## Estado actual: 4.33.0aj — pendiente de aceptación del autor
+
+0ai queda aprobado por el autor. Se conservan todos los atributos, incluidos
+Resiliencia para Sueño y los divisores de consumo/regeneración de Constitución.
+La auditoría anterior queda registrada para una revisión futura.
+
+0aj implementa la base de misiones opcionales: oferta, requisito de otra misión
+completada, aceptación explícita, objetivos limitados por su meta, completar,
+fracasar y abandonar con confirmación. Un final no se sobrescribe ni se
+reinicia. La recompensa usa Inventory nativo y un registro de entrega por
+misión; si la recepción falla queda pendiente, y retirar el objeto no la repone.
+
+El Diario selecciona entre misiones conocidas y muestra Detalle de la elegida.
+La cadena de diagnóstico se habilita con give CaelumDebugQuestTrial: Recorrido
+seguido de Espera. Está separada del contenido narrativo: constancias sin peso,
+precio ni atributos, sin alterar la misión principal, Tarot o recursos T1.
+SYSTEMS.md define reglas y límites; PRUEBAS_4_33_0aj.txt explica el recorrido.
+
+Siguiente bloque: 0ak conecta reputación con condiciones reutilizables. Después
+se revisará la integración antes de V4.34. Las balas y la potabilización siguen
+pendientes de definición para ampliaciones posteriores. Calendario V4.35
+precede Descanso; V5.0 conserva el refactor de programación.
+
+### Validación técnica de 0aj
+
+119 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 con Freedoom y
+llvmpipe en Linux. Se conserva la evidencia del trabajo recuperado y se vuelve
+a ejecutar el flujo y la interfaz sobre las fuentes finales; las repeticiones
+del mismo escenario no se suman como comprobaciones adicionales.
+
+- 70 del ciclo de vida: descubrimiento sin aceptación, requisito de la cadena,
+  índices y objetivos inválidos, límites de progreso, finalización explícita,
+  fracaso, abandono, finales permanentes y recompensa nativa única. Retirar
+  la constancia no reabre el cobro; una recepción rechazada admite reintento.
+  MAIN_M00 conserva su estado y sus setters rechazan alterar un final.
+- 13 del Diario en español y 13 en inglés: selección circular, detalle de la
+  misión elegida, oferta bloqueada, eventos nativos de aceptación/abandono,
+  cancelación de confirmación y actualización de la pantalla. Capturas de
+  lista, detalle y finales revisadas. Los escenarios invocan la navegación y
+  los eventos de red del motor; el teclado/mando físico se verifica en Windows.
+- Ocho al cargar una partida creada con fuentes originales 0ai: registro y
+  etapa principal, ampliación de la instantánea del Diario, atributos,
+  1,25 litros de la cantimplora y elecciones de sello/amuletos conservados.
+  Las ofertas nuevas no aparecen hasta habilitar la prueba explícitamente.
+- Ocho al recargar un guardado 0aj con Espera parcial: tiempo, objetivo,
+  recompensa anterior y misión principal conservados, continuación y entrega
+  única del segundo encargo.
+- Siete en un ChangeLevel real MAP01 -> MAP02: viajan la constancia, el
+  registro de cobro y el contador activo; se completa y cobra en destino sin
+  duplicar la recompensa previa.
+
+Los escenarios preparan perfiles y objetivos para aislar cada condición;
+no representan una partida completa, el cruce narrativo del Limbo ni una
+validación cooperativa. Se mantienen los límites de la observación de salud
+descritos en SYSTEMS.md. Queda la aceptación del autor en Windows mediante
+PRUEBAS_4_33_0aj.txt.
+
+El validador del proyecto pasa: cinco documentos, 74 archivos de audio,
+12 modelos de estación y referencias conservadas. Se comprueba el delta
+contra la base 0ai recuperada y cotejada con su ZIP guardado. Los tres WAD,
+los recursos audiovisuales y los cálculos de atributos conservan sus bytes.
+Entrega: 15 archivos nuevos/modificados y un TXT de aplicación/pruebas.
+CRC y reconstrucción exacta del contenido del ZIP comprobados.
+
+## Base 4.33.0ai — aprobada por el autor
 
 El autor corrigió su indicación anterior: Sueño pertenece a Resiliencia.
 0ai restaura esa asociación conservando el divisor Tipo 4 (1 a atributo 0;
@@ -42,7 +106,8 @@ sin fallos. La preparación del guardado se comprobó también con la fórmula
 original; no se editó el archivo guardado para simular compatibilidad.
 El validador documental/de recursos termina sin errores, con cinco documentos
 canónicos. Entrega de diez archivos, sin recursos binarios ni código de prueba.
-Queda la aceptación en Windows siguiendo PRUEBAS_4_33_0ai.txt.
+El autor confirmó que todas las pruebas de 0ai fueron correctas. Los atributos
+quedan como están; las diferencias de su auditoría se posponen.
 
 ### Validación técnica de 0ah
 
@@ -420,9 +485,12 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ai restaura Resiliencia para Sueño y aplica Constitución al gasto de regenerar vida/Aire, conservando divisores y críticos de 0ah; pendiente de aceptación. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ai restaura Resiliencia para Sueño y aplica Constitución al gasto de regenerar vida/Aire, conservando divisores y críticos de 0ah; todas las pruebas de 0ai aprobadas. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
-| 8b | Diferencias detectadas en la auditoría de atributos 0ai | Precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no se implementan ni se rebalancean en 0ai. |
+| 8b | Auditoría de atributos 0ai — pospuesta por el autor | Mantener los atributos actuales. Para una revisión futura, precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no bloquean 0aj ni el paso a V4.34. |
+| 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Pendiente de aceptación del autor. |
+| 8d | 4.33.0ak: reputación y condiciones | Conectar reglas reutilizables de diálogo, acceso y comercio. Las relaciones narrativas y valores nuevos siguen sujetos al diseño del autor; no asignar facciones al Limbo por defecto. |
+| 8e | Cierre de 4.33 e inicio de 4.34 | Integrar misiones/reputación, guardado y viajes; correctivos según pruebas. Tras aceptar la base, comenzar ubicaciones/conexiones/viajes. Balas y potabilización permanecen como ampliaciones pendientes de definición, sin bloquear este avance. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
@@ -459,7 +527,7 @@ implementación se ubica cuando estén disponibles sus dependencias.
 | Área | Alcance planificado y límites actuales |
 | --- | --- |
 | Campaña y mundo | Objetivo de 78 cartas (22 Mayores y 56 Menores) y al menos 78 mapas; geografía inspirada en Argentina, costas/Antártida/mar profundo, ciudades aéreas y regiones sobrenaturales. Capítulos, encuentros, desenlaces políticos y revelaciones según canon. La primera entrega sigue concentrada en MAP01. |
-| Misiones | Principales/secundarias, requisitos, objetivos, cadenas/dependencias, fracaso y abandono; recompensas de objetos/dinero/reputación/desbloqueos. El registro actual tiene 32 slots, ocho objetivos y cuatro estados; abandono y contenido amplio requieren ampliación. Mayores para principales, Menores para secundarias; encargos/eventos/rumores/contratos no son automáticamente otra carta. No introducir XP por combatir: la progresión canónica depende del Tarot. |
+| Misiones | Principales/secundarias, requisitos, objetivos, cadenas/dependencias, fracaso y abandono; recompensas de objetos/dinero/reputación/desbloqueos. El registro tiene 32 slots y ocho objetivos por misión; 0aj añade oferta y abandono a los cuatro estados originales, con requisitos y recompensas únicas. El contenido amplio, las condiciones compuestas y los demás tipos de recompensa requieren desarrollo. Mayores para principales, Menores para secundarias; encargos/eventos/rumores/contratos no son automáticamente otra carta. No introducir XP por combatir: la progresión canónica depende del Tarot. |
 | Facciones y secreto | La Capital, Pueblos Libres, Nativos, Caelith Puros, Híbridos, Gendarmería, Culto del Tarot e Infierno. Siete rangos de reputación, relaciones cambiantes y consecuencias en precios, acceso, misiones, hostilidad y asedios; pertenencia/secreto del Culto como contenido futuro. |
 | Diálogo social | Reputación aplicada a las tiradas y umbrales, emociones privadas, interrupción por combate/eventos y conversaciones con varios NPC en secuencia. MAP01 sólo usa los valores aprobados para su tutorial; no asignar facciones ni dificultad nuevas por defecto. |
 | Viajes | Carreta, barco, submarino arcaico, aeronave, nave mágica y portales; encuentros, ataques, tormentas y fallos mecánicos. Tiempo global, localizaciones, rutas y cambios permanentes del mundo son dependencias. |

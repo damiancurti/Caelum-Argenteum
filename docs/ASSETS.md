@@ -1,10 +1,10 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ai — 2026-09-13.
+Versión documental: 4.33.0aj — 2026-09-13.
 
-0ai conserva sin cambios las imágenes, mapas, audio, modelos y fuentes de
-0ah. Esta entrega modifica reglas de supervivencia/regeneración, textos y
-documentos; la auditoría de atributos no añade arte ni modelos.
+0aj conserva imágenes, mapas, audio, modelos y fuentes de 0ai. Las constancias
+de diagnóstico usan Inventory invisible y no requieren sprites nuevos. La
+interfaz reutiliza el arte y las fuentes existentes del Diario.
 
 ## Recipientes nuevos — 4.33.0af
 

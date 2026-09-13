@@ -1,6 +1,32 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ai — 2026-09-13.
+Versión documental: 4.33.0aj — 2026-09-13.
+
+## Base de misiones opcionales y cadena de prueba — 4.33.0aj
+
+El autor aprobó todas las pruebas de 0ai y decidió conservar los atributos.
+Se posponen las diferencias de la auditoría. Autorizó continuar con la base
+propuesta de misiones secundarias, requisitos, fracaso/abandono y recompensa
+única antes del bloque de reputación 0ak y cierre previo a V4.34.
+
+0aj añade Ofrecida y Abandonada sin renumerar estados, conserva MAIN_M00 en
+índice 0 y agrega dos encargos de diagnóstico encadenados. La aceptación es
+explícita, el progreso se limita por objetivo y los finales son permanentes.
+La entrega nativa registra cobro una sola vez, con reintento si no se recibe.
+Los setters de MAIN_M00 no sobrescriben estados/objetivos terminados.
+
+El Diario selecciona entre misiones, abre su Detalle, acepta/completa/cobra y
+confirma abandono con dos pulsaciones separadas. La prueba se habilita sólo
+con give CaelumDebugQuestTrial y no concede ventajas de campaña. Atributos,
+mapas, misiones narrativas y cupos permanecen aprobados. README y cinco docs
+actualizados; el delta incluye exclusivamente archivos nuevos/modificados y
+un TXT de pruebas. Balas y potabilización quedan pendientes de definición
+como ampliaciones posteriores.
+
+Cierre de la entrega recuperada: 119 comprobaciones nativas sin fallos,
+incluyendo carga desde 0ai, guardado parcial, viaje real y Diario en ambos
+idiomas. Se completa el registro técnico en PROJECT.md y se incorpora el TXT
+de aplicación/pruebas que faltaba. La aceptación en Windows queda pendiente.
 
 ## Resiliencia, costes de regeneración y auditoría de atributos — 4.33.0ai
 
