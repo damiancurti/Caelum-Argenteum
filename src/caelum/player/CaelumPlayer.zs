@@ -1252,6 +1252,14 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
+    // ConversationNPC puede conservar al interlocutor después de cerrar USDF.
+    // La referencia por sí sola no significa que el jugador siga dialogando.
+    bool HasActiveConversation()
+    {
+        return player != null && player.ConversationNPC != null
+            && player.ConversationNPC.bInConversation;
+    }
+
     bool OpenPalomoDialogue(Actor speaker)
     {
         if (CreationWizardOpen || !CharacterCreationComplete || speaker == null || health <= 0)
@@ -14168,12 +14176,15 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
-        // Mientras canaliza se conserva exclusivamente una nueva pulsacion de
-        // User2 para permitir la interrupcion manual antes de limpiar acciones.
+        // Usar termina la canalización antes de la interacción nativa. Así
+        // no se descarta silenciosamente el intento de capturar/hablar/abrir.
         if (CombatChannelModeActive && player != null)
         {
             bool channelPressed = (player.cmd.buttons & BT_USER2) != 0;
-            if (channelPressed && !CombatChannelInputLatched)
+            bool usePressed = (player.cmd.buttons & BT_USE) != 0;
+            if (usePressed && !player.usedown)
+                StopSealChannel(true);
+            else if (channelPressed && !CombatChannelInputLatched)
                 RequestCombatChannelInput();
             if (!channelPressed) CombatChannelInputLatched = false;
         }

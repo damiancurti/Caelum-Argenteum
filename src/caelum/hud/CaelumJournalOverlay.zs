@@ -102,21 +102,82 @@ class CaelumJournalOverlay : EventHandler
         return -1;
     }
 
-    ui void CycleQuest(CaelumPlayer user, int direction)
+    ui bool CycleQuest(CaelumPlayer user, int direction, bool leaveAtEdge = false)
     {
         int current = GetVisibleQuestId(user);
-        if (current < 0) return;
+        if (current < 0)
+        {
+            if (leaveAtEdge) CycleJournalPage(direction);
+            return false;
+        }
         let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
-        if (selection == null) return;
+        if (selection == null) return false;
         for (int step = 1; step <= CaelumConstants.QUEST_DEFINED_COUNT; step++)
         {
-            int id = (current + direction * step + CaelumConstants.QUEST_DEFINED_COUNT * 2)
-                % CaelumConstants.QUEST_DEFINED_COUNT;
+            int id = current + direction * step;
+            if (leaveAtEdge && (id < 0 || id >= CaelumConstants.QUEST_DEFINED_COUNT))
+            {
+                CycleJournalPage(direction);
+                return false;
+            }
+            id = (id + CaelumConstants.QUEST_DEFINED_COUNT * 2) % CaelumConstants.QUEST_DEFINED_COUNT;
             if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_UNDISCOVERED) continue;
             selection.SetInt(id);
             SetQuestDetailOpen(false);
-            return;
+            return true;
         }
+        return false;
+    }
+
+    // Cambiar de solapa no depende del filtro ni de la misión seleccionada.
+    ui void CycleJournalPage(int direction)
+    {
+        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if (GetJournalPage() == 3 && user != null && user.CraftingMenuOpen)
+            SendNetworkEvent("ca_crafting_session_close");
+        int nextPage = (GetJournalPage() + direction + JOURNAL_PAGE_COUNT)
+            % JOURNAL_PAGE_COUNT;
+        SetJournalPage(nextPage);
+        SendNetworkEvent(nextPage == 3 ? "ca_crafting_page_turn_sound"
+            : "ca_journal_menu_move_sound");
+        if (nextPage == 0) SendNetworkEvent("ca_inventory_refresh");
+        if (nextPage == 4 || nextPage == 5) SendNetworkEvent("ca_social_refresh");
+    }
+
+    // Ruta común de las teclas nativas: solapas, misiones y contexto de Oficios.
+    ui bool HandleJournalNavigation(int keyScan)
+    {
+        bool next = keyScan == InputEvent.Key_PgDn || keyScan == InputEvent.Key_Pad_RShoulder;
+        bool previous = keyScan == InputEvent.Key_PgUp || keyScan == InputEvent.Key_Pad_LShoulder;
+        if (next || previous)
+        {
+            CycleJournalPage(next ? 1 : -1);
+            return true;
+        }
+        next = keyScan == InputEvent.Key_RightArrow || keyScan == InputEvent.Key_Pad_DPad_Right;
+        previous = keyScan == InputEvent.Key_LeftArrow || keyScan == InputEvent.Key_Pad_DPad_Left;
+        if (!next && !previous) return false;
+        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if (GetJournalPage() == 3 && user != null && user.CraftingMenuOpen) return false;
+        if (GetJournalPage() == 0)
+        {
+            bool atEdge = user == null || (next
+                ? user.FormalInventoryFilter >= CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1
+                : user.FormalInventoryFilter <= 0);
+            if (atEdge) CycleJournalPage(next ? 1 : -1);
+            else
+            {
+                SendNetworkEvent(next ? "ca_inventory_filter" : "ca_inventory_filter_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+        }
+        else if (GetJournalPage() == 4)
+        {
+            if (CycleQuest(user, next ? 1 : -1, true))
+                SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else CycleJournalPage(next ? 1 : -1);
+        return true;
     }
 
     ui String GetSideQuestHelp(CaelumPlayer user, int id)
@@ -2097,6 +2158,10 @@ class CaelumJournalOverlay : EventHandler
         bool craftingSession = currentPage == 3
             && localPlayer != null && localPlayer.CraftingMenuOpen;
 
+        // Las solapas siempre son accesibles, aun cuando las flechas controlan
+        // las misiones o las opciones contextuales de una estación abierta.
+        if (HandleJournalNavigation(e.KeyScan)) return true;
+
         if (e.KeyScan == InputEvent.Key_Escape
             || e.KeyScan == InputEvent.Key_Tab || e.KeyScan == InputEvent.Key_Pad_B)
         {
@@ -2231,33 +2296,6 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_inventory_drop");
             SendNetworkEvent("ca_journal_menu_select_sound");
         }
-        else if (currentPage == 0
-            && (e.KeyScan == InputEvent.Key_RightArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Right))
-        {
-            if (localPlayer != null
-                && localPlayer.FormalInventoryFilter
-                    >= CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1)
-            {
-                SetJournalPage(1);
-                SendNetworkEvent("ca_journal_menu_move_sound");
-            }
-            else
-            {
-                SendNetworkEvent("ca_inventory_filter");
-                SendNetworkEvent("ca_journal_menu_move_sound");
-            }
-        }
-        else if (currentPage == 0
-            && (e.KeyScan == InputEvent.Key_LeftArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Left))
-        {
-            if (localPlayer != null && localPlayer.FormalInventoryFilter > 0)
-            {
-                SendNetworkEvent("ca_inventory_filter_previous");
-                SendNetworkEvent("ca_journal_menu_move_sound");
-            }
-        }
         else if (currentPage == 3 && craftingSession
             && (e.KeyScan == InputEvent.Key_DownArrow
                 || e.KeyScan == InputEvent.Key_Pad_DPad_Down))
@@ -2343,44 +2381,6 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_crafting_create");
             SendNetworkEvent("ca_journal_menu_select_sound");
         }
-        else if (e.KeyScan == InputEvent.Key_RightArrow
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
-        {
-            int nextPage = (GetJournalPage() + 1) % JOURNAL_PAGE_COUNT;
-            SetJournalPage(nextPage);
-            if (nextPage == 3)
-            {
-                SendNetworkEvent("ca_crafting_page_turn_sound");
-            }
-            if (nextPage == 0)
-            {
-                SendNetworkEvent("ca_inventory_refresh");
-            }
-            if (nextPage == 4 || nextPage == 5)
-            {
-                SendNetworkEvent("ca_social_refresh");
-            }
-        }
-        else if (e.KeyScan == InputEvent.Key_LeftArrow
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
-        {
-            int nextPage =
-                (GetJournalPage() + JOURNAL_PAGE_COUNT - 1)
-                    % JOURNAL_PAGE_COUNT;
-            SetJournalPage(nextPage);
-            if (nextPage == 3)
-            {
-                SendNetworkEvent("ca_crafting_page_turn_sound");
-            }
-            if (nextPage == 0)
-            {
-                SendNetworkEvent("ca_inventory_refresh");
-            }
-            if (nextPage == 4 || nextPage == 5)
-            {
-                SendNetworkEvent("ca_social_refresh");
-            }
-        }
         return true;
     }
 
@@ -2416,6 +2416,10 @@ class CaelumJournalOverlay : EventHandler
         if (e.Name == "ca_inventory_refresh")
         {
             requestingPlayer.RefreshFormalInventorySnapshot();
+        }
+        else if (e.Name == "ca_debug_fool_report")
+        {
+            CaelumMainM00FoolCapture.Report(requestingPlayer);
         }
         else if (e.Name == "ca_social_refresh")
         {
@@ -2622,14 +2626,20 @@ class CaelumJournalOverlay : EventHandler
         }
         else
         {
-            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 322.0,
+            bool hasEdges = currentPage == 0 || currentPage == 4;
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, hasEdges ? 316.0 : 322.0,
                 StringTable.Localize(
                     currentPage == 0 ? "CA_JOURNAL_INVENTORY_HELP"
                         : currentPage == 4 && localPlayer.JournalKnownQuestCount > 0
-                            ? IsQuestDetailOpen() ? "CA_Q_DETAIL_HELP" : "CA_QUEST_LIST_HELP"
+                            ? IsQuestDetailOpen() ? "CA_Q_DETAIL_HELP"
+                                : localPlayer.JournalKnownQuestCount == 1
+                                    ? "CA_QUEST_SINGLE_HELP" : "CA_QUEST_LIST_HELP"
                             : "CA_JOURNAL_NAVIGATION_HELP",
                     false
                 ));
+            if (hasEdges)
+                DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 328.0,
+                    StringTable.Localize("CA_JOURNAL_EDGE_HELP", false));
         }
     }
 }

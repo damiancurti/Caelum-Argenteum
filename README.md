@@ -5,12 +5,39 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0aj.** Apply over the complete **4.33.0ai** project.
+**Current release: 4.33.0am.** Apply over the complete **4.33.0al** project.
 The author approved all 0ai tests and keeps the current attributes unchanged.
-0aj adds the optional quest lifecycle and an explicitly enabled trial chain.
-MAP01 remains the systems test environment.
+0am fixes the inactive conversation reference identified by the author's log
+and restores section changes at the ends of inventory filters and quest lists.
+MAP01 remains the systems test environment. Author validation is pending.
 
 ## Implemented
+
+- The Fool interaction and capture animation check whether the referenced NPC
+  is actually in conversation. A retained reference to an inactive NPC no longer
+  blocks them. Active dialogue remains protected; the owned Box, explicit
+  capture choice, animation, unique card and existing +2% bonus remain required.
+  The return door and transition use the same active-conversation check.
+  Loading a save does not grant a card or erase native conversation references.
+- In Inventory, Left/Right selects the previous/next filter. Left at the first
+  filter changes to Tarot; Right at the last changes to Character. The filter
+  remains selected when returning. F/Y retains its existing next-filter cycle.
+- In Quests, Left/Right selects known quests, including from Detail. Left at
+  the first changes to Crafts; Right at the last changes to Reputation. With
+  one known quest, either arrow changes to its adjacent section. Undiscovered
+  entries are skipped. Up/Down retains list selection and detail scrolling.
+- PgUp/PgDn or LB/RB always changes sections directly. Leaving an active
+  crafting station closes its native session. Navigation cancels pending
+  abandonment confirmation and does not accept, complete or create quests.
+- Seal channeling excludes environmental props and crafting stations from
+  targeting, attraction, expulsion and trapped mass. MAP01 retains the existing
+  one-time repair of displaced garden nodes and room stations using the same
+  actors, preserving depletion, reservations and task ownership.
+- A fresh Use press stops an active seal channel with its normal cooldown
+  and reaches native interaction in the same press. Adrenaline exhaustion
+  also releases Use; the remaining cooldown only prevents restarting the seal.
+- Console `netevent ca_debug_fool_report` remains an explicit read-only report
+  of capture conditions, Box identity, channel/menu state and essence proximity.
 
 - Optional quests have explicit offers, prerequisite completion, acceptance,
   capped objective progress, completion, failure and confirmed abandonment.
@@ -19,7 +46,8 @@ MAP01 remains the systems test environment.
 - Each test quest grants one native Inventory receipt. A persistent per-quest
   claim flag prevents duplicates after reopening, item removal or travel. A
   refused receipt remains claimable after the receiving condition is resolved.
-- Journal Up/Down selects known quests, F/Y opens the selected detail, Enter/A
+- Journal Left/Right selects known quests; Up/Down also selects in the list.
+  F/Y opens the selected detail, Enter/A
   accepts or completes/claims, and two separate G/X presses confirm abandonment.
   Cancel/close/navigation clears confirmation; holding the key cannot confirm.
   The server validates the quest id and state for each action.
@@ -318,7 +346,7 @@ MAP01 remains the systems test environment.
 
 ## Planned
 
-Next: connect reputation to reusable dialogue/access/trade conditions in 0ak,
+After resolving the reported capture failure and author acceptance: connect reputation to reusable dialogue/access/trade conditions,
 then verify integration before starting the V4.34 world/travel foundations.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
@@ -339,17 +367,23 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0ai tests are author-approved. The 0aj native scenarios passed 119 checks,
-including old and partial saves, map travel and the Journal in both languages.
-Author validation on Windows remains pending. Focused checks are in
-PRUEBAS_4_33_0aj.txt; engine evidence and limits are in PROJECT.md.
-Maps, audio, models and sprites remain unchanged in 0aj.
+All 0ai tests are author-approved. The 0al log shows a reachable essence at
+32.6 map units, valid requirements, no channel and an inactive NPC reference.
+That state is reproduced in a controlled native-engine fixture: original 0al
+rejects Use; 0am opens the dialogue and captures on explicit confirmation.
+It does not establish which earlier dialogue left the author's reference.
+
+Native keyboard tests cover both navigation edges, one and multiple quests,
+skipped undiscovered entries and retained selections. Capture/save/exit
+verification and its limits are recorded in PROJECT.md.
+See PRUEBAS_4_33_0am.txt for application and author checks on Windows.
+Maps, art, audio, balance and approved attribute formulas remain unchanged.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0aj
-patch into the complete **4.33.0ai** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0aj.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0am
+patch into the complete **4.33.0al** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0am.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

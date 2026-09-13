@@ -1,6 +1,23 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0aj — 2026-09-13.
+Versión documental: 4.33.0am — 2026-09-13.
+
+0am conserva todos los recursos gráficos, mapas, modelos, fuentes y audio
+de 0al. Las ayudas del Diario en español e inglés añaden una segunda línea
+para explicar el cambio de solapa en los extremos. Se revisa su encaje en
+el render nativo de Inventario y Misiones. Captura y regreso cambian sus
+comprobaciones de diálogo, sin retocar sprites, música ni animaciones.
+
+0al conserva todos los recursos de 0ak. Se revisan las ayudas del Inventario
+y el caso de una sola misión, en español e inglés, con el arte y las fuentes
+existentes. El diagnóstico de captura imprime texto en la consola a petición;
+no añade elementos al HUD ni cambia la imagen de la esencia o de la carta.
+
+0ak conserva mapas, imágenes, audio, modelos y fuentes de 0aj. La reparación
+de posiciones ocurre sobre los actores existentes de MAP01; no añade ni
+retoca modelos o geometría. Las ayudas del Diario se actualizan en español
+e inglés y reutilizan las fuentes y el arte actuales. La revisión visual
+cubre lista de misiones, Detalle e Inventario; evidencia en PROJECT.md.
 
 0aj conserva imágenes, mapas, audio, modelos y fuentes de 0ai. Las constancias
 de diagnóstico usan Inventory invisible y no requieren sprites nuevos. La

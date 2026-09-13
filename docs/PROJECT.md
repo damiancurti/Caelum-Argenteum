@@ -1,8 +1,122 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0aj — 2026-09-13.
+Versión documental: 4.33.0am — 2026-09-13.
 
-## Estado actual: 4.33.0aj — pendiente de aceptación del autor
+## Estado actual: 4.33.0am — conversación inactiva y extremos del Diario
+
+La captura del log de 0al muestra fase 80, Caja propia válida, requisitos
+cumplidos y esencia accesible a 32,6 MU. No hay canalización ni recarga.
+ConversationNPC conserva un actor, pero su bInConversation vale falso. La
+captura rechazaba cualquier referencia, aunque ya no hubiera diálogo activo.
+
+0am comprueba la actividad real del interlocutor al abrir la esencia y al
+esperar el cierre antes de animarla. Aplica la misma regla a la puerta, al
+fundido de salida y a la Voz de llegada. No borra referencias nativas ni
+repara el progreso: siguen siendo necesarias la Caja propia y la elección
+explícita de capturar; abrir o cancelar el diálogo no entrega la carta.
+Se conserva la entrega única y la bonificación existente de El Loco.
+
+Izquierda/Derecha recorre los filtros y las misiones conocidas. Desde el
+primer elemento, Izquierda pasa a la solapa anterior; desde el último,
+Derecha pasa a la siguiente. Inventario: Tarot/Personaje. Misiones:
+Oficios/Reputación. Con una sola misión, ambas flechas salen hacia su solapa
+adyacente. Al volver se conserva la selección. RePág/AvPág o LB/RB cambia
+de solapa directamente; Arriba/Abajo y F/Y mantienen sus otras funciones.
+Las ayudas en español e inglés explican los extremos en una segunda línea.
+
+### Evidencia y validación de 0am
+
+Se reproduce de forma controlada el estado que informa el log: referencia
+de un NPC cuyo diálogo ya está cerrado. En las fuentes originales 0al,
+Usar no abre la esencia. Con 0am, la misma entrada nativa abre El Loco y
+Enter completa la captura, también después de agotar Quintaesencia.
+La Caja se recibe por el diálogo real de Palomo, sin darla directamente.
+El escenario comienza después de las cuatro pruebas de residentes; no es
+una ejecución completa de la misión ni usa un guardado del autor.
+
+Veintiocho comprobaciones del Diario pasan por eventos SDL de teclado y el
+despachador nativo: filtros, ambos extremos, una y tres misiones, huecos de
+entradas desconocidas, Detalle, selección retenida, RePág/AvPág y ausencia
+de aceptación automática. Las repeticiones por idioma no suman casos distintos.
+Doce comprobaciones del tramo Palomo/Caja/agotamiento/captura confirman el
+arreglo sobre el estado reproducido, identidad y entrega única con +2%.
+
+Diecisiete comprobaciones adicionales pasan al cargar con 0am un guardado
+nativo creado por 0al con referencia inactiva, en las coordenadas comunicadas:
+Caja y atributos conservados, ausencia de captura al cargar, protección de
+un interlocutor activo, Usar, cancelación con Esc y nueva confirmación.
+La animación termina aunque se conserve otra referencia inactiva a la esencia.
+La puerta abre y el fundido llega a MAP02 aun con una referencia inactiva al
+umbral; sobreviven carta, Caja y primera arma y se abre la Voz de llegada.
+El arma y su registro se preparan sólo para verificar el contrato de salida;
+esta prueba no repite el crafting. No se modifican los archivos del guardado.
+
+El motor compila las fuentes sin errores y pasa validate_project.py: cinco
+documentos, 74 archivos de audio y 12 modelos de estación. El delta contiene
+12 archivos nuevos/modificados. Entorno: GZDoom 4.14.2, Freedoom y llvmpipe en
+Linux. La comprobación del autor en Windows queda pendiente. Los auxiliares
+de pruebas, el motor y el IWAD no forman parte del parche.
+
+Entrega delta sobre 0al con README, cinco documentos canónicos y
+PRUEBAS_4_33_0am.txt. Mapas, assets, atributos y protección/restauración de
+infraestructura conservados. Reputación espera la aceptación de estos ajustes.
+
+## Base 4.33.0ak — captura observada; controles revisados en 0al
+
+El autor informa árboles y estaciones desplazados por Quintaesencia, bloqueo
+al capturar la esencia y controles del Diario que cambian filtro/solapa en
+vez del destino esperado. No se da por aprobado 0aj. Se conserva la base de
+misiones opcionales y se priorizan estas correcciones antes de reputación.
+
+La selección del sello aceptaba infraestructura porque también es SHOOTABLE.
+0ak excluye CaelumMovableProp del área de los sellos, incluida la masa atrapada
+y la expulsión. MAP01 reubica una sola vez las mismas plantas y estaciones:
+origen del jardín y disposición vigente de las habitaciones. No recrea los
+nodos ni sus existencias; conserva sus referencias, tareas y reservas.
+También limpia velocidad y suspensión indebidas de objetivos guardados.
+
+La captura normal se reprodujo funcionando en las fuentes originales 0aj.
+El bloqueo reproducido aparece al canalizar: PlayerThink descartaba Usar.
+Una pulsación nueva de Usar ahora detiene el canal, aplica su recarga normal
+y llega a la interacción nativa en esa misma pulsación. El Loco conserva
+el requisito de Caja propia y la confirmación del diálogo para la entrega única.
+
+Diario: Izquierda/Derecha cambia de misión en Misiones; en Inventario cambia
+de solapa directamente. F/Y conserva el filtro del inventario. RePág/AvPág
+o LB/RB cambia de solapa en cualquier sección. Las flechas de una estación
+abierta conservan sus recetas; salir de Oficios cierra la sesión nativa y
+detiene el trabajo atendido. Las ayudas se actualizan en español e inglés.
+
+### Validación técnica de 0ak
+
+GZDoom 4.14.2 con Freedoom y llvmpipe en Linux. Escenarios aislados sobre las
+fuentes del parche; los auxiliares y recursos del motor no se entregan.
+
+- 78 comprobaciones de objetivos: infraestructura real de MAP01 excluida,
+  árboles y estaciones inmóviles con Aire/Quintaesencia, gravedad restaurada
+  y continuidad de atracción/masa/expulsión para objetivos de combate.
+- 34 comprobaciones del Diario: diez filtros, navegación circular entre
+  misiones, Detalle y cancelación de abandono, teclas de solapa y cierre
+  nativo de una estación real. Se invoca la misma ruta de códigos de tecla
+  usada por InputProcess y sus eventos nativos; teclado/mando físico pendiente.
+- 19 al cargar una partida guardada por las fuentes originales 0aj con
+  Quintaesencia activa y plantas/estaciones desplazadas: posición, identidad,
+  gravedad, existencias parciales, rendimiento fraccionario, atributos,
+  elecciones, 1,25 litros, Caja, misión terminada y recompensa conservados.
+  Usar corta el canal y abre El Loco; confirmar concede una carta y sólo
+  su +2% vigente. Repetir captura o recompensa queda rechazado.
+
+Las 131 comprobaciones distintas pasan sin fallos. La interfaz se revisa en
+ambos idiomas, sin sumar las repeticiones de los mismos controles. No se ha
+recibido el guardado del autor: la compatibilidad usa un guardado nativo
+preparado para reproducir sus síntomas. No representa una partida completa.
+Aplicación y aceptación en Windows: PRUEBAS_4_33_0ak.txt. Mapas, arte, audio,
+modelos y fórmulas de atributos se conservan respecto de 0aj.
+El validador del proyecto pasa sin errores: cinco documentos, 74 archivos de
+audio, 12 modelos de estación y referencias. El delta contiene 12 archivos:
+cinco de ejecución, README, cinco documentos y un TXT de aplicación/pruebas.
+
+## Base 4.33.0aj — observaciones corregidas por 0ak
 
 0ai queda aprobado por el autor. Se conservan todos los atributos, incluidos
 Resiliencia para Sueño y los divisores de consumo/regeneración de Constitución.
@@ -20,7 +134,8 @@ seguido de Espera. Está separada del contenido narrativo: constancias sin peso,
 precio ni atributos, sin alterar la misión principal, Tarot o recursos T1.
 SYSTEMS.md define reglas y límites; PRUEBAS_4_33_0aj.txt explica el recorrido.
 
-Siguiente bloque: 0ak conecta reputación con condiciones reutilizables. Después
+Tras resolver la captura y aceptar los controles, el siguiente bloque conecta reputación
+con condiciones reutilizables. Después
 se revisará la integración antes de V4.34. Las balas y la potabilización siguen
 pendientes de definición para ampliaciones posteriores. Calendario V4.35
 precede Descanso; V5.0 conserva el refactor de programación.
@@ -489,7 +604,8 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 8b | Auditoría de atributos 0ai — pospuesta por el autor | Mantener los atributos actuales. Para una revisión futura, precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no bloquean 0aj ni el paso a V4.34. |
 | 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Pendiente de aceptación del autor. |
-| 8d | 4.33.0ak: reputación y condiciones | Conectar reglas reutilizables de diálogo, acceso y comercio. Las relaciones narrativas y valores nuevos siguen sujetos al diseño del autor; no asignar facciones al Limbo por defecto. |
+| 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Pendiente de aceptación del autor. |
+| 8d.1 | Reputación y condiciones, después de resolver la captura | Conectar reglas reutilizables de diálogo, acceso y comercio. Las relaciones narrativas y valores nuevos siguen sujetos al diseño del autor; no asignar facciones al Limbo por defecto. |
 | 8e | Cierre de 4.33 e inicio de 4.34 | Integrar misiones/reputación, guardado y viajes; correctivos según pruebas. Tras aceptar la base, comenzar ubicaciones/conexiones/viajes. Balas y potabilización permanecen como ampliaciones pendientes de definición, sin bloquear este avance. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 

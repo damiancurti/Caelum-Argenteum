@@ -1,10 +1,50 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0aj — 2026-09-13.
+Versión documental: 4.33.0am — 2026-09-13.
 
-ACTUAL 4.33.0aj — MISIONES OPCIONALES DE PRUEBA
+ACTUAL 4.33.0am — ESENCIA Y EXTREMOS DEL DIARIO
+El log de 0al identifica un interlocutor guardado cuyo diálogo ya está
+inactivo. A 32,6 MU la esencia es accesible y cumple los requisitos, pero
+esa referencia impedía abrirla. 0am usa el estado real del diálogo al abrir
+y animar la captura. Una conversación activa sigue protegida. La Caja propia,
+confirmación, animación y entrega única mantienen sus reglas; no se da la
+carta por cargar. La puerta de regreso y la Voz usan el mismo criterio.
+
+Inventario: Izquierda/Derecha recorre filtros. Desde el primero, Izquierda
+pasa a Tarot; desde el último, Derecha pasa a Personaje. Misiones: recorre
+entradas conocidas y sale a Oficios/Reputación al alcanzar esos extremos.
+Con una sola entrada, cada flecha sale a la solapa adyacente. RePág/AvPág
+o LB/RB cambia directamente de solapa. Al regresar se conserva la selección.
+Las pruebas de residentes siguen siendo etapas de MAIN_M00; navegar no
+crea encargos ni acepta ofertas. Las ayudas muestran la regla de los extremos.
+
+El estado del log se reproduce con las fuentes originales 0al y se captura
+con la corrección. Evidencia y límites en PROJECT.md; aplicación y pruebas
+del autor en PRUEBAS_4_33_0am.txt. Pendiente de su comprobación en Windows.
+La geometría y la protección/restauración de infraestructura se conservan.
+
+BASE 4.33.0ak — INFRAESTRUCTURA, CAPTURA Y CONTROLES ANTERIORES
+Quintaesencia y los demás sellos excluyen árboles, recursos y estaciones.
+Al cargar MAP01 se corrigen una vez las posiciones desplazadas del jardín
+y los bancos de las habitaciones. Se conservan sus instancias, existencias,
+tareas y reservas; no se repuebla ni se agregan materiales de campaña.
+El mapa y la disposición aprobada mantienen su geometría.
+
+Una pulsación nueva de Usar detiene la canalización con su recarga normal
+y permite interactuar en esa misma pulsación. Para capturar El Loco siguen
+siendo necesarios la Caja recibida de Palomo y confirmar el diálogo de la
+esencia en la cueva. Cargar o reparar posiciones no entrega la carta.
+
+Diario > Misiones: Izquierda/Derecha alterna misiones conocidas y mantiene
+la solapa; RePág/AvPág o LB/RB cambia de solapa. Inventario > Derecha llega
+a Personaje desde cualquier filtro; F/Y cambia el filtro. Arriba/Abajo
+selecciona objetos o misiones en lista, y recorre el texto de Detalle.
+Pruebas de aplicación/guardado/captura y controles: PRUEBAS_4_33_0ak.txt.
+Pendiente de aceptación del autor. La reputación sigue como bloque posterior.
+
+BASE 4.33.0aj — MISIONES OPCIONALES DE PRUEBA
 El autor aprobó todas las pruebas de 0ai y mantiene los atributos actuales.
 La cadena opcional sólo aparece al ejecutar give CaelumDebugQuestTrial.
-Diario > Misiones: Arriba/Abajo selecciona Recorrido o Espera; F da Detalle;
+Diario > Misiones: Izquierda/Derecha o Arriba/Abajo selecciona; F da Detalle;
 Enter acepta o completa/cobra. G pide abandono y otra pulsación lo confirma.
 Se puede probar en MAP01/MAP02 sin añadir NPC, objetos o geometría al mapa.
 No forma parte de la historia ni cambia los requisitos de la salida del Limbo.

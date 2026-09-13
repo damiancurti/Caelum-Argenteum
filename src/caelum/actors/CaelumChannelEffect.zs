@@ -40,8 +40,10 @@ class CaelumChannelEffect : Actor
     bool IsAuthorizedTarget(Actor candidate)
     {
         if (candidate == null || candidate == self || candidate == ChannelOwner
-            || Inventory(candidate) != null) return false;
-        // Las estaciones, puertas, pickups y arquitectura no cumplen esto.
+            || Inventory(candidate) != null
+            || CaelumMovableProp(candidate) != null) return false;
+        // SHOOTABLE también permite recolectar recursos e interactuar con
+        // estaciones. Esa marca no convierte la infraestructura en combatiente.
         return candidate.bMISSILE || candidate.bSHOOTABLE || candidate.bCORPSE
             || candidate.player != null;
     }
@@ -110,7 +112,18 @@ class CaelumChannelEffect : Actor
         {
             Actor candidate = GravityTargets[index];
             if (candidate != null)
+            {
                 candidate.bNOGRAVITY = GravityOriginalFlags[index] != 0;
+                // Un guardado anterior puede traer infraestructura atrapada.
+                // Liberarla sin conservar la suspensión/velocidad indebidas.
+                let prop = CaelumMovableProp(candidate);
+                if (prop != null && prop.GetRequiredPhysicalPower() <= 0)
+                {
+                    let profile = GetDefaultByType(prop.GetClass());
+                    prop.bNoGravity = profile.bNoGravity;
+                    prop.Vel = (0, 0, 0);
+                }
+            }
             GravityTargets.Delete(index);
             GravityOriginalFlags.Delete(index);
         }

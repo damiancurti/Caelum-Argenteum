@@ -131,7 +131,7 @@ class CaelumMainM00Return : Object play
         if (!IsReady(user) || user.CraftingTaskActive || !LevelInfo.MapExists("MAP02")) return false;
         let controller = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
         if (controller == null || !CanApproach(user, controller.ReturnDoor)
-            || user.player.ConversationNPC != null) return false;
+            || user.HasActiveConversation()) return false;
         for (int i = 0; i < MAXPLAYERS; i++)
             if (playeringame[i] && players[i].mo != user) return false;
         let r = user.GetPersistentCharacterState(false);
@@ -196,7 +196,7 @@ class CaelumMainM00Return : Object play
             let door = controller != null ? controller.ReturnDoor : null;
             if (door == null) return;
             if (!CanApproach(user, door) || user.CraftingTaskActive) { Cancel(user); return; }
-            if (user.player.ConversationNPC != null) return;
+            if (user.HasActiveConversation()) return;
             user.Vel = (0,0,0);
             if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, FADE_TICS, "Black", 1.0);
             if (r.MainM00ReturnTics > 0) { r.MainM00ReturnTics--; return; }
@@ -204,7 +204,7 @@ class CaelumMainM00Return : Object play
             Level.ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
         }
         if (level.MapName == "MAP02" && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMPLETE)
-            && !r.MainM00SewerVoiceHeard && user.health > 0 && user.player.ConversationNPC == null)
+            && !r.MainM00SewerVoiceHeard && user.health > 0 && !user.HasActiveConversation())
         {
             let voice = CaelumUnknownVoiceSpeaker(Actor.Spawn("CaelumUnknownVoiceSpeaker", user.Pos, NO_REPLACE));
             if (voice == null) return;
@@ -225,7 +225,7 @@ class CaelumM00ReturnDoor : Actor
     {
         let user = CaelumPlayer(activator);
         if (!CaelumMainM00Return.CanApproach(user, self) || bInConversation
-            || user.player.ConversationNPC != null) return false;
+            || user.HasActiveConversation()) return false;
         user.CloseCraftingStationSession(); user.SetCraftingJournalState(false);
         user.EquipmentMenuOpen = false;
         Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,

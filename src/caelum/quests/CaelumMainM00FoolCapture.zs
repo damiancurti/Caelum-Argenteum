@@ -22,6 +22,54 @@ class CaelumMainM00FoolCapture : Object play
             && box != null && box.Owner == user && box.ItemId == record.MagicBoxItemId;
     }
 
+    // Diagnóstico explícito: sólo lee el estado; no repara ni entrega objetos.
+    static void Report(CaelumPlayer user)
+    {
+        if (user == null || user.player == null) return;
+        let record = user.GetPersistentCharacterState(false);
+        Console.Printf("[Caelum 4.33.0am] Diagnóstico de El Loco (1=sí, 0=no)");
+        if (record == null)
+        {
+            Console.Printf("Registro de personaje ausente.");
+            return;
+        }
+        let controller = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
+        let essence = controller == null ? null : controller.FoolEssence;
+        let box = CaelumMagicBox(user.FindInventory("CaelumMagicBox"));
+        Console.Printf("Mapa=%s fase=%d estado=%d capturable=%d carta=%d revelada=%d",
+            level.MapName, record.QuestStage[0], record.QuestState[0],
+            record.CanCaptureMainM00Fool(), record.HasTarotCard(0), record.MainM00FoolRevealed);
+        Console.Printf("Caja válida=%d id local=%d id registro=%d",
+            HasOwnedBox(user), box == null ? 0 : box.ItemId, record.MagicBoxItemId);
+        Console.Printf("Hitos Argento/Caella/Ronnie/Rulo/Caja/captura=%d/%d/%d/%d/%d/%d",
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE),
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE),
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE),
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_COMPLETE),
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED),
+            record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_THE_FOOL_CAPTURED));
+        Console.Printf("Personaje creado=%d vida=%d estado nativo=%d",
+            user.CharacterCreationComplete, user.health, user.player.playerstate);
+        Console.Printf("Canal=%d adrenalina=%.2f recarga=%.2f menús creador/equipo/oficios/tienda=%d/%d/%d/%d",
+            user.CombatChannelModeActive, user.CurrentAdrenaline, user.CombatChannelCooldownRemaining,
+            user.CreationWizardOpen, user.EquipmentMenuOpen, user.CraftingMenuOpen, user.PalomoMerchantMenuOpen);
+        Console.Printf("Posición=(%.1f,%.1f,%.1f) rumbo=%.1f inclinación=%.1f alcance Usar=%.1f",
+            user.Pos.X, user.Pos.Y, user.Pos.Z, user.Angle, user.Pitch, user.UseRange);
+        Console.Printf("Conversación jugador=%d NPC en diálogo=%d",
+            user.player.ConversationNPC != null,
+            user.player.ConversationNPC != null && user.player.ConversationNPC.bInConversation);
+        if (essence == null)
+        {
+            Console.Printf("Esencia ausente del controlador.");
+            return;
+        }
+        Console.Printf("Esencia colocada=%d accesible=%d distancia=%.1f desnivel=%.1f vista=%d",
+            essence.StoryPlaced, CanApproach(user, essence), user.Distance2D(essence),
+            Abs(user.Pos.Z - essence.Pos.Z), user.CheckSight(essence));
+        Console.Printf("Esencia diálogo=%d capturando=%d tics=%d",
+            essence.bInConversation, essence.CaptureUser != null, essence.CaptureTics);
+    }
+
     static void Sync(CaelumPlayer user)
     {
         let record = user.GetPersistentCharacterState(false);
@@ -100,7 +148,7 @@ class CaelumM00FoolEssence : Actor
     {
         let user = CaelumPlayer(activator);
         if (!CaelumMainM00FoolCapture.CanApproach(user, self) || bInConversation
-            || CaptureUser != null || user.player.ConversationNPC != null) return false;
+            || CaptureUser != null || user.HasActiveConversation()) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !record.CanCaptureMainM00Fool()
             || !CaelumMainM00FoolCapture.HasOwnedBox(user)) return false;
@@ -146,7 +194,7 @@ class CaelumM00FoolEssence : Actor
             || CaptureImage == null)
         { CancelCapture(); return; }
         // USDF debe soltar el diálogo antes de que empiece la animación.
-        if (bInConversation || CaptureUser.player.ConversationNPC != null) return;
+        if (bInConversation || CaptureUser.HasActiveConversation()) return;
         CaptureTics++;
         double fraction = Clamp(double(CaptureTics) / CaelumConstants.MAIN_M00_FOOL_CAPTURE_TICS, 0.0, 1.0);
         Vector3 destination = CaptureUser.Pos + (Cos(CaptureUser.Angle)*22,

@@ -1,6 +1,68 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0aj — 2026-09-13.
+Versión documental: 4.33.0am — 2026-09-13.
+
+## Sellos e interacción (0ak), conversación y navegación (0am)
+
+HasActiveConversation comprueba que ConversationNPC exista y que ese actor
+tenga bInConversation. La referencia puede sobrevivir al cierre y no debe
+bloquear por sí sola. La esencia usa este criterio en Used y en la espera
+previa a su animación. BeginCapture conserva la exigencia del interlocutor
+correcto, su diálogo activo, Caja propia, fase y revelación. Sólo CommitCapture
+con la animación terminada registra la carta única y su bonificación vigente.
+
+La puerta de regreso aplica el mismo criterio al abrir, esperar el cierre
+y confirmar el traslado; la Voz de MAP02 también espera un diálogo activo
+real. No se eliminan referencias de conversación ni se alteran campos
+serializados para aplicar el arreglo. Un guardado con referencia inactiva
+puede interactuar al cargar, pero cargar nunca captura ni confirma la salida.
+
+El agotamiento de Adrenalina llama a StopSealChannel(true); desde ese cierre
+la recarga sólo impide reiniciar el sello y no bloquea Usar. El log de 0al
+señala otra condición: referencia de conversación presente con NPC inactivo.
+netevent ca_debug_fool_report conserva la consulta explícita de requisitos,
+Caja, menús/canal/conversación y proximidad/vista, sin mutar el estado.
+
+La canalización selecciona combatientes, cadáveres y proyectiles, excluyendo
+Inventory y CaelumMovableProp. Árboles, nodos de recursos y estaciones pueden
+ser SHOOTABLE por sus interacciones, pero no son objetivos del sello: no se
+atraen, giran, expulsan ni suman masa atrapada. Se conservan las fórmulas de
+fuerza, radio, masa, efectos elementales, drenaje y recarga para combate.
+
+Una pulsación nueva de Usar durante la canalización la termina mediante
+StopSealChannel(true), con expulsión de objetivos válidos y recarga normal.
+Esa misma pulsación continúa hasta la interacción del motor. Mantener Usar
+ya pulsado no genera otra interrupción. La captura de El Loco usa su ruta
+nativa existente: fase válida, Caja propia, conversación y confirmación.
+Interrumpir el sello o cargar un guardado nunca concede una carta por sí solo.
+
+MAP01 serializa ChannelInfrastructureRecovered. Si falta en un guardado,
+tras preparar la disposición vigente se restaura una sola vez la posición
+de las plantas desde SpawnPoint y de las estaciones por clase/grupo de
+habitación. Se reutilizan los actores y se conservan recursos restantes,
+rendimiento fraccionario, tareas y reservas. Se anulan velocidad y gravedad
+indebidas y se revalida la estación atendida. Los bancos no usan su antiguo
+SpawnPoint exterior. No se regenera el jardín ni se modifica la geometría.
+Liberar GravityTargets de un sello guardado limpia también la suspensión
+indebida de infraestructura fija; el resto recupera su marca de gravedad previa.
+
+| Contexto del Diario | Izquierda/Derecha | Otro control |
+| --- | --- | --- |
+| Inventario | Filtro anterior/siguiente; en los extremos, solapa Tarot/Personaje | F/Y avanza filtro; Arriba/Abajo elige objeto; RePág/AvPág cambia solapa |
+| Misiones, lista o Detalle | Misión conocida anterior/siguiente; en los extremos, solapa Oficios/Reputación | Arriba/Abajo selecciona en lista o desplaza Detalle |
+| Oficios con estación abierta | Conserva receta/opción contextual | RePág/AvPág o LB/RB sale de la solapa y cierra la sesión |
+| Resto de solapas | Solapa anterior/siguiente | RePág/AvPág o LB/RB hace lo mismo |
+
+RePág/AvPág (PgUp/PgDn) y LB/RB cambian de solapa en todas las secciones,
+incluida Misiones. Cambiar de misión, ocultar Detalle o cambiar de solapa
+cancela una confirmación de abandono pendiente. Navegar no acepta misiones.
+Con una sola misión registrada, Izquierda sale a Oficios y Derecha sale a
+Reputación. Con varias, se saltan las entradas no descubiertas; no se vuelve
+al extremo opuesto al agotar la lista horizontal. Al volver se conserva la
+selección. Arriba/Abajo conserva el recorrido circular de la lista y el
+desplazamiento de Detalle; F/Y conserva el ciclo de filtros del inventario.
+Las cuatro pruebas de residentes son etapas de MAIN_M00, no cuatro entradas
+independientes. Navegar no descubre las misiones opcionales de diagnóstico.
 
 ## Misiones opcionales — vigente en 4.33.0aj
 
@@ -53,7 +115,8 @@ Los tiempos/distancias son parámetros diagnósticos, no balance de la campaña.
 La observación de salud compara la vida entre tics; no representa todavía
 un sistema universal de condiciones basado en todos los eventos de daño.
 
-Diario → Misiones: Arriba/Abajo selecciona; F/Y abre el Detalle seleccionado;
+Diario → Misiones: Izquierda/Derecha selecciona; Arriba/Abajo también en lista.
+F/Y abre el Detalle seleccionado;
 Enter/A acepta o completa/cobra; G/X pide abandono y otra pulsación separada
 lo confirma. Mantener la tecla no confirma. Cerrar, cambiar de misión/sección
 u ocultar Detalle cancela la confirmación. En Detalle, Arriba/Abajo conserva
@@ -1205,10 +1268,12 @@ en HISTORY.md; las pruebas de multitudes permanecen separadas en CADEV02.
 
 ## Detalle de misiones (4.33.0k–0l)
 
-Desde 0aj, Arriba/Abajo selecciona una misión conocida. En Diario → Misiones,
-F (Y en mando) alterna resumen y Detalle de la misión seleccionada. La descripción
-visible. Describe de qué trata y qué corresponde hacer en la etapa actual.
-Arriba/Abajo recorre el texto; TAB cierra. La navegación es local, no cambia
+Desde 0ak, Izquierda/Derecha selecciona una misión conocida; Arriba/Abajo
+también selecciona en la lista. En Diario → Misiones, F (Y en mando) alterna
+resumen y Detalle de la misión seleccionada. La descripción explica de qué
+trata y qué corresponde hacer en la etapa actual. En Detalle, Arriba/Abajo
+recorre el texto; TAB vuelve a la lista y otra pulsación cierra el Diario.
+RePág/AvPág o LB/RB cambia de solapa. La navegación es local, no cambia
 progreso ni otorga objetos. Las misiones aún desconocidas no aparecen.
 
 Durante Caella enumera primario, secundario, canalización, gasto de Ánima y

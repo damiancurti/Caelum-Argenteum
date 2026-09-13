@@ -1,6 +1,92 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0aj — 2026-09-13.
+Versión documental: 4.33.0am — 2026-09-13.
+
+## Referencia inactiva de conversación y extremos del Diario — 4.33.0am
+
+El autor precisa que las flechas deben recorrer filtros/misiones y pasar a
+la solapa anterior/siguiente al alcanzar el extremo, sin volver al opuesto.
+El log de 0al muestra captura elegible a 32,6 MU, canal y recarga a cero,
+ConversationNPC presente y NPC fuera de diálogo. Se reproduce esa combinación
+en una prueba controlada: 0al rechaza Usar y 0am permite el diálogo y captura.
+No se afirma haber reproducido qué cierre original dejó la referencia.
+
+La esencia comprueba la actividad del diálogo al abrir y esperar su animación;
+la salida y la Voz de llegada usan el mismo criterio. Se conservan referencias
+nativas, requisitos, confirmación, tiempos y recompensa única. No se entrega
+la carta al cargar ni se interrumpe una conversación activa como reparación.
+
+Inventario sale a Tarot/Personaje desde sus extremos. Misiones sale a
+Oficios/Reputación; con una entrada ambas flechas salen. RePág/AvPág y LB/RB
+siguen cambiando de solapa directamente. Se retienen selección, funciones de
+Arriba/Abajo y F/Y, y cancelación de abandono al navegar. Las ayudas se ajustan
+en ambos idiomas con las fuentes existentes. Mapas, assets y balance intactos.
+
+Veintiocho comprobaciones de controles mediante teclado nativo y doce del
+tramo Palomo/Caja/agotamiento/captura pasan. Diecisiete adicionales verifican
+el guardado nativo de 0al, cancelación, animación, puerta y llegada a MAP02;
+los escenarios y sus límites se detallan en PROJECT.md. README y cinco documentos actualizados; entrega delta
+sobre 0al con PRUEBAS_4_33_0am.txt. Aceptación del autor pendiente.
+
+## Filtros, misión única y diagnóstico de captura — 4.33.0al
+
+El autor informa que 0ak no resolvió la captura en un guardado ni en una
+partida nueva. Aclara que Usar debe quedar disponible cuando se agota la
+Adrenalina. Rechaza las flechas para solapas en Inventario y pide que vuelvan
+a recorrer filtros; aprueba RePág/AvPág. En Misiones no observa alternancia.
+
+Se restauran filtros circulares en ambos sentidos. Misiones conserva las
+flechas para seleccionar entradas conocidas y muestra una ayuda específica
+cuando sólo hay una: las cuatro pruebas narrativas son etapas de MAIN_M00.
+Los dos encargos de diagnóstico no se habilitan automáticamente. RePág/AvPág
+y LB/RB mantienen la navegación de solapas. README y cinco docs actualizados.
+
+Las pruebas pasan a usar eventos SDL de teclado por el despachador real del
+motor, sin llamar directamente a los manejadores de Usar ni del menú.
+Dieciséis controles de navegación pasan. Diez del tramo final preparado
+después de las pruebas de residentes reciben la Caja por el diálogo real de
+Palomo, agotan Quintaesencia y capturan El Loco con Usar/Enter, conservando
+Caja, entrega única y +2%. Ese flujo también pasa con fuentes originales 0ak.
+Por tanto, no se atribuye la incidencia pendiente al agotamiento sin evidencia.
+
+La captura del autor sigue abierta. Se añade un informe explícito de estado
+mediante netevent ca_debug_fool_report para recibir las condiciones del punto
+donde falla. No se alteran sus reglas ni se concede una carta como reparación.
+PRUEBAS_4_33_0al.txt explica cómo enviarlo. Los resultados técnicos aislados
+no equivalen a la aceptación del autor ni prueban que su incidencia esté resuelta.
+
+## Infraestructura del sello, captura y navegación — 4.33.0ak
+
+El autor informa que Quintaesencia desplazó árboles y bancos, no puede
+capturar la esencia y las flechas de Misiones/Inventario llevan a destinos
+incorrectos. 0aj queda observado; 0ak se dedica a corregir estos problemas
+antes del bloque de reputación. Los atributos aprobados en 0ai se conservan.
+
+La marca SHOOTABLE incluía infraestructura en el canal: se excluye toda
+CaelumMovableProp de los objetivos y de la masa/expulsión. Se restauran una
+vez las mismas estaciones de las habitaciones y plantas del jardín en
+guardados MAP01, con existencias, rendimiento, tareas y reservas conservados.
+También se limpia la gravedad indebida de objetivos inválidos guardados.
+
+La captura sin canalización funciona en las fuentes originales de 0aj.
+El caso reproducido con Quintaesencia activa pierde Usar en PlayerThink.
+0ak permite que una pulsación nueva termine el canal con su recarga habitual
+y abra la interacción. El diálogo de El Loco conserva Caja propia, aceptación
+explícita, entrega única y +2%; no se sustituyen sus reglas por una recompensa
+automática ni se altera el registro de la misión.
+
+En Misiones, Izquierda/Derecha cambia de misión; en Inventario cambia de
+solapa y Derecha llega directamente a Personaje. F/Y mantiene los filtros.
+RePág/AvPág y LB/RB recorren solapas también desde Misiones y Oficios; salir
+de una estación cierra su sesión nativa. Detalle y abandono se cancelan
+al cambiar de misión. Ayudas de ambos idiomas actualizadas.
+
+131 comprobaciones distintas nativas aprobadas: 78 de objetivos, 34 de
+navegación y 19 de guardado original 0aj con infraestructura desplazada y
+captura. Las repeticiones por idioma no suman controles distintos. PROJECT.md
+registra alcance y límites; PRUEBAS_4_33_0ak.txt contiene la aceptación en
+Windows pendiente. README y cinco documentos actualizados; entrega delta
+sobre 0aj, con mapas, recursos audiovisuales y fórmulas de atributos intactos.
 
 ## Base de misiones opcionales y cadena de prueba — 4.33.0aj
 

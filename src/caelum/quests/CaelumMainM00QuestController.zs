@@ -21,6 +21,40 @@ class CaelumMainM00QuestController : EventHandler
     CaelumM00FoolEssence FoolEssence;
     bool ReturnDoorPrepared;
     CaelumM00ReturnDoor ReturnDoor;
+    bool ChannelInfrastructureRecovered;
+
+    void RecoverChannelInfrastructure()
+    {
+        if (ChannelInfrastructureRecovered || level.MapName != "MAP01") return;
+        ChannelInfrastructureRecovered = true;
+        // Reubicar las mismas instancias: no recrear tareas, reservas o stock.
+        PlaceRoomStations(1, (-432, 512, 136), 1);
+        PlaceRoomStations(2, (1176, 512, 136), 1);
+        PlaceRoomStations(3, (1176, -512, 136), -1);
+        PlaceRoomStations(4, (-432, -512, 136), -1);
+        PlaceRoomStations(5, (-336, 0, 264), 1);
+        let stations = ThinkerIterator.Create("CaelumCraftingStation");
+        CaelumCraftingStation station;
+        while ((station = CaelumCraftingStation(stations.Next())) != null)
+        {
+            if (station.GetRequiredPhysicalPower() > 0) continue;
+            station.Vel = (0, 0, 0);
+            station.bNoGravity = GetDefaultByType(station.GetClass()).bNoGravity;
+        }
+        let plants = ThinkerIterator.Create("CaelumTreeEnvironmentProp");
+        CaelumTreeEnvironmentProp plant;
+        while ((plant = CaelumTreeEnvironmentProp(plants.Next())) != null)
+        {
+            // SpawnPoint de los nodos del jardín conserva su origen incluso
+            // después de cargar un guardado donde el sello los desplazó.
+            plant.SetOrigin(plant.SpawnPoint, false);
+            plant.Vel = (0, 0, 0);
+            plant.bNoGravity = GetDefaultByType(plant.GetClass()).bNoGravity;
+        }
+        for (int i = 0; i < MAXPLAYERS; i++)
+            if (playeringame[i] && players[i].mo is "CaelumPlayer")
+                CaelumPlayer(players[i].mo).RefreshActiveCraftingStationSession();
+    }
 
     void PresentReturnDoor(bool ready)
     {
@@ -411,6 +445,7 @@ class CaelumMainM00QuestController : EventHandler
         PrepareCornerLayout();
         PrepareNaturalSupplies();
         PrepareBullRoom();
+        RecoverChannelInfrastructure();
         bool foolNeeded = false;
         bool foolRevealed = false;
         bool returnReady = false;
