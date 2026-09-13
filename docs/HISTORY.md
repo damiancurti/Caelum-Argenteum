@@ -1,6 +1,31 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ah — 2026-09-13.
+Versión documental: 4.33.0ai — 2026-09-13.
+
+## Resiliencia, costes de regeneración y auditoría de atributos — 4.33.0ai
+
+El autor aclara que Sueño pertenece a Resiliencia. Se restaura esa asociación
+conservando el divisor Tipo 4 aprobado como regla: /1 a 0 y /3 a 100.
+La asignación a Paciencia de 0ah queda sustituida por esta corrección.
+
+Constitución divide ahora también el coste de Hambre/Sed de la regeneración
+natural de vida y Aire. Se usa el mismo divisor puro que para el consumo
+pasivo, sin repetir su factor de masa. El límite de recuperación asequible usa
+el nuevo coste. No cambian las velocidades, el drenaje crítico <=10%, la
+hidratación de piscina, los sorbos ni la recuperación de la deuda submarina.
+
+SYSTEMS.md compara los doce atributos de la tabla del autor con sus usos
+reales: familias conservadas, escalas, asociaciones distintas y funciones
+pendientes. Destacan la recarga de munición con Destreza, cooldown de Channel
+fijo de 60 s, áreas actuales con Elocuencia,
+reducciones de duración por Constitución ausentes, Empatía incompleta,
+mitigación parcial de Paciencia y sentidos mágicos pendientes. La auditoría
+documenta estas diferencias; este parche no implementa esos otros sistemas.
+README, cinco docs y explicación de Ronnie en ambos idiomas actualizados.
+Entrega delta de diez archivos sobre 0ah, con un único TXT de pruebas.
+Pasan 103 comprobaciones nativas en GZDoom 4.14.2: 95 de las reglas y ocho
+de carga de un guardado original 0ah. El validador documental/de recursos
+termina sin errores. Pendiente de aceptación del autor en Windows.
 
 ## Supervivencia con divisores Tipo 4 y críticos restaurados — 4.33.0ah
 

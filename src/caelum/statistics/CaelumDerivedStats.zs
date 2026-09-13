@@ -80,15 +80,24 @@ class CaelumDerivedStats : Object
         return 100.0 + 2.0 * level * (level + 1) / 101.0;
     }
 
+    // El mismo divisor de Constitución rige el gasto pasivo y el de regenerar.
+    // La masa se aplica por separado sólo donde la regla base la necesita.
+    double GetHungerThirstConsumptionMultiplier(CaelumAttributes attributes)
+    {
+        if (attributes == null) { return 1.0; }
+        return 100.0
+            / CalculateType4Percent(Max(0.0, attributes.Constitution));
+    }
+
     // El consumo pasivo se divide por Tipo 4: /1 a 0 y /3 a 100.
-    // Hambre/Sed conservan su factor de masa corporal; Sueño usa Paciencia.
+    // Hambre/Sed conservan su factor de masa corporal; Sueño usa Resiliencia.
     void RefreshSurvivalLossMultipliers(CaelumAttributes attributes)
     {
         if (attributes == null) { return; }
-        HungerThirstLossMultiplier = BaseMassMultiplier * 100.0
-            / CalculateType4Percent(Max(0.0, attributes.Constitution));
+        HungerThirstLossMultiplier = BaseMassMultiplier
+            * GetHungerThirstConsumptionMultiplier(attributes);
         SleepLossMultiplier = 100.0
-            / CalculateType4Percent(Max(0.0, attributes.Patience));
+            / CalculateType4Percent(Max(0.0, attributes.Resilience));
     }
 
     double CalculateType2Percent(double level)

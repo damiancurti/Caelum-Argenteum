@@ -1,17 +1,18 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ah — 2026-09-13.
+Versión documental: 4.33.0ai — 2026-09-13.
 
-## Consumo de supervivencia — vigente en 4.33.0ah
+## Consumo y regeneración de supervivencia — vigente en 4.33.0ai
 
-Constitución controla el consumo pasivo de Hambre y Sed. Paciencia controla
-el de Sueño, conforme a la indicación actual del autor; hasta 0ag el código
-usaba Resiliencia para Sueño. Los tres consumos pasan a división por Tipo 4.
+Constitución controla el consumo pasivo de Hambre y Sed y su gasto al regenerar
+vida/Aire. Resiliencia controla la pérdida de Sueño: el autor corrigió la
+atribución a Paciencia de 0ah. Se conserva la división por Tipo 4.
 
     A = máximo(0, atributo efectivo)
     divisor D(A) = 1 + 2 * A * (A + 1) / 10100
     factor de Hambre/Sed = (masa corporal / 100 kg) / D(Constitución)
-    factor de Sueño = 1 / D(Paciencia)
+    factor de Sueño = 1 / D(Resiliencia)
+    factor de coste de Hambre/Sed al regenerar = 1 / D(Constitución)
 
 | Atributo | Divisor | Consumo respecto al atributo 0, misma masa |
 | --- | ---: | ---: |
@@ -28,9 +29,24 @@ Hambre 24 horas de juego, Sed 12, Sueño 16; una hora de juego son 180 segundos
 reales. A 100 kg y atributo 0 equivalen a 72/36/48 minutos reales. A atributo
 100 pasan a 216/108/144 minutos. Otras masas sólo modifican Hambre/Sed.
 
-Esta división afecta al consumo pasivo. Regenerar vida y Aire mantiene sus
-costes separados de Hambre/Sed, que pueden explicar gasto visible incluso
-cuando la antigua reducción de Constitución anulaba el consumo pasivo.
+El coste de regeneración se calcula por la fracción de vida/Aire máximo que
+realmente se recupera. Ahora también lo divide Constitución; no se le aplica
+otra vez el factor de masa corporal del consumo pasivo.
+
+| Recuperación natural | Coste base de Hambre | Coste base de Sed | Con Constitución 100 |
+| --- | ---: | ---: | --- |
+| 1% de la vida máxima | 1 punto | 0,5 puntos | 0,3333 / 0,1667 puntos |
+| 1% del Aire máximo | 0,1 puntos | 0,2 puntos | 0,0333 / 0,0667 puntos |
+
+Se divide cada coste por D(Constitución), también al calcular cuánto se puede
+recuperar con las reservas disponibles. Se cobra sólo lo recuperado, con
+reservas no negativas. Las velocidades y los requisitos de regeneración no
+cambian. Resiliencia sigue acelerando la recuperación de vida y aumentando
+el Aire máximo. La devolución en tres segundos de la deuda de Aire submarino
+mantiene su ruta separada, que ya no consumía Hambre/Sed.
+
+Esto explica la observación anterior: el gasto por regenerar no recibía la
+reducción de Constitución y podía ocultar su efecto sobre el consumo pasivo.
 La piscina potable mantiene su recuperación de Sed de un punto por segundo;
 los sorbos y sus volúmenes conservan las reglas aprobadas de 0ag.
 
@@ -45,7 +61,67 @@ natural. Se restaura la regla anterior a 0ag a pedido del autor. Para volver
 a regenerar vida, las tres reservas deben estar por encima del 10%. Las
 penalizaciones de rendimiento y los costes de regeneración siguen vigentes.
 
-## Recipientes de agua y accesorios elegidos — vigente en 4.33.0ah
+## Auditoría de los doce atributos — código vigente 4.33.0ai
+
+Comparación con la tabla aportada por el autor. Se revisaron los cálculos y
+sus consumidores en juego: un campo calculado o un temporizador aislado no
+equivale a una mecánica terminada. Las cuatro familias y sus tres integrantes
+coinciden. Las diferencias siguientes separan implementación de intención;
+no autorizan por sí mismas nuevos cambios de combate en este parche.
+
+Para evitar la ambigüedad de r/l/lx2, se usan los tipos explícitos del código:
+
+| Escala | Fórmula nativa para atributo A | A=0 | A=100 |
+| --- | --- | ---: | ---: |
+| Tipo 1, porcentaje de una base | 100 + A(A+1)/2 | 100% | 5150% |
+| Tipo 2, puntos porcentuales | A(A+1)/101 | 0 | 100 |
+| Tipo 3, fracción perjudicial restante | limitar(1 - A(A+1)/10100, 0, 1) | 1 | 0 |
+| Tipo 4, porcentaje de una base | 100 + 2A(A+1)/101 | 100% | 300% |
+| División por Tipo 4 | coste base / (Tipo4(A)/100) | coste base | coste base / 3 |
+
+Las probabilidades añaden su base cuando corresponde y se limitan al rango
+permitido; equipo, masa, estados y vulnerabilidad pueden añadir modificadores.
+«Tipo 4» no significa lineal. No se sustituye automáticamente cada «l» de la
+tabla: daño, pain, lucidez, Labia y duraciones no comparten hoy una sola curva.
+
+| Atributo / familia | Combate realmente conectado | Fuera de combate realmente conectado | Diferencias respecto a la tabla |
+| --- | --- | --- | --- |
+| Fuerza / Físico | Daño melee y empuje físico Tipo 1, con masa corporal. | Carga Tipo 4; empuje de objetos y potencia de lanzamientos usan Fuerza. | Coincide en lo principal. «Potencia física» no es otro efecto universal independiente: se expresa en las rutas de daño, empuje y lanzamiento. |
+| Dureza / Físico | Daño físico/mágico ordinario tras armadura dividido por Tipo 4. Pain y pérdida de Lucidez usan Tipo 3. | Los impactos cinemáticos conservan su resta de puntos de daño porcentual por Dureza. | Hay que actualizar escalas y acotar «daño de entorno»: no es resistencia universal a ahogamiento, drenaje por necesidades ni cualquier daño ajeno al sistema clasificado. |
+| Constitución / Físico | Vida máxima Tipo 1, con masa corporal. | Hambre/Sed pasivas y costes de regeneración natural de vida/Aire divididos por Tipo 4. | No está conectada a acortar debuffs o venenos entrantes. No hay un sistema de enfermedades implementado que aplique esa duración. |
+| Destreza / Técnico | Velocidad de ataque Tipo 4, precisión física Tipo 1 y crítico físico Tipo 2. También reduce la recarga de armas a distancia por Tipo 4. | Tipo 1 reduce el tiempo del trabajo de materiales en fabricación. | La recarga de munición pertenece aquí; conviene distinguirla del cooldown de habilidades al actualizar la tabla. Fabricación cubre un uso manual concreto, no un sistema general de tiradas de precisión. |
+| Resiliencia / Técnico | Adrenalina máxima, factor de regeneración de vida y capacidad de Aire Tipo 4. | Pérdida de Sueño dividida por Tipo 4, restaurada en 0ai. | Coincide en asociación. Explicitar el divisor de Sueño; regeneración de vida se calcula sobre su máximo. |
+| Agilidad / Técnico | Movimiento Tipo 4 mediante los factores compartidos de suelo/natación/vuelo; evasión Tipo 2; salto usa otra curva. | Sigilo Tipo 2 aplicado a ocultación/ruido, con reglas de agachado. | El salto no usa Tipo 4: JumpZ escala con raíz de Tipo 1, de modo que la altura balística ideal escala Tipo 1 a igual gravedad, antes de carga/estados. |
+| Carisma / Social | Su Tipo 4 modifica duración/potencia de cargas elementales recibidas por el jugador; no todos los efectos/actores lo consumen. | Persuasión Tipo 4 en las tiradas sociales de MAP01. | El área no usa Carisma: radios actuales de explosión y Channel usan el alcance de Elocuencia. Channel también tiene estados de duración/potencia fija. El conjunto de debuffs es parcial. |
+| Empatía / Social | Existe BuffPowerPercent Tipo 4 y se prepara un temporizador de iluminación; no hay un sistema general de buffs/curaciones que aplique toda la duración/potencia/área indicada. | Emoción Tipo 4 en los diálogos de MAP01. | Emoción funciona. El factor almacenado y el temporizador no bastan para marcar buffs, curaciones ni iluminación jugable como completos. Áreas de apoyo por Empatía pendientes. |
+| Elocuencia / Social | Velocidad de lanzamiento y alcance Tipo 4; dicho alcance también escala radios actuales. Coste de Ánima dividido por Tipo 4. | Labia Tipo 2, usada por Ronnie; interviene también en descuento social de Palomo. | La recarga de munición usa Destreza; el cooldown de Channel de sellos es fijo de 60 s y no usa Elocuencia. La tabla debe precisar qué recarga pretende reducir y añadir el coste de Ánima ya implementado. |
+| Inteligencia / Mental | Daño y empuje mágicos Tipo 1. | Capacidad de la Caja = 2 + entero(Tipo1(Inteligencia)/50). | Tareas académicas pendientes. Añadir la Caja; «potencia mágica» no aparece como tercer efecto universal separado de daño/empuje. |
+| Paciencia / Mental | Ánima máxima Tipo 1; regeneración = máximo/tiempo base multiplicado por Tipo 4; resistencia a interrupción Tipo 2. Mitiga efectos de estar herido mediante Tipo 3. | Tipo 3 mitiga el agravamiento por Sueño bajo/crítico de pérdida de Lucidez y duración de aturdimiento. | No mitiga las penalizaciones generales de rendimiento por Hambre/Sed/Sueño: esa combinación usa Adrenalina. La función prevista es sólo parcial. No controla la pérdida de Sueño. |
+| Perspicacia / Mental | Precisión mágica Tipo 1 y crítico mágico Tipo 2. | No hay detección del jugador de objetos/sonidos ocultos ni atenuación de oscuridad enlazada a este atributo. | Sentidos mágicos y detección de ocultos siguen pendientes. El observador de percepción de depuración no implementa los sentidos del jugador. |
+
+«Tiempo de recarga» necesita esa distinción: munición, espera entre ataques
+y cooldown de habilidades no son una sola ruta. StaffCastCooldownRemaining
+nombra el tiempo de preparación del lanzamiento, que sí usa Elocuencia;
+StopSealChannel asigna 60 segundos fijos a CombatChannelCooldownRemaining.
+No hay una reducción general de todos los cooldowns por Elocuencia.
+
+Referencias para verificar o continuar la implementación:
+
+- [CaelumAttributes](../src/caelum/attributes/CaelumAttributes.zs): familias y formación de los atributos efectivos.
+- [CaelumDerivedStats](../src/caelum/statistics/CaelumDerivedStats.zs): Recalculate, curvas, capacidades y RefreshSurvivalLossMultipliers.
+- [CaelumPlayer](../src/caelum/player/CaelumPlayer.zs): consumidores de daño/pain/lucidez, GetRangedEffectiveReloadSeconds, GetCraftingDexterityPercent, ApplyIncomingElementalPayload, ReleasePendingStaffAttack, UpdateAirStateEffects, ApplyPhysicalMovement, UpdateSurvivalStates, UpdateHealthStateEffects y regeneraciones.
+- [Diálogo social de MAP01](../src/caelum/dialogue/CaelumMainM00SocialDialogue.zs): tiradas de Persuasión/Emoción y requisito de Labia.
+- [Estados elementales](../src/caelum/actors/CaelumElementalStatus.zs), [proyectiles](../src/caelum/actors/CaelumActorProjectile.zs) y [Channel](../src/caelum/actors/CaelumChannelEffect.zs): aplicación de duración, potencia y radios.
+- [Fabricación](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds usa el Tipo 1 de Destreza.
+- [Diagnóstico de percepción](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): observador experimental, distinto de los sentidos del jugador.
+
+Estado de diseño: conservar la tabla del autor como intención y esta matriz
+como estado comprobado. Queda decidir/implementar las diferencias de lógica
+en los bloques de atributos, magia/estados y percepción del roadmap; no basta
+con cambiar las letras de escala. 0ai sólo modifica la asociación de Sueño y
+los costes de regeneración pedidos expresamente.
+
+## Recipientes de agua y accesorios elegidos — vigente en 4.33.0ai
 
 La corrección del autor conserva la hidratación directa de la piscina y permite
 completar recipientes parcialmente llenos. Seis modelos: pequeña 1 L, normal

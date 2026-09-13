@@ -5,19 +5,27 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ah.** Apply over the complete **4.33.0ag** project.
-The author approved all 0ag tests; 0ah applies the revised survival rules.
+**Current release: 4.33.0ai.** Apply over the complete **4.33.0ah** project.
+The author corrected Sleep's attribute to Resilience and extended Constitution
+to the Hunger/Thirst costs of natural Health and Air recovery.
 MAP01 remains the systems test environment.
 
 ## Implemented
 
-- Passive Hunger/Thirst depletion uses Constitution; passive Sleep depletion
-  uses Patience. Each is divided by Type 4: 1 at attribute 0, 3 at 100. The
-  consumption stays positive; Hunger/Thirst retain their body-mass factor.
-  Health and Air regeneration retain their separate Hunger/Thirst costs.
+- Hunger/Thirst depletion uses Constitution; Sleep depletion uses Resilience.
+  Each is divided by Type 4: 1 at attribute 0, 3 at 100. Consumption stays
+  positive; passive Hunger/Thirst retain their body-mass factor. Constitution
+  also divides the Hunger/Thirst cost per point of natural Health/Air recovery,
+  without applying body mass twice or changing the recovery rate.
 - Hunger, Thirst or Sleep at 10% or less again drains health and blocks natural
   healing, restoring the original critical rule. Loading older saves refreshes
   only the passive-depletion factors, preserving reserves and progression.
+
+- A source audit of all twelve attributes is recorded in SYSTEMS.md. It
+  separates active effects, different attribute assignments/scales and pending
+  mechanics. The audit does not implement the missing effects. Ranged reload
+  currently uses Dexterity; general support buffs/healing, academic tasks and
+  the player's magical/hidden senses remain incomplete or pending.
 
 - Six reusable bottles/canteens: small 1 L, normal 2.5 L and large 5 L,
   each with its original 0af sprite. Empty or partially filled containers outside
@@ -310,15 +318,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0ag tests are author-approved. Focused 0ah checks are in PRUEBAS_4_33_0ah.txt;
+All 0ag tests are author-approved. Focused 0ai checks are in PRUEBAS_4_33_0ai.txt;
 native engine evidence and limits are in PROJECT.md.
-Maps, audio, models and sprites remain unchanged in 0ah.
+Maps, audio, models and sprites remain unchanged in 0ai.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ah
-patch into the complete **4.33.0ag** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ah.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ai
+patch into the complete **4.33.0ah** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ai.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

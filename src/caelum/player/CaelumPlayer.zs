@@ -18323,8 +18323,12 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        double hungerCostPerHealth = 100.0 / CaelumMaximumHealth;
-        double thirstCostPerHealth = 50.0 / CaelumMaximumHealth;
+        // Constitución divide también el coste por vida recuperada. No se
+        // reaplica la masa: el coste base ya es proporcional a la vida máxima.
+        double consumptionMultiplier =
+            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes);
+        double hungerCostPerHealth = 100.0 * consumptionMultiplier / CaelumMaximumHealth;
+        double thirstCostPerHealth = 50.0 * consumptionMultiplier / CaelumMaximumHealth;
         double affordableHealth = Min(
             CurrentHunger / hungerCostPerHealth,
             CurrentThirst / thirstCostPerHealth
@@ -18347,10 +18351,9 @@ class CaelumPlayer : DoomPlayer
         UpdateSurvivalStates();
     }
 
-    // Air recovery consumes survival resources proportionally: restoring one
-    // percent of maximum air costs 0.1% hunger and 0.2% thirst. If either
-    // resource cannot afford the whole tic, recovery is limited to what it can
-    // support instead of allowing a negative survival value.
+    // Recuperar 1% de Aire cuesta de base 0,1 de Hambre y 0,2 de Sed,
+    // divididos por Tipo 4 de Constitución. El límite de recuperación usa
+    // esos mismos costes para no permitir reservas negativas.
     void ApplyAirRegeneration()
     {
         if (!AirResourceInitialized
@@ -18367,12 +18370,14 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        double consumptionMultiplier =
+            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes);
         double hungerCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
-            / DerivedStats.MaximumAir;
+            * consumptionMultiplier / DerivedStats.MaximumAir;
         double thirstCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST
-            / DerivedStats.MaximumAir;
+            * consumptionMultiplier / DerivedStats.MaximumAir;
         double affordableAir = Min(
             CurrentHunger / hungerCostPerAir,
             CurrentThirst / thirstCostPerAir

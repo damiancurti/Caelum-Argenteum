@@ -1,11 +1,13 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ah — 2026-09-13.
+Versión documental: 4.33.0ai — 2026-09-13.
 
-ACTUAL 4.33.0ah — SUPERVIVENCIA Y ESTADOS CRÍTICOS
-El autor aprobó 0ag. Hambre/Sed usan Constitución; Sueño usa Paciencia.
+ACTUAL 4.33.0ai — RESILIENCIA, CONSTITUCIÓN Y AUDITORÍA DE ATRIBUTOS
+El autor corrigió la atribución de Sueño: usa Resiliencia, no Paciencia.
+Hambre/Sed usan Constitución, también al gastarlas para regenerar vida/Aire.
 El consumo pasivo se divide por Tipo 4: por 1 al 0 y por 3 al 100.
-La masa corporal conserva su efecto sobre Hambre/Sed; regenerar vida/Aire
-mantiene su gasto separado de esas reservas.
+La masa corporal conserva su efecto sobre el gasto pasivo de Hambre/Sed.
+El coste por porcentaje de vida/Aire recuperado se divide por Constitución,
+sin añadir otro factor de masa. La velocidad de regeneración no cambia.
 Usar partidas existentes o nuevas. Ronnie > talleres > cómo recolectar agua,
 tras devolver su espada: cantimplora normal vacía de 2,5 L, entrega única.
 Sumergir la cabeza en la piscina potable detrás de la mansión recupera Sed
@@ -27,10 +29,13 @@ además del cuero correspondiente al equipo. Gemas en vetas del fondo: 600 g
 para el sello y 800 g para el amuleto; se suman si es la misma gema.
 Cobre/estaño para el sello: 360/40 g. Detalle informa cada pieza 0/1.
 Se conserva equipo/conocimiento previo, gasto emitido y misiones aceptadas.
-Pruebas de Windows en PRUEBAS_4_33_0ah.txt. Sin cambios de geometría.
+Pruebas de Windows en PRUEBAS_4_33_0ai.txt. Sin cambios de geometría.
+SYSTEMS.md registra la auditoría de los doce atributos, separando efectos
+activos y pendientes; no convierte una descripción prevista en misión nueva.
 
 Los bloques de versiones previas a continuación son registro de evolución;
-estas reglas 0ah restauran los estados críticos; las de agua de 0ag sustituyen
+estas reglas 0ai corrigen el atributo de Sueño y los costes de regeneración,
+conservando los críticos restaurados en 0ah; las de agua de 0ag sustituyen
 las de 0af. La elección de accesorios
 de 0af sustituye el cupo de cinco sellos de 0ae.
 

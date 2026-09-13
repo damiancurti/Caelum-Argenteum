@@ -2788,7 +2788,7 @@ CA_M01_REPAIR_DETAIL_DONE = "Práctica opcional completada: reparaste tu primera
 // 4.33.0x: práctica opcional de necesidades.
 [default]
 CA_M01_NEEDS_ASK = "How do I eat and drink?";
-CA_M01_NEEDS_INTRO = "Hunger and Thirst bars show reserves: higher is better. Constitution slows passive Hunger/Thirst loss; Patience slows Sleep loss. At 100, the corresponding loss is divided by three. Any reserve at 10% or less drains life and stops natural healing. This optional practice gives food and water once, lowering reserves above 90% to 90%.";
+CA_M01_NEEDS_INTRO = "Higher reserves are better. Constitution divides Hunger/Thirst loss, including the cost of natural Health and Air recovery; Resilience divides Sleep loss. At 100, the corresponding cost is one third. Any reserve at 10% or less drains life and stops natural healing. This optional practice gives food and water once, lowering reserves above 90% to 90%.";
 CA_M01_NEEDS_START = "Let us practice.";
 CA_M01_NEEDS_PRACTICE = "Open Inventory with Tab, select a food or water ration and press Enter to consume it. Retrieve it first if it is in the Box. Food restores one point per second for ten seconds. Water also acts for ten seconds, but its recovery depends on your body mass: one liter covers all thirst per 50 kg. Watch the bars after closing the menu. Quest Detail tracks each use separately; no return visit is required.";
 CA_M01_NEEDS_SAFE_ASK = "What about water in the world?";
@@ -2805,7 +2805,7 @@ CA_M01_NEEDS_WATER_WAIT = "Water: consume a ration with reserves below 100%.";
 // 4.33.0x: práctica opcional de necesidades.
 [es]
 CA_M01_NEEDS_ASK = "¿Cómo me alimento y bebo?";
-CA_M01_NEEDS_INTRO = "Las barras de Hambre y Sed muestran reservas: cuanto más altas, mejor. Constitución reduce el gasto pasivo de Hambre/Sed; Paciencia, el de Sueño. Al 100, el gasto correspondiente se divide por tres. Una reserva al 10% o menos drena vida y detiene su regeneración. Esta práctica opcional entrega alimento y agua una vez, bajando las reservas superiores al 90% hasta ese valor.";
+CA_M01_NEEDS_INTRO = "Cuanto más altas las reservas, mejor. Constitución divide el gasto de Hambre/Sed, incluido el coste de regenerar vida y Aire; Resiliencia, el de Sueño. Al 100, el gasto correspondiente es un tercio. Una reserva al 10% o menos drena vida y detiene su regeneración. Esta práctica opcional entrega alimento y agua una vez, bajando las reservas superiores al 90% hasta ese valor.";
 CA_M01_NEEDS_START = "Hagamos la práctica.";
 CA_M01_NEEDS_PRACTICE = "Abrí Inventario con Tab, seleccioná la ración de alimento o agua y pulsá Enter para consumirla. Si está en la Caja, recuperala primero. El alimento recupera un punto por segundo durante diez segundos. El agua también actúa durante diez segundos, pero recupera según tu masa corporal: un litro cubre toda la sed por cada 50 kg. Mirá las barras al cerrar el menú. Detalle registra cada uso por separado; no hace falta volver para completarlo.";
 CA_M01_NEEDS_SAFE_ASK = "¿Y el agua del entorno?";

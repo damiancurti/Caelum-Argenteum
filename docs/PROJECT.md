@@ -1,24 +1,48 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ah — 2026-09-13.
+Versión documental: 4.33.0ai — 2026-09-13.
 
-## Estado actual: 4.33.0ah — pendiente de aceptación del autor
+## Estado actual: 4.33.0ai — pendiente de aceptación del autor
 
-El autor aprobó todas las pruebas de 0ag y pidió restaurar la regla de drenaje
-de vida por reservas críticas. 0ah vuelve al umbral anterior del 10% o menos
-para Hambre/Sed/Sueño. La piscina, recarga parcial y sorbos de 0ag se mantienen.
+El autor corrigió su indicación anterior: Sueño pertenece a Resiliencia.
+0ai restaura esa asociación conservando el divisor Tipo 4 (1 a atributo 0;
+3 a 100). Constitución controla Hambre/Sed y ahora divide también su gasto al
+regenerar vida/Aire, sin repetir el factor de masa del consumo pasivo.
+Las velocidades no cambian. Se mantiene el umbral crítico <=10% restaurado
+en 0ah y la piscina, recarga parcial y sorbos aprobados de 0ag.
 
-El consumo pasivo divide por Tipo 4 (1 a atributo 0; 3 a 100), usando
-Constitución para Hambre/Sed y Paciencia para Sueño. El código anterior usaba
-Resiliencia para Sueño: se alinea con la indicación actual. Los gastos de
-regenerar vida/Aire siguen separados, conservando sus costes. Una partida
-previa actualiza los factores sin reiniciar reservas, elecciones ni progreso.
-SYSTEMS.md fija fórmulas y ejemplos. Entrega delta sobre 0ag más TXT de pruebas.
+La auditoría de los doce atributos está en SYSTEMS.md: familias coincidentes,
+efectos activos, diferencias de escala/asignación y funciones pendientes.
+La tabla del autor permanece como intención de diseño; la matriz auditada no
+da por terminados los campos que sólo están calculados. No se implementan
+automáticamente sus diferencias en este parche. Se actualizan Ronnie en ambos
+idiomas, README y cinco docs, sin crear más documentos canónicos.
 
-Tras aceptar 0ah, cerrar la revisión del tutorial y continuar los fundamentos
-de mundo/viajes del roadmap, sin ampliar mapas. Tratamiento de aguas inseguras
-y composición/proceso de balas requieren definición. Calendario precede
-Descanso; V5 mantiene el refactor de arquitectura de programación.
+Una partida previa actualiza los factores sin reiniciar reservas, elecciones
+ni progreso. Entrega delta sobre 0ah más un TXT de pruebas. Tras aceptar 0ai,
+cerrar la revisión del tutorial y continuar fundamentos de mundo/viajes, sin
+ampliar mapas. Quedan las discrepancias de atributos registradas abajo,
+tratamiento de aguas inseguras y composición/proceso de balas. Calendario
+precede Descanso; V5 mantiene el refactor de arquitectura de programación.
+
+### Validación técnica de 0ai
+
+95 comprobaciones nativas aprobadas en GZDoom 4.14.2, Freedoom y llvmpipe en
+Linux: independencia de Constitución/Resiliencia/Paciencia, curva 0/50/100,
+masas 50/100/200, atributos fraccionarios y límites, consumo pasivo real y
+actualización de factores. Se comprueban cantidades y costes reales de ambas
+regeneraciones, tope máximo, reserva insuficiente, ausencia de doble masa y
+regla crítica para las tres reservas a 1/10/10,1 puntos.
+
+Otras ocho comprobaciones aprobadas cargan un guardado creado con los archivos
+originales de 0ah y un perfil normal con Paciencia distinta de Resiliencia.
+Verifican factor y coste nuevos, conservación de atributos/reservas/litros y
+elecciones y ausencia de división acumulada. Total: 103 comprobaciones nativas,
+sin fallos. La preparación del guardado se comprobó también con la fórmula
+original; no se editó el archivo guardado para simular compatibilidad.
+El validador documental/de recursos termina sin errores, con cinco documentos
+canónicos. Entrega de diez archivos, sin recursos binarios ni código de prueba.
+Queda la aceptación en Windows siguiendo PRUEBAS_4_33_0ai.txt.
 
 ### Validación técnica de 0ah
 
@@ -32,8 +56,9 @@ parcial y el sorbo aprobado de 0ag también pasan su regresión.
 Se creó un guardado con código original 0ag, atributos 100 y factores cero;
 otras ocho comprobaciones lo cargan con 0ah y verifican consumo positivo sin
 reiniciar reservas, atributos, litros o elecciones. El divisor no se acumula.
-El validador documental y de recursos termina sin errores. Queda la aceptación
-del autor en Windows siguiendo PRUEBAS_4_33_0ah.txt.
+El validador documental y de recursos terminó sin errores. La atribución a
+Paciencia y los costes de regeneración se sustituyen ahora por 0ai; estas
+pruebas anteriores son evidencia histórica, no aceptación del autor de 0ah.
 
 ### Validación técnica de 0ag
 
@@ -395,8 +420,9 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ah restaura estados críticos y divide consumos pasivos por Tipo 4, pendiente de aceptación. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ai restaura Resiliencia para Sueño y aplica Constitución al gasto de regenerar vida/Aire, conservando divisores y críticos de 0ah; pendiente de aceptación. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
+| 8b | Diferencias detectadas en la auditoría de atributos 0ai | Precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no se implementan ni se rebalancean en 0ai. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
