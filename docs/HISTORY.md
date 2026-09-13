@@ -1,8 +1,25 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ad — 2026-09-13.
+Versión documental: 4.33.0ae — 2026-09-13.
 
-## Armadura elegida y cupos al 100% — 4.33.0ad
+## Enseñanza y cupos de sellos T1 — 4.33.0ae
+
+El autor aprobó todas las pruebas de 0ad y pidió continuar. Caella ofrece las
+cinco recetas de sellos T1 y dependencias después de su prueba, con aceptación
+opcional. No concede objetos. Detalle informa preparados 0/5–5/5. La expansión
+nativa al 100% añade 1,8 kg de cobre, 0,2 kg de estaño y 0,6 kg de cada gema al
+cupo vigente, conservando lo emitido. Sellos propios anteriores reducen sólo
+el nuevo cupo, sin volver a descontar materiales ya contabilizados.
+
+El crafting usa reservas y plan recursivo desde materias primas, resultado
+personal antes de la Caja, equipo de una ranura y Channel existente. Ronnie
+puede prestar/devolver su espada para esta recolección después de completar
+su misión, aunque la reparación ya esté hecha. Guardados, tareas anteriores,
+recetas, etapas, salida y recursos audiovisuales se conservan. Entrega por copia
+sobre 0ad, README/cinco documentos y PRUEBAS_4_33_0ae.txt. Validación y límites
+en PROJECT.md. Agua sigue en el roadmap; balas necesitan definición del autor.
+
+## Armadura elegida y cupos al 100% — 4.33.0ad (aprobado)
 
 El autor aprobó 0ac y pidió que Ronnie pregunte qué armadura desea usar, enseñe
 sus recetas T1 y reduzca recursos/cofre a lo necesario al 100% de eficiencia.

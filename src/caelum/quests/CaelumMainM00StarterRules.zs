@@ -173,6 +173,19 @@ class CaelumMainM00StarterMaterials : Object play
         }
     }
 
+    void AddSeal(int sealType)
+    {
+        Recipes[CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT
+            + CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT + sealType] = true;
+        double weight = CaelumCraftingRules.GetJewelryWeight(1);
+        Expand(CaelumConstants.MATERIAL_SEAL_BASE, ScaleUnits(
+            CaelumCraftingRules.GetRequiredSealBaseUnits(weight)));
+        Expand(CaelumCraftingRules.GetSealTierMaterial(sealType), ScaleUnits(
+            CaelumCraftingRules.GetRequiredSealTierUnits(weight)));
+    }
+
     void AddStarterAmmunition(int option)
     {
         if (option != 12 && option != 14 && option != 15) return;
@@ -222,6 +235,9 @@ class CaelumMainM00SupplyRules : Object play
             r.MainM00StarterRequired[i] = needs.Units[i];
         needs.AddStarterAmmunition(r.MainM00StarterOption);
         if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
+        if (r.MainM00SealRecipesLearned)
+            for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
+                if (!r.MainM00SealOwnedAtLearning[element]) needs.AddSeal(element);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             r.MainM00SupplyLimit[i] = needs.Units[i] + r.MainM00RepairSupply[i];
         RefreshChest(user);

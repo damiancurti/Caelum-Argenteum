@@ -1,8 +1,34 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ad — 2026-09-13.
+Versión documental: 4.33.0ae — 2026-09-13.
 
-## Estado actual: 4.33.0ad
+## Estado actual: 4.33.0ae
+
+El autor aprobó todas las pruebas de 0ad. Caella ofrece enseñar los cinco sellos
+T1 y sus componentes después de completar su prueba. Leer o posponer no cambia
+el personaje; aceptar habilita conocimiento y cupo opcional para uno de cada
+elemento. Usa las recetas existentes, sin cambiar costes ni efectos de Channel.
+
+El conjunto al 100% en cada capa requiere 1,8 kg cobre bruto, 0,2 kg estaño bruto
+y 0,6 kg de cada gema. El cupo se suma al del equipo elegido sin reiniciar lo
+ya emitido. Si hay un sello T1 propio al aprender, sólo se presupuestan los
+que faltan; el préstamo de Caella no cuenta. Esa existencia inicial queda
+registrada: fabricar o perder una pieza después no repone el cupo.
+
+Fabricación recursiva nativa desde materias primas, resultado personal sin Caja,
+una ranura equipada y Detalle 0/5–5/5. El Banco de Trabajo de Caella y el taller
+completo del segundo piso tienen la infraestructura. Ronnie puede prestar otra
+vez la espada para los materiales de sellos pendientes, incluso con su misión
+y reparación completadas, y acepta la devolución por su charla de talleres.
+
+No agrega requisitos de misión ni cambia runas, historia de la salida o lo
+que sale del Limbo. Mapas y audiovisuales conservan sus bytes. Se aplica sobre
+0ad por copia de archivos más PRUEBAS_4_33_0ae.txt. Validación al final de este
+documento. Próximo bloque de sistemas: recolección/potabilización de agua;
+la composición y el proceso de balas todavía necesitan definición del autor.
+Calendario/descanso y arquitectura V5 conservan su lugar en el roadmap.
+
+## Base 4.33.0ad — aprobada por el autor
 
 El autor aprobó todas las pruebas de 0ac. Ronnie pregunta qué familia de
 armadura se desea después de elegir arma: mágica, liviana, mediana o pesada,
@@ -164,7 +190,7 @@ El cuello de botella es el cuero, no la presencia de las cinco gemas. Las
 cantidades y límites están en SYSTEMS.md. No se aumenta el botín del Toro ni
 el cajón autorizado para los guanteletes; tampoco se conceden recetas nuevas.
 En ese hito faltaba distribuir recetas de armaduras/sellos. 0ad resuelve la
-elección de armadura; sellos y su abastecimiento continúan pendientes.
+elección de armadura y 0ae incorpora enseñanza/cupos de sellos.
 
 Los tres WAD, los sonidos, modelos y texturas mantienen sus hashes de 0v.
 Quien ya salió puede continuar en MAP02; para probar esta ampliación se usa
@@ -231,9 +257,9 @@ La base 0n aprobada incluye:
 
 Reparación, alimento/agua, Aire/movimiento, carga y respiración en piscina están
 implementados como prácticas opcionales. Virotes y su conocimiento están
-aprobados en 0ac. Elección de armadura y cupos al 100% implementados en 0ad.
-Quedan recetas/cupos de sellos, composición y receta de balas y recolección/
-potabilización de agua; no bloquean las ramas aceptadas.
+aprobados en 0ac. Elección de armadura y cupos al 100% aprobados en 0ad.
+0ae incorpora recetas/cupos de sellos. Quedan composición y receta de balas y
+recolección/potabilización de agua; no bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -307,7 +333,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. 0ad implementa elección/recetas de armadura y cupos para equipo elegido al 100%, pendiente de prueba del autor. Quedan enseñanza/cupos de sellos, composición/proceso de balas y recolección/potabilización de agua. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos implementados en 0ae, pendiente de prueba del autor. Quedan composición/proceso de balas y recolección/potabilización de agua. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
@@ -419,16 +445,61 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
-completa 0ac y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0ad y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ad.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ae.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0ad
+## Validación de 4.33.0ae
+
+162 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+62 en español, 62 en inglés, 16 al actualizar un guardado auténtico de 0ad y
+22 al recargar un sello pausado. Se cuentan sólo las comprobaciones nuevas
+de cada recarga, sin volver a sumar los contadores guardados por las escenas.
+
+Uso y elección en conversaciones USDF nativas: lectura, rechazo, aceptación,
+guías, enseñanza antes de elegir arma y consulta después de completar Ronnie.
+Las cinco recetas y dependencias se aprenden sin objetos gratis; recetas de
+otras familias no se conceden. La suma de cupos conserva arma, armadura y
+munición. Las fuentes reales emiten la cantidad restante y no vuelven a emitir
+al agotarla. Para cada sello, su cupo al 100% coincide con las hojas reservadas
+por el plan de fabricación nativo, sin Caja obligatoria.
+
+Se fabricaron los cinco elementos y se equiparon uno por uno en la ranura
+única. Detalle alcanzó 5/5. Se comprobó el inicio nativo de Channel con un sello
+fabricado, gasto real de Adrenalina y cooldown. No se revalidó toda la matriz
+de efectos elementales previamente aceptada. Pausa, cancelación, reanudación
+y guardado mantuvieron materiales, cupos y salida única. Después se pudieron
+fabricar la primera ballesta y diez virotes con sus materiales conservados.
+
+El guardado antiguo se creó con fuentes 0ad, superponiendo después 0ae en la
+misma ruta. Incluye primera arma, casco mediano, torso pendiente, cuero emitido,
+lecciones completadas y un sello propio preparado en la escena. Aprender
+reconoce ese sello y sólo agrega el cupo de los cuatro restantes; no vuelve
+a descontar su coste del contador anterior. La tarea antigua conserva tiempo
+y 10.000 unidades reservadas. Aunque la vista cambie a sellos, sigue dando el
+torso correcto. Se completan los cuatro sellos faltantes y el préstamo/devolución
+de la espada usa las páginas reales del taller de Ronnie, con reparación ya hecha.
+
+Revisión visual de la guía de Caella y el árbol del Sello de Fuego en capturas
+de 819×614: textos, icono, materiales, infraestructura y controles legibles.
+
+El validador comprueba cinco documentos, 74 audios, 12 modelos de estaciones y
+24 claves españolas de Caella, sin errores; las 13 claves nuevas tienen español
+e inglés. El delta contiene 14 archivos modificados y el TXT nuevo. CRC y
+superposición se verifican contra el árbol completo usado por el motor; mapas,
+arte, modelos, música, sonidos y assets conservan sus bytes de 0ad.
+
+Las escenas privadas preparan etapas, atributos, materiales y equipo, y adelantan
+el tiempo con el helper diagnóstico existente. No sustituyen la ruta completa,
+la espera de fabricación a tiempo real ni la prueba del autor en Windows.
+0ad está aprobado por el autor; 0ae queda pendiente de esa aceptación.
+
+## Validación de 4.33.0ad — aprobada por el autor
 
 394 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
 62 en español, 62 en inglés, 217 de familias/cupos, 15 al actualizar un guardado
@@ -466,8 +537,8 @@ modelos, sprites, música ni sonidos.
 Las escenas privadas preparan etapas, materiales y atributos y adelantan tiempo
 mediante el helper diagnóstico existente. Comprueban el proceso nativo y su
 persistencia; no sustituyen una ruta completa ni la espera de fabricación a
-tiempo real. Falta la prueba habitual del autor en Windows; 0ad no se registra
-como aprobado por el autor hasta recibirla.
+tiempo real. El autor confirmó después que todas las pruebas de 0ad dieron
+correcto; esa base queda aprobada para continuar con 0ae.
 
 ## Validación de 4.33.0ac — aprobada por el autor
 

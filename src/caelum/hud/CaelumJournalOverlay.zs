@@ -188,6 +188,15 @@ class CaelumJournalOverlay : EventHandler
             armorText.Replace("%PIECES%", String.Format("%d", localPlayer.MainM00ArmorPiecesSnapshot));
             text = text .. "\n\n" .. armorText;
         }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+        {
+            String sealText = StringTable.Localize(localPlayer.MainM00SealRecipesSnapshot
+                ? "CA_M01_SEALS_DETAIL" : "CA_M01_SEALS_DETAIL_LEARN", false);
+            sealText.Replace("%SEALS%", String.Format("%d", localPlayer.MainM00SealsPreparedSnapshot));
+            text = text .. "\n\n" .. sealText;
+        }
         bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
             && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE

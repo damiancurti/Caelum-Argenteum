@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ad — 2026-09-13.
+Versión documental: 4.33.0ae — 2026-09-13.
+
+## Revisión 4.33.0ae
+
+Se reutilizan los cinco iconos de sellos, sus actores de equipo, el indicador
+lateral del HUD y los efectos de Channel existentes. Las recetas aparecen en
+Oficios con esos recursos. El diálogo usa las mismas fuentes y sonido de arpa.
+No se agregan ni modifican WAD, arte, sprites, modelos, música, sonidos o
+archivos de assets respecto de 0ad aprobado. Revisión visual en PROJECT.md.
 
 ## Revisión 4.33.0ad
 

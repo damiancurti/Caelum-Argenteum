@@ -339,6 +339,8 @@ class CaelumPlayer : DoomPlayer
     int MainM00ConvincedCountSnapshot;
     int MainM00MagicPracticeSnapshot;
     int MainM00RuneSequenceSnapshot;
+    bool MainM00SealRecipesSnapshot;
+    int MainM00SealsPreparedSnapshot;
     int MainM00ArmorTypeSnapshot;
     int MainM00ArmorPiecesSnapshot;
     int MainM00StarterOptionSnapshot;
@@ -837,6 +839,10 @@ class CaelumPlayer : DoomPlayer
         MainM00ConvincedCountSnapshot = persistentState.CountMainM00ConvincedResidents();
         MainM00MagicPracticeSnapshot = persistentState.CountMainM00MagicPractice();
         MainM00RuneSequenceSnapshot = persistentState.MainM00RuneSequenceIndex;
+        MainM00SealRecipesSnapshot = persistentState.MainM00SealRecipesLearned;
+        MainM00SealsPreparedSnapshot = 0;
+        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
+            if (persistentState.MainM00SealsPrepared[element]) MainM00SealsPreparedSnapshot++;
         MainM00ArmorTypeSnapshot = persistentState.MainM00ArmorChosen ? persistentState.MainM00ArmorType : -1;
         MainM00ArmorPiecesSnapshot = 0;
         for (int slot = 0; slot < 4; slot++) if (persistentState.MainM00ArmorCrafted[slot]) MainM00ArmorPiecesSnapshot++;
@@ -6786,6 +6792,7 @@ class CaelumPlayer : DoomPlayer
     bool IsDirectWeaponCraftingRecipe()
     {
         return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
             || CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
@@ -8662,11 +8669,10 @@ class CaelumPlayer : DoomPlayer
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE; return; }
         int kind = seal ? CaelumConstants.EQUIPMENT_KIND_SEAL : CaelumConstants.EQUIPMENT_KIND_AMULET;
         int type = seal ? CraftingSelectedSealType : CraftingSelectedAmuletType;
-        if (!HasNativeMagicBoxSlotAvailable())
+        bool personalOutput = seal && CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
+        if (!personalOutput && !HasNativeMagicBoxSlotAvailable())
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL; return; }
-        if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired
-            || !HasCraftingFinishMaterials())
+        if (!HasSelectedWeaponCraftingMaterials())
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
 
         CaelumEquipmentItem result;
@@ -8692,17 +8698,16 @@ class CaelumPlayer : DoomPlayer
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
             return;
         }
-        if (!ConsumeCraftingMaterial(CraftingBasicMaterialType,CraftingBasicMaterialTier,CraftingBasicRequired)
-            || !ConsumeCraftingMaterial(CraftingTierMaterialType,CraftingTierMaterialTier,CraftingTierRequired)
-            || !ConsumeCraftingFinishMaterials())
+        if (!ConsumeSelectedWeaponCraftingMaterials())
         { result.Destroy(); LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
 
         result.EquipmentKind=kind; result.ItemType=type; result.ArmorSlot=-1;
         result.Tier=CraftingSelectionTier; result.EquipmentSize=CaelumConstants.EQUIPMENT_SIZE_M;
         result.Durability=0; result.EssenceType=seal ? type : CaelumConstants.ESSENCE_FIRE;
         result.UnitWeight=CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
-        result.Equipped=false; result.InMagicBox=true; result.PickupDataInitialized=true; result.AttachToOwner(self);
+        result.Equipped=false; result.InMagicBox=!personalOutput; result.PickupDataInitialized=true; result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        if (seal) CaelumMainM00SealCrafting.RecordCraft(self, result);
         LastCraftingAction=CaelumConstants.CRAFTING_ACTION_CREATED;
         ApplyCharacterProfile();
         PersistCharacterState();

@@ -65,6 +65,10 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00PreviousSealId;
     // La elección, el préstamo y el stock no viven en el NPC/cofre recreable.
     // 0ad: elección y cupo finito; los campos nuevos nacen vacíos en 0ac.
+    // 0ae: enseñanza y piezas existentes al aceptarla, sin reiniciar cupos.
+    bool MainM00SealRecipesLearned;
+    bool MainM00SealOwnedAtLearning[CaelumConstants.SEAL_TYPE_COUNT];
+    bool MainM00SealsPrepared[CaelumConstants.SEAL_TYPE_COUNT];
     bool MainM00ArmorChosen;
     int MainM00ArmorType;
     int MainM00ArmorSize;
@@ -336,6 +340,9 @@ class CaelumPersistentCharacterState : Inventory
         MainM00AnimaAfterCast = 0.0;
         MainM00PreviousWeaponId = 0;
         MainM00PreviousSealId = 0;
+        MainM00SealRecipesLearned = false;
+        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
+        { MainM00SealsPrepared[element] = false; MainM00SealOwnedAtLearning[element] = false; }
         MainM00ArmorChosen = false;
         MainM00ArmorType = 0;
         MainM00ArmorSize = 0;

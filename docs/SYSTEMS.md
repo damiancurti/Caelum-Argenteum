@@ -1,6 +1,53 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ad — 2026-09-13.
+Versión documental: 4.33.0ae — 2026-09-13.
+
+## Sellos T1: enseñanza y abastecimiento — 4.33.0ae
+
+Después de completar la prueba de Caella se puede pedir «¿Me enseñás a fabricar
+sellos?», directamente o por su apartado de talleres. Leer/posponer no enseña.
+Aceptar enseña las cinco recetas existentes (índices 56–60) y las dependencias
+nativas: bases de sello, gemas/broche y procesamiento de los metales. No cambia
+los 131 índices, la versión del recetario ni sus costes. T1 es la cobertura
+abastecida; no se conceden componentes ni objetos físicos al aprender.
+
+| Para los cinco sellos T1 al 100% en cada capa | Cupo añadido |
+| --- | ---: |
+| Cobre bruto | 1.800 unidades = 1,8 kg |
+| Estaño bruto | 200 unidades = 0,2 kg |
+| Rubí bruto | 600 unidades = 0,6 kg |
+| Zafiro bruto | 600 unidades = 0,6 kg |
+| Esmeralda bruta | 600 unidades = 0,6 kg |
+| Topacio bruto | 600 unidades = 0,6 kg |
+| Ópalo bruto | 600 unidades = 0,6 kg |
+
+Cada sello T1 pesa 1 kg, de talle universal. Su base ocupa 40% y su componente
+elemental 60%; las cantidades anteriores surgen de la expansión nativa al 100%.
+El cobre/estaño se acumula con el arma y munición elegidas. No modifica cuero.
+Las vetas de la cueva aportan el material; el cajón sigue aportando sólo cuero.
+
+El cupo se habilita al aceptar la enseñanza y elegir el arma con Ronnie, en
+cualquier orden. Conserva el contador emitido de 0ad: aceptar otra vez,
+fabricar, cambiar de veta o guardar/cargar no lo reinician. Si ya se posee un
+sello T1, se registra una pieza por elemento y se descuenta sólo de la ampliación
+nueva; no se vuelve a cargar su coste al contador anterior. Se excluye el sello
+prestado CA_LimboMagicSeal. Esa lista inicial queda fija después de aprender.
+Los sellos preparados cuentan de 0/5 a 5/5; no imponen un requisito de misión.
+
+Los sellos usan el plan recursivo, las reservas y la transacción nativa, igual
+que armas/armaduras. Se pueden fabricar desde materiales crudos en el Banco
+de Trabajo de Caella o el del segundo piso. Antes de tener Caja, el resultado
+T1 aprendido va al inventario personal. Al equipar cambia la ranura única de
+Sello y conserva los efectos, Adrenalina, bloqueo y cooldown vigentes de Channel.
+La salida narrativa sigue retirando equipo temporal distinto de la primera arma.
+
+Si ya se devolvió la espada de Ronnie, su apartado de talleres ofrece
+«Necesito recolectar para los sellos». Presta la misma clase de herramienta
+mientras quede cupo útil para un sello no preparado; comprueba carga y no exige
+una reparación pendiente. Se devuelve desde la misma página. La rama de
+reparación conserva sus condiciones y su cupo proporcional independiente.
+Una tarea previa activa conserva receta, eficiencia, tiempo y reservas aunque
+se aprenda o se seleccione otro sello. No se cancela ni se cambia su resultado.
 
 ## Elección de armadura y cupos de MAP01 (4.33.0ad)
 
@@ -67,7 +114,8 @@ suma otra vez. No restaura durabilidad, no da materiales y no repone equipo.
 Si el arma elegida no sirve para extraer esos recursos, la conversación de
 reparación permite pedir de nuevo la espada y devolvérsela a Ronnie. Se verifica
 daño, práctica pendiente y espacio de carga; se reutiliza el mismo préstamo.
-Los cinco sellos, balas y abastecimiento T2 siguen fuera de este cupo inicial.
+0ae amplía este cupo con los sellos aprendidos, según el apartado anterior.
+Balas y abastecimiento T2 siguen fuera del cupo inicial.
 
 ## Virotes y conocimiento de municiones (4.33.0ac)
 
@@ -289,8 +337,8 @@ independiente: estas masas físicas no habilitan recoger excedentes.
 Disponibilidad de materiales, infraestructura y conocimiento son requisitos
 separados. Las doce estaciones del segundo piso cubren la infraestructura;
 Ronnie enseña la primera arma y, desde 0ad, una familia de armadura con sus
-componentes. Enseñanza/cupos de sellos siguen en el roadmap. No usar «hay
-vetas» como sinónimo de «todo se puede fabricar ya».
+componentes. Desde 0ae Caella enseña sellos y habilita su cupo al aceptar.
+No usar «hay vetas» como sinónimo de «todo se puede fabricar ya».
 
 ## Salida narrativa, inventario y llegada (4.33.0v)
 
@@ -726,9 +774,9 @@ narrativa sí advierte y retira todos los otros objetos físicos.
 0n incorpora flechas y 0w añade reparación opcional después de cerrar Ronnie.
 Necesidades (0x), Aire/movimiento (0y), carga (0z) y respiración en piscina
 (0ab) tienen prácticas opcionales. Virotes y su enseñanza se agregan en 0ac.
-Siguen pendientes balas (composición/proceso), acceso a recetas de armaduras/sellos
-y recolección/potabilización de agua; ninguna
-de estas ampliaciones se incorpora como requisito nuevo para empezar a Rulo.
+0ad incorpora las recetas de armadura elegida y 0ae las de sellos.
+Siguen pendientes balas (composición/proceso) y recolección/potabilización de
+agua; ninguna ampliación es un requisito nuevo para empezar a Rulo.
 
 ### Flechas y controles de Oficios (4.33.0n)
 

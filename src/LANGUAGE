@@ -154,7 +154,7 @@ CA_CRAFTING_RECIPE_BOOK = "Recipe book";
 CA_CRAFTING_RECIPE_UNKNOWN = "Unknown recipe";
 CA_CRAFTING_RECIPE_LOCKED = "This recipe has not been learned.";
 CA_CRAFTING_ACTION_NONE = "Choose finish and size, then craft";
-CA_CRAFTING_ACTION_CREATED = "Crafted successfully: sent to the Magic Box";
+CA_CRAFTING_ACTION_CREATED = "Crafted successfully";
 CA_CRAFTING_ACTION_FAILED_MATERIALS = "Cannot craft: insufficient materials";
 CA_CRAFTING_ACTION_FAILED_BOX_FULL = "Insufficient space in the Magic Box";
 CA_CRAFTING_ACTION_FAILED_DUPLICATE = "That exact weapon is already owned";
@@ -784,7 +784,7 @@ CA_CRAFTING_RECIPE_BOOK = "Recetario";
 CA_CRAFTING_RECIPE_UNKNOWN = "Receta desconocida";
 CA_CRAFTING_RECIPE_LOCKED = "Esta receta todavía no fue aprendida.";
 CA_CRAFTING_ACTION_NONE = "Elegí acabado y talle, luego fabricá";
-CA_CRAFTING_ACTION_CREATED = "Fabricada correctamente: enviada a la Caja Mágica";
+CA_CRAFTING_ACTION_CREATED = "Fabricado correctamente";
 CA_CRAFTING_ACTION_FAILED_MATERIALS = "No se puede fabricar: materiales insuficientes";
 CA_CRAFTING_ACTION_FAILED_BOX_FULL = "Espacio insuficiente en la Caja Mágica";
 CA_CRAFTING_ACTION_FAILED_DUPLICATE = "Ya poseés esa configuración exacta";
@@ -2959,3 +2959,34 @@ CA_M01_REPAIR_LOAN_NO_ROOM = "Make room for the borrowed sword first.";
 CA_M01_REPAIR_LOAN_ASK = "Prestame la espada para juntar lo que falta para reparar.";
 CA_M01_REPAIR_LOAN_RETURN = "Devolver la espada de recolección.";
 CA_M01_REPAIR_LOAN_NO_ROOM = "Hacé espacio para la espada prestada primero.";
+
+// 4.33.0ae: sellos tier 1, conocimiento y cupo de práctica.
+[default]
+CA_M01_SEALS_ASK = "Can you teach me to craft seals?";
+CA_M01_SEALS_OFFER = "I can teach you the five tier 1 seals: Fire, Water, Earth, Air and Quintessence, including their components. Each channels its own element.\n\nThis is optional preparation. The supplies cover one of each at 100% efficiency in every layer. Would you like to learn?";
+CA_M01_SEALS_LEARN = "Teach me their recipes.";
+CA_M01_SEALS_LATER = "I will come back later.";
+CA_M01_SEALS_READY = "You know the five seal recipes and their components. Use my workbench or the complete workshop on the second floor: Crafts > Seals, tier 1, 100% in every layer.\n\nYou can craft directly from raw materials and carry the result without the Box. These seals are for practice here; only your first weapon leaves with the Box.";
+CA_M01_SEALS_RESOURCES = "The cave veins provide the metal and gems. All five seals together need 1.8 kg of raw copper, 0.2 kg of raw tin, and 0.6 kg each of ruby, sapphire, emerald, topaz and opal at 100%.\n\nChoose your weapon with Ronnie first. If you already returned his sword, ask about gathering for seals in his workshop conversation. The allowance does not refill after use.";
+CA_M01_SEALS_USE_ASK = "How do I equip and use a seal?";
+CA_M01_SEALS_USE = "Equip a seal from Inventory > Accessories. Only one can be equipped at a time. Use the Channel control, User2, to activate it; Channel spends Adrenaline.\n\nThe HUD shows the equipped element and its availability. You can change seals in your inventory. Crafting them is optional and does not repeat the rune trial.";
+CA_M01_SEALS_DETAIL_LEARN = "Seals: after her trial, ask Caella to teach you the five tier 1 recipes. This is optional preparation. Choose your weapon with Ronnie to begin gathering.";
+CA_M01_SEALS_DETAIL = "Tier 1 seals prepared: %SEALS%/5. Use Caella's workbench or the complete second-floor workshop, Crafts > Seals, 100% in every layer. Copper, tin and all five gems are in the cave. If you returned the gathering sword, ask Ronnie about seals in his workshop conversation. The finite allowance covers one of each.";
+CA_M01_SEALS_GATHER_ASK = "I need to gather materials for seals.";
+CA_M01_SEALS_GATHER = "If you still need materials for the seals Caella taught you, I can lend you my sword again. Use its secondary piercing attack on the cave veins. Return it here when you finish gathering.\n\nThis loan does not change your chosen weapon or completed practice. The veins share your remaining allowance.";
+CA_M01_SEALS_BORROW = "Lend me the sword for gathering.";
+
+[es]
+CA_M01_SEALS_ASK = "¿Me enseñás a fabricar sellos?";
+CA_M01_SEALS_OFFER = "Puedo enseñarte los cinco sellos tier 1: Fuego, Agua, Tierra, Aire y Quintaesencia, con sus componentes. Cada uno canaliza su elemento.\n\nEs preparación opcional. Los suministros alcanzan para uno de cada uno al 100% de eficiencia en cada capa. ¿Querés aprender?";
+CA_M01_SEALS_LEARN = "Enseñame sus recetas.";
+CA_M01_SEALS_LATER = "Volveré más tarde.";
+CA_M01_SEALS_READY = "Conocés las cinco recetas de sellos y sus componentes. Usá mi Banco de Trabajo o el taller completo del segundo piso: Oficios > Sellos, tier 1, 100% en cada capa.\n\nPodés fabricar directamente desde materias primas y llevar el resultado sin Caja. Estos sellos sirven para practicar aquí; sólo tu primera arma sale junto con la Caja.";
+CA_M01_SEALS_RESOURCES = "Las vetas de la cueva tienen los metales y gemas. Los cinco sellos juntos requieren 1,8 kg de cobre bruto, 0,2 kg de estaño bruto y 0,6 kg de cada gema: rubí, zafiro, esmeralda, topacio y ópalo, al 100%.\n\nPrimero elegí tu arma con Ronnie. Si ya devolviste su espada, preguntale por la recolección para sellos en su charla de talleres. El cupo no se repone al gastarlo.";
+CA_M01_SEALS_USE_ASK = "¿Cómo equipo y uso un sello?";
+CA_M01_SEALS_USE = "Equipá un sello desde Inventario > Accesorios. Sólo podés tener uno equipado a la vez. Activá el control Channel, User2, para usarlo; canalizar gasta Adrenalina.\n\nEl HUD muestra el elemento equipado y su disponibilidad. Podés cambiar de sello desde el inventario. Fabricarlos es opcional y no repite la prueba de las runas.";
+CA_M01_SEALS_DETAIL_LEARN = "Sellos: después de su prueba, pedile a Caella que te enseñe las cinco recetas tier 1. Es preparación opcional. Elegí tu arma con Ronnie para comenzar la recolección.";
+CA_M01_SEALS_DETAIL = "Sellos tier 1 preparados: %SEALS%/5. Usá el Banco de Trabajo de Caella o el taller completo del segundo piso, Oficios > Sellos, 100% en cada capa. Cobre, estaño y las cinco gemas están en la cueva. Si devolviste la espada, preguntale a Ronnie por sellos en su charla de talleres. El cupo finito cubre uno de cada uno.";
+CA_M01_SEALS_GATHER_ASK = "Necesito recolectar para los sellos.";
+CA_M01_SEALS_GATHER = "Si todavía te faltan materiales para los sellos que te enseñó Caella, puedo prestarte otra vez mi espada. Usá su ataque secundario punzante en las vetas de la cueva. Devolvémela aquí cuando termines de recolectar.\n\nEl préstamo conserva tu arma elegida y tu práctica completada. Las vetas comparten el cupo que te queda.";
+CA_M01_SEALS_BORROW = "Prestame la espada para recolectar.";

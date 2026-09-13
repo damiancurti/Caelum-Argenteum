@@ -5,12 +5,29 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ad.** Apply over the complete **4.33.0ac** project.
-The author approved all 0ac tests. This release adds an armor-family choice,
-its T1 recipes and finite material allowances calculated at 100% efficiency.
+**Current release: 4.33.0ae.** Apply over the complete **4.33.0ad** project.
+The author approved all 0ad tests. Caella now teaches the five T1 seals and
+components, with finite raw-material allowances at 100% in every layer.
 MAP01 remains the systems test environment.
 
 ## Implemented
+
+- After completing Caella's trial, ask her to teach the five T1 seals. Reading
+  or declining changes nothing; accepting teaches existing recipes/dependencies.
+  Quest Detail tracks preparation from 0/5 to 5/5. This is optional and keeps
+  completed trials, rune access and the first crafted weapon unchanged.
+- At 100% in every layer, all five need 1.8 kg raw copper, 0.2 kg raw tin and
+  0.6 kg each of ruby, sapphire, emerald, topaz and opal. This allowance extends
+  the chosen loadout's existing pool once, without replenishing issued stock.
+  A previously owned T1 seal reduces only the new allowance for its element.
+- Use Caella's Workbench or the complete upstairs workshop, Crafts > Seals.
+  T1 seals support recursive raw-material crafting, native task reservations,
+  pause/cancel and personal output without the Box. Equip one through Inventory;
+  the existing Channel, Adrenaline, HUD and cooldown rules apply.
+- When more seal materials are needed after returning the sword, Ronnie's
+  workshop dialogue can lend it again and accept its return. No repair lesson
+  or damaged first weapon is required for this gathering loan. Existing carry
+  capacity, finite extraction and loan identity rules remain in force.
 
 - After the weapon choice, Ronnie offers magic, light, medium or heavy armor
   with descriptions and confirmation. He teaches the chosen family's four T1
@@ -20,7 +37,8 @@ MAP01 remains the systems test environment.
   T1 pieces go to personal inventory before the Box reward and can be equipped.
   Native tasks, reservations, pause/cancel, weight and saves remain authoritative.
 - MAP01 grants only the raw-material allowance for one chosen weapon, one
-  chosen armor set and one ten-arrow/bolt batch when appropriate, at 100% in
+  chosen armor set and one ten-arrow/bolt batch when appropriate, plus the
+  optional seal allowance after learning from Caella, at 100% in
   every layer and the chosen equipment size. New choices default to 100%.
   At size M, armor leather is 5/10/20/40 kg; giant gauntlets add 6 kg.
 - Sources share a per-character allowance, charged when materials are generated
@@ -47,7 +65,7 @@ MAP01 remains the systems test environment.
   the Box. Reservations, pause/resume, cancellation and saves remain native.
   Bolts load and fire through the existing crossbow. Crafting ammunition cannot
   replace the first crafted weapon. Arrows retain their separate recipe/output.
-- Trades shows the bolt icon/name in Ammunition. Ronnie explains the process
+- Crafts shows the bolt icon/name in Ammunition. Ronnie explains the process
   under his workshop dialogue; Quest Detail guides crossbow characters.
   The catalogue appends recipe 130 and preserves all previous recipe indices.
 
@@ -109,7 +127,7 @@ MAP01 remains the systems test environment.
 
 - After returning Ronnie's sword, ask him how to maintain your weapon. He
   explains condition, selecting/unequipping the piece, the upstairs Workbench,
-  F in Trades, material reservations, pauses and cancellation.
+  F in Crafts, material reservations, pauses and cancellation.
 - The optional practice completes only when native Repair actually restores
   the first crafted ItemId. Talking, starting, pausing or cancelling cannot
   complete it. No free repair, forced damage, extra equipment or recipe reward.
@@ -117,9 +135,9 @@ MAP01 remains the systems test environment.
   and the narrative exit; leaving without doing it is allowed. The normal
   Rulo/Palomo/Fool/exit progression stays unchanged.
 - T1 recipe costs remain quantified in SYSTEMS.md. Tutorial supply now covers
-  the selected armor set at 100%, as specified above. Seal teaching and its
-  material allowance are still pending; the existence of veins alone does
-  not grant unrestricted access to every T1 recipe.
+  the selected armor set and accepted seal preparation at 100%, as specified
+  above. The existence of veins alone does not grant unrestricted access
+  to every T1 recipe.
 
 - After capturing The Fool, Quest Detail points to the marked door at the back
   of the Bull room on the ground floor. Palomo, Ronnie and Rulo also give
@@ -204,7 +222,7 @@ MAP01 remains the systems test environment.
   Reopening/loading does not refill it. Needed gems come from the cave veins.
 - Bow and longbow choices also teach a native recipe for ten arrows and all
   its dependencies. Arrows enter personal inventory and do not replace the
-  first crafted weapon. Tab closes Trades; G changes its recipe filter.
+  first crafted weapon. Tab closes Crafts; G changes its recipe filter.
 - Argento holds the silver key; the Bull is placed in the locked starting room.
   Delivery requires Caella/Ronnie completion and Rulo's combat practices.
   Rulo now offers six tracked exercises with native actions for all 36 starter
@@ -260,12 +278,11 @@ MAP01 remains the systems test environment.
 ## Planned
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
-PROJECT.md. Seal recipe acquisition/allowances and safe-water collection/processing
-remain planned. Bullet crafting still needs its material composition and process
+PROJECT.md. Safe-water collection/processing remains planned. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
-Material coverage uses the finite 100% allowance for the chosen loadout.
+Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
 crafted weapon only, inside the Box.
@@ -279,15 +296,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0ac is author-approved. Focused 0ad checks are in PRUEBAS_4_33_0ad.txt;
+0ad is author-approved. Focused 0ae checks are in PRUEBAS_4_33_0ae.txt;
 native engine evidence and limits are in PROJECT.md.
-All maps and audiovisual resources remain byte-identical to 0ac.
+All maps and audiovisual resources remain byte-identical to 0ad.
 
 ## Build and run
 
-Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ad patch
-into the complete **4.33.0ac** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ad.txt** outside docs.
+Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ae patch
+into the complete **4.33.0ad** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ae.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

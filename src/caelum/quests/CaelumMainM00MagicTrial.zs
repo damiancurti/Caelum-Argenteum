@@ -269,6 +269,7 @@ class CaelumMainM00MagicTrial : Object play
     {
         let record = user.GetPersistentCharacterState(true);
         record.RefreshMainM00MagicObjective();
+        CaelumMainM00SealCrafting.Sync(user);
         user.SetPalomoDialogueToken("CaelumM00MagicStartedToken", record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED));
         user.SetPalomoDialogueToken("CaelumM00MagicPracticeToken", record.IsMainM00MagicPracticeComplete());
         user.SetPalomoDialogueToken("CaelumM00MagicRunesReadyToken", record.MainM00RuneSequenceIndex == 4);
@@ -352,5 +353,113 @@ class CaelumM00ElementRune : Actor
     Spawn:
         SLFI A -1 Bright;
         Stop;
+    }
+}
+
+// Preparación opcional posterior a las runas; no modifica sus requisitos.
+class CaelumMainM00SealCrafting : Object play
+{
+    static bool CanLearn(CaelumPlayer user)
+    {
+        if (!CaelumMainM00RonnieTrial.CanInteract(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        return r != null && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE)
+            && r.QuestStage[0] < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED;
+    }
+
+    static bool Learn(CaelumPlayer user)
+    {
+        if (!CanLearn(user)) return false;
+        let speaker = CaelumCaella(user.player.ConversationNPC);
+        if (speaker == null || !speaker.StoryAnchored) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r.MainM00SealRecipesLearned) return true;
+        CaelumMainM00SupplyRules.Ensure(user);
+        r.MainM00SealRecipesLearned = true;
+        let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
+        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++) needs.AddSeal(element);
+        for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
+            if (needs.Recipes[recipe]) r.LearnCraftingRecipe(recipe);
+        // Reconoce una pieza propia por elemento en guardados anteriores.
+        // El sello prestado de la prueba nunca ocupa este cupo.
+        for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
+        {
+            let item = CaelumEquipmentItem(cursor);
+            if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+                || item.Tier != 1 || item is "CA_LimboMagicSeal"
+                || item.ItemType < 0 || item.ItemType >= CaelumConstants.SEAL_TYPE_COUNT
+                || r.MainM00SealsPrepared[item.ItemType]) continue;
+            r.MainM00SealsPrepared[item.ItemType] = true;
+            r.MainM00SealOwnedAtLearning[item.ItemType] = true;
+        }
+        CaelumMainM00SupplyRules.UpdateLimits(user);
+        if (!user.CraftingTaskActive)
+        { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
+        user.RefreshCraftingRecipeBookSummary();
+        Sync(user); user.RefreshSocialJournalSnapshot(); user.PersistCharacterState();
+        return true;
+    }
+
+    static bool IsLearnedRecipe(CaelumPlayer user)
+    {
+        let r = user.GetPersistentCharacterState(false);
+        return r != null && r.MainM00SealRecipesLearned && user.CraftingSelectionTier == 1
+            && CaelumCraftingRules.GetUnifiedRecipeKind(user.CraftingSelectionRecipe)
+                == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL;
+    }
+
+    static bool CanGather(CaelumPlayer user)
+    {
+        if (!CanLearn(user)) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (!r.MainM00SealRecipesLearned || !r.MainM00StarterChosen) return false;
+        let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
+        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
+            if (!r.MainM00SealsPrepared[element]) needs.AddSeal(element);
+        for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
+            if (needs.Units[material] > 0 && CaelumMainM00SupplyRules.Remaining(user, material) > 0) return true;
+        return false;
+    }
+
+    static void RecordCraft(CaelumPlayer user, CaelumEquipmentItem item)
+    {
+        if (!CaelumMainM00SupplyRules.IsLimited(user) || !IsLearnedRecipe(user)
+            || !user.CraftingTaskCompleting || item == null
+            || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+            || item.ItemType < 0 || item.ItemType >= CaelumConstants.SEAL_TYPE_COUNT) return;
+        let r = user.GetPersistentCharacterState(false);
+        r.MainM00SealsPrepared[item.ItemType] = true;
+        item.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+        user.RefreshSocialJournalSnapshot();
+    }
+
+    static void Sync(CaelumPlayer user)
+    {
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null) return;
+        user.SetPalomoDialogueToken("CaelumM00SealsLearnedToken", r.MainM00SealRecipesLearned);
+        user.SetPalomoDialogueToken("CaelumM00SealGatherReadyToken", CanGather(user));
+        user.SetPalomoDialogueToken("CaelumM00SealGatherPracticeToken", CanLearn(user)
+            && r.MainM00SealRecipesLearned && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE));
+        user.SetPalomoDialogueToken("CaelumM00GatheringLoanHeldToken", CaelumMainM00RonnieTrial.FindLoan(user) != null);
+    }
+}
+class CaelumM00SealsLearnedToken : CaelumPalomoDialogueMarker {}
+class CaelumM00SealGatherReadyToken : CaelumPalomoDialogueMarker {}
+class CaelumM00SealGatherPracticeToken : CaelumPalomoDialogueMarker {}
+class CaelumM00GatheringLoanHeldToken : CaelumPalomoDialogueMarker {}
+class CaelumM00LearnSealsAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup) { return CaelumMainM00SealCrafting.Learn(CaelumPlayer(Owner)); }
+}
+class CaelumM00BorrowSealSwordAction : CaelumPalomoDialogueAction
+{
+    override bool Use(bool pickup)
+    {
+        let user = CaelumPlayer(Owner);
+        if (!CaelumMainM00RonnieTrial.IsRonnie(user) || !CaelumMainM00SealCrafting.CanGather(user)) return false;
+        bool result = CaelumMainM00RonnieTrial.PrepareLoan(user, false, true);
+        CaelumMainM00SealCrafting.Sync(user);
+        return result;
     }
 }

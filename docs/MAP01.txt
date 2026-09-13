@@ -1,8 +1,28 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ad — 2026-09-13.
+Versión documental: 4.33.0ae — 2026-09-13.
 
 
-REVISIÓN VIGENTE 4.33.0ad — ARMADURA Y RECURSOS AL 100%
+REVISIÓN VIGENTE 4.33.0ae — SELLOS T1
+0ad aprobado por el autor. Después de su prueba, Caella enseña opcionalmente
+los cinco sellos T1 y componentes, con confirmación. Detalle indica 0/5–5/5.
+La enseñanza no cambia el acertijo, el préstamo de Caella ni las prácticas.
+
+Se añaden al cupo del equipo 1,8 kg de cobre bruto, 0,2 kg de estaño bruto y
+0,6 kg de cada una de las cinco gemas, al 100% en todas las capas. Si había
+sellos propios, sólo se cubren los faltantes. No se reinicia lo gastado antes.
+Todos los recursos están en las vetas existentes de la cueva; el cofre conserva
+su cupo de cuero. Primero se debe haber elegido el arma para recolectar.
+
+Usar el Banco de Trabajo de Caella o el taller completo del segundo piso,
+Oficios > Sellos. Fabricación desde materias primas, salida personal sin Caja,
+una ranura equipada. Si la espada se devolvió, Ronnie la presta para sellos
+pendientes desde su charla de talleres y la recibe de vuelta allí.
+
+Se preservan tareas/guardados y la salida con Caja/primera arma. No se amplían
+mapas ni se mueven estaciones, recursos o NPC. Próximo sistema pendiente:
+recolección/potabilización de agua; balas requieren definir composición/proceso.
+
+BASE 4.33.0ad APROBADA — ARMADURA Y RECURSOS AL 100%
 0ac aprobado por el autor. Ronnie pregunta por una familia de armadura después
 del arma: mágica, liviana, mediana o pesada. Descripción antes de confirmar;
 enseña cuatro piezas T1 y componentes. Quien ya terminó Ronnie accede por su
@@ -28,8 +48,8 @@ Cada virote conserva 50 g; el lote usa asta y punta de bronce con eficiencia
 por capa. Se puede partir de madera/cobre/estaño con las recetas aprendidas.
 Guía en Detalle y en el apartado de taller de Ronnie. Tarea nativa, pausa,
 cancelación y guardado; no requiere Caja ni reemplaza la primera arma.
-No cambia WAD, recursos, botín o bloqueos de misión. Balas y adquisición de
-recetas de armaduras se incorporan en 0ad; sellos continúan en el roadmap.
+No cambió WAD, recursos, botín o bloqueos de misión. Las recetas de armaduras
+se incorporan en 0ad y las de sellos en 0ae. Balas siguen pendientes.
 
 BASE 4.33.0ab APROBADA — RESPIRACIÓN EN PISCINA
 El autor aprobó todas las pruebas de 0aa. Se implementa el tramo E opcional

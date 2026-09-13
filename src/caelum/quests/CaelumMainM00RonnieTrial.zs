@@ -226,16 +226,18 @@ class CaelumMainM00RonnieTrial : Object play
         return loan != null && loan.IsLimboTemporary() ? loan : null;
     }
 
-    static bool PrepareLoan(CaelumPlayer user, bool forRepair = false)
+    static bool PrepareLoan(CaelumPlayer user, bool forRepair = false, bool forSeals = false)
     {
         if (!CanInteract(user) || !IsStarted(user) || user.WeaponModel == null) return false;
         let record = user.GetPersistentCharacterState(true);
         if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE))
         {
             let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
-            if (!forRepair || !record.MainM00RepairLessonOffered || record.MainM00RepairLessonComplete
-                || record.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
-                || first == null || first.Durability >= user.GetEquipmentTaskMaximumDurability(first)) return false;
+            bool repair = forRepair && record.MainM00RepairLessonOffered && !record.MainM00RepairLessonComplete
+                && first != null && first.Durability < user.GetEquipmentTaskMaximumDurability(first);
+            bool seals = forSeals && CaelumMainM00SealCrafting.CanGather(user);
+            if (record.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || (!repair && !seals)) return false;
         }
         user.SyncActiveModelsToNativeInventory();
         let loan = FindLoan(user);
@@ -259,7 +261,7 @@ class CaelumMainM00RonnieTrial : Object play
                 loan.EssenceType = CaelumConstants.ESSENCE_FIRE;
                 loan.UnitWeight = user.WeaponModel.GetWeightFor(loan.ItemType, 1, loan.EquipmentSize);
                 loan.PickupDataInitialized = true;
-                if (forRepair && !user.CanAddWeightToPersonalInventory(loan.UnitWeight + CaelumConstants.MATERIAL_UNIT_WEIGHT))
+                if ((forRepair || forSeals) && !user.CanAddWeightToPersonalInventory(loan.UnitWeight + CaelumConstants.MATERIAL_UNIT_WEIGHT))
                 { loan.Destroy(); Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
                 loan.AttachToOwner(user);
                 user.EnsureEquipmentItemId(loan);
@@ -443,7 +445,8 @@ class CaelumMainM00RonnieTrial : Object play
     {
         return CanInteract(user) && IsStarted(user) && user.CraftingSelectionTier == 1
             && (CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe)
-                || CaelumMainM00SupplyRules.IsChosenArmorRecipe(user));
+                || CaelumMainM00SupplyRules.IsChosenArmorRecipe(user)
+                || CaelumMainM00SealCrafting.IsLearnedRecipe(user));
     }
 
     static void RecordCraft(CaelumPlayer user, CaelumEquipmentItem result)
@@ -492,6 +495,7 @@ class CaelumMainM00RonnieTrial : Object play
         if (record == null) return;
         TeachStarterAmmunition(user);
         CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SealCrafting.Sync(user);
         user.SetPalomoDialogueToken("CaelumM00ArmorChosenToken", record.MainM00ArmorChosen);
         user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", record.MainM00StarterChosen);
         user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
