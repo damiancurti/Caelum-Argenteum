@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ab — 2026-09-12.
+Versión documental: 4.33.0ac — 2026-09-12.
+
+## Revisión 4.33.0ac
+
+La receta de virotes usa ca_bolt_ammo.png y el actor CaelumBoltAmmo/CBOL que ya
+existían. Flechas conservan su icono y actor propios. Se reutilizan interfaz,
+fuentes, sonidos y estaciones; no hay activos nuevos. Los tres WAD, arte,
+modelos y audio mantienen los bytes de 0ab aprobado. No se amplían mapas.
 
 ## Revisión 4.33.0ab
 

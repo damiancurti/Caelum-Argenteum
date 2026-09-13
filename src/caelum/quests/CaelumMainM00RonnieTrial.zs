@@ -326,20 +326,27 @@ class CaelumMainM00RonnieTrial : Object play
         return true;
     }
 
-    static void TeachArrows(CaelumPlayer user)
+    static void TeachStarterAmmunition(CaelumPlayer user)
     {
         if (user == null) return;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.MainM00StarterChosen
-            || (record.MainM00StarterOption != 12 && record.MainM00StarterOption != 14)
-            || record.KnowsCraftingRecipe(CaelumConstants.CRAFTING_ARROW_RECIPE)) return;
-        record.LearnCraftingRecipe(CaelumConstants.CRAFTING_ARROW_RECIPE);
+        if (record == null || !record.MainM00StarterChosen) return;
+        int recipe = record.MainM00StarterOption == 15 ? CaelumConstants.CRAFTING_BOLT_RECIPE
+            : (record.MainM00StarterOption == 12 || record.MainM00StarterOption == 14)
+            ? CaelumConstants.CRAFTING_ARROW_RECIPE : -1;
+        if (recipe < 0 || record.KnowsCraftingRecipe(recipe)) return;
+        record.LearnCraftingRecipe(recipe);
         let dependencies = new("CaelumMainM00StarterMaterials");
         dependencies.Build(record.MainM00StarterOption, record.MainM00StarterSize);
-        dependencies.Expand(CaelumConstants.MATERIAL_SHAFT, 1400);
-        dependencies.Expand(CaelumConstants.MATERIAL_POINT, 600);
+        double weight = user.GetAmmunitionUnitWeight(CaelumCraftingRules.GetRecipeAmmunitionType(recipe))
+            * CaelumCraftingRules.GetRecipeAmmunitionBatch(recipe);
+        dependencies.Expand(CaelumConstants.MATERIAL_SHAFT, dependencies.ScaleUnits(
+            CaelumCraftingRules.GetRoundedMaterialUnits(weight, 0.7)));
+        dependencies.Expand(CaelumConstants.MATERIAL_POINT, dependencies.ScaleUnits(
+            CaelumCraftingRules.GetRoundedMaterialUnits(weight, 0.3)));
         for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
             if (dependencies.Recipes[i]) record.LearnCraftingRecipe(i);
+        user.RefreshCraftingRecipeBookSummary();
     }
 
     static void EnsureSupplies(CaelumPlayer user)
@@ -483,7 +490,7 @@ class CaelumMainM00RonnieTrial : Object play
         if (user == null) return;
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return;
-        TeachArrows(user);
+        TeachStarterAmmunition(user);
         user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", record.MainM00StarterChosen);
         user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
         user.SetPalomoDialogueToken("CaelumM00RonnieFinishedToken",
@@ -495,6 +502,9 @@ class CaelumMainM00RonnieTrial : Object play
     static void Update(CaelumPlayer user)
     {
         if (!IsStarted(user)) return;
+        // El conocimiento pendiente también se incorpora al cargar fuera del
+        // Limbo; no concede munición, materiales ni vuelve a prestar la espada.
+        if (level.time % TICRATE == 0) TeachStarterAmmunition(user);
         if (level.MapName != "MAP01")
         {
             if (level.time % TICRATE != 0) return;
@@ -543,7 +553,6 @@ class CaelumMainM00RonnieTrial : Object play
             return;
         }
         if (!CanInteract(user) || level.time % TICRATE != 0) return;
-        TeachArrows(user);
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00StarterWeaponId == 0)
         {

@@ -1,6 +1,52 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ab — 2026-09-12.
+Versión documental: 4.33.0ac — 2026-09-12.
+
+## Virotes y conocimiento de municiones (4.33.0ac)
+
+Se anexa CRAFTING_BOLT_RECIPE = 130; el catálogo tiene 131 recetas. Flechas
+conserva índice 129; 0..128 mantiene su significado. KnownCraftingRecipe crece
+al final a 131 bools. La versión del libro se mantiene en 4 para no disparar
+una migración que borre componentes antiguos; el bool nuevo nace falso.
+
+Elegir ballesta con Ronnie enseña virotes, astas, puntas y transformaciones
+necesarias. Arco y arco largo conservan flechas; las demás elecciones no reciben
+esta receta. TeachStarterAmmunition incorpora también el conocimiento pendiente
+a guardados anteriores, dentro o fuera de MAP01. Repetir no duplica nada.
+No se enseñan todas las recetas del catálogo ni se concede equipo o munición.
+
+Cada lote produce diez CaelumBoltAmmo, 50 g cada uno, tier fijo 1 y tamaño fijo
+M del catálogo. Se adopta para virotes la misma estructura T1 de las flechas:
+350 unidades de asta y 150 de punta de bronce, 0,5 kg incorporados. La masa
+nativa de los virotes no se modifica. Insumos de montaje con componentes hechos:
+
+| Eficiencia | Asta | Punta de bronce | Salida |
+| --- | ---: | ---: | ---: |
+| 25% | 1400 unidades | 600 unidades | 10 virotes |
+| 50% | 700 unidades | 300 unidades | 10 virotes |
+| 100% | 350 unidades | 150 unidades | 10 virotes |
+
+Una unidad = 0,001 kg. Cada transformación previa aplica su propia eficiencia
+y tiempo; la tabla no es el total de materia prima en fabricación multicapa.
+Asta viene de madera; punta T1, de bronce a partir de cobre/estaño. El Banco de
+Trabajo, Aserradero, Taller de Distancia y Forja de la red de Ronnie o segundo
+piso cubren el proceso. El Árbol de Oficios muestra cada capa y su eficiencia.
+
+Se reutilizan plan directo, reservas, tarea única y tiempo nativo. Cerrar o
+alejarse pausa; sólo cancelar libera sin consumir. Al completar se consumen las
+reservas una vez y se añade el lote a la pila correcta. No requiere Caja, no
+ocupa un slot de ella y respeta capacidad de carga y máximo de pila. B, tier
+y talla no multiplican el lote. Munición no registra ni reemplaza ItemId de
+la primera arma. La receta de flechas usa el mismo ejecutor y mantiene su pila.
+Los virotes se cargan/disparan mediante la ballesta nativa, sin combate paralelo.
+
+Detalle orienta a quien eligió ballesta; no añade un objetivo obligatorio. La
+guía de munición está en el diálogo de taller de Ronnie, sin ampliar sus siete
+opciones principales. La salida narrativa conserva la regla de retirar los
+objetos físicos salvo Caja/primera arma; conocer recetas sí se conserva.
+
+Balas de carabina: masa vigente 0,003 kg; composición, materias primas y proceso
+para fabricar aún sin definir. No se introduce una receta inferida de esa masa.
 
 ## Respiración: práctica opcional de Ronnie (4.33.0ab)
 
@@ -609,8 +655,9 @@ narrativa sí advierte y retira todos los otros objetos físicos.
 
 0n incorpora flechas y 0w añade reparación opcional después de cerrar Ronnie.
 Necesidades (0x), Aire/movimiento (0y), carga (0z) y respiración en piscina
-(0ab) tienen prácticas opcionales. Siguen pendientes cartuchos/virotes, acceso
-a recetas de armaduras/sellos y recolección/potabilización de agua; ninguna
+(0ab) tienen prácticas opcionales. Virotes y su enseñanza se agregan en 0ac.
+Siguen pendientes balas (composición/proceso), acceso a recetas de armaduras/sellos
+y recolección/potabilización de agua; ninguna
 de estas ampliaciones se incorpora como requisito nuevo para empezar a Rulo.
 
 ### Flechas y controles de Oficios (4.33.0n)

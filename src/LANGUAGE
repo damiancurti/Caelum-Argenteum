@@ -2310,7 +2310,7 @@ CA_M01_WEAPON_DESC_11 = "Giant gauntlets: Heavy blunt attacks. The secondary add
 CA_M01_WEAPON_DESC_12 = "Bow: Uses arrows. Aim with Zoom or secondary; reload with Reload. I will also teach you to craft batches of ten arrows and their components.";
 CA_M01_WEAPON_DESC_13 = "Carbine: Strong ranged shots with high Air use and slower cadence. Aim and reload; requires cartridges.";
 CA_M01_WEAPON_DESC_14 = "Longbow: Greater range and tighter spread than the bow, with higher Air use. I will also teach you to craft batches of ten arrows and their components.";
-CA_M01_WEAPON_DESC_15 = "Crossbow: Uses bolts; aim with Zoom or secondary and reload with Reload. Slower than the bow.";
+CA_M01_WEAPON_DESC_15 = "Crossbow: Uses bolts; aim with Zoom or secondary and reload with Reload. Slower than a bow. I will teach you to craft batches of ten bolts and their components.";
 CA_M01_WEAPON_DESC_16 = "Staff: An essence implement with directed primary and secondary attacks. Casting spends Anima.";
 CA_M01_ELEMENT_0 = "Fire";
 CA_M01_ELEMENT_1 = "Water";
@@ -2421,7 +2421,7 @@ CA_M01_WEAPON_DESC_11 = "Guanteletes gigantes: Ataques contundentes pesados. El 
 CA_M01_WEAPON_DESC_12 = "Arco: usa flechas. Apuntá con Zoom o el ataque secundario; recargá con Recargar. También te enseñaré a fabricar lotes de diez flechas y sus componentes.";
 CA_M01_WEAPON_DESC_13 = "Carabina: Disparos potentes, con alto gasto de Aire y menor cadencia. Permite apuntar y recargar; necesita cartuchos.";
 CA_M01_WEAPON_DESC_14 = "Arco largo: mayor alcance y precisión que el arco, con mayor gasto de Aire. También te enseñaré a fabricar lotes de diez flechas y sus componentes.";
-CA_M01_WEAPON_DESC_15 = "Ballesta: Usa virotes; apunta con Zoom o el secundario y recarga con Reload. Es más lenta que el arco.";
+CA_M01_WEAPON_DESC_15 = "Ballesta: usa virotes; apuntá con Zoom o el secundario y recargá con Recargar. Es más lenta que el arco. También te enseñaré a fabricar lotes de diez virotes y sus componentes.";
 CA_M01_WEAPON_DESC_16 = "Bastón: Implemento de esencia con ataques principal y secundario dirigidos. Lanzar magia consume Ánima.";
 CA_M01_ELEMENT_0 = "Fuego";
 CA_M01_ELEMENT_1 = "Agua";
@@ -2897,3 +2897,20 @@ CA_M01_SWIM_DONE = "Ya te sumergiste, gastaste Aire y lo recuperaste al respirar
 CA_M01_SWIM_DETAIL_DIVE = "Práctica opcional de respiración: piscina detrás de la mansión, al este. Bajá por los escalones anchos del lado de la mansión. Con el Aire recuperado, cubrí la cabeza un segundo cerca de la escalera y volvé a subir. No hace falta cruzar la piscina.";
 CA_M01_SWIM_DETAIL_RECOVER = "Práctica opcional de respiración: inmersión registrada. Volvé por los mismos escalones hasta sacar la cabeza y respirá tres segundos para recuperar el Aire gastado bajo el agua. No hace falta volver con Ronnie.";
 CA_M01_SWIM_DETAIL_DONE = "Práctica opcional de respiración completada: inmersión y recuperación del Aire gastado bajo el agua.";
+
+// 4.33.0ac: virotes y orientación de municiones.
+[enu default]
+CA_CRAFTING_TEN_BOLTS = "10 bolts";
+CA_M01_AMMO_ASK = "How do I make ammunition?";
+CA_M01_AMMO_GENERAL = "Bows use arrows, crossbows use bolts and carbines use bullets. When choosing a bow or crossbow, you also learn its ammunition recipe and components. At a Workbench, check the Ammunition filter in Trades: you can only make recipes you know.";
+CA_M01_BOLTS_HELP = "I taught you bolts for your crossbow. Use the Workbench in my room or upstairs: Trades, Ammunition filter, 10 bolts. You need shafts and bronze points, or wood, raw copper and raw tin with the component recipes. Each batch gives ten bolts weighing 50 g each. Efficiency changes materials and time. Closing pauses the work; cancel it yourself if needed.";
+CA_M01_ARROWS_HELP = "I taught you arrows for your bow. Use the Workbench in my room or upstairs: Trades, Ammunition filter, 10 arrows. You need shafts and bronze points, or wood, raw copper and raw tin with the component recipes. Each batch gives ten arrows weighing 50 g each. Closing pauses the work; cancel it yourself if needed.";
+CA_M01_BOLTS_DETAIL = "Crossbow ammunition: the 10 bolts recipe and components are learned. Use the Workbench in Ronnie's room or upstairs; Trades > Ammunition. Materials: shafts and bronze points, or wood, raw copper and raw tin. Crafting ammunition does not replace the first weapon or add a quest requirement.";
+
+[es]
+CA_CRAFTING_TEN_BOLTS = "10 virotes";
+CA_M01_AMMO_ASK = "¿Cómo fabrico munición?";
+CA_M01_AMMO_GENERAL = "Los arcos usan flechas, las ballestas virotes y las carabinas balas. Al elegir un arco o una ballesta también aprendés su munición y componentes. En el Banco de Trabajo, revisá el filtro Municiones de Oficios: sólo podés fabricar recetas que conocés.";
+CA_M01_BOLTS_HELP = "Te enseñé los virotes para tu ballesta. Usá el Banco de Trabajo de mi habitación o el del segundo piso: Oficios, filtro Municiones, 10 virotes. Necesitás astas y puntas de bronce, o madera, cobre bruto y estaño bruto con las recetas de componentes. Cada lote da diez virotes de 50 g. La eficiencia cambia materiales y tiempo. Cerrar pausa el trabajo; si querés cancelarlo, hacelo vos.";
+CA_M01_ARROWS_HELP = "Te enseñé las flechas para tu arco. Usá el Banco de Trabajo de mi habitación o el del segundo piso: Oficios, filtro Municiones, 10 flechas. Necesitás astas y puntas de bronce, o madera, cobre bruto y estaño bruto con las recetas de componentes. Cada lote da diez flechas de 50 g. Cerrar pausa el trabajo; si querés cancelarlo, hacelo vos.";
+CA_M01_BOLTS_DETAIL = "Munición de ballesta: aprendiste 10 virotes y sus componentes. Usá el Banco de Trabajo de Ronnie o el del segundo piso; Oficios > Municiones. Materiales: astas y puntas de bronce, o madera, cobre bruto y estaño bruto. Fabricar munición no sustituye la primera arma ni añade un requisito de misión.";

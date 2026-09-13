@@ -1,6 +1,21 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ab — 2026-09-12.
+Versión documental: 4.33.0ac — 2026-09-12.
+
+## Virotes de ballesta — 4.33.0ac
+
+El autor aprobó todas las pruebas de 0ab y pidió continuar. Se agrega la receta
+130 de virotes después de las 130 anteriores. Diez virotes de 50 g usando la
+estructura de asta/punta de bronce de las flechas, con eficiencia por capa.
+La elección de ballesta enseña receta y dependencias, también en guardados
+anteriores; no concede munición ni reemplaza la primera arma. El crafting
+nativo cubre salida personal, reservas, pausas, cancelación y persistencia.
+Guía de Ronnie en su taller, icono de virotes en Oficios y orientación en
+Detalle. Las flechas conservan índice, valores y salida propios.
+Se actualizan README y las cinco fuentes. Entrega por copia sobre 0ab con
+PRUEBAS_4_33_0ac.txt. Evidencia en PROJECT.md. Quedan acceso a recetas de
+armaduras/sellos T1 y definir composición/proceso de balas; no se inventan
+materiales de balas a partir de su peso. Agua y V5 conservan su lugar.
 
 ## Respiración en piscina — 4.33.0ab
 

@@ -5,11 +5,25 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ab.** Apply over the complete **4.33.0aa** project.
-The author approved all 0aa tests. This release adds Ronnie's optional pool
-breathing practice, the next tutorial block. MAP01 remains the systems test environment.
+**Current release: 4.33.0ac.** Apply over the complete **4.33.0ab** project.
+The author approved all 0ab tests. This release adds crossbow bolt crafting and
+Ronnie's ammunition guidance. MAP01 remains the systems test environment.
 
 ## Implemented
+
+- Choosing Ronnie's crossbow also teaches the 10-bolt recipe and its component
+  dependencies. Previous crossbow choices receive that knowledge on load,
+  including saves outside MAP01. No ammunition or materials are granted.
+- Bolts use the native 50 g item and the T1 shaft/bronze-point structure used
+  for arrows: 350/150 material units per batch before assembly losses. All
+  three efficiencies, layer choices and raw-material crafting use native tasks.
+- Batches deliver exactly ten bolts to personal inventory without requiring
+  the Box. Reservations, pause/resume, cancellation and saves remain native.
+  Bolts load and fire through the existing crossbow. Crafting ammunition cannot
+  replace the first crafted weapon. Arrows retain their separate recipe/output.
+- Trades shows the bolt icon/name in Ammunition. Ronnie explains the process
+  under his workshop dialogue; Quest Detail guides crossbow characters.
+  The catalogue appends recipe 130 and preserves all previous recipe indices.
 
 - After returning Ronnie's sword, ask how to breathe while swimming and accept
   the optional practice. The pool behind the mansion has wide steps on the
@@ -223,8 +237,9 @@ breathing practice, the next tutorial block. MAP01 remains the systems test envi
 ## Planned
 
 Next: finish the remaining mechanics and tutorial coverage in MAP01, following
-PROJECT.md. Cartridge/bolt recipes, armor/Seal recipe acquisition and safe-water
-collection/processing remain planned. Food/water, Air/movement, load management and pool breathing are now
+PROJECT.md. Armor/Seal recipe acquisition and safe-water collection/processing remain
+planned. Bullet crafting still needs its material composition and process
+defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. New maps, sewer encounters and campaign layout are deferred while
 systems testing is the priority; MAP02 keeps its accepted arrival.
 Material coverage remains quantified, with no new leather source or loot change.
@@ -241,15 +256,15 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-0aa is author-approved. Focused 0ab checks are in PRUEBAS_4_33_0ab.txt;
+0ab is author-approved. Focused 0ac checks are in PRUEBAS_4_33_0ac.txt;
 native engine evidence and limits are in PROJECT.md.
-All maps and audiovisual resources remain byte-identical to 0aa.
+All maps and audiovisual resources remain byte-identical to 0ab.
 
 ## Build and run
 
-Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ab patch
-into the complete **4.33.0aa** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ab.txt** outside docs.
+Close GZDoom. Copy **src**, **docs** and **README.md** from the 0ac patch
+into the complete **4.33.0ab** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0ac.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

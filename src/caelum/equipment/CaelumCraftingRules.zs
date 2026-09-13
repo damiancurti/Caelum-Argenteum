@@ -187,9 +187,27 @@ class CaelumCraftingRules : Object
         ) == CaelumConstants.CRAFTING_STATION_NONE;
     }
 
-    static int GetUnifiedRecipeKind(int recipeIndex)
+    static int GetRecipeAmmunitionType(int recipeIndex)
     {
         if (recipeIndex == CaelumConstants.CRAFTING_ARROW_RECIPE)
+            return CaelumConstants.AMMUNITION_ARROW;
+        if (recipeIndex == CaelumConstants.CRAFTING_BOLT_RECIPE)
+            return CaelumConstants.AMMUNITION_BOLT;
+        return -1;
+    }
+
+    static int GetRecipeAmmunitionBatch(int recipeIndex)
+    {
+        if (recipeIndex == CaelumConstants.CRAFTING_ARROW_RECIPE)
+            return CaelumConstants.CRAFTING_ARROW_BATCH;
+        if (recipeIndex == CaelumConstants.CRAFTING_BOLT_RECIPE)
+            return CaelumConstants.CRAFTING_BOLT_BATCH;
+        return 0;
+    }
+
+    static int GetUnifiedRecipeKind(int recipeIndex)
+    {
+        if (GetRecipeAmmunitionType(recipeIndex) >= 0)
             return CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
         int resolved = Clamp(recipeIndex, 0,
             CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1);

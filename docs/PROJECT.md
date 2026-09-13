@@ -1,8 +1,29 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ab — 2026-09-12.
+Versión documental: 4.33.0ac — 2026-09-12.
 
-## Estado actual: 4.33.0ab
+## Estado actual: 4.33.0ac
+
+El autor aprobó todas las pruebas de 0ab. Se incorpora fabricación de virotes:
+Ronnie enseña la receta y dependencias al elegir ballesta. También se incorpora
+al conocimiento de guardados con esa elección, dentro y fuera de MAP01. No da
+munición, materiales ni otro préstamo, y no cambia la primera arma elegida.
+
+Receta 130, anexada a las 130 anteriores. Diez virotes nativos de 50 g por lote;
+se adopta la misma estructura T1 de flechas: 70% asta y 30% punta de bronce.
+Merma y tiempo de cada capa se calculan por las reglas vigentes, sin otros
+materiales. Banco de Trabajo de Ronnie o segundo piso, filtro Municiones.
+Salida personal sin Caja obligatoria, reservas y tareas nativas. Guía en el
+apartado de taller de Ronnie y en Detalle para quien eligió ballesta.
+
+Aplicar sobre 0ab con src, docs y README.md. Sólo archivos nuevos/modificados
+más PRUEBAS_4_33_0ac.txt. Los mapas y recursos audiovisuales se conservan.
+Siguiente cobertura: adquisición de recetas de armaduras/sellos T1. Las balas
+necesitan definir composición y procesamiento antes de su receta; no se deduce
+una receta completa de su masa actual de 3 g. Agua requiere su mecánica de
+recolección/potabilización. Calendario/descanso y arquitectura siguen en sus hitos.
+
+## Base 4.33.0ab — aprobada por el autor
 
 El autor aprobó todas las pruebas de 0aa. Se implementa el siguiente tramo
 pendiente de Ronnie: respiración en la piscina existente, detrás de la mansión
@@ -180,9 +201,9 @@ La base 0n aprobada incluye:
   actualizados. Se conserva la devolución del bastón ante Caella de 0m.
 
 Reparación, alimento/agua, Aire/movimiento, carga y respiración en piscina están
-implementados como prácticas opcionales. Quedan adquisición de recetas de
-cartuchos/virotes, armaduras/sellos y recolección/potabilización de agua; no
-bloquean las ramas aceptadas.
+implementados como prácticas opcionales. Virotes y su conocimiento están
+implementados en 0ac. Quedan recetas de armaduras/sellos, composición y receta
+de balas y recolección/potabilización de agua; no bloquean las ramas aceptadas.
 
 Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
 siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
@@ -256,7 +277,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
 | 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
 | 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga incluidos en la base 0aa aprobada. Respiración en piscina implementada en 0ab, pendiente de prueba del autor. Quedan cartuchos/virotes, acceso a recetas de armaduras/sellos y recolección/potabilización de agua. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
+| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga incluidos en la base 0aa aprobada. Respiración en piscina 0ab aprobada. Virotes y enseñanza a la ballesta implementados en 0ac, pendiente de prueba del autor. Quedan acceso a recetas de armaduras/sellos, definir composición/proceso de balas para su receta y recolección/potabilización de agua. La cobertura de cuero no garantiza todos los conjuntos a baja eficiencia; definir fuentes nuevas antes de prometerla. No bloquear ramas ya aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
@@ -368,16 +389,59 @@ antes de escribir y se informa con su ruta.
 ## Aplicación y mantenimiento
 
 Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
-completa 0aa y aceptar reemplazos. Combinar carpetas; no sustituir src por una
+completa 0ab y aceptar reemplazos. Combinar carpetas; no sustituir src por una
 carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ab.txt.
+El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ac.txt.
 
 Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
 instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
 del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
 pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
 
-## Validación de 4.33.0ab
+## Validación de 4.33.0ac
+
+129 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
+47 en español, 47 en inglés, 17 al recargar una tarea pendiente, 2 tras guardar
+su resultado, 9 al actualizar una tarea de flechas de 0ab y 7 al actualizar un
+guardado 0ab que ya estaba en MAP02. Las recargas cuentan sólo las comprobaciones
+nuevas, sin volver a sumar el contador persistido por la escena.
+
+Elección real de ballesta por las páginas USDF de Ronnie, consulta de munición
+y Detalle en ambos idiomas. Enseñanza de receta y dependencias sin objetos
+gratis. En el Banco de Trabajo real se comprobaron lotes de diez al 25%, 50% y
+100%, desde componentes y desde materias primas, con consumo de hojas del plan
+y salida personal sin Caja. Reservas impiden descartar materiales; cerrar
+pausa, guardar conserva tiempo/reservas y cancelar libera sin consumir.
+Materiales insuficientes, receta desconocida y capacidad de pila insuficiente
+no producen munición ni consumen materiales. La prueba de límite reduce el
+máximo de pila sólo en la escena privada; el valor del juego no cambia.
+
+Fabricación nativa de ballesta, recarga y disparo: se consume un virote y se
+crea CaelumBoltProjectile; la pila de flechas se conserva. La munición no
+acredita ni reemplaza la primera arma. El viaje de desarrollo a MAP02 conserva
+recetas y equipo viajero; no sustituye la salida narrativa, cuya limpieza de
+objetos físicos sigue vigente.
+
+Los guardados antiguos se crearon con fuentes auténticas 0ab, luego se
+superpuso 0ac en la misma ruta. Se conservaron los 130 conocimientos anteriores,
+etapas, lecciones, El Loco y la identidad de la primera arma. La receta 130 se
+incorporó tanto en MAP01 como en MAP02. La tarea antigua siguió siendo de
+flechas, con reservas y tiempo intactos: aun seleccionando virotes después de
+cargar, produjo diez flechas una sola vez. Repetir la enseñanza no duplica nada.
+
+Las escenas privadas preparan etapas, materiales y equipo; adelantan el tiempo
+de fabricación mediante el helper diagnóstico existente. Verifican el proceso
+nativo y su persistencia, no el recorrido completo ni la espera a tiempo real
+del autor. Revisión visual a 1280×720: guía de Ronnie y receta de virotes con
+su icono, árbol y estaciones legibles. Validador aprobado: cinco documentos,
+74 audios, doce modelos de estaciones y 24 textos españoles de Caella.
+
+Mapas y recursos audiovisuales conservan los bytes de 0ab. El delta pasa CRC
+y reconstrucción exacta sobre esa base: quince archivos modificados más
+PRUEBAS_4_33_0ac.txt, sin ejecutores, escenas privadas ni PK3. Queda la prueba
+del autor en Windows con sus guardados, controles y tiempos habituales.
+
+## Validación de 4.33.0ab — aprobada por el autor
 
 109 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
 33 en español, 33 en inglés, 15 al recargar durante la inmersión, 11 durante
@@ -410,7 +474,7 @@ audiovisuales conservan los bytes de 0aa. La revisión de código confirma que
 los observadores no modifican costes, regeneración o requisitos de misión.
 El delta pasa CRC y reconstrucción exacta sobre 0aa: trece archivos modificados
 y PRUEBAS_4_33_0ab.txt, sin ejecutores, escenas privadas ni PK3.
-Pendiente del autor: pruebas del TXT en Windows con su personaje y guardados.
+El autor confirmó que todas las pruebas de 0ab dieron correcto.
 
 ## Validación de 4.33.0aa — aprobada por el autor
 

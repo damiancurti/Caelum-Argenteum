@@ -6017,7 +6017,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (DerivedStats == null) { return false; }
         RefreshCarriedInventorySummary();
-        bool personalOutput = CraftingSelectionRecipe == CaelumConstants.CRAFTING_ARROW_RECIPE
+        bool personalOutput = CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0
             || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
         double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
@@ -7018,7 +7018,7 @@ class CaelumPlayer : DoomPlayer
         }
         else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
         {
-            CraftingTaskReservedBoxSlots = (CraftingSelectionRecipe == CaelumConstants.CRAFTING_ARROW_RECIPE || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
+            CraftingTaskReservedBoxSlots = (CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0 || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
             if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
             {
                 ClearCraftingTaskData();
@@ -7237,7 +7237,8 @@ class CaelumPlayer : DoomPlayer
     String ResolveCraftingPreviewIconPath()
     {
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-            return "graphics/caelum/icons/ca_arrow_ammo.png";
+            return CraftingSelectionRecipe == CaelumConstants.CRAFTING_BOLT_RECIPE
+                ? "graphics/caelum/icons/ca_bolt_ammo.png" : "graphics/caelum/icons/ca_arrow_ammo.png";
         if (CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
             || CraftingSelectedRecipeKind
@@ -7668,10 +7669,12 @@ class CaelumPlayer : DoomPlayer
         }
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         {
-            // Diez flechas nativas de 50 g: 70 % asta y 30 % punta de bronce.
-            // La merma se calcula en el bloque común y en cada dependencia.
+            // Flechas y virotes conservan sus masas nativas y comparten la
+            // base T1: 70 % asta y 30 % punta. Merma por capa en el bloque común.
             CraftingSelectionTier = 1; CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
-            CraftingFinalWeight = CaelumConstants.ARROW_AMMO_UNIT_WEIGHT * CaelumConstants.CRAFTING_ARROW_BATCH;
+            CraftingFinalWeight = GetAmmunitionUnitWeight(
+                CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe))
+                * CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
             CraftingBasicMaterialType = CaelumConstants.MATERIAL_SHAFT;
             CraftingTierMaterialType = CaelumConstants.MATERIAL_POINT;
             CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, 0.7);
@@ -8719,24 +8722,28 @@ class CaelumPlayer : DoomPlayer
         RefreshEquipmentSelectionPreview();
     }
 
-    void CraftSelectedArrows()
+    void CraftSelectedAmmunition()
     {
         if (!CraftingTaskCompleting || !CraftingSelectedInfrastructureAvailable
             || !ValidateCraftingTaskReservations())
         { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
-        let arrows = Inventory(FindInventory("CaelumArrowAmmo"));
-        bool created = arrows == null;
-        if (created) arrows = Inventory(Spawn("CaelumArrowAmmo", Pos, NO_REPLACE));
-        if (arrows == null) return;
-        int oldAmount = created ? 0 : arrows.Amount;
-        if (oldAmount > arrows.MaxAmount - CaelumConstants.CRAFTING_ARROW_BATCH
+        int ammoType = CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe);
+        int batch = CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
+        if (ammoType < 0 || batch <= 0) return;
+        Name ammoClass = GetAmmunitionClassName(ammoType);
+        let ammunition = Inventory(FindInventory(ammoClass));
+        bool created = ammunition == null;
+        if (created) ammunition = Inventory(Spawn(ammoClass, Pos, NO_REPLACE));
+        if (ammunition == null) return;
+        int oldAmount = created ? 0 : ammunition.Amount;
+        if (oldAmount > ammunition.MaxAmount - batch
             || !ConsumeCraftingTaskReservations())
         {
-            if (created) arrows.Destroy();
+            if (created) ammunition.Destroy();
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return;
         }
-        arrows.Amount = oldAmount + CaelumConstants.CRAFTING_ARROW_BATCH;
-        if (created) arrows.AttachToOwner(self);
+        ammunition.Amount = oldAmount + batch;
+        if (created) ammunition.AttachToOwner(self);
         // Munición no cuenta como primera arma ni sustituye su ItemId.
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
         OnNativeInventoryChanged();
@@ -8771,7 +8778,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-        { CraftSelectedArrows(); return; }
+        { CraftSelectedAmmunition(); return; }
         if (CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {

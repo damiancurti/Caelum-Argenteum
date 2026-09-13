@@ -284,6 +284,10 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "ronnie_ammo")
+                text = StringTable.Localize(user.MainM00StarterOptionSnapshot == 15 ? "CA_M01_BOLTS_HELP"
+                    : (user.MainM00StarterOptionSnapshot == 12 || user.MainM00StarterOptionSnapshot == 14)
+                    ? "CA_M01_ARROWS_HELP" : "CA_M01_AMMO_GENERAL", false);
             if (mCurNode.UserData ~== "ronnie_swim_practice")
                 text = StringTable.Localize(user.MainM00SwimLessonCompleteSnapshot ? "CA_M01_SWIM_DONE"
                     : user.MainM00SwimLessonSubmergedSnapshot ? "CA_M01_SWIM_RECOVER" : "CA_M01_SWIM_PRACTICE", false);

@@ -639,7 +639,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 1;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 2;
     const CRAFTING_RECIPE_BOOK_VERSION = 4;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
@@ -653,6 +653,9 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_KIND_AMMUNITION = 8;
     const CRAFTING_ARROW_RECIPE = 129;
     const CRAFTING_ARROW_BATCH = 10;
+    // Se anexa: los índices 0..129 conservan significado y conocimiento.
+    const CRAFTING_BOLT_RECIPE = 130;
+    const CRAFTING_BOLT_BATCH = 10;
     // El filtro 0 muestra el catálogo completo; los siguientes valores se
     // alinean con RecipeKind + 1 para mantener una sola lista autoritativa.
     const CRAFTING_RECIPE_FILTER_ALL = 0;

@@ -172,6 +172,11 @@ class CaelumJournalOverlay : EventHandler
             }
             text = text .. "\n\n" .. StringTable.Localize("CA_M01_RULO_EQUIVALENT_TEXT", false);
         }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00StarterOptionSnapshot == 15
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_BOLTS_DETAIL", false);
         bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
             && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
@@ -1366,7 +1371,8 @@ class CaelumJournalOverlay : EventHandler
             return StringTable.Localize("CA_CRAFTING_RECIPE_UNKNOWN", false);
         }
         if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-            return StringTable.Localize("CA_CRAFTING_TEN_ARROWS", false);
+            return StringTable.Localize(localPlayer.CraftingSelectionRecipe == CaelumConstants.CRAFTING_BOLT_RECIPE
+                ? "CA_CRAFTING_TEN_BOLTS" : "CA_CRAFTING_TEN_ARROWS", false);
         if (localPlayer.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
         {

@@ -2060,6 +2060,7 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
     }
     page
@@ -2154,6 +2155,14 @@ conversation
         userstring = "ronnie_swim_practice";
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_ammo";
+        userstring = "ronnie_ammo";
+        name = "$CA_RONNIE_NAME";
+        dialog = "$CA_M01_AMMO_GENERAL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
