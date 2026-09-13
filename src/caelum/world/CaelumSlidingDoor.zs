@@ -70,6 +70,7 @@ class CaelumSlidingDoorLeaf : Actor
     int LockedSoundCooldown;
     bool DoorRequested;
     bool RuloArenaLocked;
+    CaelumFactionCondition AccessCondition;
 
     override void PostBeginPlay()
     {
@@ -108,6 +109,14 @@ class CaelumSlidingDoorLeaf : Actor
             }
             return false;
         }
+
+        // Validar el grupo entero antes de mover ninguna hoja. Una hoja sin
+        // condición no puede servir para eludir la condición de su compañera.
+        let conditions = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
+        CaelumSlidingDoorLeaf guardedLeaf;
+        while ((guardedLeaf = CaelumSlidingDoorLeaf(conditions.Next())) != null)
+            if (guardedLeaf.args[0] == args[0]
+                && !CaelumFactionCondition.Require(CaelumPlayer(user), guardedLeaf.AccessCondition)) return false;
 
         int groupLeafCount = 0;
         bool groupWasRequested = false;

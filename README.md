@@ -5,13 +5,37 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0am.** Apply over the complete **4.33.0al** project.
-The author approved all 0ai tests and keeps the current attributes unchanged.
-0am fixes the inactive conversation reference identified by the author's log
-and restores section changes at the ends of inventory filters and quest lists.
-MAP01 remains the systems test environment. Author validation is pending.
+**Current release: 4.33.0an.** Apply over the complete **4.33.0am** project.
+The author approved the capture, Seal and Journal corrections and the optional
+quest chain, including rewards, abandonment prerequisites and map-change failure.
+0an connects reputation and independent membership to reusable dialogue, door
+and trade requirements. Existing attribute rules remain accepted.
+
+To try the new block, save first, then enter `give CaelumDebugReputationTrial`
+in the console. After activation, **Journal > Reputation > F/Y** reopens it.
+The test menu offers information, a physical door, trade and five selectable
+standings. Presets change the saved Gendarmeria standing; trading uses real
+items and coins. The trial does not give the Box or money. See
+**PRUEBAS_4_33_0an.txt** for the complete Spanish test sequence.
 
 ## Implemented
+
+- Optional serializable faction conditions declare a stable faction id, an
+  inclusive reputation minimum and an independent membership requirement.
+  Missing conditions preserve existing content; invalid configured conditions
+  deny access. Checks read the requesting player's persistent record.
+- Dialogue entry, grouped sliding doors and merchant sessions share these
+  conditions. Every door leaf is checked before a group moves. Trade rechecks
+  access before moving coins or goods; a changed quote requires confirmation
+  at the refreshed price.
+- A separate reputation discount uses the existing 140% buy / 60% sell margins
+  instead of normal 150% / 50%. It is recalculated from the active service's
+  condition, never becomes the saved negotiated discount, and does not stack.
+- The explicitly enabled trial uses Gendarmeria only: information needs 25,
+  the door needs membership and 25, trade needs 0, and its discount needs 25.
+  These are test settings, not narrative ranks or global faction thresholds.
+  Existing Limbo residents retain their neutral, unassigned faction behavior.
+
 
 - The Fool interaction and capture animation check whether the referenced NPC
   is actually in conversation. A retained reference to an inactive NPC no longer
@@ -346,8 +370,10 @@ MAP01 remains the systems test environment. Author validation is pending.
 
 ## Planned
 
-After resolving the reported capture failure and author acceptance: connect reputation to reusable dialogue/access/trade conditions,
-then verify integration before starting the V4.34 world/travel foundations.
+After author acceptance of 0an, close the V4.33 integration checks for quests,
+reputation, saves and travel before starting the V4.34 world/travel foundations.
+Narrative faction assignments, rank thresholds and cross-faction relations
+still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
@@ -367,23 +393,17 @@ world persistence and the complete campaign are tracked in PROJECT.md.
 
 ## Pending validation
 
-All 0ai tests are author-approved. The 0al log shows a reachable essence at
-32.6 map units, valid requirements, no channel and an inactive NPC reference.
-That state is reproduced in a controlled native-engine fixture: original 0al
-rejects Use; 0am opens the dialogue and captures on explicit confirmation.
-It does not establish which earlier dialogue left the author's reference.
-
-Native keyboard tests cover both navigation edges, one and multiple quests,
-skipped undiscovered entries and retained selections. Capture/save/exit
-verification and its limits are recorded in PROJECT.md.
-See PRUEBAS_4_33_0am.txt for application and author checks on Windows.
-Maps, art, audio, balance and approved attribute formulas remain unchanged.
+0am and its optional quest tests are author-approved. 0an passes native
+GZDoom 4.14.2 checks for conditions, transactions, controls, old saves, new
+condition serialization and MAP02 travel; scenarios and limits are recorded
+in PROJECT.md. The author's Windows playtest of 0an remains pending.
+Maps, art, audio, approved attributes and campaign progression are unchanged.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0am
-patch into the complete **4.33.0al** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0am.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0an
+patch into the complete **4.33.0am** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_33_0an.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

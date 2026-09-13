@@ -2,6 +2,18 @@
 // la IA la use después de su filtrado espacial; nunca busca actores globales.
 class CaelumFactionRules : Object
 {
+    static clearscope String GetNameKey(int factionId)
+    {
+        switch (factionId)
+        {
+            case CaelumConstants.FACTION_GENDARMERIA: return "CA_FACTION_GENDARMERIA";
+            case CaelumConstants.FACTION_SETTLEMENTS: return "CA_FACTION_SETTLEMENTS";
+            case CaelumConstants.FACTION_CARAVANS: return "CA_FACTION_CARAVANS";
+            case CaelumConstants.FACTION_POLITICAL_ACTORS: return "CA_FACTION_POLITICAL_ACTORS";
+        }
+        return "CA_REP_UNKNOWN_FACTION";
+    }
+
     static bool IsValidFactionId(int factionId)
     {
         return factionId >= 0 && factionId < CaelumConstants.FACTION_COUNT;

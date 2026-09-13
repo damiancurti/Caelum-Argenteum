@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0am — 2026-09-13.
+Versión documental: 4.33.0an — 2026-09-13.
+
+0an conserva byte a byte mapas, modelos, gráficos, fuentes, música y audio
+de 0am. La prueba de reputación reutiliza la hoja de puerta deslizante y los
+menús nativos existentes; guía y marcador de habilitación son invisibles.
+LANGUAGE incorpora español/inglés para requisitos, estados, ayuda del Diario
+y comercio de prueba. Este comercio muestra título y etiquetas genéricos,
+con una indicación distinta para la rebaja temporal por reputación. No se
+presenta como un nuevo NPC de la historia ni necesita arte o voces nuevas.
+Se inspeccionan los renders nativos de ambos idiomas; evidencia en PROJECT.md.
 
 0am conserva todos los recursos gráficos, mapas, modelos, fuentes y audio
 de 0al. Las ayudas del Diario en español e inglés añaden una segunda línea

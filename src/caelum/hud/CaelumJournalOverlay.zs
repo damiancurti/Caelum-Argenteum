@@ -820,6 +820,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_PALOMO_MERCHANT_ACTION_FAILED_RESERVED";
             case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION:
                 return "CA_PALOMO_MERCHANT_ACTION_FAILED_SESSION";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED:
+                return "CA_REP_TRADE_PRICE_CHANGED";
             default:
                 return "CA_PALOMO_MERCHANT_ACTION_NONE";
         }
@@ -1444,7 +1446,8 @@ class CaelumJournalOverlay : EventHandler
         DrawCenteredText(
             SmallFont, Font.CR_GRAY, 320.0, 298.0,
             StringTable.Localize(
-                "CA_REPUTATION_FOUNDATION_NOTE", false
+                localPlayer.JournalReputationTrialEnabled
+                    ? "CA_REP_TRIAL_JOURNAL_HINT" : "CA_REPUTATION_FOUNDATION_NOTE", false
             )
         );
     }
@@ -1913,27 +1916,31 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
     {
+        bool legacyMerchant = localPlayer.PalomoMerchantTitleKey.Length() == 0
+            || localPlayer.PalomoMerchantTitleKey == "CA_PALOMO_MERCHANT_TITLE";
         Screen.Dim(0x05070A, 0.92, 0, 0,
             Screen.GetWidth(), Screen.GetHeight());
         DrawPanel(16.0, 12.0, 608.0, 336.0);
         DrawCenteredText(
             TitleFont, Font.CR_GOLD, 320.0, 20.0,
-            StringTable.Localize("CA_PALOMO_MERCHANT_TITLE", false)
+            StringTable.Localize(localPlayer.PalomoMerchantTitleKey.Length() > 0
+                ? localPlayer.PalomoMerchantTitleKey : "CA_PALOMO_MERCHANT_TITLE", false)
         );
-        if (localPlayer.PalomoMerchantDiscountGranted)
+        if (localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount)
         {
             DrawCenteredText(
                 SmallFont, Font.CR_CYAN, 320.0, 44.0,
                 StringTable.Localize(
-                    "CA_PALOMO_MERCHANT_DISCOUNT_ACTIVE", false
+                    localPlayer.PalomoMerchantReputationDiscount && !localPlayer.PalomoMerchantDiscountGranted
+                        ? "CA_REP_TRADE_DISCOUNT" : "CA_PALOMO_MERCHANT_DISCOUNT_ACTIVE", false
                 )
             );
         }
 
         String modeKey = localPlayer.PalomoMerchantMode
                 == CaelumConstants.PALOMO_MERCHANT_MODE_SELL
-            ? "CA_PALOMO_MERCHANT_MODE_SELL"
-            : "CA_PALOMO_MERCHANT_MODE_BUY";
+            ? (legacyMerchant ? "CA_PALOMO_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_SELL")
+            : (legacyMerchant ? "CA_PALOMO_MERCHANT_MODE_BUY" : "CA_MERCHANT_MODE_BUY");
         DrawTextLine(
             TextFont, Font.CR_GOLD, 54.0, 62.0,
             String.Format(
@@ -1954,7 +1961,7 @@ class CaelumJournalOverlay : EventHandler
             InventoryFont, Font.CR_WHITE, 360.0, 88.0,
             String.Format(
                 "%s: %d c",
-                StringTable.Localize("CA_PALOMO_MERCHANT_CASH", false),
+                StringTable.Localize(legacyMerchant ? "CA_PALOMO_MERCHANT_CASH" : "CA_MERCHANT_CASH", false),
                 localPlayer.PalomoMerchantWalletCopper
             )
         );
@@ -2001,7 +2008,7 @@ class CaelumJournalOverlay : EventHandler
                     "%d c",
                     CaelumEconomyRules.GetPalomoMerchantLotPrice(
                         merchantItem, 1, localPlayer.PalomoMerchantMode,
-                        localPlayer.PalomoMerchantDiscountGranted
+                        localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount
                     )
                 )
             );
@@ -2041,7 +2048,7 @@ class CaelumJournalOverlay : EventHandler
         );
         DrawCenteredText(
             SmallFont, Font.CR_GRAY, 320.0, 329.0,
-            StringTable.Localize("CA_PALOMO_MERCHANT_HELP", false)
+            StringTable.Localize(legacyMerchant ? "CA_PALOMO_MERCHANT_HELP" : "CA_REP_TRIAL_TRADE_HELP", false)
         );
     }
 
@@ -2195,6 +2202,13 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage != 3 && e.KeyScan == InputEvent.Key_Tab)
         {
             SetJournalOpen(false);
+        }
+        else if (currentPage == 5 && localPlayer.JournalReputationTrialEnabled
+            && (e.KeyChar == 102 || e.KeyChar == 70 || e.KeyString ~== "f"
+                || e.KeyScan == InputEvent.Key_Pad_Y))
+        {
+            SetJournalOpen(false);
+            SendNetworkEvent("ca_reputation_trial");
         }
         else if (currentPage == 4
             && (e.KeyChar == 102 || e.KeyChar == 70 || e.KeyString ~== "f"
@@ -2424,6 +2438,10 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_social_refresh")
         {
             requestingPlayer.RefreshSocialJournalSnapshot();
+        }
+        else if (e.Name == "ca_reputation_trial")
+        {
+            CaelumReputationTrialState.Open(requestingPlayer);
         }
         else if (e.Name == "ca_quest_activate")
         {

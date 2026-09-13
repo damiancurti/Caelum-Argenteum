@@ -2934,3 +2934,43 @@ conversation
         goodbye = "$CA_M01_RETURN_CONTINUE";
     }
 }
+
+// 4.33.0an: demostración explícita; ningún NPC narrativo usa estas páginas.
+conversation
+{
+    id = 43322;
+    class = "CaelumReputationConversationMenu";
+    page
+    {
+        pagename = "rep_trial_hub"; userstring = "rep_trial_hub";
+        name = "$CA_REP_TRIAL_TITLE"; dialog = "$CA_REP_TRIAL_HUB";
+        goodbye = "$CA_REP_TRIAL_CLOSE";
+        choice { text = "$CA_REP_TRIAL_INFO"; giveitem = "CaelumReputationInfoAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_ACCESS"; giveitem = "CaelumReputationAccessAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_TRADE"; giveitem = "CaelumReputationTradeAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_CONFIGURE"; nextpage = "rep_trial_presets"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rep_trial_presets"; userstring = "rep_trial_presets";
+        name = "$CA_REP_TRIAL_TITLE"; dialog = "$CA_REP_TRIAL_PRESETS";
+        goodbye = "$CA_REP_TRIAL_CLOSE";
+        choice { text = "$CA_REP_TRIAL_NEUTRAL"; giveitem = "CaelumReputationNeutralAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_FAVORABLE"; giveitem = "CaelumReputationFavorableAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_MEMBER"; giveitem = "CaelumReputationMemberAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_ADVERSE"; giveitem = "CaelumReputationAdverseAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_MEMBER_NEUTRAL"; giveitem = "CaelumReputationMemberNeutralAction"; closedialog = true; }
+        choice { text = "$CA_REP_TRIAL_BACK"; nextpage = "rep_trial_hub"; closedialog = false; }
+    }
+}
+conversation
+{
+    id = 43323;
+    class = "CaelumReputationConversationMenu";
+    page
+    {
+        pagename = "rep_trial_information"; userstring = "rep_trial_information";
+        name = "$CA_REP_TRIAL_TITLE"; dialog = "$CA_REP_TRIAL_INFORMATION";
+        goodbye = "$CA_REP_TRIAL_CLOSE";
+    }
+}

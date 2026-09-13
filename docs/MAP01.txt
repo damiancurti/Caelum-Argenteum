@@ -1,7 +1,26 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0am — 2026-09-13.
+Versión documental: 4.33.0an — 2026-09-13.
 
-ACTUAL 4.33.0am — ESENCIA Y EXTREMOS DEL DIARIO
+ACTUAL 4.33.0an — CONDICIONES DE REPUTACIÓN
+El autor acepta 0am y valida los encargos opcionales: recompensas, bloqueo de
+Espera tras abandonar Recorrido y fallo de Recorrido al salir sin su objetivo.
+Se conservan captura, salida, controles e infraestructura aceptados.
+
+0an añade reglas reutilizables para diálogo, puerta y comercio. La demostración
+se habilita con give CaelumDebugReputationTrial y se reabre desde TAB >
+Reputación > F/Y. Usa el registro real de Gendarmería con estados seleccionables,
+sin asignar facciones ni reputación a los residentes del Limbo. Sus umbrales
+son sólo de prueba: información 25; puerta 25 y miembro; comercio 0; rebaja 25.
+Guardar antes; instrucciones completas en PRUEBAS_4_33_0an.txt.
+
+La prueba no añade historia, hitos, recompensas ni requisitos a MAIN_M00.
+Guía invisible y puerta temporal sólo aparecen al pedirlos; requieren espacio
+libre y usan la puerta, fuentes y transacción existentes. La geometría, actores
+autoriales, recursos, música y fases de MAP01 y MAP02 se conservan. En MAP02
+puede volver a abrirse la prueba habilitada. No se amplían las alcantarillas.
+Rangos y relaciones narrativas siguen sujetos al diseño posterior del autor.
+
+BASE ACEPTADA 4.33.0am — ESENCIA Y EXTREMOS DEL DIARIO
 El log de 0al identifica un interlocutor guardado cuyo diálogo ya está
 inactivo. A 32,6 MU la esencia es accesible y cumple los requisitos, pero
 esa referencia impedía abrirla. 0am usa el estado real del diálogo al abrir
@@ -19,7 +38,7 @@ crea encargos ni acepta ofertas. Las ayudas muestran la regla de los extremos.
 
 El estado del log se reproduce con las fuentes originales 0al y se captura
 con la corrección. Evidencia y límites en PROJECT.md; aplicación y pruebas
-del autor en PRUEBAS_4_33_0am.txt. Pendiente de su comprobación en Windows.
+del autor en PRUEBAS_4_33_0am.txt. El autor confirma el funcionamiento antes de 0an.
 La geometría y la protección/restauración de infraestructura se conservan.
 
 BASE 4.33.0ak — INFRAESTRUCTURA, CAPTURA Y CONTROLES ANTERIORES

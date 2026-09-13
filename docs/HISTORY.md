@@ -1,6 +1,31 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0am — 2026-09-13.
+Versión documental: 4.33.0an — 2026-09-13.
+
+## Condiciones reutilizables de reputación — 4.33.0an
+
+El autor aprueba 0am y los encargos de prueba: obtiene ambas recompensas,
+comprueba que abandonar Recorrido bloquea Espera y que salir antes de completar
+su objetivo lo marca fallido. Autoriza proseguir con el bloque de reputación.
+
+Se incorpora CaelumFactionCondition: id estable, mínimo inclusivo y pertenencia
+independiente. Diálogo, puertas agrupadas y comercio comparten su validación.
+La operación comercial se comprueba antes del intercambio y una cotización
+cambiada requiere nueva confirmación. La rebaja por reputación usa los márgenes
+existentes, se recalcula y permanece separada de la negociada persistente.
+
+La prueba se activa expresamente con give CaelumDebugReputationTrial y se
+reabre con F/Y en Reputación. Ofrece información, puerta física, comercio y
+cinco estados del registro real de Gendarmería. No concede Caja, monedas ni
+recompensas. Sus umbrales sólo sirven para comprobar las condiciones. No se
+asignan facciones a los residentes ni se inventan rangos o relaciones narrativas.
+
+Pasan pruebas de reglas/transacciones, teclado nativo, guardado original 0am,
+serialización de condiciones nuevas y viaje a MAP02; detalle y límites en
+PROJECT.md. El cierre del comercio de prueba se indica con Q/B, respetando
+Esc como pausa del motor. Se conservan controles de extremos, captura, sellos,
+misiones, atributos, mapas y recursos. Entrega delta sobre 0am, README, cinco
+documentos canónicos y PRUEBAS_4_33_0an.txt. Aceptación de 0an pendiente.
 
 ## Referencia inactiva de conversación y extremos del Diario — 4.33.0am
 

@@ -1454,7 +1454,7 @@ CA_FACTION_GENDARMERIA = "Gendarmeria";
 CA_FACTION_SETTLEMENTS = "Settlements";
 CA_FACTION_CARAVANS = "Caravans";
 CA_FACTION_POLITICAL_ACTORS = "Political actors";
-CA_REPUTATION_FOUNDATION_NOTE = "These are technical domains; cross-faction relations remain neutral until authored.";
+CA_REPUTATION_FOUNDATION_NOTE = "Membership and reputation are recorded separately.";
 
 [es]
 CA_CONTROL_JOURNAL = "Abrir/cerrar Diario";
@@ -1522,7 +1522,7 @@ CA_FACTION_GENDARMERIA = "Gendarmería";
 CA_FACTION_SETTLEMENTS = "Asentamientos";
 CA_FACTION_CARAVANS = "Caravanas";
 CA_FACTION_POLITICAL_ACTORS = "Actores políticos";
-CA_REPUTATION_FOUNDATION_NOTE = "Son dominios técnicos; las relaciones cruzadas siguen neutrales hasta ser definidas.";
+CA_REPUTATION_FOUNDATION_NOTE = "La pertenencia y la reputación se registran por separado.";
 
 [enu default]
 CA_CRAFTING_FILTER_PROCESSING = "Processing";
@@ -3114,3 +3114,77 @@ CA_Q_SIDE_DETAIL_FAILED = "La prueba fracasó antes de alcanzar el objetivo. Est
 CA_Q_SIDE_DETAIL_ABANDONED = "Confirmaste el abandono. El progreso queda registrado, pero la misión no puede continuar ni entregar recompensa. Para probar otro final, cargá una partida anterior a la aceptación.";
 CA_Q_SIDE_DETAIL_COMPLETE = "Misión completada. Su recompensa se puede cobrar una sola vez. Abrir el Diario, repetir la acción o viajar no genera otra recompensa.";
 CA_Q_SIDE_REWARD_NOTE = "Recompensa: una constancia de prueba, registrada aquí. No tiene peso, precio, atributos ni uso en la campaña.";
+
+[default]
+CA_REP_UNKNOWN_FACTION = "Unknown faction";
+CA_REP_NEEDS_MEMBER = "Access requires membership in %FACTION%.";
+CA_REP_NEEDS_VALUE = "Requires at least %VALUE% reputation with %FACTION%.";
+CA_REP_UNAVAILABLE = "This service is currently unavailable.";
+CA_REP_TRADE_PRICE_CHANGED = "Prices changed. Check the new total before confirming.";
+CA_REP_TRIAL_TITLE = "Reputation trial";
+CA_REP_TRIAL_HUB = "Gendarmeria: %REP% reputation; %MEMBER%.\n\nInformation: at least 25. Door: member and at least 25. Trade: at least 0; discount from 25. These thresholds apply only to this trial.";
+CA_REP_TRIAL_CLOSE = "Close trial";
+CA_REP_TRIAL_INFO = "Request information (25 reputation)";
+CA_REP_TRIAL_ACCESS = "Open test door (member and 25)";
+CA_REP_TRIAL_TRADE = "Trade (0 reputation; owned Box required)";
+CA_REP_TRIAL_CONFIGURE = "Choose a test state";
+CA_REP_TRIAL_PRESETS = "These choices change your saved Gendarmeria reputation and membership only. Save before testing if you want to restore your previous values. No money, items or campaign progress are granted.";
+CA_REP_TRIAL_NEUTRAL = "Neutral: 0, unaffiliated";
+CA_REP_TRIAL_FAVORABLE = "Favorable: 25, unaffiliated";
+CA_REP_TRIAL_MEMBER = "Member: 25, affiliated";
+CA_REP_TRIAL_ADVERSE = "Adverse: -25, affiliated";
+CA_REP_TRIAL_MEMBER_NEUTRAL = "Member with neutral reputation: 0";
+CA_REP_TRIAL_BACK = "Return to trial";
+CA_REP_TRIAL_INFORMATION = "The information dialogue is open because you meet its reputation requirement. Membership is not required for this option. No quest or reward is granted.";
+CA_REP_TRIAL_TRADE_TITLE = "Test trade";
+CA_REP_TRIAL_JOURNAL_HINT = "Reputation trial enabled | F / Y: open trial";
+CA_REP_TRIAL_BUSY = "Close the current dialogue before opening the trial.";
+CA_REP_TRIAL_SPACE = "Move to open, level ground and try the door again.";
+CA_REP_TRIAL_BOX = "Trading requires your owned Magic Box. The trial does not grant one.";
+CA_REP_TRIAL_ACCESS_OK = "Access granted: the test door opens.";
+CA_REP_TRIAL_DISABLED = "Trial removed. Reputation and membership values are retained.";
+
+[es]
+CA_REP_UNKNOWN_FACTION = "Facción desconocida";
+CA_REP_NEEDS_MEMBER = "El acceso requiere pertenecer a %FACTION%.";
+CA_REP_NEEDS_VALUE = "Requiere al menos %VALUE% de reputación con %FACTION%.";
+CA_REP_UNAVAILABLE = "Este servicio no está disponible en este momento.";
+CA_REP_TRADE_PRICE_CHANGED = "Los precios cambiaron. Revisá el total antes de confirmar.";
+CA_REP_TRIAL_TITLE = "Prueba de reputación";
+CA_REP_TRIAL_HUB = "Gendarmería: reputación %REP%; %MEMBER%.\n\nInformación: mínimo 25. Puerta: miembro y mínimo 25. Comercio: mínimo 0; rebaja desde 25. Estos umbrales corresponden sólo a esta prueba.";
+CA_REP_TRIAL_CLOSE = "Cerrar prueba";
+CA_REP_TRIAL_INFO = "Consultar información (25 de reputación)";
+CA_REP_TRIAL_ACCESS = "Abrir puerta de prueba (miembro y 25)";
+CA_REP_TRIAL_TRADE = "Comerciar (0 de reputación; requiere Caja propia)";
+CA_REP_TRIAL_CONFIGURE = "Elegir un estado de prueba";
+CA_REP_TRIAL_PRESETS = "Estas opciones cambian sólo tu reputación y pertenencia guardadas de Gendarmería. Guardá antes de probar si querés recuperar los valores anteriores. No entregan dinero, objetos ni progreso de campaña.";
+CA_REP_TRIAL_NEUTRAL = "Neutral: 0, sin afiliación";
+CA_REP_TRIAL_FAVORABLE = "Favorable: 25, sin afiliación";
+CA_REP_TRIAL_MEMBER = "Miembro: 25, afiliado";
+CA_REP_TRIAL_ADVERSE = "Adverso: -25, afiliado";
+CA_REP_TRIAL_MEMBER_NEUTRAL = "Miembro con reputación neutral: 0";
+CA_REP_TRIAL_BACK = "Volver a la prueba";
+CA_REP_TRIAL_INFORMATION = "Este diálogo de información se abrió porque cumplís su requisito de reputación. Esta opción no exige pertenencia. No concede misiones ni recompensas.";
+CA_REP_TRIAL_TRADE_TITLE = "Comercio de prueba";
+CA_REP_TRIAL_JOURNAL_HINT = "Prueba de reputación habilitada | F / Y: abrir prueba";
+CA_REP_TRIAL_BUSY = "Cerrá el diálogo actual antes de abrir la prueba.";
+CA_REP_TRIAL_SPACE = "Buscá un lugar abierto y plano y volvé a probar la puerta.";
+CA_REP_TRIAL_BOX = "Para comerciar necesitás tu Caja Mágica. La prueba no entrega una.";
+CA_REP_TRIAL_ACCESS_OK = "Acceso permitido: se abre la puerta de prueba.";
+CA_REP_TRIAL_DISABLED = "Prueba retirada. Se conservan los valores de reputación y pertenencia.";
+
+[default]
+CA_MERCHANT_MODE_BUY = "Buy";
+CA_MERCHANT_MODE_SELL = "Sell";
+CA_MERCHANT_CASH = "Merchant funds";
+CA_REP_TRADE_DISCOUNT = "Reputation discount active · Buy 140% · Sell 60%";
+[es]
+CA_MERCHANT_MODE_BUY = "Comprar";
+CA_MERCHANT_MODE_SELL = "Vender";
+CA_MERCHANT_CASH = "Caja del comerciante";
+CA_REP_TRADE_DISCOUNT = "Rebaja por reputación activa · Compra 140% · Venta 60%";
+
+[default]
+CA_REP_TRIAL_TRADE_HELP = "Up/Down item | Left/Right lot | Space/X buy/sell | Enter/A confirm | Q/B close";
+[es]
+CA_REP_TRIAL_TRADE_HELP = "Arriba/Abajo objeto | Izq./Der. lote | Espacio/X comprar/vender | Enter/A confirmar | Q/B cerrar";

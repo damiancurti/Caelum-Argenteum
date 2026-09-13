@@ -74,6 +74,10 @@ class CaelumPlayer : DoomPlayer
     bool CraftingMenuOpen;
     bool PalomoMerchantMenuOpen;
     bool PalomoMerchantDiscountGranted;
+    bool PalomoMerchantReputationDiscount;
+    CaelumFactionCondition ActivePalomoMerchantRequirement;
+    CaelumFactionCondition ActivePalomoMerchantDiscountCondition;
+    String PalomoMerchantTitleKey;
     int PalomoDiscountChancePercent;
     int PalomoDiscountLastRoll;
     bool PalomoDiscountAutomaticSuccess;
@@ -116,6 +120,7 @@ class CaelumPlayer : DoomPlayer
     bool MainM00AwakeningVisualStarted;
     bool JournalFactionMember[CaelumConstants.FACTION_COUNT];
     int JournalFactionReputation[CaelumConstants.FACTION_COUNT];
+    bool JournalReputationTrialEnabled;
     // Plan transaccional temporal. Contiene el saldo físico final por
     // denominación y permite validar peso/slots antes de mutar inventario.
     int PalomoCurrencyPlanAmount[CaelumConstants.CURRENCY_TYPE_COUNT];
@@ -789,6 +794,7 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshSocialJournalSnapshot()
     {
+        JournalReputationTrialEnabled = FindInventory("CaelumReputationTrialState") != null;
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         MainM00SwimLessonStartedSnapshot = persistentState != null && persistentState.MainM00SwimLessonStarted;
@@ -2902,6 +2908,13 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
+    bool HasPalomoMerchantReputationDiscount()
+    {
+        return ActivePalomoMerchantDiscountCondition != null
+            && CaelumFactionCondition.Check(self, ActivePalomoMerchantDiscountCondition)
+                == CaelumFactionCondition.ALLOWED;
+    }
+
     void RefreshPalomoMerchantSnapshot()
     {
         PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
@@ -2918,6 +2931,8 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsurePalomoDiscountInitialized();
         PalomoMerchantDiscountGranted =
             persistentState.PalomoDiscountGranted;
+        // Esta rebaja es de la sesión: nunca se guarda como rebaja negociada.
+        PalomoMerchantReputationDiscount = HasPalomoMerchantReputationDiscount();
         for (int merchantItem = 0;
             merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT; merchantItem++)
         {
@@ -2941,7 +2956,7 @@ class CaelumPlayer : DoomPlayer
                         >= CaelumEconomyRules.GetPalomoMerchantLotPrice(
                             merchantItem, 1,
                             CaelumConstants.PALOMO_MERCHANT_MODE_SELL,
-                            PalomoMerchantDiscountGranted
+                            PalomoMerchantDiscountGranted || PalomoMerchantReputationDiscount
                         ));
             if (!visible) { continue; }
 
@@ -2968,7 +2983,7 @@ class CaelumPlayer : DoomPlayer
         PalomoMerchantSelectedLotPrice = PalomoMerchantVisibleItemCount > 0
             ? CaelumEconomyRules.GetPalomoMerchantLotPrice(
                 PalomoMerchantSelection, PalomoMerchantSelectedQuantity,
-                PalomoMerchantMode, PalomoMerchantDiscountGranted)
+                PalomoMerchantMode, PalomoMerchantDiscountGranted || PalomoMerchantReputationDiscount)
             : 0;
         RefreshCarriedInventorySummary();
     }
@@ -2978,18 +2993,25 @@ class CaelumPlayer : DoomPlayer
         if (!PalomoMerchantMenuOpen || ActivePalomoMerchant == null
             || ActivePalomoMerchant.health <= 0 || health <= 0) { return false; }
         return Distance3D(ActivePalomoMerchant)
-            <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE;
+            <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
+            && CaelumFactionCondition.Check(self, ActivePalomoMerchantRequirement)
+                == CaelumFactionCondition.ALLOWED;
     }
 
-    void OpenPalomoMerchant(Actor merchant)
+    void OpenPalomoMerchant(Actor merchant, CaelumFactionCondition requirement = null,
+        CaelumFactionCondition discount = null, String titleKey = "CA_PALOMO_MERCHANT_TITLE")
     {
         SyncPalomoDialogueTokens();
         if (CreationWizardOpen || !MagicBoxOwned || merchant == null) { return; }
+        if (!CaelumFactionCondition.Require(self, requirement)) return;
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         SetCraftingJournalState(false);
         ActivePalomoMerchant = merchant;
+        ActivePalomoMerchantRequirement = requirement;
+        ActivePalomoMerchantDiscountCondition = discount;
+        PalomoMerchantTitleKey = titleKey;
         PalomoMerchantMenuOpen = true;
         PalomoMerchantSessionValidationTics = 0;
         PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
@@ -3005,6 +3027,10 @@ class CaelumPlayer : DoomPlayer
     {
         PalomoMerchantMenuOpen = false;
         ActivePalomoMerchant = null;
+        ActivePalomoMerchantRequirement = null;
+        ActivePalomoMerchantDiscountCondition = null;
+        PalomoMerchantReputationDiscount = false;
+        PalomoMerchantTitleKey = "";
         PalomoMerchantSessionValidationTics = 0;
         if (FolkloreInteractionUseLatched)
         {
@@ -3021,9 +3047,15 @@ class CaelumPlayer : DoomPlayer
         PalomoMerchantSessionValidationTics = 0;
         if (!IsActivePalomoMerchantSessionValid())
         {
+            CaelumFactionCondition.Require(self, ActivePalomoMerchantRequirement);
             LastPalomoMerchantAction =
                 CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
             ClosePalomoMerchant();
+        }
+        else if (PalomoMerchantReputationDiscount != HasPalomoMerchantReputationDiscount())
+        {
+            RefreshPalomoMerchantSnapshot();
+            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;
         }
     }
 
@@ -3079,13 +3111,20 @@ class CaelumPlayer : DoomPlayer
     {
         if (!IsActivePalomoMerchantSessionValid())
         {
+            CaelumFactionCondition.Require(self, ActivePalomoMerchantRequirement);
             LastPalomoMerchantAction =
                 CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
             ClosePalomoMerchant();
             return;
         }
+        int quotedPrice = PalomoMerchantSelectedLotPrice;
         RefreshCarriedInventorySummary();
         RefreshPalomoMerchantSnapshot();
+        if (quotedPrice != PalomoMerchantSelectedLotPrice)
+        {
+            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;
+            return;
+        }
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }

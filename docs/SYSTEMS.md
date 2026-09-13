@@ -1,6 +1,69 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0am — 2026-09-13.
+Versión documental: 4.33.0an — 2026-09-13.
+
+## Condiciones de reputación y servicios (4.33.0an)
+
+CaelumFactionCondition es un Object serializable con Configured, FactionId,
+MinimumReputation y RequireMembership. Create conserva incluso una configuración
+inválida para que falle cerrada; no la convierte en null. null significa que
+el servicio no declara requisito y mantiene el comportamiento previo. Los ids
+válidos son Gendarmería=0, Asentamientos=1, Caravanas=2 y Actores políticos=3.
+Un mínimo fuera de -1000..1000 o una condición sin configurar es inválido.
+
+Check consulta el registro persistente del jugador solicitante, vivo y creado,
+fuera del asistente y de predicción. No crea registros ni modifica valores.
+El mínimo es inclusivo; RequireMembership exige además pertenencia verdadera.
+Require muestra el motivo localizado. No se deriva un rango narrativo ni se
+aplica reputación de otra facción o del jugador local a una petición ajena.
+
+OpenDialogue comprueba interlocutor, vida, conversación activa, distancia de
+160 MU, línea de vista y condición antes de iniciar USDF. El llamador puede
+pasar flags de vista; sólo el guía invisible de diagnóstico usa
+SF_IGNOREVISIBILITY, conservando la oclusión geométrica. La condición protege
+la entrada: no interrumpe retroactivamente un diálogo ya mostrado.
+
+CaelumSlidingDoorLeaf.AccessCondition es opcional. RequestDoorGroup conserva
+llaves, arena, altura, vista y movimiento anteriores; antes de mutar cualquier
+hoja, comprueba las condiciones de todas las hojas con el mismo args[0]. Usar
+una hoja sin condición no evita el requisito de otra del grupo.
+
+OpenPalomoMerchant recibe requisitos opcionales de acceso y rebaja y una clave
+de título. Los llamadores anteriores quedan sin condición. La sesión comprueba
+acceso al abrir, cada cuatro tics y al confirmar, antes de mover bienes/dinero.
+Si cambia el precio mostrado, actualiza la cotización y solicita otra
+confirmación. La validación existente de distancia, stock, fondos, capacidad
+y cantidad continúa en la transacción autoritativa.
+
+PalomoMerchantReputationDiscount es una vista temporal de la condición activa;
+no se escribe en PalomoDiscountGranted. La rebaja negociada persistente se
+conserva. Cualquiera de ambas activa una sola vez los márgenes ya existentes:
+compra del jugador al 140% y venta al 60%, frente a 150% y 50% normales.
+No se suman ni se crea una nueva curva económica. Cerrar la sesión limpia sus
+condiciones y la vista temporal. La prueba comparte el catálogo, existencias
+y caja comercial del prototipo; no implementa inventarios por comerciante.
+
+CaelumReputationTrialState es Inventory oculto, sin peso ni recompensa, habilitado
+sólo con give CaelumDebugReputationTrial. La activación no cambia reputación.
+Journal > Reputación > F/Y sólo lo abre si ya está habilitado. El menú USDF
+43322 ofrece información (43323), puerta, comercio y cinco estados explícitos.
+Las acciones se admiten únicamente desde el diálogo activo de su propio guía;
+se ejecutan al cerrarlo. Presets Gendarmería: 0/no, 25/no, 25/sí, -25/sí, 0/sí.
+Las otras facciones se conservan y los cambios se guardan por las APIs vigentes.
+
+Información exige 25; puerta exige 25 y pertenencia; comercio exige 0 más la
+Caja propia habitual; rebaja exige 25. Son condiciones de diagnóstico. No se
+asignan a los residentes ni crean rangos, relaciones o ganancias de campaña.
+La puerta reutiliza una hoja nativa; requiere espacio libre delante y en su
+deslizamiento, con grupo propio para no afectar puertas del mapa. No crea un
+recinto cerrado. El guía es invisible y sólo existe tras habilitar la prueba.
+
+El estado y sus referencias se guardan nativamente. Al cambiar de mapa se
+mantiene habilitado y se recrean guía/puerta cuando se vuelven a necesitar;
+la presentación no se duplica al reabrir. give CaelumDebugReputationTrialOff,
+con sus menús cerrados, elimina el auxiliar y sus actores, sin restaurar valores
+de reputación ni bienes usados. Guardados anteriores no activan esta prueba,
+y sus comercios/puertas sin condición continúan igual.
 
 ## Sellos e interacción (0ak), conversación y navegación (0am)
 
@@ -1635,8 +1698,10 @@ Los métodos autoritativos son:
 
 Estos son los márgenes normales de la infraestructura comercial. La prueba
 posterior de rebaja conserva compra del jugador al 140% y venta al 60%; no
-está disponible desde el Palomo canónico de MAP01. Reputación, personalidades
-y precios regionales definitivos siguen pendientes de asignación narrativa.
+está disponible desde el Palomo canónico de MAP01. 0an permite activarla por
+una condición de reputación en servicios que la declaren, sin hacerla permanente.
+Asignaciones narrativas, personalidades y precios regionales definitivos
+siguen pendientes.
 
 ### 5. Presentación en inventario
 

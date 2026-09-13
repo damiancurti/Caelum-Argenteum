@@ -1,8 +1,84 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0am — 2026-09-13.
+Versión documental: 4.33.0an — 2026-09-13.
 
-## Estado actual: 4.33.0am — conversación inactiva y extremos del Diario
+## Estado actual: 4.33.0an — condiciones de reputación
+
+El autor confirma que 0am funciona y valida los dos encargos opcionales:
+completarlos entrega las constancias, abandonar Recorrido impide aceptar
+Espera y viajar a MAP02 antes de completar el objetivo de Recorrido lo falla.
+Quedan aceptadas las correcciones de captura, sellos y navegación. Mantener
+los atributos vigentes y los controles de extremos del Diario.
+
+0an conecta el registro existente con condiciones reutilizables para abrir
+diálogos, puertas deslizantes y comercio. Cada condición declara facción,
+mínimo inclusivo y pertenencia opcional. La pertenencia no sustituye el mínimo.
+Las puertas validan el grupo completo antes de moverlo; las transacciones
+revalidan antes de intercambiar monedas u objetos. La rebaja por reputación
+es temporal y separada de la rebaja negociada persistente.
+
+### Prueba accesible y alcance
+
+Guardar antes y ejecutar `give CaelumDebugReputationTrial`. La prueba se abre
+inmediatamente; luego TAB > Reputación > F/Y la reabre. Ofrece cinco estados
+seleccionables y tres servicios reales. Usa Gendarmería como id técnico:
+
+| Servicio de prueba | Requisito |
+| --- | --- |
+| Información | Reputación >= 25 |
+| Puerta física | Miembro y reputación >= 25 |
+| Comercio | Reputación >= 0 y Caja propia |
+| Rebaja comercial | Reputación >= 25; márgenes existentes 140%/60% |
+
+Los cinco estados son 0 sin pertenencia, 25 sin pertenencia, 25 miembro,
+-25 miembro y 0 miembro. Modifican el registro real de Gendarmería; conservan
+las otras facciones. La prueba usa inventario, monedas y existencias reales,
+sin entregar Caja, recursos ni recompensas. Cerrar comercio con Q/B; Esc
+conserva el menú de pausa del motor. Para quitar la prueba, cerrar sus menús
+y usar `give CaelumDebugReputationTrialOff`: retira guía y puerta, sin revertir
+la reputación. Cargar el guardado anterior restaura el estado previo a probar.
+
+No se asigna facción a los residentes del Limbo ni se alteran sus pruebas
+sociales. Los cuatro ids actuales, escala -1000..1000 y relaciones existentes
+se conservan. Las ocho facciones narrativas, siete rangos y relaciones futuras
+siguen pendientes de umbrales y matriz del autor. Los valores de esta prueba
+no fijan ese diseño. No se añaden mapas, misiones, ganancias de reputación de
+campaña, fórmulas de precio regional ni bonificaciones de atributos.
+
+### Evidencia y validación de 0an
+
+Treinta y siete comprobaciones nativas cubren límites e ids inválidos,
+pertenencia independiente, facción correcta, rechazo de acciones fuera del
+diálogo, condiciones de grupos de puertas, compras/ventas reales, cotización
+cambiada y cierre por pérdida de acceso. Se verifica la separación entre
+rebaja temporal y negociada, conservación de monedas/stock al rechazar y
+ausencia de duplicación o alteración de misiones, Tarot y atributos.
+
+Diecinueve comprobaciones de interfaz usan eventos SDL de teclado: activación,
+reapertura con F, estados del menú nativo, permiso de diálogo y puerta, precios
+y compras con Enter, cierre con Q, controles de Reputación y retiro de la prueba.
+Se revisan los textos españoles e ingleses con el render nativo; repetir
+los mismos casos por idioma no añade casos distintos.
+
+Un guardado nativo creado por las fuentes originales 0am conserva al cargar
+con 0an las cuatro reputaciones/pertenencias, Caja, monedas, atributo, agua,
+misión terminada, constancia y oferta sucesora. Un comercio ya abierto conserva
+su rebaja negociada sin recibir requisitos nuevos ni activar la prueba.
+Después se guarda y carga una sesión con condiciones 0an: se conservan sus
+campos, descuento y referencias de dueño/guía. Retirar la pertenencia requerida
+bloquea la transacción sin gasto; el viaje nativo a MAP02 conserva los registros
+y permite reconstruir la presentación de la prueba allí.
+
+Entorno: GZDoom 4.14.2, Freedoom y llvmpipe en Linux; escenarios controlados,
+no una repetición completa de campaña ni un guardado del autor. La aceptación
+de 0an en Windows queda pendiente. Auxiliares, partidas y motor de QA quedan
+fuera del delta. Aplicación e instrucciones en PRUEBAS_4_33_0an.txt.
+
+Entrega sobre el proyecto completo 0am con README y cinco documentos canónicos.
+Tras su aceptación, el bloque inmediato es la integración final de 4.33 antes
+de iniciar las bases de ubicaciones/conexiones/viajes de 4.34.
+
+## Base aceptada: 4.33.0am — conversación inactiva y extremos del Diario
 
 La captura del log de 0al muestra fase 80, Caja propia válida, requisitos
 cumplidos y esencia accesible a 32,6 MU. No hay canalización ni recarga.
@@ -59,7 +135,7 @@ de pruebas, el motor y el IWAD no forman parte del parche.
 
 Entrega delta sobre 0al con README, cinco documentos canónicos y
 PRUEBAS_4_33_0am.txt. Mapas, assets, atributos y protección/restauración de
-infraestructura conservados. Reputación espera la aceptación de estos ajustes.
+infraestructura conservados. El autor acepta estos ajustes antes de 0an.
 
 ## Base 4.33.0ak — captura observada; controles revisados en 0al
 
@@ -603,9 +679,9 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ai restaura Resiliencia para Sueño y aplica Constitución al gasto de regenerar vida/Aire, conservando divisores y críticos de 0ah; todas las pruebas de 0ai aprobadas. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
 | 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
 | 8b | Auditoría de atributos 0ai — pospuesta por el autor | Mantener los atributos actuales. Para una revisión futura, precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no bloquean 0aj ni el paso a V4.34. |
-| 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Pendiente de aceptación del autor. |
-| 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Pendiente de aceptación del autor. |
-| 8d.1 | Reputación y condiciones, después de resolver la captura | Conectar reglas reutilizables de diálogo, acceso y comercio. Las relaciones narrativas y valores nuevos siguen sujetos al diseño del autor; no asignar facciones al Limbo por defecto. |
+| 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Aprobado por el autor: entrega de recompensas, bloqueo tras abandono y fallo al salir antes del objetivo. |
+| 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Aprobado por el autor en 0am. |
+| 8d.1 | 4.33.0an: reputación y condiciones | Implementadas condiciones reutilizables de diálogo, acceso y comercio, con prueba opcional accesible desde Reputación. Guardados y viaje verificados técnicamente; pendiente de aceptación del autor. Relaciones, rangos y asignaciones narrativas siguen sin inventarse. |
 | 8e | Cierre de 4.33 e inicio de 4.34 | Integrar misiones/reputación, guardado y viajes; correctivos según pruebas. Tras aceptar la base, comenzar ubicaciones/conexiones/viajes. Balas y potabilización permanecen como ampliaciones pendientes de definición, sin bloquear este avance. |
 | 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
 
