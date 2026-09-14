@@ -22,6 +22,7 @@ class CaelumMainM00QuestController : EventHandler
     bool ReturnDoorPrepared;
     CaelumM00ReturnDoor ReturnDoor;
     bool ChannelInfrastructureRecovered;
+    bool SewerNetworkPrepared;
 
     void RecoverChannelInfrastructure()
     {
@@ -438,6 +439,11 @@ class CaelumMainM00QuestController : EventHandler
 
     override void WorldTick()
     {
+        if (!SewerNetworkPrepared)
+        {
+            CaelumSewerTravel.PrepareWorld();
+            SewerNetworkPrepared = true;
+        }
         RetireGroundFloorStock();
         RetireLegacyProcessingManual();
         PrepareRonnieWorld();
@@ -462,6 +468,7 @@ class CaelumMainM00QuestController : EventHandler
                 continue;
             }
             caelumPlayer.UpdateMainM00Prologue();
+            CaelumWorldProgress.Update(caelumPlayer);
             CaelumSideQuestRules.Update(caelumPlayer);
             CaelumMainM00MagicTrial.Update(caelumPlayer);
             CaelumMainM00RonnieTrial.Update(caelumPlayer);

@@ -7,7 +7,7 @@ Lock 200
     Message "$CA_LOCK_SILVER_DOOR"
     RemoteMessage "$CA_LOCK_SILVER_ACTION"
     MapColor 192 192 208
-    LockedSound "misc/keytry"
+    LockedSound "caelum/world/door_locked"
 }
 
 // El alijo reutiliza la misma llave, pero necesita un mensaje que no hable de
@@ -18,5 +18,15 @@ Lock 201
     Message "$CA_LOCK_SILVER_STASH"
     RemoteMessage "$CA_LOCK_SILVER_STASH"
     MapColor 192 192 208
-    LockedSound "misc/keytry"
+    LockedSound "caelum/world/door_locked"
+}
+
+// Acceso opcional 4.34.0b, independiente de la llave narrativa de Argento.
+Lock 202
+{
+    CaelumDoorTrialKey
+    Message "$CA_DOOR_TRIAL_LOCKED"
+    RemoteMessage "$CA_DOOR_TRIAL_LOCKED"
+    MapColor 192 192 208
+    LockedSound "caelum/world/door_locked"
 }

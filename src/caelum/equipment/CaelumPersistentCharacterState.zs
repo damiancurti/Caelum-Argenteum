@@ -15,6 +15,13 @@ class CaelumPersistentCharacterState : Inventory
     // Una bandera por carta es la autoridad; contar/recalcular no la concede.
     bool TarotOwned[CaelumConstants.TAROT_CARD_COUNT];
     bool MainM00FoolRevealed;
+    // V4.34.0a: autoridad del Diario de mundo. El catálogo conserva ids
+    // estables; 0 es desconocido. Los guardados anteriores nacen en versión 0.
+    int WorldStateVersion;
+    bool WorldLocationVisited[CaelumWorldCatalogue.LOCATION_CAPACITY];
+    bool WorldConnectionKnown[CaelumWorldCatalogue.CONNECTION_CAPACITY];
+    bool WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_CAPACITY];
+    int WorldPendingConnection;
     // El primer comercio es persistente por personaje. Así Palomo puede ser
     // recolocado por una etapa de misión sin restablecer stock ni dinero y el
     // servidor conserva una autoridad independiente para cada jugador.

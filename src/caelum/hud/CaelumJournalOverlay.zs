@@ -1906,6 +1906,79 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui void DrawSewerTravelHint(CaelumPlayer localPlayer)
+    {
+        if (menuactive != 0 || localPlayer.CreationWizardOpen || !localPlayer.CharacterCreationComplete
+            || localPlayer.health <= 0 || localPlayer.CraftingMenuOpen
+            || (localPlayer.player.ConversationNPC != null && localPlayer.player.ConversationNPC.bInConversation)) return;
+        let gates = ThinkerIterator.Create("CaelumSewerTravelGate");
+        CaelumSewerTravelGate gate;
+        CaelumSewerTravelGate nearest;
+        double distance = 224;
+        while ((gate = CaelumSewerTravelGate(gates.Next())) != null)
+        {
+            if (!gate.Placed || !CaelumWorldCatalogue.IsSewerConnection(gate.ConnectionId)) continue;
+            double candidateDistance = localPlayer.Distance2D(gate);
+            vector2 delta = gate.Pos.XY-localPlayer.Pos.XY;
+            if (candidateDistance >= distance || Abs(localPlayer.Pos.Z-gate.Pos.Z) > 64
+                || delta.X*Cos(localPlayer.Angle)+delta.Y*Sin(localPlayer.Angle) < candidateDistance*0.65
+                || (gate.VisibleToPlayers & (1 << consoleplayer)) == 0) continue;
+            distance = candidateDistance;
+            nearest = gate;
+        }
+        if (nearest == null) return;
+        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 214,
+            String.Format(StringTable.Localize("CA_SEWER_TRAVEL_HINT", false),
+                StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(nearest.ConnectionId), false)));
+    }
+
+    ui void DrawWorldPage(CaelumPlayer localPlayer)
+    {
+        // Dos columnas para las visitas y las salidas de la ubicación actual.
+        // La UI sólo consulta el Inventory; no descubre ni ejecuta viajes.
+        let record = CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        int locationId = CaelumWorldCatalogue.LocationForMap(level.MapName);
+        DrawTextLine(TextFont, Font.CR_WHITE, 48, 132,
+            String.Format(StringTable.Localize("CA_WORLD_CURRENT", false),
+                StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(locationId), false)));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 160, StringTable.Localize("CA_WORLD_VISITED", false));
+        int row = 0;
+        for (int id = 1; id < CaelumWorldCatalogue.LOCATION_DEFINED_COUNT; id++)
+        {
+            if (record == null || !record.WorldLocationVisited[id]) continue;
+            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 180+row*20,
+                StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(id), false));
+            row++;
+        }
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 180,
+            StringTable.Localize("CA_WORLD_NO_VISITS", false));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 160,
+            StringTable.Localize("CA_WORLD_LOCAL_CONNECTIONS", false));
+        row = 0;
+        for (int id = 1; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
+        {
+            if (record == null || !record.WorldConnectionKnown[id]
+                || CaelumWorldCatalogue.ConnectionOrigin(id) != locationId) continue;
+            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 180+row*36,
+                StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(id), false));
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 194+row*36,
+                StringTable.Localize(record.WorldConnectionTraversed[id]
+                    ? "CA_WORLD_TRAVERSED" : "CA_WORLD_KNOWN", false));
+            row++;
+        }
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 180,
+            StringTable.Localize("CA_WORLD_NO_LOCAL_CONNECTIONS", false));
+        if (locationId == CaelumWorldCatalogue.LOCATION_MANSION && row > 0)
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 228,
+                String.Format(StringTable.Localize("CA_WORLD_DESTINATION", false),
+                    StringTable.Localize(record.WorldLocationVisited[2]
+                        ? "CA_MAP02_SEWER_NAME" : "CA_WORLD_UNDISCOVERED", false)));
+        if (record != null && record.WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_RETURN])
+            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 290, StringTable.Localize("CA_WORLD_RETURN_RECORDED", false));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 48, 312,
+            StringTable.Localize(locationId >= 2 ? "CA_SEWER_WORLD_HELP" : "CA_WORLD_USE_EXIT", false));
+    }
+
     ui void DrawPlannedPage(String key)
     {
         DrawCenteredText(TextFont, Font.CR_WHITE, 320.0, 174.0,
@@ -2435,6 +2508,14 @@ class CaelumJournalOverlay : EventHandler
         {
             CaelumMainM00FoolCapture.Report(requestingPlayer);
         }
+        else if (e.Name == "ca_debug_door_report")
+        {
+            CaelumDoorAccessTrial.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_world_report")
+        {
+            CaelumWorldProgress.Report(requestingPlayer);
+        }
         else if (e.Name == "ca_debug_integration_report")
         {
             CaelumIntegrationDiagnostics.Report(requestingPlayer);
@@ -2620,7 +2701,7 @@ class CaelumJournalOverlay : EventHandler
             DrawPalomoMerchant(localPlayer);
             return;
         }
-        if (!IsJournalOpen()) { return; }
+        if (!IsJournalOpen()) { DrawSewerTravelHint(localPlayer); return; }
         int currentPage = GetJournalPage();
 
         Screen.Dim(0x05070A, 0.92, 0, 0, Screen.GetWidth(), Screen.GetHeight());
@@ -2633,7 +2714,7 @@ class CaelumJournalOverlay : EventHandler
 
         if (currentPage == 0) { DrawInventoryPage(localPlayer); }
         else if (currentPage == 1) { DrawCharacterPage(localPlayer); }
-        else if (currentPage == 2) { DrawPlannedPage("CA_JOURNAL_WORLD_PENDING"); }
+        else if (currentPage == 2) { DrawWorldPage(localPlayer); }
         else if (currentPage == 3) { DrawCraftsPage(localPlayer); }
         else if (currentPage == 4) { DrawQuestPage(localPlayer); }
         else if (currentPage == 5) { DrawReputationPage(localPlayer); }

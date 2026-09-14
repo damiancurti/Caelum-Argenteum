@@ -30,7 +30,7 @@ class CaelumIntegrationDiagnostics : Object play
     static void Report(CaelumPlayer user)
     {
         if (user == null || user.player == null) return;
-        Console.Printf("[Caelum 4.33.0ao] Integración 4.33 — consulta sin cambios (1=sí, 0=no)");
+        Console.Printf("[Caelum 4.34.0c] Integración 4.33 — consulta sin cambios (1=sí, 0=no)");
         Console.Printf("Mapa=%s jugador=%d creado=%d vida=%d conversación activa=%d",
             level.MapName, user.PlayerNumber(), user.CharacterCreationComplete,
             user.health, user.HasActiveConversation());

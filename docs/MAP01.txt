@@ -1,7 +1,78 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.33.0ao — 2026-09-13.
+Versión documental: 4.34.0c — 2026-09-14.
 
-ACTUAL 4.33.0ao — CIERRE DE INTEGRACIÓN
+ACTUAL 4.34.0c — ALCANTARILLAS CONECTADAS PARA PRUEBAS
+El autor aprueba 0b y autoriza alcantarillas nuevas después de MAP02 para
+pruebas masivas, Tarot y otros sistemas, con una prohibición: volver a MAP01.
+Se conservan los bytes de MAP01/MAP02/CADEV02 y toda la salida narrativa.
+La nueva red es un entorno de pruebas autorizado, sin campaña ni encuentros
+nuevos. Todo el alcance heredado/transversal sigue en V5 tras exportar V4.
+
+MAP02 es el punto de distribución. Desde su llegada, mirando al norte:
+- Al fondo, portón izquierdo: MAP03, depósito para pruebas masivas futuras.
+- Al fondo, portón derecho: MAP04, cámaras reservadas a Tarot.
+- En la pared derecha/este, antes del fondo: MAP05, mantenimiento.
+Acercarse muestra el destino. Usar solicita el viaje. Cada ramal regresa a
+MAP02 por el portón que queda detrás de su punto de llegada. MAP02 reaparece
+en su inicio aceptado (-236,32,0); no existe un acceso normal a MAP01.
+
+MAP03 contiene un depósito de 4096 x 3072 MU más su entrada, con un centro
+despejado, pilares periféricos y canales laterales bajos con pasos secos.
+MAP04 contiene una cámara central, dos cámaras laterales y otra posterior.
+MAP05 contiene dos plantas conectadas por dos escaleras; cada una tiene ocho
+peldaños de 12 MU y huellas de 64 MU, con 256 MU de ancho. La galería superior
+está a +96 MU. Se sube caminando. No son teletransportadores ni ascensores.
+
+El hub nativo 434 conserva los actores y objetos de cada alcantarilla al
+regresar y guardar/cargar. La actualización de un guardado auténtico de 0b
+en MAP02 reconstruye los portones y conserva su primer viaje de ida/vuelta.
+La Caja, equipo, Tarot, misiones/recompensas y reputación siguen siendo los
+mismos del personaje. Sólo salir del Limbo ejecuta su limpieza ya aceptada.
+
+Estos espacios no arrancan una prueba masiva ni entregan cartas al entrar.
+Los contenidos de pruebas se incorporarán por parche. CADEV02 queda aparte
+como campo diagnóstico heredado; no se enlaza a la red ni se sustituye.
+Instrucciones completas en PRUEBAS_4_34_0c.txt. Las conexiones normales usan
+Usar; el comando map inicia otra sesión y no sirve para probar persistencia.
+
+BASE ACEPTADA 4.34.0b — PUERTAS Y ACCESOS POR GRUPO
+El autor confirma correcto 4.34.0a y autoriza continuar. Se conservan los 52
+actores de puerta de MAP01, todos con grupos positivos, y los mapas existentes.
+Las peticiones ahora comprueban llave, arena y reputación de todas las hojas
+antes de mover alguna. La llave de plata sigue perteneciendo al flujo narrativo
+de Argento; no se da, retira, consume ni sustituye al cargar el parche.
+
+El cierre automático protege el paso ocupado por el personaje usando su tamaño
+y el hueco original, y reabre si entra durante el movimiento. Se conserva la
+orden de cierre forzado de la arena del Toro. Palomo sigue pidiendo paso en
+puertas libres durante su recorrido; no puede eludir una compañera con llave.
+
+La puerta opcional de dos hojas se solicita con give CaelumDebugDoorTrial en
+un espacio despejado; usa su propia llave de diagnóstico. No forma parte del
+mapa ni de la misión hasta activarla expresamente. give CaelumDebugDoorKey da
+esa llave reutilizable; give CaelumDebugDoorTrialOff retira prueba y llave.
+Se comprueba también desde el inicio actual de MAP02. Instrucciones completas
+en PRUEBAS_4_34_0b.txt; no hace falta repetir todas las pruebas de la campaña.
+
+BASE ACEPTADA 4.34.0a — MUNDO Y CONEXIÓN DEL REGRESO
+El autor autoriza comenzar 4.34 y ordena cerrar V4 hasta 4.37, exportar después
+una prueba para otros jugadores y retomar todo lo heredado/transversal en V5.
+La ampliación de la campaña y de las alcantarillas queda dentro de V5.
+
+TAB > Mundo muestra La mansión como ubicación actual y visita conocida. Al
+estar preparada la salida aparece Regreso al cuerpo, Conocida, con destino
+Por descubrir. El Diario no activa el viaje. Se conserva la confirmación en
+el umbral, fundido, limpieza y llegada a MAP02. Allí se nombra Alcantarillas —
+el despertar; se conservan las dos visitas y la conexión Recorrida, de ida.
+No se habilita volver a la mansión ni se añade geografía o diálogo nuevo.
+
+Una partida anterior ya llegada a MAP02 recupera el recorrido sólo cuando
+conserva los hechos del cierre de MAIN_M00; no entrega de nuevo Caja, carta,
+arma o constancias. Una nueva sesión creada con «map map02» no acredita ese
+regreso. La consulta «netevent ca_debug_world_report» muestra el registro sin
+modificarlo. Aplicación y recorrido de prueba en PRUEBAS_4_34_0a.txt.
+
+BASE TÉCNICA 4.33.0ao — CIERRE DE INTEGRACIÓN
 El autor aprueba todas las pruebas de 0an. Se comprueba un guardado combinado
 con reputación, comercio, Recorrido terminado y Espera activa hasta la captura,
 puerta de salida, limpieza del Limbo y Voz de llegada a MAP02. Se conservan
@@ -9,13 +80,12 @@ las reglas narrativas aprobadas: Caja, primera arma y Tarot; las constancias
 de prueba y los registros sociales no se confunden con equipo temporal.
 
 La recarga del autoguardado de llegada puede conservar la Voz activa sin
-+su menú. 0ao reconstruye esa conversación con StartConversation para continuar;
-+no confirma respuestas, concede cartas ni vuelve a ejecutar el regreso.
-+netevent ca_debug_integration_report consulta esos registros sin modificarlos.
+su menú. 0ao reconstruye esa conversación con StartConversation para continuar;
+no confirma respuestas, concede cartas ni vuelve a ejecutar el regreso.
+netevent ca_debug_integration_report consulta esos registros sin modificarlos.
 Aplicación y comprobación enfocada: PRUEBAS_4_33_0ao.txt. La geografía, diálogos,
 actores, recursos y música permanecen iguales a 0an. No se construye contenido
-nuevo de alcantarillas. El siguiente bloque de sistemas es 4.34: ubicaciones,
-conexiones y viajes, tras aceptar la integración.
+nuevo de alcantarillas. La autorización posterior inicia 4.34.0a: ubicaciones y conexiones.
 
 El roadmap numerado V4 continúa por 4.35 calendario/clima/eventos, 4.36 entorno
 y peligros físicos y 4.37 Tarot/Trucazo. El objetivo de campaña de 78 cartas

@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.33.0ao — 2026-09-13.
+Versión documental: 4.34.0c — 2026-09-14.
+
+4.34.0c añade MAP03.wad, MAP04.wad y MAP05.wad, generados como UDMF nativo
+por assets/generators/generate_sewer_trials.py. Usa sólo la biblioteca propia:
+CASWRWAL para mampostería/bóveda, CASWRFLR para piso seco y CAPOOL01 para los
+canales visuales bajos. El portón CSGTA0 referencia el CMGT01.png ya existente;
+no se edita ni crea otra imagen. Las geometrías de MAP01/MAP02/CADEV02 no cambian.
+
+El generador es Python estándar, sin dependencias externas. Se ejecuta con
+python assets/generators/generate_sewer_trials.py y admite --output para una
+salida alternativa. Sólo escribe MAP03–05; no es necesario para jugar ni para
+run_dev.bat, ya que los WAD listos están incluidos. Se comprueba que regenerar
+los tres mapas produce exactamente los mismos bytes.
+
+No cambia audio, imágenes, modelos ni tipografía. MAP03–05 reutilizan CA_MUS02
+y el viaje conserva el sonido nativo del jugador. Mundo y los rótulos de
+acceso tienen textos españoles/ingleses. Se revisan capturas de portón,
+depósito, cámaras, escaleras y el Diario completo en ambos idiomas. Los mapas
+de prueba no incorporan enemigos, ítems o cartas automáticamente. El motor,
+IWAD, marcadores de QA y capturas privadas quedan fuera de la entrega.
+
+4.34.0b conserva mapas, sprites, modelos, gráficos, tipografías, música y audio
+de 0a. La presentación opcional reutiliza CaelumSlidingDoorLeaf y sus
+bloqueadores; la llave nativa usa el icono de llave existente y es un marcador
+de prueba sin fila de equipo. LANGUAGE añade mensajes españoles/ingleses.
+
+Las cerraduras LOCKDEFS 200, 201 y 202 usan el OGG propio de puerta bloqueada
+ca_door_locked.ogg mediante su alias existente; no se añade audio. CheckKeys
+emite un solo feedback nativo limitado por el temporizador, sin reproducción
+manual superpuesta. Se revisan las escenas y mensajes nativos de la prueba en
+MAP01/MAP02 y ambos idiomas. Los recursos privados de QA quedan fuera del ZIP.
+
+4.34.0a conserva todos los mapas, modelos, gráficos, fuentes, música y audio
+de 0ao. Mundo reutiliza panel, icono y fuentes del Diario y los nombres de
+MAP01/MAP02 ya localizados; LANGUAGE añade ubicación, visitas, conexión,
+estado, destino oculto y ayudas en español/inglés. No hay recursos nuevos.
+Se revisa el render nativo antes del regreso, con conexión conocida y tras
+llegar, incluidos los textos españoles e ingleses. Los créditos e inventarios
+de recursos siguen vigentes; la exportación de prueba se preparará después de
+4.37, antes del alcance heredado/transversal de V5.
 
 0ao conserva byte a byte todos los mapas, modelos, gráficos, fuentes, música,
 audio y LANGUAGE de 0an. El diagnóstico nuevo sólo escribe en consola a petición;

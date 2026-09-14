@@ -59,6 +59,34 @@ map MAP02 "$CA_MAP02_SEWER_NAME"
 {
     music = "CA_MUS02"
     nointermission
+    cluster = 434
+}
+
+// Estados de mapa conservados por GZDoom al ir y volver. MAP01 queda fuera.
+cluster 434
+{
+    hub
+}
+
+map MAP03 "$CA_MAP03_NAME"
+{
+    music = "CA_MUS02"
+    nointermission
+    cluster = 434
+}
+
+map MAP04 "$CA_MAP04_NAME"
+{
+    music = "CA_MUS02"
+    nointermission
+    cluster = 434
+}
+
+map MAP05 "$CA_MAP05_NAME"
+{
+    music = "CA_MUS02"
+    nointermission
+    cluster = 434
 }
 
 map CADEV02 "Campo de pruebas de actores"

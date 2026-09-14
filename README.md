@@ -5,25 +5,71 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.33.0ao.** Apply over the complete **4.33.0an** project.
-The author approved every 0an test. 0ao restores active native conversations
-when loading a save, including the arrival autosave that could lose its menu.
-It also checks the combined narrative return and adds an explicit console report. The accepted gameplay rules and controls remain the baseline.
+**Current release: 4.34.0c.** Apply over the complete **4.34.0b** project.
+The author approved 0b and authorized connected sewer maps for upcoming
+mass-actor, Tarot and other system tests, with no passage back to MAP01.
+MAP02 now connects both ways with MAP03 (reservoir), MAP04 (Tarot chambers)
+and MAP05 (maintenance). Approach a gate and press Use. Each new map has a
+return gate behind its arrival point; returning to MAP02 uses its existing start.
 
-Console `netevent ca_debug_integration_report` reports the requesting player's
-quest endings, objective progress, reward claims, factions, Box, Tarot,
-merchant conditions and return state. It only reads existing data; it does not
-enable trials, grant items or repair saves. Spanish application and focused
-checks are in **PRUEBAS_4_33_0ao.txt**. The complete roadmap remains in PROJECT.md.
+The native sewer hub retains map actors and dropped items across visits and
+saves. Travel preserves the player's actual inventory and progress, without
+repeating the Limbo cleanup or refilling resources. Existing MAP02 saves gain
+the gates without changing their geometry. The new maps provide test spaces;
+they do not automatically spawn crowds, grant Tarot or enable new hazards.
+Spanish application and test instructions are in **PRUEBAS_4_34_0c.txt**.
+
+The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
+All inherited and cross-system work is assigned to V5 after that export,
+starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Implemented
-+
-+- Loading a save with an active native conversation reconstructs its menu for
-+  the same speaker/player, using StartConversation. An inactive reference is
-+  left inactive. The restore does not select a reply or grant a reward, and
-+  normal map changes do not trigger it. Existing saves are supported.
-+
-+
+
+- Three new sewer maps generated as native UDMF from reusable room, gallery,
+  reservoir and stair modules, using existing Caelum textures only. MAP01,
+  MAP02 and the independent CADEV02 diagnostic map keep their original bytes.
+- Six directed sewer connections in native hub 434. Physical Use gates name
+  their destination and preserve the map and inventory state across travel.
+  No route leads back to MAP01. Native narrative return remains separately guarded.
+- MAP03 has a broad central test area, side channels and peripheral pillars.
+  MAP04 has central, side and rear chambers. MAP05 has two walking stairways,
+  each with eight 12-MU risers and 64-MU treads, reaching a gallery at +96 MU.
+- Gate reconstruction supports previous MAP02 saves without duplicate actors.
+  Discovery, actual arrival and reverse travel remain independent observations.
+- World journal columns show visited locations and known exits from the current
+  map. The journal remains read-only and retains its accepted navigation.
+
+
+- Atomic group access checks cover native key requirements, explicit arena
+  locks and optional faction conditions on every leaf. Rejection preserves
+  group requests and timers. Only positive ids join leaves into a group.
+- Occupancy uses the original opening, slide axis and the actual player's
+  radius/height. Both leaves wait together; entering during closure reopens
+  them. Losing a key cannot trap a player in an already open doorway.
+- Native LOCKDEFS key feedback uses the existing Caelum locked-door sound,
+  with the existing cooldown and without duplicate manual playback.
+- The explicit door trial creates two leaves with a key lock on one only.
+  Its separate reusable key, native save/load and removal do not alter the
+  silver key or quest/faction/world records. The door report only reads state.
+
+- Stable world location and directed connection ids, recorded in the existing
+  persistent character inventory. Native saves and transitions retain visits,
+  known connections and completed travel, with a pending departure marker.
+- The World journal replaces its placeholder with actual recorded data. It
+  reads the authoritative inventory directly; there is no separate player copy.
+  Narrative exits still perform all travel validation and confirmation.
+- Previous MAP02 saves with a completed, sanitized narrative return recover
+  the mansion visit and travelled connection. A console-started MAP02 without
+  that history records only its current location. No reverse route is created.
+- Existing arrows and PgUp/PgDn journal navigation are retained. World labels
+  and guidance are localized in English and Spanish using the existing art.
+
+- Loading a save with an active native conversation reconstructs its menu for
+  the same speaker/player, using StartConversation. An inactive reference is
+  left inactive. The restore does not select a reply or grant a reward, and
+  normal map changes do not trigger it. Existing saves are supported.
+
+
 - A combined native 0an save exercises completed and active side quests,
   faction standing, membership and a real discounted purchase before capture
   and the existing narrative return to MAP02. Detailed evidence and limits are
@@ -383,16 +429,19 @@ checks are in **PRUEBAS_4_33_0ao.txt**. The complete roadmap remains in PROJECT.
 
 ## Planned
 
-After author acceptance of the 0ao integration closeout, begin the V4.34
-world/location/connection/travel foundations. New campaign maps remain deferred
-while systems are the priority.
+Continue the V4.34 world, architecture, connection and travel foundations
+after accepted locations and door access, now with connected sewer test maps.
+Caravan foundations and travel/event integration remain; simulated durations
+will depend on the global clock in V4.35. New campaign content and all inherited
+and cross-system expansion are assigned to V5, after the V4 playtest export.
 Narrative faction assignments, rank thresholds and cross-faction relations
 still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
-implemented. New maps, sewer encounters and campaign layout are deferred while
-systems testing is the priority; MAP02 keeps its accepted arrival.
+implemented. The author now authorizes additional sewer maps for system
+testing. MAP02 keeps its accepted arrival; MAP03–05 supply test spaces.
+Sewer encounters and the full campaign layout remain deferred to V5.
 Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
@@ -400,23 +449,30 @@ crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
+After V4.37, prepare and verify an exported playtest build for other players,
+with installation, controls, a test route and a way to record issues. Then
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
 art, loot, faction consequences, perception/formations, sieges, co-op/PvP,
-world persistence and the complete campaign are tracked in PROJECT.md.
+world persistence and the complete campaign are assigned to V5 in PROJECT.md.
+The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-All 0an tests are author-approved. 0ao's native GZDoom 4.14.2 integration
-checks and their limits are recorded in PROJECT.md. The focused author check
-on Windows remains pending. The numbered V4 sequence continues through 4.37;
-unassigned cross-system content is tracked separately from those milestones.
+4.34.0c compiles and runs in native GZDoom 4.14.2 with Freedoom and llvmpipe
+on Linux. Focused checks cover travel guards, all six native Use directions,
+stateful revisits, physical stair climbing, saved hub snapshots and an original
+0b MAP02 save upgraded through a roundtrip. Original narrative return into the
+new hub is checked from prepared prerequisites. Visual checks cover all new
+spaces and Spanish/English World labels. PROJECT.md records fixtures and limits.
+Author validation on Windows is pending. No mass population benchmark, full
+campaign replay or multiplayer session is claimed. 0b is the accepted base.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs** and **README.md** from the 0ao
-patch into the complete **4.33.0an** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_33_0ao.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **assets**, **docs** and **README.md** from the 4.34.0c
+patch into the complete **4.34.0b** project, merging folders and replacing matching
+files. Keep **PRUEBAS_4_34_0c.txt** outside docs.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

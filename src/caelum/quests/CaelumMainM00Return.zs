@@ -201,6 +201,7 @@ class CaelumMainM00Return : Object play
             if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, FADE_TICS, "Black", 1.0);
             if (r.MainM00ReturnTics > 0) { r.MainM00ReturnTics--; return; }
             if (!Commit(user)) { Cancel(user); return; }
+            CaelumWorldProgress.RecordReturnDeparture(user);
             Level.ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
         }
         if (level.MapName == "MAP02" && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMPLETE)

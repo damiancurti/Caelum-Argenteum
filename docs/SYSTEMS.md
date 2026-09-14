@@ -1,21 +1,195 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.33.0ao — 2026-09-13.
+Versión documental: 4.34.0c — 2026-09-14.
+
+## Red de alcantarillas y viajes de prueba (4.34.0c)
+
+La autorización actual permite nuevas alcantarillas para pruebas. MAP01 es
+el prólogo sin acceso inverso. MAP02 mantiene su WAD y PlayerStart. MAP03–05
+son mapas nuevos generados a partir de módulos UDMF, sin ACS ni assets de Doom.
+Se usa el cluster/hub nativo 434 para MAP02, MAP03, MAP04 y MAP05 solamente.
+
+| Id de conexión | Origen | Destino | Activación |
+| --- | --- | --- | --- |
+| 1 | MAP01 | MAP02 | Regreso narrativo existente, con confirmación y limpieza. |
+| 2 | MAP02 | MAP03 | Portón del depósito, Usar. |
+| 3 | MAP03 | MAP02 | Portón de vuelta, Usar. |
+| 4 | MAP02 | MAP04 | Portón de cámaras del Tarot, Usar. |
+| 5 | MAP04 | MAP02 | Portón de vuelta, Usar. |
+| 6 | MAP02 | MAP05 | Portón de mantenimiento, Usar. |
+| 7 | MAP05 | MAP02 | Portón de vuelta, Usar. |
+
+Los ids de ubicación 1/2 se conservan; 3/4/5 identifican los mapas nuevos.
+LOCATION_CAPACITY y CONNECTION_CAPACITY siguen en 32 y WorldStateVersion en 1.
+Las posiciones nuevas de las matrices nacen falsas en guardados anteriores.
+El origen/destino de la conexión 1 y la migración desde versión 0 no cambian.
+La llegada pendiente 1 necesita evidencia del regreso; las conexiones 2–7
+necesitan llegar a su destino correspondiente. Otro destino descarta el intento.
+
+CaelumSewerTravel prepara accesos reconstruibles desde el controlador ya
+existente; su nueva bandera de preparación nace falsa al cargar 0b. Antes de
+colocar un acceso busca una instancia con el mismo id. No modifica el WAD de
+MAP02 ni añade un manejador que falte en su guardado. Los portones son fijos,
+no Shootable, sin gravedad, con CANNOTPUSH/DONTTHRUST y sprite de pared propio.
+Su destino se muestra al mirarlos a corta distancia con línea de vista.
+
+Begin requiere personaje vivo y confirmado, mapa/origen válido, portón
+colocado, alcance Usar más su radio, diferencia vertical <=64 y vista directa.
+Rechaza creador, predicción, conversación, comercio, menú/tarea de crafting,
+Diario, canalización activa, congelación ajena y otros jugadores en sesión.
+MapExists se comprueba antes de modificar inventario o marcar la salida.
+Una petición pendiente impide duplicar el viaje. Rechazar no cancela tareas
+ni levanta congelaciones. Aceptar deja preparados los controles de combate,
+guarda el personaje y solicita ChangeLevel con NOINTERMISSION, sin reset de
+vida o inventario. Los ganchos nativos PreTravelled/Travelled siguen a cargo
+de la misma autoridad; no se crean copias de equipo ni limpiezas del Limbo.
+
+La llegada usa PlayerStart 0: (-236,32,0) en MAP02 y (0,320,0) en MAP03–05,
+mirando al norte. Los portones inversos están en (0,96,0), detrás de la llegada.
+No se activa un viaje por contacto; Usar sostenido no alcanza el portón desde
+la posición de aparición. Los estados de mapas inactivos los serializa el
+hub de GZDoom, también dentro del guardado de la sesión. No se guardan actores
+en una segunda estructura propia ni se reconstruyen los objetos recogidos.
+
+Mundo muestra cinco posibles visitas y hasta tres salidas de la ubicación
+actual. Descubrir requiere aproximarse a 256 MU y tener vista/altura válidas;
+no se marca destino visitado hasta entrar. Ida y vuelta son independientes.
+La UI lee el Inventory; para el rótulo del portón lee la visibilidad que su
+Tick calculó, evitando consultas de gameplay desde la UI. Las flechas y
+RePág/AvPág conservan sus funciones y no ejecutan viajes.
+
+El generador usa sectores y colisión nativos. MAP05 tiene dos escaleras de
+256 MU de ancho, ocho huellas de 64 MU y contrahuellas de 12 MU, hasta +96 MU.
+Los canales visuales están rebajados sólo 12 MU y no declaran daño, inmersión
+ni nuevas reglas de agua. MAP03 no crea actores masivos automáticamente;
+MAP04 no concede cartas; MAP05 reserva las pruebas de peligros para su bloque.
+No se acredita cooperativo, costes, caravanas o duración simulada de viaje.
+
+## Puertas y accesos agrupados (4.34.0b)
+
+CaelumSlidingDoorLeaf conserva ClosedPosition, SlideProgress, HoldTimer,
+DoorRequested, LockedSoundCooldown, RuloArenaLocked y AccessCondition. No
+cambia su esquema serializado. args[0] > 0 enlaza hojas; ids cero o negativos
+se consideran puertas individuales. args[1] conserva sentido de desplazamiento,
+args[2] el eje X/Y, y args[3] el número de cerradura LOCKDEFS.
+
+RequestDoorGroup mantiene comprobaciones de vista y solapamiento vertical en
+la hoja usada; rechaza peticiones de jugador muerto o en predicción. Acepta
+peticiones de NPC en puertas libres, como la ruta existente de Palomo. Recorre
+el grupo y comprueba bloqueo de arena, llave nativa y condición de reputación
+de todas sus hojas antes de activar alguna. Una negativa conserva peticiones
+y temporizadores. La llave no satisface pertenencia/reputación ni el bloqueo
+de arena, y una hoja libre no evita los requisitos de su compañera.
+
+CheckKeys(lock, false, true) consulta sin emitir feedback. Ante rechazo y con
+el temporizador disponible, CheckKeys(lock, false) presenta el motivo y sonido
+nativos; no consume la llave. Las cerraduras 200/201 y 202 resuelven a
+caelum/world/door_locked, el OGG existente. Se elimina la doble reproducción
+manual y se conserva el temporizador de siete tics.
+
+PlayerOccupiesDoorway usa ClosedPosition: semiancho 32 MU y semiprofundidad
+4 MU de la hoja/bloqueadores, ampliados por el radio real del jugador, con
+solapamiento vertical según su altura. Mide el paso aunque la hoja se haya
+apartado 64 MU. GroupDoorwayOccupied revisa las hojas del mismo grupo y
+HoldOccupiedGroup conserva/reabre el conjunto con espera de 18 tics. Se
+consulta al agotarse la espera o durante el cierre; sin ocupación mantiene
+recorrido 64 MU, pasos de 4 MU por tic y espera normal de 105 tics.
+
+La presencia sólo reabre una puerta que ya tiene SlideProgress > 0. No abre
+una puerta cerrada sin llave. Si se pierde la llave durante el paso, permite
+salir; una vez cerrada vuelve a exigirla. RuloArenaLocked mantiene el cierre
+forzado previo y la prioridad de la prueba del Toro. La protección de ocupación
+es para jugadores; no redefine la física general de NPC/objetos.
+
+### Presentación de prueba de accesos
+
+CaelumDoorAccessTrial es un Inventory opcional sin peso ni fila visible. Guarda
+referencias de dos hojas y PresentationMap, usando el guardado nativo. No añade
+campos al perfil persistente ni cambia el registro de ubicaciones/conexiones.
+CaelumDebugDoorTrial la crea a 128 MU delante del usuario, con sondas nativas
+de espacio en posiciones cerradas/abiertas. Si no hay lugar, no instala media
+puerta. Usa un id positivo libre por encima de los existentes; una hoja tiene
+cerradura cero y la otra 202. Repetir la acción no recrea una presentación válida.
+
+CaelumDebugDoorKey entrega CaelumDoorTrialKey sólo con la prueba habilitada.
+Es un Key nativo independiente, reutilizable, sin peso ni fila de equipo;
+no sustituye a CaelumSilverKey, no cuenta para la misión ni habilita 200/201.
+CaelumDebugDoorTrialOff retira el marcador, sus hojas y esa llave; los pequeños
+bloqueadores eliminan su referencia huérfana en el siguiente tick. Conserva
+la llave de plata y los demás objetos/registros. En otro mapa, la presentación
+puede volver a solicitarse; no se reconstruye automáticamente en la campaña.
+La limpieza narrativa del Limbo sigue retirando los Key físicos que corresponde.
+
+La prueba requiere personaje creado/vivo, fuera de predicción, sin diálogo,
+comercio, estación/tarea de fabricación ni canalización activos. No cambia esos
+estados para poder abrirse. Los tres comandos se detallan en PRUEBAS_4_34_0b.txt.
+netevent ca_debug_door_report lee sólo la presentación del solicitante y sus
+llaves; no evalúa acciones de apertura, concede objetos ni repara el guardado.
+
+## Mundo y recorrido persistente (4.34.0a)
+
+CaelumWorldCatalogue asigna ubicación 1 a MAP01, 2 a MAP02 y 0 a «sin
+registrar». La conexión 1 va de MAP01 a MAP02 y representa el regreso existente.
+No hay conexión inversa. Los ids son independientes de nombres traducidos y
+orden visual; CADEV02 y nombres no definidos devuelven 0, sin destino utilizable.
+Capacidad reservada: 32 ubicaciones y 32 conexiones; reservar slots no crea
+contenido ni convierte esos límites en el tamaño final de la campaña.
+
+CaelumPersistentCharacterState conserva WorldStateVersion (1), los booleanos
+WorldLocationVisited, WorldConnectionKnown y WorldConnectionTraversed, y
+WorldPendingConnection (0 = ninguna). Los guardados anteriores inician esos
+campos en cero. La autoridad es el registro viajero nativo, sin duplicarlo en
+CaelumPlayer, actores del mapa, CVars ni la interfaz.
+
+CaelumWorldProgress.Update se ejecuta desde el controlador existente después
+de actualizar el prólogo, antes de los encargos y la salida. Sólo actúa con
+personaje confirmado, vivo, fuera del creador y de predicción, y un registro
+ProfileCommitted ya existente. Marca la ubicación válida actual; no crea un
+registro de personaje por abrir una pantalla. IsReady de la salida revela la
+conexión, conservando el destino sin descubrir hasta visitarlo.
+
+La primera actualización migra WorldStateVersion 0. Sólo si el jugador ya
+está en MAP02 y MAIN_M00 conserva estado/etapa final, COMPLETE,
+INVENTORY_SANITIZED y STARTER_WEAPON_PRESERVED se reconstruyen mansión y regreso.
+Se leen esos hechos y no se vuelve a ejecutar Commit. En un inicio directo de
+MAP02 sin ese cierre, únicamente se registra la visita actual.
+
+Tras Commit satisfactorio y justo antes del ChangeLevel existente se marca
+la conexión pendiente. El observador no valida ni inicia un viaje alternativo.
+Si se llega al destino con la evidencia de cierre, se registra el recorrido y
+se consume la marca. Otra llegada o un id inválido descartan la marca sin
+conceder recorrido. Mientras se permanece en origen, la marca no cuenta como
+llegada. Se mantienen los controles y comprobaciones nativas de la puerta.
+
+TAB > Mundo lee FindInventory (consulta nativa clearscope), sin setters ni
+copia de estado. Muestra lugar actual, visitas conocidas y el regreso: estado
+Conocida/Recorrida, destino por descubrir/visitado e indicación de ida. No es
+un selector de viaje. Izquierda/derecha cambia a Personaje/Oficios; RePág/AvPág
+o LB/RB conserva el cambio directo de solapa. Inventario y Misiones conservan
+sus filtros/selección y salida hacia solapas adyacentes en los extremos.
+
+`netevent ca_debug_world_report` usa la petición de red del jugador y sólo
+consulta los campos existentes. Repetirlo no descubre lugares, avanza una
+misión, concede una carta/recompensa ni cambia salud, reputación o mercancía.
+Los nombres de mapas se reutilizan de LANGUAGE; se añaden las ayudas españolas
+e inglesas de Mundo. Tiempo, clima, plantas del mapa y servicios de viaje
+siguen pendientes de sus bloques numerados de V4. Los pendientes heredados y
+transversales se desarrollan en V5 tras la exportación de prueba.
 
 ## Contrato de integración y consulta (4.33.0ao)
-+
-+El observador estático CaelumConversationResume recibe la carga de guardados,
-+incluidos los anteriores a 0ao. WorldLoaded marca únicamente IsSaveGame y el
-+primer WorldTick consume esa marca. Para un personaje vivo/creado, fuera de
-+predicción, reabre sólo el interlocutor nativo activo cuyo ConversationPC es
-+ese mismo jugador. StartConversation conserva el árbol disponible y utiliza
-+ConversationFaceTalker con saveAngle=false. No ejecuta Used ni respuestas.
-+Una referencia inactiva sigue inactiva; la entrada normal de mapa no se reabre.
-+El observador no serializa referencias ni progreso y no sustituye los cierres
-+de conversación nativos. La necesidad se reproduce con el autoguardado de la
-+Voz de MAP02: el actor sigue activo al cargar aunque su menú haya desaparecido.
-+
-+
+
+El observador estático CaelumConversationResume recibe la carga de guardados,
+incluidos los anteriores a 0ao. WorldLoaded marca únicamente IsSaveGame y el
+primer WorldTick consume esa marca. Para un personaje vivo/creado, fuera de
+predicción, reabre sólo el interlocutor nativo activo cuyo ConversationPC es
+ese mismo jugador. StartConversation conserva el árbol disponible y utiliza
+ConversationFaceTalker con saveAngle=false. No ejecuta Used ni respuestas.
+Una referencia inactiva sigue inactiva; la entrada normal de mapa no se reabre.
+El observador no serializa referencias ni progreso y no sustituye los cierres
+de conversación nativos. La necesidad se reproduce con el autoguardado de la
+Voz de MAP02: el actor sigue activo al cargar aunque su menú haya desaparecido.
+
+
 netevent ca_debug_integration_report usa NetworkProcess del Diario y consulta
 al jugador de ese evento. CaelumIntegrationDiagnostics lee el Inventory
 persistente con create=false y recorre sólo las dos misiones de diagnóstico

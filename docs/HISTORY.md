@@ -1,6 +1,87 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.33.0ao — 2026-09-13.
+Versión documental: 4.34.0c — 2026-09-14.
+
+## Alcantarillas de prueba conectadas — 4.34.0c
+
+El autor confirma «Todo correcto» para 0b y permite crear conexiones después
+de MAP02 a nuevas alcantarillas para pruebas masivas, Tarot y otros sistemas.
+Delega la topología con la excepción expresa de no volver a MAP01. Esta
+autorización modifica el aplazamiento anterior de los mapas de prueba; no
+adelanta la campaña completa ni el alcance heredado/transversal de V5.
+
+MAP02 conecta en ambos sentidos con MAP03 (depósito), MAP04 (cámaras del
+Tarot) y MAP05 (mantenimiento). Se incorporan geometrías UDMF reutilizables,
+dos escaleras reales, portones Usar, ids estables y persistencia de hub nativa.
+MAP01 y MAP02 conservan su WAD, y el regreso original sigue validando y
+limpiando el inventario del Limbo una sola vez. Los mapas nuevos no conceden
+cartas, recompensas o poblaciones de enemigos. El Diario muestra visitas y
+salidas locales, sin controles de viaje en el menú.
+
+Se verifican los seis sentidos, una revisita, actores/objetos del mapa,
+guardado/carga del hub y actualización de un guardado creado con el código
+0b original. La ubicación del arma de ese guardado es mochila; se compara
+con el dato realmente serializado. Se comprueba además la salida narrativa
+MAP01 → MAP02 con el nuevo hub. Las capturas revisan español e inglés y las
+geometrías nuevas; no se acredita todavía rendimiento masivo ni cooperativo.
+
+Entrega sobre 4.34.0b con sólo archivos nuevos/modificados, generador opcional,
+README, cinco documentos canónicos y guía de pruebas. Se mantiene la secuencia
+V4 hasta 4.37 → exportación para otros jugadores → V5, empezando por V5.0
+refactor del código y V5.1 exposición térmica.
+
+## Puertas agrupadas y llave de prueba independiente — 4.34.0b
+
+El autor confirma «Todo correcto» para 4.34.0a y pide continuar. Se registra
+su aceptación del Diario de mundo y la continuidad de la secuencia acordada:
+V4 hasta 4.37, exportación de prueba, V5 con todos los pendientes heredados y
+transversales; refactor modular V5.0 y exposición térmica V5.1.
+
+Se reproduce en 0a que la hoja sin cerradura abre otra con llave o bloqueo de
+arena, y que las puertas con id cero actúan como un grupo. También se comprueba
+que medir distancia a una hoja apartada deja sin detectar el centro del paso.
+0b valida requisitos de todas las hojas, hace independientes los ids no positivos
+y mide la ocupación desde el hueco original. Mantiene abierto/reabre el grupo
+ante la presencia del jugador, conservando el cierre forzado de la arena.
+Las cerraduras usan el sonido propio existente mediante CheckKeys nativo.
+
+Se incorpora una prueba solicitada expresamente por consola, con dos hojas y
+una llave 202 independiente de la llave de Argento. Es guardable, reutilizable
+y retirable sin cambiar misiones, facciones, Mundo o inventario narrativo.
+La consulta de accesos lee su estado. Los diagnósticos anteriores actualizan
+cabecera; mapas, assets, fórmulas y navegación conservan la base aprobada.
+
+Pasan las pruebas de contratos, entradas/collisiones nativas, cierre/reapertura,
+guardado nuevo parcialmente cerrado y guardado 0a parcialmente abierto. Los
+fixtures y sus límites están en PROJECT.md. README y los cinco documentos se
+actualizan; PRUEBAS_4_34_0b.txt explica aplicación y prueba opcional.
+
+## Mundo inicial y exportación de prueba antes de V5 — 4.34.0a
+
+El autor decide: terminar el roadmap V4 hasta 4.37, armar/exportar una versión
+de prueba para otros jugadores y, después, desarrollar en V5 todo el trabajo
+heredado y transversal. Esta decisión sustituye la clasificación «sin versión
+asignada» de la entrada anterior; V5.0 sigue reservado al refactor modular y
+V5.1 a exposición térmica. La distribución independiente final pertenece al
+alcance amplio de V5 y no se confunde con la exportación de prueba de V4.
+Autoriza continuar desde 0ao, sin una nueva declaración de haber repetido todas
+sus pruebas. El roadmap completo se actualiza en PROJECT.md.
+
+4.34.0a agrega catálogo de ubicaciones/conexiones, progreso en el registro
+viajero y la sección Mundo del Diario. El regreso existente se registra al
+salir y se confirma al llegar; se conserva su sentido único. Un guardado viejo
+en MAP02 recupera ese recorrido a partir del cierre previo de MAIN_M00. Un
+inicio por consola sin esos hechos no recibe una historia de viaje inventada.
+El destino de la conexión no se nombra antes de visitarlo. Se añade la consulta
+explícita de mundo y se actualizan las cabeceras de los diagnósticos anteriores.
+
+Se comprueban arranque, guardas, controles nativos, consulta, salida real,
+compatibilidad con guardados 0an/0ao y recarga de nuevos guardados en ambos mapas.
+Los casos y límites figuran en PROJECT.md. Assets, mapas, atributos, misiones
+y navegación previamente aprobados se conservan. También se corrigen marcas
+«+» de formato que quedaron en las introducciones documentales de 0ao.
+Entrega delta sobre 4.33.0ao, con README y los cinco documentos canónicos;
+PRUEBAS_4_34_0a.txt explica aplicación y pruebas sin comandos de habilitación.
 
 ## Integración de 4.33 y roadmap restante — 4.33.0ao
 
@@ -11,12 +92,12 @@ expresas de V5. Se corrige el resumen antiguo que seguía marcando MAP01 como
 pendiente y las instrucciones de aplicación antiguas de 0ae.
 
 La última recarga identifica un autoguardado de llegada con interlocutor
-+nativo activo y sin menú. Se añade un observador estático de carga que vuelve
-+a abrir el diálogo mediante StartConversation, conservando dueño y orientación,
-+sin respuestas automáticas. Referencias inactivas y entradas normales de mapa
-+mantienen su comportamiento. El autoguardado anterior al arreglo se recupera.
-+
-+0ao incorpora una consulta de consola de la integración: misiones, objetivos,
+nativo activo y sin menú. Se añade un observador estático de carga que vuelve
+a abrir el diálogo mediante StartConversation, conservando dueño y orientación,
+sin respuestas automáticas. Referencias inactivas y entradas normales de mapa
+mantienen su comportamiento. El autoguardado anterior al arreglo se recupera.
+
+0ao incorpora una consulta de consola de la integración: misiones, objetivos,
 recompensas, reputación/pertenencia, Caja, primera arma, Tarot, condiciones de
 comercio y salida/llegada. Sólo lee registros existentes y no activa pruebas.
 Se verifica un guardado creado con 0an con comercio y encargos simultáneos,

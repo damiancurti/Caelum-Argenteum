@@ -19,6 +19,13 @@ Flat "CASWRFLR", 256, 256
     Patch "graphics/caelum/textures/sewer/CASWRFLR.png", 0, 0
 }
 
+// El acceso de alcantarilla reutiliza el portón propio, sin nueva imagen.
+Sprite "CSGTA0", 128, 128
+{
+    Offset 64, 128
+    Patch "graphics/caelum/textures/mansion/CMGT01.png", 0, 0
+}
+
 // Mansión v2: 58 recursos canónicos recompuestos, sin rótulos, divisiones ni
 // fragmentos de celdas vecinas. Se conserva la ruta histórica del proyecto
 // para no mover otros recursos durante este parche.

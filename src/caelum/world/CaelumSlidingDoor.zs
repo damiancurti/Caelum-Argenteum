@@ -92,31 +92,33 @@ class CaelumSlidingDoorLeaf : Actor
 
     bool RequestDoorGroup(Actor user)
     {
-        if (RuloArenaLocked) return false;
         // La petición valida la hoja antes de consultar llaves o emitir sonido.
         if (user == null || Abs(user.Pos.Z - Pos.Z) > 64
             || user.Pos.Z >= Pos.Z + Height || user.Pos.Z + user.Height <= Pos.Z
             || !user.CheckSight(self)) return false;
-        // args[3] conserva el número de LOCKDEFS. CheckKeys presenta el
-        // mensaje localizado del bloqueo y no consume la llave reutilizable.
-        if (args[3] > 0 && (user == null || !user.CheckKeys(args[3], false)))
-        {
-            // Evita que mantener Use reproduzca el golpe de cerradura cada tic.
-            if (LockedSoundCooldown <= 0)
-            {
-                A_StartSound("caelum/world/door_locked", CHAN_BODY);
-                LockedSoundCooldown = 7;
-            }
-            return false;
-        }
+        if (user.player != null && (user.health <= 0 || (user.player.cheats & CF_PREDICTING))) return false;
 
-        // Validar el grupo entero antes de mover ninguna hoja. Una hoja sin
-        // condición no puede servir para eludir la condición de su compañera.
+        // Prevalidar todas las hojas antes de cambiar peticiones o temporizadores.
+        // Una hoja libre no elude la llave, bloqueo de arena o condición de otra.
         let conditions = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
         CaelumSlidingDoorLeaf guardedLeaf;
         while ((guardedLeaf = CaelumSlidingDoorLeaf(conditions.Next())) != null)
-            if (guardedLeaf.args[0] == args[0]
-                && !CaelumFactionCondition.Require(CaelumPlayer(user), guardedLeaf.AccessCondition)) return false;
+        {
+            if (!IsGroupPeer(guardedLeaf)) continue;
+            if (guardedLeaf.RuloArenaLocked) return false;
+            // LOCKDEFS nativo comprueba posesión y no consume la llave.
+            if (guardedLeaf.args[3] > 0 && !user.CheckKeys(guardedLeaf.args[3], false, true))
+            {
+                if (LockedSoundCooldown <= 0)
+                {
+                    // El motor muestra el motivo y usa el sonido de LOCKDEFS.
+                    user.CheckKeys(guardedLeaf.args[3], false);
+                    LockedSoundCooldown = 7;
+                }
+                return false;
+            }
+            if (!CaelumFactionCondition.Require(CaelumPlayer(user), guardedLeaf.AccessCondition)) return false;
+        }
 
         int groupLeafCount = 0;
         bool groupWasRequested = false;
@@ -124,7 +126,7 @@ class CaelumSlidingDoorLeaf : Actor
         CaelumSlidingDoorLeaf leaf;
         while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())))
         {
-            if (leaf.args[0] == args[0])
+            if (IsGroupPeer(leaf))
             {
                 groupLeafCount++;
                 groupWasRequested = groupWasRequested || leaf.DoorRequested;
@@ -153,6 +155,13 @@ class CaelumSlidingDoorLeaf : Actor
         return RequestDoorGroup(user);
     }
 
+    bool IsGroupPeer(CaelumSlidingDoorLeaf leaf)
+    {
+        // Un id positivo enlaza hojas. Sin id, la puerta funciona sola: cero
+        // no debe convertir todas las puertas sin configurar en un mismo grupo.
+        return leaf == self || (leaf != null && args[0] > 0 && leaf.args[0] == args[0]);
+    }
+
     bool PlayerOccupiesDoorway()
     {
         for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
@@ -163,14 +172,41 @@ class CaelumSlidingDoorLeaf : Actor
             }
 
             Actor playerActor = players[playerIndex].mo;
-            bool overlapsZ = playerActor.Pos.Z < Pos.Z + Height
-                && playerActor.Pos.Z + playerActor.Height > Pos.Z;
-            if (overlapsZ && Distance2D(playerActor) < 80.0)
+            bool overlapsZ = playerActor.Pos.Z < ClosedPosition.Z + Height
+                && playerActor.Pos.Z + playerActor.Height > ClosedPosition.Z;
+            vector2 offset = playerActor.Pos.XY - ClosedPosition.XY;
+            double along = args[2] == 0 ? Abs(offset.X) : Abs(offset.Y);
+            double across = args[2] == 0 ? Abs(offset.Y) : Abs(offset.X);
+            // Medir el hueco cerrado, no la hoja que se apartó 64 MU. Incluir
+            // el radio real del personaje y la profundidad de los bloqueadores.
+            if (overlapsZ && along < 32.0 + playerActor.Radius
+                && across < 4.0 + playerActor.Radius)
             {
                 return true;
             }
         }
         return false;
+    }
+
+    bool GroupDoorwayOccupied()
+    {
+        let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
+        CaelumSlidingDoorLeaf leaf;
+        while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())) != null)
+            if (IsGroupPeer(leaf) && leaf.PlayerOccupiesDoorway()) return true;
+        return false;
+    }
+
+    void HoldOccupiedGroup()
+    {
+        let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
+        CaelumSlidingDoorLeaf leaf;
+        while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())) != null)
+        {
+            if (!IsGroupPeer(leaf) || leaf.RuloArenaLocked) continue;
+            leaf.DoorRequested = true;
+            leaf.HoldTimer = 18;
+        }
     }
 
     void PlaceAtProgress()
@@ -199,6 +235,12 @@ class CaelumSlidingDoorLeaf : Actor
         }
         if (LockedSoundCooldown > 0) { LockedSoundCooldown--; }
 
+        // Una puerta que ya abrió no encierra al personaje por perder una
+        // llave. Reabrir durante el cierre protege también a quien entra tarde.
+        // El bloqueo explícito de la arena conserva su prioridad anterior.
+        if (SlideProgress > 0 && (!DoorRequested || HoldTimer <= 0) && GroupDoorwayOccupied())
+            HoldOccupiedGroup();
+
         if (DoorRequested && SlideProgress < 64)
         {
             SlideProgress = Min(64, SlideProgress + 4);
@@ -211,11 +253,6 @@ class CaelumSlidingDoorLeaf : Actor
             if (HoldTimer > 0)
             {
                 HoldTimer--;
-                return;
-            }
-            if (PlayerOccupiesDoorway())
-            {
-                HoldTimer = 18;
                 return;
             }
             DoorRequested = false;

@@ -3188,3 +3188,78 @@ CA_REP_TRADE_DISCOUNT = "Rebaja por reputación activa · Compra 140% · Venta 6
 CA_REP_TRIAL_TRADE_HELP = "Up/Down item | Left/Right lot | Space/X buy/sell | Enter/A confirm | Q/B close";
 [es]
 CA_REP_TRIAL_TRADE_HELP = "Arriba/Abajo objeto | Izq./Der. lote | Espacio/X comprar/vender | Enter/A confirmar | Q/B cerrar";
+
+// World journal — V4.34.0a. Names reuse the existing map localization.
+[default]
+CA_WORLD_CURRENT = "Current location: %s";
+CA_WORLD_VISITED = "Places visited";
+CA_WORLD_NO_VISITS = "No places recorded yet.";
+CA_WORLD_CONNECTIONS = "Known connections";
+CA_WORLD_NO_CONNECTIONS = "You have not discovered a connection yet.";
+CA_WORLD_RETURN = "Return to the body";
+CA_WORLD_KNOWN = "Known";
+CA_WORLD_TRAVERSED = "Travelled";
+CA_WORLD_DESTINATION = "Destination: %s";
+CA_WORLD_UNDISCOVERED = "Undiscovered";
+CA_WORLD_USE_EXIT = "Confirm the journey at the exit when you are ready.";
+CA_WORLD_ONE_WAY = "One-way journey. This connection has no return passage.";
+CA_WORLD_UNREGISTERED = "Unregistered location";
+CA_WORLD_UNKNOWN_CONNECTION = "Unknown connection";
+
+[es]
+CA_WORLD_CURRENT = "Ubicación actual: %s";
+CA_WORLD_VISITED = "Lugares visitados";
+CA_WORLD_NO_VISITS = "Aún no hay lugares registrados.";
+CA_WORLD_CONNECTIONS = "Conexiones conocidas";
+CA_WORLD_NO_CONNECTIONS = "Aún no conoces ninguna conexión.";
+CA_WORLD_RETURN = "Regreso al cuerpo";
+CA_WORLD_KNOWN = "Conocida";
+CA_WORLD_TRAVERSED = "Recorrida";
+CA_WORLD_DESTINATION = "Destino: %s";
+CA_WORLD_UNDISCOVERED = "Por descubrir";
+CA_WORLD_USE_EXIT = "Confirma el viaje en la salida cuando estés preparado.";
+CA_WORLD_ONE_WAY = "Viaje de ida. Esta conexión no tiene paso de regreso.";
+CA_WORLD_UNREGISTERED = "Ubicación sin registrar";
+CA_WORLD_UNKNOWN_CONNECTION = "Conexión desconocida";
+
+// Optional native door/key trial — V4.34.0b.
+[default]
+CA_DOOR_TRIAL_KEY = "Access test key";
+CA_DOOR_TRIAL_LOCKED = "Both leaves need the access test key.";
+CA_DOOR_TRIAL_ENABLED = "Test door placed ahead. Approach and Use either leaf; then give CaelumDebugDoorKey.";
+CA_DOOR_TRIAL_EXISTS = "Your test door is already placed. Use give CaelumDebugDoorTrialOff to remove it.";
+CA_DOOR_TRIAL_NOT_ENABLED = "First enable the test: give CaelumDebugDoorTrial.";
+CA_DOOR_TRIAL_KEY_GIVEN = "Access test key received. Use opens both leaves; the key can be reused.";
+CA_DOOR_TRIAL_DISABLED = "Test door and its key removed.";
+[es]
+CA_DOOR_TRIAL_KEY = "Llave de prueba de accesos";
+CA_DOOR_TRIAL_LOCKED = "Ambas hojas requieren la llave de prueba de accesos.";
+CA_DOOR_TRIAL_ENABLED = "Puerta de prueba creada enfrente. Acercate y usá cualquier hoja; luego give CaelumDebugDoorKey.";
+CA_DOOR_TRIAL_EXISTS = "La puerta de prueba ya está colocada. Retirala con give CaelumDebugDoorTrialOff.";
+CA_DOOR_TRIAL_NOT_ENABLED = "Primero activá la prueba: give CaelumDebugDoorTrial.";
+CA_DOOR_TRIAL_KEY_GIVEN = "Recibiste la llave de prueba. Usar abre ambas hojas; la llave es reutilizable.";
+CA_DOOR_TRIAL_DISABLED = "Puerta y llave de prueba retiradas.";
+
+// 4.34.0c: red de alcantarillas para pruebas. Los rótulos no conceden contenido.
+[default]
+CA_MAP03_NAME = "Sewers: reservoir";
+CA_MAP04_NAME = "Sewers: Tarot chambers";
+CA_MAP05_NAME = "Sewers: maintenance";
+CA_SEWER_TRAVEL_HINT = "Use: travel to %s";
+CA_SEWER_TRAVEL_BUSY = "Finish your current activity and close its menu before travelling.";
+CA_SEWER_TRAVEL_MISSING = "The destination map is missing. Check the installed patch.";
+CA_WORLD_LOCAL_CONNECTIONS = "Exits from this location";
+CA_WORLD_NO_LOCAL_CONNECTIONS = "No exits recorded here yet.";
+CA_WORLD_RETURN_RECORDED = "Return to the body: travelled. No passage back to the mansion.";
+CA_SEWER_WORLD_HELP = "Approach a gate and Use it. Each sewer keeps its state on return.";
+[es]
+CA_MAP03_NAME = "Alcantarillas: depósito";
+CA_MAP04_NAME = "Alcantarillas: cámaras del Tarot";
+CA_MAP05_NAME = "Alcantarillas: mantenimiento";
+CA_SEWER_TRAVEL_HINT = "Usar: viajar a %s";
+CA_SEWER_TRAVEL_BUSY = "Terminá la actividad actual y cerrá su menú antes de viajar.";
+CA_SEWER_TRAVEL_MISSING = "Falta el mapa de destino. Revisá la instalación del parche.";
+CA_WORLD_LOCAL_CONNECTIONS = "Salidas de esta ubicación";
+CA_WORLD_NO_LOCAL_CONNECTIONS = "Aún no hay salidas registradas aquí.";
+CA_WORLD_RETURN_RECORDED = "Regreso al cuerpo: recorrido. Sin paso de vuelta a la mansión.";
+CA_SEWER_WORLD_HELP = "Acercate al portón y usá Usar. Cada alcantarilla conserva su estado.";

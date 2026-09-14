@@ -1,8 +1,247 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.33.0ao — 2026-09-13.
+Versión documental: 4.34.0c — 2026-09-14.
 
-## Estado actual: 4.33.0ao — cierre de integración
+## Estado actual: 4.34.0c — red de alcantarillas de prueba
+
+El autor confirma «Todo correcto» para 4.34.0b. Autoriza conectar MAP02 con
+otros mapas de alcantarilla, destinados a pruebas masivas, de Tarot y de los
+sistemas siguientes. Deja a criterio de implementación las conexiones, salvo
+volver a MAP01. Esta autorización amplía el espacio de pruebas de V4; la
+campaña completa y el trabajo heredado/transversal conservan su lugar en V5.
+
+Se incorpora una red en estrella: MAP02 conecta con MAP03, MAP04 y MAP05;
+cada ramal vuelve a MAP02. No hay acceso normal de vuelta a MAP01. Las seis
+direcciones tienen registros independientes. El regreso narrativo conserva
+su identidad 1, confirmación, limpieza del Limbo y llegada con la Voz.
+
+| Mapa | Espacio y finalidad | Acceso desde MAP02 |
+| --- | --- | --- |
+| MAP02 | Llegada existente y distribución de pruebas | Se conserva la llegada del prólogo. |
+| MAP03 | Depósito de 4096 × 3072 MU, centro amplio, canales laterales y pilares periféricos; base para pruebas masivas futuras | Portón izquierdo al fondo norte, en (-236, 1104, 0). |
+| MAP04 | Cámara central con cámaras laterales y posterior; base para Tarot futuro | Portón derecho al fondo norte, en (236, 1104, 0). |
+| MAP05 | Mantenimiento: planta baja, dos escaleras de ocho peldaños de 12 MU y galería superior a +96 MU | Portón de la pared derecha/este, en (344, 448, 0). |
+
+Acercarse al portón muestra su destino y la indicación de Usar. El viaje
+se solicita con la tecla Usar habitual. Al entrar en MAP03–05 se mira hacia
+el interior; el portón de vuelta queda detrás. Al volver a MAP02 se utiliza
+el PlayerStart existente (-236, 32, 0), separado de los portones. Mantener
+Usar durante la carga no produce un viaje de rebote. No hay costes, tiempo
+ficticio de viaje, carga automática de enemigos ni cartas de regalo.
+
+Los cuatro mapas de alcantarilla pertenecen al hub nativo 434. GZDoom guarda
+sus actores, objetos dejados y geometría modificada para el regreso y para
+guardados de la sesión. El inventario del personaje viaja como sus propias
+instancias. Cambiar entre alcantarillas no vuelve a ejecutar la limpieza del
+Limbo, no cura ni repone necesidades. Se rechaza viajar con actividades o
+menús activos, congelación ajena, personaje inválido, origen equivocado,
+destino ausente o varios jugadores; no se fuerza la salida del resto.
+
+Se conservan los bytes de MAP01, MAP02 y CADEV02. Los portones se reconstruyen
+desde el controlador existente, por lo que también aparecen al cargar MAP02
+de 0b. Preparar otra vez no duplica accesos. No se cambia el esquema del
+Inventory persistente: capacidades 32 y versión de Mundo 1; se añaden sólo
+identidades de contenido en las posiciones reservadas del catálogo.
+
+TAB > Mundo presenta visitas en una columna y salidas conocidas del mapa
+actual en otra. Acercarse a un acceso lo descubre; la visita y el recorrido
+se acreditan al llegar. Conocer o recorrer la ida no inventa la vuelta.
+El Diario sigue siendo de consulta. Las flechas y RePág/AvPág conservan sus
+acciones aceptadas. El regreso al cuerpo completado se informa al pie como
+un trayecto sin paso de vuelta a la mansión.
+
+### Verificación y límites de 0c
+
+- 23 comprobaciones de catálogo, reconstrucción, origen/distancia/altura,
+  predicción, muerte, creador, actividades, menús, congelación, descubrimiento
+  y consulta sin alterar misiones, Tarot ni atributos.
+- 42 comprobaciones durante los seis trayectos nativos y una revisita:
+  tecla Usar real, direcciones independientes, llaves/cantidades/reputación,
+  necesidades sin rellenar, ausencia de población masiva automática, actores
+  y objetos del suelo conservados y subida caminando por la escalera real.
+- Ocho comprobaciones nuevas al cargar el guardado de la red: mapa actual,
+  visitas/direcciones, inventario, recursos y snapshot inactivo de MAP02,
+  seguido por el viaje nativo de regreso sin duplicar portones.
+- Diez comprobaciones al actualizar un guardado creado con las fuentes
+  originales 0b: adopción del hub, reconstrucción de tres accesos, identidades
+  de Caja/arma, ubicación en mochila y durabilidad originales, carta/encargo/
+  recompensa única/reputación, viaje a MAP03 y vuelta conservando un actor
+  que ya estaba en el guardado 0b. El fixture prepara esos datos en 0b;
+  no sustituye a una repetición completa del prólogo.
+- Se verifica además la salida narrativa real desde sus requisitos preparados:
+  Usar/confirmación nativa, marca pendiente, limpieza original, Caja/primera
+  arma en Caja, carta, llegada a MAP02 y coexistencia de la Voz con los accesos.
+- Revisión visual nativa de portón, depósito, cámaras, escaleras y Diario
+  completo en español/inglés. Para la captura de maquetación del Diario se
+  preparan las cinco visitas y seis recorridos en un fixture privado.
+
+Entorno: GZDoom 4.14.2, Freedoom y llvmpipe/SDL en Linux. Los fixtures de
+prueba preparan posiciones, algunos objetos y estados; no se distribuyen.
+La comprobación de 0c por el autor en Windows queda pendiente. La capacidad
+de MAP03 para una población concreta aún debe medirse: no se declara una
+prueba masiva aprobada. MAP04 no adelanta activaciones nuevas de Tarot y
+MAP05 no aplica todavía peligros, daño ambiental ni inmersión profunda.
+
+Entrega: delta sobre 4.34.0b, generador UDMF reproducible en assets/generators,
+README inglés, cinco documentos canónicos y PRUEBAS_4_34_0c.txt fuera de docs.
+La arquitectura modular aquí es de mapas. El refactor transversal del código
+sigue en V5.0. En 4.34 quedan las bases de caravanas e integración de viajes;
+sus duraciones/eventos se apoyarán en el reloj de 4.35. Después continúan
+4.36, 4.37 y la exportación de prueba para otros jugadores antes de V5.
+
+## Base aceptada: 4.34.0b — puertas y accesos por grupo
+
+El autor confirma «Todo correcto» para 4.34.0a y autoriza el siguiente parche.
+Quedan aceptados Mundo, lugares visitados, regreso registrado y compatibilidad
+de partidas. Se mantiene la decisión: terminar V4 hasta 4.37, exportar una
+prueba para otros jugadores y después abordar en V5 todo lo heredado y transversal.
+
+0b continúa las bases de arquitectura con puertas cerradas y requisitos de
+acceso. La revisión encuentra tres rutas de apertura no deseadas: una hoja
+libre podía eludir la llave o el bloqueo de arena de otra; además, todas las
+puertas con id cero se trataban como un grupo. Se comprueba el comportamiento
+con las fuentes 0a antes de corregirlo. Ahora se validan llave, arena y condición
+de reputación de cada hoja antes de alterar peticiones o temporizadores.
+Sólo los ids positivos enlazan hojas; sin id cada puerta funciona sola.
+
+El cierre comprueba el hueco original y el radio/altura del personaje, incluso
+cuando las hojas se apartaron. Mantiene abierto el grupo completo mientras el
+jugador ocupa el paso y lo reabre si entra durante el cierre. La pérdida de la
+llave no lo encierra en una puerta ya abierta; una vez cerrada, la próxima
+petición requiere la llave de nuevo. El bloqueo expreso de la arena conserva
+su prioridad previa. Las velocidades, recorrido y espera normal se conservan.
+
+LOCKDEFS sigue siendo la autoridad de llaves y no las consume. Su consulta
+silenciosa precede al mensaje/sonido limitado por el temporizador existente.
+Las cerraduras 200/201 y la nueva 202 usan el sonido propio de puerta bloqueada,
+sin superponer una reproducción manual al sonido nativo.
+
+### Prueba opcional accesible
+
+En una zona despejada de MAP01 o MAP02, cerrar diálogo/comercio y usar:
+`give CaelumDebugDoorTrial`. Coloca una puerta de dos hojas delante del personaje;
+sólo una declara la cerradura 202. Usar cualquiera sin la llave debe rechazar
+ambas. `give CaelumDebugDoorKey` entrega una única llave nativa reutilizable,
+independiente de la llave de plata. Usar abre el grupo; permanecer en medio
+mantiene el paso abierto y retirarse permite el cierre normal.
+
+`give CaelumDebugDoorTrialOff` retira esas hojas y su llave. Los bloqueadores
+se eliminan en sus siguientes ticks. Repetir la activación conserva las mismas
+instancias. La prueba no entrega la llave de Argento, modifica reputación,
+activa misiones ni registra nuevos viajes. No añade un obstáculo de campaña:
+su presentación aislada sólo aparece al solicitarla. La llave es un marcador
+Key sin peso ni fila de equipo. Puede guardarse y cargarse con la prueba.
+
+`netevent ca_debug_door_report` consulta habilitación, llaves separadas, mapa,
+grupo, cerradura y progreso/espera/ocupación de cada hoja. No abre puertas ni
+crea la prueba. Los diagnósticos de Mundo, integración y El Loco siguen
+funcionando y actualizan su cabecera a 4.34.0b.
+
+### Evidencia y límites
+
+- Veinte comprobaciones nativas de requisitos, rechazo sin cambios parciales,
+  id cero/negativo, grupos diferentes, llave reutilizable, condiciones sociales,
+  arena, predicción, desnivel, ocupación en ambos ejes y peticiones de NPC.
+- Diecisiete comprobaciones de uso nativo: comandos de prueba, conservación de
+  instancias, tecla Usar en ambas hojas, llave incorrecta/correcta, colisión al
+  entrar, permanencia más allá de la espera normal, pérdida de llave, cierre y
+  reapertura al entrar durante su movimiento. Repetirlas en inglés verifica
+  los textos y no aumenta la cantidad de casos distintos.
+- Ocho comprobaciones nuevas al recargar una puerta 0b parcialmente cerrada:
+  referencias, configuración, posición/progreso, llaves, consulta sin efectos,
+  continuación, retirada de la prueba y ausencia de bloqueadores huérfanos.
+- Siete comprobaciones nuevas al cargar un guardado producido con las fuentes
+  originales 0a y una puerta parcialmente abierta: actores/configuración,
+  movimiento, Mundo, llave/reputación, apertura/cierre y protección de la hoja
+  restaurada. La comprobación de preparación serializada no se cuenta otra vez.
+- Colocación de la prueba desde el inicio existente de MAP02 y conservación de
+  sus visitas/Tarot sin inventar un regreso. Capturas nativas revisadas en
+  MAP01/MAP02; mensajes en español e inglés.
+
+Entorno: GZDoom 4.14.2, Freedoom, llvmpipe y teclado SDL en Linux. La prueba
+prepara posiciones y una llave de plata adicional sólo en los fixtures privados
+para comprobar que no sustituye a la llave 202 y que la retirada no la borra.
+No repite toda la campaña ni acredita cooperativo. La ocupación automática
+protege jugadores; el cierre forzado de la arena mantiene su contrato previo.
+El autor confirma después «Todo correcto» para 0b y autoriza 0c.
+
+Delta sobre 4.34.0a con README, cinco documentos canónicos y PRUEBAS_4_34_0b.txt.
+Los 52 actores de puerta originales de MAP01 ya usan grupos positivos; sus
+números, posiciones y mapas no cambian. No se modifican atributos, navegación,
+misiones, inventario narrativo ni el esquema persistente de Mundo. El siguiente
+incremento continúa arquitectura, módulos y accesos entre plantas de 4.34;
+calendario, peligros, Tarot/Trucazo y exportación conservan su orden.
+
+## Base aceptada: 4.34.0a — ubicaciones y conexiones
+
+El autor dispone completar el roadmap actual de V4, preparar después una
+exportación de prueba para otros jugadores y trasladar todo el trabajo
+heredado y transversal a V5 tras esa exportación. Autoriza continuar con el
+próximo parche; esta decisión permite avanzar desde el cierre técnico 0ao.
+No se registra una confirmación adicional de todas las pruebas de 0ao.
+
+4.34.0a inicia el catálogo del mundo y sustituye la pantalla provisional de
+TAB > Mundo por ubicación actual, lugares visitados y conexiones conocidas.
+Usa los nombres ya existentes de MAP01 y MAP02. La conexión «Regreso al cuerpo»
+se conoce cuando la salida narrativa está preparada; su destino permanece
+«Por descubrir» hasta llegar. En MAP02 queda «Recorrida» y se indica que es
+un viaje de ida. El Diario informa; la confirmación sigue en el umbral.
+
+El registro reside en el Inventory persistente del personaje, con ids estables,
+visitas, conocimiento, recorrido y una conexión pendiente. Después del Commit
+validado se registra la salida pendiente; sólo la llegada correspondiente la
+convierte en recorrida. Guardar, mirar el Diario o consultar la consola no
+viaja ni concede recompensas. Se conservan la limpieza del Limbo, la Caja, la
+primera arma, El Loco y los contratos de misiones/reputación de 4.33.
+
+Los guardados anteriores registran el lugar actual. Un guardado de MAP02 con
+MAIN_M00 completa, primera arma preservada y limpieza final documentadas
+recupera también la visita a la mansión y el regreso realizado. Entrar en MAP02
+mediante «map map02» sin esos hechos registra sólo las alcantarillas. CADEV02
+y mapas sin ficha no adquieren un id de campaña. No se infiere una ruta inversa.
+
+Consulta explícita: `netevent ca_debug_world_report`. Lee versión del registro,
+mapa/id actual, visitas, conexión conocida/recorrida y pendiente, sin crear
+registros ni tocar misiones, inventario o atributos. Los diagnósticos anteriores
+siguen disponibles y actualizan su cabecera a 4.34.0a.
+
+### Verificación de 4.34.0a
+
+- Dieciocho comprobaciones de arranque, ids y guardas, consulta y navegación
+  nativa del Diario: personaje válido, creador/muerte/predicción, rechazo de
+  salida no confirmada, id pendiente inválido e izquierda/derecha/RePág/AvPág.
+- Cuatro comprobaciones específicas del recorrido: guardado anterior de MAP01,
+  fundido confirmado todavía sin destino visitado, salida pendiente antes de
+  ChangeLevel y llegada real con las dos visitas y la conexión recorrida.
+  El escenario reutiliza además captura, cancelación, +2%, limpieza, comercio,
+  misiones, recompensas y llegada nativa verificados en 0ao.
+- Seis comprobaciones al cargar un guardado nativo 0ao de MAP02: migración de
+  mundo, Caja/primera arma/Tarot, finales y constancias únicas, reputación y
+  comercio conservados, sin repetir el diálogo de llegada ya terminado.
+- Cuatro comprobaciones de una sesión nueva iniciada directamente en MAP02:
+  ubicación actual sin inventar la mansión ni su regreso; un intento pendiente
+  sin evidencia de salida tampoco obtiene recorrido.
+- Se guarda y recarga el registro nuevo en MAP01 y MAP02. Los campos nativos
+  persisten; el autoguardado de llegada también contiene visitas y recorrido.
+  Las verificaciones serializadas de preparación no se cuentan como nuevas.
+- Render nativo de Mundo antes del regreso y tras llegar; textos de la conexión
+  conocida revisados en español e inglés. La escena visual prepara sólo el
+  conocimiento de la conexión para comprobar que oculta el nombre del destino.
+
+Entorno técnico: GZDoom 4.14.2, Freedoom, teclado SDL y llvmpipe en Linux. Los
+escenarios de integración parten de guardados de QA y preparan el registro de
+primera arma; no repiten todas las pruebas de residentes ni toda la fabricación.
+El autor confirma posteriormente «Todo correcto» y autoriza 4.34.0b.
+Motor, IWAD, guardados, fixtures y capturas privadas no forman parte del delta.
+
+Entrega sobre 4.33.0ao: README, cinco documentos canónicos y
+PRUEBAS_4_34_0a.txt. Los mapas, assets, fórmulas de atributos y controles de
+Inventario/Misiones permanecen iguales. No hay nuevos destinos, viaje rápido,
+precios/duraciones de viaje, calendario ni contenido de campaña en este parche.
+Los siguientes incrementos de 4.34 continuarán sus bases de arquitectura,
+conexiones y viajes; 4.35–4.37 y la exportación siguen en el roadmap inferior.
+
+## Base técnica: 4.33.0ao — cierre de integración
 
 El autor confirma que todas las pruebas de 0an dieron correcto y autoriza el
 siguiente parche, solicitando primero el roadmap completo de V4. Quedan
@@ -19,23 +258,23 @@ registros, concede recompensas, cambia reputación ni activa demostraciones.
 El informe detallado de El Loco sigue disponible, con cabecera 4.33.0ao.
 
 ### Conversación activa al cargar
-+
-+La recarga del autoguardado de llegada reproduce una diferencia concreta:
-+ConversationNPC y bInConversation siguen activos, pero no existe menú USDF.
-+La Voz queda marcada como iniciada y la prueba de reputación espera ese diálogo
-+invisible. Con la función nativa StartConversation se vuelve a mostrar el diálogo
-+del mismo interlocutor sin elegir respuestas ni ejecutar recompensas.
-+
-+CaelumConversationResume es un StaticEventHandler registrado en MAPINFO.
-+Recibe WorldLoaded con IsSaveGame y difiere la reapertura al primer WorldTick.
-+Comprueba personaje vivo/creado, interlocutor activo con conversación y
-+ConversationPC igual al jugador. Usa la orientación guardada y saveAngle=false;
-+no llama a Used, reasigna un árbol, borra referencias ni modifica registros.
-+No se ejecuta en una entrada normal de mapa ni sobre referencias inactivas.
-+Su marcador es estático y no añade datos al guardado. Se corrige también la
-+recarga del autoguardado creado antes de este arreglo.
-+
-+### Comprobación conjunta y límites
+
+La recarga del autoguardado de llegada reproduce una diferencia concreta:
+ConversationNPC y bInConversation siguen activos, pero no existe menú USDF.
+La Voz queda marcada como iniciada y la prueba de reputación espera ese diálogo
+invisible. Con la función nativa StartConversation se vuelve a mostrar el diálogo
+del mismo interlocutor sin elegir respuestas ni ejecutar recompensas.
+
+CaelumConversationResume es un StaticEventHandler registrado en MAPINFO.
+Recibe WorldLoaded con IsSaveGame y difiere la reapertura al primer WorldTick.
+Comprueba personaje vivo/creado, interlocutor activo con conversación y
+ConversationPC igual al jugador. Usa la orientación guardada y saveAngle=false;
+no llama a Used, reasigna un árbol, borra referencias ni modifica registros.
+No se ejecuta en una entrada normal de mapa ni sobre referencias inactivas.
+Su marcador es estático y no añade datos al guardado. Se corrige también la
+recarga del autoguardado creado antes de este arreglo.
+
+### Comprobación conjunta y límites
 
 Se crea un guardado nativo con las fuentes originales 0an: Caja recibida en
 el diálogo de Palomo, una compra real de cinco maderas por 14 cobres, comercio
@@ -71,12 +310,11 @@ No repiten toda la campaña ni su fabricación. El motor, IWAD, entradas SDL y
 guardados de QA quedan fuera del parche. Entorno: GZDoom 4.14.2, Freedoom y
 llvmpipe en Linux; la comprobación del autor en Windows de 0ao queda pendiente.
 La evidencia de bloques anteriores ya aprobados se conserva y no se vuelve a
-contar como pruebas nuevas. El cierre de 4.33 requiere aceptar esta integración.
+contar como pruebas nuevas. El autor autoriza después continuar con 4.34.0a.
 
 Entrega delta sobre 0an con README, cinco documentos canónicos y
 PRUEBAS_4_33_0ao.txt. Mapas, assets, fórmulas de atributos, estados serializados,
-condiciones de reputación y lógica de misiones se conservan. El próximo bloque
-previsto tras aceptar este cierre es 4.34: ubicaciones, conexiones y viajes.
+condiciones de reputación y lógica de misiones se conservan. El autor autoriza continuar con 4.34.0a: ubicaciones y conexiones.
 
 ## Base aceptada: 4.33.0an — condiciones de reputación
 
@@ -758,8 +996,11 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Aprobado por el autor: entrega de recompensas, bloqueo tras abandono y fallo al salir antes del objetivo. |
 | 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Aprobado por el autor en 0am. |
 | 8d.1 | 4.33.0an: reputación y condiciones | Implementadas condiciones reutilizables de diálogo, acceso y comercio, con prueba opcional accesible desde Reputación. Todas las pruebas aprobadas por el autor. Relaciones, rangos y asignaciones narrativas siguen sin inventarse. |
-| 8e | 4.33.0ao: cierre de integración | Guardado combinado 0an, captura y salida narrativa hacia MAP02 comprobados; reanudación de conversación activa al cargar, informe explícito y roadmap actualizado. Pendiente de aceptación del autor. Después comienza 4.34 con ubicaciones/conexiones/viajes. Balas y potabilización quedan pendientes de definición. |
-| 9 | Construcción de mapas y alcantarillas | Diferida por decisión del autor. Priorizar sistemas y pruebas en MAP01; conservar la llegada actual de MAP02 y CADEV02. |
+| 8e | 4.33.0ao: cierre de integración | Guardado combinado 0an, captura y salida narrativa hacia MAP02 comprobados; reanudación de conversación activa al cargar, informe explícito y roadmap actualizado. El autor autoriza continuar con 4.34.0a. Balas, potabilización y demás pendientes heredados pasan a V5; no se presupone una nueva repetición de todas las pruebas de 0ao. |
+| 8f | 4.34.0a: ubicaciones y conexiones | Diario de mundo, lugares visitados y registro del regreso existente MAP01 → MAP02; guardados anteriores y conservación al viajar. Primer parche de 4.34, aprobado por el autor. |
+| 8g | 4.34.0b: puertas y accesos por grupo | Requisitos nativos de todas las hojas, grupos independientes sin id, ocupación del paso y reapertura durante el cierre. Prueba opcional con llave propia y guardados anteriores. Aprobado por el autor. |
+| 8h | 4.34.0c: alcantarillas conectadas | MAP02 enlaza con MAP03–05 para futuras pruebas masivas, Tarot y entorno. Seis sentidos, hub nativo, escaleras, Diario y guardados; ningún regreso a MAP01. |
+| 9 | Construcción de mapas y alcantarillas | La ampliación de campaña pasa a V5 por decisión del autor. Durante V4, priorizar sistemas y pruebas en los mapas existentes; conservar la llegada actual de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -771,37 +1012,51 @@ Esta es la secuencia ya planificada, reconciliada con lo implementado. Los
 registros originales siguen completos en HISTORY.md. “Base implementada”
 no significa que todo el contenido de ese sistema esté terminado.
 
-La secuencia numerada de V4 termina en 4.37. No hay bloques 4.38 y posteriores
-aprobados en este roadmap. El cierre de integración 0ao sólo cierra 4.33;
-después quedan 4.34, 4.35, 4.36 y 4.37. Los compromisos transversales sin número
-son trabajo del proyecto aún por ubicar; no se consideran automáticamente
-requisitos de terminar V4 ni se trasladan a V5 sin una decisión de planificación.
-Los bloques expresamente reservados para V5 se indican en la misma tabla.
+Decisión del autor del 2026-09-13: completar el roadmap numerado de V4 hasta
+4.37; después preparar y exportar una versión de prueba para otros jugadores;
+sólo tras esa exportación iniciar V5. Todo el trabajo heredado y transversal
+pendiente pasa expresamente a V5. No se añade un bloque 4.38 ni se exige
+terminar la campaña completa para exportar la prueba.
+
+La autorización actual permite continuar desde el cierre técnico 4.33.0ao a
+4.34.0a; no se registra como una nueva afirmación de que el autor haya repetido
+todas las pruebas de 0ao. Cada parche mantiene sus comprobaciones enfocadas.
+Las bases incluidas en 4.34–4.37 conservan su alcance: sus ampliaciones de
+contenido y los pendientes de versiones anteriores se retoman en V5.
 
 | Hito | Estado y trabajo pendiente |
 | --- | --- |
-| V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS/barrido y User1–4. Completar/registrar la matriz pendiente por familia cuando corresponda; conservar lo aceptado. |
+| V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS/barrido y User1–4. Matriz pendiente por familia trasladada a V5; conservar lo aceptado. |
 | V4.28: Channel de Sellos | Efectos actuales sin clima aceptados en 0bp. Extensiones dependientes de clima pasan a V5; no reabrir los efectos cerrados. |
-| V4.29–V4.31: crafting y ciclo de equipo | Base de recetas, reservas, lotes, eficiencias independientes, reparación y desarme aceptada. Quedan distribución narrativa de conocimiento, recompensas/hojas/tiendas/descubrimientos y bonos de eficiencia todavía sin valores autorizados. |
-| V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
-| V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Falta comerciante canónico posterior y contenido de tiendas. Extender la vista modular de espada/manos/escudo 0o a las demás armas con arte propio. |
-| V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas quedan como contenido pendiente; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
-| V4.34: arquitectura del mundo y viajes | Reutilizar módulos de habitación/escalera ya validados; puertas cerradas/con llave y pisos adicionales. Definir ubicaciones, conexiones, caravanas y puntos de integración de viajes/eventos. No confundir arquitectura de mapas con refactor de código. |
+| V4.29–V4.31: crafting y ciclo de equipo | Base de recetas, reservas, lotes, eficiencias independientes, reparación y desarme aceptada. Distribución narrativa de conocimiento, recompensas/hojas/tiendas/descubrimientos y bonos de eficiencia sin valores autorizados pasan a V5. |
+| V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; en V5, completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
+| V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
+| V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
+| V4.34: arquitectura del mundo y viajes | 0a–0b aprobados: catálogo, Diario, regreso y puertas por grupo. 0c añade módulos de alcantarilla, planta elevada con escaleras y seis conexiones de prueba persistentes. MAP01 no admite retorno. Quedan bases de caravanas y puntos de integración de viajes/eventos; duraciones y planificación se apoyarán en el reloj de 4.35. El refactor del código sigue en V5.0. |
 | V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
-| **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar los bloques V4 pendientes. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
+| **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
+| **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar V4 y exportar la versión de prueba. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
 | V5.1: exposición térmica | Modelo de calor/frío basado en clima, zonas, actividad, humedad persistente, viento y equipo real; Resiliencia, consumibles, refugios, secado, descanso y aclimatación. Curvas numéricas pendientes de balance autoral. |
 | V5.x: recursos y biomas marinos | Fuentes 3D persistentes, extracción cuerpo a cuerpo cortante/perforante, dureza/rareza/profundidad/región/habilidad, agotamiento y regeneración. Biomas marinos, algas/yodo y aguas no potables; tiendas mantienen acceso a materiales remotos. |
 
-### Todo el alcance transversal pendiente
+### Trabajo heredado y transversal: V5, después de la exportación
 
-Estos compromisos no desaparecen por carecer de un número de parche. Su
-implementación se ubica cuando estén disponibles sus dependencias. No tienen
-todos una versión asignada; la tabla conserva el alcance completo sin prometer
-que campaña, multijugador o asedios se terminen antes de V5.
+Todos los compromisos de esta tabla quedan asignados a V5 por decisión del
+autor. También pasan a V5 la matriz de combate pendiente, aprendizaje y
+bonificaciones de recetas, botín/contenedores/propiedad, comerciante y tiendas
+posteriores, primera persona restante, ampliación de misiones/facciones,
+auditoría de atributos pospuesta, composición de balas y potabilización.
+Sus dependencias determinarán el orden interno; no se inventan números de
+parche ni valores todavía no definidos.
 
-| Área | Alcance planificado y límites actuales |
+Cuando un área comparte nombre con 4.34–4.37, V4 termina su base prevista y
+V5 desarrolla el alcance amplio siguiente. La arquitectura del código se
+reorganiza en V5.0; la exposición térmica mantiene V5.1. La prueba exportada
+es un hito anterior, distinto de completar la distribución independiente.
+
+| Área (V5) | Alcance planificado y límites actuales |
 | --- | --- |
 | Campaña y mundo | Objetivo de 78 cartas (22 Mayores y 56 Menores) y al menos 78 mapas; geografía inspirada en Argentina, costas/Antártida/mar profundo, ciudades aéreas y regiones sobrenaturales. Capítulos, encuentros, desenlaces políticos y revelaciones según canon. La primera entrega sigue concentrada en MAP01. |
 | Misiones | Principales/secundarias, requisitos, objetivos, cadenas/dependencias, fracaso y abandono; recompensas de objetos/dinero/reputación/desbloqueos. El registro tiene 32 slots y ocho objetivos por misión; 0aj añade oferta y abandono a los cuatro estados originales, con requisitos y recompensas únicas. El contenido amplio, las condiciones compuestas y los demás tipos de recompensa requieren desarrollo. Mayores para principales, Menores para secundarias; encargos/eventos/rumores/contratos no son automáticamente otra carta. No introducir XP por combatir: la progresión canónica depende del Tarot. |
