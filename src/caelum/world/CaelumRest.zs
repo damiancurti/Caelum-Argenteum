@@ -1,5 +1,4 @@
-// Base de descanso a la escala normal del mundo. No salta el reloj ni
-// acelera selectivamente recursos mientras el resto del mapa queda atrás.
+// Sesión de descanso. El avance rápido reutiliza sus pasos y sus guardas.
 class CaelumRestRules : Object
 {
     const MODE_WAIT = 1;
@@ -54,6 +53,7 @@ class CaelumRestState : Inventory
     vector3 AppliedWorldOffset;
     CaelumRestCamera ViewCamera;
     bool ViewInitialized;
+    bool PoseFacingFixed;
     double FacingAngle;
     double OriginalPitch;
     double CameraYaw;
@@ -116,7 +116,10 @@ class CaelumRestState : Inventory
             || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive
             || user.StaffCastPending || user.WeaponChargeActive || user.WeaponChargedStateActive
             || user.RangedReloadActive || user.CombatBlockModeActive || user.DebugShieldBlocking
-            || user.IsPhysicallyImmobilized() || (user.player.cheats & (CF_TOTALLYFROZEN | CF_FROZEN)))
+            || (user.IsPhysicallyImmobilized() && !(IsSleeping(user)
+                && user.PainImmobilizationRemaining <= 0
+                && (user.ElementalStatus == null || !user.ElementalStatus.IsLightningStunned())))
+            || (user.player.cheats & (CF_TOTALLYFROZEN | CF_FROZEN)))
             return "CA_REST_BUSY";
         if (!user.player.onground || user.WaterLevel != 0
             || user.Vel.X * user.Vel.X + user.Vel.Y * user.Vel.Y > 0.01
@@ -166,8 +169,9 @@ class CaelumRestState : Inventory
         {
             rest.AppliedWorldOffset += furniture.PoseOffset();
             user.WorldOffset = rest.AppliedWorldOffset;
-            user.Angle = furniture.Angle;
+            user.Angle = furniture.PoseAngle();
         }
+        rest.PoseFacingFixed = true;
         rest.ViewInitialized = false;
         rest.ViewCamera = null;
         rest.Mode = mode;
@@ -194,6 +198,7 @@ class CaelumRestState : Inventory
     {
         // Completar, cancelar o interrumpir es terminal para esta sesión.
         if (Status != CaelumRestRules.STATUS_ACTIVE) return;
+        CaelumTimeAdvanceState.Halt(user);
         Status = result;
         ResultKey = key;
         if (user == null) return;
@@ -279,6 +284,12 @@ class CaelumRestState : Inventory
         Validate(user);
         let rest = Get(user);
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE) return;
+        if (!rest.PoseFacingFixed)
+        {
+            // Migración de una sesión 0f activa, sin reiniciar su progreso.
+            if (rest.Furniture != null) { rest.FacingAngle = rest.Furniture.PoseAngle(); user.Angle = rest.FacingAngle; }
+            rest.PoseFacingFixed = true;
+        }
         rest.EnsureView(user);
         if (!HasPendingTic(user)) return;
         let clock = CaelumWorldClock.Get(user);
@@ -344,14 +355,14 @@ class CaelumRestState : Inventory
     static void Report(CaelumPlayer user)
     {
         let rest = Get(user);
-        Console.Printf("[Caelum 4.35.0f] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
+        Console.Printf("[Caelum 4.35.0g] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
         if (rest == null) return;
         Console.Printf("Estado=%d modo=%d transcurrido=%d/%d tics origen=%s resultado=%s",
             rest.Status, rest.Mode, rest.ElapsedTics, rest.RequestedTics, rest.OriginMap, rest.ResultKey);
         Console.Printf("Mueble=%d cámara propia=%d posición=(%.1f,%.1f,%.1f)",
             rest.UsesFurniture, rest.ViewCamera != null && user.player.camera == rest.ViewCamera,
             user.Pos.X, user.Pos.Y, user.Pos.Z);
-        Console.Printf("Sueño=%.4f hambre=%.4f sed=%.4f vida=%d. Escala normal; recuperar todo el Sueño: %.0f h de juego (provisional).",
+        Console.Printf("Sueño=%.4f hambre=%.4f sed=%.4f vida=%d. Recuperar todo el Sueño: %.0f h de juego (provisional).",
             user.CurrentSleep, user.CurrentHunger, user.CurrentThirst, user.health, CaelumRestRules.FULL_SLEEP_GAME_HOURS);
     }
 

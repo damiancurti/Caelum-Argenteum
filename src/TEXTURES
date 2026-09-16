@@ -1603,3 +1603,18 @@ Sprite "CFLFA0", 1024, 1536
     Offset 512, 1536
     Patch "graphics/caelum/tarot/ca_tarot_fool.png", 0, 0
 }
+
+// 4.35.0g: las vistas laterales del atlas RSDO A/B usan orden opuesto
+// al de rotaciones nativo. Reasignar las seis vistas conserva todos los píxeles.
+Sprite "RSDOA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA8.png", 0, 0 }
+Sprite "RSDOA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA7.png", 0, 0 }
+Sprite "RSDOA4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA6.png", 0, 0 }
+Sprite "RSDOA6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA4.png", 0, 0 }
+Sprite "RSDOA7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA3.png", 0, 0 }
+Sprite "RSDOA8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOA2.png", 0, 0 }
+Sprite "RSDOB2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB8.png", 0, 0 }
+Sprite "RSDOB3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB7.png", 0, 0 }
+Sprite "RSDOB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB6.png", 0, 0 }
+Sprite "RSDOB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB4.png", 0, 0 }
+Sprite "RSDOB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB3.png", 0, 0 }
+Sprite "RSDOB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB2.png", 0, 0 }

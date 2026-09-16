@@ -5,38 +5,59 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0f.** Apply this source patch over the complete,
-accepted **4.35.0e** project, merge its folders and rebuild with `run_dev.bat`.
-It adds a reusable sleeping bag to the existing inventory and the author's
-rest comfort rules: chair x2, sleeping bag x3, bed/cot x4 for natural Health/Air
-recovery; Hunger/Thirst loss per unit of time is divided by the same factor.
-Ground rest remains x1. Sitting does not restore Sleep; sleeping keeps its
-existing provisional Sleep recovery rate.
+**Current release: 4.35.0g.** Apply this source patch over the complete,
+accepted **4.35.0f** project, merge its folders and rebuild with `run_dev.bat`.
+It adds optional fast advancement during rest/sleep or active crafting,
+three dining tables, seated food/drink consumption and corrected rest views.
+Sleeping drains 10 Lucidity per simulation second and prevents its recovery;
+Lucidity stun does not interrupt sleep. The same rule applies to Arcanist Sleep.
 
-Receive the optional trial bag from World > D/X > preparation, or with
-`netevent ca_debug_rest_bag` in MAP02–MAP05. Select it in Inventory and press
-Enter/A to choose a duration. It needs clear, dry, level ground, packs away
-on exit and remains the same saved inventory item. Box storage, dropping,
-pickup and carry limits use the existing system. Its provisional weight is 2 kg.
+Press **T** during a valid rest or active crafting task to toggle acceleration.
+The first implementation requires a designated safe area, a single player and
+no nearby threats. Trial areas cover the dry arrival/rest/workbench space in
+MAP02–MAP05 and the three table groups in MAP03. Limbo stays timeless.
+The clock, personal resources, regeneration effects and crafting use shared
+simulation steps; the normal clock rate remains unchanged when T is off.
+An 8-hour rest takes about 13.7 seconds at full engine tick rate with T enabled.
 
-Native GZDoom 4.14.2 on Linux compiled the project and checked the inventory
-activation/USDF route, the four rate factors, pickup/drop/storage, deployment,
-cancellation, damage, blocked space and recovery limits. A bag save was loaded
-and the checks completed without failures; an active 0e bed save also loaded,
-acquired x4 and completed without resetting its progress. The bag and factor
-panel were visually inspected in native screenshots. Windows input/controller
-and travel checks are in **PRUEBAS_4_35_0f.txt**. The engine, test IWAD and QA
-fixtures are not included.
+In MAP03, use a table to place or retrieve carried food/water. Sit on an
+adjacent chair, then press **F** to eat or **G** to drink from that table.
+Tables hold real items, including partially filled containers, across saves.
+The round table seats 2, the normal rectangle seats 6, and the large rectangle
+seats 12 with exactly twice the normal length and width. Seat references are
+available for future Trucazo; the card game is not implemented in this patch.
 
-Long-rest time skipping is a design recommendation in `docs/SYSTEMS.md` and
-remains unimplemented. This patch retains the accepted world clock rate and
-the timeless Limbo exception. It does not change character attributes.
+Native GZDoom 4.14.2 on Linux compiled the project and verified resource parity
+between ordinary and accelerated rest, all 20 seats, native food/water transfers,
+USDF interaction, crafting interruption, sleep effects and native save/load.
+Rest orientation was checked from fixed side and rear views: the furniture
+facing and the atlas's reversed lateral rotation order both needed correction.
+The test engine, IWAD, saves, screenshots and QA fixtures are excluded.
+Windows controls and manual acceptance are covered in **PRUEBAS_4_35_0g.txt**.
 
 The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
 All inherited and cross-system work is assigned to V5 after that export,
 starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Implemented
+
+- Optional, saved x105 time advancement: at most 104 extra one-tic steps after
+  each ordinary tick. It is bound to the current rest or crafting station/task,
+  stops on completion or invalid conditions, and returns control between batches.
+- Shared personal rates, known regeneration powers and crafting timers; no
+  `i_timescale` dependency. Unsupported powers, hazards, nearby projectiles,
+  hostiles and induced sleeping actors prevent the accelerated path.
+- Three original table models with complete 2/6/12-chair layouts in MAP03,
+  native collision, item ownership and seated consumption. They grant no supplies.
+- Furniture pose facing plus TEXTURES rotation aliases fix front/back and
+  side views without changing the original PNGs or crouch locomotion frames.
+- Sleeping, including class-induced sleep, drains 10 Lucidity/s, clamps at zero
+  and suspends recovery. Lucidity stun alone cannot end voluntary sleep.
+- Arcanist User4 now casts the authored area Sleep: 10 seconds, hit wakes,
+  60-second reuse and trial base cost 1000 Anima with the existing cost modifier.
+  Its provisional radius reuses the 128-MU magic area and ability-range modifier;
+  nearby allies are affected too, while the caster and unseen targets are excluded.
+
 
 - One reusable native Inventory sleeping bag, shown in All and Keys/key items.
   It can move through personal inventory, the Magic Box and the world pickup
@@ -55,7 +76,7 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - No comfort multiplier applies to Sleep, Anima, Lucidity or medicine pulses.
   Pending breathing recovery after immersion also uses the active factor; its
   normal three-second timing remains the baseline outside comfort rest.
-- Read-only rest diagnostics identify 4.35.0f and report the active factor.
+- Read-only rest diagnostics identify 4.35.0g and report the active factor.
 
 - One original wooden chair and one cot per sewer map, placed on first entry
   or when loading an older save. Repeated preparation keeps one pair.
@@ -570,18 +591,17 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Planned
 
-V4.34 now has its world, access, map-module and travel-service foundations.
-V4.35.0a–0c supply the accepted clock, calendar, unpaused conversations,
-campaign epoch and timeless Limbo. 0d adds the normal-rate rest/wait session.
-Remaining before 4.36: coherent accelerated time advancement and its
-interruptions, rest furniture/camera, shared local temperature/wind/precipitation/
-humidity, scheduled events and timed travel, then integrated native validation.
-The 8-hour Sleep recovery rate is provisional, not a finalized balance rule. Fares, vehicles, route incidents and a travel minimap
-remain future content; the current caravan menu is explicitly a service trial.
-New campaign content and all inherited and cross-system expansion are assigned
-to V5, after the V4 playtest export.
-The ten class abilities and four racial toggles now have authored definitions
-in SYSTEMS.md. Their implementation remains in the existing V5 abilities block.
+V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
+sleeping bag, comfort factors and the initial safe-area accelerated path.
+Remaining before 4.36: local temperature/wind/precipitation/humidity, scheduled
+events and timed travel, their adapters to the common clock, and integration.
+The fast path does not simulate arbitrary AI, physics, doors or third-party
+Thinkers. Extending it outside designated safe areas requires those systems'
+explicit timing contracts. The 8-hour Sleep recovery rate remains provisional.
+Fares, vehicles, route incidents and a travel minimap remain future content.
+New campaign content and inherited expansion follow the V4 playtest export.
+Of the authored class abilities, only Arcanist Sleep is added here; the remaining
+class abilities and racial toggles stay in the V5 abilities block.
 Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Automatic conversation cancellation on damage was suggested and remains pending.
@@ -610,23 +630,21 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native script compilation of 4.35.0d1 passed in GZDoom 4.14.2 on Linux;
-Windows gameplay, rest UI, interruptions and native save/load remain pending.
-The test IWAD was Freedoom 2; it is not supplied or required by this source patch.
-The author accepted all 0c checks; 0d was blocked by the reported parser errors.
-The earlier 317 C++ assertions and 33 rest-context checks remain historical
-logic evidence, not native gameplay validation.
-Use PRUEBAS_4_35_0d1.txt to rebuild, verify the report version, exercise both
-poses and check the Limbo clock. Then resume PRUEBAS_4_35_0d.txt.
+The author accepted all 4.35.0f checks. The new 0g systems passed native Linux
+engine checks; Windows keyboard/controller input, the author's renderer and
+the complete hub traversal still need manual acceptance using
+**PRUEBAS_4_35_0g.txt**. Save tests cover active accelerated sleep, seated dining
+with real food/water, and migration of an active 0f sleeping-bag session.
+The QA copy of the older save had only its source-folder metadata remapped;
+its serialized gameplay state was preserved.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **docs**, **README.md**, validator and
-test TXT from the 4.35.0d1 hotfix into the complete **4.35.0d** project, merging
-folders and replacing matching files. Keep **PRUEBAS_4_35_0d1.txt** outside docs.
-The three supplied ZScript files must all be replaced, including the catalogue.
-Rebuild the PK3 with the usual launcher; opening the old PK3 will retain the error.
-Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
+Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
+**PRUEBAS_4_35_0g.txt** into the complete **4.35.0f** project, replacing matching
+files and keeping everything else. Models are already generated. Rebuild the
+PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
+The diagnostic `netevent ca_debug_rest_report` must identify **4.35.0g**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

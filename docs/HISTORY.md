@@ -1,6 +1,29 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0f — 2026-09-16.
+Versión documental: 4.35.0g — 2026-09-16.
+
+## 4.35.0g — avance rápido, mesas y sueño (2026-09-16)
+
+- Base 0f aprobada por el autor. T acelera sólo Dormir/Esperar o fabricación
+  activa, en áreas seguras y sin amenazas. Comparte reloj/recursos/efectos,
+  respeta umbrales y finalización, y conserva pausa/cancelación entre lotes.
+- Tres mesas originales en MAP03 con 2/6/12 sillas. Normal 192×96; grande
+  384×192. Comida y bebidas reales sobre el tablero, incluyendo recipientes
+  parciales; Use transfiere y F/G consume desde una silla adyacente.
+- Referencias persistentes de mesa, sillas y pertenencias como base de Trucazo.
+  El minijuego y la comida automática siguen fuera de este incremento.
+- Dormir drena 10 Lucidez/s sin regeneración ni interrupción por aturdimiento.
+  Arcanista User4 aplica Sueño con la misma regla, 10 s, golpe despierta,
+  60 s de reutilización y coste base de ensayo 1000 Ánima. Área provisional
+  128 MU modificada por alcance. Otras habilidades quedan pendientes.
+- PoseAngle corrige el frente del mueble; TEXTURES invierte el orden lateral
+  RSDO A/B (2↔8, 3↔7, 4↔6). No cambian PNG ni locomoción agachada.
+- Pruebas nativas de GZDoom 4.14.2 en Linux: igualdad de recursos tras tiempo
+  normal/acelerado, 20 sillas, transferencias/consumo/recipientes, USDF,
+  fabricación, regla de sueño y lanzamiento real de habilidad. Guardado/carga
+  de avance activo y mesa ocupada; migración de bolsa activa de 0f.
+- ZIP delta con fuentes/modelos/generador/documentación y TXT en español.
+  README en inglés. Motor, IWAD y material QA no forman parte del parche.
 
 ## 4.35.0f — bolsa de dormir y comodidad (2026-09-16)
 

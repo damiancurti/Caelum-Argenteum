@@ -1,8 +1,35 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0f — 2026-09-16.
+Versión documental: 4.35.0g — 2026-09-16.
 
-## Estado actual: 4.35.0f — bolsa de dormir y comodidad
+## Estado actual: 4.35.0g — avance seguro, mesas y sueño
+
+El autor aprueba las pruebas de 0f y autoriza el siguiente parche. Se implementa
+avance opcional con T únicamente al descansar/dormir o fabricar activamente, en
+zonas de prueba seguras. Comparte pasos de reloj, recursos, efectos y fabricación;
+no depende de i_timescale. Completar, cancelar o perder validez corta el avance.
+El Limbo conserva tiempo detenido. El alcance general de clima, rutas y eventos
+sigue pendiente de adaptadores al mismo servicio temporal.
+
+MAP03 recibe mesa redonda para 2, rectangular 192×96 para 6 y grande 384×192 para
+12; la grande duplica ambas dimensiones. Todas las sillas permiten Esperar. Use
+coloca/retira pertenencias reales y F/G come/bebe sentado junto a la mesa. Se
+preservan recipientes parciales y contenido al guardar. Referencias mesa/sillas
+preparan el requisito futuro de Trucazo, sin implementar aún el juego.
+
+Dormir reduce Lucidez 10/s y bloquea su recuperación. El aturdimiento por Lucidez
+no lo corta. Arcanista User4 aplica Sueño de área con la misma lógica, duración
+10 s, golpe despierta, reutilización 60 s y coste base provisional 1000 Ánima.
+El radio de ensayo reutiliza 128 MU y el modificador de área existente. Las otras
+habilidades continúan en V5. No cambia el bloque aprobado de atributos.
+
+Se corrigen orientación de muebles y orden inverso de las vistas laterales del
+atlas sin retocar PNG. GZDoom 4.14.2 en Linux compila y verifica tasas nativas
+frente a aceleradas, las 20 sillas, consumibles, USDF, fabricación, habilidad y
+guardados activos. Las capturas verifican costados y espalda. PRUEBAS_4_35_0g.txt
+recoge instalación, controles, reservas críticas y comprobación de Windows.
+
+## Base aceptada: 4.35.0f — bolsa de dormir y comodidad
 
 El autor aprueba todas las pruebas de 0e. Solicita una bolsa de dormir que pueda
 llevarse en el inventario y define tres factores de descanso: silla ×2, bolsa
@@ -41,16 +68,10 @@ parte del contador de comprobaciones se conserva desde antes del guardado. Las c
 nativas muestran bolsa, postura y factor. El TXT cubre los controles físicos
 y el recorrido del hub que debe comprobar el autor en Windows.
 
-### Avance temporal largo: diseño pendiente
+### Propuesta temporal de 0f adoptada en 0g
 
-Se recomienda un controlador de avance del tiempo propio del juego, por
-intervalos y hasta la siguiente interrupción/evento. Debe aplicar una misma
-cantidad de tiempo a recursos, efectos, recargas y sistemas del mundo, sin
-contabilizarla otra vez en Tick. El primer alcance debería limitarse a lugares
-seguros; la IA y física genéricas del motor requieren simulación real o reglas
-explícitas para resolverse durante el salto. SYSTEMS desarrolla el contrato.
-No se implementa ni se declara probado un time skip en 0f. La fecha de campaña,
-el ritmo común y el Limbo detenido permanecen como estaban.
+El contrato de avance propio por subpasos se implementa ahora con alcance
+inicial seguro. SYSTEMS describe exactamente sus adaptadores y límites.
 
 ## Base aceptada: 4.35.0e — sillas, catres y cámara de descanso
 
@@ -177,7 +198,8 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
 1. Completar el bloque de descanso: avance acelerado con aplicación coherente
    del tiempo e interrupciones. 0d/0d1 aportan la sesión a escala normal y 0e
    incorpora sillas/catres y cámara; 0f añade bolsa y factores de comodidad.
-   La aceleración sigue pendiente.
+   0g agrega aceleración segura, mesas/comida y la regla de Lucidez del sueño.
+   Falta integrar los futuros sistemas temporizados del mundo.
 2. Publicar el estado climático local común: temperatura, viento,
    precipitación y humedad, asociado al calendario y a cada lugar.
 3. Planificar eventos y viajes con el mismo reloj: horarios, duración de
@@ -187,7 +209,7 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
 
 Después continúa 4.36, entorno móvil y peligros físicos; luego 4.37, Tarot y
 Trucazo. Se exporta la prueba para otros jugadores antes de V5. El trabajo
-heredado/transversal, clima sobre el cuerpo, habilidades de clase/raciales,
+heredado/transversal, clima sobre el cuerpo, habilidades de clase/raciales salvo Sueño ya implementado,
 refugios/propiedades, comida automática y calidad amplia del descanso siguen
 en V5. No se inventa un número fijo de parches para cerrar 4.35.
 
@@ -1556,7 +1578,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0c aprobados: reloj, calendario, diálogos sin pausa, inicio 03/11/1889 09:00 y Limbo sin tiempo. 0d implementa descanso/espera a escala normal, recuperación provisional de Sueño, interrupciones y prueba accesible; validación nativa pendiente. Restan avance acelerado coherente, mobiliario/cámara de descanso, estado climático local (temperatura, viento, precipitación, humedad), eventos y viajes programados, y comprobación conjunta. El modelo térmico del personaje sigue en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0f aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño; pruebas nativas realizadas. Restan estado climático local, eventos y viajes programados, sus adaptadores temporales y comprobación conjunta. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
@@ -1593,7 +1615,7 @@ es un hito anterior, distinto de completar la distribución independiente.
 | IA masiva y rendimiento | Mantener presupuesto escalonado de percepción/objetivos y filtros espaciales; resolver locomoción compartida, contactos y pruebas graduales de 1.875 → 3.750 → 7.500 → 15.000 activos según el último gate aprobado. Cargar 15.000 actores pasivos no prueba 15.000 IA completas. |
 | Asedios | Director de batalla, refuerzos, tácticas, comandantes, aliados, máquinas/artillería/barricadas, sabotaje y rutas alternativas; límite temporal y consecuencias permanentes sobre ciudades, rutas y facciones. Depende de IA, física, mundo y calendario estables. |
 | Física | Completar validación de impactos/contactos múltiples, empuje sostenido, aplastamiento y anatomía/armadura. La futura física de golpes cuerpo a cuerpo requiere velocidad, masa efectiva, área/filo, material, penetración y técnica definidos; no reemplazar el combate aceptado sin ese diseño. |
-| Habilidades | Efectos de User1 racial y User4 clase definidos el 2026-09-14 y registrados en SYSTEMS.md; implementación pendiente. Peregrino usa Amparo (50% menos daño ambiental), no Bendecir los alimentos. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
+| Habilidades | Efectos de User1 racial y User4 clase definidos el 2026-09-14 y registrados en SYSTEMS.md; Sueño del Arcanista implementado en 0g, resto pendiente. Peregrino usa Amparo (50% menos daño ambiental), no Bendecir los alimentos. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
 | Tarot | Colección persistente y porcentaje global iniciados con El Loco en 0t; pasivas base por palo/rango de todos los Menores en 0aa. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
 | Trucazo | Truco con Tarot: Mayores modificadores, Menores jugables/filas, Envido/Truco/Retruco/Vale 4, daño y vida, Sentidos Mágicos, apuestas y consecuencias; casual/ranked y equipos 1v1 a 4v4. Implementar por capas tras reglas base de Tarot y autoridad multijugador. |
 | Cooperativo y PvP | Objetivo 2–8 jugadores, autoridad del anfitrión, propiedad/validación/sincronización, misiones y mundo compartidos, viajes, conexión/desconexión y compañeros. La persistencia individual actual no acredita estos modos. |

@@ -1,5 +1,25 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0f — 2026-09-16.
+Versión documental: 4.35.0g — 2026-09-16.
+
+4.35.0g — AVANCE SEGURO Y MESAS DE PRUEBA
+
+0f queda aprobado. MAP01 conserva el tiempo detenido, sin descanso por duración
+ni avance rápido. MAP02–MAP05 habilitan la zona seca de llegada, muebles y banco
+para T durante descanso o fabricación activa; fuera de esas zonas sigue el
+ritmo normal. Los muebles no convierten por sí solos cualquier lugar en seguro.
+
+MAP03 prepara tres conjuntos sin comida gratuita:
+- Redonda de 2 sillas: (-600,1000,0).
+- Normal 192×96, 6 sillas: (0,1550,0).
+- Grande 384×192, 12 sillas: (700,2500,0).
+Sus alrededores también permiten T si no hay amenazas. La preparación se realiza
+al entrar o cargar un mapa antiguo y no duplica conjuntos existentes. El comando
+netevent ca_debug_dining sólo vuelve a asegurar la colocación.
+
+Use coloca/retira comida o bebida; F/G consume sentado junto al tablero. Las
+mesas y sus sillas guardan el vínculo necesario para el futuro Trucazo. No se
+agrega el minijuego, una misión, recursos gratuitos ni una ruta al Limbo.
+Se conserva geometría WAD y conexiones. PRUEBAS_4_35_0g.txt detalla el recorrido.
 
 4.35.0f — BOLSA DE DORMIR Y COMODIDAD EN PRUEBAS
 

@@ -3175,3 +3175,21 @@ conversation
         choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestSleep480Action"; closedialog = true; }
     }
 }
+
+// 4.35.0g: transacciones de la mesa, resueltas al cerrar la conversación.
+conversation
+{
+    class = "CaelumPalomoConversationMenu";
+    id = 43514;
+    page
+    {
+        name = "$CA_TABLE_MENU_TITLE";
+        dialog = "$CA_TABLE_MENU_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_TABLE_PLACE_FOOD"; giveitem = "CaelumDiningPlaceFood"; closedialog = true; }
+        choice { text = "$CA_TABLE_PLACE_DRINK"; giveitem = "CaelumDiningPlaceDrink"; closedialog = true; }
+        choice { text = "$CA_TABLE_TAKE_FOOD"; giveitem = "CaelumDiningTakeFood"; closedialog = true; }
+        choice { text = "$CA_TABLE_TAKE_DRINK"; giveitem = "CaelumDiningTakeDrink"; closedialog = true; }
+        choice { text = "$CA_TABLE_INSPECT"; giveitem = "CaelumDiningInspect"; closedialog = true; }
+    }
+}

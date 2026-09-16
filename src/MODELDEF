@@ -3184,3 +3184,36 @@ Model CaelumRestBag
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumDiningTableSmall
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_small.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumDiningTable
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_normal.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumDiningTableLarge
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_large.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

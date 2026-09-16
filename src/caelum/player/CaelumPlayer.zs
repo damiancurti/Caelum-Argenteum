@@ -619,6 +619,9 @@ class CaelumPlayer : DoomPlayer
     // Lucidity is stored independently from health and begins at its fixed
     // maximum. LucidityState is cached so UI code never calls play functions.
     double CurrentLucidity;
+    int ForcedSleepTics;
+    double ClassSleepCooldownRemaining;
+    bool ClassSleepInputLatched;
     bool JournalMainM00RuloPracticeDone[6];
     int MainM00RuloPracticeSnapshot;
     bool MainM00BullDefeatedSnapshot;
@@ -8000,6 +8003,7 @@ class CaelumPlayer : DoomPlayer
 
     void CloseCraftingStationSession()
     {
+        CaelumTimeAdvanceState.Halt(self);
         CraftingMenuOpen = false;
         ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
         ActiveCraftingStationActor = null;
@@ -13183,6 +13187,8 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
+        if (damage > 0) ForcedSleepTics = 0;
+        CaelumTimeAdvanceState.Halt(self);
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
@@ -14228,6 +14234,7 @@ class CaelumPlayer : DoomPlayer
     override void PlayerThink()
     {
         CaelumRestState.HandleInput(self);
+        if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
         if (CombatChannelModeActive && player != null)
@@ -14242,7 +14249,7 @@ class CaelumPlayer : DoomPlayer
         }
         if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || PalomoMerchantMenuOpen
-                || CombatChannelModeActive || CaelumRestState.IsActive(self))
+                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
             && player != null)
         {
             UserCmd creationCommand = player.cmd;
@@ -14402,17 +14409,36 @@ class CaelumPlayer : DoomPlayer
         RefreshEquipmentLoadIfNeeded();
         SyncHUDActiveWeaponState();
 
+        IsSpendingRunningAir = IsRunningOnGround();
+        UpdateCrouchEffects();
+        UpdateMovementNoise();
+        AdvancePersonalTimeTic();
+        UpdateLowHealthHeartbeat();
+
+        UpdateAirStateEffects();
+        UpdateMovementAcceleration();
+        ApplyPhysicalMovement();
+        DetectAndChargePhysicalJump();
+        ConsumeRunningAir();
+        ConsumeShieldBlockingAir();
+        HUDAbilitySuccessRemaining = Max(
+            0.0, HUDAbilitySuccessRemaining - 1.0 / TICRATE
+        );
+        CaelumRestState.Advance(self);
+        CaelumTimeAdvanceState.Pump(self);
+    }
+
+    // Este paso no mueve actores ni llama Super.Tick. Cada intervalo simulado
+    // recorre las mismas tasas y umbrales que un tic de juego normal.
+    void AdvancePersonalTimeTic()
+    {
         if (ElementalStatus != null) { ElementalStatus.Tick(self); }
         IlluminationRemaining = Max(
             0.0, IlluminationRemaining - 1.0 / TICRATE
         );
 
         UpdateHealthStateEffects();
-        UpdateLowHealthHeartbeat();
 
-        IsSpendingRunningAir = IsRunningOnGround();
-        UpdateCrouchEffects();
-        UpdateMovementNoise();
 
         // El Anima se regenera de forma continua segun Paciencia.
         if (AnimaResourceInitialized
@@ -14451,19 +14477,8 @@ class CaelumPlayer : DoomPlayer
         CarbineAmmoCount = currentCarbineAmmo != null
             ? currentCarbineAmmo.Amount : 0;
 
-        if (LucidityResourceInitialized
-            && CurrentLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
-        {
-            CurrentLucidity = Min(
-                CaelumConstants.MAXIMUM_LUCIDITY,
-                CurrentLucidity
-                    + CaelumConstants.MAXIMUM_LUCIDITY
-                    / CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS
-                    / TICRATE
-            );
-            UpdateLucidityState();
-        }
-
+        CaelumSleepRules.AdvancePlayer(self);
+        ClassSleepCooldownRemaining = Max(0.0, ClassSleepCooldownRemaining - 1.0 / TICRATE);
 
         UpdateSurvivalResources();
         ApplyCriticalSurvivalDamage();
@@ -14475,16 +14490,11 @@ class CaelumPlayer : DoomPlayer
         UpdateUnderwaterAir();
         ApplyAirRegeneration();
 
-        UpdateAirStateEffects();
-        UpdateMovementAcceleration();
-        ApplyPhysicalMovement();
-        DetectAndChargePhysicalJump();
-        ConsumeRunningAir();
-        ConsumeShieldBlockingAir();
-        HUDAbilitySuccessRemaining = Max(
-            0.0, HUDAbilitySuccessRemaining - 1.0 / TICRATE
-        );
-        CaelumRestState.Advance(self);
+        if (ForcedSleepTics > 0)
+        {
+            ForcedSleepTics--;
+            if (ForcedSleepTics == 0 && health > 0 && !CaelumRestState.IsActive(self)) SetState(SpawnState);
+        }
     }
 
     // GZDoom exposes the effective run state through BT_RUN after combining
@@ -14515,11 +14525,11 @@ class CaelumPlayer : DoomPlayer
         // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
         crouchsprite = 0;
         if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
-        if (CaelumRestState.IsActive(self))
+        if (CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
         {
             // Las ramas literales evitan convertir un String a StateLabel en 4.14.2.
             State restPose = FindState("RestSeated");
-            if (CaelumRestState.IsSleeping(self)) restPose = FindState("RestLying");
+            if (CaelumSleepRules.IsSleeping(self)) restPose = FindState("RestLying");
             if (CurState != restPose) SetState(restPose);
             return;
         }
@@ -16467,6 +16477,12 @@ class CaelumPlayer : DoomPlayer
 
     void ReserveClassAbilityInput()
     {
+        if (CharacterProfile != null && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST)
+        {
+            if (!ClassSleepInputLatched) CaelumSleepRules.Cast(self);
+            ClassSleepInputLatched = true;
+            return;
+        }
         CombatClassAbilityInputReserved = true;
         ShowAbilitySuccessMessage();
         CombatClassAbilityInputReserved = false;
@@ -16740,6 +16756,7 @@ class CaelumPlayer : DoomPlayer
     bool IsPhysicallyImmobilized()
     {
         return CombatChannelModeActive
+            || ForcedSleepTics > 0
             || LucidityPhysicalStunRemaining > 0.0
             || PainImmobilizationRemaining > 0.0
             || (ElementalStatus != null
@@ -18200,9 +18217,9 @@ class CaelumPlayer : DoomPlayer
         // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
         // Esperar conserva la pérdida de Sueño; el soporte sólo modifica hambre/sed.
         CaelumRestState.Validate(self);
-        if (CaelumRestState.IsSleeping(self))
+        if (CaelumSleepRules.IsSleeping(self))
         {
-            if (CaelumRestState.HasPendingTic(self))
+            if (ForcedSleepTics > 0 || CaelumRestState.HasPendingTic(self))
                 CurrentSleep = CaelumRestRules.RecoverSleep(CurrentSleep);
         }
         else
@@ -18367,7 +18384,7 @@ class CaelumPlayer : DoomPlayer
         // La fatiga deja de producir daño mientras se duerme; hambre y sed
         // siguen siendo peligrosas. Los demás efectos críticos no se borran.
         if (SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL
-            && !CaelumRestState.IsSleeping(self)) criticalResourceCount++;
+            && !CaelumSleepRules.IsSleeping(self)) criticalResourceCount++;
         if (criticalResourceCount <= 0)
         {
             // Recuperar las reservas elimina también el daño parcial pendiente.

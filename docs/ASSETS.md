@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0f — 2026-09-16.
+Versión documental: 4.35.0g — 2026-09-16.
+
+## 4.35.0g — mesas y correspondencia de vistas
+
+assets/generators/generate_dining_tables.py genera tres OBJ originales:
+ca_table_small (diámetro 80), ca_table_normal (192×96) y ca_table_large (384×192),
+en models/caelum/props/rest. Usan madera/metal del proyecto y tablero a 34 MU.
+MODELDEF los asocia a los actores de mesa; no se incorporan nuevas texturas PNG.
+La colocación de conjuntos crea sillas existentes y colisión rectangular por
+bloques de 48 MU. Los consumibles visibles reutilizan su sprite y escala nativos.
+
+La orientación corrige dos causas: frente del modelo a 180° de la pose y orden
+lateral inverso del atlas RSDO A/B. TEXTURES añade alias 2↔8, 3↔7, 4↔6 apuntando
+a los PNG originales. C–G, locomoción agachada y el resto de personajes conservan
+sus cuadros. Se verificó frente/espalda y lateral en capturas del motor.
+
+El panel (16,12,608,116) añade T para avance y F/G para la mesa o la indicación
+de Lucidez −10/s al dormir. LANGUAGE contiene las ayudas y respuestas nuevas
+en español e inglés; CAPALOMO aporta USDF 43514. No se incluye material QA,
+fuentes externas, motor, IWAD ni el PK3 completo.
 
 ## 4.35.0f — bolsa portátil y lectura de comodidad
 

@@ -4,7 +4,10 @@ class CaelumRestFurniture : Actor abstract
 {
     CaelumPlayer Occupant;
     int TrialSlot;
+    CaelumDiningTable DiningTable;
+    int DiningSeat;
 
+    virtual double PoseAngle() { return Angle + 180; }
     virtual int RestMode() { return CaelumRestRules.MODE_WAIT; }
     virtual clearscope int ComfortFactor() { return 2; }
     virtual bool SupportsRest(CaelumPlayer user) { return Occupant == user; }

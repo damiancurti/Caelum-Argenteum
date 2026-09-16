@@ -136,6 +136,8 @@ class CaelumCombatActor : Actor
     double CombatHealthPainMultiplier;
     double CombatAdrenalineGainMultiplier;
     double CurrentCombatLucidity;
+    int ForcedSleepTics;
+    int SleepSavedTics;
     int CombatLucidityState;
     double CombatLucidityAccuracyMultiplier;
     double CombatLucidityPhysicalStunRemaining;
@@ -961,7 +963,7 @@ class CaelumCombatActor : Actor
             0.0,
             100.0
         );
-        if (CombatLucidityPhysicalStunRemaining > 0.0)
+        if (CombatLucidityPhysicalStunRemaining > 0.0 || ForcedSleepTics > 0)
         {
             LastCombatAttackAccuracyChancePercent = 0.0;
         }
@@ -2507,6 +2509,8 @@ class CaelumCombatActor : Actor
         double angle
     )
     {
+        if (damage > 0 && ForcedSleepTics > 0)
+        { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
         if (mod == 'CaelumImpact')
         {
             int healthBeforeImpact = health;
@@ -3251,8 +3255,16 @@ class CaelumCombatActor : Actor
     override void Tick()
     {
         Vector3 prePhysicsVelocity = Vel;
-
+        bool sleeping = ForcedSleepTics > 0;
+        if (sleeping) { tics = -1; Vel = (0,0,0); }
         Super.Tick();
+        if (sleeping)
+        {
+            CurrentCombatLucidity = CaelumSleepRules.Drain(CurrentCombatLucidity);
+            UpdateActorLucidityState();
+            ForcedSleepTics--;
+            if (ForcedSleepTics <= 0) tics = Max(1, SleepSavedTics);
+        }
         UpdateCaelumRecognitionSound();
 
         // Los actores diagnósticos conservan estados nativos, A_Look, A_Chase
@@ -3342,7 +3354,7 @@ class CaelumCombatActor : Actor
                 CurrentCombatAir + CombatAirRegenerationPerSecond / TICRATE
             );
         }
-        if (health > 0
+        if (health > 0 && !sleeping
             && CurrentCombatLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
         {
             CurrentCombatLucidity = Min(

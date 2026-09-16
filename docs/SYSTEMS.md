@@ -1,6 +1,97 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0f — 2026-09-16.
+Versión documental: 4.35.0g — 2026-09-16.
+
+## Avance rápido, mesas y sueño (4.35.0g)
+
+T alterna un avance opcional sólo durante una sesión Dormir/Esperar o una tarea
+real de fabricación con su estación abierta y válida. No basta con estar quieto,
+abrir el menú sin tarea ni tener un trabajo reservado en pausa. Cerrar la estación
+corta la aceleración y conserva la tarea/reservas según las reglas existentes.
+El estado queda ligado a la sesión o estación actual; otra actividad requiere T
+otra vez. Al completar se vuelve a la velocidad ordinaria.
+
+### Tiempo común por subpasos
+
+CaelumTimeAdvanceState procesa hasta 104 tics adicionales tras cada tic ordinario:
+x105, un minuto de campaña por tic del motor y unas 8 horas en 13,7 s si mantiene
+35 tics/s. Cada subpaso usa AdvanceOneTic del reloj, las funciones compartidas de
+recursos/temporizadores personales, el efecto y vencimiento de consumibles,
+UpdateCraftingTask y la sesión de descanso. Los límites de reservas, estados,
+expiraciones y finalización se resuelven a precisión de un tic, sin acreditar dos
+veces el tic ordinario. No se suma directamente una cantidad de horas al reloj.
+El calendario deriva del mismo reloj. Entre lotes vuelve el control al motor;
+T desactiva, Q/acciones cancelan el descanso y Escape conserva la pausa nativa.
+
+El primer alcance exige zona habilitada, suelo seco, reposo y un jugador. Rechaza
+combate, proyectiles, monstruos hostiles cercanos (1024 MU), quemadura/veneno/corte,
+agua, acciones incompatibles y Powerup sin adaptador. También rechaza un actor
+cercano con Sueño inducido, para no omitir el tiempo restante de ese efecto.
+Una silla o bolsa por sí sola no convierte otro lugar en zona segura. Las zonas
+iniciales cubren llegadas/muebles/banco de MAP02–MAP05 y las mesas de MAP03.
+Fuera de ellas sigue disponible el descanso normal. MAP01 rechaza avance y
+sesiones por duración; no cambia la excepción del Limbo.
+
+No se usa i_timescale. El servicio acelera los sistemas propios que incorpora,
+no IA, física, puertas, scripts ni Thinkers arbitrarios. Clima, rutas y eventos
+programados siguen pendientes: sus adaptadores deberán integrarse antes de
+permitirles consumir estos intervalos. No se inventan emboscadas ni se declara
+resuelto el mundo general durante un salto. Las tasas de comodidad de 0f siguen
+vigentes. Los segundos de Lucidez/consumibles/recargas son de simulación, no los
+minutos del calendario acelerado 20:1; T los adelanta una sola vez con el resto.
+
+### Mesas y pertenencias
+
+| Mesa | Tablero en MU | Sillas |
+| --- | --- | --- |
+| Redonda pequeña | Diámetro 80 | 2, enfrentadas. |
+| Rectangular normal | 192 × 96 | 2 por costado largo y 1 por cabecera: 6. |
+| Rectangular grande | 384 × 192 | 4 por costado largo y 2 por cabecera: 12. |
+
+CaelumDiningWorld.Place construye y valida conjuntamente modelo, colisión y
+sillas. Es la entrada para colocar nuevos conjuntos; invocar solamente el actor
+rectangular no construye su colisión compuesta. La mesa guarda referencias a las
+sillas; HasSeatLayout ofrece la base futura para Trucazo sin iniciar el minijuego.
+MAP03 recibe los tres conjuntos también desde guardados anteriores. La creación
+es idempotente y reintenta si el espacio está ocupado. No entrega comida.
+
+Use abre USDF 43514. Elegir colocar/retirar comida o bebida se ejecuta después de
+cerrar el diálogo y revalidar alcance. Se toma una unidad personal disponible,
+fuera de la Caja, por operación. Cada plaza ofrece dos posiciones de tablero.
+Los objetos son Inventory reales propiedad de la mesa; las figuras sobre el
+modelo sólo los representan. Recipientes conservan clase, litros y peso. Retirar
+usa recogida nativa y revierte si no entra; guardar/cargar conserva referencias.
+
+F/G come/bebe desde una silla adyacente ocupada en Esperar, sin levantarse. No se
+consume estando de pie, durmiendo, fuera de alcance, con la reserva llena o con
+el mismo efecto de regeneración activo. Se reutilizan los consumibles nativos:
+raciones se gastan y recipientes pierden el agua bebida sin desaparecer. La mejora
+ocurre en sus pulsos habituales; T procesa también esos pulsos y su vencimiento.
+No hay comida automática ni reposición gratuita.
+
+### Lucidez, habilidad Sueño y orientación
+
+Dormir drena exactamente 10 de Lucidez por segundo de simulación, mínimo cero,
+y suspende toda recuperación natural de Lucidez. Comodidad y atributos no reducen
+este drenaje. El aturdimiento por baja Lucidez no termina el sueño; daño y demás
+interrupciones vigentes siguen aplicándose. Al despertar vuelve la recuperación
+normal, sin restaurar Lucidez de golpe. La iluminación/alteración visual habitual
+por Lucidez baja sigue visible durante el descanso.
+
+User4 del Arcanista (Mago + Sacerdote) implementa Sueño: 10 s en área, 60 s de
+reutilización desde el lanzamiento, coste base de ensayo 1000 Ánima con el
+modificador existente. Afecta actores Caelum de combate y jugadores vivos con
+visión, incluidos aliados, excluyendo al lanzador. Radio provisional: área mágica
+base 128 MU por AbilityRangePercent/100. El actor queda inmóvil hasta vencer o
+recibir un golpe; usa el mismo drenaje de 10/s y no regenera Lucidez. La duración
+no depende del aturdimiento. Las otras habilidades de clase/raciales siguen
+pendientes. Este radio queda documentado como valor de prueba, no balance final.
+
+PoseAngle corrige 180° respecto al modelo de silla/catre/bolsa. Además, TEXTURES
+reasigna RSDO A/B 2↔8, 3↔7 y 4↔6: las vistas laterales del atlas tenían el orden
+inverso al nativo. Ambas correcciones son necesarias para frente, espalda y
+costados. No se retocan PNG ni cuadros C–G de agachado. Una sesión antigua corrige
+su orientación una sola vez y conserva duración y recuperación acumuladas.
 
 ## Bolsa de dormir y factores de descanso (4.35.0f)
 
@@ -67,43 +158,7 @@ La preparación 3 de CaelumRestTrial y ca_debug_rest_bag son optativas y sólo
 para MAP02–MAP05. Entregan el objeto mediante la recogida nativa si no estaba
 en el inventario; si falla por capacidad, destruyen el intento y notifican.
 No rellenan recursos. El informe ca_debug_rest_report sigue siendo de consulta
-y muestra 4.35.0f/factor. El panel muestra el multiplicador y divisor vigentes.
-
-### Contrato propuesto para time skip (todavía no implementado)
-
-El reloj de campaña se separa conceptualmente de los tics de animación/física.
-Un servicio único de avance simulado debe recibir el destino temporal del
-resto de la sesión y resolver intervalos pequeños o la próxima frontera de
-un evento. El tamaño concreto de los intervalos todavía no está fijado.
-
-1. Validar que se puede omitir simulación detallada: jugador solo, reposo,
-   lugar seguro, sin combate, proyectiles/peligros activos ni tareas incompatibles.
-2. Calcular el próximo límite: final solicitado, reserva crítica, cambio de
-   estado que altere una tasa, efecto que vence, evento, horario o interrupción.
-3. Aplicar exactamente ese intervalo a reloj/calendario, Sueño, necesidades,
-   Salud/Aire, otros recursos, efectos y recargas; los adaptadores de clima,
-   misiones temporizadas y rutas deben consumir el mismo intervalo una vez.
-4. Resolver eventos vencidos en orden, guardar el avance y devolver control
-   entre lotes para permitir cancelar sin bloquear la interfaz.
-5. Completar o interrumpir en el instante resuelto, conservando exclusivamente
-   la recuperación y los gastos acumulados hasta allí. En el Limbo no avanza.
-
-Las funciones de tasas deben compartirse entre el tic ordinario y el avance
-simulado. El tic no puede volver a cobrar lo ya aplicado por el servicio.
-La IA, proyectiles, puertas, scripts y Thinkers arbitrarios de GZDoom no quedan
-resueltos por sumar minutos a CaelumWorldClock. Para un primer alcance coherente
-se recomienda limitar el salto a zonas seguras y modelar explícitamente los
-horarios/eventos del mundo; los descansos expuestos requieren simulación real
-o reglas de peligro aprobadas. Las emboscadas no se inventan en este parche.
-
-No se recomienda depender de i_timescale para esta funcionalidad. La API CVar
-de ZScript sólo permite setters para CVars del mod; forzar una configuración
-interna tampoco proporciona resolución abreviada ni orden de eventos propio.
-Referencia: https://zdoom-docs.github.io/staging/Api/Base/CVar.html
-Acelerar globalmente toda la simulación conserva el coste de procesar sus tics
-y actores; el avance por intervalos permite acotar ese coste en los sistemas
-que acepten el contrato. Es una recomendación de arquitectura, no una API de
-salto de horas ya disponible en el proyecto.
+y muestra 4.35.0g/factor. El panel muestra el multiplicador y divisor vigentes.
 
 ## Mobiliario y cámara del descanso (4.35.0e)
 
@@ -327,7 +382,10 @@ primavera, sin determinar equinoccios, clima, temperatura, luz ni exposición
 térmica. Descanso, avance temporal y estado ambiental siguen en V4.35;
 exposición térmica del personaje conserva V5.1.
 
-## Habilidades de clase y raza: diseño acordado, implementación pendiente
+## Habilidades de clase y raza: diseño acordado; Sueño implementado en 0g
+
+Actualización 4.35.0g: Sueño del Arcanista se implementa arriba con el drenaje
+pedido de Lucidez. El resto de este catálogo conserva su estado de diseño.
 
 Se registran aquí las decisiones del diálogo del 2026-09-14. No hay nuevos
 efectos jugables de User1/User4 en 0b ni 0c. El roadmap asigna estas habilidades a
