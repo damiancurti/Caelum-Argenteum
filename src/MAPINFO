@@ -21,7 +21,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumMenuAudio", "CaelumConversationResume", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
+    EventHandlers = "CaelumMenuAudio", "CaelumConversationResume", "CaelumWorldClockTicker", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay"
 
     // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
     // trasladar o recrear a Palomo durante futuras etapas de misión sin
@@ -46,6 +46,7 @@ skill Caelum
 // El campo diagnóstico completo se conserva aparte en CADEV02.
 map MAP01 "$CA_MAP01_NAME"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS01"
 
     // La puerta de retorno valida inventario y progreso antes de ChangeLevel.
@@ -57,6 +58,7 @@ map MAP01 "$CA_MAP01_NAME"
 
 map MAP02 "$CA_MAP02_SEWER_NAME"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     nointermission
     cluster = 434
@@ -70,6 +72,7 @@ cluster 434
 
 map MAP03 "$CA_MAP03_NAME"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     nointermission
     cluster = 434
@@ -77,6 +80,7 @@ map MAP03 "$CA_MAP03_NAME"
 
 map MAP04 "$CA_MAP04_NAME"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     nointermission
     cluster = 434
@@ -84,6 +88,7 @@ map MAP04 "$CA_MAP04_NAME"
 
 map MAP05 "$CA_MAP05_NAME"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     nointermission
     cluster = 434
@@ -91,6 +96,7 @@ map MAP05 "$CA_MAP05_NAME"
 
 map CADEV02 "Campo de pruebas de actores"
 {
+    UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
 }
 

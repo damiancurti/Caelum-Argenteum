@@ -1,8 +1,480 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.34.0c — 2026-09-14.
+Versión documental: 4.35.0e — 2026-09-16.
 
-## Estado actual: 4.34.0c — red de alcantarillas de prueba
+## Estado actual: 4.35.0e — sillas, catres y cámara de descanso
+
+El autor confirma que todas las pruebas de 0d1 dieron correctas y autoriza
+el siguiente parche. Se considera aceptada la base de descanso de 0d reparada
+por 0d1. Este delta agrega una silla y un catre utilizables en cada alcantarilla
+MAP02–MAP05. Aparecen también al cargar un guardado anterior; una preparación
+repetida conserva la pareja existente. No se modifican los WAD ni se crea una
+ruta de regreso a MAP01.
+
+Usar la silla abre Esperar; usar el catre abre Dormir. Se elige entre 5 minutos,
+1, 4 u 8 horas de juego. El inicio ocurre después de cerrar la respuesta y
+validar alcance, suelo y espacio. Cerrar sin elegir deja al personaje de pie.
+TAB > Mundo > D/X conserva el descanso sobre suelo y sus preparaciones
+voluntarias. No se otorgan recursos al acercarse, abrir, cargar o viajar.
+
+La cámara de tercera persona permite observar las poses existentes y orbitar
+con los controles de mirar. Usa el recorte nativo del motor contra el entorno.
+Q/B, movimiento o acción levantan al personaje; TAB lo levanta y abre el Diario;
+Escape conserva la pausa. Al finalizar/interrumpir se libera el mueble y la
+cámara y se recupera la dirección de entrada. Se busca una salida libre sin
+telefrag; si las salidas están ocupadas, el mueble deja salir caminando antes
+de recuperar su colisión. Se conservan altura/radio físicos del jugador.
+
+Dormir mantiene la recuperación provisional de Sueño de 100% por 8 horas de
+juego. Esperar, Hambre, Sed y regeneración conservan sus tasas aprobadas.
+La fecha inicial sigue siendo 03/11/1889 09:00; MAP01 detiene el reloj y los
+demás mapas avanzan al ritmo común de 1 hora de juego por 180 segundos reales.
+Este incremento no acelera el tiempo. Las habilidades acordadas siguen
+registradas para su bloque posterior, sin introducirlas en el descanso.
+
+Verificación: compilación con GZDoom 4.14.2 y pruebas nativas automáticas en
+Linux para interacción Use/USDF, uso repetido, finalización, daño, pérdida del
+mueble, salidas ocupadas y colocación/uso en las cuatro alcantarillas. Se guardó
+y cargó una sesión activa y se inspeccionaron capturas de ambas posturas.
+Las instrucciones PRUEBAS_4_35_0e.txt incluyen la comprobación pendiente en
+Windows, controles reales, guardados anteriores y recorrido del hub.
+
+## Base aceptada: 4.35.0d1 — corrección de compilación
+
+El autor comunica nueve errores de análisis al cargar 0d en GZDoom 4.14.2:
+dos búsquedas de poses reciben String en lugar de StateLabel, restPose queda
+sin declarar por ese primer error y seis llamadas no encuentran IsTimelessMap.
+El catálogo entregado en 0c contiene esa función; se incluye nuevamente completo
+para resolver la dependencia cuando quedó una copia anterior en el proyecto.
+
+CaelumPlayer.UpdateCrouchVisual y CaelumRestState.Begin ahora buscan cada pose
+con su etiqueta literal. Los estados, fórmulas, campos persistentes, duración,
+controles y roadmap mantienen el contrato de 0d. En esa entrega se esperaban las pruebas jugables; el autor las confirma
+antes de 0e.
+
+Se reprodujeron los tres errores de poses con GZDoom 4.14.2 nativo y el catálogo
+correcto. Tras aplicar la corrección, el mismo motor compiló los scripts del
+proyecto reconstruido de 4621 archivos. Entorno de comprobación: Linux, SDL
+sin pantalla física, renderizado por software y Freedoom 2 como IWAD de prueba.
+Esto verifica análisis/compilación de ZScript, no partida en Windows, interacción,
+presentación ni guardados. El motor y el IWAD no se incluyen en el parche.
+
+PRUEBAS_4_35_0d1.txt indica cómo combinar todos los archivos, reconstruir el PK3,
+comprobar el informe 0d1 y retomar Dormir/Esperar, Use y tiempo del Limbo.
+El validador reconoce el sufijo numérico de hotfix sin eliminar comprobaciones.
+
+## Base funcional aceptada con 0d1: 4.35.0d — descanso y espera
+
+El autor aprueba todas las pruebas de 4.35.0c y autoriza continuar. Este delta
+sobre 0c incorpora sesiones de Dormir y Esperar a la escala normal del mundo,
+accesibles desde TAB > Mundo > D (X del mando). Se utiliza el diálogo USDF
+aprobado, con selección explícita de duración: 5 minutos de juego, 1, 4 u 8
+horas. La primera dura 15 segundos reales y permite una comprobación breve.
+Elegir el modo no inicia la sesión; elegir la duración sí. Cerrar no concede
+recuperación ni reserva una acción pendiente.
+
+Dormir recupera Sueño de forma gradual en lugar de su consumo pasivo. Valor
+provisional de prueba, no balance autoral cerrado: 100% en 8 horas de juego,
+sin sobrepasar 100%. Se conservan consumo de Hambre/Sed y regeneraciones
+habituales; no hay curación adicional, alimentos automáticos ni reposición
+de ánima o adrenalina al comenzar/terminar. Esperar conserva la pérdida de
+Sueño. La fatiga crítica no produce daño mientras se duerme, permitiendo
+recuperarse desde Sueño agotado; no se anulan sus restantes penalizaciones
+ni los daños por Hambre/Sed. Hambre o Sed críticas impiden continuar.
+
+La sesión utiliza un Inventory oculto y pulsos del reloj ya existente. El
+personaje queda quieto y adopta su pose mundial acostada o sentada. Puede
+mirar alrededor; Q/B, movimiento o una acción lo levantan. TAB lo levanta y
+abre el Diario; Escape mantiene la pausa voluntaria. La confirmación del
+diálogo debe soltarse antes de armar la cancelación por entrada, y Use vuelve
+a la ruta nativa al levantarse sin reescribir usedown. No se usan flags de
+congelación globales ni se añade una cámara nueva o mobiliario físico.
+
+Daño efectivo, combate, desplazamiento, agua, pérdida de suelo, otra actividad,
+cambio de mapa o modificación externa del reloj interrumpen. Un sello, crafteo,
+recarga/carga, conversación o viaje pendiente impide comenzar. Viajar durante
+el descanso se rechaza. No se devuelven minutos ya transcurridos ni se otorga
+el resto de una recuperación al cancelar. Las finalizaciones son únicas.
+La sesión guardada conserva modo, duración, progreso, posición y último pulso;
+al cargar continúa si el contexto sigue siendo válido. La depuración de fechas
+de 0c no modifica ese reloj ni acelera el descanso.
+
+El Limbo conserva su fecha detenida y rechaza estas sesiones por duración.
+No cambian la piscina ni la regeneración previa de MAP01. El menú ofrece
+preparaciones voluntarias, sin objetos: Hambre/Sed 100%, Sueño 50% o 5%.
+No se aplican al abrir, cargar o viajar. ca_debug_rest_report sólo consulta;
+ca_debug_rest_hit solicita un impacto nativo de 1 para comprobar la interrupción
+en las alcantarillas vacías. No representa una prueba nativa ya realizada aquí.
+
+### Verificación previa de 0d
+
+317 aserciones sobre reglas, métodos de sesión y daño crítico extraídos del
+ZScript y compilados como C++, con sanitizador de comportamiento indefinido.
+33 condiciones se comprueban al iniciar y durante la sesión. Se verifican
+duración, pulsos únicos del reloj, recuperación, cierre terminal, entrada y
+liberación, predicción, fatiga y restauración lógica de campos. Las funciones
+del motor se sustituyen por dobles de prueba: esto no verifica compilación
+ZScript, física, serialización nativa ni aspecto visual de GZDoom.
+
+Se revisan además fuentes, nuevas rutas USDF, traducciones, ancho de textos,
+recursos y los cinco documentos. Al preparar 0d no estuvo disponible el motor; 0d1 incorpora la comprobación
+nativa de compilación. PRUEBAS_4_35_0d.txt conserva las pruebas jugables pendientes. El ZIP
+incluye sólo archivos modificados/nuevos. Se conservan mapas, audiovisuales,
+atributos, tarifas, recetas y la cronología aprobada en 0c.
+
+### Pendiente para pasar de 4.35 a 4.36
+
+1. Completar el bloque de descanso: avance acelerado con aplicación coherente
+   del tiempo e interrupciones. 0d/0d1 aportan la sesión a escala normal y 0e
+   incorpora sillas/catres y cámara; la aceleración sigue pendiente.
+2. Publicar el estado climático local común: temperatura, viento,
+   precipitación y humedad, asociado al calendario y a cada lugar.
+3. Planificar eventos y viajes con el mismo reloj: horarios, duración de
+   rutas y resolución de acontecimientos durante espera/descanso o traslados.
+4. Comprobar la integración de esos bloques con guardados, viajes y la
+   excepción del Limbo, y cerrar las pruebas nativas de los incrementos.
+
+Después continúa 4.36, entorno móvil y peligros físicos; luego 4.37, Tarot y
+Trucazo. Se exporta la prueba para otros jugadores antes de V5. El trabajo
+heredado/transversal, clima sobre el cuerpo, habilidades de clase/raciales,
+refugios/propiedades, comida automática y calidad amplia del descanso siguen
+en V5. No se inventa un número fijo de parches para cerrar 4.35.
+
+## Base aceptada: 4.35.0c — inicio de campaña y tiempo del Limbo
+
+El autor aprueba todas las pruebas de 4.35.0b. Fija el inicio de los eventos
+en el 3 de noviembre de 1889 a las 09:00 y establece que dentro del Limbo
+no transcurre el tiempo. Este delta sobre 0b incorpora esa regla temporal
+antes del siguiente incremento de descanso; V4.35 continúa con descanso,
+avance temporal interrumpible, estado climático y eventos/viajes programados.
+
+La fecha se inicializa automáticamente al confirmar el personaje. MAP01,
+la mansión del Limbo, detiene el reloj global. Al salir por la ruta narrativa
+a MAP02, la misma fecha comienza a avanzar. MAP02–MAP05, CADEV02 y futuros
+mapas sin una excepción explícita usan un tic de reloj por tic simulado:
+1 hora de juego = 180 segundos reales. No hay relojes independientes por mapa.
+Una entrada de depuración al Limbo detiene la fecha alcanzada, sin reiniciarla.
+No se habilita una conexión de regreso a MAP01.
+
+La suspensión corresponde a la cronología del mundo, no a la simulación del
+personaje. Se puede caminar, conversar sin pausa, usar, capturar, fabricar y
+completar las pruebas del Limbo. Necesidades, regeneración, daño y recargas
+conservan sus temporizadores y balance. Fuera del Limbo los diálogos siguen
+consumiendo tiempo de campaña; Escape conserva la pausa voluntaria nativa.
+
+Un guardado anterior no separaba tiempo exterior de tiempo del Limbo. Al
+actualizarlo, se fija una sola vez 03/11/1889 09:00 sobre su contador actual;
+se conservan CompletedDays/DayTics y todas las marcas de viajes ya registradas.
+No se asigna retrospectivamente una fecha civil a esos viajes. Los calendarios
+de prueba heredados de 0b se sustituyen por este inicio canónico. Los guardados
+nuevos de 0c conservan su instante al cargar y al recorrer los mapas del hub.
+
+La campaña y la vista de prueba usan anclajes separados del mismo reloj.
+DateSerial/CivilDayTics consultan la campaña por defecto; sólo la UI diagnóstica
+pide la prueba. Cambiar o quitar una fecha de ensayo no reinicia la campaña:
+al retirar la prueba se vuelve a mostrar la fecha real que siguió avanzando.
+En el Limbo se detienen ambos anclajes. Mundo indica explícitamente «El tiempo
+está detenido en el Limbo». La convención estacional mensual austral de 0b
+permanece como prueba: noviembre aparece como primavera; no se simula clima.
+
+### Verificación de 0c
+
+8.849 aserciones automáticas sobre métodos extraídos del ZScript y compilados
+como C++, con sanitizador de comportamiento indefinido: 27 casos de migración,
+4.320 proyecciones de campaña/prueba, fecha inicial contrastada con std::chrono,
+ritmo por mapa, primera medianoche, límites y aislamiento de la depuración.
+La restauración comprobada copia los campos del estado: no es serialización
+nativa de GZDoom. El validador documental/de recursos y la revisión de fuentes
+complementan esos cálculos. No hay motor disponible en este entorno; compilación
+ZScript, migración real, guardado/carga, viaje y presentación de 0c requieren
+las comprobaciones de PRUEBAS_4_35_0c.txt. El autor confirmó posteriormente
+todas las pruebas de 0c; es la base aceptada de 0d.
+
+La entrega contiene sólo fuentes/documentos nuevos o modificados y la guía
+de pruebas en raíz. MAPINFO, mapas, menús de conversación, entrada de controles,
+recursos audiovisuales, atributos y fórmulas del personaje se conservan.
+V4 llega hasta 4.37 y luego se exporta la prueba para otros jugadores; el
+trabajo heredado y transversal, incluidas las habilidades acordadas, sigue en V5.
+
+## Base aceptada: 4.35.0b — calendario y conversaciones sin pausa
+
+El autor aprueba todas las pruebas de 4.35.0a y autoriza continuar, incorporando
+las decisiones recientes sobre conversaciones y habilidades. Esta entrega es
+delta sobre 0a. Las habilidades siguen en el bloque V5 ya previsto; aquí se
+registran sus efectos concretos en SYSTEMS.md, sin presentarlos como jugables.
+
+CaelumCalendarRules convierte fechas civiles entre los años 1 y 9999, con meses
+de longitud real y reglas gregorianas de bisiestos. CaelumCalendarState guarda
+un anclaje respecto de CaelumWorldClock. No tiene un segundo ticker. Las
+partidas nuevas y previas comienzan sin fecha de campaña, pues el autor aún
+no la ha fijado. Los comandos de prueba permiten asignar una fecha explícita,
+preparar una medianoche a 12 segundos simulados y retirar esa fecha sin tocar
+el reloj, recursos, tareas, misiones ni marcas de viaje ya registradas.
+
+Mundo muestra fecha y estación cuando hay anclaje. El ciclo austral mensual
+de prueba usa diciembre–febrero, marzo–mayo, junio–agosto y septiembre–noviembre.
+Es una convención técnica identificada como prueba, no una simulación de
+equinoccios, luz, temperatura ni clima. La fecha histórica y su estación inicial
+siguen pendientes de definición autoral. Los cambios del calendario de prueba
+no disparan recompensas ni eventos y no equivalen a descansar o viajar en el
+tiempo. El siguiente incremento de V4.35 abordará descanso y avance temporal
+con sus interrupciones, seguido del estado climático y eventos programados.
+
+MAPINFO usa UnFreezeSinglePlayerConversations en los seis mapas del proyecto.
+El menú común CaelumPalomoConversationMenu omite la acción de Ticker que pausa
+las conversaciones nativas a los 20 tics. Los menús derivados conservan formato, respuestas, Q/Atrás, sonidos y presentación de captura.
+Esta ruta cubre también conversaciones reabiertas desde snapshots anteriores;
+no escribe las flags de nivel de sólo lectura ni fuerza la pausa global.
+El menú voluntario de Escape conserva su comportamiento nativo.
+
+La propuesta adicional de cerrar automáticamente un diálogo ante cualquier
+daño no se implementa en 0b. Debe comprobarse y completarse su interacción con
+la cancelación nativa; el cambio autorizado aquí es mantener el mundo activo.
+Socialización deberá consumir ánima durante la conversación cuando se
+implemente su toggle. No se añade un coste especial por leer un diálogo.
+
+### Verificación de 0b y límite de la entrega
+
+La base se reconstruyó desde las fuentes del autor, con todos los deltas de
+4.33.0af a 4.35.0a. El validador existente pasó antes de editar. No se dispone
+del ejecutable de GZDoom en este entorno y su descarga no pudo completarse.
+Por ello, no se afirma compilación ZScript, ejecución nativa, guardado/carga
+ni prueba visual dentro del motor para 0b. Esas comprobaciones están descritas
+en PRUEBAS_4_35_0b.txt. Posteriormente el autor confirmó todas sus pruebas;
+0b queda aceptado como base de 0c.
+
+La aritmética se extrae de las funciones ZScript y se compila como C++ para
+compararla con std::chrono: 3.652.059 fechas civiles, 7.840 combinaciones de
+entrada válidas/inválidas y 1.728 proyecciones del anclaje. También se revisan
+las estaciones mensuales y los límites enteros. Esta prueba comprueba los
+cálculos; no sustituye al compilador ni a la máquina virtual de GZDoom.
+El validador documental/de recursos termina sin errores. La revisión confirma
+cinco clases USDF bajo el menú común, ocho claves nuevas en ambos idiomas y
+494 MU como ancho conservador máximo de la fecha dentro de 544 MU disponibles.
+MAP01–MAP05, CADEV02, fuentes, sonidos, sprites y modelos conservan sus bytes.
+
+## Base aceptada: 4.35.0a — reloj global persistente
+
+El autor confirma «Todo correcto ahora sí» para 4.34.0e. Quedan aceptadas
+las pruebas de sello, crafteo, recuperación de Use y viaje. Se continúa con
+el reloj global, primer incremento de 4.35; el calendario, descanso, clima
+y eventos mantienen su lugar dentro del bloque.
+
+CaelumWorldClock registra jornadas completas y tics del día en un Inventory
+nativo del personaje. CaelumWorldClockTicker es un observador estático sin
+estado temporal propio: consulta ese Inventory y avanza una vez por tic de
+simulación, después de confirmar el perfil. También se registra al cargar
+un guardado que no incluía este sistema. La base actual es individual.
+
+Se conserva la escala aprobada: 1 hora de juego = 180 segundos reales de
+simulación, 24 horas por día. A 35 tics/s, la hora tiene 6300 tics y el día
+151200. Los contadores enteros evitan acumular redondeos. TAB > Mundo muestra
+«Tiempo registrado», expresado en días transcurridos y HH:MM, junto a la escala.
+No equivale a una fecha narrativa ni atribuye estaciones o cambios de luz.
+
+El motor determina qué tiempo se simula. Pausa, menú nativo y conversaciones
+que pausan el juego detienen el reloj. El Diario no pausa la simulación;
+trabajar en una estación sigue consumiendo tiempo normal. Guardar/cargar
+conserva el contador; viajar y volver a un mapa del hub conserva el reloj
+viajero, sin restaurar la hora del snapshot antiguo del lugar. No se suma
+el tiempo que GZDoom estuvo cerrado ni el de una carga. Volver a una partida
+guardada restaura su instante guardado. Una partida nueva tiene otro registro.
+
+Un guardado anterior empieza a registrar desde cero al instalar 0a; no se
+infiere duración pasada a partir del mapa o las misiones. Las salidas/llegadas
+nuevas de alcantarilla guardan marcas del mismo reloj. No se fechan viajes
+históricos de 0e ni se añade duración a rutas todavía sin tiempo definido.
+El informe netevent ca_debug_time_report sólo consulta. El informe de viajes
+muestra las marcas cuando existen. No se alteran los costes o temporizadores
+aceptados de necesidades, combate, sellos y fabricación.
+
+Entrega delta sobre 4.34.0e, con README inglés, cinco documentos canónicos y
+PRUEBAS_4_35_0a.txt en la raíz. V4 continúa hasta 4.37; después se prepara la
+exportación para otros jugadores. Todo el trabajo heredado y transversal
+sigue en V5, comenzando por la reorganización del código en V5.0.
+
+### Verificación nativa de 0a
+
+GZDoom 4.14.2/Linux, con Freedoom 0.13.0 y llvmpipe: 35 observaciones
+correctas, sin errores de script ni abortos de ejecución en los seis casos
+finales. Nueve comprueban creación, escala, Inventory oculto único, límites
+enteros de hora/día, saturación, consulta sin cambios y avance exacto por tic.
+Los límites extremos se preparan en un contador aislado; no representan
+jornadas completas transcurridas durante una prueba manual.
+
+Siete observaciones usan teclado real: pausa nativa, menú Esc, conversación
+USDF, sus respectivas reanudaciones y Diario abierto con simulación activa.
+Mundo se inspecciona en una captura nativa en español con cinco visitas y tres
+salidas preparadas para verificar el espacio disponible. La nueva línea cabe
+sin superponerse a los registros ni a los controles existentes.
+
+Siete observaciones recorren MAP02 → MAP03 en caravana y el regreso por una
+reja con Use real. El reloj acompaña al personaje, conserva el inventario y
+fecha ambas rutas; volver al hub no recupera la hora antigua de MAP02.
+Reconciliar de nuevo una llegada resuelta conserva sus marcas y contadores.
+Tres observaciones cargan el guardado nativo de ese recorrido y verifican el
+instante guardado, la llegada única y la continuación exacta por tic.
+
+Se crea además un guardado ejecutando las fuentes originales de 4.34.0e,
+después de una llegada real a MAP03. Se superponen las fuentes 0a en la misma
+ruta antes de cargarlo. Seis observaciones comprueban el reloj nuevo desde
+cero, el historial anterior sin fechas inventadas, la llave y reservas
+conservadas, la caravana disponible y las marcas del primer viaje posterior
+a la actualización, incluido el regreso al snapshot anterior de MAP02.
+
+Las tres observaciones restantes cruzan un fin de día preparado usando tics
+reales y comienzan otra partida mediante el motor: el nuevo personaje tiene
+un solo reloj y empieza desde cero. No se repite toda la historia de MAP01
+ni toda la fabricación ya aceptada. Fixtures, motor, IWAD y guardados quedan
+fuera de la entrega. El validador del proyecto comprueba los cinco documentos
+actualizados y termina sin errores. El autor confirmó después todas las pruebas de 0a en Windows.
+
+
+## Base aceptada: 4.34.0e — medios para comprobar actividades y viaje
+
+El autor aprueba lo que pudo probar de 0d, pero no pudo comprobar sellos o
+crafteos porque las alcantarillas estaban vacías. Esas dos pruebas no se dan
+por aprobadas. 0e completa sus medios antes de avanzar al reloj de 4.35.
+
+En cada alcantarilla MAP02–MAP05 hay un banco, un aserradero y una forja
+nativos cerca de la llegada. La oferta existente TAB > Mundo > C/Y agrega
+«Preparar sello» y «Preparar crafteo». Son ayudas de diagnóstico voluntarias:
+no inician un traslado, una canalización ni una tarea por sí mismas.
+La primera reutiliza o concede quintaesencia T1, la equipa mediante la ruta
+normal y recarga adrenalina al máximo vigente; su texto avisa que también
+quita la espera del sello. No provoca un combate ficticio. La segunda enseña
+Mango y completa hasta 40 unidades de madera para el lote x10. Las entregas
+respetan capacidad de carga. Repetir no duplica el sello poseído ni añade
+madera sobre ese lote. Cargar o viajar no reponen recursos.
+
+Usar una estación de esta red, después de preparar la receta, preselecciona
+Mango T1, lote x10 y eficiencia 100%. Son valores existentes; el tiempo de
+trabajo se calcula con la Destreza real. Enter inicia la fabricación normal,
+Q deja la tarea pendiente y TAB > Mundo > C debe rechazar el viaje. Volver
+con Usar permite cancelar con C o terminar. Para el sello se usa su control
+habitual con un arma equipada, y se prueba tanto cancelación como agotamiento.
+
+Las estaciones se reconstruyen una vez en guardados anteriores y mantienen
+su grupo y estado dentro del hub. Los mapas, puntos de llegada y seis rutas
+son los existentes. No hay regreso a MAP01 ni cambios de misión, atributos,
+receta, coste, consumo o efecto de quintaesencia. La entrega es delta sobre
+0d con PRUEBAS_4_34_0e.txt fuera de docs. Después de aceptar estas pruebas
+sigue V4 hasta 4.37, exportación para otros jugadores y trabajo heredado y
+transversal en V5 (primero refactor V5.0).
+
+
+La prueba real de iniciar/cerrar/reanudar reveló que el Diario consumía
+KeyUp de +use al abrir Oficios. 0e deja llegar esa liberación al motor para
+que el siguiente Use funcione después de Q; no cambia las pulsaciones de
+navegación aprobadas. La secuencia se comprueba sin liberar el botón mediante
+comandos de depuración ni asignar CraftingTaskActive/CombatChannelModeActive.
+
+### Verificación nativa de 0e
+
+GZDoom 4.14.2/Linux, con Freedoom 0.13.0 y llvmpipe: 50 observaciones del
+recorrido jugable verifican la oferta por Mundo/C, equipamiento nativo,
+User2 real, bloqueo con canal activo, cancelación, agotamiento natural,
+recuperación de Use, receta y lote disponibles, Enter, Q, bloqueo por tarea
+pendiente, reanudación, cancelación y producción con el avance T existente.
+Se recorren los seis sentidos en caravana; los cuatro mapas permiten usar
+sus estaciones, y el hub conserva grupos, materiales, producto e ItemId del
+sello. Las ayudas no crean un viaje ni se repiten por cargar o cambiar de mapa.
+El perfil de diagnóstico iniciado por consola se equipa con una daga nativa
+para representar el arma que el jugador trae de MAP01. No se asignan los
+booleanos de canal ni fabricación para simular que se inició una actividad.
+
+Siete observaciones adicionales cargan un guardado nativo con la fabricación
+real pendiente: conserva reservas y pausa, sigue rechazando el viaje, reanuda
+con Use y permite cancelar sin consumir ni duplicar. Después se confirma una
+caravana real y se registra una sola llegada. Los fixtures y guardados son
+privados de verificación y no forman parte del ZIP de fuentes.
+
+La compatibilidad se comprueba con un guardado creado ejecutando las fuentes
+originales de 0d, dentro de una confirmación de caravana. Se superponen las
+fuentes 0e en esa misma ruta antes de cargarlo. Cuatro observaciones verifican
+la página restaurada sin salida automática, tres estaciones tras cerrar el
+diálogo, inventario/necesidades conservados y preparación nueva disponible
+sin fabricar historial de viajes. No se sustituye esa comprobación por una
+partida nueva. La validación del autor en Windows sigue pendiente.
+
+Tres comprobaciones adicionales rechazan acciones de suministros fuera de
+su conversación e identificadores inválidos, sin conceder objetos ni crear
+viajes. Total: 64 observaciones nativas correctas en esta verificación.
+La oferta española y el puesto físico de MAP02 se inspeccionan en capturas
+nativas: las seis respuestas y las tres estaciones son visibles. El validador
+del proyecto termina sin errores; los cinco documentos tienen versión 0e.
+Se conservan por comparación de bytes mapas, assets, reglas, atributos y el
+jugador. Sólo el Diario cambia la liberación de Use, y la presentación de
+estaciones se limita explícitamente a las alcantarillas de prueba.
+
+## Incremento anterior: 4.34.0d — caravanas y registro de viajes
+
+El autor confirma «Todas las pruebas dieron correcto» para 4.34.0c y autoriza
+el siguiente parche. Se acepta la red MAP02–MAP05, sus seis sentidos y el hub,
+con la prohibición de volver a MAP01. Continúa el orden V4 hasta 4.37,
+exportación de prueba para otros jugadores y después todo lo heredado y
+transversal en V5, empezando por el refactor V5.0.
+
+0d incorpora la base de servicio de caravanas mediante una prueba explícita
+en TAB > Mundo > C (Y del mando). Ofrece únicamente las conexiones de la
+alcantarilla actual. El diálogo nativo separa selección, vuelta a destinos,
+cancelación y confirmación. No es un NPC de campaña ni asigna una facción;
+la prueba no cobra, no crea vehículos ni simula una duración.
+
+Los accesos físicos y la caravana comparten CaelumTravelService. Antes de
+salir se comprueban perfil, vida, origen, destino disponible, actividad,
+predicción, partida individual y ausencia de otro traslado pendiente. Los
+accesos conservan además sus comprobaciones de colocación, alcance y visión.
+El motor mueve el inventario real y conserva el hub. El regreso narrativo
+MAP01 → MAP02 sigue con su confirmación y saneamiento exclusivos.
+
+CaelumJourneyState, un Inventory nuevo y oculto, registra último trayecto,
+modo, secuencia y cantidades de llegadas/interrupciones. Una llegada sólo se
+cuenta en el destino esperado y con su conexión pendiente. Repetir la consulta
+o cargar una llegada resuelta no duplica contadores. Otra llegada, una marca
+incompatible o cargar una salida aún en origen la interrumpe sin reintento.
+La consulta de un guardado 0c no inventa historial; éste comienza al viajar.
+Mundo muestra el último viaje y ofrece la prueba. El informe de consola
+netevent ca_debug_travel_report es de sólo lectura.
+
+La base de servicios y registro de 4.34 queda implementada; los horarios,
+duraciones e integración temporal de eventos continúan en 4.35 con el reloj.
+Los transportes, minimapa de viaje, incidentes y desvíos del diseño amplio
+siguen planificados y no se presentan como contenido jugable de este ensayo.
+El siguiente incremento previsto es el reloj global de 4.35, sujeto a la
+validación del autor de 0d. El refactor del código permanece en V5.0.
+
+Entrega delta sobre 0c con README inglés, cinco documentos canónicos y
+PRUEBAS_4_34_0d.txt fuera de docs. No incluye motor, IWAD, guardados ni fixtures.
+
+
+### Verificación de 0d y límites
+
+En GZDoom 4.14.2 nativo, con Freedoom 0.13.0 y llvmpipe/Linux, se completan
+57 observaciones de comportamiento: 27 de guardas y conciliación, 21 de
+selección/cancelación/seis sentidos y Use real, dos de conversación guardada,
+cinco de migración desde fuentes originales 0c y dos de recarga en destino.
+Los casos de conciliación preparan marcas de salida para probar rechazo,
+interrupción y resolución sin atribuirles recorridos reales.
+
+La prueba de teclado entra desde Mundo con C, usa respuestas explícitas de
+USDF y conserva carta sellada, llave de plata, reputación y necesidades durante
+los traslados. La conversación guardada estaba en la confirmación de MAP04;
+al cargar continúa allí sin salir sola y una confirmación produce una llegada.
+El guardado 0c se creó ejecutando sus fuentes originales y se cargó tras
+superponer 0d en la misma ruta de prueba. La Caja conserva ItemId 1, junto a
+llave, carta sellada, reputación 47 y necesidades, antes y después del viaje.
+El guardado posterior contiene los snapshots MAP02/MAP03 y el registro de
+llegada; cargar no vuelve a contarlo. No se simula una nueva partida como si
+fuera un guardado anterior. No se repite toda la historia ni toda la fabricación.
+
+Mundo se inspecciona en español e inglés con cinco visitas y tres salidas
+preparadas para verificar su disposición completa; la página de confirmación
+se captura durante la conversación nativa. Se conservan los mapas, assets,
+atributos, inventario narrativo y entradas aceptadas; la nueva tecla sólo
+actúa en Mundo de las alcantarillas. Validación del autor en Windows pendiente.
+
+## Base aceptada: 4.34.0c — red de alcantarillas de prueba
 
 El autor confirma «Todo correcto» para 4.34.0b. Autoriza conectar MAP02 con
 otros mapas de alcantarilla, destinados a pruebas masivas, de Tarot y de los
@@ -1032,8 +1504,8 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; en V5, completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
-| V4.34: arquitectura del mundo y viajes | 0a–0b aprobados: catálogo, Diario, regreso y puertas por grupo. 0c añade módulos de alcantarilla, planta elevada con escaleras y seis conexiones de prueba persistentes. MAP01 no admite retorno. Quedan bases de caravanas y puntos de integración de viajes/eventos; duraciones y planificación se apoyarán en el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | Calendario/estaciones, duración del día, clima local y planificación de eventos/viajes. Después del reloj global, descanso y avance del tiempo con sus interrupciones; sillas/camas pueden reutilizar interacción, inmovilidad y cámara de seguimiento. Publicar un estado ambiental común de temperatura, viento, precipitación y humedad. El modelo térmico del personaje llega después. |
+| V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
+| V4.35: calendario, clima y eventos | 0a–0c aprobados: reloj, calendario, diálogos sin pausa, inicio 03/11/1889 09:00 y Limbo sin tiempo. 0d implementa descanso/espera a escala normal, recuperación provisional de Sueño, interrupciones y prueba accesible; validación nativa pendiente. Restan avance acelerado coherente, mobiliario/cámara de descanso, estado climático local (temperatura, viento, precipitación, humedad), eventos y viajes programados, y comprobación conjunta. El modelo térmico del personaje sigue en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
@@ -1070,7 +1542,7 @@ es un hito anterior, distinto de completar la distribución independiente.
 | IA masiva y rendimiento | Mantener presupuesto escalonado de percepción/objetivos y filtros espaciales; resolver locomoción compartida, contactos y pruebas graduales de 1.875 → 3.750 → 7.500 → 15.000 activos según el último gate aprobado. Cargar 15.000 actores pasivos no prueba 15.000 IA completas. |
 | Asedios | Director de batalla, refuerzos, tácticas, comandantes, aliados, máquinas/artillería/barricadas, sabotaje y rutas alternativas; límite temporal y consecuencias permanentes sobre ciudades, rutas y facciones. Depende de IA, física, mundo y calendario estables. |
 | Física | Completar validación de impactos/contactos múltiples, empuje sostenido, aplastamiento y anatomía/armadura. La futura física de golpes cuerpo a cuerpo requiere velocidad, masa efectiva, área/filo, material, penetración y técnica definidos; no reemplazar el combate aceptado sin ese diseño. |
-| Habilidades | Efectos concretos de User1 racial y User4 clase, definidos raza por raza y clase por clase. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
+| Habilidades | Efectos de User1 racial y User4 clase definidos el 2026-09-14 y registrados en SYSTEMS.md; implementación pendiente. Peregrino usa Amparo (50% menos daño ambiental), no Bendecir los alimentos. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
 | Tarot | Colección persistente y porcentaje global iniciados con El Loco en 0t; pasivas base por palo/rango de todos los Menores en 0aa. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
 | Trucazo | Truco con Tarot: Mayores modificadores, Menores jugables/filas, Envido/Truco/Retruco/Vale 4, daño y vida, Sentidos Mágicos, apuestas y consecuencias; casual/ranked y equipos 1v1 a 4v4. Implementar por capas tras reglas base de Tarot y autoridad multijugador. |
 | Cooperativo y PvP | Objetivo 2–8 jugadores, autoridad del anfitrión, propiedad/validación/sincronización, misiones y mundo compartidos, viajes, conexión/desconexión y compañeros. La persistencia individual actual no acredita estos modos. |

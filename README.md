@@ -5,25 +5,137 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.34.0c.** Apply over the complete **4.34.0b** project.
-The author approved 0b and authorized connected sewer maps for upcoming
-mass-actor, Tarot and other system tests, with no passage back to MAP01.
-MAP02 now connects both ways with MAP03 (reservoir), MAP04 (Tarot chambers)
-and MAP05 (maintenance). Approach a gate and press Use. Each new map has a
-return gate behind its arrival point; returning to MAP02 uses its existing start.
+**Current release: 4.35.0e.** Apply this source patch over the complete,
+accepted **4.35.0d1** project, merge its folders and rebuild with `run_dev.bat`.
+It adds usable chairs and low cots in MAP02–MAP05 and a collision-aware third
+person rest camera. Use a chair to Wait or a cot to Sleep, then choose the
+existing 5/60/240/480-minute duration. World > D/X still offers ground rest.
 
-The native sewer hub retains map actors and dropped items across visits and
-saves. Travel preserves the player's actual inventory and progress, without
-repeating the Limbo cleanup or refilling resources. Existing MAP02 saves gain
-the gates without changing their geometry. The new maps provide test spaces;
-they do not automatically spawn crowds, grant Tarot or enable new hazards.
-Spanish application and test instructions are in **PRUEBAS_4_34_0c.txt**.
+Looking orbits the camera; Q/Pad B gets up, movement/action cancels, TAB gets
+up and opens the journal, and Escape keeps native pause. The camera, pose
+and furniture occupancy are released on completion or interruption. Sleep,
+needs and the clock retain the accepted rates; accelerated time is pending.
+
+GZDoom 4.14.2 on Linux compiled the complete project and ran native checks of
+Use/USDF replies, repeat use, furniture placement in all four sewer maps,
+completion, damage, blocked exits and active-rest save/load. Native screenshots
+were inspected for both poses. These automated engine checks do not replace
+Windows keyboard/controller and hub-travel checks in **PRUEBAS_4_35_0e.txt**.
+The engine and the Freedoom 2 test IWAD are not included.
 
 The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
 All inherited and cross-system work is assigned to V5 after that export,
 starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Implemented
+
+- One original wooden chair and one cot per sewer map, placed on first entry
+  or when loading an older save. Repeated preparation keeps one pair.
+- Native Use opens the existing conversation menu with explicit durations.
+  Starting checks reach and collision again after the reply closes the menu.
+- Furniture temporarily yields collision to its occupant; exit checks the
+  entry point and nearby alternatives. Fully blocked exits allow walking out
+  before solid collision is restored. Player height/radius remain unchanged.
+- A native SpectatorCamera follows and clips against the environment. Looking
+  rotates the view while the body keeps its seated/lying orientation. Previous
+  view direction is restored on normal exit; another system's camera is kept.
+- Saved rest data includes furniture, entry, visual offset and camera state.
+  Removing/moving the furniture interrupts; quintessence does not move it.
+- Original procedural OBJ furniture reuses existing project textures. The
+  rest panel leaves the central scene visible and shows its camera controls.
+
+- Literal state-label lookups for both the initial rest pose and its subsequent
+  visual update; the selected lying/seated poses are unchanged.
+- Required timeless-map catalogue included in the hotfix. MAP01 remains the
+  Limbo exception; every other map keeps the accepted common clock rate.
+- Project validation accepts numeric hotfix suffixes such as 4.35.0d1 while
+  retaining the existing resource, documentation and localization checks.
+
+- Hidden native Inventory stores the rest mode, duration, elapsed tics, origin,
+  input-release latch and last observed world-clock pulse. Repeated callbacks
+  cannot credit the same tic twice; completed/interrupted sessions are terminal.
+- Sleep gradually restores Sleep instead of passive depletion. Wait retains
+  ordinary depletion. Hunger/Thirst and existing regeneration continue. Only
+  critical fatigue damage is suspended while sleeping; other damage remains.
+- Dry ground, a confirmed single-player character and compatible activity are
+  required. Damage, combat, movement, immersion, map changes, low reserves or
+  incompatible activity interrupt the session. Travel rejects active rest.
+- Existing lying/seated world poses and a translucent progress panel are reused.
+  Q/Pad B gets up; movement or action cancels; TAB gets up and opens the journal.
+  Escape preserves native pause. Use release remains native and is not latched.
+- Native USDF offers Sleep/Wait with explicit durations, plus optional reserve
+  presets. Opening, loading or travelling grants no resources. Limbo rejects
+  these timed sessions and keeps the accepted campaign date frozen.
+- Read-only `netevent ca_debug_rest_report`; explicit `ca_debug_rest_hit` asks
+  for one point of native impact damage to check interruption in empty sewers.
+
+
+- Civil calendar rules for years 1–9999, with month lengths and Gregorian leap
+  years. A native hidden Inventory stores a date/time anchor to the existing
+  clock; no duplicate ticker or operating-system time is used.
+- Campaign epoch: 1889-11-03 09:00. MAP01 freezes the authoritative world
+  clock while player simulation and interactions remain active. Every other
+  map, including uncatalogued test maps, uses one clock tick per simulated tick.
+- One-time migration anchors previous saves to the campaign epoch at their
+  existing clock value. Old trial dates are discarded; elapsed counters and
+  journey stamps are preserved. Previous time spent outside Limbo is unknown.
+- Separate saved campaign and diagnostic anchors share the same clock. World
+  labels tests explicitly; normal calendar queries always return the campaign.
+  The monthly southern seasonal cycle remains a test convention, without
+  weather, thermal exposure, light changes or rest.
+- `netevent ca_debug_calendar_set YEAR MONTH DAY` assigns a test date;
+  `ca_debug_calendar_edge` prepares midnight after 12 simulated real seconds
+  outside Limbo. Neither changes the campaign, clock, resources or travel stamps.
+  `ca_debug_calendar_report` reads the campaign and optional preview;
+  `ca_debug_calendar_clear` returns World to the continuing campaign date.
+- MAPINFO enables non-pausing conversations in every project map. The shared
+  conversation menu also omits the native delayed pause for older saved maps.
+  Existing replies, Q/Back, capture presentation and ordinary menus are retained.
+
+- Native Inventory stores completed days and the current day's simulation tics.
+  A stateless StaticEventHandler advances it once per simulated tic after the
+  single-player character is confirmed, except in Limbo. Previous saves also
+  receive the clock and one-time campaign initialization when needed.
+- Integer counters preserve hour/day boundaries without accumulated fractional
+  error. The scale comes from the same accepted constants used by survival.
+- World displays elapsed recorded days and HH:MM outside Limbo, or a timeless
+  location notice inside. Its next line displays the civil date and season.
+  Player needs, regeneration, damage and cooldowns retain their personal timers.
+- Voluntary native pause stops the clock. Caelum conversations and the journal
+  allow simulation to continue; crafting retains its existing activity rules.
+- New sewer departures and arrivals have saved timestamps. Previous journeys
+  keep their sequence/status without invented timestamps; arrival reconciliation
+  does not overwrite an already resolved arrival's time.
+- Read-only reports: `netevent ca_debug_time_report` and the extended existing
+  `netevent ca_debug_travel_report`. Neither command creates or advances time.
+
+
+- The journal forwards the release of the key bound to +use to the engine,
+  so closing the station with Q allows the next Use press to reopen it.
+- Optional seal preparation reuses or grants one T1 quintessence seal, equips it,
+  refills adrenaline to the character's existing maximum and explicitly resets
+  the test cooldown. It neither activates the seal nor starts combat.
+- Optional crafting preparation teaches the existing handle component recipe
+  and tops up wood to one x10 batch (40 material units). Repeating preparation
+  does not add more when that quantity is already owned. Carry limits apply.
+- Native stations use existing models and form a separate proximity network.
+  Real Use selects Handle T1, x10 and 100% efficiency after recipe preparation,
+  leaving enough time to exit the station with a real task pending.
+- Existing saves acquire the stations once. Loading, travelling and hub return
+  do not grant supplies, refill adrenaline or duplicate the station network.
+
+
+- Native USDF caravan selection and explicit confirmation for the six existing
+  directed sewer connections. The menu is optional and names itself as a trial.
+- A shared departure service validates the character, route, current activity,
+  destination availability and pending trip before calling native ChangeLevel.
+- Native Inventory records the latest journey, mode, sequence, arrival and
+  interruption counts. An arrival resolves once at the expected destination;
+  an interrupted departure never retries automatically or credits another route.
+- World displays the latest journey. The read-only console report is available
+  through `netevent ca_debug_travel_report`. Original arrows and PgUp/PgDn remain.
+- Native saves preserve the new record and the selected conversation page.
+  Old saves acquire no fabricated journey history; their next real trip starts it.
 
 - Three new sewer maps generated as native UDMF from reusable room, gallery,
   reservoir and stair modules, using existing Caelum textures only. MAP01,
@@ -37,7 +149,8 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - Gate reconstruction supports previous MAP02 saves without duplicate actors.
   Discovery, actual arrival and reverse travel remain independent observations.
 - World journal columns show visited locations and known exits from the current
-  map. The journal remains read-only and retains its accepted navigation.
+  map. Its recorded-data display retains the accepted navigation; C opens the
+  separate caravan trial in sewer maps.
 
 
 - Atomic group access checks cover native key requirements, explicit arena
@@ -429,11 +542,21 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Planned
 
-Continue the V4.34 world, architecture, connection and travel foundations
-after accepted locations and door access, now with connected sewer test maps.
-Caravan foundations and travel/event integration remain; simulated durations
-will depend on the global clock in V4.35. New campaign content and all inherited
-and cross-system expansion are assigned to V5, after the V4 playtest export.
+V4.34 now has its world, access, map-module and travel-service foundations.
+V4.35.0a–0c supply the accepted clock, calendar, unpaused conversations,
+campaign epoch and timeless Limbo. 0d adds the normal-rate rest/wait session.
+Remaining before 4.36: coherent accelerated time advancement and its
+interruptions, rest furniture/camera, shared local temperature/wind/precipitation/
+humidity, scheduled events and timed travel, then integrated native validation.
+The 8-hour Sleep recovery rate is provisional, not a finalized balance rule. Fares, vehicles, route incidents and a travel minimap
+remain future content; the current caravan menu is explicitly a service trial.
+New campaign content and all inherited and cross-system expansion are assigned
+to V5, after the V4 playtest export.
+The ten class abilities and four racial toggles now have authored definitions
+in SYSTEMS.md. Their implementation remains in the existing V5 abilities block.
+Peregrino uses Amparo: 50% less environmental damage for the player and nearby
+allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
+Automatic conversation cancellation on damage was suggested and remains pending.
 Narrative faction assignments, rank thresholds and cross-faction relations
 still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
@@ -459,20 +582,22 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-4.34.0c compiles and runs in native GZDoom 4.14.2 with Freedoom and llvmpipe
-on Linux. Focused checks cover travel guards, all six native Use directions,
-stateful revisits, physical stair climbing, saved hub snapshots and an original
-0b MAP02 save upgraded through a roundtrip. Original narrative return into the
-new hub is checked from prepared prerequisites. Visual checks cover all new
-spaces and Spanish/English World labels. PROJECT.md records fixtures and limits.
-Author validation on Windows is pending. No mass population benchmark, full
-campaign replay or multiplayer session is claimed. 0b is the accepted base.
+Native script compilation of 4.35.0d1 passed in GZDoom 4.14.2 on Linux;
+Windows gameplay, rest UI, interruptions and native save/load remain pending.
+The test IWAD was Freedoom 2; it is not supplied or required by this source patch.
+The author accepted all 0c checks; 0d was blocked by the reported parser errors.
+The earlier 317 C++ assertions and 33 rest-context checks remain historical
+logic evidence, not native gameplay validation.
+Use PRUEBAS_4_35_0d1.txt to rebuild, verify the report version, exercise both
+poses and check the Limbo clock. Then resume PRUEBAS_4_35_0d.txt.
 
 ## Build and run
 
-Close GZDoom. Copy the supplied **src**, **assets**, **docs** and **README.md** from the 4.34.0c
-patch into the complete **4.34.0b** project, merging folders and replacing matching
-files. Keep **PRUEBAS_4_34_0c.txt** outside docs.
+Close GZDoom. Copy the supplied **src**, **docs**, **README.md**, validator and
+test TXT from the 4.35.0d1 hotfix into the complete **4.35.0d** project, merging
+folders and replacing matching files. Keep **PRUEBAS_4_35_0d1.txt** outside docs.
+The three supplied ZScript files must all be replaced, including the catalogue.
+Rebuild the PK3 with the usual launcher; opening the old PK3 will retain the error.
 Existing MAP01 and MAP02 saves can continue; keep a backup before testing.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's

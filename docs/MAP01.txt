@@ -1,7 +1,165 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.34.0c — 2026-09-14.
+Versión documental: 4.35.0e — 2026-09-16.
 
-ACTUAL 4.34.0c — ALCANTARILLAS CONECTADAS PARA PRUEBAS
+4.35.0e — SILLAS Y CATRES EN LAS ALCANTARILLAS
+
+El autor aprueba el descanso corregido de 0d1. Se agrega una pareja utilizable
+por alcantarilla, preparada también al cargar saves anteriores. En MAP02 se
+encuentra en la zona seca de llegada, cerca del banco de prueba: silla
+(-160,64,0), catre (-144,232,0). En MAP03–MAP05, dentro de la primera sala:
+silla (144,224,0), catre (144,400,0). Ambos miran a 180 grados. Las coordenadas
+son de implementación; el jugador los reconoce por sus modelos de madera.
+
+Use abre Esperar en la silla y Dormir en el catre. Se elige una duración y
+se ve la postura mediante cámara orbital. Cerrar sin elegir deja al personaje
+de pie. La opción de descanso de Mundo sigue disponible sobre suelo. Los
+muebles no conceden provisiones ni bonificaciones y no se mueven con el sello.
+
+La pareja no se duplica al repetir la preparación; la ocupación se guarda y
+se libera al terminar o interrumpir. En alcantarillas vacías, el comando de
+impacto ya existente permite comprobar la interrupción. PRUEBAS_4_35_0e.txt
+explica la interacción, guardado/carga y recorrido posterior del hub.
+
+MAP01 conserva historia, piscina, residentes, estaciones y tiempo detenido.
+No se coloca allí mobiliario nuevo ni se habilita una conexión de regreso.
+Los demás mapas conservan la tasa temporal común y los viajes aprobados.
+No se agregan escenas, NPC, cartas, misiones ni recompensas narrativas.
+
+4.35.0d1 — CATÁLOGO DEL LIMBO INCLUIDO EN LA CORRECCIÓN
+
+Se incluye otra vez CaelumWorldCatalogue de 0c, que define IsTimelessMap.
+MAP01 sigue identificado como Limbo: el reloj se detiene y las sesiones de
+Descanso por duración se rechazan. El resto de mapas usa el ritmo común.
+Se corrige la compilación de las poses de descanso; geometría, escenas,
+misiones, captura y conexiones conservan la base anterior. El hotfix no abre
+una ruta de regreso a MAP01 ni modifica el inicio 03/11/1889 a las 09:00.
+
+4.35.0d — DESCANSO DE PRUEBA FUERA DEL LIMBO
+
+El autor aprueba 0c. La cronología permanece en 03/11/1889 09:00 dentro del
+Limbo y continúa al salir. Las sesiones por duración de 0d se ofrecen fuera
+de MAP01: el Limbo no puede consumir los minutos del reloj que requieren.
+La piscina, los diálogos, captura, misiones, costes y controles de MAP01
+conservan la base aceptada. No se agrega una conexión de retorno.
+
+En las alcantarillas MAP02–MAP05, quedate quieto en suelo seco y abrí
+TAB > Mundo > D (X del mando). Elegí Dormir o Esperar y luego la duración.
+Cinco minutos de juego duran 15 segundos reales. La preparación opcional
+permite observar recuperación de Sueño incluso con reservas inicialmente
+llenas. No hacen falta camas, objetos nuevos ni repetir el tutorial del Limbo.
+
+El personaje conserva posición y colisión; se usa su pose mundial acostada
+o sentada, con un panel sobre la vista normal. No se añade mobiliario ni
+una cámara de seguimiento en este incremento. Daño, movimiento, combate,
+actividades incompatibles y cambio de lugar interrumpen. Q/B o TAB permiten
+levantarse; Use vuelve a la interacción nativa. El mundo continúa activo.
+
+Los WAD, geometrías, llegadas, puestos, escenas y NPC narrativos no cambian.
+No se añaden historias ni recompensas. PRUEBAS_4_35_0d.txt detalla las pruebas
+de la nueva base; su ejecución nativa está pendiente. El autor confirmó
+todas las comprobaciones de 0c que figuran como históricas a continuación.
+
+4.35.0c — EL LIMBO FUERA DEL TIEMPO
+
+El autor aprueba todas las pruebas de 0b y fija el inicio de los eventos del
+juego en el 3 de noviembre de 1889 a las 09:00. Dentro del Limbo no transcurre
+el tiempo del mundo. En MAP01, TAB > Mundo muestra 03/11/1889 09:00 y «El tiempo
+está detenido en el Limbo». Conversaciones, movimiento, pruebas, captura y
+fabricación siguen funcionando; no se congela la simulación del personaje.
+
+Los relojes contradictorios de la mansión conservan su rareza. La fecha del
+Diario es la cronología de campaña, no una afirmación de que los residentes
+conozcan esa fecha ni una corrección de sus diálogos. No se reescriben escenas.
+Al regresar al cuerpo en MAP02 comienza el avance temporal con la misma
+escala que en todos los lugares exteriores. La permanencia en el Limbo no
+consume horas de campaña. No se abre una ruta para volver desde MAP02.
+
+Al cargar un save anterior se establece el inicio canónico una sola vez;
+el contador y el progreso previo se conservan, sin adjudicarle horas pasadas
+al mundo exterior. Guardados de 0c recuperan su fecha alcanzada. La fecha de
+depuración está separada de la campaña y también se detiene en el Limbo.
+PRUEBAS_4_35_0c.txt explica la comprobación en MAP01 y en las alcantarillas.
+La ejecución nativa se dejó pendiente en la entrega de 0c; posteriormente
+el autor confirmó todas sus pruebas. Lo que sigue describe el comportamiento histórico
+de los parches anteriores; la fecha y la regla temporal vigentes son las de 0c.
+
+4.35.0b — CALENDARIO DE PRUEBA Y DIÁLOGOS SIN PAUSA
+
+El autor aprueba el reloj de 0a. La fecha histórica de la campaña sigue sin
+fijar. TAB > Mundo indica esa ausencia y muestra una fecha únicamente al
+configurar el calendario de prueba. Sus cambios de mes/año/estación no
+reescriben la historia ni convierten una fecha técnica en información que
+conozcan los personajes. Los relojes contradictorios del Limbo se conservan.
+
+Las conversaciones de la Voz, Palomo, los residentes, el Tarot, el regreso y
+las pruebas utilizan el menú común sin pausa. El mundo y el reloj continúan
+mientras se lee una página. La pausa voluntaria conserva el menú del motor.
+Las respuestas, hitos, recompensas y controles mantienen las rutas existentes.
+
+El anclaje del calendario viaja con el personaje y no pertenece a las
+categorías físicas retiradas al regresar al cuerpo. No hay un acceso de
+vuelta a MAP01. Las geometrías, puntos de llegada y conexiones MAP02–MAP05
+no cambian. PRUEBAS_4_35_0b.txt incluye las pruebas de fechas y conversaciones;
+el autor confirmó posteriormente todas las pruebas de 0b.
+
+4.35.0a — RELOJ GLOBAL, SIN CAMBIO DE HISTORIA
+
+El autor aprueba todas las pruebas de 4.34.0e. Este parche inicia 4.35 con
+un registro de tiempo persistente, consultable en TAB > Mundo. Se expresa
+como tiempo transcurrido desde que existe el contador, sin asignar fecha
+de campaña, estación o una hora verdadera a los relojes de la mansión.
+Las menciones misteriosas a relojes contradictorios conservan su sentido.
+
+El registro empieza al confirmar al personaje, avanza con la simulación y
+se conserva al pasar a MAP02 y recorrer las alcantarillas. En saves previos
+comienza desde cero al aplicar el parche; no reconstruye el pasado narrativo.
+La limpieza del regreso sólo retira las categorías físicas previstas y
+no alcanza este Inventory de estado. No se modifica esa limpieza ni se
+agrega un regreso a MAP01. Las marcas nuevas de viaje cubren las conexiones
+actuales MAP02–MAP05, sin tarifas ni duración adicional inventada.
+
+Las misiones, diálogos, captura del Tarot, estaciones y suministros aceptados
+no cambian. PRUEBAS_4_35_0a.txt explica el reloj, pausas, viajes y guardados.
+
+
+4.34.0e — MEDIOS PARA LAS PRUEBAS DE ACTIVIDADES
+
+La comprobación de 0d fue correcta para el autor salvo sellos/crafteos, que
+no pudo iniciar por falta de equipo y estaciones en las alcantarillas.
+0e agrega un puesto cerca de cada llegada: banco, aserradero y forja.
+En MAP02 está en el lateral izquierdo de la zona inicial; en MAP03–MAP05,
+al avanzar desde la llegada, a la izquierda. TAB > Mundo > C ofrece preparar
+el sello o el crafteo. Consultá PRUEBAS_4_34_0e.txt para la secuencia jugable.
+
+MAP01 conserva sus bytes e historia. El controlador llama a la presentación
+nueva sólo en MAP02–MAP05 y no concede allí recursos automáticamente. La ruta
+narrativa, la captura de El Loco y las misiones conservan su comportamiento.
+No se habilita ningún regreso a MAP01. No se agregan encuentros o cartas para
+pruebas masivas; este apoyo cubre el bloqueo de viaje por actividad pendiente.
+
+
+4.34.0d — CARAVANA DE PRUEBA EN LAS ALCANTARILLAS
+
+El autor aprobó todas las pruebas de 0c. Este parche conserva los WAD de
+MAP01–MAP05 y CADEV02, el hub 434 y todos sus puntos de llegada y accesos.
+MAP01 sigue sin retorno desde las alcantarillas. Su misión, conversaciones,
+captura de El Loco, inventario narrativo y regreso conservan la lógica de 0c.
+
+En MAP02–MAP05: TAB > Mundo > C (Y del mando) abre la caravana de prueba.
+MAP02 ofrece depósito, cámaras del Tarot y mantenimiento; cada módulo ofrece
+MAP02. Elegir destino no viaja: se requiere «Confirmar salida». «Cancelar»
+o «Volver a destinos» no escriben ninguna salida. La prueba es accesible desde
+Mundo y no exige encontrar un NPC ni usar un comando de habilitación.
+
+Se pueden mezclar traslados de caravana con los accesos físicos por Use.
+El registro del último viaje distingue los modos y cuenta la llegada sólo
+una vez. Los mapas ya visitados conservan sus objetos mediante el hub nativo.
+No hay tarifa ni tiempo simulado; los horarios/eventos esperan al reloj de
+4.35. No se añaden cartas, peligros, recompensas ni escenas narrativas.
+
+Las pruebas nuevas están únicamente en PRUEBAS_4_34_0d.txt, en la raíz.
+
+BASE ACEPTADA 4.34.0c — ALCANTARILLAS CONECTADAS PARA PRUEBAS
 El autor aprueba 0b y autoriza alcantarillas nuevas después de MAP02 para
 pruebas masivas, Tarot y otros sistemas, con una prohibición: volver a MAP01.
 Se conservan los bytes de MAP01/MAP02/CADEV02 y toda la salida narrativa.

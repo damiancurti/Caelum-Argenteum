@@ -13159,6 +13159,7 @@ class CaelumPlayer : DoomPlayer
     // El reinicio se difiere al WorldTick para terminar primero el daño actual.
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         if (CaelumMainM00RuloTrial.PreventDefeat(self)) return;
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
     }
@@ -14073,6 +14074,7 @@ class CaelumPlayer : DoomPlayer
         bool grantPainAdrenaline
     )
     {
+        if (actualHealthLost > 0) CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         LastHealthLossPercent = 0.0;
         LastPainChancePercent = 0.0;
         LastPainTriggered = false;
@@ -14215,6 +14217,7 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
+        CaelumRestState.HandleInput(self);
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
         if (CombatChannelModeActive && player != null)
@@ -14229,7 +14232,7 @@ class CaelumPlayer : DoomPlayer
         }
         if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || PalomoMerchantMenuOpen
-                || CombatChannelModeActive)
+                || CombatChannelModeActive || CaelumRestState.IsActive(self))
             && player != null)
         {
             UserCmd creationCommand = player.cmd;
@@ -14251,6 +14254,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         Super.PlayerThink();
+        CaelumRestState.UpdateViewInput(self);
     }
 
     // Tick runs once per game tic. GZDoom uses 35 tics per second, so dividing
@@ -14265,6 +14269,7 @@ class CaelumPlayer : DoomPlayer
         // reconcilia antes de actualizar la vista, el peso y el bloqueo.
         RepairActiveShieldReference();
         Super.Tick();
+        CaelumRestState.Validate(self);
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
 
@@ -14469,6 +14474,7 @@ class CaelumPlayer : DoomPlayer
         HUDAbilitySuccessRemaining = Max(
             0.0, HUDAbilitySuccessRemaining - 1.0 / TICRATE
         );
+        CaelumRestState.Advance(self);
     }
 
     // GZDoom exposes the effective run state through BT_RUN after combining
@@ -14499,6 +14505,14 @@ class CaelumPlayer : DoomPlayer
         // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
         crouchsprite = 0;
         if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
+        if (CaelumRestState.IsActive(self))
+        {
+            // Las ramas literales evitan convertir un String a StateLabel en 4.14.2.
+            State restPose = FindState("RestSeated");
+            if (CaelumRestState.IsSleeping(self)) restPose = FindState("RestLying");
+            if (CurState != restPose) SetState(restPose);
+            return;
+        }
         State idle = FindState("CrouchIdle");
         State walk = FindState("CrouchWalk");
         bool posed = InStateSequence(CurState, idle) || InStateSequence(CurState, walk);
@@ -16958,6 +16972,7 @@ class CaelumPlayer : DoomPlayer
     // Every confirmed combat event restarts the entire thirty-second timer.
     void MarkCombatActivity()
     {
+        CaelumRestState.Interrupt(self, "CA_REST_COMBAT");
         CombatTimeRemaining = CaelumConstants.COMBAT_TIMEOUT_SECONDS;
     }
 
@@ -18170,11 +18185,20 @@ class CaelumPlayer : DoomPlayer
                     * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
                 * DerivedStats.HungerThirstLossMultiplier / TICRATE);
         }
-        CurrentSleep = Max(0.0, CurrentSleep
-            - CaelumConstants.SURVIVAL_MAXIMUM
-            / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS
-                * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
-            * DerivedStats.SleepLossMultiplier / TICRATE);
+        // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
+        // Esperar conserva el consumo normal; hambre/sed no reciben un bono.
+        CaelumRestState.Validate(self);
+        if (CaelumRestState.IsSleeping(self))
+        {
+            if (CaelumRestState.HasPendingTic(self))
+                CurrentSleep = CaelumRestRules.RecoverSleep(CurrentSleep);
+        }
+        else
+            CurrentSleep = Max(0.0, CurrentSleep
+                - CaelumConstants.SURVIVAL_MAXIMUM
+                / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS
+                    * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
+                * DerivedStats.SleepLossMultiplier / TICRATE);
         UpdateSurvivalStates();
     }
 
@@ -18328,7 +18352,10 @@ class CaelumPlayer : DoomPlayer
         int criticalResourceCount = 0;
         if (HungerState == CaelumConstants.SURVIVAL_STATE_CRITICAL) criticalResourceCount++;
         if (ThirstState == CaelumConstants.SURVIVAL_STATE_CRITICAL) criticalResourceCount++;
-        if (SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL) criticalResourceCount++;
+        // La fatiga deja de producir daño mientras se duerme; hambre y sed
+        // siguen siendo peligrosas. Los demás efectos críticos no se borran.
+        if (SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL
+            && !CaelumRestState.IsSleeping(self)) criticalResourceCount++;
         if (criticalResourceCount <= 0)
         {
             // Recuperar las reservas elimina también el daño parcial pendiente.
@@ -18346,6 +18373,7 @@ class CaelumPlayer : DoomPlayer
         SurvivalDamageAccumulator -= wholeDamage;
         health -= wholeDamage;
         player.health = health;
+        CaelumRestState.Interrupt(self, "CA_REST_NEEDS");
 
         // Direct health loss deliberately bypasses armor and this class's
         // ordinary-damage adrenaline gain. Death still uses GZDoom's pipeline.

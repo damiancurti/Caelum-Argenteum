@@ -3263,3 +3263,183 @@ CA_WORLD_LOCAL_CONNECTIONS = "Salidas de esta ubicación";
 CA_WORLD_NO_LOCAL_CONNECTIONS = "Aún no hay salidas registradas aquí.";
 CA_WORLD_RETURN_RECORDED = "Regreso al cuerpo: recorrido. Sin paso de vuelta a la mansión.";
 CA_SEWER_WORLD_HELP = "Acercate al portón y usá Usar. Cada alcantarilla conserva su estado.";
+
+[enu default]
+CA_CARAVAN_TITLE = "Caravan trial";
+CA_CARAVAN_OFFER = "Choose a destination or prepare an activity test. Seal preparation equips a T1 seal, refills adrenaline and resets its cooldown. Craft preparation supplies one handle recipe and enough wood for a x10 batch. Travel has no fare or simulated duration.";
+CA_CARAVAN_CANCEL = "Cancel";
+CA_CARAVAN_DEPART = "Confirm departure";
+CA_CARAVAN_BACK = "Back to destinations";
+CA_CARAVAN_WORLD_HELP = "C / Y: caravan | D / X: rest | Use: gates";
+CA_JOURNEY_LAST = "Last journey #%d: %s | %s";
+CA_JOURNEY_DEPARTED = "departed";
+CA_JOURNEY_ARRIVED = "arrived";
+CA_JOURNEY_INTERRUPTED = "interrupted";
+CA_JOURNEY_NONE = "none";
+CA_JOURNEY_CARAVAN = "caravan trial";
+CA_JOURNEY_FOOT = "on foot";
+CA_CARAVAN_CONFIRM_2 = "Destination: Sewer reservoir. Depart now? No charge or time advance in this trial.";
+CA_CARAVAN_CONFIRM_3 = "Destination: Awakening sewers. Depart now? No charge or time advance in this trial.";
+CA_CARAVAN_CONFIRM_4 = "Destination: Tarot chambers. Depart now? No charge or time advance in this trial.";
+CA_CARAVAN_CONFIRM_5 = "Destination: Awakening sewers. Depart now? No charge or time advance in this trial.";
+CA_CARAVAN_CONFIRM_6 = "Destination: Maintenance galleries. Depart now? No charge or time advance in this trial.";
+CA_CARAVAN_CONFIRM_7 = "Destination: Awakening sewers. Depart now? No charge or time advance in this trial.";
+
+[es]
+CA_CARAVAN_TITLE = "Caravana de prueba";
+CA_CARAVAN_OFFER = "Elegí un destino o prepará una prueba. Sello: equipa quintaesencia T1, recarga adrenalina y quita la espera. Crafteo: enseña Mango y completa madera para un lote x10. El viaje no tiene tarifa ni duración simulada.";
+CA_CARAVAN_CANCEL = "Cancelar";
+CA_CARAVAN_DEPART = "Confirmar salida";
+CA_CARAVAN_BACK = "Volver a destinos";
+CA_CARAVAN_WORLD_HELP = "C / Y: caravana | D / X: descanso | Usar: accesos";
+CA_JOURNEY_LAST = "Último viaje #%d: %s | %s";
+CA_JOURNEY_DEPARTED = "salida";
+CA_JOURNEY_ARRIVED = "llegada";
+CA_JOURNEY_INTERRUPTED = "interrumpido";
+CA_JOURNEY_NONE = "ninguno";
+CA_JOURNEY_CARAVAN = "caravana de prueba";
+CA_JOURNEY_FOOT = "a pie";
+CA_CARAVAN_CONFIRM_2 = "Destino: Depósito de alcantarillas. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+CA_CARAVAN_CONFIRM_3 = "Destino: Alcantarillas del despertar. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+CA_CARAVAN_CONFIRM_4 = "Destino: Cámaras del Tarot. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+CA_CARAVAN_CONFIRM_5 = "Destino: Alcantarillas del despertar. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+CA_CARAVAN_CONFIRM_6 = "Destino: Galerías de mantenimiento. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+CA_CARAVAN_CONFIRM_7 = "Destino: Alcantarillas del despertar. ¿Salir ahora? Esta prueba no cobra ni adelanta el tiempo.";
+
+// 4.34.0e: suministros voluntarios para actividades reales, sin viaje.
+[enu default]
+CA_SEWER_SUPPORT_SEAL = "Prepare seal test (refill/reset cooldown)";
+CA_SEWER_SUPPORT_CRAFT = "Prepare crafting test (handle + wood)";
+CA_SEWER_SUPPORT_SEAL_READY = "Quintessence T1 equipped. Adrenaline refilled; cooldown reset. Activate your seal, then TAB > World > C. Repeat this preparation to recharge.";
+CA_SEWER_SUPPORT_CRAFT_READY = "Handle recipe and wood ready. Near the arrival, use the workbench, sawmill or forge. Handle T1 / x10 batch / 100% efficiency is selected. Enter starts crafting; Q leaves it pending.";
+CA_SEWER_SUPPORT_FULL = "Preparation could not finish: free carrying space and try again.";
+
+[es]
+CA_SEWER_SUPPORT_SEAL = "Preparar sello (recargar y quitar espera)";
+CA_SEWER_SUPPORT_CRAFT = "Preparar crafteo (Mango + madera)";
+CA_SEWER_SUPPORT_SEAL_READY = "Quintaesencia T1 equipada. Adrenalina recargada y espera reiniciada. Activá tu sello y probá TAB > Mundo > C. Repetí esta preparación para recargar.";
+CA_SEWER_SUPPORT_CRAFT_READY = "Receta Mango y madera listas. Cerca de la llegada, usá el banco, aserradero o forja. Queda seleccionado Mango T1 / lote x10 / eficiencia 100%. Enter inicia; Q lo deja pendiente.";
+CA_SEWER_SUPPORT_FULL = "No se pudo completar la preparación: liberá espacio de carga y reintentá.";
+
+// 4.35.0a: tiempo registrado, sin fecha narrativa atribuida al pasado.
+[enu default]
+CA_WORLD_CLOCK_RECORDED = "Recorded time: %s  |  1 game hour = 3 real minutes";
+CA_WORLD_CLOCK_NONE = "Time recording starts with a confirmed character.";
+CA_WORLD_CLOCK_TIMELESS = "Time stands still in Limbo.";
+
+[es]
+CA_WORLD_CLOCK_RECORDED = "Tiempo registrado: %s  |  1 h de juego = 3 min reales";
+CA_WORLD_CLOCK_NONE = "El tiempo se registra desde que confirmás el personaje.";
+CA_WORLD_CLOCK_TIMELESS = "El tiempo está detenido en el Limbo.";
+
+// 4.35.0c: la vista de prueba se mantiene separada de la fecha de campaña.
+[enu default]
+CA_CALENDAR_UNSET = "Campaign date: awaiting character confirmation.";
+CA_CALENDAR_TRIAL = "Test date: %s | %s (monthly test cycle)";
+CA_CALENDAR_DATE = "Date: %s | %s";
+CA_CALENDAR_OUT_OF_RANGE = "Calendar: date outside the supported range.";
+CA_CALENDAR_SUMMER = "summer";
+CA_CALENDAR_AUTUMN = "autumn";
+CA_CALENDAR_WINTER = "winter";
+CA_CALENDAR_SPRING = "spring";
+
+[es]
+CA_CALENDAR_UNSET = "Fecha de campaña: pendiente de confirmar personaje.";
+CA_CALENDAR_TRIAL = "Fecha de prueba: %s | %s (ciclo mensual de prueba)";
+CA_CALENDAR_DATE = "Fecha: %s | %s";
+CA_CALENDAR_OUT_OF_RANGE = "Calendario: fecha fuera del intervalo admitido.";
+CA_CALENDAR_SUMMER = "verano";
+CA_CALENDAR_AUTUMN = "otoño";
+CA_CALENDAR_WINTER = "invierno";
+CA_CALENDAR_SPRING = "primavera";
+
+// 4.35.0d: descanso y espera a escala normal; balance de sueño provisional.
+[default]
+CA_REST_TITLE = "Rest and wait (trial)";
+CA_REST_OFFER = "Choose an activity and duration. The world continues. Q, movement or action cancels; damage or combat interrupts.";
+CA_REST_SLEEP = "Sleep";
+CA_REST_WAIT = "Wait seated";
+CA_REST_SLEEP_INFO = "Recover Sleep: 100% in 8 game hours (trial rate). Hunger and Thirst are spent normally. Choose a duration to begin.";
+CA_REST_WAIT_INFO = "The world and your needs continue at their normal rate. Waiting does not restore Sleep. Choose a duration to begin.";
+CA_REST_DURATION_5 = "Begin: 5 game minutes (15 real seconds)";
+CA_REST_DURATION_60 = "Begin: 1 game hour (3 real minutes)";
+CA_REST_DURATION_240 = "Begin: 4 game hours (12 real minutes)";
+CA_REST_DURATION_480 = "Begin: 8 game hours (24 real minutes)";
+CA_REST_CLOSE = "Close without starting";
+CA_REST_BACK = "Back to activities";
+CA_REST_PREPARE_MENU = "Prepare test reserves";
+CA_REST_PREPARE_INFO = "Optional test presets set Hunger and Thirst to 100% and Sleep to the selected value. They do not heal you, start a rest or grant items.";
+CA_REST_PREPARE_NORMAL = "Set Sleep to 50%, Hunger/Thirst to 100%";
+CA_REST_PREPARE_LOW = "Set Sleep to 5%, Hunger/Thirst to 100%";
+CA_REST_PREPARED = "Test ready: Sleep 50%, Hunger/Thirst 100%. World > D: choose Sleep.";
+CA_REST_PREPARED_LOW = "Fatigue test ready: Sleep 5%, Hunger/Thirst 100%. World > D: choose Sleep.";
+CA_REST_UNAVAILABLE = "Rest needs a confirmed, living single-player character.";
+CA_REST_TIMELESS = "Time does not pass in Limbo. Timed rest is available outside it.";
+CA_REST_BUSY = "Finish the current activity before resting or waiting.";
+CA_REST_COMBAT = "Rest is interrupted or unavailable during combat.";
+CA_REST_GROUND = "Stand still on dry ground to rest or wait.";
+CA_REST_NEEDS = "Critical Hunger or Thirst prevents continued rest. Replenish them first.";
+CA_REST_MOVED = "Rest interrupted: you moved or changed location.";
+CA_REST_TIME_CHANGED = "Rest interrupted by an external change to the world clock.";
+CA_REST_DAMAGE = "Rest interrupted by damage.";
+CA_REST_CANCELLED = "You got up. Time already spent and recovery are kept.";
+CA_REST_COMPLETED = "The selected rest or wait has finished.";
+CA_REST_REMAINING = "Remaining: %d game minutes";
+CA_REST_RESOURCES = "Sleep %.2f%% | Hunger %.2f%% | Thirst %.2f%%";
+CA_REST_SCALE = "Normal time: 1 game hour = 3 real minutes";
+CA_REST_STOP_HELP = "Q / Pad B: get up | Movement or action: cancel";
+CA_REST_PAUSE_HELP = "Escape: pause | TAB: get up and open journal";
+
+[es]
+CA_REST_TITLE = "Descanso y espera (prueba)";
+CA_REST_OFFER = "Elegí actividad y duración. El mundo continúa. Q, movimiento o acción cancelan; daño o combate interrumpen.";
+CA_REST_SLEEP = "Dormir";
+CA_REST_WAIT = "Esperar sentado";
+CA_REST_SLEEP_INFO = "Recuperás Sueño: 100% en 8 h de juego (valor de prueba). Hambre y Sed se consumen con normalidad. Elegí duración para empezar.";
+CA_REST_WAIT_INFO = "El mundo y tus necesidades siguen a ritmo normal. Esperar no recupera Sueño. Elegí duración para empezar.";
+CA_REST_DURATION_5 = "Empezar: 5 min de juego (15 segundos reales)";
+CA_REST_DURATION_60 = "Empezar: 1 h de juego (3 minutos reales)";
+CA_REST_DURATION_240 = "Empezar: 4 h de juego (12 minutos reales)";
+CA_REST_DURATION_480 = "Empezar: 8 h de juego (24 minutos reales)";
+CA_REST_CLOSE = "Cerrar sin empezar";
+CA_REST_BACK = "Volver a actividades";
+CA_REST_PREPARE_MENU = "Preparar reservas de prueba";
+CA_REST_PREPARE_INFO = "Las ayudas opcionales dejan Hambre y Sed al 100% y Sueño en el valor elegido. No curan, no inician el descanso ni entregan objetos.";
+CA_REST_PREPARE_NORMAL = "Fijar Sueño al 50%, Hambre/Sed al 100%";
+CA_REST_PREPARE_LOW = "Fijar Sueño al 5%, Hambre/Sed al 100%";
+CA_REST_PREPARED = "Prueba lista: Sueño 50%, Hambre/Sed 100%. Mundo > D: elegí Dormir.";
+CA_REST_PREPARED_LOW = "Prueba de fatiga lista: Sueño 5%, Hambre/Sed 100%. Mundo > D: elegí Dormir.";
+CA_REST_UNAVAILABLE = "Descansar requiere un personaje confirmado vivo en partida individual.";
+CA_REST_TIMELESS = "En el Limbo no pasa el tiempo. El descanso por duración está disponible fuera.";
+CA_REST_BUSY = "Terminá la actividad actual antes de descansar o esperar.";
+CA_REST_COMBAT = "El combate interrumpe o impide el descanso.";
+CA_REST_GROUND = "Quedate quieto sobre suelo seco para descansar o esperar.";
+CA_REST_NEEDS = "Hambre o Sed críticas impiden continuar el descanso. Reponelas primero.";
+CA_REST_MOVED = "Descanso interrumpido: te desplazaste o cambiaste de lugar.";
+CA_REST_TIME_CHANGED = "Descanso interrumpido por un cambio externo del reloj del mundo.";
+CA_REST_DAMAGE = "El daño interrumpió el descanso.";
+CA_REST_CANCELLED = "Te levantaste. Se conservan el tiempo transcurrido y la recuperación.";
+CA_REST_COMPLETED = "Terminó el descanso o la espera elegida.";
+CA_REST_REMAINING = "Restan: %d minutos de juego";
+CA_REST_RESOURCES = "Sueño %.2f%% | Hambre %.2f%% | Sed %.2f%%";
+CA_REST_SCALE = "Tiempo normal: 1 h de juego = 3 minutos reales";
+CA_REST_STOP_HELP = "Q / Pad B: levantarte | Moverte o actuar: cancelar";
+CA_REST_PAUSE_HELP = "Escape: pausa | TAB: levantarte y abrir Diario";
+
+[default]
+CA_REST_CHAIR_TITLE = "Chair — wait";
+CA_REST_BED_TITLE = "Cot — sleep";
+CA_REST_CHAIR_INFO = "Choose how long to sit. Looking around orbits the rest camera. Movement or action gets you up.";
+CA_REST_BED_INFO = "Choose how long to sleep. Sleep recovery and world time use the same rules as resting on the ground.";
+CA_REST_FURNITURE_UNAVAILABLE = "This furniture is no longer available or within reach.";
+CA_REST_FURNITURE_SPACE = "There is not enough clear space to rest here.";
+CA_REST_CAMERA_HELP = "Look: orbit | Escape: pause | TAB: get up and open journal";
+
+[es]
+CA_REST_CHAIR_TITLE = "Silla — esperar";
+CA_REST_BED_TITLE = "Catre — dormir";
+CA_REST_CHAIR_INFO = "Elegí cuánto tiempo sentarte. Mirar alrededor orbita la cámara. Moverte o actuar te levanta.";
+CA_REST_BED_INFO = "Elegí cuánto tiempo dormir. La recuperación de Sueño y el tiempo mantienen las reglas del descanso en el suelo.";
+CA_REST_FURNITURE_UNAVAILABLE = "El mueble ya no está disponible o al alcance.";
+CA_REST_FURNITURE_SPACE = "No hay espacio libre suficiente para descansar acá.";
+CA_REST_CAMERA_HELP = "Mirar: orbitar | Escape: pausa | TAB: levantarte y abrir Diario";

@@ -2974,3 +2974,188 @@ conversation
         goodbye = "$CA_REP_TRIAL_CLOSE";
     }
 }
+
+// 4.34.0d: servicio de caravana opcional entre alcantarillas de prueba.
+conversation
+{
+    id = 43410;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP03_NAME"; nextpage = "caravan_2"; closedialog = false; }
+        choice { text = "$CA_MAP04_NAME"; nextpage = "caravan_4"; closedialog = false; }
+        choice { text = "$CA_MAP05_NAME"; nextpage = "caravan_6"; closedialog = false; }
+        choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
+        choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
+    }
+    page
+    {
+        pagename = "caravan_2";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_2";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute2Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_4";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_4";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute4Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_6";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_6";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute6Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+}
+conversation
+{
+    id = 43411;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP02_SEWER_NAME"; nextpage = "caravan_3"; closedialog = false; }
+        choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
+        choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
+    }
+    page
+    {
+        pagename = "caravan_3";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_3";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute3Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+}
+conversation
+{
+    id = 43412;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP02_SEWER_NAME"; nextpage = "caravan_5"; closedialog = false; }
+        choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
+        choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
+    }
+    page
+    {
+        pagename = "caravan_5";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_5";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute5Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+}
+conversation
+{
+    id = 43413;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP02_SEWER_NAME"; nextpage = "caravan_7"; closedialog = false; }
+        choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
+        choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
+    }
+    page
+    {
+        pagename = "caravan_7";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_7";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute7Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+}
+
+// 4.35.0d: descanso/espera opcionales; las ayudas nunca se conceden al abrir.
+conversation
+{
+    id = 43510;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "rest_offer";
+        name = "$CA_REST_TITLE"; dialog = "$CA_REST_OFFER";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_SLEEP"; nextpage = "rest_sleep"; closedialog = false; }
+        choice { text = "$CA_REST_WAIT"; nextpage = "rest_wait"; closedialog = false; }
+        choice { text = "$CA_REST_PREPARE_MENU"; nextpage = "rest_prepare"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rest_sleep";
+        name = "$CA_REST_TITLE"; dialog = "$CA_REST_SLEEP_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestSleep5Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestSleep60Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_240"; giveitem = "CaelumRestSleep240Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestSleep480Action"; closedialog = true; }
+        choice { text = "$CA_REST_BACK"; nextpage = "rest_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rest_wait";
+        name = "$CA_REST_TITLE"; dialog = "$CA_REST_WAIT_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestWait5Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestWait60Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_240"; giveitem = "CaelumRestWait240Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestWait480Action"; closedialog = true; }
+        choice { text = "$CA_REST_BACK"; nextpage = "rest_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rest_prepare";
+        name = "$CA_REST_TITLE"; dialog = "$CA_REST_PREPARE_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_PREPARE_NORMAL"; giveitem = "CaelumRestPrepareAction"; closedialog = true; }
+        choice { text = "$CA_REST_PREPARE_LOW"; giveitem = "CaelumRestPrepareLowAction"; closedialog = true; }
+        choice { text = "$CA_REST_BACK"; nextpage = "rest_offer"; closedialog = false; }
+    }
+}
+
+conversation
+{
+    id = 43511;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_REST_CHAIR_TITLE"; dialog = "$CA_REST_CHAIR_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestWait5Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestWait60Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_240"; giveitem = "CaelumRestWait240Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestWait480Action"; closedialog = true; }
+    }
+}
+
+conversation
+{
+    id = 43512;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_REST_BED_TITLE"; dialog = "$CA_REST_BED_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestSleep5Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestSleep60Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_240"; giveitem = "CaelumRestSleep240Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestSleep480Action"; closedialog = true; }
+    }
+}

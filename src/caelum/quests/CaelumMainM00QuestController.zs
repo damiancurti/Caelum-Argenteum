@@ -23,6 +23,8 @@ class CaelumMainM00QuestController : EventHandler
     CaelumM00ReturnDoor ReturnDoor;
     bool ChannelInfrastructureRecovered;
     bool SewerNetworkPrepared;
+    bool SewerSupportPrepared;
+    bool RestFurniturePrepared;
 
     void RecoverChannelInfrastructure()
     {
@@ -439,6 +441,13 @@ class CaelumMainM00QuestController : EventHandler
 
     override void WorldTick()
     {
+        if (!RestFurniturePrepared && level.maptime % TICRATE == 0)
+            RestFurniturePrepared = CaelumRestFurnitureTrial.PrepareWorld();
+        if (!SewerSupportPrepared)
+        {
+            CaelumSewerTrialSupport.PrepareWorld();
+            SewerSupportPrepared = true;
+        }
         if (!SewerNetworkPrepared)
         {
             CaelumSewerTravel.PrepareWorld();

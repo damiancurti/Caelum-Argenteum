@@ -79,3 +79,13 @@ version "4.14"
 #include "caelum/hud/CaelumHUDOverlay.zs"
 #include "caelum/hud/CaelumJournalOverlay.zs"
 #include "caelum/debug/CaelumDebugOverlay.zs"
+
+#include "caelum/world/CaelumJourney.zs"
+#include "caelum/world/CaelumCaravanTrial.zs"
+#include "caelum/world/CaelumSewerTrialSupport.zs"
+#include "caelum/world/CaelumWorldClock.zs"
+#include "caelum/world/CaelumCalendar.zs"
+#include "caelum/world/CaelumRest.zs"
+#include "caelum/world/CaelumRestTrial.zs"
+
+#include "caelum/world/CaelumRestFurniture.zs"

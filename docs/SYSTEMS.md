@@ -1,6 +1,417 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.34.0c — 2026-09-14.
+Versión documental: 4.35.0e — 2026-09-16.
+
+## Mobiliario y cámara del descanso (4.35.0e)
+
+CaelumRestFurniture es Actor fijo, invulnerable, no empujable y sin banderas
+de monstruo, proyectil, cadáver o prop móvil. El filtro existente del sello de
+quintaesencia lo excluye. CaelumRestChair ofrece Esperar; CaelumRestBed ofrece
+Dormir. Su Used nativo requiere la pulsación real de Use, alcance y visión.
+La guía conserva la referencia al mueble; las conversaciones 43511/43512
+ofrecen las cuatro duraciones de 0d. La respuesta cierra antes de Begin;
+la guía vuelve a validar el contexto y nunca sustituye un mueble perdido por
+una sesión sobre suelo.
+
+Begin recibe un mueble opcional. En suelo mantiene la ruta anterior. Con mueble,
+valida modo/alcance, guarda posición y dirección de entrada y presta la colisión
+del mueble al jugador. SetOrigin sitúa al jugador en su centro; TestMobjLocation
+comprueba su volumen real, suelo seco y nivel compatible. Si falla, vuelve a
+la entrada y restituye la colisión. No se cambia altura/radio ni se usa telefrag.
+
+La postura usa un WorldOffset gráfico temporal ajustado a RSDO. Se conserva el
+valor previo y sólo se restaura si sigue siendo el aplicado por la sesión.
+Occupant identifica al usuario. Validate interrumpe ante desaparición, movimiento
+del mueble o pérdida de esa ocupación. Finish devuelve al jugador a su entrada
+si está libre, o prueba ocho salidas cercanas con volumen real y visión. Si
+ninguna sirve, libera la sesión y mantiene el mueble sin colisión hasta que
+el jugador pueda salir caminando. No revierte desplazamientos externos, caídas,
+muertes ni viajes. El Tick del mueble limpia ocupantes obsoletos y repone la
+colisión únicamente cuando el volumen queda libre.
+
+CaelumRestCamera deriva de SpectatorCamera y usa su recorte nativo con la
+posición del jugador como referencia. Begin/Advance inicializan una sola vista,
+también para sesiones previas sin cámara. No se toma una cámara de otro sistema.
+Después del PlayerThink nativo, UpdateViewInput aplica el giro a la órbita y
+mantiene el cuerpo orientado. El ángulo vertical se limita entre -5 y 60 grados.
+Al salir normalmente vuelve la cámara del jugador y la dirección anterior;
+si otro sistema cambió la cámara, se respeta su vista. No se modifica chasecam
+ni la configuración del usuario. Muerte/cambio de mapa no restauran posiciones
+o vistas de un escenario anterior.
+
+Inventory guarda Furniture/UsesFurniture, EntryPosition/Angle/Pitch,
+HasEntryView, OriginalWorldOffset/AppliedWorldOffset y el estado de la cámara.
+Los campos ausentes de saves anteriores parten de cero: no se inventa un mueble
+ni una ocupación. La prueba nativa de guardar/cargar durante una sesión conserva
+progreso y referencias, completa una sola vez y permite volver a usar el catre.
+
+El controlador de mundo prepara una pareja por MAP02–MAP05. TrialSlot 1/2
+identifica silla/catre y evita duplicados. Un campo nuevo pendiente en saves
+previos permite incorporarlos sin reiniciar. Si el lugar está ocupado se
+reintenta una vez por segundo. No se añaden cosas a MAP01, relojes, inventarios
+con peso, recursos, recetas, recompensas ni pausas de diálogo.
+
+Las tasas de 0d/0d1 permanecen vigentes. Pendiente en V4.35: acelerar la
+simulación de forma coherente e integrar clima y eventos/rutas programados.
+
+## Compatibilidad del descanso (4.35.0d1)
+
+FindState recibe etiquetas literales separadas para RestLying y RestSeated,
+tanto al iniciar la sesión como al actualizar su pose. Esto evita la conversión
+String a StateLabel que GZDoom 4.14.2 rechazaba en la expresión condicional.
+CaelumWorldCatalogue completo acompaña el hotfix: IsTimelessMap sigue siendo
+la única clasificación común del Limbo para reloj, calendario, Diario y descanso.
+No cambian campos guardados, fórmulas, controles ni la escala temporal.
+La compilación nativa pasó en 0d1 y el autor aprobó sus pruebas jugables
+antes de 0e.
+
+## Descanso y espera: sesión a escala normal (4.35.0d)
+
+CaelumRestRules define dos modos (Esperar/Dormir) y estados sin sesión, activa,
+completa, cancelada e interrumpida. Duraciones admitidas: 5, 60, 240 y 480
+minutos de juego, equivalentes a 525, 6300, 25200 y 50400 tics. Entradas ajenas
+al catálogo se rechazan antes de multiplicar. El reloj global no recibe saltos
+ni una escala distinta: cada sistema del mapa sigue su simulación normal.
+
+La recuperación neta provisional de Sueño es:
+
+    Sueño por tic = 100 / (8 × TicsPerHour)
+
+Se aplica sólo al dormir y una vez por pulso pendiente del reloj; sustituye
+la pérdida pasiva de Sueño. El resultado se limita a 100. Esperar conserva
+el consumo ordinario. Hambre/Sed, curación, ánima, lucidez, aire y recargas
+mantienen sus reglas existentes, sin bonificaciones al inicio o al final.
+La selección numérica de 8 horas es un valor de prueba de 0d; no se presenta
+como una decisión histórica del autor ni como balance final.
+
+Mientras el personaje duerme, ApplyCriticalSurvivalDamage excluye únicamente
+el daño por Sueño crítico. Hambre y Sed siguen contando, y no se borran las
+penalizaciones de fatiga ni se habilita curación si las condiciones normales
+la bloquean. Al dejar de dormir se retoman las reglas de fatiga ordinarias.
+Hambre o Sed <=10% bloquean/interrumpen la sesión; no se comen objetos solos.
+
+CaelumRestState es Inventory oculto, único, no arrojable, no borrable por
+ClearInventory y con InterHubAmount=1. Conserva Status, Mode, RequestedTics,
+ElapsedTics, OriginMap/Position, LastHealth, ResultKey, InputArmed y los campos
+LastClockDays/DayTics. No participa del peso ni de la Caja. La ausencia de este
+Inventory en un save anterior equivale a no tener sesión; sólo Begin lo crea.
+
+Begin valida duración/modo y contexto, ancla el último pulso y pone la pose.
+HandleInput valida antes de la lógica nativa de movimiento; primero espera
+soltar la entrada de confirmación, después Q/B, movimiento o acción cancelan.
+PlayerThink bloquea los comandos mientras la sesión está activa, siguiendo la
+ruta existente de actividades. No modifica usedown ni las flags de congelación.
+Use continúa por el motor al cancelar; el Diario preserva la liberación real.
+UpdateCrouchVisual mantiene RestLying para Dormir y RestSeated para Esperar.
+Finish restaura la pose de pie sólo si aún había una pose de descanso, sin
+reemplazar muerte o dolor. La variante sobre suelo no mueve al personaje;
+la ocupación y salida del mobiliario se detallan en el bloque 0e.
+
+Validate comprueba contexto, posición, daño y continuidad temporal. Advance,
+al final del Tick del jugador, consume como máximo un pulso nuevo. Un callback
+repetido con el mismo reloj no avanza; un salto externo mayor que un tic o una
+regresión interrumpen sin conceder recuperación retroactiva. Cruzar medianoche
+es normal. La UI muestra el calendario de campaña, aunque la vista de prueba
+de Mundo tenga otro anclaje. No hay mutaciones de sesión durante predicción.
+
+Bloqueos/interrupciones: personaje no válido, multijugador, Limbo, combate,
+conversaciones/tienda, fabricación incluso pausada, equipo, sello, lanzamiento
+pendiente, carga/recarga/bloqueo, inmovilización, agua, movimiento, falta de
+suelo, reservas críticas o viaje pendiente. Daño efectivo y muerte pasan por
+los hooks del jugador; no dependen de obtener pain state. Un cambio de mapa
+o desplazamiento externo detiene el descanso. CaelumTravelService rechaza
+viajar con sesión activa. Cancelar/interrumpir conserva sólo lo ya ocurrido.
+
+La pausa voluntaria detiene reloj y sesión. El guardado nativo conserva ambos
+inventarios y los campos del jugador; al cargar se validan sin reiniciar. No
+se suma tiempo de carga ni del sistema operativo. En 0d se comprobaba copia de campos fuera del motor; 0e añade una prueba
+nativa de guardado/carga durante el descanso.
+
+Mundo > D/X abre CaelumRestTrial, con guía invisible y conversación 43510 del
+menú USDF sin pausa existente. Las acciones se encolan, la conversación cierra
+y la guía valida de nuevo antes de Begin. Cerrar o volver no encola una sesión.
+Las preparaciones explícitas ponen Hambre/Sed a 100% y Sueño a 50% o 5%, sin
+curar ni conceder objetos. Abrir/cargar/viajar nunca aplica ese preset.
+ca_debug_rest_report es consulta; ca_debug_rest_hit, sólo durante una sesión,
+solicita DamageMobj de 1 con el tipo CaelumImpact para probar la interrupción.
+
+Pendientes de este bloque de V4.35: aceleración temporal coherente e
+integración con el futuro estado climático y eventos. Mobiliario y cámara
+tienen su primera implementación utilizable en 0e.
+La API de CVar del motor restringe sus setters a variables del mod; no se
+modifica i_timescale mediante esa API ni se altera la configuración del jugador.
+Referencia técnica: [CVar de GZDoom](https://zdoom-docs.github.io/staging/Api/Base/CVar.html).
+Campamentos, propiedades, calidad amplia y comida/bebida automática permanecen
+en V5, igual que exposición térmica y las habilidades acordadas.
+
+## Calendario civil, campaña y Limbo (4.35.0b–0c)
+
+Inicio canónico: 03/11/1889 a las 09:00, fijado por el autor el 2026-09-15.
+La campaña usa un único CaelumWorldClock; el calendario sólo proyecta su valor.
+CaelumWorldCatalogue.IsTimelessMap identifica MAP01 como Limbo mediante su
+ubicación de mansión. AdvanceOnMap no suma allí ningún tic. Toda otra ubicación,
+incluidos CADEV02 y mapas aún sin catalogar, usa exactamente el ritmo común.
+No hay reinicio al cambiar de mapa, relojes por hub ni recuperación de tiempo
+del sistema operativo. Una entrada inesperada en MAP01 congela el instante
+alcanzado, no lo retrocede al inicio. No existe ruta jugable de retorno al Limbo.
+
+La suspensión afecta a la cronología global. La simulación local sigue activa:
+movimiento, Use, diálogo, captura, misiones de espera y fabricación conservan
+sus reglas. Hambre, sed, sueño, curación, aire, daño y recargas siguen usando
+los temporizadores personales aceptados. No se activa una pausa del motor.
+Los diálogos siguen sin pausa desde 0b; sólo fuera del Limbo avanzan la fecha.
+Las pausas voluntarias mantienen el comportamiento nativo en todos los mapas.
+
+CaelumCalendarRules es un resolvedor sin estado. Serial cero = 01/01/0001;
+serial máximo 3.652.058 = 31/12/9999. Los años divisibles por cuatro son
+bisiestos salvo los divisibles por cien que no lo sean por cuatrocientos.
+Las fechas inválidas se rechazan antes de crear/modificar el Inventory.
+CAMPAIGN_START_YEAR/MONTH/DAY/HOUR centralizan la fecha y hora iniciales.
+
+CaelumCalendarState conserva Configured, TrialDate, AnchorSerial,
+AnchorClockDays, AnchorClockTics y AnchorCivilTics. Desde 0c añade CampaignRevision
+y TrialAnchorSerial/ClockDays/ClockTics/CivilTics. El anclaje principal siempre
+representa la campaña; los cuatro campos TrialAnchor son una vista diagnóstica.
+Ambos usan el mismo reloj, sin otro ticker ni consumo temporal duplicado.
+Es Inventory nativo oculto, único, no arrojable, no borrable por ClearInventory
+y viajero entre hubs. No forma parte de equipo, peso, Caja ni filas del
+inventario. La limpieza del regreso no retira este estado.
+
+    deltaDays = clock.CompletedDays - AnchorClockDays
+    localTics = clock.DayTics - AnchorClockTics + AnchorCivilTics
+    fecha     = AnchorSerial + deltaDays + acarreo de localTics
+    hora      = localTics normalizados dentro del día
+
+Las consultas DateSerial(clock), CivilDayTics(clock) y FormatDate(clock)
+devuelven la campaña. El argumento opcional trial=true solicita explícitamente
+la prueba activa. Esta consulta no escribe estado. Comprueba límites antes de
+sumar y no envuelve una fecha fuera del año 9999. Un reloj anterior al anclaje
+es inválido. La fecha inicial también se crea en MAP01, antes de decidir si el
+tic debe avanzar. Se mantiene el requisito de perfil confirmado individual.
+
+CampaignRevision=0 identifica el estado anterior o recién creado.
+EnsureCampaign ancla una sola vez 03/11/1889 09:00 al reloj actual y marca
+revisión 1. Descarta la fecha de prueba heredada, conservando el reloj y los
+registros del personaje. Es una migración sin reconstrucción del pasado:
+0a/0b contaban también el tiempo del Limbo y no permiten separar ese intervalo.
+En 0c guardar/cargar restaura reloj y ambos anclajes, y viajar conserva el mismo
+Inventory. Volver a inicializar no modifica una revisión ya establecida.
+
+Comandos opcionales de prueba:
+
+    netevent ca_debug_calendar_set AÑO MES DÍA
+    netevent ca_debug_calendar_edge
+    netevent ca_debug_calendar_report
+    netevent ca_debug_calendar_clear
+
+set asigna la fecha al anclaje de prueba y toma la hora actual de campaña.
+edge cambia sólo la prueba a 23:56, 12 s reales simulados antes de medianoche.
+Ambos se detienen en MAP01; edge avisa que el cambio se comprueba fuera del
+Limbo. No adelantan reloj, necesidades, recargas, fabricación, misiones ni
+marcas de viaje. report es de sólo lectura y muestra la campaña incluso si
+Mundo está mostrando la prueba. clear desactiva la vista diagnóstica y deja
+ver la fecha de campaña alcanzada, sin reiniciar, quitar ni volver a anclarla.
+Las pruebas creadas y guardadas en 0c se conservan al cargar; una partida nueva
+no las hereda. Modificar requiere personaje vivo confirmado individual y sin
+predicción. Los futuros eventos deben consultar la campaña, no trial=true.
+
+Mundo muestra fecha y estación mensual austral: verano diciembre–febrero;
+otoño marzo–mayo; invierno junio–agosto; primavera septiembre–noviembre.
+Esta convención sigue siendo una prueba; noviembre de 1889 se muestra como
+primavera, sin determinar equinoccios, clima, temperatura, luz ni exposición
+térmica. Descanso, avance temporal y estado ambiental siguen en V4.35;
+exposición térmica del personaje conserva V5.1.
+
+## Habilidades de clase y raza: diseño acordado, implementación pendiente
+
+Se registran aquí las decisiones del diálogo del 2026-09-14. No hay nuevos
+efectos jugables de User1/User4 en 0b ni 0c. El roadmap asigna estas habilidades a
+V5 después de la exportación de prueba. User2 sigue dedicado a sellos y User3
+al Tarot. No se modifican atributos, costes existentes ni controles aceptados.
+
+Las habilidades de clase duran 10 segundos, con 60 segundos de reuso. Coste
+base inicial para pruebas: 1000 de ánima por activación; no es un balance
+final. El reuso es la espera hasta poder activar de nuevo, como los sellos.
+La aplicación de modificadores de coste y el momento preciso en que comienza
+esa espera se integrarán con su contrato de activación; no se inventa una
+fórmula adicional en este parche. Los radios de las auras quedan por definir.
+
+| Clase | Habilidad | Efecto acordado durante 10 segundos |
+| --- | --- | --- |
+| Guerrero | Grito de batalla | Intimida en área. Los aterrorizados no pueden realizar ataques físicos ni ataques con armas a distancia. |
+| Explorador | Instinto de supervivencia | Bloquea todos los estados negativos y la pérdida de recursos de supervivencia. |
+| Sacerdote | Milagro | Restaura por segundo 1% de Lucidez, Salud, Ánima y Aire. |
+| Mago | Lluvia de ideas | Para cada lanzamiento distinto, los tres siguientes dentro de la ventana tienen reducciones de 100%, 50% y 25%. Se incluyen Fire y AltFire de cada arma, y el ataque potenciado con R cuenta como hechizo distinto. |
+| Mercenario | Instinto asesino | Triplica la probabilidad de crítico y la ganancia de adrenalina. |
+| Clérigo | Arenga | Recupera por segundo 1% de adrenalina para los aliados cercanos. |
+| Mago de batalla | Grito ensordecedor | Impide lanzar hechizos, habilidades y sellos a los enemigos cercanos. |
+| Peregrino | Amparo del peregrino | El personaje y los aliados cercanos reciben un 50% menos de daño del entorno. |
+| Investigador | Levitación | Permite volar durante aproximadamente 10 segundos. |
+| Arcanista | Sueño | Duerme a todos en el área. Permanecen inmóviles y despiertan al recibir un golpe. |
+
+Amparo reemplaza Bendecir los alimentos. No concede curación, comida, bebida
+ni reducción del daño de combate. La clasificación depende del origen del
+daño: una llama ambiental se reduce; un hechizo de fuego en combate conserva
+su daño. El sistema de peligros deberá conservar esa procedencia, incluidos
+efectos persistentes; no basta deducir «entorno» de un atacante nulo.
+
+Raciales: toggles que consumen ánima mientras actúan, con costes pendientes de
+balance. Se conserva la indicación inicial del autor de un minuto de reuso y
+10 segundos de duración; «toggle» no autoriza por sí solo duración ilimitada.
+Debe poder apagarse manualmente o por agotamiento, liberando la interacción.
+El coste de 1000 corresponde a las habilidades de clase, no al consumo por
+segundo de las raciales.
+
+| Raza | Habilidad | Efecto acordado mientras está activa |
+| --- | --- | --- |
+| Hombre bestia | Instinto cazador | Triplica el sigilo y la probabilidad de crítico por la espalda. No triplica el daño crítico. |
+| Humano | Socialización | Duplica Labia y Persuasión. El consumo de ánima continúa al conversar sin pausa. |
+| Duende | Telequinesis | Mueve objetos a distancia, con coste de ánima según el peso. |
+| Caelith | Nombre pendiente | Consume ánima en lugar de aire. |
+
+Mago + Explorador = Investigador; Mago + Sacerdote = Arcanista. Las propuestas
+no aprobadas sobre nuevas inmunidades, curación con alimentos o cambios de
+atributos no sustituyen estas definiciones. La limpieza de estados previos de
+Instinto de supervivencia, costes raciales, radios y acumulación entre efectos
+necesitan concretarse al implementar; no se simulan con bonificaciones falsas.
+
+## Reloj global y marcas de viaje (4.35.0a)
+
+Autoridad: CaelumWorldClock, Inventory nativo oculto, no arrojable, no borrable
+por ClearInventory y con InterHubAmount=1. No es equipo, material ni una segunda
+Caja; no participa del peso ni de las filas del inventario. Conserva dos int:
+CompletedDays y DayTics. No copia el tiempo del sistema operativo ni Level.Time.
+
+CaelumWorldClockTicker es StaticEventHandler y no serializa una copia del
+contador. WorldTick sólo actúa con un participante, personaje Caelum, perfil
+confirmado, creador cerrado y sin predicción. Desde 0c inicializa el calendario
+y cada tic nativo suma uno al contador sólo fuera del Limbo. El controlador existe también al cargar saves antiguos: crea el
+Inventory si falta. Una partida nueva sustituye al personaje y su registro;
+un hub transporta el mismo Inventory. No se usa una CVar global persistente.
+
+    TicsPerHour = REAL_SECONDS_PER_GAME_HOUR × TICRATE = 180 × 35 = 6300
+    TicsPerDay  = TicsPerHour × GAME_HOURS_PER_DAY = 6300 × 24 = 151200
+    Hora       = DayTics / TicsPerHour                       (entero)
+    Minuto     = (DayTics % TicsPerHour) × 60 / TicsPerHour    (entero)
+
+Al completar el día se incrementa CompletedDays y DayTics vuelve a cero.
+El extremo entero se satura para impedir que envuelva y retroceda. Tres
+segundos reales simulados representan un minuto de juego; un día completo
+representa 72 minutos reales. Son las constantes ya usadas por supervivencia.
+No se duplican consumos ni se cambia ninguna fórmula al incorporar el reloj.
+
+Mundo consulta directamente el Inventory. Fuera del Limbo muestra tiempo
+registrado; dentro indica que está detenido. La línea inferior muestra el
+calendario de campaña de 0c o su vista diagnóstica explícita. El cero de un save anterior es el inicio del
+registro nuevo, no una afirmación sobre cuánto duró la partida anterior.
+La pausa se hereda de WorldTick. Desde 0b las conversaciones de Caelum
+continúan simulando, igual que el Diario. La pausa voluntaria del motor
+detiene el reloj; los diálogos por sí mismos ya no lo detienen.
+La muerte no impone una pausa adicional al mundo si el motor sigue simulando.
+
+CaelumJourneyState añade HasDepartureTime, DepartureDays, DepartureDayTics,
+HasArrivalTime, ArrivalDays y ArrivalDayTics. Begin registra la salida después
+de validar y antes de ChangeLevel; borra las marcas del viaje anterior.
+Update registra la llegada una sola vez en el destino esperado, con conexión
+pendiente compatible y salida fechada. Una interrupción no se presenta como
+llegada. Los campos nuevos de saves 0e parten sin marcas conocidas; no se
+rellenan retroactivamente al consultar una llegada ya resuelta.
+
+FormatStamp es una consulta común. netevent ca_debug_time_report no crea ni
+modifica el reloj, y ca_debug_travel_report incluye las marcas disponibles.
+No se habilita un salto de tiempo por consola en 0a: descanso, viajes con
+duración, eventos e integración de los sistemas afectados se implementan
+posteriormente sobre esta misma autoridad temporal.
+
+
+## Apoyo a las pruebas de actividades (4.34.0e)
+
+CaelumSewerTrialSupport instala las clases nativas CaelumWorkbenchStation,
+CaelumSawmillStation y CaelumForgeStation con grupo de red 43414. Cada enlace
+mide 56 MU, dentro del límite vigente de 64. Sólo actúa en MAP02–MAP05.
+El nuevo campo SewerSupportPrepared del controlador comienza falso en los
+guardados 0d; FindStation evita recrear nodos que ya existen. No modifica WAD.
+La forja satisface el requisito existente del componente Mango; no se altera
+el catálogo para hacer pasar la prueba. args[0]=0 conserva la inmovilidad.
+
+Las dos acciones nuevas comparten las comprobaciones de la sesión USDF:
+guía propio, jugador interlocutor, origen vigente, acción única y no predicción.
+Se encolan y ejecutan después de cerrar la conversación. Prepare vuelve a
+consultar CanDepart y sólo entonces concede la ayuda, sin crear JourneyState.
+Las páginas e ids USDF de 0d se conservan; se agregan respuestas al final de
+la oferta, antes del «Cancelar» nativo. Abrir, mirar o cancelar no concede nada.
+
+Sello: se busca una instancia poseída de quintaesencia T1 y se usa la ruta
+ApplyFormalInventorySelection/EquipSelectedNativeEquipment. Si falta, se crea
+una instancia nativa con ItemId. Sólo la opción explícita añade adrenalina al
+máximo derivado y pone a cero el enfriamiento. No cambia CombatTimeRemaining,
+atributos, armas, consumo ni el inicio/cancelación del canal. Si había otro
+sello, queda guardado sin equipar. La canalización usa el control de sello
+habitual del arma equipada; usar o viajar nunca recarga esta ayuda.
+
+Crafteo: aprende Recipe() del catálogo y completa la pila nativa de madera
+hasta GetComponentInputUnits(BATCH_INDEX=1): 40 unidades. Conserva su ubicación
+personal/Caja y comprueba su peso. No concede Caja, productos terminados ni
+reservas artificiales. FocusRecipe sólo actúa sobre esta red, con receta
+conocida y sin tarea en curso: T1, lote x10, eficiencia índice 2 (100%).
+El jugador inicia, pausa, reanuda, cancela y completa por los controles reales.
+Cerrar Oficios deja la tarea reservada pendiente; ese estado bloquea el viaje.
+El tiempo y la producción se calculan con las funciones vigentes.
+
+
+Al abrir Oficios con Use, el Diario deja pasar al motor el evento KeyUp de
+la tecla ligada nativamente a +use. Antes lo consumía; quedaba retenido el
+botón interno y la siguiente pulsación después de Q podía no reabrir el
+puesto. Se conservan KeyDown, flechas, extremos, solapas y RePág/AvPág.
+
+## Caravanas de prueba y ciclo del traslado (4.34.0d)
+
+TAB > Mundo > C abre una oferta USDF en MAP02–MAP05. MAP02 ofrece MAP03,
+MAP04 y MAP05; cada módulo ofrece MAP02. Se conservan los ids 2–7 existentes.
+La selección de destino y «Volver a destinos» sólo cambian la página nativa.
+«Cancelar» cierra el servicio sin escribir una salida. «Confirmar salida»
+entrega una acción efímera que sólo acepta el interlocutor, jugador, origen
+y sesión propios, con una única conexión en cola. El guía invisible se
+retira cuando termina la sesión; no ocupa el mapa ni modifica NPC narrativos.
+
+CaelumCaravanGuide espera el cierre nativo de la conversación y después
+llama a CaelumTravelService.Begin. Éste vuelve a validar toda la salida.
+CaelumSewerTravel.Begin conserva alcance/altura/visión/actor colocado y usa
+el mismo servicio con modo a pie. Se admiten sólo rutas de alcantarilla,
+perfil confirmado, jugador vivo fuera del creador, sin predicción, sesión
+incompatible, canal activo, fabricación activa, congelación total u otro
+jugador. El destino debe existir y no puede ser MAP01. Una salida pendiente
+impide otra. Los fallos anteriores al commit no crean historial ni cobran.
+
+El nuevo CaelumJourneyState es Inventory nativo, oculto y no arrojable. No
+cambia los campos ni capacidades de CaelumPersistentCharacterState. Se crea
+al iniciar el primer viaje nuevo, nunca por leer Mundo o abrir la oferta.
+
+| Campo | Significado |
+| --- | --- |
+| Sequence | Número de salida; incrementa una vez por Begin aceptado. |
+| ConnectionId | Id dirigido del catálogo existente. |
+| TravelMode | 1: a pie; 2: caravana de prueba. |
+| Status | 0: sin viaje; 1: salida pendiente; 2: llegada; 3: interrumpido. |
+| Arrivals / Interruptions | Cantidades resueltas una sola vez; saturan en INT_MAX. |
+
+La salida se escribe junto a WorldPendingConnection antes de ChangeLevel.
+Update se ejecuta antes de que WorldProgress consuma esa marca. Sólo acredita
+el destino que coincide con id y pendiente; otra ubicación interrumpe. Una
+carga todavía en origen interrumpe y libera su propia marca, sin viajar por
+sorpresa ni borrar una marca ajena. Una salida resuelta no se vuelve a contar.
+El observador de carga existente realiza esta conciliación antes de reabrir,
+si corresponde, la conversación nativa guardada. Los guardados 0c mantienen
+visitas y conexiones; no se les atribuyen viajes anteriores sin evidencia.
+
+La prueba no aplica tarifa, consumo adicional ni avance temporal. Se conserva
+el consumo normal que ya transcurre durante juego activo. No rellena recursos,
+no sanea ni copia inventario y no ejecuta los premios o limpieza del prólogo.
+El modo/estado/secuencia forman la base de integración del reloj y eventos
+posteriores; no existe todavía un planificador ni una simulación de transporte.
+Mundo muestra el último viaje en una línea. Su historial de lugares/rutas y
+los controles de Inventario/Misiones, flechas y RePág/AvPág se conservan.
+
 
 ## Red de alcantarillas y viajes de prueba (4.34.0c)
 
@@ -1478,9 +1889,11 @@ rotaciones por cuadro. Domingo cambia entre C y D–G con la locomoción agachad
 se preservan el crouch físico nativo, ataques, dolor, muerte y la vuelta a pie.
 El renderer recibe el sprite agachado para evitar una segunda compresión. Los
 estados nuevos se anexan al final: no desplazan índices de estados guardados.
-Las poses sentada/acostada son estados gráficos preparados, no una interacción
-que restaure Sueño ni un calendario. Sillas, camas, inmovilización y cámara de
-descanso se conectarán al bloque correspondiente; la secuencia está en PROJECT.md.
+En 0m las poses sentada/acostada eran estados gráficos preparados. Desde 0d
+Domingo las usa en la sesión del jugador: Dormir recupera Sueño y Esperar
+mantiene su consumo. Las poses de los demás NPC siguen disponibles como arte,
+sin programación de rutinas. 0e añade muebles y cámara para el jugador; las
+rutinas de descanso de NPC no forman parte de esa implementación.
 
 ## Probabilidad social
 
@@ -2069,6 +2482,10 @@ narrativa. `map MAP02` comienza otro personaje sin Caja y tampoco prueba esa
 persistencia. Para pruebas de actores independientes se usa `map CADEV02`.
 
 ## Diálogos nativos y audio
+
+Desde 0b las conversaciones mantienen la simulación activa. MAPINFO declara
+UnFreezeSinglePlayerConversations y el menú común omite la pausa diferida de
+ConversationMenu.Ticker, también al cargar snapshots anteriores.
 
 `GameInfo.AddDialogues` carga CAPALOMO; Thing_SetConversation y StartConversation
 abren los menús nativos. Q equivale a Atrás; Escape y mando mantienen sus

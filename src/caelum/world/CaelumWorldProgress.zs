@@ -34,6 +34,7 @@ class CaelumWorldProgress : Object play
         }
         if (CaelumWorldCatalogue.IsLocation(locationId)) record.WorldLocationVisited[locationId] = true;
 
+        CaelumJourneyState.Update(user);
         int pending = record.WorldPendingConnection;
         if (pending != CaelumWorldCatalogue.CONNECTION_NONE)
         {
@@ -83,7 +84,7 @@ class CaelumWorldProgress : Object play
     {
         if (user == null) return;
         let record = user.GetPersistentCharacterState(false);
-        Console.Printf("[Caelum 4.34.0c] Mundo: mapa=%s ubicación=%d registro=%d", level.MapName,
+        Console.Printf("[Caelum 4.35.0d] Mundo: mapa=%s ubicación=%d registro=%d", level.MapName,
             CaelumWorldCatalogue.LocationForMap(level.MapName), record != null);
         if (record == null) return;
         Console.Printf("Versión=%d conexión pendiente=%d", record.WorldStateVersion, record.WorldPendingConnection);

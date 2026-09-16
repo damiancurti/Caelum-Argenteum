@@ -96,6 +96,7 @@ class CaelumCraftingStation : CaelumMovableProp
         int scanToken = user.BeginCraftingNetworkScan();
         CollectCraftingNetwork(user, scanToken);
         user.OpenCraftingNetwork(self);
+        CaelumSewerTrialSupport.FocusRecipe(user, self);
 
         // Si la red no era válida y el menú no llegó a abrirse, permitimos
         // rearmar al soltar Use mediante la misma lógica del jugador.

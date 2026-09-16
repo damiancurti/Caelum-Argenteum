@@ -1,6 +1,145 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.34.0c — 2026-09-14.
+Versión documental: 4.35.0e — 2026-09-16.
+
+## 4.35.0e — mobiliario original y vista de descanso
+
+Dos OBJ originales se generan con assets/generators/generate_rest_furniture.py,
+usando únicamente la biblioteca estándar y Mesh del generador de depósitos:
+
+- src/models/caelum/props/rest/ca_rest_chair.obj: silla de madera con respaldo.
+- src/models/caelum/props/rest/ca_rest_bed.obj: catre bajo con marco, lona y almohada.
+
+Reutilizan materiales de madera, metal e interior propios del depósito. No se
+crean ni modifican PNG. MODELDEF enlaza ambos modelos con CAHC A, el sprite de
+control transparente ya disponible; aplica escala 1, AngleOffset -90 y corrección
+de proporción de píxel. Los actores tienen colisión propia. Se reutilizan las
+ocho rotaciones de RestSeated/RestLying de Domingo, sin alterar esos sprites.
+Los ajustes WorldOffset de la sesión son exclusivamente gráficos y se deshacen
+al levantarse.
+
+El panel de descanso pasa a (16,12,608,102) en 640×360 y oscurecimiento 0,12.
+Agrupa fecha y duración, recursos y controles arriba para dejar visible el
+personaje. LANGUAGE incorpora siete claves nuevas por idioma: títulos,
+descripciones, falta de alcance/espacio y ayuda de cámara. CAPALOMO añade dos
+conversaciones con las mismas cuatro duraciones y el menú aprobado. Flechas,
+filtros, Misiones, RePág/AvPág y liberación de Use conservan su implementación.
+
+Se inspeccionaron capturas nativas de GZDoom 4.14.2 en Linux, ajustando escala,
+orientación y colocación de ambas poses. Son modelos sencillos de prueba con
+sprites de ocho vistas; no se incorporan modelos animados de personajes.
+La prueba de Windows permite revisar la presentación con la resolución y
+renderizador habituales del autor.
+
+No cambian MAPINFO, geometrías WAD, audio, texturas, sprites ni modelos previos.
+El ZIP incluye el generador y fuentes nuevas/modificadas, sin motor, IWAD,
+PK3 completo ni material QA. ca_debug_rest_report identifica 4.35.0e.
+
+## 4.35.0d1 — resolución de las poses existentes
+
+El hotfix corrige únicamente las búsquedas de estados de descanso y vuelve a
+incluir el catálogo necesario del Limbo. RestLying/RestSeated conservan sprites,
+colisión y presentación de 0d; no se añade o cambia ningún recurso audiovisual.
+El informe de descanso identifica 4.35.0d1; los otros informes conservan 0d.
+Se compiló con GZDoom 4.14.2; no se declara una comprobación visual jugable.
+
+## 4.35.0d — interfaz y poses del descanso
+
+Nuevas fuentes CaelumRest.zs y CaelumRestTrial.zs, incluidas al final de ZSCRIPT.
+CAPALOMO añade la conversación 43510 sobre el menú común aprobado, con modos,
+duraciones y preparaciones explícitas. LANGUAGE añade las claves inglesas y
+españolas correspondientes; la ayuda de Mundo incluye D/X junto a C/Y y Use.
+
+Se reutilizan RestLying/RestSeated de Domingo (RSDO B/A). No se crean sprites,
+camas, sillas, mapas o modelos. La pose mundial no cambia altura, radio ni
+colisión. La vista sigue siendo la habitual del jugador, con un panel de
+descanso y oscurecimiento de fondo 0,30; la cámara prevista queda pendiente.
+
+El panel ocupa (56,88,528,184) en 640×360. Muestra modo, fecha de campaña,
+minutos restantes, Sueño/Hambre/Sed con dos decimales y controles. Las métricas
+conservadoras de las líneas nuevas caben en 504 MU; no se considera una captura
+nativa de GZDoom. La UI conserva flechas, extremos y RePág/AvPág; se resuelve
+X de Mundo antes del latch de abandono para no retener la entrada de Misiones.
+
+MAPINFO, WAD de los seis mapas, fuentes, audio, sprites, modelos, generadores
+y menús de conversación existentes mantienen sus bytes. Los informes llevan
+el identificador 4.35.0d. No se entrega motor, IWAD, PK3 completo ni fixtures QA.
+
+## 4.35.0c — presentación del tiempo detenido
+
+Mundo reutiliza sus dos líneas temporales, fuentes y coordenadas. En MAP01,
+la línea superior muestra «El tiempo está detenido en el Limbo»; la inferior
+muestra la fecha canónica o la vista de prueba expresamente identificada.
+LANGUAGE añade CA_WORLD_CLOCK_TIMELESS en inglés/español y cambia el mensaje
+de calendario aún no inicializado. No se amplía el panel ni cambia la entrada
+de teclado/mando. La revisión de métricas se realiza sobre las fuentes
+existentes; la inspección visual dentro de GZDoom queda en las pruebas de 0c.
+
+Se modifican WorldCatalogue, WorldClock, Calendar y la presentación de Mundo;
+las cabeceras de los informes existentes identifican 4.35.0c. Se conservan
+MAPINFO, las conversaciones sin pausa aprobadas, geometrías, llegadas, accesos,
+puestos, sprites, fuentes, modelos, sonidos y generadores. No se crean assets.
+
+## 4.35.0b — calendario sobre la presentación existente
+
+Nueva fuente src/caelum/world/CaelumCalendar.zs e include en ZSCRIPT. LANGUAGE
+añade ocho claves inglesas/españolas para fecha, límites y estaciones. Mundo
+añade una línea en (48,160), ajusta ambas columnas y conserva la navegación.
+Los cinco lugares visitados y las tres salidas caben en el panel previsto;
+el autor confirmó después todas las pruebas de 0b, incluida su presentación.
+
+MAPINFO activa conversaciones sin pausa en MAP01–MAP05 y CADEV02. Se modifica
+Ticker del menú común en CaelumPalomoDialogue.zs; no se reemplazan árboles
+USDF, formato, voces, arpa, sprites, fuentes ni efectos de captura. No hay
+recursos audiovisuales nuevos, mapas regenerados ni generadores modificados.
+Los iconos/efectos de las habilidades recién definidas no se entregan en 0b.
+
+## 4.35.0a — presentación del tiempo registrado
+
+No se agregan ni regeneran recursos audiovisuales o mapas. Se usa CaelumSmall
+y el panel existente de Mundo para una línea de tiempo en (48,148), antes de
+las columnas de visitas y salidas. LANGUAGE agrega dos claves en inglés y
+español: tiempo registrado/escala e inicio del registro con perfil confirmado.
+
+Nueva fuente src/caelum/world/CaelumWorldClock.zs incluida desde ZSCRIPT.
+MAPINFO registra CaelumWorldClockTicker como observador estático para que se
+active también con guardados anteriores. Los WAD, geometría, llegadas, accesos,
+puestos de prueba, sprites, modelos, fuentes, audio y generadores se conservan.
+Las marcas del último viaje se consultan en el informe de viajes existente.
+
+
+## 4.34.0e — puestos de prueba en las alcantarillas
+
+Se reutilizan sin modificar los modelos, sprites y sonidos de banco de trabajo,
+aserradero y forja, junto al sello de quintaesencia y materiales nativos.
+No se generan assets ni mapas. Se agrega CaelumSewerTrialSupport.zs y su include
+ZSCRIPT; CAPALOMO conserva las páginas 43410–43413 y agrega dos respuestas
+localizadas en inglés/español. La infraestructura usa sus clases concretas,
+por lo que conserva las asociaciones MODELDEF existentes.
+
+MAP02: banco (-320,64,0), aserradero (-320,120,0), forja (-264,120,0).
+MAP03–MAP05: banco (-80,384,0), aserradero (-80,440,0), forja (-24,440,0).
+Los nodos forman una red separada por proximidad y se conservan en el hub.
+Son objetos del escenario; los recursos sólo se conceden al pedir la prueba.
+
+
+## 4.34.0d — recursos del servicio de viaje
+
+No se añaden ni regeneran mapas, imágenes, sprites, modelos o sonidos.
+MAP01, MAP02, MAP03–05, CADEV02, MAPINFO, TEXTURES y los generadores conservan
+sus bytes de 0c. La prueba usa el diálogo USDF y las fuentes ya integradas.
+
+Nuevas fuentes: src/caelum/world/CaelumJourney.zs y CaelumCaravanTrial.zs,
+registradas en ZSCRIPT. CAPALOMO contiene las cuatro ofertas nativas 43410–43413
+y sus confirmaciones, con claves inglesas/españolas en LANGUAGE. El guía de
+la prueba es invisible, temporal y sin assets propios. No se reutiliza el
+nombre ni la identidad de un residente para representar a una caravana.
+
+El diálogo, el servicio común, el registro de mundo, su presentación y la
+reanudación de conversación son las integraciones tocadas por 0d. Las
+cabeceras de diagnóstico anteriores se actualizan a 0d, sin cambiar su lógica.
+No se distribuyen los recursos privados usados para ejecutar QA en GZDoom.
+
 
 4.34.0c añade MAP03.wad, MAP04.wad y MAP05.wad, generados como UDMF nativo
 por assets/generators/generate_sewer_trials.py. Usa sólo la biblioteca propia:

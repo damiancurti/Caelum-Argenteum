@@ -22,6 +22,7 @@ class CaelumConversationResume : StaticEventHandler
             if (user == null || user.player == null || user.health <= 0
                 || !user.CharacterCreationComplete || user.CreationWizardOpen
                 || (user.player.cheats & CF_PREDICTING)) continue;
+            CaelumJourneyState.Update(user, true);
             let speaker = user.player.ConversationNPC;
             if (speaker == null || !speaker.bInConversation || speaker.health <= 0
                 || !speaker.HasConversation() || user.player.ConversationPC != user) continue;

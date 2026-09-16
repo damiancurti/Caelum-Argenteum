@@ -3140,3 +3140,25 @@ Model CaelumMasterBenchStation
     FrameIndex CMST A 0 0
 }
 // --- END GENERATED CAELUM STATION MODELS ---
+
+Model CaelumRestChair
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_chair.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumRestBed
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bed.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

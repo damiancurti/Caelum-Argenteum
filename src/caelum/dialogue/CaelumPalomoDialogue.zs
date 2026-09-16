@@ -257,6 +257,13 @@ class CaelumUnknownVoiceSpeaker : Actor
 // cierre equivalente a Atrás en todos los diálogos narrativos del archivo.
 class CaelumPalomoConversationMenu : ConversationMenu
 {
+    override void Ticker()
+    {
+        // ConversationMenu.Ticker sólo activa la pausa tras 20 tics. Omitir
+        // esa acción conserva el modo nativo sin pausa incluso en snapshots
+        // anteriores a la nueva opción MAPINFO. No altera los demás menús.
+    }
+
     override void FormatSpeakerMessage()
     {
         if (mCurNode.UserData ~== "palomo_upstairs_wait")

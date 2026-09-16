@@ -44,28 +44,7 @@ class CaelumSewerTravel : Object play
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)
             || user.Distance2D(gate) > user.UseRange + gate.Radius
             || Abs(user.Pos.Z-gate.Pos.Z) > 64 || !user.CheckSight(gate)) return false;
-        if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen
-            || user.CraftingMenuOpen || user.CraftingTaskActive || user.EquipmentMenuOpen
-            || user.CombatChannelModeActive || (user.player.cheats & CF_TOTALLYFROZEN))
-        { user.A_Print(StringTable.Localize("CA_SEWER_TRAVEL_BUSY", false)); return false; }
-        for (int i = 0; i < MAXPLAYERS; i++)
-            if (playeringame[i] && players[i].mo != user)
-            { user.A_Print(StringTable.Localize("CA_M01_RETURN_SOLO", false)); return false; }
-        String destination = CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
-        if (destination == "MAP01" || !LevelInfo.MapExists(destination))
-        { user.A_Print(StringTable.Localize("CA_SEWER_TRAVEL_MISSING", false)); return false; }
-        let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.ProfileCommitted || record.WorldPendingConnection != 0) return false;
-        // Todas las comprobaciones preceden a la salida. El motor transporta
-        // las instancias de inventario; no se sanea, clona ni repone nada.
-        user.CancelCombatBlockMode(); user.CancelRangedAim(); user.CancelRangedReload();
-        user.CancelWeaponCharge(); user.CancelPendingStaffCast(false);
-        user.Vel = (0,0,0);
-        record.WorldConnectionKnown[id] = true;
-        record.WorldPendingConnection = id;
-        user.PersistCharacterState();
-        Level.ChangeLevel(destination, 0, CHANGELEVEL_NOINTERMISSION);
-        return true;
+        return CaelumTravelService.Begin(user, id, CaelumJourneyState.MODE_FOOT);
     }
 }
 

@@ -27,7 +27,7 @@ class CaelumMainM00FoolCapture : Object play
     {
         if (user == null || user.player == null) return;
         let record = user.GetPersistentCharacterState(false);
-        Console.Printf("[Caelum 4.34.0c] Diagnóstico de El Loco (1=sí, 0=no)");
+        Console.Printf("[Caelum 4.35.0d] Diagnóstico de El Loco (1=sí, 0=no)");
         if (record == null)
         {
             Console.Printf("Registro de personaje ausente.");

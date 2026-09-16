@@ -1,6 +1,161 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.34.0c — 2026-09-14.
+Versión documental: 4.35.0e — 2026-09-16.
+
+## 4.35.0e — sillas, catres y cámara de descanso (2026-09-16)
+
+- El autor confirma que todas las pruebas de 0d1 dieron correctas y autoriza
+  continuar. Queda aceptada la base Dormir/Esperar reparada por ese hotfix.
+- Una silla y un catre originales por MAP02–MAP05, también para guardados
+  anteriores. La preparación repetida no duplica la pareja y espera si el
+  lugar está ocupado. Se conserva la geometría y la prohibición de volver al Limbo.
+- Use/USDF selecciona duraciones para Esperar/Dormir; se vuelve a validar el
+  mueble tras cerrar la respuesta. Cerrar sin elegir no inicia ni concede nada.
+- Ocupación con el volumen real del jugador y devolución a una salida libre.
+  Si todas están bloqueadas, puede salir caminando antes de restituir colisión.
+- Cámara orbital nativa durante descanso, con recorte contra el entorno,
+  restauración de vista y dirección, y referencias persistentes. No sustituye
+  una cámara de otro sistema ni cambia opciones de chasecam.
+- Se reutilizan las poses RSDO y los materiales existentes; se agregan dos OBJ
+  procedurales y su generador. Panel compacto con ayuda de cámara.
+- GZDoom 4.14.2 en Linux compila el proyecto y verifica interacción Use/USDF,
+  uso repetido, finalización, daño, salidas ocupadas, pérdida del mueble,
+  colocación/uso en cuatro alcantarillas y guardado/carga de una sesión activa.
+  Capturas nativas revisadas. La comprobación manual de Windows está en el TXT.
+- Escala temporal, recuperación provisional, recursos, atributos, sellos,
+  controles del Diario y fecha inicial mantienen el contrato aprobado.
+- Aceleración, clima local, eventos/rutas y cierre de integración siguen en
+  4.35; después 4.36, 4.37, exportación de prueba y trabajo heredado en V5.
+
+## 4.35.0d1 — reparación del inicio en GZDoom 4.14.2 (2026-09-15)
+
+- El autor reporta nueve errores al analizar 0d. Las dos búsquedas condicionales
+  de poses se cambian por llamadas con etiquetas literales; restPose vuelve a
+  declararse correctamente. Se incluye el catálogo completo de 0c, con
+  IsTimelessMap, para resolver las seis referencias al Limbo ausentes del log.
+- El compilador nativo de GZDoom 4.14.2 reprodujo los errores de poses antes del
+  arreglo y compiló los scripts después, sobre 4621 archivos de juego restaurados.
+  Comprobación en Linux con Freedoom 2, sin prueba jugable o de saves en Windows.
+- Balance, controles, duración y persistencia de descanso mantienen 0d; MAP01
+  conserva su reloj detenido y el resto del mundo comparte el ritmo aceptado.
+- README y cinco documentos actualizados; validador admite sufijos numéricos
+  de hotfix. Delta correctivo sobre 0d con guía PRUEBAS_4_35_0d1.txt en raíz.
+- Continúan pendientes las pruebas jugables de descanso; no cambia el roadmap.
+
+## 4.35.0d — descanso y espera a escala normal (2026-09-15)
+
+- El autor aprueba todas las pruebas de 0c y solicita continuar y conocer lo
+  pendiente para pasar de 4.35 a 4.36.
+- Sesión persistente Dormir/Esperar, iniciada desde Mundo > D/X, con duración
+  explícita de 5 minutos de juego, 1, 4 u 8 horas. La prueba corta dura 15 s.
+- Recuperación de Sueño provisional: 100% por 8 h al dormir, sustituye pérdida
+  pasiva; Esperar conserva consumo. Hambre/Sed y regeneraciones mantienen reglas.
+- Sueño crítico deja de causar daño sólo durante Dormir; no se neutralizan
+  otras penalizaciones ni el daño por hambre/deshidratación.
+- Cancelación por Q/B, TAB, movimiento/acción; interrupción por daño, combate,
+  contexto incompatible, desplazamiento, cambio de mapa o salto del reloj.
+  Pulsos únicos, finales terminales y liberación nativa de Use conservada.
+- Poses mundiales existentes, panel sobre la vista normal y guía USDF sin
+  pausa. Preparaciones opcionales de reservas, informe y golpe de prueba.
+- 317 aserciones en C++ extraído con dobles del motor y sanitizador; 33 guardas
+  verificadas al iniciar y continuar, más daño crítico y restauración lógica.
+  Compilación/partida/guardados/UI de GZDoom siguen pendientes para 0d.
+- Se actualiza el roadmap: aceleración y mobiliario/cámara de descanso, clima
+  local, eventos/viajes programados y cierre conjunto antes de 4.36. 4.37 y
+  exportación siguen después; trabajo heredado/transversal se mantiene en V5.
+- Delta sobre 0c, README inglés y cinco documentos; guía de pruebas en raíz.
+
+## 4.35.0c — inicio de campaña y Limbo sin tiempo (2026-09-15)
+
+- El autor aprueba todas las pruebas de 4.35.0b.
+- Inicio canónico fijado por el autor: 3 de noviembre de 1889 a las 09:00.
+- MAP01 detiene el reloj del mundo. El resto de mapas comparte el mismo ritmo
+  y contador persistente. Se conserva la simulación local, sin pausa adicional.
+- Inicialización/migración única: los saves previos empiezan con la fecha
+  canónica al actualizar, conservando contador e historial de viajes. No se
+  reconstruye cuánto tiempo previo transcurrió fuera del Limbo.
+- Anclaje separado para depuración. Quitar una fecha de prueba restaura la
+  presentación de la campaña que siguió avanzando, sin volver al inicio.
+- Mundo identifica el tiempo detenido; los informes muestran campaña,
+  revisión y prueba. No cambia la navegación ni se abre un regreso a MAP01.
+- 8.849 aserciones en C++ extraído del ZScript: 27 migraciones lógicas y
+  4.320 proyecciones, con sanitizador. No sustituyen compilación, serialización
+  ni ejecución de GZDoom, pendientes para 0c. Se revisan fuentes y recursos.
+- Delta sobre 0b, README y cinco documentos actualizados; pruebas en raíz.
+  Descanso/avance temporal siguen como siguiente incremento de V4.35;
+  exportación tras 4.37 y trabajo heredado/transversal en V5.
+
+## 4.35.0b — calendario y diálogos sin pausa (2026-09-14)
+
+- El autor aprueba todas las pruebas del parche 4.35.0a.
+- Base de calendario civil con meses, años bisiestos y anclaje persistente
+  sobre el reloj existente. No se fija una fecha histórica sin autorización.
+- Fecha y ciclo mensual austral explícitamente de prueba en Mundo. Comandos
+  para asignar fecha, preparar medianoche en 12 s simulados, consultar y retirar.
+  No adelantan recursos, tareas ni el reloj real de la partida.
+- Conversaciones sin pausa mediante MAPINFO y Ticker del menú común. La ruta
+  del menú también cubre las conversaciones reabiertas desde saves antiguos.
+- Se registran las diez habilidades de clase y cuatro raciales. Peregrino:
+  Amparo, 50% menos daño ambiental para personaje y aliados cercanos, 10 s,
+  reuso de 60 s y coste base de prueba de 1000 de ánima. No reduce combate.
+  Las habilidades conservan su implementación pendiente en V5.
+- Cálculos contrastados con std::chrono y fuentes/recursos revisados. No se
+  afirma compilación ni prueba nativa: el motor no estuvo disponible aquí.
+- Delta sobre 0a; README, cinco documentos y PRUEBAS_4_35_0b.txt en raíz.
+
+## 4.35.0a — reloj global persistente (2026-09-14)
+
+- El autor confirma todas las pruebas de 4.34.0e y autoriza el siguiente parche.
+- Inventory temporal nativo y observador estático sin estado duplicado.
+  Registro desde perfil confirmado; guardados anteriores empiezan desde cero.
+- Escala vigente: 1 h de juego = 180 s reales, 24 h por día. Contadores enteros
+  de jornadas y tics, con cambios de hora/día sin deriva por redondeo.
+- Línea de tiempo registrado en Mundo; informe de reloj de sólo lectura.
+- Marcas de salida/llegada de los viajes nuevos, guardadas una sola vez.
+  Los viajes anteriores mantienen su estado sin marcas temporales inventadas.
+- Pausas nativas, continuidad por hub, restauración del instante guardado y
+  ausencia de compensación por tiempo fuera del juego. No suma duración a rutas.
+- Sin cambios de balance, mapas, navegación, sellos o fabricación. Calendario,
+  descanso, clima y eventos continúan dentro de 4.35; exposición térmica en V5.
+- Delta sobre 4.34.0e; cinco documentos canónicos y PRUEBAS_4_35_0a.txt en raíz.
+
+
+## 4.34.0e — estaciones y suministros para comprobar el viaje (2026-09-14)
+
+- El autor confirma las pruebas disponibles de 0d. Sello y crafteo no pudieron
+  comprobarse porque las alcantarillas carecían de medios para iniciarlos.
+- Banco, aserradero y forja nativos junto a la llegada en MAP02–MAP05;
+  reconstrucción en guardados anteriores, red aislada y persistencia de hub.
+- Opciones voluntarias en la caravana para preparar quintaesencia T1 (equipa,
+  recarga y quita espera) o Mango (receta y madera hasta un lote x10).
+- Usar la estación preselecciona Mango T1, x10, eficiencia 100%, con tiempo
+  real para salir de Oficios y dejar una fabricación pendiente. Las tareas
+  siguen usando recetas, reservas, cancelación y producción existentes.
+- El Diario deja pasar KeyUp de +use: cerrar con Q y volver a usar el puesto
+  no conserva el botón interno retenido. Las pulsaciones de navegación siguen.
+- Sin recompensas ni recargas por cargar o viajar. No cambia MAP01, controles
+  aceptados, atributos, balance, efecto de sellos ni catálogo de fabricación.
+- Parche delta sobre 0d e instrucciones PRUEBAS_4_34_0e.txt. 4.35 continúa
+  después de estas pruebas; se mantiene exportación V4 antes del trabajo V5.
+
+
+## 4.34.0d — base de caravanas y ciclo persistente de viaje (2026-09-14)
+
+- El autor aprueba todas las pruebas de 4.34.0c y autoriza continuar.
+- Caravana de prueba accesible en TAB > Mundo > C/Y, para los seis sentidos
+  existentes. Destino, confirmación, vuelta a la oferta y cancelación USDF.
+- Servicio común para la caravana y los accesos a pie: valida antes de salir,
+  mantiene el hub y conserva el inventario sin repetir el saneamiento de MAP01.
+- Inventory nuevo con secuencia, modo y último trayecto; llegada o interrupción
+  resueltas una sola vez. Informe explícito y resumen en Mundo.
+- Guardados anteriores sin historial inventado. Reanudación de la página de
+  confirmación guardada y conciliación de una salida interrumpida al cargar.
+- Sin tarifas, tiempo simulado, vehículos, incidentes, nuevos mapas o assets.
+  El reloj y la integración temporal continúan en 4.35. La exportación de
+  prueba sigue después de 4.37, antes de V5 y su trabajo heredado/transversal.
+- Entrega delta sobre 0c, con README y los cinco documentos canónicos;
+  comprobaciones del autor en PRUEBAS_4_34_0d.txt, fuera de docs.
+
 
 ## Alcantarillas de prueba conectadas — 4.34.0c
 

@@ -100,7 +100,7 @@ class CaelumDoorAccessTrial : Inventory
     {
         if (user == null) return;
         let trial = Get(user);
-        Console.Printf("[Caelum 4.34.0c] Accesos: prueba=%d llave de prueba=%d llave de plata=%d", trial != null,
+        Console.Printf("[Caelum 4.35.0d] Accesos: prueba=%d llave de prueba=%d llave de plata=%d", trial != null,
             user.FindInventory("CaelumDoorTrialKey") != null, user.FindInventory("CaelumSilverKey") != null);
         if (trial == null) return;
         Console.Printf("Presentación=%s mapa actual=%s", trial.PresentationMap, level.MapName);
