@@ -5,41 +5,71 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0g.** Apply this source patch over the complete,
-accepted **4.35.0f** project, merge its folders and rebuild with `run_dev.bat`.
-It adds optional fast advancement during rest/sleep or active crafting,
-three dining tables, seated food/drink consumption and corrected rest views.
-Sleeping drains 10 Lucidity per simulation second and prevents its recovery;
-Lucidity stun does not interrupt sleep. The same rule applies to Arcanist Sleep.
+**Current release: 4.35.0h.** Apply this source patch over the complete,
+accepted **4.35.0g** project, merge its folders and rebuild with `run_dev.bat`.
+It adds automatic table meals, digestive Sleep loss, visible plated food,
+furnished mansion bedrooms and larger relocated crafting stations.
 
-Press **T** during a valid rest or active crafting task to toggle acceleration.
-The first implementation requires a designated safe area, a single player and
-no nearby threats. Trial areas cover the dry arrival/rest/workbench space in
-MAP02–MAP05 and the three table groups in MAP03. Limbo stays timeless.
-The clock, personal resources, regeneration effects and crafting use shared
-simulation steps; the normal clock rate remains unchanged when T is off.
-An 8-hour rest takes about 13.7 seconds at full engine tick rate with T enabled.
+Food reduces Sleep by one percentage point per four points of Hunger actually
+restored. Recovery capped at 100 only charges for the portion restored. Drinking
+does not apply this digestive cost. Existing survival drain remains separate.
 
-In MAP03, use a table to place or retrieve carried food/water. Sit on an
-adjacent chair, then press **F** to eat or **G** to drink from that table.
-Tables hold real items, including partially filled containers, across saves.
-The round table seats 2, the normal rectangle seats 6, and the large rectangle
-seats 12 with exactly twice the normal length and width. Seat references are
-available for future Trucazo; the card game is not implemented in this patch.
+Use a table while standing to place or retrieve real carried food and water.
+Sit beside it, then press **F** for automatic food or **G** for automatic water.
+Each channel waits for the current serving to finish and repeats until full,
+out of provisions or interrupted. Press its key again to stop future servings;
+the serving already consumed finishes normally. Getting up stops both channels.
+Satiety stops the sequence even if passive drain subsequently lowers the resource.
+Partially filled containers retain their remaining water and identity.
 
-Native GZDoom 4.14.2 on Linux compiled the project and verified resource parity
-between ordinary and accelerated rest, all 20 seats, native food/water transfers,
-USDF interaction, crafting interruption, sleep effects and native save/load.
-Rest orientation was checked from fixed side and rear views: the furniture
-facing and the atlas's reversed lateral rotation order both needed correction.
-The test engine, IWAD, saves, screenshots and QA fixtures are excluded.
-Windows controls and manual acceptance are covered in **PRUEBAS_4_35_0g.txt**.
+| Table | Seats | Food/drink spaces |
+| --- | ---: | ---: |
+| Small round | 2 | 4 |
+| Normal rectangle | 6 | 18 |
+| Large rectangle | 12 | 60 |
+
+Every placed ration shows an original plate with food, or a cup for water.
+The display follows the real stored item. Large tables remain twice the normal
+length and width. Furnished tables grant no supplies; Trucazo remains future work.
+
+Each of Rulo, Ronnie, Caella and Argento's bedrooms now contains one bed and a
+small table with two chairs. Their crafting stations move to the corresponding
+ground-floor rooms. All station dimensions double, including native collision;
+all twelve station types remain together on the second floor. The cave-access
+room has a six-seat table, and the second floor has a twelve-seat table.
+Workshop dialogue and quest directions reflect the new locations.
+
+MAP01 furniture offers sitting/sleeping until the player gets up, without a
+duration: personal simulation continues while the Limbo campaign clock stays
+frozen. **T** remains unavailable there. Elsewhere, the accepted optional fast
+advance still requires valid rest/sleep or active crafting in a safe trial area.
+Sleeping still drains 10 Lucidity per simulation second without regeneration;
+Lucidity stun does not end sleep. The accepted sprite orientation is preserved.
+
+Native GZDoom 4.14.2 on Linux compiled the project and checked digestive caps,
+4/18/60-item limits, real item displays, automatic satiety/stop behavior, native
+save/load, mansion seating and beds, frozen Limbo time, enlarged station volumes
+and connected workshop capabilities. Native screenshots were inspected.
+The engine, IWAD, saves, screenshots and QA fixtures are excluded from the patch.
+Windows controls and manual acceptance are covered in **PRUEBAS_4_35_0h.txt**.
 
 The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
 All inherited and cross-system work is assigned to V5 after that export,
 starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Implemented
+
+- Food digestion: actual Hunger recovery / 4 is deducted from Sleep, clamped
+  at zero. This applies to inventory and table food through their shared pulses.
+- Independent saved food/water serving sequences while seated, compatible with
+  ordinary and accelerated rest. No extra serving is spent while one is active.
+- Storage expanded to 4/18/60 real objects; original procedural plates and cups
+  replace the previous pickup sprites. Older 0g table contents load correctly.
+- Four furnished bedrooms, a cave-room dining set and an upstairs banquet table.
+  Timeless furniture sessions use ordinary personal ticks and never fast-forward.
+- All crafting stations scaled to twice their previous dimensions; 26 mansion
+  stations relocated downstairs, all 12 upstairs retained and all five networks
+  connected. Existing actors migrate once; their references are preserved.
 
 - Optional, saved x105 time advancement: at most 104 extra one-tic steps after
   each ordinary tick. It is bound to the current rest or crafting station/task,
@@ -76,7 +106,7 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - No comfort multiplier applies to Sleep, Anima, Lucidity or medicine pulses.
   Pending breathing recovery after immersion also uses the active factor; its
   normal three-second timing remains the baseline outside comfort rest.
-- Read-only rest diagnostics identify 4.35.0g and report the active factor.
+- Read-only rest diagnostics identify 4.35.0h and report the active factor.
 
 - One original wooden chair and one cot per sewer map, placed on first entry
   or when loading an older save. Repeated preparation keeps one pair.
@@ -630,21 +660,21 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-The author accepted all 4.35.0f checks. The new 0g systems passed native Linux
+The author accepted all 4.35.0g checks, including sprite orientation. The new 0h systems passed native Linux
 engine checks; Windows keyboard/controller input, the author's renderer and
 the complete hub traversal still need manual acceptance using
-**PRUEBAS_4_35_0g.txt**. Save tests cover active accelerated sleep, seated dining
-with real food/water, and migration of an active 0f sleeping-bag session.
-The QA copy of the older save had only its source-folder metadata remapped;
-its serialized gameplay state was preserved.
+**PRUEBAS_4_35_0h.txt**. Save tests cover both automatic meal channels, all sixty
+items on a full large table, remaining water and a seated dining save from 0g.
+The complete narrative route through the relocated workshops remains a manual
+acceptance check; automated room and network checks do not replace that route.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_35_0g.txt** into the complete **4.35.0f** project, replacing matching
+**PRUEBAS_4_35_0h.txt** into the complete **4.35.0g** project, replacing matching
 files and keeping everything else. Models are already generated. Rebuild the
 PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
-The diagnostic `netevent ca_debug_rest_report` must identify **4.35.0g**.
+The diagnostic `netevent ca_debug_rest_report` must identify **4.35.0h**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

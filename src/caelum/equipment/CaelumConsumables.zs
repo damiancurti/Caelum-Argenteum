@@ -139,6 +139,7 @@ class CaelumRegenerationPower : Powerup
             {
                 double recovery = WaterRecoveryPerPulse > 0 ? WaterRecoveryPerPulse : 1.0;
                 caelumPlayer.CurrentThirst = Min(100.0, caelumPlayer.CurrentThirst + recovery);
+                if(caelumPlayer.CurrentThirst>=100)CaelumDiningSession.Sated(caelumPlayer,true);
                 caelumPlayer.UpdateSurvivalStates();
                 return;
             }

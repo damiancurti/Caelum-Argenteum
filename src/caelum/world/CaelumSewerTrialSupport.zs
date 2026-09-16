@@ -31,9 +31,10 @@ class CaelumSewerTrialSupport : Object play
 
     static void PlaceStation(class<CaelumCraftingStation> kind, int type, vector3 position)
     {
-        if (FindStation(type) != null) return;
-        let station = CaelumCraftingStation(Actor.Spawn(kind, position, NO_REPLACE));
+        let station=FindStation(type);
+        if(station==null)station=CaelumCraftingStation(Actor.Spawn(kind, position, NO_REPLACE));
         if (station == null) return;
+        station.SetOrigin(position,false);station.Vel=(0,0,0);station.EnsureDimensions();
         station.CraftingRoomGroup = ROOM_GROUP;
         station.Angle = 0;
         // args[0]=0 conserva la inmovilidad nativa de la infraestructura.
@@ -44,10 +45,10 @@ class CaelumSewerTrialSupport : Object play
         if (!IsTrialMap()) return;
         vector3 position = BenchPosition();
         PlaceStation("CaelumWorkbenchStation", CaelumConstants.CRAFTING_STATION_WORKBENCH, position);
-        PlaceStation("CaelumSawmillStation", CaelumConstants.CRAFTING_STATION_SAWMILL, position + (0,56,0));
+        PlaceStation("CaelumSawmillStation", CaelumConstants.CRAFTING_STATION_SAWMILL, position + (level.MapName=="MAP02"?(0,112,0):(-112,0,0)));
         // El catálogo actual requiere forja para los componentes de armas
         // cuerpo a cuerpo, incluso los mangos. Se respeta esa regla vigente.
-        PlaceStation("CaelumForgeStation", CaelumConstants.CRAFTING_STATION_FORGE, position + (56,56,0));
+        PlaceStation("CaelumForgeStation", CaelumConstants.CRAFTING_STATION_FORGE, position + (level.MapName=="MAP02"?(0,224,0):(-112,-112,0)));
     }
 
     static int Recipe()

@@ -1,6 +1,29 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0g — 2026-09-16.
+Versión documental: 4.35.0h — 2026-09-16.
+
+## 4.35.0h — platos, tazas y mobiliario de MAP01
+
+generate_dining_servings.py genera ca_food_plate.obj y ca_water_cup.obj en
+src/models/caelum/props/rest. Son mallas originales: plato de cerámica, pan y
+porciones de guiso; taza con asa abierta. Reutilizan paper/wood/wax/leather/iron
+de estaciones. No requieren nuevos PNG ni modifican imágenes del personaje.
+MODELDEF enlaza CaelumDiningFoodPlate/CaelumDiningWaterCup con CAHC A transparente.
+
+La cuadrícula visual es 2×2, 6×3 o 10×6 para 4/18/60 objetos. El plato ocupa
+unos 21 MU de diámetro y las figuras se apoyan a 34,1 MU, sobre el tablero.
+Las presentaciones de partidas anteriores se reconstruyen con estos modelos.
+Una taza representa también un recipiente real con sus litros propios.
+
+Los tres modelos de mesa y los modelos de silla/cama se reutilizan en seis
+conjuntos de MAP01. Los doce modelos de estación mantienen su MODELDEF y escalan
+con el actor de 0,5 a 1: duplican ancho, largo y altura frente a 0g. Se mantienen
+texturas y WAD; la nueva distribución se prepara desde ZScript.
+
+LANGUAGE actualiza talleres/direcciones y ayudas de consumo en ambos idiomas.
+CAPALOMO añade los menús sin duración 43515/43516. El panel muestra canales F/G
+activos y, en MAP01, el reloj detenido. Capturas nativas verifican platos, mesas,
+talleres y orientación; el material QA no forma parte del ZIP.
 
 ## 4.35.0g — mesas y correspondencia de vistas
 
@@ -9,7 +32,8 @@ ca_table_small (diámetro 80), ca_table_normal (192×96) y ca_table_large (384×
 en models/caelum/props/rest. Usan madera/metal del proyecto y tablero a 34 MU.
 MODELDEF los asocia a los actores de mesa; no se incorporan nuevas texturas PNG.
 La colocación de conjuntos crea sillas existentes y colisión rectangular por
-bloques de 48 MU. Los consumibles visibles reutilizan su sprite y escala nativos.
+bloques de 48 MU. En 0g los consumibles visibles reutilizaban su sprite y escala; 0h los
+sustituye por las mallas de plato/taza descritas arriba.
 
 La orientación corrige dos causas: frente del modelo a 180° de la pose y orden
 lateral inverso del atlas RSDO A/B. TEXTURES añade alias 2↔8, 3↔7, 4↔6 apuntando

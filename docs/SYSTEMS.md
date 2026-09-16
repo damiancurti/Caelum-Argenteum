@@ -1,6 +1,41 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0g — 2026-09-16.
+Versión documental: 4.35.0h — 2026-09-16.
+
+## Comidas automáticas y muebles del Limbo (4.35.0h)
+
+La regeneración de comida descuenta Sueño = Hambre realmente recuperada / 4.
+Ejemplo: 4 puntos recuperados cuestan 1 de Sueño; de 99,5 a 100 cuesta 0,125.
+Con Hambre llena no hay coste digestivo. Sueño se limita a cero y beber no aplica
+esta regla. La misma ruta atiende inventario, mesa y subpasos de avance rápido.
+
+F/G conmuta AutoEating/AutoDrinking de CaelumRestState y conserva una referencia
+a la mesa. Cada canal espera el vencimiento del efecto nativo antes de pedir otra
+porción real. Llegar al máximo apaga el canal en el propio pulso regenerativo,
+antes del gasto pasivo: éste no puede reiniciar una comida ya completada.
+Sin existencias, al levantarse, perder alcance o dormir, termina la repetición.
+Desactivar no revierte los pulsos de una porción ya consumida. El estado es nativo
+y persistente; no se conceden provisiones ni se mezclan inventario y tablero.
+
+Capacity es independiente de SeatCount: pequeña 4, normal 18, grande 60.
+Items/Displays tienen 60 referencias; los guardados 0g con 24 posiciones cargan
+sus pertenencias existentes. Un cambio de presentación reconstruye los viejos
+sprites como platos/tazas. Cada figura referencia el objeto real; desaparece al
+consumirlo o retirarlo. Un recipiente vacío sigue ocupando su espacio hasta
+retirarlo. La colisión CANPASS distingue los muebles de plantas superpuestas.
+
+En mapas atemporales, exclusivamente los muebles ofrecen sesiones Untimed con
+duración cero. CaelumRestTrial usa USDF 43515/43516; LastUntimedTic limita el
+descanso a un paso personal por tic del motor. El reloj/calendario permanece
+inmóvil. El descanso temporal de suelo/bolsa y T continúan rechazados en MAP01.
+Dormir recupera Sueño con su tasa habitual y drena 10 Lucidez/s, aun aturdido.
+
+CaelumCraftingStation fija radio 40, altura 96 y escala 1 frente a 20/48/0,5.
+EnsureDimensions migra una vez a valores absolutos, sin duplicar al cargar.
+Se reutilizan los actores al trasladar estaciones; los trabajos mantienen sus
+referencias y reservas. La sesión abierta se revalida y queda en pausa si pierde
+alcance. El enlace de red pasa de 64 a 128 MU para la separación nueva de 112 MU;
+CraftingRoomGroup mantiene las cinco redes de MAP01 independientes.
 
 ## Avance rápido, mesas y sueño (4.35.0g)
 
@@ -57,17 +92,17 @@ es idempotente y reintenta si el espacio está ocupado. No entrega comida.
 
 Use abre USDF 43514. Elegir colocar/retirar comida o bebida se ejecuta después de
 cerrar el diálogo y revalidar alcance. Se toma una unidad personal disponible,
-fuera de la Caja, por operación. Cada plaza ofrece dos posiciones de tablero.
+fuera de la Caja, por operación. Desde 0h cada mesa ofrece 4, 18 o 60 posiciones, según su tamaño.
 Los objetos son Inventory reales propiedad de la mesa; las figuras sobre el
 modelo sólo los representan. Recipientes conservan clase, litros y peso. Retirar
 usa recogida nativa y revierte si no entra; guardar/cargar conserva referencias.
 
-F/G come/bebe desde una silla adyacente ocupada en Esperar, sin levantarse. No se
-consume estando de pie, durmiendo, fuera de alcance, con la reserva llena o con
-el mismo efecto de regeneración activo. Se reutilizan los consumibles nativos:
+F/G activa la repetición desde una silla adyacente ocupada en Esperar. No se
+consume estando de pie, durmiendo, fuera de alcance ni con la reserva llena.
+Mientras hay un efecto de regeneración activo se espera antes de otra porción. Se reutilizan los consumibles nativos:
 raciones se gastan y recipientes pierden el agua bebida sin desaparecer. La mejora
 ocurre en sus pulsos habituales; T procesa también esos pulsos y su vencimiento.
-No hay comida automática ni reposición gratuita.
+Desde 0h hay repetición explícita por canal; nunca reposición gratuita.
 
 ### Lucidez, habilidad Sueño y orientación
 
@@ -158,7 +193,7 @@ La preparación 3 de CaelumRestTrial y ca_debug_rest_bag son optativas y sólo
 para MAP02–MAP05. Entregan el objeto mediante la recogida nativa si no estaba
 en el inventario; si falla por capacidad, destruyen el intento y notifican.
 No rellenan recursos. El informe ca_debug_rest_report sigue siendo de consulta
-y muestra 4.35.0g/factor. El panel muestra el multiplicador y divisor vigentes.
+y muestra 4.35.0h/factor. El panel muestra el multiplicador y divisor vigentes.
 
 ## Mobiliario y cámara del descanso (4.35.0e)
 
@@ -301,8 +336,9 @@ tienen su primera implementación utilizable en 0e.
 La API de CVar del motor restringe sus setters a variables del mod; no se
 modifica i_timescale mediante esa API ni se altera la configuración del jugador.
 Referencia técnica: [CVar de GZDoom](https://zdoom-docs.github.io/staging/Api/Base/CVar.html).
-Campamentos, propiedades, calidad amplia y comida/bebida automática permanecen
-en V5, igual que exposición térmica y las habilidades acordadas.
+Campamentos, propiedades, calidad amplia y alimentación automática fuera de mesas
+permanecen en V5, junto a exposición térmica y habilidades aún no implementadas.
+El avance seguro se incorporó en 0g y la repetición en mesas en 0h.
 
 ## Calendario civil, campaña y Limbo (4.35.0b–0c)
 

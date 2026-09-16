@@ -3217,3 +3217,23 @@ Model CaelumDiningTableLarge
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+// 4.35.0h: una presentación por pertenencia, sin dar objetos adicionales.
+Model CaelumDiningFoodPlate
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_food_plate.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+Model CaelumDiningWaterCup
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_water_cup.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

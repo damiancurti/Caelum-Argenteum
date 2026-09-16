@@ -8,11 +8,15 @@ class CaelumDiningDisplay : Actor
     {
         Super.Tick();
         if(Table==null || Item==null || Item.Owner!=Table) {Destroy();return;}
-        sprite=Item.sprite;frame=Item.frame;Scale=Item.Scale;
+
     }
     Default { Radius 0; Height 0; +NOBLOCKMAP +NOGRAVITY +NOTARGET }
-    States { Spawn: TNT1 A -1; Stop; }
+    States { Spawn: CAHC A -1; Stop; }
 }
+
+// Los platos son presentación; la ración real sigue perteneciendo a la mesa.
+class CaelumDiningFoodPlate : CaelumDiningDisplay {}
+class CaelumDiningWaterCup : CaelumDiningDisplay {}
 
 class CaelumDiningBlock : Actor
 {
@@ -26,12 +30,14 @@ class CaelumDiningBlock : Actor
 
 class CaelumDiningTable : Actor
 {
-    CaelumConsumableItem Items[24];
-    CaelumDiningDisplay Displays[24];
+    CaelumConsumableItem Items[60];
+    CaelumDiningDisplay Displays[60];
     CaelumRestChair Chairs[12];
     CaelumDiningBlock Blocks[32];
     int LayoutSlot;
+    bool PresentationReady;
     virtual clearscope int SeatCount() { return 6; }
+    virtual clearscope int Capacity() { return 18; }
     virtual clearscope double LengthMU() { return 192; }
     virtual clearscope double WidthMU() { return 96; }
     virtual clearscope bool RoundTop() { return false; }
@@ -75,7 +81,7 @@ class CaelumDiningTable : Actor
     }
 
     int FreeSlot()
-    {for(int i=0;i<SeatCount()*2;i++)if(Items[i]==null)return i;return -1;}
+    {for(int i=0;i<Capacity();i++)if(Items[i]==null)return i;return -1;}
 
     // El conjunto será reutilizable por Trucazo. No activa una partida.
     bool HasSeatLayout(int required)
@@ -89,7 +95,7 @@ class CaelumDiningTable : Actor
 
     void RefreshDisplays()
     {
-        for(int i=0;i<SeatCount()*2;i++)
+        for(int i=0;i<Capacity();i++)
         {
             if(Items[i]==null || Items[i].Owner!=self || Items[i].Amount<=0)
             {
@@ -97,14 +103,18 @@ class CaelumDiningTable : Actor
                 if(Displays[i]!=null)Displays[i].Destroy();
                 Displays[i]=null;continue;
             }
-            if(Displays[i]==null)Displays[i]=CaelumDiningDisplay(Spawn("CaelumDiningDisplay",Pos,NO_REPLACE));
+            class<CaelumDiningDisplay> kind=IsDrink(Items[i])?"CaelumDiningWaterCup":"CaelumDiningFoodPlate";
+            if(Displays[i]!=null && Displays[i].GetClass()!=kind) {Displays[i].Destroy();Displays[i]=null;}
+            if(Displays[i]==null)Displays[i]=CaelumDiningDisplay(Spawn(kind,Pos,NO_REPLACE));
             let visual=Displays[i];if(visual==null)continue;
-            visual.Table=self;visual.Item=Items[i];
-            int columns=RoundTop()?2:SeatCount();
-            double x=(i%columns-(columns-1)*0.5)*(LengthMU()-32)/Max(1,columns-1);
-            double y=i<columns?-WidthMU()*0.23:WidthMU()*0.23;
-            visual.SetOrigin(LocalPoint(x,y,34),false);
-            visual.sprite=Items[i].sprite;visual.frame=Items[i].frame;visual.Scale=Items[i].Scale;
+            visual.Table=self;visual.Item=Items[i];visual.Angle=Angle;
+            int columns=RoundTop()?2:SeatCount()==12?10:6;
+            int rows=Capacity()/columns;
+            double x=(i%columns-(columns-1)*0.5)*(LengthMU()-40)/Max(1,columns-1);
+            double y=(i/columns-(rows-1)*0.5)*(WidthMU()-40)/Max(1,rows-1);
+            if(RoundTop()){x=(i%2==0?-14:14);y=(i<2?-14:14);}
+            visual.SetOrigin(LocalPoint(x,y,34.1),false);
+
         }
     }
 
@@ -133,7 +143,7 @@ class CaelumDiningTable : Actor
     bool Withdraw(CaelumPlayer user,bool drink)
     {
         if(!CanReach(user) || CaelumRestState.IsActive(user))return false;
-        for(int i=0;i<SeatCount()*2;i++)
+        for(int i=0;i<Capacity();i++)
         {
             let item=Items[i];if(item==null || IsDrink(item)!=drink)continue;
             // TryPickup revalida carga y duplicación de recipientes.
@@ -151,7 +161,7 @@ class CaelumDiningTable : Actor
         Name powerName=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
         // Evita desperdiciar un plato refrescando el mismo efecto aún activo.
         if(user.FindInventory(powerName)!=null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
-        for(int i=0;i<SeatCount()*2;i++)
+        for(int i=0;i<Capacity();i++)
         {
             let item=Items[i];if(item==null || item.Owner!=self || IsDrink(item)!=drink)continue;
             let bottle=CaelumWaterContainer(item);
@@ -171,14 +181,14 @@ class CaelumDiningTable : Actor
     void Report(CaelumPlayer user)
     {
         int food=0;int water=0;int bottles=0;double liters=0;
-        for(int i=0;i<SeatCount()*2;i++)
+        for(int i=0;i<Capacity();i++)
         {
             let item=Items[i];if(item==null)continue;
             let bottle=CaelumWaterContainer(item);
             if(bottle!=null){bottles++;liters+=bottle.WaterLiters;}
             else if(IsDrink(item))water++;else food++;
         }
-        user.A_Print(String.Format(StringTable.Localize("CA_TABLE_CONTENTS",false),SeatCount(),food,water,bottles,liters));
+        user.A_Print(String.Format(StringTable.Localize("CA_TABLE_CONTENTS",false),SeatCount(),food+water+bottles,Capacity(),food,water,bottles,liters));
     }
 
     override bool Used(Actor activator)
@@ -192,9 +202,16 @@ class CaelumDiningTable : Actor
         guide.Destroy();return false;
     }
 
+    override void Tick()
+    {
+        Super.Tick();
+        // Reconstruye también las presentaciones guardadas con 0g.
+        if(!PresentationReady){bCanPass=true;RefreshDisplays();PresentationReady=true;}
+    }
+
     override void OnDestroy()
     {
-        for(int i=0;i<24;i++)
+        for(int i=0;i<60;i++)
         {
             if(Displays[i]!=null)Displays[i].Destroy();
             if(Items[i]!=null) {Items[i].BecomePickup();Items[i].SetOrigin(Pos+(0,0,36),false);}
@@ -203,19 +220,19 @@ class CaelumDiningTable : Actor
         for(int i=0;i<12;i++)if(Chairs[i]!=null)Chairs[i].DiningTable=null;
         Super.OnDestroy();
     }
-    Default { Radius 1; Height 34; +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE Tag "$CA_TABLE_NORMAL"; }
+    Default { Radius 1; Height 34; +CANPASS +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE Tag "$CA_TABLE_NORMAL"; }
     States { Spawn: CAHC A -1; Stop; }
 }
 
 class CaelumDiningTableSmall : CaelumDiningTable
 {
-    override int SeatCount(){return 2;} override double LengthMU(){return 80;}
+    override int SeatCount(){return 2;} override int Capacity(){return 4;} override double LengthMU(){return 80;}
     override double WidthMU(){return 80;} override bool RoundTop(){return true;}
     Default { Radius 40; +SOLID Tag "$CA_TABLE_SMALL"; }
 }
 class CaelumDiningTableLarge : CaelumDiningTable
 {
-    override int SeatCount(){return 12;} override double LengthMU(){return 384;}
+    override int SeatCount(){return 12;} override int Capacity(){return 60;} override double LengthMU(){return 384;}
     override double WidthMU(){return 192;} Default { Tag "$CA_TABLE_LARGE"; }
 }
 
@@ -268,14 +285,15 @@ class CaelumDiningWorld : Object play
         zone=Actor.Spawn("CaelumTimeAdvanceZone",position,NO_REPLACE);
         if(zone!=null){zone.args[0]=slot;if(slot>1)zone.A_SetSize(320,128,false);}
     }
-    static bool Place(int slot,vector3 position)
+    static bool Place(int slot,vector3 position,int size=0,double facingAngle=0)
     {
         if(Find(slot)!=null)return true;
         class<CaelumDiningTable> kind="CaelumDiningTable";
-        if(slot==1)kind="CaelumDiningTableSmall";
-        if(slot==3)kind="CaelumDiningTableLarge";
+        if(size==0)size=slot;
+        if(size==1)kind="CaelumDiningTableSmall";
+        if(size==3)kind="CaelumDiningTableLarge";
         let table=CaelumDiningTable(Actor.Spawn(kind,position,NO_REPLACE));if(table==null)return false;
-        table.LayoutSlot=slot;table.Angle=0;
+        table.LayoutSlot=slot;table.Angle=facingAngle;
         bool fits=table.TestMobjLocation() && Abs(table.FloorZ-position.Z)<=1;
         int block=0;
         if(!table.RoundTop())
@@ -301,7 +319,7 @@ class CaelumDiningWorld : Object play
             table.Chairs[i]=chair;chair.DiningTable=table;chair.DiningSeat=i;
             // PoseAngle invierte el modelo: el cuerpo debe mirar al tablero.
             double facing=table.RoundTop()?(i==0?0:180):i<side*2?(i<side?90:270):(x<0?0:180);
-            chair.Angle=facing+180;
+            chair.Angle=table.Angle+facing+180;
             if(!chair.TestMobjLocation() || Abs(chair.FloorZ-position.Z)>1)fits=false;
         }
         if(!fits)
@@ -309,7 +327,7 @@ class CaelumDiningWorld : Object play
             for(int i=0;i<12;i++)if(table.Chairs[i]!=null)table.Chairs[i].Destroy();
             table.Destroy();return false;
         }
-        Zone(position,slot+1);return true;
+        if(level.MapName!="MAP01")Zone(position,slot+1);return true;
     }
     static bool Prepare()
     {
@@ -318,5 +336,47 @@ class CaelumDiningWorld : Object play
         if(level.MapName!="MAP03")return true;
         bool a=Place(1,(-600,1000,0));bool b=Place(2,(0,1550,0));bool c=Place(3,(700,2500,0));
         return a && b && c;
+    }
+}
+
+// Repetición explícita por canal: F y G también permiten detener las próximas
+// porciones. La porción ya aplicada termina sus pulsos nativos, sin reembolso.
+class CaelumDiningSession : Object play
+{
+    static void Sated(CaelumPlayer user,bool drink)
+    {
+        let rest=CaelumRestState.Get(user);if(rest==null)return;
+        if(drink)rest.AutoDrinking=false;else rest.AutoEating=false;
+    }
+
+    static bool Toggle(CaelumPlayer user,bool drink)
+    {
+        let rest=CaelumRestState.Get(user);
+        if(rest==null || rest.Status!=CaelumRestRules.STATUS_ACTIVE)return false;
+        if(drink?rest.AutoDrinking:rest.AutoEating)
+        {Sated(user,drink);user.A_Print(StringTable.Localize("CA_TABLE_AUTO_STOP",false));return true;}
+        let table=CaelumDiningTable.Nearby(user);
+        if(table==null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
+        Name power=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
+        if(user.FindInventory(power)==null && !table.Consume(user,drink))return false;
+        rest.DiningTable=table;
+        if(drink)rest.AutoDrinking=true;else rest.AutoEating=true;
+        return true;
+    }
+
+    static void Advance(CaelumPlayer user)
+    {
+        let rest=CaelumRestState.Get(user);
+        if(rest==null || (!rest.AutoEating && !rest.AutoDrinking))return;
+        let table=rest.DiningTable;
+        if(rest.Status!=CaelumRestRules.STATUS_ACTIVE || table==null || !table.CanDine(user)
+            || user.ForcedSleepTics>0)
+        {rest.AutoEating=false;rest.AutoDrinking=false;rest.DiningTable=null;return;}
+        if(user.CurrentHunger>=100)rest.AutoEating=false;
+        if(user.CurrentThirst>=100)rest.AutoDrinking=false;
+        if(rest.AutoEating && user.FindInventory('CaelumHungerRegeneration')==null)
+            if(!table.Consume(user,false))rest.AutoEating=false;
+        if(rest.AutoDrinking && user.FindInventory('CaelumThirstRegeneration')==null)
+            if(!table.Consume(user,true))rest.AutoDrinking=false;
     }
 }

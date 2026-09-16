@@ -1,5 +1,41 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0g — 2026-09-16.
+Versión documental: 4.35.0h — 2026-09-16.
+
+4.35.0h — DORMITORIOS, COMEDORES Y TALLERES
+
+0g queda aprobado, incluida la orientación. Cada dormitorio del primer piso
+recibe cama y mesa redonda con dos sillas. Las estaciones se retiran de ellos
+y se colocan en la habitación de planta baja situada debajo de cada residente:
+Rulo, noroeste/pesado (5); Ronnie, noreste/mediano y distancia (7);
+Caella, suroeste/mágico (9); Argento, sureste/liviano (5).
+La práctica de Rulo mantiene su blanco en la misma sala, con espacio propio.
+Diálogos de talleres, recolección, munición, armadura, sellos y reparación indican
+los talleres de planta baja y la alternativa completa del segundo piso.
+
+Las 12 estaciones del segundo piso permanecen, redistribuidas por paredes oeste,
+norte y sur para conservar el recorrido central de Palomo. Todas las estaciones
+duplican sus tres dimensiones y se separan 112 MU; cada red conserva sus recetas.
+La sala de pared falsa/acceso a cueva recibe una mesa normal con seis sillas.
+Arriba hay una mesa grande con doce sillas. No se altera geometría ni conexiones.
+
+Colocación persistente, también al cargar guardados anteriores:
+- 101 Rulo: mesa (-384,392,136), cama (-208,472,136).
+- 102 Ronnie: mesa (944,392,136), cama (1120,472,136).
+- 103 Caella: mesa (-384,-392,136), cama (-208,-472,136).
+- 104 Argento: mesa (944,-392,136), cama (1120,-472,136).
+- 105 sala de la cueva: mesa (1552,0,0), eje largo norte-sur.
+- 106 segundo piso: mesa (496,-192,264), eje largo este-oeste.
+Identificadores estables evitan duplicación; no se crean alimentos al prepararlos.
+
+Use permite sentarse/dormir sin duración hasta levantarse. Continúan recursos,
+comodidad y Lucidez personales; el reloj sigue en 03/11/1889 09:00 y T se rechaza.
+De pie, Use en mesa coloca/retira objetos; sentado, F/G alterna la repetición
+de comida/agua hasta saciarse. Las capacidades son 4, 18 y 60; hay platos visibles.
+Comer descuenta Sueño a razón de 1 por 4 de Hambre efectivamente recuperada.
+
+PRUEBAS_4_35_0h.txt contiene instalación y recorrido. Se comprobaron en el motor
+los 26 asientos, 4 camas, 38 estaciones, cinco redes y menús sin duración.
+El recorrido narrativo completo y los controles de Windows requieren aceptación.
 
 4.35.0g — AVANCE SEGURO Y MESAS DE PRUEBA
 

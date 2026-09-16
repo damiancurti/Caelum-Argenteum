@@ -26,6 +26,8 @@ class CaelumMainM00QuestController : EventHandler
     bool SewerSupportPrepared;
     bool RestFurniturePrepared;
     bool DiningPrepared;
+    bool ExpandedStationsPrepared;
+    bool MansionFurniturePrepared;
 
     void RecoverChannelInfrastructure()
     {
@@ -134,6 +136,7 @@ class CaelumMainM00QuestController : EventHandler
         if (station == null) station = CaelumCraftingStation(Actor.Spawn(kind, origin, NO_REPLACE));
         if (station != null)
         {
+            station.EnsureDimensions();
             station.SetOrigin(origin, false);
             station.Angle = facing;
             station.Vel = (0, 0, 0);
@@ -175,24 +178,45 @@ class CaelumMainM00QuestController : EventHandler
             kinds[11] = "CaelumMasterBenchStation";
             count = 12;
         }
-        int across = count > 7 ? 5 : 3;
+        int across = 4;
         int xDirection = group == 2 || group == 3 ? -1 : 1;
         for (int i = 0; i < count; i++)
         {
             Vector3 position;
             double facing;
             if (group == 5)
-            { position = (-336, -308 + i * 56, 264); facing = 0; }
+            {
+                if(i<7){position=(-320,-336+i*112,264);facing=0;}
+                else if(i<10){position=(-208+(i-7)*112,336,264);facing=270;}
+                else {position=(-208+(i-10)*112,-336,264);facing=90;}
+            }
             else
             {
-                // Dos paredes contiguas, lejos del umbral central.
-                position = origin + (i < across ? i * 56 * xDirection : 0,
-                    i < across ? 0 : -(i - across + 1) * 56 * yDirection, 0);
-                facing = i < across ? (yDirection > 0 ? 270 : 90)
-                    : (xDirection > 0 ? 0 : 180);
+                origin=(xDirection>0?-496:1240,yDirection*560,0);
+                if(i<across)
+                {position=origin+(i*112*xDirection,0,0);facing=yDirection>0?270:90;}
+                else if(i<7)
+                {position=origin+(0,-(i-3)*112*yDirection,0);facing=xDirection>0?0:180;}
+                else
+                {position=origin+(336*xDirection,-(i-6)*112*yDirection,0);facing=xDirection>0?180:0;}
             }
             PlaceStation(kinds[i], position, group, facing);
         }
+    }
+
+    void PrepareExpandedStations()
+    {
+        if(ExpandedStationsPrepared)return;
+        if(level.MapName=="MAP01")
+        {
+            for(int group=1;group<=5;group++)PlaceRoomStations(group,(0,0,0),group==3 || group==4?-1:1);
+            // Los blancos conservan su sala y la ruta central queda libre.
+        }
+        else CaelumSewerTrialSupport.PrepareWorld();
+        ExpandedStationsPrepared=true;
+        for(int i=0;i<MAXPLAYERS;i++)
+            if(playeringame[i] && players[i].mo is "CaelumPlayer")
+                CaelumPlayer(players[i].mo).RefreshActiveCraftingStationSession();
     }
 
     void PlantGardenNode(Class<CaelumTreeEnvironmentProp> kind, Vector3 origin, double remaining)
@@ -464,6 +488,9 @@ class CaelumMainM00QuestController : EventHandler
         PrepareNaturalSupplies();
         PrepareBullRoom();
         RecoverChannelInfrastructure();
+        PrepareExpandedStations();
+        if(!MansionFurniturePrepared && level.maptime%TICRATE==0)
+            MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
         bool foolNeeded = false;
         bool foolRevealed = false;
         bool returnReady = false;

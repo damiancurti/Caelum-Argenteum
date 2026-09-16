@@ -5,20 +5,31 @@ class CaelumCraftingStation : CaelumMovableProp
 {
     // Cero conserva las redes libres de otros mapas. MAP01 separa habitaciones.
     int CraftingRoomGroup;
+    bool DimensionsUpdated;
     int LastCraftingNetworkScanToken;
     Actor LastCraftingNetworkScanPlayer;
 
     Default
     {
-        Radius 20;
-        Height 48;
-        Scale 0.5;
+        Radius 40;
+        Height 96;
+        Scale 1.0;
         // args[0] queda en 0: la movilidad existe por herencia, pero se
         // mantiene desactivada hasta definir masa y requisito físico.
         +CANPASS
         +USESPECIAL
         Activation THINGSPEC_Switch;
     }
+
+    void EnsureDimensions()
+    {
+        if(DimensionsUpdated)return;
+        DimensionsUpdated=true;
+        A_SetSize(40,96,false);Scale=(1,1);
+    }
+
+    override void PostBeginPlay(){Super.PostBeginPlay();EnsureDimensions();}
+    override void Tick(){EnsureDimensions();Super.Tick();}
 
     virtual int GetCraftingStationType()
     {

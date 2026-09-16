@@ -2026,7 +2026,8 @@ class CaelumJournalOverlay : EventHandler
         int minuteTics = CaelumWorldClock.TicsPerHour() / 60;
         int remainingMinutes = (Max(0, rest.RequestedTics-rest.ElapsedTics)+minuteTics-1) / minuteTics;
         DrawCenteredText(SmallFont, Font.CR_WHITE, 460, 32,
-            String.Format(StringTable.Localize("CA_REST_REMAINING", false), remainingMinutes));
+            rest.Untimed ? StringTable.Localize("CA_REST_UNTIMED",false)
+                : String.Format(StringTable.Localize("CA_REST_REMAINING", false), remainingMinutes));
         DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 45,
             String.Format(StringTable.Localize("CA_REST_RESOURCES", false),
                 localPlayer.CurrentSleep, localPlayer.CurrentHunger, localPlayer.CurrentThirst));
@@ -2039,9 +2040,11 @@ class CaelumJournalOverlay : EventHandler
             String.Format(StringTable.Localize("CA_REST_COMFORT", false), factor, factor));
         let fast = CaelumTimeAdvanceState(localPlayer.FindInventory("CaelumTimeAdvanceState"));
         DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 100,
-            StringTable.Localize(fast != null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
+            StringTable.Localize(rest.Untimed ? "CA_REST_TIMELESS_SEATED" : fast != null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
         DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 113,
-            StringTable.Localize(rest.Mode == CaelumRestRules.MODE_WAIT ? "CA_TABLE_SEATED_HELP" : "CA_SLEEP_LUCIDITY_HELP", false));
+            rest.Mode==CaelumRestRules.MODE_WAIT
+                ? String.Format(StringTable.Localize("CA_TABLE_AUTO_HELP",false),rest.AutoEating?"ON":"OFF",rest.AutoDrinking?"ON":"OFF")
+                : StringTable.Localize("CA_SLEEP_LUCIDITY_HELP", false));
     }
 
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
@@ -2639,8 +2642,7 @@ class CaelumJournalOverlay : EventHandler
         { CaelumTimeAdvanceState.Toggle(requestingPlayer); }
         else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
         {
-            let table = CaelumDiningTable.Nearby(requestingPlayer);
-            if (table == null || !table.Consume(requestingPlayer, e.Name == "ca_table_drink"))
+            if (!CaelumDiningSession.Toggle(requestingPlayer, e.Name == "ca_table_drink"))
                 requestingPlayer.A_Print(StringTable.Localize("CA_TABLE_CANNOT_EAT", false));
         }
         else if (e.Name == "ca_debug_dining")
@@ -2648,7 +2650,7 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_debug_time_fast_report")
         {
             let fast = CaelumTimeAdvanceState.Get(requestingPlayer);
-            Console.Printf("[Caelum 4.35.0g] Avance: activo=%d extra=%d motivo=%s lucidez=%.4f",
+            Console.Printf("[Caelum 4.35.0h] Avance: activo=%d extra=%d motivo=%s lucidez=%.4f",
                 fast != null && fast.Active, fast != null ? fast.SimulatedTics : 0,
                 fast != null ? fast.LastReason : "", requestingPlayer.CurrentLucidity);
         }

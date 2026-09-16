@@ -603,7 +603,7 @@ class CaelumConstants : Object
     // Dos metros exactos en la escala de desarrollo (32 unidades = 1 m).
     // Las estaciones forman una red transitiva: cada enlace individual debe
     // estar como máximo a esta distancia.
-    const CRAFTING_NETWORK_LINK_DISTANCE = 64.0;
+    const CRAFTING_NETWORK_LINK_DISTANCE = 128.0;
 
     const CRAFTING_FORGE_RECIPE_COUNT = 12;
     const CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT = 4;

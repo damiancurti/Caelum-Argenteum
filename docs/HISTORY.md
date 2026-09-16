@@ -1,6 +1,29 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0g — 2026-09-16.
+Versión documental: 4.35.0h — 2026-09-16.
+
+## 4.35.0h — comidas automáticas y mansión amueblada (2026-09-16)
+
+- Base 0g aprobada por el autor, incluida la orientación de sprites.
+- Comer resta 1 punto de Sueño por cada 4 de Hambre realmente recuperados;
+  se respetan máximos y mínimo cero. Beber no produce ese coste digestivo.
+- F/G repite por separado comida/bebida del tablero hasta saciarse o agotar
+  existencias; otra pulsación detiene próximas porciones. Levantarse cancela.
+  Estado guardado y compatible con avance rápido; sin reinicio por gasto pasivo.
+- Mesas de 2/6/12 plazas guardan 4/18/60 objetos. Dos OBJ procedurales muestran
+  platos con comida y tazas por cada pertenencia real sobre la superficie.
+- Cuatro dormitorios con cama y mesa de dos; mesa de seis junto a la pared
+  falsa/cueva y mesa de doce en el segundo piso. Sin provisiones gratuitas.
+- Estaciones al doble de dimensiones: 26 trasladadas a planta baja y todas
+  las 12 conservadas arriba. Cinco redes conectadas e independientes; se
+  actualizan las indicaciones de NPC y las estaciones de ensayo en alcantarillas.
+- Uso sin duración de muebles en MAP01, con simulación personal ordinaria y
+  reloj de campaña detenido. No habilita avance rápido ni duraciones en Limbo.
+- Compilación y ensayos nativos GZDoom 4.14.2/Linux: digestión, capacidades,
+  objetos/figuras, consumo, guardado/carga, muebles accesibles, menús USDF,
+  Lucidez, volumen de estaciones y capacidades de las redes. Capturas revisadas.
+- Delta de fuentes/modelos/generador/documentación; README en inglés y pruebas
+  en español. Motor, IWAD, partidas y fixtures de ensayo quedan fuera.
 
 ## 4.35.0g — avance rápido, mesas y sueño (2026-09-16)
 

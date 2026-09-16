@@ -7,7 +7,7 @@ class CaelumRestTrial : Object play
         if (CaelumRestState.IsActive(user)) return false;
         if (bag != null && (furniture != null || !bag.AvailableTo(user))) return false;
         if (furniture != null && !furniture.CanReach(user)) return false;
-        String reason = CaelumRestState.BlockReason(user);
+        String reason = CaelumRestState.BlockReason(user,furniture!=null && CaelumWorldCatalogue.IsTimelessMap(level.MapName));
         if (reason.Length() != 0 && reason != "CA_REST_NEEDS")
         {
             if (user != null) user.A_Print(StringTable.Localize(reason, false));
@@ -28,6 +28,8 @@ class CaelumRestTrial : Object play
         int conversation = furniture == null ? 43510
             : furniture.RestMode() == CaelumRestRules.MODE_SLEEP ? 43512 : 43511;
         if (bag != null) conversation = 43513;
+        if (furniture!=null && CaelumWorldCatalogue.IsTimelessMap(level.MapName))
+            conversation=furniture.RestMode()==CaelumRestRules.MODE_SLEEP?43516:43515;
         if (CaelumFactionCondition.OpenDialogue(user, guide, conversation, null, SF_IGNOREVISIBILITY)) return true;
         guide.Destroy();
         return false;
@@ -131,7 +133,8 @@ class CaelumRestAction : CaelumPalomoDialogueAction abstract
         else
         {
             if ((mode != CaelumRestRules.MODE_SLEEP && mode != CaelumRestRules.MODE_WAIT)
-                || CaelumRestRules.DurationTics(minutes) == 0) return false;
+                || (CaelumRestRules.DurationTics(minutes) == 0
+                    && !(minutes==0 && guide.Furniture!=null && CaelumWorldCatalogue.IsTimelessMap(level.MapName)))) return false;
             if (guide.UsesFurniture && (guide.Furniture == null || guide.Furniture.RestMode() != mode)) return false;
             if (guide.UsesBag && (guide.Bag == null || mode != CaelumRestRules.MODE_SLEEP)) return false;
             guide.QueuedMode = mode;
@@ -155,3 +158,6 @@ class CaelumRestPrepareAction : CaelumRestAction { override int Preparation() { 
 class CaelumRestPrepareLowAction : CaelumRestAction { override int Preparation() { return 2; } }
 
 class CaelumRestPrepareBagAction : CaelumRestAction { override int Preparation() { return 3; } }
+
+class CaelumRestSitUntimedAction : CaelumRestWaitAction {}
+class CaelumRestSleepUntimedAction : CaelumRestSleepAction {}

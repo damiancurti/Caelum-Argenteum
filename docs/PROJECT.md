@@ -1,8 +1,37 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0g — 2026-09-16.
+Versión documental: 4.35.0h — 2026-09-16.
 
-## Estado actual: 4.35.0g — avance seguro, mesas y sueño
+## Estado actual: 4.35.0h — comidas y mobiliario de la mansión
+
+El autor aprueba 0g, incluida la orientación. Se aplica este delta sobre esa
+base. Comer resta Sueño equivalente a Hambre efectivamente recuperada / 4;
+el coste se limita al máximo real y no se aplica a beber. F/G activa o detiene
+por separado la repetición de comida/agua del tablero hasta saciarse. La porción
+actual termina normalmente; levantarse cancela las próximas. No reinicia por
+la pérdida pasiva posterior. El estado y las pertenencias se guardan.
+
+Capacidades: 4 objetos en mesa de 2 plazas, 18 en la de 6 y 60 en la de 12.
+Platos originales con comida y tazas representan las pertenencias reales.
+Cada dormitorio de Rulo/Ronnie/Caella/Argento recibe cama y mesa de 2 sillas.
+Hay una mesa de 6 en la sala de pared falsa/cueva y una de 12 en el segundo piso.
+
+Todas las estaciones duplican sus dimensiones visuales y físicas. Las 26 de
+los dormitorios se trasladan a los talleres de planta baja bajo cada habitación;
+las 12 del segundo piso se conservan. Redes y especialidades permanecen
+conectadas y separadas por sala; diálogos y direcciones se actualizan.
+
+Para utilizar esos muebles en MAP01 se ofrecen sesiones sin duración, hasta
+levantarse. Continúa la simulación personal; no se mueve el reloj del Limbo ni
+se permite T. Las duraciones exteriores, comodidad, Lucidez y orientación de
+0g se conservan. No se implementa Trucazo ni se modifica geometría WAD.
+
+Comprobado con GZDoom 4.14.2 en Linux: digestión y límites, secuencias de comida,
+capacidades, persistencia, uso de los 26 asientos y 4 camas de la mansión,
+volumen de estaciones y redes, menús USDF y reloj detenido. Capturas revisadas.
+El TXT 0h incluye controles y recorrido para aceptación en Windows.
+
+## Base aceptada: 4.35.0g — avance seguro, mesas y sueño
 
 El autor aprueba las pruebas de 0f y autoriza el siguiente parche. Se implementa
 avance opcional con T únicamente al descansar/dormir o fabricar activamente, en
@@ -199,6 +228,7 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
    del tiempo e interrupciones. 0d/0d1 aportan la sesión a escala normal y 0e
    incorpora sillas/catres y cámara; 0f añade bolsa y factores de comodidad.
    0g agrega aceleración segura, mesas/comida y la regla de Lucidez del sueño.
+   0h incorpora comidas automáticas de mesa, digestión y mobiliario de MAP01.
    Falta integrar los futuros sistemas temporizados del mundo.
 2. Publicar el estado climático local común: temperatura, viento,
    precipitación y humedad, asociado al calendario y a cada lugar.
@@ -210,7 +240,7 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
 Después continúa 4.36, entorno móvil y peligros físicos; luego 4.37, Tarot y
 Trucazo. Se exporta la prueba para otros jugadores antes de V5. El trabajo
 heredado/transversal, clima sobre el cuerpo, habilidades de clase/raciales salvo Sueño ya implementado,
-refugios/propiedades, comida automática y calidad amplia del descanso siguen
+refugios/propiedades, alimentación automática fuera de mesas y calidad amplia del descanso siguen
 en V5. No se inventa un número fijo de parches para cerrar 4.35.
 
 ## Base aceptada: 4.35.0c — inicio de campaña y tiempo del Limbo
@@ -1578,7 +1608,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0f aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño; pruebas nativas realizadas. Restan estado climático local, eventos y viajes programados, sus adaptadores temporales y comprobación conjunta. Modelo térmico corporal en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. Restan estado climático local, eventos y viajes programados, sus adaptadores temporales y comprobación conjunta. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |

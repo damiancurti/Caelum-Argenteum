@@ -14489,6 +14489,7 @@ class CaelumPlayer : DoomPlayer
         UpdateWeaponCharge();
         UpdateUnderwaterAir();
         ApplyAirRegeneration();
+        CaelumDiningSession.Advance(self);
 
         if (ForcedSleepTics > 0)
         {
@@ -17110,13 +17111,17 @@ class CaelumPlayer : DoomPlayer
                 UpdateSurvivalStates();
                 break;
             case CaelumConstants.CONSUMABLE_FOOD_RATION:
-                CurrentHunger = Min(
-                    CaelumConstants.SURVIVAL_MAXIMUM,
-                    CurrentHunger
-                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
-                );
+            {
+                double recovered=Min(CaelumConstants.SURVIVAL_MAXIMUM-CurrentHunger,
+                    CaelumConstants.SURVIVAL_MAXIMUM*pulseRatio);
+                recovered=Max(0.0,recovered);
+                CurrentHunger+=recovered;
+                // Digestión: sólo el hambre efectivamente saciada tiene coste.
+                CurrentSleep=Max(0.0,CurrentSleep-recovered/4.0);
+                if(CurrentHunger>=CaelumConstants.SURVIVAL_MAXIMUM)CaelumDiningSession.Sated(self,false);
                 UpdateSurvivalStates();
                 break;
+            }
             case CaelumConstants.CONSUMABLE_WATER_RATION:
                 CurrentThirst = Min(
                     CaelumConstants.SURVIVAL_MAXIMUM,

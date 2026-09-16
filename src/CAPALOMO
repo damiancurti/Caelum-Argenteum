@@ -3193,3 +3193,26 @@ conversation
         choice { text = "$CA_TABLE_INSPECT"; giveitem = "CaelumDiningInspect"; closedialog = true; }
     }
 }
+
+conversation
+{
+    id = 43515;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_REST_CHAIR_TITLE"; dialog = "$CA_REST_TIMELESS_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_SIT_UNTIMED"; giveitem = "CaelumRestSitUntimedAction"; closedialog = true; }
+    }
+}
+conversation
+{
+    id = 43516;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_REST_BED_TITLE"; dialog = "$CA_REST_TIMELESS_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_SLEEP_UNTIMED"; giveitem = "CaelumRestSleepUntimedAction"; closedialog = true; }
+    }
+}
