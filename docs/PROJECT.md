@@ -1,8 +1,110 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0h — 2026-09-16.
+Versión documental: 4.35.0k — 2026-09-16.
 
-## Estado actual: 4.35.0h — comidas y mobiliario de la mansión
+## Estado actual: 4.35.0k — primer estado climático local
+
+El autor solicita preparar el siguiente parche mientras prueba 4.35.0j.
+La aceptación manual de 0j sigue pendiente. Este delta se aplica sobre 0j y
+publica el primer estado ambiental común: temperatura del aire, humedad
+relativa, velocidad/dirección del viento y precipitación por lugar y fecha.
+
+CaelumWeatherState viaja con el personaje y conserva una semilla de campaña,
+perfil, fecha/minuto y muestra. Los pasos ordinarios y x105 consultan el mismo
+calendario de campaña; se actualiza como máximo una vez por minuto de juego
+o al cambiar de lugar. Cargar o regresar a un mapa no sortea otro clima ni
+reproduce miles de tics atrasados. Los mapas desconocidos muestran ausencia
+de perfil en lugar de reutilizar el ambiente del mapa anterior.
+
+El Diario > Mundo muestra dos líneas ambientales conservando lugares, conexiones,
+registro del último viaje y controles. Una fecha diagnóstica no altera el clima
+de campaña; la etiqueta lo identifica cuando esa vista está activa. Se añade
+consulta de consola de sólo lectura y un perfil exterior de ensayo para
+comprobar viento/precipitación sin introducir lluvia en mapas subterráneos.
+
+Los perfiles numéricos son provisionales, no datos meteorológicos históricos
+ni balance aprobado: Limbo estable 20 °C/55%; alcantarillas y cámaras base
+16 °C/85%; reservorio 15 °C/92%; mantenimiento 18 °C/75%. Los tres perfiles
+subterráneos varían suavemente con hora/fecha, sin viento ni precipitación.
+El exterior templado sólo se consulta en pruebas; falta la autoría regional.
+SYSTEMS.md detalla amplitudes, unidades, persistencia y comandos.
+
+Se conserva el ritmo 1:1 del Limbo y el 20:1 exterior, así como las reglas
+de 0j. El clima publicado todavía no modifica recursos, daño, cuerpo, equipo,
+sellos, luz, sonido ni partículas. Exposición térmica sigue en V5.1 y los
+efectos audiovisuales por clima permanecen en su bloque de contenido.
+
+La verificación y los pendientes se describen en PRUEBAS_4_35_0k.txt. Las pruebas
+nativas Linux se distinguen de la aceptación manual Windows del autor. El
+siguiente bloque pendiente de 4.35 es eventos/viajes temporizados, seguido
+de su integración y las pruebas conjuntas. Aún no se declara cerrada 4.35.
+
+## Base entregada: 4.35.0j — ritmo local, interacción y áreas de clase
+
+Delta sobre el proyecto completo 4.35.0i. El autor confirma la recuperación de
+Sueño de 100 puntos por 8 horas de juego, la bolsa de 2 kg y el coste base de
+Sueño del arcanista de 1000 Ánima. Solicita equiparar el radio de las habilidades
+de clase con el radio base de canalización de los sellos: 1280 MU (40 m a la
+escala de desarrollo). Sueño, única habilidad de clase implementada, usa esa
+base común y el modificador de alcance existente. Las otras habilidades siguen
+pendientes en V5; su futura área parte de la misma regla.
+
+Comer/beber sentado reparte el mismo efecto y consumo durante 100 segundos de
+simulación en vez de 10. No cambia el total por ración ni los litros por sorbo.
+La repetición automática espera a terminar cada porción; levantarse devuelve
+los pulsos restantes al ritmo ordinario. Digestión, topes y comodidad conservan
+sus reglas. La bolsa, las posiciones de 0i y el diseño aceptado se mantienen.
+
+El Limbo pasa de calendario detenido a tiempo 1:1 durante juego activo a ritmo
+normal. Reloj y fecha avanzan; necesidades por hora y recuperación de Sueño usan
+horas locales. Afuera sigue 1 hora de juego por 180 segundos. T acelera el ritmo
+local y los sistemas compatibles sólo durante descanso/fabricación válidos.
+Pausa nativa detiene el tiempo; no se reconstruye tiempo de sesiones anteriores
+ni tiempo con el juego cerrado. Palomo lo compara con otro lugar que él conoce.
+
+Use comprueba la dirección de la mirada para muebles, mesas, residentes y
+estaciones. Una estación rechazada, incluso en otra planta, ya no corta el
+recorrido nativo de Use. Las estaciones quedan al 75% de 0i, es decir, al 150%
+de antes de 0h: radio 30, altura 72 y escala 0,75. La migración es absoluta,
+conserva los actores, sus redes, reservas y tareas; no vuelve a multiplicar.
+
+Verificado en GZDoom 4.14.2/Linux: comidas lentas y automáticas, litros/digestión,
+guardado/carga, reloj local y paridad con x105, sueño acelerado guardado de 0i,
+fabricación, diálogos/puertas/muebles mediante Use nativo, 38 estaciones migradas,
+límites de área y modificador. Capturas de Palomo y talleres revisadas. Falta
+aceptación manual en Windows, incluida la del parche 0i; no se da por realizada.
+PRUEBAS_4_35_0j.txt reúne la comprobación pendiente.
+
+Para pasar a 4.36 falta completar el bloque 4.35: clima local (temperatura,
+viento, precipitación y humedad), eventos programados/viajes temporizados,
+adaptadores al reloj e integración. Después: 4.36 peligros físicos, 4.37
+Tarot/Trucazo, exportación de prueba, V5.0 reorganización y V5.1 exposición térmica.
+No hay un número cerrado de parches restantes. Las secciones por versión que
+siguen describen sus entregas históricas; esta sección fija el estado vigente.
+
+## Base entregada: 4.35.0i — accesos, platos y avance en Limbo
+
+El autor conserva el diseño de comida/agua y reporta seis incidencias de 0h.
+Este delta sobre 0h corrige la altura de las figuras, intercambia las zonas de
+cama/mesa de Ronnie y Argento, mueve la mesa de la sala del fondo 100 MU al este,
+libera la puerta oriental del taller nordeste y asegura el muñeco de Rulo.
+
+T queda dedicado al avance durante descanso/fabricación; el antiguo +10 minutos
+de depuración se mantiene sólo por consola. El Limbo permite acelerar recursos,
+descanso, consumibles y fabricación sin avanzar reloj ni calendario. Conserva
+las sesiones de muebles sin duración y las guardas de actividad y peligro.
+
+La migración reutiliza muebles, sillas, objetos y estaciones. Si un dormitorio
+afectado está ocupado, espera a levantarse; reintenta si el destino está bloqueado.
+Los guardados con el marcador antiguo del muñeco pero sin actor recuperan uno,
+sin reiniciar la misión ni conceder ejercicios o recompensas.
+
+Pruebas nativas en GZDoom 4.14.2/Linux: 26 asientos/4 camas, 38 estaciones,
+paso real por puertas afectadas, blanco y registro de práctica, comparación
+exacta de 105 tics normales/acelerados en Limbo, fabricación y carga de dormitorio
+ocupado de 0h. Capturas revisadas. Controles Windows/recorrido completo en TXT.
+
+## Base entregada: 4.35.0h — comidas y mobiliario de la mansión
 
 El autor aprueba 0g, incluida la orientación. Se aplica este delta sobre esa
 base. Comer resta Sueño equivalente a Hambre efectivamente recuperada / 4;
@@ -229,9 +331,11 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
    incorpora sillas/catres y cámara; 0f añade bolsa y factores de comodidad.
    0g agrega aceleración segura, mesas/comida y la regla de Lucidez del sueño.
    0h incorpora comidas automáticas de mesa, digestión y mobiliario de MAP01.
+   0i corrige accesos/presentación y permite avance personal en Limbo sin calendario.
    Falta integrar los futuros sistemas temporizados del mundo.
-2. Publicar el estado climático local común: temperatura, viento,
-   precipitación y humedad, asociado al calendario y a cada lugar.
+2. Estado climático local común implementado en 0k: temperatura, viento,
+   precipitación y humedad por calendario/lugar, con perfiles de ensayo.
+   Pendientes aceptación de este bloque y valores regionales definitivos.
 3. Planificar eventos y viajes con el mismo reloj: horarios, duración de
    rutas y resolución de acontecimientos durante espera/descanso o traslados.
 4. Comprobar la integración de esos bloques con guardados, viajes y la
@@ -1608,7 +1712,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. Restan estado climático local, eventos y viajes programados, sus adaptadores temporales y comprobación conjunta. Modelo térmico corporal en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; aceptación de 0j pendiente. 0k publica clima local con perfiles de ensayo y adaptador normal/x105. Restan eventos/viajes programados, integración conjunta y aceptación. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |

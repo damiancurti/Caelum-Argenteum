@@ -2,6 +2,18 @@
 // el Toro y las puertas conservan el estado físico del intento al guardar.
 class CaelumMainM00RuloTrial : Object play
 {
+    static CaelumM00TrainingDummy EnsurePracticeTarget()
+    {
+        if(level.MapName!="MAP01")return null;
+        let it=ThinkerIterator.Create("CaelumM00TrainingDummy");
+        let dummy=CaelumM00TrainingDummy(it.Next());
+        if(dummy!=null)return dummy;
+        dummy=CaelumM00TrainingDummy(Actor.Spawn("CaelumM00TrainingDummy",(-290,480,0),NO_REPLACE));
+        if(dummy!=null && (!dummy.TestMobjLocation() || Abs(dummy.FloorZ)>1))
+        {dummy.Destroy();return null;}
+        return dummy;
+    }
+
     static bool IsActive(CaelumPlayer user)
     {
         if (user == null || user.player == null || user.health <= 0
@@ -266,10 +278,7 @@ class CaelumMainM00RuloTrial : Object play
         if (!IsActive(user)) return;
         let world = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
         if (world != null && !world.RuloWorldPrepared)
-        {
-            world.RuloWorldPrepared = true;
-            Actor.Spawn("CaelumM00TrainingDummy", (-290,480,0), NO_REPLACE);
-        }
+            world.RuloWorldPrepared = EnsurePracticeTarget() != null;
         if (NearPractice(user))
         {
             if (user.CurrentAir < r.MainM00PracticeLastAir - 0.01)

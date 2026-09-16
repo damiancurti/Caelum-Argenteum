@@ -1,9 +1,19 @@
-// Tiempo global registrado. Desde 0c sólo avanza fuera del Limbo; los
-// contadores anteriores se conservan para no reescribir las marcas de viaje.
+// Reloj único: el Limbo usa escala 1:1 y el exterior conserva 20:1.
+// La unidad guardada sigue siendo la anterior; no se reescriben fechas/viajes.
 class CaelumWorldClock : Inventory
 {
     int CompletedDays;
     int DayTics;
+    int LimboSubTics;
+
+    static clearscope double SecondsPerGameHour(String mapName)
+    {
+        return CaelumWorldCatalogue.IsLimboMap(mapName) ? 3600.0
+            : CaelumConstants.REAL_SECONDS_PER_GAME_HOUR;
+    }
+
+    static clearscope double MapTimeScale(String mapName)
+    { return CaelumConstants.REAL_SECONDS_PER_GAME_HOUR / SecondsPerGameHour(mapName); }
 
     static clearscope int TicsPerHour()
     {
@@ -36,7 +46,15 @@ class CaelumWorldClock : Inventory
 
     void AdvanceOnMap(String mapName)
     {
-        if (CaelumWorldCatalogue.IsTimelessMap(mapName)) return;
+        if (CaelumWorldCatalogue.IsLimboMap(mapName))
+        {
+            // Una fracción entera guardada evita perder tiempo al cargar o
+            // alternar T. Veinte pasos del Limbo equivalen a un tic del reloj.
+            LimboSubTics++;
+            int divisor = int(SecondsPerGameHour(mapName) / CaelumConstants.REAL_SECONDS_PER_GAME_HOUR);
+            if (LimboSubTics < divisor) return;
+            LimboSubTics -= divisor;
+        }
         AdvanceOneTic();
     }
 
@@ -53,14 +71,15 @@ class CaelumWorldClock : Inventory
     static void Report(CaelumPlayer user)
     {
         let clock = Get(user);
-        Console.Printf("[Caelum 4.35.0d] Reloj global: registro=%d mapa=%s detenido por Limbo=%d",
-            clock != null, level.MapName, CaelumWorldCatalogue.IsTimelessMap(level.MapName));
+        Console.Printf("[Caelum 4.35.0j] Reloj global: registro=%d mapa=%s escala real del Limbo=%d",
+            clock != null, level.MapName, CaelumWorldCatalogue.IsLimboMap(level.MapName));
         if (clock == null) return;
         Console.Printf("Tiempo registrado=%s jornadas=%d tics del día=%d/%d",
             FormatStamp(clock.CompletedDays, clock.DayTics, true),
             clock.CompletedDays, clock.DayTics, TicsPerDay());
         Console.Printf("Escala: 1 hora de juego = %.0f segundos de simulación; %d tics por hora.",
-            CaelumConstants.REAL_SECONDS_PER_GAME_HOUR, TicsPerHour());
+            SecondsPerGameHour(level.MapName), int(SecondsPerGameHour(level.MapName)*TICRATE));
+        Console.Printf("Fracción del Limbo conservada=%d/20", clock.LimboSubTics);
     }
 
     Default
@@ -104,6 +123,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         let calendar = CaelumCalendarState.Get(user, true);
         if (calendar == null || !calendar.EnsureCampaign(clock)) return;
         clock.AdvanceOnMap(level.MapName);
+        CaelumWeatherState.Sync(user, clock, calendar);
         // WorldTick sigue la simulación nativa. Las conversaciones de Caelum
         // continúan; la pausa voluntaria y la carga no se compensan con tiempo
         // del sistema operativo.

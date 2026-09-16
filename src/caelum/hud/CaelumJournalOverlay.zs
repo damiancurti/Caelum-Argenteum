@@ -1932,6 +1932,28 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(nearest.ConnectionId), false)));
     }
 
+    ui void DrawWeather(CaelumPlayer localPlayer, bool trialDate)
+    {
+        let weather = CaelumWeatherState(localPlayer.FindInventory("CaelumWeatherState"));
+        if (weather == null || weather.SourceMap != level.MapName
+            || weather.Current == null || !weather.Current.Available)
+        {
+            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 176,
+                StringTable.Localize("CA_WEATHER_UNAVAILABLE", false));
+            return;
+        }
+        let sample = weather.Current;
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 176,
+            String.Format(StringTable.Localize(trialDate ? "CA_WEATHER_CAMPAIGN" : "CA_WEATHER_LOCAL", false),
+                StringTable.Localize(CaelumWeatherRules.ProfileKey(weather.Profile), false),
+                sample.AirTemperatureC, sample.RelativeHumidityPercent));
+        String wind = sample.WindSpeedKmh < 0.05 ? StringTable.Localize("CA_WEATHER_CALM", false)
+            : String.Format(StringTable.Localize("CA_WEATHER_WIND_VALUE", false), sample.WindSpeedKmh,
+                StringTable.Localize(CaelumWeatherRules.WindKey(sample.WindFromDegrees), false));
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 188,
+            String.Format(StringTable.Localize("CA_WEATHER_WIND_RAIN", false), wind, sample.PrecipitationMmPerHour));
+    }
+
     ui void DrawWorldPage(CaelumPlayer localPlayer)
     {
         // Dos columnas para las visitas y las salidas de la ubicación actual.
@@ -1943,10 +1965,9 @@ class CaelumJournalOverlay : EventHandler
             String.Format(StringTable.Localize("CA_WORLD_CURRENT", false),
                 StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(locationId), false)));
         DrawTextLine(SmallFont, Font.CR_CYAN, 48, 148,
-            CaelumWorldCatalogue.IsTimelessMap(level.MapName)
-                ? StringTable.Localize("CA_WORLD_CLOCK_TIMELESS", false)
-                : clock == null ? StringTable.Localize("CA_WORLD_CLOCK_NONE", false)
-                : String.Format(StringTable.Localize("CA_WORLD_CLOCK_RECORDED", false),
+            clock == null ? StringTable.Localize("CA_WORLD_CLOCK_NONE", false)
+                : String.Format(StringTable.Localize(CaelumWorldCatalogue.IsLimboMap(level.MapName)
+                    ? "CA_WORLD_CLOCK_LIMBO" : "CA_WORLD_CLOCK_RECORDED", false),
                     CaelumWorldClock.FormatStamp(clock.CompletedDays, clock.DayTics)));
         let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
         int dateSerial = calendar == null ? -1 : calendar.DateSerial(clock, calendar.TrialDate);
@@ -1960,47 +1981,48 @@ class CaelumJournalOverlay : EventHandler
         else if (calendar != null && calendar.Configured)
             calendarText = StringTable.Localize("CA_CALENDAR_OUT_OF_RANGE", false);
         DrawTextLine(SmallFont, Font.CR_CYAN, 48, 160, calendarText);
-        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 176, StringTable.Localize("CA_WORLD_VISITED", false));
+        DrawWeather(localPlayer, calendar != null && calendar.TrialDate);
+        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 206, StringTable.Localize("CA_WORLD_VISITED", false));
         int row = 0;
         for (int id = 1; id < CaelumWorldCatalogue.LOCATION_DEFINED_COUNT; id++)
         {
             if (record == null || !record.WorldLocationVisited[id]) continue;
-            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 194+row*16,
+            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 220+row*12,
                 StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(id), false));
             row++;
         }
-        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 194,
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 220,
             StringTable.Localize("CA_WORLD_NO_VISITS", false));
-        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 176,
+        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 206,
             StringTable.Localize("CA_WORLD_LOCAL_CONNECTIONS", false));
         row = 0;
         for (int id = 1; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
         {
             if (record == null || !record.WorldConnectionKnown[id]
                 || CaelumWorldCatalogue.ConnectionOrigin(id) != locationId) continue;
-            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 194+row*32,
+            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 220+row*22,
                 StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(id), false));
-            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 206+row*32,
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 230+row*22,
                 StringTable.Localize(record.WorldConnectionTraversed[id]
                     ? "CA_WORLD_TRAVERSED" : "CA_WORLD_KNOWN", false));
             row++;
         }
-        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 194,
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 220,
             StringTable.Localize("CA_WORLD_NO_LOCAL_CONNECTIONS", false));
         if (locationId == CaelumWorldCatalogue.LOCATION_MANSION && row > 0)
-            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 242,
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 246,
                 String.Format(StringTable.Localize("CA_WORLD_DESTINATION", false),
                     StringTable.Localize(record.WorldLocationVisited[2]
                         ? "CA_MAP02_SEWER_NAME" : "CA_WORLD_UNDISCOVERED", false)));
         let journey = CaelumJourneyState(localPlayer.FindInventory("CaelumJourneyState"));
         if (journey != null)
-            DrawTextLine(SmallFont, Font.CR_CYAN, 48, 282,
+            DrawTextLine(SmallFont, Font.CR_CYAN, 48, 286,
                 String.Format(StringTable.Localize("CA_JOURNEY_LAST", false), journey.Sequence,
                     StringTable.Localize(journey.TravelMode == CaelumJourneyState.MODE_CARAVAN
                         ? "CA_JOURNEY_CARAVAN" : "CA_JOURNEY_FOOT", false),
                     StringTable.Localize(CaelumJourneyState.StatusKey(journey.Status), false)));
         if (record != null && record.WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_RETURN])
-            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 296, StringTable.Localize("CA_WORLD_RETURN_RECORDED", false));
+            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 298, StringTable.Localize("CA_WORLD_RETURN_RECORDED", false));
         DrawTextLine(SmallFont, Font.CR_GRAY, 48, 310,
             StringTable.Localize(locationId >= 2 ? "CA_CARAVAN_WORLD_HELP" : "CA_WORLD_USE_EXIT", false));
     }
@@ -2040,7 +2062,9 @@ class CaelumJournalOverlay : EventHandler
             String.Format(StringTable.Localize("CA_REST_COMFORT", false), factor, factor));
         let fast = CaelumTimeAdvanceState(localPlayer.FindInventory("CaelumTimeAdvanceState"));
         DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 100,
-            StringTable.Localize(rest.Untimed ? "CA_REST_TIMELESS_SEATED" : fast != null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
+            StringTable.Localize(rest.Untimed
+                ? fast!=null && fast.Active ? "CA_FAST_LIMBO_ON" : "CA_FAST_LIMBO_OFF"
+                : fast!=null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
         DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 113,
             rest.Mode==CaelumRestRules.MODE_WAIT
                 ? String.Format(StringTable.Localize("CA_TABLE_AUTO_HELP",false),rest.AutoEating?"ON":"OFF",rest.AutoDrinking?"ON":"OFF")
@@ -2561,12 +2585,6 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 3 && craftingSession
-            && (e.KeyChar == 116 || e.KeyChar == 84))
-        {
-            SendNetworkEvent("ca_debug_advance_crafting_time");
-            SendNetworkEvent("ca_journal_menu_select_sound");
-        }
-        else if (currentPage == 3 && craftingSession
             && (e.KeyChar == 102 || e.KeyChar == 70))
         {
             SendNetworkEvent("ca_crafting_repair_selected");
@@ -2650,7 +2668,7 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_debug_time_fast_report")
         {
             let fast = CaelumTimeAdvanceState.Get(requestingPlayer);
-            Console.Printf("[Caelum 4.35.0h] Avance: activo=%d extra=%d motivo=%s lucidez=%.4f",
+            Console.Printf("[Caelum 4.35.0j] Avance: activo=%d extra=%d motivo=%s lucidez=%.4f",
                 fast != null && fast.Active, fast != null ? fast.SimulatedTics : 0,
                 fast != null ? fast.LastReason : "", requestingPlayer.CurrentLucidity);
         }
@@ -2685,6 +2703,14 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_debug_time_report")
         {
             CaelumWorldClock.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_weather_report")
+        {
+            CaelumWeatherState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_weather_sample")
+        {
+            CaelumWeatherState.DebugSample(requestingPlayer, e.Args[0], e.Args[1], e.Args[2]);
         }
         else if (e.Name == "ca_debug_calendar_report")
         {

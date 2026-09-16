@@ -12,6 +12,7 @@ class CaelumTimeAdvanceState : Inventory
     bool Pumping;
     int LastPumpTic;
     int SimulatedTics;
+    int PersonalStepSerial;
     String OriginMap;
     String LastReason;
     CaelumRestState Session;
@@ -31,8 +32,18 @@ class CaelumTimeAdvanceState : Inventory
         if (advance != null) { advance.Active = false; advance.Session = null; advance.Station = null; }
     }
 
+    static int StepSerial(CaelumPlayer user)
+    {let advance=Get(user);return advance!=null?advance.PersonalStepSerial:0;}
+
     static bool InSafeZone(CaelumPlayer user)
     {
+        if(level.MapName=="MAP01")
+        {
+            let rest=CaelumRestState.Get(user);
+            if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.Furniture!=null)return true;
+            let station=CaelumCraftingStation(user.ActiveCraftingStationActor);
+            return station!=null && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5;
+        }
         let it = ThinkerIterator.Create("CaelumTimeAdvanceZone"); CaelumTimeAdvanceZone zone;
         while ((zone = CaelumTimeAdvanceZone(it.Next())) != null)
             if (user.Distance2D(zone) <= zone.Radius && Abs(user.Pos.Z-zone.Pos.Z) <= 16
@@ -45,7 +56,6 @@ class CaelumTimeAdvanceState : Inventory
         if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.DerivedStats == null || (user.player.cheats & CF_PREDICTING)) return "CA_FAST_ACTIVITY";
         for (int i=0; i<MAXPLAYERS; i++) if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
-        if (CaelumWorldCatalogue.IsTimelessMap(level.MapName)) return "CA_REST_TIMELESS";
         bool resting = CaelumRestState.IsActive(user);
         bool crafting = user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor != null;
         if (!resting && !crafting) return "CA_FAST_ACTIVITY";
@@ -111,6 +121,7 @@ class CaelumTimeAdvanceState : Inventory
         if(reason.Length()!=0)
         { advance.LastReason=reason;Halt(user);user.A_Print(StringTable.Localize(reason,false));return; }
         let clock=CaelumWorldClock.Get(user);if(clock==null){Halt(user);return;}
+        let calendar=CaelumCalendarState.Get(user);
         advance.Pumping=true;
         // Máximo un minuto de campaña por imagen (105 tics totales a x105).
         // Subpasos de un tic respetan exactamente umbrales y expiraciones;
@@ -121,7 +132,11 @@ class CaelumTimeAdvanceState : Inventory
             if(advance.Station!=null && (!user.CraftingTaskActive || user.ActiveCraftingStationActor!=advance.Station)) { Halt(user);break; }
             reason=BlockReason(user,false);
             if(reason.Length()!=0) {advance.LastReason=reason;Halt(user);break;}
-            clock.AdvanceOneTic();
+            // Cada lugar conserva su escala de calendario durante el avance.
+            // El serial evita acreditar dos veces un paso de descanso.
+            advance.PersonalStepSerial=advance.PersonalStepSerial==2147483647?0:advance.PersonalStepSerial+1;
+            clock.AdvanceOnMap(level.MapName);
+            CaelumWeatherState.Sync(user,clock,calendar);
             AdvancePowers(user);
             user.UpdateCraftingTask();
             user.AdvancePersonalTimeTic();

@@ -1,6 +1,63 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0h — 2026-09-16.
+Versión documental: 4.35.0k — 2026-09-16.
+
+## 4.35.0k — lectura ambiental del Diario
+
+No se crean recursos binarios, mapas, sprites, texturas, modelos ni sonidos.
+Diario > Mundo usa las fuentes y marcos propios existentes; añade dos líneas
+ambientales en y=176/188 sobre el lienzo 640×360. Los encabezados de lugares/
+conexiones pasan a y=206, con listas desde y=220; se conserva espacio para cinco
+lugares, tres conexiones, último viaje, regreso y ayudas inferiores.
+
+LANGUAGE incorpora 19 claves equivalentes en inglés/español: perfil local,
+temperatura/humedad, viento/precipitación, calma, ocho direcciones y ausencia de
+perfil. La variante «Ambiente de campaña» distingue una fecha diagnóstica activa.
+El perfil exterior de ensayo se consulta por consola, sin cambiar la presentación
+del mapa real. Las partículas de lluvia, sonido, cielo y luz quedan para su
+bloque audiovisual; este parche ofrece el dato ambiental común.
+
+Capturas de prueba del Diario en 16:9 y 4:3 verifican la distribución y etiquetas.
+Los fixtures completan la lista sólo para revisar su caso más cargado; ni esas
+marcas de descubrimiento ni las capturas se distribuyen. El ZIP contiene únicamente
+fuentes/documentación modificadas y PRUEBAS_4_35_0k.txt.
+
+## 4.35.0j — escala de puestos y texto del Limbo
+
+Los doce modelos de estación y sus asociaciones MODELDEF permanecen. El actor
+usa escala 0,75 frente a 1 en 0i y 0,5 antes de 0h; sus tres dimensiones pasan
+al 75% de 0i. La colisión se ajusta a radio 30/altura 72. No se regeneran OBJ,
+texturas, sprites ni WAD. Se conserva el apoyo de platos/tazas corregido en 0i.
+
+LANGUAGE actualiza en inglés/español las ayudas de reloj y aceleración: Limbo
+1:1, con reloj/calendario activos. CA_DLG_M01_PALOMO_FOYER compara su ritmo con
+otro lugar conocido por Palomo. Se mantiene la estructura nativa de CAPALOMO,
+sus respuestas, hitos y audio. Capturas nativas revisadas de ese saludo y de
+los puestos reducidos; las capturas de QA no se distribuyen.
+
+generate_environment_models.py incorpora la misma hora local que el runtime
+para la regeneración diaria; regenerarlo no reinstala la tasa anterior del
+Limbo. Esta entrega contiene fuentes/documentación modificadas y TXT de prueba,
+sin recursos binarios nuevos, motor, IWAD, guardados ni fixtures de ensayo.
+Los tamaños/textos descritos por versiones anteriores son referencias históricas.
+
+## 4.35.0i — apoyo de las raciones sobre el tablero
+
+Se conservan los diseños aprobados de ca_food_plate.obj y ca_water_cup.obj.
+No se regeneran ni se retocan PNG. El problema era la diferencia entre 34 MU
+de coordenada del modelo y su altura mundial al aplicar CorrectPixelStretch.
+CaelumDiningTable.SurfaceHeight usa la misma corrección vertical para colocar
+las figuras; CaelumDiningDisplay la aplica también a figuras guardadas de 0h.
+
+La colocación de los muebles cambia en ZScript, conservando modelos y WAD.
+Las mesas orientales quedan en la zona anterior de las camas, con 16 MU de
+margen para sus sillas. La mesa normal se mueve 100 MU hacia la pared falsa.
+El muñeco utiliza CDMY, el recurso propio ya existente, sin otro diseño.
+
+La ayuda de Oficios muestra T para acelerar. El panel de descanso del Limbo
+indica estado del avance y calendario detenido en español/inglés. Capturas
+nativas comprueban el apoyo de platos/tazas, dormitorios, puerta del taller,
+blanco de práctica y panel de avance. Las capturas y fixtures son sólo QA.
 
 ## 4.35.0h — platos, tazas y mobiliario de MAP01
 

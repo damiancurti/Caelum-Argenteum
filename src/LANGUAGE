@@ -1601,7 +1601,7 @@ CA_DLG_M01_UNKNOWN_VOICE_SILENCE = "[Remain silent.]";
 CA_DLG_M01_CONTINUE = "[Continue.]";
 CA_DLG_M01_BACK = "Ask something else.";
 CA_DLG_M01_PALOMO_LEAVE = "That is all for now.";
-CA_DLG_M01_PALOMO_FOYER = "Good day. Or something close enough that we need not argue with the clock.";
+CA_DLG_M01_PALOMO_FOYER = "Good day. Time here keeps the same pace as in another place I know. But all in good time: even clocks have their secrets.";
 CA_DLG_M01_PALOMO_ASK_WHERE = "Where are we?";
 CA_DLG_M01_PALOMO_WHERE_REPLY = "In the foyer, if you want precision. If you want more ambitious answers, I fear the architecture will not be much help.";
 CA_DLG_M01_PALOMO_ASK_WHAT_HAPPENED = "What happened to me?";
@@ -1677,7 +1677,7 @@ CA_DLG_M01_UNKNOWN_VOICE_SILENCE = "[Guardar silencio.]";
 CA_DLG_M01_CONTINUE = "[Continuar.]";
 CA_DLG_M01_BACK = "Preguntar otra cosa.";
 CA_DLG_M01_PALOMO_LEAVE = "Eso es todo por ahora.";
-CA_DLG_M01_PALOMO_FOYER = "Buen día. O algo suficientemente parecido como para no discutir con el reloj.";
+CA_DLG_M01_PALOMO_FOYER = "Buen día. Aquí el tiempo lleva el mismo paso que en otro lugar que conozco. Pero cada cosa a su hora: hasta los relojes tienen sus secretos.";
 CA_DLG_M01_PALOMO_ASK_WHERE = "¿Dónde estamos?";
 CA_DLG_M01_PALOMO_WHERE_REPLY = "En el recibidor, si busca precisión. Si busca respuestas más ambiciosas, temo que la arquitectura no será de mucha ayuda.";
 CA_DLG_M01_PALOMO_ASK_WHAT_HAPPENED = "¿Qué me pasó?";
@@ -1845,10 +1845,10 @@ CA_JOURNAL_CRAFTING_FINAL_STEP = "Final assembly / operation";
 CA_JOURNAL_CRAFTING_MATERIAL_USED = "material used";
 CA_JOURNAL_CRAFTING_BREAKDOWN = "Expanded recipe";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "selected step";
-CA_DEBUG_CRAFTING_ADVANCE_HINT = "debug control: +10 min";
-CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · debug control advances 10 min";
+CA_DEBUG_CRAFTING_ADVANCE_HINT = "console debug command: +10 min";
+CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · console debug command advances 10 min";
 CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier | B material batch";
-CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T +10m | G family | Tab/Q close";
+CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T fast | G family | Tab/Q close";
 
 [es]
 CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Depuración: adelantar 10 minutos la tarea de crafteo";
@@ -1859,10 +1859,10 @@ CA_JOURNAL_CRAFTING_FINAL_STEP = "Montaje u operación final";
 CA_JOURNAL_CRAFTING_MATERIAL_USED = "material empleado";
 CA_JOURNAL_CRAFTING_BREAKDOWN = "Receta desplegada";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "paso elegido";
-CA_DEBUG_CRAFTING_ADVANCE_HINT = "control de depuración: +10 min";
-CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el control adelanta 10 min";
+CA_DEBUG_CRAFTING_ADVANCE_HINT = "comando de consola de depuración: +10 min";
+CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el comando de consola adelanta 10 min";
 CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier | B lote de materiales";
-CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T +10m | G familia | Tab/Q cerrar";
+CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T acelerar | G familia | Tab/Q cerrar";
 
 [enu default]
 CA_TREE_DESERT_CARDON_ADULT = "adult cardón cactus";
@@ -3325,12 +3325,12 @@ CA_SEWER_SUPPORT_FULL = "No se pudo completar la preparación: liberá espacio d
 [enu default]
 CA_WORLD_CLOCK_RECORDED = "Recorded time: %s  |  1 game hour = 3 real minutes";
 CA_WORLD_CLOCK_NONE = "Time recording starts with a confirmed character.";
-CA_WORLD_CLOCK_TIMELESS = "Time stands still in Limbo.";
+CA_WORLD_CLOCK_TIMELESS = "Limbo time runs at a 1:1 pace.";
 
 [es]
 CA_WORLD_CLOCK_RECORDED = "Tiempo registrado: %s  |  1 h de juego = 3 min reales";
 CA_WORLD_CLOCK_NONE = "El tiempo se registra desde que confirmás el personaje.";
-CA_WORLD_CLOCK_TIMELESS = "El tiempo está detenido en el Limbo.";
+CA_WORLD_CLOCK_TIMELESS = "El tiempo del Limbo transcurre a escala 1:1.";
 
 // 4.35.0c: la vista de prueba se mantiene separada de la fecha de campaña.
 [enu default]
@@ -3374,7 +3374,7 @@ CA_REST_PREPARE_LOW = "Set Sleep to 5%, Hunger/Thirst to 100%";
 CA_REST_PREPARED = "Test ready: Sleep 50%, Hunger/Thirst 100%. World > D: choose Sleep.";
 CA_REST_PREPARED_LOW = "Fatigue test ready: Sleep 5%, Hunger/Thirst 100%. World > D: choose Sleep.";
 CA_REST_UNAVAILABLE = "Rest needs a confirmed, living single-player character.";
-CA_REST_TIMELESS = "Time does not pass in Limbo. Timed rest is available outside it.";
+CA_REST_TIMELESS = "Use a chair or bed to rest in Limbo. Its clock runs at a 1:1 pace; T accelerates valid rest or crafting.";
 CA_REST_BUSY = "Finish the current activity before resting or waiting.";
 CA_REST_COMBAT = "Rest is interrupted or unavailable during combat.";
 CA_REST_GROUND = "Stand still on dry ground to rest or wait.";
@@ -3410,7 +3410,7 @@ CA_REST_PREPARE_LOW = "Fijar Sueño al 5%, Hambre/Sed al 100%";
 CA_REST_PREPARED = "Prueba lista: Sueño 50%, Hambre/Sed 100%. Mundo > D: elegí Dormir.";
 CA_REST_PREPARED_LOW = "Prueba de fatiga lista: Sueño 5%, Hambre/Sed 100%. Mundo > D: elegí Dormir.";
 CA_REST_UNAVAILABLE = "Descansar requiere un personaje confirmado vivo en partida individual.";
-CA_REST_TIMELESS = "En el Limbo no pasa el tiempo. El descanso por duración está disponible fuera.";
+CA_REST_TIMELESS = "Usá una silla o cama para descansar en el Limbo. Su reloj transcurre a escala 1:1; T acelera descanso o fabricación válidos.";
 CA_REST_BUSY = "Terminá la actividad actual antes de descansar o esperar.";
 CA_REST_COMBAT = "El combate interrumpe o impide el descanso.";
 CA_REST_GROUND = "Quedate quieto sobre suelo seco para descansar o esperar.";
@@ -3522,8 +3522,8 @@ CA_TABLE_CANNOT_EAT = "Sentate junto a una mesa con comida/agua disponible. Nece
 CA_TABLE_AUTO_STOP = "Automatic serving stopped. The current serving finishes normally.";
 CA_TABLE_AUTO_HELP = "F: automatic food %s | G: automatic water %s";
 CA_REST_UNTIMED = "Until you get up";
-CA_REST_TIMELESS_SEATED = "The Limbo clock stays frozen";
-CA_REST_TIMELESS_INFO = "You may sit or sleep here until you get up. Personal recovery continues; the Limbo clock stays frozen and fast-forward is unavailable.";
+CA_REST_TIMELESS_SEATED = "Limbo clock: 1 real second = 1 game second";
+CA_REST_TIMELESS_INFO = "You may sit or sleep here until you get up. Limbo time runs at a 1:1 pace. T accelerates recovery, consumption and the clock.";
 CA_REST_SIT_UNTIMED = "Sit down";
 CA_REST_SLEEP_UNTIMED = "Lie down and sleep";
 
@@ -3531,7 +3531,62 @@ CA_REST_SLEEP_UNTIMED = "Lie down and sleep";
 CA_TABLE_AUTO_STOP = "Repetición detenida. La porción actual termina normalmente.";
 CA_TABLE_AUTO_HELP = "F: comida automática %s | G: bebida automática %s";
 CA_REST_UNTIMED = "Hasta levantarte";
-CA_REST_TIMELESS_SEATED = "El reloj del Limbo permanece detenido";
-CA_REST_TIMELESS_INFO = "Podés sentarte o dormir hasta levantarte. La recuperación personal continúa; el reloj del Limbo queda detenido y no hay avance rápido.";
+CA_REST_TIMELESS_SEATED = "Reloj del Limbo: 1 segundo real = 1 segundo de juego";
+CA_REST_TIMELESS_INFO = "Podés sentarte o dormir hasta levantarte. El tiempo del Limbo transcurre a escala 1:1. T acelera la recuperación, el consumo y el reloj.";
 CA_REST_SIT_UNTIMED = "Sentarme";
 CA_REST_SLEEP_UNTIMED = "Acostarme y dormir";
+
+[default]
+CA_FAST_LIMBO_ON = "T: normal speed | x105 | Limbo base pace 1:1";
+CA_FAST_LIMBO_OFF = "T: fast-forward | Limbo base pace 1:1";
+[es]
+CA_FAST_LIMBO_ON = "T: velocidad normal | x105 | Escala base del Limbo 1:1";
+CA_FAST_LIMBO_OFF = "T: acelerar | Escala base del Limbo 1:1";
+
+[default]
+CA_WORLD_CLOCK_LIMBO = "Recorded time: %s | Limbo: 1 real second = 1 game second";
+[es]
+CA_WORLD_CLOCK_LIMBO = "Tiempo registrado: %s | Limbo: 1 segundo real = 1 segundo de juego";
+
+// 4.35.0k: estado ambiental local, separado de la exposición del personaje.
+[enu default]
+CA_WEATHER_LOCAL = "Environment: %s | %.1f °C | Humidity: %.0f%%";
+CA_WEATHER_CAMPAIGN = "Campaign environment: %s | %.1f °C | Humidity: %.0f%%";
+CA_WEATHER_WIND_RAIN = "Wind: %s | Precipitation: %.1f mm/h";
+CA_WEATHER_WIND_VALUE = "%.1f km/h from %s";
+CA_WEATHER_CALM = "calm";
+CA_WEATHER_LIMBO = "Limbo";
+CA_WEATHER_SEWERS = "underground";
+CA_WEATHER_RESERVOIR = "reservoir";
+CA_WEATHER_MAINTENANCE = "service galleries";
+CA_WEATHER_TEMPERATE = "temperate trial";
+CA_WEATHER_UNAVAILABLE = "Local environment: no defined profile.";
+CA_WEATHER_N = "N";
+CA_WEATHER_NE = "NE";
+CA_WEATHER_E = "E";
+CA_WEATHER_SE = "SE";
+CA_WEATHER_S = "S";
+CA_WEATHER_SW = "SW";
+CA_WEATHER_W = "W";
+CA_WEATHER_NW = "NW";
+
+[es]
+CA_WEATHER_LOCAL = "Ambiente: %s | %.1f °C | Humedad: %.0f%%";
+CA_WEATHER_CAMPAIGN = "Ambiente de campaña: %s | %.1f °C | Humedad: %.0f%%";
+CA_WEATHER_WIND_RAIN = "Viento: %s | Precipitación: %.1f mm/h";
+CA_WEATHER_WIND_VALUE = "%.1f km/h del %s";
+CA_WEATHER_CALM = "calma";
+CA_WEATHER_LIMBO = "Limbo";
+CA_WEATHER_SEWERS = "subterráneo";
+CA_WEATHER_RESERVOIR = "reservorio";
+CA_WEATHER_MAINTENANCE = "galerías de servicio";
+CA_WEATHER_TEMPERATE = "templado de prueba";
+CA_WEATHER_UNAVAILABLE = "Ambiente local: sin perfil definido.";
+CA_WEATHER_N = "N";
+CA_WEATHER_NE = "NE";
+CA_WEATHER_E = "E";
+CA_WEATHER_SE = "SE";
+CA_WEATHER_S = "S";
+CA_WEATHER_SW = "SO";
+CA_WEATHER_W = "O";
+CA_WEATHER_NW = "NO";

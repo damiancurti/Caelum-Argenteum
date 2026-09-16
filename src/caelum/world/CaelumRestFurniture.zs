@@ -26,7 +26,8 @@ class CaelumRestFurniture : Actor abstract
     override bool Used(Actor activator)
     {
         let user = CaelumPlayer(activator);
-        if (!CanReach(user) || (user.player.cmd.buttons & BT_USE) == 0) return false;
+        if (!CanReach(user) || !CaelumUseGeometry.AimedAt(user, self)
+            || (user.player.cmd.buttons & BT_USE) == 0) return false;
         return CaelumRestTrial.Open(user, self);
     }
 

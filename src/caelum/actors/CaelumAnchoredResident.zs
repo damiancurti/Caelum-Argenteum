@@ -192,7 +192,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         if (!StoryAnchored || level.MapName != "MAP01") { return Super.Used(user); }
         CaelumPlayer traveler = CaelumPlayer(user);
-        if (traveler == null || traveler.player == null) { return false; }
+        if (traveler == null || traveler.player == null
+            || !CaelumUseGeometry.AimedAt(traveler, self)) { return false; }
         if ((traveler.player.cmd.buttons & BT_USE) == 0
             || traveler.FolkloreInteractionUseLatched) { return true; }
         traveler.FolkloreInteractionUseLatched = true;

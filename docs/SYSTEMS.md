@@ -1,6 +1,211 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0h — 2026-09-16.
+Versión documental: 4.35.0k — 2026-09-16.
+
+## Estado ambiental local común (4.35.0k)
+
+### Perfiles y unidades
+
+CaelumWeatherRules asocia perfiles explícitos a ubicaciones del catálogo.
+Una muestra contiene Available, AirTemperatureC (°C), RelativeHumidityPercent
+(0–100%), WindSpeedKmh (km/h), WindFromDegrees (origen del viento, 0=N/90=E)
+y PrecipitationMmPerHour (mm/h). Es estado ambiental, no temperatura corporal,
+humedad de ropa ni sensación térmica. Las cifras siguientes son de ensayo y
+requieren balance del autor para las regiones definitivas.
+
+| Perfil | Lugar | Temperatura base | Humedad base | Viento / precipitación |
+| --- | --- | ---: | ---: | --- |
+| 1 | MAP01, Limbo | 20 °C constantes | 55% constantes | 0 km/h / 0 mm/h |
+| 2 | MAP02 y MAP04, subterráneo | 16 °C | 85% | 0 / 0 |
+| 3 | MAP03, reservorio | 15 °C | 92% | 0 / 0 |
+| 4 | MAP05, mantenimiento | 18 °C | 75% | 0 / 0 |
+| 5 | Exterior templado de ensayo, sin mapa asignado | 17 °C | 45–100% resultante | 0–24 km/h / 0–8 mm/h |
+
+En perfiles 2–4, la temperatura añade ciclo anual ±2 °C, diario ±0,25 °C
+y variación de frente ±0,25 °C. Humedad = base ±2 puntos. No precipita ni
+sopla viento por ser interiores subterráneos; no se deduce exposición mirando
+la textura del techo. Es un perfil por mapa, sin microzonas espaciales aún.
+El Limbo no hereda estaciones terrestres sólo por tener fecha y reloj.
+
+El perfil 5 usa ciclo anual ±9 °C (máximo cerca del 15 de enero), diario ±4 °C
+(máximo a las 15 h), frente ±3 °C y enfriamiento por precipitación de 0,25 °C
+por mm/h. Humedad combina 45 + variación 0..25 + precipitación ×4, limitada
+a 100. Precipitación interpola nodos 0..8 mm/h; viento interpola vectores de
+magnitud 0..24 km/h para evitar saltos al cruzar el norte. Es un generador
+de prueba, no una reconstrucción del clima argentino de 1889.
+
+### Calendario, determinismo y persistencia
+
+CaelumWeatherState es Inventory oculto, único, no arrojable y conservado al
+cambiar de hub. Contiene Seed (1..32748), Revision, SourceMap, LocationId,
+Profile, SampleDate, SampleMinute y Current, un CaelumWeatherSample serializado.
+La semilla se crea una sola vez con un canal RNG propio; consultar la muestra
+no consume números aleatorios de combate ni genera otra semilla.
+
+La muestra resuelve fecha/hora de campaña y semilla directamente. Frentes de
+seis horas interpolados con f²(3−2f), ciclos diario/anual continuos y límites
+explícitos. El cálculo funciona en los años 1..9999; fecha o perfil inválidos
+limpian valores y marcan Available=false, sin conservar datos del mapa previo.
+El generador usa enteros acotados para evitar desbordamientos en el hash.
+
+CaelumWorldClockTicker llama Sync después de su paso ordinario. Pump lo llama
+después de cada paso adicional, antes de consumibles/recursos. Sync sólo recalcula
+al cambiar fecha/minuto/perfil/mapa/revisión; el clima no mantiene otro contador
+de tiempo. Una misma fecha y semilla producen la misma muestra con ritmo normal,
+T, guardado/carga o regreso a un mapa. No se reproducen tics omitidos: se obtiene
+el estado ambiental actual al llegar. Esto no simula eventos de otros actores.
+
+El minuto de juego ocupa 60 s reales en Limbo y 3 s reales afuera a velocidad
+normal. T aplica el mismo reloj local. Pausa y juego cerrado no acumulan tiempo.
+Los calendarios de prueba se consultan sólo para su vista; el clima siempre usa
+DateSerial/CivilDayTics de campaña. Leer el Diario o un informe no adelanta reloj,
+clima, necesidades ni fabricación. Guardados 0j reciben el estado al primer paso
+válido, conservando anclas, muebles, raciones, recipientes, trabajos y misiones.
+
+### Consulta y alcance del incremento
+
+Diario > Mundo añade dos líneas entre fecha y lugares conocidos: perfil,
+temperatura/humedad y viento/precipitación. Si se activa una fecha diagnóstica,
+la línea dice «Ambiente de campaña» para distinguirla. Un mapa sin perfil muestra
+esa ausencia. No se añaden controles a T ni se cambia la navegación del Diario.
+
+    netevent ca_debug_weather_report
+    netevent ca_debug_weather_sample PERFIL DIAS_RELATIVOS HORA
+
+report es de sólo lectura. sample acepta perfiles 1..5, hora 0..23 y días dentro
+del calendario; devuelve una muestra de prueba de esa fecha/hora usando la
+semilla actual. Por ejemplo «5 0 15» consulta el exterior templado hoy a las 15 h.
+No cambia Current, fecha, semilla, recursos, mapa ni clima efectivo. Un día puede
+ser seco; los resultados varían con fecha y semilla. Las entradas inválidas se
+rechazan antes de evaluar. No hacen falta comandos para consultar el clima local.
+
+Este incremento publica datos y los integra temporalmente. No aplica penalidades
+de calor/frío, humedad corporal/equipo, Amparo, cambios de sellos ni partículas,
+audio, luz o cielo. La simulación térmica sigue en V5.1; sus curvas requieren
+balance. Horarios, viajes con duración y eventos programados son el bloque
+pendiente siguiente de 4.35. Los apartados anteriores por versión conservan
+su contexto histórico y se interpretan con este estado actual.
+
+## Reglas vigentes de tiempo, consumo, Use y áreas (4.35.0j)
+
+Esta sección sustituye los valores anteriores de reloj del Limbo, consumo
+sentado, tamaño de estaciones y radio de Sueño. Las secciones por versión
+posteriores en el documento conservan el contexto de cada incorporación.
+
+### Tiempo local y sueño
+
+SecondsPerGameHour devuelve 3600 en Limbo y 180 fuera. El reloj conserva su
+unidad previa de 6300 tics por hora; LimboSubTics guarda el resto entero 0..19
+entre pasos. Así, 126000 pasos personales son una hora de Limbo y 6300 son una
+hora exterior. Guardar, cargar o cambiar de mapa conserva el resto; no cambia
+el ancla de campaña 03/11/1889 09:00 ni reconstruye tiempo antes congelado.
+Sólo cuenta simulación activa, sin sincronizar con el reloj del sistema ni
+recuperar tiempo con el juego cerrado. Escape conserva la pausa nativa.
+
+El gasto de necesidades por hora, la recuperación al dormir y la regeneración
+diaria de recursos ambientales usan la hora local. Sueño recupera 100 puntos
+en 8 horas de juego, valor confirmado: 8 horas reales en Limbo o 24 minutos
+reales afuera a velocidad normal. Comodidad no multiplica esta recuperación.
+Los efectos expresados por segundo conservan sus segundos de simulación:
+dormir drena 10 Lucidez/s sin regeneración; el aturdimiento no despierta.
+Costes, reutilización de habilidades, consumibles y fabricación no se convierten
+en horas. T x105 aplica la misma escala local por subpaso y las guardas previas.
+MAP01 mantiene muebles sin duración; suelo/bolsa temporizados siguen afuera.
+
+### Comida y agua al estar sentado
+
+CaelumRegenerationPower conserva sus diez pulsos y añade SeatedMealSubTics.
+Sólo comida/agua, durante una sesión válida de silla, procesan un tic del
+efecto cada diez pasos personales. Se compensa la cuenta nativa de EffectTics
+en los otros nueve pasos. La porción completa dura 100 segundos en vez de 10.
+Una ración de comida sigue recuperando 10 puntos; una ración de agua o un sorbo
+conserva su rendimiento y volumen según la masa corporal. No se aumenta el
+rendimiento bruto ni se gastan porciones extra para compensar la lentitud.
+
+Levantarse procesa lo pendiente a velocidad ordinaria, sin reiniciar el efecto.
+Volver a sentarse recupera el ritmo lento; pulsos, fracción y duración se guardan.
+Pociones y bebida energética conservan su duración. F/G continúa hasta saciedad,
+esperando cada efecto; saciarse impide otra ración aunque luego haya gasto pasivo.
+Comer sigue descontando Sueño = Hambre efectivamente restaurada / 4. Las tasas
+pasivas/de regeneración se calculan aparte con la comodidad aceptada.
+
+### Interacción y tamaño de estaciones
+
+USESPECIAL hacía que una estación detuviera Use incluso cuando rechazaba abrirse
+por estar fuera de alcance o en otra planta. Se retira ese indicador y se usa
+el resultado de Used; el rechazo permite seguir la búsqueda nativa. Las rutas
+explícitas Activate/Deactivate mantienen compatibilidad con sus llamadas.
+CaelumUseGeometry intersecta el rayo de mirada con el cilindro físico del actor
+dentro de UseRange. Camas, sillas, bloques de mesa, residentes y estaciones lo
+consultan antes de abrir. Se mantienen alcance, visibilidad, paredes y colisión
+nativos; no se amplía UseRange ni se cambia el cuerpo del jugador.
+
+DimensionsRevision=2 migra estaciones a escala 0,75, radio 30 y altura 72,
+también al cargar partidas 0h/0i. Son el 75% de las tres dimensiones de 0i y el
+150% de las anteriores a 0h. Se limpia el USESPECIAL guardado; asignación
+absoluta e idempotente, sin perder redes, capacidades, recetas ni reservas.
+
+### Radios base aprobados
+
+Base antes de AbilityRangePercent; escala de desarrollo de 32 MU por metro.
+
+| Efecto | Radio base (MU) | Metros |
+| --- | ---: | ---: |
+| Canalización de sellos | 1280 | 40 |
+| Habilidades de clase; actualmente Sueño del arcanista | 1280 | 40 |
+| Impacto del sello de relámpago | 256 | 8 |
+| Golpe de suelo del Zupay | 192 | 6 |
+| Explosión de estatuilla | 128 | 4 |
+
+SEAL_CHANNEL_BASE_RADIUS mantiene 128 × 10. CLASS_ABILITY_BASE_RADIUS referencia
+esa misma base; Sueño y sellos multiplican por AbilityRangePercent/100. A 150%,
+ambos alcanzan 1920 MU. Se conserva la selección de Sueño por distancia y visión:
+incluye aliados visibles, excluye al lanzador y objetivos tras paredes. Duración
+10 s, despertar por impacto, reutilización 60 s y coste base confirmado de
+1000 Ánima con su reducción habitual. La base se aplica en lanzamientos nuevos;
+no vuelve a lanzar ni alarga efectos ya guardados.
+
+Los barridos de hacha/mandoble/alabarda usan sus alcances de arma 76/80/84 MU;
+no son radios de habilidades. La estatuilla cargada conserva radio ×√2, unos
+181,02 MU base. No cambian los demás efectos ni se implementan habilidades V5.
+El peso propio de la bolsa de dormir, 2 kg, queda confirmado.
+
+## Correcciones de acceso y avance personal en Limbo (4.35.0i)
+
+SurfaceHeight usa 34,1 × Scale.Y / level.pixelstretch: la altura del actor que
+representa una ración coincide con la malla del tablero con CorrectPixelStretch.
+Cada presentación corrige su Z también después de cargar; no cambia mallas,
+cantidades, litros, digestión ni capacidades 4/18/60.
+
+MoveLayout y Align trasladan las mismas mesas, bloques de colisión, sillas y
+figuras. La cama se traslada junto con la mesa del dormitorio. Se valida el
+conjunto y se revierte si no cabe. Una ocupación activa aplaza la operación;
+el controlador reintenta. Nuevos marcadores de acceso migran los guardados 0h
+aunque sus preparaciones anteriores estuvieran marcadas como terminadas.
+
+La altura de la cama permite el paso nativo. Las mesas orientales reciben un
+margen adicional de 16 MU hacia el fondo para apoyar las dos sillas sobre el piso.
+El ramal lateral de tres estaciones de Ronnie pasa al oeste de su taller, sin
+perder instancias, tipos, red ni trabajos reservados. La mesa de cueva se desplaza
+100 MU al este, perpendicular al plano de su puerta y hacia la pared falsa.
+
+CaelumMainM00RuloTrial.EnsurePracticeTarget consulta la existencia real del blanco
+en MAP01. Lo crea si falta y cabe; una preparación fallida se reintenta. Se conserva
+el actor encontrado, sin duplicación. IsActive/NearPractice siguen limitando el
+registro de ejercicios al momento y lugar de la prueba; no cambia su progreso.
+
+El avance rápido deja de rechazar MAP01. Muebles de descanso y redes de talleres
+de la mansión son contextos habilitados; combate, peligros y demás exclusiones
+siguen aplicándose. Pump usa AdvanceOnMap, por lo que el reloj permanece detenido
+en Limbo. PersonalStepSerial avanza una vez por subpaso; el descanso sin duración
+compara ese serial y level.maptime para recuperar Sueño/contar pasos exactamente
+una vez. El serial se guarda y no se reinicia al alternar T. Afuera sigue avanzando
+el reloj junto con la simulación. Las sesiones de suelo/bolsa por duración siguen
+disponibles fuera del Limbo; en MAP01 se usa el mobiliario sin duración.
+
+T se procesa únicamente como ca_time_fast. Se elimina la rama de T que emitía
+ca_debug_advance_crafting_time y se actualiza la ayuda de Oficios. El comando de
+depuración continúa accesible explícitamente desde la consola.
 
 ## Comidas automáticas y muebles del Limbo (4.35.0h)
 
@@ -27,7 +232,8 @@ retirarlo. La colisión CANPASS distingue los muebles de plantas superpuestas.
 En mapas atemporales, exclusivamente los muebles ofrecen sesiones Untimed con
 duración cero. CaelumRestTrial usa USDF 43515/43516; LastUntimedTic limita el
 descanso a un paso personal por tic del motor. El reloj/calendario permanece
-inmóvil. El descanso temporal de suelo/bolsa y T continúan rechazados en MAP01.
+inmóvil. Desde 0i T acelera la simulación personal del mueble; el descanso de
+suelo/bolsa por duración se mantiene fuera de MAP01.
 Dormir recupera Sueño con su tasa habitual y drena 10 Lucidez/s, aun aturdido.
 
 CaelumCraftingStation fija radio 40, altura 96 y escala 1 frente a 20/48/0,5.
@@ -64,8 +270,9 @@ agua, acciones incompatibles y Powerup sin adaptador. También rechaza un actor
 cercano con Sueño inducido, para no omitir el tiempo restante de ese efecto.
 Una silla o bolsa por sí sola no convierte otro lugar en zona segura. Las zonas
 iniciales cubren llegadas/muebles/banco de MAP02–MAP05 y las mesas de MAP03.
-Fuera de ellas sigue disponible el descanso normal. MAP01 rechaza avance y
-sesiones por duración; no cambia la excepción del Limbo.
+Fuera de ellas sigue disponible el descanso normal. Desde 0i MAP01 permite
+avance personal en muebles/talleres; mantiene calendario detenido y sesiones
+de mobiliario sin duración.
 
 No se usa i_timescale. El servicio acelera los sistemas propios que incorpora,
 no IA, física, puertas, scripts ni Thinkers arbitrarios. Clima, rutas y eventos
@@ -193,7 +400,7 @@ La preparación 3 de CaelumRestTrial y ca_debug_rest_bag son optativas y sólo
 para MAP02–MAP05. Entregan el objeto mediante la recogida nativa si no estaba
 en el inventario; si falla por capacidad, destruyen el intento y notifican.
 No rellenan recursos. El informe ca_debug_rest_report sigue siendo de consulta
-y muestra 4.35.0h/factor. El panel muestra el multiplicador y divisor vigentes.
+y muestra 4.35.0i/factor. El panel muestra el multiplicador y divisor vigentes.
 
 ## Mobiliario y cámara del descanso (4.35.0e)
 

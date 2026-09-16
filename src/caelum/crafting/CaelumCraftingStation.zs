@@ -6,26 +6,30 @@ class CaelumCraftingStation : CaelumMovableProp
     // Cero conserva las redes libres de otros mapas. MAP01 separa habitaciones.
     int CraftingRoomGroup;
     bool DimensionsUpdated;
+    int DimensionsRevision;
     int LastCraftingNetworkScanToken;
     Actor LastCraftingNetworkScanPlayer;
 
     Default
     {
-        Radius 40;
-        Height 96;
-        Scale 1.0;
+        Radius 30;
+        Height 72;
+        Scale 0.75;
         // args[0] queda en 0: la movilidad existe por herencia, pero se
         // mantiene desactivada hasta definir masa y requisito físico.
         +CANPASS
-        +USESPECIAL
+        // Used devuelve false si el puesto está en otro piso o fuera de mira.
+        // USESPECIAL detenía el trazado aun cuando OpenForActivator rechazaba.
         Activation THINGSPEC_Switch;
     }
 
     void EnsureDimensions()
     {
-        if(DimensionsUpdated)return;
+        if(DimensionsRevision>=2)return;
         DimensionsUpdated=true;
-        A_SetSize(40,96,false);Scale=(1,1);
+        DimensionsRevision=2;
+        bUseSpecial=false;
+        A_SetSize(30,72,false);Scale=(0.75,0.75);
     }
 
     override void PostBeginPlay(){Super.PostBeginPlay();EnsureDimensions();}
@@ -116,6 +120,14 @@ class CaelumCraftingStation : CaelumMovableProp
     override void Activate(Actor activator)
     {
         OpenForActivator(activator);
+    }
+
+    override bool Used(Actor activator)
+    {
+        let user=CaelumPlayer(activator);
+        if (user==null || !CanReachFrom(user) || !CaelumUseGeometry.AimedAt(user,self)) return false;
+        OpenForActivator(user);
+        return user.CraftingMenuOpen && user.ActiveCraftingStationActor==self;
     }
 
     override void Deactivate(Actor activator)

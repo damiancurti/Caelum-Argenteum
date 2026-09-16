@@ -354,6 +354,10 @@ class CaelumConstants : Object
     const ELEMENTAL_EFFECT_DAZZLE = 4;
     const ELEMENTAL_EFFECT_LIGHTNING_STUN = 5;
     const ESSENCE_EXPLOSION_BASE_RADIUS = 128;
+    // Radio común aprobado: sellos y habilidades de clase, antes de atributos.
+    const SEAL_CHANNEL_BASE_RADIUS = ESSENCE_EXPLOSION_BASE_RADIUS
+        * SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER;
+    const CLASS_ABILITY_BASE_RADIUS = SEAL_CHANNEL_BASE_RADIUS;
     const ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO = 0.10;
     // Ficha tier 1 de la carabina, reemplazo del arco corto.
     const CARBINE_TIER_ONE_BASE_WEIGHT = 12.0;
@@ -1101,7 +1105,7 @@ class CaelumConstants : Object
     const LUCIDITY_STATE_DIZZY = 1;
     const LUCIDITY_STATE_STUNNED = 2;
 
-    // Definitive world clock: one game hour equals three real minutes.
+    // Escala exterior: una hora de juego son tres minutos reales; Limbo usa 1:1.
     const REAL_SECONDS_PER_GAME_HOUR = 180.0;
     const GAME_HOURS_PER_DAY = 24.0;
     // Every loaded natural source recovers 0.1% of its own maximum per day.

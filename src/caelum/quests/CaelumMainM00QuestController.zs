@@ -28,6 +28,8 @@ class CaelumMainM00QuestController : EventHandler
     bool DiningPrepared;
     bool ExpandedStationsPrepared;
     bool MansionFurniturePrepared;
+    bool StationAccessPrepared;
+    bool MansionAccessPrepared;
 
     void RecoverChannelInfrastructure()
     {
@@ -196,7 +198,12 @@ class CaelumMainM00QuestController : EventHandler
                 if(i<across)
                 {position=origin+(i*112*xDirection,0,0);facing=yDirection>0?270:90;}
                 else if(i<7)
-                {position=origin+(0,-(i-3)*112*yDirection,0);facing=xDirection>0?0:180;}
+                {
+                    // El ramal de Ronnie va al oeste: deja libre la puerta
+                    // oriental de planta baja, centrada en (1310,336).
+                    position=origin+(group==2?336*xDirection:0,-(i-3)*112*yDirection,0);
+                    facing=group==2?0:xDirection>0?0:180;
+                }
                 else
                 {position=origin+(336*xDirection,-(i-6)*112*yDirection,0);facing=xDirection>0?180:0;}
             }
@@ -206,7 +213,7 @@ class CaelumMainM00QuestController : EventHandler
 
     void PrepareExpandedStations()
     {
-        if(ExpandedStationsPrepared)return;
+        if(ExpandedStationsPrepared && StationAccessPrepared)return;
         if(level.MapName=="MAP01")
         {
             for(int group=1;group<=5;group++)PlaceRoomStations(group,(0,0,0),group==3 || group==4?-1:1);
@@ -214,6 +221,7 @@ class CaelumMainM00QuestController : EventHandler
         }
         else CaelumSewerTrialSupport.PrepareWorld();
         ExpandedStationsPrepared=true;
+        StationAccessPrepared=true;
         for(int i=0;i<MAXPLAYERS;i++)
             if(playeringame[i] && players[i].mo is "CaelumPlayer")
                 CaelumPlayer(players[i].mo).RefreshActiveCraftingStationSession();
@@ -489,8 +497,15 @@ class CaelumMainM00QuestController : EventHandler
         PrepareBullRoom();
         RecoverChannelInfrastructure();
         PrepareExpandedStations();
-        if(!MansionFurniturePrepared && level.maptime%TICRATE==0)
-            MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
+        if(level.maptime%TICRATE==0)
+        {
+            if(!MansionFurniturePrepared || !MansionAccessPrepared)
+            {
+                MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
+                MansionAccessPrepared=MansionFurniturePrepared;
+            }
+            RuloWorldPrepared=CaelumMainM00RuloTrial.EnsurePracticeTarget()!=null;
+        }
         bool foolNeeded = false;
         bool foolRevealed = false;
         bool returnReady = false;

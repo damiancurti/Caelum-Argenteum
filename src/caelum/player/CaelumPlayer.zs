@@ -16442,8 +16442,7 @@ class CaelumPlayer : DoomPlayer
             GetSealChannelAdrenalinePerTic(CombatChannelSealTier);
         CaelumMainM00MagicTrial.PrepareChannel(self, seal);
         if (CurrentAdrenaline < CombatChannelAdrenalinePerTic) return;
-        CombatChannelRadius = CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
-            * CaelumConstants.SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER
+        CombatChannelRadius = CaelumConstants.SEAL_CHANNEL_BASE_RADIUS
             * (DerivedStats != null
                 ? DerivedStats.AbilityRangePercent / 100.0 : 1.0);
         CaelumChannelEffect effect = CaelumChannelEffect(
@@ -16460,7 +16459,7 @@ class CaelumPlayer : DoomPlayer
         // El propio icono del Sello muestra su estado; no tapa el centro.
     }
 
-    // User1/User3/User4 quedan conectados al arma pero no ejecutan mecánicas
+    // User1/User3 y las clases distintas del arcanista conservan su reserva
     // hasta que sus respectivos bloques sean implementados.
     void ReserveRacialAbilityInput()
     {
@@ -18193,7 +18192,7 @@ class CaelumPlayer : DoomPlayer
         CurrentHunger = Max(0.0, CurrentHunger
             - CaelumConstants.SURVIVAL_MAXIMUM
             / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS
-                * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
+                * CaelumWorldClock.SecondsPerGameHour(level.MapName))
             * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
         // La piscina hidrata directamente y permite llevar agua en recipientes.
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
@@ -18216,7 +18215,7 @@ class CaelumPlayer : DoomPlayer
             CurrentThirst = Max(0.0, CurrentThirst
                 - CaelumConstants.SURVIVAL_MAXIMUM
                 / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
-                    * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
+                    * CaelumWorldClock.SecondsPerGameHour(level.MapName))
                 * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
         }
         // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
@@ -18225,13 +18224,13 @@ class CaelumPlayer : DoomPlayer
         if (CaelumSleepRules.IsSleeping(self))
         {
             if (ForcedSleepTics > 0 || CaelumRestState.HasPendingTic(self))
-                CurrentSleep = CaelumRestRules.RecoverSleep(CurrentSleep);
+                CurrentSleep = CaelumRestRules.RecoverSleep(CurrentSleep, CaelumWorldClock.MapTimeScale(level.MapName));
         }
         else
             CurrentSleep = Max(0.0, CurrentSleep
                 - CaelumConstants.SURVIVAL_MAXIMUM
                 / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS
-                    * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
+                    * CaelumWorldClock.SecondsPerGameHour(level.MapName))
                 * DerivedStats.SleepLossMultiplier / TICRATE);
         UpdateSurvivalStates();
     }

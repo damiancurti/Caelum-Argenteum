@@ -5,59 +5,57 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0h.** Apply this source patch over the complete,
-accepted **4.35.0g** project, merge its folders and rebuild with `run_dev.bat`.
-It adds automatic table meals, digestive Sleep loss, visible plated food,
-furnished mansion bedrooms and larger relocated crafting stations.
+**Current release: 4.35.0k.** Apply this source patch over the complete
+**4.35.0j** project, merge its folders and rebuild with `run_dev.bat`.
+The author is still testing 0j; this release does not mark those tests accepted.
 
-Food reduces Sleep by one percentage point per four points of Hunger actually
-restored. Recovery capped at 100 only charges for the portion restored. Drinking
-does not apply this digestive cost. Existing survival drain remains separate.
+The first local environment service now records air temperature (°C), relative
+humidity (%), wind speed/direction (km/h) and precipitation (mm/h). Open
+**Journal > World** to read the current location's conditions alongside its date.
+The campaign seed and sample survive save/load and travel. Both ordinary time
+and x105 rest/crafting use the same clock; returning to a map resolves its current
+weather directly. An undefined location reports no profile instead of keeping
+conditions from the previous map.
 
-Use a table while standing to place or retrieve real carried food and water.
-Sit beside it, then press **F** for automatic food or **G** for automatic water.
-Each channel waits for the current serving to finish and repeats until full,
-out of provisions or interrupted. Press its key again to stop future servings;
-the serving already consumed finishes normally. Getting up stops both channels.
-Satiety stops the sequence even if passive drain subsequently lowers the resource.
-Partially filled containers retain their remaining water and identity.
+Initial profiles are provisional development values. Limbo stays at 20 °C/55%
+humidity; sewers/chambers use 16 °C/85% baselines, reservoir 15 °C/92% and service
+galleries 18 °C/75%. Underground profiles vary gently with local time and season,
+with no outdoor wind or precipitation. A temperate outdoor test profile supports
+wind and rain diagnostics without assigning outdoor weather to the sewer maps.
+These values are not historical meteorological data or approved regional balance.
 
-| Table | Seats | Food/drink spaces |
-| --- | ---: | ---: |
-| Small round | 2 | 4 |
-| Normal rectangle | 6 | 18 |
-| Large rectangle | 12 | 60 |
+This patch publishes environmental state. Body/equipment temperature, heat/cold
+penalties and wetness belong to V5.1; weather particles, sound and lighting remain
+future audiovisual content. The 0j timing, meals, Use fixes, station dimensions
+and 1280-MU class area base remain in place.
 
-Every placed ration shows an original plate with food, or a cup for water.
-The display follows the real stored item. Large tables remain twice the normal
-length and width. Furnished tables grant no supplies; Trucazo remains future work.
+Use `netevent ca_debug_weather_report` for the read-only **4.35.0k** report.
+Optional `netevent ca_debug_weather_sample PROFILE DAY_OFFSET HOUR` reads a test
+sample without changing campaign state. See **PRUEBAS_4_35_0k.txt** for installation,
+profile values and manual checks. The previous 0j test list remains available.
 
-Each of Rulo, Ronnie, Caella and Argento's bedrooms now contains one bed and a
-small table with two chairs. Their crafting stations move to the corresponding
-ground-floor rooms. All station dimensions double, including native collision;
-all twelve station types remain together on the second floor. The cave-access
-room has a six-seat table, and the second floor has a twelve-seat table.
-Workshop dialogue and quest directions reflect the new locations.
-
-MAP01 furniture offers sitting/sleeping until the player gets up, without a
-duration: personal simulation continues while the Limbo campaign clock stays
-frozen. **T** remains unavailable there. Elsewhere, the accepted optional fast
-advance still requires valid rest/sleep or active crafting in a safe trial area.
-Sleeping still drains 10 Lucidity per simulation second without regeneration;
-Lucidity stun does not end sleep. The accepted sprite orientation is preserved.
-
-Native GZDoom 4.14.2 on Linux compiled the project and checked digestive caps,
-4/18/60-item limits, real item displays, automatic satiety/stop behavior, native
-save/load, mansion seating and beds, frozen Limbo time, enlarged station volumes
-and connected workshop capabilities. Native screenshots were inspected.
-The engine, IWAD, saves, screenshots and QA fixtures are excluded from the patch.
-Windows controls and manual acceptance are covered in **PRUEBAS_4_35_0h.txt**.
-
-The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
-All inherited and cross-system work is assigned to V5 after that export,
-starting with the modular refactor in V5.0 and thermal exposure in V5.1.
+The roadmap remains **V4 through 4.37 → external playtest export → V5**.
 
 ## Implemented
+
+- One persistent local weather service and serializable sample per character,
+  driven by campaign date/minute, location profile and a dedicated saved seed.
+- Shared ordinary/x105 integration, deterministic reconstruction after travel,
+  smooth six-hour fronts and explicit bounds for climate variables.
+- Local environmental readings in World; test calendar views and diagnostic
+  queries do not overwrite campaign climate. Uncatalogued maps have no profile.
+- Stable Limbo and damp underground trial profiles, plus an unassigned temperate
+  exterior profile for isolated wind/precipitation testing.
+
+- Table serving height accounts for CorrectPixelStretch; saved displays adjust
+  without recreating their real inventory items or changing the accepted designs.
+- Revised mansion furniture and northeast workshop placement, with native door
+  passage checks. Save migration preserves actor identity and table contents.
+- A real Rulo practice target is present and recovered if missing. Quest flags,
+  progress, ammunition, rewards and the bull encounter retain their rules.
+- Limbo uses saved fractional clock steps for its 1:1 calendar. T accelerates
+  the local clock and personal simulation only during valid rest or crafting.
+- The journal no longer maps T to the old +10-minute debug operation.
 
 - Food digestion: actual Hunger recovery / 4 is deducted from Sleep, clamped
   at zero. This applies to inventory and table food through their shared pulses.
@@ -66,8 +64,9 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - Storage expanded to 4/18/60 real objects; original procedural plates and cups
   replace the previous pickup sprites. Older 0g table contents load correctly.
 - Four furnished bedrooms, a cave-room dining set and an upstairs banquet table.
-  Timeless furniture sessions use ordinary personal ticks and never fast-forward.
-- All crafting stations scaled to twice their previous dimensions; 26 mansion
+  Untimed Limbo furniture sessions use local time and can fast-forward
+  together with the local campaign clock.
+- All crafting stations use 150% of their pre-0h dimensions; 26 mansion
   stations relocated downstairs, all 12 upstairs retained and all five networks
   connected. Existing actors migrate once; their references are preserved.
 
@@ -84,8 +83,8 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - Sleeping, including class-induced sleep, drains 10 Lucidity/s, clamps at zero
   and suspends recovery. Lucidity stun alone cannot end voluntary sleep.
 - Arcanist User4 now casts the authored area Sleep: 10 seconds, hit wakes,
-  60-second reuse and trial base cost 1000 Anima with the existing cost modifier.
-  Its provisional radius reuses the 128-MU magic area and ability-range modifier;
+  60-second reuse and confirmed base cost 1000 Anima with the existing modifier.
+  Its 1280-MU base radius is shared with seal channels and uses ability range;
   nearby allies are affected too, while the caster and unseen targets are excluded.
 
 
@@ -106,7 +105,7 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - No comfort multiplier applies to Sleep, Anima, Lucidity or medicine pulses.
   Pending breathing recovery after immersion also uses the active factor; its
   normal three-second timing remains the baseline outside comfort rest.
-- Read-only rest diagnostics identify 4.35.0h and report the active factor.
+- Read-only rest diagnostics identify 4.35.0j and report the active factor.
 
 - One original wooden chair and one cot per sewer map, placed on first entry
   or when loading an older save. Repeated preparation keeps one pair.
@@ -125,8 +124,8 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 - Literal state-label lookups for both the initial rest pose and its subsequent
   visual update; the selected lying/seated poses are unchanged.
-- Required timeless-map catalogue included in the hotfix. MAP01 remains the
-  Limbo exception; every other map keeps the accepted common clock rate.
+- The catalogue identifies MAP01 as Limbo with a 1:1 local clock; every other
+  map keeps the accepted rate of one game hour per 180 simulation seconds.
 - Project validation accepts numeric hotfix suffixes such as 4.35.0d1 while
   retaining the existing resource, documentation and localization checks.
 
@@ -144,7 +143,8 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
   Escape preserves native pause. Use release remains native and is not latched.
 - Native USDF offers Sleep/Wait with explicit durations, plus optional reserve
   presets. Opening, loading or travelling grants no resources. Limbo rejects
-  these timed sessions and keeps the accepted campaign date frozen.
+  these timed ground/bag sessions; its furniture offers untimed sessions while
+  the campaign clock advances at 1:1.
 - Read-only `netevent ca_debug_rest_report`; explicit `ca_debug_rest_hit` asks
   for one point of native impact damage to check interruption in empty sewers.
 
@@ -152,19 +152,20 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 - Civil calendar rules for years 1–9999, with month lengths and Gregorian leap
   years. A native hidden Inventory stores a date/time anchor to the existing
   clock; no duplicate ticker or operating-system time is used.
-- Campaign epoch: 1889-11-03 09:00. MAP01 freezes the authoritative world
-  clock while player simulation and interactions remain active. Every other
-  map, including uncatalogued test maps, uses one clock tick per simulated tick.
+- Campaign epoch: 1889-11-03 09:00. MAP01 uses one stored world-clock unit per
+  twenty personal steps, retaining its fractional remainder. Every other map,
+  including uncatalogued test maps, uses one clock unit per simulated tick.
 - One-time migration anchors previous saves to the campaign epoch at their
   existing clock value. Old trial dates are discarded; elapsed counters and
   journey stamps are preserved. Previous time spent outside Limbo is unknown.
 - Separate saved campaign and diagnostic anchors share the same clock. World
   labels tests explicitly; normal calendar queries always return the campaign.
-  The monthly southern seasonal cycle remains a test convention, without
-  weather, thermal exposure, light changes or rest.
+  The monthly southern seasonal labels remain a test convention. Local climate
+  uses separate provisional continuous cycles; body exposure and light changes
+  remain future work.
 - `netevent ca_debug_calendar_set YEAR MONTH DAY` assigns a test date;
   `ca_debug_calendar_edge` prepares midnight after 12 simulated real seconds
-  outside Limbo. Neither changes the campaign, clock, resources or travel stamps.
+  at either local rate. Neither changes the campaign, clock, resources or travel stamps.
   `ca_debug_calendar_report` reads the campaign and optional preview;
   `ca_debug_calendar_clear` returns World to the continuing campaign date.
 - MAPINFO enables non-pausing conversations in every project map. The shared
@@ -173,12 +174,12 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 - Native Inventory stores completed days and the current day's simulation tics.
   A stateless StaticEventHandler advances it once per simulated tic after the
-  single-player character is confirmed, except in Limbo. Previous saves also
+  single-player character is confirmed, applying the local map rate. Previous saves also
   receive the clock and one-time campaign initialization when needed.
 - Integer counters preserve hour/day boundaries without accumulated fractional
   error. The scale comes from the same accepted constants used by survival.
-- World displays elapsed recorded days and HH:MM outside Limbo, or a timeless
-  location notice inside. Its next line displays the civil date and season.
+- World displays elapsed recorded days and HH:MM, including a 1:1 rate notice
+  inside Limbo. Its next line displays the civil date and season.
   Player needs, regeneration, damage and cooldowns retain their personal timers.
 - Voluntary native pause stops the clock. Caelum conversations and the journal
   allow simulation to continue; crafting retains its existing activity rules.
@@ -623,17 +624,20 @@ starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
-Remaining before 4.36: local temperature/wind/precipitation/humidity, scheduled
-events and timed travel, their adapters to the common clock, and integration.
+The initial local climate state and its normal/fast clock adapter are in 0k,
+using provisional profiles. Remaining before 4.36: scheduled events and timed
+travel, their clock integration and combined acceptance checks. Definitive
+regional climate values still need author design.
 The fast path does not simulate arbitrary AI, physics, doors or third-party
 Thinkers. Extending it outside designated safe areas requires those systems'
-explicit timing contracts. The 8-hour Sleep recovery rate remains provisional.
+explicit timing contracts. The 8-game-hour full Sleep recovery rate is confirmed.
 Fares, vehicles, route incidents and a travel minimap remain future content.
 New campaign content and inherited expansion follow the V4 playtest export.
 Of the authored class abilities, only Arcanist Sleep is added here; the remaining
 class abilities and racial toggles stay in the V5 abilities block.
 Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
+Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
 Narrative faction assignments, rank thresholds and cross-faction relations
 still require authored design.
@@ -660,21 +664,21 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-The author accepted all 4.35.0g checks, including sprite orientation. The new 0h systems passed native Linux
-engine checks; Windows keyboard/controller input, the author's renderer and
-the complete hub traversal still need manual acceptance using
-**PRUEBAS_4_35_0h.txt**. Save tests cover both automatic meal channels, all sixty
-items on a full large table, remaining water and a seated dining save from 0g.
-The complete narrative route through the relocated workshops remains a manual
-acceptance check; automated room and network checks do not replace that route.
+Native GZDoom 4.14.2/Linux checks cover profile bounds, deterministic sampling,
+seasonal/daily cycles and front continuity, normal/x105 equivalence in Limbo and
+sewers, native save/load, actual sewer travel and an active 0j meal save. Journal
+screenshots cover 16:9 and 4:3 with the full known-location/connection lists.
+The author still needs to check Windows rendering/controls and accept the trial
+climate values using **PRUEBAS_4_35_0k.txt**. The ongoing 0j manual tests remain
+pending separately; no success is inferred from this patch being prepared.
 
 ## Build and run
 
-Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_35_0h.txt** into the complete **4.35.0g** project, replacing matching
+Close GZDoom. Merge the supplied **src**, **docs**, **README.md** and
+**PRUEBAS_4_35_0k.txt** into the complete **4.35.0j** project, replacing matching
 files and keeping everything else. Models are already generated. Rebuild the
 PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
-The diagnostic `netevent ca_debug_rest_report` must identify **4.35.0h**.
+The diagnostic `netevent ca_debug_weather_report` must identify **4.35.0k**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

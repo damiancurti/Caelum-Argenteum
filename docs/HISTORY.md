@@ -1,6 +1,75 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0h — 2026-09-16.
+Versión documental: 4.35.0k — 2026-09-16.
+
+## 4.35.0k — estado climático local y consulta (2026-09-16)
+
+- El autor solicita el siguiente parche mientras prueba 0j. Se registra su
+  aceptación como pendiente y se avanza con el primer bloque de clima de 4.35.
+- Muestra común de temperatura, humedad, viento y precipitación por ubicación
+  y minuto de campaña. Semilla persistente, perfiles explícitos y resolución
+  determinista sin reproducir horas de tics al volver a un mapa.
+- Limbo estable; tres perfiles subterráneos con variaciones suaves; perfil
+  exterior templado sólo para consulta de ensayo. Todos los valores climáticos
+  son provisionales, no balance del autor ni registros meteorológicos históricos.
+- Integración con los pasos normales y x105 del reloj. Guardado/carga conserva
+  semilla/muestra; un mapa sin perfil limpia los valores anteriores. Calendario
+  de prueba e informes de consulta no cambian el clima de campaña.
+- Diario > Mundo incorpora dos líneas ambientales en español/inglés, conservando
+  lugares, conexiones, registros y controles. Se agregan dos consultas de consola.
+- El alcance térmico del personaje, efectos audiovisuales por clima y extensiones
+  de sellos conservan sus bloques posteriores. Eventos/viajes programados siguen
+  pendientes antes de cerrar 4.35.
+- Verificación nativa GZDoom 4.14.2/Linux de límites, ciclos, determinismo, x105,
+  persistencia, viajes y migración de una comida activa 0j; revisión del Diario.
+  Aceptación Windows detallada en TXT, separada de esos ensayos.
+- Delta sobre 0j, sin motor/IWAD, capturas, guardados o mapas de prueba.
+
+## 4.35.0j — tiempo local, comidas lentas, Use y área de clase (2026-09-16)
+
+- El autor confirma Sueño 100 puntos/8 horas, bolsa de 2 kg y coste de Sueño
+  1000 Ánima. Solicita comer/beber sentado diez veces más lento, conservando
+  las raciones; la porción dura 100 s de simulación con su rendimiento original.
+- Limbo cambia de calendario detenido a 1:1 durante simulación normal. Reloj,
+  calendario, necesidades por hora y recuperación de Sueño usan la hora local;
+  T conserva x105 en descanso/fabricación válidos. El resto fraccional se guarda.
+- Palomo menciona otro lugar que él conoce, sin equipararlo al mundo conocido
+  por el protagonista. Se mantienen las respuestas y etapas de la quest.
+- Se reproduce la interrupción nativa de Use por USESPECIAL en estaciones de
+  otras plantas y se corrige con Used. Mirada geométrica para muebles, mesas,
+  estaciones y residentes, conservando alcance y obstrucciones del motor.
+- Estaciones al 75% de 0i, 150% de antes de 0h, incluida colisión; migración
+  absoluta sin recrear actores ni perder redes, pertenencias o trabajos.
+- El autor pide radio de clase igual al de los sellos. Base común 1280 MU,
+  modificada por el atributo existente; Sueño sustituye su antiguo ensayo de
+  128 MU. Las demás habilidades de clase continúan en el bloque V5.
+- El entorno se desconectó durante el cierre inicial: el código y los ensayos
+  previos permanecieron, pero no se había creado ni entregado ZIP 0j. Recuperado
+  el entorno se revisan capturas, se añade el nuevo radio y se termina la entrega.
+- Compilación/ensayos GZDoom 4.14.2/Linux: consumo y persistencia, calendario,
+  paridad x105, fabricación, sueño guardado de 0i, estaciones, Use nativo y
+  límites/visión/atributos de Sueño y sellos. Capturas de Palomo/taller revisadas.
+  El TXT distingue estos resultados de la aceptación Windows aún pendiente.
+- Delta sobre 0i; README inglés, cinco documentos canónicos y pruebas españolas.
+
+## 4.35.0i — correcciones de 0h y aceleración del Limbo (2026-09-16)
+
+- El autor aprueba el diseño de raciones y reporta altura flotante, pasos
+  bloqueados, tecla T compartida y blanco de Rulo ausente. Solicita acelerar
+  también en Limbo manteniendo detenido el calendario.
+- Altura de platos/tazas compensada con level.pixelstretch, sin cambiar arte.
+  Se actualizan también las figuras guardadas.
+- Cama/mesa intercambian zonas en Ronnie y Argento, con margen de sillas;
+  mesa normal de cueva 100 MU al este; ramal de estaciones nordeste al oeste.
+- Se conserva identidad/contenido en guardados y se espera a levantarse antes
+  de trasladar muebles ocupados. El blanco de práctica se asegura por existencia
+  real, sin depender exclusivamente del marcador de preparación anterior.
+- T sólo acelera; +10 minutos de crafting queda en consola. Limbo adelanta
+  recursos, sueño, consumibles y fabricación, con reloj/calendario inmóviles.
+  Un serial personal guardado evita omitir o duplicar subpasos de descanso.
+- Pruebas nativas GZDoom 4.14.2/Linux de acceso, pasos por puertas, blanco y
+  crédito de ejercicio, paridad temporal, fabricación y migración de 0h.
+  Capturas revisadas. TXT para aceptación manual Windows; ZIP sólo del delta.
 
 ## 4.35.0h — comidas automáticas y mansión amueblada (2026-09-16)
 

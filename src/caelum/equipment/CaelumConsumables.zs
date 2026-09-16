@@ -76,6 +76,7 @@ class CaelumConsumableItem : PowerupGiver
                 power.EffectTics =
                     CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * TICRATE;
                 power.PulseTics = 0;
+                power.SeatedMealSubTics = 0;
                 if (GetConsumableType() == CaelumConstants.CONSUMABLE_WATER_RATION)
                 {
                     let user = CaelumPlayer(Owner);
@@ -116,6 +117,7 @@ class CaelumConsumableItem : PowerupGiver
 class CaelumRegenerationPower : Powerup
 {
     int PulseTics;
+    int SeatedMealSubTics;
     double WaterRecoveryPerPulse;
 
     Default
@@ -129,6 +131,19 @@ class CaelumRegenerationPower : Powerup
     override void DoEffect()
     {
         Super.DoEffect();
+        let user = CaelumPlayer(Owner);
+        int kind = GetRegenerationType();
+        if ((kind == CaelumConstants.CONSUMABLE_FOOD_RATION
+                || kind == CaelumConstants.CONSUMABLE_WATER_RATION)
+            && CaelumRestState.IsSeated(user))
+        {
+            // La misma porción conserva sus diez pulsos, espaciados diez veces
+            // más. Compensar el vencimiento nativo conserva su aporte total.
+            // La fracción se guarda y continúa si vuelve a sentarse.
+            SeatedMealSubTics++;
+            if (SeatedMealSubTics < 10) { EffectTics++; return; }
+            SeatedMealSubTics = 0;
+        }
         PulseTics++;
         if (PulseTics < TICRATE) { return; }
         PulseTics -= TICRATE;
@@ -323,6 +338,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         if (power == null) return false;
         power.EffectTics = CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * TICRATE;
         power.PulseTics = 0;
+        power.SeatedMealSubTics = 0;
         power.WaterRecoveryPerPulse = amount * 500.0 / bodyMass;
         WaterLiters = Max(0.0, WaterLiters - amount);
         if (WaterLiters < 0.000001) WaterLiters = 0;

@@ -52,7 +52,7 @@ class CaelumWorldCatalogue : Object
         return "";
     }
 
-    static clearscope bool IsTimelessMap(String mapName)
+    static clearscope bool IsLimboMap(String mapName)
     {
         // La mansión de MAP01 pertenece al Limbo. Toda otra ubicación,
         // incluso un mapa de prueba aún sin catalogar, usa el ritmo común.

@@ -85,10 +85,12 @@ version "4.14"
 #include "caelum/world/CaelumSewerTrialSupport.zs"
 #include "caelum/world/CaelumWorldClock.zs"
 #include "caelum/world/CaelumCalendar.zs"
+#include "caelum/world/CaelumWeather.zs"
 #include "caelum/world/CaelumRest.zs"
 #include "caelum/world/CaelumRestTrial.zs"
 
 #include "caelum/world/CaelumRestFurniture.zs"
+#include "caelum/world/CaelumUseGeometry.zs"
 
 #include "caelum/world/CaelumSleepingBag.zs"
 

@@ -164,7 +164,8 @@ addmenukey "$CA_CONTROL_DEBUG_SHIELD_ANGLE" ca_debug_shield_angle
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
 addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
 addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
-addmenukey "$CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME" ca_debug_advance_crafting_time
+// +10 minutos conserva su alias de consola para depuración; el Diario usa T
+// únicamente para el avance rápido durante descanso o fabricación.
 
 // Tab abre el Diario definitivo. El automapa nativo se conserva en M para
 // exteriores y depuración; ambas acciones siguen apareciendo en Controles.

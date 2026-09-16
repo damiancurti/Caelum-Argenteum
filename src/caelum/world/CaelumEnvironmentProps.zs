@@ -150,7 +150,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
         double recoveryPerUpdate = capacity
             * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY
             / (CaelumConstants.GAME_HOURS_PER_DAY
-                * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR);
+                * CaelumWorldClock.SecondsPerGameHour(level.MapName));
         ResourceRemainingUnits = Min(
             capacity, ResourceRemainingUnits + recoveryPerUpdate
         );

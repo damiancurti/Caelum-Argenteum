@@ -1,5 +1,94 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0h — 2026-09-16.
+Versión documental: 4.35.0k — 2026-09-16.
+
+4.35.0k — PERFIL AMBIENTAL DEL LIMBO
+
+El autor prueba 0j mientras se prepara el bloque siguiente; no se da por
+aprobada esa versión. MAP01 conserva su reloj 1:1 y el diálogo de Palomo.
+Se añade un perfil ambiental estable provisional: 20 °C, humedad relativa 55%,
+viento 0 km/h y precipitación 0 mm/h. Tener calendario no asigna al Limbo las
+estaciones terrestres. Es un perfil para toda esta ubicación, sin microzonas
+interiores/exteriores ni efecto sobre el personaje en este incremento.
+
+Diario > Mundo muestra el ambiente local bajo la fecha. Si se consulta otra
+fecha con el depurador, se identifica «Ambiente de campaña»; esa prueba no
+reescribe el estado real. Una partida 0j recibe el registro ambiental sin
+reiniciar la fecha, tareas, raciones, sueño, muebles ni progreso narrativo.
+
+En MAP02/MAP04 se usa perfil subterráneo base 16 °C/85%, MAP03 reservorio
+15 °C/92% y MAP05 mantenimiento 18 °C/75%, con variaciones suaves de ensayo.
+Los viajes entre esos mapas conservan semilla y calculan la muestra del destino
+para la fecha actual. No se agrega ruta de regreso al Limbo ni se cambian
+diálogos, puertas, geometría, posiciones, pruebas o recompensas de MAP01.
+
+PRUEBAS_4_35_0k.txt distingue los controles de este incremento de las pruebas
+pendientes de 0j. Clima corporal permanece en V5.1; el siguiente bloque de
+4.35 corresponde a eventos y viajes temporizados.
+
+4.35.0j — RELOJ LOCAL, INTERACCIONES Y PUESTOS
+
+Vigente desde este parche: en el Limbo transcurren reloj y calendario 1:1
+durante juego activo a velocidad normal. Sustituye la congelación descrita en
+las entregas anteriores. T conserva x105 sólo en descanso/fabricación válidos
+y también adelanta el calendario local. No se reinicia la fecha de guardados
+ni se inventa tiempo previo; la pausa nativa detiene el reloj.
+
+Saludo de Palomo en el recibidor (CA_DLG_M01_PALOMO_FOYER):
+"Buen día. Aquí el tiempo lleva el mismo paso que en otro lugar que conozco.
+Pero cada cosa a su hora: hasta los relojes tienen sus secretos."
+No se compara con el mundo conocido por el protagonista. Se conserva la misma
+conversación y sus opciones; una partida que ya superó esa etapa puede mostrar
+otro saludo según el progreso existente.
+
+Use sobre un residente o puerta ya no queda bloqueado por una estación de otra
+planta que rechaza la interacción. Camas/sillas/mesas se usan mirando su volumen;
+mirar por encima permite continuar hacia el objetivo pertinente. Comprobado con
+diálogos nativos de los cuatro residentes, cuatro camas, silla, mesa y estación,
+además de la puerta nordeste. No se cambia geometría WAD ni progreso narrativo.
+
+Las 38 estaciones conservan sus ubicaciones de 0i y sus cinco redes: Rulo 5,
+Ronnie 7, Argento 5, Caella 9 y segundo piso 12. Quedan al 75% de las dimensiones
+de 0i (150% del tamaño previo a 0h), con radio 30/altura 72. Guardados anteriores
+mantienen actores y trabajos; repetir la carga no vuelve a reducir el tamaño.
+
+Se conservan seis mesas, 26 sillas, cuatro camas, el muñeco de Rulo y las
+correcciones de acceso de 0i. Comer/beber sentado tarda 100 segundos por porción,
+con idéntico consumo y recuperación total. F/G espera cada porción hasta saciedad;
+el gasto digestivo sigue en 1 punto de Sueño por 4 de Hambre recuperados.
+
+Sueño del arcanista pasa a radio base 1280 MU, igual a sellos, más el atributo.
+Afecta también aliados visibles; paredes y lanzador quedan excluidos. La misión
+no concede esta habilidad a otras clases ni altera sus hitos por esta ampliación.
+PRUEBAS_4_35_0j.txt incluye las pruebas de este parche y pendientes de 0i.
+Las entradas siguientes conservan el registro de cada versión anterior.
+
+4.35.0i — ACCESOS CORREGIDOS Y TIEMPO PERSONAL EN LIMBO
+
+Se corrigen las incidencias de 0h sin cambiar WAD ni hitos narrativos:
+- Ronnie: cama (944,392,136); mesa (1120,488,136), sillas norte/sur.
+- Argento: cama (944,-392,136); mesa (1120,-488,136), sillas norte/sur.
+  Intercambian las zonas de cama/mesa; 16 MU adicionales mantienen las sillas
+  sobre el piso y se conserva el paso a las habitaciones adyacentes.
+- Mesa normal de la sala del fondo: (1652,0,0), exactamente 100 MU al este
+  de la posición 0h, hacia la pared falsa. Conserva orientación y seis sillas.
+- Taller nordeste: fila norte sin cambios; las otras tres estaciones pasan
+  a x=904, y=448/336/224. La puerta oriental (1310,336,0) queda libre.
+- Blanco de Rulo: (-290,480,0), recuperable si falta. Está presente antes de
+  iniciar su prueba; sólo registra ejercicios cuando la misión está activa.
+
+Guardar/cargar conserva las mismas mesas, sillas, objetos, camas y estaciones.
+El traslado espera a que se levante un ocupante y reintenta si encuentra un
+destino bloqueado. Los cambios no rellenan existencias ni reinician tareas.
+
+T permite acelerar el descanso sin duración y la fabricación atendida en la
+mansión. Avanzan recursos personales y efectos, pero el calendario permanece
+en 03/11/1889 09:00. Levantarse/cerrar el puesto corta la aceleración. Se mantienen
+las guardas de combate/peligros y el drenaje de Lucidez al dormir. Se retira de T
+el salto de depuración +10 minutos; ese comando queda disponible en consola.
+
+Pruebas nativas de paso por las puertas de Ronnie/Argento y la puerta oriental
+del taller, acceso a todos los muebles, uso real del blanco y tiempo personal.
+PRUEBAS_4_35_0i.txt detalla comprobación visual, instalación, guardados y controles.
 
 4.35.0h — DORMITORIOS, COMEDORES Y TALLERES
 

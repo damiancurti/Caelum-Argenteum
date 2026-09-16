@@ -9,6 +9,28 @@ class CaelumMansionFurniture : Object play
         if(!bed.TestMobjLocation() || Abs(bed.FloorZ-position.Z)>1){bed.Destroy();return false;}
         bed.TrialSlot=slot;bed.Angle=facing;return true;
     }
+
+    static bool Align(int slot,vector3 tablePosition,vector3 bedPosition=(0,0,0),double facing=90)
+    {
+        let table=CaelumDiningWorld.Find(slot);
+        let bed=CaelumRestFurnitureTrial.Find(slot);
+        if(table==null || (slot<=104 && bed==null))return false;
+        bool moveTable=(table.Pos-tablePosition).Length()>0.01 || Abs(table.Angle-facing)>0.01;
+        bool moveBed=bed!=null && (bed.Pos-bedPosition).Length()>0.01;
+        if(!moveTable && !moveBed)return true;
+        // Un guardado sentado se conserva. La mudanza espera a levantarse,
+        // y mueve las mismas instancias con sus pertenencias y referencias.
+        if(table.LayoutOccupied() || (bed!=null && bed.Occupant!=null))return false;
+        vector3 oldTable=table.Pos;
+        double oldAngle=table.Angle;
+        vector3 oldBed=bed!=null?bed.Pos:(0,0,0);
+        if(bed!=null)bed.SetOrigin(bedPosition,false);
+        table.MoveLayout(tablePosition,facing);
+        if(table.LayoutFits() && (bed==null || (bed.TestMobjLocation() && Abs(bed.FloorZ-bed.Pos.Z)<=1)))return true;
+        if(bed!=null)bed.SetOrigin(oldBed,false);
+        table.MoveLayout(oldTable,oldAngle);
+        return false;
+    }
     static bool Prepare()
     {
         if(level.MapName!="MAP01")return true;
@@ -18,10 +40,16 @@ class CaelumMansionFurniture : Object play
         {
             double x=i%2==0?-384:944;
             double side=i<2?1:-1;
-            if(!CaelumDiningWorld.Place(101+i,(x,side*392,136),1,90))ready=false;
-            if(!Bed(101+i,(x+176,side*472,136),side>0?90:270))ready=false;
+            vector3 tablePosition=i%2==0?(x,side*392,136):(x+176,side*488,136);
+            vector3 bedPosition=i%2==0?(x+176,side*472,136):(x,side*392,136);
+            // El margen de 16 MU mantiene ambas sillas sobre el piso de la habitación.
+            double tableFacing=90;
+            if(!CaelumDiningWorld.Place(101+i,tablePosition,1,tableFacing))ready=false;
+            if(!Bed(101+i,bedPosition,side>0?90:270))ready=false;
+            if(!Align(101+i,tablePosition,bedPosition,tableFacing))ready=false;
         }
-        if(!CaelumDiningWorld.Place(105,(1552,0,0),2,90))ready=false;
+        if(!CaelumDiningWorld.Place(105,(1652,0,0),2,90))ready=false;
+        if(!Align(105,(1652,0,0)))ready=false;
         if(!CaelumDiningWorld.Place(106,(496,-192,264),3))ready=false;
         return ready;
     }

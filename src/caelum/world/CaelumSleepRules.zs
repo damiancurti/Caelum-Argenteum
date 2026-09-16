@@ -5,7 +5,7 @@ class CaelumSleepRules : Object play
     const LUCIDITY_PER_SECOND = 10.0;
     const SPELL_SECONDS = 10;
     const REUSE_SECONDS = 60.0;
-    const BASE_ANIMA_COST = 1000.0;
+    const BASE_ANIMA_COST = 1000.0; // Coste base confirmado por el autor.
 
     static bool IsSleeping(CaelumPlayer user)
     { return user != null && (user.ForcedSleepTics > 0 || CaelumRestState.IsSleeping(user)); }
@@ -55,8 +55,8 @@ class CaelumSleepRules : Object play
             || user.ClassSleepCooldownRemaining > 0) return false;
         double cost = BASE_ANIMA_COST * (1.0 - user.DerivedStats.AnimaCostReductionPercent / 100.0);
         if (user.CurrentAnima < cost) return false;
-        // Radio provisional: reutiliza el área base mágica y su atributo.
-        double radius = CaelumConstants.ESSENCE_EXPLOSION_BASE_RADIUS
+        // Las habilidades de clase comparten el radio base de los sellos.
+        double radius = CaelumConstants.CLASS_ABILITY_BASE_RADIUS
             * user.DerivedStats.AbilityRangePercent / 100.0;
         let it = ThinkerIterator.Create("Actor"); Actor victim;
         int count = 0;

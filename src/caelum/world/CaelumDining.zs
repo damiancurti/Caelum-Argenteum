@@ -8,7 +8,10 @@ class CaelumDiningDisplay : Actor
     {
         Super.Tick();
         if(Table==null || Item==null || Item.Owner!=Table) {Destroy();return;}
-
+        // Corrige también presentaciones ya guardadas: modelo y altura del
+        // actor deben compartir la compensación vertical de MODELDEF.
+        double surface=Table.Pos.Z+Table.SurfaceHeight();
+        if(Abs(Pos.Z-surface)>0.001)SetOrigin((Pos.X,Pos.Y,surface),false);
     }
     Default { Radius 0; Height 0; +NOBLOCKMAP +NOGRAVITY +NOTARGET }
     States { Spawn: CAHC A -1; Stop; }
@@ -22,7 +25,8 @@ class CaelumDiningBlock : Actor
 {
     CaelumDiningTable Table;
     override bool Used(Actor activator)
-    { return Table!=null && Table.Used(activator); }
+    { return Table!=null && CaelumUseGeometry.AimedAt(CaelumPlayer(activator), self)
+        && Table.OpenForUser(CaelumPlayer(activator)); }
     override void Tick() { Super.Tick(); if(Table==null)Destroy(); }
     Default { Radius 24; Height 34; +SOLID +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE +CANPASS RenderStyle "None"; }
     States { Spawn: TNT1 A -1; Stop; }
@@ -44,6 +48,44 @@ class CaelumDiningTable : Actor
 
     vector3 LocalPoint(double x,double y,double z=0)
     {return Pos+(Cos(Angle)*x-Sin(Angle)*y,Sin(Angle)*x+Cos(Angle)*y,z);}
+
+    double SurfaceHeight()
+    {return 34.1*Scale.Y/Max(0.001,level.pixelstretch);}
+
+    bool LayoutOccupied()
+    {
+        for(int i=0;i<SeatCount();i++)if(Chairs[i]!=null && Chairs[i].Occupant!=null)return true;
+        return false;
+    }
+
+    void MoveLayout(vector3 destination,double facing)
+    {
+        vector3 origin=Pos;
+        double rotation=facing-Angle;
+        SetOrigin(destination,false);Angle=facing;
+        for(int i=0;i<32;i++)if(Blocks[i]!=null)
+        {
+            vector3 d=Blocks[i].Pos-origin;
+            Blocks[i].SetOrigin(destination+(d.X*Cos(rotation)-d.Y*Sin(rotation),d.X*Sin(rotation)+d.Y*Cos(rotation),d.Z),false);
+        }
+        for(int i=0;i<SeatCount();i++)if(Chairs[i]!=null)
+        {
+            vector3 d=Chairs[i].Pos-origin;
+            Chairs[i].SetOrigin(destination+(d.X*Cos(rotation)-d.Y*Sin(rotation),d.X*Sin(rotation)+d.Y*Cos(rotation),d.Z),false);
+            Chairs[i].Angle+=rotation;
+        }
+        RefreshDisplays();
+    }
+
+    bool LayoutFits()
+    {
+        if(!TestMobjLocation() || Abs(FloorZ-Pos.Z)>1)return false;
+        for(int i=0;i<32;i++)if(Blocks[i]!=null)
+            if(!Blocks[i].TestMobjLocation() || Abs(Blocks[i].FloorZ-Pos.Z)>1)return false;
+        for(int i=0;i<SeatCount();i++)
+            if(Chairs[i]==null || !Chairs[i].TestMobjLocation() || Abs(Chairs[i].FloorZ-Pos.Z)>1)return false;
+        return true;
+    }
 
     double EdgeDistance(Actor user)
     {
@@ -113,7 +155,7 @@ class CaelumDiningTable : Actor
             double x=(i%columns-(columns-1)*0.5)*(LengthMU()-40)/Max(1,columns-1);
             double y=(i/columns-(rows-1)*0.5)*(WidthMU()-40)/Max(1,rows-1);
             if(RoundTop()){x=(i%2==0?-14:14);y=(i<2?-14:14);}
-            visual.SetOrigin(LocalPoint(x,y,34.1),false);
+            visual.SetOrigin(LocalPoint(x,y,SurfaceHeight()),false);
 
         }
     }
@@ -194,6 +236,11 @@ class CaelumDiningTable : Actor
     override bool Used(Actor activator)
     {
         let user=CaelumPlayer(activator);
+        return CaelumUseGeometry.AimedAt(user, self) && OpenForUser(user);
+    }
+
+    bool OpenForUser(CaelumPlayer user)
+    {
         if(!CanReach(user) || (user.player.cmd.buttons & BT_USE)==0 || CaelumRestState.IsActive(user) || user.HasActiveConversation()
             || user.CraftingMenuOpen || user.PalomoMerchantMenuOpen)return false;
         let guide=CaelumDiningGuide(Spawn("CaelumDiningGuide",user.Pos+(0,0,user.Height*0.5),NO_REPLACE));

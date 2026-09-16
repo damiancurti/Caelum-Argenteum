@@ -8,7 +8,7 @@ class CaelumRestRules : Object
     const STATUS_COMPLETE = 2;
     const STATUS_CANCELLED = 3;
     const STATUS_INTERRUPTED = 4;
-    // Balance provisional para la prueba de V4.35, no un valor autoral cerrado.
+    // Ritmo confirmado por el autor: cien puntos en ocho horas del lugar.
     const FULL_SLEEP_GAME_HOURS = 8.0;
 
     static clearscope int DurationTics(int minutes)
@@ -17,10 +17,10 @@ class CaelumRestRules : Object
         return minutes * CaelumWorldClock.TicsPerHour() / 60;
     }
 
-    static clearscope double RecoverSleep(double value)
+    static clearscope double RecoverSleep(double value, double timeScale = 1.0)
     {
         return Min(CaelumConstants.SURVIVAL_MAXIMUM, Max(0.0, value)
-            + CaelumConstants.SURVIVAL_MAXIMUM
+            + CaelumConstants.SURVIVAL_MAXIMUM * timeScale
                 / (FULL_SLEEP_GAME_HOURS * CaelumWorldClock.TicsPerHour()));
     }
 
@@ -56,6 +56,7 @@ class CaelumRestState : Inventory
     bool PoseFacingFixed;
     bool Untimed;
     int LastUntimedTic;
+    int LastUntimedStepSerial;
     bool AutoEating;
     bool AutoDrinking;
     CaelumDiningTable DiningTable;
@@ -86,6 +87,14 @@ class CaelumRestState : Inventory
             && rest.Mode == CaelumRestRules.MODE_SLEEP;
     }
 
+    static bool IsSeated(CaelumPlayer user)
+    {
+        let rest = Get(user);
+        return rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE
+            && rest.Mode == CaelumRestRules.MODE_WAIT && rest.Furniture != null
+            && rest.Furniture.SupportsRest(user) && rest.OriginMap == level.MapName;
+    }
+
     static int ResourceFactor(CaelumPlayer user)
     {
         let rest = Get(user);
@@ -103,7 +112,8 @@ class CaelumRestState : Inventory
         let rest = Get(user);
         let clock = CaelumWorldClock.Get(user);
         return rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE && clock != null
-            && (rest.Untimed ? rest.LastUntimedTic!=level.maptime
+            && (rest.Untimed ? (rest.LastUntimedTic!=level.maptime
+                    || rest.LastUntimedStepSerial!=CaelumTimeAdvanceState.StepSerial(user))
                 : (clock.CompletedDays != rest.LastClockDays || clock.DayTics != rest.LastClockDayTics));
     }
 
@@ -117,7 +127,7 @@ class CaelumRestState : Inventory
         for (int i = 0; i < MAXPLAYERS; i++)
             if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
         let active=Get(user);
-        if (CaelumWorldCatalogue.IsTimelessMap(level.MapName) && !allowTimelessFurniture
+        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture
             && !(active!=null && active.Status==CaelumRestRules.STATUS_ACTIVE && active.Untimed && active.Furniture!=null))
             return "CA_REST_TIMELESS";
         if (user.CombatTimeRemaining > 0.0) return "CA_REST_COMBAT";
@@ -148,7 +158,7 @@ class CaelumRestState : Inventory
 
     static bool Begin(CaelumPlayer user, int mode, int minutes, CaelumRestFurniture furniture = null)
     {
-        bool untimed=minutes==0 && furniture!=null && CaelumWorldCatalogue.IsTimelessMap(level.MapName);
+        bool untimed=minutes==0 && furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName);
         int duration = CaelumRestRules.DurationTics(minutes);
         if ((duration == 0 && !untimed) || (mode != CaelumRestRules.MODE_WAIT && mode != CaelumRestRules.MODE_SLEEP)
             || IsActive(user)) return false;
@@ -186,6 +196,7 @@ class CaelumRestState : Inventory
         rest.ViewCamera = null;
         rest.Mode = mode;
         rest.Untimed=untimed;rest.LastUntimedTic=level.maptime;
+        rest.LastUntimedStepSerial=CaelumTimeAdvanceState.StepSerial(user);
         rest.AutoEating=false;rest.AutoDrinking=false;rest.DiningTable=null;
         rest.RequestedTics = duration;
         rest.ElapsedTics = 0;
@@ -310,6 +321,7 @@ class CaelumRestState : Inventory
         rest.LastClockDayTics = clock.DayTics;
         rest.LastHealth = user.health;
         rest.LastUntimedTic=level.maptime;
+        rest.LastUntimedStepSerial=CaelumTimeAdvanceState.StepSerial(user);
         rest.ElapsedTics++;
         if (!rest.Untimed && rest.ElapsedTics >= rest.RequestedTics)
         {
@@ -369,7 +381,7 @@ class CaelumRestState : Inventory
     static void Report(CaelumPlayer user)
     {
         let rest = Get(user);
-        Console.Printf("[Caelum 4.35.0h] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
+        Console.Printf("[Caelum 4.35.0j] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
         if (rest == null) return;
         Console.Printf("Estado=%d modo=%d transcurrido=%d/%d tics origen=%s resultado=%s",
             rest.Status, rest.Mode, rest.ElapsedTics, rest.RequestedTics, rest.OriginMap, rest.ResultKey);

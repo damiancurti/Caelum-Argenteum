@@ -4,7 +4,7 @@ class CaelumSleepingBag : CaelumSpecialInventoryItem
 {
     override int GetSpecialCategory() { return CaelumConstants.EQUIPMENT_KIND_KEY_ITEM; }
     override int GetSpecialType() { return CaelumConstants.KEY_ITEM_SLEEPING_BAG; }
-    // Peso provisional de esta pieza de prueba, separado del balance de descanso.
+    // Peso de dos kilogramos confirmado por el autor.
     override double GetUnitWeight() { return 2.0; }
 
     bool AvailableTo(CaelumPlayer user)

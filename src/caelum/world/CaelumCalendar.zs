@@ -274,11 +274,9 @@ class CaelumCalendarState : Inventory
         }
         int serial = calendar.DateSerial(clock, true);
         // Sólo cambia el anclaje de prueba, nunca adelanta el reloj global.
-        calendar.SetAnchor(clock, serial, CaelumWorldClock.TicsPerDay() - 12 * TICRATE, true);
-        if (CaelumWorldCatalogue.IsTimelessMap(level.MapName))
-            Console.Printf("[Caelum 4.35.0d] Prueba preparada a las 23:56, detenida en el Limbo. Comprobá la medianoche fuera de MAP01.");
-        else
-            Console.Printf("[Caelum 4.35.0d] Medianoche del calendario de prueba en 12 segundos de simulación. Cerrá la consola y mirá TAB > Mundo.");
+        calendar.SetAnchor(clock, serial, CaelumWorldClock.TicsPerDay()
+            - int(12*TICRATE*CaelumWorldClock.MapTimeScale(level.MapName)), true);
+        Console.Printf("[Caelum 4.35.0j] Medianoche del calendario de prueba en unos 12 segundos de simulación. Cerrá la consola y mirá TAB > Mundo.");
         Report(user);
     }
 
@@ -308,10 +306,10 @@ class CaelumCalendarState : Inventory
             calendar.FormatDate(clock), serial, CaelumCalendarRules.IsLeapYear(year),
             StringTable.Localize(CaelumCalendarRules.SeasonKey(
                 CaelumCalendarRules.SouthernSeasonForMonth(month)), false));
-        Console.Printf("Anclaje: fecha=%d reloj=%d d + %d tics; hora civil inicial=%d tics. Sin simulación de clima.",
+        Console.Printf("Anclaje: fecha=%d reloj=%d d + %d tics; hora civil inicial=%d tics. El clima usa la fecha de campaña.",
             calendar.AnchorSerial, calendar.AnchorClockDays, calendar.AnchorClockTics, calendar.AnchorCivilTics);
-        Console.Printf("Revisión de campaña=%d tiempo detenido por Limbo=%d",
-            calendar.CampaignRevision, CaelumWorldCatalogue.IsTimelessMap(level.MapName));
+        Console.Printf("Revisión de campaña=%d escala 1:1 del Limbo=%d",
+            calendar.CampaignRevision, CaelumWorldCatalogue.IsLimboMap(level.MapName));
         if (calendar.TrialDate)
             Console.Printf("Vista de prueba=%s (no modifica la campaña)", calendar.FormatDate(clock, true));
     }
