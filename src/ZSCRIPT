@@ -89,3 +89,5 @@ version "4.14"
 #include "caelum/world/CaelumRestTrial.zs"
 
 #include "caelum/world/CaelumRestFurniture.zs"
+
+#include "caelum/world/CaelumSleepingBag.zs"

@@ -1,8 +1,58 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0e — 2026-09-16.
+Versión documental: 4.35.0f — 2026-09-16.
 
-## Estado actual: 4.35.0e — sillas, catres y cámara de descanso
+## Estado actual: 4.35.0f — bolsa de dormir y comodidad
+
+El autor aprueba todas las pruebas de 0e. Solicita una bolsa de dormir que pueda
+llevarse en el inventario y define tres factores de descanso: silla ×2, bolsa
+×3 y cama/catre ×4 para recuperar Salud/Aire, con pérdida de Hambre/Sed dividida
+por el mismo factor. Se implementan en este delta sobre 0e. El descanso sobre
+suelo conserva ×1. Esperar sentado no recupera Sueño; dormir conserva la tasa
+provisional anterior, sin multiplicarla por el soporte.
+
+La bolsa es un Inventory nativo reutilizable de peso provisional 2 kg. Figura
+en Todos y Llaves/objetos clave; Enter/A abre las duraciones, C la guarda/retira
+de la Caja y D la suelta, con los controles existentes. Si estaba en la Caja,
+Enter primero la retira. Elegir una duración despliega su modelo sobre suelo
+seco, libre y nivelado; cerrar no despliega nada. El mismo objeto permanece
+en el inventario durante la sesión y se recoge visualmente al levantarse,
+completar o interrumpir, sin copias ni consumo.
+
+Una preparación voluntaria de Mundo > D/X entrega una bolsa de prueba en
+MAP02–MAP05; ca_debug_rest_bag ofrece la misma operación. No se concede al
+cargar, al viajar ni al entrar al mapa. Tenerla impide recibir otra por esta
+preparación. La recogida respeta capacidad y espacio en la Caja. No se agregan
+recetas, precios, botín permanente ni nuevas categorías de navegación.
+
+La comodidad aplica a la regeneración natural y al gasto por tiempo. El
+consumo de Hambre/Sed incluye tanto su pérdida pasiva como los costes de curar
+y recuperar aire. Se conservan máximos, acumulador fraccional de curación y
+bloqueos por reservas críticas. Ánima, Lucidez y pulsos de consumibles no ganan
+bonificaciones. La devolución de aire pendiente tras inmersión también se acelera por el
+factor activo; fuera del descanso conserva sus tres segundos de base.
+
+Se verificaron dentro de GZDoom 4.14.2 en Linux las tasas ×1/×2/×3/×4, la ruta
+de activación de inventario y respuesta USDF, recogida/soltado/Caja, suelo
+bloqueado, cancelación, daño, máximos y reservas críticas. Se cargó una sesión
+en bolsa y un save anterior de 0e en catre, que recibió ×4 conservando su
+progreso. El ensayo de bolsa y su continuación tras cargar finalizaron sin fallos;
+parte del contador de comprobaciones se conserva desde antes del guardado. Las capturas
+nativas muestran bolsa, postura y factor. El TXT cubre los controles físicos
+y el recorrido del hub que debe comprobar el autor en Windows.
+
+### Avance temporal largo: diseño pendiente
+
+Se recomienda un controlador de avance del tiempo propio del juego, por
+intervalos y hasta la siguiente interrupción/evento. Debe aplicar una misma
+cantidad de tiempo a recursos, efectos, recargas y sistemas del mundo, sin
+contabilizarla otra vez en Tick. El primer alcance debería limitarse a lugares
+seguros; la IA y física genéricas del motor requieren simulación real o reglas
+explícitas para resolverse durante el salto. SYSTEMS desarrolla el contrato.
+No se implementa ni se declara probado un time skip en 0f. La fecha de campaña,
+el ritmo común y el Limbo detenido permanecen como estaban.
+
+## Base aceptada: 4.35.0e — sillas, catres y cámara de descanso
 
 El autor confirma que todas las pruebas de 0d1 dieron correctas y autoriza
 el siguiente parche. Se considera aceptada la base de descanso de 0d reparada
@@ -126,7 +176,8 @@ atributos, tarifas, recetas y la cronología aprobada en 0c.
 
 1. Completar el bloque de descanso: avance acelerado con aplicación coherente
    del tiempo e interrupciones. 0d/0d1 aportan la sesión a escala normal y 0e
-   incorpora sillas/catres y cámara; la aceleración sigue pendiente.
+   incorpora sillas/catres y cámara; 0f añade bolsa y factores de comodidad.
+   La aceleración sigue pendiente.
 2. Publicar el estado climático local común: temperatura, viento,
    precipitación y humedad, asociado al calendario y a cada lugar.
 3. Planificar eventos y viajes con el mismo reloj: horarios, duración de

@@ -5189,6 +5189,15 @@ class CaelumPlayer : DoomPlayer
             GetFormalInventoryEntryAt(FormalInventorySelectionIndex);
         if (entry == null) { return; }
         ApplyFormalInventorySelection(entry);
+        let bag = CaelumSleepingBag(entry);
+        if (bag != null && !bag.InMagicBox)
+        {
+            bool menuWasOpen = EquipmentMenuOpen;
+            EquipmentMenuOpen = false;
+            if (!bag.Open(self)) EquipmentMenuOpen = menuWasOpen;
+            RefreshFormalInventorySnapshot();
+            return;
+        }
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
         if (equipment != null)
         {
@@ -9108,6 +9117,7 @@ class CaelumPlayer : DoomPlayer
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
                 return 'CaelumProcessingManual';
@@ -18156,11 +18166,13 @@ class CaelumPlayer : DoomPlayer
         // Corrige también los factores serializados de partidas anteriores,
         // sin reiniciar reservas ni reconstruir el perfil completo.
         DerivedStats.RefreshSurvivalLossMultipliers(Attributes);
+        CaelumRestState.Validate(self);
+        double restFactor = CaelumRestState.ResourceFactor(self);
         CurrentHunger = Max(0.0, CurrentHunger
             - CaelumConstants.SURVIVAL_MAXIMUM
             / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS
                 * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
-            * DerivedStats.HungerThirstLossMultiplier / TICRATE);
+            * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
         // La piscina hidrata directamente y permite llevar agua en recipientes.
         for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -18183,10 +18195,10 @@ class CaelumPlayer : DoomPlayer
                 - CaelumConstants.SURVIVAL_MAXIMUM
                 / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
                     * CaelumConstants.REAL_SECONDS_PER_GAME_HOUR)
-                * DerivedStats.HungerThirstLossMultiplier / TICRATE);
+                * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
         }
         // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
-        // Esperar conserva el consumo normal; hambre/sed no reciben un bono.
+        // Esperar conserva la pérdida de Sueño; el soporte sólo modifica hambre/sed.
         CaelumRestState.Validate(self);
         if (CaelumRestState.IsSleeping(self))
         {
@@ -18409,8 +18421,12 @@ class CaelumPlayer : DoomPlayer
 
         // Constitución divide también el coste por vida recuperada. No se
         // reaplica la masa: el coste base ya es proporcional a la vida máxima.
+        double restFactor = CaelumRestState.ResourceFactor(self);
+        // Recuperar F veces más y gastar 1/F por tiempo requiere coste por
+        // unidad recuperada dividido por F²; las reservas siguen limitando.
         double consumptionMultiplier =
-            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes);
+            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes)
+                / (restFactor * restFactor);
         double hungerCostPerHealth = 100.0 * consumptionMultiplier / CaelumMaximumHealth;
         double thirstCostPerHealth = 50.0 * consumptionMultiplier / CaelumMaximumHealth;
         double affordableHealth = Min(
@@ -18420,11 +18436,11 @@ class CaelumPlayer : DoomPlayer
         if (affordableHealth <= 0.0) return;
 
         NaturalHealthRegenerationAccumulator += Min(
-            DerivedStats.HealthRegenerationPerSecond / TICRATE,
+            DerivedStats.HealthRegenerationPerSecond * restFactor / TICRATE,
             affordableHealth
         );
         int wholeHealing = int(NaturalHealthRegenerationAccumulator);
-        wholeHealing = Min(wholeHealing, CaelumMaximumHealth - health);
+        wholeHealing = Min(wholeHealing, Min(CaelumMaximumHealth - health, int(Floor(affordableHealth))));
         if (wholeHealing <= 0) return;
 
         NaturalHealthRegenerationAccumulator -= wholeHealing;
@@ -18454,8 +18470,12 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        double restFactor = CaelumRestState.ResourceFactor(self);
+        // Recuperar F veces más y gastar 1/F por tiempo requiere coste por
+        // unidad recuperada dividido por F²; las reservas siguen limitando.
         double consumptionMultiplier =
-            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes);
+            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes)
+                / (restFactor * restFactor);
         double hungerCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
             * consumptionMultiplier / DerivedStats.MaximumAir;
@@ -18470,7 +18490,7 @@ class CaelumPlayer : DoomPlayer
 
         double recoveredAir = Min(
             DerivedStats.AirRegenerationPerSecond
-                * HealthPerformanceMultiplier / TICRATE,
+                * HealthPerformanceMultiplier * restFactor / TICRATE,
             DerivedStats.MaximumAir - CurrentAir
         );
         recoveredAir = Min(recoveredAir, affordableAir);
@@ -18538,16 +18558,20 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        double recoveredAir = Min(
-            UnderwaterAirRecoveryDebt
+        // El descanso también acelera la recuperación respiratoria pendiente.
+        // El contador conserva unidades de la tasa base para poder cancelar
+        // o cambiar de soporte sin reiniciar ni inventar aire por devolver.
+        int restFactor = CaelumRestState.ResourceFactor(self);
+        double recoveredAir = Min(UnderwaterAirRecoveryDebt, Min(
+            UnderwaterAirRecoveryDebt * restFactor
                 / Max(1, UnderwaterAirRecoveryTicsRemaining),
             DerivedStats.MaximumAir - CurrentAir
-        );
+        ));
         CurrentAir += recoveredAir;
         UnderwaterAirRecoveryDebt = Max(
             0.0, UnderwaterAirRecoveryDebt - recoveredAir
         );
-        UnderwaterAirRecoveryTicsRemaining--;
+        UnderwaterAirRecoveryTicsRemaining = Max(0, UnderwaterAirRecoveryTicsRemaining-restFactor);
         UnderwaterAirRecoveryAppliedThisTick = recoveredAir > 0.0;
 
         if (UnderwaterAirRecoveryTicsRemaining <= 0

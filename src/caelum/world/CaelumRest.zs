@@ -81,6 +81,18 @@ class CaelumRestState : Inventory
             && rest.Mode == CaelumRestRules.MODE_SLEEP;
     }
 
+    static int ResourceFactor(CaelumPlayer user)
+    {
+        let rest = Get(user);
+        if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE
+            || !rest.UsesFurniture || rest.OriginMap != level.MapName
+            || rest.Furniture == null || !rest.Furniture.SupportsRest(user)) return 1;
+        if (user.health <= 0
+            || user.CurrentHunger <= CaelumConstants.SURVIVAL_MAXIMUM * CaelumConstants.SURVIVAL_CRITICAL_THRESHOLD
+            || user.CurrentThirst <= CaelumConstants.SURVIVAL_MAXIMUM * CaelumConstants.SURVIVAL_CRITICAL_THRESHOLD) return 1;
+        return rest.Furniture.ComfortFactor();
+    }
+
     static bool HasPendingTic(CaelumPlayer user)
     {
         let rest = Get(user);
@@ -221,7 +233,7 @@ class CaelumRestState : Inventory
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE) return;
         String reason = rest.OriginMap != level.MapName ? "CA_REST_MOVED" : BlockReason(user);
         if (reason.Length() == 0 && rest.UsesFurniture
-            && (rest.Furniture == null || rest.Furniture.Occupant != user
+            && (rest.Furniture == null || !rest.Furniture.SupportsRest(user)
                 || (rest.Furniture.Pos-rest.OriginPosition).Length() > 1))
             reason = "CA_REST_FURNITURE_UNAVAILABLE";
         vector3 displacement = user.Pos-rest.OriginPosition;
@@ -332,7 +344,7 @@ class CaelumRestState : Inventory
     static void Report(CaelumPlayer user)
     {
         let rest = Get(user);
-        Console.Printf("[Caelum 4.35.0e] Descanso: registro=%d mapa=%s", rest != null, level.MapName);
+        Console.Printf("[Caelum 4.35.0f] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
         if (rest == null) return;
         Console.Printf("Estado=%d modo=%d transcurrido=%d/%d tics origen=%s resultado=%s",
             rest.Status, rest.Mode, rest.ElapsedTics, rest.RequestedTics, rest.OriginMap, rest.ResultKey);

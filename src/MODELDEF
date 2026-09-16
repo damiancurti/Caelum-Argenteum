@@ -3162,3 +3162,25 @@ Model CaelumRestBed
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumSleepingBag
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bag_roll.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumRestBag
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bag_open.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

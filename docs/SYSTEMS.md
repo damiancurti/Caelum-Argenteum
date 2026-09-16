@@ -1,6 +1,109 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0e — 2026-09-16.
+Versión documental: 4.35.0f — 2026-09-16.
+
+## Bolsa de dormir y factores de descanso (4.35.0f)
+
+CaelumSleepingBag deriva de CaelumSpecialInventoryItem. Usa el tipo añadido
+KEY_ITEM_SLEEPING_BAG=2; los anteriores mantienen sus valores. Amount/MaxAmount
+son 1, InterHubAmount=1 y GetUnitWeight devuelve 2 kg provisionales. La bolsa
+usa las rutas existentes de peso, capacidad, Caja, snapshots, soltado y recogida.
+No duplica el contenido en un inventario paralelo. Su categoría actual se
+muestra en el filtro de Llaves/objetos clave y en Todos.
+
+Enter/A sobre la bolsa personal cierra la vista del Diario y envía la activación
+nativa del inventario. CaelumRestTrial conserva Bag/UsesBag y abre la conversación
+43513. Enter sobre la bolsa guardada conserva la operación existente de sacarla
+de la Caja. La respuesta de duración cierra primero y valida de nuevo propiedad,
+estado, modo y espacio. Si se retiró el objeto o pasó a la Caja, no se despliega.
+
+HasRoom verifica el volumen nativo y ocho muestras de suelo alrededor de un
+radio conservador de 46 MU; comprueba sólidos ajenos separadamente. No modifica
+el cuerpo del jugador. Sólo después se crea CaelumRestBag, un soporte temporal
+sin bloqueo, y se inicia Dormir. La bolsa Inventory sigue siendo del jugador,
+con su mismo peso. Release destruye sólo el soporte y deja al jugador donde
+estaba. La validación comprueba propiedad/acceso; pérdida del mueble, del objeto,
+movimiento, daño, agua, reservas críticas o cambio de mapa interrumpen según
+el contrato existente. El Tick limpia soportes obsoletos de hubs anteriores.
+
+ComfortFactor es una consulta virtual de cada soporte. ResourceFactor requiere
+una sesión activa válida, en el mapa de origen, con su ocupante y referencias
+correctos; sin soporte o fuera de sesión devuelve 1. Las reservas críticas y
+la muerte también retiran el factor inmediatamente. No se modifican atributos
+ni las estadísticas derivadas de forma permanente.
+
+| Soporte durante la sesión | Salud/Aire naturales | Pérdida de Hambre/Sed por tiempo | Sueño |
+| --- | --- | --- | --- |
+| Suelo | ×1 | ÷1 | Recupera sólo al dormir, tasa anterior. |
+| Silla (Esperar) | ×2 | ÷2 | Sigue perdiéndose; no recupera. |
+| Bolsa (Dormir) | ×3 | ÷3 | Recupera a la tasa anterior. |
+| Cama/catre (Dormir) | ×4 | ÷4 | Recupera a la tasa anterior. |
+
+Para F = factor del soporte:
+
+    pérdida pasiva nueva = pérdida pasiva anterior / F
+    regeneración natural nueva = regeneración natural anterior × F
+    coste por punto recuperado nuevo = coste anterior / (F × F)
+
+La última expresión aplica a los gastos de Hambre/Sed asociados a Salud y Aire.
+Al recuperar F veces más por tiempo y pagar cada punto a 1/F², el gasto por
+ese tiempo queda en 1/F. Dividir sólo el coste por punto por F habría dejado
+el gasto de regeneración por tiempo igual al anterior, contradiciendo la
+reducción pedida. Cerca del máximo se paga exclusivamente lo recuperado.
+Las reservas disponibles limitan también la curación entera; los acumuladores
+conservan fracciones y ningún recurso puede superar su máximo o quedar negativo.
+
+Se mantienen la penalización de fatiga, el bloqueo de curación por Sueño/Hambre/
+Sed críticos y las condiciones previas de respiración. La comodidad no se aplica
+a Ánima/Lucidez, medicina ni hidratación por agua potable. La deuda de aire
+tras inmersión se recupera también a ritmo ×F: su contador se reduce F tics
+de base por tic real, sin superar la deuda pendiente ni el Aire máximo. Al
+interrumpir se retoma ×1 con lo que reste; no se reinicia ni se acredita aire
+extra en el último pulso. Fuera del descanso conserva los tres segundos de
+base. Dormir mantiene 100% de Sueño por 8 horas de juego
+como valor provisional, con la misma duración real que en 0e.
+
+La preparación 3 de CaelumRestTrial y ca_debug_rest_bag son optativas y sólo
+para MAP02–MAP05. Entregan el objeto mediante la recogida nativa si no estaba
+en el inventario; si falla por capacidad, destruyen el intento y notifican.
+No rellenan recursos. El informe ca_debug_rest_report sigue siendo de consulta
+y muestra 4.35.0f/factor. El panel muestra el multiplicador y divisor vigentes.
+
+### Contrato propuesto para time skip (todavía no implementado)
+
+El reloj de campaña se separa conceptualmente de los tics de animación/física.
+Un servicio único de avance simulado debe recibir el destino temporal del
+resto de la sesión y resolver intervalos pequeños o la próxima frontera de
+un evento. El tamaño concreto de los intervalos todavía no está fijado.
+
+1. Validar que se puede omitir simulación detallada: jugador solo, reposo,
+   lugar seguro, sin combate, proyectiles/peligros activos ni tareas incompatibles.
+2. Calcular el próximo límite: final solicitado, reserva crítica, cambio de
+   estado que altere una tasa, efecto que vence, evento, horario o interrupción.
+3. Aplicar exactamente ese intervalo a reloj/calendario, Sueño, necesidades,
+   Salud/Aire, otros recursos, efectos y recargas; los adaptadores de clima,
+   misiones temporizadas y rutas deben consumir el mismo intervalo una vez.
+4. Resolver eventos vencidos en orden, guardar el avance y devolver control
+   entre lotes para permitir cancelar sin bloquear la interfaz.
+5. Completar o interrumpir en el instante resuelto, conservando exclusivamente
+   la recuperación y los gastos acumulados hasta allí. En el Limbo no avanza.
+
+Las funciones de tasas deben compartirse entre el tic ordinario y el avance
+simulado. El tic no puede volver a cobrar lo ya aplicado por el servicio.
+La IA, proyectiles, puertas, scripts y Thinkers arbitrarios de GZDoom no quedan
+resueltos por sumar minutos a CaelumWorldClock. Para un primer alcance coherente
+se recomienda limitar el salto a zonas seguras y modelar explícitamente los
+horarios/eventos del mundo; los descansos expuestos requieren simulación real
+o reglas de peligro aprobadas. Las emboscadas no se inventan en este parche.
+
+No se recomienda depender de i_timescale para esta funcionalidad. La API CVar
+de ZScript sólo permite setters para CVars del mod; forzar una configuración
+interna tampoco proporciona resolución abreviada ni orden de eventos propio.
+Referencia: https://zdoom-docs.github.io/staging/Api/Base/CVar.html
+Acelerar globalmente toda la simulación conserva el coste de procesar sus tics
+y actores; el avance por intervalos permite acotar ese coste en los sistemas
+que acepten el contrato. Es una recomendación de arquitectura, no una API de
+salto de horas ya disponible en el proyecto.
 
 ## Mobiliario y cámara del descanso (4.35.0e)
 
@@ -51,7 +154,8 @@ previos permite incorporarlos sin reiniciar. Si el lugar está ocupado se
 reintenta una vez por segundo. No se añaden cosas a MAP01, relojes, inventarios
 con peso, recursos, recetas, recompensas ni pausas de diálogo.
 
-Las tasas de 0d/0d1 permanecen vigentes. Pendiente en V4.35: acelerar la
+0f aplica los factores de soporte descritos arriba sobre las tasas de 0d/0d1.
+Pendiente en V4.35: acelerar la
 simulación de forma coherente e integrar clima y eventos/rutas programados.
 
 ## Compatibilidad del descanso (4.35.0d1)
@@ -80,7 +184,8 @@ La recuperación neta provisional de Sueño es:
 Se aplica sólo al dormir y una vez por pulso pendiente del reloj; sustituye
 la pérdida pasiva de Sueño. El resultado se limita a 100. Esperar conserva
 el consumo ordinario. Hambre/Sed, curación, ánima, lucidez, aire y recargas
-mantienen sus reglas existentes, sin bonificaciones al inicio o al final.
+mantienen sus reglas base, con los factores de soporte de 0f para la
+regeneración natural y Hambre/Sed; sin regalos al inicio o al final.
 La selección numérica de 8 horas es un valor de prueba de 0d; no se presenta
 como una decisión histórica del autor ni como balance final.
 

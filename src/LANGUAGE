@@ -3429,8 +3429,8 @@ CA_REST_PAUSE_HELP = "Escape: pausa | TAB: levantarte y abrir Diario";
 [default]
 CA_REST_CHAIR_TITLE = "Chair — wait";
 CA_REST_BED_TITLE = "Cot — sleep";
-CA_REST_CHAIR_INFO = "Choose how long to sit. Looking around orbits the rest camera. Movement or action gets you up.";
-CA_REST_BED_INFO = "Choose how long to sleep. Sleep recovery and world time use the same rules as resting on the ground.";
+CA_REST_CHAIR_INFO = "Health/Air recovery x2; Hunger/Thirst loss /2. Waiting does not restore Sleep. Choose a duration.";
+CA_REST_BED_INFO = "Health/Air recovery x4; Hunger/Thirst loss /4. Sleep recovers at the usual rate. Choose a duration.";
 CA_REST_FURNITURE_UNAVAILABLE = "This furniture is no longer available or within reach.";
 CA_REST_FURNITURE_SPACE = "There is not enough clear space to rest here.";
 CA_REST_CAMERA_HELP = "Look: orbit | Escape: pause | TAB: get up and open journal";
@@ -3438,8 +3438,30 @@ CA_REST_CAMERA_HELP = "Look: orbit | Escape: pause | TAB: get up and open journa
 [es]
 CA_REST_CHAIR_TITLE = "Silla — esperar";
 CA_REST_BED_TITLE = "Catre — dormir";
-CA_REST_CHAIR_INFO = "Elegí cuánto tiempo sentarte. Mirar alrededor orbita la cámara. Moverte o actuar te levanta.";
-CA_REST_BED_INFO = "Elegí cuánto tiempo dormir. La recuperación de Sueño y el tiempo mantienen las reglas del descanso en el suelo.";
+CA_REST_CHAIR_INFO = "Recuperación de Salud/Aire x2; pérdida de Hambre/Sed /2. Sentarte no recupera Sueño. Elegí una duración.";
+CA_REST_BED_INFO = "Recuperación de Salud/Aire x4; pérdida de Hambre/Sed /4. Sueño se recupera a su tasa habitual. Elegí una duración.";
 CA_REST_FURNITURE_UNAVAILABLE = "El mueble ya no está disponible o al alcance.";
 CA_REST_FURNITURE_SPACE = "No hay espacio libre suficiente para descansar acá.";
 CA_REST_CAMERA_HELP = "Mirar: orbitar | Escape: pausa | TAB: levantarte y abrir Diario";
+
+[default]
+CA_SLEEPING_BAG_NAME = "Sleeping bag";
+CA_SLEEPING_BAG_PICKUP = "You picked up a sleeping bag.";
+CA_SLEEPING_BAG_INFO = "Health/Air recovery x3; Hunger/Thirst loss /3. Sleep recovers at the usual rate. Unroll on clear, dry ground; it packs away when you get up.";
+CA_SLEEPING_BAG_PREPARE = "Receive a trial sleeping bag";
+CA_SLEEPING_BAG_OWNED = "You already have a sleeping bag. Find it in Inventory; take it out of the Box before using it.";
+CA_SLEEPING_BAG_CARRY = "There is no room to carry the sleeping bag (2 kg).";
+CA_SLEEPING_BAG_SPACE = "The sleeping bag needs more clear, level ground, away from edges and solid objects.";
+CA_SLEEPING_BAG_UNAVAILABLE = "The sleeping bag is no longer in your personal inventory.";
+CA_REST_COMFORT = "Health/Air x%d | Hunger/Thirst loss /%d";
+
+[es]
+CA_SLEEPING_BAG_NAME = "Bolsa de dormir";
+CA_SLEEPING_BAG_PICKUP = "Recogiste una bolsa de dormir.";
+CA_SLEEPING_BAG_INFO = "Recuperación de Salud/Aire x3; pérdida de Hambre/Sed /3. Sueño se recupera a su tasa habitual. Requiere suelo seco y despejado; se recoge al levantarte.";
+CA_SLEEPING_BAG_PREPARE = "Recibir una bolsa de dormir de prueba";
+CA_SLEEPING_BAG_OWNED = "Ya tenés una bolsa de dormir. Buscala en Inventario; sacala de la Caja antes de usarla.";
+CA_SLEEPING_BAG_CARRY = "No hay capacidad para llevar la bolsa de dormir (2 kg).";
+CA_SLEEPING_BAG_SPACE = "La bolsa necesita más suelo libre y nivelado, lejos de bordes y objetos sólidos.";
+CA_SLEEPING_BAG_UNAVAILABLE = "La bolsa ya no está en tu inventario personal.";
+CA_REST_COMFORT = "Salud/Aire x%d | Pérdida de Hambre/Sed /%d";

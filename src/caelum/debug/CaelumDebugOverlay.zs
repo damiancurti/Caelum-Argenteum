@@ -463,6 +463,7 @@ class CaelumDebugOverlay : EventHandler
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
                 return "CA_KEY_ITEM_PROCESSING_MANUAL";
@@ -1290,6 +1291,8 @@ class CaelumDebugOverlay : EventHandler
             return "graphics/caelum/icons/ca_key.png";
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG)
+                return "graphics/caelum/icons/materials/ca_material_fabric.png";
             return localPlayer.EquipmentSelectionSpecialType
                     == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
                 ? "graphics/caelum/icons/ca_book.png"

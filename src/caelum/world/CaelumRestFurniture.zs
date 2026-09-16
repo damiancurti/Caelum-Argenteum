@@ -6,6 +6,8 @@ class CaelumRestFurniture : Actor abstract
     int TrialSlot;
 
     virtual int RestMode() { return CaelumRestRules.MODE_WAIT; }
+    virtual clearscope int ComfortFactor() { return 2; }
+    virtual bool SupportsRest(CaelumPlayer user) { return Occupant == user; }
     // Ajuste gráfico a las poses RSDO; el volumen físico conserva sus medidas.
     virtual vector3 PoseOffset() { return (Cos(Angle)*-16, Sin(Angle)*-16, 0); }
 
@@ -56,7 +58,7 @@ class CaelumRestFurniture : Actor abstract
         return fits;
     }
 
-    void Release(CaelumPlayer user, vector3 entry)
+    virtual void Release(CaelumPlayer user, vector3 entry)
     {
         if (Occupant != user) return;
         // No deshace un desplazamiento externo, una caída ni una muerte.
@@ -116,6 +118,7 @@ class CaelumRestChair : CaelumRestFurniture
 class CaelumRestBed : CaelumRestFurniture
 {
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
+    override int ComfortFactor() { return 4; }
     override vector3 PoseOffset() { return (0, 0, 10); }
     Default { Radius 56; Height 24; Tag "$CA_REST_BED_TITLE"; }
     States { Spawn: CAHC A -1; Stop; }

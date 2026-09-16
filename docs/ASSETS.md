@@ -1,6 +1,32 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0e — 2026-09-16.
+Versión documental: 4.35.0f — 2026-09-16.
+
+## 4.35.0f — bolsa portátil y lectura de comodidad
+
+El generador existente generate_rest_furniture.py añade dos mallas originales:
+ca_rest_bag_roll.obj (bolsa enrollada al soltarla) y ca_rest_bag_open.obj (lona,
+pliegues y almohadilla desplegadas). Se guardan en models/caelum/props/rest y
+se enlazan desde MODELDEF a CaelumSleepingBag/CaelumRestBag. Reutilizan los
+materiales propios del depósito, sin nuevos PNG. El icono provisional del
+inventario reutiliza el de tela; el nombre identifica «Bolsa de dormir».
+Las mallas de silla/catre previas se regeneran con idénticos bytes.
+
+CaelumSleepingBag.zs contiene el Inventory, el soporte temporal y la sonda
+invisible de espacio. CAPALOMO añade 43513 y una preparación optativa para
+recibirla. LANGUAGE incorpora nueve claves por idioma y actualiza las
+explicaciones de silla/catre para informar sus factores. Se conserva la ruta
+USDF de cuatro duraciones y el arte de personajes aprobado.
+
+El panel ocupa (16,12,608,108) sobre 640×360. Incluye la línea de recuperación
+Salud/Aire y pérdida de Hambre/Sed, entre las reservas y los controles, dejando
+visible la bolsa y la postura. Se inspeccionó en una captura nativa de GZDoom
+4.14.2. Los controles de navegación del Diario no se cambian: sólo se cierra
+su vista antes de abrir el diálogo de la bolsa seleccionada.
+
+No se alteran mapas, audio, fuentes, sprites, texturas ni modelos anteriores.
+El parche incluye únicamente fuentes/modelos/documentación nuevos o modificados,
+sin motor, IWAD, PK3 completo, capturas de ensayo ni fixtures QA.
 
 ## 4.35.0e — mobiliario original y vista de descanso
 

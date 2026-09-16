@@ -3126,6 +3126,7 @@ conversation
         goodbye = "$CA_REST_CLOSE";
         choice { text = "$CA_REST_PREPARE_NORMAL"; giveitem = "CaelumRestPrepareAction"; closedialog = true; }
         choice { text = "$CA_REST_PREPARE_LOW"; giveitem = "CaelumRestPrepareLowAction"; closedialog = true; }
+        choice { text = "$CA_SLEEPING_BAG_PREPARE"; giveitem = "CaelumRestPrepareBagAction"; closedialog = true; }
         choice { text = "$CA_REST_BACK"; nextpage = "rest_offer"; closedialog = false; }
     }
 }
@@ -3152,6 +3153,21 @@ conversation
     page
     {
         name = "$CA_REST_BED_TITLE"; dialog = "$CA_REST_BED_INFO";
+        goodbye = "$CA_REST_CLOSE";
+        choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestSleep5Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestSleep60Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_240"; giveitem = "CaelumRestSleep240Action"; closedialog = true; }
+        choice { text = "$CA_REST_DURATION_480"; giveitem = "CaelumRestSleep480Action"; closedialog = true; }
+    }
+}
+
+conversation
+{
+    id = 43513;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SLEEPING_BAG_NAME"; dialog = "$CA_SLEEPING_BAG_INFO";
         goodbye = "$CA_REST_CLOSE";
         choice { text = "$CA_REST_DURATION_5"; giveitem = "CaelumRestSleep5Action"; closedialog = true; }
         choice { text = "$CA_REST_DURATION_60"; giveitem = "CaelumRestSleep60Action"; closedialog = true; }

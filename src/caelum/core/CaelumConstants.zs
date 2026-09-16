@@ -1064,7 +1064,8 @@ class CaelumConstants : Object
     const KEY_TYPE_COUNT = 1;
     const KEY_ITEM_SEALED_LETTER = 0;
     const KEY_ITEM_PROCESSING_MANUAL = 1;
-    const KEY_ITEM_TYPE_COUNT = 2;
+    const KEY_ITEM_SLEEPING_BAG = 2;
+    const KEY_ITEM_TYPE_COUNT = 3;
     const LOCK_CAELUM_SILVER = 200;
     const LOCK_CAELUM_SILVER_STASH = 201;
 

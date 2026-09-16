@@ -1,6 +1,34 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0e — 2026-09-16.
+Versión documental: 4.35.0f — 2026-09-16.
+
+## 4.35.0f — bolsa de dormir y comodidad (2026-09-16)
+
+- El autor aprueba todas las pruebas de 0e. Solicita una bolsa de inventario y
+  fija recuperación de Salud/Aire ×2/×3/×4 en silla/bolsa/catre, con pérdida de
+  Hambre/Sed dividida por esos factores. Se mantiene Sueño sin ganancia en silla.
+- Bolsa nativa reutilizable, peso provisional 2 kg, integrada con inventario,
+  Caja, capacidad, soltado y recogida. Una preparación voluntaria en las
+  alcantarillas permite obtenerla; no se entrega automáticamente.
+- Despliegue al elegir duración tras cerrar USDF y validar propiedad/espacio.
+  Recogida visual al finalizar/cancelar/interrumpir, sin consumir ni duplicar
+  el Inventory ni cambiar su peso. Movimiento, daño o pérdida de acceso cancelan.
+- Factores temporales sobre tasas naturales y gasto por tiempo, incluidos los
+  costes de regeneración. Se conservan máximos y bloqueos por reservas críticas.
+  Ánima/Lucidez y consumibles conservan sus reglas. La recuperación respiratoria
+  pendiente también usa ×F, con límite de deuda y máximo. Sueño sigue recuperando
+  provisionalmente 100% por 8 horas de juego.
+- Dos modelos procedurales con materiales existentes, icono provisional de tela,
+  factores visibles en el panel y nuevas traducciones/descripciones.
+- Compilación nativa de GZDoom 4.14.2 en Linux; comprobaciones de tasas, activación
+  de inventario/USDF, mundo/inventario/Caja, cancelación, daño, espacio, límites
+  y guardado/carga. Los ensayos y su continuación tras cargar terminan sin
+  fallos; el contador guardado no se cuenta como pruebas nuevas tras cargar.
+  También se carga un catre activo de 0e: recibe ×4 y completa sin reinicio.
+- Se documenta la recomendación de time skip por intervalos y eventos, inicialmente
+  en lugares seguros. No se implementa en 0f; sigue pendiente en 4.35 junto al
+  clima, eventos/rutas e integración. Se conserva la exportación después de 4.37
+  y el trabajo heredado/transversal de V5.
 
 ## 4.35.0e — sillas, catres y cámara de descanso (2026-09-16)
 

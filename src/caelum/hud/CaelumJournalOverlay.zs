@@ -2016,24 +2016,27 @@ class CaelumJournalOverlay : EventHandler
     ui void DrawRest(CaelumPlayer localPlayer, CaelumRestState rest)
     {
         Screen.Dim(0x05070A, 0.12, 0, 0, Screen.GetWidth(), Screen.GetHeight());
-        DrawPanel(16.0, 12.0, 608.0, 102.0);
+        DrawPanel(16.0, 12.0, 608.0, 108.0);
         DrawCenteredText(TextFont, Font.CR_GOLD, 320, 18,
             StringTable.Localize(CaelumRestRules.ModeKey(rest.Mode), false));
         let clock = CaelumWorldClock(localPlayer.FindInventory("CaelumWorldClock"));
         let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
         if (calendar != null)
-            DrawCenteredText(SmallFont, Font.CR_CYAN, 170, 38, calendar.FormatDate(clock));
+            DrawCenteredText(SmallFont, Font.CR_CYAN, 170, 34, calendar.FormatDate(clock));
         int minuteTics = CaelumWorldClock.TicsPerHour() / 60;
         int remainingMinutes = (Max(0, rest.RequestedTics-rest.ElapsedTics)+minuteTics-1) / minuteTics;
-        DrawCenteredText(SmallFont, Font.CR_WHITE, 460, 38,
+        DrawCenteredText(SmallFont, Font.CR_WHITE, 460, 34,
             String.Format(StringTable.Localize("CA_REST_REMAINING", false), remainingMinutes));
-        DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 56,
+        DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 50,
             String.Format(StringTable.Localize("CA_REST_RESOURCES", false),
                 localPlayer.CurrentSleep, localPlayer.CurrentHunger, localPlayer.CurrentThirst));
-        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 76,
+        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 82,
             StringTable.Localize("CA_REST_STOP_HELP", false));
-        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 94,
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 98,
             StringTable.Localize(rest.ViewCamera != null ? "CA_REST_CAMERA_HELP" : "CA_REST_PAUSE_HELP", false));
+        int factor = rest.Furniture != null ? rest.Furniture.ComfortFactor() : 1;
+        DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 66,
+            String.Format(StringTable.Localize("CA_REST_COMFORT", false), factor, factor));
     }
 
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
@@ -2457,6 +2460,11 @@ class CaelumJournalOverlay : EventHandler
             && (e.KeyScan == InputEvent.Key_Enter
                 || e.KeyScan == InputEvent.Key_Pad_A))
         {
+            // La bolsa abre su diálogo después de cerrar la vista de inventario.
+            if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+                && localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG
+                && localPlayer.EquipmentSelectionOwned && !localPlayer.EquipmentSelectionInMagicBox)
+                SetJournalOpen(false);
             SendNetworkEvent("ca_inventory_activate");
             SendNetworkEvent("ca_journal_menu_select_sound");
         }
@@ -2621,6 +2629,10 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_debug_rest_report")
         {
             CaelumRestState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_rest_bag")
+        {
+            CaelumSleepingBag.PrepareTrial(requestingPlayer);
         }
         else if (e.Name == "ca_debug_rest_hit")
         {

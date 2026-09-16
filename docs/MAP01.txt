@@ -1,5 +1,24 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0e — 2026-09-16.
+Versión documental: 4.35.0f — 2026-09-16.
+
+4.35.0f — BOLSA DE DORMIR Y COMODIDAD EN PRUEBAS
+
+El autor aprueba 0e y define silla ×2, bolsa ×3 y cama/catre ×4 para Salud/Aire,
+con pérdida de Hambre/Sed dividida por el mismo factor. En silla no se gana
+Sueño. Dormir conserva su tasa de Sueño anterior. El suelo conserva ×1.
+
+En MAP02–MAP05, Mundo > D/X > preparación permite recibir una bolsa de prueba;
+netevent ca_debug_rest_bag ofrece la misma ayuda voluntaria. No aparece sola
+al cargar ni viajar. La bolsa se usa desde Inventario, requiere una zona seca,
+libre y nivelada y se recoge automáticamente al levantarse. Puede trasladarse
+en el inventario o Caja por las conexiones aprobadas, sin convertirla en un
+mueble permanente del mapa. Una bolsa desplegada no habilita viajes activos.
+
+Las parejas de silla/catre de 0e mantienen ubicación y geometría. Los guardados
+anteriores reciben sus factores al continuar sin reiniciar el progreso.
+MAP01 conserva tiempo detenido, historia, residentes y recursos; allí siguen
+rechazándose los descansos por duración. No se habilita una vuelta al Limbo.
+No se añaden misiones, diálogos narrativos, recetas, botines ni escenas.
 
 4.35.0e — SILLAS Y CATRES EN LAS ALCANTARILLAS
 

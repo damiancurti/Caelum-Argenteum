@@ -5,29 +5,57 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0e.** Apply this source patch over the complete,
-accepted **4.35.0d1** project, merge its folders and rebuild with `run_dev.bat`.
-It adds usable chairs and low cots in MAP02–MAP05 and a collision-aware third
-person rest camera. Use a chair to Wait or a cot to Sleep, then choose the
-existing 5/60/240/480-minute duration. World > D/X still offers ground rest.
+**Current release: 4.35.0f.** Apply this source patch over the complete,
+accepted **4.35.0e** project, merge its folders and rebuild with `run_dev.bat`.
+It adds a reusable sleeping bag to the existing inventory and the author's
+rest comfort rules: chair x2, sleeping bag x3, bed/cot x4 for natural Health/Air
+recovery; Hunger/Thirst loss per unit of time is divided by the same factor.
+Ground rest remains x1. Sitting does not restore Sleep; sleeping keeps its
+existing provisional Sleep recovery rate.
 
-Looking orbits the camera; Q/Pad B gets up, movement/action cancels, TAB gets
-up and opens the journal, and Escape keeps native pause. The camera, pose
-and furniture occupancy are released on completion or interruption. Sleep,
-needs and the clock retain the accepted rates; accelerated time is pending.
+Receive the optional trial bag from World > D/X > preparation, or with
+`netevent ca_debug_rest_bag` in MAP02–MAP05. Select it in Inventory and press
+Enter/A to choose a duration. It needs clear, dry, level ground, packs away
+on exit and remains the same saved inventory item. Box storage, dropping,
+pickup and carry limits use the existing system. Its provisional weight is 2 kg.
 
-GZDoom 4.14.2 on Linux compiled the complete project and ran native checks of
-Use/USDF replies, repeat use, furniture placement in all four sewer maps,
-completion, damage, blocked exits and active-rest save/load. Native screenshots
-were inspected for both poses. These automated engine checks do not replace
-Windows keyboard/controller and hub-travel checks in **PRUEBAS_4_35_0e.txt**.
-The engine and the Freedoom 2 test IWAD are not included.
+Native GZDoom 4.14.2 on Linux compiled the project and checked the inventory
+activation/USDF route, the four rate factors, pickup/drop/storage, deployment,
+cancellation, damage, blocked space and recovery limits. A bag save was loaded
+and the checks completed without failures; an active 0e bed save also loaded,
+acquired x4 and completed without resetting its progress. The bag and factor
+panel were visually inspected in native screenshots. Windows input/controller
+and travel checks are in **PRUEBAS_4_35_0f.txt**. The engine, test IWAD and QA
+fixtures are not included.
+
+Long-rest time skipping is a design recommendation in `docs/SYSTEMS.md` and
+remains unimplemented. This patch retains the accepted world clock rate and
+the timeless Limbo exception. It does not change character attributes.
 
 The roadmap remains **V4 through 4.37 → playtest export for other players → V5**.
 All inherited and cross-system work is assigned to V5 after that export,
 starting with the modular refactor in V5.0 and thermal exposure in V5.1.
 
 ## Implemented
+
+- One reusable native Inventory sleeping bag, shown in All and Keys/key items.
+  It can move through personal inventory, the Magic Box and the world pickup
+  path. Enter withdraws a stored bag first; a second activation opens rest.
+- Choosing a duration deploys a temporary original cloth model. The owned bag
+  is neither consumed nor recreated. Completion, cancellation and interruption
+  remove the model and restore the player's view without moving their position.
+- Native volume and perimeter checks require free, level space. They preserve
+  the player's collision dimensions. A failed deployment keeps the bag.
+- Chair x2, sleeping bag x3 and bed/cot x4 affect natural Health/Air regeneration
+  and Hunger/Thirst drain while the matching rest session is active. Existing
+  critical-resource healing restrictions and resource maximums still apply.
+- Regeneration-related food/water expenses also honor the drain reduction per
+  time. Boosting recovery by F while reducing its expense by F requires a cost
+  per recovered point of base cost / F²; passive drain is simply base drain / F.
+- No comfort multiplier applies to Sleep, Anima, Lucidity or medicine pulses.
+  Pending breathing recovery after immersion also uses the active factor; its
+  normal three-second timing remains the baseline outside comfort rest.
+- Read-only rest diagnostics identify 4.35.0f and report the active factor.
 
 - One original wooden chair and one cot per sewer map, placed on first entry
   or when loading an older save. Repeated preparation keeps one pair.

@@ -2,9 +2,10 @@
 // Las ayudas de reservas requieren una elección explícita del autor/jugador.
 class CaelumRestTrial : Object play
 {
-    static bool Open(CaelumPlayer user, CaelumRestFurniture furniture = null)
+    static bool Open(CaelumPlayer user, CaelumRestFurniture furniture = null, CaelumSleepingBag bag = null)
     {
         if (CaelumRestState.IsActive(user)) return false;
+        if (bag != null && (furniture != null || !bag.AvailableTo(user))) return false;
         if (furniture != null && !furniture.CanReach(user)) return false;
         String reason = CaelumRestState.BlockReason(user);
         if (reason.Length() != 0 && reason != "CA_REST_NEEDS")
@@ -22,8 +23,11 @@ class CaelumRestTrial : Object play
         guide.OriginMap = level.MapName;
         guide.Furniture = furniture;
         guide.UsesFurniture = furniture != null;
+        guide.Bag = bag;
+        guide.UsesBag = bag != null;
         int conversation = furniture == null ? 43510
             : furniture.RestMode() == CaelumRestRules.MODE_SLEEP ? 43512 : 43511;
+        if (bag != null) conversation = 43513;
         if (CaelumFactionCondition.OpenDialogue(user, guide, conversation, null, SF_IGNOREVISIBILITY)) return true;
         guide.Destroy();
         return false;
@@ -31,6 +35,7 @@ class CaelumRestTrial : Object play
 
     static void Prepare(CaelumPlayer user, int preset)
     {
+        if (preset == 3) { CaelumSleepingBag.PrepareTrial(user); return; }
         if (preset != 1 && preset != 2) return;
         String reason = CaelumRestState.BlockReason(user);
         if (CaelumRestState.IsActive(user) || (reason.Length() != 0 && reason != "CA_REST_NEEDS")) return;
@@ -63,6 +68,8 @@ class CaelumRestGuide : Actor
     int QueuedPreparation;
     CaelumRestFurniture Furniture;
     bool UsesFurniture;
+    CaelumSleepingBag Bag;
+    bool UsesBag;
 
     override void Tick()
     {
@@ -80,7 +87,13 @@ class CaelumRestGuide : Actor
         // Volver o cancelar deja los tres campos a cero.
         if (mode != 0)
         {
-            if (UsesFurniture && (Furniture == null || !Furniture.CanReach(Subject)))
+            if (UsesBag)
+            {
+                if (Bag == null || !Bag.AvailableTo(Subject))
+                    Subject.A_Print(StringTable.Localize("CA_SLEEPING_BAG_UNAVAILABLE", false));
+                else Bag.BeginRest(Subject, minutes);
+            }
+            else if (UsesFurniture && (Furniture == null || !Furniture.CanReach(Subject)))
                 Subject.A_Print(StringTable.Localize("CA_REST_FURNITURE_UNAVAILABLE", false));
             else CaelumRestState.Begin(Subject, mode, minutes, Furniture);
         }
@@ -112,7 +125,7 @@ class CaelumRestAction : CaelumPalomoDialogueAction abstract
         int preparation = Preparation();
         if (preparation != 0)
         {
-            if (guide.UsesFurniture || mode != 0 || minutes != 0 || (preparation != 1 && preparation != 2)) return false;
+            if (guide.UsesFurniture || guide.UsesBag || mode != 0 || minutes != 0 || (preparation != 1 && preparation != 2 && preparation != 3)) return false;
             guide.QueuedPreparation = preparation;
         }
         else
@@ -120,6 +133,7 @@ class CaelumRestAction : CaelumPalomoDialogueAction abstract
             if ((mode != CaelumRestRules.MODE_SLEEP && mode != CaelumRestRules.MODE_WAIT)
                 || CaelumRestRules.DurationTics(minutes) == 0) return false;
             if (guide.UsesFurniture && (guide.Furniture == null || guide.Furniture.RestMode() != mode)) return false;
+            if (guide.UsesBag && (guide.Bag == null || mode != CaelumRestRules.MODE_SLEEP)) return false;
             guide.QueuedMode = mode;
             guide.QueuedMinutes = minutes;
         }
@@ -139,3 +153,5 @@ class CaelumRestWait240Action : CaelumRestWaitAction { override int Minutes() { 
 class CaelumRestWait480Action : CaelumRestWaitAction { override int Minutes() { return 480; } }
 class CaelumRestPrepareAction : CaelumRestAction { override int Preparation() { return 1; } }
 class CaelumRestPrepareLowAction : CaelumRestAction { override int Preparation() { return 2; } }
+
+class CaelumRestPrepareBagAction : CaelumRestAction { override int Preparation() { return 3; } }
