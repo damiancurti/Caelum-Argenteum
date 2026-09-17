@@ -3237,3 +3237,49 @@ Model CaelumDiningWaterCup
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+// BEGIN CAELUM TRAVEL VEHICLES
+Model CaelumCoveredCart
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_covered_cart.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumMerchantShip
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_merchant_ship.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumVehicleRanch
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_ranch.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumVehicleDock
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_dock.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+// END CAELUM TRAVEL VEHICLES

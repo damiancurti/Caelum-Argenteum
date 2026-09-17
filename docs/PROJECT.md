@@ -1,13 +1,51 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0o — 2026-09-17.
+Versión documental: 4.35.0p — 2026-09-17.
 
-## Estado actual: 4.35.0o — agenda y eventos persistentes
+## Estado actual: 4.35.0p — reservas y primeros vehículos
+
+Delta sobre 4.35.0o. El autor aprueba 0n/0o salvo los puntos corregidos aquí:
+consumo sentado desde inventario/Caja y conflicto de Escape. Autoriza una
+carreta cubierta y un pequeño mercante con velas y remos, con sus instalaciones
+en ambos mapas costeros. La siguiente aceptación pendiente es 0p.
+
+La mesa busca primero sus raciones, luego las llevadas y finalmente las de la
+Caja propia. Conserva el ritmo sentado aprobado, el volumen de las porciones,
+la digestión y ambos toggles independientes. Se detiene al saciarse, agotarse
+la reserva o levantarse. Los recipientes vacíos y pilas restantes no se extraen.
+Q/B cancela el presupuesto y vuelve del calendario/detalle; Escape abre la
+pausa nativa y permite regresar a la misma pantalla.
+
+MAP06 y MAP07 tienen una carreta de carga cubierta dentro de un rancho. MAP06
+conserva su puerto y agrega el mercante; MAP07 suma un muelle de madera y otro
+mercante. Usar la carreta o el cartel de embarque abre el presupuesto del
+recorrido de 500 km. Son servicios de prueba con conductor/tiro y guardias,
+sin tarifa por ahora; no son vehículos de conducción libre.
+
+Carreta: 3 km/h en movimiento, 16 h de marcha / 8 h de campamento. Mercante:
+5 nudos (9,26 km/h), navegación continua con viento favorable; el pasajero
+duerme durante la travesía. El calendario incluye sólo tiempo realmente
+transcurrido; dormir a bordo no agrega una segunda vez esas horas.
+Las velocidades y dimensiones son valores nominales representativos de diseño,
+no mediciones de una carreta o nave argentina histórica individual.
+
+Las estructuras y vehículos se instalan una vez al entrar/cargar, también
+sobre mapas guardados con 0o, y se conservan en el hub. La confirmación exige
+seguir cerca del mismo vehículo y recalcula las provisiones antes de salir.
+
+### Cierre vigente de 4.35
+
+Queda la prueba manual de 0p: reservas de mesa/Caja, Q y Escape, entrada del
+rancho, embarque, proporciones visuales y viaje por cada vehículo. Si no surgen
+fallos, se puede cerrar 4.35 y continuar con 4.36 (peligros físicos). No hace
+falta repetir las pruebas de 0n/0o ya aprobadas ni agregar más mapas o asedios.
+
+## Base entregada: 4.35.0o — agenda y eventos persistentes
 
 Delta sobre el proyecto completo 4.35.0n. El autor define los eventos:
 asedios, rutinas de NPC/misiones secundarias, alquileres, envíos de mercancías,
 crecimiento de vetas y futuras categorías. Pide un calendario con sus fechas.
-0n sigue entregado y pendiente de prueba; no se presume su aprobación.
+0n y 0o fueron probados por el autor; 0p resuelve las observaciones recibidas.
 
 TAB → Mundo → F/RT abre el calendario mensual de campaña. Señala hoy, la
 selección y cuántas series conocidas caen en cada día; muestra hora, tipo y
@@ -36,7 +74,7 @@ ejércitos y consecuencias políticas conserva su alcance V5 ya acordado.
 ### Cierre de 4.35
 
 La implementación temporal de este bloque queda candidata a cierre. Faltan la
-aceptación manual del autor de 0n y 0o, y resolver cualquier fallo que aparezca.
+aceptación manual del autor de 0p, y resolver cualquier fallo que aparezca.
 No se exige nuevo contenido de campaña ni repetir las pruebas ya aprobadas.
 Después siguen 4.36 (peligros físicos), 4.37 (Tarot/Trucazo), exportación V4,
 reorganización V5.0 y exposición térmica V5.1.
@@ -51,7 +89,7 @@ y puerto, y 500 km entre puerto y playa, con jornadas de 16 horas caminando y
 El acceso muestra presupuesto antes de salir: velocidad real convertida a
 km/h, duración de marcha/sueño, raciones necesarias/llevadas/a consumir, agua
 adicional en recipientes y reservas/salud previstas al llegar. Enter confirma;
-Escape cancela sin descontar raciones ni adelantar el reloj por el trayecto.
+Q/B cancela sin descontar raciones ni adelantar el reloj por el trayecto.
 El mundo sigue su paso normal mientras se lee. Si cambian velocidad, consumo,
 existencias o riesgo mortal, se actualiza la vista antes de una nueva confirmación.
 
@@ -1805,7 +1843,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. Candidata a cierre, pendiente de aceptación de 0n/0o. Modelo térmico corporal en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. Pendiente de aceptación de 0p. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |

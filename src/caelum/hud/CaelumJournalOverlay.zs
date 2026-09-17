@@ -2025,8 +2025,7 @@ class CaelumJournalOverlay : EventHandler
         if (journey != null)
             DrawTextLine(SmallFont, Font.CR_CYAN, 48, 286,
                 String.Format(StringTable.Localize("CA_JOURNEY_LAST", false), journey.Sequence,
-                    StringTable.Localize(journey.TravelMode == CaelumJourneyState.MODE_CARAVAN
-                        ? "CA_JOURNEY_CARAVAN" : "CA_JOURNEY_FOOT", false),
+                    StringTable.Localize(CaelumJourneyRules.ModeKey(journey.TravelMode), false),
                     StringTable.Localize(CaelumJourneyState.StatusKey(journey.Status), false)));
         if (record != null && record.WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_RETURN])
             DrawTextLine(SmallFont, Font.CR_GRAY, 48, 298, StringTable.Localize("CA_WORLD_RETURN_RECORDED", false));
@@ -2076,6 +2075,8 @@ class CaelumJournalOverlay : EventHandler
             rest.Mode==CaelumRestRules.MODE_WAIT
                 ? String.Format(StringTable.Localize("CA_TABLE_AUTO_HELP",false),rest.AutoEating?"ON":"OFF",rest.AutoDrinking?"ON":"OFF")
                 : StringTable.Localize("CA_SLEEP_LUCIDITY_HELP", false));
+        if(rest.Mode==CaelumRestRules.MODE_WAIT)
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 126, StringTable.Localize("CA_TABLE_RESERVES",false));
     }
 
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
@@ -2225,13 +2226,15 @@ class CaelumJournalOverlay : EventHandler
         DrawCenteredText(TitleFont, Font.CR_GOLD, 320, 24, StringTable.Localize("CA_JOURNEY_PLAN", false));
         String destination = StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(
             CaelumWorldCatalogue.ConnectionDestination(plan.ConnectionId)), false);
-        DrawCenteredText(TextFont, Font.CR_WHITE, 320, 63, destination);
+        DrawCenteredText(TextFont, Font.CR_WHITE, 320, 63, destination .. " | "
+            .. StringTable.Localize(CaelumJourneyRules.ModeKey(plan.TravelMode),false));
         DrawTextLine(SmallFont, Font.CR_GRAY, 42, 89, String.Format(StringTable.Localize("CA_JOURNEY_PACE_LINE", false),
             CaelumJourneyRules.DistanceKm(plan.ConnectionId), plan.SpeedKmh));
         DrawTextLine(SmallFont, Font.CR_WHITE, 42, 111, String.Format(StringTable.Localize("CA_JOURNEY_TIME_LINE", false),
-            CaelumJourneyRules.Duration(plan.PlannedWalkTics + plan.PlannedSleepTics)));
-        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 129, String.Format(StringTable.Localize("CA_JOURNEY_REST_LINE", false),
-            CaelumJourneyRules.Duration(plan.PlannedWalkTics), plan.PlannedSleepTics / CaelumWorldClock.TicsPerHour()));
+            CaelumJourneyRules.Duration(plan.TotalTics())));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 129, String.Format(StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP ? "CA_JOURNEY_ONBOARD_REST" : "CA_JOURNEY_REST_LINE", false),
+            CaelumJourneyRules.Duration(plan.PlannedWalkTics), CaelumJourneyRules.Duration(plan.PlannedSleepTics)));
         DrawTextLine(SmallFont, Font.CR_GOLD, 42, 154, StringTable.Localize("CA_JOURNEY_STOCK_TITLE", false));
         DrawTextLine(SmallFont, Font.CR_WHITE, 42, 172, String.Format(StringTable.Localize("CA_JOURNEY_FOOD_LINE", false),
             needed.FoodSpent, available.FoodStock, available.FoodSpent));
@@ -2239,12 +2242,17 @@ class CaelumJournalOverlay : EventHandler
             needed.WaterSpent, available.WaterStock, available.WaterSpent));
         DrawTextLine(SmallFont, Font.CR_GRAY, 42, 208, String.Format(StringTable.Localize("CA_JOURNEY_LITERS_LINE", false),
             available.ContainerSpent, available.ContainerStock));
-        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 226, StringTable.Localize(available.Bag ? "CA_JOURNEY_BAG" : "CA_JOURNEY_GROUND", false));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 226, StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP
+                ? available.Bag ? "CA_JOURNEY_SHIP_BAG" : "CA_JOURNEY_SHIP_DECK"
+                : available.Bag ? "CA_JOURNEY_BAG" : "CA_JOURNEY_GROUND", false));
         DrawTextLine(SmallFont, available.Health > 0 ? Font.CR_WHITE : Font.CR_RED, 42, 247,
             available.Health > 0 ? String.Format(StringTable.Localize("CA_JOURNEY_END_LINE", false),
                 available.Hunger, available.Thirst, available.Sleep, 100.0 * available.Health / available.MaxHealth)
                 : String.Format(StringTable.Localize("CA_JOURNEY_FATAL", false), CaelumJourneyRules.Duration(available.ElapsedTics)));
-        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 271, StringTable.Localize("CA_JOURNEY_FOOT_NOTE", false));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 271, StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP ? "CA_JOURNEY_SHIP_NOTE"
+                : plan.TravelMode == CaelumJourneyState.MODE_CART ? "CA_JOURNEY_CART_NOTE" : "CA_JOURNEY_FOOT_NOTE", false));
         DrawCenteredText(SmallFont, available.Health > 0 ? Font.CR_GOLD : Font.CR_RED, 320, 310,
             StringTable.Localize(available.Health > 0 ? "CA_JOURNEY_CONFIRM" : "CA_JOURNEY_CONFIRM_FATAL", false));
     }
@@ -2261,8 +2269,9 @@ class CaelumJournalOverlay : EventHandler
         if (plan != null && plan.Open && menuactive == 0)
         {
             // Liberar teclas siempre llega al motor: no deja Use/marcha trabados.
-            if (e.Type != InputEvent.Type_KeyDown || e.KeyScan == InputEvent.Key_Grave) return false;
-            if (e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Tab
+            if (e.Type != InputEvent.Type_KeyDown || e.KeyScan == InputEvent.Key_Grave
+                || e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Pad_Start) return false;
+            if (e.KeyString ~== "q" || e.KeyChar == 113 || e.KeyChar == 81 || e.KeyScan == InputEvent.Key_Tab
                 || e.KeyScan == InputEvent.Key_Pad_B)
                 SendNetworkEvent("ca_journey_cancel");
             else if (e.KeyScan == InputEvent.Key_Enter || e.KeyScan == InputEvent.Key_Pad_A)
@@ -2375,7 +2384,7 @@ class CaelumJournalOverlay : EventHandler
         {
             return false;
         }
-        if (e.KeyScan == InputEvent.Key_Grave
+        if (e.KeyScan == InputEvent.Key_Grave || e.KeyScan == InputEvent.Key_Escape
             || e.KeyScan == InputEvent.Key_Pad_Start)
         {
             return false;
@@ -2427,7 +2436,7 @@ class CaelumJournalOverlay : EventHandler
         { CaelumScheduleCalendar.Open(localPlayer); return true; }
         if (HandleJournalNavigation(e.KeyScan)) return true;
 
-        if (e.KeyScan == InputEvent.Key_Escape
+        if ((currentPage == 2 && (e.KeyString ~== "q" || e.KeyChar == 113 || e.KeyChar == 81))
             || e.KeyScan == InputEvent.Key_Tab || e.KeyScan == InputEvent.Key_Pad_B)
         {
             if (currentPage == 4 && IsQuestDetailOpen())

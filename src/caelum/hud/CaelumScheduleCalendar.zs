@@ -65,10 +65,11 @@ class CaelumScheduleCalendar : Object
     static ui bool Input(InputEvent e, CaelumPlayer user)
     {
         if (!IsOpen()) return false;
+        if (e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Pad_Start) return false;
         if (e.Type == InputEvent.Type_KeyUp) return !(Bindings.GetBinding(e.KeyScan) ~== "+use");
         if (e.Type != InputEvent.Type_KeyDown) return false;
         bool detail = Setting("ca_calendar_detail") != 0;
-        if (e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Pad_B
+        if (e.KeyScan == InputEvent.Key_Pad_B || e.KeyChar == 113 || e.KeyChar == 81
             || e.KeyString ~== "q" || e.KeyString ~== "f")
         {
             if (detail) Set("ca_calendar_detail", 0); else Close();

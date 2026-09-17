@@ -3490,7 +3490,7 @@ CA_TABLE_INSPECT = "Check contents";
 CA_TABLE_FAILED = "Could not transfer: check available items, free table space and carry capacity.";
 CA_TABLE_CONTENTS = "%d seats | %d/%d spaces | Food: %d | Water: %d | Containers: %d (%.2f L)";
 CA_TABLE_SEATED_HELP = "F: automatic eating | G: automatic drinking";
-CA_TABLE_CANNOT_EAT = "Sit beside a table with available food/water. You must have room left to eat or drink.";
+CA_TABLE_CANNOT_EAT = "Sit beside a table. Food/water may be on it, carried or in your Box. You must be hungry or thirsty.";
 
 [es]
 CA_FAST_ACTIVITY = "El avance rápido requiere descansar o atender una tarea de fabricación.";
@@ -3516,7 +3516,7 @@ CA_TABLE_INSPECT = "Ver contenido";
 CA_TABLE_FAILED = "No se pudo transferir: revisá objetos disponibles, espacio en la mesa y capacidad de carga.";
 CA_TABLE_CONTENTS = "%d plazas | %d/%d espacios | Comida: %d | Agua: %d | Recipientes: %d (%.2f L)";
 CA_TABLE_SEATED_HELP = "F: comida automática | G: bebida automática";
-CA_TABLE_CANNOT_EAT = "Sentate junto a una mesa con comida/agua disponible. Necesitás tener hambre o sed para consumir.";
+CA_TABLE_CANNOT_EAT = "Sentate junto a una mesa. Se usa comida/agua de la mesa, inventario o Caja. Necesitás tener hambre o sed.";
 
 [default]
 CA_TABLE_AUTO_STOP = "Automatic serving stopped. The current serving finishes normally.";
@@ -3647,9 +3647,9 @@ CA_JOURNEY_EFFECT = "Wait for active temporary effects to end before planning a 
 CA_JOURNEY_PACE = "You cannot walk this route at your current pace (planning limit: 30 days of walking).";
 CA_JOURNEY_REVISED = "Your conditions changed. Review the updated plan and confirm again.";
 CA_JOURNEY_PLAN = "Journey plan";
-CA_JOURNEY_PACE_LINE = "%.0f km | Walking pace at departure: %.3f km/h";
+CA_JOURNEY_PACE_LINE = "%.0f km | Speed at departure: %.3f km/h";
 CA_JOURNEY_TIME_LINE = "Total duration: %s";
-CA_JOURNEY_REST_LINE = "Walking: %s | Sleep: %d h (16 h / 8 h)";
+CA_JOURNEY_REST_LINE = "Moving: %s | Stops to sleep: %s";
 CA_JOURNEY_STOCK_TITLE = "Rations: needed / carried / to consume";
 CA_JOURNEY_FOOD_LINE = "Food: %d / %d / %d";
 CA_JOURNEY_WATER_LINE = "Water without containers: %d / %d / %d";
@@ -3658,9 +3658,9 @@ CA_JOURNEY_BAG = "Camp: your sleeping bag. Supplies in the Box are excluded.";
 CA_JOURNEY_GROUND = "Camp: ground. Supplies in the Box are excluded.";
 CA_JOURNEY_END_LINE = "Arrival: Hunger %.0f%% | Thirst %.0f%% | Sleep %.0f%% | Health %.0f%%";
 CA_JOURNEY_FATAL = "DANGER: these conditions predict death after %s.";
-CA_JOURNEY_FOOT_NOTE = "Walking; the trial caravan has no vehicle or different speed.";
-CA_JOURNEY_CONFIRM = "Enter / A: travel | Esc / B: cancel";
-CA_JOURNEY_CONFIRM_FATAL = "Enter / A: accept lethal risk | Esc / B: cancel";
+CA_JOURNEY_FOOT_NOTE = "Walking: 16 h travelling / 8 h resting. Vehicles are at the ranch and dock.";
+CA_JOURNEY_CONFIRM = "Enter / A: travel | Q / B: cancel";
+CA_JOURNEY_CONFIRM_FATAL = "Enter / A: accept lethal risk | Q / B: cancel";
 
 [es]
 CA_JOURNEY_BUSY = "Terminá la acción actual y salí a suelo seco antes de viajar.";
@@ -3670,7 +3670,7 @@ CA_JOURNEY_REVISED = "Tus condiciones cambiaron. Revisá los valores nuevos y vo
 CA_JOURNEY_PLAN = "Preparar viaje";
 CA_JOURNEY_PACE_LINE = "%.0f km | Marcha al salir: %.3f km/h";
 CA_JOURNEY_TIME_LINE = "Duración total: %s";
-CA_JOURNEY_REST_LINE = "Marcha: %s | Sueño: %d h (16 h / 8 h)";
+CA_JOURNEY_REST_LINE = "Marcha: %s | Paradas para dormir: %s";
 CA_JOURNEY_STOCK_TITLE = "Raciones: necesarias / llevás / a consumir";
 CA_JOURNEY_FOOD_LINE = "Comida: %d / %d / %d";
 CA_JOURNEY_WATER_LINE = "Agua sin recipientes: %d / %d / %d";
@@ -3679,9 +3679,9 @@ CA_JOURNEY_BAG = "Campamento: tu bolsa de dormir. No se usa lo guardado en la Ca
 CA_JOURNEY_GROUND = "Campamento: suelo. No se usa lo guardado en la Caja.";
 CA_JOURNEY_END_LINE = "Llegada: Hambre %.0f%% | Sed %.0f%% | Sueño %.0f%% | Salud %.0f%%";
 CA_JOURNEY_FATAL = "PELIGRO: estas condiciones prevén la muerte tras %s.";
-CA_JOURNEY_FOOT_NOTE = "A pie; la caravana de prueba aún no tiene vehículo ni otra velocidad.";
-CA_JOURNEY_CONFIRM = "Enter / A: viajar | Esc / B: cancelar";
-CA_JOURNEY_CONFIRM_FATAL = "Enter / A: aceptar riesgo mortal | Esc / B: cancelar";
+CA_JOURNEY_FOOT_NOTE = "A pie: 16 h de marcha / 8 h de descanso. Vehículos en rancho y muelle.";
+CA_JOURNEY_CONFIRM = "Enter / A: viajar | Q / B: cancelar";
+CA_JOURNEY_CONFIRM_FATAL = "Enter / A: aceptar riesgo mortal | Q / B: cancelar";
 
 // Agenda y eventos persistentes 4.35.0o.
 [default]
@@ -3710,7 +3710,7 @@ CA_AGENDA_TITLE = "Campaign calendar";
 CA_AGENDA_EMPTY = "No known events on this day.";
 CA_AGENDA_LEGEND = "Cyan: today | [ ]: selected | +N: known event series";
 CA_AGENDA_HELP = "Arrows: day | PgUp/PgDn: month | H: today";
-CA_AGENDA_HELP2 = "E/R: event | Enter: detail | Esc: World | Tab: close";
+CA_AGENDA_HELP2 = "E/R: event | Enter: detail | Q: World | Tab: close";
 CA_AGENDA_FIRST = "First date: %s";
 CA_AGENDA_NEXT = "Next date: %s";
 CA_AGENDA_REPEAT = "Interval: %d minutes (0 = once) | Occurrences: %d";
@@ -3725,7 +3725,7 @@ CA_AGENDA_TRIAL = "Optional trial event; not campaign canon.";
 CA_AGENDA_PAY = "P / RT: pay outstanding rent";
 CA_AGENDA_COLLECT = "P / RT: collect cargo";
 CA_AGENDA_NO_ACTION = "This event requires no inventory transaction.";
-CA_AGENDA_DETAIL_HELP = "E/R: event | Enter / Esc: month | Tab: close";
+CA_AGENDA_DETAIL_HELP = "E/R: event | Enter / Q: month | Tab: close";
 CA_EVENT_WORKER_NAME = "Trial worker";
 CA_EVENT_WORKER_REST = "My schedule says it is time to rest.";
 CA_EVENT_WORKER_WORK = "My schedule says it is time to work.";
@@ -3785,7 +3785,7 @@ CA_AGENDA_TITLE = "Calendario de campaña";
 CA_AGENDA_EMPTY = "No hay eventos conocidos para este día.";
 CA_AGENDA_LEGEND = "Cian: hoy | [ ]: selección | +N: series de eventos conocidas";
 CA_AGENDA_HELP = "Flechas: día | RePág/AvPág: mes | H: hoy";
-CA_AGENDA_HELP2 = "E/R: evento | Enter: detalle | Esc: Mundo | Tab: cerrar";
+CA_AGENDA_HELP2 = "E/R: evento | Enter: detalle | Q: Mundo | Tab: cerrar";
 CA_AGENDA_FIRST = "Primera fecha: %s";
 CA_AGENDA_NEXT = "Próxima fecha: %s";
 CA_AGENDA_REPEAT = "Intervalo: %d minutos (0 = único) | Ocurrencias: %d";
@@ -3800,7 +3800,7 @@ CA_AGENDA_TRIAL = "Evento de ensayo opcional; no es un contrato de la campaña."
 CA_AGENDA_PAY = "P / RT: pagar deuda de alquiler";
 CA_AGENDA_COLLECT = "P / RT: retirar carga";
 CA_AGENDA_NO_ACTION = "Este evento no requiere una operación de inventario.";
-CA_AGENDA_DETAIL_HELP = "E/R: evento | Enter / Esc: mes | Tab: cerrar";
+CA_AGENDA_DETAIL_HELP = "E/R: evento | Enter / Q: mes | Tab: cerrar";
 CA_EVENT_WORKER_NAME = "Encargado de ensayo";
 CA_EVENT_WORKER_REST = "Mi horario indica que es momento de descansar.";
 CA_EVENT_WORKER_WORK = "Mi horario indica que es momento de trabajar.";
@@ -3832,3 +3832,23 @@ CA_WEEK_3 = "Ju";
 CA_WEEK_4 = "Vi";
 CA_WEEK_5 = "Sá";
 CA_WEEK_6 = "Do";
+
+// 4.35.0p: reservas de mesa y transporte costero.
+[default]
+CA_TABLE_RESERVES = "Uses rations from: table, inventory, then your Magic Box.";
+CA_JOURNEY_CART = "covered cart";
+CA_JOURNEY_SHIP = "merchant sailboat";
+CA_JOURNEY_ONBOARD_REST = "Sailing: %s | Sleep on board: %s (included)";
+CA_JOURNEY_SHIP_BAG = "On board: your sleeping bag. Supplies in the Box are excluded.";
+CA_JOURNEY_SHIP_DECK = "On board: deck. Supplies in the Box are excluded.";
+CA_JOURNEY_SHIP_NOTE = "5 knots, fair wind; watch crew sails while you sleep.";
+CA_JOURNEY_CART_NOTE = "3 km/h; 16 h moving / 8 h camp. Team and driver included.";
+[es]
+CA_TABLE_RESERVES = "Raciones desde: mesa, inventario y luego tu Caja Mágica.";
+CA_JOURNEY_CART = "carreta cubierta";
+CA_JOURNEY_SHIP = "mercante a vela";
+CA_JOURNEY_ONBOARD_REST = "Navegación: %s | Sueño a bordo: %s (incluido)";
+CA_JOURNEY_SHIP_BAG = "A bordo: tu bolsa de dormir. No se usa la reserva de la Caja.";
+CA_JOURNEY_SHIP_DECK = "A bordo: cubierta. No se usa la reserva de la Caja.";
+CA_JOURNEY_SHIP_NOTE = "5 nudos, viento favorable; la guardia navega mientras dormís.";
+CA_JOURNEY_CART_NOTE = "3 km/h; 16 h de marcha / 8 h acampado. Tiro y conductor incluidos.";

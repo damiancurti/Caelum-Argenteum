@@ -27,6 +27,7 @@ class CaelumMainM00QuestController : EventHandler
     bool SewerSupportPrepared;
     bool RestFurniturePrepared;
     bool DiningPrepared;
+    bool TravelVehiclesPrepared;
     bool ExpandedStationsPrepared;
     bool MansionFurniturePrepared;
     bool StationAccessPrepared;
@@ -476,6 +477,10 @@ class CaelumMainM00QuestController : EventHandler
 
     override void WorldTick()
     {
+        // Este controlador ya existe en guardados antiguos. No depender sólo
+        // de la incorporación de un EventHandler nuevo al cargar esas partidas.
+        if (!TravelVehiclesPrepared)
+            TravelVehiclesPrepared = CaelumVehicleWorld.Prepare();
         if (!DiningPrepared && level.maptime % TICRATE == 0)
             DiningPrepared = CaelumDiningWorld.Prepare();
         if (!RestFurniturePrepared && level.maptime % TICRATE == 0)

@@ -5,6 +5,8 @@ class CaelumJourneyState : Inventory
 {
     const MODE_FOOT = 1;
     const MODE_CARAVAN = 2;
+    const MODE_CART = 3;
+    const MODE_SHIP = 4;
     const STATUS_NONE = 0;
     const STATUS_DEPARTED = 1;
     const STATUS_ARRIVED = 2;
@@ -96,12 +98,12 @@ class CaelumJourneyState : Inventory
     static void Report(CaelumPlayer user)
     {
         let journey = Get(user);
-        Console.Printf("[Caelum 4.35.0n] Viajes: registro=%d mapa=%s", journey != null, level.MapName);
+        Console.Printf("[Caelum 4.35.0p] Viajes: registro=%d mapa=%s", journey != null, level.MapName);
         if (journey == null) return;
         Console.Printf("Secuencia=%d conexión=%d modo=%d estado=%d llegadas=%d interrupciones=%d",
             journey.Sequence, journey.ConnectionId, journey.TravelMode, journey.Status,
             journey.Arrivals, journey.Interruptions);
-        Console.Printf("Distancia=%.3f km marcha=%.6f km/h caminar=%d dormir=%d tics comida=%d agua=%d recipientes=%.3f L",
+        Console.Printf("Distancia=%.3f km marcha=%.6f km/h movimiento=%d dormir=%d tics comida=%d agua=%d recipientes=%.3f L",
             journey.DistanceKm, journey.WalkingKmh, journey.WalkTics, journey.SleepTics,
             journey.FoodConsumed, journey.WaterConsumed, journey.ContainerLitersConsumed);
         if (journey.HasDepartureTime)
@@ -148,8 +150,7 @@ class CaelumTravelService : Object play
 
     static bool Begin(CaelumPlayer user, int id, int travelMode)
     {
-        if ((travelMode != CaelumJourneyState.MODE_FOOT && travelMode != CaelumJourneyState.MODE_CARAVAN)
-            || !CanDepart(user, id)) return false;
+        if (!CaelumJourneyRules.ValidMode(id, travelMode) || !CanDepart(user, id)) return false;
         if (CaelumJourneyRules.DistanceKm(id) > 0) return CaelumJourneyPlan.Preview(user, id, travelMode);
         CaelumJourneyPlan.Cancel(user);
         return Commit(user, id, travelMode);
@@ -157,10 +158,11 @@ class CaelumTravelService : Object play
 
     static bool Commit(CaelumPlayer user, int id, int travelMode, CaelumJourneyPlan plan = null)
     {
-        if (!CanDepart(user, id)) return false;
+        if (!CaelumJourneyRules.ValidMode(id, travelMode) || !CanDepart(user, id)) return false;
         // Las rutas medidas nunca admiten la antigua salida sin presupuesto.
         if (CaelumJourneyRules.DistanceKm(id) > 0
-            && (plan == null || !plan.Open || plan.ConnectionId != id || plan.Available == null)) return false;
+            && (plan == null || !plan.Open || plan.ConnectionId != id || plan.TravelMode != travelMode
+                || plan.Available == null || !plan.VehicleAvailable(user))) return false;
         let journey = CaelumJourneyState.Get(user, true);
         if (journey == null) return false;
         let record = user.GetPersistentCharacterState(false);

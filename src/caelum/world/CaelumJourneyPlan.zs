@@ -5,6 +5,10 @@ class CaelumJourneyRules : Object play
     const MAP_UNITS_PER_METER = 32.0;
     const WALK_HOURS = 16;
     const SLEEP_HOURS = 8;
+    // Valores nominales de marcha; viento favorable y tripulación de relevo.
+    const CART_KMH = 3.0;
+    const SHIP_KNOTS = 5.0;
+    const KM_PER_NAUTICAL_MILE = 1.852;
     // Límite técnico explícito del planificador; nunca trunca una ruta.
     const MAX_WALK_HOURS = 24 * 30;
 
@@ -17,6 +21,32 @@ class CaelumJourneyRules : Object play
 
     static clearscope int SleepCount(int walkTics)
     { return walkTics > 0 ? (walkTics - 1) / (WALK_HOURS * CaelumWorldClock.TicsPerHour()) : 0; }
+
+    static clearscope bool ValidMode(int id, int mode)
+    {
+        return mode == CaelumJourneyState.MODE_FOOT || mode == CaelumJourneyState.MODE_CARAVAN
+            || ((id == 10 || id == 11) && (mode == CaelumJourneyState.MODE_CART || mode == CaelumJourneyState.MODE_SHIP));
+    }
+
+    static clearscope String ModeKey(int mode)
+    {
+        if(mode == CaelumJourneyState.MODE_CART)return "CA_JOURNEY_CART";
+        if(mode == CaelumJourneyState.MODE_SHIP)return "CA_JOURNEY_SHIP";
+        return mode == CaelumJourneyState.MODE_CARAVAN ? "CA_JOURNEY_CARAVAN" : "CA_JOURNEY_FOOT";
+    }
+
+    static clearscope int ShipSleepTics(int sailingTics)
+    {
+        int hour = CaelumWorldClock.TicsPerHour();
+        return (sailingTics / (24 * hour)) * 8 * hour + Max(0, sailingTics % (24 * hour) - 16 * hour);
+    }
+
+    static double SpeedForMode(CaelumPlayer user,int mode)
+    {
+        if(mode == CaelumJourneyState.MODE_CART)return CART_KMH;
+        if(mode == CaelumJourneyState.MODE_SHIP)return SHIP_KNOTS * KM_PER_NAUTICAL_MILE;
+        return WalkingKmh(user);
+    }
 
     static clearscope String Duration(int tics)
     {
@@ -213,10 +243,22 @@ class CaelumJourneyModel : Object play
         ElapsedTics++;
     }
 
-    void Simulate(int remainingWalkTics)
+    void Simulate(int remainingWalkTics, int mode = CaelumJourneyState.MODE_FOOT)
     {
         int day = CaelumJourneyRules.WALK_HOURS * CaelumWorldClock.TicsPerHour();
         int night = CaelumJourneyRules.SLEEP_HOURS * CaelumWorldClock.TicsPerHour();
+        if(mode == CaelumJourneyState.MODE_SHIP)
+        {
+            // Dormir ocupa parte de la navegación, no se suma a su duración.
+            // El pasajero conserva su ciclo 16/8 mientras la guardia navega.
+            while(remainingWalkTics > 0 && Health > 0)
+            {
+                bool sleeping = ElapsedTics % (day + night) >= day;
+                Step(sleeping);WalkTics++;if(sleeping)SleepTics++;
+                remainingWalkTics--;
+            }
+            return;
+        }
         while (remainingWalkTics > 0 && Health > 0)
         {
             int leg = Min(day, remainingWalkTics);
@@ -236,6 +278,17 @@ class CaelumJourneyPlan : Inventory
     String OriginMap;
     vector3 OriginPosition;
     CaelumJourneyModel Needed, Available;
+    CaelumTravelVehicle SourceVehicle;
+
+    clearscope int TotalTics()
+    {return PlannedWalkTics + (TravelMode == CaelumJourneyState.MODE_SHIP ? 0 : PlannedSleepTics);}
+
+    bool VehicleAvailable(CaelumPlayer user)
+    {
+        if(TravelMode != CaelumJourneyState.MODE_CART && TravelMode != CaelumJourneyState.MODE_SHIP)return true;
+        return SourceVehicle != null && SourceVehicle.TravelMode() == TravelMode
+            && SourceVehicle.Connection() == ConnectionId && SourceVehicle.CanBoard(user);
+    }
 
     static CaelumJourneyPlan Get(CaelumPlayer user, bool create = false)
     {
@@ -247,16 +300,18 @@ class CaelumJourneyPlan : Inventory
 
     bool Calculate(CaelumPlayer user, int id, int mode)
     {
-        double speed = CaelumJourneyRules.WalkingKmh(user);
+        if(!CaelumJourneyRules.ValidMode(id,mode))return false;
+        double speed = CaelumJourneyRules.SpeedForMode(user,mode);
         double hours = speed > 0 ? CaelumJourneyRules.DistanceKm(id) / speed : 0;
         if (speed <= 0 || hours <= 0 || hours > CaelumJourneyRules.MAX_WALK_HOURS)
         { user.A_Print(StringTable.Localize("CA_JOURNEY_PACE", false)); return false; }
         ConnectionId = id; TravelMode = mode; SpeedKmh = speed; OriginMap = level.MapName;
         OriginPosition = user.Pos;
         PlannedWalkTics = Max(1, int(Ceil(hours * CaelumWorldClock.TicsPerHour() - 0.0000001)));
-        PlannedSleepTics = CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
-        Needed = new("CaelumJourneyModel"); Needed.Capture(user, true); Needed.Simulate(PlannedWalkTics);
-        Available = new("CaelumJourneyModel"); Available.Capture(user, false); Available.Simulate(PlannedWalkTics);
+        PlannedSleepTics = mode == CaelumJourneyState.MODE_SHIP ? CaelumJourneyRules.ShipSleepTics(PlannedWalkTics)
+            : CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
+        Needed = new("CaelumJourneyModel"); Needed.Capture(user, true); Needed.Simulate(PlannedWalkTics,mode);
+        Available = new("CaelumJourneyModel"); Available.Capture(user, false); Available.Simulate(PlannedWalkTics,mode);
         return true;
     }
 
@@ -266,19 +321,20 @@ class CaelumJourneyPlan : Inventory
         if (reason.Length() != 0) { user.A_Print(StringTable.Localize(reason, false)); return false; }
         let plan = Get(user, true);
         if (plan == null || !plan.Calculate(user, id, mode)) return false;
-        plan.Open = true;
+        plan.SourceVehicle = null; plan.Open = true;
         user.Vel = (0,0,0);
         return true;
     }
 
     static void Cancel(CaelumPlayer user)
-    { let plan = Get(user); if (plan != null) { plan.Open = false; plan.Needed = null; plan.Available = null; } }
+    { let plan = Get(user); if (plan != null) { plan.Open = false; plan.SourceVehicle = null; plan.Needed = null; plan.Available = null; } }
 
     static bool Confirm(CaelumPlayer user)
     {
         let plan = Get(user);
         if (plan == null || !plan.Open || plan.Available == null || plan.OriginMap != level.MapName
             || (user.Pos - plan.OriginPosition).Length() > 64
+            || !plan.VehicleAvailable(user)
             || !CaelumTravelService.CanDepart(user, plan.ConnectionId)) { Cancel(user); return false; }
         String reason = CaelumJourneyRules.BlockReason(user);
         if (reason.Length() != 0) { user.A_Print(StringTable.Localize(reason, false)); Cancel(user); return false; }
@@ -303,7 +359,7 @@ class CaelumJourneyPlan : Inventory
 
     void Apply(CaelumPlayer user)
     {
-        Open = false;
+        Open = false; SourceVehicle = null;
         let model = Available;
         int food = model.FoodSpent, water = model.WaterSpent;
         double liters = model.ContainerSpent;

@@ -5,13 +5,37 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0o.** Apply this source patch over the complete
-**4.35.0n** project, merge its folders and rebuild with `run_dev.bat`.
-The author has approved the food and maps in 0m; 0n and 0o await manual testing.
+**Current release: 4.35.0p.** Apply this source patch over the complete
+**4.35.0o** project, merge its folders and rebuild with `run_dev.bat`.
+The author tested 0n and 0o. This patch addresses the reported issues and adds the requested coastal vehicles. Manual acceptance of 0p is pending.
+
+
+Seated eating/drinking now uses **table → carried inventory → personal Magic Box**.
+It consumes actual portions and retains the approved slow seated recovery rate.
+**Q / B** cancels a journey or goes back in the calendar; **Escape / Start**
+opens native pause and preserves the current screen.
+
+**MAP06 and MAP07** each have a covered trade cart in a small roadside ranch,
+and a merchant sailboat with four stowed oars. The port keeps its dock; the
+beach gains a wooden dock. Use the cart or boarding sign to preview the trip.
+Existing 0o saved maps receive the additions without restarting the campaign.
+
+| Service | Nominal speed | 500 km trip |
+| --- | --- | --- |
+| Covered cart | 3 km/h | 10 d 6 h 40 min, including 80 h of camp stops |
+| Merchant sailboat | 5 knots / 9.26 km/h | About 2 d 6 h; 16 h of sleep overlap sailing |
+
+The cart keeps the requested 16-hour moving / 8-hour resting cycle. The ship
+has watch crews and fair wind, so it continues while the passenger sleeps.
+These are representative historical design estimates, not measurements of a
+specific 1889 Argentine vehicle. Body/model dimensions and reference sources
+are recorded in ASSETS.md. The travel services include their team and crew;
+fares and free driving are future work. All four OBJ models are original and
+reuse existing project materials; they are included ready to load.
 
 Open **TAB > World > F / RT** for the campaign calendar. Arrows/D-pad select a
 day; PgUp/PgDn or LB/RB change month; H/Home returns to today; E/R or Y/X select
-an event; Enter/A opens its details; Escape/B goes back. P/RT in details pays
+an event; Enter/A opens its details; Q/B goes back. P/RT in details pays
 outstanding rent or collects delivered cargo. The clock continues while reading.
 Only known events are shown; weather-debug dates do not move the campaign agenda.
 
@@ -27,15 +51,14 @@ Harvested resources now catch up after their map was inactive and forecast
 full recovery in the calendar. Their existing **0.1% capacity per campaign day**
 rate is unchanged. Existing saves initialize a timestamp without retroactive gifts.
 
-Optional trials are documented in **PRUEBAS_4_35_0o.txt**. They do not assign
+The optional calendar trials remain documented in **PRUEBAS_4_35_0o.txt**; the new changes are covered in **PRUEBAS_4_35_0p.txt**. They do not assign
 campaign rents, resident routines or canonical siege battles. Full armies and
 battle consequences keep their existing V5 scope; maps can configure the timing
-adapters now. The 0n coastal distances, walking conversion, 16/8 travel schedule
-and provision quotation remain unchanged.
+adapters now. The accepted walking routes retain their distances, pace conversion and 16/8 schedule.
 
 **4.35 closure candidate:** implementation and native checks are complete;
-the author's acceptance of 0n/0o remains before moving to 4.36 physical hazards.
-`netevent ca_debug_events_report` identifies **4.35.0o**.
+the author's acceptance of 0p remains before moving to 4.36 physical hazards.
+`netevent ca_debug_travel_report` identifies **4.35.0p**.
 
 ## Implemented
 
@@ -641,13 +664,13 @@ the author's acceptance of 0n/0o remains before moving to 4.36 physical hazards.
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
 The regional climate and shelter service builds on the accepted 0k adapter.
-Remaining before 4.36: manual acceptance of 0n/0o and fixes if needed.
+Remaining before 4.36: manual acceptance of 0p and fixes if needed.
 Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and
 subsequent maps; future regions can use the existing explicit map marker.
 The fast path does not simulate arbitrary AI, physics, doors or third-party
 Thinkers. Extending it outside designated safe areas requires those systems'
 explicit timing contracts. The 8-game-hour full Sleep recovery rate is confirmed.
-Fares, vehicles, route incidents and a travel minimap remain future content.
+Fares, freely drivable/additional vehicles, route incidents and a travel minimap remain future content.
 New campaign content and inherited expansion follow the V4 playtest export.
 Of the authored class abilities, only Arcanist Sleep is added here; the remaining
 class abilities and racial toggles stay in the V5 abilities block.
@@ -680,20 +703,20 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks exercise dates/recurrences, exact rent change,
-material escrow/collection, deadlines, resource recovery, x105 interruption,
-travel transitions and save/load. The monthly calendar and detail views have been inspected in the native renderer.
-These checks do not replace manual Windows acceptance. Follow
-**PRUEBAS_4_35_0o.txt**; 0n still awaits the author's tests. Previously accepted
-food, maps and 0j/0k behavior remain accepted.
+Native GZDoom 4.14.2/Linux checks cover table/inventory/Box consumption,
+seated pulse timing, native Use, vehicle quotes, actual ship/cart travel,
+exact supplies, calendar deadlines and save/load. Native renderer captures
+check the models and quote. SDL keyboard tests check Q and Escape against
+the actual game menu. These do not replace the author's Windows 11 acceptance.
+Follow **PRUEBAS_4_35_0p.txt**. The remaining 0n/0o tests stay approved.
 
 ## Build and run
 
-Close GZDoom. Merge the supplied **src**, **docs**, **README.md** and
-**PRUEBAS_4_35_0o.txt** into the complete **4.35.0n** project, replacing matching
+Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
+**PRUEBAS_4_35_0p.txt** into the complete **4.35.0o** project, replacing matching
 files and keeping everything else. Models are already generated. Rebuild the
 PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
-The diagnostic `netevent ca_debug_events_report` must identify **4.35.0o**.
+The diagnostic `netevent ca_debug_travel_report` must identify **4.35.0p**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

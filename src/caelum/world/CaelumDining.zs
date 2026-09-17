@@ -217,6 +217,35 @@ class CaelumDiningTable : Actor
             else item.AttachToOwner(self);
             RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return accepted;
         }
+        return ConsumeReserve(user,drink);
+    }
+
+    bool ConsumeReserve(CaelumPlayer user,bool drink)
+    {
+        if(!CanDine(user) || user.ForcedSleepTics>0)return false;
+        Name powerName=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
+        if(user.FindInventory(powerName)!=null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
+        // Primero lo llevado a mano; después la reserva propia de la Caja.
+        // Sólo se descuenta una unidad aceptada. El resto conserva su ubicación.
+        for(int source=0;source<2;source++)
+        {
+            if(source==1 && !user.MagicBoxOwned)break;
+            for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
+            {
+                let item=CaelumConsumableItem(cursor);
+                if(item==null || item.Owner!=user || item.Amount<=0 || item.InMagicBox!=(source==1))continue;
+                if(drink?!IsDrink(item):item.GetConsumableType()!=CaelumConstants.CONSUMABLE_FOOD_RATION)continue;
+                let bottle=CaelumWaterContainer(item);
+                if(bottle!=null && bottle.WaterLiters<=0.000001)continue;
+                bool stored=item.InMagicBox;
+                item.InMagicBox=false;
+                bool accepted=bottle!=null?bottle.Drink():item.Use(false);
+                item.InMagicBox=stored;
+                if(!accepted)continue;
+                if(bottle==null){item.Amount--;if(item.Amount==0)item.Destroy();}
+                user.OnNativeInventoryChanged();user.PersistCharacterState();return true;
+            }
+        }
         return false;
     }
 

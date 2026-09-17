@@ -1,5 +1,14 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0o — 2026-09-17.
+Versión documental: 4.35.0p — 2026-09-17.
+
+4.35.0p — CONTROLES Y RESERVAS
+
+El autor probó 0n/0o. Se corrigen sus observaciones y se agregan vehículos
+costeros en MAP06/07. Los personajes y puertas de la mansión se conservan.
+Las mesas de la mansión también consumen reservas de inventario/Caja cuando
+se activa F/G estando sentado, con el ritmo y las porciones ya aprobados.
+En el calendario, Q/B vuelve; Escape conserva el menú de pausa del motor.
+La aceptación pendiente para cerrar 4.35 corresponde ahora a 0p.
 
 4.35.0o — CALENDARIO Y EVENTOS
 
@@ -9,7 +18,7 @@ Los ensayos de eventos/carga se activan únicamente en mapas exteriores.
 Los eventos definidos por el autor abarcan asedios, rutinas/misiones secundarias,
 alquileres, cargas de mercancías, recuperación de vetas y extensiones futuras.
 La agenda muestra sólo las fechas conocidas por el personaje.
-0n y 0o siguen pendientes de aceptación manual. Tras ella, 4.35 puede cerrarse
+0n y 0o fueron probados por el autor. Tras aceptar las correcciones de 0p, 4.35 puede cerrarse
 y continuar con peligros físicos en 4.36, conservando el roadmap acordado.
 
 4.35.0n — DISTANCIAS Y VIAJE

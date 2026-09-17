@@ -1,6 +1,19 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0o — 2026-09-17.
+Versión documental: 4.35.0p — 2026-09-17.
+
+## 4.35.0p — reservas y transporte costero (2026-09-17)
+
+- El autor prueba 0n y 0o y aprueba el resto de sus cambios.
+- Mesa: reserva de inventario y Caja después de agotar los platos, con descuento
+  exacto de unidades/litros, conservación de pilas/recipientes y ritmo aprobado.
+- Q/B cancela el presupuesto y vuelve en calendario; Escape conserva la pausa.
+- Carreta cubierta en rancho y mercante con velas/remos en MAP06 y MAP07.
+  MAP06 utiliza el puerto existente; MAP07 suma un muelle transitable.
+- Modos físicos a 3 km/h y 5 nudos; se duerme a bordo sin detener el barco.
+- Presupuesto y viaje integrados con provisiones, agenda, hub y guardado/carga.
+- Modelos y colisiones se instalan también al cargar mapas de 0o.
+- Validación nativa y visual del parche; aceptación manual 0p pendiente.
 
 ## 4.35.0o — calendario mensual y eventos (2026-09-17)
 

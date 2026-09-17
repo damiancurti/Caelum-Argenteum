@@ -108,6 +108,7 @@ class CaelumWeatherShelter : Object play
     static int Resolve(CaelumPlayer user,int profile)
     {
         if(profile==CaelumWeatherRules.PROFILE_LIMBO)return CaelumWeatherRules.LIMBO;
+        if(CaelumVehicleWorld.UnderRoof(user))return CaelumWeatherRules.CANOPY;
         FLineTraceData hit;
         double z=user.Pos.Z+Min(48.0,user.Height*0.75);
         // Traza geométrica: ignora actores, respeta techos, pendientes y pisos 3D.

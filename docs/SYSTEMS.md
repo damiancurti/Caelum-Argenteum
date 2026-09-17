@@ -1,13 +1,63 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0o — 2026-09-17.
+Versión documental: 4.35.0p — 2026-09-17.
+
+## Reservas, controles y vehículos (4.35.0p)
+
+Consumo sentado: prioridad mesa → inventario personal → Caja Mágica propia.
+Sólo FoodRation, WaterRation y agua de recipientes; no utiliza medicinas.
+Se rechaza iniciar otra porción si su regeneración sigue activa o la necesidad
+está completa. La reserva se consume directamente, sin retirar toda la pila
+ni exigir capacidad para moverla. Sólo un uso aceptado descuenta una ración;
+Drink descuenta litros, conserva el recipiente y restaura InMagicBox antes de
+persistir el resultado definitivo. El acceso requiere estar sentado y junto
+a una mesa válida. La recuperación sigue siendo diez veces más lenta sentado
+con idéntica porción; digestión = hambre realmente recuperada / 4.
+
+Q/B: cancelar viaje; detalle → mes → Mundo; Q en Mundo cierra el Diario.
+Escape/Start se deja al menú nativo y no cancela esos estados. Se conserva la
+liberación de +use para no dejar retenido el botón. La consola sigue accesible.
+
+MODE_FOOT=1 y MODE_CARAVAN=2 conservan los guardados y el antiguo ensayo a pie.
+MODE_CART=3 y MODE_SHIP=4 requieren un vehículo físico y sólo conexiones 10/11
+(MAP06↔MAP07, 500 km). No autorizan navegar hacia las alcantarillas. Los portales
+a pie siguen disponibles. Velocidad de marcha a pie y los 10 km MAP03↔MAP06
+siguen aprobados y sin cambios.
+
+CaelumJourneyRules.CART_KMH=3; SHIP_KNOTS=5; KM_PER_NAUTICAL_MILE=1.852.
+Carreta: 1 050 000 tics de marcha + 504 000 de sueño = 10 d 6 h 40 min.
+Barco: 340 173 tics de navegación = 2 d 5 h 59 min 45 s aproximadamente;
+100 800 de esos tics son sueño a bordo (16 h). La pantalla redondea hacia
+arriba al minuto: 2 d 6 h. El reloj exterior conserva 6 300 tics/h de campaña.
+El sueño a bordo se reparte en cada tramo 16–24 h del ciclo del pasajero y
+acepta un último descanso parcial. El barco avanza también en esos tics.
+
+La previsión numérica aplica hambre, sed, sueño, digestión, regeneración,
+lucidez, aturdimiento y daño de supervivencia. El inventario y la agenda sólo
+se modifican al confirmar. El sueño usa la bolsa propia si se lleva; sin ella,
+suelo/cubierta. Las provisiones del viaje son las llevadas fuera de la Caja,
+como en 0n; el nuevo acceso a la Caja solicitado aquí corresponde a la mesa.
+
+SourceVehicle enlaza el presupuesto con el actor concreto. Al confirmar se
+revalida presencia, mapa, tipo, distancia, ruta, bloqueo de acciones y reservas.
+Si se cambió materialmente la previsión se pide revisarla de nuevo. Cancelar,
+confirmar o terminar elimina el enlace. La transición reutiliza registro de
+salida/llegada, transacción de inventario y AdvanceTics de la agenda existentes.
+
+CaelumVehicleWorld instala un rancho y una carreta en (-640,192,0) de MAP06 y
+(-512,384,0) de MAP07. Los barcos quedan en (1536,768,-24) y (1280,1440,-24).
+El muelle nuevo de MAP07 se centra en (1120,1312,0); su cubierta conecta con
+la arena y usa colisiones de puente de 4 MU, con tope en Z=0. El rancho aporta
+cobertura de tipo toldo al clima y tiene tres paredes/techo con colisión.
+El cartel de embarque visible sobre el muelle recibe Usar a altura normal.
+Preparación repetida/carga no duplica modelos, colliders ni vehículos.
 
 ## Agenda y eventos programados (4.35.0o)
 
 El calendario usa el anclaje civil de campaña, no el reloj del sistema operativo
 ni TrialDate del depurador. TAB → Mundo → F/RT. Flechas/D-pad: día; RePág/AvPág
 o LB/RB: mes; H/Inicio: hoy; E/R o Y/X: evento de ese día; Enter/A: detalle;
-Esc/B: volver; TAB: cerrar. En detalle, P/RT paga deuda o retira carga.
+Q/B: volver; TAB: cerrar. En detalle, P/RT paga deuda o retira carga.
 La navegación es local: no reancla, adelanta ni pausa el reloj del juego.
 
 CaelumScheduleState es un Inventory oculto, persistente entre mapas. Contiene
@@ -94,7 +144,7 @@ Cada noche agrega 8 horas; la última llegada no añade sueño gratuito.
 Ejemplo a 5 km/h: 10 km = 2 horas; 500 km = 100 + 48 = 148 horas.
 
 Usar un acceso medido abre CaelumJourneyPlan. La UI sólo lee datos guardados;
-Enter/A envía ca_journey_confirm, Esc/B ca_journey_cancel. La consulta no muta
+Enter/A envía ca_journey_confirm, Q/B ca_journey_cancel. La consulta no muta
 necesidades, pertenencias ni reloj. Mientras se lee sigue la simulación ordinaria,
 con acciones/movimiento bloqueados como en las otras interfaces del personaje.
 Confirmar valida contexto, mapa, proximidad, perfil, inventario y condiciones;

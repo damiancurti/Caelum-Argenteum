@@ -1,6 +1,43 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0o — 2026-09-17.
+Versión documental: 4.35.0p — 2026-09-17.
+
+## 4.35.0p — carreta y mercante originales
+
+Cuatro OBJ nuevos en src/models/caelum/vehicles, reproducibles mediante
+assets/generators/generate_travel_vehicles.py: carreta cubierta de dos ruedas,
+mercante de cabotaje, rancho y muelle. Se reutilizan texturas originales de
+madera de la Caja y materiales de estaciones; no se copian imágenes externas.
+Las superficies OBJ se agrupan por material y usan el render nativo del motor.
+El generador importa Mesh de estaciones y de ambiente, sin regenerarlas.
+
+Escala base: 32 MU/m. Carreta: caja de aproximadamente 3,6 × 1,7 m, dos ruedas
+de 1,8 m, lona arqueada hasta 3 m del suelo y lanza/yugo; volumen total cercano
+a 5,7 × 2,56 × 3 m incluyendo lanza y ruedas. Incluye banco y cajones.
+Mercante: casco nominal de 12 × 3,5 m, puntal 2 m y tope del palo a 9 m sobre
+la flotación; vela cangreja, foque, timón, jarcia, escotilla, cajones, cuatro
+remos estibados y cartel de embarque. Timón y cartel sobresalen del casco.
+Rancho: planta de paredes 8 × 6 m; muelle: cubierta 18 × 4 m con pilotes.
+MODELDEF compensa el pixel stretch de estos mapas para respetar altura/MU.
+
+Referencias históricas consultadas (no son licencias de arte incorporado):
+- NPS, Wagons on the Emigrant Trails: variación de carros cubiertos del XIX;
+  carro Murphy con caja de doce pies y altura de nueve; carros de carga mayores.
+  https://www.nps.gov/articles/000/wagons-on-the-trails.htm
+- NPS, Traveling the Emigrant Trails: jornadas con pausas y tracción animal.
+  https://www.nps.gov/articles/000/traveling-emigrant-trails.htm
+- Thames sailing barge: comercio costero a vela y antecedentes con remos largos.
+  https://en.wikipedia.org/wiki/Thames_sailing_barge
+- Watchkeeping, sistema tradicional: guardias permiten navegar las 24 horas
+  mientras los demás tripulantes descansan.
+  https://en.wikipedia.org/wiki/Watchkeeping
+
+Son referencias comparativas; no documentan una pieza argentina concreta de
+1889 ni una velocidad universal. La carreta y el mercante son diseños propios
+representativos; 3 km/h y 5 nudos son estimaciones nominales iniciales con carga
+normal y condiciones favorables. La regla 16/8 de la carreta conserva la
+jornada solicitada para el juego; no afirma que el mismo tiro trabaje siempre
+16 horas sin relevos. El barco supone guardias activas, no navegación desatendida.
 
 ## 4.35.0o — calendario mensual
 
