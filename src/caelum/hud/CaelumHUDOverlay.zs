@@ -152,7 +152,7 @@ class CaelumHUDOverlay : EventHandler
     {
         // La espada real usa PSprites nativos modulares. No superponerle el
         // icono provisional que normalmente representa al arma activa.
-        if (IsDomingoSwordViewActive(localPlayer)) { return; }
+        if (CaelumFirstPersonView.OwnsView(localPlayer.player.ReadyWeapon)) { return; }
         if (!localPlayer.HUDHasActiveWeapon) { return; }
         TextureID weaponIcon = TexMan.CheckForTexture(
             CaelumIconResolver.ResolveTierPath(
@@ -198,6 +198,8 @@ class CaelumHUDOverlay : EventHandler
     {
         if (IsDomingoSwordViewActive(localPlayer)) { return; }
         if (!localPlayer.HUDCombatBlockActive) { return; }
+        if (CaelumFirstPersonView.OwnsView(localPlayer.player.ReadyWeapon)
+            && localPlayer.HUDCombatBlockUsesGauntlets) { return; }
 
         String blockSpritePath = localPlayer.HUDCombatBlockUsesGauntlets
             ? "graphics/caelum/icons/ca_giant_gauntlets.png"

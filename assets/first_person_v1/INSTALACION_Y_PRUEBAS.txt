@@ -1,0 +1,149 @@
+CAELUM ARGENTEUM — PRIMERA PERSONA v1
+Manos y armas. Motor objetivo: GZDoom 4.14.2, Windows 11.
+
+CONTENIDO Y ESTADO
+20 familias de armas, cada una en T1, T2 y T3.
+93 PNG de arma/fase y 8 PNG de manos reutilizables: 101 PNG de juego.
+93 composiciones virtuales de manos + arma mediante TEXTURES.
+Lienzo de juego: 320×200 RGBA, offsets grAb (160,32) uniformes.
+Exportaciones 640×400, recortes, másteres y prompts en assets/first_person_v1.
+
+Este es un paquete de arte preparado para integrar en el proyecto actual.
+Los archivos están exportados y verificados. La conexión con los selectores y
+la prueba dentro de GZDoom quedan pendientes. Copiar PNG por sí solo no activa
+las nuevas vistas. No hay instalador ni se reemplaza código antiguo completo.
+
+AGARRES
+- Melee, bastón y estatuilla: mano derecha cerrada, como la espada.
+- Arco corto y largo: posición horizontal; mano izquierda en el centro del
+  arco y mano derecha en la cuerda. Fases con flecha, tensado y sin flecha.
+- Campana: agarre derecho horizontal; la campana cuelga debajo de la mano.
+- Libro: palma derecha por debajo; el libro se dibuja por encima de toda la
+  mano. Se incluyen el libro abierto y el cerrado.
+- Carabina: dos manos, culata cercana y cañón hacia el centro superior,
+  con el encuadre frontal solicitado. Diseño propio de madera y acero.
+- Ballesta: dos manos y vista desde detrás de la culata.
+- Guanteletes gigantes: guardia y golpes izquierdo/derecho. Esos dibujos ya
+  incluyen los puños; no se agrega otra mano encima.
+
+PASO 1 — COPIAR RECURSOS
+1. Cerrá el juego y guardá una copia de tu proyecto actual.
+2. Copiá el contenido de src/ dentro de src/ del proyecto. Se agrega la ruta:
+   sprites/caelum/first_person/v1/
+3. Copiá assets/ al proyecto para conservar el material editable y la guía.
+   Los másteres y PREVIAS no van dentro del PK3 jugable.
+4. Agregá el contenido de:
+   assets/first_person_v1/integration/TEXTURES_FP_V1.txt
+   al FINAL del TEXTURES actual. No sustituyas el archivo completo.
+
+PASO 2 — CONECTAR AL SELECTOR REAL DE CADA ARMA
+La integración debe hacerse en los selectores ya usados por Inventario,
+conservando las rutas de daño, bloqueo, munición y gasto actuales.
+
+El catálogo CSV y el manifiesto JSON indican para cada arma/tier/fase:
+sprite del arma, composición completa, orden de capas, etiqueta de estado,
+punto de giro y pivotes calculados a partir de las cajas visibles.
+
+Ejemplo: daga T1 en reposo.
+- Arma sola: F011A0.
+- Mano: FH00A0.
+- Composición: C011A0.
+- Estado de ejemplo: CA_FP1_dagger_T1_A.
+
+El archivo ESTADOS_FP_V1.inc contiene los 93 estados de las composiciones.
+Es un FRAGMENTO para el interior de States de la clase que controla las vistas;
+no se agrega directamente al ZSCRIPT raíz como si fuera una clase completa.
+Podés copiar sólo las etiquetas que necesite cada selector. Agregar estados al
+final ayuda a no desplazar los índices anteriores; comprobar luego los saves.
+
+Para mostrar la composición en una capa dedicada del arma, el ejemplo es:
+
+    A_Overlay(50, "CA_FP1_dagger_T1_A", true);
+    A_OverlayOffset(50, 160.0, 32.0);
+
+La capa 50 del ejemplo debe permanecer reservada a esta vista. Al desequipar,
+ocultar el arma o salir del selector, limpiar esa capa:
+
+    A_ClearOverlays(50, 50);
+
+La etiqueta se elige según HUDActiveWeaponType y HUDActiveWeaponTier de la
+fuente actual. La fase se elige según el estado real de ataque, carga o recarga,
+no por un temporizador independiente que simule disparos sin munición.
+
+No dibujar al mismo tiempo el icono provisional del HUD y la vista nueva.
+La espada actual usa su propio rig: no debe quedar duplicada con una composición
+nueva. Este paquete no sobrescribe DSWD, RHND, RFNG, DSHD ni LHND. Las nuevas
+espadas de los tres tiers quedan disponibles como recursos; conservar la vista
+de espada ya aprobada hasta integrar expresamente esas variantes.
+
+PASO 3 — MOVER MANO Y ARMA JUNTAS
+Las composiciones C... permiten mover todo el agarre como una sola imagen.
+Si usás las capas separadas, aplicar la misma traslación y variación angular a
+todas las capas del agarre. Respetar back_hands → arma → front_hands.
+Para el libro, la palma va detrás del objeto; para el puño cerrado, delante.
+
+Con PSPF_PIVOTPERCENT, GZDoom usa la caja visible de cada textura. No copiar
+el mismo porcentaje a imágenes con cajas distintas: utilizar los pivotes del
+manifiesto. Todos resuelven al mismo pivot_320 para cada composición.
+
+El movimiento aprobado de melee puede conservarse como variación respecto
+del reposo; los sprites nuevos ya están dibujados en su posición de reposo.
+No volver a sumar el ángulo absoluto de 18° del antiguo DSWD.
+
+Tic:        1       2       3       4       5       6       7       8
+Delta X:   +18     +36      +5     -46     -81     -54     -27      -7
+Delta Y:   -17     -36     -33     -21     -11      -7      -4      -1
+Giro:       3°      6°     13°     20°     25°     21°     13°      6°
+Al terminar: delta X/Y = 0, giro relativo = 0°.
+
+Estos desplazamientos describen el recorrido visual de referencia. Los
+callbacks y las duraciones efectivas del arma se conservan en el código actual.
+El visor lo reproduce despacio únicamente para inspeccionar el agarre.
+
+FASES ESPECIALES
+Arcos: A con flecha, B tensado, C después de soltar/sin flecha.
+Ballesta: A cargada, B disparada/vacía, C recarga.
+Carabina: A preparada, B disparo/retroceso, C recámara abierta en recarga.
+Libro: A abierto, B cerrado.
+Guanteletes: A guardia, B golpe derecho, C golpe izquierdo.
+Resto: A es el dibujo base que transforma el rig para equipar/atacar/retornar.
+
+Conservar las condiciones actuales del escudo y el bloqueo. Los conjuntos de
+dos manos no deben mostrar una tercera mano del antiguo escudo. El cambio de
+agarre no habilita bloqueo ni modifica la esquiva del mandoble/armas grandes.
+Al pasar entre familias, borrar todas las capas de la anterior antes de mostrar
+las nuevas. Verificar también arma rota, muerte, descanso y cambio de mapa.
+
+PASO 4 — RECONSTRUIR
+Recompilá el PK3 con run_dev.bat o build_dev.ps1, como en el proyecto actual.
+No cargues dos copias completas del juego. En SLADE, conservá PNG RGBA y los
+offsets suministrados; no uses la paleta de Doom ni offsets de monstruo.
+No copies los PNG 640×400 sobre los de 320×200 sin adaptar escala y offsets.
+
+REVISIÓN FUERA DEL MOTOR — REALIZADA
+- Conteo y apertura de los 101 PNG; canal alfa y tamaños.
+- Offsets grAb y nombres únicos; todas las capas y tiers presentes.
+- Referencias de las 93 composiciones; ausencia de colisiones con TEXTURES 0q.
+- Revisión visual de agarres sobre fondos de contraste y fases especiales.
+- Integridad del ZIP y sintaxis JavaScript del visor.
+Resultado detallado: VALIDACION.json.
+
+PRUEBAS EN GZDOOM — PENDIENTES
+1. MAP01: equipar cada familia en T1/T2/T3 desde el inventario real.
+2. Probar 4:3 y 16:9: manos conectadas al borde inferior, centro de visión
+   utilizable y puntas completas. Las astas largas pueden salir por abajo.
+3. Alternar melee, arco, libro y carabina: sin manos o iconos duplicados.
+4. Atacar y regresar a reposo: mango fijo dentro del puño durante el giro.
+5. Tensar/soltar ambos arcos; cargar/disparar/recargar ballesta y carabina.
+   Sin munición no debe mostrarse una secuencia de disparo confirmada.
+6. Libro: toda la mano debajo, tanto abierto como cerrado. Campana: revisar
+   hueco de anilla y separación de cintas. Bastón: mano alrededor del asta.
+7. Escudo equipado/desequipado/roto; bloqueo sostenido y vuelta a reposo.
+8. MAP02: combate repetido. Verificar daño, Aire, ánima, cadencia, munición y
+   durabilidad iguales a la versión anterior: el arte no cambia esos valores.
+9. Guardar/cargar, morir/reaparecer y cambiar de mapa con distintas armas.
+
+REVERSIÓN
+Restaurá los enlaces de estados/capas del código anterior y quitá el fragmento
+TEXTURES añadido. Los archivos propios de la carpeta v1 pueden retirarse;
+los sprites y el rig anteriores conservan sus nombres originales.

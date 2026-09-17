@@ -1,0 +1,78 @@
+{
+  "ogg_files": 6,
+  "main_events": 5,
+  "optional_ship_variant": 1,
+  "decoded_successfully": true,
+  "finite_samples": true,
+  "decoded_peaks_below_minus_3_dbfs": true,
+  "sample_rate": 48000,
+  "masters": "WAV PCM 24-bit; derivados de las fuentes indicadas, no originales sin pérdida de Freesound",
+  "checks": "Formato, duración, canales, muestras finitas, picos y unión del bucle. Revisión técnica; aceptación auditiva en juego pendiente.",
+  "engine_tested": false,
+  "runtime_integration_applied": false,
+  "clips": [
+    {
+      "label": "Palanca",
+      "duration_seconds": 0.153875,
+      "decoded_duration_seconds": 0.151208,
+      "decoded_peak_dbfs": -5.961,
+      "rms_dbfs": -28.592,
+      "channels": 1
+    },
+    {
+      "label": "Viaje en carreta",
+      "duration_seconds": 6.0,
+      "decoded_duration_seconds": 6.0,
+      "decoded_peak_dbfs": -6.004,
+      "rms_dbfs": -27.283,
+      "channels": 2
+    },
+    {
+      "label": "Viaje en barco",
+      "duration_seconds": 6.0,
+      "decoded_duration_seconds": 6.0,
+      "decoded_peak_dbfs": -5.084,
+      "rms_dbfs": -30.854,
+      "channels": 2
+    },
+    {
+      "label": "Captura de tarot",
+      "duration_seconds": 3.308896,
+      "decoded_duration_seconds": 3.308896,
+      "decoded_peak_dbfs": -6.798,
+      "rms_dbfs": -21.891,
+      "channels": 2
+    },
+    {
+      "label": "Roca rodando",
+      "duration_seconds": 3.8,
+      "decoded_duration_seconds": 3.8,
+      "decoded_peak_dbfs": -6.04,
+      "rms_dbfs": -26.855,
+      "channels": 1
+    },
+    {
+      "label": "Barco — variante del inicio",
+      "duration_seconds": 6.0,
+      "decoded_duration_seconds": 6.0,
+      "decoded_peak_dbfs": -5.084,
+      "rms_dbfs": -30.648,
+      "channels": 2
+    }
+  ],
+  "sndinfo_references_valid": true,
+  "viewer_javascript_syntax_valid": true,
+  "loop_boundary_jump": 0.006125945597887039,
+  "loop_boundary_check_passed": true,
+  "revision": "1.4",
+  "tarot_source_interval_seconds": [
+    30.35814583333333,
+    33.66704166666667
+  ],
+  "tarot_exact_decoded_frames": 158827,
+  "other_ogg_files_byte_identical": true,
+  "other_wav_masters_byte_identical": true,
+  "tarot_final_fade_seconds": 0.02,
+  "boundary_review": "Desplazamiento de 200 ms manteniendo duración y fundidos. Verificación técnica de muestras, duración y picos; no se afirma aislamiento de instrumentos.",
+  "tarot_shift_from_previous_ms": 200
+}

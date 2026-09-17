@@ -1,5 +1,32 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.36.0b — 2026-09-17.
+Versión documental: 4.36.0c — 2026-09-17.
+
+4.36.0c — PRIMERA PERSONA, AUDIO Y VIAJE CON EL LOCO
+
+El autor solicita incorporar sus paquetes de sprites y audio, reducir la palanca
+y revisar la placa de teletransporte. Se integran en los sistemas existentes;
+las ubicaciones de trampas continúan siendo ensayos en MAP08.
+
+La adquisición efectiva de El Loco emite el fragmento musical aportado, revisión
+1.4 (30,358146–33,667042 s de CA_MUS01). Examinar una carta obtenida o rechazar
+la captura no repite ese sonido. La presentación local funciona con la cámara
+del diálogo y mantiene su atenuación/restauración musical existente.
+
+La salida confirmada de la mansión, MAP01→MAP02, solicita el quemado nativo.
+Los viejos fundidos negros de salida/llegada dejan de cubrir la escena; se
+mantienen todos los requisitos narrativos, el arma inicial preservada, la
+limpieza de objetos del Limbo y la Voz de llegada. No se equipara un comando
+map con un viaje de tarot ni se implementa por ello un sistema nuevo de 4.37.
+Las futuras salidas confirmadas por El Loco pueden usar PendingTravelWipe=2.
+
+Los viajes en carreta usan fundido cruzado y el fragmento de cascos; los del
+barco conservan derretido y usan el recorte principal de olas. No cambia el
+tiempo del mundo ni se añaden esperas de seis segundos por la duración del audio.
+MAP01–08 conservan sus WAD y checksums de guardado.
+
+Primera persona usa los selectores existentes y los tiers del inventario.
+El arte no modifica requisitos, alcance, daño, munición, Aire, Ánima o durabilidad.
+Los recorridos de revisión y las coordenadas están en PRUEBAS_4_36_0c.txt.
 
 4.36.0b — PALANCAS, TRAMPAS Y PRESENTACIÓN
 

@@ -343,6 +343,17 @@ class CaelumCarbineWeapon : Weapon
 // repetir su tecla, sin duplicar los objetos reales guardados en Actor.Inv.
 class CaelumPhysicalSelectorWeapon : Weapon
 {
+    CaelumFirstPersonView FirstPersonView;
+
+    override void PSpriteTick(PSprite psp)
+    {
+        Super.PSpriteTick(psp);
+        // La espada conserva su rig aceptado y sus índices de estado.
+        if (psp.ID != PSP_WEAPON || self is 'CaelumSwordSelectorWeapon') return;
+        if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
+        FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
+    }
+
     Default
     {
         Weapon.SelectionOrder 200;
@@ -1127,6 +1138,17 @@ class CaelumCrossbowSelectorWeapon : CaelumPhysicalSelectorWeapon
 // necesita su propio selector nativo para que repetir la tecla 6 las recorra.
 class CaelumMagicSelectorWeapon : Weapon
 {
+    CaelumFirstPersonView FirstPersonView;
+
+    override void PSpriteTick(PSprite psp)
+    {
+        Super.PSpriteTick(psp);
+        // La espada conserva su rig aceptado y sus índices de estado.
+        if (psp.ID != PSP_WEAPON || self is 'CaelumSwordSelectorWeapon') return;
+        if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
+        FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
+    }
+
     Default
     {
         Weapon.SelectionOrder 600;

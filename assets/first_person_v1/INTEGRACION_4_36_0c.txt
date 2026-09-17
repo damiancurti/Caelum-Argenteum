@@ -1,0 +1,10 @@
+INTEGRACIÓN POSTERIOR AL PAQUETE DE ARTE
+Versión 4.36.0c, GZDoom g4.14.2.
+Los manifiestos y VALIDACION.json originales se conservan como procedencia.
+La integración está en src/caelum/equipment/CaelumFirstPersonView.zs y en
+PSpriteTick de CaelumPhysicalSelectorWeapon / CaelumMagicSelectorWeapon.
+93 estados en clase nueva; capa 50; 19 familias activas en sus tres tiers.
+La espada conserva el rig aprobado. Sus variantes nuevas quedan registradas.
+Se conservan bytes de 101 PNG, offsets y pivotes del manifiesto. TEXTURES
+incorpora su fragmento. Las fuentes originales no van en el PK3.
+Guía de revisión y validación de motor: PRUEBAS_4_36_0c.txt en la raíz.

@@ -2426,3 +2426,682 @@ Sprite "CLVRB0", 320, 887 { Offset 160, 480 Patch "graphics/caelum/world/ca_leve
 Sprite "CMNFA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_fire.png", 0, 0 }
 Sprite "CMNQA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_quintessence.png", 0, 0 }
 Sprite "CMNEA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_earth.png", 0, 0 }
+
+// FP_V1: agregar al final de TEXTURES. Composiciones virtuales de capas propias.
+Sprite "C011A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/dagger/F011A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C012A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/dagger/F012A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C013A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/dagger/F013A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C021A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hatchet/F021A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C022A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hatchet/F022A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C023A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hatchet/F023A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C031A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/machete/F031A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C032A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/machete/F032A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C033A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/machete/F033A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C041A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C042A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C043A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C051A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/sword/F051A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C052A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/sword/F052A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C053A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/sword/F053A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C061A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/axe/F061A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C062A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/axe/F062A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C063A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/axe/F063A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C071A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C072A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C073A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C081A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C082A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C083A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C091A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/greatsword/F091A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C092A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/greatsword/F092A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C093A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/greatsword/F093A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C101A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/war_axe/F101A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C102A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/war_axe/F102A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C103A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/war_axe/F103A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C111A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C112A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C113A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C121A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C122A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C123A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C131A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C132A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C133A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
+}
+
+Sprite "C141A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH01A0.png", 0, 0
+}
+
+Sprite "C142A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH01A0.png", 0, 0
+}
+
+Sprite "C143A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH01A0.png", 0, 0
+}
+
+Sprite "C151A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+
+Sprite "C152A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+
+Sprite "C153A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+
+Sprite "C151B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+
+Sprite "C152B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+
+Sprite "C153B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+
+Sprite "C161A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F161A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C162A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F162A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C163A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F163A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C161B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F161B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C162B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F162B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C163B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F163B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C161C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F161C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C162C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F162C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C163C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/standard_bow/F163C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C171A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F171A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C172A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F172A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C173A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F173A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C171B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F171B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C172B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F172B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C173B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F173B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
+}
+
+Sprite "C171C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F171C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C172C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F172C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C173C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/longbow/F173C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
+}
+
+Sprite "C181A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F181A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C182A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F182A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C183A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F183A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C181B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F181B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C182B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F182B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C183B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F183B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C181C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F181C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C182C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F182C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C183C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/crossbow/F183C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C191A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F191A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C192A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F192A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C193A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F193A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C191B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F191B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C192B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F192B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C193B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F193B0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C191C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F191C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C192C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F192C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C193C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/carbine/F193C0.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
+}
+
+Sprite "C201A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F201A0.png", 0, 0
+}
+
+Sprite "C202A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F202A0.png", 0, 0
+}
+
+Sprite "C203A0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F203A0.png", 0, 0
+}
+
+Sprite "C201B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F201B0.png", 0, 0
+}
+
+Sprite "C202B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F202B0.png", 0, 0
+}
+
+Sprite "C203B0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F203B0.png", 0, 0
+}
+
+Sprite "C201C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F201C0.png", 0, 0
+}
+
+Sprite "C202C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F202C0.png", 0, 0
+}
+
+Sprite "C203C0", 320, 200
+{
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/giant_gauntlets/F203C0.png", 0, 0
+}

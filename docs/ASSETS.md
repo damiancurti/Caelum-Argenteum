@@ -1,6 +1,46 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0b — 2026-09-17.
+Versión documental: 4.36.0c — 2026-09-17.
+
+## Recursos aportados e integrados — 4.36.0c
+
+Paquetes del autor: Caelum_Argenteum_Primera_Persona_v1(1).zip y
+Caelum_Argenteum_Audio_Eventos_v1.zip (audio revisión 1.4). Se conservan fuentes,
+másteres, manifiestos, instrucciones y datos de procedencia bajo
+assets/first_person_v1 y assets/audio_eventos_v1. Sus VALIDACION.json describen
+la validación original del paquete, previa a integrarlo; INTEGRACION_4_36_0c.txt
+registra la conexión posterior. Los másteres no entran en el PK3.
+
+Primera persona: 101 PNG de juego originales (93 arma/fase y ocho manos),
+20 familias en tres tiers y 93 composiciones virtuales TEXTURES. Se activan 19
+familias nuevas y se conserva la espada modular aprobada. Las nuevas variantes
+de espada quedan registradas como recursos. Todos los PNG suministrados conservan
+sus bytes, alfa y grAb. No se generan imágenes adicionales ni se reemplazan
+DSWD, RHND, RFNG, DSHD o LHND. El código usa los pivotes del manifiesto y una
+sola composición por agarre, incluida la palma detrás del libro.
+
+Audio de juego: seis OGG Vorbis, 48 kHz, con cinco asignaciones activas y una
+alternativa de barco registrada pero no seleccionada. Se conservan byte a byte.
+
+| Uso | Duración | Fuente / edición |
+| --- | --- | --- |
+| Palanca | 0,154 s | Clic mono completo |
+| Carreta | 6 s | Cascos, tramo 2–8 s |
+| Barco | 6 s | Olas, tramo 3–9 s |
+| Captura de tarot | 3,309 s | CA_MUS01, 30,358146–33,667042 s |
+| Rodadura | 3,80 s, bucle mono | Piedra, 38,30–42,40 s con unión de 0,30 s |
+| Barco alternativo | 6 s | Inicio 0–6 s, disponible como recurso |
+
+El tarot conserva los fundidos de 2 ms/20 ms y el desplazamiento +200 ms de la
+revisión 1.4. No es una pista aislada de guitarra. Se corrige únicamente el
+intervalo desactualizado del crédito integrado; no se reedita el audio.
+Los cuatro efectos externos conservan sus créditos CC0 y la trazabilidad de
+previsualizaciones HQ de Freesound. Los WAV son másteres editados, no originales
+sin pérdida descargados de Freesound. CA_MUS01 mantiene los derechos del proyecto.
+
+Palanca: se reutiliza el mismo atlas CLVR arriba/abajo; su escala de juego pasa
+a 0,045. Los modelos, texturas anteriores, toro, mapas y PNG existentes no se
+regeneran. El paquete incorpora arte suministrado y no recursos de Doom.
 
 ## 4.36.0b — palanca, esfera y escala del toro
 
@@ -866,7 +906,7 @@ No se reescribe la licencia de un tercero al reorganizar documentos.
 
 ## Inventario físico de audio
 
-El proyecto completo auditado contiene 74 archivos de runtime: 72 OGG y 2 MP3, incluido
+El proyecto completo auditado contiene 80 archivos de runtime: 78 OGG y 2 MP3, incluido
 el nuevo recorte. El paquete 05 conserva 10 archivos de reserva externa que
 no se añaden a src. Total catalogado: 84 archivos. Una copia por otro nombre
 no implica otra grabación: menu_move y menu_select siguen compartiendo contenido.

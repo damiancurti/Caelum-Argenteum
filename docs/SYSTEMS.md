@@ -1,6 +1,80 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0b — 2026-09-17.
+Versión documental: 4.36.0c — 2026-09-17.
+
+## Integración y correcciones 4.36.0c
+
+Presión: IsPressedBy exige apoyo real al nivel de la placa, personaje vivo y
+sólido, sin vuelo/noclip ni ascenso. La distancia XY se compara con la suma de
+los radios de placa y receptor, incluyendo la parte de los pies que pisa el
+borde. Antes se comparaba sólo con el radio de la placa. Un bloqueo de destino
+no consume la trampa; se reintenta con la cadencia existente. El diagnóstico
+numera rechazos: 1 sin marcador, 2 altura insuficiente, 3 ocupante sólido,
+4 protección de 35 tics, 5 colisión rechazada por TeleportMove(false).
+
+Palanca: CaelumLeverFace pasa de 0,09 a 0,045. Tick también normaliza una escala
+serializada anterior y conserva el cuadro arriba/abajo. El clic nuevo sólo se
+emite si Used activó al menos un mecanismo. Una segunda pulsación no lo repite.
+
+Primera persona: CaelumFirstPersonView recibe PSpriteTick de los selectores
+físicos y mágicos y ocupa exclusivamente la capa 50. CaelumFirstPersonFrames
+contiene estados nuevos de tipo Weapon/Overlay, evitando insertar estados en
+clases que ya están guardadas. La espada conserva su rig modular previo.
+El HUD omite el icono provisional cuando un selector controla una vista nativa;
+los guanteletes muestran sus puños y no un segundo icono de bloqueo.
+
+Las 93 composiciones conservan el orden de manos/arma del manifiesto. Su lienzo
+es 320×200 y su offset (160,32); los pivotes porcentuales se calculan por caja
+visible. La curva melee mueve la composición completa y utiliza sólo el giro
+relativo aprobado, sin sumar otra vez los 18° de la espada antigua. El movimiento
+sólo comienza al crecer la recuperación tras un ataque aceptado. Magia observa
+la conclusión del callback real. Nada en este controlador cobra recursos,
+aplica daño, dispara proyectiles ni modifica los tiempos de combate.
+
+| Familia | Fases vinculadas al juego |
+| --- | --- |
+| Arcos corto/largo | A con flecha; B al apuntar con munición; C vacío o tras soltar |
+| Ballesta | A cargada; B disparada/vacía; C mientras recarga |
+| Carabina | A preparada; B retroceso/vacía; C recámara en recarga |
+| Libro | A abierto y al conjurar; B cerrado al bajar/subir o bloquear |
+| Guanteletes | A guardia; B golpe derecho; C golpe izquierdo |
+| Otras armas nuevas | A con desplazamiento y giro conjunto al atacar |
+
+Cambiar de pieza, morir, romper el arma, abrir inventario/oficios o descansar
+limpia la vista correspondiente. La retirada/subida acompaña la posición nativa
+del arma; cambiar de mapa reinicializa la presentación. El motor elimina las
+capas cuyo selector ya no está activo. Los conjuntos de dos manos respetan las
+reglas existentes de escudo y no incorporan una mano adicional.
+
+Audio: el bucle mono de roca se inicia sólo al desplazarse en XY con contacto
+y sin caída. IsActorPlayingSound evita reiniciarlo cada tic y lo recupera al
+cargar. Se detiene al inmovilizarse, quedar en el aire o destruirse. CHAN_5 es
+exclusivo de su fricción; no añade fuerza ni daño. La rotación visual sigue el
+recorrido de rodadura. La captura de tarot envía un evento de interfaz sólo
+tras RecordMainM00FoolCapture; es independiente de la cámara del diálogo y no
+suena al consultar una carta ni al rechazar una captura. La atenuación musical
+del diálogo y su restauración siguen a cargo del menú nativo existente.
+
+| Cruce confirmado | Transición nativa | Sonido local |
+| --- | --- | --- |
+| Carreta, MODE_CART | 3, fundido cruzado | caelum/travel/carriage |
+| Barco, MODE_SHIP | 1, derretido | caelum/travel/ship |
+| El Loco, incluida salida MAP01→MAP02 | 2, quemado | caelum/ui/map_transition |
+| Otros accesos | Preferencia wipetype | caelum/ui/map_transition |
+
+PreTravelled consume PendingTravelWipe o el modo de viaje confirmado y envía
+wipe/cue a CaelumMenuAudio. WorldLoaded selecciona una transición y reproduce
+el clip después de la limpieza de canales del mapa anterior. Cotizar/cancelar
+no envía salida. Cargar un save descarta la presentación pendiente. El cruce
+narrativo de El Loco deja visibles ambas escenas: se retiran sus antiguos
+fundidos negros, que ocultaban el quemado. Conserva validaciones, conservación
+del arma inicial, limpieza de inventario y conversación de llegada.
+
+Masa/impactos: 4π/3 × (48 MU / 32 MU/m)³ × 2700 kg/m³ = 38170 kg redondeados.
+A_SetSize sólo amplía un bloque antiguo cuando cabe; el informe muestra radio,
+altura y ampliada, además de la masa efectiva. El último impacto muestra origen,
+velocidad de cierre, porcentaje previo, Dureza, porcentaje posterior, armadura
+y daño final. No se infiere el daño únicamente a partir de toneladas.
 
 ## Minas, teletransporte, aplastamiento y presentación (4.36.0b)
 

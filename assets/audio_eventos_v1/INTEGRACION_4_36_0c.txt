@@ -1,0 +1,10 @@
+INTEGRACIÓN POSTERIOR AL PAQUETE DE AUDIO
+Versión 4.36.0c, GZDoom g4.14.2. Audio aportado revisión 1.4.
+Los seis OGG conservan sus bytes. La variante principal de barco es 3–9 s;
+la alternativa 0–6 s está registrada pero no se reproduce en el viaje.
+Palanca y rodadura: CaelumPhysicalHazards.zs. Viajes/captura: CaelumMenuAudio.zs,
+con señales de CaelumPlayer.PreTravelled y CommitCapture de El Loco.
+CHAN_5 de la roca contiene un único bucle mientras existe rodadura apoyada.
+Los manifiestos y VALIDACION.json originales describen el paquete previo;
+las pruebas posteriores de integración están en PRUEBAS_4_36_0c.txt.
+El crédito de tarot integrado corrige el intervalo viejo a la revisión 1.4.

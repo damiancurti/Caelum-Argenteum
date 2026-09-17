@@ -11,7 +11,7 @@ class CaelumPressureTrap : Actor
         if (Spent || body == null || body.health <= 0 || !body.bSolid
             || body.bNoClip || body.bNoGravity || body.Vel.Z > 0
             || Abs(body.Pos.Z - (Pos.Z - 0.5)) > 1.0
-            || (body.Pos.XY - Pos.XY).Length() >= Radius) return false;
+            || (body.Pos.XY - Pos.XY).Length() >= Radius + body.Radius) return false;
         let user = CaelumPlayer(body);
         if (user != null)
             return user.CharacterCreationComplete && !user.CreationWizardOpen
@@ -102,18 +102,20 @@ class CaelumTrapDestination : Actor
 class CaelumTeleportTrap : CaelumPressureTrap
 {
     Default { Tag "$CA_TELEPORT_TRAP"; }
+    // Diagnóstico persistente del último intento. Cero indica éxito.
+    int LastRejection;
+    int RejectedAttempts;
+
     // args[0]=TID de un CaelumTrapDestination del mismo mapa.
-    override bool Trigger(Actor body)
+    int DestinationRejection(Actor body)
     {
-        if (!IsPressedBy(body) || args[0] <= 0
-            || body.FindInventory("CaelumTrapTransitGuard") != null) return false;
+        if (args[0] <= 0) return 1;
         let dest = CaelumTrapDestination(ActorIterator.Create(args[0], "CaelumTrapDestination").Next());
-        if (dest == null || !level.IsPointInLevel(dest.Pos)) return false;
+        if (dest == null || !level.IsPointInLevel(dest.Pos)) return 1;
         let sec = level.PointInSector(dest.Pos.XY);
         if (dest.Pos.Z < sec.floorplane.ZatPoint(dest.Pos.XY)
-            || dest.Pos.Z + body.Height > sec.ceilingplane.ZatPoint(dest.Pos.XY)) return false;
+            || dest.Pos.Z + body.Height > sec.ceilingplane.ZatPoint(dest.Pos.XY)) return 2;
         // TeleportMove omite algunas decoraciones sólidas no disparables.
-        // Comprobar también columnas/bloques, con la altura real del receptor.
         let occupied = BlockThingsIterator.Create(dest, body.Radius);
         while (occupied.Next())
         {
@@ -122,10 +124,26 @@ class CaelumTeleportTrap : CaelumPressureTrap
             if (Abs(other.Pos.X-dest.Pos.X) < other.Radius+body.Radius
                 && Abs(other.Pos.Y-dest.Pos.Y) < other.Radius+body.Radius
                 && other.Pos.Z < dest.Pos.Z+body.Height
-                && other.Pos.Z+other.Height > dest.Pos.Z) return false;
+                && other.Pos.Z+other.Height > dest.Pos.Z) return 3;
         }
-        // Colisión nativa, sin telefrag: un destino ocupado no daña ni consume.
-        if (!body.TeleportMove(dest.Pos, false)) return false;
+        return 0;
+    }
+
+    bool Reject(int reason)
+    {
+        LastRejection = reason; RejectedAttempts++; return false;
+    }
+
+    override bool Trigger(Actor body)
+    {
+        if (!IsPressedBy(body)) return false;
+        if (body.FindInventory("CaelumTrapTransitGuard") != null) return Reject(4);
+        int reason = DestinationRejection(body);
+        if (reason != 0) return Reject(reason);
+        let dest = ActorIterator.Create(args[0], "CaelumTrapDestination").Next();
+        // Colisión nativa, sin telefrag ni movimiento alternativo forzado.
+        if (!body.TeleportMove(dest.Pos, false)) return Reject(5);
+        LastRejection = 0;
         body.Vel = (0,0,0); body.Angle = dest.Angle; body.ClearInterpolation();
         body.GiveInventoryType("CaelumTrapTransitGuard");
         InterruptVictim(body);
@@ -224,8 +242,14 @@ class CaelumMagicHazardWorld : Object play
     {
         let it = ThinkerIterator.Create("CaelumPressureTrap"); CaelumPressureTrap trap;
         while ((trap = CaelumPressureTrap(it.Next())) != null)
+        {
             Console.Printf("Trampa %s TID=%d gastada=%d activaciones=%d args=(%d,%d,%d)",
                 trap.GetClassName(), trap.tid, trap.Spent, trap.ActivationCount,
                 trap.args[0],trap.args[1],trap.args[2]);
+            let portal = CaelumTeleportTrap(trap);
+            if (portal != null)
+                Console.Printf("  Teletransporte rechazos=%d ultimo=%d (0 correcto, 1 sin destino, 2 altura, 3 ocupado, 4 espera 35 tics, 5 colision nativa)",
+                    portal.RejectedAttempts, portal.LastRejection);
+        }
     }
 }

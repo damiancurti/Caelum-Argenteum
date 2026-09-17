@@ -120,7 +120,7 @@ class CaelumMainM00FoolCapture : Object play
         user.RefreshFormalInventorySnapshot();
         user.SyncPalomoDialogueTokens();
         user.PersistCharacterState();
-        user.A_StartSound("caelum/player/level_up", CHAN_7, CHANF_LOCAL | CHANF_UI, 0.8, ATTN_NONE);
+        EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_capture");
         user.A_Print(StringTable.Localize("CA_M01_FOOL_OBTAINED", false));
         return true;
     }

@@ -11618,14 +11618,20 @@ class CaelumPlayer : DoomPlayer
         HUDLoadRatio = DerivedStats.LoadRatio;
     }
 
+    // Solicitud de una salida confirmada por tarot; se consume en el cruce.
+    int PendingTravelWipe;
+
     override void PreTravelled()
     {
-        // Presentación nativa al llegar. El barco solicita el derretido sólo
-        // para este cruce; los demás conservan la preferencia del usuario.
         let journey = CaelumJourneyState.Get(self);
-        bool ship = journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED
-            && journey.TravelMode == CaelumJourneyState.MODE_SHIP;
-        EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", ship ? 1 : 0);
+        int mode = journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED
+            ? journey.TravelMode : 0;
+        int wipe = PendingTravelWipe;
+        int cue = 0;
+        if (mode == CaelumJourneyState.MODE_SHIP) { wipe=1; cue=2; }
+        else if (mode == CaelumJourneyState.MODE_CART) { wipe=3; cue=1; }
+        EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
+        PendingTravelWipe = 0;
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         ClosePalomoMerchant();

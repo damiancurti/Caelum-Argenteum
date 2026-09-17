@@ -1,0 +1,7 @@
+﻿evento,alias,archivo,fuente_inicio_s,fuente_fin_s,duracion_final_s,canales,bucle,ganancia_db,estado
+Palanca,caelum/world/lever_activate,sounds/caelum/world/mechanisms/ca_lever_activate.ogg,0.0,0.153875,0.153875,1,False,-3.839616,"Activación breve completa, una vez por accionamiento confirmado."
+Viaje en carreta,caelum/travel/carriage,sounds/caelum/ui/travel/ca_travel_carriage.ogg,2.0,8.0,6.0,2,False,-6.120248,Fragmento de seis segundos de la primera sección de cascos.
+Viaje en barco,caelum/travel/ship,sounds/caelum/ui/travel/ca_travel_ship.ogg,3.0,9.0,6.0,2,False,7.788882,Recorte principal: omite los primeros tres segundos y conserva seis.
+Captura de tarot,caelum/tarot/card_capture,sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg,30.35814583333333,33.66704166666667,3.308896,2,False,-0.50592,Recorte desplazado otros 200 ms hacia adelante respecto de la revisión 1.3: 00:30.358146–00:33.667042. Misma duración y fundidos de entrada de 2 ms y salida de 20 ms. Conserva la mezcla de MAP01.
+Roca rodando,caelum/world/rock_roll,sounds/caelum/world/hazards/ca_rock_roll_loop.ogg,38.3,42.4,3.8,1,True,0.449378,"Bucle de fricción de piedra: 4,10 s de fuente con solapamiento de 0,30 s; resultado 3,80 s. Activarlo sólo durante el rodamiento."
+Barco — variante del inicio,caelum/travel/ship_first_seconds,sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg,0.0,6.0,6.0,2,False,7.788949,"Alternativa de los primeros seis segundos, por si «recortar los primeros segundos» significaba extraerlos para usar ese fragmento."

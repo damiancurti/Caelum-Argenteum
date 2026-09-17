@@ -198,10 +198,14 @@ class CaelumMainM00Return : Object play
             if (!CanApproach(user, door) || user.CraftingTaskActive) { Cancel(user); return; }
             if (user.HasActiveConversation()) return;
             user.Vel = (0,0,0);
-            if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, FADE_TICS, "Black", 1.0);
+            if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, 1);
             if (r.MainM00ReturnTics > 0) { r.MainM00ReturnTics--; return; }
             if (!Commit(user)) { Cancel(user); return; }
             CaelumWorldProgress.RecordReturnDeparture(user);
+            // El quemado nativo necesita ambos mapas visibles; una pantalla
+            // negra superpuesta ocultaría la transición solicitada.
+            user.A_SetBlend("Black", 0.0, 1);
+            user.PendingTravelWipe = 2;
             Level.ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
         }
         if (level.MapName == "MAP02" && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMPLETE)
@@ -213,7 +217,7 @@ class CaelumMainM00Return : Object play
                 voice, null, false, 0, SEWER_CONVERSATION);
             if (!voice.HasConversation() || !voice.StartConversation(user, false, false)) { voice.Destroy(); return; }
             voice.MarkConversationOpened(); r.MainM00SewerVoiceHeard = true;
-            user.A_SetBlend("Black", 1.0, TICRATE, "Black", 0.0);
+            user.A_SetBlend("Black", 0.0, 1);
             user.PersistCharacterState();
         }
     }

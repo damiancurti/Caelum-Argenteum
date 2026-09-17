@@ -176,7 +176,7 @@ class CaelumHazardRock : CaelumRockGraniteHalf
         }
         BeforeMove = Pos; BeforeVelocity = Vel;
         Super.Tick();
-        if (!Released) return;
+        if (!Released) { UpdateRollingSound(false); return; }
         if (LastVerticalVictim != null
             && (Pos.Z > LastVerticalVictim.Pos.Z + LastVerticalVictim.Height + 2
                 || Abs(Pos.X - LastVerticalVictim.Pos.X) > Radius + LastVerticalVictim.Radius + 2
@@ -188,7 +188,29 @@ class CaelumHazardRock : CaelumRockGraniteHalf
             while (nearby.Next()) ResolveVerticalLanding(nearby.thing);
         }
         double traveled = (Pos.XY - BeforeMove.XY).Length();
-        if (traveled > 0.001) Roll -= traveled / Radius * 57.295779513;
+        bool rolling = traveled > 0.01 && Vel.XY.Length() > 0.01
+            && Abs(Vel.Z) < 0.01 && (Pos.Z <= floorz + 0.5 || bOnMobj);
+        if (rolling) Roll -= traveled / Radius * 57.295779513;
+        UpdateRollingSound(rolling);
+    }
+
+    void UpdateRollingSound(bool rolling)
+    {
+        // La consulta nativa recupera el bucle al cargar y evita reiniciarlo
+        // cada tic. CHAN_5 queda reservado a la fricción de esta roca.
+        if (rolling)
+        {
+            if (!IsActorPlayingSound(CHAN_5, "caelum/world/rock_roll"))
+                A_StartSound("caelum/world/rock_roll", CHAN_5, CHANF_LOOP);
+        }
+        else A_StopSound(CHAN_5);
+    }
+
+    override void OnDestroy()
+    {
+        A_StopSound(CHAN_5);
+        if (BoulderVisual != null) BoulderVisual.Destroy();
+        Super.OnDestroy();
     }
 
     override bool TryPushFrom(Actor pusher, double physicalPower, double pushForce)
@@ -231,7 +253,7 @@ class CaelumLeverColumn : Actor
 
 class CaelumLeverFace : Actor
 {
-    Default { +NOINTERACTION +NOGRAVITY +WALLSPRITE Scale 0.09; }
+    Default { +NOINTERACTION +NOGRAVITY +WALLSPRITE Scale 0.045; }
     States { Spawn: CLVR A -1; Stop; Down: CLVR B -1; Stop; }
 }
 
@@ -262,7 +284,12 @@ class CaelumHazardReleaseSwitch : Actor
             LeverVisual = CaelumLeverFace(Spawn("CaelumLeverFace", Pos + offset, NO_REPLACE));
             if (LeverVisual != null) LeverVisual.Angle = Angle + 180;
         }
-        if (LeverVisual != null) LeverVisual.frame = Spent ? 1 : 0;
+        if (LeverVisual != null)
+        {
+            // Actualiza también la escala serializada de una palanca de 0b.
+            LeverVisual.Scale = (0.045, 0.045);
+            LeverVisual.frame = Spent ? 1 : 0;
+        }
     }
 
     override void OnDestroy()
@@ -293,7 +320,7 @@ class CaelumHazardReleaseSwitch : Actor
         if (!changed) return false;
         Spent = true;
         if (LeverVisual != null) LeverVisual.frame = 1;
-        A_StartSound("caelum/world/lever", CHAN_BODY);
+        A_StartSound("caelum/world/lever_activate", CHAN_BODY);
         user.A_Print(StringTable.Localize("CA_HAZARD_RELEASED", false));
         return true;
     }
@@ -315,7 +342,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0b] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.0c] Peligros físicos y mágicos: mapa=%s", level.MapName);
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -326,12 +353,23 @@ class CaelumHazardDiagnostics : Object play
         }
         let rocks = ThinkerIterator.Create("CaelumHazardRock"); CaelumHazardRock rock;
         while ((rock = CaelumHazardRock(rocks.Next())) != null)
-            Console.Printf("Roca TID=%d liberada=%d masa=%.1f velocidad=(%.2f,%.2f,%.2f) impactos verticales=%d impulso=%.2f",
-                rock.tid, rock.Released, rock.GetEnvironmentMassKg(), rock.Vel.X, rock.Vel.Y, rock.Vel.Z,
+            Console.Printf("Roca TID=%d liberada=%d masa=%.1f radio=%.1f altura=%.1f ampliada=%d velocidad=(%.2f,%.2f,%.2f) impactos verticales=%d impulso=%.2f",
+                rock.tid, rock.Released, rock.GetEnvironmentMassKg(), rock.Radius, rock.Height, rock.BoulderSizeReady, rock.Vel.X, rock.Vel.Y, rock.Vel.Z,
                 rock.VerticalImpactCount, rock.LastVerticalImpulse);
         let switches = ThinkerIterator.Create("CaelumHazardReleaseSwitch"); CaelumHazardReleaseSwitch lever;
         while ((lever = CaelumHazardReleaseSwitch(switches.Next())) != null)
             Console.Printf("Mecanismo destino=%d usado=%d", lever.args[0], lever.Spent);
+        for (int p=0; p<MAXPLAYERS; p++)
+        {
+            if (!playeringame[p]) continue;
+            let user = CaelumPlayer(players[p].mo);
+            if (user != null)
+                Console.Printf("Impacto jugador=%d tipo=%d masa fuente=%.1f velocidad cierre=%.2f porcentaje=%.2f Dureza=%.2f postDureza=%.2f armadura=%.2f daño=%d",
+                    p, user.LastImpactKind, user.LastImpactOtherEffectiveMass,
+                    user.LastImpactClosingSpeed, user.LastImpactDamagePercent,
+                    user.LastImpactToughnessPercent, user.LastImpactPostToughnessPercent,
+                    user.LastImpactArmorDefensePercent, user.LastImpactFinalDamage);
+        }
         CaelumMagicHazardWorld.Report();
         if (count == 0) Console.Printf("La galería de peligros está en MAP08, conectada desde MAP05.");
     }

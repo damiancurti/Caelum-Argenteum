@@ -1,0 +1,21 @@
+{
+  "runtime_pngs": 101,
+  "weapon_frames": 93,
+  "hand_layers": 8,
+  "weapon_families": 20,
+  "tiers": 3,
+  "virtual_composites": 93,
+  "source_atlases": 21,
+  "rgba": true,
+  "png_offsets_valid": true,
+  "unique_names": true,
+  "no_collision_with_4_35_0q_textures": true,
+  "all_layers_present": true,
+  "engine_compiled": false,
+  "engine_tested": false,
+  "gameplay_code_changed": false,
+  "notes": "Los extremos de antebrazo y astas largas salen por el borde inferior de la vista de forma intencional. No se aplica una regla de margen de iconos a estos sprites de primera persona.",
+  "viewer_javascript_syntax_valid": true,
+  "native_pivot_roundtrips_valid": true,
+  "weapon_top_left_right_edges_clear": true
+}

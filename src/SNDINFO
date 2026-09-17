@@ -136,3 +136,24 @@ $alias caelum/world/lever caelum/stock/iron_gate
 $alias caelum/world/magic_mine caelum/weather/thunder_heavy
 $alias caelum/world/magic_teleport caelum/npcs/palomo_disappear
 $alias caelum/world/crusher caelum/world/door_large_open
+
+// Audio de eventos v1: agregar al SNDINFO existente sin reemplazarlo.
+// El registro de un alias no programa el evento que lo reproduce.
+
+// Palanca: 0.153875 s.
+caelum/world/lever_activate = "sounds/caelum/world/mechanisms/ca_lever_activate.ogg"
+
+// Viaje en carreta: 6.000000 s.
+caelum/travel/carriage = "sounds/caelum/ui/travel/ca_travel_carriage.ogg"
+
+// Viaje en barco: 6.000000 s.
+caelum/travel/ship = "sounds/caelum/ui/travel/ca_travel_ship.ogg"
+
+// Captura de tarot: 3.308896 s.
+caelum/tarot/card_capture = "sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg"
+
+// Roca rodando: 3.800000 s.
+caelum/world/rock_roll = "sounds/caelum/world/hazards/ca_rock_roll_loop.ogg"
+
+// Barco — variante del inicio: 6.000000 s.
+caelum/travel/ship_first_seconds = "sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg"

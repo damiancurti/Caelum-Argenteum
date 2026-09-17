@@ -1,0 +1,6370 @@
+{
+  "pack": "Caelum Argenteum — Primera Persona v1",
+  "target_engine": "GZDoom 4.14.2",
+  "canvas": [
+    320,
+    200
+  ],
+  "hires_canvas": [
+    640,
+    400
+  ],
+  "png_offset": [
+    160,
+    32
+  ],
+  "weapons_count": 20,
+  "tiers": [
+    1,
+    2,
+    3
+  ],
+  "weapon_frames": 93,
+  "hand_layers": 8,
+  "virtual_composites": 93,
+  "engine_integration": "pending",
+  "engine_tested": false,
+  "hands": [
+    {
+      "id": "melee_right",
+      "sprite": "FH00A0",
+      "prefix": "FH00",
+      "path": "sprites/caelum/first_person/v1/hands/FH00A0.png",
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_crop": [
+        0,
+        0,
+        369,
+        543
+      ],
+      "trim": [
+        23,
+        153,
+        366,
+        524
+      ],
+      "scale": 0.5660377358490566,
+      "placement": [
+        429,
+        268
+      ]
+    },
+    {
+      "id": "horizontal_right",
+      "sprite": "FH01A0",
+      "prefix": "FH01",
+      "path": "sprites/caelum/first_person/v1/hands/FH01A0.png",
+      "anchor_640": [
+        473,
+        250
+      ],
+      "source_crop": [
+        369,
+        0,
+        734,
+        543
+      ],
+      "trim": [
+        3,
+        209,
+        356,
+        524
+      ],
+      "scale": 0.6349206349206349,
+      "placement": [
+        425,
+        203
+      ]
+    },
+    {
+      "id": "book_palm_right",
+      "sprite": "FH02A0",
+      "prefix": "FH02",
+      "path": "sprites/caelum/first_person/v1/hands/FH02A0.png",
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_crop": [
+        734,
+        0,
+        1098,
+        543
+      ],
+      "trim": [
+        15,
+        219,
+        364,
+        524
+      ],
+      "scale": 0.7213114754098361,
+      "placement": [
+        364,
+        254
+      ]
+    },
+    {
+      "id": "bow_grip_left",
+      "sprite": "FH03A0",
+      "prefix": "FH03",
+      "path": "sprites/caelum/first_person/v1/hands/FH03A0.png",
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_crop": [
+        1098,
+        0,
+        1448,
+        543
+      ],
+      "trim": [
+        0,
+        209,
+        317,
+        524
+      ],
+      "scale": 0.7142857142857143,
+      "placement": [
+        95,
+        220
+      ]
+    },
+    {
+      "id": "bow_draw_right",
+      "sprite": "FH04A0",
+      "prefix": "FH04",
+      "path": "sprites/caelum/first_person/v1/hands/FH04A0.png",
+      "anchor_640": [
+        322,
+        337
+      ],
+      "source_crop": [
+        0,
+        543,
+        371,
+        1086
+      ],
+      "trim": [
+        37,
+        60,
+        369,
+        465
+      ],
+      "scale": 0.5185185185185185,
+      "placement": [
+        284,
+        294
+      ]
+    },
+    {
+      "id": "trigger_right",
+      "sprite": "FH05A0",
+      "prefix": "FH05",
+      "path": "sprites/caelum/first_person/v1/hands/FH05A0.png",
+      "anchor_640": [
+        367,
+        349
+      ],
+      "source_crop": [
+        371,
+        543,
+        724,
+        1086
+      ],
+      "trim": [
+        14,
+        118,
+        353,
+        465
+      ],
+      "scale": 0.5619596541786743,
+      "placement": [
+        309,
+        306
+      ]
+    },
+    {
+      "id": "foreend_left",
+      "sprite": "FH06A0",
+      "prefix": "FH06",
+      "path": "sprites/caelum/first_person/v1/hands/FH06A0.png",
+      "anchor_640": [
+        284,
+        306
+      ],
+      "source_crop": [
+        724,
+        543,
+        1098,
+        1086
+      ],
+      "trim": [
+        0,
+        126,
+        333,
+        465
+      ],
+      "scale": 0.6194690265486725,
+      "placement": [
+        143,
+        235
+      ]
+    },
+    {
+      "id": "release_right",
+      "sprite": "FH07A0",
+      "prefix": "FH07",
+      "path": "sprites/caelum/first_person/v1/hands/FH07A0.png",
+      "anchor_640": [
+        415,
+        341
+      ],
+      "source_crop": [
+        1098,
+        543,
+        1448,
+        1086
+      ],
+      "trim": [
+        12,
+        95,
+        350,
+        465
+      ],
+      "scale": 0.5675675675675675,
+      "placement": [
+        348,
+        278
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "id": "dagger",
+      "label": "daga",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F011A0",
+      "prefix": "F011",
+      "path": "sprites/caelum/first_person/v1/dagger/F011A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        95.5,
+        681
+      ],
+      "source_cell": [
+        0,
+        0,
+        498,
+        1024
+      ],
+      "trim": [
+        94,
+        91,
+        412,
+        912
+      ],
+      "scale": 0.24301336573511542,
+      "placement": [
+        447,
+        150
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C011A0",
+      "state_label": "CA_FP1_dagger_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.665354331
+      ],
+      "layer_order": [
+        "F011A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F011A0": [
+          0.325581395,
+          0.804761905
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "dagger",
+      "label": "daga",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F012A0",
+      "prefix": "F012",
+      "path": "sprites/caelum/first_person/v1/dagger/F012A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        95.5,
+        682
+      ],
+      "source_cell": [
+        498,
+        0,
+        1008,
+        1024
+      ],
+      "trim": [
+        89,
+        89,
+        409,
+        912
+      ],
+      "scale": 0.24301336573511542,
+      "placement": [
+        447,
+        149
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C012A0",
+      "state_label": "CA_FP1_dagger_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.66796875
+      ],
+      "layer_order": [
+        "F012A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F012A0": [
+          0.318181818,
+          0.814285714
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "dagger",
+      "label": "daga",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F013A0",
+      "prefix": "F013",
+      "path": "sprites/caelum/first_person/v1/dagger/F013A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        96.5,
+        682
+      ],
+      "source_cell": [
+        1008,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        101,
+        89,
+        436,
+        912
+      ],
+      "scale": 0.24301336573511542,
+      "placement": [
+        447,
+        149
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C013A0",
+      "state_label": "CA_FP1_dagger_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.66796875
+      ],
+      "layer_order": [
+        "F013A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F013A0": [
+          0.304347826,
+          0.814285714
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "hatchet",
+      "label": "hachuela",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F021A0",
+      "prefix": "F021",
+      "path": "sprites/caelum/first_person/v1/hatchet/F021A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        76.0,
+        598
+      ],
+      "source_cell": [
+        0,
+        0,
+        533,
+        1024
+      ],
+      "trim": [
+        96,
+        120,
+        481,
+        868
+      ],
+      "scale": 0.3204272363150868,
+      "placement": [
+        446,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C021A0",
+      "state_label": "CA_FP1_hatchet_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F021A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F021A0": [
+          0.223880597,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "hatchet",
+      "label": "hachuela",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F022A0",
+      "prefix": "F022",
+      "path": "sprites/caelum/first_person/v1/hatchet/F022A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        76.0,
+        598
+      ],
+      "source_cell": [
+        533,
+        0,
+        1034,
+        1024
+      ],
+      "trim": [
+        52,
+        120,
+        445,
+        868
+      ],
+      "scale": 0.3204272363150868,
+      "placement": [
+        446,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C022A0",
+      "state_label": "CA_FP1_hatchet_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F022A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F022A0": [
+          0.217391304,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "hatchet",
+      "label": "hachuela",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F023A0",
+      "prefix": "F023",
+      "path": "sprites/caelum/first_person/v1/hatchet/F023A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        79.5,
+        598
+      ],
+      "source_cell": [
+        1034,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        56,
+        120,
+        455,
+        869
+      ],
+      "scale": 0.3204272363150868,
+      "placement": [
+        445,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C023A0",
+      "state_label": "CA_FP1_hatchet_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F023A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F023A0": [
+          0.217391304,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "machete",
+      "label": "machete",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F031A0",
+      "prefix": "F031",
+      "path": "sprites/caelum/first_person/v1/machete/F031A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        66.5,
+        696
+      ],
+      "source_cell": [
+        0,
+        0,
+        558,
+        1024
+      ],
+      "trim": [
+        206,
+        87,
+        431,
+        927
+      ],
+      "scale": 0.3269916765755054,
+      "placement": [
+        448,
+        87
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C031A0",
+      "state_label": "CA_FP1_machete_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.732704403
+      ],
+      "layer_order": [
+        "F031A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F031A0": [
+          0.325581395,
+          0.814685315
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "machete",
+      "label": "machete",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F032A0",
+      "prefix": "F032",
+      "path": "sprites/caelum/first_person/v1/machete/F032A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        66.0,
+        697
+      ],
+      "source_cell": [
+        558,
+        0,
+        1051,
+        1024
+      ],
+      "trim": [
+        127,
+        87,
+        353,
+        928
+      ],
+      "scale": 0.3269916765755054,
+      "placement": [
+        448,
+        87
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C032A0",
+      "state_label": "CA_FP1_machete_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.732704403
+      ],
+      "layer_order": [
+        "F032A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F032A0": [
+          0.325581395,
+          0.814685315
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "machete",
+      "label": "machete",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F033A0",
+      "prefix": "F033",
+      "path": "sprites/caelum/first_person/v1/machete/F033A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        65.5,
+        696
+      ],
+      "source_cell": [
+        1051,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        141,
+        87,
+        366,
+        927
+      ],
+      "scale": 0.3269916765755054,
+      "placement": [
+        449,
+        87
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C033A0",
+      "state_label": "CA_FP1_machete_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.732704403
+      ],
+      "layer_order": [
+        "F033A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F033A0": [
+          0.30952381,
+          0.814685315
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "javelin",
+      "label": "jabalina",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F041A0",
+      "prefix": "F041",
+      "path": "sprites/caelum/first_person/v1/javelin/F041A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        100.5,
+        643
+      ],
+      "source_cell": [
+        0,
+        0,
+        569,
+        1024
+      ],
+      "trim": [
+        159,
+        38,
+        520,
+        985
+      ],
+      "scale": 0.39029535864978904,
+      "placement": [
+        431,
+        64
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C041A0",
+      "state_label": "CA_FP1_javelin_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.75
+      ],
+      "layer_order": [
+        "F041A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F041A0": [
+          0.273972603,
+          0.75
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "javelin",
+      "label": "jabalina",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F042A0",
+      "prefix": "F042",
+      "path": "sprites/caelum/first_person/v1/javelin/F042A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        99.0,
+        643
+      ],
+      "source_cell": [
+        569,
+        0,
+        1040,
+        1024
+      ],
+      "trim": [
+        51,
+        38,
+        406,
+        985
+      ],
+      "scale": 0.39029535864978904,
+      "placement": [
+        431,
+        64
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C042A0",
+      "state_label": "CA_FP1_javelin_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.751461988
+      ],
+      "layer_order": [
+        "F042A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F042A0": [
+          0.273972603,
+          0.751461988
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "javelin",
+      "label": "jabalina",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F043A0",
+      "prefix": "F043",
+      "path": "sprites/caelum/first_person/v1/javelin/F043A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        97.5,
+        644
+      ],
+      "source_cell": [
+        1040,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        66,
+        37,
+        416,
+        985
+      ],
+      "scale": 0.39029535864978904,
+      "placement": [
+        432,
+        64
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C043A0",
+      "state_label": "CA_FP1_javelin_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.75
+      ],
+      "layer_order": [
+        "F043A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F043A0": [
+          0.267605634,
+          0.75
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "sword",
+      "label": "espada",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F051A0",
+      "prefix": "F051",
+      "path": "sprites/caelum/first_person/v1/sword/F051A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        85.0,
+        727
+      ],
+      "source_cell": [
+        0,
+        0,
+        541,
+        1024
+      ],
+      "trim": [
+        114,
+        77,
+        466,
+        944
+      ],
+      "scale": 0.30424799081515497,
+      "placement": [
+        444,
+        94
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C051A0",
+      "state_label": "CA_FP1_sword_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.727564103
+      ],
+      "layer_order": [
+        "F051A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F051A0": [
+          0.271186441,
+          0.822463768
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "sword",
+      "label": "espada",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F052A0",
+      "prefix": "F052",
+      "path": "sprites/caelum/first_person/v1/sword/F052A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        85.0,
+        727
+      ],
+      "source_cell": [
+        541,
+        0,
+        1059,
+        1024
+      ],
+      "trim": [
+        75,
+        77,
+        420,
+        944
+      ],
+      "scale": 0.30424799081515497,
+      "placement": [
+        444,
+        94
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C052A0",
+      "state_label": "CA_FP1_sword_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.727564103
+      ],
+      "layer_order": [
+        "F052A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F052A0": [
+          0.275862069,
+          0.822463768
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "sword",
+      "label": "espada",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F053A0",
+      "prefix": "F053",
+      "path": "sprites/caelum/first_person/v1/sword/F053A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        86.0,
+        731
+      ],
+      "source_cell": [
+        1059,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        97,
+        76,
+        442,
+        947
+      ],
+      "scale": 0.30424799081515497,
+      "placement": [
+        444,
+        93
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C053A0",
+      "state_label": "CA_FP1_sword_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.727564103
+      ],
+      "layer_order": [
+        "F053A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F053A0": [
+          0.275862069,
+          0.822463768
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "axe",
+      "label": "hacha",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F061A0",
+      "prefix": "F061",
+      "path": "sprites/caelum/first_person/v1/axe/F061A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        73.5,
+        685
+      ],
+      "source_cell": [
+        0,
+        0,
+        535,
+        1024
+      ],
+      "trim": [
+        113,
+        73,
+        461,
+        930
+      ],
+      "scale": 0.28004667444574094,
+      "placement": [
+        449,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C061A0",
+      "state_label": "CA_FP1_axe_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F061A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F061A0": [
+          0.240740741,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "axe",
+      "label": "hacha",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F062A0",
+      "prefix": "F062",
+      "path": "sprites/caelum/first_person/v1/axe/F062A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        74.0,
+        685
+      ],
+      "source_cell": [
+        535,
+        0,
+        1046,
+        1024
+      ],
+      "trim": [
+        73,
+        73,
+        423,
+        930
+      ],
+      "scale": 0.28004667444574094,
+      "placement": [
+        449,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C062A0",
+      "state_label": "CA_FP1_axe_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F062A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F062A0": [
+          0.240740741,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "axe",
+      "label": "hacha",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F063A0",
+      "prefix": "F063",
+      "path": "sprites/caelum/first_person/v1/axe/F063A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        75.5,
+        685
+      ],
+      "source_cell": [
+        1046,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        88,
+        73,
+        438,
+        930
+      ],
+      "scale": 0.28004667444574094,
+      "placement": [
+        449,
+        123
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C063A0",
+      "state_label": "CA_FP1_axe_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.69858156
+      ],
+      "layer_order": [
+        "F063A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F063A0": [
+          0.240740741,
+          0.788
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "flail",
+      "label": "mangual",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F071A0",
+      "prefix": "F071",
+      "path": "sprites/caelum/first_person/v1/flail/F071A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        418.0,
+        615
+      ],
+      "source_cell": [
+        0,
+        0,
+        540,
+        1024
+      ],
+      "trim": [
+        53,
+        121,
+        538,
+        837
+      ],
+      "scale": 0.3277545327754533,
+      "placement": [
+        333,
+        113
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C071A0",
+      "state_label": "CA_FP1_flail_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.529850746,
+        0.70890411
+      ],
+      "layer_order": [
+        "F071A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F071A0": [
+          0.835294118,
+          0.841463415
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "flail",
+      "label": "mangual",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F072A0",
+      "prefix": "F072",
+      "path": "sprites/caelum/first_person/v1/flail/F072A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        410.0,
+        616
+      ],
+      "source_cell": [
+        540,
+        0,
+        1041,
+        1024
+      ],
+      "trim": [
+        3,
+        120,
+        482,
+        837
+      ],
+      "scale": 0.3277545327754533,
+      "placement": [
+        336,
+        113
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C072A0",
+      "state_label": "CA_FP1_flail_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.522727273,
+        0.70890411
+      ],
+      "layer_order": [
+        "F072A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F072A0": [
+          0.831325301,
+          0.841463415
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "flail",
+      "label": "mangual",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F073A0",
+      "prefix": "F073",
+      "path": "sprites/caelum/first_person/v1/flail/F073A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        401.0,
+        613
+      ],
+      "source_cell": [
+        1041,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        21,
+        123,
+        491,
+        837
+      ],
+      "scale": 0.3277545327754533,
+      "placement": [
+        339,
+        114
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C073A0",
+      "state_label": "CA_FP1_flail_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.519083969,
+        0.70890411
+      ],
+      "layer_order": [
+        "F073A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F073A0": [
+          0.829268293,
+          0.841463415
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "spear",
+      "label": "lanza",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F081A0",
+      "prefix": "F081",
+      "path": "sprites/caelum/first_person/v1/spear/F081A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        104.5,
+        641
+      ],
+      "source_cell": [
+        0,
+        0,
+        554,
+        1024
+      ],
+      "trim": [
+        139,
+        42,
+        486,
+        986
+      ],
+      "scale": 0.4025423728813559,
+      "placement": [
+        428,
+        57
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C081A0",
+      "state_label": "CA_FP1_spear_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.755747126
+      ],
+      "layer_order": [
+        "F081A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F081A0": [
+          0.301369863,
+          0.755747126
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "spear",
+      "label": "lanza",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F082A0",
+      "prefix": "F082",
+      "path": "sprites/caelum/first_person/v1/spear/F082A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        101.5,
+        641
+      ],
+      "source_cell": [
+        554,
+        0,
+        1042,
+        1024
+      ],
+      "trim": [
+        67,
+        42,
+        417,
+        986
+      ],
+      "scale": 0.4025423728813559,
+      "placement": [
+        429,
+        57
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C082A0",
+      "state_label": "CA_FP1_spear_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.755747126
+      ],
+      "layer_order": [
+        "F082A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F082A0": [
+          0.287671233,
+          0.755747126
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "spear",
+      "label": "lanza",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F083A0",
+      "prefix": "F083",
+      "path": "sprites/caelum/first_person/v1/spear/F083A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        102.0,
+        641
+      ],
+      "source_cell": [
+        1042,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        71,
+        42,
+        413,
+        986
+      ],
+      "scale": 0.4025423728813559,
+      "placement": [
+        429,
+        57
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C083A0",
+      "state_label": "CA_FP1_spear_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.755747126
+      ],
+      "layer_order": [
+        "F083A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F083A0": [
+          0.301369863,
+          0.755747126
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "greatsword",
+      "label": "mandoble",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F091A0",
+      "prefix": "F091",
+      "path": "sprites/caelum/first_person/v1/greatsword/F091A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        97.0,
+        794
+      ],
+      "source_cell": [
+        0,
+        0,
+        520,
+        1024
+      ],
+      "trim": [
+        148,
+        31,
+        411,
+        989
+      ],
+      "scale": 0.3288100208768267,
+      "placement": [
+        438,
+        54
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C091A0",
+      "state_label": "CA_FP1_greatsword_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.758522727
+      ],
+      "layer_order": [
+        "F091A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F091A0": [
+          0.375,
+          0.819018405
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "greatsword",
+      "label": "mandoble",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F092A0",
+      "prefix": "F092",
+      "path": "sprites/caelum/first_person/v1/greatsword/F092A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        96.5,
+        794
+      ],
+      "source_cell": [
+        520,
+        0,
+        1000,
+        1024
+      ],
+      "trim": [
+        109,
+        31,
+        372,
+        989
+      ],
+      "scale": 0.3288100208768267,
+      "placement": [
+        438,
+        54
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C092A0",
+      "state_label": "CA_FP1_greatsword_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.758522727
+      ],
+      "layer_order": [
+        "F092A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F092A0": [
+          0.395833333,
+          0.819018405
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "greatsword",
+      "label": "mandoble",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F093A0",
+      "prefix": "F093",
+      "path": "sprites/caelum/first_person/v1/greatsword/F093A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        96.0,
+        794
+      ],
+      "source_cell": [
+        1000,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        109,
+        31,
+        373,
+        989
+      ],
+      "scale": 0.3288100208768267,
+      "placement": [
+        438,
+        54
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C093A0",
+      "state_label": "CA_FP1_greatsword_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.758522727
+      ],
+      "layer_order": [
+        "F093A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F093A0": [
+          0.387755102,
+          0.819018405
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "war_axe",
+      "label": "hacha de guerra",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F101A0",
+      "prefix": "F101",
+      "path": "sprites/caelum/first_person/v1/war_axe/F101A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        75.0,
+        670
+      ],
+      "source_cell": [
+        0,
+        0,
+        550,
+        1024
+      ],
+      "trim": [
+        98,
+        96,
+        509,
+        934
+      ],
+      "scale": 0.34523809523809523,
+      "placement": [
+        444,
+        84
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C101A0",
+      "state_label": "CA_FP1_war_axe_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.736024845
+      ],
+      "layer_order": [
+        "F101A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F101A0": [
+          0.210526316,
+          0.79
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "war_axe",
+      "label": "hacha de guerra",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F102A0",
+      "prefix": "F102",
+      "path": "sprites/caelum/first_person/v1/war_axe/F102A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        75.0,
+        671
+      ],
+      "source_cell": [
+        550,
+        0,
+        1045,
+        1024
+      ],
+      "trim": [
+        42,
+        96,
+        450,
+        936
+      ],
+      "scale": 0.34523809523809523,
+      "placement": [
+        444,
+        83
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C102A0",
+      "state_label": "CA_FP1_war_axe_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.736024845
+      ],
+      "layer_order": [
+        "F102A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F102A0": [
+          0.210526316,
+          0.79
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "war_axe",
+      "label": "hacha de guerra",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F103A0",
+      "prefix": "F103",
+      "path": "sprites/caelum/first_person/v1/war_axe/F103A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        77.0,
+        669
+      ],
+      "source_cell": [
+        1045,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        45,
+        97,
+        457,
+        934
+      ],
+      "scale": 0.34523809523809523,
+      "placement": [
+        443,
+        84
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C103A0",
+      "state_label": "CA_FP1_war_axe_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.736024845
+      ],
+      "layer_order": [
+        "F103A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F103A0": [
+          0.210526316,
+          0.79
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "halberd",
+      "label": "alabarda",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F111A0",
+      "prefix": "F111",
+      "path": "sprites/caelum/first_person/v1/halberd/F111A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        74.0,
+        610
+      ],
+      "source_cell": [
+        0,
+        0,
+        552,
+        1024
+      ],
+      "trim": [
+        166,
+        48,
+        469,
+        946
+      ],
+      "scale": 0.4318936877076412,
+      "placement": [
+        438,
+        52
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C111A0",
+      "state_label": "CA_FP1_halberd_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.757142857
+      ],
+      "layer_order": [
+        "F111A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F111A0": [
+          0.257142857,
+          0.757142857
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "halberd",
+      "label": "alabarda",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F112A0",
+      "prefix": "F112",
+      "path": "sprites/caelum/first_person/v1/halberd/F112A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        71.0,
+        611
+      ],
+      "source_cell": [
+        552,
+        0,
+        1050,
+        1024
+      ],
+      "trim": [
+        84,
+        47,
+        381,
+        946
+      ],
+      "scale": 0.4318936877076412,
+      "placement": [
+        439,
+        51
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C112A0",
+      "state_label": "CA_FP1_halberd_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.759887006
+      ],
+      "layer_order": [
+        "F112A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F112A0": [
+          0.260869565,
+          0.759887006
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "halberd",
+      "label": "alabarda",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F113A0",
+      "prefix": "F113",
+      "path": "sprites/caelum/first_person/v1/halberd/F113A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        72.5,
+        613
+      ],
+      "source_cell": [
+        1050,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        117,
+        43,
+        387,
+        946
+      ],
+      "scale": 0.4318936877076412,
+      "placement": [
+        439,
+        50
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C113A0",
+      "state_label": "CA_FP1_halberd_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.759887006
+      ],
+      "layer_order": [
+        "F113A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F113A0": [
+          0.26984127,
+          0.759887006
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "staff",
+      "label": "bastón",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F121A0",
+      "prefix": "F121",
+      "path": "sprites/caelum/first_person/v1/staff/F121A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        97.5,
+        594
+      ],
+      "source_cell": [
+        0,
+        0,
+        523,
+        1024
+      ],
+      "trim": [
+        119,
+        92,
+        435,
+        967
+      ],
+      "scale": 0.4318181818181818,
+      "placement": [
+        428,
+        58
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C121A0",
+      "state_label": "CA_FP1_staff_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.755747126
+      ],
+      "layer_order": [
+        "F121A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F121A0": [
+          0.279411765,
+          0.755747126
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "staff",
+      "label": "bastón",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F122A0",
+      "prefix": "F122",
+      "path": "sprites/caelum/first_person/v1/staff/F122A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        97.0,
+        596
+      ],
+      "source_cell": [
+        523,
+        0,
+        1035,
+        1024
+      ],
+      "trim": [
+        90,
+        90,
+        403,
+        967
+      ],
+      "scale": 0.4318181818181818,
+      "placement": [
+        428,
+        58
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C122A0",
+      "state_label": "CA_FP1_staff_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.75433526
+      ],
+      "layer_order": [
+        "F122A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F122A0": [
+          0.279411765,
+          0.75433526
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "staff",
+      "label": "bastón",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F123A0",
+      "prefix": "F123",
+      "path": "sprites/caelum/first_person/v1/staff/F123A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        99.5,
+        598
+      ],
+      "source_cell": [
+        1035,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        110,
+        87,
+        420,
+        967
+      ],
+      "scale": 0.4318181818181818,
+      "placement": [
+        427,
+        57
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C123A0",
+      "state_label": "CA_FP1_staff_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.755747126
+      ],
+      "layer_order": [
+        "F123A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F123A0": [
+          0.294117647,
+          0.755747126
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "statuette",
+      "label": "estatuilla",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F131A0",
+      "prefix": "F131",
+      "path": "sprites/caelum/first_person/v1/statuette/F131A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        157.0,
+        752
+      ],
+      "source_cell": [
+        0,
+        0,
+        538,
+        1024
+      ],
+      "trim": [
+        165,
+        46,
+        431,
+        975
+      ],
+      "scale": 0.21528525296017223,
+      "placement": [
+        436,
+        153
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C131A0",
+      "state_label": "CA_FP1_statuette_T1_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.662698413
+      ],
+      "layer_order": [
+        "F131A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F131A0": [
+          0.588235294,
+          0.795238095
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "statuette",
+      "label": "estatuilla",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F132A0",
+      "prefix": "F132",
+      "path": "sprites/caelum/first_person/v1/statuette/F132A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        158.5,
+        751
+      ],
+      "source_cell": [
+        538,
+        0,
+        1035,
+        1024
+      ],
+      "trim": [
+        106,
+        47,
+        374,
+        975
+      ],
+      "scale": 0.21528525296017223,
+      "placement": [
+        436,
+        153
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C132A0",
+      "state_label": "CA_FP1_statuette_T2_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.662698413
+      ],
+      "layer_order": [
+        "F132A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F132A0": [
+          0.571428571,
+          0.795238095
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "statuette",
+      "label": "estatuilla",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F133A0",
+      "prefix": "F133",
+      "path": "sprites/caelum/first_person/v1/statuette/F133A0.png",
+      "grip": "closed",
+      "back_hands": [],
+      "front_hands": [
+        0
+      ],
+      "anchor_640": [
+        470,
+        315
+      ],
+      "source_anchor": [
+        149.5,
+        751
+      ],
+      "source_cell": [
+        1035,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        124,
+        47,
+        385,
+        975
+      ],
+      "scale": 0.21528525296017223,
+      "placement": [
+        438,
+        153
+      ],
+      "phase_name": "Reposo (movimiento mediante el rig)",
+      "composite": "C133A0",
+      "state_label": "CA_FP1_statuette_T3_A",
+      "pivot_320": [
+        235.0,
+        157.5
+      ],
+      "composite_pivot_percent": [
+        0.26744186,
+        0.662698413
+      ],
+      "layer_order": [
+        "F133A0",
+        "FH00A0"
+      ],
+      "layer_pivots_percent": {
+        "F133A0": [
+          0.558823529,
+          0.795238095
+        ],
+        "FH00A0": [
+          0.26744186,
+          0.375
+        ]
+      }
+    },
+    {
+      "id": "bell",
+      "label": "campana",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F141A0",
+      "prefix": "F141",
+      "path": "sprites/caelum/first_person/v1/bell/F141A0.png",
+      "grip": "bell",
+      "back_hands": [],
+      "front_hands": [
+        1
+      ],
+      "anchor_640": [
+        473,
+        250
+      ],
+      "source_anchor": [
+        224.0,
+        47
+      ],
+      "source_cell": [
+        0,
+        0,
+        534,
+        1024
+      ],
+      "trim": [
+        62,
+        232,
+        503,
+        782
+      ],
+      "scale": 0.24236983842010773,
+      "placement": [
+        419,
+        239
+      ],
+      "phase_name": "Reposo / campana colgante",
+      "composite": "C141A0",
+      "state_label": "CA_FP1_bell_T1_A",
+      "pivot_320": [
+        236.5,
+        125.0
+      ],
+      "composite_pivot_percent": [
+        0.261061947,
+        0.257425743
+      ],
+      "layer_order": [
+        "F141A0",
+        "FH01A0"
+      ],
+      "layer_pivots_percent": {
+        "F141A0": [
+          0.5,
+          0.111111111
+        ],
+        "FH01A0": [
+          0.240909091,
+          0.257425743
+        ]
+      }
+    },
+    {
+      "id": "bell",
+      "label": "campana",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F142A0",
+      "prefix": "F142",
+      "path": "sprites/caelum/first_person/v1/bell/F142A0.png",
+      "grip": "bell",
+      "back_hands": [],
+      "front_hands": [
+        1
+      ],
+      "anchor_640": [
+        473,
+        250
+      ],
+      "source_anchor": [
+        209.5,
+        47
+      ],
+      "source_cell": [
+        534,
+        0,
+        1029,
+        1024
+      ],
+      "trim": [
+        32,
+        233,
+        470,
+        783
+      ],
+      "scale": 0.24236983842010773,
+      "placement": [
+        422,
+        239
+      ],
+      "phase_name": "Reposo / campana colgante",
+      "composite": "C142A0",
+      "state_label": "CA_FP1_bell_T2_A",
+      "pivot_320": [
+        236.5,
+        125.0
+      ],
+      "composite_pivot_percent": [
+        0.254464286,
+        0.257425743
+      ],
+      "layer_order": [
+        "F142A0",
+        "FH01A0"
+      ],
+      "layer_pivots_percent": {
+        "F142A0": [
+          0.49137931,
+          0.112676056
+        ],
+        "FH01A0": [
+          0.240909091,
+          0.257425743
+        ]
+      }
+    },
+    {
+      "id": "bell",
+      "label": "campana",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F143A0",
+      "prefix": "F143",
+      "path": "sprites/caelum/first_person/v1/bell/F143A0.png",
+      "grip": "bell",
+      "back_hands": [],
+      "front_hands": [
+        1
+      ],
+      "anchor_640": [
+        473,
+        250
+      ],
+      "source_anchor": [
+        212.0,
+        47
+      ],
+      "source_cell": [
+        1029,
+        0,
+        1536,
+        1024
+      ],
+      "trim": [
+        27,
+        233,
+        483,
+        790
+      ],
+      "scale": 0.24236983842010773,
+      "placement": [
+        422,
+        239
+      ],
+      "phase_name": "Reposo / campana colgante",
+      "composite": "C143A0",
+      "state_label": "CA_FP1_bell_T3_A",
+      "pivot_320": [
+        236.5,
+        125.0
+      ],
+      "composite_pivot_percent": [
+        0.254464286,
+        0.257425743
+      ],
+      "layer_order": [
+        "F143A0",
+        "FH01A0"
+      ],
+      "layer_pivots_percent": {
+        "F143A0": [
+          0.467213115,
+          0.109589041
+        ],
+        "FH01A0": [
+          0.240909091,
+          0.257425743
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F151A0",
+      "prefix": "F151",
+      "path": "sprites/caelum/first_person/v1/book/F151A0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        218.9,
+        294.8
+      ],
+      "source_cell": [
+        0,
+        0,
+        426,
+        638
+      ],
+      "trim": [
+        17,
+        259,
+        415,
+        594
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        344,
+        174
+      ],
+      "phase_name": "Abierto",
+      "composite": "C151A0",
+      "state_label": "CA_FP1_book_T1_A",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.422222222,
+        0.660869565
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F151A0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F151A0": [
+          0.542857143,
+          0.863636364
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F152A0",
+      "prefix": "F152",
+      "path": "sprites/caelum/first_person/v1/book/F152A0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        213.4,
+        293.04
+      ],
+      "source_cell": [
+        426,
+        0,
+        835,
+        638
+      ],
+      "trim": [
+        11,
+        261,
+        399,
+        594
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        347,
+        175
+      ],
+      "phase_name": "Abierto",
+      "composite": "C152A0",
+      "state_label": "CA_FP1_book_T2_A",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.417910448,
+        0.660869565
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F152A0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F152A0": [
+          0.54368932,
+          0.863636364
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F153A0",
+      "prefix": "F153",
+      "path": "sprites/caelum/first_person/v1/book/F153A0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        215.05,
+        294.8
+      ],
+      "source_cell": [
+        835,
+        0,
+        1254,
+        638
+      ],
+      "trim": [
+        10,
+        259,
+        401,
+        594
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        346,
+        174
+      ],
+      "phase_name": "Abierto",
+      "composite": "C153A0",
+      "state_label": "CA_FP1_book_T3_A",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.417910448,
+        0.660869565
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F153A0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F153A0": [
+          0.54368932,
+          0.863636364
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F151B0",
+      "prefix": "F151",
+      "path": "sprites/caelum/first_person/v1/book/F151B0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        178.75000000000003,
+        336.16
+      ],
+      "source_cell": [
+        0,
+        638,
+        423,
+        1254
+      ],
+      "trim": [
+        56,
+        47,
+        381,
+        429
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        364,
+        153
+      ],
+      "phase_name": "Cerrado",
+      "composite": "C151B0",
+      "state_label": "CA_FP1_book_T1_B",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.376,
+        0.69047619
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F151B0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F151B0": [
+          0.546511628,
+          0.861386139
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F152B0",
+      "prefix": "F152",
+      "path": "sprites/caelum/first_person/v1/book/F152B0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        176.55,
+        334.4
+      ],
+      "source_cell": [
+        423,
+        638,
+        832,
+        1254
+      ],
+      "trim": [
+        44,
+        49,
+        365,
+        429
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        365,
+        154
+      ],
+      "phase_name": "Cerrado",
+      "composite": "C152B0",
+      "state_label": "CA_FP1_book_T2_B",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.376,
+        0.688
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F152B0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F152B0": [
+          0.546511628,
+          0.86
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "label": "libro",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F153B0",
+      "prefix": "F153",
+      "path": "sprites/caelum/first_person/v1/book/F153B0.png",
+      "grip": "book",
+      "back_hands": [
+        2
+      ],
+      "front_hands": [],
+      "anchor_640": [
+        454,
+        322
+      ],
+      "source_anchor": [
+        178.20000000000002,
+        341.44
+      ],
+      "source_cell": [
+        832,
+        638,
+        1254,
+        1254
+      ],
+      "trim": [
+        45,
+        45,
+        369,
+        433
+      ],
+      "scale": 0.5025125628140703,
+      "placement": [
+        364,
+        150
+      ],
+      "phase_name": "Cerrado",
+      "composite": "C153B0",
+      "state_label": "CA_FP1_book_T3_B",
+      "pivot_320": [
+        227.0,
+        161.0
+      ],
+      "composite_pivot_percent": [
+        0.380952381,
+        0.6953125
+      ],
+      "layer_order": [
+        "FH02A0",
+        "F153B0"
+      ],
+      "layer_pivots_percent": {
+        "FH02A0": [
+          0.376,
+          0.48
+        ],
+        "F153B0": [
+          0.551724138,
+          0.86407767
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F161A0",
+      "prefix": "F161",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F161A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.0,
+        167.29999999999998
+      ],
+      "source_cell": [
+        0,
+        0,
+        422,
+        460
+      ],
+      "trim": [
+        26,
+        162,
+        404,
+        401
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        62,
+        83
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C161A0",
+      "state_label": "CA_FP1_standard_bow_T1_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.621118012
+      ],
+      "layer_order": [
+        "F161A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F161A0": [
+          0.5,
+          0.694444444
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F162A0",
+      "prefix": "F162",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F162A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.5,
+        167.29999999999998
+      ],
+      "source_cell": [
+        422,
+        0,
+        837,
+        460
+      ],
+      "trim": [
+        18,
+        162,
+        397,
+        401
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        61,
+        83
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C162A0",
+      "state_label": "CA_FP1_standard_bow_T2_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.621118012
+      ],
+      "layer_order": [
+        "F162A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F162A0": [
+          0.5,
+          0.694444444
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F163A0",
+      "prefix": "F163",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F163A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.5,
+        167.29999999999998
+      ],
+      "source_cell": [
+        837,
+        0,
+        1254,
+        460
+      ],
+      "trim": [
+        18,
+        162,
+        397,
+        401
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        61,
+        83
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C163A0",
+      "state_label": "CA_FP1_standard_bow_T3_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.504464286,
+        0.621118012
+      ],
+      "layer_order": [
+        "F163A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F163A0": [
+          0.504464286,
+          0.694444444
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F161B0",
+      "prefix": "F161",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F161B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        197.5,
+        197.39999999999998
+      ],
+      "source_cell": [
+        0,
+        460,
+        422,
+        912
+      ],
+      "trim": [
+        16,
+        59,
+        411,
+        341
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        52,
+        48
+      ],
+      "phase_name": "Tensado",
+      "composite": "C161B0",
+      "state_label": "CA_FP1_standard_bow_T1_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.657303371
+      ],
+      "layer_order": [
+        "F161B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F161B0": [
+          0.5,
+          0.700598802
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F162B0",
+      "prefix": "F162",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F162B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        195.0,
+        194.6
+      ],
+      "source_cell": [
+        422,
+        460,
+        836,
+        912
+      ],
+      "trim": [
+        13,
+        63,
+        403,
+        341
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        55,
+        51
+      ],
+      "phase_name": "Tensado",
+      "composite": "C162B0",
+      "state_label": "CA_FP1_standard_bow_T2_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.653409091
+      ],
+      "layer_order": [
+        "F162B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F162B0": [
+          0.5,
+          0.696969697
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F163B0",
+      "prefix": "F163",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F163B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        194.0,
+        197.39999999999998
+      ],
+      "source_cell": [
+        836,
+        460,
+        1254,
+        912
+      ],
+      "trim": [
+        12,
+        59,
+        400,
+        341
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        56,
+        48
+      ],
+      "phase_name": "Tensado",
+      "composite": "C163B0",
+      "state_label": "CA_FP1_standard_bow_T3_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.502183406,
+        0.657303371
+      ],
+      "layer_order": [
+        "F163B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F163B0": [
+          0.502183406,
+          0.700598802
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 1,
+      "phase": 2,
+      "sprite": "F161C0",
+      "prefix": "F161",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F161C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.0,
+        102.89999999999999
+      ],
+      "source_cell": [
+        0,
+        912,
+        422,
+        1254
+      ],
+      "trim": [
+        26,
+        113,
+        404,
+        260
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        62,
+        158
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C161C0",
+      "state_label": "CA_FP1_standard_bow_T1_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.491304348,
+        0.504065041
+      ],
+      "layer_order": [
+        "F161C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F161C0": [
+          0.502222222,
+          0.688888889
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 2,
+      "phase": 2,
+      "sprite": "F162C0",
+      "prefix": "F162",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F162C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.5,
+        103.6
+      ],
+      "source_cell": [
+        422,
+        912,
+        836,
+        1254
+      ],
+      "trim": [
+        18,
+        112,
+        397,
+        260
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        61,
+        157
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C162C0",
+      "state_label": "CA_FP1_standard_bow_T2_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.489082969,
+        0.504065041
+      ],
+      "layer_order": [
+        "F162C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F162C0": [
+          0.5,
+          0.688888889
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "standard_bow",
+      "label": "arco corto",
+      "tier": 3,
+      "phase": 2,
+      "sprite": "F163C0",
+      "prefix": "F163",
+      "path": "sprites/caelum/first_person/v1/standard_bow/F163C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        191.0,
+        102.89999999999999
+      ],
+      "source_cell": [
+        836,
+        912,
+        1254,
+        1254
+      ],
+      "trim": [
+        19,
+        113,
+        401,
+        260
+      ],
+      "scale": 1.1645569620253164,
+      "placement": [
+        60,
+        158
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C163C0",
+      "state_label": "CA_FP1_standard_bow_T3_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.491304348,
+        0.504065041
+      ],
+      "layer_order": [
+        "F163C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F163C0": [
+          0.5,
+          0.688888889
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F171A0",
+      "prefix": "F171",
+      "path": "sprites/caelum/first_person/v1/longbow/F171A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        201.5,
+        211.39999999999998
+      ],
+      "source_cell": [
+        0,
+        0,
+        424,
+        431
+      ],
+      "trim": [
+        14,
+        73,
+        417,
+        375
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        29,
+        12
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C171A0",
+      "state_label": "CA_FP1_longbow_T1_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.68877551
+      ],
+      "layer_order": [
+        "F171A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F171A0": [
+          0.5,
+          0.695876289
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F172A0",
+      "prefix": "F172",
+      "path": "sprites/caelum/first_person/v1/longbow/F172A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        202.5,
+        209.29999999999998
+      ],
+      "source_cell": [
+        424,
+        0,
+        841,
+        431
+      ],
+      "trim": [
+        6,
+        73,
+        411,
+        372
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        28,
+        15
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C172A0",
+      "state_label": "CA_FP1_longbow_T2_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.498069498,
+        0.687179487
+      ],
+      "layer_order": [
+        "F172A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F172A0": [
+          0.498069498,
+          0.694300518
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F173A0",
+      "prefix": "F173",
+      "path": "sprites/caelum/first_person/v1/longbow/F173A0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        202.5,
+        213.5
+      ],
+      "source_cell": [
+        841,
+        0,
+        1254,
+        431
+      ],
+      "trim": [
+        7,
+        73,
+        412,
+        378
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        28,
+        10
+      ],
+      "phase_name": "Flecha colocada",
+      "composite": "C173A0",
+      "state_label": "CA_FP1_longbow_T3_A",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.501945525,
+        0.69035533
+      ],
+      "layer_order": [
+        "F173A0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F173A0": [
+          0.501945525,
+          0.701030928
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F171B0",
+      "prefix": "F171",
+      "path": "sprites/caelum/first_person/v1/longbow/F171B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        184.5,
+        199.2
+      ],
+      "source_cell": [
+        0,
+        431,
+        435,
+        906
+      ],
+      "trim": [
+        46,
+        58,
+        415,
+        390
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        50,
+        28
+      ],
+      "phase_name": "Tensado",
+      "composite": "C171B0",
+      "state_label": "CA_FP1_longbow_T1_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.675531915
+      ],
+      "layer_order": [
+        "F171B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F171B0": [
+          0.5,
+          0.675531915
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F172B0",
+      "prefix": "F172",
+      "path": "sprites/caelum/first_person/v1/longbow/F172B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        189.0,
+        202.2
+      ],
+      "source_cell": [
+        435,
+        431,
+        847,
+        906
+      ],
+      "trim": [
+        19,
+        54,
+        397,
+        391
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        45,
+        24
+      ],
+      "phase_name": "Tensado",
+      "composite": "C172B0",
+      "state_label": "CA_FP1_longbow_T2_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.678947368
+      ],
+      "layer_order": [
+        "F172B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F172B0": [
+          0.5,
+          0.678947368
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F173B0",
+      "prefix": "F173",
+      "path": "sprites/caelum/first_person/v1/longbow/F173B0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        4
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        192.5,
+        204.6
+      ],
+      "source_cell": [
+        847,
+        431,
+        1254,
+        906
+      ],
+      "trim": [
+        17,
+        53,
+        402,
+        394
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        40,
+        21
+      ],
+      "phase_name": "Tensado",
+      "composite": "C173B0",
+      "state_label": "CA_FP1_longbow_T3_B",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.502040816,
+        0.682291667
+      ],
+      "layer_order": [
+        "F173B0",
+        "FH03A0",
+        "FH04A0"
+      ],
+      "layer_pivots_percent": {
+        "F173B0": [
+          0.502040816,
+          0.682291667
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH04A0": [
+          0.014285714,
+          -0.109090909
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 1,
+      "phase": 2,
+      "sprite": "F171C0",
+      "prefix": "F171",
+      "path": "sprites/caelum/first_person/v1/longbow/F171C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        202.0,
+        120.39999999999999
+      ],
+      "source_cell": [
+        0,
+        906,
+        423,
+        1254
+      ],
+      "trim": [
+        13,
+        83,
+        417,
+        255
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        28,
+        127
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C171C0",
+      "state_label": "CA_FP1_longbow_T1_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.561151079
+      ],
+      "layer_order": [
+        "F171C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F171C0": [
+          0.5,
+          0.702702703
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 2,
+      "phase": 2,
+      "sprite": "F172C0",
+      "prefix": "F172",
+      "path": "sprites/caelum/first_person/v1/longbow/F172C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        203.0,
+        118.3
+      ],
+      "source_cell": [
+        423,
+        906,
+        842,
+        1254
+      ],
+      "trim": [
+        6,
+        82,
+        412,
+        251
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        27,
+        129
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C172C0",
+      "state_label": "CA_FP1_longbow_T2_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.498069498,
+        0.557971014
+      ],
+      "layer_order": [
+        "F172C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F172C0": [
+          0.498069498,
+          0.693693694
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "longbow",
+      "label": "arco largo",
+      "tier": 3,
+      "phase": 2,
+      "sprite": "F173C0",
+      "prefix": "F173",
+      "path": "sprites/caelum/first_person/v1/longbow/F173C0.png",
+      "grip": "bow",
+      "back_hands": [],
+      "front_hands": [
+        3,
+        7
+      ],
+      "anchor_640": [
+        282,
+        278
+      ],
+      "source_anchor": [
+        202.0,
+        122.49999999999999
+      ],
+      "source_cell": [
+        842,
+        906,
+        1254,
+        1254
+      ],
+      "trim": [
+        7,
+        80,
+        411,
+        255
+      ],
+      "scale": 1.2561576354679802,
+      "placement": [
+        28,
+        124
+      ],
+      "phase_name": "Tras soltar / sin flecha",
+      "composite": "C173C0",
+      "state_label": "CA_FP1_longbow_T3_C",
+      "pivot_320": [
+        141.0,
+        139.0
+      ],
+      "composite_pivot_percent": [
+        0.50390625,
+        0.564285714
+      ],
+      "layer_order": [
+        "F173C0",
+        "FH03A0",
+        "FH07A0"
+      ],
+      "layer_pivots_percent": {
+        "F173C0": [
+          0.50390625,
+          0.692982456
+        ],
+        "FH03A0": [
+          0.808695652,
+          0.336956522
+        ],
+        "FH07A0": [
+          -0.344827586,
+          0.031746032
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F181A0",
+      "prefix": "F181",
+      "path": "sprites/caelum/first_person/v1/crossbow/F181A0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        191.0,
+        260.8
+      ],
+      "source_cell": [
+        0,
+        0,
+        422,
+        444
+      ],
+      "trim": [
+        27,
+        76,
+        409,
+        402
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        162,
+        109
+      ],
+      "phase_name": "Cargada",
+      "composite": "C181A0",
+      "state_label": "CA_FP1_crossbow_T1_A",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.800675676
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F181A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F181A0": [
+          0.497109827,
+          0.800675676
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F182A0",
+      "prefix": "F182",
+      "path": "sprites/caelum/first_person/v1/crossbow/F182A0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        190.5,
+        260.8
+      ],
+      "source_cell": [
+        422,
+        0,
+        830,
+        444
+      ],
+      "trim": [
+        14,
+        76,
+        395,
+        402
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        162,
+        109
+      ],
+      "phase_name": "Cargada",
+      "composite": "C182A0",
+      "state_label": "CA_FP1_crossbow_T2_A",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.800675676
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F182A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F182A0": [
+          0.5,
+          0.800675676
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F183A0",
+      "prefix": "F183",
+      "path": "sprites/caelum/first_person/v1/crossbow/F183A0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        190.0,
+        260.8
+      ],
+      "source_cell": [
+        830,
+        0,
+        1254,
+        444
+      ],
+      "trim": [
+        14,
+        76,
+        394,
+        402
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        163,
+        109
+      ],
+      "phase_name": "Cargada",
+      "composite": "C183A0",
+      "state_label": "CA_FP1_crossbow_T3_A",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.800675676
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F183A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F183A0": [
+          0.5,
+          0.800675676
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F181B0",
+      "prefix": "F181",
+      "path": "sprites/caelum/first_person/v1/crossbow/F181B0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        190.0,
+        248.0
+      ],
+      "source_cell": [
+        0,
+        444,
+        422,
+        838
+      ],
+      "trim": [
+        28,
+        42,
+        408,
+        352
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        163,
+        120
+      ],
+      "phase_name": "Disparada / vacía",
+      "composite": "C181B0",
+      "state_label": "CA_FP1_crossbow_T1_B",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.790780142
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F181B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F181B0": [
+          0.5,
+          0.790780142
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F182B0",
+      "prefix": "F182",
+      "path": "sprites/caelum/first_person/v1/crossbow/F182B0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        190.5,
+        246.4
+      ],
+      "source_cell": [
+        422,
+        444,
+        831,
+        838
+      ],
+      "trim": [
+        14,
+        44,
+        395,
+        352
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        162,
+        122
+      ],
+      "phase_name": "Disparada / vacía",
+      "composite": "C182B0",
+      "state_label": "CA_FP1_crossbow_T2_B",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.790780142
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F182B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F182B0": [
+          0.5,
+          0.790780142
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F183B0",
+      "prefix": "F183",
+      "path": "sprites/caelum/first_person/v1/crossbow/F183B0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        190.0,
+        248.0
+      ],
+      "source_cell": [
+        831,
+        444,
+        1254,
+        838
+      ],
+      "trim": [
+        14,
+        42,
+        394,
+        352
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        163,
+        120
+      ],
+      "phase_name": "Disparada / vacía",
+      "composite": "C183B0",
+      "state_label": "CA_FP1_crossbow_T3_B",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.527173913,
+        0.790780142
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F183B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F183B0": [
+          0.5,
+          0.790780142
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 1,
+      "phase": 2,
+      "sprite": "F181C0",
+      "prefix": "F181",
+      "path": "sprites/caelum/first_person/v1/crossbow/F181C0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        188.5,
+        246.4
+      ],
+      "source_cell": [
+        0,
+        838,
+        421,
+        1254
+      ],
+      "trim": [
+        30,
+        43,
+        407,
+        351
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        164,
+        122
+      ],
+      "phase_name": "Recarga",
+      "composite": "C181C0",
+      "state_label": "CA_FP1_crossbow_T1_C",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.530054645,
+        0.790780142
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F181C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F181C0": [
+          0.5,
+          0.790780142
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 2,
+      "phase": 2,
+      "sprite": "F182C0",
+      "prefix": "F182",
+      "path": "sprites/caelum/first_person/v1/crossbow/F182C0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        189.5,
+        246.4
+      ],
+      "source_cell": [
+        421,
+        838,
+        830,
+        1254
+      ],
+      "trim": [
+        16,
+        43,
+        395,
+        351
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        163,
+        122
+      ],
+      "phase_name": "Recarga",
+      "composite": "C182C0",
+      "state_label": "CA_FP1_crossbow_T2_C",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.530054645,
+        0.792253521
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F182C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F182C0": [
+          0.502890173,
+          0.792253521
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "crossbow",
+      "label": "ballesta",
+      "tier": 3,
+      "phase": 2,
+      "sprite": "F183C0",
+      "prefix": "F183",
+      "path": "sprites/caelum/first_person/v1/crossbow/F183C0.png",
+      "grip": "crossbow",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        332,
+        341
+      ],
+      "source_anchor": [
+        189.5,
+        246.4
+      ],
+      "source_cell": [
+        830,
+        838,
+        1254,
+        1254
+      ],
+      "trim": [
+        15,
+        43,
+        394,
+        351
+      ],
+      "scale": 0.8900523560209425,
+      "placement": [
+        163,
+        122
+      ],
+      "phase_name": "Recarga",
+      "composite": "C183C0",
+      "state_label": "CA_FP1_crossbow_T3_C",
+      "pivot_320": [
+        166.0,
+        170.5
+      ],
+      "composite_pivot_percent": [
+        0.530054645,
+        0.792253521
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F183C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.906542056,
+          0.652941176
+        ],
+        "F183C0": [
+          0.502890173,
+          0.792253521
+        ],
+        "FH05A0": [
+          0.184210526,
+          0.41
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F191A0",
+      "prefix": "F191",
+      "path": "sprites/caelum/first_person/v1/carbine/F191A0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        80.0,
+        284.65999999999997
+      ],
+      "source_cell": [
+        0,
+        0,
+        421,
+        418
+      ],
+      "trim": [
+        134,
+        63,
+        294,
+        394
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        257,
+        90
+      ],
+      "phase_name": "Preparada",
+      "composite": "C191A0",
+      "state_label": "CA_FP1_carbine_T1_A",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.835443038
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F191A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F191A0": [
+          0.506493506,
+          0.851612903
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F192A0",
+      "prefix": "F192",
+      "path": "sprites/caelum/first_person/v1/carbine/F192A0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        79.5,
+        284.65999999999997
+      ],
+      "source_cell": [
+        421,
+        0,
+        833,
+        418
+      ],
+      "trim": [
+        127,
+        63,
+        286,
+        394
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        258,
+        90
+      ],
+      "phase_name": "Preparada",
+      "composite": "C192A0",
+      "state_label": "CA_FP1_carbine_T2_A",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.835443038
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F192A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F192A0": [
+          0.5,
+          0.851612903
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F193A0",
+      "prefix": "F193",
+      "path": "sprites/caelum/first_person/v1/carbine/F193A0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        80.0,
+        286.38
+      ],
+      "source_cell": [
+        833,
+        0,
+        1254,
+        418
+      ],
+      "trim": [
+        127,
+        61,
+        287,
+        394
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        257,
+        88
+      ],
+      "phase_name": "Preparada",
+      "composite": "C193A0",
+      "state_label": "CA_FP1_carbine_T3_A",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.835443038
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F193A0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F193A0": [
+          0.506493506,
+          0.851612903
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F191B0",
+      "prefix": "F191",
+      "path": "sprites/caelum/first_person/v1/carbine/F191B0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        93.0,
+        322.5
+      ],
+      "source_cell": [
+        0,
+        418,
+        438,
+        843
+      ],
+      "trim": [
+        140,
+        26,
+        326,
+        401
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        246,
+        56
+      ],
+      "phase_name": "Disparo / retroceso",
+      "composite": "C191B0",
+      "state_label": "CA_FP1_carbine_T1_B",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.850574713
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F191B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F191B0": [
+          0.494382022,
+          0.850574713
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F192B0",
+      "prefix": "F192",
+      "path": "sprites/caelum/first_person/v1/carbine/F192B0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        95.5,
+        321.64
+      ],
+      "source_cell": [
+        438,
+        418,
+        852,
+        843
+      ],
+      "trim": [
+        113,
+        27,
+        304,
+        401
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        243,
+        56
+      ],
+      "phase_name": "Disparo / retroceso",
+      "composite": "C192B0",
+      "state_label": "CA_FP1_carbine_T2_B",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.850574713
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F192B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F192B0": [
+          0.505494505,
+          0.850574713
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F193B0",
+      "prefix": "F193",
+      "path": "sprites/caelum/first_person/v1/carbine/F193B0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        96.5,
+        322.5
+      ],
+      "source_cell": [
+        852,
+        418,
+        1254,
+        843
+      ],
+      "trim": [
+        110,
+        26,
+        303,
+        401
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        243,
+        56
+      ],
+      "phase_name": "Disparo / retroceso",
+      "composite": "C193B0",
+      "state_label": "CA_FP1_carbine_T3_B",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.849710983
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F193B0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F193B0": [
+          0.5,
+          0.849710983
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 1,
+      "phase": 2,
+      "sprite": "F191C0",
+      "prefix": "F191",
+      "path": "sprites/caelum/first_person/v1/carbine/F191C0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        97.0,
+        300.14
+      ],
+      "source_cell": [
+        0,
+        843,
+        435,
+        1254
+      ],
+      "trim": [
+        134,
+        25,
+        328,
+        374
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        242,
+        76
+      ],
+      "phase_name": "Recarga / recámara abierta",
+      "composite": "C191C0",
+      "state_label": "CA_FP1_carbine_T1_C",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.842424242
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F191C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F191C0": [
+          0.5,
+          0.852760736
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 2,
+      "phase": 2,
+      "sprite": "F192C0",
+      "prefix": "F192",
+      "path": "sprites/caelum/first_person/v1/carbine/F192C0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        97.5,
+        300.14
+      ],
+      "source_cell": [
+        435,
+        843,
+        846,
+        1254
+      ],
+      "trim": [
+        109,
+        25,
+        304,
+        374
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        242,
+        76
+      ],
+      "phase_name": "Recarga / recámara abierta",
+      "composite": "C192C0",
+      "state_label": "CA_FP1_carbine_T2_C",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.842424242
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F192C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F192C0": [
+          0.494623656,
+          0.852760736
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "carbine",
+      "label": "carabina",
+      "tier": 3,
+      "phase": 2,
+      "sprite": "F193C0",
+      "prefix": "F193",
+      "path": "sprites/caelum/first_person/v1/carbine/F193C0.png",
+      "grip": "gun",
+      "back_hands": [
+        6
+      ],
+      "front_hands": [
+        5
+      ],
+      "anchor_640": [
+        330,
+        348
+      ],
+      "source_anchor": [
+        97.5,
+        300.14
+      ],
+      "source_cell": [
+        846,
+        843,
+        1254,
+        1254
+      ],
+      "trim": [
+        108,
+        25,
+        303,
+        374
+      ],
+      "scale": 0.9066666666666666,
+      "placement": [
+        242,
+        76
+      ],
+      "phase_name": "Recarga / recámara abierta",
+      "composite": "C193C0",
+      "state_label": "CA_FP1_carbine_T3_C",
+      "pivot_320": [
+        165.0,
+        174.0
+      ],
+      "composite_pivot_percent": [
+        0.603773585,
+        0.842424242
+      ],
+      "layer_order": [
+        "FH06A0",
+        "F193C0",
+        "FH05A0"
+      ],
+      "layer_pivots_percent": {
+        "FH06A0": [
+          0.897196262,
+          0.694117647
+        ],
+        "F193C0": [
+          0.494623656,
+          0.852760736
+        ],
+        "FH05A0": [
+          0.171052632,
+          0.48
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 1,
+      "phase": 0,
+      "sprite": "F201A0",
+      "prefix": "F201",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F201A0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        194.0,
+        129.6
+      ],
+      "source_cell": [
+        0,
+        0,
+        418,
+        471
+      ],
+      "trim": [
+        14,
+        231,
+        402,
+        447
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        85,
+        183
+      ],
+      "phase_name": "Guardia",
+      "composite": "C201A0",
+      "state_label": "CA_FP1_giant_gauntlets_T1_A",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.727272727
+      ],
+      "layer_order": [
+        "F201A0"
+      ],
+      "layer_pivots_percent": {
+        "F201A0": [
+          0.5,
+          0.727272727
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 2,
+      "phase": 0,
+      "sprite": "F202A0",
+      "prefix": "F202",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F202A0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        194.5,
+        129.0
+      ],
+      "source_cell": [
+        418,
+        0,
+        836,
+        471
+      ],
+      "trim": [
+        15,
+        233,
+        404,
+        448
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        85,
+        184
+      ],
+      "phase_name": "Guardia",
+      "composite": "C202A0",
+      "state_label": "CA_FP1_giant_gauntlets_T2_A",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.5,
+        0.72972973
+      ],
+      "layer_order": [
+        "F202A0"
+      ],
+      "layer_pivots_percent": {
+        "F202A0": [
+          0.5,
+          0.72972973
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 3,
+      "phase": 0,
+      "sprite": "F203A0",
+      "prefix": "F203",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F203A0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        193.5,
+        129.0
+      ],
+      "source_cell": [
+        836,
+        0,
+        1254,
+        471
+      ],
+      "trim": [
+        15,
+        232,
+        402,
+        447
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        86,
+        184
+      ],
+      "phase_name": "Guardia",
+      "composite": "C203A0",
+      "state_label": "CA_FP1_giant_gauntlets_T3_A",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.50209205,
+        0.727272727
+      ],
+      "layer_order": [
+        "F203A0"
+      ],
+      "layer_pivots_percent": {
+        "F203A0": [
+          0.50209205,
+          0.727272727
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 1,
+      "phase": 1,
+      "sprite": "F201B0",
+      "prefix": "F201",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F201B0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        194.0,
+        180.6
+      ],
+      "source_cell": [
+        0,
+        471,
+        418,
+        831
+      ],
+      "trim": [
+        13,
+        28,
+        401,
+        329
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        85,
+        122
+      ],
+      "phase_name": "Puño derecho",
+      "composite": "C201B0",
+      "state_label": "CA_FP1_giant_gauntlets_T1_B",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.493617021,
+        0.787234043
+      ],
+      "layer_order": [
+        "F201B0"
+      ],
+      "layer_pivots_percent": {
+        "F201B0": [
+          0.493617021,
+          0.787234043
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 2,
+      "phase": 1,
+      "sprite": "F202B0",
+      "prefix": "F202",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F202B0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        198.5,
+        182.4
+      ],
+      "source_cell": [
+        418,
+        471,
+        836,
+        831
+      ],
+      "trim": [
+        14,
+        25,
+        411,
+        329
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        80,
+        119
+      ],
+      "phase_name": "Puño derecho",
+      "composite": "C202B0",
+      "state_label": "CA_FP1_giant_gauntlets_T2_B",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.478448276,
+        0.79020979
+      ],
+      "layer_order": [
+        "F202B0"
+      ],
+      "layer_pivots_percent": {
+        "F202B0": [
+          0.478448276,
+          0.79020979
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 3,
+      "phase": 1,
+      "sprite": "F203B0",
+      "prefix": "F203",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F203B0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        197.0,
+        183.0
+      ],
+      "source_cell": [
+        836,
+        471,
+        1254,
+        831
+      ],
+      "trim": [
+        15,
+        25,
+        409,
+        330
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        82,
+        119
+      ],
+      "phase_name": "Puño derecho",
+      "composite": "C203B0",
+      "state_label": "CA_FP1_giant_gauntlets_T3_B",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.480686695,
+        0.79020979
+      ],
+      "layer_order": [
+        "F203B0"
+      ],
+      "layer_pivots_percent": {
+        "F203B0": [
+          0.480686695,
+          0.79020979
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 1,
+      "phase": 2,
+      "sprite": "F201C0",
+      "prefix": "F201",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F201C0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        194.5,
+        186.0
+      ],
+      "source_cell": [
+        0,
+        831,
+        417,
+        1254
+      ],
+      "trim": [
+        14,
+        33,
+        403,
+        343
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        85,
+        115
+      ],
+      "phase_name": "Puño izquierdo",
+      "composite": "C201C0",
+      "state_label": "CA_FP1_giant_gauntlets_T1_C",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.510638298,
+        0.791666667
+      ],
+      "layer_order": [
+        "F201C0"
+      ],
+      "layer_pivots_percent": {
+        "F201C0": [
+          0.510638298,
+          0.791666667
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 2,
+      "phase": 2,
+      "sprite": "F202C0",
+      "prefix": "F202",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F202C0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        195.5,
+        187.2
+      ],
+      "source_cell": [
+        417,
+        831,
+        836,
+        1254
+      ],
+      "trim": [
+        15,
+        32,
+        406,
+        344
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        84,
+        114
+      ],
+      "phase_name": "Puño izquierdo",
+      "composite": "C202C0",
+      "state_label": "CA_FP1_giant_gauntlets_T2_C",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.504201681,
+        0.793103448
+      ],
+      "layer_order": [
+        "F202C0"
+      ],
+      "layer_pivots_percent": {
+        "F202C0": [
+          0.504201681,
+          0.793103448
+        ]
+      }
+    },
+    {
+      "id": "giant_gauntlets",
+      "label": "guanteletes gigantes",
+      "tier": 3,
+      "phase": 2,
+      "sprite": "F203C0",
+      "prefix": "F203",
+      "path": "sprites/caelum/first_person/v1/giant_gauntlets/F203C0.png",
+      "grip": "gauntlets",
+      "back_hands": [],
+      "front_hands": [],
+      "anchor_640": [
+        320,
+        340
+      ],
+      "source_anchor": [
+        195.0,
+        186.6
+      ],
+      "source_cell": [
+        836,
+        831,
+        1254,
+        1254
+      ],
+      "trim": [
+        15,
+        33,
+        405,
+        344
+      ],
+      "scale": 1.2090680100755669,
+      "placement": [
+        84,
+        114
+      ],
+      "phase_name": "Puño izquierdo",
+      "composite": "C203C0",
+      "state_label": "CA_FP1_giant_gauntlets_T3_C",
+      "pivot_320": [
+        160.0,
+        170.0
+      ],
+      "composite_pivot_percent": [
+        0.506276151,
+        0.793103448
+      ],
+      "layer_order": [
+        "F203C0"
+      ],
+      "layer_pivots_percent": {
+        "F203C0": [
+          0.506276151,
+          0.793103448
+        ]
+      }
+    }
+  ]
+}

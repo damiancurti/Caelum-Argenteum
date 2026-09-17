@@ -1,6 +1,26 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0b — 2026-09-17.
+Versión documental: 4.36.0c — 2026-09-17.
+
+## 4.36.0c — vistas, sonidos y revisión de mecanismos (2026-09-17)
+
+- Petición del autor: palanca a la mitad, revisar mecanismo 4 y masa/daño de
+  roca; integrar dos paquetes adjuntos; crossfade en carreta y burn con El Loco.
+- Se reproduce el rechazo de presión al tocar sólo el borde de la placa. La
+  comprobación incorpora el radio de los pies; se documentan destinos inválidos
+  y se conserva la protección contra telefrag/cadenas. Se añade diagnóstico.
+- Palanca a escala 0,045 también en guardados previos, con clic suministrado.
+- 19 familias nuevas de primera persona en T1/T2/T3 conectadas a selectores
+  reales; espada modular aceptada conservada. Fases según acciones efectivas,
+  capas sin duplicados y estados nuevos fuera de clases ya serializadas.
+- Audio Eventos v1 revisión 1.4 íntegro: viajes, palanca, captura de tarot y
+  bucle espacial de roca. La captura usa un evento local independiente de cámara.
+- Carreta: fundido cruzado; El Loco MAP01→MAP02: quemado; barco: derretido.
+  Overrides de un solo cruce y sonido después de cargar, sin modificar wipetype.
+- Masa grande comprobada: 38170 kg. Caída de ensayo con Dureza 13, sin armadura:
+  1343 puntos sobre 1780. No se añade muerte fija ni un multiplicador de daño.
+- WADs y estados anteriores conservados. Entrega incremental sobre 4.36.0b,
+  con fuentes de los paquetes y PRUEBAS_4_36_0c.txt. Revisión en Windows pendiente.
 
 ## 4.36.0b — mecanismos y trampas aprobadas (2026-09-17)
 

@@ -1,6 +1,43 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0b — 2026-09-17.
+Versión documental: 4.36.0c — 2026-09-17.
+
+## Estado actual: 4.36.0c — primera persona, audio y correcciones
+
+Delta sobre el proyecto completo 4.36.0b. El autor acepta el diseño de la palanca
+y pide la mitad de tamaño, informa que el mecanismo 4 no se activó y consulta
+la masa de la roca. Aporta los paquetes Primera Persona v1 y Audio Eventos v1
+(revisión 1.4) y solicita fundido cruzado en carreta y quemado con El Loco.
+
+La palanca usa escala 0,045, también sobre actores serializados. Se reproduce
+un fallo de presión en el borde de la placa de teletransporte: 0b exigía que el
+centro del personaje entrara en el radio. Ahora cuenta el apoyo de sus pies.
+Se mantienen las guardas de altura, destino libre y ausencia de telefrag; el
+informe explica rechazos del último intento. El caso exacto del guardado del
+autor no está disponible; un destino ocupado sigue rechazándose deliberadamente.
+
+Se conectan 19 familias nuevas de primera persona, T1/T2/T3, al inventario y los
+selectores reales. El rig de espada ya aceptado continúa activo; las tres
+variantes de espada aportadas quedan disponibles como recursos. Los 101 PNG y
+93 composiciones proceden del paquete del autor, sin regenerar arte. Las fases
+visuales siguen munición, recarga, puntería, bloqueo y callbacks efectivos.
+
+Se incorporan los seis OGG suministrados y se conectan los cinco usos principales:
+palanca, carreta, barco, captura de tarot y roca rodando. Se elige el recorte
+principal de barco (3–9 s). El recorte de tarot mantiene la revisión 1.4 exacta.
+El Loco MAP01→MAP02 usa quemado; carreta, fundido cruzado; barco, derretido.
+La petición sólo nace al confirmar un cruce y no modifica wipetype.
+
+La esfera de granito grande pesa 38170 kg (38,17 t). La prueba nativa de caída
+con Dureza 13 y sin armadura causó 1343/1780 puntos de vida. La masa, velocidad
+y defensas reales se imprimen en el diagnóstico. Un bloque antiguo que no cabe
+todavía conserva su tamaño y masa de 0a; no se fuerza su expansión dentro de
+geometría ocupada. El nuevo parche no rebalancea el núcleo de impactos.
+
+MAP01–08 y los estados anteriores de armas/actores conservan sus bytes/índices.
+Las pruebas se ejecutan en GZDoom g4.14.2/Linux; la aceptación jugable, visual
+y de mezcla en Windows 11 corresponde al autor. Guía: PRUEBAS_4_36_0c.txt.
+La etapa 4.36 continúa abierta; la runa de inmovilización sigue sólo a revisión.
 
 ## Estado actual: 4.36.0b — trampas, palancas y presentación
 

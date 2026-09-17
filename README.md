@@ -5,34 +5,38 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.36.0b.** Apply this source patch over the complete
-**4.36.0a** project, merge its folders and rebuild with `run_dev.bat`.
-The author accepted the other 0a tests and approved explosive magical mines,
-teleport traps and crushers, with visual changes to the bull and rolling rocks.
+**Current release: 4.36.0c.** Apply this source patch over the complete
+**4.36.0b** project, merge its folders and rebuild with `run_dev.bat`.
 
-MAP08 now includes all three approved traps. A two-position original lever
-sprite sits on a stone column and activates rocks or a native moving ceiling.
-The bull is visually 25% larger, with running frames normalized to its idle
-silhouette. Hazard rocks have a rounded 96-MU model, a central rotation pivot
-and mass derived from spherical granite volume. Existing impact rules remain.
+The lever is half its previous size, including in existing saves. Pressure
+plates now detect contact at the player's feet near their edge. Teleport
+rejections and actual rock mass/impact defenses are reported by the diagnostic.
+The large granite boulder weighs 38,170 kg; the existing impact model remains.
 
-Ship journeys use a one-shot native melt wipe; other journeys keep the user's
-wipe preference. Transition audio plays after the destination loads. The native
-choices are none, melt, burn and crossfade. No global cvar is changed.
+The author's First-person v1 pack now supplies 19 active weapon families in
+three tiers through the real equipment selectors. The accepted sword rig stays
+active; the supplied sword variants are registered resources. Native overlays
+follow actual attacks, ammunition, aiming, reloading, casting and blocking.
 
-MAP01–08 retain identical WADs. Existing saves keep opened traps and spent
-levers; MAP08 gains the new actors once. Trap values and placements are test
-fixtures, with campaign balance still open. A temporary immobilization rune is
-proposed for author review only and is not implemented.
+Event Audio v1 revision 1.4 is connected to levers, carriage/ship travel, tarot
+acquisition and rolling rocks. Source audio bytes are preserved. Carriage uses
+native crossfade, confirmed Fool travel uses burn, and ship travel uses melt.
+Sounds play after map audio cleanup; the user's global wipe preference is kept.
 
-`netevent ca_debug_hazards_report` identifies **4.36.0b** and lists mechanisms.
-See **PRUEBAS_4_36_0b.txt** for installation and focused acceptance checks.
+MAP01–08 WADs and previous actor/weapon state indices are preserved. Existing
+opened/spent mechanisms retain their state. Source art and audio masters are
+included under assets and are excluded from the playable PK3. Trap values are
+still test fixtures; campaign placement and balance remain open.
+
+`netevent ca_debug_hazards_report` identifies **4.36.0c** and shows runtime data.
+See **PRUEBAS_4_36_0c.txt** for installation and focused acceptance checks.
 
 ## Implemented
 
 - Original two-state column/wall lever, larger bull and spherical hazard rocks.
 - Single-use explosive mines, safe local teleport traps and native ceiling crushers.
-- Ship-only melt wipe and arrival transition audio.
+- Carriage crossfade, Fool burn, ship melt, and supplied event audio.
+- First-person composites for 19 additional weapon families in three tiers.
 - Pressure-triggered trapdoor, persistent open pit, native falling and stairs.
 - Single-use rock releases, horizontal/vertical impacts and environmental origin.
 
@@ -678,19 +682,19 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover trap activation, blocked destinations,
-explosion defense, crushers, rock impacts, native Use, saved-state migration,
-ship presentation and the hub. Original art and screenshots are checked locally.
-The author's Windows 11 playtest of 4.36.0b remains pending; follow
-**PRUEBAS_4_36_0b.txt**. V4.36 remains in progress.
+Native GZDoom 4.14.2/Linux checks cover 60 weapon/tier equipment selections,
+attack/reload phases, pressure traps, impacts, audio events, confirmed travel
+and saved-state migration. Native screenshots cover first-person placement.
+The author's Windows 11 playtest and final visual/audio acceptance of 4.36.0c
+remain pending; follow **PRUEBAS_4_36_0c.txt**. V4.36 remains in progress.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_36_0b.txt** into the complete **4.36.0a** project, replacing matching
+**PRUEBAS_4_36_0c.txt** into the complete **4.36.0b** project, replacing matching
 files and keeping everything else. Rebuild the PK3 with the usual launcher;
 opening the previous PK3 keeps the previous code. The diagnostic
-`netevent ca_debug_hazards_report` must identify **4.36.0b**.
+`netevent ca_debug_hazards_report` must identify **4.36.0c**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

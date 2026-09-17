@@ -1,0 +1,212 @@
+[
+  {
+    "id": "hands_grips",
+    "prompt": "Use case: stylized-concept. Production modular FIRST PERSON HAND sprites for Caelum Argenteum. Reference images show the APPROVED Domingo glove and bracer: keep this exact worn dark brown leather glove, small tarnished steel knuckle plates, blackened steel bracer, brass rivets, narrow burgundy cuff, dark semi-realistic hand-painted pixel art. One transparent RGBA atlas, EXACTLY 4 columns by 2 rows, eight equally sized separate cells, no text. Each cell contains ONLY one hand plus a long forearm reaching towards a lower corner, viewed FROM ITS WEARER'S EYES, not from another person. No weapons or objects. Index row-major: 1 RIGHT hand closed in upright sword power grip, fingers visible, thumb wrapping, knuckles upper-left, forearm to bottom-right; 2 RIGHT hand in horizontal bow/bell handle power grip, wrist palm-side down rotated nearly90 degrees relative to sword grip, forearm bottom-right; 3 RIGHT hand palm facing UP, all four fingers together extending towards left, flat slightly cupped palm supporting a BOOK FROM UNDERNEATH, thumb relaxed, forearm bottom-right; 4 LEFT hand closed gripping a horizontal bow center, forearm bottom-left; 5 RIGHT hand pulling invisible bowstring with three hooked fingers towards wearer, forearm bottom-right; 6 RIGHT hand firearm trigger grip, curved index finger separated in trigger position, other three fingers gripping stock, forearm bottom-right; 7 LEFT hand palm up cupping underside of a gun's wooden fore-end, fingers curl upward near right edge, forearm bottom-left; 8 RIGHT hand relaxed open after release of bowstring, forearm bottom-right. Anatomically five fingers per hand, correct thumb on each side, consistent hand size/lighting/style. Generous transparent separation around each complete hand and forearm. Make genuine alpha, not checkerboard, no flat background, no labels, no objects, no floating extra digits. 2048x1536 atlas.",
+    "reference_files": [
+      "assets/first_person_v1/references/RHNDA0.png",
+      "assets/first_person_v1/references/LHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/hands_grips.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "dagger",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Short Argentine facon dagger, straight double edge, complete point, red wrapped hilt and brass guard. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/dagger_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/dagger.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "hatchet",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Compact one-handed hatchet from reference, wooden haft, steel single bit with worn red tint, red cloth tassel. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/hatchet_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/hatchet.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "machete",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Broad Argentine machete/facon, single curved cutting edge, dark leather hilt, worn steel with restrained red-brown patina. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/machete_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/machete.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "javelin",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Slender throwing javelin, wooden shaft, pointed steel spearhead, small red ribbon. Lower shaft continues below grip. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/javelin_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/javelin.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "sword",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Exact straight sword design in reference, blue leather wrapped grip, small brass crossguard, polished worn steel double-edged blade. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/sword_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/sword.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "axe",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. One handed medium axe with brown leather wrapped shaft, hooked steel axe blade with red patina and small metal suspension ring. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/axe_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/axe.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "flail",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Flail with leather wrapped straight handle held upright, short articulated dark steel chain hanging in a natural curve from handle top to spiked iron ball slightly to the left; no free floating disconnected links. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/flail_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/flail.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "spear",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Long spear with wooden shaft and leaf-shaped steel spearhead, blue cloth pennant. Lower shaft extends below grip. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/spear_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/spear.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "greatsword",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Long straight two-handed greatsword with blue wrapped long hilt and straight brass crossguard, full long steel blade. Same grip orientation as approved sword. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/greatsword_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/greatsword.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "war_axe",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Heavy war axe from reference, large steel crescent bit and rear spike, long leather wrapped haft, red tassel. Same upright sword grip. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/war_axe_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/war_axe.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "halberd",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Long slender halberd with steel spear point, crescent axe edge and rear hook, long wooden pole and red tassel. Complete uncut point and head. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/halberd_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/halberd.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "staff",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Ornate magical wooden staff with blue orb in bronze crescent fitting and small blue cloth tassel, exactly reference design. Upright like a sword, real wooden gripping shaft exposed. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/staff_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/staff.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "statuette",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Small devotional statuette of a robed woman in bronze/silver/gilt following reference tier, standing on a narrow graspable pedestal. Upright, grip around lower pedestal as one grips a sword, no floating ornament. Weapon shaft/hilt axis is nearly VERTICAL, tilted just 10 degrees toward image RIGHT at its upper tip. First-person view held at the right side; handle is closest to viewer, blade points up and away. No inventory-style 45 degree diagonal. The gripping section must be clear, straight, visible in lower part.  Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/statuette_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/statuette.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "bell",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by ONE ROW: left=T1, center=T2, right=T3. Three separate complete sprites. Engraved brass/silver/gilt hand bell with red silk ribbons and visible clapper, as reference. Ring handle at TOP held by horizontal hand grip, bell hangs down under that grip. Preserve alpha in top ring and ribbon gaps.   Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 1536x1024.",
+    "reference_files": [
+      "assets/first_person_v1/references/bell_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/bell.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "book",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 2 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Open blue leather grimoire viewed from the reader's eyes, cream aged pages with restrained abstract ink diagrams, blue hard covers and tier-specific brass/silver/gilt corner fittings, no readable words. Entire book rests ON TOP of an unseen upturned palm; show lower cover underside, no hands grasping page edges.  Row1: book open, resting on an unseen palm. Row2: the same book CLOSED, cover sun design facing slightly up towards the reader. Keep same placement and size. Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/book_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/book.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "standard_bow",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 3 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Short wooden bow. First-person view from BEHIND the bowstring, bow limb-to-limb axis almost horizontal (10 degrees cant) across lower view, no quiver. Wooden center grip visible. Nocked wooden arrow points away towards upper center of view. Red cloth bindings follow reference.  Row1: arrow nocked, string held at rest. Row2: same bow fully drawn, limbs flexed and string center pulled toward wearer bottom-right; arrow still nocked, tension visible. Row3: same bow immediately after release, string relaxed, NO ARROW. Keep camera, size, bow center grip identical between rows. Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/standard_bow_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/standard_bow.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "longbow",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 3 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Long wooden bow with green wrappings/pennant. First-person view from BEHIND bowstring, limbs extend almost horizontally (10 degrees cant) across view, slightly longer than shortbow, no quiver. Center grip visible; wooden arrow points away towards upper center.  Row1: arrow nocked, string held at rest. Row2: same bow fully drawn, limbs flexed and string center pulled toward wearer bottom-right; arrow still nocked, tension visible. Row3: same bow immediately after release, string relaxed, NO ARROW. Keep camera, size, bow center grip identical between rows. Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/longbow_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/longbow.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "crossbow",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 3 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Nineteenth-century fantasy wooden crossbow matching reference: wooden stock towards viewer bottom center, steel prod stretched horizontally, rail and bolt point away towards upper center, realistic first-person FPS perspective from behind stock. No ammunition pouch.  Row1: loaded/cocked with one bolt in rail. Row2: fired, rail EMPTY, string forward. Row3: reloading, EMPTY rail, cocking lever slightly opened. Keep size, perspective, stock and pivot identical. Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/crossbow_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/crossbow.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "carbine",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 3 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Nineteenth-century single-barrel CARBINE matching wood stock, dark steel barrel, brass/silver/gilt accents of reference. First-person FPS view, butt close to viewer lower center and muzzle pointing away toward upper-center horizon, aligned like a classic centered Doom shotgun pose BUT original carbine artwork, no modern shotgun/pump, no ammo belt, no sight scope.  Row1: ready. Row2: firing recoil, muzzle lifted slightly, a small pale muzzle flash attached only to muzzle. Row3: reloading, breech open, muzzle tilted up slightly. Same carbine, camera and scale in all phases. Do NOT add hands. Show ONLY weapons/objects; NO HANDS, arms, people or scene. Hands are separate game layers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/carbine_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/carbine.png",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "giant_gauntlets",
+    "prompt": "Use case: stylized-concept. Production FIRST PERSON weapon sprite atlas for Caelum Argenteum, dark fantasy nineteenth-century Argentina. Image1 is the exact THREE-TIER weapon design reference; preserve silhouette, colours, ornaments and tier differences. Image2 specifies ONLY the approved detailed pixel-art rendering and leather/steel style; DO NOT draw that hand. EXACTLY THREE COLUMNS by 3 ROWS. Columns left-to-right=T1,T2,T3, rows are animation phases. Pair of gigantic worn steel armored gauntlets WORN on the player's own fists, matching bronze/silver/dark red tier-specific metal in reference. First-person boxing guard: left fist low left and right fist low right, curled fingers facing viewer, forearms recede to lower corners, no disembodied equipment laid on table.  Row1: both fists at guard. Row2: right fist punching forward, left at guard. Row3: left fist punching forward, right at guard. Same armor across phases. Show ONLY the armored fists and attached bracers. Coherent semi-realistic hand-painted pixelart, crisp detailed material clusters, subtle dark outline, soft neutral illumination, dark brown/steel/brass palette, no neon, no giant extra ornament. Genuine RGBA transparency including every opening. All objects fit COMPLETELY inside their cell with generous 10% padding and empty gutters; nothing may touch another cell or the outer canvas. Equal cell size and consistent scale across tiers/poses. No labels, text, frames, shadows on ground or painted checkerboard. 2048x2048.",
+    "reference_files": [
+      "assets/first_person_v1/references/giant_gauntlets_tiers.png",
+      "assets/first_person_v1/references/RHNDA0.png"
+    ],
+    "source_atlas": "assets/first_person_v1/masters/giant_gauntlets.png",
+    "generator": "built-in image_gen"
+  }
+]
