@@ -101,3 +101,9 @@ class CaelumSewerPrepareCraftAction : CaelumCaravanAction
 {
     override int Preparation() { return CaelumSewerTrialSupport.PREPARE_CRAFT; }
 }
+
+// Extensión del mismo servicio de diagnóstico a la costa.
+class CaelumCaravanRoute8Action : CaelumCaravanAction { override int Route() { return 8; } }
+class CaelumCaravanRoute9Action : CaelumCaravanAction { override int Route() { return 9; } }
+class CaelumCaravanRoute10Action : CaelumCaravanAction { override int Route() { return 10; } }
+class CaelumCaravanRoute11Action : CaelumCaravanAction { override int Route() { return 11; } }

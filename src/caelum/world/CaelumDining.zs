@@ -332,6 +332,29 @@ class CaelumDiningWorld : Object play
         zone=Actor.Spawn("CaelumTimeAdvanceZone",position,NO_REPLACE);
         if(zone!=null){zone.args[0]=slot;if(slot>1)zone.A_SetSize(320,128,false);}
     }
+    static bool EnsureSeats(CaelumDiningTable table)
+    {
+        bool fits=true;
+        int side=table.SeatCount()==12?4:2;
+        for(int i=0;i<table.SeatCount();i++)
+        {
+            if(table.Chairs[i]!=null)continue;
+            double x=0;double y=0;
+            if(table.RoundTop())x=i==0?-84:84;
+            else if(i<side*2)
+            { x=-table.LengthMU()/2+(i%side+0.5)*table.LengthMU()/side; y=(i<side?-1:1)*(table.WidthMU()/2+44); }
+            else
+            { int end=i-side*2; x=(end<(side/2)?-1:1)*(table.LengthMU()/2+44); y=side==4?(end%2==0?-48:48):0; }
+            let chair=CaelumRestChair(Actor.Spawn("CaelumRestChair",table.LocalPoint(x,y),NO_REPLACE));
+            if(chair==null){fits=false;continue;}
+            table.Chairs[i]=chair;chair.DiningTable=table;chair.DiningSeat=i;
+            // PoseAngle invierte el modelo: el cuerpo debe mirar al tablero.
+            double facing=table.RoundTop()?(i==0?0:180):i<side*2?(i<side?90:270):(x<0?0:180);
+            chair.Angle=table.Angle+facing+180;
+            if(!chair.TestMobjLocation() || Abs(chair.FloorZ-table.Pos.Z)>1){chair.Destroy();fits=false;}
+        }
+        return fits;
+    }
     static bool Place(int slot,vector3 position,int size=0,double facingAngle=0)
     {
         if(Find(slot)!=null)return true;
@@ -352,23 +375,7 @@ class CaelumDiningWorld : Object play
                     body.Table=table;table.Blocks[block++]=body;
                     if(!body.TestMobjLocation() || Abs(body.FloorZ-position.Z)>1)fits=false;
                 }
-        int side=table.SeatCount()==12?4:2;
-        for(int i=0;i<table.SeatCount();i++)
-        {
-            double x=0;double y=0;
-            if(table.RoundTop())x=i==0?-84:84;
-            else if(i<side*2)
-            { x=-table.LengthMU()/2+(i%side+0.5)*table.LengthMU()/side; y=(i<side?-1:1)*(table.WidthMU()/2+44); }
-            else
-            { int end=i-side*2; x=(end<(side/2)?-1:1)*(table.LengthMU()/2+44); y=side==4?(end%2==0?-48:48):0; }
-            let chair=CaelumRestChair(Actor.Spawn("CaelumRestChair",table.LocalPoint(x,y),NO_REPLACE));
-            if(chair==null){fits=false;continue;}
-            table.Chairs[i]=chair;chair.DiningTable=table;chair.DiningSeat=i;
-            // PoseAngle invierte el modelo: el cuerpo debe mirar al tablero.
-            double facing=table.RoundTop()?(i==0?0:180):i<side*2?(i<side?90:270):(x<0?0:180);
-            chair.Angle=table.Angle+facing+180;
-            if(!chair.TestMobjLocation() || Abs(chair.FloorZ-position.Z)>1)fits=false;
-        }
+        if(!EnsureSeats(table))fits=false;
         if(!fits)
         {
             for(int i=0;i<12;i++)if(table.Chairs[i]!=null)table.Chairs[i].Destroy();
@@ -378,6 +385,8 @@ class CaelumDiningWorld : Object play
     }
     static bool Prepare()
     {
+        if(level.MapName=="MAP06")return Place(601,(-800,800,0),1);
+        if(level.MapName=="MAP07")return Place(701,(-256,1280,0),1);
         if(!CaelumSewerTrialSupport.IsTrialMap())return true;
         Zone(level.MapName=="MAP02"?(-224,160,0):(0,320,0),1);
         if(level.MapName!="MAP03")return true;

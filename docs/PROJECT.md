@@ -1,43 +1,136 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0k — 2026-09-16.
+Versión documental: 4.35.0o — 2026-09-17.
 
-## Estado actual: 4.35.0k — primer estado climático local
+## Estado actual: 4.35.0o — agenda y eventos persistentes
 
-El autor solicita preparar el siguiente parche mientras prueba 4.35.0j.
-La aceptación manual de 0j sigue pendiente. Este delta se aplica sobre 0j y
-publica el primer estado ambiental común: temperatura del aire, humedad
-relativa, velocidad/dirección del viento y precipitación por lugar y fecha.
+Delta sobre el proyecto completo 4.35.0n. El autor define los eventos:
+asedios, rutinas de NPC/misiones secundarias, alquileres, envíos de mercancías,
+crecimiento de vetas y futuras categorías. Pide un calendario con sus fechas.
+0n sigue entregado y pendiente de prueba; no se presume su aprobación.
 
-CaelumWeatherState viaja con el personaje y conserva una semilla de campaña,
-perfil, fecha/minuto y muestra. Los pasos ordinarios y x105 consultan el mismo
-calendario de campaña; se actualiza como máximo una vez por minuto de juego
-o al cambiar de lugar. Cargar o regresar a un mapa no sortea otro clima ni
-reproduce miles de tics atrasados. Los mapas desconocidos muestran ausencia
-de perfil en lugar de reutilizar el ambiente del mapa anterior.
+TAB → Mundo → F/RT abre el calendario mensual de campaña. Señala hoy, la
+selección y cuántas series conocidas caen en cada día; muestra hora, tipo y
+ocurrencia registrada/programada. Detalle ofrece estado de la serie, primera y
+próxima fecha, intervalo y contador. Los eventos desconocidos no se revelan.
+La fecha de depuración del clima no desplaza esta agenda.
 
-El Diario > Mundo muestra dos líneas ambientales conservando lugares, conexiones,
-registro del último viaje y controles. Una fecha diagnóstica no altera el clima
-de campaña; la etiqueta lo identifica cuando esa vista está activa. Se añade
-consulta de consola de sólo lectura y un perfil exterior de ensayo para
-comprobar viento/precipitación sin introducir lluvia en mapas subterráneos.
+El registro persistente calcula las ocurrencias vencidas sin reproducir miles
+de tics de IA. Se conecta al reloj ordinario, Limbo 1:1, descanso, x105 y viajes
+confirmados; una consulta de presupuesto no dispara eventos futuros. Guardado
+y carga conservan fechas, contadores, cancelación, deuda y cargas retiradas.
 
-Los perfiles numéricos son provisionales, no datos meteorológicos históricos
-ni balance aprobado: Limbo estable 20 °C/55%; alcantarillas y cámaras base
-16 °C/85%; reservorio 15 °C/92%; mantenimiento 18 °C/75%. Los tres perfiles
-subterráneos varían suavemente con hora/fecha, sin viento ni precipitación.
-El exterior templado sólo se consulta en pruebas; falta la autoría regional.
-SYSTEMS.md detalla amplitudes, unidades, persistencia y comandos.
+Adaptadores concretos: fases de asedio que interrumpen descanso/aceleración;
+NPC de ensayo que cambia de destino según su rutina; vencimiento de objetivos
+incompletos de una misión; alquileres con deuda/pago manual en monedas reales;
+carga de materiales retirada al despachar y recuperable una vez en destino;
+recuperación de recursos que cuenta también la ausencia de su mapa. Los
+recursos mantienen 0,1 % de capacidad por día de campaña, sin rebalancearlos.
 
-Se conserva el ritmo 1:1 del Limbo y el 20:1 exterior, así como las reglas
-de 0j. El clima publicado todavía no modifica recursos, daño, cuerpo, equipo,
-sellos, luz, sonido ni partículas. Exposición térmica sigue en V5.1 y los
-efectos audiovisuales por clima permanecen en su bloque de contenido.
+Los ensayos son voluntarios por consola. No se inventan alquileres de campaña,
+precios, horarios de los cuatro residentes ni envíos comerciales canónicos.
+La infraestructura admite esos contratos cuando un mapa/misión los registre.
+El asedio de ensayo prueba fases y bloqueo temporal; el director de batallas,
+ejércitos y consecuencias políticas conserva su alcance V5 ya acordado.
 
-La verificación y los pendientes se describen en PRUEBAS_4_35_0k.txt. Las pruebas
-nativas Linux se distinguen de la aceptación manual Windows del autor. El
-siguiente bloque pendiente de 4.35 es eventos/viajes temporizados, seguido
-de su integración y las pruebas conjuntas. Aún no se declara cerrada 4.35.
+### Cierre de 4.35
+
+La implementación temporal de este bloque queda candidata a cierre. Faltan la
+aceptación manual del autor de 0n y 0o, y resolver cualquier fallo que aparezca.
+No se exige nuevo contenido de campaña ni repetir las pruebas ya aprobadas.
+Después siguen 4.36 (peligros físicos), 4.37 (Tarot/Trucazo), exportación V4,
+reorganización V5.0 y exposición térmica V5.1.
+
+## Base entregada: 4.35.0n — viajes medidos y provisiones
+
+Delta sobre el proyecto completo 4.35.0m. El autor aprueba las pruebas de
+raciones de alimento y los mapas. Define 10 km entre depósito de alcantarillas
+y puerto, y 500 km entre puerto y playa, con jornadas de 16 horas caminando y
+8 durmiendo, velocidad actual del personaje y consumo de sus provisiones.
+
+El acceso muestra presupuesto antes de salir: velocidad real convertida a
+km/h, duración de marcha/sueño, raciones necesarias/llevadas/a consumir, agua
+adicional en recipientes y reservas/salud previstas al llegar. Enter confirma;
+Escape cancela sin descontar raciones ni adelantar el reloj por el trayecto.
+El mundo sigue su paso normal mientras se lee. Si cambian velocidad, consumo,
+existencias o riesgo mortal, se actualiza la vista antes de una nueva confirmación.
+
+La velocidad se mide como marcha sostenida sobre suelo normal, 32 MU/m. Se
+fija al partir, sin añadir pausas por animación ni reducir la distancia por el
+factor 20:1 del calendario. No se agrega una noche si ya se llegó al destino.
+La caravana diagnóstica sigue siendo marcha a pie, sin vehículo ni nueva tarifa.
+Los accesos interiores MAP02–05 conservan su tratamiento local sin distancia
+asignada. Sólo las cuatro conexiones dirigidas 8–11 tienen presupuesto temporal.
+
+La simulación numérica de un tic aplica necesidades, digestión, regeneración,
+lucidez y sueño. Usa bolsa propia si se lleva, suelo en otro caso; no crea
+raciones, recipientes, muebles o comodidad. Bebe primero raciones de agua y
+luego litros de recipientes; no gasta pertenencias de la Caja. No empieza a
+comer/beber dormido. Las porciones empezadas continúan sus pulsos al llegar.
+Una previsión mortal exige confirmación visible y termina con muerte nativa
+en origen sin acreditar llegada; no se exige comprar provisiones para salir.
+
+El trayecto se aplica atómicamente: un descuento, un intervalo del reloj,
+registro persistente, clima a la fecha de llegada y cambio de mapa. Se conserva
+el presupuesto al guardar; siempre se revalida antes de cobrar. No se simulan
+IA, física o encuentros del mapa de salida durante esas horas. Los efectos
+activos y el combate deben terminar antes del viaje. Límite técnico visible:
+30 días de marcha por presupuesto; no se truncan rutas mayores.
+
+## Base entregada: 4.35.0m — comida por masa y costa
+
+Comida/agua aportan 800/masa corporal en kg puntos por ración. Se integraron
+18 materiales del autor, MAP06 puerto y MAP07 costa, sus conexiones nativas,
+refugios de dos sillas, cobertura física, río no potable y clima de Buenos
+Aires confirmado en MAP02–07. Sus pruebas de comida y mapas están aprobadas.
+
+## Base entregada: 4.35.0l — sillas, agua y clima regional
+
+El autor aprueba 0j y 0k; de 0i sólo observa la segunda silla de Ronnie y
+Argento. Este delta se aplica sobre el proyecto completo 4.35.0k.
+
+La silla existía, pero quedaba detrás de una pared sobre otro sector con la
+misma altura de piso. Las mesas 102/104 pasan a (1072, ±480, 136), orientación
+0°, con dos sillas visibles y utilizables. Se conservan camas, accesos, actores
+originales, contenido y referencias. Un guardado sentado espera a levantarse
+antes de mover su conjunto. La preparación recupera una silla ausente.
+
+La ración de agua representa 0,16 litros y pesa 0,16 kg. Restaura diez puntos
+de Sed en el cuerpo M base de 80 kg; conserva el escalado por masa corporal:
+800/masa puntos por ración (8 puntos a 100 kg). El talle de ropa M admite
+varias masas y no convierte a todos sus usuarios en cuerpos idénticos. Se
+actualizan carga, Caja, comercio y consumo desde una regla de peso común.
+Sentado conserva diez pulsos durante 100 s de simulación, frente a 10 s de pie.
+Los recipientes continúan usando sus litros efectivos. Un efecto ya activo en
+un guardado conserva la dosis con la que comenzó.
+
+El clima usa normales mensuales contemporáneas del SMN, período 1991–2020
+(publicadas en 2023; viento 2011–2020), para nueve estaciones. La fecha histórica
+de campaña selecciona época del año y hora sobre esa referencia moderna. No se
+reconstruyen observaciones de 1889 ni se consulta el pronóstico en cada partida.
+Los episodios concretos de lluvia, nubosidad y frentes son síntesis reproducible;
+los factores de cobertura son aproximaciones explícitas, no mediciones del SMN.
+
+Confirmación posterior en 0m: MAP02–05 y los siguientes son de Buenos Aires.
+Buenos Aires Observatorio es su referencia compartida; un marcador permite
+elegir otras regiones en contenido futuro. MAP01 mantiene su excepción de Limbo:
+20 °C, 55% HR, sin viento ni precipitación, con reloj 1:1 aprobado.
+
+Los techos se detectan por trazas geométricas, incluidos pisos 3D. La muestra
+local distingue exterior, techado abierto, interior y subsuelo; responde al
+movimiento sin esperar al siguiente minuto climático. Las superficies de cielo
+no cuentan como techo. Precipitación directa se anula bajo cobertura; la
+humedad relativa se recalcula según temperatura/presión de vapor y humedad del
+subsuelo. El viento cambia con región/frentes y disminuye bajo refugio.
+
+El Diario informa región de referencia y cobertura. Se conservan semilla,
+calendario, pausa y el mismo resultado a ritmo normal/x105. Ver SYSTEMS.md para
+fuentes, fórmulas, límites y comandos; PRUEBAS_4_35_0l.txt para la aceptación
+manual. Exposición corporal, ropa mojada y daño térmico siguen en V5.1.
+
+Para cerrar 4.35 restan eventos y viajes con duración, integración conjunta y
+aceptación de esos incrementos. Luego siguen 4.36, 4.37, exportación de pruebas
+y V5.0/V5.1 en el orden acordado.
 
 ## Base entregada: 4.35.0j — ritmo local, interacción y áreas de clase
 
@@ -1679,7 +1772,7 @@ de lo que arrojen esas pruebas; no son plazos de entrega.
 | 8f | 4.34.0a: ubicaciones y conexiones | Diario de mundo, lugares visitados y registro del regreso existente MAP01 → MAP02; guardados anteriores y conservación al viajar. Primer parche de 4.34, aprobado por el autor. |
 | 8g | 4.34.0b: puertas y accesos por grupo | Requisitos nativos de todas las hojas, grupos independientes sin id, ocupación del paso y reapertura durante el cierre. Prueba opcional con llave propia y guardados anteriores. Aprobado por el autor. |
 | 8h | 4.34.0c: alcantarillas conectadas | MAP02 enlaza con MAP03–05 para futuras pruebas masivas, Tarot y entorno. Seis sentidos, hub nativo, escaleras, Diario y guardados; ningún regreso a MAP01. |
-| 9 | Construcción de mapas y alcantarillas | La ampliación de campaña pasa a V5 por decisión del autor. Durante V4, priorizar sistemas y pruebas en los mapas existentes; conservar la llegada actual de MAP02 y CADEV02. |
+| 9 | Construcción de mapas y alcantarillas | La ampliación de campaña pasa a V5 por decisión del autor. Durante V4, priorizar sistemas y pruebas; en 0m el autor autoriza extensiones de puerto/playa con sus texturas para continuar MAP03. Conservar la llegada de MAP02 y CADEV02. |
 
 La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
 inicio. MAP01.txt contiene la especificación completa y las correcciones que
@@ -1712,7 +1805,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; aceptación de 0j pendiente. 0k publica clima local con perfiles de ensayo y adaptador normal/x105. Restan eventos/viajes programados, integración conjunta y aceptación. Modelo térmico corporal en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. Candidata a cierre, pendiente de aceptación de 0n/0o. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |

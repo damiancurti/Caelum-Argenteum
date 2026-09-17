@@ -1,0 +1,24 @@
+{
+  "source_archive": "Caelum_Texturas_Ciudad_Puerto_Playa_v1(1).zip",
+  "source_sha256": "888b6c3b5cf54ffbaddad2a78e32fd61c5b6f9889faebb66654085d72c08681e",
+  "integrated": {
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI01.png": "7f43a4bb89a2f4e250e16c7b94e4ea051f8e26cc75d3067bc41925e867e23e89",
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI02.png": "a6d8689765390a38bb55db6f8f4195b8a0c65b51f9a87748957fe90188566e3f",
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI03.png": "bc523b4b897699713c4f7365e79e2719933676b04c62b540e67b407f04a945f1",
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI04.png": "c98ef5b4daae194b4759a3d21d3a950cc257415b868665450366670a06a0b765",
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI05.png": "a4118c25046e21f3c2b6e25b129d160374fc0602718208199d1ae1e7dc7adcba",
+    "src/graphics/caelum/textures/entornos_v1/ciudad/CVCI06.png": "1079b526f0ef6281e751ba7e0b775ed8986de5cee25068c20c38599c970a25c0",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL01.png": "62ca8be69be38c3c015d317e1daf95e4c682e6fff00636fdbe366b8fbbd70670",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL02.png": "0dfa9b23d8953ccb8235954f5485bef55cfbbf6507c04aab49cb367bf9098ad5",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL03.png": "7b8fd4350b28c180c08f196193fd563c721cd9df7ecf285170384382fe3816e0",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL04.png": "4607eff3bfb165d6779bd65d70595f6b039989a598f1d42254e8a01b021b824d",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL05.png": "4551a0dda3968cba6bb440713649026a4cf53d84d7c2087b546dfb19f0799c94",
+    "src/graphics/caelum/textures/entornos_v1/playa/CVPL06.png": "ca1701ef3c98f23bf907057370bd6651a98b29a175b1374bf1070ae837fd300a",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO01.png": "9482243320de4cc08a7e38dcef8a46a3156e2786b30801930c74e144a5d6afac",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO02.png": "34b0f273e6eab0e764df1ab0416f4ea166bfdcdef962b12676bb89d0bf43bced",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO03.png": "daf5c59a34ff55042a4b2ba5327f7734ed1b5ad863eba8d07185a5da1a31ab4e",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO04.png": "3aaab44b3b826712a4934a0d89dca9c31b682c5ee776c656fb3445beec8d315f",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO05.png": "a57780fed345f09b53059368dddd1a97e4050938902d006047febcb5f9b94a06",
+    "src/graphics/caelum/textures/entornos_v1/puerto/CVPO06.png": "2dbc0d88a74575134cf1c780bdac1da7c1780ff424e7ce5441b577f83db2cd0b"
+  }
+}

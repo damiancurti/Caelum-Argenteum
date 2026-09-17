@@ -1,90 +1,341 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0k — 2026-09-16.
+Versión documental: 4.35.0o — 2026-09-17.
 
-## Estado ambiental local común (4.35.0k)
+## Agenda y eventos programados (4.35.0o)
 
-### Perfiles y unidades
+El calendario usa el anclaje civil de campaña, no el reloj del sistema operativo
+ni TrialDate del depurador. TAB → Mundo → F/RT. Flechas/D-pad: día; RePág/AvPág
+o LB/RB: mes; H/Inicio: hoy; E/R o Y/X: evento de ese día; Enter/A: detalle;
+Esc/B: volver; TAB: cerrar. En detalle, P/RT paga deuda o retira carga.
+La navegación es local: no reancla, adelanta ni pausa el reloj del juego.
 
-CaelumWeatherRules asocia perfiles explícitos a ubicaciones del catálogo.
-Una muestra contiene Available, AirTemperatureC (°C), RelativeHumidityPercent
-(0–100%), WindSpeedKmh (km/h), WindFromDegrees (origen del viento, 0=N/90=E)
-y PrecipitationMmPerHour (mm/h). Es estado ambiental, no temperatura corporal,
-humedad de ropa ni sensación térmica. Las cifras siguientes son de ensayo y
-requieren balance del autor para las regiones definitivas.
+CaelumScheduleState es un Inventory oculto, persistente entre mapas. Contiene
+hasta 2048 series, con id/clave estable, tipo, título localizable, sujeto, mapa,
+fecha inicial, intervalo en minutos, límite, contador y estado. Las claves
+impiden registros duplicados. Intervalo cero es un evento único. Límite cero
+admite recurrencia indefinida, hasta el límite civil y el contador de 2147483646.
+Intervalos aceptados: hasta 525600 minutos. Fechas gregorianas de años 1–9999.
+Cada celda cuenta series, no una copia de cada repetición dentro del día.
 
-| Perfil | Lugar | Temperatura base | Humedad base | Viento / precipitación |
-| --- | --- | ---: | ---: | --- |
-| 1 | MAP01, Limbo | 20 °C constantes | 55% constantes | 0 km/h / 0 mm/h |
-| 2 | MAP02 y MAP04, subterráneo | 16 °C | 85% | 0 / 0 |
-| 3 | MAP03, reservorio | 15 °C | 92% | 0 / 0 |
-| 4 | MAP05, mantenimiento | 18 °C | 75% | 0 / 0 |
-| 5 | Exterior templado de ensayo, sin mapa asignado | 17 °C | 45–100% resultante | 0–24 km/h / 0–8 mm/h |
+CaelumWorldClock llama Sync después de avanzar. Se calcula la cantidad vencida
+aritméticamente por serie y se guarda una sola vez; un caché de la próxima fecha
+evita revisar todas las series en cada tic. Saltos largos no recorren todas las
+ocurrencias. Para rutinas/asedios se elige la fase con última fecha efectiva,
+independiente del orden de registro; empates por id mayor. El inventario nativo
+serializa los objetos, su progreso y la carga. No hay tareas de sistema operativo.
 
-En perfiles 2–4, la temperatura añade ciclo anual ±2 °C, diario ±0,25 °C
-y variación de frente ±0,25 °C. Humedad = base ±2 puntos. No precipita ni
-sopla viento por ser interiores subterráneos; no se deduce exposición mirando
-la textura del techo. Es un perfil por mapa, sin microzonas espaciales aún.
-El Limbo no hereda estaciones terrestres sólo por tener fecha y reloj.
+Los viajes de 0n conservan su presupuesto de necesidades y reloj único. El
+presupuesto no modifica la agenda. La confirmación acredita los vencimientos
+cruzados, y el destino consulta el estado final. No ejecuta físicamente ejércitos
+ni repite rutinas de mapas inactivos. Ningún evento simula retroactivamente
+saqueos, interceptaciones de cargas ni daño al viajero: esas consecuencias
+necesitan su contrato explícito en los sistemas futuros.
 
-El perfil 5 usa ciclo anual ±9 °C (máximo cerca del 15 de enero), diario ±4 °C
-(máximo a las 15 h), frente ±3 °C y enfriamiento por precipitación de 0,25 °C
-por mm/h. Humedad combina 45 + variación 0..25 + precipitación ×4, limitada
-a 100. Precipitación interpola nodos 0..8 mm/h; viento interpola vectores de
-magnitud 0..24 km/h para evitar saltos al cruzar el norte. Es un generador
-de prueba, no una reconstrucción del clima argentino de 1889.
+| Tipo | Efecto conectado |
+| --- | --- |
+| Asedio | Value > 0 activa la fase del sujeto/mapa; 0 la termina. Interrumpe descanso y aceleración, cierra sesión de taller conservando la tarea. La batalla completa no se genera automáticamente. |
+| Rutina | CaelumScheduledWorker adopta WorkSpot o RestSpot según la última fase; movimiento nativo, sin atravesar obstáculos. Al volver al mapa no reproduce los turnos perdidos. |
+| Alquiler | CaelumScheduleContracts.Rent registra valor en cobres, inicio y período. Cada vencimiento suma deuda. P paga toda la deuda con monedas/cambio reales y control de capacidad, sin débito automático, desalojo ni cerradura forzada. RentCurrent queda disponible para una futura condición de acceso. |
+| Envío | DispatchCargo retira unidades reales de CaelumMaterialPickup no encajadas ni vinculadas a misión del Limbo. Conserva tipo/nivel/cantidad/origen/destino. CollectCargo exige plazo, mapa correcto, capacidad e inventario válido; un fallo conserva la carga, un éxito marca Claimed antes de admitir otro retiro. No transporta equipo armado ni agrega fletes. |
+| Recurso | Al extraer un nodo natural registra su recuperación completa; otra extracción recalcula esa misma entrada. La capacidad y la fracción se conservan en el actor del hub. Cuenta el reloj transcurrido mientras su mapa está ausente. |
+| Misión | QuestDeadline vincula una misión secundaria activa definida. Al vencer, falla sólo si sus objetivos siguen incompletos; no quita una recompensa pendiente de objetivos ya alcanzados. |
+| Aviso | Fecha y estado consultables sin transacción ni consecuencia adicional. |
 
-### Calendario, determinismo y persistencia
+El pago prepara todo el cambio antes de modificar las monedas previas. Cobrar
+una serie pagada no vuelve a descontar. El envío no puede cancelarse dejando
+mercancía perdida; después de retirarlo conserva el historial, con saldo cero.
+Acciones de inventario sólo en un jugador vivo, libre de descanso, combate,
+conversación, comercio, fabricación y presupuesto abierto. La partida cooperativa
+no recibe contratos económicos compartidos en este bloque.
 
-CaelumWeatherState es Inventory oculto, único, no arrojable y conservado al
-cambiar de hub. Contiene Seed (1..32748), Revision, SourceMap, LocationId,
-Profile, SampleDate, SampleMinute y Current, un CaelumWeatherSample serializado.
-La semilla se crea una sola vez con un canal RNG propio; consultar la muestra
-no consume números aleatorios de combate ni genera otra semilla.
+La recuperación usa capacidad × 0,001 por día de campaña. Un nodo vacío tarda
+1000 días; uno al 90 % tarda 100 días en completarse. Es el ritmo existente,
+no un valor nuevo aprobado por el autor. El primer tic de un guardado antiguo
+inicializa su marca temporal sin otorgar años retroactivos. Su próxima extracción
+lo añade a la agenda. Una entrada por nodo informa mapa/material; no existe aún
+minimapa ni marcador de coordenadas. El historial de ciclos anteriores del mismo
+nodo se reemplaza al extraer de nuevo para no crear una entrada por golpe.
 
-La muestra resuelve fecha/hora de campaña y semilla directamente. Frentes de
-seis horas interpolados con f²(3−2f), ciclos diario/anual continuos y límites
-explícitos. El cálculo funciona en los años 1..9999; fecha o perfil inválidos
-limpian valores y marcan Available=false, sin conservar datos del mapa previo.
-El generador usa enteros acotados para evitar desbordamientos en el hash.
+Ensayos (fuera de MAP01, en un lugar despejado):
+- netevent ca_debug_events_trial: una sola alta, con encargado físico. Trabajo
+  +1 min y descanso +6 min, repetidos cada 24 h. Asedio +4 a +10 min. Alquiler
+  de 1 cobre a +8, +20 y +32 min (tres vencimientos, sin gasto automático).
+- netevent ca_debug_cargo_trial: despacha 100 unidades de madera nivel 1 que se
+  lleven fuera de la Caja. Desde MAP06 va a MAP07; desde otro exterior, a MAP06.
+  Demora 30 min. Cada orden es un envío distinto y consume existencias reales.
+- netevent ca_debug_events_report: versión 4.35.0o y registro de cada serie.
 
-CaelumWorldClockTicker llama Sync después de su paso ordinario. Pump lo llama
-después de cada paso adicional, antes de consumibles/recursos. Sync sólo recalcula
-al cambiar fecha/minuto/perfil/mapa/revisión; el clima no mantiene otro contador
-de tiempo. Una misma fecha y semilla producen la misma muestra con ritmo normal,
-T, guardado/carga o regreso a un mapa. No se reproducen tics omitidos: se obtiene
-el estado ambiental actual al llegar. Esto no simula eventos de otros actores.
+Los ensayos no alteran las cuatro rutinas de la mansión ni inventan contratos
+canónicos. Se recomienda una copia de la partida para probarlos. Cancelación
+programática impide futuras repeticiones, conservando ocurrencias y deudas ya
+registradas. Eventos ocultos se ejecutan pero no aparecen en el calendario.
 
-El minuto de juego ocupa 60 s reales en Limbo y 3 s reales afuera a velocidad
-normal. T aplica el mismo reloj local. Pausa y juego cerrado no acumulan tiempo.
-Los calendarios de prueba se consultan sólo para su vista; el clima siempre usa
-DateSerial/CivilDayTics de campaña. Leer el Diario o un informe no adelanta reloj,
-clima, necesidades ni fabricación. Guardados 0j reciben el estado al primer paso
-válido, conservando anclas, muebles, raciones, recipientes, trabajos y misiones.
+## Viajes con duración y provisiones (4.35.0n)
 
-### Consulta y alcance del incremento
+| Ruta | Conexiones | Distancia en cada dirección |
+| --- | --- | ---: |
+| MAP03 depósito ↔ MAP06 puerto | 8 / 9 | 10 km |
+| MAP06 puerto ↔ MAP07 costa | 10 / 11 | 500 km |
 
-Diario > Mundo añade dos líneas entre fecha y lugares conocidos: perfil,
-temperatura/humedad y viento/precipitación. Si se activa una fecha diagnóstica,
-la línea dice «Ambiente de campaña» para distinguirla. Un mapa sin perfil muestra
-esa ausencia. No se añaden controles a T ni se cambia la navegación del Diario.
+CaelumJourneyRules calcula el desplazamiento sostenido nativo: entrada normal
+hacia delante × multiplicador efectivo × Speed × ORIG_FRICTION_FACTOR /
+(1 − ORIG_FRICTION). Incluye velocidad de inventario; usa suelo normal y cuerpo
+de pie. Se excluyen correr, diagonales, postura de combate y aceleración inicial.
+32 MU = 1 m; km/h = MU/tic × 35 × 3,6 / 32. La escala 20:1 del calendario no
+multiplica esa conversión física. Prueba con desplazamiento nativo a paso estable.
+
+El ritmo capturado al salir queda fijo para el presupuesto. La pérdida de peso
+por comer y las fluctuaciones de reservas no vuelven a resolver la velocidad
+durante esa misma ruta. Se usa el estado actual para el viaje siguiente.
+Horas de marcha = km / km/h; se redondea hacia arriba al tic del reloj exterior.
+Número de noches = (tics de marcha − 1) / (16 × tics por hora), división entera.
+Cada noche agrega 8 horas; la última llegada no añade sueño gratuito.
+Ejemplo a 5 km/h: 10 km = 2 horas; 500 km = 100 + 48 = 148 horas.
+
+Usar un acceso medido abre CaelumJourneyPlan. La UI sólo lee datos guardados;
+Enter/A envía ca_journey_confirm, Esc/B ca_journey_cancel. La consulta no muta
+necesidades, pertenencias ni reloj. Mientras se lee sigue la simulación ordinaria,
+con acciones/movimiento bloqueados como en las otras interfaces del personaje.
+Confirmar valida contexto, mapa, proximidad, perfil, inventario y condiciones;
+recalcula y exige revisión si cambia el tiempo, gasto, existencias o riesgo mortal.
+No se cobra al cancelar, actualizar, volver a pulsar Enter ni cargar un guardado.
+
+CaelumJourneyModel copia valores numéricos y recorre pasos de un tic. El modelo
+Needed usa raciones ilimitadas para calcular lo necesario sin agua de recipientes;
+Available usa las existencias reales. Tiene en cuenta gasto pasivo por masa y
+Constitución, sueño por Resiliencia, diez pulsos por porción, digestión real /4,
+regeneración natural de Salud/Aire con sus costes, daño de reservas críticas,
+Ánima, Adrenalina y Lucidez. Dormir drena 10 Lucidez/s, sin recuperación de ésta,
+y recupera Sueño en 8 horas; aturdirse por Lucidez no interrumpe el campamento.
+Los temporizadores personales compatibles avanzan por el mismo intervalo.
+
+Comienza una porción cuando cabe su aporte sin sobrepasar 100. Durante el sueño
+no comienza otra; una porción ya empezada termina sus pulsos. El aporte por ración
+es 800/masa. Raciones de agua primero; luego sorbos de hasta masa/500 litros de
+recipientes, con diez pulsos proporcionales al volumen real. El recipiente vacío
+se conserva. Caja y suministros sobre mesas ajenas al inventario no participan.
+Bolsa propia fuera de Caja aplica comodidad 3 durante la noche; suelo aplica 1.
+No se añaden camas ni beneficios de estar sentado a la marcha.
+
+Apply descuenta objetos/litros, conserva porciones incompletas como Powerup
+nativo, aplica reservas y temporizadores finales y suma el intervalo con
+CaelumWorldClock.AdvanceTics. El calendario y el clima consultan esa misma fecha;
+no se cambia la semilla. CaelumJourneyState registra km, km/h, tics reales de
+marcha/sueño y provisiones consumidas, además de salida/llegada existentes.
+Los campos nuevos parten en cero en registros viejos, sin inventar gastos pasados.
+
+Si faltan provisiones se presenta la llegada prevista con sus consecuencias.
+Si moriría antes, se muestra riesgo mortal y momento estimado; confirmar consume
+sólo hasta la muerte, usa Die nativo y deja el viaje interrumpido en origen.
+No hay llegada ni crédito del destino. La ejecución es una transición atómica;
+se puede guardar el presupuesto o la llegada, no una posición ficticia a mitad
+de un trayecto. El plan vuelve a validarse tras cargarlo.
+
+El planificador admite hasta 30 días de marcha por ruta; rechaza explícitamente
+mayores duraciones. Exige suelo seco, un jugador, sin combate, inmovilización,
+trabajo, descanso, conversación, efectos elementales o Powerup activos. No borra
+un efecto por viajar: pide esperar su final. Caravana diagnóstica comparte marcha;
+no hay velocidad de vehículo inventada. Rutas locales previas siguen sin medida.
+No hay replay de IA, terreno intermedio ni incidentes. Los eventos narrativos
+programados siguen pendientes de definición e integración explícita.
+
+## Comida por masa y extensión ribereña (4.35.0m)
+
+Referencia común RATION_REFERENCE_MASS = 80 kg, cuerpo M base. Porción de
+comida de 0,10 kg: 800/masa puntos de Hambre; ración de agua de 0,16 L/kg:
+800/masa puntos de Sed. El talle de ropa no sustituye la masa corporal real.
+
+| Masa corporal | Hambre por comida | Sed por agua | Sueño perdido al comer completo |
+| ---: | ---: | ---: | ---: |
+| 50 kg | 16 puntos | 16 puntos | 4 puntos |
+| 80 kg | 10 puntos | 10 puntos | 2,5 puntos |
+| 100 kg | 8 puntos | 8 puntos | 2 puntos |
+| 200 kg | 4 puntos | 4 puntos | 1 punto |
+
+Los valores suponen déficit suficiente; Hambre/Sed se limitan a 100 y Sueño a
+0. Digestión depende del incremento real. El gasto pasivo y por regeneración
+sigue descontándose durante la comida, por lo que el HUD neto puede subir menos.
+No depende del peso del inventario, ropa ni de tener raciones adicionales.
+
+CaelumRegenerationPower serializa FoodRecoveryPerPulse al aceptar el uso nativo.
+Cada pulso recupera 80/masa; la dosis queda fija hasta terminar o refrescar
+explícitamente la porción. El campo ausente/cero de efectos antiguos conserva
+un punto por pulso. No se recalcula una comida antigua al cargar ni se consume
+otra unidad para migrarla. Se conserva el acumulador parcial sentado y los
+diez pulsos en 10/100 segundos de simulación. Inventario, mesa y x105 comparten
+la misma aplicación de hambre/digestión; la repetición espera el efecto vigente.
+
+### Identidades y rutas
+
+| Conexión | Origen → destino | Acceso en el origen (MU) |
+| ---: | --- | --- |
+| 8 | MAP03 → MAP06 | (0, 3424, 0), extremo norte del depósito |
+| 9 | MAP06 → MAP03 | (0, 96, 0), entrada sur del puerto |
+| 10 | MAP06 → MAP07 | (0, 2080, 0), extremo norte del paseo |
+| 11 | MAP07 → MAP06 | (0, 96, 0), entrada sur de la costa |
+
+Ubicaciones 6/7 amplían el catálogo sin cambiar IDs anteriores ni sus arrays de
+32 posiciones. El nombre histórico IsSewerConnection incluye toda esta red.
+SewerNetworkRevision=1 prepara las rutas nuevas una vez en snapshots anteriores;
+PrepareWorld comprueba identidad de puerta antes de añadir otra. No se cambia
+la geometría WAD de MAP01–05. Los mapas nuevos pertenecen al hub 434.
+
+Los viajes conservan sus guardas de ocupación, estado, inventario, ruta y
+jugador único. Las salidas peatonales usan Use nativo. Las conversaciones de
+caravana 43411/43414/43415 ofrecen los destinos correspondientes con confirmación.
+Sigue sin asignarse duración ficticia ni tarifa a los traslados. Llegada y salida
+se registran con el reloj común; no se crea una ruta hacia la mansión.
+
+Ambos mapas llevan CaelumClimateRegion, arg0=1/arg1=0: Buenos Aires, superficie.
+El catálogo también conoce ese hábitat. Techos sólidos de 24 MU y agua sumergible
+usan Sector_Set3dFloor nativo; el agua no tiene user_ca_potable_water. La costa
+ofrece peldaños de 16 MU para salir del río. Los materiales acuáticos son estáticos.
+
+Mesas pequeñas: slot 601 en (-800,800,0), depósito del puerto; slot 701 en
+(-256,1280,0), refugio costero. Cada una tiene dos sillas y cuatro pertenencias.
+Sus zonas seguras permiten T sólo durante descanso válido; levantarse corta x105.
+No se agregan objetos de consumo gratis ni NPC de misión. La caravana sigue
+siendo una interfaz opcional de diagnóstico, no un transporte narrativo nuevo.
+
+El Diario reduce el paso entre filas de visitas de 12 a 9 cuando hay más de
+cinco, dejando las siete dentro de y=220..274 y el último viaje en y=286.
+
+## Clima regional, refugio, agua y sillas (4.35.0l)
+
+Sustituye los perfiles numéricos de ensayo de 0k. El autor aprueba 0j/0k.
+La temperatura publicada es del aire; HR es humedad relativa, no humedad de la
+ropa ni sensación térmica. Viento en km/h, dirección de procedencia (0=N/90=E),
+precipitación en mm/h de agua equivalente. No se añade daño ni ajuste corporal.
+
+### Datos contemporáneos y referencia geográfica
+
+Fuente: [SMN, Estadísticas Climatológicas Normales 1991–2020 (2023)](https://repositorio.smn.gob.ar/handle/20.500.12160/2506),
+847 pp., CC BY 2.5 Argentina. Velocidad de viento: subserie 2011–2020 de la misma
+publicación. La transcripción de datos numéricos, páginas y unidades está en
+assets/climate/smn_1991_2020.json; generate_climate_normals.py produce el ZScript
+incluido, sin descarga ni dependencia de Python durante la partida.
+
+Se incorporan los doce valores mensuales de temperatura media, máxima media,
+mínima media, HR media, precipitación mensual, días con ≥0,1 mm, nubosidad en
+octavos y rapidez media del viento. Los valores son climatología moderna de
+referencia, no datos diarios de 1889 ni un pronóstico actual.
+
+| ID | Estación de referencia | Región representada | T media enero / julio | HR enero / julio |
+| ---: | --- | --- | ---: | ---: |
+| 1 | Buenos Aires Observatorio | Pampa húmeda | 24.9 / 11.0 °C | 64.6 / 77.0% |
+| 2 | Córdoba Aero | Centro | 23.5 / 9.8 °C | 68.1 / 63.5% |
+| 3 | San Rafael Aero | Cuyo | 23.8 / 6.8 °C | 50.0 / 60.4% |
+| 4 | Salta Aero | NOA, valles | 21.5 / 10.1 °C | 77.2 / 69.3% |
+| 5 | Posadas Aero | NEA | 27.2 / 16.3 °C | 68.1 / 73.9% |
+| 6 | Trelew Aero | Patagonia, meseta | 21.6 / 5.9 °C | 42.1 / 66.3% |
+| 7 | Bariloche Aero | Patagonia andina | 15.4 / 2.1 °C | 51.9 / 78.0% |
+| 8 | La Quiaca Observatorio | Puna | 13.2 / 4.5 °C | 62.6 / 25.7% |
+| 9 | Río Gallegos Aero | Patagonia austral | 13.6 / 1.5 °C | 51.9 / 77.7% |
+
+Las estaciones son referencias locales; no se aplica una sola media a toda
+Argentina ni se presupone que una estación cubra cada altura de su región.
+MAP02/MAP04 conservan hábitat de alcantarilla; MAP03, reservorio; MAP05, galería.
+La ubicación de los cuatro y los mapas siguientes queda confirmada por el autor
+en Buenos Aires (0m): usan región 1. MAP06–07 incorporan hábitat de superficie. MAP01 conserva 20 °C/55% y ausencia de viento/precipitación.
+
+CaelumClimateRegion (DoomEdNum 30950) permite un marcador por mapa: arg0 = ID de
+región 1..9; arg1 = 0 para superficie, 2 alcantarilla, 3 reservorio, 4 galería.
+La cobertura se resuelve en cada posición. El Limbo prevalece sobre marcadores.
+Un mapa desconocido sin marcador, o con región inválida, muestra perfil ausente;
+no hereda valores de la última ubicación. No se modifica ningún WAD publicado.
+
+### Síntesis temporal
+
+Se interpolan los normales entre centros de meses usando longitudes reales y
+años bisiestos. Fecha/hora de campaña, región y semilla determinan cada muestra.
+El ciclo térmico diario aproxima amanecer por latitud/época y mediodía solar por
+longitud, usando reloj civil argentino UTC-3; máximo cerca del mediodía solar+3 h.
+Mínimas y máximas mensuales escalan el ciclo. No cambia iluminación del mapa.
+
+Frentes de seis horas interpolados con f²(3−2f) añaden anomalía térmica ±6 °C y
+variación de humedad/nubosidad. Los días húmedos se sortean de forma determinista
+según días lluviosos/longitud del mes. Cada episodio dura 6..12 h, centrado entre
+06..18 h, con campana coseno y volumen ligado a mm mensuales/días húmedos; tiene
+intensidad variable 0,5..1,5 del valor de referencia. Empieza/termina sin salto y
+vale cero al llegar a medianoche. No reproduce una tormenta histórica concreta.
+
+La nubosidad reduce la amplitud térmica; precipitación activa enfría hasta 2,5 °C
+y aproxima HR a 95..100%. El vapor inicial usa HR mensual y temperatura media,
+modulados por frente. Se calcula HR = 100·e/es(T), limitada a 0..100, con
+es(T)=6,11·10^(7,5·T/(237,3+T)) hPa según [NWS, Vapor Pressure](https://www.weather.gov/media/epz/wxcalc/vaporPressure.pdf).
+La rapidez del viento parte de su normal mensual; se interpolan vectores para
+cruzar el norte sin saltos. Las direcciones son sintéticas, con componente oeste
+en referencias patagónicas 6/7/9; no se presentan como una rosa observada.
+
+Estos factores son un modelo jugable anclado a observaciones, no un simulador
+meteorológico validado ni garantía de reproducir exactamente cada media mensual.
+No modela acumulación de nieve, granizo, inundación o partículas todavía. Las
+inclemencias representadas son frentes, nubosidad, viento y precipitación.
+
+### Techado y microclima local
+
+Una traza vertical desde el cuerpo ignora actores y cielos (TRF_NOSKY), pero
+respeta techos, pendientes, muros y pisos 3D. Sin techo: exterior. En hábitats
+2..4, techo implica subsuelo. En superficie se consultan cuatro rayos cardinales
+de 1024 MU (32 m); tres o cuatro cerrados implican interior y el resto, techado
+abierto. Es una aproximación geométrica, no una simulación de ventilación.
+
+| Cobertura | Temperatura del aire | Viento | Precipitación directa |
+| --- | --- | ---: | ---: |
+| Exterior | Muestra regional completa | 100% | Regional |
+| Techado abierto | Media mensual + 95% de la desviación exterior | 65% | 0 |
+| Interior | Media mensual + 45% de la desviación exterior | 10% | 0 |
+| Subsuelo | Media anual + 15% de anomalía mensual con retraso de 30 días + 5% de anomalía exterior | 0 | 0 |
+| Limbo | 20 °C | 0 | 0 |
+
+Techado abierto/interior conservan presión de vapor al cambiar temperatura:
+HR puede subir o bajar; el techo no elimina mágicamente vapor del aire. En
+subsuelo, el intercambio con superficies húmedas aproxima HR al menos a 95%,
+con mezcla 65% para alcantarillas, 85% para reservorio y 25% para mantenimiento.
+Son coeficientes de ambiente, no un balance de energía/materiales del edificio.
+El viento no resta grados a la temperatura del aire como si fuese sensación térmica.
+
+### Estado, guardados y consultas
+
+CaelumWeatherState conserva Seed, región, hábitat, cobertura, SourceMap,
+SampleDate/Minute, posición y dos muestras reutilizadas: Outside y Current.
+La región se resuelve desde catálogo o marcador; el marcador se busca como
+máximo una vez por segundo nativo, o al cambiar mapa/revisión. El exterior se
+recalcula por minuto de juego. La cobertura se actualiza al moverse y al menos
+una vez por segundo nativo estando quieto, para responder a geometría móvil.
+Cada cambio reaplica el microclima desde Outside, sin acumular atenuaciones.
+
+La revisión 2 migra 0k conservando semilla, fecha, objetos y progreso. La misma
+fecha/semilla produce el mismo exterior con reloj normal, x105 o regreso de un
+viaje; no se usa tiempo offline. Sigue el adaptador de reloj de 0k. Fechas de
+prueba no alteran campaña. Consultas inválidas limpian valores, con Available=false.
 
     netevent ca_debug_weather_report
     netevent ca_debug_weather_sample PERFIL DIAS_RELATIVOS HORA
+    netevent ca_debug_climate_sample REGION DIAS_RELATIVOS HORA
 
-report es de sólo lectura. sample acepta perfiles 1..5, hora 0..23 y días dentro
-del calendario; devuelve una muestra de prueba de esa fecha/hora usando la
-semilla actual. Por ejemplo «5 0 15» consulta el exterior templado hoy a las 15 h.
-No cambia Current, fecha, semilla, recursos, mapa ni clima efectivo. Un día puede
-ser seco; los resultados varían con fecha y semilla. Las entradas inválidas se
-rechazan antes de evaluar. No hacen falta comandos para consultar el clima local.
+report muestra datos locales y exteriores. weather_sample mantiene perfiles
+1..5 de compatibilidad, con referencia regional 1; climate_sample acepta 1..9 y
+muestra exterior y tres coberturas sin mover al jugador ni cambiar campaña.
+Hora 0..23; fecha dentro de años 1..9999. Diario > Mundo informa región y cobertura.
 
-Este incremento publica datos y los integra temporalmente. No aplica penalidades
-de calor/frío, humedad corporal/equipo, Amparo, cambios de sellos ni partículas,
-audio, luz o cielo. La simulación térmica sigue en V5.1; sus curvas requieren
-balance. Horarios, viajes con duración y eventos programados son el bloque
-pendiente siguiente de 4.35. Los apartados anteriores por versión conservan
-su contexto histórico y se interpretan con este estado actual.
+### Agua por volumen y reparación de sillas
+
+Ración de agua = 0,16 L = 0,16 kg, con aproximación de densidad de 1 kg/L. Se
+usa masa base tier 5: 80 kg, talle corporal central 4 compatible con ropa M.
+Talle de ropa M abarca varias masas: se conserva recuperación proporcional al
+cuerpo, 800/masa puntos de Sed por ración (80 kg → 10; 100 kg → 8).
+Diez pulsos, cada uno 80/masa; sentado se distribuyen en 100 s de simulación y
+de pie en 10 s. Un guardado con porción ya iniciada conserva su dosis previa.
+Recipientes conservan litros efectivos y tara; comida mantiene 0,10 kg/dosis.
+La regla común alimenta peso nativo, carga, Caja y comprobación de compra.
+
+Mesas 102/104: (1072, ±480, 136), ángulo 0°. Sillas en X=988 y 1156, Y=±480,
+Z=136. Camas continúan (944, ±392, 136). La revisión persistente de la mansión
+reintenta hasta que las sesiones ocupadas terminen; mueve las mismas instancias
+y recupera sillas faltantes. Verificación incluye línea visual sin paredes,
+entrada nativa en ambas plazas, guardado/carga y conservación de contenido.
 
 ## Reglas vigentes de tiempo, consumo, Use y áreas (4.35.0j)
 

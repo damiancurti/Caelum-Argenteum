@@ -94,6 +94,24 @@ map MAP05 "$CA_MAP05_NAME"
     cluster = 434
 }
 
+map MAP06 "$CA_MAP06_NAME"
+{
+    UnFreezeSinglePlayerConversations
+    music = "CA_MUS02"
+    sky1 = "CABASKY", 0
+    nointermission
+    cluster = 434
+}
+
+map MAP07 "$CA_MAP07_NAME"
+{
+    UnFreezeSinglePlayerConversations
+    music = "CA_MUS02"
+    sky1 = "CABASKY", 0
+    nointermission
+    cluster = 434
+}
+
 map CADEV02 "Campo de pruebas de actores"
 {
     UnFreezeSinglePlayerConversations
@@ -425,3 +443,6 @@ DoomEdNums
     18130 = CaelumAmuletPickup
     18131 = CaelumSealPickup
 }
+
+// Referencia climática regional: args[0]=región 1..9, args[1]=hábitat.
+DoomEdNums { 30950 = CaelumClimateRegion }

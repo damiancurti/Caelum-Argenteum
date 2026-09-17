@@ -1,6 +1,6 @@
 // Registro del último traslado, transportado y serializado por el motor.
-// Las marcas temporales usan el reloj global; la duración de cada ruta y
-// sus eventos siguen pendientes de definición e integración posteriores.
+// Las rutas con distancia definida consultan un plan antes de confirmar.
+// Los eventos narrativos concretos aún requieren contenido autoral.
 class CaelumJourneyState : Inventory
 {
     const MODE_FOOT = 1;
@@ -15,6 +15,13 @@ class CaelumJourneyState : Inventory
     int Status;
     int Arrivals;
     int Interruptions;
+    double DistanceKm;
+    double WalkingKmh;
+    int WalkTics;
+    int SleepTics;
+    int FoodConsumed;
+    int WaterConsumed;
+    double ContainerLitersConsumed;
     bool HasDepartureTime;
     int DepartureDays;
     int DepartureDayTics;
@@ -89,11 +96,14 @@ class CaelumJourneyState : Inventory
     static void Report(CaelumPlayer user)
     {
         let journey = Get(user);
-        Console.Printf("[Caelum 4.35.0d] Viajes: registro=%d mapa=%s", journey != null, level.MapName);
+        Console.Printf("[Caelum 4.35.0n] Viajes: registro=%d mapa=%s", journey != null, level.MapName);
         if (journey == null) return;
         Console.Printf("Secuencia=%d conexión=%d modo=%d estado=%d llegadas=%d interrupciones=%d",
             journey.Sequence, journey.ConnectionId, journey.TravelMode, journey.Status,
             journey.Arrivals, journey.Interruptions);
+        Console.Printf("Distancia=%.3f km marcha=%.6f km/h caminar=%d dormir=%d tics comida=%d agua=%d recipientes=%.3f L",
+            journey.DistanceKm, journey.WalkingKmh, journey.WalkTics, journey.SleepTics,
+            journey.FoodConsumed, journey.WaterConsumed, journey.ContainerLitersConsumed);
         if (journey.HasDepartureTime)
             Console.Printf("Salida registrada: %s", CaelumWorldClock.FormatStamp(journey.DepartureDays, journey.DepartureDayTics, true));
         else Console.Printf("Salida sin marca temporal registrada.");
@@ -140,6 +150,17 @@ class CaelumTravelService : Object play
     {
         if ((travelMode != CaelumJourneyState.MODE_FOOT && travelMode != CaelumJourneyState.MODE_CARAVAN)
             || !CanDepart(user, id)) return false;
+        if (CaelumJourneyRules.DistanceKm(id) > 0) return CaelumJourneyPlan.Preview(user, id, travelMode);
+        CaelumJourneyPlan.Cancel(user);
+        return Commit(user, id, travelMode);
+    }
+
+    static bool Commit(CaelumPlayer user, int id, int travelMode, CaelumJourneyPlan plan = null)
+    {
+        if (!CanDepart(user, id)) return false;
+        // Las rutas medidas nunca admiten la antigua salida sin presupuesto.
+        if (CaelumJourneyRules.DistanceKm(id) > 0
+            && (plan == null || !plan.Open || plan.ConnectionId != id || plan.Available == null)) return false;
         let journey = CaelumJourneyState.Get(user, true);
         if (journey == null) return false;
         let record = user.GetPersistentCharacterState(false);
@@ -152,6 +173,22 @@ class CaelumTravelService : Object play
         journey.ConnectionId = id; journey.TravelMode = travelMode;
         journey.Status = CaelumJourneyState.STATUS_DEPARTED;
         journey.RecordDepartureTime(user);
+        journey.DistanceKm = CaelumJourneyRules.DistanceKm(id);
+        journey.WalkingKmh = plan == null ? 0 : plan.SpeedKmh;
+        journey.WalkTics = plan == null ? 0 : plan.Available.WalkTics;
+        journey.SleepTics = plan == null ? 0 : plan.Available.SleepTics;
+        journey.FoodConsumed = plan == null ? 0 : plan.Available.FoodSpent;
+        journey.WaterConsumed = plan == null ? 0 : plan.Available.WaterSpent;
+        journey.ContainerLitersConsumed = plan == null ? 0 : plan.Available.ContainerSpent;
+        if (plan != null) plan.Apply(user);
+        if (user.health <= 0)
+        {
+            journey.Status = CaelumJourneyState.STATUS_INTERRUPTED;
+            journey.Interruptions = Min(journey.Interruptions, 2147483646) + 1;
+            user.PersistCharacterState();
+            user.Die(user, user, 0, 'CaelumSurvival');
+            return true;
+        }
         record.WorldConnectionKnown[id] = true;
         record.WorldPendingConnection = id;
         user.PersistCharacterState();

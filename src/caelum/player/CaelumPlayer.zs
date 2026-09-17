@@ -2593,7 +2593,7 @@ class CaelumPlayer : DoomPlayer
     double GetPalomoMerchantProductUnitWeight(int merchantItem)
     {
         return GetPalomoMerchantConsumableType(merchantItem) >= 0
-            ? CaelumConstants.CONSUMABLE_RATION_WEIGHT
+            ? CaelumConsumableItem.UnitWeightForType(GetPalomoMerchantConsumableType(merchantItem))
             : CaelumConstants.MATERIAL_UNIT_WEIGHT;
     }
 
@@ -5417,12 +5417,7 @@ class CaelumPlayer : DoomPlayer
                 ? consumable.Amount : 0;
             double unitWeight = consumable != null
                 ? consumable.GetUnitWeight()
-                : (EquipmentSelectionConsumableType
-                        == CaelumConstants.CONSUMABLE_FOOD_RATION
-                    || EquipmentSelectionConsumableType
-                        == CaelumConstants.CONSUMABLE_WATER_RATION
-                    ? CaelumConstants.CONSUMABLE_RATION_WEIGHT
-                    : CaelumConstants.CONSUMABLE_POTION_WEIGHT);
+                : CaelumConsumableItem.UnitWeightForType(EquipmentSelectionConsumableType);
             EquipmentSelectionWeight = EquipmentSelectionStackAmount
                 * unitWeight;
             return;
@@ -14233,6 +14228,10 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void PlayerThink()
     {
+        let journeyPlan = CaelumJourneyPlan.Get(self);
+        bool choosingJourney = journeyPlan != null && journeyPlan.Open;
+        if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))
+        { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         // Usar termina la canalización antes de la interacción nativa. Así
@@ -14248,7 +14247,7 @@ class CaelumPlayer : DoomPlayer
             if (!channelPressed) CombatChannelInputLatched = false;
         }
         if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
-                || PalomoMerchantMenuOpen
+                || choosingJourney || PalomoMerchantMenuOpen
                 || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
             && player != null)
         {
@@ -17071,7 +17070,7 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
     }
 
-    void ApplyConsumableRegenerationPulse(int consumableType)
+    void ApplyConsumableRegenerationPulse(int consumableType, double foodRecovery = -1)
     {
         if (player == null || player.playerstate != PST_LIVE
             || DerivedStats == null)
@@ -17111,8 +17110,12 @@ class CaelumPlayer : DoomPlayer
                 break;
             case CaelumConstants.CONSUMABLE_FOOD_RATION:
             {
+                // El Powerup guarda la dosis al empezar; llamadas directas
+                // nuevas usan la misma referencia de masa que una ración.
+                if (foodRecovery < 0) foodRecovery = CaelumConstants.SURVIVAL_MAXIMUM
+                    * pulseRatio * CaelumConstants.RATION_REFERENCE_MASS / Max(1, DerivedStats.BaseMass);
                 double recovered=Min(CaelumConstants.SURVIVAL_MAXIMUM-CurrentHunger,
-                    CaelumConstants.SURVIVAL_MAXIMUM*pulseRatio);
+                    foodRecovery);
                 recovered=Max(0.0,recovered);
                 CurrentHunger+=recovered;
                 // Digestión: sólo el hambre efectivamente saciada tiene coste.

@@ -5,47 +5,63 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0k.** Apply this source patch over the complete
-**4.35.0j** project, merge its folders and rebuild with `run_dev.bat`.
-The author is still testing 0j; this release does not mark those tests accepted.
+**Current release: 4.35.0o.** Apply this source patch over the complete
+**4.35.0n** project, merge its folders and rebuild with `run_dev.bat`.
+The author has approved the food and maps in 0m; 0n and 0o await manual testing.
 
-The first local environment service now records air temperature (°C), relative
-humidity (%), wind speed/direction (km/h) and precipitation (mm/h). Open
-**Journal > World** to read the current location's conditions alongside its date.
-The campaign seed and sample survive save/load and travel. Both ordinary time
-and x105 rest/crafting use the same clock; returning to a map resolves its current
-weather directly. An undefined location reports no profile instead of keeping
-conditions from the previous map.
+Open **TAB > World > F / RT** for the campaign calendar. Arrows/D-pad select a
+day; PgUp/PgDn or LB/RB change month; H/Home returns to today; E/R or Y/X select
+an event; Enter/A opens its details; Escape/B goes back. P/RT in details pays
+outstanding rent or collects delivered cargo. The clock continues while reading.
+Only known events are shown; weather-debug dates do not move the campaign agenda.
 
-Initial profiles are provisional development values. Limbo stays at 20 °C/55%
-humidity; sewers/chambers use 16 °C/85% baselines, reservoir 15 °C/92% and service
-galleries 18 °C/75%. Underground profiles vary gently with local time and season,
-with no outdoor wind or precipitation. A temperate outdoor test profile supports
-wind and rain diagnostics without assigning outdoor weather to the sewer maps.
-These values are not historical meteorological data or approved regional balance.
+The saved registry supports one-off and recurring siege phases, NPC routines,
+quest deadlines, rents, material shipments, resource recovery and future notices.
+Normal time, Limbo's 1:1 clock, rest, x105 and confirmed travel use the same
+scheduler. Long journeys accumulate due periods without replaying missed AI.
+Rent uses explicit payment with existing coins and change. Cargo is removed
+from carried stock on dispatch and can be collected once at its destination.
+Failed collection keeps the entire shipment available for a later attempt.
 
-This patch publishes environmental state. Body/equipment temperature, heat/cold
-penalties and wetness belong to V5.1; weather particles, sound and lighting remain
-future audiovisual content. The 0j timing, meals, Use fixes, station dimensions
-and 1280-MU class area base remain in place.
+Harvested resources now catch up after their map was inactive and forecast
+full recovery in the calendar. Their existing **0.1% capacity per campaign day**
+rate is unchanged. Existing saves initialize a timestamp without retroactive gifts.
 
-Use `netevent ca_debug_weather_report` for the read-only **4.35.0k** report.
-Optional `netevent ca_debug_weather_sample PROFILE DAY_OFFSET HOUR` reads a test
-sample without changing campaign state. See **PRUEBAS_4_35_0k.txt** for installation,
-profile values and manual checks. The previous 0j test list remains available.
+Optional trials are documented in **PRUEBAS_4_35_0o.txt**. They do not assign
+campaign rents, resident routines or canonical siege battles. Full armies and
+battle consequences keep their existing V5 scope; maps can configure the timing
+adapters now. The 0n coastal distances, walking conversion, 16/8 travel schedule
+and provision quotation remain unchanged.
 
-The roadmap remains **V4 through 4.37 → external playtest export → V5**.
+**4.35 closure candidate:** implementation and native checks are complete;
+the author's acceptance of 0n/0o remains before moving to 4.36 physical hazards.
+`netevent ca_debug_events_report` identifies **4.35.0o**.
 
 ## Implemented
 
-- One persistent local weather service and serializable sample per character,
-  driven by campaign date/minute, location profile and a dedicated saved seed.
-- Shared ordinary/x105 integration, deterministic reconstruction after travel,
-  smooth six-hour fronts and explicit bounds for climate variables.
-- Local environmental readings in World; test calendar views and diagnostic
-  queries do not overwrite campaign climate. Uncatalogued maps have no profile.
-- Stable Limbo and damp underground trial profiles, plus an unassigned temperate
-  exterior profile for isolated wind/precipitation testing.
+- Monthly campaign calendar, event details and persistent recurring schedules.
+- Calendar transactions for real currency and material cargo, quest deadlines,
+  routine/siege phase adapters and off-map resource recovery.
+
+
+- Measured coastal routes, native walking-speed conversion and 16/8 travel days.
+- Read-only quotations, explicit confirmation, real provision consumption and
+  saved records; unfinished servings continue after arrival.
+- Camp needs/lucidity, carried sleeping bag, shortage/death projection, common
+  clock advancement and arrival weather without reseeding.
+
+
+- Mass-scaled food with saved serving doses, actual digestion and automatic meals.
+- Native port/shore test maps with four directed routes, covered dining refuges,
+  swimmable river volumes and the author's texture expansion.
+- Buenos Aires confirmed for the sewer/coastal network; seven-location Journal.
+
+- Persistent regional weather and position-dependent shelter, using the same
+  campaign clock at normal speed and x105; saved seeds prevent rerolling.
+- Nine attributed SMN station datasets, reusable offline generator, map region
+  marker and read-only regional queries. Unknown maps remain explicitly undefined.
+- Two visible native seats in each eastern bedroom, with safe saved-layout repair.
+- Unified volume-based water ration weight for inventory, Box and purchases.
 
 - Table serving height accounts for CorrectPixelStretch; saved displays adjust
   without recreating their real inventory items or changing the accepted designs.
@@ -161,7 +177,7 @@ The roadmap remains **V4 through 4.37 → external playtest export → V5**.
 - Separate saved campaign and diagnostic anchors share the same clock. World
   labels tests explicitly; normal calendar queries always return the campaign.
   The monthly southern seasonal labels remain a test convention. Local climate
-  uses separate provisional continuous cycles; body exposure and light changes
+  uses regional monthly observations and synthesized fronts; body exposure and light changes
   remain future work.
 - `netevent ca_debug_calendar_set YEAR MONTH DAY` assigns a test date;
   `ca_debug_calendar_edge` prepares midnight after 12 simulated real seconds
@@ -624,10 +640,10 @@ The roadmap remains **V4 through 4.37 → external playtest export → V5**.
 
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
-The initial local climate state and its normal/fast clock adapter are in 0k,
-using provisional profiles. Remaining before 4.36: scheduled events and timed
-travel, their clock integration and combined acceptance checks. Definitive
-regional climate values still need author design.
+The regional climate and shelter service builds on the accepted 0k adapter.
+Remaining before 4.36: manual acceptance of 0n/0o and fixes if needed.
+Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and
+subsequent maps; future regions can use the existing explicit map marker.
 The fast path does not simulate arbitrary AI, physics, doors or third-party
 Thinkers. Extending it outside designated safe areas requires those systems'
 explicit timing contracts. The 8-game-hour full Sleep recovery rate is confirmed.
@@ -664,21 +680,20 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover profile bounds, deterministic sampling,
-seasonal/daily cycles and front continuity, normal/x105 equivalence in Limbo and
-sewers, native save/load, actual sewer travel and an active 0j meal save. Journal
-screenshots cover 16:9 and 4:3 with the full known-location/connection lists.
-The author still needs to check Windows rendering/controls and accept the trial
-climate values using **PRUEBAS_4_35_0k.txt**. The ongoing 0j manual tests remain
-pending separately; no success is inferred from this patch being prepared.
+Native GZDoom 4.14.2/Linux checks exercise dates/recurrences, exact rent change,
+material escrow/collection, deadlines, resource recovery, x105 interruption,
+travel transitions and save/load. The monthly calendar and detail views have been inspected in the native renderer.
+These checks do not replace manual Windows acceptance. Follow
+**PRUEBAS_4_35_0o.txt**; 0n still awaits the author's tests. Previously accepted
+food, maps and 0j/0k behavior remain accepted.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **docs**, **README.md** and
-**PRUEBAS_4_35_0k.txt** into the complete **4.35.0j** project, replacing matching
+**PRUEBAS_4_35_0o.txt** into the complete **4.35.0n** project, replacing matching
 files and keeping everything else. Models are already generated. Rebuild the
 PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
-The diagnostic `netevent ca_debug_weather_report` must identify **4.35.0k**.
+The diagnostic `netevent ca_debug_events_report` must identify **4.35.0o**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

@@ -1618,3 +1618,287 @@ Sprite "RSDOB4", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/R
 Sprite "RSDOB6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB4.png", 0, 0 }
 Sprite "RSDOB7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB3.png", 0, 0 }
 Sprite "RSDOB8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/rest/domingo/RSDOB2.png", 0, 0 }
+
+// Caelum Argenteum - texture add-on, 2026-09-16
+// 4 image pixels per map unit; load after the base game.
+
+Texture "CVCI01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI01.png", 0, 0
+}
+
+Flat "CVCI01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI01.png", 0, 0
+}
+
+Texture "CVCI02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI02.png", 0, 0
+}
+
+Flat "CVCI02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI02.png", 0, 0
+}
+
+Texture "CVCI03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI03.png", 0, 0
+}
+
+Flat "CVCI03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI03.png", 0, 0
+}
+
+Texture "CVCI04", 512, 256
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI04.png", 0, 0
+}
+
+Texture "CVCI05", 256, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI05.png", 0, 0
+}
+
+Texture "CVCI06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI06.png", 0, 0
+}
+
+Flat "CVCI06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI06.png", 0, 0
+}
+
+Texture "CVPO01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO01.png", 0, 0
+}
+
+Flat "CVPO01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO01.png", 0, 0
+}
+
+Texture "CVPO02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO02.png", 0, 0
+}
+
+Flat "CVPO02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO02.png", 0, 0
+}
+
+Texture "CVPO03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO03.png", 0, 0
+}
+
+Flat "CVPO03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO03.png", 0, 0
+}
+
+Texture "CVPO04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO04.png", 0, 0
+}
+
+Flat "CVPO04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO04.png", 0, 0
+}
+
+Texture "CVPO05", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO05.png", 0, 0
+}
+
+Flat "CVPO05", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO05.png", 0, 0
+}
+
+Texture "CVPO06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO06.png", 0, 0
+}
+
+Flat "CVPO06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/puerto/CVPO06.png", 0, 0
+}
+
+Texture "CVPL01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL01.png", 0, 0
+}
+
+Flat "CVPL01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL01.png", 0, 0
+}
+
+Texture "CVPL02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL02.png", 0, 0
+}
+
+Flat "CVPL02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL02.png", 0, 0
+}
+
+Texture "CVPL03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL03.png", 0, 0
+}
+
+Flat "CVPL03", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL03.png", 0, 0
+}
+
+Texture "CVPL04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL04.png", 0, 0
+}
+
+Flat "CVPL04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL04.png", 0, 0
+}
+
+Texture "CVPL05", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL05.png", 0, 0
+}
+
+Flat "CVPL05", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL05.png", 0, 0
+}
+
+Texture "CVPL06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL06.png", 0, 0
+}
+
+Flat "CVPL06", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/playa/CVPL06.png", 0, 0
+}
+
+// Fondo gris neutro de los mapas costeros; no representa lluvia ni hora visual.
+Texture "CABASKY", 512, 512
+{
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI02.png", 0, 0
+    {
+        Blend "99 aa b0", 1.0
+    }
+}

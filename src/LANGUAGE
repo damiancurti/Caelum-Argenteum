@@ -3201,7 +3201,7 @@ CA_WORLD_KNOWN = "Known";
 CA_WORLD_TRAVERSED = "Travelled";
 CA_WORLD_DESTINATION = "Destination: %s";
 CA_WORLD_UNDISCOVERED = "Undiscovered";
-CA_WORLD_USE_EXIT = "Confirm the journey at the exit when you are ready.";
+CA_WORLD_USE_EXIT = "F / RT: calendar | Confirm the journey at the exit when you are ready.";
 CA_WORLD_ONE_WAY = "One-way journey. This connection has no return passage.";
 CA_WORLD_UNREGISTERED = "Unregistered location";
 CA_WORLD_UNKNOWN_CONNECTION = "Unknown connection";
@@ -3217,7 +3217,7 @@ CA_WORLD_KNOWN = "Conocida";
 CA_WORLD_TRAVERSED = "Recorrida";
 CA_WORLD_DESTINATION = "Destino: %s";
 CA_WORLD_UNDISCOVERED = "Por descubrir";
-CA_WORLD_USE_EXIT = "Confirma el viaje en la salida cuando estés preparado.";
+CA_WORLD_USE_EXIT = "F / RT: calendario | Confirma el viaje en la salida cuando estés preparado.";
 CA_WORLD_ONE_WAY = "Viaje de ida. Esta conexión no tiene paso de regreso.";
 CA_WORLD_UNREGISTERED = "Ubicación sin registrar";
 CA_WORLD_UNKNOWN_CONNECTION = "Conexión desconocida";
@@ -3266,11 +3266,11 @@ CA_SEWER_WORLD_HELP = "Acercate al portón y usá Usar. Cada alcantarilla conser
 
 [enu default]
 CA_CARAVAN_TITLE = "Caravan trial";
-CA_CARAVAN_OFFER = "Choose a destination or prepare an activity test. Seal preparation equips a T1 seal, refills adrenaline and resets its cooldown. Craft preparation supplies one handle recipe and enough wood for a x10 batch. Travel has no fare or simulated duration.";
+CA_CARAVAN_OFFER = "Choose a destination or prepare an activity test. Seal preparation equips a T1 seal, refills adrenaline and resets its cooldown. Craft preparation supplies one handle recipe and enough wood for a x10 batch. Coastal routes quote walking time and supplies before confirmation.";
 CA_CARAVAN_CANCEL = "Cancel";
 CA_CARAVAN_DEPART = "Confirm departure";
 CA_CARAVAN_BACK = "Back to destinations";
-CA_CARAVAN_WORLD_HELP = "C / Y: caravan | D / X: rest | Use: gates";
+CA_CARAVAN_WORLD_HELP = "F / RT: calendar | C / Y: caravan | D / X: rest";
 CA_JOURNEY_LAST = "Last journey #%d: %s | %s";
 CA_JOURNEY_DEPARTED = "departed";
 CA_JOURNEY_ARRIVED = "arrived";
@@ -3287,11 +3287,11 @@ CA_CARAVAN_CONFIRM_7 = "Destination: Awakening sewers. Depart now? No charge or 
 
 [es]
 CA_CARAVAN_TITLE = "Caravana de prueba";
-CA_CARAVAN_OFFER = "Elegí un destino o prepará una prueba. Sello: equipa quintaesencia T1, recarga adrenalina y quita la espera. Crafteo: enseña Mango y completa madera para un lote x10. El viaje no tiene tarifa ni duración simulada.";
+CA_CARAVAN_OFFER = "Elegí un destino o prepará una prueba. Sello: equipa quintaesencia T1, recarga adrenalina y quita la espera. Crafteo: enseña Mango y completa madera para un lote x10. Las rutas costeras muestran tiempo y provisiones antes de confirmar.";
 CA_CARAVAN_CANCEL = "Cancelar";
 CA_CARAVAN_DEPART = "Confirmar salida";
 CA_CARAVAN_BACK = "Volver a destinos";
-CA_CARAVAN_WORLD_HELP = "C / Y: caravana | D / X: descanso | Usar: accesos";
+CA_CARAVAN_WORLD_HELP = "F / RT: calendario | C / Y: caravana | D / X: descanso";
 CA_JOURNEY_LAST = "Último viaje #%d: %s | %s";
 CA_JOURNEY_DEPARTED = "salida";
 CA_JOURNEY_ARRIVED = "llegada";
@@ -3552,7 +3552,7 @@ CA_WORLD_CLOCK_LIMBO = "Tiempo registrado: %s | Limbo: 1 segundo real = 1 segund
 [enu default]
 CA_WEATHER_LOCAL = "Environment: %s | %.1f °C | Humidity: %.0f%%";
 CA_WEATHER_CAMPAIGN = "Campaign environment: %s | %.1f °C | Humidity: %.0f%%";
-CA_WEATHER_WIND_RAIN = "Wind: %s | Precipitation: %.1f mm/h";
+CA_WEATHER_WIND_RAIN = "Wind: %s | Precip.: %.1f mm/h | %s";
 CA_WEATHER_WIND_VALUE = "%.1f km/h from %s";
 CA_WEATHER_CALM = "calm";
 CA_WEATHER_LIMBO = "Limbo";
@@ -3573,7 +3573,7 @@ CA_WEATHER_NW = "NW";
 [es]
 CA_WEATHER_LOCAL = "Ambiente: %s | %.1f °C | Humedad: %.0f%%";
 CA_WEATHER_CAMPAIGN = "Ambiente de campaña: %s | %.1f °C | Humedad: %.0f%%";
-CA_WEATHER_WIND_RAIN = "Viento: %s | Precipitación: %.1f mm/h";
+CA_WEATHER_WIND_RAIN = "Viento: %s | Precip.: %.1f mm/h | %s";
 CA_WEATHER_WIND_VALUE = "%.1f km/h del %s";
 CA_WEATHER_CALM = "calma";
 CA_WEATHER_LIMBO = "Limbo";
@@ -3590,3 +3590,245 @@ CA_WEATHER_S = "S";
 CA_WEATHER_SW = "SO";
 CA_WEATHER_W = "O";
 CA_WEATHER_NW = "NO";
+
+// 4.35.0l: referencias regionales SMN y cobertura local.
+[enu default]
+CA_CLIMATE_REGION_1 = "B. Aires";
+CA_CLIMATE_REGION_2 = "Córdoba";
+CA_CLIMATE_REGION_3 = "San Rafael";
+CA_CLIMATE_REGION_4 = "Salta";
+CA_CLIMATE_REGION_5 = "Posadas";
+CA_CLIMATE_REGION_6 = "Trelew";
+CA_CLIMATE_REGION_7 = "Bariloche";
+CA_CLIMATE_REGION_8 = "La Quiaca";
+CA_CLIMATE_REGION_9 = "Río Gallegos";
+CA_CLIMATE_OPEN = "outdoors";
+CA_CLIMATE_CANOPY = "open shelter";
+CA_CLIMATE_INDOOR = "indoors";
+[es]
+CA_CLIMATE_REGION_1 = "B. Aires";
+CA_CLIMATE_REGION_2 = "Córdoba";
+CA_CLIMATE_REGION_3 = "San Rafael";
+CA_CLIMATE_REGION_4 = "Salta";
+CA_CLIMATE_REGION_5 = "Posadas";
+CA_CLIMATE_REGION_6 = "Trelew";
+CA_CLIMATE_REGION_7 = "Bariloche";
+CA_CLIMATE_REGION_8 = "La Quiaca";
+CA_CLIMATE_REGION_9 = "Río Gallegos";
+CA_CLIMATE_OPEN = "a cielo abierto";
+CA_CLIMATE_CANOPY = "techado abierto";
+CA_CLIMATE_INDOOR = "interior";
+
+[default]
+CA_MAP06_NAME = "Riverside port";
+CA_MAP07_NAME = "La Plata river shore";
+CA_CARAVAN_CONFIRM_8 = "Confirm travel to Riverside port.";
+CA_CARAVAN_CONFIRM_9 = "Confirm travel to Sewers: reservoir.";
+CA_CARAVAN_CONFIRM_10 = "Confirm travel to La Plata river shore.";
+CA_CARAVAN_CONFIRM_11 = "Confirm travel to Riverside port.";
+
+[es]
+CA_MAP06_NAME = "Puerto ribereño";
+CA_MAP07_NAME = "Costa del Plata";
+CA_CARAVAN_CONFIRM_8 = "Confirmar traslado a Puerto ribereño.";
+CA_CARAVAN_CONFIRM_9 = "Confirmar traslado a Alcantarillas: depósito.";
+CA_CARAVAN_CONFIRM_10 = "Confirmar traslado a Costa del Plata.";
+CA_CARAVAN_CONFIRM_11 = "Confirmar traslado a Puerto ribereño.";
+
+[default]
+CA_CARAVAN_COAST_OFFER = "Choose a destination. Coastal routes quote walking time and supplies before confirmation.";
+
+[es]
+CA_CARAVAN_COAST_OFFER = "Elegí un destino. Las rutas costeras muestran tiempo de marcha y provisiones antes de confirmar.";
+
+[default]
+CA_JOURNEY_BUSY = "Finish your current action and reach dry ground before travelling.";
+CA_JOURNEY_EFFECT = "Wait for active temporary effects to end before planning a journey.";
+CA_JOURNEY_PACE = "You cannot walk this route at your current pace (planning limit: 30 days of walking).";
+CA_JOURNEY_REVISED = "Your conditions changed. Review the updated plan and confirm again.";
+CA_JOURNEY_PLAN = "Journey plan";
+CA_JOURNEY_PACE_LINE = "%.0f km | Walking pace at departure: %.3f km/h";
+CA_JOURNEY_TIME_LINE = "Total duration: %s";
+CA_JOURNEY_REST_LINE = "Walking: %s | Sleep: %d h (16 h / 8 h)";
+CA_JOURNEY_STOCK_TITLE = "Rations: needed / carried / to consume";
+CA_JOURNEY_FOOD_LINE = "Food: %d / %d / %d";
+CA_JOURNEY_WATER_LINE = "Water without containers: %d / %d / %d";
+CA_JOURNEY_LITERS_LINE = "Also drinking %.3f L from containers (%.3f L carried).";
+CA_JOURNEY_BAG = "Camp: your sleeping bag. Supplies in the Box are excluded.";
+CA_JOURNEY_GROUND = "Camp: ground. Supplies in the Box are excluded.";
+CA_JOURNEY_END_LINE = "Arrival: Hunger %.0f%% | Thirst %.0f%% | Sleep %.0f%% | Health %.0f%%";
+CA_JOURNEY_FATAL = "DANGER: these conditions predict death after %s.";
+CA_JOURNEY_FOOT_NOTE = "Walking; the trial caravan has no vehicle or different speed.";
+CA_JOURNEY_CONFIRM = "Enter / A: travel | Esc / B: cancel";
+CA_JOURNEY_CONFIRM_FATAL = "Enter / A: accept lethal risk | Esc / B: cancel";
+
+[es]
+CA_JOURNEY_BUSY = "Terminá la acción actual y salí a suelo seco antes de viajar.";
+CA_JOURNEY_EFFECT = "Esperá a que terminen los efectos temporales activos antes de planear el viaje.";
+CA_JOURNEY_PACE = "No podés recorrer la ruta a este ritmo (límite: 30 días de marcha).";
+CA_JOURNEY_REVISED = "Tus condiciones cambiaron. Revisá los valores nuevos y volvé a confirmar.";
+CA_JOURNEY_PLAN = "Preparar viaje";
+CA_JOURNEY_PACE_LINE = "%.0f km | Marcha al salir: %.3f km/h";
+CA_JOURNEY_TIME_LINE = "Duración total: %s";
+CA_JOURNEY_REST_LINE = "Marcha: %s | Sueño: %d h (16 h / 8 h)";
+CA_JOURNEY_STOCK_TITLE = "Raciones: necesarias / llevás / a consumir";
+CA_JOURNEY_FOOD_LINE = "Comida: %d / %d / %d";
+CA_JOURNEY_WATER_LINE = "Agua sin recipientes: %d / %d / %d";
+CA_JOURNEY_LITERS_LINE = "Además: %.3f L de recipientes (llevás %.3f L).";
+CA_JOURNEY_BAG = "Campamento: tu bolsa de dormir. No se usa lo guardado en la Caja.";
+CA_JOURNEY_GROUND = "Campamento: suelo. No se usa lo guardado en la Caja.";
+CA_JOURNEY_END_LINE = "Llegada: Hambre %.0f%% | Sed %.0f%% | Sueño %.0f%% | Salud %.0f%%";
+CA_JOURNEY_FATAL = "PELIGRO: estas condiciones prevén la muerte tras %s.";
+CA_JOURNEY_FOOT_NOTE = "A pie; la caravana de prueba aún no tiene vehículo ni otra velocidad.";
+CA_JOURNEY_CONFIRM = "Enter / A: viajar | Esc / B: cancelar";
+CA_JOURNEY_CONFIRM_FATAL = "Enter / A: aceptar riesgo mortal | Esc / B: cancelar";
+
+// Agenda y eventos persistentes 4.35.0o.
+[default]
+CA_EVENT_SIEGE = "Siege";
+CA_EVENT_ROUTINE = "Routine";
+CA_EVENT_RENT = "Rent";
+CA_EVENT_SHIPMENT = "Shipment";
+CA_EVENT_REGROWTH = "Regrowth";
+CA_EVENT_QUEST = "Quest deadline";
+CA_EVENT_NOTICE = "Notice";
+CA_EVENT_UNPAID = "Payment due";
+CA_EVENT_CLAIMED = "Collected";
+CA_EVENT_READY = "Ready to collect";
+CA_EVENT_CANCELLED = "Cancelled";
+CA_EVENT_REPEATING = "Recurring";
+CA_EVENT_PLANNED = "Scheduled";
+CA_EVENT_RESOLVED = "Finished";
+CA_EVENT_OCCURRED = "Recorded";
+CA_EVENT_UPDATED = "Calendar: %d event series updated.";
+CA_EVENT_SIEGE_INTERRUPT = "An active siege interrupts rest and prevents time acceleration.";
+CA_EVENT_ACTION_OK = "Calendar transaction completed.";
+CA_EVENT_ACTION_FAILED = "Cannot complete this now. Check the amount, destination, capacity and whether you are busy.";
+CA_EVENT_CARGO_TITLE = "Material shipment";
+CA_EVENT_RESOURCE_TITLE = "Resource fully restored";
+CA_AGENDA_TITLE = "Campaign calendar";
+CA_AGENDA_EMPTY = "No known events on this day.";
+CA_AGENDA_LEGEND = "Cyan: today | [ ]: selected | +N: known event series";
+CA_AGENDA_HELP = "Arrows: day | PgUp/PgDn: month | H: today";
+CA_AGENDA_HELP2 = "E/R: event | Enter: detail | Esc: World | Tab: close";
+CA_AGENDA_FIRST = "First date: %s";
+CA_AGENDA_NEXT = "Next date: %s";
+CA_AGENDA_REPEAT = "Interval: %d minutes (0 = once) | Occurrences: %d";
+CA_AGENDA_NOTICE_INFO = "Known campaign notice. Dates follow the campaign clock.";
+CA_AGENDA_RENT_INFO = "Each period: %d copper. Outstanding: %.0f copper. Payment is manual and uses existing coins and change.";
+CA_AGENDA_CARGO_INFO = "%d units of %s, tier %d. From %s to %s. Collect at the destination after delivery; inventory capacity is required.";
+CA_AGENDA_RESOURCE_INFO = "%s. Estimated full recovery of an extracted resource. Further extraction updates this date. Growth also counts time spent on other maps.";
+CA_AGENDA_ROUTINE_INFO = "The assigned NPC follows the latest scheduled phase when its map is active. Missed routines are not replayed.";
+CA_AGENDA_SIEGE_INFO = "Scheduled siege phase. An active siege interrupts accelerated rest here. The battle content is configured separately.";
+CA_AGENDA_QUEST_INFO = "The linked active quest fails at the deadline if its objectives are incomplete. Completed objectives keep their reward claim.";
+CA_AGENDA_TRIAL = "Optional trial event; not campaign canon.";
+CA_AGENDA_PAY = "P / RT: pay outstanding rent";
+CA_AGENDA_COLLECT = "P / RT: collect cargo";
+CA_AGENDA_NO_ACTION = "This event requires no inventory transaction.";
+CA_AGENDA_DETAIL_HELP = "E/R: event | Enter / Esc: month | Tab: close";
+CA_EVENT_WORKER_NAME = "Trial worker";
+CA_EVENT_WORKER_REST = "My schedule says it is time to rest.";
+CA_EVENT_WORKER_WORK = "My schedule says it is time to work.";
+CA_EVENT_TRIAL_ROOM = "Find an open area to place the trial worker.";
+CA_EVENT_TRIAL_WORK = "Trial: work shift";
+CA_EVENT_TRIAL_REST = "Trial: rest shift";
+CA_EVENT_TRIAL_SIEGE_START = "Trial: siege begins";
+CA_EVENT_TRIAL_SIEGE_END = "Trial: siege ends";
+CA_EVENT_TRIAL_RENT = "Trial: rent due";
+CA_EVENT_TRIAL_ENABLED = "Trial scheduled: work +1m, rest +6m, siege +4 to +10m; rent 1 copper at +8, +20 and +32m. TAB > World > F.";
+CA_EVENT_CARGO_FAILED = "Dispatch requires 100 unboxed wood units, outside Limbo and with no active task.";
+CA_EVENT_CARGO_SENT = "100 wood units dispatched to %s. Delivery in 30 campaign minutes.";
+CA_MONTH_01 = "January";
+CA_MONTH_02 = "February";
+CA_MONTH_03 = "March";
+CA_MONTH_04 = "April";
+CA_MONTH_05 = "May";
+CA_MONTH_06 = "June";
+CA_MONTH_07 = "July";
+CA_MONTH_08 = "August";
+CA_MONTH_09 = "September";
+CA_MONTH_10 = "October";
+CA_MONTH_11 = "November";
+CA_MONTH_12 = "December";
+CA_WEEK_0 = "Mo";
+CA_WEEK_1 = "Tu";
+CA_WEEK_2 = "We";
+CA_WEEK_3 = "Th";
+CA_WEEK_4 = "Fr";
+CA_WEEK_5 = "Sa";
+CA_WEEK_6 = "Su";
+
+// Agenda y eventos persistentes 4.35.0o.
+[es]
+CA_EVENT_SIEGE = "Asedio";
+CA_EVENT_ROUTINE = "Rutina";
+CA_EVENT_RENT = "Alquiler";
+CA_EVENT_SHIPMENT = "Envío";
+CA_EVENT_REGROWTH = "Recuperación";
+CA_EVENT_QUEST = "Plazo de misión";
+CA_EVENT_NOTICE = "Aviso";
+CA_EVENT_UNPAID = "Pago pendiente";
+CA_EVENT_CLAIMED = "Retirado";
+CA_EVENT_READY = "Listo para retirar";
+CA_EVENT_CANCELLED = "Cancelado";
+CA_EVENT_REPEATING = "Recurrente";
+CA_EVENT_PLANNED = "Programado";
+CA_EVENT_RESOLVED = "Finalizado";
+CA_EVENT_OCCURRED = "Registrado";
+CA_EVENT_UPDATED = "Calendario: %d series de eventos actualizadas.";
+CA_EVENT_SIEGE_INTERRUPT = "Un asedio activo interrumpe el descanso e impide acelerar el tiempo.";
+CA_EVENT_ACTION_OK = "Operación del calendario completada.";
+CA_EVENT_ACTION_FAILED = "No se puede completar ahora. Revisá el importe, el destino, la capacidad y si estás ocupado.";
+CA_EVENT_CARGO_TITLE = "Envío de materiales";
+CA_EVENT_RESOURCE_TITLE = "Recurso recuperado al máximo";
+CA_AGENDA_TITLE = "Calendario de campaña";
+CA_AGENDA_EMPTY = "No hay eventos conocidos para este día.";
+CA_AGENDA_LEGEND = "Cian: hoy | [ ]: selección | +N: series de eventos conocidas";
+CA_AGENDA_HELP = "Flechas: día | RePág/AvPág: mes | H: hoy";
+CA_AGENDA_HELP2 = "E/R: evento | Enter: detalle | Esc: Mundo | Tab: cerrar";
+CA_AGENDA_FIRST = "Primera fecha: %s";
+CA_AGENDA_NEXT = "Próxima fecha: %s";
+CA_AGENDA_REPEAT = "Intervalo: %d minutos (0 = único) | Ocurrencias: %d";
+CA_AGENDA_NOTICE_INFO = "Aviso conocido de la campaña. Las fechas siguen el reloj de la campaña.";
+CA_AGENDA_RENT_INFO = "Cada período: %d cobres. Deuda: %.0f cobres. El pago es manual y usa las monedas y el cambio existentes.";
+CA_AGENDA_CARGO_INFO = "%d unidades de %s, nivel %d. De %s a %s. Retirá en destino después de la entrega; requiere espacio en el inventario.";
+CA_AGENDA_RESOURCE_INFO = "%s. Recuperación completa prevista de un recurso extraído. Una nueva extracción actualiza esta fecha. También crece durante la ausencia del mapa.";
+CA_AGENDA_ROUTINE_INFO = "El NPC asignado sigue la última fase programada al estar activo su mapa. No repite las rutinas que quedaron atrás.";
+CA_AGENDA_SIEGE_INFO = "Fase programada de asedio. Un asedio activo interrumpe el descanso acelerado aquí. El contenido de la batalla se configura por separado.";
+CA_AGENDA_QUEST_INFO = "La misión activa vinculada falla al vencer si sus objetivos están incompletos. Los objetivos completos conservan el cobro de su recompensa.";
+CA_AGENDA_TRIAL = "Evento de ensayo opcional; no es un contrato de la campaña.";
+CA_AGENDA_PAY = "P / RT: pagar deuda de alquiler";
+CA_AGENDA_COLLECT = "P / RT: retirar carga";
+CA_AGENDA_NO_ACTION = "Este evento no requiere una operación de inventario.";
+CA_AGENDA_DETAIL_HELP = "E/R: evento | Enter / Esc: mes | Tab: cerrar";
+CA_EVENT_WORKER_NAME = "Encargado de ensayo";
+CA_EVENT_WORKER_REST = "Mi horario indica que es momento de descansar.";
+CA_EVENT_WORKER_WORK = "Mi horario indica que es momento de trabajar.";
+CA_EVENT_TRIAL_ROOM = "Buscá un lugar despejado para colocar al encargado de ensayo.";
+CA_EVENT_TRIAL_WORK = "Ensayo: turno de trabajo";
+CA_EVENT_TRIAL_REST = "Ensayo: turno de descanso";
+CA_EVENT_TRIAL_SIEGE_START = "Ensayo: comienza el asedio";
+CA_EVENT_TRIAL_SIEGE_END = "Ensayo: termina el asedio";
+CA_EVENT_TRIAL_RENT = "Ensayo: vence el alquiler";
+CA_EVENT_TRIAL_ENABLED = "Ensayo programado: trabajo +1m, descanso +6m, asedio +4 a +10m; alquiler de 1 cobre a +8, +20 y +32m. TAB > Mundo > F.";
+CA_EVENT_CARGO_FAILED = "El envío requiere 100 unidades de madera fuera de la caja, fuera del Limbo y sin tareas activas.";
+CA_EVENT_CARGO_SENT = "100 unidades de madera despachadas a %s. Entrega en 30 minutos de campaña.";
+CA_MONTH_01 = "Enero";
+CA_MONTH_02 = "Febrero";
+CA_MONTH_03 = "Marzo";
+CA_MONTH_04 = "Abril";
+CA_MONTH_05 = "Mayo";
+CA_MONTH_06 = "Junio";
+CA_MONTH_07 = "Julio";
+CA_MONTH_08 = "Agosto";
+CA_MONTH_09 = "Septiembre";
+CA_MONTH_10 = "Octubre";
+CA_MONTH_11 = "Noviembre";
+CA_MONTH_12 = "Diciembre";
+CA_WEEK_0 = "Lu";
+CA_WEEK_1 = "Ma";
+CA_WEEK_2 = "Mi";
+CA_WEEK_3 = "Ju";
+CA_WEEK_4 = "Vi";
+CA_WEEK_5 = "Sá";
+CA_WEEK_6 = "Do";

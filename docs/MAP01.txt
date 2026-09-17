@@ -1,29 +1,78 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0k — 2026-09-16.
+Versión documental: 4.35.0o — 2026-09-17.
 
-4.35.0k — PERFIL AMBIENTAL DEL LIMBO
+4.35.0o — CALENDARIO Y EVENTOS
 
-El autor prueba 0j mientras se prepara el bloque siguiente; no se da por
-aprobada esa versión. MAP01 conserva su reloj 1:1 y el diálogo de Palomo.
-Se añade un perfil ambiental estable provisional: 20 °C, humedad relativa 55%,
-viento 0 km/h y precipitación 0 mm/h. Tener calendario no asigna al Limbo las
-estaciones terrestres. Es un perfil para toda esta ubicación, sin microzonas
-interiores/exteriores ni efecto sobre el personaje en este incremento.
+El calendario de campaña también puede consultarse desde la mansión y sigue
+el tiempo 1:1 del Limbo. No añade alquileres, horarios o asedios a sus habitantes.
+Los ensayos de eventos/carga se activan únicamente en mapas exteriores.
+Los eventos definidos por el autor abarcan asedios, rutinas/misiones secundarias,
+alquileres, cargas de mercancías, recuperación de vetas y extensiones futuras.
+La agenda muestra sólo las fechas conocidas por el personaje.
+0n y 0o siguen pendientes de aceptación manual. Tras ella, 4.35 puede cerrarse
+y continuar con peligros físicos en 4.36, conservando el roadmap acordado.
 
-Diario > Mundo muestra el ambiente local bajo la fecha. Si se consulta otra
-fecha con el depurador, se identifica «Ambiente de campaña»; esa prueba no
-reescribe el estado real. Una partida 0j recibe el registro ambiental sin
-reiniciar la fecha, tareas, raciones, sueño, muebles ni progreso narrativo.
+4.35.0n — DISTANCIAS Y VIAJE
 
-En MAP02/MAP04 se usa perfil subterráneo base 16 °C/85%, MAP03 reservorio
-15 °C/92% y MAP05 mantenimiento 18 °C/75%, con variaciones suaves de ensayo.
-Los viajes entre esos mapas conservan semilla y calculan la muestra del destino
-para la fecha actual. No se agrega ruta de regreso al Limbo ni se cambian
-diálogos, puertas, geometría, posiciones, pruebas o recompensas de MAP01.
+El autor aprueba las raciones de alimento y los mapas de 0m. Define 10 km
+entre el depósito de alcantarillas y el puerto, y 500 km del puerto a la playa,
+con regreso simétrico. Los accesos presentan duración y provisiones antes de
+confirmar. La marcha usa el paso actual del personaje y el ciclo 16 h / 8 h.
+La caravana diagnóstica sigue a pie hasta definir un vehículo de campaña.
 
-PRUEBAS_4_35_0k.txt distingue los controles de este incremento de las pruebas
-pendientes de 0j. Clima corporal permanece en V5.1; el siguiente bloque de
-4.35 corresponde a eventos y viajes temporizados.
+Esto no cambia el retorno al Limbo, sus diálogos, hitos ni recompensas.
+«Eventos programados» describe sucesos con fecha/hora: salida, cita, vencimiento.
+Se requiere definir los sucesos concretos antes de añadirlos al contenido;
+los ejemplos no dan por escritas nuevas misiones o citas de los residentes.
+
+4.35.0m — BUENOS AIRES CONFIRMADA Y SALIDA RIBEREÑA
+
+El autor confirma que las alcantarillas y los próximos mapas pertenecen a
+Buenos Aires. La referencia climática deja de ser provisional. La mansión
+continúa en el Limbo y conserva su reloj 1:1 y ambiente sobrenatural.
+
+Al norte del depósito MAP03 hay un acceso a MAP06, Puerto ribereño. Desde el
+norte del paseo del puerto se llega a MAP07, Costa del Plata. Ambas rutas tienen
+regreso y servicio de caravana de diagnóstico. No vuelven a abrir el retorno al
+Limbo ni añaden hitos, recompensas o diálogos de la misión MAIN_M00.
+
+Los nuevos espacios son ensayos jugables de ribera, no localizaciones históricas
+precisas: puerto con depósito/oficina/muelles y costa arenosa con refugio. Cada
+refugio contiene una mesa pequeña y dos sillas. La cobertura física modifica
+el ambiente local; el río no está marcado como agua potable.
+
+Comer aplica la misma referencia de masa corporal que beber: 10 puntos para
+M base de 80 kg y 800/masa en otros cuerpos. Se conserva Sueño perdido por
+Hambre realmente recuperada / 4 y las sesiones de comida ya comenzadas.
+
+Las correcciones de camas/sillas de 0l permanecen pendientes de aceptación
+manual del autor. El cierre de 4.35 requiere todavía eventos, duración de
+viajes e integración temporal; Tarot/Trucazo queda en 4.37 como estaba previsto.
+
+4.35.0l — DOS SILLAS Y REFERENCIAS DE AMBIENTE
+
+El autor confirma 0j y 0k correctos. La observación de 0i sobre Ronnie/Argento
+se reproduce: una silla quedaba detrás de la pared aunque compartía altura
+de piso. Mesas 102/104 pasan a (1072, ±480, 136), ángulo 0°, con sillas en
+(988, ±480, 136) y (1156, ±480, 136). Camas siguen (944, ±392, 136).
+Ambas plazas se ven y aceptan descanso; no se cambia la geometría de MAP01.
+La mudanza usa los actores existentes, preserva objetos y espera al levantarse
+si hay una sesión activa. Se recuperan referencias de silla ausentes.
+
+La ración de agua pasa a 0,16 L y 0,16 kg: diez puntos de Sed para cuerpo M
+base de 80 kg. La recuperación sigue escalando con masa, incluyendo al perfil
+debug de 100 kg, que recibe ocho puntos. Sentado tarda diez veces más, con
+igual número de raciones y sin perder recuperación.
+
+El ambiente sobrenatural del Limbo permanece en 20 °C y 55% HR, sin lluvia
+ni viento. Reloj 1:1, Palomo, diálogos, estaciones, objetivos y recompensas
+aprobados conservan sus reglas. No se le asigna clima terrestre por tener fecha.
+
+MAP02–05 incorporan la referencia moderna de Buenos Aires Observatorio y su
+microclima subterráneo. La ubicación en Buenos Aires queda confirmada por el
+autor en 0m. Las otras ocho referencias quedan disponibles
+para futuras regiones mediante marcador; ver SYSTEMS.md y fuente SMN en ASSETS.
+PRUEBAS_4_35_0l.txt contiene comprobaciones manuales de esta entrega.
 
 4.35.0j — RELOJ LOCAL, INTERACCIONES Y PUESTOS
 

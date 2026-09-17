@@ -6,6 +6,9 @@ class CaelumEnvironmentProp : CaelumMovableProp
     bool ResourceStateInitialized;
     double ResourceRemainingUnits;
     double ResourceYieldCarry;
+    bool ResourceClockInitialized;
+    double ResourceClockStamp;
+    int ResourceCalendarId;
 
     virtual bool IsEnvironmentMovable() { return false; }
     virtual bool IsNaturalResource() { return false; }
@@ -92,6 +95,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
     )
     {
         EnsureResourceState();
+        SyncResourceClock();
         if (!IsNaturalResource()
             || extractor == null
             || damageKind != GetRequiredHarvestDamageType()
@@ -125,6 +129,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
         }
         ResourceRemainingUnits -= removed;
         ResourceYieldCarry = combined - wholeUnits;
+        ScheduleResourceRecovery(user);
         return removed;
     }
 
@@ -134,26 +139,60 @@ class CaelumEnvironmentProp : CaelumMovableProp
         EnsureResourceState();
     }
 
+    CaelumPlayer ResourceTraveler()
+    {
+        CaelumPlayer user; int count = 0;
+        for (int i = 0; i < MAXPLAYERS; i++) if (playeringame[i]) { count++; user = CaelumPlayer(players[i].mo); }
+        return count == 1 && user != null && user.CharacterCreationComplete ? user : null;
+    }
+
+    void SyncResourceClock()
+    {
+        if (!IsNaturalResource()) return;
+        let user = ResourceTraveler(); if (user == null) return;
+        let clock = CaelumWorldClock.Get(user); if (clock == null) return;
+        double now = double(clock.CompletedDays) * CaelumWorldClock.TicsPerDay() + clock.DayTics;
+        // Migración: no inventar el tiempo ausente de una veta antigua.
+        if (!ResourceClockInitialized)
+        { ResourceClockInitialized = true; ResourceClockStamp = now; return; }
+        double elapsed = Max(0.0, now - ResourceClockStamp); ResourceClockStamp = now;
+        double capacity = GetResourceCapacityUnits();
+        ResourceRemainingUnits = Min(capacity, ResourceRemainingUnits + elapsed * capacity
+            * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY / CaelumWorldClock.TicsPerDay());
+    }
+
+    void ScheduleResourceRecovery(CaelumPlayer user)
+    {
+        if (user == null || !IsNaturalResource()) return;
+        double now = CaelumScheduleState.Now(user);
+        double capacity = GetResourceCapacityUnits();
+        double rate = capacity * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY / CaelumWorldClock.TicsPerDay();
+        if (now < 0 || rate <= 0 || ResourceRemainingUnits >= capacity) return;
+        let agenda = CaelumScheduleState.Get(user, true);
+        let entry = ResourceCalendarId > 0 ? agenda.FindId(ResourceCalendarId) : null;
+        double due = now + Ceil((capacity - ResourceRemainingUnits) / rate);
+        int day = int(Floor(due / CaelumWorldClock.TicsPerDay()));
+        int tic = int(due - double(day) * CaelumWorldClock.TicsPerDay());
+        if (!CaelumScheduleRules.ValidDate(day, tic)) return;
+        if (entry == null)
+        {
+            String keyText = String.Format("resource:%d", agenda.NextId + 1);
+            entry = agenda.Add(keyText, CaelumScheduleRules.REGROWTH, "CA_EVENT_RESOURCE_TITLE", level.MapName, day, tic);
+            if (entry == null) return;
+            ResourceCalendarId = entry.EventId;
+        }
+        // Una sola entrada por nodo: extraer de nuevo recalcula su finalización.
+        // No añade una notificación ni un registro por cada golpe.
+        entry.DueDay = day; entry.DueTic = tic; entry.Processed = 0; entry.Cancelled = false;
+        entry.Value = GetResourceMaterialType(); agenda.Changed();
+    }
+
     override void Tick()
     {
         Super.Tick();
-        if (!IsNaturalResource()) { return; }
+        if (!IsNaturalResource() || (level.time + Mass) % TICRATE != 0) return;
         EnsureResourceState();
-        double capacity = GetResourceCapacityUnits();
-        if (ResourceRemainingUnits >= capacity
-            || (level.time + Mass) % TICRATE != 0)
-        {
-            return;
-        }
-        // Se actualiza una vez por segundo y se escalona por masa para
-        // evitar que una arboleda completa haga trabajo el mismo tic.
-        double recoveryPerUpdate = capacity
-            * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY
-            / (CaelumConstants.GAME_HOURS_PER_DAY
-                * CaelumWorldClock.SecondsPerGameHour(level.MapName));
-        ResourceRemainingUnits = Min(
-            capacity, ResourceRemainingUnits + recoveryPerUpdate
-        );
+        SyncResourceClock();
     }
 
     override double GetRequiredPhysicalPower()

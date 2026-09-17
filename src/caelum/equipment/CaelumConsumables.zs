@@ -36,16 +36,18 @@ class CaelumConsumableItem : PowerupGiver
         }
     }
 
-    virtual double GetUnitWeight()
+    static double UnitWeightForType(int consumableType)
     {
-        int consumableType = GetConsumableType();
-        if (consumableType == CaelumConstants.CONSUMABLE_FOOD_RATION
-            || consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
+        if (consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
+            return CaelumConstants.WATER_RATION_LITERS;
+        if (consumableType == CaelumConstants.CONSUMABLE_FOOD_RATION)
         {
             return CaelumConstants.CONSUMABLE_RATION_WEIGHT;
         }
         return CaelumConstants.CONSUMABLE_POTION_WEIGHT;
     }
+
+    virtual double GetUnitWeight() { return UnitWeightForType(GetConsumableType()); }
 
     double GetCarriedWeight()
     {
@@ -77,11 +79,20 @@ class CaelumConsumableItem : PowerupGiver
                     CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * TICRATE;
                 power.PulseTics = 0;
                 power.SeatedMealSubTics = 0;
+                if (GetConsumableType() == CaelumConstants.CONSUMABLE_FOOD_RATION)
+                {
+                    let user = CaelumPlayer(Owner);
+                    if (user != null && user.DerivedStats != null)
+                        power.FoodRecoveryPerPulse = CaelumConstants.SURVIVAL_MAXIMUM
+                            * CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND
+                            * CaelumConstants.RATION_REFERENCE_MASS / Max(1, user.DerivedStats.BaseMass);
+                }
                 if (GetConsumableType() == CaelumConstants.CONSUMABLE_WATER_RATION)
                 {
                     let user = CaelumPlayer(Owner);
                     if (user != null && user.DerivedStats != null)
-                        power.WaterRecoveryPerPulse = 50.0 / Max(1, user.DerivedStats.BaseMass);
+                        power.WaterRecoveryPerPulse = CaelumConstants.WATER_RATION_LITERS
+                            * 500.0 / Max(1, user.DerivedStats.BaseMass);
                 }
             }
         }
@@ -113,12 +124,14 @@ class CaelumConsumableItem : PowerupGiver
 }
 
 // Un pulso se aplica cada TICRATE, no como una fraccion truncada cada tic.
-// Asi se respetan exactamente diez aplicaciones del 1% durante diez segundos.
+// Diez pulsos por porción; comida y agua fijan su dosis al comenzar a usarlas.
 class CaelumRegenerationPower : Powerup
 {
     int PulseTics;
     int SeatedMealSubTics;
     double WaterRecoveryPerPulse;
+    // Cero en guardados anteriores: conserva sus pulsos históricos de 1 punto.
+    double FoodRecoveryPerPulse;
 
     Default
     {
@@ -158,9 +171,8 @@ class CaelumRegenerationPower : Powerup
                 caelumPlayer.UpdateSurvivalStates();
                 return;
             }
-            caelumPlayer.ApplyConsumableRegenerationPulse(
-                GetRegenerationType()
-            );
+            caelumPlayer.ApplyConsumableRegenerationPulse(GetRegenerationType(),
+                FoodRecoveryPerPulse > 0 ? FoodRecoveryPerPulse : 1.0);
         }
     }
 }

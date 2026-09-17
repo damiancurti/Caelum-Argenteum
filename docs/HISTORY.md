@@ -1,6 +1,75 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0k — 2026-09-16.
+Versión documental: 4.35.0o — 2026-09-17.
+
+## 4.35.0o — calendario mensual y eventos (2026-09-17)
+
+- El autor define las categorías de eventos y pide marcas en un calendario.
+- Agenda persistente con eventos únicos/recurrentes, claves estables, estados,
+  ocultación, cancelación y resolución aritmética al avanzar el reloj.
+- Vista mensual y detalle en TAB/Mundo/F, con intervalos, próxima fecha y acciones.
+- Adaptadores de rutina, fases de asedio, vencimiento de misiones, alquileres con
+  deuda/pago y mercancías retiradas/entregadas desde inventario real.
+- Recuperación de nodos enlazada al mismo reloj, incluso en mapas ausentes;
+  se mantiene el ritmo previo de 0,1 % de capacidad por día.
+- Ensayo voluntario con encargado aparte; sin horarios ni precios canónicos.
+- Pruebas nativas de calendario, transacciones, recurrencias y aceleración;
+  se documentan viajes y guardados en PRUEBAS_4_35_0o.txt.
+- Candidata a cierre de 4.35; 0n y 0o pendientes de prueba/aceptación del autor.
+  Batallas completas y ampliación de campaña conservan su bloque V5.
+
+## 4.35.0n — viajes, descanso y provisiones (2026-09-17)
+
+- El autor aprueba comida y mapas de 0m y define rutas bidireccionales de
+  10 km (alcantarillas/puerto) y 500 km (puerto/playa).
+- Conversión de marcha sostenida nativa a km/h con 32 MU/m; ritmo de partida,
+  16 h de marcha / 8 h de sueño, sin noche adicional después de llegar.
+- Presupuesto visible de tiempo y suministros, confirmación/cancelación y
+  revalidación tras cambios o carga de partida. Caravana diagnóstica aún a pie.
+- Consumo real limitado a inventario personal y litros de recipientes;
+  masa, digestión, necesidades, regeneración, sueño/lucidez y bolsa propia.
+- Intervalo único del reloj, llegada/clima persistentes y conservación de
+  porciones incompletas. Faltantes y muerte prevista visibles antes de aceptar.
+- Pruebas nativas Linux/GZDoom 4.14.2 y captura de UI; aceptación Windows de 0n
+  pendiente. PRUEBAS_4_35_0n.txt contiene instalación y resultados concretos.
+- Los eventos programados se explican como hechos con fecha/hora; falta su
+  contenido y resolución persistente. No se inventan misiones ni horarios.
+
+## 4.35.0m — comida por masa, puerto y costa (2026-09-17)
+
+- El autor confirma Buenos Aires para alcantarillas y mapas siguientes, aporta
+  texturas y pide extender a comida la regla de masa del agua.
+- Hambre y Sed por ración = 800/masa; cuerpo M base de 80 kg recibe 10 puntos.
+  Comida conserva peso, pulsos, ritmo sentado, repetición y digestión real.
+- Dosis de comida serializada al inicio; efectos antiguos activos continúan
+  con su pulso anterior. La nueva regla comienza en la siguiente porción.
+- 18 materiales del autor, sin modificar PNG; MAP06 puerto y MAP07 costa
+  ribereña, conectados MAP03 ↔ MAP06 ↔ MAP07 por Use y caravana de ensayo.
+- Volúmenes de techo/agua nativos, dos refugios con mesa de dos sillas,
+  clima de Buenos Aires en superficie y zonas de descanso seguro para T.
+- Migración de acceso MAP03 guardado, IDs previos preservados, Diario con
+  espacio para siete visitas. Generador de mapas y procedencia de arte incluidos.
+- Pruebas GZDoom 4.14.2/Linux y revisión visual descritas en PRUEBAS_4_35_0m.txt.
+  Aceptación de 0l/0m en Windows pendiente; 0j/0k continúan aprobados.
+- No cierra 4.35: viajes con duración, eventos programados e integración/aceptación
+  conjunta siguen pendientes. Más mapas no son una condición de cierre.
+
+## 4.35.0l — regiones climáticas, agua y sillas (2026-09-17)
+
+- El autor aprueba 0j/0k; de 0i señala una silla ausente en Ronnie/Argento.
+- Reproducción: segunda silla detrás de una pared, en otro sector con FloorZ
+  coincidente. Mesas giradas/reubicadas; migración conserva ocupación y objetos.
+- Agua: 0,16 L/kg para recuperar diez puntos de Sed en cuerpo M base de 80 kg;
+  conservación de escala por masa, tiempo sentado y cantidades consumidas.
+- Normales mensuales SMN 1991–2020 para nueve referencias argentinas, con viento
+  2011–2020. Fuente, unidades, páginas, JSON y generador incluidos en assets.
+- Ciclo por fecha/hora, frentes, nubosidad, lluvia y viento reproducibles;
+  techo real/pisos 3D, interior y subsuelo ajustan el ambiente local.
+- Región de ensayo para MAP02–05: Buenos Aires, pendiente de geografía canónica.
+  El Limbo mantiene 20 °C/55%, sin viento/precipitación, con reloj 1:1.
+- Diario muestra región/cobertura; diagnóstico regional de sólo lectura.
+- Verificación nativa y pruebas manuales detalladas en PRUEBAS_4_35_0l.txt.
+  No se declara aprobada por el autor esta entrega ni se cierra 4.35.
 
 ## 4.35.0k — estado climático local y consulta (2026-09-16)
 

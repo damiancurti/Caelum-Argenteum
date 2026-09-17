@@ -1,6 +1,77 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0k — 2026-09-16.
+Versión documental: 4.35.0o — 2026-09-17.
+
+## 4.35.0o — calendario mensual
+
+Reutiliza paneles y tipografías originales del Diario. El encargado de ensayo
+reutiliza el sprite de Ronnie como actor separado; no reemplaza al residente.
+No se incluyen arte generado, mapas nuevos, IWAD, binarios ni recursos de Doom.
+Las capturas de validación son intermedias y no se empaquetan con las fuentes.
+
+## 4.35.0n — presupuesto de viaje
+
+La confirmación reutiliza paneles y fuentes originales. No añade arte, mapas,
+sonidos ni dependencias; los mapas y texturas de 0m están aprobados por el autor.
+Las distancias se asignan a conexiones del catálogo; no se estira la geometría.
+La captura nativa de la previsión comprueba lectura de ruta, paso, jornada,
+provisiones, reservas finales y botones en 1024×768.
+
+## 4.35.0m — materiales del autor y mapas ribereños
+
+Entrada: Caelum_Texturas_Ciudad_Puerto_Playa_v1(1).zip, aportado por el autor.
+Se integran 18 PNG de ciudad/puerto/playa sin cambiar sus bytes, bajo
+src/graphics/caelum/textures/entornos_v1. TEXTURES incorpora su fragmento
+mediante combinación: 4 píxeles/MU, WorldPanning, superficies de 128×128 MU,
+cornisa 128×64 y hoja de puerta 64×128. El paquete ya está incluido en las
+fuentes; no hay que cargar además el mismo add-on de entornos.
+
+assets/coastal_textures/integration.json registra SHA-256 del ZIP de entrada
+y de cada PNG integrado. PROMPTS.json y EXPORT_CROPS.json conservan la
+procedencia artística y los recortes registrados del paquete; los másteres
+siguen en el ZIP original del autor. Los ocho remasters opcionales de mansión
+no se instalan en esta entrega; continúan las imágenes existentes de esos IDs.
+
+MAP06/07 usan geometría UDMF propia con superficies y volúmenes físicos:
+muelles, depósito, oficina, aleros, carga revestida de arpillera/hierro, costa,
+agua, árboles y muebles existentes. El generador Python estándar
+assets/generators/generate_coastal_trials.py reproduce ambos WAD incluidos,
+sin reconstruir los mapas anteriores y sin dependencia de Python al jugar.
+
+CABASKY es un color gris uniforme compuesto por TEXTURES nativo; no contiene
+imágenes heredadas de Doom. Es un fondo estático de ensayo. Iluminación,
+textura de agua y cielo no representan todavía el clima/hora visual mediante
+animación; la muestra del Diario sí usa fecha/hora y refugios. No se incluyen
+población, cartelería histórica o una reproducción exacta del puerto de 1889.
+
+Capturas nativas revisadas: puerto, interiores, costa, refugio y Diario con siete
+visitas. Materiales de cobertura comprobados junto con techo geométrico. Son
+áreas para recorrer/probar sistemas; la ampliación artística queda separada del
+cierre funcional de reloj, viajes y eventos de 4.35.
+
+## 4.35.0l — datos climáticos atribuidos y mobiliario
+
+Los modelos, sprites, texturas, mapas y sonidos existentes se conservan. Las
+mesas orientales cambian posición y ángulo mediante el controlador persistente.
+Capturas nativas confirman dos sillas visibles por habitación. El Diario usa las
+fuentes actuales para región, temperatura/HR y cobertura en sus dos líneas.
+
+Nuevo recurso de datos: assets/climate/smn_1991_2020.json, transcripción de
+valores numéricos de nueve estaciones, con identificadores, coordenadas,
+páginas PDF/impresas, variables y unidades. Fuente: Servicio Meteorológico
+Nacional (2023), Estadísticas Climatológicas Normales, República Argentina,
+1991–2020, 847 pp. Viento 2011–2020. CC BY 2.5 Argentina, con atribución:
+https://repositorio.smn.gob.ar/handle/20.500.12160/2506
+No se redistribuyen páginas ni imágenes del informe original.
+
+Generador: assets/generators/generate_climate_normals.py, Python 3 estándar,
+sin dependencias externas. Produce src/caelum/world/CaelumClimateNormals.zs,
+ya incluido. No se ejecuta durante build/partida y no requiere red.
+
+Presión de vapor: relación publicada por National Weather Service:
+https://www.weather.gov/media/epz/wxcalc/vaporPressure.pdf
+Los coeficientes de síntesis de frentes/refugio son diseño de simulación;
+no se atribuyen al SMN ni al NWS. No hay recursos visuales meteorológicos nuevos.
 
 ## 4.35.0k — lectura ambiental del Diario
 

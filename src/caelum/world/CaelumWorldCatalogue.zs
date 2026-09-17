@@ -10,7 +10,9 @@ class CaelumWorldCatalogue : Object
     const LOCATION_RESERVOIR = 3;
     const LOCATION_TAROT_CHAMBERS = 4;
     const LOCATION_MAINTENANCE = 5;
-    const LOCATION_DEFINED_COUNT = 6;
+    const LOCATION_PORT = 6;
+    const LOCATION_COAST = 7;
+    const LOCATION_DEFINED_COUNT = 8;
     const CONNECTION_NONE = 0;
     const CONNECTION_RETURN = 1;
     // Cada sentido tiene su identidad: recorrer la ida no inventa la vuelta.
@@ -20,7 +22,11 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_FROM_TAROT = 5;
     const CONNECTION_TO_MAINTENANCE = 6;
     const CONNECTION_FROM_MAINTENANCE = 7;
-    const CONNECTION_DEFINED_COUNT = 8;
+    const CONNECTION_TO_PORT = 8;
+    const CONNECTION_FROM_PORT = 9;
+    const CONNECTION_TO_COAST = 10;
+    const CONNECTION_FROM_COAST = 11;
+    const CONNECTION_DEFINED_COUNT = 12;
 
     static clearscope bool IsLocation(int id)
     {
@@ -39,6 +45,8 @@ class CaelumWorldCatalogue : Object
         if (mapName ~== "MAP03") return LOCATION_RESERVOIR;
         if (mapName ~== "MAP04") return LOCATION_TAROT_CHAMBERS;
         if (mapName ~== "MAP05") return LOCATION_MAINTENANCE;
+        if (mapName ~== "MAP06") return LOCATION_PORT;
+        if (mapName ~== "MAP07") return LOCATION_COAST;
         return LOCATION_UNKNOWN;
     }
 
@@ -49,6 +57,8 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_RESERVOIR) return "MAP03";
         if (id == LOCATION_TAROT_CHAMBERS) return "MAP04";
         if (id == LOCATION_MAINTENANCE) return "MAP05";
+        if (id == LOCATION_PORT) return "MAP06";
+        if (id == LOCATION_COAST) return "MAP07";
         return "";
     }
 
@@ -66,6 +76,8 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_RESERVOIR) return "CA_MAP03_NAME";
         if (id == LOCATION_TAROT_CHAMBERS) return "CA_MAP04_NAME";
         if (id == LOCATION_MAINTENANCE) return "CA_MAP05_NAME";
+        if (id == LOCATION_PORT) return "CA_MAP06_NAME";
+        if (id == LOCATION_COAST) return "CA_MAP07_NAME";
         return "CA_WORLD_UNREGISTERED";
     }
 
@@ -77,6 +89,9 @@ class CaelumWorldCatalogue : Object
         if (id == CONNECTION_FROM_RESERVOIR) return LOCATION_RESERVOIR;
         if (id == CONNECTION_FROM_TAROT) return LOCATION_TAROT_CHAMBERS;
         if (id == CONNECTION_FROM_MAINTENANCE) return LOCATION_MAINTENANCE;
+        if (id == CONNECTION_TO_PORT) return LOCATION_RESERVOIR;
+        if (id == CONNECTION_FROM_PORT || id == CONNECTION_TO_COAST) return LOCATION_PORT;
+        if (id == CONNECTION_FROM_COAST) return LOCATION_COAST;
         return LOCATION_UNKNOWN;
     }
 
@@ -88,6 +103,9 @@ class CaelumWorldCatalogue : Object
         if (id == CONNECTION_TO_RESERVOIR) return LOCATION_RESERVOIR;
         if (id == CONNECTION_TO_TAROT) return LOCATION_TAROT_CHAMBERS;
         if (id == CONNECTION_TO_MAINTENANCE) return LOCATION_MAINTENANCE;
+        if (id == CONNECTION_FROM_PORT) return LOCATION_RESERVOIR;
+        if (id == CONNECTION_TO_PORT || id == CONNECTION_FROM_COAST) return LOCATION_PORT;
+        if (id == CONNECTION_TO_COAST) return LOCATION_COAST;
         return LOCATION_UNKNOWN;
     }
 

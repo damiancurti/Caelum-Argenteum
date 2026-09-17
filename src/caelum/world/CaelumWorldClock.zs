@@ -42,6 +42,22 @@ class CaelumWorldClock : Inventory
         if (CompletedDays == 2147483647 && DayTics >= last) return;
         if (DayTics >= last) { CompletedDays++; DayTics = 0; }
         else DayTics++;
+        CaelumScheduleState.Sync(CaelumPlayer(Owner));
+    }
+
+    // El viaje ya expresa su duración en unidades del reloj exterior.
+    // Suma por jornadas sin un total absoluto que pueda desbordar.
+    void AdvanceTics(int count)
+    {
+        if (count <= 0) return;
+        int length = TicsPerDay();
+        int days = count / length;
+        int remainder = DayTics + count % length;
+        if (remainder >= length) { days++; remainder -= length; }
+        if (CompletedDays > 2147483647 - days)
+        { CompletedDays = 2147483647; DayTics = length - 1; return; }
+        CompletedDays += days; DayTics = remainder;
+        CaelumScheduleState.Sync(CaelumPlayer(Owner));
     }
 
     void AdvanceOnMap(String mapName)

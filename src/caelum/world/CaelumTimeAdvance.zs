@@ -56,6 +56,7 @@ class CaelumTimeAdvanceState : Inventory
         if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.DerivedStats == null || (user.player.cheats & CF_PREDICTING)) return "CA_FAST_ACTIVITY";
         for (int i=0; i<MAXPLAYERS; i++) if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
+        if (CaelumScheduleState.SiegeActive(user, level.MapName)) return "CA_EVENT_SIEGE_INTERRUPT";
         bool resting = CaelumRestState.IsActive(user);
         bool crafting = user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor != null;
         if (!resting && !crafting) return "CA_FAST_ACTIVITY";

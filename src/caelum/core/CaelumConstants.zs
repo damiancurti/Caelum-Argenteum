@@ -959,6 +959,11 @@ class CaelumConstants : Object
     const CONSUMABLE_TYPE_COUNT = 11;
     const CONSUMABLE_POTION_WEIGHT = 0.25;
     const CONSUMABLE_RATION_WEIGHT = 0.10;
+    // M corporal de referencia: masa base tier 5 (80 kg), no el perfil debug.
+    // Diez puntos de Sed requieren masa/500 litros; agua = 1 kg/litro.
+    const RATION_REFERENCE_MASS = 80.0;
+    const WATER_RATION_REFERENCE_MASS = RATION_REFERENCE_MASS;
+    const WATER_RATION_LITERS = WATER_RATION_REFERENCE_MASS / 500.0;
     const CONSUMABLE_REGENERATION_SECONDS = 10;
     const CONSUMABLE_REGENERATION_PERCENT_PER_SECOND = 0.01;
 

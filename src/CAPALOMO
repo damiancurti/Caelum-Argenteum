@@ -3025,6 +3025,7 @@ conversation
         pagename = "caravan_routes";
         name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
         goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP06_NAME"; nextpage = "caravan_8"; closedialog = false; }
         choice { text = "$CA_MAP02_SEWER_NAME"; nextpage = "caravan_3"; closedialog = false; }
         choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
         choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
@@ -3037,7 +3038,16 @@ conversation
         choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute3Action"; closedialog = true; }
         choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
     }
+    page
+    {
+        pagename = "caravan_8";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_8";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute8Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
 }
+
 conversation
 {
     id = 43412;
@@ -3214,5 +3224,56 @@ conversation
         name = "$CA_REST_BED_TITLE"; dialog = "$CA_REST_TIMELESS_INFO";
         goodbye = "$CA_REST_CLOSE";
         choice { text = "$CA_REST_SLEEP_UNTIMED"; giveitem = "CaelumRestSleepUntimedAction"; closedialog = true; }
+    }
+}
+
+conversation
+{
+    id = 43414;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_COAST_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP03_NAME"; nextpage = "caravan_9"; closedialog = false; }
+        choice { text = "$CA_MAP07_NAME"; nextpage = "caravan_10"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_9";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_9";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute9Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_10";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_10";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute10Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+}
+
+conversation
+{
+    id = 43415;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "caravan_routes";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_COAST_OFFER";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_MAP06_NAME"; nextpage = "caravan_11"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_11";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_11";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute11Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
     }
 }

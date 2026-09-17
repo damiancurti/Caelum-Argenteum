@@ -131,6 +131,7 @@ class CaelumRestState : Inventory
             && !(active!=null && active.Status==CaelumRestRules.STATUS_ACTIVE && active.Untimed && active.Furniture!=null))
             return "CA_REST_TIMELESS";
         if (user.CombatTimeRemaining > 0.0) return "CA_REST_COMBAT";
+        if (CaelumScheduleState.SiegeActive(user, level.MapName)) return "CA_EVENT_SIEGE_INTERRUPT";
         if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen
             || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive
             || user.StaffCastPending || user.WeaponChargeActive || user.WeaponChargedStateActive

@@ -23,6 +23,7 @@ class CaelumMainM00QuestController : EventHandler
     CaelumM00ReturnDoor ReturnDoor;
     bool ChannelInfrastructureRecovered;
     bool SewerNetworkPrepared;
+    int SewerNetworkRevision;
     bool SewerSupportPrepared;
     bool RestFurniturePrepared;
     bool DiningPrepared;
@@ -30,6 +31,7 @@ class CaelumMainM00QuestController : EventHandler
     bool MansionFurniturePrepared;
     bool StationAccessPrepared;
     bool MansionAccessPrepared;
+    int MansionDiningRevision;
 
     void RecoverChannelInfrastructure()
     {
@@ -483,10 +485,11 @@ class CaelumMainM00QuestController : EventHandler
             CaelumSewerTrialSupport.PrepareWorld();
             SewerSupportPrepared = true;
         }
-        if (!SewerNetworkPrepared)
+        if (!SewerNetworkPrepared || SewerNetworkRevision < 1)
         {
             CaelumSewerTravel.PrepareWorld();
             SewerNetworkPrepared = true;
+            SewerNetworkRevision = 1;
         }
         RetireGroundFloorStock();
         RetireLegacyProcessingManual();
@@ -499,10 +502,11 @@ class CaelumMainM00QuestController : EventHandler
         PrepareExpandedStations();
         if(level.maptime%TICRATE==0)
         {
-            if(!MansionFurniturePrepared || !MansionAccessPrepared)
+            if(!MansionFurniturePrepared || !MansionAccessPrepared || MansionDiningRevision<1)
             {
                 MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
                 MansionAccessPrepared=MansionFurniturePrepared;
+                if(MansionFurniturePrepared)MansionDiningRevision=1;
             }
             RuloWorldPrepared=CaelumMainM00RuloTrial.EnsurePracticeTarget()!=null;
         }

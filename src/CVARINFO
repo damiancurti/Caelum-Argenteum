@@ -80,3 +80,9 @@ user int ca_journal_quest_selected = 0;
 user int ca_journal_quest_abandon = -1;
 user bool ca_journal_quest_abandon_held = false;
 user int ca_journal_quest_abandon_scan = -1;
+
+// Calendario mensual; selección local, fechas autoritativas en el inventario.
+user int ca_calendar_open = 0;
+user int ca_calendar_day = 0;
+user int ca_calendar_event = 0;
+user int ca_calendar_detail = 0;
