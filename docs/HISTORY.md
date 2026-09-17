@@ -1,6 +1,21 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0p — 2026-09-17.
+Versión documental: 4.35.0q — 2026-09-17.
+
+## 4.35.0q — sprites v4 y comida a un tercio (2026-09-17)
+
+- El autor aprueba el resto de 0p y aporta sprites/íconos v4.
+- Consumo sentado: divisor 3 en lugar de 10; 30 s por porción completa,
+  con el mismo aporte y gasto, digestión, reservas y repetición automática.
+- Se integran 750 sprites y el catálogo de 256 íconos del paquete del autor;
+  sólo 903 PNG difieren de 0p y se incluyen en el parche.
+- Respiración/carrera de nueve personajes; caminatas separadas de cuatro,
+  poses de descanso de Palomo y recursos propios de la bolsa de dormir.
+- Integración adaptada al movimiento/IA reales de 0p. Estados anexados al
+  final para proteger guardados; agachado, combate y orientación de muebles
+  conservan prioridad. Los PNG y offsets del autor no se modifican.
+- Pruebas nativas 4.14.2 y revisión de recursos documentadas en el TXT del
+  parche. Aceptación del ritmo y del aspecto visual de 0q pendiente del autor.
 
 ## 4.35.0p — reservas y transporte costero (2026-09-17)
 

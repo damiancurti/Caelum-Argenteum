@@ -127,6 +127,7 @@ class CaelumConsumableItem : PowerupGiver
 // Diez pulsos por porción; comida y agua fijan su dosis al comenzar a usarlas.
 class CaelumRegenerationPower : Powerup
 {
+    const SEATED_MEAL_TIC_DIVISOR = 3;
     int PulseTics;
     int SeatedMealSubTics;
     double WaterRecoveryPerPulse;
@@ -150,11 +151,11 @@ class CaelumRegenerationPower : Powerup
                 || kind == CaelumConstants.CONSUMABLE_WATER_RATION)
             && CaelumRestState.IsSeated(user))
         {
-            // La misma porción conserva sus diez pulsos, espaciados diez veces
+            // La misma porción conserva sus diez pulsos, espaciados tres veces
             // más. Compensar el vencimiento nativo conserva su aporte total.
             // La fracción se guarda y continúa si vuelve a sentarse.
             SeatedMealSubTics++;
-            if (SeatedMealSubTics < 10) { EffectTics++; return; }
+            if (SeatedMealSubTics < SEATED_MEAL_TIC_DIVISOR) { EffectTics++; return; }
             SeatedMealSubTics = 0;
         }
         PulseTics++;

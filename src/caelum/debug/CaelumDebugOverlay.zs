@@ -1292,7 +1292,7 @@ class CaelumDebugOverlay : EventHandler
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG)
-                return "graphics/caelum/icons/materials/ca_material_fabric.png";
+                return "graphics/caelum/icons/ca_sleeping_bag.png";
             return localPlayer.EquipmentSelectionSpecialType
                     == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
                 ? "graphics/caelum/icons/ca_book.png"

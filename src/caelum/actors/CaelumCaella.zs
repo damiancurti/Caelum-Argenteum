@@ -31,11 +31,11 @@ class CaelumCaella : CaelumAnchoredResident
     States
     {
     Spawn:
-        CAEL A 10 A_CaelumResidentLook;
-        Loop;
+        CAID A 10 A_CaelumResidentLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        CAEL BCDC 4 A_CaelumResidentChase;
+        CARN ABCD 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         CAEL A 1;
@@ -75,5 +75,13 @@ class CaelumCaella : CaelumAnchoredResident
     CrouchWalk:
         RSCA DEFG 6;
         Loop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        CAID AAA 10 A_CaelumResidentLook;
+        CAID BBBB 10 A_CaelumResidentLook;
+        Goto Spawn;
+    Run:
+        Goto See;
     }
 }

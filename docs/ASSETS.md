@@ -1,6 +1,44 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0p — 2026-09-17.
+Versión documental: 4.35.0q — 2026-09-17.
+
+## 4.35.0q — sprites e íconos v4 del autor
+
+Fuente: Caelum_Argenteum_Sprites_Iconos_v4(1).zip, recibido el 17/09/2026.
+Se incorporan exactamente sus PNG de ejecución, sin recolorear, recortar,
+cambiar offsets grAb ni alterar las escalas físicas de los actores.
+El manifiesto assets/manifests/sprites_v4.json conserva procedencia, huella
+del ZIP y huellas de los 1006 PNG. Másteres, prompts y referencias permanecen
+en el paquete original suministrado por el autor.
+
+750 sprites: 514 nuevos y 236 reemplazos. De sus 256 íconos, 152 reemplazan
+los de 0p, uno es nuevo y 103 ya eran idénticos; el parche sólo incluye los
+903 PNG nuevos/modificados. Es un cotejo con 0p, distinto del recuento de
+dibujos retocados respecto de la base artística que describe el paquete.
+
+| Personaje | Reposo | Carrera | Caminata separada |
+| --- | --- | --- | --- |
+| Rulo | RUID | RURN | — |
+| Ronnie | ROID | RORN | — |
+| Argento | ARID | ARRN | — |
+| Caella | CAID | CARN | — |
+| Domingo | DOID | DORN | DOWK |
+| Palomo | PAID | PARN | PAWK |
+| Toro | BUID | BURN | — |
+| Mandinga | MIID | MIRN | MIWK |
+| Zupay | ZUID | ZURN | ZUWK |
+
+Cada fase tiene ocho rotaciones; se agregan 514 definiciones Sprite a TEXTURES.
+Palomo usa RSPA A/B sentado sin silla/acostado. La bolsa usa su propio ícono
+y CSBG/CSBO como sprites de respaldo; MODELDEF conserva mallas y escalas y
+enlaza esos nombres. Las poses RSDO/RSRU/RSRO/RSAR/RSCA existentes y sus aliases de
+orientación aprobados se conservan sin cambios.
+
+La integración se adapta al código vigente: Palomo ya se desplaza y Mandinga
+y Zupay ya tienen IA. No se usa automáticamente el ejemplo del instalador,
+que presupone estados anteriores. Los estados nuevos se anexan para mantener
+los índices serializados. Los archivos nuevos/modificados están listos para
+run_dev.bat; no se exige Python ni instalar el paquete por segunda vez.
 
 ## 4.35.0p — carreta y mercante originales
 

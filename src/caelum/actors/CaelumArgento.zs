@@ -31,11 +31,11 @@ class CaelumArgento : CaelumAnchoredResident
     States
     {
     Spawn:
-        ARGO A 10 A_CaelumResidentLook;
-        Loop;
+        ARID A 10 A_CaelumResidentLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        ARGO BCDC 4 A_CaelumResidentChase;
+        ARRN ABCD 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         ARGO A 1;
@@ -75,5 +75,13 @@ class CaelumArgento : CaelumAnchoredResident
     CrouchWalk:
         RSAR DEFG 6;
         Loop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        ARID AAA 10 A_CaelumResidentLook;
+        ARID BBBB 10 A_CaelumResidentLook;
+        Goto Spawn;
+    Run:
+        Goto See;
     }
 }

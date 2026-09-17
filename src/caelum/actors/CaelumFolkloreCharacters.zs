@@ -249,9 +249,28 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         palomo.Vel.Y = 0.0;
     }
 
+    // El movimiento sigue en Tick; esta selección sólo cambia su dibujo.
+    void UpdateLocomotionVisual()
+    {
+        if (health <= 0 || bInConversation || CombatLucidityPhysicalStunRemaining > 0) return;
+        if (CurState == FindState("DepartureWait") && tics < 0) tics = 10;
+        State walkVisual = FindState("Walk");
+        State runVisual = FindState("Run");
+        State idleVisual = FindState("IdleBreathing");
+        if (!InStateSequence(CurState, SpawnState)
+            && !InStateSequence(CurState, walkVisual)
+            && !InStateSequence(CurState, runVisual)
+            && !InStateSequence(CurState, idleVisual)) return;
+        if (DepartureStarted) return;
+        bool moving = Vel.X * Vel.X + Vel.Y * Vel.Y > 0.01;
+        State wanted = !moving ? idleVisual : MerchantReturningHome ? runVisual : walkVisual;
+        if (!InStateSequence(CurState, wanted)) SetState(wanted);
+    }
+
     override void Tick()
     {
         Super.Tick();
+        UpdateLocomotionVisual();
         if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
         // CAPALOMO no queda unido permanentemente a la clase. Tras cerrar la
         // conversación, retirar el nodo devuelve la siguiente pulsación a
@@ -350,11 +369,11 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     States
     {
     Spawn:
-        PALM A 1 A_EnablePalomoWander;
+        PAID A 1 A_EnablePalomoWander;
         Goto Walk;
     Walk:
-        PALM B 0 A_EnablePalomoWander;
-        PALM BC 4;
+        PAWK A 0 A_EnablePalomoWander;
+        PAWK AB 4;
         Loop;
     Talk:
         PALM D 0 A_StopPalomoWander;
@@ -399,10 +418,27 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         PALM A -1;
         Stop;
     DepartureRun:
-        PALM BC 4;
-        Loop;
+        PARN AB 4;
+        Goto DepartureRunContinue;
     DepartureWait:
-        PALM A -1;
+        PAID A 10;
+        Goto IdleBreathing;
+
+    // Los estados anteriores mantienen su índice para guardar/cargar.
+    IdleBreathing:
+        PAID AAAABBBB 10;
+        Loop;
+    Run:
+        PARN ABCD 3;
+        Loop;
+    DepartureRunContinue:
+        PARN CD 4;
+        Goto DepartureRun;
+    RestSeated:
+        RSPA A -1 A_StopPalomoWander;
+        Stop;
+    RestLying:
+        RSPA B -1 A_StopPalomoWander;
         Stop;
     }
 }
@@ -437,17 +473,17 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     States
     {
     Spawn:
-        MNDG A 10 A_CaelumBudgetedLook;
-        Loop;
+        MIID A 10 A_CaelumBudgetedLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
-        MNDG BC 4 A_CaelumBudgetedChase;
-        Loop;
+        MIRN AB 4 A_CaelumBudgetedChase;
+        Goto RunSecondHalf;
     Walk:
-        Goto See;
+        Goto WalkCycle;
     LucidityStun:
         MNDG A 1;
         Goto See;
@@ -482,6 +518,22 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         MNDG K 5;
         MNDG L -1;
         Stop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        MIID AAA 10 A_CaelumBudgetedLook;
+        MIID BBBB 10 A_CaelumBudgetedLook;
+        Goto Spawn;
+    RunSecondHalf:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        MIRN CD 4 A_CaelumBudgetedChase;
+        Goto See;
+    Run:
+        Goto See;
+    WalkCycle:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        MIWK AB 4 A_CaelumBudgetedChase;
+        Loop;
     }
 }
 
@@ -519,8 +571,8 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     {
     Spawn:
         TNT1 A 0 NoDelay A_StopSound(CHAN_7);
-        ZUPY A 10 A_CaelumBudgetedLook;
-        Loop;
+        ZUID A 10 A_CaelumBudgetedLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(
             CombatLucidityPhysicalStunRemaining > 0.0,
@@ -531,10 +583,10 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
             "caelum/enemies/zupay_walk",
             CHAN_7
         );
-        ZUPY BC 4 A_CaelumBudgetedChase;
-        Loop;
+        ZURN AB 4 A_CaelumBudgetedChase;
+        Goto RunSecondHalf;
     Walk:
-        Goto See;
+        Goto WalkCycle;
     LucidityStun:
         TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY A 1;
@@ -587,5 +639,22 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         Stop;
     Throw:
         Goto Missile;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        ZUID AAA 10 A_CaelumBudgetedLook;
+        ZUID BBBB 10 A_CaelumBudgetedLook;
+        Goto Spawn;
+    RunSecondHalf:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        ZURN CD 4 A_CaelumBudgetedChase;
+        Goto See;
+    Run:
+        Goto See;
+    WalkCycle:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        ZUWK A 0 A_StartSoundIfNotSame("caelum/enemies/zupay_walk", "caelum/enemies/zupay_walk", CHAN_7);
+        ZUWK AB 4 A_CaelumBudgetedChase;
+        Loop;
     }
 }

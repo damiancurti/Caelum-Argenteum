@@ -1,6 +1,32 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0p — 2026-09-17.
+Versión documental: 4.35.0q — 2026-09-17.
+
+## Animaciones y consumo sentado (4.35.0q)
+
+SEATED_MEAL_TIC_DIVISOR = 3 es el único divisor del avance de comida/agua
+mientras existe una sesión válida de silla. Porción completa: diez pulsos,
+uno cada 105 tics, duración 1050 tics = 30 s de simulación a 35 Hz. Fuera de
+la silla se conservan 350 tics = 10 s. El avance rápido usa la misma regla.
+Las pausas del menú no cuentan como simulación. No se multiplica el alimento
+ni el agua: misma ración, misma dosis por masa, misma digestión y topes.
+Inventario, mesa y Caja utilizan el efecto común; la repetición automática
+espera a que termine. Un contador parcial 3–9 de 0p continúa sin reiniciar la
+porción ni gastar otra. Las medicinas conservan su ritmo anterior.
+
+Respiración de dos fases en ocho vistas; carrera de cuatro fases y caminata
+de dos donde existen recursos separados. Los callbacks de IA conservan sus
+intervalos y las guardas de aturdimiento se repiten cada dos fases en los
+actores que ya usaban ese intervalo. Cambiar el dibujo no cambia Speed.
+Los estados nuevos van al final de cada clase, preservando los índices de
+ataques, muerte, agachado y descanso de partidas previas. El reposo infinito
+antiguo de Domingo se reactiva al cargar para permitir la respiración.
+Palomo usa reposo al estar inmóvil, caminata al deambular y carrera al regresar
+o retirarse; las emociones y conversaciones conservan prioridad. RestSeated
+y RestLying exponen las poses nuevas a los controladores, sin asignar una
+rutina de sueño a su agenda. Sentarse/acostarse detiene su deambulación.
+
+netevent ca_debug_rest_report identifica 4.35.0q y muestra el divisor vigente.
 
 ## Reservas, controles y vehículos (4.35.0p)
 
@@ -11,7 +37,7 @@ está completa. La reserva se consume directamente, sin retirar toda la pila
 ni exigir capacidad para moverla. Sólo un uso aceptado descuenta una ración;
 Drink descuenta litros, conserva el recipiente y restaura InMagicBox antes de
 persistir el resultado definitivo. El acceso requiere estar sentado y junto
-a una mesa válida. La recuperación sigue siendo diez veces más lenta sentado
+a una mesa válida. La recuperación es tres veces más lenta sentado desde 0q
 con idéntica porción; digestión = hambre realmente recuperada / 4.
 
 Q/B: cancelar viaje; detalle → mes → Mundo; Q en Mundo cierra el Diario.
@@ -213,7 +239,7 @@ Cada pulso recupera 80/masa; la dosis queda fija hasta terminar o refrescar
 explícitamente la porción. El campo ausente/cero de efectos antiguos conserva
 un punto por pulso. No se recalcula una comida antigua al cargar ni se consume
 otra unidad para migrarla. Se conserva el acumulador parcial sentado y los
-diez pulsos en 10/100 segundos de simulación. Inventario, mesa y x105 comparten
+diez pulsos en 10/30 segundos de simulación. Inventario, mesa y x105 comparten
 la misma aplicación de hambre/digestión; la repetición espera el efecto vigente.
 
 ### Identidades y rutas
@@ -417,9 +443,9 @@ MAP01 mantiene muebles sin duración; suelo/bolsa temporizados siguen afuera.
 
 CaelumRegenerationPower conserva sus diez pulsos y añade SeatedMealSubTics.
 Sólo comida/agua, durante una sesión válida de silla, procesan un tic del
-efecto cada diez pasos personales. Se compensa la cuenta nativa de EffectTics
-en los otros nueve pasos. La porción completa dura 100 segundos en vez de 10.
-Una ración de comida sigue recuperando 10 puntos; una ración de agua o un sorbo
+efecto cada tres pasos personales (revisión 0q). Se compensa EffectTics
+en los otros dos pasos. La porción completa dura 30 segundos en vez de 10.
+Una ración de comida recupera 10 puntos a 80 kg; una ración de agua o un sorbo
 conserva su rendimiento y volumen según la masa corporal. No se aumenta el
 rendimiento bruto ni se gastan porciones extra para compensar la lentitud.
 

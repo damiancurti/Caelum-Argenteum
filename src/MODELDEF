@@ -3171,7 +3171,7 @@ Model CaelumSleepingBag
     AngleOffset -90
     CorrectPixelStretch
     DontCullBackFaces
-    FrameIndex CAHC A 0 0
+    FrameIndex CSBG A 0 0
 }
 
 Model CaelumRestBag
@@ -3182,7 +3182,7 @@ Model CaelumRestBag
     AngleOffset -90
     CorrectPixelStretch
     DontCullBackFaces
-    FrameIndex CAHC A 0 0
+    FrameIndex CSBO A 0 0
 }
 
 Model CaelumDiningTableSmall

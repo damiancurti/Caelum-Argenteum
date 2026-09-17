@@ -739,10 +739,10 @@ class CaelumPlayer : DoomPlayer
     States
     {
     Spawn:
-        DOMI A -1;
-        Loop;
+        DOID A 10;
+        Goto IdleBreathing;
     See:
-        DOMI AB 4;
+        DOWK AB 4;
         Loop;
     Missile:
         DOMI CDEFGHIJ 2;
@@ -778,6 +778,15 @@ class CaelumPlayer : DoomPlayer
         Stop;
     CrouchWalk:
         RSDO DEFG 6;
+        Loop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        DOID AAA 10;
+        DOID BBBB 10;
+        Goto Spawn;
+    Run:
+        DORN ABCD 3;
         Loop;
     }
 
@@ -14535,13 +14544,20 @@ class CaelumPlayer : DoomPlayer
         }
         State idle = FindState("CrouchIdle");
         State walk = FindState("CrouchWalk");
+        State runVisual = FindState("Run");
+        State breathing = FindState("IdleBreathing");
         bool posed = InStateSequence(CurState, idle) || InStateSequence(CurState, walk);
         if (!posed && !InStateSequence(CurState, SpawnState)
-            && !InStateSequence(CurState, SeeState)) return;
+            && !InStateSequence(CurState, SeeState)
+            && !InStateSequence(CurState, runVisual)
+            && !InStateSequence(CurState, breathing)) return;
         bool moving = Vel.X * Vel.X + Vel.Y * Vel.Y > 0.01;
         State wanted = player.crouchfactor < 0.75 ? moving ? walk : idle
-            : moving ? SeeState : SpawnState;
+            : moving ? (IsRunningOnGround() ? runVisual : SeeState) : SpawnState;
         if (wanted == idle || wanted == walk) crouchsprite = GetSpriteIndex("RSDO");
+        // Spawn era infinito en 0p; reanudar la respiración al cargarlo.
+        if (CurState == SpawnState && tics < 0) tics = 10;
+        if (wanted == SpawnState && InStateSequence(CurState, breathing)) return;
         if (!InStateSequence(CurState, wanted)) SetState(wanted);
     }
 

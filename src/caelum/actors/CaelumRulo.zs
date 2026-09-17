@@ -42,11 +42,11 @@ class CaelumRulo : CaelumAnchoredResident
     States
     {
     Spawn:
-        RULO A 10 A_CaelumResidentLook;
-        Loop;
+        RUID A 10 A_CaelumResidentLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        RULO BCDC 4 A_CaelumResidentChase;
+        RURN ABCD 4 A_CaelumResidentChase;
         Loop;
     LucidityStun:
         RULO A 1;
@@ -86,5 +86,13 @@ class CaelumRulo : CaelumAnchoredResident
     CrouchWalk:
         RSRU DEFG 6;
         Loop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        RUID AAA 10 A_CaelumResidentLook;
+        RUID BBBB 10 A_CaelumResidentLook;
+        Goto Spawn;
+    Run:
+        Goto See;
     }
 }

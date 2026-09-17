@@ -1,0 +1,5049 @@
+{
+  "release": "4.35.0q",
+  "base_release": "4.35.0p",
+  "base_commit": "c11705d5a463cb8fad2e14acf7f07a9216a14157",
+  "source_archive": "Caelum_Argenteum_Sprites_Iconos_v4(1).zip",
+  "source_sha256": "d77cd54679524c580431004264668f998149062014c909d6568004db707e5c17",
+  "runtime_files": [
+    {
+      "path": "src/graphics/caelum/icons/ca_amulet.png",
+      "sha256": "8a7bce2c31756b56357e6d0a0c38e019ca7ff27eadcdd0993d52dd3d00671fe6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_anima_potion.png",
+      "sha256": "d862890114f8f2c58ad6309190ec34dc2f03a6d70e1f685f26da18974a934725",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_heavy.png",
+      "sha256": "c7869d217320aa12820afba5033840f01c98d243dcce7a27207703e855a1f499",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_heavy_t2.png",
+      "sha256": "6484f4ffec514010bfd94e258b9e7e1b3f8f6cd103fefdf7cc2dc59b98249903",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_heavy_t3.png",
+      "sha256": "57d12b5ac639709158f7d07e5e30f0916e1956d28168bf61adc7d874f4489a79",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_light.png",
+      "sha256": "1197c7cb1108f4067bd788224dfb676e25a47a63843f6d201370933017ad9551",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_light_t2.png",
+      "sha256": "dc9b14d6b14fdf0c7d3e052a86ab9310d2a5bf2bcf6641b86b24385d4c12784e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_light_t3.png",
+      "sha256": "648a1bc7fcb6a5276b6afb1205c64eb9c0db72ed74feb889e25fd87b708d2708",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_magic.png",
+      "sha256": "bf909bd223c8e1b7495b28986c2a52a5864c81225420083394c1cc7afb28bbf9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_magic_t2.png",
+      "sha256": "eece65422714d52b8a4077960d318338c7b8bc47db88f979f27d685cf68ad989",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_magic_t3.png",
+      "sha256": "7c98f7ba7e80231f3cf67045d5904c9e5e4c7b787d15e34399a8565a7cab5837",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_medium.png",
+      "sha256": "f8c9f7ff4ee6c128029183dadf480fd6dc30103fb56da99c28cd7bac23598ff7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_medium_t2.png",
+      "sha256": "c025e01b2c9e2ee0933226976f27f3bdc44d5c96284c2c6511f6eb63b2926272",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_armor_medium_t3.png",
+      "sha256": "c39ddeced1df1cbc19295d9f2ba3658a98ef7707ad1f05c944f98a42b9df0245",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_arrow_ammo.png",
+      "sha256": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_axe.png",
+      "sha256": "d3a1c36b2506b4b0bdc1d85e4e849040b54b4fa38749b668baa612911b20890c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_axe_t2.png",
+      "sha256": "9900b7831c59385c55461779746ebb714dc19f5fc89ce44a78bbc59f86a36a52",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_axe_t3.png",
+      "sha256": "1c5131bab5dacc8f6e6a8218c2b294c39eacb97f2f89039a7c4f8d145659de90",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_bell.png",
+      "sha256": "7043ca39e00fa719939eed3b52413f412422512f9412bd5202bdc57a4c63676f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_bell_t2.png",
+      "sha256": "c84b794118c8a55d4802dec288cfec47222a05bf187233c547ed78f0a397aa06",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_bell_t3.png",
+      "sha256": "35f4e3c8cd0c25564a7c01ef7e1f8063f3de7a59d012fc210d05480f70708613",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_bolt_ammo.png",
+      "sha256": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_book.png",
+      "sha256": "02457fa302004e61899e38293c0fe3148deac32b2f541f1506f9a6b4fea42acd",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_book_t2.png",
+      "sha256": "82eafe159ed11d056864d094b50a33adf48e7a300eeb85ae45ce93cf8985e025",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_book_t3.png",
+      "sha256": "d70d8b072bf516fbb22e2ff87ecfbf40bfd2c739519cd87fe456db4cbda9fe8c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots.png",
+      "sha256": "07bd942c46642a40637dc2906a0cdfacc5304fecb465d44dae2d03988484b884",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_heavy.png",
+      "sha256": "a3bd4e95c0aab38506c381cff8b408feb1ce59e90a87b3dfc02c4026aceb2cb3",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_heavy_t2.png",
+      "sha256": "8afa1f8c19510e553d9f734502a0a8887943f9cff029531d43ade11984b6940c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_heavy_t3.png",
+      "sha256": "cad6fd966ed3acd3efca682fb8b5f79ee3417c907928dccbcd1bd1e6fdef0e95",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_light.png",
+      "sha256": "d7ef2e17861ca9d8916d58428b019e8facbf64329d2da69d02eca7d3be8a1f41",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_light_t2.png",
+      "sha256": "9a0e74fb25c8c291942ee85628cd38724e738373e7cc7b0e9a55b104beb2d094",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_light_t3.png",
+      "sha256": "75a3e5e1507453c2a1b7fc5a016a8952cc6f26fe12d421566fdac67b33d4b2fa",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_medium.png",
+      "sha256": "fa157a04407c97b147b8e27bc58cd49ea61cfa030d376e82b65ee24c3183777d",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_medium_t2.png",
+      "sha256": "5ddae7fd0999a15358f4dbedb4297d7adbdfa662b2358cfcc101a49b6c8d15ed",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_medium_t3.png",
+      "sha256": "aa25df2990ed08380d4628758561c87feab6338f592afb2d98cf880fb1b926bf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_t2.png",
+      "sha256": "5d5c2a0bde78e331cab4c25decafba442d2b09c6e09c810b14d5dc5bda2ccfff",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_boots_t3.png",
+      "sha256": "62ed7eb7fbc099f00bb2e2c767e8997e0a8333d9be4fd5abdf21869f3161379f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_carbine.png",
+      "sha256": "5410eed4a48f1eee0fb6b558a428d691eff2471a7bdf0fd261646ab29abd8be8",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_carbine_ammo.png",
+      "sha256": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_carbine_t2.png",
+      "sha256": "3f49c39fa6e0161d8995a4e838621c16c270502475a32f87c838086c278fdfd4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_carbine_t3.png",
+      "sha256": "42542ac166153a1e491963f9d8ce24c84579deb63a3044fd56b3f69dd72f7eb0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_crossbow.png",
+      "sha256": "0d9bbbc7370cc3aca90fab6ff56f5917b2ff0bfe898b31213c7200ba09f07f0c",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_crossbow_t2.png",
+      "sha256": "fad2b737ab26ce97046971bf54f536222e45b8ab58e0eeeb5407a7a9ed72f07a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_crossbow_t3.png",
+      "sha256": "d59f589da983d3f054d4c462edcd9666bddadf7ba5476fbfee15a2ab599116ae",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_dagger.png",
+      "sha256": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_dagger_t2.png",
+      "sha256": "357ebf2631c724f0d5b61a0b94dcff844067ce4cd9a4257827a66d2e095b119e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_dagger_t3.png",
+      "sha256": "5a13ff1a2138d56dd8befe6e62653a4ef1948ce9f925f506b6ed4824740e6176",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_energy_drink.png",
+      "sha256": "1818cffa4ef81e7a5a4d59b0b33f7e6f43afe26f9a619d2f93bbd212caaceb41",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_flail.png",
+      "sha256": "325a1bcd3210780ebbec0fd33f420e5292f4b9609141dad8f75c6b19a373040b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_flail_t2.png",
+      "sha256": "e31f428cfa1c0ae476a0e63f4192de88980bbc67b56463670f8560d5764668fc",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_flail_t3.png",
+      "sha256": "0df49a90c728ed2f1764965e9c50047991cde04cd0b3a0e30793f39607d78cab",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_food_ration.png",
+      "sha256": "43c6d9a1aeb38f49c255e08108d6ef3d77b5232bf65f42045eb686e9f2a1027a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets.png",
+      "sha256": "e3cfbaa6f9bfeafdbc1041cd186909c307ecee127275032ed744a1ccf29cd752",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets_t2.png",
+      "sha256": "95fbda2750858a10422ec26a76559867fd1ac7eb4c9226c44c446903d2f66a8f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets_t3.png",
+      "sha256": "320ae4058507061a984afd345dcb81ac3a77b34231f7c3e7dc29f18ed3114d4a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves.png",
+      "sha256": "a5d11d187e4c64e0556ec4ad3ca001eeb4288704fcb7113dae50fd4390a50d1f",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_heavy.png",
+      "sha256": "bdeab4cc00391be3342da6804c377299d9074588de002d41e6094d67ae55ac39",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_heavy_t2.png",
+      "sha256": "6b04e1c6d22133be79bd35bb7300509b26823d7281cabfeb87e3a5dfd525b344",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_heavy_t3.png",
+      "sha256": "4c1f0d782c82907f50359f8f068b7dc1431ab44493976beaa0f55c3486a803bc",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_light.png",
+      "sha256": "25d18c3c229de0cf7c07f06f86b12e191ac411f2293fa026ae00a9a48759b66f",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_light_t2.png",
+      "sha256": "9e6fde41c9ad610f578c44510ea29463b0aa0ae553c8656248cf228b28ab0aa8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_light_t3.png",
+      "sha256": "cfc07a91f872300a18308a262a08b0bcd181b9be1db1f281b98afdb393d064c7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_medium.png",
+      "sha256": "3d94eaca732cacc2758ed30348c1a0fa9fd63a4e1e2efcc78aa4ce555e2f77f6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_medium_t2.png",
+      "sha256": "7810c2eb327e2cde420c73c3bab4b36617a78f249b995c56dcdcbd98c72f41dc",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_medium_t3.png",
+      "sha256": "e85f5ac19be76cdcad5235a63254f0708a25f7b668775862a8a98279d8f515f5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_t2.png",
+      "sha256": "6e0ec78a308d37693c07c1e1deb61d1e3fad1ed80287a1ec36250b21e0a848df",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_gloves_t3.png",
+      "sha256": "0fc39256983d3cf394606eb592ee2accd372da4f44d68a3cd9fd2adea0044910",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_greatsword.png",
+      "sha256": "bcd2595fe4d84349db31ac3bf70f6b0c219153fa75a318839552a49b7ff32d2c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_greatsword_t2.png",
+      "sha256": "cef03259c17f9ac39924f029b375b80d08428cd9972ac1cb094bc34a5ca36789",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_greatsword_t3.png",
+      "sha256": "8d6860361616d5c02e834fbac98430a11e6a323cb7e9a978cc67f544b5bbe0f7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_halberd.png",
+      "sha256": "c0481b3025dd4602f8ddca445c588d15421618f4cdefafa83f822814408fa41e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_halberd_t2.png",
+      "sha256": "990dd6670c0b6af44601c87e8d13a9411c61a939463ea07cb285db3040d6c18a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_halberd_t3.png",
+      "sha256": "6a0a50d7ccbce907cddba0bd143c05641dcc722ffc3b31f49d3f39ad058e7933",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_hatchet.png",
+      "sha256": "8112f0cf14112dafd2097c4033a30fc2d67f5f3a2417feefcb8cc4b65a78dbb5",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_hatchet_t2.png",
+      "sha256": "2b745c4a6050aafa3b2b9ca1af9b7541fea6141854d3b67a26692df258d15fd7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_hatchet_t3.png",
+      "sha256": "f790613814f04e7dccdb43eba380f35278644bf3af296e4a6617d2bbcf652352",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet.png",
+      "sha256": "0d0e29dfb6635f2287b7de1bb7d206c514185849e94620e95a177b8bc8192d31",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_light.png",
+      "sha256": "a4b994a93bca51a86a303c6b2fb8e4fd93d3aadb158d97ad732952d144ac4b13",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_light_t2.png",
+      "sha256": "a0a30bb21b331efe356f6684123f8303a384fa878a96a7d1b182603140db500e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_light_t3.png",
+      "sha256": "c5e40ae997318b53d60f46f9298c081f7c8e9e55d050cb976e39c93c5c2c9159",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_magic.png",
+      "sha256": "23e058005e90a57c5a1059a0f95a519ee1bb7cbcbf72d9b416cb78b0df800273",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_magic_t2.png",
+      "sha256": "6fa681edcdd59545394ae0723f0f8ffb35baeeb1b99bb951debc02390eae5718",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_magic_t3.png",
+      "sha256": "bc94281f92f2deac8d9555b25a37780bb3e45ff2e393b2175ea6685abd643a60",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_medium.png",
+      "sha256": "3fbefda66a592992e82ab6c842955cfe96fe756b0e230b3fc0dbbd1a1cf92201",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_medium_t2.png",
+      "sha256": "9e24af811d94d0e7c312ec1ebf7f04ed33acee9f6a3ba69f94c85e090fce0d20",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_medium_t3.png",
+      "sha256": "b048c007cb63635e26c09ce44e3e3e7b645ce5f61389dd8ea733841e8d09ff60",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_t2.png",
+      "sha256": "b737e13d4731208790d3301f741528f2a3ae726c3d7b98b839bde68be6c23e11",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_helmet_t3.png",
+      "sha256": "7a964e857c6e17e2ab5ddedb56bc3a5d39cf3d78abf0e21d9fd118816f2d4378",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_javelin.png",
+      "sha256": "a23d7bb4b2009ed4f50c53ff8134024f4b23ef521d4510d6664b88758acf64ee",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_javelin_t2.png",
+      "sha256": "051c8c2cc5ff1359da6e842cdbc060617a360018fdb5bde60597d810e2bce47b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_javelin_t3.png",
+      "sha256": "785c9864652113684afb46402a9d408c1142ecfc2324249484b5a5ad8bdd14ae",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_key.png",
+      "sha256": "fdb427311193fc58482ce8c0dbf06c955783759d08b21a7b08dcfe2662fa03c8",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_longbow.png",
+      "sha256": "a3524d6a9e7bcb82441726215483c4ce154ba0fd4286c79be99fdd0bd9772a17",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_longbow_t2.png",
+      "sha256": "b8fe3c1daaabbde9efe58ba8370c707e2b1aa56bd432d1c1bbdebff36f7585f8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_longbow_t3.png",
+      "sha256": "5dcad82dff0158946b7c0df1eccfb7836eae56eb143a570ec3137171972b5867",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_machete.png",
+      "sha256": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_machete_t2.png",
+      "sha256": "6594912e43cd9ec3ff506bd31692a3743d616fc34fcfc99ece0c0e56b65a543e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_machete_t3.png",
+      "sha256": "518c1e17a4df5b35e3405525f0c18930fa10a66689b2f614cb790ba4d5622c37",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_medikit.png",
+      "sha256": "3dae33900d11c2aa655b0ba869ecfbb78f59f30f8fd66a2a5194f9000d729771",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_projectile_air.png",
+      "sha256": "938fe88e3260fc6803591a4205ff73f654ecc7ea8fca49662805c1f9ddfe44ab",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_projectile_earth.png",
+      "sha256": "ee3d7f4fa464e8d91c28fdd395040ab172ed30bb0b355e5af3c736f253f6c85b",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_projectile_fire.png",
+      "sha256": "7508b72acb78b62cc61181ee0931e601ea7e2f54b15e6541491a25ca7dad0861",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_projectile_quintessence.png",
+      "sha256": "bc0a540423c9bfd79c1f010a7f638a031aa7bed4d0433bc7b6ac28885db5afc6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_projectile_water.png",
+      "sha256": "debd10c9d172032095fb398419c2128aad7dc0f12ea297fbe367505ef960232a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_sealed_letter.png",
+      "sha256": "4d1ad062fb402dfd25636364671c912416d1104fce579aa0a46375c6cb1e99dc",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler.png",
+      "sha256": "37ae1b4346499b3bdda54b794aa53a857d4259c2bd02ca4ea37aa7e340724d9d",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler_t2.png",
+      "sha256": "420c34d28071b34c8109ee6d05d214a47e895c6caf85f59291c26ec4ffc3d215",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler_t3.png",
+      "sha256": "806e898a8c6425bc96064bf31969fb9e033d6d511dae377273c5f4f7f1211b00",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite.png",
+      "sha256": "045ee7c9ca599708a0da2e3418bd525e9bf6c81d2c00f0632fe69057e1409964",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite_t2.png",
+      "sha256": "c6d6e2b8638b1f8615bc014445b27b0aa23978f1bf4f1c40a5df86f05acea25b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite_t3.png",
+      "sha256": "ab0f880152c39c00d21caebfc8691cf2be08be8ebb61cad13e8db90ed0827547",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic.png",
+      "sha256": "ec129df38708d9be7ed9806c5e47652b1bbe3326bd27d29fa8e67151677a2488",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic_t2.png",
+      "sha256": "ffd922c4a094c685429a95515ca8629a024df150f10b6ce678e5a33bae0d6106",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic_t3.png",
+      "sha256": "66b45b72e254ab0fc354ec06dbe5f3030b5c21c2ee170ce5b5276fa5c04f24bf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower.png",
+      "sha256": "08261880167ba8a0ff4d39606f5246271bead7874714d77db5de0083a121520e",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower_t2.png",
+      "sha256": "e42b512172f9f1d6faef28dac4ab86ad1659cb1d02eaf8e056ddc1afb94dbf44",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower_t3.png",
+      "sha256": "d679b7451564040e10ef56a500962eb19a57ae78f53a5085b32f2998cd6b7c6b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_sleeping_bag.png",
+      "sha256": "a62570ef41ab7abeae78e444634bd739fbf07db9d87cccfbaf1d35ef93a2a25e",
+      "status": "new"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_spear.png",
+      "sha256": "08eeb5a3e771be59e12bd3523358bf97ee18d2817daf091305d6527d3512b93b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_spear_t2.png",
+      "sha256": "5048850dfa3f21c2e6a295eea0e9a58dece874b0579fd5b5bd2b811bbd508176",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_spear_t3.png",
+      "sha256": "4f850c7d5ea0f373f43e2c2f21705301e6bc56370169630f4352f8337ff2336a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_staff.png",
+      "sha256": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_staff_t2.png",
+      "sha256": "c6220669c7361b65e84b25843214c45a50a1b9d3ef253abed34a2ca0cd52fbff",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_staff_t3.png",
+      "sha256": "666410b93c3c3c8240bc546a8af88783a4eb1267e37e93f9c656c07c78ff29cb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_standard_bow.png",
+      "sha256": "ee221e934b7e456aea79f34036678f2058fddda52e7c39c7c494b0417f55f637",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_standard_bow_t2.png",
+      "sha256": "01d608efa7e74d0f49794efe000926ad7d9cc091f0b7de387e14426858847234",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_standard_bow_t3.png",
+      "sha256": "5022bdaab8e953df032fd78db9c636589cf50a3fac3ae5a88929953b1e00a95d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_statuette.png",
+      "sha256": "6bbd38a2f05028482b42a48a7bd4f906d30e51ae5456f50f26966de6222b16e8",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_statuette_t2.png",
+      "sha256": "d931af47fae70719387013a534fb838b895c239b81071338b8d6eefeabda1b41",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_statuette_t3.png",
+      "sha256": "d7637e9d0f21e626e3d1ac07ec1d8e2461f3f8d4477be0949360a1ecdc8c387e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_sword.png",
+      "sha256": "35080f0abcddb4a33337fbb2609244b86ff48d27e59b13673374e6a04ebacdef",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_sword_t2.png",
+      "sha256": "3ad181582479c1fe50ba4c3fe09fc3f9db695e9acb8e05a461b35c9907fbe17e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_sword_t3.png",
+      "sha256": "8f2c622516494526a47723fc6f74b31588ba29d8f169e74f3ebd84354651f5de",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_tarot_back.png",
+      "sha256": "1c90db203880d6ca68ebfdae00eff584e943ae4452423d43cc44af19faba85ba",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_war_axe.png",
+      "sha256": "d814932f5439709600ebd06b2a666ce053b06e04c621f1bc6bcc1c97a51dab53",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_war_axe_t2.png",
+      "sha256": "a276412d5b29ec5846085219ab37112947ba31489b12a5cbe19fdd31dcb80e03",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_war_axe_t3.png",
+      "sha256": "67e568369244ba1508584a0a138bf3473b2815b9db01326a88c14315cb3115ca",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_water_ration.png",
+      "sha256": "85aef1a0d31ad1466ea6362ea81c4752bf8f738259a2fbf4264f32813608dbd8",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/currency/ca_coin_copper.png",
+      "sha256": "1a9d5909ea825f1898424df7dcb14a660455904e0ba863ee503eabb3adddc1bb",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/currency/ca_coin_gold.png",
+      "sha256": "16d90390d480f92721c7c2c423e3c3ea4458c6d0d06ed288259da87f4d5b7066",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/currency/ca_coin_silver.png",
+      "sha256": "58b3a04fd5ce8184e52bab7c69b899e3799bd53e7379b05ad11af902afa6760d",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/elements/ca_element_earth.png",
+      "sha256": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/elements/ca_element_fire.png",
+      "sha256": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/elements/ca_element_quintessence.png",
+      "sha256": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/elements/ca_element_water.png",
+      "sha256": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/elements/ca_element_wind.png",
+      "sha256": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_emerald.png",
+      "sha256": "86c1de268698a20c6f84ceffe4b3e655244805aa279f55d29c903ba3d5c614ec",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_emerald_t2.png",
+      "sha256": "f1aa25c58db8d47ba04d4331acae1e3296287db612e0135372e42b248a55f1c0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_emerald_t3.png",
+      "sha256": "d66d56d4a2a6305bafd48a1e8768d05e7f5171b03f60294705c54ee6815cd58c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_ruby.png",
+      "sha256": "caa5d472d60773f61efa9c8d97cb8881ff1b7e6cf865bdf54f5d2cf92017fb81",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_ruby_t2.png",
+      "sha256": "ce67325edcb52ae34aa1a220077b987d48e3c93c728fb31d5d16c062ba80c5ab",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_ruby_t3.png",
+      "sha256": "43c46510e5df049557b0d3da8815a5d515af91393cebcced56e5a7f59e8abcc2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire.png",
+      "sha256": "5d868e815ef12bd6bf4dbce55075923e47b22dac94c13c7dc62e8e9d7c3e92c2",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire_t2.png",
+      "sha256": "fbe60844fd8bee32741135ac803f41fccc95060f998389235665fd32409ecfd3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire_t3.png",
+      "sha256": "fd7c1d40916785e05e06b99375e7e18f0c8a979fd6875568c27b7c3368ee2699",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_topaz.png",
+      "sha256": "a3b5d9fa883d5d9b531224942d2cf64b1ce011ccef042cffa42265345926c719",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_topaz_t2.png",
+      "sha256": "3dcee771f30828b2cc2bb3ede59c4cb9b492ad3633092608d21b255f89f767de",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_amulet_topaz_t3.png",
+      "sha256": "3ea64e357ba51580697c9706975409493eac1194d20bd53204efd5b2594b0cce",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_air.png",
+      "sha256": "f3a847d1584d68e2a4dfa35b41ed51c43cfc5a976df108138e4b7e51955ab996",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_air_t2.png",
+      "sha256": "6aeec979259ea8afba323b551bc00a94ab43babf78e76d280dc36e3f3689db77",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_air_t3.png",
+      "sha256": "4c0436350b3821c9a5e10c8a7f5d922563a520e65e3da655980ae33daa7e0df8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_earth.png",
+      "sha256": "d14bce7901b2d8f8e67dd5a3edde499a2a2718c6e2a75d1cbcabc465a9e1f5b3",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_earth_t2.png",
+      "sha256": "702aa56f77466f6412c6c8b27f2680abf3df5e5d606e6ad18785279c1bf645e3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_earth_t3.png",
+      "sha256": "05c507888115502ca5ac8afee701f1cd64642c3397d7d10fcb229601f612edba",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_fire.png",
+      "sha256": "1497558804ce70d2e8950c0739004300163c8e46c90b49f544b180f0337e95d6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_fire_t2.png",
+      "sha256": "a6c3460a9af1af93c668d98f84800553d0a66b4f1fa2890f1f651d20eb5375eb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_fire_t3.png",
+      "sha256": "cd28f155906d27080cf03ea81e0b8b67259eadbaff5898efad60fe15132120ad",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_quintessence.png",
+      "sha256": "e6fdc91206c144afcca9714b5c0030b417d646cc9a8728ce500eca08199cd9bc",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_quintessence_t2.png",
+      "sha256": "3ccd674276101605975c7f7db9afbc76833ef1eb5ac6919484d4d920acf406b4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_quintessence_t3.png",
+      "sha256": "a1c6afaf297a8ebd6fdd63adc37c7c90d8f0300eb6df8ed9bd403fa74e1e16be",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_water.png",
+      "sha256": "596bd97a53bc1eec88f43e3113c065b0819272ecd12ba3f1c5d6e73f9fdd44b9",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_water_t2.png",
+      "sha256": "5bb8e10c3c5b1a9f200c1d9ff87c1659a748baecab01c24eccca1d4c9d9c6491",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/jewelry/ca_seal_water_t3.png",
+      "sha256": "949152a4d23de36ff008baca0fe41fbb30f696b6edfc8378607b8116295c3373",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/magic/ca_bell_base.png",
+      "sha256": "ed77f2fe898ffb185df71e000a79c5ebc6baaa9a269853408e49cd1aff418be4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/magic/ca_book_base.png",
+      "sha256": "02457fa302004e61899e38293c0fe3148deac32b2f541f1506f9a6b4fea42acd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/magic/ca_staff_base.png",
+      "sha256": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/magic/ca_statuette_base.png",
+      "sha256": "6bbd38a2f05028482b42a48a7bd4f906d30e51ae5456f50f26966de6222b16e8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_barrel.png",
+      "sha256": "dacd115c51adacbc8a4eee1fd5ebcf019a845b2bd5192ef01a5a0813d70e2283",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_bell_base.png",
+      "sha256": "591ea6cb76f73ccb0901ef3e67323ba1128d426589ac3d185d63ae7b5f27a26a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_blade.png",
+      "sha256": "9a7f23f902d4550458f76c8de057a7b10e7627ff4a6f8cab674c0c41b828140c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_book_base.png",
+      "sha256": "02457fa302004e61899e38293c0fe3148deac32b2f541f1506f9a6b4fea42acd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_bowstring.png",
+      "sha256": "dbe554e76b8aac8ff1f12184c7d747b7596c9e858124bfc1796ff6ae285025fa",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_broad_blade.png",
+      "sha256": "78b2fd7d8e7bd96c67fff27bb418525877945c37b65d1d8cf00850787f7bbf57",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png",
+      "sha256": "432cf7a1a10ea198e2282cf3c4e20b24098cab21758bf9d05c873fb834c75677",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_chain.png",
+      "sha256": "8d8dd2c0a225f67f2a16b1ba29d37824f877e074441ae7a22444939793fb8402",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_chainmail.png",
+      "sha256": "10e6683466c6e15d77bc4bdee46b9b5fde978411a6444b3777ee0a033fd7d89d",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_coal.png",
+      "sha256": "c7df4776a41daa7ca62753b12ea48c7826b8d3002b6dc9946b154d1faccbaa1a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_copper_ingot.png",
+      "sha256": "687238a41812d2269d2ed936bb2f073bbe195c6195c4e18460e2a6bbe49d17c6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_cotton.png",
+      "sha256": "b8cd94bc216a7c9589683301c3a6a440ca1e4e4aeec8348534f6380f15a8388a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_cow_hide.png",
+      "sha256": "26e19622777b3c5b64268287feaa7ad36a8c27ab9553aec3f94bded8c52179d3",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_curved_blade.png",
+      "sha256": "13eef9ca9e3d1eebc3fd4541614f357e8dd77c09d557399b4b9c25931c87d3a7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_earth_essence.png",
+      "sha256": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_emerald_gem.png",
+      "sha256": "b35bded87a438d5e14cd858ec2e4fcb50c3e68bbd0bdf943faadbf7af0cf074f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_emerald_pendant.png",
+      "sha256": "16fcca27e8ab7f1c407637ac7935e53fe422b7520c095e4ca036054feb5bb858",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_fabric.png",
+      "sha256": "5a462accabb91593ee66c4a1e60f9fb9c7ba5b5a72147cf16c3defff4eee8166",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_fire_essence.png",
+      "sha256": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_frame.png",
+      "sha256": "c19c86ab239ea915e5dd50415ec263e1adb903190a9e58ee377b1a34704c22aa",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png",
+      "sha256": "bc95b522850d0ea81d0c059742f102ef9e5c20f015450a1043fbe7a89840268e",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_handle.png",
+      "sha256": "886d2bd6f4ae8385717afa1a148391eece061752d1bd9077c5cd1514e0b48b43",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_hilt.png",
+      "sha256": "bc70c14aa5199907b7a99e7a68ef11f91621fd4b35dd3a2972d7d0094f20f44f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png",
+      "sha256": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_kite_plate.png",
+      "sha256": "b8bbf211cec42ae1068a527bc4d796856542e9f4d64dbbef2cdd50ecc06ae145",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_large_plate.png",
+      "sha256": "1ec39ac36b71e0a6d3ef474d3924dfb9762efa812acbbfee3aa284a5385d8515",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_leather.png",
+      "sha256": "aac950544be9567e206adc2785255d3afb4315057ab00a7d3ba6b1e7a6627939",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_long_blade.png",
+      "sha256": "3c79be40369bb18f2c338cc2d1e8878a275e2b0c6590cd3d973af1e501418842",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_long_frame.png",
+      "sha256": "ebd7f60897c25b333e2104c3e7bcb1b18db2bfcced525129bfaf917da8270e3b",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_long_handle.png",
+      "sha256": "6ecbcd72ad9572a36cab0d47af5fc0b01fb143537d8728a9180cf593466da7c9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_long_hilt.png",
+      "sha256": "850eb85c2ad2c9329109d3d2cf9d8e78b330d5f0962d227ef46cda0858c111cd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_magic_plate.png",
+      "sha256": "74deb8a7a5f494b40ee9cdca69f9ae755f8b72cf4aa5e139dae43541c603bfa3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_mechanism.png",
+      "sha256": "22e15d58bf2e1a4ae3e658eab04471f9dda2a8f944af4b4da21c7a57141db9fc",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_monster_hide.png",
+      "sha256": "8a79edde12d7ce82c0937b116de352d6e5381ba7c7effb032df99e80966551c8",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_opal_brooch.png",
+      "sha256": "058fc3b5893c8492c45030b2df0fcbc983e78979c83fdcda8d28312323e5e044",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_plant_fiber.png",
+      "sha256": "54bb1ef3ba9ba0a2465be53c62fcf1aa579791f912b58734387e628e0bb48c85",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_plate.png",
+      "sha256": "e574f392b1458855f6f55a0a151afe94d5d717bef62e779aa9895442fe2264a7",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_point.png",
+      "sha256": "7dd3a08df732641f06d4eaf6b118a28e7448259c4a297913e67dc2743a1f979a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_predator_hide.png",
+      "sha256": "e15e834b71ef4811053210cc63a940992f03eca339a0d84d7bd79e1ada7afca6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_quintessence.png",
+      "sha256": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_copper.png",
+      "sha256": "ac7392bfa8e856df417f06d66e23efc7e7ed2d6229f35f5aec0c3d581e2c028d",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_emerald.png",
+      "sha256": "e88cce74cccec0bded005a747cc6d94313a8ee69ba9a2807b35d53fe8aeeff2f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_gold.png",
+      "sha256": "d950367b679dd570040a5212f32466b2c326790d4207b7fb292b14758e07634e",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_iron.png",
+      "sha256": "c3f1fd7c4283375af675268a331b95a9f785f46590b0126b2fc6be80a2a0ea83",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_opal.png",
+      "sha256": "a5bd0b418befbb1abfcbd3b412146657fa591a99f604f2c7b52bee98a73b8d56",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_ruby.png",
+      "sha256": "646753d85f824c71960f1781656925066a00d28ae6378cf35ab5215ba807f2ef",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_sapphire.png",
+      "sha256": "ba23a4834eefdf7b20a33f8453176da6c1747386a380e7c623f9da0b3dca22f1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_silk.png",
+      "sha256": "eafb7ac4c7246896434b56e6f6bdae04ed00afc48b44ace1515d41e5185287c6",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_silver.png",
+      "sha256": "80ce77812414f4f8c6a9fa86cc28d59e3b935f1546c181174c6859594fd5e54c",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_tin.png",
+      "sha256": "314ccf34e9bbd5d3c91a6be3092408a243c4cd6e1e0751f6e3865a6f62706337",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_raw_topaz.png",
+      "sha256": "45f830828c36e878d8776daf462f8c2f45e7ed0c4b6dd9e2716fd5514de14a17",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png",
+      "sha256": "ded1ee45d7dcc1dff61542faac34ac615eed8643ea68dccc9defeb3946485764",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_reinforced_strap.png",
+      "sha256": "bb503a3409b75ce76af2fac6e70a189041c0b405904e0972876bf354dbef94ca",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_rope.png",
+      "sha256": "5483846917b7861a723939760540cc93d418e6be46a8c9508a17bf8aec817de2",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_round_head.png",
+      "sha256": "72e27c576a57352fd139f74805fb122cb03b62aa690e2ca39e710d2771b1d8bb",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_round_plate.png",
+      "sha256": "46afc549efa87795d69b835ac78334afcaa974513ad1703e5ef33b1be7251047",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_ruby_gem.png",
+      "sha256": "b05ca2af74668d51145218aa1e1426010b01c971d80cd6f6cfe6af592491f9b5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_ruby_pendant.png",
+      "sha256": "fbfd40f35d0f9b9994e25587b7bdc7650fa7ece93bdd762e9d4d89b03a2db360",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_sapphire_gem.png",
+      "sha256": "5bf753d7a16d8db51622a9bbc7f9670aaf63ecc956903bdc4236fab88889652f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_sapphire_pendant.png",
+      "sha256": "0fc1567fe625c4a61141a943226a691d03116f5641b7b837033e572e6c34741a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_seal_base.png",
+      "sha256": "48b963928731081f2304572401c76efa4c0812c8e1a4fca916807c83e886ddc7",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_shaft.png",
+      "sha256": "5996d73caca0e1df5e90656a1a3a05da2fac6ea3e9237b82bda55ff6a3a085cd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_silver_chain.png",
+      "sha256": "0d4c64e538d3973dcdf0b8ebb9af60fbb99a629d31bdeb233762c9dc4c8e7395",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png",
+      "sha256": "d8a652358b9d98322b70e5eb5987a0af3d366e3d352bedb07d301007a5a3d340",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_small_blade.png",
+      "sha256": "4b2753403b51dd09d0fb0bacb8bb34ce4fa14f1e7f0f75bae5bf4ffe1ed853af",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png",
+      "sha256": "905d40ee5146586e9a1c428f13591b183718cb8f06278d740844fc0d1cb4dccb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_staff_base.png",
+      "sha256": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_statuette_base.png",
+      "sha256": "6bbd38a2f05028482b42a48a7bd4f906d30e51ae5456f50f26966de6222b16e8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png",
+      "sha256": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_strap.png",
+      "sha256": "0af22ceb8475822652ab1acde9591277e961a7844b02bd8e740b96659f2bf28c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_tin_ingot.png",
+      "sha256": "4c9e53f85cc4c85cd05aad0774d65204b2d1dcd1f14fc3699713622ae0d76889",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_topaz_gem.png",
+      "sha256": "dde9c018ac07dde1a17467903dd8c57a90f1af588f0f811e34309c8cb0332266",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_topaz_pendant.png",
+      "sha256": "281906fd21a2d70309f61f9877ea5a64e0ab236e6aef97a4b1ba6f68832a33d9",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_tower_plate.png",
+      "sha256": "10942f564a5b3f8e7dd363c65fb6b99244b0681e994a7bf567b8916df21ccd2b",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_water_essence.png",
+      "sha256": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_weapon_head.png",
+      "sha256": "754242ddfa3a4c3cfc5618755b831847d68302a569275b8157623d56b0a66bd3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_wind_essence.png",
+      "sha256": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_wood.png",
+      "sha256": "bcc8ea868d2851b7b3221f9d1acf9d872777aeb6e9f22ee6ae1f32f7a98a539a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/graphics/caelum/icons/materials/ca_material_wool.png",
+      "sha256": "e0b1fad3f8bf157b22b4a73285d3535d368979d6a8e99e4f71aeac2198757996",
+      "status": "unchanged"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA1.png",
+      "sha256": "ac5e26df28bbfb4c49ab87d1edcb4edfdf5724f2fec4dcebed040cae2fe2c15f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA2.png",
+      "sha256": "58bd1b3c34d8829b80773c0e970e6ba637d6d481160871987ec4f028e09e1619",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA3.png",
+      "sha256": "e1bdc419544dbfbd42077ed9eaef00f9be6c0cccd69586e1876f3a24959dd318",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA4.png",
+      "sha256": "98d51549314968a135b0107b4e8d9b9c0deccfd410f1ee1bc17c55cf80ae7170",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA5.png",
+      "sha256": "d2ddc4e54bb01bdd766789a4dfd02b13da5d240be18d509b3a75e63bcbee62cb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA6.png",
+      "sha256": "ec4c3940240913956afc249f387e71ca57ba466c681f485b1e0e93dbc1697852",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA7.png",
+      "sha256": "9aad9b97cdca896e9cd267f1888fe241bed53c61c2ca6934692f49507fe1bab8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDA8.png",
+      "sha256": "2deaa1447f89fc49b11830788d05dc5cc2afaee33e31f9267c4bf4df95fb4dcb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB1.png",
+      "sha256": "cf89fc9aebd939807aef799e0235bab6c3bf5abf572017d40511fcf9854f4b6c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB2.png",
+      "sha256": "faef11cd2f177918447df281b80c35e5fe220cf1b926b98c5f3b4e578d9af065",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB3.png",
+      "sha256": "fe310bc16886a7c0f6bf9f4ce3e6211e3757453995947fed9f2516a4a6a6af58",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB4.png",
+      "sha256": "a9e3420aef417ac30cf0865ea20cd6b2b23b6c2863b3b3a826a0ad498b0424e0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB5.png",
+      "sha256": "ec476229709edb877d4703fd649ae5023e0b436f7eaeb96e3ad0fd5357c1b7a8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB6.png",
+      "sha256": "8d803f30241a08980661ad487185de94087b8fbbcda60dc84552a46d9c9cb566",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB7.png",
+      "sha256": "0082640d381424439809a8b82060f8a481316d19a327c6b0e94a484c8498fc60",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BUIDB8.png",
+      "sha256": "19031d792d85f05c2d83055043598c057d3020af3f143637c4c30ad66714b549",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA1.png",
+      "sha256": "ac5e26df28bbfb4c49ab87d1edcb4edfdf5724f2fec4dcebed040cae2fe2c15f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA2.png",
+      "sha256": "58bd1b3c34d8829b80773c0e970e6ba637d6d481160871987ec4f028e09e1619",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA3.png",
+      "sha256": "e1bdc419544dbfbd42077ed9eaef00f9be6c0cccd69586e1876f3a24959dd318",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA4.png",
+      "sha256": "98d51549314968a135b0107b4e8d9b9c0deccfd410f1ee1bc17c55cf80ae7170",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA5.png",
+      "sha256": "d2ddc4e54bb01bdd766789a4dfd02b13da5d240be18d509b3a75e63bcbee62cb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA6.png",
+      "sha256": "ec4c3940240913956afc249f387e71ca57ba466c681f485b1e0e93dbc1697852",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA7.png",
+      "sha256": "9aad9b97cdca896e9cd267f1888fe241bed53c61c2ca6934692f49507fe1bab8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLA8.png",
+      "sha256": "2deaa1447f89fc49b11830788d05dc5cc2afaee33e31f9267c4bf4df95fb4dcb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB1.png",
+      "sha256": "4af1a76d086587717ed66774c172be3a4d9376f0c33468deb1be74ae5cd2ad9d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB2.png",
+      "sha256": "2ac7d0edb057c2767a4711cb972fd6176d537ea001290af7c373296580d32435",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB3.png",
+      "sha256": "2b4b9a6a68a1749bf6fd33f36ab429f60588be993e3a338edaac6d59f9291f4c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB4.png",
+      "sha256": "b8aba6bd81106be6d7a2f8f427a1dba784fbcd6e4c16fe64ce6a19125bbf1744",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB5.png",
+      "sha256": "4d25614cd10faf1ff850e912d650b11b8c76891acd1c68ae493508eae70d99a6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB6.png",
+      "sha256": "539d35d21b6fb06acd2088b1b2856ca963092f93891747c189b9015be560e5eb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB7.png",
+      "sha256": "19d51a7e3583e9dc86255c8d7bbee05fbcf5a597680e001fe8587d78e4610701",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLB8.png",
+      "sha256": "4ff3bff0f883e7d5c77110da896fbfc41cc6a16d588f804badc3040cc6b266f6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC1.png",
+      "sha256": "2eba59fd816d8ee43b7f9a8e09a46be54d6e67a94db3d265ee5699d870bb4772",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC2.png",
+      "sha256": "f7b08f71e30036e2ab3cf15c5f489edb69f29fdb954b8fa32358ce740e098d21",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC3.png",
+      "sha256": "b8143dfde54902e7b2847750afb172098229306a030b43eba9aa7c331859d1c7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC4.png",
+      "sha256": "51731295c1e37b564079400a84993907da6bbb6dbc7a9680cd63ddaf6205f8ae",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC5.png",
+      "sha256": "97acb25a0240552812f1d8619a03d7cf203a9981bab57b9a0c126f89fb8c7982",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC6.png",
+      "sha256": "4e060ce91570d37b4c477c300b6b88e3c62555c1fdb463f6fd036b8216583b2d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC7.png",
+      "sha256": "8d6a362f201a4e08187c93f1eb7262c2b43c8b5dd20237d12fddfa5d8fdada5d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLC8.png",
+      "sha256": "402479bbd8f99bb63dff72013938e250989db90a1e63b45cf1449cd8e63de42e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD1.png",
+      "sha256": "f906aea62860e973fcf42eb5a7bec6ef2665449a34fe07b4b19b26b0ad4c1997",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD2.png",
+      "sha256": "097590e65eeefab837940a58de5b438f67d56c19686f90e96321560f200bd208",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD3.png",
+      "sha256": "0d1b8e820210e0983fd49e7a1a0c1963664ff1c7481311648893a7d8392303b7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD4.png",
+      "sha256": "bdd304692efd0f911081fc2d66fc55711831af34e0fe15298012625dc2685f72",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD5.png",
+      "sha256": "a479da4066009e7e06429ca34c4835bf8d5e8fc12de0c4165dde2c2caabaede0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD6.png",
+      "sha256": "d4dfc8c4e791cda0156480e9c9b59f78d82c93edbafe68dee29afa5b0534ddad",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD7.png",
+      "sha256": "6060d610ad6fb6f064072062c894ee227c4b1e8fc41f84700875adc4a6e13843",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLD8.png",
+      "sha256": "7cb7ce06ed864e06aaf0eb2253ddec04f7bba9854dbf27698fc93cc4534839d0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE1.png",
+      "sha256": "7c23af43e7286f3f727a8f859d9d6d576971ab45a828aa56cdf376a9300e4393",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE2.png",
+      "sha256": "4bf8029f2c7e7c6db6e39a7f15d60a5d78c7000915440145c7c4151e51f3b2a5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE3.png",
+      "sha256": "6554ff9f8143e8784c33dbcf3b9587b43eb605462f06f98b4bffda1c6e7bd453",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE4.png",
+      "sha256": "fcd60ce0c05083019a28d6e09262ab01feb190b5ac05b1791e47c17d6c4b048a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE5.png",
+      "sha256": "3a66155c4ef28d36f633c366247ee3f6e733c52918a8138d9fbad85e7d3a5f67",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE6.png",
+      "sha256": "acef1e0fbbc35e870a8685337d72c7df31c9d7686fb13788c261d4e4cc3f77c5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE7.png",
+      "sha256": "ba6cc2693312c0a7fa285f5cdb87372227c262d44e4dab31ed13366b0a41084c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLE8.png",
+      "sha256": "f545d958a2d07cc6cf3dc450b9a64f9e9874f2c9a76b02f9b84f1b6b15f7b518",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF1.png",
+      "sha256": "5232809d40e2adb86a158b3d940972f4e899d067ab296f742837fe8608eb4241",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF2.png",
+      "sha256": "de977d11c04a18ec8c36db1461a2bfab4215eff9f6d5dd0cc5b30301f586b3c4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF3.png",
+      "sha256": "001238d5b2172759bf5dadac4cea64513cada218ef677041a9fe312a8c3aff60",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF4.png",
+      "sha256": "a6b1d05d4c165744e44bbe3c4c3f8649b956137906662485ee9aee459562e1ae",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF5.png",
+      "sha256": "1d6922046c94f15e3374e9da4a40dc8471ee4c812586f9f06e542f3e2c9a3060",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF6.png",
+      "sha256": "64ec6cb9bf5aa3f77917edc44b40a15a2d4708b4e228373212653010da79e1ce",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF7.png",
+      "sha256": "dece2170f61094d396da6abd4bd16f184538c0bf3159f011ad855d52781d247d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLF8.png",
+      "sha256": "83c97e1f8c9141d28b973fa7eed6caa9dd79292017f339a15ef1096ec146f8d1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG1.png",
+      "sha256": "47021f74b01fa5664c3c01056847fbba22dd2ec529dbe6369e00e5f4e6950bd4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG2.png",
+      "sha256": "142019262a06516daa30cb58cdd8e3d46a980becb987815f2bd2283e0096f51c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG3.png",
+      "sha256": "3ed2b91064f8bf9d657489e0967b60905ab2047e2db6aa0773ea3a984661d80d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG4.png",
+      "sha256": "0fcdbdedd34556b1a36370953285b7274a0457e69b815e86dd5d1c31bd56b4d7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG5.png",
+      "sha256": "0dfe62bec786a0a047b4866675218e44775bf216c6afb0608470e667136d0a7c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG6.png",
+      "sha256": "320e79592c3a948efed1a9ed56659068697de54737072a732ee55c5c8b01d72a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG7.png",
+      "sha256": "006a332c089965d6f6d43f376d70b13449bad3422d143c4cd9253532c4e84c57",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLG8.png",
+      "sha256": "322417cb0d52dd5febb07eeda3c9d82d9533c16fb618f713a84b9a56164bb500",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH1.png",
+      "sha256": "1cd37280d84a244408d765e1b7071798237930358292e65949991e4cc2028da0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH2.png",
+      "sha256": "c6ea33e0fde7ab134f6f83a96df15b4d43eb7ac719c2a144ec8f9dd5a9558ca1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH3.png",
+      "sha256": "e03bd60ef9ee98fa37ee76d22288c9eb54e7a8ca02372b90dfcc8f5a27f182bb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH4.png",
+      "sha256": "ab3588ec1e8b0f52ced1d6b927d30608e01d4254c1300e2ff756c1924a049ae5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH5.png",
+      "sha256": "11c1ab8195899164df76be3adcc234fe14cefdacb7e3a02445db8622bace125b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH6.png",
+      "sha256": "d1f4515abcaa7c2b8cf9d52a01b8fd4cff0d098b89756c891f4583b873d6ddef",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH7.png",
+      "sha256": "67ddebc741dd7d796bdbf49037c031e899cb3411ff1f1e18dc0dbfe201fac1db",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLH8.png",
+      "sha256": "fef4ea35cbab16184b66de73f10bee0156b08f8e6110f2a048dac79c8ea8c721",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLI0.png",
+      "sha256": "8daf6a3c28dc98804875ca2c902e546d1f95a85018401fb1d5ad9f0921a1bbaf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLJ0.png",
+      "sha256": "f97e968d2244f6461ca17e348ffb6c6ebb249575c6bffc14f35ccaf05604aa34",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLK0.png",
+      "sha256": "335d7e64c93947b191d0f18feb2d92a131aa5153e87f87269e3c6c81bd2bad09",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLL0.png",
+      "sha256": "421333e3311c9fd5acbbf258ed2991aaedc87be81f0d72b17f675779e22a0c1c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLM0.png",
+      "sha256": "31117429df3f7b26e7b9b02bd2fc07a0a9cdc8b2892e1cf2c5e8ff7f4162127b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BULLN0.png",
+      "sha256": "1038822df09ebbc96fa6b2fac403f421134014595b5b9a8fa3df487363314c97",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA1.png",
+      "sha256": "f906aea62860e973fcf42eb5a7bec6ef2665449a34fe07b4b19b26b0ad4c1997",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA2.png",
+      "sha256": "097590e65eeefab837940a58de5b438f67d56c19686f90e96321560f200bd208",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA3.png",
+      "sha256": "0d1b8e820210e0983fd49e7a1a0c1963664ff1c7481311648893a7d8392303b7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA4.png",
+      "sha256": "bdd304692efd0f911081fc2d66fc55711831af34e0fe15298012625dc2685f72",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA5.png",
+      "sha256": "a479da4066009e7e06429ca34c4835bf8d5e8fc12de0c4165dde2c2caabaede0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA6.png",
+      "sha256": "d4dfc8c4e791cda0156480e9c9b59f78d82c93edbafe68dee29afa5b0534ddad",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA7.png",
+      "sha256": "6060d610ad6fb6f064072062c894ee227c4b1e8fc41f84700875adc4a6e13843",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNA8.png",
+      "sha256": "7cb7ce06ed864e06aaf0eb2253ddec04f7bba9854dbf27698fc93cc4534839d0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB1.png",
+      "sha256": "66aba545f98fb6e36a5a995988a7c95b823e357c4de9d38cba7eb299853cee5f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB2.png",
+      "sha256": "1bc64abe3d47a7a20b0052e9110891d3f6cb10d097366ba183bcc945d47216a8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB3.png",
+      "sha256": "f9b825d1cef9a33c93eb2c9bc79dc1a38136ffa81763416068ff8b61993b7401",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB4.png",
+      "sha256": "f1878fe652c25bb4a69ace439d9a7eb10a533fc5e00d731d77044a486492c2fb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB5.png",
+      "sha256": "3fb6dba6c3733b40ef0f7cb2839292d4720408774d4f01e2fda47ba4489f6730",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB6.png",
+      "sha256": "db71fe07670fc9e3eab306d6dbb1dcc83dfa1abbae5782d400831b376f36e2db",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB7.png",
+      "sha256": "b47fe03f5577e7f6fdc3930e0f264334277ed7dbc7ae9308488463bbf9332298",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNB8.png",
+      "sha256": "b1305c0c9b81cad9168fed8a0a515b281238addd7fc8d19b7f958bd74dae9447",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC1.png",
+      "sha256": "7c23af43e7286f3f727a8f859d9d6d576971ab45a828aa56cdf376a9300e4393",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC2.png",
+      "sha256": "4bf8029f2c7e7c6db6e39a7f15d60a5d78c7000915440145c7c4151e51f3b2a5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC3.png",
+      "sha256": "6554ff9f8143e8784c33dbcf3b9587b43eb605462f06f98b4bffda1c6e7bd453",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC4.png",
+      "sha256": "fcd60ce0c05083019a28d6e09262ab01feb190b5ac05b1791e47c17d6c4b048a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC5.png",
+      "sha256": "3a66155c4ef28d36f633c366247ee3f6e733c52918a8138d9fbad85e7d3a5f67",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC6.png",
+      "sha256": "acef1e0fbbc35e870a8685337d72c7df31c9d7686fb13788c261d4e4cc3f77c5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC7.png",
+      "sha256": "ba6cc2693312c0a7fa285f5cdb87372227c262d44e4dab31ed13366b0a41084c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURNC8.png",
+      "sha256": "f545d958a2d07cc6cf3dc450b9a64f9e9874f2c9a76b02f9b84f1b6b15f7b518",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND1.png",
+      "sha256": "8f098b78d7e6dad1c9f17140ec9cf4b9ee2dabaedc7f43461233747e8641a79e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND2.png",
+      "sha256": "a014985daaa5d4ecc69ceeb24695339177f9571276c2b8d7c0b485fd55248664",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND3.png",
+      "sha256": "fcb4f1c525c7121da14afe6bd3b6a30a1f16b1330bb7a5e8dd84d1640251a016",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND4.png",
+      "sha256": "318982da50094a63183e0c41403bad52d90c289f288b61a89a38d7a00da5b0bb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND5.png",
+      "sha256": "dd8efd67c7dd3d1a5d3286f4e8ab4bfb614ca376200528feef3cb6d15c789441",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND6.png",
+      "sha256": "1724a0a22a61d20fc3ec174d20aa3360ff910e267e00445bd478bbd6d37ad387",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND7.png",
+      "sha256": "ea2b4b8ac37a1bc125664fb53ca3c71951b5516e782b46fb361162e6b10df0c2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/bull/BURND8.png",
+      "sha256": "4f0af510fa019b5e219c0c76a40175ee409791139dac5fe22427e8c1699c3fef",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA1.png",
+      "sha256": "a0839934534603172bc9365122dc748997e0df4e30aedec13d1d8e59a292dce3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA2.png",
+      "sha256": "f54c7a4460e9bd3cb24af029a2cfe84130c97057f70a3b35f0ceb4cd67b6e922",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA3.png",
+      "sha256": "e59bd754c0835c78e1a33df277b7b4acfedf0c1fdad25677b571ca754a35ec87",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA4.png",
+      "sha256": "4d9d2a244392bd080a3b33aec5b1e63d39c3131252b0acdd1fdf12fca7c4555a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA5.png",
+      "sha256": "5b422bddd82f2b86987daeea0210d5d4bc04c6aa7e0dda819fad960c70f2b83f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA6.png",
+      "sha256": "4f89da4f98b3661c2e1f10da2ff8d8eec4053fc931184c01089ea84c48041b58",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA7.png",
+      "sha256": "4d68407a17d146055c990c490e426c1272d57ac14840dbc7e4bc45a651137300",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDA8.png",
+      "sha256": "bb003f80615c1ff6151d54bb98e62a69867d019b5b8842ddf75474fa3fb8f098",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB1.png",
+      "sha256": "50d3d746d4c9840e54e1d5a688082c252a160e8eaa928f334f2ec0d128528493",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB2.png",
+      "sha256": "a45f0db6d1d5bab4daf3b37ddc966be987e1bddc7948e821db6ea15521cafc11",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB3.png",
+      "sha256": "92ce8965e282e2733a6ba0d4080a5b15cefa97adfdc8637e11ecfe7a8244a972",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB4.png",
+      "sha256": "b761d5de6ee8c0b5dacbbd1513a0dd88df6539afc42213257d1d58d35b13ba84",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB5.png",
+      "sha256": "7ec0887016815096ecd424949f76b496824a5a7ec001dfc6edafd16efc259b16",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB6.png",
+      "sha256": "c08a9785913d7ffaf00bddb7dad6946644b5cd3100c9d5e85e233d2fed44d89e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB7.png",
+      "sha256": "eec61e6fb52a30cbc0a323d9ea65031e93caea5c99de5485f2e0e795a553c37a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIIDB8.png",
+      "sha256": "f77b70fa82d921d36d98563c41c2f43512adb5cd985be43c779aabea24f577ba",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA1.png",
+      "sha256": "b37bee77bad253ba31cf15e950116fd06c183a02b5eb644149e22a87d8baf48f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA2.png",
+      "sha256": "cdf7e428d23f58b6fa80448992fac42a328347c0f3784835d2bb9043b65745a0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA3.png",
+      "sha256": "26aaeefae89ef1d2ad869736f069f6ff8fbd4b4537d70a79869e6daa3d6c3d2f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA4.png",
+      "sha256": "b97b79537ac8380b726dd6b05c32b6709edf210eea20f7b678255cbcacbf7d8c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA5.png",
+      "sha256": "c979f1701a27c4f694226c027727d7b3d1c5bdc81c3bade1b4644701668be550",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA6.png",
+      "sha256": "0936bab8d50dfbd520ed213c38bb14ac4d8c2b96d30b7983ea85c4b1db402fc6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA7.png",
+      "sha256": "67aadb972598b6c57a99da713cd3484343affedf2cd060d48a96a5eb47d5b7bd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNA8.png",
+      "sha256": "ae6fc246ef686806a83fa2de46df2a179eaf62f95d059da3409d6299cb63f6ca",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB1.png",
+      "sha256": "135b220fe3bcc694005befca43dc7ca73b107deb5ad1a8faa392195b99827c5b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB2.png",
+      "sha256": "a10e86dd217137bb5f3d8aedbd88553bc963688ce55e77741f32248b769d92d7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB3.png",
+      "sha256": "02a7b8d4d3fb663858fc4edbf41438f3396881bfee40fc1362c6aa46c48088dd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB4.png",
+      "sha256": "6d2a8cb947557753402a3ef922a7b312bcf6141ffdec5c3fe85fb6951ba7f0ed",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB5.png",
+      "sha256": "1f970d8f883b5354aa1457f0e77659cbe2d1512a5f7a55b305d1097358dd6358",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB6.png",
+      "sha256": "1c29a51025895a17cadcbfd9e1441e9af6230ccb95a04a6f6157a26f133f0cac",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB7.png",
+      "sha256": "35fa9cdde1a4906ced1a3116fc541228e7b8c78ef460d72836dee94ab3a956be",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNB8.png",
+      "sha256": "c6056aa89177c1e050cd94f41bd197aea3c3da30a124d5af65c7421010e9eb8a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC1.png",
+      "sha256": "02d43e5b1f7075a3c88b3902271a96674c612734e20db738934f49c092818577",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC2.png",
+      "sha256": "7b4ef797452d6ed13e86874203f08a1765568f8e300262e7429b928a1a534e62",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC3.png",
+      "sha256": "62f6afbb7d13ce3386d4b173a6f8f8d7cc3ed6d8ec1a1827a8811db20c29a8f8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC4.png",
+      "sha256": "872127a2e7ddf4ddad1b5e0a555b670b1a41ac8b0509294ba61e28947706225a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC5.png",
+      "sha256": "073bf494c3feb5a8e39bad27b6da397f94c9dc9a103a4810f6510d3b53102ef4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC6.png",
+      "sha256": "807e50241299d13112122e0be1fce5a56c58ccc367a071b6c2837693f73c39e5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC7.png",
+      "sha256": "7a227505c4427b0a9fbf6940dd05a7fd725ea8d60c656ae73fd741cc94b0b9b2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRNC8.png",
+      "sha256": "49ccb7e8534e0050173dcf8f8cdbeae3a4b4173ea276b5e45830051f44e40751",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND1.png",
+      "sha256": "38ef3d4a9c7b54ab7ad8c8ace7c739dd55379f72bba46a8d051a251fb965607d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND2.png",
+      "sha256": "39bf06bb8652700b903ec43e34f48514282df59d44483c5c7b451a2a6ea6b691",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND3.png",
+      "sha256": "22a42e9c2954b84b506adc79b8242e7a883cccb4aeb1def978d6046f63cf2283",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND4.png",
+      "sha256": "b68a11f605c688e19b6e6660f97c0dca10e0769e47d503b9300adc07efba97af",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND5.png",
+      "sha256": "1dfd103bc0de0b1d14b85bcf5d406743114fd7e7f88f0377264b97c42c29add7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND6.png",
+      "sha256": "6bb8c3f2cbe04c85bcb6a846b17487179b3bb4263693cd1b9d8159d7916ba0f5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND7.png",
+      "sha256": "d968699c0c4d1c8dec63fb288241d1a3b08b40a4fb18629bb3e2a82ee134dca5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIRND8.png",
+      "sha256": "7debac993ac40a37ddcd79484e9c784b43ce30b73caee0ee6dee1b99f841e422",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA1.png",
+      "sha256": "5ddbef61fbe9d91b06416ecb6f989cdf64bd59ecd73fc2d832b4ffab0a4decf6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA2.png",
+      "sha256": "3b3190ff0515803b40297618a8c83f60b255263bccfbdf63122cba3e157122a8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA3.png",
+      "sha256": "df2dc24a667a6aa9e63c7e4f789d5e6e21cb1395ce10a78a000494a34291657f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA4.png",
+      "sha256": "b1cf3d84bd3acb8ca0db172932b8dc3a4dc68488652e253752c1c228024e4ffb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA5.png",
+      "sha256": "cb1d8326c54b529ebed508af48c40f444af08f378180a3305928319cb0e9f0cd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA6.png",
+      "sha256": "d5d6c8512607d559968641d53020df83930d62b6904ba29df4adda54d47e94a2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA7.png",
+      "sha256": "2d0f3538d685e840e2d5a9c239f25788fc5665154771189a78b9c16f201ce93f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKA8.png",
+      "sha256": "9e25ee069a447cebadb7b955d87f66510b64bd442bf2110ded270cae624707e3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB1.png",
+      "sha256": "e535988be34d421e7655294923ffeb47b586d10cddea12f1b624e58630f46c4d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB2.png",
+      "sha256": "1c068f6fb40d8fa585c2c9bd6f713c9da8ce2a0acfde32ba7b92f25fe3fc5539",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB3.png",
+      "sha256": "40879cd95b9f91bea4f7fe383b4cf6ccc8977486f71e83a145fdf87b92108aaa",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB4.png",
+      "sha256": "efff252a8391c5c42fba7fbcea9a4366145b7790f9b8bf020aa0cc7041e2ea44",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB5.png",
+      "sha256": "00e70a19112fa932a5c022c92110a4010f68cab4777aca638df1fecb4435473b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB6.png",
+      "sha256": "2e666ecd287ed58030360d7eef7beb0076198f2fd6276d99899783d3c1743c80",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB7.png",
+      "sha256": "8054c213c021f2f10070a147464c31e01834241788d0bbde45fa79cd4e19c1ba",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MIWKB8.png",
+      "sha256": "5b6dfeabd7d8a6092cd3dbc3ef64776d4bd5fb13d788e062e93c9540d6ecd3c2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA1.png",
+      "sha256": "a0839934534603172bc9365122dc748997e0df4e30aedec13d1d8e59a292dce3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA2.png",
+      "sha256": "f54c7a4460e9bd3cb24af029a2cfe84130c97057f70a3b35f0ceb4cd67b6e922",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA3.png",
+      "sha256": "e59bd754c0835c78e1a33df277b7b4acfedf0c1fdad25677b571ca754a35ec87",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA4.png",
+      "sha256": "4d9d2a244392bd080a3b33aec5b1e63d39c3131252b0acdd1fdf12fca7c4555a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA5.png",
+      "sha256": "5b422bddd82f2b86987daeea0210d5d4bc04c6aa7e0dda819fad960c70f2b83f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA6.png",
+      "sha256": "4f89da4f98b3661c2e1f10da2ff8d8eec4053fc931184c01089ea84c48041b58",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA7.png",
+      "sha256": "4d68407a17d146055c990c490e426c1272d57ac14840dbc7e4bc45a651137300",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGA8.png",
+      "sha256": "bb003f80615c1ff6151d54bb98e62a69867d019b5b8842ddf75474fa3fb8f098",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB1.png",
+      "sha256": "5ddbef61fbe9d91b06416ecb6f989cdf64bd59ecd73fc2d832b4ffab0a4decf6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB2.png",
+      "sha256": "3b3190ff0515803b40297618a8c83f60b255263bccfbdf63122cba3e157122a8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB3.png",
+      "sha256": "df2dc24a667a6aa9e63c7e4f789d5e6e21cb1395ce10a78a000494a34291657f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB4.png",
+      "sha256": "b1cf3d84bd3acb8ca0db172932b8dc3a4dc68488652e253752c1c228024e4ffb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB5.png",
+      "sha256": "cb1d8326c54b529ebed508af48c40f444af08f378180a3305928319cb0e9f0cd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB6.png",
+      "sha256": "d5d6c8512607d559968641d53020df83930d62b6904ba29df4adda54d47e94a2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB7.png",
+      "sha256": "2d0f3538d685e840e2d5a9c239f25788fc5665154771189a78b9c16f201ce93f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGB8.png",
+      "sha256": "9e25ee069a447cebadb7b955d87f66510b64bd442bf2110ded270cae624707e3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC1.png",
+      "sha256": "e535988be34d421e7655294923ffeb47b586d10cddea12f1b624e58630f46c4d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC2.png",
+      "sha256": "1c068f6fb40d8fa585c2c9bd6f713c9da8ce2a0acfde32ba7b92f25fe3fc5539",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC3.png",
+      "sha256": "40879cd95b9f91bea4f7fe383b4cf6ccc8977486f71e83a145fdf87b92108aaa",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC4.png",
+      "sha256": "efff252a8391c5c42fba7fbcea9a4366145b7790f9b8bf020aa0cc7041e2ea44",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC5.png",
+      "sha256": "00e70a19112fa932a5c022c92110a4010f68cab4777aca638df1fecb4435473b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC6.png",
+      "sha256": "2e666ecd287ed58030360d7eef7beb0076198f2fd6276d99899783d3c1743c80",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC7.png",
+      "sha256": "8054c213c021f2f10070a147464c31e01834241788d0bbde45fa79cd4e19c1ba",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/mandinga/MNDGC8.png",
+      "sha256": "5b6dfeabd7d8a6092cd3dbc3ef64776d4bd5fb13d788e062e93c9540d6ecd3c2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA1.png",
+      "sha256": "c9506c240e8d57308114f8ce6b1f485ad0db89fe4cf1d996f0144a0196e2c1d9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA2.png",
+      "sha256": "bd6fa06c6f62aa537f87deef717c23bf75869d6eb956d5dad1711d426458dbd4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA3.png",
+      "sha256": "43a58ebf6cc4b7850bd921565e1df090e7fb5c4ee1c4c040be633e6859ff7fa6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA4.png",
+      "sha256": "aac3382d76da297f6a726684297799fd73805b2142fa710765598c69f54d6f2f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA5.png",
+      "sha256": "f73523a44a8948ee51c9b1b68953eb54e2f61ee6054e14b57552f06a3a479829",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA6.png",
+      "sha256": "86b4a3f1ff859efc8e46695a7b0a7790636acdbd828c8b3e4453de75165a142e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA7.png",
+      "sha256": "c37919c9453ecb86467f1b67ee2360745419b5c1f30fa97dda3f00a802a68d14",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDA8.png",
+      "sha256": "76d451153286cc8dee4759b11c5315f25b7796e17826a2879cf58696cbe4d3eb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB1.png",
+      "sha256": "772af3dd363fed88bc9e72a69c0979f86d0ef824dfa89ed2c61c3ad4ee7c1b8d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB2.png",
+      "sha256": "82eb1c5df927fc751a8d813f1cfce56a1bdea1ea9e1e88c2ab318d098d69b2d6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB3.png",
+      "sha256": "878ce5bba0618810beebb6c2c85302beea2448089de9521e84b3c944abe9142e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB4.png",
+      "sha256": "ae1ee4c39809e886b7b7a81b70feb7c7b6cc615ee8a7682f2d3a10b2dedd02fd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB5.png",
+      "sha256": "a7f3451b97afb55c5ad7785f7f07a7da6402109569a96625dda05caae5e191b9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB6.png",
+      "sha256": "8fe91675d587884f5267e8c96c9b4c82e9458e8afc465fd7e5777481ad815af0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB7.png",
+      "sha256": "feb600d168c17eeffac3aca3debaf1888d58f284a557b9ab0289634c77f091d6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAIDB8.png",
+      "sha256": "8adce2f5e5e6559cc15a974743d23a556a6fc4152b66e110801c17debed267dd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA1.png",
+      "sha256": "c9506c240e8d57308114f8ce6b1f485ad0db89fe4cf1d996f0144a0196e2c1d9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA2.png",
+      "sha256": "bd6fa06c6f62aa537f87deef717c23bf75869d6eb956d5dad1711d426458dbd4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA3.png",
+      "sha256": "43a58ebf6cc4b7850bd921565e1df090e7fb5c4ee1c4c040be633e6859ff7fa6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA4.png",
+      "sha256": "aac3382d76da297f6a726684297799fd73805b2142fa710765598c69f54d6f2f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA5.png",
+      "sha256": "f73523a44a8948ee51c9b1b68953eb54e2f61ee6054e14b57552f06a3a479829",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA6.png",
+      "sha256": "86b4a3f1ff859efc8e46695a7b0a7790636acdbd828c8b3e4453de75165a142e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA7.png",
+      "sha256": "c37919c9453ecb86467f1b67ee2360745419b5c1f30fa97dda3f00a802a68d14",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMA8.png",
+      "sha256": "76d451153286cc8dee4759b11c5315f25b7796e17826a2879cf58696cbe4d3eb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB1.png",
+      "sha256": "c56cc167a7b885dbcd19ada68001f13ab07d8f811a7e61512ff679ab6cd1905a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB2.png",
+      "sha256": "169422e91462fd7f20e4851d7524a15bd8efe35273ba064f1f1d82fa6b44a536",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB3.png",
+      "sha256": "06703010c25fac78099c3138df56d1999c9131c4ef94417a72e952fd7088adb0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB4.png",
+      "sha256": "6fa273dd271c06009ce856c2d74fc26f4e89e8e71bc6cecf19b08853683c07c7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB5.png",
+      "sha256": "fa1a7548d3642973a4615b0675d87052600c248782ee67470a8ef2156be6c33d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB6.png",
+      "sha256": "14e114901aa55798753f2b7146062fdff0fdcd66a216eec0126f9b1a917d7024",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB7.png",
+      "sha256": "caf8f5f5782bd10ff3320479feeb0e84fe17ff2fc26b46ad773478771a8cb154",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMB8.png",
+      "sha256": "727bfc9b20c6265888db0217c5f0a4b6c68e28c00ac5474ff71a67c5099c9eec",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC1.png",
+      "sha256": "d52d107e0d3ce158faef9191360fabf7a1ec50b980cec9346f60156ca3c0787c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC2.png",
+      "sha256": "88c2d3565c125af2197e09bc9e74440d28af7c62b99aee468ad2c01cc135c5e1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC3.png",
+      "sha256": "7e87812187aadf2888b8336e43481112f14866ebb2a801258d83671e315b6f39",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC4.png",
+      "sha256": "e20f891c1c8bf7184135aa6f87ac7f30ce032b1a2ae54dadadfd01a24ee231de",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC5.png",
+      "sha256": "5bce8a29ead42d95b47c59f4561edbe18d4dee0bdfd8dc5a36c2912cbea3718d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC6.png",
+      "sha256": "cb1743cdb9eba401c7bd171130629efffa042ac1156783b5a3149aa6069f6c58",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC7.png",
+      "sha256": "c7821b278837f2a9d17d0a0e2bfe37b469bc47a3af4870682e56ef3d037b6796",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PALMC8.png",
+      "sha256": "534be79e6c6966d550857f287a5ab77cd99cc6da95a8702bbbc7f0d7779b57d4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA1.png",
+      "sha256": "c3e623dddb6c300deb75f0188121c42e435179cc7f2ef8b8ee8a4fcb05e219ee",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA2.png",
+      "sha256": "eb5ff32798293d050094791b0eae2793bad3e8e1b109fe804acb8696cf20990d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA3.png",
+      "sha256": "7194bf928f7fe6f0a9dd93f83ef8e290801139e124d3dc30dfb56d8511e6bba7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA4.png",
+      "sha256": "eec8e6c1cd737d45e8384d1afbddf5a61209471d5d14e31c3f64808d0abff48d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA5.png",
+      "sha256": "f4bf51969ef0893e10de84b4736a108179f9984841e09f2ad68ee7a837e4cdaa",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA6.png",
+      "sha256": "cb7c93c73f76fc2a357b40e2e0048901ddbacbc9c970c2b678e9f4e016371389",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA7.png",
+      "sha256": "ab463a6350b6e18e398ef014ff56de1e2ec5d5113a94f3478d968f40618522ff",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNA8.png",
+      "sha256": "5d18f0e6e931c804df4e65f7555581a6061ec84120c6dc03107d4fb43c980686",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB1.png",
+      "sha256": "5605bdbadba3d1a2ea2571df0381e659d5bb938cd9c70b56cbea7e6b6cf80bdd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB2.png",
+      "sha256": "f43f5cbfb697b40f58517842399bfd468004ec51263d1841efcc373d20769078",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB3.png",
+      "sha256": "4d59bc66a8b38766e4cac5097a6373ff304f6b2c64a8b302432ca683cc09077d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB4.png",
+      "sha256": "e58c1f0b2a6ccf0fe3d07a9e088b8c8d8f894580d961994206dc042d75c137c9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB5.png",
+      "sha256": "86370a1b2a7497b17ec8598099836dc86c21b87facc58ad57a95d507d38311bc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB6.png",
+      "sha256": "b918d3284a38a863b2a052ab1ab86e6669e3066a81a49c752b128f4a7e20a83a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB7.png",
+      "sha256": "b110f145639a7adafb7e8a7906a09eec60371287a76b98738a1a397a33ea6fcf",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNB8.png",
+      "sha256": "54c51a515b501c5864ecb028099f09762f1b4fcfb0413a8ad0d372578c4ff50f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC1.png",
+      "sha256": "8c78e85b0bc5173f8c0ec3578acd49f7bdc83ca685d680bf14bff1acf79cabc8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC2.png",
+      "sha256": "1cd1fd66181e211947bb20c87ab607a841c7cb2079f8036e514e2520ff59173e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC3.png",
+      "sha256": "62b4f4919ae164e65171e461c48ffbd8fe7efebd06b7a9db5cdadc25d653e2c0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC4.png",
+      "sha256": "b085307086158d23c7525dee8e575bbadcbc3e125ce1fe815d488a91bd168f68",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC5.png",
+      "sha256": "9a91d891559cfeb9355aa4208aa8bbf7ecd9505a6e90a0ee877e6031f61f691a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC6.png",
+      "sha256": "fbb4d46876ef04c537e246ddc3a3584c1ac254ef46ec50af9699bfd2da50c6b7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC7.png",
+      "sha256": "3aacf084535d76d5f7af86e8b8bfdb0a5ac91e9af5b82d41c970a85be3c0aeba",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARNC8.png",
+      "sha256": "f7bb53cf985dcb07706162a8a2ca3dab401abf800d2db88df13ca664961c0fa6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND1.png",
+      "sha256": "e9780963994867d88cb4542d756c02132c7ab8caed6983451562e8e827b90999",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND2.png",
+      "sha256": "c4cf7eb2b2da6835eeab101f679ada24733c863d3f6fec811850671f35424c9e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND3.png",
+      "sha256": "be312da7e9011629c70890dcf1a07379d9d5ab918c3b2fa69e412f4e951df3f5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND4.png",
+      "sha256": "1b197ab1cf69d0613f89add8eedd6f43698930b25290528f9f083552ed586855",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND5.png",
+      "sha256": "072bc2b3a9d57e09d072ea5216a33a14f03ffa8de17f739ac6e1e9b6a04d08cb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND6.png",
+      "sha256": "a2222971a8b0870122a28afdd1b7f6d6ceeaa034dfbd9fce79852de288d0dcad",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND7.png",
+      "sha256": "00ab508903709dc18dd3f6a8c57fc0d39a2eb430e109d00466b646789287fa81",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PARND8.png",
+      "sha256": "2548fa98fd71ce3df50df36bd6704bdb939d51192b541894c2e3ee9d6496a128",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA1.png",
+      "sha256": "c56cc167a7b885dbcd19ada68001f13ab07d8f811a7e61512ff679ab6cd1905a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA2.png",
+      "sha256": "169422e91462fd7f20e4851d7524a15bd8efe35273ba064f1f1d82fa6b44a536",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA3.png",
+      "sha256": "06703010c25fac78099c3138df56d1999c9131c4ef94417a72e952fd7088adb0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA4.png",
+      "sha256": "6fa273dd271c06009ce856c2d74fc26f4e89e8e71bc6cecf19b08853683c07c7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA5.png",
+      "sha256": "fa1a7548d3642973a4615b0675d87052600c248782ee67470a8ef2156be6c33d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA6.png",
+      "sha256": "14e114901aa55798753f2b7146062fdff0fdcd66a216eec0126f9b1a917d7024",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA7.png",
+      "sha256": "caf8f5f5782bd10ff3320479feeb0e84fe17ff2fc26b46ad773478771a8cb154",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKA8.png",
+      "sha256": "727bfc9b20c6265888db0217c5f0a4b6c68e28c00ac5474ff71a67c5099c9eec",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB1.png",
+      "sha256": "d52d107e0d3ce158faef9191360fabf7a1ec50b980cec9346f60156ca3c0787c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB2.png",
+      "sha256": "88c2d3565c125af2197e09bc9e74440d28af7c62b99aee468ad2c01cc135c5e1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB3.png",
+      "sha256": "7e87812187aadf2888b8336e43481112f14866ebb2a801258d83671e315b6f39",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB4.png",
+      "sha256": "e20f891c1c8bf7184135aa6f87ac7f30ce032b1a2ae54dadadfd01a24ee231de",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB5.png",
+      "sha256": "5bce8a29ead42d95b47c59f4561edbe18d4dee0bdfd8dc5a36c2912cbea3718d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB6.png",
+      "sha256": "cb1743cdb9eba401c7bd171130629efffa042ac1156783b5a3149aa6069f6c58",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB7.png",
+      "sha256": "c7821b278837f2a9d17d0a0e2bfe37b469bc47a3af4870682e56ef3d037b6796",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/palomo/PAWKB8.png",
+      "sha256": "534be79e6c6966d550857f287a5ab77cd99cc6da95a8702bbbc7f0d7779b57d4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA1.png",
+      "sha256": "f7a6a1020cddfac49a01ed247050a84b76e4894a31986d65798ce2c02e151f06",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA2.png",
+      "sha256": "ec4d6356e7c3ba5cf81c650004d586808994fe01692ab870e524c876fb0857e4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA3.png",
+      "sha256": "bf0b7ebb5bbcf05b4e67209bb5355c609e1105a58a675868e1f5acd5c65fdeb3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA4.png",
+      "sha256": "52036162a8528ef456e4899a90823cc959547e28ab727e3a49c54306f9ad9e38",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA5.png",
+      "sha256": "63f09c1209c869584a8816f5b8ed9fb61dfef9cf0ada612ef7c315e838fb6b45",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA6.png",
+      "sha256": "2ea5e47761c5dd11c819b28353c0873c77e2a837bdcd231031804ea3cbbd3e39",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA7.png",
+      "sha256": "68c0b2b11e92bd6d013e284312dbb0a25aabb75fef2bce21eeebad444eab6ed0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDA8.png",
+      "sha256": "d97ec930e016e19ad1bcdc6037887823d5e645f71b83c4d2ec0a25c891eabdbb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB1.png",
+      "sha256": "72542b234ea29573a873a51ae7b08085eb27dd596606170399b6f5791bb6c901",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB2.png",
+      "sha256": "07a7c3074bfc21c4a9458a87018eebb858a4daf8011abb4f7face2f91e0dd89d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB3.png",
+      "sha256": "aa19d62fbc91346d2e6463a805160d14ad1d10fb099812fb5f828c35e1f6488b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB4.png",
+      "sha256": "ff69c63f83ccd164887bf61107fe92c1f8f80d02f0420086bd2c997c4b9a4437",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB5.png",
+      "sha256": "e9cb00717a347c90ef41401d210ca7782ea325ff584ff6216ab3dab1e898a14c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB6.png",
+      "sha256": "54225a1bad997e55488f3fa4b5326cc231a645def356174cff7076339a02cfb5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB7.png",
+      "sha256": "e361f4036d35836f66073948275984c7aee42e8e8eb7c32cb13ce7ac968e57e5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUIDB8.png",
+      "sha256": "0d4cc68c0dc2be54dc107bbbfdddc6aa1a94fd266cb10af975255b2bf8d83ee4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA1.png",
+      "sha256": "f7a6a1020cddfac49a01ed247050a84b76e4894a31986d65798ce2c02e151f06",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA2.png",
+      "sha256": "ec4d6356e7c3ba5cf81c650004d586808994fe01692ab870e524c876fb0857e4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png",
+      "sha256": "bf0b7ebb5bbcf05b4e67209bb5355c609e1105a58a675868e1f5acd5c65fdeb3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA4.png",
+      "sha256": "52036162a8528ef456e4899a90823cc959547e28ab727e3a49c54306f9ad9e38",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA5.png",
+      "sha256": "63f09c1209c869584a8816f5b8ed9fb61dfef9cf0ada612ef7c315e838fb6b45",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA6.png",
+      "sha256": "2ea5e47761c5dd11c819b28353c0873c77e2a837bdcd231031804ea3cbbd3e39",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA7.png",
+      "sha256": "68c0b2b11e92bd6d013e284312dbb0a25aabb75fef2bce21eeebad444eab6ed0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYA8.png",
+      "sha256": "d97ec930e016e19ad1bcdc6037887823d5e645f71b83c4d2ec0a25c891eabdbb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB1.png",
+      "sha256": "fe7c41e2fcad41e3cb99cd1d8d0bc9b2de8f12e2ecad7027dfd6bccf2095d99c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB2.png",
+      "sha256": "6f2a75fefead74ce3217a4cf68fa7338b201cbe80f3d4039d55a2f5a4ec83268",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB3.png",
+      "sha256": "f078c021455142a2556b195db7edf63ac6f1c10634d86eb85c71e14e5f1a60c7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB4.png",
+      "sha256": "de752a4a0c85274f3aba7cecb34812b4b69da1913ab6e012ce89dd65350245ec",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB5.png",
+      "sha256": "9b2af1a117bbd30c35ac3137550a962f86d0b3b33aed5f932a2584698de125b4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB6.png",
+      "sha256": "8906c4d1c6abbefdcdaaa701378bcf825bdd3a12ab348c4cc0770f31e6b2d72b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB7.png",
+      "sha256": "b5b3ea4cc8d01653670030917f99fbc8d69164014ba0ac8fdcfe801deca9a62d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYB8.png",
+      "sha256": "9e6d5f23299588ed9c28a1bd3d716ca362cc5da86c50a65e2e3904eefa2634c5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC1.png",
+      "sha256": "3e5b44e094ebdcddc4bd666fb128d982189bb18dde2520e8b1ed653f9729efe5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC2.png",
+      "sha256": "cd05756b5aa1da06fc9b36863d7068f5e894037a956eceb9224aac7da5563254",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC3.png",
+      "sha256": "d42f4584c9d920929888534dddbc235578b433075d52614ea9ebde84c691232f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC4.png",
+      "sha256": "f7c7800bd5689286db1cd55a93c5c79aea4cec42f5a83d65c6e69e7f81554b45",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC5.png",
+      "sha256": "019362ffba854abe81dda95dadce0ddf39fb9a341bdf0e5e7c250259be5c6173",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC6.png",
+      "sha256": "45567efa363337278f82f539db5dd95866feabdfe2109f79a20a7f373060ac0c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC7.png",
+      "sha256": "15dfa9545ed045c4dc4a078916be4a57b9873453337135b48e7e529ce61d3d37",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYC8.png",
+      "sha256": "b5d8803c8930eca7a5ef73eff036bd0bc56f82438aaa8aecca5c3e65eb27e322",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA1.png",
+      "sha256": "d7e93380abfec32cdd1a2146ee062669e79c554f8e6727f74e4cf6f3666baa7a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA2.png",
+      "sha256": "aae636674e930c102713f1ea12a0aed9b787f3963494912929f8d63f457b7e0e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA3.png",
+      "sha256": "1d386ca2b6ceea955e3ee271489702b25aa4623108ccf5758e114bb475f115e5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA4.png",
+      "sha256": "ff7f5357522b98e09f50fe769b8cee72b6d39a7a3872da5be9c9f56dba18adac",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA5.png",
+      "sha256": "f1863ce6de0ddc2eb6c8a3dbea73f77878749d364f37fee8c309044b14798b9c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA6.png",
+      "sha256": "76a90bf217cf3765c745de8bdd7a65ff8505d90c6d882bd68b1682efca57a4c0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA7.png",
+      "sha256": "6ec9401f67b72eca012f406e509734499c449a5d1f3ef3310b628526e56426a7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNA8.png",
+      "sha256": "59e569c57ce9f2e2a8dc598568c3ddd7b85e80178536722490d070180a46d9f6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB1.png",
+      "sha256": "0c33ee228a867bc4a44e9354e497d057031750ac1b68c90809a1f3f765299122",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB2.png",
+      "sha256": "6d90c2331d905279044a66a2cfd67259a43374dd6905aaf0de86bd960a9857a6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB3.png",
+      "sha256": "395849a10419ca1e63a767b94b02b4efe340db28c6035376b82c15061ed9c082",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB4.png",
+      "sha256": "95ffa96552a2fba36654d470674d36b1040a176bb1d6ca19b510551050a20372",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB5.png",
+      "sha256": "4f24af3979cd44e20d355e978be9ced71775255a40385d479c7155f474468b83",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB6.png",
+      "sha256": "c8c5b6dd916186d2c123f23fb366588e38f8d83707e39a6354fb52e2844bfe07",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB7.png",
+      "sha256": "90f1102a955cb76f4e110b314fab1adc352a5d06fa61da7a3b5eb353759199ea",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNB8.png",
+      "sha256": "68ed78765a638a323bdb29bd06264bbba1a707eda9ddebc4d5e7ed8d217078f5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC1.png",
+      "sha256": "0ecc1e04e2877a8a58fa4a8114d7582d6ef3eaa2bc5cebff3858c021129e6c4d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC2.png",
+      "sha256": "1c24a62ad5e339e4b8b5cdb57a492e1d2d6be645ae8cf0eb9f089537356ddf7d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC3.png",
+      "sha256": "e0c6379e8b78d6aa19f4894ba61f6d6982118e976aa020e2a98e5addb68784a1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC4.png",
+      "sha256": "b53c305b2771b8d5ffa93665497285e643bfb9809b23ce753986cec74b17acbe",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC5.png",
+      "sha256": "e6d6b1b0b73919784b643db24a12cc10f74b93f0ca1844e4e96e8079c381ca99",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC6.png",
+      "sha256": "c7d1ec9d460b7215c24793837afd83a17386cb4797ad84984205866de4cd00c7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC7.png",
+      "sha256": "4cc45b8c2a654bf4686a983699a3f0b305fb9172a1607c114e0d6c312b00766e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURNC8.png",
+      "sha256": "f2f9aa42b323598f1a7c87966f201641b14cae11bde8d523dff4b1721dd7211f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND1.png",
+      "sha256": "dd93dc4056961d6ce103b6f1b42da6da679b6af6d180b8c2cce70f92ce88b82a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND2.png",
+      "sha256": "1caa26aa05235ed02f11dcd61846b4bdfb364079473b15eb41be6393bf7e0969",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND3.png",
+      "sha256": "ef635966e46aee1b6fb1057b23e1d5c9b9d80887d482ce462b761dee98d7ea07",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND4.png",
+      "sha256": "379a0729d92bce739b3b3e3d3c4fd023c256db0e99ed6b6c850c669ffb06d705",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND5.png",
+      "sha256": "80616e1c2b9b9a3976478235138bf5d418cf9bf10fd873330502c4daef4cae8d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND6.png",
+      "sha256": "269f07fe6c8f6e40ca17fec0ca4a5d5b9e700a92e4ebc61f0517c084285a4f83",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND7.png",
+      "sha256": "2d43292aec4d3117c02520c17cc2b318a58abb8090bfa3cb61e15abf3c919875",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZURND8.png",
+      "sha256": "d399f18d35b5f518446bca66acdb4e49474c02b0ffa81d1e70c0f15571d5f69a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA1.png",
+      "sha256": "fe7c41e2fcad41e3cb99cd1d8d0bc9b2de8f12e2ecad7027dfd6bccf2095d99c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA2.png",
+      "sha256": "6f2a75fefead74ce3217a4cf68fa7338b201cbe80f3d4039d55a2f5a4ec83268",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA3.png",
+      "sha256": "f078c021455142a2556b195db7edf63ac6f1c10634d86eb85c71e14e5f1a60c7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA4.png",
+      "sha256": "de752a4a0c85274f3aba7cecb34812b4b69da1913ab6e012ce89dd65350245ec",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA5.png",
+      "sha256": "9b2af1a117bbd30c35ac3137550a962f86d0b3b33aed5f932a2584698de125b4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA6.png",
+      "sha256": "8906c4d1c6abbefdcdaaa701378bcf825bdd3a12ab348c4cc0770f31e6b2d72b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA7.png",
+      "sha256": "b5b3ea4cc8d01653670030917f99fbc8d69164014ba0ac8fdcfe801deca9a62d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKA8.png",
+      "sha256": "9e6d5f23299588ed9c28a1bd3d716ca362cc5da86c50a65e2e3904eefa2634c5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB1.png",
+      "sha256": "3e5b44e094ebdcddc4bd666fb128d982189bb18dde2520e8b1ed653f9729efe5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB2.png",
+      "sha256": "cd05756b5aa1da06fc9b36863d7068f5e894037a956eceb9224aac7da5563254",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB3.png",
+      "sha256": "d42f4584c9d920929888534dddbc235578b433075d52614ea9ebde84c691232f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB4.png",
+      "sha256": "f7c7800bd5689286db1cd55a93c5c79aea4cec42f5a83d65c6e69e7f81554b45",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB5.png",
+      "sha256": "019362ffba854abe81dda95dadce0ddf39fb9a341bdf0e5e7c250259be5c6173",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB6.png",
+      "sha256": "45567efa363337278f82f539db5dd95866feabdfe2109f79a20a7f373060ac0c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB7.png",
+      "sha256": "15dfa9545ed045c4dc4a078916be4a57b9873453337135b48e7e529ce61d3d37",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/actors/zupay_colossus/ZUWKB8.png",
+      "sha256": "b5d8803c8930eca7a5ef73eff036bd0bc56f82438aaa8aecca5c3e65eb27e322",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA1.png",
+      "sha256": "73d527e59e438ee4c3a576716e6429effcfa52acc5f3b6c433ad90f32b18eb65",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA2.png",
+      "sha256": "bef74f8275acabbdbb89471e859071d0989d9bc1224241680c7a918743e8a728",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA3.png",
+      "sha256": "f20fb4a29e58ede362d68b326abf5a68444b386c493f19e028f854a202df0e7f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA4.png",
+      "sha256": "7a9d369ff1b49c894f4ee3ecc312ff00a238b463bb765c98560a475f02ac091c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA5.png",
+      "sha256": "4ec2e3a15d7510bd9e0fee93e3de4164b830d40b85a6474ca90e3a3fd2620612",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA6.png",
+      "sha256": "319541e43c62dad8e33d178e36e8f3cb59816d3f55e2ee4bbd10c3d018db0b46",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA7.png",
+      "sha256": "40b1fe0b0bb7d119b5a302b066f67d51a8119181e90b9c6a95de5157e81320b2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARGOA8.png",
+      "sha256": "fc4b1c4f7c2e045a97d541cff2807286a4ee3c448fa9fe6f0d24a623197884ea",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA1.png",
+      "sha256": "73d527e59e438ee4c3a576716e6429effcfa52acc5f3b6c433ad90f32b18eb65",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA2.png",
+      "sha256": "bef74f8275acabbdbb89471e859071d0989d9bc1224241680c7a918743e8a728",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA3.png",
+      "sha256": "f20fb4a29e58ede362d68b326abf5a68444b386c493f19e028f854a202df0e7f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA4.png",
+      "sha256": "7a9d369ff1b49c894f4ee3ecc312ff00a238b463bb765c98560a475f02ac091c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA5.png",
+      "sha256": "4ec2e3a15d7510bd9e0fee93e3de4164b830d40b85a6474ca90e3a3fd2620612",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA6.png",
+      "sha256": "319541e43c62dad8e33d178e36e8f3cb59816d3f55e2ee4bbd10c3d018db0b46",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA7.png",
+      "sha256": "40b1fe0b0bb7d119b5a302b066f67d51a8119181e90b9c6a95de5157e81320b2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDA8.png",
+      "sha256": "fc4b1c4f7c2e045a97d541cff2807286a4ee3c448fa9fe6f0d24a623197884ea",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB1.png",
+      "sha256": "297c4097d19b6e06d1a8d25276b4efacbb95e3d6a825bfbc2c631dfc9218c5b1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB2.png",
+      "sha256": "3dbef9f6dce0d7ddbdc2d0c827bdd0fcb2ba593b00b1c11c872dc40385b9064b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB3.png",
+      "sha256": "729176e4ae1e4d7933a0b46da583e20a44761b1f2b2756fc9157d014a56b3576",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB4.png",
+      "sha256": "dc64219962e38f78c6ca503c3574785af55edc6d008b6d21ac404524a9097a7f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB5.png",
+      "sha256": "dcd490e657517ced8f2141cd04b4344bdbf88868da0e3415043d276995607ca3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB6.png",
+      "sha256": "d92f7fee46785bf4906b2375582ce1328d2578b9894970eb703e3c9035e3ded7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB7.png",
+      "sha256": "103b1c77a92f79583e9072c29e76ced4b77ce7ca0701a6bb83a75558d3d1b84b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARIDB8.png",
+      "sha256": "c5500ee996b8af63a6995ea4c3944f130bf28a3248a102865e7f987a5d1398b4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA1.png",
+      "sha256": "61b6b4982749fd500c6c65c598500aec0b818bf084b60e955d71ccffb3e2f964",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA2.png",
+      "sha256": "85a1eb3531a54bc37b3938ce39068918a5e74229c44d21c5efbaf0fd1983e59d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA3.png",
+      "sha256": "d5606028eff705dde3371fe6649b9452c55ac0ab34d524da43dc25cde370cf7e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA4.png",
+      "sha256": "d9c31925f7cf9b132d8d659dc3c7e023d37fb2c24d3a097d0dfe3f3307441b8a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA5.png",
+      "sha256": "b98befafee9e3b2bd1af905ab31ea58c0e4fbca68b86046349bef9912a677043",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA6.png",
+      "sha256": "850f1607a018d237ffb2e9c64ced1364871de58ac2fe5fcd1977531fcccd815a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA7.png",
+      "sha256": "1ade92d3a389efb5beec3bd4f08b25abb534a21d0517f29f570116c3bf3b4b90",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNA8.png",
+      "sha256": "ca2773e8030d1bb2341e1072b1991c65021488446ec8db8983a91ce02b2939a4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB1.png",
+      "sha256": "a4dc342559fc4efe67579007713ae07a6060c4cac0d67c67b06695cc26ce2b90",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB2.png",
+      "sha256": "a82c1a5c5545f079b3f0113cd4d35e2e47819526f86fac0b4827b322c80f37dd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB3.png",
+      "sha256": "53c39f16a2eb27e0f6570f563f7ca63632b36f7c82388c785d1f3a8ad967ddbb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB4.png",
+      "sha256": "cdbcaad7f1567437939887ee6aef289cfc4dacb62cb6085e10802c72313db4cb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB5.png",
+      "sha256": "e9e489bf4d473d84713b7073fac26b98327f21e9444e3bb26093c1c3c8fc0453",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB6.png",
+      "sha256": "8915dafe43d8772383833093ed31a6f98b5fa33705cc4f6113325abe6bcb93c8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB7.png",
+      "sha256": "a7e27f2e73d25714519091d93dde5f4bb34eb3c87bf6b584737ce24fd4964505",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNB8.png",
+      "sha256": "cfb6c9f9a12e3664b8fcbe09accf7fb97b61f90c57360dd7be276b15a6913d63",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC1.png",
+      "sha256": "29cc75ecf3608cf7308949a8c34153106e1f78d170b0f5865fe9885085f57702",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC2.png",
+      "sha256": "e727d204b97318dd97e79317497d17797013eaafc0a7a58670b464acf2af38f3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC3.png",
+      "sha256": "7b94fe6ef38bf586e3feae7d2d747890eee874e3dc72c819669153527211ca35",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC4.png",
+      "sha256": "df88d60e2e2658e778d4af16c57f477445bfd034a8d065b9c3549d46efbed361",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC5.png",
+      "sha256": "bf0cf23f961cb7ebd29893d076aa548d96a1bedcdf96bbc14ce1d1d5e2984820",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC6.png",
+      "sha256": "34398c691129c2f0a677cebdc8037e41de483b2e12e50a9d04b5df8b726e6039",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC7.png",
+      "sha256": "282f2b620ba8de7c30db49a09515d9060d8c3ed85c12714ac2ddeeaf0040e439",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRNC8.png",
+      "sha256": "804b3fac2e702c800fa54a9a47ff95d46dc87900fa2d53e6ef603f2884dd259e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND1.png",
+      "sha256": "f54e656b5ffff67212a6917d6179f67a83ca776a7cd3c34a1c67f7dbe77ab752",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND2.png",
+      "sha256": "9bed4567ff385a513c630821768b7418c0c52b2a3b42202f99377718373acbca",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND3.png",
+      "sha256": "b41ebea6c2791916e3fb394b69ad80d95d6477a4d20022119551fb7d4801e52d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND4.png",
+      "sha256": "bff46448c41b79411bd72240d659d05d3f3b605a0c9d3b4e44fb77f17c707d76",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND5.png",
+      "sha256": "a535bd6c3149bb6c9897fc95f260804d086afc49b7f6a07f803a748d3be923a0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND6.png",
+      "sha256": "1bead382d932b128fd7775ab21d2ee736d5e29e985864d0063f36b8c10240c68",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND7.png",
+      "sha256": "a70bdbe13e776aa77248ced1412ffdc53898b00921ab4ece563bf22c6be926b7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/argento/ARRND8.png",
+      "sha256": "f039b10e103dbaa0f2d39664a1ebd82ecd20d7fca3921a30198541bbc1ea283e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA1.png",
+      "sha256": "c8da3e70667131141df37b8685705f877716cfcc0ae1307d8ef06c01a10de23a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA2.png",
+      "sha256": "36423359a05d5a2416ce3135362c206ee4355be4040bb02c6ad01e9ffe2a8fe9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA3.png",
+      "sha256": "7c6cb65060e0179c7e8cc587c47af76ad0ef42b9aea75096f90f258a3642e5e6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA4.png",
+      "sha256": "460ecdc1342a113ff4b15b704b2b73926204d9c6b5a94e89ca68559fc2445cf4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA5.png",
+      "sha256": "251f0315f04d127a202adaa8a51552e6ccc6f399ef3e68b251304adaea241114",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA6.png",
+      "sha256": "1bc2ee81e8034a4e91acd6581552df9689794ade87f665a75ac6e0e5e00be400",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA7.png",
+      "sha256": "2368bcbbbe7200b27a312cd0bfbff418400082ba1efc99c1b8966ee86ba4a1fd",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAELA8.png",
+      "sha256": "689b0d5c80d29eeec97ece5799b592c86845bb2a4667ac915705c615c4c3c31d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA1.png",
+      "sha256": "c8da3e70667131141df37b8685705f877716cfcc0ae1307d8ef06c01a10de23a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA2.png",
+      "sha256": "36423359a05d5a2416ce3135362c206ee4355be4040bb02c6ad01e9ffe2a8fe9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA3.png",
+      "sha256": "7c6cb65060e0179c7e8cc587c47af76ad0ef42b9aea75096f90f258a3642e5e6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA4.png",
+      "sha256": "460ecdc1342a113ff4b15b704b2b73926204d9c6b5a94e89ca68559fc2445cf4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA5.png",
+      "sha256": "251f0315f04d127a202adaa8a51552e6ccc6f399ef3e68b251304adaea241114",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA6.png",
+      "sha256": "1bc2ee81e8034a4e91acd6581552df9689794ade87f665a75ac6e0e5e00be400",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA7.png",
+      "sha256": "2368bcbbbe7200b27a312cd0bfbff418400082ba1efc99c1b8966ee86ba4a1fd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDA8.png",
+      "sha256": "689b0d5c80d29eeec97ece5799b592c86845bb2a4667ac915705c615c4c3c31d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB1.png",
+      "sha256": "e1153fbda27487fa1cee268bfcdf0b1fbc104d2766bd3cbee1e7057e526f3315",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB2.png",
+      "sha256": "f67504fac09b00509c9b03e158f7fd497a9549d46e884a706200505d68acb2ce",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB3.png",
+      "sha256": "a6cfb7f01b7cd018f7e78e3436ee6f111fafaa23e5928994d506b8527c90d691",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB4.png",
+      "sha256": "5205ff9748d5c5abc5c23863506b3f1da891c7b0024cf89aa9b82eb4b5c245c6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB5.png",
+      "sha256": "61d9000d2ebad1d948bd9d45cf8da0c9c4ce9b3ffc4de0b615d4961690e53a34",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB6.png",
+      "sha256": "1b9ea55cde058c699679e0b0669c54a22eed913b2cc096ded44b0834664d735a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB7.png",
+      "sha256": "b42170dc64ce565294b81ea8fb23b98947ca8753760dbb40d03622dc9ee23965",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CAIDB8.png",
+      "sha256": "839cb2d2f64005635fa2dec6d421b3675ae0578674881e63ec0e7a1a770f6be9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA1.png",
+      "sha256": "5bf1798657099f676800f5e5a964bcd6502c49bd303db1539ab639d4a488348e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA2.png",
+      "sha256": "1922267396a1f81e457e3df1504d2419e1d1224484f1ade8f8978796d17c6cb4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA3.png",
+      "sha256": "9e3f9e39f43f81058603caabd9d32ef0b82bbc8edad0ec6aa3a325e7f5a5d421",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA4.png",
+      "sha256": "e6ad9275d45ba0b480f9545d06c98fc72f20cbb3febebc222245b11c76603bc7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA5.png",
+      "sha256": "b62b3d359183ae6e6c6719f62a1ada42a3d7e208ce76987b0982d06be0ee133d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA6.png",
+      "sha256": "030091ad1274a0b144fbda69d6bfbebec17d42e6082268bb0fbdddc7431029c3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA7.png",
+      "sha256": "f61ffa5ec1fa786725744cbed740f53f35012a82f2138699e1ca33e038e41500",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNA8.png",
+      "sha256": "546ff03d8596087cd7ea0262c2b459e33e3d627e596491121a09cf87682040dd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB1.png",
+      "sha256": "bc999e36aca0a6af6f7989e3cd76463fe3e5d63d1e14456b0f86ce737d159ae6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB2.png",
+      "sha256": "0cfc82e19e030c7494f6ae9003d8aba07c377ddc2aa07ad5e5e65fb74223771b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB3.png",
+      "sha256": "ea906044aaf1ec380c92353655afa0f76589e118bc9ca01408d0ec977154f447",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB4.png",
+      "sha256": "6537dcf7a3f3920763f64db5d6713ab6b1257375fe7c01cf90f423d45560b0e6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB5.png",
+      "sha256": "e562b276b3716ffa494ecbf59407773e518d59d80667c6d7c33e1ac7a9284944",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB6.png",
+      "sha256": "e49559ed3c755d5b3f4fde309c4625321f33d698d0c36c2d0d13ce2510a1904a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB7.png",
+      "sha256": "e039085fc61a884e45240594dd30f0ce54c16bd3554538905717d5ee5cf81eea",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNB8.png",
+      "sha256": "cd5bb2f5a96c621c4cf1dadd0d5f06e7e9f57cd1e068350025b3ae4dff233036",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC1.png",
+      "sha256": "c18085b6fbd87c165530078425c6a48f0aa95d610c901f5d01c669e5d9fe990a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC2.png",
+      "sha256": "aaa907ad8f6d0b3c77cf2e059efc063df37067e3796330d2a94dfe7f9fa1a669",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC3.png",
+      "sha256": "6dd3348f1bb6ec38e2fea0b0fa0aa7d6f550c123dd6b26e94fac67f002504660",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC4.png",
+      "sha256": "b585823b022c297b3cf3eee01eff2c6850a9761e1a5f718d7962b7597cfd7af1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC5.png",
+      "sha256": "eff9aac7928ef7e33d313687c6dc079ac01c229f1cd54d4abda083d9c4b7f343",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC6.png",
+      "sha256": "1bbc815d30ac8d4bd98c60589d115eaf4398435c43bdb537483344217c057ca6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC7.png",
+      "sha256": "5ac0adc2426cc0125998d329be08555365a4329da052bd202f6e686d5ee7a5f3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARNC8.png",
+      "sha256": "63894947b456eafcd3c02e102166fa934079893cd74bff18046e2b88fbd4513f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND1.png",
+      "sha256": "0b4630b7baf692efab943670e575aa4b4894da9ebd74527f665e443210d8695c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND2.png",
+      "sha256": "2592f29fc2d3562c796270928a66454a53bf2d1d00565ecd3a3a1516a87718aa",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND3.png",
+      "sha256": "99e50e0aa865573f2bbfa9ecd0e0fc0312f8b7ff92c9901da098c41af8c3d1e4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND4.png",
+      "sha256": "5db98efb119846ba5873f8d98a0145070f5b53776b9cb6a7c9bf0816ac7992b3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND5.png",
+      "sha256": "15ca08266ab6d526a8a7b1450a912a55f11b89cbeed68c74c6e3feb876e5a393",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND6.png",
+      "sha256": "dee5db85943cd56d06ee9b84a40386821ed73cda5aada2981d0e792c0a52c9e7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND7.png",
+      "sha256": "3642e127ebfc5465f84d6f149796e1c2531502c8f1b8df5998628e4a2fa8a2d8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/caella/CARND8.png",
+      "sha256": "296b7633ce5bc09098fa4b2696f753da2bec17c6de55a8e1bb21edf046a14f13",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA1.png",
+      "sha256": "394b24e561baefa20cee3e0170825825004fdc6f2626400f004c1cc7031a82e9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA2.png",
+      "sha256": "5c42db37ac3bb3f94566e836b360863ac0bf1e51e47e44d1eeb78ee3f1e1c5d8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA3.png",
+      "sha256": "593ae5798921a822bdab343f442a8e73e853d58c3d9c3e082add752791630223",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA4.png",
+      "sha256": "4c56682f6b2c87cde21975e7b01d256af64834705600d7827a63c57a32dec4a6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA5.png",
+      "sha256": "6a9d5278ef07d22f524529a007587b9209573ce704de5260f3d9caba45369d22",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA6.png",
+      "sha256": "8fd30fc37ecaad4434fe858abafc0eaf222005a1a1bb5e23b53326fd8f36f9b8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA7.png",
+      "sha256": "b8c3e034aca33c57a894670749f4309b9fbd77897a9cbcb86665e9b8fa7d91ce",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDA8.png",
+      "sha256": "22016ad1ac07af81adf41e8aa0097b7db45c6c1a28d97caa64c88ae0dd2aafc6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB1.png",
+      "sha256": "592d50806ee9fb2391fb0234c5e8e7b54ac0c60d0a6f4741852daa1b45cb83fd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB2.png",
+      "sha256": "71b194f42dfc508a8c5d69efee3523b5761360e292bd33e59855f9f7ae7dd238",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB3.png",
+      "sha256": "fa3c2bf68de655a6a54567680fad499912e69651254e37f14daa98af838c8b1f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB4.png",
+      "sha256": "87c34292431a142a00cb62ab8ea3e56c11baf702d30c90cca70c1ef42fadcfe0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB5.png",
+      "sha256": "92c98751d74e285a30da77ae096d95c77b07609f3533c77bf698ac52befb0eb6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB6.png",
+      "sha256": "dbb26e2033b074970cccf89cd365f83c8921ba6addf13f5b3a18fa267c39d9b3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB7.png",
+      "sha256": "dc49b7069701c91b2e202b42bdb6adfed1076ba03652e886457fb4096c971198",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOIDB8.png",
+      "sha256": "33fde8a1e107b6993e7092574480cb9a2ff531c32e1d758065f0df424975624f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA1.png",
+      "sha256": "394b24e561baefa20cee3e0170825825004fdc6f2626400f004c1cc7031a82e9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA2.png",
+      "sha256": "5c42db37ac3bb3f94566e836b360863ac0bf1e51e47e44d1eeb78ee3f1e1c5d8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA3.png",
+      "sha256": "593ae5798921a822bdab343f442a8e73e853d58c3d9c3e082add752791630223",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA4.png",
+      "sha256": "4c56682f6b2c87cde21975e7b01d256af64834705600d7827a63c57a32dec4a6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA5.png",
+      "sha256": "6a9d5278ef07d22f524529a007587b9209573ce704de5260f3d9caba45369d22",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA6.png",
+      "sha256": "8fd30fc37ecaad4434fe858abafc0eaf222005a1a1bb5e23b53326fd8f36f9b8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA7.png",
+      "sha256": "b8c3e034aca33c57a894670749f4309b9fbd77897a9cbcb86665e9b8fa7d91ce",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIA8.png",
+      "sha256": "22016ad1ac07af81adf41e8aa0097b7db45c6c1a28d97caa64c88ae0dd2aafc6",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB1.png",
+      "sha256": "e85b05affc50dab0abeb3e02ef233a00cc0168d3cd669641690a096bbda6bae1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB2.png",
+      "sha256": "b3473f0a346d84f3964620a889c09c0cfabe009374d92bb6891948d43af86454",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB3.png",
+      "sha256": "9ce6bace88229bfd8cb41f48b2f17918c8ae23b860ae15d523ba37817ab04e9b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB4.png",
+      "sha256": "4928eeebc8437f59b5d5dba71bfae1b29ecd7f3e014d51be3754fb44f16ab655",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB5.png",
+      "sha256": "1dc6d4ee3c3d44e8242baeb1cb7e78245d1b6b33a58d16b83ae00fdc019415d2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB6.png",
+      "sha256": "7e02d9334d7c7a824ec534f6c65040caf9fadf6c137b35ecbf622f056ea49aa8",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB7.png",
+      "sha256": "e0a71cb308f95d8f6ddf2fac2136eadcee7df15ed2f596e522ca17ffc5f49f31",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOMIB8.png",
+      "sha256": "0fb0a65ae014baa8205024f89f07442e43376d7c1642fabf9a91e22b0aef8508",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA1.png",
+      "sha256": "8727b6fcc3fd08ae736d0c8a830c5b4dc4eb0ca37ac6ab57f1fb65a173998fdc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA2.png",
+      "sha256": "ab13384d559311edb035a36577a5f0ec6299922e15900fbaafb2c4f44db6ebff",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA3.png",
+      "sha256": "c0beb9985c510ed39c88e6fe75c69b4b498f390e0dc1d0d8e6ed041560c2b0df",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA4.png",
+      "sha256": "ba339eaf58b7ef187e96b2b8f5eae8daa922045433f8e1a84000c9a4748d62d9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA5.png",
+      "sha256": "aacf9b736f081eed34d3021315a21454254805d552411c3acb6f598b6124880f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA6.png",
+      "sha256": "0ab423a653330e1181d95fe1ad1b168d94bd4301376b8c9421a140745d3f56a2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA7.png",
+      "sha256": "2259a021382d5d9cb99082020b7f22c782edaa7c7bedc2947a7444b1aeae46bb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNA8.png",
+      "sha256": "6108d2db43b62561ac41d41fe184c6527a3a541e914c15e749b7c495a9e84ba6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB1.png",
+      "sha256": "b80b22a78d225c4e7ccadfde5e633f061c69919178850d96fd71838864597924",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB2.png",
+      "sha256": "c989269b59274d824cafe27fb6cea8d71ad962034247a88637a30985af6bd252",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB3.png",
+      "sha256": "3027e8c19e845fb538c7ef63581e99d53065b42d25faca37e9751d6b6d282e4e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB4.png",
+      "sha256": "bc7140432f65cb2d448c9ca83684f1971c33412035b6e81476b4882297340dba",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB5.png",
+      "sha256": "51c69d7e469bf633d36a8839bc6868e579d2f7f46456012de3d403ce92815b99",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB6.png",
+      "sha256": "0046c90a5ca1db5bec01882c8c8995ec5f5a6b79f995cc7a9b4cccc63cfa314e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB7.png",
+      "sha256": "3f8428a6ff5517c51adb5069ccf36d4c96a9c7d393e6d946441508c5af43505d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNB8.png",
+      "sha256": "4a660c37f45ef13adc56cd3357ac84f3d601a752e4f4ce02e6d81764ed2826e1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC1.png",
+      "sha256": "d6969e84997abf7fd63374475c2eab1a78b3a548f97ffab736177bb2ce59062e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC2.png",
+      "sha256": "bdbe84a7cc39b0e45aeb65b14bbcc3e58ccb30e72d3e60781e5def6f42fc1ea9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC3.png",
+      "sha256": "cabdc8356b459f13b4ba889641894a9bf7f9c5fe30f386295c1030256d2b5b10",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC4.png",
+      "sha256": "ab9e84fd42228f50254cb598e5ab9690a8c48e5f0d8019d82c13236968cc397c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC5.png",
+      "sha256": "3ee7b2aa0cc907a2d7532536cd6a2f7edfd90b4ec8976fbea1f6057b093dff87",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC6.png",
+      "sha256": "7ebb20567ae694e2400e0cf07b43daff965ad9b625685e4ebad25fc6517085be",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC7.png",
+      "sha256": "d0fc4d3a6d108c0ed880534a35dbb24966ea91cd1c3b01a8316875dedd17cd2c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORNC8.png",
+      "sha256": "2017288f51097511d871c5789d4e1017dae245ae27749cb17039e160bd25d82a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND1.png",
+      "sha256": "6489b581a94ad7075989f1cb1f9b3b4c0115607965bbe42762a4840858151d34",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND2.png",
+      "sha256": "204cd74c27234d76b08486811dc2fef87460af67fd42386bcf01cdc734268c07",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND3.png",
+      "sha256": "11c28c875f22a1382b3bbc7578097aa4a95d94c0cd4cc2ebb449f1dd88522fc5",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND4.png",
+      "sha256": "3a34db78bd338e24180e9f5b362cd869005ef7391e4add1b8a420bb82df77e86",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND5.png",
+      "sha256": "60aa121cd38e1e5a755edd41f5894e09a1601e67af6e7d52f242448c73e90ced",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND6.png",
+      "sha256": "582186eccf2f09cc2824bcae9efe86b98f67a35b0d63df3e31ac108f51f1ec54",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND7.png",
+      "sha256": "83a75f8131f8ae54687c5423319e9948cd740bca148cc23d63a196d819394de6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DORND8.png",
+      "sha256": "44acc5e2059175b44cb495ae4941e29cfc1e2279a9de99c41e8cfc92038b97cd",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA1.png",
+      "sha256": "e85b05affc50dab0abeb3e02ef233a00cc0168d3cd669641690a096bbda6bae1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA2.png",
+      "sha256": "b3473f0a346d84f3964620a889c09c0cfabe009374d92bb6891948d43af86454",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA3.png",
+      "sha256": "9ce6bace88229bfd8cb41f48b2f17918c8ae23b860ae15d523ba37817ab04e9b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA4.png",
+      "sha256": "4928eeebc8437f59b5d5dba71bfae1b29ecd7f3e014d51be3754fb44f16ab655",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA5.png",
+      "sha256": "1dc6d4ee3c3d44e8242baeb1cb7e78245d1b6b33a58d16b83ae00fdc019415d2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA6.png",
+      "sha256": "7e02d9334d7c7a824ec534f6c65040caf9fadf6c137b35ecbf622f056ea49aa8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA7.png",
+      "sha256": "e0a71cb308f95d8f6ddf2fac2136eadcee7df15ed2f596e522ca17ffc5f49f31",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKA8.png",
+      "sha256": "0fb0a65ae014baa8205024f89f07442e43376d7c1642fabf9a91e22b0aef8508",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB1.png",
+      "sha256": "ad41625ef71c462e603c53482fc3257249b180ce9bf3765062b0be2b526245c6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB2.png",
+      "sha256": "ab22fdbd01468cc6213a68098e6da6ce1471f3218783d0731534b5f2ef3f7635",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB3.png",
+      "sha256": "e0dad5e182809a25f792ab69f648b615e49df70f6ce7cd56d16e1146cb9c830f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB4.png",
+      "sha256": "cbd8ac1cf723abe4f0f8b35406d8c67727e79e6f947e2facb782b7faf89164f3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB5.png",
+      "sha256": "c88f3ae80fa2171ffb2c8fec83607730046a9111fe155878d2376fd1b1e25d53",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB6.png",
+      "sha256": "3fc2ac2b58c86f048882d5e29628f7451c334a49a3f415b2c78e796133e63032",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB7.png",
+      "sha256": "f1c43ddf734a2aaa588aef0cf3748ea7e52626b693a482269b6253481282f47f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/domingo/DOWKB8.png",
+      "sha256": "2fab5fab1dce2702b8cb25cfb69b6be138db1b6f5d76050db52564e85719a5c6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/props/rest/CSBGA0.png",
+      "sha256": "0e5078667834064bd6e0bb941c0862ab1026c3856c83a97e2a2fcbddf43439b9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/props/rest/CSBOA0.png",
+      "sha256": "20cd096b0240f3e836217f81957c64c99bcb5c5f6e6d4fc925e49446dff9394e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA1.png",
+      "sha256": "af7099acf9f0cebf4f365d021fdf0a953b2d05ecb28d9409a988306471d81195",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA2.png",
+      "sha256": "586c7d0b59d9e3c245aebe3ee1cb8a9aac3f411b1ac84724ab3eae8e12489df6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA3.png",
+      "sha256": "49f4dc3c51b3c614e845cc5dda5d0e6931e995894be5c617a41832d80ebc2755",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA4.png",
+      "sha256": "d271b06e20adf9167cf1f14d2e496e52266eaff6f6e103478a753774c48a5426",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA5.png",
+      "sha256": "475883efa2546afdd54ed387ea9ed598f6bb1a12b4e335cdac959cd11007fd59",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA6.png",
+      "sha256": "d533a4fb3531dbb7a34893d2942999cb45b6b2748fddd6e64aea5df5a3de5cfe",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA7.png",
+      "sha256": "f3d3d83751168c070c8a663cfcfdb81cddbc7e318b4acbb0e388b699d20b1784",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAA8.png",
+      "sha256": "9daf30b26587536fc39c3234150af73a2c9feb051339e761a8905fa1ec178c17",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB1.png",
+      "sha256": "2dd0229c164e3f7d71591af9a28f20246eb34b57dd805ba3fc746689a698369f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB2.png",
+      "sha256": "49353ddb954fe1b8b27ca7862b3b8f0ba2cf5cb557ca4bfdfda83fff57e51255",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB3.png",
+      "sha256": "63b96295d18ce8fd7efda32458a3d462e398dd708c74bfc5399540597bc775b7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB4.png",
+      "sha256": "82f4a1f6010d8f6bbdde4a0a05c4cc83124abe4e2e3d63fe91a1c5cd464f0afe",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB5.png",
+      "sha256": "4a835ec8a32f112a64976211287047b8e752fe5e671ffcc67b8462a7e1b85179",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB6.png",
+      "sha256": "6df639eae89eb813b2e057a83542b7614e2175d06b854c1d78c58eb9dbab701b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB7.png",
+      "sha256": "7288ebd0969c273eb0a27477ea07d5430b43c316c00fa9726fa57e43e2f35702",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rest/palomo/RSPAB8.png",
+      "sha256": "895f603432a0daca05ec984f953537d0defd369553771793ade02b72b6af5131",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA1.png",
+      "sha256": "4c5a8b1c80c6dcdda8d36ec4c19429c18e598992ff9816d0f785849bc05f358a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA2.png",
+      "sha256": "a7fca065202a97e88302ed7504e9ce7f5b574294a38d00858a3c17b75d49c078",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA3.png",
+      "sha256": "eb8f52c05cf83031b06fef6ad37d9be725c35e88bb1126e0702ce0544068854b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA4.png",
+      "sha256": "3c2f4e9d9187ce52e52e28715f5877e7f6cc3b5169e51f5b41d702461882fc98",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA5.png",
+      "sha256": "46226a2d0f00bd9899e5aa4ac5e609dba3402ba60511a4a7de250abca8ac183e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA6.png",
+      "sha256": "1b6e61877b90ed006b76223bfcfc15f2289a54eaa26728a49200bd9c884a0ca9",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA7.png",
+      "sha256": "a497f3121b04b5bbc2ea7410bb86bc00b3b5e973f5f77628ec4dee4d23ea9511",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDA8.png",
+      "sha256": "a1ea9fad88c0c7ea94307456d6923a7aa0bb59cbf5c2ce037adcfb4251a5050d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB1.png",
+      "sha256": "3d22d1c639b3a737eda46405508cfc00f1e8840090dd4405f87a75824f291c22",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB2.png",
+      "sha256": "d208f082816688087dcf46a69958eab175afbe4e668167057080112c4ba2d4a6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB3.png",
+      "sha256": "f4b88da4bfc297840fb8f6cff3e935b8a7a3a3c777c4ab2839a88db333930041",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB4.png",
+      "sha256": "ec85228ab7d55dfb082cec4a0c2508fe47c8c452fee5bd1cd9f7e22dcdc82e58",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB5.png",
+      "sha256": "501e9168f99704498db91f53a8e5b8c3005004ccb3e2b612e01fc94b86c9f62a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB6.png",
+      "sha256": "aac3cade38eaefd7d0b3de0a771d66093a448be8e5d0e82b76be46d449c89b61",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB7.png",
+      "sha256": "a551b4f4c80366702a9293595bcd499a0a4323c6c131c5699597b9ce3030be92",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/ROIDB8.png",
+      "sha256": "e1673288dabcfe768c0ca3e7bf13cc888267260f9f1cc6e3c6940da81ef7821a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA1.png",
+      "sha256": "4c5a8b1c80c6dcdda8d36ec4c19429c18e598992ff9816d0f785849bc05f358a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA2.png",
+      "sha256": "a7fca065202a97e88302ed7504e9ce7f5b574294a38d00858a3c17b75d49c078",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA3.png",
+      "sha256": "eb8f52c05cf83031b06fef6ad37d9be725c35e88bb1126e0702ce0544068854b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA4.png",
+      "sha256": "3c2f4e9d9187ce52e52e28715f5877e7f6cc3b5169e51f5b41d702461882fc98",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA5.png",
+      "sha256": "46226a2d0f00bd9899e5aa4ac5e609dba3402ba60511a4a7de250abca8ac183e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA6.png",
+      "sha256": "1b6e61877b90ed006b76223bfcfc15f2289a54eaa26728a49200bd9c884a0ca9",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA7.png",
+      "sha256": "a497f3121b04b5bbc2ea7410bb86bc00b3b5e973f5f77628ec4dee4d23ea9511",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIA8.png",
+      "sha256": "a1ea9fad88c0c7ea94307456d6923a7aa0bb59cbf5c2ce037adcfb4251a5050d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB1.png",
+      "sha256": "6725b69de8b44c65dd06dd91f87447c9cbec560c84f654d4ac2dc3fb6be7626b",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB2.png",
+      "sha256": "6df2a9c232c9f4915d76f9f1c98e4286b27cd00154a05cfddc7985b3a3e58eeb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB3.png",
+      "sha256": "61dfc49db95cbffab491089989cd76f8110076508d4f4804e2965c49fdc21871",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB4.png",
+      "sha256": "6e3cf7a7d70a3d62f39f5a16654570aa761da768624a81098169749663cdee52",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB5.png",
+      "sha256": "a60e50f12c1cf73feed11421df8d08edcd505a38cf2e88027e26982894ea386f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB6.png",
+      "sha256": "e5f0387c73eb232b4577952db395c9f0e33225190626463ac6f658496c7517e4",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB7.png",
+      "sha256": "5dfe0285584db1c6f2d4a806a78e409a19272be2db8ea911be3d5a3e16f58b4a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIB8.png",
+      "sha256": "96a8fc629b002c3e319291d48cbc89cc240715f18e88022fd285aa058a63d3c2",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC1.png",
+      "sha256": "d2208bad99a0d83079bbc0b20d9489ca7cf1cabd14de732beef5b8cc40ef4739",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC2.png",
+      "sha256": "54a66c0e498c6e6779a3903cec5c681e3dfc634f5875d7df89fafc3930465daf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC3.png",
+      "sha256": "3746202f507b4f46534a07e43b7a074a9916d55bab10466b7e5bc881d334c736",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC4.png",
+      "sha256": "8356d69f2a8fbdbb2ba54bf66118a6e94b29b5521d81c41e766bbf5ec440734e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC5.png",
+      "sha256": "5826adc250f7076035200becacacf40fd2851b8579414229dbc01d2b119d4a8f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC6.png",
+      "sha256": "18955536cd1abf36aff3caa5ade97054bcd514dde3af423ce01e11012f52f4ca",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC7.png",
+      "sha256": "cdacece24483e7bbc3b9d701f71a334a400bbc4adc7c8534d5d7e65490daac5c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIC8.png",
+      "sha256": "6303384d3abf4d9eb1d6585687c3d219e41218a5332a0ab37f106a135c80268e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID1.png",
+      "sha256": "6f95f50c720daf948424f2bc8de639c3abbd2b385546a9cec1cc9b5018a85ea0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID2.png",
+      "sha256": "ba81053b5b96a0860b800fd2bc4b18ffe1a986b311cb9842345fe2e2aa76b731",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID3.png",
+      "sha256": "b0b6e6d248bf121622e69652ac9d040cfee4426cc8938d8c752c1addb77b9bea",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID4.png",
+      "sha256": "51c05ea21da5d30202c386db89c72838dc81436b3fd648fa35224e127166ac32",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID5.png",
+      "sha256": "86132f8927c82e8019a2b9e2d269099e394f7dcd079fba914eb7f175adaa1cd7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID6.png",
+      "sha256": "412de06ccccf9409b33cab73cad5ab1e23f31fb0588041f9ed3a6fc819230ecb",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID7.png",
+      "sha256": "870062054e872a7c063ca7736151aacc747e86e1a8b4fa459c7988c6747ce325",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONID8.png",
+      "sha256": "e96c3861189fdcf9e496e41a38eb13edd0288c38680a2bbe9fadb14a9a29c41f",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE1.png",
+      "sha256": "7a0cd6cf756b004f3f47ce608e07a8600e41c7b8d36092d474e3265c547f3018",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE2.png",
+      "sha256": "0b0510b2d487afd5d9fd1ee82c055a300e0098958b4741d35f1aba32ad6f14d7",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE3.png",
+      "sha256": "74b5aae8b82aa9fdbe77ffe14b8d83bf53723d7b6442440839f678ace09748ad",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE4.png",
+      "sha256": "35218ccda252800cc7cf5cdb892e080634ce01d98f5bc7bcc2a483f7b8a5a443",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE5.png",
+      "sha256": "54812c4a0169666c61d1a270003dc3d83d72215968e0bc1feda576517c67fd50",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE6.png",
+      "sha256": "5c92148acdb95db1ccb205bd7fdef4b346b487a681c9e751a5e2ca5a38c6a11d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE7.png",
+      "sha256": "febe85b886a3771505f0abbd01f7f6f43b7145eeea674e375b677e9b39c3f374",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIE8.png",
+      "sha256": "e87e8359d9a93d93b177b97993fbbafa498b616b20ce4537ee88e5ef0ec9e05c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF1.png",
+      "sha256": "36711f023bf6fba29c9cc1fa38a34f32024149c54cb686481f6a919abc78be76",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF2.png",
+      "sha256": "3c5022e5930d0d5ea3bf1a50f0203e1fe948d612be0715ce25fd91856c071120",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF3.png",
+      "sha256": "aa96f325dff14a34b5f37c213cf9fa1f47708a00403982da252b46a971cdf6a5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF4.png",
+      "sha256": "a7c9c081c2e8c30eb512601c94248eaa82bf697f50d5006f08075065cb64902e",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF5.png",
+      "sha256": "c23b846b8a4f356745a6d488598185768ec6db75fdf14c70daa374e6c5e27d3a",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF6.png",
+      "sha256": "b38fe95bbdc131c906bf964ce3239792cbe5b4be928ca6c0827d77e2ff761797",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF7.png",
+      "sha256": "33223d1ee516a02a61779712471650c3edffe9b553e820ee9bc077575d73dccf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIF8.png",
+      "sha256": "c33de21c575d73bb07463a4d4ac6d07d98d96a65751589d3f229d5629b53c5e5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIG0.png",
+      "sha256": "4dcbaf2e71fbd70c07662ae4ba6f1417a2ddb6851ec5c712b6d8d1722f54bd33",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIH0.png",
+      "sha256": "6649553075e061bd2b9a520bcd42494b8cacdbd939170291f1e1ca98312d057d",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONII0.png",
+      "sha256": "aa5b48e6f52b763fb869cd55a43bdaf6fefe7920adf4a63dca90765ce0ac16c3",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIJ0.png",
+      "sha256": "ed2e27af4d44741a4b5d33b6e9f609405de8c30c4a22fddf3b145be3b0ac45ad",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIK0.png",
+      "sha256": "0ed212e0574984e79659f9641c16fe877b3e267d9483c9a03d261bf60e32d3e0",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RONIL0.png",
+      "sha256": "cb331dcc954adba743414d68b53d7af8cc6e5f6e76bdb8974833aff601ebefa5",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA1.png",
+      "sha256": "6725b69de8b44c65dd06dd91f87447c9cbec560c84f654d4ac2dc3fb6be7626b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA2.png",
+      "sha256": "6df2a9c232c9f4915d76f9f1c98e4286b27cd00154a05cfddc7985b3a3e58eeb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA3.png",
+      "sha256": "61dfc49db95cbffab491089989cd76f8110076508d4f4804e2965c49fdc21871",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA4.png",
+      "sha256": "6e3cf7a7d70a3d62f39f5a16654570aa761da768624a81098169749663cdee52",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA5.png",
+      "sha256": "a60e50f12c1cf73feed11421df8d08edcd505a38cf2e88027e26982894ea386f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA6.png",
+      "sha256": "e5f0387c73eb232b4577952db395c9f0e33225190626463ac6f658496c7517e4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA7.png",
+      "sha256": "5dfe0285584db1c6f2d4a806a78e409a19272be2db8ea911be3d5a3e16f58b4a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNA8.png",
+      "sha256": "96a8fc629b002c3e319291d48cbc89cc240715f18e88022fd285aa058a63d3c2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB1.png",
+      "sha256": "1a1d8dc8d30f0ee5bc6485735ba2d2f27376efe1956ff72f8948b753df22b2ce",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB2.png",
+      "sha256": "573d34dea4b188c054742e730285efbf5935a858eafa4403ac7fd0f1784e1824",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB3.png",
+      "sha256": "e213ca25a526c0341398f1b298977ee51fbc60c7c843e642c2b485050d5fb8cc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB4.png",
+      "sha256": "ca6e1e3909ee0837ed80ecfea9a17cafeafd081f00caa4636a2fc16beb1be4bc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB5.png",
+      "sha256": "77bf482c4eef92bf892ab10e53540f678018ceeed1738fd106d514f10153cd1f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB6.png",
+      "sha256": "f932d74857f37570b88c98d74f3d169108cbf0aacc5c4f96e5b3fd481c0c3ae0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB7.png",
+      "sha256": "a54d448d89bfab42c2447241d9181dd999ebf8535c664bea8da7baf795216b99",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNB8.png",
+      "sha256": "01625f63ae7bdf65608fcc42bb198b5dd1f15a06f87e9b2b193b67277daee602",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC1.png",
+      "sha256": "d2208bad99a0d83079bbc0b20d9489ca7cf1cabd14de732beef5b8cc40ef4739",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC2.png",
+      "sha256": "54a66c0e498c6e6779a3903cec5c681e3dfc634f5875d7df89fafc3930465daf",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC3.png",
+      "sha256": "3746202f507b4f46534a07e43b7a074a9916d55bab10466b7e5bc881d334c736",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC4.png",
+      "sha256": "8356d69f2a8fbdbb2ba54bf66118a6e94b29b5521d81c41e766bbf5ec440734e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC5.png",
+      "sha256": "5826adc250f7076035200becacacf40fd2851b8579414229dbc01d2b119d4a8f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC6.png",
+      "sha256": "18955536cd1abf36aff3caa5ade97054bcd514dde3af423ce01e11012f52f4ca",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC7.png",
+      "sha256": "cdacece24483e7bbc3b9d701f71a334a400bbc4adc7c8534d5d7e65490daac5c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORNC8.png",
+      "sha256": "6303384d3abf4d9eb1d6585687c3d219e41218a5332a0ab37f106a135c80268e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND1.png",
+      "sha256": "6f95f50c720daf948424f2bc8de639c3abbd2b385546a9cec1cc9b5018a85ea0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND2.png",
+      "sha256": "ba81053b5b96a0860b800fd2bc4b18ffe1a986b311cb9842345fe2e2aa76b731",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND3.png",
+      "sha256": "b0b6e6d248bf121622e69652ac9d040cfee4426cc8938d8c752c1addb77b9bea",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND4.png",
+      "sha256": "51c05ea21da5d30202c386db89c72838dc81436b3fd648fa35224e127166ac32",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND5.png",
+      "sha256": "86132f8927c82e8019a2b9e2d269099e394f7dcd079fba914eb7f175adaa1cd7",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND6.png",
+      "sha256": "412de06ccccf9409b33cab73cad5ab1e23f31fb0588041f9ed3a6fc819230ecb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND7.png",
+      "sha256": "870062054e872a7c063ca7736151aacc747e86e1a8b4fa459c7988c6747ce325",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/ronnie/RORND8.png",
+      "sha256": "e96c3861189fdcf9e496e41a38eb13edd0288c38680a2bbe9fadb14a9a29c41f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA1.png",
+      "sha256": "f5481d898f79c25b2480b77c1734e32ec8ad4c0c1b3a5f842ecd3ad26f96b8cf",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA2.png",
+      "sha256": "97722a5c75fe315d5e8f4aac8b4f86ed01219e72722442e3eb03fb0076ea9882",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA3.png",
+      "sha256": "06df4197c575c41a89b92235a35528e157a09ecf9e557a3a8ae8edbdfc633ded",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA4.png",
+      "sha256": "d3c2dc411fa08044415050a1e88e363f24a5ef1ebf713502fad8c6726114ce13",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA5.png",
+      "sha256": "beb86b02817dcda3933ffc83e485ec3175680f1b0e3273595e9e23d060fb79f1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA6.png",
+      "sha256": "6ad32bcd22af1fc6df5f7b1720e84fa36cec0703dfe749173bf1eeaba5bdb31c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA7.png",
+      "sha256": "3979a880d40a676f8f4260b274f1688caa63db7c904c3d6b3a0f4b0c438bbe48",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDA8.png",
+      "sha256": "bfa3e2873135f2b31b1c799d9d61ba75dd9806335ce9c06814bc501d4b273269",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB1.png",
+      "sha256": "030752e23e826b8ca8743dbaa7caa682bc6f434e8b12d0698bdf5bd663b31050",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB2.png",
+      "sha256": "2addac4e525befd50444aa4bab32a6b19a01ea4c09bd1ef107792ba0217f36f3",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB3.png",
+      "sha256": "f5b38e891830c03e0b8ee21c81afb32cb6e09304a27206f23c031745627fb471",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB4.png",
+      "sha256": "f9517bad01fd5ed623fce045f1014869f08064754c601356dec38b72c7d1abe1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB5.png",
+      "sha256": "5cb226287ea21a4e14ceba650a7c554ddd2500cc30deeec117c115a0738a062f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB6.png",
+      "sha256": "a42fc21b850d63ed1456db070aa7c4ebbc7417ed5d0a5d86183676350037e85d",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB7.png",
+      "sha256": "89684ed7562a5f6430d6da421067faf0c5845e80f4bcc436ced2b857a1abc985",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RUIDB8.png",
+      "sha256": "5ef167cabc551af92bda598bec1e4135de7f8467d157ac590600755fa5f10fd0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA1.png",
+      "sha256": "f5481d898f79c25b2480b77c1734e32ec8ad4c0c1b3a5f842ecd3ad26f96b8cf",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA2.png",
+      "sha256": "97722a5c75fe315d5e8f4aac8b4f86ed01219e72722442e3eb03fb0076ea9882",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA3.png",
+      "sha256": "06df4197c575c41a89b92235a35528e157a09ecf9e557a3a8ae8edbdfc633ded",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA4.png",
+      "sha256": "d3c2dc411fa08044415050a1e88e363f24a5ef1ebf713502fad8c6726114ce13",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA5.png",
+      "sha256": "beb86b02817dcda3933ffc83e485ec3175680f1b0e3273595e9e23d060fb79f1",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA6.png",
+      "sha256": "6ad32bcd22af1fc6df5f7b1720e84fa36cec0703dfe749173bf1eeaba5bdb31c",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA7.png",
+      "sha256": "3979a880d40a676f8f4260b274f1688caa63db7c904c3d6b3a0f4b0c438bbe48",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RULOA8.png",
+      "sha256": "bfa3e2873135f2b31b1c799d9d61ba75dd9806335ce9c06814bc501d4b273269",
+      "status": "replaced"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA1.png",
+      "sha256": "a0eea570ab1096ac09fa2a1ddbb24421bc657e4b88fd0efc2b4203ea1af11d81",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA2.png",
+      "sha256": "2e0a4ee6ef7a816e0494296b05839d3e9dd7c755da4b29b9f1a50c26c9aa3a5f",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA3.png",
+      "sha256": "86a66ec8c0432b5546c28907bdd5c5c36c9b2a4f5ef7908e83cd8659b84cc1c1",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA4.png",
+      "sha256": "7f22dc108536580149d2495187ce175068544c29cae7b202827f3318939e0128",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA5.png",
+      "sha256": "421f2796526ff64fff426fbc446fb5f79f4c2bd2ae93bcd04b1da1a0c523db00",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA6.png",
+      "sha256": "88b0c17e21f2a1a83e956a56ed233307254f0230a0902a53ef4b55394b121d75",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA7.png",
+      "sha256": "5f9caca733b2de2eddd5c1d4b965a115562e10defe1422796eefc6516d92eda8",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNA8.png",
+      "sha256": "6a562aa4c13ec566e5cc585e614987878c9e5861589513535bd1e27cb352c690",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB1.png",
+      "sha256": "0376012f4912c6db0eaa0b415d2fabb6907fa352770d88ec700f51b8278ae07c",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB2.png",
+      "sha256": "e13eb10d5999ff382f2f88f231ef15b0bb28f80b4b20b091ee8655cbe9518679",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB3.png",
+      "sha256": "6fb96649f90a9a30e96a4c9f1bf36e4759e01c18c1128b75a2797832f11ecb05",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB4.png",
+      "sha256": "40f7073359c56c0521af089027c448a121e4e25b30ad5caf69bcb0d53f78bd29",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB5.png",
+      "sha256": "7c17aca15f0bbc36020492f6e382275ea6cfaa04f7396aa78192fc412b015790",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB6.png",
+      "sha256": "3509a4e4d6a82578053a3c654e93005e3ab2c2e83c66636a9ff4fbbdc96cc645",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB7.png",
+      "sha256": "daed14a1c7795c1988ab59afc70ecafa13d9e83be15a547dba25e3eda5e058eb",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNB8.png",
+      "sha256": "19d3eb4498db0a32dadda1373726f767dc4d8fb9cce96140e033d5bf918add99",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC1.png",
+      "sha256": "235cc20a259d7c91ce2fefbc7ecb6e98e4e140dbe3b0076e9b2d965ed9430328",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC2.png",
+      "sha256": "56f926d786ca071d243bddc2ce1423f7dcac6905084819ad829848ff5b75116b",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC3.png",
+      "sha256": "21715f2c284479113bd522f095a5efc526c5406d91485e0badfb4bc2b63242dc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC4.png",
+      "sha256": "5bcb0347fe162f66d9ebd798d13d752c27dd8d6bfa31e9aa2831db915838f3d2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC5.png",
+      "sha256": "17e705d2298b490cfd763b473816f677f7446c39790642c90e150714a2bd03cc",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC6.png",
+      "sha256": "c1c46490b8484d08e0c0a349d3e238610ec1abebd1784d56f8298044355cf0c2",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC7.png",
+      "sha256": "3773c27eaf33bd2ceca0f9eb72f1a80e5ee00ffe1d1753369f5a1721aac2b54e",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURNC8.png",
+      "sha256": "8842482fe8130385ccba3777158f5f713e637ddeb26790a2d421b88c07aa78b6",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND1.png",
+      "sha256": "a7b0d0643a1c1871654e3102329e01c76bee292a5d3de7e62f9044cbc4da4294",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND2.png",
+      "sha256": "de5ee3a06d6e9a4efce56ddabda5d73cc73fb16c2cbb890de91418fa0ff4c1ff",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND3.png",
+      "sha256": "e7e37a7cac16e177cb911871f50b99ecdbb81106bc59c6209f4d85a9f2e51a18",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND4.png",
+      "sha256": "715ea87101b7a44e31812a869004efa78b542408ff24320aa256c2a65be79bf4",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND5.png",
+      "sha256": "ed08da804b992487310a40f2fd25b39791e421d9d794b2343bb0ffddf9a6ab35",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND6.png",
+      "sha256": "c1c0cf5d1e1b8f53a96a3c8efb0061dd74c9fc2a1c7e009fa253396321f2e18a",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND7.png",
+      "sha256": "0c026abb48d9d0796f375fca33531a7f9c14d4d1c5b14388a283d5d5e1ebdbb0",
+      "status": "new"
+    },
+    {
+      "path": "src/sprites/caelum/rulo/RURND8.png",
+      "sha256": "f57722fee53b5e56ecc1562485aad57498346da4197bfa67897afa59fabe2efa",
+      "status": "new"
+    }
+  ],
+  "counts": {
+    "sprites_total": 750,
+    "sprites_new": 514,
+    "sprites_replaced": 236,
+    "icons_total": 256,
+    "icons_same": 103,
+    "icons_replaced": 152,
+    "icons_new": 1
+  },
+  "notes": "PNG originales del paquete aportado por el autor, sin cambios de píxeles ni offsets. Los másteres, prompts y referencias permanecen en dicho ZIP. Los 103 PNG idénticos a 0p no se repiten en el parche."
+}

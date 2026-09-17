@@ -382,7 +382,10 @@ class CaelumRestState : Inventory
     static void Report(CaelumPlayer user)
     {
         let rest = Get(user);
-        Console.Printf("[Caelum 4.35.0j] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
+        Console.Printf("[Caelum 4.35.0q] Descanso: registro=%d mapa=%s factor=%d", rest != null, level.MapName, ResourceFactor(user));
+        Console.Printf("Comida/agua sentada: ritmo 1/%d, diez pulsos en %d s de simulación por porción completa.",
+            CaelumRegenerationPower.SEATED_MEAL_TIC_DIVISOR,
+            CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * CaelumRegenerationPower.SEATED_MEAL_TIC_DIVISOR);
         if (rest == null) return;
         Console.Printf("Estado=%d modo=%d transcurrido=%d/%d tics origen=%s resultado=%s",
             rest.Status, rest.Mode, rest.ElapsedTics, rest.RequestedTics, rest.OriginMap, rest.ResultKey);

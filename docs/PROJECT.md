@@ -1,13 +1,32 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0p — 2026-09-17.
+Versión documental: 4.35.0q — 2026-09-17.
 
-## Estado actual: 4.35.0p — reservas y primeros vehículos
+## Estado actual: 4.35.0q — sprites v4 y consumo sentado
+
+Delta sobre el proyecto completo 4.35.0p, probado y aprobado por el autor.
+El autor aporta Caelum_Argenteum_Sprites_Iconos_v4(1).zip y modifica únicamente
+el ritmo de comida/bebida sentada: pasa de 1/10 a 1/3 del ritmo ordinario.
+Cada porción completa tarda 30 segundos de simulación, conserva sus diez
+pulsos y consume las mismas unidades/litros. Levantarse continúa a ritmo normal.
+
+El paquete visual queda integrado en los estados actuales de nueve personajes:
+respiración, carreras, caminatas de Domingo/Palomo/Mandinga/Zupay, poses de
+descanso de Palomo, reemplazos del toro/Ronnie e íconos, incluida la bolsa.
+Los nuevos estados se anexan para conservar los índices de guardados de 0p.
+Palomo conserva sus diálogos y recorrido de salida; su pose responde al
+movimiento real. El jugador conserva prioridad de agachado, ataque y descanso.
+
+Los sistemas de viajes, reservas, calendario, vehículos y mapas de 0p quedan
+aprobados. Para cerrar 4.35 resta la aceptación visual y del ritmo de 0q según
+PRUEBAS_4_35_0q.txt; luego corresponde 4.36, peligros físicos.
+
+## Base aprobada: 4.35.0p — reservas y primeros vehículos
 
 Delta sobre 4.35.0o. El autor aprueba 0n/0o salvo los puntos corregidos aquí:
 consumo sentado desde inventario/Caja y conflicto de Escape. Autoriza una
 carreta cubierta y un pequeño mercante con velas y remos, con sus instalaciones
-en ambos mapas costeros. La siguiente aceptación pendiente es 0p.
+en ambos mapas costeros. El autor aprobó estos cambios al solicitar 0q.
 
 La mesa busca primero sus raciones, luego las llevadas y finalmente las de la
 Caja propia. Conserva el ritmo sentado aprobado, el volumen de las porciones,
@@ -74,7 +93,7 @@ ejércitos y consecuencias políticas conserva su alcance V5 ya acordado.
 ### Cierre de 4.35
 
 La implementación temporal de este bloque queda candidata a cierre. Faltan la
-aceptación manual del autor de 0p, y resolver cualquier fallo que aparezca.
+aceptación manual del autor de los cambios de 0q y resolver cualquier fallo que aparezca.
 No se exige nuevo contenido de campaña ni repetir las pruebas ya aprobadas.
 Después siguen 4.36 (peligros físicos), 4.37 (Tarot/Trucazo), exportación V4,
 reorganización V5.0 y exposición térmica V5.1.
@@ -180,8 +199,8 @@ escala de desarrollo). Sueño, única habilidad de clase implementada, usa esa
 base común y el modificador de alcance existente. Las otras habilidades siguen
 pendientes en V5; su futura área parte de la misma regla.
 
-Comer/beber sentado reparte el mismo efecto y consumo durante 100 segundos de
-simulación en vez de 10. No cambia el total por ración ni los litros por sorbo.
+Comer/beber sentado reparte el mismo efecto y consumo durante 30 segundos de
+simulación en vez de 10 (ajuste 0q del divisor 10 introducido en 0j). No cambia el total por ración ni los litros por sorbo.
 La repetición automática espera a terminar cada porción; levantarse devuelve
 los pulsos restantes al ritmo ordinario. Digestión, topes y comodidad conservan
 sus reglas. La bolsa, las posiciones de 0i y el diseño aceptado se mantienen.
@@ -1843,7 +1862,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. Pendiente de aceptación de 0p. Modelo térmico corporal en V5.1. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. 0p aprobado. 0q integra el paquete visual v4 y el ritmo de comida 1/3, pendientes de aceptación. Modelo térmico corporal en V5.1. |
 | V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |

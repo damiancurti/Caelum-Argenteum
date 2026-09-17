@@ -122,15 +122,15 @@ class CaelumBull : CaelumCombatActor
     States
     {
     Spawn:
-        BULL A 10 A_CaelumBudgetedLook;
-        Loop;
+        BUID A 10 A_CaelumBudgetedLook;
+        Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
-        BULL DE 4 A_CaelumBudgetedChase;
-        Loop;
+        BURN AB 4 A_CaelumBudgetedChase;
+        Goto RunSecondHalf;
     LucidityStun:
         BULL A 1;
         Goto See;
@@ -155,5 +155,17 @@ class CaelumBull : CaelumCombatActor
         BULL N 5 A_NoBlocking;
         BULL N -1;
         Stop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        BUID AAA 10 A_CaelumBudgetedLook;
+        BUID BBBB 10 A_CaelumBudgetedLook;
+        Goto Spawn;
+    RunSecondHalf:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        BURN CD 4 A_CaelumBudgetedChase;
+        Goto See;
+    Run:
+        Goto See;
     }
 }

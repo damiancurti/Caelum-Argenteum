@@ -5,60 +5,32 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0p.** Apply this source patch over the complete
-**4.35.0o** project, merge its folders and rebuild with `run_dev.bat`.
-The author tested 0n and 0o. This patch addresses the reported issues and adds the requested coastal vehicles. Manual acceptance of 0p is pending.
+**Current release: 4.35.0q.** Apply this source patch over the complete
+**4.35.0p** project, merge its folders and rebuild with `run_dev.bat`.
+The author approved the remaining 0p tests and supplied the v4 sprite/icon pack.
 
+Seated food and water recovery now runs at **one third of the ordinary rate**.
+A complete serving takes **30 simulation seconds**, with ten pulses and the
+same portion, mass-based recovery and digestion. Standing consumption remains
+10 seconds. Automatic eating/drinking still uses table → inventory → Magic Box
+and waits for the active portion to finish. Fast-forward uses the same rule.
 
-Seated eating/drinking now uses **table → carried inventory → personal Magic Box**.
-It consumes actual portions and retains the approved slow seated recovery rate.
-**Q / B** cancels a journey or goes back in the calendar; **Escape / Start**
-opens native pause and preserves the current screen.
+The supplied artwork is integrated into the current actors: two-phase breathing
+and four-phase running for nine characters; separate walking for Domingo,
+Palomo, Mandinga and Zupay; Palomo's seated/lying poses; repaired bull/Ronnie
+sets and inventory icons, including a dedicated sleeping bag icon and fallback
+sprites. The PNGs and their offsets are copied unchanged. Existing furniture
+orientation, crouching, attacks, actor speed and AI callback intervals remain.
 
-**MAP06 and MAP07** each have a covered trade cart in a small roadside ranch,
-and a merchant sailboat with four stowed oars. The port keeps its dock; the
-beach gains a wooden dock. Use the cart or boarding sign to preview the trip.
-Existing 0o saved maps receive the additions without restarting the campaign.
+New states are appended to preserve serialized state indices. Palomo's actual
+movement, home return, dialogue expressions and scripted departure are handled
+explicitly; this patch does not rely on the pack installer's older state layout.
+Merge the patch directly; no second sprite installer or Python step is required.
 
-| Service | Nominal speed | 500 km trip |
-| --- | --- | --- |
-| Covered cart | 3 km/h | 10 d 6 h 40 min, including 80 h of camp stops |
-| Merchant sailboat | 5 knots / 9.26 km/h | About 2 d 6 h; 16 h of sleep overlap sailing |
-
-The cart keeps the requested 16-hour moving / 8-hour resting cycle. The ship
-has watch crews and fair wind, so it continues while the passenger sleeps.
-These are representative historical design estimates, not measurements of a
-specific 1889 Argentine vehicle. Body/model dimensions and reference sources
-are recorded in ASSETS.md. The travel services include their team and crew;
-fares and free driving are future work. All four OBJ models are original and
-reuse existing project materials; they are included ready to load.
-
-Open **TAB > World > F / RT** for the campaign calendar. Arrows/D-pad select a
-day; PgUp/PgDn or LB/RB change month; H/Home returns to today; E/R or Y/X select
-an event; Enter/A opens its details; Q/B goes back. P/RT in details pays
-outstanding rent or collects delivered cargo. The clock continues while reading.
-Only known events are shown; weather-debug dates do not move the campaign agenda.
-
-The saved registry supports one-off and recurring siege phases, NPC routines,
-quest deadlines, rents, material shipments, resource recovery and future notices.
-Normal time, Limbo's 1:1 clock, rest, x105 and confirmed travel use the same
-scheduler. Long journeys accumulate due periods without replaying missed AI.
-Rent uses explicit payment with existing coins and change. Cargo is removed
-from carried stock on dispatch and can be collected once at its destination.
-Failed collection keeps the entire shipment available for a later attempt.
-
-Harvested resources now catch up after their map was inactive and forecast
-full recovery in the calendar. Their existing **0.1% capacity per campaign day**
-rate is unchanged. Existing saves initialize a timestamp without retroactive gifts.
-
-The optional calendar trials remain documented in **PRUEBAS_4_35_0o.txt**; the new changes are covered in **PRUEBAS_4_35_0p.txt**. They do not assign
-campaign rents, resident routines or canonical siege battles. Full armies and
-battle consequences keep their existing V5 scope; maps can configure the timing
-adapters now. The accepted walking routes retain their distances, pace conversion and 16/8 schedule.
-
-**4.35 closure candidate:** implementation and native checks are complete;
-the author's acceptance of 0p remains before moving to 4.36 physical hazards.
-`netevent ca_debug_travel_report` identifies **4.35.0p**.
+**4.35 closure candidate:** 0p is accepted. Only the new visual integration and
+revised seated pace await the author's check before 4.36 physical hazards.
+`netevent ca_debug_rest_report` identifies **4.35.0q** and prints the meal divisor.
+See **PRUEBAS_4_35_0q.txt** for installation and focused acceptance checks.
 
 ## Implemented
 
@@ -703,20 +675,20 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover table/inventory/Box consumption,
-seated pulse timing, native Use, vehicle quotes, actual ship/cart travel,
-exact supplies, calendar deadlines and save/load. Native renderer captures
-check the models and quote. SDL keyboard tests check Q and Escape against
-the actual game menu. These do not replace the author's Windows 11 acceptance.
-Follow **PRUEBAS_4_35_0p.txt**. The remaining 0n/0o tests stay approved.
+Native GZDoom 4.14.2/Linux checks cover exact seated pulse timing, unchanged
+serving quantities and digestion, standing/medicine timing, legacy counters,
+player animation priorities, Palomo transitions and 0p save compatibility.
+Resource validation checks all supplied PNGs, eight-view coverage and preserved
+state indices. These checks do not replace the author's Windows 11 visual
+acceptance. Follow **PRUEBAS_4_35_0q.txt**; the rest of 0p stays approved.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_35_0p.txt** into the complete **4.35.0o** project, replacing matching
-files and keeping everything else. Models are already generated. Rebuild the
-PK3 with the usual launcher; opening the previous PK3 keeps the previous code.
-The diagnostic `netevent ca_debug_travel_report` must identify **4.35.0p**.
+**PRUEBAS_4_35_0q.txt** into the complete **4.35.0p** project, replacing matching
+files and keeping everything else. Rebuild the PK3 with the usual launcher;
+opening the previous PK3 keeps the previous code. The diagnostic
+`netevent ca_debug_rest_report` must identify **4.35.0q**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

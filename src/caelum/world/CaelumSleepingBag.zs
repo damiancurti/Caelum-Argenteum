@@ -64,12 +64,12 @@ class CaelumSleepingBag : CaelumSpecialInventoryItem
     Default
     {
         Tag "$CA_SLEEPING_BAG_NAME";
-        Inventory.Icon "graphics/caelum/icons/materials/ca_material_fabric.png";
+        Inventory.Icon "graphics/caelum/icons/ca_sleeping_bag.png";
         Inventory.PickupMessage "$CA_SLEEPING_BAG_PICKUP";
         Scale 1;
         Radius 12; Height 16;
     }
-    States { Spawn: CAHC A -1; Stop; }
+    States { Spawn: CSBG A -1; Stop; }
 }
 
 class CaelumSleepingBagProbe : Actor
@@ -142,5 +142,5 @@ class CaelumRestBag : CaelumRestFurniture
     }
 
     Default { Radius 46; Height 8; -SOLID +NOBLOCKMAP Tag "$CA_SLEEPING_BAG_NAME"; }
-    States { Spawn: CAHC A -1; Stop; }
+    States { Spawn: CSBO A -1; Stop; }
 }
