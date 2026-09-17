@@ -1,8 +1,73 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0a — 2026-09-17.
+Versión documental: 4.36.0b — 2026-09-17.
 
-## Peligros físicos y trampillas (4.36.0a)
+## Minas, teletransporte, aplastamiento y presentación (4.36.0b)
+
+CaelumPressureTrap consulta el blockmap local. Exige cuerpo vivo y sólido,
+pies a la altura de la placa y apoyo real; excluye noclip, vuelo, ascenso y
+creación incompleta. Las activaciones interrumpen descanso/avance rápido.
+
+| Clase / editor | Configuración del mapeador | Comportamiento |
+| --- | --- | --- |
+| CaelumMagicMine / 30963 | args[0] daño base; args[1] radio MU | Explota una sola vez al pisar; cero deshabilita. |
+| CaelumTeleportTrap / 30964 | args[0] TID de destino | Teletransporte local reutilizable, sin telefrag. |
+| CaelumTrapDestination / 30965 | TID, posición y Angle | Destino explícito; no concede objetos ni modifica el reloj. |
+| CaelumCrusherTrap / 30966 | args[0] daño/pulso; args[1] velocidad MU/tic; args[2] distancia de muestreo | Techo nativo: baja, aplasta, vuelve a subir y queda detenido. |
+
+Mina: A_Explode con radio real suministrado a la defensa anatómica existente.
+CaelumTrapMagic identifica procedencia ambiental, sin adrenalina de combate ni
+empuje adicional de Doom. Conserva vulnerabilidades, piezas de armadura y Dureza.
+El fogonazo reutiliza XFIR. En MAP08 se ensayan 100 puntos base y 128 MU; no son
+valores definitivos de campaña. La marca gastada permanece tenue al guardar.
+
+Teletransporte: valida existencia del marcador, suelo/techo, cuerpos y objetos
+sólidos ocupando el destino antes de TeleportMove(false). Un destino inválido u
+ocupado conserva al personaje en origen y no cuenta activación. Se detiene la
+velocidad, se limpia interpolación y el seguimiento de caída. Un inventario
+por receptor impide encadenar otra placa durante 35 tics; luego puede reutilizarse.
+No hay invulnerabilidad general, telefrag, viaje entre mapas ni entrega de recursos.
+
+Aplastador: Level.CreateCeiling con ceilCrushRaiseAndStay y crushDoom. Cada panel
+conserva su altura superior original. args[2]=0 selecciona sólo su sector;
+MAP08 usa 32 para escoger cuatro sectores de 64 MU, un cuadrado de 128 × 128.
+Usa 8 MU/tic, separación inferior de 8 MU y 10 puntos por pulso nativo de prueba.
+El daño Crush sigue la ruta ambiental nativa de dolor, sin adrenalina de combate;
+no sustituye el cálculo de impactos de las rocas. Puede activarse por presión
+o por una palanca dirigida al mismo TID. Sólo un ciclo; no se superponen movers.
+Los techos móviles bloquean el avance rápido cercano y guardan su movimiento.
+
+Palancas: CaelumHazardReleaseSwitch acepta TID de roca o aplastador. El sprite
+transparente CLVR se superpone a una columna OBJ y cambia de arriba a abajo.
+args[1]=1 omite la columna para colocarlo sobre una pared; el actor debe situarse
+un poco delante de la cara, con Angle orientado hacia la pared. La comprobación
+SF_IGNOREVISIBILITY ignora sólo el soporte invisible, manteniendo la oclusión
+real de las paredes. No se consumen interruptores sin destino activable.
+
+Transiciones nativas verificadas en GZDoom g4.14.2:
+
+| wipetype | Efecto |
+| --- | --- |
+| 0 | Sin transición |
+| 1 | Derretido (melt) |
+| 2 | Quemado (burn) |
+| 3 | Fundido cruzado (crossfade) |
+
+PreTravelled anuncia el modo a CaelumMenuAudio, que ya es StaticEventHandler.
+WorldLoaded aplica ScreenJobRunner.setTransition(1) sólo a un viaje en barco
+pendiente y emite caelum/ui/map_transition después de limpiar el audio anterior.
+Es una selección nativa de un solo cruce, sin cambiar el cvar wipetype. Los demás
+viajes conservan la preferencia del usuario; cargar una partida no repite el
+sonido ni impone el efecto. La lógica de viajes, recursos y reloj se conserva.
+Fuente del motor: https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/d_main.cpp
+(System_SetTransition y D_Display), junto a menudef.txt/screenjob.zs de gzdoom.pk3.
+
+MAP08 añade por revisión guardada: mina (1728,640,0.5), teletransporte
+(2048,640,0.5), destino (1152,1664,0), aplastador (2240,1216,0.5) y palanca
+(2240,1088,0). TID 43610/43611/43612/43613 respectivamente. No cambia el WAD.
+Una runa de inmovilización queda propuesta a revisión, sin implementación.
+
+## Peligros físicos y trampillas (4.36.0a, actualizados en 0b)
 
 CaelumTrapdoor (editor 30960) es un apoyo nativo ACTLIKEBRIDGE de 256 × 256 MU,
 8 MU de espesor. Su origen está 8 MU por debajo de la superficie transitable.
@@ -16,14 +81,17 @@ al blockmap. Pisar retira solidez y dibujo una sola vez; gravedad y aterrizaje
 siguen las reglas existentes. No teleporta, no agrega daño fijo, no se rearma
 y no se cierra sobre quien cayó. Opened, ActivationCount y referencias se guardan.
 
-CaelumHazardRock (30961) conserva el granito pequeño existente: radio 14 MU,
-altura 21 MU, masa 1065 kg. Empieza suspendida; args[0] es el impulso horizontal
+CaelumHazardRock (30961) pasa a radio 48 MU, altura 96 MU y masa 38170 kg:
+4/3 × pi × (48/32)^3 × 2700, redondeado. Al cargar una roca antigua en contacto
+con obstáculos conserva primero sus dimensiones pequeñas y sólo se amplía
+cuando A_SetSize confirma que cabe. No se desplaza ni relanza por la migración.
+Empieza suspendida; args[0] es el impulso horizontal
 en MU/tic según Angle, o cero para una caída vertical. Release aplica ese impulso
 una sola vez. La prueba de rodadura omite rozamiento; no aplica un motor continuo.
 La rotación visible depende de la distancia recorrida. No admite empuje manual
 mientras está retenida. La colisión nativa detiene el recorrido contra una pared.
 
-CaelumHazardReleaseSwitch (30962): args[0] es el TID positivo de las rocas.
+CaelumHazardReleaseSwitch (30962): args[0] es el TID positivo de rocas o aplastadores.
 Usar exige alcance, visibilidad y solapamiento vertical con un jugador vivo.
 La operación pasa a Spent tras liberar un destino; no crea nuevos bloques.
 No hay un temporizador de rearme. Sin destino válido no se consume la operación.
@@ -50,7 +118,7 @@ mecanismo en (1152, 1344, 0). Roca suspendida en (2048, 1600, 256), TID 43603;
 mecanismo en (2048, 1536, 0). Son dimensiones y ajustes de la galería de prueba,
 no valores de balance nuevos para toda la campaña.
 
-netevent ca_debug_hazards_report identifica 4.36.0a y muestra activación,
+netevent ca_debug_hazards_report identifica 4.36.0b y muestra activación,
 solidez, tapa, masas, velocidades, contactos verticales y mecanismos usados.
 El WAD de MAP05 conserva su checksum original. MAP08 se incorpora como ubicación 8,
 con conexiones 12/13; no se reutiliza ningún id ni se redimensionan los registros.

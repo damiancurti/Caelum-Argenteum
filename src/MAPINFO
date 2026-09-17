@@ -462,4 +462,8 @@ DoomEdNums
     30960 = CaelumTrapdoor
     30961 = CaelumHazardRock
     30962 = CaelumHazardReleaseSwitch
+    30963 = CaelumMagicMine
+    30964 = CaelumTeleportTrap
+    30965 = CaelumTrapDestination
+    30966 = CaelumCrusherTrap
 }

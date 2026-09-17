@@ -86,6 +86,8 @@ class CaelumTimeAdvanceState : Inventory
                 let hazard = CaelumHazardRock(other);
                 if (hazard != null && hazard.Released && hazard.Vel.Length() > 0.1)
                     return "CA_FAST_UNSAFE";
+                let crusher = CaelumCrusherTrap(other);
+                if (crusher != null && crusher.IsMoving()) return "CA_FAST_UNSAFE";
                 if (other.bMissile || (other.bIsMonster && other.health>0 && !other.bFriendly))
                     return "CA_FAST_UNSAFE";
             }

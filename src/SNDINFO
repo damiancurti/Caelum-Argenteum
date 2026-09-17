@@ -46,7 +46,7 @@ caelum/enemies/zupay_walk = "sounds/caelum/enemies/zupay/ca_zupay_walk.ogg"
 caelum/enemies/mandinga_alert = "sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg"
 caelum/npcs/rulo_alert = "sounds/caelum/npcs/rulo/ca_rulo_alert.ogg"
 
-// Recursos catalogados sin evento definitivo: no tienen llamadas ZScript.
+// Stock reutilizable; iron_gate también acompaña las palancas desde 4.36.0b.
 caelum/stock/cricket = "sounds/caelum/stock/ambient/ca_stock_cricket.ogg"
 caelum/stock/iron_gate = "sounds/caelum/stock/world/ca_stock_iron_gate.ogg"
 caelum/stock/evil_laugh = "sounds/caelum/stock/voices/ca_stock_evil_laugh.ogg"
@@ -130,3 +130,9 @@ $limit caelum/npcs/palomo_disappear 1
 $limit caelum/player/level_up 1
 $limit caelum/player/anima_restored 1
 $limit caelum/player/cough 1
+
+// 4.36.0b: eventos nuevos con audio propio ya catalogado.
+$alias caelum/world/lever caelum/stock/iron_gate
+$alias caelum/world/magic_mine caelum/weather/thunder_heavy
+$alias caelum/world/magic_teleport caelum/npcs/palomo_disappear
+$alias caelum/world/crusher caelum/world/door_large_open

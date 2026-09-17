@@ -2522,7 +2522,7 @@ class CaelumCombatActor : Actor
     {
         if (damage > 0 && ForcedSleepTics > 0)
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
-        if (mod == 'CaelumImpact')
+        if (mod == 'CaelumImpact' || mod == 'Crush')
         {
             int healthBeforeImpact = health;
             double adrenalineRatioBeforeImpact = GetCombatAdrenalineRatio();
@@ -2541,9 +2541,9 @@ class CaelumCombatActor : Actor
                 CalculateAndTriggerActorPain(
                     actualHealthLost,
                     adrenalineRatioBeforeImpact,
-                    LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR
+                    mod == 'CaelumImpact' && LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR
                 );
-                if (LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR)
+                if (mod == 'CaelumImpact' && LastImpactKind == CaelumConstants.IMPACT_KIND_ACTOR)
                 {
                     AddActorCombatAdrenaline(
                         CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
@@ -2661,6 +2661,9 @@ class CaelumCombatActor : Actor
     {
         double resolvedRadius = Max(1.0, double(incomingDamage));
         if (inflictor == null) { return resolvedRadius; }
+
+        let mine = CaelumMagicMine(inflictor);
+        if (mine != null) return mine.BlastRadius();
 
         CaelumCombatActor combatInflictor = CaelumCombatActor(inflictor);
         if (combatInflictor != null
@@ -2860,12 +2863,15 @@ class CaelumCombatActor : Actor
             CalculateAndTriggerActorPain(
                 actualHealthLost,
                 adrenalineRatioBeforeDamage,
-                true
+                mod != 'CaelumTrapMagic'
             );
-            AddActorCombatAdrenaline(
-                CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
-            );
-            MarkActorCombatActivity();
+            if (mod != 'CaelumTrapMagic')
+            {
+                AddActorCombatAdrenaline(
+                    CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE
+                );
+                MarkActorCombatActivity();
+            }
         }
         return result;
     }

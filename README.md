@@ -5,29 +5,34 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.36.0a.** Apply this source patch over the complete
-**4.35.0q** project, merge its folders and rebuild with `run_dev.bat`.
-The author approved 0q, closing V4.35, and requested floor traps for V4.36.
+**Current release: 4.36.0b.** Apply this source patch over the complete
+**4.36.0a** project, merge its folders and rebuild with `run_dev.bat`.
+The author accepted the other 0a tests and approved explosive magical mines,
+teleport traps and crushers, with visual changes to the bull and rolling rocks.
 
-MAP08 adds a physical-hazard gallery connected from MAP05. A wooden trapdoor opens
-when stepped on, exposing a real pit; the player falls under native gravity
-and can leave by twelve steps. It stays open after activation. Two nearby
-Use mechanisms release an existing granite rock horizontally or from above.
-The physical impact rules are preserved, with an added vertical adapter and
-explicit environmental provenance. Hazard damage does not add combat adrenaline
-or an extra Doom damage thrust. Nearby moving hazards block accelerated time.
+MAP08 now includes all three approved traps. A two-position original lever
+sprite sits on a stone column and activates rocks or a native moving ceiling.
+The bull is visually 25% larger, with running frames normalized to its idle
+silhouette. Hazard rocks have a rounded 96-MU model, a central rotation pivot
+and mass derived from spherical granite volume. Existing impact rules remain.
 
-The gallery is test content; dimensions and launch speed are fixture settings.
-MAP01–07 keep identical WADs, preserving their save checksums. The new access
-appears in MAP05, including older saves; use it to enter MAP08 with your character.
-For an isolated test, `map MAP08` starts a new test character. Existing 0q
-artwork and the accepted 30-second seated serving remain part of the base.
+Ship journeys use a one-shot native melt wipe; other journeys keep the user's
+wipe preference. Transition audio plays after the destination loads. The native
+choices are none, melt, burn and crossfade. No global cvar is changed.
 
-`netevent ca_debug_hazards_report` identifies **4.36.0a** and lists mechanisms.
-See **PRUEBAS_4_36_0a.txt** for installation and focused acceptance checks.
+MAP01–08 retain identical WADs. Existing saves keep opened traps and spent
+levers; MAP08 gains the new actors once. Trap values and placements are test
+fixtures, with campaign balance still open. A temporary immobilization rune is
+proposed for author review only and is not implemented.
+
+`netevent ca_debug_hazards_report` identifies **4.36.0b** and lists mechanisms.
+See **PRUEBAS_4_36_0b.txt** for installation and focused acceptance checks.
 
 ## Implemented
 
+- Original two-state column/wall lever, larger bull and spherical hazard rocks.
+- Single-use explosive mines, safe local teleport traps and native ceiling crushers.
+- Ship-only melt wipe and arrival transition audio.
 - Pressure-triggered trapdoor, persistent open pit, native falling and stairs.
 - Single-use rock releases, horizontal/vertical impacts and environmental origin.
 
@@ -633,8 +638,7 @@ See **PRUEBAS_4_36_0a.txt** for installation and focused acceptance checks.
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
 The regional climate and shelter service builds on the accepted 0k adapter.
-V4.35 is accepted and closed through 0q. V4.36 begins with the trapdoor and
-rock gallery; dedicated damaging surfaces, avalanches, rams, catapults and
+V4.35 is accepted and closed through 0q. V4.36 includes the trapdoor, rocks, approved magical traps and ceiling crusher; dedicated damaging surfaces, avalanches, rams, catapults and
 broader moving-sector hazards remain in this block.
 Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and
 subsequent maps; future regions can use the existing explicit map marker.
@@ -674,19 +678,19 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover walking onto the trapdoor, actual free
-fall, stair escape, activation range/height, rock impacts and single-use state.
-Saved-state checks and native screenshots accompany the local verification.
-The author's Windows 11 playtest of 4.36.0a remains pending; follow
-**PRUEBAS_4_36_0a.txt**. This is the first V4.36 increment, not its closure.
+Native GZDoom 4.14.2/Linux checks cover trap activation, blocked destinations,
+explosion defense, crushers, rock impacts, native Use, saved-state migration,
+ship presentation and the hub. Original art and screenshots are checked locally.
+The author's Windows 11 playtest of 4.36.0b remains pending; follow
+**PRUEBAS_4_36_0b.txt**. V4.36 remains in progress.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_36_0a.txt** into the complete **4.35.0q** project, replacing matching
+**PRUEBAS_4_36_0b.txt** into the complete **4.36.0a** project, replacing matching
 files and keeping everything else. Rebuild the PK3 with the usual launcher;
 opening the previous PK3 keeps the previous code. The diagnostic
-`netevent ca_debug_hazards_report` must identify **4.36.0a**.
+`netevent ca_debug_hazards_report` must identify **4.36.0b**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

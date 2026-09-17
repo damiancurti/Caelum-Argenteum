@@ -3,6 +3,33 @@
 class CaelumMenuAudio : StaticEventHandler
 {
     ui bool TitleMusicReady;
+    ui bool TravelPresentationPending;
+    ui int TravelWipe;
+
+    override void InterfaceProcess(ConsoleEvent e)
+    {
+        if (e.Name == "ca_map_depart")
+        {
+            TravelPresentationPending = true;
+            TravelWipe = e.Args[0];
+        }
+        else if (e.Name == "ca_map_arrive")
+        {
+            if (TravelPresentationPending && e.Args[0] == 0)
+            {
+                // Override nativo de una sola transición: no modifica wipetype.
+                if (TravelWipe == 1) ScreenJobRunner.setTransition(1);
+                // Emisión posterior a la limpieza de audio del mapa anterior.
+                S_StartSound("caelum/ui/map_transition", CHAN_7, CHANF_UI, 1.0, ATTN_NONE);
+            }
+            TravelPresentationPending = false;
+        }
+    }
+
+    override void WorldLoaded(WorldEvent e)
+    {
+        EventHandler.SendInterfaceEvent(consoleplayer, "ca_map_arrive", e.IsSaveGame ? 1 : 0);
+    }
 
     override void UiTick()
     {
@@ -11,6 +38,7 @@ class CaelumMenuAudio : StaticEventHandler
             TitleMusicReady = false;
             return;
         }
+        TravelPresentationPending = false;
         if (!TitleMusicReady && System.MusicEnabled() && musplaying.name != "")
         {
             // Reutiliza la pieza elegida por MAPINFO; respeta los volúmenes y

@@ -1141,76 +1141,76 @@ Sprite "JAVLA8", 128, 128
 }
 
 // Toro cuadrúpedo: ocho rotaciones limpias y un cadáver sin rotación.
-Sprite "BULLA1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA1.png", 0, 0 }
-Sprite "BULLA2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA2.png", 0, 0 }
-Sprite "BULLA3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA3.png", 0, 0 }
-Sprite "BULLA4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA4.png", 0, 0 }
-Sprite "BULLA5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA5.png", 0, 0 }
-Sprite "BULLA6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA6.png", 0, 0 }
-Sprite "BULLA7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA7.png", 0, 0 }
-Sprite "BULLA8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA8.png", 0, 0 }
-Sprite "BULLB1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB1.png", 0, 0 }
-Sprite "BULLB2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB2.png", 0, 0 }
-Sprite "BULLB3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB3.png", 0, 0 }
-Sprite "BULLB4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB4.png", 0, 0 }
-Sprite "BULLB5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB5.png", 0, 0 }
-Sprite "BULLB6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB6.png", 0, 0 }
-Sprite "BULLB7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB7.png", 0, 0 }
-Sprite "BULLB8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB8.png", 0, 0 }
-Sprite "BULLC1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC1.png", 0, 0 }
-Sprite "BULLC2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC2.png", 0, 0 }
-Sprite "BULLC3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC3.png", 0, 0 }
-Sprite "BULLC4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC4.png", 0, 0 }
-Sprite "BULLC5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC5.png", 0, 0 }
-Sprite "BULLC6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC6.png", 0, 0 }
-Sprite "BULLC7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC7.png", 0, 0 }
-Sprite "BULLC8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC8.png", 0, 0 }
-Sprite "BULLD1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD1.png", 0, 0 }
-Sprite "BULLD2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD2.png", 0, 0 }
-Sprite "BULLD3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD3.png", 0, 0 }
-Sprite "BULLD4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD4.png", 0, 0 }
-Sprite "BULLD5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD5.png", 0, 0 }
-Sprite "BULLD6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD6.png", 0, 0 }
-Sprite "BULLD7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD7.png", 0, 0 }
-Sprite "BULLD8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD8.png", 0, 0 }
-Sprite "BULLE1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE1.png", 0, 0 }
-Sprite "BULLE2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE2.png", 0, 0 }
-Sprite "BULLE3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE3.png", 0, 0 }
-Sprite "BULLE4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE4.png", 0, 0 }
-Sprite "BULLE5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE5.png", 0, 0 }
-Sprite "BULLE6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE6.png", 0, 0 }
-Sprite "BULLE7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE7.png", 0, 0 }
-Sprite "BULLE8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE8.png", 0, 0 }
-Sprite "BULLF1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF1.png", 0, 0 }
-Sprite "BULLF2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF2.png", 0, 0 }
-Sprite "BULLF3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF3.png", 0, 0 }
-Sprite "BULLF4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF4.png", 0, 0 }
-Sprite "BULLF5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF5.png", 0, 0 }
-Sprite "BULLF6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF6.png", 0, 0 }
-Sprite "BULLF7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF7.png", 0, 0 }
-Sprite "BULLF8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF8.png", 0, 0 }
-Sprite "BULLG1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG1.png", 0, 0 }
-Sprite "BULLG2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG2.png", 0, 0 }
-Sprite "BULLG3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG3.png", 0, 0 }
-Sprite "BULLG4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG4.png", 0, 0 }
-Sprite "BULLG5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG5.png", 0, 0 }
-Sprite "BULLG6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG6.png", 0, 0 }
-Sprite "BULLG7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG7.png", 0, 0 }
-Sprite "BULLG8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG8.png", 0, 0 }
-Sprite "BULLH1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH1.png", 0, 0 }
-Sprite "BULLH2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH2.png", 0, 0 }
-Sprite "BULLH3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH3.png", 0, 0 }
-Sprite "BULLH4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH4.png", 0, 0 }
-Sprite "BULLH5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH5.png", 0, 0 }
-Sprite "BULLH6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH6.png", 0, 0 }
-Sprite "BULLH7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH7.png", 0, 0 }
-Sprite "BULLH8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH8.png", 0, 0 }
-Sprite "BULLI0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLI0.png", 0, 0 }
-Sprite "BULLJ0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLJ0.png", 0, 0 }
-Sprite "BULLK0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLK0.png", 0, 0 }
-Sprite "BULLL0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLL0.png", 0, 0 }
-Sprite "BULLM0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLM0.png", 0, 0 }
-Sprite "BULLN0", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLN0.png", 0, 0 }
+Sprite "BULLA1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA1.png", 0, 0 }
+Sprite "BULLA2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA2.png", 0, 0 }
+Sprite "BULLA3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA3.png", 0, 0 }
+Sprite "BULLA4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA4.png", 0, 0 }
+Sprite "BULLA5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA5.png", 0, 0 }
+Sprite "BULLA6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA6.png", 0, 0 }
+Sprite "BULLA7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA7.png", 0, 0 }
+Sprite "BULLA8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLA8.png", 0, 0 }
+Sprite "BULLB1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB1.png", 0, 0 }
+Sprite "BULLB2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB2.png", 0, 0 }
+Sprite "BULLB3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB3.png", 0, 0 }
+Sprite "BULLB4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB4.png", 0, 0 }
+Sprite "BULLB5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB5.png", 0, 0 }
+Sprite "BULLB6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB6.png", 0, 0 }
+Sprite "BULLB7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB7.png", 0, 0 }
+Sprite "BULLB8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLB8.png", 0, 0 }
+Sprite "BULLC1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC1.png", 0, 0 }
+Sprite "BULLC2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC2.png", 0, 0 }
+Sprite "BULLC3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC3.png", 0, 0 }
+Sprite "BULLC4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC4.png", 0, 0 }
+Sprite "BULLC5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC5.png", 0, 0 }
+Sprite "BULLC6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC6.png", 0, 0 }
+Sprite "BULLC7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC7.png", 0, 0 }
+Sprite "BULLC8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLC8.png", 0, 0 }
+Sprite "BULLD1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD1.png", 0, 0 }
+Sprite "BULLD2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD2.png", 0, 0 }
+Sprite "BULLD3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD3.png", 0, 0 }
+Sprite "BULLD4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD4.png", 0, 0 }
+Sprite "BULLD5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD5.png", 0, 0 }
+Sprite "BULLD6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD6.png", 0, 0 }
+Sprite "BULLD7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD7.png", 0, 0 }
+Sprite "BULLD8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLD8.png", 0, 0 }
+Sprite "BULLE1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE1.png", 0, 0 }
+Sprite "BULLE2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE2.png", 0, 0 }
+Sprite "BULLE3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE3.png", 0, 0 }
+Sprite "BULLE4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE4.png", 0, 0 }
+Sprite "BULLE5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE5.png", 0, 0 }
+Sprite "BULLE6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE6.png", 0, 0 }
+Sprite "BULLE7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE7.png", 0, 0 }
+Sprite "BULLE8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLE8.png", 0, 0 }
+Sprite "BULLF1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF1.png", 0, 0 }
+Sprite "BULLF2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF2.png", 0, 0 }
+Sprite "BULLF3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF3.png", 0, 0 }
+Sprite "BULLF4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF4.png", 0, 0 }
+Sprite "BULLF5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF5.png", 0, 0 }
+Sprite "BULLF6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF6.png", 0, 0 }
+Sprite "BULLF7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF7.png", 0, 0 }
+Sprite "BULLF8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLF8.png", 0, 0 }
+Sprite "BULLG1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG1.png", 0, 0 }
+Sprite "BULLG2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG2.png", 0, 0 }
+Sprite "BULLG3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG3.png", 0, 0 }
+Sprite "BULLG4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG4.png", 0, 0 }
+Sprite "BULLG5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG5.png", 0, 0 }
+Sprite "BULLG6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG6.png", 0, 0 }
+Sprite "BULLG7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG7.png", 0, 0 }
+Sprite "BULLG8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLG8.png", 0, 0 }
+Sprite "BULLH1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH1.png", 0, 0 }
+Sprite "BULLH2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH2.png", 0, 0 }
+Sprite "BULLH3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH3.png", 0, 0 }
+Sprite "BULLH4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH4.png", 0, 0 }
+Sprite "BULLH5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH5.png", 0, 0 }
+Sprite "BULLH6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH6.png", 0, 0 }
+Sprite "BULLH7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH7.png", 0, 0 }
+Sprite "BULLH8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLH8.png", 0, 0 }
+Sprite "BULLI0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLI0.png", 0, 0 }
+Sprite "BULLJ0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLJ0.png", 0, 0 }
+Sprite "BULLK0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLK0.png", 0, 0 }
+Sprite "BULLL0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLL0.png", 0, 0 }
+Sprite "BULLM0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLM0.png", 0, 0 }
+Sprite "BULLN0", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BULLN0.png", 0, 0 }
 
 // BEGIN GENERATED 4.29.0aq CHARACTER SPRITES
 Sprite "PALMA1", 256, 256 { Offset 128, 246 Patch "sprites/caelum/actors/palomo/PALMA1.png", 0, 0 }
@@ -1952,54 +1952,54 @@ Sprite "ARRND5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARRND5
 Sprite "ARRND6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARRND6.png", 0, 0 }
 Sprite "ARRND7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARRND7.png", 0, 0 }
 Sprite "ARRND8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/argento/ARRND8.png", 0, 0 }
-Sprite "BUIDA1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA1.png", 0, 0 }
-Sprite "BUIDA2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA2.png", 0, 0 }
-Sprite "BUIDA3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA3.png", 0, 0 }
-Sprite "BUIDA4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA4.png", 0, 0 }
-Sprite "BUIDA5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA5.png", 0, 0 }
-Sprite "BUIDA6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA6.png", 0, 0 }
-Sprite "BUIDA7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA7.png", 0, 0 }
-Sprite "BUIDA8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA8.png", 0, 0 }
-Sprite "BUIDB1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB1.png", 0, 0 }
-Sprite "BUIDB2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB2.png", 0, 0 }
-Sprite "BUIDB3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB3.png", 0, 0 }
-Sprite "BUIDB4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB4.png", 0, 0 }
-Sprite "BUIDB5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB5.png", 0, 0 }
-Sprite "BUIDB6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB6.png", 0, 0 }
-Sprite "BUIDB7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB7.png", 0, 0 }
-Sprite "BUIDB8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB8.png", 0, 0 }
-Sprite "BURNA1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA1.png", 0, 0 }
-Sprite "BURNA2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA2.png", 0, 0 }
-Sprite "BURNA3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA3.png", 0, 0 }
-Sprite "BURNA4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA4.png", 0, 0 }
-Sprite "BURNA5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA5.png", 0, 0 }
-Sprite "BURNA6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA6.png", 0, 0 }
-Sprite "BURNA7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA7.png", 0, 0 }
-Sprite "BURNA8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA8.png", 0, 0 }
-Sprite "BURNB1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB1.png", 0, 0 }
-Sprite "BURNB2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB2.png", 0, 0 }
-Sprite "BURNB3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB3.png", 0, 0 }
-Sprite "BURNB4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB4.png", 0, 0 }
-Sprite "BURNB5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB5.png", 0, 0 }
-Sprite "BURNB6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB6.png", 0, 0 }
-Sprite "BURNB7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB7.png", 0, 0 }
-Sprite "BURNB8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB8.png", 0, 0 }
-Sprite "BURNC1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC1.png", 0, 0 }
-Sprite "BURNC2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC2.png", 0, 0 }
-Sprite "BURNC3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC3.png", 0, 0 }
-Sprite "BURNC4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC4.png", 0, 0 }
-Sprite "BURNC5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC5.png", 0, 0 }
-Sprite "BURNC6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC6.png", 0, 0 }
-Sprite "BURNC7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC7.png", 0, 0 }
-Sprite "BURNC8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC8.png", 0, 0 }
-Sprite "BURND1", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND1.png", 0, 0 }
-Sprite "BURND2", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND2.png", 0, 0 }
-Sprite "BURND3", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND3.png", 0, 0 }
-Sprite "BURND4", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND4.png", 0, 0 }
-Sprite "BURND5", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND5.png", 0, 0 }
-Sprite "BURND6", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND6.png", 0, 0 }
-Sprite "BURND7", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND7.png", 0, 0 }
-Sprite "BURND8", 96, 64 { Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND8.png", 0, 0 }
+Sprite "BUIDA1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA1.png", 0, 0 }
+Sprite "BUIDA2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA2.png", 0, 0 }
+Sprite "BUIDA3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA3.png", 0, 0 }
+Sprite "BUIDA4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA4.png", 0, 0 }
+Sprite "BUIDA5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA5.png", 0, 0 }
+Sprite "BUIDA6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA6.png", 0, 0 }
+Sprite "BUIDA7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA7.png", 0, 0 }
+Sprite "BUIDA8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDA8.png", 0, 0 }
+Sprite "BUIDB1", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB1.png", 0, 0 }
+Sprite "BUIDB2", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB2.png", 0, 0 }
+Sprite "BUIDB3", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB3.png", 0, 0 }
+Sprite "BUIDB4", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB4.png", 0, 0 }
+Sprite "BUIDB5", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB5.png", 0, 0 }
+Sprite "BUIDB6", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB6.png", 0, 0 }
+Sprite "BUIDB7", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB7.png", 0, 0 }
+Sprite "BUIDB8", 96, 64 { XScale 0.800000 YScale 0.800000 Offset 48, 62 Patch "sprites/caelum/actors/bull/BUIDB8.png", 0, 0 }
+Sprite "BURNA1", 96, 64 { XScale 0.676923 YScale 0.676923 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA1.png", 0, 0 }
+Sprite "BURNA2", 96, 64 { XScale 0.749474 YScale 0.749474 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA2.png", 0, 0 }
+Sprite "BURNA3", 96, 64 { XScale 0.666667 YScale 0.666667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA3.png", 0, 0 }
+Sprite "BURNA4", 96, 64 { XScale 0.694340 YScale 0.694340 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA4.png", 0, 0 }
+Sprite "BURNA5", 96, 64 { XScale 0.696296 YScale 0.696296 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA5.png", 0, 0 }
+Sprite "BURNA6", 96, 64 { XScale 0.692308 YScale 0.692308 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA6.png", 0, 0 }
+Sprite "BURNA7", 96, 64 { XScale 0.638298 YScale 0.638298 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA7.png", 0, 0 }
+Sprite "BURNA8", 96, 64 { XScale 0.716667 YScale 0.716667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNA8.png", 0, 0 }
+Sprite "BURNB1", 96, 64 { XScale 0.676923 YScale 0.676923 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB1.png", 0, 0 }
+Sprite "BURNB2", 96, 64 { XScale 0.749474 YScale 0.749474 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB2.png", 0, 0 }
+Sprite "BURNB3", 96, 64 { XScale 0.666667 YScale 0.666667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB3.png", 0, 0 }
+Sprite "BURNB4", 96, 64 { XScale 0.694340 YScale 0.694340 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB4.png", 0, 0 }
+Sprite "BURNB5", 96, 64 { XScale 0.696296 YScale 0.696296 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB5.png", 0, 0 }
+Sprite "BURNB6", 96, 64 { XScale 0.692308 YScale 0.692308 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB6.png", 0, 0 }
+Sprite "BURNB7", 96, 64 { XScale 0.638298 YScale 0.638298 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB7.png", 0, 0 }
+Sprite "BURNB8", 96, 64 { XScale 0.716667 YScale 0.716667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNB8.png", 0, 0 }
+Sprite "BURNC1", 96, 64 { XScale 0.676923 YScale 0.676923 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC1.png", 0, 0 }
+Sprite "BURNC2", 96, 64 { XScale 0.749474 YScale 0.749474 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC2.png", 0, 0 }
+Sprite "BURNC3", 96, 64 { XScale 0.666667 YScale 0.666667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC3.png", 0, 0 }
+Sprite "BURNC4", 96, 64 { XScale 0.694340 YScale 0.694340 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC4.png", 0, 0 }
+Sprite "BURNC5", 96, 64 { XScale 0.696296 YScale 0.696296 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC5.png", 0, 0 }
+Sprite "BURNC6", 96, 64 { XScale 0.692308 YScale 0.692308 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC6.png", 0, 0 }
+Sprite "BURNC7", 96, 64 { XScale 0.638298 YScale 0.638298 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC7.png", 0, 0 }
+Sprite "BURNC8", 96, 64 { XScale 0.716667 YScale 0.716667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURNC8.png", 0, 0 }
+Sprite "BURND1", 96, 64 { XScale 0.676923 YScale 0.676923 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND1.png", 0, 0 }
+Sprite "BURND2", 96, 64 { XScale 0.749474 YScale 0.749474 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND2.png", 0, 0 }
+Sprite "BURND3", 96, 64 { XScale 0.666667 YScale 0.666667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND3.png", 0, 0 }
+Sprite "BURND4", 96, 64 { XScale 0.694340 YScale 0.694340 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND4.png", 0, 0 }
+Sprite "BURND5", 96, 64 { XScale 0.696296 YScale 0.696296 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND5.png", 0, 0 }
+Sprite "BURND6", 96, 64 { XScale 0.692308 YScale 0.692308 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND6.png", 0, 0 }
+Sprite "BURND7", 96, 64 { XScale 0.638298 YScale 0.638298 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND7.png", 0, 0 }
+Sprite "BURND8", 96, 64 { XScale 0.716667 YScale 0.716667 Offset 48, 62 Patch "sprites/caelum/actors/bull/BURND8.png", 0, 0 }
 Sprite "CAIDA1", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAIDA1.png", 0, 0 }
 Sprite "CAIDA2", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAIDA2.png", 0, 0 }
 Sprite "CAIDA3", 256, 256 { Offset 128, 244 Patch "sprites/caelum/caella/CAIDA3.png", 0, 0 }
@@ -2418,3 +2418,11 @@ Sprite "ZUWKB5", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_c
 Sprite "ZUWKB6", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_colossus/ZUWKB6.png", 0, 0 }
 Sprite "ZUWKB7", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_colossus/ZUWKB7.png", 0, 0 }
 Sprite "ZUWKB8", 416, 416 { Offset 208, 400 Patch "sprites/caelum/actors/zupay_colossus/ZUWKB8.png", 0, 0 }
+
+// 4.36.0b: atlas original, recortado y registrado por TEXTURES, sin editar PNG.
+Sprite "CLVRA0", 320, 887 { Offset 160, 480 Patch "graphics/caelum/world/ca_lever_states.png", -375, 0 }
+Sprite "CLVRB0", 320, 887 { Offset 160, 480 Patch "graphics/caelum/world/ca_lever_states.png", -1080, 0 }
+// Sellos propios del proyecto, centrados para su proyección horizontal.
+Sprite "CMNFA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_fire.png", 0, 0 }
+Sprite "CMNQA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_quintessence.png", 0, 0 }
+Sprite "CMNEA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_earth.png", 0, 0 }

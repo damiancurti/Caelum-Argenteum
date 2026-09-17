@@ -1,8 +1,37 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0a — 2026-09-17.
+Versión documental: 4.36.0b — 2026-09-17.
 
-## Estado actual: 4.36.0a — trampilla y primeros peligros físicos
+## Estado actual: 4.36.0b — trampas, palancas y presentación
+
+Delta sobre el proyecto completo 4.36.0a. El autor confirma correctas las demás
+pruebas de 0a y pide corregir el tamaño del toro y de las rocas. Aprueba minas
+mágicas explosivas, teletransporte y aplastamiento; pide una palanca sobre columna,
+transiciones sonoras y derretido para los viajes en barco.
+
+Se implementan esas tres trampas en MAP08. Los mapas MAP01–08 conservan sus WAD
+byte a byte. MagicHazardRevision del controlador existente incorpora los nuevos
+actores una vez, también en partidas antiguas. La trampilla y los mecanismos ya
+usados conservan su estado. Las palancas gastadas se muestran hacia abajo.
+
+Toro: aumento visual general del 25% y normalización por vista de la carrera
+respecto del reposo; no se cambia su anatomía, masa, colisión ni ataque. Los PNG
+aportados por el autor conservan sus bytes. Las rocas de 0a eran granito pequeño
+de prueba; las de peligros reciben una esfera irregular de 96 MU de diámetro,
+pivote central y masa esférica de granito (38170 kg). El daño sigue el núcleo
+físico vigente y depende de las condiciones del impacto, sin muerte automática.
+
+Las tres trampas, dimensiones y valores de MAP08 son configuraciones de ensayo;
+no fijan ubicaciones narrativas ni balance definitivo. El resto de 4.36 continúa
+con superficies especiales, avalanchas, arietes, catapultas y otros mecanismos.
+No se adelanta 4.37 ni se extrae todavía Impact Physics como paquete externo.
+
+Propuesta exclusivamente a revisión: una runa de inmovilización temporal.
+No se implementa ni se asignan duración, resistencia, coste o daño sin decisión
+del autor. La revisión jugable/estética de 0b en Windows 11 queda pendiente;
+seguir PRUEBAS_4_36_0b.txt. Las secciones anteriores son historial.
+
+## Base aprobada: 4.36.0a — trampilla y primeros peligros físicos
 
 El autor confirma «Todo correcto» para 4.35.0q: queda aprobada y cerrada 4.35.
 Autoriza comenzar 4.36 y agrega trampas de suelo que se abren al pisarlas.
@@ -22,8 +51,8 @@ Doom al ya resuelto por el núcleo. Guardados, informe de diagnóstico y TXT
 permiten revisar los mecanismos. La configuración de la galería es de ensayo;
 no fija ubicaciones narrativas ni un nuevo balance definitivo.
 
-Pendiente de aceptación: pruebas jugables del autor en Windows 11 de este
-incremento, indicadas en PRUEBAS_4_36_0a.txt. 4.36 sigue en desarrollo: superficies
+El autor aprueba el resto de las pruebas de este incremento; las correcciones
+visuales solicitadas se abordan en 0b. 4.36 sigue en desarrollo: superficies
 con daño propio, avalanchas, arietes, catapultas y sectores móviles amplios.
 No se adelanta 4.37 ni se extrae todavía Impact Physics como paquete externo.
 La secuencia posterior sigue siendo 4.37 → exportación de prueba → V5.0 → V5.1.

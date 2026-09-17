@@ -1,5 +1,19 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.36.0a — 2026-09-17.
+Versión documental: 4.36.0b — 2026-09-17.
+
+4.36.0b — PALANCAS, TRAMPAS Y PRESENTACIÓN
+
+El autor aprueba el resto de 0a. Se atienden las observaciones de tamaño del toro
+y rocas, palanca y transiciones. Las minas explosivas, el teletransporte y el
+aplastamiento solicitados se ensayan en MAP08. No se asignan trampas a escenas
+de la mansión ni a nuevas misiones sin ubicaciones narrativas definidas.
+MAP01–08 conservan su geometría y checksum; el controlador existente añade una
+vez los actores nuevos de la galería al cargar guardados anteriores.
+Las palancas sobre columna muestran arriba/abajo según su estado real, incluidas
+las usadas en 0a. El toro conserva su combate y recibe una corrección visual.
+Los viajes del barco existente entre MAP06/07 usan derretido nativo y sonido.
+La runa de inmovilización es una propuesta a revisión, sin presencia en el mapa.
+Pruebas y coordenadas: PRUEBAS_4_36_0b.txt. La etapa 4.36 continúa abierta.
 
 4.36.0a — CIERRE DE 4.35 Y PRIMEROS PELIGROS
 

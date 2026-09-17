@@ -1,6 +1,26 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0a — 2026-09-17.
+Versión documental: 4.36.0b — 2026-09-17.
+
+## 4.36.0b — mecanismos y trampas aprobadas (2026-09-17)
+
+- El autor acepta las demás pruebas de 0a y pide aumentar toro/rocas, redondear
+  las rocas rodantes, crear palanca sobre columna y añadir minas, teletransporte,
+  aplastamiento, transiciones con sonido y derretido para el barco.
+- Toro ampliado mediante TEXTURES y carrera normalizada por vista. PNG,
+  anatomía, masa y embestida se conservan.
+- Roca de peligro esférica de 96 MU, masa derivada de volumen/densidad y pivote
+  central. Las rocas ambientales mantienen su arte anterior.
+- Palanca original de dos posiciones, soporte de columna y modo mural; Usar
+  activa rocas o techos, y el estado usado se conserva en guardados.
+- Mina ambiental de una explosión, teletransporte local sin telefrag y techo
+  nativo de un ciclo. Los valores de la galería son de ensayo.
+- Preparación una vez sobre MAP08 existente: WAD de MAP01–08 sin cambios.
+- Barco con melt nativo por cruce y sonido al cargar el destino. No se cambia
+  la preferencia global ni las reglas de consumo/tiempo del viaje.
+- Propuesta de runa de inmovilización sólo a revisión; no implementada.
+- Entrega incremental con PRUEBAS_4_36_0b.txt y cinco documentos actualizados.
+  Prueba jugable y estética de 0b en Windows 11 pendiente del autor.
 
 ## 4.36.0a — trampilla y rocas físicas (2026-09-17)
 

@@ -3854,10 +3854,20 @@ CA_JOURNEY_SHIP_NOTE = "5 nudos, viento favorable; la guardia navega mientras do
 CA_JOURNEY_CART_NOTE = "3 km/h; 16 h de marcha / 8 h acampado. Tiro y conductor incluidos.";
 
 [default]
-CA_HAZARD_SWITCH = "Rock release";
-CA_HAZARD_RELEASED = "Rock released. Keep clear of its path.";
+CA_HAZARD_SWITCH = "Lever";
+CA_HAZARD_RELEASED = "Mechanism activated. Keep clear of its path.";
 CA_MAP08_NAME = "Sewers: hazard gallery";
 [es]
-CA_HAZARD_SWITCH = "Soltar roca";
-CA_HAZARD_RELEASED = "Roca liberada. Cuidado con su recorrido.";
+CA_HAZARD_SWITCH = "Palanca";
+CA_HAZARD_RELEASED = "Mecanismo activado. Cuidado con su recorrido.";
 CA_MAP08_NAME = "Alcantarillas: galería de peligros";
+
+[default]
+CA_MAGIC_MINE = "Magical mine";
+CA_TELEPORT_TRAP = "Teleport trap";
+CA_CRUSHER_TRAP = "Crusher trap";
+
+[es]
+CA_MAGIC_MINE = "Mina mágica";
+CA_TELEPORT_TRAP = "Trampa de teletransporte";
+CA_CRUSHER_TRAP = "Trampa de aplastamiento";

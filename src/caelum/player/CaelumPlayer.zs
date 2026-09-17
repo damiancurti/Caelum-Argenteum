@@ -11620,13 +11620,12 @@ class CaelumPlayer : DoomPlayer
 
     override void PreTravelled()
     {
-        // Una sola señal local al confirmar el viaje; no se repite durante
-        // las fases internas de carga del mapa siguiente.
-        A_StartSound(
-            "caelum/ui/map_transition",
-            CHAN_7,
-            CHANF_LOCAL | CHANF_UI
-        );
+        // Presentación nativa al llegar. El barco solicita el derretido sólo
+        // para este cruce; los demás conservan la preferencia del usuario.
+        let journey = CaelumJourneyState.Get(self);
+        bool ship = journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED
+            && journey.TravelMode == CaelumJourneyState.MODE_SHIP;
+        EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", ship ? 1 : 0);
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         ClosePalomoMerchant();
@@ -13212,9 +13211,9 @@ class CaelumPlayer : DoomPlayer
             return 0;
         }
 
-        // El ahogamiento es daño ambiental. Debe actualizar vida, dolor e
-        // interrupciones, pero no iniciar combate ni otorgar adrenalina.
-        if (mod == 'Drowning')
+        // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
+        // interrupciones, sin iniciar combate ni otorgar adrenalina.
+        if (mod == 'Drowning' || mod == 'Crush')
         {
             int healthBeforeDrowning = health;
             double adrenalineRatioBeforeDrowning = 0.0;
@@ -13414,6 +13413,9 @@ class CaelumPlayer : DoomPlayer
     {
         double resolvedRadius = Max(1.0, double(incomingDamage));
         if (inflictor == null) { return resolvedRadius; }
+
+        let mine = CaelumMagicMine(inflictor);
+        if (mine != null) return mine.BlastRadius();
 
         CaelumCombatActor combatInflictor = CaelumCombatActor(inflictor);
         if (combatInflictor != null
@@ -13652,13 +13654,16 @@ class CaelumPlayer : DoomPlayer
             CalculateAndTriggerPain(
                 actualHealthLost,
                 adrenalineRatioBeforeDamage,
-                true
+                mod != 'CaelumTrapMagic'
             );
-            AddCombatAdrenaline(
-                CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
-                CaelumConstants.ADRENALINE_EVENT_DAMAGE
-            );
-            MarkCombatActivity();
+            if (mod != 'CaelumTrapMagic')
+            {
+                AddCombatAdrenaline(
+                    CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE,
+                    CaelumConstants.ADRENALINE_EVENT_DAMAGE
+                );
+                MarkCombatActivity();
+            }
         }
         if (armorPieceBroken) { ApplyCharacterProfile(); }
         return result;

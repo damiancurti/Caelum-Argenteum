@@ -24,6 +24,7 @@ class CaelumMainM00QuestController : EventHandler
     bool ChannelInfrastructureRecovered;
     bool SewerNetworkPrepared;
     int SewerNetworkRevision;
+    int MagicHazardRevision;
     bool SewerSupportPrepared;
     bool RestFurniturePrepared;
     bool DiningPrepared;
@@ -479,6 +480,11 @@ class CaelumMainM00QuestController : EventHandler
     {
         // Este controlador ya existe en guardados antiguos. No depender sólo
         // de la incorporación de un EventHandler nuevo al cargar esas partidas.
+        if (MagicHazardRevision < 1)
+        {
+            CaelumMagicHazardWorld.Prepare();
+            MagicHazardRevision = 1;
+        }
         if (!TravelVehiclesPrepared)
             TravelVehiclesPrepared = CaelumVehicleWorld.Prepare();
         if (!DiningPrepared && level.maptime % TICRATE == 0)

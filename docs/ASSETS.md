@@ -1,6 +1,35 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0a — 2026-09-17.
+Versión documental: 4.36.0b — 2026-09-17.
+
+## 4.36.0b — palanca, esfera y escala del toro
+
+Nuevo atlas original generado con imagegen: src/graphics/caelum/world/
+ca_lever_states.png, RGBA de 1774 × 887, fondo alfa real, palanca arriba/abajo.
+TEXTURES registra CLVRA0 y CLVRB0 recortando dos ventanas de 320 × 887 del mismo
+PNG: desplazamientos X -375/-1080 y Offset 160,480. No se editaron sus píxeles.
+La placa y el pivote quedan registrados; el dibujo se monta con WALLSPRITE a
+16.5 MU de la cara de una columna y con pivote a 47 MU de altura. Escala 0.09; ambas posiciones libran los capiteles.
+
+assets/generators/generate_hazard_models.py genera dos OBJ propios: columna
+cuadrada de 96 MU de altura y roca casi esférica de radio 48, sin base plana.
+Las UV de la roca son continuas y el pivote está en su centro. Se reutilizan
+CASWRWAL y rock_granite.png. Los modelos nuevos compensan level.pixelstretch en la escala vertical del
+actor visual con CorrectPixelStretch, alineando dibujo, suelo y colisión.
+El actor visual de la roca sigue su centro; UseActorRoll rota alrededor de él.
+No se modifican los modelos de rocas ambientales aceptados.
+
+TEXTURES amplía un 25% todos los sprites BULL/BUID; BURN usa además un factor
+constante por vista obtenido de la mediana de su silueta respecto del reposo.
+Los fotogramas de carrera ya no encogen por el margen transparente. Los PNG del
+toro y sus estados existentes permanecen idénticos a 0a; el cambio es de dibujo.
+
+Las placas mágicas reutilizan los sellos propios de fuego, quintaesencia y tierra,
+centrados como sprites horizontales. El fogonazo usa XFIR. Los nuevos eventos
+son aliases de sonidos propios: iron_gate para palanca, thunder_heavy para mina,
+palomo_disappear para teletransporte y door_large_open para aplastador. Los viajes
+reutilizan ca_map_transition. No se incorporan recursos de Doom ni audio ajeno.
+Los prompts y registro de recortes están en assets/source/art/lever_4_36_0b.txt.
 
 ## 4.36.0a — recursos de la galería física
 

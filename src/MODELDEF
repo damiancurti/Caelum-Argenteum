@@ -3284,14 +3284,23 @@ Model CaelumVehicleDock
 }
 // END CAELUM TRAVEL VEHICLES
 
-// La roca de ensayo reutiliza exactamente el granito pequeño del proyecto.
-Model CaelumHazardRock
+// 4.36.0b: pivote central y capa visual independiente de la colisión.
+Model CaelumHazardRockVisual
 {
-    Path "models/caelum/world/environment"
-    Model 0 "ca_rock_granite.obj"
-    Scale 0.5 0.5 0.5
+    Path "models/caelum/world/hazards"
+    Model 0 "ca_hazard_boulder.obj"
+    Scale 1 1 1
     CorrectPixelStretch
     DontCullBackFaces
     UseActorRoll
+    FrameIndex CARK A 0 0
+}
+Model CaelumLeverColumn
+{
+    Path "models/caelum/world/hazards"
+    Model 0 "ca_lever_column.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
     FrameIndex CARK A 0 0
 }

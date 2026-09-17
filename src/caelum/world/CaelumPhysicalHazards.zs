@@ -1,4 +1,4 @@
-// Peligros físicos 4.36.0a. Los mecanismos conservan su estado en el mapa/hub.
+// Peligros físicos 4.36.0b. Los mecanismos conservan su estado en el mapa/hub.
 // La trampilla necesita un foso real debajo: no altera la geometría ni teleporta.
 class CaelumTrapdoorCover : Actor
 {
@@ -92,10 +92,12 @@ class CaelumTrapdoor : Actor
     States { Spawn: TNT1 A -1; Stop; }
 }
 
-// Conserva dimensiones, masa y arte del granito pequeño existente.
+// Roca esférica de 96 MU de diámetro. Masa a 32 MU/m y granito de 2700 kg/m³.
 // args[0]: impulso horizontal en MU/tic; cero suelta verticalmente la roca.
 class CaelumHazardRock : CaelumRockGraniteHalf
 {
+    bool BoulderSizeReady;
+    CaelumHazardRockVisual BoulderVisual;
     bool Released;
     vector3 BeforeMove;
     vector3 BeforeVelocity;
@@ -159,6 +161,19 @@ class CaelumHazardRock : CaelumRockGraniteHalf
 
     override void Tick()
     {
+        // Al cargar un bloque antiguo junto a un obstáculo, esperar a que
+        // quepa antes de ampliar su colisión. No desplazar ni relanzar la roca.
+        if (!BoulderSizeReady && A_SetSize(48, 96, true))
+        {
+            Mass = 38170;
+            BoulderSizeReady = true;
+        }
+        A_SetRenderStyle(1.0, STYLE_None);
+        if (BoulderVisual == null)
+        {
+            BoulderVisual = CaelumHazardRockVisual(Spawn("CaelumHazardRockVisual", Pos, NO_REPLACE));
+            if (BoulderVisual != null) BoulderVisual.master = self;
+        }
         BeforeMove = Pos; BeforeVelocity = Vel;
         Super.Tick();
         if (!Released) return;
@@ -183,6 +198,9 @@ class CaelumHazardRock : CaelumRockGraniteHalf
 
     Default
     {
+        // La base pequeña permite recuperar guardados antiguos sin encajarlos.
+        // Tick amplía a 48/96 y 38170 kg sólo cuando cabe.
+        RenderStyle "None";
         +NOGRAVITY
         +CANPASS
         +NOFRICTION
@@ -191,10 +209,68 @@ class CaelumHazardRock : CaelumRockGraniteHalf
     }
 }
 
-// args[0]: TID del bloque preparado. Sin TID válido no activa otros mecanismos.
+class CaelumHazardRockVisual : Actor
+{
+    override void Tick()
+    {
+        Super.Tick();
+        if (master == null) { Destroy(); return; }
+        SetOrigin(master.Pos + (0,0,master.Radius), false);
+        Angle = master.Angle; Roll = master.Roll;
+        Scale = (master.Radius / 48.0, master.Radius / 48.0 * level.pixelstretch);
+    }
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: CARK A -1; Stop; }
+}
+
+class CaelumLeverColumn : Actor
+{
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: CARK A -1; Stop; }
+}
+
+class CaelumLeverFace : Actor
+{
+    Default { +NOINTERACTION +NOGRAVITY +WALLSPRITE Scale 0.09; }
+    States { Spawn: CLVR A -1; Stop; Down: CLVR B -1; Stop; }
+}
+
+// args[0]: TID del mecanismo preparado. Sin TID válido no activa otros mecanismos.
 class CaelumHazardReleaseSwitch : Actor
 {
     bool Spent;
+    CaelumLeverColumn ColumnVisual;
+    CaelumLeverFace LeverVisual;
+
+    override void Tick()
+    {
+        Super.Tick();
+        // args[1]=1 permite montar sólo la palanca delante de una pared.
+        // El modo por defecto incorpora una columna de mampostería.
+        A_SetRenderStyle(1.0, STYLE_None);
+        Height = 96;
+        if (args[1] == 0 && ColumnVisual == null)
+            ColumnVisual = CaelumLeverColumn(Spawn("CaelumLeverColumn", Pos, NO_REPLACE));
+        if (ColumnVisual != null)
+        {
+            ColumnVisual.Angle = Angle;
+            ColumnVisual.Scale.Y = level.pixelstretch;
+        }
+        if (LeverVisual == null)
+        {
+            vector3 offset = args[1] == 0 ? (-Cos(Angle)*16.5, -Sin(Angle)*16.5, 47) : (0,0,47);
+            LeverVisual = CaelumLeverFace(Spawn("CaelumLeverFace", Pos + offset, NO_REPLACE));
+            if (LeverVisual != null) LeverVisual.Angle = Angle + 180;
+        }
+        if (LeverVisual != null) LeverVisual.frame = Spent ? 1 : 0;
+    }
+
+    override void OnDestroy()
+    {
+        if (ColumnVisual != null) ColumnVisual.Destroy();
+        if (LeverVisual != null) LeverVisual.Destroy();
+        Super.OnDestroy();
+    }
 
     override bool Used(Actor activator)
     {
@@ -203,14 +279,21 @@ class CaelumHazardReleaseSwitch : Actor
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)
             || args[0] <= 0 || user.Distance2D(self) > user.UseRange + Radius
             || user.Pos.Z >= Pos.Z + Height || user.Pos.Z + user.Height <= Pos.Z
-            || !user.CheckSight(self)) return false;
-        let it = ActorIterator.Create(args[0], "CaelumHazardRock");
-        CaelumHazardRock rock;
+            || !user.CheckSight(self, SF_IGNOREVISIBILITY)) return false;
+        let it = ActorIterator.Create(args[0]);
+        Actor mechanism;
         bool changed = false;
-        while ((rock = CaelumHazardRock(it.Next())) != null) changed = rock.Release() || changed;
+        while ((mechanism = it.Next()) != null)
+        {
+            let rock = CaelumHazardRock(mechanism);
+            let crusher = CaelumCrusherTrap(mechanism);
+            if (rock != null) changed = rock.Release() || changed;
+            if (crusher != null) changed = crusher.Release() || changed;
+        }
         if (!changed) return false;
         Spent = true;
-        A_StartSound("caelum/world/door_open", CHAN_BODY);
+        if (LeverVisual != null) LeverVisual.frame = 1;
+        A_StartSound("caelum/world/lever", CHAN_BODY);
         user.A_Print(StringTable.Localize("CA_HAZARD_RELEASED", false));
         return true;
     }
@@ -218,13 +301,12 @@ class CaelumHazardReleaseSwitch : Actor
     {
         Tag "$CA_HAZARD_SWITCH";
         Radius 16;
-        Height 64;
+        Height 96;
         +SOLID
         +NOGRAVITY
         +CANNOTPUSH
         +DONTTHRUST
-        +WALLSPRITE
-        Scale 0.5;
+        RenderStyle "None";
     }
     States { Spawn: CSGT A -1; Stop; }
 }
@@ -233,7 +315,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0a] Peligros físicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.0b] Peligros físicos y mágicos: mapa=%s", level.MapName);
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -250,6 +332,7 @@ class CaelumHazardDiagnostics : Object play
         let switches = ThinkerIterator.Create("CaelumHazardReleaseSwitch"); CaelumHazardReleaseSwitch lever;
         while ((lever = CaelumHazardReleaseSwitch(switches.Next())) != null)
             Console.Printf("Mecanismo destino=%d usado=%d", lever.args[0], lever.Spent);
+        CaelumMagicHazardWorld.Report();
         if (count == 0) Console.Printf("La galería de peligros está en MAP08, conectada desde MAP05.");
     }
 }
