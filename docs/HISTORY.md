@@ -1,6 +1,21 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.35.0q — 2026-09-17.
+Versión documental: 4.36.0a — 2026-09-17.
+
+## 4.36.0a — trampilla y rocas físicas (2026-09-17)
+
+- El autor aprueba 4.35.0q y confirma el cierre de 4.35.
+- Autoriza comenzar 4.36 y solicita trampas de suelo que se abran al pisarlas.
+- Trampilla sobre un foso real, activación por apoyo, gravedad nativa y estado
+  persistente sin rearme automático. Galería en MAP08 con salida por escaleras.
+- Dos mecanismos Usar liberan granito existente: rodadura horizontal y caída
+  desde arriba. Activación única, sin creación repetida de actores.
+- API vertical añadida a Impact Physics; se conservan las fórmulas aprobadas.
+  Procedencia ambiental explícita y sin empuje nativo adicional al daño físico.
+- Pruebas nativas, guardados y revisión visual se registran en el TXT de entrega.
+  La aceptación de este incremento en Windows 11 queda para el autor.
+- Superficies especiales y grandes peligros continúan dentro del bloque 4.36;
+  después siguen 4.37, exportación de prueba, V5.0 y exposición térmica V5.1.
 
 ## 4.35.0q — sprites v4 y comida a un tercio (2026-09-17)
 
@@ -15,7 +30,7 @@ Versión documental: 4.35.0q — 2026-09-17.
   final para proteger guardados; agachado, combate y orientación de muebles
   conservan prioridad. Los PNG y offsets del autor no se modifican.
 - Pruebas nativas 4.14.2 y revisión de recursos documentadas en el TXT del
-  parche. Aceptación del ritmo y del aspecto visual de 0q pendiente del autor.
+  parche. El autor aprobó el ritmo y el aspecto visual de 0q al autorizar 4.36.
 
 ## 4.35.0p — reservas y transporte costero (2026-09-17)
 

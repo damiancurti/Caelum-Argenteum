@@ -12,7 +12,8 @@ class CaelumWorldCatalogue : Object
     const LOCATION_MAINTENANCE = 5;
     const LOCATION_PORT = 6;
     const LOCATION_COAST = 7;
-    const LOCATION_DEFINED_COUNT = 8;
+    const LOCATION_HAZARD_GALLERY = 8;
+    const LOCATION_DEFINED_COUNT = 9;
     const CONNECTION_NONE = 0;
     const CONNECTION_RETURN = 1;
     // Cada sentido tiene su identidad: recorrer la ida no inventa la vuelta.
@@ -26,7 +27,9 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_FROM_PORT = 9;
     const CONNECTION_TO_COAST = 10;
     const CONNECTION_FROM_COAST = 11;
-    const CONNECTION_DEFINED_COUNT = 12;
+    const CONNECTION_TO_HAZARD_GALLERY = 12;
+    const CONNECTION_FROM_HAZARD_GALLERY = 13;
+    const CONNECTION_DEFINED_COUNT = 14;
 
     static clearscope bool IsLocation(int id)
     {
@@ -47,6 +50,7 @@ class CaelumWorldCatalogue : Object
         if (mapName ~== "MAP05") return LOCATION_MAINTENANCE;
         if (mapName ~== "MAP06") return LOCATION_PORT;
         if (mapName ~== "MAP07") return LOCATION_COAST;
+        if (mapName ~== "MAP08") return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;
     }
 
@@ -59,6 +63,7 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_MAINTENANCE) return "MAP05";
         if (id == LOCATION_PORT) return "MAP06";
         if (id == LOCATION_COAST) return "MAP07";
+        if (id == LOCATION_HAZARD_GALLERY) return "MAP08";
         return "";
     }
 
@@ -78,6 +83,7 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_MAINTENANCE) return "CA_MAP05_NAME";
         if (id == LOCATION_PORT) return "CA_MAP06_NAME";
         if (id == LOCATION_COAST) return "CA_MAP07_NAME";
+        if (id == LOCATION_HAZARD_GALLERY) return "CA_MAP08_NAME";
         return "CA_WORLD_UNREGISTERED";
     }
 
@@ -92,6 +98,8 @@ class CaelumWorldCatalogue : Object
         if (id == CONNECTION_TO_PORT) return LOCATION_RESERVOIR;
         if (id == CONNECTION_FROM_PORT || id == CONNECTION_TO_COAST) return LOCATION_PORT;
         if (id == CONNECTION_FROM_COAST) return LOCATION_COAST;
+        if (id == CONNECTION_TO_HAZARD_GALLERY) return LOCATION_MAINTENANCE;
+        if (id == CONNECTION_FROM_HAZARD_GALLERY) return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;
     }
 
@@ -106,6 +114,8 @@ class CaelumWorldCatalogue : Object
         if (id == CONNECTION_FROM_PORT) return LOCATION_RESERVOIR;
         if (id == CONNECTION_TO_PORT || id == CONNECTION_FROM_COAST) return LOCATION_PORT;
         if (id == CONNECTION_TO_COAST) return LOCATION_COAST;
+        if (id == CONNECTION_TO_HAZARD_GALLERY) return LOCATION_HAZARD_GALLERY;
+        if (id == CONNECTION_FROM_HAZARD_GALLERY) return LOCATION_MAINTENANCE;
         return LOCATION_UNKNOWN;
     }
 

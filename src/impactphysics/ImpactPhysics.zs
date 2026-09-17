@@ -341,6 +341,34 @@ class ImpactPhysics
         result.TargetEnergyPercent = 0.0;
     }
 
+    // Contacto vertical descendente. Mantiene intacta la API horizontal y
+    // reutiliza la misma ley de impulso, restitución y energía equivalente.
+    static void ResolveVerticalBodies(ImpactBody sourceBody, ImpactBody targetBody, ImpactResult result)
+    {
+        if (result == null) return;
+        result.Reset();
+        if (sourceBody == null || targetBody == null) return;
+        double closing = targetBody.Velocity.Z - sourceBody.Velocity.Z;
+        if (closing <= 0.0001) return;
+        double sourceMass = SanitizeMass(sourceBody.Mass);
+        double targetMass = SanitizeMass(targetBody.Mass);
+        double restitution = Clamp((sourceBody.Restitution + targetBody.Restitution) * 0.5, 0.0, 1.0);
+        result.Valid = true;
+        result.Normal = (0,0,-1);
+        result.ClosingSpeed = closing;
+        result.Impulse = (1.0 + restitution) * closing / (1.0/sourceMass + 1.0/targetMass);
+        result.SourceDeltaSpeed = result.Impulse/sourceMass;
+        result.TargetDeltaSpeed = result.Impulse/targetMass;
+        result.SourceEquivalentTics = EquivalentTics(sourceBody.Height, result.SourceDeltaSpeed);
+        result.TargetEquivalentTics = EquivalentTics(targetBody.Height, result.TargetDeltaSpeed);
+        result.SourceEnergyPercent = EnergyPercent(result.SourceEquivalentTics);
+        result.TargetEnergyPercent = EnergyPercent(result.TargetEquivalentTics);
+        result.SourceContactMinimumHeightRatio = 0;
+        result.SourceContactMaximumHeightRatio = 0;
+        result.TargetContactMinimumHeightRatio = 1;
+        result.TargetContactMaximumHeightRatio = 1;
+    }
+
     static void ResolveExternal(
         ImpactBody targetBody,
         double sourceMass,

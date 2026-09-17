@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.35.0q — 2026-09-17.
+Versión documental: 4.36.0a — 2026-09-17.
+
+## 4.36.0a — recursos de la galería física
+
+No se incorporan imágenes ni audio ajenos. La tapa reutiliza CSUFA0 y la madera
+CMWD01. Las paredes/pisos usan CASWRWAL/CASWRFLR; los mecanismos reutilizan CSGT
+y el sonido propio caelum/world/door_open. La roca usa ca_rock_granite.obj,
+CARK A y la escala 0.5 del granito pequeño; MODELDEF añade su asociación concreta
+con UseActorRoll. No se alteran bytes del paquete visual v4 aprobado.
+
+assets/generators/generate_sewer_trials.py genera MAP03–05 y añade MAP08, con
+la galería, foso y escaleras. Los WAD de MAP01–07 son idénticos a la base;
+se agrega únicamente MAP08.wad. Esto evita invalidar guardados por checksum.
+El generador queda como fuente opcional: run_dev.bat no necesita Python.
+La revisión visual se realiza en el renderer nativo con la tapa cerrada y abierta.
 
 ## 4.35.0q — sprites e íconos v4 del autor
 

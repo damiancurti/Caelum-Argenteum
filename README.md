@@ -5,34 +5,31 @@ Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2*
 on Windows 11. The final game is intended to be independent of Doom assets.
 
 
-**Current release: 4.35.0q.** Apply this source patch over the complete
-**4.35.0p** project, merge its folders and rebuild with `run_dev.bat`.
-The author approved the remaining 0p tests and supplied the v4 sprite/icon pack.
+**Current release: 4.36.0a.** Apply this source patch over the complete
+**4.35.0q** project, merge its folders and rebuild with `run_dev.bat`.
+The author approved 0q, closing V4.35, and requested floor traps for V4.36.
 
-Seated food and water recovery now runs at **one third of the ordinary rate**.
-A complete serving takes **30 simulation seconds**, with ten pulses and the
-same portion, mass-based recovery and digestion. Standing consumption remains
-10 seconds. Automatic eating/drinking still uses table → inventory → Magic Box
-and waits for the active portion to finish. Fast-forward uses the same rule.
+MAP08 adds a physical-hazard gallery connected from MAP05. A wooden trapdoor opens
+when stepped on, exposing a real pit; the player falls under native gravity
+and can leave by twelve steps. It stays open after activation. Two nearby
+Use mechanisms release an existing granite rock horizontally or from above.
+The physical impact rules are preserved, with an added vertical adapter and
+explicit environmental provenance. Hazard damage does not add combat adrenaline
+or an extra Doom damage thrust. Nearby moving hazards block accelerated time.
 
-The supplied artwork is integrated into the current actors: two-phase breathing
-and four-phase running for nine characters; separate walking for Domingo,
-Palomo, Mandinga and Zupay; Palomo's seated/lying poses; repaired bull/Ronnie
-sets and inventory icons, including a dedicated sleeping bag icon and fallback
-sprites. The PNGs and their offsets are copied unchanged. Existing furniture
-orientation, crouching, attacks, actor speed and AI callback intervals remain.
+The gallery is test content; dimensions and launch speed are fixture settings.
+MAP01–07 keep identical WADs, preserving their save checksums. The new access
+appears in MAP05, including older saves; use it to enter MAP08 with your character.
+For an isolated test, `map MAP08` starts a new test character. Existing 0q
+artwork and the accepted 30-second seated serving remain part of the base.
 
-New states are appended to preserve serialized state indices. Palomo's actual
-movement, home return, dialogue expressions and scripted departure are handled
-explicitly; this patch does not rely on the pack installer's older state layout.
-Merge the patch directly; no second sprite installer or Python step is required.
-
-**4.35 closure candidate:** 0p is accepted. Only the new visual integration and
-revised seated pace await the author's check before 4.36 physical hazards.
-`netevent ca_debug_rest_report` identifies **4.35.0q** and prints the meal divisor.
-See **PRUEBAS_4_35_0q.txt** for installation and focused acceptance checks.
+`netevent ca_debug_hazards_report` identifies **4.36.0a** and lists mechanisms.
+See **PRUEBAS_4_36_0a.txt** for installation and focused acceptance checks.
 
 ## Implemented
+
+- Pressure-triggered trapdoor, persistent open pit, native falling and stairs.
+- Single-use rock releases, horizontal/vertical impacts and environmental origin.
 
 - Monthly campaign calendar, event details and persistent recurring schedules.
 - Calendar transactions for real currency and material cargo, quest deadlines,
@@ -636,7 +633,9 @@ See **PRUEBAS_4_35_0q.txt** for installation and focused acceptance checks.
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
 The regional climate and shelter service builds on the accepted 0k adapter.
-Remaining before 4.36: manual acceptance of 0p and fixes if needed.
+V4.35 is accepted and closed through 0q. V4.36 begins with the trapdoor and
+rock gallery; dedicated damaging surfaces, avalanches, rams, catapults and
+broader moving-sector hazards remain in this block.
 Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and
 subsequent maps; future regions can use the existing explicit map marker.
 The fast path does not simulate arbitrary AI, physics, doors or third-party
@@ -675,20 +674,19 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover exact seated pulse timing, unchanged
-serving quantities and digestion, standing/medicine timing, legacy counters,
-player animation priorities, Palomo transitions and 0p save compatibility.
-Resource validation checks all supplied PNGs, eight-view coverage and preserved
-state indices. These checks do not replace the author's Windows 11 visual
-acceptance. Follow **PRUEBAS_4_35_0q.txt**; the rest of 0p stays approved.
+Native GZDoom 4.14.2/Linux checks cover walking onto the trapdoor, actual free
+fall, stair escape, activation range/height, rock impacts and single-use state.
+Saved-state checks and native screenshots accompany the local verification.
+The author's Windows 11 playtest of 4.36.0a remains pending; follow
+**PRUEBAS_4_36_0a.txt**. This is the first V4.36 increment, not its closure.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_35_0q.txt** into the complete **4.35.0p** project, replacing matching
+**PRUEBAS_4_36_0a.txt** into the complete **4.35.0q** project, replacing matching
 files and keeping everything else. Rebuild the PK3 with the usual launcher;
 opening the previous PK3 keeps the previous code. The diagnostic
-`netevent ca_debug_rest_report` must identify **4.35.0q**.
+`netevent ca_debug_hazards_report` must identify **4.36.0a**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

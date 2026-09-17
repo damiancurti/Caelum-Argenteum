@@ -3880,6 +3880,11 @@ class CaelumDebugOverlay : EventHandler
     // player who pressed the bound key, which is important for future co-op.
     override void NetworkProcess(ConsoleEvent e)
     {
+        if (e.Name == "ca_debug_hazards_report")
+        {
+            CaelumHazardDiagnostics.Report();
+            return;
+        }
         CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
 
         if (requestingPlayer == null || requestingPlayer.CharacterProfile == null)

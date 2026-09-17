@@ -9,6 +9,7 @@ class CaelumSewerTravel : Object play
         if (id == CaelumWorldCatalogue.CONNECTION_TO_MAINTENANCE) return (344,448,0);
         if (id == CaelumWorldCatalogue.CONNECTION_TO_PORT) return (0,3424,0);
         if (id == CaelumWorldCatalogue.CONNECTION_TO_COAST) return (0,2080,0);
+        if (id == CaelumWorldCatalogue.CONNECTION_TO_HAZARD_GALLERY) return (640,704,0);
         return (0,96,0);
     }
 
@@ -30,7 +31,8 @@ class CaelumSewerTravel : Object play
             if (gate == null) continue;
             gate.ConnectionId = id;
             gate.Placed = true;
-            gate.Angle = id == CaelumWorldCatalogue.CONNECTION_TO_MAINTENANCE ? 180
+            gate.Angle = (id == CaelumWorldCatalogue.CONNECTION_TO_MAINTENANCE
+                || id == CaelumWorldCatalogue.CONNECTION_TO_HAZARD_GALLERY) ? 180
                 : location == CaelumWorldCatalogue.LOCATION_SEWERS
                     || id == CaelumWorldCatalogue.CONNECTION_TO_PORT
                     || id == CaelumWorldCatalogue.CONNECTION_TO_COAST ? 270 : 90;

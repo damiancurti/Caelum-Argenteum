@@ -1,6 +1,66 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.35.0q — 2026-09-17.
+Versión documental: 4.36.0a — 2026-09-17.
+
+## Peligros físicos y trampillas (4.36.0a)
+
+CaelumTrapdoor (editor 30960) es un apoyo nativo ACTLIKEBRIDGE de 256 × 256 MU,
+8 MU de espesor. Su origen está 8 MU por debajo de la superficie transitable.
+Requiere un foso modelado en UDMF; no puede crear un agujero en un piso macizo.
+CaelumTrapdoorCover reutiliza CSUF/CMWD01 y coincide con la tapa física.
+
+Se activa cuando el centro de un jugador vivo, ya creado y apoyado está dentro
+del cuadrado, sus pies coinciden con la tapa y no está subiendo, volando ni en
+noclip. También admite actores CaelumCombatActor apoyados. La consulta es local
+al blockmap. Pisar retira solidez y dibujo una sola vez; gravedad y aterrizaje
+siguen las reglas existentes. No teleporta, no agrega daño fijo, no se rearma
+y no se cierra sobre quien cayó. Opened, ActivationCount y referencias se guardan.
+
+CaelumHazardRock (30961) conserva el granito pequeño existente: radio 14 MU,
+altura 21 MU, masa 1065 kg. Empieza suspendida; args[0] es el impulso horizontal
+en MU/tic según Angle, o cero para una caída vertical. Release aplica ese impulso
+una sola vez. La prueba de rodadura omite rozamiento; no aplica un motor continuo.
+La rotación visible depende de la distancia recorrida. No admite empuje manual
+mientras está retenida. La colisión nativa detiene el recorrido contra una pared.
+
+CaelumHazardReleaseSwitch (30962): args[0] es el TID positivo de las rocas.
+Usar exige alcance, visibilidad y solapamiento vertical con un jugador vivo.
+La operación pasa a Spent tras liberar un destino; no crea nuevos bloques.
+No hay un temporizador de rearme. Sin destino válido no se consume la operación.
+
+ImpactPhysics.ResolveVerticalBodies agrega el contacto descendente sin cambiar
+ResolveBodies/ResolveStatic. Usa J = (1 + e) × velocidad de cierre / (1/m1 + 1/m2)
+y Δv = J/m. Geometría nativa confirma el aterrizaje sobre el cuerpo antes de
+aplicar la recepción biológica, localizada en su extremo superior. Un mismo
+apoyo no produce daño cada tic. Separarse permite un contacto físico posterior.
+Dureza, vulnerabilidad, protección, lucidez y salud conservan sus reglas.
+
+IMPACT_KIND_ENVIRONMENT = 5 identifica la procedencia de estos mecanismos.
+Se mantiene CaelumImpact como ruta de daño; DMG_THRUSTLESS evita sumar un empuje
+nativo ajeno al impulso calculado. No hay evasión de combate ni ganancia de
+adrenalina de combate. Amparo sigue pendiente de implementación en V5.
+El avance rápido se bloquea si hay una roca liberada moviéndose en el radio
+ya inspeccionado de seguridad. Abrir la trampilla interrumpe el descanso del
+personaje que la activó. Los peligros se resuelven a tics normales.
+
+MAP08: acceso oriental del vestíbulo x=768, y=640–896. Tapa centrada en
+(1408, 896, 0), fondo a -192 MU; doce peldaños de 16 MU salen hacia el este.
+Roca rodante en (1280, 1344, 0), impulso de ensayo 8 MU/tic, TID 43602;
+mecanismo en (1152, 1344, 0). Roca suspendida en (2048, 1600, 256), TID 43603;
+mecanismo en (2048, 1536, 0). Son dimensiones y ajustes de la galería de prueba,
+no valores de balance nuevos para toda la campaña.
+
+netevent ca_debug_hazards_report identifica 4.36.0a y muestra activación,
+solidez, tapa, masas, velocidades, contactos verticales y mecanismos usados.
+El WAD de MAP05 conserva su checksum original. MAP08 se incorpora como ubicación 8,
+con conexiones 12/13; no se reutiliza ningún id ni se redimensionan los registros.
+En MAP05 aparece un acceso junto a (640,704,0), también al cargar un guardado
+anterior: SewerNetworkRevision pasa de 1 a 2 y la colocación es idempotente.
+La vuelta de MAP08 usa el acceso del vestíbulo en (0,96,0). Ambos sentidos usan
+el servicio de viaje local existente, sin tarifa ni consumo de provisiones.
+Las trampas pertenecen al hub y conservan su estado al ir y volver.
+Para una prueba aislada se puede usar map MAP08; ese comando reinicia al personaje.
+
 
 ## Animaciones y consumo sentado (4.35.0q)
 

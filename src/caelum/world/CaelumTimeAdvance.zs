@@ -82,6 +82,10 @@ class CaelumTimeAdvanceState : Inventory
                 if (other==user || (Inventory(other)!=null && Inventory(other).Owner!=null) || other.Distance2D(user)>1024) continue;
                 let sleeper = CaelumCombatActor(other);
                 if (sleeper != null && sleeper.ForcedSleepTics > 0) return "CA_FAST_UNSAFE";
+                // Los bloques en movimiento no tienen adaptador de salto temporal.
+                let hazard = CaelumHazardRock(other);
+                if (hazard != null && hazard.Released && hazard.Vel.Length() > 0.1)
+                    return "CA_FAST_UNSAFE";
                 if (other.bMissile || (other.bIsMonster && other.health>0 && !other.bFriendly))
                     return "CA_FAST_UNSAFE";
             }

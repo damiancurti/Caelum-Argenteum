@@ -118,6 +118,15 @@ map CADEV02 "Campo de pruebas de actores"
     music = "CA_MUS02"
 }
 
+// Anexo de peligros: se conecta a MAP05 sin modificar su geometría guardada.
+map MAP08 "$CA_MAP08_NAME"
+{
+    UnFreezeSinglePlayerConversations
+    music = "CA_MUS02"
+    nointermission
+    cluster = 434
+}
+
 // Números de editor usados por el mapa de pruebas. Son asignaciones locales
 // del proyecto y evitan reutilizar números estándar de actores de Doom.
 DoomEdNums
@@ -446,3 +455,11 @@ DoomEdNums
 
 // Referencia climática regional: args[0]=región 1..9, args[1]=hábitat.
 DoomEdNums { 30950 = CaelumClimateRegion }
+
+// Galería física de MAP08, sin reutilizar números del juego base.
+DoomEdNums
+{
+    30960 = CaelumTrapdoor
+    30961 = CaelumHazardRock
+    30962 = CaelumHazardReleaseSwitch
+}

@@ -842,6 +842,7 @@ class CaelumConstants : Object
     const IMPACT_KIND_WALL = 2;
     const IMPACT_KIND_FLOOR = 3;
     const IMPACT_KIND_CRUSH = 4;
+    const IMPACT_KIND_ENVIRONMENT = 5;
 
     // Primer catalogo jugable de armas. Los indices son persistentes: no deben
     // reordenarse cuando se agreguen nuevas familias en versiones posteriores.

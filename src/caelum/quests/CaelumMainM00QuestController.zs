@@ -490,11 +490,11 @@ class CaelumMainM00QuestController : EventHandler
             CaelumSewerTrialSupport.PrepareWorld();
             SewerSupportPrepared = true;
         }
-        if (!SewerNetworkPrepared || SewerNetworkRevision < 1)
+        if (!SewerNetworkPrepared || SewerNetworkRevision < 2)
         {
             CaelumSewerTravel.PrepareWorld();
             SewerNetworkPrepared = true;
-            SewerNetworkRevision = 1;
+            SewerNetworkRevision = 2;
         }
         RetireGroundFloorStock();
         RetireLegacyProcessingManual();

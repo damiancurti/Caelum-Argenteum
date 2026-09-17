@@ -1,8 +1,37 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.35.0q — 2026-09-17.
+Versión documental: 4.36.0a — 2026-09-17.
 
-## Estado actual: 4.35.0q — sprites v4 y consumo sentado
+## Estado actual: 4.36.0a — trampilla y primeros peligros físicos
+
+El autor confirma «Todo correcto» para 4.35.0q: queda aprobada y cerrada 4.35.
+Autoriza comenzar 4.36 y agrega trampas de suelo que se abren al pisarlas.
+Este delta se aplica al proyecto completo 4.35.0q.
+
+Implementado: trampilla reutilizable sobre un foso real, caída por gravedad,
+roca rodante y roca suspendida liberadas mediante Usar. MAP08 incorpora una
+galería con foso y escalera de salida, conectada a MAP05 por un acceso nativo.
+Los WAD de MAP01–07 conservan sus bytes y permiten cargar sus guardados.
+El apoyo sólo se retira al pisar la tapa; pasar por arriba o por debajo no
+la dispara. Queda abierta una vez activada y su estado pertenece al mapa/hub.
+
+Las rocas reutilizan granito, masa y modelos existentes. Los impactos usan
+las fórmulas vigentes, con un adaptador vertical adicional y procedencia
+ambiental explícita; no conceden adrenalina de combate ni añaden empuje de
+Doom al ya resuelto por el núcleo. Guardados, informe de diagnóstico y TXT
+permiten revisar los mecanismos. La configuración de la galería es de ensayo;
+no fija ubicaciones narrativas ni un nuevo balance definitivo.
+
+Pendiente de aceptación: pruebas jugables del autor en Windows 11 de este
+incremento, indicadas en PRUEBAS_4_36_0a.txt. 4.36 sigue en desarrollo: superficies
+con daño propio, avalanchas, arietes, catapultas y sectores móviles amplios.
+No se adelanta 4.37 ni se extrae todavía Impact Physics como paquete externo.
+La secuencia posterior sigue siendo 4.37 → exportación de prueba → V5.0 → V5.1.
+
+Las secciones por versión que siguen conservan el historial; sus pendientes
+antiguos no reabren los bloques que el autor ya aprobó.
+
+## Base aprobada: 4.35.0q — sprites v4 y consumo sentado
 
 Delta sobre el proyecto completo 4.35.0p, probado y aprobado por el autor.
 El autor aporta Caelum_Argenteum_Sprites_Iconos_v4(1).zip y modifica únicamente
@@ -18,8 +47,8 @@ Palomo conserva sus diálogos y recorrido de salida; su pose responde al
 movimiento real. El jugador conserva prioridad de agachado, ataque y descanso.
 
 Los sistemas de viajes, reservas, calendario, vehículos y mapas de 0p quedan
-aprobados. Para cerrar 4.35 resta la aceptación visual y del ritmo de 0q según
-PRUEBAS_4_35_0q.txt; luego corresponde 4.36, peligros físicos.
+aprobados. El autor también aprobó la integración visual y el ritmo de 0q.
+4.35 queda cerrada; 4.36 comienza con el incremento descrito arriba.
 
 ## Base aprobada: 4.35.0p — reservas y primeros vehículos
 
@@ -52,7 +81,7 @@ Las estructuras y vehículos se instalan una vez al entrar/cargar, también
 sobre mapas guardados con 0o, y se conservan en el hub. La confirmación exige
 seguir cerca del mismo vehículo y recalcula las provisiones antes de salir.
 
-### Cierre vigente de 4.35
+### Cierre histórico de 4.35 (completado)
 
 Queda la prueba manual de 0p: reservas de mesa/Caja, Q y Escape, entrada del
 rancho, embarque, proporciones visuales y viaje por cada vehículo. Si no surgen
@@ -1862,8 +1891,8 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. 0p aprobado. 0q integra el paquete visual v4 y el ritmo de comida 1/3, pendientes de aceptación. Modelo térmico corporal en V5.1. |
-| V4.36: entorno móvil y peligros físicos | Rocas que ruedan, objetos que caen y superficies peligrosas; luego avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics como paquete independiente sólo tras cerrar su validación en Caelum. |
+| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. 0p y 0q aprobados; paquete visual v4 y ritmo de comida 1/3 aceptados. 4.35 cerrada. Modelo térmico corporal en V5.1. |
+| V4.36: entorno móvil y peligros físicos | 0a implementa trampilla por pisada, foso real y salida, roca rodante y bloque que cae; ensayo en MAP08 y adaptador de impacto vertical. Pendiente de aceptación del autor. Siguen superficies con daño propio, avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics sólo tras cerrar su validación en Caelum. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
 | **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar V4 y exportar la versión de prueba. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |

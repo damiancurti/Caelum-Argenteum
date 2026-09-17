@@ -1,5 +1,14 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.35.0q — 2026-09-17.
+Versión documental: 4.36.0a — 2026-09-17.
+
+4.36.0a — CIERRE DE 4.35 Y PRIMEROS PELIGROS
+
+El autor aprueba 4.35.0q y autoriza el bloque de peligros, incluyendo trampillas
+que se abren al pisarlas. El ensayo está en la galería oriental nueva de MAP08,
+con foso real, escalera de salida y dos mecanismos de rocas.
+No se asigna ninguna trampa a la mansión ni a una misión narrativa en este
+incremento. La integración de campaña requerirá la ubicación decidida por el autor.
+La revisión jugable de 4.36.0a se describe en PRUEBAS_4_36_0a.txt.
 
 4.35.0q — ARTE Y RITMO DE COMIDA
 
@@ -13,7 +22,7 @@ En las sillas de la mansión, F/G conserva el uso de mesa/inventario/Caja y
 la cantidad de raciones. La porción completa pasa de 100 a 30 segundos de
 simulación a ritmo normal. Se mantiene digestión = hambre recuperada / 4.
 Los aliases de orientación aprobados y la disposición de muebles no cambian.
-La aceptación pendiente para cerrar 4.35 corresponde a los cambios de 0q.
+El autor confirmó correctos los cambios de 0q; queda cerrado el bloque 4.35.
 
 4.35.0p — CONTROLES Y RESERVAS
 

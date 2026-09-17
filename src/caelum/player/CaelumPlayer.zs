@@ -12273,6 +12273,9 @@ class CaelumPlayer : DoomPlayer
         double contactMaximumHeightRatio
     )
     {
+        // Procedencia explícita: una roca del mecanismo es daño ambiental.
+        if (CaelumHazardRock(sourceActor) != null)
+            impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
         LastImpactKind = impactKind;
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactBiologicalAbsorptionSpeed = 0.0;
@@ -12441,12 +12444,16 @@ class CaelumPlayer : DoomPlayer
         {
             impactSource = self;
         }
+        // El núcleo ya resolvió el impulso; el daño no añade empuje de Doom.
+        int impactFlags = DMG_NO_ARMOR;
+        if (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT)
+            impactFlags |= DMG_THRUSTLESS;
         DamageMobj(
             impactSource,
             impactSource,
             LastImpactFinalDamage,
             'CaelumImpact',
-            DMG_NO_ARMOR,
+            impactFlags,
             0.0
         );
     }
@@ -12959,6 +12966,10 @@ class CaelumPlayer : DoomPlayer
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
+
+        // El apoyo desde arriba tiene su propio contacto vertical, una sola vez.
+        let hazard = CaelumHazardRock(other);
+        if (hazard != null && hazard.IsDescendingAbove(self)) return;
 
         // CollidedWith se ejecuta en ambos actores. Normalmente sólo el lado
         // activo resuelve; una roca ambiental no posee receptor biológico, así

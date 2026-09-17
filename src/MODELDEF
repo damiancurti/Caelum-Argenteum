@@ -3283,3 +3283,15 @@ Model CaelumVehicleDock
     FrameIndex CAHC A 0 0
 }
 // END CAELUM TRAVEL VEHICLES
+
+// La roca de ensayo reutiliza exactamente el granito pequeño del proyecto.
+Model CaelumHazardRock
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    UseActorRoll
+    FrameIndex CARK A 0 0
+}

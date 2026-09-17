@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera MAP03–05 como UDMF nativo; nunca reescribe MAP01 ni MAP02.
+"""Genera MAP03–05 y MAP08 como UDMF nativo; no reescribe MAP01 ni MAP02.
 
 Módulos sobre una cuadrícula: galería, depósito, cámara y escalera. Sólo usa
 texturas propias ya incluidas. No coloca población masiva ni concede Tarot.
@@ -14,6 +14,7 @@ class SewerMap:
     def __init__(self, name, cell=128):
         self.name, self.cell = name, cell
         self.cells = {}
+        self.things = []
 
     def room(self, x1, y1, x2, y2, floor=0, ceiling=256, water=False):
         assert all(v % self.cell == 0 for v in (x1, y1, x2, y2))
@@ -59,7 +60,7 @@ class SewerMap:
 
         chunks = ['namespace = "ZDoom";\n// 4.34.0c: alcantarilla modular de pruebas, sin encuentros automáticos.\n']
         thing = dict(x=0, y=320, angle=90, type=1, skill1=True, skill2=True, skill3=True, skill4=True, skill5=True, single=True, coop=True)
-        for kind, entries in [('vertex', vertices), ('sector', sectors), ('sidedef', sides), ('linedef', lines), ('thing', [thing])]:
+        for kind, entries in [('vertex', vertices), ('sector', sectors), ('sidedef', sides), ('linedef', lines), ('thing', [thing] + self.things)]:
             for entry in entries:
                 chunks.append(kind+'\n{\n'+''.join('    '+key+' = '+value(v)+';\n' for key, v in entry.items())+'}\n')
         lumps = [(self.name, b''), ('TEXTMAP', '\n'.join(chunks).encode('utf-8')), ('ENDMAP', b'')]
@@ -112,6 +113,29 @@ def generate(folder):
                 floor=(step+1)*12, ceiling=416)
     maintenance.room(-768, 1536, 768, 2048, floor=96, ceiling=416)
     maintenance.room(-256, 768, 256, 1024, floor=-12, ceiling=320, water=True)
+    maintenance.write(folder)
+    # Un mapa nuevo conserva el checksum de MAP05 y sus partidas guardadas.
+    maintenance.name = 'MAP08'
+    # 4.36.0a: galería oriental de ensayos en un anexo independiente.
+    # El foso tiene geometría permanente; un puente-actor retira solamente la tapa.
+    maintenance.room(768, 640, 1024, 896, ceiling=320)
+    maintenance.room(1024, 512, 2432, 1792, ceiling=384)
+    maintenance.room(1280, 768, 1536, 1024, floor=-192, ceiling=384)
+    # Salida física de 12 peldaños; no teletransporta ni repone recursos.
+    for step in range(12):
+        maintenance.room(1536+step*64, 832, 1600+step*64, 960,
+                         floor=-192+(step+1)*16, ceiling=384)
+    def hazard(kind, x, y, height=0, angle=0, tid=0, argument=0):
+        return dict(x=x, y=y, height=height, angle=angle, type=kind, id=tid,
+                    arg0=argument, skill1=True, skill2=True, skill3=True,
+                    skill4=True, skill5=True, single=True, coop=True)
+    maintenance.things.extend([
+        hazard(30960, 1408, 896, height=184, tid=43601),
+        hazard(30961, 1280, 1344, tid=43602, argument=8),
+        hazard(30962, 1152, 1344, argument=43602),
+        hazard(30961, 2048, 1600, height=256, tid=43603),
+        hazard(30962, 2048, 1536, angle=90, argument=43603),
+    ])
     maintenance.write(folder)
 
 
