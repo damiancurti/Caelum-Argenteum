@@ -1,0 +1,1170 @@
+{
+  "release": "4.36.0f",
+  "engine_compiled": false,
+  "engine_run": false,
+  "engine_source_reference": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_weapon.cpp",
+  "engine_binary_attempt": "HTTP 504; no executable obtained",
+  "checks": [
+    {
+      "check": "Saved state prefix retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "All state sprite references resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D021A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_4_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D022A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_4_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D023A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_4_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D031A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_5_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D032A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_5_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D033A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_5_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D051A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_0_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D052A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_0_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D053A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_0_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D061A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_7_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D062A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_7_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D063A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_7_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D091A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_10_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D092A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_10_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D093A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_10_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D101A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_11_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D102A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_11_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D103A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_11_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D111A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_12_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D112A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_12_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D113A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_12_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D161A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D162A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D163A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D161B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_1_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D162B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_2_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D163B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_3_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D161C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_1_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D162C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_2_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D163C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_14_3_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D171A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D172A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D173A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D171B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_1_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D172B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_2_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D173B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_3_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D171C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_1_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D172C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_2_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D173C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_15_3_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D181A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D182A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D183A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D181B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_1_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D182B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_2_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D183B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_3_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D181C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_1_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D182C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_2_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D183C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_16_3_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D191A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D192A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D193A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D191B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_1_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D192B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_2_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D193B0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_3_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D191C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_1_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D192C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_2_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D193C0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_2_3_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH00A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH03A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH04A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH05A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH06A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH07A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH08A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH09A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH10A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim EBSTA0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim EBANA0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim DH11A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Hand_11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D071A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_8_1_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D072A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_8_2_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "NoTrim D073A0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Absolute anchor Weapon_8_3_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No fractional trim pivots remain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Native transform fields exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Native rotation verified against renderer",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Resting shaft direction 4",
+      "passed": true,
+      "detail": 21.44
+    },
+    {
+      "check": "Resting shaft direction 5",
+      "passed": true,
+      "detail": 23.09
+    },
+    {
+      "check": "Resting shaft direction 7",
+      "passed": true,
+      "detail": 30.7
+    },
+    {
+      "check": "Resting shaft direction 11",
+      "passed": true,
+      "detail": 29.18
+    },
+    {
+      "check": "Resting shaft direction 12",
+      "passed": true,
+      "detail": 38.3
+    },
+    {
+      "check": "Resting shaft direction 8",
+      "passed": true,
+      "detail": -48.83
+    },
+    {
+      "check": "Hatchet grip lowers artwork by 24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Bow layers ordered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Arrow unloaded cleanup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Full modular cleanup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unarmed arrow cleanup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Fallback arrow cleanup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "All bow tiers/phases muted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "String center joins endpoints (155, 99)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "String center joins endpoints (170, 178)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "String center joins endpoints (158, 84)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No rotated stretched string",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Balanced source delimiters src/caelum/equipment/CaelumFirstPersonLayers.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Balanced source delimiters src/caelum/equipment/CaelumFirstPersonView.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Balanced source delimiters src/caelum/equipment/CaelumUnarmedWeapon.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Balanced source delimiters src/caelum/world/CaelumPhysicalHazards.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Balanced source delimiters src/TEXTURES",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/impactphysics/ImpactPhysics.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/caelum/player/CaelumPlayer.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/caelum/actors/CaelumCombatActor.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/caelum/equipment/CaelumPlayableWeapons.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/caelum/world/CaelumMagicHazards.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged behavior source src/caelum/world/CaelumTravelVehicles.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Fist action code identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged CaelumMenuAudio.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged CaelumInteractionHint.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Unchanged CaelumMainM00FoolCapture.zs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "MAP08 unchanged non-TEXTMAP lumps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Only original rock launch value changed in MAP08",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Generator matches MAP08",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Generator syntax",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Old save migration bounded to MAP08/TID/value",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Released rock never relaunched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Version report updated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 0.1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 0.8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Documented energy equation 50",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Zero-damage and 100-percent reference",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "First-person master blade at least 50% wider",
+      "passed": true,
+      "detail": [
+        [
+          1.59375,
+          1.6307692307692307,
+          1.608695652173913,
+          1.619718309859155,
+          1.6081081081081081
+        ],
+        [
+          1.609375,
+          1.6363636363636365,
+          1.6470588235294117,
+          1.6619718309859155,
+          1.6266666666666667
+        ],
+        [
+          1.65625,
+          1.6818181818181819,
+          1.6764705882352942,
+          1.676056338028169,
+          1.64
+        ]
+      ]
+    },
+    {
+      "check": "RGBA and transparent background ",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Inventory blade at least 50% wider ",
+      "passed": true,
+      "detail": [
+        1.5764664185716817,
+        1.720665299612668,
+        1.8687277634646056,
+        1.8765795607900873
+      ]
+    },
+    {
+      "check": "RGBA and transparent background _t2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Inventory blade at least 50% wider _t2",
+      "passed": true,
+      "detail": [
+        1.6752040529130312,
+        1.7823579928843087,
+        1.845172371488161,
+        1.8922831554410502
+      ]
+    },
+    {
+      "check": "RGBA and transparent background _t3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Inventory blade at least 50% wider _t3",
+      "passed": true,
+      "detail": [
+        1.6275031011873118,
+        1.6550467076782867,
+        1.6258828890407837,
+        1.6331738437001595
+      ]
+    },
+    {
+      "check": "World icon keeps 128-square display",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation docs/ASSETS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation docs/HISTORY.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation docs/SYSTEMS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation docs/PROJECT.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Release documentation PRUEBAS_4_36_0f.txt",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 211,
+  "failed": 0,
+  "formula_samples": [
+    {
+      "delta_speed": 0,
+      "energy_percent": 0
+    },
+    {
+      "delta_speed": 0.1,
+      "energy_percent": 0
+    },
+    {
+      "delta_speed": 0.8,
+      "energy_percent": 0
+    },
+    {
+      "delta_speed": 1,
+      "energy_percent": 0.04595588235294118
+    },
+    {
+      "delta_speed": 8,
+      "energy_percent": 8.088235294117647
+    },
+    {
+      "delta_speed": 16,
+      "energy_percent": 32.59803921568628
+    },
+    {
+      "delta_speed": 24,
+      "energy_percent": 73.44771241830063
+    },
+    {
+      "delta_speed": 28,
+      "energy_percent": 100.0
+    },
+    {
+      "delta_speed": 32,
+      "energy_percent": 130.63725490196077
+    },
+    {
+      "delta_speed": 50,
+      "energy_percent": 319.0563725490195
+    }
+  ],
+  "changed_files": [
+    "PRUEBAS_4_36_0f.txt",
+    "README.md",
+    "assets/first_person_v4/ICON_REVISION_PROMPTS.json",
+    "assets/first_person_v4/POSES.json",
+    "assets/first_person_v4/PROMPTS.json",
+    "assets/first_person_v4/PROVENANCE.json",
+    "assets/first_person_v4/README.md",
+    "assets/first_person_v4/VALIDATION.json",
+    "assets/generators/generate_sewer_trials.py",
+    "docs/ASSETS.md",
+    "docs/HISTORY.md",
+    "docs/PROJECT.md",
+    "docs/SYSTEMS.md",
+    "src/TEXTURES",
+    "src/caelum/equipment/CaelumFirstPersonLayers.zs",
+    "src/caelum/equipment/CaelumFirstPersonView.zs",
+    "src/caelum/equipment/CaelumUnarmedWeapon.zs",
+    "src/caelum/world/CaelumPhysicalHazards.zs",
+    "src/graphics/caelum/first_person/v4/greatsword.png",
+    "src/graphics/caelum/icons/ca_greatsword.png",
+    "src/graphics/caelum/icons/ca_greatsword_t2.png",
+    "src/graphics/caelum/icons/ca_greatsword_t3.png",
+    "src/maps/MAP08.wad"
+  ]
+}

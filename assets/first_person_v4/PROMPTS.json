@@ -1,0 +1,30 @@
+[
+  {
+    "key": "gs_fp",
+    "refs": [
+      "assets/first_person_v1/masters/greatsword.png"
+    ],
+    "prompt": "Edit this exact transparent greatsword atlas for an existing dark fantasy game. Preserve the 1536x1024 canvas, three equal columns, every weapon's exact angle, length, grip, pommel, guard, tier-specific metal color, blue leather handle, painted pixel-art texture and position. ONLY broaden each sword's blade perpendicular to its long axis to 1.75 times its current width (75% broader), from the guard to the tapering point. This is a broad heavy two-handed greatsword, not a rapier. Do not lengthen it, and do not enlarge the guard or handle. Match the muted original colors. True transparent RGBA background, no glow, shadows, background, text or new elements. Exactly three swords in original locations."
+  },
+  {
+    "key": "ca_greatsword.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword.png"
+    ],
+    "prompt": "Edit this exact transparent square inventory/ground greatsword sprite for a game. Keep the same diagonal orientation (tip bottom left, pommel top right), exact full length, position, silhouette of guard, blue leather handle, bronze fittings, muted dark palette and hand-painted pixel style. ONLY widen the blade perpendicular to its axis to 1.75 times its current width, a 75% broader heavy two-handed blade. Keep the pointed tip, the same blade length, a straight double edge and central ridge. Do not widen the handle or guard. Render a square transparent RGBA image, with the whole sword including tip and pommel visible, matching original margins. No text, background, glow or shadow."
+  },
+  {
+    "key": "ca_greatsword_t2.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword_t2.png"
+    ],
+    "prompt": "Edit this exact transparent square inventory/ground greatsword sprite for a game. Keep the same diagonal orientation (tip bottom left, pommel top right), exact full length, position, silhouette of guard, blue leather handle, iron fittings, muted dark palette and hand-painted pixel style. ONLY widen the blade perpendicular to its axis to 1.75 times its current width, a 75% broader heavy two-handed blade. Keep the pointed tip, the same blade length, a straight double edge and central ridge. Do not widen the handle or guard. Render a square transparent RGBA image, with the whole sword including tip and pommel visible, matching original margins. No text, background, glow or shadow."
+  },
+  {
+    "key": "ca_greatsword_t3.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword_t3.png"
+    ],
+    "prompt": "Edit this exact transparent square inventory/ground greatsword sprite for a game. Keep the same diagonal orientation (tip bottom left, pommel top right), exact full length, position, silhouette of guard, blue leather handle, gold fittings, muted dark palette and hand-painted pixel style. ONLY widen the blade perpendicular to its axis to 1.75 times its current width, a 75% broader heavy two-handed blade. Keep the pointed tip, the same blade length, a straight double edge and central ridge. Do not widen the handle or guard. Render a square transparent RGBA image, with the whole sword including tip and pommel visible, matching original margins. No text, background, glow or shadow."
+  }
+]

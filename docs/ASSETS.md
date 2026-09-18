@@ -1,6 +1,62 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0e — 2026-09-18.
+Versión documental: 4.36.0g — 2026-09-18.
+
+## 4.36.0g — piezas, dedos y colores apagados
+
+La corrección es nativa en src/TEXTURES y CaelumFirstPersonLayers.zs.
+No se modifican píxeles de los PNG existentes ni se introduce arte ajeno.
+assets/first_person_v5/COMPOSITION.json registra los recortes, capas,
+escalas, paletas y hashes de las tres copias de iconos sin procesar.
+
+- D061–D063: cabezas de hacha; GAX1–GAX3: mangos separados.
+- D111–D113: hojas/cintas de alabarda; GHB1–GHB3: astas para extensión axial.
+- D071–D073: mangual con giro de reposo +28° aplicado por su controlador.
+- D091–D093: atlas v4 del espadón, misma forma y paleta más apagada.
+- D161–D173, fases A/B/C: atlas v3 de arcos con nueva paleta apagada.
+- DH12: pulgar y falanges seleccionadas del guante FH03; índice excluido.
+- Graphics de las tres rutas ca_greatsword*.png: paleta común del espadón.
+  CGRSA0 usa explícitamente el mismo resultado T1 para el objeto del suelo.
+
+Los PNG bajo src/graphics/caelum/first_person/v5 son copias exactas de los
+iconos v4; se necesitan nombres independientes para las recetas nativas.
+Los originales y los maestros anteriores permanecen disponibles.
+
+PREVIEW_COMPARISON.png y PREVIEW_BOW_GRIP.png son reconstrucciones para
+inspección; NO son capturas del motor. Se revisaron además los tres tiers
+y todas las fases del arco. Compilación y aceptación en juego pendientes.
+
+## 4.36.0f — hoja ancha y composición nativa corregida
+
+Cuatro PNG originales nuevos, editados con imagegen a partir del espadón
+del proyecto: un atlas de primera persona 1536×1024 y tres iconos RGBA
+1254×1254. Se copian sin procesar sus píxeles. Prompts y hashes en
+assets/first_person_v4; el atlas de ejecución está en
+src/graphics/caelum/first_person/v4/greatsword.png.
+
+La zona principal de la hoja del atlas mide entre 1,59 y 1,68 veces la del
+máster anterior en las muestras Y=200,300,400,500,600, para los tres tiers.
+D091–D093 usan recortes nativos 512×1024, XScale/YScale 5,91 y anclas sobre
+el mango. CGRSA0 conserva dimensiones de presentación 128×128 mediante
+XScale/YScale 9,796875. Los iconos existentes se reemplazan en sus rutas
+originales; la UI conserva sus enlaces y dimensiones de destino.
+
+En los dos arcos, Blend 92,86,78,0.48 reduce la viveza de los tonos del atlas
+mediante TEXTURES. DH03 es la mano completa detrás de la pala; DH11 es el
+recorte del pulgar original (118,113,27,26) situado delante, con la misma
+escala/ancla. No se genera otra mano ni se agranda el guante.
+
+Cuerda: EBST de 1×1 se transforma en cuadriláteros entre extremos y culatín
+con los campos nativos Coord0–Coord3. Flecha EBAN en capa 53, retirada al
+disparar o quedar vacío y al cambiar de familia. Las capas 46–53 se limpian
+en conjunto al ocultar el arma. NoTrim y pivotes en unidades de textura
+evitan que un recorte alfa desplace el agarre.
+
+Referencia técnica comprobada: [renderer de GZDoom 4.14.2](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_weapon.cpp),
+HUDSprite::GetWeaponRect. En pantalla: x'=cx+sx(x cos a+y sin a),
+y'=cy+sy(−x sin a+y cos a). La escala se aplica después de la rotación.
+Las vistas de QA reconstruyen esa transformación; no son capturas del motor.
+
 
 ## 4.36.0e — correcciones solicitadas tras probar 0d
 

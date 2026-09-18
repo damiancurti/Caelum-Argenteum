@@ -1,6 +1,61 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0e — 2026-09-18.
+Versión documental: 4.36.0g — 2026-09-18.
+
+## 4.36.0g — proporciones, mangual y paleta
+
+[IMPLEMENTADO EN FUENTES] Mangual T1–T3: giro de reposo +28° hacia la
+izquierda, más marcado que el +14° de 0f. Se comprobó que kind 8 llega a
+CaelumFirstPersonLayers; no se atribuye el fallo observado a una caché o a
+una ruta de ejecución que no se haya podido reproducir en el motor.
+
+Hacha con cabeza 50% mayor y mango separado. Alabarda con asta alargada por
+su eje, sin agrandar hoja, cintas ni manos. Espadón con la misma forma y
+colores menos saturados/oscuros en vista, inventario y sprite del suelo.
+Arcos: índice detrás de la madera; pulgar y falanges de los otros tres
+dedos delante. La flecha sigue en la capa superior.
+
+[REGLA CONSERVADA] El secundario del hacha figura como contundente, más
+fuerte y de menor alcance que el primario cortante. No se modificó combate,
+alcance real, recursos ni física con esta revisión de presentación.
+
+[VERIFICADO LOCALMENTE] Dependencias de texturas, orden de estados, pivotes,
+recortes, paletas, preservación de siluetas y fuentes. Se inspeccionaron
+reconstrucciones de los tres tiers y las tres fases de ambos arcos.
+[PENDIENTE] Arranque, guardados y aceptación visual en GZDoom 4.14.2 sobre
+Windows 11: no se ejecutó el motor. La base recuperada es parcial.
+Aplicación sobre 0f; guía PRUEBAS_4_36_0g.txt.
+
+Las secciones anteriores son historial. La prueba del autor indicó que el
+mangual de 0f seguía sin la corrección esperada y que las paletas eran vivas.
+
+## 4.36.0f — correcciones tras la prueba del autor
+
+[CORREGIDO EN FUENTES] Signo del giro de hachuela, machete, hacha, hacha de
+guerra y alabarda: sus extremos superiores se inclinan a la derecha. Mangual
+incorporado a las capas modulares, con inclinación a la izquierda. Hachuela
+24 MU más baja respecto del agarre; lienzos NoTrim y pivotes absolutos.
+
+[ARTE INTEGRADO] Hoja del espadón ampliada en T1–T3, también en inventario y
+sprite del suelo. Arcos de paleta apagada, dedos detrás, pulgar delante y
+flecha en la capa superior. Cuerda construida con los vértices nativos.
+
+[AJUSTE SOLICITADO] Roca rodante de MAP08: 8 → 32 MU/tic, sin muerte forzada
+ni cambio de la curva de daño. Compatibilidad de la próxima activación de
+guardados con el valor antiguo. No se relanza una roca liberada.
+
+[AUDITADO] Los impactos de la roca usan masa/velocidad. El techo usa Crush
+nativo de 10 puntos por pulso. La roca inmóvil apoyada sobre una víctima no
+aplica presión continua por su peso. Fórmulas y límites en SYSTEMS.md.
+
+[VERIFICADO LOCALMENTE] Estructura, datos, recursos y vistas reconstruidas
+con el orden de transformaciones del renderer 4.14.2. No son capturas del juego.
+[PENDIENTE] Compilar y probar en GZDoom 4.14.2 / Windows 11. La descarga del
+motor falló y la base recuperada es parcial. Guía: PRUEBAS_4_36_0f.txt.
+
+Las secciones anteriores a 0f son historial; las afirmaciones de orientación
+y cuerda de 0e quedaron refutadas por la prueba posterior del autor.
+
 
 ## 4.36.0e — correcciones solicitadas tras probar 0d
 

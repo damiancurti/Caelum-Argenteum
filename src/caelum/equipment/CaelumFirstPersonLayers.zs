@@ -1,5 +1,5 @@
-// Anclas independientes para modificar orientación, escala y agarre sin
-// duplicar el daño ni retocar los PNG aprobados.
+// Presentación modular 4.36.0g. Pivotes absolutos y lienzos NoTrim;
+// los callbacks de daño y munición permanecen en el arma real.
 class CaelumFirstPersonLayerFrames : Actor
 {
     States (Weapon, Overlay)
@@ -275,6 +275,43 @@ class CaelumFirstPersonLayerFrames : Actor
     BowArrow:
         EBAN A -1;
         Stop;
+
+    Hand_11:
+        DH11 A -1;
+        Stop;
+
+    Weapon_8_1_0:
+        D071 A -1;
+        Stop;
+    Weapon_8_2_0:
+        D072 A -1;
+        Stop;
+    Weapon_8_3_0:
+        D073 A -1;
+        Stop;
+
+    // Estados nuevos al final para conservar los índices de los guardados.
+    Shaft_7_1:
+        GAX1 A -1;
+        Stop;
+    Shaft_7_2:
+        GAX2 A -1;
+        Stop;
+    Shaft_7_3:
+        GAX3 A -1;
+        Stop;
+    Shaft_12_1:
+        GHB1 A -1;
+        Stop;
+    Shaft_12_2:
+        GHB2 A -1;
+        Stop;
+    Shaft_12_3:
+        GHB3 A -1;
+        Stop;
+    Hand_12:
+        DH12 A -1;
+        Stop;
     }
 }
 
@@ -282,7 +319,7 @@ class CaelumFirstPersonLayers : Object play
 {
     static bool Handles(int kind)
     {
-        return kind==0 || kind==2 || kind==4 || kind==5 || kind==7
+        return kind==0 || kind==2 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
 
@@ -296,81 +333,86 @@ class CaelumFirstPersonLayers : Object play
     {
         switch(index)
         {
-            case 36: return (0.776119403, 0.920000000);
-            case 39: return (0.782608696, 0.920000000);
-            case 42: return (0.782608696, 0.920000000);
-            case 45: return (0.674418605, 0.818181818);
-            case 48: return (0.674418605, 0.818181818);
-            case 51: return (0.690476190, 0.818181818);
-            case 0: return (0.271186441, 0.826086957);
-            case 3: return (0.275862069, 0.826086957);
-            case 6: return (0.275862069, 0.826086957);
-            case 63: return (0.759259259, 0.792000000);
-            case 66: return (0.759259259, 0.792000000);
-            case 69: return (0.759259259, 0.792000000);
-            case 90: return (0.375000000, 0.773006135);
-            case 93: return (0.395833333, 0.773006135);
-            case 96: return (0.387755102, 0.773006135);
-            case 99: return (0.789473684, 0.740000000);
-            case 102: return (0.789473684, 0.740000000);
-            case 105: return (0.789473684, 0.740000000);
-            case 108: return (0.742857143, 0.714285714);
-            case 111: return (0.739130435, 0.717514124);
-            case 114: return (0.730158730, 0.717514124);
-            case 126: return (0.654794521, 0.499496475);
-            case 129: return (0.301298701, 0.491592483);
-            case 132: return (0.229268293, 0.501513623);
-            case 127: return (0.654794521, 0.499496475);
-            case 130: return (0.301298701, 0.491592483);
-            case 133: return (0.229268293, 0.501513623);
-            case 128: return (0.654794521, 0.499496475);
-            case 131: return (0.301298701, 0.491592483);
-            case 134: return (0.229268293, 0.501513623);
-            case 135: return (0.494199536, 0.504056795);
-            case 138: return (0.441108545, 0.503546099);
-            case 141: return (0.362525458, 0.501513623);
-            case 136: return (0.494199536, 0.504056795);
-            case 139: return (0.441108545, 0.503546099);
-            case 142: return (0.362525458, 0.501513623);
-            case 137: return (0.494199536, 0.504056795);
-            case 140: return (0.441108545, 0.503546099);
-            case 143: return (0.362525458, 0.501513623);
-            case 144: return (0.497109827, 0.797297297);
-            case 147: return (0.500000000, 0.797297297);
-            case 150: return (0.500000000, 0.797297297);
-            case 145: return (0.500000000, 0.787234043);
-            case 148: return (0.500000000, 0.787234043);
-            case 151: return (0.500000000, 0.787234043);
-            case 146: return (0.500000000, 0.787234043);
-            case 149: return (0.502890173, 0.788732394);
-            case 152: return (0.502890173, 0.788732394);
-            case 18: return (0.506493506, 0.851612903);
-            case 21: return (0.500000000, 0.851612903);
-            case 24: return (0.506493506, 0.851612903);
-            case 19: return (0.494382022, 0.850574713);
-            case 22: return (0.505494505, 0.850574713);
-            case 25: return (0.500000000, 0.849710983);
-            case 20: return (0.500000000, 0.852760736);
-            case 23: return (0.494623656, 0.852760736);
-            case 26: return (0.494623656, 0.852760736);
-            case 200: return (0.267441860, 0.382352941);
-            case 203: return (0.808695652, 0.336956522);
-            case 204: return (0.300000000, 0.418181818);
-            case 205: return (0.421052632, 0.480000000);
-            case 206: return (0.682242991, 0.447058824);
-            case 207: return (0.425287356, 0.523809524);
-            case 208: return (0.774015748, 0.471661864);
-            case 209: return (0.763636364, 0.257425743);
-            case 210: return (0.236363636, 0.257425743);
+            case 36: return (85.000000000, 150.000000000);
+            case 39: return (85.000000000, 150.000000000);
+            case 42: return (85.000000000, 150.000000000);
+            case 45: return (85.000000000, 158.000000000);
+            case 48: return (85.000000000, 158.000000000);
+            case 51: return (85.000000000, 158.000000000);
+            case 0: return (235.000000000, 158.000000000);
+            case 3: return (235.000000000, 158.000000000);
+            case 6: return (235.000000000, 158.000000000);
+            case 63: return (77.000000000, 118.000000000);
+            case 66: return (77.000000000, 118.000000000);
+            case 69: return (77.000000000, 118.000000000);
+            case 72: return (235.000000000, 158.000000000);
+            case 75: return (235.000000000, 158.000000000);
+            case 78: return (235.000000000, 158.000000000);
+            case 90: return (42.639593909, 131.979695431);
+            case 93: return (37.225042301, 131.979695431);
+            case 96: return (31.472081218, 131.979695431);
+            case 99: return (85.000000000, 150.000000000);
+            case 102: return (85.000000000, 150.000000000);
+            case 105: return (85.000000000, 150.000000000);
+            case 108: return (76.000000000, 104.000000000);
+            case 111: return (76.000000000, 104.000000000);
+            case 114: return (76.000000000, 104.000000000);
+            case 126: return (50.666666667, 85.000000000);
+            case 127: return (50.666666667, 85.000000000);
+            case 128: return (50.666666667, 85.000000000);
+            case 129: return (35.500000000, 85.000000000);
+            case 130: return (35.500000000, 85.000000000);
+            case 131: return (35.500000000, 85.000000000);
+            case 132: return (27.000000000, 85.000000000);
+            case 133: return (27.000000000, 85.000000000);
+            case 134: return (27.000000000, 85.000000000);
+            case 135: return (56.734693878, 104.081632653);
+            case 136: return (56.734693878, 104.081632653);
+            case 137: return (56.734693878, 104.081632653);
+            case 138: return (44.081632653, 104.081632653);
+            case 139: return (44.081632653, 104.081632653);
+            case 140: return (44.081632653, 104.081632653);
+            case 141: return (37.755102041, 104.081632653);
+            case 142: return (37.755102041, 104.081632653);
+            case 143: return (37.755102041, 104.081632653);
+            case 144: return (166.000000000, 170.000000000);
+            case 145: return (166.000000000, 170.000000000);
+            case 146: return (166.000000000, 170.000000000);
+            case 147: return (166.000000000, 170.000000000);
+            case 148: return (166.000000000, 170.000000000);
+            case 149: return (166.000000000, 170.000000000);
+            case 150: return (166.000000000, 170.000000000);
+            case 151: return (166.000000000, 170.000000000);
+            case 152: return (166.000000000, 170.000000000);
+            case 18: return (165.000000000, 174.000000000);
+            case 19: return (165.000000000, 174.000000000);
+            case 20: return (165.000000000, 174.000000000);
+            case 21: return (165.000000000, 174.000000000);
+            case 22: return (165.000000000, 174.000000000);
+            case 23: return (165.000000000, 174.000000000);
+            case 24: return (165.000000000, 174.000000000);
+            case 25: return (165.000000000, 174.000000000);
+            case 26: return (165.000000000, 174.000000000);
+            case 200: return (235.000000000, 158.000000000);
+            case 203: return (141.000000000, 139.000000000);
+            case 204: return (161.000000000, 168.000000000);
+            case 205: return (184.000000000, 174.000000000);
+            case 206: return (142.000000000, 153.000000000);
+            case 207: return (208.000000000, 170.000000000);
+            case 208: return (65.000000000, 31.875000000);
+            case 209: return (84.000000000, 125.000000000);
+            case 210: return (236.000000000, 125.000000000);
+            case 211: return (23.000000000, 26.000000000);
+            case 212: return (141.000000000, 139.000000000);
         }
         return (0,0);
     }
 
     static void Clear(CaelumPlayer user)
-    { user.A_ClearOverlays(46,52); }
+    { user.A_ClearOverlays(46,53); }
 
     static void Place(CaelumPlayer user, int layer, State pose, Vector2 position,
-        Vector2 pivot, double size, double rotation, bool percent=true)
+        Vector2 pivot, double size, double rotation, bool percent=false)
     {
         if(pose==null)return;
         bool fresh=user.player.FindPSprite(layer)==null;
@@ -379,6 +421,10 @@ class CaelumFirstPersonLayers : Object play
         if(view.CurState!=pose)view.SetState(pose);
         view.bAddWeapon=false; view.bAddBob=true; view.bPivotPercent=percent;
         view.bPowDouble=false; view.bCVarFast=false; view.bInterpolate=true;
+        view.baseScale=(1.0,1.2); view.HAlign=0; view.VAlign=0;
+        view.bFlip=false; view.bMirror=false;
+        view.Coord0=(0,0); view.Coord1=(0,0);
+        view.Coord2=(0,0); view.Coord3=(0,0);
         view.scale=(size,size); view.pivot=pivot;
         view.x=position.X; view.y=position.Y; view.rotation=rotation;
         if(fresh){view.oldx=view.x;view.oldy=view.y;}
@@ -387,26 +433,66 @@ class CaelumFirstPersonLayers : Object play
     static void Hand(CaelumPlayer user,int layer,int hand,Vector2 anchor,
         Vector2 relative,double size,double rotation)
     {
-        vector2 turned=(relative.X*Cos(rotation)-relative.Y*Sin(rotation),
-            relative.X*Sin(rotation)+relative.Y*Cos(rotation));
+        vector2 turned=Turn(relative,rotation);
         State pose=GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString(
             String.Format("Hand_%d",hand));
-        Place(user,layer,pose,anchor+turned,Pivot(200+hand),size,rotation,true);
+        Place(user,layer,pose,anchor+turned,Pivot(200+hand),size,rotation,false);
     }
 
     static Vector2 Turn(Vector2 point,double rotation)
     {
-        return (point.X*Cos(rotation)-point.Y*Sin(rotation),
-            point.X*Sin(rotation)+point.Y*Cos(rotation));
+        // GZDoom gira antihorario en pantalla. baseScale.Y=1.2 se aplica
+        // antes del giro nativo: convertir también los desplazamientos.
+        return (point.X*Cos(rotation)+point.Y*1.2*Sin(rotation),
+            -point.X/1.2*Sin(rotation)+point.Y*Cos(rotation));
+    }
+
+    static Vector2 AxialOffset(Vector2 point,Vector2 axis,double stretch)
+    {
+        // Extender sólo por el eje del asta, sin ensancharla ni estirar la hoja.
+        return axis*((point.X*axis.X+point.Y*axis.Y)*(stretch-1.0));
+    }
+
+    static void SegmentedWeapon(CaelumPlayer user,int kind,int tier,
+        Vector2 grip,double size,double rotation)
+    {
+        bool halberd=kind==12;
+        vector2 shaftPivot=halberd?(85,150):(85,158);
+        vector2 joint=halberd?(76,104):(77,118);
+        double stretch=halberd?1.80:1.0;
+        State shaft=GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString(
+            String.Format("Shaft_%d_%d",kind,Clamp(tier,1,3)));
+        Place(user,48,shaft,grip,shaftPivot,size,rotation,false);
+        let view=user.player.FindPSprite(48);
+        if(halberd && view!=null)
+        {
+            vector2 axis=joint-shaftPivot;
+            axis/=axis.Length();
+            view.Coord0=AxialOffset((0,0)-shaftPivot,axis,stretch);
+            view.Coord1=AxialOffset((0,200)-shaftPivot,axis,stretch);
+            view.Coord2=AxialOffset((320,0)-shaftPivot,axis,stretch);
+            view.Coord3=AxialOffset((320,200)-shaftPivot,axis,stretch);
+        }
+        vector2 headPosition=grip+Turn((joint-shaftPivot)*(size*stretch),rotation);
+        Place(user,50,Pose(kind,tier,0),headPosition,joint,
+            size*(halberd?1.0:1.50),rotation,false);
     }
 
     static void BowLine(CaelumPlayer user,int layer,Vector2 from,Vector2 to)
     {
         vector2 delta=to-from;
+        double length=Max(0.001,delta.Length());
+        vector2 side=(delta.Y/length*0.40,-delta.X/length*0.40);
         State pose=GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString("BowString");
-        Place(user,layer,pose,from,(0,0),1.0,VectorAngle(delta.X,delta.Y),false);
+        Place(user,layer,pose,from,(0,0),1.0,0,false);
         let view=user.player.FindPSprite(layer);
-        if(view!=null)view.scale=(Max(0.001,delta.Length()),0.55);
+        if(view==null)return;
+        // Cuadrilátero entre anclas: no escalar X después de una rotación.
+        // Coord0/1/2/3 son TL/BL/TR/BR del rectángulo de 1×1.
+        view.Coord0=-side;
+        view.Coord1=delta-side-(0,1);
+        view.Coord2=side-(1,0);
+        view.Coord3=delta+side-(1,1);
     }
 
     // Las palas y sus anclas proceden de SPRITES.json; la cuerda sigue los dos
@@ -424,17 +510,19 @@ class CaelumFirstPersonLayers : Object play
         double unit=size/(kind==14?6.0:4.9);
         double flexX=phase==1?1.15:1.0,flexY=phase==1?0.97:1.0;
         vector2 top=BowTip(kind,tier,false),bottom=BowTip(kind,tier,true);
-        top=grip+Turn((top.X*unit*flexX,top.Y*unit*flexY),rotation);
-        bottom=grip+Turn((bottom.X*unit*flexX,bottom.Y*unit*flexY),rotation);
+        top=Turn(top*unit,rotation); bottom=Turn(bottom*unit,rotation);
+        top=grip+(top.X*flexX,top.Y*flexY);
+        bottom=grip+(bottom.X*flexX,bottom.Y*flexY);
         vector2 nock=phase==2?(top+bottom)*0.5:grip+Turn((phase==1?49:29,18),rotation);
         BowLine(user,46,top,nock);BowLine(user,47,nock,bottom);
-        user.A_ClearOverlays(49,49);
-        if(phase==2){user.A_ClearOverlays(48,48);return;}
+        if(phase==2){user.A_ClearOverlays(53,53);return;}
         vector2 guide=grip+Turn((0,-8),rotation);
         vector2 direction=guide-nock;
         State arrow=GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString("BowArrow");
-        Place(user,48,arrow,nock,(0.970216606,0.950544845),1.0,
-            VectorAngle(direction.X,direction.Y)+135.0,true);
+        // La flecha completa queda delante del arco, del pulgar y de la mano.
+        double sourceAngle=VectorAngle(-1075,-1134*1.2);
+        Place(user,53,arrow,nock,(1145.0/19.0,1155.0/19.0),1.0,
+            sourceAngle-VectorAngle(direction.X,direction.Y*1.2),false);
     }
 
     static void Draw(CaelumPlayer user,int kind,int tier,int phase,
@@ -443,11 +531,11 @@ class CaelumFirstPersonLayers : Object play
         // Sólo crece el arma: las manos conservan las proporciones de la daga.
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==14 || kind==15;
-        if(!bow)user.A_ClearOverlays(46,47);
+        if(!bow){user.A_ClearOverlays(46,47);user.A_ClearOverlays(53,53);}
         bool large=kind==10 || kind==11 || kind==12;
-        bool rightLeaning=kind==4 || kind==7 || kind==11 || kind==12;
+        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
-        vector2 grip=bow?(141,160):ranged?(165,210):kind==10?(235,182):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
+        vector2 grip=bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
         grip+=(dx,dy);
         if(ranged)
         {
@@ -455,7 +543,10 @@ class CaelumFirstPersonLayers : Object play
             {
                 // Ambas manos provienen del conjunto original; la izquierda
                 // se dibuja detrás de la derecha, con el mismo tamaño de guante.
-                Hand(user,51,3,grip,(0,0),0.85,rotation);
+                // Índice detrás; pulgar y falanges de los otros dedos delante.
+                user.A_ClearOverlays(48,48);
+                Hand(user,49,3,grip,(0,0),0.85,rotation);
+                Hand(user,51,12,grip,(0,0),0.85,rotation);
                 Hand(user,52,phase==2?7:4,grip,phase==2?(55,24):phase==1?(49,18):(29,18),1.0,rotation);
             }
             else
@@ -468,18 +559,23 @@ class CaelumFirstPersonLayers : Object play
         }
         else
         {
-            user.A_ClearOverlays(48,49);
+            // El mango separado usa 48; no recrearlo cada tic para interpolar.
+            user.A_ClearOverlays(49,49);
+            if(kind!=7 && kind!=12)user.A_ClearOverlays(48,48);
             Hand(user,52,0,grip,(0,0),1.0,rotation);
             // La izquierda sostiene el tramo inferior, sin tapar la derecha.
             if(large)Hand(user,51,3,grip,(0,24),0.85,rotation);
             else user.A_ClearOverlays(51,51);
         }
-        // El reflejo mantiene la orientación de la hoja aprobada; esta rotación
-        // independiente inclina el mango hacia la derecha alrededor del agarre.
-        double weaponRotation=rotation+(rightLeaning?28.0:0.0);
+        // Signo comprobado en hw_weapon.cpp de GZDoom 4.14.2: negativo
+        // lleva la punta hacia la derecha; positivo, hacia la izquierda.
+        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?28.0:0.0);
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=(4,3);
-        Place(user,50,Pose(kind,tier,phase),weaponGrip,Pivot(kind*9+(Clamp(tier,1,3)-1)*3+phase),size,weaponRotation);
+        if(kind==7 || kind==12)
+            SegmentedWeapon(user,kind,tier,weaponGrip,size,weaponRotation);
+        else
+            Place(user,50,Pose(kind,tier,phase),weaponGrip,Pivot(kind*9+(Clamp(tier,1,3)-1)*3+phase),size,weaponRotation);
         if(bow)
         {
             let body=user.player.FindPSprite(50);

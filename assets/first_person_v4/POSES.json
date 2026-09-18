@@ -1,0 +1,1353 @@
+{
+  "absolute_pivots": {
+    "Weapon_4_1_0": {
+      "sprite": "D021A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_4_2_0": {
+      "sprite": "D022A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_4_3_0": {
+      "sprite": "D023A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_5_1_0": {
+      "sprite": "D031A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_5_2_0": {
+      "sprite": "D032A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_5_3_0": {
+      "sprite": "D033A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_0_1_0": {
+      "sprite": "D051A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Weapon_0_2_0": {
+      "sprite": "D052A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Weapon_0_3_0": {
+      "sprite": "D053A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Weapon_7_1_0": {
+      "sprite": "D061A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_7_2_0": {
+      "sprite": "D062A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_7_3_0": {
+      "sprite": "D063A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        158.0
+      ]
+    },
+    "Weapon_10_1_0": {
+      "sprite": "D091A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        252,
+        780
+      ],
+      "texture_scale": [
+        5.91,
+        5.91
+      ],
+      "pivot": [
+        42.639593909,
+        131.979695431
+      ]
+    },
+    "Weapon_10_2_0": {
+      "sprite": "D092A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        220,
+        780
+      ],
+      "texture_scale": [
+        5.91,
+        5.91
+      ],
+      "pivot": [
+        37.225042301,
+        131.979695431
+      ]
+    },
+    "Weapon_10_3_0": {
+      "sprite": "D093A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        186,
+        780
+      ],
+      "texture_scale": [
+        5.91,
+        5.91
+      ],
+      "pivot": [
+        31.472081218,
+        131.979695431
+      ]
+    },
+    "Weapon_11_1_0": {
+      "sprite": "D101A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_11_2_0": {
+      "sprite": "D102A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_11_3_0": {
+      "sprite": "D103A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_12_1_0": {
+      "sprite": "D111A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_12_2_0": {
+      "sprite": "D112A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_12_3_0": {
+      "sprite": "D113A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        85,
+        150
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        85.0,
+        150.0
+      ]
+    },
+    "Weapon_14_1_0": {
+      "sprite": "D161A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        304,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        50.666666667,
+        85.0
+      ]
+    },
+    "Weapon_14_2_0": {
+      "sprite": "D162A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        213,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        35.5,
+        85.0
+      ]
+    },
+    "Weapon_14_3_0": {
+      "sprite": "D163A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        162,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        27.0,
+        85.0
+      ]
+    },
+    "Weapon_14_1_1": {
+      "sprite": "D161B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        304,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        50.666666667,
+        85.0
+      ]
+    },
+    "Weapon_14_2_1": {
+      "sprite": "D162B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        213,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        35.5,
+        85.0
+      ]
+    },
+    "Weapon_14_3_1": {
+      "sprite": "D163B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        162,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        27.0,
+        85.0
+      ]
+    },
+    "Weapon_14_1_2": {
+      "sprite": "D161C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        304,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        50.666666667,
+        85.0
+      ]
+    },
+    "Weapon_14_2_2": {
+      "sprite": "D162C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        213,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        35.5,
+        85.0
+      ]
+    },
+    "Weapon_14_3_2": {
+      "sprite": "D163C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        162,
+        510
+      ],
+      "texture_scale": [
+        6.0,
+        6.0
+      ],
+      "pivot": [
+        27.0,
+        85.0
+      ]
+    },
+    "Weapon_15_1_0": {
+      "sprite": "D171A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        278,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        56.734693878,
+        104.081632653
+      ]
+    },
+    "Weapon_15_2_0": {
+      "sprite": "D172A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        216,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        44.081632653,
+        104.081632653
+      ]
+    },
+    "Weapon_15_3_0": {
+      "sprite": "D173A0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        185,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        37.755102041,
+        104.081632653
+      ]
+    },
+    "Weapon_15_1_1": {
+      "sprite": "D171B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        278,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        56.734693878,
+        104.081632653
+      ]
+    },
+    "Weapon_15_2_1": {
+      "sprite": "D172B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        216,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        44.081632653,
+        104.081632653
+      ]
+    },
+    "Weapon_15_3_1": {
+      "sprite": "D173B0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        185,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        37.755102041,
+        104.081632653
+      ]
+    },
+    "Weapon_15_1_2": {
+      "sprite": "D171C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        278,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        56.734693878,
+        104.081632653
+      ]
+    },
+    "Weapon_15_2_2": {
+      "sprite": "D172C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        216,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        44.081632653,
+        104.081632653
+      ]
+    },
+    "Weapon_15_3_2": {
+      "sprite": "D173C0",
+      "texture_size": [
+        512,
+        1024
+      ],
+      "texture_offset": [
+        185,
+        510
+      ],
+      "texture_scale": [
+        4.9,
+        4.9
+      ],
+      "pivot": [
+        37.755102041,
+        104.081632653
+      ]
+    },
+    "Weapon_16_1_0": {
+      "sprite": "D181A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_2_0": {
+      "sprite": "D182A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_3_0": {
+      "sprite": "D183A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_1_1": {
+      "sprite": "D181B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_2_1": {
+      "sprite": "D182B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_3_1": {
+      "sprite": "D183B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_1_2": {
+      "sprite": "D181C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_2_2": {
+      "sprite": "D182C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_16_3_2": {
+      "sprite": "D183C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        166,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        166.0,
+        170.0
+      ]
+    },
+    "Weapon_2_1_0": {
+      "sprite": "D191A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_2_0": {
+      "sprite": "D192A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_3_0": {
+      "sprite": "D193A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_1_1": {
+      "sprite": "D191B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_2_1": {
+      "sprite": "D192B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_3_1": {
+      "sprite": "D193B0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_1_2": {
+      "sprite": "D191C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_2_2": {
+      "sprite": "D192C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Weapon_2_3_2": {
+      "sprite": "D193C0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        165,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        165.0,
+        174.0
+      ]
+    },
+    "Hand_0": {
+      "sprite": "DH00A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Hand_3": {
+      "sprite": "DH03A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        141,
+        139
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        141.0,
+        139.0
+      ]
+    },
+    "Hand_4": {
+      "sprite": "DH04A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        161,
+        168
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        161.0,
+        168.0
+      ]
+    },
+    "Hand_5": {
+      "sprite": "DH05A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        184,
+        174
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        184.0,
+        174.0
+      ]
+    },
+    "Hand_6": {
+      "sprite": "DH06A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        142,
+        153
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        142.0,
+        153.0
+      ]
+    },
+    "Hand_7": {
+      "sprite": "DH07A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        208,
+        170
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        208.0,
+        170.0
+      ]
+    },
+    "Hand_8": {
+      "sprite": "DH08A0",
+      "texture_size": [
+        1448,
+        1086
+      ],
+      "texture_offset": [
+        1040,
+        510
+      ],
+      "texture_scale": [
+        16.0,
+        16.0
+      ],
+      "pivot": [
+        65.0,
+        31.875
+      ]
+    },
+    "Hand_9": {
+      "sprite": "DH09A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        84,
+        125
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        84.0,
+        125.0
+      ]
+    },
+    "Hand_10": {
+      "sprite": "DH10A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        236,
+        125
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        236.0,
+        125.0
+      ]
+    },
+    "Hand_11": {
+      "sprite": "DH11A0",
+      "texture_size": [
+        27,
+        26
+      ],
+      "texture_offset": [
+        23,
+        26
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        23.0,
+        26.0
+      ]
+    },
+    "Weapon_8_1_0": {
+      "sprite": "D071A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Weapon_8_2_0": {
+      "sprite": "D072A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    },
+    "Weapon_8_3_0": {
+      "sprite": "D073A0",
+      "texture_size": [
+        320,
+        200
+      ],
+      "texture_offset": [
+        235,
+        158
+      ],
+      "texture_scale": [
+        1,
+        1
+      ],
+      "pivot": [
+        235.0,
+        158.0
+      ]
+    }
+  },
+  "bow_layer_order": {
+    "string": [
+      46,
+      47
+    ],
+    "fingers": 49,
+    "stave": 50,
+    "thumb": 51,
+    "right_hand": 52,
+    "arrow": 53
+  },
+  "melee_native_rest_rotation": {
+    "hatchet": -28,
+    "machete": -28,
+    "axe": -28,
+    "war_axe": -28,
+    "halberd": -28,
+    "flail": 14
+  }
+}

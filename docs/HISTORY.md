@@ -1,6 +1,50 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0e — 2026-09-18.
+Versión documental: 4.36.0g — 2026-09-18.
+
+## 4.36.0g — correcciones tras la revisión de 0f
+
+- Mangual T1–T3: giro nativo de reposo +14° → +28°, extremo superior hacia
+  la izquierda. Se mantiene la ruta modular existente.
+- Hacha T1–T3: cabeza en capa 50 a 1.5 veces su escala anterior; mango en
+  48 a la escala original. Unión fija bajo la anilla; manos sin ampliación.
+- Alabarda T1–T3: asta en 48, extensión axial ×1.8; hoja y cintas en 50 a
+  su escala anterior. La mano se coloca en (222,180) para encuadrar la punta.
+- Espadón: forma aceptada conservada; desaturación y modulación nativas
+  para vista, tres iconos y sprite del suelo.
+- Arcos: nueva paleta apagada y máscara DH12. Índice detrás; pulgar y
+  falanges del medio, anular y meñique delante. Flecha aún en 53.
+- Estados nuevos añadidos al final; identificación de diagnóstico 4.36.0g.
+- README, PROJECT, HISTORY, SYSTEMS, ASSETS y guía de pruebas actualizados.
+
+Verificación de fuentes y vistas reconstruidas, sin compilación/ejecución
+de GZDoom. No hay cambios de daño, alcance, consumo, mapas, audio o viajes.
+El secundario contundente del hacha se documenta como regla ya existente.
+
+## 4.36.0f — giro nativo, agarre del arco y roca rápida
+
+La prueba de 0e del autor detectó que varias armas se inclinaban al lado
+contrario, la hachuela seguía demasiado alta y la cuerda quedaba horizontal.
+La previsualización de 0e había supuesto giro horario y escala antes de giro;
+el renderer 4.14.2 usa giro antihorario y escala después. Se corrige esa base.
+
+- Hachuela, machete, hacha, hacha de guerra y alabarda: giro nativo −28°.
+- Mangual modular: +14°, hacia la izquierda. Estados nuevos añadidos al final.
+- Hachuela: Offset Y 174 → 150; el arma baja 24 MU relativos al agarre.
+- Pivotes absolutos con NoTrim, sin depender de una caja alfa recortada.
+- Espadón con hoja más ancha, tres tiers en primera persona e inventario;
+  el sprite CGRS del suelo usa el mismo nuevo recurso T1.
+- Arcos: paleta apagada; dedos 49, pala 50, pulgar 51, mano derecha 52,
+  flecha 53. Limpieza de 53 también al pasar a puños o armas no modulares.
+- Cuerda mediante Coord0–Coord3; elimina el escalado horizontal posterior al giro.
+- MAP08/TID 43602: velocidad 8 → 32 MU/tic en mapa, generador y recuperación
+  de la siguiente activación de guardados. Conserva el daño físico calculado.
+- Se documentan las fórmulas reales y la ausencia de aplastamiento estático
+  bajo una roca en reposo. No se presenta como función terminada.
+
+Validación estructural y visual reconstruida; compilación y juego pendientes.
+No se ejecutó GZDoom. Audio, transiciones y vehículos no forman parte del delta.
+
 
 ## 4.36.0e — correcciones solicitadas tras probar 0d
 

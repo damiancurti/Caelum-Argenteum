@@ -1,0 +1,32 @@
+[
+  {
+    "path": "src/graphics/caelum/first_person/v4/greatsword.png",
+    "generated_source": "exec-c1e23be8-fd94-4fac-b128-9210f414915c.png",
+    "sha256": "7f495b21273af5d7586aafeddbd304da6a3216afe2b0dd105ea0a9ec1ae76304",
+    "pixel_processing": "none"
+  },
+  {
+    "path": "src/graphics/caelum/icons/ca_greatsword.png",
+    "generated_source": "exec-dc8fa493-96b9-4e71-90b5-6d34cf1aec39.png",
+    "sha256": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
+    "pixel_processing": "none",
+    "previous_generated_source": "exec-679d8282-c854-4c5b-af58-a5e6370f0ad9.png",
+    "previous_reference_sha256": "373f936b2e415080858b119d4c4e58b78866c2c10b98d43eb6759eb09eadbe77"
+  },
+  {
+    "path": "src/graphics/caelum/icons/ca_greatsword_t2.png",
+    "generated_source": "exec-cef8bc29-278d-4e8c-88c8-44529bc261ee.png",
+    "sha256": "863f9d8593f2905b2a0d8572bfc0c088cbe845c9882f8fc129a9e39c9d74b3d6",
+    "pixel_processing": "none",
+    "previous_generated_source": "exec-0ef73f30-8f72-4eca-8ecc-30bd0895f1ec.png",
+    "previous_reference_sha256": "570cd0cdc5bff1fa6d0940483cf4a361c78b0f4440ed1057f9908fe7927462b5"
+  },
+  {
+    "path": "src/graphics/caelum/icons/ca_greatsword_t3.png",
+    "generated_source": "exec-25602a52-1dfd-4501-b60a-fe91d49e6746.png",
+    "sha256": "066a53530ff668f1ca0b360f03ec10cec4103234179ae429bdecf82bf72b6571",
+    "pixel_processing": "none",
+    "previous_generated_source": "exec-9343b6dd-0511-4d33-96db-0fb6ee1fd5fb.png",
+    "previous_reference_sha256": "95a936c1251731ee2dadf21001093b4112c0ea815b543be4b57e0c0bf24079e8"
+  }
+]

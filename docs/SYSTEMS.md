@@ -1,6 +1,158 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0e — 2026-09-18.
+Versión documental: 4.36.0g — 2026-09-18.
+
+## 4.36.0g — presentación segmentada y ataque del hacha
+
+El catálogo documentado define el hacha con primario cortante y secundario
+contundente más fuerte, de menor alcance. CaelumAxeSelectorWeapon conserva
+la ruta física compartida y el jugador consulta GetSecondaryDamage y
+GetSecondaryDamageType. Este delta no altera esos callbacks ni introduce
+valores de daño o alcance. La fuente del catálogo completo no está entre
+los archivos recuperados; no se presenta la documentación como una prueba
+ejecutada del daño en GZDoom.
+
+Las dimensiones visuales son independientes del alcance de impacto. En
+CaelumFirstPersonLayers, las piezas nuevas usan 48 (mango/asta), 50 (cabeza),
+51 (mano izquierda) y 52 (derecha). La cabeza del hacha escala ×1.5 en su
+unión (77,118), mientras el mango conserva su escala. En la alabarda:
+
+    g = (85,150); j = (76,104); a = (j-g)/|j-g|; k = 1.8
+    delta(p) = (k-1) * dot(p-g,a) * a
+    headPosition = weaponGrip + Turn((j-g) * size * k, rotation)
+
+Coord0–Coord3 reciben delta en las cuatro esquinas del lienzo del asta.
+Esto conserva el ancho transversal y la posición del agarre. La hoja y sus
+cintas se trasladan como una pieza rígida, sin el estiramiento axial.
+Recortes estrechos excluyen las cintas del asta extendida. El giro de reposo
+de la alabarda sigue en −28°; el del mangual pasa a +28°.
+
+Arcos: 46/47 cuerda, 49 mano completa e índice, 50 madera, 51 DH12
+(pulgar + falanges medio/anular/meñique), 52 mano derecha, 53 flecha. DH12
+comparte lienzo, offset, pivote y escala con DH03; los recortes vuelven a
+sus coordenadas originales. Se conserva la limpieza al cambiar de arma.
+
+Las paletas usan dos Graphics nativos anidados. Translation Desaturate
+mezcla gris en n/31 (espadón 20; arcos 24). Después Blend sin alpha modula
+RGB por (205,198,188)/255 en el espadón y (194,186,174)/255 en los arcos.
+Dos pasos evitan que Blend reemplace Translation dentro de un mismo Patch.
+Los iconos del espadón se exponen con Graphics que conservan las rutas
+públicas; las fuentes idénticas con nombres distintos evitan autorreferencia.
+
+La implementación y sus supuestos se contrastaron con las fuentes del
+renderer, texturemanager, multipatchtexturebuilder y bitmap de GZDoom
+g4.14.2. El informe VALIDATION.json separa verificaciones locales de las
+pruebas en motor, que siguen pendientes.
+
+## 4.36.0f — auditoría del aplastamiento e impactos
+
+Hay tres mecanismos distintos. La roca aplica daño cinético al colisionar,
+incluida una recepción vertical por aterrizaje. El grafo de contactos de
+personajes puede aplicar daño periódico cuando sigue transmitiendo impulso.
+El techo CaelumCrusherTrap usa el aplastamiento nativo de GZDoom. No existe
+daño continuo por el mero peso de una roca que ya quedó inmóvil encima de
+un personaje. Esta última limitación sigue pendiente; no es un fallo de
+masa ni una regla de muerte instantánea.
+
+### 1. Choque de roca: masa, impulso y velocidad recibida
+
+Implementación: src/impactphysics/ImpactPhysics.zs, ResolveBodies y
+ResolveVerticalBodies; recepción en CaelumPlayer y CaelumCombatActor.
+
+- Velocidad de cierre horizontal: v=max(0,(vs−vt)·n), con n unitario.
+- En caída: v=max(0,vt.z−vs.z).
+- J=(1+e)v/(1/ms+1/mt); e=0 en Caelum.
+- Δvt=J/mt=ms/(ms+mt)·v. Δvs=J/ms.
+
+ms es la masa efectiva de la fuente; mt la del receptor. La roca ampliada
+usa radio 48 MU, altura 96 MU y masa 38170 kg, calculada como esfera de
+granito de 3 m de diámetro a 2700 kg/m³ y 32 MU/m. La masa grande hace que
+Δvt se aproxime a v; no multiplica el daño indefinidamente por 38170.
+
+### 2. Conversión a daño
+
+u es Δv después de la amortiguación aplicable. En un choque ambiental del
+jugador sin defensa acrobática activa, u=Δv. La rodela/guanteletes pueden
+reducirla; la amortiguación de caer al suelo tiene otra ruta. No confundir
+una roca que cae sobre la cabeza con el propio aterrizaje del personaje.
+
+t=28/u; si u≈0 se usa un tiempo enorme.
+E=0 si t≥35. En otro caso:
+
+    E = 100 · ((35/t)² − 1) / (35² − 1)
+      = 100 · (u² − 0,64) / 783,36
+
+E es un porcentaje de referencia, no energía física en julios. Su umbral
+sin daño es u≤0,8 MU/tic; u=28 produce E=100%. No está limitado al 100%.
+La altura del personaje ya no altera la referencia de 28 MU.
+
+    P = max(0, S·E − T)
+    W = suma_i [ wi · Vi · (1−Ai) ]
+    Daño = floor(Hmax · P · W / 100 + 0,5)
+
+S es el multiplicador de superficie (roca: 1); T es Dureza efectiva en
+puntos porcentuales; Hmax es vida máxima, no vida restante. wi pondera el
+solapamiento anatómico; Vi es vulnerabilidad tras refuerzo y Ai defensa de
+la pieza correspondiente, entre 0 y 1. Vi puede ser 2, 1,6, 1,3, 1, 0,8,
+0,6 o 0,4. El impacto vertical de la roca tiene contacto en altura relativa
+1,0. El daño final usa CaelumImpact y evita una segunda aplicación de armadura.
+
+Ejemplo calculado, no prueba jugable: ms=38170 kg, mt=75 kg, Hmax=1780,
+T=13, S=1, W=1, sin amortiguación. Receptor inicialmente inmóvil.
+
+| Velocidad de cierre (MU/tic) | Δv recibida | E (%) | Daño redondeado |
+| --- | --- | --- | --- |
+| 8 | 7.984 | 8.06 | 0 |
+| 16 | 15.969 | 32.47 | 347 |
+| 24 | 23.953 | 73.16 | 1071 |
+| 32 | 31.937 | 130.13 | 2085 |
+
+La vida, armadura, anatomía, movimiento relativo y defensa acrobática reales
+pueden cambiar el resultado. No se garantiza matar a cualquier personaje.
+
+### 3. Contacto sostenido y techo nativo
+
+El grafo usa Jp=v/(1/ms+1/mt) para transmitir el impulso inelástico y evita
+duplicarlo en callbacks de la misma pareja/tic. RegisterSustainedTransfer
+activa una recepción cada 35 tics con transferencia registrada. Para el
+pulso usa el último Jp, no una suma de 35 impulsos:
+
+    veq=Jp·(1/ms+1/mt)
+
+ResolveBodies vuelve a obtener Δv; IMPACT_KIND_CRUSH resta la amortiguación
+biológica de aterrizaje y usa la misma curva E, Dureza y anatomía. Sin
+velocidad de cierre positiva no se registra presión nueva. Este mecanismo
+no calcula fuerza estática mg, área de contacto ni presión F/A.
+
+CaelumCrusherTrap llama Level.CreateCeiling con ceilCrushRaiseAndStay y
+crushDoom. En MAP08: velocidad 8 MU/tic, altura mínima 8 MU y daño nativo
+args[0]=10 por pulso. Ese daño NO se obtiene de las fórmulas de impulso
+anteriores; entra como Crush por la ruta ambiental nativa.
+
+### 4. Roca rápida de MAP08 en 0f
+
+TID 43602 cambia su impulso inicial horizontal de 8 a 32 MU/tic: 1120 MU/s,
+equivalentes a 35 m/s con la escala de 32 MU/m del recurso. Es un valor de
+prueba de esta trampa, no una modificación global de impactos. No tiene
+motor que reponga velocidad, telefrag ni daño mínimo letal.
+
+El WAD y su generador contienen 32. GetReleaseSpeed reconoce el valor 8
+del TID original en un guardado antiguo y usa 32 en la siguiente liberación.
+No cambia la velocidad de una roca ya liberada. Otros mapas/TID/valores
+explícitos se conservan. La roca vertical TID 43603 conserva su caída.
+
+El informe ca_debug_hazards_report muestra la salida configurada, velocidad
+actual, masa, impulso y daño del jugador. Permite distinguir ausencia de
+contacto, E anulado por Dureza y reducción posterior de anatomía/armadura.
+
+### 5. Presentación de armas
+
+Giro corregido con el renderer 4.14.2; NoTrim y pivotes absolutos. La cuerda
+se traza por vértices y la flecha usa capa 53. Orden del arco: cuerda 46–47,
+dedos 49, pala 50, pulgar 51, derecha 52 y flecha 53. El estado de munición
+y los callbacks de disparo siguen determinando la presencia de la flecha.
+Ver ASSETS.md y PRUEBAS_4_36_0f.txt. No se ejecutó GZDoom en esta sesión.
+
 
 ## 4.36.0e — correcciones solicitadas tras probar 0d
 

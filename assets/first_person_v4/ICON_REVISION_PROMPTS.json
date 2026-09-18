@@ -1,0 +1,23 @@
+[
+  {
+    "key": "ca_greatsword.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword.png"
+    ],
+    "prompt": "Precise game sprite revision: keep the reference's transparent square canvas, sword position, exact tip and pommel positions, overall length, diagonal angle, guard, blue handle and all materials unchanged. The blade is still too thin. Make ONLY the blade substantially BROADER: DOUBLE its width measured perpendicular to the blade's long axis through its entire straight section. This must be unmistakably broad, heavy two-handed greatsword steel, nearly as broad as the crossguard, with the same sharp point and central ridge. Keep the guard and handle original size; the blade should now be about 80 percent as wide as the guard. Preserve the original muted dark brown/gray steel, aged metal fittings, hand painted low-resolution game sprite aesthetic, crisp pixels, exact original transparent margins. True transparent RGBA background, no text, no glow, no background. Do not simply upscale the entire weapon."
+  },
+  {
+    "key": "ca_greatsword_t2.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword_t2.png"
+    ],
+    "prompt": "Precise game sprite revision: keep the reference's transparent square canvas, sword position, exact tip and pommel positions, overall length, diagonal angle, guard, blue handle and all materials unchanged. The blade is still too thin. Make ONLY the blade substantially BROADER: DOUBLE its width measured perpendicular to the blade's long axis through its entire straight section. This must be unmistakably broad, heavy two-handed greatsword steel, nearly as broad as the crossguard, with the same sharp point and central ridge. Keep the guard and handle original size; the blade should now be about 80 percent as wide as the guard. Preserve the original muted dark brown/gray steel, aged metal fittings, hand painted low-resolution game sprite aesthetic, crisp pixels, exact original transparent margins. True transparent RGBA background, no text, no glow, no background. Do not simply upscale the entire weapon."
+  },
+  {
+    "key": "ca_greatsword_t3.png",
+    "refs": [
+      "src/graphics/caelum/icons/ca_greatsword_t3.png"
+    ],
+    "prompt": "Precise game sprite revision: keep the reference's transparent square canvas, sword position, exact tip and pommel positions, overall length, diagonal angle, guard, blue handle and all materials unchanged. The blade is still too thin. Make ONLY the blade substantially BROADER: DOUBLE its width measured perpendicular to the blade's long axis through its entire straight section. This must be unmistakably broad, heavy two-handed greatsword steel, nearly as broad as the crossguard, with the same sharp point and central ridge. Keep the guard and handle original size; the blade should now be about 80 percent as wide as the guard. Preserve the original muted dark brown/gray steel, aged metal fittings, hand painted low-resolution game sprite aesthetic, crisp pixels, exact original transparent margins. True transparent RGBA background, no text, no glow, no background. Do not simply upscale the entire weapon."
+  }
+]

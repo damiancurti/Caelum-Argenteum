@@ -96,6 +96,7 @@ class CaelumTrapdoor : Actor
 // args[0]: impulso horizontal en MU/tic; cero suelta verticalmente la roca.
 class CaelumHazardRock : CaelumRockGraniteHalf
 {
+    const GALLERY_ROLL_SPEED = 32;
     bool BoulderSizeReady;
     CaelumHazardRockVisual BoulderVisual;
     bool Released;
@@ -107,12 +108,21 @@ class CaelumHazardRock : CaelumRockGraniteHalf
 
     override bool IsEnvironmentMovable() { return Released; }
 
+    double GetReleaseSpeed()
+    {
+        // Recupera la galería antigua sin relanzar una roca ya liberada.
+        // Otros mapas y velocidades elegidas por el mapeador se conservan.
+        if (level.MapName == "MAP08" && tid == 43602 && args[0] == 8)
+            return GALLERY_ROLL_SPEED;
+        return Max(0, args[0]);
+    }
+
     bool Release()
     {
         if (Released) return false;
         Released = true;
         bNoGravity = false;
-        double speed = Max(0, args[0]);
+        double speed = GetReleaseSpeed();
         Vel = (Cos(Angle) * speed, Sin(Angle) * speed, 0);
         return true;
     }
@@ -342,7 +352,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0e] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.0g] Peligros físicos y mágicos: mapa=%s", level.MapName);
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -353,9 +363,12 @@ class CaelumHazardDiagnostics : Object play
         }
         let rocks = ThinkerIterator.Create("CaelumHazardRock"); CaelumHazardRock rock;
         while ((rock = CaelumHazardRock(rocks.Next())) != null)
+        {
             Console.Printf("Roca TID=%d liberada=%d masa=%.1f radio=%.1f altura=%.1f ampliada=%d velocidad=(%.2f,%.2f,%.2f) impactos verticales=%d impulso=%.2f",
                 rock.tid, rock.Released, rock.GetEnvironmentMassKg(), rock.Radius, rock.Height, rock.BoulderSizeReady, rock.Vel.X, rock.Vel.Y, rock.Vel.Z,
                 rock.VerticalImpactCount, rock.LastVerticalImpulse);
+            Console.Printf("  Salida configurada=%.2f MU/tic; peso en reposo: sin daño continuo.", rock.GetReleaseSpeed());
+        }
         let switches = ThinkerIterator.Create("CaelumHazardReleaseSwitch"); CaelumHazardReleaseSwitch lever;
         while ((lever = CaelumHazardReleaseSwitch(switches.Next())) != null)
             Console.Printf("Mecanismo destino=%d usado=%d", lever.args[0], lever.Spent);

@@ -1,0 +1,184 @@
+{
+  "release": "4.36.0g",
+  "base": "4.36.0f",
+  "flail_rest_rotation_degrees": 28,
+  "axe": {
+    "head_scale_relative_to_0f": 1.5,
+    "head_pivot": [
+      77,
+      118
+    ],
+    "shaft_pivot": [
+      85,
+      158
+    ]
+  },
+  "halberd": {
+    "shaft_axial_stretch": 1.8,
+    "head_scale_relative_to_0f": 1.0,
+    "head_pivot": [
+      76,
+      104
+    ],
+    "shaft_pivot": [
+      85,
+      150
+    ],
+    "grip": [
+      222,
+      180
+    ]
+  },
+  "bow_front_crops": [
+    {
+      "part": "THUMB_TOP",
+      "x": 118,
+      "y": 113,
+      "width": 29,
+      "height": 14
+    },
+    {
+      "part": "THUMB_BASE",
+      "x": 118,
+      "y": 127,
+      "width": 19,
+      "height": 12
+    },
+    {
+      "part": "MIDDLE",
+      "x": 138,
+      "y": 135,
+      "width": 21,
+      "height": 9
+    },
+    {
+      "part": "RING",
+      "x": 137,
+      "y": 144,
+      "width": 20,
+      "height": 10
+    },
+    {
+      "part": "LITTLE",
+      "x": 136,
+      "y": 154,
+      "width": 18,
+      "height": 10
+    }
+  ],
+  "bow_layers": {
+    "string": [
+      46,
+      47
+    ],
+    "hand_and_index": 49,
+    "wood": 50,
+    "thumb_and_other_phalanges": 51,
+    "right_hand": 52,
+    "arrow": 53
+  },
+  "palettes": [
+    {
+      "name": "CA_GS_MUTED",
+      "source": "graphics/caelum/first_person/v4/greatsword.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "desaturate": 20,
+      "multiply_rgb": [
+        205,
+        198,
+        188
+      ]
+    },
+    {
+      "name": "CA_SB_MUTED",
+      "source": "graphics/caelum/first_person/v3/standard_bow.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "desaturate": 24,
+      "multiply_rgb": [
+        194,
+        186,
+        174
+      ]
+    },
+    {
+      "name": "CA_LB_MUTED",
+      "source": "graphics/caelum/first_person/v3/longbow.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "desaturate": 24,
+      "multiply_rgb": [
+        194,
+        186,
+        174
+      ]
+    },
+    {
+      "name": "CA_GSICON1_M",
+      "source": "graphics/caelum/first_person/v5/greatsword_icon_t1_source.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "desaturate": 20,
+      "multiply_rgb": [
+        205,
+        198,
+        188
+      ]
+    },
+    {
+      "name": "CA_GSICON2_M",
+      "source": "graphics/caelum/first_person/v5/greatsword_icon_t2_source.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "desaturate": 20,
+      "multiply_rgb": [
+        205,
+        198,
+        188
+      ]
+    },
+    {
+      "name": "CA_GSICON3_M",
+      "source": "graphics/caelum/first_person/v5/greatsword_icon_t3_source.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "desaturate": 20,
+      "multiply_rgb": [
+        205,
+        198,
+        188
+      ]
+    }
+  ],
+  "copied_sources": [
+    {
+      "path": "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png",
+      "original": "src/graphics/caelum/icons/ca_greatsword.png",
+      "sha256": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996"
+    },
+    {
+      "path": "src/graphics/caelum/first_person/v5/greatsword_icon_t2_source.png",
+      "original": "src/graphics/caelum/icons/ca_greatsword_t2.png",
+      "sha256": "863f9d8593f2905b2a0d8572bfc0c088cbe845c9882f8fc129a9e39c9d74b3d6"
+    },
+    {
+      "path": "src/graphics/caelum/first_person/v5/greatsword_icon_t3_source.png",
+      "original": "src/graphics/caelum/icons/ca_greatsword_t3.png",
+      "sha256": "066a53530ff668f1ca0b360f03ec10cec4103234179ae429bdecf82bf72b6571"
+    }
+  ],
+  "method": "Native TEXTURES composition and PSprite transforms; no PNG editing."
+}

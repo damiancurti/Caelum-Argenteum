@@ -54,6 +54,7 @@ class CaelumUnarmedWeapon : Weapon
             || CaelumRestState.IsActive(user) || user.ForcedSleepTics>0)
         {CaelumFirstPersonLayers.Clear(user);return;}
         user.A_ClearOverlays(10,50);
+        user.A_ClearOverlays(53,53);
         double lower=Max(0.0,baseView.y-WEAPONTOP);
         vector2 root=(baseView.x-lower*0.85,lower);
         double pulse=Punching?Sin(Clamp(PunchFrame,0,21)*180.0/22):0;

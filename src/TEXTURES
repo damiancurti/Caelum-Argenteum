@@ -745,7 +745,7 @@ Sprite "CAXEA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_axe.p
 Sprite "CDAGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_dagger.png", 0, 0 }
 Sprite "CFLAA0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/ca_flail.png", 0, 0 }
 Sprite "CGAUA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_giant_gauntlets.png", 0, 0 }
-Sprite "CGRSA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_greatsword.png", 0, 0 }
+Sprite "CGRSA0", 1254, 1254 { XScale 9.796875 YScale 9.796875 Offset 627, 1176 Graphic "CA_GSICON1_M", 0, 0 }
 Sprite "CHALA0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/ca_halberd.png", 0, 0 }
 Sprite "CHATA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_hatchet.png", 0, 0 }
 Sprite "CJAVA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_javelin.png", 0, 0 }
@@ -3110,27 +3110,31 @@ Sprite "C203C0", 320, 200
 
 Sprite "D021A0", 320, 200
 {
-    Offset 85, 174
+    NoTrim
+    Offset 85, 150
     Patch "sprites/caelum/first_person/v1/hatchet/F021A0.png", 0, 0 { FlipX }
 }
 
 
 Sprite "D022A0", 320, 200
 {
-    Offset 85, 174
+    NoTrim
+    Offset 85, 150
     Patch "sprites/caelum/first_person/v1/hatchet/F022A0.png", 0, 0 { FlipX }
 }
 
 
 Sprite "D023A0", 320, 200
 {
-    Offset 85, 174
+    NoTrim
+    Offset 85, 150
     Patch "sprites/caelum/first_person/v1/hatchet/F023A0.png", 0, 0 { FlipX }
 }
 
 
 Sprite "D031A0", 320, 200
 {
+    NoTrim
     Offset 85, 158
     Patch "sprites/caelum/first_person/v1/machete/F031A0.png", 0, 0 { FlipX }
 }
@@ -3138,6 +3142,7 @@ Sprite "D031A0", 320, 200
 
 Sprite "D032A0", 320, 200
 {
+    NoTrim
     Offset 85, 158
     Patch "sprites/caelum/first_person/v1/machete/F032A0.png", 0, 0 { FlipX }
 }
@@ -3145,6 +3150,7 @@ Sprite "D032A0", 320, 200
 
 Sprite "D033A0", 320, 200
 {
+    NoTrim
     Offset 85, 158
     Patch "sprites/caelum/first_person/v1/machete/F033A0.png", 0, 0 { FlipX }
 }
@@ -3152,6 +3158,7 @@ Sprite "D033A0", 320, 200
 
 Sprite "D051A0", 320, 200
 {
+    NoTrim
     Offset 235, 158
     Patch "sprites/caelum/first_person/v1/sword/F051A0.png", 0, 0
 }
@@ -3159,6 +3166,7 @@ Sprite "D051A0", 320, 200
 
 Sprite "D052A0", 320, 200
 {
+    NoTrim
     Offset 235, 158
     Patch "sprites/caelum/first_person/v1/sword/F052A0.png", 0, 0
 }
@@ -3166,55 +3174,69 @@ Sprite "D052A0", 320, 200
 
 Sprite "D053A0", 320, 200
 {
+    NoTrim
     Offset 235, 158
     Patch "sprites/caelum/first_person/v1/sword/F053A0.png", 0, 0
 }
 
 
-Sprite "D061A0", 320, 200
+Sprite "D061A0", 320, 118
 {
-    Offset 85, 158
+    NoTrim
+    Offset 77, 118
     Patch "sprites/caelum/first_person/v1/axe/F061A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D062A0", 320, 200
+Sprite "D062A0", 320, 118
 {
-    Offset 85, 158
+    NoTrim
+    Offset 77, 118
     Patch "sprites/caelum/first_person/v1/axe/F062A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D063A0", 320, 200
+Sprite "D063A0", 320, 118
 {
-    Offset 85, 158
+    NoTrim
+    Offset 77, 118
     Patch "sprites/caelum/first_person/v1/axe/F063A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D091A0", 320, 200
+Sprite "D091A0", 512, 1024
 {
-    Offset 235, 150
-    Patch "sprites/caelum/first_person/v1/greatsword/F091A0.png", 0, 0
+    NoTrim
+    XScale 5.91
+    YScale 5.91
+    Offset 252, 780
+    Graphic "CA_GS_MUTED", 0, 0
 }
 
 
-Sprite "D092A0", 320, 200
+Sprite "D092A0", 512, 1024
 {
-    Offset 235, 150
-    Patch "sprites/caelum/first_person/v1/greatsword/F092A0.png", 0, 0
+    NoTrim
+    XScale 5.91
+    YScale 5.91
+    Offset 220, 780
+    Graphic "CA_GS_MUTED", -512, 0
 }
 
 
-Sprite "D093A0", 320, 200
+Sprite "D093A0", 512, 1024
 {
-    Offset 235, 150
-    Patch "sprites/caelum/first_person/v1/greatsword/F093A0.png", 0, 0
+    NoTrim
+    XScale 5.91
+    YScale 5.91
+    Offset 186, 780
+    Graphic "CA_GS_MUTED", -1024, 0
 }
 
 
 Sprite "D101A0", 320, 200
 {
+    NoTrim
     Offset 85, 150
     Patch "sprites/caelum/first_person/v1/war_axe/F101A0.png", 0, 0 { FlipX }
 }
@@ -3222,6 +3244,7 @@ Sprite "D101A0", 320, 200
 
 Sprite "D102A0", 320, 200
 {
+    NoTrim
     Offset 85, 150
     Patch "sprites/caelum/first_person/v1/war_axe/F102A0.png", 0, 0 { FlipX }
 }
@@ -3229,196 +3252,219 @@ Sprite "D102A0", 320, 200
 
 Sprite "D103A0", 320, 200
 {
+    NoTrim
     Offset 85, 150
     Patch "sprites/caelum/first_person/v1/war_axe/F103A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D111A0", 320, 200
+Sprite "D111A0", 320, 140
 {
-    Offset 85, 150
+    NoTrim
+    Offset 76, 104
     Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D112A0", 320, 200
+Sprite "D112A0", 320, 140
 {
-    Offset 85, 150
+    NoTrim
+    Offset 76, 104
     Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", 0, 0 { FlipX }
 }
 
 
-Sprite "D113A0", 320, 200
+Sprite "D113A0", 320, 140
 {
-    Offset 85, 150
+    NoTrim
+    Offset 76, 104
     Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", 0, 0 { FlipX }
 }
 
 
 Sprite "D161A0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 304, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", 0, 0
+    Graphic "CA_SB_MUTED", 0, 0
 }
 
 
 Sprite "D162A0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 213, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -512, 0
+    Graphic "CA_SB_MUTED", -512, 0
 }
 
 
 Sprite "D163A0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 162, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -1024, 0
+    Graphic "CA_SB_MUTED", -1024, 0
 }
 
 
 Sprite "D161B0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 304, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", 0, 0
+    Graphic "CA_SB_MUTED", 0, 0
 }
 
 
 Sprite "D162B0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 213, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -512, 0
+    Graphic "CA_SB_MUTED", -512, 0
 }
 
 
 Sprite "D163B0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 162, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -1024, 0
+    Graphic "CA_SB_MUTED", -1024, 0
 }
 
 
 Sprite "D161C0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 304, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", 0, 0
+    Graphic "CA_SB_MUTED", 0, 0
 }
 
 
 Sprite "D162C0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 213, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -512, 0
+    Graphic "CA_SB_MUTED", -512, 0
 }
 
 
 Sprite "D163C0", 512, 1024
 {
+    NoTrim
     XScale 6.0
     YScale 6.0
     Offset 162, 510
-    Patch "graphics/caelum/first_person/v3/standard_bow.png", -1024, 0
+    Graphic "CA_SB_MUTED", -1024, 0
 }
 
 
 Sprite "D171A0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 278, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", 0, 0
+    Graphic "CA_LB_MUTED", 0, 0
 }
 
 
 Sprite "D172A0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 216, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -512, 0
+    Graphic "CA_LB_MUTED", -512, 0
 }
 
 
 Sprite "D173A0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 185, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -1024, 0
+    Graphic "CA_LB_MUTED", -1024, 0
 }
 
 
 Sprite "D171B0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 278, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", 0, 0
+    Graphic "CA_LB_MUTED", 0, 0
 }
 
 
 Sprite "D172B0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 216, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -512, 0
+    Graphic "CA_LB_MUTED", -512, 0
 }
 
 
 Sprite "D173B0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 185, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -1024, 0
+    Graphic "CA_LB_MUTED", -1024, 0
 }
 
 
 Sprite "D171C0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 278, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", 0, 0
+    Graphic "CA_LB_MUTED", 0, 0
 }
 
 
 Sprite "D172C0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 216, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -512, 0
+    Graphic "CA_LB_MUTED", -512, 0
 }
 
 
 Sprite "D173C0", 512, 1024
 {
+    NoTrim
     XScale 4.9
     YScale 4.9
     Offset 185, 510
-    Patch "graphics/caelum/first_person/v3/longbow.png", -1024, 0
+    Graphic "CA_LB_MUTED", -1024, 0
 }
 
 
 Sprite "D181A0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F181A0.png", 0, 0
 }
@@ -3426,6 +3472,7 @@ Sprite "D181A0", 320, 200
 
 Sprite "D182A0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F182A0.png", 0, 0
 }
@@ -3433,6 +3480,7 @@ Sprite "D182A0", 320, 200
 
 Sprite "D183A0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F183A0.png", 0, 0
 }
@@ -3440,6 +3488,7 @@ Sprite "D183A0", 320, 200
 
 Sprite "D181B0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F181B0.png", 0, 0
 }
@@ -3447,6 +3496,7 @@ Sprite "D181B0", 320, 200
 
 Sprite "D182B0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F182B0.png", 0, 0
 }
@@ -3454,6 +3504,7 @@ Sprite "D182B0", 320, 200
 
 Sprite "D183B0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F183B0.png", 0, 0
 }
@@ -3461,6 +3512,7 @@ Sprite "D183B0", 320, 200
 
 Sprite "D181C0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F181C0.png", 0, 0
 }
@@ -3468,6 +3520,7 @@ Sprite "D181C0", 320, 200
 
 Sprite "D182C0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F182C0.png", 0, 0
 }
@@ -3475,6 +3528,7 @@ Sprite "D182C0", 320, 200
 
 Sprite "D183C0", 320, 200
 {
+    NoTrim
     Offset 166, 170
     Patch "sprites/caelum/first_person/v1/crossbow/F183C0.png", 0, 0
 }
@@ -3482,6 +3536,7 @@ Sprite "D183C0", 320, 200
 
 Sprite "D191A0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F191A0.png", 0, 0
 }
@@ -3489,6 +3544,7 @@ Sprite "D191A0", 320, 200
 
 Sprite "D192A0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F192A0.png", 0, 0
 }
@@ -3496,6 +3552,7 @@ Sprite "D192A0", 320, 200
 
 Sprite "D193A0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F193A0.png", 0, 0
 }
@@ -3503,6 +3560,7 @@ Sprite "D193A0", 320, 200
 
 Sprite "D191B0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F191B0.png", 0, 0
 }
@@ -3510,6 +3568,7 @@ Sprite "D191B0", 320, 200
 
 Sprite "D192B0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F192B0.png", 0, 0
 }
@@ -3517,6 +3576,7 @@ Sprite "D192B0", 320, 200
 
 Sprite "D193B0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F193B0.png", 0, 0
 }
@@ -3524,6 +3584,7 @@ Sprite "D193B0", 320, 200
 
 Sprite "D191C0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F191C0.png", 0, 0
 }
@@ -3531,6 +3592,7 @@ Sprite "D191C0", 320, 200
 
 Sprite "D192C0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F192C0.png", 0, 0
 }
@@ -3538,6 +3600,7 @@ Sprite "D192C0", 320, 200
 
 Sprite "D193C0", 320, 200
 {
+    NoTrim
     Offset 165, 174
     Patch "sprites/caelum/first_person/v1/carbine/F193C0.png", 0, 0
 }
@@ -3545,6 +3608,7 @@ Sprite "D193C0", 320, 200
 
 Sprite "DH00A0", 320, 200
 {
+    NoTrim
     Offset 235, 158
     Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", 0, 0
 }
@@ -3552,6 +3616,7 @@ Sprite "DH00A0", 320, 200
 
 Sprite "DH03A0", 320, 200
 {
+    NoTrim
     Offset 141, 139
     Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", 0, 0
 }
@@ -3559,6 +3624,7 @@ Sprite "DH03A0", 320, 200
 
 Sprite "DH04A0", 320, 200
 {
+    NoTrim
     Offset 161, 168
     Patch "sprites/caelum/first_person/v1/hands/FH04A0.png", 0, 0
 }
@@ -3566,6 +3632,7 @@ Sprite "DH04A0", 320, 200
 
 Sprite "DH05A0", 320, 200
 {
+    NoTrim
     Offset 184, 174
     Patch "sprites/caelum/first_person/v1/hands/FH05A0.png", 0, 0
 }
@@ -3573,6 +3640,7 @@ Sprite "DH05A0", 320, 200
 
 Sprite "DH06A0", 320, 200
 {
+    NoTrim
     Offset 142, 153
     Patch "sprites/caelum/first_person/v1/hands/FH06A0.png", 0, 0
 }
@@ -3580,6 +3648,7 @@ Sprite "DH06A0", 320, 200
 
 Sprite "DH07A0", 320, 200
 {
+    NoTrim
     Offset 208, 170
     Patch "sprites/caelum/first_person/v1/hands/FH07A0.png", 0, 0
 }
@@ -3587,6 +3656,7 @@ Sprite "DH07A0", 320, 200
 
 Sprite "DH08A0", 1448, 1086
 {
+    NoTrim
     XScale 16
     YScale 16
     Offset 1040, 510
@@ -3597,6 +3667,7 @@ Sprite "DH08A0", 1448, 1086
 // Puños: el mismo guante y antebrazo de las armas; simetría por capa nativa.
 Sprite "DH09A0", 320, 200
 {
+    NoTrim
     Offset 84, 125
     Patch "sprites/caelum/first_person/v1/hands/FH01A0.png", 0, 0 { FlipX }
 }
@@ -3604,6 +3675,7 @@ Sprite "DH09A0", 320, 200
 
 Sprite "DH10A0", 320, 200
 {
+    NoTrim
     Offset 236, 125
     Patch "sprites/caelum/first_person/v1/hands/FH01A0.png", 0, 0
 }
@@ -3611,14 +3683,626 @@ Sprite "DH10A0", 320, 200
 // 4.36.0e: cuerda por segmentos y flecha visual independiente de la munición.
 Sprite "EBSTA0", 1, 1
 {
+    NoTrim
     Offset 0, 0
-    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", -232, -151
+    Patch "sprites/caelum/first_person/v1/hands/FH00A0.png", -232, -151 { Blend 144, 128, 102, 0.85 }
 }
 
 Sprite "EBANA0", 1254, 1254
 {
+    NoTrim
     XScale 19
     YScale 19
     Offset 1145, 1155
     Patch "graphics/caelum/first_person/v3/arrow.png", 0, 0
+}
+
+Sprite "D071A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, 0
+}
+
+Sprite "D072A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, 0
+}
+
+Sprite "D073A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, 0
+}
+
+// Recorte del pulgar original: dedos y antebrazo siguen en DH03 debajo del arco.
+Sprite "DH11A0", 27, 26
+{
+    NoTrim
+    Offset 23, 26
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -113
+}
+
+// 4.36.0g: piezas y paletas nativas; las fuentes PNG se conservan.
+
+Graphic "CA_AXSHAFT1", 320, 84
+{
+    Patch "sprites/caelum/first_person/v1/axe/F061A0.png", 0, -116 { FlipX }
+}
+
+Sprite "GAX1A0", 320, 200
+{
+    NoTrim
+    Offset 85, 158
+    Graphic "CA_AXSHAFT1", 0, 116
+}
+Graphic "CA_HBS1_104", 42, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -68, -104 { FlipX }
+}
+
+Graphic "CA_HBS1_108", 42, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -68, -108 { FlipX }
+}
+
+Graphic "CA_HBS1_112", 41, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -69, -112 { FlipX }
+}
+
+Graphic "CA_HBS1_116", 40, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -70, -116 { FlipX }
+}
+
+Graphic "CA_HBS1_120", 39, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -71, -120 { FlipX }
+}
+
+Graphic "CA_HBS1_124", 38, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -72, -124 { FlipX }
+}
+
+Graphic "CA_HBS1_128", 37, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -73, -128 { FlipX }
+}
+
+Graphic "CA_HBS1_132", 36, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -74, -132 { FlipX }
+}
+
+Graphic "CA_HBS1_136", 35, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -75, -136 { FlipX }
+}
+
+Graphic "CA_HBS1_140", 34, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -76, -140 { FlipX }
+}
+
+Graphic "CA_HBS1_144", 33, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -77, -144 { FlipX }
+}
+
+Graphic "CA_HBS1_148", 32, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -78, -148 { FlipX }
+}
+
+Graphic "CA_HBS1_152", 31, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -79, -152 { FlipX }
+}
+
+Graphic "CA_HBS1_156", 31, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -79, -156 { FlipX }
+}
+
+Graphic "CA_HBS1_160", 30, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -80, -160 { FlipX }
+}
+
+Graphic "CA_HBS1_164", 29, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -81, -164 { FlipX }
+}
+
+Graphic "CA_HBS1_168", 28, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -82, -168 { FlipX }
+}
+
+Graphic "CA_HBS1_172", 27, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -83, -172 { FlipX }
+}
+
+Graphic "CA_HBS1_176", 26, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -84, -176 { FlipX }
+}
+
+Graphic "CA_HBS1_180", 25, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -85, -180 { FlipX }
+}
+
+Graphic "CA_HBS1_184", 24, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -86, -184 { FlipX }
+}
+
+Graphic "CA_HBS1_188", 23, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -87, -188 { FlipX }
+}
+
+Graphic "CA_HBS1_192", 22, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -88, -192 { FlipX }
+}
+
+Graphic "CA_HBS1_196", 21, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F111A0.png", -89, -196 { FlipX }
+}
+
+Sprite "GHB1A0", 320, 200
+{
+    NoTrim
+    Offset 85, 150
+    Graphic "CA_HBS1_104", 68, 104
+    Graphic "CA_HBS1_108", 68, 108
+    Graphic "CA_HBS1_112", 69, 112
+    Graphic "CA_HBS1_116", 70, 116
+    Graphic "CA_HBS1_120", 71, 120
+    Graphic "CA_HBS1_124", 72, 124
+    Graphic "CA_HBS1_128", 73, 128
+    Graphic "CA_HBS1_132", 74, 132
+    Graphic "CA_HBS1_136", 75, 136
+    Graphic "CA_HBS1_140", 76, 140
+    Graphic "CA_HBS1_144", 77, 144
+    Graphic "CA_HBS1_148", 78, 148
+    Graphic "CA_HBS1_152", 79, 152
+    Graphic "CA_HBS1_156", 79, 156
+    Graphic "CA_HBS1_160", 80, 160
+    Graphic "CA_HBS1_164", 81, 164
+    Graphic "CA_HBS1_168", 82, 168
+    Graphic "CA_HBS1_172", 83, 172
+    Graphic "CA_HBS1_176", 84, 176
+    Graphic "CA_HBS1_180", 85, 180
+    Graphic "CA_HBS1_184", 86, 184
+    Graphic "CA_HBS1_188", 87, 188
+    Graphic "CA_HBS1_192", 88, 192
+    Graphic "CA_HBS1_196", 89, 196
+}
+
+Graphic "CA_AXSHAFT2", 320, 84
+{
+    Patch "sprites/caelum/first_person/v1/axe/F062A0.png", 0, -116 { FlipX }
+}
+
+Sprite "GAX2A0", 320, 200
+{
+    NoTrim
+    Offset 85, 158
+    Graphic "CA_AXSHAFT2", 0, 116
+}
+Graphic "CA_HBS2_104", 42, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -68, -104 { FlipX }
+}
+
+Graphic "CA_HBS2_108", 42, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -68, -108 { FlipX }
+}
+
+Graphic "CA_HBS2_112", 41, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -69, -112 { FlipX }
+}
+
+Graphic "CA_HBS2_116", 40, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -70, -116 { FlipX }
+}
+
+Graphic "CA_HBS2_120", 39, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -71, -120 { FlipX }
+}
+
+Graphic "CA_HBS2_124", 38, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -72, -124 { FlipX }
+}
+
+Graphic "CA_HBS2_128", 37, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -73, -128 { FlipX }
+}
+
+Graphic "CA_HBS2_132", 36, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -74, -132 { FlipX }
+}
+
+Graphic "CA_HBS2_136", 35, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -75, -136 { FlipX }
+}
+
+Graphic "CA_HBS2_140", 34, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -76, -140 { FlipX }
+}
+
+Graphic "CA_HBS2_144", 33, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -77, -144 { FlipX }
+}
+
+Graphic "CA_HBS2_148", 32, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -78, -148 { FlipX }
+}
+
+Graphic "CA_HBS2_152", 31, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -79, -152 { FlipX }
+}
+
+Graphic "CA_HBS2_156", 31, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -79, -156 { FlipX }
+}
+
+Graphic "CA_HBS2_160", 30, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -80, -160 { FlipX }
+}
+
+Graphic "CA_HBS2_164", 29, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -81, -164 { FlipX }
+}
+
+Graphic "CA_HBS2_168", 28, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -82, -168 { FlipX }
+}
+
+Graphic "CA_HBS2_172", 27, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -83, -172 { FlipX }
+}
+
+Graphic "CA_HBS2_176", 26, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -84, -176 { FlipX }
+}
+
+Graphic "CA_HBS2_180", 25, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -85, -180 { FlipX }
+}
+
+Graphic "CA_HBS2_184", 24, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -86, -184 { FlipX }
+}
+
+Graphic "CA_HBS2_188", 23, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -87, -188 { FlipX }
+}
+
+Graphic "CA_HBS2_192", 22, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -88, -192 { FlipX }
+}
+
+Graphic "CA_HBS2_196", 21, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F112A0.png", -89, -196 { FlipX }
+}
+
+Sprite "GHB2A0", 320, 200
+{
+    NoTrim
+    Offset 85, 150
+    Graphic "CA_HBS2_104", 68, 104
+    Graphic "CA_HBS2_108", 68, 108
+    Graphic "CA_HBS2_112", 69, 112
+    Graphic "CA_HBS2_116", 70, 116
+    Graphic "CA_HBS2_120", 71, 120
+    Graphic "CA_HBS2_124", 72, 124
+    Graphic "CA_HBS2_128", 73, 128
+    Graphic "CA_HBS2_132", 74, 132
+    Graphic "CA_HBS2_136", 75, 136
+    Graphic "CA_HBS2_140", 76, 140
+    Graphic "CA_HBS2_144", 77, 144
+    Graphic "CA_HBS2_148", 78, 148
+    Graphic "CA_HBS2_152", 79, 152
+    Graphic "CA_HBS2_156", 79, 156
+    Graphic "CA_HBS2_160", 80, 160
+    Graphic "CA_HBS2_164", 81, 164
+    Graphic "CA_HBS2_168", 82, 168
+    Graphic "CA_HBS2_172", 83, 172
+    Graphic "CA_HBS2_176", 84, 176
+    Graphic "CA_HBS2_180", 85, 180
+    Graphic "CA_HBS2_184", 86, 184
+    Graphic "CA_HBS2_188", 87, 188
+    Graphic "CA_HBS2_192", 88, 192
+    Graphic "CA_HBS2_196", 89, 196
+}
+
+Graphic "CA_AXSHAFT3", 320, 84
+{
+    Patch "sprites/caelum/first_person/v1/axe/F063A0.png", 0, -116 { FlipX }
+}
+
+Sprite "GAX3A0", 320, 200
+{
+    NoTrim
+    Offset 85, 158
+    Graphic "CA_AXSHAFT3", 0, 116
+}
+Graphic "CA_HBS3_104", 40, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -70, -104 { FlipX }
+}
+
+Graphic "CA_HBS3_108", 40, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -70, -108 { FlipX }
+}
+
+Graphic "CA_HBS3_112", 39, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -71, -112 { FlipX }
+}
+
+Graphic "CA_HBS3_116", 38, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -72, -116 { FlipX }
+}
+
+Graphic "CA_HBS3_120", 37, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -73, -120 { FlipX }
+}
+
+Graphic "CA_HBS3_124", 36, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -74, -124 { FlipX }
+}
+
+Graphic "CA_HBS3_128", 35, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -75, -128 { FlipX }
+}
+
+Graphic "CA_HBS3_132", 34, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -76, -132 { FlipX }
+}
+
+Graphic "CA_HBS3_136", 33, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -77, -136 { FlipX }
+}
+
+Graphic "CA_HBS3_140", 32, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -78, -140 { FlipX }
+}
+
+Graphic "CA_HBS3_144", 31, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -79, -144 { FlipX }
+}
+
+Graphic "CA_HBS3_148", 30, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -80, -148 { FlipX }
+}
+
+Graphic "CA_HBS3_152", 29, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -81, -152 { FlipX }
+}
+
+Graphic "CA_HBS3_156", 29, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -81, -156 { FlipX }
+}
+
+Graphic "CA_HBS3_160", 28, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -82, -160 { FlipX }
+}
+
+Graphic "CA_HBS3_164", 27, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -83, -164 { FlipX }
+}
+
+Graphic "CA_HBS3_168", 26, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -84, -168 { FlipX }
+}
+
+Graphic "CA_HBS3_172", 25, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -85, -172 { FlipX }
+}
+
+Graphic "CA_HBS3_176", 24, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -86, -176 { FlipX }
+}
+
+Graphic "CA_HBS3_180", 23, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -87, -180 { FlipX }
+}
+
+Graphic "CA_HBS3_184", 22, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -88, -184 { FlipX }
+}
+
+Graphic "CA_HBS3_188", 21, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -89, -188 { FlipX }
+}
+
+Graphic "CA_HBS3_192", 20, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -90, -192 { FlipX }
+}
+
+Graphic "CA_HBS3_196", 19, 4
+{
+    Patch "sprites/caelum/first_person/v1/halberd/F113A0.png", -91, -196 { FlipX }
+}
+
+Sprite "GHB3A0", 320, 200
+{
+    NoTrim
+    Offset 85, 150
+    Graphic "CA_HBS3_104", 70, 104
+    Graphic "CA_HBS3_108", 70, 108
+    Graphic "CA_HBS3_112", 71, 112
+    Graphic "CA_HBS3_116", 72, 116
+    Graphic "CA_HBS3_120", 73, 120
+    Graphic "CA_HBS3_124", 74, 124
+    Graphic "CA_HBS3_128", 75, 128
+    Graphic "CA_HBS3_132", 76, 132
+    Graphic "CA_HBS3_136", 77, 136
+    Graphic "CA_HBS3_140", 78, 140
+    Graphic "CA_HBS3_144", 79, 144
+    Graphic "CA_HBS3_148", 80, 148
+    Graphic "CA_HBS3_152", 81, 152
+    Graphic "CA_HBS3_156", 81, 156
+    Graphic "CA_HBS3_160", 82, 160
+    Graphic "CA_HBS3_164", 83, 164
+    Graphic "CA_HBS3_168", 84, 168
+    Graphic "CA_HBS3_172", 85, 172
+    Graphic "CA_HBS3_176", 86, 176
+    Graphic "CA_HBS3_180", 87, 180
+    Graphic "CA_HBS3_184", 88, 184
+    Graphic "CA_HBS3_188", 89, 188
+    Graphic "CA_HBS3_192", 90, 192
+    Graphic "CA_HBS3_196", 91, 196
+}
+
+Graphic "CA_GS_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/v4/greatsword.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GS_MUTED", 1536, 1024
+{
+    Graphic "CA_GS_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+
+Graphic "CA_SB_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/v3/standard_bow.png", 0, 0 { Translation "Desaturate", 24 }
+}
+Graphic "CA_SB_MUTED", 1536, 1024
+{
+    Graphic "CA_SB_MUTED_D", 0, 0 { Blend 194, 186, 174 }
+}
+
+Graphic "CA_LB_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/v3/longbow.png", 0, 0 { Translation "Desaturate", 24 }
+}
+Graphic "CA_LB_MUTED", 1536, 1024
+{
+    Graphic "CA_LB_MUTED_D", 0, 0 { Blend 194, 186, 174 }
+}
+
+Graphic "CA_GSICON1_M_D", 1254, 1254
+{
+    Patch "graphics/caelum/first_person/v5/greatsword_icon_t1_source.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GSICON1_M", 1254, 1254
+{
+    Graphic "CA_GSICON1_M_D", 0, 0 { Blend 205, 198, 188 }
+}
+
+Graphic "graphics/caelum/icons/ca_greatsword.png", 1254, 1254 { Graphic "CA_GSICON1_M", 0, 0 }
+
+Graphic "CA_GSICON2_M_D", 1254, 1254
+{
+    Patch "graphics/caelum/first_person/v5/greatsword_icon_t2_source.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GSICON2_M", 1254, 1254
+{
+    Graphic "CA_GSICON2_M_D", 0, 0 { Blend 205, 198, 188 }
+}
+
+Graphic "graphics/caelum/icons/ca_greatsword_t2.png", 1254, 1254 { Graphic "CA_GSICON2_M", 0, 0 }
+
+Graphic "CA_GSICON3_M_D", 1254, 1254
+{
+    Patch "graphics/caelum/first_person/v5/greatsword_icon_t3_source.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GSICON3_M", 1254, 1254
+{
+    Graphic "CA_GSICON3_M_D", 0, 0 { Blend 205, 198, 188 }
+}
+
+Graphic "graphics/caelum/icons/ca_greatsword_t3.png", 1254, 1254 { Graphic "CA_GSICON3_M", 0, 0 }
+
+Graphic "CA_BOW_THUMB_TOP", 29, 14
+{
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -113
+}
+
+Graphic "CA_BOW_THUMB_BASE", 19, 12
+{
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -127
+}
+
+Graphic "CA_BOW_MIDDLE", 21, 9
+{
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -138, -135
+}
+
+Graphic "CA_BOW_RING", 20, 10
+{
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -137, -144
+}
+
+Graphic "CA_BOW_LITTLE", 18, 10
+{
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -136, -154
+}
+
+Sprite "DH12A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP", 118, 113
+    Graphic "CA_BOW_THUMB_BASE", 118, 127
+    Graphic "CA_BOW_MIDDLE", 138, 135
+    Graphic "CA_BOW_RING", 137, 144
+    Graphic "CA_BOW_LITTLE", 136, 154
 }

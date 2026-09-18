@@ -591,7 +591,7 @@ class CaelumFirstPersonView : Object play
             if(attack)AttackFrame++;
             return;
         }
-        user.A_ClearOverlays(46,49); user.A_ClearOverlays(51,52);
+        user.A_ClearOverlays(46,49); user.A_ClearOverlays(51,53);
         view.x=160 + baseView.x + dx;
         view.y=32 + Max(0.0,baseView.y-WEAPONTOP) + dy;
         view.rotation=rotation;

@@ -4,41 +4,36 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.0e.** Apply this source patch over the complete
-**4.36.0d** project, merge its folders and rebuild with `run_dev.bat`.
+**Current release: 4.36.0g.** Apply this incremental source patch over the
+complete **4.36.0f** project, merge its folders and rebuild with `run_dev.bat`.
 
-Fists now reuse the same glove and extended visible forearm as the other
-weapons. Both sides share one source, mirrored by native TEXTURES. Punches
-keep the forearm connected to the screen edge. Both bows reuse the original
-hand set with matching proportions; the left hand renders behind the right.
+The flail now has a more pronounced leftward resting angle in all three tiers.
+The axe head is 50% larger without scaling its hand or lower handle. The
+halberd shaft extends along its own axis, with its blade and ribbons retaining
+their size. These are first-person presentation changes, not reach changes.
 
-Hatchet, axe, war axe and halberd lean to the right and seat their shafts in
-the right-hand grip. Sword artwork is 20% larger than in 0d; greatsword artwork
-is 15% larger. Hand size is independent of weapon size.
+The greatsword keeps its accepted broad silhouette and uses a darker, less
+saturated palette in first person, all three inventory icons and its ground
+sprite. Both bows receive a muted wood/metal palette. Their left index finger
+stays behind the stave; the thumb and the other three fingers' phalanges now
+render in front. The loaded arrow remains above both hands.
 
-Both bow families have new complete wooden staves in three tiers. Native
-layers join the string to the limb tips and drawing hand. The arrow disappears
-on a real shot or when no arrow is loaded; aiming flexes the bow. The existing
-magazine, reload, damage and action callbacks still control the weapon.
+The documented axe secondary attack is blunt, stronger and shorter-ranged
+than the slashing primary. Combat callbacks and catalogue rules are unchanged.
+The changes use native TEXTURES composition and PSprite transforms. Source
+PNG artwork remains intact; recipes and validation are in
+`assets/first_person_v5/`. No generation or asset conversion is required.
 
-The MAP01 guitar excerpt now plays on the first revelation of The Fool.
-The original level-up cue plays after the capture commits and grants its bonus.
-The author accepted the 0d travel transitions; their presentation is preserved.
+`netevent ca_debug_hazards_report` identifies **4.36.0g**. Installation and
+focused in-game checks are in **PRUEBAS_4_36_0g.txt**.
 
-The covered cart gains a front axle and two front wheels, for four wheels total.
-The ship has a non-solid boarding interaction volume facing the hull, so its
-center-screen Use hint can be reached without aiming only at the small sign.
-Existing vehicle parts are reused when loading a save.
-
-`netevent ca_debug_hazards_report` identifies **4.36.0e**.
-See **PRUEBAS_4_36_0e.txt** for installation and acceptance checks.
-
-Validation for this patch: source/resource structure, unchanged travel logic,
-source sprite identity, OBJ topology and reconstructed weapon-plane/model
-previews. **GZDoom was not run for 0e in this environment.** A complete base
-archive could not be recovered and no engine executable was available; the
-delta uses the latest recovered 0p/0c/0d versions of each changed source file.
-Compilation and gameplay acceptance in GZDoom 4.14.2/Windows remain pending.
+Validation covers texture dependencies, saved state order, absolute pivots,
+finger masks, palette/silhouette measurements and unchanged gameplay sources.
+All weapon tiers and bow phases were visually reconstructed for inspection.
+**The patch was not compiled or run in GZDoom.** The recovered working source
+is partial and an engine binary could not be downloaded. The diagnostic images
+are not engine screenshots. Windows startup, saves and final in-game appearance
+remain to be checked on the complete project.
 
 ## Implemented
 

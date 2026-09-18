@@ -131,7 +131,7 @@ def generate(folder):
                     skill4=True, skill5=True, single=True, coop=True)
     maintenance.things.extend([
         hazard(30960, 1408, 896, height=184, tid=43601),
-        hazard(30961, 1280, 1344, tid=43602, argument=8),
+        hazard(30961, 1280, 1344, tid=43602, argument=32),
         hazard(30962, 1152, 1344, argument=43602),
         hazard(30961, 2048, 1600, height=256, tid=43603),
         hazard(30962, 2048, 1536, angle=90, argument=43603),

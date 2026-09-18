@@ -1,0 +1,386 @@
+{
+  "release": "4.36.0g",
+  "base": "4.36.0f",
+  "engine_compiled": false,
+  "engine_run": false,
+  "limits": [
+    "Partial recovered project; no full GZDoom build.",
+    "Engine download returned HTTP 502; no executable obtained.",
+    "Canvas previews reconstruct native texture definitions and transforms, not live rendering.",
+    "Windows start, saved games and final in-game visual acceptance pending."
+  ],
+  "checks": [
+    {
+      "name": "Saved state order preserved",
+      "passed": true
+    },
+    {
+      "name": "Active sprite resources, nested graphics and absolute pivots resolve",
+      "passed": true,
+      "detail": {
+        "states": 79
+      }
+    },
+    {
+      "name": "Explicit native graphic dependency types",
+      "passed": true
+    },
+    {
+      "name": "Segmented weapons use persistent layer 48 and shared head pose",
+      "passed": true
+    },
+    {
+      "name": "Axe head enlarged, hand/shaft size retained",
+      "passed": true
+    },
+    {
+      "name": "Halberd extension preserves transverse width and grip",
+      "passed": true
+    },
+    {
+      "name": "Flail top moves farther left of its grip",
+      "passed": true,
+      "detail": {
+        "previous_x": -48.826225174316846,
+        "current_x": -73.75175523365822
+      }
+    },
+    {
+      "name": "Index excluded from foreground while other phalanges included",
+      "passed": true,
+      "detail": {
+        "index_alpha_sum": 0
+      }
+    },
+    {
+      "name": "Bow layer order and unloaded arrow cleanup retained",
+      "passed": true
+    },
+    {
+      "name": "Palette muted across 3 greatswords, 18 bow states and 3 inventory icons; silhouettes retained",
+      "passed": true,
+      "detail": {
+        "views": 24
+      }
+    },
+    {
+      "name": "World greatsword uses muted T1 icon at original dimensions",
+      "passed": true
+    },
+    {
+      "name": "Gameplay, maps, audio and other existing assets unchanged",
+      "passed": true,
+      "detail": [
+        "src/TEXTURES",
+        "src/caelum/equipment/CaelumFirstPersonLayers.zs",
+        "src/caelum/world/CaelumPhysicalHazards.zs"
+      ]
+    },
+    {
+      "name": "Hazard edit is release label only",
+      "passed": true
+    },
+    {
+      "name": "Balanced source delimiters",
+      "passed": true
+    },
+    {
+      "name": "Icon raw copies match shipped source bytes",
+      "passed": true
+    },
+    {
+      "name": "Release documentation updated",
+      "passed": true
+    }
+  ],
+  "palettes": [
+    {
+      "texture": "D091A0",
+      "previous": {
+        "saturation": 0.4261488653108332,
+        "luma": 90.15057348092797
+      },
+      "current": {
+        "saturation": 0.24340473559565784,
+        "luma": 71.82843330610685
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D092A0",
+      "previous": {
+        "saturation": 0.2955711142665852,
+        "luma": 88.95906117343601
+      },
+      "current": {
+        "saturation": 0.1890759134324405,
+        "luma": 70.88857075968014
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D093A0",
+      "previous": {
+        "saturation": 0.284572081045298,
+        "luma": 101.92030587001142
+      },
+      "current": {
+        "saturation": 0.19136065306738195,
+        "luma": 81.43501171849347
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D161A0",
+      "previous": {
+        "saturation": 0.431483649308285,
+        "luma": 73.25112589740745
+      },
+      "current": {
+        "saturation": 0.32189536944290004,
+        "luma": 59.610465503024365
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D161B0",
+      "previous": {
+        "saturation": 0.431483649308285,
+        "luma": 73.25112589740745
+      },
+      "current": {
+        "saturation": 0.32189536944290004,
+        "luma": 59.610465503024365
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D161C0",
+      "previous": {
+        "saturation": 0.431483649308285,
+        "luma": 73.25112589740745
+      },
+      "current": {
+        "saturation": 0.32189536944290004,
+        "luma": 59.610465503024365
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D162A0",
+      "previous": {
+        "saturation": 0.354694104515819,
+        "luma": 73.11206157794487
+      },
+      "current": {
+        "saturation": 0.2708684078682253,
+        "luma": 60.844451916200754
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D162B0",
+      "previous": {
+        "saturation": 0.354694104515819,
+        "luma": 73.11206157794487
+      },
+      "current": {
+        "saturation": 0.2708684078682253,
+        "luma": 60.844451916200754
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D162C0",
+      "previous": {
+        "saturation": 0.354694104515819,
+        "luma": 73.11206157794487
+      },
+      "current": {
+        "saturation": 0.2708684078682253,
+        "luma": 60.844451916200754
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D163A0",
+      "previous": {
+        "saturation": 0.4509578602142639,
+        "luma": 73.17326066712269
+      },
+      "current": {
+        "saturation": 0.3328610727427816,
+        "luma": 59.84982633410124
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D163B0",
+      "previous": {
+        "saturation": 0.4509578602142639,
+        "luma": 73.17326066712269
+      },
+      "current": {
+        "saturation": 0.3328610727427816,
+        "luma": 59.84982633410124
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D163C0",
+      "previous": {
+        "saturation": 0.4509578602142639,
+        "luma": 73.17326066712269
+      },
+      "current": {
+        "saturation": 0.3328610727427816,
+        "luma": 59.84982633410124
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D171A0",
+      "previous": {
+        "saturation": 0.41045004256028145,
+        "luma": 77.4070533573585
+      },
+      "current": {
+        "saturation": 0.29091956911902034,
+        "luma": 58.68494672569039
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D171B0",
+      "previous": {
+        "saturation": 0.41045004256028145,
+        "luma": 77.4070533573585
+      },
+      "current": {
+        "saturation": 0.29091956911902034,
+        "luma": 58.68494672569039
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D171C0",
+      "previous": {
+        "saturation": 0.41045004256028145,
+        "luma": 77.4070533573585
+      },
+      "current": {
+        "saturation": 0.29091956911902034,
+        "luma": 58.68494672569039
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D172A0",
+      "previous": {
+        "saturation": 0.36969945088372824,
+        "luma": 78.46814770662195
+      },
+      "current": {
+        "saturation": 0.266438167855235,
+        "luma": 60.79655123563851
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D172B0",
+      "previous": {
+        "saturation": 0.36969945088372824,
+        "luma": 78.46814770662195
+      },
+      "current": {
+        "saturation": 0.266438167855235,
+        "luma": 60.79655123563851
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D172C0",
+      "previous": {
+        "saturation": 0.36969945088372824,
+        "luma": 78.46814770662195
+      },
+      "current": {
+        "saturation": 0.266438167855235,
+        "luma": 60.79655123563851
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D173A0",
+      "previous": {
+        "saturation": 0.4222374508173783,
+        "luma": 77.80749712261283
+      },
+      "current": {
+        "saturation": 0.2967834606206421,
+        "luma": 59.319974054406984
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D173B0",
+      "previous": {
+        "saturation": 0.4222374508173783,
+        "luma": 77.80749712261283
+      },
+      "current": {
+        "saturation": 0.2967834606206421,
+        "luma": 59.319974054406984
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "D173C0",
+      "previous": {
+        "saturation": 0.4222374508173783,
+        "luma": 77.80749712261283
+      },
+      "current": {
+        "saturation": 0.2967834606206421,
+        "luma": 59.319974054406984
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "graphics/caelum/icons/ca_greatsword.png",
+      "previous": {
+        "saturation": 0.29629521714764945,
+        "luma": 85.8538138904307
+      },
+      "current": {
+        "saturation": 0.18340592116418722,
+        "luma": 69.09157004806113
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "graphics/caelum/icons/ca_greatsword_t2.png",
+      "previous": {
+        "saturation": 0.20763509366694027,
+        "luma": 94.42813019653076
+      },
+      "current": {
+        "saturation": 0.14880707321415193,
+        "luma": 75.35955230768243
+      },
+      "max_alpha_change": 0
+    },
+    {
+      "texture": "graphics/caelum/icons/ca_greatsword_t3.png",
+      "previous": {
+        "saturation": 0.16114685070572737,
+        "luma": 89.23604923593169
+      },
+      "current": {
+        "saturation": 0.12759866471332584,
+        "luma": 71.61398882017711
+      },
+      "max_alpha_change": 0
+    }
+  ]
+}
