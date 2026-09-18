@@ -4271,14 +4271,16 @@ Graphic "CA_GSICON3_M", 1254, 1254
 
 Graphic "graphics/caelum/icons/ca_greatsword_t3.png", 1254, 1254 { Graphic "CA_GSICON3_M", 0, 0 }
 
-Graphic "CA_BOW_THUMB_TOP", 29, 14
+// 4.36.0h: la franja superior del índice (referencia roja) queda detrás.
+// El recorte inferior cubre el tramo de madera marcado en azul.
+Graphic "CA_BOW_THUMB_TOP", 32, 15
 {
-    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -113
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -120
 }
 
-Graphic "CA_BOW_THUMB_BASE", 19, 12
+Graphic "CA_BOW_THUMB_BASE", 20, 4
 {
-    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -127
+    Patch "sprites/caelum/first_person/v1/hands/FH03A0.png", -118, -135
 }
 
 Graphic "CA_BOW_MIDDLE", 21, 9
@@ -4300,8 +4302,8 @@ Sprite "DH12A0", 320, 200
 {
     NoTrim
     Offset 141, 139
-    Graphic "CA_BOW_THUMB_TOP", 118, 113
-    Graphic "CA_BOW_THUMB_BASE", 118, 127
+    Graphic "CA_BOW_THUMB_TOP", 118, 120
+    Graphic "CA_BOW_THUMB_BASE", 118, 135
     Graphic "CA_BOW_MIDDLE", 138, 135
     Graphic "CA_BOW_RING", 137, 144
     Graphic "CA_BOW_LITTLE", 136, 154

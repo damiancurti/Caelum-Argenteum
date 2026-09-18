@@ -1,6 +1,48 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0g — 2026-09-18.
+Versión documental: 4.36.0h — 2026-09-18.
+
+## 4.36.0h — referencia del arco, giro horario y mesas servidas
+
+[ACEPTADO POR EL AUTOR] El resto de las pruebas de 0g dio bien. Se conservan
+las formas, proporciones y paletas aceptadas. La nueva revisión visual queda
+acotada al mangual y al agarre marcado en la captura adjunta.
+
+[IMPLEMENTADO EN FUENTES] Mangual: 90° horario respecto de 0g (+28° → −62°
+nativo), con agarre desplazado para encuadrarlo. Arcos: índice superior detrás;
+tramo señalado en azul detrás del pulgar y las demás falanges.
+
+[IMPLEMENTADO EN FUENTES] Comida inicial real en todas las mesas de MAP01:
+una ración por plaza, descontando comida ya presente. Seis mesas, 26 plazas.
+Inicialización persistente para partidas nuevas y mesas de guardados previos;
+no repone lo consumido ni sustituye objetos de una mesa llena.
+
+[IMPLEMENTADO EN FUENTES] Techo nativo: daño por pulso expresado en porcentaje
+de vida máxima para jugador y NPC Caelum. Valor actual 10 → 10% por pulso.
+Conserva temporización e inmunidades nativas; no convierte otra vez impactos.
+
+[PROPUESTO, NO ACTIVADO] Daño por masa quieta encima del personaje. Se encontró
+la fórmula de impulso sostenido, pero no una fórmula estática aprobada. Se
+propone daño proporcional a la sobrecarga de la capacidad real; k=10% de vida
+máxima por segundo por cada capacidad adicional. Fórmula y ejemplos en SYSTEMS.
+La premisa de no inventar balance exige decisión del autor sobre esta regla.
+
+[VERIFICADO LOCALMENTE] Recursos, giro/máscaras, aritmética porcentual y modelo
+de conservación de comida. No se ejecutó GZDoom ni se verificó guardado nativo.
+Pruebas del incremento en PRUEBAS_4_36_0h.txt.
+
+### Qué falta para cerrar 4.36
+
+1. Aceptar estas correcciones y verificar arranque, mesas, daño y guardados.
+2. Acordar e implementar el peso estático: masas apiladas, reparto entre apoyos,
+   liberación de la víctima y ausencia de doble daño con el aterrizaje.
+3. Completar las bases previstas de superficies con daño propio, avalanchas,
+   arietes, catapultas y sectores móviles mediante el núcleo físico.
+4. Validar la integración de esos mecanismos en la galería, persistencia y
+   reinicio. Extraer Impact Physics sólo después de validar su uso en Caelum.
+
+No se reabren las pruebas de 0g aceptadas salvo regresiones de este delta.
+Después de 4.36 corresponde 4.37 (Tarot/Trucazo), y luego la exportación V4.
 
 ## 4.36.0g — proporciones, mangual y paleta
 
@@ -2086,7 +2128,7 @@ contenido y los pendientes de versiones anteriores se retoman en V5.
 | V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
 | V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
 | V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. 0p y 0q aprobados; paquete visual v4 y ritmo de comida 1/3 aceptados. 4.35 cerrada. Modelo térmico corporal en V5.1. |
-| V4.36: entorno móvil y peligros físicos | 0a implementa trampilla por pisada, foso real y salida, roca rodante y bloque que cae; ensayo en MAP08 y adaptador de impacto vertical. Pendiente de aceptación del autor. Siguen superficies con daño propio, avalanchas, arietes, catapultas y sectores móviles mediante el núcleo físico. Extraer Impact Physics sólo tras cerrar su validación en Caelum. |
+| V4.36: entorno móvil y peligros físicos | Base de trampillas, foso, rocas, minas, teletransporte, techo, palancas y presentación aceptada por el autor hasta 0g salvo las dos correcciones visuales de 0h. 0h incorpora esas correcciones, comida inicial y daño nativo porcentual; pruebas nativas de este incremento pendientes. Falta acordar/implementar peso estático y completar las bases de superficies con daño propio, avalanchas, arietes, catapultas y sectores móviles. Validar integración/guardado antes de extraer Impact Physics. |
 | V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
 | **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
 | **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar V4 y exportar la versión de prueba. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |

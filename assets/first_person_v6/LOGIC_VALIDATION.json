@@ -1,0 +1,18 @@
+{
+  "release": "4.36.0h",
+  "engine_run": false,
+  "method": "Production method bodies with minimal syntax translation compiled as C++17 against mock inventory APIs. This is not ZScript compilation or native save testing.",
+  "cases": [
+    "Native percent, 100/1780/50000/107060 HP",
+    "Zero, negative, rounding and forced-damage sentinel",
+    "Native telefrag threshold guard",
+    "2/6/12-seat initial quantities",
+    "No refill after consumption or repeated ticks",
+    "Persistent-field continuation model",
+    "Existing food and drinks retained",
+    "Full table never overwrites belongings or later refills",
+    "Interrupted spawn retries only remaining initial allocation",
+    "MAP02/MAP03/MAP06/MAP07 excluded"
+  ],
+  "passed": true
+}

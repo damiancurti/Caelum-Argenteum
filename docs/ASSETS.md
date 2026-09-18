@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0g — 2026-09-18.
+Versión documental: 4.36.0h — 2026-09-18.
+
+## 4.36.0h — ajuste a la captura marcada por el autor
+
+Se conserva el arte y la paleta aceptados de 0g. El mangual gira 90° horario
+respecto de su pose anterior en los tres tiers; su agarre se mueve 35 MU a
+la izquierda para mantener cadena y cabeza dentro del encuadre.
+
+La referencia Sin título(2).png marca en rojo el segmento superior del índice
+que debe quedar detrás del arco y en azul la madera que debe quedar debajo
+del pulgar y otras falanges. DH12 conserva escala/pivote/lienzo y modifica
+sólo la máscara delantera: pulgar en y120–134, base en y135–138; las otras
+falanges conservan sus recortes. La mano completa sigue en 49, arco en 50,
+máscara en 51, derecha en 52 y flecha en 53.
+
+No se editan PNG ni se generan ilustraciones. La comida inicial reutiliza
+el plato/recipiente del sistema de mesas, enlazado a raciones reales.
+
+assets/first_person_v6/COMPOSITION.json identifica la referencia y recetas.
+PREVIEW_FLAILS.png y PREVIEW_BOW.png son reconstrucciones de inspección,
+no capturas del motor. VALIDATION.json y LOGIC_VALIDATION.json separan las
+comprobaciones locales de las pruebas nativas aún pendientes.
 
 ## 4.36.0g — piezas, dedos y colores apagados
 

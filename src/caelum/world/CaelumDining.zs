@@ -40,6 +40,8 @@ class CaelumDiningTable : Actor
     CaelumDiningBlock Blocks[32];
     int LayoutSlot;
     bool PresentationReady;
+    bool MansionFoodPrepared;
+    int MansionFoodToSeed;
     virtual clearscope int SeatCount() { return 6; }
     virtual clearscope int Capacity() { return 18; }
     virtual clearscope double LengthMU() { return 192; }
@@ -278,11 +280,43 @@ class CaelumDiningTable : Actor
         guide.Destroy();return false;
     }
 
+    void SeedMansionFood()
+    {
+        if(level.MapName!="MAP01")return;
+        if(!MansionFoodPrepared)
+        {
+            // Una ración por plaza, contando primero la comida ya presente.
+            // Se guarda el saldo inicial: consumir nunca vuelve a aumentarlo.
+            int food=0;
+            for(int i=0;i<Capacity();i++)
+                if(Items[i]!=null && Items[i].Owner==self && Items[i].Amount>0
+                    && Items[i].GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION)
+                    food+=Items[i].Amount;
+            MansionFoodToSeed=Max(0,SeatCount()-food);
+            MansionFoodPrepared=true;
+        }
+        bool changed=false;
+        while(MansionFoodToSeed>0)
+        {
+            int slot=FreeSlot();
+            // Una mesa llena conserva las pertenencias del guardado y no queda
+            // esperando huecos para reponer comida después de cada retirada.
+            if(slot<0){MansionFoodToSeed=0;break;}
+            let ration=CaelumConsumableItem(Spawn("CaelumFoodRation",Pos,NO_REPLACE));
+            if(ration==null)break;
+            ration.Amount=1; ration.InMagicBox=false;
+            ration.AttachToOwner(self); Items[slot]=ration;
+            MansionFoodToSeed--; changed=true;
+        }
+        if(changed)RefreshDisplays();
+    }
+
     override void Tick()
     {
         Super.Tick();
         // Reconstruye también las presentaciones guardadas con 0g.
         if(!PresentationReady){bCanPass=true;RefreshDisplays();PresentationReady=true;}
+        SeedMansionFood();
     }
 
     override void OnDestroy()

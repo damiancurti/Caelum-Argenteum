@@ -348,11 +348,27 @@ class CaelumHazardReleaseSwitch : Actor
     States { Spawn: CSGT A -1; Stop; }
 }
 
+// Adaptación de unidades del techo nativo; no es presión estática por masa.
+class CaelumCrushingDamage : Object
+{
+    // Umbral interno de GZDoom 4.14.2 (TELEFRAG_DAMAGE), no valor de balance.
+    const NATIVE_TELEFRAG_THRESHOLD = 1000000;
+    static int FromNativePercent(double maximumHealth,int percent)
+    {
+        // Mantener las órdenes especiales de daño forzado del motor. Un pulso
+        // normal convertido no debe alcanzar el umbral reservado al telefrag.
+        if(percent<=0 || percent>=NATIVE_TELEFRAG_THRESHOLD)return percent;
+        double scaled=Max(1.0,maximumHealth)*percent/100.0;
+        return int(Clamp(scaled+0.5,1.0,double(NATIVE_TELEFRAG_THRESHOLD-1)));
+    }
+}
+
 class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0g] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.0h] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("Techos: args[0] expresa porcentaje de vida máxima por pulso nativo; masa estática: pendiente de definir.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)

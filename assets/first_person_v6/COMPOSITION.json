@@ -1,0 +1,68 @@
+{
+  "release": "4.36.0h",
+  "base": "4.36.0g",
+  "reference": {
+    "name": "Sin título(2).png",
+    "sha256": "2cf1320dcc516271bf4b199ba4c0da2c8c4045b8188e2f1bd6bc45fca0e5407d",
+    "red": "Index upper segment behind the bow",
+    "blue": "Bow segment behind the thumb and remaining fingers"
+  },
+  "flail": {
+    "previous_native_rotation": 28,
+    "clockwise_change_degrees": 90,
+    "native_rotation": -62,
+    "grip": [
+      200,
+      158
+    ]
+  },
+  "bow_front_crops": [
+    {
+      "name": "THUMB_TOP",
+      "x": 118,
+      "y": 120,
+      "width": 32,
+      "height": 15
+    },
+    {
+      "name": "THUMB_BASE",
+      "x": 118,
+      "y": 135,
+      "width": 20,
+      "height": 4
+    },
+    {
+      "name": "MIDDLE",
+      "x": 138,
+      "y": 135,
+      "width": 21,
+      "height": 9
+    },
+    {
+      "name": "RING",
+      "x": 137,
+      "y": 144,
+      "width": 20,
+      "height": 10
+    },
+    {
+      "name": "LITTLE",
+      "x": 136,
+      "y": 154,
+      "width": 18,
+      "height": 10
+    }
+  ],
+  "layers": {
+    "string": [
+      46,
+      47
+    ],
+    "hand_and_index": 49,
+    "bow": 50,
+    "thumb_and_phalanges": 51,
+    "right_hand": 52,
+    "arrow": 53
+  },
+  "method": "Native TEXTURES/PSprite changes; existing PNG sources unchanged."
+}

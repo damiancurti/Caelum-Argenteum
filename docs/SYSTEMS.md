@@ -1,6 +1,90 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0g — 2026-09-18.
+Versión documental: 4.36.0h — 2026-09-18.
+
+## 4.36.0h — techo porcentual, comida inicial y propuesta de peso
+
+### Techo nativo: implementado en fuentes
+
+P_DoCrunch de GZDoom g4.14.2 llama al daño con tipo Crush y source/inflictor
+nulos. Aplica un pulso cuando (maptime & 3)==0, mientras existe aplastamiento.
+CaelumPlayer y CaelumCombatActor convierten ese valor una sola vez:
+
+    D_pulso = redondear(H_max × valor_nativo / 100)
+
+El valor actual de MAP08 es 10: equivale a 10% de vida máxima por pulso,
+no por segundo. Ejemplos sin modificadores nativos: Hmax=100 → 10;
+Hmax=1780 → 178; Hmax=107060 → 10706. El ritmo de cuatro tics lo conserva
+el motor; no se introduce un temporizador de un segundo.
+
+El daño sigue por Super.DamageMobj con DMG_NO_ARMOR y conserva dolor,
+interrupciones y la ausencia de adrenalina ambiental. Los modificadores e
+inmunidades nativos siguen aplicando. Drowning y CaelumImpact no se escalan;
+las fuentes Crush con actor explícito conservan sus unidades anteriores.
+
+CaelumCrushingDamage.FromNativePercent preserva valores no positivos y las
+órdenes especiales >=1000000. Los pulsos normales se limitan a 999999 puntos
+para no activar accidentalmente la semántica de telefrag de GZDoom al escalar
+vidas extremas. Este límite de interoperabilidad no se alcanza en el ejemplo
+del personaje de la captura. No se cambia el valor de la trampa ni su mapa.
+
+### Masa apoyada: propuesta pendiente de decisión del autor
+
+La búsqueda recuperó una fórmula de impacto y una de contacto con impulso
+sostenido. Esta última requiere velocidad de cierre positiva; no representa
+el peso de un cuerpo ya quieto. No se encontró una fórmula estática aprobada.
+
+Propuesta de regla de juego, NO implementada en 4.36.0h:
+
+    r = max(0, (M_encima + M_carga) / C - 1)
+    daño_por_segundo = H_max × k × r
+    k propuesto = 0.10
+
+M_encima: masa efectivamente transmitida por los cuerpos que se apoyan en la
+víctima, incluidos los que descansan sobre ellos. M_carga: carga propia ya
+calculada por inventario/equipo y Caja. C: capacidad de carga vigente, usando
+las mismas unidades de masa. Hmax: vida máxima, para mantener gravedad
+relativa entre personajes de distinta salud. Se necesita C positiva.
+
+| Masa externa total / capacidad | Exceso r | Daño propuesto / segundo |
+| --- | --- | --- |
+| 100% o menos | 0 | 0% de Hmax |
+| 150% | 0.5 | 5% de Hmax |
+| 200% | 1 | 10% de Hmax |
+| 300% | 2 | 20% de Hmax |
+
+La propuesta exige contacto de apoyo real: una roca colgada sobre la cabeza
+no cuenta. Al retirarla cesa el daño. Las masas apiladas se acumulan una sola
+vez; si un cuerpo tiene varios apoyos, su carga se reparte sin multiplicarla.
+El aterrizaje mantiene su impacto único y se separa del daño estático posterior.
+La aplicación usa tiempo de simulación y conserva fracciones para evitar
+truncamiento de daño pequeño. No se activa hasta aprobar fórmula/coeficiente.
+
+La selección de capacidad como umbral y k=0.10 es una propuesta nueva, no un
+valor rescatado de decisiones anteriores. Queda sujeta a la premisa autoral
+de no incorporar números de balance sin resolverlos con el creador.
+
+### Comida de las mesas: inicialización persistente
+
+Cada CaelumDiningTable de MAP01 calcula una sola vez SeatCount menos las
+raciones existentes y registra MansionFoodPrepared/MansionFoodToSeed. Crea
+esa cantidad como CaelumFoodRation real, Amount=1 y Owner=mesa. RefreshDisplays
+usa los platos existentes. Las mesas actuales suman 4×2 + 6 + 12 = 26 plazas.
+
+El estado por actor cubre mesas ya guardadas, aunque el controlador de
+mobiliario figure preparado. Consumir/retirar no aumenta el saldo. Un fallo
+de creación reintenta sólo el saldo pendiente. Una mesa llena preserva todos
+sus objetos y cancela la asignación que no cabe: no espera un hueco para
+reponerla después. Fuera de MAP01 no entrega comida.
+
+Las rutas de depósito, retirada, digestión y reserva de inventario/Caja no
+cambian. No se incorpora una reposición periódica ni bebida inicial.
+
+Referencias técnicas: fuentes oficiales g4.14.2 de
+[P_DoCrunch](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp)
+y [DamageMobj](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_interaction.cpp).
+Los modelos locales de prueba no sustituyen arranque, inventario y guardado
+reales en GZDoom.
 
 ## 4.36.0g — presentación segmentada y ataque del hacha
 

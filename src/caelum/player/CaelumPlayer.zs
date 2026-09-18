@@ -13239,6 +13239,11 @@ class CaelumPlayer : DoomPlayer
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
         if (mod == 'Drowning' || mod == 'Crush')
         {
+            // El techo nativo expresa su pulso en porcentaje de vida máxima.
+            // Ahogamiento ya llega convertido; otras fuentes Crush conservan
+            // sus unidades. P_DoCrunch envía source e inflictor nulos.
+            if (mod == 'Crush' && inflictor == null && source == null)
+                damage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
             int healthBeforeDrowning = health;
             double adrenalineRatioBeforeDrowning = 0.0;
             if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)

@@ -1,4 +1,4 @@
-// Presentación modular 4.36.0g. Pivotes absolutos y lienzos NoTrim;
+// Presentación modular 4.36.0h. Pivotes absolutos y lienzos NoTrim;
 // los callbacks de daño y munición permanecen en el arma real.
 class CaelumFirstPersonLayerFrames : Actor
 {
@@ -535,7 +535,7 @@ class CaelumFirstPersonLayers : Object play
         bool large=kind==10 || kind==11 || kind==12;
         bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
-        vector2 grip=bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
+        vector2 grip=bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180):kind==8?(200,158):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
         grip+=(dx,dy);
         if(ranged)
         {
@@ -569,7 +569,9 @@ class CaelumFirstPersonLayers : Object play
         }
         // Signo comprobado en hw_weapon.cpp de GZDoom 4.14.2: negativo
         // lleva la punta hacia la derecha; positivo, hacia la izquierda.
-        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?28.0:0.0);
+        // Mangual: 90° horario respecto de 0g, +28° - 90° = -62°.
+        // Su agarre se centra para mantener toda la cadena dentro del encuadre.
+        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?-62.0:0.0);
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=(4,3);
         if(kind==7 || kind==12)

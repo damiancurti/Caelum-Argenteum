@@ -2524,6 +2524,10 @@ class CaelumCombatActor : Actor
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
         if (mod == 'CaelumImpact' || mod == 'Crush')
         {
+            // La misma unidad porcentual para jugadores y NPC. Los impactos
+            // cinemáticos ya están calculados y no se convierten otra vez.
+            if (mod == 'Crush' && inflictor == null && source == null)
+                damage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
             int healthBeforeImpact = health;
             double adrenalineRatioBeforeImpact = GetCombatAdrenalineRatio();
             int result = Super.DamageMobj(

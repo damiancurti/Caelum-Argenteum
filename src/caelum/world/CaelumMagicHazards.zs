@@ -169,7 +169,9 @@ class CaelumCrusherTrap : CaelumPressureTrap
     int StartedPanels;
     bool MovementFinished;
 
-    // args[0]=daño nativo por pulso; args[1]=MU/tic; args[2]=muestreo XY.
+    // args[0]=% de vida máxima por pulso nativo en receptores Caelum;
+    // args[1]=MU/tic; args[2]=muestreo XY. El motor recibe args[0] sin escalar;
+    // cada receptor convierte una sola vez en DamageMobj, también al cargar.
     // 0 en args[2] mueve sólo el sector del actor; 32 selecciona los cuatro
     // paneles de 64 MU usados en MAP08. No toca sectores vecinos adicionales.
     bool Release()

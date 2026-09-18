@@ -1,6 +1,26 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0g — 2026-09-18.
+Versión documental: 4.36.0h — 2026-09-18.
+
+## 4.36.0h — giro de 90°, máscara indicada y daño porcentual
+
+El autor aprueba el resto de 0g y precisa dos cambios visuales: giro horario
+de 90° en el mangual y las zonas roja/azul del agarre del arco.
+
+- Mangual T1–T3: +28° → −62°; agarre (200,158) para evitar el recorte lateral.
+- DH12: franja superior del índice fuera de la máscara delantera; pulgar
+  ampliado hasta cubrir el segmento azul. No cambia el guante ni su escala.
+- Mesas de MAP01: comida real inicial por plaza. Estado y saldo persistentes;
+  cuenta comida existente, preserva otros objetos y no repone al consumir.
+- Daño nativo Crush de techo: puntos convertidos a % de vida máxima sólo
+  con source/inflictor nulos, tanto en CaelumPlayer como en CaelumCombatActor.
+- Compatibilidad: se conserva el valor 10 y la temporización nativa del mapa;
+  su interpretación pasa a 10% por pulso. No se modifica MAP08.wad.
+- Propuesta de peso estático documentada, sin activar valores no aprobados.
+- Roadmap de 4.36 actualizado con aceptación real y trabajo aún pendiente.
+
+Comprobaciones de fuentes/modelos y reconstrucciones visuales satisfactorias.
+No se compiló ni ejecutó GZDoom; la base disponible sigue siendo parcial.
 
 ## 4.36.0g — correcciones tras la revisión de 0f
 

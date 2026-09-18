@@ -4,36 +4,44 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.0g.** Apply this incremental source patch over the
-complete **4.36.0f** project, merge its folders and rebuild with `run_dev.bat`.
+**Current release: 4.36.0h.** Merge this incremental source patch into the
+complete **4.36.0g** project and rebuild with `run_dev.bat`.
 
-The flail now has a more pronounced leftward resting angle in all three tiers.
-The axe head is 50% larger without scaling its hand or lower handle. The
-halberd shaft extends along its own axis, with its blade and ribbons retaining
-their size. These are first-person presentation changes, not reach changes.
+The flail rotates exactly 90 degrees clockwise relative to 0g. Its grip moves
+left to keep the weapon inside the view. Both bows now follow the author's
+annotated screenshot: the upper index segment stays behind the stave, while
+the marked stave segment passes behind the thumb and other finger phalanges.
+Previously accepted shapes, palettes and the loaded arrow layer are retained.
 
-The greatsword keeps its accepted broad silhouette and uses a darker, less
-saturated palette in first person, all three inventory icons and its ground
-sprite. Both bows receive a muted wood/metal palette. Their left index finger
-stays behind the stave; the thumb and the other three fingers' phalanges now
-render in front. The loaded arrow remains above both hands.
+All dining tables in MAP01 receive initial real food rations, one per seat,
+including existing tables in older saves. Existing food counts toward this
+allocation and other belongings are preserved. The allocation is recorded
+once; consumption, withdrawal and reloads do not replenish it. The current
+mansion layout has six tables with 26 seats in total.
 
-The documented axe secondary attack is blunt, stronger and shorter-ranged
-than the slashing primary. Combat callbacks and catalogue rules are unchanged.
-The changes use native TEXTURES composition and PSprite transforms. Source
-PNG artwork remains intact; recipes and validation are in
-`assets/first_person_v5/`. No generation or asset conversion is required.
+Native ceiling-crush values now mean percent of maximum health for Caelum
+players and combat actors. The current value of 10 becomes 10% per native
+pulse, not 10 points. The engine controls pulse timing and retains its damage
+pipeline. Other damage types and calculated kinetic impacts are not converted.
 
-`netevent ca_debug_hazards_report` identifies **4.36.0g**. Installation and
-focused in-game checks are in **PRUEBAS_4_36_0g.txt**.
+Static damage from a resting mass above a character is **not implemented**.
+No approved formula was found in the recovered documentation/context. A
+concrete overload-based proposal and its balance examples are recorded in
+`docs/SYSTEMS.md`; it requires the author's decision before activation.
 
-Validation covers texture dependencies, saved state order, absolute pivots,
-finger masks, palette/silhouette measurements and unchanged gameplay sources.
-All weapon tiers and bow phases were visually reconstructed for inspection.
-**The patch was not compiled or run in GZDoom.** The recovered working source
-is partial and an engine binary could not be downloaded. The diagnostic images
-are not engine screenshots. Windows startup, saves and final in-game appearance
-remain to be checked on the complete project.
+The author accepted the remaining 0g tests. Version 4.36 still includes the
+pending damaging surfaces, avalanches, rams, catapults and moving-sector work
+listed in `docs/PROJECT.md`. This patch does not declare 4.36 complete.
+
+`netevent ca_debug_hazards_report` identifies **4.36.0h**.
+See **PRUEBAS_4_36_0h.txt** for installation and focused checks.
+
+Local verification covers references, sprite rotation/masks, damage arithmetic,
+and initial-food conservation using translated method bodies with inventory
+mocks. **This is not ZScript compilation or GZDoom execution.** The recovered
+project is partial; Windows startup, native ownership/save behavior and final
+visual acceptance must be checked on the complete project. Diagnostic images
+under `assets/first_person_v6/` are reconstructed, not engine screenshots.
 
 ## Implemented
 

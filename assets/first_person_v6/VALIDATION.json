@@ -1,0 +1,92 @@
+{
+  "release": "4.36.0h",
+  "base": "4.36.0g",
+  "engine_compiled": false,
+  "engine_run": false,
+  "checks": [
+    {
+      "name": "Saved visual states unchanged",
+      "passed": true
+    },
+    {
+      "name": "Flail exact clockwise quarter-turn",
+      "passed": true,
+      "detail": {
+        "old": 28,
+        "current": -62
+      }
+    },
+    {
+      "name": "Native screen transform rotates flail clockwise",
+      "passed": true
+    },
+    {
+      "name": "Red upper index behind bow; blue segment covered by original thumb pixels",
+      "passed": true,
+      "detail": {
+        "red_foreground_alpha": 0,
+        "blue_opaque_pixels": 99
+      }
+    },
+    {
+      "name": "All flail tiers fit resting 320-wide weapon view",
+      "passed": true
+    },
+    {
+      "name": "Both bow families retain accepted palettes and shapes in all phases",
+      "passed": true
+    },
+    {
+      "name": "Arrow stays topmost and clears unloaded",
+      "passed": true
+    },
+    {
+      "name": "Existing dining transactions, regeneration and displays unchanged",
+      "passed": true
+    },
+    {
+      "name": "Initial-food balance persisted and run on table tick",
+      "passed": true
+    },
+    {
+      "name": "Percent conversion applies once to native Crush for player and NPC; other damage types excluded",
+      "passed": true
+    },
+    {
+      "name": "Native caller and cadence checked against g4.14.2 source",
+      "passed": true
+    },
+    {
+      "name": "Only intended runtime files changed; maps/audio/artwork/impact core preserved",
+      "passed": true,
+      "detail": [
+        "src/TEXTURES",
+        "src/caelum/actors/CaelumCombatActor.zs",
+        "src/caelum/equipment/CaelumFirstPersonLayers.zs",
+        "src/caelum/player/CaelumPlayer.zs",
+        "src/caelum/world/CaelumDining.zs",
+        "src/caelum/world/CaelumMagicHazards.zs",
+        "src/caelum/world/CaelumPhysicalHazards.zs"
+      ]
+    },
+    {
+      "name": "Changed source delimiters balanced",
+      "passed": true
+    },
+    {
+      "name": "Release documentation and manual tests updated",
+      "passed": true
+    },
+    {
+      "name": "Percent and initial-food conservation model completed",
+      "passed": true
+    }
+  ],
+  "static_weight_damage": "Proposed in docs, not implemented; balance approval pending.",
+  "visual_reference": "User annotated screenshot Sin título(2).png",
+  "limits": [
+    "Recovered source tree is partial.",
+    "C++ inventory mocks do not validate GZDoom ownership or native save serialization.",
+    "Native engine start, maps, saves and visual acceptance require the complete Windows project."
+  ]
+}
