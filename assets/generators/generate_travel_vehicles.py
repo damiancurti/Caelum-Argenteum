@@ -25,14 +25,20 @@ def cart():
             m.box('iron', (x*1.04, 52, z), (1, 25, 2))
     m.box('wood', (0, 48, -56), (56, 20, 3))
     m.box('wood', (0, 53, 42), (54, 4, 17))
-    m.rod('iron', (-40, 29, -12), (40, 29, -12), 3)
-    for x in (-38, 38):
-        m.ring('wood', (x, 29, -12), 27, 2.2, 'yz', 24)
-        m.ring('iron', (x, 29, -12), 28.2, 0.8, 'yz', 24)
-        m.rod('wood', (x-3, 29, -12), (x+3, 29, -12), 5)
-        for i in range(12):
-            a = math.tau*i/12
-            m.rod('wood', (x,29,-12), (x,29+26*math.cos(a),-12+26*math.sin(a)), 1.2, sides=4)
+    # Eje trasero original y eje delantero con dos ruedas algo menores.
+    # Las cuatro apoyan a la misma altura y el delantero se une al bastidor.
+    for axle_z, wheel_y, wheel_r in ((-12, 29, 27), (48, 25, 23)):
+        m.rod('iron', (-40, wheel_y, axle_z), (40, wheel_y, axle_z), 3)
+        for x in (-38, 38):
+            m.ring('wood', (x, wheel_y, axle_z), wheel_r, 2.2, 'yz', 24)
+            m.ring('iron', (x, wheel_y, axle_z), wheel_r+1.2, 0.8, 'yz', 24)
+            m.rod('wood', (x-3, wheel_y, axle_z), (x+3, wheel_y, axle_z), 5)
+            for i in range(12):
+                a = math.tau*i/12
+                m.rod('wood', (x,wheel_y,axle_z),
+                      (x,wheel_y+(wheel_r-1)*math.cos(a),axle_z+(wheel_r-1)*math.sin(a)), 1.2, sides=4)
+    for x in (-22, 22):
+        m.box('wood', (x, 29, 48), (5, 8, 7))
     m.box('wood', (0, 32, 85), (5, 5, 78))
     m.rod('wood', (-28,32,119), (28,32,119), 2.4, sides=8)
     # Lona arqueada, costuras, aros de soporte y sogas en ambos laterales.

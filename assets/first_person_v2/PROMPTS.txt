@@ -1,0 +1,30 @@
+CAELUM ARGENTEUM — FIRST-PERSON V2 / 4.36.0d
+Fecha: 2026-09-17. Herramienta: OpenAI imagegen.
+Registro de los briefs usados; descripción de trabajo, no transcripción literal.
+
+1. PUÑOS CERRADOS
+Crear una imagen RGBA transparente con dos puños cerrados vistos en primera
+persona desde los ojos del jugador. Usar como referencia de estilo la hoja
+hands_grips.png aportada: cuero marrón, pequeñas placas de acero gastado sobre
+nudillos, tela roja y brazal metálico corto. Guardia baja, puño izquierdo y
+derecho separados, pulgares hacia dentro y gran espacio transparente central.
+Sólo manos y puños de manga cortos; sin arma, cuerpo ni brazos largos. Arte de
+fantasía oscura con textura pictórica/pixel art consistente con el paquete.
+Resultado: closed_fists.png, 1774×887, RGBA. El motor extrae cada mitad como
+DH09/DH10 y reduce con XScale/YScale=8.5. No se alteran píxeles del resultado.
+
+2. AGARRE IZQUIERDO DE ARCO
+Crear sólo mano izquierda y brazal corto sobre fondo transparente, con el
+mismo cuero, metal envejecido y tela roja de hands_grips.png. Usar la foto
+aportada de la mano como referencia de pose: ver el dorso por encima de un
+agarre horizontal, dedos curvados hacia delante/abajo y pulgar por debajo
+hacia la derecha. El arma no debe formar parte de la imagen porque es otra
+capa del motor. Mantener estilo nítido de fantasía oscura del paquete.
+Resultado: bow_left_grip.png, 1448×1086, RGBA. DH08 usa XScale/YScale=16 y
+se dibuja encima del arco. No se alteran píxeles del resultado.
+
+INTEGRACIÓN
+Reutilizar los PNG de armas y demás manos aportados sin reeditarlos. Invertir
+sólo hachuela, machete, hacha, hacha de guerra y alabarda mediante FlipX.
+Pivotes de fuente y colocación final: POSES.json. Archivo de ejecución que
+decide la pose: src/caelum/equipment/CaelumFirstPersonLayers.zs.

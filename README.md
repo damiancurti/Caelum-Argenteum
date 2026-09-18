@@ -4,34 +4,48 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
+**Current release: 4.36.0e.** Apply this source patch over the complete
+**4.36.0d** project, merge its folders and rebuild with `run_dev.bat`.
 
-**Current release: 4.36.0c.** Apply this source patch over the complete
-**4.36.0b** project, merge its folders and rebuild with `run_dev.bat`.
+Fists now reuse the same glove and extended visible forearm as the other
+weapons. Both sides share one source, mirrored by native TEXTURES. Punches
+keep the forearm connected to the screen edge. Both bows reuse the original
+hand set with matching proportions; the left hand renders behind the right.
 
-The lever is half its previous size, including in existing saves. Pressure
-plates now detect contact at the player's feet near their edge. Teleport
-rejections and actual rock mass/impact defenses are reported by the diagnostic.
-The large granite boulder weighs 38,170 kg; the existing impact model remains.
+Hatchet, axe, war axe and halberd lean to the right and seat their shafts in
+the right-hand grip. Sword artwork is 20% larger than in 0d; greatsword artwork
+is 15% larger. Hand size is independent of weapon size.
 
-The author's First-person v1 pack now supplies 19 active weapon families in
-three tiers through the real equipment selectors. The accepted sword rig stays
-active; the supplied sword variants are registered resources. Native overlays
-follow actual attacks, ammunition, aiming, reloading, casting and blocking.
+Both bow families have new complete wooden staves in three tiers. Native
+layers join the string to the limb tips and drawing hand. The arrow disappears
+on a real shot or when no arrow is loaded; aiming flexes the bow. The existing
+magazine, reload, damage and action callbacks still control the weapon.
 
-Event Audio v1 revision 1.4 is connected to levers, carriage/ship travel, tarot
-acquisition and rolling rocks. Source audio bytes are preserved. Carriage uses
-native crossfade, confirmed Fool travel uses burn, and ship travel uses melt.
-Sounds play after map audio cleanup; the user's global wipe preference is kept.
+The MAP01 guitar excerpt now plays on the first revelation of The Fool.
+The original level-up cue plays after the capture commits and grants its bonus.
+The author accepted the 0d travel transitions; their presentation is preserved.
 
-MAP01–08 WADs and previous actor/weapon state indices are preserved. Existing
-opened/spent mechanisms retain their state. Source art and audio masters are
-included under assets and are excluded from the playable PK3. Trap values are
-still test fixtures; campaign placement and balance remain open.
+The covered cart gains a front axle and two front wheels, for four wheels total.
+The ship has a non-solid boarding interaction volume facing the hull, so its
+center-screen Use hint can be reached without aiming only at the small sign.
+Existing vehicle parts are reused when loading a save.
 
-`netevent ca_debug_hazards_report` identifies **4.36.0c** and shows runtime data.
-See **PRUEBAS_4_36_0c.txt** for installation and focused acceptance checks.
+`netevent ca_debug_hazards_report` identifies **4.36.0e**.
+See **PRUEBAS_4_36_0e.txt** for installation and acceptance checks.
+
+Validation for this patch: source/resource structure, unchanged travel logic,
+source sprite identity, OBJ topology and reconstructed weapon-plane/model
+previews. **GZDoom was not run for 0e in this environment.** A complete base
+archive could not be recovered and no engine executable was available; the
+delta uses the latest recovered 0p/0c/0d versions of each changed source file.
+Compilation and gameplay acceptance in GZDoom 4.14.2/Windows remain pending.
 
 ## Implemented
+
+- Revised first-person grips, two-handed heavy weapons and shared holstering.
+- Original fallback fists, a dorsal left bow grip and smaller ground bullets.
+- Aimed Use hints and a repeatable, occupancy-checked gallery reset lever.
+- Visible native hub travel transitions with captured departure views.
 
 - Original two-state column/wall lever, larger bull and spherical hazard rocks.
 - Single-use explosive mines, safe local teleport traps and native ceiling crushers.
@@ -682,19 +696,18 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-Native GZDoom 4.14.2/Linux checks cover 60 weapon/tier equipment selections,
-attack/reload phases, pressure traps, impacts, audio events, confirmed travel
-and saved-state migration. Native screenshots cover first-person placement.
-The author's Windows 11 playtest and final visual/audio acceptance of 4.36.0c
-remain pending; follow **PRUEBAS_4_36_0c.txt**. V4.36 remains in progress.
+- Compile and run 4.36.0e in GZDoom 4.14.2 on Windows 11.
+- Confirm first-person grips, arm continuity, bow aiming/release and old saves.
+- Confirm discovery/capture cues, ship Use hint and four-wheel cart in MAP06/07.
+- The author's 0d travel-transition acceptance is preserved.
 
 ## Build and run
 
 Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_36_0c.txt** into the complete **4.36.0b** project, replacing matching
+**PRUEBAS_4_36_0d.txt** into the complete **4.36.0c** project, replacing matching
 files and keeping everything else. Rebuild the PK3 with the usual launcher;
 opening the previous PK3 keeps the previous code. The diagnostic
-`netevent ca_debug_hazards_report` must identify **4.36.0c**.
+`netevent ca_debug_hazards_report` must identify **4.36.0d**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

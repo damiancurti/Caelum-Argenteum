@@ -1,0 +1,56 @@
+{
+  "version": "4.36.0e",
+  "assets": [
+    {
+      "path": "src/graphics/caelum/first_person/v3/standard_bow.png",
+      "source": "OpenAI built-in image generation",
+      "generation_reference": "exec-a95a7244-3a1a-493a-b4f9-1750d5de2caf.png",
+      "sha256": "590d27125b70117a0b1bbebd3128faa9f72aa2245818f77aa85baef57403f91d",
+      "postprocessing": "none; native TEXTURES crops/scales only"
+    },
+    {
+      "path": "src/graphics/caelum/first_person/v3/longbow.png",
+      "source": "OpenAI built-in image generation",
+      "generation_reference": "exec-c6307d9c-1fb8-48b3-b684-85b3fc263ed8.png",
+      "sha256": "24cc0d3f0cb7a08432892ee91849383c0d5bcb49e1e4f95bfea56fe8aad4ffdb",
+      "postprocessing": "none; native TEXTURES crops/scales only"
+    },
+    {
+      "path": "src/graphics/caelum/first_person/v3/arrow.png",
+      "source": "OpenAI built-in image generation",
+      "generation_reference": "exec-8b8aafb1-23fb-4e8e-8a7d-ba939cf14074.png",
+      "sha256": "a7ea5aecd2029a82a51c58de649acbed44e6dbdeac3d3457577d1d94d776a3c1",
+      "postprocessing": "none; native TEXTURES crops/scales only"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/hands/FH00A0.png",
+      "source": "existing First Person v1 hand set",
+      "sha256": "c91f9efe3157732e00f19d5a59b4551140f1ca0a444dc81afed5ee7c96843f3d",
+      "postprocessing": "unchanged"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/hands/FH01A0.png",
+      "source": "existing First Person v1 hand set",
+      "sha256": "64e7ec2168408769db8b4602b2d8c0538018ea68d6913df317af01ed2bfda472",
+      "postprocessing": "unchanged"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/hands/FH03A0.png",
+      "source": "existing First Person v1 hand set",
+      "sha256": "a9d3559bffa221bd8f11a32141802a782ed848b3bb7aefe5e2b6140fe82e5215",
+      "postprocessing": "unchanged"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/hands/FH04A0.png",
+      "source": "existing First Person v1 hand set",
+      "sha256": "0e2ed5a32eb087fc18ca8b56da023e4a51dc6caf4b53105fba87c0b174bb72c5",
+      "postprocessing": "unchanged"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/hands/FH07A0.png",
+      "source": "existing First Person v1 hand set",
+      "sha256": "5bb4329d2bd52cebfc77013b0071308a0a7e028845fffa385ca0354a62f475cd",
+      "postprocessing": "unchanged"
+    }
+  ]
+}

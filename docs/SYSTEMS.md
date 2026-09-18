@@ -1,6 +1,112 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0c — 2026-09-17.
+Versión documental: 4.36.0e — 2026-09-18.
+
+## 4.36.0e — correcciones solicitadas tras probar 0d
+
+[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
+armas; izquierda y derecha provienen del mismo PNG original, reflejado por
+TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
+La izquierda queda en una capa anterior a la derecha. Tamaños de guante
+independientes del tamaño del arma.
+
+[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
+con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
+Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
+cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+
+[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
+Sonido original de level up al confirmar su captura y aplicar el bonus.
+[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+
+[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
+en total. En el barco, volumen de Usar no sólido frente al casco, además del
+cartel; el aviso permanece centrado y conserva los requisitos de embarque.
+Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+
+[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
+capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
+GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
+instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
+[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
+Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+
+## Correcciones vigentes 4.36.0d
+
+Primera persona: las familias corregidas usan CaelumFirstPersonLayerFrames,
+clase nueva con estados Weapon/Overlay, y capas 48–52. TEXTURES invierte el
+arma y define su punto de agarre sin invertir las manos. Las capas de apoyo
+de ballesta/carabina van detrás del arma; en arcos, la izquierda dorsal pasa
+delante. Una transformación común mantiene unidos arma y agarres durante el
+ataque. Al crear una capa se inicializa su posición anterior para impedir que
+interpole desde el origen; las manos de arco no se recrean cada tic.
+
+La espada usa ahora la misma vista de manos pequeñas que las demás familias.
+Sus antiguos estados permanecen en el mismo orden para cargar guardados;
+sus callbacks visuales retiran el rig antiguo y el HUD usa la presentación
+común de bloqueo. No se alteran callbacks de daño, escudo, Aire, Ánima,
+durabilidad, munición ni tiempos. Daga y magia conservan sus composiciones.
+
+El guardado aplica desplazamiento X = -0,85 × descenso nativo, además del
+descenso Y. Durante la bajada se conserva la familia saliente aunque cambie
+la selección del HUD. La carabina muestra B sólo durante retroceso real, C
+durante recarga y A en reposo, también vacía. Esto sustituye la fila histórica
+de 0c que asignaba B al arma vacía.
+
+Puños: CaelumUnarmedWeapon deriva de Weapon y tiene sus propios estados TNT1
+y capas de dos puños cerrados. Alterna derecha/izquierda; conserva el respaldo
+anterior de 22 tics, daño nativo aleatorio 2–20, alcance y factor PowerStrength.
+No utiliza sprites, puffs visibles ni sonidos de Doom; no agrega sonido de
+impacto nuevo. No es una nueva pieza del inventario RPG ni cambia su catálogo.
+EnsureUnarmedFallback entrega el respaldo cuando falta, retira Fist heredado
+y lo selecciona si no hay arma equipada utilizable. La limpieza narrativa del
+Limbo conserva su alcance y vuelve a obtener los puños al llegar a MAP02.
+
+Indicaciones: CaelumInteractionHint calcula una etiqueta de lectura en el
+mundo usando alcance, orientación y CheckSight. Resuelve la colisión auxiliar
+al vehículo o mesa real y respeta CanBoard/CanReach. HUDInteractionHint la
+dibuja sin activar Usar ni abrir menús. Mesas, sillas/camas y vehículos usan
+«Usar:»; las placas de presión indican «pisar». Mirar hacia otro lado o estar
+fuera de alcance retira el aviso. La munición de carabina caída normaliza su
+escala a 0,10 en Tick, sin cambiar masa, unidades ni iconos de inventario.
+
+| Viaje confirmado | Efecto | Clip existente |
+| --- | --- | --- |
+| MODE_CART y MODE_CARAVAN | Fundido cruzado nativo, 3 | caelum/travel/carriage |
+| MODE_SHIP | Derretido nativo, 1 | caelum/travel/ship |
+| El Loco | Quemado nativo, 2 | caelum/ui/map_transition |
+
+Transiciones de hub: NoWipe en g4.14.2 bloquea 35 presentaciones después de
+ChangeLevel. CaelumMenuAudio prepara CAJVIEW cerca del embarque y durante
+la cotización/diálogo, suspende su captura al salir y conserva esa vista
+durante las primeras 35 presentaciones de llegada. Después solicita el wipe
+nativo para que mezcle origen y destino distintos. CAJVIEW usa 960×540 y
+ajuste de aspecto según pantalla. La cámara es invisible, sin interacción.
+El audio se inicia después de la limpieza de canales. No se modifica wipetype,
+la pertenencia al hub, el reloj, el consumo ni la confirmación del viaje.
+Guardar/cargar descarta la presentación pendiente. Un cambio de mapa por
+consola no equivale a confirmar un viaje. La verificación local es individual;
+no supone validación adicional de cooperativo.
+
+Galería MAP08: CaelumHazardGallery.Prepare añade una palanca de reinicio en
+(1088,1088,0), TID 43620, y una runa de llegada en (1152,1664,0.5).
+MagicHazardRevision=2 permite incorporarlas a partidas anteriores sin duplicar
+actores ni rearmar automáticamente lo que ya estaba usado. El mecanismo 4
+continúa siendo la placa reutilizable en (2048,640,0.5), TID 43611; conserva
+destino libre, rechazo sin telefrag y protección de 35 tics. Una activación
+correcta confirma la llegada con mensaje y destello azul de 12 tics.
+
+CaelumHazardResetSwitch comprueba primero ocupación y techos en movimiento.
+Si falla, explica la causa sin modificar parcialmente la galería. Si procede,
+cierra la tapa del foso, restaura su cubierta, detiene y recoloca las rocas en
+sus posiciones iniciales, rearma mina/placas/aplastador y sube sus palancas.
+La propia palanca baja un segundo y vuelve a estar disponible. Se excluyen
+la tapa y las rocas propias de la consulta de ocupación para permitir ciclos
+repetidos. Se conservan los contadores históricos y se añade ResetCount.
+La masa grande de 38170 kg y las fórmulas de daño siguen sin cambios.
+
+Las secciones por versiones inferiores conservan el registro previo; los
+agarres, estados visuales y viajes descritos arriba sustituyen sus equivalentes.
 
 ## Integración y correcciones 4.36.0c
 

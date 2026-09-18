@@ -140,10 +140,7 @@ class CaelumHUDOverlay : EventHandler
     }
 
     ui bool IsDomingoSwordViewActive(CaelumPlayer localPlayer)
-    {
-        return localPlayer != null && localPlayer.player != null
-            && localPlayer.player.ReadyWeapon is 'CaelumSwordSelectorWeapon';
-    }
+    { return false; }
 
     // Presentación provisional en primera persona usando el mismo arte propio
     // del objeto. Sustituye el texto permanente de "arma activa" y mantiene

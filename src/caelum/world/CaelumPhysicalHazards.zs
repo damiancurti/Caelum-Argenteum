@@ -342,7 +342,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0c] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.0e] Peligros físicos y mágicos: mapa=%s", level.MapName);
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -371,6 +371,8 @@ class CaelumHazardDiagnostics : Object play
                     user.LastImpactArmorDefensePercent, user.LastImpactFinalDamage);
         }
         CaelumMagicHazardWorld.Report();
+        let reset=CaelumHazardResetSwitch(ThinkerIterator.Create("CaelumHazardResetSwitch").Next());
+        if(reset!=null)Console.Printf("Reinicio galería TID=%d usos=%d impedimento=%s",reset.tid,reset.ResetCount,CaelumHazardResetSwitch.BlockReason());
         if (count == 0) Console.Printf("La galería de peligros está en MAP08, conectada desde MAP05.");
     }
 }

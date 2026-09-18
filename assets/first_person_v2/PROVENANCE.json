@@ -1,0 +1,25 @@
+{
+  "version": "4.36.0d",
+  "date": "2026-09-17",
+  "style_reference": "assets/first_person_v1/masters/hands_grips.png",
+  "pose_reference": "Author supplied hand photograph, WhatsApp Image 2026-09-17 at 18.30.09.jpeg (bow grip only)",
+  "art_direction": "Damian Curti; corrections requested in the 4.36.0c playtest",
+  "external_stock_assets": false,
+  "doom_art_used": false,
+  "assets": [
+    {
+      "path": "src/graphics/caelum/first_person/v2/closed_fists.png",
+      "sha256": "6822fb723c55578ce08138a10826f94299ea7777d5d7491ffe15e3688dc30542",
+      "bytes": 614617,
+      "method": "OpenAI imagegen; generated RGBA source copied byte-for-byte",
+      "pixel_postprocessing": "none; native TEXTURES handles crop and scale"
+    },
+    {
+      "path": "src/graphics/caelum/first_person/v2/bow_left_grip.png",
+      "sha256": "ed08b2d549438b51b9bd39ac27d5d3e3f785132b1ed50117e1940e55cdee51bc",
+      "bytes": 879156,
+      "method": "OpenAI imagegen; generated RGBA source copied byte-for-byte",
+      "pixel_postprocessing": "none; native TEXTURES handles crop and scale"
+    }
+  ]
+}

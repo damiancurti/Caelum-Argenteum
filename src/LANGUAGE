@@ -3871,3 +3871,49 @@ CA_CRUSHER_TRAP = "Crusher trap";
 CA_MAGIC_MINE = "Mina mágica";
 CA_TELEPORT_TRAP = "Trampa de teletransporte";
 CA_CRUSHER_TRAP = "Trampa de aplastamiento";
+
+// 4.36.0d: interacción, puños y galería.
+
+[enu default]
+CA_UNARMED_NAME = "Fists";
+CA_USE_CART = "Use: caravan (covered cart)";
+CA_USE_SHIP = "Use: boat";
+CA_USE_TABLE = "Use: table";
+CA_USE_CHAIR = "Use: chair";
+CA_USE_BED = "Use: bed";
+CA_TRAPS_RESET_NAME = "Trap reset switch";
+CA_USE_TRAPS_RESET = "Use: reset traps";
+CA_TRAPS_RESET_MOVING = "Wait until the crusher returns before resetting.";
+CA_TRAPS_RESET_OCCUPIED = "Clear the pit and trap platforms before resetting.";
+CA_TRAPS_RESET_DONE = "Traps reset. Rocks and levers are back in place.";
+CA_USE_ROLLING_ROCK = "Use: 2 - rolling boulder";
+CA_USE_FALLING_ROCK = "Use: 3 - falling boulder";
+CA_USE_CRUSHER = "Use: 6 - ceiling crusher";
+CA_USE_SPENT = " (activated)";
+CA_HINT_PIT = "1 - Trapdoor: step on the cover";
+CA_HINT_TELEPORT = "4 - Teleport: step on the blue rune";
+CA_HINT_MINE = "5 - Explosive mine: pressure activated";
+CA_HINT_CRUSHER = "6 - Ceiling crusher: pressure or lever";
+CA_TRAP_TELEPORTED = "4 - Teleport: arrived at the opposite rune.";
+
+[es]
+CA_UNARMED_NAME = "Puños";
+CA_USE_CART = "Usar: caravana (carreta cubierta)";
+CA_USE_SHIP = "Usar: barco";
+CA_USE_TABLE = "Usar: mesa";
+CA_USE_CHAIR = "Usar: silla";
+CA_USE_BED = "Usar: cama";
+CA_TRAPS_RESET_NAME = "Palanca de reinicio de trampas";
+CA_USE_TRAPS_RESET = "Usar: reiniciar trampas";
+CA_TRAPS_RESET_MOVING = "Esperá a que el aplastador regrese para reiniciar.";
+CA_TRAPS_RESET_OCCUPIED = "Despejá el foso y las plataformas de las trampas para reiniciar.";
+CA_TRAPS_RESET_DONE = "Trampas reiniciadas. Rocas y palancas en su posición inicial.";
+CA_USE_ROLLING_ROCK = "Usar: 2 - roca rodante";
+CA_USE_FALLING_ROCK = "Usar: 3 - roca que cae";
+CA_USE_CRUSHER = "Usar: 6 - techo aplastador";
+CA_USE_SPENT = " (activado)";
+CA_HINT_PIT = "1 - Trampilla: pisar la tapa";
+CA_HINT_TELEPORT = "4 - Teletransporte: pisar la runa azul";
+CA_HINT_MINE = "5 - Mina explosiva: se activa al pisar";
+CA_HINT_CRUSHER = "6 - Techo aplastador: pisar o accionar la palanca";
+CA_TRAP_TELEPORTED = "4 - Teletransporte: llegaste a la runa del extremo opuesto.";

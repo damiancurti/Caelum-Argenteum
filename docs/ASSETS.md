@@ -1,6 +1,67 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0c — 2026-09-17.
+Versión documental: 4.36.0e — 2026-09-18.
+
+## 4.36.0e — correcciones solicitadas tras probar 0d
+
+[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
+armas; izquierda y derecha provienen del mismo PNG original, reflejado por
+TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
+La izquierda queda en una capa anterior a la derecha. Tamaños de guante
+independientes del tamaño del arma.
+
+[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
+con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
+Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
+cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+
+[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
+Sonido original de level up al confirmar su captura y aplicar el bonus.
+[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+
+[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
+en total. En el barco, volumen de Usar no sólido frente al casco, además del
+cartel; el aviso permanece centrado y conserva los requisitos de embarque.
+Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+
+[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
+capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
+GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
+instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
+[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
+Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+
+## Primera persona revisada — 4.36.0d
+
+Se mantienen byte a byte todos los PNG anteriores y todo el audio. TEXTURES
+reutiliza las armas originales sin manos como capas Dxxx, con FlipX sólo en
+hachuela, machete, hacha, hacha de guerra y alabarda. Los agarres y escalas
+pertenecen al controlador, no al archivo de imagen; se conservan los offsets
+grAb del paquete. La espada activa ahora las variantes suministradas con las
+manos pequeñas. El rig antiguo permanece como recurso compatible con saves.
+
+| Recurso original nuevo | Resolución RGBA | Uso |
+| --- | --- | --- |
+| closed_fists.png | 1774×887 | Puño izquierdo y derecho independientes |
+| bow_left_grip.png | 1448×1086 | Dorso de la mano izquierda sobre el arco |
+
+Los dos PNG se generan con imagegen usando hands_grips.png como referencia
+de guante, brazal, metal y tela roja. El segundo usa además la fotografía de
+la mano del autor. Se integran íntegros en src/graphics/caelum/first_person/v2;
+estos originales sí son fuentes de ejecución de TEXTURES y entran en el PK3.
+El recorte y escalado son nativos, sin redibujar los píxeles por script.
+DH08 usa XScale/YScale=16; DH09/DH10, 8,5. No contienen arte de Doom.
+
+assets/first_person_v2 conserva README, prompts de trabajo, procedencia,
+huellas, pivotes y colocación final de las capas. No duplica los PNG grandes.
+TEXTURES_4_36_0d.txt es el fragmento integrado; no debe cargarse una segunda
+vez. La nueva runa de llegada reutiliza CMNQ; el reinicio reutiliza columna y
+palanca CLVR a escala 0,045. No se incorporan sonidos adicionales.
+
+Las vistas se inspeccionan en el renderer nativo a 1024×768 y 960×540.
+El autor conserva la revisión final de agarres/proporciones en Windows 11.
+Las descripciones de 0c que conservaban el rig de espada son históricas;
+la solicitud de este parche autoriza sustituir su presentación activa.
 
 ## Recursos aportados e integrados — 4.36.0c
 

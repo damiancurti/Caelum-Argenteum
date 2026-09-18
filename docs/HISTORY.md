@@ -1,6 +1,63 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0c — 2026-09-17.
+Versión documental: 4.36.0e — 2026-09-18.
+
+## 4.36.0e — correcciones solicitadas tras probar 0d
+
+[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
+armas; izquierda y derecha provienen del mismo PNG original, reflejado por
+TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
+La izquierda queda en una capa anterior a la derecha. Tamaños de guante
+independientes del tamaño del arma.
+
+[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
+con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
+Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
+cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+
+[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
+Sonido original de level up al confirmar su captura y aplicar el bonus.
+[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+
+[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
+en total. En el barco, volumen de Usar no sólido frente al casco, además del
+cartel; el aviso permanece centrado y conserva los requisitos de embarque.
+Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+
+[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
+capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
+GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
+instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
+[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
+Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+
+## 4.36.0d — agarres, puños y reinicio de la galería (2026-09-17)
+
+- Se atienden las cuatro imágenes del autor: orientación de hojas, agarre de
+  hachuela, manos pequeñas, armas grandes con dos manos y posición baja de
+  ballesta/carabina/arcos. Daga y magia conservan el arte aprobado.
+- Capas nativas independientes corrigen lateralidad sin invertir las manos.
+  Todos los selectores reciben guardado hacia abajo a la izquierda. Espada
+  activa el arte nuevo sin mover sus antiguos índices de estados.
+- Carabina sin munición vuelve a reposo sin fogonazo. Balas de suelo a 0,10.
+- Dos imágenes originales: puños cerrados y agarre dorsal izquierdo del arco.
+  El respaldo propio sustituye Fist y se equipa al quedar sin arma, incluido
+  el regreso narrativo MAP01→MAP02. Mantiene el balance del respaldo anterior.
+- Avisos «Usar:» al apuntar a vehículos, mesas y sillas/camas al alcance.
+- Se reproduce el fallo visual de viajes: la comprobación de eventos de 0c
+  no detectó que NoWipe suprime el wipe del hub durante 35 presentaciones.
+  Se conserva la vista de salida durante ese bloqueo y después se ejecuta el
+  efecto nativo. Capturas de fotogramas confirman crossfade y melt reales.
+  MODE_CARAVAN también usa crossfade; el quemado aceptado sigue vigente.
+- Mecanismo 4 identificado como teletransporte, con mensaje/destello de llegada
+  y runa visible. Palanca lateral rearma la galería conservando contadores.
+  Comprobaciones previas impiden cerrar sobre ocupantes o duplicar un techo
+  móvil; dos ciclos completos de reinicio y reactivación pasan en el motor.
+- 60 selecciones reales de familia/tier, fases de combate/recarga, usos,
+  puños, viajes confirmados y migración de 0c verificadas en g4.14.2/Linux.
+  Capturas 4:3/16:9; ocho WAD y estados anteriores conservados.
+- Delta sobre 4.36.0c y PRUEBAS_4_36_0d.txt. Aceptación Windows pendiente;
+  4.36 permanece abierta y no se adelantan propuestas aún sin aprobar.
 
 ## 4.36.0c — vistas, sonidos y revisión de mecanismos (2026-09-17)
 

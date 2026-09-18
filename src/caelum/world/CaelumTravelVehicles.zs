@@ -51,6 +51,8 @@ class CaelumTravelVehicle : Actor
         for(int i=0;i<3;i++)if(!Part(i,i*40-40,0,0,27,64))ok=false;
         for(int i=0;i<2;i++)if(!Part(3+i,-12,i==0?-38:38,0,5,58))ok=false;
         for(int i=0;i<3;i++)if(!Part(5+i,72+i*20,0,28,4,8))ok=false;
+        // Segundo eje: ruedas delanteras sin rehacer las piezas existentes.
+        for(int i=0;i<2;i++)if(!Part(8+i,48,i==0?-38:38,0,5,50))ok=false;
         BoardingPoint=LocalPoint(70,-48,0);Ready=ok;return ok;
     }
     override void OnDestroy(){for(int i=0;i<32;i++)if(Parts[i]!=null)Parts[i].Destroy();Super.OnDestroy();}
@@ -74,6 +76,14 @@ class CaelumMerchantShip : CaelumTravelVehicle
                 if(!Part(row*3+col,along,(col-1)*(width-16),-32,16,62))ok=false;
         }
         if(!Part(30,0,-72,24,12,76))ok=false;
+        // Volumen de Usar frente al casco, además del cartel. No es sólido:
+        // amplía la superficie apuntable sin crear una pared invisible.
+        if(!Part(31,0,-24,24,48,96))ok=false;
+        if(Parts[31]!=null)
+        {
+            Parts[31].bSOLID=false;
+            Parts[31].bACTLIKEBRIDGE=false;
+        }
         BoardingPoint=LocalPoint(0,-104,24);Ready=ok;return ok;
     }
     Default { Height 312; Tag "$CA_JOURNEY_SHIP"; }

@@ -485,6 +485,10 @@ class CaelumMainM00QuestController : EventHandler
             CaelumMagicHazardWorld.Prepare();
             MagicHazardRevision = 1;
         }
+        if (MagicHazardRevision < 2)
+        {
+            CaelumHazardGallery.Prepare(); MagicHazardRevision=2;
+        }
         if (!TravelVehiclesPrepared)
             TravelVehiclesPrepared = CaelumVehicleWorld.Prepare();
         if (!DiningPrepared && level.maptime % TICRATE == 0)

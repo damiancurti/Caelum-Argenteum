@@ -34,6 +34,7 @@ class CaelumPlayer : DoomPlayer
     // Copias simples para que el HUD pueda leer el arma activa sin invocar
     // funciones de play scope desde el contexto de interfaz.
     bool HUDHasActiveWeapon;
+    String HUDInteractionHint;
     int HUDActiveWeaponType;
     int HUDActiveWeaponTier;
     int HUDActiveWeaponSize;
@@ -717,7 +718,7 @@ class CaelumPlayer : DoomPlayer
         // DoomPlayer. Entregar y retirar Pistol dentro de GiveDefaultInventory
         // dejaba PendingWeapon en WP_NOCHANGE durante PlayerReborn; el motor
         // copiaba luego ese centinela a ReadyWeapon y lo trataba como un arma.
-        Player.StartItem "Fist";
+        Player.StartItem "CaelumUnarmedWeapon";
 
         // Prefijo facial propio para evitar resolver iconos/rostros heredados de Doom.
         Player.Face "CAF";
@@ -3879,6 +3880,22 @@ class CaelumPlayer : DoomPlayer
     // Los selectores físicos conservan sus slots. Las armas mágicas se
     // agrupan por elemento: 6 Fuego, 7 Agua, 8 Tierra, 9 Aire y 0
     // Quintaesencia (el slot 0 representa la décima familia numérica).
+    // Puños propios: presencia permanente sin convertirlos en un objeto de Caja.
+    void EnsureUnarmedFallback()
+    {
+        if(player==null || !CharacterCreationComplete || health<=0) return;
+        let fists=Weapon(FindInventory("CaelumUnarmedWeapon"));
+        if(fists==null)fists=Weapon(GiveInventoryType("CaelumUnarmedWeapon"));
+        let legacy=FindInventory("Fist");
+        if(legacy!=null)legacy.Destroy();
+        bool active=WeaponModel!=null && WeaponModel.Equipped && WeaponModel.Durability>0
+            && HasEquippedNativeWeaponType(WeaponModel.WeaponType);
+        if(fists!=null && !active && player.ReadyWeapon!=fists
+            && (player.PendingWeapon==null || player.PendingWeapon==WP_NOCHANGE
+                || player.PendingWeapon.Owner!=self))
+            player.PendingWeapon=fists;
+    }
+
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
@@ -4479,7 +4496,8 @@ class CaelumPlayer : DoomPlayer
         bool hasActiveWeapon = WeaponModel != null
             && WeaponModel.Equipped
             && WeaponModel.Durability > 0
-            && HasEquippedNativeWeaponType(WeaponModel.WeaponType);
+            && HasEquippedNativeWeaponType(WeaponModel.WeaponType)
+            && !(player != null && player.ReadyWeapon is "CaelumUnarmedWeapon");
         int activeType = hasActiveWeapon ? WeaponModel.WeaponType : -1;
         int activeTier = hasActiveWeapon ? WeaponModel.Tier : 0;
         int activeSize = hasActiveWeapon
@@ -11629,7 +11647,7 @@ class CaelumPlayer : DoomPlayer
         int wipe = PendingTravelWipe;
         int cue = 0;
         if (mode == CaelumJourneyState.MODE_SHIP) { wipe=1; cue=2; }
-        else if (mode == CaelumJourneyState.MODE_CART) { wipe=3; cue=1; }
+        else if (mode == CaelumJourneyState.MODE_CART || mode == CaelumJourneyState.MODE_CARAVAN) { wipe=3; cue=1; }
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
         EquipmentMenuOpen = false;
@@ -14437,6 +14455,8 @@ class CaelumPlayer : DoomPlayer
         }
 
         RefreshEquipmentLoadIfNeeded();
+        EnsureUnarmedFallback();
+        HUDInteractionHint=CaelumInteractionHint.Find(self);
         SyncHUDActiveWeaponState();
 
         IsSpendingRunningAir = IsRunningOnGround();

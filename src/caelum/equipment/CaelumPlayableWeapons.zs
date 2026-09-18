@@ -348,8 +348,13 @@ class CaelumPhysicalSelectorWeapon : Weapon
     override void PSpriteTick(PSprite psp)
     {
         Super.PSpriteTick(psp);
-        // La espada conserva su rig aceptado y sus índices de estado.
-        if (psp.ID != PSP_WEAPON || self is 'CaelumSwordSelectorWeapon') return;
+        // Los índices antiguos se conservan para cargar partidas anteriores.
+        if (psp.ID != PSP_WEAPON) return;
+        if(self is 'CaelumSwordSelectorWeapon')
+        {
+            let user=CaelumPlayer(Owner);
+            if(user!=null)user.A_ClearOverlays(10,40);
+        }
         if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
         FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
     }
@@ -765,45 +770,14 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     action void A_CaelumSwordSelectView()
     {
-        bool hasShield = invoker.HasCaelumSwordViewShield();
-        invoker.CaelumSwordViewShieldVisible = hasShield;
-        // Ready detectará un Block que ya estuviera activo y pasará a H/I
-        // después de completar la breve aparición C/D.
-        invoker.CaelumSwordViewBlocking = false;
-        invoker.CaelumSwordViewAttacking = false;
-        invoker.CaelumSwordViewRotation = 18.0;
-
-        if (hasShield)
-        {
-            A_Overlay(10, "CA_SwordShieldSelect");
-            A_Overlay(20, "CA_SwordLeftSelect");
-        }
-        else
-        {
-            A_ClearOverlays(10, 10);
-            A_ClearOverlays(20, 20);
-        }
-        A_Overlay(25, "CA_SwordRightSelect");
-        A_Overlay(30, "CA_SwordBladeSelect");
-        A_Overlay(40, "CA_SwordFingersSelect");
-        A_CaelumSwordPlaceView();
+        // La vista usa ahora las manos pequeñas y el controlador compartido.
+        A_ClearOverlays(10,40);
     }
 
     action void A_CaelumSwordHolsterView()
     {
-        if (invoker.HasCaelumSwordViewShield())
-        {
-            A_Overlay(10, "CA_SwordShieldHolster");
-            A_Overlay(20, "CA_SwordLeftHolster");
-        }
-        A_Overlay(25, "CA_SwordRightHolster");
-        A_Overlay(30, "CA_SwordBladeHolster");
-        A_Overlay(40, "CA_SwordFingersHolster");
-        invoker.CaelumSwordViewShieldVisible = false;
-        invoker.CaelumSwordViewBlocking = false;
-        invoker.CaelumSwordViewAttacking = false;
-        invoker.CaelumSwordViewRotation = 18.0;
-        A_CaelumSwordPlaceView();
+        // La vista usa ahora las manos pequeñas y el controlador compartido.
+        A_ClearOverlays(10,40);
     }
 
     action void A_CaelumSwordClearView()
@@ -817,93 +791,14 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     action void A_CaelumSwordSyncView()
     {
-        CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
-        if (caelumPlayer == null)
-        {
-            A_CaelumSwordClearView();
-            return;
-        }
-
-        bool hasShield = caelumPlayer.HasActiveBlockSource();
-        bool isBlocking = hasShield && caelumPlayer.CombatBlockModeActive;
-
-        if (hasShield != invoker.CaelumSwordViewShieldVisible)
-        {
-            invoker.CaelumSwordViewShieldVisible = hasShield;
-            if (hasShield)
-            {
-                if (isBlocking)
-                {
-                    A_Overlay(10, "CA_SwordShieldBlock");
-                    A_Overlay(20, "CA_SwordLeftBlock");
-                    A_ClearOverlays(25, 25);
-                    A_ClearOverlays(30, 30);
-                    A_ClearOverlays(40, 40);
-                }
-                else
-                {
-                    A_Overlay(10, "CA_SwordShieldIdle");
-                    A_Overlay(20, "CA_SwordLeftIdle");
-                }
-            }
-            else
-            {
-                A_ClearOverlays(10, 10);
-                A_ClearOverlays(20, 20);
-            }
-        }
-
-        if (isBlocking != invoker.CaelumSwordViewBlocking)
-        {
-            invoker.CaelumSwordViewBlocking = isBlocking;
-            if (isBlocking)
-            {
-                A_CaelumSwordStartBlockView();
-            }
-            else
-            {
-                A_CaelumSwordStartIdleView();
-            }
-        }
-
-        // noOverride conserva la secuencia de ataque o H/I mientras esté
-        // activa y sólo reconstruye una capa si realmente faltara.
-        if (!isBlocking)
-        {
-            A_CaelumSwordEnsureBaseView();
-            if (hasShield)
-            {
-                A_Overlay(10, "CA_SwordShieldIdle", true);
-                A_Overlay(20, "CA_SwordLeftIdle", true);
-            }
-        }
-        A_CaelumSwordPlaceView();
+        // La vista usa ahora las manos pequeñas y el controlador compartido.
+        A_ClearOverlays(10,40);
     }
 
     action void A_CaelumSwordStartAttackView()
     {
-        invoker.CaelumSwordViewBlocking = false;
-        invoker.CaelumSwordViewAttacking = true;
-        invoker.CaelumSwordViewRotation = 18.0;
-        // La capa derecha se inicia al final: su primer estado coloca las
-        // tres piezas después de que espada y dedos ya existan.
-        A_Overlay(30, "CA_SwordBladeAttack");
-        A_Overlay(40, "CA_SwordFingersAttack");
-        A_Overlay(25, "CA_SwordRightAttack");
-
-        if (invoker.HasCaelumSwordViewShield())
-        {
-            A_Overlay(10, "CA_SwordShieldAttack");
-            A_Overlay(20, "CA_SwordLeftAttack");
-            invoker.CaelumSwordViewShieldVisible = true;
-        }
-        else
-        {
-            A_ClearOverlays(10, 10);
-            A_ClearOverlays(20, 20);
-            invoker.CaelumSwordViewShieldVisible = false;
-        }
-        A_CaelumSwordPlaceView();
+        // La vista usa ahora las manos pequeñas y el controlador compartido.
+        A_ClearOverlays(10,40);
     }
 
     action void A_CaelumSwordPrimaryView()
@@ -1143,8 +1038,13 @@ class CaelumMagicSelectorWeapon : Weapon
     override void PSpriteTick(PSprite psp)
     {
         Super.PSpriteTick(psp);
-        // La espada conserva su rig aceptado y sus índices de estado.
-        if (psp.ID != PSP_WEAPON || self is 'CaelumSwordSelectorWeapon') return;
+        // Los índices antiguos se conservan para cargar partidas anteriores.
+        if (psp.ID != PSP_WEAPON) return;
+        if(self is 'CaelumSwordSelectorWeapon')
+        {
+            let user=CaelumPlayer(Owner);
+            if(user!=null)user.A_ClearOverlays(10,40);
+        }
         if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
         FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
     }

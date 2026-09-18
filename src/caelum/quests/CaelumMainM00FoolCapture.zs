@@ -164,7 +164,8 @@ class CaelumM00FoolEssence : Actor
             record.MainM00FoolRevealed = true;
             user.RefreshSocialJournalSnapshot();
             user.PersistCharacterState();
-            user.A_StartSound("caelum/stock/reveal_sting", CHAN_6, CHANF_LOCAL | CHANF_UI, 0.65, ATTN_NONE);
+            // El acorde acompaña la primera revelación, no la recompensa.
+            EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_reveal");
         }
         SetRevealed(true);
         return true;

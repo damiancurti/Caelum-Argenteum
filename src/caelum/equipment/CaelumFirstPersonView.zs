@@ -485,27 +485,28 @@ class CaelumFirstPersonView : Object play
 
     void Hide(CaelumPlayer user)
     {
-        if (user != null) user.A_ClearOverlays(LAYER, LAYER);
+        if (user != null) CaelumFirstPersonLayers.Clear(user);
         Initialized = false; AttackLength = 0;
     }
 
     void Update(Weapon selector, CaelumPlayer user, PSprite baseView)
     {
         if (user == null || user.player == null) return;
+        bool outgoing=Initialized && user.player.PendingWeapon!=null
+            && user.player.PendingWeapon!=WP_NOCHANGE && user.player.PendingWeapon!=selector;
         if (selector != user.player.ReadyWeapon || user.health <= 0
             || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.EquipmentMenuOpen || user.CraftingMenuOpen
-            || !user.HUDHasActiveWeapon || CaelumRestState.IsActive(user)
+            || (!user.HUDHasActiveWeapon && !outgoing) || CaelumRestState.IsActive(user)
             || user.ForcedSleepTics > 0)
         { Hide(user); return; }
-        int kind = user.HUDActiveWeaponType;
-        if (kind < 0 || kind >= CaelumConstants.WEAPON_TYPE_COUNT
-            || kind == CaelumConstants.WEAPON_TYPE_SWORD)
+        int kind = outgoing ? WeaponType : user.HUDActiveWeaponType;
+        if (kind < 0 || kind >= CaelumConstants.WEAPON_TYPE_COUNT)
         { Hide(user); return; }
-        if (!Initialized || ItemId != user.HUDActiveWeaponItemId
-            || WeaponType != kind || Tier != user.HUDActiveWeaponTier || ViewMap != level.MapName)
+        if (!Initialized || (!outgoing && (ItemId != user.HUDActiveWeaponItemId
+            || WeaponType != kind || Tier != user.HUDActiveWeaponTier)) || ViewMap != level.MapName)
         {
-            user.A_ClearOverlays(LAYER, LAYER);
+            CaelumFirstPersonLayers.Clear(user);
             ItemId=user.HUDActiveWeaponItemId; WeaponType=kind; Tier=user.HUDActiveWeaponTier;
             PreviousCooldown=user.EquippedWeaponCooldownRemaining;
             PreviousCastCompleted=user.LastStaffCastCompleted;
@@ -525,8 +526,8 @@ class CaelumFirstPersonView : Object play
         { AttackFrame=0; AttackLength=8; AttackSide=1; }
         PreviousCooldown=user.EquippedWeaponCooldownRemaining;
         PreviousCastCompleted=user.LastStaffCastCompleted;
-        bool attack = AttackLength > 0 && AttackFrame < AttackLength;
-        bool blocking = user.CombatBlockModeActive && user.HasActiveBlockSource();
+        bool attack = !outgoing && AttackLength > 0 && AttackFrame < AttackLength;
+        bool blocking = !outgoing && user.CombatBlockModeActive && user.HasActiveBlockSource();
         bool reloading = ranged && user.RangedReloadActive && user.RangedReloadWeaponType == kind;
         int magazine = ranged ? user.GetRangedMagazineCount(kind) : 0;
         int phase = 0;
@@ -536,7 +537,7 @@ class CaelumFirstPersonView : Object play
         else if (kind == CaelumConstants.WEAPON_TYPE_CROSSBOW)
             phase = reloading ? 2 : magazine <= 0 || attack ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_CARBINE)
-            phase = reloading ? 2 : magazine <= 0 || attack ? 1 : 0;
+            phase = reloading ? 2 : attack ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_BOOK)
             phase = blocking || baseView.y > WEAPONTOP + 1 ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS)
@@ -546,6 +547,7 @@ class CaelumFirstPersonView : Object play
         let view = user.player.GetPSprite(LAYER);
         if (view == null) return;
         if (view.CurState != pose) view.SetState(pose);
+        view.scale=(1,1);
         view.bAddWeapon = false;
         view.bAddBob = true;
         view.bPivotPercent = true;
@@ -580,6 +582,16 @@ class CaelumFirstPersonView : Object play
             dy += kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS ? -12 : 18;
             AttackLength=0;
         }
+        double lower=Max(0.0,baseView.y-WEAPONTOP);
+        // Guardado hacia abajo y a la izquierda para todas las familias.
+        dx-=lower*0.85;
+        if(CaelumFirstPersonLayers.Handles(kind))
+        {
+            CaelumFirstPersonLayers.Draw(user,kind,Tier,phase,baseView.x+dx,lower+dy,rotation);
+            if(attack)AttackFrame++;
+            return;
+        }
+        user.A_ClearOverlays(46,49); user.A_ClearOverlays(51,52);
         view.x=160 + baseView.x + dx;
         view.y=32 + Max(0.0,baseView.y-WEAPONTOP) + dy;
         view.rotation=rotation;

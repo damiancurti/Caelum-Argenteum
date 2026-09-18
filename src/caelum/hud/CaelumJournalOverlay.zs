@@ -1913,6 +1913,11 @@ class CaelumJournalOverlay : EventHandler
         if (menuactive != 0 || localPlayer.CreationWizardOpen || !localPlayer.CharacterCreationComplete
             || localPlayer.health <= 0 || localPlayer.CraftingMenuOpen
             || (localPlayer.player.ConversationNPC != null && localPlayer.player.ConversationNPC.bInConversation)) return;
+        if(localPlayer.HUDInteractionHint!="")
+        {
+            DrawCenteredText(SmallFont,Font.CR_GOLD,320,214,localPlayer.HUDInteractionHint);
+            return;
+        }
         let gates = ThinkerIterator.Create("CaelumSewerTravelGate");
         CaelumSewerTravelGate gate;
         CaelumSewerTravelGate nearest;

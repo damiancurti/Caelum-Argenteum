@@ -623,7 +623,7 @@ class CaelumCarbineAmmo : Ammo
     {
         Inventory.Icon "graphics/caelum/icons/ca_carbine_ammo.png";
         Inventory.Amount 20;
-        Scale 0.25;
+        Scale 0.10;
         Inventory.MaxAmount 2147483647;
         Inventory.InterHubAmount 2147483647;
         Inventory.PickupSound "caelum/items/pickup";
@@ -655,6 +655,7 @@ class CaelumCarbineAmmo : Ammo
         if (Owner != null) { return; }
         String visual = "CCAA";
         int ammoType = GetAmmoType();
+        if(ammoType==CaelumConstants.AMMUNITION_CARBINE)Scale=(0.10,0.10);
         if (ammoType == CaelumConstants.AMMUNITION_ARROW) visual = "CARR";
         else if (ammoType == CaelumConstants.AMMUNITION_BOLT) visual = "CBOL";
         else if (ammoType >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE)

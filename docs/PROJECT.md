@@ -1,8 +1,81 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0c — 2026-09-17.
+Versión documental: 4.36.0e — 2026-09-18.
 
-## Estado actual: 4.36.0c — primera persona, audio y correcciones
+## 4.36.0e — correcciones solicitadas tras probar 0d
+
+[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
+armas; izquierda y derecha provienen del mismo PNG original, reflejado por
+TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
+La izquierda queda en una capa anterior a la derecha. Tamaños de guante
+independientes del tamaño del arma.
+
+[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
+con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
+Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
+cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+
+[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
+Sonido original de level up al confirmar su captura y aplicar el bonus.
+[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+
+[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
+en total. En el barco, volumen de Usar no sólido frente al casco, además del
+cartel; el aviso permanece centrado y conserva los requisitos de embarque.
+Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+
+[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
+capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
+GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
+instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
+[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
+Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+
+## Base anterior: 4.36.0d — agarres, puños y mecanismos visibles
+
+Delta sobre el proyecto completo 4.36.0c. Se atienden las observaciones del
+autor y sus cuatro referencias adjuntas. Daga y armas mágicas conservan el arte
+aprobado. Se invierte sólo el arma en hachuela, machete, hacha, hacha de guerra
+y alabarda; las manos conservan su lateralidad. La hachuela se toma más abajo
+del mango. Hacha, espadón, hacha de guerra y alabarda aumentan de tamaño; las
+tres últimas muestran dos manos. La espada adopta las manos pequeñas del
+paquete nuevo. Todas las familias bajan hacia la izquierda al guardarse.
+
+Ballesta y carabina se presentan más abajo, con las manos por debajo y el apoyo
+izquierdo centrado. La carabina vacía usa reposo, sin fogonazo permanente.
+Ambos arcos bajan y muestran el dorso de la mano izquierda sobre el agarre,
+siguiendo la fotografía. Se generan ese agarre y un par de puños cerrados
+propios; las demás correcciones usan transformaciones nativas del arte existente.
+Las balas en el suelo reducen su escala de 0,25 a 0,10, incluidas las guardadas.
+
+CaelumUnarmedWeapon reemplaza el respaldo Fist. Se equipa al quedar sin arma
+utilizable y después de la limpieza de objetos de MAP01→MAP02. Conserva el
+alcance, daño y cadencia del respaldo anterior, con presentación propia; no
+añade una familia de equipo ni modifica el balance de las armas del catálogo.
+
+Mirar una caravana/carreta, barco, mesa o silla al alcance muestra «Usar:» y
+su nombre. El mecanismo 4 se identifica como teletransporte local y confirma
+la llegada mediante mensaje, destello y runa de destino. Una palanca lateral
+de MAP08 rearma la galería, también en guardados de 0c; rechaza el reinicio si
+el aplastador se mueve o hay cuerpos en las zonas que debe restaurar.
+
+Se reproduce la ausencia visual de viajes del hub: GZDoom g4.14.2 suprime los
+wipes durante las primeras 35 presentaciones. El parche conserva la vista de
+salida durante ese bloqueo y ejecuta después el fundido cruzado nativo de
+carreta/caravana o el derretido del barco. Las capturas del renderer confirman
+ambos efectos. Se conserva el quemado aceptado de El Loco, las provisiones,
+el tiempo de viaje, los clips de sonido y la preferencia global wipetype.
+
+Validación: GZDoom g4.14.2/Linux, 60 selecciones de familia/tier, acciones y
+recargas reales, retorno narrativo con puños, dos reinicios de trampas, usos,
+viajes confirmados y carga de un guardado auténtico de 0c. Se revisa el dibujo
+nativo en 4:3 y 16:9. Los ocho WAD y los bloques de estados previos se conservan.
+La aceptación visual/jugable final en Windows 11 queda para el autor;
+PRUEBAS_4_36_0d.txt acompaña la entrega. 4.36 sigue abierta y la runa de
+inmovilización continúa solamente a revisión. Las secciones siguientes son
+historial y no sustituyen estas correcciones vigentes.
+
+## Historial: 4.36.0c — primera persona, audio y correcciones
 
 Delta sobre el proyecto completo 4.36.0b. El autor acepta el diseño de la palanca
 y pide la mitad de tamaño, informa que el mecanismo 4 no se activó y consulta
@@ -39,7 +112,7 @@ Las pruebas se ejecutan en GZDoom g4.14.2/Linux; la aceptación jugable, visual
 y de mezcla en Windows 11 corresponde al autor. Guía: PRUEBAS_4_36_0c.txt.
 La etapa 4.36 continúa abierta; la runa de inmovilización sigue sólo a revisión.
 
-## Estado actual: 4.36.0b — trampas, palancas y presentación
+## Historial: 4.36.0b — trampas, palancas y presentación
 
 Delta sobre el proyecto completo 4.36.0a. El autor confirma correctas las demás
 pruebas de 0a y pide corregir el tamaño del toro y de las rocas. Aprueba minas

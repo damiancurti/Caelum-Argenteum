@@ -1,5 +1,58 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.36.0c — 2026-09-17.
+Versión documental: 4.36.0e — 2026-09-18.
+
+## 4.36.0e — correcciones solicitadas tras probar 0d
+
+[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
+armas; izquierda y derecha provienen del mismo PNG original, reflejado por
+TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
+La izquierda queda en una capa anterior a la derecha. Tamaños de guante
+independientes del tamaño del arma.
+
+[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
+con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
+Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
+cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+
+[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
+Sonido original de level up al confirmar su captura y aplicar el bonus.
+[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+
+[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
+en total. En el barco, volumen de Usar no sólido frente al casco, además del
+cartel; el aviso permanece centrado y conserva los requisitos de embarque.
+Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+
+[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
+capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
+GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
+instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
+[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
+Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+
+4.36.0d — PUÑOS AL REGRESAR Y CORRECCIONES DE PRESENTACIÓN
+
+El autor aprueba daga, magia y quemado, y pide corregir agarres, orientación y
+proporciones de las demás armas. Se aplican mediante capas nativas, con puños
+cerrados y mano dorsal de arco originales. La espada usa las manos pequeñas;
+el guardado hacia abajo a la izquierda se extiende al resto de las familias.
+
+La limpieza de objetos del Limbo al salir con El Loco mantiene las condiciones
+narrativas, la primera arma fabricada conservada dentro de la Caja, recursos
+y Voz de llegada. CaelumUnarmedWeapon restaura y equipa los puños propios en
+MAP02 cuando no hay arma equipada. No entrega una segunda arma del catálogo
+ni extrae automáticamente la que quedó guardada en la Caja.
+
+El quemado MAP01→MAP02 y el sonido de adquisición de El Loco mantienen las
+reglas aceptadas. En carreta/caravana y barco se corrige el bloqueo visual de
+transiciones del hub: fundido cruzado y derretido se ven en el renderer nativo.
+No se modifica la duración del viaje ni el consumo de provisiones.
+
+Mirar mesas, sillas/camas y vehículos al alcance muestra «Usar:» y su nombre.
+MAP08 agrega una palanca lateral que reinicia sus trampas; el mecanismo 4 es
+teletransporte local y ahora identifica origen/llegada. Siguen siendo ensayos
+de la galería, sin colocaciones narrativas nuevas dentro de la mansión.
+Los ocho WAD permanecen idénticos. Instalación y revisión: PRUEBAS_4_36_0d.txt.
 
 4.36.0c — PRIMERA PERSONA, AUDIO Y VIAJE CON EL LOCO
 
