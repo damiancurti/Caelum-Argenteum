@@ -1,4 +1,4 @@
-// Presentación modular 4.36.0h. Pivotes absolutos y lienzos NoTrim;
+// Presentación modular 4.36.0i. Pivotes absolutos y lienzos NoTrim;
 // los callbacks de daño y munición permanecen en el arma real.
 class CaelumFirstPersonLayerFrames : Actor
 {
@@ -312,6 +312,24 @@ class CaelumFirstPersonLayerFrames : Actor
     Hand_12:
         DH12 A -1;
         Stop;
+    FlailHandle_1:
+        GFS1 A -1;
+        Stop;
+    FlailChain_1:
+        GFC1 A -1;
+        Stop;
+    FlailHandle_2:
+        GFS2 A -1;
+        Stop;
+    FlailChain_2:
+        GFC2 A -1;
+        Stop;
+    FlailHandle_3:
+        GFS3 A -1;
+        Stop;
+    FlailChain_3:
+        GFC3 A -1;
+        Stop;
     }
 }
 
@@ -357,24 +375,24 @@ class CaelumFirstPersonLayers : Object play
             case 108: return (76.000000000, 104.000000000);
             case 111: return (76.000000000, 104.000000000);
             case 114: return (76.000000000, 104.000000000);
-            case 126: return (50.666666667, 85.000000000);
-            case 127: return (50.666666667, 85.000000000);
-            case 128: return (50.666666667, 85.000000000);
-            case 129: return (35.500000000, 85.000000000);
-            case 130: return (35.500000000, 85.000000000);
-            case 131: return (35.500000000, 85.000000000);
-            case 132: return (27.000000000, 85.000000000);
-            case 133: return (27.000000000, 85.000000000);
-            case 134: return (27.000000000, 85.000000000);
-            case 135: return (56.734693878, 104.081632653);
-            case 136: return (56.734693878, 104.081632653);
-            case 137: return (56.734693878, 104.081632653);
-            case 138: return (44.081632653, 104.081632653);
-            case 139: return (44.081632653, 104.081632653);
-            case 140: return (44.081632653, 104.081632653);
-            case 141: return (37.755102041, 104.081632653);
-            case 142: return (37.755102041, 104.081632653);
-            case 143: return (37.755102041, 104.081632653);
+            case 126: return (101.333333334, 85.000000000);
+            case 127: return (101.333333334, 85.000000000);
+            case 128: return (101.333333334, 85.000000000);
+            case 129: return (71.000000000, 85.000000000);
+            case 130: return (71.000000000, 85.000000000);
+            case 131: return (71.000000000, 85.000000000);
+            case 132: return (54.000000000, 85.000000000);
+            case 133: return (54.000000000, 85.000000000);
+            case 134: return (54.000000000, 85.000000000);
+            case 135: return (113.469387756, 104.081632653);
+            case 136: return (113.469387756, 104.081632653);
+            case 137: return (113.469387756, 104.081632653);
+            case 138: return (88.163265306, 104.081632653);
+            case 139: return (88.163265306, 104.081632653);
+            case 140: return (88.163265306, 104.081632653);
+            case 141: return (75.510204082, 104.081632653);
+            case 142: return (75.510204082, 104.081632653);
+            case 143: return (75.510204082, 104.081632653);
             case 144: return (166.000000000, 170.000000000);
             case 145: return (166.000000000, 170.000000000);
             case 146: return (166.000000000, 170.000000000);
@@ -525,13 +543,30 @@ class CaelumFirstPersonLayers : Object play
             sourceAngle-VectorAngle(direction.X,direction.Y*1.2),false);
     }
 
+    static void Flail(CaelumPlayer user,int tier,Vector2 grip,double rotation,double chainTurn)
+    {
+        tier=Clamp(tier,1,3);
+        double handleAngle=rotation-39.5;
+        vector2 joint=(213,61), originalGrip=(235,158);
+        // Hundir medio tramo expuesto bajo el guante por el eje del mango.
+        vector2 handlePosition=grip-Turn((joint-originalGrip)*0.50,handleAngle);
+        vector2 chainPosition=handlePosition+Turn(joint-originalGrip,handleAngle);
+        let frames=GetDefaultByType("CaelumFirstPersonLayerFrames");
+        State handle=frames.FindStateByString(String.Format("FlailHandle_%d",tier));
+        State chain=frames.FindStateByString(String.Format("FlailChain_%d",tier));
+        // Eje anilla-centro de bola vertical; no hereda el giro del mango.
+        double hangingAngle=VectorAngle(-29,77*1.2)-90.0;
+        Place(user,46,chain,chainPosition,joint,1.0,hangingAngle+chainTurn,false);
+        Place(user,50,handle,handlePosition,originalGrip,1.0,handleAngle,false);
+    }
+
     static void Draw(CaelumPlayer user,int kind,int tier,int phase,
-        double dx,double dy,double rotation)
+        double dx,double dy,double rotation,double chainTurn=0)
     {
         // Sólo crece el arma: las manos conservan las proporciones de la daga.
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==14 || kind==15;
-        if(!bow){user.A_ClearOverlays(46,47);user.A_ClearOverlays(53,53);}
+        if(!bow){user.A_ClearOverlays(kind==8?47:46,47);user.A_ClearOverlays(53,53);}
         bool large=kind==10 || kind==11 || kind==12;
         bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
@@ -569,12 +604,13 @@ class CaelumFirstPersonLayers : Object play
         }
         // Signo comprobado en hw_weapon.cpp de GZDoom 4.14.2: negativo
         // lleva la punta hacia la derecha; positivo, hacia la izquierda.
-        // Mangual: 90° horario respecto de 0g, +28° - 90° = -62°.
+        // Mangual: -62° + 22,5° = -39,5°; su cadena va en una capa aparte.
         // Su agarre se centra para mantener toda la cadena dentro del encuadre.
-        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?-62.0:0.0);
+        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?-39.5:0.0);
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=(4,3);
-        if(kind==7 || kind==12)
+        if(kind==8)Flail(user,tier,grip,rotation,chainTurn);
+        else if(kind==7 || kind==12)
             SegmentedWeapon(user,kind,tier,weaponGrip,size,weaponRotation);
         else
             Place(user,50,Pose(kind,tier,phase),weaponGrip,Pivot(kind*9+(Clamp(tier,1,3)-1)*3+phase),size,weaponRotation);

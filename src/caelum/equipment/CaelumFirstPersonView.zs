@@ -587,7 +587,8 @@ class CaelumFirstPersonView : Object play
         dx-=lower*0.85;
         if(CaelumFirstPersonLayers.Handles(kind))
         {
-            CaelumFirstPersonLayers.Draw(user,kind,Tier,phase,baseView.x+dx,lower+dy,rotation);
+            CaelumFirstPersonLayers.Draw(user,kind,Tier,phase,baseView.x+dx,lower+dy,rotation,
+                kind==8 && attack && !blocking ? (AttackFrame+1)*360.0/Max(1,AttackLength) : 0.0);
             if(attack)AttackFrame++;
             return;
         }

@@ -1,0 +1,5 @@
+GZDoom g4.14.2 / Linux / Freedoom 0.13.0; automated QA addon.
+QA_TABLES: 6 food=94 capacity=94
+QA_PASS: todas las mesas de MAP01 completas
+QA_FAILURES: 0
+QA_DONE

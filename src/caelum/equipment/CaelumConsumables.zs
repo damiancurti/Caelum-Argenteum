@@ -92,7 +92,7 @@ class CaelumConsumableItem : PowerupGiver
                     let user = CaelumPlayer(Owner);
                     if (user != null && user.DerivedStats != null)
                         power.WaterRecoveryPerPulse = CaelumConstants.WATER_RATION_LITERS
-                            * 500.0 / Max(1, user.DerivedStats.BaseMass);
+                            * CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE / Max(1, user.DerivedStats.BaseMass);
                 }
             }
         }
@@ -345,14 +345,14 @@ class CaelumWaterContainer : CaelumConsumableItem
         // Un sorbo cubre diez puntos de Sed según la masa corporal, sin equipo.
         // Si queda menos agua, sólo recupera la proporción realmente bebida.
         double bodyMass = Max(1, user.DerivedStats.BaseMass);
-        double amount = Min(bodyMass / 500.0, WaterLiters);
+        double amount = Min(bodyMass / CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE, WaterLiters);
         let power = CaelumRegenerationPower(user.GiveInventoryType("CaelumThirstRegeneration"));
         if (power == null) power = CaelumRegenerationPower(user.FindInventory("CaelumThirstRegeneration"));
         if (power == null) return false;
         power.EffectTics = CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * TICRATE;
         power.PulseTics = 0;
         power.SeatedMealSubTics = 0;
-        power.WaterRecoveryPerPulse = amount * 500.0 / bodyMass;
+        power.WaterRecoveryPerPulse = amount * CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE / bodyMass;
         WaterLiters = Max(0.0, WaterLiters - amount);
         if (WaterLiters < 0.000001) WaterLiters = 0;
         CaelumMainM00RonnieTrial.RecordNeedsUse(user, CaelumConstants.CONSUMABLE_WATER_RATION);

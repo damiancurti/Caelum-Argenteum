@@ -1,6 +1,30 @@
 # Caelum Argenteum — Historial consolidado
 
-Versión documental: 4.36.0h — 2026-09-18.
+Versión documental: 4.36.0i — 2026-09-20.
+
+
+## 4.36.0i — peso aprobado, provisiones y laberinto completo
+
+- Base completa recuperada del commit 1ed8e8d543ab19dbc1ca38dc438e61df5363681e.
+- Revisión pedida del mangual: +22,5° antihorario, medio mango dentro del guante,
+  cadena y bola detrás, reposo vertical y ataque con revolución antihoraria.
+- Doble grosor de ambos arcos sólo en primera persona, conservando lo aceptado.
+- Raciones de 200 g; agua 200 ml. Calibración de 2 kg/2 L para 80 kg.
+- Mesas de MAP01 a capacidad completa (94 unidades), con asignación única.
+- Activada la fórmula de peso quieto tras la aprobación explícita del autor:
+  exceso sobre capacidad, vida porcentual, soporte nativo y reparto de pilas.
+- MAP02 reconstruido con autorización para cambiar guardados: 147 salas,
+  96 Mandingas, 45 trampas, tres llaves, 39 cofres y 195 piezas de equipo.
+- 120 raciones de comida y 120 de agua; Zupay final, 1 de Copas y costa.
+- Nuevas llaves integradas al inventario; botín por recogida nativa; carta
+  persistente y salida condicionada. Retorno del hub a la cámara final.
+- README y los cinco documentos canónicos actualizados; guía 0i separada.
+
+Compilación y pruebas nativas ejecutadas en GZDoom g4.14.2/Linux con Freedoom
+0.13.0 de desarrollo. Las pruebas anteriores aceptadas por el autor siguen
+cerradas; queda la aceptación de este incremento y el recorrido Windows.
+No se declara terminado todo el roadmap físico de 4.36.
+
 
 ## 4.36.0h — giro de 90°, máscara indicada y daño porcentual
 

@@ -3285,180 +3285,180 @@ Sprite "D113A0", 320, 140
 Sprite "D161A0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 304, 510
-    Graphic "CA_SB_MUTED", 0, 0
+    Graphic "CA_SB_THICK_1", 0, 0
 }
 
 
 Sprite "D162A0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 213, 510
-    Graphic "CA_SB_MUTED", -512, 0
+    Graphic "CA_SB_THICK_2", 0, 0
 }
 
 
 Sprite "D163A0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 162, 510
-    Graphic "CA_SB_MUTED", -1024, 0
+    Graphic "CA_SB_THICK_3", 0, 0
 }
 
 
 Sprite "D161B0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 304, 510
-    Graphic "CA_SB_MUTED", 0, 0
+    Graphic "CA_SB_THICK_1", 0, 0
 }
 
 
 Sprite "D162B0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 213, 510
-    Graphic "CA_SB_MUTED", -512, 0
+    Graphic "CA_SB_THICK_2", 0, 0
 }
 
 
 Sprite "D163B0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 162, 510
-    Graphic "CA_SB_MUTED", -1024, 0
+    Graphic "CA_SB_THICK_3", 0, 0
 }
 
 
 Sprite "D161C0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 304, 510
-    Graphic "CA_SB_MUTED", 0, 0
+    Graphic "CA_SB_THICK_1", 0, 0
 }
 
 
 Sprite "D162C0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 213, 510
-    Graphic "CA_SB_MUTED", -512, 0
+    Graphic "CA_SB_THICK_2", 0, 0
 }
 
 
 Sprite "D163C0", 512, 1024
 {
     NoTrim
-    XScale 6.0
+    XScale 3.00
     YScale 6.0
     Offset 162, 510
-    Graphic "CA_SB_MUTED", -1024, 0
+    Graphic "CA_SB_THICK_3", 0, 0
 }
 
 
 Sprite "D171A0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 278, 510
-    Graphic "CA_LB_MUTED", 0, 0
+    Graphic "CA_LB_THICK_1", 0, 0
 }
 
 
 Sprite "D172A0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 216, 510
-    Graphic "CA_LB_MUTED", -512, 0
+    Graphic "CA_LB_THICK_2", 0, 0
 }
 
 
 Sprite "D173A0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 185, 510
-    Graphic "CA_LB_MUTED", -1024, 0
+    Graphic "CA_LB_THICK_3", 0, 0
 }
 
 
 Sprite "D171B0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 278, 510
-    Graphic "CA_LB_MUTED", 0, 0
+    Graphic "CA_LB_THICK_1", 0, 0
 }
 
 
 Sprite "D172B0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 216, 510
-    Graphic "CA_LB_MUTED", -512, 0
+    Graphic "CA_LB_THICK_2", 0, 0
 }
 
 
 Sprite "D173B0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 185, 510
-    Graphic "CA_LB_MUTED", -1024, 0
+    Graphic "CA_LB_THICK_3", 0, 0
 }
 
 
 Sprite "D171C0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 278, 510
-    Graphic "CA_LB_MUTED", 0, 0
+    Graphic "CA_LB_THICK_1", 0, 0
 }
 
 
 Sprite "D172C0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 216, 510
-    Graphic "CA_LB_MUTED", -512, 0
+    Graphic "CA_LB_THICK_2", 0, 0
 }
 
 
 Sprite "D173C0", 512, 1024
 {
     NoTrim
-    XScale 4.9
+    XScale 2.45
     YScale 4.9
     Offset 185, 510
-    Graphic "CA_LB_MUTED", -1024, 0
+    Graphic "CA_LB_THICK_3", 0, 0
 }
 
 
@@ -4307,4 +4307,4476 @@ Sprite "DH12A0", 320, 200
     Graphic "CA_BOW_MIDDLE", 138, 135
     Graphic "CA_BOW_RING", 137, 144
     Graphic "CA_BOW_LITTLE", 136, 154
+}
+
+// BEGIN NATIVE FP 4.36.0i
+
+Graphic "CA_FL_HANDLE_1_0", 106, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -214, 0 }
+
+Graphic "CA_FL_HANDLE_1_65", 109, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -211, -65 }
+
+Graphic "CA_FL_HANDLE_1_85", 113, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -207, -85 }
+
+Graphic "CA_FL_HANDLE_1_87", 114, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -206, -87 }
+
+Graphic "CA_FL_HANDLE_1_91", 115, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -205, -91 }
+
+Graphic "CA_FL_HANDLE_1_94", 116, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -204, -94 }
+
+Graphic "CA_FL_HANDLE_1_97", 117, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -203, -97 }
+
+Graphic "CA_FL_HANDLE_1_100", 118, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -202, -100 }
+
+Graphic "CA_FL_HANDLE_1_104", 119, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -201, -104 }
+
+Graphic "CA_FL_HANDLE_1_107", 120, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -200, -107 }
+
+Graphic "CA_FL_HANDLE_1_111", 121, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -199, -111 }
+
+Graphic "CA_FL_HANDLE_1_114", 122, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -198, -114 }
+
+Graphic "CA_FL_HANDLE_1_117", 116, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", -204, -117 }
+
+Graphic "CA_FL_HANDLE_1_153", 320, 47
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -153 }
+
+Sprite "GFS1A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Graphic "CA_FL_HANDLE_1_0", 214, 0
+    Graphic "CA_FL_HANDLE_1_65", 211, 65
+    Graphic "CA_FL_HANDLE_1_85", 207, 85
+    Graphic "CA_FL_HANDLE_1_87", 206, 87
+    Graphic "CA_FL_HANDLE_1_91", 205, 91
+    Graphic "CA_FL_HANDLE_1_94", 204, 94
+    Graphic "CA_FL_HANDLE_1_97", 203, 97
+    Graphic "CA_FL_HANDLE_1_100", 202, 100
+    Graphic "CA_FL_HANDLE_1_104", 201, 104
+    Graphic "CA_FL_HANDLE_1_107", 200, 107
+    Graphic "CA_FL_HANDLE_1_111", 199, 111
+    Graphic "CA_FL_HANDLE_1_114", 198, 114
+    Graphic "CA_FL_HANDLE_1_117", 204, 117
+    Graphic "CA_FL_HANDLE_1_153", 0, 153
+}
+
+Graphic "CA_FL_CHAIN_1_0", 214, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, 0 }
+
+Graphic "CA_FL_CHAIN_1_65", 211, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -65 }
+
+Graphic "CA_FL_CHAIN_1_85", 207, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -85 }
+
+Graphic "CA_FL_CHAIN_1_87", 206, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -87 }
+
+Graphic "CA_FL_CHAIN_1_91", 205, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -91 }
+
+Graphic "CA_FL_CHAIN_1_94", 204, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -94 }
+
+Graphic "CA_FL_CHAIN_1_97", 203, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -97 }
+
+Graphic "CA_FL_CHAIN_1_100", 202, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -100 }
+
+Graphic "CA_FL_CHAIN_1_104", 201, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -104 }
+
+Graphic "CA_FL_CHAIN_1_107", 200, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -107 }
+
+Graphic "CA_FL_CHAIN_1_111", 199, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -111 }
+
+Graphic "CA_FL_CHAIN_1_114", 198, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -114 }
+
+Graphic "CA_FL_CHAIN_1_117", 204, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F071A0.png", 0, -117 }
+
+Sprite "GFC1A0", 320, 200
+{
+    NoTrim
+    Offset 213, 61
+    Graphic "CA_FL_CHAIN_1_0", 0, 0
+    Graphic "CA_FL_CHAIN_1_65", 0, 65
+    Graphic "CA_FL_CHAIN_1_85", 0, 85
+    Graphic "CA_FL_CHAIN_1_87", 0, 87
+    Graphic "CA_FL_CHAIN_1_91", 0, 91
+    Graphic "CA_FL_CHAIN_1_94", 0, 94
+    Graphic "CA_FL_CHAIN_1_97", 0, 97
+    Graphic "CA_FL_CHAIN_1_100", 0, 100
+    Graphic "CA_FL_CHAIN_1_104", 0, 104
+    Graphic "CA_FL_CHAIN_1_107", 0, 107
+    Graphic "CA_FL_CHAIN_1_111", 0, 111
+    Graphic "CA_FL_CHAIN_1_114", 0, 114
+    Graphic "CA_FL_CHAIN_1_117", 0, 117
+}
+
+Graphic "CA_FL_HANDLE_2_0", 106, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -214, 0 }
+
+Graphic "CA_FL_HANDLE_2_65", 109, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -211, -65 }
+
+Graphic "CA_FL_HANDLE_2_85", 113, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -207, -85 }
+
+Graphic "CA_FL_HANDLE_2_87", 114, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -206, -87 }
+
+Graphic "CA_FL_HANDLE_2_91", 115, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -205, -91 }
+
+Graphic "CA_FL_HANDLE_2_94", 116, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -204, -94 }
+
+Graphic "CA_FL_HANDLE_2_97", 117, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -203, -97 }
+
+Graphic "CA_FL_HANDLE_2_100", 118, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -202, -100 }
+
+Graphic "CA_FL_HANDLE_2_104", 119, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -201, -104 }
+
+Graphic "CA_FL_HANDLE_2_107", 120, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -200, -107 }
+
+Graphic "CA_FL_HANDLE_2_111", 121, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -199, -111 }
+
+Graphic "CA_FL_HANDLE_2_114", 122, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -198, -114 }
+
+Graphic "CA_FL_HANDLE_2_117", 116, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", -204, -117 }
+
+Graphic "CA_FL_HANDLE_2_153", 320, 47
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -153 }
+
+Sprite "GFS2A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Graphic "CA_FL_HANDLE_2_0", 214, 0
+    Graphic "CA_FL_HANDLE_2_65", 211, 65
+    Graphic "CA_FL_HANDLE_2_85", 207, 85
+    Graphic "CA_FL_HANDLE_2_87", 206, 87
+    Graphic "CA_FL_HANDLE_2_91", 205, 91
+    Graphic "CA_FL_HANDLE_2_94", 204, 94
+    Graphic "CA_FL_HANDLE_2_97", 203, 97
+    Graphic "CA_FL_HANDLE_2_100", 202, 100
+    Graphic "CA_FL_HANDLE_2_104", 201, 104
+    Graphic "CA_FL_HANDLE_2_107", 200, 107
+    Graphic "CA_FL_HANDLE_2_111", 199, 111
+    Graphic "CA_FL_HANDLE_2_114", 198, 114
+    Graphic "CA_FL_HANDLE_2_117", 204, 117
+    Graphic "CA_FL_HANDLE_2_153", 0, 153
+}
+
+Graphic "CA_FL_CHAIN_2_0", 214, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, 0 }
+
+Graphic "CA_FL_CHAIN_2_65", 211, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -65 }
+
+Graphic "CA_FL_CHAIN_2_85", 207, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -85 }
+
+Graphic "CA_FL_CHAIN_2_87", 206, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -87 }
+
+Graphic "CA_FL_CHAIN_2_91", 205, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -91 }
+
+Graphic "CA_FL_CHAIN_2_94", 204, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -94 }
+
+Graphic "CA_FL_CHAIN_2_97", 203, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -97 }
+
+Graphic "CA_FL_CHAIN_2_100", 202, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -100 }
+
+Graphic "CA_FL_CHAIN_2_104", 201, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -104 }
+
+Graphic "CA_FL_CHAIN_2_107", 200, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -107 }
+
+Graphic "CA_FL_CHAIN_2_111", 199, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -111 }
+
+Graphic "CA_FL_CHAIN_2_114", 198, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -114 }
+
+Graphic "CA_FL_CHAIN_2_117", 204, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F072A0.png", 0, -117 }
+
+Sprite "GFC2A0", 320, 200
+{
+    NoTrim
+    Offset 213, 61
+    Graphic "CA_FL_CHAIN_2_0", 0, 0
+    Graphic "CA_FL_CHAIN_2_65", 0, 65
+    Graphic "CA_FL_CHAIN_2_85", 0, 85
+    Graphic "CA_FL_CHAIN_2_87", 0, 87
+    Graphic "CA_FL_CHAIN_2_91", 0, 91
+    Graphic "CA_FL_CHAIN_2_94", 0, 94
+    Graphic "CA_FL_CHAIN_2_97", 0, 97
+    Graphic "CA_FL_CHAIN_2_100", 0, 100
+    Graphic "CA_FL_CHAIN_2_104", 0, 104
+    Graphic "CA_FL_CHAIN_2_107", 0, 107
+    Graphic "CA_FL_CHAIN_2_111", 0, 111
+    Graphic "CA_FL_CHAIN_2_114", 0, 114
+    Graphic "CA_FL_CHAIN_2_117", 0, 117
+}
+
+Graphic "CA_FL_HANDLE_3_0", 106, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -214, 0 }
+
+Graphic "CA_FL_HANDLE_3_65", 109, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -211, -65 }
+
+Graphic "CA_FL_HANDLE_3_85", 113, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -207, -85 }
+
+Graphic "CA_FL_HANDLE_3_87", 114, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -206, -87 }
+
+Graphic "CA_FL_HANDLE_3_91", 115, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -205, -91 }
+
+Graphic "CA_FL_HANDLE_3_94", 116, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -204, -94 }
+
+Graphic "CA_FL_HANDLE_3_97", 117, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -203, -97 }
+
+Graphic "CA_FL_HANDLE_3_100", 118, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -202, -100 }
+
+Graphic "CA_FL_HANDLE_3_104", 119, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -201, -104 }
+
+Graphic "CA_FL_HANDLE_3_107", 120, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -200, -107 }
+
+Graphic "CA_FL_HANDLE_3_111", 121, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -199, -111 }
+
+Graphic "CA_FL_HANDLE_3_114", 122, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -198, -114 }
+
+Graphic "CA_FL_HANDLE_3_117", 116, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", -204, -117 }
+
+Graphic "CA_FL_HANDLE_3_153", 320, 47
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -153 }
+
+Sprite "GFS3A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Graphic "CA_FL_HANDLE_3_0", 214, 0
+    Graphic "CA_FL_HANDLE_3_65", 211, 65
+    Graphic "CA_FL_HANDLE_3_85", 207, 85
+    Graphic "CA_FL_HANDLE_3_87", 206, 87
+    Graphic "CA_FL_HANDLE_3_91", 205, 91
+    Graphic "CA_FL_HANDLE_3_94", 204, 94
+    Graphic "CA_FL_HANDLE_3_97", 203, 97
+    Graphic "CA_FL_HANDLE_3_100", 202, 100
+    Graphic "CA_FL_HANDLE_3_104", 201, 104
+    Graphic "CA_FL_HANDLE_3_107", 200, 107
+    Graphic "CA_FL_HANDLE_3_111", 199, 111
+    Graphic "CA_FL_HANDLE_3_114", 198, 114
+    Graphic "CA_FL_HANDLE_3_117", 204, 117
+    Graphic "CA_FL_HANDLE_3_153", 0, 153
+}
+
+Graphic "CA_FL_CHAIN_3_0", 214, 65
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, 0 }
+
+Graphic "CA_FL_CHAIN_3_65", 211, 20
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -65 }
+
+Graphic "CA_FL_CHAIN_3_85", 207, 2
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -85 }
+
+Graphic "CA_FL_CHAIN_3_87", 206, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -87 }
+
+Graphic "CA_FL_CHAIN_3_91", 205, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -91 }
+
+Graphic "CA_FL_CHAIN_3_94", 204, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -94 }
+
+Graphic "CA_FL_CHAIN_3_97", 203, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -97 }
+
+Graphic "CA_FL_CHAIN_3_100", 202, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -100 }
+
+Graphic "CA_FL_CHAIN_3_104", 201, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -104 }
+
+Graphic "CA_FL_CHAIN_3_107", 200, 4
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -107 }
+
+Graphic "CA_FL_CHAIN_3_111", 199, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -111 }
+
+Graphic "CA_FL_CHAIN_3_114", 198, 3
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -114 }
+
+Graphic "CA_FL_CHAIN_3_117", 204, 36
+{ Patch "sprites/caelum/first_person/v1/flail/F073A0.png", 0, -117 }
+
+Sprite "GFC3A0", 320, 200
+{
+    NoTrim
+    Offset 213, 61
+    Graphic "CA_FL_CHAIN_3_0", 0, 0
+    Graphic "CA_FL_CHAIN_3_65", 0, 65
+    Graphic "CA_FL_CHAIN_3_85", 0, 85
+    Graphic "CA_FL_CHAIN_3_87", 0, 87
+    Graphic "CA_FL_CHAIN_3_91", 0, 91
+    Graphic "CA_FL_CHAIN_3_94", 0, 94
+    Graphic "CA_FL_CHAIN_3_97", 0, 97
+    Graphic "CA_FL_CHAIN_3_100", 0, 100
+    Graphic "CA_FL_CHAIN_3_104", 0, 104
+    Graphic "CA_FL_CHAIN_3_107", 0, 107
+    Graphic "CA_FL_CHAIN_3_111", 0, 111
+    Graphic "CA_FL_CHAIN_3_114", 0, 114
+    Graphic "CA_FL_CHAIN_3_117", 0, 117
+}
+
+Graphic "CA_SB_COL_1", 512, 1024
+{ Graphic "CA_SB_MUTED", 0, 0 }
+
+Graphic "CA_SB_THICK_1_0", 512, 16
+{ Graphic "CA_SB_COL_1", 0, 0 }
+
+Graphic "CA_SB_THICK_1_16", 512, 9
+{ Graphic "CA_SB_COL_1", -44, -16 }
+
+Graphic "CA_SB_THICK_1_25", 512, 4
+{ Graphic "CA_SB_COL_1", -45, -25 }
+
+Graphic "CA_SB_THICK_1_29", 512, 3
+{ Graphic "CA_SB_COL_1", -46, -29 }
+
+Graphic "CA_SB_THICK_1_32", 512, 3
+{ Graphic "CA_SB_COL_1", -47, -32 }
+
+Graphic "CA_SB_THICK_1_35", 512, 5
+{ Graphic "CA_SB_COL_1", -48, -35 }
+
+Graphic "CA_SB_THICK_1_40", 512, 5
+{ Graphic "CA_SB_COL_1", -49, -40 }
+
+Graphic "CA_SB_THICK_1_45", 512, 15
+{ Graphic "CA_SB_COL_1", -50, -45 }
+
+Graphic "CA_SB_THICK_1_60", 512, 4
+{ Graphic "CA_SB_COL_1", -51, -60 }
+
+Graphic "CA_SB_THICK_1_64", 512, 11
+{ Graphic "CA_SB_COL_1", -50, -64 }
+
+Graphic "CA_SB_THICK_1_75", 512, 1
+{ Graphic "CA_SB_COL_1", -51, -75 }
+
+Graphic "CA_SB_THICK_1_76", 512, 7
+{ Graphic "CA_SB_COL_1", -50, -76 }
+
+Graphic "CA_SB_THICK_1_83", 512, 5
+{ Graphic "CA_SB_COL_1", -49, -83 }
+
+Graphic "CA_SB_THICK_1_88", 512, 8
+{ Graphic "CA_SB_COL_1", -48, -88 }
+
+Graphic "CA_SB_THICK_1_96", 512, 3
+{ Graphic "CA_SB_COL_1", -47, -96 }
+
+Graphic "CA_SB_THICK_1_99", 512, 5
+{ Graphic "CA_SB_COL_1", -46, -99 }
+
+Graphic "CA_SB_THICK_1_104", 512, 3
+{ Graphic "CA_SB_COL_1", -45, -104 }
+
+Graphic "CA_SB_THICK_1_107", 512, 4
+{ Graphic "CA_SB_COL_1", -44, -107 }
+
+Graphic "CA_SB_THICK_1_111", 512, 3
+{ Graphic "CA_SB_COL_1", -43, -111 }
+
+Graphic "CA_SB_THICK_1_114", 512, 3
+{ Graphic "CA_SB_COL_1", -42, -114 }
+
+Graphic "CA_SB_THICK_1_117", 512, 3
+{ Graphic "CA_SB_COL_1", -41, -117 }
+
+Graphic "CA_SB_THICK_1_120", 512, 4
+{ Graphic "CA_SB_COL_1", -40, -120 }
+
+Graphic "CA_SB_THICK_1_124", 512, 3
+{ Graphic "CA_SB_COL_1", -39, -124 }
+
+Graphic "CA_SB_THICK_1_127", 512, 3
+{ Graphic "CA_SB_COL_1", -38, -127 }
+
+Graphic "CA_SB_THICK_1_130", 512, 2
+{ Graphic "CA_SB_COL_1", -37, -130 }
+
+Graphic "CA_SB_THICK_1_132", 512, 3
+{ Graphic "CA_SB_COL_1", -36, -132 }
+
+Graphic "CA_SB_THICK_1_135", 512, 3
+{ Graphic "CA_SB_COL_1", -35, -135 }
+
+Graphic "CA_SB_THICK_1_138", 512, 3
+{ Graphic "CA_SB_COL_1", -34, -138 }
+
+Graphic "CA_SB_THICK_1_141", 512, 2
+{ Graphic "CA_SB_COL_1", -33, -141 }
+
+Graphic "CA_SB_THICK_1_143", 512, 3
+{ Graphic "CA_SB_COL_1", -32, -143 }
+
+Graphic "CA_SB_THICK_1_146", 512, 3
+{ Graphic "CA_SB_COL_1", -31, -146 }
+
+Graphic "CA_SB_THICK_1_149", 512, 3
+{ Graphic "CA_SB_COL_1", -30, -149 }
+
+Graphic "CA_SB_THICK_1_152", 512, 2
+{ Graphic "CA_SB_COL_1", -29, -152 }
+
+Graphic "CA_SB_THICK_1_154", 512, 3
+{ Graphic "CA_SB_COL_1", -28, -154 }
+
+Graphic "CA_SB_THICK_1_157", 512, 2
+{ Graphic "CA_SB_COL_1", -27, -157 }
+
+Graphic "CA_SB_THICK_1_159", 512, 3
+{ Graphic "CA_SB_COL_1", -26, -159 }
+
+Graphic "CA_SB_THICK_1_162", 512, 2
+{ Graphic "CA_SB_COL_1", -25, -162 }
+
+Graphic "CA_SB_THICK_1_164", 512, 3
+{ Graphic "CA_SB_COL_1", -24, -164 }
+
+Graphic "CA_SB_THICK_1_167", 512, 3
+{ Graphic "CA_SB_COL_1", -23, -167 }
+
+Graphic "CA_SB_THICK_1_170", 512, 3
+{ Graphic "CA_SB_COL_1", -22, -170 }
+
+Graphic "CA_SB_THICK_1_173", 512, 2
+{ Graphic "CA_SB_COL_1", -21, -173 }
+
+Graphic "CA_SB_THICK_1_175", 512, 3
+{ Graphic "CA_SB_COL_1", -20, -175 }
+
+Graphic "CA_SB_THICK_1_178", 512, 2
+{ Graphic "CA_SB_COL_1", -19, -178 }
+
+Graphic "CA_SB_THICK_1_180", 512, 4
+{ Graphic "CA_SB_COL_1", -18, -180 }
+
+Graphic "CA_SB_THICK_1_184", 512, 2
+{ Graphic "CA_SB_COL_1", -17, -184 }
+
+Graphic "CA_SB_THICK_1_186", 512, 4
+{ Graphic "CA_SB_COL_1", -16, -186 }
+
+Graphic "CA_SB_THICK_1_190", 512, 2
+{ Graphic "CA_SB_COL_1", -15, -190 }
+
+Graphic "CA_SB_THICK_1_192", 512, 3
+{ Graphic "CA_SB_COL_1", -14, -192 }
+
+Graphic "CA_SB_THICK_1_195", 512, 3
+{ Graphic "CA_SB_COL_1", -13, -195 }
+
+Graphic "CA_SB_THICK_1_198", 512, 4
+{ Graphic "CA_SB_COL_1", -12, -198 }
+
+Graphic "CA_SB_THICK_1_202", 512, 2
+{ Graphic "CA_SB_COL_1", -11, -202 }
+
+Graphic "CA_SB_THICK_1_204", 512, 5
+{ Graphic "CA_SB_COL_1", -10, -204 }
+
+Graphic "CA_SB_THICK_1_209", 512, 2
+{ Graphic "CA_SB_COL_1", -9, -209 }
+
+Graphic "CA_SB_THICK_1_211", 512, 5
+{ Graphic "CA_SB_COL_1", -8, -211 }
+
+Graphic "CA_SB_THICK_1_216", 512, 3
+{ Graphic "CA_SB_COL_1", -7, -216 }
+
+Graphic "CA_SB_THICK_1_219", 512, 4
+{ Graphic "CA_SB_COL_1", -6, -219 }
+
+Graphic "CA_SB_THICK_1_223", 512, 3
+{ Graphic "CA_SB_COL_1", -5, -223 }
+
+Graphic "CA_SB_THICK_1_226", 512, 6
+{ Graphic "CA_SB_COL_1", -4, -226 }
+
+Graphic "CA_SB_THICK_1_232", 512, 2
+{ Graphic "CA_SB_COL_1", -3, -232 }
+
+Graphic "CA_SB_THICK_1_234", 512, 6
+{ Graphic "CA_SB_COL_1", -2, -234 }
+
+Graphic "CA_SB_THICK_1_240", 512, 3
+{ Graphic "CA_SB_COL_1", -1, -240 }
+
+Graphic "CA_SB_THICK_1_243", 512, 6
+{ Graphic "CA_SB_COL_1", 0, -243 }
+
+Graphic "CA_SB_THICK_1_249", 512, 4
+{ Graphic "CA_SB_COL_1", 1, -249 }
+
+Graphic "CA_SB_THICK_1_253", 512, 7
+{ Graphic "CA_SB_COL_1", 2, -253 }
+
+Graphic "CA_SB_THICK_1_260", 512, 4
+{ Graphic "CA_SB_COL_1", 3, -260 }
+
+Graphic "CA_SB_THICK_1_264", 512, 6
+{ Graphic "CA_SB_COL_1", 4, -264 }
+
+Graphic "CA_SB_THICK_1_270", 512, 5
+{ Graphic "CA_SB_COL_1", 5, -270 }
+
+Graphic "CA_SB_THICK_1_275", 512, 10
+{ Graphic "CA_SB_COL_1", 6, -275 }
+
+Graphic "CA_SB_THICK_1_285", 512, 7
+{ Graphic "CA_SB_COL_1", 7, -285 }
+
+Graphic "CA_SB_THICK_1_292", 512, 13
+{ Graphic "CA_SB_COL_1", 8, -292 }
+
+Graphic "CA_SB_THICK_1_305", 512, 8
+{ Graphic "CA_SB_COL_1", 9, -305 }
+
+Graphic "CA_SB_THICK_1_313", 512, 53
+{ Graphic "CA_SB_COL_1", 10, -313 }
+
+Graphic "CA_SB_THICK_1_366", 512, 11
+{ Graphic "CA_SB_COL_1", 9, -366 }
+
+Graphic "CA_SB_THICK_1_377", 512, 15
+{ Graphic "CA_SB_COL_1", 8, -377 }
+
+Graphic "CA_SB_THICK_1_392", 512, 5
+{ Graphic "CA_SB_COL_1", 7, -392 }
+
+Graphic "CA_SB_THICK_1_397", 512, 6
+{ Graphic "CA_SB_COL_1", 6, -397 }
+
+Graphic "CA_SB_THICK_1_403", 512, 3
+{ Graphic "CA_SB_COL_1", 5, -403 }
+
+Graphic "CA_SB_THICK_1_406", 512, 6
+{ Graphic "CA_SB_COL_1", 4, -406 }
+
+Graphic "CA_SB_THICK_1_412", 512, 4
+{ Graphic "CA_SB_COL_1", 3, -412 }
+
+Graphic "CA_SB_THICK_1_416", 512, 5
+{ Graphic "CA_SB_COL_1", 2, -416 }
+
+Graphic "CA_SB_THICK_1_421", 512, 4
+{ Graphic "CA_SB_COL_1", 1, -421 }
+
+Graphic "CA_SB_THICK_1_425", 512, 7
+{ Graphic "CA_SB_COL_1", 0, -425 }
+
+Graphic "CA_SB_THICK_1_432", 512, 10
+{ Graphic "CA_SB_COL_1", -1, -432 }
+
+Graphic "CA_SB_THICK_1_442", 512, 18
+{ Graphic "CA_SB_COL_1", -2, -442 }
+
+Graphic "CA_SB_THICK_1_460", 512, 18
+{ Graphic "CA_SB_COL_1", -1, -460 }
+
+Graphic "CA_SB_THICK_1_478", 512, 61
+{ Graphic "CA_SB_COL_1", 0, -478 }
+
+Graphic "CA_SB_THICK_1_539", 512, 13
+{ Graphic "CA_SB_COL_1", -1, -539 }
+
+Graphic "CA_SB_THICK_1_552", 512, 23
+{ Graphic "CA_SB_COL_1", -2, -552 }
+
+Graphic "CA_SB_THICK_1_575", 512, 8
+{ Graphic "CA_SB_COL_1", -1, -575 }
+
+Graphic "CA_SB_THICK_1_583", 512, 9
+{ Graphic "CA_SB_COL_1", 0, -583 }
+
+Graphic "CA_SB_THICK_1_592", 512, 3
+{ Graphic "CA_SB_COL_1", 1, -592 }
+
+Graphic "CA_SB_THICK_1_595", 512, 5
+{ Graphic "CA_SB_COL_1", 2, -595 }
+
+Graphic "CA_SB_THICK_1_600", 512, 4
+{ Graphic "CA_SB_COL_1", 3, -600 }
+
+Graphic "CA_SB_THICK_1_604", 512, 5
+{ Graphic "CA_SB_COL_1", 4, -604 }
+
+Graphic "CA_SB_THICK_1_609", 512, 3
+{ Graphic "CA_SB_COL_1", 5, -609 }
+
+Graphic "CA_SB_THICK_1_612", 512, 7
+{ Graphic "CA_SB_COL_1", 6, -612 }
+
+Graphic "CA_SB_THICK_1_619", 512, 5
+{ Graphic "CA_SB_COL_1", 7, -619 }
+
+Graphic "CA_SB_THICK_1_624", 512, 2
+{ Graphic "CA_SB_COL_1", 8, -624 }
+
+Graphic "CA_SB_THICK_1_626", 512, 1
+{ Graphic "CA_SB_COL_1", 7, -626 }
+
+Graphic "CA_SB_THICK_1_627", 512, 1
+{ Graphic "CA_SB_COL_1", 8, -627 }
+
+Graphic "CA_SB_THICK_1_628", 512, 2
+{ Graphic "CA_SB_COL_1", 7, -628 }
+
+Graphic "CA_SB_THICK_1_630", 512, 6
+{ Graphic "CA_SB_COL_1", 8, -630 }
+
+Graphic "CA_SB_THICK_1_636", 512, 7
+{ Graphic "CA_SB_COL_1", 9, -636 }
+
+Graphic "CA_SB_THICK_1_643", 512, 66
+{ Graphic "CA_SB_COL_1", 10, -643 }
+
+Graphic "CA_SB_THICK_1_709", 512, 7
+{ Graphic "CA_SB_COL_1", 9, -709 }
+
+Graphic "CA_SB_THICK_1_716", 512, 12
+{ Graphic "CA_SB_COL_1", 8, -716 }
+
+Graphic "CA_SB_THICK_1_728", 512, 7
+{ Graphic "CA_SB_COL_1", 7, -728 }
+
+Graphic "CA_SB_THICK_1_735", 512, 8
+{ Graphic "CA_SB_COL_1", 6, -735 }
+
+Graphic "CA_SB_THICK_1_743", 512, 4
+{ Graphic "CA_SB_COL_1", 5, -743 }
+
+Graphic "CA_SB_THICK_1_747", 512, 7
+{ Graphic "CA_SB_COL_1", 4, -747 }
+
+Graphic "CA_SB_THICK_1_754", 512, 6
+{ Graphic "CA_SB_COL_1", 3, -754 }
+
+Graphic "CA_SB_THICK_1_760", 512, 6
+{ Graphic "CA_SB_COL_1", 2, -760 }
+
+Graphic "CA_SB_THICK_1_766", 512, 3
+{ Graphic "CA_SB_COL_1", 1, -766 }
+
+Graphic "CA_SB_THICK_1_769", 512, 6
+{ Graphic "CA_SB_COL_1", 0, -769 }
+
+Graphic "CA_SB_THICK_1_775", 512, 3
+{ Graphic "CA_SB_COL_1", -1, -775 }
+
+Graphic "CA_SB_THICK_1_778", 512, 6
+{ Graphic "CA_SB_COL_1", -2, -778 }
+
+Graphic "CA_SB_THICK_1_784", 512, 2
+{ Graphic "CA_SB_COL_1", -3, -784 }
+
+Graphic "CA_SB_THICK_1_786", 512, 5
+{ Graphic "CA_SB_COL_1", -4, -786 }
+
+Graphic "CA_SB_THICK_1_791", 512, 3
+{ Graphic "CA_SB_COL_1", -5, -791 }
+
+Graphic "CA_SB_THICK_1_794", 512, 4
+{ Graphic "CA_SB_COL_1", -6, -794 }
+
+Graphic "CA_SB_THICK_1_798", 512, 2
+{ Graphic "CA_SB_COL_1", -7, -798 }
+
+Graphic "CA_SB_THICK_1_800", 512, 5
+{ Graphic "CA_SB_COL_1", -8, -800 }
+
+Graphic "CA_SB_THICK_1_805", 512, 2
+{ Graphic "CA_SB_COL_1", -9, -805 }
+
+Graphic "CA_SB_THICK_1_807", 512, 4
+{ Graphic "CA_SB_COL_1", -10, -807 }
+
+Graphic "CA_SB_THICK_1_811", 512, 3
+{ Graphic "CA_SB_COL_1", -11, -811 }
+
+Graphic "CA_SB_THICK_1_814", 512, 3
+{ Graphic "CA_SB_COL_1", -12, -814 }
+
+Graphic "CA_SB_THICK_1_817", 512, 1
+{ Graphic "CA_SB_COL_1", -13, -817 }
+
+Graphic "CA_SB_THICK_1_818", 512, 4
+{ Graphic "CA_SB_COL_1", -14, -818 }
+
+Graphic "CA_SB_THICK_1_822", 512, 2
+{ Graphic "CA_SB_COL_1", -15, -822 }
+
+Graphic "CA_SB_THICK_1_824", 512, 4
+{ Graphic "CA_SB_COL_1", -16, -824 }
+
+Graphic "CA_SB_THICK_1_828", 512, 2
+{ Graphic "CA_SB_COL_1", -17, -828 }
+
+Graphic "CA_SB_THICK_1_830", 512, 2
+{ Graphic "CA_SB_COL_1", -18, -830 }
+
+Graphic "CA_SB_THICK_1_832", 512, 2
+{ Graphic "CA_SB_COL_1", -19, -832 }
+
+Graphic "CA_SB_THICK_1_834", 512, 3
+{ Graphic "CA_SB_COL_1", -20, -834 }
+
+Graphic "CA_SB_THICK_1_837", 512, 3
+{ Graphic "CA_SB_COL_1", -21, -837 }
+
+Graphic "CA_SB_THICK_1_840", 512, 2
+{ Graphic "CA_SB_COL_1", -22, -840 }
+
+Graphic "CA_SB_THICK_1_842", 512, 3
+{ Graphic "CA_SB_COL_1", -23, -842 }
+
+Graphic "CA_SB_THICK_1_845", 512, 3
+{ Graphic "CA_SB_COL_1", -24, -845 }
+
+Graphic "CA_SB_THICK_1_848", 512, 1
+{ Graphic "CA_SB_COL_1", -25, -848 }
+
+Graphic "CA_SB_THICK_1_849", 512, 4
+{ Graphic "CA_SB_COL_1", -26, -849 }
+
+Graphic "CA_SB_THICK_1_853", 512, 2
+{ Graphic "CA_SB_COL_1", -27, -853 }
+
+Graphic "CA_SB_THICK_1_855", 512, 2
+{ Graphic "CA_SB_COL_1", -28, -855 }
+
+Graphic "CA_SB_THICK_1_857", 512, 2
+{ Graphic "CA_SB_COL_1", -29, -857 }
+
+Graphic "CA_SB_THICK_1_859", 512, 4
+{ Graphic "CA_SB_COL_1", -30, -859 }
+
+Graphic "CA_SB_THICK_1_863", 512, 1
+{ Graphic "CA_SB_COL_1", -31, -863 }
+
+Graphic "CA_SB_THICK_1_864", 512, 4
+{ Graphic "CA_SB_COL_1", -32, -864 }
+
+Graphic "CA_SB_THICK_1_868", 512, 2
+{ Graphic "CA_SB_COL_1", -33, -868 }
+
+Graphic "CA_SB_THICK_1_870", 512, 3
+{ Graphic "CA_SB_COL_1", -34, -870 }
+
+Graphic "CA_SB_THICK_1_873", 512, 2
+{ Graphic "CA_SB_COL_1", -35, -873 }
+
+Graphic "CA_SB_THICK_1_875", 512, 4
+{ Graphic "CA_SB_COL_1", -36, -875 }
+
+Graphic "CA_SB_THICK_1_879", 512, 2
+{ Graphic "CA_SB_COL_1", -37, -879 }
+
+Graphic "CA_SB_THICK_1_881", 512, 4
+{ Graphic "CA_SB_COL_1", -38, -881 }
+
+Graphic "CA_SB_THICK_1_885", 512, 2
+{ Graphic "CA_SB_COL_1", -39, -885 }
+
+Graphic "CA_SB_THICK_1_887", 512, 4
+{ Graphic "CA_SB_COL_1", -40, -887 }
+
+Graphic "CA_SB_THICK_1_891", 512, 2
+{ Graphic "CA_SB_COL_1", -41, -891 }
+
+Graphic "CA_SB_THICK_1_893", 512, 4
+{ Graphic "CA_SB_COL_1", -42, -893 }
+
+Graphic "CA_SB_THICK_1_897", 512, 2
+{ Graphic "CA_SB_COL_1", -43, -897 }
+
+Graphic "CA_SB_THICK_1_899", 512, 4
+{ Graphic "CA_SB_COL_1", -44, -899 }
+
+Graphic "CA_SB_THICK_1_903", 512, 3
+{ Graphic "CA_SB_COL_1", -45, -903 }
+
+Graphic "CA_SB_THICK_1_906", 512, 6
+{ Graphic "CA_SB_COL_1", -46, -906 }
+
+Graphic "CA_SB_THICK_1_912", 512, 5
+{ Graphic "CA_SB_COL_1", -47, -912 }
+
+Graphic "CA_SB_THICK_1_917", 512, 6
+{ Graphic "CA_SB_COL_1", -48, -917 }
+
+Graphic "CA_SB_THICK_1_923", 512, 6
+{ Graphic "CA_SB_COL_1", -49, -923 }
+
+Graphic "CA_SB_THICK_1_929", 512, 9
+{ Graphic "CA_SB_COL_1", -50, -929 }
+
+Graphic "CA_SB_THICK_1_938", 512, 25
+{ Graphic "CA_SB_COL_1", -51, -938 }
+
+Graphic "CA_SB_THICK_1_963", 512, 11
+{ Graphic "CA_SB_COL_1", -50, -963 }
+
+Graphic "CA_SB_THICK_1_974", 512, 3
+{ Graphic "CA_SB_COL_1", -49, -974 }
+
+Graphic "CA_SB_THICK_1_977", 512, 4
+{ Graphic "CA_SB_COL_1", -48, -977 }
+
+Graphic "CA_SB_THICK_1_981", 512, 3
+{ Graphic "CA_SB_COL_1", -47, -981 }
+
+Graphic "CA_SB_THICK_1_984", 512, 4
+{ Graphic "CA_SB_COL_1", -46, -984 }
+
+Graphic "CA_SB_THICK_1_988", 512, 5
+{ Graphic "CA_SB_COL_1", -45, -988 }
+
+Graphic "CA_SB_THICK_1_993", 512, 5
+{ Graphic "CA_SB_COL_1", -44, -993 }
+
+Graphic "CA_SB_THICK_1_998", 512, 26
+{ Graphic "CA_SB_COL_1", 0, -998 }
+
+Graphic "CA_SB_THICK_1", 512, 1024
+{
+    Graphic "CA_SB_THICK_1_0", 0, 0
+    Graphic "CA_SB_THICK_1_16", 0, 16
+    Graphic "CA_SB_THICK_1_25", 0, 25
+    Graphic "CA_SB_THICK_1_29", 0, 29
+    Graphic "CA_SB_THICK_1_32", 0, 32
+    Graphic "CA_SB_THICK_1_35", 0, 35
+    Graphic "CA_SB_THICK_1_40", 0, 40
+    Graphic "CA_SB_THICK_1_45", 0, 45
+    Graphic "CA_SB_THICK_1_60", 0, 60
+    Graphic "CA_SB_THICK_1_64", 0, 64
+    Graphic "CA_SB_THICK_1_75", 0, 75
+    Graphic "CA_SB_THICK_1_76", 0, 76
+    Graphic "CA_SB_THICK_1_83", 0, 83
+    Graphic "CA_SB_THICK_1_88", 0, 88
+    Graphic "CA_SB_THICK_1_96", 0, 96
+    Graphic "CA_SB_THICK_1_99", 0, 99
+    Graphic "CA_SB_THICK_1_104", 0, 104
+    Graphic "CA_SB_THICK_1_107", 0, 107
+    Graphic "CA_SB_THICK_1_111", 0, 111
+    Graphic "CA_SB_THICK_1_114", 0, 114
+    Graphic "CA_SB_THICK_1_117", 0, 117
+    Graphic "CA_SB_THICK_1_120", 0, 120
+    Graphic "CA_SB_THICK_1_124", 0, 124
+    Graphic "CA_SB_THICK_1_127", 0, 127
+    Graphic "CA_SB_THICK_1_130", 0, 130
+    Graphic "CA_SB_THICK_1_132", 0, 132
+    Graphic "CA_SB_THICK_1_135", 0, 135
+    Graphic "CA_SB_THICK_1_138", 0, 138
+    Graphic "CA_SB_THICK_1_141", 0, 141
+    Graphic "CA_SB_THICK_1_143", 0, 143
+    Graphic "CA_SB_THICK_1_146", 0, 146
+    Graphic "CA_SB_THICK_1_149", 0, 149
+    Graphic "CA_SB_THICK_1_152", 0, 152
+    Graphic "CA_SB_THICK_1_154", 0, 154
+    Graphic "CA_SB_THICK_1_157", 0, 157
+    Graphic "CA_SB_THICK_1_159", 0, 159
+    Graphic "CA_SB_THICK_1_162", 0, 162
+    Graphic "CA_SB_THICK_1_164", 0, 164
+    Graphic "CA_SB_THICK_1_167", 0, 167
+    Graphic "CA_SB_THICK_1_170", 0, 170
+    Graphic "CA_SB_THICK_1_173", 0, 173
+    Graphic "CA_SB_THICK_1_175", 0, 175
+    Graphic "CA_SB_THICK_1_178", 0, 178
+    Graphic "CA_SB_THICK_1_180", 0, 180
+    Graphic "CA_SB_THICK_1_184", 0, 184
+    Graphic "CA_SB_THICK_1_186", 0, 186
+    Graphic "CA_SB_THICK_1_190", 0, 190
+    Graphic "CA_SB_THICK_1_192", 0, 192
+    Graphic "CA_SB_THICK_1_195", 0, 195
+    Graphic "CA_SB_THICK_1_198", 0, 198
+    Graphic "CA_SB_THICK_1_202", 0, 202
+    Graphic "CA_SB_THICK_1_204", 0, 204
+    Graphic "CA_SB_THICK_1_209", 0, 209
+    Graphic "CA_SB_THICK_1_211", 0, 211
+    Graphic "CA_SB_THICK_1_216", 0, 216
+    Graphic "CA_SB_THICK_1_219", 0, 219
+    Graphic "CA_SB_THICK_1_223", 0, 223
+    Graphic "CA_SB_THICK_1_226", 0, 226
+    Graphic "CA_SB_THICK_1_232", 0, 232
+    Graphic "CA_SB_THICK_1_234", 0, 234
+    Graphic "CA_SB_THICK_1_240", 0, 240
+    Graphic "CA_SB_THICK_1_243", 0, 243
+    Graphic "CA_SB_THICK_1_249", 0, 249
+    Graphic "CA_SB_THICK_1_253", 0, 253
+    Graphic "CA_SB_THICK_1_260", 0, 260
+    Graphic "CA_SB_THICK_1_264", 0, 264
+    Graphic "CA_SB_THICK_1_270", 0, 270
+    Graphic "CA_SB_THICK_1_275", 0, 275
+    Graphic "CA_SB_THICK_1_285", 0, 285
+    Graphic "CA_SB_THICK_1_292", 0, 292
+    Graphic "CA_SB_THICK_1_305", 0, 305
+    Graphic "CA_SB_THICK_1_313", 0, 313
+    Graphic "CA_SB_THICK_1_366", 0, 366
+    Graphic "CA_SB_THICK_1_377", 0, 377
+    Graphic "CA_SB_THICK_1_392", 0, 392
+    Graphic "CA_SB_THICK_1_397", 0, 397
+    Graphic "CA_SB_THICK_1_403", 0, 403
+    Graphic "CA_SB_THICK_1_406", 0, 406
+    Graphic "CA_SB_THICK_1_412", 0, 412
+    Graphic "CA_SB_THICK_1_416", 0, 416
+    Graphic "CA_SB_THICK_1_421", 0, 421
+    Graphic "CA_SB_THICK_1_425", 0, 425
+    Graphic "CA_SB_THICK_1_432", 0, 432
+    Graphic "CA_SB_THICK_1_442", 0, 442
+    Graphic "CA_SB_THICK_1_460", 0, 460
+    Graphic "CA_SB_THICK_1_478", 0, 478
+    Graphic "CA_SB_THICK_1_539", 0, 539
+    Graphic "CA_SB_THICK_1_552", 0, 552
+    Graphic "CA_SB_THICK_1_575", 0, 575
+    Graphic "CA_SB_THICK_1_583", 0, 583
+    Graphic "CA_SB_THICK_1_592", 0, 592
+    Graphic "CA_SB_THICK_1_595", 0, 595
+    Graphic "CA_SB_THICK_1_600", 0, 600
+    Graphic "CA_SB_THICK_1_604", 0, 604
+    Graphic "CA_SB_THICK_1_609", 0, 609
+    Graphic "CA_SB_THICK_1_612", 0, 612
+    Graphic "CA_SB_THICK_1_619", 0, 619
+    Graphic "CA_SB_THICK_1_624", 0, 624
+    Graphic "CA_SB_THICK_1_626", 0, 626
+    Graphic "CA_SB_THICK_1_627", 0, 627
+    Graphic "CA_SB_THICK_1_628", 0, 628
+    Graphic "CA_SB_THICK_1_630", 0, 630
+    Graphic "CA_SB_THICK_1_636", 0, 636
+    Graphic "CA_SB_THICK_1_643", 0, 643
+    Graphic "CA_SB_THICK_1_709", 0, 709
+    Graphic "CA_SB_THICK_1_716", 0, 716
+    Graphic "CA_SB_THICK_1_728", 0, 728
+    Graphic "CA_SB_THICK_1_735", 0, 735
+    Graphic "CA_SB_THICK_1_743", 0, 743
+    Graphic "CA_SB_THICK_1_747", 0, 747
+    Graphic "CA_SB_THICK_1_754", 0, 754
+    Graphic "CA_SB_THICK_1_760", 0, 760
+    Graphic "CA_SB_THICK_1_766", 0, 766
+    Graphic "CA_SB_THICK_1_769", 0, 769
+    Graphic "CA_SB_THICK_1_775", 0, 775
+    Graphic "CA_SB_THICK_1_778", 0, 778
+    Graphic "CA_SB_THICK_1_784", 0, 784
+    Graphic "CA_SB_THICK_1_786", 0, 786
+    Graphic "CA_SB_THICK_1_791", 0, 791
+    Graphic "CA_SB_THICK_1_794", 0, 794
+    Graphic "CA_SB_THICK_1_798", 0, 798
+    Graphic "CA_SB_THICK_1_800", 0, 800
+    Graphic "CA_SB_THICK_1_805", 0, 805
+    Graphic "CA_SB_THICK_1_807", 0, 807
+    Graphic "CA_SB_THICK_1_811", 0, 811
+    Graphic "CA_SB_THICK_1_814", 0, 814
+    Graphic "CA_SB_THICK_1_817", 0, 817
+    Graphic "CA_SB_THICK_1_818", 0, 818
+    Graphic "CA_SB_THICK_1_822", 0, 822
+    Graphic "CA_SB_THICK_1_824", 0, 824
+    Graphic "CA_SB_THICK_1_828", 0, 828
+    Graphic "CA_SB_THICK_1_830", 0, 830
+    Graphic "CA_SB_THICK_1_832", 0, 832
+    Graphic "CA_SB_THICK_1_834", 0, 834
+    Graphic "CA_SB_THICK_1_837", 0, 837
+    Graphic "CA_SB_THICK_1_840", 0, 840
+    Graphic "CA_SB_THICK_1_842", 0, 842
+    Graphic "CA_SB_THICK_1_845", 0, 845
+    Graphic "CA_SB_THICK_1_848", 0, 848
+    Graphic "CA_SB_THICK_1_849", 0, 849
+    Graphic "CA_SB_THICK_1_853", 0, 853
+    Graphic "CA_SB_THICK_1_855", 0, 855
+    Graphic "CA_SB_THICK_1_857", 0, 857
+    Graphic "CA_SB_THICK_1_859", 0, 859
+    Graphic "CA_SB_THICK_1_863", 0, 863
+    Graphic "CA_SB_THICK_1_864", 0, 864
+    Graphic "CA_SB_THICK_1_868", 0, 868
+    Graphic "CA_SB_THICK_1_870", 0, 870
+    Graphic "CA_SB_THICK_1_873", 0, 873
+    Graphic "CA_SB_THICK_1_875", 0, 875
+    Graphic "CA_SB_THICK_1_879", 0, 879
+    Graphic "CA_SB_THICK_1_881", 0, 881
+    Graphic "CA_SB_THICK_1_885", 0, 885
+    Graphic "CA_SB_THICK_1_887", 0, 887
+    Graphic "CA_SB_THICK_1_891", 0, 891
+    Graphic "CA_SB_THICK_1_893", 0, 893
+    Graphic "CA_SB_THICK_1_897", 0, 897
+    Graphic "CA_SB_THICK_1_899", 0, 899
+    Graphic "CA_SB_THICK_1_903", 0, 903
+    Graphic "CA_SB_THICK_1_906", 0, 906
+    Graphic "CA_SB_THICK_1_912", 0, 912
+    Graphic "CA_SB_THICK_1_917", 0, 917
+    Graphic "CA_SB_THICK_1_923", 0, 923
+    Graphic "CA_SB_THICK_1_929", 0, 929
+    Graphic "CA_SB_THICK_1_938", 0, 938
+    Graphic "CA_SB_THICK_1_963", 0, 963
+    Graphic "CA_SB_THICK_1_974", 0, 974
+    Graphic "CA_SB_THICK_1_977", 0, 977
+    Graphic "CA_SB_THICK_1_981", 0, 981
+    Graphic "CA_SB_THICK_1_984", 0, 984
+    Graphic "CA_SB_THICK_1_988", 0, 988
+    Graphic "CA_SB_THICK_1_993", 0, 993
+    Graphic "CA_SB_THICK_1_998", 0, 998
+}
+
+Graphic "CA_SB_COL_2", 512, 1024
+{ Graphic "CA_SB_MUTED", -512, 0 }
+
+Graphic "CA_SB_THICK_2_0", 512, 16
+{ Graphic "CA_SB_COL_2", 0, 0 }
+
+Graphic "CA_SB_THICK_2_16", 512, 9
+{ Graphic "CA_SB_COL_2", -44, -16 }
+
+Graphic "CA_SB_THICK_2_25", 512, 3
+{ Graphic "CA_SB_COL_2", -45, -25 }
+
+Graphic "CA_SB_THICK_2_28", 512, 4
+{ Graphic "CA_SB_COL_2", -46, -28 }
+
+Graphic "CA_SB_THICK_2_32", 512, 3
+{ Graphic "CA_SB_COL_2", -47, -32 }
+
+Graphic "CA_SB_THICK_2_35", 512, 5
+{ Graphic "CA_SB_COL_2", -48, -35 }
+
+Graphic "CA_SB_THICK_2_40", 512, 5
+{ Graphic "CA_SB_COL_2", -49, -40 }
+
+Graphic "CA_SB_THICK_2_45", 512, 11
+{ Graphic "CA_SB_COL_2", -50, -45 }
+
+Graphic "CA_SB_THICK_2_56", 512, 20
+{ Graphic "CA_SB_COL_2", -51, -56 }
+
+Graphic "CA_SB_THICK_2_76", 512, 7
+{ Graphic "CA_SB_COL_2", -50, -76 }
+
+Graphic "CA_SB_THICK_2_83", 512, 5
+{ Graphic "CA_SB_COL_2", -49, -83 }
+
+Graphic "CA_SB_THICK_2_88", 512, 7
+{ Graphic "CA_SB_COL_2", -48, -88 }
+
+Graphic "CA_SB_THICK_2_95", 512, 3
+{ Graphic "CA_SB_COL_2", -47, -95 }
+
+Graphic "CA_SB_THICK_2_98", 512, 5
+{ Graphic "CA_SB_COL_2", -46, -98 }
+
+Graphic "CA_SB_THICK_2_103", 512, 4
+{ Graphic "CA_SB_COL_2", -45, -103 }
+
+Graphic "CA_SB_THICK_2_107", 512, 4
+{ Graphic "CA_SB_COL_2", -44, -107 }
+
+Graphic "CA_SB_THICK_2_111", 512, 2
+{ Graphic "CA_SB_COL_2", -43, -111 }
+
+Graphic "CA_SB_THICK_2_113", 512, 5
+{ Graphic "CA_SB_COL_2", -42, -113 }
+
+Graphic "CA_SB_THICK_2_118", 512, 2
+{ Graphic "CA_SB_COL_2", -41, -118 }
+
+Graphic "CA_SB_THICK_2_120", 512, 4
+{ Graphic "CA_SB_COL_2", -40, -120 }
+
+Graphic "CA_SB_THICK_2_124", 512, 2
+{ Graphic "CA_SB_COL_2", -39, -124 }
+
+Graphic "CA_SB_THICK_2_126", 512, 4
+{ Graphic "CA_SB_COL_2", -38, -126 }
+
+Graphic "CA_SB_THICK_2_130", 512, 2
+{ Graphic "CA_SB_COL_2", -37, -130 }
+
+Graphic "CA_SB_THICK_2_132", 512, 4
+{ Graphic "CA_SB_COL_2", -36, -132 }
+
+Graphic "CA_SB_THICK_2_136", 512, 2
+{ Graphic "CA_SB_COL_2", -35, -136 }
+
+Graphic "CA_SB_THICK_2_138", 512, 3
+{ Graphic "CA_SB_COL_2", -34, -138 }
+
+Graphic "CA_SB_THICK_2_141", 512, 2
+{ Graphic "CA_SB_COL_2", -33, -141 }
+
+Graphic "CA_SB_THICK_2_143", 512, 3
+{ Graphic "CA_SB_COL_2", -32, -143 }
+
+Graphic "CA_SB_THICK_2_146", 512, 3
+{ Graphic "CA_SB_COL_2", -31, -146 }
+
+Graphic "CA_SB_THICK_2_149", 512, 3
+{ Graphic "CA_SB_COL_2", -30, -149 }
+
+Graphic "CA_SB_THICK_2_152", 512, 2
+{ Graphic "CA_SB_COL_2", -29, -152 }
+
+Graphic "CA_SB_THICK_2_154", 512, 4
+{ Graphic "CA_SB_COL_2", -28, -154 }
+
+Graphic "CA_SB_THICK_2_158", 512, 1
+{ Graphic "CA_SB_COL_2", -27, -158 }
+
+Graphic "CA_SB_THICK_2_159", 512, 4
+{ Graphic "CA_SB_COL_2", -26, -159 }
+
+Graphic "CA_SB_THICK_2_163", 512, 1
+{ Graphic "CA_SB_COL_2", -25, -163 }
+
+Graphic "CA_SB_THICK_2_164", 512, 4
+{ Graphic "CA_SB_COL_2", -24, -164 }
+
+Graphic "CA_SB_THICK_2_168", 512, 2
+{ Graphic "CA_SB_COL_2", -23, -168 }
+
+Graphic "CA_SB_THICK_2_170", 512, 3
+{ Graphic "CA_SB_COL_2", -22, -170 }
+
+Graphic "CA_SB_THICK_2_173", 512, 2
+{ Graphic "CA_SB_COL_2", -21, -173 }
+
+Graphic "CA_SB_THICK_2_175", 512, 3
+{ Graphic "CA_SB_COL_2", -20, -175 }
+
+Graphic "CA_SB_THICK_2_178", 512, 3
+{ Graphic "CA_SB_COL_2", -19, -178 }
+
+Graphic "CA_SB_THICK_2_181", 512, 3
+{ Graphic "CA_SB_COL_2", -18, -181 }
+
+Graphic "CA_SB_THICK_2_184", 512, 2
+{ Graphic "CA_SB_COL_2", -17, -184 }
+
+Graphic "CA_SB_THICK_2_186", 512, 4
+{ Graphic "CA_SB_COL_2", -16, -186 }
+
+Graphic "CA_SB_THICK_2_190", 512, 2
+{ Graphic "CA_SB_COL_2", -15, -190 }
+
+Graphic "CA_SB_THICK_2_192", 512, 4
+{ Graphic "CA_SB_COL_2", -14, -192 }
+
+Graphic "CA_SB_THICK_2_196", 512, 3
+{ Graphic "CA_SB_COL_2", -13, -196 }
+
+Graphic "CA_SB_THICK_2_199", 512, 3
+{ Graphic "CA_SB_COL_2", -12, -199 }
+
+Graphic "CA_SB_THICK_2_202", 512, 3
+{ Graphic "CA_SB_COL_2", -11, -202 }
+
+Graphic "CA_SB_THICK_2_205", 512, 4
+{ Graphic "CA_SB_COL_2", -10, -205 }
+
+Graphic "CA_SB_THICK_2_209", 512, 2
+{ Graphic "CA_SB_COL_2", -9, -209 }
+
+Graphic "CA_SB_THICK_2_211", 512, 5
+{ Graphic "CA_SB_COL_2", -8, -211 }
+
+Graphic "CA_SB_THICK_2_216", 512, 3
+{ Graphic "CA_SB_COL_2", -7, -216 }
+
+Graphic "CA_SB_THICK_2_219", 512, 4
+{ Graphic "CA_SB_COL_2", -6, -219 }
+
+Graphic "CA_SB_THICK_2_223", 512, 4
+{ Graphic "CA_SB_COL_2", -5, -223 }
+
+Graphic "CA_SB_THICK_2_227", 512, 5
+{ Graphic "CA_SB_COL_2", -4, -227 }
+
+Graphic "CA_SB_THICK_2_232", 512, 3
+{ Graphic "CA_SB_COL_2", -3, -232 }
+
+Graphic "CA_SB_THICK_2_235", 512, 5
+{ Graphic "CA_SB_COL_2", -2, -235 }
+
+Graphic "CA_SB_THICK_2_240", 512, 4
+{ Graphic "CA_SB_COL_2", -1, -240 }
+
+Graphic "CA_SB_THICK_2_244", 512, 5
+{ Graphic "CA_SB_COL_2", 0, -244 }
+
+Graphic "CA_SB_THICK_2_249", 512, 5
+{ Graphic "CA_SB_COL_2", 1, -249 }
+
+Graphic "CA_SB_THICK_2_254", 512, 7
+{ Graphic "CA_SB_COL_2", 2, -254 }
+
+Graphic "CA_SB_THICK_2_261", 512, 3
+{ Graphic "CA_SB_COL_2", 3, -261 }
+
+Graphic "CA_SB_THICK_2_264", 512, 7
+{ Graphic "CA_SB_COL_2", 4, -264 }
+
+Graphic "CA_SB_THICK_2_271", 512, 6
+{ Graphic "CA_SB_COL_2", 5, -271 }
+
+Graphic "CA_SB_THICK_2_277", 512, 10
+{ Graphic "CA_SB_COL_2", 6, -277 }
+
+Graphic "CA_SB_THICK_2_287", 512, 4
+{ Graphic "CA_SB_COL_2", 7, -287 }
+
+Graphic "CA_SB_THICK_2_291", 512, 15
+{ Graphic "CA_SB_COL_2", 8, -291 }
+
+Graphic "CA_SB_THICK_2_306", 512, 11
+{ Graphic "CA_SB_COL_2", 9, -306 }
+
+Graphic "CA_SB_THICK_2_317", 512, 48
+{ Graphic "CA_SB_COL_2", 10, -317 }
+
+Graphic "CA_SB_THICK_2_365", 512, 9
+{ Graphic "CA_SB_COL_2", 9, -365 }
+
+Graphic "CA_SB_THICK_2_374", 512, 14
+{ Graphic "CA_SB_COL_2", 8, -374 }
+
+Graphic "CA_SB_THICK_2_388", 512, 7
+{ Graphic "CA_SB_COL_2", 7, -388 }
+
+Graphic "CA_SB_THICK_2_395", 512, 8
+{ Graphic "CA_SB_COL_2", 6, -395 }
+
+Graphic "CA_SB_THICK_2_403", 512, 3
+{ Graphic "CA_SB_COL_2", 5, -403 }
+
+Graphic "CA_SB_THICK_2_406", 512, 5
+{ Graphic "CA_SB_COL_2", 4, -406 }
+
+Graphic "CA_SB_THICK_2_411", 512, 4
+{ Graphic "CA_SB_COL_2", 3, -411 }
+
+Graphic "CA_SB_THICK_2_415", 512, 6
+{ Graphic "CA_SB_COL_2", 2, -415 }
+
+Graphic "CA_SB_THICK_2_421", 512, 3
+{ Graphic "CA_SB_COL_2", 1, -421 }
+
+Graphic "CA_SB_THICK_2_424", 512, 7
+{ Graphic "CA_SB_COL_2", 0, -424 }
+
+Graphic "CA_SB_THICK_2_431", 512, 10
+{ Graphic "CA_SB_COL_2", -1, -431 }
+
+Graphic "CA_SB_THICK_2_441", 512, 21
+{ Graphic "CA_SB_COL_2", -2, -441 }
+
+Graphic "CA_SB_THICK_2_462", 512, 20
+{ Graphic "CA_SB_COL_2", -1, -462 }
+
+Graphic "CA_SB_THICK_2_482", 512, 44
+{ Graphic "CA_SB_COL_2", 0, -482 }
+
+Graphic "CA_SB_THICK_2_526", 512, 24
+{ Graphic "CA_SB_COL_2", -1, -526 }
+
+Graphic "CA_SB_THICK_2_550", 512, 25
+{ Graphic "CA_SB_COL_2", -2, -550 }
+
+Graphic "CA_SB_THICK_2_575", 512, 9
+{ Graphic "CA_SB_COL_2", -1, -575 }
+
+Graphic "CA_SB_THICK_2_584", 512, 7
+{ Graphic "CA_SB_COL_2", 0, -584 }
+
+Graphic "CA_SB_THICK_2_591", 512, 4
+{ Graphic "CA_SB_COL_2", 1, -591 }
+
+Graphic "CA_SB_THICK_2_595", 512, 6
+{ Graphic "CA_SB_COL_2", 2, -595 }
+
+Graphic "CA_SB_THICK_2_601", 512, 4
+{ Graphic "CA_SB_COL_2", 3, -601 }
+
+Graphic "CA_SB_THICK_2_605", 512, 4
+{ Graphic "CA_SB_COL_2", 4, -605 }
+
+Graphic "CA_SB_THICK_2_609", 512, 2
+{ Graphic "CA_SB_COL_2", 5, -609 }
+
+Graphic "CA_SB_THICK_2_611", 512, 8
+{ Graphic "CA_SB_COL_2", 6, -611 }
+
+Graphic "CA_SB_THICK_2_619", 512, 7
+{ Graphic "CA_SB_COL_2", 7, -619 }
+
+Graphic "CA_SB_THICK_2_626", 512, 1
+{ Graphic "CA_SB_COL_2", 8, -626 }
+
+Graphic "CA_SB_THICK_2_627", 512, 2
+{ Graphic "CA_SB_COL_2", 7, -627 }
+
+Graphic "CA_SB_THICK_2_629", 512, 8
+{ Graphic "CA_SB_COL_2", 8, -629 }
+
+Graphic "CA_SB_THICK_2_637", 512, 7
+{ Graphic "CA_SB_COL_2", 9, -637 }
+
+Graphic "CA_SB_THICK_2_644", 512, 62
+{ Graphic "CA_SB_COL_2", 10, -644 }
+
+Graphic "CA_SB_THICK_2_706", 512, 10
+{ Graphic "CA_SB_COL_2", 9, -706 }
+
+Graphic "CA_SB_THICK_2_716", 512, 14
+{ Graphic "CA_SB_COL_2", 8, -716 }
+
+Graphic "CA_SB_THICK_2_730", 512, 5
+{ Graphic "CA_SB_COL_2", 7, -730 }
+
+Graphic "CA_SB_THICK_2_735", 512, 8
+{ Graphic "CA_SB_COL_2", 6, -735 }
+
+Graphic "CA_SB_THICK_2_743", 512, 5
+{ Graphic "CA_SB_COL_2", 5, -743 }
+
+Graphic "CA_SB_THICK_2_748", 512, 7
+{ Graphic "CA_SB_COL_2", 4, -748 }
+
+Graphic "CA_SB_THICK_2_755", 512, 5
+{ Graphic "CA_SB_COL_2", 3, -755 }
+
+Graphic "CA_SB_THICK_2_760", 512, 7
+{ Graphic "CA_SB_COL_2", 2, -760 }
+
+Graphic "CA_SB_THICK_2_767", 512, 2
+{ Graphic "CA_SB_COL_2", 1, -767 }
+
+Graphic "CA_SB_THICK_2_769", 512, 7
+{ Graphic "CA_SB_COL_2", 0, -769 }
+
+Graphic "CA_SB_THICK_2_776", 512, 3
+{ Graphic "CA_SB_COL_2", -1, -776 }
+
+Graphic "CA_SB_THICK_2_779", 512, 6
+{ Graphic "CA_SB_COL_2", -2, -779 }
+
+Graphic "CA_SB_THICK_2_785", 512, 2
+{ Graphic "CA_SB_COL_2", -3, -785 }
+
+Graphic "CA_SB_THICK_2_787", 512, 4
+{ Graphic "CA_SB_COL_2", -4, -787 }
+
+Graphic "CA_SB_THICK_2_791", 512, 4
+{ Graphic "CA_SB_COL_2", -5, -791 }
+
+Graphic "CA_SB_THICK_2_795", 512, 4
+{ Graphic "CA_SB_COL_2", -6, -795 }
+
+Graphic "CA_SB_THICK_2_799", 512, 2
+{ Graphic "CA_SB_COL_2", -7, -799 }
+
+Graphic "CA_SB_THICK_2_801", 512, 5
+{ Graphic "CA_SB_COL_2", -8, -801 }
+
+Graphic "CA_SB_THICK_2_806", 512, 2
+{ Graphic "CA_SB_COL_2", -9, -806 }
+
+Graphic "CA_SB_THICK_2_808", 512, 4
+{ Graphic "CA_SB_COL_2", -10, -808 }
+
+Graphic "CA_SB_THICK_2_812", 512, 2
+{ Graphic "CA_SB_COL_2", -11, -812 }
+
+Graphic "CA_SB_THICK_2_814", 512, 4
+{ Graphic "CA_SB_COL_2", -12, -814 }
+
+Graphic "CA_SB_THICK_2_818", 512, 1
+{ Graphic "CA_SB_COL_2", -13, -818 }
+
+Graphic "CA_SB_THICK_2_819", 512, 4
+{ Graphic "CA_SB_COL_2", -14, -819 }
+
+Graphic "CA_SB_THICK_2_823", 512, 2
+{ Graphic "CA_SB_COL_2", -15, -823 }
+
+Graphic "CA_SB_THICK_2_825", 512, 3
+{ Graphic "CA_SB_COL_2", -16, -825 }
+
+Graphic "CA_SB_THICK_2_828", 512, 3
+{ Graphic "CA_SB_COL_2", -17, -828 }
+
+Graphic "CA_SB_THICK_2_831", 512, 3
+{ Graphic "CA_SB_COL_2", -18, -831 }
+
+Graphic "CA_SB_THICK_2_834", 512, 1
+{ Graphic "CA_SB_COL_2", -19, -834 }
+
+Graphic "CA_SB_THICK_2_835", 512, 4
+{ Graphic "CA_SB_COL_2", -20, -835 }
+
+Graphic "CA_SB_THICK_2_839", 512, 2
+{ Graphic "CA_SB_COL_2", -21, -839 }
+
+Graphic "CA_SB_THICK_2_841", 512, 3
+{ Graphic "CA_SB_COL_2", -22, -841 }
+
+Graphic "CA_SB_THICK_2_844", 512, 1
+{ Graphic "CA_SB_COL_2", -23, -844 }
+
+Graphic "CA_SB_THICK_2_845", 512, 4
+{ Graphic "CA_SB_COL_2", -24, -845 }
+
+Graphic "CA_SB_THICK_2_849", 512, 1
+{ Graphic "CA_SB_COL_2", -25, -849 }
+
+Graphic "CA_SB_THICK_2_850", 512, 3
+{ Graphic "CA_SB_COL_2", -26, -850 }
+
+Graphic "CA_SB_THICK_2_853", 512, 2
+{ Graphic "CA_SB_COL_2", -27, -853 }
+
+Graphic "CA_SB_THICK_2_855", 512, 4
+{ Graphic "CA_SB_COL_2", -28, -855 }
+
+Graphic "CA_SB_THICK_2_859", 512, 1
+{ Graphic "CA_SB_COL_2", -29, -859 }
+
+Graphic "CA_SB_THICK_2_860", 512, 3
+{ Graphic "CA_SB_COL_2", -30, -860 }
+
+Graphic "CA_SB_THICK_2_863", 512, 3
+{ Graphic "CA_SB_COL_2", -31, -863 }
+
+Graphic "CA_SB_THICK_2_866", 512, 2
+{ Graphic "CA_SB_COL_2", -32, -866 }
+
+Graphic "CA_SB_THICK_2_868", 512, 3
+{ Graphic "CA_SB_COL_2", -33, -868 }
+
+Graphic "CA_SB_THICK_2_871", 512, 3
+{ Graphic "CA_SB_COL_2", -34, -871 }
+
+Graphic "CA_SB_THICK_2_874", 512, 3
+{ Graphic "CA_SB_COL_2", -35, -874 }
+
+Graphic "CA_SB_THICK_2_877", 512, 3
+{ Graphic "CA_SB_COL_2", -36, -877 }
+
+Graphic "CA_SB_THICK_2_880", 512, 2
+{ Graphic "CA_SB_COL_2", -37, -880 }
+
+Graphic "CA_SB_THICK_2_882", 512, 3
+{ Graphic "CA_SB_COL_2", -38, -882 }
+
+Graphic "CA_SB_THICK_2_885", 512, 3
+{ Graphic "CA_SB_COL_2", -39, -885 }
+
+Graphic "CA_SB_THICK_2_888", 512, 4
+{ Graphic "CA_SB_COL_2", -40, -888 }
+
+Graphic "CA_SB_THICK_2_892", 512, 2
+{ Graphic "CA_SB_COL_2", -41, -892 }
+
+Graphic "CA_SB_THICK_2_894", 512, 4
+{ Graphic "CA_SB_COL_2", -42, -894 }
+
+Graphic "CA_SB_THICK_2_898", 512, 2
+{ Graphic "CA_SB_COL_2", -43, -898 }
+
+Graphic "CA_SB_THICK_2_900", 512, 5
+{ Graphic "CA_SB_COL_2", -44, -900 }
+
+Graphic "CA_SB_THICK_2_905", 512, 3
+{ Graphic "CA_SB_COL_2", -45, -905 }
+
+Graphic "CA_SB_THICK_2_908", 512, 6
+{ Graphic "CA_SB_COL_2", -46, -908 }
+
+Graphic "CA_SB_THICK_2_914", 512, 4
+{ Graphic "CA_SB_COL_2", -47, -914 }
+
+Graphic "CA_SB_THICK_2_918", 512, 6
+{ Graphic "CA_SB_COL_2", -48, -918 }
+
+Graphic "CA_SB_THICK_2_924", 512, 5
+{ Graphic "CA_SB_COL_2", -49, -924 }
+
+Graphic "CA_SB_THICK_2_929", 512, 9
+{ Graphic "CA_SB_COL_2", -50, -929 }
+
+Graphic "CA_SB_THICK_2_938", 512, 23
+{ Graphic "CA_SB_COL_2", -51, -938 }
+
+Graphic "CA_SB_THICK_2_961", 512, 12
+{ Graphic "CA_SB_COL_2", -50, -961 }
+
+Graphic "CA_SB_THICK_2_973", 512, 4
+{ Graphic "CA_SB_COL_2", -49, -973 }
+
+Graphic "CA_SB_THICK_2_977", 512, 5
+{ Graphic "CA_SB_COL_2", -48, -977 }
+
+Graphic "CA_SB_THICK_2_982", 512, 2
+{ Graphic "CA_SB_COL_2", -47, -982 }
+
+Graphic "CA_SB_THICK_2_984", 512, 4
+{ Graphic "CA_SB_COL_2", -46, -984 }
+
+Graphic "CA_SB_THICK_2_988", 512, 4
+{ Graphic "CA_SB_COL_2", -45, -988 }
+
+Graphic "CA_SB_THICK_2_992", 512, 7
+{ Graphic "CA_SB_COL_2", -44, -992 }
+
+Graphic "CA_SB_THICK_2_999", 512, 25
+{ Graphic "CA_SB_COL_2", 0, -999 }
+
+Graphic "CA_SB_THICK_2", 512, 1024
+{
+    Graphic "CA_SB_THICK_2_0", 0, 0
+    Graphic "CA_SB_THICK_2_16", 0, 16
+    Graphic "CA_SB_THICK_2_25", 0, 25
+    Graphic "CA_SB_THICK_2_28", 0, 28
+    Graphic "CA_SB_THICK_2_32", 0, 32
+    Graphic "CA_SB_THICK_2_35", 0, 35
+    Graphic "CA_SB_THICK_2_40", 0, 40
+    Graphic "CA_SB_THICK_2_45", 0, 45
+    Graphic "CA_SB_THICK_2_56", 0, 56
+    Graphic "CA_SB_THICK_2_76", 0, 76
+    Graphic "CA_SB_THICK_2_83", 0, 83
+    Graphic "CA_SB_THICK_2_88", 0, 88
+    Graphic "CA_SB_THICK_2_95", 0, 95
+    Graphic "CA_SB_THICK_2_98", 0, 98
+    Graphic "CA_SB_THICK_2_103", 0, 103
+    Graphic "CA_SB_THICK_2_107", 0, 107
+    Graphic "CA_SB_THICK_2_111", 0, 111
+    Graphic "CA_SB_THICK_2_113", 0, 113
+    Graphic "CA_SB_THICK_2_118", 0, 118
+    Graphic "CA_SB_THICK_2_120", 0, 120
+    Graphic "CA_SB_THICK_2_124", 0, 124
+    Graphic "CA_SB_THICK_2_126", 0, 126
+    Graphic "CA_SB_THICK_2_130", 0, 130
+    Graphic "CA_SB_THICK_2_132", 0, 132
+    Graphic "CA_SB_THICK_2_136", 0, 136
+    Graphic "CA_SB_THICK_2_138", 0, 138
+    Graphic "CA_SB_THICK_2_141", 0, 141
+    Graphic "CA_SB_THICK_2_143", 0, 143
+    Graphic "CA_SB_THICK_2_146", 0, 146
+    Graphic "CA_SB_THICK_2_149", 0, 149
+    Graphic "CA_SB_THICK_2_152", 0, 152
+    Graphic "CA_SB_THICK_2_154", 0, 154
+    Graphic "CA_SB_THICK_2_158", 0, 158
+    Graphic "CA_SB_THICK_2_159", 0, 159
+    Graphic "CA_SB_THICK_2_163", 0, 163
+    Graphic "CA_SB_THICK_2_164", 0, 164
+    Graphic "CA_SB_THICK_2_168", 0, 168
+    Graphic "CA_SB_THICK_2_170", 0, 170
+    Graphic "CA_SB_THICK_2_173", 0, 173
+    Graphic "CA_SB_THICK_2_175", 0, 175
+    Graphic "CA_SB_THICK_2_178", 0, 178
+    Graphic "CA_SB_THICK_2_181", 0, 181
+    Graphic "CA_SB_THICK_2_184", 0, 184
+    Graphic "CA_SB_THICK_2_186", 0, 186
+    Graphic "CA_SB_THICK_2_190", 0, 190
+    Graphic "CA_SB_THICK_2_192", 0, 192
+    Graphic "CA_SB_THICK_2_196", 0, 196
+    Graphic "CA_SB_THICK_2_199", 0, 199
+    Graphic "CA_SB_THICK_2_202", 0, 202
+    Graphic "CA_SB_THICK_2_205", 0, 205
+    Graphic "CA_SB_THICK_2_209", 0, 209
+    Graphic "CA_SB_THICK_2_211", 0, 211
+    Graphic "CA_SB_THICK_2_216", 0, 216
+    Graphic "CA_SB_THICK_2_219", 0, 219
+    Graphic "CA_SB_THICK_2_223", 0, 223
+    Graphic "CA_SB_THICK_2_227", 0, 227
+    Graphic "CA_SB_THICK_2_232", 0, 232
+    Graphic "CA_SB_THICK_2_235", 0, 235
+    Graphic "CA_SB_THICK_2_240", 0, 240
+    Graphic "CA_SB_THICK_2_244", 0, 244
+    Graphic "CA_SB_THICK_2_249", 0, 249
+    Graphic "CA_SB_THICK_2_254", 0, 254
+    Graphic "CA_SB_THICK_2_261", 0, 261
+    Graphic "CA_SB_THICK_2_264", 0, 264
+    Graphic "CA_SB_THICK_2_271", 0, 271
+    Graphic "CA_SB_THICK_2_277", 0, 277
+    Graphic "CA_SB_THICK_2_287", 0, 287
+    Graphic "CA_SB_THICK_2_291", 0, 291
+    Graphic "CA_SB_THICK_2_306", 0, 306
+    Graphic "CA_SB_THICK_2_317", 0, 317
+    Graphic "CA_SB_THICK_2_365", 0, 365
+    Graphic "CA_SB_THICK_2_374", 0, 374
+    Graphic "CA_SB_THICK_2_388", 0, 388
+    Graphic "CA_SB_THICK_2_395", 0, 395
+    Graphic "CA_SB_THICK_2_403", 0, 403
+    Graphic "CA_SB_THICK_2_406", 0, 406
+    Graphic "CA_SB_THICK_2_411", 0, 411
+    Graphic "CA_SB_THICK_2_415", 0, 415
+    Graphic "CA_SB_THICK_2_421", 0, 421
+    Graphic "CA_SB_THICK_2_424", 0, 424
+    Graphic "CA_SB_THICK_2_431", 0, 431
+    Graphic "CA_SB_THICK_2_441", 0, 441
+    Graphic "CA_SB_THICK_2_462", 0, 462
+    Graphic "CA_SB_THICK_2_482", 0, 482
+    Graphic "CA_SB_THICK_2_526", 0, 526
+    Graphic "CA_SB_THICK_2_550", 0, 550
+    Graphic "CA_SB_THICK_2_575", 0, 575
+    Graphic "CA_SB_THICK_2_584", 0, 584
+    Graphic "CA_SB_THICK_2_591", 0, 591
+    Graphic "CA_SB_THICK_2_595", 0, 595
+    Graphic "CA_SB_THICK_2_601", 0, 601
+    Graphic "CA_SB_THICK_2_605", 0, 605
+    Graphic "CA_SB_THICK_2_609", 0, 609
+    Graphic "CA_SB_THICK_2_611", 0, 611
+    Graphic "CA_SB_THICK_2_619", 0, 619
+    Graphic "CA_SB_THICK_2_626", 0, 626
+    Graphic "CA_SB_THICK_2_627", 0, 627
+    Graphic "CA_SB_THICK_2_629", 0, 629
+    Graphic "CA_SB_THICK_2_637", 0, 637
+    Graphic "CA_SB_THICK_2_644", 0, 644
+    Graphic "CA_SB_THICK_2_706", 0, 706
+    Graphic "CA_SB_THICK_2_716", 0, 716
+    Graphic "CA_SB_THICK_2_730", 0, 730
+    Graphic "CA_SB_THICK_2_735", 0, 735
+    Graphic "CA_SB_THICK_2_743", 0, 743
+    Graphic "CA_SB_THICK_2_748", 0, 748
+    Graphic "CA_SB_THICK_2_755", 0, 755
+    Graphic "CA_SB_THICK_2_760", 0, 760
+    Graphic "CA_SB_THICK_2_767", 0, 767
+    Graphic "CA_SB_THICK_2_769", 0, 769
+    Graphic "CA_SB_THICK_2_776", 0, 776
+    Graphic "CA_SB_THICK_2_779", 0, 779
+    Graphic "CA_SB_THICK_2_785", 0, 785
+    Graphic "CA_SB_THICK_2_787", 0, 787
+    Graphic "CA_SB_THICK_2_791", 0, 791
+    Graphic "CA_SB_THICK_2_795", 0, 795
+    Graphic "CA_SB_THICK_2_799", 0, 799
+    Graphic "CA_SB_THICK_2_801", 0, 801
+    Graphic "CA_SB_THICK_2_806", 0, 806
+    Graphic "CA_SB_THICK_2_808", 0, 808
+    Graphic "CA_SB_THICK_2_812", 0, 812
+    Graphic "CA_SB_THICK_2_814", 0, 814
+    Graphic "CA_SB_THICK_2_818", 0, 818
+    Graphic "CA_SB_THICK_2_819", 0, 819
+    Graphic "CA_SB_THICK_2_823", 0, 823
+    Graphic "CA_SB_THICK_2_825", 0, 825
+    Graphic "CA_SB_THICK_2_828", 0, 828
+    Graphic "CA_SB_THICK_2_831", 0, 831
+    Graphic "CA_SB_THICK_2_834", 0, 834
+    Graphic "CA_SB_THICK_2_835", 0, 835
+    Graphic "CA_SB_THICK_2_839", 0, 839
+    Graphic "CA_SB_THICK_2_841", 0, 841
+    Graphic "CA_SB_THICK_2_844", 0, 844
+    Graphic "CA_SB_THICK_2_845", 0, 845
+    Graphic "CA_SB_THICK_2_849", 0, 849
+    Graphic "CA_SB_THICK_2_850", 0, 850
+    Graphic "CA_SB_THICK_2_853", 0, 853
+    Graphic "CA_SB_THICK_2_855", 0, 855
+    Graphic "CA_SB_THICK_2_859", 0, 859
+    Graphic "CA_SB_THICK_2_860", 0, 860
+    Graphic "CA_SB_THICK_2_863", 0, 863
+    Graphic "CA_SB_THICK_2_866", 0, 866
+    Graphic "CA_SB_THICK_2_868", 0, 868
+    Graphic "CA_SB_THICK_2_871", 0, 871
+    Graphic "CA_SB_THICK_2_874", 0, 874
+    Graphic "CA_SB_THICK_2_877", 0, 877
+    Graphic "CA_SB_THICK_2_880", 0, 880
+    Graphic "CA_SB_THICK_2_882", 0, 882
+    Graphic "CA_SB_THICK_2_885", 0, 885
+    Graphic "CA_SB_THICK_2_888", 0, 888
+    Graphic "CA_SB_THICK_2_892", 0, 892
+    Graphic "CA_SB_THICK_2_894", 0, 894
+    Graphic "CA_SB_THICK_2_898", 0, 898
+    Graphic "CA_SB_THICK_2_900", 0, 900
+    Graphic "CA_SB_THICK_2_905", 0, 905
+    Graphic "CA_SB_THICK_2_908", 0, 908
+    Graphic "CA_SB_THICK_2_914", 0, 914
+    Graphic "CA_SB_THICK_2_918", 0, 918
+    Graphic "CA_SB_THICK_2_924", 0, 924
+    Graphic "CA_SB_THICK_2_929", 0, 929
+    Graphic "CA_SB_THICK_2_938", 0, 938
+    Graphic "CA_SB_THICK_2_961", 0, 961
+    Graphic "CA_SB_THICK_2_973", 0, 973
+    Graphic "CA_SB_THICK_2_977", 0, 977
+    Graphic "CA_SB_THICK_2_982", 0, 982
+    Graphic "CA_SB_THICK_2_984", 0, 984
+    Graphic "CA_SB_THICK_2_988", 0, 988
+    Graphic "CA_SB_THICK_2_992", 0, 992
+    Graphic "CA_SB_THICK_2_999", 0, 999
+}
+
+Graphic "CA_SB_COL_3", 512, 1024
+{ Graphic "CA_SB_MUTED", -1024, 0 }
+
+Graphic "CA_SB_THICK_3_0", 512, 16
+{ Graphic "CA_SB_COL_3", 0, 0 }
+
+Graphic "CA_SB_THICK_3_16", 512, 8
+{ Graphic "CA_SB_COL_3", -44, -16 }
+
+Graphic "CA_SB_THICK_3_24", 512, 3
+{ Graphic "CA_SB_COL_3", -45, -24 }
+
+Graphic "CA_SB_THICK_3_27", 512, 5
+{ Graphic "CA_SB_COL_3", -46, -27 }
+
+Graphic "CA_SB_THICK_3_32", 512, 2
+{ Graphic "CA_SB_COL_3", -47, -32 }
+
+Graphic "CA_SB_THICK_3_34", 512, 5
+{ Graphic "CA_SB_COL_3", -48, -34 }
+
+Graphic "CA_SB_THICK_3_39", 512, 4
+{ Graphic "CA_SB_COL_3", -49, -39 }
+
+Graphic "CA_SB_THICK_3_43", 512, 9
+{ Graphic "CA_SB_COL_3", -50, -43 }
+
+Graphic "CA_SB_THICK_3_52", 512, 10
+{ Graphic "CA_SB_COL_3", -51, -52 }
+
+Graphic "CA_SB_THICK_3_62", 512, 1
+{ Graphic "CA_SB_COL_3", -52, -62 }
+
+Graphic "CA_SB_THICK_3_63", 512, 13
+{ Graphic "CA_SB_COL_3", -51, -63 }
+
+Graphic "CA_SB_THICK_3_76", 512, 9
+{ Graphic "CA_SB_COL_3", -50, -76 }
+
+Graphic "CA_SB_THICK_3_85", 512, 4
+{ Graphic "CA_SB_COL_3", -49, -85 }
+
+Graphic "CA_SB_THICK_3_89", 512, 8
+{ Graphic "CA_SB_COL_3", -48, -89 }
+
+Graphic "CA_SB_THICK_3_97", 512, 2
+{ Graphic "CA_SB_COL_3", -47, -97 }
+
+Graphic "CA_SB_THICK_3_99", 512, 6
+{ Graphic "CA_SB_COL_3", -46, -99 }
+
+Graphic "CA_SB_THICK_3_105", 512, 3
+{ Graphic "CA_SB_COL_3", -45, -105 }
+
+Graphic "CA_SB_THICK_3_108", 512, 4
+{ Graphic "CA_SB_COL_3", -44, -108 }
+
+Graphic "CA_SB_THICK_3_112", 512, 3
+{ Graphic "CA_SB_COL_3", -43, -112 }
+
+Graphic "CA_SB_THICK_3_115", 512, 3
+{ Graphic "CA_SB_COL_3", -42, -115 }
+
+Graphic "CA_SB_THICK_3_118", 512, 3
+{ Graphic "CA_SB_COL_3", -41, -118 }
+
+Graphic "CA_SB_THICK_3_121", 512, 4
+{ Graphic "CA_SB_COL_3", -40, -121 }
+
+Graphic "CA_SB_THICK_3_125", 512, 2
+{ Graphic "CA_SB_COL_3", -39, -125 }
+
+Graphic "CA_SB_THICK_3_127", 512, 3
+{ Graphic "CA_SB_COL_3", -38, -127 }
+
+Graphic "CA_SB_THICK_3_130", 512, 3
+{ Graphic "CA_SB_COL_3", -37, -130 }
+
+Graphic "CA_SB_THICK_3_133", 512, 3
+{ Graphic "CA_SB_COL_3", -36, -133 }
+
+Graphic "CA_SB_THICK_3_136", 512, 3
+{ Graphic "CA_SB_COL_3", -35, -136 }
+
+Graphic "CA_SB_THICK_3_139", 512, 3
+{ Graphic "CA_SB_COL_3", -34, -139 }
+
+Graphic "CA_SB_THICK_3_142", 512, 2
+{ Graphic "CA_SB_COL_3", -33, -142 }
+
+Graphic "CA_SB_THICK_3_144", 512, 3
+{ Graphic "CA_SB_COL_3", -32, -144 }
+
+Graphic "CA_SB_THICK_3_147", 512, 2
+{ Graphic "CA_SB_COL_3", -31, -147 }
+
+Graphic "CA_SB_THICK_3_149", 512, 4
+{ Graphic "CA_SB_COL_3", -30, -149 }
+
+Graphic "CA_SB_THICK_3_153", 512, 1
+{ Graphic "CA_SB_COL_3", -29, -153 }
+
+Graphic "CA_SB_THICK_3_154", 512, 4
+{ Graphic "CA_SB_COL_3", -28, -154 }
+
+Graphic "CA_SB_THICK_3_158", 512, 2
+{ Graphic "CA_SB_COL_3", -27, -158 }
+
+Graphic "CA_SB_THICK_3_160", 512, 3
+{ Graphic "CA_SB_COL_3", -26, -160 }
+
+Graphic "CA_SB_THICK_3_163", 512, 2
+{ Graphic "CA_SB_COL_3", -25, -163 }
+
+Graphic "CA_SB_THICK_3_165", 512, 3
+{ Graphic "CA_SB_COL_3", -24, -165 }
+
+Graphic "CA_SB_THICK_3_168", 512, 3
+{ Graphic "CA_SB_COL_3", -23, -168 }
+
+Graphic "CA_SB_THICK_3_171", 512, 3
+{ Graphic "CA_SB_COL_3", -22, -171 }
+
+Graphic "CA_SB_THICK_3_174", 512, 2
+{ Graphic "CA_SB_COL_3", -21, -174 }
+
+Graphic "CA_SB_THICK_3_176", 512, 3
+{ Graphic "CA_SB_COL_3", -20, -176 }
+
+Graphic "CA_SB_THICK_3_179", 512, 2
+{ Graphic "CA_SB_COL_3", -19, -179 }
+
+Graphic "CA_SB_THICK_3_181", 512, 4
+{ Graphic "CA_SB_COL_3", -18, -181 }
+
+Graphic "CA_SB_THICK_3_185", 512, 2
+{ Graphic "CA_SB_COL_3", -17, -185 }
+
+Graphic "CA_SB_THICK_3_187", 512, 4
+{ Graphic "CA_SB_COL_3", -16, -187 }
+
+Graphic "CA_SB_THICK_3_191", 512, 2
+{ Graphic "CA_SB_COL_3", -15, -191 }
+
+Graphic "CA_SB_THICK_3_193", 512, 3
+{ Graphic "CA_SB_COL_3", -14, -193 }
+
+Graphic "CA_SB_THICK_3_196", 512, 3
+{ Graphic "CA_SB_COL_3", -13, -196 }
+
+Graphic "CA_SB_THICK_3_199", 512, 4
+{ Graphic "CA_SB_COL_3", -12, -199 }
+
+Graphic "CA_SB_THICK_3_203", 512, 3
+{ Graphic "CA_SB_COL_3", -11, -203 }
+
+Graphic "CA_SB_THICK_3_206", 512, 4
+{ Graphic "CA_SB_COL_3", -10, -206 }
+
+Graphic "CA_SB_THICK_3_210", 512, 2
+{ Graphic "CA_SB_COL_3", -9, -210 }
+
+Graphic "CA_SB_THICK_3_212", 512, 4
+{ Graphic "CA_SB_COL_3", -8, -212 }
+
+Graphic "CA_SB_THICK_3_216", 512, 4
+{ Graphic "CA_SB_COL_3", -7, -216 }
+
+Graphic "CA_SB_THICK_3_220", 512, 5
+{ Graphic "CA_SB_COL_3", -6, -220 }
+
+Graphic "CA_SB_THICK_3_225", 512, 2
+{ Graphic "CA_SB_COL_3", -5, -225 }
+
+Graphic "CA_SB_THICK_3_227", 512, 5
+{ Graphic "CA_SB_COL_3", -4, -227 }
+
+Graphic "CA_SB_THICK_3_232", 512, 4
+{ Graphic "CA_SB_COL_3", -3, -232 }
+
+Graphic "CA_SB_THICK_3_236", 512, 4
+{ Graphic "CA_SB_COL_3", -2, -236 }
+
+Graphic "CA_SB_THICK_3_240", 512, 4
+{ Graphic "CA_SB_COL_3", -1, -240 }
+
+Graphic "CA_SB_THICK_3_244", 512, 7
+{ Graphic "CA_SB_COL_3", 0, -244 }
+
+Graphic "CA_SB_THICK_3_251", 512, 3
+{ Graphic "CA_SB_COL_3", 1, -251 }
+
+Graphic "CA_SB_THICK_3_254", 512, 7
+{ Graphic "CA_SB_COL_3", 2, -254 }
+
+Graphic "CA_SB_THICK_3_261", 512, 5
+{ Graphic "CA_SB_COL_3", 3, -261 }
+
+Graphic "CA_SB_THICK_3_266", 512, 7
+{ Graphic "CA_SB_COL_3", 4, -266 }
+
+Graphic "CA_SB_THICK_3_273", 512, 5
+{ Graphic "CA_SB_COL_3", 5, -273 }
+
+Graphic "CA_SB_THICK_3_278", 512, 10
+{ Graphic "CA_SB_COL_3", 6, -278 }
+
+Graphic "CA_SB_THICK_3_288", 512, 6
+{ Graphic "CA_SB_COL_3", 7, -288 }
+
+Graphic "CA_SB_THICK_3_294", 512, 15
+{ Graphic "CA_SB_COL_3", 8, -294 }
+
+Graphic "CA_SB_THICK_3_309", 512, 9
+{ Graphic "CA_SB_COL_3", 9, -309 }
+
+Graphic "CA_SB_THICK_3_318", 512, 44
+{ Graphic "CA_SB_COL_3", 10, -318 }
+
+Graphic "CA_SB_THICK_3_362", 512, 12
+{ Graphic "CA_SB_COL_3", 9, -362 }
+
+Graphic "CA_SB_THICK_3_374", 512, 15
+{ Graphic "CA_SB_COL_3", 8, -374 }
+
+Graphic "CA_SB_THICK_3_389", 512, 5
+{ Graphic "CA_SB_COL_3", 7, -389 }
+
+Graphic "CA_SB_THICK_3_394", 512, 8
+{ Graphic "CA_SB_COL_3", 6, -394 }
+
+Graphic "CA_SB_THICK_3_402", 512, 3
+{ Graphic "CA_SB_COL_3", 5, -402 }
+
+Graphic "CA_SB_THICK_3_405", 512, 6
+{ Graphic "CA_SB_COL_3", 4, -405 }
+
+Graphic "CA_SB_THICK_3_411", 512, 3
+{ Graphic "CA_SB_COL_3", 3, -411 }
+
+Graphic "CA_SB_THICK_3_414", 512, 5
+{ Graphic "CA_SB_COL_3", 2, -414 }
+
+Graphic "CA_SB_THICK_3_419", 512, 3
+{ Graphic "CA_SB_COL_3", 1, -419 }
+
+Graphic "CA_SB_THICK_3_422", 512, 8
+{ Graphic "CA_SB_COL_3", 0, -422 }
+
+Graphic "CA_SB_THICK_3_430", 512, 5
+{ Graphic "CA_SB_COL_3", -1, -430 }
+
+Graphic "CA_SB_THICK_3_435", 512, 34
+{ Graphic "CA_SB_COL_3", -2, -435 }
+
+Graphic "CA_SB_THICK_3_469", 512, 26
+{ Graphic "CA_SB_COL_3", -1, -469 }
+
+Graphic "CA_SB_THICK_3_495", 512, 27
+{ Graphic "CA_SB_COL_3", 0, -495 }
+
+Graphic "CA_SB_THICK_3_522", 512, 23
+{ Graphic "CA_SB_COL_3", -1, -522 }
+
+Graphic "CA_SB_THICK_3_545", 512, 33
+{ Graphic "CA_SB_COL_3", -2, -545 }
+
+Graphic "CA_SB_THICK_3_578", 512, 9
+{ Graphic "CA_SB_COL_3", -1, -578 }
+
+Graphic "CA_SB_THICK_3_587", 512, 6
+{ Graphic "CA_SB_COL_3", 0, -587 }
+
+Graphic "CA_SB_THICK_3_593", 512, 3
+{ Graphic "CA_SB_COL_3", 1, -593 }
+
+Graphic "CA_SB_THICK_3_596", 512, 6
+{ Graphic "CA_SB_COL_3", 2, -596 }
+
+Graphic "CA_SB_THICK_3_602", 512, 4
+{ Graphic "CA_SB_COL_3", 3, -602 }
+
+Graphic "CA_SB_THICK_3_606", 512, 4
+{ Graphic "CA_SB_COL_3", 4, -606 }
+
+Graphic "CA_SB_THICK_3_610", 512, 3
+{ Graphic "CA_SB_COL_3", 5, -610 }
+
+Graphic "CA_SB_THICK_3_613", 512, 8
+{ Graphic "CA_SB_COL_3", 6, -613 }
+
+Graphic "CA_SB_THICK_3_621", 512, 10
+{ Graphic "CA_SB_COL_3", 7, -621 }
+
+Graphic "CA_SB_THICK_3_631", 512, 8
+{ Graphic "CA_SB_COL_3", 8, -631 }
+
+Graphic "CA_SB_THICK_3_639", 512, 7
+{ Graphic "CA_SB_COL_3", 9, -639 }
+
+Graphic "CA_SB_THICK_3_646", 512, 60
+{ Graphic "CA_SB_COL_3", 10, -646 }
+
+Graphic "CA_SB_THICK_3_706", 512, 9
+{ Graphic "CA_SB_COL_3", 9, -706 }
+
+Graphic "CA_SB_THICK_3_715", 512, 13
+{ Graphic "CA_SB_COL_3", 8, -715 }
+
+Graphic "CA_SB_THICK_3_728", 512, 7
+{ Graphic "CA_SB_COL_3", 7, -728 }
+
+Graphic "CA_SB_THICK_3_735", 512, 9
+{ Graphic "CA_SB_COL_3", 6, -735 }
+
+Graphic "CA_SB_THICK_3_744", 512, 4
+{ Graphic "CA_SB_COL_3", 5, -744 }
+
+Graphic "CA_SB_THICK_3_748", 512, 7
+{ Graphic "CA_SB_COL_3", 4, -748 }
+
+Graphic "CA_SB_THICK_3_755", 512, 5
+{ Graphic "CA_SB_COL_3", 3, -755 }
+
+Graphic "CA_SB_THICK_3_760", 512, 7
+{ Graphic "CA_SB_COL_3", 2, -760 }
+
+Graphic "CA_SB_THICK_3_767", 512, 3
+{ Graphic "CA_SB_COL_3", 1, -767 }
+
+Graphic "CA_SB_THICK_3_770", 512, 6
+{ Graphic "CA_SB_COL_3", 0, -770 }
+
+Graphic "CA_SB_THICK_3_776", 512, 3
+{ Graphic "CA_SB_COL_3", -1, -776 }
+
+Graphic "CA_SB_THICK_3_779", 512, 5
+{ Graphic "CA_SB_COL_3", -2, -779 }
+
+Graphic "CA_SB_THICK_3_784", 512, 2
+{ Graphic "CA_SB_COL_3", -3, -784 }
+
+Graphic "CA_SB_THICK_3_786", 512, 5
+{ Graphic "CA_SB_COL_3", -4, -786 }
+
+Graphic "CA_SB_THICK_3_791", 512, 3
+{ Graphic "CA_SB_COL_3", -5, -791 }
+
+Graphic "CA_SB_THICK_3_794", 512, 5
+{ Graphic "CA_SB_COL_3", -6, -794 }
+
+Graphic "CA_SB_THICK_3_799", 512, 2
+{ Graphic "CA_SB_COL_3", -7, -799 }
+
+Graphic "CA_SB_THICK_3_801", 512, 5
+{ Graphic "CA_SB_COL_3", -8, -801 }
+
+Graphic "CA_SB_THICK_3_806", 512, 2
+{ Graphic "CA_SB_COL_3", -9, -806 }
+
+Graphic "CA_SB_THICK_3_808", 512, 4
+{ Graphic "CA_SB_COL_3", -10, -808 }
+
+Graphic "CA_SB_THICK_3_812", 512, 2
+{ Graphic "CA_SB_COL_3", -11, -812 }
+
+Graphic "CA_SB_THICK_3_814", 512, 3
+{ Graphic "CA_SB_COL_3", -12, -814 }
+
+Graphic "CA_SB_THICK_3_817", 512, 2
+{ Graphic "CA_SB_COL_3", -13, -817 }
+
+Graphic "CA_SB_THICK_3_819", 512, 4
+{ Graphic "CA_SB_COL_3", -14, -819 }
+
+Graphic "CA_SB_THICK_3_823", 512, 2
+{ Graphic "CA_SB_COL_3", -15, -823 }
+
+Graphic "CA_SB_THICK_3_825", 512, 3
+{ Graphic "CA_SB_COL_3", -16, -825 }
+
+Graphic "CA_SB_THICK_3_828", 512, 2
+{ Graphic "CA_SB_COL_3", -17, -828 }
+
+Graphic "CA_SB_THICK_3_830", 512, 3
+{ Graphic "CA_SB_COL_3", -18, -830 }
+
+Graphic "CA_SB_THICK_3_833", 512, 2
+{ Graphic "CA_SB_COL_3", -19, -833 }
+
+Graphic "CA_SB_THICK_3_835", 512, 3
+{ Graphic "CA_SB_COL_3", -20, -835 }
+
+Graphic "CA_SB_THICK_3_838", 512, 2
+{ Graphic "CA_SB_COL_3", -21, -838 }
+
+Graphic "CA_SB_THICK_3_840", 512, 3
+{ Graphic "CA_SB_COL_3", -22, -840 }
+
+Graphic "CA_SB_THICK_3_843", 512, 3
+{ Graphic "CA_SB_COL_3", -23, -843 }
+
+Graphic "CA_SB_THICK_3_846", 512, 2
+{ Graphic "CA_SB_COL_3", -24, -846 }
+
+Graphic "CA_SB_THICK_3_848", 512, 2
+{ Graphic "CA_SB_COL_3", -25, -848 }
+
+Graphic "CA_SB_THICK_3_850", 512, 3
+{ Graphic "CA_SB_COL_3", -26, -850 }
+
+Graphic "CA_SB_THICK_3_853", 512, 2
+{ Graphic "CA_SB_COL_3", -27, -853 }
+
+Graphic "CA_SB_THICK_3_855", 512, 3
+{ Graphic "CA_SB_COL_3", -28, -855 }
+
+Graphic "CA_SB_THICK_3_858", 512, 2
+{ Graphic "CA_SB_COL_3", -29, -858 }
+
+Graphic "CA_SB_THICK_3_860", 512, 3
+{ Graphic "CA_SB_COL_3", -30, -860 }
+
+Graphic "CA_SB_THICK_3_863", 512, 2
+{ Graphic "CA_SB_COL_3", -31, -863 }
+
+Graphic "CA_SB_THICK_3_865", 512, 3
+{ Graphic "CA_SB_COL_3", -32, -865 }
+
+Graphic "CA_SB_THICK_3_868", 512, 2
+{ Graphic "CA_SB_COL_3", -33, -868 }
+
+Graphic "CA_SB_THICK_3_870", 512, 4
+{ Graphic "CA_SB_COL_3", -34, -870 }
+
+Graphic "CA_SB_THICK_3_874", 512, 2
+{ Graphic "CA_SB_COL_3", -35, -874 }
+
+Graphic "CA_SB_THICK_3_876", 512, 3
+{ Graphic "CA_SB_COL_3", -36, -876 }
+
+Graphic "CA_SB_THICK_3_879", 512, 2
+{ Graphic "CA_SB_COL_3", -37, -879 }
+
+Graphic "CA_SB_THICK_3_881", 512, 4
+{ Graphic "CA_SB_COL_3", -38, -881 }
+
+Graphic "CA_SB_THICK_3_885", 512, 3
+{ Graphic "CA_SB_COL_3", -39, -885 }
+
+Graphic "CA_SB_THICK_3_888", 512, 3
+{ Graphic "CA_SB_COL_3", -40, -888 }
+
+Graphic "CA_SB_THICK_3_891", 512, 2
+{ Graphic "CA_SB_COL_3", -41, -891 }
+
+Graphic "CA_SB_THICK_3_893", 512, 4
+{ Graphic "CA_SB_COL_3", -42, -893 }
+
+Graphic "CA_SB_THICK_3_897", 512, 2
+{ Graphic "CA_SB_COL_3", -43, -897 }
+
+Graphic "CA_SB_THICK_3_899", 512, 5
+{ Graphic "CA_SB_COL_3", -44, -899 }
+
+Graphic "CA_SB_THICK_3_904", 512, 2
+{ Graphic "CA_SB_COL_3", -45, -904 }
+
+Graphic "CA_SB_THICK_3_906", 512, 6
+{ Graphic "CA_SB_COL_3", -46, -906 }
+
+Graphic "CA_SB_THICK_3_912", 512, 5
+{ Graphic "CA_SB_COL_3", -47, -912 }
+
+Graphic "CA_SB_THICK_3_917", 512, 7
+{ Graphic "CA_SB_COL_3", -48, -917 }
+
+Graphic "CA_SB_THICK_3_924", 512, 4
+{ Graphic "CA_SB_COL_3", -49, -924 }
+
+Graphic "CA_SB_THICK_3_928", 512, 8
+{ Graphic "CA_SB_COL_3", -50, -928 }
+
+Graphic "CA_SB_THICK_3_936", 512, 14
+{ Graphic "CA_SB_COL_3", -51, -936 }
+
+Graphic "CA_SB_THICK_3_950", 512, 1
+{ Graphic "CA_SB_COL_3", -52, -950 }
+
+Graphic "CA_SB_THICK_3_951", 512, 16
+{ Graphic "CA_SB_COL_3", -51, -951 }
+
+Graphic "CA_SB_THICK_3_967", 512, 9
+{ Graphic "CA_SB_COL_3", -50, -967 }
+
+Graphic "CA_SB_THICK_3_976", 512, 2
+{ Graphic "CA_SB_COL_3", -49, -976 }
+
+Graphic "CA_SB_THICK_3_978", 512, 5
+{ Graphic "CA_SB_COL_3", -48, -978 }
+
+Graphic "CA_SB_THICK_3_983", 512, 3
+{ Graphic "CA_SB_COL_3", -47, -983 }
+
+Graphic "CA_SB_THICK_3_986", 512, 4
+{ Graphic "CA_SB_COL_3", -46, -986 }
+
+Graphic "CA_SB_THICK_3_990", 512, 4
+{ Graphic "CA_SB_COL_3", -45, -990 }
+
+Graphic "CA_SB_THICK_3_994", 512, 6
+{ Graphic "CA_SB_COL_3", -44, -994 }
+
+Graphic "CA_SB_THICK_3_1000", 512, 24
+{ Graphic "CA_SB_COL_3", 0, -1000 }
+
+Graphic "CA_SB_THICK_3", 512, 1024
+{
+    Graphic "CA_SB_THICK_3_0", 0, 0
+    Graphic "CA_SB_THICK_3_16", 0, 16
+    Graphic "CA_SB_THICK_3_24", 0, 24
+    Graphic "CA_SB_THICK_3_27", 0, 27
+    Graphic "CA_SB_THICK_3_32", 0, 32
+    Graphic "CA_SB_THICK_3_34", 0, 34
+    Graphic "CA_SB_THICK_3_39", 0, 39
+    Graphic "CA_SB_THICK_3_43", 0, 43
+    Graphic "CA_SB_THICK_3_52", 0, 52
+    Graphic "CA_SB_THICK_3_62", 0, 62
+    Graphic "CA_SB_THICK_3_63", 0, 63
+    Graphic "CA_SB_THICK_3_76", 0, 76
+    Graphic "CA_SB_THICK_3_85", 0, 85
+    Graphic "CA_SB_THICK_3_89", 0, 89
+    Graphic "CA_SB_THICK_3_97", 0, 97
+    Graphic "CA_SB_THICK_3_99", 0, 99
+    Graphic "CA_SB_THICK_3_105", 0, 105
+    Graphic "CA_SB_THICK_3_108", 0, 108
+    Graphic "CA_SB_THICK_3_112", 0, 112
+    Graphic "CA_SB_THICK_3_115", 0, 115
+    Graphic "CA_SB_THICK_3_118", 0, 118
+    Graphic "CA_SB_THICK_3_121", 0, 121
+    Graphic "CA_SB_THICK_3_125", 0, 125
+    Graphic "CA_SB_THICK_3_127", 0, 127
+    Graphic "CA_SB_THICK_3_130", 0, 130
+    Graphic "CA_SB_THICK_3_133", 0, 133
+    Graphic "CA_SB_THICK_3_136", 0, 136
+    Graphic "CA_SB_THICK_3_139", 0, 139
+    Graphic "CA_SB_THICK_3_142", 0, 142
+    Graphic "CA_SB_THICK_3_144", 0, 144
+    Graphic "CA_SB_THICK_3_147", 0, 147
+    Graphic "CA_SB_THICK_3_149", 0, 149
+    Graphic "CA_SB_THICK_3_153", 0, 153
+    Graphic "CA_SB_THICK_3_154", 0, 154
+    Graphic "CA_SB_THICK_3_158", 0, 158
+    Graphic "CA_SB_THICK_3_160", 0, 160
+    Graphic "CA_SB_THICK_3_163", 0, 163
+    Graphic "CA_SB_THICK_3_165", 0, 165
+    Graphic "CA_SB_THICK_3_168", 0, 168
+    Graphic "CA_SB_THICK_3_171", 0, 171
+    Graphic "CA_SB_THICK_3_174", 0, 174
+    Graphic "CA_SB_THICK_3_176", 0, 176
+    Graphic "CA_SB_THICK_3_179", 0, 179
+    Graphic "CA_SB_THICK_3_181", 0, 181
+    Graphic "CA_SB_THICK_3_185", 0, 185
+    Graphic "CA_SB_THICK_3_187", 0, 187
+    Graphic "CA_SB_THICK_3_191", 0, 191
+    Graphic "CA_SB_THICK_3_193", 0, 193
+    Graphic "CA_SB_THICK_3_196", 0, 196
+    Graphic "CA_SB_THICK_3_199", 0, 199
+    Graphic "CA_SB_THICK_3_203", 0, 203
+    Graphic "CA_SB_THICK_3_206", 0, 206
+    Graphic "CA_SB_THICK_3_210", 0, 210
+    Graphic "CA_SB_THICK_3_212", 0, 212
+    Graphic "CA_SB_THICK_3_216", 0, 216
+    Graphic "CA_SB_THICK_3_220", 0, 220
+    Graphic "CA_SB_THICK_3_225", 0, 225
+    Graphic "CA_SB_THICK_3_227", 0, 227
+    Graphic "CA_SB_THICK_3_232", 0, 232
+    Graphic "CA_SB_THICK_3_236", 0, 236
+    Graphic "CA_SB_THICK_3_240", 0, 240
+    Graphic "CA_SB_THICK_3_244", 0, 244
+    Graphic "CA_SB_THICK_3_251", 0, 251
+    Graphic "CA_SB_THICK_3_254", 0, 254
+    Graphic "CA_SB_THICK_3_261", 0, 261
+    Graphic "CA_SB_THICK_3_266", 0, 266
+    Graphic "CA_SB_THICK_3_273", 0, 273
+    Graphic "CA_SB_THICK_3_278", 0, 278
+    Graphic "CA_SB_THICK_3_288", 0, 288
+    Graphic "CA_SB_THICK_3_294", 0, 294
+    Graphic "CA_SB_THICK_3_309", 0, 309
+    Graphic "CA_SB_THICK_3_318", 0, 318
+    Graphic "CA_SB_THICK_3_362", 0, 362
+    Graphic "CA_SB_THICK_3_374", 0, 374
+    Graphic "CA_SB_THICK_3_389", 0, 389
+    Graphic "CA_SB_THICK_3_394", 0, 394
+    Graphic "CA_SB_THICK_3_402", 0, 402
+    Graphic "CA_SB_THICK_3_405", 0, 405
+    Graphic "CA_SB_THICK_3_411", 0, 411
+    Graphic "CA_SB_THICK_3_414", 0, 414
+    Graphic "CA_SB_THICK_3_419", 0, 419
+    Graphic "CA_SB_THICK_3_422", 0, 422
+    Graphic "CA_SB_THICK_3_430", 0, 430
+    Graphic "CA_SB_THICK_3_435", 0, 435
+    Graphic "CA_SB_THICK_3_469", 0, 469
+    Graphic "CA_SB_THICK_3_495", 0, 495
+    Graphic "CA_SB_THICK_3_522", 0, 522
+    Graphic "CA_SB_THICK_3_545", 0, 545
+    Graphic "CA_SB_THICK_3_578", 0, 578
+    Graphic "CA_SB_THICK_3_587", 0, 587
+    Graphic "CA_SB_THICK_3_593", 0, 593
+    Graphic "CA_SB_THICK_3_596", 0, 596
+    Graphic "CA_SB_THICK_3_602", 0, 602
+    Graphic "CA_SB_THICK_3_606", 0, 606
+    Graphic "CA_SB_THICK_3_610", 0, 610
+    Graphic "CA_SB_THICK_3_613", 0, 613
+    Graphic "CA_SB_THICK_3_621", 0, 621
+    Graphic "CA_SB_THICK_3_631", 0, 631
+    Graphic "CA_SB_THICK_3_639", 0, 639
+    Graphic "CA_SB_THICK_3_646", 0, 646
+    Graphic "CA_SB_THICK_3_706", 0, 706
+    Graphic "CA_SB_THICK_3_715", 0, 715
+    Graphic "CA_SB_THICK_3_728", 0, 728
+    Graphic "CA_SB_THICK_3_735", 0, 735
+    Graphic "CA_SB_THICK_3_744", 0, 744
+    Graphic "CA_SB_THICK_3_748", 0, 748
+    Graphic "CA_SB_THICK_3_755", 0, 755
+    Graphic "CA_SB_THICK_3_760", 0, 760
+    Graphic "CA_SB_THICK_3_767", 0, 767
+    Graphic "CA_SB_THICK_3_770", 0, 770
+    Graphic "CA_SB_THICK_3_776", 0, 776
+    Graphic "CA_SB_THICK_3_779", 0, 779
+    Graphic "CA_SB_THICK_3_784", 0, 784
+    Graphic "CA_SB_THICK_3_786", 0, 786
+    Graphic "CA_SB_THICK_3_791", 0, 791
+    Graphic "CA_SB_THICK_3_794", 0, 794
+    Graphic "CA_SB_THICK_3_799", 0, 799
+    Graphic "CA_SB_THICK_3_801", 0, 801
+    Graphic "CA_SB_THICK_3_806", 0, 806
+    Graphic "CA_SB_THICK_3_808", 0, 808
+    Graphic "CA_SB_THICK_3_812", 0, 812
+    Graphic "CA_SB_THICK_3_814", 0, 814
+    Graphic "CA_SB_THICK_3_817", 0, 817
+    Graphic "CA_SB_THICK_3_819", 0, 819
+    Graphic "CA_SB_THICK_3_823", 0, 823
+    Graphic "CA_SB_THICK_3_825", 0, 825
+    Graphic "CA_SB_THICK_3_828", 0, 828
+    Graphic "CA_SB_THICK_3_830", 0, 830
+    Graphic "CA_SB_THICK_3_833", 0, 833
+    Graphic "CA_SB_THICK_3_835", 0, 835
+    Graphic "CA_SB_THICK_3_838", 0, 838
+    Graphic "CA_SB_THICK_3_840", 0, 840
+    Graphic "CA_SB_THICK_3_843", 0, 843
+    Graphic "CA_SB_THICK_3_846", 0, 846
+    Graphic "CA_SB_THICK_3_848", 0, 848
+    Graphic "CA_SB_THICK_3_850", 0, 850
+    Graphic "CA_SB_THICK_3_853", 0, 853
+    Graphic "CA_SB_THICK_3_855", 0, 855
+    Graphic "CA_SB_THICK_3_858", 0, 858
+    Graphic "CA_SB_THICK_3_860", 0, 860
+    Graphic "CA_SB_THICK_3_863", 0, 863
+    Graphic "CA_SB_THICK_3_865", 0, 865
+    Graphic "CA_SB_THICK_3_868", 0, 868
+    Graphic "CA_SB_THICK_3_870", 0, 870
+    Graphic "CA_SB_THICK_3_874", 0, 874
+    Graphic "CA_SB_THICK_3_876", 0, 876
+    Graphic "CA_SB_THICK_3_879", 0, 879
+    Graphic "CA_SB_THICK_3_881", 0, 881
+    Graphic "CA_SB_THICK_3_885", 0, 885
+    Graphic "CA_SB_THICK_3_888", 0, 888
+    Graphic "CA_SB_THICK_3_891", 0, 891
+    Graphic "CA_SB_THICK_3_893", 0, 893
+    Graphic "CA_SB_THICK_3_897", 0, 897
+    Graphic "CA_SB_THICK_3_899", 0, 899
+    Graphic "CA_SB_THICK_3_904", 0, 904
+    Graphic "CA_SB_THICK_3_906", 0, 906
+    Graphic "CA_SB_THICK_3_912", 0, 912
+    Graphic "CA_SB_THICK_3_917", 0, 917
+    Graphic "CA_SB_THICK_3_924", 0, 924
+    Graphic "CA_SB_THICK_3_928", 0, 928
+    Graphic "CA_SB_THICK_3_936", 0, 936
+    Graphic "CA_SB_THICK_3_950", 0, 950
+    Graphic "CA_SB_THICK_3_951", 0, 951
+    Graphic "CA_SB_THICK_3_967", 0, 967
+    Graphic "CA_SB_THICK_3_976", 0, 976
+    Graphic "CA_SB_THICK_3_978", 0, 978
+    Graphic "CA_SB_THICK_3_983", 0, 983
+    Graphic "CA_SB_THICK_3_986", 0, 986
+    Graphic "CA_SB_THICK_3_990", 0, 990
+    Graphic "CA_SB_THICK_3_994", 0, 994
+    Graphic "CA_SB_THICK_3_1000", 0, 1000
+}
+
+Graphic "CA_LB_COL_1", 512, 1024
+{ Graphic "CA_LB_MUTED", 0, 0 }
+
+Graphic "CA_LB_THICK_1_0", 512, 16
+{ Graphic "CA_LB_COL_1", 0, 0 }
+
+Graphic "CA_LB_THICK_1_16", 512, 1
+{ Graphic "CA_LB_COL_1", -54, -16 }
+
+Graphic "CA_LB_THICK_1_17", 512, 5
+{ Graphic "CA_LB_COL_1", -53, -17 }
+
+Graphic "CA_LB_THICK_1_22", 512, 7
+{ Graphic "CA_LB_COL_1", -52, -22 }
+
+Graphic "CA_LB_THICK_1_29", 512, 4
+{ Graphic "CA_LB_COL_1", -51, -29 }
+
+Graphic "CA_LB_THICK_1_33", 512, 5
+{ Graphic "CA_LB_COL_1", -50, -33 }
+
+Graphic "CA_LB_THICK_1_38", 512, 2
+{ Graphic "CA_LB_COL_1", -49, -38 }
+
+Graphic "CA_LB_THICK_1_40", 512, 4
+{ Graphic "CA_LB_COL_1", -48, -40 }
+
+Graphic "CA_LB_THICK_1_44", 512, 4
+{ Graphic "CA_LB_COL_1", -47, -44 }
+
+Graphic "CA_LB_THICK_1_48", 512, 4
+{ Graphic "CA_LB_COL_1", -46, -48 }
+
+Graphic "CA_LB_THICK_1_52", 512, 3
+{ Graphic "CA_LB_COL_1", -45, -52 }
+
+Graphic "CA_LB_THICK_1_55", 512, 3
+{ Graphic "CA_LB_COL_1", -44, -55 }
+
+Graphic "CA_LB_THICK_1_58", 512, 3
+{ Graphic "CA_LB_COL_1", -43, -58 }
+
+Graphic "CA_LB_THICK_1_61", 512, 3
+{ Graphic "CA_LB_COL_1", -42, -61 }
+
+Graphic "CA_LB_THICK_1_64", 512, 2
+{ Graphic "CA_LB_COL_1", -41, -64 }
+
+Graphic "CA_LB_THICK_1_66", 512, 3
+{ Graphic "CA_LB_COL_1", -40, -66 }
+
+Graphic "CA_LB_THICK_1_69", 512, 3
+{ Graphic "CA_LB_COL_1", -39, -69 }
+
+Graphic "CA_LB_THICK_1_72", 512, 5
+{ Graphic "CA_LB_COL_1", -38, -72 }
+
+Graphic "CA_LB_THICK_1_77", 512, 2
+{ Graphic "CA_LB_COL_1", -37, -77 }
+
+Graphic "CA_LB_THICK_1_79", 512, 3
+{ Graphic "CA_LB_COL_1", -36, -79 }
+
+Graphic "CA_LB_THICK_1_82", 512, 3
+{ Graphic "CA_LB_COL_1", -35, -82 }
+
+Graphic "CA_LB_THICK_1_85", 512, 1
+{ Graphic "CA_LB_COL_1", -34, -85 }
+
+Graphic "CA_LB_THICK_1_86", 512, 2
+{ Graphic "CA_LB_COL_1", -33, -86 }
+
+Graphic "CA_LB_THICK_1_88", 512, 4
+{ Graphic "CA_LB_COL_1", -32, -88 }
+
+Graphic "CA_LB_THICK_1_92", 512, 1
+{ Graphic "CA_LB_COL_1", -31, -92 }
+
+Graphic "CA_LB_THICK_1_93", 512, 4
+{ Graphic "CA_LB_COL_1", -30, -93 }
+
+Graphic "CA_LB_THICK_1_97", 512, 2
+{ Graphic "CA_LB_COL_1", -29, -97 }
+
+Graphic "CA_LB_THICK_1_99", 512, 4
+{ Graphic "CA_LB_COL_1", -28, -99 }
+
+Graphic "CA_LB_THICK_1_103", 512, 2
+{ Graphic "CA_LB_COL_1", -27, -103 }
+
+Graphic "CA_LB_THICK_1_105", 512, 4
+{ Graphic "CA_LB_COL_1", -26, -105 }
+
+Graphic "CA_LB_THICK_1_109", 512, 2
+{ Graphic "CA_LB_COL_1", -25, -109 }
+
+Graphic "CA_LB_THICK_1_111", 512, 3
+{ Graphic "CA_LB_COL_1", -24, -111 }
+
+Graphic "CA_LB_THICK_1_114", 512, 3
+{ Graphic "CA_LB_COL_1", -23, -114 }
+
+Graphic "CA_LB_THICK_1_117", 512, 3
+{ Graphic "CA_LB_COL_1", -22, -117 }
+
+Graphic "CA_LB_THICK_1_120", 512, 3
+{ Graphic "CA_LB_COL_1", -21, -120 }
+
+Graphic "CA_LB_THICK_1_123", 512, 4
+{ Graphic "CA_LB_COL_1", -20, -123 }
+
+Graphic "CA_LB_THICK_1_127", 512, 2
+{ Graphic "CA_LB_COL_1", -19, -127 }
+
+Graphic "CA_LB_THICK_1_129", 512, 4
+{ Graphic "CA_LB_COL_1", -18, -129 }
+
+Graphic "CA_LB_THICK_1_133", 512, 2
+{ Graphic "CA_LB_COL_1", -17, -133 }
+
+Graphic "CA_LB_THICK_1_135", 512, 4
+{ Graphic "CA_LB_COL_1", -16, -135 }
+
+Graphic "CA_LB_THICK_1_139", 512, 2
+{ Graphic "CA_LB_COL_1", -15, -139 }
+
+Graphic "CA_LB_THICK_1_141", 512, 4
+{ Graphic "CA_LB_COL_1", -14, -141 }
+
+Graphic "CA_LB_THICK_1_145", 512, 4
+{ Graphic "CA_LB_COL_1", -13, -145 }
+
+Graphic "CA_LB_THICK_1_149", 512, 4
+{ Graphic "CA_LB_COL_1", -12, -149 }
+
+Graphic "CA_LB_THICK_1_153", 512, 3
+{ Graphic "CA_LB_COL_1", -11, -153 }
+
+Graphic "CA_LB_THICK_1_156", 512, 4
+{ Graphic "CA_LB_COL_1", -10, -156 }
+
+Graphic "CA_LB_THICK_1_160", 512, 3
+{ Graphic "CA_LB_COL_1", -9, -160 }
+
+Graphic "CA_LB_THICK_1_163", 512, 5
+{ Graphic "CA_LB_COL_1", -8, -163 }
+
+Graphic "CA_LB_THICK_1_168", 512, 2
+{ Graphic "CA_LB_COL_1", -7, -168 }
+
+Graphic "CA_LB_THICK_1_170", 512, 5
+{ Graphic "CA_LB_COL_1", -6, -170 }
+
+Graphic "CA_LB_THICK_1_175", 512, 4
+{ Graphic "CA_LB_COL_1", -5, -175 }
+
+Graphic "CA_LB_THICK_1_179", 512, 5
+{ Graphic "CA_LB_COL_1", -4, -179 }
+
+Graphic "CA_LB_THICK_1_184", 512, 3
+{ Graphic "CA_LB_COL_1", -3, -184 }
+
+Graphic "CA_LB_THICK_1_187", 512, 6
+{ Graphic "CA_LB_COL_1", -2, -187 }
+
+Graphic "CA_LB_THICK_1_193", 512, 3
+{ Graphic "CA_LB_COL_1", -1, -193 }
+
+Graphic "CA_LB_THICK_1_196", 512, 7
+{ Graphic "CA_LB_COL_1", 0, -196 }
+
+Graphic "CA_LB_THICK_1_203", 512, 2
+{ Graphic "CA_LB_COL_1", 1, -203 }
+
+Graphic "CA_LB_THICK_1_205", 512, 7
+{ Graphic "CA_LB_COL_1", 2, -205 }
+
+Graphic "CA_LB_THICK_1_212", 512, 4
+{ Graphic "CA_LB_COL_1", 3, -212 }
+
+Graphic "CA_LB_THICK_1_216", 512, 7
+{ Graphic "CA_LB_COL_1", 4, -216 }
+
+Graphic "CA_LB_THICK_1_223", 512, 5
+{ Graphic "CA_LB_COL_1", 5, -223 }
+
+Graphic "CA_LB_THICK_1_228", 512, 9
+{ Graphic "CA_LB_COL_1", 6, -228 }
+
+Graphic "CA_LB_THICK_1_237", 512, 4
+{ Graphic "CA_LB_COL_1", 7, -237 }
+
+Graphic "CA_LB_THICK_1_241", 512, 9
+{ Graphic "CA_LB_COL_1", 8, -241 }
+
+Graphic "CA_LB_THICK_1_250", 512, 7
+{ Graphic "CA_LB_COL_1", 9, -250 }
+
+Graphic "CA_LB_THICK_1_257", 512, 12
+{ Graphic "CA_LB_COL_1", 10, -257 }
+
+Graphic "CA_LB_THICK_1_269", 512, 10
+{ Graphic "CA_LB_COL_1", 11, -269 }
+
+Graphic "CA_LB_THICK_1_279", 512, 19
+{ Graphic "CA_LB_COL_1", 12, -279 }
+
+Graphic "CA_LB_THICK_1_298", 512, 13
+{ Graphic "CA_LB_COL_1", 13, -298 }
+
+Graphic "CA_LB_THICK_1_311", 512, 53
+{ Graphic "CA_LB_COL_1", 14, -311 }
+
+Graphic "CA_LB_THICK_1_364", 512, 12
+{ Graphic "CA_LB_COL_1", 13, -364 }
+
+Graphic "CA_LB_THICK_1_376", 512, 19
+{ Graphic "CA_LB_COL_1", 12, -376 }
+
+Graphic "CA_LB_THICK_1_395", 512, 7
+{ Graphic "CA_LB_COL_1", 11, -395 }
+
+Graphic "CA_LB_THICK_1_402", 512, 12
+{ Graphic "CA_LB_COL_1", 10, -402 }
+
+Graphic "CA_LB_THICK_1_414", 512, 7
+{ Graphic "CA_LB_COL_1", 9, -414 }
+
+Graphic "CA_LB_THICK_1_421", 512, 8
+{ Graphic "CA_LB_COL_1", 8, -421 }
+
+Graphic "CA_LB_THICK_1_429", 512, 2
+{ Graphic "CA_LB_COL_1", 7, -429 }
+
+Graphic "CA_LB_THICK_1_431", 512, 15
+{ Graphic "CA_LB_COL_1", 6, -431 }
+
+Graphic "CA_LB_THICK_1_446", 512, 4
+{ Graphic "CA_LB_COL_1", 5, -446 }
+
+Graphic "CA_LB_THICK_1_450", 512, 13
+{ Graphic "CA_LB_COL_1", 4, -450 }
+
+Graphic "CA_LB_THICK_1_463", 512, 3
+{ Graphic "CA_LB_COL_1", 3, -463 }
+
+Graphic "CA_LB_THICK_1_466", 512, 10
+{ Graphic "CA_LB_COL_1", 2, -466 }
+
+Graphic "CA_LB_THICK_1_476", 512, 9
+{ Graphic "CA_LB_COL_1", 1, -476 }
+
+Graphic "CA_LB_THICK_1_485", 512, 51
+{ Graphic "CA_LB_COL_1", 0, -485 }
+
+Graphic "CA_LB_THICK_1_536", 512, 9
+{ Graphic "CA_LB_COL_1", 1, -536 }
+
+Graphic "CA_LB_THICK_1_545", 512, 11
+{ Graphic "CA_LB_COL_1", 2, -545 }
+
+Graphic "CA_LB_THICK_1_556", 512, 4
+{ Graphic "CA_LB_COL_1", 3, -556 }
+
+Graphic "CA_LB_THICK_1_560", 512, 13
+{ Graphic "CA_LB_COL_1", 4, -560 }
+
+Graphic "CA_LB_THICK_1_573", 512, 5
+{ Graphic "CA_LB_COL_1", 5, -573 }
+
+Graphic "CA_LB_THICK_1_578", 512, 14
+{ Graphic "CA_LB_COL_1", 6, -578 }
+
+Graphic "CA_LB_THICK_1_592", 512, 10
+{ Graphic "CA_LB_COL_1", 8, -592 }
+
+Graphic "CA_LB_THICK_1_602", 512, 7
+{ Graphic "CA_LB_COL_1", 9, -602 }
+
+Graphic "CA_LB_THICK_1_609", 512, 11
+{ Graphic "CA_LB_COL_1", 10, -609 }
+
+Graphic "CA_LB_THICK_1_620", 512, 9
+{ Graphic "CA_LB_COL_1", 11, -620 }
+
+Graphic "CA_LB_THICK_1_629", 512, 17
+{ Graphic "CA_LB_COL_1", 12, -629 }
+
+Graphic "CA_LB_THICK_1_646", 512, 29
+{ Graphic "CA_LB_COL_1", 13, -646 }
+
+Graphic "CA_LB_THICK_1_675", 512, 10
+{ Graphic "CA_LB_COL_1", 14, -675 }
+
+Graphic "CA_LB_THICK_1_685", 512, 26
+{ Graphic "CA_LB_COL_1", 13, -685 }
+
+Graphic "CA_LB_THICK_1_711", 512, 20
+{ Graphic "CA_LB_COL_1", 12, -711 }
+
+Graphic "CA_LB_THICK_1_731", 512, 9
+{ Graphic "CA_LB_COL_1", 11, -731 }
+
+Graphic "CA_LB_THICK_1_740", 512, 11
+{ Graphic "CA_LB_COL_1", 10, -740 }
+
+Graphic "CA_LB_THICK_1_751", 512, 7
+{ Graphic "CA_LB_COL_1", 9, -751 }
+
+Graphic "CA_LB_THICK_1_758", 512, 9
+{ Graphic "CA_LB_COL_1", 8, -758 }
+
+Graphic "CA_LB_THICK_1_767", 512, 6
+{ Graphic "CA_LB_COL_1", 7, -767 }
+
+Graphic "CA_LB_THICK_1_773", 512, 7
+{ Graphic "CA_LB_COL_1", 6, -773 }
+
+Graphic "CA_LB_THICK_1_780", 512, 5
+{ Graphic "CA_LB_COL_1", 5, -780 }
+
+Graphic "CA_LB_THICK_1_785", 512, 8
+{ Graphic "CA_LB_COL_1", 4, -785 }
+
+Graphic "CA_LB_THICK_1_793", 512, 4
+{ Graphic "CA_LB_COL_1", 3, -793 }
+
+Graphic "CA_LB_THICK_1_797", 512, 6
+{ Graphic "CA_LB_COL_1", 2, -797 }
+
+Graphic "CA_LB_THICK_1_803", 512, 4
+{ Graphic "CA_LB_COL_1", 1, -803 }
+
+Graphic "CA_LB_THICK_1_807", 512, 6
+{ Graphic "CA_LB_COL_1", 0, -807 }
+
+Graphic "CA_LB_THICK_1_813", 512, 3
+{ Graphic "CA_LB_COL_1", -1, -813 }
+
+Graphic "CA_LB_THICK_1_816", 512, 6
+{ Graphic "CA_LB_COL_1", -2, -816 }
+
+Graphic "CA_LB_THICK_1_822", 512, 3
+{ Graphic "CA_LB_COL_1", -3, -822 }
+
+Graphic "CA_LB_THICK_1_825", 512, 5
+{ Graphic "CA_LB_COL_1", -4, -825 }
+
+Graphic "CA_LB_THICK_1_830", 512, 4
+{ Graphic "CA_LB_COL_1", -5, -830 }
+
+Graphic "CA_LB_THICK_1_834", 512, 5
+{ Graphic "CA_LB_COL_1", -6, -834 }
+
+Graphic "CA_LB_THICK_1_839", 512, 2
+{ Graphic "CA_LB_COL_1", -7, -839 }
+
+Graphic "CA_LB_THICK_1_841", 512, 5
+{ Graphic "CA_LB_COL_1", -8, -841 }
+
+Graphic "CA_LB_THICK_1_846", 512, 3
+{ Graphic "CA_LB_COL_1", -9, -846 }
+
+Graphic "CA_LB_THICK_1_849", 512, 4
+{ Graphic "CA_LB_COL_1", -10, -849 }
+
+Graphic "CA_LB_THICK_1_853", 512, 3
+{ Graphic "CA_LB_COL_1", -11, -853 }
+
+Graphic "CA_LB_THICK_1_856", 512, 4
+{ Graphic "CA_LB_COL_1", -12, -856 }
+
+Graphic "CA_LB_THICK_1_860", 512, 3
+{ Graphic "CA_LB_COL_1", -13, -860 }
+
+Graphic "CA_LB_THICK_1_863", 512, 4
+{ Graphic "CA_LB_COL_1", -14, -863 }
+
+Graphic "CA_LB_THICK_1_867", 512, 2
+{ Graphic "CA_LB_COL_1", -15, -867 }
+
+Graphic "CA_LB_THICK_1_869", 512, 4
+{ Graphic "CA_LB_COL_1", -16, -869 }
+
+Graphic "CA_LB_THICK_1_873", 512, 3
+{ Graphic "CA_LB_COL_1", -17, -873 }
+
+Graphic "CA_LB_THICK_1_876", 512, 3
+{ Graphic "CA_LB_COL_1", -18, -876 }
+
+Graphic "CA_LB_THICK_1_879", 512, 3
+{ Graphic "CA_LB_COL_1", -19, -879 }
+
+Graphic "CA_LB_THICK_1_882", 512, 4
+{ Graphic "CA_LB_COL_1", -20, -882 }
+
+Graphic "CA_LB_THICK_1_886", 512, 2
+{ Graphic "CA_LB_COL_1", -21, -886 }
+
+Graphic "CA_LB_THICK_1_888", 512, 4
+{ Graphic "CA_LB_COL_1", -22, -888 }
+
+Graphic "CA_LB_THICK_1_892", 512, 2
+{ Graphic "CA_LB_COL_1", -23, -892 }
+
+Graphic "CA_LB_THICK_1_894", 512, 3
+{ Graphic "CA_LB_COL_1", -24, -894 }
+
+Graphic "CA_LB_THICK_1_897", 512, 2
+{ Graphic "CA_LB_COL_1", -25, -897 }
+
+Graphic "CA_LB_THICK_1_899", 512, 3
+{ Graphic "CA_LB_COL_1", -26, -899 }
+
+Graphic "CA_LB_THICK_1_902", 512, 3
+{ Graphic "CA_LB_COL_1", -27, -902 }
+
+Graphic "CA_LB_THICK_1_905", 512, 4
+{ Graphic "CA_LB_COL_1", -28, -905 }
+
+Graphic "CA_LB_THICK_1_909", 512, 1
+{ Graphic "CA_LB_COL_1", -29, -909 }
+
+Graphic "CA_LB_THICK_1_910", 512, 4
+{ Graphic "CA_LB_COL_1", -30, -910 }
+
+Graphic "CA_LB_THICK_1_914", 512, 2
+{ Graphic "CA_LB_COL_1", -31, -914 }
+
+Graphic "CA_LB_THICK_1_916", 512, 4
+{ Graphic "CA_LB_COL_1", -32, -916 }
+
+Graphic "CA_LB_THICK_1_920", 512, 2
+{ Graphic "CA_LB_COL_1", -33, -920 }
+
+Graphic "CA_LB_THICK_1_922", 512, 2
+{ Graphic "CA_LB_COL_1", -34, -922 }
+
+Graphic "CA_LB_THICK_1_924", 512, 2
+{ Graphic "CA_LB_COL_1", -35, -924 }
+
+Graphic "CA_LB_THICK_1_926", 512, 4
+{ Graphic "CA_LB_COL_1", -36, -926 }
+
+Graphic "CA_LB_THICK_1_930", 512, 1
+{ Graphic "CA_LB_COL_1", -37, -930 }
+
+Graphic "CA_LB_THICK_1_931", 512, 6
+{ Graphic "CA_LB_COL_1", -38, -931 }
+
+Graphic "CA_LB_THICK_1_937", 512, 2
+{ Graphic "CA_LB_COL_1", -39, -937 }
+
+Graphic "CA_LB_THICK_1_939", 512, 3
+{ Graphic "CA_LB_COL_1", -40, -939 }
+
+Graphic "CA_LB_THICK_1_942", 512, 3
+{ Graphic "CA_LB_COL_1", -41, -942 }
+
+Graphic "CA_LB_THICK_1_945", 512, 3
+{ Graphic "CA_LB_COL_1", -42, -945 }
+
+Graphic "CA_LB_THICK_1_948", 512, 2
+{ Graphic "CA_LB_COL_1", -43, -948 }
+
+Graphic "CA_LB_THICK_1_950", 512, 4
+{ Graphic "CA_LB_COL_1", -44, -950 }
+
+Graphic "CA_LB_THICK_1_954", 512, 4
+{ Graphic "CA_LB_COL_1", -45, -954 }
+
+Graphic "CA_LB_THICK_1_958", 512, 3
+{ Graphic "CA_LB_COL_1", -46, -958 }
+
+Graphic "CA_LB_THICK_1_961", 512, 2
+{ Graphic "CA_LB_COL_1", -47, -961 }
+
+Graphic "CA_LB_THICK_1_963", 512, 7
+{ Graphic "CA_LB_COL_1", -48, -963 }
+
+Graphic "CA_LB_THICK_1_970", 512, 1
+{ Graphic "CA_LB_COL_1", -49, -970 }
+
+Graphic "CA_LB_THICK_1_971", 512, 4
+{ Graphic "CA_LB_COL_1", -50, -971 }
+
+Graphic "CA_LB_THICK_1_975", 512, 2
+{ Graphic "CA_LB_COL_1", -51, -975 }
+
+Graphic "CA_LB_THICK_1_977", 512, 5
+{ Graphic "CA_LB_COL_1", -52, -977 }
+
+Graphic "CA_LB_THICK_1_982", 512, 5
+{ Graphic "CA_LB_COL_1", -53, -982 }
+
+Graphic "CA_LB_THICK_1_987", 512, 7
+{ Graphic "CA_LB_COL_1", -54, -987 }
+
+Graphic "CA_LB_THICK_1_994", 512, 2
+{ Graphic "CA_LB_COL_1", -55, -994 }
+
+Graphic "CA_LB_THICK_1_996", 512, 28
+{ Graphic "CA_LB_COL_1", 0, -996 }
+
+Graphic "CA_LB_THICK_1", 512, 1024
+{
+    Graphic "CA_LB_THICK_1_0", 0, 0
+    Graphic "CA_LB_THICK_1_16", 0, 16
+    Graphic "CA_LB_THICK_1_17", 0, 17
+    Graphic "CA_LB_THICK_1_22", 0, 22
+    Graphic "CA_LB_THICK_1_29", 0, 29
+    Graphic "CA_LB_THICK_1_33", 0, 33
+    Graphic "CA_LB_THICK_1_38", 0, 38
+    Graphic "CA_LB_THICK_1_40", 0, 40
+    Graphic "CA_LB_THICK_1_44", 0, 44
+    Graphic "CA_LB_THICK_1_48", 0, 48
+    Graphic "CA_LB_THICK_1_52", 0, 52
+    Graphic "CA_LB_THICK_1_55", 0, 55
+    Graphic "CA_LB_THICK_1_58", 0, 58
+    Graphic "CA_LB_THICK_1_61", 0, 61
+    Graphic "CA_LB_THICK_1_64", 0, 64
+    Graphic "CA_LB_THICK_1_66", 0, 66
+    Graphic "CA_LB_THICK_1_69", 0, 69
+    Graphic "CA_LB_THICK_1_72", 0, 72
+    Graphic "CA_LB_THICK_1_77", 0, 77
+    Graphic "CA_LB_THICK_1_79", 0, 79
+    Graphic "CA_LB_THICK_1_82", 0, 82
+    Graphic "CA_LB_THICK_1_85", 0, 85
+    Graphic "CA_LB_THICK_1_86", 0, 86
+    Graphic "CA_LB_THICK_1_88", 0, 88
+    Graphic "CA_LB_THICK_1_92", 0, 92
+    Graphic "CA_LB_THICK_1_93", 0, 93
+    Graphic "CA_LB_THICK_1_97", 0, 97
+    Graphic "CA_LB_THICK_1_99", 0, 99
+    Graphic "CA_LB_THICK_1_103", 0, 103
+    Graphic "CA_LB_THICK_1_105", 0, 105
+    Graphic "CA_LB_THICK_1_109", 0, 109
+    Graphic "CA_LB_THICK_1_111", 0, 111
+    Graphic "CA_LB_THICK_1_114", 0, 114
+    Graphic "CA_LB_THICK_1_117", 0, 117
+    Graphic "CA_LB_THICK_1_120", 0, 120
+    Graphic "CA_LB_THICK_1_123", 0, 123
+    Graphic "CA_LB_THICK_1_127", 0, 127
+    Graphic "CA_LB_THICK_1_129", 0, 129
+    Graphic "CA_LB_THICK_1_133", 0, 133
+    Graphic "CA_LB_THICK_1_135", 0, 135
+    Graphic "CA_LB_THICK_1_139", 0, 139
+    Graphic "CA_LB_THICK_1_141", 0, 141
+    Graphic "CA_LB_THICK_1_145", 0, 145
+    Graphic "CA_LB_THICK_1_149", 0, 149
+    Graphic "CA_LB_THICK_1_153", 0, 153
+    Graphic "CA_LB_THICK_1_156", 0, 156
+    Graphic "CA_LB_THICK_1_160", 0, 160
+    Graphic "CA_LB_THICK_1_163", 0, 163
+    Graphic "CA_LB_THICK_1_168", 0, 168
+    Graphic "CA_LB_THICK_1_170", 0, 170
+    Graphic "CA_LB_THICK_1_175", 0, 175
+    Graphic "CA_LB_THICK_1_179", 0, 179
+    Graphic "CA_LB_THICK_1_184", 0, 184
+    Graphic "CA_LB_THICK_1_187", 0, 187
+    Graphic "CA_LB_THICK_1_193", 0, 193
+    Graphic "CA_LB_THICK_1_196", 0, 196
+    Graphic "CA_LB_THICK_1_203", 0, 203
+    Graphic "CA_LB_THICK_1_205", 0, 205
+    Graphic "CA_LB_THICK_1_212", 0, 212
+    Graphic "CA_LB_THICK_1_216", 0, 216
+    Graphic "CA_LB_THICK_1_223", 0, 223
+    Graphic "CA_LB_THICK_1_228", 0, 228
+    Graphic "CA_LB_THICK_1_237", 0, 237
+    Graphic "CA_LB_THICK_1_241", 0, 241
+    Graphic "CA_LB_THICK_1_250", 0, 250
+    Graphic "CA_LB_THICK_1_257", 0, 257
+    Graphic "CA_LB_THICK_1_269", 0, 269
+    Graphic "CA_LB_THICK_1_279", 0, 279
+    Graphic "CA_LB_THICK_1_298", 0, 298
+    Graphic "CA_LB_THICK_1_311", 0, 311
+    Graphic "CA_LB_THICK_1_364", 0, 364
+    Graphic "CA_LB_THICK_1_376", 0, 376
+    Graphic "CA_LB_THICK_1_395", 0, 395
+    Graphic "CA_LB_THICK_1_402", 0, 402
+    Graphic "CA_LB_THICK_1_414", 0, 414
+    Graphic "CA_LB_THICK_1_421", 0, 421
+    Graphic "CA_LB_THICK_1_429", 0, 429
+    Graphic "CA_LB_THICK_1_431", 0, 431
+    Graphic "CA_LB_THICK_1_446", 0, 446
+    Graphic "CA_LB_THICK_1_450", 0, 450
+    Graphic "CA_LB_THICK_1_463", 0, 463
+    Graphic "CA_LB_THICK_1_466", 0, 466
+    Graphic "CA_LB_THICK_1_476", 0, 476
+    Graphic "CA_LB_THICK_1_485", 0, 485
+    Graphic "CA_LB_THICK_1_536", 0, 536
+    Graphic "CA_LB_THICK_1_545", 0, 545
+    Graphic "CA_LB_THICK_1_556", 0, 556
+    Graphic "CA_LB_THICK_1_560", 0, 560
+    Graphic "CA_LB_THICK_1_573", 0, 573
+    Graphic "CA_LB_THICK_1_578", 0, 578
+    Graphic "CA_LB_THICK_1_592", 0, 592
+    Graphic "CA_LB_THICK_1_602", 0, 602
+    Graphic "CA_LB_THICK_1_609", 0, 609
+    Graphic "CA_LB_THICK_1_620", 0, 620
+    Graphic "CA_LB_THICK_1_629", 0, 629
+    Graphic "CA_LB_THICK_1_646", 0, 646
+    Graphic "CA_LB_THICK_1_675", 0, 675
+    Graphic "CA_LB_THICK_1_685", 0, 685
+    Graphic "CA_LB_THICK_1_711", 0, 711
+    Graphic "CA_LB_THICK_1_731", 0, 731
+    Graphic "CA_LB_THICK_1_740", 0, 740
+    Graphic "CA_LB_THICK_1_751", 0, 751
+    Graphic "CA_LB_THICK_1_758", 0, 758
+    Graphic "CA_LB_THICK_1_767", 0, 767
+    Graphic "CA_LB_THICK_1_773", 0, 773
+    Graphic "CA_LB_THICK_1_780", 0, 780
+    Graphic "CA_LB_THICK_1_785", 0, 785
+    Graphic "CA_LB_THICK_1_793", 0, 793
+    Graphic "CA_LB_THICK_1_797", 0, 797
+    Graphic "CA_LB_THICK_1_803", 0, 803
+    Graphic "CA_LB_THICK_1_807", 0, 807
+    Graphic "CA_LB_THICK_1_813", 0, 813
+    Graphic "CA_LB_THICK_1_816", 0, 816
+    Graphic "CA_LB_THICK_1_822", 0, 822
+    Graphic "CA_LB_THICK_1_825", 0, 825
+    Graphic "CA_LB_THICK_1_830", 0, 830
+    Graphic "CA_LB_THICK_1_834", 0, 834
+    Graphic "CA_LB_THICK_1_839", 0, 839
+    Graphic "CA_LB_THICK_1_841", 0, 841
+    Graphic "CA_LB_THICK_1_846", 0, 846
+    Graphic "CA_LB_THICK_1_849", 0, 849
+    Graphic "CA_LB_THICK_1_853", 0, 853
+    Graphic "CA_LB_THICK_1_856", 0, 856
+    Graphic "CA_LB_THICK_1_860", 0, 860
+    Graphic "CA_LB_THICK_1_863", 0, 863
+    Graphic "CA_LB_THICK_1_867", 0, 867
+    Graphic "CA_LB_THICK_1_869", 0, 869
+    Graphic "CA_LB_THICK_1_873", 0, 873
+    Graphic "CA_LB_THICK_1_876", 0, 876
+    Graphic "CA_LB_THICK_1_879", 0, 879
+    Graphic "CA_LB_THICK_1_882", 0, 882
+    Graphic "CA_LB_THICK_1_886", 0, 886
+    Graphic "CA_LB_THICK_1_888", 0, 888
+    Graphic "CA_LB_THICK_1_892", 0, 892
+    Graphic "CA_LB_THICK_1_894", 0, 894
+    Graphic "CA_LB_THICK_1_897", 0, 897
+    Graphic "CA_LB_THICK_1_899", 0, 899
+    Graphic "CA_LB_THICK_1_902", 0, 902
+    Graphic "CA_LB_THICK_1_905", 0, 905
+    Graphic "CA_LB_THICK_1_909", 0, 909
+    Graphic "CA_LB_THICK_1_910", 0, 910
+    Graphic "CA_LB_THICK_1_914", 0, 914
+    Graphic "CA_LB_THICK_1_916", 0, 916
+    Graphic "CA_LB_THICK_1_920", 0, 920
+    Graphic "CA_LB_THICK_1_922", 0, 922
+    Graphic "CA_LB_THICK_1_924", 0, 924
+    Graphic "CA_LB_THICK_1_926", 0, 926
+    Graphic "CA_LB_THICK_1_930", 0, 930
+    Graphic "CA_LB_THICK_1_931", 0, 931
+    Graphic "CA_LB_THICK_1_937", 0, 937
+    Graphic "CA_LB_THICK_1_939", 0, 939
+    Graphic "CA_LB_THICK_1_942", 0, 942
+    Graphic "CA_LB_THICK_1_945", 0, 945
+    Graphic "CA_LB_THICK_1_948", 0, 948
+    Graphic "CA_LB_THICK_1_950", 0, 950
+    Graphic "CA_LB_THICK_1_954", 0, 954
+    Graphic "CA_LB_THICK_1_958", 0, 958
+    Graphic "CA_LB_THICK_1_961", 0, 961
+    Graphic "CA_LB_THICK_1_963", 0, 963
+    Graphic "CA_LB_THICK_1_970", 0, 970
+    Graphic "CA_LB_THICK_1_971", 0, 971
+    Graphic "CA_LB_THICK_1_975", 0, 975
+    Graphic "CA_LB_THICK_1_977", 0, 977
+    Graphic "CA_LB_THICK_1_982", 0, 982
+    Graphic "CA_LB_THICK_1_987", 0, 987
+    Graphic "CA_LB_THICK_1_994", 0, 994
+    Graphic "CA_LB_THICK_1_996", 0, 996
+}
+
+Graphic "CA_LB_COL_2", 512, 1024
+{ Graphic "CA_LB_MUTED", -512, 0 }
+
+Graphic "CA_LB_THICK_2_0", 512, 16
+{ Graphic "CA_LB_COL_2", 0, 0 }
+
+Graphic "CA_LB_THICK_2_16", 512, 8
+{ Graphic "CA_LB_COL_2", -54, -16 }
+
+Graphic "CA_LB_THICK_2_24", 512, 5
+{ Graphic "CA_LB_COL_2", -53, -24 }
+
+Graphic "CA_LB_THICK_2_29", 512, 5
+{ Graphic "CA_LB_COL_2", -52, -29 }
+
+Graphic "CA_LB_THICK_2_34", 512, 2
+{ Graphic "CA_LB_COL_2", -51, -34 }
+
+Graphic "CA_LB_THICK_2_36", 512, 4
+{ Graphic "CA_LB_COL_2", -50, -36 }
+
+Graphic "CA_LB_THICK_2_40", 512, 3
+{ Graphic "CA_LB_COL_2", -49, -40 }
+
+Graphic "CA_LB_THICK_2_43", 512, 5
+{ Graphic "CA_LB_COL_2", -48, -43 }
+
+Graphic "CA_LB_THICK_2_48", 512, 2
+{ Graphic "CA_LB_COL_2", -47, -48 }
+
+Graphic "CA_LB_THICK_2_50", 512, 5
+{ Graphic "CA_LB_COL_2", -46, -50 }
+
+Graphic "CA_LB_THICK_2_55", 512, 1
+{ Graphic "CA_LB_COL_2", -45, -55 }
+
+Graphic "CA_LB_THICK_2_56", 512, 5
+{ Graphic "CA_LB_COL_2", -44, -56 }
+
+Graphic "CA_LB_THICK_2_61", 512, 2
+{ Graphic "CA_LB_COL_2", -43, -61 }
+
+Graphic "CA_LB_THICK_2_63", 512, 3
+{ Graphic "CA_LB_COL_2", -42, -63 }
+
+Graphic "CA_LB_THICK_2_66", 512, 2
+{ Graphic "CA_LB_COL_2", -41, -66 }
+
+Graphic "CA_LB_THICK_2_68", 512, 3
+{ Graphic "CA_LB_COL_2", -40, -68 }
+
+Graphic "CA_LB_THICK_2_71", 512, 3
+{ Graphic "CA_LB_COL_2", -39, -71 }
+
+Graphic "CA_LB_THICK_2_74", 512, 4
+{ Graphic "CA_LB_COL_2", -38, -74 }
+
+Graphic "CA_LB_THICK_2_78", 512, 2
+{ Graphic "CA_LB_COL_2", -37, -78 }
+
+Graphic "CA_LB_THICK_2_80", 512, 4
+{ Graphic "CA_LB_COL_2", -36, -80 }
+
+Graphic "CA_LB_THICK_2_84", 512, 1
+{ Graphic "CA_LB_COL_2", -35, -84 }
+
+Graphic "CA_LB_THICK_2_85", 512, 3
+{ Graphic "CA_LB_COL_2", -34, -85 }
+
+Graphic "CA_LB_THICK_2_88", 512, 2
+{ Graphic "CA_LB_COL_2", -33, -88 }
+
+Graphic "CA_LB_THICK_2_90", 512, 3
+{ Graphic "CA_LB_COL_2", -32, -90 }
+
+Graphic "CA_LB_THICK_2_93", 512, 2
+{ Graphic "CA_LB_COL_2", -31, -93 }
+
+Graphic "CA_LB_THICK_2_95", 512, 4
+{ Graphic "CA_LB_COL_2", -30, -95 }
+
+Graphic "CA_LB_THICK_2_99", 512, 2
+{ Graphic "CA_LB_COL_2", -29, -99 }
+
+Graphic "CA_LB_THICK_2_101", 512, 4
+{ Graphic "CA_LB_COL_2", -28, -101 }
+
+Graphic "CA_LB_THICK_2_105", 512, 2
+{ Graphic "CA_LB_COL_2", -27, -105 }
+
+Graphic "CA_LB_THICK_2_107", 512, 3
+{ Graphic "CA_LB_COL_2", -26, -107 }
+
+Graphic "CA_LB_THICK_2_110", 512, 3
+{ Graphic "CA_LB_COL_2", -25, -110 }
+
+Graphic "CA_LB_THICK_2_113", 512, 3
+{ Graphic "CA_LB_COL_2", -24, -113 }
+
+Graphic "CA_LB_THICK_2_116", 512, 2
+{ Graphic "CA_LB_COL_2", -23, -116 }
+
+Graphic "CA_LB_THICK_2_118", 512, 3
+{ Graphic "CA_LB_COL_2", -22, -118 }
+
+Graphic "CA_LB_THICK_2_121", 512, 3
+{ Graphic "CA_LB_COL_2", -21, -121 }
+
+Graphic "CA_LB_THICK_2_124", 512, 4
+{ Graphic "CA_LB_COL_2", -20, -124 }
+
+Graphic "CA_LB_THICK_2_128", 512, 2
+{ Graphic "CA_LB_COL_2", -19, -128 }
+
+Graphic "CA_LB_THICK_2_130", 512, 4
+{ Graphic "CA_LB_COL_2", -18, -130 }
+
+Graphic "CA_LB_THICK_2_134", 512, 2
+{ Graphic "CA_LB_COL_2", -17, -134 }
+
+Graphic "CA_LB_THICK_2_136", 512, 5
+{ Graphic "CA_LB_COL_2", -16, -136 }
+
+Graphic "CA_LB_THICK_2_141", 512, 2
+{ Graphic "CA_LB_COL_2", -15, -141 }
+
+Graphic "CA_LB_THICK_2_143", 512, 3
+{ Graphic "CA_LB_COL_2", -14, -143 }
+
+Graphic "CA_LB_THICK_2_146", 512, 4
+{ Graphic "CA_LB_COL_2", -13, -146 }
+
+Graphic "CA_LB_THICK_2_150", 512, 4
+{ Graphic "CA_LB_COL_2", -12, -150 }
+
+Graphic "CA_LB_THICK_2_154", 512, 3
+{ Graphic "CA_LB_COL_2", -11, -154 }
+
+Graphic "CA_LB_THICK_2_157", 512, 4
+{ Graphic "CA_LB_COL_2", -10, -157 }
+
+Graphic "CA_LB_THICK_2_161", 512, 3
+{ Graphic "CA_LB_COL_2", -9, -161 }
+
+Graphic "CA_LB_THICK_2_164", 512, 5
+{ Graphic "CA_LB_COL_2", -8, -164 }
+
+Graphic "CA_LB_THICK_2_169", 512, 2
+{ Graphic "CA_LB_COL_2", -7, -169 }
+
+Graphic "CA_LB_THICK_2_171", 512, 5
+{ Graphic "CA_LB_COL_2", -6, -171 }
+
+Graphic "CA_LB_THICK_2_176", 512, 3
+{ Graphic "CA_LB_COL_2", -5, -176 }
+
+Graphic "CA_LB_THICK_2_179", 512, 5
+{ Graphic "CA_LB_COL_2", -4, -179 }
+
+Graphic "CA_LB_THICK_2_184", 512, 5
+{ Graphic "CA_LB_COL_2", -3, -184 }
+
+Graphic "CA_LB_THICK_2_189", 512, 4
+{ Graphic "CA_LB_COL_2", -2, -189 }
+
+Graphic "CA_LB_THICK_2_193", 512, 4
+{ Graphic "CA_LB_COL_2", -1, -193 }
+
+Graphic "CA_LB_THICK_2_197", 512, 6
+{ Graphic "CA_LB_COL_2", 0, -197 }
+
+Graphic "CA_LB_THICK_2_203", 512, 4
+{ Graphic "CA_LB_COL_2", 1, -203 }
+
+Graphic "CA_LB_THICK_2_207", 512, 6
+{ Graphic "CA_LB_COL_2", 2, -207 }
+
+Graphic "CA_LB_THICK_2_213", 512, 5
+{ Graphic "CA_LB_COL_2", 3, -213 }
+
+Graphic "CA_LB_THICK_2_218", 512, 6
+{ Graphic "CA_LB_COL_2", 4, -218 }
+
+Graphic "CA_LB_THICK_2_224", 512, 6
+{ Graphic "CA_LB_COL_2", 5, -224 }
+
+Graphic "CA_LB_THICK_2_230", 512, 9
+{ Graphic "CA_LB_COL_2", 6, -230 }
+
+Graphic "CA_LB_THICK_2_239", 512, 3
+{ Graphic "CA_LB_COL_2", 7, -239 }
+
+Graphic "CA_LB_THICK_2_242", 512, 10
+{ Graphic "CA_LB_COL_2", 8, -242 }
+
+Graphic "CA_LB_THICK_2_252", 512, 7
+{ Graphic "CA_LB_COL_2", 9, -252 }
+
+Graphic "CA_LB_THICK_2_259", 512, 12
+{ Graphic "CA_LB_COL_2", 10, -259 }
+
+Graphic "CA_LB_THICK_2_271", 512, 8
+{ Graphic "CA_LB_COL_2", 11, -271 }
+
+Graphic "CA_LB_THICK_2_279", 512, 19
+{ Graphic "CA_LB_COL_2", 12, -279 }
+
+Graphic "CA_LB_THICK_2_298", 512, 16
+{ Graphic "CA_LB_COL_2", 13, -298 }
+
+Graphic "CA_LB_THICK_2_314", 512, 50
+{ Graphic "CA_LB_COL_2", 14, -314 }
+
+Graphic "CA_LB_THICK_2_364", 512, 12
+{ Graphic "CA_LB_COL_2", 13, -364 }
+
+Graphic "CA_LB_THICK_2_376", 512, 16
+{ Graphic "CA_LB_COL_2", 12, -376 }
+
+Graphic "CA_LB_THICK_2_392", 512, 9
+{ Graphic "CA_LB_COL_2", 11, -392 }
+
+Graphic "CA_LB_THICK_2_401", 512, 13
+{ Graphic "CA_LB_COL_2", 10, -401 }
+
+Graphic "CA_LB_THICK_2_414", 512, 6
+{ Graphic "CA_LB_COL_2", 9, -414 }
+
+Graphic "CA_LB_THICK_2_420", 512, 8
+{ Graphic "CA_LB_COL_2", 8, -420 }
+
+Graphic "CA_LB_THICK_2_428", 512, 3
+{ Graphic "CA_LB_COL_2", 7, -428 }
+
+Graphic "CA_LB_THICK_2_431", 512, 15
+{ Graphic "CA_LB_COL_2", 6, -431 }
+
+Graphic "CA_LB_THICK_2_446", 512, 4
+{ Graphic "CA_LB_COL_2", 5, -446 }
+
+Graphic "CA_LB_THICK_2_450", 512, 13
+{ Graphic "CA_LB_COL_2", 4, -450 }
+
+Graphic "CA_LB_THICK_2_463", 512, 2
+{ Graphic "CA_LB_COL_2", 3, -463 }
+
+Graphic "CA_LB_THICK_2_465", 512, 11
+{ Graphic "CA_LB_COL_2", 2, -465 }
+
+Graphic "CA_LB_THICK_2_476", 512, 10
+{ Graphic "CA_LB_COL_2", 1, -476 }
+
+Graphic "CA_LB_THICK_2_486", 512, 52
+{ Graphic "CA_LB_COL_2", 0, -486 }
+
+Graphic "CA_LB_THICK_2_538", 512, 8
+{ Graphic "CA_LB_COL_2", 1, -538 }
+
+Graphic "CA_LB_THICK_2_546", 512, 11
+{ Graphic "CA_LB_COL_2", 2, -546 }
+
+Graphic "CA_LB_THICK_2_557", 512, 4
+{ Graphic "CA_LB_COL_2", 3, -557 }
+
+Graphic "CA_LB_THICK_2_561", 512, 12
+{ Graphic "CA_LB_COL_2", 4, -561 }
+
+Graphic "CA_LB_THICK_2_573", 512, 5
+{ Graphic "CA_LB_COL_2", 5, -573 }
+
+Graphic "CA_LB_THICK_2_578", 512, 14
+{ Graphic "CA_LB_COL_2", 6, -578 }
+
+Graphic "CA_LB_THICK_2_592", 512, 1
+{ Graphic "CA_LB_COL_2", 7, -592 }
+
+Graphic "CA_LB_THICK_2_593", 512, 9
+{ Graphic "CA_LB_COL_2", 8, -593 }
+
+Graphic "CA_LB_THICK_2_602", 512, 7
+{ Graphic "CA_LB_COL_2", 9, -602 }
+
+Graphic "CA_LB_THICK_2_609", 512, 11
+{ Graphic "CA_LB_COL_2", 10, -609 }
+
+Graphic "CA_LB_THICK_2_620", 512, 8
+{ Graphic "CA_LB_COL_2", 11, -620 }
+
+Graphic "CA_LB_THICK_2_628", 512, 19
+{ Graphic "CA_LB_COL_2", 12, -628 }
+
+Graphic "CA_LB_THICK_2_647", 512, 16
+{ Graphic "CA_LB_COL_2", 13, -647 }
+
+Graphic "CA_LB_THICK_2_663", 512, 21
+{ Graphic "CA_LB_COL_2", 14, -663 }
+
+Graphic "CA_LB_THICK_2_684", 512, 27
+{ Graphic "CA_LB_COL_2", 13, -684 }
+
+Graphic "CA_LB_THICK_2_711", 512, 20
+{ Graphic "CA_LB_COL_2", 12, -711 }
+
+Graphic "CA_LB_THICK_2_731", 512, 6
+{ Graphic "CA_LB_COL_2", 11, -731 }
+
+Graphic "CA_LB_THICK_2_737", 512, 12
+{ Graphic "CA_LB_COL_2", 10, -737 }
+
+Graphic "CA_LB_THICK_2_749", 512, 7
+{ Graphic "CA_LB_COL_2", 9, -749 }
+
+Graphic "CA_LB_THICK_2_756", 512, 11
+{ Graphic "CA_LB_COL_2", 8, -756 }
+
+Graphic "CA_LB_THICK_2_767", 512, 3
+{ Graphic "CA_LB_COL_2", 7, -767 }
+
+Graphic "CA_LB_THICK_2_770", 512, 9
+{ Graphic "CA_LB_COL_2", 6, -770 }
+
+Graphic "CA_LB_THICK_2_779", 512, 5
+{ Graphic "CA_LB_COL_2", 5, -779 }
+
+Graphic "CA_LB_THICK_2_784", 512, 8
+{ Graphic "CA_LB_COL_2", 4, -784 }
+
+Graphic "CA_LB_THICK_2_792", 512, 3
+{ Graphic "CA_LB_COL_2", 3, -792 }
+
+Graphic "CA_LB_THICK_2_795", 512, 7
+{ Graphic "CA_LB_COL_2", 2, -795 }
+
+Graphic "CA_LB_THICK_2_802", 512, 4
+{ Graphic "CA_LB_COL_2", 1, -802 }
+
+Graphic "CA_LB_THICK_2_806", 512, 5
+{ Graphic "CA_LB_COL_2", 0, -806 }
+
+Graphic "CA_LB_THICK_2_811", 512, 4
+{ Graphic "CA_LB_COL_2", -1, -811 }
+
+Graphic "CA_LB_THICK_2_815", 512, 6
+{ Graphic "CA_LB_COL_2", -2, -815 }
+
+Graphic "CA_LB_THICK_2_821", 512, 3
+{ Graphic "CA_LB_COL_2", -3, -821 }
+
+Graphic "CA_LB_THICK_2_824", 512, 5
+{ Graphic "CA_LB_COL_2", -4, -824 }
+
+Graphic "CA_LB_THICK_2_829", 512, 4
+{ Graphic "CA_LB_COL_2", -5, -829 }
+
+Graphic "CA_LB_THICK_2_833", 512, 4
+{ Graphic "CA_LB_COL_2", -6, -833 }
+
+Graphic "CA_LB_THICK_2_837", 512, 3
+{ Graphic "CA_LB_COL_2", -7, -837 }
+
+Graphic "CA_LB_THICK_2_840", 512, 6
+{ Graphic "CA_LB_COL_2", -8, -840 }
+
+Graphic "CA_LB_THICK_2_846", 512, 2
+{ Graphic "CA_LB_COL_2", -9, -846 }
+
+Graphic "CA_LB_THICK_2_848", 512, 4
+{ Graphic "CA_LB_COL_2", -10, -848 }
+
+Graphic "CA_LB_THICK_2_852", 512, 3
+{ Graphic "CA_LB_COL_2", -11, -852 }
+
+Graphic "CA_LB_THICK_2_855", 512, 4
+{ Graphic "CA_LB_COL_2", -12, -855 }
+
+Graphic "CA_LB_THICK_2_859", 512, 3
+{ Graphic "CA_LB_COL_2", -13, -859 }
+
+Graphic "CA_LB_THICK_2_862", 512, 3
+{ Graphic "CA_LB_COL_2", -14, -862 }
+
+Graphic "CA_LB_THICK_2_865", 512, 3
+{ Graphic "CA_LB_COL_2", -15, -865 }
+
+Graphic "CA_LB_THICK_2_868", 512, 5
+{ Graphic "CA_LB_COL_2", -16, -868 }
+
+Graphic "CA_LB_THICK_2_873", 512, 1
+{ Graphic "CA_LB_COL_2", -17, -873 }
+
+Graphic "CA_LB_THICK_2_874", 512, 5
+{ Graphic "CA_LB_COL_2", -18, -874 }
+
+Graphic "CA_LB_THICK_2_879", 512, 1
+{ Graphic "CA_LB_COL_2", -19, -879 }
+
+Graphic "CA_LB_THICK_2_880", 512, 4
+{ Graphic "CA_LB_COL_2", -20, -880 }
+
+Graphic "CA_LB_THICK_2_884", 512, 3
+{ Graphic "CA_LB_COL_2", -21, -884 }
+
+Graphic "CA_LB_THICK_2_887", 512, 3
+{ Graphic "CA_LB_COL_2", -22, -887 }
+
+Graphic "CA_LB_THICK_2_890", 512, 3
+{ Graphic "CA_LB_COL_2", -23, -890 }
+
+Graphic "CA_LB_THICK_2_893", 512, 3
+{ Graphic "CA_LB_COL_2", -24, -893 }
+
+Graphic "CA_LB_THICK_2_896", 512, 2
+{ Graphic "CA_LB_COL_2", -25, -896 }
+
+Graphic "CA_LB_THICK_2_898", 512, 4
+{ Graphic "CA_LB_COL_2", -26, -898 }
+
+Graphic "CA_LB_THICK_2_902", 512, 2
+{ Graphic "CA_LB_COL_2", -27, -902 }
+
+Graphic "CA_LB_THICK_2_904", 512, 4
+{ Graphic "CA_LB_COL_2", -28, -904 }
+
+Graphic "CA_LB_THICK_2_908", 512, 2
+{ Graphic "CA_LB_COL_2", -29, -908 }
+
+Graphic "CA_LB_THICK_2_910", 512, 3
+{ Graphic "CA_LB_COL_2", -30, -910 }
+
+Graphic "CA_LB_THICK_2_913", 512, 2
+{ Graphic "CA_LB_COL_2", -31, -913 }
+
+Graphic "CA_LB_THICK_2_915", 512, 4
+{ Graphic "CA_LB_COL_2", -32, -915 }
+
+Graphic "CA_LB_THICK_2_919", 512, 1
+{ Graphic "CA_LB_COL_2", -33, -919 }
+
+Graphic "CA_LB_THICK_2_920", 512, 3
+{ Graphic "CA_LB_COL_2", -34, -920 }
+
+Graphic "CA_LB_THICK_2_923", 512, 2
+{ Graphic "CA_LB_COL_2", -35, -923 }
+
+Graphic "CA_LB_THICK_2_925", 512, 3
+{ Graphic "CA_LB_COL_2", -36, -925 }
+
+Graphic "CA_LB_THICK_2_928", 512, 2
+{ Graphic "CA_LB_COL_2", -37, -928 }
+
+Graphic "CA_LB_THICK_2_930", 512, 4
+{ Graphic "CA_LB_COL_2", -38, -930 }
+
+Graphic "CA_LB_THICK_2_934", 512, 3
+{ Graphic "CA_LB_COL_2", -39, -934 }
+
+Graphic "CA_LB_THICK_2_937", 512, 3
+{ Graphic "CA_LB_COL_2", -40, -937 }
+
+Graphic "CA_LB_THICK_2_940", 512, 2
+{ Graphic "CA_LB_COL_2", -41, -940 }
+
+Graphic "CA_LB_THICK_2_942", 512, 4
+{ Graphic "CA_LB_COL_2", -42, -942 }
+
+Graphic "CA_LB_THICK_2_946", 512, 2
+{ Graphic "CA_LB_COL_2", -43, -946 }
+
+Graphic "CA_LB_THICK_2_948", 512, 4
+{ Graphic "CA_LB_COL_2", -44, -948 }
+
+Graphic "CA_LB_THICK_2_952", 512, 2
+{ Graphic "CA_LB_COL_2", -45, -952 }
+
+Graphic "CA_LB_THICK_2_954", 512, 5
+{ Graphic "CA_LB_COL_2", -46, -954 }
+
+Graphic "CA_LB_THICK_2_959", 512, 1
+{ Graphic "CA_LB_COL_2", -47, -959 }
+
+Graphic "CA_LB_THICK_2_960", 512, 7
+{ Graphic "CA_LB_COL_2", -48, -960 }
+
+Graphic "CA_LB_THICK_2_967", 512, 2
+{ Graphic "CA_LB_COL_2", -49, -967 }
+
+Graphic "CA_LB_THICK_2_969", 512, 4
+{ Graphic "CA_LB_COL_2", -50, -969 }
+
+Graphic "CA_LB_THICK_2_973", 512, 2
+{ Graphic "CA_LB_COL_2", -51, -973 }
+
+Graphic "CA_LB_THICK_2_975", 512, 3
+{ Graphic "CA_LB_COL_2", -52, -975 }
+
+Graphic "CA_LB_THICK_2_978", 512, 4
+{ Graphic "CA_LB_COL_2", -53, -978 }
+
+Graphic "CA_LB_THICK_2_982", 512, 8
+{ Graphic "CA_LB_COL_2", -54, -982 }
+
+Graphic "CA_LB_THICK_2_990", 512, 3
+{ Graphic "CA_LB_COL_2", -55, -990 }
+
+Graphic "CA_LB_THICK_2_993", 512, 4
+{ Graphic "CA_LB_COL_2", -56, -993 }
+
+Graphic "CA_LB_THICK_2_997", 512, 27
+{ Graphic "CA_LB_COL_2", 0, -997 }
+
+Graphic "CA_LB_THICK_2", 512, 1024
+{
+    Graphic "CA_LB_THICK_2_0", 0, 0
+    Graphic "CA_LB_THICK_2_16", 0, 16
+    Graphic "CA_LB_THICK_2_24", 0, 24
+    Graphic "CA_LB_THICK_2_29", 0, 29
+    Graphic "CA_LB_THICK_2_34", 0, 34
+    Graphic "CA_LB_THICK_2_36", 0, 36
+    Graphic "CA_LB_THICK_2_40", 0, 40
+    Graphic "CA_LB_THICK_2_43", 0, 43
+    Graphic "CA_LB_THICK_2_48", 0, 48
+    Graphic "CA_LB_THICK_2_50", 0, 50
+    Graphic "CA_LB_THICK_2_55", 0, 55
+    Graphic "CA_LB_THICK_2_56", 0, 56
+    Graphic "CA_LB_THICK_2_61", 0, 61
+    Graphic "CA_LB_THICK_2_63", 0, 63
+    Graphic "CA_LB_THICK_2_66", 0, 66
+    Graphic "CA_LB_THICK_2_68", 0, 68
+    Graphic "CA_LB_THICK_2_71", 0, 71
+    Graphic "CA_LB_THICK_2_74", 0, 74
+    Graphic "CA_LB_THICK_2_78", 0, 78
+    Graphic "CA_LB_THICK_2_80", 0, 80
+    Graphic "CA_LB_THICK_2_84", 0, 84
+    Graphic "CA_LB_THICK_2_85", 0, 85
+    Graphic "CA_LB_THICK_2_88", 0, 88
+    Graphic "CA_LB_THICK_2_90", 0, 90
+    Graphic "CA_LB_THICK_2_93", 0, 93
+    Graphic "CA_LB_THICK_2_95", 0, 95
+    Graphic "CA_LB_THICK_2_99", 0, 99
+    Graphic "CA_LB_THICK_2_101", 0, 101
+    Graphic "CA_LB_THICK_2_105", 0, 105
+    Graphic "CA_LB_THICK_2_107", 0, 107
+    Graphic "CA_LB_THICK_2_110", 0, 110
+    Graphic "CA_LB_THICK_2_113", 0, 113
+    Graphic "CA_LB_THICK_2_116", 0, 116
+    Graphic "CA_LB_THICK_2_118", 0, 118
+    Graphic "CA_LB_THICK_2_121", 0, 121
+    Graphic "CA_LB_THICK_2_124", 0, 124
+    Graphic "CA_LB_THICK_2_128", 0, 128
+    Graphic "CA_LB_THICK_2_130", 0, 130
+    Graphic "CA_LB_THICK_2_134", 0, 134
+    Graphic "CA_LB_THICK_2_136", 0, 136
+    Graphic "CA_LB_THICK_2_141", 0, 141
+    Graphic "CA_LB_THICK_2_143", 0, 143
+    Graphic "CA_LB_THICK_2_146", 0, 146
+    Graphic "CA_LB_THICK_2_150", 0, 150
+    Graphic "CA_LB_THICK_2_154", 0, 154
+    Graphic "CA_LB_THICK_2_157", 0, 157
+    Graphic "CA_LB_THICK_2_161", 0, 161
+    Graphic "CA_LB_THICK_2_164", 0, 164
+    Graphic "CA_LB_THICK_2_169", 0, 169
+    Graphic "CA_LB_THICK_2_171", 0, 171
+    Graphic "CA_LB_THICK_2_176", 0, 176
+    Graphic "CA_LB_THICK_2_179", 0, 179
+    Graphic "CA_LB_THICK_2_184", 0, 184
+    Graphic "CA_LB_THICK_2_189", 0, 189
+    Graphic "CA_LB_THICK_2_193", 0, 193
+    Graphic "CA_LB_THICK_2_197", 0, 197
+    Graphic "CA_LB_THICK_2_203", 0, 203
+    Graphic "CA_LB_THICK_2_207", 0, 207
+    Graphic "CA_LB_THICK_2_213", 0, 213
+    Graphic "CA_LB_THICK_2_218", 0, 218
+    Graphic "CA_LB_THICK_2_224", 0, 224
+    Graphic "CA_LB_THICK_2_230", 0, 230
+    Graphic "CA_LB_THICK_2_239", 0, 239
+    Graphic "CA_LB_THICK_2_242", 0, 242
+    Graphic "CA_LB_THICK_2_252", 0, 252
+    Graphic "CA_LB_THICK_2_259", 0, 259
+    Graphic "CA_LB_THICK_2_271", 0, 271
+    Graphic "CA_LB_THICK_2_279", 0, 279
+    Graphic "CA_LB_THICK_2_298", 0, 298
+    Graphic "CA_LB_THICK_2_314", 0, 314
+    Graphic "CA_LB_THICK_2_364", 0, 364
+    Graphic "CA_LB_THICK_2_376", 0, 376
+    Graphic "CA_LB_THICK_2_392", 0, 392
+    Graphic "CA_LB_THICK_2_401", 0, 401
+    Graphic "CA_LB_THICK_2_414", 0, 414
+    Graphic "CA_LB_THICK_2_420", 0, 420
+    Graphic "CA_LB_THICK_2_428", 0, 428
+    Graphic "CA_LB_THICK_2_431", 0, 431
+    Graphic "CA_LB_THICK_2_446", 0, 446
+    Graphic "CA_LB_THICK_2_450", 0, 450
+    Graphic "CA_LB_THICK_2_463", 0, 463
+    Graphic "CA_LB_THICK_2_465", 0, 465
+    Graphic "CA_LB_THICK_2_476", 0, 476
+    Graphic "CA_LB_THICK_2_486", 0, 486
+    Graphic "CA_LB_THICK_2_538", 0, 538
+    Graphic "CA_LB_THICK_2_546", 0, 546
+    Graphic "CA_LB_THICK_2_557", 0, 557
+    Graphic "CA_LB_THICK_2_561", 0, 561
+    Graphic "CA_LB_THICK_2_573", 0, 573
+    Graphic "CA_LB_THICK_2_578", 0, 578
+    Graphic "CA_LB_THICK_2_592", 0, 592
+    Graphic "CA_LB_THICK_2_593", 0, 593
+    Graphic "CA_LB_THICK_2_602", 0, 602
+    Graphic "CA_LB_THICK_2_609", 0, 609
+    Graphic "CA_LB_THICK_2_620", 0, 620
+    Graphic "CA_LB_THICK_2_628", 0, 628
+    Graphic "CA_LB_THICK_2_647", 0, 647
+    Graphic "CA_LB_THICK_2_663", 0, 663
+    Graphic "CA_LB_THICK_2_684", 0, 684
+    Graphic "CA_LB_THICK_2_711", 0, 711
+    Graphic "CA_LB_THICK_2_731", 0, 731
+    Graphic "CA_LB_THICK_2_737", 0, 737
+    Graphic "CA_LB_THICK_2_749", 0, 749
+    Graphic "CA_LB_THICK_2_756", 0, 756
+    Graphic "CA_LB_THICK_2_767", 0, 767
+    Graphic "CA_LB_THICK_2_770", 0, 770
+    Graphic "CA_LB_THICK_2_779", 0, 779
+    Graphic "CA_LB_THICK_2_784", 0, 784
+    Graphic "CA_LB_THICK_2_792", 0, 792
+    Graphic "CA_LB_THICK_2_795", 0, 795
+    Graphic "CA_LB_THICK_2_802", 0, 802
+    Graphic "CA_LB_THICK_2_806", 0, 806
+    Graphic "CA_LB_THICK_2_811", 0, 811
+    Graphic "CA_LB_THICK_2_815", 0, 815
+    Graphic "CA_LB_THICK_2_821", 0, 821
+    Graphic "CA_LB_THICK_2_824", 0, 824
+    Graphic "CA_LB_THICK_2_829", 0, 829
+    Graphic "CA_LB_THICK_2_833", 0, 833
+    Graphic "CA_LB_THICK_2_837", 0, 837
+    Graphic "CA_LB_THICK_2_840", 0, 840
+    Graphic "CA_LB_THICK_2_846", 0, 846
+    Graphic "CA_LB_THICK_2_848", 0, 848
+    Graphic "CA_LB_THICK_2_852", 0, 852
+    Graphic "CA_LB_THICK_2_855", 0, 855
+    Graphic "CA_LB_THICK_2_859", 0, 859
+    Graphic "CA_LB_THICK_2_862", 0, 862
+    Graphic "CA_LB_THICK_2_865", 0, 865
+    Graphic "CA_LB_THICK_2_868", 0, 868
+    Graphic "CA_LB_THICK_2_873", 0, 873
+    Graphic "CA_LB_THICK_2_874", 0, 874
+    Graphic "CA_LB_THICK_2_879", 0, 879
+    Graphic "CA_LB_THICK_2_880", 0, 880
+    Graphic "CA_LB_THICK_2_884", 0, 884
+    Graphic "CA_LB_THICK_2_887", 0, 887
+    Graphic "CA_LB_THICK_2_890", 0, 890
+    Graphic "CA_LB_THICK_2_893", 0, 893
+    Graphic "CA_LB_THICK_2_896", 0, 896
+    Graphic "CA_LB_THICK_2_898", 0, 898
+    Graphic "CA_LB_THICK_2_902", 0, 902
+    Graphic "CA_LB_THICK_2_904", 0, 904
+    Graphic "CA_LB_THICK_2_908", 0, 908
+    Graphic "CA_LB_THICK_2_910", 0, 910
+    Graphic "CA_LB_THICK_2_913", 0, 913
+    Graphic "CA_LB_THICK_2_915", 0, 915
+    Graphic "CA_LB_THICK_2_919", 0, 919
+    Graphic "CA_LB_THICK_2_920", 0, 920
+    Graphic "CA_LB_THICK_2_923", 0, 923
+    Graphic "CA_LB_THICK_2_925", 0, 925
+    Graphic "CA_LB_THICK_2_928", 0, 928
+    Graphic "CA_LB_THICK_2_930", 0, 930
+    Graphic "CA_LB_THICK_2_934", 0, 934
+    Graphic "CA_LB_THICK_2_937", 0, 937
+    Graphic "CA_LB_THICK_2_940", 0, 940
+    Graphic "CA_LB_THICK_2_942", 0, 942
+    Graphic "CA_LB_THICK_2_946", 0, 946
+    Graphic "CA_LB_THICK_2_948", 0, 948
+    Graphic "CA_LB_THICK_2_952", 0, 952
+    Graphic "CA_LB_THICK_2_954", 0, 954
+    Graphic "CA_LB_THICK_2_959", 0, 959
+    Graphic "CA_LB_THICK_2_960", 0, 960
+    Graphic "CA_LB_THICK_2_967", 0, 967
+    Graphic "CA_LB_THICK_2_969", 0, 969
+    Graphic "CA_LB_THICK_2_973", 0, 973
+    Graphic "CA_LB_THICK_2_975", 0, 975
+    Graphic "CA_LB_THICK_2_978", 0, 978
+    Graphic "CA_LB_THICK_2_982", 0, 982
+    Graphic "CA_LB_THICK_2_990", 0, 990
+    Graphic "CA_LB_THICK_2_993", 0, 993
+    Graphic "CA_LB_THICK_2_997", 0, 997
+}
+
+Graphic "CA_LB_COL_3", 512, 1024
+{ Graphic "CA_LB_MUTED", -1024, 0 }
+
+Graphic "CA_LB_THICK_3_0", 512, 16
+{ Graphic "CA_LB_COL_3", 0, 0 }
+
+Graphic "CA_LB_THICK_3_16", 512, 1
+{ Graphic "CA_LB_COL_3", -56, -16 }
+
+Graphic "CA_LB_THICK_3_17", 512, 5
+{ Graphic "CA_LB_COL_3", -55, -17 }
+
+Graphic "CA_LB_THICK_3_22", 512, 6
+{ Graphic "CA_LB_COL_3", -54, -22 }
+
+Graphic "CA_LB_THICK_3_28", 512, 4
+{ Graphic "CA_LB_COL_3", -53, -28 }
+
+Graphic "CA_LB_THICK_3_32", 512, 4
+{ Graphic "CA_LB_COL_3", -52, -32 }
+
+Graphic "CA_LB_THICK_3_36", 512, 2
+{ Graphic "CA_LB_COL_3", -51, -36 }
+
+Graphic "CA_LB_THICK_3_38", 512, 4
+{ Graphic "CA_LB_COL_3", -50, -38 }
+
+Graphic "CA_LB_THICK_3_42", 512, 4
+{ Graphic "CA_LB_COL_3", -49, -42 }
+
+Graphic "CA_LB_THICK_3_46", 512, 4
+{ Graphic "CA_LB_COL_3", -48, -46 }
+
+Graphic "CA_LB_THICK_3_50", 512, 2
+{ Graphic "CA_LB_COL_3", -47, -50 }
+
+Graphic "CA_LB_THICK_3_52", 512, 4
+{ Graphic "CA_LB_COL_3", -46, -52 }
+
+Graphic "CA_LB_THICK_3_56", 512, 2
+{ Graphic "CA_LB_COL_3", -45, -56 }
+
+Graphic "CA_LB_THICK_3_58", 512, 4
+{ Graphic "CA_LB_COL_3", -44, -58 }
+
+Graphic "CA_LB_THICK_3_62", 512, 3
+{ Graphic "CA_LB_COL_3", -43, -62 }
+
+Graphic "CA_LB_THICK_3_65", 512, 3
+{ Graphic "CA_LB_COL_3", -42, -65 }
+
+Graphic "CA_LB_THICK_3_68", 512, 2
+{ Graphic "CA_LB_COL_3", -41, -68 }
+
+Graphic "CA_LB_THICK_3_70", 512, 4
+{ Graphic "CA_LB_COL_3", -40, -70 }
+
+Graphic "CA_LB_THICK_3_74", 512, 3
+{ Graphic "CA_LB_COL_3", -39, -74 }
+
+Graphic "CA_LB_THICK_3_77", 512, 3
+{ Graphic "CA_LB_COL_3", -38, -77 }
+
+Graphic "CA_LB_THICK_3_80", 512, 2
+{ Graphic "CA_LB_COL_3", -37, -80 }
+
+Graphic "CA_LB_THICK_3_82", 512, 3
+{ Graphic "CA_LB_COL_3", -36, -82 }
+
+Graphic "CA_LB_THICK_3_85", 512, 1
+{ Graphic "CA_LB_COL_3", -35, -85 }
+
+Graphic "CA_LB_THICK_3_86", 512, 3
+{ Graphic "CA_LB_COL_3", -34, -86 }
+
+Graphic "CA_LB_THICK_3_89", 512, 2
+{ Graphic "CA_LB_COL_3", -33, -89 }
+
+Graphic "CA_LB_THICK_3_91", 512, 4
+{ Graphic "CA_LB_COL_3", -32, -91 }
+
+Graphic "CA_LB_THICK_3_95", 512, 2
+{ Graphic "CA_LB_COL_3", -31, -95 }
+
+Graphic "CA_LB_THICK_3_97", 512, 4
+{ Graphic "CA_LB_COL_3", -30, -97 }
+
+Graphic "CA_LB_THICK_3_101", 512, 1
+{ Graphic "CA_LB_COL_3", -29, -101 }
+
+Graphic "CA_LB_THICK_3_102", 512, 4
+{ Graphic "CA_LB_COL_3", -28, -102 }
+
+Graphic "CA_LB_THICK_3_106", 512, 2
+{ Graphic "CA_LB_COL_3", -27, -106 }
+
+Graphic "CA_LB_THICK_3_108", 512, 3
+{ Graphic "CA_LB_COL_3", -26, -108 }
+
+Graphic "CA_LB_THICK_3_111", 512, 3
+{ Graphic "CA_LB_COL_3", -25, -111 }
+
+Graphic "CA_LB_THICK_3_114", 512, 3
+{ Graphic "CA_LB_COL_3", -24, -114 }
+
+Graphic "CA_LB_THICK_3_117", 512, 3
+{ Graphic "CA_LB_COL_3", -23, -117 }
+
+Graphic "CA_LB_THICK_3_120", 512, 3
+{ Graphic "CA_LB_COL_3", -22, -120 }
+
+Graphic "CA_LB_THICK_3_123", 512, 2
+{ Graphic "CA_LB_COL_3", -21, -123 }
+
+Graphic "CA_LB_THICK_3_125", 512, 4
+{ Graphic "CA_LB_COL_3", -20, -125 }
+
+Graphic "CA_LB_THICK_3_129", 512, 2
+{ Graphic "CA_LB_COL_3", -19, -129 }
+
+Graphic "CA_LB_THICK_3_131", 512, 4
+{ Graphic "CA_LB_COL_3", -18, -131 }
+
+Graphic "CA_LB_THICK_3_135", 512, 2
+{ Graphic "CA_LB_COL_3", -17, -135 }
+
+Graphic "CA_LB_THICK_3_137", 512, 5
+{ Graphic "CA_LB_COL_3", -16, -137 }
+
+Graphic "CA_LB_THICK_3_142", 512, 2
+{ Graphic "CA_LB_COL_3", -15, -142 }
+
+Graphic "CA_LB_THICK_3_144", 512, 4
+{ Graphic "CA_LB_COL_3", -14, -144 }
+
+Graphic "CA_LB_THICK_3_148", 512, 3
+{ Graphic "CA_LB_COL_3", -13, -148 }
+
+Graphic "CA_LB_THICK_3_151", 512, 4
+{ Graphic "CA_LB_COL_3", -12, -151 }
+
+Graphic "CA_LB_THICK_3_155", 512, 3
+{ Graphic "CA_LB_COL_3", -11, -155 }
+
+Graphic "CA_LB_THICK_3_158", 512, 4
+{ Graphic "CA_LB_COL_3", -10, -158 }
+
+Graphic "CA_LB_THICK_3_162", 512, 3
+{ Graphic "CA_LB_COL_3", -9, -162 }
+
+Graphic "CA_LB_THICK_3_165", 512, 5
+{ Graphic "CA_LB_COL_3", -8, -165 }
+
+Graphic "CA_LB_THICK_3_170", 512, 2
+{ Graphic "CA_LB_COL_3", -7, -170 }
+
+Graphic "CA_LB_THICK_3_172", 512, 5
+{ Graphic "CA_LB_COL_3", -6, -172 }
+
+Graphic "CA_LB_THICK_3_177", 512, 4
+{ Graphic "CA_LB_COL_3", -5, -177 }
+
+Graphic "CA_LB_THICK_3_181", 512, 4
+{ Graphic "CA_LB_COL_3", -4, -181 }
+
+Graphic "CA_LB_THICK_3_185", 512, 5
+{ Graphic "CA_LB_COL_3", -3, -185 }
+
+Graphic "CA_LB_THICK_3_190", 512, 5
+{ Graphic "CA_LB_COL_3", -2, -190 }
+
+Graphic "CA_LB_THICK_3_195", 512, 4
+{ Graphic "CA_LB_COL_3", -1, -195 }
+
+Graphic "CA_LB_THICK_3_199", 512, 6
+{ Graphic "CA_LB_COL_3", 0, -199 }
+
+Graphic "CA_LB_THICK_3_205", 512, 3
+{ Graphic "CA_LB_COL_3", 1, -205 }
+
+Graphic "CA_LB_THICK_3_208", 512, 7
+{ Graphic "CA_LB_COL_3", 2, -208 }
+
+Graphic "CA_LB_THICK_3_215", 512, 4
+{ Graphic "CA_LB_COL_3", 3, -215 }
+
+Graphic "CA_LB_THICK_3_219", 512, 7
+{ Graphic "CA_LB_COL_3", 4, -219 }
+
+Graphic "CA_LB_THICK_3_226", 512, 6
+{ Graphic "CA_LB_COL_3", 5, -226 }
+
+Graphic "CA_LB_THICK_3_232", 512, 8
+{ Graphic "CA_LB_COL_3", 6, -232 }
+
+Graphic "CA_LB_THICK_3_240", 512, 4
+{ Graphic "CA_LB_COL_3", 7, -240 }
+
+Graphic "CA_LB_THICK_3_244", 512, 11
+{ Graphic "CA_LB_COL_3", 8, -244 }
+
+Graphic "CA_LB_THICK_3_255", 512, 6
+{ Graphic "CA_LB_COL_3", 9, -255 }
+
+Graphic "CA_LB_THICK_3_261", 512, 11
+{ Graphic "CA_LB_COL_3", 10, -261 }
+
+Graphic "CA_LB_THICK_3_272", 512, 9
+{ Graphic "CA_LB_COL_3", 11, -272 }
+
+Graphic "CA_LB_THICK_3_281", 512, 23
+{ Graphic "CA_LB_COL_3", 12, -281 }
+
+Graphic "CA_LB_THICK_3_304", 512, 22
+{ Graphic "CA_LB_COL_3", 13, -304 }
+
+Graphic "CA_LB_THICK_3_326", 512, 16
+{ Graphic "CA_LB_COL_3", 14, -326 }
+
+Graphic "CA_LB_THICK_3_342", 512, 27
+{ Graphic "CA_LB_COL_3", 13, -342 }
+
+Graphic "CA_LB_THICK_3_369", 512, 19
+{ Graphic "CA_LB_COL_3", 12, -369 }
+
+Graphic "CA_LB_THICK_3_388", 512, 11
+{ Graphic "CA_LB_COL_3", 11, -388 }
+
+Graphic "CA_LB_THICK_3_399", 512, 12
+{ Graphic "CA_LB_COL_3", 10, -399 }
+
+Graphic "CA_LB_THICK_3_411", 512, 7
+{ Graphic "CA_LB_COL_3", 9, -411 }
+
+Graphic "CA_LB_THICK_3_418", 512, 9
+{ Graphic "CA_LB_COL_3", 8, -418 }
+
+Graphic "CA_LB_THICK_3_427", 512, 3
+{ Graphic "CA_LB_COL_3", 7, -427 }
+
+Graphic "CA_LB_THICK_3_430", 512, 14
+{ Graphic "CA_LB_COL_3", 6, -430 }
+
+Graphic "CA_LB_THICK_3_444", 512, 5
+{ Graphic "CA_LB_COL_3", 5, -444 }
+
+Graphic "CA_LB_THICK_3_449", 512, 12
+{ Graphic "CA_LB_COL_3", 4, -449 }
+
+Graphic "CA_LB_THICK_3_461", 512, 4
+{ Graphic "CA_LB_COL_3", 3, -461 }
+
+Graphic "CA_LB_THICK_3_465", 512, 6
+{ Graphic "CA_LB_COL_3", 2, -465 }
+
+Graphic "CA_LB_THICK_3_471", 512, 10
+{ Graphic "CA_LB_COL_3", 1, -471 }
+
+Graphic "CA_LB_THICK_3_481", 512, 58
+{ Graphic "CA_LB_COL_3", 0, -481 }
+
+Graphic "CA_LB_THICK_3_539", 512, 8
+{ Graphic "CA_LB_COL_3", 1, -539 }
+
+Graphic "CA_LB_THICK_3_547", 512, 10
+{ Graphic "CA_LB_COL_3", 2, -547 }
+
+Graphic "CA_LB_THICK_3_557", 512, 4
+{ Graphic "CA_LB_COL_3", 3, -557 }
+
+Graphic "CA_LB_THICK_3_561", 512, 14
+{ Graphic "CA_LB_COL_3", 4, -561 }
+
+Graphic "CA_LB_THICK_3_575", 512, 4
+{ Graphic "CA_LB_COL_3", 5, -575 }
+
+Graphic "CA_LB_THICK_3_579", 512, 13
+{ Graphic "CA_LB_COL_3", 6, -579 }
+
+Graphic "CA_LB_THICK_3_592", 512, 2
+{ Graphic "CA_LB_COL_3", 7, -592 }
+
+Graphic "CA_LB_THICK_3_594", 512, 11
+{ Graphic "CA_LB_COL_3", 8, -594 }
+
+Graphic "CA_LB_THICK_3_605", 512, 6
+{ Graphic "CA_LB_COL_3", 9, -605 }
+
+Graphic "CA_LB_THICK_3_611", 512, 11
+{ Graphic "CA_LB_COL_3", 10, -611 }
+
+Graphic "CA_LB_THICK_3_622", 512, 9
+{ Graphic "CA_LB_COL_3", 11, -622 }
+
+Graphic "CA_LB_THICK_3_631", 512, 21
+{ Graphic "CA_LB_COL_3", 12, -631 }
+
+Graphic "CA_LB_THICK_3_652", 512, 52
+{ Graphic "CA_LB_COL_3", 13, -652 }
+
+Graphic "CA_LB_THICK_3_704", 512, 23
+{ Graphic "CA_LB_COL_3", 12, -704 }
+
+Graphic "CA_LB_THICK_3_727", 512, 8
+{ Graphic "CA_LB_COL_3", 11, -727 }
+
+Graphic "CA_LB_THICK_3_735", 512, 12
+{ Graphic "CA_LB_COL_3", 10, -735 }
+
+Graphic "CA_LB_THICK_3_747", 512, 7
+{ Graphic "CA_LB_COL_3", 9, -747 }
+
+Graphic "CA_LB_THICK_3_754", 512, 10
+{ Graphic "CA_LB_COL_3", 8, -754 }
+
+Graphic "CA_LB_THICK_3_764", 512, 4
+{ Graphic "CA_LB_COL_3", 7, -764 }
+
+Graphic "CA_LB_THICK_3_768", 512, 9
+{ Graphic "CA_LB_COL_3", 6, -768 }
+
+Graphic "CA_LB_THICK_3_777", 512, 6
+{ Graphic "CA_LB_COL_3", 5, -777 }
+
+Graphic "CA_LB_THICK_3_783", 512, 7
+{ Graphic "CA_LB_COL_3", 4, -783 }
+
+Graphic "CA_LB_THICK_3_790", 512, 3
+{ Graphic "CA_LB_COL_3", 3, -790 }
+
+Graphic "CA_LB_THICK_3_793", 512, 7
+{ Graphic "CA_LB_COL_3", 2, -793 }
+
+Graphic "CA_LB_THICK_3_800", 512, 4
+{ Graphic "CA_LB_COL_3", 1, -800 }
+
+Graphic "CA_LB_THICK_3_804", 512, 6
+{ Graphic "CA_LB_COL_3", 0, -804 }
+
+Graphic "CA_LB_THICK_3_810", 512, 3
+{ Graphic "CA_LB_COL_3", -1, -810 }
+
+Graphic "CA_LB_THICK_3_813", 512, 7
+{ Graphic "CA_LB_COL_3", -2, -813 }
+
+Graphic "CA_LB_THICK_3_820", 512, 3
+{ Graphic "CA_LB_COL_3", -3, -820 }
+
+Graphic "CA_LB_THICK_3_823", 512, 5
+{ Graphic "CA_LB_COL_3", -4, -823 }
+
+Graphic "CA_LB_THICK_3_828", 512, 3
+{ Graphic "CA_LB_COL_3", -5, -828 }
+
+Graphic "CA_LB_THICK_3_831", 512, 5
+{ Graphic "CA_LB_COL_3", -6, -831 }
+
+Graphic "CA_LB_THICK_3_836", 512, 3
+{ Graphic "CA_LB_COL_3", -7, -836 }
+
+Graphic "CA_LB_THICK_3_839", 512, 5
+{ Graphic "CA_LB_COL_3", -8, -839 }
+
+Graphic "CA_LB_THICK_3_844", 512, 2
+{ Graphic "CA_LB_COL_3", -9, -844 }
+
+Graphic "CA_LB_THICK_3_846", 512, 5
+{ Graphic "CA_LB_COL_3", -10, -846 }
+
+Graphic "CA_LB_THICK_3_851", 512, 3
+{ Graphic "CA_LB_COL_3", -11, -851 }
+
+Graphic "CA_LB_THICK_3_854", 512, 4
+{ Graphic "CA_LB_COL_3", -12, -854 }
+
+Graphic "CA_LB_THICK_3_858", 512, 3
+{ Graphic "CA_LB_COL_3", -13, -858 }
+
+Graphic "CA_LB_THICK_3_861", 512, 3
+{ Graphic "CA_LB_COL_3", -14, -861 }
+
+Graphic "CA_LB_THICK_3_864", 512, 2
+{ Graphic "CA_LB_COL_3", -15, -864 }
+
+Graphic "CA_LB_THICK_3_866", 512, 5
+{ Graphic "CA_LB_COL_3", -16, -866 }
+
+Graphic "CA_LB_THICK_3_871", 512, 2
+{ Graphic "CA_LB_COL_3", -17, -871 }
+
+Graphic "CA_LB_THICK_3_873", 512, 4
+{ Graphic "CA_LB_COL_3", -18, -873 }
+
+Graphic "CA_LB_THICK_3_877", 512, 2
+{ Graphic "CA_LB_COL_3", -19, -877 }
+
+Graphic "CA_LB_THICK_3_879", 512, 4
+{ Graphic "CA_LB_COL_3", -20, -879 }
+
+Graphic "CA_LB_THICK_3_883", 512, 3
+{ Graphic "CA_LB_COL_3", -21, -883 }
+
+Graphic "CA_LB_THICK_3_886", 512, 3
+{ Graphic "CA_LB_COL_3", -22, -886 }
+
+Graphic "CA_LB_THICK_3_889", 512, 3
+{ Graphic "CA_LB_COL_3", -23, -889 }
+
+Graphic "CA_LB_THICK_3_892", 512, 3
+{ Graphic "CA_LB_COL_3", -24, -892 }
+
+Graphic "CA_LB_THICK_3_895", 512, 2
+{ Graphic "CA_LB_COL_3", -25, -895 }
+
+Graphic "CA_LB_THICK_3_897", 512, 3
+{ Graphic "CA_LB_COL_3", -26, -897 }
+
+Graphic "CA_LB_THICK_3_900", 512, 3
+{ Graphic "CA_LB_COL_3", -27, -900 }
+
+Graphic "CA_LB_THICK_3_903", 512, 3
+{ Graphic "CA_LB_COL_3", -28, -903 }
+
+Graphic "CA_LB_THICK_3_906", 512, 3
+{ Graphic "CA_LB_COL_3", -29, -906 }
+
+Graphic "CA_LB_THICK_3_909", 512, 3
+{ Graphic "CA_LB_COL_3", -30, -909 }
+
+Graphic "CA_LB_THICK_3_912", 512, 2
+{ Graphic "CA_LB_COL_3", -31, -912 }
+
+Graphic "CA_LB_THICK_3_914", 512, 3
+{ Graphic "CA_LB_COL_3", -32, -914 }
+
+Graphic "CA_LB_THICK_3_917", 512, 2
+{ Graphic "CA_LB_COL_3", -33, -917 }
+
+Graphic "CA_LB_THICK_3_919", 512, 4
+{ Graphic "CA_LB_COL_3", -34, -919 }
+
+Graphic "CA_LB_THICK_3_923", 512, 4
+{ Graphic "CA_LB_COL_3", -36, -923 }
+
+Graphic "CA_LB_THICK_3_927", 512, 2
+{ Graphic "CA_LB_COL_3", -37, -927 }
+
+Graphic "CA_LB_THICK_3_929", 512, 3
+{ Graphic "CA_LB_COL_3", -38, -929 }
+
+Graphic "CA_LB_THICK_3_932", 512, 3
+{ Graphic "CA_LB_COL_3", -39, -932 }
+
+Graphic "CA_LB_THICK_3_935", 512, 5
+{ Graphic "CA_LB_COL_3", -40, -935 }
+
+Graphic "CA_LB_THICK_3_940", 512, 2
+{ Graphic "CA_LB_COL_3", -41, -940 }
+
+Graphic "CA_LB_THICK_3_942", 512, 3
+{ Graphic "CA_LB_COL_3", -42, -942 }
+
+Graphic "CA_LB_THICK_3_945", 512, 1
+{ Graphic "CA_LB_COL_3", -43, -945 }
+
+Graphic "CA_LB_THICK_3_946", 512, 4
+{ Graphic "CA_LB_COL_3", -44, -946 }
+
+Graphic "CA_LB_THICK_3_950", 512, 2
+{ Graphic "CA_LB_COL_3", -45, -950 }
+
+Graphic "CA_LB_THICK_3_952", 512, 5
+{ Graphic "CA_LB_COL_3", -46, -952 }
+
+Graphic "CA_LB_THICK_3_957", 512, 2
+{ Graphic "CA_LB_COL_3", -47, -957 }
+
+Graphic "CA_LB_THICK_3_959", 512, 4
+{ Graphic "CA_LB_COL_3", -48, -959 }
+
+Graphic "CA_LB_THICK_3_963", 512, 5
+{ Graphic "CA_LB_COL_3", -49, -963 }
+
+Graphic "CA_LB_THICK_3_968", 512, 4
+{ Graphic "CA_LB_COL_3", -50, -968 }
+
+Graphic "CA_LB_THICK_3_972", 512, 2
+{ Graphic "CA_LB_COL_3", -51, -972 }
+
+Graphic "CA_LB_THICK_3_974", 512, 3
+{ Graphic "CA_LB_COL_3", -52, -974 }
+
+Graphic "CA_LB_THICK_3_977", 512, 2
+{ Graphic "CA_LB_COL_3", -53, -977 }
+
+Graphic "CA_LB_THICK_3_979", 512, 6
+{ Graphic "CA_LB_COL_3", -54, -979 }
+
+Graphic "CA_LB_THICK_3_985", 512, 5
+{ Graphic "CA_LB_COL_3", -55, -985 }
+
+Graphic "CA_LB_THICK_3_990", 512, 7
+{ Graphic "CA_LB_COL_3", -56, -990 }
+
+Graphic "CA_LB_THICK_3_997", 512, 27
+{ Graphic "CA_LB_COL_3", 0, -997 }
+
+Graphic "CA_LB_THICK_3", 512, 1024
+{
+    Graphic "CA_LB_THICK_3_0", 0, 0
+    Graphic "CA_LB_THICK_3_16", 0, 16
+    Graphic "CA_LB_THICK_3_17", 0, 17
+    Graphic "CA_LB_THICK_3_22", 0, 22
+    Graphic "CA_LB_THICK_3_28", 0, 28
+    Graphic "CA_LB_THICK_3_32", 0, 32
+    Graphic "CA_LB_THICK_3_36", 0, 36
+    Graphic "CA_LB_THICK_3_38", 0, 38
+    Graphic "CA_LB_THICK_3_42", 0, 42
+    Graphic "CA_LB_THICK_3_46", 0, 46
+    Graphic "CA_LB_THICK_3_50", 0, 50
+    Graphic "CA_LB_THICK_3_52", 0, 52
+    Graphic "CA_LB_THICK_3_56", 0, 56
+    Graphic "CA_LB_THICK_3_58", 0, 58
+    Graphic "CA_LB_THICK_3_62", 0, 62
+    Graphic "CA_LB_THICK_3_65", 0, 65
+    Graphic "CA_LB_THICK_3_68", 0, 68
+    Graphic "CA_LB_THICK_3_70", 0, 70
+    Graphic "CA_LB_THICK_3_74", 0, 74
+    Graphic "CA_LB_THICK_3_77", 0, 77
+    Graphic "CA_LB_THICK_3_80", 0, 80
+    Graphic "CA_LB_THICK_3_82", 0, 82
+    Graphic "CA_LB_THICK_3_85", 0, 85
+    Graphic "CA_LB_THICK_3_86", 0, 86
+    Graphic "CA_LB_THICK_3_89", 0, 89
+    Graphic "CA_LB_THICK_3_91", 0, 91
+    Graphic "CA_LB_THICK_3_95", 0, 95
+    Graphic "CA_LB_THICK_3_97", 0, 97
+    Graphic "CA_LB_THICK_3_101", 0, 101
+    Graphic "CA_LB_THICK_3_102", 0, 102
+    Graphic "CA_LB_THICK_3_106", 0, 106
+    Graphic "CA_LB_THICK_3_108", 0, 108
+    Graphic "CA_LB_THICK_3_111", 0, 111
+    Graphic "CA_LB_THICK_3_114", 0, 114
+    Graphic "CA_LB_THICK_3_117", 0, 117
+    Graphic "CA_LB_THICK_3_120", 0, 120
+    Graphic "CA_LB_THICK_3_123", 0, 123
+    Graphic "CA_LB_THICK_3_125", 0, 125
+    Graphic "CA_LB_THICK_3_129", 0, 129
+    Graphic "CA_LB_THICK_3_131", 0, 131
+    Graphic "CA_LB_THICK_3_135", 0, 135
+    Graphic "CA_LB_THICK_3_137", 0, 137
+    Graphic "CA_LB_THICK_3_142", 0, 142
+    Graphic "CA_LB_THICK_3_144", 0, 144
+    Graphic "CA_LB_THICK_3_148", 0, 148
+    Graphic "CA_LB_THICK_3_151", 0, 151
+    Graphic "CA_LB_THICK_3_155", 0, 155
+    Graphic "CA_LB_THICK_3_158", 0, 158
+    Graphic "CA_LB_THICK_3_162", 0, 162
+    Graphic "CA_LB_THICK_3_165", 0, 165
+    Graphic "CA_LB_THICK_3_170", 0, 170
+    Graphic "CA_LB_THICK_3_172", 0, 172
+    Graphic "CA_LB_THICK_3_177", 0, 177
+    Graphic "CA_LB_THICK_3_181", 0, 181
+    Graphic "CA_LB_THICK_3_185", 0, 185
+    Graphic "CA_LB_THICK_3_190", 0, 190
+    Graphic "CA_LB_THICK_3_195", 0, 195
+    Graphic "CA_LB_THICK_3_199", 0, 199
+    Graphic "CA_LB_THICK_3_205", 0, 205
+    Graphic "CA_LB_THICK_3_208", 0, 208
+    Graphic "CA_LB_THICK_3_215", 0, 215
+    Graphic "CA_LB_THICK_3_219", 0, 219
+    Graphic "CA_LB_THICK_3_226", 0, 226
+    Graphic "CA_LB_THICK_3_232", 0, 232
+    Graphic "CA_LB_THICK_3_240", 0, 240
+    Graphic "CA_LB_THICK_3_244", 0, 244
+    Graphic "CA_LB_THICK_3_255", 0, 255
+    Graphic "CA_LB_THICK_3_261", 0, 261
+    Graphic "CA_LB_THICK_3_272", 0, 272
+    Graphic "CA_LB_THICK_3_281", 0, 281
+    Graphic "CA_LB_THICK_3_304", 0, 304
+    Graphic "CA_LB_THICK_3_326", 0, 326
+    Graphic "CA_LB_THICK_3_342", 0, 342
+    Graphic "CA_LB_THICK_3_369", 0, 369
+    Graphic "CA_LB_THICK_3_388", 0, 388
+    Graphic "CA_LB_THICK_3_399", 0, 399
+    Graphic "CA_LB_THICK_3_411", 0, 411
+    Graphic "CA_LB_THICK_3_418", 0, 418
+    Graphic "CA_LB_THICK_3_427", 0, 427
+    Graphic "CA_LB_THICK_3_430", 0, 430
+    Graphic "CA_LB_THICK_3_444", 0, 444
+    Graphic "CA_LB_THICK_3_449", 0, 449
+    Graphic "CA_LB_THICK_3_461", 0, 461
+    Graphic "CA_LB_THICK_3_465", 0, 465
+    Graphic "CA_LB_THICK_3_471", 0, 471
+    Graphic "CA_LB_THICK_3_481", 0, 481
+    Graphic "CA_LB_THICK_3_539", 0, 539
+    Graphic "CA_LB_THICK_3_547", 0, 547
+    Graphic "CA_LB_THICK_3_557", 0, 557
+    Graphic "CA_LB_THICK_3_561", 0, 561
+    Graphic "CA_LB_THICK_3_575", 0, 575
+    Graphic "CA_LB_THICK_3_579", 0, 579
+    Graphic "CA_LB_THICK_3_592", 0, 592
+    Graphic "CA_LB_THICK_3_594", 0, 594
+    Graphic "CA_LB_THICK_3_605", 0, 605
+    Graphic "CA_LB_THICK_3_611", 0, 611
+    Graphic "CA_LB_THICK_3_622", 0, 622
+    Graphic "CA_LB_THICK_3_631", 0, 631
+    Graphic "CA_LB_THICK_3_652", 0, 652
+    Graphic "CA_LB_THICK_3_704", 0, 704
+    Graphic "CA_LB_THICK_3_727", 0, 727
+    Graphic "CA_LB_THICK_3_735", 0, 735
+    Graphic "CA_LB_THICK_3_747", 0, 747
+    Graphic "CA_LB_THICK_3_754", 0, 754
+    Graphic "CA_LB_THICK_3_764", 0, 764
+    Graphic "CA_LB_THICK_3_768", 0, 768
+    Graphic "CA_LB_THICK_3_777", 0, 777
+    Graphic "CA_LB_THICK_3_783", 0, 783
+    Graphic "CA_LB_THICK_3_790", 0, 790
+    Graphic "CA_LB_THICK_3_793", 0, 793
+    Graphic "CA_LB_THICK_3_800", 0, 800
+    Graphic "CA_LB_THICK_3_804", 0, 804
+    Graphic "CA_LB_THICK_3_810", 0, 810
+    Graphic "CA_LB_THICK_3_813", 0, 813
+    Graphic "CA_LB_THICK_3_820", 0, 820
+    Graphic "CA_LB_THICK_3_823", 0, 823
+    Graphic "CA_LB_THICK_3_828", 0, 828
+    Graphic "CA_LB_THICK_3_831", 0, 831
+    Graphic "CA_LB_THICK_3_836", 0, 836
+    Graphic "CA_LB_THICK_3_839", 0, 839
+    Graphic "CA_LB_THICK_3_844", 0, 844
+    Graphic "CA_LB_THICK_3_846", 0, 846
+    Graphic "CA_LB_THICK_3_851", 0, 851
+    Graphic "CA_LB_THICK_3_854", 0, 854
+    Graphic "CA_LB_THICK_3_858", 0, 858
+    Graphic "CA_LB_THICK_3_861", 0, 861
+    Graphic "CA_LB_THICK_3_864", 0, 864
+    Graphic "CA_LB_THICK_3_866", 0, 866
+    Graphic "CA_LB_THICK_3_871", 0, 871
+    Graphic "CA_LB_THICK_3_873", 0, 873
+    Graphic "CA_LB_THICK_3_877", 0, 877
+    Graphic "CA_LB_THICK_3_879", 0, 879
+    Graphic "CA_LB_THICK_3_883", 0, 883
+    Graphic "CA_LB_THICK_3_886", 0, 886
+    Graphic "CA_LB_THICK_3_889", 0, 889
+    Graphic "CA_LB_THICK_3_892", 0, 892
+    Graphic "CA_LB_THICK_3_895", 0, 895
+    Graphic "CA_LB_THICK_3_897", 0, 897
+    Graphic "CA_LB_THICK_3_900", 0, 900
+    Graphic "CA_LB_THICK_3_903", 0, 903
+    Graphic "CA_LB_THICK_3_906", 0, 906
+    Graphic "CA_LB_THICK_3_909", 0, 909
+    Graphic "CA_LB_THICK_3_912", 0, 912
+    Graphic "CA_LB_THICK_3_914", 0, 914
+    Graphic "CA_LB_THICK_3_917", 0, 917
+    Graphic "CA_LB_THICK_3_919", 0, 919
+    Graphic "CA_LB_THICK_3_923", 0, 923
+    Graphic "CA_LB_THICK_3_927", 0, 927
+    Graphic "CA_LB_THICK_3_929", 0, 929
+    Graphic "CA_LB_THICK_3_932", 0, 932
+    Graphic "CA_LB_THICK_3_935", 0, 935
+    Graphic "CA_LB_THICK_3_940", 0, 940
+    Graphic "CA_LB_THICK_3_942", 0, 942
+    Graphic "CA_LB_THICK_3_945", 0, 945
+    Graphic "CA_LB_THICK_3_946", 0, 946
+    Graphic "CA_LB_THICK_3_950", 0, 950
+    Graphic "CA_LB_THICK_3_952", 0, 952
+    Graphic "CA_LB_THICK_3_957", 0, 957
+    Graphic "CA_LB_THICK_3_959", 0, 959
+    Graphic "CA_LB_THICK_3_963", 0, 963
+    Graphic "CA_LB_THICK_3_968", 0, 968
+    Graphic "CA_LB_THICK_3_972", 0, 972
+    Graphic "CA_LB_THICK_3_974", 0, 974
+    Graphic "CA_LB_THICK_3_977", 0, 977
+    Graphic "CA_LB_THICK_3_979", 0, 979
+    Graphic "CA_LB_THICK_3_985", 0, 985
+    Graphic "CA_LB_THICK_3_990", 0, 990
+    Graphic "CA_LB_THICK_3_997", 0, 997
 }

@@ -478,6 +478,7 @@ class CaelumMainM00QuestController : EventHandler
 
     override void WorldTick()
     {
+        CaelumWeightPressure.WorldTick();
         // Este controlador ya existe en guardados antiguos. No depender sólo
         // de la incorporación de un EventHandler nuevo al cargar esas partidas.
         if (MagicHazardRevision < 1)
@@ -500,11 +501,11 @@ class CaelumMainM00QuestController : EventHandler
             CaelumSewerTrialSupport.PrepareWorld();
             SewerSupportPrepared = true;
         }
-        if (!SewerNetworkPrepared || SewerNetworkRevision < 2)
+        if (!SewerNetworkPrepared || SewerNetworkRevision < 3)
         {
             CaelumSewerTravel.PrepareWorld();
             SewerNetworkPrepared = true;
-            SewerNetworkRevision = 2;
+            SewerNetworkRevision = 3;
         }
         RetireGroundFloorStock();
         RetireLegacyProcessingManual();

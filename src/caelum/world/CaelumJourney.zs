@@ -131,6 +131,7 @@ class CaelumTravelService : Object play
             || user.CreationWizardOpen || user.health <= 0 || user.player.playerstate != PST_LIVE
             || (user.player.cheats & CF_PREDICTING) || !CaelumWorldCatalogue.IsSewerConnection(id)
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)) return false;
+        if (!CaelumSewerMaze.CanLeave(user)) return false;
         if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen
             || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive
             || CaelumRestState.IsActive(user)
@@ -195,7 +196,7 @@ class CaelumTravelService : Object play
         record.WorldPendingConnection = id;
         user.PersistCharacterState();
         Level.ChangeLevel(CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id)),
-            0, CHANGELEVEL_NOINTERMISSION);
+            CaelumWorldCatalogue.ConnectionDestination(id)==CaelumWorldCatalogue.LOCATION_SEWERS ? 1 : 0, CHANGELEVEL_NOINTERMISSION);
         return true;
     }
 }

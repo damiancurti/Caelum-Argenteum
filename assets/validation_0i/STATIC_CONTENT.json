@@ -1,0 +1,28 @@
+{
+  "version": "4.36.0i",
+  "checks": 207,
+  "passed": true,
+  "category_counts": {
+    "armor": 48,
+    "weapon": 108,
+    "shield": 12,
+    "amulet": 12,
+    "seal": 15
+  },
+  "trap_counts": {
+    "mine": 12,
+    "teleport": 6,
+    "crusher": 9,
+    "rolling_rock": 6,
+    "falling_rock": 6,
+    "pit": 6
+  },
+  "reachable_cells_by_keys": [
+    4444,
+    8828,
+    13212,
+    14256
+  ],
+  "map02_sha256": "9095bda962f5410ba869b3780dff2a58c11ff0a011e35d451a43052b851406d2",
+  "limits": "Prueba estática de cobertura y suelo; no reemplaza radio/colisión/combate en motor."
+}

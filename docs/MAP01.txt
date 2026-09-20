@@ -1,5 +1,22 @@
 CAELUM ARGENTEUM — HISTORIA Y MAP01
-Versión documental: 4.36.0e — 2026-09-18.
+Versión documental: 4.36.0i — 2026-09-20.
+
+
+## 4.36.0i — mesas completas y destino del prólogo
+
+Las seis mesas de la mansión empiezan a capacidad completa: cuatro pequeñas
+con cuatro raciones cada una, una normal con 18 y una grande con 60. Total 94
+raciones reales de 200 g. Los platos conservan el modelo y la disposición;
+retirar, consumir o volver a cargar no repone la comida.
+
+No cambia la geometría de MAP01 ni su prólogo. La salida narrativa lleva al
+vestíbulo de la nueva MAP02, conservando la Voz y las reglas de la primera arma
+que viaja dentro de la Caja. MAP02 contiene ahora el laberinto solicitado,
+las tres llaves, el Zupay y el 1 de Copas, con salida a la costa al completarlo.
+El cambio de geometría requiere iniciar una MAP02 nueva o una campaña nueva.
+
+La prueba nativa de 0i confirmó seis mesas con 94 raciones y 94 huecos.
+Las secciones siguientes son antecedentes de la mansión.
 
 ## 4.36.0e — correcciones solicitadas tras probar 0d
 

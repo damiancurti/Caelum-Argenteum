@@ -13,6 +13,10 @@ class CaelumInteractionHint : Object play
                 && offset.X*Cos(user.Angle)+offset.Y*Sin(user.Angle)>=distance*0.85;
         }
         if(!aimed || !user.CheckSight(object,SF_IGNOREVISIBILITY))return "";
+        if(object is 'CaelumMazeChest')return StringTable.Localize("CA_MAZE_USE_CHEST",false);
+        if(object is 'CaelumCupsAceEssence')return StringTable.Localize("CA_MAZE_USE_CARD",false);
+        if(object is 'CaelumSewerTravelGate')return StringTable.Localize("CA_MAZE_USE_GATE",false);
+        if(object is 'CaelumMazeRockPlate')return StringTable.Localize("CA_MAZE_HINT_ROCK",false);
         let part=CaelumVehiclePart(object);
         let vehicle=part!=null?part.Vehicle:CaelumTravelVehicle(object);
         if(vehicle!=null && vehicle.CanBoard(user))

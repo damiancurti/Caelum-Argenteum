@@ -29,7 +29,9 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_FROM_COAST = 11;
     const CONNECTION_TO_HAZARD_GALLERY = 12;
     const CONNECTION_FROM_HAZARD_GALLERY = 13;
-    const CONNECTION_DEFINED_COUNT = 14;
+    const CONNECTION_MAZE_TO_COAST = 14;
+    const CONNECTION_COAST_TO_MAZE = 15;
+    const CONNECTION_DEFINED_COUNT = 16;
 
     static clearscope bool IsLocation(int id)
     {
@@ -89,6 +91,8 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionOrigin(int id)
     {
+        if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_SEWERS;
+        if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_COAST;
         if (id == CONNECTION_RETURN) return LOCATION_MANSION;
         if (id == CONNECTION_TO_RESERVOIR || id == CONNECTION_TO_TAROT
             || id == CONNECTION_TO_MAINTENANCE) return LOCATION_SEWERS;
@@ -105,6 +109,8 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionDestination(int id)
     {
+        if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_COAST;
+        if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_SEWERS;
         if (id == CONNECTION_RETURN || id == CONNECTION_FROM_RESERVOIR
             || id == CONNECTION_FROM_TAROT || id == CONNECTION_FROM_MAINTENANCE)
             return LOCATION_SEWERS;

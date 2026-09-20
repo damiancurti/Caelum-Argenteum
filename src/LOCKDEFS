@@ -30,3 +30,27 @@ Lock 202
     MapColor 192 192 208
     LockedSound "caelum/world/door_locked"
 }
+
+Lock 203
+{
+    CaelumMazeSluiceKey
+    Message "$CA_MAZE_LOCK_1"
+    RemoteMessage "$CA_MAZE_LOCK_1"
+    LockedSound "caelum/world/door_locked"
+}
+
+Lock 204
+{
+    CaelumMazeCryptKey
+    Message "$CA_MAZE_LOCK_2"
+    RemoteMessage "$CA_MAZE_LOCK_2"
+    LockedSound "caelum/world/door_locked"
+}
+
+Lock 205
+{
+    CaelumMazeSanctumKey
+    Message "$CA_MAZE_LOCK_3"
+    RemoteMessage "$CA_MAZE_LOCK_3"
+    LockedSound "caelum/world/door_locked"
+}

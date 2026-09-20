@@ -1,8 +1,42 @@
 # Caelum Argenteum — Audio y arte
 
-Versión documental: 4.36.0h — 2026-09-18.
+Versión documental: 4.36.0i — 2026-09-20.
 
-## 4.36.0h — ajuste a la captura marcada por el autor
+
+## 4.36.0i — composición nativa y MAP02
+
+No se editó ningún PNG fuente. generate_fp_native_0i.py analiza alfa y escribe
+TEXTURES: el mangual se separa en mango GFS1/2/3 y cadena/bola GFC1/2/3 usando
+recortes nativos del arte original. Mango en capa 50, cadena en 46, mano en 52.
+Pivotes: agarre (235,158), unión (213,61). Giro −62°+22,5°=−39,5°; se oculta
+media longitud expuesta en la mano. La línea anilla-centro de bola queda
+vertical; la cadena no hereda el giro del mango. AttackFrame recorre 360°
+antihorarios durante el ataque real; al terminar vuelve al reposo vertical.
+
+Arcos: los 18 estados D16/D17 (tres tiers ×tres fases ×dos familias) reducen
+XScale a la mitad. Recortes por filas corrigen el centro para mantener la
+curvatura y longitud. Pivotes horizontales compensados; YScale, paleta apagada,
+manos, cuerda y flecha se conservan. Sprites del suelo e iconos no se modifican.
+Pillow es dependencia opcional del generador para lectura del alfa, no del juego.
+
+Las capturas ENGINE_FLAIL/ENGINE_STANDARD_BOW/ENGINE_LONGBOW.png proceden de
+GZDoom 4.14.2 (Linux, OpenGL llvmpipe, 1280×720). No son reconstrucciones.
+COMPOSITION.json registra los factores usados. ENGINE_FLAIL_SPIN.txt conserva
+los ángulos nativos del ataque. La aceptación estética final corresponde al autor.
+
+MAP02.wad se genera con generate_map02_maze.py, sólo biblioteca estándar Python.
+MAP02_MANIFEST.json describe geometría, llaves, trampas, enemigos y todo el botín.
+Reutiliza texturas CASWRFLR/CASWRWAL/CAPOOL01, modelos de cofres, trampas y
+actores propios del proyecto. El 1 de Copas usa el reverso de Tarot existente:
+no hay un frente aprobado de esa carta en la base recuperada. Su nombre y
+bonificación son específicos, y el Diario no lo presenta como El Loco.
+
+La verificación 0i se guarda en assets/validation_0i. Los generadores son
+utilidades opcionales; src ya contiene los resultados listos para construir.
+No se incluyen GZDoom, Freedoom ni el arnés local de automatización.
+
+
+## Histórico 4.36.0h — ajuste a la captura marcada por el autor
 
 Se conserva el arte y la paleta aceptados de 0g. El mangual gira 90° horario
 respecto de su pose anterior en los tres tiers; su agarre se mueve 35 MU a

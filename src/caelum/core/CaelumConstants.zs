@@ -959,12 +959,14 @@ class CaelumConstants : Object
     const CONSUMABLE_WATER_RATION = 4;
     const CONSUMABLE_TYPE_COUNT = 11;
     const CONSUMABLE_POTION_WEIGHT = 0.25;
-    const CONSUMABLE_RATION_WEIGHT = 0.10;
+    const CONSUMABLE_RATION_WEIGHT = 0.20;
     // M corporal de referencia: masa base tier 5 (80 kg), no el perfil debug.
-    // Diez puntos de Sed requieren masa/500 litros; agua = 1 kg/litro.
+    // 2 kg de comida o 2 L de agua cubren 100% a 80 kg de masa base.
+    // Una ración = 200 g o 200 mL. Agua = 1 kg/litro.
     const RATION_REFERENCE_MASS = 80.0;
     const WATER_RATION_REFERENCE_MASS = RATION_REFERENCE_MASS;
-    const WATER_RATION_LITERS = WATER_RATION_REFERENCE_MASS / 500.0;
+    const WATER_RECOVERY_PER_LITER_PER_PULSE = 400.0;
+    const WATER_RATION_LITERS = WATER_RATION_REFERENCE_MASS / WATER_RECOVERY_PER_LITER_PER_PULSE;
     const CONSUMABLE_REGENERATION_SECONDS = 10;
     const CONSUMABLE_REGENERATION_PERCENT_PER_SECOND = 0.01;
 
@@ -1071,7 +1073,10 @@ class CaelumConstants : Object
     const MATERIAL_FAMILY_FABRIC = 5;
     const MATERIAL_FAMILY_GEM = 6;
     const KEY_SILVER = 0;
-    const KEY_TYPE_COUNT = 1;
+    const KEY_MAZE_SLUICE = 1;
+    const KEY_MAZE_CRYPT = 2;
+    const KEY_MAZE_SANCTUM = 3;
+    const KEY_TYPE_COUNT = 4;
     const KEY_ITEM_SEALED_LETTER = 0;
     const KEY_ITEM_PROCESSING_MANUAL = 1;
     const KEY_ITEM_SLEEPING_BAG = 2;

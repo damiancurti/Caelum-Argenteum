@@ -469,6 +469,7 @@ class CaelumPlayer : DoomPlayer
     int AttributeBalanceVersion;
     double TarotMinorBaseSnapshot[CaelumConstants.PRIMARY_ATTRIBUTE_COUNT];
     bool TarotFoolOwnedSnapshot;
+    bool TarotCupsAceOwnedSnapshot;
     bool MainM00FoolRevealedSnapshot;
     bool CombatClassAbilityInputReserved;
     double HUDAbilitySuccessRemaining;
@@ -864,6 +865,7 @@ class CaelumPlayer : DoomPlayer
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
             TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
         TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
+        TarotCupsAceOwnedSnapshot = persistentState.HasTarotCard(CaelumSewerMaze.CUPS_ACE);
         MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
         JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
         JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
@@ -9139,6 +9141,9 @@ class CaelumPlayer : DoomPlayer
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
+            if(specialType==1)return 'CaelumMazeSluiceKey';
+            if(specialType==2)return 'CaelumMazeCryptKey';
+            if(specialType==3)return 'CaelumMazeSanctumKey';
             return 'CaelumSilverKey';
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
@@ -13237,7 +13242,7 @@ class CaelumPlayer : DoomPlayer
 
         // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
-        if (mod == 'Drowning' || mod == 'Crush')
+        if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight')
         {
             // El techo nativo expresa su pulso en porcentaje de vida máxima.
             // Ahogamiento ya llega convertido; otras fuentes Crush conservan

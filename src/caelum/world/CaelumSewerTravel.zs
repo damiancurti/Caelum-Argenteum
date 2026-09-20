@@ -4,6 +4,14 @@ class CaelumSewerTravel : Object play
 {
     static vector3 GatePosition(int id)
     {
+        if(level.MapName=="MAP02")
+        {
+            if(id==2)return (704,9600,0);
+            if(id==4)return (1600,9600,0);
+            if(id==6)return (704,10048,0);
+            if(id==14)return (1152,10304,0);
+        }
+        if(id==15)return (160,160,0);
         if (id == CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR) return (-236,1104,0);
         if (id == CaelumWorldCatalogue.CONNECTION_TO_TAROT) return (236,1104,0);
         if (id == CaelumWorldCatalogue.CONNECTION_TO_MAINTENANCE) return (344,448,0);
@@ -19,8 +27,7 @@ class CaelumSewerTravel : Object play
         for (int id = 2; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
         {
             if (CaelumWorldCatalogue.ConnectionOrigin(id) != location) continue;
-            // También admite la reconstrucción de un guardado anterior de
-            // MAP02. No necesita cambiar su geometría ni sus PlayerStarts.
+            // El hub conserva las instancias; crear sólo accesos ausentes.
             bool found = false;
             let existing = ThinkerIterator.Create("CaelumSewerTravelGate");
             CaelumSewerTravelGate gate;
@@ -36,6 +43,7 @@ class CaelumSewerTravel : Object play
                 : location == CaelumWorldCatalogue.LOCATION_SEWERS
                     || id == CaelumWorldCatalogue.CONNECTION_TO_PORT
                     || id == CaelumWorldCatalogue.CONNECTION_TO_COAST ? 270 : 90;
+            if(level.MapName=="MAP02" && id!=14)gate.Angle=id==4?180:0;
         }
     }
 

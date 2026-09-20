@@ -1,0 +1,54 @@
+GZDoom g4.14.2 / Linux / Freedoom 0.13.0. Native hub round trip.
+QA_PASS: 39 cofres / 195 objetos sin reposición
+QA_PASS: cofres sin colisiones al iniciar
+QA_PASS: 120 comida + 120 agua reales
+QA_PASS: abrir cofre con Usar
+QA_PASS: retirar cinco piezas por recogida nativa
+QA_PASS: cofre vacío no duplica equipo
+QA_PASS: puerta 1 no abre sin llave
+QA_PASS: cerradura 1 deniega sin llave
+QA_PASS: cerradura 1 acepta llave real
+QA_PASS: puerta 2 no abre sin llave
+QA_PASS: cerradura 2 deniega sin llave
+QA_PASS: cerradura 2 acepta llave real
+QA_PASS: puerta 3 no abre sin llave
+QA_PASS: cerradura 3 deniega sin llave
+QA_PASS: cerradura 3 acepta llave real
+QA_PASS: puerta 1 abre con llave
+QA_PASS: puerta 2 abre con llave
+QA_PASS: puerta 3 abre con llave
+QA_PASS: salida denegada con Zupay vivo
+QA_PASS: Zupay protege 1 de Copas
+QA_PASS: salida exige carta después del Zupay
+QA_PASS: captura nativa del 1 de Copas
+QA_PASS: salida disponible después de Zupay y carta
+QA_PASS: raciones de 200 g / 200 ml
+QA_PASS: consumo porción 1
+QA_PASS: consumo porción 2
+QA_PASS: consumo porción 3
+QA_PASS: consumo porción 4
+QA_PASS: consumo porción 5
+QA_PASS: consumo porción 6
+QA_PASS: consumo porción 7
+QA_PASS: consumo porción 8
+QA_PASS: consumo porción 9
+QA_PASS: consumo porción 10
+QA_DOSES: mass=80.000000 hunger=100.000000 thirst=100.000000 sleep=75.000000
+QA_PASS: 2 kg / 2 L sacian 100% a 80 kg
+QA_PASS: digestión conserva coste de 25 Sueño
+QA_PASS: 150 kg sobre capacidad 100: 5% de Hmax/s
+QA_PASS: peso ambiental no concede Adrenalina
+QA_PASS: el daño cesa al quitar la masa
+QA_PASS: sin sobrecarga no hay daño
+QA_PASS: pila de 300 kg repartida entre dos apoyos
+QA_PASS: masa suspendida sin gravedad no presiona
+QA_PASS: sin apoyo nativo no hay peso transmitido
+QA_PASS: viaje real MAP02 -> costa
+QA_PASS: carta y llave conservadas en costa
+QA_PASS: acceso de regreso colocado en costa
+QA_PASS: regreso real costa -> MAP02
+QA_PASS: regreso en cámara final
+QA_PASS: hub conserva cofre abierto sin duplicar botín
+QA_PASS: hub conserva carta sin duplicar recompensa
+QA_FAILURES: 0
+QA_DONE

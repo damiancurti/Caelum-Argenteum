@@ -1249,11 +1249,11 @@ class CaelumJournalOverlay : EventHandler
         double ratio = (double(Screen.GetWidth()) / Screen.GetHeight()) / (640.0 / 360.0);
         double cardWidth = 104 / Max(1.0, ratio);
         double cardHeight = 156 * Min(1.0, ratio);
-        DrawTexture(owned ? "graphics/caelum/tarot/ca_tarot_fool.png"
+        DrawTexture(owned && !localPlayer.TarotCupsAceOwnedSnapshot ? "graphics/caelum/tarot/ca_tarot_fool.png"
             : "graphics/caelum/icons/ca_tarot_back.png",
             76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
         DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
-            StringTable.Localize(owned ? "CA_TAROT_FOOL_NAME" : "CA_TAROT_COLLECTION_LABEL", false));
+            StringTable.Localize(localPlayer.TarotCupsAceOwnedSnapshot ? "CA_MAZE_CUPS_ACE" : owned ? "CA_TAROT_FOOL_NAME" : "CA_TAROT_COLLECTION_LABEL", false));
         bool hasMinorBonus = false;
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
             if (localPlayer.TarotMinorBaseSnapshot[attribute] > 0.0) hasMinorBonus = true;

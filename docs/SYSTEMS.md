@@ -1,8 +1,104 @@
 # Caelum Argenteum — Sistemas y reglas vigentes
 
-Versión documental: 4.36.0h — 2026-09-18.
+Versión documental: 4.36.0i — 2026-09-20.
 
-## 4.36.0h — techo porcentual, comida inicial y propuesta de peso
+
+## 4.36.0i — reglas activas y laberinto
+
+### Peso en reposo: fórmula aprobada y activa
+
+    exceso = max(0, (M_encima + M_carga) / C - 1)
+    daño_por_segundo = H_max * 0.10 * exceso
+
+M_encima es la masa real transmitida por cuerpos sobre la víctima, incluyendo
+la pila superior. Para jugadores incluye masa corporal e inventario; para NPC,
+Mass y su armadura. M_carga es la carga propia. C es la capacidad vigente
+(jugador: CarryCapacity; NPC: Mass × Tipo4(Fuerza)/100). Todas las masas se
+expresan en kg. Sin masa externa o sin capacidad positiva, el sistema no daña.
+
+Se exigen sólidos sin noclip, contacto vertical ±0,5 MU, solape XY, velocidad
+vertical casi nula y bOnMobj nativo. Un cuerpo con NOGRAVITY no transmite peso.
+La búsqueda usa el blockmap local y Z estrictamente creciente. Cada nivel
+reparte su peso y el recibido entre sus apoyos; no duplica masas por apilado.
+La carga a 150%, 200% y 300% de capacidad produce 5%, 10% y 20% de Hmax/s.
+El primer tic de apoyo sólo registra contacto para separar el impacto inicial.
+Desde el siguiente se acumula daño/35, guardando el resto fraccional. Al
+retirar la masa cesa el daño. CaelumWeight pasa por DamageMobj con DMG_NO_ARMOR,
+con dolor/interrupciones ambientales y sin Adrenalina. El impacto cinemático
+existente y la conversión porcentual del techo mantienen sus rutas propias.
+
+### Alimentos, agua y mesas
+
+La masa usada para necesidades es corporal, excluyendo carga. Cada ración de
+comida pesa 0,2 kg. Agua: 0,2 L =0,2 kg por ración, también en inventario,
+Caja y compras. Por pulso: comida =80/M; agua =400×L/M puntos porcentuales.
+Hay diez pulsos por porción. Por tanto, 2 kg o 2 L producen 100 puntos para
+80 kg; un cuerpo distinto requiere 2×M/80 kg o litros. Es la recuperación
+bruta: el gasto de necesidades que transcurra entre porciones se calcula aparte.
+Las botellas usan el mismo factor; sorbo normal M/400 L y fracciones reales.
+Digestión conserva Sueño -= hambre efectivamente recuperada/4.
+
+SeedMansionFood usa Capacity, no SeatCount. Seis mesas, 94 huecos: 4×4+18+60.
+MansionFullFoodPrepared registra una asignación única. Se cuenta la comida
+previa y se conserva el resto de pertenencias; sin huecos se cancela el saldo.
+Retirar, comer o volver al mapa no repone la asignación. Los objetos son
+CaelumFoodRation reales propiedad de la mesa, representados por platos.
+
+### MAP02 y recompensas
+
+Geometría UDMF reproducible: tres laberintos 7×7 con ramales y bucles, puertas
+nativas 203/204/205 y llaves de compuertas/criptas/santuario. Cada llave está
+antes de su puerta; no existe conexión entre sectores que la evite.
+Pozos de 96 MU tienen seis peldaños de 16 MU para salir caminando.
+
+| Contenido inicial | Cantidad |
+| --- | ---: |
+| Salas de laberinto | 147 |
+| Mandingas / Zupay | 96 / 1 |
+| Minas / teletransportes / techos | 12 / 6 / 9 |
+| Rocas rodantes / rocas verticales / pozos | 6 / 6 / 6 |
+| Cofres / objetos de equipo | 39 / 195 |
+| Armaduras / armas / escudos / collares / sellos | 48 / 108 / 12 / 12 / 15 |
+| Raciones de comida / agua | 120 / 120 |
+
+Equipo: todas las cuatro piezas de las cuatro familias de armadura, las 20
+familias de armas (cinco esencias en las cuatro mágicas), cuatro escudos,
+cuatro collares y cinco sellos, en T1/T2/T3. Talle M, durabilidad nativa inicial.
+Cada sector contiene su tier. Las provisiones están en 24 pares de pilas de
+cinco unidades. No se cambian perfiles de enemigos ni balance de equipo.
+Las rocas rodantes usan 32 MU/tic y la física existente; los techos conservan
+10% de Hmax por pulso nativo y velocidad 8 MU/tic, cada uno en sector propio.
+
+CaelumMazeChest conserva cinco Inventory reales. Primer Usar abre; segundo
+retira mediante CallTryPickup. Lo que no cabe permanece en el cofre. Sus
+punteros, apertura y asignación se serializan; no repone ni vuelve a generar
+lo entregado. Las llaves siguen el inventario/peso nativo y no se consumen.
+
+Zupay: CaelumZupayColossus, TID 43799. El 1 de Copas es TarotOwned[36]: +1 a
+Carisma/Empatía/Elocuencia antes del +1% de colección. Sólo se captura tras
+vencer al Zupay y una segunda captura no acumula nada. Usa el reverso CTAR,
+la revelación/captura de audio existente y el Diario; no se añade arte frontal.
+La esencia desaparece en solitario después de incorporarse a la colección.
+
+CanDepart valida Zupay y carta para cualquier salida de MAP02. Conexión 14
+va a la costa MAP07; 15 regresa a la cámara final (PlayerStart 1). Llegar desde
+MAP01 usa PlayerStart 0 en el vestíbulo sur y conserva la Voz del prólogo.
+El viaje reutiliza el hub sin reset de equipo, salud ni contenido. Los viejos
+accesos a MAP03/04/05 se sitúan en la cámara final, bajo la misma condición.
+Los muebles/provisiones de las antiguas pruebas no se inyectan en el laberinto.
+
+### Comprobación
+
+El informe de GZDoom 4.14.2 valida ZScript, apertura/retirada real, llaves,
+movimiento de puertas, carta, masas compartidas, dosis y las 94 raciones en
+MAP01. El arnés adelanta explícitamente pulsos de comida y tics de daño;
+el apoyo bOnMobj también se observó durante simulación real. La prueba de
+animación registró 17,424612° →377,424612° en ocho pasos, vuelta completa.
+El validador de contenido comprueba 207 condiciones de catálogo, conectividad,
+llaves, pozos y capas FP. No sustituye un recorrido humano ni prueba Windows.
+
+
+## Histórico 4.36.0h — techo porcentual, comida inicial y propuesta de peso
 
 ### Techo nativo: implementado en fuentes
 
@@ -2681,8 +2777,8 @@ Regla vigente desde 0aa: cada Menor aporta exclusivamente una pasiva de base,
 además de su +1% por colección. Mayores: +2% por carta. Los 22 Mayores y 56
 Menores suman +100% de colección, de forma aditiva, antes de Tipo 1/2/4.
 No redondear el nivel ni alterar puntos de creación. No hay XP por combatir.
-Poderes activos y Trucazo siguen pendientes; sólo El Loco se obtiene en el
-contenido jugable actual. Los otros 77 requieren sus misiones/recompensas.
+Poderes activos y Trucazo siguen pendientes. Desde 4.36.0i se obtienen El Loco
+y el 1 de Copas. Las otras 76 cartas requieren sus misiones/recompensas.
 
 | Palo | Familia | Primer / segundo / tercer atributo |
 | --- | --- | --- |

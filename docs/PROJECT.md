@@ -1,8 +1,54 @@
 # Caelum Argenteum — Proyecto, estado y roadmap
 
-Versión documental: 4.36.0h — 2026-09-18.
+Versión documental: 4.36.0i — 2026-09-20.
 
-## 4.36.0h — referencia del arco, giro horario y mesas servidas
+
+## 4.36.0i — laberinto, mangual, raciones y peso aprobado
+
+[ACEPTADO POR EL AUTOR] Fórmula propuesta de peso estático, arcos salvo grosor,
+carreta y resto de pruebas de 0h. Se autoriza reconstruir MAP02 sin preservar
+partidas anteriores. Esta entrega es incremental sobre el proyecto completo 0h.
+
+[IMPLEMENTADO Y COMPILADO EN GZDoom g4.14.2]
+
+- Mangual: +22,5° antihorario desde 0h, medio mango expuesto hundido en la mano;
+  cadena/bola en capa posterior independiente, verticales en reposo y vuelta
+  completa antihoraria al atacar. Se conserva el daño y la cadencia.
+- Arcos normal/largo T1–T3: grosor transversal doble sólo en primera persona.
+  Curvatura, paleta, manos, cuerda y flecha mantienen las reglas aceptadas.
+- Ración de comida 200 g; agua 200 ml/200 g. A 80 kg, 2 kg o 2 L restauran
+  100 puntos porcentuales tras completar sus diez porciones.
+- Mesas de MAP01 llenas una vez: cuatro pequeñas ×4, una normal ×18 y una
+  grande ×60 =94 raciones. Sin reposición periódica.
+- Peso estático por exceso de capacidad, porcentaje de vida máxima, apoyo
+  nativo, reparto entre apoyos y fracción conservada. Fórmula en SYSTEMS.
+- MAP02: tres sectores de 49 salas, 96 Mandingas, 45 trampas, tres llaves,
+  39 cofres con 195 piezas distintas T1–T3; 120 raciones de cada provisión.
+- Final con Zupay, 1 de Copas y salida a MAP07. Los otros accesos de prueba
+  quedan en la cámara final. El hub conserva los objetos y el botín retirado.
+
+[VERIFICADO] Compilación y pruebas nativas en Linux con GZDoom 4.14.2 y
+Freedoom de desarrollo. Inventario real de cofres, cerraduras, carta, comida,
+agua, mesas, peso y giro del mangual; cobertura y recorridos estáticos del mapa.
+Los informes separan esas comprobaciones de un recorrido humano completo.
+[PENDIENTE] Aceptación visual y recorrido en Windows 11; guardado/carga manual
+interrumpiendo trampas/combates. Guía: PRUEBAS_4_36_0i.txt.
+
+### Mayores y cierre del bloque
+
+No se pudo confirmar otra pasiva de Arcano Mayor además de El Loco,
+La Estrella y El Sol. Las ideas antiguas para otros Mayores no se convierten
+en asignaciones aprobadas. El 1 de Copas aplica la regla de Menores vigente.
+Sólo existe arte frontal de El Loco en esta base; el Ancho de Copas utiliza
+el reverso compartido y su identificación textual, sin inventar un frente.
+
+Para cerrar el incremento falta la aceptación del autor. Para cerrar todo
+4.36 siguen en el roadmap superficies dañinas, avalanchas, arietes, catapultas
+y sectores móviles, su integración y validación antes de extraer Impact Physics.
+Las secciones siguientes registran entregas anteriores; no revierten el estado 0i.
+
+
+## Histórico 4.36.0h — referencia del arco, giro horario y mesas servidas
 
 [ACEPTADO POR EL AUTOR] El resto de las pruebas de 0g dio bien. Se conservan
 las formas, proporciones y paletas aceptadas. La nueva revisión visual queda

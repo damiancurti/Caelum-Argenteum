@@ -367,8 +367,8 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.0h] Peligros físicos y mágicos: mapa=%s", level.MapName);
-        Console.Printf("Techos: args[0] expresa porcentaje de vida máxima por pulso nativo; masa estática: pendiente de definir.");
+        Console.Printf("[Caelum 4.36.0i] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("Techos: args[0] expresa porcentaje de vida máxima por pulso nativo; masa estática: Hmax x 0.10 x max(0, (masa encima+carga)/capacidad-1) por segundo.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -383,7 +383,7 @@ class CaelumHazardDiagnostics : Object play
             Console.Printf("Roca TID=%d liberada=%d masa=%.1f radio=%.1f altura=%.1f ampliada=%d velocidad=(%.2f,%.2f,%.2f) impactos verticales=%d impulso=%.2f",
                 rock.tid, rock.Released, rock.GetEnvironmentMassKg(), rock.Radius, rock.Height, rock.BoulderSizeReady, rock.Vel.X, rock.Vel.Y, rock.Vel.Z,
                 rock.VerticalImpactCount, rock.LastVerticalImpulse);
-            Console.Printf("  Salida configurada=%.2f MU/tic; peso en reposo: sin daño continuo.", rock.GetReleaseSpeed());
+            Console.Printf("  Salida configurada=%.2f MU/tic; peso en reposo: aplica sobrecarga porcentual.", rock.GetReleaseSpeed());
         }
         let switches = ThinkerIterator.Create("CaelumHazardReleaseSwitch"); CaelumHazardReleaseSwitch lever;
         while ((lever = CaelumHazardReleaseSwitch(switches.Next())) != null)
@@ -392,6 +392,8 @@ class CaelumHazardDiagnostics : Object play
         {
             if (!playeringame[p]) continue;
             let user = CaelumPlayer(players[p].mo);
+            let pressure=user==null?null:CaelumWeightPressure(user.FindInventory("CaelumWeightPressure"));
+            if(pressure!=null)Console.Printf("Peso jugador=%d encima=%.3f kg daño/s=%.3f fracción=%.6f",p,pressure.SupportedMass,pressure.LastDamagePerSecond,pressure.DamageCarry);
             if (user != null)
                 Console.Printf("Impacto jugador=%d tipo=%d masa fuente=%.1f velocidad cierre=%.2f porcentaje=%.2f Dureza=%.2f postDureza=%.2f armadura=%.2f daño=%d",
                     p, user.LastImpactKind, user.LastImpactOtherEffectiveMass,

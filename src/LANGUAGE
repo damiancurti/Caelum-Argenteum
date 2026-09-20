@@ -2725,7 +2725,7 @@ CA_M01_FOOL_HINT_DONE = "La carta y su bonificación están en Tarot.";
 
 // 4.33.0v: puerta de retorno y llegada a las alcantarillas.
 [enu default]
-CA_MAP02_SEWER_NAME = "Sewers — the awakening";
+CA_MAP02_SEWER_NAME = "Sewers — the labyrinth";
 CA_M01_RETURN_TITLE = "The threshold";
 CA_M01_RETURN_CONFIRM = "The path could close behind you. Leave the mansion?\n\nThe Box will carry the first weapon you made. Other equipment, materials, ammunition and supplies will remain here, including anything else stored in the Box. Your Tarot cards and learned recipes remain with you.";
 CA_M01_RETURN_YES = "Yes. Cross.";
@@ -2745,7 +2745,7 @@ CA_M01_RETURN_DETAIL_COMPLETE = "You left the mansion and awoke in the sewers. T
 
 // 4.33.0v: puerta de retorno y llegada a las alcantarillas.
 [es]
-CA_MAP02_SEWER_NAME = "Alcantarillas — el despertar";
+CA_MAP02_SEWER_NAME = "Alcantarillas — el laberinto";
 CA_M01_RETURN_TITLE = "El umbral";
 CA_M01_RETURN_CONFIRM = "El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?\n\nLa Caja llevará la primera arma que fabricaste. El resto del equipo, materiales, munición y provisiones quedarán aquí, incluido lo demás que guardaste en la Caja. Conservás tus cartas del Tarot y las recetas aprendidas.";
 CA_M01_RETURN_YES = "Sí. Cruzar.";
@@ -3917,3 +3917,41 @@ CA_HINT_TELEPORT = "4 - Teletransporte: pisar la runa azul";
 CA_HINT_MINE = "5 - Mina explosiva: se activa al pisar";
 CA_HINT_CRUSHER = "6 - Techo aplastador: pisar o accionar la palanca";
 CA_TRAP_TELEPORTED = "4 - Teletransporte: llegaste a la runa del extremo opuesto.";
+
+[enu default]
+// Laberinto 4.36.0i.
+CA_MAZE_KEY_1 = "Sluice key";
+CA_MAZE_KEY_2 = "Crypt key";
+CA_MAZE_KEY_3 = "Sanctum key";
+CA_MAZE_LOCK_1 = "You need the sluice key.";
+CA_MAZE_LOCK_2 = "You need the crypt key.";
+CA_MAZE_LOCK_3 = "You need the sanctum key.";
+CA_MAZE_CHEST_OPEN = "Chest open. Use again to take its contents.";
+CA_MAZE_CHEST_TAKEN = "Taken: %d. Remaining: %d (check carrying capacity).";
+CA_MAZE_ZUPAY_GUARD = "Defeat the Zupay to free the passage and the card.";
+CA_MAZE_CARD_GUARD = "Capture the Ace of Cups before leaving.";
+CA_MAZE_CUPS_ACE = "Ace of Cups";
+CA_MAZE_CUPS_CAPTURED = "Ace of Cups captured: +1 to the three social attributes and +1% collection bonus.";
+CA_MAZE_USE_CHEST = "Use: open / take loot";
+CA_MAZE_USE_CARD = "Use: capture the Ace of Cups";
+CA_MAZE_USE_GATE = "Use: travel";
+CA_MAZE_HINT_ROCK = "Loose pressure slab";
+
+[es]
+// Laberinto 4.36.0i.
+CA_MAZE_KEY_1 = "Llave de las compuertas";
+CA_MAZE_KEY_2 = "Llave de las criptas";
+CA_MAZE_KEY_3 = "Llave del santuario";
+CA_MAZE_LOCK_1 = "Necesitas la llave de las compuertas.";
+CA_MAZE_LOCK_2 = "Necesitas la llave de las criptas.";
+CA_MAZE_LOCK_3 = "Necesitas la llave del santuario.";
+CA_MAZE_CHEST_OPEN = "Cofre abierto. Usa otra vez para retirar su contenido.";
+CA_MAZE_CHEST_TAKEN = "Retirados: %d. Quedan: %d (revisa tu capacidad de carga).";
+CA_MAZE_ZUPAY_GUARD = "Derrota al Zupay para liberar el paso y la carta.";
+CA_MAZE_CARD_GUARD = "Captura el 1 de Copas antes de salir.";
+CA_MAZE_CUPS_ACE = "1 de Copas (Ancho)";
+CA_MAZE_CUPS_CAPTURED = "1 de Copas capturado: +1 a los tres atributos sociales y +1% por colección.";
+CA_MAZE_USE_CHEST = "Usar: abrir / retirar botín";
+CA_MAZE_USE_CARD = "Usar: capturar el 1 de Copas";
+CA_MAZE_USE_GATE = "Usar: viajar";
+CA_MAZE_HINT_ROCK = "Losa de presión suelta";

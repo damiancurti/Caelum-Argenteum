@@ -2522,7 +2522,7 @@ class CaelumCombatActor : Actor
     {
         if (damage > 0 && ForcedSleepTics > 0)
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
-        if (mod == 'CaelumImpact' || mod == 'Crush')
+        if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight')
         {
             // La misma unidad porcentual para jugadores y NPC. Los impactos
             // cinemáticos ya están calculados y no se convierten otra vez.

@@ -4,44 +4,49 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.0h.** Merge this incremental source patch into the
-complete **4.36.0g** project and rebuild with `run_dev.bat`.
+**Current release: 4.36.0i.** Merge this incremental source patch into the
+complete **4.36.0h** project and rebuild with `run_dev.bat`. Start a new game or
+use `map MAP02`: MAP02 has been replaced with the author's authorization.
 
-The flail rotates exactly 90 degrees clockwise relative to 0g. Its grip moves
-left to keep the weapon inside the view. Both bows now follow the author's
-annotated screenshot: the upper index segment stays behind the stave, while
-the marked stave segment passes behind the thumb and other finger phalanges.
-Previously accepted shapes, palettes and the loaded arrow layer are retained.
+The flail handle rotates 22.5 degrees counterclockwise from 0h and half of its
+previously exposed shaft moves into the glove. Its chain and ball are a
+separate rear layer, hanging vertically at rest and making a full counterclockwise
+revolution during an accepted attack. Both bows have twice their former stave
+thickness in first person only, retaining their curvature, muted palette and
+accepted hand/arrow layering. Ground sprites and inventory icons are unchanged.
 
-All dining tables in MAP01 receive initial real food rations, one per seat,
-including existing tables in older saves. Existing food counts toward this
-allocation and other belongings are preserved. The allocation is recorded
-once; consumption, withdrawal and reloads do not replenish it. The current
-mansion layout has six tables with 26 seats in total.
+Food rations weigh 200 g; water rations contain 200 ml and weigh 200 g.
+For an 80 kg body, ten completed servings (2 kg or 2 L) restore 100 percentage
+points of Hunger or Thirst. Serving size remains scaled by body mass; carried
+load is excluded. MAP01's six dining tables start with their full capacity:
+94 real rations, allocated once without replenishment after consumption.
 
-Native ceiling-crush values now mean percent of maximum health for Caelum
-players and combat actors. The current value of 10 becomes 10% per native
-pulse, not 10 points. The engine controls pulse timing and retains its damage
-pipeline. Other damage types and calculated kinetic impacts are not converted.
+The approved resting-weight damage is active:
+`Hmax * 0.10 * max(0, (supported mass + carried load) / capacity - 1)` per second.
+Native resting support is required; suspended objects do not count. Stacks
+transmit their real mass and share it among supports. Fractional damage is
+preserved. Native ceiling damage remains a percentage per engine pulse.
 
-Static damage from a resting mass above a character is **not implemented**.
-No approved formula was found in the recovered documentation/context. A
-concrete overload-based proposal and its balance examples are recorded in
-`docs/SYSTEMS.md`; it requires the author's decision before activation.
+MAP02 is a three-section maze with 147 rooms, 96 Mandingas, 45 traps, three
+keys, 39 chests and 195 distinct equipment pieces spanning all three tiers.
+It contains 120 food and 120 water rations. The final chamber holds a Zupay,
+the Ace of Cups and the coast exit. The Ace uses the existing Tarot back
+artwork and its own name/reward: +1 to the three social attributes and +1%
+collection bonus. No new Major Arcana passive is assigned in this patch.
 
-The author accepted the remaining 0g tests. Version 4.36 still includes the
-pending damaging surfaces, avalanches, rams, catapults and moving-sector work
-listed in `docs/PROJECT.md`. This patch does not declare 4.36 complete.
+The full 0h base was recovered from commit
+`1ed8e8d543ab19dbc1ca38dc438e61df5363681e`. ZScript compilation, map loading,
+inventory transactions, key-controlled doors, resource arithmetic and the
+flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
+0.13.0 solely as a development IWAD. Native screenshots are in
+`assets/first_person_v7/`; validation records are in `assets/validation_0i/`.
+Windows 11 playthrough and the author's final visual acceptance remain pending.
+Engine binaries, IWADs and development automation are not included.
 
-`netevent ca_debug_hazards_report` identifies **4.36.0h**.
-See **PRUEBAS_4_36_0h.txt** for installation and focused checks.
-
-Local verification covers references, sprite rotation/masks, damage arithmetic,
-and initial-food conservation using translated method bodies with inventory
-mocks. **This is not ZScript compilation or GZDoom execution.** The recovered
-project is partial; Windows startup, native ownership/save behavior and final
-visual acceptance must be checked on the complete project. Diagnostic images
-under `assets/first_person_v6/` are reconstructed, not engine screenshots.
+`netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
+**4.36.0i**. See **PRUEBAS_4_36_0i.txt** for installation and focused checks.
+The author's acceptance of the carriage, transitions and other 0h tests is
+preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 
 ## Implemented
 
@@ -680,8 +685,8 @@ The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system
-testing. MAP02 keeps its accepted arrival; MAP03–05 supply test spaces.
-Sewer encounters and the full campaign layout remain deferred to V5.
+testing. MAP02 now contains the authorized maze and encounters; MAP03–05
+retain their test spaces. The remaining campaign layout is future content.
 Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
@@ -699,18 +704,17 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-- Compile and run 4.36.0e in GZDoom 4.14.2 on Windows 11.
-- Confirm first-person grips, arm continuity, bow aiming/release and old saves.
-- Confirm discovery/capture cues, ship Use hint and four-wheel cart in MAP06/07.
-- The author's 0d travel-transition acceptance is preserved.
+- Windows 11 playthrough of the complete maze, including save/load during combat.
+- Author acceptance of flail placement, full swing and thicker bows.
+- Long-term encounter/provision balance for different character builds.
+- Remaining 4.36 systems listed in PROJECT.md are outside this increment.
 
 ## Build and run
 
-Close GZDoom. Merge the supplied **src**, **assets**, **docs**, **README.md** and
-**PRUEBAS_4_36_0d.txt** into the complete **4.36.0c** project, replacing matching
-files and keeping everything else. Rebuild the PK3 with the usual launcher;
-opening the previous PK3 keeps the previous code. The diagnostic
-`netevent ca_debug_hazards_report` must identify **4.36.0d**.
+Close GZDoom. Merge the patch contents into the complete **4.36.0h** project,
+replacing matching files and preserving the rest. Rebuild the PK3; opening an
+old PK3 will keep old code. Start a fresh MAP02 or a new campaign, since the
+map layout changed completely. The diagnostic must identify **4.36.0i**.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. To build independently, from any working directory:

@@ -40,7 +40,7 @@ class CaelumDiningTable : Actor
     CaelumDiningBlock Blocks[32];
     int LayoutSlot;
     bool PresentationReady;
-    bool MansionFoodPrepared;
+    bool MansionFullFoodPrepared;
     int MansionFoodToSeed;
     virtual clearscope int SeatCount() { return 6; }
     virtual clearscope int Capacity() { return 18; }
@@ -283,17 +283,17 @@ class CaelumDiningTable : Actor
     void SeedMansionFood()
     {
         if(level.MapName!="MAP01")return;
-        if(!MansionFoodPrepared)
+        if(!MansionFullFoodPrepared)
         {
-            // Una ración por plaza, contando primero la comida ya presente.
+            // Completar toda la capacidad, contando primero la comida ya presente.
             // Se guarda el saldo inicial: consumir nunca vuelve a aumentarlo.
             int food=0;
             for(int i=0;i<Capacity();i++)
                 if(Items[i]!=null && Items[i].Owner==self && Items[i].Amount>0
                     && Items[i].GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION)
                     food+=Items[i].Amount;
-            MansionFoodToSeed=Max(0,SeatCount()-food);
-            MansionFoodPrepared=true;
+            MansionFoodToSeed=Max(0,Capacity()-food);
+            MansionFullFoodPrepared=true;
         }
         bool changed=false;
         while(MansionFoodToSeed>0)

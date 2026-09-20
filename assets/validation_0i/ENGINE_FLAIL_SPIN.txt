@@ -1,0 +1,18 @@
+GZDoom g4.14.2 / Linux / Freedoom 0.13.0; automated QA addon.
+QA_PASS: recoger arma para vista
+QA_PASS: activar arma para vista
+QA_SPIN: tic=79 angle=17.424612
+QA_SPIN: tic=80 angle=17.424612
+QA_SPIN: tic=81 angle=62.424612
+QA_SPIN: tic=82 angle=107.424612
+QA_SPIN: tic=83 angle=152.424612
+QA_SPIN: tic=84 angle=197.424612
+QA_SPIN: tic=85 angle=242.424612
+QA_SPIN: tic=86 angle=287.424612
+QA_SPIN: tic=87 angle=332.424612
+QA_SPIN: tic=88 angle=377.424612
+QA_SPIN: tic=89 angle=17.424612
+QA_SPIN: tic=90 angle=17.424612
+QA_SPIN: tic=91 angle=17.424612
+QA_FAILURES: 0
+QA_DONE

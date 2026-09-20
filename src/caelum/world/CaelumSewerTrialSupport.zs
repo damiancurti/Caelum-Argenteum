@@ -11,7 +11,7 @@ class CaelumSewerTrialSupport : Object play
     static bool IsTrialMap()
     {
         int location = CaelumWorldCatalogue.LocationForMap(level.MapName);
-        return location >= 2 && location <= 5;
+        return location >= 3 && location <= 5;
     }
 
     static vector3 BenchPosition()

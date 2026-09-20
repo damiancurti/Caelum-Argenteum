@@ -467,3 +467,17 @@ DoomEdNums
     30965 = CaelumTrapDestination
     30966 = CaelumCrusherTrap
 }
+
+// Laberinto MAP02, contenido nuevo 4.36.0i.
+DoomEdNums
+{
+    30970 = CaelumMazeSluiceKey
+    30971 = CaelumMazeCryptKey
+    30972 = CaelumMazeSanctumKey
+    30973 = CaelumMazeChest
+    30974 = CaelumCupsAceEssence
+    30975 = CaelumMazeRockPlate
+    30976 = CaelumMazeTrapdoor
+    30978 = CaelumMazeFood
+    30979 = CaelumMazeWater
+}
