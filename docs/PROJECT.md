@@ -1,2841 +1,2591 @@
-# Caelum Argenteum — Proyecto, estado y roadmap
-
-Versión documental: 4.36.0i — 2026-09-20.
-
-
-## 4.36.0i — laberinto, mangual, raciones y peso aprobado
-
-[ACEPTADO POR EL AUTOR] Fórmula propuesta de peso estático, arcos salvo grosor,
-carreta y resto de pruebas de 0h. Se autoriza reconstruir MAP02 sin preservar
-partidas anteriores. Esta entrega es incremental sobre el proyecto completo 0h.
-
-[IMPLEMENTADO Y COMPILADO EN GZDoom g4.14.2]
-
-- Mangual: +22,5° antihorario desde 0h, medio mango expuesto hundido en la mano;
-  cadena/bola en capa posterior independiente, verticales en reposo y vuelta
-  completa antihoraria al atacar. Se conserva el daño y la cadencia.
-- Arcos normal/largo T1–T3: grosor transversal doble sólo en primera persona.
-  Curvatura, paleta, manos, cuerda y flecha mantienen las reglas aceptadas.
-- Ración de comida 200 g; agua 200 ml/200 g. A 80 kg, 2 kg o 2 L restauran
-  100 puntos porcentuales tras completar sus diez porciones.
-- Mesas de MAP01 llenas una vez: cuatro pequeñas ×4, una normal ×18 y una
-  grande ×60 =94 raciones. Sin reposición periódica.
-- Peso estático por exceso de capacidad, porcentaje de vida máxima, apoyo
-  nativo, reparto entre apoyos y fracción conservada. Fórmula en SYSTEMS.
-- MAP02: tres sectores de 49 salas, 96 Mandingas, 45 trampas, tres llaves,
-  39 cofres con 195 piezas distintas T1–T3; 120 raciones de cada provisión.
-- Final con Zupay, 1 de Copas y salida a MAP07. Los otros accesos de prueba
-  quedan en la cámara final. El hub conserva los objetos y el botín retirado.
-
-[VERIFICADO] Compilación y pruebas nativas en Linux con GZDoom 4.14.2 y
-Freedoom de desarrollo. Inventario real de cofres, cerraduras, carta, comida,
-agua, mesas, peso y giro del mangual; cobertura y recorridos estáticos del mapa.
-Los informes separan esas comprobaciones de un recorrido humano completo.
-[PENDIENTE] Aceptación visual y recorrido en Windows 11; guardado/carga manual
-interrumpiendo trampas/combates. Guía: PRUEBAS_4_36_0i.txt.
-
-### Mayores y cierre del bloque
-
-No se pudo confirmar otra pasiva de Arcano Mayor además de El Loco,
-La Estrella y El Sol. Las ideas antiguas para otros Mayores no se convierten
-en asignaciones aprobadas. El 1 de Copas aplica la regla de Menores vigente.
-Sólo existe arte frontal de El Loco en esta base; el Ancho de Copas utiliza
-el reverso compartido y su identificación textual, sin inventar un frente.
-
-Para cerrar el incremento falta la aceptación del autor. Para cerrar todo
-4.36 siguen en el roadmap superficies dañinas, avalanchas, arietes, catapultas
-y sectores móviles, su integración y validación antes de extraer Impact Physics.
-Las secciones siguientes registran entregas anteriores; no revierten el estado 0i.
-
-
-## Histórico 4.36.0h — referencia del arco, giro horario y mesas servidas
-
-[ACEPTADO POR EL AUTOR] El resto de las pruebas de 0g dio bien. Se conservan
-las formas, proporciones y paletas aceptadas. La nueva revisión visual queda
-acotada al mangual y al agarre marcado en la captura adjunta.
-
-[IMPLEMENTADO EN FUENTES] Mangual: 90° horario respecto de 0g (+28° → −62°
-nativo), con agarre desplazado para encuadrarlo. Arcos: índice superior detrás;
-tramo señalado en azul detrás del pulgar y las demás falanges.
-
-[IMPLEMENTADO EN FUENTES] Comida inicial real en todas las mesas de MAP01:
-una ración por plaza, descontando comida ya presente. Seis mesas, 26 plazas.
-Inicialización persistente para partidas nuevas y mesas de guardados previos;
-no repone lo consumido ni sustituye objetos de una mesa llena.
-
-[IMPLEMENTADO EN FUENTES] Techo nativo: daño por pulso expresado en porcentaje
-de vida máxima para jugador y NPC Caelum. Valor actual 10 → 10% por pulso.
-Conserva temporización e inmunidades nativas; no convierte otra vez impactos.
-
-[PROPUESTO, NO ACTIVADO] Daño por masa quieta encima del personaje. Se encontró
-la fórmula de impulso sostenido, pero no una fórmula estática aprobada. Se
-propone daño proporcional a la sobrecarga de la capacidad real; k=10% de vida
-máxima por segundo por cada capacidad adicional. Fórmula y ejemplos en SYSTEMS.
-La premisa de no inventar balance exige decisión del autor sobre esta regla.
-
-[VERIFICADO LOCALMENTE] Recursos, giro/máscaras, aritmética porcentual y modelo
-de conservación de comida. No se ejecutó GZDoom ni se verificó guardado nativo.
-Pruebas del incremento en PRUEBAS_4_36_0h.txt.
-
-### Qué falta para cerrar 4.36
-
-1. Aceptar estas correcciones y verificar arranque, mesas, daño y guardados.
-2. Acordar e implementar el peso estático: masas apiladas, reparto entre apoyos,
-   liberación de la víctima y ausencia de doble daño con el aterrizaje.
-3. Completar las bases previstas de superficies con daño propio, avalanchas,
-   arietes, catapultas y sectores móviles mediante el núcleo físico.
-4. Validar la integración de esos mecanismos en la galería, persistencia y
-   reinicio. Extraer Impact Physics sólo después de validar su uso en Caelum.
-
-No se reabren las pruebas de 0g aceptadas salvo regresiones de este delta.
-Después de 4.36 corresponde 4.37 (Tarot/Trucazo), y luego la exportación V4.
-
-## 4.36.0g — proporciones, mangual y paleta
-
-[IMPLEMENTADO EN FUENTES] Mangual T1–T3: giro de reposo +28° hacia la
-izquierda, más marcado que el +14° de 0f. Se comprobó que kind 8 llega a
-CaelumFirstPersonLayers; no se atribuye el fallo observado a una caché o a
-una ruta de ejecución que no se haya podido reproducir en el motor.
-
-Hacha con cabeza 50% mayor y mango separado. Alabarda con asta alargada por
-su eje, sin agrandar hoja, cintas ni manos. Espadón con la misma forma y
-colores menos saturados/oscuros en vista, inventario y sprite del suelo.
-Arcos: índice detrás de la madera; pulgar y falanges de los otros tres
-dedos delante. La flecha sigue en la capa superior.
-
-[REGLA CONSERVADA] El secundario del hacha figura como contundente, más
-fuerte y de menor alcance que el primario cortante. No se modificó combate,
-alcance real, recursos ni física con esta revisión de presentación.
-
-[VERIFICADO LOCALMENTE] Dependencias de texturas, orden de estados, pivotes,
-recortes, paletas, preservación de siluetas y fuentes. Se inspeccionaron
-reconstrucciones de los tres tiers y las tres fases de ambos arcos.
-[PENDIENTE] Arranque, guardados y aceptación visual en GZDoom 4.14.2 sobre
-Windows 11: no se ejecutó el motor. La base recuperada es parcial.
-Aplicación sobre 0f; guía PRUEBAS_4_36_0g.txt.
-
-Las secciones anteriores son historial. La prueba del autor indicó que el
-mangual de 0f seguía sin la corrección esperada y que las paletas eran vivas.
-
-## 4.36.0f — correcciones tras la prueba del autor
-
-[CORREGIDO EN FUENTES] Signo del giro de hachuela, machete, hacha, hacha de
-guerra y alabarda: sus extremos superiores se inclinan a la derecha. Mangual
-incorporado a las capas modulares, con inclinación a la izquierda. Hachuela
-24 MU más baja respecto del agarre; lienzos NoTrim y pivotes absolutos.
-
-[ARTE INTEGRADO] Hoja del espadón ampliada en T1–T3, también en inventario y
-sprite del suelo. Arcos de paleta apagada, dedos detrás, pulgar delante y
-flecha en la capa superior. Cuerda construida con los vértices nativos.
-
-[AJUSTE SOLICITADO] Roca rodante de MAP08: 8 → 32 MU/tic, sin muerte forzada
-ni cambio de la curva de daño. Compatibilidad de la próxima activación de
-guardados con el valor antiguo. No se relanza una roca liberada.
-
-[AUDITADO] Los impactos de la roca usan masa/velocidad. El techo usa Crush
-nativo de 10 puntos por pulso. La roca inmóvil apoyada sobre una víctima no
-aplica presión continua por su peso. Fórmulas y límites en SYSTEMS.md.
-
-[VERIFICADO LOCALMENTE] Estructura, datos, recursos y vistas reconstruidas
-con el orden de transformaciones del renderer 4.14.2. No son capturas del juego.
-[PENDIENTE] Compilar y probar en GZDoom 4.14.2 / Windows 11. La descarga del
-motor falló y la base recuperada es parcial. Guía: PRUEBAS_4_36_0f.txt.
-
-Las secciones anteriores a 0f son historial; las afirmaciones de orientación
-y cuerda de 0e quedaron refutadas por la prueba posterior del autor.
-
-
-## 4.36.0e — correcciones solicitadas tras probar 0d
-
-[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
-armas; izquierda y derecha provienen del mismo PNG original, reflejado por
-TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
-La izquierda queda en una capa anterior a la derecha. Tamaños de guante
-independientes del tamaño del arma.
-
-[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
-con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
-Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
-cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
-
-[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
-Sonido original de level up al confirmar su captura y aplicar el bonus.
-[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
-
-[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
-en total. En el barco, volumen de Usar no sólido frente al casco, además del
-cartel; el aviso permanece centrado y conserva los requisitos de embarque.
-Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
-
-[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
-capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
-GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
-instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
-[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
-Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
-
-## Base anterior: 4.36.0d — agarres, puños y mecanismos visibles
-
-Delta sobre el proyecto completo 4.36.0c. Se atienden las observaciones del
-autor y sus cuatro referencias adjuntas. Daga y armas mágicas conservan el arte
-aprobado. Se invierte sólo el arma en hachuela, machete, hacha, hacha de guerra
-y alabarda; las manos conservan su lateralidad. La hachuela se toma más abajo
-del mango. Hacha, espadón, hacha de guerra y alabarda aumentan de tamaño; las
-tres últimas muestran dos manos. La espada adopta las manos pequeñas del
-paquete nuevo. Todas las familias bajan hacia la izquierda al guardarse.
-
-Ballesta y carabina se presentan más abajo, con las manos por debajo y el apoyo
-izquierdo centrado. La carabina vacía usa reposo, sin fogonazo permanente.
-Ambos arcos bajan y muestran el dorso de la mano izquierda sobre el agarre,
-siguiendo la fotografía. Se generan ese agarre y un par de puños cerrados
-propios; las demás correcciones usan transformaciones nativas del arte existente.
-Las balas en el suelo reducen su escala de 0,25 a 0,10, incluidas las guardadas.
-
-CaelumUnarmedWeapon reemplaza el respaldo Fist. Se equipa al quedar sin arma
-utilizable y después de la limpieza de objetos de MAP01→MAP02. Conserva el
-alcance, daño y cadencia del respaldo anterior, con presentación propia; no
-añade una familia de equipo ni modifica el balance de las armas del catálogo.
-
-Mirar una caravana/carreta, barco, mesa o silla al alcance muestra «Usar:» y
-su nombre. El mecanismo 4 se identifica como teletransporte local y confirma
-la llegada mediante mensaje, destello y runa de destino. Una palanca lateral
-de MAP08 rearma la galería, también en guardados de 0c; rechaza el reinicio si
-el aplastador se mueve o hay cuerpos en las zonas que debe restaurar.
-
-Se reproduce la ausencia visual de viajes del hub: GZDoom g4.14.2 suprime los
-wipes durante las primeras 35 presentaciones. El parche conserva la vista de
-salida durante ese bloqueo y ejecuta después el fundido cruzado nativo de
-carreta/caravana o el derretido del barco. Las capturas del renderer confirman
-ambos efectos. Se conserva el quemado aceptado de El Loco, las provisiones,
-el tiempo de viaje, los clips de sonido y la preferencia global wipetype.
-
-Validación: GZDoom g4.14.2/Linux, 60 selecciones de familia/tier, acciones y
-recargas reales, retorno narrativo con puños, dos reinicios de trampas, usos,
-viajes confirmados y carga de un guardado auténtico de 0c. Se revisa el dibujo
-nativo en 4:3 y 16:9. Los ocho WAD y los bloques de estados previos se conservan.
-La aceptación visual/jugable final en Windows 11 queda para el autor;
-PRUEBAS_4_36_0d.txt acompaña la entrega. 4.36 sigue abierta y la runa de
-inmovilización continúa solamente a revisión. Las secciones siguientes son
-historial y no sustituyen estas correcciones vigentes.
-
-## Historial: 4.36.0c — primera persona, audio y correcciones
-
-Delta sobre el proyecto completo 4.36.0b. El autor acepta el diseño de la palanca
-y pide la mitad de tamaño, informa que el mecanismo 4 no se activó y consulta
-la masa de la roca. Aporta los paquetes Primera Persona v1 y Audio Eventos v1
-(revisión 1.4) y solicita fundido cruzado en carreta y quemado con El Loco.
-
-La palanca usa escala 0,045, también sobre actores serializados. Se reproduce
-un fallo de presión en el borde de la placa de teletransporte: 0b exigía que el
-centro del personaje entrara en el radio. Ahora cuenta el apoyo de sus pies.
-Se mantienen las guardas de altura, destino libre y ausencia de telefrag; el
-informe explica rechazos del último intento. El caso exacto del guardado del
-autor no está disponible; un destino ocupado sigue rechazándose deliberadamente.
-
-Se conectan 19 familias nuevas de primera persona, T1/T2/T3, al inventario y los
-selectores reales. El rig de espada ya aceptado continúa activo; las tres
-variantes de espada aportadas quedan disponibles como recursos. Los 101 PNG y
-93 composiciones proceden del paquete del autor, sin regenerar arte. Las fases
-visuales siguen munición, recarga, puntería, bloqueo y callbacks efectivos.
-
-Se incorporan los seis OGG suministrados y se conectan los cinco usos principales:
-palanca, carreta, barco, captura de tarot y roca rodando. Se elige el recorte
-principal de barco (3–9 s). El recorte de tarot mantiene la revisión 1.4 exacta.
-El Loco MAP01→MAP02 usa quemado; carreta, fundido cruzado; barco, derretido.
-La petición sólo nace al confirmar un cruce y no modifica wipetype.
-
-La esfera de granito grande pesa 38170 kg (38,17 t). La prueba nativa de caída
-con Dureza 13 y sin armadura causó 1343/1780 puntos de vida. La masa, velocidad
-y defensas reales se imprimen en el diagnóstico. Un bloque antiguo que no cabe
-todavía conserva su tamaño y masa de 0a; no se fuerza su expansión dentro de
-geometría ocupada. El nuevo parche no rebalancea el núcleo de impactos.
-
-MAP01–08 y los estados anteriores de armas/actores conservan sus bytes/índices.
-Las pruebas se ejecutan en GZDoom g4.14.2/Linux; la aceptación jugable, visual
-y de mezcla en Windows 11 corresponde al autor. Guía: PRUEBAS_4_36_0c.txt.
-La etapa 4.36 continúa abierta; la runa de inmovilización sigue sólo a revisión.
-
-## Historial: 4.36.0b — trampas, palancas y presentación
-
-Delta sobre el proyecto completo 4.36.0a. El autor confirma correctas las demás
-pruebas de 0a y pide corregir el tamaño del toro y de las rocas. Aprueba minas
-mágicas explosivas, teletransporte y aplastamiento; pide una palanca sobre columna,
-transiciones sonoras y derretido para los viajes en barco.
-
-Se implementan esas tres trampas en MAP08. Los mapas MAP01–08 conservan sus WAD
-byte a byte. MagicHazardRevision del controlador existente incorpora los nuevos
-actores una vez, también en partidas antiguas. La trampilla y los mecanismos ya
-usados conservan su estado. Las palancas gastadas se muestran hacia abajo.
-
-Toro: aumento visual general del 25% y normalización por vista de la carrera
-respecto del reposo; no se cambia su anatomía, masa, colisión ni ataque. Los PNG
-aportados por el autor conservan sus bytes. Las rocas de 0a eran granito pequeño
-de prueba; las de peligros reciben una esfera irregular de 96 MU de diámetro,
-pivote central y masa esférica de granito (38170 kg). El daño sigue el núcleo
-físico vigente y depende de las condiciones del impacto, sin muerte automática.
-
-Las tres trampas, dimensiones y valores de MAP08 son configuraciones de ensayo;
-no fijan ubicaciones narrativas ni balance definitivo. El resto de 4.36 continúa
-con superficies especiales, avalanchas, arietes, catapultas y otros mecanismos.
-No se adelanta 4.37 ni se extrae todavía Impact Physics como paquete externo.
-
-Propuesta exclusivamente a revisión: una runa de inmovilización temporal.
-No se implementa ni se asignan duración, resistencia, coste o daño sin decisión
-del autor. La revisión jugable/estética de 0b en Windows 11 queda pendiente;
-seguir PRUEBAS_4_36_0b.txt. Las secciones anteriores son historial.
-
-## Base aprobada: 4.36.0a — trampilla y primeros peligros físicos
-
-El autor confirma «Todo correcto» para 4.35.0q: queda aprobada y cerrada 4.35.
-Autoriza comenzar 4.36 y agrega trampas de suelo que se abren al pisarlas.
-Este delta se aplica al proyecto completo 4.35.0q.
-
-Implementado: trampilla reutilizable sobre un foso real, caída por gravedad,
-roca rodante y roca suspendida liberadas mediante Usar. MAP08 incorpora una
-galería con foso y escalera de salida, conectada a MAP05 por un acceso nativo.
-Los WAD de MAP01–07 conservan sus bytes y permiten cargar sus guardados.
-El apoyo sólo se retira al pisar la tapa; pasar por arriba o por debajo no
-la dispara. Queda abierta una vez activada y su estado pertenece al mapa/hub.
-
-Las rocas reutilizan granito, masa y modelos existentes. Los impactos usan
-las fórmulas vigentes, con un adaptador vertical adicional y procedencia
-ambiental explícita; no conceden adrenalina de combate ni añaden empuje de
-Doom al ya resuelto por el núcleo. Guardados, informe de diagnóstico y TXT
-permiten revisar los mecanismos. La configuración de la galería es de ensayo;
-no fija ubicaciones narrativas ni un nuevo balance definitivo.
-
-El autor aprueba el resto de las pruebas de este incremento; las correcciones
-visuales solicitadas se abordan en 0b. 4.36 sigue en desarrollo: superficies
-con daño propio, avalanchas, arietes, catapultas y sectores móviles amplios.
-No se adelanta 4.37 ni se extrae todavía Impact Physics como paquete externo.
-La secuencia posterior sigue siendo 4.37 → exportación de prueba → V5.0 → V5.1.
-
-Las secciones por versión que siguen conservan el historial; sus pendientes
-antiguos no reabren los bloques que el autor ya aprobó.
-
-## Base aprobada: 4.35.0q — sprites v4 y consumo sentado
-
-Delta sobre el proyecto completo 4.35.0p, probado y aprobado por el autor.
-El autor aporta Caelum_Argenteum_Sprites_Iconos_v4(1).zip y modifica únicamente
-el ritmo de comida/bebida sentada: pasa de 1/10 a 1/3 del ritmo ordinario.
-Cada porción completa tarda 30 segundos de simulación, conserva sus diez
-pulsos y consume las mismas unidades/litros. Levantarse continúa a ritmo normal.
-
-El paquete visual queda integrado en los estados actuales de nueve personajes:
-respiración, carreras, caminatas de Domingo/Palomo/Mandinga/Zupay, poses de
-descanso de Palomo, reemplazos del toro/Ronnie e íconos, incluida la bolsa.
-Los nuevos estados se anexan para conservar los índices de guardados de 0p.
-Palomo conserva sus diálogos y recorrido de salida; su pose responde al
-movimiento real. El jugador conserva prioridad de agachado, ataque y descanso.
-
-Los sistemas de viajes, reservas, calendario, vehículos y mapas de 0p quedan
-aprobados. El autor también aprobó la integración visual y el ritmo de 0q.
-4.35 queda cerrada; 4.36 comienza con el incremento descrito arriba.
-
-## Base aprobada: 4.35.0p — reservas y primeros vehículos
-
-Delta sobre 4.35.0o. El autor aprueba 0n/0o salvo los puntos corregidos aquí:
-consumo sentado desde inventario/Caja y conflicto de Escape. Autoriza una
-carreta cubierta y un pequeño mercante con velas y remos, con sus instalaciones
-en ambos mapas costeros. El autor aprobó estos cambios al solicitar 0q.
-
-La mesa busca primero sus raciones, luego las llevadas y finalmente las de la
-Caja propia. Conserva el ritmo sentado aprobado, el volumen de las porciones,
-la digestión y ambos toggles independientes. Se detiene al saciarse, agotarse
-la reserva o levantarse. Los recipientes vacíos y pilas restantes no se extraen.
-Q/B cancela el presupuesto y vuelve del calendario/detalle; Escape abre la
-pausa nativa y permite regresar a la misma pantalla.
-
-MAP06 y MAP07 tienen una carreta de carga cubierta dentro de un rancho. MAP06
-conserva su puerto y agrega el mercante; MAP07 suma un muelle de madera y otro
-mercante. Usar la carreta o el cartel de embarque abre el presupuesto del
-recorrido de 500 km. Son servicios de prueba con conductor/tiro y guardias,
-sin tarifa por ahora; no son vehículos de conducción libre.
-
-Carreta: 3 km/h en movimiento, 16 h de marcha / 8 h de campamento. Mercante:
-5 nudos (9,26 km/h), navegación continua con viento favorable; el pasajero
-duerme durante la travesía. El calendario incluye sólo tiempo realmente
-transcurrido; dormir a bordo no agrega una segunda vez esas horas.
-Las velocidades y dimensiones son valores nominales representativos de diseño,
-no mediciones de una carreta o nave argentina histórica individual.
-
-Las estructuras y vehículos se instalan una vez al entrar/cargar, también
-sobre mapas guardados con 0o, y se conservan en el hub. La confirmación exige
-seguir cerca del mismo vehículo y recalcula las provisiones antes de salir.
-
-### Cierre histórico de 4.35 (completado)
-
-Queda la prueba manual de 0p: reservas de mesa/Caja, Q y Escape, entrada del
-rancho, embarque, proporciones visuales y viaje por cada vehículo. Si no surgen
-fallos, se puede cerrar 4.35 y continuar con 4.36 (peligros físicos). No hace
-falta repetir las pruebas de 0n/0o ya aprobadas ni agregar más mapas o asedios.
-
-## Base entregada: 4.35.0o — agenda y eventos persistentes
-
-Delta sobre el proyecto completo 4.35.0n. El autor define los eventos:
-asedios, rutinas de NPC/misiones secundarias, alquileres, envíos de mercancías,
-crecimiento de vetas y futuras categorías. Pide un calendario con sus fechas.
-0n y 0o fueron probados por el autor; 0p resuelve las observaciones recibidas.
-
-TAB → Mundo → F/RT abre el calendario mensual de campaña. Señala hoy, la
-selección y cuántas series conocidas caen en cada día; muestra hora, tipo y
-ocurrencia registrada/programada. Detalle ofrece estado de la serie, primera y
-próxima fecha, intervalo y contador. Los eventos desconocidos no se revelan.
-La fecha de depuración del clima no desplaza esta agenda.
-
-El registro persistente calcula las ocurrencias vencidas sin reproducir miles
-de tics de IA. Se conecta al reloj ordinario, Limbo 1:1, descanso, x105 y viajes
-confirmados; una consulta de presupuesto no dispara eventos futuros. Guardado
-y carga conservan fechas, contadores, cancelación, deuda y cargas retiradas.
-
-Adaptadores concretos: fases de asedio que interrumpen descanso/aceleración;
-NPC de ensayo que cambia de destino según su rutina; vencimiento de objetivos
-incompletos de una misión; alquileres con deuda/pago manual en monedas reales;
-carga de materiales retirada al despachar y recuperable una vez en destino;
-recuperación de recursos que cuenta también la ausencia de su mapa. Los
-recursos mantienen 0,1 % de capacidad por día de campaña, sin rebalancearlos.
-
-Los ensayos son voluntarios por consola. No se inventan alquileres de campaña,
-precios, horarios de los cuatro residentes ni envíos comerciales canónicos.
-La infraestructura admite esos contratos cuando un mapa/misión los registre.
-El asedio de ensayo prueba fases y bloqueo temporal; el director de batallas,
-ejércitos y consecuencias políticas conserva su alcance V5 ya acordado.
-
-### Cierre de 4.35
-
-La implementación temporal de este bloque queda candidata a cierre. Faltan la
-aceptación manual del autor de los cambios de 0q y resolver cualquier fallo que aparezca.
-No se exige nuevo contenido de campaña ni repetir las pruebas ya aprobadas.
-Después siguen 4.36 (peligros físicos), 4.37 (Tarot/Trucazo), exportación V4,
-reorganización V5.0 y exposición térmica V5.1.
-
-## Base entregada: 4.35.0n — viajes medidos y provisiones
-
-Delta sobre el proyecto completo 4.35.0m. El autor aprueba las pruebas de
-raciones de alimento y los mapas. Define 10 km entre depósito de alcantarillas
-y puerto, y 500 km entre puerto y playa, con jornadas de 16 horas caminando y
-8 durmiendo, velocidad actual del personaje y consumo de sus provisiones.
-
-El acceso muestra presupuesto antes de salir: velocidad real convertida a
-km/h, duración de marcha/sueño, raciones necesarias/llevadas/a consumir, agua
-adicional en recipientes y reservas/salud previstas al llegar. Enter confirma;
-Q/B cancela sin descontar raciones ni adelantar el reloj por el trayecto.
-El mundo sigue su paso normal mientras se lee. Si cambian velocidad, consumo,
-existencias o riesgo mortal, se actualiza la vista antes de una nueva confirmación.
-
-La velocidad se mide como marcha sostenida sobre suelo normal, 32 MU/m. Se
-fija al partir, sin añadir pausas por animación ni reducir la distancia por el
-factor 20:1 del calendario. No se agrega una noche si ya se llegó al destino.
-La caravana diagnóstica sigue siendo marcha a pie, sin vehículo ni nueva tarifa.
-Los accesos interiores MAP02–05 conservan su tratamiento local sin distancia
-asignada. Sólo las cuatro conexiones dirigidas 8–11 tienen presupuesto temporal.
-
-La simulación numérica de un tic aplica necesidades, digestión, regeneración,
-lucidez y sueño. Usa bolsa propia si se lleva, suelo en otro caso; no crea
-raciones, recipientes, muebles o comodidad. Bebe primero raciones de agua y
-luego litros de recipientes; no gasta pertenencias de la Caja. No empieza a
-comer/beber dormido. Las porciones empezadas continúan sus pulsos al llegar.
-Una previsión mortal exige confirmación visible y termina con muerte nativa
-en origen sin acreditar llegada; no se exige comprar provisiones para salir.
-
-El trayecto se aplica atómicamente: un descuento, un intervalo del reloj,
-registro persistente, clima a la fecha de llegada y cambio de mapa. Se conserva
-el presupuesto al guardar; siempre se revalida antes de cobrar. No se simulan
-IA, física o encuentros del mapa de salida durante esas horas. Los efectos
-activos y el combate deben terminar antes del viaje. Límite técnico visible:
-30 días de marcha por presupuesto; no se truncan rutas mayores.
-
-## Base entregada: 4.35.0m — comida por masa y costa
-
-Comida/agua aportan 800/masa corporal en kg puntos por ración. Se integraron
-18 materiales del autor, MAP06 puerto y MAP07 costa, sus conexiones nativas,
-refugios de dos sillas, cobertura física, río no potable y clima de Buenos
-Aires confirmado en MAP02–07. Sus pruebas de comida y mapas están aprobadas.
-
-## Base entregada: 4.35.0l — sillas, agua y clima regional
-
-El autor aprueba 0j y 0k; de 0i sólo observa la segunda silla de Ronnie y
-Argento. Este delta se aplica sobre el proyecto completo 4.35.0k.
-
-La silla existía, pero quedaba detrás de una pared sobre otro sector con la
-misma altura de piso. Las mesas 102/104 pasan a (1072, ±480, 136), orientación
-0°, con dos sillas visibles y utilizables. Se conservan camas, accesos, actores
-originales, contenido y referencias. Un guardado sentado espera a levantarse
-antes de mover su conjunto. La preparación recupera una silla ausente.
-
-La ración de agua representa 0,16 litros y pesa 0,16 kg. Restaura diez puntos
-de Sed en el cuerpo M base de 80 kg; conserva el escalado por masa corporal:
-800/masa puntos por ración (8 puntos a 100 kg). El talle de ropa M admite
-varias masas y no convierte a todos sus usuarios en cuerpos idénticos. Se
-actualizan carga, Caja, comercio y consumo desde una regla de peso común.
-Sentado conserva diez pulsos durante 100 s de simulación, frente a 10 s de pie.
-Los recipientes continúan usando sus litros efectivos. Un efecto ya activo en
-un guardado conserva la dosis con la que comenzó.
-
-El clima usa normales mensuales contemporáneas del SMN, período 1991–2020
-(publicadas en 2023; viento 2011–2020), para nueve estaciones. La fecha histórica
-de campaña selecciona época del año y hora sobre esa referencia moderna. No se
-reconstruyen observaciones de 1889 ni se consulta el pronóstico en cada partida.
-Los episodios concretos de lluvia, nubosidad y frentes son síntesis reproducible;
-los factores de cobertura son aproximaciones explícitas, no mediciones del SMN.
-
-Confirmación posterior en 0m: MAP02–05 y los siguientes son de Buenos Aires.
-Buenos Aires Observatorio es su referencia compartida; un marcador permite
-elegir otras regiones en contenido futuro. MAP01 mantiene su excepción de Limbo:
-20 °C, 55% HR, sin viento ni precipitación, con reloj 1:1 aprobado.
-
-Los techos se detectan por trazas geométricas, incluidos pisos 3D. La muestra
-local distingue exterior, techado abierto, interior y subsuelo; responde al
-movimiento sin esperar al siguiente minuto climático. Las superficies de cielo
-no cuentan como techo. Precipitación directa se anula bajo cobertura; la
-humedad relativa se recalcula según temperatura/presión de vapor y humedad del
-subsuelo. El viento cambia con región/frentes y disminuye bajo refugio.
-
-El Diario informa región de referencia y cobertura. Se conservan semilla,
-calendario, pausa y el mismo resultado a ritmo normal/x105. Ver SYSTEMS.md para
-fuentes, fórmulas, límites y comandos; PRUEBAS_4_35_0l.txt para la aceptación
-manual. Exposición corporal, ropa mojada y daño térmico siguen en V5.1.
-
-Para cerrar 4.35 restan eventos y viajes con duración, integración conjunta y
-aceptación de esos incrementos. Luego siguen 4.36, 4.37, exportación de pruebas
-y V5.0/V5.1 en el orden acordado.
-
-## Base entregada: 4.35.0j — ritmo local, interacción y áreas de clase
-
-Delta sobre el proyecto completo 4.35.0i. El autor confirma la recuperación de
-Sueño de 100 puntos por 8 horas de juego, la bolsa de 2 kg y el coste base de
-Sueño del arcanista de 1000 Ánima. Solicita equiparar el radio de las habilidades
-de clase con el radio base de canalización de los sellos: 1280 MU (40 m a la
-escala de desarrollo). Sueño, única habilidad de clase implementada, usa esa
-base común y el modificador de alcance existente. Las otras habilidades siguen
-pendientes en V5; su futura área parte de la misma regla.
-
-Comer/beber sentado reparte el mismo efecto y consumo durante 30 segundos de
-simulación en vez de 10 (ajuste 0q del divisor 10 introducido en 0j). No cambia el total por ración ni los litros por sorbo.
-La repetición automática espera a terminar cada porción; levantarse devuelve
-los pulsos restantes al ritmo ordinario. Digestión, topes y comodidad conservan
-sus reglas. La bolsa, las posiciones de 0i y el diseño aceptado se mantienen.
-
-El Limbo pasa de calendario detenido a tiempo 1:1 durante juego activo a ritmo
-normal. Reloj y fecha avanzan; necesidades por hora y recuperación de Sueño usan
-horas locales. Afuera sigue 1 hora de juego por 180 segundos. T acelera el ritmo
-local y los sistemas compatibles sólo durante descanso/fabricación válidos.
-Pausa nativa detiene el tiempo; no se reconstruye tiempo de sesiones anteriores
-ni tiempo con el juego cerrado. Palomo lo compara con otro lugar que él conoce.
-
-Use comprueba la dirección de la mirada para muebles, mesas, residentes y
-estaciones. Una estación rechazada, incluso en otra planta, ya no corta el
-recorrido nativo de Use. Las estaciones quedan al 75% de 0i, es decir, al 150%
-de antes de 0h: radio 30, altura 72 y escala 0,75. La migración es absoluta,
-conserva los actores, sus redes, reservas y tareas; no vuelve a multiplicar.
-
-Verificado en GZDoom 4.14.2/Linux: comidas lentas y automáticas, litros/digestión,
-guardado/carga, reloj local y paridad con x105, sueño acelerado guardado de 0i,
-fabricación, diálogos/puertas/muebles mediante Use nativo, 38 estaciones migradas,
-límites de área y modificador. Capturas de Palomo y talleres revisadas. Falta
-aceptación manual en Windows, incluida la del parche 0i; no se da por realizada.
-PRUEBAS_4_35_0j.txt reúne la comprobación pendiente.
-
-Para pasar a 4.36 falta completar el bloque 4.35: clima local (temperatura,
-viento, precipitación y humedad), eventos programados/viajes temporizados,
-adaptadores al reloj e integración. Después: 4.36 peligros físicos, 4.37
-Tarot/Trucazo, exportación de prueba, V5.0 reorganización y V5.1 exposición térmica.
-No hay un número cerrado de parches restantes. Las secciones por versión que
-siguen describen sus entregas históricas; esta sección fija el estado vigente.
-
-## Base entregada: 4.35.0i — accesos, platos y avance en Limbo
-
-El autor conserva el diseño de comida/agua y reporta seis incidencias de 0h.
-Este delta sobre 0h corrige la altura de las figuras, intercambia las zonas de
-cama/mesa de Ronnie y Argento, mueve la mesa de la sala del fondo 100 MU al este,
-libera la puerta oriental del taller nordeste y asegura el muñeco de Rulo.
-
-T queda dedicado al avance durante descanso/fabricación; el antiguo +10 minutos
-de depuración se mantiene sólo por consola. El Limbo permite acelerar recursos,
-descanso, consumibles y fabricación sin avanzar reloj ni calendario. Conserva
-las sesiones de muebles sin duración y las guardas de actividad y peligro.
-
-La migración reutiliza muebles, sillas, objetos y estaciones. Si un dormitorio
-afectado está ocupado, espera a levantarse; reintenta si el destino está bloqueado.
-Los guardados con el marcador antiguo del muñeco pero sin actor recuperan uno,
-sin reiniciar la misión ni conceder ejercicios o recompensas.
-
-Pruebas nativas en GZDoom 4.14.2/Linux: 26 asientos/4 camas, 38 estaciones,
-paso real por puertas afectadas, blanco y registro de práctica, comparación
-exacta de 105 tics normales/acelerados en Limbo, fabricación y carga de dormitorio
-ocupado de 0h. Capturas revisadas. Controles Windows/recorrido completo en TXT.
-
-## Base entregada: 4.35.0h — comidas y mobiliario de la mansión
-
-El autor aprueba 0g, incluida la orientación. Se aplica este delta sobre esa
-base. Comer resta Sueño equivalente a Hambre efectivamente recuperada / 4;
-el coste se limita al máximo real y no se aplica a beber. F/G activa o detiene
-por separado la repetición de comida/agua del tablero hasta saciarse. La porción
-actual termina normalmente; levantarse cancela las próximas. No reinicia por
-la pérdida pasiva posterior. El estado y las pertenencias se guardan.
-
-Capacidades: 4 objetos en mesa de 2 plazas, 18 en la de 6 y 60 en la de 12.
-Platos originales con comida y tazas representan las pertenencias reales.
-Cada dormitorio de Rulo/Ronnie/Caella/Argento recibe cama y mesa de 2 sillas.
-Hay una mesa de 6 en la sala de pared falsa/cueva y una de 12 en el segundo piso.
-
-Todas las estaciones duplican sus dimensiones visuales y físicas. Las 26 de
-los dormitorios se trasladan a los talleres de planta baja bajo cada habitación;
-las 12 del segundo piso se conservan. Redes y especialidades permanecen
-conectadas y separadas por sala; diálogos y direcciones se actualizan.
-
-Para utilizar esos muebles en MAP01 se ofrecen sesiones sin duración, hasta
-levantarse. Continúa la simulación personal; no se mueve el reloj del Limbo ni
-se permite T. Las duraciones exteriores, comodidad, Lucidez y orientación de
-0g se conservan. No se implementa Trucazo ni se modifica geometría WAD.
-
-Comprobado con GZDoom 4.14.2 en Linux: digestión y límites, secuencias de comida,
-capacidades, persistencia, uso de los 26 asientos y 4 camas de la mansión,
-volumen de estaciones y redes, menús USDF y reloj detenido. Capturas revisadas.
-El TXT 0h incluye controles y recorrido para aceptación en Windows.
-
-## Base aceptada: 4.35.0g — avance seguro, mesas y sueño
-
-El autor aprueba las pruebas de 0f y autoriza el siguiente parche. Se implementa
-avance opcional con T únicamente al descansar/dormir o fabricar activamente, en
-zonas de prueba seguras. Comparte pasos de reloj, recursos, efectos y fabricación;
-no depende de i_timescale. Completar, cancelar o perder validez corta el avance.
-El Limbo conserva tiempo detenido. El alcance general de clima, rutas y eventos
-sigue pendiente de adaptadores al mismo servicio temporal.
-
-MAP03 recibe mesa redonda para 2, rectangular 192×96 para 6 y grande 384×192 para
-12; la grande duplica ambas dimensiones. Todas las sillas permiten Esperar. Use
-coloca/retira pertenencias reales y F/G come/bebe sentado junto a la mesa. Se
-preservan recipientes parciales y contenido al guardar. Referencias mesa/sillas
-preparan el requisito futuro de Trucazo, sin implementar aún el juego.
-
-Dormir reduce Lucidez 10/s y bloquea su recuperación. El aturdimiento por Lucidez
-no lo corta. Arcanista User4 aplica Sueño de área con la misma lógica, duración
-10 s, golpe despierta, reutilización 60 s y coste base provisional 1000 Ánima.
-El radio de ensayo reutiliza 128 MU y el modificador de área existente. Las otras
-habilidades continúan en V5. No cambia el bloque aprobado de atributos.
-
-Se corrigen orientación de muebles y orden inverso de las vistas laterales del
-atlas sin retocar PNG. GZDoom 4.14.2 en Linux compila y verifica tasas nativas
-frente a aceleradas, las 20 sillas, consumibles, USDF, fabricación, habilidad y
-guardados activos. Las capturas verifican costados y espalda. PRUEBAS_4_35_0g.txt
-recoge instalación, controles, reservas críticas y comprobación de Windows.
-
-## Base aceptada: 4.35.0f — bolsa de dormir y comodidad
-
-El autor aprueba todas las pruebas de 0e. Solicita una bolsa de dormir que pueda
-llevarse en el inventario y define tres factores de descanso: silla ×2, bolsa
-×3 y cama/catre ×4 para recuperar Salud/Aire, con pérdida de Hambre/Sed dividida
-por el mismo factor. Se implementan en este delta sobre 0e. El descanso sobre
-suelo conserva ×1. Esperar sentado no recupera Sueño; dormir conserva la tasa
-provisional anterior, sin multiplicarla por el soporte.
-
-La bolsa es un Inventory nativo reutilizable de peso provisional 2 kg. Figura
-en Todos y Llaves/objetos clave; Enter/A abre las duraciones, C la guarda/retira
-de la Caja y D la suelta, con los controles existentes. Si estaba en la Caja,
-Enter primero la retira. Elegir una duración despliega su modelo sobre suelo
-seco, libre y nivelado; cerrar no despliega nada. El mismo objeto permanece
-en el inventario durante la sesión y se recoge visualmente al levantarse,
-completar o interrumpir, sin copias ni consumo.
-
-Una preparación voluntaria de Mundo > D/X entrega una bolsa de prueba en
-MAP02–MAP05; ca_debug_rest_bag ofrece la misma operación. No se concede al
-cargar, al viajar ni al entrar al mapa. Tenerla impide recibir otra por esta
-preparación. La recogida respeta capacidad y espacio en la Caja. No se agregan
-recetas, precios, botín permanente ni nuevas categorías de navegación.
-
-La comodidad aplica a la regeneración natural y al gasto por tiempo. El
-consumo de Hambre/Sed incluye tanto su pérdida pasiva como los costes de curar
-y recuperar aire. Se conservan máximos, acumulador fraccional de curación y
-bloqueos por reservas críticas. Ánima, Lucidez y pulsos de consumibles no ganan
-bonificaciones. La devolución de aire pendiente tras inmersión también se acelera por el
-factor activo; fuera del descanso conserva sus tres segundos de base.
-
-Se verificaron dentro de GZDoom 4.14.2 en Linux las tasas ×1/×2/×3/×4, la ruta
-de activación de inventario y respuesta USDF, recogida/soltado/Caja, suelo
-bloqueado, cancelación, daño, máximos y reservas críticas. Se cargó una sesión
-en bolsa y un save anterior de 0e en catre, que recibió ×4 conservando su
-progreso. El ensayo de bolsa y su continuación tras cargar finalizaron sin fallos;
-parte del contador de comprobaciones se conserva desde antes del guardado. Las capturas
-nativas muestran bolsa, postura y factor. El TXT cubre los controles físicos
-y el recorrido del hub que debe comprobar el autor en Windows.
-
-### Propuesta temporal de 0f adoptada en 0g
-
-El contrato de avance propio por subpasos se implementa ahora con alcance
-inicial seguro. SYSTEMS describe exactamente sus adaptadores y límites.
-
-## Base aceptada: 4.35.0e — sillas, catres y cámara de descanso
-
-El autor confirma que todas las pruebas de 0d1 dieron correctas y autoriza
-el siguiente parche. Se considera aceptada la base de descanso de 0d reparada
-por 0d1. Este delta agrega una silla y un catre utilizables en cada alcantarilla
-MAP02–MAP05. Aparecen también al cargar un guardado anterior; una preparación
-repetida conserva la pareja existente. No se modifican los WAD ni se crea una
-ruta de regreso a MAP01.
-
-Usar la silla abre Esperar; usar el catre abre Dormir. Se elige entre 5 minutos,
-1, 4 u 8 horas de juego. El inicio ocurre después de cerrar la respuesta y
-validar alcance, suelo y espacio. Cerrar sin elegir deja al personaje de pie.
-TAB > Mundo > D/X conserva el descanso sobre suelo y sus preparaciones
-voluntarias. No se otorgan recursos al acercarse, abrir, cargar o viajar.
-
-La cámara de tercera persona permite observar las poses existentes y orbitar
-con los controles de mirar. Usa el recorte nativo del motor contra el entorno.
-Q/B, movimiento o acción levantan al personaje; TAB lo levanta y abre el Diario;
-Escape conserva la pausa. Al finalizar/interrumpir se libera el mueble y la
-cámara y se recupera la dirección de entrada. Se busca una salida libre sin
-telefrag; si las salidas están ocupadas, el mueble deja salir caminando antes
-de recuperar su colisión. Se conservan altura/radio físicos del jugador.
-
-Dormir mantiene la recuperación provisional de Sueño de 100% por 8 horas de
-juego. Esperar, Hambre, Sed y regeneración conservan sus tasas aprobadas.
-La fecha inicial sigue siendo 03/11/1889 09:00; MAP01 detiene el reloj y los
-demás mapas avanzan al ritmo común de 1 hora de juego por 180 segundos reales.
-Este incremento no acelera el tiempo. Las habilidades acordadas siguen
-registradas para su bloque posterior, sin introducirlas en el descanso.
-
-Verificación: compilación con GZDoom 4.14.2 y pruebas nativas automáticas en
-Linux para interacción Use/USDF, uso repetido, finalización, daño, pérdida del
-mueble, salidas ocupadas y colocación/uso en las cuatro alcantarillas. Se guardó
-y cargó una sesión activa y se inspeccionaron capturas de ambas posturas.
-Las instrucciones PRUEBAS_4_35_0e.txt incluyen la comprobación pendiente en
-Windows, controles reales, guardados anteriores y recorrido del hub.
-
-## Base aceptada: 4.35.0d1 — corrección de compilación
-
-El autor comunica nueve errores de análisis al cargar 0d en GZDoom 4.14.2:
-dos búsquedas de poses reciben String en lugar de StateLabel, restPose queda
-sin declarar por ese primer error y seis llamadas no encuentran IsTimelessMap.
-El catálogo entregado en 0c contiene esa función; se incluye nuevamente completo
-para resolver la dependencia cuando quedó una copia anterior en el proyecto.
-
-CaelumPlayer.UpdateCrouchVisual y CaelumRestState.Begin ahora buscan cada pose
-con su etiqueta literal. Los estados, fórmulas, campos persistentes, duración,
-controles y roadmap mantienen el contrato de 0d. En esa entrega se esperaban las pruebas jugables; el autor las confirma
-antes de 0e.
-
-Se reprodujeron los tres errores de poses con GZDoom 4.14.2 nativo y el catálogo
-correcto. Tras aplicar la corrección, el mismo motor compiló los scripts del
-proyecto reconstruido de 4621 archivos. Entorno de comprobación: Linux, SDL
-sin pantalla física, renderizado por software y Freedoom 2 como IWAD de prueba.
-Esto verifica análisis/compilación de ZScript, no partida en Windows, interacción,
-presentación ni guardados. El motor y el IWAD no se incluyen en el parche.
-
-PRUEBAS_4_35_0d1.txt indica cómo combinar todos los archivos, reconstruir el PK3,
-comprobar el informe 0d1 y retomar Dormir/Esperar, Use y tiempo del Limbo.
-El validador reconoce el sufijo numérico de hotfix sin eliminar comprobaciones.
-
-## Base funcional aceptada con 0d1: 4.35.0d — descanso y espera
-
-El autor aprueba todas las pruebas de 4.35.0c y autoriza continuar. Este delta
-sobre 0c incorpora sesiones de Dormir y Esperar a la escala normal del mundo,
-accesibles desde TAB > Mundo > D (X del mando). Se utiliza el diálogo USDF
-aprobado, con selección explícita de duración: 5 minutos de juego, 1, 4 u 8
-horas. La primera dura 15 segundos reales y permite una comprobación breve.
-Elegir el modo no inicia la sesión; elegir la duración sí. Cerrar no concede
-recuperación ni reserva una acción pendiente.
-
-Dormir recupera Sueño de forma gradual en lugar de su consumo pasivo. Valor
-provisional de prueba, no balance autoral cerrado: 100% en 8 horas de juego,
-sin sobrepasar 100%. Se conservan consumo de Hambre/Sed y regeneraciones
-habituales; no hay curación adicional, alimentos automáticos ni reposición
-de ánima o adrenalina al comenzar/terminar. Esperar conserva la pérdida de
-Sueño. La fatiga crítica no produce daño mientras se duerme, permitiendo
-recuperarse desde Sueño agotado; no se anulan sus restantes penalizaciones
-ni los daños por Hambre/Sed. Hambre o Sed críticas impiden continuar.
-
-La sesión utiliza un Inventory oculto y pulsos del reloj ya existente. El
-personaje queda quieto y adopta su pose mundial acostada o sentada. Puede
-mirar alrededor; Q/B, movimiento o una acción lo levantan. TAB lo levanta y
-abre el Diario; Escape mantiene la pausa voluntaria. La confirmación del
-diálogo debe soltarse antes de armar la cancelación por entrada, y Use vuelve
-a la ruta nativa al levantarse sin reescribir usedown. No se usan flags de
-congelación globales ni se añade una cámara nueva o mobiliario físico.
-
-Daño efectivo, combate, desplazamiento, agua, pérdida de suelo, otra actividad,
-cambio de mapa o modificación externa del reloj interrumpen. Un sello, crafteo,
-recarga/carga, conversación o viaje pendiente impide comenzar. Viajar durante
-el descanso se rechaza. No se devuelven minutos ya transcurridos ni se otorga
-el resto de una recuperación al cancelar. Las finalizaciones son únicas.
-La sesión guardada conserva modo, duración, progreso, posición y último pulso;
-al cargar continúa si el contexto sigue siendo válido. La depuración de fechas
-de 0c no modifica ese reloj ni acelera el descanso.
-
-El Limbo conserva su fecha detenida y rechaza estas sesiones por duración.
-No cambian la piscina ni la regeneración previa de MAP01. El menú ofrece
-preparaciones voluntarias, sin objetos: Hambre/Sed 100%, Sueño 50% o 5%.
-No se aplican al abrir, cargar o viajar. ca_debug_rest_report sólo consulta;
-ca_debug_rest_hit solicita un impacto nativo de 1 para comprobar la interrupción
-en las alcantarillas vacías. No representa una prueba nativa ya realizada aquí.
-
-### Verificación previa de 0d
-
-317 aserciones sobre reglas, métodos de sesión y daño crítico extraídos del
-ZScript y compilados como C++, con sanitizador de comportamiento indefinido.
-33 condiciones se comprueban al iniciar y durante la sesión. Se verifican
-duración, pulsos únicos del reloj, recuperación, cierre terminal, entrada y
-liberación, predicción, fatiga y restauración lógica de campos. Las funciones
-del motor se sustituyen por dobles de prueba: esto no verifica compilación
-ZScript, física, serialización nativa ni aspecto visual de GZDoom.
-
-Se revisan además fuentes, nuevas rutas USDF, traducciones, ancho de textos,
-recursos y los cinco documentos. Al preparar 0d no estuvo disponible el motor; 0d1 incorpora la comprobación
-nativa de compilación. PRUEBAS_4_35_0d.txt conserva las pruebas jugables pendientes. El ZIP
-incluye sólo archivos modificados/nuevos. Se conservan mapas, audiovisuales,
-atributos, tarifas, recetas y la cronología aprobada en 0c.
-
-### Pendiente para pasar de 4.35 a 4.36
-
-1. Completar el bloque de descanso: avance acelerado con aplicación coherente
-   del tiempo e interrupciones. 0d/0d1 aportan la sesión a escala normal y 0e
-   incorpora sillas/catres y cámara; 0f añade bolsa y factores de comodidad.
-   0g agrega aceleración segura, mesas/comida y la regla de Lucidez del sueño.
-   0h incorpora comidas automáticas de mesa, digestión y mobiliario de MAP01.
-   0i corrige accesos/presentación y permite avance personal en Limbo sin calendario.
-   Falta integrar los futuros sistemas temporizados del mundo.
-2. Estado climático local común implementado en 0k: temperatura, viento,
-   precipitación y humedad por calendario/lugar, con perfiles de ensayo.
-   Pendientes aceptación de este bloque y valores regionales definitivos.
-3. Planificar eventos y viajes con el mismo reloj: horarios, duración de
-   rutas y resolución de acontecimientos durante espera/descanso o traslados.
-4. Comprobar la integración de esos bloques con guardados, viajes y la
-   excepción del Limbo, y cerrar las pruebas nativas de los incrementos.
-
-Después continúa 4.36, entorno móvil y peligros físicos; luego 4.37, Tarot y
-Trucazo. Se exporta la prueba para otros jugadores antes de V5. El trabajo
-heredado/transversal, clima sobre el cuerpo, habilidades de clase/raciales salvo Sueño ya implementado,
-refugios/propiedades, alimentación automática fuera de mesas y calidad amplia del descanso siguen
-en V5. No se inventa un número fijo de parches para cerrar 4.35.
-
-## Base aceptada: 4.35.0c — inicio de campaña y tiempo del Limbo
-
-El autor aprueba todas las pruebas de 4.35.0b. Fija el inicio de los eventos
-en el 3 de noviembre de 1889 a las 09:00 y establece que dentro del Limbo
-no transcurre el tiempo. Este delta sobre 0b incorpora esa regla temporal
-antes del siguiente incremento de descanso; V4.35 continúa con descanso,
-avance temporal interrumpible, estado climático y eventos/viajes programados.
-
-La fecha se inicializa automáticamente al confirmar el personaje. MAP01,
-la mansión del Limbo, detiene el reloj global. Al salir por la ruta narrativa
-a MAP02, la misma fecha comienza a avanzar. MAP02–MAP05, CADEV02 y futuros
-mapas sin una excepción explícita usan un tic de reloj por tic simulado:
-1 hora de juego = 180 segundos reales. No hay relojes independientes por mapa.
-Una entrada de depuración al Limbo detiene la fecha alcanzada, sin reiniciarla.
-No se habilita una conexión de regreso a MAP01.
-
-La suspensión corresponde a la cronología del mundo, no a la simulación del
-personaje. Se puede caminar, conversar sin pausa, usar, capturar, fabricar y
-completar las pruebas del Limbo. Necesidades, regeneración, daño y recargas
-conservan sus temporizadores y balance. Fuera del Limbo los diálogos siguen
-consumiendo tiempo de campaña; Escape conserva la pausa voluntaria nativa.
-
-Un guardado anterior no separaba tiempo exterior de tiempo del Limbo. Al
-actualizarlo, se fija una sola vez 03/11/1889 09:00 sobre su contador actual;
-se conservan CompletedDays/DayTics y todas las marcas de viajes ya registradas.
-No se asigna retrospectivamente una fecha civil a esos viajes. Los calendarios
-de prueba heredados de 0b se sustituyen por este inicio canónico. Los guardados
-nuevos de 0c conservan su instante al cargar y al recorrer los mapas del hub.
-
-La campaña y la vista de prueba usan anclajes separados del mismo reloj.
-DateSerial/CivilDayTics consultan la campaña por defecto; sólo la UI diagnóstica
-pide la prueba. Cambiar o quitar una fecha de ensayo no reinicia la campaña:
-al retirar la prueba se vuelve a mostrar la fecha real que siguió avanzando.
-En el Limbo se detienen ambos anclajes. Mundo indica explícitamente «El tiempo
-está detenido en el Limbo». La convención estacional mensual austral de 0b
-permanece como prueba: noviembre aparece como primavera; no se simula clima.
-
-### Verificación de 0c
-
-8.849 aserciones automáticas sobre métodos extraídos del ZScript y compilados
-como C++, con sanitizador de comportamiento indefinido: 27 casos de migración,
-4.320 proyecciones de campaña/prueba, fecha inicial contrastada con std::chrono,
-ritmo por mapa, primera medianoche, límites y aislamiento de la depuración.
-La restauración comprobada copia los campos del estado: no es serialización
-nativa de GZDoom. El validador documental/de recursos y la revisión de fuentes
-complementan esos cálculos. No hay motor disponible en este entorno; compilación
-ZScript, migración real, guardado/carga, viaje y presentación de 0c requieren
-las comprobaciones de PRUEBAS_4_35_0c.txt. El autor confirmó posteriormente
-todas las pruebas de 0c; es la base aceptada de 0d.
-
-La entrega contiene sólo fuentes/documentos nuevos o modificados y la guía
-de pruebas en raíz. MAPINFO, mapas, menús de conversación, entrada de controles,
-recursos audiovisuales, atributos y fórmulas del personaje se conservan.
-V4 llega hasta 4.37 y luego se exporta la prueba para otros jugadores; el
-trabajo heredado y transversal, incluidas las habilidades acordadas, sigue en V5.
-
-## Base aceptada: 4.35.0b — calendario y conversaciones sin pausa
-
-El autor aprueba todas las pruebas de 4.35.0a y autoriza continuar, incorporando
-las decisiones recientes sobre conversaciones y habilidades. Esta entrega es
-delta sobre 0a. Las habilidades siguen en el bloque V5 ya previsto; aquí se
-registran sus efectos concretos en SYSTEMS.md, sin presentarlos como jugables.
-
-CaelumCalendarRules convierte fechas civiles entre los años 1 y 9999, con meses
-de longitud real y reglas gregorianas de bisiestos. CaelumCalendarState guarda
-un anclaje respecto de CaelumWorldClock. No tiene un segundo ticker. Las
-partidas nuevas y previas comienzan sin fecha de campaña, pues el autor aún
-no la ha fijado. Los comandos de prueba permiten asignar una fecha explícita,
-preparar una medianoche a 12 segundos simulados y retirar esa fecha sin tocar
-el reloj, recursos, tareas, misiones ni marcas de viaje ya registradas.
-
-Mundo muestra fecha y estación cuando hay anclaje. El ciclo austral mensual
-de prueba usa diciembre–febrero, marzo–mayo, junio–agosto y septiembre–noviembre.
-Es una convención técnica identificada como prueba, no una simulación de
-equinoccios, luz, temperatura ni clima. La fecha histórica y su estación inicial
-siguen pendientes de definición autoral. Los cambios del calendario de prueba
-no disparan recompensas ni eventos y no equivalen a descansar o viajar en el
-tiempo. El siguiente incremento de V4.35 abordará descanso y avance temporal
-con sus interrupciones, seguido del estado climático y eventos programados.
-
-MAPINFO usa UnFreezeSinglePlayerConversations en los seis mapas del proyecto.
-El menú común CaelumPalomoConversationMenu omite la acción de Ticker que pausa
-las conversaciones nativas a los 20 tics. Los menús derivados conservan formato, respuestas, Q/Atrás, sonidos y presentación de captura.
-Esta ruta cubre también conversaciones reabiertas desde snapshots anteriores;
-no escribe las flags de nivel de sólo lectura ni fuerza la pausa global.
-El menú voluntario de Escape conserva su comportamiento nativo.
-
-La propuesta adicional de cerrar automáticamente un diálogo ante cualquier
-daño no se implementa en 0b. Debe comprobarse y completarse su interacción con
-la cancelación nativa; el cambio autorizado aquí es mantener el mundo activo.
-Socialización deberá consumir ánima durante la conversación cuando se
-implemente su toggle. No se añade un coste especial por leer un diálogo.
-
-### Verificación de 0b y límite de la entrega
-
-La base se reconstruyó desde las fuentes del autor, con todos los deltas de
-4.33.0af a 4.35.0a. El validador existente pasó antes de editar. No se dispone
-del ejecutable de GZDoom en este entorno y su descarga no pudo completarse.
-Por ello, no se afirma compilación ZScript, ejecución nativa, guardado/carga
-ni prueba visual dentro del motor para 0b. Esas comprobaciones están descritas
-en PRUEBAS_4_35_0b.txt. Posteriormente el autor confirmó todas sus pruebas;
-0b queda aceptado como base de 0c.
-
-La aritmética se extrae de las funciones ZScript y se compila como C++ para
-compararla con std::chrono: 3.652.059 fechas civiles, 7.840 combinaciones de
-entrada válidas/inválidas y 1.728 proyecciones del anclaje. También se revisan
-las estaciones mensuales y los límites enteros. Esta prueba comprueba los
-cálculos; no sustituye al compilador ni a la máquina virtual de GZDoom.
-El validador documental/de recursos termina sin errores. La revisión confirma
-cinco clases USDF bajo el menú común, ocho claves nuevas en ambos idiomas y
-494 MU como ancho conservador máximo de la fecha dentro de 544 MU disponibles.
-MAP01–MAP05, CADEV02, fuentes, sonidos, sprites y modelos conservan sus bytes.
-
-## Base aceptada: 4.35.0a — reloj global persistente
-
-El autor confirma «Todo correcto ahora sí» para 4.34.0e. Quedan aceptadas
-las pruebas de sello, crafteo, recuperación de Use y viaje. Se continúa con
-el reloj global, primer incremento de 4.35; el calendario, descanso, clima
-y eventos mantienen su lugar dentro del bloque.
-
-CaelumWorldClock registra jornadas completas y tics del día en un Inventory
-nativo del personaje. CaelumWorldClockTicker es un observador estático sin
-estado temporal propio: consulta ese Inventory y avanza una vez por tic de
-simulación, después de confirmar el perfil. También se registra al cargar
-un guardado que no incluía este sistema. La base actual es individual.
-
-Se conserva la escala aprobada: 1 hora de juego = 180 segundos reales de
-simulación, 24 horas por día. A 35 tics/s, la hora tiene 6300 tics y el día
-151200. Los contadores enteros evitan acumular redondeos. TAB > Mundo muestra
-«Tiempo registrado», expresado en días transcurridos y HH:MM, junto a la escala.
-No equivale a una fecha narrativa ni atribuye estaciones o cambios de luz.
-
-El motor determina qué tiempo se simula. Pausa, menú nativo y conversaciones
-que pausan el juego detienen el reloj. El Diario no pausa la simulación;
-trabajar en una estación sigue consumiendo tiempo normal. Guardar/cargar
-conserva el contador; viajar y volver a un mapa del hub conserva el reloj
-viajero, sin restaurar la hora del snapshot antiguo del lugar. No se suma
-el tiempo que GZDoom estuvo cerrado ni el de una carga. Volver a una partida
-guardada restaura su instante guardado. Una partida nueva tiene otro registro.
-
-Un guardado anterior empieza a registrar desde cero al instalar 0a; no se
-infiere duración pasada a partir del mapa o las misiones. Las salidas/llegadas
-nuevas de alcantarilla guardan marcas del mismo reloj. No se fechan viajes
-históricos de 0e ni se añade duración a rutas todavía sin tiempo definido.
-El informe netevent ca_debug_time_report sólo consulta. El informe de viajes
-muestra las marcas cuando existen. No se alteran los costes o temporizadores
-aceptados de necesidades, combate, sellos y fabricación.
-
-Entrega delta sobre 4.34.0e, con README inglés, cinco documentos canónicos y
-PRUEBAS_4_35_0a.txt en la raíz. V4 continúa hasta 4.37; después se prepara la
-exportación para otros jugadores. Todo el trabajo heredado y transversal
-sigue en V5, comenzando por la reorganización del código en V5.0.
-
-### Verificación nativa de 0a
-
-GZDoom 4.14.2/Linux, con Freedoom 0.13.0 y llvmpipe: 35 observaciones
-correctas, sin errores de script ni abortos de ejecución en los seis casos
-finales. Nueve comprueban creación, escala, Inventory oculto único, límites
-enteros de hora/día, saturación, consulta sin cambios y avance exacto por tic.
-Los límites extremos se preparan en un contador aislado; no representan
-jornadas completas transcurridas durante una prueba manual.
-
-Siete observaciones usan teclado real: pausa nativa, menú Esc, conversación
-USDF, sus respectivas reanudaciones y Diario abierto con simulación activa.
-Mundo se inspecciona en una captura nativa en español con cinco visitas y tres
-salidas preparadas para verificar el espacio disponible. La nueva línea cabe
-sin superponerse a los registros ni a los controles existentes.
-
-Siete observaciones recorren MAP02 → MAP03 en caravana y el regreso por una
-reja con Use real. El reloj acompaña al personaje, conserva el inventario y
-fecha ambas rutas; volver al hub no recupera la hora antigua de MAP02.
-Reconciliar de nuevo una llegada resuelta conserva sus marcas y contadores.
-Tres observaciones cargan el guardado nativo de ese recorrido y verifican el
-instante guardado, la llegada única y la continuación exacta por tic.
-
-Se crea además un guardado ejecutando las fuentes originales de 4.34.0e,
-después de una llegada real a MAP03. Se superponen las fuentes 0a en la misma
-ruta antes de cargarlo. Seis observaciones comprueban el reloj nuevo desde
-cero, el historial anterior sin fechas inventadas, la llave y reservas
-conservadas, la caravana disponible y las marcas del primer viaje posterior
-a la actualización, incluido el regreso al snapshot anterior de MAP02.
-
-Las tres observaciones restantes cruzan un fin de día preparado usando tics
-reales y comienzan otra partida mediante el motor: el nuevo personaje tiene
-un solo reloj y empieza desde cero. No se repite toda la historia de MAP01
-ni toda la fabricación ya aceptada. Fixtures, motor, IWAD y guardados quedan
-fuera de la entrega. El validador del proyecto comprueba los cinco documentos
-actualizados y termina sin errores. El autor confirmó después todas las pruebas de 0a en Windows.
-
-
-## Base aceptada: 4.34.0e — medios para comprobar actividades y viaje
-
-El autor aprueba lo que pudo probar de 0d, pero no pudo comprobar sellos o
-crafteos porque las alcantarillas estaban vacías. Esas dos pruebas no se dan
-por aprobadas. 0e completa sus medios antes de avanzar al reloj de 4.35.
-
-En cada alcantarilla MAP02–MAP05 hay un banco, un aserradero y una forja
-nativos cerca de la llegada. La oferta existente TAB > Mundo > C/Y agrega
-«Preparar sello» y «Preparar crafteo». Son ayudas de diagnóstico voluntarias:
-no inician un traslado, una canalización ni una tarea por sí mismas.
-La primera reutiliza o concede quintaesencia T1, la equipa mediante la ruta
-normal y recarga adrenalina al máximo vigente; su texto avisa que también
-quita la espera del sello. No provoca un combate ficticio. La segunda enseña
-Mango y completa hasta 40 unidades de madera para el lote x10. Las entregas
-respetan capacidad de carga. Repetir no duplica el sello poseído ni añade
-madera sobre ese lote. Cargar o viajar no reponen recursos.
-
-Usar una estación de esta red, después de preparar la receta, preselecciona
-Mango T1, lote x10 y eficiencia 100%. Son valores existentes; el tiempo de
-trabajo se calcula con la Destreza real. Enter inicia la fabricación normal,
-Q deja la tarea pendiente y TAB > Mundo > C debe rechazar el viaje. Volver
-con Usar permite cancelar con C o terminar. Para el sello se usa su control
-habitual con un arma equipada, y se prueba tanto cancelación como agotamiento.
-
-Las estaciones se reconstruyen una vez en guardados anteriores y mantienen
-su grupo y estado dentro del hub. Los mapas, puntos de llegada y seis rutas
-son los existentes. No hay regreso a MAP01 ni cambios de misión, atributos,
-receta, coste, consumo o efecto de quintaesencia. La entrega es delta sobre
-0d con PRUEBAS_4_34_0e.txt fuera de docs. Después de aceptar estas pruebas
-sigue V4 hasta 4.37, exportación para otros jugadores y trabajo heredado y
-transversal en V5 (primero refactor V5.0).
-
-
-La prueba real de iniciar/cerrar/reanudar reveló que el Diario consumía
-KeyUp de +use al abrir Oficios. 0e deja llegar esa liberación al motor para
-que el siguiente Use funcione después de Q; no cambia las pulsaciones de
-navegación aprobadas. La secuencia se comprueba sin liberar el botón mediante
-comandos de depuración ni asignar CraftingTaskActive/CombatChannelModeActive.
-
-### Verificación nativa de 0e
-
-GZDoom 4.14.2/Linux, con Freedoom 0.13.0 y llvmpipe: 50 observaciones del
-recorrido jugable verifican la oferta por Mundo/C, equipamiento nativo,
-User2 real, bloqueo con canal activo, cancelación, agotamiento natural,
-recuperación de Use, receta y lote disponibles, Enter, Q, bloqueo por tarea
-pendiente, reanudación, cancelación y producción con el avance T existente.
-Se recorren los seis sentidos en caravana; los cuatro mapas permiten usar
-sus estaciones, y el hub conserva grupos, materiales, producto e ItemId del
-sello. Las ayudas no crean un viaje ni se repiten por cargar o cambiar de mapa.
-El perfil de diagnóstico iniciado por consola se equipa con una daga nativa
-para representar el arma que el jugador trae de MAP01. No se asignan los
-booleanos de canal ni fabricación para simular que se inició una actividad.
-
-Siete observaciones adicionales cargan un guardado nativo con la fabricación
-real pendiente: conserva reservas y pausa, sigue rechazando el viaje, reanuda
-con Use y permite cancelar sin consumir ni duplicar. Después se confirma una
-caravana real y se registra una sola llegada. Los fixtures y guardados son
-privados de verificación y no forman parte del ZIP de fuentes.
-
-La compatibilidad se comprueba con un guardado creado ejecutando las fuentes
-originales de 0d, dentro de una confirmación de caravana. Se superponen las
-fuentes 0e en esa misma ruta antes de cargarlo. Cuatro observaciones verifican
-la página restaurada sin salida automática, tres estaciones tras cerrar el
-diálogo, inventario/necesidades conservados y preparación nueva disponible
-sin fabricar historial de viajes. No se sustituye esa comprobación por una
-partida nueva. La validación del autor en Windows sigue pendiente.
-
-Tres comprobaciones adicionales rechazan acciones de suministros fuera de
-su conversación e identificadores inválidos, sin conceder objetos ni crear
-viajes. Total: 64 observaciones nativas correctas en esta verificación.
-La oferta española y el puesto físico de MAP02 se inspeccionan en capturas
-nativas: las seis respuestas y las tres estaciones son visibles. El validador
-del proyecto termina sin errores; los cinco documentos tienen versión 0e.
-Se conservan por comparación de bytes mapas, assets, reglas, atributos y el
-jugador. Sólo el Diario cambia la liberación de Use, y la presentación de
-estaciones se limita explícitamente a las alcantarillas de prueba.
-
-## Incremento anterior: 4.34.0d — caravanas y registro de viajes
-
-El autor confirma «Todas las pruebas dieron correcto» para 4.34.0c y autoriza
-el siguiente parche. Se acepta la red MAP02–MAP05, sus seis sentidos y el hub,
-con la prohibición de volver a MAP01. Continúa el orden V4 hasta 4.37,
-exportación de prueba para otros jugadores y después todo lo heredado y
-transversal en V5, empezando por el refactor V5.0.
-
-0d incorpora la base de servicio de caravanas mediante una prueba explícita
-en TAB > Mundo > C (Y del mando). Ofrece únicamente las conexiones de la
-alcantarilla actual. El diálogo nativo separa selección, vuelta a destinos,
-cancelación y confirmación. No es un NPC de campaña ni asigna una facción;
-la prueba no cobra, no crea vehículos ni simula una duración.
-
-Los accesos físicos y la caravana comparten CaelumTravelService. Antes de
-salir se comprueban perfil, vida, origen, destino disponible, actividad,
-predicción, partida individual y ausencia de otro traslado pendiente. Los
-accesos conservan además sus comprobaciones de colocación, alcance y visión.
-El motor mueve el inventario real y conserva el hub. El regreso narrativo
-MAP01 → MAP02 sigue con su confirmación y saneamiento exclusivos.
-
-CaelumJourneyState, un Inventory nuevo y oculto, registra último trayecto,
-modo, secuencia y cantidades de llegadas/interrupciones. Una llegada sólo se
-cuenta en el destino esperado y con su conexión pendiente. Repetir la consulta
-o cargar una llegada resuelta no duplica contadores. Otra llegada, una marca
-incompatible o cargar una salida aún en origen la interrumpe sin reintento.
-La consulta de un guardado 0c no inventa historial; éste comienza al viajar.
-Mundo muestra el último viaje y ofrece la prueba. El informe de consola
-netevent ca_debug_travel_report es de sólo lectura.
-
-La base de servicios y registro de 4.34 queda implementada; los horarios,
-duraciones e integración temporal de eventos continúan en 4.35 con el reloj.
-Los transportes, minimapa de viaje, incidentes y desvíos del diseño amplio
-siguen planificados y no se presentan como contenido jugable de este ensayo.
-El siguiente incremento previsto es el reloj global de 4.35, sujeto a la
-validación del autor de 0d. El refactor del código permanece en V5.0.
-
-Entrega delta sobre 0c con README inglés, cinco documentos canónicos y
-PRUEBAS_4_34_0d.txt fuera de docs. No incluye motor, IWAD, guardados ni fixtures.
-
-
-### Verificación de 0d y límites
-
-En GZDoom 4.14.2 nativo, con Freedoom 0.13.0 y llvmpipe/Linux, se completan
-57 observaciones de comportamiento: 27 de guardas y conciliación, 21 de
-selección/cancelación/seis sentidos y Use real, dos de conversación guardada,
-cinco de migración desde fuentes originales 0c y dos de recarga en destino.
-Los casos de conciliación preparan marcas de salida para probar rechazo,
-interrupción y resolución sin atribuirles recorridos reales.
-
-La prueba de teclado entra desde Mundo con C, usa respuestas explícitas de
-USDF y conserva carta sellada, llave de plata, reputación y necesidades durante
-los traslados. La conversación guardada estaba en la confirmación de MAP04;
-al cargar continúa allí sin salir sola y una confirmación produce una llegada.
-El guardado 0c se creó ejecutando sus fuentes originales y se cargó tras
-superponer 0d en la misma ruta de prueba. La Caja conserva ItemId 1, junto a
-llave, carta sellada, reputación 47 y necesidades, antes y después del viaje.
-El guardado posterior contiene los snapshots MAP02/MAP03 y el registro de
-llegada; cargar no vuelve a contarlo. No se simula una nueva partida como si
-fuera un guardado anterior. No se repite toda la historia ni toda la fabricación.
-
-Mundo se inspecciona en español e inglés con cinco visitas y tres salidas
-preparadas para verificar su disposición completa; la página de confirmación
-se captura durante la conversación nativa. Se conservan los mapas, assets,
-atributos, inventario narrativo y entradas aceptadas; la nueva tecla sólo
-actúa en Mundo de las alcantarillas. Validación del autor en Windows pendiente.
-
-## Base aceptada: 4.34.0c — red de alcantarillas de prueba
-
-El autor confirma «Todo correcto» para 4.34.0b. Autoriza conectar MAP02 con
-otros mapas de alcantarilla, destinados a pruebas masivas, de Tarot y de los
-sistemas siguientes. Deja a criterio de implementación las conexiones, salvo
-volver a MAP01. Esta autorización amplía el espacio de pruebas de V4; la
-campaña completa y el trabajo heredado/transversal conservan su lugar en V5.
-
-Se incorpora una red en estrella: MAP02 conecta con MAP03, MAP04 y MAP05;
-cada ramal vuelve a MAP02. No hay acceso normal de vuelta a MAP01. Las seis
-direcciones tienen registros independientes. El regreso narrativo conserva
-su identidad 1, confirmación, limpieza del Limbo y llegada con la Voz.
-
-| Mapa | Espacio y finalidad | Acceso desde MAP02 |
+# Caelum Argenteum — Project, status and roadmap
+
+Documentation version: **4.36.1** — 2026-09-23.
+
+## 4.36.1 — Documentation and contribution workflow
+
+Issue [#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) establishes
+English maintained documentation, numeric patch versions, repository-first
+delivery and one persistent [author-test queue](../pending_test.txt).
+The gameplay baseline remains 4.36.0i. This patch changes no game rule, balance,
+asset, map geometry, localization or save schema; only the two current-version
+diagnostic labels change in gameplay sources.
+
+The release-specific sections below preserve their original scope, accepted
+decisions, evidence and then-pending work. Older ZIP/application guides are
+historical records. Current installation is in [README](../README.md), and
+only the root queue defines outstanding actionable author checks. Old test
+references do not reopen already accepted work. Implementation evidence and
+remaining acceptance are recorded in [HISTORY](HISTORY.md).
+
+Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.2.
+Intermediate commits and later acceptance retain the originating patch version.
+The larger roadmap remains in force. Proper names, identifiers, literal game
+dialogue, formulas and original external source material retain their spelling;
+English explanatory text does not change the bilingual game localization.
+
+## 4.36.0i — maze, flail, rations and approved weight
+
+[ACCEPTED BY THE AUTHOR] Proposed static-weight formula, bows except thickness,
+carriage and other 0h tests. It is authorized to rebuild MAP02 without preserving previous saves. This delivery is incremental on the complete 0h project.
+
+[IMPLEMENTED AND COMPILED IN GZDoom g4.14.2]
+
+- Flail: +22,5° anti-clockwise from 0h, half of the exposed handle sunk into the hand; chain/ball in
+  independent back layer, vertical at rest and complete counterclockwise turn when
+  attacking. Damage and attack rate are preserved.
+- Normal/long bows T1–T3: double transverse thickness only in the first person. Curvature,
+  palette, hands, string and arrow maintain the accepted rules.
+- Food ration 200 g; water 200 ml/200 g. At 80 kg, 2 kg or 2 L restore 100 percentage
+  points after completing its ten portions.
+- MAP01 tables filled once: four small ×4, one normal ×18 and one large ×60 =94 rations.
+  No periodic replenishment.
+- Static weight due to excess capacity, percentage of maximum health, native support, split between
+  supports and retained fractional remainder. Formula in SYSTEMS.
+- MAP02: three 49 room sectors, 96 Mandingas, 45 traps, three keys, 39 chests with 195
+  different T1–T3 equipment pieces; 120 rations of each provision.
+- End with Zupay, Ace (1) of Cups and exit to MAP07. The other test accesses are left in the
+  final chamber. The hub retains the objects and the loot removed.
+
+[VERIFIED] Compilation and native tests in Linux with GZDoom 4.14.2 and development Freedoom. Real inventory of chests, locks, card, food, water, tables, weight and spin
+of the flail; coverage and static routes of the map. Reports separate those checks from a complete human playthrough. [PENDING] Visual acceptance and playthrough on Windows 11; manual save/load interrupting traps/combat. The original guide was PRUEBAS_4_36_0i.txt; current outstanding checks are carried in [pending_test.txt](../pending_test.txt).
+
+### Major Arcana and block closure
+
+It was not possible to confirm another Major Arcana passive besides El Loco, La Estrella
+and El Sol. Old ideas for other Majors are not converted into approved assignments. The Ace (1) of Cups applies the current Minor rule. There is only front art of El Loco on this base;
+the Ace of Cups uses the shared reverse and its textual identification, without inventing a
+front.
+
+To close this increment, the author's acceptance is missing. To close all 4.36, harmful
+surfaces, avalanches, rams, catapults and mobile sectors remain on the roadmap, their
+integration and validation before extracting Impact Physics. The following sections record
+previous deliveries; they do not reverse the status 0i.
+
+
+## Historical 4.36.0h — bow reference, clockwise rotation and served tables
+
+[ACCEPTED BY THE AUTHOR] The rest of the 0g tests were good. The accepted shapes,
+proportions and palettes are preserved. The new visual review is limited to the flail and
+grip marked on the attached screenshot.
+
+[IMPLEMENTED IN SOURCES] Flail: 90° clockwise relative to 0g (+28° → −62° native), with the grip shifted to keep it in frame. Bows: upper index finger behind; section marked in blue behind the thumb and the other phalanges.
+
+[IMPLEMENTED IN SOURCES] Real initial food at all MAP01 tables: one ration per seat,
+discounting food already present. Six tables, 26 seats. Persistent initialization for new
+games and tables from previous saves; does not replenish what is consumed or replace objects from
+a full table.
+
+[IMPLEMENTED IN SOURCES] Native ceiling: pulse damage expressed in percentage of maximum health
+for player and NPC Caelum. Current value 10 → 10% per pulse. Maintains timing and native
+immunities; does not convert impacts again.
+
+[PROPOSED, NOT ACTIVATED] Damage from stationary mass resting on the character. The formula of sustained
+impulse was found, but not an approved static formula. Damage proportional to the overload
+of the actual capacity is proposed; k=10% maximum health per second for each additional
+capacity. Formula and examples in SYSTEMS. The premise of not inventing balance requires
+the author's decision on this rule.
+
+[VERIFIED LOCALLY] Resources, rotation/masks, percentage arithmetic and food conservation
+model. GZDoom was not executed nor was native save verified. Increment tests in PRUEBAS_4_36_0h.txt.
+
+### What is needed to close 4.36
+
+1. Accept these corrections and verify boot, tables, damage and saves.
+2. Agree and implement the static weight: stacked masses, split between supports, victim
+   release and absence of double damage with landing.
+3. Complete the planned bases for surfaces with their own damage, avalanches, rams, catapults and
+   mobile sectors using the physics core.
+4. Validate the integration of those mechanisms into the gallery, persistence and restart.
+   Extract Impact Physics only after validating its use in Caelum.
+
+0g tests accepted are not reopened except for regressions of this delta. After 4.36
+corresponds 4.37 (Tarot/Trucazo), and then export V4.
+
+## 4.36.0g — proportions, flail and palette
+
+[IMPLEMENTED IN SOURCES] Flail T1–T3: +28° rotation to the left at rest, more marked than +14° of 0f. It was found that kind 8
+reaches CaelumFirstPersonLayers; the observed failure is not attributed to a cache or run
+path that could not be replicated in the engine.
+
+Axe with a 50% larger head and separate handle. Halberd with its shaft lengthened along its axis, without enlarging blade, ribbons or hands. Greatsword with the same shape and
+less saturated/darker colors in view, inventory and ground sprite. Bows: index finger behind the wood; thumb and phalanges of the other three fingers in front. Arrow continues on
+top layer.
+
+[PRESERVED RULE] The axe secondary is documented as blunt, stronger and shorter-ranged than the slashing primary. Combat, actual reach, resources and physics were not modified with this presentation review.
+
+[VERIFIED LOCALLY] Texture dependencies, order of states, pivots, clips, palettes, preservation of silhouettes and sources. Reconstructions of the three tiers and three phases of both bows
+were inspected. [PENDING] Start, saves and visual acceptance in GZDoom 4.14.2 on Windows
+11: the engine was not executed. The recovered base is partial. Application on 0f;
+PRUEBAS_4_36_0g.txt guide.
+
+The above sections are history. The author's test indicated that the 0f flail was
+still without the correction expected and that the palettes were vivid.
+
+## 4.36.0f — corrections after the author's test
+
+[CORRECTED IN SOURCES] Rotation sign of hatchet, machete, axe, war axe and halberd: its
+upper ends lean to the right. Flail incorporated to the modular layers, with inclination
+to the left. Hatchet 24 MU lower than the grip; NoTrim canvases and absolute pivots.
+
+[INTEGRATED ART] Greatsword blade enlarged in T1–T3, also in inventory and ground sprite. Bows with muted palettes, fingers behind, thumb in front and arrow in the top layer. String
+built with native vertices.
+
+[REQUESTED ADJUSTMENT] MAP08 Rolling Rock: 8 → 32 MU/tic, without forced death or change of the
+damage curve. Compatibility on the next activation of saves with the old value. A released rock is not re-launched.
+
+[AUDITED] Rock impacts use mass/speed. The ceiling uses native Crush at 10 points per
+pulse. The motionless rock supported on a victim does not apply continuous pressure due to
+its weight. Formulas and limits in SYSTEMS.md.
+
+[VERIFIED LOCALLY] Structure, data, resources and views reconstructed with the order of
+4.14.2 renderer transformations. They are not game screenshots. [PENDING] Compile and test in
+GZDoom 4.14.2 / Windows 11. The engine download failed and the recovered base is partial.
+Guide: PRUEBAS_4_36_0f.txt.
+
+The sections prior to 0f are history; 0e's orientation and string statements were refuted
+by the author's subsequent test.
+
+
+## 4.36.0e — corrections requested after testing 0d
+
+[PROGRAMMED] Fists with continuous forearms and the same glove of the other weapons; left
+and right come from the same original PNG, reflected by TEXTURES. The original set of
+hands is also used for both bows. The left hand is in a layer before the right. Glove
+sizes independent of the size of the weapon.
+
+[PROGRAMMED] Hatchet, axe, war axe and halberd tilted to the right with the handle seated
+on the grip. +20% sword and greatsword +15% relative to 0d. Normal recurve bow and longbow with continuous limbs, both in T1–T3, with a string between the tips and hand, and visible
+arrow only if loaded.
+
+[PROGRAMMED] Trimmed MAP01 chord at the first revelation of the Arcanum. Original level up
+sound by confirming its capture and applying the bonus. [CONFIRMED BY THE AUTHOR] Correct
+0d transitions; its logic is preserved.
+
+[PROGRAMMED] Carriage with front axle and two front wheels: four wheels in total. On the
+boat, non-solid Use volume in front of the hull, in addition to the sign; the warning
+remains centered and retains the requirements of boarding. New parts are added once when
+preparing vehicles, also when loading.
+
+[VERIFIED LOCALLY] Structure of changed sources and resources, references, layers, OBJ
+geometry and reconstructed weapon/model views. GZDoom was not run for 0e: the complete
+baseline had not been recovered and no engine was installed. Changed files start from
+their latest recovered versions. [PENDING] Compilation and gameplay/visual testing in
+GZDoom 4.14.2 / Windows 11. Instructions: PRUEBAS_4_36_0e.txt. The following sections are
+historical.
+
+## Previous base: 4.36.0d — grips, fists and visible mechanisms
+
+Delta on the complete project 4.36.0c. The author’s observations and his four attached
+references are taken care of. Dagger and magic weapons retain the approved art. Only the
+weapon is inverted into hatchet, machete, axe, war axe and halberd; the hands retain
+their laterality. The hatchet is held lower on its handle. Axe, greatsword, war axe and
+halberd increase in size; the last three show two hands. The sword adopts the small hands
+of the new package. All families move down and to the left when put away.
+
+Crossbow and carbine are presented below, with the hands below and the left support
+centered. The empty carbine uses rest, without permanent flash. Both bows lower and show
+the back of the left hand on the grip, following the photograph. This grip and a pair of
+closed fists are generated; the other corrections use native transformations of existing
+art. Bullets on the ground reduce their scale from 0,25 to 0,10, including those saved.
+
+CaelumUnarmedWeapon replaces the Fist fallback. It is equipped when left without a usable weapon and after cleaning objects of MAP01→MAP02. It retains the range, damage and cadence
+of the previous fallback, with its own presentation; does not add a family of equipment or
+modify the balance of the weapons of the catalog.
+
+Looking at a caravan/carriage, boat, table or chair within reach shows "Use:" and its name.
+Mechanism 4 is identified as local teleport and confirms arrival by message, flash and
+target rune. A MAP08 side lever rearms the gallery, also in 0c saves; it rejects restart
+if the crusher moves or there are bodies in the areas to be restored.
+
+It reproduces the visual absence of hub trips: GZDoom g4.14.2 suppresses the wipes during
+the first 35 rendered frames. The patch retains the departure view during that lock and then
+executes the native carriage/caravan crossfade or the melt of the boat. Screenshots from the renderer confirm both effects. The accepted El Loco burn, provisions, travel time, sound
+clips and global wipetype preference are retained.
+
+Validation: GZDoom g4.14.2/Linux, 60 family/tier selections, real actions and reloads,
+narrative return with fists, two trap resets, uses, confirmed trips and loading an
+authentic 0c save. Native rendering was reviewed in 4:3 and 16:9. The eight WADs and
+previous state blocks are preserved. Final visual/gameplay acceptance on Windows 11
+belongs to the author; PRUEBAS_4_36_0d.txt accompanies that release. 4.36 remains open and
+the immobilization rune remains under review only. The following sections are historical
+and do not supersede these corrections.
+
+## History: 4.36.0c — first person, audio and corrections
+
+Delta on the complete 4.36.0b project. The author accepts the lever design and asks for
+half size, reports that mechanism 4 was not activated and asks about the rock mass. He provides the packages Primera Persona v1 and Audio Events v1 (1.4 revision) and requests
+crossfade for the carriage and burn for El Loco.
+
+The lever uses 0,045 scale, also on serialized actors. It reproduces a pressure failure on
+the edge of the teleport plate: 0b required the character's center to enter the radius. It
+now counts the support of his feet. It maintains the guards of height, free destination
+and absence of telefrag; the report explains rejections of the latest attempt. The exact
+case of the author's save is not available; a occupied destination continues to be
+deliberately rejected.
+
+19 new first-person families, T1/T2/T3, are connected to the inventory and the real
+selectors. The already accepted sword rig remains active; the three variants of sword
+provided are available as resources. The 101 PNG and 93 compositions come from the
+author's package, without regenerating art. Visual phases follow ammunition, reload,
+aim, blocking and effective callbacks.
+
+The six supplied OGGs are incorporated and the five main uses are connected: lever,
+carriage, boat, tarot capture and rolling rock. The main ship clip (3–9 s) is chosen.
+The tarot clip preserves revision 1.4 exactly. El Loco MAP01→MAP02 uses burn; carriage, crossfade; ship, melt. The request is created only when confirming a crossing and
+does not modify wipetype.
+
+The large granite sphere weighs 38170 kg (38,17 t). The native fall test with Toughness 13 and
+without armor caused 1343/1780 points of health damage. The actual mass, speed and defenses are
+printed in the diagnostic report. An old boulder that does not fit still retain its size and mass of
+0a; its expansion within occupied geometry is not forced. The new patch does not rebalance
+the impact core.
+
+MAP01–08 and previous states of weapons/actors retain their bytes/indices. Tests run in
+GZDoom g4.14.2/Linux; playable, visual and mixing acceptance in Windows 11 corresponds to
+the author. Guide: PRUEBAS_4_36_0c.txt. The 4.36 stage remains open; the immobilization
+rune remains only under review.
+
+## History: 4.36.0b — traps, levers and presentation
+
+Delta on the complete project 4.36.0a. The author confirms the other tests of 0a correctly
+and asks to correct the size of the bull and rocks. Approves explosive magic mines,
+teleport and crushing; asks for a lever on column, audible transitions and a melt effect for boat trips.
+
+These three traps are implemented in MAP08. The MAP01–08 maps retain their WADs byte for byte. MagicHazardRevision of the existing controller incorporates the new actors once,
+also in old saves. The trap and the already used mechanisms retain their status. The used levers are shown down.
+
+Bull: general visual increase of the 25% and normalization of each running view relative to rest; its anatomy, mass, collision or attack is not changed. The PNGs provided
+by the author retain their bytes. 0a rocks were small test granite; the hazard ones
+receive an irregular sphere of 96 MU of diameter, central pivot and spherical granite mass
+(38170 kg). The damage follows the current physics core and depends on the conditions
+of impact, without automatic death.
+
+The three traps, dimensions and values of MAP08 are test configurations; they do not set
+narrative locations or definitive balance. The rest of 4.36 continues with special
+surfaces, avalanches, rams, catapults and other mechanisms. 4.37 is not advanced nor is
+Impact Physics yet extracted as an external package.
+
+Proposal for revision only: a temporary immobilization rune. Duration, endurance, cost or
+damage is not implemented or assigned without the author's decision. gameplay/visual
+revision of 0b in Windows 11 remains pending; follow PRUEBAS_4_36_0b.txt. The above
+sections are history.
+
+## Approved base: 4.36.0a — trapdoor and first physical hazards
+
+The author confirms "All correct" for 4.35.0q: 4.35 is approved and closed. Authorizes to
+start 4.36 and adds ground traps that open when you step on them. This delta applies to
+the complete 4.35.0q project.
+
+Implemented: Reusable trapdoor on a real pit, gravity drop, rolling rock and suspended rock
+released with Use. MAP08 incorporates a gallery with pit and exit ladder, connected to
+MAP05 by a native access. MAP01–07 WAD retains its bytes and allows to load its saves. The
+support is only removed when stepping on the lid; passing above or below does not fire it.
+It remains open once activated and its state belongs to the map/hub.
+
+The rocks reuse granite, mass and existing models. The impacts use the current formulas,
+with an additional vertical adaptor and explicit environmental origin; they do not grant
+combat adrenaline or add Doom thrust to the already resolved core. Saves, diagnostic report and TXT allow you to review the mechanisms. The configuration of the gallery is
+trial; it does not fix narrative locations or a definitive new balance.
+
+The author approves the remaining tests of this increment; the requested visual
+corrections are addressed in 0b. 4.36 is still in development: surfaces with own damage,
+avalanches, rams, catapults and large moving sectors. 4.37 is not advanced nor yet
+extracted Impact Physics as an external package. The subsequent sequence remains 4.37 →
+test export → V5.0 → V5.1.
+
+The sections by version that follow retain the history; their old pending checks do not reopen
+the blocks that the author has already approved.
+
+## Approved base: 4.35.0q — sprites v4 and seated consumption
+
+Delta on the complete project 4.35.0p, tested and approved by the author. The author
+provides Caelum_Argenteum_Sprites_Iconos_v4(1).zip and modifies only the rate of seated eating/drinking: changes from 1/10 to 1/3 of the ordinary rate. Each complete
+portion takes 30 seconds of simulation, retains its ten pulses and consumes the same
+units/liters. Standing up resumes the normal rate.
+
+The visual package is integrated into the current states of nine characters: breathing, running, Domingo/Palomo/Mandinga/Zupay walks, Palomo resting poses, Bull/Ronnie replacements
+and icons, including the bag. The new states are attached to preserve 0p's save indexes.
+Palomo retains its dialogues and exit route; its pose responds to the real movement. The
+player retains priority of crouching, attack and rest.
+
+The 0p travel, reserves, calendar, vehicle and map systems are approved. The author also
+approved the visual integration and rhythm of 0q. 4.35 is closed; 4.36 begins with the
+increment described above.
+
+## Approved base: 4.35.0p — reserves and first vehicles
+
+Delta over 4.35.0o. The author approves 0n/0o except for the corrected points here:
+consumption sitting from inventory/Box and escape conflict. Authorizes a covered carriage
+and a small merchant ship with sails and oars, with its facilities on both coastal maps. The
+author approved these changes by requesting 0q.
+
+The table first uses its own rations, then carried rations and finally those in the player's own Box. It retains the approved seated rhythm, the volume of the portions, digestion and
+both independent toggles. It stops when satiating, exhausting the reserve or getting up.
+Empty containers and remaining stacks are not extracted. Q/B cancels the estimate and
+returns from the calendar/detail; Escape opens the native pause and allows to return to
+the same screen.
+
+MAP06 and MAP07 have a cargo carriage covered inside a ranch. MAP06 retains its port and
+adds the merchant ship; MAP07 adds a wooden dock and another merchant ship. Using the carriage or
+boarding sign opens the estimate of the 500 km route. They are testing services with
+driver/draft team and guards, no fee for now; they are not free driving vehicles.
+
+Carriage: 3 km/h while moving, 16 h traveling / 8 h camping. Merchant ship: 5 knots (9,26 km/h),
+continuous navigation with favorable wind; the passenger sleeps during the crossing. The
+calendar includes only time actually elapsed; sleeping on board does not add a second time
+those hours. Speeds and dimensions are nominal values representative of design, not
+measurements of a carriage or Argentine ship historical individual.
+
+Structures and vehicles are installed once on entry/load, also on save maps
+with 0o, and are kept in the hub. Confirmation requires to remain near the same vehicle and
+recalculate the provisions before leaving.
+
+### Historical closure of 4.35 (completed)
+
+Manual 0p testing remains: table/Box, Q and Escape reservations, ranch entrance, boarding,
+visual proportions and travel for each vehicle. If no faults arise, you can close 4.35 and
+continue with 4.36 (physical dangers). No need to repeat the 0n/0o tests already approved
+or add more maps or sieges.
+
+## Base delivered: 4.35.0o — agenda and persistent events
+
+Delta on the complete project 4.35.0n. The author defines the events: sieges, secondary
+NPC/side-quest routines, rentals, shipments of goods, vein growth and future categories. Ask
+for a calendar with its dates. 0n and 0o were tested by the author; 0p resolves the
+comments received.
+
+TAB → World → F/RT opens the monthly campaign calendar. It points out today, the selection
+and how many known series fall in each day; shows time, type and occurrence
+recorded/scheduled. Detail offers series status, first and next date, interval and
+counter. Unknown events are not revealed. The date of climate debugging does not displace
+this agenda.
+
+The persistent record calculates the expired occurrences without reproducing thousands of
+AI tics. It connects to the ordinary clock, Limbo 1:1, rest, x105 and confirmed trips; an estimate query does not trigger future events. Saving and loading retain dates, counters,
+cancellation, debt and charges withdrawn.
+
+Specific adapters: siege phases interrupting rest/acceleration; NPC testing that
+changes its destination according to its routine; expiration of incomplete mission
+targets; rental with debt/payment manual in real coins; loading of materials removed upon
+dispatch and recoverable once in destination; recovery of resources that also accounts for
+the absence of its map. Resources maintain 0,1 % capacity per campaign day, without
+rebalancing them.
+
+The trials are opt-in console tests. No campaign rentals, prices, schedules for the four
+residents or canonical commercial shipments are invented. The infrastructure supports such
+contracts when registered by a map/quest. The siege trial tests phases and temporary
+blocking; the battle director, armies and political consequences retain their agreed V5
+scope.
+
+### 4.35 closure
+
+The time-system implementation of this block remains a candidate for closure. The author's
+manual acceptance of the 0q changes and resolution of any bugs that arise are still pending. No
+new campaign content is required or repeated tests already approved. Then follow 4.36
+(physical dangers), 4.37 (Tarot/Trucazo), V4 export, V5.0 reorganization and V5.1 thermal
+exposure.
+
+## Base delivered: 4.35.0n — measured travel and provisions
+
+Delta on the complete project 4.35.0m. The author approves the food rations tests and
+maps. Define 10 km between sewer reservoir and port, and 500 km between port and beach, with
+days of 16 walking hours and 8 sleeping, current character speed and consumption of its
+supplies.
+
+The access shows an estimate before departure: real speed converted to km/h, walking/sleeping duration, rations required/carried/to be consumed, additional water in containers and
+expected reserves/health upon arrival. Enter confirms; Q/B cancels without deducting rations or advancing the clock along the way. The world continues at its normal pace while
+reading. If you change speed, consumption, stock or mortal risk, the view is updated
+before a new confirmation.
+
+The speed is measured as sustained walking on normal ground, 32 MU/m. It is fixed at
+departure, without adding animation pauses or reducing the distance by the 20:1 factor of
+the calendar. No night is added once the destination has been reached. The
+diagnostic caravan is still walking, without vehicle or new fare. MAP02–05 interior
+accesses retain their local treatment without assigned distance. Only the four connections
+directed 8–11 have a travel-time estimate.
+
+The numerical simulation of a tic applies needs, digestion, regeneration, lucidity and
+sleep. It uses the character's own sleeping bag if carried, otherwise the ground; it does not create
+rations, containers, furniture or comfort. It drinks first portions of water and then
+liters of containers; it does not spend belongings of the Box. It does not start eating/drinking while asleep. Portions already started continue their pulses upon arrival. A mortal
+forecast requires visible confirmation and ends with native death at origin without proof
+of arrival; it does not require buying supplies to leave.
+
+The route is applied atomically: one deduction, one clock interval, persistent registration,
+weather to the date of arrival and change of map. The estimate is retained when saving; it
+is always revalidated before charging. No AI, physics or encounters in the departure map are
+simulated during those hours. Active effects and combat must end before the trip. Visible
+technical limit: 30 days of travel per estimate; longer routes are not truncated.
+
+## Base delivered: 4.35.0m — food by mass and coast
+
+Food/water provide 800 / (body mass in kg) points per ration. 18 materials of the author,
+MAP06 port and MAP07 coast were integrated, their native connections, shelters with two chairs,
+physical coverage, non-potable river and climate of Buenos Aires confirmed in MAP02–07.
+Their food tests and maps are approved.
+
+## Base delivered: 4.35.0l — chairs, water and regional climate
+
+The author approves 0j and 0k; of 0i only observes the second chair of Ronnie and Argento.
+This delta is applied to the complete 4.35.0k project.
+
+The chair existed, but was behind a wall on another sector with the same floor height.
+Tables 102/104 move to (1072, ±480, 136), 0° orientation, with two visible and usable
+chairs. Beds, accesses, original actors, content and references are preserved. A save with a seated character waits for them to stand before moving the furniture group. The preparation recovers an absent chair.
+
+The water ration represents 0,16 liters and weighs 0,16 kg. It restores ten Thirst points
+in the body M base of 80 kg; it retains the scale by body mass: 800/mass points per ration
+(8 points at 100 kg). Clothing size M supports several masses and does not convert all
+its users into identical bodies. Load, Box, trade and consumption are updated from a
+common weight rule. Sitting preserves ten pulses during 100 s simulation, compared with 10 s standing. Containers continue to use their effective litres. An already active effect on a
+save preserves the dose with which it began.
+
+The climate uses contemporary monthly normals of the SMN, 1991–2020 period (published in
+2023; 2011–2020 wind), for nine stations. The historical campaign date selects time of year
+and time on that modern reference. 1889 observations are not reconstructed, and no forecast is queried during each game. Concrete episodes of rain, cloudiness and fronts are
+reproducible synthesis; coverage factors are explicit approximations, not measurements of
+the SMN.
+
+Later confirmation in 0m: MAP02–05 and the following are in Buenos Aires. Buenos Aires Observatorio is their shared reference; a marker allows you to choose other regions in
+future content. MAP01 maintains its Limbo exception: 20 °C, 55% RH, without wind or
+precipitation, with 1:1 clock approved.
+
+The ceilings are detected by geometrical traces, including 3D floors. The local sample
+distinguishes exterior, open shelter, interior and underground; it responds to motion without
+waiting for the next weather minute. The sky surfaces do not count as ceiling. Direct
+precipitation is cancelled under cover; the relative humidity is recalculated according to
+temperature/vapor pressure and underground humidity. Wind changes with region/fronts
+and decreases under shelter.
+
+The Journal reports region of reference and coverage. Seeds, calendar, pause and the same
+result are preserved at normal/x105. See SYSTEMS.md for sources, formulas, limits and
+commands; PRUEBAS_4_35_0l.txt for manual acceptance. Body exposure, wet clothing and
+thermal damage continue at V5.1.
+
+Closing 4.35 still requires events and trips with duration, joint integration and acceptance of
+those increments. Then follow 4.36, 4.37, export testing and V5.0/V5.1 in the agreed
+order.
+
+## Base delivered: 4.35.0j — local rhythm, interaction and class areas
+
+Delta over the complete 4.35.0i project. The author confirms the recovery of 100 Sleep points over 8 game hours, the 2 kg bag and the 1000 Anima base cost of Arcanist Sleep. He requests to match the radius of class skills with the base radius of
+channeling seals: 1280 MU (40 m at the development scale). Sleep, the only class skill
+implemented, uses that common base and the existing range modifier. Other skills remain
+pending in V5; their future area follows the same rule.
+
+Seated eating/drinking distributes the same effect and consumption during 30 simulation
+seconds instead of 10 (0q adjustment of the divisor of 10 introduced in 0j). Do not change
+the total for ration or liters per sip. Automatic repetition waits to finish each portion;
+rising returns the remaining pulses to the ordinary rhythm. Digestion, limits and comfort retain its rules. The bag, 0i positions and accepted design are maintained.
+
+The Limbo passes from time-stopped calendar to time 1:1 during active play at normal pace.
+Clock and date advance; hourly needs and recovery of Sleep use local hours. Outside follows 1 game hour per 180 seconds. T speeds up local rhythm and compatible systems only
+during valid rest/crafting. Native pause stops time; no reconstruction of previous
+session time or time with the game closed. Palomo compares it to another place he knows.
+
+Use checks the direction of the look for furniture, tables, residents and stations. A
+rejected station, even on another floor, no longer cuts the Native Use route. Stations are reduced to 75% of their 0i size, i.e. 150% of before 0h: 30 radius, 72 height and 0,75 scale. The
+migration is absolute, retains the actors, their networks, reserves and tasks; it does not
+multiply again.
+
+Verified in GZDoom 4.14.2/Linux: slow and automatic meals, liters/digestion, save/load,
+local clock and parity with x105, accelerated sleep save of 0i, manufacturing,
+dialogues/doors/furniture using Native Use, 38 Migrated Stations, Area Limits and Modifier.
+Screenshots of Palomo and the workshops reviewed. Manual acceptance in Windows, including the 0i patch,
+is missing; not taken for granted. PRUEBAS_4_35_0j.txt collects pending check.
+
+To move to 4.36 you have to complete the 4.35 block: local weather (temperature, wind,
+precipitation and humidity), scheduled events/travel with duration, clock adapters and
+integration. Then: 4.36 physical hazards, 4.37 Tarot/Trucazo, test export, V5.0
+reorganization and V5.1 thermal exposure. There is no fixed number of remaining patches.
+The sections per version below describe their historical deliveries; this section sets the
+current status.
+
+## Base delivered: 4.35.0i — accesses, plates and advancement in Limbo
+
+The author retains the design of food/water and reports six incidences of 0h. This delta
+over 0h corrects the height of the dishes, exchanges bed/table zones of Ronnie and
+Argento, moves the table of the back room 100 MU east, releases the eastern
+gate from the northeast workshop and secures the Rulo practice dummy.
+
+T is dedicated to advance during rest/crafting; the old +10 minutes of debugging is
+maintained only by console. The Limbo allows to accelerate resources, rest, consumables
+and manufacture without advancing clock or calendar. It retains the furniture sessions
+without duration and the activity and danger guards.
+
+The migration reuses furniture, chairs, objects and stations. If an affected bedroom is
+occupied, wait to get up; try again if the destination is blocked. Saves with the old marker of the dummy but without actor recover one, without restarting the mission or
+granting exercises or rewards.
+
+Native tests in GZDoom 4.14.2/Linux: 26 seats/4 beds, 38 stations, real passage through
+affected doors, target and practice record, exact comparison of 105 tics normal/accelerated
+in Limbo, crafting and loading an occupied 0h bedroom. Revised screenshots. Full
+Windows/playthrough controls in TXT.
+
+## Base delivered: 4.35.0h — meals and furniture of the mansion
+
+The author approves 0g, including guidance. This delta is applied on that basis. Eating consumes Sleep equivalent to Hunger actually restored / 4; the cost is bounded by the actual maximum and does not apply to drinking. F/G activates or separately stops the food/water
+repetition at the table until it is satisfied. The current portion ends normally; rising
+cancels the next ones. It does not restart for subsequent passive loss. Status and
+belongings are saved.
+
+Capacity: 4 servings on the 2-seat table, 18 on the 6-seat table and 60 on the 12-seat table. Original dishes with food and cups
+represent the real belongings. Each bedroom of Rulo/Ronnie/Caella/Argento receives bed and
+table of 2 chairs. There is a table of 6 in the false-wall/cave room and one of 12 on the
+second floor.
+
+All stations double their visual and physical dimensions. 26 stations from the bedrooms are moved to the ground floor workshops under each room; the 12 of the second floor are
+preserved. Networks and specialties remain connected and separated by room; dialogues and
+addresses are updated.
+
+To use those furniture in MAP01 sessions are offered without duration, until rise.
+Personal simulation continues; the Limbo clock is not moved nor is T allowed. The external
+durations, comfort, Lucidity and orientation of 0g are preserved. Trucazo is not
+implemented and WAD geometry is not modified.
+
+Checked with GZDoom 4.14.2 in Linux: digestion and limits, food sequences, capabilities,
+persistence, use of 26 seats and 4 mansion beds, volume of stations and networks, USDF
+menus and clocks stopped. Revised captures. TXT 0h includes controls and route for Windows
+acceptance.
+
+## Base accepted: 4.35.0g — safe advance, tables and sleep
+
+The author approves the 0f tests and authorizes the following patch. Optional advance with
+T is implemented only while resting/sleeping or actively crafting, in safe testing
+zones. Shares clock steps, resources, effects and manufacturing; does not depend on
+i_timescale. Completion, cancellation or loss of validity stops the advance. Limbo retains stopped time. The overall range of weather, routes and events is still pending adapters
+to the same time service.
+
+MAP03 receives round table for 2, rectangular 192×96 for 6 and large 384×192 for 12; the
+large doubles both dimensions. All chairs allow Wait. Use places/removes real possessions and F/G eats/drinks while seated at the table. Partial containers and contents are preserved
+when saving. References table/chairs prepare the future Trucazo requirement, without yet
+implementing the game.
+
+Sleeping reduces Lucidity by 10/s and blocks its recovery. Lucidity stun does not interrupt sleep.
+Arcanist User4 applies Area Sleep with the same logic, 10 s duration, waking on impact, 60 s cooldown and provisional base cost 1000 Anima. The test radius reuses 128 MU and the existing
+area modifier. Other skills continue in V5. It does not change the approved attribute
+block.
+
+Fixed furniture orientation and reverse order of the lateral views of the unretouched PNG
+atlas. GZDoom 4.14.2 in Linux compiles and verifies native rates versus accelerated, 20
+chairs, consumables, USDF, manufacturing, skill and active saves. Captures verify sides
+and back. PRUEBAS_4_35_0g.txt collects installation, controls, critical reserves and
+Windows check.
+
+## Base accepted: 4.35.0f — sleeping bag and comfort
+
+The author approves all 0e tests. He requests a sleeping bag that can be taken in the
+inventory and defines three rest factors: chair ×2, bag ×3 and bed/cot ×4 to recover
+Health/Air, with loss of Hunger/Thirst divided by the same factor. They are implemented in
+this delta over 0e. Resting on the floor retains ×1. Sitting does not recover Sleep;
+sleeping retains the previous provisional rate, without multiplying it by the support.
+
+The bag is a reusable native Inventory of provisional weight 2 kg. It appears in All and Keys/key items; Enter/A opens the durations, C stores it in/removes it from the Box and D
+releases it, with existing controls. If it was in the Box, Enter first removes it.
+Choosing a duration deploys its model on dry, clear and level ground; closing displays
+nothing. The same object remains in the inventory during the session and is collected
+visually when standing up, completing or interrupting, without copies or consumption.
+
+An optional World > D/X preparation delivers a test bag in MAP02–MAP05; ca_debug_rest_bag
+offers the same operation. It is not granted when loading, traveling or entering the map.
+Having it prevents receiving another one for this preparation. Collection respects
+capacity and space in the Box. No recipes, prices, permanent loot or new navigation
+categories are added.
+
+The comfort applies to natural regeneration and time expense. The consumption of
+Hunger/Thirst includes both its passive loss and the costs of curing and recovering air.
+Maximums, the fractional healing accumulator and blocks caused by critical reserves are preserved.
+Anima, Lucidity and pulses of consumables do not earn bonuses. Recovery of pending Air
+after immersion also accelerates by the active factor; outside the rest it retains its
+three seconds of base.
+
+Within GZDoom 4.14.2 on Linux, checks covered ×1/×2/×3/×4 rates, inventory activation and USDF responses, pickup/dropping/Box, blocked ground, cancellation, damage, maximums and critical reserves. A sleeping-bag session and a previous 0e save resting on a cot were loaded, which received ×4 preserving its progress. The sleeping-bag test and its
+continuation after loading ended without failure; part of the check counter is preserved
+from before the save. Native screenshots show bag, posture and factor. TXT covers the physical
+controls and route of the hub to be checked by the author in Windows.
+
+### 0f time-advance proposal adopted in 0g
+
+The self-advance substep contract is now implemented with secure initial scope. SYSTEMS
+describes exactly its adapters and limits.
+
+## Base accepted: 4.35.0e — chairs, cots and rest camera
+
+The author confirms that all 0d1 tests were correct and authorizes the following patch. 0d
+rest base repaired by 0d1 is considered accepted. This delta adds a usable chair and cot
+in each MAP02–MAP05 sewer. They also appear when loading a previous save; a repeated
+preparation retains the existing pair. WADs are not modified or a return route to MAP01 is
+created.
+
+Using the chair opens Wait; using the cot opens Sleep. Choose between 5 minutes, 1, 4 or 8 game hours. The start occurs after closing the answer and validating reach, floor and
+space. Close without choosing leaves the character standing. TAB > World > D/X retains
+rest on the ground and its voluntary preparations. No resources are granted when
+approaching, opening, loading or traveling.
+
+The third person camera allows you to observe the existing poses and orbit with the look
+controls. It uses native engine clipping against the environment. Q/B, movement or action
+lifts the character; TAB lifts it up and opens the Journal; Escape keeps the pause.
+completion/interruption releases the furniture and camera and recovers the input direction.
+It seeks a free exit without telefrag; if the outputs are occupied, the furniture allows walking before recovering its collision. The player's physical height/radius are
+retained.
+
+Sleeping retains the provisional Sleep recovery of 100% over 8 game hours. Wait, Hunger,
+Thirst and regeneration retain their approved rates. The initial date remains 03/11/1889
+09:00; MAP01 stops the clock and the other maps progress to the common pace of 1 game hour per 180 real seconds. This increase does not accelerate the time. Agreed skills
+continue to be recorded for your later block, without adding them to the rest system.
+
+Verification: compilation with GZDoom 4.14.2 and automatic native tests in Linux for
+Use/USDF interaction, repeated use, termination, damage, furniture loss, occupied outputs
+and placement/use in the four sewers. An active session was saved and loaded and captures
+of both positions were inspected. PRUEBAS_4_35_0e.txt instructions include pending check
+in Windows, real controls, previous saves and hub travel.
+
+## Base accepted: 4.35.0d1 — compilation correction
+
+The author communicates nine parse errors when loading 0d into GZDoom 4.14.2: two pose
+searches receive String instead of StateLabel, restPose remains undeclared for that first
+error and six calls do not find IsTimelessMap. The catalog delivered in 0c contains that
+function; it is included again complete to resolve the dependency when a previous copy was
+left in the project.
+
+CaelumPlayer.UpdateCrouchVisual and CaelumRestState.Begin now search for each pose with
+their literal label. The states, formulas, persistent fields, duration, controls and
+roadmap maintain the 0d contract. In that delivery playable tests were expected; the
+author confirms them before 0e.
+
+The three pose errors were reproduced with GZDoom 4.14.2 native and the correct catalog. After
+applying the correction, the same engine compiled the 4621 script files of the reconstructed project. Check environment: Linux, SDL without physical screen, software rendering and
+Freedoom 2 as IWAD test. This verifies ZScript parsing/compilation, not a Windows playthrough, interaction, presentation or saves. The engine and IWAD are not included in the
+patch.
+
+PRUEBAS_4_35_0d1.txt indicates how to combine all the files, rebuild the PK3, check the
+0d1 report and retest Sleep/Wait, Use and Limbo time. The validator recognizes the
+hotfix numeric suffix without removing checks.
+
+## Functional base accepted with 0d1: 4.35.0d — rest and wait
+
+The author approves all 4.35.0c tests and authorizes continuation. This 0c delta
+incorporates Sleep and Wait sessions on the normal scale of the world, accessible from TAB
+> World > D (X of the controller). The approved USDF dialog is used, with explicit
+selection of duration: 5 game minutes, 1, 4 or 8 hours. The first lasts 15 real seconds
+and allows a short check. Choosing the mode does not start the session; choosing the duration does. Closing grants no recovery and queues no pending action.
+
+Sleep gradually recovers Sleep instead of its passive consumption. Provisional test value,
+not finalized author-approved balance: 100% in 8 game hours, without exceeding 100%. Consumption of
+Hunger/Thirst and usual regenerations are preserved; there is no additional healing,
+automatic food or replacement of Anima or Adrenaline when starting/finishing. Waiting retains
+the loss of Sleep. Critical fatigue does not cause damage while sleeping, allowing to
+recover from exhausted Sleep; its remaining penalties are not canceled or damage by
+Hunger/Thirst. Critical Hunger or Thirst prevent it from continuing.
+
+The session uses a hidden Inventory and pulses of the existing clock. The character
+remains still and adopts his world pose lying or sitting. You can look around; Q/B,
+movement or an action lifts it. TAB raises it and opens the Journal; Escape keeps the
+pause voluntary. Confirmation of the dialogue must be released before setting up the
+input cancellation, and Use returns to the native path when rising without rewriting
+usedown. No global freeze flags are used nor a new camera or physical furniture is added.
+
+Effective damage, combat, displacement, water, loss of ground support, other activity, change of map or
+external modification of the clock interrupt. A seal, crafting, reloading/charging, conversation or pending journey prevents start. Traveling during rest is refused. No
+minutes are returned or the rest of a recovery is granted when cancelled. Terminations are
+unique. The saved session preserves mode, duration, progress, position and last pulse;
+loading continues if the context remains valid. Debugging dates of 0c does not modify that
+clock or accelerate rest.
+
+Limbo retains its date and rejects these timed sessions. They do not change the
+pool or previous regeneration of MAP01. The menu offers voluntary preparations, without
+objects: Hunger/Thirst 100%, Sleep 50% or 5%. They do not apply when opening, loading or
+traveling. ca_debug_rest_report only consults; ca_debug_rest_hit requests a native impact
+of 1 to check the interruption in the empty sewers. It does not represent a native test
+already done here.
+
+### Previous verification of 0d
+
+317 assertions on rules, session methods and critical damage extracted from the ZScript
+and compiled as C++, with undefined-behavior sanitizer. 33 conditions are checked at
+the start and during the session. Duration, unique clock pulses, recovery, terminal
+closing, input and release, prediction, fatigue and logical field restoration are checked.
+Engine functions are replaced by test doubles: this does not verify ZScript compilation,
+physics, native serialization or visual aspect of GZDoom.
+
+In addition, sources, new USDF routes, translations, text width, resources and five
+documents are reviewed. When preparing 0d the engine was not available; 0d1 incorporates
+native build check. PRUEBAS_4_35_0d.txt retains playable tests pending. ZIP includes only
+new/modified files. Maps, audio-visual, attributes, rates, recipes and 0c approved
+chronology are preserved.
+
+### Pending work to move from 4.35 to 4.36
+
+1. Complete the rest block: accelerated advance with consistent application of time and
+   interruptions. 0d/0d1 provide the session to normal scale and 0e incorporates
+   chairs/cots and camera; 0f adds bag and comfort factors. 0g adds secure acceleration,
+   tables/food and the Lucidity sleep rule. 0h incorporates automatic table meals,
+   digestion and furniture from MAP01. 0i fixes accesses/presentation and allows personal
+   advancement in Limbo without calendar. It is missing to integrate the future timed
+   systems of the world.
+2. Common local climate status implemented in 0k: temperature, wind, precipitation and
+   humidity by calendar/location, with test profiles. Pending acceptance of this block and
+   definitive regional values.
+3. Plan events and trips with the same clock: schedules, duration of routes and resolution
+   of events during waiting/rest or transfers.
+4. Check the integration of those blocks with saves, trips and the Limbo exception, and
+   close the native tests of the increments.
+
+Then continues 4.36, mobile environment and physical hazards; then 4.37, Tarot and
+Trucazo. The test is exported for other players before V5. The legacy/cross-system work,
+weather over the body, class/racial skills except Sleep already implemented,
+shelters/properties, automatic eating away from tables and the broader rest-quality system remain in
+V5. A fixed number of patches to close 4.35 is not invented.
+
+## Base accepted: 4.35.0c — campaign start and Limbo time
+
+The author approves all 4.35.0b tests. Sets the start of events to 3 November 1889 at 09:00 and states that inside the Limbo time does not pass. This delta over 0b
+incorporates that time rule before the next increase of rest; V4.35 continues with rest,
+interruptible time advance, weather status and events/travel programmed.
+
+The date is automatically initialized when the character is confirmed. MAP01, the Limbo
+mansion, stops the global clock. On exiting the narrative route to MAP02, the same date
+begins to move forward. MAP02–MAP05, CADEV02 and future maps without an explicit exception
+use a clock tick per simulated tick: 1 game hour = 180 real seconds. There are no
+independent clocks per map. A debug entry to Limbo stops the date reached, without
+restarting it. A return connection to MAP01 is not enabled.
+
+The suspension corresponds to the chronology of the world, not to the simulation of the
+character. You can walk, talk without pause, use, capture, manufacture and complete the
+tests of Limbo. Needs, regeneration, damage and recharges retain their timers and balance.
+Outside Limbo the dialogues continue consuming campaign time; Escape retains the native
+voluntary pause.
+
+A previous save did not separate outside time from the Limbo. When updated, 03/11/1889
+09:00 is fixed once over its current counter; CompletedDays/DayTics and all travel markers
+already registered are retained. A civil date is not retrospectively assigned to those
+trips. 0b inherited test calendars are replaced by this canonical start. 0c’s new saves
+retain their moment when loading and browsing the hub maps.
+
+The campaign and test view use separate anchors from the same clock.
+DateSerial/CivilDayTics consult the default campaign; only the diagnostic UI asks for the
+test. Changing or removing a test date does not restart the campaign: when the test is
+removed, the actual date that continued to progress is shown again. Both anchors are
+stopped in the Limbo. World explicitly states “Time is stopped in the Limbo”. 0b’s
+southern monthly seasonal convention remains as proof: November appears as spring; no
+weather is simulated.
+
+### 0c Verification
+
+8.849 automatic assertions on methods extracted from ZScript and compiled as C++, with
+undefined-behavior sanitizer: 27 cases of migration, 4.320 projections of
+campaign/test, initial date contrasted with std::chrono, rhythm per map, first midnight,
+limits and isolation of debugging. The proven restoration copies the state fields: it is
+not native serialization of GZDoom. The documentation/resource validator and source
+review complement those calculations. There is no engine available in this environment;
+ZScript compilation, real migration, save/load, travel and presentation of 0c require
+PRUEBAS_4_35_0c.txt checks. The author subsequently confirmed all 0c tests; it is the
+accepted basis of 0d.
+
+The delivery contains only new or modified sources/documents and the root test guide.
+MAPINFO, maps, conversation menus, input controls, audio-visual resources, attributes and
+formulas of the character are preserved. V4 reaches 4.37 and then the test is exported for
+other players; the legacy and cross-sectional work, including agreed skills, continues on
+V5.
+
+## Base accepted: 4.35.0b — calendar and unpaused conversations
+
+The author approves all tests of 4.35.0a and authorizes to continue, incorporating recent
+decisions on conversations and skills. This delivery is delta on 0a. Skills are still in
+the already planned V5 block; here are recorded their concrete effects on SYSTEMS.md,
+without presenting them as playable.
+
+CaelumCalendarRules converts civil dates between the years 1 and 9999, with months of real
+length and Gregorian leap-year rules. CaelumCalendarState saves an anchor with respect to
+CaelumWorldClock. It does not have a second ticker. New and previous games start without
+campaign date, as the author has not yet set it. Test commands allow to assign an explicit
+date, prepare a midnight 12 simulated seconds away and remove that date without touching the
+clock, resources, tasks, missions or travel marks already registered.
+
+World shows date and season when there is anchor. The monthly austral test cycle uses
+December–February, March–May, June–August and September–November. It is a technical
+convention identified as evidence, not a simulation of equinoxes, light, temperature, or
+weather. The historical date and its initial season remain for the author to define. Changes in the
+test calendar do not trigger rewards or events and do not amount to resting or traveling
+over time. The next increase of V4.35 will address rest and time advance with its
+interruptions, followed by weather status and scheduled events.
+
+MAPINFO uses UnFreezeSinglePlayerConversations on all six project maps. The common menu
+CaelumPalomoConversationMenu omits the action of Ticker that pauses native conversations
+at 20 tics. Derivative menus retain formatting, responses, Q/Back, sounds and capture
+presentation. This path also covers conversations reopened from previous snapshots; it
+does not write read-only level flags or force the global pause. The voluntary Escape menu
+retains its native behavior.
+
+The additional proposal to automatically close a dialogue for any damage is not
+implemented in 0b. Its interaction with native cancellation must be checked and
+completed; the change authorized here is to keep the world active. Socialization must
+consume anima during the conversation when its toggle is implemented. No special cost is
+added for reading a dialogue.
+
+### 0b verification and delivery limit
+
+The baseline was reconstructed from the author's sources, with all 4.33.0af deltas to
+4.35.0a. The existing validator passed before editing. The GZDoom executable is not
+available in this environment and its download could not be completed. Therefore, no
+ZScript compilation, native execution, save/load or visual test within the 0b engine is
+stated. These checks are described in PRUEBAS_4_35_0b.txt. The author subsequently
+confirmed all of his tests; 0b is accepted as 0c base.
+
+The arithmetic is extracted from the ZScript functions and compiled as C++ for comparison
+with std::chrono: 3.652.059 civil dates, 7.840 valid/invalid input combinations and 1.728
+anchor projections. Monthly seasons and integer limits are also reviewed. This test checks
+the calculations; it does not replace the GZDoom compiler or virtual machine. The
+documentation/resource validator finishes without errors. Review confirms five USDF
+classes under the shared menu, eight new keys in both languages and 494 MU as a
+conservative maximum date width within the available 544 MU. MAP01–MAP05, CADEV02, fonts,
+sounds, sprites and models retain their bytes.
+
+## Accepted base: 4.35.0a — persistent global clock
+
+The author confirms "All right now yes" for 4.34.0e. The seal tests, crafting, use
+recovery and travel are accepted. The global clock, the first increase of 4.35, is
+continued; the calendar, rest, climate and events keep their place within the block.
+
+CaelumWorldClock records full days and tics of the day in an Inventory native to the
+character. CaelumWorldClockTicker is a static observer without its own time state:
+consult that Inventory and advance once by simulation tic, after confirming the profile.
+It is also recorded when loading a save that did not include this system. The current base
+is individual.
+
+The approved scale is retained: 1 game hour = 180 real seconds simulation, 24 hours per
+day. At 35 tics/s, the hour has 6300 tics and the day
+151200. Integer counters avoid accumulating roundings. TAB > World shows "Recorded time",
+        expressed in past days and HH:MM, next to the scale. It does not amount to a
+        narrative date or attribute seasons or changes of light.
+
+The engine determines what time it is simulated. Pause, native menu and conversations that
+pause the game stop the clock. The Journal does not pause the simulation; working in a
+station continues to consume normal time. Save/load retains the counter; traveling and
+returning to a map of the hub retains the traveling clock, without restoring the time of
+the old snapshot of the place. It does not add up the time that GZDoom was closed nor that
+of a load. Returning to a saved game restores its instant save. A new game has another
+record.
+
+A previous save starts to record from scratch when installing 0a; it does not infer past
+duration from the map or missions. New sewer departures/arrivals keep markings from the same
+clock. No historical 0e trips are dated or duration added to routes yet with no defined
+time. The ca_debug_time_report report only consults. The travel report shows the marks
+when they exist. The accepted costs or timers of needs, combat, seals and manufacturing
+are not altered.
+
+Delta delivery on 4.34.0e, with English README, five canonical documents and
+PRUEBAS_4_35_0a.txt in the root. V4 continues to 4.37; then export is prepared for other
+players. All legacy and cross-sectional work continues on V5, starting with code
+reorganisation in V5.0.
+
+### Native 0a Verification
+
+GZDoom 4.14.2/Linux, with Freedoom 0.13.0 and llvmpipe: 35 correct observations, no script errors or execution aborts in the final six cases. Nine check creation, scale, unique hidden Inventory, integer hour/day boundaries, saturation, unchanged query and accurate advance
+by tick. The extreme limits are prepared in an isolated counter; they do not represent
+complete days spent during a manual test.
+
+Seven observations use real keyboards: native pause, Esc menu, USDF conversation, their
+respective resumptions and Journal open with active simulation. World is inspected in a
+native screenshot in Spanish with five visits and three exits prepared to verify the
+available space. The new line fits without overlapping with existing records or
+controls.
+
+Seven observations travel through MAP02 → MAP03 in caravan and the return for a gate with
+Real Use. The clock accompanies the character, retains the inventory and date both routes;
+returning to the hub does not recover the old time of MAP02. Reconciling again a resolved
+arrival retains its marks and counters. Three observations load the native save of that
+route and verify the save instant, the unique arrival and the exact continuation by tic.
+
+A save is also created by running the original 4.34.0e sources, after a real arrival at
+MAP03. 0a sources are superimposed on the same route before loading. Six observations check
+the new clock from scratch, the previous history with no invented dates, the key and
+preserved reserves, the available caravan and the marks of the first trip after the
+update, including the return to the previous MAP02 snapshot.
+
+The remaining three observations cross a prepared end of the day using real tics and start
+another game using the engine: the new character has only one clock and starts from
+scratch. It does not repeat the entire MAP01 story or all of the already accepted
+manufacture. Fixtures, engine, IWAD and saves are left out of delivery. The project
+validator checks the five updated documents and ends without errors. The author later
+confirmed all tests of 0a on Windows.
+
+
+## Base accepted: 4.34.0e — means to check activities and travel
+
+The author approves what he could test of 0d, but could not check seals or crafting
+because the sewers were empty. Those two tests are not taken for granted. 0e completes its
+means before advancing to the 4.35 clock.
+
+In each MAP02–MAP05 sewer there is a native workbench, sawmill and forge near arrival.
+The existing TAB > World > C/Y adds “Prepare seal” and “Prepare crafting”. They are
+voluntary diagnostic aids: they do not start a transfer, a channeling or a task by
+themselves. The first reuses or grants Quintessence T1, equips it through the normal route and refills Adrenaline to its current maximum; its text warns that it also removes waiting
+for the seal. It does not cause a fictitious combat. The second teaches Handle and
+tops up to 40 wood units for the x10 batch. Deliveries respect carrying capacity. Repeat
+does not duplicate the owned Seal or add wood beyond that batch. Load or travel do not
+replenish resources.
+
+Using a station in this network after preparing the recipe preselects Handle T1, batch x10 and
+efficiency 100%. These are existing values; working time is calculated with the actual
+Dexterity. Enter starts normal manufacturing, Q leaves the task pending and TAB > World >
+C must reject the trip. Back with Use allows canceling with C or ending. For the seal your
+usual control is used with a weapon equipped, and both cancellation and exhaustion is tested.
+
+The stations are rebuilt once in previous saves and maintain their group and status within
+the hub. Maps, arrival points and six routes are existing. There is no return to MAP01 or
+mission changes, attributes, recipe, cost, consumption or quintessence effect. Delivery is
+delta over 0d with PRUEBAS_4_34_0e.txt out of docs. After accepting these tests follow V4
+to 4.37, export for other players and work inherited and cross-sectional in V5 (first V5.0
+refactor).
+
+
+The actual starting/closing/resuming test revealed that the Journal consumed the +use KeyUp event when
+opening Crafts. 0e lets that release reach the engine so that the next Use works after Q;
+it does not change the approved navigation clicks. The sequence is checked without
+releasing the button by debugging commands or assigning
+CraftingTaskActive/CombatChannelModeActive.
+
+### Native 0e Verification
+
+GZDoom 4.14.2/Linux, with Freedoom 0.13.0 and llvmpipe: 50 observations of the playable
+route verify the World/C offer, native equipment, real User2 input, blocking with an
+active Channel, cancellation, natural depletion, Use recovery, available recipe and batch,
+Enter, Q, blocking by a pending task, resumption, cancellation and production with the
+existing T acceleration. All six caravan directions are traversed; the four maps allow
+using their stations, and the hub preserves groups, materials, product and the Seal
+ItemId. The aids do not create a trip or repeat upon loading or changing maps. The
+console-started diagnostic profile equips a native dagger to represent the weapon brought
+from MAP01. Channel and crafting booleans are not assigned to simulate starting an
+activity.
+
+Seven additional observations load a native save with the actual production pending:
+preserve reserves and pause, continue rejecting the journey, resume with Use and allow to
+cancel without consuming or duplicating. Then a real caravan is confirmed and a single
+arrival is recorded. Fixtures and saves remain outside src and are not part of the ZIP of
+sources.
+
+Compatibility is checked with a save created by running the original 0d sources, within a
+caravan confirmation. 0e sources are superimposed on that same path before loading. Four
+observations verify the automatically restored dialogue page without departure, three stations after closing
+the dialogue, inventory/needs preserved and new preparation available without
+inventing travel history. This check is not replaced by a new game. Author validation
+on Windows is still pending.
+
+Three additional checks reject actions of supplies outside of your conversation and
+invalid identifiers, without granting objects or creating travel. Total: 64 correct native
+observations in this verification. The Spanish offer and the physical station area of MAP02 are
+inspected in native screenshots: the six responses and the three stations are visible. The
+project validator ends without errors; the five documents have version 0e. They are
+preserved by comparison of maps, assets, rules, attributes and the player. Only the
+Journal changes the release of Use, and the presentation of stations is explicitly limited
+to the test sewers.
+
+## Previous increase: 4.34.0d — caravans and travel registration
+
+The author confirms "All tests proved correct" for 4.34.0c and authorizes the following
+patch. The MAP02–MAP05 network, its six directions and hub, is accepted, with the prohibition
+to return to MAP01. Continues the V4 order to 4.37, export test for other players and then
+everything inherited and transverse in V5, starting with the V5.0 refactor.
+
+0d incorporates the caravan service base by means of an explicit test in TAB > World > C
+(Y of the controller). It offers only the connections of the current sewer. The native
+dialog separates selection, return to destinations, cancellation and confirmation. It is not a campaign NPC and assigns no faction; the test does not charge, create vehicles or simulate a duration.
+
+The physical accesses and the caravan share CaelumTravelService. Before leaving, the
+profile, health, origin, available destination, activity, prediction, single-player session
+and absence of another pending transfer are checked. The accesses also retain their
+placement, scope and vision checks. The engine moves the actual inventory and retains the
+hub. The MAP01 narrative return → MAP02 continues with its exclusive confirmation and
+cleanup.
+
+CaelumJourneyState, a new and hidden Inventory, records last path, mode, sequence and
+quantities of arrivals/interruptions. An arrival is counted only at the expected
+destination and with its pending connection. Repeating the query or loading a resolved
+arrival does not duplicate counters. Another arrival, an incompatible mark or loading an
+output still in origin interrupts it without retrying. The query of a save 0c does not
+invent history; it begins when traveling. World shows the last trip and offers the test.
+The ca_debug_travel_report console report is read only.
+
+The 4.34 service and registration base is implemented; the schedules, durations and
+time integration of events continue in 4.35 with the clock. Transports, mini travel
+map, incidents and deviations of the broad design are still planned and are not presented
+as playable content of this trial. The next expected increase is the overall 4.35 clock,
+subject to validation by the author of 0d. The code refactor remains in V5.0.
+
+Delta delivery on 0c with English README, five canonical documents and PRUEBAS_4_34_0d.txt
+out of docs. It does not include engine, IWAD, saves or fixtures.
+
+
+### Verification of 0d and limits
+
+In GZDoom 4.14.2 native, with Freedoom 0.13.0 and llvmpipe/Linux, 57 behavioral
+observations are completed: 27 of safeguards and reconciliation, 21 for selection/cancellation/six directions and real Use, two for saved conversations, five migrations from original sources 0c and
+two reloads in destination. Reconciliation cases prepare exit marks to test rejection,
+interruption and resolution without attributing real paths.
+
+The keyboard test comes from World with C, uses explicit responses from USDF and retains a
+sealed card, silver key, reputation and needs during transfers. The saved conversation was
+in MAP04 confirmation; loading continues there without leaving alone and a confirmation
+produces an arrival. The save 0c was created by running its original sources and was
+loaded after superimposing 0d on the same test path. The Box retains ItemId 1, next to
+key, sealed card, 47 reputation and needs, before and after the trip. The subsequent save
+contains MAP02/MAP03 snapshots and arrival log; loading does not count it again. It does not
+simulate a new game as if it were a previous save. It does not repeat the whole story or
+manufacturing.
+
+World is inspected in Spanish and English with five visits and three exits prepared to
+verify its complete layout; the confirmation page is captured during the native
+conversation. Maps, assets, attributes, narrative inventory and accepted entries are
+preserved; the new key only acts in Sewer World. Author validation in Windows pending.
+
+## Base accepted: 4.34.0c — Test sewer network
+
+The author confirms "All correct" for 4.34.0b. Authorizes to connect MAP02 to other sewer
+maps, intended for mass testing, Tarot and the following systems. Leaves the connections
+to implementation criteria, except to return to MAP01. This authorization extends the
+testing space of V4; the complete campaign and legacy/cross-system work retain their
+place in V5.
+
+A star network is incorporated: MAP02 connects with MAP03, MAP04 and MAP05; each branch
+returns to MAP02. There is no normal access back to MAP01. All six directions have
+independent records. The narrative return retains its 1 identity, confirmation, limbo
+cleaning and arrival with the Voice.
+
+| Map | Space and purpose | Access from MAP02 |
 | --- | --- | --- |
-| MAP02 | Llegada existente y distribución de pruebas | Se conserva la llegada del prólogo. |
-| MAP03 | Depósito de 4096 × 3072 MU, centro amplio, canales laterales y pilares periféricos; base para pruebas masivas futuras | Portón izquierdo al fondo norte, en (-236, 1104, 0). |
-| MAP04 | Cámara central con cámaras laterales y posterior; base para Tarot futuro | Portón derecho al fondo norte, en (236, 1104, 0). |
-| MAP05 | Mantenimiento: planta baja, dos escaleras de ocho peldaños de 12 MU y galería superior a +96 MU | Portón de la pared derecha/este, en (344, 448, 0). |
+| MAP02 | Existing arrival and distribution of tests | The arrival of the prologue is preserved. |
+| MAP03 | 4096 × 3072 MU reservoir, wide center, side channels and peripheral pillars; base for future massive testing | Left gate at the far north end, in (-236, 1104, 0). |
+| MAP04 | Central chamber with side and rear chambers; base for future Tarot | Right gate at the far north end, in (236, 1104, 0). |
+| MAP05 | Maintenance: ground floor, two stairs with eight steps of 12 MU and upper gallery at +96 MU | Wall gate right/east, in (344, 448, 0). |
 
-Acercarse al portón muestra su destino y la indicación de Usar. El viaje
-se solicita con la tecla Usar habitual. Al entrar en MAP03–05 se mira hacia
-el interior; el portón de vuelta queda detrás. Al volver a MAP02 se utiliza
-el PlayerStart existente (-236, 32, 0), separado de los portones. Mantener
-Usar durante la carga no produce un viaje de rebote. No hay costes, tiempo
-ficticio de viaje, carga automática de enemigos ni cartas de regalo.
+Approaching the gate shows your destination and the use indication. The journey is
+requested with the usual Use key. When entering MAP03–05 you look inwards; the return gate
+is left behind. On returning to MAP02 you use the existing PlayerStart (-236, 32, 0),
+separate from the gates. Holding Use during loading does not produce a bounce trip. There are
+no costs, dummy travel time, automatic loading of enemies or gift cards.
 
-Los cuatro mapas de alcantarilla pertenecen al hub nativo 434. GZDoom guarda
-sus actores, objetos dejados y geometría modificada para el regreso y para
-guardados de la sesión. El inventario del personaje viaja como sus propias
-instancias. Cambiar entre alcantarillas no vuelve a ejecutar la limpieza del
-Limbo, no cura ni repone necesidades. Se rechaza viajar con actividades o
-menús activos, congelación ajena, personaje inválido, origen equivocado,
-destino ausente o varios jugadores; no se fuerza la salida del resto.
+The four sewer maps belong to the native 434 hub. GZDoom saves its actors, left objects
+and modified geometry for the return and for session saves. The character inventory
+travels as its own instances. Switching between sewers does not run the cleaning of the
+Limbo again, does not cure or replenish needs. Traveling with active activities or menus,
+freezing of others, invalid character, wrong origin, missing destination or several
+players is refused; exit of the rest is not forced.
 
-Se conservan los bytes de MAP01, MAP02 y CADEV02. Los portones se reconstruyen
-desde el controlador existente, por lo que también aparecen al cargar MAP02
-de 0b. Preparar otra vez no duplica accesos. No se cambia el esquema del
-Inventory persistente: capacidades 32 y versión de Mundo 1; se añaden sólo
-identidades de contenido en las posiciones reservadas del catálogo.
+MAP01, MAP02 and CADEV02 are preserved. The gates are rebuilt from the existing
+controller, so they also appear when MAP02 load from 0b. Prepare again does not duplicate
+accesses. The persistent Inventory scheme is not changed: 32 slots and 1 World
+version; content identities are added only in the reserved catalog positions.
 
-TAB > Mundo presenta visitas en una columna y salidas conocidas del mapa
-actual en otra. Acercarse a un acceso lo descubre; la visita y el recorrido
-se acreditan al llegar. Conocer o recorrer la ida no inventa la vuelta.
-El Diario sigue siendo de consulta. Las flechas y RePág/AvPág conservan sus
-acciones aceptadas. El regreso al cuerpo completado se informa al pie como
-un trayecto sin paso de vuelta a la mansión.
+TAB > World presents visits in one column and known exits of the current map in another.
+Approaching an access discovers it; the visit and the tour are credited upon arrival.
+Knowing or walking the way does not invent the return. The Journal is still of
+consultation. The arrows and Page Up/Page Down keep their accepted actions. The completed return to the body is reported in the footer as a journey without step back to the mansion.
 
-### Verificación y límites de 0c
+### Verification and 0c limits
 
-- 23 comprobaciones de catálogo, reconstrucción, origen/distancia/altura,
-  predicción, muerte, creador, actividades, menús, congelación, descubrimiento
-  y consulta sin alterar misiones, Tarot ni atributos.
-- 42 comprobaciones durante los seis trayectos nativos y una revisita:
-  tecla Usar real, direcciones independientes, llaves/cantidades/reputación,
-  necesidades sin rellenar, ausencia de población masiva automática, actores
-  y objetos del suelo conservados y subida caminando por la escalera real.
-- Ocho comprobaciones nuevas al cargar el guardado de la red: mapa actual,
-  visitas/direcciones, inventario, recursos y snapshot inactivo de MAP02,
-  seguido por el viaje nativo de regreso sin duplicar portones.
-- Diez comprobaciones al actualizar un guardado creado con las fuentes
-  originales 0b: adopción del hub, reconstrucción de tres accesos, identidades
-  de Caja/arma, ubicación en mochila y durabilidad originales, carta/encargo/
-  recompensa única/reputación, viaje a MAP03 y vuelta conservando un actor
-  que ya estaba en el guardado 0b. El fixture prepara esos datos en 0b;
-  no sustituye a una repetición completa del prólogo.
-- Se verifica además la salida narrativa real desde sus requisitos preparados:
-  Usar/confirmación nativa, marca pendiente, limpieza original, Caja/primera
-  arma en Caja, carta, llegada a MAP02 y coexistencia de la Voz con los accesos.
-- Revisión visual nativa de portón, depósito, cámaras, escaleras y Diario
-  completo en español/inglés. Para la captura de maquetación del Diario se
-  preparan las cinco visitas y seis recorridos en un fixture privado.
+- 23 catalog checks, reconstruction, origin/distance/height, prediction, death, character creation, activities, menus, freezing, discovery and query without altering missions, Tarot or
+  attributes.
+- 42 checks during the six native routes and a review: key Use real, independent
+  addresses, keys/quantities/reputation, unfilled needs, absence of automatic mass
+  population, conserved actors and soil objects and walking up the real stairs.
+- Eight new checks when loading the network save: current map, visits/directions,
+  inventory, inactive MAP02, resources and snapshots, followed by native return journey
+  without duplicating gates.
+- Ten checks when updating a save created with original 0b sources: adoption of the hub,
+  reconstruction of three accesses, Box/weapon identities, backpack location and original
+  durability, card/assignment/unique reward/reputation, travel to MAP03 and return keeping
+  an actor who was already in the 0b save. Fixture prepares that data in 0b; it does not
+  substitute for a complete repetition of the prologue.
+- The actual narrative output is also verified from its prepared requirements: native Use/confirmation, pending mark, original cleaning, Box/first weapon in the Box, card,
+  arrival at MAP02 and coexistence of Voice with accesses.
+- Native visual review of gate, reservoir, chambers, stairs and full Journal in
+  Spanish/English. For the capture of the Journal layout the five visits and six tours are
+  prepared in a private fixture.
 
-Entorno: GZDoom 4.14.2, Freedoom y llvmpipe/SDL en Linux. Los fixtures de
-prueba preparan posiciones, algunos objetos y estados; no se distribuyen.
-La comprobación de 0c por el autor en Windows queda pendiente. La capacidad
-de MAP03 para una población concreta aún debe medirse: no se declara una
-prueba masiva aprobada. MAP04 no adelanta activaciones nuevas de Tarot y
-MAP05 no aplica todavía peligros, daño ambiental ni inmersión profunda.
+Environment: GZDoom 4.14.2, Freedoom and llvmpipe/SDL on Linux. Test fixtures prepare
+positions, some objects and states; they are not distributed. The 0c check by the author
+on Windows remains pending. The ability of MAP03 for a particular population has yet to be
+measured: no approved massive test is declared. MAP04 does not advance new Tarot and MAP05
+activations do not yet apply hazards, environmental damage or deep immersion.
 
-Entrega: delta sobre 4.34.0b, generador UDMF reproducible en assets/generators,
-README inglés, cinco documentos canónicos y PRUEBAS_4_34_0c.txt fuera de docs.
-La arquitectura modular aquí es de mapas. El refactor transversal del código
-sigue en V5.0. En 4.34 quedan las bases de caravanas e integración de viajes;
-sus duraciones/eventos se apoyarán en el reloj de 4.35. Después continúan
-4.36, 4.37 y la exportación de prueba para otros jugadores antes de V5.
+Delivery: delta over 4.34.0b, reproducible UDMF generator in assets/generators, English
+README, five canonical documents and PRUEBAS_4_34_0c.txt out of docs. Modular architecture
+here is map. The transverse refactor of the code remains in V5.0. 4.34 remains the caravan
+bases and travel integration; its durations/events will be supported by the 4.35 clock.
+Then continue 4.36, 4.37 and export test for other players before V5.
 
-## Base aceptada: 4.34.0b — puertas y accesos por grupo
+## Base accepted: 4.34.0b — doors and accesses by group
 
-El autor confirma «Todo correcto» para 4.34.0a y autoriza el siguiente parche.
-Quedan aceptados Mundo, lugares visitados, regreso registrado y compatibilidad
-de partidas. Se mantiene la decisión: terminar V4 hasta 4.37, exportar una
-prueba para otros jugadores y después abordar en V5 todo lo heredado y transversal.
+The author confirms "All right" for 4.34.0a and authorizes the following patch. World,
+places visited, return registered and save compatibility are accepted. The decision
+remains: finish V4 to 4.37, export a test for other players and then board in V5 all
+inherited and cross-sectional.
 
-0b continúa las bases de arquitectura con puertas cerradas y requisitos de
-acceso. La revisión encuentra tres rutas de apertura no deseadas: una hoja
-libre podía eludir la llave o el bloqueo de arena de otra; además, todas las
-puertas con id cero se trataban como un grupo. Se comprueba el comportamiento
-con las fuentes 0a antes de corregirlo. Ahora se validan llave, arena y condición
-de reputación de cada hoja antes de alterar peticiones o temporizadores.
-Sólo los ids positivos enlazan hojas; sin id cada puerta funciona sola.
+0b continues the architecture bases with closed doors and access requirements. The review
+finds three unwanted opening routes: a free door leaf could bypass another leaf's key or arena lock; moreover, all doors with zero id were treated as a group. The behavior with the
+0a sources is checked before correcting it. Now they validate key, arena and reputation
+condition of each door leaf before altering requests or timers. Only positive ids link door leaves;
+without id each door works alone.
 
-El cierre comprueba el hueco original y el radio/altura del personaje, incluso
-cuando las hojas se apartaron. Mantiene abierto el grupo completo mientras el
-jugador ocupa el paso y lo reabre si entra durante el cierre. La pérdida de la
-llave no lo encierra en una puerta ya abierta; una vez cerrada, la próxima
-petición requiere la llave de nuevo. El bloqueo expreso de la arena conserva
-su prioridad previa. Las velocidades, recorrido y espera normal se conservan.
+The closure checks the original opening and the character's radius/height, even when the
+leaves are removed. It keeps the whole group open while the player occupies the pass and
+reopens it if it enters during the closing. Loss of the key does not lock it in an already
+open door; once closed, the next request requires the key again. Express arena lock retains its previous priority. Normal speeds, travel and waiting are preserved.
 
-LOCKDEFS sigue siendo la autoridad de llaves y no las consume. Su consulta
-silenciosa precede al mensaje/sonido limitado por el temporizador existente.
-Las cerraduras 200/201 y la nueva 202 usan el sonido propio de puerta bloqueada,
-sin superponer una reproducción manual al sonido nativo.
+LOCKDEFS remains the key authority and does not consume them. Its silent query precedes
+the message/sound limited by the existing timer. 200/201 locks and the new 202 use its
+own locked door sound, without superimposing manual playback to native sound.
 
-### Prueba opcional accesible
+### Optional test accessible
 
-En una zona despejada de MAP01 o MAP02, cerrar diálogo/comercio y usar:
-`give CaelumDebugDoorTrial`. Coloca una puerta de dos hojas delante del personaje;
-sólo una declara la cerradura 202. Usar cualquiera sin la llave debe rechazar
-ambas. `give CaelumDebugDoorKey` entrega una única llave nativa reutilizable,
-independiente de la llave de plata. Usar abre el grupo; permanecer en medio
-mantiene el paso abierto y retirarse permite el cierre normal.
+In a clear area of MAP01 or MAP02, close dialogue/trade and use: `give
+CaelumDebugDoorTrial`. Place a two-leaf door in front of the character; only one declares
+the 202 lock. Use anyone without the key must reject both. `give CaelumDebugDoorKey`
+delivers a single reusable native key, independent of the silver key. Use opens the group;
+remaining in the middle keeps the step open and removing allows normal closure.
 
-`give CaelumDebugDoorTrialOff` retira esas hojas y su llave. Los bloqueadores
-se eliminan en sus siguientes ticks. Repetir la activación conserva las mismas
-instancias. La prueba no entrega la llave de Argento, modifica reputación,
-activa misiones ni registra nuevos viajes. No añade un obstáculo de campaña:
-su presentación aislada sólo aparece al solicitarla. La llave es un marcador
-Key sin peso ni fila de equipo. Puede guardarse y cargarse con la prueba.
+`give CaelumDebugDoorTrialOff` removes those door leaves and their key. Blockers are removed in
+their next ticks. Repeat activation retains the same instances. The test does not deliver
+the Argento key, modify reputation, activate missions or record new trips. It does not add
+a campaign obstacle: its isolated presentation only appears upon request. The key is a Key
+marker without weight or row of equipment. It can be saved and loaded with the test.
 
-`netevent ca_debug_door_report` consulta habilitación, llaves separadas, mapa,
-grupo, cerradura y progreso/espera/ocupación de cada hoja. No abre puertas ni
-crea la prueba. Los diagnósticos de Mundo, integración y El Loco siguen
-funcionando y actualizan su cabecera a 4.34.0b.
+`netevent ca_debug_door_report` consults rating, separate keys, map, group, lock and
+progress/waiting/occupancy of each door leaf. It does not open doors or create the test. World,
+Integration and El Loco diagnostics continue to work and update its header to 4.34.0b.
 
-### Evidencia y límites
+### Evidence and limits
 
-- Veinte comprobaciones nativas de requisitos, rechazo sin cambios parciales,
-  id cero/negativo, grupos diferentes, llave reutilizable, condiciones sociales,
-  arena, predicción, desnivel, ocupación en ambos ejes y peticiones de NPC.
-- Diecisiete comprobaciones de uso nativo: comandos de prueba, conservación de
-  instancias, tecla Usar en ambas hojas, llave incorrecta/correcta, colisión al
-  entrar, permanencia más allá de la espera normal, pérdida de llave, cierre y
-  reapertura al entrar durante su movimiento. Repetirlas en inglés verifica
-  los textos y no aumenta la cantidad de casos distintos.
-- Ocho comprobaciones nuevas al recargar una puerta 0b parcialmente cerrada:
-  referencias, configuración, posición/progreso, llaves, consulta sin efectos,
-  continuación, retirada de la prueba y ausencia de bloqueadores huérfanos.
-- Siete comprobaciones nuevas al cargar un guardado producido con las fuentes
-  originales 0a y una puerta parcialmente abierta: actores/configuración,
-  movimiento, Mundo, llave/reputación, apertura/cierre y protección de la hoja
-  restaurada. La comprobación de preparación serializada no se cuenta otra vez.
-- Colocación de la prueba desde el inicio existente de MAP02 y conservación de
-  sus visitas/Tarot sin inventar un regreso. Capturas nativas revisadas en
-  MAP01/MAP02; mensajes en español e inglés.
+- Twenty native requirements checks, rejection without partial changes, zero/negative id,
+  different groups, reusable key, social conditions, arena, prediction, unevenness,
+  occupation on both axes and NPC requests.
+- Seventeen native use checks: test commands, instances preservation, key Use on both door leaves, incorrect/correct key, collision on entry, stay beyond normal waiting, key
+  loss, closing and reopening when entering during movement. Repeating them in English
+  checks the texts and does not increase the number of different cases.
+- Eight new checks when reloading a partially closed 0b door: references, configuration,
+  position/progress, keys, check without effect, continuation, withdrawal of the test and
+  absence of orphan blockers.
+- Seven new checks when loading a save produced with original 0a sources and a partially
+  open door: actors/configuration, movement, World, key/reputation, opening/closing and
+  restored door-leaf protection. Serialized preparation check is not counted again.
+- Placing the test from the existing start of MAP02 and preserving your visits/Tarot
+  without inventing a return. Revised native screenshots in MAP01/MAP02; messages in English
+  and Spanish.
 
-Entorno: GZDoom 4.14.2, Freedoom, llvmpipe y teclado SDL en Linux. La prueba
-prepara posiciones y una llave de plata adicional sólo en los fixtures privados
-para comprobar que no sustituye a la llave 202 y que la retirada no la borra.
-No repite toda la campaña ni acredita cooperativo. La ocupación automática
-protege jugadores; el cierre forzado de la arena mantiene su contrato previo.
-El autor confirma después «Todo correcto» para 0b y autoriza 0c.
+Environment: GZDoom 4.14.2, Freedoom, llvmpipe and SDL keyboard on Linux. The test
+prepares positions and an extra silver key only in private fixtures to verify that it does
+not substitute for key 202 and that withdrawal does not delete it. It does not repeat the
+entire campaign or establish co-op support. Automatic occupancy checks protect players;
+the forced arena closure retains its previous contract. The author subsequently confirms
+"All correct" for 0b and authorizes 0c.
 
-Delta sobre 4.34.0a con README, cinco documentos canónicos y PRUEBAS_4_34_0b.txt.
-Los 52 actores de puerta originales de MAP01 ya usan grupos positivos; sus
-números, posiciones y mapas no cambian. No se modifican atributos, navegación,
-misiones, inventario narrativo ni el esquema persistente de Mundo. El siguiente
-incremento continúa arquitectura, módulos y accesos entre plantas de 4.34;
-calendario, peligros, Tarot/Trucazo y exportación conservan su orden.
+Delta over 4.34.0a with README, five canonical documents and PRUEBAS_4_34_0b.txt. 52
+original door actors from MAP01 already use positive groups; their numbers, positions and
+maps do not change. Attributes, navigation, missions, narrative inventory or the
+persistent World scheme are not modified. The next increase continues architecture,
+modules and access between floors in 4.34; calendar, hazards, Tarot/Trucazo and export
+retain their order.
 
-## Base aceptada: 4.34.0a — ubicaciones y conexiones
+## Base accepted: 4.34.0a — locations and connections
 
-El autor dispone completar el roadmap actual de V4, preparar después una
-exportación de prueba para otros jugadores y trasladar todo el trabajo
-heredado y transversal a V5 tras esa exportación. Autoriza continuar con el
-próximo parche; esta decisión permite avanzar desde el cierre técnico 0ao.
-No se registra una confirmación adicional de todas las pruebas de 0ao.
+The author will complete the current V4 roadmap, then prepare a test export for other
+players and move all the work inherited and transverse to V5 after that export. Authorizes
+to continue with the next patch; this decision allows progress from the 0ao technical
+closure. No additional confirmation of all 0ao tests is recorded.
 
-4.34.0a inicia el catálogo del mundo y sustituye la pantalla provisional de
-TAB > Mundo por ubicación actual, lugares visitados y conexiones conocidas.
-Usa los nombres ya existentes de MAP01 y MAP02. La conexión «Regreso al cuerpo»
-se conoce cuando la salida narrativa está preparada; su destino permanece
-«Por descubrir» hasta llegar. En MAP02 queda «Recorrida» y se indica que es
-un viaje de ida. El Diario informa; la confirmación sigue en el umbral.
+4.34.0a starts the world catalog and replaces the TAB > World provisional screen by
+current location, visited places, and known connections. It uses the existing names of
+MAP01 and MAP02. The "Back to Body" connection is known when the narrative output is
+ready; its destination remains "To be discovered" until it arrives. In MAP02 it is
+"Roamed" and it is indicated that it is a one-way trip. The Journal reports; confirmation
+remains at the threshold.
 
-El registro reside en el Inventory persistente del personaje, con ids estables,
-visitas, conocimiento, recorrido y una conexión pendiente. Después del Commit
-validado se registra la salida pendiente; sólo la llegada correspondiente la
-convierte en recorrida. Guardar, mirar el Diario o consultar la consola no
-viaja ni concede recompensas. Se conservan la limpieza del Limbo, la Caja, la
-primera arma, El Loco y los contratos de misiones/reputación de 4.33.
+The record resides in the character's persistent Inventory, with stable ids, visits,
+knowledge, route and a pending connection. After the validated commit the pending
+output is recorded; only the corresponding arrival converts it to travel. Save, view the
+Journal or consult the console does not travel or award rewards. The cleaning of the
+Limbo, the Box, the first weapon, El Loco and quests/reputation contracts of 4.33 are
+retained.
 
-Los guardados anteriores registran el lugar actual. Un guardado de MAP02 con
-MAIN_M00 completa, primera arma preservada y limpieza final documentadas
-recupera también la visita a la mansión y el regreso realizado. Entrar en MAP02
-mediante «map map02» sin esos hechos registra sólo las alcantarillas. CADEV02
-y mapas sin ficha no adquieren un id de campaña. No se infiere una ruta inversa.
+The above saves record the current place. A full MAP02 save with MAIN_M00, first preserved
+weapon and documented final cleaning also recovers the visit to the mansion and the return
+made. Entering MAP02 using "map map02" without those facts records only the sewers.
+CADEV02 and unchecked maps do not acquire a campaign id. No reverse path is inferred.
 
-Consulta explícita: `netevent ca_debug_world_report`. Lee versión del registro,
-mapa/id actual, visitas, conexión conocida/recorrida y pendiente, sin crear
-registros ni tocar misiones, inventario o atributos. Los diagnósticos anteriores
-siguen disponibles y actualizan su cabecera a 4.34.0a.
+Explicit query: `netevent ca_debug_world_report`. Read registry version, current map/id,
+visits, known/traveled connection and pending state, without creating records or touching
+missions, inventory or attributes. Previous diagnoses remain available and update their
+header to 4.34.0a.
 
-### Verificación de 4.34.0a
+### 4.34.0a Verification
 
-- Dieciocho comprobaciones de arranque, ids y guardas, consulta y navegación
-  nativa del Diario: personaje válido, creador/muerte/predicción, rechazo de
-  salida no confirmada, id pendiente inválido e izquierda/derecha/RePág/AvPág.
-- Cuatro comprobaciones específicas del recorrido: guardado anterior de MAP01,
-  fundido confirmado todavía sin destino visitado, salida pendiente antes de
-  ChangeLevel y llegada real con las dos visitas y la conexión recorrida.
-  El escenario reutiliza además captura, cancelación, +2%, limpieza, comercio,
-  misiones, recompensas y llegada nativa verificados en 0ao.
-- Seis comprobaciones al cargar un guardado nativo 0ao de MAP02: migración de
-  mundo, Caja/primera arma/Tarot, finales y constancias únicas, reputación y
-  comercio conservados, sin repetir el diálogo de llegada ya terminado.
-- Cuatro comprobaciones de una sesión nueva iniciada directamente en MAP02:
-  ubicación actual sin inventar la mansión ni su regreso; un intento pendiente
-  sin evidencia de salida tampoco obtiene recorrido.
-- Se guarda y recarga el registro nuevo en MAP01 y MAP02. Los campos nativos
-  persisten; el autoguardado de llegada también contiene visitas y recorrido.
-  Las verificaciones serializadas de preparación no se cuentan como nuevas.
-- Render nativo de Mundo antes del regreso y tras llegar; textos de la conexión
-  conocida revisados en español e inglés. La escena visual prepara sólo el
-  conocimiento de la conexión para comprobar que oculta el nombre del destino.
+- Eighteen boot checks, ids and saves, query and native Journal navigation: valid
+  character, character creation/death/prediction, unconfirmed output rejection, invalid pending id
+  and left/right/Page Up/Page Down.
+- Four specific checks of the route: previous save of MAP01, transition confirmed still without
+  destination visited, pending departure before ChangeLevel and actual arrival with the
+  two visits and the connection traveled. The scenario also reuses capture, cancellation,
+  +2%, cleaning, trade, missions, rewards and native arrival verified in 0ao.
+- Six checks when loading a native 0ao MAP02 save: world migration, Box/first
+  weapon/Tarot, unique endings and certificate, preserved reputation and trade, without
+  repeating the finished arrival dialog.
+- Four checks of a new session initiated directly at MAP02: current location without
+  inventing the mansion or its return; a pending attempt without evidence of departure
+  does not get tour either.
+- New registration is saved and reloaded in MAP01 and MAP02. Native fields persist;
+  arrival autosave also contains visits and tour. Serialized preparation checks are not
+  counted as new.
+- World native render before return and after arrival; texts of the known connection
+  reviewed in English and Spanish. The visual scene prepares only the knowledge of the
+  connection to check that it hides the name of the destination.
 
-Entorno técnico: GZDoom 4.14.2, Freedoom, teclado SDL y llvmpipe en Linux. Los
-escenarios de integración parten de guardados de QA y preparan el registro de
-primera arma; no repiten todas las pruebas de residentes ni toda la fabricación.
-El autor confirma posteriormente «Todo correcto» y autoriza 4.34.0b.
-Motor, IWAD, guardados, fixtures y capturas privadas no forman parte del delta.
+Technical environment: GZDoom 4.14.2, Freedoom, SDL keyboard and llvmpipe on Linux. The
+integration scenarios start from QA saves and prepare the record of first weapon; they do
+not repeat all resident tests or all manufacturing. The author subsequently confirms "All
+correct" and authorizes 4.34.0b. Engine, IWAD, saves, fixtures and private captures are not
+part of the delta.
 
-Entrega sobre 4.33.0ao: README, cinco documentos canónicos y
-PRUEBAS_4_34_0a.txt. Los mapas, assets, fórmulas de atributos y controles de
-Inventario/Misiones permanecen iguales. No hay nuevos destinos, viaje rápido,
-precios/duraciones de viaje, calendario ni contenido de campaña en este parche.
-Los siguientes incrementos de 4.34 continuarán sus bases de arquitectura,
-conexiones y viajes; 4.35–4.37 y la exportación siguen en el roadmap inferior.
+Delivery on 4.33.0ao: README, five canonical documents and PRUEBAS_4_34_0a.txt.
+Maps, assets, attribute formulas and Inventory/Quests controls remain unchanged. There
+are no new destinations or fast travel, prices/durations travel, calendar or campaign
+content on this patch. The following increments of 4.34 will continue its architecture,
+connections and travel bases; 4.35–4.37 and export continue on the lower roadmap.
 
-## Base técnica: 4.33.0ao — cierre de integración
+## Technical base: 4.33.0ao — integration closure
 
-El autor confirma que todas las pruebas de 0an dieron correcto y autoriza el
-siguiente parche, solicitando primero el roadmap completo de V4. Quedan
-aceptados requisitos de reputación/pertenencia, diálogo, acceso, comercio,
-guardado y controles de la prueba. 0ao verifica su convivencia con misiones,
-captura y salida narrativa, conservando las reglas aprobadas.
+The author confirms that all 0an tests were correct and authorizes the following patch,
+first requesting the complete V4 roadmap. reputation/membership requirements,
+dialogue, access, trade, save and test controls are accepted. 0ao verifies its coexistence
+with missions, capture and narrative output, retaining approved rules.
 
-Se añade `netevent ca_debug_integration_report`: consulta de los registros
-existentes del jugador que la solicita. Muestra MAIN_M00, objetivos y finales
-de los dos encargos, entrega registrada y constancia presente por separado,
-las cuatro reputaciones/pertenencias, Caja, primera arma, Tarot, condiciones
-comerciales, pruebas habilitadas y estado de salida/llegada. No crea ni repara
-registros, concede recompensas, cambia reputación ni activa demostraciones.
-El informe detallado de El Loco sigue disponible, con cabecera 4.33.0ao.
+`netevent ca_debug_integration_report` is added: query the existing records of the player
+requesting it. Shows MAIN_M00, objectives and endings of the two assignments, registered
+delivery and certificate presented separately, the four reputations/memberships, Box,
+first weapon, Tarot, commercial conditions, enabled testing and status of departure/arrival.
+Do not create or repair records, award rewards, change reputation or activate
+demonstrations. The detailed report of El Loco remains available, with 4.33.0ao header.
 
-### Conversación activa al cargar
+### Active conversation when loading
 
-La recarga del autoguardado de llegada reproduce una diferencia concreta:
-ConversationNPC y bInConversation siguen activos, pero no existe menú USDF.
-La Voz queda marcada como iniciada y la prueba de reputación espera ese diálogo
-invisible. Con la función nativa StartConversation se vuelve a mostrar el diálogo
-del mismo interlocutor sin elegir respuestas ni ejecutar recompensas.
+The arrival-autosave reload reproduces a specific discrepancy: ConversationNPC and
+bInConversation are still active, but there is no USDF menu. Voice is marked as initiated
+and the reputation test waits for that invisible dialogue. The native StartConversation function
+shows the dialogue of the same interlocutor again without choosing answers or granting rewards.
 
-CaelumConversationResume es un StaticEventHandler registrado en MAPINFO.
-Recibe WorldLoaded con IsSaveGame y difiere la reapertura al primer WorldTick.
-Comprueba personaje vivo/creado, interlocutor activo con conversación y
-ConversationPC igual al jugador. Usa la orientación guardada y saveAngle=false;
-no llama a Used, reasigna un árbol, borra referencias ni modifica registros.
-No se ejecuta en una entrada normal de mapa ni sobre referencias inactivas.
-Su marcador es estático y no añade datos al guardado. Se corrige también la
-recarga del autoguardado creado antes de este arreglo.
+CaelumConversationResume is a StaticEventHandler registered in MAPINFO. It receives
+WorldLoaded with IsSaveGame and defers reopening to the first WorldTick. It checks
+alive/created character, active conversational interlocutor and ConversationPC equal to the
+player. It uses the saved orientation and saveAngle=false; it does not call Used, reassign a tree, delete references or modify records. It does not run on a normal map entry or on inactive references. Its marker is static and does not add data to the save.
+It also fixes the reloading of the autosave created before this fix.
 
-### Comprobación conjunta y límites
+### Joint verification and limits
 
-Se crea un guardado nativo con las fuentes originales 0an: Caja recibida en
-el diálogo de Palomo, una compra real de cinco maderas por 14 cobres, comercio
-con condición/rebaja activos, reputaciones y pertenencias distintas, Recorrido
-terminado con constancia y Espera activa con tiempo transcurrido. Al cargarlo
-con 0ao se comprueba conservación y ausencia de repetición de la transacción.
-Se cierra el comercio con Q y se recorre con teclado nativo la revelación,
-cancelación y captura explícita de El Loco, su animación y bonificación única.
+A native save is created with the original 0an sources: Box received in the Palomo dialog,
+a real purchase of five wood units for 14 copper coins, trade with active condition/discount,
+reputations and different memberships, completed Tour certificate and active Wait with passed
+time. Loading it with 0ao checks preservation and non-repetition of the transaction. Trade
+with Q is closed and the revelation, cancellation and explicit capture of El Loco, its
+unique animation and bonus is traversed with native keyboard.
 
-La salida se confirma por la puerta y el diálogo existentes. El fundido y
-la limpieza del Limbo preceden al viaje: se conservan Caja, primera arma en
-ella, carta, registros sociales y constancias; se retiran los objetos físicos
-de prueba sujetos a esa limpieza, incluidos monedas y madera comprada. El
-comercio se cierra y su rebaja temporal no se convierte en una rebaja negociada.
-La prueba de reputación no puede interrumpir la Voz de llegada; después se
-reabre en MAP02. Espera conserva su estado hasta completar/cobrar, y los
-finales/recompensas permanecen únicos. Retirar la prueba conserva los registros.
+The exit is confirmed by the existing door and dialogue. The transition and cleanup of the
+Limbo precede the journey: Box, first weapon in it, card, social records and certificate are
+preserved; the physical objects of test subject to that cleaning, including coins and
+purchased wood, are removed. The trade is closed and its temporary reduction does not
+become a negotiated discount. The reputation test cannot interrupt the Voice of arrival;
+it is then reopened in MAP02. Wait retains its state until completion/reward collection, and
+the endings/rewards remain unique. Removing the test retains the records.
 
-Se recarga también el guardado final de MAP02: ambos encargos y constancias,
-reputaciones, Caja/arma/carta, existencias comerciales y retirada de la prueba
-se conservan. No vuelve a abrirse el diálogo ya cerrado. La consulta de
-integración deja intactos inventario, salud, reloj y registros examinados.
+The final MAP02 save is also reloaded: both assignments and the certificate, reputations,
+Box/weapon/card, commercial stocks and withdrawal of the test are preserved. The already
+closed dialogue does not reopen. The integration query leaves intact inventory, health,
+clock and records examined.
 
-Pasan 39 comprobaciones de integración: 17 nuevas al continuar el guardado
-0an en MAP01, 16 de llegada/encargos y seis de recarga final. Los cuatro
-controles de preparación guardados con 0an no se suman otra vez. Las seis
-comprobaciones repetidas al reabrir diferentes páginas tampoco se duplican;
-se verifica por el menú nativo la recuperación de ambas páginas guardadas.
+39 integration checks pass: 17 new when you continue the 0an save in MAP01, 16 from
+arrival/assignments and six final reload. The four saves preparation controls with 0an do not
+add up again. The six repeated checks when you reopen different pages do not duplicate
+either; the recovery of both saved pages is checked by the native menu.
 
-Las escenas privadas parten después de las pruebas de residentes y preparan
-el objetivo de Recorrido y el registro de primera arma para ensayar contratos.
-No repiten toda la campaña ni su fabricación. El motor, IWAD, entradas SDL y
-guardados de QA quedan fuera del parche. Entorno: GZDoom 4.14.2, Freedoom y
-llvmpipe en Linux; la comprobación del autor en Windows de 0ao queda pendiente.
-La evidencia de bloques anteriores ya aprobados se conserva y no se vuelve a
-contar como pruebas nuevas. El autor autoriza después continuar con 4.34.0a.
+The private scenes start after the resident tests and prepare the Tour objective and the
+first weapon record to test contracts. They do not repeat the entire campaign or its
+manufacture. The engine, IWAD, SDL inputs and QA saves are left out of the patch.
+Environment: GZDoom 4.14.2, Freedoom and llvmpipe on Linux; the author's Windows
+verification of 0ao remains pending. The evidence of previous blocks already approved is
+preserved and is not counted as new evidence. The author then authorizes to continue with
+4.34.0a.
 
-Entrega delta sobre 0an con README, cinco documentos canónicos y
-PRUEBAS_4_33_0ao.txt. Mapas, assets, fórmulas de atributos, estados serializados,
-condiciones de reputación y lógica de misiones se conservan. El autor autoriza continuar con 4.34.0a: ubicaciones y conexiones.
+Delta delivery on 0an with README, five canonical documents and PRUEBAS_4_33_0ao.txt.
+Maps, assets, attribute formulas, serialized states, reputation conditions and mission
+logic are preserved. The author authorizes to continue with 4.34.0a: locations and
+connections.
 
-## Base aceptada: 4.33.0an — condiciones de reputación
+## Base accepted: 4.33.0an — Reputation conditions
 
-El autor confirma que 0am funciona y valida los dos encargos opcionales:
-completarlos entrega las constancias, abandonar Recorrido impide aceptar
-Espera y viajar a MAP02 antes de completar el objetivo de Recorrido lo falla.
-Quedan aceptadas las correcciones de captura, sellos y navegación. Mantener
-los atributos vigentes y los controles de extremos del Diario.
+The author confirms that 0am works and validates the two optional assignments: completing them
+delivers the certificates, abandoning Tour prevents accepting Wait, and traveling to MAP02 before completing the route objective causes failure. Corrections of capture, seals and navigation are
+accepted. The current attributes and Journal boundary controls are preserved.
 
-0an conecta el registro existente con condiciones reutilizables para abrir
-diálogos, puertas deslizantes y comercio. Cada condición declara facción,
-mínimo inclusivo y pertenencia opcional. La pertenencia no sustituye el mínimo.
-Las puertas validan el grupo completo antes de moverlo; las transacciones
-revalidan antes de intercambiar monedas u objetos. La rebaja por reputación
-es temporal y separada de la rebaja negociada persistente.
+0an connects the existing registry with reusable conditions for opening dialogues, sliding
+doors and trade. Each condition declares faction, minimum reputation and optional
+membership. Membership does not replace the minimum. Doors validate the entire group
+before moving it; transactions revalidate before exchanging coins or objects. Reputation
+discount is temporary and separate from persistent negotiated discount.
 
-### Prueba accesible y alcance
+### Accessible test and scope
 
-Guardar antes y ejecutar `give CaelumDebugReputationTrial`. La prueba se abre
-inmediatamente; luego TAB > Reputación > F/Y la reabre. Ofrece cinco estados
-seleccionables y tres servicios reales. Usa Gendarmería como id técnico:
+Save before and run `give CaelumDebugReputationTrial`. The test opens immediately; then
+TAB > Reputation > F/Y reopens it. It offers five selectable states and three real
+services. Use Gendarmerie as technical id:
 
-| Servicio de prueba | Requisito |
+| Test service | Requirement |
 | --- | --- |
-| Información | Reputación >= 25 |
-| Puerta física | Miembro y reputación >= 25 |
-| Comercio | Reputación >= 0 y Caja propia |
-| Rebaja comercial | Reputación >= 25; márgenes existentes 140%/60% |
-
-Los cinco estados son 0 sin pertenencia, 25 sin pertenencia, 25 miembro,
--25 miembro y 0 miembro. Modifican el registro real de Gendarmería; conservan
-las otras facciones. La prueba usa inventario, monedas y existencias reales,
-sin entregar Caja, recursos ni recompensas. Cerrar comercio con Q/B; Esc
-conserva el menú de pausa del motor. Para quitar la prueba, cerrar sus menús
-y usar `give CaelumDebugReputationTrialOff`: retira guía y puerta, sin revertir
-la reputación. Cargar el guardado anterior restaura el estado previo a probar.
-
-No se asigna facción a los residentes del Limbo ni se alteran sus pruebas
-sociales. Los cuatro ids actuales, escala -1000..1000 y relaciones existentes
-se conservan. Las ocho facciones narrativas, siete rangos y relaciones futuras
-siguen pendientes de umbrales y matriz del autor. Los valores de esta prueba
-no fijan ese diseño. No se añaden mapas, misiones, ganancias de reputación de
-campaña, fórmulas de precio regional ni bonificaciones de atributos.
-
-### Evidencia y validación de 0an
-
-Treinta y siete comprobaciones nativas cubren límites e ids inválidos,
-pertenencia independiente, facción correcta, rechazo de acciones fuera del
-diálogo, condiciones de grupos de puertas, compras/ventas reales, cotización
-cambiada y cierre por pérdida de acceso. Se verifica la separación entre
-rebaja temporal y negociada, conservación de monedas/stock al rechazar y
-ausencia de duplicación o alteración de misiones, Tarot y atributos.
-
-Diecinueve comprobaciones de interfaz usan eventos SDL de teclado: activación,
-reapertura con F, estados del menú nativo, permiso de diálogo y puerta, precios
-y compras con Enter, cierre con Q, controles de Reputación y retiro de la prueba.
-Se revisan los textos españoles e ingleses con el render nativo; repetir
-los mismos casos por idioma no añade casos distintos.
-
-Un guardado nativo creado por las fuentes originales 0am conserva al cargar
-con 0an las cuatro reputaciones/pertenencias, Caja, monedas, atributo, agua,
-misión terminada, constancia y oferta sucesora. Un comercio ya abierto conserva
-su rebaja negociada sin recibir requisitos nuevos ni activar la prueba.
-Después se guarda y carga una sesión con condiciones 0an: se conservan sus
-campos, descuento y referencias de dueño/guía. Retirar la pertenencia requerida
-bloquea la transacción sin gasto; el viaje nativo a MAP02 conserva los registros
-y permite reconstruir la presentación de la prueba allí.
-
-Entorno: GZDoom 4.14.2, Freedoom y llvmpipe en Linux; escenarios controlados,
-no una repetición completa de campaña ni un guardado del autor. El autor
-confirma posteriormente que todas las pruebas de 0an dieron correcto. Auxiliares, partidas y motor de QA quedan
-fuera del delta. Aplicación e instrucciones en PRUEBAS_4_33_0an.txt.
-
-Entrega sobre el proyecto completo 0am con README y cinco documentos canónicos.
-Su aceptación habilita la integración final 0ao antes de iniciar las bases
-de ubicaciones/conexiones/viajes de 4.34.
-
-## Base aceptada: 4.33.0am — conversación inactiva y extremos del Diario
-
-La captura del log de 0al muestra fase 80, Caja propia válida, requisitos
-cumplidos y esencia accesible a 32,6 MU. No hay canalización ni recarga.
-ConversationNPC conserva un actor, pero su bInConversation vale falso. La
-captura rechazaba cualquier referencia, aunque ya no hubiera diálogo activo.
-
-0am comprueba la actividad real del interlocutor al abrir la esencia y al
-esperar el cierre antes de animarla. Aplica la misma regla a la puerta, al
-fundido de salida y a la Voz de llegada. No borra referencias nativas ni
-repara el progreso: siguen siendo necesarias la Caja propia y la elección
-explícita de capturar; abrir o cancelar el diálogo no entrega la carta.
-Se conserva la entrega única y la bonificación existente de El Loco.
-
-Izquierda/Derecha recorre los filtros y las misiones conocidas. Desde el
-primer elemento, Izquierda pasa a la solapa anterior; desde el último,
-Derecha pasa a la siguiente. Inventario: Tarot/Personaje. Misiones:
-Oficios/Reputación. Con una sola misión, ambas flechas salen hacia su solapa
-adyacente. Al volver se conserva la selección. RePág/AvPág o LB/RB cambia
-de solapa directamente; Arriba/Abajo y F/Y mantienen sus otras funciones.
-Las ayudas en español e inglés explican los extremos en una segunda línea.
-
-### Evidencia y validación de 0am
-
-Se reproduce de forma controlada el estado que informa el log: referencia
-de un NPC cuyo diálogo ya está cerrado. En las fuentes originales 0al,
-Usar no abre la esencia. Con 0am, la misma entrada nativa abre El Loco y
-Enter completa la captura, también después de agotar Quintaesencia.
-La Caja se recibe por el diálogo real de Palomo, sin darla directamente.
-El escenario comienza después de las cuatro pruebas de residentes; no es
-una ejecución completa de la misión ni usa un guardado del autor.
-
-Veintiocho comprobaciones del Diario pasan por eventos SDL de teclado y el
-despachador nativo: filtros, ambos extremos, una y tres misiones, huecos de
-entradas desconocidas, Detalle, selección retenida, RePág/AvPág y ausencia
-de aceptación automática. Las repeticiones por idioma no suman casos distintos.
-Doce comprobaciones del tramo Palomo/Caja/agotamiento/captura confirman el
-arreglo sobre el estado reproducido, identidad y entrega única con +2%.
-
-Diecisiete comprobaciones adicionales pasan al cargar con 0am un guardado
-nativo creado por 0al con referencia inactiva, en las coordenadas comunicadas:
-Caja y atributos conservados, ausencia de captura al cargar, protección de
-un interlocutor activo, Usar, cancelación con Esc y nueva confirmación.
-La animación termina aunque se conserve otra referencia inactiva a la esencia.
-La puerta abre y el fundido llega a MAP02 aun con una referencia inactiva al
-umbral; sobreviven carta, Caja y primera arma y se abre la Voz de llegada.
-El arma y su registro se preparan sólo para verificar el contrato de salida;
-esta prueba no repite el crafting. No se modifican los archivos del guardado.
-
-El motor compila las fuentes sin errores y pasa validate_project.py: cinco
-documentos, 74 archivos de audio y 12 modelos de estación. El delta contiene
-12 archivos nuevos/modificados. Entorno: GZDoom 4.14.2, Freedoom y llvmpipe en
-Linux. La comprobación del autor en Windows queda pendiente. Los auxiliares
-de pruebas, el motor y el IWAD no forman parte del parche.
-
-Entrega delta sobre 0al con README, cinco documentos canónicos y
-PRUEBAS_4_33_0am.txt. Mapas, assets, atributos y protección/restauración de
-infraestructura conservados. El autor acepta estos ajustes antes de 0an.
-
-## Base 4.33.0ak — captura observada; controles revisados en 0al
-
-El autor informa árboles y estaciones desplazados por Quintaesencia, bloqueo
-al capturar la esencia y controles del Diario que cambian filtro/solapa en
-vez del destino esperado. No se da por aprobado 0aj. Se conserva la base de
-misiones opcionales y se priorizan estas correcciones antes de reputación.
-
-La selección del sello aceptaba infraestructura porque también es SHOOTABLE.
-0ak excluye CaelumMovableProp del área de los sellos, incluida la masa atrapada
-y la expulsión. MAP01 reubica una sola vez las mismas plantas y estaciones:
-origen del jardín y disposición vigente de las habitaciones. No recrea los
-nodos ni sus existencias; conserva sus referencias, tareas y reservas.
-También limpia velocidad y suspensión indebidas de objetivos guardados.
-
-La captura normal se reprodujo funcionando en las fuentes originales 0aj.
-El bloqueo reproducido aparece al canalizar: PlayerThink descartaba Usar.
-Una pulsación nueva de Usar ahora detiene el canal, aplica su recarga normal
-y llega a la interacción nativa en esa misma pulsación. El Loco conserva
-el requisito de Caja propia y la confirmación del diálogo para la entrega única.
-
-Diario: Izquierda/Derecha cambia de misión en Misiones; en Inventario cambia
-de solapa directamente. F/Y conserva el filtro del inventario. RePág/AvPág
-o LB/RB cambia de solapa en cualquier sección. Las flechas de una estación
-abierta conservan sus recetas; salir de Oficios cierra la sesión nativa y
-detiene el trabajo atendido. Las ayudas se actualizan en español e inglés.
-
-### Validación técnica de 0ak
-
-GZDoom 4.14.2 con Freedoom y llvmpipe en Linux. Escenarios aislados sobre las
-fuentes del parche; los auxiliares y recursos del motor no se entregan.
-
-- 78 comprobaciones de objetivos: infraestructura real de MAP01 excluida,
-  árboles y estaciones inmóviles con Aire/Quintaesencia, gravedad restaurada
-  y continuidad de atracción/masa/expulsión para objetivos de combate.
-- 34 comprobaciones del Diario: diez filtros, navegación circular entre
-  misiones, Detalle y cancelación de abandono, teclas de solapa y cierre
-  nativo de una estación real. Se invoca la misma ruta de códigos de tecla
-  usada por InputProcess y sus eventos nativos; teclado/mando físico pendiente.
-- 19 al cargar una partida guardada por las fuentes originales 0aj con
-  Quintaesencia activa y plantas/estaciones desplazadas: posición, identidad,
-  gravedad, existencias parciales, rendimiento fraccionario, atributos,
-  elecciones, 1,25 litros, Caja, misión terminada y recompensa conservados.
-  Usar corta el canal y abre El Loco; confirmar concede una carta y sólo
-  su +2% vigente. Repetir captura o recompensa queda rechazado.
-
-Las 131 comprobaciones distintas pasan sin fallos. La interfaz se revisa en
-ambos idiomas, sin sumar las repeticiones de los mismos controles. No se ha
-recibido el guardado del autor: la compatibilidad usa un guardado nativo
-preparado para reproducir sus síntomas. No representa una partida completa.
-Aplicación y aceptación en Windows: PRUEBAS_4_33_0ak.txt. Mapas, arte, audio,
-modelos y fórmulas de atributos se conservan respecto de 0aj.
-El validador del proyecto pasa sin errores: cinco documentos, 74 archivos de
-audio, 12 modelos de estación y referencias. El delta contiene 12 archivos:
-cinco de ejecución, README, cinco documentos y un TXT de aplicación/pruebas.
-
-## Base 4.33.0aj — observaciones corregidas por 0ak
-
-0ai queda aprobado por el autor. Se conservan todos los atributos, incluidos
-Resiliencia para Sueño y los divisores de consumo/regeneración de Constitución.
-La auditoría anterior queda registrada para una revisión futura.
-
-0aj implementa la base de misiones opcionales: oferta, requisito de otra misión
-completada, aceptación explícita, objetivos limitados por su meta, completar,
-fracasar y abandonar con confirmación. Un final no se sobrescribe ni se
-reinicia. La recompensa usa Inventory nativo y un registro de entrega por
-misión; si la recepción falla queda pendiente, y retirar el objeto no la repone.
-
-El Diario selecciona entre misiones conocidas y muestra Detalle de la elegida.
-La cadena de diagnóstico se habilita con give CaelumDebugQuestTrial: Recorrido
-seguido de Espera. Está separada del contenido narrativo: constancias sin peso,
-precio ni atributos, sin alterar la misión principal, Tarot o recursos T1.
-SYSTEMS.md define reglas y límites; PRUEBAS_4_33_0aj.txt explica el recorrido.
-
-Tras resolver la captura y aceptar los controles, el siguiente bloque conecta reputación
-con condiciones reutilizables. Después
-se revisará la integración antes de V4.34. Las balas y la potabilización siguen
-pendientes de definición para ampliaciones posteriores. Calendario V4.35
-precede Descanso; V5.0 conserva el refactor de programación.
-
-### Validación técnica de 0aj
-
-119 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 con Freedoom y
-llvmpipe en Linux. Se conserva la evidencia del trabajo recuperado y se vuelve
-a ejecutar el flujo y la interfaz sobre las fuentes finales; las repeticiones
-del mismo escenario no se suman como comprobaciones adicionales.
-
-- 70 del ciclo de vida: descubrimiento sin aceptación, requisito de la cadena,
-  índices y objetivos inválidos, límites de progreso, finalización explícita,
-  fracaso, abandono, finales permanentes y recompensa nativa única. Retirar
-  la constancia no reabre el cobro; una recepción rechazada admite reintento.
-  MAIN_M00 conserva su estado y sus setters rechazan alterar un final.
-- 13 del Diario en español y 13 en inglés: selección circular, detalle de la
-  misión elegida, oferta bloqueada, eventos nativos de aceptación/abandono,
-  cancelación de confirmación y actualización de la pantalla. Capturas de
-  lista, detalle y finales revisadas. Los escenarios invocan la navegación y
-  los eventos de red del motor; el teclado/mando físico se verifica en Windows.
-- Ocho al cargar una partida creada con fuentes originales 0ai: registro y
-  etapa principal, ampliación de la instantánea del Diario, atributos,
-  1,25 litros de la cantimplora y elecciones de sello/amuletos conservados.
-  Las ofertas nuevas no aparecen hasta habilitar la prueba explícitamente.
-- Ocho al recargar un guardado 0aj con Espera parcial: tiempo, objetivo,
-  recompensa anterior y misión principal conservados, continuación y entrega
-  única del segundo encargo.
-- Siete en un ChangeLevel real MAP01 -> MAP02: viajan la constancia, el
-  registro de cobro y el contador activo; se completa y cobra en destino sin
-  duplicar la recompensa previa.
-
-Los escenarios preparan perfiles y objetivos para aislar cada condición;
-no representan una partida completa, el cruce narrativo del Limbo ni una
-validación cooperativa. Se mantienen los límites de la observación de salud
-descritos en SYSTEMS.md. Queda la aceptación del autor en Windows mediante
-PRUEBAS_4_33_0aj.txt.
-
-El validador del proyecto pasa: cinco documentos, 74 archivos de audio,
-12 modelos de estación y referencias conservadas. Se comprueba el delta
-contra la base 0ai recuperada y cotejada con su ZIP guardado. Los tres WAD,
-los recursos audiovisuales y los cálculos de atributos conservan sus bytes.
-Entrega: 15 archivos nuevos/modificados y un TXT de aplicación/pruebas.
-CRC y reconstrucción exacta del contenido del ZIP comprobados.
-
-## Base 4.33.0ai — aprobada por el autor
-
-El autor corrigió su indicación anterior: Sueño pertenece a Resiliencia.
-0ai restaura esa asociación conservando el divisor Tipo 4 (1 a atributo 0;
-3 a 100). Constitución controla Hambre/Sed y ahora divide también su gasto al
-regenerar vida/Aire, sin repetir el factor de masa del consumo pasivo.
-Las velocidades no cambian. Se mantiene el umbral crítico <=10% restaurado
-en 0ah y la piscina, recarga parcial y sorbos aprobados de 0ag.
-
-La auditoría de los doce atributos está en SYSTEMS.md: familias coincidentes,
-efectos activos, diferencias de escala/asignación y funciones pendientes.
-La tabla del autor permanece como intención de diseño; la matriz auditada no
-da por terminados los campos que sólo están calculados. No se implementan
-automáticamente sus diferencias en este parche. Se actualizan Ronnie en ambos
-idiomas, README y cinco docs, sin crear más documentos canónicos.
-
-Una partida previa actualiza los factores sin reiniciar reservas, elecciones
-ni progreso. Entrega delta sobre 0ah más un TXT de pruebas. Tras aceptar 0ai,
-cerrar la revisión del tutorial y continuar fundamentos de mundo/viajes, sin
-ampliar mapas. Quedan las discrepancias de atributos registradas abajo,
-tratamiento de aguas inseguras y composición/proceso de balas. Calendario
-precede Descanso; V5 mantiene el refactor de arquitectura de programación.
-
-### Validación técnica de 0ai
-
-95 comprobaciones nativas aprobadas en GZDoom 4.14.2, Freedoom y llvmpipe en
-Linux: independencia de Constitución/Resiliencia/Paciencia, curva 0/50/100,
-masas 50/100/200, atributos fraccionarios y límites, consumo pasivo real y
-actualización de factores. Se comprueban cantidades y costes reales de ambas
-regeneraciones, tope máximo, reserva insuficiente, ausencia de doble masa y
-regla crítica para las tres reservas a 1/10/10,1 puntos.
-
-Otras ocho comprobaciones aprobadas cargan un guardado creado con los archivos
-originales de 0ah y un perfil normal con Paciencia distinta de Resiliencia.
-Verifican factor y coste nuevos, conservación de atributos/reservas/litros y
-elecciones y ausencia de división acumulada. Total: 103 comprobaciones nativas,
-sin fallos. La preparación del guardado se comprobó también con la fórmula
-original; no se editó el archivo guardado para simular compatibilidad.
-El validador documental/de recursos termina sin errores, con cinco documentos
-canónicos. Entrega de diez archivos, sin recursos binarios ni código de prueba.
-El autor confirmó que todas las pruebas de 0ai fueron correctas. Los atributos
-quedan como están; las diferencias de su auditoría se posponen.
-
-### Validación técnica de 0ah
-
-96 comprobaciones aprobadas en GZDoom 4.14.2, Freedoom y llvmpipe en Linux.
-88 comprueban la curva en 0/50/100 con Constitución y Paciencia independientes,
-masas 50/100/200, atributos fraccionarios y límites, consumo nativo de un segundo,
-refresco de factores antiguos, umbrales 0/1/2/9,9/10/10,1/50 para las tres
-reservas, daño combinado y bloqueo de regeneración. La piscina, la recarga
-parcial y el sorbo aprobado de 0ag también pasan su regresión.
-
-Se creó un guardado con código original 0ag, atributos 100 y factores cero;
-otras ocho comprobaciones lo cargan con 0ah y verifican consumo positivo sin
-reiniciar reservas, atributos, litros o elecciones. El divisor no se acumula.
-El validador documental y de recursos terminó sin errores. La atribución a
-Paciencia y los costes de regeneración se sustituyen ahora por 0ai; estas
-pruebas anteriores son evidencia histórica, no aceptación del autor de 0ah.
-
-### Validación técnica de 0ag
-
-161 comprobaciones nativas aprobadas en GZDoom 4.14.2 con Freedoom y llvmpipe,
-Linux. El bloque de agua suma 153: los seis modelos a 50/100/200 kg, volumen
-por sorbo y remanente, diez pulsos reales durante diez segundos, piscina de
-MAP01 con/sin recipiente, recarga parcial y límites de carga/Caja, daño a Sed
-cero, regeneración a 1 y 2 puntos y reglas previas de Hambre/Sueño.
-
-Otras ocho comprobaciones cargan un guardado creado con el código entregado
-0af: litros, efecto de bebida pendiente, progreso y elecciones/cupo de plata
-conservados; nuevo sorbo ajustado a masa y recarga/hidratación real en piscina.
-La prueba aísla el prólogo para que su diálogo automático no pause el tiempo.
-El validador de documentación y recursos terminó sin errores. El autor aprobó
-todas las pruebas de 0ag; la regla de Sed positiva se revierte en 0ah a su pedido.
-
-### Validación técnica de 0af
-
-GZDoom 4.14.2 con Freedoom, renderizado por software en Linux: pasan las
-combinaciones de las cinco elecciones de sello por cuatro amuletos, los seis
-recipientes, fórmula por masa, entrega de Ronnie, plata limitada, fabricación
-personal y persistencia. Se cargó además un guardado generado con el código
-original 0ae y se terminó su sello pendiente antes de elegir los accesorios.
-Los menús nativos se recorrieron en español e inglés. Sprites RGBA revisados
-como imágenes; las pruebas posteriores del autor aprobaron estos recursos.
-El validador documental y de recursos termina sin errores.
-
-## Base 4.33.0ae — aprobado por el autor
-
-El autor confirmó que todas las pruebas de 0ae fueron correctas.
-La base completa de 0ae fue recuperada desde los adjuntos del autor.
-
-El autor aprobó todas las pruebas de 0ad. Caella ofrece enseñar los cinco sellos
-T1 y sus componentes después de completar su prueba. Leer o posponer no cambia
-el personaje; aceptar habilita conocimiento y cupo opcional para uno de cada
-elemento. Usa las recetas existentes, sin cambiar costes ni efectos de Channel.
-
-El conjunto al 100% en cada capa requiere 1,8 kg cobre bruto, 0,2 kg estaño bruto
-y 0,6 kg de cada gema. El cupo se suma al del equipo elegido sin reiniciar lo
-ya emitido. Si hay un sello T1 propio al aprender, sólo se presupuestan los
-que faltan; el préstamo de Caella no cuenta. Esa existencia inicial queda
-registrada: fabricar o perder una pieza después no repone el cupo.
-
-Fabricación recursiva nativa desde materias primas, resultado personal sin Caja,
-una ranura equipada y Detalle 0/5–5/5. El Banco de Trabajo de Caella y el taller
-completo del segundo piso tienen la infraestructura. Ronnie puede prestar otra
-vez la espada para los materiales de sellos pendientes, incluso con su misión
-y reparación completadas, y acepta la devolución por su charla de talleres.
-
-No agrega requisitos de misión ni cambia runas, historia de la salida o lo
-que sale del Limbo. Mapas y audiovisuales conservan sus bytes. Se aplica sobre
-0ad por copia de archivos más PRUEBAS_4_33_0ae.txt. Validación al final de este
-documento. Próximo bloque de sistemas: recolección/potabilización de agua;
-la composición y el proceso de balas todavía necesitan definición del autor.
-Calendario/descanso y arquitectura V5 conservan su lugar en el roadmap.
-
-## Base 4.33.0ad — aprobada por el autor
-
-El autor aprobó todas las pruebas de 0ac. Ronnie pregunta qué familia de
-armadura se desea después de elegir arma: mágica, liviana, mediana o pesada,
-con descripción y confirmación. Enseña las cuatro piezas T1 y componentes;
-quien ya eligió arma puede acceder por su conversación sobre talleres. No
-obliga a repetir misiones ni añade un requisito al Toro o a la salida.
-
-Se sustituye el abastecimiento al 25% por un cupo finito al 100% en cada capa:
-un arma elegida, un conjunto elegido y diez flechas/virotes cuando corresponda,
-al talle elegido. Cuero M: conjuntos 5/10/20/40 kg, más 6 kg si el arma son
-los guanteletes gigantes. Cada fuente descuenta el mismo cupo por personaje.
-El Toro conserva su rendimiento físico máximo, pero comparte cupo con el cajón.
-Pilas anteriores también respetan el límite al recoger; las nuevas no generan
-excedentes. La recogida parcial y el cofre dejan un gramo libre de capacidad.
-
-Los inventarios anteriores no se borran al actualizar: cuentan al 100% junto
-con componentes y primera arma ya hecha. El cajón permite dejar sobrantes sin
-reservar. Las tareas anteriores mantienen eficiencia, tiempo y reservas. La
-práctica opcional de reparación habilita sólo el faltante proporcional del daño
-observado; no repone un lote completo. Se puede pedir y devolver la espada de
-recolección para esa práctica. Fabricación, equipo y progresión nativos.
-
-Aplicar sobre 0ac: archivos nuevos/modificados y PRUEBAS_4_33_0ad.txt, sin
-aplicadores ni PK3. README y cinco documentos actualizados. Próximo bloque:
-enseñanza de sellos T1 y sus cupos; balas necesitan composición/proceso y el
-agua su recolección/potabilización. Mapas nuevos diferidos; V5 mantiene refactor.
-
-## Base 4.33.0ac — aprobada por el autor
-
-El autor aprobó todas las pruebas de 0ab. Se incorpora fabricación de virotes:
-Ronnie enseña la receta y dependencias al elegir ballesta. También se incorpora
-al conocimiento de guardados con esa elección, dentro y fuera de MAP01. No da
-munición, materiales ni otro préstamo, y no cambia la primera arma elegida.
-
-Receta 130, anexada a las 130 anteriores. Diez virotes nativos de 50 g por lote;
-se adopta la misma estructura T1 de flechas: 70% asta y 30% punta de bronce.
-Merma y tiempo de cada capa se calculan por las reglas vigentes, sin otros
-materiales. Banco de Trabajo de Ronnie o segundo piso, filtro Municiones.
-Salida personal sin Caja obligatoria, reservas y tareas nativas. Guía en el
-apartado de taller de Ronnie y en Detalle para quien eligió ballesta.
-
-Aplicar sobre 0ab con src, docs y README.md. Sólo archivos nuevos/modificados
-más PRUEBAS_4_33_0ac.txt. Los mapas y recursos audiovisuales se conservan.
-Siguiente cobertura: adquisición de recetas de armaduras/sellos T1. Las balas
-necesitan definir composición y procesamiento antes de su receta; no se deduce
-una receta completa de su masa actual de 3 g. Agua requiere su mecánica de
-recolección/potabilización. Calendario/descanso y arquitectura siguen en sus hitos.
-
-## Base 4.33.0ab — aprobada por el autor
-
-El autor aprobó todas las pruebas de 0aa. Se implementa el siguiente tramo
-pendiente de Ronnie: respiración en la piscina existente, detrás de la mansión
-al este. Leer la propuesta no inicia; aceptar habilita una práctica opcional.
-Sumergir la cabeza un segundo cerca de los escalones registra gasto real de
-Aire. Volver a sacar la cabeza y completar la devolución submarina nativa de
-tres segundos registra recuperación. Detalle y Ronnie reconocen cada fase.
-
-El registro persiste durante inmersión, recuperación y después de completarla.
-Mojarse sin cubrir la cabeza, nadar antes de aceptar o rellenar Aire por debug
-no sustituyen los eventos. No se exige cruzar la piscina ni volver con Ronnie.
-No modifica recursos, costes, geometría, requisitos de Rulo o salida.
-MAP01 continúa como entorno de pruebas; nuevos mapas siguen diferidos.
-
-Aplicar sobre 0aa combinando carpetas. Sólo archivos nuevos/modificados y
-PRUEBAS_4_33_0ab.txt. Evidencia de validación más abajo.
-
-## Base 4.33.0aa — aprobada por el autor
-
-Los Menores suman sólo atributos base por palo/rango antes del porcentaje de
-colección. Un palo completo da +3 a sus tres atributos. Espadas: mentales;
-Copas: sociales; Bastos: físicos; Oros: técnicos. El registro de 78 índices
-conserva propiedad; el Diario separa pasiva y colección. El Loco sigue siendo
-la única carta obtenible en el contenido actual; no se adelantan otras misiones.
-
-Zoom añade barrido de 360° a espadón, hacha de guerra y alabarda por triple
-Aire del primario, conservando daño, alcance y recuperación. Un impacto por
-enemigo, con geometría y aliados respetados; guanteletes mantienen bloqueo.
-Daño general recibido y coste de Ánima dividen por Tipo 4 de Dureza/Elocuencia.
-A 100, divisor 3. Colisiones, Dolor y Lucidez conservan las reglas anteriores.
-Se reconstruyen estadísticas antiguas al cargar sin duplicar bonos/progreso.
-
-Aplicar sobre 0z combinando carpetas. Entrega sólo archivos modificados más
-PRUEBAS_4_33_0aa.txt; el validador acepta ahora sufijos de varias letras.
-
-## Base 4.33.0z — incluida en la base 0aa aprobada
-
-Base 0y aprobada: el autor confirmó que todas las pruebas dieron correcto y
-que el desacuerdo informado era un error de interpretación. No se aplica una
-reparación de estados de misión ni se cambia el modo de atributos en 100.
-
-Tramo D de Ronnie: carga. Diálogo con peso, capacidad y factor de Aire por
-carga reales. Práctica opcional: aligerar mediante soltar un sobrante o guardarlo
-en la Caja si reduce el peso. Excluye la primera arma. No entrega objetos,
-impone sobrecarga, altera costes o añade un bloqueo. Consume la misma interfaz
-de inventario; préstamos y reservas mantienen sus reglas. Guardados y viaje
-conservan el resultado. MAP01 sigue siendo el entorno de pruebas de sistemas.
-
-Aplicar src, docs y README.md sobre 0y, combinando carpetas, y reconstruir con
-run_dev.bat. PRUEBAS_4_33_0z.txt contiene sólo las comprobaciones nuevas.
-
-## Base 4.33.0y — aprobada por el autor
-
-
-Base: 0x completo, todas las pruebas aprobadas por el autor. Continúa el tramo
-C del tutorial de supervivencia: Aire y movimiento. Construcción de mapas y
-ampliación de alcantarillas siguen diferidas; MAP01 es el entorno de pruebas.
-
-Ronnie ofrece la práctica después de devolver la espada. Aceptar registra un
-objetivo equivalente al 1% del Aire máximo actual, sin modificar recursos.
-El gasto nativo al correr y moverse acumula la primera parte. La recuperación
-natural posterior acumula la segunda. No exige agotarse, una ruta concreta,
-volver con Ronnie ni completar para seguir la misión. El estado parcial y los
-resultados se conservan en el Inventory persistente. Detalle muestra qué falta.
-Bebidas, ataques, saltos, inmersión y restauraciones de depuración no sustituyen
-los dos puntos observados. No cambia costes, ritmos o recursos del mundo.
-
-Aplicar src, docs y README.md sobre 0x, combinando carpetas, y reconstruir con
-run_dev.bat. PRUEBAS_4_33_0y.txt contiene las pruebas nuevas.
-
-## Base 4.33.0x — aprobada por el autor
-
-
-Base: 0w completo, incluido el acumulativo desde 0u. El autor descargó y aprobó
-TODOS esos cambios. La rectificación anterior de entrega queda resuelta.
-Prioridad confirmada: sistemas y mecánicas según roadmap, usando MAP01 para
-pruebas. Construir mapas y ampliar las alcantarillas queda diferido.
-
-Ronnie enseña alimento/agua después de devolver su espada. La propuesta requiere
-confirmación; sólo entonces ajusta reservas superiores al 90% una vez y entrega
-una ración de cada tipo. Registra usos nativos bajo el 100%, sin exigir retorno
-ni añadir bloqueos. Detalle muestra alimento y agua por separado. Si no puede
-entregar por carga, reintenta únicamente la ración pendiente al pedírselo.
-El refresco nativo de consumibles respeta diez segundos sin acumulación incluso
-antes del parpadeo del efecto. Mapas, arte y audio no cambian.
-
-Aplicar src, docs y README.md sobre 0w, combinando carpetas, y reconstruir con
-run_dev.bat. PRUEBAS_4_33_0x.txt contiene sólo las comprobaciones nuevas.
-
-## Base 4.33.0w — aprobada por el autor
-
-
-**Base histórica del acumulativo 0w:** carpeta completa 0u.
-La versión 0w fue aprobada por el autor.
-El acumulativo incluyó 0v y 0w; posteriormente el autor aprobó ambas.
-0w amplía el tutorial con una práctica opcional de reparación de Ronnie,
-disponible después de devolver su espada. No exige repetir ramas ni añade
-un bloqueo al cierre implementado. Se usa la primera arma real, por su ItemId.
-
-Ronnie explica cómo inspeccionar el desgaste, seleccionar/desequipar la pieza,
-usar el Banco de Trabajo del segundo piso y pulsar F en Oficios. La reparación
-nativa conserva costes, materiales, eficiencias, tiempos y reservas. La práctica
-se registra sólo al restaurar realmente esa pieza; hablar no la arregla, no
-la daña artificialmente y no acredita una tarea iniciada/cancelada/pausada.
-Detalle muestra el estado opcional. Guardar y viajar conservan su resultado.
-Si se abandona la mansión sin hacerla, no se muestra un pendiente imposible.
-
-El inventario de materiales T1 se auditó usando el catálogo vigente en GZDoom.
-El cuello de botella es el cuero, no la presencia de las cinco gemas. Las
-cantidades y límites están en SYSTEMS.md. No se aumenta el botín del Toro ni
-el cajón autorizado para los guanteletes; tampoco se conceden recetas nuevas.
-En ese hito faltaba distribuir recetas de armaduras/sellos. 0ad resuelve la
-elección de armadura y 0ae incorpora enseñanza/cupos de sellos.
-
-Los tres WAD, los sonidos, modelos y texturas mantienen sus hashes de 0v.
-Quien ya salió puede continuar en MAP02; para probar esta ampliación se usa
-un guardado anterior al cruce. No se abre un regreso artificial a la mansión.
-
-### Cambios 4.33.0v incluidos y aprobados por el autor: salida y regreso al cuerpo
-
-**Base:** carpeta completa 0u, con todas las pruebas aprobadas por el autor.
-Se conservan la espada sin escudo fantasma, la defensa contextual de Rulo y
-los bloques anteriores. 0v implementa el cierre de MAP01: fases 90 -> 95 -> 100.
-
-Tras capturar El Loco, la salida responde al fondo de la sala del Toro, en
-planta baja. Misiones > Detalle (F), Palomo, Ronnie y Rulo orientan hacia allí.
-Sólo el portador de la Caja, con carta y pruebas completadas, puede activarla.
-El aviso enumera qué se conserva y permite decir «No. Todavía no» sin cambios.
-Una fabricación pendiente exige terminarla o cancelarla personalmente.
-
-Confirmar inicia una breve transición guardable. Al finalizar se guarda la
-primera arma por su ItemId dentro de la misma Caja; conserva tipo, tamaño,
-esencia y condición. Se retiran los demás objetos físicos, incluidos los que
-estaban almacenados. Se mantienen Tarot, recetas, personaje y recursos actuales;
-al retirar equipo sólo se aplican los máximos que correspondan. El catálogo de
-equipo adicional por clase y valores especiales al despertar siguen sin definir:
-no se conceden piezas adicionales ni una curación gratuita.
-
-La misión se completa antes del viaje nativo. MAP02 presenta una llegada breve
-a las alcantarillas, con una plataforma seca, canal central, pasarelas y la Voz
-que advierte al protagonista. Inventario permite recuperar y equipar el arma.
-Todavía no incluye el recorrido completo, encuentros ni salida de alcantarillas.
-MAP01 no tiene un camino de regreso normal desde esta llegada.
-
-El campo de pruebas anterior se conserva como CADEV02, con el mismo TEXTMAP y
-sus 16.508 cosas. Sus filtros de diagnóstico usan ahora ese nombre. MAP01.wad
-permanece idéntico a 0u: el controlador retira el Exit provisional y presenta
-la puerta al iniciar o cargar. Esto evita invalidar los guardados por cambiar
-el checksum del mapa. No se reorganiza la arquitectura de programación de V5.
-
-La colección de Tarot conserva el +2% fraccionario de El Loco, sobre los doce
-atributos y sin acumulación al cargar. Las recetas y objetos siguen teniendo
-una única fuente autoritativa; no se duplica la Caja ni el arma al reintentar.
-El cruce actual es individual: ante otros jugadores presentes se informa y
-no se inicia el traslado global. La salida cooperativa queda en el roadmap.
-
-La base 0n aprobada incluye:
-
-- Las 38 estaciones conservan sus instancias: esquinas en dormitorios y una
-  fila de doce contra la pared del fondo del segundo piso. Puertas y estaciones
-  rechazan activaciones desde otro nivel o sin línea de visión.
-- Tab cierra Oficios, también durante una tarea; G filtra. Cerrar pausa la tarea.
-- Arco y arco largo enseñan diez flechas por lote y sus componentes, usando
-  crafting e inventario nativos. No consumen el lugar de la primera arma.
-- Cinco vetas de gemas al fondo de la cueva. El cajón conserva sólo cuero T1.
-  El abastecimiento histórico de 96 kg M para guanteletes al 25% queda
-  sustituido en 0ad por el cupo del equipo elegido al 100%.
-- Toro colocado tras la puerta de plata y Argento como custodio de la llave.
-  La entrega exige las preparaciones con los cuatro: las prácticas de Rulo
-  preceden al Toro. El presupuesto de cuero por recetas de 0n queda sustituido
-  por el rendimiento basado en masa de 0q.
-- Palomo corre visible por quince puntos, abre las puertas libres necesarias
-  y sube por ambas escaleras hasta la habitación del segundo piso. No se
-  teletransporta ni desaparece; continúa desde su punto al cargar.
-- Indicación compartida neutral sobre la pared marcada y diálogos de recursos
-  actualizados. Se conserva la devolución del bastón ante Caella de 0m.
-
-Reparación, alimento/agua, Aire/movimiento, carga y respiración en piscina están
-implementados como prácticas opcionales. Virotes y su conocimiento están
-aprobados en 0ac. Elección de armadura y cupos al 100% aprobados en 0ad.
-0ae incorpora recetas/cupos de sellos. Quedan composición y receta de balas y
-recolección/potabilización de agua; no bloquean las ramas aceptadas.
-
-Se conservan el WAD de MAP01, audio, modelos, jardín y poses aceptados. Las estaciones
-siguen ofreciendo infraestructura T2; ese alcance no obliga a abastecer T2.
-Formato: archivos nuevos/modificados para copiar, más un TXT de pruebas.
-La migración 0h aceptada se conserva; V5 reorganizará el código de programación.
-
-## Premisas permanentes
-
-1. Código, identificadores, README y toda la documentación en inglés. Los
-   comentarios explicativos dentro del código permanecen en español, para que
-   el autor y los colaboradores hispanohablantes entiendan la intención de
-   cada bloque.
-2. Preferir funciones nativas estables de GZDoom 4.14.2. Mantener una sola fuente
-   autoritativa para datos y una arquitectura compartida entre armas y actores.
-3. El producto final debe ser independiente: no distribuir assets de Doom.
-   Mantener procedencia, atribuciones y modificaciones de los recursos propios
-   o externos. Las dependencias de desarrollo no equivalen a autorización de distribución.
-4. No inventar valores de balance, recetas, historia ni decisiones pendientes.
-   El diseño del autor y sus correcciones posteriores fijan esos datos.
-5. Proteger lo ya aceptado y validar sólo lo afectado por una revisión.
-   Distinguir análisis estático, prueba aislada del motor y aceptación del autor.
-6. Entregar únicamente archivos nuevos/modificados para copiar y pegar, más
-   un TXT con aplicación y pruebas necesarias; sin instaladores del parche.
-   No incluir IWAD, ejecutables, fixtures de prueba ni un PK3 completo como si
-   fuera la base definitiva cuando sólo se dispone de un delta.
-7. **Documentación consolidada y actualizada en cada parche.** README.md es la
-   entrada general y se revisa con cada entrega. Mantener estos cinco archivos
-   de `docs/`; integrar temas nuevos en sus capítulos antes de crear otro archivo.
-   Un nuevo documento permanente sólo se justifica si el autor lo requiere.
-8. Cada entrega actualiza versión, estado real, decisiones, próximos pasos y
-   resultados de pruebas en el mismo cambio. No duplicar el estado entre un
-   README por parche y varios informes temáticos. Las instrucciones temporales
-   del ZIP quedan fuera de la instalación; las antiguas van al historial.
-9. Conservar historia y contenido único. Antes de retirar un documento, integrar
-   su información vigente y preservar el original. No eliminar silenciosamente
-   archivos locales ni mantener requisitos obsoletos como instrucciones actuales.
-
-10. **Carpetas con una responsabilidad clara.** Antes de retirar archivos,
-    comprobar consumidores y procedencia. Conservar fuentes útiles en assets,
-    empaquetar sólo src y respaldar retiradas conocidas. El TXT de pruebas
-    de cada entrega no se acumula en los cinco documentos activos. V5.0 reorganiza el
-    código mediante cambios pequeños con compatibilidad de guardado.
-11. Todo cambio debe ser trazable a un issue o tarea.
-12. Ningún agente borra archivos sin autorización explícita.
-13. Los generadores deben ser deterministas (misma entrada, misma salida
-    byte a byte).
-14. Un modelo por tarea. Tareas rutinarias → modelo económico (DeepSeek).
-    Arquitectura, narrativa o revisión compleja → modelo avanzado
-    (ChatGPT Pro). Documentar en AGENTS.md qué modelo se espera para cada
-    tipo de tarea.
-15. Guardados siempre migrables. Ningún cambio puede invalidar un guardado
-    existente sin una migración explícita, probada y reversible. Los cambios
-    de esquema llevan un número de revisión y lógica de migración idempotente.
-16. Datos fuera de la lógica. Los valores de balance, recetas, coordenadas,
-    nombres y textos viven en datos o documentos, nunca hardcodeados en la
-    lógica. Si un agente necesita un número que no está en los documentos,
-    debe preguntar, no inventarlo.
-17. Un cambio, un motivo. Cada commit o PR atiende un único propósito. Los
-    cambios visuales, de balance y de código no se mezclan, para poder
-    revertir sólo lo que falló.
-18. Verificación cruzada entre IAs. Cuando sea posible, una IA revisa el
-    trabajo de otra. DeepSeek revisa el código de ChatGPT; ChatGPT revisa el
-    diseño de DeepSeek. Reduce errores sin que el autor tenga que revisar
-    cada línea.
-19. La documentación es el contrato. Si el código y la documentación difieren,
-    la documentación prevalece hasta que se actualice. Un agente que detecte
-    una discrepancia debe reportarla, no "arreglar" el código en silencio para
-    que coincida.
-20. Los issues son la unidad de trabajo. Todo cambio significativo (código,
-    balance, documento, mapa) nace de un issue que describe el problema u
-    objetivo, los documentos de referencia, el alcance explícito y los
-    criterios de aceptación. Un PR sin un issue vinculado no se revisa.
-
-## Mapa de documentos
-
-| Archivo | Responsabilidad |
+| Information | Reputation >= 25 |
+| Physical door | Member and reputation >= 25 |
+| Trade | Reputation >= 0 and own Box |
+| Trade discount | Reputation >= 25; existing margins 140%/60% |
+
+The five states are 0 without membership, 25 without membership, 25 member, -25 member and 0
+member. They modify the actual register of Gendarmerie; they retain the other factions.
+The test uses inventory, coins and actual stocks, without delivering Box, resources or
+rewards. Close trade with Q/B; Esc retains the engine pause menu. To remove the test,
+close your menus and use `give CaelumDebugReputationTrialOff`: removes guide and door,
+without reversing reputation. Loading the previous save restores the pre-test status.
+
+The current four ids, -1000..1000 scale and existing relationships are preserved. The
+eight narrative factions, seven ranks and future relationships are still pending
+thresholds and author matrix. The values of this test do not set that design. Maps,
+missions, campaign reputation gains, regional price formulas or attribute bonuses are not
+added.
+
+### Evidence and validation of 0an
+
+Thirty-seven native checks cover invalid limits and ids, independent membership, correct
+faction, rejection of actions outside the dialogue, conditions of groups of doors, real
+purchases/sales, exchange rate and closure due to loss of access. The separation between
+temporary and negotiated reduction, coins/stock conservation is verified when refusing
+and absence of duplication or alteration of missions, Tarot and attributes.
+
+Nineteen interface checks use keyboard SDL events: activation, re-opening with F, native
+menu states, dialogue and door permission, prices and purchases with Enter, Q-closure,
+Reputation controls and withdrawal of the test. Spanish and English texts are reviewed
+with the native render; repeating the same cases by language does not add different cases.
+
+A native save created by the original 0am sources retains when loading with 0an the four
+reputations/memberships, Box, coins, attributes, water, completed mission, certificate and
+successor offer. An already open trade retains its negotiated discount without receiving
+new requirements or activating the test. Then it saves and reloads a session with 0an
+conditions: its fields, discount and owner/guide references are preserved. Withdrawing the
+required membership blocks the transaction without expense; the native journey to MAP02
+retains the records and allows rebuilding the presentation of the test there.
+
+Environment: GZDoom 4.14.2, Freedoom and llvmpipe on Linux; controlled scenarios, not a
+complete repeat of the campaign or a save of the author. The author later confirms that
+all 0an tests were correct. QA helpers, saves and engine are out of the delta.
+Application and instructions in PRUEBAS_4_33_0an.txt.
+
+Delivery on the complete 0am project with README and five canonical documents. Its acceptance enables final 0ao integration before starting locations/connections/travel
+4.34 bases.
+
+## Base accepted: 4.33.0am — inactive conversation and Journal boundaries
+
+The capture of the 0al log shows 80 phase, a valid owned Box, requirements met and essence
+accessible at 32,6 MU. There is no channeling or reloading. ConversationNPC retains an
+actor, but its bInConversation is false. Capture rejected any reference, even if there was
+no active dialogue.
+
+0am checks the real activity of the interlocutor when opening the essence and waiting for closure before animating it. It applies the same rule to the door, to the exit transition
+and to the Arrival Voice. It does not erase native references or repair progress: an owned Box and explicit capture choice are still required; opening or canceling the dialogue does not grant the card. It retains the unique delivery and existing bonus of El Loco.
+
+Left/Right runs through the known filters and missions. From the first element,
+Left passes to the previous tab; from the last, Right passes to the next tab. Inventory: Tarot/Character. Missions: Crafts/Reputation. With a single mission, both arrows go out to
+their adjacent tab. Upon returning the selection is retained. Page Up/Page Down or LB/RB
+changes tabs directly; Up/Down and F/Y maintain their other functions. Spanish and
+English aids explain the ends in a second line.
+
+### Evidence and validation of 0am
+
+The log status is reproduced in a controlled manner: reference of an NPC whose dialogue is
+already closed. In the original 0al sources, Use does not open the essence. With 0am, the
+same native input opens El Loco and Enter completes the capture, also after exhausting
+Quintessence. The Box is received by the actual Palomo dialog, without giving it
+directly. The scenario starts after the four resident tests; it is not a complete
+execution of the mission nor does it use an author's save.
+
+Twenty-eight Journal checks go through keyboard SDL events and the native dispatcher:
+filters, both ends, one and three missions, gaps for unknown entries, Detail, retained
+selection, Page Up/Page Down and absence of automatic acceptance. Language repetitions do not
+add up to different cases. Twelve Palomo/Box/depletion/capture section checks confirm the fix on the reproduced state, identity and unique delivery with +2%.
+
+Seventeen additional checks pass when loading with 0am a native save created by 0al with
+inactive reference, in the coordinates communicated: Box and preserved attributes, absence
+of capture while loading, protection of an active interlocutor, Use, cancellation with Esc
+and new confirmation. The animation ends even if another inactive reference to the essence
+is retained. The door opens and the transition arrives at MAP02 even with an inactive reference
+to the threshold; surviving card, Box and first weapon and opening the Arrival Voice. The
+weapon and its registration are prepared only to verify the departure contract; this test
+does not repeat the crafting. The save files are not modified.
+
+The engine compiles the sources without errors and passes validate_project.py: five
+documents, 74 audio files and 12 station models. The delta contains 12 new/modified files. Environment: GZDoom 4.14.2, Freedoom and llvmpipe on Linux. The author's check on
+Windows remains pending. Test aids, engine and IWAD are not part of the patch.
+
+Delta delivery on 0al with README, five canonical documents and PRUEBAS_4_33_0am.txt.
+Maps, assets, attributes and infrastructure protection/restoration are preserved. Author
+accepts these settings before 0an.
+
+## Base 4.33.0ak — Observed capture; revised controls in 0al
+
+The author reports trees and stations displaced by Quintessence, blocking by capturing
+the essence and controls of the Journal that change filter/tab instead of the intended
+destination. 0aj is not approved. The base of optional missions is retained and these
+corrections are prioritized before reputation.
+
+The seal selection accepted infrastructure because it is also SHOOTABLE. 0ak excludes
+CaelumMovableProp from the seal area, including captured mass and ejection. MAP01 relocates
+the same plants and stations once: origin of the garden and current layout of the rooms.
+It does not recreate the nodes or their stocks; it retains its references, tasks and
+reserves. It also cleans unwanted velocity and suspension of targets in saves.
+
+The normal capture was reproduced successfully on the original 0aj sources. The reproduced lock
+appears when channeling: PlayerThink discarded Use. A fresh Use press now stops the Channel,
+applies its normal cooldown and arrives at native interaction on that same press. El
+Loco retains its own Box requirement and confirmation of the single delivery dialog.
+
+Journal: Left/Right changes mission in Missions; in Inventory changes tabs
+directly. F/Y retains the inventory filter. Page Up/Page Down or LB/RB changes tabs in any
+section. The arrows of an open station retain their recipes; leaving Crafts closes the
+native session and pauses work at the station. Help text is updated in Spanish and English.
+
+### 0ak Technical Validation
+
+GZDoom 4.14.2 with Freedoom and llvmpipe on Linux. Isolated scenarios on patch sources;
+engine auxiliaries and resources are not delivered.
+
+- 78 Target Checks: Actual infrastructure of MAP01 excluded, trees and stationary stations
+  with Air/Quintessence, restored gravity and attraction/mass/expulsion continuity for
+  combat targets.
+- 34 Journal checks: ten filters, circular navigation between missions, Detail and
+  cancellation of abandonment, tab keys and native closing of a real station. The same
+  path of key codes used by InputProcess and its native events is invoked; keyboard/controller
+  physical pending.
+- 19 when loading a game saved by original 0aj sources with active Quintessence and
+  displaced plants/stations: position, identity, gravity, partial stock, fractional yield, attributes, choices, 1,25 liters, Box, completed mission and reward
+  preserved. Use interrupts the Channel and opens El Loco; confirm grants one card and only its current +2%. Repeated capture or reward is rejected.
+
+131 different checks pass without failure. The interface is reviewed in both languages,
+without adding up the repetitions of the same controls. The author's save has not been
+received: the compatibility uses a native save prepared to reproduce its symptoms. It does
+not represent a complete game. Application and acceptance in Windows:
+PRUEBAS_4_33_0ak.txt. Maps, art, audio, models and attribute formulas are preserved with
+respect to 0aj. The project validator passes without errors: five documents, 74 audio
+files, 12 station models and references. The delta contains 12 files: five runtime files,
+README, five documents and one application/test TXT.
+
+## Base 4.33.0aj — comments corrected by 0ak
+
+0ai is approved by the author. All attributes are preserved, including Resilience for
+Sleep and consumption/regeneration divisors of Constitution. The previous audit is recorded
+for future review.
+
+0aj implements the optional mission base: offer, requirement for another completed
+mission, explicit acceptance, objectives with bounded progress, complete, fail and abandon with
+confirmation. An end is not overwritten or restarted. The reward uses native Inventory and
+a mission delivery record; failed receipt allows retry, and the object is not replenished.
+
+The Journal selects between known missions and shows Detail of the chosen one. The
+diagnostic chain is enabled with give CaelumDebugQuestTrial: Tour followed by Wait. It
+is separated from narrative content: certificate without weight, price or attributes,
+without altering the main mission, Tarot or T1 resources. SYSTEMS.md defines rules and
+limits; PRUEBAS_4_33_0aj.txt explains the route.
+
+After resolving the capture and accepting the controls, the next block connects reputation
+with reusable conditions. The integration will then be reviewed before V4.34. Bullets and
+water treatment are still pending definition for later enlargements. V4.35 calendar
+precedes Rest; V5.0 retains the refactor programming.
+
+### 0aj Technical Validation
+
+119 passed checks, zero failures, in GZDoom 4.14.2 with Freedoom and llvmpipe on Linux. The
+evidence of the recovered work is preserved and the flow and interface is re-run over the
+final sources; repetitions of the same scenario are not added as additional checks.
+
+- 70 of the life cycle: discovery without acceptance, chain requirement, invalid indexes
+  and targets, limits of progress, explicit completion, failure, abandonment, permanent
+  endings and unique native reward. Removing the certificate does not reopen reward collection;
+  a rejected reception admits retry. MAIN_M00 retains its status and its setters refuse
+  to alter an end.
+- 13 of the Journal in Spanish and 13 in English: circular selection, detail of the chosen
+  mission, blocked offer, native acceptance/abandonment events, cancellation of confirmation
+  and update of the screen. List captures, details and revised endings. The scenarios
+  invoke the navigation and network events of the engine; the physical keyboard/controller is
+  verified in Windows.
+- Eight when loading a game created with original 0ai sources: log and main stage, Journal
+  snapshot expansion, attributes, 1,25 liters of canteen and seal/amulets choices
+  preserved. New offers do not appear until the test is explicitly enabled.
+- Eight when reloading a 0aj save with partial wait: time, target, previous reward and
+  main mission preserved, continuation and unique delivery of the second assignment.
+- Seven in a ChangeLevel real MAP01 -> MAP02: travel the certificate, collection record and
+  active counter; complete and collect the reward at destination without duplicating the previous
+  reward.
+
+The scenarios prepare profiles and objectives to isolate each condition; they do not
+represent a complete game, the narrative crossover of Limbo or a cooperative validation.
+The limits of the health observation described in SYSTEMS.md are maintained. The author's
+acceptance on Windows remains by PRUEBAS_4_33_0aj.txt.
+
+The project validator passes: five documents, 74 audio files, 12 station models and
+preserved references. The delta is checked against the 0ai base recovered and matched with
+its saved ZIP. All three WAD, audio resources and attribute calculations retain their
+bytes. Delivery: 15 new/modified files and an application/test TXT. ZIP CRC and exact reconstruction of its contents verified.
+
+## Base 4.33.0ai — approved by the author
+
+The author corrected his previous indication: Sleep belongs to Resilience. 0ai restores
+that association by retaining the Type 4 divisor (1 at attribute 0; 3 at 100).
+Constitution controls Hunger/Thirst and now also divides their cost during health/Air regeneration, without repeating the passive consumption mass factor. Speeds remain
+unchanged. The <=10% critical threshold restored in 0ah and the approved 0ag pool, partial refill and sips are preserved.
+
+The audit of the twelve attributes is in SYSTEMS.md: matching families, active effects,
+scale/assignment differences and pending functions. The author table remains as design
+intent; the audited matrix does not treat fields that are only calculated as completed features. Its
+differences in this patch are not automatically implemented. Ronnie is updated in both
+languages, README and five docs, without creating more canonical documents.
+
+A previous game updates the factors without restarting reserves, choices or progress.
+Delta delivery over 0ah plus a TXT test. After accepting 0ai, close the review of the
+tutorial and continue world/travel fundamentals, without expanding maps. Remains the
+discrepancies of attributes recorded below, unsafe water treatment and bullet composition/processing. Calendar precedes Rest; V5 maintains the refactor of programming
+architecture.
+
+### 0ai Technical Validation
+
+95 native checks approved in GZDoom 4.14.2, Freedoom and llvmpipe in Linux: independence
+of Constitution/Resilience/Patience, 0/50/100 curve, 50/100/200 masses, fractional
+attributes and limits, real passive consumption and factor update. Actual quantities and
+costs of both regenerations, maximum, insufficient reserve, absence of double mass and
+critical rule for all three reserves to 1/10/10,1 points are checked.
+
+Another eight passed checks load a save created with the original 0ah files and a normal
+profile with Patience other than Resilience. They verify new factor and cost,
+attributes/reserves/liters preservation and choices and absence of accumulated division.
+Total: 103 native checks, without faults. The preparation of the save was also verified
+with the original formula; the save file was not edited to simulate compatibility. The
+documentation/resource validator ends without errors, with five canonical documents.
+Delivery of ten files, without binary resources or test code. The author confirmed that
+all 0ai tests were correct. The attributes remain as they are; the differences of his
+audit are postponed.
+
+### 0ah Technical Validation
+
+96 checks passed in GZDoom 4.14.2, Freedoom and llvmpipe on Linux. 88 check the curve at
+0/50/100 with independent Constitution and Patience, masses of 50/100/200, fractional
+attributes and limits, one second of native consumption, refresh of old factors,
+thresholds 0/1/2/9,9/10/10,1/50 for all three reserves, combined damage and regeneration
+blocking. The pool, partial refill and approved 0ag sip also pass their regression checks.
+
+A save was created with original 0ag code, 100 attributes and zero factors; another eight
+checks load it with 0ah and verify positive consumption without restarting reserves,
+attributes, liters or choices. The divisor does not accumulate. The documentary and
+resource validator ended without errors. The attribution to Patience and regeneration
+costs are now replaced by 0ai; these previous tests are historical evidence, not
+acceptance by the author of 0ah.
+
+### 0ag Technical Validation
+
+161 passed native checks in GZDoom 4.14.2 with Freedoom and llvmpipe, Linux. The water block adds
+153: the six models to 50/100/200 kg, volume per sip and remainder, ten real pulses for
+ten seconds, MAP01 with/without container, partial refill and load/Box limits, damage at zero Thirst, regeneration to 1 and 2 points and previous Hunger/Sleep rules.
+
+Eight other checks load a save created with 0af delivered code: liters, pending drink
+effect, progress and choices/allowance of preserved silver; new mass-adjusted sip and real
+refill/hydration in the pool. The test isolates the prologue so that its automatic dialogue does not pause time. The documentation and resource validator ended
+without errors. The author approved all tests of 0ag; the positive-Thirst rule is reverted
+in 0ah at the author's request.
+
+### 0af Technical Validation
+
+GZDoom 4.14.2 with Freedoom, rendered by software in Linux: they pass the combinations of
+the five seal choices by four amulets, the six containers, formula by mass, Ronnie
+delivery, limited silver, personal manufacturing and persistence. A save generated with
+the original 0ae code was also loaded and their pending seal was finished before choosing
+the accessories. Native menus were toured in English and Spanish. RGBA Sprites reviewed as
+images; the author's subsequent tests approved these resources. The documentary and
+resource validator ends without errors.
+
+## Base 4.33.0ae — approved by the author
+
+The author confirmed that all 0ae tests passed. 0ae's full base was recovered
+from the author's attachments.
+
+The author approved all 0ad tests. Caella offers to show the five T1 Seals and their
+components after completing their test. Read or postpone does not change the character;
+accept enables optional knowledge and quota for one of each item. Use existing recipes,
+without changing Channel costs or effects.
+
+The set at 100% in each layer requires 1,8 kg gross copper, 0,2 kg gross tin and 0,6
+kg of each gem. The quota is added to the chosen equipment without restarting what has
+already been issued. If there is an owned T1 Seal when learning, only the missing
+ones are budgeted; the Caella loan does not count. That initial existence is recorded:
+manufacturing or losing a piece after it does not replenish the quota.
+
+Native recursive crafting from raw materials, personal result without Box, one equipment slot and Detail 0/5–5/5. Caella's Workbench and the complete workshop on the
+second floor have the infrastructure. Ronnie can lend the sword again for the outstanding
+seal materials, even with its mission and repair completed, and accepts the return for its
+workshop talk.
+
+It does not add mission requirements or change runes, exit narrative or what comes out of
+Limbo. Maps and audiovisuals retain their bytes. It is applied on 0ad by copying files
+plus PRUEBAS_4_33_0ae.txt. Validation at the end of this document. Next block of systems:
+water collection/treatment; composition and bullet processing still need author
+definition. Calendar/rest and V5 architecture retain their place on the roadmap.
+
+## Base 4.33.0ad — approved by the author
+
+The author approved all tests of 0ac. Ronnie asks which armor family is desired after
+choosing weapon: magical, light, medium or heavy, with description and confirmation. It
+teaches the four pieces T1 and components; who already chose weapon can access by his
+conversation about workshops. It does not force repeat missions or add a requirement to
+the Bull or to the exit.
+
+The supply to the 25% is replaced by a finite quota to the 100% in each layer: one weapon
+chosen, one set chosen and ten arrows/bolts when applicable, at the chosen size. Leather
+M: 5/10/20/40 kg sets, plus 6 kg if the weapon is the giant gauntlets. Each source
+discounts the same quota per character. The Bull retains its maximum physical yield,
+but shares a quota with the drawer. Previous stacks also respect the limit when
+collecting; the new ones do not generate surplus. Partial collection and the drawer leave a
+gram free of capacity.
+
+Previous inventories are not deleted when updating: they count toward the 100% together with
+components and first weapon already made. The drawer accepts unreserved surplus. The
+above tasks maintain efficiency, time and reserves. The optional repair practice enables
+only the missing amount proportional to the observed damage; it does not replenish a complete
+batch. You can order and return the gathering sword for that practice. Native manufacturing,
+equipment and progression.
+
+Apply to 0ac: new/modified and PRUEBAS_4_33_0ad.txt files, without applicators or
+PK3. README and five updated documents. Next block: teaching T1 seals and their quotas;
+bullets need composition/process and water needs collection/treatment rules. Deferred new
+maps; V5 maintains refactor.
+
+## Base 4.33.0ac — approved by the author
+
+The author approved all tests of 0ab. Bolt crafting is incorporated: Ronnie teaches the
+recipe and dependencies when choosing crossbow. It also incorporates the knowledge of
+saves with that choice, inside and outside MAP01. It does not give ammunition, materials
+or another loan, and does not change the first weapon chosen.
+
+Recipe 130, appended to the previous 130 recipes. Ten native 50 g bolts per batch; adopts the same
+T1 structure of arrows: 70% shaft and 30% bronze tip. Waste and time of each layer are
+calculated by the current rules, without other materials. Ronnie Workbench or second
+floor, Ammunition filter. Personal output without mandatory Box, reservations and native
+tasks. Guide in the Ronnie workshop section and in Detail for who chose crossbow.
+
+Apply to 0ab with src, docs and README.md. Only new/modified files plus
+PRUEBAS_4_33_0ac.txt. Maps and audiovisual resources are preserved. Next coverage:
+acquisition of recipes from armor/Seals T1. Bullets need to define composition and
+processing before defining their recipe; a complete recipe is not inferred from their current 3 g mass. Water requires collection/treatment rules. Calendar/rest mechanics and
+architecture remain at its milestones.
+
+## Base 4.33.0ab — approved by the author
+
+The author approved all tests of 0aa. The following pending section of Ronnie is
+implemented: breathing in the existing pool, behind the mansion to the east. Read the
+proposal does not start; accepting enables an optional practice. Submerging the head for one second near the steps records actual Air expenditure. Raising the head again and completing the native three-second Air recovery after immersion records recovery. Detail and Ronnie recognize each phase.
+
+Registration persists during immersion, recovery and after completion. Wet without
+covering the head, swim before accepting or filling Air by debug do not replace events.
+There is no requirement to cross the pool or return to Ronnie. It does not modify
+resources, costs, geometry, Rulo requirements or output. MAP01 continues as testing
+environment; new maps remain deferred.
+
+Apply to 0aa by combining folders. Only new/modified and PRUEBAS_4_33_0ab.txt files.
+Validation evidence below.
+
+## Base 4.33.0aa — approved by the author
+
+Minors add only base attributes by suit/rank before the collection percentage. A complete
+suit gives +3 to its three attributes. Swords: mental; Cups: social; Wands: physical; Coins: technical. 78-index record retains property; Journal separates passive and
+collection. El Loco remains the only card obtainable in the current content; no other
+missions are advanced.
+
+Zoom adds 360° sweep to greatsword, war axe and halberd at triple the primary Air cost, preserving
+damage, reach and recovery. One hit per enemy, with respected geometry and allies; gauntlets retain blocking. General damage received and Anima cost are divided by the Type 4 factor from Toughness/Eloquence; at 100, the divisor is 3. Collisions, Pain and Lucidity retain the above rules.
+Old statistics are reconstructed when loading without duplicating bonuses/progress.
+
+Apply over 0z by combining folders. Deliver only modified files plus PRUEBAS_4_33_0aa.txt;
+the validator now accepts multiple letter suffixes.
+
+## 4.33.0z base — included in approved 0aa base
+
+0y-based approved: The author confirmed that all tests were correct and that the
+reported disagreement was an interpretation error. No mission state repair is applied and
+no attribute mode at 100 is changed.
+
+Ronnie Stage D: Load. Dialogue with real weight, capacity and Air factor. Optional
+practice: lighten by releasing a surplus or save it in the Box if it reduces the weight.
+Excludes the first weapon. It does not deliver objects, impose overload, alter costs or
+add a lock. It uses the same inventory interface; loans and reserves maintain its
+rules. Saves and travel preserve the result. MAP01 remains the system testing environment.
+
+Apply src, docs and README.md to 0y, combining folders, and reconstructing with
+run_dev.bat. PRUEBAS_4_33_0z.txt contains only new checks.
+
+## Base 4.33.0y — approved by the author
+
+
+Base: 0x complete, all tests approved by the author. Continues the C section of the
+survival tutorial: Air and motion. Map construction and sewer expansion are still delayed;
+MAP01 is the testing environment.
+
+Ronnie offers the practice after returning the sword. Acceptance records a target equivalent to
+the 1% of the current maximum Air, without modifying resources. The native expenditure
+when running and moving accumulates the first part. The subsequent natural recovery
+accumulates the second part. It does not require exhaustion, a concrete route, return with
+Ronnie or complete to follow the mission. The partial state and results are preserved in
+the Persistent Inventory. Detail shows what is missing. Drinks, attacks, jumps, immersion
+and debug restorations do not replace the two points observed. It does not change
+costs, rhythms or resources of the world.
+
+Apply src, docs, and README.md to 0x, combining folders, and rebuilding with run_dev.bat.
+PRUEBAS_4_33_0y.txt contains new tests.
+
+## Base 4.33.0x — approved by the author
+
+
+Base: 0w complete, including the cumulative from 0u. The author downloaded and approved
+ALL these changes. The previous delivery rectification is resolved. Confirmed priority:
+systems and roadmap mechanics, using MAP01 for testing. Build maps and expand sewers is
+deferred.
+
+Ronnie teaches food/water after the player returns his sword. The proposal requires
+confirmation; only then lowers reserves above 90% to that level once and delivers a portion of each
+type. Record native uses under the 100%, without requiring return or adding blockages.
+Detail shows food and water separately. If you cannot deliver due to carrying capacity, try only the
+pending ration when ordering it. Native consumables refresh respects ten seconds without stacking, even just before the effect expires. Maps, art and audio do not change.
+
+Apply src, docs and README.md to 0w, combining folders, and reconstructing with
+run_dev.bat. PRUEBAS_4_33_0x.txt contains only new checks.
+
+## Base 4.33.0w — approved by the author
+
+
+**Historical base of the cumulative 0w:** complete 0u folder. The 0w version was approved
+by the author. The cumulative included 0v and 0w; the author subsequently approved both.
+0w expands the tutorial with an optional Ronnie repair practice, available after returning
+its sword. It does not require repeating branches or adding a lock to the implemented
+closure. The actual first weapon is used, by its ItemId.
+
+Ronnie explains how to inspect the wear, selecting/unequipping the part, use the Workbench on the second floor and press F on Crafts. Native repair retains costs, materials,
+efficiencies, times and reserves. Practice is recorded only when actually restoring that
+part; talking does not fix it, does not artificially damage it and does not credit a started/canceled/paused task. Detail shows the optional status. Saving and traveling
+retain its result. If you leave the mansion without making it, no impossible pending objective is shown.
+
+The T1 material inventory was audited using the current catalog in GZDoom. Leather is the
+bottleneck, not the presence of the five gems. Quantities and limits are in SYSTEMS.md.
+Neither the Bull loot nor the drawer authorized for the gauntlets is increased; no new
+recipes are granted. Armor/Seal recipe distribution was still missing at that milestone.
+0ad resolves armor choice and 0ae adds Seal teaching/allowances.
+
+The three WADs, sounds, models and textures maintain their 0v hashes. Those who have
+already left can continue in MAP02; to test this expansion a pre-crossing save is used. An
+artificial return to the mansion is not opened.
+
+### 4.33.0v changes included and approved by the author: exit and return to body
+
+**Base:** complete 0u folder, with all tests approved by the author. The sword without
+ghost shield, the contextual defense of Rulo and the previous blocks are preserved. 0v
+implements MAP01 closure: phases 90 -> 95 -> 100.
+
+After capturing El Loco, the exit responds at the back of the Bull room, on the ground
+floor. Missions > Detail (F), Palomo, Ronnie and Rulo guide towards it. Only the Box
+carrier, with card and completed tests, can activate it. The notice lists what is
+preserved and allows to say "No. Not yet" unchanged. An outstanding manufacture requires
+completion or cancellation personally.
+
+Confirm starts a short saveable transition. At the end, the first weapon is saved by its
+ItemId within the same Box; it retains type, size, essence and condition. The other
+physical objects, including those stored, are removed. Tarot, recipes, character and
+current resources are maintained; when removing equipment only the applicable maximums are enforced. The catalog of additional equipment by class and special values on awakening are
+still undefined: no additional pieces or a free cure are granted.
+
+The mission is completed before the native trip. MAP02 presents a short arrival to the
+sewers, with a dry platform, central channel, footbridges and the Voice that warns the
+protagonist. Inventory allows to recover and equip the weapon. It does not yet include the
+complete route, encounters or exit of sewers. MAP01 does not have a normal return path
+since this arrival.
+
+The above test field is conserved as CADEV02, with the same TEXTMAP and its 16.508 things.
+Its diagnostic filters now use that name. MAP01.wad remains identical to 0u: the
+controller removes the provisional Exit and presents the door when starting or loading.
+This avoids invalidating the saves by changing the map checksum. V5 programming
+architecture is not reorganized.
+
+The Tarot collection retains the +2% fractional El Loco bonus, on the twelve attributes and
+without accumulation when loading. Recipes and objects still have a unique authoritative
+source; neither the Box nor the weapon is duplicated when retrying. The current crossing is single-player: other players present are informed and the global transfer is not
+initiated. The cooperative exit is left on the roadmap.
+
+The approved 0n base includes:
+
+- The 38 stations retain their instances: corners in bedrooms and a row of twelve against
+  the wall of the bottom of the second floor. Doors and stations reject activations from
+  another level or without a line of vision.
+- Tab closes Crafts, also during a task; G filters. Close pauses the task.
+- Bow and long bow teach ten arrows per lot and its components, using native crafting and
+  inventory. They do not consume the place of the first weapon.
+- Five veins of gemstones at the bottom of the cave. The drawer retains only T1 leather.
+  The historical supply of 96 kg M for gauntlets to 25% is replaced in 0ad by the quota of
+  the chosen equipment at 100%.
+- Bull placed behind the silver door and Argento as guardian of the key. Delivery requires
+  preparations with all four: Rulo practices precede the Bull. The leather budget for 0n
+  recipes is replaced by the mass-based yield of 0q.
+- Palomo runs visibly through fifteen waypoints, opens the necessary free doors and climbs up
+  both stairs to the second floor room. It does not teleport or disappear; it continues
+  from its current point when loading.
+- Neutral shared display on the marked wall and updated resource dialogues. Caella 0m staff return is retained.
+
+Repair, food/water, Air/movement, load and pool breathing are implemented as
+optional practices. Bolts and their knowledge are approved in 0ac. Choice of armor and
+quotas to 100% approved in 0ad. 0ae adds Seal recipes/allowances. Composition and
+recipe of bullets and water collection/treatment remain; they do not block accepted
+branches.
+
+The MAP01 WAD, audio, models, garden and accepted poses are preserved. Stations continue
+to offer T2 infrastructure; that scope does not require supplying T2. Format:
+new/modified files to copy, plus a TXT test. The accepted 0h migration is preserved;
+V5 will rearrange the programming code.
+
+## Permanent premises
+
+1. Code, identifiers, README, and all documentation in English. Explanatory
+   comments inside code remain in Spanish, so the author and Spanish-speaking
+   collaborators understand the intent of each block. Modified tooling uses
+   English comments, docstrings, help and diagnostics.
+2. Prefer stable native GZDoom 4.14.2 functions. Keep a single authoritative
+   source for data and a shared architecture between weapons and actors.
+3. The final product must be independent: do not distribute Doom assets.
+   Preserve provenance, attribution, and modifications for owned or external
+   resources. Development dependencies do not equal authorization to distribute.
+4. Do not invent balance values, recipes, story, or pending decisions. The
+   author's design and later corrections set those data.
+5. Protect what is already accepted and validate only what a revision affects.
+   Distinguish static analysis, an isolated engine test, and author acceptance.
+6. GitHub is the primary working source: one issue defines one patch, implemented
+   on a focused branch and delivered through a linked PR. Several focused commits
+   may implement that issue. ZIPs are optional exports, not the source of truth.
+   Do not distribute development IWADs, executables or test fixtures.
+7. **Consolidated documentation updated in every patch.** `README.md` is the
+   general entry point and is reviewed with each delivery. Keep these five
+   `docs/` files; integrate new topics into their chapters before creating
+   another file. A new permanent document is justified only if the author
+   requires it.
+8. Every delivery updates version, real status, decisions, next steps, and test
+   results in the same change. Use numeric MAJOR.MINOR.PATCH releases:
+   4.36.0i -> 4.36.1 -> 4.36.2 -> 4.36.3. Intermediate commits and later
+   acceptance of the same patch do not increment its version. Keep historical
+   labels unchanged. The larger-version roadmap remains in force. Do not duplicate
+   state between a per-patch README and thematic reports. Keep temporary export
+   instructions out of current installation guidance; preserve older ones in history.
+9. Preserve history and unique content. Before retiring a document, integrate
+   its current information and preserve the original. Do not silently delete
+   local files or keep obsolete requirements as current instructions.
+10. **Folders with a clear responsibility.** Before removing files, check
+    consumers and provenance. Keep useful sources in assets, package only src,
+    and back up known retirements. Keep outstanding author tests in the single
+    root `pending_test.txt`, with confirmed results in `docs/HISTORY.md`.
+    V5.0 reorganizes code through small changes
+    with save compatibility.
+11. Every change must be traceable to an issue or task.
+12. No agent deletes files without explicit authorization.
+13. Generators must be deterministic (same input, same byte-for-byte output).
+14. One model per task. Routine tasks → economical model (DeepSeek).
+    Architecture, narrative, or complex review → advanced model
+    (ChatGPT Pro). Document in AGENTS.md which model is expected for each
+    task type.
+15. Saves always migratable. No change may invalidate an existing save
+    without explicit, tested, and reversible migration. Schema changes
+    carry a revision number and idempotent migration logic.
+16. Data outside logic. Balance values, recipes, coordinates, names, and
+    texts live in data or documents, never hardcoded in logic. If an agent
+    needs a number that is not in the documents, it must ask, not invent it.
+17. One change, one reason. Each commit or PR addresses a single purpose.
+    Visual changes, balance changes, and code changes are not mixed, so
+    that only what failed can be reverted.
+18. Cross-verification between AIs. When possible, one AI reviews another's
+    work. DeepSeek reviews ChatGPT's code; ChatGPT reviews DeepSeek's
+    design. Reduces errors without the author having to review every line.
+19. Documentation is the contract. If code and documentation differ, the
+    documentation prevails until updated. An agent that finds a discrepancy
+    must report it, not silently "fix" the code to match.
+20. Issues are the unit of work. Every significant change (code, balance,
+    document, map) originates in an issue describing the problem or
+    objective, reference documents, explicit scope, and acceptance criteria.
+    A PR without a linked issue is not reviewed.
+
+## Document map
+
+| File | Responsibility |
 | --- | --- |
-| [README.md](../README.md) | Entrada en inglés, instalación y estado resumido. |
-| [PROJECT.md](PROJECT.md) | Premisas, estado, plan y validación actual. |
-| [SYSTEMS.md](SYSTEMS.md) | Reglas, controles, crafting, economía, Caja y diálogos. |
-| [MAP01.txt](MAP01.txt) | Historia y especificación completa, precedidas por el alcance implementado. |
-| [ASSETS.md](ASSETS.md) | Audio, arte, primera persona y referencias de atribución. |
-| [HISTORY.md](HISTORY.md) | Registro de decisiones y documentos anteriores. |
+| [README.md](../README.md) | English entry, installation and summary status. |
+| [PROJECT.md](PROJECT.md) | Premises, status, plan and current validation. |
+| [SYSTEMS.md](SYSTEMS.md) | Rules, controls, crafting, economy, Box and dialogues. |
+| [MAP01.txt](MAP01.txt) | History and full specification, preceded by the scope implemented. |
+| [ASSETS.md](ASSETS.md) | Audio, art, first person and attribution references. |
+| [HISTORY.md](HISTORY.md) | Registration of previous decisions and documents. |
 
-Los avisos redistributivos de `src/licenses/` permanecen junto a los assets.
-No son duplicados administrativos y la reorganización no los elimina.
+The `src/licenses/` redistributive notices remain next to the assets. They are not
+administrative duplicates and the reorganization does not eliminate them.
 
 
-## Roadmap inmediato: cerrar sistemas y pruebas en MAP01
+## Immediate Roadmap: Close systems and tests on MAP01
 
-Cada bloque termina con pruebas enfocadas y aceptación del autor antes de
-ampliar el siguiente. La numeración de las correcciones intermedias depende
-de lo que arrojen esas pruebas; no son plazos de entrega.
+Each block ends with focused testing and acceptance by the author before expanding the
+next one. The numbering of intermediate corrections depends on what these tests yield;
+they are not delivery times.
 
-| Orden | Bloque | Alcance restante / criterio de cierre |
+| Order | Block | Remaining scope / closure criterion |
 | --- | --- | --- |
-| 0 | Base hasta 4.33.0n | Todas las pruebas aprobadas por el autor el 2026-09-11. Se conserva la migración 0h. |
-| 1 | 4.33.0o: retiro del manual exterior | Entregado; el autor pidió proseguir con Rulo. Mantener la limpieza y las recetas aprendidas. |
-| 2 | 4.33.0p–0r: Rulo/Toro | Resto de 0q aprobado. 0r corrige el diálogo poscombate y protege a los residentes; expresa liderazgo y fuerza innata. Todas las pruebas de 0r aprobadas por el autor. |
-| 3 | 4.33.0s: Palomo final, fase 80 | Diálogo final y Caja única. Todas las pruebas aprobadas por el autor. |
-| 4 | 4.33.0t: El Loco en la cueva, fase 90 | Captura, colección y +2% fraccionario implementados; resto de pruebas aprobado por el autor. Sus dos observaciones se corrigen en 0u. |
-| 5 | 4.33.0u: escudo real y guía de Rulo | Todas las pruebas aprobadas por el autor. |
-| 6 | **4.33.0v: salida y regreso al cuerpo, fase 100** | Implementado: confirmación, arma por ItemId en la Caja, limpieza final y llegada narrativa. Aprobado por el autor como parte del acumulativo 0w. Recursos actuales conservados; equipo adicional y valores especiales requieren definición posterior. |
-| 7 | **4.33.0w: mantenimiento opcional y auditoría T1** | Reparación real de la primera arma con Ronnie, guardable y sin un nuevo bloqueo de misión. Materiales auditados; cantidades en SYSTEMS.md. Aprobado por el autor. |
-| 8 | Ampliaciones restantes del tutorial | Alimento/agua, Aire/movimiento y carga 0aa, respiración 0ab y virotes 0ac aprobados. Elección/recetas de armadura y cupos al 100% de 0ad aprobados. Enseñanza/cupos de sellos de 0ae aprobados por el autor. 0af incorpora recipientes y recolección potable; el resto fue aprobado y las pruebas de 0ag también. 0ai restaura Resiliencia para Sueño y aplica Constitución al gasto de regenerar vida/Aire, conservando divisores y críticos de 0ah; todas las pruebas de 0ai aprobadas. Quedan composición/proceso de balas y tratamiento de aguas no potables. No se promete fabricar todos los conjuntos ni hacerlo al 25%. No bloquear ramas aceptadas. |
-| 8a | Balance autorizado 0aa | Pasivas menores, barrido de armas grandes y divisores Tipo 4 aprobados por el autor. |
-| 8b | Auditoría de atributos 0ai — pospuesta por el autor | Mantener los atributos actuales. Para una revisión futura, precisar recarga/cooldown por Elocuencia (munición hoy con Destreza; Channel fijo de 60 s) y escala de salto; completar duración de estados por Constitución, alcance de debuffs/buffs, curaciones de Empatía, mitigación general de necesidades por Paciencia, tareas académicas y sentidos ocultos de Perspicacia. Incluir Caja por Inteligencia y coste de Ánima por Elocuencia en la tabla vigente. Se documenta el estado real en SYSTEMS.md; estos efectos pendientes no bloquean 0aj ni el paso a V4.34. |
-| 8c | 4.33.0aj: base de misiones opcionales | Ofertas, requisito entre encargos, aceptación, progreso limitado, finales permanentes y recompensa nativa única por misión. Dos encargos de diagnóstico activados expresamente, selección/Detalle y abandono confirmado en Diario. Aprobado por el autor: entrega de recompensas, bloqueo tras abandono y fallo al salir antes del objetivo. |
-| 8d | 4.33.0ak–0am: correcciones de sello, captura y Diario | Infraestructura protegida/restaurada. El log de 0al identifica la referencia de conversación inactiva; 0am corrige su bloqueo y el salto de solapa en los extremos. RePág/AvPág conservado. Aprobado por el autor en 0am. |
-| 8d.1 | 4.33.0an: reputación y condiciones | Implementadas condiciones reutilizables de diálogo, acceso y comercio, con prueba opcional accesible desde Reputación. Todas las pruebas aprobadas por el autor. Relaciones, rangos y asignaciones narrativas siguen sin inventarse. |
-| 8e | 4.33.0ao: cierre de integración | Guardado combinado 0an, captura y salida narrativa hacia MAP02 comprobados; reanudación de conversación activa al cargar, informe explícito y roadmap actualizado. El autor autoriza continuar con 4.34.0a. Balas, potabilización y demás pendientes heredados pasan a V5; no se presupone una nueva repetición de todas las pruebas de 0ao. |
-| 8f | 4.34.0a: ubicaciones y conexiones | Diario de mundo, lugares visitados y registro del regreso existente MAP01 → MAP02; guardados anteriores y conservación al viajar. Primer parche de 4.34, aprobado por el autor. |
-| 8g | 4.34.0b: puertas y accesos por grupo | Requisitos nativos de todas las hojas, grupos independientes sin id, ocupación del paso y reapertura durante el cierre. Prueba opcional con llave propia y guardados anteriores. Aprobado por el autor. |
-| 8h | 4.34.0c: alcantarillas conectadas | MAP02 enlaza con MAP03–05 para futuras pruebas masivas, Tarot y entorno. Seis sentidos, hub nativo, escaleras, Diario y guardados; ningún regreso a MAP01. |
-| 9 | Construcción de mapas y alcantarillas | La ampliación de campaña pasa a V5 por decisión del autor. Durante V4, priorizar sistemas y pruebas; en 0m el autor autoriza extensiones de puerto/playa con sus texturas para continuar MAP03. Conservar la llegada de MAP02 y CADEV02. |
+| 0 | Base to 4.33.0n | All tests approved by the author the 2026-09-11. 0h migration is preserved. |
+| 1 | 4.33.0o: removal of the external manual | Delivered; author asked to continue with Rulo. Keep cleaning and recipes learned. |
+| 2 | 4.33.0p–0r: Rulo/Bull | 0q remaining tests approved. 0r corrects post-combat dialogue and protects residents; expresses leadership and innate strength. All 0r tests approved by the author. |
+| 3 | 4.33.0s: Palomo final, phase 80 | Final Dialogue and Single Box. All tests approved by the author. |
+| 4 | 4.33.0t: El Loco in the cave, phase 90 | Capture, collection and fractional +2% implemented; remaining tests approved by the author. Your two observations are corrected in 0u. |
+| 5 | 4.33.0u: real shield and Rulo guide | All evidence approved by the author. |
+| 6 | **4.33.0v: exit and return to body, phase 100** | Implemented: confirmation, weapon by ItemId in the Box, final cleaning and narrative arrival. Approved by the author as part of the cumulative 0w. Current retained resources; additional equipment and special values require further definition. |
+| 7 | **4.33.0w: optional maintenance and audit T1** | Real repair of the first weapon with Ronnie, saveable and without a new mission lock. Materials audited; quantities in SYSTEMS.md. Approved by the author. |
+| 8 | Remaining Extensions of the Tutorial | Food/water, Air/movement and 0aa load, 0ab breathing and 0ac bolts approved. Choice/recipes armor and quotas 100% 0ad approved. Teaching/allowances 0ae seals approved by the author. 0af incorporates containers and drinking collection; the rest was approved and 0ag tests also. 0ai restores Resilience for Sleep and applies Constitution to the expense of regenerating health/Air, preserving the divisors and critical thresholds of 0ah; all 0ai tests approved. composition/process bullets and non-potable water treatment remain. It is not promised to manufacture all sets nor to do so to 25%. Do not block accepted branches. |
+| 8a | Authorized balance 0aa | Minor Arcana passives, sweeping heavy weapons and 4 type dividers approved by the author. |
+| 8b | Audit of attributes 0ai — postponed by author | Maintain the current attributes. For a future review, specify reload/cooldown by Eloquence (munition today with Dexterity; 60 s fixed channel) and jump scale; complete duration of states by Constitution, debuffs/buffs scope, Empathy cures, overall mitigation of needs by Patience, academic tasks and hidden senses of Insight. Include Box by Intelligence and cost of Anima by Eloquence in the current table. The actual status in SYSTEMS.md is documented; these pending effects do not block 0aj nor the passage to V4.34. |
+| 8c | 4.33.0aj: optional mission base | Offers, requirement between assignments, acceptance, limited progress, permanent endings and unique native reward per mission. Two expressly activated diagnostic orders, selection/Detail and abandonment confirmed in Journal. Approved by the author: delivery of rewards, lock after abandonment and failure to leave before goal. |
+| 8d | 4.33.0ak–0am: seal corrections, capture and Journal | Infrastructure protected/restored. The 0al log identifies the inactive conversation reference; 0am corrects its lock and tab changes at the boundaries. Page Up/Page Down preserved. Approved by the author in 0am. |
+| 8d.1 | 4.33.0an: reputation and conditions | Reusable dialogue, access and trade conditions implemented, with optional test accessible from Reputation. All tests approved by the author. Relationships, ranges and narrative assignments remain uninvented. |
+| 8e | 4.33.0ao: integration closure | Combined save 0an, capture and exit narrative to tested MAP02; resumption of active conversations when loading, explicit report and updated roadmap. Author authorizes to continue with 4.34.0a. Bullets, water treatment and other legacy pending work pass to V5; no further repetition of all 0ao tests is presupposed. |
+| 8f | 4.34.0a: locations and connections | Journal of the world, places visited and registration of the existing return MAP01 → MAP02; previous saves and preservation when traveling. First patch of 4.34, approved by the author. |
+| 8g | 4.34.0b: doors and accesses by group | Native requirements of all door leaves, independent groups without id, passage occupancy and reopening during closing. Optional test with own key and previous saves. Approved by the author. |
+| 8h | 4.34.0c: Sewers connected | MAP02 links with MAP03–05 for future massive testing, Tarot and environment. Six directions, native hub, stairs, Journal and saves; no return to MAP01. |
+| 9 | Map construction and sewers | Campaign expansion passes to V5 by decision of the author. During V4, prioritize systems and tests; in 0m the author authorizes extensions of port/beach with its textures to continue MAP03. Maintain the arrival of MAP02 and CADEV02. |
 
-La verdad autoral y las revelaciones futuras no deben filtrarse a los NPC del
-inicio. MAP01.txt contiene la especificación completa y las correcciones que
-prevalecen sobre su primera versión.
+The author-only truth and future revelations must not leak into the opening NPCs' knowledge.
+MAP01.txt contains the full specification and corrections that prevail over its first
+version.
 
-## Roadmap general por versiones
+## General roadmap by version
 
-Esta es la secuencia ya planificada, reconciliada con lo implementado. Los
-registros originales siguen completos en HISTORY.md. “Base implementada”
-no significa que todo el contenido de ese sistema esté terminado.
+This is the sequence already planned, reconciled with what has been implemented. The original records are still complete in HISTORY.md. “Basis implemented” does not mean that
+all the content of that system are finished.
 
-Decisión del autor del 2026-09-13: completar el roadmap numerado de V4 hasta
-4.37; después preparar y exportar una versión de prueba para otros jugadores;
-sólo tras esa exportación iniciar V5. Todo el trabajo heredado y transversal
-pendiente pasa expresamente a V5. No se añade un bloque 4.38 ni se exige
-terminar la campaña completa para exportar la prueba.
+Author decision of 2026-09-13: complete the numbered V4 roadmap through 4.37; then prepare
+and export a test version for other players; begin V5 only after that export. All
+inherited and cross-system pending work explicitly moves to V5. No 4.38 block is added,
+and completing the entire campaign is not required to export the playtest.
 
-La autorización actual permite continuar desde el cierre técnico 4.33.0ao a
-4.34.0a; no se registra como una nueva afirmación de que el autor haya repetido
-todas las pruebas de 0ao. Cada parche mantiene sus comprobaciones enfocadas.
-Las bases incluidas en 4.34–4.37 conservan su alcance: sus ampliaciones de
-contenido y los pendientes de versiones anteriores se retoman en V5.
+The current authorization allows to continue from the 4.33.0ao technical closure to
+4.34.0a; it is not recorded as a new claim that the author has repeated all 0ao tests.
+Each patch keeps its checks focused. The bases included in 4.34–4.37 retain its scope: its
+content extensions and the pending previous versions are returned to V5.
 
-| Hito | Estado y trabajo pendiente |
+| Milestone | Status and work to be done |
 | --- | --- |
-| V4.27: controles de combate | Rutas nativas implementadas: Fire/AltFire, Reload contextual, Zoom Block/ADS/barrido y User1–4. Matriz pendiente por familia trasladada a V5; conservar lo aceptado. |
-| V4.28: Channel de Sellos | Efectos actuales sin clima aceptados en 0bp. Extensiones dependientes de clima pasan a V5; no reabrir los efectos cerrados. |
-| V4.29–V4.31: crafting y ciclo de equipo | Base de recetas, reservas, lotes, eficiencias independientes, reparación y desarme aceptada. Distribución narrativa de conocimiento, recompensas/hojas/tiendas/descubrimientos y bonos de eficiencia sin valores autorizados pasan a V5. |
-| V4.31: recursos, botín y contenedores | Fuentes físicas y alijos tienen base; en V5, completar tablas de botín por planta/animal/monstruo, contenido/capacidad/propiedad/robo/reposición de contenedores y adquisición sistemática de materiales. La expansión persistente de biomas va en V5. |
-| V4.32: NPC, comercio y primera persona | Use/USDF, transacciones, monedas y Caja aceptados. Comerciante canónico posterior, contenido de tiendas y primera persona de las demás armas con arte propio pasan a V5. |
-| V4.33: misiones, reputación y facciones | MAP01, base de encargos y condiciones reutilizables aprobadas hasta 0an. 0ao verifica la integración final y recupera el menú de conversaciones activas al cargar. Cadenas y recompensas narrativas amplias, condiciones compuestas, rangos y relaciones concretas pasan a V5; los cuatro ids técnicos no equivalen a las ocho facciones narrativas. |
-| V4.34: arquitectura del mundo y viajes | 0a–0c aprobados: catálogo, Diario, regreso, puertas por grupo y alcantarillas conectadas. 0d implementa caravanas y registro compartido; 0e añade estaciones y suministros de prueba. El autor aprueba ahora todas las pruebas de 0e, incluido el bloqueo por sellos/crafteos y la recuperación de Use. MAP01 no admite retorno. Horarios, duraciones y eventos se integran con el reloj de 4.35. El refactor del código sigue en V5.0. |
-| V4.35: calendario, clima y eventos | 0a–0g aprobados: reloj/calendario, Limbo, descanso, mobiliario/cámara, bolsa y comodidad. 0g implementa avance seguro, mesas/comida sentada y Lucidez del sueño. 0h añade digestión, repetición de raciones y mobiliario/talleres de MAP01; pruebas nativas realizadas. 0i–0j corrigen accesos/Use, ajustan estaciones/comidas y fijan Limbo 1:1; 0j y 0k aprobados por el autor. 0l corrige sillas/agua e incorpora clima regional SMN y cobertura geométrica. 0m escala comida por masa, confirma Buenos Aires y agrega puerto/costa de ensayo autorizados por el autor. 0n añade viajes medidos con provisiones; 0o integra agenda mensual y eventos persistentes definidos por el autor. 0n/0o aprobados salvo observaciones resueltas en 0p, que añade reservas, Q y vehículos costeros. 0p y 0q aprobados; paquete visual v4 y ritmo de comida 1/3 aceptados. 4.35 cerrada. Modelo térmico corporal en V5.1. |
-| V4.36: entorno móvil y peligros físicos | Base de trampillas, foso, rocas, minas, teletransporte, techo, palancas y presentación aceptada por el autor hasta 0g salvo las dos correcciones visuales de 0h. 0h incorpora esas correcciones, comida inicial y daño nativo porcentual; pruebas nativas de este incremento pendientes. Falta acordar/implementar peso estático y completar las bases de superficies con daño propio, avalanchas, arietes, catapultas y sectores móviles. Validar integración/guardado antes de extraer Impact Physics. |
-| V4.37: Tarot y Trucazo | Colección iniciada en 0t y pasivas base de los 56 Menores implementadas en 0aa; activación de cartas poseídas/seleccionadas con User3 y costes/cooldowns; después contenido de cartas y minijuego Trucazo sobre inventario/NPC/eventos estables. |
-| **Exportación de prueba de V4** | Después de 4.37 y antes de V5: congelar una base identificable, preparar un paquete jugable para otros jugadores, instrucciones de instalación/controles, recorrido de prueba, guardados y registro de incidencias. Verificar arranque y ejecución desde el paquete exportado. La exportación no exige completar el contenido trasladado a V5 ni equivale a la distribución independiente final. |
-| **V5.0: arquitectura modular del código** | Primer bloque de V5, después de cerrar V4 y exportar la versión de prueba. Separar responsabilidades, reducir CaelumPlayer a coordinación y migrar mediante adaptadores pequeños. Una implementación de inventario/jugador/Tarot; autoridad multijugador transversal. Preservar guardados, entradas y selectores. |
-| V5.1: exposición térmica | Modelo de calor/frío basado en clima, zonas, actividad, humedad persistente, viento y equipo real; Resiliencia, consumibles, refugios, secado, descanso y aclimatación. Curvas numéricas pendientes de balance autoral. |
-| V5.x: recursos y biomas marinos | Fuentes 3D persistentes, extracción cuerpo a cuerpo cortante/perforante, dureza/rareza/profundidad/región/habilidad, agotamiento y regeneración. Biomas marinos, algas/yodo y aguas no potables; tiendas mantienen acceso a materiales remotos. |
+| V4.27: combat controls | Implemented native routes: Fire/AltFire, Context Reload, Zoom Block/ADS/sweep and User1–4. Pending matrix per family transferred to V5; keep what is accepted. |
+| V4.28: Seals Channel | Current effects independent of weather accepted in 0bp. Climate-dependent extensions pass to V5; do not reopen closed effects. |
+| V4.29–V4.31: crafting and equipment cycle | Basis of recipes, reserves, lots, independent efficiencies, repair and disassembly accepted. Narrative distribution of knowledge, rewards/sheets/shops/discoveries and efficiency bonuses without authorized values pass to V5. |
+| V4.31: resources, loot and containers | Physical sources and caches are based; in V5, complete loot tables by plant/animal/monster, contents/capacity/ownership/theft/replenishment containers and systematic acquisition of materials. Persistent expansion of biomes goes in V5. |
+| V4.32: NPC, trade and first person | Use/USDF, transactions, coins and Box accepted. Later canonical merchant, store content and first person of the other weapons with own art pass to V5. |
+| V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the four technical ids do not equal the eight narrative factions. |
+| V4.34: world architecture and travel | 0a–0c approved: catalog, Journal, return, group doors and connected sewers. 0d implements caravans and shared registry; 0e adds test stations and supplies. The author now approves all 0e tests, including seals/crafting blocking and recovery of Use. MAP01 does not support return. Timetables, durations and events are integrated with the 4.35 clock. Code refactor is still in V5.0. |
+| V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
+| V4.36: mobile environment and physical hazards | Base of trapdoors, pits, rocks, mines, teleport, ceiling, levers and presentation accepted by the author up to 0g except for the two visual corrections of 0h. 0h incorporates those corrections, initial food and percentage native damage; native tests for this increment still pending. Agreement/implementation of static weight and completion of bases for surfaces with their own damage remain pending, avalanches, rams, catapults and mobile sectors. Validate integration/save before extracting Impact Physics. |
+| V4.37: Tarot and Trucazo | Collection initiated in 0t and passive base of the Minor 56 implemented in 0aa; activation of owned/selected cards with User3 and costs/cooldowns; then card content and Trucazo minigame on stable inventory/NPC/events. |
+| **V4 test export** | After 4.37 and before V5: freeze an identifiable base, prepare a playable package for other players, installation/controls instructions, test path, saves and incidence log. Check boot and run from the exported package. Export does not require completion of content transferred to V5 nor does it amount to the final standalone distribution. |
+| **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |
+| V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
+| V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 
-### Trabajo heredado y transversal: V5, después de la exportación
+### Inherited and cross-cutting work: V5, after export
 
-Todos los compromisos de esta tabla quedan asignados a V5 por decisión del
-autor. También pasan a V5 la matriz de combate pendiente, aprendizaje y
-bonificaciones de recetas, botín/contenedores/propiedad, comerciante y tiendas
-posteriores, primera persona restante, ampliación de misiones/facciones,
-auditoría de atributos pospuesta, composición de balas y potabilización.
-Sus dependencias determinarán el orden interno; no se inventan números de
-parche ni valores todavía no definidos.
+All commitments in this table are assigned to V5 by decision of the author. They also pass
+to V5 the pending combat matrix, learning and recipe bonuses,
+loot/containers/ownership, merchant and later stores, remaining first person,
+quests/factions enlargement, postponing attributes audit, bullet composition and
+water treatment. Their dependencies will determine the internal order; they do not invent
+patch numbers or values not yet defined.
 
-Cuando un área comparte nombre con 4.34–4.37, V4 termina su base prevista y
-V5 desarrolla el alcance amplio siguiente. La arquitectura del código se
-reorganiza en V5.0; la exposición térmica mantiene V5.1. La prueba exportada
-es un hito anterior, distinto de completar la distribución independiente.
+When an area shares name with 4.34–4.37, V4 completes its intended base and V5 develops
+the following broad scope. The code architecture is reorganized into V5.0; the thermal
+exposure maintains V5.1. The exported test is an earlier milestone, other than completing
+the independent distribution.
 
-| Área (V5) | Alcance planificado y límites actuales |
+| Area (V5) | Planned scope and current boundaries |
 | --- | --- |
-| Campaña y mundo | Objetivo de 78 cartas (22 Mayores y 56 Menores) y al menos 78 mapas; geografía inspirada en Argentina, costas/Antártida/mar profundo, ciudades aéreas y regiones sobrenaturales. Capítulos, encuentros, desenlaces políticos y revelaciones según canon. La primera entrega sigue concentrada en MAP01. |
-| Misiones | Principales/secundarias, requisitos, objetivos, cadenas/dependencias, fracaso y abandono; recompensas de objetos/dinero/reputación/desbloqueos. El registro tiene 32 slots y ocho objetivos por misión; 0aj añade oferta y abandono a los cuatro estados originales, con requisitos y recompensas únicas. El contenido amplio, las condiciones compuestas y los demás tipos de recompensa requieren desarrollo. Mayores para principales, Menores para secundarias; encargos/eventos/rumores/contratos no son automáticamente otra carta. No introducir XP por combatir: la progresión canónica depende del Tarot. |
-| Facciones y secreto | La Capital, Pueblos Libres, Nativos, Caelith Puros, Híbridos, Gendarmería, Culto del Tarot e Infierno. Siete rangos de reputación, relaciones cambiantes y consecuencias en precios, acceso, misiones, hostilidad y asedios; pertenencia/secreto del Culto como contenido futuro. |
-| Diálogo social | Reputación aplicada a las tiradas y umbrales, emociones privadas, interrupción por combate/eventos y conversaciones con varios NPC en secuencia. MAP01 sólo usa los valores aprobados para su tutorial; no asignar facciones ni dificultad nuevas por defecto. |
-| Viajes | Carreta, barco, submarino arcaico, aeronave, nave mágica y portales; encuentros, ataques, tormentas y fallos mecánicos. Tiempo global, localizaciones, rutas y cambios permanentes del mundo son dependencias. |
-| Supervivencia y descanso | Acción Descansar con alimentos/bebidas y avance temporal; campamentos/propiedades/refugios, recuperación y calidad del descanso. Integrar exposición térmica; límites de oxígeno, altura, agua y futuras capacidades de respiración según las cartas. |
-| Agua y simulación fuera de mapa | Extender marcadores de potabilidad a aguas marinas/contaminadas; red de volúmenes a niveles distintos es capacidad técnica aún no construida. Definir compensación de recursos/clima/eventos al volver a mapas descargados mediante calendario global. |
-| Percepción y sigilo | PerceptionCore, sensores visuales/acústicos, sigilo, detección/pérdida/reencuentro/memoria y comunicación compartida. El diagnóstico de grupos/percepción no es la IA final; resolver campos de visión, fórmulas angulares, estados/tiempos, ruido por acción/superficie/cadencia y derivación de sigilo antes de asignar valores. |
-| Grupos y acompañantes | Formación jugable, pertenencia dinámica, líderes de movimiento, offsets locales, sueño por distancia y memoria compartida. NPC de relleno para party incompleta: acompañar/combatir sin decidir diálogos. La base diagnóstica de grupo 16 no impone tamaño fijo a la formación visual. |
-| IA masiva y rendimiento | Mantener presupuesto escalonado de percepción/objetivos y filtros espaciales; resolver locomoción compartida, contactos y pruebas graduales de 1.875 → 3.750 → 7.500 → 15.000 activos según el último gate aprobado. Cargar 15.000 actores pasivos no prueba 15.000 IA completas. |
-| Asedios | Director de batalla, refuerzos, tácticas, comandantes, aliados, máquinas/artillería/barricadas, sabotaje y rutas alternativas; límite temporal y consecuencias permanentes sobre ciudades, rutas y facciones. Depende de IA, física, mundo y calendario estables. |
-| Física | Completar validación de impactos/contactos múltiples, empuje sostenido, aplastamiento y anatomía/armadura. La futura física de golpes cuerpo a cuerpo requiere velocidad, masa efectiva, área/filo, material, penetración y técnica definidos; no reemplazar el combate aceptado sin ese diseño. |
-| Habilidades | Efectos de User1 racial y User4 clase definidos el 2026-09-14 y registrados en SYSTEMS.md; Sueño del Arcanista implementado en 0g, resto pendiente. Peregrino usa Amparo (50% menos daño ambiental), no Bendecir los alimentos. User2 conserva Sellos; User3 conserva Tarot. No inventar poderes ni valores para llenar los hooks existentes. |
-| Tarot | Colección persistente y porcentaje global iniciados con El Loco en 0t; pasivas base por palo/rango de todos los Menores en 0aa. Pendientes selección, activación y despertar de armas de esencia; cartas con efectos de exploración, respiración y Caja según diseño. Completar las 78, sus misiones y persistencia; no confundir un hook con poderes terminados. |
-| Trucazo | Truco con Tarot: Mayores modificadores, Menores jugables/filas, Envido/Truco/Retruco/Vale 4, daño y vida, Sentidos Mágicos, apuestas y consecuencias; casual/ranked y equipos 1v1 a 4v4. Implementar por capas tras reglas base de Tarot y autoridad multijugador. |
-| Cooperativo y PvP | Objetivo 2–8 jugadores, autoridad del anfitrión, propiedad/validación/sincronización, misiones y mundo compartidos, viajes, conexión/desconexión y compañeros. La persistencia individual actual no acredita estos modos. |
-| Guardado | Mantener guardado nativo e Inventory viajero. Perfil externo independiente, autoguardado narrativo y estado compartido del mundo permanecen pendientes; ensayar compatibilidad antes de retirar adaptadores de V5. |
-| Arte, audio e interfaz | Vistas de primera persona restantes, contenido visual de mapas, efectos/emisores por región/hora/clima y adaptación de stock a escenas. Conservar tipografía, iconos y rig aceptados; actualizar inventario y créditos con cada recurso. |
-| Distribución independiente | Sustituir toda dependencia final de arte/audio/fuentes/mapas de Doom, completar atribuciones y empaquetado propio, validar arranque/guardado/mapas y modos de juego. El IWAD de desarrollo no entra en los parches. |
+| Campaign and World | Target: 78 cards (22 Major and 56 Minor Arcana) and at least 78 maps; geography inspired by Argentina, coasts/Antarctica/deep sea, aerial cities and supernatural regions. Chapters, encounters, political outcomes and revelations follow canon. The first release remains focused on MAP01. |
+| Quests | Main/side, requirements, objectives, chains/dependencies, failure and abandonment; item/money/reputation/unlock rewards The record has 32 slots and eight objectives per mission; 0aj adds offer and abandonment to the four original states, with unique requirements and rewards. The broad content, composite conditions and other types of rewards require development. Majors for main quests, Minors for side quests; assignments/events/rumors/contracts are not automatically another card. Do not introduce combat XP: Canonic progression depends on the Tarot. |
+| Factions and secrecy | Capital, Free Peoples, Natives, Pure Caelith, Hybrids, Gendarmerie, Tarot Cult and Hell. Seven ranks of reputation, changing relationships and consequences in prices, access, missions, hostility and sieges; membership/secrecy of Cult as future content. |
+| Social dialogue | Reputation applied to rolls and thresholds, private emotions, combat/events interruption and conversations with multiple NPCs in sequence. MAP01 only uses the approved values for your tutorial; do not assign new factions or difficulties by default. |
+| Travel | Carriage, ship, archaic submarine, aircraft, magic ship and portals; encounters, attacks, storms and mechanical failures. Global time, locations, routes and permanent changes of the world are dependencies. |
+| Survival and rest | Action Rest with food/drink and time advance; camps/properties/shelters, recovery and quality of rest. Integrate thermal exposure; oxygen limits, height, water and future breathing capabilities according to cards. |
+| Water and simulation off-map | Extend potability markers to marine/contaminated waters; network of volumes to different levels is technical capacity not yet built. Define resources/weather/events compensation when returning to unloaded maps by global calendar. |
+| Perception and stealth | PerceptionCore, visual/acoustic sensors, stealth, detection/loss/reacquisition/memory and shared communication. The diagnosis of groups/perception is not the final AI; solve fields of vision, angular formulas, states/times, action/surface/cadence noise and stealth drift before assigning values. |
+| Groups and companions | Playable formations, dynamic belonging, movement leaders, local offsets, distance sleep and shared memory. NPC fill-ins for incomplete party: accompanying/fighting without deciding dialogues. The diagnostic group baseline of 16 does not impose fixed size on visual formations. |
+| Massive AI and performance | Maintain perception/targets step budget and space filters; resolve shared locomotion, contacts and step-by-step 1.875 testing → 3.750 → 7.500 → 15.000 active according to the latest approved gate. Load 15.000 passive actors does not test 15.000 fully active AIs. |
+| Sieges | Director of battle, reinforcements, tactics, commanders, allies, machines/artillery/barricades, sabotage and alternative routes; time limit and permanent consequences on cities, routes and factions. It depends on AI, physics, world and stable calendar. |
+| Physics | Complete multiple impacts/contacts validation, sustained thrust, crushing and anatomy/armor. Future melee impact physics requires speed, effective mass, area/edge, defined material, penetration and technique; do not replace accepted combat without that design. |
+| Abilities | Racial User1 and class User4 effects were defined on 2026-09-14 and recorded in SYSTEMS.md; Arcanist Sleep implemented in 0g, the rest pending. The Pilgrim uses Amparo (50% less environmental damage), not Bless Food. User2 retains Seals; User3 retains Tarot. Do not invent powers or values to fill existing hooks. |
+| Tarot | Persistent collection and global percentage initiated with El Loco in 0t; passive base by suit/rank of all Minors in 0aa. Selection, activation and awakening remain pending of essence weapons; cards with exploration, breathing and Box effects according to design. Complete the 78, its missions and persistence; do not confuse a hook with finished powers. |
+| Trucazo | Truco with Tarot: Major modifiers, playable Minors/rows, Envido/Truco/Retruco/Vale 4, damage and health, Magic Senses, bets and consequences; casual/ranked and teams from 1v1 to 4v4. Implement layered after Tarot base rules and multiplayer authority. |
+| Cooperative and PvP | Target 2–8 players, host authority, ownership/validation/synchronization, shared missions and world, travel, connection/disconnection and peers. Current individual persistence does not credit these modes. |
+| Saving |  Keep native save and traveling Inventory. Independent external profile, narrative autosaves and world-shared state remain pending; test compatibility before removing V5 adapters. |
+| Art, audio and interface | Remaining first-person views, visual content of maps, effects/emitters by region/hour/weather and adaptation of stock assets to scenes. Store accepted typography, icons and rigs; update inventory and credits with each resource. |
+| Independent distribution | Replace any final art/audio/fonts/maps dependency from Doom, complete attributions and own packaging, validate startup/saves/maps and game modes. The IWAD development does not enter patches. |
 
-### Decisiones que todavía requieren diseño del autor
+### Decisions that still require author design
 
-Balance completo de cartas, habilidades raciales/de clase, economía y recursos;
-tablas/reglas de cosecha y botín; contenido y propiedad de contenedores; fuentes
-definitivas de recetas/componentes; sensores y sigilo finales; clima regional,
-encuentros y consecuencias de facciones; valores térmicos y física cuerpo a
-cuerpo. Los documentos históricos contienen propuestas: se comprueba su
-vigencia antes de implementarlas. La progresión ya aceptada no se reabre.
+Complete balance of cards, racial/class abilities, economy and resources; tables/rules
+harvesting and loot; container content and ownership; definitive sources of
+recipes/components; final sensors and stealth; regional climate, encounters and
+consequences of factions; thermal and melee-physics values. Historical documents
+contain proposals: they are checked before implementation. The progress already accepted
+is not reopened.
 
-## Auditoría de carpetas 4.33.0h
+## 4.33.0h Folder Audit
 
-Base: ZIP completo aportado por el autor, 16.626 entradas. Se verificaron CRC,
-rutas, inventario y consumidores. La limpieza usa una lista explícita con
-SHA-256 por archivo; “no aparece como texto” no alcanza para eliminar un
-sprite, fuente, modelo o recurso que el motor resuelve por convención.
+Baseline: full ZIP provided by the author, 16.626 entries. CRC, routes, inventory and
+consumers were verified. Cleaning uses an explicit list with SHA-256 per file; “does not
+appear as text” is not enough to remove a sprite, source, model or resource that the engine resolves by convention.
 
-| Carpeta / entrada | Archivos de la base | Decisión y motivo |
+| Folder / entry | Baseline files | Decision and resource rationale |
 | --- | ---: | --- |
-| Raíz | 4 | README actualizado; build_dev.ps1 pasa a ser el único constructor Windows; run_dev apunta a él; se conserva la configuración del proyecto. validate_project.py se traslada aquí. |
-| docs | 5 | Mantener los cinco documentos canónicos, integrar roadmap/auditoría y corregir el estado real de 0g. |
-| tools | 74 | Retirar la carpeta activa: conservar constructor/verificador en raíz y tres generadores en assets. Los otros 69 archivos son utilidades de revisiones anteriores o constructores redundantes, preservados en el respaldo. |
-| art_source | 20 | Trasladar todos los originales y registros a assets/source/art con las mismas huellas. |
-| assets | 13 | Conservar atlas fuente y paquete 05 con README/checksums; añadir arte fuente y generadores. No se empaqueta en runtime. |
-| src | 4.276 | Mantener recursos y módulos útiles; sólo se aplican correcciones de audio y créditos, más el observador de portada. La arquitectura del código se reorganiza en V5. |
-| build | 1 | PK3 regenerable: reconstruirlo al aplicar. Se conserva el anterior hasta completar el reemplazo atómico; no acumular copias de 77 MB como fuentes. |
-| archive | 1 | Conservar el respaldo de 0g y añadir un único respaldo verificado previo a 0h. Los registros históricos tienen utilidad de recuperación. |
-| Historial Git | 11.803 | Conservar íntegro: contiene la historia de versiones, no archivos temporales de la entrega. |
+| Root | 4 | Updated README; build_dev.ps1 becomes the only Windows builder; run_dev points to it; the project configuration is retained. validate_project.py moves here. |
+| docs | 5 | Keep the five canonical documents, integrate roadmap/audit and correct the actual status of 0g. |
+| tools | 74 | Remove the active folder: keep builder/validator in root and three generators in assets. The other 69 files are utilities for previous revisions or redundant builders, preserved in backup. |
+| art_source | 20 | Transfer all originals and records to assets/source/art with the same fingerprints. |
+| assets | 13 | Store 05 source and package atlas with README/checksums; add source art and generators. Do not pack in runtime. |
+| src | 4.276 | Maintain useful resources and modules; only audio and credit corrections are applied, plus the tab observer. Code architecture is reorganized into V5. |
+| build | 1 | Regenerable PK3: rebuild it when applying. Preserved until atomic replacement is completed; do not accumulate 77 MB copies as source files. |
+| archive | 1 | Keep 0g back-up and add a single verified backup prior to 0h. Historical records have recovery utility. |
+| Git history | 11.803 | Keep it whole: it contains version history, not temporary delivery files. |
 
-Detalle de todos los directorios inmediatos de src, antes del parche:
+Detail of all immediate src directories, before the patch:
 
-| Entrada de src | Archivos | Utilidad comprobada / decisión |
+| Src input | Files | Proven utility/decision |
 | --- | ---: | --- |
-| Lumps de raíz | 13 | ZSCRIPT, MAPINFO, SNDINFO, menús, USDF, textos y registros nativos: conservar y ajustar referencias de audio. |
-| caelum | 59 | Módulos de gameplay y UI enlazados desde ZSCRIPT; añadir un observador UI, sin dividir/reubicar los módulos existentes. |
-| impactphysics | 1 | Núcleo físico incluido por ZSCRIPT; conservar. |
-| crafting | 1 | Catálogo de recetas cargado por el sistema; conservar. |
-| maps | 3 | MAP01 invariable; llegada narrativa MAP02 y campo de pruebas preservado como CADEV02 desde 0v. |
-| graphics | 556 | UI, iconos/texturas y registros de gráficos; conservar contenido y convenciones del motor. |
-| hires | 1 | Recurso gráfico de alta resolución del proyecto; conservar. |
-| sprites | 1.129 | Estados de actores/armas y sprites base de modelos; conservar, incluidos marcadores transparentes necesarios. |
-| models | 155 | Geometrías/texturas/modelos enlazados por MODELDEF; conservar. |
-| fonts | 2.280 | Glifos y conjuntos tipográficos; su resolución es nativa, no una referencia textual por carácter. Conservar. |
-| sounds | 72 | Audio usado y reserva registrada; sustituir únicamente la frase derivada. |
-| music | 2 | Música propia de MAP01/MAP02; conservar. |
-| licenses | 5 | Avisos redistributivos necesarios, distintos de documentación administrativa; actualizar la modificación del arpa y las rutas de los generadores visuales. |
+| Root lumps | 13 | ZSCRIPT, MAPINFO, SNDINFO, menus, USDF, native texts and records: preserve and adjust audio references. |
+| caelum | 59 | Gameplay and UI modules linked from ZSCRIPT; add a UI observer, without splitting/relocating existing modules. |
+| impactphysics | 1 | Physical core included by ZSCRIPT; store. |
+| crafting | 1 | Catalogue of recipes loaded by the system; preserve. |
+| maps | 3 | MAP01 invariable; MAP02 narrative arrival and field of evidence preserved as CADEV02 from 0v. |
+| graphics | 556 | UI, icons/textures and graphics registrations; keep engine content and conventions. |
+| hires | 1 | High resolution graphic resource of the project; preserve. |
+| sprites | 1.129 | actors/weapons States and model base sprites; preserve, including necessary transparent markers. |
+| models | 155 | Geometry/textures/models linked by MODELDEF; store. |
+| fonts | 2.280 | Glyphs and typographical sets; their resolution is native, not a textual reference by character. |
+| sounds | 72 | Used audio and registered reservation; replace only the derivative phrase. |
+| music | 2 | MAP01/MAP02's own music; preserve. |
+| licenses | 5 | Necessary redistribution notices, other than administrative documentation; update the modification of the harp and routes of the visual generators. |
 
-No se encontró basura temporal inequívoca adicional dentro de src. Los recursos
-reservados para contenido futuro no se declaran inútiles. El manifiesto del
-aplicador especifica cada retiro/traslado; archivos locales desconocidos se
-conservan. Un archivo auditado que cambió desde el ZIP detiene la aplicación
-antes de escribir y se informa con su ruta.
+No additional unambiguous temporary trash was found within src. Resources reserved for
+future content are not declared useless. The installer manifest specifies each
+removal/relocation; unknown local files are preserved. An audited file that changed from the
+ZIP stops the application before writing and is reported with its path.
 
-## Aplicación y mantenimiento
+## Historical implementation and maintenance — 4.33.0ao
 
-Con GZDoom cerrado, copiar src, docs y README.md sobre la carpeta
-completa 0an y aceptar reemplazos. Combinar carpetas; no sustituir src por una
-carpeta que contiene sólo el delta. Iniciar run_dev.bat para reconstruir y jugar.
-El ZIP sólo contiene archivos nuevos/modificados y PRUEBAS_4_33_0ao.txt.
+The following describes the original delivery. Current installation and
+updates follow the repository workflow in [README](../README.md).
 
-Se conservan build_dev.ps1 y run_dev.bat existentes: construyen el juego, no
-instalan parches. Se mantiene la migración 0h aceptada y las rutas del motor/IWAD
-del autor. No se entregan ni ejecutan más aplicadores por versión. El TXT de
-pruebas queda junto al ZIP; sus resultados se integran en estos cinco documentos.
+With GZDoom closed, copy src, docs and README.md over the full 0an folder and accept
+replacements. Combine folders; do not replace src with a folder containing only the delta.
+Start run_dev.bat to rebuild and play. ZIP only contains new/modified and
+PRUEBAS_4_33_0ao.txt files.
 
-## Validación de 4.33.0ae
+Existing build_dev.ps1 and run_dev.bat are preserved: they build the game, they do not
+install patches. 0h migration accepted and engine/IWAD paths of the author are maintained.
+No more applicators are delivered or executed per version. TXT testing is next to the ZIP;
+its results are integrated into these five documents.
 
-162 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-62 en español, 62 en inglés, 16 al actualizar un guardado auténtico de 0ad y
-22 al recargar un sello pausado. Se cuentan sólo las comprobaciones nuevas
-de cada recarga, sin volver a sumar los contadores guardados por las escenas.
+## 4.33.0ae Validation
 
-Uso y elección en conversaciones USDF nativas: lectura, rechazo, aceptación,
-guías, enseñanza antes de elegir arma y consulta después de completar Ronnie.
-Las cinco recetas y dependencias se aprenden sin objetos gratis; recetas de
-otras familias no se conceden. La suma de cupos conserva arma, armadura y
-munición. Las fuentes reales emiten la cantidad restante y no vuelven a emitir
-al agotarla. Para cada sello, su cupo al 100% coincide con las hojas reservadas
-por el plan de fabricación nativo, sin Caja obligatoria.
+162 passed checks, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 62 in Spanish, 62 in
+English, 16 when updating an authentic 0ad save and 22 when reloading a paused Seal task. Only
+new checks after each reload are counted, without adding the save counters back through the
+scenes.
 
-Se fabricaron los cinco elementos y se equiparon uno por uno en la ranura
-única. Detalle alcanzó 5/5. Se comprobó el inicio nativo de Channel con un sello
-fabricado, gasto real de Adrenalina y cooldown. No se revalidó toda la matriz
-de efectos elementales previamente aceptada. Pausa, cancelación, reanudación
-y guardado mantuvieron materiales, cupos y salida única. Después se pudieron
-fabricar la primera ballesta y diez virotes con sus materiales conservados.
+Use and choice in native USDF conversations: reading, rejection, acceptance, guides,
+teaching before choosing weapon and consultation after completing Ronnie. The five recipes
+and dependencies are learned without free items; recipes from other families are not
+granted. The sum of quotas retains weapon, armor and ammunition. Real sources emit the
+remaining amount and do not reissue when they exhaust it. For each seal, their quota to
+100% matches the leaves reserved by the native manufacturing plan, without mandatory Box.
 
-El guardado antiguo se creó con fuentes 0ad, superponiendo después 0ae en la
-misma ruta. Incluye primera arma, casco mediano, torso pendiente, cuero emitido,
-lecciones completadas y un sello propio preparado en la escena. Aprender
-reconoce ese sello y sólo agrega el cupo de los cuatro restantes; no vuelve
-a descontar su coste del contador anterior. La tarea antigua conserva tiempo
-y 10.000 unidades reservadas. Aunque la vista cambie a sellos, sigue dando el
-torso correcto. Se completan los cuatro sellos faltantes y el préstamo/devolución
-de la espada usa las páginas reales del taller de Ronnie, con reparación ya hecha.
+The five elements were manufactured and equipped one by one in the single slot. Detail
+reached 5/5. The native beginning of Channel was verified with a crafted Seal, real
+expense of Adrenaline and cooldown. The entire matrix of elementary effects previously
+accepted was not revalidated. Pause, cancellation, resumption and save kept materials,
+quotas and single output. Then the first crossbow and ten bolts could be made with their
+preserved materials.
 
-Revisión visual de la guía de Caella y el árbol del Sello de Fuego en capturas
-de 819×614: textos, icono, materiales, infraestructura y controles legibles.
+The old save was created with 0ad sources, then superimposing 0ae on the same route. It
+includes first weapon, medium helmet, pending torso task, issued leather, completed lessons and a
+player-owned Seal prepared at the scene. Learn recognizes that seal and only adds the
+quota of the remaining four; it does not discount its cost from the previous counter
+again. The old task retains time and 10.000 reserved units. Even if the view changes to
+seals, it still gives the correct torso. The four missing seals are completed and the
+loan/return of the sword uses the real pages of the Ronnie workshop, with repair
+already done.
 
-El validador comprueba cinco documentos, 74 audios, 12 modelos de estaciones y
-24 claves españolas de Caella, sin errores; las 13 claves nuevas tienen español
-e inglés. El delta contiene 14 archivos modificados y el TXT nuevo. CRC y
-superposición se verifican contra el árbol completo usado por el motor; mapas,
-arte, modelos, música, sonidos y assets conservan sus bytes de 0ad.
+Visual review of the Caella guide and the Fire Seal tree in 819×614 screenshots: text, icon,
+materials, infrastructure and readable controls.
 
-Las escenas privadas preparan etapas, atributos, materiales y equipo, y adelantan
-el tiempo con el helper diagnóstico existente. No sustituyen la ruta completa,
-la espera de fabricación a tiempo real ni la prueba del autor en Windows.
-0ad está aprobado por el autor; 0ae queda pendiente de esa aceptación.
+The validator checks five documents, 74 audios, 12 station models and 24 Spanish Caella
+keys, without errors; the new 13 keys have English and Spanish. The delta contains 14
+modified files and the new TXT. CRC and overlap are verified against the entire tree used
+by the engine; maps, art, models, music, sounds and assets retain their 0ad bytes.
 
-## Validación de 4.33.0ad — aprobada por el autor
+Private scenes prepare stages, attributes, materials, and equipment, and advance time with
+the existing diagnostic helper. They do not replace the complete path, real-time
+manufacturing wait, or the author's test on Windows. 0ad is approved by the author; 0ae
+is pending such acceptance.
 
-394 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-62 en español, 62 en inglés, 217 de familias/cupos, 15 al actualizar un guardado
-auténtico de 0ac y 38 al recargar una fabricación de armadura pausada. Sólo se
-cuentan las comprobaciones nuevas de las recargas, no sus contadores guardados.
+## Validation of 4.33.0ad — approved by the author
 
-Conversaciones USDF nativas: elección de arma, lectura de las cuatro familias,
-confirmación de armadura, cajón y talleres. Se fabricaron y equiparon las cuatro
-piezas de cada familia. Los cupos del arma se compararon con las reservas del
-plan nativo para las 36 opciones y cinco talles (180 casos); el cuero del conjunto
-se contrastó con las cuatro masas nativas en las 20 combinaciones familia/talle.
-Ballesta, diez virotes y conjunto mediano consumieron sus materias primas exactas.
+394 passed checks, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 62 in Spanish, 62 in English, 217 in families/allowances, 15 when updating an authentic 0ac save and 38 when reloading a paused armor crafting task. Only new checks after reloading, not their saved counters,
+are counted.
 
-Extracción limitada antes de agotar la fuente o generar objetos, cupo compartido
-entre arbustos, pilas antiguas, recogida parcial de pilas nuevas/antiguas con un
-gramo libre, retirada/devolución del cajón y reparto Toro/cajón. La práctica de
-reparación reservó y consumió el faltante proporcional al daño; pedirla de nuevo
-no sumó otro lote. Préstamo y devolución de la espada conservan la primera arma.
+Native USDF talks: choice of weapon, reading of the four families, confirmation of armor,
+drawer and workshops. The four pieces of each family were manufactured and equipped. The
+weapon quotas were compared with the reserves of the native plan for the 36 options and
+five sizes (180 cases); the leather of the set was contrasted with the four native masses
+in the 20 family/size combinations. Crossbow, ten bolts and medium set consumed their
+exact raw materials.
 
-La migración se probó creando el guardado con fuentes auténticas 0ac y
-superponiendo 0ad en la misma ruta. Conservó recetas, primera arma, prácticas,
-El Loco y una tarea de flechas al 25% con sus reservas y tiempo. Conservó los
-96 kg de cuero anteriores hasta dejar voluntariamente el excedente en el cajón;
-quedó el cuero útil para la armadura y no se tocaron componentes reservados.
-La tarea antigua produjo una sola vez su munición antes de fabricar armadura.
-Pausa, guardado, reanudación y cancelación de armadura mantienen cupos y reservas.
+Limited extraction before exhausting the source or generating objects, shared allowance across shrubs, old stacks, partial collection of new/old stacks with a free
+gram, drawer withdrawal/return and shared Bull/drawer allowance The repair practice reserved and
+consumed the missing proportional to the damage; ordering it again did not add another
+batch. Loan and return of the sword retain the first weapon.
 
-Revisión visual de la guía de Ronnie y el árbol de fabricación en capturas
-de 819×614: textos y controles legibles. El validador comprueba cinco documentos,
-74 audios, 12 modelos de estaciones y 24 claves españolas de Caella, sin errores.
-El delta contiene 18 archivos modificados y un TXT nuevo; CRC y superposición
-verificados contra el árbol completo utilizado por el motor. No cambia mapas,
-modelos, sprites, música ni sonidos.
+The migration was tested by creating the save with authentic 0ac sources and superimposing
+0ad on the same route. It retained recipes, first weapon, practices, El Loco and an arrow
+task to the 25% with its reserves and time. It retained the previous 96 kg of leather
+until voluntarily leaving the surplus in the drawer; it left the leather useful for the
+armor and did not touch any reserved components. The old task produced only once its
+ammunition before making armor. Pause, save, restart and cancellation of armor maintain
+quotas and reserves.
 
-Las escenas privadas preparan etapas, materiales y atributos y adelantan tiempo
-mediante el helper diagnóstico existente. Comprueban el proceso nativo y su
-persistencia; no sustituyen una ruta completa ni la espera de fabricación a
-tiempo real. El autor confirmó después que todas las pruebas de 0ad dieron
-correcto; esa base queda aprobada para continuar con 0ae.
+Visual review of the Ronnie guide and the manufacturing tree in 819×614 captures: text and
+readable controls. The validator checks five documents, 74 audios, 12 station models and
+24 Spanish Caella keys, no errors. The delta contains 18 modified files and a new TXT; CRC
+and overlay verified against the entire tree used by the engine. It does not change maps,
+models, sprites, music or sounds.
 
-## Validación de 4.33.0ac — aprobada por el autor
+The private scenes prepare stages, materials and attributes and advance time through the
+existing diagnostic helper. They check the native process and its persistence; they do not
+substitute a complete route or wait for real-time manufacturing. The author later
+confirmed that all 0ad tests proved correct; that basis is approved to continue with 0ae.
 
-129 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-47 en español, 47 en inglés, 17 al recargar una tarea pendiente, 2 tras guardar
-su resultado, 9 al actualizar una tarea de flechas de 0ab y 7 al actualizar un
-guardado 0ab que ya estaba en MAP02. Las recargas cuentan sólo las comprobaciones
-nuevas, sin volver a sumar el contador persistido por la escena.
+## Validation of 4.33.0ac — approved by the author
 
-Elección real de ballesta por las páginas USDF de Ronnie, consulta de munición
-y Detalle en ambos idiomas. Enseñanza de receta y dependencias sin objetos
-gratis. En el Banco de Trabajo real se comprobaron lotes de diez al 25%, 50% y
-100%, desde componentes y desde materias primas, con consumo de hojas del plan
-y salida personal sin Caja. Reservas impiden descartar materiales; cerrar
-pausa, guardar conserva tiempo/reservas y cancelar libera sin consumir.
-Materiales insuficientes, receta desconocida y capacidad de pila insuficiente
-no producen munición ni consumen materiales. La prueba de límite reduce el
-máximo de pila sólo en la escena privada; el valor del juego no cambia.
+129 passed checks, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 47 in Spanish, 47 in English, 17 in reloading a pending task, 2 after saving its result, 9 in updating an arrow task
+of 0ab and 7 in updating a save 0ab that was already in MAP02. Reloads count only new checks, without adding back the counter persisted by the scene.
 
-Fabricación nativa de ballesta, recarga y disparo: se consume un virote y se
-crea CaelumBoltProjectile; la pila de flechas se conserva. La munición no
-acredita ni reemplaza la primera arma. El viaje de desarrollo a MAP02 conserva
-recetas y equipo viajero; no sustituye la salida narrativa, cuya limpieza de
-objetos físicos sigue vigente.
+Real choice of crossbow for the USDF pages of Ronnie, query of ammunition and detail in
+both languages. Teaching of recipe and dependencies without objects for free. In the Real
+Workbench lots of ten were tested to 25%, 50% and 100%, from components and from raw
+materials, with consumption of plan leaves and personal output without Box. Reservations
+prevent discarding materials; closing pauses, saving preserves time/reserves and canceling releases them without consumption. Insufficient materials, unknown recipe and insufficient stack capacity do not produce ammunition or consume materials. Limit test reduces the stack maximum only in the private scene; the value of the game does not change.
 
-Los guardados antiguos se crearon con fuentes auténticas 0ab, luego se
-superpuso 0ac en la misma ruta. Se conservaron los 130 conocimientos anteriores,
-etapas, lecciones, El Loco y la identidad de la primera arma. La receta 130 se
-incorporó tanto en MAP01 como en MAP02. La tarea antigua siguió siendo de
-flechas, con reservas y tiempo intactos: aun seleccionando virotes después de
-cargar, produjo diez flechas una sola vez. Repetir la enseñanza no duplica nada.
+Native crossbow crafting, reloading and firing: one bolt is consumed and
+CaelumBoltProjectile is created; the stack of arrows is preserved. The ammunition does not
+accredit or replace the first weapon. The development trip to MAP02 retains recipes and
+traveling equipment; it does not replace the narrative output, whose physical object
+cleaning remains in force.
 
-Las escenas privadas preparan etapas, materiales y equipo; adelantan el tiempo
-de fabricación mediante el helper diagnóstico existente. Verifican el proceso
-nativo y su persistencia, no el recorrido completo ni la espera a tiempo real
-del autor. Revisión visual a 1280×720: guía de Ronnie y receta de virotes con
-su icono, árbol y estaciones legibles. Validador aprobado: cinco documentos,
-74 audios, doce modelos de estaciones y 24 textos españoles de Caella.
+The old saves were created with authentic 0ab sources, then superimposed 0ac on the same
+route. The 130 previous knowledge, stages, lessons, El Loco and the identity of the first
+weapon were retained. The 130 recipe was incorporated both in MAP01 and in MAP02. The old
+task remained of arrows, with intact reserves and time: even by selecting bolts after
+loading, it produced ten arrows once. Repeating the teaching does not duplicate anything.
 
-Mapas y recursos audiovisuales conservan los bytes de 0ab. El delta pasa CRC
-y reconstrucción exacta sobre esa base: quince archivos modificados más
-PRUEBAS_4_33_0ac.txt, sin ejecutores, escenas privadas ni PK3. El autor
-confirmó que todas las pruebas de 0ac dieron correcto.
+Private scenes prepare stages, materials and equipment; advance manufacturing time by
+means of the existing diagnostic helper. They verify the native process and its
+persistence, not the author's complete playthrough or real-time wait. Visual review to 1280×720:
+Ronnie guide and bolt recipe with its icon, tree and readable stations. Validator
+approved: five documents, 74 audios, twelve station models and 24 Spanish texts of Caella.
 
-## Validación de 4.33.0ab — aprobada por el autor
+Maps and audio-visual resources retain 0ab bytes. The delta passes CRC and exact
+reconstruction on that basis: fifteen modified files plus PRUEBAS_4_33_0ac.txt, without
+executors, private scenes or PK3. The author confirmed that all 0ac tests were correct.
 
-109 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-33 en español, 33 en inglés, 15 al recargar durante la inmersión, 11 durante
-la devolución y 8 después de completarla; 9 al actualizar un guardado auténtico
-0aa, hacer la práctica, subir la escalera y viajar a MAP02. Las cifras de
-recarga cuentan sólo comprobaciones ejecutadas después de cargar, sin sumar
-otra vez el contador que guardó la escena.
+## Validation of 4.33.0ab — approved by the author
 
-Se abrió Ronnie con Usar y se recorrieron las páginas USDF reales. Lectura y
-rechazo no inician; confirmar registra; Detalle y diálogo usan el resultado.
-La piscina real acreditó WaterLevel 3 y gasto nativo. Mojarse sin cubrir la
-cabeza, ejecutar el helper diagnóstico en seco, exenciones sin gasto y llenar
-Aire por depuración no completaron. Menos de un segundo queda pendiente;
-la devolución parcial tampoco completa. No se confundió con recuperación de
-Aire al correr. Reabrir conserva la práctica y el viaje conserva las lecciones.
+109 passed checks, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 33 in Spanish, 33 in
+English, 15 when reloading during immersion, 11 in return and 8 after completion; 9 in
+updating an authentic 0aa save, practice, climb the ladder and travel to MAP02. Reload figures count only checks executed after loading, without adding again the counter that
+saved the scene.
 
-Guardado antiguo creado con fuentes 0aa antes de superponer el delta en la
-misma ruta: tres bools nuevos falsos, etapas, equipo, lecciones y 78 cartas
-conservados. Se aceptó la práctica, se registró inmersión y se subieron los
-escalones mediante movimiento con colisiones nativas hasta x2190/z8, WaterLevel
-0, sin perder salud. La recuperación completó la práctica. Las escenas privadas
-preparan etapas, atributos y equipo para cubrir casos; no añaden contenido ni
-sustituyen el recorrido manual del autor con su personaje.
+Ronnie was opened with Use and toured the real USDF pages. Reading and rejection do not
+start; confirm record; Detail and dialogue use the result. The real pool credited
+WaterLevel 3 and native expense. Wet without covering the head, run the diagnostic helper
+in dry, exemptions without expense and fill Air through debugging did not complete. Less than
+a second remains pending; partial return also did not complete. It was not confused with
+recovery of Air while running. Reopening keeps the practice and travel retains the
+lessons.
 
-Revisión visual a 1280×720: las siete opciones de Ronnie y las instrucciones de
-la piscina se leen completas. Textos de diálogo y Detalle comprobados en ambos
-idiomas. Validador aprobado: cinco documentos, 74 audios, doce modelos de
-estaciones y 24 textos españoles de Caella. Los tres WAD y todos los recursos
-audiovisuales conservan los bytes de 0aa. La revisión de código confirma que
-los observadores no modifican costes, regeneración o requisitos de misión.
-El delta pasa CRC y reconstrucción exacta sobre 0aa: trece archivos modificados
-y PRUEBAS_4_33_0ab.txt, sin ejecutores, escenas privadas ni PK3.
-El autor confirmó que todas las pruebas de 0ab dieron correcto.
+Old save created with 0aa sources before superimposing the delta on the same route: three
+new false booleans, stages, equipment, lessons and 78 cards preserved. Practice was accepted,
+immersion was recorded and steps were climbed through movement with native collisions to
+x2190/z8, WaterLevel 0, without losing health. Recovery completed the practice. Private
+scenes prepare stages, attributes and equipment to cover cases; they do not add content or
+replace the author's manual journey with his character.
 
-## Validación de 4.33.0aa — aprobada por el autor
+Visual review of 1280×720: the seven options of Ronnie and the instructions of the pool
+are read complete. Dialogue and Detail texts tested in both languages. Validator approved:
+five documents, 74 audios, twelve station models and 24 Spanish texts of Caella. The three
+WADs and all audio resources retain 0aa bytes. The code review confirms that observers do
+not modify costs, regeneration or mission requirements. The delta passes CRC and exact
+reconstruction on 0aa: thirteen modified files and PRUEBAS_4_33_0ab.txt, without
+executors, private scenes or PK3. The author confirmed that all tests of 0ab proved
+correct.
 
-1271 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-1259 de reglas/acciones, 10 al actualizar un guardado real de 0z y viajar,
-y 2 al recargar el guardado resultante de 0aa y volver a viajar.
+## Validation of 4.33.0aa — approved by the author
 
-Cobertura: las 78 cartas individualmente sobre los doce atributos, colección
-completa, base antes de porcentaje, decimales, recálculo sin acumulación y
-snapshots del Diario. Divisores con atributo 0, 0,3, 1, 10, 25, 50, 100 y 150;
-daño real de jugador/NPC y conservación de la curva de Dolor/Lucidez. Se
-compararon colisiones nativas con su expresión sustractiva; además, los cuerpos
-de ReceiveCaelumImpact en jugador y NPC son idénticos a 0z.
+1271 passed checks, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 1259
+rules/actions, 10 when updating a real 0z save and traveling, and 2 when reloading the
+resulting 0aa save and returning to travel.
 
-Barrido: cuatro direcciones, daño igual al primario bajo condiciones de crítico
-y precisión controladas, coste único triple, recuperación, Aire insuficiente,
-obstáculos sólidos y piso 3D, aliados y alcance. Se ejecutaron los estados Zoom
-de los selectores nativos de las tres armas y guanteletes; mantener el botón
-no repite. Barrido cargado consume la carga y cuesta seis primarios sin carga.
-Magia: gastos reales de los cuatro implementos, T1/T2/T3, normal/cargado y
-rechazo por Ánima insuficiente a Elocuencia 100. Se conservan las bases propias.
+Scope: 78 cards individually over the twelve attributes, complete collection, base before
+percentage, decimals, recalculation without accumulation and snapshots of the Journal.
+Divisors with attribute 0, 0,3, 1, 10, 25, 50, 100 and 150; real damage of player/NPC
+and preservation of the Pain/Lucidity curve. Native collisions were compared with its
+subtractive expression; in addition, the bodies of ReceiveCaelumImpact in player and NPC
+are identical to 0z.
 
-El guardado 0z se generó con sus fuentes auténticas antes de superponer el delta.
-Conservó cartas/equipo/etapa/lecciones y reconstruyó atributos y un hechizo
-cargado pendiente que antes costaba cero. Se guardó con 0aa, recargó y verificó
-viaje real a MAP02 sin duplicar bases ni perder el arma. Las escenas preparan
-cartas y equipo para estos ensayos: no añaden contenido al juego entregado.
-Revisión visual del Diario a 1280×720: colección completa y un Menor sin El Loco,
-con la tabla de base y porcentaje separada. La adquisición restante de cartas
-continúa planificada, no se declara terminada.
+Sweeping: four directions, damage equal to the primary under controlled critical and
+precision conditions, triple single cost, recovery, insufficient air, solid obstacles and
+3D floor, allies and range. Zoom states of the native selectors of the three weapons and
+gauntlets were executed; maintaining the button does not repeat. A charged sweep consumes the charge and costs six uncharged primaries. Magic: real costs of the four implements,
+T1/T2/T3, normal/charged and rejection by insufficient Anima at Eloquence 100. Own bases
+are preserved.
 
-Validador del proyecto aprobado: cinco documentos, 74 definiciones de audio,
-12 modelos de estaciones y 24 textos españoles de Caella. Los tres mapas y
-todos los recursos audiovisuales mantienen los bytes de 0z. El ZIP pasa CRC
-y reconstrucción exacta del delta sobre esa base; incluye sólo 16 archivos
-modificados y PRUEBAS_4_33_0aa.txt. No contiene ejecutores, mapas privados o PK3.
-El autor confirmó que todas las pruebas de 0aa dieron correcto.
+The 0z save was generated with its authentic sources before overlaying the delta. It
+preserved cards/equipment/stage/lessons and rebuilt attributes and a pending charged spell
+that previously cost zero. It was saved with 0aa, reloaded and tested with real travel to
+MAP02 without duplicating bases or losing the weapon. The scenes prepare cards and
+equipment for these tests: they add no content to the delivered game. Visual review of the
+Journal at 1280×720: full collection and a Minor Arcana without El Loco, with separate
+base and percentage tables. Acquisition of the remaining cards is still planned, not
+declared complete.
 
-## Validación de 4.33.0z
+Validator of the approved project: five documents, 74 audio definitions, 12 station models
+and 24 Spanish texts of Caella. The three maps and all audiovisual resources maintain 0z
+bytes. The ZIP passes CRC and exact reconstruction of the delta on that basis; includes
+only 16 modified files and PRUEBAS_4_33_0aa.txt. It does not contain executors, private
+maps or PK3. The author confirmed that all tests of 0aa gave correct.
 
-75 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-25 en español, 25 en inglés, 13 al cargar la práctica pendiente, 5 al cargarla
-completa y 7 al actualizar un guardado real generado con fuentes 0y.
-Se abrió Ronnie con Usar, se recorrió el diálogo y se ejecutaron las acciones
-nativas de Inventario D/C sobre objetos reales. Se verificaron rechazo de
-material reservado y Caja no poseída, exclusión de consumo y primera arma,
-reducción efectiva de masa, persistencia y transición real a MAP02. Las escenas
-preparan etapa y sobrantes para comprobar estas rutas; no sustituyen el recorrido
-del autor. Captura de valores de carga revisada a 1280×720.
-Validador aprobado; los tres WAD y recursos audiovisuales conservan sus bytes
-de 0y. El ZIP pasa CRC y reconstrucción exacta del delta sobre esa base.
-0z quedó integrado en la base completa 0aa cuya prueba el autor aprobó.
+## 4.33.0z Validation
 
-## Validación de 4.33.0y — aprobada por el autor
+75 checks passed, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 25 in Spanish, 25 in
+English, 13 when loading the pending practice, 5 when loading the completed practice and 7
+when updating a real save generated with 0y sources. Ronnie was opened with Use, dialogue
+traversed and native Inventory D/C actions performed on real objects. Checks covered
+rejection of reserved material and an unowned Box, exclusion of consumables and the first
+weapon, effective mass reduction, persistence and a real transition to MAP02. The scenes
+prepare the stage and leftovers to check these paths; they do not replace the author's
+playthrough. Load-value screenshot reviewed at 1280×720. Validator passed; all three WADs
+and audiovisual resources retain their 0y bytes. ZIP passes CRC and exact delta
+reconstruction over that baseline. 0z was integrated into the complete 0aa baseline whose
+test the author approved.
 
-80 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 Linux/Freedoom:
-27 en español, 27 en inglés, 15 al cargar progreso parcial, 4 al cargar la
-práctica completa y 7 al cargar un guardado real generado con fuentes 0x.
-Se abrió al Ronnie original con Usar y se recorrió el diálogo nativo. Los
-escenarios inyectan condiciones de movimiento y llaman a las funciones reales
-de gasto/recuperación en ciclos acelerados: comprueban contabilización, no el
-ritmo de una caminata manual. Se verificaron exclusión de bebida energética,
-movimiento nulo y reservas vacías; costes de recuperación; guardados parciales
-y completos; viaje real a MAP02 y conservación de la primera arma.
-Captura en español revisada a 1280×720. Los tres WAD y los recursos audiovisuales
-son idénticos a 0x. Validador aprobado; CRC y reconstrucción del delta verificados.
-El autor aprobó controles y recorrido manual en Windows de 0y. No se declara probado un nuevo mapa ni una ruta de obstáculos.
+## Validation of 4.33.0y — approved by the author
 
-## Validación de 4.33.0x — aprobada por el autor
+80 checks passed, zero failures, in GZDoom 4.14.2 Linux/Freedoom: 27 in Spanish, 27 in
+English, 15 when loading partial progress, 4 when loading the completed practice and 7
+when updating a real save generated with 0x sources. The original Ronnie was opened with
+Use and native dialogue traversed. Scenarios inject movement conditions and call the real
+expenditure/recovery functions in accelerated cycles: they verify accounting, not the pace
+of a manual walk. Checks covered exclusion of the energy drink, no movement and empty
+reserves; recovery costs; partial and completed saves; real travel to MAP02 and
+preservation of the first weapon. Spanish screenshot reviewed at 1280×720. All three WADs
+and audiovisual resources are identical to 0x. Validator passed; ZIP CRC and delta
+reconstruction checked. The author approved controls and manual playthrough on Windows for
+0y. No new map or obstacle route is claimed as tested.
 
-108 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2 nativo Linux/Freedoom:
-32 en español, 32 en inglés, 17 desde guardado parcial, 4 desde guardado completo,
-15 de capacidad/reintentos/estados bajos/refresco de los cinco consumibles y 8
-al cargar un guardado real generado con fuentes 0w. Se utilizó Inventario nativo
-para consumir; se esperaron los diez segundos reales de pulsos. El cruce a MAP02
-fue nativo y conservó progreso y primera arma. Captura del diálogo revisada a
-1280×720. Escenarios aislados preparan etapas, carga y reservas para ejercitar
-estas condiciones; no sustituyen las pruebas del autor en Windows.
+## Validation of 4.33.0x — approved by the author
 
-El validador pasa. Los tres WAD y todos los recursos audiovisuales son idénticos
-a la base aprobada. El ZIP se comprueba por CRC y por reconstrucción exacta de
-archivos modificados sobre 0w. Todas las pruebas de 0x fueron aprobadas por el autor.
+108 checks passed, zero failures, in native GZDoom 4.14.2 Linux/Freedoom: 32 in Spanish,
+32 in English, 17 from a partial save, 4 from a completed save, 15 for
+capacity/retries/low states/refresh of the five consumables and 8 when loading a real save
+generated with 0w sources. Native Inventory was used for consumption; the ten real seconds
+of pulses were allowed to elapse. The MAP02 transition was native and preserved progress
+and the first weapon. Dialogue screenshot reviewed at 1280×720. Isolated scenarios prepare
+stages, load and reserves to exercise these conditions; they do not replace the author
+tests on Windows.
 
-## Validación de 4.33.0w — aprobada por el autor
+The validator passes. All three WADs and all audio-visual resources are identical to the
+approved base. The ZIP is checked by CRC and by exact reconstruction of modified files on
+0w. All 0x tests were approved by the author.
 
-Escenarios enfocados en GZDoom 4.14.2 nativo, Linux/Freedoom. Se preparan etapa,
-primera arma con desgaste y componentes; los objetos/tareas de producción son
-los reales. Sólo se adelanta el tiempo mediante la función de depuración para
-no esperar el ciclo completo. No se declara medido el ritmo de juego en Windows.
+## Validation of 4.33.0w — approved by the author
 
-- Usar abre al Ronnie original. La pregunta opcional, pasos, pausas y respuesta
-  posterior se comprueban en español e inglés. Detalle reconoce la finalización.
-- Selección y desequipado mediante Inventario nativo; persiste la selección en
-  Oficios. La red real del segundo piso abre con Usar y reserva materiales.
-- Iniciar, cancelar y pausar no acreditan la práctica. Cancelar libera reservas
-  sin consumir materiales; cerrar detiene el contador de la misma tarea.
-- Terminar la reparación consume materiales y restaura el mismo ItemId, sin
-  objetos, recetas o cambios de etapa añadidos como recompensa.
-- Guardados reales con tarea pausada y práctica terminada; continuar desde ellos
-  y cruzar conserva el registro y la primera arma. Compatibilidad desde 0v.
-- Auditoría de cuatro conjuntos de armadura y cinco sellos T1, talle M, con
-  25/50/100% en todas las capas. Capacidades de vetas leídas del mapa en el motor.
-  Estos cálculos no simulan tiempo de extracción, mermas previas ni stock usado.
+Stages focused on GZDoom 4.14.2 native, Linux/Freedoom. Stages are prepared, first weapon
+with wear and components; items/tasks production are the real ones. Only time is
+advanced by debugging function to not wait for the full cycle. The game rhythm is not
+declared in Windows.
 
-Resultados: 83 comprobaciones aprobadas, cero fallos: 27 en español, 27 en
-inglés, 11 al cargar la tarea pausada, 5 al cargar la práctica completada y 13
-de compatibilidad desde un guardado 0v. Captura del diálogo en español revisada
-a 1280×720. Validador del proyecto aprobado; nueve claves nuevas en ambos
-idiomas. Los tres mapas y los recursos audiovisuales conservan sus bytes de 0v.
-El paquete se verifica por CRC y por reconstrucción del acumulativo sobre 0u.
-El autor confirmó la descarga, aplicación y aprobación de todos los cambios de 0w.
+- Use opens to the original Ronnie. The optional question, steps, pauses and back answer
+  are checked in English and Spanish. Detail recognizes the completion.
+- Selection and unequipping using Native Inventory; selection persists in Crafts. The
+  real network on the second floor opens with Use and reserves materials.
+- Start, cancel and pause do not prove the practice. Cancel releases reserves without
+  consuming materials; closing pauses the counter of the same task.
+- Finish repair consumes materials and restores the same ItemId, without objects, recipes
+  or stage changes added as a reward.
+- Real saves with paused task and finished practice; continue from them and cross
+  preserves the record and the first weapon. Compatibility from 0v.
+- Audit of four sets of armor and five T1 seals, size M, with 25/50/100% in all layers.
+  Vein capacities read from the map on the engine. These calculations do not simulate
+  extraction time, previous decreases or used stock.
 
-## Validación de 4.33.0v — aprobada dentro del acumulativo 0w
+Results: 83 passed checks, zero failures: 27 in Spanish, 27 in English, 11 in loading the
+paused task, 5 in loading the completed practice and 13 in compatibility from a 0v save.
+Capture of the revised Spanish dialogue to 1280×720. Validator of the approved project;
+nine new keys in both languages. The three maps and audio-visual resources retain their 0v
+bytes. The package is verified by CRC and by rebuilding the cumulative on 0u. The author
+confirmed the download, application and approval of all 0w changes.
 
-GZDoom 4.14.2 nativo, Linux, Freedoom 0.13, con escenarios aislados que preparan
-las etapas e inventarios. Se verifica el viaje real; no se simula cambiando el
-nombre del mapa ni se afirma haber repetido el tutorial completo.
+## 4.33.0v Validation — Approved within Cumulative 0w
 
-- Confirmación y cancelación mediante Usar/USDF nativos; fabricación pendiente,
-  distancia/altura, propiedad, ausencia de limpieza antes de completar el fundido.
-- ChangeLevel real: misión completada, misma Caja/ItemId/Owner, arma guardada con
-  su condición, eliminación de extras personales y almacenados, Tarot y recetas.
-  Sin escudo/capas fantasma ni reposición completa de recursos. Recuperación y
-  equipamiento del arma desde el inventario nativo después de llegar.
-- Guardado real durante el fundido y carga para continuar el mismo traslado;
-  guardado tras equipar en alcantarillas y carga sin repetir la Voz.
-- Guardado generado con fuente 0u y cargado sobre la misma ruta con 0v. La
-  comprobación detectó incompatibilidad al modificar TEXTMAP; se conservó
-  MAP01.wad exacto y se pasó la modificación al controlador. La versión final
-  debe conservar ese hash para admitir partidas existentes.
-- Presentación y localización español/inglés; capturas nativas de puerta y
-  alcantarillas. TEXTMAP diagnóstico preservado y referencias movidas a CADEV02.
+GZDoom 4.14.2 native, Linux, Freedoom 0.13, with isolated scenarios that prepare the
+stages and inventories. The actual journey is verified; it is not simulated by changing
+the name of the map nor is it claimed to have repeated the full tutorial.
 
-Resultados finales: 89 comprobaciones aprobadas, cero fallos: recorrido nativo
-38, reanudar fundido 22, cargar llegada 2, migración 0u -> 0v 12 y salvaguardas
-15. El contador serializado de una partida incluye las comprobaciones previas;
-no se cuentan de nuevo al cargar. El save de origen se creó con fuente 0u real.
-Las salvaguardas cubren también pieza caída, pieza destruida sin reparación
-regalada, cuatro familias mágicas, requisito de Caja/carta/Rulo e interrupción.
+- Confirmation and cancellation using native Use/USDF; pending manufacture,
+  distance/height, property, no cleaning before completion of the transition.
+- Real ChangeLevel: mission completed, same Box/ItemId/Owner, weapon saved with its
+  condition, removal of personal and stored extras, Tarot and recipes. No ghost
+  shield/layers or full replenishment of resources. Recovery and equipment of the weapon
+  from native inventory after arrival.
+- Saved during the transition and loaded to continue the same transfer; save after equipping in
+  sewers and load without repeating the Voice.
+- Saved generated with 0u source and loaded on the same path with 0v. The check detected
+  incompatibility when modifying TEXTMAP; MAP01.wad was kept accurate and the modification
+  was moved to the controller. The final version must keep that hash to support existing
+  games.
+- Presentation and localization Spanish/English; native screenshots of doors and sewers.
+  TEXTMAP preserved diagnosis and references moved to CADEV02.
 
-CADEV02 abrió en GZDoom con IA masiva desactivada para comprobar el cambio de
-nombre; no se repitió la prueba de rendimiento de multitudes. El validador pasó:
-cinco documentos, 74 audios, 12 modelos de estaciones y referencias conservadas.
-Las 17 claves del retorno están presentes una vez en cada idioma. MAP01.wad
-mantiene SHA-256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
-Corrección de registro: el autor confirmó que su última versión recibida fue 0u.
-Luego se entregó el acumulativo y el autor aprobó todos sus cambios, incluidos 0v y 0w.
+Final results: 89 passed checks, zero failures: 38 native-route checks, 22 transition-resumption checks, 2 arrival-load checks, 12 for 0u -> 0v migration and 15 safeguards. The serialized counter of a game includes previous checks; they are not counted again
+    when loading. The original save was created with real 0u source. Safeguards also cover
+    fallen piece, piece destroyed without gift repair, four magic families, Box/card/Rulo
+    requirement and interruption.
 
-## Validación de 4.33.0u — aprobada por el autor
+CADEV02 opened in GZDoom with mass AI disabled to check the rename; the crowd performance
+test was not repeated. Validator passed: five documents, 74 audio files, 12 station models
+and references preserved. All 17 return keys occur once in each language. MAP01.wad
+retains SHA-256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c. Record
+correction: the author confirmed that the last version received was 0u. The cumulative
+release was then delivered and the author approved all its changes, including 0v and 0w.
 
-- GZDoom 4.14.2 nativo, Linux, Freedoom 0.13: 42 comprobaciones de equipo,
-  cero fallos. Préstamo sin escudo; reparación de modelo obsoleto; escudo real,
-  bloqueo, desequipado, referencia perdida, mandoble, regreso a espada,
-  almacenamiento, rotura, reparación, retirada y capas residuales; guanteletes
-  gigantes conservan su defensa propia. Se mantienen las identidades reales.
-- Esquiva y UI: 13 comprobaciones en español y 13 en inglés, cero fallos.
-  Entrada nativa de movimiento lateral, Zoom y giro. Moverse en otra sala
-  o piso y girar la cámara no conceden la marca. Caminar de costado 48 MU
-  en la sala sí la concede y actualiza el Diario. Usar abre al Rulo original;
-  inicio, repaso y equivalencias muestran la indicación del mandoble.
-- Un save creado realmente con fuente 0t y estado de escudo obsoleto se carga
-  con 0u sobre la misma ruta: 9 comprobaciones, cero fallos. Desaparecen capas
-  y bloqueo fantasma; conserva préstamo, Owner, ItemId y etapa de la misión.
-  El registro viajero almacena el estado reparado sin crear otro objeto.
-- Reproducción acotada: en partida limpia 0t el préstamo no daba un escudo.
-  El síntoma se reprodujo preparando el estado incoherente en el motor; no
-  se recibió el guardado concreto del autor. La corrección cubre también capas
-  residuales sin estado lógico activo.
-- Revisión visual del Diario y compilación sin errores del código entregado.
-  Versión y cinco documentos sincronizados, traducciones de ambos idiomas,
-  recursos existentes y CRC del ZIP comprobados. MAP01.wad no cambia.
+## Validation of 4.33.0u — approved by the author
 
-Son escenarios enfocados que preparan inventario y etapas; no se repite todo
-el tutorial ya aceptado. El autor confirmó exitosas todas las comprobaciones
-de 0u; la ampliación de salida se implementa en 0v.
+- GZDoom 4.14.2 native, Linux, Freedoom 0.13: 42 equipment checks, zero failures. Loan
+  without shield; repair of obsolete model; real shield, lock, unequipped, missing
+  reference, two-handed sword, sword return, storage, breakage, repair, removal and
+  residual layers; giant gauntlets retain their own defense. Real identities are
+  maintained.
+- Dodge and UI: 13 checks in Spanish and 13 in English, zero failures. Native side
+  motion input, Zoom and twist. Move into another room or floor and turn the camera do not
+  grant the mark. Walking sideways 48 MU in the room does grant and update the Journal.
+  Use opens to the original Rulo; start, review and equivalences show the indication of
+  the two-handed sword.
+- A truly created save with 0t source and obsolete shield status is loaded with 0u on the
+  same route: 9 checks, zero failures. Layers and ghost blocking disappear; the loan preserves Owner, ItemId and mission stage. Traveler log stores repaired status without creating
+  another object.
+- Reproduction limits: 0t clean start the loan did not give a shield. The symptom was
+  reproduced by preparing the incoherent state in the engine; the concrete save was not
+  received from the author. The correction also covers residual layers without active
+  logical status.
+- Visual review of the Journal and error-free compilation of the delivered code. Version
+  and five synchronized documents, translations of both languages, existing resources and
+  proven ZIP CRC. MAP01.wad does not change.
 
-## Validación de 4.33.0t — resto aprobado por el autor
+They are focused scenarios that prepare inventory and stages; not all the already accepted
+tutorial is repeated. The author confirmed all 0u checks successfully; the output
+expansion is implemented in 0v.
 
-- GZDoom 4.14.2, ejecución nativa en Linux con Freedoom 0.13 como IWAD de
-  prueba: 65 comprobaciones del flujo y las conversaciones, cero fallos.
-  Usar abre el USDF real; cerrar deja la esencia, una captura interrumpida
-  permite reintentar, la completa otorga una carta y cambia 80 -> 90.
-- Las doce cifras conservan exactamente base ×1,02. Cinco recálculos seguidos
-  no acumulan el factor, no se regala salud, y la Caja conserva Owner/ItemId.
-  Dos Mayores más un Menor dan 5%; las 78 cartas dan 100%, no interés compuesto.
-  Estas últimas combinaciones son pruebas del registro, no contenido obtenido
-  durante el tutorial. Tras comprobarlas se restaura sólo El Loco.
-- Guardar durante la animación y cargar reanuda la captura: 24 comprobaciones
-  posteriores aprobadas. Un guardado ya completado conserva colección, etapa,
-  Caja y atributos; la inspección visual parte de ese guardado.
-- Migración real desde fuente 0s hacia 0t en la misma ruta: 14 comprobaciones
-  aprobadas. La Caja, 500 unidades de material almacenado, masa total y primera
-  arma (ItemId 2) se conservan. Los atributos enteros de 0s cargan como double
-  sin pérdida. Aparece la esencia y puede capturarse sin empezar partida nueva.
-- Los cinco actores originales abren sus conversaciones posteriores mediante
-  Usar nativo. Se recorren también las preguntas de Palomo sobre colección y
-  almacenamiento; las páginas muestran sus textos localizados correctos.
-- Inspección de la aparición en la cueva y del Diario en español a 1280×720
-  y en inglés a 1024×768. La carta conserva proporciones en 16:9 y 4:3.
-  Personaje muestra decimales; Misiones y F/Detalle reflejan la captura.
-- Validador: versión/README y cinco docs sincronizados; 74 audios, 12 modelos
-  de estaciones, claves de Caella conservadas y 25 claves nuevas en ambos
-  idiomas. MAP01.wad idéntico a 0s, SHA256:
+## 4.33.0t Validation — remaining tests approved by author
+
+- GZDoom 4.14.2, native Linux execution with Freedoom 0.13 as IWAD test: 65 flow and
+  conversation checks, zero failures. Use opens the real USDF; closing leaves the essence, an
+  interrupted capture allows you to retry, the complete gives a card and changes 80 -> 90.
+- The twelve attributes retain exactly ×1,02 base. Five consecutive recalculations do not
+  accumulate the factor, no health is given, and the Box retains Owner/ItemId. Two Major
+  plus one Minor give 5%; the 78 cards give 100%, no compound interest. These latter
+  combinations are registry tests, no content obtained during the tutorial. After checking
+  them, only El Loco is restored.
+- Save during animation and load resume capture: 24 approved later checks. A completed
+  save retains collection, stage, Box and attributes; visual inspection part of that save.
+- Real migration from 0s source to 0t on the same route: 14 passed checks. The Box, 500
+  units of stored material, total mass and first weapon (ItemId 2) are preserved. The
+  integer attributes of 0s load as double without loss. The essence appears and can be
+  captured without starting new game.
+- The original five actors open their subsequent conversations using Native Use. Palomo's
+  collection and storage questions are also covered; the pages show their correct
+  localized texts.
+- Inspection of the appearance in the cave and the Journal in Spanish to 1280×720 and in
+  English to 1024×768. The card retains proportions in 16:9 and 4:3. Character shows
+  decimals; Missions and F/Detail reflect capture.
+- Validator: version/README and five synchronized docs; 74 audios, 12 station models,
+  preserved Caella keys and 25 new keys in both languages. MAP01.wad identical to 0s,
+  SHA256: c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+
+The scenarios prepare already approved stages and conditions, and place Palomo at its
+destination to check the conversation. They do not replace a complete game or listening on the author's Windows system. The author approved the other tests of 0t; the ghost shield and
+defense guide were addressed in 0u. The output and active powers are not tested as
+implemented functions.
+
+## Validation of 4.33.0s — approved by the author
+
+- 130 passed checks, zero failures, in GZDoom 4.14.2: 61 for dialogue/reward/storage, 17 when reloading a 0s save and 26 for each 0r save variant (without Box and with previous property).
+- Use and USDF natives cover the thirteen new pages: early visit, optional questions, go
+  back, close before accepting, accepting, and reopening later. Each missing mission
+  requirement rejects the reward; it is also refused to open from another floor or out of
+  reach.
+- Acceptance advances 75 to 80, grants a single instance with Owner/ItemId and adds 10 kg
+  once. Repeated action retains identity, stage and weight. Storage and removal of a
+  personal stack of 5 kg retains quantity, slots and weight reduction. Box does not
+  consume a slot of its contents.
+- Native saves are created with 0r sources and loaded with 0s sources at the same path.
+  The original Palomo, first weapon (ItemId 1), its contents and stage are preserved. The
+  Box receives ItemId 2 only once. In the already-owned variant, loading and accepting
+  preserve the 12,2 kg load; in the unowned variant, delivery changes it from 6,2 to 16,2
+  kg.
+- Reloading the save 0s retains Box, content, owner and phase 80; Palomo opens
+  post-delivery support. Capture and output remain unrewarded and the mission remains
+  active.
+- The project validator passes: version/README, five docs, 74 audio files, 12 station
+  models and 24 key Caella in Spanish. New 27 keys have Spanish and English versions.
+  MAP01.wad retains SHA256
   c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
 
-Los escenarios preparan etapas y condiciones ya aprobadas, y sitúan a Palomo
-en su destino para comprobar la conversación. No reemplazan una partida
-completa ni la escucha en Windows del autor. El autor aprobó las demás pruebas
-de 0t; el escudo fantasma y la guía de defensa se atendieron en 0u. La salida y
-poderes activos no se prueban como funciones implementadas.
+The scenarios prepare the stages and place the original instance of Palomo in its
+destination, with the route completed. Use, USDF pages, storage and saves do run on the
+engine. The route of stairs already accepted is not repeated nor a complete game. The
+author confirmed after that all tests of 0s were correct and authorized to continue with
+0t.
 
-## Validación de 4.33.0s — aprobada por el autor
+## Validation of 4.33.0r — approved by the author
 
-- 130 comprobaciones aprobadas, cero fallos, en GZDoom 4.14.2: 61 del
-  diálogo/recompensa/almacenamiento, 17 al recargar un guardado 0s y 26 por
-  cada variante de guardado 0r (sin Caja y con propiedad anterior).
-- Usar y USDF nativos recorren las trece páginas nuevas: visita temprana,
-  preguntas opcionales, volver atrás, cerrar antes de aceptar, aceptar y
-  reabrir después. Cada requisito de misión ausente rechaza la recompensa;
-  también se rechaza abrir desde otro piso o fuera de alcance.
-- La aceptación avanza 75 a 80, concede una sola instancia con Owner/ItemId
-  y suma 10 kg una vez. La acción repetida conserva identidad, etapa y peso.
-  El almacenamiento y retiro de una pila personal de 5 kg conserva cantidad,
-  slots y reducción de peso. La Caja no consume un slot de su contenido.
-- Se crean guardados nativos con fuente 0r y se cargan con fuente 0s en la
-  misma ruta. Se preservan el Palomo original, la primera arma (ItemId 1),
-  su contenido y la etapa. La Caja recibe ItemId 2 una sola vez. En la
-  variante ya propietaria, cargar y aceptar conservan la carga de 12,2 kg;
-  en la variante sin Caja, la entrega cambia de 6,2 a 16,2 kg.
-- Recargar el guardado 0s conserva Caja, contenido, propietario y fase 80;
-  Palomo abre la ayuda posterior a la entrega. Captura y salida siguen sin
-  premiarse y la misión permanece activa.
-- El validador del proyecto pasa: versión/README, cinco docs, 74 archivos de
-  audio, 12 modelos de estación y 24 claves de Caella en español. Las 27
-  claves nuevas tienen versiones en español e inglés. MAP01.wad conserva
-  SHA256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+- GZDoom 4.14.2 reproduces 0q block: Argento and Caella preserve all their health, but
+  INCOMBAT=1 fails StartConversation. Rulo/Ronnie respond.
+- 57 protection/recovery/USDF checks: normal and forced lethal damage for all four, 1 health, zero death events, body/height repair without altering totals, eight openings
+  with real use and Rulo closure from native menu to 75 phase.
+- 32 checks when loading a native 0q save on the same game path: Argento locked by combat
+  and Caella as a real corpse (-898840 health, CORPSE/KILLED). Both are repaired; four
+  instances remain, with correct height, protection, eight openings/closings dialog and 75
+  phase preserved.
+- 32 checks when loading the 0r save after closing: protection, health, four residents, 75
+  stage and opening/reopening of your dialogs.
+- The project validator passes: README/version, five docs, 74 audio files, 12 station
+  models and 24 Caella keys in Spanish. The delta changes only LANGUAGE,
+  CaelumAnchoredResident and documentation. MAP01.wad maintains SHA256
+  c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
 
-Los escenarios preparan las etapas y sitúan la instancia original de Palomo
-en su destino, con la ruta terminada. Usar, las páginas USDF, almacenamiento
-y guardados sí se ejecutan en el motor. No se repite el recorrido de escaleras
-ya aceptado ni una partida completa. El autor confirmó después que todas
-las pruebas de 0s fueron correctas y autorizó continuar con 0t.
+They are controlled scenarios with preconditions of mission and prepared damage; Use, USDF
+and saves do pass through the engine. They do not replace the user's playthrough nor a
+visual inspection of the encounter. The author confirmed correct all the tests of 0r and
+asked to continue with the next block. An actor already destroyed cannot be repaired from
+a non-existent instance; base residents leave persistent bodies and the proven variant is
+recovered.
 
-## Validación de 4.33.0r — aprobada por el autor
+## 4.33.0q Validation — remaining tests approved by author
 
-- GZDoom 4.14.2 reproduce el bloqueo de 0q: Argento y Caella conservan toda
-  su salud, pero INCOMBAT=1 hace fallar StartConversation. Rulo/Ronnie responden.
-- 57 comprobaciones de protección/recuperación/USDF: daño letal normal y
-  forzado para los cuatro, 1 de vida, cero eventos de muerte, reparación de
-  cuerpo/altura sin alterar totales, ocho aperturas con Usar real y cierre
-  de Rulo desde el menú nativo hasta fase 75.
-- 32 comprobaciones al cargar un guardado nativo 0q en la misma ruta de juego:
-  Argento bloqueado por combate y Caella como cadáver real (salud -898840,
-  CORPSE/KILLED). Ambos se reparan; permanecen cuatro instancias, con altura
-  correcta, protección, ocho aperturas/cierres de diálogo y fase 75 conservada.
-- 32 comprobaciones al cargar el guardado 0r posterior al cierre: protección,
-  salud, cuatro residentes, etapa 75 y apertura/reapertura de sus diálogos.
-- El validador del proyecto pasa: README/versión, cinco docs, 74 archivos de
-  audio, 12 modelos de estación y 24 claves de Caella en español. El delta
-  cambia sólo LANGUAGE, CaelumAnchoredResident y documentación. MAP01.wad
-  mantiene SHA256 c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c.
+- 146 passed checks in GZDoom 4.14.2: 36 of branch/retry, 37 of the group, 7 of
+  USDF/Use and 66 of migration/saves.
+- The four inflict native damage on the Bull; it attacks fellows and can leave them down.
+  The retry restores the four and a loss caused by a companion credits victory to the
+  player. Friendly fire is rejected.
+- Use real: first-person Argento orientation, key delivery and return to Rulo within the
+  enclosure. Captures inspected in Spanish.
+- Native 0p save in combat: preserves Bull damage, practices, owned/borrowed ammunition,
+  ItemId, drawer consumption and 38 stations; incorporates group.
+- 0q Saved: retains a fallen ally and group references; allows you to retry, beat, close
+  and reload with 12.500 leather units.
+- Saved 0p completed: retains its previous leather and the four instances at home. Also
+  tested is the precondition of victory pending without Bull.
+- The tests use a private copy, prepared mission preconditions and damage/timers
+  controlled for the limits; the participation test allows the AI to act and records real
+  impacts. It does not replace the author's balance assessment or claim to have completed a
+  normal game from start to finish.
 
-Son escenarios controlados con precondiciones de misión y daño preparado;
-Usar, USDF y guardados sí pasan por el motor. No sustituyen la partida del
-usuario ni una inspección visual del encuentro. El autor confirmó correctas
-todas las pruebas de 0r y pidió proseguir con el siguiente bloque.
-Un actor ya destruido no puede repararse a partir de una instancia inexistente;
-los residentes base dejan cuerpos persistentes y la variante probada se recupera.
+Previous saves already completed retain the spoils they had produced: the new amount
+applies to still pending wins, without removing own leather or filling the drawer. The WAD
+maintains the same 0p footprint. The author approved the other 0q tests. The post-combat
+opening with Argento and Caella was not covered: 0r reproduces and corrects that omission.
 
-## Validación de 4.33.0q — resto aprobado por el autor
+## 4.33.0p Validation — remaining tests approved by author
 
-- 146 comprobaciones aprobadas en GZDoom 4.14.2: 36 de la rama/reintento,
-  37 del grupo, 7 de USDF/Usar y 66 de migración/guardados.
-- Los cuatro infligen daño nativo al Toro; éste ataca compañeros y puede
-  dejarlos agachados. El reintento restaura los cuatro y una baja causada por
-  un compañero acredita victoria al jugador. Fuego amigo rechazado.
-- Usar real: orientación de Argento en primera persona, entrega de llave y
-  devolución a Rulo dentro del recinto. Capturas inspeccionadas en español.
-- Guardado nativo 0p en combate: conserva daño del Toro, prácticas, munición
-  propia/prestada, ItemId, consumo del cajón y 38 estaciones; incorpora el grupo.
-- Guardado 0q: conserva un aliado caído y las referencias del grupo; permite
-  reintentar, vencer, cerrar y volver a cargar con 12.500 unidades de cuero.
-- Guardado 0p completado: conserva su cuero anterior y las cuatro instancias
-  en casa. También se ensaya la precondición de victoria pendiente sin Toro.
-- Las pruebas usan una copia privada, precondiciones de misión preparadas y
-  daño/temporizadores controlados para los límites; el ensayo de participación
-  deja actuar a la IA y registra impactos reales. No sustituye el balance del
-  autor ni afirma haber completado una partida normal de principio a fin.
+- GZDoom 4.14.2: full load, 36 branch/enclosure/retry checks; 116 checks with the 36
+  initial options and native actions. The ammunition replacement is checked without
+  spending your own reserve or curing.
+- Real Use/USDF: start of Rulo, practice pages, Argento key and final return. Detail is
+  verified with F and engine captures.
+- Native 0n save: preserves stage, paused manufacturing, drawer expense and 38 stations.
+  On that game the link to the new branch is tested.
+- Saved in combat: retains damage to the Bull, six practices, owner of the match, ItemId
+  and spent ammunition. Defeat and restart work after loading.
+- Saved in phase 75: retains only own ammunition, initial weapon and a single amount of
+  leather. Dissipated Bull does not reappear.
+- The WAD retains SHA-256
+  `c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c`. No engine, IWAD, PK3,
+  saves or fixtures are redistributed.
 
-Guardados anteriores ya completados conservan el botín que habían producido:
-la nueva cantidad se aplica a victorias todavía pendientes, sin retirar cuero
-propio ni rellenar el cajón. El WAD mantiene la misma huella de 0p.
-El autor aprobó las demás pruebas de 0q. La apertura poscombate con Argento y
-Caella no estaba cubierta: 0r reproduce y corrige esa omisión.
+The trials prepare preconditions and accelerate timers in private copies; validate
+transitions and engine actions, do not replace the author's playthrough. The author
+confirmed the rest of his tests; the three observations are dealt with in 0q. That block
+left the epilogue pending; 0s–0v incorporate its closure. The final audit of the tutorial
+continues on the roadmap.
 
-## Validación de 4.33.0p — resto aprobado por el autor
+## 4.33.0o Validation
 
-- GZDoom 4.14.2: carga completa, 36 comprobaciones de la rama/recinto/reintento;
-  116 comprobaciones con las 36 opciones iniciales y acciones nativas.
-  La reposición de munición se comprueba sin gastar la reserva propia ni curar.
-- Uso/USDF reales: inicio de Rulo, páginas de prácticas, llave de Argento y
-  devolución final. Detalle se verifica con F y capturas del motor.
-- Guardado nativo de 0n: conserva etapa, fabricación pausada, gasto del cajón y
-  38 estaciones. Sobre esa partida se prueba el enlace a la nueva rama.
-- Guardado en combate: conserva daño del Toro, seis prácticas, propietario del
-  encuentro, ItemId y munición gastada. Derrota y reinicio funcionan tras cargar.
-- Guardado en fase 75: conserva sólo la munición propia, arma inicial y una
-  única cantidad de cuero. El Toro disipado no reaparece.
-- El WAD conserva SHA-256
-  `c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c`.
-  No se redistribuyen motor, IWAD, PK3, guardados ni fixtures de ensayo.
+- GZDoom 4.14.2 compiles and loads new MAP01 and a real 0n save without script or load
+  errors. The already approved game matrix is not repeated.
+- The WAD contains a single manual type 18106, in (-364,800,0); the save retains the same
+  origin. Removal targets only to that specimen of the world, with an independent
+  marker to migrate saves already prepared by 0n.
+- WAD and other runtime files retain their contents; only change the MAP01 controller. README
+  and all five documents remain in 0o version. ZIP checked against 0n: seven modified
+  files and one TXT test.
 
-Los ensayos preparan precondiciones y aceleran temporizadores en copias privadas;
-validan transiciones y acciones del motor, no sustituyen la partida del autor.
-El autor confirmó el resto de sus pruebas; las tres observaciones se atienden
-en 0q. Ese bloque dejaba el epílogo pendiente; 0s–0v incorporan su cierre.
-La auditoría final del tutorial continúa en el roadmap.
+Verification requested in 0o: disappearance of the external manual and preservation of
+recipes. The author continued with Rulo and then approved the other evidence of the base;
+the observations of 0u were already approved by the author.
 
-## Validación de 4.33.0o
+## Validation of 4.33.0n — accepted on 2026-09-11
 
-- GZDoom 4.14.2 compila y carga MAP01 nuevo y un guardado real de 0n sin
-  errores de scripts ni de carga. No se repite la matriz de juego ya aprobada.
-- El WAD contiene un único manual tipo 18106, en (-364,800,0); el guardado
-  conserva ese mismo origen. El retiro apunta sólo a ese ejemplar del mundo,
-  con un marcador independiente para migrar guardados ya preparados por 0n.
-- WAD y demás archivos de runtime conservan su contenido; sólo cambia el
-  controlador de MAP01. README y los cinco documentos quedan en versión 0o.
-  ZIP cotejado contra 0n: siete archivos modificados y un TXT de pruebas.
+- Full Runtime on GZDoom 4.14.2: load error-free. 281 checks of the 38 stations, collision/height,
+  doors, single drawer and five veins.
+- 48 checks quantities per size, withdrawal/return and leather migration,
+  recipes/crafting/cancellation arrows, real raw material consumption, first weapon,
+  custody/transfer key and unique bull loot.
+- Native entry: 11 checks. Tab closes Crafts without station and with it; G filters; Use
+  opens workbench/drawer/Argento and answers change inventory. Revised drawer captures, arrow
+  recipe, key and row of stations.
+- Palomo runs both flights of stairs with real motion and collision, reaches (500,120,264)
+  visible/solid and without teleport. The route took about 21 seconds in the trial
+  without obstructions; the player can block it.
+- Three tours of save/load, 138 checks: load 0m keeping Caella and residents; save a
+  paused arrow task and to Palomo running; resume and complete both; transfer key, defeat
+  Bull, save/load again. 128/129 recipes, ammunition, spent stock, key and loot persist.
+  Do not duplicate the Bull or return the key to the custodian.
+- All previous trials ended without failure. Recipe tests inject raw materials and advance
+  the manufacturing clock; the key ones prepare the future Rulo flags. They do not credit
+  that playable chapter.
+- README and five documents consistent with 0n. WAD, 74 audio files, twelve station models
+  and unchanged art. Exact Delta over 0m; additional TXT with application/tests. No test
+  tools included.
 
-Comprobación solicitada en 0o: desaparición del manual exterior y conservación
-de recetas. El autor continuó con Rulo y aprobó después las demás pruebas de
-la base; las observaciones de 0u ya fueron aprobadas por el autor.
-
-## Validación de 4.33.0n — aceptada el 2026-09-11
-
-- Runtime completo en GZDoom 4.14.2: carga sin errores. 281 comprobaciones
-  de las 38 estaciones, colisión/altura, puertas, cajón único y cinco vetas.
-- 48 comprobaciones de cantidades por talle, retiro/devolución y migración
-  de cuero, recetas/fabricación/cancelación de flechas, consumo real de materias
-  primas, primera arma, custodia/transferencia de llave y botín único del Toro.
-- Entrada nativa: 11 comprobaciones. Tab cierra Oficios sin estación y con
-  ella; G filtra; Usar abre banco/cajón/Argento y las respuestas cambian inventario.
-  Capturas revisadas de cajón, receta de flechas, llave y fila de estaciones.
-- Palomo recorre ambos tramos de escalera con movimiento y colisión reales,
-  llega a (500,120,264) visible/sólido y sin teletransporte. La ruta tardó unos
-  21 segundos en el ensayo sin obstrucciones; el jugador puede bloquearlo.
-- Tres recorridos de guardado/carga, 138 comprobaciones: cargar 0m conservando
-  Caella y residentes; guardar una tarea de flechas pausada y a Palomo en marcha;
-  reanudar y completar ambos; transferir llave, derrotar Toro, guardar/cargar
-  de nuevo. Recetas 128/129, munición, stock gastado, llave y botín persisten.
-  No se duplica el Toro ni se devuelve la llave al custodio.
-- Todos los ensayos anteriores terminaron sin fallos. Las pruebas de recetas
-  inyectan materias primas y adelantan el reloj de fabricación; las de la llave
-  preparan las banderas futuras de Rulo. No acreditan ese capítulo jugable.
-- README y cinco documentos coherentes con 0n. WAD, 74 archivos de audio,
-  doce modelos de estación y arte sin cambios. Delta exacto sobre 0m; un TXT
-  adicional con aplicación/pruebas. No se incluyen herramientas de ensayo.
-
-El autor confirmó exitosas todas las pruebas de 0n. La aceptación cubre el
-alcance implementado; no convierte en jugables las ramas todavía pendientes.
-Los ensayos aislados usan GZDoom 4.14.2/OpenGL con instrumentación privada.
-No acreditan duración de una partida ni cooperativo. Motor, IWAD, fixtures,
-capturas y guardados quedan fuera del parche; validación de 0m en HISTORY.md.
+The author confirmed all 0n tests successfully. The acceptance covers the scope
+implemented; it does not make the remaining branches playable. Isolated trials use GZDoom
+4.14.2/OpenGL with private instrumentation. They do not credit duration of a game or
+cooperative. Engine, IWAD, fixtures, captures and saves are left out of patch; 0m
+validation in HISTORY.md.

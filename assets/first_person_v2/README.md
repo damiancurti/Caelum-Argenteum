@@ -1,5 +1,10 @@
 # First-person corrections — 4.36.0d
 
+Historical art-package record. Version labels, integration instructions and test
+statuses below describe the original delivery. For current checkout setup, use
+the root README.md; outstanding author checks are tracked in pending_test.txt.
+Do not repeat archived resource installation on the current checkout.
+
 Historical source record for **4.36.0d**. Current affected poses and bow art
 are documented in `../first_person_v3/`; v2 records remain unchanged.
 

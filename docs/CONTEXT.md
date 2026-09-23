@@ -1,9 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
+Documentation version: **4.36.1** — 2026-09-23.
+
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
 `docs/SYSTEMS.md`, `docs/MAP01.txt`, `docs/ASSETS.md`, `docs/HISTORY.md`, and
-`README.md`. Documentation version: **4.36.0i**.
+`README.md`.
 
 ## The game's premise
 
@@ -62,7 +64,11 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Version **4.36.0i**. Native compilation and tests were run on GZDoom g4.14.2
+Current release **4.36.1** implements issue #6: English documentation, numeric
+patches, repository-first delivery and the root author-test queue. Its static
+checks are recorded separately in HISTORY; no new gameplay is introduced.
+
+The **4.36.0i gameplay baseline** was compiled and tested on GZDoom g4.14.2
 on Linux with development Freedoom. Working: the 4.36 base (trapdoor, rocks,
 approved traps, ceiling), the MAP02 maze, the approved resting-weight formula,
 rations, and MAP01 tables at full capacity.
@@ -91,16 +97,17 @@ then V5.
 
 ## Critical premises (summary of the 20)
 
-1. Code and identifiers in English; explanatory comments and documentation in
-   Spanish.
+1. Code, identifiers and maintained documentation in English; gameplay-code
+   explanatory comments remain Spanish. Modified tooling uses English throughout.
 2. Prefer stable native GZDoom 4.14.2 functions and a single authoritative
    data source.
 3. Final product independent of Doom assets; preserve provenance.
 4. Do not invent balance, recipes, story, or pending decisions.
 5. Protect what is accepted and validate only what is affected.
-6. Deliver new/modified files and a test TXT; no installers.
+6. GitHub issue -> focused branch -> linked PR. ZIPs are optional exports.
 7. Consolidated documentation updated in every patch.
-8. Every delivery updates version, status, and results in the same change.
+8. Every patch updates status and results; use numeric MAJOR.MINOR.PATCH.
+   Implementation commits and later acceptance retain the same patch version.
 9. Preserve history and unique content; do not delete silently.
 10. Folders with clear responsibility; package only `src`.
 11. Every change must be traceable to an issue or task.
@@ -122,4 +129,17 @@ then V5.
     reviewed.
 
 The full verbatim list is in `AGENTS.md` and `docs/PROJECT.md`.
+
+Work plans a concrete issue; desktop Codex implements and tests it; PR review
+checks the evidence; the author confirms manual acceptance where required.
+Keep implementation, static verification, engine verification and author
+acceptance separate. The issue number does not determine the patch version.
+
+[pending_test.txt](../pending_test.txt) is the single author-test queue. Preserve
+outstanding tests across versions. Only an explicit pass confirmed by the author
+moves a test's ID, originating version/issue, result, date and qualifications to
+its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
+Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
+All seven docs and AGENTS declare the current version; ancillary guides without
+a header inherit README's version. Historical labels retain their original meaning.
 

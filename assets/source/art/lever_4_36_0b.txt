@@ -1,9 +1,9 @@
-CAELUM ARGENTEUM — PALANCA 4.36.0b
-Recurso original generado con imagegen; no derivado de Doom.
-Destino: src/graphics/caelum/world/ca_lever_states.png (1774 x 887 RGBA).
-Dos posiciones de la misma palanca, pivote registrado mediante TEXTURES.
-PNG íntegro; recortes declarativos de 320 x 887, offsets X -375/-1080,
-Offset 160,480. La imagen se integra sobre una columna OBJ propia.
+CAELUM ARGENTEUM — LEVER 4.36.0b
+Original resource generated with imagegen; not derived from Doom.
+Destination: src/graphics/caelum/world/ca_lever_states.png (1774 x 887 RGBA).
+Two positions of the same lever, with its pivot registered through TEXTURES.
+The PNG is intact; declarative crops are 320 x 887, with X offsets -375/-1080
+and Offset 160,480. The image is mounted on an original OBJ column.
 
 PROMPT
 Production sprite atlas for the original dark fantasy game Caelum Argenteum,
@@ -15,6 +15,6 @@ worn wooden grip. Front elevation, orthographic, identical framing and lighting,
 hand painted realistic game sprite with crisp readable edges. Two isolated
 matching assemblies only; no wall, column, labels, grid or checkerboard.
 
-MODELOS
-assets/generators/generate_hazard_models.py reproduce la columna y la roca.
-TEXTURES reproduce recortes/escalas; no hace falta procesar las imágenes al jugar.
+MODELS
+assets/generators/generate_hazard_models.py reproduces the column and rock.
+TEXTURES reproduces crops/scales; images need not be processed during play.

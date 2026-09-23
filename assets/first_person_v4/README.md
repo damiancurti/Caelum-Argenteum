@@ -1,5 +1,10 @@
 # Weapon corrections — 4.36.0f
 
+Historical art-package record. Version labels, integration instructions and test
+statuses below describe the original delivery. For current checkout setup, use
+the root README.md; outstanding author checks are tracked in pending_test.txt.
+Do not repeat archived resource installation on the current checkout.
+
 Target: GZDoom 4.14.2. The active implementation is in src/TEXTURES and
 src/caelum/equipment/CaelumFirstPersonLayers.zs.
 

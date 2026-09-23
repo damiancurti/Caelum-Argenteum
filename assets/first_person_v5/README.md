@@ -1,5 +1,10 @@
 # Native weapon corrections — 4.36.0g
 
+Historical art-package record. Version labels, integration instructions and test
+statuses below describe the original delivery. For current checkout setup, use
+the root README.md; outstanding author checks are tracked in pending_test.txt.
+Do not repeat archived resource installation on the current checkout.
+
 Runtime definitions live in src/TEXTURES and CaelumFirstPersonLayers.zs.
 COMPOSITION.json records source crops, anchors, scales, layer order and
 palette recipes. VALIDATION.json records checks and explicit runtime limits.

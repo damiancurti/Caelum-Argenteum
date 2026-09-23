@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3"
 )
@@ -10,17 +10,17 @@ $SourcePath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Source))
 $DestinationPath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Destination))
 
 if (-not (Test-Path -LiteralPath $SourcePath -PathType Container)) {
-    throw "No existe la carpeta de fuentes: $SourcePath"
+    throw "Source directory does not exist: $SourcePath"
 }
 
 $Files = @(Get-ChildItem -LiteralPath $SourcePath -Recurse -File | Sort-Object FullName)
 if ($Files.Count -eq 0) {
-    throw "La carpeta de fuentes no contiene archivos: $SourcePath"
+    throw "Source directory contains no files: $SourcePath"
 }
 
 foreach ($File in $Files) {
     if ($File.Length -eq 0) {
-        throw "Archivo vacío no permitido dentro del PK3: $($File.FullName)"
+        throw "Empty files are not allowed in the PK3: $($File.FullName)"
     }
 
     if ($File.Extension -ieq ".png") {
@@ -28,13 +28,13 @@ foreach ($File in $Files) {
         try {
             $Header = New-Object byte[] 24
             if ($Stream.Read($Header, 0, 24) -ne 24) {
-                throw "PNG incompleto: $($File.FullName)"
+                throw "Truncated PNG: $($File.FullName)"
             }
 
             $Signature = [byte[]](137, 80, 78, 71, 13, 10, 26, 10)
             for ($Index = 0; $Index -lt 8; $Index++) {
                 if ($Header[$Index] -ne $Signature[$Index]) {
-                    throw "PNG inválido: $($File.FullName)"
+                    throw "Invalid PNG: $($File.FullName)"
                 }
             }
 
@@ -45,7 +45,7 @@ foreach ($File in $Files) {
                 [BitConverter]::ToInt32($Header, 20)
             )
             if ($Width -le 0 -or $Height -le 0) {
-                throw "PNG con dimensiones inválidas: $($File.FullName)"
+                throw "PNG has invalid dimensions: $($File.FullName)"
             }
         }
         finally {
@@ -115,10 +115,10 @@ try {
         try {
             foreach ($Entry in $CheckArchive.Entries) {
                 if ($Entry.FullName.EndsWith("/")) {
-                    throw "El PK3 contiene una entrada de directorio: $($Entry.FullName)"
+                    throw "PK3 contains a directory entry: $($Entry.FullName)"
                 }
                 if ($Entry.Length -eq 0) {
-                    throw "El PK3 contiene una entrada vacía: $($Entry.FullName)"
+                    throw "PK3 contains an empty entry: $($Entry.FullName)"
                 }
             }
         }
@@ -130,15 +130,15 @@ try {
         $CheckStream.Dispose()
     }
 
-    # Reemplazo atómico: el PK3 anterior sigue disponible si falla el build.
+    # Atomic replacement: the previous PK3 remains available if the build fails.
     if (Test-Path -LiteralPath $DestinationPath) {
         [System.IO.File]::Replace($TemporaryPath, $DestinationPath, [NullString]::Value)
     } else {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
-    Write-Host "PK3 creado correctamente: $DestinationPath"
-    Write-Host "Archivos incluidos: $($Files.Count)"
-    Write-Host "Entradas de directorio: 0"
+    Write-Host "PK3 created successfully: $DestinationPath"
+    Write-Host "Files included: $($Files.Count)"
+    Write-Host "Directory entries: 0"
 }
 finally {
     if (Test-Path -LiteralPath $TemporaryPath) {

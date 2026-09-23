@@ -1,16 +1,15 @@
-# Reserva de audio — paquete 05
+# Audio Reserve — 05 Package
 
-Estos 10 archivos pasaron la validación técnica y tienen licencias compatibles,
-pero todavía no poseen un evento aprobado en Caelum Argenteum. Se guardan fuera
-de `src/`, por lo que `build_dev.ps1` no los incorpora al juego y no
-alteran ningún sonido actual.
+These 10 files passed the technical validation and have compatible licenses, but they do
+not yet have an approved Caelum Argenteum event. They are saved outside `src/`, so
+`build_dev.ps1` does not incorporate them into the game. They do not alter any current sound.
 
-Para aprobar uno:
+To approve one:
 
-1. definir la escena o evento concreto;
-2. moverlo a una ruta estable bajo `src/sounds/caelum/`;
-3. declararlo con un nombre lógico en `src/SNDINFO`;
-4. probar mezcla, repetición, distancia y convivencia con música/diálogo;
-5. conservar el crédito incluido en `src/licenses/AUDIO_PACK_05_CREDITS.md`.
+1. define the specific scene or event;
+2. move it to a stable path under `src/sounds/caelum/`;
+3. declare it with a logical name in `src/SNDINFO`;
+4. test mixing, repetition, distance and coexistence with music/dialogue;
+5. keep the credit included in `src/licenses/AUDIO_PACK_05_CREDITS.md`.
 
-No se copiaron los dos archivos en cuarentena legal del paquete original.
+The two legally quarantined files of the original package were not copied.

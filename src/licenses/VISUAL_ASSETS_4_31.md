@@ -2,105 +2,103 @@
 
 ## CAPOOL01
 
-- Ruta: `graphics/caelum/textures/mansion/CAPOOL01.png`
-- Uso: superficie líquida de la piscina posterior de MAP01.
-- Tamaño runtime: 256×256 RGB PNG.
-- Procedencia: imagen nueva generada con la herramienta de imágenes de OpenAI,
-  usando la paleta acuática y el lenguaje visual del `CMPW01.png` suministrado
-  por el autor como referencia.
-- Transformación: reducción a 128×128 y composición especular 2×2 para producir
-  un mosaico final de 256×256 cuyas cuatro aristas repiten.
-- Restricciones visuales solicitadas: vista cenital, agua solamente, sin piedra,
-  objetos, texto, bordes ni marcas de agua.
+- Path: `graphics/caelum/textures/mansion/CAPOOL01.png`
+- Usage: Liquid surface of the rear pool of MAP01.
+- Runtime size: 256×256 RGB PNG.
+- Provenance: New image generated with OpenAI imaging tool, using the water palette and
+  visual language of the `CMPW01.png` provided by the author as a reference.
+- Transformation: reduction to 128×128 and mirrored composition 2×2 to produce a final
+  mosaic of 256×256 whose four edges repeat.
+- Visual restrictions requested: top-down view, water only, no stone, objects, text, edges
+  or watermarks.
 
-`CMPW01.png` permanece sin cambios.
+`CMPW01.png` remains unchanged.
 
-## Prototipo de alijo 3D 4.31.0b
+## 3D 4.31.0b stash prototype
 
-- Rutas: `models/caelum/props/stash/ca_stash_*.obj` y
+- Paths: `models/caelum/props/stash/ca_stash_*.obj` and
   `models/caelum/props/stash/ca_stash_*.png`.
-- Uso: estados cerrado, abierto y bloqueado del primer alijo físico.
-- Procedencia: mallas y texturas originales generadas específicamente para el
-  proyecto mediante `assets/generators/generate_stash_models.py`.
-- Complejidad: 242/254/266 caras para cerrado/abierto/bloqueado.
-- Materiales: madera oscura, hierro, interior y candado; cuatro PNG generados
-  sin recursos de Doom, bibliotecas de modelos ni texturas de terceros.
-- Reproducción: el generador usa únicamente la biblioteca estándar de Python;
-  sus resultados ya están incluidos y no es necesario ejecutarlo para jugar.
+- Use: closed, open and locked states of the first physical cache.
+- Origin: original meshes and textures generated specifically for the project using
+  `assets/generators/generate_stash_models.py`.
+- Complexity: 242/254/266 faces for closed/open/locked.
+- Materials: dark wood, iron, interior and padlock; four PNG generated without Doom
+  resources, model libraries or third-party textures.
+- Reproduction: The generator uses only the standard Python library; its results are already
+  included and it is not necessary to run it to play.
 
-V4.31.0b no incorpora ningún modelo 3D descargado de terceros. Las bibliotecas
-CC0 evaluadas siguen documentadas en
-`docs/V4_31_WORLD_RESOURCES_AND_STASHES.md` para selección posterior.
+V4.31.0b does not incorporate any 3D models downloaded from third parties. The evaluated
+CC0 libraries were documented in `docs/V4_31_WORLD_RESOURCES_AND_STASHES.md` for
+later selection. That historical document is consolidated in docs/HISTORY.md;
+current asset guidance is in docs/ASSETS.md.
 
-## Rocas y vegetación regional 3D 4.31.0c
+## Rocks and regional vegetation 3D 4.31.0c
 
-- Rutas runtime: `models/caelum/world/environment/*.obj`, sus PNG de material
-  y los anclajes transparentes `sprites/CARK*.png`/`sprites/CAVT*.png`.
-- Fuente conservada fuera del runtime:
+- Runtime paths: `models/caelum/world/environment/*.obj`, its material PNG and
+  transparent `sprites/CARK*.png`/`sprites/CAVT*.png` anchors.
+- Source preserved outside the runtime:
   `assets/source/world/ca_environment_atlas_master.png`.
-- Uso: cinco formaciones rocosas y tres variantes de vegetación para cada uno
-  de los climas desierto, selva, tundra, montaña, llanura, costa y ciudad.
-- Procedencia del atlas: imagen nueva generada con la herramienta de imágenes
-  de OpenAI para el proyecto. Resumen del pedido visual: atlas cuadrado sin
-  texto ni marcas, con cinco superficies de roca, siete cortezas y siete
-  follajes de inspiración argentina, acabado semirrealista low-poly de fantasía
-  oscura y color difuso plano.
-- Transformación: recorte manual de 19 regiones útiles del atlas, mosaico
-  especular para bordes repetibles, normalización a 256×256 y variantes
-  procedurales de cactus, flores y follaje mediante Pillow.
-- Mallas: geometría original determinista generada por
-  `assets/generators/generate_environment_models.py`; 26 OBJ y 14.932 caras totales.
-- SHA-256 del atlas maestro:
+- Use: five rock formations and three varieties of vegetation for each of the desert
+  climates, jungle, tundra, mountain, plain, coast and city.
+- Origin of the atlas: new image generated with the OpenAI image tool for the project.
+  Summary of the visual brief: square atlas without text or marks, with five rock
+  surfaces, seven bark textures and seven foliage textures of Argentine inspiration, low-poly semirealistic
+  finish of dark fantasy and diffuse flat color.
+- Transformation: manual cutting of 19 useful atlas regions, mirrored tiling for
+  repeatable edges, standardization to 256×256 and procedural variants of cactus, flowers
+  and foliage using Pillow.
+- Meshes: original deterministic geometry generated by
+  `assets/generators/generate_environment_models.py`; 26 OBJ and 14.932 total faces.
+- Master atlas SHA-256:
   `943e347bcacc8d6845864bfa5e20b8078335f09fb56f9c916b5093bf316df309`.
 
-No se descargaron ni incorporaron modelos o texturas de terceros. Los OBJ,
-materiales y anclajes finales ya se distribuyen con el parche; Pillow sólo es
-necesario si un desarrollador decide regenerarlos desde el atlas maestro.
+No third party models or textures were downloaded or incorporated. OBJs, materials and final
+anchors are already distributed with the patch; Pillow is only necessary if a developer
+decides to regenerate them from the master atlas.
 
-## Variantes ambientales 4.31.0d
+## Environmental variants 4.31.0d
 
-- Las 21 mallas vegetales de 4.31.0c conservan su actor de tamaño base y suman
-  variantes propias al 75% y 125%, con cambios deterministas leves en ramas,
-  inclinación o copa.
-- Las cinco formas rocosas conservan su material y suman dos mallas geométricas
-  alternativas. `MODELDEF` combina las tres formas con escalas nominales 0.5×,
-  1×, 2×, 5× y 20×.
-- El repertorio final contiene 78 OBJ originales, 138 actores y 44.976 caras.
-- Se corrigen las ramas colgantes desconectadas del sauce y la prolongación
-  superior visible del tronco en ciprés, guindo y pehuén.
-- El atlas maestro y todos los PNG de material permanecen byte-idénticos a
-  4.31.0c; no se añade ningún recurso de terceros.
+- 21 plant meshes from 4.31.0c retain their base-sized actor and add their own variants to
+  75% and 125%, with slight deterministic changes in branches, inclination or crown.
+- The five rock shapes retain their material and add two alternative geometric
+  meshes. `MODELDEF` combines the three shapes with nominal scales 0.5×, 1×, 2×, 5× and
+  20×.
+- The final repertoire contains 78 original OBJs, 138 actors and 44.976 faces.
+- The disconnected hanging branches of the willow and the visible upper extension of the
+  trunk are corrected in cypress, guindo and pehuén.
+- The master atlas and all material PNGs remain byte-identical to 4.31.0c; no third party
+  resources are added.
 
-La regeneración sigue siendo determinista mediante
-`assets/generators/generate_environment_models.py`. Los OBJ resultantes ya están incluidos
-y no es necesario disponer de Python para instalar ni jugar el parche.
+Regeneration remains deterministic by `assets/generators/generate_environment_models.py`.
+The resulting OBJs are already included and Python is not required to install or play the
+patch.
 
-## Árboles adultos y física ambiental 4.31.0e
+## Adult trees and environmental physics 4.31.0e
 
-- Se añaden 48 actores `Adult`, `Adult2` y `Adult3` para las dieciséis especies
-  cuyo ejemplar maduro requiere una escala mayor.
-- Los nuevos actores reutilizan, sin alterarlos, los OBJ y materiales aprobados
-  en 4.31.0d. No se incorpora ninguna imagen, malla ni recurso de terceros.
-- Cardón, churqui, chañar, espinillo y ceibo mantienen únicamente sus tres
-  variantes existentes porque ya poseen una escala acorde.
-- Las masas físicas se calculan a partir del cilindro de colisión y una densidad
-  nominal; este dato no modifica las mallas ni las texturas.
+- 48 Actors `Adult`, `Adult2` and `Adult3` are added for the sixteen species whose mature
+  specimen requires a larger scale.
+- The new actors reuse, without altering, the OBJ and materials approved in 4.31.0d. No
+  third-party image, mesh or resource is incorporated.
+- Cardón, churqui, chañar, espinillo and ceibo maintain only their three existing variants
+  because they already have a corresponding scale.
+- The physical masses are calculated from the collision cylinder and a nominal density;
+  this data does not change the meshes or textures.
 
-Los 78 OBJ y todos los PNG ambientales permanecen byte-idénticos a 4.31.0d.
+78 OBJ and all environmental PNG remain byte-identical to 4.31.0d.
 
-## Vetas minerales originales 4.31.0f
+## Original mineral veins 4.31.0f
 
-- Rutas: `models/caelum/world/resources/ca_vein_*.obj` y `.png`, con anclajes
-  transparentes `sprites/CAVE*.png`.
-- Uso: hierro, carbón mineral, cobre, estaño, plata, oro, ópalo, topacio,
-  zafiro, rubí y esmeralda; tres afloramientos por recurso.
-- Procedencia: las 33 mallas y once materiales se generan de forma original y
-  determinista mediante `assets/generators/generate_mineral_veins.py`. La roca anfitriona
-  reutiliza el material de granito original ya documentado en 4.31.0c.
-- Complejidad: 25.500 vértices declarados y 7.584 caras en total. Los metales
-  usan inclusiones/bandas y las gemas, cristales aflorantes de seis lados.
-- Licencias externas: ninguna. No se incorpora geometría, textura ni recurso
-  de Doom o de una biblioteca de terceros.
+- Paths: `models/caelum/world/resources/ca_vein_*.obj` and `.png`, with transparent
+  `sprites/CAVE*.png` anchors.
+- Use: iron, coal, copper, tin, silver, gold, opal, topaz, sapphire, ruby and emerald;
+  three outcrops per resource.
+- Provenance: 33 meshes and eleven materials are generated in an original and
+  deterministic way by `assets/generators/generate_mineral_veins.py`. The host rock reuses
+  the original granite material already documented in 4.31.0c.
+- Complexity: 25.500 declared vertices and 7.584 faces in total. Metals use
+  inclusions/bands and gems use protruding six-sided crystals.
+- External licenses: none. No geometry, texture or resource of Doom or a third-party
+  library is incorporated.
 
-Los 78 OBJ ambientales previos y sus PNG permanecen byte-idénticos a
-4.31.0e. Los nombres Adult/Young reutilizan esas mismas mallas por MODELDEF.
+The previous environmental 78 OBJs and their PNGs remain byte-identical to 4.31.0e.
+Adult/Young names reuse those same meshes by MODELDEF.

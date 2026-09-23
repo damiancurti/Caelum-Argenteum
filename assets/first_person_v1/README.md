@@ -1,5 +1,10 @@
 # Caelum Argenteum — First-person art pack v1
 
+Historical art-package record. Version labels, integration instructions and test
+statuses below describe the original delivery. For current checkout setup, use
+the root README.md; outstanding author checks are tracked in pending_test.txt.
+Do not repeat archived resource installation on the current checkout.
+
 Original modular hand and weapon art for the project's nineteenth-century
 Argentine dark fantasy style. Target engine: GZDoom 4.14.2 on Windows 11.
 
@@ -17,7 +22,7 @@ images are included. The giant gauntlets already contain the player's fists.
 
 This is an art and integration package. The current gameplay code is not
 replaced. Copying its PNGs makes the resources available but does not attach
-them to the equipped-weapon selectors. Spanish installation instructions,
+them to the equipped-weapon selectors. Installation instructions (now maintained in English),
 state mappings, layer order and pivot data are included. Existing sword/shield
 integration remains the accepted reference; its DSWD/RHND/RFNG names are not
 overwritten by this pack.

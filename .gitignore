@@ -9,10 +9,10 @@ build/
 Thumbs.db
 Desktop.ini
 
-# Los generadores internos de documentos no pertenecen al repositorio del juego.
+# Internal document generators do not belong in the game repository.
 update_documentation*.py
 
-# Los constructores de mapas importan módulos auxiliares y Python genera esta
-# caché local; nunca forma parte del código fuente ni de los parches.
+# Map builders import helper modules and Python creates this local cache;
+# it never belongs in source code or patches.
 __pycache__/
 *.py[cod]

@@ -1,1634 +1,1627 @@
-# Caelum Argenteum — Historial consolidado
-
-Versión documental: 4.36.0i — 2026-09-20.
-
-
-## 4.36.0i — peso aprobado, provisiones y laberinto completo
-
-- Base completa recuperada del commit 1ed8e8d543ab19dbc1ca38dc438e61df5363681e.
-- Revisión pedida del mangual: +22,5° antihorario, medio mango dentro del guante,
-  cadena y bola detrás, reposo vertical y ataque con revolución antihoraria.
-- Doble grosor de ambos arcos sólo en primera persona, conservando lo aceptado.
-- Raciones de 200 g; agua 200 ml. Calibración de 2 kg/2 L para 80 kg.
-- Mesas de MAP01 a capacidad completa (94 unidades), con asignación única.
-- Activada la fórmula de peso quieto tras la aprobación explícita del autor:
-  exceso sobre capacidad, vida porcentual, soporte nativo y reparto de pilas.
-- MAP02 reconstruido con autorización para cambiar guardados: 147 salas,
-  96 Mandingas, 45 trampas, tres llaves, 39 cofres y 195 piezas de equipo.
-- 120 raciones de comida y 120 de agua; Zupay final, 1 de Copas y costa.
-- Nuevas llaves integradas al inventario; botín por recogida nativa; carta
-  persistente y salida condicionada. Retorno del hub a la cámara final.
-- README y los cinco documentos canónicos actualizados; guía 0i separada.
-
-Compilación y pruebas nativas ejecutadas en GZDoom g4.14.2/Linux con Freedoom
-0.13.0 de desarrollo. Las pruebas anteriores aceptadas por el autor siguen
-cerradas; queda la aceptación de este incremento y el recorrido Windows.
-No se declara terminado todo el roadmap físico de 4.36.
-
-
-## 4.36.0h — giro de 90°, máscara indicada y daño porcentual
-
-El autor aprueba el resto de 0g y precisa dos cambios visuales: giro horario
-de 90° en el mangual y las zonas roja/azul del agarre del arco.
-
-- Mangual T1–T3: +28° → −62°; agarre (200,158) para evitar el recorte lateral.
-- DH12: franja superior del índice fuera de la máscara delantera; pulgar
-  ampliado hasta cubrir el segmento azul. No cambia el guante ni su escala.
-- Mesas de MAP01: comida real inicial por plaza. Estado y saldo persistentes;
-  cuenta comida existente, preserva otros objetos y no repone al consumir.
-- Daño nativo Crush de techo: puntos convertidos a % de vida máxima sólo
-  con source/inflictor nulos, tanto en CaelumPlayer como en CaelumCombatActor.
-- Compatibilidad: se conserva el valor 10 y la temporización nativa del mapa;
-  su interpretación pasa a 10% por pulso. No se modifica MAP08.wad.
-- Propuesta de peso estático documentada, sin activar valores no aprobados.
-- Roadmap de 4.36 actualizado con aceptación real y trabajo aún pendiente.
-
-Comprobaciones de fuentes/modelos y reconstrucciones visuales satisfactorias.
-No se compiló ni ejecutó GZDoom; la base disponible sigue siendo parcial.
-
-## 4.36.0g — correcciones tras la revisión de 0f
-
-- Mangual T1–T3: giro nativo de reposo +14° → +28°, extremo superior hacia
-  la izquierda. Se mantiene la ruta modular existente.
-- Hacha T1–T3: cabeza en capa 50 a 1.5 veces su escala anterior; mango en
-  48 a la escala original. Unión fija bajo la anilla; manos sin ampliación.
-- Alabarda T1–T3: asta en 48, extensión axial ×1.8; hoja y cintas en 50 a
-  su escala anterior. La mano se coloca en (222,180) para encuadrar la punta.
-- Espadón: forma aceptada conservada; desaturación y modulación nativas
-  para vista, tres iconos y sprite del suelo.
-- Arcos: nueva paleta apagada y máscara DH12. Índice detrás; pulgar y
-  falanges del medio, anular y meñique delante. Flecha aún en 53.
-- Estados nuevos añadidos al final; identificación de diagnóstico 4.36.0g.
-- README, PROJECT, HISTORY, SYSTEMS, ASSETS y guía de pruebas actualizados.
-
-Verificación de fuentes y vistas reconstruidas, sin compilación/ejecución
-de GZDoom. No hay cambios de daño, alcance, consumo, mapas, audio o viajes.
-El secundario contundente del hacha se documenta como regla ya existente.
-
-## 4.36.0f — giro nativo, agarre del arco y roca rápida
-
-La prueba de 0e del autor detectó que varias armas se inclinaban al lado
-contrario, la hachuela seguía demasiado alta y la cuerda quedaba horizontal.
-La previsualización de 0e había supuesto giro horario y escala antes de giro;
-el renderer 4.14.2 usa giro antihorario y escala después. Se corrige esa base.
-
-- Hachuela, machete, hacha, hacha de guerra y alabarda: giro nativo −28°.
-- Mangual modular: +14°, hacia la izquierda. Estados nuevos añadidos al final.
-- Hachuela: Offset Y 174 → 150; el arma baja 24 MU relativos al agarre.
-- Pivotes absolutos con NoTrim, sin depender de una caja alfa recortada.
-- Espadón con hoja más ancha, tres tiers en primera persona e inventario;
-  el sprite CGRS del suelo usa el mismo nuevo recurso T1.
-- Arcos: paleta apagada; dedos 49, pala 50, pulgar 51, mano derecha 52,
-  flecha 53. Limpieza de 53 también al pasar a puños o armas no modulares.
-- Cuerda mediante Coord0–Coord3; elimina el escalado horizontal posterior al giro.
-- MAP08/TID 43602: velocidad 8 → 32 MU/tic en mapa, generador y recuperación
-  de la siguiente activación de guardados. Conserva el daño físico calculado.
-- Se documentan las fórmulas reales y la ausencia de aplastamiento estático
-  bajo una roca en reposo. No se presenta como función terminada.
-
-Validación estructural y visual reconstruida; compilación y juego pendientes.
-No se ejecutó GZDoom. Audio, transiciones y vehículos no forman parte del delta.
-
-
-## 4.36.0e — correcciones solicitadas tras probar 0d
-
-[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
-armas; izquierda y derecha provienen del mismo PNG original, reflejado por
-TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
-La izquierda queda en una capa anterior a la derecha. Tamaños de guante
-independientes del tamaño del arma.
-
-[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
-con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
-Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
-cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
-
-[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
-Sonido original de level up al confirmar su captura y aplicar el bonus.
-[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
-
-[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
-en total. En el barco, volumen de Usar no sólido frente al casco, además del
-cartel; el aviso permanece centrado y conserva los requisitos de embarque.
-Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
-
-[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
-capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
-GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
-instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
-[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
-Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
-
-## 4.36.0d — agarres, puños y reinicio de la galería (2026-09-17)
-
-- Se atienden las cuatro imágenes del autor: orientación de hojas, agarre de
-  hachuela, manos pequeñas, armas grandes con dos manos y posición baja de
-  ballesta/carabina/arcos. Daga y magia conservan el arte aprobado.
-- Capas nativas independientes corrigen lateralidad sin invertir las manos.
-  Todos los selectores reciben guardado hacia abajo a la izquierda. Espada
-  activa el arte nuevo sin mover sus antiguos índices de estados.
-- Carabina sin munición vuelve a reposo sin fogonazo. Balas de suelo a 0,10.
-- Dos imágenes originales: puños cerrados y agarre dorsal izquierdo del arco.
-  El respaldo propio sustituye Fist y se equipa al quedar sin arma, incluido
-  el regreso narrativo MAP01→MAP02. Mantiene el balance del respaldo anterior.
-- Avisos «Usar:» al apuntar a vehículos, mesas y sillas/camas al alcance.
-- Se reproduce el fallo visual de viajes: la comprobación de eventos de 0c
-  no detectó que NoWipe suprime el wipe del hub durante 35 presentaciones.
-  Se conserva la vista de salida durante ese bloqueo y después se ejecuta el
-  efecto nativo. Capturas de fotogramas confirman crossfade y melt reales.
-  MODE_CARAVAN también usa crossfade; el quemado aceptado sigue vigente.
-- Mecanismo 4 identificado como teletransporte, con mensaje/destello de llegada
-  y runa visible. Palanca lateral rearma la galería conservando contadores.
-  Comprobaciones previas impiden cerrar sobre ocupantes o duplicar un techo
-  móvil; dos ciclos completos de reinicio y reactivación pasan en el motor.
-- 60 selecciones reales de familia/tier, fases de combate/recarga, usos,
-  puños, viajes confirmados y migración de 0c verificadas en g4.14.2/Linux.
-  Capturas 4:3/16:9; ocho WAD y estados anteriores conservados.
-- Delta sobre 4.36.0c y PRUEBAS_4_36_0d.txt. Aceptación Windows pendiente;
-  4.36 permanece abierta y no se adelantan propuestas aún sin aprobar.
-
-## 4.36.0c — vistas, sonidos y revisión de mecanismos (2026-09-17)
-
-- Petición del autor: palanca a la mitad, revisar mecanismo 4 y masa/daño de
-  roca; integrar dos paquetes adjuntos; crossfade en carreta y burn con El Loco.
-- Se reproduce el rechazo de presión al tocar sólo el borde de la placa. La
-  comprobación incorpora el radio de los pies; se documentan destinos inválidos
-  y se conserva la protección contra telefrag/cadenas. Se añade diagnóstico.
-- Palanca a escala 0,045 también en guardados previos, con clic suministrado.
-- 19 familias nuevas de primera persona en T1/T2/T3 conectadas a selectores
-  reales; espada modular aceptada conservada. Fases según acciones efectivas,
-  capas sin duplicados y estados nuevos fuera de clases ya serializadas.
-- Audio Eventos v1 revisión 1.4 íntegro: viajes, palanca, captura de tarot y
-  bucle espacial de roca. La captura usa un evento local independiente de cámara.
-- Carreta: fundido cruzado; El Loco MAP01→MAP02: quemado; barco: derretido.
-  Overrides de un solo cruce y sonido después de cargar, sin modificar wipetype.
-- Masa grande comprobada: 38170 kg. Caída de ensayo con Dureza 13, sin armadura:
-  1343 puntos sobre 1780. No se añade muerte fija ni un multiplicador de daño.
-- WADs y estados anteriores conservados. Entrega incremental sobre 4.36.0b,
-  con fuentes de los paquetes y PRUEBAS_4_36_0c.txt. Revisión en Windows pendiente.
-
-## 4.36.0b — mecanismos y trampas aprobadas (2026-09-17)
-
-- El autor acepta las demás pruebas de 0a y pide aumentar toro/rocas, redondear
-  las rocas rodantes, crear palanca sobre columna y añadir minas, teletransporte,
-  aplastamiento, transiciones con sonido y derretido para el barco.
-- Toro ampliado mediante TEXTURES y carrera normalizada por vista. PNG,
-  anatomía, masa y embestida se conservan.
-- Roca de peligro esférica de 96 MU, masa derivada de volumen/densidad y pivote
-  central. Las rocas ambientales mantienen su arte anterior.
-- Palanca original de dos posiciones, soporte de columna y modo mural; Usar
-  activa rocas o techos, y el estado usado se conserva en guardados.
-- Mina ambiental de una explosión, teletransporte local sin telefrag y techo
-  nativo de un ciclo. Los valores de la galería son de ensayo.
-- Preparación una vez sobre MAP08 existente: WAD de MAP01–08 sin cambios.
-- Barco con melt nativo por cruce y sonido al cargar el destino. No se cambia
-  la preferencia global ni las reglas de consumo/tiempo del viaje.
-- Propuesta de runa de inmovilización sólo a revisión; no implementada.
-- Entrega incremental con PRUEBAS_4_36_0b.txt y cinco documentos actualizados.
-  Prueba jugable y estética de 0b en Windows 11 pendiente del autor.
-
-## 4.36.0a — trampilla y rocas físicas (2026-09-17)
-
-- El autor aprueba 4.35.0q y confirma el cierre de 4.35.
-- Autoriza comenzar 4.36 y solicita trampas de suelo que se abran al pisarlas.
-- Trampilla sobre un foso real, activación por apoyo, gravedad nativa y estado
-  persistente sin rearme automático. Galería en MAP08 con salida por escaleras.
-- Dos mecanismos Usar liberan granito existente: rodadura horizontal y caída
-  desde arriba. Activación única, sin creación repetida de actores.
-- API vertical añadida a Impact Physics; se conservan las fórmulas aprobadas.
-  Procedencia ambiental explícita y sin empuje nativo adicional al daño físico.
-- Pruebas nativas, guardados y revisión visual se registran en el TXT de entrega.
-  La aceptación de este incremento en Windows 11 queda para el autor.
-- Superficies especiales y grandes peligros continúan dentro del bloque 4.36;
-  después siguen 4.37, exportación de prueba, V5.0 y exposición térmica V5.1.
-
-## 4.35.0q — sprites v4 y comida a un tercio (2026-09-17)
-
-- El autor aprueba el resto de 0p y aporta sprites/íconos v4.
-- Consumo sentado: divisor 3 en lugar de 10; 30 s por porción completa,
-  con el mismo aporte y gasto, digestión, reservas y repetición automática.
-- Se integran 750 sprites y el catálogo de 256 íconos del paquete del autor;
-  sólo 903 PNG difieren de 0p y se incluyen en el parche.
-- Respiración/carrera de nueve personajes; caminatas separadas de cuatro,
-  poses de descanso de Palomo y recursos propios de la bolsa de dormir.
-- Integración adaptada al movimiento/IA reales de 0p. Estados anexados al
-  final para proteger guardados; agachado, combate y orientación de muebles
-  conservan prioridad. Los PNG y offsets del autor no se modifican.
-- Pruebas nativas 4.14.2 y revisión de recursos documentadas en el TXT del
-  parche. El autor aprobó el ritmo y el aspecto visual de 0q al autorizar 4.36.
-
-## 4.35.0p — reservas y transporte costero (2026-09-17)
-
-- El autor prueba 0n y 0o y aprueba el resto de sus cambios.
-- Mesa: reserva de inventario y Caja después de agotar los platos, con descuento
-  exacto de unidades/litros, conservación de pilas/recipientes y ritmo aprobado.
-- Q/B cancela el presupuesto y vuelve en calendario; Escape conserva la pausa.
-- Carreta cubierta en rancho y mercante con velas/remos en MAP06 y MAP07.
-  MAP06 utiliza el puerto existente; MAP07 suma un muelle transitable.
-- Modos físicos a 3 km/h y 5 nudos; se duerme a bordo sin detener el barco.
-- Presupuesto y viaje integrados con provisiones, agenda, hub y guardado/carga.
-- Modelos y colisiones se instalan también al cargar mapas de 0o.
-- Validación nativa y visual del parche; aceptación manual 0p pendiente.
-
-## 4.35.0o — calendario mensual y eventos (2026-09-17)
-
-- El autor define las categorías de eventos y pide marcas en un calendario.
-- Agenda persistente con eventos únicos/recurrentes, claves estables, estados,
-  ocultación, cancelación y resolución aritmética al avanzar el reloj.
-- Vista mensual y detalle en TAB/Mundo/F, con intervalos, próxima fecha y acciones.
-- Adaptadores de rutina, fases de asedio, vencimiento de misiones, alquileres con
-  deuda/pago y mercancías retiradas/entregadas desde inventario real.
-- Recuperación de nodos enlazada al mismo reloj, incluso en mapas ausentes;
-  se mantiene el ritmo previo de 0,1 % de capacidad por día.
-- Ensayo voluntario con encargado aparte; sin horarios ni precios canónicos.
-- Pruebas nativas de calendario, transacciones, recurrencias y aceleración;
-  se documentan viajes y guardados en PRUEBAS_4_35_0o.txt.
-- Candidata a cierre de 4.35; 0n y 0o pendientes de prueba/aceptación del autor.
-  Batallas completas y ampliación de campaña conservan su bloque V5.
-
-## 4.35.0n — viajes, descanso y provisiones (2026-09-17)
-
-- El autor aprueba comida y mapas de 0m y define rutas bidireccionales de
-  10 km (alcantarillas/puerto) y 500 km (puerto/playa).
-- Conversión de marcha sostenida nativa a km/h con 32 MU/m; ritmo de partida,
-  16 h de marcha / 8 h de sueño, sin noche adicional después de llegar.
-- Presupuesto visible de tiempo y suministros, confirmación/cancelación y
-  revalidación tras cambios o carga de partida. Caravana diagnóstica aún a pie.
-- Consumo real limitado a inventario personal y litros de recipientes;
-  masa, digestión, necesidades, regeneración, sueño/lucidez y bolsa propia.
-- Intervalo único del reloj, llegada/clima persistentes y conservación de
-  porciones incompletas. Faltantes y muerte prevista visibles antes de aceptar.
-- Pruebas nativas Linux/GZDoom 4.14.2 y captura de UI; aceptación Windows de 0n
-  pendiente. PRUEBAS_4_35_0n.txt contiene instalación y resultados concretos.
-- Los eventos programados se explican como hechos con fecha/hora; falta su
-  contenido y resolución persistente. No se inventan misiones ni horarios.
-
-## 4.35.0m — comida por masa, puerto y costa (2026-09-17)
-
-- El autor confirma Buenos Aires para alcantarillas y mapas siguientes, aporta
-  texturas y pide extender a comida la regla de masa del agua.
-- Hambre y Sed por ración = 800/masa; cuerpo M base de 80 kg recibe 10 puntos.
-  Comida conserva peso, pulsos, ritmo sentado, repetición y digestión real.
-- Dosis de comida serializada al inicio; efectos antiguos activos continúan
-  con su pulso anterior. La nueva regla comienza en la siguiente porción.
-- 18 materiales del autor, sin modificar PNG; MAP06 puerto y MAP07 costa
-  ribereña, conectados MAP03 ↔ MAP06 ↔ MAP07 por Use y caravana de ensayo.
-- Volúmenes de techo/agua nativos, dos refugios con mesa de dos sillas,
-  clima de Buenos Aires en superficie y zonas de descanso seguro para T.
-- Migración de acceso MAP03 guardado, IDs previos preservados, Diario con
-  espacio para siete visitas. Generador de mapas y procedencia de arte incluidos.
-- Pruebas GZDoom 4.14.2/Linux y revisión visual descritas en PRUEBAS_4_35_0m.txt.
-  Aceptación de 0l/0m en Windows pendiente; 0j/0k continúan aprobados.
-- No cierra 4.35: viajes con duración, eventos programados e integración/aceptación
-  conjunta siguen pendientes. Más mapas no son una condición de cierre.
-
-## 4.35.0l — regiones climáticas, agua y sillas (2026-09-17)
-
-- El autor aprueba 0j/0k; de 0i señala una silla ausente en Ronnie/Argento.
-- Reproducción: segunda silla detrás de una pared, en otro sector con FloorZ
-  coincidente. Mesas giradas/reubicadas; migración conserva ocupación y objetos.
-- Agua: 0,16 L/kg para recuperar diez puntos de Sed en cuerpo M base de 80 kg;
-  conservación de escala por masa, tiempo sentado y cantidades consumidas.
-- Normales mensuales SMN 1991–2020 para nueve referencias argentinas, con viento
-  2011–2020. Fuente, unidades, páginas, JSON y generador incluidos en assets.
-- Ciclo por fecha/hora, frentes, nubosidad, lluvia y viento reproducibles;
-  techo real/pisos 3D, interior y subsuelo ajustan el ambiente local.
-- Región de ensayo para MAP02–05: Buenos Aires, pendiente de geografía canónica.
-  El Limbo mantiene 20 °C/55%, sin viento/precipitación, con reloj 1:1.
-- Diario muestra región/cobertura; diagnóstico regional de sólo lectura.
-- Verificación nativa y pruebas manuales detalladas en PRUEBAS_4_35_0l.txt.
-  No se declara aprobada por el autor esta entrega ni se cierra 4.35.
-
-## 4.35.0k — estado climático local y consulta (2026-09-16)
-
-- El autor solicita el siguiente parche mientras prueba 0j. Se registra su
-  aceptación como pendiente y se avanza con el primer bloque de clima de 4.35.
-- Muestra común de temperatura, humedad, viento y precipitación por ubicación
-  y minuto de campaña. Semilla persistente, perfiles explícitos y resolución
-  determinista sin reproducir horas de tics al volver a un mapa.
-- Limbo estable; tres perfiles subterráneos con variaciones suaves; perfil
-  exterior templado sólo para consulta de ensayo. Todos los valores climáticos
-  son provisionales, no balance del autor ni registros meteorológicos históricos.
-- Integración con los pasos normales y x105 del reloj. Guardado/carga conserva
-  semilla/muestra; un mapa sin perfil limpia los valores anteriores. Calendario
-  de prueba e informes de consulta no cambian el clima de campaña.
-- Diario > Mundo incorpora dos líneas ambientales en español/inglés, conservando
-  lugares, conexiones, registros y controles. Se agregan dos consultas de consola.
-- El alcance térmico del personaje, efectos audiovisuales por clima y extensiones
-  de sellos conservan sus bloques posteriores. Eventos/viajes programados siguen
-  pendientes antes de cerrar 4.35.
-- Verificación nativa GZDoom 4.14.2/Linux de límites, ciclos, determinismo, x105,
-  persistencia, viajes y migración de una comida activa 0j; revisión del Diario.
-  Aceptación Windows detallada en TXT, separada de esos ensayos.
-- Delta sobre 0j, sin motor/IWAD, capturas, guardados o mapas de prueba.
-
-## 4.35.0j — tiempo local, comidas lentas, Use y área de clase (2026-09-16)
-
-- El autor confirma Sueño 100 puntos/8 horas, bolsa de 2 kg y coste de Sueño
-  1000 Ánima. Solicita comer/beber sentado diez veces más lento, conservando
-  las raciones; la porción dura 100 s de simulación con su rendimiento original.
-- Limbo cambia de calendario detenido a 1:1 durante simulación normal. Reloj,
-  calendario, necesidades por hora y recuperación de Sueño usan la hora local;
-  T conserva x105 en descanso/fabricación válidos. El resto fraccional se guarda.
-- Palomo menciona otro lugar que él conoce, sin equipararlo al mundo conocido
-  por el protagonista. Se mantienen las respuestas y etapas de la quest.
-- Se reproduce la interrupción nativa de Use por USESPECIAL en estaciones de
-  otras plantas y se corrige con Used. Mirada geométrica para muebles, mesas,
-  estaciones y residentes, conservando alcance y obstrucciones del motor.
-- Estaciones al 75% de 0i, 150% de antes de 0h, incluida colisión; migración
-  absoluta sin recrear actores ni perder redes, pertenencias o trabajos.
-- El autor pide radio de clase igual al de los sellos. Base común 1280 MU,
-  modificada por el atributo existente; Sueño sustituye su antiguo ensayo de
-  128 MU. Las demás habilidades de clase continúan en el bloque V5.
-- El entorno se desconectó durante el cierre inicial: el código y los ensayos
-  previos permanecieron, pero no se había creado ni entregado ZIP 0j. Recuperado
-  el entorno se revisan capturas, se añade el nuevo radio y se termina la entrega.
-- Compilación/ensayos GZDoom 4.14.2/Linux: consumo y persistencia, calendario,
-  paridad x105, fabricación, sueño guardado de 0i, estaciones, Use nativo y
-  límites/visión/atributos de Sueño y sellos. Capturas de Palomo/taller revisadas.
-  El TXT distingue estos resultados de la aceptación Windows aún pendiente.
-- Delta sobre 0i; README inglés, cinco documentos canónicos y pruebas españolas.
-
-## 4.35.0i — correcciones de 0h y aceleración del Limbo (2026-09-16)
-
-- El autor aprueba el diseño de raciones y reporta altura flotante, pasos
-  bloqueados, tecla T compartida y blanco de Rulo ausente. Solicita acelerar
-  también en Limbo manteniendo detenido el calendario.
-- Altura de platos/tazas compensada con level.pixelstretch, sin cambiar arte.
-  Se actualizan también las figuras guardadas.
-- Cama/mesa intercambian zonas en Ronnie y Argento, con margen de sillas;
-  mesa normal de cueva 100 MU al este; ramal de estaciones nordeste al oeste.
-- Se conserva identidad/contenido en guardados y se espera a levantarse antes
-  de trasladar muebles ocupados. El blanco de práctica se asegura por existencia
-  real, sin depender exclusivamente del marcador de preparación anterior.
-- T sólo acelera; +10 minutos de crafting queda en consola. Limbo adelanta
-  recursos, sueño, consumibles y fabricación, con reloj/calendario inmóviles.
-  Un serial personal guardado evita omitir o duplicar subpasos de descanso.
-- Pruebas nativas GZDoom 4.14.2/Linux de acceso, pasos por puertas, blanco y
-  crédito de ejercicio, paridad temporal, fabricación y migración de 0h.
-  Capturas revisadas. TXT para aceptación manual Windows; ZIP sólo del delta.
-
-## 4.35.0h — comidas automáticas y mansión amueblada (2026-09-16)
-
-- Base 0g aprobada por el autor, incluida la orientación de sprites.
-- Comer resta 1 punto de Sueño por cada 4 de Hambre realmente recuperados;
-  se respetan máximos y mínimo cero. Beber no produce ese coste digestivo.
-- F/G repite por separado comida/bebida del tablero hasta saciarse o agotar
-  existencias; otra pulsación detiene próximas porciones. Levantarse cancela.
-  Estado guardado y compatible con avance rápido; sin reinicio por gasto pasivo.
-- Mesas de 2/6/12 plazas guardan 4/18/60 objetos. Dos OBJ procedurales muestran
-  platos con comida y tazas por cada pertenencia real sobre la superficie.
-- Cuatro dormitorios con cama y mesa de dos; mesa de seis junto a la pared
-  falsa/cueva y mesa de doce en el segundo piso. Sin provisiones gratuitas.
-- Estaciones al doble de dimensiones: 26 trasladadas a planta baja y todas
-  las 12 conservadas arriba. Cinco redes conectadas e independientes; se
-  actualizan las indicaciones de NPC y las estaciones de ensayo en alcantarillas.
-- Uso sin duración de muebles en MAP01, con simulación personal ordinaria y
-  reloj de campaña detenido. No habilita avance rápido ni duraciones en Limbo.
-- Compilación y ensayos nativos GZDoom 4.14.2/Linux: digestión, capacidades,
-  objetos/figuras, consumo, guardado/carga, muebles accesibles, menús USDF,
-  Lucidez, volumen de estaciones y capacidades de las redes. Capturas revisadas.
-- Delta de fuentes/modelos/generador/documentación; README en inglés y pruebas
-  en español. Motor, IWAD, partidas y fixtures de ensayo quedan fuera.
-
-## 4.35.0g — avance rápido, mesas y sueño (2026-09-16)
-
-- Base 0f aprobada por el autor. T acelera sólo Dormir/Esperar o fabricación
-  activa, en áreas seguras y sin amenazas. Comparte reloj/recursos/efectos,
-  respeta umbrales y finalización, y conserva pausa/cancelación entre lotes.
-- Tres mesas originales en MAP03 con 2/6/12 sillas. Normal 192×96; grande
-  384×192. Comida y bebidas reales sobre el tablero, incluyendo recipientes
-  parciales; Use transfiere y F/G consume desde una silla adyacente.
-- Referencias persistentes de mesa, sillas y pertenencias como base de Trucazo.
-  El minijuego y la comida automática siguen fuera de este incremento.
-- Dormir drena 10 Lucidez/s sin regeneración ni interrupción por aturdimiento.
-  Arcanista User4 aplica Sueño con la misma regla, 10 s, golpe despierta,
-  60 s de reutilización y coste base de ensayo 1000 Ánima. Área provisional
-  128 MU modificada por alcance. Otras habilidades quedan pendientes.
-- PoseAngle corrige el frente del mueble; TEXTURES invierte el orden lateral
-  RSDO A/B (2↔8, 3↔7, 4↔6). No cambian PNG ni locomoción agachada.
-- Pruebas nativas de GZDoom 4.14.2 en Linux: igualdad de recursos tras tiempo
-  normal/acelerado, 20 sillas, transferencias/consumo/recipientes, USDF,
-  fabricación, regla de sueño y lanzamiento real de habilidad. Guardado/carga
-  de avance activo y mesa ocupada; migración de bolsa activa de 0f.
-- ZIP delta con fuentes/modelos/generador/documentación y TXT en español.
-  README en inglés. Motor, IWAD y material QA no forman parte del parche.
-
-## 4.35.0f — bolsa de dormir y comodidad (2026-09-16)
-
-- El autor aprueba todas las pruebas de 0e. Solicita una bolsa de inventario y
-  fija recuperación de Salud/Aire ×2/×3/×4 en silla/bolsa/catre, con pérdida de
-  Hambre/Sed dividida por esos factores. Se mantiene Sueño sin ganancia en silla.
-- Bolsa nativa reutilizable, peso provisional 2 kg, integrada con inventario,
-  Caja, capacidad, soltado y recogida. Una preparación voluntaria en las
-  alcantarillas permite obtenerla; no se entrega automáticamente.
-- Despliegue al elegir duración tras cerrar USDF y validar propiedad/espacio.
-  Recogida visual al finalizar/cancelar/interrumpir, sin consumir ni duplicar
-  el Inventory ni cambiar su peso. Movimiento, daño o pérdida de acceso cancelan.
-- Factores temporales sobre tasas naturales y gasto por tiempo, incluidos los
-  costes de regeneración. Se conservan máximos y bloqueos por reservas críticas.
-  Ánima/Lucidez y consumibles conservan sus reglas. La recuperación respiratoria
-  pendiente también usa ×F, con límite de deuda y máximo. Sueño sigue recuperando
-  provisionalmente 100% por 8 horas de juego.
-- Dos modelos procedurales con materiales existentes, icono provisional de tela,
-  factores visibles en el panel y nuevas traducciones/descripciones.
-- Compilación nativa de GZDoom 4.14.2 en Linux; comprobaciones de tasas, activación
-  de inventario/USDF, mundo/inventario/Caja, cancelación, daño, espacio, límites
-  y guardado/carga. Los ensayos y su continuación tras cargar terminan sin
-  fallos; el contador guardado no se cuenta como pruebas nuevas tras cargar.
-  También se carga un catre activo de 0e: recibe ×4 y completa sin reinicio.
-- Se documenta la recomendación de time skip por intervalos y eventos, inicialmente
-  en lugares seguros. No se implementa en 0f; sigue pendiente en 4.35 junto al
-  clima, eventos/rutas e integración. Se conserva la exportación después de 4.37
-  y el trabajo heredado/transversal de V5.
-
-## 4.35.0e — sillas, catres y cámara de descanso (2026-09-16)
-
-- El autor confirma que todas las pruebas de 0d1 dieron correctas y autoriza
-  continuar. Queda aceptada la base Dormir/Esperar reparada por ese hotfix.
-- Una silla y un catre originales por MAP02–MAP05, también para guardados
-  anteriores. La preparación repetida no duplica la pareja y espera si el
-  lugar está ocupado. Se conserva la geometría y la prohibición de volver al Limbo.
-- Use/USDF selecciona duraciones para Esperar/Dormir; se vuelve a validar el
-  mueble tras cerrar la respuesta. Cerrar sin elegir no inicia ni concede nada.
-- Ocupación con el volumen real del jugador y devolución a una salida libre.
-  Si todas están bloqueadas, puede salir caminando antes de restituir colisión.
-- Cámara orbital nativa durante descanso, con recorte contra el entorno,
-  restauración de vista y dirección, y referencias persistentes. No sustituye
-  una cámara de otro sistema ni cambia opciones de chasecam.
-- Se reutilizan las poses RSDO y los materiales existentes; se agregan dos OBJ
-  procedurales y su generador. Panel compacto con ayuda de cámara.
-- GZDoom 4.14.2 en Linux compila el proyecto y verifica interacción Use/USDF,
-  uso repetido, finalización, daño, salidas ocupadas, pérdida del mueble,
-  colocación/uso en cuatro alcantarillas y guardado/carga de una sesión activa.
-  Capturas nativas revisadas. La comprobación manual de Windows está en el TXT.
-- Escala temporal, recuperación provisional, recursos, atributos, sellos,
-  controles del Diario y fecha inicial mantienen el contrato aprobado.
-- Aceleración, clima local, eventos/rutas y cierre de integración siguen en
-  4.35; después 4.36, 4.37, exportación de prueba y trabajo heredado en V5.
-
-## 4.35.0d1 — reparación del inicio en GZDoom 4.14.2 (2026-09-15)
-
-- El autor reporta nueve errores al analizar 0d. Las dos búsquedas condicionales
-  de poses se cambian por llamadas con etiquetas literales; restPose vuelve a
-  declararse correctamente. Se incluye el catálogo completo de 0c, con
-  IsTimelessMap, para resolver las seis referencias al Limbo ausentes del log.
-- El compilador nativo de GZDoom 4.14.2 reprodujo los errores de poses antes del
-  arreglo y compiló los scripts después, sobre 4621 archivos de juego restaurados.
-  Comprobación en Linux con Freedoom 2, sin prueba jugable o de saves en Windows.
-- Balance, controles, duración y persistencia de descanso mantienen 0d; MAP01
-  conserva su reloj detenido y el resto del mundo comparte el ritmo aceptado.
-- README y cinco documentos actualizados; validador admite sufijos numéricos
-  de hotfix. Delta correctivo sobre 0d con guía PRUEBAS_4_35_0d1.txt en raíz.
-- Continúan pendientes las pruebas jugables de descanso; no cambia el roadmap.
-
-## 4.35.0d — descanso y espera a escala normal (2026-09-15)
-
-- El autor aprueba todas las pruebas de 0c y solicita continuar y conocer lo
-  pendiente para pasar de 4.35 a 4.36.
-- Sesión persistente Dormir/Esperar, iniciada desde Mundo > D/X, con duración
-  explícita de 5 minutos de juego, 1, 4 u 8 horas. La prueba corta dura 15 s.
-- Recuperación de Sueño provisional: 100% por 8 h al dormir, sustituye pérdida
-  pasiva; Esperar conserva consumo. Hambre/Sed y regeneraciones mantienen reglas.
-- Sueño crítico deja de causar daño sólo durante Dormir; no se neutralizan
-  otras penalizaciones ni el daño por hambre/deshidratación.
-- Cancelación por Q/B, TAB, movimiento/acción; interrupción por daño, combate,
-  contexto incompatible, desplazamiento, cambio de mapa o salto del reloj.
-  Pulsos únicos, finales terminales y liberación nativa de Use conservada.
-- Poses mundiales existentes, panel sobre la vista normal y guía USDF sin
-  pausa. Preparaciones opcionales de reservas, informe y golpe de prueba.
-- 317 aserciones en C++ extraído con dobles del motor y sanitizador; 33 guardas
-  verificadas al iniciar y continuar, más daño crítico y restauración lógica.
-  Compilación/partida/guardados/UI de GZDoom siguen pendientes para 0d.
-- Se actualiza el roadmap: aceleración y mobiliario/cámara de descanso, clima
-  local, eventos/viajes programados y cierre conjunto antes de 4.36. 4.37 y
-  exportación siguen después; trabajo heredado/transversal se mantiene en V5.
-- Delta sobre 0c, README inglés y cinco documentos; guía de pruebas en raíz.
-
-## 4.35.0c — inicio de campaña y Limbo sin tiempo (2026-09-15)
-
-- El autor aprueba todas las pruebas de 4.35.0b.
-- Inicio canónico fijado por el autor: 3 de noviembre de 1889 a las 09:00.
-- MAP01 detiene el reloj del mundo. El resto de mapas comparte el mismo ritmo
-  y contador persistente. Se conserva la simulación local, sin pausa adicional.
-- Inicialización/migración única: los saves previos empiezan con la fecha
-  canónica al actualizar, conservando contador e historial de viajes. No se
-  reconstruye cuánto tiempo previo transcurrió fuera del Limbo.
-- Anclaje separado para depuración. Quitar una fecha de prueba restaura la
-  presentación de la campaña que siguió avanzando, sin volver al inicio.
-- Mundo identifica el tiempo detenido; los informes muestran campaña,
-  revisión y prueba. No cambia la navegación ni se abre un regreso a MAP01.
-- 8.849 aserciones en C++ extraído del ZScript: 27 migraciones lógicas y
-  4.320 proyecciones, con sanitizador. No sustituyen compilación, serialización
-  ni ejecución de GZDoom, pendientes para 0c. Se revisan fuentes y recursos.
-- Delta sobre 0b, README y cinco documentos actualizados; pruebas en raíz.
-  Descanso/avance temporal siguen como siguiente incremento de V4.35;
-  exportación tras 4.37 y trabajo heredado/transversal en V5.
-
-## 4.35.0b — calendario y diálogos sin pausa (2026-09-14)
-
-- El autor aprueba todas las pruebas del parche 4.35.0a.
-- Base de calendario civil con meses, años bisiestos y anclaje persistente
-  sobre el reloj existente. No se fija una fecha histórica sin autorización.
-- Fecha y ciclo mensual austral explícitamente de prueba en Mundo. Comandos
-  para asignar fecha, preparar medianoche en 12 s simulados, consultar y retirar.
-  No adelantan recursos, tareas ni el reloj real de la partida.
-- Conversaciones sin pausa mediante MAPINFO y Ticker del menú común. La ruta
-  del menú también cubre las conversaciones reabiertas desde saves antiguos.
-- Se registran las diez habilidades de clase y cuatro raciales. Peregrino:
-  Amparo, 50% menos daño ambiental para personaje y aliados cercanos, 10 s,
-  reuso de 60 s y coste base de prueba de 1000 de ánima. No reduce combate.
-  Las habilidades conservan su implementación pendiente en V5.
-- Cálculos contrastados con std::chrono y fuentes/recursos revisados. No se
-  afirma compilación ni prueba nativa: el motor no estuvo disponible aquí.
-- Delta sobre 0a; README, cinco documentos y PRUEBAS_4_35_0b.txt en raíz.
-
-## 4.35.0a — reloj global persistente (2026-09-14)
-
-- El autor confirma todas las pruebas de 4.34.0e y autoriza el siguiente parche.
-- Inventory temporal nativo y observador estático sin estado duplicado.
-  Registro desde perfil confirmado; guardados anteriores empiezan desde cero.
-- Escala vigente: 1 h de juego = 180 s reales, 24 h por día. Contadores enteros
-  de jornadas y tics, con cambios de hora/día sin deriva por redondeo.
-- Línea de tiempo registrado en Mundo; informe de reloj de sólo lectura.
-- Marcas de salida/llegada de los viajes nuevos, guardadas una sola vez.
-  Los viajes anteriores mantienen su estado sin marcas temporales inventadas.
-- Pausas nativas, continuidad por hub, restauración del instante guardado y
-  ausencia de compensación por tiempo fuera del juego. No suma duración a rutas.
-- Sin cambios de balance, mapas, navegación, sellos o fabricación. Calendario,
-  descanso, clima y eventos continúan dentro de 4.35; exposición térmica en V5.
-- Delta sobre 4.34.0e; cinco documentos canónicos y PRUEBAS_4_35_0a.txt en raíz.
-
-
-## 4.34.0e — estaciones y suministros para comprobar el viaje (2026-09-14)
-
-- El autor confirma las pruebas disponibles de 0d. Sello y crafteo no pudieron
-  comprobarse porque las alcantarillas carecían de medios para iniciarlos.
-- Banco, aserradero y forja nativos junto a la llegada en MAP02–MAP05;
-  reconstrucción en guardados anteriores, red aislada y persistencia de hub.
-- Opciones voluntarias en la caravana para preparar quintaesencia T1 (equipa,
-  recarga y quita espera) o Mango (receta y madera hasta un lote x10).
-- Usar la estación preselecciona Mango T1, x10, eficiencia 100%, con tiempo
-  real para salir de Oficios y dejar una fabricación pendiente. Las tareas
-  siguen usando recetas, reservas, cancelación y producción existentes.
-- El Diario deja pasar KeyUp de +use: cerrar con Q y volver a usar el puesto
-  no conserva el botón interno retenido. Las pulsaciones de navegación siguen.
-- Sin recompensas ni recargas por cargar o viajar. No cambia MAP01, controles
-  aceptados, atributos, balance, efecto de sellos ni catálogo de fabricación.
-- Parche delta sobre 0d e instrucciones PRUEBAS_4_34_0e.txt. 4.35 continúa
-  después de estas pruebas; se mantiene exportación V4 antes del trabajo V5.
-
-
-## 4.34.0d — base de caravanas y ciclo persistente de viaje (2026-09-14)
-
-- El autor aprueba todas las pruebas de 4.34.0c y autoriza continuar.
-- Caravana de prueba accesible en TAB > Mundo > C/Y, para los seis sentidos
-  existentes. Destino, confirmación, vuelta a la oferta y cancelación USDF.
-- Servicio común para la caravana y los accesos a pie: valida antes de salir,
-  mantiene el hub y conserva el inventario sin repetir el saneamiento de MAP01.
-- Inventory nuevo con secuencia, modo y último trayecto; llegada o interrupción
-  resueltas una sola vez. Informe explícito y resumen en Mundo.
-- Guardados anteriores sin historial inventado. Reanudación de la página de
-  confirmación guardada y conciliación de una salida interrumpida al cargar.
-- Sin tarifas, tiempo simulado, vehículos, incidentes, nuevos mapas o assets.
-  El reloj y la integración temporal continúan en 4.35. La exportación de
-  prueba sigue después de 4.37, antes de V5 y su trabajo heredado/transversal.
-- Entrega delta sobre 0c, con README y los cinco documentos canónicos;
-  comprobaciones del autor en PRUEBAS_4_34_0d.txt, fuera de docs.
-
-
-## Alcantarillas de prueba conectadas — 4.34.0c
-
-El autor confirma «Todo correcto» para 0b y permite crear conexiones después
-de MAP02 a nuevas alcantarillas para pruebas masivas, Tarot y otros sistemas.
-Delega la topología con la excepción expresa de no volver a MAP01. Esta
-autorización modifica el aplazamiento anterior de los mapas de prueba; no
-adelanta la campaña completa ni el alcance heredado/transversal de V5.
-
-MAP02 conecta en ambos sentidos con MAP03 (depósito), MAP04 (cámaras del
-Tarot) y MAP05 (mantenimiento). Se incorporan geometrías UDMF reutilizables,
-dos escaleras reales, portones Usar, ids estables y persistencia de hub nativa.
-MAP01 y MAP02 conservan su WAD, y el regreso original sigue validando y
-limpiando el inventario del Limbo una sola vez. Los mapas nuevos no conceden
-cartas, recompensas o poblaciones de enemigos. El Diario muestra visitas y
-salidas locales, sin controles de viaje en el menú.
-
-Se verifican los seis sentidos, una revisita, actores/objetos del mapa,
-guardado/carga del hub y actualización de un guardado creado con el código
-0b original. La ubicación del arma de ese guardado es mochila; se compara
-con el dato realmente serializado. Se comprueba además la salida narrativa
-MAP01 → MAP02 con el nuevo hub. Las capturas revisan español e inglés y las
-geometrías nuevas; no se acredita todavía rendimiento masivo ni cooperativo.
-
-Entrega sobre 4.34.0b con sólo archivos nuevos/modificados, generador opcional,
-README, cinco documentos canónicos y guía de pruebas. Se mantiene la secuencia
-V4 hasta 4.37 → exportación para otros jugadores → V5, empezando por V5.0
-refactor del código y V5.1 exposición térmica.
-
-## Puertas agrupadas y llave de prueba independiente — 4.34.0b
-
-El autor confirma «Todo correcto» para 4.34.0a y pide continuar. Se registra
-su aceptación del Diario de mundo y la continuidad de la secuencia acordada:
-V4 hasta 4.37, exportación de prueba, V5 con todos los pendientes heredados y
-transversales; refactor modular V5.0 y exposición térmica V5.1.
-
-Se reproduce en 0a que la hoja sin cerradura abre otra con llave o bloqueo de
-arena, y que las puertas con id cero actúan como un grupo. También se comprueba
-que medir distancia a una hoja apartada deja sin detectar el centro del paso.
-0b valida requisitos de todas las hojas, hace independientes los ids no positivos
-y mide la ocupación desde el hueco original. Mantiene abierto/reabre el grupo
-ante la presencia del jugador, conservando el cierre forzado de la arena.
-Las cerraduras usan el sonido propio existente mediante CheckKeys nativo.
-
-Se incorpora una prueba solicitada expresamente por consola, con dos hojas y
-una llave 202 independiente de la llave de Argento. Es guardable, reutilizable
-y retirable sin cambiar misiones, facciones, Mundo o inventario narrativo.
-La consulta de accesos lee su estado. Los diagnósticos anteriores actualizan
-cabecera; mapas, assets, fórmulas y navegación conservan la base aprobada.
-
-Pasan las pruebas de contratos, entradas/collisiones nativas, cierre/reapertura,
-guardado nuevo parcialmente cerrado y guardado 0a parcialmente abierto. Los
-fixtures y sus límites están en PROJECT.md. README y los cinco documentos se
-actualizan; PRUEBAS_4_34_0b.txt explica aplicación y prueba opcional.
-
-## Mundo inicial y exportación de prueba antes de V5 — 4.34.0a
-
-El autor decide: terminar el roadmap V4 hasta 4.37, armar/exportar una versión
-de prueba para otros jugadores y, después, desarrollar en V5 todo el trabajo
-heredado y transversal. Esta decisión sustituye la clasificación «sin versión
-asignada» de la entrada anterior; V5.0 sigue reservado al refactor modular y
-V5.1 a exposición térmica. La distribución independiente final pertenece al
-alcance amplio de V5 y no se confunde con la exportación de prueba de V4.
-Autoriza continuar desde 0ao, sin una nueva declaración de haber repetido todas
-sus pruebas. El roadmap completo se actualiza en PROJECT.md.
-
-4.34.0a agrega catálogo de ubicaciones/conexiones, progreso en el registro
-viajero y la sección Mundo del Diario. El regreso existente se registra al
-salir y se confirma al llegar; se conserva su sentido único. Un guardado viejo
-en MAP02 recupera ese recorrido a partir del cierre previo de MAIN_M00. Un
-inicio por consola sin esos hechos no recibe una historia de viaje inventada.
-El destino de la conexión no se nombra antes de visitarlo. Se añade la consulta
-explícita de mundo y se actualizan las cabeceras de los diagnósticos anteriores.
-
-Se comprueban arranque, guardas, controles nativos, consulta, salida real,
-compatibilidad con guardados 0an/0ao y recarga de nuevos guardados en ambos mapas.
-Los casos y límites figuran en PROJECT.md. Assets, mapas, atributos, misiones
-y navegación previamente aprobados se conservan. También se corrigen marcas
-«+» de formato que quedaron en las introducciones documentales de 0ao.
-Entrega delta sobre 4.33.0ao, con README y los cinco documentos canónicos;
-PRUEBAS_4_34_0a.txt explica aplicación y pruebas sin comandos de habilitación.
-
-## Integración de 4.33 y roadmap restante — 4.33.0ao
-
-El autor confirma todas las pruebas de 0an y autoriza el siguiente parche,
-pidiendo conocer antes el roadmap completo de V4. Se detalla la secuencia hasta
-4.37, trabajos heredados, alcance transversal sin versión asignada y las reservas
-expresas de V5. Se corrige el resumen antiguo que seguía marcando MAP01 como
-pendiente y las instrucciones de aplicación antiguas de 0ae.
-
-La última recarga identifica un autoguardado de llegada con interlocutor
-nativo activo y sin menú. Se añade un observador estático de carga que vuelve
-a abrir el diálogo mediante StartConversation, conservando dueño y orientación,
-sin respuestas automáticas. Referencias inactivas y entradas normales de mapa
-mantienen su comportamiento. El autoguardado anterior al arreglo se recupera.
-
-0ao incorpora una consulta de consola de la integración: misiones, objetivos,
-recompensas, reputación/pertenencia, Caja, primera arma, Tarot, condiciones de
-comercio y salida/llegada. Sólo lee registros existentes y no activa pruebas.
-Se verifica un guardado creado con 0an con comercio y encargos simultáneos,
-seguido por la captura y la salida narrativa real a MAP02. Evidencia y límites
-en PROJECT.md. El informe de El Loco conserva su función y actualiza cabecera.
-
-Se mantienen las reglas y datos serializados de 0an, controles, atributos,
-historia, mapas y assets. README y cinco documentos canónicos se actualizan;
-PRUEBAS_4_33_0ao.txt contiene aplicación y comprobación conjunta. Pendiente de
-aceptación de este cierre antes de iniciar 4.34.
-
-## Condiciones reutilizables de reputación — 4.33.0an
-
-El autor aprueba 0am y los encargos de prueba: obtiene ambas recompensas,
-comprueba que abandonar Recorrido bloquea Espera y que salir antes de completar
-su objetivo lo marca fallido. Autoriza proseguir con el bloque de reputación.
-
-Se incorpora CaelumFactionCondition: id estable, mínimo inclusivo y pertenencia
-independiente. Diálogo, puertas agrupadas y comercio comparten su validación.
-La operación comercial se comprueba antes del intercambio y una cotización
-cambiada requiere nueva confirmación. La rebaja por reputación usa los márgenes
-existentes, se recalcula y permanece separada de la negociada persistente.
-
-La prueba se activa expresamente con give CaelumDebugReputationTrial y se
-reabre con F/Y en Reputación. Ofrece información, puerta física, comercio y
-cinco estados del registro real de Gendarmería. No concede Caja, monedas ni
-recompensas. Sus umbrales sólo sirven para comprobar las condiciones. No se
-asignan facciones a los residentes ni se inventan rangos o relaciones narrativas.
-
-Pasan pruebas de reglas/transacciones, teclado nativo, guardado original 0am,
-serialización de condiciones nuevas y viaje a MAP02; detalle y límites en
-PROJECT.md. El cierre del comercio de prueba se indica con Q/B, respetando
-Esc como pausa del motor. Se conservan controles de extremos, captura, sellos,
-misiones, atributos, mapas y recursos. Entrega delta sobre 0am, README, cinco
-documentos canónicos y PRUEBAS_4_33_0an.txt. El autor aprueba después todas las pruebas de 0an.
-
-## Referencia inactiva de conversación y extremos del Diario — 4.33.0am
-
-El autor precisa que las flechas deben recorrer filtros/misiones y pasar a
-la solapa anterior/siguiente al alcanzar el extremo, sin volver al opuesto.
-El log de 0al muestra captura elegible a 32,6 MU, canal y recarga a cero,
-ConversationNPC presente y NPC fuera de diálogo. Se reproduce esa combinación
-en una prueba controlada: 0al rechaza Usar y 0am permite el diálogo y captura.
-No se afirma haber reproducido qué cierre original dejó la referencia.
-
-La esencia comprueba la actividad del diálogo al abrir y esperar su animación;
-la salida y la Voz de llegada usan el mismo criterio. Se conservan referencias
-nativas, requisitos, confirmación, tiempos y recompensa única. No se entrega
-la carta al cargar ni se interrumpe una conversación activa como reparación.
-
-Inventario sale a Tarot/Personaje desde sus extremos. Misiones sale a
-Oficios/Reputación; con una entrada ambas flechas salen. RePág/AvPág y LB/RB
-siguen cambiando de solapa directamente. Se retienen selección, funciones de
-Arriba/Abajo y F/Y, y cancelación de abandono al navegar. Las ayudas se ajustan
-en ambos idiomas con las fuentes existentes. Mapas, assets y balance intactos.
-
-Veintiocho comprobaciones de controles mediante teclado nativo y doce del
-tramo Palomo/Caja/agotamiento/captura pasan. Diecisiete adicionales verifican
-el guardado nativo de 0al, cancelación, animación, puerta y llegada a MAP02;
-los escenarios y sus límites se detallan en PROJECT.md. README y cinco documentos actualizados; entrega delta
-sobre 0al con PRUEBAS_4_33_0am.txt. Aceptación del autor pendiente.
-
-## Filtros, misión única y diagnóstico de captura — 4.33.0al
-
-El autor informa que 0ak no resolvió la captura en un guardado ni en una
-partida nueva. Aclara que Usar debe quedar disponible cuando se agota la
-Adrenalina. Rechaza las flechas para solapas en Inventario y pide que vuelvan
-a recorrer filtros; aprueba RePág/AvPág. En Misiones no observa alternancia.
-
-Se restauran filtros circulares en ambos sentidos. Misiones conserva las
-flechas para seleccionar entradas conocidas y muestra una ayuda específica
-cuando sólo hay una: las cuatro pruebas narrativas son etapas de MAIN_M00.
-Los dos encargos de diagnóstico no se habilitan automáticamente. RePág/AvPág
-y LB/RB mantienen la navegación de solapas. README y cinco docs actualizados.
-
-Las pruebas pasan a usar eventos SDL de teclado por el despachador real del
-motor, sin llamar directamente a los manejadores de Usar ni del menú.
-Dieciséis controles de navegación pasan. Diez del tramo final preparado
-después de las pruebas de residentes reciben la Caja por el diálogo real de
-Palomo, agotan Quintaesencia y capturan El Loco con Usar/Enter, conservando
-Caja, entrega única y +2%. Ese flujo también pasa con fuentes originales 0ak.
-Por tanto, no se atribuye la incidencia pendiente al agotamiento sin evidencia.
-
-La captura del autor sigue abierta. Se añade un informe explícito de estado
-mediante netevent ca_debug_fool_report para recibir las condiciones del punto
-donde falla. No se alteran sus reglas ni se concede una carta como reparación.
-PRUEBAS_4_33_0al.txt explica cómo enviarlo. Los resultados técnicos aislados
-no equivalen a la aceptación del autor ni prueban que su incidencia esté resuelta.
-
-## Infraestructura del sello, captura y navegación — 4.33.0ak
-
-El autor informa que Quintaesencia desplazó árboles y bancos, no puede
-capturar la esencia y las flechas de Misiones/Inventario llevan a destinos
-incorrectos. 0aj queda observado; 0ak se dedica a corregir estos problemas
-antes del bloque de reputación. Los atributos aprobados en 0ai se conservan.
-
-La marca SHOOTABLE incluía infraestructura en el canal: se excluye toda
-CaelumMovableProp de los objetivos y de la masa/expulsión. Se restauran una
-vez las mismas estaciones de las habitaciones y plantas del jardín en
-guardados MAP01, con existencias, rendimiento, tareas y reservas conservados.
-También se limpia la gravedad indebida de objetivos inválidos guardados.
-
-La captura sin canalización funciona en las fuentes originales de 0aj.
-El caso reproducido con Quintaesencia activa pierde Usar en PlayerThink.
-0ak permite que una pulsación nueva termine el canal con su recarga habitual
-y abra la interacción. El diálogo de El Loco conserva Caja propia, aceptación
-explícita, entrega única y +2%; no se sustituyen sus reglas por una recompensa
-automática ni se altera el registro de la misión.
-
-En Misiones, Izquierda/Derecha cambia de misión; en Inventario cambia de
-solapa y Derecha llega directamente a Personaje. F/Y mantiene los filtros.
-RePág/AvPág y LB/RB recorren solapas también desde Misiones y Oficios; salir
-de una estación cierra su sesión nativa. Detalle y abandono se cancelan
-al cambiar de misión. Ayudas de ambos idiomas actualizadas.
-
-131 comprobaciones distintas nativas aprobadas: 78 de objetivos, 34 de
-navegación y 19 de guardado original 0aj con infraestructura desplazada y
-captura. Las repeticiones por idioma no suman controles distintos. PROJECT.md
-registra alcance y límites; PRUEBAS_4_33_0ak.txt contiene la aceptación en
-Windows pendiente. README y cinco documentos actualizados; entrega delta
-sobre 0aj, con mapas, recursos audiovisuales y fórmulas de atributos intactos.
-
-## Base de misiones opcionales y cadena de prueba — 4.33.0aj
-
-El autor aprobó todas las pruebas de 0ai y decidió conservar los atributos.
-Se posponen las diferencias de la auditoría. Autorizó continuar con la base
-propuesta de misiones secundarias, requisitos, fracaso/abandono y recompensa
-única antes del bloque de reputación 0ak y cierre previo a V4.34.
-
-0aj añade Ofrecida y Abandonada sin renumerar estados, conserva MAIN_M00 en
-índice 0 y agrega dos encargos de diagnóstico encadenados. La aceptación es
-explícita, el progreso se limita por objetivo y los finales son permanentes.
-La entrega nativa registra cobro una sola vez, con reintento si no se recibe.
-Los setters de MAIN_M00 no sobrescriben estados/objetivos terminados.
-
-El Diario selecciona entre misiones, abre su Detalle, acepta/completa/cobra y
-confirma abandono con dos pulsaciones separadas. La prueba se habilita sólo
-con give CaelumDebugQuestTrial y no concede ventajas de campaña. Atributos,
-mapas, misiones narrativas y cupos permanecen aprobados. README y cinco docs
-actualizados; el delta incluye exclusivamente archivos nuevos/modificados y
-un TXT de pruebas. Balas y potabilización quedan pendientes de definición
-como ampliaciones posteriores.
-
-Cierre de la entrega recuperada: 119 comprobaciones nativas sin fallos,
-incluyendo carga desde 0ai, guardado parcial, viaje real y Diario en ambos
-idiomas. Se completa el registro técnico en PROJECT.md y se incorpora el TXT
-de aplicación/pruebas que faltaba. La aceptación en Windows queda pendiente.
-
-## Resiliencia, costes de regeneración y auditoría de atributos — 4.33.0ai
-
-El autor aclara que Sueño pertenece a Resiliencia. Se restaura esa asociación
-conservando el divisor Tipo 4 aprobado como regla: /1 a 0 y /3 a 100.
-La asignación a Paciencia de 0ah queda sustituida por esta corrección.
-
-Constitución divide ahora también el coste de Hambre/Sed de la regeneración
-natural de vida y Aire. Se usa el mismo divisor puro que para el consumo
-pasivo, sin repetir su factor de masa. El límite de recuperación asequible usa
-el nuevo coste. No cambian las velocidades, el drenaje crítico <=10%, la
-hidratación de piscina, los sorbos ni la recuperación de la deuda submarina.
-
-SYSTEMS.md compara los doce atributos de la tabla del autor con sus usos
-reales: familias conservadas, escalas, asociaciones distintas y funciones
-pendientes. Destacan la recarga de munición con Destreza, cooldown de Channel
-fijo de 60 s, áreas actuales con Elocuencia,
-reducciones de duración por Constitución ausentes, Empatía incompleta,
-mitigación parcial de Paciencia y sentidos mágicos pendientes. La auditoría
-documenta estas diferencias; este parche no implementa esos otros sistemas.
-README, cinco docs y explicación de Ronnie en ambos idiomas actualizados.
-Entrega delta de diez archivos sobre 0ah, con un único TXT de pruebas.
-Pasan 103 comprobaciones nativas en GZDoom 4.14.2: 95 de las reglas y ocho
-de carga de un guardado original 0ah. El validador documental/de recursos
-termina sin errores. Pendiente de aceptación del autor en Windows.
-
-## Supervivencia con divisores Tipo 4 y críticos restaurados — 4.33.0ah
-
-El autor aprobó todas las pruebas de 0ag y aclaró que el drenaje de vida con
-reservas por debajo del umbral crítico sí formaba parte del diseño. Se retira
-la excepción de Sed positiva de 0ag y vuelve el umbral nativo del 10% o menos,
-con bloqueo de regeneración natural y daño acumulable por cada reserva crítica.
-
-Constitución para Hambre/Sed y Paciencia para Sueño usan ahora divisores Tipo 4:
-1 + 2*A*(A+1)/10100, con atributo no negativo. A 0 divide por 1; a 100, por 3.
-Se conserva el factor de masa corporal de Hambre/Sed. Antes el código usaba
-Resiliencia para Sueño; se cambia a Paciencia conforme a la indicación actual.
-Los costes de Hambre/Sed por regenerar vida/Aire continúan por separado: podían
-producir gasto aun con la reducción pasiva anterior a cero por Constitución 100.
-
-Los factores se actualizan también al cargar partidas previas sin alterar sus
-reservas, atributos, elecciones, inventario o misiones. Se conservan piscina,
-recargas y sorbos aprobados. Diálogo de Ronnie, README y cinco docs actualizados;
-entrega de archivos modificados y TXT de pruebas sobre 0ag.
-
-## Corrección de hidratación, sorbos y Sed positiva — 4.33.0ag
-
-El autor aprobó las demás pruebas de 0af y aclaró que la piscina debe conservar
-su hidratación directa y completar recipientes aunque tengan agua. La retirada
-de hidratación automática en 0af fue una interpretación incorrecta. Se restaura
-su tasa previa de un punto por segundo con cabeza sumergida, sin recipiente
-obligatorio. La recarga necesita cargar sólo el agua faltante más el margen de
-1 g, mantiene el contenido si no cabe y respeta la Caja y el ingreso al agua.
-
-Cada sorbo pasa de 100 ml fijos a masa corporal / 500 litros para diez puntos
-en diez segundos; el remanente menor recupera su proporción. La ración de agua
-separada conserva su volumen. Se corrige además la condición de daño por Sed:
-antes usaba el estado crítico <=10%, que también impedía regenerar vida a 1–2%.
-Ahora requiere reserva cero. Se conservan las penalizaciones de rendimiento,
-las reglas de Hambre/Sueño y los costes de regeneración de vida y Aire.
-Diálogos/Detalle en ambos idiomas, README y cinco documentos actualizados.
-No cambian mapas, imágenes, modelos, audio, misiones ni cupos de materiales.
-
-## Recipientes, elección de accesorios y cupos — 4.33.0af
-
-El autor aprobó 0ae, aportó su base y definió agua únicamente con recipientes
-vacíos al sumergirse en agua potable: botellas/cantimploras 1/2,5/5 L, y 1 L
-por 50 kg de masa corporal para 100% de Sed. Se incorporan seis sprites,
-volumen/peso persistentes, uso de 100 ml sobre la ración y efecto de diez
-segundos existentes, entrega única de cantimplora normal por Ronnie y Detalle.
-Se retira la hidratación automática por inmersión. Tara reutiliza el valor
-genérico existente de 0,10 kg; no hay receta de tratamiento de agua insegura.
-
-Caella pasa de cinco sellos a elección confirmada de un sello y un amuleto,
-con sus recetas/componentes y materiales al 100%. Cofre con plata bruta y
-cuero limitado; gemas en las vetas. Se conservan objetos, conocimiento y gasto
-previos. Se corrige el validador de versiones para sufijos de varias letras.
-README y cinco documentos actualizados. Evidencia y límites en PROJECT.md.
-
-## Enseñanza y cupos de sellos T1 — 4.33.0ae (aprobado)
-
-El autor confirmó posteriormente que todas las pruebas de 0ae fueron correctas.
-
-El autor aprobó todas las pruebas de 0ad y pidió continuar. Caella ofrece las
-cinco recetas de sellos T1 y dependencias después de su prueba, con aceptación
-opcional. No concede objetos. Detalle informa preparados 0/5–5/5. La expansión
-nativa al 100% añade 1,8 kg de cobre, 0,2 kg de estaño y 0,6 kg de cada gema al
-cupo vigente, conservando lo emitido. Sellos propios anteriores reducen sólo
-el nuevo cupo, sin volver a descontar materiales ya contabilizados.
-
-El crafting usa reservas y plan recursivo desde materias primas, resultado
-personal antes de la Caja, equipo de una ranura y Channel existente. Ronnie
-puede prestar/devolver su espada para esta recolección después de completar
-su misión, aunque la reparación ya esté hecha. Guardados, tareas anteriores,
-recetas, etapas, salida y recursos audiovisuales se conservan. Entrega por copia
-sobre 0ad, README/cinco documentos y PRUEBAS_4_33_0ae.txt. Validación y límites
-en PROJECT.md. Agua sigue en el roadmap; balas necesitan definición del autor.
-
-## Armadura elegida y cupos al 100% — 4.33.0ad (aprobado)
-
-El autor aprobó 0ac y pidió que Ronnie pregunte qué armadura desea usar, enseñe
-sus recetas T1 y reduzca recursos/cofre a lo necesario al 100% de eficiencia.
-Se implementan cuatro familias con descripción/confirmación y cuatro piezas,
-componentes y Detalle. Crafting recursivo nativo, salida personal y equipo.
-Cupo por personaje para arma, conjunto y diez flechas/virotes cuando corresponda;
-masa y dureza de las fuentes permanecen. Generación y recogida evitan excedentes,
-cofre/Toro comparten cuero y la recogida parcial conserva capacidad de movimiento.
-Guardados conservan tareas y existencias; el cajón acepta excedentes no reservados.
-La reparación opcional obtiene sólo cupo proporcional al daño observado.
-No se cambia el equipo que sale del Limbo. Próximo: sellos T1 y sus cupos;
-balas/agua conservan sus definiciones pendientes. Formato delta sobre 0ac más
-PRUEBAS_4_33_0ad.txt; README/cinco documentos al día. Evidencia en PROJECT.md.
-
-## Virotes de ballesta — 4.33.0ac
-
-El autor aprobó todas las pruebas de 0ab y pidió continuar. Se agrega la receta
-130 de virotes después de las 130 anteriores. Diez virotes de 50 g usando la
-estructura de asta/punta de bronce de las flechas, con eficiencia por capa.
-La elección de ballesta enseña receta y dependencias, también en guardados
-anteriores; no concede munición ni reemplaza la primera arma. El crafting
-nativo cubre salida personal, reservas, pausas, cancelación y persistencia.
-Guía de Ronnie en su taller, icono de virotes en Oficios y orientación en
-Detalle. Las flechas conservan índice, valores y salida propios.
-Se actualizan README y las cinco fuentes. Entrega por copia sobre 0ab con
-PRUEBAS_4_33_0ac.txt. Evidencia en PROJECT.md. Quedan acceso a recetas de
-armaduras/sellos T1 y definir composición/proceso de balas; no se inventan
-materiales de balas a partir de su peso. Agua y V5 conservan su lugar.
-
-## Respiración en piscina — 4.33.0ab
-
-El autor aprobó todas las pruebas de 0aa y pidió continuar el roadmap. Se
-implementa el tramo E opcional de Ronnie con la piscina existente de MAP01:
-un segundo de inmersión con gasto real y devolución del Aire submarino al
-respirar tres segundos. Confirmación, fases en Detalle, reconocimiento de
-Ronnie y persistencia; sin ampliar mapas ni imponer un bloqueo de misión.
-Se mantienen los cinco documentos y README actualizados junto al código.
-Entrega sobre 0aa por copia con PRUEBAS_4_33_0ab.txt; evidencia en PROJECT.md.
-Siguiente cobertura pendiente: municiones y adquisición de recetas T1;
-recolección/potabilización de agua requiere su mecánica. Arquitectura en V5.
-
-## Pasivas menores, barrido y divisores — 4.33.0aa
-
-Decisiones del autor: Espadas mentales, Copas sociales, Bastos físicos y Oros
-técnicos. Menores: 2–4/5–7/8–10 dan +0,3 al 1.º/2.º/3.º; Caballero/Sota/Reina
-+0,6 respectivamente; Rey +0,5 a los tres y Ancho +1 a los tres. Un palo =+3
-a sus atributos. Son bases previas a colección; no hay otras pasivas menores.
-Se conserva +2% por Mayor, +1% por Menor. El orden de los 78 índices se fija
-sin desplazar El Loco ni alterar las banderas existentes.
-
-Espadón, hacha de guerra y alabarda ganan Zoom/barrido de 360° con daño, alcance
-y recuperación primarios, coste de Aire ×3 por ejecución. Guanteletes mantienen
-bloqueo. La geometría impide atravesar paredes/pisos; los aliados se excluyen.
-Daño general/Ánima abandonan la resta porcentual y dividen por Tipo 4 de
-Dureza/Elocuencia: 1 + 2A(A+1)/10100. A 100 queda un tercio. Colisiones, Dolor
-y Lucidez mantienen sus reglas. Las tablas históricas previas que indiquen
-anulación de daño o Ánima con atributo 100 quedan sustituidas por SYSTEMS.md.
-
-0z es base entregada; no se inventa una aprobación de sus pruebas. Se actualiza
-README y los cinco documentos, con parche por copia y un TXT de pruebas.
-No hay nuevas lecciones, misiones, mapas ni activos. V5 conserva el refactor
-previsto. Evidencia técnica y límites en PROJECT.md.
-
-## Carga y cierre de observaciones — 4.33.0z
-
-El autor aclaró que el desacuerdo de misión informado era un error suyo y
-aprobó todas las pruebas de 0y. No se modifica ni repara progreso por esa
-observación. Se continúa con el tramo D de Ronnie: lectura de carga y decisión
-opcional de aligerar por inventario. Se registran acciones nativas de soltar o
-guardar con reducción real, excluyendo la primera arma. No se concede equipo
-ni se cambia la misión. Persistencia, Diario y diálogo comparten el resultado.
-README y las cinco fuentes documentales se actualizan; entrega sobre 0y con
-PRUEBAS_4_33_0z.txt. Los mapas permanecen idénticos. Validación en PROJECT.md.
-
-## Aire y movimiento — 4.33.0y
-
-El autor aprobó todas las pruebas de 0x y pidió continuar. Se implementa el
-tramo C de supervivencia con Ronnie: gasto real de un objetivo del 1% del Aire
-máximo al aceptar, seguido de recuperación natural de esa cantidad. Es opcional,
-permite tramos cortos y no cambia recursos ni requisitos de misión. Detalle y
-diálogo reconocen fases; el registro conserva progreso parcial y final.
-No se amplían mapas. Se mantienen prioridades del roadmap y las cinco fuentes
-documentales. Entrega por copia sobre 0x, con PRUEBAS_4_33_0y.txt. Evidencia y
-límites de validación en PROJECT.md.
-
-## Necesidades y prioridad de sistemas — 4.33.0x
-
-El autor confirmó la descarga y prueba exitosa del acumulativo 0u → 0w,
-incluidos salida, llegada y reparación. Quedan aprobados 0v y 0w. Aclaró que
-construir mapas no es prioritario: seguir el roadmap de sistemas y usar MAP01
-para comprobar mecánicas. La ampliación de alcantarillas queda diferida.
-
-Se agrega práctica opcional de alimento/agua con confirmación, preparación
-única al 90%, entregas independientes de una ración por tipo y consumo nativo.
-Se conserva progreso al guardar y viajar. No requiere volver ni modifica la
-misión principal. El ensayo detectó que PowerupGiver rechazaba un refresco
-antes del parpadeo: se habilita la ruta nativa durante Use, preservando diez
-segundos no acumulables y las reglas habituales de recogida.
-README y los cinco documentos se actualizan juntos. Sólo archivos modificados
-más PRUEBAS_4_33_0x.txt, para copiar sobre 0w. Ningún mapa o asset cambia.
-
-## Corrección de entrega acumulativa 0u → 0w
-
-El autor confirmó 0u como última versión recibida. La aceptación de 0v se
-registró por error y queda rectificada. Este ZIP reúne ambos incrementos,
-con un solo TXT de pruebas y sin exigir aplicar 0v por separado.
-
-## Mantenimiento opcional y cobertura T1 — 4.33.0w, 2026-09-12
-
-La última versión recibida y aprobada por el autor fue 0u. Se amplía
-la enseñanza de Ronnie con una práctica opcional: reparar la primera arma real
-mediante la tarea nativa. Hablar no repara, iniciar no completa y cancelar no
-premia. Se conserva la identidad de la pieza, reservas, pausas y guardados.
-El estado viaja al salir; no bloquea ninguna rama o cierre ya aceptados.
-
-La auditoría T1 usa las fórmulas actuales en el motor. En M, los cuatro conjuntos
-de armadura necesitan juntos 590,4/198,4/75 kg de cuero al 25/50/100% por capa;
-el stock inicial conjunto de cajón y Toro es 108,5 kg antes de otros gastos.
-No se altera ese botín ni se afirma que alcanza para cualquier equipo. Las
-materias primas de los cinco sellos existen; enseñar todas las recetas de
-armaduras/sellos sigue pendiente. Tablas y alcance en SYSTEMS.md.
-
-README y cinco documentos actualizados. Entrega por copia de archivos nuevos
-o modificados y PRUEBAS_4_33_0w_DESDE_0u.txt. Los WAD y recursos audiovisuales no cambian.
-Validación nativa y pruebas pendientes del autor en PROJECT.md.
-
-## Salida de la mansión y regreso al cuerpo — 4.33.0v, 2026-09-12
-
-El autor aprobó todas las pruebas de 0u y pidió el siguiente parche. Se cierra
-MAP01: puerta al fondo de la sala del Toro, confirmación explícita, fase 95
-guardable y fase 100 completada antes del viaje nativo a las alcantarillas.
-Sólo cruzan la misma Caja y la primera arma fabricada por ItemId; la pieza
-conserva sus datos y queda almacenada. Los demás objetos físicos, incluso en
-la Caja, quedan atrás. Se preservan Tarot, recetas, personaje y recursos actuales.
-El equipo adicional por clase y valores especiales al despertar no estaban
-fijados: no se inventan ni se añaden recompensas o curaciones automáticas.
-
-La llegada de MAP02 es breve, con la Voz y ayuda para recuperar el arma. El
-recorrido completo queda en el roadmap. El diagnóstico anterior se conserva
-como CADEV02, con TEXTMAP idéntico. La prueba con un save real de 0u mostró que
-cambiar TEXTMAP invalidaba la carga; MAP01.wad se dejó intacto y el controlador
-retira el Exit provisional/panel y presenta la puerta durante la ejecución.
-
-Cancelar o fallar requisitos no limpia objetos; una tarea de fabricación activa
-impide cruzar y no se cancela sola. El cruce simultáneo cooperativo queda pendiente.
-Localización español/inglés, README y los cinco documentos se actualizan juntos.
-Entrega: sólo archivos nuevos/modificados para copiar más PRUEBAS_4_33_0v.txt.
-Evidencia nativa y aceptación pendiente del autor en PROJECT.md. El resto de
-este documento conserva los registros con el estado que tenían al publicarse.
-
-## Escudo real y guía de Rulo — 4.33.0u, 2026-09-12
-
-El autor aprobó las otras pruebas de 0t y reportó escudo visible con la espada
-prestada sin escudo en inventario, y dudas sobre Zoom usando mandoble.
-Se reprodujo el primer síntoma con un modelo de escudo obsoleto sin instancia.
-La comprobación usa ahora inventario nativo, repara referencias al cargar y
-limpia capas izquierdas residuales. Un escudo real y los guanteletes conservan
-su bloqueo; la espada prestada conserva su identidad.
-
-El mandoble ya admitía esquiva lateral en la sala del blanco. La guía de Rulo
-y Detalle pasa a depender del equipo actual, con explicación expresa para
-mandoble en español e inglés. No cambia la detección ni se exige repetir
-marcas ya obtenidas. Evidencia de motor y carga 0t -> 0u en PROJECT.md.
-
-Se mantienen README inglés y cinco docs actualizados. Entrega por copia:
-archivos modificados y un TXT de pruebas. Fase 90 y roadmap de salida vigentes.
-
-## El Loco y colección de Tarot — 4.33.0t, 2026-09-11
-
-El autor aprobó todas las pruebas de 0s. Tras fallar el envío del ZIP completo,
-entregó src/assets/docs y archivos raíz por separado; se recuperó una base
-coherente. Se implementa el siguiente bloque: aparición en la cueva, revelación,
-captura con aceptación e interrupción segura, recompensa única y fase 90.
-
-La ilustración es El Loco de las Pampas original. Tarot añade una página al
-Diario. Se recupera la regla canónica de V4.25.2, sección 7: Mayor +2%, Menor
-+1% a los doce atributos, porcentajes aditivos, decimales antes de fórmulas.
-Los atributos pasan a double; el porcentaje se deriva de la colección viajera
-al recalcular y no altera la base del creador. Diálogos y Detalle se actualizan
-en español/inglés, incluyendo Palomo y reacciones de los cuatro residentes.
-
-El alcance termina en fase 90: salida, arma preservada, retorno al cuerpo y
-alcantarillas permanecen en el roadmap. No se implementa activación de poderes.
-README y los cinco docs se sincronizan; evidencia técnica en PROJECT. Entrega:
-sólo archivos para copiar y TXT de pruebas; sin instalador ni modificación WAD.
-
-## Palomo final y Caja — 4.33.0s, 2026-09-11
-
-El autor aprobó todas las pruebas de 0r y pidió el siguiente parche. Se conecta
-el diálogo final del Palomo existente en el segundo piso y la entrega de una
-Caja única, de fase 75 a 80, siguiendo el bloque inmediato de PROJECT.
-Incluye las preguntas opcionales de la especificación, aceptación/reapertura,
-instrucciones de almacenamiento y orientación hacia la cueva bajo la mansión.
-
-La propiedad anterior de la Caja era un booleano con almacenamiento funcional;
-se añade la instancia nativa con ItemId/Owner sin duplicar los 10 kg ni perder
-contenido legado. Guardados y acciones repetidas mantienen una sola Caja.
-El Diario deja de mandar a buscar a Palomo después de recibirla. Los idiomas
-español/inglés se actualizan juntos. La captura de El Loco y salida permanecen
-como el siguiente bloque, sin adelantar la misión ni recompensar Tarot.
-
-README y los cinco docs se sincronizan. Entrega: sólo archivos nuevos o
-modificados para copiar y un TXT de pruebas, sin instalador ni cambios al WAD.
-
-## Supervivencia y cierre de Rulo — 4.33.0r, 2026-09-11
-
-El autor terminó el Toro y aprobó las demás pruebas de 0q. Observó que Caella
-y Argento no hablaban y supuso que habían muerto. GZDoom 4.14.2 reprodujo el
-rechazo en ambos vivos, recuperados y con INCOMBAT persistente tras disparar.
-0r limpia ese estado y añade BUDDHA nativo para los cuatro residentes. Quedan
-en 1 de vida y descansan hasta terminar el intento; también se reparan flags
-de guardados y cuerpos existentes sin duplicar NPC, progreso o botín.
-
-Se sustituye el cierre anterior de Rulo: el encuentro demuestra fuerza innata
-y capacidad de reunir y liderar a los cuatro. Se fija la cueva de la mansión
-como lugar de manifestación de El Loco, después de recibir la Caja de Palomo.
-Ese epílogo sigue pendiente de implementación; no se presenta como jugable.
-
-Se corrige también el README entregado en 0q que todavía anunciaba 0p y la
-antigua garantía de una armadura T1 por el cuero del Toro. README y cinco docs
-quedan sincronizados; sólo archivos para copiar más el TXT, sin instalador.
-
-## Correcciones de Rulo/Toro — 4.33.0q, 2026-09-11
-
-El autor confirmó exitoso el resto de 0p y señaló: demasiado cuero, Argento
-pidiendo hablar con Argento y necesidad de estar acompañado por los cuatro.
-Se sustituye el presupuesto por recetas (313,6 kg para talle M) por 12,5 kg de
-cuero acabado: estimación de piel fresca y procesamiento detallada en SYSTEMS.
-Se conserva el cajón de guanteletes; queda obsoleta la garantía de un conjunto
-T1 completo por el botín del Toro. Se revisará cobertura en la auditoría final.
-No se confisca material de victorias anteriores.
-
-Los cuatro NPC originales se incorporan al encuentro, pueden recibir cornadas
-y quedar fuera de combate, se recuperan al reintentar o ganar y permiten cerrar
-con Rulo dentro del recinto. Un golpe final de un compañero acredita la victoria
-al jugador. Tras cerrar y dejar de verse, vuelven a sus dormitorios. Las nuevas
-referencias/estado usan guardado nativo. Argento tiene voz propia para orientar
-sin nombrarse como un tercero. El motor y MAP01.wad permanecen iguales.
-
-Siguiente bloque: Palomo final y Caja Mágica; después El Loco y salida. La
-arquitectura de código sigue reservada a V5. Se actualizan README y cinco docs;
-delta sobre 0p más un TXT de pruebas, sin instalador. Resto de 0q aprobado por el autor; bloqueo poscombate tratado en 0r.
-
-## Prueba de Rulo — 4.33.0p, 2026-09-11
-
-El autor pidió seguir con la misión y señaló a Rulo como la parte restante.
-Se implementa sobre 0o: prácticas en el blanco debajo de su dormitorio,
-seguimiento en Detalle, entrega de llave por Argento, Toro encerrado durante
-el encuentro, recuperación tras derrota, cuero único y cierre al volver a Rulo.
-Las 36 opciones iniciales tienen acciones o equivalencias realizables; la
-magia en movimiento evita un bloqueo por coste de carga. Se incorpora munición
-prestada para armas de distancia y se preserva la munición que ya era propia.
-
-La prueba encontró y corrigió dos problemas: el blanco recibía empuje después
-de un impacto melee y la jabalina tenía alcance cero en su fallback de AltFire.
-El Toro usa un estado quieto durante la preparación para evitar un paso de IA
-antes de comenzar. Estados nuevos se anexan, WAD y assets se conservan.
-
-Validación en GZDoom, matriz de armas y guardado nativo documentados en PROJECT.
-Resto aprobado por el autor; las tres observaciones se corrigen en 0q.
-El cierre con Palomo/Caja/El Loco/salida
-continúa en el roadmap; la ampliación de supervivencia de Ronnie no bloquea
-retroactivamente el avance solicitado. README y los cinco docs actualizados;
-formato de archivos para copiar más un único TXT, sin instalador.
-
-## Aprobación de 4.33.0n y corrección 4.33.0o — 2026-09-11
-
-El autor confirmó: «Todas las pruebas dieron exitosas». 0n queda como base
-completa aceptada, con el alcance narrativo documentado en esa entrega.
-Pidió quitar el manual de materiales básicos que quedó al costado: corresponde
-al Manual de Procesamiento en (-364,800,0), junto a los antiguos talleres.
-0o retira sólo ese ejemplar del mundo, tanto en partida nueva como al cargar,
-sin revocar conocimiento ni alterar el WAD. Se actualizan README y cinco docs;
-se entrega delta sobre 0n y un único TXT de pruebas.
-
-## Decisiones y correcciones 4.33.0n
-
-- El autor acepta las estaciones de 0m y pide ubicarlas contra esquinas y,
-  arriba, en una fila al fondo. Se conservan 38 instancias y cinco redes.
-- Las activaciones de puertas/estaciones ahora comprueban altura y visibilidad.
-  Tab cierra Oficios; filtro pasa a G. Mismo comportamiento de pausa/reservas.
-- Caella deja de referirse a sí misma en la indicación de la pared. Todos los
-  residentes describen recursos actuales, cajón y vetas.
-- Gemas trasladadas a cinco vetas al fondo. La petición inicial de quitar el
-  cajón queda sustituida por la última corrección: sólo cuero de vaca suficiente
-  para los guanteletes gigantes, al talle y 25 % por capa (96 kg en M).
-  El alcance de abastecimiento se limita a T1; se mantiene infraestructura T2.
-- Arco/arco largo enseñan diez flechas y todas sus dependencias. Receta 129;
-  conocimiento anterior preservado. Salida personal, sin reclamar primera arma.
-- Argento guarda la llave y el Toro ocupa la sala cerrada inicial. Preparadas
-  transferencia única, activación posterior a las prácticas y muerte con
-  cuero para un conjunto completo T1 de cualquier familia. La lección de Rulo
-  aún debe conectarse; no se declara jugable ese tramo por colocar los actores.
-- Palomo corre visible por ambas escaleras hasta el segundo piso, conserva
-  colisión y guarda su recorrido. Se corrige la ocultación previa con el flag
-  nativo INVISIBLE: Alpha=0 no ocultaba su RenderStyle Normal.
-- Validación de esta entrega y límites en PROJECT.md. README y los cinco docs
-  actualizados; delta sobre 0m con un TXT, sin instaladores ni cambios al WAD.
-- El problema de herramientas que interrumpió la preparación quedó resuelto;
-  no queda una decisión pendiente sobre el cuero ni sobre incluir T2.
-
-## Decisiones y correcciones 4.33.0m
-
-- El autor solicita masa vegetal realista y dureza de madera. Los arbustos
-  dejan los 100 kg de 0l: 10 kg estimados de parte aérea para un ejemplar mediano,
-  dureza heredada 2,5, escala 0,05. Veinte ejemplares aportan 200 kg de capacidad.
-  No es un pesaje ni un valor universal de todas las especies (SYSTEMS.md).
-- Ceibos y arbustos rodean la entrada. Se retira toda la vegetación de la cueva;
-  permanecen cobre, estaño y el cofre de gemas/cuero. Se conserva la fracción
-  agotada al migrar 0l, teniendo en cuenta los Default omitidos por GZDoom.
-- Las estaciones se trasladan a los dormitorios: Rulo/pesado, Ronnie/mediano
-  y distancia, Argento/liviano, Caella/magia, con componentes/procesamiento T1–T2.
-  La habitación interior del segundo piso reúne las doce. Sin estaciones afuera.
-  Se reutilizan las instancias anteriores y se preservan las reservas de tareas.
-- Argento consulta la misma indicación de etapa que Detalle: Caella pendiente,
-  devolver el préstamo, ir a Ronnie, recolectar o devolver la espada, según avance.
-  Todos los residentes pueden indicar talleres y nuevas ubicaciones de recursos.
-- Las cuatro runas ya no retiran el equipo ni completan Caella. A 4/4 se vuelve
-  a hablar con ella, se confirma la devolución y entonces habilita atravesar la
-  pared visible. Los guardados ya completados conservan su progreso y recuperan
-  la textura original. Las marcas permanecen encendidas.
-- Se integran 240 sprites de Poses_Agachados_v3 y los 40 acostados recuperados
-  de Poses_Descanso_v2. Los PNG se copian sin cambiar píxeles ni offsets.
-  Fuentes en assets/source/art; estados de los cinco personajes, locomoción
-  agachada de Domingo y preparación gráfica para futuras sillas/camas.
-- Compatibilidad: los estados nuevos se añaden al final para conservar los
-  índices de estados de los NPC en guardados anteriores. El agachado de Domingo
-  declara su sprite al renderer para que no se comprima verticalmente dos veces.
-- Validación técnica: 767 comprobaciones sin fallos en GZDoom 4.14.2, incluidas
-  interfaz nativa, recetas T1/T2 y cuatro recorridos de guardado/carga. Se conserva
-  y completa una fabricación 0l pendiente tras trasladar su estación. Alcance
-  y límites en PROJECT.md; la prueba de juego del autor sigue pendiente.
-- README y cinco docs actualizados. Mismo formato de delta y un TXT, sin scripts
-  de instalación. Las pruebas de 0l no se declaran aceptadas por el autor: sus
-  nuevas observaciones originan esta revisión.
-
-### Registro técnico archivado de 4.33.0l
-
-- GZDoom 4.14.2 compila y carga los 4.151 archivos de runtime sin errores ni
-  advertencias nuevas. La matriz central pasó 102 comprobaciones: préstamo,
-  cierre de Caella sin retirar la espada de Ronnie, receta/dependencias, stock,
-  protección de suministros, resultados personales y primera arma por ItemId.
-- Se compararon 180 planes (36 armas por cinco talles) con el blueprint real
-  del motor, al 25% en cada capa. Coinciden todos; el cofre cubre cada opción.
-  Los nodos existentes alcanzan los máximos: madera 336.000, cobre 4.838.400,
-  estaño 537.600 y fibra 144.000 unidades. No se aumentaron vetas ni árboles.
-- Se completaron 36 transacciones reales de crafting, una por elección en M,
-  sin Caja Mágica. El ensayo inyecta materias primas y adelanta el reloj de la
-  tarea para verificar reservas/salida; no acredita el ritmo de recolección ni
-  la duración de una partida manual. Siete comprobaciones adicionales verifican
-  procedencia temporal de un componente real, protección y cálculo de faltantes.
-- Diez comprobaciones de interfaz nativa: Usar abre Ronnie y cofre, elegir
-  Libro/Aire llega a la receta correcta y retirar topacio cambia el stock.
-  Capturas revisadas: familias, explicación/confirmación, préstamo, ambas
-  páginas del cofre, Detalle paginado y arbusto transparente en la cueva.
-- 42 comprobaciones de persistencia y viaje, cero fallos: guardar con 0k en
-  fase 45 y espada de cueva recogida; actualizar la misma instalación a 0l;
-  adoptar esa instancia, retirar gemas y guardar con tarea/reservas activas;
-  cargar, cancelar y devolver sólo suministros, preservando 123 unidades propias;
-  fabricar, devolver la espada, guardar/cargar con arma inicial y una adicional;
-  cambiar de mapa conservando la primera y retirando temporales. El arma activa
-  temporal se sustituye por la inicial sin referencias a equipo destruido.
-- La espada también se ensayó por la ruta real de ataque/LineAttack: el
-  principal alcanza el arbusto y produce fibra; el secundario no la produce.
-  La dispersión existente sigue aplicándose: hay que alcanzar la planta.
-- README y cinco docs actualizados; validación de recursos/traducciones sin
-  errores. WAD, 74 archivos de audio y modelos aceptados mantienen sus huellas.
-  El ZIP se coteja contra 0k y sólo contiene el delta y su TXT de pruebas.
-
-Pruebas del autor: recorrer una elección física y otra de esencia usando
-guardados separados; recoger fibra con el principal de la espada y comprobar
-que el secundario no la entrega; retirar/devolver suministros; fabricar en
-la red exterior, por capas si hace falta; guardar/cargar antes y después de
-devolver el préstamo. El TXT del ZIP contiene los pasos concretos.
-
-Los ensayos usan una base reconstruida de 0k con archivos cotejados y GZDoom
-4.14.2/OpenGL. No sustituyen la revisión visual/jugable en Windows del autor.
-No incluyen pruebas de cooperativo. Motor, IWAD, fixtures y guardados de ensayo
-permanecen fuera del parche. Registros técnicos de 0i–0k: HISTORY.md.
-
-## Decisiones y correcciones 4.33.0l
-
-- El autor confirmó todas las pruebas de 0k. Se acepta el recorrido de Caella,
-  Detalle y limpieza; las objeciones anteriores quedan resueltas en esa base.
-- Reemplaza la asignación automática de arma por clase: Ronnie pregunta qué
-  arma quiere el jugador, explica características y enseña esa receta y todos
-  sus componentes. Las 36 variantes T1 usan el catálogo existente.
-- La espada para extraer pasa a ser préstamo de Ronnie. Se adopta la antigua
-  instancia si ya estaba en inventario y se retira al volver tras fabricar.
-- Sólo se conserva la primera arma fabricada. Se entrega al inventario personal
-  para no exigir prematuramente la Caja; las demás son temporales.
-- El autor pide arbustos como sprites 2D que den fibra mediante daño cortante.
-  Se incorpora un recurso original con alfa, tres ejemplares y extracción nativa.
-- Un cofre en el sótano aporta gemas y cuero de vaca: máximos por material entre
-  las recetas T1 al talle del personaje y 25% en todas las capas. Stock finito,
-  retirada por falta/carga, devolución de sobrantes y persistencia por personaje.
-- Se conservan mapa, recetas, costes y audio. Los registros siguen siendo README
-  más cinco docs; la validación antigua de PROJECT se archiva aquí para dejar
-  allí sólo el estado y los ensayos actuales. Entrega sin instalador, un solo TXT.
-- La parte material de Ronnie llega a fase 60. Comida/bebida, reparación real,
-  Aire/agua y su cita de Palomo siguen pendientes antes de Rulo; el flag de una
-  cita no oída no se activa. Tampoco se agrega munición ni se adelanta la Caja.
-
-## Decisiones y correcciones 4.33.0k
-
-- El autor acepta expresamente HUD del Sello, idioma de Caella y modelos de
-  estaciones de 0j. La prueba de runas y el audio no quedan aceptados por esa
-  declaración: sigue faltando localizar las runas.
-- Se vuelve al formato de fuentes modificadas para copiar y pegar más un TXT
-  con pruebas. Se abandonan aplicadores CMD/PS1 y manifiestos por parche. El
-  constructor existente en raíz conserva su utilidad; la migración 0h queda.
-- A pedido del autor se retiran los 250 objetos del surtido de prueba de las
-  seis primeras habitaciones de planta baja. Incluye la llave plateada y la
-  carta sellada colocadas allí para pruebas; sus futuros usos siguen sin fijar.
-- Se conserva el WAD para cargar partidas previas. El controlador limpia una
-  vez las instancias originales; preserva inventario, descartes y actores de
-  otros lugares. No se reutiliza ese filtro como regla permanente de la zona.
-- Misiones incorpora Detalle con F/Y, lectura con Arriba/Abajo y regreso con F.
-  Muestra contexto y acciones actuales, práctica pendiente/completa, ruta a
-  las runas y transición a Ronnie según el registro persistente.
-- Caella y Detalle comparten la ruta desde la entrada, usando el pasillo,
-  escalera del fondo, derecha/sur y pared trasera como referencias visibles.
-- Pruebas de esta revisión en PROJECT.md; contenido de Ronnie aún pendiente.
-
-## Decisiones y correcciones 4.33.0j
-
-- El autor reportó Caella sólo en inglés. El bloque nuevo usaba [esp] y el
-  resto del proyecto [es]; se corrige el identificador y se comprueba la
-  resolución real de cadenas en español dentro de GZDoom.
-- Se aclara que el Sello de fuego basta: las cuatro runas se usan con el
-  implemento activo, sin equipar otros Sellos ni disparar a los emblemas.
-- El autor reemplaza el texto central del Sello por icono lateral: color si
-  puede usarse, gris cuando está bloqueado y segundos debajo durante recarga.
-- Se crean los doce modelos de estaciones según sus sprites, con geometría
-  sencilla y herramientas características. El yunque conserva tocón y la
-  forja una base de mampostería; no se colocan sobre mesas.
-- War Drums cambia de bucle a una reproducción. Salir inicia menu_strings_start
-  al abrir la confirmación; cancelar debe volver al menú padre. No se recortan
-  los stocks y no se asignan cuerdas a otras confirmaciones del juego.
-- La aceptación de 0i sigue pendiente. Sus comprobaciones anteriores no
-  detectaron el identificador español incorrecto ni acreditaron la salida en
-  la instalación del autor. Los resultados de esta revisión están en PROJECT.md.
-
-
-## Registro vigente de versiones recientes
-
-| Versión | Resultado |
+# Caelum Argenteum — Consolidated history
+
+Documentation version: **4.36.1** — 2026-09-23.
+
+## 4.36.1 — English documentation and repository-owned acceptance workflow
+
+Issue [#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6).
+Baseline: `c16528a042e105e601f65b946d32c65f16ed1dfc` (4.36.0i).
+Implementation and verification date: 2026-09-23.
+
+### Implemented scope and decisions
+
+- Translated all five maintained canonical documents, release-history prose and
+  project-authored ancillary guides/credit notices into English. Reviewed full
+  texts against their originals, including negations, formulas, units, tables,
+  dates, acceptance status, attribution and unique historical decisions. Original
+  English archive extracts retain their text; proper names, identifiers, literal
+  localized dialogue, formula examples, original prompts and external license/source
+  material retain their spelling. Original repository/archive evidence is preserved.
+- Established numeric current patches: 4.36.0i -> 4.36.1 -> 4.36.2 -> 4.36.3.
+  All current headers and the two relevant runtime diagnostic labels identify
+  4.36.1. Historical labels and the larger roadmap are unchanged. Implementation
+  commits and later acceptance of this issue keep the same patch version.
+- Aligned AGENTS, PROJECT, CONTEXT, TASKS, README and the task template around
+  Work planning -> concrete issue -> desktop Codex implementation/tests -> linked
+  PR review -> author acceptance where required. GitHub is the primary source;
+  ZIPs are optional exports. Historical copy instructions are explicitly historical.
+- README now explains clone/update, `python validate_project.py`, expected JSON
+  and exit status, failure reporting, build/run and the root pending queue.
+  Removed the active dependency on absent `PRUEBAS_4_36_0i.txt`; legitimate old
+  references remain historical. Corrected the stale README claim that only the
+  Fool is obtainable to include the already-implemented Ace of Cups; no Tarot
+  design or runtime behavior changed.
+- Added [pending_test.txt](../pending_test.txt), containing only outstanding,
+  reproducible author checks with stable IDs, origins, prerequisites, steps and
+  expected results. It carries earlier outstanding checks forward. Only explicit
+  author pass confirmation transfers the ID, original version/issue, result,
+  date and qualifications to that release's history and removes the corresponding
+  queue entry in the same update. Partial, failing or unconfirmed checks remain;
+  an empty tracked queue is valid. Merging/closing or automated success is not
+  author confirmation.
+- Updated the read-only standard-library validator for English/bold headers,
+  numeric current-version agreement across README, AGENTS, all seven documents
+  and the two diagnostics, plus queue existence and direct README links. Retained
+  audio, model, include, structure and Spanish localization checks. Modified
+  tooling comments, help and diagnostics use English.
+
+### Executed verification
+
+Environment: Windows 11 (10.0.26200), Windows PowerShell 5.1.26100.9444,
+CPython 3.12.14, AMD64. The session used the bundled interpreter at
+`C:/Users/dcc70/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`;
+its directory was added to the test process's PATH to exercise the documented
+`python` command. This does not verify the author's normal terminal setup.
+
+- `python validate_project.py`: exit 0; version 4.36.1, seven documents,
+  80 audio files, 12 station models, 24 Spanish Caella keys, premises 1–20,
+  1,093 CONTEXT words and `errors: []`.
+- `python build/validator_cases.py`: exit 0; all 16 isolated cases passed on
+  disposable copies of the final tree. Matching English/bold headers, historical
+  suffixes and an empty queue passed. Current suffixes, mismatched/missing current
+  headers, a diagnostic mismatch, missing queue, broken README link, missing
+  direct history link, broken audio reference and a missing Spanish Caella key
+  were rejected. The restored fixture passed again.
+- The same disposable exercise demonstrated multiple originating versions in one
+  queue: partial, failed and unconfirmed examples remained; only the specifically
+  confirmed synthetic example transferred to a corresponding history entry with
+  ID, version, issue, result, date and qualification. Example date 2000-01-01 was
+  explicitly synthetic. No real pending entry was removed or confirmed.
+- `powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./build_dev.ps1`:
+  exit 0; rebuilt PK3 with 5,315 files and zero directory entries.
+- `python build/check_4361_scope.py`: exit 0. PK3 CRC passed and every archive
+  entry matched its source bytes. Gameplay-source changes are exactly the two
+  diagnostic version substitutions. The other runtime changes are translations
+  of two project-authored credit notices. Maps, art, audio, game localization,
+  generators, archive snapshots and save logic are unchanged.
+- `git diff --check`: exit 0. Cross-review retained canonical section/table and
+  literal-formula structure, numerical values and checked identifiers; all 17
+  ancillary guides/notices retained their numeric token counts and technical
+  references. Transient review scripts, fixture data and generated outputs stay
+  under ignored `build/`; they are not delivered as a new project test framework.
+
+### Engine verification and author acceptance
+
+No new engine session or author acceptance is claimed for this documentation
+patch. Earlier native engine evidence below retains its original release and
+limitations. No save migration is introduced.
+
+Outstanding checks: CA-4361-WINDOWS-01 for the author's installed Python/launcher
+and diagnostic headers; CA-4360I-VISUAL-01, CA-4360I-MAZE-01,
+CA-4360I-SAVE-01 and CA-4360I-TABLES-01 retain the documented 4.36.0i acceptance
+scope. Their executable instructions are only in the root queue. Accepted 0h
+and earlier work is not reopened. Next: review the linked PR and record actual
+author confirmations through the queue lifecycle; remaining 4.36 development
+continues in TASKS without invented acceptance criteria.
+
+## 4.36.0i — approved weight, provisions and complete maze
+
+- Complete baseline recovered from commit 1ed8e8d543ab19dbc1ca38dc438e61df5363681e.
+- Requested flail revision: +22,5° counterclockwise, half the handle inside the
+  glove, chain and ball behind it, vertical rest and counterclockwise attack revolution.
+- Twice the thickness for both bows in first person only, preserving accepted work.
+- Rations of 200 g; water 200 ml. Calibration of 2 kg/2 L for 80 kg.
+- MAP01 tables at full capacity (94 units), allocated once.
+- Resting-weight formula activated after the author's explicit approval:
+  excess over capacity, percentage health, native support and distribution of stacks.
+- MAP02 rebuilt with permission to change saves: 147 rooms, 96 Mandingas,
+  45 traps, three keys, 39 chests and 195 equipment pieces.
+- 120 food and 120 water rations; final Zupay, Ace of Cups and coast.
+- New keys integrated into Inventory; loot through native pickup; persistent
+  card and conditional exit. Hub return leads to the final chamber.
+- README and all five canonical documents updated; separate 0i guide.
+
+Compilation and native tests ran in GZDoom g4.14.2/Linux with development
+Freedoom 0.13.0. Previously accepted author tests remain closed; acceptance of
+this increment and the Windows playthrough remain outstanding. The entire
+4.36 physics roadmap is not declared complete. The missing separate 0i guide
+is superseded for current use by the root pending_test.txt, introduced in #6;
+its outstanding checks retain their 4.36.0i origin. No new author confirmation
+has been recorded for these carried-forward tests.
+
+## 4.36.0h — 90° rotation, specified mask and percentage damage
+
+The author approves the rest of 0g and specifies two visual changes: a 90°
+clockwise flail rotation and the red/blue areas of the bow grip.
+
+- Flail T1–T3: +28° → −62°; grip (200,158) to avoid side clipping.
+- DH12: upper index-finger strip outside the front mask; thumb enlarged to
+  cover the blue segment. Neither glove nor scale changes.
+- MAP01 tables: real initial food per seat. Persistent state and balance;
+  existing food is counted, other objects preserved, consumption does not refill.
+- Native ceiling Crush damage: points converted to % maximum health only with
+  null source/inflictor, in both CaelumPlayer and CaelumCombatActor.
+- Compatibility: value 10 and native map timing preserved; interpretation
+  becomes 10% per pulse. MAP08.wad is not modified.
+- Static-weight proposal documented without activating unapproved values.
+- 4.36 roadmap updated with actual acceptance and outstanding work.
+
+Source/model checks and visual reconstructions passed. GZDoom was neither
+compiled nor run; the available baseline was still partial.
+
+## 4.36.0g — corrections after the 0f review
+
+- Flail T1–T3: native rest rotation +14° → +28°, upper end toward the left.
+  The existing modular path is retained.
+- Axe T1–T3: head on layer 50 at 1.5 times its previous scale; handle on 48
+  at its original scale. Fixed joint below the ring; hands are not enlarged.
+- Halberd T1–T3: shaft on 48, axial extension ×1.8; blade and ribbons on 50
+  at their previous scale. Hand at (222,180) to frame the tip.
+- Greatsword: accepted shape preserved; native desaturation and modulation
+  for the view, three icons and ground sprite.
+- Bows: new muted palette and DH12 mask. Index finger behind; thumb and
+  middle/ring/little-finger phalanges in front. Arrow remains on 53.
+- New states appended; diagnostic identifier 4.36.0g.
+- README, PROJECT, HISTORY, SYSTEMS, ASSETS and test guide updated.
+
+Sources and reconstructed views verified, without GZDoom compilation/execution.
+Damage, range, consumption, maps, audio and travel do not change. The axe's
+blunt secondary attack is documented as an existing rule.
+
+## 4.36.0f — native rotation, bow grip and fast rock
+
+The author's 0e test found several weapons tilting the wrong way, the hatchet
+still too high and the string horizontal. The 0e preview had assumed clockwise
+rotation and scaling before rotation; renderer 4.14.2 uses counterclockwise
+rotation and scaling afterward. That assumption is corrected.
+
+- Hatchet, machete, axe, war axe and halberd: native rotation −28°.
+- Modular flail: +14°, toward the left. New states appended.
+- Hatchet: Offset Y 174 → 150; weapon lowered 24 MU relative to the grip.
+- Absolute pivots with NoTrim, independent of a cropped alpha bounding box.
+- Greatsword with a wider blade, all three tiers in first person and Inventory;
+  ground sprite CGRS uses the same new T1 resource.
+- Bows: muted palette; fingers 49, stave 50, thumb 51, right hand 52, arrow 53.
+  Layer 53 is also cleared when switching to fists or non-modular weapons.
+- String uses Coord0–Coord3; removes post-rotation horizontal scaling.
+- MAP08/TID 43602: speed 8 → 32 MU/tic in map, generator and recovery of the
+  next activation in saves. Calculated physical damage is preserved.
+- Actual formulas and the absence of static crushing beneath a resting rock
+  are documented. It is not presented as a completed feature.
+
+Structural checks and reconstructed visual validation performed; compilation
+and gameplay pending. GZDoom was not run. Audio, transitions and vehicles are
+outside this delta.
+
+## 4.36.0e — corrections requested after testing 0d
+
+[IMPLEMENTED] Fists with continuous forearms and the same glove as other
+weapons; left and right derive from the same original PNG, mirrored by TEXTURES.
+The original hand set is also used for both bows. Left hand on a layer in
+front of the right. Glove sizes are independent of weapon size.
+
+[IMPLEMENTED] Hatchet, axe, war axe and halberd tilt right, with handles seated
+in the grip. Sword +20% and greatsword +15% relative to 0d. Recurved standard
+bow and continuous-stave longbow, both in T1–T3, with string between tips and
+hand; the arrow is visible only when loaded.
+
+[IMPLEMENTED] Cropped MAP01 chord at the first Arcana revelation. Original
+level-up sound when capture is confirmed and its bonus applied.
+[CONFIRMED BY THE AUTHOR] 0d transitions work correctly; their logic is retained.
+
+[IMPLEMENTED] Carriage with front axle and two front wheels: four wheels total.
+Ship has a non-solid Use volume in front of the hull in addition to the sign;
+the hint stays centered and retains boarding requirements. New parts are added
+once when preparing vehicles, including upon loading.
+
+[VERIFIED LOCALLY] Changed source/resource structure, references, layers, OBJ
+geometry and reconstructed weapon/model views. GZDoom was not run for 0e:
+the complete baseline had not been recovered and no engine was installed.
+Changed files start from their latest recovered versions.
+[PENDING] Compilation and gameplay/visual testing in GZDoom 4.14.2 / Windows 11.
+Instructions: PRUEBAS_4_36_0e.txt. Following sections are historical.
+
+## 4.36.0d — grips, fists and gallery reset (2026-09-17)
+
+- Addresses the author's four images: blade orientation, hatchet grip, small
+  hands, two-handed large weapons and low crossbow/carbine/bow positions.
+  Dagger and magic retain the accepted art.
+- Independent native layers correct handedness without reversing hands.
+  All selectors receive downward-left holstering. Sword activates the new
+  art without moving its old state indices.
+- Empty carbine returns to rest without a muzzle flash. Ground bullets at 0,10.
+- Two original images: closed fists and dorsal left bow grip. The project's
+  fallback replaces Fist and equips when unarmed, including the narrative
+  MAP01→MAP02 return. Previous fallback balance is retained.
+- “Usar:” hints when aiming at vehicles, tables and chairs/beds within reach.
+- Travel visual failure reproduced: 0c's event check missed NoWipe suppressing
+  the hub wipe for 35 presentations. Departure view is retained during that
+  interval, then the native effect runs. Frame captures confirm actual
+  crossfade and melt. MODE_CARAVAN also uses crossfade; accepted burn retained.
+- Mechanism 4 identified as teleport, with arrival message/flash and visible
+  rune. Side lever rearms the gallery while retaining counters. Prechecks
+  prevent closing on occupants or duplicating a moving ceiling; two complete
+  reset/reactivation cycles pass in the engine.
+- 60 real family/tier selections, combat/reload phases, uses, fists, confirmed
+  trips and 0c migration checked in g4.14.2/Linux. Captures in 4:3/16:9;
+  eight WADs and previous states preserved.
+- Delta over 4.36.0c and PRUEBAS_4_36_0d.txt. Windows acceptance pending;
+  4.36 remains open and unapproved proposals are not advanced.
+
+## 4.36.0c — views, sounds and mechanism review (2026-09-17)
+
+- Author request: halve lever size, review mechanism 4 and rock mass/damage;
+  integrate two supplied packs; carriage crossfade and El Loco burn.
+- Pressure rejection reproduced when touching only the plate edge. Check
+  includes foot radius; invalid destinations documented, telefrag/chain
+  safeguards retained. Diagnostics added.
+- Lever at scale 0,045, also in previous saves, with supplied click.
+- 19 new first-person families in T1/T2/T3 connected to real selectors;
+  accepted modular sword retained. Phases follow actual actions, no duplicate
+  layers, new states outside already-serialized classes.
+- Complete Audio Eventos v1 revision 1.4: travel, lever, Tarot capture and
+  spatial rock loop. Capture uses a local event independent of the camera.
+- Carriage: crossfade; El Loco MAP01→MAP02: burn; ship: melt. Single-crossing
+  overrides and sound after loading, without modifying wipetype.
+- Large mass verified: 38170 kg. Test fall with Hardness 13, no armor:
+  1343 points out of 1780. No fixed death or damage multiplier added.
+- WADs and prior states preserved. Incremental delivery over 4.36.0b, with
+  pack sources and PRUEBAS_4_36_0c.txt. Windows review pending.
+
+## 4.36.0b — mechanisms and approved traps (2026-09-17)
+
+- Author accepts the other 0a tests and requests larger Toro/rocks, round
+  rolling rocks, a column-mounted lever, mines, teleport, crushing,
+  transitions with sound and a ship melt.
+- Toro enlarged through TEXTURES and view-normalized running. PNG, anatomy,
+  mass and charge retained.
+- Spherical 96 MU hazard rock, mass derived from volume/density and central
+  pivot. Environmental rocks retain their previous art.
+- Original two-position lever, column support and wall mode; Use activates
+  rocks or ceilings and its spent state persists in saves.
+- Single-explosion environmental mine, local teleport without telefrag and
+  single-cycle native ceiling. Gallery values are test settings.
+- One-time preparation on existing MAP08: MAP01–08 WADs unchanged.
+- Ship uses a native melt per crossing and sound upon destination load.
+  Global preference and travel consumption/time rules unchanged.
+- Immobilization-rune proposal submitted for review only; not implemented.
+- Incremental delivery with PRUEBAS_4_36_0b.txt and five updated documents.
+  Author's 0b gameplay/aesthetic test on Windows 11 pending.
+
+## 4.36.0a — trapdoor and physical rocks (2026-09-17)
+
+- Author approves 4.35.0q and confirms closure of 4.35.
+- Authorizes starting 4.36 and requests floor traps opening when stepped on.
+- Trapdoor over a real pit, support-triggered activation, native gravity and
+  persistent state without automatic rearming. MAP08 gallery has stair exit.
+- Two Use mechanisms release existing granite: horizontal rolling and a
+  drop from above. Single activation, no repeated actor creation.
+- Vertical API added to Impact Physics; approved formulas preserved.
+  Explicit environmental origin and no extra native thrust on physical damage.
+- Native tests, saves and visual review recorded in the delivery TXT.
+  Author's acceptance of this increment on Windows 11 remains pending.
+- Special surfaces and large hazards remain in block 4.36; followed by 4.37,
+  playtest export, V5.0 and thermal exposure V5.1.
+
+## 4.35.0q — sprites v4 and one-third eating rate (2026-09-17)
+
+- The author approves the rest of 0p and contributes sprites/icons v4.
+- Seated consumption: divisor of 3 instead of 10; 30 s per full portion, with the same benefit and consumption, digestion, reserves and automatic repetition.
+- 750 sprites and 256 catalog icons from the author's package are integrated; only 903 PNG
+  differ from 0p and are included in the patch.
+- Breathing/running of nine characters; separate walks of four, rest poses of Palomo and own
+  resources of the sleeping bag.
+- Integration adapted to the real movement/AI of 0p. States annexed to the end to protect
+  saves; crouching, combat and orientation of furniture retain priority. The PNG and offsets
+  of the author are not modified.
+- Native 4.14.2 tests and review of resources documented in the TXT patch. The author
+  approved the rhythm and visual appearance of 0q by authorizing 4.36.
+
+## 4.35.0p — reservation and coastal transport (2026-09-17)
+
+- The author tests 0n and 0o and approves the rest of their changes.
+- Table: reserves from inventory and the Box after exhausting the tabletop food, with exact deduction of
+  units/liters, preservation of stacks/containers and approved rhythm.
+- Q/B cancels the estimate and returns to calendar; Escape retains pause.
+- Covered carriage in a ranch building and merchant ship with sails/oars in MAP06 and MAP07. MAP06 uses the
+  existing port; MAP07 adds a passable dock.
+- Physical modes at 3 km/h and 5 knots; sleeps on board without stopping the boat.
+- Travel estimate and travel integrated with provisions, agenda, hub and save/load.
+- Models and collisions are also installed when loading 0o maps.
+- Native and visual patch validation; manual 0p acceptance pending.
+
+## 4.35.0o — monthly calendar and events (2026-09-17)
+
+- The author defines the categories of events and asks for marks in a calendar.
+- Persistent agenda with unique/recurring events, stable keys, states, concealment,
+  cancellation and arithmetic resolution as the clock advances.
+- Monthly view and detail in TAB/World/F, with intervals, next date and actions.
+- Routine adapters, siege phases, mission expiration, rents with debt/payment and goods
+  withdrawn/delivered from real inventory.
+- Node recovery linked to the same clock, even on absent maps; the previous rate of 0,1 %
+  capacity per day is maintained.
+- Voluntary trial with separate manager; no timetables or canonical prices.
+- Native calendar tests, transactions, recurrences and acceleration; trips and saves are
+  documented in PRUEBAS_4_35_0o.txt.
+- Candidate to 4.35 closure; 0n and 0o test/acceptance pending author. Complete battles
+  and campaign expansion retain its V5 block.
+
+## 4.35.0n — travel, rest and provisions (2026-09-17)
+
+- The author approves food and maps of 0m and defines two-way routes of 10 km
+  (sewers/port) and 500 km (port/beach).
+- Conversion of native sustained walking to km/h with 32 MU/m; speed fixed at departure, 16 h of
+  march / 8 h of sleep, no additional night after arrival.
+- Visible estimate of time and supplies, confirmation/cancellation and revalidation after
+  change or loading a save. Diagnostic caravan still on foot.
+- Real consumption limited to personal inventory and liters of containers; mass,
+  digestion, needs, regeneration, Sleep/Lucidity and own bag.
+- Single clock interval, persistent arrival/climate and maintenance of incomplete
+  portions. Shortfalls and predicted death visible before accepting.
+- Native tests Linux/GZDoom 4.14.2 and UI capture; Windows acceptance of 0n pending.
+  PRUEBAS_4_35_0n.txt contains installation and concrete results.
+- The scheduled events are explained as events with date/time; their content and
+  persistent resolution is missing. Missions and schedules are not invented.
+
+## 4.35.0m — food by mass, port and coast (2026-09-17)
+
+- The author confirms Buenos Aires for sewers and subsequent maps, provides textures and
+  asks to extend to food the rule of water mass.
+- Hunger and Thirst per ration = 800/mass; body base M of 80 kg receives 10 points. Food
+  preserves weight, pulses, sitting rhythm, repetition and actual digestion.
+- Serialized food dose at the beginning; active old effects continue with their previous
+  pulse. The new rule starts at the next serving.
+- 18 Author's Materials, Unmodified PNG; MAP06 Port and MAP07 Coastal, Connected MAP03 ↔
+  MAP06 ↔ MAP07 by Use and Test Caravan.
+- Native ceiling/water volumes, two shelters with a two-chair table, surface climate of Buenos
+  Aires and safe rest areas for T.
+- Access migration in saved MAP03, previous IDs preserved, Journal with space for seven visits. Map
+  generator and art source included.
+- GZDoom 4.14.2/Linux tests and visual revision described in PRUEBAS_4_35_0m.txt. 0l/0m
+  acceptance on Windows pending; 0j/0k are still approved.
+- 4.35 is not closed: trips with duration, scheduled events and integration/joint
+  acceptance are still pending. More maps are not a closing condition.
+
+## 4.35.0l — Climate regions, water and chairs (2026-09-17)
+
+- The author approves 0j/0k; 0i notes a chair absent in Ronnie/Argento.
+- Reproduction: second chair behind a wall, in another sector with matching FloorZ.
+  Rotated/repositioned tables; migration preserves occupation and objects.
+- Water: 0,16 L/kg to recover ten Thirst points in body M base of 80 kg; conservation of
+  scale by mass, sitting time and quantities consumed.
+- SMN monthly normals 1991–2020 for nine Argentinian references, with 2011–2020 wind.
+  Source, units, pages, JSON and generator included in assets.
+- Cycle by date/hour, fronts, cloudiness, rain and reproducible wind; actual roof/floors
+  3D, interior and underground space adjust the local environment.
+- Test region for MAP02–05: Buenos Aires, canonical geography pending. Limbo maintains 20
+  °C/55%, with no wind/precipitation, with clock 1:1.
+- Journal shows region/coverage; regional read-only diagnostics.
+- Native verification and detailed manual testing in PRUEBAS_4_35_0l.txt. This delivery is
+  not declared approved by the author and 4.35 is not closed.
+
+## 4.35.0k — local climate status and consultation (2026-09-16)
+
+- The author requests the following patch while testing 0j. His acceptance is recorded as
+  pending and progress is made with the first 4.35 climate block.
+- Common sample of temperature, humidity, wind and precipitation by location and minute of
+  campaign. Persistent seed, explicit profiles and deterministic resolution without
+  reproducing hours of tics when returning to a map.
+- Stable limbo; three subterranean profiles with smooth variations; temperate outdoor profile
+  only for test consultation. All climatic values are provisional, not author-defined balance or
+  historical weather records.
+- Integration with normal and x105 clock steps. Saved/load retains seed/sample; a map
+  without profile cleans the above values. Test calendar and query reports do not change
+  the campaign climate.
+- Journal > World incorporates two environmental lines in English/Spanish, preserving
+  places, connections, records and controls. Two console queries are added.
+- The character's thermal exposure, weather audio-visual effects and Seal extensions retain
+  their later blocks. Events/scheduled trips remain pending before closing 4.35.
+- Native GZDoom 4.14.2/Linux verification of boundaries, cycles, determinism, x105,
+  persistence, travel and migration of an active meal 0j; Journal review. Windows
+  acceptance detailed in TXT, separate from those trials.
+- Delta over 0j, no engine/IWAD, captures, saves or test maps.
+
+## 4.35.0j — local time, slow meals, Use and class area (2026-09-16)
+
+- The author confirms Sleep 100 points/8 hours, 2 kg bag and Sleep 1000 Anima cost. Ask to
+  eat/drink sitting ten times slower, keeping the rations; the serving lasts 100 s of simulation with its original performance.
+- Limbo changes from stopped calendar to 1:1 during normal simulation. Clock, calendar,
+  hourly needs and Sleep recovery use local time; T retains x105 in valid
+  rest/fabrication. The fractional remainder is saved.
+- Palomo mentions another place he knows, without equating it to the world known to the
+  protagonist. The answers and stages of the quest are maintained.
+- It reproduces the native interruption of Use by USESPECIAL in stations on other floors
+  and is corrected with Used. Geometric sight checks for furniture, tables, stations and
+  residents, preserving range and engine obstructions.
+- 75% 0i, 150% before 0h stations, including collision; absolute migration without
+  recreating actors or losing networks, belongings or jobs.
+- The author asks for class radius equal to the Seal radius. 1280 MU common base, modified
+  by the existing attribute; Sleep replaces its old 128 MU test. Other class skills
+  continue in the V5 block.
+- The environment was disconnected during the initial completion: the code and previous
+  tests remained, but ZIP 0j had not been created or delivered. Recovered environment screenshots are reviewed, the new radius is added and delivery is completed.
+- Compilation/experiments GZDoom 4.14.2/Linux: consumption and persistence, calendar, x105
+  parity, manufacturing, 0i save sleep, stations, native Use and Sleep
+  limits/vision/attributes and Seals. Palomo/workshop screenshots reviewed. The TXT
+  distinguishes these results from the pending Windows acceptance.
+- Delta on 0i; README English, five canonical documents and Spanish tests.
+
+## 4.35.0i — 0h corrections and Limbo acceleration (2026-09-16)
+
+- The author approves the design of rations and reports floating height, blocked steps,
+  shared T-key and missing Rulo target. He requests to accelerate also in Limbo while keeping the calendar stopped.
+- Plate/cup height compensated with level.pixelstretch, without changing art. Saved dishes are also updated.
+- Bed/table areas swapped for Ronnie and Argento, with chair clearance; normal cave-room table
+  100 MU to the east; northeast station network to the west.
+- It retains identity/content in saves and is expected to get up before moving occupied
+  furniture. The practice target is assured by actual presence, without relying exclusively
+  on the previous preparation marker.
+- T only accelerates; +10 debug minutes remains on console. Limbo advances
+  resources, sleep, consumables and manufacturing, with immobile clock/calendar. A
+  serialized personal counter avoids omitting or duplicating substeps of rest.
+- GZDoom 4.14.2/Linux native access tests, door passage, target and practice credit, time
+  parity, manufacturing and migration of 0h. Screenshots reviewed. TXT for manual Windows
+  acceptance; delta-only ZIP.
+
+## 4.35.0h — automatic meals and furnished mansion (2026-09-16)
+
+- 0g baseline approved by the author, including sprite orientation.
+- Eating subtracts 1 Sleep point per 4 Hunger points actually recovered; maximum and
+  minimum zero are respected. Drinking does not produce that digestive cost.
+- F/G repeats separately food/drink from the tabletop until it is satisfied or exhausts stocks;
+  another press stops next portions. Standing up cancels. Saved state and compatible with fast
+  advance; no reset for passive expense.
+- Tables with 2/6/12 seats store 4/18/60 objects. Two procedural OBJ models show dishes with food and cups
+  for each real belonging on the surface.
+- Four bedrooms with bed and table of two; table of six next to the false wall/cave and
+  table of twelve on the second floor. No free supplies.
+- Double-dimensional stations: 26 moved to ground floor and all 12 retained above. Five
+  networks connected and independent; NPC indications and test stations in sewers are
+  updated.
+- Use without duration of furniture in MAP01, with ordinary personal simulation and
+  stopped campaign clock. It does not enable fast advance or durations in Limbo.
+- GZDoom 4.14.2/Linux native compilation and testing: digestion, capabilities,
+  objects/figures, consumption, save/load, accessible furniture, USDF menus, Lucidity,
+  station volume and network capabilities. Screenshots reviewed.
+- Delta of sources/models/generator/documentation; README in English and tests in Spanish.
+  Engine, IWAD, test saves and fixtures are left out.
+
+## 4.35.0g — Fast-forward, tables and sleep (2026-09-16)
+
+- 0f base approved by the author. T accelerates only Sleep/Wait or active manufacturing,
+  in safe areas without threats. Share clock/resources/effects, respect thresholds and
+  completion, and retains pause/cancellation between lots.
+- Three original tables in MAP03 with 2/6/12 chairs. Normal 192×96; large 384×192. Food
+  and actual drinks on the board, including partial containers; Use transfers and F/G
+  consumes from an adjacent chair.
+- Persistent references of table, chairs and belongings as the base of Trucazo. Mini-game
+  and automatic food remain outside of this increase.
+- Sleeping drains 10 Lucidity/s without regeneration or interruption due to stunning. Arcanist
+  User4 applies Sleep with the same rule, 10 s, a hit wakes the sleeper, 60 s cooldown and test base cost 1000 Anima. Provisional area 128 MU modified by range. Other skills are pending.
+- PoseAngle corrects the front of the furniture; TEXTURES reverses the RSDO A/B side order
+  (2↔8, 3↔7, 4↔6). They do not change PNG or crouching.
+- Native GZDoom 4.14.2 Linux tests: Equal resources after normal/accelerated time, 20
+  chairs, transfers/consumption/containers, USDF, manufacturing, sleep rule and actual
+  skill release. Active advance load/save and busy table; active bag migration from 0f.
+- Delta ZIP with sources/models/generator/documentation and TXT in Spanish. README in
+  English. Engine, IWAD and QA material are not part of the patch.
+
+## 4.35.0f — Sleeping bag and comfort (2026-09-16)
+
+- The author approves all tests of 0e. Request an inventory bag and set recovery of
+  Health/Air ×2/×3/×4 in chair/bag/cot, with Hunger/Thirst loss divided by those
+  factors. Sleep is maintained without gain in chair.
+- Reusable native bag, provisional weight 2 kg, integrated with inventory, Box, capacity,
+  release and collection. A voluntary preparation in sewers allows to obtain it; it is not
+  delivered automatically.
+- Deployment when choosing duration after closing USDF and validating property/space.
+  Visual collection at completion/cancellation/interrupting, without consuming or
+  duplicating the Inventory or changing its weight. Movement, damage or loss of access
+  cancel.
+- Time factors on natural rates and time expenditure, including regeneration costs.
+  Maximums and blockages for critical reserves are preserved. Anima/Lucidity and
+  consumables retain their rules. Pending respiratory recovery also uses ×F, with debt
+  limit and maximum. Sleep continues to recover a provisional 100% over 8 game hours.
+- Two procedural models with existing materials, provisional fabric icon, visible factors
+  on the panel and new translations/descriptions.
+- Native compilation of GZDoom 4.14.2 on Linux; rate checks, inventory activation/USDF,
+  world/inventory/Box, cancellation, damage, space, limits and save/load. Trials and their
+  continuation after loading end without failure; the save counter is not counted as new
+  tests after loading. An active cot from 0e is also loaded: it receives ×4 and completes
+  without rebooting.
+- The time skip recommendation is documented by intervals and events, initially in safe
+  locations. It is not implemented in 0f; it is still pending in 4.35 alongside weather,
+  events/paths and integration. Export is retained after 4.37 and V5 inherited/transverse
+  work.
+
+## 4.35.0e — chairs, cots and rest camera (2026-09-16)
+
+- The author confirms that all 0d1 tests were correct and authorizes to continue. The
+  Sleep/Wait base repaired by that hotfix is accepted.
+- An original chair and cot by MAP02–MAP05, also for previous saves. Repeated preparation
+  does not duplicate the pair and waits if the place is occupied. Geometry and prohibition
+  of returning to Limbo is preserved.
+- Use/USDF selects durations for Wait/Sleep; furniture is revalidated after closing the
+  response. Close without choosing does not start or grant anything.
+- Occupancy with the actual player volume and return to a free exit. If all are blocked,
+  you can walk out before returning collision.
+- Native orbital camera during rest, with clipping against the environment, restoration of
+  view and direction, and persistent references. It does not replace a camera from another
+  system or change Chasecam options.
+- RSDO poses and existing materials are reused; two procedural OBJ models and their generator are
+  added. Compact panel with camera help.
+- GZDoom 4.14.2 in Linux compiles the project and verifies Use/USDF interaction, repeated
+  use, termination, damage, occupied exits, furniture loss, placement/use in four sewers and
+  save/load of an active session. Revised native screenshots. The Windows manual check is in
+  the TXT.
+- Timescale, provisional recovery, resources, attributes, Seals, Journal controls and
+  initial date maintain the approved contract.
+- Acceleration, local climate, events/paths and integration closure continue in 4.35; then
+  4.36, 4.37, trial export and legacy work in V5.
+
+## 4.35.0d1 — GZDoom 4.14.2 start repair (2026-09-15)
+
+- The author reports nine errors when parsing 0d. The two conditional poses searches are
+  changed by calls with literal labels; restPose is declared correctly again. The complete 0c
+  catalogue, with IsTimelessMap, is included to resolve the six missing Limbo references
+  in the log.
+- The native GZDoom 4.14.2 compiler reproduced the pose errors before the fix and compiled
+  scripts later on 4621 restored game files. Linux check with Freedoom 2, no playable or
+  saves test on Windows.
+- Balance, controls, duration and persistence of rest keep 0d; MAP01 keeps its clock
+  stopped and the rest of the world shares the accepted rhythm.
+- README and five updated documents; validator supports hotfix numerical suffixes.
+  Corrective Delta over 0d with PRUEBAS_4_35_0d1.txt guide in root.
+- Playable rest tests are still pending; the roadmap remains unchanged.
+
+## 4.35.0d — rest and wait at normal scale (2026-09-15)
+
+- The author approves all 0c tests and requests to continue and know what remains before moving
+  from 4.35 to 4.36.
+- Persistent session Sleep/Wait, initiated from World > D/X, with explicit duration of 5 game minutes, 1, 4 or 8 hours. The short trial lasts 15 s.
+- Provisional Sleep Recovery: 100% by 8 h when sleeping, replaces passive loss; Wait
+  retains consumption. Hunger/Thirst and regenerations maintain rules.
+- Critical Sleep stops causing damage only during Sleep; no other penalties or damage due
+  to hunger/dehydration are neutralized.
+- Cancellation by Q/B, TAB, movement/action; interruption by damage, combat, incompatible
+  context, displacement, map change or clock jump. Unique pulses, terminal endings and
+  native release of conserved Use.
+- Existing rest poses, normal view panel and USDF guide without pause. Optional
+  reserve preparations, report and test impact.
+- 317 C++ assertions extracted with engine doubles and sanitizer; 33 safeguards checked when
+  starting and continuing, plus critical damage and logical restoration. GZDoom
+  compilation/gameplay/saves/UI are still pending for 0d.
+- The roadmap is updated: acceleration and furniture/rest camera, local climate,
+  scheduled events/travels and joint closure before 4.36. 4.37 and export continue after;
+  legacy/transverse work is maintained in V5.
+- Delta over 0c, English README and five documents; root test guide.
+
+## 4.35.0c — campaign start and Limbo timeless (2026-09-15)
+
+- The author approves all evidence of 4.35.0b.
+- Author's canonical start: 3 November 1889 at 09:00.
+- MAP01 stops the world clock. The rest of the maps share the same rhythm and persistent
+  counter. Local simulation is preserved, without additional pause.
+- Initialization/single migration: previous saves start with the canonical date when
+  updating, retaining counter and travel history. It is not reconstructed how long before
+  it passed outside the Limbo.
+- Separate anchoring for debugging. Removing a trial date restores the presentation of the
+  campaign that continued to advance, without returning to the beginning.
+- World identifies stopped time; reports show campaign, review and test. It does not
+  change navigation or open a return to MAP01.
+- 8.849 C++ assertions extracted from ZScript: 27 logical migrations and 4.320
+  projections, with sanitizer. They do not replace compilation, serialization or execution
+  of GZDoom, pending for 0c. Sources and resources are reviewed.
+- Delta over 0b, README and five up-to-date documents; root testing. Rest/time advance continue as the next increase in V4.35; export after 4.37 and
+  legacy/transverse work on V5.
+
+## 4.35.0b — calendar and dialogues without pause (2026-09-14)
+
+- The author approves all tests of the 4.35.0a patch.
+- Civil calendar base with months, leap years and persistent anchoring on the existing
+  clock. No historical date is set without authorization.
+- Explicitly southern monthly test date and cycle in World. Commands to assign date,
+  prepare midnight in 12 s simulated, consult and withdraw. No advance resources, tasks or
+  the actual time of the game.
+- Unpaused conversations using MAPINFO and Ticker from the common menu. The menu path also
+  covers the conversations reopened from old saves.
+- The ten class and four racial skills are recorded. Pilgrim: Amparo, 50% less
+  environmental damage for character and close allies, 10 s, 60 s cooldown and provisional 1000 Anima base cost. It does not reduce combat. Skills retain their pending
+  implementation in V5.
+- Calculations contrasted with std::chrono and revised sources/resources. No compilation
+  or native test is said: the engine was not available here.
+- Delta over 0a; README, five documents and PRUEBAS_4_35_0b.txt in root.
+
+## 4.35.0a — persistent global clock (2026-09-14)
+
+- The author confirms all evidence of 4.34.0e and authorizes the following patch.
+- Inventory native time state and a static observer without duplicate status. Registration
+  from confirmed profile; previous saves start from scratch.
+- Current Scale: 1 h of game = 180 s real, 24 h per day. Full day counters and tics, with
+  hour/day changes without rounding drift.
+- Timeline recorded in World; clock report read only.
+- New travel departure/arrival marks, saved once. Previous trips keep their status without
+  invented timestamps.
+- Native pauses, hub continuity, instant save restoration and absence of time compensation
+  outside the game. It does not add duration to routes.
+- No balance changes, maps, navigation, Seals or manufacture. Calendar, rest, climate and
+  events continue within 4.35; thermal exposure at V5.
+- Delta over 4.34.0e; five canonical documents and PRUEBAS_4_35_0a.txt in root.
+
+
+## 4.34.0e — stations and supplies for travel testing (2026-09-14)
+
+- The author confirms the available tests of 0d. Seal and crafting could not be verified
+  because the sewers lacked the means to start them.
+- Native workbench, sawmill and forge along with arrival at MAP02–MAP05; reconstruction in
+  previous saves, isolated network and persistence of hub.
+- Voluntary options in the caravan to prepare quintessence T1 (equipment, recharge and
+  remove wait) or Handle (recipe and wood up to a batch x10).
+- Using the station preselects Handle T1, x10, efficiency 100%, with real time to leave Crafts
+  and a pending manufacture. Tasks continue to use existing recipes, reservations,
+  cancellation and production.
+- The Journal lets KeyUp of +use pass: close with Q and using the station again does not leave the internal button held. Navigation presses continue.
+- No rewards or refills for loading or traveling. MAP01 does not change, accepted
+  controls, attributes, balance, Seal effect or manufacturing catalog.
+- Delta patch over 0d and PRUEBAS_4_34_0e.txt instructions. 4.35 continues after these
+  tests; V4 export is maintained prior to V5 work.
+
+
+## 4.34.0d — caravan base and persistent travel cycle (2026-09-14)
+
+- The author approves all 4.34.0c tests and authorizes continuation.
+- Test caravan accessible in TAB > World > C/Y, for the six existing directions. Destination,
+  confirmation, return to offer and cancellation USDF.
+- Common service for caravans and foot accesses: Validate before leaving, maintain the hub
+  and keep the inventory without repeating MAP01 cleanup.
+- Inventory new with sequence, mode and last path; arrival or interruption resolved once.
+  Explicit report and summary in World.
+- Previous saves without history invented. Resumption of the saved confirmation page and
+  reconciliation of an interrupted departure when loading.
+- No fees, simulated time, vehicles, incidents, new maps or assets. Clock and time integration continue in 4.35. Test export continues after 4.37, before V5 and its
+  legacy/transverse work.
+- Delta delivery on 0c, with README and the five canonical documents; author checks on
+  PRUEBAS_4_34_0d.txt, outside docs.
+
+
+## Test sewers connected — 4.34.0c
+
+The author confirms "All correct" for 0b and allows to create connections after MAP02 to new
+sewers for mass testing, Tarot and other systems. He delegates the topology with the
+express exception of not returning to MAP01. This authorization modifies the previous
+postponement of test maps; it does not advance the complete campaign or the
+inherited/transversal scope of V5.
+
+MAP02 connects in both directions with MAP03 (reservoir), MAP04 (Tarot chambers) and MAP05
+(maintenance). Reusable UDMF geometries, two real stairs, use gates, stable ids and
+persistence of native hubs are incorporated. MAP01 and MAP02 retain their WAD, and the
+original return continues to validate and clean the Limbo inventory once. New maps do not
+grant cards, rewards or enemy populations. The Journal shows local visits and departures,
+without travel controls on the menu.
+
+Checks cover the six directions, a revisit, map actors/objects, hub save/load and updating a save created with the original 0b code. The location of the weapon of that save is
+backpack; it is compared with the data really serialized. The MAP01 narrative exit is
+also checked → MAP02 with the new hub. The captures review Spanish and English and new
+geometries; no massive or cooperative performance is yet credited.
+
+Delivery on 4.34.0b with only new/modified files, optional generator, README, five
+canonical documents and test guide. V4 sequence is maintained up to 4.37 → export for
+other players → V5, starting with V5.0 code refactor and V5.1 thermal exposure.
+
+## Grouped doors and independent test key — 4.34.0b
+
+The author confirms "All right" for 4.34.0a and asks to continue. His acceptance of the
+World Journal and the continuity of the agreed sequence is recorded: V4 to 4.37, test
+export, V5 with all inherited and cross-system pending work; V5.0 modular refactor and V5.1
+thermal exposure.
+
+It reproduces in 0a that the unlocked door leaf opens another one with key or arena lock,
+and that doors with zero id act as a group. It is also proven that measuring distance to a
+displaced door leaf leaves undetected the center of the passage. 0b validates requirements of all door leaves, makes the non-positive ids independent and measures the occupation from the
+original opening. It keeps the group open/reopens when the player is present, preserving forced arena closure. The locks use the own existing sound using native CheckKeys.
+
+A test specifically requested by console is incorporated, with two door leaves and a 202 key
+independent of the Argento key. It can be saved, reusable and removable without changing
+missions, factions, world or narrative inventory. The access query reads its status.
+Previous diagnoses update header; maps, assets, formulas and navigation retain the
+approved base.
+
+They pass the tests of contracts, native entries/collisions, closing/reopening, new save
+partially closed and save 0a partially open. Fixtures and their limits are in PROJECT.md.
+README and the five documents are updated; PRUEBAS_4_34_0b.txt explains application and
+optional test.
+
+## Initial world and test export before V5 — 4.34.0a
+
+The author decides: to finish the roadmap V4 to 4.37, to assemble/export a trial version
+for other players and then develop in V5 all the inherited and transversal work. This
+decision replaces the classification "without assigned version" of the previous entry;
+V5.0 remains reserved for the modular refactor and V5.1 to thermal exposure. The final
+independent distribution belongs to the wide range of V5 and is not confused with the
+export of V4 test. Authorizes to continue from 0ao, without a new declaration of having
+repeated all its tests. The complete roadmap is updated in PROJECT.md.
+
+4.34.0a adds catalog of locations/connections, progress in traveller registration and the
+World Journal section. The existing return is recorded on departure and confirmed upon
+arrival; its one-way direction is preserved. An old save in MAP02 recovers that journey from
+the previous closure of MAIN_M00. A console start without those facts does not receive a
+invented travel history. The destination of the connection is not named before visiting
+it. The explicit world query is added and the headers of the previous diagnoses are
+updated.
+
+Start, save, native controls, query, actual output, compatibility with 0an/0ao saves and
+reloads of new saves on both maps. Cases and limits are listed in PROJECT.md. Assets,
+maps, attributes, missions and previously approved navigation are preserved. Stray formatting "+" marks are also removed in 0ao documentary introductions. Delta delivery over 4.33.0ao,
+with README and the five canonical documents; PRUEBAS_4_34_0a.txt explains application and
+tests without enabling commands.
+
+## Integration of 4.33 and remaining roadmap — 4.33.0ao
+
+The author confirms all 0an tests and authorizes the following patch, asking to know the
+complete V4 roadmap before. Detailed sequence to 4.37, inherited works, cross-sectional
+scope without assigned version and express V5 reservations. fix the old summary that
+continued to mark MAP01 as pending and the old 0ae application instructions.
+
+The last reload identifies an arrival autosave with active native interlocutor and no
+menu. Added a static load observer that reopens the dialog using StartConversation,
+retaining owner and orientation, without automatic responses. Inactive references and
+normal map entries maintain their behavior. The autosave prior to the fix is
+recovered.
+
+0ao incorporates an integration console query: missions, objectives, rewards,
+reputation/membership, Box, first weapon, Tarot, trading and output/arrival conditions. It
+only reads existing records and does not activate tests. It verifies a save created with
+0an with simultaneous trade and commissions, followed by capture and actual narrative exit to MAP02. Evidence and limits in PROJECT.md. The El Loco report retains its
+function and updates header.
+
+Serialized 0an rules and data, controls, attributes, history, maps and assets are
+maintained. README and five canonical documents are updated; PRUEBAS_4_33_0ao.txt contains
+application and joint verification. This closure is pending acceptance before 4.34 is
+initiated.
+
+## Reusable Reputation Conditions — 4.33.0an
+
+The author approves 0am and the test quests: obtains both rewards, checks that abandoning Tour blocks Wait and that leaving before completing its goal marks it failed. Authorizes
+to continue with the reputation block.
+
+CaelumFactionCondition is incorporated: stable id, inclusive minimum reputation and independent
+membership. Dialogue, grouped doors and commerce share their validation. The commercial
+operation is checked before the exchange and a changed quote requires new confirmation.
+Reputation rebate uses existing margins, is recalculated and remains separate from
+persistent negotiated discounts.
+
+The test is expressly activated with give CaelumDebugReputationTrial and is re-opened with
+F/Y in Reputation. It offers information, physical door, commerce and five states of
+the actual Gendarmerie record. It does not grant Box, coins or rewards. Its thresholds only
+serve to check conditions. No factions are assigned to residents nor are ranks or
+narrative relationships invented.
+
+They pass tests of rules/transactions, native keyboard, original 0am save, new conditions
+serialization and travel to MAP02; detail and limits in PROJECT.md. The closing of the
+test trade is indicated with Q/B, respecting Esc as engine pause. End controls, capture,
+seals, missions, attributes, maps and resources are preserved. Delta delivery over 0am,
+README, five canonical documents and PRUEBAS_4_33_0an.txt. The author then approves all
+0an tests.
+
+## Journal Inactive Conversation and Boundary Navigation — 4.33.0am
+
+The author specifies that the arrows must go through filters/missions and move to the
+previous/next tab when reaching the end, without going back to the opposite. The 0al log
+shows eligible capture to 32,6 MU, channel and reload to zero, ConversationNPC present and
+NPC out of dialog. It reproduces that combination in a controlled test: 0al rejects Use
+and 0am allows dialogue and capture. It is not claimed to have reproduced which original
+closure left the reference.
+
+The essence checks the activity of the dialogue by opening and waiting for its animation;
+the output and the Voice of arrival use the same criterion. Native references,
+requirements, confirmation, times and unique reward are retained. The card is not
+delivered when loading or interrupting an active conversation as a repair.
+
+Inventory exits Tarot/Character from its ends. Missions go to Crafts/Reputation; with one
+entry both arrows come out. Page Up/Page Down and LB/RB continue to change tab directly.
+Selection is retained, functions of Up/Down and F/Y, and abandonment cancellation when
+navigating. Supports are adjusted in both languages with existing sources. Maps, assets
+and balance intact.
+
+Twenty-eight checks of controls using native keyboard and twelve of the
+Palomo/Box/depletion/capture section pass. Seventeen additional checks check the native 0al
+save, cancellation, animation, door and arrival at MAP02; the scenarios and their limits
+are detailed in PROJECT.md. README and five updated documents; delta delivery on 0al with
+PRUEBAS_4_33_0am.txt. Author acceptance pending.
+
+## Filters, Single Mission and Capture Diagnosis — 4.33.0al
+
+The author reports that 0ak did not solve the capture in a save or in a new game. It
+clarifies that Use should be available when the Adrenaline runs out. It rejects tab-switching arrows in Inventory and asks them to cycle through filters again; approves Page Up/Page Down. In
+Quests it does not observe alternation.
+
+Circular filters are restored in both directions. Missions retain the arrows to select
+known entries and show a specific help when there is only one: the four narrative tests
+are MAIN_M00 stages. The two diagnostic commissions are not enabled automatically.
+Page Up/Page Down and LB/RB maintain the navigation of tabs. README and five updated docs.
+
+Tests switch to SDL keyboard events through the actual engine dispatcher, without calling
+directly to the Use handlers or menu. Sixteen navigation controls pass. Ten of the final
+stretch prepared after the resident tests receive the Box through the actual Palomo dialogue,
+exhaust Quintessence and capture El Loco with Use/Enter, preserving Box, single delivery
+and +2%. That flow also passes with original 0ak sources. Therefore, the pending issue is not attributed to depletion without evidence.
+
+The author's capture is still open. An explicit status report is added using the
+ca_debug_fool_report netevent to receive the conditions of the point where it fails. Its
+rules are not altered or a card is granted as a repair. PRUEBAS_4_33_0al.txt explains how
+to send it. Isolated technical results do not amount to the author's acceptance or prove
+that its incidence is resolved.
+
+## Seal infrastructure, capture and navigation — 4.33.0ak
+
+The author reports that Quintessence displaced trees and workbenches, cannot capture the
+essence and arrows of Quests/Inventory lead to incorrect destinations. 0aj has reported issues;
+0ak is dedicated to correcting these problems before the reputation block. The attributes
+approved in 0ai are preserved.
+
+The SHOOTABLE flag included infrastructure in the channel: all CaelumMovableProp is
+excluded from the targets and from the mass/expulsion. Once the same stations of the
+rooms and garden plants are restored in MAP01 saves, with stocks, yield, tasks and
+reserves preserved. The invalid gravity state of saved targets is also cleaned.
+
+The unchanneled capture works on the original 0aj sources. The case reproduced with active
+Quintessence loses Use in PlayerThink. 0ak allows a new press to finish the channel with
+its usual cooldown and open the interaction. The El Loco dialog retains its own Box,
+explicit acceptance, single delivery and +2%; its rules are not replaced by an automatic
+reward or altered mission record.
+
+In Quests, Left/Right changes mission; in Inventory changes tabs and Right comes
+directly to Character. F/Y maintains filters. Page Up/Page Down and LB/RB also travel tabs from
+Quests and Crafts; leaving a station closes their native session. Detail and abandonment
+are cancelled when changing mission. Aids from both updated languages.
+
+131 distinct native checks passed: 78 Targets, 34 Navigational and 19 Original 0aj
+saves with displaced infrastructure and capture. Language repetitions do not add up to
+different controls. PROJECT.md records scope and limits; PRUEBAS_4_33_0ak.txt contains
+acceptance in Windows pending. README and five updated documents; delta delivery on 0aj,
+with maps, audio-visual resources and formulas of intact attributes.
+
+## Optional mission base and test chain — 4.33.0aj
+
+The author approved all 0ai tests and decided to retain the attributes. Audit differences
+are postponed. He authorized to continue with the proposed base of secondary missions,
+requirements, failure/abandonment and unique reward before the 0ak reputation block and
+closure prior to V4.34.
+
+0aj adds Offering and Abandoned without renumbering states, preserves MAIN_M00 in 0 index
+and adds two chained diagnostic assignments. Acceptance is explicit, progress is limited by
+objective and endings are permanent. Native delivery records one-time reward collection, with retry if
+not received. MAIN_M00 setters do not overwrite completed states/objectives.
+
+The Journal selects between missions, opens its Detail, accepts/completes/collects and
+confirms abandonment with two separate presses. The test is enabled only with give
+CaelumDebugQuestTrial and does not grant campaign advantages. Attributes, maps, narrative
+missions and quotas remain approved. README and five updated docs; the delta includes
+exclusively new/modified files and a TXT of tests. Bullets and water treatment remain to be
+defined as later extensions.
+
+Recovered delivery closing: 119 native bug-free checks, including loading from 0ai,
+partial save, real travel and Journal in both languages. The technical registration in
+PROJECT.md is completed and the missing TXT application/tests is incorporated. Windows
+acceptance is pending.
+
+## Resilience, regeneration costs and attribute audit — 4.33.0ai
+
+The author clarifies that Sleep belongs to Resilience. This association is restored by
+retaining the Type 4 divisor approved as a rule: /1 at 0 and /3 at 100. The 0ah Patience
+mapping is replaced by this correction.
+
+Constitution now also divides the cost of Hunger/Thirst from natural health regeneration and
+Air. The same pure divisor is used as for passive consumption, without repeating its mass
+factor. The affordable recovery limit uses the new cost. It does not change speeds,
+critical drainage <=10%, swimming pool hydration, sips or recovery of underwater debt.
+
+SYSTEMS.md compares the twelve attributes of the author's table with their actual uses:
+preserved families, scales, different associations and pending functions. Highlights are
+the ammunition reload with Dexterity, fixed 60 s Channel cooldown, current areas
+with Eloquence, missing duration reductions by Constitution, incomplete Empathy, partial
+mitigation of Patience and magical senses pending. The audit documents these differences;
+this patch does not implement those other systems. README, five docs and explanation of
+Ronnie in both updated languages. Delivery of ten files on 0ah, with a single TXT of
+tests. 103 native checks in GZDoom 4.14.2: 95 of the rules and eight load of an original
+0ah save. Document/resource validator ends without errors. Pending author acceptance on
+Windows.
+
+## Survival with Type 4 divisors and restored critical states — 4.33.0ah
+
+The author approved all tests of 0ag and clarified that the health drain with reserves below
+the critical threshold was part of the design. The 0ag positive Thirst exception is
+removed and returns the native 10% threshold or less, with natural regeneration block and
+cumulative damage per critical reserve.
+
+Constitution for Hunger/Thirst and Patience for Sleep now use Type 4 divisors: 1 +
+2*A*(A+1)/10100, with non-negative attribute. A 0 divides by 1; a 100, by 3. The
+Hunger/Thirst body mass factor is preserved. Previously the code used Resilience for
+Sleep; it is changed to Patience according to the current indication. Hunger/Thirst’s
+costs for regenerating health/Air continue separately: they could produce expense even with
+the previous reduction of passive expenditure to zero by Constitution 100.
+
+Factors are also updated when loading previous saves without altering their reserves,
+attributes, choices, inventory or missions. Approved pool, cooldowns and sips are
+preserved. Ronnie dialogue, README and five updated docs; delivery of modified files and
+TXT tests on 0ag.
+
+## Hydration correction, sips and positive Thirst — 4.33.0ag
+
+The author approved the other tests of 0af and clarified that the pool must retain its
+direct hydration and fill containers even if they already contain water. Automatic hydration
+removal in 0af was an incorrect interpretation. It restores its previous rate of one point
+per second with submerged head, without obligatory container. Refilling requires carrying only the missing water plus the margin of 1 g, maintains the content if it does not fit
+and respects the Box and the entry into the water.
+
+Each sip passes from 100 ml fixed to body mass / 500 liters for ten points in ten seconds;
+the smaller remnant recovers its proportion. The separate water ration retains its volume.
+The condition of damage by Thirst is also corrected: previously it used the critical state
+<=10%, which also prevented regenerating health to 1–2%. It now requires zero reserve.
+Performance penalties, Hunger/Sleep rules and health and Air regeneration costs are
+preserved. Dialogues/details in both languages, README and five updated documents. No
+change maps, images, models, audio, missions or material quotas.
+
+## Containers, choice of accessories and quotas — 4.33.0af
+
+The author approved 0ae, provided his base and defined water only with empty containers
+when immersed in drinking water: bottles/canteens 1/2,5/5 L, and 1 L by 50 kg of body
+mass for 100% Thirst. Six sprites, persistent volume/weight, 100 ml use through the existing ration mechanism
+and effect of ten seconds existing, single delivery of normal canteen by Ronnie and
+Detail. Automatic immersion hydration is removed. Tare reuses the existing generic value
+of 0,10 kg; there is no recipe for unsafe water treatment.
+
+Caella passes from five Seals to a confirmed choice of a seal and an amulet, with their
+recipes/components and materials to 100%. Drawer with raw silver and limited leather; gems on
+the veins. Previous objects, knowledge and expenditure are preserved. The version validator for
+multi-letter suffixes is corrected. README and five updated documents. Evidence and limits
+in PROJECT.md.
+
+## Teaching and Seal allowances T1 — 4.33.0ae (approved)
+
+The author subsequently confirmed that all 0ae tests passed.
+
+The author approved all the 0ad tests and asked to continue. Caella offers the five T1
+seal recipes and dependencies after their test, with optional acceptance. It does not
+grant objects. Detail informs prepared 0/5–5/5. The native expansion to 100% adds 1,8 kg
+of copper, 0,2 kg of tin and 0,6 kg of each gem to the current quota, preserving what was
+issued. Previous own seals reduce only the new quota, without discounting already counted
+materials.
+
+The crafting uses reserves and recursive plan from raw materials, personal result before
+the Box, equipment from an existing slot and Channel. Ronnie can lend/take back his sword
+for this collection after completing its mission, even if the repair is already done.
+Saves, previous tasks, recipes, stages, output and audiovisual resources are preserved.
+Delivery by copy on 0ad, README/five documents and PRUEBAS_4_33_0ae.txt. Validation and
+limits on PROJECT.md. Water is still on the roadmap; bullets need author definition.
+
+## Chosen armor and quotas to 100% — 4.33.0ad (approved)
+
+The author approved 0ac and asked Ronnie to ask what armor you want to use, teach your T1
+recipes and reduce resources/drawer to what is necessary to the 100% efficiency. Four
+families are implemented with description/confirmation and four pieces, components and
+Detail. Native recursive crafting, personal output and equipment. Per-character allowance
+for weapon, set and ten arrows/bolts when applicable; mass and hardness of the sources
+remain. Generation and collection avoid surplus, drawer/Bull share leather and partial
+collection retains movement capacity. Saved preserves tasks and stocks; the drawer accepts
+unreserved surplus. Optional repair obtains only quota proportional to the damage
+observed. No change of equipment leaving the Limbo. Next: T1 Seals and their allowances; bullets/water
+retain its outstanding definitions. Delta format over 0ac plus PRUEBAS_4_33_0ad.txt;
+README/five documents up to date. Evidence in PROJECT.md.
+
+## Crossbow bolts — 4.33.0ac
+
+The author approved all the 0ab tests and asked to continue. Bolt recipe 130 is appended after the previous 130 recipes. Ten 50 g bolts using arrows' shaft/bronze-tip recipe structure, with
+efficiency per layer. The choice of crossbow teaches recipe and dependencies, also in
+previous saves; it does not grant ammunition or replace the first weapon. The native
+crafting covers personal output, reservations, pauses, cancellation and persistence.
+Ronnie guide in its workshop, bolt icon in Crafts and detailed orientation. The arrows retain
+their own index, values and output. README and the five sources are updated. Copied over 0ab
+with PRUEBAS_4_33_0ac.txt. Evidence in PROJECT.md. Access to T1 armor/seal recipes remain
+and define composition/process of bullets; bullet materials are not invented from their
+weight. Water and V5 retain their place.
+
+## Swimming pool breathing — 4.33.0ab
+
+The author approved all the 0aa tests and asked to continue the roadmap. The optional
+Ronnie stage E is implemented with the existing MAP01 pool: a one-second immersion with real
+expense and return of the underwater Air when breathing for three seconds. Confirmation,
+detailed phases, Ronnie recognition and persistence; without expanding maps or imposing a
+mission block. The five documents and README are kept updated next to the code. Delivery
+on 0aa by copy with PRUEBAS_4_33_0ab.txt; evidence in PROJECT.md. Next pending coverage:
+ammunition and acquisition of T1 recipes; collecting/water treatment of water requires its
+mechanics. Architecture in V5.
+
+## Minor Arcana passives, sweeps and dividers — 4.33.0aa
+
+Author's decisions: Swords mental, Cups social, Wands physical and Coins technical.
+Minors: 2–4/5–7/8–10 give +0,3 to 1.o/2.o/3.o; Knight/Jack/Queen +0,6 respectively; King
++0,5 to the three and Ace +1 to the three. One suit =+3 to its attributes. They are
+pre-collection bases; there are no other minor passives. +2% is retained by Major, +1% per
+Minor. The order of 78 indexes is fixed without moving El Loco or altering existing flags.
+
+Greatsword, war axe and halberd gain a 360° Zoom sweep with primary damage, reach and
+recovery, Air cost ×3 per execution. Gauntlets retain blocking. Geometry prevents walls/floors from
+being crossed; allies are excluded. General damage/Anima expenditure abandons percentage subtraction
+and divides by Type 4 of Hardness/Eloquence: 1 + 2A(A+1)/10100. A 100 remains one third.
+Collisions, Pain and Lucidity maintain its rules. Previous historical tables indicating
+damage cancellation or Anima with attribute 100 are replaced by SYSTEMS.md.
+
+0z is a delivered base; it does not invent an approval of your tests. README and the five
+documents are updated, with a patch per copy and a TXT of tests. No new lessons, missions,
+maps or assets. V5 retains the expected refactor. Technical evidence and limits in
+PROJECT.md.
+
+## Load and close observations — 4.33.0z
+
+The author clarified that the reported mission disagreement was his mistake and approved
+all the 0y tests. No change or repair is made for this observation. Ronnie's stage D is
+continued: load reading and optional decision to lighten by inventory. Native drop or store actions are recorded with actual reduction, excluding the first weapon. No equipment is
+granted or the mission changed. Persistence, Journal and dialogue share the result. README
+and the five documentary sources are updated; 0y is delivered with PRUEBAS_4_33_0z.txt.
+The maps remain identical. Validation in PROJECT.md.
+
+## Air and motion — 4.33.0y
+
+The author approved all the 0x tests and asked to continue. The Ronnie survival section C
+is implemented: actual Air expenditure toward a target of 1% maximum Air recorded on acceptance, followed by
+natural recovery of that amount. It is optional, allows short stretches and does not
+change resources or mission requirements. Detail and dialogue recognize phases; the record
+retains partial and final progress. Maps are not expanded. Roadmap priorities and five
+documentary sources are maintained. Copy delivery on 0x, with PRUEBAS_4_33_0y.txt.
+Evidence and validation limits in PROJECT.md.
+
+## System needs and priority — 4.33.0x
+
+The author confirmed the successful download and testing of the cumulative 0u → 0w,
+including output, arrival and repair. 0v and 0w are approved. He clarified that building
+maps is not a priority: following the system roadmap and using MAP01 to check mechanics.
+Sewer expansion is delayed.
+
+Optional food/water practice is added with confirmation, one-time preparation to 90%,
+independent deliveries of one ration per native type and consumption. Progress is preserved
+when saving and traveling. No return or modification of the main mission is required. The
+test detected that PowerupGiver rejected a refresh before blinking: the native route is
+enabled during Use, preserving ten non-accumulable seconds and the usual collection rules.
+README and the five documents are updated together. Only modified files plus PRUEBAS_4_33_0x.txt, to copy over 0w. No map or asset changes.
+
+## Cumulative delivery correction 0u → 0w
+
+The author confirmed 0u as the latest version received. 0v acceptance was recorded by
+mistake and rectified. This ZIP combines both increments, with a single TXT of tests and
+without requiring separate 0v application.
+
+## Optional maintenance and coverage T1 — 4.33.0w, 2026-09-12
+
+The latest version received and approved by the author was 0u. Ronnie teaching is expanded
+with an optional practice: repairing the actual first weapon using the native task. Talking
+does not repair, starting not complete and canceling does not reward. The identity of the
+piece, reservations, pauses and saves is preserved. The state travels on leaving; it does
+not block any branch or closure already accepted.
+
+The T1 audit uses the current formulas in the engine. In M, the four armor sets need
+together 590,4/198,4/75 kg of leather to 25/50/100% per layer; the combined initial stock of the drawer and Bull is 108,5 kg before other expenses. It does not alter that loot nor is
+claimed to cover every equipment choice. The raw materials of the five seals exist; teach all
+the armor/seal recipes remains pending. Tables and scope in SYSTEMS.md.
+
+README and five updated documents. Delivered by copy of new or modified files and
+PRUEBAS_4_33_0w_DESDE_0u.txt. WADs and audio-visual resources do not change. Native
+validation and pending proofs from the author in PROJECT.md.
+
+## Departure from the mansion and back to body — 4.33.0v, 2026-09-12
+
+The author approved all 0u tests and requested the following patch. MAP01 is closed: door at the back of the Bull room, explicit confirmation, saveable phase 95 and phase 100
+completed before the native journey to the sewers. Only the same Box and the first weapon
+manufactured by ItemId cross; the piece retains its data and is stored. All other physical
+objects, even in the Box, are left behind. Tarot, recipes, character and current resources
+are preserved. The additional equipment by class and special values upon awakening were
+not fixed: no inventing or adding rewards or automatic cures are added.
+
+The arrival of MAP02 is brief, with the Voice and help to recover the weapon. The complete
+route remains on the roadmap. The above diagnosis is preserved as CADEV02, with identical
+TEXTMAP. The test with a real 0u save showed that changing TEXTMAP invalidated the load;
+MAP01.wad was left intact and the controller removed the provisional Exit/panel and
+presented the door during execution.
+
+Canceling or failing requirements does not clean objects; an active manufacturing task
+prevents crossing and does not cancel alone. Simultaneous cooperative crossing is pending.
+Spanish/English localization, README and all five documents are updated together. Delivery:
+only new/modified files to copy plus PRUEBAS_4_33_0v.txt. Native evidence and pending
+acceptance of the author in PROJECT.md. The rest of this document retains the records with
+the status they had when publishing.
+
+## Real Shield and Rulo Guide — 4.33.0u, 2026-09-12
+
+The author approved the other 0t tests and reported visible shield with the sword borrowed
+without shield in inventory, and doubts about Zoom using two-handed sword. The first
+symptom was reproduced with an obsolete shield model without instance. The check now uses
+native inventory, repairs references by loading and cleans residual left layers. A real shield and gauntlets retain their lock; the borrowed sword retains its identity.
+
+The two-handed sword already admitted sidestepping in the target room. The Rulo and Detail guide
+becomes dependent on the current equipment, with express explanation for two-handed sword
+in English and Spanish. It does not change the detection nor does it require repeating recorded actions already obtained. Engine evidence and load 0t -> 0u in PROJECT.md.
+
+English README and five docs are kept up to date. Copy delivery: modified files and a TXT
+test. Phase 90 and the exit roadmap remain in force.
+
+## El Loco and Tarot collection — 4.33.0t, 2026-09-11
+
+The author approved all the 0s tests. After the complete ZIP submission failed, he
+delivered src/assets/docs and root files separately; a coherent base was recovered. The
+following block is implemented: appearance in the cave, disclosure, capture with safe
+acceptance and interruption, unique reward and phase 90.
+
+The illustration is the original El Loco de las Pampas. Tarot adds a page to the Journal. The
+canonical rule of V4.25.2 is recovered, section 7: Major +2%, Minor +1% to the twelve
+attributes, additive percentages, decimals before formulas. Attributes move to double; the
+percentage is derived from the traveling collection to recalculate and does not alter the
+character-creation base. Dialogues and Detail are updated in English/Spanish, including Palomo
+and reactions of the four residents.
+
+The scope ends in phase 90: output, weapon preserved, return to body and sewers remain on
+the roadmap. Power activation is not implemented. README and all five docs are
+synchronized; technical evidence in PROJECT. Delivery: only files to copy and TXT testing;
+no installer or WAD modification.
+
+## Palomo final and Box — 4.33.0s, 2026-09-11
+
+The author approved all 0r tests and requested the following patch. The Palomo final
+dialog on the second floor is connected and delivery of a single Box from phase 75 to 80 follows the immediate PROJECT block. It includes optional specification questions,
+acceptance/reopening, storage instructions and orientation to the cave under the mansion.
+
+The previous property of the Box was a boolean with functional storage; the native
+instance with ItemId/Owner is added without duplicating the 10 kg or losing legacy
+content. Saved and repeated actions maintain only one Box. The Journal stops sending to
+search for Palomo after receiving it. Spanish/English languages are updated together.
+Capture of El Loco and output remain as the next block, without advancing the mission or
+rewarding Tarot.
+
+README and the five docs are synchronized. Delivery: only new or modified files to copy
+and a TXT test, without installer or changes to WAD.
+
+## Rulo Survival and Closure — 4.33.0r, 2026-09-11
+
+The author completed the Toro and approved the other 0q tests. He noted that Caella and
+Argento did not speak and assumed that they had died. GZDoom 4.14.2 reproduced the
+rejection in both alive, recovered and persistent INCOMBAT after firing. 0r cleans that
+state and adds native BUDDHA for the four residents. They remain at 1 health and rest until the
+attempt ends; they also repair flags of existing saves and bodies without duplicating NPC,
+progress or loot.
+
+The previous closure of Rulo is replaced: the meeting demonstrates innate strength and
+ability to gather and lead the four. The cave of the mansion is fixed as a place of
+manifestation of El Loco, after receiving the Box of Palomo. That epilogue is still
+pending implementation; it is not presented as playable.
+
+It also fixes the README delivered in 0q that still announced 0p and the old guarantee that the Bull's leather covers a T1 armor set. README and five docs are synchronized; only files to copy plus the TXT, without installer.
+
+## Rulo/Bull corrections — 4.33.0q, 2026-09-11
+
+The author successfully confirmed the rest of 0p and noted: too much leather, Argento
+asking to speak with Argento and need to be accompanied by all four. The recipe-based allowance (313,6 kg for size M) is replaced by 12,5 kg of finished leather: fresh skin
+estimation and detailed processing in SYSTEMS. The gauntlet drawer is preserved; the
+guarantee of a complete T1 set by the Bull loot is obsolete. Coverage will be reviewed in
+the final audit. No material from previous wins is confiscated.
+
+The four original NPCs are incorporated into the match, can receive horn attacks and be out of
+combat, recover by retrying or winning and allow closing with Rulo inside the enclosure. A
+final blow from a partner credits the player victory. After closure and once out of sight,
+they return to their bedrooms. The new references/states use native save. Argento has its
+own voice to guide the player without referring to himself in the third person. The engine and MAP01.wad remain the
+same.
+
+Next block: Palomo final and Magic Box; then El Loco and output. The code architecture
+remains reserved for V5. README and five docs are updated; delta over 0p plus a TXT test,
+without installer. 0q remaining tests approved by the author; post-combat blocking addressed in 0r.
+
+## Rulo — 4.33.0p, 2026-09-11
+
+The author asked to continue with the mission and pointed to Rulo as the remaining part.
+It is implemented on 0o: target practice under his bedroom, detailed tracking, delivery of
+key by Argento, Toro locked during the match, recovery after defeat, unique leather and
+closure when returning to Rulo. The initial options 36 have realizable actions or
+equivalences; the magic in motion avoids a cost-of-charge blockade. It incorporates
+ammunition borrowed for ranged weapons and preserves the ammunition that was already its
+own.
+
+The test found and corrected two problems: the target received thrust after a melee impact
+and the javelin had zero reach in its AltFire fallback. The Toro uses a idle state during
+preparation to avoid an AI step before beginning. New states are attached, WAD and assets
+are preserved.
+
+Validation in GZDoom, weapon matrix and native save documented in PROJECT. Remaining tests approved by
+author; all three observations are corrected in 0q. Closing with Palomo/Box/El Loco/output
+continues on the roadmap; Ronnie's survival expansion does not retroactively block the
+requested advance. README and the five updated docs; file format to copy plus one single TXT, without installer.
+
+## 4.33.0n approval and 4.33.0o correction — 2026-09-11
+
+The author confirmed: "All the tests were successful." 0n remains the accepted complete
+basis, with the narrative scope documented in that delivery. He asked to remove the basic
+materials manual that was left to the side: it corresponds to the Processing Manual in
+(-364,800,0), next to the old workshops. 0o removes only that copy from the world, both in
+new game and when loading, without revoking knowledge or altering the WAD. README
+and five docs are updated; delta is delivered on 0n and a single TXT of tests.
+
+## Decisions and corrections 4.33.0n
+
+- The author accepts 0m stations and asks to place them against corners and, above, in a
+  row at the bottom. 38 instances and five networks are retained.
+- Door/station activations now check height and visibility. Tab closes Crafts; filter
+  passes to G. Same pause/reserve behavior.
+- Caella stops referring to itself in the wall indication. All residents describe current
+  resources, drawer and veins.
+- The original request to remove the drawer is replaced by the last correction: only
+  enough cow leather for giant gauntlets, size and 25 % per layer (96 kg in M). The supply
+  range is limited to T1; T2 infrastructure is maintained.
+- Bow/longbow teach ten arrows and all their dependencies. 129 recipe; preserved previous
+  knowledge. Personal output, without claiming first weapon.
+- Argento saves the key and the Toro occupies the initial closed room. Single transfer,
+  post-practice activation and leather upon death for a complete set of T1 from any family. The
+  Rulo lesson still needs to be connected; this stretch is not declared playable by
+  placing the actors.
+- Palomo runs visibly on both stairs to the second floor, retains collision and saves its
+  path. Fixes previous concealment with INVISIBLE native flag: Alpha=0 did not hide its
+  Normal RenderStyle.
+- Validation of this delivery and limits in PROJECT.md. README and the five updated docs;
+  delta over 0m with a TXT, without installers or changes to WAD.
+- The tool problem that interrupted the preparation was resolved; there is no outstanding
+  decision on leather or on including T2.
+
+## Decisions and corrections 4.33.0m
+
+- The author requests realistic plant mass and wood hardness. The shrubs leave the 100 kg
+  of 0l: 10 kg estimated from aerial part for a medium specimen, inherited hardness 2,5,
+  scale 0,05. Twenty specimens provide 200 kg of capacity. It is not a measured weight or a
+  universal value of all species (SYSTEMS.md).
+- Ceibos and shrubs surround the entrance. All vegetation is removed from the cave;
+  copper, tin and the gems/leather chest remain. The exhausted fraction is preserved when
+  migrating 0l, taking into account the Default omitted by GZDoom.
+- The stations are moved to the bedrooms: Rulo/heavy, Ronnie/medium and distance,
+  Argento/light, Caella/magic, with components/processing T1–T2. The interior room on the
+  second floor gathers the twelve. No stations outside. The previous instances are reused
+  and the task reserves are preserved.
+- Argento consults the same stage indication as Detail: Caella pending, return the loan,
+  go to Ronnie, collect or return the sword, as progress is made. All residents can
+  indicate workshops and new resource locations.
+- The four runes no longer remove the equipment or complete Caella. At 4/4 the player speaks to her again, the return is confirmed and then enables you to cross the visible wall. The
+  already completed saves retain your progress and recover the original texture. The marks
+  remain on.
+- 240 sprites from Poses_Agachados_v3 and 40 rear lying poses from Poses_Descanso_v2 are
+  integrated. PNGs are copied without changing pixels or offsets. Sources in
+  assets/source/art; status of the five characters, Domingo's crouching locomotion and
+  graphic preparation for future chairs/beds.
+- Compatibility: the new states are added at the end to keep NPC status indexes in
+  previous saves. Domingo's crouching declares its sprite when rendering so that it is not
+  compressed vertically twice.
+- Technical Validation: 767 fail-free checks on GZDoom 4.14.2, including native interface,
+  T1/T2 recipes and four save/load paths. A pending 0l crafting task is preserved and completed after moving your station. Scope and limits on PROJECT.md; the author's play
+  test is still pending.
+- README and five updated docs. Same delta format and one TXT, no installation scripts. 0l
+  tests are not declared accepted by the author: their new observations originate this
+  review.
+
+### Archived technical record of 4.33.0l
+
+- GZDoom 4.14.2 compiles and loads 4.151 runtime files without new errors or warnings. The
+  central matrix passed 102 checks: loan, Caella closure without removing the Ronnie
+  sword, recipe/dependencies, stock, supply protection, personal results and first weapon
+  by ItemId.
+- 180 plans (36 weapons in five sizes) were compared to the actual engine crafting plan,
+  to 25% in each layer. They all match; the chest covers each option. Existing nodes reach
+  maximums: 336.000 wood, 4.838.400 copper, 537.600 tin and 144.000 fiber units. No
+  increase in veins or trees.
+- 36 real crafting transactions were completed, one by choice in M, without Magic Box. The
+  test injects raw materials and advances the task clock to verify reservations/output; it
+  does not prove the rate of collection or the duration of a manual game. Seven additional
+  checks verify temporary provenance of an actual component, protection and calculation of
+  missing ones.
+- Ten native interface checks: Use opens Ronnie and chest, choose Book/Air arrives at the
+  correct recipe and remove topaz changes stock. Revised screenshots: families,
+  explanation/confirmation, loan, both pages of the chest, Paged detail and transparent
+  shrub in the cave.
+- 42 persistence and travel checks, zero failures: save with 0k in phase 45 and cave sword
+  collected; update the same installation to 0l; adopt that instance, remove gems and save
+  with active task/reserves; load, cancel and return only supplies, preserving 123 own
+  units; manufacture, return the sword, save/load with initial weapon and an additional
+  one; change map by retaining the first one and removing temporary ones. The temporary
+  active weapon is replaced by the initial one without references to destroyed equipment.
+- The sword was also tested by the actual attack route/LineAttack: the primary reaches the bush and produces fiber; the secondary one does not produce it. The existing
+  dispersion continues to apply: you have to reach the plant.
+- README and five updated docs; resource validation/mistake-free translations. WAD, 74
+  accepted audio files and models keep their hashes. ZIP is cross-checked against 0k and
+  contains only the delta and its TXT testing.
+
+Author tests: go through one physical choice and another of essence using separate
+saves; collect fiber with the sword primary and check that the secondary one does
+not deliver it; remove/return supplies; craft in the outdoor network, by layers if necessary;
+save/load before and after returning the loan. The ZIP TXT contains the concrete steps.
+
+Trials use a reconstructed 0k baseline with cross-checked files and GZDoom 4.14.2/OpenGL.
+They do not replace the author's Windows visual/playable revision. They do not include
+cooperative testing. Engine, IWAD, fixtures and test saves remain outside the patch. 0i–0k
+technical records: HISTORY.md.
+
+## Decisions and corrections 4.33.0l
+
+- The author confirmed all the evidence of 0k. Caella, Detail and Cleaning is accepted;
+  the above objections are resolved on this basis.
+- Replaces automatic weapon assignment by class: Ronnie asks what weapon the player wants,
+  explains features and shows that recipe and all its components. 36 variants T1 use the
+  existing catalog.
+- The extracting sword becomes a loan from Ronnie. The old instance is adopted if it was
+  already in stock and is removed upon return after manufacture.
+- Only the first weapon manufactured is retained. It is delivered to the personal
+  inventory so as not to demand the Box prematurely; the others are temporary.
+- The author requests shrubs such as 2D sprites to give fiber by cutting damage. An
+  original resource with alpha, three specimens and native extraction is incorporated.
+- A chest in the basement provides gemstones and cow leather: maximum material between the
+  recipes T1 at the character's size and 25% in all layers. Finite stock, withdrawal limited by shortfall/load, surplus return and persistence per character.
+- Map, recipes, costs and audio are preserved. The records are still README plus five
+  docs; the old validation of PROJECT is archived here to leave only the current status
+  and tests there. Delivery without installer, a single TXT.
+- The material part of Ronnie reaches phase 60. Food/drink, real repair, Air/water and
+  the Palomo remark are still pending before Rulo; the flag of an unheard remark is
+  not activated. Neither ammo is added nor the Box is advanced.
+
+## Decisions and corrections 4.33.0k
+
+- The author expressly accepts Seal HUD, Caella language and 0j station models. Runes and
+  audio testing are not accepted by this statement: the runes are still missing.
+- It returns to the modified source-file format to copy and paste plus a test TXT. CMD/PS1
+  applicators and patch manifests are abandoned. The existing root builder retains its
+  utility; the 0h migration remains.
+- At the author's request, the 250 objects from the test range of the first six ground
+  floor rooms are removed. It includes the silver key and the sealed card placed there for
+  testing; their future uses remain unfixed.
+- The WAD is conserved to load previous games. The controller cleans the original
+  instances once; preserves inventory, discards and actors from other places. This filter
+  is not reused as a permanent rule of the area.
+- Missions incorporates Detail with F/Y, reading with Up/Down and back with F. It shows
+  context and current actions, practice pending/complete, route to runes and transition to
+  Ronnie according to persistent registration.
+- Caella and Detail share the path from the entrance, using the corridor, bottom
+  staircase, right/south and back wall as visible references.
+- Testing of this review in PROJECT.md; Ronnie content still pending.
+
+## Decisions and corrections 4.33.0j
+
+- The author reported Caella in English only. The new block used [esp] and the rest of the
+  project [es]; the identifier is corrected and the actual Spanish string resolution
+  within GZDoom is checked.
+- It is clarified that the Seal of Fire is enough: the four runes are used with the active
+  implement, without equipping other Seals or shooting emblems.
+- The author replaces the central text of the Seal with a side icon: color if it can be
+  used, grey when blocked and seconds below during reloading.
+- The twelve models of stations are created according to their sprites, with simple
+  geometry and characteristic tools. The anvil retains its stump and the forge its masonry base;
+  they are not placed on tables.
+- War Drums changes from looping to single playback. Quit starts menu_strings_start when opening
+  confirmation; cancel must return to parent menu. Phrases are not cut and strings are not
+  assigned to other game confirmations.
+- The acceptance of 0i remains pending. Your previous checks did not detect the incorrect
+  Spanish identifier or prove the output in the author's installation. The results of this
+  review are in PROJECT.md.
+
+
+## Current registration of recent versions
+
+| Version | Result |
 | --- | --- |
-| 4.33.0l | Elección libre, recetas dependientes, préstamo, arbustos 2D, cofre finito y primera arma; pendiente del recorrido del autor. |
-| 4.33.0k | Todas las pruebas aceptadas por el autor: Detalle, limpieza, Caella y orientación a runas. |
-| 4.33.0j | HUD, idioma y modelos aceptados; las comprobaciones restantes se cerraron con la aceptación posterior de 0k. |
-| 4.33.0i | Introdujo Caella, fases 40–45. Audio, idioma y orientación se corrigieron en 0j/0k; aceptación posterior de 0k. |
-| 4.33.0h | Corrige el audio según el informe del autor: ChatSound único en cada página, primera frase de arpa con caída y bucle explícito de portada. Audita todas las carpetas, traslada fuentes/generadores útiles y entrega limpieza transaccional más roadmap completo. El autor confirmó que toda la migración de archivos funcionó bien. No se extiende esa aceptación a audio/contenido nuevo. |
-| 4.33.0g | El autor informó portada sin música, sonido nativo y añadido superpuestos, ausencia del arpa al avanzar y corte abrupto. La comprobación anterior sólo acreditaba carga/referencias con salida nula: no validaba sonido audible ni bucle real. Esos resultados no constituyen aceptación. La consolidación documental se conserva. |
-| 4.33.0f | El autor confirmó que todas las pruebas de hablar con NPC fueron exitosas. La prueba de Argento queda aceptada. |
-| 4.33.0e | Todas las pruebas confirmadas por el autor: pared sur del ascensor corregida. |
-| 4.33.0d | Resto de las pruebas aprobado; su única objeción fue corregida en 0e. |
-| 4.33.0b | Prólogo canónico aceptado; Palomo deja de ser comerciante narrativo. |
-| 4.32.0o | Matriz de la espada, mano y escudo aceptada por el autor. |
+| 4.33.0l | Free choice, dependent recipes, loan, bushes 2D, finite chest and first weapon; pending the author's journey. |
+| 4.33.0k | All tests accepted by the author: Detail, cleaning, Caella and rune orientation. |
+| 4.33.0j | HUD, language and models accepted; the remaining checks were closed with subsequent acceptance of 0k. |
+| 4.33.0i | He introduced Caella, 40–45 phases. Audio, language and orientation were corrected in 0j/0k; later acceptance of 0k. |
+| 4.33.0h | It corrects the audio according to the author's report: ChatSound unique on each page, first harp phrase with fade-out and explicit title-screen loop. Audit all folders, transfer useful sources/generators and deliver transactional cleaning plus complete roadmap. The author confirmed that all file migration worked well. It does not extend that acceptance to new audio/content. |
+| 4.33.0g | The author reported title screen without music, native sound and added superimposed, absence of harp when advancing and abrupt cut. The above check only credited load/references with null output: it did not validate audible sound or real loop. Those results do not constitute acceptance. Documentary consolidation is preserved. |
+| 4.33.0f | The author confirmed that all evidence of speaking with NPC was successful. Argento test is accepted. |
+| 4.33.0e | All the evidence confirmed by the author: south wall of the corrected elevator. |
+| 4.33.0d | Rest of the evidence approved; your only objection was corrected in 0e. |
+| 4.33.0b | Accepted canonical prologue; Palomo ceases to be a narrative trader. |
+| 4.32.0o | Matrix of the sword, hand and shield accepted by the author. |
 
-## Decisiones 4.33.0i
+## Decisions 4.33.0i
 
-- Autor: menu_strings_start pasa a Exit/Salir; War Drums pasa al inicio.
-- Autor: toda la migración de archivos funcionó bien. Se acepta ese alcance.
-- Autor: avanzar y aplicar el siguiente parche. Se desarrolla Caella con el
-  acertijo ya propuesto y la entrada física existente; presentación final
-  pendiente de revisión, sin inventar recetas de Ronnie ni uso de la llave.
-- Se reconcilia la especificación antigua de Channel con User2 y Adrenalina,
-  preservando el comportamiento aceptado del sistema general de Sellos.
-- README y cinco documentos actualizados; arquitectura de programación V5.0.
-- Validación de entrega: 52 comprobaciones de la rama, 20 de audio, recorrido
-  nativo de Usar y guardado/carga (46 comprobaciones), compatibilidad desde 0h
-  y 12 comprobaciones del aplicador. Alcance y pruebas del autor en PROJECT.md.
+- Author: menu_strings_start passes to Exit/Salir; War Drums passes at the beginning.
+- Author: All file migration worked well. That scope is accepted.
+- Author: advance and apply the following patch. Caella is developed with the proposed
+  riddle and existing physical input; final presentation pending review, without inventing
+  Ronnie recipes or using the key.
+- The old Channel specification is reconciled with User2 and Adrenaline, preserving the
+  accepted behavior of the general Seals system.
+- README and five updated documents; V5.0 programming architecture.
+- Delivery Validation: 52 Branch Checks, 20 Audio, Native Use and Save/load Path (46
+  Checks), Compatibility from 0h and 12 Applicator Checks. Author's Scope and Tests in
+  PROJECT.md.
 
-## Decisiones 4.33.0h
+## Decisions 4.33.0h
 
-- La carpeta completa aportada por el autor reemplaza la reconstrucción parcial
-  usada en las pruebas de 0g. Contiene 4.276 archivos de runtime antes de 0h.
-- El arpa debe acompañar cada página de diálogo y completar su frase; queda
-  reemplazada la interpretación de 0g de limitarla a la apertura y a un segundo.
-- El constructor que usa run_dev sale de tools y se convierte en build_dev.ps1.
-  Se conserva el verificador general en raíz y tres generadores bajo assets.
-  Se retiran los scripts de revisiones antiguas tras verificar su respaldo.
-- Los 20 originales de art_source se trasladan a assets/source/art sin cambios.
-- Se ratifica que V5.0 reorganizará los módulos de programación. Esta limpieza
-  no divide CaelumPlayer ni cambia la arquitectura de gameplay.
-- El roadmap completo vuelve a ser vigente en PROJECT.md. Los hitos históricos
-  V4.34–V4.37 y V5 no se pierden al consolidar archivos. Los números no son fechas.
-- La confirmación de todas las conversaciones de 0f se mantiene como aceptación
-  del autor. No se vuelven a balancear ni a sortear las tiradas sociales.
+- The full folder provided by the author replaces the partial reconstruction used in the
+  0g tests. It contains 4.276 runtime files before 0h.
+- The harp must accompany each dialog page and complete its phrase; the 0g interpretation that limited it to opening and to one second is superseded.
+- The builder used by run_dev moves out of tools and becomes build_dev.ps1. The general root
+  checker and three generators under assets are retained. Old revision scripts are removed
+  after checking their backup.
+- The original 20 art_source files are moved to assets/source/art unchanged.
+- It is confirmed that V5.0 will reorganize the programming modules. This cleaning does
+  not divide CaelumPlayer nor changes the gameplay architecture.
+- The complete roadmap is back on PROJECT.md. Historical milestones V4.34–V4.37 and V5 are
+  not lost when consolidating files. Numbers are not dates.
+- Confirmation of all 0f conversations is maintained as acceptance by the author. Social rolls are not rebalanced or bypassed.
 
-## Archivo de validaciones 0i–0k trasladado desde PROJECT
+## 0i–0k validation file moved from PROJECT
 
-Se conserva a continuación el registro tal como estaba al cerrar 0k. Las
-menciones de pendientes son históricas; la aceptación posterior de 0k y el
-estado vigente de 0l se encuentran al comienzo de este archivo y en PROJECT.
+The record as it was when closing 0k is retained below. The mentions of pending are
+historical; the subsequent acceptance of 0k and the current status of 0l are at the
+beginning of this file and in PROJECT.
 
-## Alcance y decisiones de Caella 4.33.0i
+## Scope and decisions of Caella 4.33.0i
 
-- Usa el texto y el orden elemental ya propuestos en MAP01.txt. Los emblemas
-  existentes de Sellos son una presentación jugable para revisar; no se declara
-  aprobada una nueva ilustración ni el texto final pendiente del autor.
-- Reutiliza la abertura de 96 MU: X=1842, Y=-383 a -287, planta baja. Las cuatro
-  runas están delante, en X=1826, Z=38. Al empezar la prueba, la textura central
-  adquiere la misma colisión por altura que el resto de la fachada. Al terminar
-  desaparece en sus dos caras. El WAD y el ascensor aceptados conservan su hash.
-- Una partida anterior que ya esté dentro de la cueva puede regresar: el cierre
-  sólo se activa al comenzar la prueba con Caella. Recorrer la cueva antes no
-  completa la misión. La Llave de Plata y su destino siguen pendientes.
-- Se mantienen Fire/AltFire y el Channel nativo en User2. Channel consume
-  Adrenalina; se corrige la referencia antigua a Reload. Para su primera
-  demostración se prepara, al activar User2, como máximo la reserva equivalente
-  a un segundo del coste nativo del Sello, limitada por el máximo del personaje.
-  Después de registrar un tic real de consumo no se vuelve a conceder esa ayuda.
-  No cambian costes generales, efectos, cooldown ni estadísticas.
-- La práctica observa cinco hechos: primario, secundario, canalización, gasto y
-  recuperación de Ánima. Sólo un lanzamiento completado cuenta; fallar por
-  falta de recurso o cancelarlo no cuenta. Las cuatro runas usan Usar con un
-  implemento mágico activo: el elemento propio de la runa resuena a través de
-  él. No se cambia la esencia ni se exige disponer de cuatro armas diferentes.
-- Si falta equipo compatible, se prestan instancias T1 del catálogo existente,
-  con ItemId único y CA_ITEMFLAG_LIMBO_TEMP. Reabrir/preparar no duplica objetos;
-  un préstamo roto se repone en la misma instancia. No puede venderse, soltarse,
-  desarmarse ni guardarse en la Caja. Se devuelve al completar Caella o salir de
-  MAP01. El equipo propio se conserva; se recupera el arma anterior si procede.
-- El Diario resume 5 acciones + 4 runas, 0/9–9/9. Un error reinicia sólo las
-  runas; conserva práctica, errores e identidad del equipo. Hints a los 2 y 4
-  errores. Finalizar lleva a fase 45 y Hablar con Ronnie, con cierre único.
-- El progreso vive en CaelumPersistentCharacterState; se añaden campos y se
-  usan flags libres 57–58 sin desplazar los existentes. Los actores y la pared
-  reconstruyen su presentación desde ese registro. La validación es individual;
-  no acredita todavía el cooperativo planificado para 2–8 jugadores.
+- Use the text and elementary order already proposed in MAP01.txt. Seals' existing emblems
+  are a playable presentation to review; no new illustration or the author's pending final
+  text is declared approved.
+- Reuse the opening of 96 MU: X=1842, Y=-383 to -287, ground floor. The four runes are in
+  front, in X=1826, Z=38. At the start of the test, the central texture acquires the same
+  collision by height as the rest of the facade. When finished disappears on its two
+  faces. The accepted WAD and elevator retains its hash.
+- A previous game that is already inside the cave can return: the closure is only
+  activated when the test begins with Caella. To tour the cave before does not complete the mission. The Silver Key and its destination are still pending.
+- Fire/AltFire is maintained and the native Channel in User2 is maintained. Channel
+  consumes Adrenaline; the old reference to Reload is corrected. For its first
+  demonstration, when you activate User2, you will be prepared for the reserve up to an amount equivalent to one second of the native cost of the Seal, limited by the maximum of the
+  character. After registering a real tic of consumption you will not re-grant that help.
+  No change general costs, effects, cooldown or statistics.
+- The practice observes five facts: primary, secondary, channeling, spending and recovery
+  of Anima. Only a completed launch counts; failing for lack of resource or cancelling it
+  does not count. The four runes use Use with an active magical implement: the element
+  proper of the rune resonates through it. The essence is not changed nor is it required
+  to have four different weapons.
+- If compatible equipment is missing, T1 instances of the existing catalog are provided,
+  with ItemId unique and CA_ITEMFLAG_LIMBO_TEMP. Reopen/prepare does not duplicate
+  objects; a broken loan is replenished at the same instance. It cannot be sold, dropped, disassembled or stored in the Box. It is returned when Caella is completed or exits MAP01.
+  The equipment itself is preserved; the previous weapon is restored if applicable.
+- The Journal summarizes 5 actions + 4 runes, 0/9–9/9. An error restarts only runes;
+  retains practice, errors and equipment identity. Hints to 2 and 4 errors. Finishing leads
+  to 45 phase and Talk with Ronnie, with single closure.
+- Progress lives on CaelumPersistentCharacterState; fields are added and free 57–58 flags
+  are used without displacing existing ones. Actors and wall reconstruct their
+  presentation from that record. Validation is individual; it does not yet credit the
+  co-operative planned for 2–8 players.
 
-## Registro de validación de 4.33.0i (anterior)
+## 4.33.0i Validation Record (previous)
 
-- GZDoom 4.14.2 cargó el runtime completo de 4.278 archivos sin errores ni
-  advertencias nuevas. La prueba de Caella pasó 52 comprobaciones: inicio USDF,
-  préstamos e identidad, acciones inválidas/canceladas, lanzamientos reales,
-  Ánima, canalización, pistas, secuencia, devolución, Diario y apertura única.
-- Una segunda prueba ejercitó el recorrido nativo de Usar, no sólo la llamada
-  directa al actor. Detectó y corrigió la activación de las runas. Tras guardar
-  con dos runas, se activó la tercera, se cargó y se recuperaron índice 2,
-  fase 40 y ambos ItemId. Después se activaron Fuego/Agua con Usar, se guardó
-  y cargó la fase 45: índice 4, pared abierta y préstamos ausentes. La matriz
-  de ese recorrido terminó con 46 comprobaciones y cero fallos. Se inspeccionó
-  la imagen del guardado antes y después de abrir: runas visibles y abertura real.
-- Compatibilidad: se creó un guardado real con el runtime 0h en fase 35,
-  se actualizó esa misma instalación a 0i y se cargó el archivo anterior.
-  Conservó Argento 3/3 y fase 35; los nuevos campos empezaron en cero. Caella
-  inició fase 40 y asignó ItemId diferentes a ambos préstamos. No hace falta
-  reiniciar MAP01 para esta ampliación.
-- Audio: 20 comprobaciones de alias/duraciones y reglas sociales conservadas.
-  El motor informó War Drums en bucle con manejador activo en los ticks UI 50,
-  250 y 500. La captura OpenAL de 21,65 s mantuvo señal en los tres tramos
-  0–6, 6–12 y 12–18 s. MAP01 conservó CA_MUS01 en bucle. Los originales de
-  War Drums, menu_strings_start y la frase de arpa conservaron sus hashes.
-- Aplicador con PowerShell 7.6.2: 12 comprobaciones, cero fallos. CheckOnly,
-  ruta con espacios/paréntesis, delta completo, mapas/audio conservados,
-  archivo local desconocido, PK3 idéntico a src, respaldo verificado,
-  reaplicación, rechazo de conflicto y dos restauraciones exactas ante fallo
-  de copia o build. No cambia el aplicador transaccional validado salvo versión
-  y mensajes; el manifiesto no contiene retiros ni traslados.
-- Se mantienen README y cinco docs, sin enlaces de páginas USDF ni claves de
-  localización nuevas ausentes. La revisión final pasa validate_project.py.
+- GZDoom 4.14.2 loaded the complete 4.278 runtime files without any new bugs or warnings.
+  Caella test passed 52 checks: USDF startup, loans and identity, invalid/cancelled
+  actions, actual releases, Anima, channeling, hints, sequence, return, Journal and
+  single opening.
+- A second test exercised the native route of Use, not only the direct call to the actor.
+  It detected and corrected the activation of the runes. After saving with two runes, the
+  third one was activated, loaded and recovered 2 index, 40 phase and both ItemIds.
+  Then Fire/Water with Use was activated, the 45 phase was saved and loaded: 4 index, open
+  wall and loans absent. The matrix of that route ended with 46 checks and zero failures.
+  The image of the save was inspected before and after opening: visible runes and actual
+  opening.
+- Compatibility: a real save was created with 0h runtime in 35 phase, the same
+  installation was updated to 0i and the previous file was loaded. Argento 3/3 and 35
+  phase was retained; the new fields started at zero. Caella initiated 40 phase and
+  assigned ItemId different for each loan. No need to restart MAP01 for this extension.
+- Audio: 20 alias/duration checks and preserved social rules. The engine reported War
+  Drums in loop with active handler in the UI 50, 250 and 500 ticks. OpenAL capture of
+  21,65 s kept signal in the three 0–6, 6–12 and 12–18 s. MAP01 kept CA_MUS01 in loop. The
+  original War Drums, menu_strings_start and harp phrase retained their hashes.
+- PowerShell 7.6.2 applicator: 12 checks, zero failures. CheckOnly, path with
+  spaces/parentheses, full delta, preserved maps/audio, unknown local file, PK3 identical
+  to src, verified backup, reapplication, conflict rejection and two exact restorations after copy or build failure. It does not change the validated transactional applicator except
+  version and messages; the manifest contains no withdrawals or transfers.
+- README and five docs are maintained, with no links to USDF pages or new location keys
+  missing. The final revision passes validate_project.py.
 
-Las pruebas usan GZDoom 4.14.2 y Freedoom como dependencia de desarrollo,
-no incluidos en el ZIP. Los observadores y guardados de prueba tampoco se
-entregan. La salida gráfica y el audio se verificaron en un motor aislado;
-quedan la valoración del autor y la ejecución del CMD/PowerShell 5.1 en Windows.
+The tests use GZDoom 4.14.2 and Freedoom as a development dependency, not included in the ZIP.
+Test monitors and saves are also not delivered. Graphic output and audio were verified on
+an isolated engine; the author's assessment and execution of the CMD/PowerShell 5.1
+remains on Windows.
 
-## Validación de 4.33.0j (anterior)
+## Validation of 4.33.0j (previous)
 
-- GZDoom 4.14.2 compiló y cargó los cambios en una base 0i reconstruida con
-  las fuentes y parches disponibles. Las huellas de los archivos afectados
-  se cotejan con esa base; esta revisión no repite la auditoría del ZIP
-  completo realizada en 0h.
-- 21 comprobaciones dirigidas, cero fallos: ayuda inicial de Caella sin conceder
-  recursos al consultar el HUD, canalización real, desaparición del aviso de
-  éxito del Sello, cooldown, bloqueo sin Adrenalina, recuperación y crafting.
-  También se comprobó la secuencia Tierra/Aire/Fuego/Agua con el Sello de
-  fuego, apertura en fase 45 y devolución del préstamo. En esta revisión las
-  runas se ejercitaron mediante su función de uso; el recorrido nativo Usar
-  y los guardados completos constan en la validación anterior de 0i.
-- Capturas del motor: icono a color, gris con 60 s de recarga y gris sin
-  Adrenalina. Los doce modelos se inspeccionaron en una galería aislada con
-  OpenGL: entre 308 y 818 triángulos por estación, trece asociaciones contando
-  el alias antiguo de distancia. El ensayo detectó una asociación ausente
-  durante el armado; se corrigió y el verificador ahora comprueba cada clase
-  y sus recursos. No cambia la colisión ni las recetas.
-- El motor resolvió los textos de Caella en español. El verificador coteja las
-  22 claves de diálogo de la prueba con la sección es para evitar otra caída
-  silenciosa al inglés.
-- Audio capturado durante 22,68 s: War Drums sin bucle, silencio tras terminar
-  (tramo 8–13 s), cuerdas presentes al abrir Salir. La confirmación nativa
-  conserva el menú padre; cancelar vuelve a él y confirmar terminó el proceso
-  con código 0. Música, cuerdas y arpa conservan sus archivos originales.
-- Aplicador: se conserva el algoritmo transaccional probado en 0i, cambiando
-  versión y mensajes. Se verifican el manifiesto, las huellas de base/destino,
-  la aplicación completa del delta y los archivos conservados. No hay retiros
-  ni traslados. La ejecución del CMD en Windows sigue pendiente del autor.
-- README y cinco docs actualizados; referencias de audio, traducciones,
-  asociaciones de estaciones y materiales comprobadas por validate_project.py.
-  MAP01/MAP02 y los 74 archivos de audio conservan sus huellas. El ZIP contiene
-  sólo fuentes nuevas/modificadas y los cuatro archivos temporales de aplicación;
-  no contiene motor, IWAD, guardados ni observadores de prueba.
+- GZDoom 4.14.2 compiled and loaded the changes to a 0i base rebuilt with available
+  sources and patches. The fingerprints of the affected files are cross-checked with that
+  base; this review does not repeat the audit of the complete ZIP performed on 0h.
+- 21 Targeted Checks, Zero Failures: Initial Caella support without granting resources by
+  consulting the HUD, actual channeling, disappearing Seal's success notice, cooldown,
+  lock without Adrenaline, recovery and crafting. The Earth/Air/Fire/Water sequence was
+  also tested with the Seal of Fire, opening in phase 45 and repayment of the loan. In
+  this review the runes were exercised through their use function; the native route Use
+  and the complete saves consist in the previous validation of 0i.
+- Engine captures: color icon, gray with 60 s cooldown and grey without Adrenaline gain. The
+  twelve models were inspected in an isolated gallery with OpenGL: between 308 and 818
+  triangles per station, thirteen associations counting the old ranged alias. The
+  test detected an missing association during assembly; it was corrected and the verifier
+  now checks every class and its resources. It does not change the collision or recipes.
+- The engine solved the Caella texts in Spanish. The verifier checks the 22 test dialog
+  keys with the section to avoid another silent fallback to English.
+- Audio captured during 22,68 s: War Drums without loop, silence after finishing (interval 8–13 s), strings present when opening Exit. Native confirmation retains the parent menu;
+  cancel returns to it and confirm finished the process with 0 code. Music, strings and
+  harp retain their original files.
+- Applicator: The transactional algorithm tested in 0i is preserved, changing version and
+  messages. The manifest, the baseline/destination hashes, the complete application of the
+  delta and the preserved files are verified. There are no withdrawals or transfers. The
+  execution of the CMD on Windows is still pending from the author.
+- README and five updated docs; audio references, translations, station associations and
+  materials tested by validate_project.py. MAP01/MAP02 and 74 audio files retain their hashes. The ZIP contains only new/modified sources and the four temporary application
+  files; it does not contain engine, IWAD, saves or test observers.
 
-## Cambios y validación de 4.33.0k
+## 4.33.0k Changes and Validation
 
-El controlador retira una sola vez 250 pickups del surtido original de las seis
-salas de planta baja, tres a cada lado del pasillo. Son 36 armas, 16 armaduras,
-8 escudos, 12 amuletos, 15 Sellos, 153 pilas de materiales, tres municiones,
-cinco consumibles, la llave plateada y la carta sellada de prueba. Sus clases
-siguen disponibles para contenido futuro; no se fija otro destino de la llave.
+The controller removes 250 pickups from the original range of the six ground floor rooms,
+three on each side of the corridor. 36 weapons, 16 armors, 8 shields, 12 amulets, 15
+Seals, 153 piles of materials, three munitions, five consumables, silver key and the
+sealed test card. Their classes remain available for future content; no other key
+destination is set.
 
-La limpieza identifica actores del mapa por clase, origen y altura. Excluye
-objetos en un inventario y objetos soltados; no es una zona que borra todo lo
-que entra. Su marca se serializa con el controlador. Se conserva el checksum
-del WAD para cargar guardados previos; alterar sus Things impediría esa carga
-en GZDoom. Puertas, estaciones del exterior, NPC, ascensor y recursos de la
-cueva permanecen. Al abrir una partida 0j, la marca nueva aplica esta retirada.
+The cleaning identifies actors of the map by class, origin and height. It excludes objects
+in an inventory and loose objects; it is not an area that erases everything that enters.
+Its marker is serialized with the controller. It retains the checksum of the WAD to load
+previous saves; altering its Things would prevent that load in GZDoom. Doors, stations
+outside, NPC, elevator and cave resources remain. When opening a 0j game, the new marker
+applies this removal.
 
-El detalle consulta el registro de misión mediante la instantánea del jugador.
-Describe la etapa actual, el contexto y, durante Caella, cada acción de práctica,
-la ubicación y el uso de runas. El texto cambia al llegar a práctica 5/5 y fase
-45. F/Y alterna resumen y detalle, Arriba/Abajo cambia página y TAB cierra.
-Los textos se ajustan al ancho y se paginan para no sobreponer el pie del Diario.
+The detail checks the mission log using the player snapshot. It describes the current
+stage, context and, during Caella, every practice action, location and use of runes. Text
+changes when you get to practice 5/5 and phase
+45. F/Y alternates summary and detail, Up/Down changes page and TAB closes. Texts are
+    adjusted to width and paged to avoid overlaying the Journal footer.
 
-- GZDoom 4.14.2: 32 comprobaciones de limpieza, gameplay e interfaz y
-  15 comprobaciones de compatibilidad entre 0j y 0k; cero fallos en la
-  ejecución final. Se verificó compilación sin errores ni advertencias nuevas.
-- Inventario de la escena: 250 pickups originales antes y cero después.
-  Se conservaron las 18 estaciones externas, cuatro residentes, ascensor,
-  espada y vetas de la cueva. Objetos en inventario y descartes sobrevivieron
-  a una limpieza repetida de prueba.
-- Entrada real de teclado: F abrió y cerró Detalle, Arriba/Abajo cambió página
-  y TAB cerró el Diario. Cambiar de sección restableció el resumen. Las capturas
-  muestran texto ajustado y paginado, práctica pendiente/completa y la etapa
-  posterior. Se verificaron las 25 claves nuevas en español e inglés.
-- Se activaron las cuatro runas con el recorrido nativo CheckUse/P_UseLines,
-  incluyendo el botón Usar y su estado de pulsación, con un único Sello de
-  fuego. Se comprobaron fase 45 y devolución de préstamos.
-- Guardado real creado con 0j: práctica 5/5, dos runas, ambos préstamos, un
-  objeto llevado y otro soltado. Se actualizó la misma instalación de ensayo
-  a 0k y se cargó: conservó ese estado, retiró el surtido antiguo y permitió
-  activar Fuego/Agua con Usar para completar Caella. No hace falta reiniciar.
-- README y cinco documentos revisados; validate_project.py sin errores.
-  MAP01/MAP02 mantienen sus checksums, y HUD, idioma ya corregido, modelos
-  y audio de 0j conservan su implementación salvo la ayuda textual ampliada.
-- Ensayos sobre la base reconstruida de 0j y sus archivos cotejados, con
-  OpenGL y dependencias locales de desarrollo. No se incluyen motor, IWAD,
-  guardados, observadores, instaladores ni manifiestos en el ZIP. La valoración
-  final en la instalación Windows del autor sigue pendiente.
+- GZDoom 4.14.2: 32 Cleaning, gameplay and interface checks and 15 Compatibility checks
+  between 0j and 0k; zero bugs in final execution. Compilation was verified without new
+  errors or warnings.
+- Inventory of the scene: 250 pickups original before and after zero. The 18 external
+  stations, four residents, elevator, sword and veins of the cave were retained. Objects
+  in inventory and dropped items survived a repeated test cleaning.
+- Real keyboard entry: F opened and closed Detail, Up/Down changed page and TAB closed
+  the Journal. Changing section restored the summary. The screenshots show text fitted and paginated, practice pending/complete and the later stage. New 25 keys were verified in
+  Spanish and English.
+- The four runes were activated with the native CheckUse/P_UseLines, including the Use
+  button and its pulsation status, with a single Seal of Fire. 45 phase and loan return
+  were tested.
+- Actual save created with 0j: 5/5 practice, two runes, both loans, one carried object and
+  one loose. The same test installation was updated to 0k and loaded: it preserved that
+  state, removed the old assortment and enabled Fire/Water to be activated with Use to
+  complete Caella. No restart.
+- README and five revised documents; validate_project.py without errors. MAP01/MAP02 keep
+  their checksums, and HUD, already corrected language, models and audio from 0j retain
+  their implementation except for expanded textual help.
+- Trials on the reconstructed basis of 0j and its cross-checked files, with OpenGL and
+  local development dependencies. No engine, IWAD, saves, observers, installers or
+  manifests are included in the ZIP. The final evaluation in the author's Windows
+  installation remains pending.
 
-Pruebas necesarias del autor:
+Required author tests:
 
-1. Copiar el delta sobre 0j y abrir con run_dev.bat. Cargar una partida previa:
-   las seis primeras salas de planta baja quedan sin el surtido antiguo; el
-   inventario conserva lo que ya habías recogido y los objetos que soltaste.
-   Revisar también una partida nueva. Puertas y estaciones exteriores funcionan.
-2. Diario → Misiones → F: aparece Detalle con descripción e indicaciones de la
-   etapa actual. Arriba/Abajo recorre las páginas; F vuelve al resumen y TAB
-   cierra. Cambiar de sección y volver no deja un detalle abierto por error.
-3. Durante Caella, comprobar que cada acción pasa de Pendiente a Hecho.
-   Al completar 5/5, el detalle pide activar runas y muestra su progreso 0/4–4/4.
-4. Desde la entrada, ir por el pasillo central a la escalera del fondo, quedarse
-   en planta baja y rodearla por la derecha (sur). Buscar las cuatro marcas
-   juntas en la pared trasera, detrás de ese lado de la escalera, cerca del piso.
-   Con el bastón activo, acercarse, apuntar y pulsar Usar sobre Tierra, Aire,
-   Fuego y Agua. El mismo Sello de fuego alcanza. Las runas aparecen después de
-   aceptar la prueba; para activarlas hay que completar primero la práctica.
-5. Guardar/cargar con runas a medias. Deben conservarse el avance, el préstamo
-   y la limpieza. Al completar, el pasadizo se abre, se devuelve el préstamo
-   y Detalle pasa a Hablar con Ronnie. Sus materiales son el siguiente bloque.
+1. Copy the delta over 0j and open with run_dev.bat. Load a previous game: the first six
+   ground floor rooms are left without the old assortment; the inventory retains what you
+   had already collected and the objects you released. Also check a new game. Outer doors
+   and stations work.
+2. Journal → Quests → F: appears Detail with description and indications of the current
+   stage. Up/down it goes through the pages; F returns to the summary and TAB closes.
+   Changing section and returning does not leave a detail open by mistake.
+3. During Caella, check that each action passes from Pending to Done. When completing 5/5,
+   the detail asks to activate runes and shows its progress 0/4–4/4.
+4. From the entrance, go through the central corridor to the staircase at the bottom, stay
+   on the ground floor and surround it on the right (south). Find the four marks together
+   on the back wall, behind that side of the staircase, near the floor. With the active staff, approach, aim and press Use on Earth, Air, Fire and Water. The same Fire Seal is sufficient. Runes appear after accepting the test; to activate them you must first
+   complete the practice.
+5. Save/load with partially completed runes. Progress, loan and cleanup must be kept. When the passageway
+   is completed, the loan is returned and Detail moves to Talk with Ronnie. Its materials
+   are the following block.
 
-## Cómo leer el archivo
+## How to read the file
 
-Los bloques siguientes conservan registros completos y sus huellas SHA-256.
-Son testimonios de lo que se documentó en cada momento. Sus expresiones
-«actual», «pendiente» o «validado» se refieren a aquella revisión y NO prevalecen
-sobre README.md, PROJECT.md, SYSTEMS.md, ASSETS.md o MAP01.txt.
-Las fórmulas o propuestas reemplazadas se conservan para rastrear decisiones,
-no para volver a aplicarlas. Los enlaces dentro de estos bloques son históricos.
+The following blocks retain complete records and their original-source SHA-256 hashes.
+The hashes identify the pre-translation source snapshots, not their English rendering.
+Historical numeric notation, version labels and original instructions are retained as evidence;
+those instructions do not replace the current repository workflow. They are
+testimonies of what was documented at each moment. Their expressions "current", "pending"
+or "validated" refer to that review and do NOT prevail over README.md, PROJECT.md,
+SYSTEMS.md, ASSETS.md or MAP01.txt. The replaced formulas or proposals are retained to
+track decisions, not to reapply them. The links within these blocks are historical.
 
-El instalador conserva además los documentos encontrados en la instalación del
-autor en un único archivo bajo `archive/`, antes de retirar sus copias activas.
-Esto incluye archivos locales que no estuvieran en las fuentes recuperadas.
-Los parches históricos y sus auditores sólo se ejecutan con su base original.
+The historical installer also retained the documents found in the author's installation in a single
+file under `archive/`, before retiring their active copies. This includes local files that
+were not in the recovered sources. Historical patches and their auditors are only executed
+with their original base.
 
 
-## Registro: README.md
+## Archived record: README.md
 
 SHA-256: `d8158e29b6c36ba6bb05fbb580d9fd825f4167ad561d2e979eac59e503cb0e98`
 
@@ -2012,7 +2005,7 @@ The development source keeps game sprites grouped by function. GZDoom supports d
 ````
 
 
-## Registro: legacy/ASSET_REGISTER.md
+## Archived record: legacy/ASSET_REGISTER.md
 
 SHA-256: `82243a4cd7bad71009c7604ceb9d4cf81244aa491984a54751cf89baa7cb6f7e`
 
@@ -2244,7 +2237,7 @@ Final product policy remains independent of Doom copyrighted art.
 ````
 
 
-## Registro: legacy/CHANGELOG.md
+## Archived record: legacy/CHANGELOG.md
 
 SHA-256: `73749d649441ea3ccd54942e464e0e7ac8bbdc77a825ada833a9dbb34c581c68`
 
@@ -4354,7 +4347,7 @@ SHA-256: `73749d649441ea3ccd54942e464e0e7ac8bbdc77a825ada833a9dbb34c581c68`
 ````
 
 
-## Registro: legacy/IMPLEMENTATION_STATUS.md
+## Archived record: legacy/IMPLEMENTATION_STATUS.md
 
 SHA-256: `44576c1d56efde58ee970b4e5779062941401d1cb2406925c23215cdcefdc360`
 
@@ -6249,7 +6242,7 @@ Implemented universal amulets and elemental seals with tier-based weight, attrib
 ````
 
 
-## Registro: legacy/PHYSICS_COLLISION_SYSTEM.md
+## Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md
 
 SHA-256: `fd5e21fdc6cd2b94d311efd5c2df708f6e77420359ce92e472d3e9ca19f923d0`
 
@@ -7254,7 +7247,7 @@ A locked door will later use the same geometry but a locked-door action/key requ
 ````
 
 
-## Registro: legacy/ROADMAP.md
+## Archived record: legacy/ROADMAP.md
 
 SHA-256: `d22324688950cdc3b0235ac1ec7ddc9f0f147a4892be34d4cb7bddaec1d2bf5e`
 
@@ -7456,55 +7449,72 @@ These tracks continue without displacing the ordered major patches:
 ````
 
 
-## Registro: legacy/TYPOGRAPHY.md
+## Archived record: legacy/TYPOGRAPHY.md
 
 SHA-256: `6ef2c9d0539df62b25dcda2836b04529170868ead0c872c8f50a95f3891f71a3`
 
 ````text
-# Sistema tipográfico — Caelum Argenteum
+# Typography system — Caelum Argenteum
 
-La identidad usa una familia coordinada de cuatro funciones. El logotipo conserva su lettering propio y no debe reconstruirse escribiendo el nombre con estas fuentes.
+Identity uses a coordinated family of four functions. The logo retains its own lettering
+and should not be reconstructed by writing the name with these fonts.
 
-| Fuente | Uso principal |
+| Font | Main use |
 | --- | --- |
-| `CaelumDisplay` | títulos, episodios, cartas de arcano y opciones principales |
-| `CaelumText` | diálogos, objetivos, inventario y menús secundarios |
-| `CaelumSmall` | ayudas, etiquetas compactas y texto de baja jerarquía |
-| `CaelumMono` | HUD, contadores, estadísticas, consola y depuración |
+| `CaelumDisplay` | titles, episodes, Arcana cards and main options |
+| `CaelumText` | dialogs, objectives, inventory and secondary menus |
+| `CaelumSmall` | aids, compact labels and low-hierarchy text |
+| `CaelumMono` | HUD, counters, statistics, console and debugging |
 
-El PK3 también incluye copias con los nombres estándar `BigFont`, `SmallFont`, `ConsoleFont` e `IndexFont`, además de los alias modernos `NewSmallFont`, `NewConsoleFont`, `AlternativeSmallFont` y `AlternativeBigFont`, para sustituir la tipografía general de GZDoom 4.14.2. Los glifos son PNG blancos y traducibles por los colores de texto del motor; plata y oro se eligen en ZScript/MENUDEF, no se hornean dentro de las letras.
+The PK3 also includes copies with the standard names `BigFont`, `SmallFont`, `ConsoleFont`
+and `IndexFont`, in addition to the modern aliases `NewSmallFont`, `NewConsoleFont`,
+`AlternativeSmallFont` and `AlternativeBigFont`, to replace the general typography of
+GZDoom 4.14.2. The glyphs are white PNG and translated by the engine text colors; silver
+and gold are chosen in ZScript/MENUDEF, they are not baked within the letters.
 
-Todos los PNG usan una celda transparente de altura fija y una línea base compartida. Los recortes de altura variable quedan prohibidos porque GZDoom los alinearía por su borde superior.
+All PNGs use a transparent fixed height cell and a shared base line. Variable height cuts
+are prohibited because GZDoom would align them by their top edge.
 
-## Cobertura
+## Coverage
 
-ASCII imprimible y Latin-1 completo: mayúsculas, minúsculas, cifras, puntuación, `ÁÉÍÓÚÜÑ`, `áéíóúüñ`, `¿` y `¡`.
+Printable ASCII and full Latin-1: uppercase, lowercase, digits, punctuation, `ÁÉÍÓÚÜÑ`,
+`áéíóúüñ`, `¿` and `¡`.
 
-## Instalación
+## Installation
 
-1. Añadir `Caelum_Argenteum_Typography.pk3` después del IWAD y antes de paquetes que también reemplacen fuentes.
-2. En código propio, solicitar `CaelumDisplay`, `CaelumText`, `CaelumSmall` o `CaelumMono` por nombre.
-3. Verificar menús a 640×360 y HUD a 320×200 antes de cerrar tamaños y espaciados.
+1. Add `Caelum_Argenteum_Typography.pk3` after IWAD and before packages that also replace
+   fonts.
+2. In your own code, request `CaelumDisplay`, `CaelumText`, `CaelumSmall` or `CaelumMono`
+   by name.
+3. Verify menus to 640×360 and HUD to 320×200 before closing sizes and spacings.
 
-## Dirección visual
+## Visual direction
 
-- Serif romana sobria para relacionarse con el isologotipo y la gráfica institucional rioplatense.
-- Contraste moderado: conserva el carácter editorial sin perder trazos al reducirse.
-- Nada de runas, textura envejecida ni ornamentos dentro del texto corriente.
-- Plata para información normal; oro reservado para arcanos mayores, selección y jerarquía excepcional.
+- Restrained Roman serif to relate to the combined symbol/wordmark and Río de la Plata institutional graphic design.
+- Moderate contrast: retains editorial character without losing strokes when reduced.
+- No runes, aged texture, or ornaments within the current text.
+- Silver for normal information; gold reserved for Major Arcana, selection and
+  exceptional hierarchy.
 
-## Licencia y procedencia
+## Licence and provenance
 
-Prototipo bitmap derivado de DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono y DejaVu Sans Mono Bold. La licencia y avisos de redistribución se incluyen en `licenses/DejaVu-copyright.txt` dentro del paquete. El generador reproducible se conserva en las herramientas de construcción del proyecto.
+Bitmap prototype derived from DejaVu Serif, DejaVu Serif Bold, DejaVu Sans Mono and DejaVu
+Sans Mono Bold. The license and redistribution notices are included in
+`licenses/DejaVu-copyright.txt` within the package. The reproducible generator is kept in
+the project construction tools.
 
-## Estado
+## Status
 
-La revisión V4.28.0az reduce el kerning directo a `-4`, recorta una columna transparente derecha de cada glifo y suma otro píxel a `SpaceWidth`. `FONTDEFS` recibe los mismos anchos de palabra para sus alias modernos. Los cinco rótulos clásicos del menú principal, que GZDoom trataba como imágenes en lugar de texto, se reemplazan por gráficos españoles compuestos con `CaelumText` y estas mismas métricas.
+The V4.28.0az revision reduces direct kerning to `-4`, cuts out a clear right column of
+each glyph and adds another pixel to `SpaceWidth`. `FONTDEFS` receives the same word
+widths for its modern aliases. The five classic signs on the main menu, which GZDoom
+treated as images instead of text, are replaced by Spanish graphics composed of
+`CaelumText` and these same metrics.
 
 ````
 
 
-## Registro: legacy/WEAPON_INPUT_MATRIX.md
+## Archived record: legacy/WEAPON_INPUT_MATRIX.md
 
 SHA-256: `ff64dd6258130a2dc86cda4539a95ad235f21e797f75bfa7997b0e7b1474af9f`
 
@@ -7589,545 +7599,519 @@ Test every physical row once. For magical weapons, test every implement with at 
 ````
 
 
-## Registro: before_4.33.0g/DIALOGUE.md
+## Archived record: before_4.33.0g/DIALOGUE.md
 
 SHA-256: `557fdc567d7646fd9826618d2b33e3fccf93eafda1266e1b8364ab78f60fb694`
 
 ````text
-# Caelum Argenteum — Diálogos de MAP01 V4.33.0f
+# Caelum Argenteum — MAP01 V4.33.0f dialogues
 
-## Tecnología nativa
+## Native technology
 
-`GameInfo.AddDialogues` carga `CAPALOMO` en todos los mapas. La apertura usa
-USDF, `Thing_SetConversation`, `Actor.StartConversation` y
-`ConversationMenu` de GZDoom 4.14.2. No se superpone un menú de diálogo
-propietario.
+`GameInfo.AddDialogues` loads `CAPALOMO` on all maps. Openings use USDF,
+`Thing_SetConversation`, `Actor.StartConversation` and `ConversationMenu` from GZDoom
+4.14.2. No custom dialogue menu is overlaid.
 
-El archivo contiene seis conversaciones:
+The file contains six conversations:
 
-| ID | Interlocutor | Uso |
+| ID | Interlocutor | Use |
 | ---: | --- | --- |
-| 43300 | Voz desconocida | Apertura automática, mediante un hablante técnico invisible |
-| 43200 | Palomo | Interacción física con `Use` en el recibidor |
-| 43310 | Argento | Encargo social, consejos y cierre |
-| 43311 | Rulo | Lectura de Emoción y respuesta respetuosa |
-| 43312 | Ronnie | Plan con Labia o información aprendida |
-| 43313 | Caella | Persuasión, condiciones y siguiente conversación |
+| 43300 | Unknown Voice | Automatic opening, using an invisible technical speaker |
+| 43200 | Palomo | Physical interaction with `Use` in the entrance hall |
+| 43310 | Argento | Social assignment, advice and closure |
+| 43311 | Rulo | Emotion Reading and Respectful Response |
+| 43312 | Ronnie | Plan with Labia or learned information |
+| 43313 | Caella | Persuasion, conditions and next conversation |
 
-El hablante invisible de la Voz sólo mantiene viva la conversación nativa y se
-destruye al cerrarla. No existe como persona visible, no bloquea el mapa y no
-guarda progreso. Q conserva el cierre equivalente a Atrás; Escape y mando
-mantienen la conducta normal del motor.
+The invisible speaker of the Voice only keeps the native conversation alive and is
+destroyed when closed. It does not exist as a visible person, does not block the map and
+does not keep progress. Q retains the closure equivalent to Back; Escape and Command
+maintain the normal behavior of the engine.
 
-## Apertura y Voz desconocida
+## Opening and Unknown Voice
 
-Al confirmar un personaje nuevo en MAP01, el controlador:
+On confirming a new character in MAP01, the controller:
 
-1. activa **Donde despiertan los perdidos**;
-2. aplica un fundido breve desde negro y un sonido tenue ya existente;
-3. abre una sola vez `CA_DLG_M01_UNKNOWN_VOICE_WAKE`;
-4. registra `UNKNOWN_VOICE_HEARD` al abrir correctamente el diálogo;
-5. avanza a la fase 20 y permite que Palomo se revele.
+1. activates **Where the lost wake up**;
+2. applies a short fade from black and a faint sound already existing;
+3. opens only once `CA_DLG_M01_UNKNOWN_VOICE_WAKE`;
+4. records `UNKNOWN_VOICE_HEARD` when opening the dialogue box correctly;
+5. advances to phase 20 and lets Palomo appear.
 
-La página presenta dos respuestas explícitas —**¿Quién sos?** y **¿Dónde
-estoy?**— y una única salida nativa USDF, **[Guardar silencio.]**. V4.33.0c
-retira la segunda copia explícita de esa salida. Ninguna opción altera el orden
-de la misión. Cerrar con Q después de haber leído la primera intervención
-tampoco repite la Voz: el hecho registrado es haberla oído, no haber elegido
-una respuesta concreta.
+The page presents two explicit answers —**Who are you?** and **Where am I?**— and a single
+native USDF exit, **[Keep silent.]**. V4.33.0c removes the second explicit copy of that
+output. No option alters the order of the mission. Close with Q after reading the first
+intervention also does not repeat the Voice: the recorded fact is that it has heard it,
+not having chosen a specific answer.
 
-Ninguna línea identifica a la mujer ni explica la naturaleza del lugar.
+No line identifies the woman or explains the nature of the place.
 
-V4.33.0d corrige además las páginas que responden **¿Quién sos?** y **¿Dónde
-estoy?**: cada una conserva un único **Continuar** mediante `goodbye` nativo.
-Se retiraron sus dos copias explícitas `choice`; el cierre y el registro de
-haber oído la Voz mantienen el mismo comportamiento. La validación debe
-recorrer ambas respuestas, además del silencio ya aprobado.
+V4.33.0d also fixes the responding pages **Who are you?** and **Where am I?**: each one
+retains a unique **Continue** using native `goodbye`. Both explicit copies of `choice`
+were withdrawn; the closing and recording of having heard the Voice maintain the same
+behavior. Validation must go through both responses, in addition to the silence already
+approved.
 
-## Primer diálogo de Palomo
+## First Palomo dialog
 
-Palomo comienza con:
+Palomo starts with:
 
-> Buen día. O algo suficientemente parecido como para no discutir con el reloj.
+> Good morning. Or something similar enough not to argue with the clock.
 
-El jugador puede preguntar, en cualquier orden:
+The player may ask, in any order:
 
-- dónde se encuentran;
-- qué le pasó;
-- por qué no recuerda cómo llegó;
-- por la voz de una mujer.
+- where they are located;
+- what happened to them;
+- why they do not remember how they got here;
+- about a woman's voice.
 
-Cada pregunta agotada deja un flag persistente y se oculta durante esa
-conversación y las siguientes. Mencionar la Voz registra además que Palomo la
-calificó como una alucinación. Esa rama incluye la réplica opcional **No parece
-una alucinación** y la respuesta prescrita **Las buenas nunca lo parecen**. Las
-respuestas son corteses, metafóricas y evasivas, y nunca convierten la
-interpretación del autor en conocimiento del personaje.
+Each exhausted question leaves a persistent flag and hides itself during that conversation
+and the following. Mentioning the Voice also records that Palomo called it a
+hallucination. That branch includes the optional reply **It does not seem a
+hallucination** and the prescribed answer **The good ones never seem to be**. The answers are
+courteous, metaphorical and evasive, and they never turn the author's interpretation into
+the character's knowledge.
 
-**¿Qué debería hacer?** puede elegirse sin agotar las preguntas opcionales.
-Palomo sugiere hablar con Argento y explica, sin formular una orden directa,
-que señalar cada baldosa convertiría el camino en el suyo. Esa respuesta:
+**What should I do?** can be chosen without exhausting the optional questions. Palomo
+suggests talking to Argento and explains, without formulating a direct order, that
+pointing out every tile would make the path his own. That answer:
 
-- completa **Buscar ayuda dentro de la propiedad** en 1/1;
-- registra `PALOMO_MET`;
-- avanza exactamente de fase 20 a `ARGENTO_ACTIVE`;
-- actualiza el Diario y guarda el personaje;
-- sustituye cualquier segunda activación inmediata por una línea ambiental que
-  recuerda a Argento.
+- completes **Find help inside the property** in 1/1;
+- records `PALOMO_MET`;
+- progress exactly from phase 20 to `ARGENTO_ACTIVE`;
+- update the Journal and preserves the character;
+- replaces any immediate second activation by an environmental line that recalls Argento.
 
-Una segunda activación no repite la presentación ni concede otra transición.
-Al cerrar, Palomo permanece mientras cualquier jugador todavía pueda verlo; al
-quedar fuera de todos los campos visuales se oculta sin destello y no reaparece
-en el recibidor. Una carga posterior reconstruye directamente ese resultado.
+A second activation does not repeat the presentation or grant another transition. When
+closing, Palomo remains as long as any player can still see it; being out of all visual
+fields it hides without flash and does not reappear in the entrance hall. A later load
+directly reconstructs that result.
 
-## Palomo y el comercio
+## Palomo and trade
 
-Palomo no es comerciante en la historia. `CAPALOMO` ya no ofrece comerciar,
-pedir rebaja ni recibir la Caja al comienzo. Las clases del comercio, su stock,
-monedas, márgenes y menú permanecen intactos como infraestructura reutilizable
-para un NPC comerciante posterior y para pruebas aisladas; no tienen una ruta
-de acceso desde el diálogo canónico de Palomo.
+Palomo is not a merchant in the story. `CAPALOMO` no longer offers to trade, request rebate or
+receive the Box at the beginning. Trade classes, their stock, coins, margins and menu
+remain intact as reusable infrastructure for a later merchant NPC and for isolated
+testing; they do not have an access path from the Palomo canonical dialogue.
 
-Las viejas claves localizadas y acciones de respuesta se conservan por
-compatibilidad con guardados que pudieran haberse realizado dentro de la
-conversación de V4.33.0a. No definen el comportamiento de una partida nueva.
+The old localized keys and response actions are preserved by compatibility with saves that
+could have been performed within the V4.33.0a conversation. They do not define the
+behavior of a new game.
 
-## Persistencia
+## Persistence
 
-USDF consulta marcadores invisibles regenerados desde
-`CaelumPersistentCharacterState`. Los marcadores sólo deciden qué nodo
-mostrar; no son una segunda fuente de verdad. Las etapas y preguntas sobreviven
-guardado/carga y `Exit`/`changemap`. El actor físico puede perder su nodo
-temporal al cerrar y volver a sincronizarlo en la próxima pulsación de `Use`.
+USDF consults regenerated invisible markers from `CaelumPersistentCharacterState`.
+Markers only decide which node to display; they are not a second source of truth. The
+stages and questions survive save/load and `Exit`/`changemap`. The physical actor may lose
+his temporary node when closing and resynchronizing it at the next `Use` press.
 
 
-## Prueba social de Argento — V4.33.0f
+## Argento Social Test — V4.33.0f
 
-`CaelumMainM00SocialDialogue` proyecta los hechos del Inventory viajero en
-tokens de condición USDF. Las cuatro conversaciones añaden 30 páginas y 56
-claves EN/ES; las conversaciones y traducciones anteriores se conservan.
+`CaelumMainM00SocialDialogue` projects the facts of the traveling Inventory into USDF
+condition tokens. The four conversations add 30 pages and 56 EN/ES keys; the previous
+conversations and translations are preserved.
 
-Aceptar con Argento activa el objetivo 0/3. Cada residente suma como máximo
-una vez y el orden es libre. Rulo usa Emoción y exige después una respuesta
-respetuosa; leerlo correctamente no equivale a obtener su consentimiento.
-Ronnie acepta un plan ordenado con Labia >= 1. Caella usa Persuasión. Las dos
-tiradas se ejecutan una sola vez por personaje y conservan resultado,
-probabilidad y dado. Cerrar y reabrir no las renueva.
+Accept with Argento activates the 0/3 target. Each resident adds up at most once and the
+order is free. Rulo uses Emotion and then demands a respectful response; reading it
+correctly does not amount to obtaining your consent. Ronnie accepts an ordered plan with
+Labia >=1. Caella uses Persuasion. The two rolls run only once per character and retain
+result, probability and die result. Close and reopen do not renew them.
 
-Tras fallar con Rulo o Caella, Argento ofrece una orientación y desbloquea una
-respuesta sin otra tirada. Ronnie ofrece la misma alternativa de conocimiento
-después de visitarlo, incluso con Labia insuficiente. Sus requisitos se vuelven
-a comprobar en el ámbito `play` antes de conceder progreso.
+After failure with Rulo or Caella, Argento offers guidance and unlocks a response without
+another roll. Ronnie offers the same alternative of knowledge after visiting it, even with
+insufficient Labia. Its requirements are re-checked in the `play` environment before
+granting progress.
 
-El menú conserva el cierre Q/Atrás y la salida nativa. La opción directa de
-Ronnie se ve gris y muestra el requisito cuando está bloqueada. Una lectura
-correcta de Rulo muestra **[Preocupado]** dentro del diálogo privado; no crea
-un indicador mundial compartido. Las probabilidades se muestran antes de
-aceptar las tiradas. No se añade un rastreador permanente al HUD.
+The menu retains Q/Back closure and native output. The direct Ronnie option looks grey and
+displays the requirement when locked. A correct Rulo reading shows **[Worried]** within
+the private dialogue; it does not create a shared global indicator. Probabilities are
+shown before accepting rolls. A permanent tracker is not added to the HUD.
 
-Con 3/3, Argento habilita la respuesta de cierre. Esa respuesta fija fase 35,
-marca `ARGENTO_COMPLETE` y cambia el Diario a **Hablar con Caella**. Caella
-ofrece entonces la línea autoral sobre la pared. La rama mágica se implementará
-en el siguiente tramo y no se activa anticipadamente.
+With 3/3, Argento enables the closing response. That response sets phase 35, marks
+`ARGENTO_COMPLETE` and changes the Journal to **Talk with Caella**. Caella then offers the
+authored line on the wall. The magic branch will be implemented in the next stage and
+will not be activated in advance.
 
-La persistencia es por personaje, igual que la base aceptada. Compartir el
-progreso con un grupo cooperativo sigue pendiente de implementación; tampoco
-se transmiten la lectura emocional ni el conocimiento privado entre jugadores.
+Persistence is per character, as is the accepted basis. Sharing progress with a
+cooperative group is still pending implementation; neither is emotional reading nor
+private knowledge transmitted among players.
 
 ````
 
 
-## Registro: before_4.33.0g/ECONOMY.md
+## Archived record: before_4.33.0g/ECONOMY.md
 
 SHA-256: `b718f8d76b87d578b1979bb9b6d58cf9276b38e6b114608a0d0bb91bd20bcb56`
 
 ````text
-# Caelum Argenteum — Economía base V4.32.0a-r4
+# Caelum Argenteum — Base economy V4.32.0a-r4
 
-V4.32.0a-r4 conserva sin cambios todos los valores y fórmulas de r3. Su única
-corrección funcional declara en `play scope` los helpers que inspeccionan
-instancias vivas de inventario, requisito de GZDoom 4.14.2 durante `LoadActors`.
+V4.32.0a-r4 retains unchanged all values and formulas of r3. Its only functional
+correction declares in `play scope` the helpers inspecting live inventory instances,
+requirement of GZDoom 4.14.2 during `LoadActors`.
 
-## 1. Unidad monetaria
+## 1. Monetary unit
 
-La unidad contable es el **cobre monetario**. Todas las cantidades económicas
-internas se expresan primero en equivalentes de cobre. Una unidad monetaria de
-plata equivale a 200 cobres y una unidad monetaria de oro equivale a 200
-platas, es decir, 40.000 cobres.
+The accounting unit is the **monetary copper**. All internal economic amounts are first
+expressed in copper equivalents. A silver monetary unit is equivalent to 200 coppers and a
+gold monetary unit is equivalent to 200 silvers, i.e. 40.000 coppers.
 
-Cada metal tiene monedas nominales de 1, 5, 20, 50 y 100:
+Each metal has coin denominations of 1, 5, 20, 50 and 100:
 
-| Metal | Denominación | Valor en cobre | Peso por moneda |
+| Metal | Denomination | Copper value | Weight per coin |
 | --- | ---: | ---: | ---: |
-| Cobre | 1 | 1 | 0,001 kg |
-| Cobre | 5 | 5 | 0,001 kg |
-| Cobre | 20 | 20 | 0,001 kg |
-| Cobre | 50 | 50 | 0,001 kg |
-| Cobre | 100 | 100 | 0,001 kg |
-| Plata | 1 | 200 | 0,001 kg |
-| Plata | 5 | 1.000 | 0,001 kg |
-| Plata | 20 | 4.000 | 0,001 kg |
-| Plata | 50 | 10.000 | 0,001 kg |
-| Plata | 100 | 20.000 | 0,001 kg |
-| Oro | 1 | 40.000 | 0,001 kg |
-| Oro | 5 | 200.000 | 0,001 kg |
-| Oro | 20 | 800.000 | 0,001 kg |
-| Oro | 50 | 2.000.000 | 0,001 kg |
-| Oro | 100 | 4.000.000 | 0,001 kg |
+| Copper | 1 | 1 | 0,001 kg |
+| Copper | 5 | 5 | 0,001 kg |
+| Copper | 20 | 20 | 0,001 kg |
+| Copper | 50 | 50 | 0,001 kg |
+| Copper | 100 | 100 | 0,001 kg |
+| Silver | 1 | 200 | 0,001 kg |
+| Silver | 5 | 1.000 | 0,001 kg |
+| Silver | 20 | 4.000 | 0,001 kg |
+| Silver | 50 | 10.000 | 0,001 kg |
+| Silver | 100 | 20.000 | 0,001 kg |
+| Gold | 1 | 40.000 | 0,001 kg |
+| Gold | 5 | 200.000 | 0,001 kg |
+| Gold | 20 | 800.000 | 0,001 kg |
+| Gold | 50 | 2.000.000 | 0,001 kg |
+| Gold | 100 | 4.000.000 | 0,001 kg |
 
-Las monedas son objetos físicos apilables de `Actor.Inv`. Persisten en
-guardados y viajes, pueden recogerse y soltarse, y obedecen las mismas reglas
-de carga y Caja Mágica que los demás objetos. El total visible del Diario suma
-todas las monedas poseídas, incluidas las guardadas en la Caja Mágica. Las que
-están fuera aportan su peso completo; las guardadas entran en el peso real total
-que la caja divide por sus slots máximos y trunca a 0,001 kg.
+Coins are stackable physical objects of `Actor.Inv`. They persist in saves and travels,
+can be collected and released, and obey the same carrying-capacity and Magic Box rules as all other
+objects. The Journal's total visible sum up all the coins possessed, including those
+stored in the Magic Box. Those that are outside contribute their full weight; those saved
+enter the total actual weight that the Box divides by its maximum slots and truncates to
+0,001 kg.
 
-Son objetos monetarios nominales: el jugador no puede fundirlos ni acuñarlos y
-su valor facial no se deriva del valor de la plata u oro usados como materiales.
+They are currency with a nominal value: the player cannot melt or mint them and their face
+value is not derived from the value of the silver or gold used as materials.
 
-Clases nativas:
+Native classes:
 
-- Cobre: `CaelumCopperCoin`, `CaelumCopperCoin5`,
-  `CaelumCopperCoin20`, `CaelumCopperCoin50`, `CaelumCopperCoin100`.
-- Plata: `CaelumSilverCoin`, `CaelumSilverCoin5`,
-  `CaelumSilverCoin20`, `CaelumSilverCoin50`, `CaelumSilverCoin100`.
-- Oro: `CaelumGoldCoin`, `CaelumGoldCoin5`, `CaelumGoldCoin20`,
-  `CaelumGoldCoin50`, `CaelumGoldCoin100`.
+- Copper: `CaelumCopperCoin`, `CaelumCopperCoin5`, `CaelumCopperCoin20`,
+  `CaelumCopperCoin50`, `CaelumCopperCoin100`.
+- Silver: `CaelumSilverCoin`, `CaelumSilverCoin5`, `CaelumSilverCoin20`,
+  `CaelumSilverCoin50`, `CaelumSilverCoin100`.
+- Gold: `CaelumGoldCoin`, `CaelumGoldCoin5`, `CaelumGoldCoin20`, `CaelumGoldCoin50`,
+  `CaelumGoldCoin100`.
 
-## 2. Valores base de materias primas y consumibles
+## 2. Base values of raw materials and consumables
 
-Los precios siguientes son anclas de diseño autorizadas. La dureza y la
-abundancia aceptadas en V4.31 continúan determinando cuánto cuesta obtener un
-recurso en tiempo y esfuerzo, pero ya no recalculan automáticamente su valor
-monetario.
+The following prices are authorized design anchors. The hardness and abundance accepted in
+V4.31 continue to determine how much it costs to obtain a resource in time and effort, but
+no longer automatically recalculate its monetary value.
 
-| Materia prima | Cobres por unidad de 0,001 kg |
+| Raw material | Coppers per unit of 0,001 kg |
 | --- | ---: |
-| Madera común | 2 |
-| Fibra vegetal | 3 |
-| Piel de vaca | 3 |
-| Carbón mineral | 5 |
-| Cobre bruto | 5 |
-| Estaño bruto | 5 |
-| Hierro bruto | 7 |
-| Plata bruta | 100 |
-| Ópalo bruto | 500 |
-| Topacio bruto | 500 |
-| Esmeralda bruta | 500 |
-| Zafiro bruto | 500 |
-| Rubí bruto | 500 |
-| Oro bruto | 1.000 |
+| Common timber | 2 |
+| Plant fiber | 3 |
+| Cowhide | 3 |
+| Mineral coal | 5 |
+| Raw copper | 5 |
+| Crude tin | 5 |
+| Raw iron | 7 |
+| Raw silver | 100 |
+| Crude opal | 500 |
+| Raw topaz | 500 |
+| Raw emerald | 500 |
+| Raw sapphire | 500 |
+| Raw ruby | 500 |
+| Raw gold | 1.000 |
 
-Lana, algodón, seda bruta, piel de depredador y piel de monstruo conservan por
-ahora sus anclas provisionales anteriores:
+Wool, cotton, raw silk, predator hide and monster hide retain their previous temporary
+anchors for the time being:
 
-| Familia | Grado 1 | Grado 2 | Grado 3 |
+| Family | Grade 1 | Grade 2 | Grade 3 |
 | --- | ---: | ---: | ---: |
-| Fibra: lana / algodón / seda bruta | 2 | 4 | 8 |
-| Piel: vaca / depredador / monstruo | 3 | 4 | 8 |
+| Fiber: wool/cotton/raw silk | 2 | 4 | 8 |
+| Hide: cow / predator / monster | 3 | 4 | 8 |
 
-Cambiar esos valores pendientes requerirá una decisión de diseño explícita; la
-abundancia de la fuente no los sobrescribirá sola.
+Changing those outstanding values will require an explicit design decision; the abundance
+of the source will not overwrite them alone.
 
-Los siguientes valores corresponden a una unidad completa del objeto
-consumible, no a un gramo de contenido:
+The following values correspond to a complete consumable item, not to a gram
+of content:
 
-| Consumible | Valor base en cobre |
+| Consumable | Base value in copper |
 | --- | ---: |
-| Ración de comida | 4 |
-| Ración de agua | 6 |
+| Food ration | 4 |
+| Water ration | 6 |
 
-## 3. Valor recursivo de manufactura
+## 3. Recursive crafting value
 
-El sistema calcula el valor con las recetas reales y siempre toma como
-referencia la **eficiencia material de 100 %**. Las eficiencias jugables de
-25/50/100 % y sus tiempos 1×/10×/100× permanecen intactos; la merma elegida por
-el jugador no redefine el precio base del objeto.
+The system calculates the value with the actual recipes and always takes as reference the
+**material efficiency of 100 %**. The playable efficiencies of 25/50/100 % and its times
+1×/10×/100× remain intact; the material loss chosen by the player does not redefine the base
+price of the object.
 
-### 3.1 Procesamiento básico
+### 3.1 Basic processing
 
-Para lingotes, aleaciones, tejido, cuerda y cuero:
+For ingots, alloys, fabric, string and leather:
 
 ```text
-valor unitario de salida =
-    suma(valor unitario de cada insumo × unidades requeridas)
+output unit value =
+    sum(each input unit value × required units)
     × 1,25
-    / unidades de salida al 100 %
+    /  output units at 100 %
 ```
 
-El recargo de esta etapa es siempre **25 %**.
+The surcharge for this stage is always **25 %**.
 
-### 3.2 Componentes
+### 3.2 Components
 
-Cada componente toma el valor del material **ya procesado** que consume, no el
-de su materia prima original. Luego aplica el recargo correspondiente a la red
-de estaciones de su tier:
+Each component takes the value of the material **already processed** it consumes, not its
+original raw material. It then applies the surcharge corresponding to the network of
+stations in its tier:
 
-| Tier | Infraestructura acumulativa | Valor agregado |
+| Tier | Cumulative infrastructure | Added value |
 | --- | --- | ---: |
-| T1 | Banco de trabajo + estación principal | 25 % |
-| T2 | Red T1 + estación especializada | 50 % |
-| T3 | Red T2 + Banco Maestro | 100 % |
+| T1 | Workbench + main station | 25 % |
+| T2 | Network T1 + specialized station | 50 % |
+| T3 | T2 network + Master Workbench | 100 % |
 
-Los escudos conservan su requisito adicional de yunque; no cambia el tier ni
-duplica el recargo.
+Shields retain their additional anvil requirement; it does not change the tier or double
+the surcharge.
 
-### 3.3 Objetos finales
+### 3.3 Final items
 
-Armas físicas, armas de esencia, armaduras, escudos, amuletos y sellos suman
-el valor de sus componentes ya manufacturados, incluidos los detalles de
-plata y oro existentes en la receta. Sobre esa suma vuelven a aplicar el
-recargo T1/T2/T3 de la tabla anterior. Por lo tanto, cada etapa conserva su
-propia mano de obra y el valor se acumula de forma recursiva.
+Physical weapons, essence weapons, armor, shields, amulets and seals add up to the value
+of their already manufactured components, including the details of silver and gold in the
+recipe. On this sum, the T1/T2/T3 surcharge of the table above applies again. Therefore,
+each stage retains its own labor and the value accumulates recursively.
 
-`CaelumEconomyRules` expone el cálculo por material, por familia de objeto y
-por instancia nativa de inventario. Las raciones de comida y agua ya poseen
-valor base autorizado. Munición, demás consumibles, llaves y objetos clave no
-entran todavía al catálogo comercial porque carecen de receta o de un valor
-base autorizado; devolverles un precio inventado violaría esta regla.
+`CaelumEconomyRules` exposes the calculation by material, by object family and by native
+inventory instance. Food and water rations already have authorized base value. Munition,
+other consumables, keys and key objects do not yet enter the commercial catalog because
+they lack a recipe or an authorized base value; returning an invented price to them
+would violate this rule.
 
-## 4. Márgenes de comerciante
+## 4. Trader Margins
 
-El margen se aplica una sola vez al total del lote:
+The margin applies only once to the total lot:
 
 ```text
-NPC compra al jugador = piso(valor base total × 0,50)
-NPC vende al jugador  = techo(valor base total × 1,50)
+NPC buys from player = floor(total base value × 0,50)
+NPC sells to player = ceil(total base value × 1,50)
 ```
 
-El piso al pagar y el techo al cobrar evitan crear cobre por redondeo. Aplicar
-el margen después de sumar el lote permite, por ejemplo, que dos unidades de
-valor base 1 se vendan juntas por 1 cobre aunque una unidad aislada produzca
-una fracción no representable.
+The floor when paying and the ceiling when charging avoid creating copper by rounding.
+Applying the margin after adding the lot allows, for example, that two units of base value
+1 are sold together by 1 copper even if an isolated unit produces a fraction not representable.
 
-Los métodos autoritativos son:
+Authoritative methods are:
 
 - `CaelumEconomyRules.GetPricePaidByMerchant`
 - `CaelumEconomyRules.GetPriceChargedByMerchant`
 
-Personalidades, reputación, regateo y diferencias regionales no modifican
-estos valores base en V4.32.0a-r4. Se conectarán después sobre esta única capa
-de precios, sin duplicar fórmulas dentro de cada NPC.
+Personalities, reputation, haggling and regional differences do not modify these base
+values in V4.32.0a-r4. They will then connect on this single price layer, without
+duplicating formulas within each NPC.
 
-## 5. Presentación en inventario
+## 5. Presentation in inventory
 
-El Diario incorpora un filtro de monedas y, junto a **Carga** y **Caja
-Mágica**, muestra:
+The Journal incorporates a coin filter and, together with **Load** and **MagicBox**,
+shows:
 
-- valor total expresado en cobres;
-- cantidad física total de monedas de cobre, sumando sus cinco denominaciones;
-- cantidad física total de monedas de plata, sumando sus cinco denominaciones;
-- cantidad física total de monedas de oro, sumando sus cinco denominaciones.
+- total value expressed in coppers;
+- total physical number of copper coins, adding their five denominations;
+- total physical quantity of silver coins, adding their five denominations;
+- total physical number of gold coins, adding up their five denominations.
 
-La línea de Caja Mágica muestra además sus slots usados/máximos y su peso total:
-10,000 kg propios más la contribución reducida de todo el contenido. La fórmula,
-las restricciones y los casos de cambio de Inteligencia están documentados en
-`docs/MAGIC_BOX.md`.
+The Magic Box line also shows your used/maximum slots and their total weight: 10,000 kg
+own plus the reduced contribution of all content. The formula, restrictions and cases of
+change of Intelligence are documented in `docs/MAGIC_BOX.md`.
 
-Los tres iconos RGBA 64×64 suministrados para Caelum Argenteum se conservan sin
-redibujar en `graphics/caelum/icons/currency/`. Las cinco denominaciones de un
-mismo metal comparten imagen y se distinguen por su nombre localizado y valor
-facial. Las copias registradas como `CCOP`, `CSIL` y `CGOL` permiten también que
-cada moneda exista como pickup visible en el mundo.
+The three RGBA 64×64 icons supplied for Caelum Argenteum are preserved unredrawn in
+`graphics/caelum/icons/currency/`. The five denominations of the same metal share image
+and are distinguished by their localized name and face value. Copies registered as
+`CCOP`, `CSIL` and `CGOL` also allow each coin to exist as a visible pickup in the world.
 
 ````
 
 
-## Registro: before_4.33.0g/EQUIPMENT_ICONS_4_33_0d.md
+## Archived record: before_4.33.0g/EQUIPMENT_ICONS_4_33_0d.md
 
 SHA-256: `6580d538c62e511b912bea6dd459fb00498457961b2200e635ee0556ebe4af54`
 
 ````text
-# Iconos de equipo — importación V4.33.0d
+# Equipment icons — V4.33.0d import
 
-Fuente autoral: `Caelum_Argenteum_tiers_2_3_argentinos_REHECHOS.zip`.
+Author-provided source: `Caelum_Argenteum_tiers_2_3_argentinos_REHECHOS.zip`.
 
-Se incorporan sus 99 PNG sin modificar sus bytes, dimensiones, proporciones,
-transparencia ni nombres: 49 variantes T2, 49 variantes T3 y
-`ca_giant_gauntlets.png` corregido. Incluye armas, armaduras, guantes, botas,
-cascos, escudos, amuletos y sellos.
+99 PNG are incorporated without modifying its bytes, dimensions, proportions, transparency
+or names: 49 variants T2, 49 variants T3 and `ca_giant_gauntlets.png` corrected. It
+includes weapons, armor, gloves, boots, helmets, shields, amulets and seals.
 
-Destino: `src/graphics/caelum/icons/`, preservando `jewelry/`. El resolver de
-iconos existente selecciona `_t2` y `_t3`; los archivos sustituyen sus versiones
-anteriores en el inventario, equipo, comercio y menús que usan ese resolver.
-No son cuadros del rig de manos/espada de primera persona.
+Destination: `src/graphics/caelum/icons/`, preserving `jewelry/`. The existing icon resolver
+selects `_t2` and `_t3`; the files replace their previous versions in the inventory,
+equipment, trade and menus that use that resolver. They are not first-person hands/sword
+rig frames.
 
-Cada PNG es RGBA 128×128 y tiene alfa transparente y contenido visible. La
-auditoría compara los 99 archivos contra los bytes del adjunto y contra el
-runtime completo. El manifiesto y las instrucciones de autor se conservan en
-`art_source/tiers_2_3_rehechos_4_33_0d/`.
+Each PNG is RGBA 128×128 and has transparent alpha and visible content. The audit compares
+99 files against attachment bytes and against full runtime. The manifest and author
+instructions are preserved in `art_source/tiers_2_3_rehechos_4_33_0d/`.
 
-Los adornos T2/T3 argentinos y la pareja corregida de guanteletes reemplazan
-los iconos anteriores. Estadísticas, valores, recetas, pesos y mecánicas no
-dependen de esta importación gráfica.
+The T2/T3 Argentine ornaments and the corrected pair of gauntlets replace the previous
+icons. Statistics, values, recipes, weights and mechanics do not depend on this graphic
+import.
 
 ````
 
 
-## Registro: before_4.33.0g/FIRST_PERSON.md
+## Archived record: before_4.33.0g/FIRST_PERSON.md
 
 SHA-256: `e3b23c122ab9e0891258d5c14d5f2be40604ca346df1e0ea9ad2b721990d913f`
 
 ````text
-# Caelum Argenteum — Primera persona de Domingo V4.32.0o (aceptada)
+# Caelum Argenteum — First person on Domingo V4.32.0o (accepted)
 
-## Alcance
+## Scope
 
-La vista modular continúa conectada exclusivamente con
-`CaelumSwordSelectorWeapon`, la espada real equipada desde el Inventario. No
-existe un arma especial de prueba ni una segunda ruta de daño o bloqueo.
+The modular view continues to be connected exclusively to `CaelumSwordSelectorWeapon`, the
+real sword equipped from the Inventory. There is no special test weapon or a second damage or blocking path.
 
-El autor completó con éxito toda la matriz de `PRUEBAS_4_32_0o.txt`; por ello
-esta composición queda cerrada como referencia. Más adelante se aplicará el
-mismo enfoque modular a todas las armas, con arte y movimiento propios de cada
-familia. Esa ampliación no forma parte de V4.33.0a y no reabre las pruebas ya
-aceptadas de la espada.
+The author successfully completed the entire `PRUEBAS_4_32_0o.txt` matrix; this
+composition is therefore closed as a reference. Later on, the same modular approach will
+be applied to all weapons, with art and movement specific to each family. This expansion
+is not part of V4.33.0a and does not reopen the already accepted tests of the sword.
 
-V4.32.0o conserva la altura, el pulgar completo y la trayectoria de V4.32.0n,
-pero corrige el cuadro que mostraba dos puños. El código anterior calculó los
-pivotes con el tamaño completo del PNG; GZDoom aplica `PSPF_PIVOTPERCENT` a la
-caja visible de cada textura. Como `RHND`, `DSWD` y `RFNG` tienen cajas alfa
-distintas, las dos representaciones complementarias de la misma mano se
-separaban al girar. Los nuevos porcentajes compensan esas cajas y hacen que
-las tres transformaciones resuelvan al pivote real ya usado por la espada.
-No modifica sprites, daño, Aire, enfriamiento, durabilidad, sonidos,
-persistencia, equipo, HUD, mapas, economía, Palomo ni diálogos.
+V4.32.0o retains the height, full thumb, and trajectory of V4.32.0n, but corrects the box
+showing two fists. The above code calculated the pivots with the full size of the PNG;
+GZDoom applies `PSPF_PIVOTPERCENT` to the visible box of each texture. As `RHND`, `DSWD`
+and `RFNG` have different alpha boxes, the two complementary representations of the same
+hand were separated when turning. The new percentages compensate those boxes and cause the
+three transformations to solve the actual pivot already used by the sword. It does not
+modify sprites, damage, Air, cooldown, durability, sounds, persistence, equipment, HUD,
+maps, economy, Palomo or dialogues.
 
-## Encuadre por estado
+## Framing by state
 
-| Estado | Escudo (10) | Mano izquierda (20) | Mano/dedos derechos (25/40) | Espada (30) |
+| State | Shield (10) | Left hand (20) | Right hand/fingers (25/40) | Sword (30) |
 | --- | ---: | ---: | ---: | ---: |
-| Reposo | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=260, Y=0 |
-| Block sostenido | X=160, Y=100 | X=160, Y=100 | Ocultas | Oculta |
+| Rest | X=82, Y=45 | X=82, Y=45 | X=282, Y=32 | X=260, Y=0 |
+| Held Block | X=160, Y=100 | X=160, Y=100 | Hidden | Hidden |
 
-En reposo, escudo y mano izquierda continúan juntos en la marca inferior
-izquierda aceptada. La palma y el pulgar derechos permanecen en (282,32). La
-espada pasa de (260,4) a (260,0), por lo que sube ligeramente sin cambiar su
-registro horizontal aprobado.
+At rest, shield and left hand continue together in the accepted lower left mark. Right
+palm and thumb remain in (282,32). The blade passes from (260,4) to (260,0), so it goes up
+slightly without changing its approved horizontal alignment.
 
-## Block frontal, cercano y sostenido
+## Frontal block, close and held
 
-El Block no cambia respecto de V4.32.0m. H sigue siendo una transición breve
-de tres tics e I usa duración `-1`, fija hasta terminar el estado real de
-Block. El escudo y su mano correcta permanecen en las capas 10 y 20 a
-(160,100); las capas de la mano hábil 25/30/40 se limpian para evitar una
-segunda mano. Al soltar Block, el conjunto derecho se reconstruye de inmediato.
+The Block does not change with respect to V4.32.0m. H remains a short transition of three
+tics and I uses `-1` duration, fixed until the actual status of Block ends. The shield and
+its correct hand remain in the 10 and 20 layers to (160,100); the right-hand layers
+25/30/40 are cleaned to avoid a second hand. When Block is released, the right set is
+rebuilt immediately.
 
-La exportación `DSHDI0` conserva 450×300, `grAb (225,48)` y una caja visible
-de 293×244. `LHNDI0` comparte lienzo y origen y conserva su caja visible de
-213×169. No cambian perspectiva, tamaño, altura ni condición de equipo.
+`DSHDI0` Export retains 450×300, `grAb (225,48)` and a visible 293×244 box. `LHNDI0`
+shares canvas and origin and retains its visible 213×169 box. No change in perspective,
+size, height or equipment condition.
 
-## Pulgar completo delante del mango
+## Full Thumb in front of Handle
 
-`RFNGA0` y `RFNGB0` mantienen lienzo RGBA 320×200 y `grAb (160,32)`, pero la
-máscara frontal ahora incluye todo el pulgar visible que ya existe en la capa
-de mano `RHND`. La ampliación A añade exactamente 443 píxeles visibles con el
-color original de Domingo: 413 conservan también su alfa exacto y 30 reducen
-sólo el alfa en el borde suavizado de la máscara. No repinta ni desplaza ningún
-píxel que ya pertenecía a `RFNG`. B es la misma pose desplazada exactamente
-(+1,+1), tal como ocurre entre `RHNDA0` y `RHNDB0`.
+`RFNGA0` and `RFNGB0` keep RGBA 320×200 and `grAb (160,32)` canvas, but the front mask now
+includes all the visible thumb that already exists in the `RHND` hand layer. The A
+extension adds exactly 443 pixels visible with the original Domingo color: 413 also
+retains its exact alpha and 30 reduce only the alpha on the smoothed edge of the mask. Do
+not repaint or displace any pixel that already belonged to `RFNG`. B is the same exactly
+displaced pose (+1,+1), as it happens between `RHNDA0` and `RHNDB0`.
 
-La caja alfa inclusiva pasa a (148,92)–(210,151) en A y
-(149,93)–(211,152) en B. De este modo, el mango queda detrás del pulgar entero
-y ya no parece cortar el dedo.
+The inclusive alpha box passes to (148,92)–(210,151) in A and (149,93)–(211,152) in B.
+Thus, the handle is behind the entire thumb and no longer appears to cut the finger.
 
-## Giro sincronizado sin duplicación
+## Synchronised turn without duplication
 
-La espada conserva exactamente su pivote y movimiento aceptados. Para mano y
-pulgar, los porcentajes se calculan sobre sus cajas alfa reales, no sobre el
-lienzo transparente. El resultado de cada fila, después de compensar `grAb` y
-el desplazamiento espada–mano (-22,-32), es el mismo punto de pantalla
-(56.64375,84.57):
+The sword retains exactly its accepted pivot and movement. For hand and thumb, the
+percentages are calculated on its actual alpha boxes, not on the transparent canvas. The
+result of each row, after compensating `grAb` and the hand-sword displacement (-22,-32),
+is the same display point (56.64375,84.57):
 
-| Capa | Caja alfa A / tamaño | Pivote porcentual | Punto efectivo del PNG | Punto de pantalla común |
+| Layer | Box alpha A / size | Percentage pivot | Effective PNG point | Common screen point |
 | ---: | --- | ---: | ---: | ---: |
 | 25 `RHND` | (147,128)–(479,239) / 333×112 | (0.2091403904, 0.2550892857) | (216.64375,156.57) | (56.64375,84.57) |
 | 30 `DSWD` | (168,0)–(294,178) / 127×179 | (0.55625, 0.83) | (238.64375,148.57) | (56.64375,84.57) |
 | 40 `RFNG` | (148,92)–(210,151) / 63×60 | (1.0895833333, 0.4095) | (216.64375,116.57) | (56.64375,84.57) |
 
-El X de `RFNG` supera 1 porque el punto compartido queda apenas fuera de su
-caja visible; el motor permite pivotes porcentuales fuera del intervalo
-0–1. La compensación mantiene los tres píxeles de anclaje coincidentes hasta
-el máximo giro y elimina la silueta duplicada del puño.
+The `RFNG` X exceeds 1 because the shared point is just outside its visible box; the
+engine allows percentage pivots outside the 0–1 range. The compensation keeps the three
+matching anchor pixels to the maximum turn and eliminates the duplicate fist silhouette.
 
-La hoja conserva sus ángulos absolutos. La mano y el pulgar reciben solamente
-la variación respecto del reposo: `rotación_mano = rotación_espada - 18°`.
-Así, el arte de la mano no cambia en reposo y durante el ataque acompaña tanto
-la posición como el giro de la espada sin perder el agarre.
-El delta total de la mano va de 0→25° entre reposo e impacto.
+The blade retains its absolute angles. The hand and thumb receive only the variation with
+respect to rest: `rotación_mano = rotación_espada - 18°`. Thus, the art of the hand does
+not change at rest and during the attack accompanies both the position and the turning of
+the sword without losing the grip. The total delta of the hand goes from 0→25° between
+rest and impact.
 
-| Momento | Hoja absoluta | Mano/pulgar | Ángulo visual aproximado |
+| Moment | Absolute blade angle | Hand/thumb | Approximate visual angle |
 | --- | ---: | ---: | ---: |
-| Reposo | 18° | 0° | 79° |
-| Salida 1 | 21° | 3° | 82° |
-| Ápice | 24° | 6° | 85° |
-| Barrido 1 | 31° | 13° | 92° |
-| Barrido 2 | 38° | 20° | 99° |
-| Impacto | 43° | 25° | 104° |
-| Retorno 1 | 39° | 21° | 100° |
-| Retorno 2 | 31° | 13° | 92° |
-| Retorno 3 | 24° | 6° | 85° |
-| Reposo recuperado | 18° | 0° | 79° |
+| Rest | 18° | 0° | 79° |
+| Outward 1 | 21° | 3° | 82° |
+| Apex | 24° | 6° | 85° |
+| Sweep 1 | 31° | 13° | 92° |
+| Sweep 2 | 38° | 20° | 99° |
+| Impact | 43° | 25° | 104° |
+| Return 1 | 39° | 21° | 100° |
+| Return 2 | 31° | 13° | 92° |
+| Return 3 | 24° | 6° | 85° |
+| Rest restored | 18° | 0° | 79° |
 
-Cada valor es absoluto y se reaplica durante la sincronización; no se acumula
-entre tics.
+Each value is absolute and reapplies during synchronization; it does not accumulate
+between tics.
 
-## Curva de ataque y retorno recto
+## Attack curve and straight return
 
-Los ocho tics continúan reutilizando la pose A. Cinco puntos llevan la mano
-por la curva aprobada hasta el impacto y tres puntos colineales la devuelven en
-línea recta. La espada mantiene en todo momento el registro constante
-(-22,-32) respecto de la traslación de palma y pulgar:
+The eight tics continue to reuse pose A. Five points carry the hand through the approved
+curve to impact and three colinear points return it in a straight line. The sword keeps
+the constant alignment (-22,-32) at all times with respect to palm and thumb translation:
 
-| Tic | Fase | Mano/dedos X,Y | Espada X,Y | Hoja / mano |
+| Tic | Phase | Hand/fingers X,Y | Sword X,Y | Blade / hand |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | Salida | (300,15) | (278,-17) | 21° / 3° |
-| 2 | Ápice derecho | (318,-4) | (296,-36) | 24° / 6° |
-| 3 | Barrido alto | (287,-1) | (265,-33) | 31° / 13° |
-| 4 | Aproximación | (236,11) | (214,-21) | 38° / 20° |
-| 5 | Impacto izquierdo | (201,21) | (179,-11) | 43° / 25° |
-| 6 | Retorno 1 | (228,25) | (206,-7) | 39° / 21° |
-| 7 | Retorno 2 | (255,28) | (233,-4) | 31° / 13° |
-| 8 | Retorno 3 | (275,31) | (253,-1) | 24° / 6° |
-| — | Reposo | (282,32) | (260,0) | 18° / 0° |
+| 1 | Outward | (300,15) | (278,-17) | 21° / 3° |
+| 2 | Right apex | (318,-4) | (296,-36) | 24° / 6° |
+| 3 | High sweep | (287,-1) | (265,-33) | 31° / 13° |
+| 4 | Approximation | (236,11) | (214,-21) | 38° / 20° |
+| 5 | Left impact | (201,21) | (179,-11) | 43° / 25° |
+| 6 | Return 1 | (228,25) | (206,-7) | 39° / 21° |
+| 7 | Return 2 | (255,28) | (233,-4) | 31° / 13° |
+| 8 | Return 3 | (275,31) | (253,-1) | 24° / 6° |
+| — | Rest | (282,32) | (260,0) | 18° / 0° |
 
-La subida uniforme de cuatro unidades afecta únicamente a la hoja; no altera
-la curva de la mano ni el retorno recto ya aceptados.
+The uniform four-unit rise affects only the blade; it does not alter the curve of the hand
+or the straight return already accepted.
 
-## Manga panorámica, profundidad y equipo
+## Panoramic sleeve, depth and equipment
 
-`RHNDA0` y `RHNDB0` conservan los lienzos RGBA 480×240 con `grAb (160,72)`
-aceptados en V4.32.0h. La manga llega al extremo derecho del lienzo y no revela
-un corte interno en 16:9.
+`RHNDA0` and `RHNDB0` retain the RGBA 480×240 canvases with `grAb (160,72)` accepted in
+V4.32.0h. The sleeve reaches the right end of the canvas and does not reveal an internal
+cut in 16:9.
 
-| Capa | Prefijo | Contenido | Regla |
+| Layer | Prefix | Content | Rule |
 | ---: | --- | --- | --- |
-| 10 | `DSHD` | Reverso del escudo | Sólo con escudo válido equipado |
-| 20 | `LHND` | Mano/brazo del escudo | Visible con el escudo, incluido Block |
-| 25 | `RHND` | Antebrazo, palma y base del puño | Oculta en Block; detrás de la espada fuera de él |
-| 30 | `DSWD` | Espada | Oculta en Block; atraviesa el agarre fuera de él |
-| 40 | `RFNG` | Pulgar y dedos de cierre | Ocultos en Block; delante del mango fuera de él |
+| 10 | `DSHD` | Back of the shield | Only with valid shield equipped |
+| 20 | `LHND` | Shield hand/arm | Visible with shield, including Block |
+| 25 | `RHND` | Forearm, palm and base of the fist | Hidden in Block; behind the sword outside Block |
+| 30 | `DSWD` | Sword | Hidden in Block; passes through the grip outside Block |
+| 40 | `RFNG` | Thumbs and closing fingers | Hidden in Block; in front of the handle outside it |
 
-`HasActiveBlockSource()` continúa siendo la única condición visual del escudo.
-Si se desequipa, se rompe o deja de ser compatible, `DSHD` y `LHND`
-desaparecen en el siguiente tic. Sin escudo válido no se muestra el arte ni se
-habilita Block.
+`HasActiveBlockSource()` remains the only visual condition on the shield. If it is
+unequipped, broken or no longer supported, `DSHD` and `LHND` disappear in the next tick.
+Without a valid shield, neither the shield nor Block is enabled.
 
-## Estado de prueba
+## State of evidence
 
-La auditoría automática comprueba estructura ZScript, delta acotado,
-dimensiones RGBA, offsets `grAb`, cajas alfa, hashes, ampliación exacta del
-pulgar, desplazamiento A→B, pivote de pantalla común, rotación sincronizada,
-registro (-22,-32), Block correcto y contenido reproducible del ZIP fuente.
-La matriz visual de `PRUEBAS_4_32_0o.txt` fue completada con éxito por el
-autor. Esta composición queda aceptada como referencia cerrada; V4.33.0a sólo
-requiere una comprobación breve de regresión para confirmar que la nueva base
-social no alteró presentación, daño ni Block.
+The automatic audit checks structure ZScript, narrowed delta, RGBA dimensions, `grAb`
+offsets, alpha boxes, hashes, exact thumb enlargement, A→B translation, common screen pivot,
+synchronized rotation, alignment (-22,-32), correct block and reproducible ZIP source
+content. The visual matrix of `PRUEBAS_4_32_0o.txt` was successfully completed by the
+author. This composition is accepted as closed reference; V4.33.0a only requires a short
+regression check to confirm that the new social base did not alter presentation, damage or
+Block.
 
 ````
 
 
-## Registro: before_4.33.0g/IMPLEMENTATION_STATUS.md
+## Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md
 
 SHA-256: `050da9ee46019013278c831d0e7258babaef0988c66ae2d1ec681da335054809`
 
@@ -13814,607 +13798,563 @@ Implemented universal amulets and elemental seals with tier-based weight, attrib
 ````
 
 
-## Registro: before_4.33.0g/MAGIC_BOX.md
+## Archived record: before_4.33.0g/MAGIC_BOX.md
 
 SHA-256: `c8b2b84f1286762e0a5a7687863c54044aca2514965c12646ec4b8efa3a3bdf3`
 
 ````text
-# Caelum Argenteum — Caja Mágica y misión V4.33.0b
+# Caelum Argenteum — Magic Box and V4.33.0b mission
 
-V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
-cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
-comenzar. Las revisiones V4.32 usaron a Palomo para validar el regalo; esa ruta
-era un entorno de prueba y V4.33.0b la retira del diálogo canónico. La Caja se
-entregará al final de MAP01, después de las cuatro ramas. La prueba anterior
-también confirmó que la salida normal conserva la Caja; `map MAP02` crea un
-personaje nuevo y no constituye un viaje del personaje.
+V4.32.0a-r4 remains the accepted weight and storage base. V4.32.0b changes the
+acquisition: a new character no longer has the Magic Box at the beginning. V4.32 revisions
+used Palomo to validate the gift; that path was a test environment and V4.33.0b removes it
+from the canonical dialogue. The Box will be delivered at the end of MAP01, after the four
+branches. The previous test also confirmed that the normal output retains the Box; `map
+MAP02` creates a new character and does not constitute a character's journey.
 
-## 1. Naturaleza y peso propio
+## 1. Nature and Own Weight
 
-La Caja Mágica es una capacidad persistente del personaje una vez recibida. No
-existe como objeto seleccionable: no puede soltarse, venderse, destruirse ni
-guardarse dentro de sí misma. Antes de recibirla no aporta peso, no ofrece
-slots y ninguna ruta de pickup, crafting o interfaz puede guardar objetos en
-ella. Al recibirla, su estructura aporta **10,000 kg** a la carga incluso
-cuando está vacía.
+The Magic Box is a persistent ability of the character once received. It does not exist as
+a selectable object: it cannot be dropped, sold, destroyed or stored within itself.
+Before receiving it does not add weight, it does not offer slots and no pickup, crafting
+or interface path can save objects in it. Upon receiving it, its structure contributes
+**10,000 kg** to the load even when it is empty.
 
-La cantidad máxima de slots continúa derivándose de Inteligencia. Cada pieza
-individual de equipo y cada pila admitida consume un slot, sin importar cuántas
-unidades contenga la pila.
+The maximum number of slots continues to derive from Intelligence. Each individual piece
+of equipment and each supported stack occupies one slot, no matter how many units the stack
+contains.
 
-## 2. Reducción de peso
+## 2. Weight reduction
 
-El contenido no pierde todo su peso. La carga se calcula con una sola operación
-agregada:
+The content does not lose all its weight. The load is calculated with a single aggregate operation:
 
 ```text
-peso reducido del contenido =
-    piso_a_0,001 kg(peso real total guardado / slots máximos actuales)
+reduced content weight =
+    floor_to_0,001 kg(total actual stored weight / current maximum slots)
 
-peso total de la Caja Mágica =
-    10,000 kg + peso reducido del contenido
+total Magic Box weight =
+    10,000 kg + reduced content weight
 ```
 
-Se usan los **slots máximos**, no los ocupados. Todos los objetos y pilas se
-suman antes de dividir y redondear. Esto evita que separar un mismo peso entre
-varias pilas elimine carga mediante redondeos individuales.
+The maximum **slots** are used, not the occupied ones. The weight of all items and stacks is summed
+before dividing and rounding. This prevents separating the same weight between multiple
+stacks from removing load by individual roundings.
 
-Ejemplo: con 20 slots máximos y 10,000 kg reales guardados, el contenido aporta
-0,500 kg y la caja completa aporta 10,500 kg. Con 0,380 kg guardados, el
-contenido aporta 0,019 kg.
+Example: with 20 maximum slots and 10,000 kg actually stored, the content provides 0,500 kg and
+the complete box provides 10,500 kg. With 0,380 kg stored, the content provides 0,019 kg.
 
-## 3. Contenido y restricciones
+## 3. Content and restrictions
 
-Se conservan las reglas existentes:
+Existing rules are preserved:
 
-- equipo, consumibles, materiales, monedas, objetos clave admitidos y la pila
-  personalizada de munición pueden guardarse;
-- las llaves comunes no pueden guardarse, porque GZDoom comprueba su posesión
-  nativa para puertas y `LOCKDEFS`;
-- flechas y virotes nativos permanecen en el inventario personal;
-- una pila completa sigue contando como un único slot, pero todas sus unidades
-  aportan al peso real previo a la reducción;
-- las monedas guardadas conservan íntegramente su valor y participan del peso
-  reducido como cualquier otra pila.
+- equipment, consumables, materials, coins, key items admitted and custom ammunition stacks
+  can be stored;
+- common keys cannot be saved because GZDoom checks their native possession for doors and
+  `LOCKDEFS`;
+- Native arrows and bolts remain in the personal inventory;
+- a complete stack still counts as a single slot, but all its units contribute to the
+  actual weight prior to reduction;
+- the stored coins retain their full value and share the reduced weight as any other stack.
 
-## 4. Transacciones y cambios de capacidad
+## 4. Transactions and capacity changes
 
-Recoger, depositar, recuperar, equipar, fabricar y desarmar evalúan la carga
-final completa. Una operación se rechaza si, después de retirar el peso de su
-ubicación anterior y añadirlo a la nueva, la carga superaría la capacidad del
-personaje. Mover un objeto del inventario personal a la caja continúa permitido
-cuando libera carga.
+Collecting, depositing, recovering, equipping, crafting and disassembling evaluate the
+complete final load. An operation is rejected if, after removing the weight from its
+previous location and adding it to the new one, the load would exceed the character’s
+capacity. Moving an item from personal inventory to the box continues to be allowed when
+releasing load.
 
-Si un cambio de Inteligencia reduce los slots máximos por debajo de los ya
-ocupados, el contenido se conserva: no se elimina ni se expulsa. Se recalculan
-de inmediato el divisor y la carga, y se bloquean nuevos depósitos hasta que la
-ocupación vuelva a estar dentro del máximo. Recuperar o soltar contenido sigue
-siendo la vía para liberar slots.
+If an Intelligence change reduces maximum slots below the already occupied ones, the
+content is retained: it is not removed or expelled. The divisor and load are recalculated
+immediately, and new deposits are blocked until occupancy is back within the maximum.
+Recovering or releasing content remains the way to free slots.
 
-## 5. Interfaz
+## 5. Interface
 
-El Inventario muestra `slots usados/máximos` y el peso total actual de la caja,
-incluidos sus 10,000 kg propios. La línea general de Carga incorpora exactamente
-el mismo valor. El peso individual seleccionado continúa mostrando el peso real
-del objeto o pila antes de la reducción. El icono 64×64 suministrado se muestra
-junto a esta línea; antes del regalo aparece atenuado con el texto `No
-adquirida`. Intentar almacenar desde Inventario antes del regalo devuelve una
-causa explícita y no cambia el objeto.
+The Inventory shows `used/maximum slots` and the current total weight of the box,
+including its own 10,000 kg. The general Load line incorporates exactly the same value.
+The selected item’s weight continues to show the actual weight of the object or stack
+before reduction. The 64×64 icon provided is displayed next to this line; before acquisition it is dimmed with the `Not acquired` text. Trying to store from Inventory before acquisition
+returns an explicit cause and does not change the object.
 
-## 6. Adquisición y compatibilidad de guardados
+## 6. Acquisition and save compatibility
 
-- Un perfil nuevo se marca explícitamente como no propietario.
-- El primer encuentro canónico con Palomo no concede la Caja ni abre comercio.
-- La entrega queda reservada a `MAIN_M00_STATE_BOX_RECEIVED`, tras completar la
-  rama de combate y encontrar a Palomo en el segundo piso.
-- Cuando se conecte esa fase, el regalo añadirá sus 10 kg, habilitará los slots
-  y sólo podrá ejecutarse una vez mediante `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`.
-- `CaelumPersistentCharacterState` es la fuente persistente de propiedad. Se
-  guarda en `PreTravelled` y se restaura en `Travelled`; el campo vivo y el
-  marcador técnico se sincronizan desde ese registro.
-- La propiedad es independiente de la ubicación física futura de Palomo.
-- Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
-  la migración. Esto evita perder acceso a contenido que ya estaba guardado.
-- Una partida intermedia malformada que no posea la recompensa pero contenga
-  banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
-  se elimina ningún objeto.
+- A new profile is explicitly marked as a non-owner.
+- The first canonical encounter with Palomo does not grant the Box or open commerce.
+- The delivery is reserved for `MAIN_M00_STATE_BOX_RECEIVED`, after completing the combat
+  branch and finding Palomo on the second floor.
+- When that phase is connected, the gift will add your 10 kg, enable the slots and can
+  only be run once using `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`.
+- `CaelumPersistentCharacterState` is the persistent source of ownership. It is saved to
+  `PreTravelled` and restored to `Travelled`; the live field and technical marker are
+  synchronized from that record.
+- Ownership is independent of the future physical location of Palomo.
+- Confirmed profiles created before V4.32.0b retain the Box during migration. This avoids
+  losing access to content that was already saved.
+- A malformed intermediate save that does not have the reward but contains `InMagicBox` flags is repaired by moving those stacks to the personal inventory; no objects are removed.
 
-## 7. Integración con el registro de misión V4.33.0b
+## 7. Integration with the V4.33.0b mission log
 
-`GrantMagicBoxFromPalomo()` deja de alterar el registro de misión por sí sola.
-La misión canónica **Donde despiertan los perdidos** comienza al despertar y
-su primer objetivo es buscar ayuda. Poseer una Caja de una partida anterior no
-salta la Voz, la presentación de Palomo ni la orientación hacia Argento.
+`GrantMagicBoxFromPalomo()` stops altering the mission record alone. The canonical mission
+**Where the lost wake up** begins on awakening and its first objective is to seek help.
+Owning a Box from a previous game does not skip the Voice, the presentation of Palomo or
+the orientation towards Argento.
 
-Al migrar V4.33.0a se reinicia únicamente el relato comercial descartado. La
-Caja existente no se duplica ni se quita, y conserva exactamente contenido,
-slots, peso y reducción. Esto permite probar el nuevo prólogo sin destruir
-inventario de desarrollo y mantiene a los personajes nuevos en la progresión
-canónica sin Caja.
+When migrating V4.33.0a, only the discarded commercial quest is restarted. The existing
+Box is not duplicated or removed, and retains exactly content, slots, weight and
+reduction. This allows testing the new prologue without destroying development inventory
+and keeps new characters in canonical progression without Box.
 
-El resolvedor de ubicación mantiene a Palomo oculto antes de la Voz, lo muestra
-en el recibidor durante el encuentro, vuelve a ocultarlo al orientar hacia
-Argento y reserva el segundo piso para la futura fase de entrega. La coordenada
-y el traslado físico final todavía deben añadirse al mapa.
+The location resolver keeps Palomo hidden before the Voice, shows it in the hall during the
+meeting, hides it again by orienting to Argento and reserves the second floor for the
+future delivery phase. The coordinate and final physical transfer must still be added to
+the map.
 
-La prueba válida es cruzar el `Exit` del mapa o usar `changemap MAP02`. El
-comando `map MAP02` comienza una partida nueva, crea otro jugador y debe mostrar
-la Caja como no adquirida; por definición del motor no prueba persistencia.
+The valid test is to cross the `Exit` of the map or use `changemap MAP02`. The `map MAP02`
+command starts a new game, creates another player and must show the Box as unacquired; by
+definition the engine does not test persistence.
 
 ````
 
 
-## Registro: before_4.33.0g/MAP01_ARGENTO_4_33_0f.md
+## Archived record: before_4.33.0g/MAP01_ARGENTO_4_33_0f.md
 
 SHA-256: `1d28f831733edb5db966a5d0bf3d4c9ac0a756793fbd4499792ccea7c7ef2cd8`
 
 ````text
-# MAP01 — Prueba social de Argento, 4.33.0f
+# MAP01 — Argento social test, 4.33.0f
 
-La especificación narrativa es `MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt`,
-especialmente su sección 17. La elección posterior del autor para esta
-implementación reemplaza los ejemplos de curvas incompatibles del capítulo
-10 de la documentación anterior: Persuasión y Emoción Tipo 4; Labia Tipo 2.
+The narrative specification is `MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt`, especially its 17
+section. The author's later choice for this implementation replaces the examples of
+incompatible curves of the 10 chapter of the previous documentation: Persuasion and Emotion Type 4; Dialogue skill Type 2.
 
-| Interlocutor | Habilidad y atributo | Requisito | Alternativa |
+| Interlocutor | Ability and Attribute | Requirement | Alternative |
 | --- | --- | --- | --- |
-| Rulo | Emoción / Empatía, Tipo 4 | Dificultad 120; luego respuesta respetuosa | Consejo de Argento tras fallar |
-| Ronnie | Labia / Elocuencia, Tipo 2 | Labia >= 1 | Aprender el plan de Argento después de visitar a Ronnie |
-| Caella | Persuasión / Carisma, Tipo 4 | Dificultad 120 | Consejo tras fallar y aceptación de condiciones |
+| Rulo | Emotion / Empathy, Type 4 | Difficulty 120; then a respectful response | Argento's advice after failure |
+| Ronnie | Labia / Eloquence, Type 2 | Labia >= 1 | Learn the Argento plan after visiting Ronnie |
+| Caella | Persuasion / Charisma, Type 4 | Difficulty 120 | Advice after failure and acceptance of conditions |
 
-Se reutilizan las funciones existentes de `CaelumDerivedStats`:
+The existing functions of `CaelumDerivedStats` are reused:
 
-- Tipo 4: `100 + 2 × atributo × (atributo + 1) / 101`.
-- Tipo 2: `atributo × (atributo + 1) / 101`.
-- Probabilidad: redondear `habilidad × 100 / dificultad` al entero más próximo
-  y limitar a 0..100. Reputación neutra porque estos residentes no tienen una
-  facción asignada. No se toma la reputación de la Gendarmería.
-- En 1..99%, dado uniforme de 1 a 100 y éxito cuando `dado <= probabilidad`.
-  En 100% no se consume RNG; se registra éxito automático. En 0%, fallo.
+- Type 4: `100 + 2 × atributo × (atributo + 1) / 101`.
+- Type 2: `atributo × (atributo + 1) / 101`.
+- Probability: Round `habilidad × 100 / dificultad` to the nearest integer and limit to
+  0..100. Neutral reputation because these residents do not have a faction assigned. The
+  reputation of the Gendarmerie is not taken.
+- At 1..99%, a uniform die roll from 1 to 100 and successful when `dado <= probabilidad`. 100% consumes no RNG and records automatic success. In 0%, failure.
 
-Elocuencia 9 da Labia 90/101, insuficiente; Elocuencia 10 da 110/101,
-suficiente. Empatía/Carisma 3 dan 84% frente a dificultad 120; nivel 100 da
-éxito automático. No se modifica la curva general de otras habilidades.
+Eloquence 9 gives Dialogue skill 90/101, insufficient; Eloquence 10 gives 110/101, enough. Empathy/Charismaa
+3 give 84% versus 120 difficulty; level 100 gives automatic success. The overall curve of
+other skills is not modified.
 
-Los índices estables de CheckOnceKey son Rulo=0 y Caella=2; Ronnie=1 no tira.
-`MainM00SocialResult`, `Roll` y `Chance` registran el primer intento.
-`MainM00ResidentMet` y `MainM00SocialAdvice` registran conocimiento nuevo.
-Todo pertenece al Inventory persistente del personaje; los NPC y tokens USDF
-no son la autoridad. Una visita repetida no suma ni vuelve a consumir RNG.
+CheckOnceKey stable indexes are Rulo=0 and Caella=2; Ronnie=1 does not roll.
+`MainM00SocialResult`, `Roll` and `Chance` record the first attempt. `MainM00ResidentMet`
+and `MainM00SocialAdvice` record new knowledge. Everything belongs to the character's
+persistent Inventory; NPC and USDF tokens are not the authority. A repeated visit does not
+add up or consume RNG again.
 
-La ayuda de los residentes se representa con tres flags ya reservados y el
-contador se deriva de ellos. Sólo Argento puede cerrar, sólo con 3/3 y sólo
-desde etapa 30. El cierre lleva exactamente a 35, deja la misión activa y
-habilita la siguiente conversación de Caella. No activa el tutorial mágico,
-concede objetos ni completa la misión principal.
+The help of the residents is represented with three flags already reserved and the counter
+is derived from them. Only Argento can close, only with 3/3 and only from 30 stage. The
+closing takes exactly to 35, leaves the mission active and enables the next Caella
+conversation. It does not activate the magic tutorial, grant objects or complete the
+main mission.
 
-En UI se muestran probabilidades, la opción bloqueada de Ronnie y el estado
-emocional privado [Preocupado]. El Diario muestra el objetivo actual y su
-contador sin añadir seguimiento permanente al HUD. Los diálogos permanecen
-en USDF nativo y el cierre Q hereda el menú ya aceptado.
+In UI, probabilities are shown, the locked option of Ronnie and the [Worried] private
+emotional state. The Journal shows the current target and its counter without adding
+permanent tracking to the HUD. Dialogs remain in native USDF and Q closure inherits the
+already accepted menu.
 
-El progreso cooperativo compartido sigue pendiente. Esta entrega conserva
-estado por personaje y no convierte el conocimiento privado en información
-de todos los jugadores.
+The shared cooperative progress is still pending. This delivery retains status by
+character and does not convert private knowledge into information for all players.
 
 ````
 
 
-## Registro: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt
+## Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt
 
 SHA-256: `9bc00b885dc04bbaa1bc0813c1764533813a9a9475573a832dd980452ce5f7b0`
 
 ````text
-CAELUM ARGENTEUM
-HISTORIA CONSOLIDADA Y ESPECIFICACIÓN DE PROGRAMACIÓN DE MAP01
-Versión 1.0 — 8 de septiembre de 2026
+CAELUM ARGENTEUM CONSOLIDATED STORY AND MAP01 PROGRAMMING SPECIFICATION Version 1.0 — 8
+September 2026
 
-Autor del proyecto: Damián Curti
-Estado: diseño narrativo y técnico previo a implementación.
+Project Author: Damián Curti Status: narrative and technical design prior to
+implementation.
 
-===============================================================================
-ÍNDICE
-===============================================================================
+  CONTENTS
 
-PARTE I — RECOPILACIÓN DE LA HISTORIA
+PART I — STORY COMPILATION
 
-1. Convenciones y jerarquía de información
-2. Premisa general
-3. Alegoría social y cultural
-4. Historia anterior al comienzo del juego
-5. El Tarot y La Dispersión
-6. Palomo y la Caja Mágica
-7. El protagonista y los cuatro habitantes de la mansión
-8. Verdad autoral y conocimiento de los personajes
-9. Estructura completa de la campaña
-10. Relato consolidado de la historia
-11. Reglas para conservar el misterio
+1. Conventions and hierarchy of information
+2. General premise
+3. Social and cultural allegory
+4. History before the game begins
+5. The Tarot and The Dispersal
+6. Palomo and the Magic Box
+7. The protagonist and the four inhabitants of the mansion
+8. Authorial truth and knowledge of the characters
+9. Complete structure of the campaign
+10. Consolidated narrative
+11. Rules for preserving the mystery
 
-PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
+PART II — MAP01 QUEST IMPLEMENTATION INSTRUCTIONS
 
-12. Alcance y objetivo de la implementación
-13. Flujo completo de la misión
-14. Arquitectura de datos y estados
-15. Requisitos del mapa y actores
-16. Apertura: despertar, voz desconocida y Palomo
-17. Prueba 1: Argento — rama social
-18. Prueba 2: Caella — rama mágica
-19. Prueba 3: Ronnie — rama de supervivencia
-20. Preparación del arma inicial
-21. Prueba 4: Rulo — rama de combate
-22. Palomo, la Caja Mágica y El Loco
-23. Transición a MAP02 — alcantarillas
-24. Diálogos obligatorios de MAP01
-25. Inventario, objetos temporales y persistencia
-26. Localización, diario y presentación
-27. Guardado y multijugador
-28. Pruebas de aceptación
-29. Decisiones todavía pendientes
+12. Scope and objective of implementation
+13. Full mission flow
+14. Data architecture and states
+15. Map requirements and actors
+16. Opening: Awakening, Unknown Voice and Palomo
+17. 1 test: Argento — social branch
+18. 2 Test: Caella — Magic Branch
+19. 3 Test: Ronnie — survival branch
+20. Preparation of the initial weapon
+21. 4 Test: Rulo — combat branch
+22. Palomo, the Magic Box and El Loco
+23. Transition to MAP02 — sewers
+24. Mandatory MAP01 dialogues
+25. Inventory, temporary objects and persistence
+26. Localization, Journal and presentation
+27. Saving and multiplayer
+28. Acceptance tests
+29. Decisions still pending
 
-===============================================================================
-PARTE I — RECOPILACIÓN DE LA HISTORIA
+=============================================================================== PART I —
+COLLECTED STORY
 ===============================================================================
 
 -------------------------------------------------------------------------------
-1. CONVENCIONES Y JERARQUÍA DE INFORMACIÓN
--------------------------------------------------------------------------------
+1. CONVENTIONS AND INFORMATION HIERARCHY
+   -------------------------------------------------------------------------------
 
-Este documento distingue tres niveles de información:
+This document distinguishes three levels of information:
 
-[CANON]
-Hecho confirmado para la historia del proyecto.
+[CANON] Fact confirmed for the project history.
 
-[PROPUESTA OPERATIVA]
-Solución necesaria para convertir el canon en una misión programable. Puede
-ajustarse sin modificar la premisa principal.
+[OPERATIVE PROPOSAL] Solution necessary to convert the canon into a programmable mission.
+It can be adjusted without modifying the main premise.
 
-[PENDIENTE]
-Decisión que todavía requiere definición antes de cerrar versiones posteriores.
+[PENDING] Decision that still requires definition before closing later versions.
 
-También deben distinguirse dos perspectivas narrativas:
+Two narrative perspectives should also be distinguished:
 
-VERDAD AUTORAL
-Es lo que realmente ocurre en el universo. Puede conocerse durante el desarrollo
-y utilizarse para evitar contradicciones, aunque el jugador tarde muchas horas
-en descubrirlo.
+AUTHORIAL TRUTH It is what really happens in the universe. It can be known during
+development and used to avoid contradictions, although it takes the player many hours to
+discover it.
 
-CONOCIMIENTO DEL JUGADOR
-Es aquello que la interfaz, los diálogos, las escenas y los acontecimientos le
-permiten saber en un momento determinado.
+PLAYER KNOWLEDGE It is what interface, dialogues, scenes and events allow you to know at a
+certain time.
 
-Regla fundamental de MAP01:
+MAP01 fundamental rule:
 
-La documentación interna puede decir “Limbo”, “muerte”, “alma” y “resurrección”.
-Los textos visibles durante MAP01 no deben presentar ninguna de esas palabras
-como explicaciones confirmadas. El misterio se construye mostrando síntomas y
-contradicciones antes de proporcionar nombres.
+The internal documentation can say “Limbo”, “death”, “soul” and “resurrection”. The texts
+visible during MAP01 should not present any of those words as confirmed explanations. The
+mystery is constructed showing symptoms and contradictions before providing names.
 
 -------------------------------------------------------------------------------
-2. PREMISA GENERAL
--------------------------------------------------------------------------------
+2. GENERAL PREMISE
+   -------------------------------------------------------------------------------
 
 [CANON]
 
-Caelum Argenteum transcurre en un mundo de fantasía oscura inspirado en la
-Argentina del siglo XIX. La nación recién formada se encuentra dividida por
-intereses políticos, sociales y territoriales mientras enfrenta dos invasiones
-simultáneas.
+Caelum Argenteum takes place in a dark-fantasy world inspired by nineteenth-century
+Argentina. The newly formed nation is divided by political, social and territorial
+interests while facing two simultaneous invasions.
 
-La primera invasión es exterior. Los Caelith, habitantes originarios de la Luna,
-descienden sobre la Tierra bajo el mando de la reina Selene.
+The first invasion is external. Caelith, native inhabitants of the Moon, descend on Earth
+under the command of Queen Selene.
 
-La segunda invasión es interior. El Tarot, un poder procedente del Infierno, se
-infiltra en personas, criaturas, objetos, lugares y conflictos. El Culto del
-Tarot utiliza esa influencia para exacerbar las divisiones existentes y debilitar
-la resistencia de la nación.
+The second invasion is internal. Tarot, a power coming from Hell, infiltrates people,
+creatures, objects, places and conflicts. Tarot Cult uses that influence to exacerbate
+existing divisions and weaken the nation's resistance.
 
-Ambas amenazas provienen del plan de un príncipe infernal. Tras fracasar una y
-otra vez en su intento de conquistar la Tierra por la fuerza, comprendió que los
-Guerreros del Sol podían detenerlo mientras los pueblos argentinos conservaran
-la posibilidad de reunirse bajo el Sol de Mayo. Por eso decidió corromper la Luna
-y quebrar a la Tierra desde dentro antes de intentar dominarla otra vez.
+Both threats come from the plan of an infernal prince. After failing time and again in his
+attempt to conquer the Earth by force, he realized that the Warriors of the Sun could stop
+him while the Argentine peoples kept the possibility of meeting under the Sol de Mayo.
+That is why he decided to corrupt the Moon and break the Earth from within before trying
+to dominate it again.
 
-El protagonista no comienza como un héroe ni como miembro declarado de una
-facción. Es un errante que intentaba escapar del conflicto. Muere en circunstancias
-que no recuerda y despierta en una mansión imposible, sin saber que se encuentra
-en el Limbo.
+The protagonist does not begin as a hero or as a declared member of a faction. He is a
+wanderer trying to escape the conflict. He dies in circumstances he does not remember and
+wakes up in an impossible mansion, without knowing that he is in Limbo.
 
 -------------------------------------------------------------------------------
-3. ALEGORÍA SOCIAL Y CULTURAL
--------------------------------------------------------------------------------
+3. SOCIAL AND CULTURAL ALLEGORY
+   -------------------------------------------------------------------------------
 
 [CANON]
 
-Las especies principales poseen las siguientes correspondencias alegóricas:
+The main species have the following allegorical correspondences:
 
-- Los Hombres Bestia representan a los pueblos nativos americanos.
-- Los Caelith representan a los europeos y al colonialismo europeo.
-- Los duendes representan a los gauchos y a la cultura rural.
-- Los humanos representan principalmente a los porteños y a la sociedad urbana.
+- Beast Men represent Native American peoples.
+- The Caelith represent Europeans and European colonialism.
+- Duendes represent gauchos and rural culture.
+- Humans represent mainly Buenos Aires and urban society.
 
-Estas correspondencias son flexibles. Expresan historias colectivas, prejuicios,
-posiciones sociales y tensiones culturales; no determinan automáticamente la
-moral, la ideología ni la facción de cada individuo.
+These correspondences are flexible. They express collective histories, prejudices, social
+positions and cultural tensions; they do not automatically determine the morals, ideology
+or faction of each individual.
 
-Por lo tanto:
+Therefore:
 
-- Un Caelith puede rechazar la invasión, huir de la dictadura y luchar contra
-  Selene.
-- Un humano puede oponerse a la Capital o solidarizarse con los pueblos nativos.
-- Un duende puede abandonar la vida rural, integrarse en una ciudad o rechazar
-  cualquier bando.
-- Un Hombre Bestia puede preservar su cultura, negociar una integración parcial,
-  adoptar costumbres urbanas o combatir a quienes dicen querer civilizarlo.
+- A Caelith can reject the invasion, run away from the dictatorship and fight Selene.
+- A human can oppose Capital or sympathize with the native peoples.
+- A duende can leave rural life, integrate into a city or reject any side.
+- A Beast Man can preserve his culture, negotiate partial integration, adopt urban
+  customs, or fight those who claim to want to civilize him.
 
-3.1. HOMBRES BESTIA
+3.1. BEAST MEN
 
 [CANON]
 
-Los Hombres Bestia no son humanos degradados ni criaturas cuya inteligencia fue
-destruida por la corrupción. Ocurrió lo contrario: distintas especies animales
-recibieron la influencia del Tarot y adquirieron mayor inteligencia, conciencia,
-lenguaje y formas homínidas.
+Beast Men are not degraded humans or creatures whose intelligence was destroyed by
+corruption. The opposite happened: different animal species received the influence of
+Tarot and acquired greater intelligence, consciousness, language and hominid forms.
 
-El origen sobrenatural de esa transformación no vuelve malignos a sus pueblos.
-La voluntad que desarrollaron les pertenece. Con el paso del tiempo construyeron
-comunidades, memorias, costumbres y decisiones políticas propias.
+The supernatural origin of this transformation does not make its peoples evil. The will
+they developed belongs to them. Over time they built communities, memories, customs and
+political decisions of their own.
 
-Los sectores que se consideran “civilizados” continúan llamándolos bestias y
-utilizan su origen animal para negarles derechos. Otros humanos, duendes, Caelith
-disidentes y grupos políticos intentan incorporarlos a la sociedad común. Esa
-integración puede ser genuina o paternalista, según la persona y la facción.
+The sectors that are considered “civilized” continue to call them beasts and use their
+animal origin to deny them rights. Other humans, duendes, Caelith dissidents and political
+groups try to incorporate them into the common society. Such integration can be genuine or
+paternalistic, according to the person and faction.
 
-La influencia del Tarot cumple así una función ambigua: puede corromper, pero
-también produjo conciencia y nuevas formas de vida. Reunir las cartas no debe
-presentarse automáticamente como eliminar todo lo que el Tarot haya creado.
+The influence of Tarot thus fulfills an ambiguous function: it can corrupt, but it also
+produced consciousness and new forms of life. Reuniting cards should not automatically
+present itself as eliminating everything that Tarot has created.
 
 3.2. CAELITH
 
 [CANON]
 
-Los Caelith vivieron durante toda su historia conocida en la Luna. Su sociedad
-desarrolló una identidad propia, una monarquía y formas de magia adaptadas a su
-mundo. Bajo Selene, una parte de esa civilización se convirtió en potencia
-colonial y descendió sobre la Tierra.
+The Caelith lived throughout their known history on the Moon. Their society developed a
+unique identity, a monarchy and forms of magic adapted to their world. Under Selene, a
+part of that civilization became colonial power and descended upon Earth.
 
-No todos obedecieron. Muchos fueron corrompidos, adoctrinados o sometidos por el
-régimen. Otros participaron por miedo, interés o convicción. Los disidentes se
-autoexiliaron en Argentina buscando paz, pero suelen ser tratados como invasores,
-espías o traidores tanto por los terrestres como por los Caelith leales.
+Not all of them obeyed. Many were corrupted, indoctrinated, or subjected by the regime.
+Others participated out of fear, interest, or conviction. Dissidents exiled themselves in
+Argentina seeking peace, but are often treated as invaders, spies, or traitors by both Earth inhabitants and loyal Caelith.
 
 3.3. DUENDES
 
 [CANON]
 
-Los duendes son criaturas mágicas vinculadas alegóricamente con los gauchos. No
-son malignos por naturaleza. Su relación con el territorio, la vida rural, la
-independencia y los márgenes de la autoridad urbana los coloca en tensión con la
-Capital y con los proyectos de uniformidad política.
+The duendes are magical creatures allegorically linked to the gauchos. They are not evil
+by nature. Their relationship with territory, rural life, independence and the margins of
+urban authority places them in tension with the Capital and with projects of political
+uniformity.
 
-Son especialmente sensibles a la magia. Pueden percibir antes que otros la
-presencia del Tarot, pero esa misma apertura los vuelve vulnerables a su
-influencia. Caella encarna esa doble condición: su sensibilidad es talento y
-peligro al mismo tiempo.
+They are especially sensitive to magic. They can perceive before others the presence of
+Tarot, but that same openness makes them vulnerable to its influence. Caella embodies
+that dual condition: her sensitivity is talent and danger at the same time.
 
-3.4. HUMANOS
-
-[CANON]
-
-Los humanos representan principalmente a los porteños y a la sociedad urbana.
-Poseen mayor cercanía con las instituciones de la Capital, la Gendarmería, el
-comercio y los discursos de civilización. Esa asociación tampoco es absoluta:
-existen humanos rurales, federales, perseguidos, disidentes y aliados de otros
-pueblos.
-
--------------------------------------------------------------------------------
-4. HISTORIA ANTERIOR AL COMIENZO DEL JUEGO
--------------------------------------------------------------------------------
-
-4.1. LA LUNA ANTES DE LA CAÍDA
+3.4. HUMANS
 
 [CANON]
 
-Los Caelith vivieron durante generaciones en la Luna. Observaban la Tierra desde
-la distancia y consideraban imposible que sus conflictos alcanzaran las ciudades
-lunares. Selene gobernaba como reina antes de quedar sometida a la influencia del
-príncipe infernal.
+Humans represent mainly the people of Buenos Aires and urban society. They have greater
+proximity to the institutions of Capital, Gendarmerie, commerce and discourses of
+civilization. This association is not absolute: there are rural, federalist and persecuted
+humans, dissidents and allies of other peoples.
 
-4.2. LOS GUERREROS DEL SOL
+-------------------------------------------------------------------------------
+4. HISTORY BEFORE THE GAME BEGINS
+   -------------------------------------------------------------------------------
+
+4.1. THE MOON BEFORE THE FALL
 
 [CANON]
 
-El príncipe infernal intentó conquistar la Tierra en repetidas ocasiones. Fue
-detenido por los Guerreros del Sol, representación mítica de los pueblos
-argentinos que podían reunirse bajo el Sol de Mayo.
+The Caelith lived for generations on the Moon. They watched the Earth from a distance and
+considered it impossible for their conflicts to reach lunar cities. Selene ruled as queen
+before being subjected to the influence of the hellish prince.
 
-[PROPUESTA OPERATIVA]
-
-“Guerreros del Sol” no necesita designar una única orden secreta. Puede ser el
-nombre con que los relatos infernales y lunares agrupan a soldados, milicias,
-campesinos, curas, pueblos aliados y figuras populares de distintas épocas. El
-Sol representa la capacidad colectiva de resistir, no una sangre ni una clase
-privilegiada.
-
-4.3. LA CORRUPCIÓN DE SELENE
+4.2. WARRIORS OF THE SUN
 
 [CANON]
 
-Incapaz de vencer al Sol mediante una invasión directa, el príncipe infernal
-dirigió su influencia hacia la Luna. Manipuló a Selene y corrompió sus temores,
-deseos y decisiones. Ella instauró una dictadura, persiguió disidentes y preparó
-la invasión de Argentina.
+The hellish prince tried repeatedly to conquer the Earth. He was stopped by the Warriors
+of the Sun, mythical representation of the Argentine peoples who could gather under the
+Sol de Mayo.
 
-La corrupción explica su transformación, pero no elimina su responsabilidad.
-Selene conserva voluntad suficiente para sostener el régimen, utilizar a su
-pueblo y convertirse en la antagonista final.
+[OPERATIONAL PROPOSAL]
 
-4.4. LA INVASIÓN CAELITH
+“Guerreros del Sol” does not need to designate a single secret order. It may be the name
+with which the hellish and lunar stories bring together soldiers, militias, peasants,
+priests, allied peoples and popular figures of different eras. El Sol represents the
+collective ability to resist, not a blood or a privileged class.
 
-[CANON]
-
-Los Caelith leales a la corona comenzaron a ocupar territorios terrestres. Su
-llegada agudizó conflictos sobre centralización, autonomía, propiedad, defensa e
-integración. La Capital vio en ellos una amenaza y, al mismo tiempo, una posible
-fuente de alianzas y poder. Los Pueblos Libres defendieron su autonomía mientras
-negociaban apoyos contradictorios. Los pueblos nativos, los Híbridos y los
-exiliados quedaron atrapados entre proyectos que pretendían utilizarlos.
-
-4.5. EL CULTO DEL TAROT
+4.3. THE CORRUPTION OF SELENE
 
 [CANON]
 
-Mientras la invasión avanzaba desde afuera, el Culto del Tarot se infiltró dentro
-de todas las facciones. Sus miembros son capaces de percibir o manipular las
-esencias. No necesitan inventar cada enfrentamiento: encuentran una herida real,
-impiden que cierre y convencen a cada bando de que el otro es la causa absoluta
-de su sufrimiento.
+Unable to defeat the Sun by direct invasion, the hellish prince directed his influence
+toward the Moon. He manipulated Selene and corrupted her fears, desires and decisions. She
+set up a dictatorship, pursued dissidents and prepared the invasion of Argentina.
 
-El resultado es la grieta. La nación no se divide sólo por magia, pero la magia
-convierte diferencias negociables en enemistades que parecen inevitables.
+Corruption explains her transformation, but it does not eliminate her responsibility.
+Selene retains sufficient will to sustain the regime, use her people and become the final
+antagonist.
 
--------------------------------------------------------------------------------
-5. EL TAROT Y LA DISPERSIÓN
--------------------------------------------------------------------------------
+4.4. CAELITH INVASION
 
-[CANON DE TRABAJO]
+[CANON]
 
-El Tarot proviene del Infierno y se manifiesta a través de 78 esencias: 22
-Arcanos Mayores y 56 Arcanos Menores.
+The Caelith loyal to the crown began to occupy land territories. Their arrival deepened
+conflicts over centralization, autonomy, ownership, defense and integration. Capital saw
+in them a threat and, at the same time, a possible source of alliances and power. Free
+Peoples defended their autonomy while negotiating contradictory supports. Native peoples,
+the Hybrids and exiles were trapped among projects that sought to use them.
 
-Selene y el príncipe infernal intentaron utilizar el Tarot completo para unir la
-Luna, la Tierra y el Infierno bajo un mismo dominio. El ritual no pudo completarse.
-Las esencias se dispersaron y quedaron ligadas a personas, criaturas, objetos,
-lugares y conflictos que expresan el significado de cada carta. Este
-acontecimiento recibe el nombre de La Dispersión.
+4.5. THE TAROT CULT
 
-[PROPUESTA OPERATIVA PENDIENTE DE REVELACIÓN]
+[CANON]
 
-Palomo pudo haber intervenido en el ritual e impedido su estabilización, sin
-poseer poder suficiente para destruir el Tarot. Esta explicación conecta su
-conflicto con Selene, la existencia de las esencias dispersas y su decisión de
-ceder una parte de sí mediante la Caja. No debe revelarse en MAP01.
+As the invasion advanced from the outside, the Tarot Cult infiltrated into all factions.
+Its members are able to perceive or manipulate the essences. They do not need to invent
+each confrontation: they find a real wound, prevent it from closing and convince each side
+that the other is the absolute cause of their suffering.
 
-Una esencia no es un objeto coleccionable colocado al azar. La carta se adhiere a
-un acontecimiento o ser que encarna su arquetipo. Resolver, transformar o
-comprender ese conflicto permite que la esencia se manifieste.
-
-El don místico permite percibir las esencias, pero no capturarlas de manera
-segura. La Caja Mágica es el instrumento que puede contenerlas.
+The result is the rift. The nation is not divided by magic only, but magic converts
+negotiable differences into enmities that seem inevitable.
 
 -------------------------------------------------------------------------------
-6. PALOMO Y LA CAJA MÁGICA
+5. THE TAROT AND THE DISPERSAL
+   -------------------------------------------------------------------------------
+
+[WORKING CANON]
+
+The Tarot comes from Hell and manifests through 78 essences: 22 Major Arcana and 56 Minor
+Arcana.
+
+Selene and the infernal prince tried to use the entire Tarot to unite the Moon, Earth and
+Hell under one domain. The ritual could not be completed. The essences were dispersed and
+were linked to people, creatures, objects, places and conflicts that express the meaning
+of each card. This event is called The Dispersal.
+
+[OPERATIONAL PROPOSAL PENDING FOR REVELATION]
+
+Palomo may have intervened in the ritual and prevented its stabilization, without
+possessing enough power to destroy the Tarot. This explanation connects his conflict with
+Selene, the existence of scattered essences and his decision to yield a part of himself
+through the Box. It should not be revealed in MAP01.
+
+An essence is not a collectible object placed randomly. The card adheres to an event or
+being that embodies its archetype. Solving, transforming or understanding that conflict
+allows the essence to manifest.
+
+The mystical gift allows to perceive the essences, but not capture them safely. The Magic
+Box is the instrument that can contain them.
+
 -------------------------------------------------------------------------------
+6. PALOMO AND THE MAGIC BOX
+   -------------------------------------------------------------------------------
 
 6.1. PALOMO
 
 [CANON]
 
-Palomo representa al Espíritu Santo y procura proteger la patria argentina. Es
-una figura mítica visible únicamente para personas que poseen sensibilidad
-mística. Esa sensibilidad también les permite percibir la esencia del Tarot.
+Palomo represents the Holy Spirit and seeks to protect the Argentine homeland. He is a
+mythical figure visible only to people who possess mystical sensitivity. This sensitivity
+also allows them to perceive the essence of Tarot.
 
-Palomo mantiene un perfil bajo. No se presenta como salvador, profeta ni dueño de
-la verdad. No ordena: guía. Prefiere colocar a alguien ante una decisión antes
-que decirle qué debe elegir.
+Palomo keeps a low profile. He does not present himself as a savior, prophet or owner of
+the truth. He guides rather than commands. He prefers to place someone before a decision
+rather than tell them what to choose.
 
-Su personalidad combina tres rasgos:
+His personality combines three traits:
 
-- Amabilidad genuina.
-- Lenguaje metafórico y filosófico.
-- Humor burlón, sarcástico e irónico cuando le exigen respuestas directas sobre
-  el lugar, la muerte o su propia naturaleza.
+- Genuine kindness.
+- Metaphoric and philosophical language.
+- Humor mocking, sarcastic and ironic when they demand direct answers about the place,
+  death or his own nature.
 
-Palomo conoce la identidad de Selene y comprende la función de la mansión, pero
-no revela esas verdades directamente. Cuando el protagonista cuenta que oye una
-voz femenina, Palomo afirma que probablemente se trate de alucinaciones y le
-aconseja desconfiar. La advertencia es auténtica; la explicación es una mentira
-protectora.
+Palomo knows the identity of Selene and understands the function of the mansion, but does
+not reveal those truths directly. When the protagonist tells that he hears a female voice,
+Palomo claims that it is probably hallucinations and advises him to distrust. The warning
+is authentic; the explanation is a protective lie.
 
-6.2. LA MANSIÓN
-
-[CANON]
-
-MAP01 representa el Limbo. La mansión existe dentro de ese espacio y funciona
-como refugio, prueba y punto de encuentro para almas que no han logrado regresar.
-
-Los personajes no conocen este hecho. Para ellos, la mansión es una casa extraña
-de la que ningún camino conduce correctamente al exterior. Las distancias pueden
-no coincidir, las habitaciones pueden cambiar y algunos detalles carecen de una
-explicación natural, pero nada confirma todavía una vida después de la muerte.
-
-6.3. LA CAJA MÁGICA
+6.2. THE MANSION
 
 [CANON]
 
-“Caja Mágica” es el nombre irónico que Palomo da al artefacto. No es una caja
-encantada ordinaria: contiene una parte de la esencia de Palomo y, por ello,
-posee un poder inmenso que el jugador podrá explotar durante la campaña.
+MAP01 represents Limbo. The mansion exists within that space and functions as a
+shelter, test and meeting point for souls who have failed to return.
 
-Funciones confirmadas:
+The characters do not know this fact. For them, the mansion is a strange house from which
+no path leads properly to the outside. Distances may not coincide, the rooms may change
+and some details lack a natural explanation, but nothing yet confirms a life after death.
 
-- Aligera el peso efectivo de los objetos almacenados.
-- Captura y conserva las esencias del Tarot.
-- Permite volver del Limbo al cuerpo.
-- Transporta el equipamiento básico que el protagonista llevará al mundo físico.
-- No puede soltarse, venderse ni guardarse dentro de otro contenedor.
+6.3. THE MAGIC BOX
 
-La Caja no concede el don de percibir. El protagonista y los cuatro habitantes
-pueden advertir a Palomo y las esencias porque ya poseen sensibilidad mística.
-El don ve; la Caja captura.
+[CANON]
+
+“Magic Box” is the ironic name that Palomo gives to the artifact. It is not an ordinary
+enchanted box: it contains a part of the essence of Palomo and, therefore, possesses
+immense power that the player will be able to exploit during the campaign.
+
+Confirmed functions:
+
+- Lighten the effective weight of stored objects.
+- Capture and preserve the essences of Tarot.
+- Allows to return from Limbo to the body.
+- It carries the basic equipment that the protagonist will lead to the physical world.
+- It cannot be released, sold or stored inside another container.
+
+The Box does not grant the gift of perceiving. The protagonist and the four inhabitants
+can perceive Palomo and the essences because they already possess mystical sensitivity. The
+gift sees; the Box captures.
 
 -------------------------------------------------------------------------------
-7. EL PROTAGONISTA Y LOS CUATRO HABITANTES DE LA MANSIÓN
--------------------------------------------------------------------------------
+7. THE PROTAGONIST AND THE FOUR MANSION RESIDENTS
+   -------------------------------------------------------------------------------
 
-7.1. EL PROTAGONISTA
+7.1. THE PROTAGONIST
 
 [CANON]
 
-El protagonista era un errante que intentaba escapar del conflicto. Fue
-emboscado, asesinado y arrojado a las alcantarillas. No recuerda la emboscada, su
-muerte ni los instantes inmediatamente anteriores. Conserva su identidad, su
-lugar de origen, capacidades y recuerdos anteriores, pero su memoria termina
-antes del acontecimiento fatal.
+The protagonist was a wanderer who tried to escape the conflict. He was ambushed, killed
+and thrown into the sewers. He does not remember the ambush, his death or the moments
+immediately preceding. He preserves his identity, his place of origin, previous capacities
+and memories, but his memory ends before the fatal event.
 
-Selene detectó su potencial y utilizó su poder para reanimar su vínculo con el
-cuerpo. Sin embargo, su influencia fuera de la Luna es demasiado tenue para
-devolverlo por sus propios medios. El alma despierta en el Limbo y necesita la
-esencia de Palomo contenida en la Caja para regresar.
+Selene detected his potential and used her power to revive his link to his body. However,
+her influence outside the Moon is too weak to return him by her own means. The soul awakens
+in Limbo and needs the essence of Palomo contained in the Box to return.
 
-Durante MAP01, el protagonista no sabe que la voz pertenece a Selene ni que está
-muerto. La interfaz debe identificarla únicamente como Voz desconocida.
+During MAP01, the protagonist does not know that the voice belongs to Selene or that he is
+dead. The interface should identify it only as Unknown Voice.
 
 7.2. RULO
 
 [CANON]
 
-Rulo es un Ucumar y representa la rama Guerrero. Enseña las mecánicas de combate.
-Su prueba culmina cuando el protagonista derrota al Toro.
+Rulo is an Ucumar and represents the Warrior branch. He teaches combat mechanics. His trial
+culminates when the protagonist defeats the Toro.
 
-Rulo recuerda de dónde proviene y que despertó en la mansión. No recuerda cómo
-llegó ni los instantes anteriores a su muerte. No sabe que es un alma atrapada ni
-que su cuerpo se encuentra bajo la influencia de Selene.
+Rulo remembers where he comes from and that he woke up in the mansion. He does not
+remember how he arrived or the moments before his death. He does not know that he is a
+trapped soul or that his body is under the influence of Selene.
 
-Frase de Palomo que recuerda sin comprender por completo:
+Phrase from Palomo remembered without full understanding:
 
 “Uno puede perder mucho después de haber ganado.”
 
-Rulo ya consiguió vencer al Toro en alguno de sus intentos. La victoria no le
-permitió salir porque dominar su propia rama no bastaba para superar la prueba
-completa.
+Rulo already managed to defeat the Bull in some of his attempts. Victory did not allow him
+to leave because mastering his own branch was not enough to overcome the complete test.
 
 7.3. RONNIE
 
 [CANON]
 
-Ronnie es un Caelith exiliado y representa la rama Explorador. Enseña
-supervivencia, administración de recursos y preparación. Su prueba culmina al
-reunir los materiales necesarios para el arma inicial.
+Ronnie is an exiled Caelith and represents the Explorer branch. He teaches survival,
+resource management and preparation. His trial culminates by gathering the materials needed
+for the initial weapon.
 
-Conserva recuerdos de su origen lunar y de su vida anterior al vacío de memoria.
-No sabe cómo llegó a la mansión ni qué ocurrió con su cuerpo.
+He keeps memories of his lunar origin and his life before the memory vacuum. He does not
+know how he arrived at the mansion or what happened to his body.
 
-Frase de Palomo que recuerda sin comprender por completo:
+Phrase from Palomo remembered without full understanding:
 
 “Sobrevivir no es permanecer donde nada puede alcanzarlo. A veces eso sólo
 recibe otro nombre: quedarse.”
@@ -14423,14 +14363,14 @@ recibe otro nombre: quedarse.”
 
 [CANON]
 
-Argento es clérigo y representa la rama Sacerdote y las mecánicas sociales. Es el
-primer guía de la secuencia. Su prueba culmina cuando el protagonista convence a
-Rulo, Ronnie y Caella de que deben ayudarlo.
+Argento is a clergyman and represents the Priest branch and social mechanics. He is the
+first guide in the sequence. His trial culminates when the protagonist convinces Rulo,
+Ronnie and Caella that they must help him.
 
-Argento recuerda su procedencia y sus convicciones, pero no los instantes
-anteriores a despertar. No sabe que murió ni que su cuerpo fue tomado por Selene.
+Argento remembers his provenance and convictions, but not the moments before he woke up.
+He does not know that he died or that his body was taken by Selene.
 
-Frase de Palomo que recuerda sin comprender por completo:
+Phrase from Palomo remembered without full understanding:
 
 “Convencer no consiste en encontrar las palabras que obliguen al otro. Consiste
 en descubrir qué está intentando proteger.”
@@ -14439,619 +14379,551 @@ en descubrir qué está intentando proteger.”
 
 [CANON]
 
-Caella es una duende y representa la rama Mago. Enseña Ánima, implementos,
-sellos, canalización y percepción mágica. Su prueba culmina al resolver un
-acertijo y revelar un pasadizo secreto.
+Caella is a duende and represents the Mage branch. She teaches Anima, implements, seals,
+channeling and magical perception. Her trial culminates in solving a riddle and revealing a
+secret passageway.
 
-Su sensibilidad le permite advertir que la mansión y el protagonista poseen una
-resonancia anormal, pero no conoce su causa. Recuerda su origen y que despertó en
-la casa; no recuerda su muerte.
+Her sensitivity lets her perceive an abnormal resonance in the mansion and the protagonist,
+but she does not know its cause. She remembers her origins and awakening in the house;
+she does not remember her death.
 
-Frase de Palomo que recuerda sin comprender por completo:
+Phrase from Palomo remembered without full understanding:
 
 “No hay pared más firme que aquella que todos han decidido dejar de mirar.”
 
-7.6. LA VERDAD SOBRE LOS CUATRO
+7.6. THE TRUTH ABOUT THE FOUR
 
-[VERDAD AUTORAL; NO REVELAR EN MAP01]
+[AUTHORIAL TRUTH; DO NOT REVEAL IN MAP01]
 
-Rulo, Ronnie, Argento y Caella también murieron. Palomo los sometió a pruebas,
-pero ninguno logró integrar las cuatro ramas y encontrar la salida. Sus almas
-auténticas permanecen en la mansión del Limbo.
+Rulo, Ronnie, Argento and Caella also died. Palomo tested them, but none managed to
+integrate the four branches and find their way out. Their authentic souls remain in the
+mansion of Limbo.
 
-Selene recibió o recuperó sus cuerpos en la Tierra y los animó con versiones o
-fragmentos corrompidos de sus almas. Durante el primer capítulo guiará al jugador
-hacia esos cuerpos. Las cuatro versiones corrompidas serán los primeros jefes de
-la campaña.
+Selene received or recovered their bodies on Earth and animated them with corrupted
+versions or fragments of their souls. During the first chapter, she will guide the player
+toward those bodies. The four corrupted versions will be the first bosses of the
+campaign.
 
-Al derrotar cada cuerpo, la Caja Mágica podrá extraer la corrupción y permitir
-que el alma auténtica abandone el Limbo y se reintegre. De esta manera, vencerlos
-es un acto de liberación y puede habilitarlos posteriormente como compañeros.
-
--------------------------------------------------------------------------------
-8. VERDAD AUTORAL Y CONOCIMIENTO DE LOS PERSONAJES
--------------------------------------------------------------------------------
-
-8.1. LO QUE EL AUTOR SABE AL COMENZAR MAP01
-
-- El protagonista y los cuatro NPC están muertos.
-- MAP01 es el Limbo.
-- La mansión pertenece a la esfera de influencia de Palomo.
-- Selene revivió el vínculo del protagonista con su cadáver, pero no puede
-  devolverlo a la Tierra.
-- Palomo sabe quién es la voz.
-- Palomo está evaluando al protagonista mediante los cuatro residentes.
-- La Caja contiene parte de la esencia de Palomo.
-- Los cuerpos de los cuatro residentes están en la Tierra bajo corrupción.
-- El Loco será la primera esencia capturada por la Caja.
-
-8.2. LO QUE EL PROTAGONISTA SABE AL DESPERTAR
-
-- Su nombre, origen y capacidades anteriores.
-- Que despertó en una mansión desconocida.
-- Que no posee objetos.
-- Que una voz femenina le habla sin identificarse.
-- Que hay personas cerca que parecen compartir una experiencia extraña.
-
-8.3. LO QUE LOS CUATRO RESIDENTES SABEN
-
-- Quiénes eran y de dónde procedían.
-- Que despertaron en la mansión sin recordar cómo llegaron.
-- Que no han encontrado una salida estable.
-- Que Palomo aparece, desaparece y les ha dejado frases difíciles de interpretar.
-- Que cada uno domina especialmente una de las cuatro ramas.
-
-8.4. LO QUE EL JUGADOR PUEDE INFERIR AL TERMINAR MAP01
-
-- La mansión no obedece por completo a las reglas del mundo ordinario.
-- Palomo conoce más de lo que admite.
-- La voz desconocida tiene interés en su recorrido.
-- Los cuatro residentes no pueden utilizar la misma salida.
-- La Caja puede contener una esencia y abrir un tránsito imposible.
-- Su cuerpo se encontraba en una alcantarilla y había sido despojado.
-
-El final puede sugerir que murió, pero todavía no debe explicar el funcionamiento
-completo del Limbo, la relación entre Selene y los otros cuerpos ni el plan del
-Tarot.
+By defeating each body, the Magic Box will be able to extract corruption and allow the
+authentic soul to abandon Limbo and reintegrate. Thus, defeating them is an act of
+liberation and can later enable them as companions.
 
 -------------------------------------------------------------------------------
-9. ESTRUCTURA COMPLETA DE LA CAMPAÑA
+8. AUTHORIAL TRUTH AND CHARACTER KNOWLEDGE
+   -------------------------------------------------------------------------------
+
+8.1. WHAT THE AUTHOR KNOWS TO START MAP01
+
+- The protagonist and the four NPCs are dead.
+- MAP01 is Limbo.
+- The mansion belongs to the sphere of influence of Palomo.
+- Selene revived the protagonist's link to his corpse, but she cannot return him to Earth.
+- Palomo knows who the voice is.
+- Palomo is evaluating the protagonist through the four residents.
+- The Box contains part of the essence of Palomo.
+- The bodies of the four residents are on Earth under corruption.
+- El Loco will be the first essence captured by the Box.
+
+8.2. WHAT THE PROTAGONIST KNOWS AS HE WAKES UP
+
+- His name, origin and previous capabilities.
+- That he woke up in an unknown mansion.
+- He doesn't own objects.
+- That a female voice speaks to him without identifying herself.
+- That there are people nearby who seem to share a strange experience.
+
+8.3. WHAT THE FOUR RESIDENTS KNOW
+
+- Who they were and where they came from.
+- They woke up in the mansion without remembering how they got here.
+- They haven't found a stable way out.
+- That Palomo appears, disappears and has left them phrases difficult to interpret.
+- That each one especially dominates one of the four branches.
+
+8.4. WHAT THE PLAYER CAN INFER AT THE END OF MAP01
+
+- The mansion does not fully obey the rules of the ordinary world.
+- Palomo knows more than he admits.
+- The unknown voice has an interest in your journey.
+- The four residents cannot use the same exit.
+- The Box can contain an essence and open an impossible transit.
+- His body was in a sewer and had been stripped.
+
+The ending may suggest that he died, but it should not yet explain the complete functioning
+of Limbo, the relationship between Selene and the other bodies, or the plan involving the Tarot.
+
 -------------------------------------------------------------------------------
+9. COMPLETE CAMPAIGN STRUCTURE
+   -------------------------------------------------------------------------------
 
 [CANON]
 
-La campaña se divide en un prólogo y tres capítulos principales. Cada capítulo
-corresponde a un tier de progresión.
+The campaign is divided into a prologue and three main chapters. Each chapter corresponds
+to a tier of progression.
 
-PRÓLOGO — MAP01 — EL LOCO
+PROLOGUE — MAP01 — EL LOCO
 
-- El protagonista despierta en la mansión del Limbo.
-- Supera las cuatro pruebas.
-- Recibe la Caja Mágica.
-- Captura El Loco.
-- Regresa a su cadáver en las alcantarillas de MAP02.
+- The protagonist wakes up in the mansion of Limbo.
+- Complete the four trials.
+- Receive the Magic Box.
+- Capture El Loco.
+- He returns to his body in the sewers of MAP02.
 
-CAPÍTULO I — TIER 1 — SIETE ARCANOS MAYORES
+CHAPTER I — TIER 1 — SEVEN MAJOR ARCANA
 
-- Primera parte de la campaña terrestre.
-- Selene guía al jugador hacia Rulo, Ronnie, Argento y Caella corrompidos.
-- Los cuatro son los primeros jefes.
-- La Caja libera sus cuerpos y permite reintegrar sus almas verdaderas.
-- Tres Arcanos Mayores adicionales completan los siete del capítulo.
-- El jugador conoce las facciones, la invasión Caelith y las primeras pruebas de
-  la infiltración del Culto.
+- Part one of the land campaign.
+- Selene guides the player to Rulo, Ronnie, Argento and Caella corrupted.
+- The four are the first bosses.
+- The Box frees their bodies and allows their true souls to be reintegrated.
+- Three additional Major Arcana complete the seven of the chapter.
+- The player discovers the factions, the Caelith invasion and the first evidence of the
+  infiltration of the Cult.
 
-CAPÍTULO II — TIER 2 — SIETE ARCANOS MAYORES
+CHAPTER II — TIER 2 — SEVEN MAJOR ARCANA
 
-- El objetivo central es encontrar al príncipe infernal.
-- El jugador descubre su intervención en la Luna, el origen de la corrupción de
-  Selene y la función del Culto.
-- El capítulo culmina con el destierro del príncipe demonio.
-- Desterrarlo no elimina automáticamente la dictadura ni deshace las decisiones
-  tomadas por Selene.
+- The central objective is to find the hellish prince.
+- The player discovers his intervention on the Moon, the origin of Selene corruption and
+  the Cult function.
+- The chapter culminates in the banishment of the demon prince.
+- Banishing him does not automatically eliminate dictatorship or undo decisions made by
+  Selene.
 
-CAPÍTULO III — TIER 3 — SIETE ARCANOS MAYORES
+CHAPTER III — TIER 3 — SEVEN MAJOR ARCANA
 
-- El jugador obtiene los medios para viajar a la Luna.
-- Enfrenta el régimen Caelith, las consecuencias de sus alianzas terrestres y la
-  verdad completa sobre La Dispersión.
-- El Mundo es la última carta.
-- La campaña culmina con el viaje para matar a Selene y decidir el destino del
-  Tarot y de los pueblos implicados.
+- The player gets the means to travel to the Moon.
+- The player faces the Caelith regime, the consequences of its earthly alliances, and the full
+  truth about The Dispersal.
+- El Mundo (The World) is the last card.
+- The campaign culminates with the trip to kill Selene and decide the fate of the Tarot
+  and the peoples involved.
 
-DISTRIBUCIÓN TOTAL DE ARCANOS MAYORES
+TOTAL DISTRIBUTION OF MAJOR ARCANA
 
-- Prólogo: 1 — El Loco.
-- Capítulo I: 7.
-- Capítulo II: 7.
-- Capítulo III: 7.
+- Prologue: 1 — El Loco.
+- Chapter I: 7.
+- Chapter II: 7.
+- Chapter III: 7.
 - Total: 22.
 
-Los 56 Arcanos Menores se obtienen mediante misiones secundarias distribuidas a
-lo largo de los tres capítulos. Cada misión formal de Tarot entrega exactamente
-una carta; las tareas internas de MAP01 son etapas de una sola misión y no
-otorgan cartas independientes.
+The 56 Minor Arcana are obtained by secondary missions distributed throughout the three
+chapters. Each formal Tarot mission delivers exactly one card; the internal tasks of MAP01
+are one-mission stages and do not grant independent cards.
 
 -------------------------------------------------------------------------------
-10. RELATO CONSOLIDADO DE LA HISTORIA
--------------------------------------------------------------------------------
+10. CONSOLIDATED STORY ACCOUNT
+    -------------------------------------------------------------------------------
 
-Antes de que la guerra aprendiera a mirar hacia el cielo, los Caelith habían
-vivido toda su existencia en la Luna.
+Before the war learned to look toward the sky, the Caelith had lived their entire
+existence on the Moon.
 
-Desde la Tierra parecían inmóviles. Desde sus ciudades de piedra pálida,
-contemplaban generaciones enteras sucederse bajo un mundo azul y ruidoso. Su
-reina era Selene y su seguridad descansaba sobre una certeza antigua: ninguna
-disputa terrestre podía atravesar el vacío.
+From Earth they seemed immobile. From their pale stone cities, they watched entire
+generations succeeding under a blue and noisy world. Their queen was Selene and their
+safety rested on an ancient certainty: no earthly dispute could cross the void.
 
-El Infierno sí podía.
+Hell could.
 
-Un príncipe infernal había intentado conquistar la Tierra más de una vez. En las
-tierras argentinas encontró pueblos capaces de enfrentarse entre sí durante años
-y reunirse, aun así, cuando el peligro amenazaba con consumirlos a todos. El
-príncipe llamó Guerreros del Sol a quienes combatían bajo el rostro del Sol de
-Mayo. No eran una raza ni una orden única. Eran la posibilidad de reconocerse en
-un emblema común cuando la derrota parecía segura.
+A hellish prince had tried to conquer the Earth more than once. In the Argentine lands he
+found peoples able to confront each other for years and gather together, even when the
+danger threatened to consume them all. The prince called Warriors of the Sun whom they
+fought under the face of the Sol de Mayo. They were not a race or a single order. They
+were the possibility of being recognized in a common emblem when defeat seemed certain.
 
-Después de cada fracaso, el príncipe comprendió que no bastaba con destruir un
-ejército. Mientras esa posibilidad sobreviviera, otro ocuparía su lugar. Decidió
-entonces quebrar el vínculo entre los pueblos antes de volver a atacarlos y
-dirigió su mirada hacia la Luna.
+After every failure, the prince realized that it was not enough to destroy an army. As
+long as that possibility survived, another would take its place. He then decided to break
+the link between the peoples before attacking them again and turned his gaze to the Moon.
 
-No conquistó a Selene en una sola noche. Llegó como advertencia, consejo y temor.
-Le mostró futuros donde la Tierra alcanzaba la Luna, donde los Caelith eran
-perseguidos y donde la reina era recordada como la última de su pueblo. Algunas
-visiones eran falsas. Otras podían llegar a ser ciertas. Selene llamó previsión a
-la paranoia, unidad a la obediencia y defensa a la conquista preventiva.
+He did not conquer Selene in a single night. He came as a warning, advice and fear. He
+showed her futures where the Earth reached the Moon, where the Caelith were persecuted and
+where the Queen was remembered as the last of her people. Some visions were false. Others
+could become true. Selene called paranoia foresight, obedience unity and preemptive conquest defense.
 
-La reina concentró el poder, silenció a sus opositores y convirtió la monarquía
-en una dictadura. Muchos Caelith obedecieron porque el Tarot ya había tocado sus
-almas. Otros lo hicieron por miedo, por interés o porque creyeron sinceramente
-que la invasión salvaría a la Luna. Los disidentes huyeron hacia la Tierra, donde
-fueron recibidos como refugiados por unos y vigilados como espías por otros.
+The queen concentrated power, silenced her opponents and turned the monarchy into a
+dictatorship. Many Caelith obeyed because the Tarot had already touched their souls.
+Others did so out of fear, out of interest, or because they sincerely believed that the
+invasion would save the Moon. Dissenters fled to Earth, where they were welcomed as
+refugees by some and watched as spies by others.
 
-Cuando las fuerzas lunares descendieron, Argentina no respondió con una sola
-voz. La Capital quiso centralizar la defensa y descubrió que negociar con ciertos
-Caelith también podía fortalecer su poder. Los Pueblos Libres defendieron su
-autonomía, aunque sus alianzas con otros pueblos no siempre fueron desinteresadas.
-Los humanos urbanos hablaron de civilización; los duendes defendieron la vida
-rural y la libertad de los caminos; los Hombres Bestia rechazaron que quienes
-acababan de conocerlos decidieran si eran personas.
+When the lunar forces descended, Argentina did not respond with one voice. Capital wanted
+to centralize the defense and found that negotiating with certain Caeliths could also
+strengthen its power. Free Peoples defended their autonomy, although their alliances with
+other peoples were not always disinterested. Urban humans spoke of civilization; the
+duendes defended rural life and freedom of the roads; the Beast Men refused that those who
+had just met them would decide whether they were people.
 
-Los Hombres Bestia constituían una prueba viva de que el Tarot no actuaba de una
-única manera. Su influencia había elevado a distintas especies animales,
-otorgándoles conciencia, lenguaje y cuerpos homínidos. Para los sectores que se
-consideraban civilizados, aquella procedencia bastaba para llamarlos monstruos.
-Para quienes estaban dispuestos a reconocerlos, eran nuevos pueblos capaces de
-construir su propio lugar en la historia.
+The Beast Men were living proof that the Tarot did not act in a single way. Their
+influence had elevated different animal species, giving them awareness, language and
+hominid bodies. For sectors considered civilized, that origin was enough to call them
+monsters. For those who were willing to recognize them, they were new peoples capable of
+building their own place in history.
 
-En medio de esas tensiones creció el Culto del Tarot. Sus agentes aparecieron en
-salones, templos, cuarteles, campamentos y rutas comerciales. Allí donde existía
-una disputa, ofrecían una razón para volverla irreconciliable. Allí donde alguien
-temía perder poder, prometían conservarlo. La invasión Caelith debilitaba a la
-nación desde afuera; el Culto se aseguraba de que nadie pudiera responder unido
-desde adentro.
+In the midst of these tensions, the Tarot Cult grew. Its agents appeared in halls,
+temples, barracks, camps and trade routes. Where there was a dispute, they offered a
+reason to make it irreconcilable. Where someone feared losing power, they promised to keep
+it. The Caelith invasion weakened the nation from the outside; the Cult made sure that no
+one could respond together from the inside.
 
-Selene y el príncipe intentaron reunir las 78 esencias en un ritual capaz de
-alinear la Luna, la Tierra y el Infierno. El rito fue interrumpido. Las cartas se
-dispersaron y buscaron conflictos, lugares, personas y criaturas capaces de
-encarnar su significado. Desde entonces, una traición podía adquirir la forma
-del Tres de Espadas; una comunidad abandonada, la del Cinco de Oros; una ciudad
-condenada a caer, la de La Torre.
+Selene and the prince tried to gather the 78 essences into a ritual capable of aligning
+the Moon, Earth and Hell. The rite was interrupted. The cards dispersed and sought
+conflicts, places, people and creatures capable of embodying its meaning. Since then, a
+betrayal could take the form of the Three of Swords; an abandoned community, that of the
+Five of Coins; a city doomed to fall, that of La Torre.
 
-Fue después de La Dispersión cuando comenzaron a multiplicarse los relatos sobre
-Palomo.
+It was after The Dispersal that the accounts of Palomo began to multiply.
 
-Algunos hablaban de un caballero con galera y monóculo visto en caminos donde no
-quedaban huellas. Otros recordaban a una figura de modales amables que formulaba
-una pregunta y desaparecía antes de escuchar la respuesta. La mayoría no veía a
-nadie. Sólo quienes poseían cierta sensibilidad podían percibirlo y advertir, al
-mismo tiempo, el brillo imposible de las esencias.
+Some spoke of a gentleman with a top hat and a monocle seen on roads where there were no
+traces left. Others remembered a figure of kind manners who asked a question and
+disappeared before hearing the answer. Most saw no one. Only those who possessed a certain
+sensitivity could perceive him and notice, at the same time, the impossible brightness of
+essences.
 
-Palomo reunió parte de su poder dentro de una caja. La llamó Caja Mágica con el
-mismo tono con que otro habría escrito “objeto” sobre una reliquia. El artefacto
-podía aligerar cargas, contener el Tarot y tender un camino entre el Limbo y el
-cuerpo. Cada uso exponía una porción de la esencia de su creador, por lo que no
-podía entregársela a cualquiera.
+Palomo gathered some of his power into a box. He called it Magic Box with the same tone
+that another would have written “object” on a relic. The artifact could lighten burdens,
+contain the Tarot and set a path between Limbo and the body. Each use exposed a
+portion of the essence of its creator, so it could not be delivered to anyone.
 
-Rulo, Ronnie, Argento y Caella llegaron a la mansión por separado. Ninguno
-recordaba el viaje. Cada uno conservaba su nombre, su lugar de origen y una vida
-que parecía terminar antes de una página arrancada. Palomo los guio mediante
-frases y pruebas, pero cada uno se apoyó en aquello que ya dominaba. Rulo venció
-al Toro. Ronnie aprendió a sobrevivir a los caminos internos. Argento entendió
-las voluntades de los demás. Caella encontró aquello que la casa escondía.
-Ninguno consiguió salir.
+Rulo, Ronnie, Argento and Caella came to the mansion separately. No one remembered the
+journey. Each one retained his name, his place of origin and a life that seemed to end
+before a page ripped off. Palomo guided them by phrases and tests, but each one leaned on
+what he already mastered. Rulo defeated the Bull. Ronnie learned to survive the inner
+roads. Argento understood the wills of others. Caella found what the house was hiding.
+None got out.
 
-Mientras sus almas permanecían en la mansión, Selene alcanzó sus cuerpos. Los
-devolvió al movimiento con fragmentos corrompidos y los convirtió en instrumentos
-que el protagonista encontraría más adelante.
+While their souls remained in the mansion, Selene reached their bodies. She set them
+in motion again with corrupted fragments and turned them into instruments that the
+protagonist would find later.
 
-El protagonista también había intentado escapar de la guerra. Una emboscada
-terminó con su vida y su cadáver fue arrojado a las alcantarillas. Los responsables
-se llevaron sus pertenencias. Su memoria conservó la vida anterior, pero no el
-rostro de sus asesinos ni el instante de la muerte.
+The protagonist had also tried to escape the war. An ambush ended his life and his body
+was thrown into the sewers. The perpetrators took his belongings. His memory preserved the
+previous life, but not the face of his murderers or the instant of death.
 
-Selene percibió su capacidad y reanimó el vínculo entre cuerpo y alma. Desde la
-Luna no pudo completar el regreso. El protagonista abrió los ojos en la mansión
-sin saber que respiraba sólo por recuerdo. Una voz femenina le indicó que se
-levantara y buscara ayuda.
+Selene perceived his ability and reanimated the link between body and soul. From the Moon
+she could not complete the return. The protagonist opened his eyes in the mansion without
+knowing that he was breathing only for memory. A female voice told him to get up and seek
+help.
 
-Palomo no explicó dónde estaba. Cuando le preguntaron, habló del recibidor. Cuando
-le contaron sobre la voz, recomendó desconfiar de las alucinaciones. Luego dejó
-que Argento, Caella, Ronnie y Rulo lo guiaran a través de las cuatro ramas que
-ellos mismos representaban.
+Palomo did not explain where he was. When asked, he spoke of the foyer. When told about
+the voice, he recommended distrusting the hallucinations. He then let Argento, Caella,
+Ronnie and Rulo guide him through the four branches that they themselves represented.
 
-El protagonista convenció a los tres residentes de colaborar con Argento,
-resolvió el acertijo de Caella, encontró con Ronnie los materiales para un arma y
-derrotó al Toro bajo la mirada de Rulo. No demostró ser mejor que todos ellos en
-cada especialidad. Demostró aceptar aquello que cada uno podía enseñarle.
+The protagonist convinced the three residents to collaborate with Argento, solved the
+riddle of Caella, found with Ronnie the materials for a weapon and defeated the Bull under
+the eyes of Rulo. He did not prove to be better than all of them in each specialty. He
+proved to accept what each one could teach.
 
-Palomo lo esperaba en el segundo piso. Le entregó la Caja y permitió que su
-esencia reconociera al nuevo portador. El artefacto guardó el equipo básico de su
-clase, capturó la primera carta —El Loco— y abrió un camino que ninguno de los
-residentes pudo cruzar.
+Palomo was waiting for him on the second floor. He gave him the Box and allowed his
+essence to recognize the new carrier. The artifact saved the basic equipment of its class,
+captured the first card — El Loco— and opened a path that none of the residents could
+cross.
 
-El protagonista volvió a abrir los ojos entre agua sucia, ladrillos y oscuridad.
-Estaba dentro de las alcantarillas, junto al lugar donde habían abandonado su
-cuerpo. No llevaba nada salvo la Caja Mágica y aquello que ésta había conservado.
+The protagonist opened his eyes again between dirty water, bricks and darkness. He was
+inside the sewers, next to the place where they had abandoned his body. He carried nothing
+but the Magic Box and that which it had preserved.
 
-La voz seguía allí, ahora mucho más tenue.
+The voice was still there, now much fainter.
 
-Durante el primer capítulo, esa voz lo conduciría hacia cuatro enemigos que le
-resultarían extrañamente familiares. Al derrotarlos, la Caja arrancaría la
-corrupción de sus cuerpos y permitiría que Rulo, Ronnie, Argento y Caella
-regresaran del lugar que todavía no sabían nombrar.
+During the first chapter, that voice would lead him to four strangely familiar enemies. By
+defeating them, the Box would rip corruption from their bodies and allow Rulo, Ronnie,
+Argento and Caella to return from the place they still did not know how to name.
 
-Después vendría la búsqueda del príncipe infernal, su destierro y, finalmente,
-el viaje a la Luna para matar a Selene.
+Then there would be the search for the hellish prince, his banishment and, finally, the
+trip to the Moon to kill Selene.
 
 -------------------------------------------------------------------------------
-11. REGLAS PARA CONSERVAR EL MISTERIO
--------------------------------------------------------------------------------
+11. RULES FOR PRESERVING THE MYSTERY
+    -------------------------------------------------------------------------------
 
-11.1. VOCABULARIO PROHIBIDO EN MAP01
+11.1. VOCABULARY PROHIBITED IN MAP01
 
-No utilizar como explicación confirmada en diario, HUD o diálogo:
+Do not use as a confirmed explanation in daily, HUD or dialog:
 
 - Limbo.
-- Muerto / muerte del protagonista.
-- Alma atrapada.
-- Resurrección.
-- Cadáver en las alcantarillas.
-- Cuerpo corrompido de los NPC.
-- Selene como nombre de la voz.
-- Prueba de Palomo.
-- Parte de la esencia de Palomo dentro de la Caja.
+- Death/death of the protagonist.
+- Trapped soul.
+- Resurrection.
+- Body in the sewers.
+- Corrupt NPC body.
+- Selene as voice name.
+- Palomo test.
+- Part of the essence of Palomo within the Box.
 
-Los términos pueden existir en nombres internos de clases, flags y scripts, pero
-nunca filtrarse a la localización visible.
+The terms may exist in internal names of classes, flags and scripts, but never filter to
+the visible location.
 
-11.2. INDICIOS PERMITIDOS
+11.2. PERMITTED CLUES
 
-- Relojes que no avanzan o muestran horas distintas.
-- Caminos exteriores que regresan a la propiedad.
-- Habitaciones cuyas medidas internas no coinciden con el exterior.
-- Necesidades físicas que se sienten, aunque ningún personaje pueda precisar
-  cuánto tiempo ha pasado.
-- Ausencia de recuerdos inmediatamente anteriores al despertar.
-- Objetos temporales que se deshacen al alejarlos de su zona.
-- Palomo que aparece después de perderse de vista, sin efecto espectacular.
-- Frases suyas que cada NPC recuerda de forma aislada.
-- La voz femenina que sólo escucha el protagonista.
-- Caella percibiendo una resonancia que no sabe interpretar.
-- La imposibilidad de los cuatro residentes para cruzar la salida final.
+- Watches that do not advance or show different hours.
+- Exterior roads returning to the property.
+- Rooms whose internal measurements do not match the exterior.
+- Physical needs they feel, although no character can tell how much time has passed.
+- Absence of memories immediately prior to awakening.
+- Temporary objects that get rid of as they move away from their area.
+- Palomo that appears after losing sight, with no spectacular effect.
+- Your phrases that each NPC remembers in isolation.
+- The female voice that only the protagonist hears.
+- Caella perceiving a resonance she cannot interpret.
+- The inability of the four residents to cross the final exit.
 
-11.3. CONDUCTA DE PALOMO
+11.3. PALOMO'S CONDUCT
 
-- Nunca ordena completar una misión.
-- Sugiere a quién podría convenir escuchar.
-- Responde con metáforas que contienen una verdad comprobable.
-- Utiliza sarcasmo e ironía ante preguntas que exigen revelar el misterio.
-- Es amigable y no humilla al protagonista por no comprender.
-- Cuando la voz es mencionada, la llama alucinación y recomienda prudencia.
-- No pronuncia el nombre Selene en MAP01.
-- No dice “superaste la prueba”. Reconoce únicamente las acciones realizadas.
-- No entrega la Caja como premio heroico; pide que el protagonista la cuide.
+- He never orders to complete a mission.
+- He suggests whom it might be useful to hear.
+- He responds with metaphors that contain a verifiable truth.
+- He uses sarcasm and irony to ask questions that require revealing the mystery.
+- He is friendly and does not humiliate the protagonist for not understanding.
+- When the voice is mentioned, he calls it a hallucination and recommends prudence.
+- He does not pronounce the name Selene in MAP01.
+- He does not say “superaste la prueba” It recognizes only the actions performed.
+- He does not give the Box as a heroic prize; he asks the protagonist to take care of
+  it.
 
-11.4. CONDUCTA DE LA VOZ DESCONOCIDA
+11.4. HANDLING THE UNKNOWN VOICE
 
-- No pronuncia su propio nombre.
-- No menciona la Luna durante MAP01.
-- Habla poco debido a su influencia tenue.
-- Ofrece instrucciones útiles y simples para construir confianza.
-- No acusa directamente a Palomo.
-- Puede sugerir que él oculta algo, pero no revelar qué.
-- Su identificación visible es siempre VOZ DESCONOCIDA.
+- She does not say her own name.
+- She does not mention the Moon during MAP01.
+- She speaks little because her influence is weak.
+- She offers useful and simple instructions for building trust.
+- She does not directly accuse Palomo.
+- She may suggest that he hides something, but not reveal what.
+- Her visible label is always Unknown Voice.
 
+=============================================================================== PART II —
+INSTRUCTIONS FOR IMPLEMENTING THE MAP01 QUEST
 ===============================================================================
-PARTE II — INDICACIONES PARA PROGRAMAR LA MISIÓN DE MAP01
-===============================================================================
 
 -------------------------------------------------------------------------------
-12. ALCANCE Y OBJETIVO DE LA IMPLEMENTACIÓN
--------------------------------------------------------------------------------
+12. IMPLEMENTATION SCOPE AND OBJECTIVE
+    -------------------------------------------------------------------------------
 
-Nombre visible provisional: DONDE DESPIERTAN LOS PERDIDOS
-ID interno: CA_Q_MAIN_M00_THE_FOOL
-Tipo: misión principal / prólogo / Arcano Mayor
-Mapa: MAP01
-Destino: MAP02 — alcantarillas
-Carta: Arcano Mayor 0 — El Loco
+Provisional visible name: WHERE THE LOST AWAKEN. ID: CA_Q_MAIN_M00_THE_FOOL Type: main mission /
+prologue / Major Arcana Map: MAP01 Destination: MAP02 — sewers Card: Major Arcana 0 — El
+Loco
 
-Objetivo de experiencia:
+Experience objective:
 
-MAP01 debe enseñar las cuatro ramas fundamentales mediante una única misión
-lineal, presentar a Palomo y los cuatro futuros jefes, otorgar la Caja Mágica,
-enseñar la primera captura de Tarot y terminar con el regreso al cuerpo.
+MAP01 must teach the four fundamental branches through a single linear mission, introduce
+Palomo and the four future bosses, grant the Magic Box, teach the first capture of Tarot
+and end the return to the body.
 
-Orden obligatorio:
+Mandatory order:
 
-1. Argento — social — convencer a Rulo, Ronnie y Caella.
-2. Caella — magia — resolver el acertijo y abrir el pasadizo.
-3. Ronnie — supervivencia — reunir materiales para un arma.
-4. Rulo — combate — derrotar al Toro.
-5. Palomo — recibir la Caja, capturar El Loco y salir.
+1. Argento — social — convince Rulo, Ronnie and Caella.
+2. Caella — magic — solve the riddle and open the passageway.
+3. Ronnie — survival — collect materials for a weapon.
+4. Rulo — combat — defeat the Bull.
+5. Palomo — receive the Box, capture El Loco and exit.
 
-Fuera de alcance para la primera implementación:
+Out of scope for the first implementation:
 
-- Revelar que MAP01 es el Limbo.
-- Revelar la identidad de la voz.
-- Mostrar los cuerpos corrompidos de los cuatro NPC.
-- Implementar los jefes del Capítulo I.
-- Explicar el origen completo del Tarot o La Dispersión.
-- Permitir regresar normalmente a MAP01 después de entrar en MAP02.
+- Reveal that MAP01 is Limbo.
+- Reveal the identity of the voice.
+- Show the corrupted bodies of the four NPCs.
+- Implement Chapter I bosses.
+- Explain the full origin of Tarot or The Dispersal.
+- Allow to return normally to MAP01 after entering MAP02.
 
-Prioridades técnicas:
+Technical priorities:
 
-- Robustez en GZDoom 4.14.2.
-- Estados idempotentes: una acción repetida no duplica progreso ni objetos.
-- Código en inglés y comentarios en español.
-- Textos visibles mediante claves de localización.
-- Sin assets heredados de Doom.
-- Guardado/carga seguros en cada etapa.
-- La misión no puede bloquearse por fallar una tirada social, perder un objeto
-  temporal o ser derrotado por el Toro.
+- Robust in GZDoom 4.14.2.
+- Idempotent states: a repeated action does not duplicate progress or objects.
+- Code in English and comments in Spanish.
+- Texts visible using localization keys.
+- No assets inherited from Doom.
+- Safely saved/loaded at each stage.
+- The mission cannot be blocked for failing a social roll, losing a temporary object or
+  being defeated by the Bull.
 
 -------------------------------------------------------------------------------
-13. FLUJO COMPLETO DE LA MISIÓN
+13. COMPLETE QUEST FLOW
+    -------------------------------------------------------------------------------
+
+PHASE 00 — INITIALIZE
+
+- Load or create the character.
+- Remove from the external inventory any objects that do not correspond to the initial
+  status of MAP01.
+- Keep class, species, attributes, and appearance data.
+- Set the initial visible inventory to empty.
+- Mark all objects granted during Limbo as temporary until the Box expressly converts or
+  preserves them.
+
+PHASE 10 — AWAKEN
+
+- Play dark screen, dim sound and first line of Unknown Voice.
+- Give back control to the player.
+- Activate the mission and the first entry in the journal.
+- Do not show the ambush or explain the death.
+
+PHASE 20 — MEET_PALOMO
+
+- Detect player arrival to the hall area.
+- Show Palomo discreetly.
+- Run introductory dialogue.
+- Palomo guides to Argento without using mission imperatives.
+
+PHASE 30 — ARGENTO_SOCIAL
+
+- Argento explains that the other residents have necessary knowledge.
+- Activate three recruitment talks.
+- Convince Rulo, Ronnie and Caella.
+- When you get 3/3, complete the social branch.
+
+PHASE 40 — CAELLA_MAGIC
+
+- Caella leads to the riddle room.
+- Deliver temporary magic implements and seal when needed.
+- Show Anima, Fire, AltFire and Channel/Reload.
+- Solve the elementary sequence.
+- To open the secret passage persistently.
+
+PHASE 50 — RONNIE_SURVIVAL
+
+- Ronnie enables the path behind the passageway.
+- Determine the initial weapon according to the player's class.
+- Derive from its recipe the list of necessary raw materials.
+- Teach resources, carried load, Air and needs.
+- Gather all the weapon materials.
+
+PHASE 60 — PREPARE_WEAPON
+
+- Use the collected materials to create or prepare the initial weapon.
+- The piece must retain a valid ItemId.
+- Mark it as a candidate to be saved inside the Box at the end.
+- Enable access to the Bull enclosure.
+
+PHASE 70 — RULO_COMBAT
+
+- Rulo introduces practice combat.
+- Activate the Bull and temporarily close the enclosure.
+- Register tutorial actions and victory.
+- If the player is defeated, restart the match without losing previous progress.
+- On victory, complete the fourth branch and enable Palomo upstairs.
+
+PHASE 80 — PALOMO_FINAL
+
+- Make Palomo appear on the second floor.
+- Run final conversation without revealing the nature of the place.
+- Deliver the Magic Box exactly once.
+- Transfer the authorized initial equipment to the inside of the Box.
+
+PHASE 90 — CAPTURE_THE_FOOL
+
+- Manifest El Loco.
+- Teach capture interaction through the Box.
+- Give the card, its progress and bonus once.
+- Activate the exit.
+
+PHASE 100 — RETURN_TO_BODY
+
+- Ask for confirmation before leaving MAP01.
+- Clean temporary objects from Limbo.
+- Ensure that the outer inventory only contains the Box.
+- Ensure that the initial equipment is inside the Box.
+- Save mission status and Tarot.
+- Switch to MAP02 at the sewer arrival point.
+- Mark MAP01 as inaccessible by normal means.
+
 -------------------------------------------------------------------------------
+14. DATA AND STATE ARCHITECTURE
+    -------------------------------------------------------------------------------
 
-FASE 00 — INITIALIZE
-
-- Cargar o crear al personaje.
-- Retirar del inventario exterior cualquier objeto que no corresponda al estado
-  inicial de MAP01.
-- Conservar datos de clase, especie, atributos y apariencia.
-- Establecer el inventario inicial visible en vacío.
-- Marcar todos los objetos concedidos durante el Limbo como temporales hasta que
-  la Caja los convierta o preserve expresamente.
-
-FASE 10 — AWAKEN
-
-- Reproducir pantalla oscura, sonido tenue y primera línea de Voz desconocida.
-- Devolver control al jugador.
-- Activar la misión y la primera entrada del diario.
-- No mostrar la emboscada ni explicar la muerte.
-
-FASE 20 — MEET_PALOMO
-
-- Detectar llegada del jugador al área del recibidor.
-- Hacer aparecer a Palomo de manera discreta.
-- Ejecutar diálogo introductorio.
-- Palomo orienta hacia Argento sin utilizar imperativos de misión.
-
-FASE 30 — ARGENTO_SOCIAL
-
-- Argento explica que los otros residentes poseen conocimientos necesarios.
-- Activar tres conversaciones de reclutamiento.
-- Convencer a Rulo, Ronnie y Caella.
-- Al conseguir 3/3, completar la rama social.
-
-FASE 40 — CAELLA_MAGIC
-
-- Caella conduce a la sala del acertijo.
-- Entregar implemento y sello mágicos temporales cuando sean necesarios.
-- Enseñar Ánima, Fire, AltFire y Channel/Reload.
-- Resolver la secuencia elemental.
-- Abrir el pasadizo secreto de manera persistente.
-
-FASE 50 — RONNIE_SURVIVAL
-
-- Ronnie habilita la ruta detrás del pasadizo.
-- Determinar el arma inicial según la clase del jugador.
-- Derivar de su receta la lista de materias primas necesarias.
-- Enseñar recursos, carga, Aire y necesidades.
-- Reunir todos los materiales del arma.
-
-FASE 60 — PREPARE_WEAPON
-
-- Utilizar los materiales reunidos para crear o preparar el arma inicial.
-- La pieza debe conservar un ItemId válido.
-- Marcarla como candidata a ser guardada dentro de la Caja al final.
-- Habilitar el acceso al recinto del Toro.
-
-FASE 70 — RULO_COMBAT
-
-- Rulo introduce el combate de práctica.
-- Activar el Toro y cerrar temporalmente el recinto.
-- Registrar acciones tutoriales y victoria.
-- Si el jugador es derrotado, reiniciar el encuentro sin perder progreso previo.
-- Al vencer, completar la cuarta rama y habilitar a Palomo arriba.
-
-FASE 80 — PALOMO_FINAL
-
-- Hacer aparecer a Palomo en el segundo piso.
-- Ejecutar conversación final sin revelar la naturaleza del lugar.
-- Entregar la Caja Mágica exactamente una vez.
-- Transferir el equipo inicial autorizado al interior de la Caja.
-
-FASE 90 — CAPTURE_THE_FOOL
-
-- Manifestar El Loco.
-- Enseñar la interacción de captura mediante la Caja.
-- Otorgar la carta, su progreso y bonificación una sola vez.
-- Activar la salida.
-
-FASE 100 — RETURN_TO_BODY
-
-- Solicitar confirmación antes de abandonar MAP01.
-- Limpiar objetos temporales del Limbo.
-- Garantizar que el inventario exterior sólo contenga la Caja.
-- Garantizar que el equipo inicial esté dentro de la Caja.
-- Guardar estado de misión y Tarot.
-- Cambiar a MAP02 en el punto de aparición de las alcantarillas.
-- Marcar MAP01 como inaccesible por medios normales.
-
--------------------------------------------------------------------------------
-14. ARQUITECTURA DE DATOS Y ESTADOS
--------------------------------------------------------------------------------
-
-14.1. SEPARACIÓN RECOMENDADA
+14.1. RECOMMENDED SEPARATION
 
 QuestDefinition:
 
-- Identidad y textos.
-- Orden de etapas.
-- Condiciones de entrada y salida.
-- Objetivos y recompensas.
+- Identity and texts.
+- Order of stages.
+- Entry and exit conditions.
+- Goals and rewards.
 
 QuestState:
 
-- Etapa actual.
-- Objetivos completados.
-- Resultados de diálogo.
-- Objetos concedidos.
-- Carta y Caja otorgadas.
-- Confirmación de salida.
+- Current stage.
+- Targets completed.
+- Dialogue results.
+- Items granted.
+- Card and Box awarded.
+- Confirmation of departure.
 
 MapController:
 
-- Activa actores y sectores según QuestState.
-- Reconstruye el estado correcto al cargar MAP01.
-- No conserva por sí mismo datos autoritativos que puedan perderse al cambiar de
-  mapa.
+- Activates actors and sectors according to QuestState.
+- Rebuilds the correct status when loading MAP01.
+- It does not itself retain authoritative data that may be lost when changing the map.
 
 InventoryTransferController:
 
-- Etiqueta objetos temporales.
-- Reserva los materiales de misión.
-- Introduce el equipo inicial dentro de la Caja.
-- Limpia el inventario antes de MAP02.
+- Tags temporary items.
+- Reserves quest materials.
+- Enter the initial equipment into the box.
+- Clear inventory before MAP02.
 
-14.2. ESTADOS PRINCIPALES
+14.2. MAIN STATES
 
-Usar nombres estables, no depender únicamente de un entero sin enumeración:
+Use stable names, not only depend on an integer without enumeration:
 
-CA_M01_STATE_INITIALIZE
-CA_M01_STATE_AWAKENED
-CA_M01_STATE_MET_PALOMO
-CA_M01_STATE_ARGENTO_ACTIVE
-CA_M01_STATE_ARGENTO_COMPLETE
-CA_M01_STATE_CAELLA_ACTIVE
-CA_M01_STATE_CAELLA_COMPLETE
-CA_M01_STATE_RONNIE_ACTIVE
-CA_M01_STATE_RONNIE_COMPLETE
-CA_M01_STATE_WEAPON_READY
-CA_M01_STATE_RULO_ACTIVE
-CA_M01_STATE_RULO_COMPLETE
-CA_M01_STATE_BOX_RECEIVED
-CA_M01_STATE_FOOL_CAPTURED
-CA_M01_STATE_EXIT_CONFIRMED
+CA_M01_STATE_INITIALIZE CA_M01_STATE_AWAKENED CA_M01_STATE_MET_PALOMO
+CA_M01_STATE_ARGENTO_ACTIVE CA_M01_STATE_ARGENTO_COMPLETE CA_M01_STATE_CAELLA_ACTIVE
+CA_M01_STATE_CAELLA_COMPLETE CA_M01_STATE_RONNIE_ACTIVE CA_M01_STATE_RONNIE_COMPLETE
+CA_M01_STATE_WEAPON_READY CA_M01_STATE_RULO_ACTIVE CA_M01_STATE_RULO_COMPLETE
+CA_M01_STATE_BOX_RECEIVED CA_M01_STATE_FOOL_CAPTURED CA_M01_STATE_EXIT_CONFIRMED
 CA_M01_STATE_COMPLETE
 
-Cada transición debe comprobar el estado esperado. Una llamada duplicada no debe
-saltar etapas, entregar objetos adicionales ni volver a reproducir recompensas.
+Each transition must check the expected status. A duplicate call must not skip stages,
+deliver additional objects, or replay rewards.
 
-Pseudológica:
+Pseudocode:
 
-TryAdvance(expectedState, nextState)
-{
+TryAdvance(expectedState, nextState) {
     if (CurrentState != expectedState)
         return false;
-
     CurrentState = nextState;
     ApplyEnterActionsOnce(nextState);
     SaveAuthoritativeQuestState();
     return true;
 }
 
-14.3. FLAGS DE PROGRESO
+14.3. PROGRESS FLAGS
 
-CA_F_M01_STARTED
-CA_F_M01_UNKNOWN_VOICE_HEARD
-CA_F_M01_PALOMO_MET
+CA_F_M01_STARTED CA_F_M01_UNKNOWN_VOICE_HEARD CA_F_M01_PALOMO_MET
 
-CA_F_M01_ARGENTO_STARTED
-CA_F_M01_RULO_CONVINCED
-CA_F_M01_RONNIE_CONVINCED
-CA_F_M01_CAELLA_CONVINCED
-CA_F_M01_ARGENTO_COMPLETE
+CA_F_M01_ARGENTO_STARTED CA_F_M01_RULO_CONVINCED CA_F_M01_RONNIE_CONVINCED
+CA_F_M01_CAELLA_CONVINCED CA_F_M01_ARGENTO_COMPLETE
 
-CA_F_M01_CAELLA_STARTED
-CA_F_M01_MAGIC_IMPLEMENT_GIVEN
-CA_F_M01_MAGIC_SEAL_GIVEN
-CA_F_M01_MAGIC_PRIMARY_USED
-CA_F_M01_MAGIC_SECONDARY_USED
-CA_F_M01_MAGIC_CHANNEL_USED
-CA_F_M01_RUNE_EARTH
-CA_F_M01_RUNE_AIR
-CA_F_M01_RUNE_FIRE
-CA_F_M01_RUNE_WATER
-CA_F_M01_SECRET_PASSAGE_OPEN
-CA_F_M01_CAELLA_COMPLETE
+CA_F_M01_CAELLA_STARTED CA_F_M01_MAGIC_IMPLEMENT_GIVEN CA_F_M01_MAGIC_SEAL_GIVEN
+CA_F_M01_MAGIC_PRIMARY_USED CA_F_M01_MAGIC_SECONDARY_USED CA_F_M01_MAGIC_CHANNEL_USED
+CA_F_M01_RUNE_EARTH CA_F_M01_RUNE_AIR CA_F_M01_RUNE_FIRE CA_F_M01_RUNE_WATER
+CA_F_M01_SECRET_PASSAGE_OPEN CA_F_M01_CAELLA_COMPLETE
 
-CA_F_M01_RONNIE_STARTED
-CA_F_M01_REPAIR_TUTORIAL_COMPLETE
-CA_F_M01_SURVIVAL_FOOD_USED
-CA_F_M01_SURVIVAL_WATER_USED
-CA_F_M01_SURVIVAL_AIR_SEEN
-CA_F_M01_SURVIVAL_LOAD_SEEN
-CA_F_M01_MATERIALS_COMPLETE
-CA_F_M01_RONNIE_COMPLETE
+CA_F_M01_RONNIE_STARTED CA_F_M01_REPAIR_TUTORIAL_COMPLETE CA_F_M01_SURVIVAL_FOOD_USED
+CA_F_M01_SURVIVAL_WATER_USED CA_F_M01_SURVIVAL_AIR_SEEN CA_F_M01_SURVIVAL_LOAD_SEEN
+CA_F_M01_MATERIALS_COMPLETE CA_F_M01_RONNIE_COMPLETE
 
-CA_F_M01_STARTER_WEAPON_CRAFTED
-CA_F_M01_STARTER_WEAPON_PRESERVED
+CA_F_M01_STARTER_WEAPON_CRAFTED CA_F_M01_STARTER_WEAPON_PRESERVED
 
-CA_F_M01_RULO_STARTED
-CA_F_M01_COMBAT_PRIMARY_USED
-CA_F_M01_COMBAT_SECONDARY_USED
-CA_F_M01_COMBAT_DEFENSE_USED
-CA_F_M01_COMBAT_CHARGED_USED
-CA_F_M01_BULL_STARTED
-CA_F_M01_BULL_DEFEATED
-CA_F_M01_RULO_COMPLETE
+CA_F_M01_RULO_STARTED CA_F_M01_COMBAT_PRIMARY_USED CA_F_M01_COMBAT_SECONDARY_USED
+CA_F_M01_COMBAT_DEFENSE_USED CA_F_M01_COMBAT_CHARGED_USED CA_F_M01_BULL_STARTED
+CA_F_M01_BULL_DEFEATED CA_F_M01_RULO_COMPLETE
 
-CA_F_M01_PALOMO_UPSTAIRS_ENABLED
-CA_F_M01_MAGIC_BOX_GRANTED
-CA_F_M01_THE_FOOL_CAPTURED
-CA_F_M01_EXIT_READY
-CA_F_M01_EXIT_CONFIRMED
-CA_F_M01_INVENTORY_SANITIZED
-CA_F_M01_COMPLETE
+CA_F_M01_PALOMO_UPSTAIRS_ENABLED CA_F_M01_MAGIC_BOX_GRANTED CA_F_M01_THE_FOOL_CAPTURED
+CA_F_M01_EXIT_READY CA_F_M01_EXIT_CONFIRMED CA_F_M01_INVENTORY_SANITIZED CA_F_M01_COMPLETE
 
-14.4. FLAGS DE DIÁLOGO Y CONOCIMIENTO
+14.4. DIALOGUE FLAGS AND KNOWLEDGE
 
-CA_F_M01_ASKED_PALOMO_WHERE
-CA_F_M01_ASKED_PALOMO_WHAT_HAPPENED
-CA_F_M01_TOLD_PALOMO_ABOUT_VOICE
-CA_F_M01_PALOMO_CALLED_IT_HALLUCINATION
+CA_F_M01_ASKED_PALOMO_WHERE CA_F_M01_ASKED_PALOMO_WHAT_HAPPENED
+CA_F_M01_TOLD_PALOMO_ABOUT_VOICE CA_F_M01_PALOMO_CALLED_IT_HALLUCINATION
 
-CA_F_M01_HEARD_ARGENTO_QUOTE
-CA_F_M01_HEARD_CAELLA_QUOTE
-CA_F_M01_HEARD_RONNIE_QUOTE
+CA_F_M01_HEARD_ARGENTO_QUOTE CA_F_M01_HEARD_CAELLA_QUOTE CA_F_M01_HEARD_RONNIE_QUOTE
 CA_F_M01_HEARD_RULO_QUOTE
 
-CA_F_M01_NOTICED_MEMORY_GAP
-CA_F_M01_NOTICED_LOOPING_PATH
-CA_F_M01_NOTICED_WRONG_CLOCKS
+CA_F_M01_NOTICED_MEMORY_GAP CA_F_M01_NOTICED_LOOPING_PATH CA_F_M01_NOTICED_WRONG_CLOCKS
 CA_F_M01_NOTICED_ROOM_GEOMETRY
 
-Estos flags permiten que futuras conversaciones reconozcan qué pistas vio cada
-jugador sin afirmar que su interpretación sea correcta.
+These flags allow future conversations to recognize which clues each player saw without
+asserting that their interpretation is correct.
 
-14.5. ESTADO DE OBJETOS ÚNICOS
+14.5. STATUS OF SINGLE OBJECTS
 
-Registrar por separado:
+Register separately:
 
 - LimboMagicImplementItemId.
 - LimboMagicSealItemId.
@@ -15059,340 +14931,300 @@ Registrar por separado:
 - StarterWeaponItemId.
 - MagicBoxItemId.
 
-No seleccionar piezas por clase y nombre cuando la misión exige una instancia
-concreta. Utilizar ItemId para reparación, crafteo y transferencia.
+Do not select parts by class and name when the mission requires a specific instance. Use
+ItemId for repair, crafting and transfer.
 
 -------------------------------------------------------------------------------
-15. REQUISITOS DEL MAPA Y ACTORES
--------------------------------------------------------------------------------
+15. MAP AND ACTOR REQUIREMENTS
+    -------------------------------------------------------------------------------
 
-15.1. TAGS DE POSICIÓN RECOMENDADOS
+15.1. RECOMMENDED POSITION TAGS
 
-CA_M01_START_SPOT
-CA_M01_UNKNOWN_VOICE_TRIGGER
-CA_M01_PALOMO_FOYER_SPOT
-CA_M01_ARGENTO_SPOT
-CA_M01_RULO_SPOT
-CA_M01_RONNIE_SPOT
-CA_M01_CAELLA_SPOT
-CA_M01_MAGIC_PUZZLE_CENTER
-CA_M01_RUNE_EARTH_SPOT
-CA_M01_RUNE_AIR_SPOT
-CA_M01_RUNE_FIRE_SPOT
-CA_M01_RUNE_WATER_SPOT
-CA_M01_SECRET_DOOR
-CA_M01_SURVIVAL_ROUTE_START
-CA_M01_SURVIVAL_ROUTE_END
-CA_M01_REPAIR_STATION
-CA_M01_CRAFT_STATION
-CA_M01_BULL_PLAYER_START
-CA_M01_BULL_SPAWN
-CA_M01_BULL_GATE
-CA_M01_PALOMO_UPSTAIRS_SPOT
-CA_M01_FOOL_ESSENCE_SPOT
-CA_M01_EXIT_PORTAL_SPOT
+CA_M01_START_SPOT CA_M01_UNKNOWN_VOICE_TRIGGER CA_M01_PALOMO_FOYER_SPOT
+CA_M01_ARGENTO_SPOT CA_M01_RULO_SPOT CA_M01_RONNIE_SPOT CA_M01_CAELLA_SPOT
+CA_M01_MAGIC_PUZZLE_CENTER CA_M01_RUNE_EARTH_SPOT CA_M01_RUNE_AIR_SPOT
+CA_M01_RUNE_FIRE_SPOT CA_M01_RUNE_WATER_SPOT CA_M01_SECRET_DOOR
+CA_M01_SURVIVAL_ROUTE_START CA_M01_SURVIVAL_ROUTE_END CA_M01_REPAIR_STATION
+CA_M01_CRAFT_STATION CA_M01_BULL_PLAYER_START CA_M01_BULL_SPAWN CA_M01_BULL_GATE
+CA_M01_PALOMO_UPSTAIRS_SPOT CA_M01_FOOL_ESSENCE_SPOT CA_M01_EXIT_PORTAL_SPOT
 
-Los nombres son orientativos. Si UDB requiere TID numérico, mantener una tabla
-única nombre → TID para evitar números mágicos en los scripts.
+The names are indicative. If UDB requires numeric TID, keep a single table name → TID to
+avoid magic numbers in scripts.
 
-15.2. ACTORES NECESARIOS
+15.2. REQUIRED ACTORS
 
 - CA_PalomoM01.
 - CA_ArgentoM01.
 - CA_CaellaM01.
 - CA_RonnieM01.
 - CA_RuloM01.
-- CA_UnknownVoiceEmitter, no visible.
-- CA_MagicPuzzleRune, cuatro instancias configuradas por elemento.
+- CA_UnknownVoiceEmitter, not visible.
+- CA_MagicPuzzleRune, four instances configured by element.
 - CA_LimboMagicImplement.
 - CA_LimboMagicSeal.
 - CA_LimboSurvivalTool.
 - CA_LimboResourceNode.
-- CA_LimboBull, basado en el Toro aprobado pero con control de reinicio.
+- CA_LimboBull, based on the approved Bull but with restart control.
 - CA_TheFoolEssence.
-- CA_MagicBox, ampliada con captura y retorno.
+- CA_MagicBox, expanded with capture and return.
 - CA_M01QuestController.
 
-Todos los NPC principales deben ser invulnerables, no bloqueables y excluidos de
-infighting durante MAP01.
+All major NPCs should be invulnerable, non-blockable and excluded from infighting during
+MAP01.
 
-15.3. SECTORES FUNCIONALES
+15.3. FUNCTIONAL SECTORS
 
-- Zona de despertar.
-- Recibidor de Palomo.
-- Área social de Argento.
-- Sala del acertijo mágico.
-- Pasadizo secreto.
-- Ruta de supervivencia y materiales.
-- Estación de reparación básica.
-- Estación de crafteo del arma inicial.
-- Recinto cerrado del Toro.
-- Segundo piso para Palomo.
-- Ancla de salida del Limbo.
+- Wake up zone.
+- Palomo foyer.
+- Argento social area.
+- Magical riddle room.
+- Secret passage.
+- Survival route and materials.
+- Basic repair station.
+- The initial weapon crafting station.
+- Closed enclosure of the Bull.
+- Second floor for Palomo.
+- Limbo exit anchor.
 
-15.4. LLAVE DE PLATA EXISTENTE
+15.4. EXISTING SILVER KEY
 
-[PENDIENTE]
+[PENDING]
 
-La puerta con Llave de Plata ya presente en MAP01 no debe impedir llegar a
-Argento, porque su prueba es obligatoriamente la primera. Opciones compatibles:
+The Silver Key door already present in MAP01 must not prevent you from reaching Argento,
+because his trial must come first. Compatible options:
 
-1. Dejar esa puerta abierta durante el prólogo y reservar la llave para otro uso.
-2. Colocar la llave antes de Argento como hallazgo ambiental, sin convertirla en
-   una quinta prueba.
-3. Hacer que el pasadizo de Caella conduzca al lado cerrado de esa puerta.
+1. Leave that door open during the prologue and reserve the key for another use.
+2. Place the key before Argento as an environmental find, without turning it into a fifth
+   test.
+3. Make Caella's passageway lead to the locked side of that door.
 
-Recomendación: opción 3. Integra la geometría existente con la segunda prueba y
-permite conservar la utilidad de la llave para volver a abrir el paso desde el
-lado opuesto. La llave será un objeto temporal del Limbo salvo que Palomo la
-introduzca expresamente en la Caja.
+Recommendation: option 3. This integrates the existing geometry with the second test and allows
+to retain the key utility to reopen the pass from the opposite side. The key will be a
+temporary Limbo object unless Palomo expressly inserts it in the Box.
 
 -------------------------------------------------------------------------------
-16. APERTURA: DESPERTAR, VOZ DESCONOCIDA Y PALOMO
--------------------------------------------------------------------------------
+16. OPENING: AWAKENING, UNKNOWN VOICE AND PALOMO
+    -------------------------------------------------------------------------------
 
-16.1. ESTADO INICIAL
+16.1. INITIAL STATE
 
-- Pantalla negra durante un intervalo breve y saltable.
-- Sonido amortiguado, sin reproducción explícita del asesinato.
-- No mostrar cadáver, atacantes ni alcantarillas.
-- Inventario exterior vacío.
-- Posición en CA_M01_START_SPOT.
-- Salud y necesidades en valores tutoriales seguros.
-- Activar CA_Q_MAIN_M00_THE_FOOL.
+- Black screen for a short, skippable interval.
+- Sound dampened, no explicit reproduction of the murder.
+- Do not show body, attackers or sewers.
+- Empty exterior inventory.
+- Position in CA_M01_START_SPOT.
+- Health and needs in safe tutorial values.
+- Activate CA_Q_MAIN_M00_THE_FOOL.
 
-Texto inicial del diario:
+Initial journal text:
 
 “Desperté en una propiedad que no reconozco. Recuerdo quién soy y de dónde vengo,
 pero no cómo llegué. Una voz que nadie más parece oír insiste en que busque una
 salida.”
 
-16.2. VOZ DESCONOCIDA
+16.2. UNKNOWN VOICE
 
-Identificador del hablante visible:
+Visible speaker identifier:
 
 $CA_SPEAKER_UNKNOWN_VOICE = “Voz desconocida”
 
-Primera intervención:
+First intervention:
 
-VOZ DESCONOCIDA:
-“Despertá. No intentes recordar todavía. Hay alguien cerca que puede ayudarte a
+UNKNOWN VOICE: “Despertá. No intentes recordar todavía. Hay alguien cerca que puede ayudarte a
 encontrar el camino.”
 
-Respuesta opcional del jugador:
+Optional player response:
 
-1. “¿Quién sos?”
-   VOZ: “Alguien demasiado lejos para hacer más que hablar.”
+1. “¿Quién sos?” VOICE: “Alguien demasiado lejos para hacer más que hablar.”
 
-2. “¿Dónde estoy?”
-   VOZ: “En un lugar que no puede retenerte para siempre.”
+2. “¿Dónde estoy?” VOICE: “En un lugar que no puede retenerte para siempre.”
 
-3. “[Guardar silencio.]”
-   La voz no insiste.
+3. “[Guardar silencio.]” The voice does not insist.
 
-No conceder conocimiento sobre Selene. Marcar únicamente
-CA_F_M01_UNKNOWN_VOICE_HEARD.
+Do not give knowledge about Selene. Mark only CA_F_M01_UNKNOWN_VOICE_HEARD.
 
-16.3. APARICIÓN DE PALOMO
+16.3. PALOMO'S APPEARANCE
 
-Palomo aparece al entrar en el recibidor o al volver la cámara después de
-examinar un elemento cercano. Evitar teletransportarlo con un destello evidente.
-Usar el sonido de desaparición existente sólo cuando corresponda y con volumen
-moderado.
+Palomo appears when entering the hall or returning the camera after examining a nearby
+element. Avoid teleporting it with an obvious flash. Use the existing disappearing sound
+only when appropriate and with moderate volume.
 
-Diálogo base:
+Base dialogue:
 
-PALOMO:
-“Buen día. O algo suficientemente parecido como para no discutir con el reloj.”
+PALOMO: “Buen día. O algo suficientemente parecido como para no discutir con el reloj.”
 
-Preguntas:
+Questions:
 
-JUGADOR: “¿Dónde estamos?”
+PLAYER: “¿Dónde estamos?”
 
-PALOMO:
-“En el recibidor, si busca precisión. Si busca respuestas más ambiciosas, temo
+PALOMO: “En el recibidor, si busca precisión. Si busca respuestas más ambiciosas, temo
 que la arquitectura no será de mucha ayuda.”
 
-JUGADOR: “¿Qué me pasó?”
+PLAYER: “¿Qué me pasó?”
 
-PALOMO:
-“Se despertó. Suele ocurrir después de cerrar los ojos, aunque admito que usted
+PALOMO: “Se despertó. Suele ocurrir después de cerrar los ojos, aunque admito que usted
 le dio bastante dramatismo.”
 
-JUGADOR: “No recuerdo cómo llegué.”
+PLAYER: “No recuerdo cómo llegué.”
 
-PALOMO:
-“La memoria es una anfitriona selectiva. A veces deja el abrigo en la entrada y
+PALOMO: “La memoria es una anfitriona selectiva. A veces deja el abrigo en la entrada y
 se lleva al invitado.”
 
-JUGADOR: “Escucho la voz de una mujer.”
+PLAYER: “Escucho la voz de una mujer.”
 
-PALOMO:
-“Las alucinaciones son huéspedes descorteses: llegan sin invitación y pronto
+PALOMO: “Las alucinaciones son huéspedes descorteses: llegan sin invitación y pronto
 quieren decidir dónde ponemos los muebles. Tenga cuidado.”
 
-JUGADOR: “No parece una alucinación.”
+PLAYER: “No parece una alucinación.”
 
-PALOMO:
-“Las buenas nunca lo parecen.”
+PALOMO: “Las buenas nunca lo parecen.”
 
-Orientación hacia Argento:
+Orientation to Argento:
 
-PALOMO:
-“Argento lleva tiempo intentando que esta casa escuche razones. Quizá le resulte
+PALOMO: “Argento lleva tiempo intentando que esta casa escuche razones. Quizá le resulte
 agradable descubrir que una persona es más receptiva que una pared.”
 
-No mostrar “Nueva misión de Palomo”. Palomo sólo actualiza el objetivo existente:
-“Hablar con Argento”.
+Do not display “Nueva misión de Palomo”. Palomo only updates the existing target: “Hablar con Argento”.
 
-Al terminar, Palomo desaparece cuando queda fuera del campo visual. Establecer
+When finished, Palomo disappears when it is out of the visual field. Set
 CA_F_M01_PALOMO_MET.
 
 -------------------------------------------------------------------------------
-17. PRUEBA 1: ARGENTO — RAMA SOCIAL
--------------------------------------------------------------------------------
+17. TRIAL 1: ARGENTO — SOCIAL BRANCH
+    -------------------------------------------------------------------------------
 
-17.1. OBJETIVO
+17.1. OBJECTIVE
 
-Convencer a Rulo, Ronnie y Caella de que ayuden al protagonista.
+Convince Rulo, Ronnie and Caella to help the protagonist.
 
-La prueba debe enseñar:
+The test should teach:
 
-- Empatía / Emoción.
-- Elocuencia / Labia.
-- Carisma / Persuasión.
-- Opciones bloqueadas y requisitos visibles.
-- Fallo social con ruta alternativa.
-- Información como recurso.
+- Empathy / Emotion.
+- Eloquence/Fast Talk.
+- Charisma/Persuasion.
+- Locked options and visible requirements.
+- Social failure with alternative route.
+- Information as a resource.
 
-17.2. INICIO
+17.2. START
 
-ARGENTO:
-“También despertaste sin recordar el camino. Eso nos da una pregunta en común,
+ARGENTO: “También despertaste sin recordar el camino. Eso nos da una pregunta en común,
 pero todavía no una respuesta.”
 
-ARGENTO:
-“Rulo conoce aquello que puede enfrentarte. Ronnie sabe qué necesita un viaje.
+ARGENTO: “Rulo conoce aquello que puede enfrentarte. Ronnie sabe qué necesita un viaje.
 Caella percibe lo que esta casa intenta esconder. Ninguno tiene motivos para
 acompañarte sólo porque se lo pidas.”
 
-ARGENTO:
-“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+ARGENTO: “Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
 obliguen al otro. Consiste en descubrir qué está intentando proteger’. Nunca
 aclaró qué esperaba que hiciéramos con eso.”
 
-Al aceptar:
+By accepting:
 
 - CA_F_M01_ARGENTO_STARTED = true.
-- Mostrar objetivo “Conseguir la ayuda de los residentes: 0/3”.
-- Habilitar los nodos de reclutamiento.
+- Show goal “Conseguir la ayuda de los residentes: 0/3”.
+- Enable recruitment nodes.
 
-17.3. DISTRIBUCIÓN DE MECÁNICAS
+17.3. DISTRIBUTION OF MECHANICS
 
-Rulo introduce Empatía:
+Rulo introduces Empathy:
 
-- Motivo visible: no quiere participar en otra tarea sin sentido.
-- Lectura exitosa: en realidad teme poner en peligro a los demás y ser utilizado
-  únicamente por su fuerza.
-- Respuesta adecuada: admitir que el jugador necesita su ayuda, sin reducirlo a
-  un arma.
-- Resultado: CA_F_M01_RULO_CONVINCED = true.
+- Visible reason: does not want to participate in another meaningless task.
+- Successful reading: In reality, he fears endangering others and being used only by his
+  force.
+- Appropriate answer: admit that the player needs his help, without reducing him to a weapon.
+- Result: CA_F_M01_RULO_CONVINCED = true.
 
-Ronnie introduce Elocuencia:
+Ronnie introduces Eloquence:
 
-- Motivo visible: considera que no existe un plan ni provisiones.
-- Una opción bloqueada por Labia permite exponer una secuencia concreta: reunir
-  información, abrir un camino, conseguir recursos y prepararse antes de luchar.
-- Si el umbral no se alcanza, el jugador puede obtener esa estructura hablando
-  nuevamente con Argento y volver con información nueva.
-- Resultado: CA_F_M01_RONNIE_CONVINCED = true.
+- Visible reason: considers that there is no plan or provision.
+- An option blocked by Fast Talk allows us to expose a concrete sequence: gather information,
+  open a path, get resources and prepare before fighting.
+- If the threshold is not reached, the player can get that structure by talking to Argento
+  again and coming back with new information.
+- Result: CA_F_M01_RONNIE_CONVINCED = true.
 
-Caella introduce Persuasión:
+Caella introduces Persuasion:
 
-- Motivo visible: la anomalía mágica alrededor del protagonista podría ser
-  peligrosa.
-- El jugador puede intentar persuadirla de examinarla y ayudar a buscar el paso.
-- Un fallo no puede cerrar la ruta. Tras fallar, una reacción de la sala o una
-  observación de Argento aporta una nueva opción determinista: reconocer el
-  peligro y ofrecer que Caella establezca las condiciones de seguridad.
-- Resultado: CA_F_M01_CAELLA_CONVINCED = true.
+- Visible reason: the magical anomaly around the protagonist could be dangerous.
+- The player can try to persuade her to examine the anomaly and help him find the passage.
+- A failed attempt cannot close the path. After failure, a room reaction or Argento observation
+  provides a new deterministic option: recognize the hazard and offer Caella to set the
+  security conditions.
+- Result: CA_F_M01_CAELLA_CONVINCED = true.
 
-17.4. REGLA DE FALLO
+17.4. FAILURE RULE
 
-Cada tirada aleatoria posee CheckOnceKey. Si falla:
+Each random roll has CheckOnceKey. If it fails:
 
-- Registrar el fallo.
-- Cambiar el diálogo.
-- Proporcionar una tarea breve, información nueva o respuesta alternativa.
-- No permitir repetir inmediatamente la misma tirada.
-- No volver hostil al NPC.
-- No bloquear la misión.
+- Record the failure.
+- Change the dialogue box.
+- Provide a brief task, new information or alternative response.
+- Do not allow the same roll to be repeated immediately.
+- Do not make the NPC hostile.
+- Don't block the mission.
 
 17.5. FINAL
 
-Cuando las tres flags estén activas:
+When all three flags are active:
 
-- Actualizar 3/3.
-- Volver con Argento.
-- Establecer CA_F_M01_ARGENTO_COMPLETE.
-- Avanzar a CA_M01_STATE_ARGENTO_COMPLETE.
-- Habilitar el diálogo de Caella.
+- Update 3/3.
+- Return with Argento.
+- Set CA_F_M01_ARGENTO_COMPLETE.
+- Advance to CA_M01_STATE_ARGENTO_COMPLETE.
+- Enable Caella dialog.
 
-ARGENTO:
-“No los convenciste de lo mismo. A cada uno le diste una razón distinta para
+ARGENTO: “No los convenciste de lo mismo. A cada uno le diste una razón distinta para
 avanzar. Tal vez eso era lo que Palomo intentaba decir.”
 
 -------------------------------------------------------------------------------
-18. PRUEBA 2: CAELLA — RAMA MÁGICA
--------------------------------------------------------------------------------
+18. TRIAL 2: CAELLA — MAGIC BRANCH
+    -------------------------------------------------------------------------------
 
-18.1. OBJETIVO
+18.1. OBJECTIVE
 
-Aprender las acciones mágicas básicas, resolver un acertijo elemental y revelar
-el pasadizo secreto.
+Learn the basic magic actions, solve an elementary riddle and reveal the secret
+passageway.
 
-18.2. INICIO
+18.2. START
 
-CAELLA:
-“Hay una pared que suena vacía cuando nadie la toca y sólida cuando intento
+CAELLA: “Hay una pared que suena vacía cuando nadie la toca y sólida cuando intento
 abrirla. La casa tiene un sentido del humor horrible. Debe de llevarse bien con
 Palomo.”
 
-CAELLA:
-“Él me dijo: ‘No hay pared más firme que aquella que todos han decidido dejar de
+CAELLA: “Él me dijo: ‘No hay pared más firme que aquella que todos han decidido dejar de
 mirar’. Pensé que se burlaba de mí. Todavía lo pienso, pero quizá además dejaba
 una pista.”
 
-Establecer CA_F_M01_CAELLA_STARTED.
+Set CA_F_M01_CAELLA_STARTED.
 
-18.3. EQUIPO TEMPORAL
+18.3. TEMPORARY EQUIPMENT
 
-Si el jugador no posee equipo mágico compatible:
+If the player does not have compatible magic equipment:
 
-- Entregar CA_LimboMagicImplement.
-- Entregar CA_LimboMagicSeal.
-- Asignar ItemId a ambas instancias.
-- Etiquetarlas CA_ITEMFLAG_LIMBO_TEMP.
-- No permitir vender, soltar fuera de la sala ni transferir a contenedores.
+- Give CA_LimboMagicImplement.
+- Give CA_LimboMagicSeal.
+- Assign an ItemId to both instances.
+- Tag them CA_ITEMFLAG_LIMBO_TEMP.
+- Do not allow to sell, release out of the room or transfer to containers.
 
-Todas las clases pueden completar la prueba. Los atributos mágicos modifican la
-eficiencia, pero no el acceso a las acciones tutoriales.
+All classes can complete the test. Magical attributes modify efficiency, but not access to
+tutorial actions.
 
-18.4. ACCIONES DE ENSEÑANZA
+18.4. TEACHING ACTIONS
 
-Antes del acertijo, registrar:
+Before the riddle, record:
 
-- Un lanzamiento primario válido: Fire.
-- Una función mágica secundaria válida: AltFire.
-- Una canalización válida con el Sello: Reload/Channel.
-- Consumo y recuperación visible de Ánima.
+- A valid primary launch: Fire.
+- A valid secondary magic feature: AltFire.
+- A valid channeling with Seal: Reload/Channel.
+- Consumption and visible recovery of Anima.
 
-No exigir daño contra un enemigo. Utilizar blancos o runas que respondan a la
-acción correcta.
+Do not demand harm against an enemy. Use targets or runes that respond to the right action.
 
-18.5. ACERTIJO
+18.5. RIDDLE
 
-Texto visible:
+Visible text:
 
 “La tierra lo sostiene.
 El aire lo delata.
@@ -15400,414 +15232,390 @@ El fuego lo revela.
 El agua borra sus huellas.
 Cuando los cuatro hablen, la pared recordará que fue puerta.”
 
-Solución operativa:
+Operational solution:
 
-1. Activar Tierra.
-2. Activar Aire.
-3. Activar Fuego.
-4. Activar Agua.
+1. Activate Earth.
+2. Activate Air.
+3. Activate Fire.
+4. Activate Water.
 
-Cada runa exige una interacción o ataque mágico del elemento correspondiente.
-Si la herramienta temporal utiliza un selector elemental, Caella enseña a
-cambiarlo antes de iniciar la secuencia.
+Each rune requires a magical interaction or attack of the corresponding element. If the
+temporary implement uses an elemental selector, Caella teaches to change it before starting the
+sequence.
 
-18.6. ERROR Y REINICIO
+18.6. ERROR AND RESET
 
-Al activar una runa incorrecta:
+When activating an incorrect rune:
 
-- Reproducir feedback visual y sonoro breve.
-- Apagar todas las runas.
-- Reiniciar PuzzleSequenceIndex a 0.
-- No causar daño permanente.
-- No retirar Ánima adicional como castigo.
-- Caella ofrece una pista progresiva después de dos y cuatro errores.
+- Play visual feedback and short sound.
+- Turn off all the runes.
+- Reset PuzzleSequenceIndex to 0.
+- Do not cause permanent damage.
+- Do not withdraw Additional Anima as punishment.
+- Caella offers a progressive hint after two and four errors.
 
-Pista 1:
+Hint 1:
 
 “No enumera objetos. Describe lo que cada elemento hace con el camino.”
 
-Pista 2:
+Hint 2:
 
 “Empieza por aquello que sostiene la casa. Terminá con lo que puede borrar una
 huella.”
 
-18.7. APERTURA DEL PASADIZO
+18.7. OPENING THE PASSAGEWAY
 
-Al completar la secuencia:
+When completing the sequence:
 
-- Establecer CA_F_M01_SECRET_PASSAGE_OPEN.
-- Ejecutar una sola vez el movimiento de sector o reemplazo de geometría.
-- Mantener el pasadizo abierto al guardar y cargar.
-- Habilitar la ruta de Ronnie.
-- Establecer CA_F_M01_CAELLA_COMPLETE.
+- Set CA_F_M01_SECRET_PASSAGE_OPEN.
+- Run only once the sector movement or geometry replacement.
+- Keep the passageway open when saving and loading.
+- Enable Ronnie path.
+- Set CA_F_M01_CAELLA_COMPLETE.
 
-CAELLA:
-“La pared sabía que era una puerta. Sólo necesitaba que alguien se lo recordara
+CAELLA: “La pared sabía que era una puerta. Sólo necesitaba que alguien se lo recordara
 en el idioma correcto.”
 
 -------------------------------------------------------------------------------
-19. PRUEBA 3: RONNIE — RAMA DE SUPERVIVENCIA
--------------------------------------------------------------------------------
+19. TRIAL 3: RONNIE — SURVIVAL BRANCH
+    -------------------------------------------------------------------------------
 
-19.1. OBJETIVO
+19.1. OBJECTIVE
 
-Atravesar la ruta revelada, administrar recursos y reunir las materias primas
-necesarias para el arma inicial de la clase elegida.
+Cross the revealed route, manage resources and gather the raw materials needed for the
+initial weapon of the chosen class.
 
-19.2. INICIO
+19.2. START
 
-RONNIE:
-“Encontrar una salida no sirve si llegás a ella sin agua, sin aire y cargando
+RONNIE: “Encontrar una salida no sirve si llegás a ella sin agua, sin aire y cargando
 todo lo que no supiste abandonar.”
 
-RONNIE:
-“Palomo me dijo: ‘Sobrevivir no es permanecer donde nada puede alcanzarlo. A
+RONNIE: “Palomo me dijo: ‘Sobrevivir no es permanecer donde nada puede alcanzarlo. A
 veces eso sólo recibe otro nombre: quedarse’. Nunca supe si hablaba de esta casa
 o de mí.”
 
-Establecer CA_F_M01_RONNIE_STARTED.
+Set CA_F_M01_RONNIE_STARTED.
 
-19.3. SELECCIÓN DEL ARMA Y RECETA
+19.3. WEAPON AND RECIPE SELECTION
 
-No escribir listas de materiales duplicadas dentro de la misión. Resolver el
-arma mediante una tabla autoritativa:
+Do not write duplicate material lists within the mission. Resolve the weapon through
+an authoritative table:
 
 GetStarterLoadout(PlayerClass) → StarterLoadoutDefinition
 StarterLoadoutDefinition.PrimaryWeaponRecipe → RecipeId
 RecipeId.GetRawRequirements() → MaterialRequirement[]
 
-Perfiles requeridos:
+Required profiles:
 
-CA_STARTER_LOADOUT_WARRIOR
-CA_STARTER_LOADOUT_EXPLORER
-CA_STARTER_LOADOUT_PRIEST
+CA_STARTER_LOADOUT_WARRIOR CA_STARTER_LOADOUT_EXPLORER CA_STARTER_LOADOUT_PRIEST
 CA_STARTER_LOADOUT_MAGE
 
-Los objetos exactos permanecen [PENDIENTES]. La misión debe poder cambiar de
-loadout sin modificar scripts de mapa.
+The exact objects remain [PENDING]. The mission must be able to change loadouts
+without modifying map scripts.
 
-19.4. CONTENIDOS DE LA RUTA
+19.4. ROUTE CONTENTS
 
-Tramo A — preparación:
+Stage A — preparation:
 
-- Mostrar la carga actual y el coste de Aire.
-- Entregar una herramienta dañada o localizarla cerca de la entrada.
-- Enseñar a inspeccionar su condición e ItemId.
-- Proporcionar materiales controlados para repararla.
-- Completar una reparación real en CA_M01_REPAIR_STATION.
+- Show the current carried load and the cost of Air.
+- Deliver a damaged tool or locate it near the entrance.
+- Teach the player to inspect its condition and ItemId.
+- Provide controlled materials to repair it.
+- Complete a real repair on CA_M01_REPAIR_STATION.
 
-Tramo B — necesidades:
+Stage B — needs:
 
-- Colocar agua y alimento suficientes, sin convertirlos en recursos vendibles
-  fuera del Limbo.
-- Llevar Sed y Hambre a valores tutoriales que permitan usar una unidad sin
-  colocar al jugador en estado crítico.
-- Registrar una utilización correcta de alimento y agua.
+- Place enough water and food, without turning them into resources that can be sold
+  outside Limbo.
+- Take Thirst and Hunger to tutorial values that allow you to consume one unit without placing
+  the player in critical condition.
+- Register the correct use of food and water.
 
-Tramo C — Aire y movimiento:
+Step C — Air and motion:
 
-- Crear una distancia corta donde correr reduzca el Aire de forma visible.
-- Incluir una alternativa lenta para demostrar que no es obligatorio agotarse.
-- Permitir recuperación completa antes de cualquier peligro.
+- Create a short distance where running reduces Air visibly.
+- Include a slow alternative to demonstrate that it is not mandatory to exhaust yourself.
+- Allow full recovery before any danger.
 
-Tramo D — carga:
+Stage D — carried load:
 
-- Colocar materiales necesarios y objetos prescindibles más pesados.
-- Mostrar la diferencia entre capacidad de recoger y conveniencia de cargar.
-- No impedir el progreso si el jugador decide volver varias veces.
+- Place needed materials and heavier nonessential objects.
+- Show the difference between capacity to pick up an item and the wisdom of carrying it.
+- Do not prevent progress if the player decides to return several times.
 
-Tramo E — respiración o paso inundado:
+Stage E — breathing or flooded passage:
 
-- Utilizar un sector de agua breve y seguro para presentar el Aire compartido.
-- Evitar una distancia capaz de matar a un jugador que entra con Aire completo.
-- Colocar salida clara y zona de recuperación.
-- No depender de inmovilidad o bugs previos de entrada al agua.
+- Use a short and safe water sector to introduce the shared Air resource.
+- Avoid a distance capable of killing a player who enters with full Air.
+- Place clear exit and recovery area.
+- Do not depend on immobility or previous bugs entering the water.
 
-19.5. MATERIALES DE MISIÓN
+19.5. MISSION MATERIALS
 
-- Cada recurso necesario debe proceder de al menos un nodo garantizado.
-- Los nodos sólo conceden la cantidad requerida más un margen mínimo de seguridad.
-- Los materiales llevan CA_ITEMFLAG_LIMBO_QUEST hasta ser convertidos.
-- No pueden venderse ni guardarse fuera del flujo de misión.
-- Si un material se pierde en geometría inaccesible, el controlador lo recupera
-  o repone sin duplicar el total autorizado.
-- El progreso utiliza cantidades reservadas, no simples mensajes de pickup.
+- Each necessary resource must come from at least one guaranteed node.
+- Nodes only grant the required amount plus a minimum safety margin.
+- The materials carry CA_ITEMFLAG_LIMBO_QUEST until they are converted.
+- They cannot be sold or kept outside the mission flow.
+- If a material is lost in inaccessible geometry, the controller recovers or replenishes
+  it without duplicating the authorized total.
+- Progress uses reserved amounts, not simple pickup messages.
 
 19.6. FINAL
 
-Cuando todos los requisitos de RecipeId estén disponibles:
+When all RecipeId requirements are available:
 
-- Establecer CA_F_M01_MATERIALS_COMPLETE.
-- Volver con Ronnie.
-- Establecer CA_F_M01_RONNIE_COMPLETE.
-- Habilitar CA_M01_STATE_PREPARE_WEAPON.
+- Set CA_F_M01_MATERIALS_COMPLETE.
+- Return with Ronnie.
+- Set CA_F_M01_RONNIE_COMPLETE.
+- Enable CA_M01_STATE_PREPARE_WEAPON.
 
-RONNIE:
-“Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
+RONNIE: “Tenés lo necesario. Si además conservaste fuerzas para usarlo, aprendiste la
 parte importante.”
 
 -------------------------------------------------------------------------------
-20. PREPARACIÓN DEL ARMA INICIAL
+20. PREPARING THE FIRST WEAPON
+    -------------------------------------------------------------------------------
+
+This phase connects survival and combat. It does not belong to a fifth branch.
+
+20.1. CRAFTING
+
+- Open the recipe for the initial weapon determined in the previous phase.
+- Allow direct crafting from raw materials.
+- Show the subcomponents and their current efficiencies.
+- Reserve materials at the start of the task.
+- Advance the task only as long as the player remains actively in the station and the
+  infrastructure is ready.
+- Stop progress by closing the interaction or leaving the station, according to current
+  general rules.
+- Do not duplicate materials when cancelling, saving, or loading.
+
+20.2. RESULT
+
+- Create a single instance with StarterWeaponItemId.
+- Mark it CA_ITEMFLAG_LIMBO_PRESERVABLE.
+- Equip it or ask the player to equip it.
+- Record CA_F_M01_STARTER_WEAPON_CRAFTED.
+- Maintain the actual efficiency of the part.
+- Do not create a second copy within the Box yet.
+
+If the final design decides that the box automatically generates the weapon, this phase
+can be replaced by a guided preparation. However, retaining real crafting uses
+MAP01 to teach a central mechanic that is already implemented.
+
 -------------------------------------------------------------------------------
+21. TRIAL 4: RULO — COMBAT BRANCH
+    -------------------------------------------------------------------------------
 
-Esta fase conecta supervivencia y combate. No pertenece a una quinta rama.
+21.1. OBJECTIVE
 
-20.1. CRAFTEO
+Demonstrate the fundamental actions of combat and defeat the Bull.
 
-- Abrir la receta del arma inicial derivada en la fase anterior.
-- Permitir el crafteo directo desde materias primas.
-- Mostrar los subcomponentes y sus eficiencias vigentes.
-- Reservar materiales al comenzar la tarea.
-- Hacer avanzar la tarea sólo mientras el jugador permanezca activamente en la
-  estación y la infraestructura esté lista.
-- Detener el progreso al cerrar la interacción o abandonar la estación, de
-  acuerdo con las reglas generales actuales.
-- No duplicar materiales al cancelar, guardar o cargar.
+21.2. START
 
-20.2. RESULTADO
+RULO: “El arma está lista. Eso no significa que vos lo estés.”
 
-- Crear una única instancia con StarterWeaponItemId.
-- Marcarla CA_ITEMFLAG_LIMBO_PRESERVABLE.
-- Equiparla o pedir al jugador que la equipe.
-- Registrar CA_F_M01_STARTER_WEAPON_CRAFTED.
-- Conservar la eficiencia real de la pieza.
-- No crear todavía una segunda copia dentro de la Caja.
-
-Si el diseño final decide que la Caja genera el arma automáticamente, esta fase
-puede reemplazarse por una preparación guiada. Sin embargo, mantener un crafteo
-real aprovecha MAP01 para enseñar una mecánica central ya implementada.
-
--------------------------------------------------------------------------------
-21. PRUEBA 4: RULO — RAMA DE COMBATE
--------------------------------------------------------------------------------
-
-21.1. OBJETIVO
-
-Demostrar las acciones fundamentales de combate y derrotar al Toro.
-
-21.2. INICIO
-
-RULO:
-“El arma está lista. Eso no significa que vos lo estés.”
-
-RULO:
-“Yo ya le gané al Toro. Cuando terminó, Palomo me dijo: ‘Uno puede perder mucho
+RULO: “Yo ya le gané al Toro. Cuando terminó, Palomo me dijo: ‘Uno puede perder mucho
 después de haber ganado’. Si entendés qué quiso decir, guardate la explicación
 para cuando salgamos.”
 
-Establecer CA_F_M01_RULO_STARTED.
+Set CA_F_M01_RULO_STARTED.
 
-21.3. ACCIONES PREVIAS
+21.3. PREVIOUS ACTIONS
 
-Antes de liberar al Toro, utilizar blancos de práctica para registrar:
+Before releasing the Bull, use practice targets to register:
 
-- Fire: ataque primario.
-- AltFire: función secundaria del arma.
-- Zoom o defensa equivalente.
-- Ataque cargado o maniobra avanzada equivalente.
-- Consumo y recuperación de Aire.
+- Fire: primary attack.
+- AltFire: secondary function of the weapon.
+- Zoom or equivalent defense.
+- Charged attack or equivalent advanced maneuver.
+- Air consumption and recovery.
 
-La validación debe reconocer familias distintas. No exigir bloqueo con escudo a
-una combinación que no pueda equiparlo; utilizar la defensa equivalente o
-proporcionar equipo temporal compatible.
+Validation must recognize different families. Do not require shield block to a combination
+that cannot equip it; use the equivalent defense or provide compatible temporary
+equipment.
 
-21.4. ACTOR DEL TORO
+21.4. BULL ACTOR
 
-CA_LimboBull debe reutilizar comportamiento aprobado del Toro siempre que sea
-posible y añadir únicamente:
+CA_LimboBull must reuse approved Bull behavior whenever possible and add only:
 
-- Vinculación con CA_M01QuestController.
-- Escalado tutorial.
-- Reinicio controlado.
-- Imposibilidad de abandonar el recinto durante el encuentro.
-- Supresión de drops explotables.
-- Estado final de disipación apropiado para el Limbo.
+- CA_M01QuestController link.
+- Tutorial scaling.
+- Controlled reset.
+- Inability to leave the enclosure during the encounter.
+- Deletion of exploitable drops.
+- Final dissipation state appropriate for Limbo.
 
-La cornada debe conservar su identidad y señales anticipatorias. El jugador
-necesita tiempo suficiente para reconocerla, defenderse o salir de la trayectoria.
+The gore attack must retain its identity and anticipatory signs. The player needs enough time to
+recognize, defend or leave the path.
 
-21.5. DERROTA DEL JUGADOR
+21.5. PLAYER DEFEAT
 
-Para no revelar una nueva resurrección ni obligar a perder toda la misión:
+So as not to reveal a new resurrection or force a loss of the entire quest:
 
-- Interceptar la derrota dentro del recinto antes de una muerte definitiva.
-- Fundir la pantalla brevemente.
-- Restaurar al jugador en CA_M01_BULL_PLAYER_START.
-- Restaurar valores tutoriales de salud, Aire y Ánima.
-- Reiniciar al Toro.
-- Conservar acciones previas y objetos de misión.
-- No incrementar recompensas ni contadores.
+- Intercept defeat within the compound before a definitive death.
+- Fade the screen briefly.
+- Restore the player in CA_M01_BULL_PLAYER_START.
+- Restore Health, Anima and Air tutorial values.
+- Restart the Bull.
+- Preserve previous actions and mission objects.
+- Do not increase rewards or counters.
 
-Texto opcional de Rulo después del primer fracaso:
+Optional Rulo text after first failure:
 
 “Ahora sabés cómo empieza. Eso vale más que fingir que no ocurrió.”
 
-21.6. VICTORIA
+21.6. VICTORY
 
-Al derrotar al Toro:
+By defeating the Bull:
 
-- Establecer CA_F_M01_BULL_DEFEATED.
-- Abrir el recinto.
-- Reproducir estado de disipación una sola vez.
-- Establecer CA_F_M01_RULO_COMPLETE.
-- Establecer CA_F_M01_PALOMO_UPSTAIRS_ENABLED.
-- Habilitar a Palomo en el segundo piso.
-- Actualizar diario: “Buscar nuevamente a Palomo”.
+- Set CA_F_M01_BULL_DEFEATED.
+- Open the enclosure.
+- Play the dissipation state once.
+- Set CA_F_M01_RULO_COMPLETE.
+- Set CA_F_M01_PALOMO_UPSTAIRS_ENABLED.
+- Enable Palomo on the second floor.
+- Update Journal: “Buscar nuevamente a Palomo”.
 
-RULO:
-“Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
+RULO: “Ganaste. No voy a decirte que con eso alcanza. Ya escuché esa lección una vez.”
 
 -------------------------------------------------------------------------------
-22. PALOMO, LA CAJA MÁGICA Y EL LOCO
--------------------------------------------------------------------------------
+22. PALOMO, THE MAGIC BOX AND EL LOCO
+    -------------------------------------------------------------------------------
 
-22.1. APARICIÓN FINAL
+22.1. FINAL APPEARANCE
 
-Palomo no debe aparecer delante del jugador mediante un efecto ostentoso. Al
-habilitarse la etapa, colocarlo en CA_M01_PALOMO_UPSTAIRS_SPOT antes de que el
-jugador tenga línea de visión. Si se encuentra mirando el punto, esperar a que
-gire, cruce una puerta o cambie de sector.
+Palomo must not appear in front of the player with an ostentatious effect. When the stage
+is enabled, place him at CA_M01_PALOMO_UPSTAIRS_SPOT before the player has a line of sight.
+If the player is looking at that point, wait for them to turn, cross a door or change sector.
 
-PALOMO:
-“Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
+PALOMO: “Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
 confundir ninguno con el camino completo.”
 
-Opciones:
+Options:
 
-JUGADOR: “¿Todo esto fue idea suya?”
+PLAYER: “¿Todo esto fue idea suya?”
 
-PALOMO:
-“Sería vanidoso adjudicarme una casa, cuatro voluntades y un Toro particularmente
+PALOMO: “Sería vanidoso adjudicarme una casa, cuatro voluntades y un Toro particularmente
 malhumorado. Digamos que hice algunas presentaciones.”
 
-JUGADOR: “¿Por qué ellos no pueden salir?”
+PLAYER: “¿Por qué ellos no pueden salir?”
 
-PALOMO:
-“Tal vez porque todavía llaman salida a una puerta. Tal vez porque la casa es
+PALOMO: “Tal vez porque todavía llaman salida a una puerta. Tal vez porque la casa es
 caprichosa. Si encuentra una respuesta menos incómoda, compártala.”
 
-JUGADOR: “¿Ahora me va a decir dónde estamos?”
+PLAYER: “¿Ahora me va a decir dónde estamos?”
 
-PALOMO:
-“En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas
+PALOMO: “En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas
 ambiciosas.”
 
-JUGADOR: “La voz volvió a hablarme.”
+PLAYER: “La voz volvió a hablarme.”
 
-PALOMO:
-“Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado
+PALOMO: “Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado
 conviene tenerles.”
 
-22.2. ENTREGA DE LA CAJA
+22.2. BOX DELIVERY
 
-PALOMO:
-“Voy a pedirle un favor. Cuide esta caja mientras atiendo asuntos menos cómodos
+PALOMO: “Voy a pedirle un favor. Cuide esta caja mientras atiendo asuntos menos cómodos
 de transportar.”
 
-JUGADOR: “¿Qué tiene de mágica?”
+PLAYER: “¿Qué tiene de mágica?”
 
-PALOMO:
-“Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable
+PALOMO: “Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable
 atrae ladrones.”
 
-JUGADOR: “¿Qué contiene?”
+PLAYER: “¿Qué contiene?”
 
-PALOMO:
-“Espacio. Una cantidad sorprendentemente difícil de guardar.”
+PALOMO: “Espacio. Una cantidad sorprendentemente difícil de guardar.”
 
-JUGADOR: “¿Por qué me la entrega?”
+PLAYER: “¿Por qué me la entrega?”
 
-PALOMO:
-“Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien
+PALOMO: “Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien
 que todavía pregunta antes de obedecer.”
 
-Al aceptar:
+By accepting:
 
-- Si CA_F_M01_MAGIC_BOX_GRANTED es falso, crear exactamente una Caja.
-- Asignar MagicBoxItemId.
-- Establecer propietario.
-- Aplicar las restricciones de soltar, vender y guardar.
-- Establecer CA_F_M01_MAGIC_BOX_GRANTED.
-- Si el flag ya era verdadero, localizar o recuperar la instancia existente; no
-  crear otra.
+- If CA_F_M01_MAGIC_BOX_GRANTED is false, create exactly one Box.
+- Assign MagicBoxItemId.
+- Set owner.
+- Apply dropping, selling and storage restrictions.
+- Set CA_F_M01_MAGIC_BOX_GRANTED.
+- If the flag was already true, locate or retrieve the existing instance; do not create
+  another.
 
-22.3. FUNCIONES MECÁNICAS DE LA CAJA
+22.3. MECHANICAL FUNCTIONS OF THE BOX
 
-Funciones generales confirmadas:
+General functions confirmed:
 
-- Peso propio: 10 kg.
-- Reducción de carga: aplicar la fórmula vigente que divide el peso total de su
-  contenido por la cantidad de slots, con el redondeo definido por el sistema.
-- Contenedor persistente por ItemId.
-- No puede soltarse.
-- No puede venderse.
-- No puede almacenarse dentro de otro contenedor.
-- Puede capturar esencias del Tarot.
-- Puede abrir el retorno desde el Limbo.
+- Own weight: 10 kg.
+- Load reduction: apply the current formula that divides the total weight of its content
+  by the number of slots, with the rounding defined by the system.
+- Persistent container by ItemId.
+- It cannot be dropped.
+- It can't be sold.
+- It cannot be stored inside another container.
+- It can capture Tarot essences.
+- It can open the return from Limbo.
 
-Funciones mínimas requeridas para MAP01:
+Minimum functions required for MAP01:
 
-CaptureTarotEssence(EssenceActor, TarotCardId)
-StorePreservedItem(ItemId)
-ValidateStarterLoadout(PlayerClass)
-OpenLimboReturn(DestinationMap, DestinationSpot)
+CaptureTarotEssence(EssenceActor, TarotCardId) StorePreservedItem(ItemId)
+ValidateStarterLoadout(PlayerClass) OpenLimboReturn(DestinationMap, DestinationSpot)
 
-Las funciones deben validar propiedad y autoridad. Una llamada duplicada a
-CaptureTarotEssence para El Loco devuelve “ya capturada” sin volver a aplicar
-bonificaciones.
+Functions must validate ownership and authority. A duplicate call to CaptureTarotEssence
+for El Loco returns “ya capturada” without reapplying bonuses.
 
-22.4. MANIFESTACIÓN DE EL LOCO
+22.4. MANIFESTATION OF EL LOCO
 
-Después de recibir la Caja, manifestar CA_TheFoolEssence en
-CA_M01_FOOL_ESSENCE_SPOT.
+After receiving the Box, manifest CA_TheFoolEssence in CA_M01_FOOL_ESSENCE_SPOT.
 
-Presentación:
+Presentation:
 
-- Silenciar parcialmente el ambiente.
-- Mostrar primero una carta sin ilustración completa.
-- Hacer que la figura y el nombre aparezcan al acercar o utilizar la Caja.
-- Evitar que Palomo diga “El Loco” antes de que la carta lo muestre.
+- Partially silence the environment.
+- Show first a card without full illustration.
+- Make the figure and name appear when you zoom in or use the Box.
+- Avoid Palomo saying “El Loco” before the card shows it.
 
-Interacción:
+Interaction:
 
-1. El jugador selecciona o utiliza la Caja sobre la esencia.
-2. La Caja reproduce su primera animación de captura.
-3. La esencia desaparece sólo después de confirmar el guardado.
-4. Se concede Arcano Mayor 0 — El Loco.
-5. Se aplica una sola vez la bonificación global vigente de Arcano Mayor.
-6. Se actualiza el registro de Tarot.
-7. Se establece CA_F_M01_THE_FOOL_CAPTURED.
+1. The player selects or uses the Box on the essence.
+2. The Box plays its first capture animation.
+3. The essence disappears only after confirming the save.
+4. Major Arcana 0 — El Loco is granted.
+5. Apply the current global Major Arcana bonus exactly once.
+6. The Tarot registry is updated.
+7. CA_F_M01_THE_FOOL_CAPTURED is established.
 
-Si el inventario, la animación o el cambio de estado falla, la esencia permanece
-disponible. Nunca consumir el actor antes de confirmar el estado autoritativo.
+If the inventory, animation, or state change fails, the essence remains available. Never
+consume the actor before confirming the authoritative state.
 
-Palomo después de la captura:
+Palomo after capture:
 
 “Parece que la caja estaba menos vacía de lo que ambos suponíamos. O usted más
 lleno. Conviene desconfiar de las medidas sencillas.”
 
-22.5. REACCIÓN DE LOS RESIDENTES
+22.5. REACTION OF RESIDENTS
 
-Los cuatro pueden advertir la manifestación desde la distancia o reaccionar al
-cambio de la mansión. No comprenden qué ocurrió.
+The four of them can notice the manifestation from a distance or react to the change of
+the mansion. They don’t understand what happened.
 
-- Argento percibe que una decisión quedó fijada.
-- Caella reconoce una esencia, pero nunca había visto una capturada.
-- Ronnie nota que apareció una ruta donde antes no había ninguna.
-- Rulo comprueba que la puerta final sólo responde al protagonista.
+- Argento perceives that a decision has been made.
+- Caella recognizes an essence, but has never seen a capture before.
+- Ronnie notes that a route appeared where previously there was none.
+- Rulo checks that the final door only responds to the protagonist.
 
-Ninguno afirma estar muerto ni exige una explicación completa. Pueden pedir al
-jugador que recuerde el camino por si consigue regresar.
+No one claims to be dead or demands a full explanation. They can ask the player to
+remember the path in case he gets back.
 
-22.6. APERTURA DE LA SALIDA
+22.6. OPENING THE EXIT
 
-Tras capturar El Loco:
+After capturing El Loco:
 
-- Establecer CA_F_M01_EXIT_READY.
-- Activar CA_M01_EXIT_PORTAL_SPOT.
-- La salida debe parecer un corredor, puerta o interrupción del espacio, no un
-  menú de selección de mapa.
-- Sólo el portador de la Caja puede iniciar la transición.
+- Set CA_F_M01_EXIT_READY.
+- Activate CA_M01_EXIT_PORTAL_SPOT.
+- The exit must look like a corridor, door or space interruption, not a map selection
+  menu.
+- Only the Box carrier can initiate the transition.
 
 Palomo:
 
@@ -15815,241 +15623,213 @@ Palomo:
 allí cuando quisiera volver.”
 
 -------------------------------------------------------------------------------
-23. TRANSICIÓN A MAP02 — ALCANTARILLAS
--------------------------------------------------------------------------------
+23. TRANSITION TO MAP02 — SEWERS
+    ---------------------------------------------------------------------
 
-23.1. CONFIRMACIÓN
+23.1. CONFIRMATION
 
-Antes de cruzar:
+Before crossing:
 
-SISTEMA:
-“El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?”
+SYSTEM: “El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?”
 
-Opciones:
+Options:
 
 1. “Sí. Cruzar.”
 2. “No. Todavía no.”
 
-La segunda opción cierra el aviso sin cambiar flags. La primera establece
-CA_F_M01_EXIT_CONFIRMED y comienza la transferencia.
+The second option closes the notice without changing flags. The first sets
+CA_F_M01_EXIT_CONFIRMED and starts the transfer.
 
-23.2. ORDEN ATÓMICO DE TRANSFERENCIA
+23.2. ATOMIC TRANSFER ORDER
 
-Ejecutar en este orden:
+Run in this order:
 
-1. Bloquear temporalmente nuevas interacciones.
-2. Confirmar que la Caja existe y pertenece al jugador.
-3. Confirmar que El Loco fue capturado.
-4. Resolver el StarterLoadoutDefinition de la clase.
-5. Mover StarterWeaponItemId al interior de la Caja.
-6. Crear dentro de la Caja cualquier elemento básico adicional del loadout que
-   no se haya obtenido durante la misión.
-7. Validar que cada objeto del loadout exista exactamente una vez.
-8. Eliminar del inventario exterior todos los objetos LIMBO_TEMP y
-   LIMBO_QUEST.
-9. Eliminar sobrantes de misión y herramientas de práctica.
-10. Conservar fuera de la Caja únicamente la propia Caja.
-11. Normalizar estados tutoriales de Hambre, Sed, Sueño, Aire, Ánima y salud
-    según valores que se definan para el inicio real.
-12. Establecer CA_F_M01_INVENTORY_SANITIZED.
-13. Guardar misión, Tarot, ItemId, contenido de la Caja y clase.
-14. Establecer CA_F_M01_COMPLETE.
-15. Ejecutar ChangeLevel hacia MAP02 y CA_M02_SEWER_PLAYER_START.
+1. Temporarily block new interactions.
+2. Confirm that the Box exists and belongs to the player.
+3. Confirm that El Loco was captured.
+4. Resolve the class's StarterLoadoutDefinition.
+5. Move StarterWeaponItemId into the box.
+6. Create within the Box any additional basic elements of the loadout that have not been
+   obtained during the mission.
+7. Validate that each object of the loadout exists exactly once.
+8. Remove all LIMBO_TEMP and LIMBO_QUEST objects from the outer inventory.
+9. Remove surplus quest materials and practice tools.
+10. Keep only the Box itself outside the Box.
+11. Normalize tutorial states of Hunger, Thirst, Sleep, Air, Anima and health according to
+    values that are defined for the real start.
+12. Set CA_F_M01_INVENTORY_SANITIZED.
+13. Save mission, Tarot, ItemId, Box contents and class.
+14. Set CA_F_M01_COMPLETE.
+15. Run ChangeLevel towards MAP02 and CA_M02_SEWER_PLAYER_START.
 
-Si cualquier validación entre 2 y 13 falla:
+If any validation between 2 and 13 fails:
 
-- No cambiar de mapa.
-- Desbloquear las interacciones.
-- Mostrar un mensaje localizado no narrativo.
-- Mantener la salida activa para reintentar.
-- No duplicar objetos al reanudar.
+- Don't change the map.
+- Unlock interactions.
+- Show a localized non-narrative message.
+- Keep the exit active to try again.
+- Do not duplicate objects upon resumption.
 
-23.3. APARICIÓN EN LAS ALCANTARILLAS
+23.3. APPEARANCE IN THE SEWERS
 
-Al entrar en MAP02:
+When entering MAP02:
 
-- El jugador aparece en el lugar donde fue arrojado su cadáver.
-- El entorno muestra agua sucia, ladrillos, restos y señales de abandono.
-- No reproducir un flashback completo de la emboscada.
-- Puede haber sangre seca, roturas en la ropa o una herida cerrada como indicios.
-- El inventario exterior contiene únicamente la Caja.
-- El equipo básico se encuentra dentro de ella.
-- MAP01 no figura como destino disponible.
+- The player appears at the place where his body was dumped.
+- The environment shows dirty water, bricks, remains and signs of abandonment.
+- Do not play a full flashback of the ambush.
+- There may be dry blood, torn clothes, or a closed wound as evidence.
+- The external inventory contains only the Box.
+- The basic equipment is inside it.
+- MAP01 is not listed as an available destination.
 
-Intervención breve de la Voz desconocida:
+Brief intervention of the Unknown Voice:
 
 “Ahora sí. Movete antes de que descubran que seguís respirando.”
 
-La frase confirma que alguien puede buscarlo, pero no explica quién lo mató ni
-cómo regresó.
+The phrase confirms that someone can look for him, but it doesn't explain who killed him
+or how he came back.
 
-23.4. FINALIZACIÓN DE LA MISIÓN
+23.4. FINALIZATION OF THE MISSION
 
-La recompensa debe quedar registrada antes del cambio de mapa, pero la
-notificación final puede aparecer al recuperar control en MAP02:
+The reward must be recorded before the map change, but the final notification may appear
+when recovering control in MAP02:
 
-“Misión completada: Donde despiertan los perdidos.”
-“Arcano obtenido: El Loco.”
+“Misión completada: Donde despiertan los perdidos.” “Arcano obtenido: El Loco.”
 
-No revelar “Regresaste del Limbo”.
+Do not reveal “Regresaste del Limbo”
 
 -------------------------------------------------------------------------------
-24. DIÁLOGOS OBLIGATORIOS DE MAP01
--------------------------------------------------------------------------------
+24. REQUIRED MAP01 DIALOGUES
+    -------------------------------------------------------------------------------
 
-24.1. IDENTIFICADORES MÍNIMOS
+24.1. MINIMUM IDENTIFICATION
 
-CA_DLG_M01_UNKNOWN_VOICE_WAKE
-CA_DLG_M01_PALOMO_FOYER
-CA_DLG_M01_ARGENTO_START
-CA_DLG_M01_RECRUIT_RULO
-CA_DLG_M01_RECRUIT_RONNIE
-CA_DLG_M01_RECRUIT_CAELLA
-CA_DLG_M01_ARGENTO_COMPLETE
-CA_DLG_M01_CAELLA_START
-CA_DLG_M01_CAELLA_HINT_1
-CA_DLG_M01_CAELLA_HINT_2
-CA_DLG_M01_CAELLA_COMPLETE
-CA_DLG_M01_RONNIE_START
-CA_DLG_M01_RONNIE_PROGRESS
-CA_DLG_M01_RONNIE_COMPLETE
-CA_DLG_M01_RULO_START
-CA_DLG_M01_RULO_RETRY
-CA_DLG_M01_RULO_COMPLETE
-CA_DLG_M01_PALOMO_UPSTAIRS
-CA_DLG_M01_PALOMO_BOX
-CA_DLG_M01_PALOMO_EXIT
+CA_DLG_M01_UNKNOWN_VOICE_WAKE CA_DLG_M01_PALOMO_FOYER CA_DLG_M01_ARGENTO_START
+CA_DLG_M01_RECRUIT_RULO CA_DLG_M01_RECRUIT_RONNIE CA_DLG_M01_RECRUIT_CAELLA
+CA_DLG_M01_ARGENTO_COMPLETE CA_DLG_M01_CAELLA_START CA_DLG_M01_CAELLA_HINT_1
+CA_DLG_M01_CAELLA_HINT_2 CA_DLG_M01_CAELLA_COMPLETE CA_DLG_M01_RONNIE_START
+CA_DLG_M01_RONNIE_PROGRESS CA_DLG_M01_RONNIE_COMPLETE CA_DLG_M01_RULO_START
+CA_DLG_M01_RULO_RETRY CA_DLG_M01_RULO_COMPLETE CA_DLG_M01_PALOMO_UPSTAIRS
+CA_DLG_M01_PALOMO_BOX CA_DLG_M01_PALOMO_EXIT
 
-24.2. REGLAS DE SELECCIÓN DE NODO
+24.2. NODE SELECTION RULES
 
-Prioridad al interactuar con un NPC:
+Priority when interacting with an NPC:
 
-1. Reacción única a un acontecimiento recién ocurrido.
-2. Entrega o finalización de la etapa activa.
-3. Progreso o pista de la etapa activa.
-4. Oferta de la etapa siguiente.
-5. Diálogo ambiental repetible.
+1. A unique reaction to a recent event.
+2. Delivery or completion of the active stage.
+3. Progress or track of active stage.
+4. Offer of the next stage.
+5. Repeatable environmental dialogue.
 
-No utilizar únicamente “habló/no habló”. Registrar nodos agotados y flags de
-conocimiento para que el NPC no repita su presentación después de avanzar.
+Do not use only “talk/no talk”. Register exhausted nodes and knowledge flags so that the
+NPC does not repeat its presentation after progress.
 
-24.3. TONO DE CADA PERSONAJE
+24.3. VOICE OF EACH CHARACTER
 
 Palomo:
 
-- Cortés, metafórico, filosófico, amigable y burlón.
-- Evasivo con propósito.
-- Niega conocer la voz y la llama alucinación.
+- Courteous, metaphorical, philosophical, friendly and mocking.
+- Evasive with purpose.
+- He denies knowing the voice and calls it a hallucination.
 
 Argento:
 
-- Sereno y atento a motivaciones.
-- Enseña sin manipular la tirada para que el jugador siempre tenga éxito.
-- Reconoce que distintas personas necesitan distintas razones.
+- Serene and attentive to motivations.
+- He teaches without rigging the roll so that the player always succeeds.
+- He recognizes that different people need different reasons.
 
 Caella:
 
-- Rápida, curiosa y ligeramente nerviosa ante anomalías.
-- Usa humor para contener el miedo.
-- No explica como certeza aquello que sólo percibe.
+- Fast, curious, and slightly nervous about anomalies.
+- She uses humor to contain fear.
+- She does not present what she merely senses as certainty.
 
 Ronnie:
 
-- Práctico, preciso y desconfiado de planes sin preparación.
-- Su origen Caelith puede aparecer en preguntas opcionales, no como exposición
-  obligatoria.
+- Practical, precise and suspicious of unprepared plans.
+- His Caelith origin may appear in optional questions, not as mandatory exposure.
 
 Rulo:
 
-- Directo, material y protector.
-- No habla como una criatura ingenua.
-- Distingue fuerza de decisión táctica.
+- Direct, material and protective.
+- He doesn't talk like a naive creature.
+- He distinguishes strength from tactical decision-making.
 
-24.4. FRASES DE PALOMO RECORDADAS
+24.4. RECALLED PALOMO PHRASES
 
-Estas líneas deben atribuirse expresamente a Palomo y no presentarse como una
-conclusión consciente del NPC:
+These lines should be explicitly attributed to Palomo and not presented as a conscious
+conclusion of the NPC:
 
-ARGENTO:
-“Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
+ARGENTO: “Palomo me dijo una vez: ‘Convencer no consiste en encontrar las palabras que
 obliguen al otro. Consiste en descubrir qué está intentando proteger’. No sé qué
 esperaba que hiciéramos con eso.”
 
-CAELLA:
-“Palomo dijo: ‘No hay pared más firme que aquella que todos han decidido dejar
+CAELLA: “Palomo dijo: ‘No hay pared más firme que aquella que todos han decidido dejar
 de mirar’. Pensé que se estaba burlando. Sigo pensándolo.”
 
-RONNIE:
-“Palomo me dijo que sobrevivir no es permanecer donde nada puede alcanzarte, que
+RONNIE: “Palomo me dijo que sobrevivir no es permanecer donde nada puede alcanzarte, que
 a veces eso sólo recibe otro nombre: quedarse. Nunca aclaró de qué hablaba.”
 
-RULO:
-“Yo le gané al Toro. Palomo miró el recinto y dijo: ‘Uno puede perder mucho
+RULO: “Yo le gané al Toro. Palomo miró el recinto y dijo: ‘Uno puede perder mucho
 después de haber ganado’. Después se fue.”
 
-24.5. PROTECCIÓN DEL MISTERIO EN DIÁLOGO
+24.5. MYSTERY PROTECTION IN DIALOGUE
 
-Antes de empaquetar la versión, buscar y revisar toda aparición visible de:
+Before packing the version, search and review any visible appearance of:
 
-Selene
-Limbo
-muerte
-muerto
-alma
-resurrección
-cadáver
-cuerpo corrompido
+Selene Limbo death death soul resurrection corpse body corrupted body
 
-Las palabras pueden aparecer en comentarios y nombres internos, pero no en
-claves de diálogo o diario accesibles durante MAP01.
+Words may appear in comments and internal names, but not in dialog keys or journal
+accessible during MAP01.
 
 -------------------------------------------------------------------------------
-25. INVENTARIO, OBJETOS TEMPORALES Y PERSISTENCIA
--------------------------------------------------------------------------------
+25. INVENTORY, TEMPORARY ITEMS AND PERSISTENCE
+    -------------------------------------------------------------------------------
 
-25.1. FLAGS DE OBJETO
+25.1. OBJECT FLAGS
 
 CA_ITEMFLAG_LIMBO_TEMP
 
-- Objeto de práctica.
-- Se elimina al salir.
-- No puede venderse, almacenarse ni convertirse en recompensa.
+- Temporary practice item.
+- It's eliminated on the way out.
+- It cannot be sold, stored or converted into a reward.
 
 CA_ITEMFLAG_LIMBO_QUEST
 
-- Material u objeto necesario para una etapa.
-- Se reserva de forma autoritativa.
-- Se elimina o consume antes de MAP02.
+- Material or object required for a stage.
+- It is reserved through the authoritative state.
+- It is removed or consumed before MAP02.
 
 CA_ITEMFLAG_LIMBO_PRESERVABLE
 
-- Pieza que puede trasladarse al interior de la Caja.
-- Debe aparecer en la lista del StarterLoadoutDefinition.
-- Conserva ItemId, condición y eficiencia.
+- Piece that can be moved inside the Box.
+- It must appear on the StarterLoadoutDefinition list.
+- Keep ItemId, condition and efficiency.
 
 CA_ITEMFLAG_UNIQUE_BOUND
 
-- Caja Mágica y futuros objetos equivalentes.
-- No puede soltarse, venderse ni guardarse.
+- Magic Box and future equivalent objects.
+- It cannot be dropped, sold or stored.
 
-25.2. REGLA DEL EQUIPO INICIAL
+25.2. INITIAL EQUIPMENT RULES
 
-Al salir de MAP01:
+On leaving MAP01:
 
-- Inventario exterior: únicamente CA_MagicBox.
-- Interior de la Caja: equipamiento básico de la clase.
-- No conservar consumibles infinitos, materiales sobrantes, herramientas de
-  práctica ni runas.
-- No crear dos copias del arma si la fabricada ya fue preservada.
-- Si el arma se perdió, recuperar por ItemId antes de decidir que falta.
-- Si realmente fue destruida, reconstruir una única instancia desde el registro
-  de misión sin devolver los materiales.
+- External inventory: only CA_MagicBox.
+- Interior of the Box: basic equipment of the class.
+- Do not keep infinite consumables, surplus materials, practice tools or runes.
+- Do not create two copies of the weapon if the manufactured weapon has already been
+  preserved.
+- If the weapon was lost, recover by ItemId before deciding what is missing.
+- If it was really destroyed, rebuild a single instance from the mission log without
+  returning the materials.
 
-25.3. CONTENIDO POR CLASE
+25.3. CONTENTS BY CLASS
 
-[PENDIENTE DE CATÁLOGO DEFINITIVO]
+[DEFINITIVE CATALOGUE PENDING]
 
-Definir en datos, no en el controlador de MAP01:
+Define in data, not in the MAP01 controller:
 
 StarterLoadoutDefinition
 {
@@ -16061,627 +15841,610 @@ StarterLoadoutDefinition
     BasicConsumables[];
 }
 
-La especificación sólo exige que existan cuatro definiciones:
+The specification requires only four definitions:
 
-- Guerrero.
-- Explorador.
-- Sacerdote.
-- Mago.
-
--------------------------------------------------------------------------------
-26. LOCALIZACIÓN, DIARIO Y PRESENTACIÓN
--------------------------------------------------------------------------------
-
-26.1. CLAVES PRINCIPALES
-
-$CA_Q_M01_TITLE
-$CA_Q_M01_SUMMARY
-$CA_Q_M01_OBJ_FIND_HELP
-$CA_Q_M01_OBJ_TALK_ARGENTO
-$CA_Q_M01_OBJ_CONVINCE_RESIDENTS
-$CA_Q_M01_OBJ_FOLLOW_CAELLA
-$CA_Q_M01_OBJ_SOLVE_RIDDLE
-$CA_Q_M01_OBJ_FOLLOW_RONNIE
-$CA_Q_M01_OBJ_GATHER_MATERIALS
-$CA_Q_M01_OBJ_PREPARE_WEAPON
-$CA_Q_M01_OBJ_TALK_RULO
-$CA_Q_M01_OBJ_DEFEAT_BULL
-$CA_Q_M01_OBJ_FIND_PALOMO
-$CA_Q_M01_OBJ_CAPTURE_FOOL
-$CA_Q_M01_OBJ_LEAVE_MANSION
-$CA_Q_M01_COMPLETE
-
-$CA_SPEAKER_UNKNOWN_VOICE
-$CA_M01_EXIT_CONFIRM
-$CA_M01_ERROR_TRANSFER
-
-26.2. TEXTOS DE OBJETIVOS
-
-Inicio:
-“Buscar ayuda dentro de la propiedad.”
-
-Argento:
-“Convencer a los residentes de colaborar: {count}/3.”
-
-Caella:
-“Seguir a Caella.”
-“Resolver el acertijo de los cuatro elementos.”
-
-Ronnie:
-“Prepararse para explorar el pasadizo.”
-“Reunir materiales para el arma: {collected}/{required}.”
-
-Preparación:
-“Preparar el arma inicial.”
-
-Rulo:
-“Aprender las acciones básicas de combate.”
-“Derrotar al Toro.”
-
-Final:
-“Buscar nuevamente a Palomo.”
-“Examinar la aparición mediante la Caja.”
-“Abandonar la mansión.”
-
-26.3. INTERFAZ
-
-- El diario muestra progreso y estado.
-- No mantener un tracker permanente en el HUD.
-- Utilizar notificaciones breves al cambiar de etapa.
-- Las opciones sociales bloqueadas aparecen en gris con su requisito.
-- La tirada de Emoción es privada para quien la realiza.
-- No mostrar nombres internos ni claves sin resolver.
-- La primera captura debe explicar el control de la Caja sin describir su origen.
+- Warrior.
+- Explorer.
+- Priest.
+- Mage.
 
 -------------------------------------------------------------------------------
-27. GUARDADO Y MULTIJUGADOR
--------------------------------------------------------------------------------
+26. LOCALIZATION, JOURNAL AND PRESENTATION
+    -------------------------------------------------------------------------------
 
-27.1. GUARDADO
+26.1. MAIN KEYS
 
-Puntos mínimos de reconstrucción correcta:
+$CA_Q_M01_TITLE $CA_Q_M01_SUMMARY $CA_Q_M01_OBJ_FIND_HELP $CA_Q_M01_OBJ_TALK_ARGENTO
+$CA_Q_M01_OBJ_CONVINCE_RESIDENTS $CA_Q_M01_OBJ_FOLLOW_CAELLA $CA_Q_M01_OBJ_SOLVE_RIDDLE
+$CA_Q_M01_OBJ_FOLLOW_RONNIE $CA_Q_M01_OBJ_GATHER_MATERIALS $CA_Q_M01_OBJ_PREPARE_WEAPON
+$CA_Q_M01_OBJ_TALK_RULO $CA_Q_M01_OBJ_DEFEAT_BULL $CA_Q_M01_OBJ_FIND_PALOMO
+$CA_Q_M01_OBJ_CAPTURE_FOOL $CA_Q_M01_OBJ_LEAVE_MANSION $CA_Q_M01_COMPLETE
 
-- Antes y después de conocer a Palomo.
-- Durante cualquiera de las tres conversaciones de Argento.
-- Con una tirada social fallida.
-- A mitad de la secuencia de runas.
-- Con el pasadizo abierto.
-- Con materiales parciales.
-- Durante una reparación o crafteo detenido.
-- Antes del Toro.
-- Durante el Toro, si el motor permite guardar.
-- Después de derrotarlo.
-- Con la Caja recibida pero El Loco sin capturar.
-- Con El Loco capturado pero sin cruzar.
-- Después de entrar en MAP02.
+$CA_SPEAKER_UNKNOWN_VOICE $CA_M01_EXIT_CONFIRM $CA_M01_ERROR_TRANSFER
 
-Al cargar, CA_M01QuestController reconstruye actores y sectores a partir del
-estado autoritativo. No volver a disparar recompensas OnEnter ya consumidas.
+26.2. OBJECTIVE TEXTS
 
-27.2. MULTIJUGADOR
+Home: “Buscar ayuda dentro de la propiedad.”
 
-Recomendación inicial:
+Argento: “Convencer a los residentes de colaborar: {count}/3.”
 
-- Estado de misión compartido por la party.
-- Elección social tomada por el jugador que inicia el diálogo.
-- Resultados de Emoción privados.
-- Materiales y objetivos colectivos, evitando que cada jugador deba vaciar los
-  mismos nodos.
-- Toro escalado por cantidad de jugadores activos.
-- Cada personaje recibe su propia Caja y su loadout de clase.
-- El Loco se registra en cada personaje elegible y una sola vez en el mundo.
-- Salida con comprobación de que toda la party esté lista.
+Caella: “Seguir a Caella.” “Resolver el acertijo de los cuatro elementos.”
 
-[PENDIENTE]
+Ronnie: “Prepararse para explorar el pasadizo.” “Reunir materiales para el arma: {collected}/{required}.”
 
-Si la Caja debe ser literalmente única en la ficción, el cooperativo necesitará
-una explicación adicional. Para la implementación robusta se recomienda una
-instancia vinculada por personaje que represente el mismo artefacto compartido.
+Preparation: “Preparar el arma inicial.”
+
+Rulo: “Aprender las acciones básicas de combate.” “Derrotar al Toro.”
+
+Final: “Buscar nuevamente a Palomo.” “Examinar la aparición mediante la Caja.” “Abandonar la mansión.”
+
+26.3. INTERFACE
+
+- The journal shows progress and status.
+- Do not keep a permanent tracker on the HUD.
+- Use short notifications when changing stages.
+- The blocked social options appear in grey with your requirement.
+- The Emotion roll is private to the player making it.
+- Do not display internal names or unsolved keys.
+- The first capture should explain the Box's control without describing its origin.
 
 -------------------------------------------------------------------------------
-28. PRUEBAS DE ACEPTACIÓN
+27. SAVING AND MULTIPLAYER
+    -------------------------------------------------------------------------------
+
+27.1. SAVING
+
+Minimum points of correct reconstruction:
+
+- Before and after meeting Palomo.
+- During any of the three Argento conversations.
+- With a failed social roll.
+- Halfway through the rune sequence.
+- With the passage open.
+- With partial materials.
+- During a repair or crafting stop.
+- Before the Bull.
+- During the Bull, if the engine allows to save.
+- After defeating him.
+- With the box received but El Loco uncaptured.
+- With El Loco captured but not crossed.
+- After entering MAP02.
+
+When loading, CA_M01QuestController rebuilds actors and sectors from the authoritative
+state. Do not replay OnEnter rewards already consumed.
+
+27.2. MULTIPLAYER
+
+Initial recommendation:
+
+- Mission status shared by the party.
+- Social choice taken by the player who starts the dialogue.
+- Private Emotion Results.
+- Collective materials and objectives, preventing each player from emptying the same
+  nodes.
+- Bull scaled by number of active players.
+- Each character receives his own Box and his class loadout.
+- El Loco is recorded in each eligible character and once in the world.
+- Check that the whole party is ready before exiting.
+
+[PENDING]
+
+If the Box is to be literally unique in fiction, the co-op will need an additional
+explanation. A character-linked instance representing the same shared artifact is
+recommended for robust implementation.
+
 -------------------------------------------------------------------------------
+28. ACCEPTANCE TESTS
+    -------------------------------------------------------------------------------
 
-28.1. INICIO Y MISTERIO
+28.1. HOME AND MYSTERY
 
-[ ] El jugador inicia MAP01 sin objetos, conservando clase, especie y atributos.
-[ ] No se reproduce la emboscada ni se muestra el asesino.
-[ ] La voz figura como “Voz desconocida”.
-[ ] Ningún texto visible llama Limbo al mapa.
-[ ] Ningún NPC afirma saber cómo llegó.
-[ ] Palomo responde sin confirmar muerte, alma o resurrección.
-[ ] Si el jugador menciona la voz, Palomo la llama alucinación y aconseja cuidado.
+[ ] The player initiates MAP01 without objects, preserving class, species and attributes.
+[ ] The ambush is not replayed and the killer is not shown.
+[ ] The voice appears as “Voz desconocida”
+[ ] No visible text calls the map Limbo.
+[ ] No NPC claims to know how it
+arrived.
+[ ] Palomo responds without confirming death, soul, or resurrection.
+[ ] If the
+player mentions the voice, Palomo calls it hallucination and advises care.
 
-28.2. ORDEN DE ETAPAS
+28.2. STAGE ORDER
 
-[ ] Argento es siempre la primera prueba.
-[ ] Caella no inicia hasta completar Argento.
-[ ] Ronnie no inicia hasta abrir el pasadizo.
-[ ] Rulo no libera al Toro hasta reunir y preparar el arma.
-[ ] Palomo no aparece arriba hasta derrotar al Toro.
-[ ] No es posible saltar etapas mediante carga, diálogo repetido o cooperativo.
+[ ] Argento is always the first test.
+[ ] Caella does not start until Argento is
+completed.
+[ ] Ronnie does not start until the passageway is opened.
+[ ] Rulo does not
+release the Bull until the player gathers materials and prepares the weapon.
+[ ] Palomo does not appear
+upstairs until the player defeats the Bull.
+[ ] It is not possible to jump stages by load, repeated
+or cooperative dialogue.
 
 28.3. ARGENTO
 
-[ ] El objetivo muestra 0/3, 1/3, 2/3 y 3/3 correctamente.
-[ ] Rulo introduce una lectura de Empatía.
-[ ] Ronnie introduce una opción de Elocuencia/Labia.
-[ ] Caella introduce Persuasión.
-[ ] Fallar cualquier tirada habilita una ruta alternativa.
-[ ] Ningún NPC se vuelve hostil por un fallo tutorial.
-[ ] Guardar y cargar conserva tiradas agotadas y conocimiento adquirido.
-[ ] La frase recordada se atribuye a Palomo.
+[ ] The target shows 0/3, 1/3, 2/3 and 3/3 correctly.
+[ ] Rulo introduces an Empathy
+reading.
+[ ] Ronnie introduces an Eloquence/Fast Talk option.
+[ ] Caella introduces Persuasion.
+[ ] Failing any roll enables an alternative path.
+[ ] No NPC becomes hostile by a tutorial
+failure.
+[ ] Save and load preserves failed rolls and acquired knowledge.
+[ ] The recalled phrase
+is attributed to Palomo.
 
 28.4. CAELLA
 
-[ ] Todas las clases reciben herramientas temporales si las necesitan.
-[ ] Fire, AltFire y Channel se registran correctamente.
-[ ] El consumo de Ánima es visible y recuperable.
-[ ] La solución Tierra → Aire → Fuego → Agua abre el paso.
-[ ] Una secuencia incorrecta se reinicia sin bloquear.
-[ ] Las pistas aparecen sólo después de los errores definidos.
-[ ] El pasadizo continúa abierto después de guardar y cargar.
-[ ] La frase recordada se atribuye a Palomo.
+[ ] All classes receive temporary tools if they need them.
+[ ] Fire, AltFire and Channel
+are recorded correctly.
+[ ] The consumption of Anima is visible and recoverable.
+[ ] The
+solution Earth → Air → Fire → Water opens the passage.
+[ ] An incorrect sequence is restarted
+without blocking.
+[ ] Hints appear only after defined errors.
+[ ] The passageway remains
+open after saving and loading.
+[ ] The recalled phrase is attributed to Palomo.
 
 28.5. RONNIE
 
-[ ] La receta se deriva de la clase y del catálogo autoritativo.
-[ ] La herramienta de supervivencia conserva ItemId al repararse.
-[ ] El progreso de reparación se detiene según las reglas de estación.
-[ ] Existen alimento y agua suficientes sin generar recursos explotables.
-[ ] La sección de Aire es segura para un personaje inicial.
-[ ] La carga enseña una decisión, pero no obliga a descartar un objeto único.
-[ ] Todos los materiales poseen una fuente garantizada.
-[ ] Perder un material no bloquea ni duplica la misión.
-[ ] La frase recordada se atribuye a Palomo.
+[ ] The recipe is derived from the class and the authoritative catalog.
+[ ] The survival
+tool retains ItemId when repaired.
+[ ] The repair progress stops according to the station
+rules.
+[ ] There is sufficient food and water without generating exploitable resources. [ ] The Air section is safe for an initial character.
+[ ] The load teaches a decision, but
+does not force the player to discard a unique item.
+[ ] All materials have a guaranteed source. [ ] Losing a material does not block or duplicate the mission.
+[ ] The recalled phrase is
+attributed to Palomo.
 
-28.6. ARMA
+28.6. WEAPON
 
-[ ] El crafteo directo usa las materias primas reunidas.
-[ ] La vista previa coincide con materiales, eficiencias y tiempo reales.
-[ ] Cerrar o abandonar la estación detiene el progreso como corresponda.
-[ ] Cancelar, guardar y cargar no duplica materiales.
-[ ] El arma resultante posee ItemId único.
-[ ] La misma instancia puede introducirse después en la Caja.
+[ ] Direct crafting uses the raw materials collected.
+[ ] The preview matches real
+materials, efficiencies, and time.
+[ ] Closing or leaving the station stops progress as
+appropriate.
+[ ] Canceling, saving, and loading does not duplicate materials.
+[ ] The
+resulting weapon possesses unique ItemId.
+[ ] The same instance can then be entered into
+the Box.
 
-28.7. RULO Y TORO
+28.7. RULO AND THE BULL
 
-[ ] Todas las familias iniciales pueden completar las acciones de combate.
-[ ] El jugador recibe defensa equivalente si no puede usar escudo.
-[ ] El Toro anticipa la cornada de forma legible.
-[ ] El recinto impide huir durante el combate sin atrapar al jugador después.
-[ ] Perder reinicia sólo el encuentro y no toda la misión.
-[ ] El Toro no concede drops ni experiencia explotables.
-[ ] Vencer activa una sola vez el estado final.
-[ ] La frase recordada se atribuye a Palomo.
+[ ] All initial families can complete combat actions.
+[ ] The player receives equivalent
+defense if he cannot use shield.
+[ ] The Bull clearly telegraphs its gore attack.
+[ ] The
+enclosure prevents fleeing during combat without catching the player afterwards. [ ]
+Losing restarts only the encounter and not the entire mission.
+[ ] The Bull does not grant
+exploitable drops or experience.
+[ ] Beating activates the final state once.
+[ ] The
+recalled phrase is attributed to Palomo.
 
-28.8. CAJA, TAROT Y SALIDA
+28.8. BOX, TAROT AND EXIT
 
-[ ] Palomo entrega una única Caja.
-[ ] La Caja pesa 10 kg y aplica la fórmula vigente a sus contenidos.
-[ ] No puede soltarse, venderse ni guardarse.
-[ ] El Loco no puede capturarse sin la Caja.
-[ ] La captura concede la carta y bonificación una sola vez.
-[ ] La esencia no desaparece si falla el guardado.
-[ ] La salida sólo se habilita después de la captura.
-[ ] “Todavía no” cancela la transición sin penalización.
-[ ] La limpieza deja sólo la Caja en el inventario exterior.
-[ ] El loadout correcto se encuentra dentro de la Caja.
-[ ] MAP02 abre en las alcantarillas.
-[ ] MAP01 queda bloqueado como destino normal.
+[ ] Palomo delivers a single Box.
+[ ] The Box weighs 10 kg and applies the current formula
+to its contents.
+[ ] It cannot be dropped, sold or stored.
+[ ] El Loco cannot be captured
+without the Box.
+[ ] The capture grants the card and bonus only once.
+[ ] The essence does
+not disappear if the save fails.
+[ ] The output is only enabled after capture.
+[ ] “Todavía no” cancels the transition without penalty.
+[ ] Cleaning leaves only the Box in the outer
+inventory.
+[ ] The correct loadout is found inside the Box.
+[ ] MAP02 opens in the sewers.
+[ ] MAP01 remains blocked as normal destination.
 
-28.9. REGRESIÓN
+28.9. REGRESSION
 
-[ ] MAP01 abre en GZDoom 4.14.2 sin errores ni warnings nuevos.
-[ ] No aparece ninguna clave CA_* sin localizar.
-[ ] Los NPC no participan en infighting.
-[ ] La piscina, agua y geometría existente siguen funcionando.
-[ ] El Toro base utilizado fuera del prólogo no cambia de comportamiento.
-[ ] El sistema de crafteo general no recibe tiempos o recetas codificados sólo
-    para esta misión.
-[ ] Los ItemId continúan siendo únicos tras cambiar a MAP02 y volver a cargar.
+[ ] MAP01 opens in GZDoom 4.14.2 without errors or new warnings.
+[ ] No CA_* key appears
+without localization.
+[ ] NPCs do not participate in infighting.
+[ ] The existing pool, water
+and geometry continue to function.
+[ ] The base bull used outside the prologue does not
+change behavior.
+[ ] The general crafting system does not receive hardcoded times or recipes
+only for this mission.
+[ ] ItemIds remain unique after switching to MAP02 and reloading.
 
 -------------------------------------------------------------------------------
-29. DECISIONES TODAVÍA PENDIENTES
--------------------------------------------------------------------------------
+29. DECISIONS STILL PENDING
+    -------------------------------------------------------------------------------
 
-Estas decisiones no impiden programar la estructura, pero deben resolverse antes
-de fijar todos los datos finales:
+These decisions do not prevent the structure from being programmed, but they must be
+resolved before all the final data are set:
 
-1. Nombre definitivo de la misión.
-   Propuesta actual: “Donde despiertan los perdidos”.
+1. Final name of the mission. Current proposal: “Donde despiertan los perdidos”.
 
-2. Lugar exacto de aparición dentro de MAP01.
-   Recomendación: exterior inmediato o recibidor apartado, sin visión directa de
-   los cuatro NPC.
+2. Exact spawn location in MAP01. Recommendation: the immediate exterior or a secluded
+   foyer, without direct vision of the four NPCs.
 
-3. Contenido exacto de los cuatro StarterLoadoutDefinition.
+3. Exact content of the four StarterLoadoutDefinition.
 
-4. Uso definitivo de la Llave de Plata.
-   Recomendación: abrir desde el pasadizo de Caella una puerta ya existente.
+4. Definitive use of the Silver Key. Recommendation: open an existing door from the Caella
+   passageway.
 
-5. Texto definitivo y presentación visual del acertijo.
-   La solución operativa propuesta es Tierra → Aire → Fuego → Agua.
+5. Final text and visual presentation of the riddle. The proposed operational solution is
+   Earth → Air → Fire → Water.
 
-6. Si el Toro es una criatura real atrapada, una manifestación del Limbo o una
-   construcción de Palomo.
-   Recomendación: dejarlo sin explicación durante MAP01.
+6. If the Bull is a trapped real creature, a manifestation of Limbo or a construction
+   of Palomo. Recommendation: leave it without explanation during MAP01.
 
-7. Valores de salud y necesidades al despertar en MAP02.
+7. Health values and needs at awakening in MAP02.
 
-8. Momento exacto en que el jugador descubre que murió.
-   Recomendación: permitir la inferencia en las alcantarillas y confirmar la
-   verdad durante el encuentro con el primero de los cuatro jefes.
+8. The exact moment the player discovers that he died. Recommendation: allow inference in
+   the sewers and confirm the truth during the encounter with the first of the four
+   bosses.
 
-9. Arcano Mayor correspondiente a cada uno de los cuatro jefes.
+9. Major Arcana corresponding to each of the four bosses.
 
-10. Motivo individual por el que cada residente no pudo integrar las otras ramas.
+10. Individual reason why each resident could not integrate the other branches.
 
-11. Tratamiento cooperativo de una Caja narrativamente única.
+11. Cooperative treatment of a narratively unique Box.
 
-12. Nombre e identidad del príncipe infernal.
+12. Name and identity of the hellish prince.
 
-===============================================================================
-FIN DEL DOCUMENTO — VERSIÓN 1.0
+=============================================================================== END OF
+DOCUMENT — VERSION 1.0
 ===============================================================================
 
 ````
 
 
-## Registro: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0c.md
+## Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0c.md
 
 SHA-256: `88ab3bf247eed3935a8fe21e874d0c5481936961113a3e38c3538b6a0c1a5156`
 
 ````text
-# MAP01 — residentes y pasadizo secreto V4.33.0c
+# MAP01 — residents and secret passageway V4.33.0c
 
-Documento histórico. La prueba del autor requirió corregir la orientación de
-la falsa pared, reemplazar el traslado instantáneo por un ascensor físico y
-cambiar los recursos y herramienta. El contrato vigente está en
-`MAP01_SECRET_PASSAGE_4_33_0d.md`; el umbral de retorno actual es 100 MU.
+Historical document. The author's proof required correcting the orientation of the false
+wall, replacing the instant transfer by a physical elevator and changing the resources and
+tool. The current contract is in `MAP01_SECRET_PASSAGE_4_33_0d.md`; the current return
+threshold is 100 MU.
 
-## Coordenadas autoritativas
+## Authoritative coordinates
 
-| Elemento | X | Y | Z | Ángulo | Referencia |
+| Element | X | Y | Z | Angle | Reference |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Argento | 1040 | -378 | 136 | 90° | sector aproximado 350 |
-| Caella | -290 | -378 | 136 | 90° | sector aproximado 189 |
-| Rulo | -290 | 378 | 136 | 270° | sector aproximado 212 |
-| Ronnie | 1036 | 378 | 136 | 270° | sector aproximado 351 |
-| Pared falsa de entrada | 1842 | -360 | 0 | 90° | sector aproximado 90 |
-| Segunda pared falsa | 1944 | -87 | 0 | 180° | sector aproximado 91 |
-| Pared de fondo | 1842 | 366 | 0 | 270° | sector aproximado 92 |
-| Ascensor | 1917 | 316 | 0 | 90° | sector aproximado 92 |
+| Argento | 1040 | -378 | 136 | 90° | approximate sector 350 |
+| Caella | -290 | -378 | 136 | 90° | approximate sector 189 |
+| Rulo | -290 | 378 | 136 | 270° | approximate sector 212 |
+| Ronnie | 1036 | 378 | 136 | 270° | approximate sector 351 |
+| False entrance wall | 1842 | -360 | 0 | 90° | approximate sector 90 |
+| Second false wall | 1944 | -87 | 0 | 180° | approximate sector 91 |
+| Rear wall | 1842 | 366 | 0 | 270° | approximate sector 92 |
+| Elevator | 1917 | 316 | 0 | 90° | approximate sector 92 |
 
-La asignación de las tres coordenadas occidentales sigue el orden proporcionado
-por el autor: Caella, Rulo y Ronnie.
+The assignment of the three Western coordinates follows the order provided by the author:
+Caella, Rulo and Ronnie.
 
-## Colisión de residentes
+## Collision of residents
 
-Las cuatro instancias de historia usan `args[0]=1`. Son sólidas, tangibles,
-amistosas e invulnerables. No buscan blancos. Conservan posición y ángulo de
-aparición como ancla y sólo comienzan a regresar cuando su distancia horizontal
-al origen llega a 500 MU; desplazamientos menores se toleran. El regreso usa la
-velocidad de carrera, mantiene la animación correspondiente y termina en el
-punto/ángulo original.
+The four instances of history use `args[0]=1`. They are solid, tangible, friendly and
+invulnerable. They do not seek targets. They retain position and angle of appearance as
+anchor and only begin to return when their horizontal distance to origin reaches 500 MU;
+minor displacements are tolerated. Return uses the running speed, maintains the corresponding
+animation and ends at the original point/angle.
 
-## Geometría y enlace vertical
+## Geometry and Vertical Linkage
 
-Las paredes falsas emplean la misma textura interior `CMIN01`, visible por ambos
-lados mediante dos WALLSPRITE separados 0.25 MU. Ninguna cara entra en el
-blockmap, por lo que se atraviesan sin una línea invisible residual. La pared
-del fondo sí usa la pared finita sólida aprobada.
+The false walls use the same `CMIN01` interior texture, visible on both sides by two
+separate WALLSPRITE 0.25 MU. No face enters the blockmap, so they cross without a residual
+invisible line. The wall of the background does use the approved solid finite wall.
 
-El ascensor mide 84×88 MU y ocupa `x=1875..1959`, `y=272..360`: permanece
-dentro de los límites comprobados del sector 92 y deja libre la pared de fondo.
-El personaje XL máximo tiene radio 21.33 MU (42.67 de diámetro), por lo que la
-cabina dispone de margen en ambos ejes. Pisar la plataforma conecta con la
-cabina inferior sin cambiar de mapa ni reconstruir el personaje; la plataforma
-inferior permite regresar y ambos destinos quedan fuera del volumen opuesto
-para evitar rebotes.
+The lift measures 84×88 MU and occupies `x=1875..1959`, `y=272..360`: it remains within
+the proven boundaries of the 92 sector and leaves the background wall free. The maximum XL
+character has 21.33 MU radius (42.67 diameter), so the cab has margin on both axes. Stepping onto the platform connects to the lower cab without changing the map or rebuilding the
+character; the lower platform allows you to return and both destinations are outside the
+opposite volume to avoid rebounds.
 
-## Cueva de materiales
+## Cave of materials
 
-La cueva es un recinto UDMF cerrado de 1000×800 MU, a cota de piso -256. Incluye:
+The cave is a closed UDMF enclosure of 1000×800 MU, at floor level -256. It includes:
 
-- tres Espinillos jóvenes renovables;
-- vetas tutoriales de hierro, carbón, cobre y estaño;
-- una hachuela T1 única, cuyo talle se resuelve al recogerla según el tamaño del
-  personaje.
+- three renewable young espinillos;
+- tutorial veins of iron, coal, copper and tin;
+- a unique T1 hatchet, whose size is resolved by collecting it according to the size of
+  the character.
 
-Fire de la hachuela conserva daño cortante y tala los árboles. AltFire conserva
-el daño romo aprobado y extrae las cuatro vetas tutoriales. No se cambian las
-reglas de las vetas comunes, que siguen requiriendo daño perforante.
+Hatchet Fire retains cutting damage and cuts trees. AltFire retains approved blunt damage
+and removes the four tutorial veins. Common vein rules are not changed, which continue to
+require piercing damage.
 
-La disposición está lista para las fases de Caella/Ronnie, pero V4.33.0c no
-abre el pasadizo mediante misión ni registra materiales reunidos. No completa objetivos:
-esas conexiones se implementarán en su subparche narrativo.
+The layout is ready for the Caella/Ronnie phases, but V4.33.0c does not open the passage
+through mission or record assembled materials. It does not complete objectives: these
+connections will be implemented in its narrative subpatch.
 
 ````
 
 
-## Registro: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0d.md
+## Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0d.md
 
 SHA-256: `4ed12be6c44bb08a7e0cf3f126f89975a4ded10e0850074b826d2523fa94aef3`
 
 ````text
-# MAP01 — pasadizo y ascensor físico V4.33.0d
+# MAP01 — physical passageway and lift V4.33.0d
 
-## Contrato vigente
+## Current contract
 
-La devolución del autor sustituye el prototipo V4.33.0c. La cueva ya no ocupa
-una habitación remota: se excava bajo el terreno de MAP01 y se conecta mediante
-un túnel al pozo del ascensor.
+The author's feedback supersedes the V4.33.0c prototype. The cave no longer occupies a remote
+room: it is dug under the MAP01 terrain and connected by a tunnel to the elevator well.
 
-| Elemento | Posición o extensión | Comportamiento |
+| Element | Position or extension | Behavior |
 | --- | --- | --- |
-| Falsa fachada | X=1842, Y=-383..383, Z=0..128 | Paralela al muro oriental X=1961 |
-| Entrada secreta | X=1842, Y=-383..-287 | Misma textura; 96 MU atravesables |
-| Fachada restante | X=1842, Y=-287..383 | Midtexture nativa sólida a nivel del suelo |
-| Segundo tabique | Y=-87, X=1842..1961 | Misma textura; atravesable |
-| Pasillo oculto | X=1842..1961 | Ancho libre 119 MU |
-| Ascensor | Centro (1917,316); X=1875..1959, Y=272..360 | 84×88 MU |
-| Recorrido vertical | Z=0 a Z=-384 | Piso móvil nativo, 2 MU/tic |
-| Túnel inferior | X=1875..1959, Y=360..480 | Continuo; piso -384, techo -64 |
-| Cueva | X=975..1999, Y=480..1280 | Contorno 1024×800 MU, esquinas recortadas |
+| False facade | X=1842, Y=-383..383, Z=0..128 | Parallel to the eastern wall X=1961 |
+| Secret entrance | X=1842, Y=-383..-287 | Same texture; traversable 96 MU opening |
+| Remaining facade | X=1842, Y=-287..383 | Solid native soil-level Midtexture |
+| Second partition | Y=-87, X=1842..1961 | Same texture; traversable |
+| Hidden corridor | X=1842..1961 | Free width 119 MU |
+| Elevator | Center (1917,316); X=1875..1959, Y=272..360 | 84×88 MU |
+| Vertical travel | Z=0 to Z=-384 | Native mobile floor, 2 MU/tic |
+| Lower tunnel | X=1875..1959, Y=360..480 | Continuous; floor -384, ceiling -64 |
+| Cave | X=975..1999, Y=480..1280 | 1024×800 MU Contour, trimmed corners |
 
-Los extremos de la fachada se prolongan hasta los muros existentes a Y=±383
-para que no queden huecos por los costados. Las texturas se repiten con escala
-normal en vez de estirar un sprite de pared sobre todo el largo.
+The façade ends extend to the existing walls at Y=±383 to avoid side gaps. Textures repeat
+at normal scale instead of stretching a wall sprite along the entire length.
 
-## Funcionamiento del ascensor
+## Operation of the lift
 
-1. Entrar completamente sobre la plataforma de madera inicia el descenso.
-2. El piso lleva físicamente al personaje hasta -384; X/Y y su orientación
-   no se fuerzan ni se reemplaza al jugador.
-3. Abajo espera 175 tics (cinco segundos) y vuelve al nivel de la mansión.
-4. Para regresar desde la cueva, mirar la cara de la plataforma desde el túnel
-   inferior y pulsar **Usar**. Esperar a que baje, subir y dejar que regrese.
-5. Si se permanece sobre ella durante todo el ciclo, se desciende y asciende
-   sin salir. Hay que salir y volver a entrar, o usar una cara, para otro ciclo.
+1. Entering completely on the wooden platform begins the descent.
+2. The floor physically takes the character to -384; X/Y and its orientation are not
+   forced or replaced.
+3. Downstairs wait 175 tics (five seconds) and return to the mansion level.
+4. To return from the cave, look at the face of the platform from the lower tunnel and
+   press **Use**. Wait for it to come down, climb up and let it return.
+5. If you stay on it for the whole cycle, you go down and ascend without going out. You
+   have to go out and go back in, or use a face, for another cycle.
 
-`Plat_DownWaitUpStayLip` controla movimiento, espera, colisión y guardado. El
-actor de activación sólo comprueba que el radio completo del jugador quepa
-en la plataforma. Las cuatro caras permiten la llamada nativa repetible.
+`Plat_DownWaitUpStayLip` controls movement, wait, collision and save. The activation actor
+only checks that the player's full radius fits on the platform. All four sides allow the
+repeatable native call.
 
-## Recursos y herramienta
+## Resources and tool
 
-| Recurso | Clase normal / posición | Ataque de la espada |
+| Resource | Normal class/position | Attack of the sword |
 | --- | --- | --- |
-| Árboles jóvenes | (1170,680), (1500,845), (1740,1040) | Fire, cortante |
-| Cobre bruto | CaelumVeinCopper2, (1860,1150) | AltFire, punzante |
-| Estaño bruto | CaelumVeinTin2, (1100,1100) | AltFire, punzante |
-| Espada T1 | CaelumM01SwordPickup, (1860,575) | Se recoge y equipa normalmente |
+| Young trees | (1170,680), (1500,845), (1740,1040) | Fire, slashing |
+| Raw copper | CaelumVeinCopper2, (1860,1150) | AltFire, piercing |
+| Crude tin | CaelumVeinTin2, (1100,1100) | AltFire, piercing |
+| T1 sword | CaelumM01SwordPickup, (1860,575) | Collects and equips normally |
 
-Todos están sobre el piso de la cueva, Z=-384. La espada ajusta su talle al
-personaje al recogerla. Las vetas son las mismas clases del catálogo mundial
-y tienen sus registros en MODELDEF; se elimina la excepción roma y las cuatro
-subclases invisibles de 0c. La cueva no contiene hachuela, hierro ni carbón.
+They are all on the cave floor, Z=-384. The sword adjusts its size to the character when
+collecting it. Veins are the same classes in the world catalogue and have their records in
+MODELDEF; the blunt-damage exception and the four invisible subclasses of 0c are removed. The cave
+does not contain hatchet, iron or coal.
 
-## Conservación de la mansión
+## Preservation of the mansion
 
-La excavación conserva la cota, textura y control de los pisos superiores:
-sectores derivados mantienen los tags previos mediante `moreids`; losas entre
--64 y 0 reconstruyen el suelo original. Las barandas nativas inferiores
-ancladas al suelo compensan los 384 MU de excavación con su escala de textura
-existente. El pozo deja libre únicamente la huella de la plataforma.
+The excavation preserves the height, texture and control of the upper floors: derivative
+sectors maintain the previous tags by `moreids`; slabs between -64 and 0 reconstruct the
+original floor. Native lower textures anchored to the ground compensate for the excavation
+384 MU with its existing texture scale. The well leaves free only the footprint of the
+platform.
 
-Argento, Caella, Rulo y Ronnie conservan las coordenadas aprobadas. Ellos y
-Palomo regresan corriendo al alejarse **100 MU** de su origen. El resto del
-comportamiento físico aceptado se conserva.
+Argento, Caella, Rulo and Ronnie retain the approved coordinates. They and Palomo run back once **100 MU** from their origin. The rest of the accepted physical behavior is
+preserved.
 
-## Validación y límite narrativo
+## Validation and Narrative Limit
 
-GZDoom 4.14.2 ejecutó un ciclo completo, con jugador transportado por el suelo,
-y el paso caminando desde el túnel hasta la cueva. La revisión visual del
-motor comprobó la veta de cobre. La validación manual del autor se concentra
-en los accesos, la llamada inferior, el tamaño XL, guardar/cargar en tránsito
-y extraer madera/cobre/estaño con la espada.
+GZDoom 4.14.2 executed a complete cycle, with player transported by the floor, and the
+passage walking from the tunnel to the cave. The visual review of the engine tested the
+copper vein. The author’s manual validation focuses on the accesses, the lower call, the
+XL size, save/load in transit and extract wood/copper/tin with the sword.
 
-Esta revisión no completa objetivos de Argento, Caella o Ronnie. Esas fases
-continúan reservadas hasta implementar sus diálogos y condiciones de misión.
+This review does not complete objectives of Argento, Caella or Ronnie. These phases
+continue to be reserved until implementing their mission dialogues and conditions.
 
 ````
 
 
-## Registro: before_4.33.0g/QUESTS_REPUTATION_FACTIONS.md
+## Archived record: before_4.33.0g/QUESTS_REPUTATION_FACTIONS.md
 
 SHA-256: `ebd7c54a3e91de89c23c49ff89a6c44cb915357e6c48141f123b03dd4c910484`
 
 ````text
-# Caelum Argenteum — Misiones, reputación y facciones V4.33.0f
+# Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 
-## Estado de la revisión
+## Status of review
 
-V4.33.0a y V4.33.0b fueron aceptadas después de superar íntegramente sus
-matrices manuales en GZDoom 4.14.2. V4.33.0b sustituyó la aventura comercial de
-prueba por la misión principal canónica de MAP01; V4.33.0c prepara sus actores
-y espacios físicos sin adelantar las transiciones narrativas. V4.33.0d corrige
-esa preparación a partir de la prueba del autor. Todas las pruebas de 0e
-fueron aceptadas. V4.33.0f incorpora la prueba social de Argento:
+V4.33.0a and V4.33.0b were accepted after fully overcoming their manual matrices in GZDoom
+4.14.2. V4.33.0b replaced the commercial test quest with the main canonical mission
+of MAP01; V4.33.0c prepares its actors and physical spaces without advancing the narrative
+transitions. V4.33.0d corrects that preparation from the author's test. All 0e tests were
+accepted. V4.33.0f incorporates the Argento social test:
 
-- ID estable: `QUEST_MAIN_M00_THE_FOOL`;
-- nombre visible provisional: **Donde despiertan los perdidos**;
-- recorrido completo reservado: fases 00–100;
-- recorrido jugable: despertar, Voz desconocida, primer encuentro con Palomo y
-  orientación hacia Argento, reclutamiento de los tres residentes y cierre
-  de Argento en fase 35;
-- preparación física nueva: posiciones de los cuatro residentes y cueva de
-  materiales tras el pasadizo secreto.
+- Stable ID: `QUEST_MAIN_M00_THE_FOOL`;
+- provisional visible name: **Where the lost wake up**;
+- full reserved progression: phases 00–100;
+- playable journey: awakening, voice unknown, first encounter with Palomo and orientation
+  towards Argento, recruitment of the three residents and closing of Argento in phase 35;
+- new physical preparation: positions of the four residents and cave of materials behind
+  the secret passageway.
 
-Todavía quedan pendientes las ramas mágica de Caella, supervivencia de
-Ronnie, preparación de arma, combate de Rulo, Caja, El Loco y salida. Sus estados quedan
-nombrados para evitar renumeraciones posteriores, pero ninguna transición los
-activa antes de que exista su contenido. La cueva puede recorrerse y probarse
-en esta revisión; todavía no completa objetivos ni concede progreso de Ronnie.
+The magic branches of Caella, Ronnie survival, weapon preparation, Rulo combat, Box, El Loco capture and exit are still pending. Their states are named to prevent subsequent
+renumberings, but no transition activates them before their contents exist. The cave can
+be traversed and tested in this review; it does not yet complete objectives nor grants
+progress of Ronnie.
 
-## Actores y espacios preparados en MAP01
+## Actors and spaces prepared in MAP01
 
-| Actor o elemento | Ubicación | Contrato |
+| Actor or element | Location | Contract |
 | --- | --- | --- |
-| Argento | `(1040,-378,136)`, 90° | Tangible, anclado, pasivo |
-| Caella | `(-290,-378,136)`, 90° | Tangible, anclada, pasiva |
-| Rulo | `(-290,378,136)`, 270° | Tangible, anclado, pasivo |
-| Ronnie | `(1036,378,136)`, 270° | Tangible, anclado, pasivo |
-| Falsa fachada | `x=1842`, `y=-383..383` | Paralela al muro oriental; textura nativa de mansión |
-| Entrada oculta | `x=1842`, `y=-383..-287` | Tramo atravesable de 96 MU, cerca del punto indicado |
-| Segunda pared falsa | `y=-87`, `x=1842..1961` | Atraviesa el pasillo oculto; visible y sin colisión |
-| Ascensor | `(1917,316,0)`, 90° | Piso nativo 84×88 MU; descenso a Z=-384 y retorno |
+| Argento | `(1040,-378,136)`, 90° | Tangible, anchored, passive |
+| Caella | `(-290,-378,136)`, 90° | Tangible, anchored, passive |
+| Rulo | `(-290,378,136)`, 270° | Tangible, anchored, passive |
+| Ronnie | `(1036,378,136)`, 270° | Tangible, anchored, passive |
+| False facade | `x=1842`, `y=-383..383` | Parallel to the eastern wall; native mansion texture |
+| Hidden entrance | `x=1842`, `y=-383..-287` | Traversable frame of 96 MU, near the indicated point |
+| Second false wall | `y=-87`, `x=1842..1961` | Cross the hidden corridor; visible and without collision |
+| Elevator | `(1917,316,0)`, 90° | Native floor 84×88 MU; descent to Z=-384 and return |
 
-La instrucción posterior del autor que exige NPC tangibles reemplaza para estas
-cuatro instancias la frase “no bloqueables” de la especificación v1.0. Se
-mantienen invulnerables y fuera del combate. `args[0]=1` activa el contrato
-narrativo y almacena posición/ángulo de origen; al alcanzar 100 MU de
-desplazamiento regresan corriendo en línea recta. Una invocación de depuración
-sin ese argumento continúa funcionando como combatiente. Palomo comparte el
-nuevo umbral de 100 MU mientras está presente y tangible.
+The author’s subsequent instruction requiring tangible NPC replaces for these four
+instances the phrase “non-blockable” in the v1.0 specification. They remain invulnerable
+and out of combat. `args[0]=1` activates the narrative contract and stores the
+position/angle of origin; when reaching 100 MU displacement they return running in a
+straight line. A debug invocation without that argument continues to function as a
+combatant. Palomo shares the new threshold of 100 MU while it is present and tangible.
 
-La cueva inferior ocupa un contorno de 1024×800 MU con esquinas recortadas,
-piso a Z=-384 y techo a Z=-64. Un túnel continuo la une al pozo. Contiene tres
-árboles, cobre bruto, estaño bruto y una espada T1 cuyo talle se adapta al
-personaje al recogerla. Fire permite talar; AltFire permite extraer de las
-vetas normales, con sus modelos 3D ya registrados. Se eliminan la hachuela,
-hierro, carbón y las clases especiales de extracción roma de la cueva de 0c.
+The lower cave occupies an outline of 1024×800 MU with cut corners, floor to Z=-384 and
+roof to Z=-64. A continuous tunnel links it to the well. It contains three trees, raw
+copper, raw tin and a T1 sword whose size adapts to the character when collecting it. Fire
+allows cutting; AltFire allows extracting from normal veins, with its already registered
+3D models. Hatchet, iron, coal and special blunt-extraction classes from the cave of 0c
+are removed.
 
-El ascensor baja al entrar completamente en la plataforma, espera cinco
-segundos abajo y regresa. Desde el acceso inferior se llama con **Usar** sobre
-la cara de la plataforma. Su movimiento, colisión y guardado pertenecen al
-motor; no hay teletransporte ni cambio de mapa. Ver
+The elevator goes down when you enter the platform completely, wait five seconds down and
+return. From the lower access is called with **Use** on the face of the platform. Its
+movement, collision and save belong to the engine; there is no teleport or map change. See
 `docs/MAP01_SECRET_PASSAGE_4_33_0d.md`.
 
-## Separación de responsabilidades
+## Separation of responsibilities
 
-| Componente | Responsabilidad |
+| Component | Responsibility |
 | --- | --- |
-| `CaelumPersistentCharacterState` | Etapa, objetivos y flags autoritativos que viajan con el personaje |
-| `CaelumMainM00QuestController` | Reconstruir presentaciones pendientes de MAP01 desde el estado persistente |
-| `CaelumPlayer` | Ejecutar transiciones, sincronizar el Diario y abrir conversaciones |
-| `CAPALOMO` | Árboles USDF localizados de la Voz, Palomo y cuatro residentes |
-| `CaelumMainM00SocialDialogue` | Requisitos, tiradas y acciones de la prueba social |
-| `CaelumJournalOverlay` | Mostrar una instantánea simple, sin llamadas de ámbito `play` durante el render |
+| `CaelumPersistentCharacterState` | Stage, objectives and authoritative flags that travel with the character |
+| `CaelumMainM00QuestController` | Rebuild pending MAP01 presentations from persistent state |
+| `CaelumPlayer` | Run transitions, sync the Journal and open conversations |
+| `CAPALOMO` | Localized USDF trees for the Voice, Palomo and four residents |
+| `CaelumMainM00SocialDialogue` | Social test requirements, rolls and actions |
+| `CaelumJournalOverlay` | Show a simple snapshot, no `play` area calls during render |
 
-El controlador de mapa no conserva progreso propio. Cargar, guardar o volver a
-MAP01 siempre consulta el Inventory viajero; de ese modo una presentación
-duplicada no puede otorgar progreso u objetos por segunda vez.
+The map controller does not retain its own progress. Loading, saving or returning to MAP01
+always consults the Traveling Inventory; thus a duplicate presentation cannot grant
+progress or objects for a second time.
 
-## Estados principales reservados
+## Reserved main states
 
-| Valor | Estado | Fase |
+| Value | State | Phase |
 | ---: | --- | --- |
-| 0 | `MAIN_M00_STATE_INITIALIZE` | Preparación |
-| 10 | `MAIN_M00_STATE_AWAKENED` | Despertar y Voz desconocida |
-| 20 | `MAIN_M00_STATE_MET_PALOMO` | Encuentro del recibidor |
-| 30 / 35 | `ARGENTO_ACTIVE / COMPLETE` | Rama social |
-| 40 / 45 | `CAELLA_ACTIVE / COMPLETE` | Rama mágica |
-| 50 / 55 | `RONNIE_ACTIVE / COMPLETE` | Rama de supervivencia |
-| 60 | `WEAPON_READY` | Preparación del arma |
-| 70 / 75 | `RULO_ACTIVE / COMPLETE` | Rama de combate |
-| 80 | `BOX_RECEIVED` | Palomo final y Caja |
-| 90 | `FOOL_CAPTURED` | Captura de El Loco |
-| 95 / 100 | `EXIT_CONFIRMED / COMPLETE` | Salida y cierre |
+| 0 | `MAIN_M00_STATE_INITIALIZE` | Preparation |
+| 10 | `MAIN_M00_STATE_AWAKENED` | Awakening and Unknown Voice |
+| 20 | `MAIN_M00_STATE_MET_PALOMO` | Foyer encounter |
+| 30 / 35 | `ARGENTO_ACTIVE / COMPLETE` | Social branch |
+| 40 / 45 | `CAELLA_ACTIVE / COMPLETE` | Magic branch |
+| 50 / 55 | `RONNIE_ACTIVE / COMPLETE` | Survival branch |
+| 60 | `WEAPON_READY` | Preparation of the weapon |
+| 70 / 75 | `RULO_ACTIVE / COMPLETE` | Combat branch |
+| 80 | `BOX_RECEIVED` | Palomo final and Box |
+| 90 | `FOOL_CAPTURED` | El Loco Capture |
+| 95 / 100 | `EXIT_CONFIRMED / COMPLETE` | Output and closure |
 
-`TryAdvanceMainM00State(expected, next)` sólo acepta la etapa esperada y un
-valor posterior. Las operaciones de apertura son idempotentes: repetir una
-llamada no salta estados ni duplica recompensas.
+`TryAdvanceMainM00State(expected, next)` only accepts the expected stage and a later
+value. Opening operations are idempotent: Repeating a call does not jump states or
+duplicate rewards.
 
-## Objetivos y flags
+## Objectives and flags
 
-Se mantienen los ocho objetivos por misión aceptados en V4.33.0a. Para MAP01
-representan los hitos amplios: buscar ayuda, convencer residentes, resolver el
-acertijo, reunir materiales, preparar el arma, derrotar al Toro, capturar El
-Loco y abandonar la mansión. Las acciones más breves se expresan mediante la
-etapa actual y claves localizadas; así no se cambia el tamaño de los arreglos
-de guardado.
+The eight mission targets accepted in V4.33.0a are maintained. For MAP01 they represent
+the broad milestones: seeking help, convincing residents, solving the riddle, gathering
+materials, preparing the weapon, defeating the Bull, capturing El Loco and leaving the
+mansion. Shorter actions are expressed through the current stage and localized keys; thus
+the size of the save arrays is not changed.
 
-La tabla `MainM00Flag[64]` reserva los hechos descritos en la especificación:
-progreso de cada rama, objetos únicos, acciones tutoriales, runas, pasadizo,
-Toro, Caja, carta, salida y conocimiento de diálogo. En V4.33.0b sólo se mutan:
+The `MainM00Flag[64]` table reserves the facts described in the specification: progress of
+each branch, unique objects, tutorial actions, runes, passageway, Bull, Box, card, output
+and dialog knowledge. In V4.33.0b only mutate:
 
 - `STARTED`;
 - `UNKNOWN_VOICE_HEARD`;
 - `PALOMO_MET`;
-- las cuatro preguntas opcionales del recibidor;
-- `PALOMO_CALLED_IT_HALLUCINATION` cuando se menciona la Voz.
+- the four optional questions of the entrance hall;
+- `PALOMO_CALLED_IT_HALLUCINATION` when the Voice is mentioned.
 
-El objetivo inicial comienza en 0/1 y pasa a 1/1 al terminar la conversación
-del recibidor. La etapa queda entonces en `ARGENTO_ACTIVE`, cuyo texto visible
-es **Hablar con Argento**. V4.33.0f añade `ARGENTO_STARTED`,
-`RULO_CONVINCED`, `RONNIE_CONVINCED`, `CAELLA_CONVINCED`,
-`HEARD_ARGENTO_QUOTE` y `ARGENTO_COMPLETE`. El objetivo de residentes se
-deriva de esos tres flags: 0/3, 1/3, 2/3, 3/3. Llegar a 3/3 pide volver con
-Argento; sólo la respuesta final avanza a 35 y pide hablar con Caella.
+The initial objective starts at 0/1 and becomes 1/1 when the entrance-hall conversation
+ends. The stage is then `ARGENTO_ACTIVE`, with visible text **Hablar con Argento**.
+V4.33.0f adds `ARGENTO_STARTED`, `RULO_CONVINCED`, `RONNIE_CONVINCED`, `CAELLA_CONVINCED`,
+`HEARD_ARGENTO_QUOTE` and `ARGENTO_COMPLETE`. The resident objective derives from those
+three flags: 0/3, 1/3, 2/3, 3/3. Reaching 3/3 asks the player to return to Argento; only
+the final response advances to 35 and asks the player to talk to Caella.
 
-`MainM00SocialVersion=1` incorpora visitas, consejos y resultados de las dos
-tiradas con índices estables. Migrar desde 0e inicializa únicamente estos
-campos y conserva el prólogo, la misión, la Caja y el inventario existentes.
-El guardado/carga real con el paquete completo sigue en la matriz manual.
+`MainM00SocialVersion=1` incorporates visits, tips, and results from the two rolls with
+stable indexes. Migrating from 0e initializes only these fields and retains the existing
+prologue, mission, box and inventory. The real save/load with the complete package is still
+in the manual matrix.
 
-## Migración desde V4.33.0a
+## Migration from V4.33.0a
 
-La versión del registro sube de 1 a 2. El índice 0 se conserva, pero el relato
-anterior era infraestructura de prueba y no una etapa canónica:
+The version of the record goes from 1 to 2. The 0 index is preserved, but the previous assignment was a test infrastructure and not a canonical stage:
 
-- se limpia únicamente aquel registro de misión y sus objetivos;
-- al estar en MAP01, el controlador inicia el nuevo prólogo;
-- la Caja ya poseída, sus 10 kg, contenido, slots, stock monetario y demás
-  inventario no se eliminan ni duplican;
-- tener una Caja de una partida antigua no salta la Voz ni el diálogo inicial;
-- un personaje nuevo sigue comenzando sin Caja.
+- only that mission record and its objectives are cleared;
+- being in MAP01, the controller initiates the new prologue;
+- the Box already held, its 10 kg, content, slots, money stock and other inventory are not
+  deleted or duplicated;
+- having a Box of an old game does not jump the Voice or the initial dialogue;
+- A new character keeps starting without Box.
 
-`GrantMagicBoxFromPalomo()` queda desacoplado del avance de misión. La entrega
-canónica se conectará en la fase 80 junto con su flag propio; conceder la Caja
-desde una herramienta de desarrollo ya no puede completar otra etapa.
+`GrantMagicBoxFromPalomo()` is decoupled from the mission advance. Canon delivery will be
+connected in the 80 phase along with its own flag; granting the Box from a development
+tool can no longer complete another stage.
 
-`map MAP02` crea un personaje nuevo, mientras `Exit` o `changemap`
-transfieren el existente. Esta distinción del motor no cambia.
+`map MAP02` creates a new character, while `Exit` or `changemap` transfer the existing
+one. This engine distinction does not change.
 
-## Ubicación autoritativa de Palomo
+## Authoritative location of Palomo
 
-`ResolvePalomoPlacement()` produce tres resultados estables:
+`ResolvePalomoPlacement()` produces three stable results:
 
-| Resultado | Condición |
+| Result | Condition |
 | --- | --- |
-| Oculto | Antes de oír la Voz y después de completar el encuentro del recibidor |
-| Recibidor | Durante la fase 20 |
-| Segundo piso | Reservado desde la fase 80 |
+| Hidden | Before hearing the Voice and after completing the meeting of the entrance hall |
+| Entrance hall | During phase 20 |
+| Second floor | Reserved from 80 phase |
 
-El Palomo anclado de MAP01 comienza invisible y sin colisión. Cuando cualquier
-jugador elegible oye la Voz, aparece con un fundido breve, sin destello de
-teletransporte, recupera colisión y conserva el retorno a su origen si lo
-desplazan 100 MU. Después de orientar hacia Argento espera a quedar fuera de
-todos los campos visuales, se oculta y una carga reconstruye ese resultado. El
-traslado real al segundo piso necesita todavía el punto de mapa correspondiente.
+The Palomo anchored MAP01 starts invisible and without collision. When any eligible player
+hears the Voice, it appears with a short fade, without teleport flash, recovers collision
+and retains the return to its origin if it is displaced by 100 MU. After orienting to
+Argento waits to stay out of all visual fields, it hides and a load reconstructs that
+result. The actual move to the second floor still needs the corresponding map point.
 
-## Facciones y reputación
+## Factions and reputation
 
-La base aceptada en V4.33.0a no cambia:
+The accepted base in V4.33.0a does not change:
 
-| ID | Dominio técnico | Membresía inicial | Reputación inicial |
+| ID | Technical faction | Initial Membership | Initial reputation |
 | ---: | --- | --- | ---: |
-| 0 | Gendarmería | No | 0 |
-| 1 | Asentamientos | No | 0 |
-| 2 | Caravanas | No | 0 |
-| 3 | Actores políticos | No | 0 |
+| 0 | Gendarmerie | No | 0 |
+| 1 | Settlements | No | 0 |
+| 2 | Caravans | No | 0 |
+| 3 | Political actors | No | 0 |
 
-Membresía y reputación siguen siendo variables independientes por personaje,
-limitadas a -1000..1000. Las relaciones cruzadas no autorizadas permanecen
-neutrales y la consulta O(1) no añade búsquedas de actores, visión ni pathfinding.
-Las cinco acciones de consola de V4.33.0a continúan disponibles sólo para
-validación aislada. Los residentes de esta rama no tienen una facción asignada:
-el modificador de reputación se mantiene neutro. No se toma la reputación de
-Gendarmería ni se añade una consecuencia de facción no definida por el autor.
+Membership and reputation remain independent variables per character, limited to
+-1000..1000. Unauthorized cross-relations remain neutral and O(1) query does not add actor
+searches, vision or pathfinding. V4.33.0a's five console actions remain available only for
+isolated validation. Residents of this branch do not have a assigned faction: the
+reputation modifier remains neutral. Gendarmerie's reputation is not taken or a faction
+consequence not defined by the author is added.
 
-## Fuente narrativa
+## Narrative source
 
-`docs/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` se incorpora sin alteraciones
-como especificación autoral. Los textos visibles de este subparche preservan el
-misterio: no identifican la naturaleza de la mansión, el destino del
-protagonista ni a la mujer que habla.
+`docs/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` is incorporated as an original specification
+without alteration. The visible texts of this subpatch preserve the mystery: they do not
+identify the nature of the mansion, the fate of the protagonist or the woman speaking.
 
 ````
 
 
-## Registro: before_4.33.0g/ROADMAP.md
+## Archived record: before_4.33.0g/ROADMAP.md
 
 SHA-256: `f6b316da2a7e6a88229f7ecf1fc23acd589ab6cc9a7d3c3bc8bf5288bc1f8f52`
 
@@ -17718,214 +17481,177 @@ These tracks continue without displacing the ordered major patches:
 ````
 
 
-## Registro: before_4.33.0g/VALIDACION_4_33_0e.txt
+## Archived record: before_4.33.0g/VALIDACION_4_33_0e.txt
 
 SHA-256: `46673b631853d0753f3c28dbd3f8a97cacecb4cf92c9b7bc88ba7627cf0759d5`
 
 ````text
-CAELUM ARGENTEUM — VALIDACIÓN DE ARCHIVOS V4.33.0e
+CAELUM ARGENTEUM — V4.33.0e FILE VALIDATION
 
-BASE
-MAP01.wad V4.33.0d
-SHA256: a2cb4f74391bd71e1256ff460bb407e0fc2afafa64a4c685f2c63fece07f4cb9
+BASE MAP01.wad V4.33.0d SHA256:
+a2cb4f74391bd71e1256ff460bb407e0fc2afafa64a4c685f2c63fece07f4cb9
 
-RESULTADO
-MAP01.wad V4.33.0e
-SHA256: c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c
+RESULT MAP01.wad V4.33.0e SHA256:
+c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c
 
-COMPROBACIONES REALIZADAS
-[OK] WAD válido con MAP01, TEXTMAP y ENDMAP; conserva los otros lumps.
-[OK] Cambio semántico exacto: sidedef 1637, texturebottom '-' -> 'CACVROCK'.
-[OK] El resto del TEXTMAP conserva literalmente sus bytes originales.
-[OK] Mismos vértices (1525), líneas (2131), caras (3828),
-     sectores (659) y Things (334).
-[OK] El rayo horizontal desde (1922,338) hacia 270° corta la línea 835
-     en (1922,272), a 66 MU; su cara hacia el ascensor es la 1637.
-[OK] Revisión estática de las cuatro caras del ascensor en 193 alturas,
-     desde 0 hasta -384 MU en pasos de 2 MU: 768 superficies inferiores
-     expuestas revisadas. 0d carece de material en la cara sur en 192 alturas;
-     0e no presenta ningún faltante en esas superficies.
-[OK] Textura CACVROCK definida en el TEXTURES ya entregado con 0d.
-[OK] Conservados los especiales 206, tag 12000, velocidad 16 y espera 175.
-[OK] Entrada superior sin nueva midtexture ni nueva bandera de bloqueo.
-[OK] Sectores, suelo móvil, túnel, losas, barandas y Things sin cambios.
+CHECKS PERFORMED [OK] Valid WAD with MAP01, TEXTMAP and ENDMAP; other lumps preserved.
+[OK] Exact semantic change: sidedef 1637, texturebottom '-' -> 'CACVROCK'. [OK] The rest
+of TEXTMAP retains its literal original bytes. [OK] Same vertices (1525), lines (2131),
+sides (3828), sectors (659) and Things (334). [OK] The horizontal ray from (1922,338)
+toward 270° intersects line 835 at (1922,272), at 66 MU; its elevator-facing side is 1637.
+[OK] Static review of all four elevator faces at 193 heights, from 0 to -384 MU in steps
+of 2 MU: 768 exposed lower surfaces reviewed. 0d lacks material on the south face at 192
+heights; 0e has no missing material on those surfaces. [OK] CACVROCK texture defined in
+the TEXTURES already delivered with 0d. [OK] Specials 206, tag 12000, speed 16 and wait
+175 preserved. [OK] Upper entrance has no new midtexture or blocking flag. [OK] Sectors,
+moving floor, tunnel, slabs, railings and Things unchanged.
 
-ALCANCE
-Estas son comprobaciones sobre los datos del mapa y las alturas previstas,
-no una simulación del motor ni capturas renderizadas. GZDoom no está instalado
-en este entorno. Falta comprobar visualmente en GZDoom 4.14.2 el descenso,
-la pared al fondo y el ascenso; también la llamada y el regreso desde el túnel.
-El resto de las pruebas de 0d fue aprobado por el autor.
+SCOPE These are checks on the map data and the expected heights, not an engine simulation
+or rendering captures. GZDoom is not installed in this environment. It is missing to
+visually check in GZDoom 4.14.2 the descent, wall at the bottom and ascent; also the call
+and return from the tunnel. The rest of the 0d tests were approved by the author.
 
 ````
 
 
-## Registro: before_4.33.0g/VALIDACION_4_33_0f.txt
+## Archived record: before_4.33.0g/VALIDACION_4_33_0f.txt
 
 SHA-256: `b5c3ec651042dd9a0ebdccc52d853c12464d615e8e5fb1546c0933550275a6b7`
 
 ````text
-VALIDACIÓN REAL — 4.33.0f
+REAL VALIDATION — 4.33.0f
 
-BASE
-Todas las pruebas de 4.33.0e fueron aceptadas por el autor.
-MAP01.wad conserva SHA-256:
-c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c
-El WAD no se incluye ni modifica en este delta.
+BASE All 4.33.0e tests were accepted by the author. MAP01.wad retains SHA-256:
+c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c The WAD is not included
+or modified in this delta.
 
-GZDOOM 4.14.2 — PRUEBA AISLADA
-Ejecutable oficial g4.14.2, Freedoom2 como IWAD de prueba y SDL offscreen.
-ZScript se analizó y MAP01 cargó correctamente. Los avisos de sockets/audio
-del entorno no impidieron ejecutar la sonda de estado y UI.
+GZDOOM 4.14.2 — ISOLATED TEST Official Executable g4.14.2, Freedoom2 as IWAD Test and SDL
+offscreen. ZScript was parsed and MAP01 loaded correctly. The socket/audio warnings from
+the environment did not prevent the state probe and UI from running.
 
-ARGENTO_STATE_DONE: checks=1189 failures=0
-Incluye seis órdenes de visita × cuatro combinaciones éxito/fallo; guardas de
-inicio y cierre; resultado único; probabilidad congelada; consejos tras fallar;
-contador derivado y sin duplicados; transición exacta 30→35; ninguna fase 40;
-inicialización de campos sociales conservando etapa e inventario; índices
-inválidos; límites de Labia 9/10; Tipo 4 y éxito automático; guardas de las
-acciones reales contra interlocutor incorrecto o conocimiento insuficiente.
+ARGENTO_STATE_DONE: checks=1189 failures=0 Includes six visit orders × four
+successful/failure combinations; start and close saves; single result; frozen probability;
+tips after failure; derivative and no duplicate counter; exact transition 30→35; no 40
+phase; social field initialization preserving stage and inventory; invalid indices; Labia
+9/10 boundaries; Type 4 and automatic success; play-scope action safeguards against incorrect
+interlocutor or insufficient knowledge.
 
-La sonda ejecutó métodos de las clases de producción, no una reimplementación
-de esas reglas. Los escenarios sintéticos modificaron sólo la partida de
-prueba. No se incluye esta sonda en src ni en el ZIP.
+The probe performed methods of production classes, not a re-implementation of those rules.
+Synthetic scenarios modified only the test game. This probe is not included in src or ZIP.
 
-UI NATIVA
-ARGENTO_UI: page=ronnie_offer replies=3
-ARGENTO_UI_GRAY: 1
-ARGENTO_UI_BLOCK: same_menu=1
-ARGENTO_UI_RULO_OPEN: 1
-ARGENTO_UI_EMOTION: [Worried]
-ARGENTO_UI_CONSENT: 1
+NATIVE UI ARGENTO_UI: page=ronnie_offer replies=3 ARGENTO_UI_GRAY: 1 ARGENTO_UI_BLOCK:
+same_menu=1 ARGENTO_UI_RULO_OPEN: 1 ARGENTO_UI_EMOTION: [Worried] ARGENTO_UI_CONSENT: 1
 ARGENTO_PROBE_DONE
 
-Las conversaciones fueron cargadas por el analizador USDF real. La sonda abrió
-Ronnie con Labia insuficiente y comprobó el prefijo gris y que seleccionar la
-opción no cerraba el menú. Después abrió Rulo, recorrió páginas reales mediante
-MenuEvent y confirmó el indicador privado y el progreso de su respuesta.
+The conversations were loaded by the real USDF analyzer. The probe opened Ronnie with
+insufficient Labia and checked the grey prefix and that selecting the option did not close
+the menu. Then it opened Rulo, toured real pages using MenuEvent and confirmed the private
+indicator and the progress of its response.
 
-AUDITORÍA DE FUENTES
-tools/audit_4_33_0f.py: nueve archivos de ejecución; cuatro conversaciones
-nuevas; 30 páginas; 56 claves en inglés/español; destinos, condiciones, clases,
-ausencia de ciclos automáticos, curvas acordadas, tirada única y hashes.
-CAPALOMO y LANGUAGE conservan íntegro el prefijo de la versión aceptada.
-No se modifican geometría, equipo, arte, armas, minería, comercio ni recetas.
+tools/audit_4_33_0f.py SOURCES AUDIT: nine runtime files; four new conversations; 30
+pages; 56 English/Spanish keys, destinations, conditions, classes, absence of automatic
+cycles, agreed curves, single roll and hashes. CAPALOMO and LANGUAGE retain the prefix of
+the accepted version. No changes are made to geometry, equipment, art, weapons, mining,
+trade or recipes.
 
-LÍMITES
-La reconstrucción local no dispone de todos los cambios antiguos 4.32.0b–0o.
-Para ejecutar esta prueba se proporcionaron fixtures aislados de dos
-dependencias ajenas al delta: CaelumIconResolver y GetPalomoMerchantLotPrice.
-No se distribuyen esos fixtures, ni se afirma haber probado los sistemas de
-arte/comercio/armas de la base completa que conserva el autor.
+LIMITS The local reconstruction does not have all the old changes 4.32.0b–0o. To execute
+this test, isolated fixtures were provided from two dependencies outside the delta:
+CaelumIconResolver and GetPalomoMerchantLotPrice. These fixtures are not distributed, nor
+are they claimed to have tested the art/trade/weapons systems of the complete base that
+the author retains.
 
-No se ejecutó un ciclo real de save/load ni una partida cooperativa. La sonda
-de migración verifica inicialización en memoria, no serialización del motor.
-La presentación completa, Q/ratón/mando y el guardado/carga sobre el paquete
-completo se verifican con PRUEBAS_4_33_0f.txt. MAP01 aún no está terminado.
+A real save/load cycle or a cooperative game was not executed. The migration probe
+verifies initialization in memory, not engine serialization. The complete presentation,
+Q/mouse/controller and save/load on the complete package are verified with
+PRUEBAS_4_33_0f.txt. MAP01 is not yet finished.
 
 ````
 
 
-## Registro: release_4.33.0f/APLICAR_4_33_0f.txt
+## Archived record: release_4.33.0f/APLICAR_4_33_0f.txt
 
 SHA-256: `2359c1ace695582aef8ccbdabbae6ecdb7f4725b36fa1d22871b6dec9c086d31`
 
 ````text
-CAELUM ARGENTEUM — APLICAR 4.33.0f
+CAELUM ARGENTEUM — APPLY 4.33.0f
 
-Base: proyecto completo y aceptado de 4.33.0e.
-El ZIP es un delta de fuentes; no es un PK3 ni reemplaza la base completa.
+Base: Complete and accepted 4.33.0e project. ZIP is a source delta; it is not a PK3 nor
+does it replace the entire base.
 
-1. Conservá una copia de la base 4.33.0e y de tu partida de prueba.
-2. Extraé el ZIP sobre la raíz del proyecto, combinando las carpetas src,
-   docs y tools y reemplazando los archivos coincidentes.
-3. Empaquetá src con el procedimiento habitual del proyecto. No agregues
-   docs, tools ni los manifiestos al contenido de ejecución del PK3.
-4. Probalo en GZDoom 4.14.2 y seguí PRUEBAS_4_33_0f.txt.
+1. Keep a copy of the 4.33.0e base and your test save.
+2. Extract the ZIP into the root of the project, combining src, docs and tools folders
+   and replacing matching files.
+3. Pack src with the usual project procedure. Do not add docs, tools or manifests to the
+   PK3 execution content.
+4. Start GZDoom 4.14.2 and follow PRUEBAS_4_33_0f.txt.
 
-Hay nueve archivos de ejecución nuevos/modificados. El manifiesto indica sus
-hashes de entrada y salida. MAP01.wad no se vuelve a distribuir: se conserva
-el de 0e, incluida la pared interior del ascensor que ya aprobaste.
+There are nine new/modified execution files. The manifest indicates your source and target hashes. MAP01.wad is not redistributed: 0e is conserved, including the interior wall of
+the elevator you approved.
 
-La migración permite retomar una partida 0e después de Palomo: los campos
-sociales nuevos se inicializan sin reiniciar el prólogo ni el inventario.
-La compatibilidad real de ese guardado debe verificarse en la prueba manual.
-Para empezar una prueba limpia podés usar el flujo normal de Nueva partida.
+The migration allows you to resume a 0e game after Palomo: new social fields are
+initialized without restarting the prologue or inventory. The actual compatibility of that
+save must be verified in the manual test. To start a clean test you can use the normal New
+game flow.
 
-Python no es necesario para aplicar ni jugar. La auditoría opcional se ejecuta
-con: python tools/audit_4_33_0f.py
-También se puede pasar la raíz de una copia completa de 0e mediante
---baseline RUTA_A_LA_BASE_0E antes de sobrescribirla.
+Python is not required to apply or play. Optional audit runs with: Python
+tools/audit_4_33_0f.py You can also pass the root of a full copy of 0e by --baseline
+RUTA_A_LA_BASE_0E before overwriting it.
 
 ````
 
 
-## Registro: release_4.33.0f/PRUEBAS_4_33_0f.txt
+## Registration: release_4.33.0f/PRUEBAS_4_33_0f.txt
 
 SHA-256: `5eb8f5daee8615f49781eef02019a2549c7933636a3cf976e1001cbd85a55078`
 
 ````text
-CAELUM ARGENTEUM — PRUEBA FOCALIZADA 4.33.0f
+CAELUM ARGENTEUM — 4.33.0f FOCUSED TEST
 
-1. CONTINUIDAD
-   Cargá una partida 0e después del encuentro con Palomo. Deben conservarse
-   personaje, equipo y recursos, y el Diario debe pedir hablar con Argento.
-   Si probás desde Nueva partida, Voz y Palomo deben conservar su flujo.
+1. CONTINUITY Load a 0e game after the encounter with Palomo. Character, equipment and
+   resources must be retained, and the Journal must ask to speak to Argento. If you try
+   from New game, Voice and Palomo must retain its flow.
 
-2. ARGENTO Y ORDEN LIBRE
-   Hablá con Argento y aceptá hablar con los tres. El Diario debe mostrar
-   conseguir la ayuda de los residentes, 0/3. Se pueden visitar en cualquier
-   orden. Cerrar con Q, Escape o la salida del diálogo no debe duplicar menús.
+2. ARGENTO AND FREE ORDER Talk with Argento and agree to speak with all three. The Journal
+   must show getting help from residents, 0/3. They can be visited in any order. Close
+   with Q, Escape or dialog output should not duplicate menus.
 
-3. RULO
-   Antes de la tirada se muestran dificultad 120 y probabilidad. Con éxito
-   aparece [Preocupado] en tu diálogo; todavía hace falta elegir la respuesta
-   respetuosa para obtener su ayuda. Si falla, hablá con Argento, pedile consejo
-   y volvé a Rulo: la nueva respuesta debe resolverlo sin otra tirada.
+3. RULO Before the roll 120 difficulty and probability are displayed. On success, [Worried] appears in his dialogue; you still need to choose the respectful response to
+   obtain his help. If it fails, speak with Argento, ask for advice and return to Rulo: the
+   new answer must resolve it without another roll.
 
-4. RONNIE
-   La opción del plan exige Labia >= 1 (atributo Elocuencia 10 o más).
-   Por debajo de ese mínimo debe verse gris, con requisito visible, y no
-   conceder progreso al seleccionarla con teclado, ratón o mando.
-   Después de visitarlo, hablá con Argento sobre el plan y regresá: la opción
-   aprendida debe funcionar también con Labia baja.
+4. RONNIE The plan option requires Labia >=1 (Attribute Eloquence 10 or more).Below that minimum it should appear gray, with visible requirement, and not grant progress when
+   selecting it with keyboard, mouse or controller. After visiting, talk with Argento
+   about the plan and return: the learned option should also work with Low Labia.
 
-5. CAELLA
-   La tirada muestra Persuasión, dificultad 120 y probabilidad. Un éxito
-   obtiene su ayuda. Si falla, pedí consejo a Argento y volvé con la respuesta
-   que reconoce el peligro y le permite fijar condiciones. No hay otra tirada.
+5. CAELLA The spin shows Persuasion, 120 difficulty and probability. Success obtains her help. If it fails, ask Argento for advice and return with the response that
+   recognizes the danger and allows you to set conditions. There is no further roll.
 
-6. PERSISTENCIA Y FALLOS
-   Si obtenés un fallo con Rulo o Caella, guardá DESPUÉS del resultado, cargá
-   y volvé a hablar: no debe aparecer una tirada nueva ni cambiar el resultado.
-   Repetí guardado/carga después de aprender un consejo y después de convencer
-   a alguien: consejo y contador deben conservarse. Una partida guardada antes
-   de la decisión representa ese estado anterior; este parche no implementa
-   persistencia externa al archivo de guardado.
+6. If a roll fails with Rulo or Caella, save after the result, load and speak again: no new roll or changed result should appear. Repeat save/load after learning advice
+   and after convincing someone: advice and counter must be retained. A game saved before
+   the decision represents that previous state; this patch does not implement external
+   persistence to the save file.
 
-7. CIERRE
-   Cada residente suma una sola vez: 1/3, 2/3, 3/3. Repetir su diálogo no suma.
-   Con 3/3, el Diario pide volver con Argento. Elegí la respuesta de cierre:
-   debe pasar a hablar con Caella. Guardá, cargá y comprobá que el cierre no se
-   repite ni desaparece. Caella ofrece la frase sobre la pared; su tutorial
-   mágico y sus recompensas pertenecen al próximo tramo.
+7. CLOSURE Each resident adds up once: 1/3, 2/3, 3/3. Repeat your dialogue does not add
+   up. With 3/3, the Journal asks to return to Argento. Choose the closing answer: you
+   must go to Caella. Save, load and check that the closure does not repeat or disappear.
+   Caella offers the sentence on the wall; its magic tutorial and rewards belong to the
+   next stage.
 
-8. PRESENTACIÓN
-   Revisá los textos en español e inglés, las probabilidades y el contador.
-   El indicador de Rulo debe verse sólo dentro de la conversación de quien
-   hizo la lectura. Los residentes conservan su posición, colisión y retorno
-   a 100 MU. No hace falta repetir toda la matriz de ascensor, minería o arte
-   ya aprobada: este delta no cambia esos archivos.
+8. PRESENTATION Check out the Spanish and English texts, probabilities and counter. The
+   Rulo indicator should be seen only within the conversation of the reader. Residents
+   retain their position, collision and return to 100 MU. No need to repeat the entire
+   matrix of elevator, mining or art already approved: this delta does not change those
+   files.
 
-Para cubrir los fallos naturales pueden usarse distintos personajes de prueba.
-Cerrar y reabrir la misma conversación no vuelve a lanzar los dados. Las
-combinaciones de éxito/fallo ya se forzaron únicamente en la sonda aislada de
-desarrollo; no se incorpora ningún comando nuevo de depuración al juego.
+To cover natural failures different test characters can be used. Close and reopen the same
+conversation does not re-launch the dice. Success/fail combinations have already been
+forced only in the isolated development probe; no new debugging commands are incorporated
+into the game.
 
 ````
 
 
-## Registro: release_4.33.0f/README_4_33_0f.md
+## Archived record: release_4.33.0f/README_4_33_0f.md
 
 SHA-256: `82c97c590130b335177ab239fc0a7e8db16a69850550f8659dc6c42d76be8e1c`
 
@@ -17983,69 +17709,63 @@ quest-state migration; save compatibility still needs the focused manual test.
 
 ````
 
-## Validación histórica de 0h (registro preservado)
+## Historical validation of 0h (record preserved)
 
-### Resultado técnico de 4.33.0h
+### Technical result of 4.33.0h
 
-Resultados sobre la revisión final:
+Results of the final review:
 
-- GZDoom 4.14.2 cargó las 4.277 entradas del runtime completo y MAP01 sin
-  sustitutos de dependencias. La prueba enfocada de audio pasó **19
-  comprobaciones y cero fallos**: frase de arpa, 14 alias nativos, intro y
-  tres valores de probabilidad social conservados. MAP01 informó CA_MUS01
-  en bucle; la portada no reemplazó su música.
-- Captura OpenAL Wave File Writer de la portada durante 21,65 s: cinco
-  repeticiones audibles de la pieza; el menú se abrió durante la captura.
-  El motor informó bucle activo y manejador de reproducción válido a los
-  ticks UI 50, 250 y 500. La señal siguió presente después de los primeros
-  cuatro segundos, a diferencia de lo que comprobaba 0g.
-- Conversación nativa de Argento abierta con éxito y avance real por
-  argento_offer → argento_residents → argento_quote. La captura mostró tres
-  frases independientes de unos 2,57 s: apertura y dos páginas siguientes.
-  No se agregó una segunda llamada manual ni se usó el ChatSound heredado.
-- Avance rápido por esas tres páginas: una sola frase continuó hasta terminar,
-  sin superposición. La marca singular evita apilar copias cuando la anterior
-  aún suena; un nuevo avance después de terminar vuelve a emitir el arpa.
-- El derivado conserva 113.400 muestras, 44.100 Hz, dos canales y caída de
-  450 ms. La intro y el loop de arpa original conservan sus hashes.
-- Aplicador ejecutado con PowerShell 7.6.2: **38 comprobaciones, cero fallos**.
-  CheckOnly sin mutación; instalación de los 22 archivos nuevos/modificados;
-  20 traslados con hashes idénticos; retiro de tools/art_source; respaldo
-  completo y verificado; archivos locales desconocidos conservados;
-  reaplicación idempotente; base alterada rechazada antes de escribir;
-  fallo de copia después de varios traslados con restauración exacta;
-  fallo del build después de toda la limpieza con restauración exacta y PK3
-  anterior intacto. Se corrigió el argumento nulo del reemplazo .NET y las
-  salidas tempranas usan return para permitir invocación reutilizable.
-- El PK3 reconstruido coincidió byte por byte, por entrada, con los 4.277
-  archivos de src y no contiene entradas de directorio. El constructor se
-  ejecutó desde fuera de la raíz. Los tres generadores cargan sus dependencias
-  y muestran --help desde sus nuevas rutas.
-- Mapas, CAPALOMO, constantes, estado persistente y fuentes de arte conservan
-  los hashes aprobados. El verificador de proyecto comprueba documentación,
-  enlaces, 74 audios, registros nativos y referencias de construcción.
+- GZDoom 4.14.2 loaded the 4.277 entries of the complete runtime and MAP01 without
+  substitute dependencies. The focused audio test passed **19 checks and zero failures**:
+  harp phrase, 14 native aliases, intro and three preserved social probability values.
+  MAP01 reported CA_MUS01 in loop; the title screen did not replace its music.
+- Capture OpenAL Wave File Writer from the title screen during 21,65 s: five audible repetitions
+  of the piece; the menu was opened during capture. The engine reported active loop and
+  valid playback handler to the UI 50, 250 and 500 ticks. The signal remained present
+  after the first four seconds, unlike what 0g was testing.
+- Native Argento conversation opened successfully and real advance by argento_offer →
+  argento_residents → argento_quote. The capture showed three independent phrases of a
+  2,57 s: opening and two pages following. No second manual call was added nor was the
+  inherited ChatSound used.
+- Fast forward through those three pages: a single musical phrase continued until it was
+  finished, without overlap. The singular playback flag avoids stacking copies when the previous
+  one still sounds; a new advance after finishing reissues the harp.
+- The derivative retains 113.400 samples, 44.100 Hz, two channels and 450 ms fade-out. The
+  intro and original harp loop retain their hashes.
+- Application run with PowerShell 7.6.2: **38 checks, zero failures**. CheckOnly without
+  mutation; installation of 22 new/modified files; 20 transfers with identical hashes;
+  removal of tools/art_source; complete and verified backup; unknown local files
+  preserved; idempotent reapplication; altered base rejected before writing; copy failure
+  after several transfers with exact restoration; build failure after all clean up with
+  exact restoration and PK3 previous intact. The null .NET replacement argument was
+  corrected and early exits use return to allow re-usable invocation.
+- The reconstructed PK3 coincided byte by byte, per entry, with the 4.277 src files and
+  does not contain directory entries. The builder was executed from outside the root. All
+  three generators load their dependencies and show --help from their new paths.
+- Maps, CAPALOMO, constants, persistent state and art sources retain approved hashes. The
+  project verifier checks documentation, links, 74 audios, native records and building
+  references.
 
 
-La base completa se probó con GZDoom 4.14.2 y Freedoom como IWAD de desarrollo,
-sin los dos sustitutos de dependencias usados en la reconstrucción anterior.
-La salida OpenAL se capturó a WAV; las comprobaciones de señal no sustituyen
-la valoración musical del autor. El motor/IWAD y los observadores de prueba
-quedan fuera del parche. La ejecución de CMD/Windows PowerShell 5.1 permanece
-pendiente en Windows; se prueba el aplicador con PowerShell real sobre Linux.
+The complete base was tested with GZDoom 4.14.2 and Freedoom as IWAD development, without
+the two substitute dependencies used in the previous reconstruction. The OpenAL output
+was captured to WAV; signal checks do not replace the author’s musical assessment. The
+engine/IWAD and test observers are left out of the patch. The execution of CMD/Windows
+PowerShell 5.1 remains pending on Windows; the applicator is tested with real PowerShell
+on Linux.
 
-Pruebas breves del autor para aceptar 0h:
+Brief evidence from the author to accept 0h:
 
-1. Ejecutar el CMD sobre 0g. Debe terminar con el PK3 reconstruido; run_dev.bat
-   debe seguir iniciando y tools/art_source dejar de estar en la raíz auditada.
-2. Abrir el juego, esperar más de diez segundos y abrir el menú: intro audible
-   y repetida. Comenzar/cargar una partida: vuelve la música de su mapa; el
-   menú de pausa la conserva.
-3. Abrir diálogo y avanzar varias páginas con NPC: una frase de arpa por página,
-   sin sonido heredado simultáneo ni corte de un segundo. Probar también avance
-   rápido y una opción bloqueada de Ronnie.
-4. Primera apertura del menú, cancelar/confirmar Salir y botón Exit físico:
-   sonidos del proyecto. Confirmar que el Diario conserva el progreso aceptado;
-   no hace falta repetir todas las combinaciones de la prueba de Argento.
+1. Run the CMD over 0g. You must finish with the reconstructed PK3; run_dev.bat must
+   continue to start and tools/art_source cease to be in the audited root.
+2. Open the game, wait more than ten seconds and open the menu: audible and repeated
+   intro. Start/load a game: return the music from your map; the pause menu retains it.
+3. Open dialogue and advance multiple pages with NPC: one harp-per-page phrase, without
+   simultaneous inherited sound or one-second cut. Try also fast advance and a locked
+   option of Ronnie.
+4. First menu opening, cancel/confirm Exit and physical Escape key: sounds of the
+   project. Confirm that the Journal retains the accepted progress; you do not need to
+   repeat all combinations of the Argento test.
 
-Nota posterior: la migración fue aceptada por el autor; los pasos manuales
-anteriores se conservan como historial de esa entrega.
+Later note: the migration was accepted by the author; the previous manual steps are
+preserved as a history of that delivery.

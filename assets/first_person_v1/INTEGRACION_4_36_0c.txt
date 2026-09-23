@@ -1,10 +1,14 @@
-INTEGRACIÓN POSTERIOR AL PAQUETE DE ARTE
-Versión 4.36.0c, GZDoom g4.14.2.
-Los manifiestos y VALIDACION.json originales se conservan como procedencia.
-La integración está en src/caelum/equipment/CaelumFirstPersonView.zs y en
-PSpriteTick de CaelumPhysicalSelectorWeapon / CaelumMagicSelectorWeapon.
-93 estados en clase nueva; capa 50; 19 familias activas en sus tres tiers.
-La espada conserva el rig aprobado. Sus variantes nuevas quedan registradas.
-Se conservan bytes de 101 PNG, offsets y pivotes del manifiesto. TEXTURES
-incorpora su fragmento. Las fuentes originales no van en el PK3.
-Guía de revisión y validación de motor: PRUEBAS_4_36_0c.txt en la raíz.
+SUBSEQUENT INTEGRATION OF THE ART PACKAGE
+Version 4.36.0c, GZDoom g4.14.2.
+
+Historical integration record. For current checkout setup and outstanding author
+checks, use the root README.md and pending_test.txt.
+
+The original manifests and VALIDACION.json are preserved as provenance.
+Integration is in src/caelum/equipment/CaelumFirstPersonView.zs and in
+PSpriteTick of CaelumPhysicalSelectorWeapon / CaelumMagicSelectorWeapon.
+93 states in a new class; layer 50; 19 families active across their three tiers.
+The sword retains its approved rig. Its new variants remain registered.
+The bytes of all 101 PNGs, their offsets and the manifest pivots are preserved.
+TEXTURES incorporates its fragment. Original source materials do not enter the PK3.
+The engine review and validation guide was PRUEBAS_4_36_0c.txt at the root.
