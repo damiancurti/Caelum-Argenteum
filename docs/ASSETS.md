@@ -1166,18 +1166,22 @@ existencia de un archivo no implica que ya exista un emisor de clima o escena.
 
 ### Reserva externa del paquete 05
 
+Reserva externa de audio que **no entra al PK3**: los 10 archivos viven en
+`assets/audio_stock/pack05/` hasta que se les asigne un evento aprobado. Las
+rutas siguientes son relativas a `assets/audio_stock/pack05/`.
+
 | Archivo | Obra / autor | Uso propuesto, aún no asignado |
 | --- | --- | --- |
-| `sounds/stock/music/ca_stock_piano_short_loop_01.ogg` | Piano short loop — Roloxi | Piano diegético de salón, fonda o mansión; confirmar encaje tonal antes de asignar. |
-| `sounds/stock/horror/ca_stock_breath_stinger_01.ogg` | breath stinger1 — Tissman | Proximidad espectral, maldición o drenaje de ánima; no sustituye la señal de vida baja ya elegida. |
-| `sounds/stock/reactions/ca_stock_slow_clap_01.ogg` | man claping slow — Wicopee | Aplauso lento teatral para Palomo, Mandinga, una audiencia o una cinemática. |
-| `sounds/stock/voices_en/ca_stock_demonic_you_died_en.ogg` | you died.ogg — nfsmaster821 | Voz demoníaca en inglés; reservar para prototipo o criatura que canónicamente hable inglés. |
-| `sounds/stock/props/ca_stock_toilet_flush_01.ogg` | Toilet Flush — andersmmg | Descarga o cisterna; usar solo si el artefacto sanitario es coherente con la localización y época. |
-| `sounds/stock/music/ca_stock_piano_loop_02.ogg` | Piano loop — Roloxi | Piano de salón o mansión; mantener como música diegética hasta definir la escena. |
-| `sounds/stock/music/ca_stock_creepy_piano_stinger_01.ogg` | Terrible Piano — TheFlakesMaster | Piano inquietante para mansión embrujada, presagio o descubrimiento. |
-| `sounds/stock/creatures/ca_stock_monster_scream_01.ogg` | Monster Scream - V2 — Roloxi (adaptación); Thanra (fuente CC0) | Grito de monstruo genérico o élite; no asignar a una criatura nombrada sin probar identidad y mezcla. |
-| `sounds/stock/ui/ca_stock_triumph_jingle_01.ogg` | Triumph (jingle) — lightbulbafagd | Logro, misión completada o aumento de reputación; no reemplaza el sonido de receta ya elegido. |
-| `sounds/stock/music/ca_stock_dark_chords_01.ogg` | Dark Chords — Scrampunk | Presagio, ritual o transición oscura. Es sintetizado, por eso no se integra automáticamente con la preferencia instrumental del proyecto. |
+| `sounds/music/ca_stock_piano_short_loop_01.ogg` | Piano short loop — Roloxi | Piano diegético de salón, fonda o mansión; confirmar encaje tonal antes de asignar. |
+| `sounds/horror/ca_stock_breath_stinger_01.ogg` | breath stinger1 — Tissman | Proximidad espectral, maldición o drenaje de ánima; no sustituye la señal de vida baja ya elegida. |
+| `sounds/reactions/ca_stock_slow_clap_01.ogg` | man claping slow — Wicopee | Aplauso lento teatral para Palomo, Mandinga, una audiencia o una cinemática. |
+| `sounds/voices_en/ca_stock_demonic_you_died_en.ogg` | you died.ogg — nfsmaster821 | Voz demoníaca en inglés; reservar para prototipo o criatura que canónicamente hable inglés. |
+| `sounds/props/ca_stock_toilet_flush_01.ogg` | Toilet Flush — andersmmg | Descarga o cisterna; usar solo si el artefacto sanitario es coherente con la localización y época. |
+| `sounds/music/ca_stock_piano_loop_02.ogg` | Piano loop — Roloxi | Piano de salón o mansión; mantener como música diegética hasta definir la escena. |
+| `sounds/music/ca_stock_creepy_piano_stinger_01.ogg` | Terrible Piano — TheFlakesMaster | Piano inquietante para mansión embrujada, presagio o descubrimiento. |
+| `sounds/creatures/ca_stock_monster_scream_01.ogg` | Monster Scream - V2 — Roloxi (adaptación); Thanra (fuente CC0) | Grito de monstruo genérico o élite; no asignar a una criatura nombrada sin probar identidad y mezcla. |
+| `sounds/ui/ca_stock_triumph_jingle_01.ogg` | Triumph (jingle) — lightbulbafagd | Logro, misión completada o aumento de reputación; no reemplaza el sonido de receta ya elegido. |
+| `sounds/music/ca_stock_dark_chords_01.ogg` | Dark Chords — Scrampunk | Presagio, ritual o transición oscura. Es sintetizado, por eso no se integra automáticamente con la preferencia instrumental del proyecto. |
 
 
 ## Primera persona: referencia de espada aceptada
