@@ -82,6 +82,8 @@ Pending:
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
   rescues/port faction rewards; approved Tarot images. These are planned,
   not present in the accepted three-section 0i baseline.
+- Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
+  gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
   sectors, with their integration and validation before extracting Impact
   Physics.
@@ -93,15 +95,19 @@ detailed results are in HISTORY. PR #7 still requires merge approval.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
 then V5. The 2026-09-23 author decision requires three complete maps with the
-prologue, the first Major and two Minors before export (#16/#17). Proposed
-route: mansion MAP01 -> maze MAP02 -> port MAP06; route/card identities and
-third-map objectives still need author confirmation. Exact rescue rewards and
-success/failure rules, plus the definitive Tarot asset package, remain pending.
+prologue, confirmed El Loco and two Minors before export (#16/#17). Confirmed
+route: mansion MAP01 -> maze MAP02 -> port MAP06. Stop the port's demon siege;
+its separate commanding Zupay holds the second Minor (identity pending).
+Prisoners match their source character's combat stats, follow/fight alongside
+the player and extract alive through an exit before the MAP02 boss; they do
+not fight that boss. At the port, each grants +10 reputation with its own
+faction once. Material rewards, detailed siege balance/conditions and the
+definitive Tarot asset package remain pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.
-The author reports a 75% weekly-allowance baseline; used/remaining and reset
-time are unconfirmed. Collect measured per-patch data rather than estimating.
+The author confirms a 75% weekly-allowance-remaining baseline; reset time is
+unknown. Collect measured per-patch data rather than estimating.
 
 ## Repository structure (summarized)
 

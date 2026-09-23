@@ -694,9 +694,9 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations are now defined in the roadmap; their exact
-reputation/rewards, rank thresholds and cross-faction relations still require
-authored design.
+Four new prisoner affiliations and +10 own-faction reputation per successful
+rescue are defined in the roadmap. Material rewards, rank thresholds and
+cross-faction relations still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
@@ -714,18 +714,22 @@ The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
 New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
 repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
-persistent rescues/port rewards and Tarot fronts. See [TASKS](docs/TASKS.md)
+persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
+assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
 and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
 features are not included in the current 4.36.1 gameplay baseline.
 
 After V4.37, complete and accept three campaign maps covering the prologue,
-the approved first Major and two distinct Minors, then verify the exported
+El Loco and two distinct Minors, then verify the exported
 playtest for other players (#17), including installation, controls, the full
-route, saves and issue reporting. The proposed mansion/maze/port route and
-card assignments still need author confirmation. Then
+route, saves and issue reporting. The mansion -> maze -> port route is
+confirmed: the third map is a demon siege, whose commanding Zupay holds
+the second Minor (exact card pending). Freed prisoners use source-character
+combat stats and follow/fight until their living extraction before the MAP02
+boss; they leave for the port and do not participate in that boss fight. Then
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
-art, loot, faction consequences, perception/formations, sieges, co-op/PvP,
+art, loot, faction consequences, perception/formations, general world sieges, co-op/PvP,
 world persistence and the complete campaign are assigned to V5 in PROJECT.md.
 The playtest export is a separate milestone from the final independent release.
 

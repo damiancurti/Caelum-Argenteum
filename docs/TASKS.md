@@ -64,20 +64,25 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four sections, keys/cells/beds, functional repair refuges, sewer channels/decor, northern locked boss room. After #10. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Rescues, port thanks and faction rewards. Exact rewards and rescue/death rules await author design. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks and +10 own-faction reputation once. Material rewards pending. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
-| V4 content | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Third complete map/second Minor. Route, first Major identity and third-map objectives await author confirmation. Numeric patch assigned when scheduled. |
+| 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
+| 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
+| 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
+| 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native catapult launch/impact; approved parameter table and native evidence required. After #20. |
+| V4 content | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Third map is MAP06 port: stop demon siege; its Zupay holds second Minor. Card identity and detailed encounter conditions/balance pending. Requires siege foundations; numeric patch assigned when scheduled. |
 | V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
 Rulo/Wild Beast Men and Argento/Cult of the Tarot. These are new prisoners;
 do not alter the mansion residents or reuse unrelated saved faction IDs.
-The proposed three-map route uses MAP06 for the existing port, not a
-renumbered MAP03. The current exit to MAP07 remains unchanged until approved.
+The confirmed three-map route uses MAP06 for the existing port, not a
+renumbered MAP03. Issue #16 must replace the current player exit to MAP07
+with the approved route. El Loco is the first Major; Ace of Cups remains MAP02.
 
 Record Usage evidence per #8, including correction sessions through acceptance.
-The author's 75% weekly-allowance report is a baseline observation with unknown
-used/remaining meaning and reset time, not a measured token count. Account for
+The author confirms 75% weekly allowance remaining at the initial baseline;
+reset time is unknown. It is not a measured token count. Account for
 Work, desktop, resets, concurrent work and missing measurements separately.
 Only add actionable author checks to pending_test.txt after implementation;
 missing design/assets belong here and in issues, not in that queue.
@@ -107,15 +112,21 @@ integration before extracting Impact Physics.
 
 ### CA-436-03 — Rams
 
-- **Status:** Pending.
+- **Status:** Pending implementation in [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20), planned 4.36.12.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
-- **Acceptance criteria:** PENDING.
+- **Acceptance criteria:** Native visible strike/contact/recovery with one
+  physical impact per strike, gate interaction and save/reset persistence.
+  Mass/speed/cadence parameters require canonical reuse or author approval;
+  render-only assets do not close this gate.
 
 ### CA-436-04 — Catapults
 
-- **Status:** Pending.
+- **Status:** Pending implementation in [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21), planned 4.36.13.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
-- **Acceptance criteria:** PENDING.
+- **Acceptance criteria:** One physical projectile per synchronized launch,
+  native trajectory/collision, approved impact rules and loaded/in-flight
+  save persistence. Projectile/launch/reload parameters need canonical reuse
+  or author approval; final encounter integration belongs to #16.
 
 ### CA-436-05 — Moving sectors
 

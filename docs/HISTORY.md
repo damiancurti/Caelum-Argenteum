@@ -70,6 +70,25 @@ Implementation and verification date: 2026-09-23.
   version 4.36.1, seven documents and no errors; git diff --check passed.
   This documentation-only change did not require new native gameplay tests.
 
+### Further author clarification — 2026-09-23
+
+- The initial weekly allowance was **75% remaining**, not 75% used. Reset
+  time is still unknown; the measured batch now includes issues #8–#21.
+- Confirmed the four prisoners use their visual source character's combat
+  statistics, follow and fight alongside the player, and leave for the port
+  through a living extraction before the MAP02 Zupay. They do not participate
+  in that boss fight. Port thanks grant +10 reputation with each prisoner's
+  own faction once; material reward contents remain unspecified.
+- Confirmed El Loco as the first Major and MAP06 port as the third playable
+  map: stop the demon siege, whose separate commanding Zupay carries the
+  second Minor. Its identity and detailed encounter balance remain pending.
+- Updated #11/#13/#14/#16/#17 and quota references; published #18–#21 for
+  siege assets, actor-based breakable gates, rams and catapults. Linked the
+  latter two to the existing 4.36 physics gates rather than declaring those
+  gates complete from asset delivery. Broader siege simulation remains V5.
+- This is documentation/planning only. Runtime files and the pending author
+  queue are unchanged; accepted 4.36.1 tests do not need repeating for it.
+
 ### Executed verification
 
 Environment: Windows 11 (10.0.26200), Windows PowerShell 5.1.26100.9444,
