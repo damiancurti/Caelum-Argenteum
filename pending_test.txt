@@ -1,19 +1,3 @@
-ID: CA-4361-WINDOWS-01
-Originating patch: 4.36.1
-Issue: #6 (https://github.com/damiancurti/Caelum-Argenteum/issues/6)
-Test: Confirm the remaining Windows launcher and build-identification checks.
-Prerequisites: Complete 4.36.1 checkout on Windows 11; installed GZDoom 4.14.2
-and the author's development IWAD; close GZDoom before building.
-Steps:
-1. Check the GZDOOM_EXE and DOOM2_IWAD paths in run_dev.bat, then run
-   .\run_dev.bat. Wait for the rebuilt game to reach its title screen.
-2. In a disposable test game, open the GZDoom console and run map MAP02,
-   then netevent ca_debug_maze_report and netevent ca_debug_hazards_report.
-Expected: The builder reports successful PK3 creation and the game opens
-without script errors. Both diagnostic headers identify 4.36.1. Report this
-test ID and any failure output. If these exact checks have already been done,
-report their observed results without repeating them. No full replay is required.
-
 ID: CA-4360I-VISUAL-01
 Originating patch: 4.36.0i
 Issue: Legacy release carried forward by #6; remaining correction tracked in #9

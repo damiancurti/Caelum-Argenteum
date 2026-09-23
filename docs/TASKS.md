@@ -12,8 +12,9 @@ criteria. If a datum is not defined in the canonical documents, write
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/6
 - **Status:** Implemented and statically verified; PR #7 is open. On 2026-09-23
-  the author confirmed zero validator errors. The remaining launcher/header
-  checks and merge approval are pending; partial acceptance is recorded in HISTORY.
+  the author confirmed zero validator errors, successful rebuild/launch and both
+  4.36.1 diagnostic headers. CA-4361-WINDOWS-01 is passed and recorded in HISTORY;
+  its pending entry is removed. Merge approval remains pending.
 - **References:** AGENTS, README and the five canonical documents; validator,
   builder, launcher and issue template.
 - **Scope:** English maintained documentation; numeric versions; repository-first

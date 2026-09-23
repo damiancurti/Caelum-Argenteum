@@ -77,13 +77,14 @@ Pending:
 
 - Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
 - Reported multi-second stall when equipping a bow without arrows (#8, planned 4.36.2).
-- Remaining 4.36.1 launcher and diagnostic-header confirmation; the author reports zero validator errors.
 - Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
   sectors, with their integration and validation before extracting Impact
   Physics.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
-and bow appearance. The exceptions above remain open; detailed results are in HISTORY.
+and bow appearance. The author also confirmed the complete 4.36.1 Windows
+validator/launcher/header check. The weapon exceptions above remain open;
+detailed results are in HISTORY. PR #7 still requires merge approval.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
 then V5.

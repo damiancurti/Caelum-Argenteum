@@ -86,12 +86,15 @@ No new agent engine session is claimed for this documentation patch. Earlier
 native engine evidence below retains its original release and limitations.
 No save migration is introduced.
 
-Author report recorded on 2026-09-23: CA-4361-WINDOWS-01, originating patch
-4.36.1 / issue #6, is PARTIALLY CONFIRMED. Damián reports that
-validate_project.py produced zero errors. The Python version, explicit rebuilt
-launcher result and the two diagnostic version headers were not supplied;
-the remaining launcher/header checks stay in pending_test.txt. The confirmed
-validator step is removed from the pending instructions in this same update.
+Author acceptance recorded on 2026-09-23: CA-4361-WINDOWS-01, originating patch
+4.36.1 / issue #6, is PASS. Damián first reported that validate_project.py
+produced zero errors, then explicitly confirmed that run_dev.bat rebuilt and
+launched the game correctly and that both ca_debug_maze_report and
+ca_debug_hazards_report displayed 4.36.1. This completes the previously partial
+Windows test. The remaining entry is removed from pending_test.txt in the same
+update. The Python version was not supplied; no version or additional raw log
+is inferred from the confirmation. This is author acceptance, not a new agent
+engine run, and does not approve the separate weapon corrections in #8/#9.
 
 The accepted 4.36.0i checks and its qualified visual result are recorded in
 their originating release below. The bow stall is tracked by issue #8

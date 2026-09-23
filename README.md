@@ -718,9 +718,10 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for the remaining 4.36.1 launcher/header
-check and final flail-pose acceptance after its correction. The author confirmed
-zero validator errors; accepted maze/save-load/table tests are recorded in HISTORY.
+See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
+its correction. On 2026-09-23 the author confirmed zero validator errors,
+successful rebuild/launch and both 4.36.1 diagnostic headers. That completed
+test and the accepted maze/save-load/table tests are recorded in HISTORY.
 The empty-bow stall is a separate open correction in #8, not an accepted result.
 Long-term encounter/provision balance and unfinished 4.36 systems are development
 work in PROJECT/TASKS, not new acceptance tests created by this documentation patch.
