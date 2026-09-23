@@ -40,7 +40,7 @@ Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four keyed sewer sections, endpoint cells with beds, repair refuges, channels/decor and the northern locked Zupay chamber. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Two hostile rats per Mandinga in each section: preserve 96 Mandingas, add 192 rats. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals and one-time +10 reputation per prisoner's faction. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and coins worth two average size-M weapons per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Catapult, ram and breakable-gate assets with documented states/attachments. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates and persistent passage opening on destruction. |
@@ -66,8 +66,12 @@ Freed prisoners follow and fight alongside the player. They must reach a
 physical exit alive, before the northern MAP02 Zupay fight, to be extracted
 to the port; they do not participate in that boss encounter. This NPC exit
 must not bypass the player's boss/card progression. Persist each outcome.
-At the port, thanks grant **+10 reputation with that prisoner's own faction,
-once per successful rescue**. Material reward items/quantities remain PENDING.
+At the port, thanks grant **+10 reputation with that prisoner's own faction
+and coins worth two average size-M weapons, once per successful rescue**.
+Use the arithmetic mean of normal purchase prices from the existing economy,
+including recipe/material quantities and tier costs. The formula and reference
+set rules are in SYSTEMS, Economy, "Planned prisoner coin reward". Whether the
+reference includes only T1 or all T1–T3 remains PENDING; do not invent a payout.
 Unrescued NPCs must not appear there; benefits cannot duplicate on retry,
 save/load or travel. Broad companion formations remain outside this patch.
 

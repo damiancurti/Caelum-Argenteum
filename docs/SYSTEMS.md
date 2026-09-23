@@ -3640,6 +3640,41 @@ and are distinguished by their localized name and face value. Copies registered 
 `CCOP`, `CSIL` and `CGOL` also allow each coin to exist as a visible pickup in the
 world.
 
+### 6. Planned prisoner coin reward
+
+[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8.
+At the port, each successfully rescued prisoner grants coins sufficient for
+two weapons at the arithmetic mean purchase price of the size-M catalogue,
+in addition to +10 reputation with that prisoner's own faction. This replaces
+the earlier unspecified material reward; both benefits are claimable once.
+
+For the approved reference set S containing N priced weapon entries:
+
+```text
+P_i = CaelumEconomyRules.GetPriceChargedByMerchant(V_i, 1)
+reward_copper = CaelumEconomyRules.RoundCopperUp(2 * sum(P_i) / N)
+```
+
+V_i uses the existing recursive recipe valuation at reference 100% material
+efficiency, with the weapon's canonical tier, essence and size-M weight
+(`CaelumConstants.EQUIPMENT_SIZE_M`). The normal merchant purchase margin
+is currently 150%; apply it once, with no extra invented rarity multiplier.
+Player discounts and merchant buyback prices do not define this reference.
+
+Enumerate each distinct purchasable weapon catalogue entry once in the
+eligible tiers, including physical and essence weapons; exclude fists,
+ammunition, shields, other equipment and unsellable Limbo items. Duplicate
+instances and map spawn counts do not weight the mean. The implementation PR
+must list the entries, N, copper prices, sum, mean and rounded payout.
+
+**PENDING:** author confirmation of T1 only versus all T1–T3 in S. The map's
+T1-only loot rule does not implicitly resolve the reward's reference tiers.
+Do not publish a numerical payout before that decision. One rescue pays R;
+four pay 4R, with +10 for each respective faction. Use existing physical coin
+denominations and conversion, preserve independent claim state across saves
+and travel, and leave failed coin delivery retryable without duplicated coins
+or reputation. Keep one authoritative reward definition for all four NPCs.
+
 ## Magic Box
 
 V4.32.0a-r4 remains the accepted weight and storage base. V4.32.0b changes the

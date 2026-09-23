@@ -101,8 +101,9 @@ its separate commanding Zupay holds the second Minor (identity pending).
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
-faction once. Material rewards, detailed siege balance/conditions and the
-definitive Tarot asset package remain pending.
+faction and coins worth two average size-M weapons once. Use normal purchase
+prices from the existing economy (SYSTEMS); reference tiers (T1 or T1–T3),
+detailed siege balance/conditions and the definitive Tarot package remain pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.

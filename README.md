@@ -694,9 +694,10 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations and +10 own-faction reputation per successful
-rescue are defined in the roadmap. Material rewards, rank thresholds and
-cross-faction relations still require authored design.
+Four new prisoner affiliations, +10 own-faction reputation and coins worth two
+average size-M weapons per successful rescue are defined in the roadmap.
+SYSTEMS records the purchase-price formula; reward reference tiers (T1 or
+T1–T3), rank thresholds and cross-faction relations still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now

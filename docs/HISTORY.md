@@ -89,6 +89,22 @@ Implementation and verification date: 2026-09-23.
 - This is documentation/planning only. Runtime files and the pending author
   queue are unchanged; accepted 4.36.1 tests do not need repeating for it.
 
+### Prisoner reward clarification — 2026-09-23
+
+- The author specified coins worth **two average size-M weapons** as the
+  rescue reward. Issue #14 now combines that payment with the confirmed +10
+  own-faction reputation once per successful prisoner rescue at the port.
+- SYSTEMS records the arithmetic mean of normal purchase prices, calculated
+  from existing recursive recipe/material values and merchant margin, then
+  rounded up to whole copper. No new material prices or rarity factor are added.
+- The reference tier range (T1 only versus T1–T3) still needs confirmation;
+  no exact payout is claimed. This replaces the earlier unspecified reward
+  type, while retaining the history of that earlier pending decision above.
+- Updated the current roadmap and issue acceptance to require a reviewable
+  price table, real coin delivery, capacity-failure retry and duplicate checks.
+  This is planning/documentation only; gameplay and pending author tests are
+  unchanged. No new engine run or author gameplay acceptance is claimed.
+
 ### Executed verification
 
 Environment: Windows 11 (10.0.26200), Windows PowerShell 5.1.26100.9444,
