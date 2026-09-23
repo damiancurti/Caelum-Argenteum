@@ -6,7 +6,19 @@ import json
 import re
 import struct
 
-DOCUMENTS = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md'}
+CANONICAL = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md'}
+WORKING = {'CONTEXT.md', 'TASKS.md'}
+DOCUMENTS = CANONICAL | WORKING
+
+VERSION_RE = re.compile(
+    r'(?:Versión documental|Document(?:ary)? version)\s*:\s*'
+    r'([0-9]+\.[0-9]+\.[0-9]+(?:[a-z]+[0-9]*)?)'
+)
+
+AUDIO_INVENTORY_RE = re.compile(
+    r'(?:contiene\s+(\d+)\s+archivos de runtime'
+    r'|contains\s+(\d+)\s+runtime(?: audio)? files)'
+)
 
 def validate(root):
     errors = []
@@ -19,15 +31,16 @@ def validate(root):
     check(match is not None, 'README: falta Current release.')
     version = match.group(1) if match else ''
     actual_docs = {p.relative_to(root/'docs').as_posix() for p in (root/'docs').rglob('*') if p.is_file()}
-    check(actual_docs == DOCUMENTS, f'docs debe contener sólo {sorted(DOCUMENTS)}; encontrado {sorted(actual_docs)}')
+    check(actual_docs == DOCUMENTS, f'docs debe contener exactamente {sorted(DOCUMENTS)}; encontrado {sorted(actual_docs)}')
     for heading in ('## Implemented', '## Planned', '## Pending validation'):
         check(heading in readme, f'README: falta {heading}')
-    for name in sorted(DOCUMENTS):
+    for name in sorted(CANONICAL):
         path = root/'docs'/name
         if not path.exists():
             continue
         text = path.read_text(encoding='utf-8-sig')
-        check(f'Versión documental: {version}' in text[:1000], f'{name}: versión desactualizada')
+        header = re.search(VERSION_RE, text[:1000])
+        check(header is not None and header.group(1) == version, f'{name}: versión desactualizada')
         check('VALIDATION_RESULT_PLACEHOLDER' not in text, f'{name}: validación sin completar')
         if name == 'HISTORY.md':
             continue
@@ -123,10 +136,37 @@ def validate(root):
         errors.append('Falta el recorte de diálogo')
     audio_count = sum(p.suffix.lower() in ('.ogg','.mp3') for p in (root/'src').rglob('*') if p.is_file())
     assets = (root/'docs/ASSETS.md').read_text(encoding='utf-8-sig')
-    count = re.search(r'contiene (\d+) archivos de runtime', assets)
-    check(count is not None and int(count.group(1)) == audio_count, 'ASSETS.md: actualizar el inventario de audio')
+    count = re.search(AUDIO_INVENTORY_RE, assets)
+    inventory = int(count.group(1) or count.group(2)) if count else None
+    check(inventory == audio_count, 'ASSETS.md: actualizar el inventario de audio')
+
+    # Comprobaciones opcionales: solo se ejecutan si el archivo existe.
+    agents = root/'AGENTS.md'
+    premise_numbers = set()
+    if agents.exists():
+        text = agents.read_text(encoding='utf-8-sig')
+        premise_numbers = {int(n) for n in re.findall(
+            r'(?:Premisa|Premise)s?\s+([0-9]{1,2})(?:\s+a\s+[0-9]{1,2})?\s*(?:[.:-]|$)', text, re.I)}
+        if not premise_numbers:
+            premise_numbers = {int(n) for n in re.findall(r'^([0-9]{1,2})\.\s', text, re.M)}
+        check(bool(premise_numbers), 'AGENTS.md: no se detectaron premisas numeradas')
+
+    context = root/'docs'/'CONTEXT.md'
+    context_words = 0
+    if context.exists():
+        text = context.read_text(encoding='utf-8-sig')
+        context_words = len(text.split())
+        check(context_words < 2500, f'CONTEXT.md: excede 2500 palabras ({context_words})')
+    else:
+        check(False, 'Falta docs/CONTEXT.md')
+
+    check((root/'docs'/'TASKS.md').exists(), 'Falta docs/TASKS.md')
+    check((root/'.github'/'ISSUE_TEMPLATE'/'tarea.md').exists(), 'Falta .github/ISSUE_TEMPLATE/tarea.md')
+
     return {'version':version, 'documents':len(actual_docs), 'audio_files':audio_count,
-            'station_models':len(station_models), 'spanish_caella_keys':len(magic_keys), 'errors':errors}
+            'station_models':len(station_models), 'spanish_caella_keys':len(magic_keys),
+            'premise_numbers':sorted(premise_numbers), 'context_words':context_words,
+            'errors':errors}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
