@@ -1,119 +1,127 @@
-CAELUM ARGENTEUM — AUDIO DE EVENTOS v1, revisión 1.4
-Motor: GZDoom 4.14.2. Referencia de integración: fuentes 4.36.0a.
+CAELUM ARGENTEUM — EVENT AUDIO v1, revision 1.4
+Engine: GZDoom 4.14.2. Integration reference: 4.36.0a sources.
 
-ESTADO DE LA ENTREGA
-Seis OGG para cinco usos, con una alternativa de barco.
-Recortes exportados y verificados técnicamente. No se modificó el código de
-los eventos ni se ejecutaron pruebas dentro del motor.
+HISTORICAL RESOURCE-INTEGRATION GUIDE
+The instructions and test statuses below describe the original resource package.
+The resources were subsequently integrated; see INTEGRACION_4_36_0c.txt.
+For the current checkout, follow the root README.md and pending_test.txt.
+Do not repeat these archived copy or rollback steps on the current checkout.
 
-1. ESCUCHAR
-Extraé el ZIP completo y abrí ESCUCHAR.html. La página no requiere internet.
-El bucle de roca puede activarse y detenerse desde su reproductor.
-El sonido de tarot usa bordes afinados de la frase solicitada de MAP01:
-00:30.358146–00:33.667042. Dura 3,309 s. Se desplazó todo el recorte 200 ms
-hacia adelante respecto de la revisión 1.3, conservando duración y fundidos.
-Conserva la mezcla musical, sin separación de instrumentos.
-Los demás sonidos conservan sus bytes anteriores.
+DELIVERY STATUS
+Six OGG files for five uses, including an alternative ship excerpt.
+Excerpts were exported and technically verified. Event code was not modified,
+and no tests were run inside the engine for this resource delivery.
 
-2. COPIAR RECURSOS
-- Copiá el contenido de src/ dentro de src/ del proyecto actual.
-- Copiá assets/audio_eventos_v1/ a assets/ del proyecto para conservar fuentes,
-  másteres WAV, catálogo y tiempos de edición. assets/ no va en el PK3 de juego.
-- Agregá el contenido de assets/audio_eventos_v1/integration/SNDINFO_EVENTOS_V1.txt
-  al SNDINFO actual. NO reemplaces todo el SNDINFO y no pegues el fragmento dos veces.
-- Reconstruí el PK3 con el procedimiento habitual del proyecto.
+1. LISTEN
+Extract the complete ZIP and open ESCUCHAR.html. The page works offline.
+The rock loop can be started and stopped with its player.
+The tarot sound uses refined boundaries for the requested MAP01 phrase:
+00:30.358146–00:33.667042. It lasts 3,309 s. The entire excerpt was shifted
+200 ms later than revision 1.3, preserving its duration and fades.
+It retains the musical mix, without separating instruments.
+The other sounds retain their previous bytes.
 
-Registrar los alias permite encontrarlos; para escucharlos jugando hay que
-conectar las llamadas a los eventos correspondientes del código actual.
+2. COPY RESOURCES
+- Copy the contents of src/ into the project's src/ directory.
+- Copy assets/audio_eventos_v1/ into the project's assets/ directory to preserve
+  sources, WAV masters, the catalog and edit timings. assets/ is not packaged in
+  the game PK3.
+- Append assets/audio_eventos_v1/integration/SNDINFO_EVENTOS_V1.txt to the current
+  SNDINFO. Do not replace the entire SNDINFO or append the fragment twice.
+- Rebuild the PK3 using the project's usual procedure.
 
-3. ASIGNACIONES APROBADAS POR EL AUTOR
+Registering aliases makes them available; hearing them during play requires
+connecting calls to the corresponding events in the current code.
 
-Palanca: caelum/world/lever_activate
-Archivo: sounds/caelum/world/mechanisms/ca_lever_activate.ogg
-Un clic de unos 0,154 s, mono para ubicarlo en el mecanismo.
-Reproducir una sola vez cuando la palanca realmente cambia de estado.
-No emitir sonido si se rechaza la interacción, está fuera de alcance o ya se
-gastó el mecanismo. No cambiar el sonido global de las puertas.
-En 4.36.0a, CaelumHazardReleaseSwitch.Used reproduce door_open después de
-confirmar changed y marcar Spent. En ese punto específico, la llamada nueva es:
+3. AUTHOR-APPROVED ASSIGNMENTS
+
+Lever: caelum/world/lever_activate
+File: sounds/caelum/world/mechanisms/ca_lever_activate.ogg
+A click lasting about 0,154 s, in mono so it can be positioned at the mechanism.
+Play once only when the lever actually changes state. Do not emit sound if the
+interaction is rejected, is out of reach or the mechanism is already spent.
+Do not change the global door sound. In 4.36.0a,
+CaelumHazardReleaseSwitch.Used plays door_open after confirming changed and
+setting Spent. At that specific point, the new call is:
 
     // Clic del mecanismo después de confirmar su activación.
     A_StartSound("caelum/world/lever_activate", CHAN_BODY);
 
-Carreta: caelum/travel/carriage
-Archivo: sounds/caelum/ui/travel/ca_travel_carriage.ogg
-Recorte 00:02–00:08; seis segundos, con entrada/salida suaves.
-Reproducir una vez al confirmar el viaje en carreta, dentro del flujo local de
-presentación del viaje. No reproducir por cada tic de avance de calendario ni
-al navegar por opciones. Cancelar el viaje debe detener el sonido pendiente.
-No agregar seis segundos al tiempo del mundo ni una espera de jugabilidad sólo
-para igualar la duración del audio.
+Carriage: caelum/travel/carriage
+File: sounds/caelum/ui/travel/ca_travel_carriage.ogg
+Excerpt 00:02–00:08; six seconds, with gentle fade-in/out.
+Play once when carriage travel is confirmed, within the trip's local
+presentation flow. Do not play at every calendar tick or while browsing options.
+Canceling travel must stop the pending sound. Do not add six seconds to world
+time or a gameplay wait merely to match the audio duration.
 
-Barco: caelum/travel/ship
-Archivo: sounds/caelum/ui/travel/ca_travel_ship.ogg
-Recorte 00:03–00:09: se quitaron los primeros tres segundos y se conservaron seis.
-Usar en la presentación del viaje en barco; aplicar las mismas condiciones de
-confirmación y cancelación que a la carreta. Si el cambio de mapa corta el canal,
-coordinar la reproducción con el controlador de transición/llegada del proyecto.
-El audio no activa por sí mismo un efecto visual de transición.
+Ship: caelum/travel/ship
+File: sounds/caelum/ui/travel/ca_travel_ship.ogg
+Excerpt 00:03–00:09: the first three seconds were removed and six were retained.
+Use for ship-travel presentation, with the same confirmation and cancellation
+conditions as the carriage. If changing maps cuts the channel, coordinate playback
+with the project's transition/arrival controller. Audio does not itself activate
+a visual transition effect.
 
-Alternativa de barco: caelum/travel/ship_first_seconds
-Archivo: sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg
-Recorte 00:00–00:06. Se incluye porque «recortar los primeros segundos» también
-puede significar extraerlos como fragmento. Elegir una sola variante por viaje.
+Ship alternative: caelum/travel/ship_first_seconds
+File: sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg
+Excerpt 00:00–00:06. Included because “cut the first seconds” can also mean
+extracting them as an excerpt. Choose only one variant per trip.
 
-Captura de tarot: caelum/tarot/card_capture
-Archivo: sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg
-Frase alrededor de 00:30–00:33 de MAP01, afinada a 30,358146–33,667042 s.
-El fundido final se redujo de 600 ms a 20 ms; la entrada tiene 2 ms de fundido.
-No conservar el fundido largo de la revisión 1.1 al reemplazar este archivo.
-Emitir una vez cuando la carta queda efectivamente incorporada al personaje.
-No emitir al abrir el álbum, examinar una carta ya adquirida o intentar una
-captura rechazada. Mantener la atenuación y restauración musical ya previstas
-por el controlador de revelación. No cambiar el arpa de los diálogos.
+Tarot capture: caelum/tarot/card_capture
+File: sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg
+Phrase around 00:30–00:33 of MAP01, refined to 30,358146–33,667042 s.
+The final fade was reduced from 600 ms to 20 ms; the opening has a 2 ms fade.
+Do not retain revision 1.1's long fade when replacing this file.
+Emit once when the card is actually added to the character. Do not emit when
+opening the album, examining an acquired card or attempting a rejected capture.
+Preserve the music attenuation and restoration already provided by the reveal
+controller. Do not change the dialogue harp.
 
-Roca rodando: caelum/world/rock_roll
-Archivo: sounds/caelum/world/hazards/ca_rock_roll_loop.ogg
-Bucle mono de 3,80 s, derivado del tramo 00:38.30–00:42.40 con un solapamiento
-de 0,30 s. Es fricción de piedra de la grabación elegida; no contiene un golpe
-de impacto añadido ni cambios de tono para simular otra masa.
-La roca que rueda debe ser el emisor espacial. Iniciar una sola instancia en
-un canal dedicado al comenzar a rodar y mantenerla en bucle mientras corresponda.
-Detenerla al quedar inmóvil, dejar de rodar sobre una superficie, destruirse o
-salir del mapa. No reiniciar el archivo cada tic. Mantener separados el daño,
-los impactos y la simulación física. El registro SNDINFO no activa el bucle:
-esa condición pertenece al controlador de CaelumHazardRock o su sucesor actual.
+Rolling rock: caelum/world/rock_roll
+File: sounds/caelum/world/hazards/ca_rock_roll_loop.ogg
+A 3,80 s mono loop derived from 00:38.30–00:42.40 with a 0,30 s overlap.
+This is stone friction from the chosen recording; there is no added impact sound
+or pitch change to simulate a different mass. The rolling rock must be the spatial
+emitter. Start a single instance on a dedicated channel when rolling begins and
+keep it looping while appropriate. Stop it when the rock becomes stationary,
+stops rolling on a surface, is destroyed or leaves the map. Do not restart the
+file every tic. Keep damage, impacts and physical simulation separate.
+Registration in SNDINFO does not activate the loop: that condition belongs to
+CaelumHazardRock's controller or its current successor.
 
-4. FUENTES Y EDICIÓN
-Los cuatro sonidos externos figuran como CC0 en las páginas seleccionadas.
-Se trabajó con las previsualizaciones públicas HQ MP3. Los WAV originales de
-Freesound requieren descarga autenticada y no se incluyeron como si se hubieran
-obtenido. Los másteres de este paquete son WAV editados de esas fuentes.
-El crédito y la trazabilidad se conservan aun cuando CC0 no exige atribución.
-CA_MUS01 conserva la procedencia y las condiciones propias del proyecto.
+4. SOURCES AND EDITING
+The four external sounds are listed as CC0 on the selected pages.
+The public HQ MP3 previews were used. Freesound's original WAV files require
+authenticated downloads and were not included as though they had been obtained.
+This package's masters are WAV files edited from those sources. Credits and
+traceability are retained even though CC0 does not require attribution.
+CA_MUS01 retains the project's own provenance and conditions.
 
-Todos los clips: Ogg Vorbis, 48 kHz. Palanca y roca: mono. Viajes y tarot: estéreo.
-Se ajustó ganancia para dejar margen; no se cambió afinación ni velocidad.
-El catálogo y EDICIONES_Y_FUENTES.json incluyen intervalos, ganancia y huellas.
+All clips: Ogg Vorbis, 48 kHz. Lever and rock: mono. Travel and tarot: stereo.
+Gain was adjusted to leave headroom; pitch and speed were not changed.
+The catalog and EDICIONES_Y_FUENTES.json contain intervals, gain and hashes.
 
-5. PRUEBAS
-Realizadas fuera del juego:
-- Decodificación de los seis OGG, muestras finitas, canales, frecuencia y duración.
-- Comprobación de picos con margen para evitar saturación digital en los clips.
-- Unión del bucle y presencia de archivos referenciados.
-- Integridad del ZIP y sintaxis del visor.
+5. TESTS
+Performed outside the game:
+- Decoded all six OGG files; checked finite samples, channels, frequency and duration.
+- Checked peak headroom to avoid digital clipping.
+- Checked the loop seam and presence of referenced files.
+- Checked ZIP integrity and viewer syntax.
 
-Pendientes dentro de GZDoom:
-- MAP01: captura válida de tarot y rechazo; un único sonido por nueva carta.
-- MAP01/MAP02: viajes de prueba en carreta/barco, cancelar y volver a intentar.
-  Revisar que la música del mapa y la transición no tapen o corten el efecto.
-- MAP08 o la galería vigente: palanca válida, segundo intento sin cambio,
-  roca rodando, detención, caída y cambio de mapa sin un bucle persistente.
-- Guardar/cargar con una roca activa: el sonido debe corresponder a su estado real.
-- Ajustar el volumen de los canales en contexto y comprobar los dos recortes
-  de barco y el fragmento musical solicitado para el tarot.
+Pending inside GZDoom at the time of this package:
+- MAP01: valid and rejected tarot captures; one sound per new card.
+- MAP01/MAP02: test carriage/ship travel, cancel and retry. Check that map music
+  and transitions do not mask or cut the effect.
+- MAP08 or the current gallery: valid lever activation, a second attempt without
+  a state change, rock rolling, stopping, falling and a map change without a
+  persistent loop.
+- Save/load with an active rock: sound must match its actual state.
+- Adjust channel volumes in context and check both ship excerpts and the
+  requested musical excerpt for tarot.
 
-REVERSIÓN
-Quitar las llamadas nuevas y los seis registros añadidos a SNDINFO. Retirar
-solamente los archivos de audio de este paquete. Ningún archivo anterior de
-música, efectos o código se reemplaza al copiar los recursos suministrados.
+ROLLBACK — ORIGINAL PACKAGE PROCEDURE
+Remove the new calls and six records added to SNDINFO. Remove only this package's
+audio files. Copying the supplied resources replaces no existing music, effects
+or code files. This historical procedure does not authorize deleting files from
+the current checkout.

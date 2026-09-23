@@ -1,5 +1,10 @@
 # Corrections from the annotated reference — 4.36.0h
 
+Historical art-package record. Version labels, integration instructions and test
+statuses below describe the original delivery. For current checkout setup, use
+the root README.md; outstanding author checks are tracked in pending_test.txt.
+Do not repeat archived resource installation on the current checkout.
+
 COMPOSITION.json records the exact clockwise flail rotation, grip and the
 bow foreground mask. The red upper index area belongs behind the bow. The
 blue bow segment belongs behind the thumb and remaining finger phalanges.

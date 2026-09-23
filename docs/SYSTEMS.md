@@ -1,2201 +1,2138 @@
-# Caelum Argenteum — Sistemas y reglas vigentes
+# Caelum Argenteum — Current systems and rules
 
-Versión documental: 4.36.0i — 2026-09-20.
+Documentation version: **4.36.1** — 2026-09-23.
 
+## 4.36.1 — Documentation scope
 
-## 4.36.0i — reglas activas y laberinto
+Issue [#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) translates
+the maintained specification into English. All rules, formulas, constants,
+units and accepted decisions retain their prior meaning. Formula identifiers,
+code examples, proper names and literal localized game text retain their
+original spelling; game localization and runtime behavior are unchanged.
 
-### Peso en reposo: fórmula aprobada y activa
+Release-specific sections preserve the state at their original date. Current
+author checks live in [pending_test.txt](../pending_test.txt); recorded results
+are in [HISTORY](HISTORY.md). This documentation patch does not constitute a
+new engine test or automatic author acceptance of the retained 4.36.0i systems.
+Actual author confirmation received on 2026-09-23 is recorded in HISTORY:
+maze, save/load and tables passed; flail pose remains partial and an empty-bow
+equip stall is reported. Corrections #8/#9 are planned, not implemented here.
+
+## 4.36.0i — active rules and maze
+
+### Resting weight: approved and active formula
 
     exceso = max(0, (M_encima + M_carga) / C - 1)
     daño_por_segundo = H_max * 0.10 * exceso
 
-M_encima es la masa real transmitida por cuerpos sobre la víctima, incluyendo
-la pila superior. Para jugadores incluye masa corporal e inventario; para NPC,
-Mass y su armadura. M_carga es la carga propia. C es la capacidad vigente
-(jugador: CarryCapacity; NPC: Mass × Tipo4(Fuerza)/100). Todas las masas se
-expresan en kg. Sin masa externa o sin capacidad positiva, el sistema no daña.
+M_encima is the actual mass transmitted by bodies on the victim, including the bodies
+stacked above them. For players it includes body mass and inventory; for NPCs, Mass and
+their armor. M_carga is the victim’s own load. C is the current capacity (player:
+CarryCapacity; NPC: Mass × Tipo4(Fuerza)/100). All masses are expressed in kg. Without
+external mass or a positive capacity, the system causes no damage.
 
-Se exigen sólidos sin noclip, contacto vertical ±0,5 MU, solape XY, velocidad
-vertical casi nula y bOnMobj nativo. Un cuerpo con NOGRAVITY no transmite peso.
-La búsqueda usa el blockmap local y Z estrictamente creciente. Cada nivel
-reparte su peso y el recibido entre sus apoyos; no duplica masas por apilado.
-La carga a 150%, 200% y 300% de capacidad produce 5%, 10% y 20% de Hmax/s.
-El primer tic de apoyo sólo registra contacto para separar el impacto inicial.
-Desde el siguiente se acumula daño/35, guardando el resto fraccional. Al
-retirar la masa cesa el daño. CaelumWeight pasa por DamageMobj con DMG_NO_ARMOR,
-con dolor/interrupciones ambientales y sin Adrenalina. El impacto cinemático
-existente y la conversión porcentual del techo mantienen sus rutas propias.
+Solids without noclip, vertical contact ±0,5 MU, XY overlap, near zero vertical speed
+and native bOnMobj are required. A body with NOGRAVITY does not transmit weight. The
+search uses the local blockmap and strictly increasing Z. Each level distributes its
+weight and that received between its supports; it does not duplicate mass through
+stacking. Loads at 150%, 200% and 300% of capacity produce 5%, 10% and 20% of Hmax/s.
+The first support tic only records contact to separate the initial impact. From the next
+tic, daño/35 accumulates, retaining the fractional remainder. Removing the mass stops
+the damage. CaelumWeight passes through DamageMobj with DMG_NO_ARMOR, with environmental
+pain/interruptions and without Adrenaline gain. The existing kinematic impact and the
+ceiling’s percentage conversion retain their own paths.
 
-### Alimentos, agua y mesas
+### Food, water and tables
 
-La masa usada para necesidades es corporal, excluyendo carga. Cada ración de
-comida pesa 0,2 kg. Agua: 0,2 L =0,2 kg por ración, también en inventario,
-Caja y compras. Por pulso: comida =80/M; agua =400×L/M puntos porcentuales.
-Hay diez pulsos por porción. Por tanto, 2 kg o 2 L producen 100 puntos para
-80 kg; un cuerpo distinto requiere 2×M/80 kg o litros. Es la recuperación
-bruta: el gasto de necesidades que transcurra entre porciones se calcula aparte.
-Las botellas usan el mismo factor; sorbo normal M/400 L y fracciones reales.
-Digestión conserva Sueño -= hambre efectivamente recuperada/4.
+The mass used for needs is body mass, excluding load. Each food ration weighs 0,2 kg.
+Water: 0,2 L =0,2 kg per ration, also in inventory, the Box and purchases. Per pulse:
+food =80/M; water =400×L/M percentage points. There are ten pulses per serving.
+Therefore, 2 kg or 2 L produce 100 points for 80 kg; a different body mass requires
+2×M/80 kg or liters. This is gross recovery: needs consumed between portions are
+calculated separately. The bottles use the same factor; normal sip M/400 L and real
+fractions. Digestion preserves Sleep -= hunger effectively recovered/4.
 
-SeedMansionFood usa Capacity, no SeatCount. Seis mesas, 94 huecos: 4×4+18+60.
-MansionFullFoodPrepared registra una asignación única. Se cuenta la comida
-previa y se conserva el resto de pertenencias; sin huecos se cancela el saldo.
-Retirar, comer o volver al mapa no repone la asignación. Los objetos son
-CaelumFoodRation reales propiedad de la mesa, representados por platos.
+SeedMansionFood uses Capacity, not SeatCount. Six tables, 94 slots: 4×4+18+60.
+MansionFullFoodPrepared records a one-time allocation. Existing food is counted and
+other belongings are preserved; if there are no free slots, the remaining allocation is
+cancelled. Removing food, eating it or returning to the map does not replenish the
+allocation. The objects are real CaelumFoodRation instances owned by the table and
+represented by plates.
 
-### MAP02 y recompensas
+### MAP02 and rewards
 
-Geometría UDMF reproducible: tres laberintos 7×7 con ramales y bucles, puertas
-nativas 203/204/205 y llaves de compuertas/criptas/santuario. Cada llave está
-antes de su puerta; no existe conexión entre sectores que la evite.
-Pozos de 96 MU tienen seis peldaños de 16 MU para salir caminando.
+Reproducible UDMF geometry: three 7×7 mazes with branches and loops, native doors
+203/204/205 and gate/crypt/sanctuary keys. Each key precedes its door; no connection
+between sectors bypasses it. Pits 96 MU deep have six 16 MU steps for walking out.
 
-| Contenido inicial | Cantidad |
+| Initial contents | Count |
 | --- | ---: |
-| Salas de laberinto | 147 |
+| Labyrinth rooms | 147 |
 | Mandingas / Zupay | 96 / 1 |
-| Minas / teletransportes / techos | 12 / 6 / 9 |
-| Rocas rodantes / rocas verticales / pozos | 6 / 6 / 6 |
-| Cofres / objetos de equipo | 39 / 195 |
-| Armaduras / armas / escudos / collares / sellos | 48 / 108 / 12 / 12 / 15 |
-| Raciones de comida / agua | 120 / 120 |
+| Mines / teleports / ceilings | 12 / 6 / 9 |
+| Rolling rocks / vertical rocks / pits | 6 / 6 / 6 |
+| Chests / equipment items | 39 / 195 |
+| Armor / weapons / shields / necklaces / seals | 48 / 108 / 12 / 12 / 15 |
+| Food/water rations | 120 / 120 |
 
-Equipo: todas las cuatro piezas de las cuatro familias de armadura, las 20
-familias de armas (cinco esencias en las cuatro mágicas), cuatro escudos,
-cuatro collares y cinco sellos, en T1/T2/T3. Talle M, durabilidad nativa inicial.
-Cada sector contiene su tier. Las provisiones están en 24 pares de pilas de
-cinco unidades. No se cambian perfiles de enemigos ni balance de equipo.
-Las rocas rodantes usan 32 MU/tic y la física existente; los techos conservan
-10% de Hmax por pulso nativo y velocidad 8 MU/tic, cada uno en sector propio.
+Equipment: all four pieces of the four armor families, the 20 families of weapons (five
+essences for each of the four magical families), four shields, four necklaces and five
+seals, in T1/T2/T3. Size M, initial native durability. Each sector contains its tier.
+Supplies are in 24 pairs of five-unit stacks. Enemy profiles and equipment balance are
+unchanged. Rolling rocks use 32 MU/tic and existing physics; ceilings retain 10% of Hmax
+by native pulse and 8 MU/tic speed, each in its own sector.
 
-CaelumMazeChest conserva cinco Inventory reales. Primer Usar abre; segundo
-retira mediante CallTryPickup. Lo que no cabe permanece en el cofre. Sus
-punteros, apertura y asignación se serializan; no repone ni vuelve a generar
-lo entregado. Las llaves siguen el inventario/peso nativo y no se consumen.
+CaelumMazeChest retains five real Inventory instances. First Use opens; second removes
+by CallTryPickup. What does not fit remains in the chest. Its pointers, opening state
+and allocation are serialized; it does not replenish or regenerate delivered items. Keys
+follow the native inventory/weight rules and are not consumed.
 
-Zupay: CaelumZupayColossus, TID 43799. El 1 de Copas es TarotOwned[36]: +1 a
-Carisma/Empatía/Elocuencia antes del +1% de colección. Sólo se captura tras
-vencer al Zupay y una segunda captura no acumula nada. Usa el reverso CTAR,
-la revelación/captura de audio existente y el Diario; no se añade arte frontal.
-La esencia desaparece en solitario después de incorporarse a la colección.
+Zupay: CaelumZupayColossus, TID 43799. The Ace (1) of Cups is TarotOwned[36]: +1 to
+Charisma/Empathy/Eloquence before the +1% collection. It is only captured after beating
+the Zupay and a second capture does not accumulate anything. It uses the CTAR back, the
+existing reveal/capture audio and the Journal; no frontal art is added. The essence
+disappears only after joining the collection.
 
-CanDepart valida Zupay y carta para cualquier salida de MAP02. Conexión 14
-va a la costa MAP07; 15 regresa a la cámara final (PlayerStart 1). Llegar desde
-MAP01 usa PlayerStart 0 en el vestíbulo sur y conserva la Voz del prólogo.
-El viaje reutiliza el hub sin reset de equipo, salud ni contenido. Los viejos
-accesos a MAP03/04/05 se sitúan en la cámara final, bajo la misma condición.
-Los muebles/provisiones de las antiguas pruebas no se inyectan en el laberinto.
+CanDepart validates Zupay and card for every MAP02 exit. Connection 14 leads to the
+MAP07 coast; 15 returns to the final chamber (PlayerStart 1). Arrival from MAP01 uses
+PlayerStart 0 in the southern lobby and retains the Voice of the prologue. The journey
+reuses the hub without reset of equipment, health or content. Old accesses to
+MAP03/04/05 are located in the final chamber, under the same condition.
+Furniture/provisions from old tests are not injected into the maze.
 
-### Comprobación
+### Check
 
-El informe de GZDoom 4.14.2 valida ZScript, apertura/retirada real, llaves,
-movimiento de puertas, carta, masas compartidas, dosis y las 94 raciones en
-MAP01. El arnés adelanta explícitamente pulsos de comida y tics de daño;
-el apoyo bOnMobj también se observó durante simulación real. La prueba de
-animación registró 17,424612° →377,424612° en ocho pasos, vuelta completa.
-El validador de contenido comprueba 207 condiciones de catálogo, conectividad,
-llaves, pozos y capas FP. No sustituye un recorrido humano ni prueba Windows.
+The GZDoom 4.14.2 report validates ZScript, actual opening/withdrawal, keys, door
+movement, card, shared masses, dose and 94 rations in MAP01. The harness explicitly
+advances food pulses and damage tics; the bOnMobj support was also observed during real
+simulation. The animation test recorded 17,424612° →377,424612° in eight steps, complete
+turn. The content validator checks 207 catalog conditions, connectivity, keys, pits and
+FP layers. It does not replace a human playthrough or validate Windows.
 
+## History 4.36.0h — percentage ceiling, starting meal and weight proposal
 
-## Histórico 4.36.0h — techo porcentual, comida inicial y propuesta de peso
+### Native ceiling: implemented in source
 
-### Techo nativo: implementado en fuentes
-
-P_DoCrunch de GZDoom g4.14.2 llama al daño con tipo Crush y source/inflictor
-nulos. Aplica un pulso cuando (maptime & 3)==0, mientras existe aplastamiento.
-CaelumPlayer y CaelumCombatActor convierten ese valor una sola vez:
+P_DoCrunch in GZDoom g4.14.2 calls damage with type Crush and null source/inflictor. It
+applies a pulse when (maptime & 3)==0, while crushing exists. CaelumPlayer and
+CaelumCombatActor convert that value once:
 
     D_pulso = redondear(H_max × valor_nativo / 100)
 
-El valor actual de MAP08 es 10: equivale a 10% de vida máxima por pulso,
-no por segundo. Ejemplos sin modificadores nativos: Hmax=100 → 10;
-Hmax=1780 → 178; Hmax=107060 → 10706. El ritmo de cuatro tics lo conserva
-el motor; no se introduce un temporizador de un segundo.
+The current value of MAP08 is 10: it is equivalent to 10% maximum health per pulse, not
+per second. Examples without native modifiers: Hmax=100 → 10; Hmax=1780 → 178;
+Hmax=107060 → 10706. The rhythm of four tics is kept by the engine; no one-second timer
+is introduced.
 
-El daño sigue por Super.DamageMobj con DMG_NO_ARMOR y conserva dolor,
-interrupciones y la ausencia de adrenalina ambiental. Los modificadores e
-inmunidades nativos siguen aplicando. Drowning y CaelumImpact no se escalan;
-las fuentes Crush con actor explícito conservan sus unidades anteriores.
+The damage continues by Super.DamageMobj with DMG_NO_ARMOR and retains pain,
+interruptions and absence of environmental Adrenaline gain. Native modifiers and immunities
+continue to apply. Drowning and CaelumImpact are not scaled; the Crush sources with
+explicit actor retain their previous units.
 
-CaelumCrushingDamage.FromNativePercent preserva valores no positivos y las
-órdenes especiales >=1000000. Los pulsos normales se limitan a 999999 puntos
-para no activar accidentalmente la semántica de telefrag de GZDoom al escalar
-vidas extremas. Este límite de interoperabilidad no se alcanza en el ejemplo
-del personaje de la captura. No se cambia el valor de la trampa ni su mapa.
+CaelumCrushingDamage.FromNativePercent preserves non-positive values and special
+commands >=1000000. Normal pulses are limited to 999999 points so as not to accidentally
+activate the GZDoom telefrag semantics when scaling extreme health values. This limit of
+interoperability is not reached in the example of the character in the screenshot. The
+value of the trap or its map is not changed.
 
-### Masa apoyada: propuesta pendiente de decisión del autor
+### Supported mass: proposal pending the author's decision
 
-La búsqueda recuperó una fórmula de impacto y una de contacto con impulso
-sostenido. Esta última requiere velocidad de cierre positiva; no representa
-el peso de un cuerpo ya quieto. No se encontró una fórmula estática aprobada.
+The search recovered an impact formula and a contact formula with sustained impulse. The
+latter requires positive closing speed; it does not represent the weight of an already
+still body. No approved static formula was found.
 
-Propuesta de regla de juego, NO implementada en 4.36.0h:
+Game rule proposal, NOT implemented in 4.36.0h:
 
     r = max(0, (M_encima + M_carga) / C - 1)
     daño_por_segundo = H_max × k × r
     k propuesto = 0.10
 
-M_encima: masa efectivamente transmitida por los cuerpos que se apoyan en la
-víctima, incluidos los que descansan sobre ellos. M_carga: carga propia ya
-calculada por inventario/equipo y Caja. C: capacidad de carga vigente, usando
-las mismas unidades de masa. Hmax: vida máxima, para mantener gravedad
-relativa entre personajes de distinta salud. Se necesita C positiva.
+M_encima: mass effectively transmitted by bodies resting on the victim, including those
+resting on them. M_carga: own load already calculated by inventory/equipment and the
+Box. C: current carrying capacity, using the same units of mass. Hmax: maximum health,
+to maintain relative severity across characters with different health. Positive C is
+needed.
 
-| Masa externa total / capacidad | Exceso r | Daño propuesto / segundo |
+| Total external mass / capacity | Excess r | Proposed damage / second |
 | --- | --- | --- |
-| 100% o menos | 0 | 0% de Hmax |
-| 150% | 0.5 | 5% de Hmax |
-| 200% | 1 | 10% de Hmax |
-| 300% | 2 | 20% de Hmax |
+| 100% or less | 0 | 0% of Hmax |
+| 150% | 0.5 | 5% of Hmax |
+| 200% | 1 | 10% of Hmax |
+| 300% | 2 | 20% of Hmax |
 
-La propuesta exige contacto de apoyo real: una roca colgada sobre la cabeza
-no cuenta. Al retirarla cesa el daño. Las masas apiladas se acumulan una sola
-vez; si un cuerpo tiene varios apoyos, su carga se reparte sin multiplicarla.
-El aterrizaje mantiene su impacto único y se separa del daño estático posterior.
-La aplicación usa tiempo de simulación y conserva fracciones para evitar
-truncamiento de daño pequeño. No se activa hasta aprobar fórmula/coeficiente.
+The proposal requires real support contact: a rock hanging on the head does not count.
+Removing it stops the damage. Stacked masses accumulate only once; if a body has
+multiple supports, its load is distributed without multiplying. Landing retains its
+single impact, separately from subsequent static damage. The application uses simulation
+time and retains fractions to prevent truncation of small damage. It is not activated
+until the formula/coefficient is approved.
 
-La selección de capacidad como umbral y k=0.10 es una propuesta nueva, no un
-valor rescatado de decisiones anteriores. Queda sujeta a la premisa autoral
-de no incorporar números de balance sin resolverlos con el creador.
+The selection of capacity as a threshold and k=0.10 is a new proposal, not a value
+recovered from previous decisions. It is subject to the authorial premise of not
+incorporating balance numbers without agreeing on them with the creator.
 
-### Comida de las mesas: inicialización persistente
+### Table food: persistent initialization
 
-Cada CaelumDiningTable de MAP01 calcula una sola vez SeatCount menos las
-raciones existentes y registra MansionFoodPrepared/MansionFoodToSeed. Crea
-esa cantidad como CaelumFoodRation real, Amount=1 y Owner=mesa. RefreshDisplays
-usa los platos existentes. Las mesas actuales suman 4×2 + 6 + 12 = 26 plazas.
+Each MAP01 CaelumDiningTable calculates SeatCount minus existing rations once and
+records MansionFoodPrepared/MansionFoodToSeed. It creates that amount as actual
+CaelumFoodRation, Count=1 and Owner=table. RefreshDisplays uses existing dishes. Current
+tables add up to 4×2 + 6 + 12 = 26 seats.
 
-El estado por actor cubre mesas ya guardadas, aunque el controlador de
-mobiliario figure preparado. Consumir/retirar no aumenta el saldo. Un fallo
-de creación reintenta sólo el saldo pendiente. Una mesa llena preserva todos
-sus objetos y cancela la asignación que no cabe: no espera un hueco para
-reponerla después. Fuera de MAP01 no entrega comida.
+The state per actor covers tables already saved, even if the furniture controller is
+already prepared. Consuming/removing food does not increase the remaining allocation. A
+creation failure tries only the outstanding balance. A full table preserves all its
+objects and cancels the assignment that does not fit: it does not wait for a free slot
+to replenish it later. It delivers no food outside MAP01.
 
-Las rutas de depósito, retirada, digestión y reserva de inventario/Caja no
-cambian. No se incorpora una reposición periódica ni bebida inicial.
+Inventory/Box deposit, withdrawal, digestion and reservation routes do not change. No
+periodic replacement or initial drink is added.
 
-Referencias técnicas: fuentes oficiales g4.14.2 de
-[P_DoCrunch](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp)
-y [DamageMobj](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_interaction.cpp).
-Los modelos locales de prueba no sustituyen arranque, inventario y guardado
-reales en GZDoom.
+Technical references: official sources g4.14.2 of
+[P_DoCrunch](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp) and
+[DamageMobj](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_interaction.cpp).
+Local test models do not replace actual start-up, inventory and save in GZDoom.
 
-## 4.36.0g — presentación segmentada y ataque del hacha
+## 4.36.0g — segmented presentation and axe attack
 
-El catálogo documentado define el hacha con primario cortante y secundario
-contundente más fuerte, de menor alcance. CaelumAxeSelectorWeapon conserva
-la ruta física compartida y el jugador consulta GetSecondaryDamage y
-GetSecondaryDamageType. Este delta no altera esos callbacks ni introduce
-valores de daño o alcance. La fuente del catálogo completo no está entre
-los archivos recuperados; no se presenta la documentación como una prueba
-ejecutada del daño en GZDoom.
+The documented catalog defines the axe with a slashing primary attack and a stronger
+blunt secondary attack with shorter range. CaelumAxeSelectorWeapon retains the shared
+physical path and the player consults GetSecondaryDamage and GetSecondaryDamageType.
+This delta does not alter those callbacks or introduce damage or reach values. The full
+catalog source is not among the recovered files; the documentation is not presented as
+an executed damage test in GZDoom.
 
-Las dimensiones visuales son independientes del alcance de impacto. En
-CaelumFirstPersonLayers, las piezas nuevas usan 48 (mango/asta), 50 (cabeza),
-51 (mano izquierda) y 52 (derecha). La cabeza del hacha escala ×1.5 en su
-unión (77,118), mientras el mango conserva su escala. En la alabarda:
+The visual dimensions are independent of the impact range. In CaelumFirstPersonLayers,
+the new parts use 48 (handle/shaft), 50 (head), 51 (left hand) and 52 (right). The axe
+head scales ×1.5 at its junction (77,118), while the handle retains its scale. In the
+halberd:
 
     g = (85,150); j = (76,104); a = (j-g)/|j-g|; k = 1.8
     delta(p) = (k-1) * dot(p-g,a) * a
     headPosition = weaponGrip + Turn((j-g) * size * k, rotation)
 
-Coord0–Coord3 reciben delta en las cuatro esquinas del lienzo del asta.
-Esto conserva el ancho transversal y la posición del agarre. La hoja y sus
-cintas se trasladan como una pieza rígida, sin el estiramiento axial.
-Recortes estrechos excluyen las cintas del asta extendida. El giro de reposo
-de la alabarda sigue en −28°; el del mangual pasa a +28°.
+Coord0–Coord3 receive delta in the four corners of the canvas of the handle. This
+retains the transverse width and grip position. The blade and its ribbons are moved as a
+rigid piece, without the axial stretching. Narrow cuts exclude the straps of the
+extended handle. The halberd’s resting rotation remains at −28°; the flail’s changes to
++28°.
 
-Arcos: 46/47 cuerda, 49 mano completa e índice, 50 madera, 51 DH12
-(pulgar + falanges medio/anular/meñique), 52 mano derecha, 53 flecha. DH12
-comparte lienzo, offset, pivote y escala con DH03; los recortes vuelven a
-sus coordenadas originales. Se conserva la limpieza al cambiar de arma.
+Bows: 46/47 string, 49 full hand and index finger, 50 wood, 51 DH12 (thumb +
+middle/ring/little finger phalanges), 52 right hand, 53 arrow. DH12 shares canvas,
+offset, pivot and scale with DH03; cuts return to their original coordinates. Cleanup is
+preserved when changing weapons.
 
-Las paletas usan dos Graphics nativos anidados. Translation Desaturate
-mezcla gris en n/31 (espadón 20; arcos 24). Después Blend sin alpha modula
-RGB por (205,198,188)/255 en el espadón y (194,186,174)/255 en los arcos.
-Dos pasos evitan que Blend reemplace Translation dentro de un mismo Patch.
-Los iconos del espadón se exponen con Graphics que conservan las rutas
-públicas; las fuentes idénticas con nombres distintos evitan autorreferencia.
+The palettes use two nested native Graphics. Translation Desaturate mixes gray at n/31
+(greatsword 20; bows 24). Then Blend without alpha modulates RGB by (205,198,188)/255 in
+the greatsword and (194,186,174)/255 in the bows. Two steps prevent Blend from replacing
+Translation within the same Patch. The icons of the greatsword are displayed with
+Graphics that preserve public routes; identical sources with different names avoid
+self-reference.
 
-La implementación y sus supuestos se contrastaron con las fuentes del
-renderer, texturemanager, multipatchtexturebuilder y bitmap de GZDoom
-g4.14.2. El informe VALIDATION.json separa verificaciones locales de las
-pruebas en motor, que siguen pendientes.
+The implementation and assumptions were checked against the source code of the renderer,
+texturemanager, multipatchtexturebuilder and bitmap of GZDoom g4.14.2. The
+VALIDATION.json report separates local verifications from the engine tests, which are
+still pending.
 
-## 4.36.0f — auditoría del aplastamiento e impactos
+## 4.36.0f — audit of crushing and impact
 
-Hay tres mecanismos distintos. La roca aplica daño cinético al colisionar,
-incluida una recepción vertical por aterrizaje. El grafo de contactos de
-personajes puede aplicar daño periódico cuando sigue transmitiendo impulso.
-El techo CaelumCrusherTrap usa el aplastamiento nativo de GZDoom. No existe
-daño continuo por el mero peso de una roca que ya quedó inmóvil encima de
-un personaje. Esta última limitación sigue pendiente; no es un fallo de
-masa ni una regla de muerte instantánea.
+There are three different mechanisms. The rock applies kinetic damage when colliding,
+including vertical reception by landing. The character contact graph can apply periodic
+damage when it continues to transmit momentum. The CaelumCrusherTrap ceiling uses native
+GZDoom crushing. There is no continuous damage due to the mere weight of a rock that was
+already immobile above a character. This latter limitation is still pending; it is not a
+mass failure or instant death rule.
 
-### 1. Choque de roca: masa, impulso y velocidad recibida
+### 1. Rock collision: mass, impulse and speed received
 
-Implementación: src/impactphysics/ImpactPhysics.zs, ResolveBodies y
-ResolveVerticalBodies; recepción en CaelumPlayer y CaelumCombatActor.
+Implementation: src/impactphysics/ImpactPhysics.zs, ResolveBodies and
+ResolveVerticalBodies; reception in CaelumPlayer and CaelumCombatActor.
 
-- Velocidad de cierre horizontal: v=max(0,(vs−vt)·n), con n unitario.
-- En caída: v=max(0,vt.z−vs.z).
-- J=(1+e)v/(1/ms+1/mt); e=0 en Caelum.
+- Horizontal closing speed: v=max(0,(vs−vt)·n), with n unit.
+- During a fall: v=max(0,vt.z−vs.z).
+- J=(1+e)v/(1/ms+1/mt); e=0 in Caelum.
 - Δvt=J/mt=ms/(ms+mt)·v. Δvs=J/ms.
 
-ms es la masa efectiva de la fuente; mt la del receptor. La roca ampliada
-usa radio 48 MU, altura 96 MU y masa 38170 kg, calculada como esfera de
-granito de 3 m de diámetro a 2700 kg/m³ y 32 MU/m. La masa grande hace que
-Δvt se aproxime a v; no multiplica el daño indefinidamente por 38170.
+ms is the effective mass of the source; mt that of the receiver. The expanded rock uses
+radius 48 MU, height 96 MU and mass 38170 kg, calculated as a granite sphere 3 m in
+diameter at 2700 kg/m³ and 32 MU/m. The large mass makes Δvt approach v; does not
+multiply damage indefinitely by 38170.
 
-### 2. Conversión a daño
+### 2. Damage conversion
 
-u es Δv después de la amortiguación aplicable. En un choque ambiental del
-jugador sin defensa acrobática activa, u=Δv. La rodela/guanteletes pueden
-reducirla; la amortiguación de caer al suelo tiene otra ruta. No confundir
-una roca que cae sobre la cabeza con el propio aterrizaje del personaje.
+u is Δv after applicable damping. In an environmental player collision without active
+acrobatic defense, u=Δv. The buckler/gauntlets can reduce it; damping for a fall onto
+the ground follows another path. Do not confuse a rock falling onto the head with the
+character's own landing.
 
-t=28/u; si u≈0 se usa un tiempo enorme.
-E=0 si t≥35. En otro caso:
+t=28/u; if u≈0, a very large time is used. E=0 if t≥35. Otherwise:
 
     E = 100 · ((35/t)² − 1) / (35² − 1)
       = 100 · (u² − 0,64) / 783,36
 
-E es un porcentaje de referencia, no energía física en julios. Su umbral
-sin daño es u≤0,8 MU/tic; u=28 produce E=100%. No está limitado al 100%.
-La altura del personaje ya no altera la referencia de 28 MU.
+E is a reference percentage, not physical energy in joules. Its undamaged threshold is
+u≤0,8 MU/tic; u=28 produces E=100%. It is not limited to 100%. The height of the
+character no longer alters the reference of 28 MU.
 
     P = max(0, S·E − T)
     W = suma_i [ wi · Vi · (1−Ai) ]
     Daño = floor(Hmax · P · W / 100 + 0,5)
 
-S es el multiplicador de superficie (roca: 1); T es Dureza efectiva en
-puntos porcentuales; Hmax es vida máxima, no vida restante. wi pondera el
-solapamiento anatómico; Vi es vulnerabilidad tras refuerzo y Ai defensa de
-la pieza correspondiente, entre 0 y 1. Vi puede ser 2, 1,6, 1,3, 1, 0,8,
-0,6 o 0,4. El impacto vertical de la roca tiene contacto en altura relativa
-1,0. El daño final usa CaelumImpact y evita una segunda aplicación de armadura.
+S is the surface multiplier (rock: 1); T is effective Hardness in percentage points;
+Hmax is maximum health, not remaining health. wi weights anatomical overlap; Vi is
+vulnerability after reinforcement and Ai is the defense of the corresponding piece,
+between 0 and 1. Vi can be 2, 1,6, 1,3, 1, 0,8, 0,6 or 0,4. The vertical impact of the
+rock has contact in relative height 1,0. The final damage uses CaelumImpact and avoids a
+second armor application.
 
-Ejemplo calculado, no prueba jugable: ms=38170 kg, mt=75 kg, Hmax=1780,
-T=13, S=1, W=1, sin amortiguación. Receptor inicialmente inmóvil.
+Calculated example, not an in-game test: ms=38170 kg, mt=75 kg, Hmax=1780, T=13, S=1,
+W=1, without damping. The receiver is initially stationary.
 
-| Velocidad de cierre (MU/tic) | Δv recibida | E (%) | Daño redondeado |
+| Closing speed (MU/tic) | Received Δv | E (%) | Rounded damage |
 | --- | --- | --- | --- |
 | 8 | 7.984 | 8.06 | 0 |
 | 16 | 15.969 | 32.47 | 347 |
 | 24 | 23.953 | 73.16 | 1071 |
 | 32 | 31.937 | 130.13 | 2085 |
 
-La vida, armadura, anatomía, movimiento relativo y defensa acrobática reales
-pueden cambiar el resultado. No se garantiza matar a cualquier personaje.
+Actual health, armor, anatomy, relative motion, and acrobatic defense can change the
+result. It is not guaranteed to kill any character.
 
-### 3. Contacto sostenido y techo nativo
+### 3. Sustained contact and native ceiling
 
-El grafo usa Jp=v/(1/ms+1/mt) para transmitir el impulso inelástico y evita
-duplicarlo en callbacks de la misma pareja/tic. RegisterSustainedTransfer
-activa una recepción cada 35 tics con transferencia registrada. Para el
-pulso usa el último Jp, no una suma de 35 impulsos:
+The graph uses Jp=v/(1/ms+1/mt) to transmit the inelastic impulse and avoid duplicating
+it in callbacks of the same pair/tic. RegisterSustainedTransfer triggers reception every
+35 tics with a recorded transfer. The pulse uses the last Jp, not a sum of 35 impulses:
 
     veq=Jp·(1/ms+1/mt)
 
-ResolveBodies vuelve a obtener Δv; IMPACT_KIND_CRUSH resta la amortiguación
-biológica de aterrizaje y usa la misma curva E, Dureza y anatomía. Sin
-velocidad de cierre positiva no se registra presión nueva. Este mecanismo
-no calcula fuerza estática mg, área de contacto ni presión F/A.
+ResolveBodies retrieves Δv; IMPACT_KIND_CRUSH subtracts biological landing damping and
+uses the same curve E, hardness and anatomy. Without positive closing speed, no new
+pressure is recorded. This mechanism does not calculate static force mg, contact area or
+pressure F/A.
 
-CaelumCrusherTrap llama Level.CreateCeiling con ceilCrushRaiseAndStay y
-crushDoom. En MAP08: velocidad 8 MU/tic, altura mínima 8 MU y daño nativo
-args[0]=10 por pulso. Ese daño NO se obtiene de las fórmulas de impulso
-anteriores; entra como Crush por la ruta ambiental nativa.
+CaelumCrusherTrap calls Level.CreateCeiling with ceilCrushRaiseAndStay and crushDoom. In
+MAP08: speed 8 MU/tic, minimum height 8 MU and native damage args[0]=10 per pulse. That
+damage is NOT obtained from the previous impulse formulas; it enters as Crush by the
+native environmental path.
 
-### 4. Roca rápida de MAP08 en 0f
+### 4. MAP08 fast rock in 0f
 
-TID 43602 cambia su impulso inicial horizontal de 8 a 32 MU/tic: 1120 MU/s,
-equivalentes a 35 m/s con la escala de 32 MU/m del recurso. Es un valor de
-prueba de esta trampa, no una modificación global de impactos. No tiene
-motor que reponga velocidad, telefrag ni daño mínimo letal.
+TID 43602 changes its horizontal initial thrust from 8 to 32 MU/tic: 1120 MU/s,
+equivalent to 35 m/s with the 32 MU/m scale of the resource. It is a test value of this
+trap, not a global impact modification. It has no motor that replenishes speed, telefrag
+or minimal lethal damage.
 
-El WAD y su generador contienen 32. GetReleaseSpeed reconoce el valor 8
-del TID original en un guardado antiguo y usa 32 en la siguiente liberación.
-No cambia la velocidad de una roca ya liberada. Otros mapas/TID/valores
-explícitos se conservan. La roca vertical TID 43603 conserva su caída.
+The WAD and its generator contain 32. GetReleaseSpeed recognizes the 8 value of the
+original TID in an old save and uses 32 in the next release. It does not change the
+speed of an already released rock. Other explicit maps/TIDs/values are preserved. The
+vertical rock TID 43603 keeps falling.
 
-El informe ca_debug_hazards_report muestra la salida configurada, velocidad
-actual, masa, impulso y daño del jugador. Permite distinguir ausencia de
-contacto, E anulado por Dureza y reducción posterior de anatomía/armadura.
+The ca_debug_hazards_report report shows the configured release speed, current speed, mass,
+impulse and damage of the player. It allows to distinguish no contact, E cancelled by
+Hardness and subsequent reduction from anatomy/armor.
 
-### 5. Presentación de armas
+### 5. Presentation of weapons
 
-Giro corregido con el renderer 4.14.2; NoTrim y pivotes absolutos. La cuerda
-se traza por vértices y la flecha usa capa 53. Orden del arco: cuerda 46–47,
-dedos 49, pala 50, pulgar 51, derecha 52 y flecha 53. El estado de munición
-y los callbacks de disparo siguen determinando la presencia de la flecha.
-Ver ASSETS.md y PRUEBAS_4_36_0f.txt. No se ejecutó GZDoom en esta sesión.
+Turn corrected with 4.14.2 renderer; NoTrim and absolute pivots. The string is drawn by
+vertices and the arrow uses 53 layer. Bow order: 46–47 string, fingers 49, limb 50, 51
+thumb, right 52 and 53 arrow. The state of ammunition and shooting callbacks continue to
+determine the presence of the arrow. See ASSETS.md and PRUEBAS_4_36_0f.txt. GZDoom was
+not executed in this session.
 
+## 4.36.0e — corrections requested after testing 0d
 
-## 4.36.0e — correcciones solicitadas tras probar 0d
+[IMPLEMENTED] Fists with continuous forearms and the same glove of the other weapons;
+left and right come from the same original PNG, reflected by TEXTURES. The original set
+of hands is also used for both bows. The left is in a layer in front of the right. Glove
+sizes independent of the size of the weapon.
 
-[PROGRAMADO] Puños con antebrazos continuos y el mismo guante de las demás
-armas; izquierda y derecha provienen del mismo PNG original, reflejado por
-TEXTURES. Se usa también el conjunto original de manos para ambos arcos.
-La izquierda queda en una capa anterior a la derecha. Tamaños de guante
-independientes del tamaño del arma.
+[IMPLEMENTED] Hatchet, axe, war axe and halberd tilted to the right with the handle
+seated on the grip. +20% sword and greatsword +15% relative to 0d. Standard recurve bow
+and longbow with continuous limbs, both in T1–T3, with a string between the tips and
+hand, and visible arrow only if loaded.
 
-[PROGRAMADO] Hachuela, hacha, hacha de guerra y alabarda inclinadas a la derecha
-con el mango asentado en el agarre. Espada +20% y espadón +15% respecto de 0d.
-Arco normal recurvado y arco largo de pala continua, ambos en T1–T3, con
-cuerda entre las puntas y la mano, y flecha visible sólo si está cargada.
+[IMPLEMENTED] MAP01's trimmed chord at the first revelation of the arcane. An original
+level-up sound plays on confirming capture and applying the bonus. [CONFIRMED BY THE
+AUTHOR] Correct 0d transitions; its logic is preserved.
 
-[PROGRAMADO] Acorde recortado de MAP01 en la primera revelación del arcano.
-Sonido original de level up al confirmar su captura y aplicar el bonus.
-[CONFIRMADO POR EL AUTOR] Transiciones de 0d correctas; se conserva su lógica.
+[IMPLEMENTED] Cart with front axle and two front wheels: four wheels in total. On the
+boat, volume of Use not solid in front of the hull, in addition to the sign; the warning
+remains centered and retains the requirements of boarding. New parts are added once when
+preparing vehicles, also when loading.
 
-[PROGRAMADO] Carreta con eje delantero y dos ruedas delanteras: cuatro ruedas
-en total. En el barco, volumen de Usar no sólido frente al casco, además del
-cartel; el aviso permanece centrado y conserva los requisitos de embarque.
-Las piezas nuevas se añaden una vez al preparar vehículos, también al cargar.
+[VERIFIED LOCALLY] Structure of changed sources and resources, references, layers, OBJ
+geometry and reconstructed weapon/model views. GZDoom was not run for 0e: the complete
+baseline had not been recovered and no engine was installed. Changed files start from
+their latest recovered versions. [PENDING] Compilation and gameplay/visual testing in
+GZDoom 4.14.2 / Windows 11. Instructions: PRUEBAS_4_36_0e.txt. The following sections
+are historical.
 
-[VERIFICADO LOCALMENTE] Estructura de fuentes y recursos cambiados, referencias,
-capas, geometría OBJ y vistas reconstruidas de armas/modelo. No se ejecutó
-GZDoom para 0e: faltó recuperar el archivo base completo y no había motor
-instalado. Los archivos cambiados parten de sus últimas versiones recuperadas.
-[PENDIENTE] Compilación y prueba jugable/visual en GZDoom 4.14.2 / Windows 11.
-Instrucciones: PRUEBAS_4_36_0e.txt. Las secciones siguientes son historial.
+## Current corrections 4.36.0d
 
-## Correcciones vigentes 4.36.0d
+First person: Corrected families use CaelumFirstPersonLayerFrames, new class with
+Weapon/Overlay states, and 48–52 layers. TEXTURES reverses the weapon and defines its
+grip point without inverting the hands. crossbow/carbine support layers go behind the
+weapon; in bows, the dorsal left passes in front. A common transformation holds together
+weapon and grips during the attack. Creating a layer initializes its previous position
+to prevent interpolation from the source; bow hands are not recreated each tic.
 
-Primera persona: las familias corregidas usan CaelumFirstPersonLayerFrames,
-clase nueva con estados Weapon/Overlay, y capas 48–52. TEXTURES invierte el
-arma y define su punto de agarre sin invertir las manos. Las capas de apoyo
-de ballesta/carabina van detrás del arma; en arcos, la izquierda dorsal pasa
-delante. Una transformación común mantiene unidos arma y agarres durante el
-ataque. Al crear una capa se inicializa su posición anterior para impedir que
-interpole desde el origen; las manos de arco no se recrean cada tic.
+The sword now uses the same view of small hands as the other families. Its old states
+remain in the same order to load saves; its visual callbacks remove the old rig and the
+HUD uses the common blocking presentation. They do not alter callbacks of damage,
+shield, Air, Anima, durability, ammunition or times. Dagger and magic retain their
+compositions.
 
-La espada usa ahora la misma vista de manos pequeñas que las demás familias.
-Sus antiguos estados permanecen en el mismo orden para cargar guardados;
-sus callbacks visuales retiran el rig antiguo y el HUD usa la presentación
-común de bloqueo. No se alteran callbacks de daño, escudo, Aire, Ánima,
-durabilidad, munición ni tiempos. Daga y magia conservan sus composiciones.
+Holstering applies X = -0,85 × native descent, in addition to the Y descent. During the
+descent the outgoing family is retained even if the selection of the HUD changes. The
+carbine displays B only during real recoil, C during reload and A at rest, also empty.
+This supersedes the historical 0c row that assigned B to the empty weapon.
 
-El guardado aplica desplazamiento X = -0,85 × descenso nativo, además del
-descenso Y. Durante la bajada se conserva la familia saliente aunque cambie
-la selección del HUD. La carabina muestra B sólo durante retroceso real, C
-durante recarga y A en reposo, también vacía. Esto sustituye la fila histórica
-de 0c que asignaba B al arma vacía.
+Fists: CaelumUnarmedWeapon derives from Weapon and has its own TNT1 states and layers of
+two closed fists. It alternates right/left; retains the previous 22-tic fallback, random
+native 2–20 damage, range and PowerStrength factor. It does not use sprites, visible
+puffs or Doom sounds; does not add new impact sound. It is not a new piece of RPG
+inventory nor does it change its catalog. EnsureUnarmedFallback supplies the fallback
+when missing, removes legacy Fist and selects it if there is no usable equipped weapon.
+The Limbo narrative cleanup retains its reach and restores the fists upon arrival at
+MAP02.
 
-Puños: CaelumUnarmedWeapon deriva de Weapon y tiene sus propios estados TNT1
-y capas de dos puños cerrados. Alterna derecha/izquierda; conserva el respaldo
-anterior de 22 tics, daño nativo aleatorio 2–20, alcance y factor PowerStrength.
-No utiliza sprites, puffs visibles ni sonidos de Doom; no agrega sonido de
-impacto nuevo. No es una nueva pieza del inventario RPG ni cambia su catálogo.
-EnsureUnarmedFallback entrega el respaldo cuando falta, retira Fist heredado
-y lo selecciona si no hay arma equipada utilizable. La limpieza narrativa del
-Limbo conserva su alcance y vuelve a obtener los puños al llegar a MAP02.
+Interaction hints: CaelumInteractionHint calculates a reading label in the world using
+reach, orientation and CheckSight. It resolves the auxiliary collider to the actual
+vehicle or table and respects CanBoard/CanReach. HUDInteractionHint draws it without
+activating Use or opening menus. Tables, chairs/beds and vehicles use 'Use:'; pressure
+plates indicate “Step on”. Looking away or moving out of reach hides the hint. Falling
+carbine ammunition normalizes its scale to 0,10 in Tick, without changing mass, units or
+inventory icons.
 
-Indicaciones: CaelumInteractionHint calcula una etiqueta de lectura en el
-mundo usando alcance, orientación y CheckSight. Resuelve la colisión auxiliar
-al vehículo o mesa real y respeta CanBoard/CanReach. HUDInteractionHint la
-dibuja sin activar Usar ni abrir menús. Mesas, sillas/camas y vehículos usan
-«Usar:»; las placas de presión indican «pisar». Mirar hacia otro lado o estar
-fuera de alcance retira el aviso. La munición de carabina caída normaliza su
-escala a 0,10 en Tick, sin cambiar masa, unidades ni iconos de inventario.
-
-| Viaje confirmado | Efecto | Clip existente |
+| Confirmed travel | Effect | Existing clip |
 | --- | --- | --- |
-| MODE_CART y MODE_CARAVAN | Fundido cruzado nativo, 3 | caelum/travel/carriage |
-| MODE_SHIP | Derretido nativo, 1 | caelum/travel/ship |
-| El Loco | Quemado nativo, 2 | caelum/ui/map_transition |
+| MODE_CART and MODE_CARAVAN | Native crossfade, 3 | caelum/travel/carriage |
+| MODE_SHIP | Native melt, 1 | caelum/travel/ship |
+| El Loco | Native burn, 2 | caelum/ui/map_transition |
 
-Transiciones de hub: NoWipe en g4.14.2 bloquea 35 presentaciones después de
-ChangeLevel. CaelumMenuAudio prepara CAJVIEW cerca del embarque y durante
-la cotización/diálogo, suspende su captura al salir y conserva esa vista
-durante las primeras 35 presentaciones de llegada. Después solicita el wipe
-nativo para que mezcle origen y destino distintos. CAJVIEW usa 960×540 y
-ajuste de aspecto según pantalla. La cámara es invisible, sin interacción.
-El audio se inicia después de la limpieza de canales. No se modifica wipetype,
-la pertenencia al hub, el reloj, el consumo ni la confirmación del viaje.
-Guardar/cargar descarta la presentación pendiente. Un cambio de mapa por
-consola no equivale a confirmar un viaje. La verificación local es individual;
-no supone validación adicional de cooperativo.
+Hub transitions: NoWipe in g4.14.2 blocks 35 frames after ChangeLevel. CaelumMenuAudio
+prepares CAJVIEW near boarding and during the quotation/dialogue, suspends capture on
+departure and preserves that view during the first 35 arrival frames. It then requests
+the native wipe to blend distinct departure and arrival views. CAJVIEW uses 960×540 with
+aspect adjustment for the screen. The camera is invisible and non-interactive. Audio
+starts after channel cleanup. Neither wipetype, hub membership, clock, consumption nor
+travel confirmation is modified. Saving/loading discards the pending presentation. A
+console map change is not equivalent to confirming a trip. Local verification is
+single-player; it does not establish additional co-op validation.
 
-Galería MAP08: CaelumHazardGallery.Prepare añade una palanca de reinicio en
-(1088,1088,0), TID 43620, y una runa de llegada en (1152,1664,0.5).
-MagicHazardRevision=2 permite incorporarlas a partidas anteriores sin duplicar
-actores ni rearmar automáticamente lo que ya estaba usado. El mecanismo 4
-continúa siendo la placa reutilizable en (2048,640,0.5), TID 43611; conserva
-destino libre, rechazo sin telefrag y protección de 35 tics. Una activación
-correcta confirma la llegada con mensaje y destello azul de 12 tics.
+MAP08 Gallery: CaelumHazardGallery.Prepare adds a reset lever to (1088,1088,0), TID
+43620, and an arrival rune to (1152,1664,0.5). MagicHazardRevision=2 allows you to
+incorporate them into previous saves without duplicating actors or automatically
+rearming what was already used. Mechanism 4 remains the reusable plate in
+(2048,640,0.5), TID 43611; preserves free destination, rejection without telefrag and 35
+tics protection. A correct activation confirms the arrival with message and blue flash
+of 12 tics.
 
-CaelumHazardResetSwitch comprueba primero ocupación y techos en movimiento.
-Si falla, explica la causa sin modificar parcialmente la galería. Si procede,
-cierra la tapa del foso, restaura su cubierta, detiene y recoloca las rocas en
-sus posiciones iniciales, rearma mina/placas/aplastador y sube sus palancas.
-La propia palanca baja un segundo y vuelve a estar disponible. Se excluyen
-la tapa y las rocas propias de la consulta de ocupación para permitir ciclos
-repetidos. Se conservan los contadores históricos y se añade ResetCount.
-La masa grande de 38170 kg y las fórmulas de daño siguen sin cambios.
+CaelumHazardResetSwitch first checks occupancy and moving ceilings. If it fails, explain
+the cause without partially modifying the gallery. If applicable, closes the pit lid,
+restores its cover, stops and repositions the rocks in their initial positions, rearms
+the mine/plates/crusher and raises its levers. The lever itself lowers a second and
+becomes available again. The lid and the queried mechanism's own rocks are excluded from
+the occupancy query to allow repeated cycles. Historical counters are retained and
+ResetCount is added. The large mass of 38170 kg and the damage formulas remain
+unchanged.
 
-Las secciones por versiones inferiores conservan el registro previo; los
-agarres, estados visuales y viajes descritos arriba sustituyen sus equivalentes.
+The sections by lower versions retain the previous record; the grips, visual states and
+travel described above replace their equivalents.
 
-## Integración y correcciones 4.36.0c
+## Integration and fixes 4.36.0c
 
-Presión: IsPressedBy exige apoyo real al nivel de la placa, personaje vivo y
-sólido, sin vuelo/noclip ni ascenso. La distancia XY se compara con la suma de
-los radios de placa y receptor, incluyendo la parte de los pies que pisa el
-borde. Antes se comparaba sólo con el radio de la placa. Un bloqueo de destino
-no consume la trampa; se reintenta con la cadencia existente. El diagnóstico
-numera rechazos: 1 sin marcador, 2 altura insuficiente, 3 ocupante sólido,
-4 protección de 35 tics, 5 colisión rechazada por TeleportMove(false).
+Pressure: IsPressedBy demands real support to the level of the plate, living and solid
+character, without flight/noclip or ascent. The XY distance is compared to the sum of
+the plate and receiver radii, including the part of the feet that treads on the edge.
+Before it was compared only to the radius of the plate. A blocked destination does not
+consume the trap; it is retried at the existing cadence. The diagnosis numbers
+rejections: 1 without marker, 2 insufficient height, 3 solid occupant, 4 35 tics
+protection, 5 collision rejected by TeleportMove(false).
 
-Palanca: CaelumLeverFace pasa de 0,09 a 0,045. Tick también normaliza una escala
-serializada anterior y conserva el cuadro arriba/abajo. El clic nuevo sólo se
-emite si Used activó al menos un mecanismo. Una segunda pulsación no lo repite.
+Lever: CaelumLeverFace moves from 0,09 to 0,045. Tick also normalizes a previous
+serialized scale and retains the up/down frame. The new click is only issued if Use
+activated at least one mechanism.
 
-Primera persona: CaelumFirstPersonView recibe PSpriteTick de los selectores
-físicos y mágicos y ocupa exclusivamente la capa 50. CaelumFirstPersonFrames
-contiene estados nuevos de tipo Weapon/Overlay, evitando insertar estados en
-clases que ya están guardadas. La espada conserva su rig modular previo.
-El HUD omite el icono provisional cuando un selector controla una vista nativa;
-los guanteletes muestran sus puños y no un segundo icono de bloqueo.
+First person: CaelumFirstPersonView receives PSpriteTick from the physical and magical
+selectors and occupies exclusively the 50 layer. CaelumFirstPersonFrames contains new
+Weapon/Overlay states, avoiding inserting states into classes that are already saved.
+The sword retains its previous modular rig. The HUD omits the provisional icon when a
+selector controls a native view; the gauntlets show their fists and not a second
+blocking icon.
 
-Las 93 composiciones conservan el orden de manos/arma del manifiesto. Su lienzo
-es 320×200 y su offset (160,32); los pivotes porcentuales se calculan por caja
-visible. La curva melee mueve la composición completa y utiliza sólo el giro
-relativo aprobado, sin sumar otra vez los 18° de la espada antigua. El movimiento
-sólo comienza al crecer la recuperación tras un ataque aceptado. Magia observa
-la conclusión del callback real. Nada en este controlador cobra recursos,
-aplica daño, dispara proyectiles ni modifica los tiempos de combate.
+The 93 compositions retain the hand/weapon order of the manifest. Its canvas is 320×200
+and its offset (160,32); the percentage pivots are calculated by visible box. The melee
+curve moves the complete composition and uses only the approved relative twist, without
+adding again the 18° of the ancient sword. The movement only begins when recovery grows
+after an accepted attack. Magic observes the conclusion of the real callback. Nothing in
+this controller takes resources, applies damage, fires projectiles or modifies combat
+times.
 
-| Familia | Fases vinculadas al juego |
+| Family | Phases linked to the game |
 | --- | --- |
-| Arcos corto/largo | A con flecha; B al apuntar con munición; C vacío o tras soltar |
-| Ballesta | A cargada; B disparada/vacía; C mientras recarga |
-| Carabina | A preparada; B retroceso/vacía; C recámara en recarga |
-| Libro | A abierto y al conjurar; B cerrado al bajar/subir o bloquear |
-| Guanteletes | A guardia; B golpe derecho; C golpe izquierdo |
-| Otras armas nuevas | A con desplazamiento y giro conjunto al atacar |
+| Short/long bows | A with arrow; B when aiming with ammo; C empty or after firing |
+| Crossbow | A loaded; B fired/empty; C while reloading |
+| Carbine | A prepared; B recoil/empty; C reloading the chamber |
+| Book | A open and casting; B closed when lowering/raising or blocking |
+| Gauntlets | A guard; B right punch; C left punch |
+| Other new weapons | A with displacement and joint twist when attacking |
 
-Cambiar de pieza, morir, romper el arma, abrir inventario/oficios o descansar
-limpia la vista correspondiente. La retirada/subida acompaña la posición nativa
-del arma; cambiar de mapa reinicializa la presentación. El motor elimina las
-capas cuyo selector ya no está activo. Los conjuntos de dos manos respetan las
-reglas existentes de escudo y no incorporan una mano adicional.
+Changing equipment, dying, breaking the weapon, opening Inventory/Crafting or resting
+clears the corresponding view. Lowering/raising accompanies the native position of the
+weapon; changing map restarts presentation. The engine removes layers whose selector is
+no longer active. Two-hand sets respect existing shield rules and do not incorporate an
+additional hand.
 
-Audio: el bucle mono de roca se inicia sólo al desplazarse en XY con contacto
-y sin caída. IsActorPlayingSound evita reiniciarlo cada tic y lo recupera al
-cargar. Se detiene al inmovilizarse, quedar en el aire o destruirse. CHAN_5 es
-exclusivo de su fricción; no añade fuerza ni daño. La rotación visual sigue el
-recorrido de rodadura. La captura de tarot envía un evento de interfaz sólo
-tras RecordMainM00FoolCapture; es independiente de la cámara del diálogo y no
-suena al consultar una carta ni al rechazar una captura. La atenuación musical
-del diálogo y su restauración siguen a cargo del menú nativo existente.
+Audio: The rock mono loop starts only when moving in XY with contact and without
+falling. IsActorPlayingSound avoids restarting each tic and restores it on loading. It
+stops when immobilizing, staying in the air or being destroyed. CHAN_5 is unique to its
+friction; it does not add force or damage. Visual rotation follows the rolling path.
+Tarot capture sends an interface event only after RecordMainM00FoolCapture; it is
+independent of the dialog camera and does not play when inspecting a card or rejecting a
+capture. The musical attenuation of the dialog and its restoration is still in charge of
+the existing native menu.
 
-| Cruce confirmado | Transición nativa | Sonido local |
+| Confirmed crossing | Native transition | Local sound |
 | --- | --- | --- |
-| Carreta, MODE_CART | 3, fundido cruzado | caelum/travel/carriage |
-| Barco, MODE_SHIP | 1, derretido | caelum/travel/ship |
-| El Loco, incluida salida MAP01→MAP02 | 2, quemado | caelum/ui/map_transition |
-| Otros accesos | Preferencia wipetype | caelum/ui/map_transition |
+| Cart, MODE_CART | 3, crossfade | caelum/travel/carriage |
+| Ship, MODE_SHIP | 1, melt | caelum/travel/ship |
+| El Loco, including MAP01→MAP02 exit | 2, burn | caelum/ui/map_transition |
+| Other exits | wipetype preference | caelum/ui/map_transition |
 
-PreTravelled consume PendingTravelWipe o el modo de viaje confirmado y envía
-wipe/cue a CaelumMenuAudio. WorldLoaded selecciona una transición y reproduce
-el clip después de la limpieza de canales del mapa anterior. Cotizar/cancelar
-no envía salida. Cargar un save descarta la presentación pendiente. El cruce
-narrativo de El Loco deja visibles ambas escenas: se retiran sus antiguos
-fundidos negros, que ocultaban el quemado. Conserva validaciones, conservación
-del arma inicial, limpieza de inventario y conversación de llegada.
+PreTravelled consumes PendingTravelWipe or confirmed travel mode and sends wipe/cue to
+CaelumMenuAudio. WorldLoaded selects a transition and reproduces the clip after cleaning
+channels from the previous map. Requesting a quote/cancelling does not initiate
+departure. Loading a save discards the pending presentation. The El Loco narrative
+crossover leaves both scenes visible: its old black fades, which concealed the burn, are
+removed. It retains validations, maintenance of the initial weapon, inventory cleaning
+and arrival conversation.
 
-Masa/impactos: 4π/3 × (48 MU / 32 MU/m)³ × 2700 kg/m³ = 38170 kg redondeados.
-A_SetSize sólo amplía un bloque antiguo cuando cabe; el informe muestra radio,
-altura y ampliada, además de la masa efectiva. El último impacto muestra origen,
-velocidad de cierre, porcentaje previo, Dureza, porcentaje posterior, armadura
-y daño final. No se infiere el daño únicamente a partir de toneladas.
+Mass/impacts: 4π/3 × (48 MU / 32 MU/m)³ × 2700 kg/m³ = 38170 kg rounded. A_SetSize
+enlarges an old block only when it fits; the report shows radius, height and
+enlargement, as well as effective mass. The last impact shows origin, closing velocity,
+initial percentage, Hardness, resulting percentage, armor and final damage. Damage is
+not inferred from tonnage alone.
 
-## Minas, teletransporte, aplastamiento y presentación (4.36.0b)
+## Mines, teleport, crushing and presentation (4.36.0b)
 
-CaelumPressureTrap consulta el blockmap local. Exige cuerpo vivo y sólido,
-pies a la altura de la placa y apoyo real; excluye noclip, vuelo, ascenso y
-creación incompleta. Las activaciones interrumpen descanso/avance rápido.
+CaelumPressureTrap consults the local blockmap. It demands living and solid body, feet
+to plate height and real support; excludes noclip, flight, ascent and incomplete
+creation. Activations interrupt rest/fast advance.
 
-| Clase / editor | Configuración del mapeador | Comportamiento |
+| Class / editor | Mapper Settings | Behavior |
 | --- | --- | --- |
-| CaelumMagicMine / 30963 | args[0] daño base; args[1] radio MU | Explota una sola vez al pisar; cero deshabilita. |
-| CaelumTeleportTrap / 30964 | args[0] TID de destino | Teletransporte local reutilizable, sin telefrag. |
-| CaelumTrapDestination / 30965 | TID, posición y Angle | Destino explícito; no concede objetos ni modifica el reloj. |
-| CaelumCrusherTrap / 30966 | args[0] daño/pulso; args[1] velocidad MU/tic; args[2] distancia de muestreo | Techo nativo: baja, aplasta, vuelve a subir y queda detenido. |
+| CaelumMagicMine / 30963 | args[0] base damage; args[1] radius MU | It explodes once when you step on; zero disables. |
+| CaelumTeleportTrap / 30964 | args[0] Target TID | Reusable local teleport, no telefrag. |
+| CaelumTrapDestination / 30965 | TID, position and Angle | Explicit destination; does not grant objects or modify the clock. |
+| CaelumCrusherTrap / 30966 | args[0] damage/pulse; args[1] speed MU/tic; args[2] sampling distance | Native ceiling: descends, crushes, rises again and stops. |
 
-Mina: A_Explode con radio real suministrado a la defensa anatómica existente.
-CaelumTrapMagic identifica procedencia ambiental, sin adrenalina de combate ni
-empuje adicional de Doom. Conserva vulnerabilidades, piezas de armadura y Dureza.
-El fogonazo reutiliza XFIR. En MAP08 se ensayan 100 puntos base y 128 MU; no son
-valores definitivos de campaña. La marca gastada permanece tenue al guardar.
+Mine: A_Explode with a real radius, passed through the existing anatomical defense.
+CaelumTrapMagic identifies environmental provenance, no combat adrenaline or additional
+Doom thrust. It retains vulnerabilities, armor parts and hardness. The XFIR re-uses the
+flames. MAP08 is tested in 100 base points and 128 MU; they are not definitive campaign
+values. The spent mark remains dim when saved.
 
-Teletransporte: valida existencia del marcador, suelo/techo, cuerpos y objetos
-sólidos ocupando el destino antes de TeleportMove(false). Un destino inválido u
-ocupado conserva al personaje en origen y no cuenta activación. Se detiene la
-velocidad, se limpia interpolación y el seguimiento de caída. Un inventario
-por receptor impide encadenar otra placa durante 35 tics; luego puede reutilizarse.
-No hay invulnerabilidad general, telefrag, viaje entre mapas ni entrega de recursos.
+Teleport: Validates marker existence, floor/ceiling, solid bodies and objects occupying
+the destination before TeleportMove(false). An invalid or busy destination retains the
+character in origin and does not count activation. It stops speed, clears interpolation
+and tracking fall. An inventory per receiver prevents chaining another plate during 35
+tics; then it can be reused. There is no general invulnerability, telefrag, travel
+between maps or delivery of resources.
 
-Aplastador: Level.CreateCeiling con ceilCrushRaiseAndStay y crushDoom. Cada panel
-conserva su altura superior original. args[2]=0 selecciona sólo su sector;
-MAP08 usa 32 para escoger cuatro sectores de 64 MU, un cuadrado de 128 × 128.
-Usa 8 MU/tic, separación inferior de 8 MU y 10 puntos por pulso nativo de prueba.
-El daño Crush sigue la ruta ambiental nativa de dolor, sin adrenalina de combate;
-no sustituye el cálculo de impactos de las rocas. Puede activarse por presión
-o por una palanca dirigida al mismo TID. Sólo un ciclo; no se superponen movers.
-Los techos móviles bloquean el avance rápido cercano y guardan su movimiento.
+Crusher: Level.CreateCeiling with ceilCrushRaiseAndStay and crushDoom. Each panel
+retains its original top height. args[2]=0 selects only its sector; MAP08 uses 32 to
+choose four sectors of 64 MU, a square of 128 × 128. Use 8 MU/tic, lower separation of 8
+MU and 10 points per native pulse test. Crush damage follows the native environmental
+path of pain, without combat adrenaline; it does not replace the calculation of rock
+impacts. It can be activated by pressure or by a lever directed at the same TID. Only
+one cycle; no moves are superimposed. Moving ceilings block the nearby rapid advance and
+keep its movement.
 
-Palancas: CaelumHazardReleaseSwitch acepta TID de roca o aplastador. El sprite
-transparente CLVR se superpone a una columna OBJ y cambia de arriba a abajo.
-args[1]=1 omite la columna para colocarlo sobre una pared; el actor debe situarse
-un poco delante de la cara, con Angle orientado hacia la pared. La comprobación
-SF_IGNOREVISIBILITY ignora sólo el soporte invisible, manteniendo la oclusión
-real de las paredes. No se consumen interruptores sin destino activable.
+Levers: CaelumHazardReleaseSwitch accepts the TID of a rock or crusher. The transparent
+CLVR sprite overlaps with an OBJ column and switches from top to bottom. args[1]=1 omits
+the column to place it on a wall; the actor should be placed a little in front of the
+face, with Angle facing the wall. The SF_IGNOREVISIBILITY check ignores only the
+invisible support, keeping the actual occlusion of the walls. Switches with no activated
+target are not consumed.
 
-Transiciones nativas verificadas en GZDoom g4.14.2:
+Native transitions verified in GZDoom g4.14.2:
 
-| wipetype | Efecto |
+| wipetype | Effect |
 | --- | --- |
-| 0 | Sin transición |
-| 1 | Derretido (melt) |
-| 2 | Quemado (burn) |
-| 3 | Fundido cruzado (crossfade) |
+| 0 | No transition |
+| 1 | Melt |
+| 2 | Burn |
+| 3 | Crossfade |
 
-PreTravelled anuncia el modo a CaelumMenuAudio, que ya es StaticEventHandler.
-WorldLoaded aplica ScreenJobRunner.setTransition(1) sólo a un viaje en barco
-pendiente y emite caelum/ui/map_transition después de limpiar el audio anterior.
-Es una selección nativa de un solo cruce, sin cambiar el cvar wipetype. Los demás
-viajes conservan la preferencia del usuario; cargar una partida no repite el
-sonido ni impone el efecto. La lógica de viajes, recursos y reloj se conserva.
-Fuente del motor: https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/d_main.cpp
-(System_SetTransition y D_Display), junto a menudef.txt/screenjob.zs de gzdoom.pk3.
+PreTravelled announces CaelumMenuAudio mode, which is already StaticEventHandler.
+WorldLoaded applies ScreenJobRunner.setTransition(1) only to a pending boat trip and
+emits caelum/ui/map_transition after cleaning the previous audio. It is a native
+selection of a single crossing, without changing the cvar wipetype. Other trips retain
+the user preference; loading a game does not repeat the sound or impose the effect.
+Travel logic, resources and clock is preserved. Engine source:
+https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/d_main.cpp (System_SetTransition and
+D_Display), along with menudef.txt/screenjob.zs of gzdoom.pk3.
 
-MAP08 añade por revisión guardada: mina (1728,640,0.5), teletransporte
-(2048,640,0.5), destino (1152,1664,0), aplastador (2240,1216,0.5) y palanca
-(2240,1088,0). TID 43610/43611/43612/43613 respectivamente. No cambia el WAD.
-Una runa de inmovilización queda propuesta a revisión, sin implementación.
+MAP08 adds by saved revision: mine (1728,640,0.5), teleport (2048,640,0.5), destination
+(1152,1664,0), crusher (2240,1216,0.5) and lever (2240,1088,0). TID
+43610/43611/43612/43613 respectively. It does not change the WAD. An immobilization rune
+is proposed for revision, without implementation.
 
-## Peligros físicos y trampillas (4.36.0a, actualizados en 0b)
+## Physical hazards and traps (4.36.0a, updated in 0b)
 
-CaelumTrapdoor (editor 30960) es un apoyo nativo ACTLIKEBRIDGE de 256 × 256 MU,
-8 MU de espesor. Su origen está 8 MU por debajo de la superficie transitable.
-Requiere un foso modelado en UDMF; no puede crear un agujero en un piso macizo.
-CaelumTrapdoorCover reutiliza CSUF/CMWD01 y coincide con la tapa física.
+CaelumTrapdoor (30960 editor) is a native support ACTLIKEBRIDGE of 256 × 256 MU, 8 MU
+thick. Its origin is 8 MU below the walkable surface. It requires a pit modeled in UDMF;
+it cannot create a hole in a solid floor. CaelumTrapdoorCover reuses CSUF/CMWD01 and
+matches the physical cover.
 
-Se activa cuando el centro de un jugador vivo, ya creado y apoyado está dentro
-del cuadrado, sus pies coinciden con la tapa y no está subiendo, volando ni en
-noclip. También admite actores CaelumCombatActor apoyados. La consulta es local
-al blockmap. Pisar retira solidez y dibujo una sola vez; gravedad y aterrizaje
-siguen las reglas existentes. No teleporta, no agrega daño fijo, no se rearma
-y no se cierra sobre quien cayó. Opened, ActivationCount y referencias se guardan.
+It is activated when the center of a live, already created and supported player is
+inside the square, his feet match the lid and is not going up, flying or in noclip. It
+also supports CaelumCombatActor actors supported. The query is local to the blockmap.
+Stepping on it removes solidity and rendering once; gravity and landing follow the
+existing rules. It does not teleport, does not add fixed damage, does not rearm and does
+not close on who fell. Opened, ActivationCount and references are saved.
 
-CaelumHazardRock (30961) pasa a radio 48 MU, altura 96 MU y masa 38170 kg:
-4/3 × pi × (48/32)^3 × 2700, redondeado. Al cargar una roca antigua en contacto
-con obstáculos conserva primero sus dimensiones pequeñas y sólo se amplía
-cuando A_SetSize confirma que cabe. No se desplaza ni relanza por la migración.
-Empieza suspendida; args[0] es el impulso horizontal
-en MU/tic según Angle, o cero para una caída vertical. Release aplica ese impulso
-una sola vez. La prueba de rodadura omite rozamiento; no aplica un motor continuo.
-La rotación visible depende de la distancia recorrida. No admite empuje manual
-mientras está retenida. La colisión nativa detiene el recorrido contra una pared.
+CaelumHazardRock (30961) passes to radius 48 MU, height 96 MU and mass 38170 kg: 4/3 ×
+pi × (48/32)^3 × 2700, rounded. When loading an old rock in contact with obstacles it
+retains its small dimensions first and only expands when A_SetSize confirms that it
+fits. It does not move or re-launch by migration. It starts suspended; args[0] is the
+horizontal impulse in MU/tic according to Angle, or zero for a vertical drop. It
+releases that impulse only once. The rolling test omits friction; does not apply a
+continuous motor. Visible rotation depends on the distance travelled. It does not
+support manual thrust while it is retained. The native collision stops movement against
+a wall.
 
-CaelumHazardReleaseSwitch (30962): args[0] es el TID positivo de rocas o aplastadores.
-Usar exige alcance, visibilidad y solapamiento vertical con un jugador vivo.
-La operación pasa a Spent tras liberar un destino; no crea nuevos bloques.
-No hay un temporizador de rearme. Sin destino válido no se consume la operación.
+CaelumHazardReleaseSwitch (30962): args[0] is the positive TID of rocks or crushers.
+Using requires vertical reach, visibility and overlap with a live player. The operation
+passes to Spent after releasing a destination; does not create new blocks. There is no
+rearmament timer. Without a valid target, the switch is not consumed.
 
-ImpactPhysics.ResolveVerticalBodies agrega el contacto descendente sin cambiar
-ResolveBodies/ResolveStatic. Usa J = (1 + e) × velocidad de cierre / (1/m1 + 1/m2)
-y Δv = J/m. Geometría nativa confirma el aterrizaje sobre el cuerpo antes de
-aplicar la recepción biológica, localizada en su extremo superior. Un mismo
-apoyo no produce daño cada tic. Separarse permite un contacto físico posterior.
-Dureza, vulnerabilidad, protección, lucidez y salud conservan sus reglas.
+ImpactPhysics.ResolveVerticalBodies adds downward contact without changing
+ResolveBodies/ResolveStatic. Use J = (1 + e) × Closing Speed / (1/m1 + 1/m2) and Δv =
+J/m. Native geometry confirms landing on the body before applying biological reception,
+located at its top end. The same support does not cause damage to each tic. Separating
+allows a subsequent physical contact. Hardness, vulnerability, protection, lucidity and
+health retain its rules.
 
-IMPACT_KIND_ENVIRONMENT = 5 identifica la procedencia de estos mecanismos.
-Se mantiene CaelumImpact como ruta de daño; DMG_THRUSTLESS evita sumar un empuje
-nativo ajeno al impulso calculado. No hay evasión de combate ni ganancia de
-adrenalina de combate. Amparo sigue pendiente de implementación en V5.
-El avance rápido se bloquea si hay una roca liberada moviéndose en el radio
-ya inspeccionado de seguridad. Abrir la trampilla interrumpe el descanso del
-personaje que la activó. Los peligros se resuelven a tics normales.
+IMPACT_KIND_ENVIRONMENT = 5 identifies the origin of these mechanisms. CaelumImpact is
+maintained as a route of damage; DMG_THRUSTLESS avoids adding a native thrust alien to
+the calculated impulse. There is no combat evasion or combat Adrenaline gain.
+Protection is still pending implementation in V5. Fast advance is blocked if there is a
+free rock moving in the already inspected safety radius. Opening the trapdoor interrupts
+the rest of the character that activated it. Hazards are resolved at normal tic speed.
 
-MAP08: acceso oriental del vestíbulo x=768, y=640–896. Tapa centrada en
-(1408, 896, 0), fondo a -192 MU; doce peldaños de 16 MU salen hacia el este.
-Roca rodante en (1280, 1344, 0), impulso de ensayo 8 MU/tic, TID 43602;
-mecanismo en (1152, 1344, 0). Roca suspendida en (2048, 1600, 256), TID 43603;
-mecanismo en (2048, 1536, 0). Son dimensiones y ajustes de la galería de prueba,
-no valores de balance nuevos para toda la campaña.
+MAP08: eastern lobby access x=768, y=640–896. Cover centered at (1408, 896, 0), bottom
+at -192 MU; twelve steps of 16 MU lead east. Rolling rock at (1280, 1344, 0), test
+impulse 8 MU/tic, TID 43602; mechanism at (1152, 1344, 0). Suspended rock at (2048,
+1600, 256), TID 43603; mechanism at (2048, 1536, 0). These are test-gallery dimensions
+and settings, not new balance values for the whole campaign.
 
-netevent ca_debug_hazards_report identifica 4.36.0b y muestra activación,
-solidez, tapa, masas, velocidades, contactos verticales y mecanismos usados.
-El WAD de MAP05 conserva su checksum original. MAP08 se incorpora como ubicación 8,
-con conexiones 12/13; no se reutiliza ningún id ni se redimensionan los registros.
-En MAP05 aparece un acceso junto a (640,704,0), también al cargar un guardado
-anterior: SewerNetworkRevision pasa de 1 a 2 y la colocación es idempotente.
-La vuelta de MAP08 usa el acceso del vestíbulo en (0,96,0). Ambos sentidos usan
-el servicio de viaje local existente, sin tarifa ni consumo de provisiones.
-Las trampas pertenecen al hub y conservan su estado al ir y volver.
-Para una prueba aislada se puede usar map MAP08; ese comando reinicia al personaje.
+ca_debug_hazards_report identifies 4.36.0b and shows activation, solidity, lid, masses,
+speeds, vertical contacts and used mechanisms. MAP05's WAD retains its original
+checksum. MAP08 is incorporated as a 8 location, with 12/13 connections; no id is reused
+and no records are resized. The MAP05 access appears at (640,704,0), also when loading a
+previous save: SewerNetworkRevision moves from 1 to 2 and the placement is idempotent.
+The MAP08 return uses lobby access in (0,96,0). Both directions use the existing local
+travel service, no fare or supply consumption. Traps belong to the hub and retain their
+status when going and returning. For an isolated test you can use map MAP08; that
+command restarts the character.
 
+## Animations and sitting consumption (4.35.0q)
 
-## Animaciones y consumo sentado (4.35.0q)
+SEATED_MEAL_TIC_DIVISOR = 3 is the only divisor of food/water advance while there is a
+valid chair session. Full portion: ten pulses, one each 105 tics, duration 1050 tics =
+30 s simulation to 35 Hz. Outside the chair 350 tics = 10 s are preserved. Fast advance
+uses the same rule. Menu pauses do not count as simulation. Food and water are not
+multiplied: the ration, dose per body mass, digestion and caps remain the same.
+Inventory, table and Box use the common effect; automatic repetition waits for it to
+end. A 3–9 partial counter from 0p continues without restarting the portion or spending
+another. Medicines retain its previous rhythm.
 
-SEATED_MEAL_TIC_DIVISOR = 3 es el único divisor del avance de comida/agua
-mientras existe una sesión válida de silla. Porción completa: diez pulsos,
-uno cada 105 tics, duración 1050 tics = 30 s de simulación a 35 Hz. Fuera de
-la silla se conservan 350 tics = 10 s. El avance rápido usa la misma regla.
-Las pausas del menú no cuentan como simulación. No se multiplica el alimento
-ni el agua: misma ración, misma dosis por masa, misma digestión y topes.
-Inventario, mesa y Caja utilizan el efecto común; la repetición automática
-espera a que termine. Un contador parcial 3–9 de 0p continúa sin reiniciar la
-porción ni gastar otra. Las medicinas conservan su ritmo anterior.
+Two-phase breathing in eight views; four-phase running and two-step walking where
+separate resources exist. AI callbacks retain their intervals and the stunning guards
+are repeated every two phases in the actors who already used that interval. Changing the
+drawing does not change Speed. New states go to the end of each class, preserving the
+indices of attack, death, crouching and rest from previous games. Domingo's old infinite
+idle state is reactivated on loading to allow breathing. Palomo uses rest when standing
+still, walking while wandering and running when departing or returning; emotions and
+conversations retain priority. RestSeated and RestLying expose the new poses to the
+controllers, without assigning a sleep routine to their agenda. Sitting/lying down stops
+their wandering.
 
-Respiración de dos fases en ocho vistas; carrera de cuatro fases y caminata
-de dos donde existen recursos separados. Los callbacks de IA conservan sus
-intervalos y las guardas de aturdimiento se repiten cada dos fases en los
-actores que ya usaban ese intervalo. Cambiar el dibujo no cambia Speed.
-Los estados nuevos van al final de cada clase, preservando los índices de
-ataques, muerte, agachado y descanso de partidas previas. El reposo infinito
-antiguo de Domingo se reactiva al cargar para permitir la respiración.
-Palomo usa reposo al estar inmóvil, caminata al deambular y carrera al regresar
-o retirarse; las emociones y conversaciones conservan prioridad. RestSeated
-y RestLying exponen las poses nuevas a los controladores, sin asignar una
-rutina de sueño a su agenda. Sentarse/acostarse detiene su deambulación.
+netevent ca_debug_rest_report identifies 4.35.0q and displays the current divisor.
 
-netevent ca_debug_rest_report identifica 4.35.0q y muestra el divisor vigente.
+## Reserves, controls and vehicles (4.35.0p)
 
-## Reservas, controles y vehículos (4.35.0p)
+Seat consumption: table priority → personal inventory → own magic box. Only FoodRation,
+WaterRation and container water; does not use medicine. Starting another portion is rejected while its regeneration remains active or the corresponding need is full. Supplies are consumed directly without removing the entire stack or requiring capacity to move it.
+Only an accepted use consumes a ration; Drink loses liters, preserves the container
+and restores InMagicBox before the final result persists. Access requires sitting and
+next to a valid table. Recovery is three times slower while seated from 0q with
+identical portion; digestion = hunger actually recovered / 4.
 
-Consumo sentado: prioridad mesa → inventario personal → Caja Mágica propia.
-Sólo FoodRation, WaterRation y agua de recipientes; no utiliza medicinas.
-Se rechaza iniciar otra porción si su regeneración sigue activa o la necesidad
-está completa. La reserva se consume directamente, sin retirar toda la pila
-ni exigir capacidad para moverla. Sólo un uso aceptado descuenta una ración;
-Drink descuenta litros, conserva el recipiente y restaura InMagicBox antes de
-persistir el resultado definitivo. El acceso requiere estar sentado y junto
-a una mesa válida. La recuperación es tres veces más lenta sentado desde 0q
-con idéntica porción; digestión = hambre realmente recuperada / 4.
+Q/B: cancel trip; detail → month → World; Q in World closes Journal. Escape/Start is
+left to the native menu and does not cancel those states. The release of +use is
+preserved so the button does not remain held. The console is still accessible.
 
-Q/B: cancelar viaje; detalle → mes → Mundo; Q en Mundo cierra el Diario.
-Escape/Start se deja al menú nativo y no cancela esos estados. Se conserva la
-liberación de +use para no dejar retenido el botón. La consola sigue accesible.
+MODE_FOOT=1 and MODE_CARAVAN=2 preserve saves and the old walking trial. MODE_CART=3 and
+MODE_SHIP=4 require a physical vehicle and only connections 10/11 (MAP06↔MAP07, 500 km).
+They do not authorize sailing to the sewers. Walking portals remain available. Walking
+speed and the 10 km MAP03↔MAP06 remain approved and unchanged.
 
-MODE_FOOT=1 y MODE_CARAVAN=2 conservan los guardados y el antiguo ensayo a pie.
-MODE_CART=3 y MODE_SHIP=4 requieren un vehículo físico y sólo conexiones 10/11
-(MAP06↔MAP07, 500 km). No autorizan navegar hacia las alcantarillas. Los portales
-a pie siguen disponibles. Velocidad de marcha a pie y los 10 km MAP03↔MAP06
-siguen aprobados y sin cambios.
+CaelumJourneyRules.CART_KMH=3; SHIP_KNOTS=5; KM_PER_NAUTICAL_MILE=1.852. Carriage: 1 050
+000 travel tics + 504 000 sleeping tics = 10 d 6 h 40 min. Ship: 340 173 sailing tics =
+approximately 2 d 5 h 59 min 45 s; 100 800 of those tics are sleep aboard (16 h). The
+screen rounds up to the minute: 2 d 6 h. The outside-world clock retains 6 300 tics/h of
+campaign time. Sleep aboard is distributed within each 16–24 h interval of the passenger
+cycle and allows a final partial rest. The ship also advances during those tics.
 
-CaelumJourneyRules.CART_KMH=3; SHIP_KNOTS=5; KM_PER_NAUTICAL_MILE=1.852.
-Carreta: 1 050 000 tics de marcha + 504 000 de sueño = 10 d 6 h 40 min.
-Barco: 340 173 tics de navegación = 2 d 5 h 59 min 45 s aproximadamente;
-100 800 de esos tics son sueño a bordo (16 h). La pantalla redondea hacia
-arriba al minuto: 2 d 6 h. El reloj exterior conserva 6 300 tics/h de campaña.
-El sueño a bordo se reparte en cada tramo 16–24 h del ciclo del pasajero y
-acepta un último descanso parcial. El barco avanza también en esos tics.
+The numerical forecast applies hunger, thirst, sleep, digestion, regeneration, lucidity,
+stunning and survival damage.The inventory and schedule are only modified when
+confirming. Sleep uses the player's sleeping bag if carried; otherwise, the ground/deck.
+The trip provisions are those carried outside the Box, as in 0n; the new access to the
+Box requested here corresponds to the table.
 
-La previsión numérica aplica hambre, sed, sueño, digestión, regeneración,
-lucidez, aturdimiento y daño de supervivencia. El inventario y la agenda sólo
-se modifican al confirmar. El sueño usa la bolsa propia si se lleva; sin ella,
-suelo/cubierta. Las provisiones del viaje son las llevadas fuera de la Caja,
-como en 0n; el nuevo acceso a la Caja solicitado aquí corresponde a la mesa.
+SourceVehicle links the quote to the specific actor. Confirmation revalidates its presence, map, type, distance, route, action blocks and reserves. If the
+forecast is changed materially, it is requested to review it again. Cancel, confirm or
+finish removes the link. The transition reuses departure/arrival records, inventory
+transaction and AdvanceTics from the existing agenda.
 
-SourceVehicle enlaza el presupuesto con el actor concreto. Al confirmar se
-revalida presencia, mapa, tipo, distancia, ruta, bloqueo de acciones y reservas.
-Si se cambió materialmente la previsión se pide revisarla de nuevo. Cancelar,
-confirmar o terminar elimina el enlace. La transición reutiliza registro de
-salida/llegada, transacción de inventario y AdvanceTics de la agenda existentes.
+CaelumVehicleWorld installs a rancho shelter and a cart in (-640,192,0) MAP06 and
+(-512,384,0) MAP07. The boats remain in (1536,768,-24) and (1280,1440,-24). The new dock
+of MAP07 focuses on (1120,1312,0); its cover connects with the sand and uses 4 MU bridge
+collisions, with a stop in Z=0. The rancho provides awning-type weather shelter and has
+three walls/roof with collision. The boarding sign visible on the dock receives Use at
+normal height. Repeated preparation/loading does not duplicate models, colliders or
+vehicles.
 
-CaelumVehicleWorld instala un rancho y una carreta en (-640,192,0) de MAP06 y
-(-512,384,0) de MAP07. Los barcos quedan en (1536,768,-24) y (1280,1440,-24).
-El muelle nuevo de MAP07 se centra en (1120,1312,0); su cubierta conecta con
-la arena y usa colisiones de puente de 4 MU, con tope en Z=0. El rancho aporta
-cobertura de tipo toldo al clima y tiene tres paredes/techo con colisión.
-El cartel de embarque visible sobre el muelle recibe Usar a altura normal.
-Preparación repetida/carga no duplica modelos, colliders ni vehículos.
+## Scheduled agenda and events (4.35.0o)
 
-## Agenda y eventos programados (4.35.0o)
+The calendar uses the civil campaign anchor, not the operating system clock or TrialDate
+of the debugger. TAB → World → F/RT. Arrow keys/D-pad: day; PgUp/PgDn or LB/RB: month;
+H/Home: today; E/R or Y/X: event of that day; Enter/A: detail; Q/B: return; TAB: close.
+In detail, P/RT pays debt or withdraw cargo. Navigation is local: it does not re-anchor,
+advance or pause the game clock.
 
-El calendario usa el anclaje civil de campaña, no el reloj del sistema operativo
-ni TrialDate del depurador. TAB → Mundo → F/RT. Flechas/D-pad: día; RePág/AvPág
-o LB/RB: mes; H/Inicio: hoy; E/R o Y/X: evento de ese día; Enter/A: detalle;
-Q/B: volver; TAB: cerrar. En detalle, P/RT paga deuda o retira carga.
-La navegación es local: no reancla, adelanta ni pausa el reloj del juego.
+CaelumScheduleState is a hidden, persistent Inventory between maps. It contains up to
+2048 series, with stable ID/key, type, localizable title, subject, map, initial date,
+minute interval, limit, counter and status. Keys prevent duplicate records. Zero
+interval is a unique event. Zero limit supports indefinite recurrence, up to the civil
+limit and the 2147483646 counter. Intervals accepted: up to 525600 minutes. Gregorian
+dates of years 1–9999. Each cell counts series, not a copy of each repetition within the
+day.
 
-CaelumScheduleState es un Inventory oculto, persistente entre mapas. Contiene
-hasta 2048 series, con id/clave estable, tipo, título localizable, sujeto, mapa,
-fecha inicial, intervalo en minutos, límite, contador y estado. Las claves
-impiden registros duplicados. Intervalo cero es un evento único. Límite cero
-admite recurrencia indefinida, hasta el límite civil y el contador de 2147483646.
-Intervalos aceptados: hasta 525600 minutos. Fechas gregorianas de años 1–9999.
-Cada celda cuenta series, no una copia de cada repetición dentro del día.
+CaelumWorldClock calls Sync after moving forward. The amount expired arithmetically per
+series is calculated and saved once; a cache of the next date avoids reviewing all
+series in each tic. Long jumps do not go through all occurrences. For routines/sieges
+the phase with last effective date is chosen, regardless of the order of registration;
+ties are resolved by the higher ID. The native inventory serializes objects, their
+progress and the load. There are no operating system tasks.
 
-CaelumWorldClock llama Sync después de avanzar. Se calcula la cantidad vencida
-aritméticamente por serie y se guarda una sola vez; un caché de la próxima fecha
-evita revisar todas las series en cada tic. Saltos largos no recorren todas las
-ocurrencias. Para rutinas/asedios se elige la fase con última fecha efectiva,
-independiente del orden de registro; empates por id mayor. El inventario nativo
-serializa los objetos, su progreso y la carga. No hay tareas de sistema operativo.
+0n trips keep your needs forecast and unique clock. The budget does not change the
+agenda. Confirmation credits deadlines crossed, and destination consults the final
+state. It does not physically execute armies or repeat inactive map routines. No event
+retroactively simulates looting, interception of cargoes or damage to the traveler:
+those consequences need your explicit contract on future systems.
 
-Los viajes de 0n conservan su presupuesto de necesidades y reloj único. El
-presupuesto no modifica la agenda. La confirmación acredita los vencimientos
-cruzados, y el destino consulta el estado final. No ejecuta físicamente ejércitos
-ni repite rutinas de mapas inactivos. Ningún evento simula retroactivamente
-saqueos, interceptaciones de cargas ni daño al viajero: esas consecuencias
-necesitan su contrato explícito en los sistemas futuros.
-
-| Tipo | Efecto conectado |
+| Type | Integrated effect |
 | --- | --- |
-| Asedio | Value > 0 activa la fase del sujeto/mapa; 0 la termina. Interrumpe descanso y aceleración, cierra sesión de taller conservando la tarea. La batalla completa no se genera automáticamente. |
-| Rutina | CaelumScheduledWorker adopta WorkSpot o RestSpot según la última fase; movimiento nativo, sin atravesar obstáculos. Al volver al mapa no reproduce los turnos perdidos. |
-| Alquiler | CaelumScheduleContracts.Rent registra valor en cobres, inicio y período. Cada vencimiento suma deuda. P paga toda la deuda con monedas/cambio reales y control de capacidad, sin débito automático, desalojo ni cerradura forzada. RentCurrent queda disponible para una futura condición de acceso. |
-| Envío | DispatchCargo retira unidades reales de CaelumMaterialPickup no encajadas ni vinculadas a misión del Limbo. Conserva tipo/nivel/cantidad/origen/destino. CollectCargo exige plazo, mapa correcto, capacidad e inventario válido; un fallo conserva la carga, un éxito marca Claimed antes de admitir otro retiro. No transporta equipo armado ni agrega fletes. |
-| Recurso | Al extraer un nodo natural registra su recuperación completa; otra extracción recalcula esa misma entrada. La capacidad y la fracción se conservan en el actor del hub. Cuenta el reloj transcurrido mientras su mapa está ausente. |
-| Misión | QuestDeadline vincula una misión secundaria activa definida. Al vencer, falla sólo si sus objetivos siguen incompletos; no quita una recompensa pendiente de objetivos ya alcanzados. |
-| Aviso | Fecha y estado consultables sin transacción ni consecuencia adicional. |
+| Siege | Value > 0 activates the subject/map phase; 0 completes it. Interrupts rest and acceleration, closes workshop session while retaining the task. The complete battle is not generated automatically. |
+| Routine | CaelumScheduledWorker adopts WorkSpot or RestSpot according to the last phase; native movement, without passing through obstacles. Upon return to the map it does not reproduce the lost turns. |
+| Rent | CaelumScheduleContracts.Rent records value in coppers, start and period. Each maturity adds debt. P pays all debt with real coins/change and capacity control, without automatic debit, eviction or forced lock. RentCurrent is available for a future access condition. |
+| Shipping | DispatchCargo withdraws actual CaelumMaterialPickup units outside the Box and not linked to a Limbo quest. It retains type/level/quantity/origin/destination. CollectCargo requires time, correct map, capacity and valid inventory; a failure retains cargo, a success sets Claimed before allowing another withdrawal. It does not transport assembled equipment or add freight charges. |
+| Resource | When extracting a natural node it records its complete recovery; another extraction recalculates that same input. Capacity and fraction are preserved in the hub actor. It counts the clock passed while its map is absent. |
+| Mission | QuestDeadline links a defined active secondary mission. On expiry, it fails only if its objectives remain incomplete; it does not remove a reward pending targets already achieved. |
+| Notice | Date and status available without transaction or additional consequence. |
 
-El pago prepara todo el cambio antes de modificar las monedas previas. Cobrar
-una serie pagada no vuelve a descontar. El envío no puede cancelarse dejando
-mercancía perdida; después de retirarlo conserva el historial, con saldo cero.
-Acciones de inventario sólo en un jugador vivo, libre de descanso, combate,
-conversación, comercio, fabricación y presupuesto abierto. La partida cooperativa
-no recibe contratos económicos compartidos en este bloque.
+The payment prepares all the change before modifying the previous coins. Collecting a
+paid series does not discount again. The shipment cannot be cancelled leaving lost
+merchandise; after withdrawing it retains the history, with zero balance. Inventory
+transactions require a living player, free of rest, combat, conversation, trade,
+manufacture and open budget. The cooperative game does not receive economic contracts
+shared in this block.
 
-La recuperación usa capacidad × 0,001 por día de campaña. Un nodo vacío tarda
-1000 días; uno al 90 % tarda 100 días en completarse. Es el ritmo existente,
-no un valor nuevo aprobado por el autor. El primer tic de un guardado antiguo
-inicializa su marca temporal sin otorgar años retroactivos. Su próxima extracción
-lo añade a la agenda. Una entrada por nodo informa mapa/material; no existe aún
-minimapa ni marcador de coordenadas. El historial de ciclos anteriores del mismo
-nodo se reemplaza al extraer de nuevo para no crear una entrada por golpe.
+Regeneration uses capacity × 0,001 per campaign day. An empty node takes 1000 days; one
+to 90 % takes 100 days to complete. It is the existing rhythm, not a new value approved
+by the author. The first tick of an old save initializes its time mark without granting
+retroactive years. Its next extraction adds it to the agenda. One entry per node informs
+map/material; there is no minimap or coordinate marker yet. The history of previous
+cycles of the same node is replaced when extracting again to not create an input per
+hit.
 
-Ensayos (fuera de MAP01, en un lugar despejado):
-- netevent ca_debug_events_trial: una sola alta, con encargado físico. Trabajo
-  +1 min y descanso +6 min, repetidos cada 24 h. Asedio +4 a +10 min. Alquiler
-  de 1 cobre a +8, +20 y +32 min (tres vencimientos, sin gasto automático).
-- netevent ca_debug_cargo_trial: despacha 100 unidades de madera nivel 1 que se
-  lleven fuera de la Caja. Desde MAP06 va a MAP07; desde otro exterior, a MAP06.
-  Demora 30 min. Cada orden es un envío distinto y consume existencias reales.
-- netevent ca_debug_events_report: versión 4.35.0o y registro de cada serie.
+Tests (outside MAP01 at a clear location): - netevent ca_debug_events_trial: one-time
+registration, with physical worker. Work +1 min and rest +6 min, repeated each 24 h.
+Siege +4 to +10 min. Rent 1 copper to +8, +20 and +32 min (three maturities, no
+automatic expense). - netevent ca_debug_cargo_trial: dispatches 100 units of level 1
+wood that are carried outside the Box. From MAP06 goes to MAP07; from another outside,
+to MAP06. Delays 30 min. Each order is a different shipment and consumes actual stocks.
+- netevent ca_debug_events_report: 4.35.0o version and registration of each series.
 
-Los ensayos no alteran las cuatro rutinas de la mansión ni inventan contratos
-canónicos. Se recomienda una copia de la partida para probarlos. Cancelación
-programática impide futuras repeticiones, conservando ocurrencias y deudas ya
-registradas. Eventos ocultos se ejecutan pero no aparecen en el calendario.
+The trials do not alter the four routines of the mansion or invent canonical contracts.
+A copy of the game is recommended to test them. Programmatic cancellation prevents
+future repetitions, keeping occurrences and debts already registered. Hidden events are
+executed but do not appear in the calendar.
 
-## Viajes con duración y provisiones (4.35.0n)
+## Travel with duration and provisions (4.35.0n)
 
-| Ruta | Conexiones | Distancia en cada dirección |
+| Route | Connections | Distance in each direction |
 | --- | --- | ---: |
-| MAP03 depósito ↔ MAP06 puerto | 8 / 9 | 10 km |
-| MAP06 puerto ↔ MAP07 costa | 10 / 11 | 500 km |
+| MAP03 reservoir ↔ MAP06 port | 8 / 9 | 10 km |
+| MAP06 port ↔ MAP07 coast | 10 / 11 | 500 km |
 
-CaelumJourneyRules calcula el desplazamiento sostenido nativo: entrada normal
-hacia delante × multiplicador efectivo × Speed × ORIG_FRICTION_FACTOR /
-(1 − ORIG_FRICTION). Incluye velocidad de inventario; usa suelo normal y cuerpo
-de pie. Se excluyen correr, diagonales, postura de combate y aceleración inicial.
-32 MU = 1 m; km/h = MU/tic × 35 × 3,6 / 32. La escala 20:1 del calendario no
-multiplica esa conversión física. Prueba con desplazamiento nativo a paso estable.
+CaelumJourneyRules calculates the native sustained displacement: normal forward input ×
+effective multiplier × Speed × ORIG_FRICTION_FACTOR / (1 − ORIG_FRICTION). Includes
+inventory speed; uses normal soil and standing body. Run, diagonals, combat posture and
+initial acceleration are excluded. 32 MU = 1 m; km/h = MU/tic × 35 × 3,6 / 32. The
+calendar's 20:1 scale does not multiply that physical conversion. Test with native
+displacement at a steady walking pace.
 
-El ritmo capturado al salir queda fijo para el presupuesto. La pérdida de peso
-por comer y las fluctuaciones de reservas no vuelven a resolver la velocidad
-durante esa misma ruta. Se usa el estado actual para el viaje siguiente.
-Horas de marcha = km / km/h; se redondea hacia arriba al tic del reloj exterior.
-Número de noches = (tics de marcha − 1) / (16 × tics por hora), división entera.
-Cada noche agrega 8 horas; la última llegada no añade sueño gratuito.
-Ejemplo a 5 km/h: 10 km = 2 horas; 500 km = 100 + 48 = 148 horas.
+The speed captured on departure is fixed for the forecast. Weight lost by eating and
+reserve fluctuations do not solve the speed again during that same route. The current
+state is used for the next trip. Travel hours = km / km/h; is rounded up to the tic of
+the outer clock. Number of nights = (travel tics − 1) / (16 × tics per hour), whole
+division. Each night adds 8 hours; the last arrival does not add free sleep. Example to
+5 km/h: 10 km = 2 hours; 500 km = 100 + 48 = 148 hours.
 
-Usar un acceso medido abre CaelumJourneyPlan. La UI sólo lee datos guardados;
-Enter/A envía ca_journey_confirm, Q/B ca_journey_cancel. La consulta no muta
-necesidades, pertenencias ni reloj. Mientras se lee sigue la simulación ordinaria,
-con acciones/movimiento bloqueados como en las otras interfaces del personaje.
-Confirmar valida contexto, mapa, proximidad, perfil, inventario y condiciones;
-recalcula y exige revisión si cambia el tiempo, gasto, existencias o riesgo mortal.
-No se cobra al cancelar, actualizar, volver a pulsar Enter ni cargar un guardado.
+Using a measured access opens CaelumJourneyPlan. The UI only reads saved data; Enter/A
+sends ca_journey_confirm, Q/B ca_journey_cancel. The query does not change needs,
+belongings or clock. While reading it follows the ordinary simulation, with
+actions/movement blocked as in the other interfaces of the character. Confirm valid
+context, map, proximity, profile, inventory and conditions; recalculates and requires
+revision if time, expense, inventory or mortal risk changes. It is not charged when
+cancelling, updating, re-clicking Enter or loading a save.
 
-CaelumJourneyModel copia valores numéricos y recorre pasos de un tic. El modelo
-Needed usa raciones ilimitadas para calcular lo necesario sin agua de recipientes;
-Available usa las existencias reales. Tiene en cuenta gasto pasivo por masa y
-Constitución, sueño por Resiliencia, diez pulsos por porción, digestión real /4,
-regeneración natural de Salud/Aire con sus costes, daño de reservas críticas,
-Ánima, Adrenalina y Lucidez. Dormir drena 10 Lucidez/s, sin recuperación de ésta,
-y recupera Sueño en 8 horas; aturdirse por Lucidez no interrumpe el campamento.
-Los temporizadores personales compatibles avanzan por el mismo intervalo.
+CaelumJourneyModel copies numerical values and goes through steps of a tic. The Needed
+model uses unlimited rations to calculate what is necessary without container water;
+Available uses actual stocks. It accounts for passive consumption by body mass and
+Constitution, sleep per Resilience, ten pulses per serving, real digestion /4, natural
+regeneration of Health/Air with its costs, critical reserve damage, Anima, Adrenaline
+and Lucidity. Sleeping drains 10 Lucidity/s, without recovery from it, and recovers
+Sleep in 8 hours; stunned by Lucidity does not interrupt camping. Compatible personal
+timers advance by the same interval.
 
-Comienza una porción cuando cabe su aporte sin sobrepasar 100. Durante el sueño
-no comienza otra; una porción ya empezada termina sus pulsos. El aporte por ración
-es 800/masa. Raciones de agua primero; luego sorbos de hasta masa/500 litros de
-recipientes, con diez pulsos proporcionales al volumen real. El recipiente vacío
-se conserva. Caja y suministros sobre mesas ajenas al inventario no participan.
-Bolsa propia fuera de Caja aplica comodidad 3 durante la noche; suelo aplica 1.
-No se añaden camas ni beneficios de estar sentado a la marcha.
+A portion begins when it fits its contribution without exceeding 100. During sleep no
+other begins; a portion already begun ends its pulses. The ration contribution is
+800/masa. Water rations first; then sips up to masa/500 liters of containers, with ten
+pulses proportional to the actual volume. The empty container is preserved. Box and
+supplies on tables outside the inventory do not participate. A sleeping bag outside the
+Box applies comfort 3 during the night; floor applies 1. No beds or seated benefits are
+added while travelling.
 
-Apply descuenta objetos/litros, conserva porciones incompletas como Powerup
-nativo, aplica reservas y temporizadores finales y suma el intervalo con
-CaelumWorldClock.AdvanceTics. El calendario y el clima consultan esa misma fecha;
-no se cambia la semilla. CaelumJourneyState registra km, km/h, tics reales de
-marcha/sueño y provisiones consumidas, además de salida/llegada existentes.
-Los campos nuevos parten en cero en registros viejos, sin inventar gastos pasados.
+Apply deducts items/liters, retains incomplete portions as native Powerup, applies
+reserves and final timers and adds the interval with CaelumWorldClock.AdvanceTics. The
+calendar and weather consult that same date; does not change the seed.
+CaelumJourneyState records km, km/h, actual travel/sleep tics and consumed supplies, in
+addition to existing departure/arrival data. New fields start at zero in old records,
+without inventing past expenses.
 
-Si faltan provisiones se presenta la llegada prevista con sus consecuencias.
-Si moriría antes, se muestra riesgo mortal y momento estimado; confirmar consume
-sólo hasta la muerte, usa Die nativo y deja el viaje interrumpido en origen.
-No hay llegada ni crédito del destino. La ejecución es una transición atómica;
-se puede guardar el presupuesto o la llegada, no una posición ficticia a mitad
-de un trayecto. El plan vuelve a validarse tras cargarlo.
+If provisions are missing, the expected arrival with its consequences is presented. If
+death would occur first, it shows the lethal risk and estimated time; confirm consumes
+only until death, uses native Die and leaves the trip interrupted in origin. There is no
+arrival or credit of destination. Execution is an atomic transition; you can save the
+budget or arrival, not a fictitious position in the middle of a journey. The plan is
+revalidated after loading.
 
-El planificador admite hasta 30 días de marcha por ruta; rechaza explícitamente
-mayores duraciones. Exige suelo seco, un jugador, sin combate, inmovilización,
-trabajo, descanso, conversación, efectos elementales o Powerup activos. No borra
-un efecto por viajar: pide esperar su final. Caravana diagnóstica comparte marcha;
-no hay velocidad de vehículo inventada. Rutas locales previas siguen sin medida.
-No hay replay de IA, terreno intermedio ni incidentes. Los eventos narrativos
-programados siguen pendientes de definición e integración explícita.
+The planner supports up to 30 days of walking per route; it explicitly rejects longer
+durations. It requires dry ground, a player, without combat, immobilization, work, rest,
+conversation, elemental effects or active Powerup. It does not erase an effect by
+traveling: it asks to wait for its end. The diagnostic Caravan uses walking speed; there
+is no invented vehicle speed. Previous local routes remain without measure. There is no
+AI replay, intermediate terrain or incidents. The scheduled narrative events remain open
+to definition and explicit integration.
 
-## Comida por masa y extensión ribereña (4.35.0m)
+## Food by body mass and riverside expansion (4.35.0m)
 
-Referencia común RATION_REFERENCE_MASS = 80 kg, cuerpo M base. Porción de
-comida de 0,10 kg: 800/masa puntos de Hambre; ración de agua de 0,16 L/kg:
-800/masa puntos de Sed. El talle de ropa no sustituye la masa corporal real.
+Common Reference RATION_REFERENCE_MASS = 80 kg, body M base. Food portion of 0,10 kg:
+800/masa Hunger points; water ration of 0,16 L/kg: 800/masa Thirst points. The clothing
+size does not replace the actual body mass.
 
-| Masa corporal | Hambre por comida | Sed por agua | Sueño perdido al comer completo |
+| Body mass | Hunger restored by food | Thirst restored by water | Sleep lost after a full portion |
 | ---: | ---: | ---: | ---: |
-| 50 kg | 16 puntos | 16 puntos | 4 puntos |
-| 80 kg | 10 puntos | 10 puntos | 2,5 puntos |
-| 100 kg | 8 puntos | 8 puntos | 2 puntos |
-| 200 kg | 4 puntos | 4 puntos | 1 punto |
+| 50 kg | 16 points | 16 points | 4 points |
+| 80 kg | 10 points | 10 points | 2,5 points |
+| 100 kg | 8 points | 8 points | 2 points |
+| 200 kg | 4 points | 4 points | 1 point |
 
-Los valores suponen déficit suficiente; Hambre/Sed se limitan a 100 y Sueño a
-0. Digestión depende del incremento real. El gasto pasivo y por regeneración
-sigue descontándose durante la comida, por lo que el HUD neto puede subir menos.
-No depende del peso del inventario, ropa ni de tener raciones adicionales.
+The values represent sufficient deficit; Hunger/Thirst are limited to 100 and Sleep to
+0. Digestion depends on the actual increase. Passive and regeneration spending continues
+to be discounted during the meal, so net HUD can go up less. It does not depend on the
+weight of inventory, clothing or having additional rations.
 
-CaelumRegenerationPower serializa FoodRecoveryPerPulse al aceptar el uso nativo.
-Cada pulso recupera 80/masa; la dosis queda fija hasta terminar o refrescar
-explícitamente la porción. El campo ausente/cero de efectos antiguos conserva
-un punto por pulso. No se recalcula una comida antigua al cargar ni se consume
-otra unidad para migrarla. Se conserva el acumulador parcial sentado y los
-diez pulsos en 10/30 segundos de simulación. Inventario, mesa y x105 comparten
-la misma aplicación de hambre/digestión; la repetición espera el efecto vigente.
+CaelumRegenerationPower serializes FoodRecoveryPerPulse when accepting native use. Each
+pulse recovers 80/masa; the dose is fixed until the portion is explicitly finished or
+refreshed. A missing/zero field in old effects retains one point per pulse. Loading does
+not recalculate an old meal or consume another unit for migration. The partial
+accumulator is retained sitting and the ten pulses in 10/30 simulation seconds.
+Inventory, table and x105 share the same hunger/digestion behavior; the repetition
+expects the current effect.
 
-### Identidades y rutas
+### Identities and routes
 
-| Conexión | Origen → destino | Acceso en el origen (MU) |
+| Connection | Origin → destination | Access at source (MU) |
 | ---: | --- | --- |
-| 8 | MAP03 → MAP06 | (0, 3424, 0), extremo norte del depósito |
-| 9 | MAP06 → MAP03 | (0, 96, 0), entrada sur del puerto |
-| 10 | MAP06 → MAP07 | (0, 2080, 0), extremo norte del paseo |
-| 11 | MAP07 → MAP06 | (0, 96, 0), entrada sur de la costa |
+| 8 | MAP03 → MAP06 | (0, 3424, 0), north end of the reservoir |
+| 9 | MAP06 → MAP03 | (0, 96, 0), southern port entrance |
+| 10 | MAP06 → MAP07 | (0, 2080, 0), north end of the promenade |
+| 11 | MAP07 → MAP06 | (0, 96, 0), south coast entrance |
 
-Ubicaciones 6/7 amplían el catálogo sin cambiar IDs anteriores ni sus arrays de
-32 posiciones. El nombre histórico IsSewerConnection incluye toda esta red.
-SewerNetworkRevision=1 prepara las rutas nuevas una vez en snapshots anteriores;
-PrepareWorld comprueba identidad de puerta antes de añadir otra. No se cambia
-la geometría WAD de MAP01–05. Los mapas nuevos pertenecen al hub 434.
+Locations 6/7 expand the catalog without changing previous IDs or their 32 arrays
+positions. The historical name IsSewerConnection includes this entire network.
+SewerNetworkRevision=1 prepares new routes once in previous snapshots; PrepareWorld
+checks door identity before adding another. The WAD geometry of MAP01–05 is not changed.
+New maps belong to the 434 hub.
 
-Los viajes conservan sus guardas de ocupación, estado, inventario, ruta y
-jugador único. Las salidas peatonales usan Use nativo. Las conversaciones de
-caravana 43411/43414/43415 ofrecen los destinos correspondientes con confirmación.
-Sigue sin asignarse duración ficticia ni tarifa a los traslados. Llegada y salida
-se registran con el reloj común; no se crea una ruta hacia la mansión.
+Travel retains its occupancy, state, inventory, route and single-player checks. The
+pedestrian exits use Native Use. 43411/43414/43415 caravan conversations offer the
+corresponding destinations with confirmation. No fictitious duration or transfer fee is
+still assigned. Arrival and departure are recorded with the common clock; no route to
+the mansion is created.
 
-Ambos mapas llevan CaelumClimateRegion, arg0=1/arg1=0: Buenos Aires, superficie.
-El catálogo también conoce ese hábitat. Techos sólidos de 24 MU y agua sumergible
-usan Sector_Set3dFloor nativo; el agua no tiene user_ca_potable_water. La costa
-ofrece peldaños de 16 MU para salir del río. Los materiales acuáticos son estáticos.
+Both maps carry CaelumClimateRegion, arg0=1/arg1=0: Buenos Aires, surface. The catalog
+also knows that habitat. Solid roofs of 24 MU and submersible water use native
+Sector_Set3dFloor; water does not have user_ca_potable_water. The coast offers 16 MU
+rungs to get out of the river. Water materials are static.
 
-Mesas pequeñas: slot 601 en (-800,800,0), depósito del puerto; slot 701 en
-(-256,1280,0), refugio costero. Cada una tiene dos sillas y cuatro pertenencias.
-Sus zonas seguras permiten T sólo durante descanso válido; levantarse corta x105.
-No se agregan objetos de consumo gratis ni NPC de misión. La caravana sigue
-siendo una interfaz opcional de diagnóstico, no un transporte narrativo nuevo.
+Small tables: 601 slot in (-800,800,0), port warehouse; 701 slot in (-256,1280,0),
+coastal shelter. Each has two chairs and four belongings. Its safe areas allow T only
+during valid rest; standing up stops x105. No free consumer objects or mission NPCs are
+added. The caravan remains an optional diagnostic interface, not a new narrative
+transport.
 
-El Diario reduce el paso entre filas de visitas de 12 a 9 cuando hay más de
-cinco, dejando las siete dentro de y=220..274 y el último viaje en y=286.
+The Journal reduces the passage between rows of visits from 12 to 9 when there are more
+than five, leaving the seven within y=220..274 and the last trip in y=286.
 
-## Clima regional, refugio, agua y sillas (4.35.0l)
+## Regional climate, shelter, water and chairs (4.35.0l)
 
-Sustituye los perfiles numéricos de ensayo de 0k. El autor aprueba 0j/0k.
-La temperatura publicada es del aire; HR es humedad relativa, no humedad de la
-ropa ni sensación térmica. Viento en km/h, dirección de procedencia (0=N/90=E),
-precipitación en mm/h de agua equivalente. No se añade daño ni ajuste corporal.
+Replaces the numeric test profiles of 0k. Author approves 0j/0k. The reported
+temperature is air temperature; HR is relative humidity, not humidity of clothing or
+thermal sensation. Wind in km/h, direction of origin (0=N/90=E), precipitation in mm/h
+of equivalent water. No body damage or adjustment is added.
 
-### Datos contemporáneos y referencia geográfica
+### Contemporary data and geographical reference
 
-Fuente: [SMN, Estadísticas Climatológicas Normales 1991–2020 (2023)](https://repositorio.smn.gob.ar/handle/20.500.12160/2506),
-847 pp., CC BY 2.5 Argentina. Velocidad de viento: subserie 2011–2020 de la misma
-publicación. La transcripción de datos numéricos, páginas y unidades está en
-assets/climate/smn_1991_2020.json; generate_climate_normals.py produce el ZScript
-incluido, sin descarga ni dependencia de Python durante la partida.
+Source: [SMN, Normal Climate Statistics 1991–2020
+(2023)](https://repositorio.smn.gob.ar/handle/20.500.12160/2506), 847 pp., CC BY 2.5
+Argentina. Wind speed: 2011–2020 subseries of the same publication. The transcription of
+numerical data, pages and units is in assets/climate/smn_1991_2020.json;
+generate_climate_normals.py produces the included ZScript, without downloading anything
+or depending on Python at runtime.
 
-Se incorporan los doce valores mensuales de temperatura media, máxima media,
-mínima media, HR media, precipitación mensual, días con ≥0,1 mm, nubosidad en
-octavos y rapidez media del viento. Los valores son climatología moderna de
-referencia, no datos diarios de 1889 ni un pronóstico actual.
+The twelve monthly values of average temperature, mean maximum, mean minimum, mean HR,
+monthly precipitation, days with ≥0,1 mm, cloud cover in oktas and average wind speed
+are incorporated. The values are modern climate reference, not daily 1889 data nor a
+current forecast.
 
-| ID | Estación de referencia | Región representada | T media enero / julio | HR enero / julio |
+| ID | Reference station | Region represented | Mean temperature January / July | RH January / July |
 | ---: | --- | --- | ---: | ---: |
-| 1 | Buenos Aires Observatorio | Pampa húmeda | 24.9 / 11.0 °C | 64.6 / 77.0% |
-| 2 | Córdoba Aero | Centro | 23.5 / 9.8 °C | 68.1 / 63.5% |
+| 1 | Buenos Aires Observatorio | Humid Pampas | 24.9 / 11.0 °C | 64.6 / 77.0% |
+| 2 | Córdoba Aero | Central region | 23.5 / 9.8 °C | 68.1 / 63.5% |
 | 3 | San Rafael Aero | Cuyo | 23.8 / 6.8 °C | 50.0 / 60.4% |
-| 4 | Salta Aero | NOA, valles | 21.5 / 10.1 °C | 77.2 / 69.3% |
+| 4 | Salta Aero | NOA, valleys | 21.5 / 10.1 °C | 77.2 / 69.3% |
 | 5 | Posadas Aero | NEA | 27.2 / 16.3 °C | 68.1 / 73.9% |
-| 6 | Trelew Aero | Patagonia, meseta | 21.6 / 5.9 °C | 42.1 / 66.3% |
-| 7 | Bariloche Aero | Patagonia andina | 15.4 / 2.1 °C | 51.9 / 78.0% |
+| 6 | Trelew Aero | Patagonia, plateau | 21.6 / 5.9 °C | 42.1 / 66.3% |
+| 7 | Bariloche Aero | Andean Patagonia | 15.4 / 2.1 °C | 51.9 / 78.0% |
 | 8 | La Quiaca Observatorio | Puna | 13.2 / 4.5 °C | 62.6 / 25.7% |
-| 9 | Río Gallegos Aero | Patagonia austral | 13.6 / 1.5 °C | 51.9 / 77.7% |
+| 9 | Río Gallegos Aero | Southern Patagonia | 13.6 / 1.5 °C | 51.9 / 77.7% |
 
-Las estaciones son referencias locales; no se aplica una sola media a toda
-Argentina ni se presupone que una estación cubra cada altura de su región.
-MAP02/MAP04 conservan hábitat de alcantarilla; MAP03, reservorio; MAP05, galería.
-La ubicación de los cuatro y los mapas siguientes queda confirmada por el autor
-en Buenos Aires (0m): usan región 1. MAP06–07 incorporan hábitat de superficie. MAP01 conserva 20 °C/55% y ausencia de viento/precipitación.
+The stations are local references; not a single average is applied to all of Argentina,
+nor is it assumed that a station covers each height of its region. MAP02/MAP04 conserves
+sewer habitat; MAP03, reservoir; MAP05, gallery. The location of the four and the
+following maps is confirmed by the author in Buenos Aires (0m): use 1 region. MAP06–07
+incorporate surface habitat. MAP01 retains 20 °C/55% and absence of wind/precipitation.
 
-CaelumClimateRegion (DoomEdNum 30950) permite un marcador por mapa: arg0 = ID de
-región 1..9; arg1 = 0 para superficie, 2 alcantarilla, 3 reservorio, 4 galería.
-La cobertura se resuelve en cada posición. El Limbo prevalece sobre marcadores.
-Un mapa desconocido sin marcador, o con región inválida, muestra perfil ausente;
-no hereda valores de la última ubicación. No se modifica ningún WAD publicado.
+CaelumClimateRegion (DoomEdNum 30950) allows a marker per map: arg0 = Region ID 1..9;
+arg1 = 0 for surface, 2 sewer, 3 reservoir, 4 gallery. Coverage is resolved in each
+position. Limbo prevails over markers. An unknown map without marker, or with invalid
+region, shows missing profile; it does not inherit values from the last location. No
+published WAD is modified.
 
-### Síntesis temporal
+### Temporal synthesis
 
-Se interpolan los normales entre centros de meses usando longitudes reales y
-años bisiestos. Fecha/hora de campaña, región y semilla determinan cada muestra.
-El ciclo térmico diario aproxima amanecer por latitud/época y mediodía solar por
-longitud, usando reloj civil argentino UTC-3; máximo cerca del mediodía solar+3 h.
-Mínimas y máximas mensuales escalan el ciclo. No cambia iluminación del mapa.
+Normals are interpolated between centers of months using real lengths and leap years.
+Campaign date/time, region and seed determine each sample. Daily thermal cycle
+approaches sunrise by latitude/time of year and solar noon by longitude, using Argentine
+civil clock UTC-3; maximum near solar noon+3 h. Minimum and monthly maximums scale the
+cycle. It does not change map lighting.
 
-Frentes de seis horas interpolados con f²(3−2f) añaden anomalía térmica ±6 °C y
-variación de humedad/nubosidad. Los días húmedos se sortean de forma determinista
-según días lluviosos/longitud del mes. Cada episodio dura 6..12 h, centrado entre
-06..18 h, con campana coseno y volumen ligado a mm mensuales/días húmedos; tiene
-intensidad variable 0,5..1,5 del valor de referencia. Empieza/termina sin salto y
-vale cero al llegar a medianoche. No reproduce una tormenta histórica concreta.
+Six-hour fronts interpolated with f²(3−2f) add thermal anomalies of ±6 °C and
+humidity/cloud-cover variation. Wet days are chosen deterministically from rainy
+days/month length. Each episode lasts 6..12 h, centered between 06..18 h, with a cosine
+bell and volume linked to monthly mm/wet days; intensity varies by 0,5..1,5 of the
+reference value. It starts/ends without a jump and reaches zero at midnight. It does not
+reproduce a specific historical storm.
 
-La nubosidad reduce la amplitud térmica; precipitación activa enfría hasta 2,5 °C
-y aproxima HR a 95..100%. El vapor inicial usa HR mensual y temperatura media,
-modulados por frente. Se calcula HR = 100·e/es(T), limitada a 0..100, con
-es(T)=6,11·10^(7,5·T/(237,3+T)) hPa según [NWS, Vapor Pressure](https://www.weather.gov/media/epz/wxcalc/vaporPressure.pdf).
-La rapidez del viento parte de su normal mensual; se interpolan vectores para
-cruzar el norte sin saltos. Las direcciones son sintéticas, con componente oeste
-en referencias patagónicas 6/7/9; no se presentan como una rosa observada.
+Cloud cover reduces thermal amplitude; active precipitation cools by up to 2,5 °C and
+brings HR toward 95..100%. Initial vapor uses monthly HR and mean temperature, modulated
+by the front. HR = 100·e/es(T), limited to 0..100, with es(T)=6,11·10^(7,5·T/(237,3+T))
+hPa according to [NWS, Vapor
+Pressure](https://www.weather.gov/media/epz/wxcalc/vaporPressure.pdf). Wind speed starts
+from its monthly normal; vectors are interpolated to cross north without
+discontinuities. Directions are synthetic, with a western component in Patagonian
+references 6/7/9; they are not presented as an observed wind rose.
 
-Estos factores son un modelo jugable anclado a observaciones, no un simulador
-meteorológico validado ni garantía de reproducir exactamente cada media mensual.
-No modela acumulación de nieve, granizo, inundación o partículas todavía. Las
-inclemencias representadas son frentes, nubosidad, viento y precipitación.
+These factors are a playable model anchored to observations, not a validated weather
+simulator or guarantee to reproduce exactly every monthly average. It does not model
+accumulation of snow, hail, flood or particles yet. The weather phenomena represented
+are fronts, cloudiness, wind and precipitation.
 
-### Techado y microclima local
+### Shelter and local microclimate
 
-Una traza vertical desde el cuerpo ignora actores y cielos (TRF_NOSKY), pero
-respeta techos, pendientes, muros y pisos 3D. Sin techo: exterior. En hábitats
-2..4, techo implica subsuelo. En superficie se consultan cuatro rayos cardinales
-de 1024 MU (32 m); tres o cuatro cerrados implican interior y el resto, techado
-abierto. Es una aproximación geométrica, no una simulación de ventilación.
+A vertical trace from the body ignores actors and skies (TRF_NOSKY), but respects roofs,
+slopes, walls and floors 3D. No roof: exterior. In habitats 2..4, a roof implies an
+underground location. On the surface four cardinal rays of 1024 MU (32 m) are consulted;
+three or four blocked rays indicate an interior; otherwise, open shelter. It is a
+geometric approach, not a ventilation simulation.
 
-| Cobertura | Temperatura del aire | Viento | Precipitación directa |
+| Shelter | Air temperature | Wind | Direct precipitation |
 | --- | --- | ---: | ---: |
-| Exterior | Muestra regional completa | 100% | Regional |
-| Techado abierto | Media mensual + 95% de la desviación exterior | 65% | 0 |
-| Interior | Media mensual + 45% de la desviación exterior | 10% | 0 |
-| Subsuelo | Media anual + 15% de anomalía mensual con retraso de 30 días + 5% de anomalía exterior | 0 | 0 |
+| Outdoors | Full regional sample | 100% | Regional |
+| Open shelter | Monthly average + 95% of the external deviation | 65% | 0 |
+| Interior | Monthly average + 45% of the external deviation | 10% | 0 |
+| Underground | Annual average + 15% monthly anomaly with delay of 30 days + 5% external anomaly | 0 | 0 |
 | Limbo | 20 °C | 0 | 0 |
 
-Techado abierto/interior conservan presión de vapor al cambiar temperatura:
-HR puede subir o bajar; el techo no elimina mágicamente vapor del aire. En
-subsuelo, el intercambio con superficies húmedas aproxima HR al menos a 95%,
-con mezcla 65% para alcantarillas, 85% para reservorio y 25% para mantenimiento.
-Son coeficientes de ambiente, no un balance de energía/materiales del edificio.
-El viento no resta grados a la temperatura del aire como si fuese sensación térmica.
+Open shelter/interior retains vapor pressure when changing temperature: HR can go up or
+down; the roof does not magically remove vapor from the air. In the subsoil, the
+exchange with wet surfaces approaches HR at least to 95%, with 65% mix for sewers, 85%
+for reservoir and 25% for maintenance. They are ambient coefficients, not an
+energy/material balance of the building. The wind does not subtract degrees from the air
+temperature as if it were a thermal sensation.
 
-### Estado, guardados y consultas
+### Status, saves and consultations
 
-CaelumWeatherState conserva Seed, región, hábitat, cobertura, SourceMap,
-SampleDate/Minute, posición y dos muestras reutilizadas: Outside y Current.
-La región se resuelve desde catálogo o marcador; el marcador se busca como
-máximo una vez por segundo nativo, o al cambiar mapa/revisión. El exterior se
-recalcula por minuto de juego. La cobertura se actualiza al moverse y al menos
-una vez por segundo nativo estando quieto, para responder a geometría móvil.
-Cada cambio reaplica el microclima desde Outside, sin acumular atenuaciones.
+CaelumWeatherState retains Seed, region, habitat, coverage, SourceMap,
+SampleDate/Minute, position and two reused samples: Outside and Current. The region is
+resolved from catalog or marker; the marker is searched for at most once per native
+second, or when changing map/revision. The outside is recalculated per minute of play.
+Coverage is updated when moving and at least once per native second while stationary, to
+respond to mobile geometry. Each change reapplies the microclimate from Outside, without
+accumulating attenuations.
 
-La revisión 2 migra 0k conservando semilla, fecha, objetos y progreso. La misma
-fecha/semilla produce el mismo exterior con reloj normal, x105 o regreso de un
-viaje; no se usa tiempo offline. Sigue el adaptador de reloj de 0k. Fechas de
-prueba no alteran campaña. Consultas inválidas limpian valores, con Available=false.
+Revision 2 migrates 0k keeping seed, date, objects and progress. The same date/seed
+produces the same exterior with normal clock, x105 or return from a journey; no offline
+time is used. The 0k clock adapter is retained. Test dates do not alter campaign.
+Invalid queries clear values, with Available=false.
 
     netevent ca_debug_weather_report
     netevent ca_debug_weather_sample PERFIL DIAS_RELATIVOS HORA
     netevent ca_debug_climate_sample REGION DIAS_RELATIVOS HORA
 
-report muestra datos locales y exteriores. weather_sample mantiene perfiles
-1..5 de compatibilidad, con referencia regional 1; climate_sample acepta 1..9 y
-muestra exterior y tres coberturas sin mover al jugador ni cambiar campaña.
-Hora 0..23; fecha dentro de años 1..9999. Diario > Mundo informa región y cobertura.
+report displays local and external data. weather_sample maintains compatibility with profiles 1..5, with regional reference 1; climate_sample accepts 1..9 and displays
+external and three coverages without moving the player or changing campaign. Hour:
+0..23; date within years 1..9999. Journal > World reports region and coverage.
 
-### Agua por volumen y reparación de sillas
+### Water by volume and chair repair
 
-Ración de agua = 0,16 L = 0,16 kg, con aproximación de densidad de 1 kg/L. Se
-usa masa base tier 5: 80 kg, talle corporal central 4 compatible con ropa M.
-Talle de ropa M abarca varias masas: se conserva recuperación proporcional al
-cuerpo, 800/masa puntos de Sed por ración (80 kg → 10; 100 kg → 8).
-Diez pulsos, cada uno 80/masa; sentado se distribuyen en 100 s de simulación y
-de pie en 10 s. Un guardado con porción ya iniciada conserva su dosis previa.
-Recipientes conservan litros efectivos y tara; comida mantiene 0,10 kg/dosis.
-La regla común alimenta peso nativo, carga, Caja y comprobación de compra.
+Water ration = 0,16 L = 0,16 kg, approximating density as 1 kg/L. Tier 5 base mass is
+used: 80 kg, central body size 4 compatible with M clothing. Clothing size M covers
+several masses: recovery remains proportional to the body, 800/masa Thirst points per
+ration (80 kg → 10; 100 kg → 8). Ten pulses, each 80/masa; while seated they are
+distributed over 100 s of simulation, and standing over 10 s. A save with an
+already-started serving retains its previous dose. Containers retain actual liters and
+tare; food retains 0,10 kg/dose. The shared rule supplies native weight, load, Box and
+purchase checks.
 
-Mesas 102/104: (1072, ±480, 136), ángulo 0°. Sillas en X=988 y 1156, Y=±480,
-Z=136. Camas continúan (944, ±392, 136). La revisión persistente de la mansión
-reintenta hasta que las sesiones ocupadas terminen; mueve las mismas instancias
-y recupera sillas faltantes. Verificación incluye línea visual sin paredes,
-entrada nativa en ambas plazas, guardado/carga y conservación de contenido.
+102/104 Tables: (1072, ±480, 136), angle 0°. Chairs in X=988 and 1156, Y=±480, Z=136.
+Beds continue (944, ±392, 136). The persistent mansion revision retries until occupied
+sessions end; moves the same instances and recovers missing chairs. Verification
+includes a line of sight unobstructed by walls, native entry into both seats, save/load
+and preservation of content.
 
-## Reglas vigentes de tiempo, consumo, Use y áreas (4.35.0j)
+## Current Time, Consumption, Use and Area Rules (4.35.0j)
 
-Esta sección sustituye los valores anteriores de reloj del Limbo, consumo
-sentado, tamaño de estaciones y radio de Sueño. Las secciones por versión
-posteriores en el documento conservan el contexto de cada incorporación.
+This section replaces the previous Limbo clock values, sitting consumption, station size
+and Sleep radius. The sections by later version in the document retain the context of
+each addition.
 
-### Tiempo local y sueño
+### Local time and sleep
 
-SecondsPerGameHour devuelve 3600 en Limbo y 180 fuera. El reloj conserva su
-unidad previa de 6300 tics por hora; LimboSubTics guarda el resto entero 0..19
-entre pasos. Así, 126000 pasos personales son una hora de Limbo y 6300 son una
-hora exterior. Guardar, cargar o cambiar de mapa conserva el resto; no cambia
-el ancla de campaña 03/11/1889 09:00 ni reconstruye tiempo antes congelado.
-Sólo cuenta simulación activa, sin sincronizar con el reloj del sistema ni
-recuperar tiempo con el juego cerrado. Escape conserva la pausa nativa.
+SecondsPerGameHour returns 3600 in Limbo and 180 out. The clock retains its previous
+unit of 6300 tics per hour; LimboSubTics saves the integer remainder 0..19 between
+steps. Thus, 126000 personal steps are one hour of Limbo and 6300 are an outside hour.
+Save, load or change map retains the remainder; does not change the campaign anchor of
+03/11/1889 09:00 nor reconstruct previously frozen time. It counts only active
+simulation, without synchronizing with the system clock or recovering time while the
+game was closed. Escape retains native pause.
 
-El gasto de necesidades por hora, la recuperación al dormir y la regeneración
-diaria de recursos ambientales usan la hora local. Sueño recupera 100 puntos
-en 8 horas de juego, valor confirmado: 8 horas reales en Limbo o 24 minutos
-reales afuera a velocidad normal. Comodidad no multiplica esta recuperación.
-Los efectos expresados por segundo conservan sus segundos de simulación:
-dormir drena 10 Lucidez/s sin regeneración; el aturdimiento no despierta.
-Costes, reutilización de habilidades, consumibles y fabricación no se convierten
-en horas. T x105 aplica la misma escala local por subpaso y las guardas previas.
-MAP01 mantiene muebles sin duración; suelo/bolsa temporizados siguen afuera.
+The cost of hourly needs, recovery while sleeping and daily regeneration of
+environmental resources use the local time. Sleep recovers 100 points in 8 hours of
+play, confirmed value: 8 real hours in Limbo or 24 real minutes out at normal speed.
+Comfort does not multiply this recovery. The effects expressed per second retain their
+simulation seconds: sleep drain 10 Lucidity/s without regeneration; the stunning does
+not wake up. Costs, reuse of skills, consumables and manufacturing do not become hours.
+Tx105 applies the same local scale by subpass and previous guards. MAP01 keeps furniture
+without duration; timed ground/sleeping-bag sessions remain outside.
 
-### Comida y agua al estar sentado
+### Food and water while sitting
 
-CaelumRegenerationPower conserva sus diez pulsos y añade SeatedMealSubTics.
-Sólo comida/agua, durante una sesión válida de silla, procesan un tic del
-efecto cada tres pasos personales (revisión 0q). Se compensa EffectTics
-en los otros dos pasos. La porción completa dura 30 segundos en vez de 10.
-Una ración de comida recupera 10 puntos a 80 kg; una ración de agua o un sorbo
-conserva su rendimiento y volumen según la masa corporal. No se aumenta el
-rendimiento bruto ni se gastan porciones extra para compensar la lentitud.
+CaelumRegenerationPower retains its ten pulses and adds SeatedMealSubTics. Only
+food/water, during a valid chair session, process an effect tic every three personal
+steps (0q revision). It compensates EffectTics in the other two steps. The complete
+portion lasts 30 seconds instead of 10. A ration of food recovers 10 points to 80 kg; a
+ration of water or a sip retains its performance and volume according to body mass. It
+does not increase gross performance or spend extra portions to compensate for slowness.
 
-Levantarse procesa lo pendiente a velocidad ordinaria, sin reiniciar el efecto.
-Volver a sentarse recupera el ritmo lento; pulsos, fracción y duración se guardan.
-Pociones y bebida energética conservan su duración. F/G continúa hasta saciedad,
-esperando cada efecto; saciarse impide otra ración aunque luego haya gasto pasivo.
-Comer sigue descontando Sueño = Hambre efectivamente restaurada / 4. Las tasas
-pasivas/de regeneración se calculan aparte con la comodidad aceptada.
+Standing up processes the remainder at ordinary speed, without restarting the effect.
+Sitting back recovers the slow pace; pulses, fraction and duration are saved. Potions
+and energy drink retain their duration. F/G continues to satiety, waiting for each
+effect; reaching full satiety prevents another ration even if there is passive expense.
+Eating continues to discount Sleep = Hunger effectively restored / 4.
+Passive/regeneration rates are calculated separately with accepted comfort.
 
-### Interacción y tamaño de estaciones
+### Interaction and station size
 
-USESPECIAL hacía que una estación detuviera Use incluso cuando rechazaba abrirse
-por estar fuera de alcance o en otra planta. Se retira ese indicador y se usa
-el resultado de Used; el rechazo permite seguir la búsqueda nativa. Las rutas
-explícitas Activate/Deactivate mantienen compatibilidad con sus llamadas.
-CaelumUseGeometry intersecta el rayo de mirada con el cilindro físico del actor
-dentro de UseRange. Camas, sillas, bloques de mesa, residentes y estaciones lo
-consultan antes de abrir. Se mantienen alcance, visibilidad, paredes y colisión
-nativos; no se amplía UseRange ni se cambia el cuerpo del jugador.
+USESPECIAL caused a station to stop Use even when it refused to open because it was out
+of reach or on another floor. That indicator is removed and the result of Used is used;
+rejection allows to follow the native search. Express routes Activate/Deactivate
+maintain compatibility with your calls. CaelumUseGeometry intersects the beam of look
+with the physical cylinder of the actor within UseRange. Beds, chairs, table blocks,
+residents and stations consult it before opening. Native reach, visibility, walls and
+collision are maintained; UseRange is not expanded or the player's body is changed.
 
-DimensionsRevision=2 migra estaciones a escala 0,75, radio 30 y altura 72,
-también al cargar partidas 0h/0i. Son el 75% de las tres dimensiones de 0i y el
-150% de las anteriores a 0h. Se limpia el USESPECIAL guardado; asignación
-absoluta e idempotente, sin perder redes, capacidades, recetas ni reservas.
+DimensionsRevision=2 migrates stations to 0,75 scale, 30 radius and 72 height, also when
+loading 0h/0i saves. These are 75% of the three 0i dimensions and 150% of the previous
+0h dimensions. The saved USESPECIAL flag is cleared; absolute and idempotent allocation,
+without losing networks, capacities, recipes or reserves.
 
-### Radios base aprobados
+### Approved base radii
 
-Base antes de AbilityRangePercent; escala de desarrollo de 32 MU por metro.
+Base before AbilityRangePercent; 32 MU development scale per metre.
 
-| Efecto | Radio base (MU) | Metros |
+| Effect | Base radius (MU) | Meters |
 | --- | ---: | ---: |
-| Canalización de sellos | 1280 | 40 |
-| Habilidades de clase; actualmente Sueño del arcanista | 1280 | 40 |
-| Impacto del sello de relámpago | 256 | 8 |
-| Golpe de suelo del Zupay | 192 | 6 |
-| Explosión de estatuilla | 128 | 4 |
+| Channeling of Seals | 1280 | 40 |
+| Class skills; currently Arcanist Sleep | 1280 | 40 |
+| Impact of lightning seal | 256 | 8 |
+| Zupay ground slam | 192 | 6 |
+| Statuette explosion | 128 | 4 |
 
-SEAL_CHANNEL_BASE_RADIUS mantiene 128 × 10. CLASS_ABILITY_BASE_RADIUS referencia
-esa misma base; Sueño y sellos multiplican por AbilityRangePercent/100. A 150%,
-ambos alcanzan 1920 MU. Se conserva la selección de Sueño por distancia y visión:
-incluye aliados visibles, excluye al lanzador y objetivos tras paredes. Duración
-10 s, despertar por impacto, reutilización 60 s y coste base confirmado de
-1000 Ánima con su reducción habitual. La base se aplica en lanzamientos nuevos;
-no vuelve a lanzar ni alarga efectos ya guardados.
+SEAL_CHANNEL_BASE_RADIUS maintains 128 × 10. CLASS_ABILITY_BASE_RADIUS reference that
+same base; Sleep and seals multiply by AbilityRangePercent/100. to 150%, both reach 1920
+MU. The selection of Sleep by distance and vision is retained: it includes visible
+allies, excludes the launcher and targets behind walls. Duration 10 s, wake up by
+impact, reuse 60 s and confirmed base cost of 1000 Anima with its usual reduction. The
+base is applied to new casts; it does not cast or extend already-saved effects.
 
-Los barridos de hacha/mandoble/alabarda usan sus alcances de arma 76/80/84 MU;
-no son radios de habilidades. La estatuilla cargada conserva radio ×√2, unos
-181,02 MU base. No cambian los demás efectos ni se implementan habilidades V5.
-El peso propio de la bolsa de dormir, 2 kg, queda confirmado.
+Axe/two-handed sword/halberd sweeps use their weapon ranges of 76/80/84 MU; these are
+not ability radii. The charged statuette retains radius ×√2, approximately 181,02 MU
+base. Other effects do not change and V5 abilities are not implemented. The sleeping
+bag's own weight, 2 kg, is confirmed.
 
-## Correcciones de acceso y avance personal en Limbo (4.35.0i)
+## Access and personal advancement corrections in Limbo (4.35.0i)
 
-SurfaceHeight usa 34,1 × Scale.Y / level.pixelstretch: la altura del actor que
-representa una ración coincide con la malla del tablero con CorrectPixelStretch.
-Cada presentación corrige su Z también después de cargar; no cambia mallas,
-cantidades, litros, digestión ni capacidades 4/18/60.
+SurfaceHeight uses 34,1 × Scale.Y / level.pixelstretch: the height of the actor
+representing a ration matches the board mesh with CorrectPixelStretch. Each presentation
+fixes its Z also after loading; does not change meshes, quantities, liters, digestion or
+capabilities 4/18/60.
 
-MoveLayout y Align trasladan las mismas mesas, bloques de colisión, sillas y
-figuras. La cama se traslada junto con la mesa del dormitorio. Se valida el
-conjunto y se revierte si no cabe. Una ocupación activa aplaza la operación;
-el controlador reintenta. Nuevos marcadores de acceso migran los guardados 0h
-aunque sus preparaciones anteriores estuvieran marcadas como terminadas.
+MoveLayout and Align move the same tables, collision blocks, chairs and figures. The bed
+is moved together with the bedroom table. The set is validated and reversed if it does
+not fit. An active occupation postpones the operation; the controller tries again. New
+access markers migrate the 0h saves even if their previous preparations were marked as
+finished.
 
-La altura de la cama permite el paso nativo. Las mesas orientales reciben un
-margen adicional de 16 MU hacia el fondo para apoyar las dos sillas sobre el piso.
-El ramal lateral de tres estaciones de Ronnie pasa al oeste de su taller, sin
-perder instancias, tipos, red ni trabajos reservados. La mesa de cueva se desplaza
-100 MU al este, perpendicular al plano de su puerta y hacia la pared falsa.
+The height of the bed allows native passage. The eastern tables receive an additional
+margin of 16 MU towards the bottom to support the two chairs on the floor. The lateral
+branch of three stations of Ronnie passes west of its workshop, without losing
+instances, types, net or reserved works. The cave table moves 100 MU to the east,
+perpendicular to the plane of its door and towards the false wall.
 
-CaelumMainM00RuloTrial.EnsurePracticeTarget consulta la existencia real del blanco
-en MAP01. Lo crea si falta y cabe; una preparación fallida se reintenta. Se conserva
-el actor encontrado, sin duplicación. IsActive/NearPractice siguen limitando el
-registro de ejercicios al momento y lugar de la prueba; no cambia su progreso.
+CaelumMainM00RuloTrial.EnsurePracticeTarget consults the actual existence of the target
+in MAP01. It creates it if it is missing and fits; a failed preparation is retryed. The
+found actor is retained, without duplication. IsActive/NearPractice continues to limit
+the exercise record to the time and place of the test; it does not change its progress.
 
-El avance rápido deja de rechazar MAP01. Muebles de descanso y redes de talleres
-de la mansión son contextos habilitados; combate, peligros y demás exclusiones
-siguen aplicándose. Pump usa AdvanceOnMap, por lo que el reloj permanece detenido
-en Limbo. PersonalStepSerial avanza una vez por subpaso; el descanso sin duración
-compara ese serial y level.maptime para recuperar Sueño/contar pasos exactamente
-una vez. El serial se guarda y no se reinicia al alternar T. Afuera sigue avanzando
-el reloj junto con la simulación. Las sesiones de suelo/bolsa por duración siguen
-disponibles fuera del Limbo; en MAP01 se usa el mobiliario sin duración.
+The rapid advance ceases to reject MAP01. Rest furniture and workshop networks of the
+mansion are enabled contexts; combat, dangers and other exclusions continue to apply.
+Pump uses AdvanceOnMap, so the clock remains held in Limbo. PersonalStepSerial advances
+once by subpass; the durationless rest compares that serial and level.maptime to recover
+Sleep/count steps exactly once. The serial is saved and is not restarted when
+alternating T. Outside the clock continues to advance along with simulation.
+ground/sleeping-bag sessions for duration are still available outside of Limbo; MAP01
+uses furniture without duration.
 
-T se procesa únicamente como ca_time_fast. Se elimina la rama de T que emitía
-ca_debug_advance_crafting_time y se actualiza la ayuda de Oficios. El comando de
-depuración continúa accesible explícitamente desde la consola.
+T is processed only as ca_time_fast. The T branch that issued
+ca_debug_advance_crafting_time is removed and Crafts help is updated. The debug command
+continues to be explicitly accessible from the console.
 
-## Comidas automáticas y muebles del Limbo (4.35.0h)
+## Automatic meals and furniture of Limbo (4.35.0h)
 
-La regeneración de comida descuenta Sueño = Hambre realmente recuperada / 4.
-Ejemplo: 4 puntos recuperados cuestan 1 de Sueño; de 99,5 a 100 cuesta 0,125.
-Con Hambre llena no hay coste digestivo. Sueño se limita a cero y beber no aplica
-esta regla. La misma ruta atiende inventario, mesa y subpasos de avance rápido.
+Food regeneration deducts Sleep = Hunger actually recovered / 4. Example: 4 recovered
+points cost 1 of Sleep; from 99,5 to 100 costs 0,125. With Full Hunger there is no
+digestive cost. Sleep is limited to zero and drinking does not apply this rule. The same
+route attends inventory, table and fast advance substeps.
 
-F/G conmuta AutoEating/AutoDrinking de CaelumRestState y conserva una referencia
-a la mesa. Cada canal espera el vencimiento del efecto nativo antes de pedir otra
-porción real. Llegar al máximo apaga el canal en el propio pulso regenerativo,
-antes del gasto pasivo: éste no puede reiniciar una comida ya completada.
-Sin existencias, al levantarse, perder alcance o dormir, termina la repetición.
-Desactivar no revierte los pulsos de una porción ya consumida. El estado es nativo
-y persistente; no se conceden provisiones ni se mezclan inventario y tablero.
+F/G toggles AutoEating/AutoDrinking in CaelumRestState and retains a reference to the
+table. Each channel waits for the expiration of the native effect before ordering
+another real portion. Reaching the maximum turns off the channel in the regenerative
+pulse itself, before the passive expense: it cannot restart an already completed meal.
+Without stock, when rising, losing reach or sleeping, the repetition ends. Deactivate
+does not reverse the pulses of a consumed portion. The state is native and persistent;
+no provisions are granted and inventory and table are not mixed.
 
-Capacity es independiente de SeatCount: pequeña 4, normal 18, grande 60.
-Items/Displays tienen 60 referencias; los guardados 0g con 24 posiciones cargan
-sus pertenencias existentes. Un cambio de presentación reconstruye los viejos
-sprites como platos/tazas. Cada figura referencia el objeto real; desaparece al
-consumirlo o retirarlo. Un recipiente vacío sigue ocupando su espacio hasta
-retirarlo. La colisión CANPASS distingue los muebles de plantas superpuestas.
+Capacity is independent of SeatCount: small 4, normal 18, large 60. Items/Displays have
+60 references; 0g saves with 24 positions load their existing belongings. A change of
+presentation reconstructs old sprites like plates/cups. Each figure refers to the real
+object; disappears when consumed or removed. An empty container continues to occupy its
+space until removed. The CANPASS collision distinguishes the furniture from overlapping
+plants.
 
-En mapas atemporales, exclusivamente los muebles ofrecen sesiones Untimed con
-duración cero. CaelumRestTrial usa USDF 43515/43516; LastUntimedTic limita el
-descanso a un paso personal por tic del motor. El reloj/calendario permanece
-inmóvil. Desde 0i T acelera la simulación personal del mueble; el descanso de
-suelo/bolsa por duración se mantiene fuera de MAP01.
-Dormir recupera Sueño con su tasa habitual y drena 10 Lucidez/s, aun aturdido.
+On timeless maps, only furniture offers Untimed sessions with zero duration.
+CaelumRestTrial uses USDF 43515/43516; LastUntimedTic limits rest to one personal step
+per engine tic. The clock/calendar remains motionless. From 0i T accelerates personal
+furniture simulation; ground/sleeping-bag rest for duration is kept out of MAP01.
+Sleeping recovers Sleep at its usual rate and drains 10 Lucidity/s, even stunned.
 
-CaelumCraftingStation fija radio 40, altura 96 y escala 1 frente a 20/48/0,5.
-EnsureDimensions migra una vez a valores absolutos, sin duplicar al cargar.
-Se reutilizan los actores al trasladar estaciones; los trabajos mantienen sus
-referencias y reservas. La sesión abierta se revalida y queda en pausa si pierde
-alcance. El enlace de red pasa de 64 a 128 MU para la separación nueva de 112 MU;
-CraftingRoomGroup mantiene las cinco redes de MAP01 independientes.
+CaelumCraftingStation sets 40 radius, 96 height and 1 scale against 20/48/0,5.
+EnsureDimensions migrates once to absolute values, without duplicating when loading.
+Actors are reused when moving stations; jobs maintain their references and reservations.
+The open session is revalidated and paused if you lose reach. The network link moves
+from 64 to 128 MU for the new separation of 112 MU; CraftingRoomGroup keeps the five
+MAP01 networks independent.
 
-## Avance rápido, mesas y sueño (4.35.0g)
+## Fast advance, tables and sleep (4.35.0g)
 
-T alterna un avance opcional sólo durante una sesión Dormir/Esperar o una tarea
-real de fabricación con su estación abierta y válida. No basta con estar quieto,
-abrir el menú sin tarea ni tener un trabajo reservado en pausa. Cerrar la estación
-corta la aceleración y conserva la tarea/reservas según las reglas existentes.
-El estado queda ligado a la sesión o estación actual; otra actividad requiere T
-otra vez. Al completar se vuelve a la velocidad ordinaria.
+T alternates an optional advance only during a Sleep/Wait session or a real
+manufacturing task with its open and valid station. Standing still is insufficient, open
+the menu without task or have a job booked in pause. Closing the station cuts
+acceleration and retains the task/reservations according to existing rules. The state is
+linked to the current session or station; another activity requires T again. When
+completing it is returned to ordinary speed.
 
-### Tiempo común por subpasos
+### Common time for substeps
 
-CaelumTimeAdvanceState procesa hasta 104 tics adicionales tras cada tic ordinario:
-x105, un minuto de campaña por tic del motor y unas 8 horas en 13,7 s si mantiene
-35 tics/s. Cada subpaso usa AdvanceOneTic del reloj, las funciones compartidas de
-recursos/temporizadores personales, el efecto y vencimiento de consumibles,
-UpdateCraftingTask y la sesión de descanso. Los límites de reservas, estados,
-expiraciones y finalización se resuelven a precisión de un tic, sin acreditar dos
-veces el tic ordinario. No se suma directamente una cantidad de horas al reloj.
-El calendario deriva del mismo reloj. Entre lotes vuelve el control al motor;
-T desactiva, Q/acciones cancelan el descanso y Escape conserva la pausa nativa.
+CaelumTimeAdvanceState processes up to 104 tics additional after each ordinary tic:
+x105, one campaign minute per engine tic and 8 hours in 13,7 s if it maintains 35
+tics/s. Each subpass uses AdvanceOneTic of the clock, the shared functions of personal
+resources/timers, the effect and expiration of consumables, UpdateCraftingTask and the
+rest session. The limits of reservations, states, expirations and terminations are
+resolved at the precision of a tic, without accrediting twice the ordinary tic. It does
+not directly add a number of hours to the clock. The calendar derives from the same
+clock. Between batches it returns control to the engine; T disables, Q/actions cancels
+the rest and Escape retains the native pause.
 
-El primer alcance exige zona habilitada, suelo seco, reposo y un jugador. Rechaza
-combate, proyectiles, monstruos hostiles cercanos (1024 MU), quemadura/veneno/corte,
-agua, acciones incompatibles y Powerup sin adaptador. También rechaza un actor
-cercano con Sueño inducido, para no omitir el tiempo restante de ese efecto.
-Una silla o bolsa por sí sola no convierte otro lugar en zona segura. Las zonas
-iniciales cubren llegadas/muebles/banco de MAP02–MAP05 y las mesas de MAP03.
-Fuera de ellas sigue disponible el descanso normal. Desde 0i MAP01 permite
-avance personal en muebles/talleres; mantiene calendario detenido y sesiones
-de mobiliario sin duración.
+The initial scope requires an enabled zone, dry ground, rest and a player. It rejects
+combat, projectiles, nearby hostile monsters (1024 MU), burn/poison/cut, water,
+incompatible actions and Powerup without adapter. It also rejects a nearby actor with
+induced Sleep, so as not to omit the remaining time of that effect. A chair or bag alone
+does not convert another place into a safe zone. Initial zones cover arrival
+points/furniture/workbench of MAP02–MAP05 and the MAP03 tables. Outside of them the
+normal rest remains available. From 0i MAP01 allows personal advancement in
+furniture/workshops; it keeps schedule stopped and furniture sessions without duration.
 
-No se usa i_timescale. El servicio acelera los sistemas propios que incorpora,
-no IA, física, puertas, scripts ni Thinkers arbitrarios. Clima, rutas y eventos
-programados siguen pendientes: sus adaptadores deberán integrarse antes de
-permitirles consumir estos intervalos. No se inventan emboscadas ni se declara
-resuelto el mundo general durante un salto. Las tasas de comodidad de 0f siguen
-vigentes. Los segundos de Lucidez/consumibles/recargas son de simulación, no los
-minutos del calendario acelerado 20:1; T los adelanta una sola vez con el resto.
+i_timescale is not used. The service accelerates the project systems integrated into it,
+not AI, physics, doors, scripts or arbitrary Thinkers. Climate, routes and scheduled
+events remain pending: their adapters must be integrated before allowing them to consume
+these intervals. The general world state is not invented or claimed to be resolved
+during a time jump. 0f comfort rates remain in place. Lucidity/consumables/cooldowns
+seconds are simulation, not the minutes of the accelerated calendar 20:1; T advances
+them only once with the rest.
 
-### Mesas y pertenencias
+### Tables and belongings
 
-| Mesa | Tablero en MU | Sillas |
+| Table | Table dimensions in MU | Chairs |
 | --- | --- | --- |
-| Redonda pequeña | Diámetro 80 | 2, enfrentadas. |
-| Rectangular normal | 192 × 96 | 2 por costado largo y 1 por cabecera: 6. |
-| Rectangular grande | 384 × 192 | 4 por costado largo y 2 por cabecera: 12. |
+| Small Round | Diameter 80 | 2, facing each other. |
+| Rectangular normal | 192 × 96 | 2 per long side and 1 at each end: 6. |
+| Large rectangular | 384 × 192 | 4 per long side and 2 at each end: 12. |
 
-CaelumDiningWorld.Place construye y valida conjuntamente modelo, colisión y
-sillas. Es la entrada para colocar nuevos conjuntos; invocar solamente el actor
-rectangular no construye su colisión compuesta. La mesa guarda referencias a las
-sillas; HasSeatLayout ofrece la base futura para Trucazo sin iniciar el minijuego.
-MAP03 recibe los tres conjuntos también desde guardados anteriores. La creación
-es idempotente y reintenta si el espacio está ocupado. No entrega comida.
+CaelumDiningWorld.Place builds and validates together model, collision and chairs. It is
+the input to place new sets; invoke only the rectangular actor does not build its
+composite collision. The table keeps references to chairs; HasSeatLayout offers the
+future base for Trucazo without starting the minigame. MAP03 receives all three sets
+also from previous saves. Creation is idempotent and retry if space is occupied. It does
+not deliver food.
 
-Use abre USDF 43514. Elegir colocar/retirar comida o bebida se ejecuta después de
-cerrar el diálogo y revalidar alcance. Se toma una unidad personal disponible,
-fuera de la Caja, por operación. Desde 0h cada mesa ofrece 4, 18 o 60 posiciones, según su tamaño.
-Los objetos son Inventory reales propiedad de la mesa; las figuras sobre el
-modelo sólo los representan. Recipientes conservan clase, litros y peso. Retirar
-usa recogida nativa y revierte si no entra; guardar/cargar conserva referencias.
+Use opens USDF 43514. Choosing to place/remove food or drink executes after closing the
+dialogue and revalidating range. A personal unit is taken, outside the Box, by
+operation. From 0h each table offers 4, 18 or 60 positions, depending on its size.
+Objects are real Inventory owned by the table; the figures on the model only represent
+them. Containers retain class, liters and weight. Withdrawal uses native pickup and
+rolls back if the item does not fit; save/load retains references.
 
-F/G activa la repetición desde una silla adyacente ocupada en Esperar. No se
-consume estando de pie, durmiendo, fuera de alcance ni con la reserva llena.
-Mientras hay un efecto de regeneración activo se espera antes de otra porción. Se reutilizan los consumibles nativos:
-raciones se gastan y recipientes pierden el agua bebida sin desaparecer. La mejora
-ocurre en sus pulsos habituales; T procesa también esos pulsos y su vencimiento.
-Desde 0h hay repetición explícita por canal; nunca reposición gratuita.
+F/G activates repetition from an adjacent chair occupied in Wait. It is not consumed
+while standing, sleeping, out of reach or with full reserve. While there is an active
+regeneration effect is expected before another portion. Native consumables are reused:
+rations are spent and containers lose drinking water without disappearing. Improvement
+occurs in their usual pulses; T also processes those pulses and their expiration. Since
+0h there is explicit repetition per channel; never free replacement.
 
-### Lucidez, habilidad Sueño y orientación
+### Lucidity, Sleep Skill and Orientation
 
-Dormir drena exactamente 10 de Lucidez por segundo de simulación, mínimo cero,
-y suspende toda recuperación natural de Lucidez. Comodidad y atributos no reducen
-este drenaje. El aturdimiento por baja Lucidez no termina el sueño; daño y demás
-interrupciones vigentes siguen aplicándose. Al despertar vuelve la recuperación
-normal, sin restaurar Lucidez de golpe. La iluminación/alteración visual habitual
-por Lucidez baja sigue visible durante el descanso.
+Sleeping drains exactly 10 of Lucidity per second simulation, minimum zero, and suspends
+all natural recovery of Lucidity. Comfort and attributes do not reduce this drainage.
+Stunning caused by low Lucidity does not end sleep; damage and other current
+interruptions continue to apply. Upon awakening normal recovery returns, without
+restoring Lucidity at a stroke. The usual visual illumination/distortion from low
+Lucidity remains visible during rest.
 
-User4 del Arcanista (Mago + Sacerdote) implementa Sueño: 10 s en área, 60 s de
-reutilización desde el lanzamiento, coste base de ensayo 1000 Ánima con el
-modificador existente. Afecta actores Caelum de combate y jugadores vivos con
-visión, incluidos aliados, excluyendo al lanzador. Radio provisional: área mágica
-base 128 MU por AbilityRangePercent/100. El actor queda inmóvil hasta vencer o
-recibir un golpe; usa el mismo drenaje de 10/s y no regenera Lucidez. La duración
-no depende del aturdimiento. Las otras habilidades de clase/raciales siguen
-pendientes. Este radio queda documentado como valor de prueba, no balance final.
+Arcanist user4 (Mage + Priest) implements Sleep: 10 s in area, 60 s reuse since launch,
+cost trial base 1000 Anima with existing modifier. It affects Caelum combat actors and
+live players with vision, including allies, excluding the launcher. Provisional radius:
+magic base area 128 MU by AbilityRangePercent/100. The actor remains motionless until
+the effect expires or they receive a hit; uses the same 10/s drainage and does not
+regenerate Lucidity. The duration does not depend on the stunning. The other skills of
+class/racial are still pending. This radius is documented as trial value, not final
+balance.
 
-PoseAngle corrige 180° respecto al modelo de silla/catre/bolsa. Además, TEXTURES
-reasigna RSDO A/B 2↔8, 3↔7 y 4↔6: las vistas laterales del atlas tenían el orden
-inverso al nativo. Ambas correcciones son necesarias para frente, espalda y
-costados. No se retocan PNG ni cuadros C–G de agachado. Una sesión antigua corrige
-su orientación una sola vez y conserva duración y recuperación acumuladas.
+PoseAngle fixes 180° with respect to the chair/cot/bag model. In addition, TEXTURES
+reassigns RSDO A/B 2↔8, 3↔7 and 4↔6: The lateral views of the atlas had the reverse
+order to the native. Both corrections are necessary for front, back and sides. PNG and
+C–G crouching boxes are not retouched. An old session corrects its orientation once and
+retains accumulated duration and recovery.
 
-## Bolsa de dormir y factores de descanso (4.35.0f)
+## Sleep bag and rest factors (4.35.0f)
 
-CaelumSleepingBag deriva de CaelumSpecialInventoryItem. Usa el tipo añadido
-KEY_ITEM_SLEEPING_BAG=2; los anteriores mantienen sus valores. Amount/MaxAmount
-son 1, InterHubAmount=1 y GetUnitWeight devuelve 2 kg provisionales. La bolsa
-usa las rutas existentes de peso, capacidad, Caja, snapshots, soltado y recogida.
-No duplica el contenido en un inventario paralelo. Su categoría actual se
-muestra en el filtro de Llaves/objetos clave y en Todos.
+CaelumSleepingBag derives from CaelumSpecialInventoryItem. Use the added type
+KEY_ITEM_SLEEPING_BAG=2; the above maintain its values. Amount/MaxAmount are 1,
+InterHubAmount=1 and GetUnitWeight returns 2 kg provisional. The bag uses the existing
+routes of weight, capacity, Box, snapshots, released and collected. It does not
+duplicate the content in a parallel inventory. Its current category is displayed in the
+key Keys/key items filter and in All.
 
-Enter/A sobre la bolsa personal cierra la vista del Diario y envía la activación
-nativa del inventario. CaelumRestTrial conserva Bag/UsesBag y abre la conversación
-43513. Enter sobre la bolsa guardada conserva la operación existente de sacarla
-de la Caja. La respuesta de duración cierra primero y valida de nuevo propiedad,
-estado, modo y espacio. Si se retiró el objeto o pasó a la Caja, no se despliega.
+Enter/A on personal bag closes Journal view and sends native inventory activation.
+CaelumRestTrial retains Bag/UsesBag and opens conversation 43513. Enter on the stored
+bag retains the existing operation of removing it from the Box. The duration response
+first closes the conversation and revalidates ownership, status, mode and space. If the
+object was removed or passed to the Box, it does not deploy.
 
-HasRoom verifica el volumen nativo y ocho muestras de suelo alrededor de un
-radio conservador de 46 MU; comprueba sólidos ajenos separadamente. No modifica
-el cuerpo del jugador. Sólo después se crea CaelumRestBag, un soporte temporal
-sin bloqueo, y se inicia Dormir. La bolsa Inventory sigue siendo del jugador,
-con su mismo peso. Release destruye sólo el soporte y deja al jugador donde
-estaba. La validación comprueba propiedad/acceso; pérdida del mueble, del objeto,
-movimiento, daño, agua, reservas críticas o cambio de mapa interrumpen según
-el contrato existente. El Tick limpia soportes obsoletos de hubs anteriores.
+HasRoom checks the native volume and eight ground samples around a conservative radius
+of 46 MU; checks external solids separately. It does not modify the player’s body. Only
+then is CaelumRestBag created, as a temporary nonblocking support, and Sleep begins. The
+Inventory bag remains the player’s, with its same weight. Release destroys only the
+support and leaves the player where it was. Validation checks ownership/access; loss of
+furniture or the item, movement, damage, water, critical reserves or map change
+interrupt according to the existing contract. The Tick cleans obsolete supports from
+previous hubs.
 
-ComfortFactor es una consulta virtual de cada soporte. ResourceFactor requiere
-una sesión activa válida, en el mapa de origen, con su ocupante y referencias
-correctos; sin soporte o fuera de sesión devuelve 1. Las reservas críticas y
-la muerte también retiran el factor inmediatamente. No se modifican atributos
-ni las estadísticas derivadas de forma permanente.
+ComfortFactor is a virtual query of each support. ResourceFactor requires a valid active
+session, on the source map, with its occupant and correct references; without support or
+out of session returns 1. Critical reserves and death also remove the factor
+immediately. Attributes and derived statistics are not modified permanently.
 
-| Soporte durante la sesión | Salud/Aire naturales | Pérdida de Hambre/Sed por tiempo | Sueño |
+| Support during session | Natural Health/Air | Hunger/Thirst loss over time | Sleep |
 | --- | --- | --- | --- |
-| Suelo | ×1 | ÷1 | Recupera sólo al dormir, tasa anterior. |
-| Silla (Esperar) | ×2 | ÷2 | Sigue perdiéndose; no recupera. |
-| Bolsa (Dormir) | ×3 | ÷3 | Recupera a la tasa anterior. |
-| Cama/catre (Dormir) | ×4 | ÷4 | Recupera a la tasa anterior. |
+| Ground | ×1 | ÷1 | Recover only when sleeping, previous rate. |
+| Chair (Wait) | ×2 | ÷2 | Continues to decrease; does not recover. |
+| Sleeping bag (Sleep) | ×3 | ÷3 | Recovers at the previous rate. |
+| Bed/cot (Sleep) | ×4 | ÷4 | Recovers at the previous rate. |
 
-Para F = factor del soporte:
+For F = support factor:
 
     pérdida pasiva nueva = pérdida pasiva anterior / F
     regeneración natural nueva = regeneración natural anterior × F
     coste por punto recuperado nuevo = coste anterior / (F × F)
 
-La última expresión aplica a los gastos de Hambre/Sed asociados a Salud y Aire.
-Al recuperar F veces más por tiempo y pagar cada punto a 1/F², el gasto por
-ese tiempo queda en 1/F. Dividir sólo el coste por punto por F habría dejado
-el gasto de regeneración por tiempo igual al anterior, contradiciendo la
-reducción pedida. Cerca del máximo se paga exclusivamente lo recuperado.
-Las reservas disponibles limitan también la curación entera; los acumuladores
-conservan fracciones y ningún recurso puede superar su máximo o quedar negativo.
+The last expression applies to the expenses of Hunger/Thirst associated with Health and
+Air. By recovering F times more for time and paying each point to 1/F², the expense for
+that time remains in 1/F. Divide only the cost per point per F would have left the
+regeneration expense for time equal to the previous one, contradicting the requested
+reduction. Close to the maximum is paid exclusively the recovered. The available
+reserves also limit the whole cure; the accumulators retain fractions and no resource
+can exceed their maximum or be negative.
 
-Se mantienen la penalización de fatiga, el bloqueo de curación por Sueño/Hambre/
-Sed críticos y las condiciones previas de respiración. La comodidad no se aplica
-a Ánima/Lucidez, medicina ni hidratación por agua potable. La deuda de aire
-tras inmersión se recupera también a ritmo ×F: su contador se reduce F tics
-de base por tic real, sin superar la deuda pendiente ni el Aire máximo. Al
-interrumpir se retoma ×1 con lo que reste; no se reinicia ni se acredita aire
-extra en el último pulso. Fuera del descanso conserva los tres segundos de
-base. Dormir mantiene 100% de Sueño por 8 horas de juego
-como valor provisional, con la misma duración real que en 0e.
+The penalty of fatigue, the lock of healing by Sleep/Hunger/ Thirst critical and the
+preconditions of breathing are maintained. The comfort does not apply to Anima/Lucidity,
+medicine or hydration by drinking water. The air debt after immersion recovers also at
+×F rate: its meter is reduced F tics base by real tic, without exceeding the outstanding
+debt or maximum Air. When interrupting it resumes ×1 with what remains; no extra air is
+restarted or credited at the last pulse. Outside the rest it retains the three base
+seconds. Sleeping keeps 100% of Sleep by 8 hours of play as provisional value, with the
+same real duration as in 0e.
 
-La preparación 3 de CaelumRestTrial y ca_debug_rest_bag son optativas y sólo
-para MAP02–MAP05. Entregan el objeto mediante la recogida nativa si no estaba
-en el inventario; si falla por capacidad, destruyen el intento y notifican.
-No rellenan recursos. El informe ca_debug_rest_report sigue siendo de consulta
-y muestra 4.35.0i/factor. El panel muestra el multiplicador y divisor vigentes.
+Preparation 3 in CaelumRestTrial and ca_debug_rest_bag are optional and only for
+MAP02–MAP05. They deliver the object by native collection if it was not in the
+inventory; if capacity failure, they destroy the attempt and report. They do not fill in
+resources. The ca_debug_rest_report report remains query and displays 4.35.0i/factor.
+The panel displays the current multiplier and divider.
 
-## Mobiliario y cámara del descanso (4.35.0e)
+## Furniture and rest camera (4.35.0e)
 
-CaelumRestFurniture es Actor fijo, invulnerable, no empujable y sin banderas
-de monstruo, proyectil, cadáver o prop móvil. El filtro existente del sello de
-quintaesencia lo excluye. CaelumRestChair ofrece Esperar; CaelumRestBed ofrece
-Dormir. Su Used nativo requiere la pulsación real de Use, alcance y visión.
-La guía conserva la referencia al mueble; las conversaciones 43511/43512
-ofrecen las cuatro duraciones de 0d. La respuesta cierra antes de Begin;
-la guía vuelve a validar el contexto y nunca sustituye un mueble perdido por
-una sesión sobre suelo.
+CaelumRestFurniture is a fixed, invulnerable, non-pushable Actor without monster,
+projectile, corpse or mobile prop flags. The existing filter of the quintessence seal
+excludes it. CaelumRestChair offers Wait; CaelumRestBed offers Sleep. Its native Used
+requires the actual pulse of Use, scope and vision. The guide retains the reference to
+the furniture; 43511/43512 conversations offer the four durations of 0d. The answer
+closes before Begin; the guide validates the context again and never replaces a lost
+furniture with a session on the ground.
 
-Begin recibe un mueble opcional. En suelo mantiene la ruta anterior. Con mueble,
-valida modo/alcance, guarda posición y dirección de entrada y presta la colisión
-del mueble al jugador. SetOrigin sitúa al jugador en su centro; TestMobjLocation
-comprueba su volumen real, suelo seco y nivel compatible. Si falla, vuelve a
-la entrada y restituye la colisión. No se cambia altura/radio ni se usa telefrag.
+Begin receives an optional piece of furniture. On the ground it maintains the previous
+route. With furniture, it validates mode/range, saves position and entry direction and
+lends the collision of the furniture to the player. SetOrigin places the player at its
+center; TestMobjLocation checks its actual volume, dry ground and compatible level. If
+it fails, it returns to the input and restores the collision. Neither height nor radius
+changes, and no telefrag is used.
 
-La postura usa un WorldOffset gráfico temporal ajustado a RSDO. Se conserva el
-valor previo y sólo se restaura si sigue siendo el aplicado por la sesión.
-Occupant identifica al usuario. Validate interrumpe ante desaparición, movimiento
-del mueble o pérdida de esa ocupación. Finish devuelve al jugador a su entrada
-si está libre, o prueba ocho salidas cercanas con volumen real y visión. Si
-ninguna sirve, libera la sesión y mantiene el mueble sin colisión hasta que
-el jugador pueda salir caminando. No revierte desplazamientos externos, caídas,
-muertes ni viajes. El Tick del mueble limpia ocupantes obsoletos y repone la
-colisión únicamente cuando el volumen queda libre.
+The posture uses a temporary graphic WorldOffset adjusted to RSDO. It retains the
+previous value and is only restored if it is still the one applied by the session.
+Occupant identifies the user. Validate interrupts in the event of disappearance,
+movement of the furniture or loss of that occupation. Finish returns the player to their
+entry position if it is free, or tests eight nearby exits using the actual volume and
+line of sight. If none serves, it releases the session and keeps the furniture without
+collision until the player can walk out. It does not reverse external displacements,
+falls, deaths or trips. The furniture tick clean obsolete occupants and replenishes the
+collision only when the volume is free.
 
-CaelumRestCamera deriva de SpectatorCamera y usa su recorte nativo con la
-posición del jugador como referencia. Begin/Advance inicializan una sola vista,
-también para sesiones previas sin cámara. No se toma una cámara de otro sistema.
-Después del PlayerThink nativo, UpdateViewInput aplica el giro a la órbita y
-mantiene el cuerpo orientado. El ángulo vertical se limita entre -5 y 60 grados.
-Al salir normalmente vuelve la cámara del jugador y la dirección anterior;
-si otro sistema cambió la cámara, se respeta su vista. No se modifica chasecam
-ni la configuración del usuario. Muerte/cambio de mapa no restauran posiciones
-o vistas de un escenario anterior.
+CaelumRestCamera derives from SpectatorCamera and uses its native clipping with the
+player’s position as a reference. Begin/Advance initializes a single view, also for
+previous sessions without camera. It does not take a camera from another system. After
+the native PlayerThink, UpdateViewInput applies the twist to the orbit and keeps the
+body oriented. The vertical angle is limited between -5 and 60 degrees. When exiting it
+normally returns the player’s camera and the previous facing direction; if another
+system changed the camera, its view is respected. Neither chasecam nor the user’s
+configuration is modified. Death/map change does not restore positions or views from a
+previous scenario.
 
-Inventory guarda Furniture/UsesFurniture, EntryPosition/Angle/Pitch,
-HasEntryView, OriginalWorldOffset/AppliedWorldOffset y el estado de la cámara.
-Los campos ausentes de saves anteriores parten de cero: no se inventa un mueble
-ni una ocupación. La prueba nativa de guardar/cargar durante una sesión conserva
-progreso y referencias, completa una sola vez y permite volver a usar el catre.
+Inventory saves Furniture/UsesFurniture, EntryPosition/Angle/Pitch, HasEntryView,
+OriginalWorldOffset/AppliedWorldOffset and camera status. The missing fields of previous
+saves start from scratch: no furniture or occupation is invented. The native save/load
+test during a session retains progress and references, completes only once and allows to
+reuse the cot.
 
-El controlador de mundo prepara una pareja por MAP02–MAP05. TrialSlot 1/2
-identifica silla/catre y evita duplicados. Un campo nuevo pendiente en saves
-previos permite incorporarlos sin reiniciar. Si el lugar está ocupado se
-reintenta una vez por segundo. No se añaden cosas a MAP01, relojes, inventarios
-con peso, recursos, recetas, recompensas ni pausas de diálogo.
+The world controller prepares a pair by MAP02–MAP05. TrialSlot 1/2 identifies chair/cot
+and avoids duplicates. A new field initialized as pending in previous saves allows you
+to incorporate them without restarting. If the place is occupied it is repeated once per
+second. No things are added to MAP01, clocks, inventory weight, resources, recipes,
+rewards or dialogue breaks.
 
-0f aplica los factores de soporte descritos arriba sobre las tasas de 0d/0d1.
-Pendiente en V4.35: acelerar la
-simulación de forma coherente e integrar clima y eventos/rutas programados.
+0f applies the supporting factors described above to the 0d/0d1. Pending rates in V4.35:
+Accelerate simulation consistently and integrate programmed climate and events/routes.
 
-## Compatibilidad del descanso (4.35.0d1)
+## Rest Compatibility (4.35.0d1)
 
-FindState recibe etiquetas literales separadas para RestLying y RestSeated,
-tanto al iniciar la sesión como al actualizar su pose. Esto evita la conversión
-String a StateLabel que GZDoom 4.14.2 rechazaba en la expresión condicional.
-CaelumWorldCatalogue completo acompaña el hotfix: IsTimelessMap sigue siendo
-la única clasificación común del Limbo para reloj, calendario, Diario y descanso.
-No cambian campos guardados, fórmulas, controles ni la escala temporal.
-La compilación nativa pasó en 0d1 y el autor aprobó sus pruebas jugables
-antes de 0e.
+FindState receives separate literal tags for RestLying and RestSeated, both when
+entering the session and when updating its pose. This prevents the String conversion to
+StateLabel that GZDoom 4.14.2 rejected in the conditional expression. Full
+CaelumWorldCatalogue accompanies the hotfix: IsTimelessMap remains the only common Limbo
+classification for clock, calendar, Journal, and rest. It does not change saves fields,
+formulas, controls, or time scale. The native compilation passed in 0d1 and the author
+approved its playable tests before 0e.
 
-## Descanso y espera: sesión a escala normal (4.35.0d)
+## Rest and wait: normal scale session (4.35.0d)
 
-CaelumRestRules define dos modos (Esperar/Dormir) y estados sin sesión, activa,
-completa, cancelada e interrumpida. Duraciones admitidas: 5, 60, 240 y 480
-minutos de juego, equivalentes a 525, 6300, 25200 y 50400 tics. Entradas ajenas
-al catálogo se rechazan antes de multiplicar. El reloj global no recibe saltos
-ni una escala distinta: cada sistema del mapa sigue su simulación normal.
+CaelumRestRules defines two modes (Wait/Sleep) and the states no session, active,
+complete, cancelled and interrupted. Supported durations: 5, 60, 240 and 480 minutes of
+play, equivalent to 525, 6300, 25200 and 50400 tics. Non-catalogue entries are rejected
+before multiplying. The global clock does not receive jumps or a different scale: each
+map system follows its normal simulation.
 
-La recuperación neta provisional de Sueño es:
+The provisional net recovery for Sleep is:
 
     Sueño por tic = 100 / (8 × TicsPerHour)
 
-Se aplica sólo al dormir y una vez por pulso pendiente del reloj; sustituye
-la pérdida pasiva de Sueño. El resultado se limita a 100. Esperar conserva
-el consumo ordinario. Hambre/Sed, curación, ánima, lucidez, aire y recargas
-mantienen sus reglas base, con los factores de soporte de 0f para la
-regeneración natural y Hambre/Sed; sin regalos al inicio o al final.
-La selección numérica de 8 horas es un valor de prueba de 0d; no se presenta
-como una decisión histórica del autor ni como balance final.
+It applies only when sleeping and once per clock-pending pulse; it replaces the passive
+loss of Sleep. The result is limited to 100. Waiting retains ordinary consumption.
+Hunger/Thirst, healing, anima, lucidity, air and cooldowns maintain their base rules,
+with 0f supporting factors for natural regeneration and Hunger/Thirst; no gifts at the
+beginning or at the end. The numerical selection of 8 hours is a test value of 0d; it is
+not presented as a historical decision of the author nor as a final balance.
 
-Mientras el personaje duerme, ApplyCriticalSurvivalDamage excluye únicamente
-el daño por Sueño crítico. Hambre y Sed siguen contando, y no se borran las
-penalizaciones de fatiga ni se habilita curación si las condiciones normales
-la bloquean. Al dejar de dormir se retoman las reglas de fatiga ordinarias.
-Hambre o Sed <=10% bloquean/interrumpen la sesión; no se comen objetos solos.
+While the character sleeps, ApplyCriticalSurvivalDamage excludes only damage by Critical
+Sleep. Hunger and Thirst continue to count, and fatigue penalties are not removed and
+healing is not enabled if normal conditions block it. By stopping sleeping ordinary
+fatigue rules are resumed. Hunger or Thirst <=10% block/interrupt the session; items are
+not consumed automatically.
 
-CaelumRestState es Inventory oculto, único, no arrojable, no borrable por
-ClearInventory y con InterHubAmount=1. Conserva Status, Mode, RequestedTics,
-ElapsedTics, OriginMap/Position, LastHealth, ResultKey, InputArmed y los campos
-LastClockDays/DayTics. No participa del peso ni de la Caja. La ausencia de este
-Inventory en un save anterior equivale a no tener sesión; sólo Begin lo crea.
+CaelumRestState is Inventory hidden, unique, non-throwable, non-deleteable by
+ClearInventory and with InterHubAmount=1. It retains Status, Mode, RequestedTics,
+ElapsedTics, OriginMap/Position, LastHealth, ResultKey, InputArmed and
+LastClockDays/DayTics. It does not participate in the weight or the Box. The absence of
+this Inventory in a previous save is equivalent to no session; only Begin creates it.
 
-Begin valida duración/modo y contexto, ancla el último pulso y pone la pose.
-HandleInput valida antes de la lógica nativa de movimiento; primero espera
-soltar la entrada de confirmación, después Q/B, movimiento o acción cancelan.
-PlayerThink bloquea los comandos mientras la sesión está activa, siguiendo la
-ruta existente de actividades. No modifica usedown ni las flags de congelación.
-Use continúa por el motor al cancelar; el Diario preserva la liberación real.
-UpdateCrouchVisual mantiene RestLying para Dormir y RestSeated para Esperar.
-Finish restaura la pose de pie sólo si aún había una pose de descanso, sin
-reemplazar muerte o dolor. La variante sobre suelo no mueve al personaje;
-la ocupación y salida del mobiliario se detallan en el bloque 0e.
+Begin validates duration/mode and context, anchors the last pulse and puts the pose.
+HandleInput validates before the native logic of movement; first expects to release the
+confirmation input, then Q/B, movement or action cancel. PlayerThink blocks commands
+while the session is active, following the existing path of activities. Do not modify
+usedown or freeze flags. Use continues by the engine when cancelling; the Journal
+preserves the actual release. UpdateCrouchVisual keeps RestLying for Sleep and
+RestSeated to Wait. Finish restores the standing pose only if there was still a rest
+pose, without replacing death or pain. The variant on floor does not move the character;
+the occupancy and output of the furniture is detailed in the 0e block.
 
-Validate comprueba contexto, posición, daño y continuidad temporal. Advance,
-al final del Tick del jugador, consume como máximo un pulso nuevo. Un callback
-repetido con el mismo reloj no avanza; un salto externo mayor que un tic o una
-regresión interrumpen sin conceder recuperación retroactiva. Cruzar medianoche
-es normal. La UI muestra el calendario de campaña, aunque la vista de prueba
-de Mundo tenga otro anclaje. No hay mutaciones de sesión durante predicción.
+Validate checks context, position, damage and temporal continuity. Advance, at the end
+of the player's Tick, consumes at most a new pulse. A callback repeated with the same
+clock does not advance; an external jump greater than a tic or regression interrupt
+without granting retroactive recovery. Crossing midnight is normal. The UI shows the
+campaign calendar, although the World test view has another anchor. There are no session
+mutations during prediction.
 
-Bloqueos/interrupciones: personaje no válido, multijugador, Limbo, combate,
-conversaciones/tienda, fabricación incluso pausada, equipo, sello, lanzamiento
-pendiente, carga/recarga/bloqueo, inmovilización, agua, movimiento, falta de
-suelo, reservas críticas o viaje pendiente. Daño efectivo y muerte pasan por
-los hooks del jugador; no dependen de obtener pain state. Un cambio de mapa
-o desplazamiento externo detiene el descanso. CaelumTravelService rechaza
-viajar con sesión activa. Cancelar/interrumpir conserva sólo lo ya ocurrido.
+Blocks/interruptions: invalid character, multiplayer, Limbo, combat, conversations/shop,
+fabrication even paused, equipment, seal, pending launch, charging/reloading/blocking,
+immobilization, water, movement, lack of ground, critical reserves or pending journey.
+Effective damage and death pass through the player's hooks; they do not depend on
+obtaining pain state. A change of map or external displacement stops the rest.
+CaelumTravelService refuses to travel with active session. Cancelling/interrupting
+retains only what has already happened.
 
-La pausa voluntaria detiene reloj y sesión. El guardado nativo conserva ambos
-inventarios y los campos del jugador; al cargar se validan sin reiniciar. No
-se suma tiempo de carga ni del sistema operativo. En 0d se comprobaba copia de campos fuera del motor; 0e añade una prueba
-nativa de guardado/carga durante el descanso.
+The voluntary pause stops clock and session. The native save retains both inventories
+and player fields; when loading they are validated without rebooting. It does not add
+loading time or operating-system time. In 0d the field copy was checked off the engine;
+0e adds a native save/load test during rest.
 
-Mundo > D/X abre CaelumRestTrial, con guía invisible y conversación 43510 del
-menú USDF sin pausa existente. Las acciones se encolan, la conversación cierra
-y la guía valida de nuevo antes de Begin. Cerrar o volver no encola una sesión.
-Las preparaciones explícitas ponen Hambre/Sed a 100% y Sueño a 50% o 5%, sin
-curar ni conceder objetos. Abrir/cargar/viajar nunca aplica ese preset.
-ca_debug_rest_report es consulta; ca_debug_rest_hit, sólo durante una sesión,
-solicita DamageMobj de 1 con el tipo CaelumImpact para probar la interrupción.
+World > D/X opens CaelumRestTrial, with invisible guide and conversation 43510 from the
+USDF menu without any existing pause. Actions are queued, conversation closes and guide
+validated again before Begin. Close or return does not start a session. The explicit
+preparations put Hunger/Thirst to 100% and Sleep to 50% or 5%, without healing or granting items. Opening/loading/travelling never applies that preset.
+ca_debug_rest_report is consulted; ca_debug_rest_hit, only during one session, requests
+DamageMobj from 1 with type CaelumImpact to test the interruption.
 
-Pendientes de este bloque de V4.35: aceleración temporal coherente e
-integración con el futuro estado climático y eventos. Mobiliario y cámara
-tienen su primera implementación utilizable en 0e.
-La API de CVar del motor restringe sus setters a variables del mod; no se
-modifica i_timescale mediante esa API ni se altera la configuración del jugador.
-Referencia técnica: [CVar de GZDoom](https://zdoom-docs.github.io/staging/Api/Base/CVar.html).
-Campamentos, propiedades, calidad amplia y alimentación automática fuera de mesas
-permanecen en V5, junto a exposición térmica y habilidades aún no implementadas.
-El avance seguro se incorporó en 0g y la repetición en mesas en 0h.
+Pending items of this V4.35 block: consistent temporal acceleration and integration with
+the future climate state and events. Furniture and camera have their first deployable
+implementation in 0e. The engine's CVar API restricts its setters to mod variables;
+i_timescale is not modified by that API or altered the player's settings. Technical
+Reference: [GZDoom CVar](https://zdoom-docs.github.io/staging/Api/Base/CVar.html).Camps,
+properties, broader quality factors and automatic eating away from tables remain in V5,
+along with thermal exposure and skills not yet implemented. The safe advance was
+incorporated into 0g and the repeat on tables in 0h.
 
-## Calendario civil, campaña y Limbo (4.35.0b–0c)
+## Civil calendar, campaign and Limbo (4.35.0b–0c)
 
-Inicio canónico: 03/11/1889 a las 09:00, fijado por el autor el 2026-09-15.
-La campaña usa un único CaelumWorldClock; el calendario sólo proyecta su valor.
-CaelumWorldCatalogue.IsTimelessMap identifica MAP01 como Limbo mediante su
-ubicación de mansión. AdvanceOnMap no suma allí ningún tic. Toda otra ubicación,
-incluidos CADEV02 y mapas aún sin catalogar, usa exactamente el ritmo común.
-No hay reinicio al cambiar de mapa, relojes por hub ni recuperación de tiempo
-del sistema operativo. Una entrada inesperada en MAP01 congela el instante
-alcanzado, no lo retrocede al inicio. No existe ruta jugable de retorno al Limbo.
+Canonical start: 03/11/1889 to 09:00, fixed by the author the 2026-09-15. The campaign
+uses a unique CaelumWorldClock; the calendar projects its value only.
+CaelumWorldCatalogue.IsTimelessMap identifies MAP01 as Limbo by its mansion location.
+AdvanceOnMap does not add any tic there. All other location, including CADEV02 and
+uncategorized maps, uses exactly the common rhythm. There is no reboot when changing
+map, hub clocks or time recovery of the operating system. An unexpected input into MAP01
+freezes the instant reached, does not reverse it to the start. There is no playable path
+back to the Limbo.
 
-La suspensión afecta a la cronología global. La simulación local sigue activa:
-movimiento, Use, diálogo, captura, misiones de espera y fabricación conservan
-sus reglas. Hambre, sed, sueño, curación, aire, daño y recargas siguen usando
-los temporizadores personales aceptados. No se activa una pausa del motor.
-Los diálogos siguen sin pausa desde 0b; sólo fuera del Limbo avanzan la fecha.
-Las pausas voluntarias mantienen el comportamiento nativo en todos los mapas.
+The suspension affects the global chronology. The local simulation is still active:
+movement, Use, dialogue, capture, waiting and manufacturing missions retain their rules.
+Hunger, thirst, sleep, healing, air, damage and cooldowns continue to use accepted
+personal timers. An engine pause is not activated. Dialogues continue without pause from
+0b; only outside the Limbo advance the date. Voluntary pauses maintain native behavior
+on all maps.
 
-CaelumCalendarRules es un resolvedor sin estado. Serial cero = 01/01/0001;
-serial máximo 3.652.058 = 31/12/9999. Los años divisibles por cuatro son
-bisiestos salvo los divisibles por cien que no lo sean por cuatrocientos.
-Las fechas inválidas se rechazan antes de crear/modificar el Inventory.
-CAMPAIGN_START_YEAR/MONTH/DAY/HOUR centralizan la fecha y hora iniciales.
+CaelumCalendarRules is a stateless resolver. Serial zero = 01/01/0001; serial maximum
+3.652.058 = 31/12/9999. The years divisible by four are leap years except those
+divisible by one hundred which are not by four hundred. Invalid dates are rejected
+before creating/modifying the Inventory. CAMPAIGN_START_YEAR/MONTH/DAY/HOUR centralize
+the initial date and time.
 
-CaelumCalendarState conserva Configured, TrialDate, AnchorSerial,
-AnchorClockDays, AnchorClockTics y AnchorCivilTics. Desde 0c añade CampaignRevision
-y TrialAnchorSerial/ClockDays/ClockTics/CivilTics. El anclaje principal siempre
-representa la campaña; los cuatro campos TrialAnchor son una vista diagnóstica.
-Ambos usan el mismo reloj, sin otro ticker ni consumo temporal duplicado.
-Es Inventory nativo oculto, único, no arrojable, no borrable por ClearInventory
-y viajero entre hubs. No forma parte de equipo, peso, Caja ni filas del
-inventario. La limpieza del regreso no retira este estado.
+CaelumCalendarState preserves Configured, TrialDate, AnchorSerial, AnchorClockDays,
+AnchorClockTics and AnchorCivilTics. Since 0c adds CampaignRevision and
+TrialAnchorSerial/ClockDays/ClockTics/CivilTics. The main anchor always represents the
+campaign; the four TrialAnchor fields are a diagnostic view. Both use the same clock,
+without another ticker or duplicate time consumption. It is native Inventory hidden,
+unique, non-thrownable, not deleteable by ClearInventory and traveler between hubs. It
+is not part of equipment, weight, Box or inventory rows. Cleaning the return does not
+remove this state.
 
     deltaDays = clock.CompletedDays - AnchorClockDays
     localTics = clock.DayTics - AnchorClockTics + AnchorCivilTics
     fecha     = AnchorSerial + deltaDays + acarreo de localTics
     hora      = localTics normalizados dentro del día
 
-Las consultas DateSerial(clock), CivilDayTics(clock) y FormatDate(clock)
-devuelven la campaña. El argumento opcional trial=true solicita explícitamente
-la prueba activa. Esta consulta no escribe estado. Comprueba límites antes de
-sumar y no envuelve una fecha fuera del año 9999. Un reloj anterior al anclaje
-es inválido. La fecha inicial también se crea en MAP01, antes de decidir si el
-tic debe avanzar. Se mantiene el requisito de perfil confirmado individual.
+The DateSerial(clock), CivilDayTics(clock) and FormatDate(clock) queries return the
+campaign. The optional argument trial=true explicitly requests the active test. This
+query does not write status. Check limits before adding and does not wrap a date out of
+the year 9999. A clock prior to anchoring is invalid. The initial date is also created
+in MAP01, before deciding whether the tic should move forward. The individual confirmed
+profile requirement is maintained.
 
-CampaignRevision=0 identifica el estado anterior o recién creado.
-EnsureCampaign ancla una sola vez 03/11/1889 09:00 al reloj actual y marca
-revisión 1. Descarta la fecha de prueba heredada, conservando el reloj y los
-registros del personaje. Es una migración sin reconstrucción del pasado:
-0a/0b contaban también el tiempo del Limbo y no permiten separar ese intervalo.
-En 0c guardar/cargar restaura reloj y ambos anclajes, y viajar conserva el mismo
-Inventory. Volver a inicializar no modifica una revisión ya establecida.
+CampaignRevision=0 identifies the previous or newly created state. EnsureCampaign
+anchors 03/11/1889 09:00 to the current clock and marks 1 revision. Discards the
+inherited test date, preserving the clock and character records. It is a migration
+without reconstruction of the past: 0a/0b also counted the time of the Limbo and do not
+allow to separate that interval. In 0c save/load restores clock and both anchors, and
+travel retains the same Inventory. Reinitialize does not modify an already established
+revision.
 
-Comandos opcionales de prueba:
+Optional test commands:
 
     netevent ca_debug_calendar_set AÑO MES DÍA
     netevent ca_debug_calendar_edge
     netevent ca_debug_calendar_report
     netevent ca_debug_calendar_clear
 
-set asigna la fecha al anclaje de prueba y toma la hora actual de campaña.
-edge cambia sólo la prueba a 23:56, 12 s reales simulados antes de medianoche.
-Ambos se detienen en MAP01; edge avisa que el cambio se comprueba fuera del
-Limbo. No adelantan reloj, necesidades, recargas, fabricación, misiones ni
-marcas de viaje. report es de sólo lectura y muestra la campaña incluso si
-Mundo está mostrando la prueba. clear desactiva la vista diagnóstica y deja
-ver la fecha de campaña alcanzada, sin reiniciar, quitar ni volver a anclarla.
-Las pruebas creadas y guardadas en 0c se conservan al cargar; una partida nueva
-no las hereda. Modificar requiere personaje vivo confirmado individual y sin
-predicción. Los futuros eventos deben consultar la campaña, no trial=true.
+set assigns the date to the test anchor and takes the current campaign time. edge
+changes only the test to 23:56, 12 s real simulated before midnight. Both stop at MAP01;
+edge warns that the change is checked outside the Limbo. They do not advance clock,
+needs, cooldowns, manufacture, missions or travel timestamps. report is read only and
+displays the campaign even if World is showing the test. clear disables the diagnostic
+view and lets see the campaign date reached, without restarting, removing or anchoring
+it. Tests created and saved in 0c are preserved when loading; a new game does not
+inherit them. Modify requires individual and unpredicted live character. Future events
+should consult the campaign, no trial=true.
 
-Mundo muestra fecha y estación mensual austral: verano diciembre–febrero;
-otoño marzo–mayo; invierno junio–agosto; primavera septiembre–noviembre.
-Esta convención sigue siendo una prueba; noviembre de 1889 se muestra como
-primavera, sin determinar equinoccios, clima, temperatura, luz ni exposición
-térmica. Descanso, avance temporal y estado ambiental siguen en V4.35;
-exposición térmica del personaje conserva V5.1.
+World shows southern date and monthly season: summer December–February; autumn
+March–May; winter June–August; spring September–November. This convention remains a
+test; November 1889 is shown as spring, without determining equinoxes, climate,
+temperature, light or thermal exposure. Rest, temporary advancement and environmental
+status continue in V4.35; thermal exposure of the character preserves V5.1.
 
-## Habilidades de clase y raza: diseño acordado; Sueño implementado en 0g
+## Class and racial abilities: agreed design; Sleep implemented in 0g
 
-Actualización 4.35.0g: Sueño del Arcanista se implementa arriba con el drenaje
-pedido de Lucidez. El resto de este catálogo conserva su estado de diseño.
+4.35.0g update: Arcanist Sleep is implemented above with the requested Lucidity drain.
+The rest of this catalog retains its design status.
 
-Se registran aquí las decisiones del diálogo del 2026-09-14. No hay nuevos
-efectos jugables de User1/User4 en 0b ni 0c. El roadmap asigna estas habilidades a
-V5 después de la exportación de prueba. User2 sigue dedicado a sellos y User3
-al Tarot. No se modifican atributos, costes existentes ni controles aceptados.
+The decisions from the discussion on 2026-09-14 are recorded here. There are no new
+playable User1/User4 effects in 0b or 0c. The roadmap assigns these abilities to V5
+after the playtest export. User2 remains dedicated to Seals and User3 to Tarot.
+Attributes, existing costs and accepted controls are unchanged.
 
-Las habilidades de clase duran 10 segundos, con 60 segundos de reuso. Coste
-base inicial para pruebas: 1000 de ánima por activación; no es un balance
-final. El reuso es la espera hasta poder activar de nuevo, como los sellos.
-La aplicación de modificadores de coste y el momento preciso en que comienza
-esa espera se integrarán con su contrato de activación; no se inventa una
-fórmula adicional en este parche. Los radios de las auras quedan por definir.
+Class abilities last 10 seconds, with 60 seconds of cooldown. Initial base cost for testing: 1000 Anima per activation; it is not a final balance. Reuse is the wait
+until you can activate again, like seals. The application of cost modifiers and the
+precise time when that wait begins will be integrated with your activation contract; no
+additional formula is invented in this patch. The aura radii remain to be defined.
 
-| Clase | Habilidad | Efecto acordado durante 10 segundos |
+| Class | Ability | Agreed effect for 10 seconds |
 | --- | --- | --- |
-| Guerrero | Grito de batalla | Intimida en área. Los aterrorizados no pueden realizar ataques físicos ni ataques con armas a distancia. |
-| Explorador | Instinto de supervivencia | Bloquea todos los estados negativos y la pérdida de recursos de supervivencia. |
-| Sacerdote | Milagro | Restaura por segundo 1% de Lucidez, Salud, Ánima y Aire. |
-| Mago | Lluvia de ideas | Para cada lanzamiento distinto, los tres siguientes dentro de la ventana tienen reducciones de 100%, 50% y 25%. Se incluyen Fire y AltFire de cada arma, y el ataque potenciado con R cuenta como hechizo distinto. |
-| Mercenario | Instinto asesino | Triplica la probabilidad de crítico y la ganancia de adrenalina. |
-| Clérigo | Arenga | Recupera por segundo 1% de adrenalina para los aliados cercanos. |
-| Mago de batalla | Grito ensordecedor | Impide lanzar hechizos, habilidades y sellos a los enemigos cercanos. |
-| Peregrino | Amparo del peregrino | El personaje y los aliados cercanos reciben un 50% menos de daño del entorno. |
-| Investigador | Levitación | Permite volar durante aproximadamente 10 segundos. |
-| Arcanista | Sueño | Duerme a todos en el área. Permanecen inmóviles y despiertan al recibir un golpe. |
+| Warrior | Battle Cry | Intimidates within the area. Terrified targets cannot perform physical attacks or attacks with ranged weapons. |
+| Explorer | Survival Instinct | Blocks all negative states and loss of survival resources. |
+| Priest | Miracle | Restores 1% of Lucidity, Health, Anima and Air per second. |
+| Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |
+| Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |
+| Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |
+| Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |
+| Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |
+| Investigator | Levitation | Allows flight for approximately 10 seconds. |
+| Arcanist | Sleep | Targets remain motionless and wake when hit. |
 
-Amparo reemplaza Bendecir los alimentos. No concede curación, comida, bebida
-ni reducción del daño de combate. La clasificación depende del origen del
-daño: una llama ambiental se reduce; un hechizo de fuego en combate conserva
-su daño. El sistema de peligros deberá conservar esa procedencia, incluidos
-efectos persistentes; no basta deducir «entorno» de un atacante nulo.
+Protection replaces Bless Food. It does not grant healing, food, drink or reduction of
+combat damage. Classification depends on the origin of the damage: an environmental
+flame is reduced; a fire spell in combat retains its damage. The system of dangers must
+retain that origin, including persistent effects; it is not enough to deduce
+"environment" from a null attacker.
 
-Raciales: toggles que consumen ánima mientras actúan, con costes pendientes de
-balance. Se conserva la indicación inicial del autor de un minuto de reuso y
-10 segundos de duración; «toggle» no autoriza por sí solo duración ilimitada.
-Debe poder apagarse manualmente o por agotamiento, liberando la interacción.
-El coste de 1000 corresponde a las habilidades de clase, no al consumo por
-segundo de las raciales.
+Races: toggles that consume Anima while active, with costs awaiting balance decisions. The
+author's initial indication of a minute of cooldown and 10 seconds of duration is
+retained; "toggle" does not authorize unlimited duration alone. It must be able to
+switch off manually or by exhaustion, releasing interaction. The cost of 1000
+corresponds to class skills, not to racial consumption per second.
 
-| Raza | Habilidad | Efecto acordado mientras está activa |
+| Race | Ability | Agreed effect while active |
 | --- | --- | --- |
-| Hombre bestia | Instinto cazador | Triplica el sigilo y la probabilidad de crítico por la espalda. No triplica el daño crítico. |
-| Humano | Socialización | Duplica Labia y Persuasión. El consumo de ánima continúa al conversar sin pausa. |
-| Duende | Telequinesis | Mueve objetos a distancia, con coste de ánima según el peso. |
-| Caelith | Nombre pendiente | Consume ánima en lugar de aire. |
+| Beast Man | Hunter’s Instinct | Triples stealth and critical chance from behind. Does not triple critical damage. |
+| Human | Socialization | Doubles Dialogue skill and Persuasion. Anima consumption continues during unpaused conversation. |
+| Duende | Telekinesis | Moves objects remotely, with Anima cost based on weight. |
+| Caelith | Name pending | Consumes Anima instead of Air. |
 
-Mago + Explorador = Investigador; Mago + Sacerdote = Arcanista. Las propuestas
-no aprobadas sobre nuevas inmunidades, curación con alimentos o cambios de
-atributos no sustituyen estas definiciones. La limpieza de estados previos de
-Instinto de supervivencia, costes raciales, radios y acumulación entre efectos
-necesitan concretarse al implementar; no se simulan con bonificaciones falsas.
+Mage + Explorer = Investigator; Mage + Priest = Arcanist. Unapproved proposals on new
+immunities, food cure or changes of attributes do not replace these definitions.
+Cleaning of previous states of Survival Instinct, racial costs, radii and accumulation
+between effects need to be concrete when implementing; they are not simulated with false
+bonuses.
 
-## Reloj global y marcas de viaje (4.35.0a)
+## Global clock and travel timestamps (4.35.0a)
 
-Autoridad: CaelumWorldClock, Inventory nativo oculto, no arrojable, no borrable
-por ClearInventory y con InterHubAmount=1. No es equipo, material ni una segunda
-Caja; no participa del peso ni de las filas del inventario. Conserva dos int:
-CompletedDays y DayTics. No copia el tiempo del sistema operativo ni Level.Time.
+Authority: CaelumWorldClock, Inventory native hidden, non-throwable, not deleteable by
+ClearInventory and with InterHubAmount=1. It is not equipment, material or a second Box;
+it does not participate in the weight or rows of the inventory. It retains two int:
+CompletedDays and DayTics. It does not copy operating system time or Level.Time.
 
-CaelumWorldClockTicker es StaticEventHandler y no serializa una copia del
-contador. WorldTick sólo actúa con un participante, personaje Caelum, perfil
-confirmado, creador cerrado y sin predicción. Desde 0c inicializa el calendario
-y cada tic nativo suma uno al contador sólo fuera del Limbo. El controlador existe también al cargar saves antiguos: crea el
-Inventory si falta. Una partida nueva sustituye al personaje y su registro;
-un hub transporta el mismo Inventory. No se usa una CVar global persistente.
+CaelumWorldClockTicker is StaticEventHandler and does not serialize a copy of the
+counter. WorldTick only acts with one participant, Caelum character, confirmed profile,
+closed and unpredicted creator. From 0c initializes the calendar and each native tic
+adds one to the counter only outside the Limbo. The controller also exists when loading
+old saves: create the Inventory if missing. A new game replaces the character and its
+record; a hub transports the same Inventory. No persistent global CVar is used.
 
     TicsPerHour = REAL_SECONDS_PER_GAME_HOUR × TICRATE = 180 × 35 = 6300
     TicsPerDay  = TicsPerHour × GAME_HOURS_PER_DAY = 6300 × 24 = 151200
     Hora       = DayTics / TicsPerHour                       (entero)
     Minuto     = (DayTics % TicsPerHour) × 60 / TicsPerHour    (entero)
 
-Al completar el día se incrementa CompletedDays y DayTics vuelve a cero.
-El extremo entero se satura para impedir que envuelva y retroceda. Tres
-segundos reales simulados representan un minuto de juego; un día completo
-representa 72 minutos reales. Son las constantes ya usadas por supervivencia.
-No se duplican consumos ni se cambia ninguna fórmula al incorporar el reloj.
+When the day is completed, CompletedDays is increased and DayTics is reset to zero. The
+integer limit saturates to prevent overflow and time reversal. Three simulated real
+seconds represent a minute of play; a full day represents 72 real minutes. These are the
+constants already used for survival. No double consumptions or formula changes when the
+clock is incorporated.
 
-Mundo consulta directamente el Inventory. Fuera del Limbo muestra tiempo
-registrado; dentro indica que está detenido. La línea inferior muestra el
-calendario de campaña de 0c o su vista diagnóstica explícita. El cero de un save anterior es el inicio del
-registro nuevo, no una afirmación sobre cuánto duró la partida anterior.
-La pausa se hereda de WorldTick. Desde 0b las conversaciones de Caelum
-continúan simulando, igual que el Diario. La pausa voluntaria del motor
-detiene el reloj; los diálogos por sí mismos ya no lo detienen.
-La muerte no impone una pausa adicional al mundo si el motor sigue simulando.
+World consults directly the Inventory. Outside the Limbo shows recorded time; inside
+indicates that it is stopped. The bottom line shows the campaign calendar of 0c or its
+explicit diagnostic view. The zero of a previous save is the beginning of the new
+record, not a statement about how long the previous game lasted. The pause is inherited
+from WorldTick. From 0b the Caelum conversations continue to simulate, just like the
+Journal. The voluntary engine pause stops the clock; the dialogues themselves no longer
+stop it. Death does not impose an additional pause on the world if the engine continues
+to simulate.
 
-CaelumJourneyState añade HasDepartureTime, DepartureDays, DepartureDayTics,
-HasArrivalTime, ArrivalDays y ArrivalDayTics. Begin registra la salida después
-de validar y antes de ChangeLevel; borra las marcas del viaje anterior.
-Update registra la llegada una sola vez en el destino esperado, con conexión
-pendiente compatible y salida fechada. Una interrupción no se presenta como
-llegada. Los campos nuevos de saves 0e parten sin marcas conocidas; no se
-rellenan retroactivamente al consultar una llegada ya resuelta.
+CaelumJourneyState adds HasDepartureTime, DepartureDays, DepartureDayTics,
+HasArrivalTime, ArrivalDays and ArrivalDayTics. Begin records departure after validation
+and before ChangeLevel; deletes the marks of the previous journey. Update records the
+arrival only once at the expected destination, with compatible pending connection and
+timestamped departure. An interruption is not presented as arrival. New fields in 0e
+saves start without known timestamps; they are not refilled retroactively upon
+consultation of an already resolved arrival.
 
-FormatStamp es una consulta común. netevent ca_debug_time_report no crea ni
-modifica el reloj, y ca_debug_travel_report incluye las marcas disponibles.
-No se habilita un salto de tiempo por consola en 0a: descanso, viajes con
-duración, eventos e integración de los sistemas afectados se implementan
-posteriormente sobre esta misma autoridad temporal.
+FormatStamp is a common query. netevent ca_debug_time_report does not create or modify
+the clock, and ca_debug_travel_report includes the available timestamps. A time jump per
+console is not enabled in 0a: rest, journeys with duration, events and integration of
+the affected systems are subsequently implemented on this same temporary authority.
 
+## Activity testing support (4.34.0e)
 
-## Apoyo a las pruebas de actividades (4.34.0e)
+CaelumSewerTrialSupport installs the native classes CaelumWorkbenchStation,
+CaelumSawmillStation and CaelumForgeStation with 43414 network group. Each link measures
+56 MU within the current limit of 64. It only acts on MAP02–MAP05. The new
+SewerSupportPrepared field of the controller starts false in the 0d; FindStation avoids
+recreating nodes that already exist. It does not modify WAD. Forging meets the existing
+requirement for the Handle component; it does not alter the catalog to pass the test.
+args[0]=0 retains immobility.
 
-CaelumSewerTrialSupport instala las clases nativas CaelumWorkbenchStation,
-CaelumSawmillStation y CaelumForgeStation con grupo de red 43414. Cada enlace
-mide 56 MU, dentro del límite vigente de 64. Sólo actúa en MAP02–MAP05.
-El nuevo campo SewerSupportPrepared del controlador comienza falso en los
-guardados 0d; FindStation evita recrear nodos que ya existen. No modifica WAD.
-La forja satisface el requisito existente del componente Mango; no se altera
-el catálogo para hacer pasar la prueba. args[0]=0 conserva la inmovilidad.
+The two new actions share the USDF session checks: self-guide, interlocutor player,
+current origin, unique action and no prediction. They are queued and executed after
+closing the conversation. Prepare to re-check CanDepart and only then grant the help,
+without creating JourneyState. The USDF pages and ids of 0d are preserved; responses are
+added at the end of the offer, before the native "Cancel". Open, look or cancel does not
+grant anything.
 
-Las dos acciones nuevas comparten las comprobaciones de la sesión USDF:
-guía propio, jugador interlocutor, origen vigente, acción única y no predicción.
-Se encolan y ejecutan después de cerrar la conversación. Prepare vuelve a
-consultar CanDepart y sólo entonces concede la ayuda, sin crear JourneyState.
-Las páginas e ids USDF de 0d se conservan; se agregan respuestas al final de
-la oferta, antes del «Cancelar» nativo. Abrir, mirar o cancelar no concede nada.
+Seal: A T1 quintessence possessed instance is sought and the
+ApplyFormalInventorySelection/EquipSelectedNativeEquipment. route is used If missing, a
+native instance is created with ItemId. Only the explicit option adds adrenaline to the
+maximum derivative and sets the cooldown to zero. It does not change
+CombatTimeRemaining, attributes, weapons, consumption or the start/cancellation of the
+channel. If there was another seal, it is saved without equipping. The channeling uses
+the usual seal control of the equipped weapon; use or travel never reload this help.
 
-Sello: se busca una instancia poseída de quintaesencia T1 y se usa la ruta
-ApplyFormalInventorySelection/EquipSelectedNativeEquipment. Si falta, se crea
-una instancia nativa con ItemId. Sólo la opción explícita añade adrenalina al
-máximo derivado y pone a cero el enfriamiento. No cambia CombatTimeRemaining,
-atributos, armas, consumo ni el inicio/cancelación del canal. Si había otro
-sello, queda guardado sin equipar. La canalización usa el control de sello
-habitual del arma equipada; usar o viajar nunca recarga esta ayuda.
+Crafting: learns Recipe() from the catalog and complete the native wood stack up to
+GetComponentInputUnits(BATCH_INDEX=1): 40 units. Keep its personal/Box location and
+check your weight. It does not grant Box, finished products or artificial reservations.
+FocusRecipe only acts on this network, with a known recipe and no task in progress: T1,
+x10 batch, efficiency index 2 (100%). The player starts, pauses, resumes, cancels and
+completes by the actual controls. Close Crafts leaves the task reserved pending; that
+state blocks the journey. Time and production are calculated with the current functions.
 
-Crafteo: aprende Recipe() del catálogo y completa la pila nativa de madera
-hasta GetComponentInputUnits(BATCH_INDEX=1): 40 unidades. Conserva su ubicación
-personal/Caja y comprueba su peso. No concede Caja, productos terminados ni
-reservas artificiales. FocusRecipe sólo actúa sobre esta red, con receta
-conocida y sin tarea en curso: T1, lote x10, eficiencia índice 2 (100%).
-El jugador inicia, pausa, reanuda, cancela y completa por los controles reales.
-Cerrar Oficios deja la tarea reservada pendiente; ese estado bloquea el viaje.
-El tiempo y la producción se calculan con las funciones vigentes.
+When opening Crafts with Use, the Journal lets the KeyUp event pass to the engine from
+the natively linked key to +use. Before it was consumed; the internal button was
+retained and the next press after Q could not reopen the station. KeyDown, arrow keys,
+Home/End, tabs and PgUp/PgDn. are retained.
 
+## Test caravans and movement cycle (4.34.0d)
 
-Al abrir Oficios con Use, el Diario deja pasar al motor el evento KeyUp de
-la tecla ligada nativamente a +use. Antes lo consumía; quedaba retenido el
-botón interno y la siguiente pulsación después de Q podía no reabrir el
-puesto. Se conservan KeyDown, flechas, extremos, solapas y RePág/AvPág.
+TAB > World > C opens a USDF offer in MAP02–MAP05. MAP02 offers MAP03, MAP04 and MAP05;
+each module offers MAP02. The existing 2–7 ids are retained. The destination selection
+and "Back to Destinations" only change the native page. "Cancel" closes the service
+without recording a departure. "Confirm departure" delivers an ephemeral action that
+only accepts the interlocutor, player, origin and session itself, with a single queue
+connection. The invisible guide is removed when the session is over; it does not occupy
+the map or modify narrative NPC.
 
-## Caravanas de prueba y ciclo del traslado (4.34.0d)
+CaelumCaravanGuide waits for the native closing of the conversation and then calls
+CaelumTravelService.Begin. It revalidates the entire departure. CaelumSewerTravel.Begin
+retains range/height/visibility/placed-actor checks and uses the same service with foot
+mode. Only sewer paths, confirmed profile, live player outside the creator, no
+prediction, incompatible session, active channel, active manufacturing, total freezing
+or other player are allowed. The destination must exist and cannot be MAP01. One pending
+departure prevents another. Failures prior to commit do not create history or charge.
 
-TAB > Mundo > C abre una oferta USDF en MAP02–MAP05. MAP02 ofrece MAP03,
-MAP04 y MAP05; cada módulo ofrece MAP02. Se conservan los ids 2–7 existentes.
-La selección de destino y «Volver a destinos» sólo cambian la página nativa.
-«Cancelar» cierra el servicio sin escribir una salida. «Confirmar salida»
-entrega una acción efímera que sólo acepta el interlocutor, jugador, origen
-y sesión propios, con una única conexión en cola. El guía invisible se
-retira cuando termina la sesión; no ocupa el mapa ni modifica NPC narrativos.
+The new CaelumJourneyState is Native Inventory, hidden and non-throwable. It does not
+change the fields or capabilities of CaelumPersistentCharacterState. It is created by
+starting the first new trip, never by reading World or opening the offer.
 
-CaelumCaravanGuide espera el cierre nativo de la conversación y después
-llama a CaelumTravelService.Begin. Éste vuelve a validar toda la salida.
-CaelumSewerTravel.Begin conserva alcance/altura/visión/actor colocado y usa
-el mismo servicio con modo a pie. Se admiten sólo rutas de alcantarilla,
-perfil confirmado, jugador vivo fuera del creador, sin predicción, sesión
-incompatible, canal activo, fabricación activa, congelación total u otro
-jugador. El destino debe existir y no puede ser MAP01. Una salida pendiente
-impide otra. Los fallos anteriores al commit no crean historial ni cobran.
-
-El nuevo CaelumJourneyState es Inventory nativo, oculto y no arrojable. No
-cambia los campos ni capacidades de CaelumPersistentCharacterState. Se crea
-al iniciar el primer viaje nuevo, nunca por leer Mundo o abrir la oferta.
-
-| Campo | Significado |
+| Field | Meaning |
 | --- | --- |
-| Sequence | Número de salida; incrementa una vez por Begin aceptado. |
-| ConnectionId | Id dirigido del catálogo existente. |
-| TravelMode | 1: a pie; 2: caravana de prueba. |
-| Status | 0: sin viaje; 1: salida pendiente; 2: llegada; 3: interrumpido. |
-| Arrivals / Interruptions | Cantidades resueltas una sola vez; saturan en INT_MAX. |
+| Sequence | Departure number; increases once per Begin accepted. |
+| ConnectionId | Points to the existing catalog. |
+| TravelMode | 1: on foot; 2: test caravan. |
+| Status | 0: no trip; 1: pending departure; 2: arrival; 3: interrupted. |
+| Arrivals / Interruptions | Amounts resolved once; saturated in INT_MAX. |
 
-La salida se escribe junto a WorldPendingConnection antes de ChangeLevel.
-Update se ejecuta antes de que WorldProgress consuma esa marca. Sólo acredita
-el destino que coincide con id y pendiente; otra ubicación interrumpe. Una
-carga todavía en origen interrumpe y libera su propia marca, sin viajar por
-sorpresa ni borrar una marca ajena. Una salida resuelta no se vuelve a contar.
-El observador de carga existente realiza esta conciliación antes de reabrir,
-si corresponde, la conversación nativa guardada. Los guardados 0c mantienen
-visitas y conexiones; no se les atribuyen viajes anteriores sin evidencia.
+Departure is recorded alongside WorldPendingConnection before ChangeLevel. Update runs
+before WorldProgress consumes that brand. It only credits the destination that matches
+the ID and pending departure; another location interrupts. A save loaded while still at
+the origin interrupts and releases its own marker, without traveling by surprise or
+erasing another system’s marker. A resolved departure is not counted again. The existing
+load observer performs this reconciliation before reopening, if applicable, the native
+conversation saved. 0c saves keep visits and connections; they are not credited with
+previous trips without evidence.
 
-La prueba no aplica tarifa, consumo adicional ni avance temporal. Se conserva
-el consumo normal que ya transcurre durante juego activo. No rellena recursos,
-no sanea ni copia inventario y no ejecuta los premios o limpieza del prólogo.
-El modo/estado/secuencia forman la base de integración del reloj y eventos
-posteriores; no existe todavía un planificador ni una simulación de transporte.
-Mundo muestra el último viaje en una línea. Su historial de lugares/rutas y
-los controles de Inventario/Misiones, flechas y RePág/AvPág se conservan.
+The test does not apply tariff, additional consumption or temporary advance. The normal
+consumption that already occurs during active play is preserved. It does not fill
+resources, heal the player or copy inventory and does not execute the prizes or cleaning
+of the prologue. The mode/status/sequence form the base of integration of the clock and
+subsequent events; there is not yet a planner or transport simulation. World shows the
+last trip on a line. Its history of places/routes and the controls of Inventory/Quests,
+arrows and PgUp/PgDn are preserved.
 
+## Sewer and test travel network (4.34.0c)
 
-## Red de alcantarillas y viajes de prueba (4.34.0c)
+The current authorization allows new sewer maps for testing. MAP01 is the prologue
+without reverse access. MAP02 maintains its WAD and PlayerStart. MAP03–05 are new maps
+generated from UDMF modules, without ACS or Doom assets. Native cluster/hub 434 is used
+for MAP02, MAP03, MAP04 and MAP05 only.
 
-La autorización actual permite nuevas alcantarillas para pruebas. MAP01 es
-el prólogo sin acceso inverso. MAP02 mantiene su WAD y PlayerStart. MAP03–05
-son mapas nuevos generados a partir de módulos UDMF, sin ACS ni assets de Doom.
-Se usa el cluster/hub nativo 434 para MAP02, MAP03, MAP04 y MAP05 solamente.
-
-| Id de conexión | Origen | Destino | Activación |
+| Connection ID | Origin | Destination | Activation |
 | --- | --- | --- | --- |
-| 1 | MAP01 | MAP02 | Regreso narrativo existente, con confirmación y limpieza. |
-| 2 | MAP02 | MAP03 | Portón del depósito, Usar. |
-| 3 | MAP03 | MAP02 | Portón de vuelta, Usar. |
-| 4 | MAP02 | MAP04 | Portón de cámaras del Tarot, Usar. |
-| 5 | MAP04 | MAP02 | Portón de vuelta, Usar. |
-| 6 | MAP02 | MAP05 | Portón de mantenimiento, Usar. |
-| 7 | MAP05 | MAP02 | Portón de vuelta, Usar. |
+| 1 | MAP01 | MAP02 | Existing narrative return, with confirmation and cleanup. |
+| 2 | MAP02 | MAP03 | Reservoir gate, Use. |
+| 3 | MAP03 | MAP02 | Gate back, Use. |
+| 4 | MAP02 | MAP04 | Tarot chamber gate, use. |
+| 5 | MAP04 | MAP02 | Gate back, Use. |
+| 6 | MAP02 | MAP05 | Maintenance gate, Use. |
+| 7 | MAP05 | MAP02 | Gate back, Use. |
 
-Los ids de ubicación 1/2 se conservan; 3/4/5 identifican los mapas nuevos.
-LOCATION_CAPACITY y CONNECTION_CAPACITY siguen en 32 y WorldStateVersion en 1.
-Las posiciones nuevas de las matrices nacen falsas en guardados anteriores.
-El origen/destino de la conexión 1 y la migración desde versión 0 no cambian.
-La llegada pendiente 1 necesita evidencia del regreso; las conexiones 2–7
-necesitan llegar a su destino correspondiente. Otro destino descarta el intento.
+1/2 location ids are preserved; 3/4/5 identify new maps. LOCATION_CAPACITY and
+CONNECTION_CAPACITY are still in 32 and WorldStateVersion in 1. New array positions are
+born false in previous saves. origin/destination of the 1 connection and migration from
+0 version remain unchanged. The pending arrival 1 needs proof of return; 2–7 connections
+need to reach their respective destination. Another destination discards the attempt.
 
-CaelumSewerTravel prepara accesos reconstruibles desde el controlador ya
-existente; su nueva bandera de preparación nace falsa al cargar 0b. Antes de
-colocar un acceso busca una instancia con el mismo id. No modifica el WAD de
-MAP02 ni añade un manejador que falte en su guardado. Los portones son fijos,
-no Shootable, sin gravedad, con CANNOTPUSH/DONTTHRUST y sprite de pared propio.
-Su destino se muestra al mirarlos a corta distancia con línea de vista.
+CaelumSewerTravel prepares reconstructable accesses from the existing controller; its
+new preparation flag initializes to false when loading 0b. Before placing an access it
+looks for an instance with the same id. It does not modify the MAP02 WAD or add a
+missing handler to its save. The gates are fixed, not Shootable, without gravity, with
+CANNOTPUSH/DONTTHRUST and its own wall sprite. Its destination is shown by looking at
+them at a short distance with a line of view.
 
-Begin requiere personaje vivo y confirmado, mapa/origen válido, portón
-colocado, alcance Usar más su radio, diferencia vertical <=64 y vista directa.
-Rechaza creador, predicción, conversación, comercio, menú/tarea de crafting,
-Diario, canalización activa, congelación ajena y otros jugadores en sesión.
-MapExists se comprueba antes de modificar inventario o marcar la salida.
-Una petición pendiente impide duplicar el viaje. Rechazar no cancela tareas
-ni levanta congelaciones. Aceptar deja preparados los controles de combate,
-guarda el personaje y solicita ChangeLevel con NOINTERMISSION, sin reset de
-vida o inventario. Los ganchos nativos PreTravelled/Travelled siguen a cargo
-de la misma autoridad; no se crean copias de equipo ni limpiezas del Limbo.
+Begin requires live and confirmed character, valid map/origin, gate placed, Use range
+plus its radius, vertical difference <=64 and direct view. Reject creator, prediction,
+conversation, trade, menu/task of crafting, Journal, active channeling, freezing and
+other players in session. MapExists is checked before modifying inventory or marking departure. A pending request prevents doubling the trip. Refuse does not cancel tasks or
+lift freezes. Accept leaves the combat controls ready, saves the character and requests
+ChangeLevel with NOINTERMISSION, without resetting health or inventory.
+PreTravelled/Travelled native hooks remain in charge of the same authority; do not
+create copies of equipment or cleanings of the Limbo.
 
-La llegada usa PlayerStart 0: (-236,32,0) en MAP02 y (0,320,0) en MAP03–05,
-mirando al norte. Los portones inversos están en (0,96,0), detrás de la llegada.
-No se activa un viaje por contacto; Usar sostenido no alcanza el portón desde
-la posición de aparición. Los estados de mapas inactivos los serializa el
-hub de GZDoom, también dentro del guardado de la sesión. No se guardan actores
-en una segunda estructura propia ni se reconstruyen los objetos recogidos.
+Arrival uses PlayerStart 0: (-236,32,0) in MAP02 and (0,320,0) in MAP03–05, looking
+north. Reverse gates are in (0,96,0), behind arrival. No contact trip is activated;
+Sustained use does not reach the gate from the appearance position. Inactive map states
+are serialized by the GZDoom Hub, also inside the session save. No actors are saved in a
+second structure of their own nor are the collected objects rebuilt.
 
-Mundo muestra cinco posibles visitas y hasta tres salidas de la ubicación
-actual. Descubrir requiere aproximarse a 256 MU y tener vista/altura válidas;
-no se marca destino visitado hasta entrar. Ida y vuelta son independientes.
-La UI lee el Inventory; para el rótulo del portón lee la visibilidad que su
-Tick calculó, evitando consultas de gameplay desde la UI. Las flechas y
-RePág/AvPág conservan sus funciones y no ejecutan viajes.
+World shows five possible visits and up to three departures from the current location.
+Discovering requires approaching 256 MU and having valid visibility/height; it does not
+mark visited destination until entering. Outbound and return routes are independent. The
+UI reads the Inventory; for the label of the gate reads the visibility that your Tick
+calculated, avoiding gameplay queries from the UI. Arrows and PgUp/PgDn retain its
+functions and do not execute trips.
 
-El generador usa sectores y colisión nativos. MAP05 tiene dos escaleras de
-256 MU de ancho, ocho huellas de 64 MU y contrahuellas de 12 MU, hasta +96 MU.
-Los canales visuales están rebajados sólo 12 MU y no declaran daño, inmersión
-ni nuevas reglas de agua. MAP03 no crea actores masivos automáticamente;
-MAP04 no concede cartas; MAP05 reserva las pruebas de peligros para su bloque.
-No se acredita cooperativo, costes, caravanas o duración simulada de viaje.
+The generator uses native sectors and collisions. MAP05 has two wide 256 MU stairs,
+eight treads of 64 MU and 12 MU risers, up to +96 MU. Visual channels are reduced only
+12 MU and do not declare damage, immersion or new water rules. MAP03 does not create
+large numbers of actors automatically; MAP04 does not grant cards; MAP05 reserves hazard
+tests for its block. Cooperative, costs, caravans or simulated travel duration are not
+accredited.
 
-## Puertas y accesos agrupados (4.34.0b)
+## Grouped doors and accesses (4.34.0b)
 
-CaelumSlidingDoorLeaf conserva ClosedPosition, SlideProgress, HoldTimer,
-DoorRequested, LockedSoundCooldown, RuloArenaLocked y AccessCondition. No
-cambia su esquema serializado. args[0] > 0 enlaza hojas; ids cero o negativos
-se consideran puertas individuales. args[1] conserva sentido de desplazamiento,
-args[2] el eje X/Y, y args[3] el número de cerradura LOCKDEFS.
+CaelumSlidingDoorLeaf preserves ClosedPosition, SlideProgress, HoldTimer, DoorRequested,
+LockedSoundCooldown, RuloArenaLocked and AccessCondition. It does not change its
+serialized scheme. args[0] > 0 links leaves; zero or negative ids are considered
+individual doors. args[1] retains a sense of displacement, args[2] the X/Y axis, and
+args[3] the LOCKDEFS lock number.
 
-RequestDoorGroup mantiene comprobaciones de vista y solapamiento vertical en
-la hoja usada; rechaza peticiones de jugador muerto o en predicción. Acepta
-peticiones de NPC en puertas libres, como la ruta existente de Palomo. Recorre
-el grupo y comprueba bloqueo de arena, llave nativa y condición de reputación
-de todas sus hojas antes de activar alguna. Una negativa conserva peticiones
-y temporizadores. La llave no satisface pertenencia/reputación ni el bloqueo
-de arena, y una hoja libre no evita los requisitos de su compañera.
+RequestDoorGroup maintains sight checks and vertical overlap on the used leaf; it
+rejects dead or predicting player requests. It accepts NPC requests on free doors, such
+as the existing Palomo route. It runs through the group and checks arena lock, native
+key and reputational status of all its leaves before activating any. A rejection leaves
+requests and timers unchanged. The key does not satisfy membership/reputation nor arena
+lock, and an unlocked leaf does not avoid the requirements of its companion.
 
-CheckKeys(lock, false, true) consulta sin emitir feedback. Ante rechazo y con
-el temporizador disponible, CheckKeys(lock, false) presenta el motivo y sonido
-nativos; no consume la llave. Las cerraduras 200/201 y 202 resuelven a
-caelum/world/door_locked, el OGG existente. Se elimina la doble reproducción
-manual y se conserva el temporizador de siete tics.
+CheckKeys(lock, false, true) query without issuing feedback. Upon rejection and with the
+available timer, CheckKeys(lock, false) presents the native motif and sound; it does not
+consume the key. 200/201 and 202 locks solve caelum/world/door_locked, the existing OGG.
+Dual manual reproduction is removed and the seven tics timer is retained.
 
-PlayerOccupiesDoorway usa ClosedPosition: semiancho 32 MU y semiprofundidad
-4 MU de la hoja/bloqueadores, ampliados por el radio real del jugador, con
-solapamiento vertical según su altura. Mide el paso aunque la hoja se haya
-apartado 64 MU. GroupDoorwayOccupied revisa las hojas del mismo grupo y
-HoldOccupiedGroup conserva/reabre el conjunto con espera de 18 tics. Se
-consulta al agotarse la espera o durante el cierre; sin ocupación mantiene
-recorrido 64 MU, pasos de 4 MU por tic y espera normal de 105 tics.
+PlayerOccupiesDoorway uses ClosedPosition: half-width 32 MU and half-depth 4 MU of the
+leaf/blockers, expanded by the player's real radius, with vertical overlap according to
+its height. It measures the doorway even when the leaf has moved aside by 64 MU.
+GroupDoorwayOccupied checks the leaves of the same group and HoldOccupiedGroup
+holds/reopens the set with 18 tics waiting. It is consulted when the wait is exhausted
+or during closing; without occupation it maintains 64 MU route, 4 MU steps by tic and
+normal 105 tics wait.
 
-La presencia sólo reabre una puerta que ya tiene SlideProgress > 0. No abre
-una puerta cerrada sin llave. Si se pierde la llave durante el paso, permite
-salir; una vez cerrada vuelve a exigirla. RuloArenaLocked mantiene el cierre
-forzado previo y la prioridad de la prueba del Toro. La protección de ocupación
-es para jugadores; no redefine la física general de NPC/objetos.
+The presence only reopens a door that already has SlideProgress > 0. It does not open a
+locked door without a key. If the key is lost during the pass, it allows to leave; once
+closed it again demands it. RuloArenaLocked maintains the previous forced closure and
+the priority of the Bull test. Occupation protection is for players; do not redefine the
+general physics of NPCs/objects.
 
-### Presentación de prueba de accesos
+### Access test
 
-CaelumDoorAccessTrial es un Inventory opcional sin peso ni fila visible. Guarda
-referencias de dos hojas y PresentationMap, usando el guardado nativo. No añade
-campos al perfil persistente ni cambia el registro de ubicaciones/conexiones.
-CaelumDebugDoorTrial la crea a 128 MU delante del usuario, con sondas nativas
-de espacio en posiciones cerradas/abiertas. Si no hay lugar, no instala media
-puerta. Usa un id positivo libre por encima de los existentes; una hoja tiene
-cerradura cero y la otra 202. Repetir la acción no recrea una presentación válida.
+CaelumDoorAccessTrial is an optional Inventory without weight or visible row. It saves
+references of two leaves and PresentationMap, using the native save. It does not add
+fields to the persistent profile or change the locations/connections record.
+CaelumDebugDoorTrial creates it 128 MU in front of the user, with native space checks in
+the closed/open positions. If there is no place, it does not install half door. It uses
+a free positive id above the existing ones; one leaf has zero lock and the other 202.
+Repeating action does not recreate a valid presentation.
 
-CaelumDebugDoorKey entrega CaelumDoorTrialKey sólo con la prueba habilitada.
-Es un Key nativo independiente, reutilizable, sin peso ni fila de equipo;
-no sustituye a CaelumSilverKey, no cuenta para la misión ni habilita 200/201.
-CaelumDebugDoorTrialOff retira el marcador, sus hojas y esa llave; los pequeños
-bloqueadores eliminan su referencia huérfana en el siguiente tick. Conserva
-la llave de plata y los demás objetos/registros. En otro mapa, la presentación
-puede volver a solicitarse; no se reconstruye automáticamente en la campaña.
-La limpieza narrativa del Limbo sigue retirando los Key físicos que corresponde.
+CaelumDebugDoorKey delivers CaelumDoorTrialKey only with the test enabled. It is an
+independent native Key, reusable, without weight or row of equipment; it does not
+replace CaelumSilverKey, it does not count for the mission or enable 200/201.
+CaelumDebugDoorTrialOff removes the marker, its leaves and that key; the small blockers
+remove its orphan reference in the next tick. It retains the silver key and the other
+items/records. On another map, the presentation can be requested again; it is not
+automatically reconstructed in the campaign. The narrative cleanup of the Limbo
+continues to remove the physical Keys that correspond.
 
-La prueba requiere personaje creado/vivo, fuera de predicción, sin diálogo,
-comercio, estación/tarea de fabricación ni canalización activos. No cambia esos
-estados para poder abrirse. Los tres comandos se detallan en PRUEBAS_4_34_0b.txt.
-netevent ca_debug_door_report lee sólo la presentación del solicitante y sus
-llaves; no evalúa acciones de apertura, concede objetos ni repara el guardado.
+The test requires created/living character, out of prediction, no dialogue, trade,
+station/task manufacturing or active channeling. It does not change those states to be
+able to open. The three commands are detailed in PRUEBAS_4_34_0b.txt. netevent
+ca_debug_door_report reads only the presentation of the applicant and its keys; it does
+not evaluate opening actions, grants objects or repairs the save.
 
-## Mundo y recorrido persistente (4.34.0a)
+## World and persistent journey (4.34.0a)
 
-CaelumWorldCatalogue asigna ubicación 1 a MAP01, 2 a MAP02 y 0 a «sin
-registrar». La conexión 1 va de MAP01 a MAP02 y representa el regreso existente.
-No hay conexión inversa. Los ids son independientes de nombres traducidos y
-orden visual; CADEV02 y nombres no definidos devuelven 0, sin destino utilizable.
-Capacidad reservada: 32 ubicaciones y 32 conexiones; reservar slots no crea
-contenido ni convierte esos límites en el tamaño final de la campaña.
+CaelumWorldCatalogue assigns 1 location to MAP01, 2 to MAP02 and 0 to "unregistered".
+The 1 connection goes from MAP01 to MAP02 and represents the existing return. There is
+no reverse connection. ids are independent of translated names and visual order; CADEV02
+and undefined names return 0, with no usable destination. Reserved capacity: 32
+locations and 32 connections; booking slots does not create content or convert those
+limits into the final campaign size.
 
-CaelumPersistentCharacterState conserva WorldStateVersion (1), los booleanos
-WorldLocationVisited, WorldConnectionKnown y WorldConnectionTraversed, y
-WorldPendingConnection (0 = ninguna). Los guardados anteriores inician esos
-campos en cero. La autoridad es el registro viajero nativo, sin duplicarlo en
-CaelumPlayer, actores del mapa, CVars ni la interfaz.
+CaelumPersistentCharacterState retains WorldStateVersion (1), the Booleans
+WorldLocationVisited, WorldConnectionKnown and WorldConnectionTraversed, and
+WorldPendingConnection (0 = none). Previous saves start those fields at zero. Authority
+is the native traveller record, without duplicating it in CaelumPlayer, map actors,
+CVars or interface.
 
-CaelumWorldProgress.Update se ejecuta desde el controlador existente después
-de actualizar el prólogo, antes de los encargos y la salida. Sólo actúa con
-personaje confirmado, vivo, fuera del creador y de predicción, y un registro
-ProfileCommitted ya existente. Marca la ubicación válida actual; no crea un
-registro de personaje por abrir una pantalla. IsReady de la salida revela la
-conexión, conservando el destino sin descubrir hasta visitarlo.
+CaelumWorldProgress.Update runs from the existing controller after updating the
+prologue, before scheduling and departure. It only acts with confirmed character, alive,
+outside the creator and prediction, and an existing ProfileCommitted record. It marks
+the current valid location; it does not create a character record by opening a screen.
+The exit’s IsReady reveals the connection, preserving the undiscovered destination until
+you visit it.
 
-La primera actualización migra WorldStateVersion 0. Sólo si el jugador ya
-está en MAP02 y MAIN_M00 conserva estado/etapa final, COMPLETE,
-INVENTORY_SANITIZED y STARTER_WEAPON_PRESERVED se reconstruyen mansión y regreso.
-Se leen esos hechos y no se vuelve a ejecutar Commit. En un inicio directo de
-MAP02 sin ese cierre, únicamente se registra la visita actual.
+The first update migrates WorldStateVersion 0. Only if the player is already in MAP02
+and MAIN_M00 retains final state/stage, COMPLETE, INVENTORY_SANITIZED and
+STARTER_WEAPON_PRESERVED does it reconstruct the mansion visit and return route. Those
+facts are read and no commit is executed again. On a direct start of MAP02 without that
+closure, only the current visit is recorded.
 
-Tras Commit satisfactorio y justo antes del ChangeLevel existente se marca
-la conexión pendiente. El observador no valida ni inicia un viaje alternativo.
-Si se llega al destino con la evidencia de cierre, se registra el recorrido y
-se consume la marca. Otra llegada o un id inválido descartan la marca sin
-conceder recorrido. Mientras se permanece en origen, la marca no cuenta como
-llegada. Se mantienen los controles y comprobaciones nativas de la puerta.
+After satisfactory commit and just before the existing ChangeLevel the pending
+connection is marked. The observer does not validate or initiate an alternative trip. If
+you arrive at the destination with the closing evidence, the route is recorded and the
+mark is consumed. Another arrival or invalid id discards the mark without granting a
+tour. As long as it remains in origin, the mark does not count as arrival. Native
+controls and checks of the door are maintained.
 
-TAB > Mundo lee FindInventory (consulta nativa clearscope), sin setters ni
-copia de estado. Muestra lugar actual, visitas conocidas y el regreso: estado
-Conocida/Recorrida, destino por descubrir/visitado e indicación de ida. No es
-un selector de viaje. Izquierda/derecha cambia a Personaje/Oficios; RePág/AvPág
-o LB/RB conserva el cambio directo de solapa. Inventario y Misiones conservan
-sus filtros/selección y salida hacia solapas adyacentes en los extremos.
+TAB > World reads FindInventory (native consultation clearscope), without setters or
+status copy. Displays current location, known visits and return: status Known/Traversed,
+destination by undiscovered/visited and indication of one way. It is not a travel
+selector. Left/Right changes to Character/Crafting; PgUp/PgDn or LB/RB retains direct
+tab change. Inventory and Missions retain their filters/selection and output to adjacent
+tabs at the ends.
 
-`netevent ca_debug_world_report` usa la petición de red del jugador y sólo
-consulta los campos existentes. Repetirlo no descubre lugares, avanza una
-misión, concede una carta/recompensa ni cambia salud, reputación o mercancía.
-Los nombres de mapas se reutilizan de LANGUAGE; se añaden las ayudas españolas
-e inglesas de Mundo. Tiempo, clima, plantas del mapa y servicios de viaje
-siguen pendientes de sus bloques numerados de V4. Los pendientes heredados y
-transversales se desarrollan en V5 tras la exportación de prueba.
+`netevent ca_debug_world_report` uses the player’s network request and only consult
+existing fields. Repeat it does not discover places, advance a mission, grants a
+card/reward nor changes health, reputation or merchandise. The names of maps are reused
+from LANGUAGE; Spanish and English aids of World are added. Time, weather, map layouts
+and travel services remain pending from its numbered V4 blocks. The inherited and
+cross-system pending work are developed in V5 after export testing.
 
-## Contrato de integración y consulta (4.33.0ao)
+## Integration and consultation contract (4.33.0ao)
 
-El observador estático CaelumConversationResume recibe la carga de guardados,
-incluidos los anteriores a 0ao. WorldLoaded marca únicamente IsSaveGame y el
-primer WorldTick consume esa marca. Para un personaje vivo/creado, fuera de
-predicción, reabre sólo el interlocutor nativo activo cuyo ConversationPC es
-ese mismo jugador. StartConversation conserva el árbol disponible y utiliza
-ConversationFaceTalker con saveAngle=false. No ejecuta Used ni respuestas.
-Una referencia inactiva sigue inactiva; la entrada normal de mapa no se reabre.
-El observador no serializa referencias ni progreso y no sustituye los cierres
-de conversación nativos. La necesidad se reproduce con el autoguardado de la
-Voz de MAP02: el actor sigue activo al cargar aunque su menú haya desaparecido.
+The static observer CaelumConversationResume receives the load of saves, including those
+prior to 0ao. WorldLoaded marks only IsSaveGame and the first WorldTick consumes that
+mark. For a living/created character, out of prediction, only the active native
+interlocutor whose ConversationPC is that same player reopens. StartConversation retains
+the available tree and uses ConversationFaceTalker with saveAngle=false. It does not
+execute Used or replies. An inactive reference remains inactive; the normal map entry
+does not reopen. The observer does not serialize references or progress and does not
+replace native conversation closures. The need is reproduced with the MAP02 Voice
+self-saved: the actor remains active when loading even if his menu has disappeared.
 
+netevent ca_debug_integration_report uses NetworkProcess from the Journal and consults
+the player at that event. CaelumIntegrationDiagnostics reads the persistent Inventory
+with create=false and travels through only the two diagnostic missions defined. It does
+not use setters, Sync, Ensure, Persist or reward actions; it does not create saves
+fields. The resume observer described above is independent of this query. The service
+classes continue to validate your requests by their existing authoritative routes.
 
-netevent ca_debug_integration_report usa NetworkProcess del Diario y consulta
-al jugador de ese evento. CaelumIntegrationDiagnostics lee el Inventory
-persistente con create=false y recorre sólo las dos misiones de diagnóstico
-definidas. No usa setters, Sync, Ensure, Persist ni acciones de recompensa;
-no crea campos guardados. El observador de reanudación anterior es independiente de esta consulta. Las clases de servicio
-siguen validando sus peticiones por sus rutas autoritativas existentes.
+The query shows separate states, objectives, delivery and possession of a receipt:
+Losing a receipt after receiving it does not erase delivery. An active mission with full
+objective still requires confirmation for complete/claim. Shows faction requirements and
+its current result without closing sessions or recomposing a quote. A transitory result
+of the diagnosis does not replace validation in the commercial or door operation.
 
-La consulta muestra estados, objetivos, entrega y posesión de constancia
-por separado: perder una constancia después de recibirla no borra la entrega.
-Una misión activa con objetivo completo sigue requiriendo confirmación para
-terminar/cobrar. Muestra requisitos de facción y su resultado actual sin cerrar
-sesiones ni recomponer una cotización. Un resultado transitorio del diagnóstico
-no sustituye la validación en la operación comercial o de puerta.
+The narrative exit retains its rules: explicit confirmation, own box, El Loco and
+identified first weapon; manufacturing task must be resolved. The fade closes trade and
+activities; cleaning removes temporary physical equipment/items, including coins and
+products purchased in the test. CaelumQuestRouteReceipt, CaelumQuestWaitReceipt and
+CaelumReputationTrialState are Inventory markers independent of those physical classes
+and survive, along with the quest/faction. registry The first weapon remains in the Box.
+membership/reputation is not derived from the equipment being removed.
 
-La salida narrativa conserva sus reglas: confirmación explícita, Caja propia,
-El Loco y primera arma identificada; tarea de fabricación debe estar resuelta.
-El fundido cierra comercio y actividades; la limpieza retira equipo/objetos
-físicos temporales, incluidas monedas y productos comprados en la prueba.
-CaelumQuestRouteReceipt, CaelumQuestWaitReceipt y CaelumReputationTrialState
-son marcadores Inventory independientes de esas clases físicas y sobreviven,
-junto al registro de misiones/facciones. La primera arma queda en la Caja.
-La pertenencia/reputación no se deriva del equipo que se retira.
+Wait uses active game tics and its progress save, without delivering a receipt until
+confirmed. The narrative arrival takes priority over opening the reputation test; then
+its guide is rebuilt for the owner in MAP02. It does not change the travel failure
+policy or create missions automatically.
 
-Espera usa tics activos de juego y su progreso guardado, sin entregar constancia
-hasta confirmar. La llegada narrativa tiene prioridad sobre abrir la prueba
-de reputación; después su guía se reconstruye para el dueño en MAP02. No se
-cambia la política de fracaso de Recorrido ni se crean misiones automáticamente.
+## Reputation and service conditions (4.33.0an)
 
-## Condiciones de reputación y servicios (4.33.0an)
+CaelumFactionCondition is a serializable Object with Configured, FactionId,
+MinimumReputation and RequireMembership. Create retains even an invalid configuration
+for it to fail closed; does not convert it to null. null means the service does not
+declare requirement and maintains previous behavior. Valid ids are Gendarmerie=0,
+Settlements=1, Caravans=2 and Political Actors=3. A minimum outside -1000..1000 or an
+unconfigured condition is invalid.
 
-CaelumFactionCondition es un Object serializable con Configured, FactionId,
-MinimumReputation y RequireMembership. Create conserva incluso una configuración
-inválida para que falle cerrada; no la convierte en null. null significa que
-el servicio no declara requisito y mantiene el comportamiento previo. Los ids
-válidos son Gendarmería=0, Asentamientos=1, Caravanas=2 y Actores políticos=3.
-Un mínimo fuera de -1000..1000 o una condición sin configurar es inválido.
+Check consults the persistent registration of the applicant player, alive and created,
+outside the wizard and prediction. It does not create records or modify values. The
+minimum is inclusive; RequireMembership also requires true membership. Requires the
+localized motif. It does not derive a narrative rank or apply reputation of another
+faction or local player to a foreign request.
 
-Check consulta el registro persistente del jugador solicitante, vivo y creado,
-fuera del asistente y de predicción. No crea registros ni modifica valores.
-El mínimo es inclusivo; RequireMembership exige además pertenencia verdadera.
-Require muestra el motivo localizado. No se deriva un rango narrativo ni se
-aplica reputación de otra facción o del jugador local a una petición ajena.
+OpenDialogue checks interlocutor, health, active conversation, distance from 160 MU,
+line of view and condition before starting USDF. The caller can pass view flags; only
+the invisible diagnostic guide uses SF_IGNOREVISIBILITY, preserving the geometric
+occlusion. The condition protects the input: does not retroactively interrupt a dialog
+already displayed.
 
-OpenDialogue comprueba interlocutor, vida, conversación activa, distancia de
-160 MU, línea de vista y condición antes de iniciar USDF. El llamador puede
-pasar flags de vista; sólo el guía invisible de diagnóstico usa
-SF_IGNOREVISIBILITY, conservando la oclusión geométrica. La condición protege
-la entrada: no interrumpe retroactivamente un diálogo ya mostrado.
+CaelumSlidingDoorLeaf.AccessCondition is optional. RequestDoorGroup retains keys, arena
+lock, height, view and movement above; before changing any leaf, check the conditions of
+all leaves with the same args[0]. Using a leaf without condition does not prevent the
+requirement of another in the group.
 
-CaelumSlidingDoorLeaf.AccessCondition es opcional. RequestDoorGroup conserva
-llaves, arena, altura, vista y movimiento anteriores; antes de mutar cualquier
-hoja, comprueba las condiciones de todas las hojas con el mismo args[0]. Usar
-una hoja sin condición no evita el requisito de otra del grupo.
+OpenPalomoMerchant receives optional access and discount requirements and a title key.
+The above callers are without condition. The session checks access when opening, every
+four tics and confirming, before moving goods/money. If you change the price shown,
+update the quote and request another confirmation. The existing validation of distance,
+stock, funds, capacity and quantity continues in the authoritative transaction.
 
-OpenPalomoMerchant recibe requisitos opcionales de acceso y rebaja y una clave
-de título. Los llamadores anteriores quedan sin condición. La sesión comprueba
-acceso al abrir, cada cuatro tics y al confirmar, antes de mover bienes/dinero.
-Si cambia el precio mostrado, actualiza la cotización y solicita otra
-confirmación. La validación existente de distancia, stock, fondos, capacidad
-y cantidad continúa en la transacción autoritativa.
+PalomoMerchantReputationDiscount is a temporary view of the active condition; it is not
+written in PalomoDiscountGranted. The persistent negotiated discount is retained. Either
+activates once the existing margins: the player buys at 140% and sells at 60%, versus
+normal 150% and 50%. No new economic curve is added and no currency is created. Closing the session clears its conditions and temporary view. The test shares the prototype's catalog, inventory and
+commercial box; it does not implement separate inventories per merchant.
 
-PalomoMerchantReputationDiscount es una vista temporal de la condición activa;
-no se escribe en PalomoDiscountGranted. La rebaja negociada persistente se
-conserva. Cualquiera de ambas activa una sola vez los márgenes ya existentes:
-compra del jugador al 140% y venta al 60%, frente a 150% y 50% normales.
-No se suman ni se crea una nueva curva económica. Cerrar la sesión limpia sus
-condiciones y la vista temporal. La prueba comparte el catálogo, existencias
-y caja comercial del prototipo; no implementa inventarios por comerciante.
+CaelumReputationTrialState is a hidden Inventory, without weight or reward, enabled only
+by giving CaelumDebugReputationTrial. Activation does not change reputation. Journal >
+Reputation > F/Y only opens it if it is already enabled. The USDF 43322 menu provides
+information (43323), door, trade and five explicit states. Actions are supported only
+from the active dialogue of your own guide; they are executed when you close it. Presets
+Gendarmerie: 0/no, 25/no, 25/yes, -25/yes, 0/yes. The other factions are preserved and
+the changes are saved by the existing APIs.
 
-CaelumReputationTrialState es Inventory oculto, sin peso ni recompensa, habilitado
-sólo con give CaelumDebugReputationTrial. La activación no cambia reputación.
-Journal > Reputación > F/Y sólo lo abre si ya está habilitado. El menú USDF
-43322 ofrece información (43323), puerta, comercio y cinco estados explícitos.
-Las acciones se admiten únicamente desde el diálogo activo de su propio guía;
-se ejecutan al cerrarlo. Presets Gendarmería: 0/no, 25/no, 25/sí, -25/sí, 0/sí.
-Las otras facciones se conservan y los cambios se guardan por las APIs vigentes.
+Information requires 25; door requires 25 and membership; trade requires 0 plus the
+usual own Box; reduction requires 25. They are diagnostic conditions. They are not assigned to residents and do not create ranks, relationships or campaign benefits. The door
+reuses a native leaf; it requires free space in front and in its sliding, with its own
+group to avoid affecting map doors. It does not create a closed room. The guide
+is invisible and exists only after the test is enabled.
 
-Información exige 25; puerta exige 25 y pertenencia; comercio exige 0 más la
-Caja propia habitual; rebaja exige 25. Son condiciones de diagnóstico. No se
-asignan a los residentes ni crean rangos, relaciones o ganancias de campaña.
-La puerta reutiliza una hoja nativa; requiere espacio libre delante y en su
-deslizamiento, con grupo propio para no afectar puertas del mapa. No crea un
-recinto cerrado. El guía es invisible y sólo existe tras habilitar la prueba.
+The status and its references are saved natively. By changing the map it is kept enabled
+and guide/door is recreated when needed again; the presentation is not duplicated when
+re-opening. give CaelumDebugReputationTrialOff, with its closed menus, removes the
+wizard and its actors, without restoring reputation values or used goods. Previous saves
+do not activate this test, and their shops/doors without condition remain the same.
 
-El estado y sus referencias se guardan nativamente. Al cambiar de mapa se
-mantiene habilitado y se recrean guía/puerta cuando se vuelven a necesitar;
-la presentación no se duplica al reabrir. give CaelumDebugReputationTrialOff,
-con sus menús cerrados, elimina el auxiliar y sus actores, sin restaurar valores
-de reputación ni bienes usados. Guardados anteriores no activan esta prueba,
-y sus comercios/puertas sin condición continúan igual.
+## Seals and interaction (0ak), conversation and navigation (0am)
 
-## Sellos e interacción (0ak), conversación y navegación (0am)
+HasActiveConversation checks that ConversationNPC exists and that that actor has
+bInConversation. The reference can survive the closure and must not block by itself. The
+essence uses this criterion in Used and in the wait before its animation. BeginCapture
+retains the requirement of the correct interlocutor, its active dialogue, its own Box,
+phase and revelation. Only CommitCapture with the finished animation records the unique
+card and its current bonus.
 
-HasActiveConversation comprueba que ConversationNPC exista y que ese actor
-tenga bInConversation. La referencia puede sobrevivir al cierre y no debe
-bloquear por sí sola. La esencia usa este criterio en Used y en la espera
-previa a su animación. BeginCapture conserva la exigencia del interlocutor
-correcto, su diálogo activo, Caja propia, fase y revelación. Sólo CommitCapture
-con la animación terminada registra la carta única y su bonificación vigente.
+The return door applies the same criteria when opening, waiting for closing and
+confirming the transfer; the MAP02 Voice also expects a real active dialogue. No
+conversation references are removed or serialized fields are altered to apply the
+arrangement. An inactive referenced save can interact when loading, but loading never
+captures or confirms departure.
 
-La puerta de regreso aplica el mismo criterio al abrir, esperar el cierre
-y confirmar el traslado; la Voz de MAP02 también espera un diálogo activo
-real. No se eliminan referencias de conversación ni se alteran campos
-serializados para aplicar el arreglo. Un guardado con referencia inactiva
-puede interactuar al cargar, pero cargar nunca captura ni confirma la salida.
+Adrenaline exhaustion calls StopSealChannel(true); after that closure the cooldown only
+prevents restarting the seal and does not block Use. The 0al log indicates another
+condition: present conversation reference with inactive NPC. netevent
+ca_debug_fool_report retains explicit query of requirements, Box,
+menus/channel/conversation and proximity/visibility, without mutating the state.
 
-El agotamiento de Adrenalina llama a StopSealChannel(true); desde ese cierre
-la recarga sólo impide reiniciar el sello y no bloquea Usar. El log de 0al
-señala otra condición: referencia de conversación presente con NPC inactivo.
-netevent ca_debug_fool_report conserva la consulta explícita de requisitos,
-Caja, menús/canal/conversación y proximidad/vista, sin mutar el estado.
+The channeling selects fighters, corpses and projectiles, excluding Inventory and
+CaelumMovableProp. Trees, resource nodes and stations can be SHOOTABLE due to their
+interactions, but they are not targets of the seal: they are not attracted, rotated,
+ejected or added to captured mass. The formulas of force, radius, mass, elemental
+effects, drain and cooldown are preserved for combat.
 
-La canalización selecciona combatientes, cadáveres y proyectiles, excluyendo
-Inventory y CaelumMovableProp. Árboles, nodos de recursos y estaciones pueden
-ser SHOOTABLE por sus interacciones, pero no son objetivos del sello: no se
-atraen, giran, expulsan ni suman masa atrapada. Se conservan las fórmulas de
-fuerza, radio, masa, efectos elementales, drenaje y recarga para combate.
+A new push of Use during the channeling ends it with StopSealChannel(true), with valid
+target ejection and the normal cooldown. That same press continues until the engine
+interaction. Keeping Use already pulsed does not generate another interruption. Catching
+El Loco uses its existing native path: valid phase, own box, conversation and
+confirmation. Interrupting the seal or loading a save never grants a card by itself.
 
-Una pulsación nueva de Usar durante la canalización la termina mediante
-StopSealChannel(true), con expulsión de objetivos válidos y recarga normal.
-Esa misma pulsación continúa hasta la interacción del motor. Mantener Usar
-ya pulsado no genera otra interrupción. La captura de El Loco usa su ruta
-nativa existente: fase válida, Caja propia, conversación y confirmación.
-Interrumpir el sello o cargar un guardado nunca concede una carta por sí solo.
+MAP01 serializes ChannelInfrastructureRecovered. If missing in a save, after preparing
+the current arrangement the position of the plants is restored only once from SpawnPoint
+and from the stations by class/room group. The actors are reused, preserving remaining
+resources, fractional yields, tasks and reservations. Undue speed and gravity are
+cancelled and the active station is revalidated. Workbenches do not use their old
+outdoor SpawnPoint. The garden is not regenerated or geometry modified. Releasing
+GravityTargets from a save also clears the unintended suspension of fixed
+infrastructure; the rest recovers its previous gravity mark.
 
-MAP01 serializa ChannelInfrastructureRecovered. Si falta en un guardado,
-tras preparar la disposición vigente se restaura una sola vez la posición
-de las plantas desde SpawnPoint y de las estaciones por clase/grupo de
-habitación. Se reutilizan los actores y se conservan recursos restantes,
-rendimiento fraccionario, tareas y reservas. Se anulan velocidad y gravedad
-indebidas y se revalida la estación atendida. Los bancos no usan su antiguo
-SpawnPoint exterior. No se regenera el jardín ni se modifica la geometría.
-Liberar GravityTargets de un sello guardado limpia también la suspensión
-indebida de infraestructura fija; el resto recupera su marca de gravedad previa.
-
-| Contexto del Diario | Izquierda/Derecha | Otro control |
+| Journal context | Left/Right | Other control |
 | --- | --- | --- |
-| Inventario | Filtro anterior/siguiente; en los extremos, solapa Tarot/Personaje | F/Y avanza filtro; Arriba/Abajo elige objeto; RePág/AvPág cambia solapa |
-| Misiones, lista o Detalle | Misión conocida anterior/siguiente; en los extremos, solapa Oficios/Reputación | Arriba/Abajo selecciona en lista o desplaza Detalle |
-| Oficios con estación abierta | Conserva receta/opción contextual | RePág/AvPág o LB/RB sale de la solapa y cierra la sesión |
-| Resto de solapas | Solapa anterior/siguiente | RePág/AvPág o LB/RB hace lo mismo |
+| Inventory | Previous/next filter; at the ends, Tarot/Character tab | F/Y advances filter; Up/Down chooses object; PgUp/PgDn changes tab |
+| Missions, List or Detail | Previous/next known quest; at the ends, Crafting/Reputation tab | Up/Down select from list or scroll Detail |
+| Crafts with open station | Preserves recipe/contextual option | PgUp/PgDn or LB/RB comes out of the tab and closes the session |
+| Rest of tabs | Previous/next tab | PgUp/PgDn or LB/RB does the same |
 
-RePág/AvPág (PgUp/PgDn) y LB/RB cambian de solapa en todas las secciones,
-incluida Misiones. Cambiar de misión, ocultar Detalle o cambiar de solapa
-cancela una confirmación de abandono pendiente. Navegar no acepta misiones.
-Con una sola misión registrada, Izquierda sale a Oficios y Derecha sale a
-Reputación. Con varias, se saltan las entradas no descubiertas; no se vuelve
-al extremo opuesto al agotar la lista horizontal. Al volver se conserva la
-selección. Arriba/Abajo conserva el recorrido circular de la lista y el
-desplazamiento de Detalle; F/Y conserva el ciclo de filtros del inventario.
-Las cuatro pruebas de residentes son etapas de MAIN_M00, no cuatro entradas
-independientes. Navegar no descubre las misiones opcionales de diagnóstico.
+PgUp/PgDn (PgUp/PgDn) and LB/RB change from tab across all sections, including Missions.
+Change mission, hide Detail or change tab cancels a pending abandonment confirmation.
+Navigate does not accept missions. With a single registered mission, Left leaves to
+Crafts and Right exits to Reputation. With several, undiscovered entries are skipped; it
+does not return to the opposite end when the horizontal list is exhausted. Upon return
+the selection is retained. Up/Down retains the circular path of the list and the Detail
+scroll; F/Y retains the filter cycle of the inventory. The four resident tests are
+MAIN_M00 stages, not four independent inputs. Navigate does not discover the optional
+diagnostic missions.
 
-## Misiones opcionales — vigente en 4.33.0aj
+## Optional missions — current in 4.33.0aj
 
-Estado por personaje en CaelumPersistentCharacterState, conservando sus 32
-slots y ocho objetivos por misión. Índices: MAIN_M00=0, prueba Recorrido=1,
-prueba Espera=2. El Diario amplía sólo su instantánea a tres entradas.
+Status per character in CaelumPersistentCharacterState, retaining its 32 slots and eight
+objectives per mission. Indexes: MAIN_M00=0, test Tour=1, test Wait=2. The Journal only
+expands its snapshot to three entries.
 
-| Estado | Valor estable | Transiciones permitidas |
+| State | Stable value | Transitions allowed |
 | --- | ---: | --- |
-| Desconocida | 0 | Ofrecida al descubrirla explícitamente |
-| Activa | 1 | Completada con objetivos listos, Fallida por su controlador o Abandonada si lo permite |
-| Completada | 2 | Ninguna; la entrega pendiente se gestiona aparte |
-| Fallida | 3 | Ninguna |
-| Ofrecida | 4 | Activa al aceptar y cumplir el requisito |
-| Abandonada | 5 | Ninguna |
+| Unknown | 0 | Offered by explicitly discovering it |
+| Active | 1 | Completed with completed objectives, failed by its controller or abandoned if allowed |
+| Completed | 2 | None; outstanding delivery is managed separately |
+| Failed | 3 | None |
+| Offered | 4 | Activates by accepting and complying with the requirement |
+| Abandoned | 5 | None |
 
-Los valores 0–3 anteriores no cambian. MAIN_M00 conserva su activación propia;
-los setters heredados quedan limitados a esa misión y no permiten cambiar un
-final ni sus objetivos después. Las misiones nuevas usan CaelumSideQuestRules:
-metadatos de requisito/objetivos/recompensa/abandono y operaciones de ciclo de
-vida. Un evento no puede progresar una misión ofrecida o terminada, cambiar
-la meta o sobrepasarla. Completar requiere todos sus objetivos conocidos y
-alcanzados. La base demuestra una dependencia de misión completada; condiciones
-compuestas, varios prerrequisitos y recompensas económicas/Tarot no se añaden
-en este bloque. No se migra el controlador narrativo de MAIN_M00 a otra arquitectura.
+The above 0–3 values remain unchanged. MAIN_M00 retains its own activation; legacy
+setters are limited to that mission and do not allow for changing an end or its
+objectives afterwards. New missions use CaelumSideQuestRules:
+requirement/objectives/reward/abandonment metadata and life-cycle operations. An event
+cannot progress a offered or completed mission, change the goal or exceed it. Completing
+requires all its known and achieved objectives. The base demonstrates a complete mission
+dependency; composite conditions, various prerequisites and economic/Tarot rewards are
+not added to this block. The MAIN_M00 narrative controller is not migrated to another
+architecture.
 
-Cada recompensa actual es un Inventory nativo único. QuestRewardClaimed[32]
-registra la entrega, independientemente de conservar el objeto. Una recepción
-rechazada no marca el cobro y permite reintentarlo; completar y cobrar son
-operaciones distintas. Las dos constancias de prueba son clases diferentes,
-con MaxAmount/InterHubAmount 1, sin peso, precio, atributos ni consumo. Se
-informa su entrega en el Diario; no aparecen entre el equipo utilizable.
-No se conceden XP, cartas, monedas, recetas ni materiales de campaña.
+Each current reward is a unique native Inventory. QuestRewardClaimed[32] records the
+delivery, regardless of whether it retains the object. A rejected receipt does not mark the reward as claimed and allows a retry; completion and claiming are separate operations. The
+two test receipts are different classes, with MaxAmount/InterHubAmount 1, without
+weight, price, attributes or consumption. It is reported to be delivered in the Journal;
+they do not appear among the usable equipment. XP, cards, coins, recipes or campaign
+materials are not awarded.
 
-Prueba habilitada únicamente mediante give CaelumDebugQuestTrial. Repetirlo
-sólo descubre ofertas aún desconocidas: no reinicia encargos o recompensas.
-- Recorrido: aceptar registra posición/mapa. Alejarse al menos 128 MU en XY,
-  con diferencia de Z menor a 32 MU, deja su objetivo listo. Cambiar de mapa
-  antes de lograrlo, o morir antes, produce fracaso. Enter completa y cobra.
-- Espera: requiere Recorrido completado. Aceptar inicia cinco segundos de
-  tics del juego. Una disminución observada de vida o la muerte antes de
-  lograrlo produce fracaso. El contador y su progreso permanecen al guardar
-  o viajar; no se usa reloj real ni se acelera tiempo global. Con el objetivo
-  listo, Enter completa y cobra. give CaelumDebugFailQuestTrial permite
-  provocar ese final directamente para diagnóstico, sin causar daño.
+Test enabled only by giving CaelumDebugQuestTrial. Repeat only discovers offers that are
+still unknown: do not restart orders or rewards. - Tour: Acceptance records
+position/map. Moving at least 128 MU in XY, with a Z difference below 32 MU, completes
+the objective. Change map before you achieve it, or die before, produces failure. Enter
+completes the quest and claims the reward. - Wait: it requires completed Tour. OK starts
+five seconds of tics of the game. An observed decrease in health or death before
+achieving it produces failure. The counter and its progress persist through saving and
+travel; no real clock is used nor global time is accelerated. With the goal ready, Enter
+completes the quest and claims the reward. give CaelumDebugFailQuestTrial allows to
+cause that end directly for diagnosis, without causing damage.
 
-Ambas pruebas permiten abandono y carecen de reinicio en la misma línea de
-partida. Para comparar finales se carga un guardado previo a la aceptación.
-Los tiempos/distancias son parámetros diagnósticos, no balance de la campaña.
-La observación de salud compara la vida entre tics; no representa todavía
-un sistema universal de condiciones basado en todos los eventos de daño.
+Both tests allow abandonment and cannot be restarted in the same playthrough. To compare
+outcomes, load a save from before acceptance. Times/distances are diagnostic parameters,
+not campaign balance. Health observation compares health between tics; it does not yet
+represent a universal system of conditions based on all damage events.
 
-Diario → Misiones: Izquierda/Derecha selecciona; Arriba/Abajo también en lista.
-F/Y abre el Detalle seleccionado;
-Enter/A acepta o completa/cobra; G/X pide abandono y otra pulsación separada
-lo confirma. Mantener la tecla no confirma. Cerrar, cambiar de misión/sección
-u ocultar Detalle cancela la confirmación. En Detalle, Arriba/Abajo conserva
-su paginación. MAIN_M00 no se puede abandonar por estos controles. La UI envía
-el índice seleccionado por evento y el lado autoritativo valida estado/requisito.
+Journal → Missions: Left/Right selects; Up/Down also in list. F/Y opens the selected
+Detail; Enter/A accepts or completes/claims; G/X requests abandonment and another
+separate click confirms it. Keeping the key does not confirm. Close, change
+quest/section or hide Detail cancels the confirmation. In detail, Up/Down retains its
+pagination. MAIN_M00 cannot be abandoned by these controls. The UI sends the selected
+index by event and the authoritative handler validates state/requirement.
 
-Los nuevos campos parten vacíos en 0ai: no se habilita la prueba al cargar ni
-se reinician perfil, atributos, misiones anteriores, recipientes o elecciones.
-La persistencia usa guardado nativo y el mismo Inventory viajero. Los modos de
-prueba automatizados permanecen fuera de la entrega.
+The new fields start empty in 0ai: loading does not enable the test or reset the
+profile, attributes, previous quests, containers or choices. Persistence uses native
+save and the same Traveler Inventory. Automated test modes remain out of delivery.
 
-## Consumo y regeneración de supervivencia — vigente en 4.33.0ai
+## Survival consumption and regeneration — current in 4.33.0ai
 
-Constitución controla el consumo pasivo de Hambre y Sed y su gasto al regenerar
-vida/Aire. Resiliencia controla la pérdida de Sueño: el autor corrigió la
-atribución a Paciencia de 0ah. Se conserva la división por Tipo 4.
+Constitution controls the passive consumption of Hunger and Thirst and their expense by
+regenerating health/Air. Resilience controls the loss of Sleep: the author corrected the
+attribution to Patience of 0ah. The division by Type 4 is retained.
 
     A = máximo(0, atributo efectivo)
     divisor D(A) = 1 + 2 * A * (A + 1) / 10100
@@ -2203,124 +2140,133 @@ atribución a Paciencia de 0ah. Se conserva la división por Tipo 4.
     factor de Sueño = 1 / D(Resiliencia)
     factor de coste de Hambre/Sed al regenerar = 1 / D(Constitución)
 
-| Atributo | Divisor | Consumo respecto al atributo 0, misma masa |
+| Attribute | Divisor | Consumption with respect to 0 attribute, same mass |
 | --- | ---: | ---: |
 | 0 | 1 | 100% |
 | 50 | 1,5049505 | 66,4474% |
 | 100 | 3 | 33,3333% |
 
-Tipo 4 no es lineal. Se conservan niveles fraccionarios y el crecimiento por
-encima de 100 sin llegar a consumo cero. La fórmula usa atributos efectivos,
-con sus bonificaciones vigentes; el peso del equipo no es masa corporal.
+Type 4 is not linear. Fractional levels and growth above 100 are preserved without zero
+consumption. The formula uses effective attributes, with its current bonuses; the weight
+of the equipment is not body mass.
 
-Tiempos base hasta vaciar una reserva completa, sin otras causas de gasto:
-Hambre 24 horas de juego, Sed 12, Sueño 16; una hora de juego son 180 segundos
-reales. A 100 kg y atributo 0 equivalen a 72/36/48 minutos reales. A atributo
-100 pasan a 216/108/144 minutos. Otras masas sólo modifican Hambre/Sed.
+Base times to empty a full reserve, without other consumption: Hunger 24 hours of play,
+Thirst 12, Sleep 16; one hour of play is 180 real seconds. At 100 kg and attribute 0,
+these equal 72/36/48 real minutes. At attribute 100, they become 216/108/144 minutes.
+Other masses only modify Hunger/Thirst.
 
-El coste de regeneración se calcula por la fracción de vida/Aire máximo que
-realmente se recupera. Ahora también lo divide Constitución; no se le aplica
-otra vez el factor de masa corporal del consumo pasivo.
+Regeneration cost is calculated from the fraction of maximum health/Air actually
+recovered. Constitution now also divides that cost; the body mass factor of passive
+consumption is not applied again.
 
-| Recuperación natural | Coste base de Hambre | Coste base de Sed | Con Constitución 100 |
+| Natural recovery | Base cost of Hunger | Thirst base cost | With Constitution 100 |
 | --- | ---: | ---: | --- |
-| 1% de la vida máxima | 1 punto | 0,5 puntos | 0,3333 / 0,1667 puntos |
-| 1% del Aire máximo | 0,1 puntos | 0,2 puntos | 0,0333 / 0,0667 puntos |
+| Maximum health 1% | 1 point | 0,5 points | 0,3333 / 0,1667 points |
+| Maximum Air 1% | 0,1 points | 0,2 points | 0,0333 / 0,0667 points |
 
-Se divide cada coste por D(Constitución), también al calcular cuánto se puede
-recuperar con las reservas disponibles. Se cobra sólo lo recuperado, con
-reservas no negativas. Las velocidades y los requisitos de regeneración no
-cambian. Resiliencia sigue acelerando la recuperación de vida y aumentando
-el Aire máximo. La devolución en tres segundos de la deuda de Aire submarino
-mantiene su ruta separada, que ya no consumía Hambre/Sed.
+Each cost is divided by D(Constitución), also when calculating how much can be recovered
+with the available reserves. Only the recovered amount is charged, with non-negative
+reserves. Speeds and regeneration requirements do not change. Resilience continues to
+accelerate health recovery and increase the maximum Air. The return in three seconds of
+the Underwater Air debt keeps its route separate, which no longer consumed
+Hunger/Thirst.
 
-Esto explica la observación anterior: el gasto por regenerar no recibía la
-reducción de Constitución y podía ocultar su efecto sobre el consumo pasivo.
-La piscina potable mantiene su recuperación de Sed de un punto por segundo;
-los sorbos y sus volúmenes conservan las reglas aprobadas de 0ag.
+This explains the previous observation: the cost of regenerating did not receive the
+reduction of Constitution and could hide its effect on passive consumption. The drinking
+pool maintains its recovery of Thirst from one point per second; the sips and their
+volumes retain the approved rules of 0ag.
 
-Al reanudar una partida anterior se recalculan sólo ambos factores antes del
-siguiente consumo, sin reiniciar reservas, atributos, misiones o inventario.
-No se vuelve a dividir el valor almacenado: se reconstruye desde el atributo
-y la masa, evitando acumulación y corrigiendo ceros serializados antiguos.
+When a previous save is resumed, only both factors are recalculated before the next
+consumption, without restarting reserves, attributes, missions or inventory. The stored
+value is not re-divided: it is reconstructed from the attribute and mass, avoiding
+accumulation and correcting old serialized zeros.
 
-Hambre, Sed y Sueño al 10% o menos son críticos: cada uno añade drenaje de vida
-al ritmo base de regeneración sin modificadores y bloquea la regeneración
-natural. Se restaura la regla anterior a 0ag a pedido del autor. Para volver
-a regenerar vida, las tres reservas deben estar por encima del 10%. Las
-penalizaciones de rendimiento y los costes de regeneración siguen vigentes.
+Hunger, Thirst and Sleep to 10% or less are critical: each adds health drain at the unmodified base regeneration rate and blocks natural regeneration. The rule prior
+to 0ag is restored at the author's request. To regenerate health again, all three
+reserves must be above the 10%. Performance penalties and regeneration costs remain in
+place.
 
-## Auditoría de los doce atributos — código vigente 4.33.0ai
+## Audit of the twelve attributes — current code 4.33.0ai
 
-Comparación con la tabla aportada por el autor. Se revisaron los cálculos y
-sus consumidores en juego: un campo calculado o un temporizador aislado no
-equivale a una mecánica terminada. Las cuatro familias y sus tres integrantes
-coinciden. Las diferencias siguientes separan implementación de intención;
-no autorizan por sí mismas nuevos cambios de combate en este parche.
+Comparison with the table provided by the author. The calculations and their consumers
+in play were reviewed: a calculated field or an isolated timer does not amount to a
+finished mechanic. The four families and their three members agree. The following
+differences separate implementation from intent; they do not themselves authorize new
+combat changes in this patch.
 
-Para evitar la ambigüedad de r/l/lx2, se usan los tipos explícitos del código:
+To avoid r/l/lx2 ambiguity, explicit types of code are used:
 
-| Escala | Fórmula nativa para atributo A | A=0 | A=100 |
+| Scale | Native formula for attribute A | A=0 | A=100 |
 | --- | --- | ---: | ---: |
-| Tipo 1, porcentaje de una base | 100 + A(A+1)/2 | 100% | 5150% |
-| Tipo 2, puntos porcentuales | A(A+1)/101 | 0 | 100 |
-| Tipo 3, fracción perjudicial restante | limitar(1 - A(A+1)/10100, 0, 1) | 1 | 0 |
-| Tipo 4, porcentaje de una base | 100 + 2A(A+1)/101 | 100% | 300% |
-| División por Tipo 4 | coste base / (Tipo4(A)/100) | coste base | coste base / 3 |
+| Type 1, percentage of a base | 100 + A(A+1)/2 | 100% | 5150% |
+| Type 2, percentage points | A(A+1)/101 | 0 | 100 |
+| Type 3, remaining harmful fraction | limitar(1 - A(A+1)/10100, 0, 1) | 1 | 0 |
+| Type 4, percentage of a base | 100 + 2A(A+1)/101 | 100% | 300% |
+| Division by Type 4 | coste base / (Tipo4(A)/100) | coste base | coste base / 3 |
 
-Las probabilidades añaden su base cuando corresponde y se limitan al rango
-permitido; equipo, masa, estados y vulnerabilidad pueden añadir modificadores.
-«Tipo 4» no significa lineal. No se sustituye automáticamente cada «l» de la
-tabla: daño, pain, lucidez, Labia y duraciones no comparten hoy una sola curva.
+Probabilities add their base when it corresponds to and is limited to the permitted
+range; equipment, mass, states and vulnerability can add modifiers. "Type 4" does not
+mean linear. Each "l" in the table is not automatically replaced: damage, pain,
+lucidity, Dialogue skill and durations do not share a single curve today.
 
-| Atributo / familia | Combate realmente conectado | Fuera de combate realmente conectado | Diferencias respecto a la tabla |
+| Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
 | --- | --- | --- | --- |
-| Fuerza / Físico | Daño melee y empuje físico Tipo 1, con masa corporal. | Carga Tipo 4; empuje de objetos y potencia de lanzamientos usan Fuerza. | Coincide en lo principal. «Potencia física» no es otro efecto universal independiente: se expresa en las rutas de daño, empuje y lanzamiento. |
-| Dureza / Físico | Daño físico/mágico ordinario tras armadura dividido por Tipo 4. Pain y pérdida de Lucidez usan Tipo 3. | Los impactos cinemáticos conservan su resta de puntos de daño porcentual por Dureza. | Hay que actualizar escalas y acotar «daño de entorno»: no es resistencia universal a ahogamiento, drenaje por necesidades ni cualquier daño ajeno al sistema clasificado. |
-| Constitución / Físico | Vida máxima Tipo 1, con masa corporal. | Hambre/Sed pasivas y costes de regeneración natural de vida/Aire divididos por Tipo 4. | No está conectada a acortar debuffs o venenos entrantes. No hay un sistema de enfermedades implementado que aplique esa duración. |
-| Destreza / Técnico | Velocidad de ataque Tipo 4, precisión física Tipo 1 y crítico físico Tipo 2. También reduce la recarga de armas a distancia por Tipo 4. | Tipo 1 reduce el tiempo del trabajo de materiales en fabricación. | La recarga de munición pertenece aquí; conviene distinguirla del cooldown de habilidades al actualizar la tabla. Fabricación cubre un uso manual concreto, no un sistema general de tiradas de precisión. |
-| Resiliencia / Técnico | Adrenalina máxima, factor de regeneración de vida y capacidad de Aire Tipo 4. | Pérdida de Sueño dividida por Tipo 4, restaurada en 0ai. | Coincide en asociación. Explicitar el divisor de Sueño; regeneración de vida se calcula sobre su máximo. |
-| Agilidad / Técnico | Movimiento Tipo 4 mediante los factores compartidos de suelo/natación/vuelo; evasión Tipo 2; salto usa otra curva. | Sigilo Tipo 2 aplicado a ocultación/ruido, con reglas de agachado. | El salto no usa Tipo 4: JumpZ escala con raíz de Tipo 1, de modo que la altura balística ideal escala Tipo 1 a igual gravedad, antes de carga/estados. |
-| Carisma / Social | Su Tipo 4 modifica duración/potencia de cargas elementales recibidas por el jugador; no todos los efectos/actores lo consumen. | Persuasión Tipo 4 en las tiradas sociales de MAP01. | El área no usa Carisma: radios actuales de explosión y Channel usan el alcance de Elocuencia. Channel también tiene estados de duración/potencia fija. El conjunto de debuffs es parcial. |
-| Empatía / Social | Existe BuffPowerPercent Tipo 4 y se prepara un temporizador de iluminación; no hay un sistema general de buffs/curaciones que aplique toda la duración/potencia/área indicada. | Emoción Tipo 4 en los diálogos de MAP01. | Emoción funciona. El factor almacenado y el temporizador no bastan para marcar buffs, curaciones ni iluminación jugable como completos. Áreas de apoyo por Empatía pendientes. |
-| Elocuencia / Social | Velocidad de lanzamiento y alcance Tipo 4; dicho alcance también escala radios actuales. Coste de Ánima dividido por Tipo 4. | Labia Tipo 2, usada por Ronnie; interviene también en descuento social de Palomo. | La recarga de munición usa Destreza; el cooldown de Channel de sellos es fijo de 60 s y no usa Elocuencia. La tabla debe precisar qué recarga pretende reducir y añadir el coste de Ánima ya implementado. |
-| Inteligencia / Mental | Daño y empuje mágicos Tipo 1. | Capacidad de la Caja = 2 + entero(Tipo1(Inteligencia)/50). | Tareas académicas pendientes. Añadir la Caja; «potencia mágica» no aparece como tercer efecto universal separado de daño/empuje. |
-| Paciencia / Mental | Ánima máxima Tipo 1; regeneración = máximo/tiempo base multiplicado por Tipo 4; resistencia a interrupción Tipo 2. Mitiga efectos de estar herido mediante Tipo 3. | Tipo 3 mitiga el agravamiento por Sueño bajo/crítico de pérdida de Lucidez y duración de aturdimiento. | No mitiga las penalizaciones generales de rendimiento por Hambre/Sed/Sueño: esa combinación usa Adrenalina. La función prevista es sólo parcial. No controla la pérdida de Sueño. |
-| Perspicacia / Mental | Precisión mágica Tipo 1 y crítico mágico Tipo 2. | No hay detección del jugador de objetos/sonidos ocultos ni atenuación de oscuridad enlazada a este atributo. | Sentidos mágicos y detección de ocultos siguen pendientes. El observador de percepción de depuración no implementa los sentidos del jugador. |
+| Strength / Physical | Melee damage and physical thrust Type 1, with body mass. | Load Type 4; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
+| Hardness / Physical | Ordinary physical/magic damage after armor divided by Type 4. Pain and loss of Lucidity use Type 3. | The kinematic impacts retain their subtraction of percentage damage points per Hardness. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
+| Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
+| Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
+| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Sleep loss divided by Type 4, restored to 0ai. | Matches in association. Explain the Sleep divider; health regeneration is calculated over its maximum. |
+| Agility / Technical | Type 4 movement using shared ground/swimming/flight factors; Type 2 evasion; jump uses another curve. | Type 2 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 4: JumpZ scales with the square root of Type 1, so that the ideal ballistic height scales with Type 1 at equal gravity, before load/state modifiers. |
+| Charisma / Social | Its Type 4 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 4 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
+| Empathy / Social | BuffPowerPercent Type 4 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 4 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |
+| Eloquence / Social | Launch speed and range Type 4; this range also scales current radii. Anima cost divided by Type 4. | Dialogue skill Type 2, used by Ronnie; also intervenes in social discount of Palomo. | The ammunition reload uses Dexterity; the Channel Seal Cooldown is fixed to 60 s and does not use Eloquence. The table should specify which recharge is intended to reduce and add the cost of Anima already implemented. |
+| Intelligence / Mental | Magical Damage and Push Type 1. | Box capacity = 2 + entero(Tipo1(Inteligencia)/50). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
+| Patience / Mental | Maximum Anima Type 1; regeneration = maximum/base time multiplied by Type 4; interrupt resistance Type 2. It mitigates effects of being injured by Type 3. | Type 3 mitigates low/critical sleep aggravation of Lucidity loss and stunning duration. | It does not mitigate general performance penalties by Hunger/Thirst/Sleep: that combination uses Adrenaline. The intended function is only partial. It does not control Sleep loss. |
+| Insight / Mental | Magical precision Type 1 and magical critical chance Type 2. | There is no player detection of hidden objects/sounds or dark attenuation linked to this attribute. | Magical senses and hidden detection are still pending. The debugging perception observer does not implement the senses of the player. |
 
-«Tiempo de recarga» necesita esa distinción: munición, espera entre ataques
-y cooldown de habilidades no son una sola ruta. StaffCastCooldownRemaining
-nombra el tiempo de preparación del lanzamiento, que sí usa Elocuencia;
-StopSealChannel asigna 60 segundos fijos a CombatChannelCooldownRemaining.
-No hay una reducción general de todos los cooldowns por Elocuencia.
+"Recharge time" needs that distinction: ammunition, wait between attacks and cooldown
+skills are not a single route. StaffCastCooldownRemaining names launch preparation time,
+which does use Eloquence; StopSealChannel assigns 60 seconds fixed to
+CombatChannelCooldownRemaining. There is no overall reduction of all cooldowns by
+Eloquence.
 
-Referencias para verificar o continuar la implementación:
+References to verify or continue implementation:
 
-- [CaelumAttributes](../src/caelum/attributes/CaelumAttributes.zs): familias y formación de los atributos efectivos.
-- [CaelumDerivedStats](../src/caelum/statistics/CaelumDerivedStats.zs): Recalculate, curvas, capacidades y RefreshSurvivalLossMultipliers.
-- [CaelumPlayer](../src/caelum/player/CaelumPlayer.zs): consumidores de daño/pain/lucidez, GetRangedEffectiveReloadSeconds, GetCraftingDexterityPercent, ApplyIncomingElementalPayload, ReleasePendingStaffAttack, UpdateAirStateEffects, ApplyPhysicalMovement, UpdateSurvivalStates, UpdateHealthStateEffects y regeneraciones.
-- [Diálogo social de MAP01](../src/caelum/dialogue/CaelumMainM00SocialDialogue.zs): tiradas de Persuasión/Emoción y requisito de Labia.
-- [Estados elementales](../src/caelum/actors/CaelumElementalStatus.zs), [proyectiles](../src/caelum/actors/CaelumActorProjectile.zs) y [Channel](../src/caelum/actors/CaelumChannelEffect.zs): aplicación de duración, potencia y radios.
-- [Fabricación](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds usa el Tipo 1 de Destreza.
-- [Diagnóstico de percepción](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): observador experimental, distinto de los sentidos del jugador.
+- [CaelumAttributes](../src/caelum/attributes/CaelumAttributes.zs): families and formation
+  of effective attributes.
+- [CaelumDerivedStats](../src/caelum/statistics/CaelumDerivedStats.zs): Recalculate,
+  curves, capabilities and RefreshSurvivalLossMultipliers.
+- [CaelumPlayer](../src/caelum/player/CaelumPlayer.zs): Harm/pain/lucidity consumers,
+  GetRangedEffectiveReloadSeconds, GetCraftingDexterityPercent,
+  ApplyIncomingElementalPayload, ReleasePendingStaffAttack, UpdateAirStateEffects,
+  ApplyPhysicalMovement, UpdateSurvivalStates, UpdateHealthStateEffects and regenerations.
+- [MAP01 Social Dialogue](../src/caelum/dialogue/CaelumMainM00SocialDialogue.zs):
+  Persuasion/Emotion and Dialogue skill requirement.
+- [Elemental States](../src/caelum/actors/CaelumElementalStatus.zs),
+  [projectiles](../src/caelum/actors/CaelumActorProjectile.zs) and
+  [Channel](../src/caelum/actors/CaelumChannelEffect.zs): application of duration, power
+  and radii.
+- [Manufacturing](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds
+  uses the Dexterity Type 1.
+- [Diagnosis of perception](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): experimental
+  observer, different from the senses of the player.
 
-Decisión posterior del autor, tras aprobar 0ai: mantener los atributos tal
-como están. La auditoría siguiente queda pospuesta y no bloquea V4.34.
+Author's later decision, after approving 0ai: maintain attributes as they are. Further
+audit is postponed and does not block V4.34.
 
-Estado de diseño: conservar la tabla del autor como intención y esta matriz
-como estado comprobado. Queda decidir/implementar las diferencias de lógica
-en los bloques de atributos, magia/estados y percepción del roadmap; no basta
-con cambiar las letras de escala. 0ai sólo modifica la asociación de Sueño y
-los costes de regeneración pedidos expresamente.
+Design status: keep the author's table as intent and this matrix as proven state. It is
+left to decide/implement the logical differences in the attribute, magic/state and
+roadmap perception blocks; it is not enough to change the scale letters. 0ai only
+modifies the Sleep association and expressly ordered regeneration costs.
 
-## Recipientes de agua y accesorios elegidos — vigente en 4.33.0ai
+## Water containers and accessories chosen — valid in 4.33.0ai
 
-La corrección del autor conserva la hidratación directa de la piscina y permite
-completar recipientes parcialmente llenos. Seis modelos: pequeña 1 L, normal
-2,5 L y grande 5 L, tanto botella como cantimplora. Se conservan al vaciarse.
+The author's correction preserves the direct hydration of the pool and allows to
+complete partially filled containers. Six models: small 1 L, normal 2,5 L and large 5 L,
+both bottle and canteen. They are preserved when emptied.
 
-Cada sorbo usa agua para recuperar diez puntos de Sed en los diez segundos
-nativos (un punto por segundo). La cantidad se ajusta a la masa corporal:
+Each sip uses water to recover ten Thirst points in the ten native seconds (one point
+per second). The amount is adjusted to body mass:
 
     litros para 100% = masa corporal en kg / 50
     litros por sorbo de 10 puntos = masa corporal en kg / 500
@@ -2328,963 +2274,946 @@ nativos (un punto por segundo). La cantidad se ajusta a la masa corporal:
     recuperación en puntos = 100 * agua usada / (masa corporal / 50)
     por pulso (diez pulsos) = recuperación / 10
 
-BaseMass es la masa corporal, determinada por el personaje; no incluye equipo.
-Ejemplos: 50/100/200 kg usan 0,1/0,2/0,4 L por sorbo. Todos recuperan diez
-puntos si queda suficiente agua. El último sorbo menor recupera sólo su parte.
-La cantidad de usos por llenado depende de la masa y capacidad; 10/25/50 usos
-completos corresponde sólo a 50 kg. A 100 kg: botella pequeña = 5 sorbos,
-normal = 12 sorbos completos y uno de 5 puntos, grande = 25 sorbos.
+BaseMass is the body mass, determined by the character; it does not include equipment.
+Examples: 50/100/200 kg use 0,1/0,2/0,4 L per sip. All recover ten points if there is
+enough water left. The last smaller sip recovers only its part. The amount of uses per
+filling depends on mass and capacity; 10/25/50 Full uses corresponds only to 50 kg. A
+100 kg: small bottle = 5 sips, normal = 12 Complete sips and one of 5 points, large = 25
+sips.
 
-La reserva se limita a 100. No se bebe al máximo ni desde la Caja. Repetir una
-dosis reinicia el efecto sin apilarlo; esperar sus diez segundos permite
-aprovecharla completamente. La ración de agua anterior conserva sus 100 ml
-y su recuperación por masa; no cambia su peso ni crea agua extra.
+The reserve is capped at 100. Drinking is rejected when already full or from the Box.
+Repeating a dose restarts the effect without stacking it; waiting for ten seconds allows
+you to take full advantage of it. The previous water ration preserves its 100 ml and its
+mass recovery; it does not change its weight or create extra water.
 
-Cada recipiente es Inventory nativo con volumen propio. Tara provisional:
-0,10 kg, reutilizando SPECIAL_ITEM_DEFAULT_WEIGHT (el autor no fijó taras
-separadas por modelo); contenido a 1 kg/L. Un ejemplar de cada modelo por
-personaje en esta entrega; no se fusionan líquidos ni se aceptan duplicados.
-El inventario muestra litros restantes. Peso, Caja, soltar/recoger y guardado
-conservan ese volumen. La salida del Limbo mantiene su limpieza de objetos.
+Each vessel is Inventory native with its own volume. Provisional tare: 0,10 kg, reusing
+SPECIAL_ITEM_DEFAULT_WEIGHT (the author did not fix tare weights per model); contents to
+1 kg/L. One copy of each model per character in this delivery; liquids are not merged or
+duplicated. The inventory shows remaining liters. Weight, Box, drop/pick and save retain
+that volume. The Limbo exit retains its item cleanup.
 
-Un nuevo ingreso con WaterLevel >= 3 y user_ca_potable_water llena o completa
-los recipientes fuera de la Caja. Sólo el volumen faltante añade peso: para
-completar una cantimplora de 2,5 L con 1,25 L basta poder cargar 1,25 kg más
-el margen de 1 g. Si no cabe todo, mantiene el contenido actual; liberar carga,
-salir y volver a sumergirse. No rellena continuamente al beber bajo el agua.
-La geometría de la piscina y las reglas de Aire no cambian.
+A new entry with WaterLevel >= 3 and user_ca_potable_water fills or tops up containers
+outside the Box. Only missing volume adds weight: to top up a 2,5 L canteen containing
+1,25 L, capacity for another 1,25 kg plus the 1 g margin is sufficient. If the whole
+amount does not fit, current contents remain; free some load, leave and submerge again.
+It does not continually refill while drinking underwater. Pool geometry and Air rules do
+not change.
 
-Sumergir la cabeza en la piscina potable vuelve a recuperar Sed directamente
-a un punto por segundo, reemplazando la pérdida pasiva mientras dura la
-inmersión, incluso sin recipiente. El recipiente permite guardar agua para
-llevar; sólo se llena en agua marcada como potable, nunca por pisar tierra.
+Immerse your head in the drinking pool again Thirst recovers directly to one point per
+second, replacing passive loss while the dive lasts, even without a container. The
+container allows to store water to carry; it is only filled in water marked as potable,
+never by stepping on earth.
 
-El estado crítico de las tres reservas y su drenaje de vida se rigen por la
-sección anterior. La excepción de Sed positiva introducida en 0ag fue retirada
-por el autor en 0ah. Beber recupera la reserva, sin dar inmunidad al daño ni
-recuperación gratuita de vida.
+The critical state of the three reserves and their drainage of health are governed by
+the previous section. Thirst's positive exception introduced in 0ag was withdrawn by the
+author in 0ah. Drinking recovers the reserve, without giving immunity to damage or free
+recovery of health.
 
-Ronnie, tras devolver la espada, ofrece una cantimplora normal vacía por
-su charla de talleres. Confirmar entrega una sola; falta de carga permite
-reintentar. Detalle registra llenado y uso real, sin bloquear otras misiones.
-La potabilización de agua contaminada/salada no está definida ni implementada:
-el alcance actual es recolectar el agua ya marcada como potable.
+Ronnie, after returning the sword, offers an empty normal canteen for its workshop talk.
+Confirm delivery only one; insufficient carrying capacity allows a retry. Detail records
+filled and actual use, without blocking other missions. The potabilization of
+contaminated/salt water is not defined or implemented: the current scope is to collect
+water already marked as potable.
 
-Caella ofrece elegir y confirmar un sello T1 (cinco elementos) y un amuleto T1
-(rubí, zafiro, esmeralda o topacio). Cada elección queda fija por personaje;
-consultar o volver no asigna una opción. Enseña sólo la receta escogida y sus
-componentes, conservando cualquier conocimiento anterior. Fabricación nativa
-recursiva, reservas, pausa/cancelación, salida personal y equipo existentes.
-Detalle muestra elecciones y preparación independiente 0/1 para cada pieza.
+Caella offers to choose and confirm a T1 seal (five elements) and a T1 amulet (ruby,
+sapphire, emerald or topaz). Each choice is fixed per character; consult or return does
+not assign an option. It teaches only the chosen recipe and its components, preserving
+any previous knowledge. Recursive native manufacture, reservations, pause/cancellation,
+personal output and existing equipment. Detail shows choices and independent preparation
+0/1 for each piece.
 
-Materias primas al 100% en cada capa, usando las recetas existentes:
-- Sello: 360 g cobre bruto + 40 g estaño bruto + 600 g de la gema elegida.
-- Amuleto: 200 g plata bruta + 800 g de la gema elegida.
-- Si coinciden las gemas, el cupo suma 1400 g. No se añaden otras gemas.
-El cofre aporta plata bruta y el cuero del equipo elegido, limitados por lo
-ya emitido y la carga disponible. Gemas, cobre y estaño siguen en las vetas.
-La plata reutiliza el slot 0 antes inactivo del cofre; no crece su array.
+100% raw materials in each layer, using existing recipes: - Seal: 360 g raw copper + 40
+g raw tin + 600 g of the chosen gemstone. - Amulet: 200 g raw silver + 800 g of the
+chosen gem. - If the gemstones match, the quota totals 1400 g. No other gemstones are
+added. The chest provides raw silver and the chosen equipment leather, limited by the
+amount already issued and available carrying capacity. Gems, copper and tin are still on
+the veins. Silver reuses the chest’s previously inactive slot 0; its array does not
+grow.
 
-Compatibilidad 0ae: no se borran recetas, materiales ni sellos previos. Los
-sellos ya fabricados mantienen su gasto contabilizado; se retiran los cupos
-no usados de elementos no elegidos. Una tarea de sello anterior ya iniciada
-mantiene su salida personal. Los nuevos flags/campos usan valores iniciales
-vacíos y no reinician misiones ni los cupos emitidos. Una pieza que ya era
-propia al aprender no concede otro juego de materiales para esa pieza.
+0ae Compatibility: No recipes, materials or pre-made Seals are deleted. The Seals
+already manufactured keep their expense accounted for; unused quotas for unselected
+items are removed. An earlier seal task already initiated maintains its personal output.
+New flags/fields use empty initial values and do not restart missions or issued quotas.
+A piece already owned when learning does not grant another set of materials for that
+piece.
 
-## Sellos T1: enseñanza y abastecimiento — 4.33.0ae
+## T1 seals: instruction and supply — 4.33.0ae
 
-Después de completar la prueba de Caella se puede pedir «¿Me enseñás a fabricar
-sellos?», directamente o por su apartado de talleres. Leer/posponer no enseña.
-Aceptar enseña las cinco recetas existentes (índices 56–60) y las dependencias
-nativas: bases de sello, gemas/broche y procesamiento de los metales. No cambia
-los 131 índices, la versión del recetario ni sus costes. T1 es la cobertura
-abastecida; no se conceden componentes ni objetos físicos al aprender.
+After completing the Caella test, you can ask for "Do you teach me how to make Seals?",
+directly or through its workshop section. Read/postpone does not teach. Accept shows the
+five existing recipes (56–60 indexes) and native dependencies: seal bases, gems/crushed
+gems and metal processing. Do not change 131 indexes, the recipe version or its costs.
+T1 is the supplied coverage; no physical components or objects are granted when
+learning.
 
-| Para los cinco sellos T1 al 100% en cada capa | Cupo añadido |
+| For the five T1 seals to the 100% in each layer | Quota added |
 | --- | ---: |
-| Cobre bruto | 1.800 unidades = 1,8 kg |
-| Estaño bruto | 200 unidades = 0,2 kg |
-| Rubí bruto | 600 unidades = 0,6 kg |
-| Zafiro bruto | 600 unidades = 0,6 kg |
-| Esmeralda bruta | 600 unidades = 0,6 kg |
-| Topacio bruto | 600 unidades = 0,6 kg |
-| Ópalo bruto | 600 unidades = 0,6 kg |
+| Raw copper | 1.800  units = 1,8 kg |
+| Raw tin | 200  units = 0,2 kg |
+| Raw ruby | 600  units = 0,6 kg |
+| Raw sapphire | 600  units = 0,6 kg |
+| Raw emerald | 600  units = 0,6 kg |
+| Raw topaz | 600  units = 0,6 kg |
+| Raw opal | 600  units = 0,6 kg |
 
-Cada sello T1 pesa 1 kg, de talle universal. Su base ocupa 40% y su componente
-elemental 60%; las cantidades anteriores surgen de la expansión nativa al 100%.
-El cobre/estaño se acumula con el arma y munición elegidas. No modifica cuero.
-Las vetas de la cueva aportan el material; el cajón sigue aportando sólo cuero.
+Each T1 seal weighs 1 kg, of universal size. Its base occupies 40% and its elemental
+component 60%; the above amounts arise from native expansion to 100%. Copper/tin
+accumulates with the chosen weapon and ammunition. It does not modify leather. The veins
+of the cave provide the material; the drawer continues to provide only leather.
 
-El cupo se habilita al aceptar la enseñanza y elegir el arma con Ronnie, en
-cualquier orden. Conserva el contador emitido de 0ad: aceptar otra vez,
-fabricar, cambiar de veta o guardar/cargar no lo reinician. Si ya se posee un
-sello T1, se registra una pieza por elemento y se descuenta sólo de la ampliación
-nueva; no se vuelve a cargar su coste al contador anterior. Se excluye el sello
-prestado CA_LimboMagicSeal. Esa lista inicial queda fija después de aprender.
-Los sellos preparados cuentan de 0/5 a 5/5; no imponen un requisito de misión.
+The quota is enabled by accepting the teaching and choosing the weapon with Ronnie, in
+any order. It retains the 0ad issued counter: accept again, manufacture, change the vein
+or save/load do not restart it. If a T1 seal is already in place, one piece per item is
+recorded and only the new expansion is deducted; its cost is not charged again to the
+previous counter. The CA_LimboMagicSeal borrowed seal is excluded. That initial list is
+fixed after learning. The prepared Seals count from 0/5 to 5/5; they do not impose a
+mission requirement.
 
-Los sellos usan el plan recursivo, las reservas y la transacción nativa, igual
-que armas/armaduras. Se pueden fabricar desde materiales crudos en el Banco
-de Trabajo de Caella o el del segundo piso. Antes de tener Caja, el resultado
-T1 aprendido va al inventario personal. Al equipar cambia la ranura única de
-Sello y conserva los efectos, Adrenalina, bloqueo y cooldown vigentes de Channel.
-La salida narrativa sigue retirando equipo temporal distinto de la primera arma.
+The Seals use the recursive plan, the reserves and the native transaction, as well as
+weapons/armor. They can be manufactured from raw materials in the Caella Workbench or
+the second floor. Before having Box, the T1 result learned goes to personal inventory.
+Equipping changes the unique Seal slot and retains the effects, Adrenaline, blocking and
+cooldown current Channel. The narrative exit continues to remove temporary equipment
+other than the first weapon.
 
-Si ya se devolvió la espada de Ronnie, su apartado de talleres ofrece
-«Necesito recolectar para los sellos». Presta la misma clase de herramienta
-mientras quede cupo útil para un sello no preparado; comprueba carga y no exige
-una reparación pendiente. Se devuelve desde la misma página. La rama de
-reparación conserva sus condiciones y su cupo proporcional independiente.
-Una tarea previa activa conserva receta, eficiencia, tiempo y reservas aunque
-se aprenda o se seleccione otro sello. No se cancela ni se cambia su resultado.
+If the Ronnie sword has already been returned, your workshop section offers "I need to
+collect for Seals." It provides the same kind of tool while a useful quota is left for
+an unprepared seal; it checks load and does not require a pending repair. It is returned
+from the same page. The repair branch retains its conditions and its independent
+proportional quota. An active prior task retains recipe, efficiency, time and reserves
+even if another seal is learned or selected. It does not cancel or change its result.
 
-## Elección de armadura y cupos de MAP01 (4.33.0ad)
+## Choice of MAP01 armor and quotas (4.33.0ad)
 
-Ronnie ofrece mágica, liviana, mediana o pesada después del arma. Leer/volver
-no elige; confirmar fija una familia por personaje. Se enseñan las cuatro
-recetas existentes (cabeza, torso, manos, pies) y componentes. El catálogo y
-versión del libro no cambian. En un guardado con arma elegida se accede desde
-su diálogo sobre talleres. Detalle muestra elección y 0/4–4/4, sin nuevo bloqueo.
+Ronnie offers magic, light, medium or heavy after the weapon. Read/back does not choose;
+confirm fix one family per character. The four existing recipes (head, torso, hands,
+feet) and components are taught. The catalog and version of the book do not change. In a
+selected weapon save is accessed from your workshop dialogue. Detail shows choice and
+0/4–4/4, without new lock.
 
-Las armaduras comparten ahora el resolvedor recursivo de armas: pueden partir
-de cuero sin fabricar correas separadamente. Las piezas T1 elegidas se entregan
-al inventario personal sin Caja obligatoria; se equipan mediante Inventario.
-Son equipo temporal del Limbo. La salida sigue conservando sólo Caja/primera
-arma; elegir armadura no reemplaza ItemId de arma ni completa su objetivo.
+Armours now share the recursive weapons solver: they can be made from leather without
+making straps separately. The chosen T1 parts are delivered to the personal inventory
+without a mandatory Box; they are equipped by Inventory. They are temporary equipment of
+Limbo. The exit preserves only the Box/first weapon; choosing armor does not replace ItemId of
+weapon or complete its target.
 
-Cupo = materias primas de un arma elegida + cuatro piezas de la familia elegida
-+ un lote de diez flechas/virotes si el arma usa esa munición. Se calcula al
-100% en TODAS las capas, al talle elegido, mediante las funciones de recetas
-existentes. Se corrige el parámetro que ocultaba el campo Efficiency en el
-resolvedor de suministros. Nuevas elecciones preparan 100% y limpian opciones
-de capas anteriores sólo si no hay una tarea activa. Los costes y tiempos
-25/50/100% generales no cambian; bajar eficiencia puede agotar el cupo antes.
+Quota = raw materials of a chosen weapon + four pieces of the chosen family + a batch of
+ten arrows/bolts if the weapon uses that ammunition. The 100% is calculated in ALL
+layers, at the chosen size, using the existing recipe functions. The parameter that
+concealed the Efficiency field in the supply solver is corrected. New choices prepare
+100% and clean options from previous layers only if there is no active task. The costs
+and times 25/50/100% general do not change; lower efficiency can exhaust the quota
+before.
 
-| Cuero ya curtido, talle M | Conjunto | Con guanteletes gigantes elegidos |
+| Already-tanned leather, size M | Set | With chosen giant gauntlets |
 | --- | ---: | ---: |
-| Mágico | 5 kg | 11 kg |
-| Liviano | 10 kg | 16 kg |
-| Mediano | 20 kg | 26 kg |
-| Pesado | 40 kg | 46 kg |
+| Magic | 5 kg | 11 kg |
+| Light | 10 kg | 16 kg |
+| Medium | 20 kg | 26 kg |
+| Heavy | 40 kg | 46 kg |
 
-El cuero incluye las correas necesarias. Otros talles usan el multiplicador
-vigente y redondeos nativos. Cada unidad de material sigue pesando un gramo.
-Armaduras usan el cuero del catálogo vigente, también las pesadas; este parche
-no cambia composición, defensa, atributos ni masa de ninguna receta/armadura.
+The leather includes the necessary straps. Other sizes use the current multiplier and
+native roundings. Each unit of material continues to weigh one gram. Armor uses the
+leather of the current catalog, also heavy ones; this patch does not change composition,
+defense, attributes or mass of any recipe/armor.
 
-MainM00SupplyLimit/MainM00SupplyIssued viven en el Inventory viajero. Se
-reserva cupo al generar el pickup o retirar del cajón. Otra fuente, consumo,
-recarga de partida o regeneración del nodo no lo repone. El recurso ajeno a la
-elección no se extrae. La masa/dureza/capacidad física de árboles, arbustos y
-vetas permanecen; se limita la cantidad entregada antes de descontar el nodo.
+MainM00SupplyLimit/MainM00SupplyIssued reside in the traveling Inventory. Quota is
+reserved when generating a pickup or withdrawing from the drawer. Another source,
+consumption, loading the save again or regeneration of the node does not replace it.
+Resources outside the chosen quota are not extracted. The mass/hardness/physical
+capacity of trees, bushes and veins remain; the amount delivered before discounting the
+node is limited.
 
-El cajón y el Toro comparten el cupo de cuero. El Toro produce como máximo
-su rendimiento físico de 12,5 kg en 900 kg de masa, limitado al cupo sin emitir.
-Si ya se retiró todo del cajón, no añade cuero. Si primero genera 12,5 kg para
-un conjunto pesado M, el cajón ofrece 27,5 kg restantes. No son dos reservas.
-Devolver cuero sin gastar retira esas unidades del jugador y libera su cupo.
+The drawer and the Toro share the leather quota. The Toro produces its maximum physical
+performance of 12,5 kg in 900 kg mass, limited to the unissued quota. If it is already
+removed from the drawer, it does not add leather. If it first generates 12,5 kg for a
+heavy set M, the drawer offers 27,5 kg remaining. It is not two reserves. Return leather
+without spending removes those units from the player and releases its quota.
 
-Los pickups nuevos identifican el jugador y el cupo ya reservado. No se
-contabilizan otra vez al recoger. Pilas antiguas piden cupo al tocarlas y no
-permiten el excedente. Si falta capacidad de carga, se recoge una parte y el
-resto útil queda en el suelo. Se deja un gramo de margen para no alcanzar la
-inmovilidad al 100% de carga; no se alteran las reglas generales de velocidad.
+New pickups identify the player and the quota already reserved. They are not counted
+again when picking up. Old stacks request quota on pickup and do not admit excess. If
+the load capacity is missing, a portion is collected and the usable remainder stays on
+the ground. A gram of margin is left to not reach the immobility to the 100% load; the
+general rules of speed are not altered.
 
-Migración 0ac: conservar recetas, atributos, tareas, equipo y progreso. Contar
-materias primas/componentes existentes al 100%, primera arma ya fabricada y
-munición inicial presente contra el cupo. No borrar inventario al cargar.
-«Dejar aquí los materiales sobrantes» en el cajón retira sólo excedentes de
-materias primas sin reservar; conserva el cupo útil. No recupera lo ya gastado.
+0ac migration: preserve recipes, attributes, tasks, equipment and progress. Count
+existing raw materials/components to the 100%, first weapon already manufactured and
+initial ammunition present against the quota. Do not erase inventory when loading.
+"Leave leftover materials here" in the drawer removes only excess raw materials without
+reservation; retains the useful quota. Do not recover what has already been spent.
 
-La reparación opcional aceptada conserva acceso: al consultar a Ronnie con
-la primera arma dañada, se habilita únicamente el coste proporcional al 100%
-del daño observado. Repetir la consulta usa el máximo ya habilitado, no lo
-suma otra vez. No restaura durabilidad, no da materiales y no repone equipo.
-Si el arma elegida no sirve para extraer esos recursos, la conversación de
-reparación permite pedir de nuevo la espada y devolvérsela a Ronnie. Se verifica
-daño, práctica pendiente y espacio de carga; se reutiliza el mismo préstamo.
-0ae amplía este cupo con los sellos aprendidos, según el apartado anterior.
-Balas y abastecimiento T2 siguen fuera del cupo inicial.
+The accepted optional repair retains access: when you consult Ronnie with the first
+damaged weapon, only the cost proportional to the 100% of the damage observed is
+enabled. Repeating the query uses the maximum already enabled, does not add it again. It
+does not restore durability, does not give materials and does not replace equipment. If
+the chosen weapon does not serve to extract those resources, the repair conversation
+allows you to ask again the sword and return it to Ronnie. Damage, practice pending and
+load space is verified; the same loan is reused. 0ae expands this quota with the learned
+Seals, according to the previous section. Bullets and supply T2 remain outside the
+initial quota.
 
-## Virotes y conocimiento de municiones (4.33.0ac)
+## Bolts and ammunition knowledge (4.33.0ac)
 
-Se anexa CRAFTING_BOLT_RECIPE = 130; el catálogo tiene 131 recetas. Flechas
-conserva índice 129; 0..128 mantiene su significado. KnownCraftingRecipe crece
-al final a 131 bools. La versión del libro se mantiene en 4 para no disparar
-una migración que borre componentes antiguos; el bool nuevo nace falso.
+CRAFTING_BOLT_RECIPE = 130 is attached; the catalogue has 131 recipes. Arrows retain
+index 129; 0..128 maintains its meaning. KnownCraftingRecipe grows in the end to 131
+bools. The version of the book is kept in 4 so as not to trigger a migration that erases
+old components; the new bool is born false.
 
-Elegir ballesta con Ronnie enseña virotes, astas, puntas y transformaciones
-necesarias. Arco y arco largo conservan flechas; las demás elecciones no reciben
-esta receta. TeachStarterAmmunition incorpora también el conocimiento pendiente
-a guardados anteriores, dentro o fuera de MAP01. Repetir no duplica nada.
-No se enseñan todas las recetas del catálogo ni se concede equipo o munición.
+Choosing the crossbow with Ronnie teaches the required bolts, shafts, tips and
+processing steps. Bow and long bow retain arrows; the other choices do not receive this
+recipe. TeachStarterAmmunition also incorporates the knowledge pending to previous
+saves, inside or outside MAP01. Repeating does not duplicate anything. Not all recipes
+in the catalog are taught nor equipment or ammunition are awarded.
 
-Cada lote produce diez CaelumBoltAmmo, 50 g cada uno, tier fijo 1 y tamaño fijo
-M del catálogo. Se adopta para virotes la misma estructura T1 de las flechas:
-350 unidades de asta y 150 de punta de bronce, 0,5 kg incorporados. La masa
-nativa de los virotes no se modifica. Insumos de montaje con componentes hechos:
+Each batch produces ten CaelumBoltAmmo, 50 g each, fixed tier 1 and fixed size M of the
+catalog. Bolts adopt the same T1 structure as arrows: 350 units of shaft and 150 of
+bronze tip, incorporating 0,5 kg. The native mass of bolts is unchanged. Assembly inputs
+with ready-made components:
 
-| Eficiencia | Asta | Punta de bronce | Salida |
+| Efficiency | Shaft | Bronze tip | Output |
 | --- | ---: | ---: | ---: |
-| 25% | 1400 unidades | 600 unidades | 10 virotes |
-| 50% | 700 unidades | 300 unidades | 10 virotes |
-| 100% | 350 unidades | 150 unidades | 10 virotes |
+| 25% | 1400  units | 600  units | 10 bolts |
+| 50% | 700  units | 300  units | 10 bolts |
+| 100% | 350  units | 150  units | 10 bolts |
 
-Una unidad = 0,001 kg. Cada transformación previa aplica su propia eficiencia
-y tiempo; la tabla no es el total de materia prima en fabricación multicapa.
-Asta viene de madera; punta T1, de bronce a partir de cobre/estaño. El Banco de
-Trabajo, Aserradero, Taller de Distancia y Forja de la red de Ronnie o segundo
-piso cubren el proceso. El Árbol de Oficios muestra cada capa y su eficiencia.
+One unit = 0,001 kg. Each previous transformation applies its own efficiency and time;
+the table is not the total raw material in multilayer manufacturing. The shaft comes
+from wood; T1 tip, bronze from copper/tin. The Workbench, Sawmill, Ranged Workshop and
+Forge from the Ronnie network or second floor cover the process. The Crafts Tree shows
+each layer and its efficiency.
 
-Se reutilizan plan directo, reservas, tarea única y tiempo nativo. Cerrar o
-alejarse pausa; sólo cancelar libera sin consumir. Al completar se consumen las
-reservas una vez y se añade el lote a la pila correcta. No requiere Caja, no
-ocupa un slot de ella y respeta capacidad de carga y máximo de pila. B, tier
-y talla no multiplican el lote. Munición no registra ni reemplaza ItemId de
-la primera arma. La receta de flechas usa el mismo ejecutor y mantiene su pila.
-Los virotes se cargan/disparan mediante la ballesta nativa, sin combate paralelo.
+Direct plan, reservations, unique task and native time are reused. Closing or moving
+away pauses; only cancel free without consuming. Completion consumes the reservations
+once and adds the batch to the correct stack. It does not require Box, does not occupy a
+slot of it and respects loading capacity and maximum stack size. B,tier and size do not
+multiply the lot. Ammunition does not register or replace ItemId from the first weapon.
+The arrow recipe uses the same executor and keeps its stack. Bolts are loaded/spent by
+the native crossbow, without parallel combat.
 
-Detalle orienta a quien eligió ballesta; no añade un objetivo obligatorio. La
-guía de munición está en el diálogo de taller de Ronnie, sin ampliar sus siete
-opciones principales. La salida narrativa conserva la regla de retirar los
-objetos físicos salvo Caja/primera arma; conocer recetas sí se conserva.
+Detail guides the one who chose crossbow; does not add a mandatory target. The
+ammunition guide is in the Ronnie workshop dialogue, without expanding its seven main
+options. The narrative exit retains the rule of removing physical objects except
+Box/first weapon; knowing recipes is preserved.
 
-Balas de carabina: masa vigente 0,003 kg; composición, materias primas y proceso
-para fabricar aún sin definir. No se introduce una receta inferida de esa masa.
+Carbine bullets: current mass 0,003 kg; composition, raw materials and process to
+manufacture yet undefined. No inferred recipe for that mass is introduced.
 
-## Respiración: práctica opcional de Ronnie (4.33.0ab)
+## Breathing: optional Ronnie practice (4.33.0ab)
 
-Después de devolver la espada, «¿Cómo respiro al nadar?» propone la práctica.
-Confirmar con Ronnie marca MainM00SwimLessonStarted; volver a aceptar conserva
-las fases. El diálogo indica piscina detrás de la mansión al este y escalones
-anchos del lado de la mansión. Preparar Aire, cubrir la cabeza un segundo junto
-a ellos y volver a subir. No requiere cruzar toda la piscina ni agotar Aire.
+After returning the sword, “How can I breathe when swimming?” proposes the practice.
+Confirm with Ronnie brand MainM00SwimLessonStarted; accept again preserves the phases.
+The dialogue indicates swimming pool behind the mansion to the east and wide steps on
+the side of the mansion. Prepare Air, cover the head one second next to them and go back
+up. It does not require crossing the entire pool or exhaust Air.
 
-UpdateUnderwaterAirForState informa sólo la cantidad realmente gastada. El
-observador requiere MAP01, partida viva sin predicción/diálogo, aceptación,
-WaterLevel >= 3, sector potable de la piscina, ausencia de exención submarina
-y UnderwaterNoBreathTics >= TICRATE (35). Marca Submerged. No agrega contador:
-una inmersión menor a un segundo no acumula tiempo de inmersiones separadas.
-El primer intervalo conserva coste base 5 Aire/s por el multiplicador vigente;
-el aumento posterior y el daño de ahogamiento no cambian.
+UpdateUnderwaterAirForState reports only the amount actually spent. The observer
+requires MAP01, live game without prediction/dialogue, acceptance, WaterLevel >=3,
+potable pool sector, no underwater exemption and UnderwaterNoBreathTics >=TICRATE (35).
+Sets Submerged. No counter added: a dive less than a second does not accumulate separate
+dive time. The first interval retains base cost 5 Air/s for the current multiplier;
+subsequent increase and drowning damage do not change.
 
-RecoverUnderwaterAirDebt informa recuperación positiva después de actualizar
-su deuda y tics. Con cabeza fuera del agua, Submerged y deuda final cero marca
-Complete. Usa la devolución existente de tres segundos; reentrar pausa y
-reanuda según la regla nativa. No añade regeneración ni gasta Hambre/Sed por
-esta devolución. Llenar Aire por otra vía no dispara la observación de respirar.
-La devolución submarina tampoco acredita la práctica separada de correr.
+RecoverUnderwaterAirDebt reports positive recovery after updating its debt and tics.
+With out-of-water head, Submerged and zero end debt mark Complete. Use existing
+three-second return; re-enter pause and resume according to native rule. Do not add
+regeneration or spend Hunger/Thirst for this return. Filling Air by another way does not
+trigger breathing observation. Underwater Air recovery also does not prove the separate
+practice of running.
 
-Tres bools en CaelumPersistentCharacterState conservan Started/Submerged/Complete;
-los contadores y deuda submarinos ya se guardaban. En partidas anteriores los
-nuevos bools empiezan falsos. Snapshots alimentan Detalle y diálogo. No se
-modifican recetas, recompensas ni bloqueos de misión. Al salir se conserva
-lo completado y se oculta el pendiente, igual que las otras prácticas.
-La lección no implementa recolección ni potabilización de agua.
+Three bools in CaelumPersistentCharacterState retain Started/Submerged/Complete;
+underwater counters and debt were already saved. In previous games the new bools start
+false. Snapshots feed Detail and dialogue. No modifications are made to recipes, rewards
+or mission blocks. When you leave you keep the completed and hide the pending practice,
+just like the other practices. The lesson does not implement water collection or
+potabilization.
 
-## Carga: práctica opcional de Ronnie (4.33.0z)
+## Load: optional Ronnie practice (4.33.0z)
 
-Después de devolver la espada, «¿Cómo organizo mi carga?» muestra las
-instantáneas actuales de CarriedWeight, CarryCapacity y el multiplicador
-CalculateLoadAirMultiplier. Leer no inicia; aceptar marca Started sin dar
-objetos ni modificar peso. La masa corporal participa por separado en el coste
-final de Aire; el valor del diálogo representa sólo el factor de carga.
+After returning the sword, "How do I organize my load?" shows the current snapshots of
+CarriedWeight, CarryCapacity and the CalculateLoadAirMultiplier multiplier. Read does
+not start; accept Started brand without giving objects or changing weight. Body mass
+participates separately in the final cost of Air; the dialog value represents only the
+load factor.
 
-La regla actual se conserva: para proporción r <= 0,75, factor = 1 + r;
-por encima, factor = 1,75 + 2 * (r - 0,75). HasOverload se activa en r >= 0,75.
-No se duplica todo el coste al cruzar el umbral: aumenta la pendiente del
-exceso. La capacidad de recoger y la conveniencia de cargar son distintas.
+The current rule is preserved: for ratio r <= 0,75, factor = 1 + r; above that, factor =
+1,75 + 2 * (r - 0,75). HasOverload activates at r >= 0,75. The entire cost does not
+double at the threshold: the slope of the excess increases. Pickup capacity and the
+desirability of carrying a load are distinct.
 
-ToggleSelectedMagicBox conserva su lógica en ToggleSelectedMagicBoxNative y
-observa antes/después la masa CarriedItemWeight. DropSelectedEquipment observa
-su llamada nativa de soltar. Sólo una acción confirmada STORED_IN_MAGIC_BOX o
-DROPPED con reducción superior a 0,000001 kg puede acreditar. Se excluye el
-ItemId de la primera arma. CarriedItemWeight no incluye DebugWeight: cambios
-de atributos, retirada de carga de depuración, consumos o fabricación no son
-estas acciones. Tampoco cuenta recuperar de la Caja ni guardar sin reducción.
+ToggleSelectedMagicBox retains its logic in ToggleSelectedMagicBoxNative and observes
+before/after CarriedItemWeight mass. DropSelectedEquipment observes its native drop
+call. Only a confirmed action STORED_IN_MAGIC_BOX or DROPPED with a reduction higher
+than 0,000001 kg can be credited. The first weapon’s ItemId is excluded.
+CarriedItemWeight does not include DebugWeight: attribute changes, removal of debug
+load, consumptions or manufacture are not these actions. Retrieving from the Box or
+storing without reducing weight does not count either.
 
-MainM00LoadLessonStarted y Complete se serializan con el Inventory persistente;
-sus valores iniciales en partidas anteriores son false. Diálogo y Detalle usan
-instantáneas. No añade costes, recompensas o requisitos a Rulo/salida. Puede
-recogerse de nuevo el sobrante: la lección registra la decisión realizada.
-Después de salir, el pendiente opcional se oculta y el completado se conserva.
-No agrega materiales prescindibles de prueba: reutiliza sobrantes propios del
-recorrido. Sin sobrantes, se permite continuar sin hacer la práctica.
+MainM00LoadLessonStarted and Complete are serialized with the Persistent Inventory;
+their initial values in previous games are false. Dialogue and Detail use snapshots. It
+does not add costs, rewards or requirements to Rulo/exit. The surplus can be collected
+again: the lesson records the decision made. After exiting, the pending optional
+practice is hidden and the completed one is preserved. It does not add testable
+materials: reuses excesses typical of the route. Without excess, it is allowed to
+continue without doing the practice.
 
-## Aire y movimiento: práctica opcional (4.33.0y)
+## Air and motion: optional practice (4.33.0y)
 
-Después de devolver el préstamo, Ronnie ofrece «¿Cómo administro mi Aire?».
-Leer no inicia. Confirmar fija MainM00AirLessonTarget = MaximumAir * 0.01,
-una sola vez. No rellena ni reduce Aire, necesidades o salud. El objetivo se
-conserva aunque después cambie el máximo; no es un coste adicional.
+After returning the loan, Ronnie offers "How do I manage my Air?" Read does not start.
+Confirmation fixes MainM00AirLessonTarget = MaximumAir * 0.01, once. Do not refill or
+reduce Air, needs or health. The target is retained even if it changes the maximum; it
+is not an additional cost.
 
-ConsumeRunningAir informa la diferencia real entre Aire anterior y posterior.
-Sólo acredita con la práctica activa, sin diálogo, corriendo sobre suelo y con
-velocidad horizontal no nula. MainM00AirLessonSpent acumula y se limita al
-objetivo. Al alcanzarlo marca Ran. Tramos cortos cuentan; no pide agotamiento.
-ApplyAirRegeneration informa después el Aire efectivamente recuperado, conserva
-sus requisitos y costes nativos de Hambre/Sed, y acumula Recovered. Al llegar al
-objetivo marca Complete. Recuperar antes de terminar el primer paso no cuenta.
-Una bebida energética, ataque, salto o ajuste de depuración no invoca esos
-observadores. La regeneración puede exigir reponer reservas si están vacías.
+ConsumeRunningAir reports the actual difference between Air before and after
+consumption. It only credits with active practice, without dialogue, running on ground
+and with horizontal speed not null. MainM00AirLessonSpent accumulates and is limited to
+the target. Reaching it sets Ran. Short runs count; does not ask for exhaustion.
+ApplyAirRegeneration then informs the Air effectively recovered, retains its native
+requirements and costs of Hunger/Thirst, and accumulates Recovered. Reaching the target
+sets Complete. Recover before finishing the first step does not count. An energy drink,
+attack, jump or debug adjustment does not invoke those observers. Regeneration may
+require replenishing reserves if they are empty.
 
-Tres flags Started/Ran/Complete y tres doubles Target/Spent/Recovered viven en
-el registro Inventory serializado. Los nuevos campos valen cero en guardados
-anteriores. Diálogo y Detalle usan instantáneas; al cruzar conserva lo completado
-y oculta el pendiente opcional. No hay recompensa ni requisito nuevo de misión.
-La misma lógica nativa de BT_RUN respeta Correr siempre y la tecla de velocidad.
-No se modifica la movilidad ni se incorporan inmovilidad, descanso o calendario.
+Three flags Started/Ran/Complete and three doubles Target/Spent/Recovered live in the
+serialized Inventory record. The new fields are zero in previous saves. Dialogue and
+Detail use snapshots; when crossing retains the completed and hides the pending optional
+practice. There is no reward or new mission requirement. The same native logic of BT_RUN
+respects Always Run and the speed key. Mobility is not modified or immobility, rest or
+calendar is incorporated.
 
-## Necesidades: práctica opcional de Ronnie (4.33.0x)
+## Needs: optional Ronnie practice (4.33.0x)
 
-Después del préstamo de Ronnie se ofrece «¿Cómo me alimento y bebo?». Leer la
-propuesta no inicia la práctica. Confirmarla una vez aplica Min(actual, 90) a
-Hambre y Sed: no reduce reservas ya bajas ni cura estados anteriores. Se entregan
-una CaelumFoodRation y una CaelumWaterRation mediante el inventario nativo.
-MainM00NeedsFoodGiven/WaterGiven registran cada entrega exitosa por separado;
-una entrega fallida por carga puede reintentarse, sin duplicar la otra.
-Las raciones pesan 0,10 kg cada una. Conservan las reglas de apilado/Caja.
+After the Ronnie loan is offered "How do I feed and drink?". Read the proposal does not
+start the practice. Confirm it once applies Min(current, 90) to Hunger and Thirst: it
+does not reduce already low reserves or cure previous states. One CaelumFoodRation and
+one CaelumWaterRation are delivered through the native inventory.
+MainM00NeedsFoodGiven/WaterGiven register each successful delivery separately; one
+failed delivery per load can be retrieved, without duplicating the other. The rations
+weigh 0,10 kg each. They keep stacking/Box rules.
 
-Usar desde Inventario consume una unidad y activa diez pulsos de un punto,
-uno por segundo. El observador sólo marca alimento/agua si Use fue aceptado,
-la práctica comenzó y la reserva correspondiente estaba por debajo de 100.
-Recoger, hablar, rechazar el uso desde la Caja o consumir al 100 no acredita.
-La acreditación registra el consumo; la recuperación sigue siendo gradual.
-Una segunda unidad reinicia el efecto, nunca suma intensidades o duraciones.
-Se habilita bAlwaysPickup sólo durante Super.Use para permitir ese refresco
-nativo antes del parpadeo; se restaura el flag para no alterar la recogida.
+Use from Inventory consumes one unit and activates ten pulses of one point, one per
+second. Observer only marks food/water if Use was accepted, practice began and the
+corresponding reserve was below 100. Collecting, speaking, refusing use from Box or
+consuming 100 does not credit. Accreditation records consumption; recovery remains
+gradual. A second unit restarts effect, never adds intensities or durations.
+bAlwaysPickup is enabled only during Super.Use to allow that native refresh before
+expiry; the flag is restored to avoid alter collection.
 
-MainM00NeedsLessonStarted, FoodUsed, WaterUsed y los dos flags de entrega viajan
-en el registro persistente; guardados anteriores los inicializan a false.
-Detalle refleja los dos consumos. La práctica completa se conserva al salir;
-un pendiente opcional se oculta fuera del Limbo. No hay requisito de misión,
-receta extra ni recompensa por volver. Las raciones restantes se retiran con
-los demás objetos físicos en la salida ya aprobada: no se exportan a MAP02.
+MainM00NeedsLessonStarted, FoodUsed, WaterUsed and the two delivery flags travel in the
+persistent record; previous saves initialize them to false. Detail reflects the two
+consumptions. The complete practice is preserved on exit; a pending optional practice
+is hidden outside the Limbo. There is no mission requirement, extra recipe or reward to
+return. The remaining rations are removed with the other physical objects on the
+approved exit: they are not exported to MAP02.
 
-Esta entrega enseña el consumo. No implementa recolección ni potabilización:
-la piscina no es un dispensador de agua. Tampoco altera ritmos de necesidades,
-regeneración, descanso o calendario. No amplía mapas.
+This delivery teaches consumption. It does not implement collection or potabilization:
+the pool is not a water dispenser. It does not alter the rhythms of needs, regeneration,
+rest or calendar. It does not expand maps.
 
-## Mantenimiento opcional con Ronnie (4.33.0w)
+## Optional maintenance with Ronnie (4.33.0w)
 
-Después de devolver el préstamo, «¿Cómo mantengo mi arma?» registra que se
-ofreció la lección. Los pasos están en ese diálogo y en Misiones > Detalle (F).
-Seleccionar la primera arma en Inventario y desequiparla; usar el Banco de
-Trabajo del segundo piso y pulsar F en Oficios. Mantener seleccionada la pieza.
+After returning the loan, "How do I keep my weapon?" records that the lesson was
+offered. The steps are in that dialogue and in Quests > Detail (F). Select the first
+weapon in Inventory and unequip it; use the Workbench on the second floor and press F in
+Crafts. Keep selected piece.
 
-Se reutiliza BeginRepairSelectedEquipment/CompleteRepairTask. El observador sólo
-acredita una reparación nativa terminada que aumentó la durabilidad del ItemId
-inicial, propiedad del jugador, después de recibir la lección y cerrar Ronnie.
-Hablar, reparar otro objeto, usar una restauración de depuración o cancelar no
-acredita esta práctica. El guardado almacena MainM00RepairLessonOffered y
-MainM00RepairLessonComplete; dos instantáneas alimentan diálogo y Diario.
+BeginRepairSelectedEquipment/CompleteRepairTask is reused. The observer only credits a
+finished native repair that increased the durability of the initial ItemId, owned by the
+player, after receiving the lesson and closing Ronnie’s conversation. Speak, repair
+another object, use a debug restore or cancel does not credit this practice. The save
+stores MainM00RepairLessonOffered and MainM00RepairLessonComplete; two snapshots feed
+dialog and Journal.
 
-No añade recetas, recompensa, daño tutorial ni una tarea paralela. No cambia
-requisitos de Rulo ni de la salida. El estado completado viaja con el personaje;
-el pendiente opcional deja de mostrarse después de abandonar la mansión.
-Una tarea real que siga activa sí conserva la restricción de salida de 0v:
-el jugador debe terminarla o cancelarla personalmente antes de cruzar.
+It does not add recipes, rewards, tutorial damage or a parallel task. It does not change
+either Rulo or exit requirements. Completed status travels with character; pending
+optional practice ceases to be displayed after leaving the mansion. A real task that
+remains active does retain 0v exit restriction: the player must finish it or cancel it
+personally before crossing.
 
-## Cobertura de materiales T1 — auditoría 4.33.0w
+## T1 Material Coverage — 4.33.0w Audit
 
-Cálculo con las funciones de recetas del motor, talle M, sin existencias previas,
-una pieza por ranura y eficiencias uniformes en todas las capas. Las cifras son
-cuero ya curtido: 1 unidad de material = 0,001 kg. No son nuevos costes de balance.
+Calculation with engine recipe functions, size M, no previous stock, one piece per slot
+and even efficiencies in all layers. Figures are leather already tanned: 1 material unit
+= 0,001 kg. These are not new balance costs.
 
-| Conjunto T1 completo | 25% | 50% | 100% |
+| Complete T1 set | 25% | 50% | 100% |
 | --- | ---: | ---: | ---: |
-| Mágico | 41,6 kg | 13,6 kg | 5 kg |
-| Liviano | 78,4 kg | 26,4 kg | 10 kg |
-| Mediano | 156,8 kg | 52,8 kg | 20 kg |
-| Pesado | 313,6 kg | 105,6 kg | 40 kg |
-| Los cuatro conjuntos | 590,4 kg | 198,4 kg | 75 kg |
+| Magic | 41,6 kg | 13,6 kg | 5 kg |
+| Light | 78,4 kg | 26,4 kg | 10 kg |
+| Medium | 156,8 kg | 52,8 kg | 20 kg |
+| Heavy | 313,6 kg | 105,6 kg | 40 kg |
+| The four sets | 590,4 kg | 198,4 kg | 75 kg |
 
-El código vigente usa cuero y correas también para estos cuatro tipos de
-armadura; la tabla refleja ese catálogo, sin sustituirlo por metales o telas.
-La apariencia/peso/estaciones del tipo no cambian su material en las recetas.
+The current code also uses leather and straps for these four types of armor; the table
+reflects this catalogue, without replacing it with metals or fabrics. The
+appearance/weight/stations of the type do not change their material in recipes.
 
-La oferta histórica hasta 0ac era 96 kg del cajón M más 12,5 kg del Toro.
-Desde 0ad rige el cupo al 100% de la elección indicado al comienzo; los costes
-comparativos de la tabla siguen siendo válidos, pero no son el stock disponible.
-No se abastecen los cuatro conjuntos simultáneamente ni al 25%.
+The historical offer up to 0ac was 96 kg of drawer M plus 12,5 kg of Toro. From 0ad the
+quota to 100% of the choice indicated at the beginning; the comparative costs of the
+table remain valid, but are not the stock available. The four sets are not supplied
+simultaneously nor to 25%.
 
-Para fabricar una vez cada uno de los cinco sellos T1:
+To manufacture once each of the five T1 seals:
 
-| Materia prima | 25% | 50% | 100% |
+| Raw material | 25% | 50% | 100% |
 | --- | ---: | ---: | ---: |
-| Cobre bruto total | 460,8 kg | 28,8 kg | 1,8 kg |
-| Estaño bruto total | 51,2 kg | 3,2 kg | 0,2 kg |
-| Cada gema bruta: rubí, zafiro, esmeralda, topacio y ópalo | 9,6 kg | 2,4 kg | 0,6 kg |
+| Total raw copper | 460,8 kg | 28,8 kg | 1,8 kg |
+| Total raw tin | 51,2 kg | 3,2 kg | 0,2 kg |
+| Each raw gem: ruby, sapphire, emerald, topaz and opal | 9,6 kg | 2,4 kg | 0,6 kg |
 
-Las vetas iniciales del mapa superan esos requisitos: cobre 6.470,5 kg, estaño
-5.176,4 kg; rubí 1.022,34 kg, zafiro 1.363,12 kg, esmeralda 681,56 kg,
-topacio 1.703,9 kg y ópalo 2.555,85 kg. Son capacidades calculadas a partir
-de los actores; no se midió aquí tiempo de extracción ni se garantiza que un
-save ya explotado conserve esas reservas. Los nodos mantienen su regeneración, pero desde 0ad el cupo de entrega es
-independiente: estas masas físicas no habilitan recoger excedentes.
+The initial veins of the map exceed these requirements: copper 6.470,5 kg, tin 5.176,4
+kg; ruby 1.022,34 kg, sapphire 1.363,12 kg, emerald 681,56 kg, topaz 1.703,9 kg and opal
+2.555,85 kg. They are capacities calculated from the actors; neither extraction time was
+measured here nor guaranteed that an already exploited save retains those reserves. The
+nodes maintain their regeneration, but from 0ad the delivery quota is independent: these
+physical masses do not allow collection of surplus.
 
-Disponibilidad de materiales, infraestructura y conocimiento son requisitos
-separados. Las doce estaciones del segundo piso cubren la infraestructura;
-Ronnie enseña la primera arma y, desde 0ad, una familia de armadura con sus
-componentes. Desde 0ae Caella enseña sellos y habilita su cupo al aceptar.
-No usar «hay vetas» como sinónimo de «todo se puede fabricar ya».
+Material availability, infrastructure and knowledge are separate requirements. The
+twelve stations on the second floor cover the infrastructure; Ronnie teaches the first
+weapon and, from 0ad, a family of armor with its components. From 0ae Caella it teaches
+Seals and enables its quota when accepting. Do not use "there are veins" as synonymous
+with "everything can be made now".
 
-## Salida narrativa, inventario y llegada (4.33.0v)
+## Narrative exit, inventory and arrival (4.33.0v)
 
-La puerta del fondo de la sala del Toro exige fase 90, las pruebas completas,
-El Loco y la misma Caja nativa del jugador. Usar comprueba visibilidad,
-distancia de hasta 112 MU y diferencia vertical de hasta 48 MU. El antiguo
-Exit directo y su panel se retiran en runtime, también en guardados 0u.
+The rear door of the Bull room requires 90 phase, complete testing, El Loco and the
+player's native Box itself. Use checks visibility, distance up to 112 MU and vertical
+difference up to 48 MU. The old Direct Exit and its panel are removed in runtime, also
+in 0u saves.
 
-USDF 43320 presenta la advertencia y dos decisiones. Cancelar no cambia nada.
-Aceptar inicia fase 95 y 18 tics de fundido después de cerrar el diálogo.
-Una tarea activa impide iniciar; no se cancela automáticamente ni se tocan sus
-reservas. Se interrumpen bloqueo, apuntado, recarga, carga y Channel. El bloqueo
-temporal de entrada se quita sólo si esta transición fue quien lo añadió.
-Distancia, vida, propiedad y requisitos se revalidan antes de limpiar.
+USDF 43320 presents the warning and two decisions. Cancel does not change anything.
+Accept initiate phase 95 and 18 tics of fade after closing the dialogue. An active task
+prevents start; it does not automatically cancel or touch your reservations. Blocking,
+aiming, reloading, charging and Channel is interrupted. The temporary input lock is
+removed only if this transition added it. Distance, health, property and requirements
+are revalidated before cleaning.
 
-La primera arma se resuelve por MainM00StarterWeaponId, primero en inventario,
-luego como instancia caída. Sólo si desapareció se reconstruye la elección T1,
-con tamaño/esencia originales y última durabilidad conocida. No devuelve
-materiales ni reemplaza una instancia válida. La durabilidad se registra al
-persistir el personaje; en un save antiguo sin pieza ni instantánea se usa
-la durabilidad máxima de la receta como recuperación excepcional.
+The first weapon is resolved by MainM00StarterWeaponId, first in inventory, then as a
+dropped instance. Only if it disappeared will the T1 choice be reconstructed, with
+original size/essence and last known durability. It does not return materials or replace
+a valid instance. Durability is recorded when the character persists; in an old save
+without the item or a snapshot the maximum durability of the recipe is used as
+exceptional recovery.
 
-Confirmado el cruce, se coloca esa pieza en la Caja, sin equipar, y se retiran
-los demás objetos físicos personales y almacenados. La limpieza histórica de
-porciones de misión no sustituye esta regla narrativa: aquí sólo viajan la Caja
-y la primera arma. Quedan Tarot, conocimientos y registro del personaje. No hay
-loadout adicional definido. Salud y necesidades se conservan con los máximos
-vigentes tras retirar equipo; no se reinician por viajar.
+Confirmed the crossing, that piece is placed in the Box, without equipping, and the
+other personal and stored physical objects are removed. The historical cleaning of
+portions of mission does not replace this narrative rule: only the Box and first weapon
+travel as physical items. Tarot, knowledge and the character record remain. There is no
+additional loadout defined. Health and needs are preserved with the maximum in force
+after removing equipment; they are not restarted for travel.
 
-Antes de ChangeLevel se guardan fase 100, misión completada, objetivo de salida,
-banderas de limpieza/preservación y modelos coherentes sin equipo. GZDoom lleva
-el inventario nativo, sin RESETINVENTORY ni RESETHEALTH. MAP02 inicia en la
-pasarela seca; USDF 43321 presenta una vez la Voz y una página de cierre/ayuda.
-Se puede recuperar el arma desde Inventario y usarla normalmente. El campo de
-pruebas de actores ahora es CADEV02 y sus objetos no aparecen en la llegada.
+Before ChangeLevel phase 100 is saved, completed quest, exit objective,
+cleaning/preservation flags and consistent models without equipment. GZDoom carries the
+native inventory, without RESETINVENTORY or RESETHEALTH. MAP02 starts on the dry
+gateway; USDF 43321 presents once the Voice and a closing/help page. The weapon can be
+recovered from Inventory and used normally. The actors test field is now CADEV02 and its
+objects do not appear on arrival.
 
-MainM00ReturnTics, MainM00ReturnOwnsFreeze y MainM00SewerVoiceHeard se guardan
-junto al registro viajero. Se conservan índices anteriores. La presentación
-se reconstruye al cargar y no vuelve a conceder cartas ni objetos. La llegada
-no ofrece regreso normal a MAP01. Con más de un jugador se rechaza el cruce
-antes de mutar el estado; la variante cooperativa necesita diseño conjunto.
+MainM00ReturnTics, MainM00ReturnOwnsFreeze and MainM00SewerVoiceHeard are saved next to
+the traveller log. Previous indexes are preserved. The presentation is reconstructed
+when loading and does not re-grant cards or objects. Arrival does not offer normal
+return to MAP01. With more than one player the crossing is rejected before mutating the
+state; the cooperative variant needs joint design.
 
-## Tarot: colección y captura de El Loco (4.33.0t)
+## Tarot: collection and capture of El Loco (4.33.0t)
 
-Regla vigente desde 0aa: cada Menor aporta exclusivamente una pasiva de base,
-además de su +1% por colección. Mayores: +2% por carta. Los 22 Mayores y 56
-Menores suman +100% de colección, de forma aditiva, antes de Tipo 1/2/4.
-No redondear el nivel ni alterar puntos de creación. No hay XP por combatir.
-Poderes activos y Trucazo siguen pendientes. Desde 4.36.0i se obtienen El Loco
-y el 1 de Copas. Las otras 76 cartas requieren sus misiones/recompensas.
+Rule in force since 0aa: each Minor exclusively contributes a base passive, in addition
+to its +1% per collection. Major: +2% per card. The 22 Major and 56 Minor add up +100%
+collection, in an additive way, before Type 1/2/4. Do not round the level or alter
+creation points. Combat awards no XP. Active powers and Trucazos are still pending.
+4.36.0i obtains El Loco and Ace (1) of Cups. The other 76 cards require their
+missions/rewards.
 
-| Palo | Familia | Primer / segundo / tercer atributo |
+| Suit | Family | First / second / third attribute |
 | --- | --- | --- |
-| Espadas | Mental | Inteligencia / Paciencia / Perspicacia |
-| Copas | Social | Carisma / Empatía / Elocuencia |
-| Bastos | Física | Fuerza / Dureza / Constitución |
-| Oros | Técnica | Agilidad / Destreza / Resiliencia |
+| Swords | Mental | Intelligence / Patience / Insight |
+| Cups | Social | Charisma / Empathy / Eloquence |
+| Wands | Physical | Strength / Hardness / Constitution |
+| Coins | Technical | Agility / Dexterity / Resilience |
 
-| Carta de cada palo | Bono base por carta |
+| Card from each suit | Base bonus per card |
 | --- | --- |
-| 2, 3, 4 | +0,3 al primer atributo |
-| 5, 6, 7 | +0,3 al segundo |
-| 8, 9, 10 | +0,3 al tercero |
-| Caballero | +0,6 al primero |
-| Sota | +0,6 al segundo |
-| Reina | +0,6 al tercero |
-| Rey | +0,5 a los tres |
-| Ancho | +1 a los tres |
+| 2, 3, 4 | +0,3 to the first attribute |
+| 5, 6, 7 | +0,3 to the second |
+| 8, 9, 10 | +0,3 to the third |
+| Knight | +0,6 to the first |
+| Page | +0,6 to the second |
+| Queen | +0,6 to the third |
+| King | +0,5 at all three |
+| Ace | +1 at all three |
 
-Cada palo completo da +3 a sus tres atributos. Orden: creación + equipo +
-pasivas menores, luego multiplicación por (1 + porcentaje de colección/100).
-Ejemplo sin armadura: 20 creación +18 amuleto T3 +9 sello T3 +3 menores =50;
-con las 78 cartas resulta 100 en los atributos que reciben esos bonos.
-No es un tope impuesto al atributo ni se inventan pasivas de Mayores.
+Each full suit gives +3 to its three attributes. Order: creation + minor passive +
+equipment, then multiplication by (1 + collection percentage/100). Armorless example: 20
+creation +18 amulet T3 +9 seal T3 +3 minor =50; with 78 cards it turns out 100 in the
+attributes that receive those bonuses. It is not a cap imposed on the attribute nor are
+passive Majors invented.
 
-TarotOwned[78] vive en CaelumPersistentCharacterState, Inventory viajero.
-Índices estables 0–21: Mayores de Marsella; El Loco =0. Menores: Espadas
-22–35, Copas 36–49, Bastos 50–63, Oros 64–77. En cada palo: Ancho, 2..10,
-Caballero, Sota, Reina, Rey. El código suma décimas enteras y entrega double.
-Contador, pasivas y porcentaje se derivan de propiedad; no son acumuladores.
-ApplyCharacterProfile reconstruye creación/equipo, suma Menores, multiplica
-colección y recalcula estadísticas/carga. Los perfiles de depuración siguen
-el mismo orden después de su base forzada. Reequipar, cargar o viajar no duplica
-bonos. El Diario separa base menor y porcentaje usando los atributos en el
-mismo orden que Personaje. Cargar 0z reconstruye también los valores derivados
-serializados y el coste de un hechizo pendiente, manteniendo recursos/progreso.
+TarotOwned[78] lives in CaelumPersistentCharacterState, Inventory traveler. Stable
+indexes 0–21: Marseille Major Arcana; El Loco =0. Minor Arcana: Swords 22–35, Cups
+36–49, Wands 50–63, Coins 64–77. Within each suit: Ace, 2..10, Knight, Page, Queen,
+King. The code adds integer tenths and rejects duplicate delivery. Counter, passives and
+percentages are derived from property; they are not accumulators. ApplyCharacterProfile
+rebuilds creation/equipment, adds Minors, multiplies collection and recalculates
+statistics/load. The debug profiles follow the same order after its forced base.
+Re-equipping, loading or travelling does not duplicate bonuses. The Journal separates
+Minor Arcana base bonuses and percentage bonuses using attributes in the same order as
+Character. Load 0z also reconstructs serialized derivative values and the cost of a
+pending spell, maintaining resources/progress.
 
-El controlador manifiesta CaelumM00FoolEssence en (1420,1050,-370), sobre el
-suelo Z=-384. Consulta la fase 80, las cuatro ramas terminadas y entrega/propiedad
-de la Caja. Reutiliza la instancia StoryPlaced al cargar; no pone actores en
-el WAD. MainM00FoolRevealed conserva la revelación individual. El render mundial
-muestra reverso CTAR y después el recurso CFLF, también usado en el Diario.
+The controller spawns CaelumM00FoolEssence in (1420,1050,-370), on the floor Z=-384.
+Check the 80 phase, the four finished branches and delivery/ownership of the Box. Reuse
+the StoryPlaced instance when loading; do not put actors in the WAD. MainM00FoolRevealed
+retains individual revelation. The world render shows CTAR reverse and then the CFLF
+resource, also used in the Journal.
 
-Usar exige jugador creado/vivo en MAP01, distancia <=128, diferencia Z <=48 y
-CheckSight, además de Caja nativa con Owner e ItemId coincidentes. El alcance
-efectivo de Usar también respeta el trazado nativo del jugador. USDF 43318
-permite confirmar o dejarla allí. La música baja durante el diálogo y el
-destructor nativo restaura Level.MusicVolume; no se cambia el volumen elegido.
+Using requires player created/live in MAP01, distance <=128, difference Z <=48 and
+CheckSight, plus native box with Owner and ItemId matching. The effective scope of Use
+also respects the native layout of the player. USDF 43318 lets you confirm or leave it
+there. The music drops during dialogue and the native destructor restores
+Level.MusicVolume; the selected volume is not changed.
 
-La aceptación inicia 35 tics de animación después de cerrar la conversación.
-El actor original permanece quieto; una imagen sin colisión se acerca al
-jugador. Cada tic revalida distancia, vida, misión, imagen y la misma Caja.
-Una interrupción borra sólo la imagen y restaura la esencia. Al terminar,
-RecordMainM00FoolCapture cambia 80 -> 90, registra la carta, bandera 40,
-objetivo 6 a 1/1 y EXIT_READY, que desde 0v habilita la puerta final.
-Se persiste antes de retirar la esencia. Repetir no vuelve a premiar.
-El guardado nativo conserva también la animación y sus referencias.
+The acceptance starts 35 animation tics after closing the conversation. The original
+actor remains still; a non-collisional image approaches the player. Each tic revalidates
+distance, health, mission, image and the same Box. An interruption erases only the image
+and restores the essence. At the end, RecordMainM00FoolCapture changes 80 -> 90,
+registers the card, 40 flag, 6 target to 1/1 and EXIT_READY, which from 0v enables the
+final door. It persists before removing the essence. Repeat does not reward again. The
+native save also retains the animation and its references.
 
-Tarot es la séptima página del Diario. Cuenta cartas, muestra la ilustración
-obtenida y el porcentaje; Personaje muestra decimales. Detalle diferencia
-buscar/revelar/capturar. Palomo usa USDF 43319 después de obtenerla; los cuatro
-residentes adaptan sus páginas de finalización. Se anexan nodos USDF para
-mantener los índices existentes. No hay cambio de mapa en este parche.
+Tarot is the seventh page of the Journal. Counts cards, shows the illustration obtained
+and the percentage; Character shows decimals. Detail distinguishes
+search/reveal/capture. Palomo uses USDF 43319 after obtaining it; the four residents
+adapt their completion pages. USDF nodes are attached to maintain existing indexes.
+There is no map change in this patch.
 
-## Palomo final y Caja única (4.33.0s)
+## Palomo final and single box (4.33.0s)
 
-La conversación final usa USDF 43316; una visita temprana arriba usa 43317.
-Se anexan páginas para conservar los índices de los diálogos guardados.
-DepartureDone habilita hablar con la misma instancia, sin moverla. La entrega
-exige MAP01, jugador vivo/creado, conversación activa con Palomo, rango/altura/
-visibilidad y registro activo en fase 75 con las cuatro ramas cerradas.
+The final conversation uses USDF 43316; an early visit above uses 43317. Pages are
+attached to preserve the indexes of the saves dialogs. DepartureDone enables to speak
+with the same instance, without moving it. Delivery requires MAP01, live/created player,
+active conversation with Palomo, range/height/visibility and active registration in
+phase 75 with the four branches completed.
 
-Sólo CaelumMainM00AcceptMagicBoxAction confirma la recompensa narrativa.
-CanReceiveMainM00MagicBox valida los requisitos; RecordMainM00MagicBoxGranted
-avanza 75 -> 80 y fija la bandera 39 tras confirmar propiedad e identidad.
-Preguntar, volver atrás o cerrar no concede nada. Un segundo intento conserva
-la Caja y la etapa. Los tokens USDF reflejan el registro, no lo sustituyen.
+Only CaelumMainM00AcceptMagicBoxAction confirms the narrative reward.
+CanReceiveMainM00MagicBox validates the requirements; RecordMainM00MagicBoxGranted
+advances 75 -> 80 and fixes the 39 flag after confirming property and identity. Asking,
+going back or closing does not grant anything. A second attempt retains the Box and the
+stage. USDF tokens reflect the record, do not replace it.
 
-CaelumMagicBox es un Inventory nativo sin entrada duplicada en la lista; la
-interfaz existente de la Caja sigue siendo su presentación. Tiene ItemId y
-Owner, MaxAmount/InterHubAmount 1, UNDROPPABLE y UNCLEARABLE. No entra en los
-catálogos de venta ni en las clases de contenido almacenable. El peso sigue
-sumándose sólo en CalculateMagicBoxTotalWeight: 10 kg más el peso reducido
-global del contenido, con divisor/redondeo vigentes. No agrega otro slot.
+CaelumMagicBox is a native Inventory without duplicate entry in the list; the existing
+interface of the Box is still its presentation. It has ItemId and Owner,
+MaxAmount/InterHubAmount 1, UNDROPPABLE and UNCLEARABLE. It does not enter the sales
+catalogues or storeable content classes. Weight continues to be added only to
+CalculateMagicBoxTotalWeight: 10 kg plus the overall reduced weight of the content, with
+current divisor/rounding rule. It does not add another slot.
 
-EnsureOwned recupera la instancia si falta y asigna identidad a la propiedad
-antigua sin duplicar contenidos. Usa el contador de IDs existente y protege
-la identidad de la Caja frente a equipo importado con el mismo número. No
-adelanta una misión por poseer una Caja heredada: hay que aceptar ante Palomo.
-La Caja viaja con Inventory. 0t añade la captura de El Loco y la bonificación
-de atributos descritas arriba; retorno entre mundos y poderes siguen pendientes.
+EnsureOwned recovers the instance if missing and assigns identity to the old property
+without duplicating contents. Use the existing ID counter and protect the Box identity
+against imported equipment with the same number. It does not advance a mission for
+possessing an inherited Box: it is necessary to accept to Palomo. The Box travels with
+Inventory. 0t adds the capture of El Loco and the attribute bonus described above;
+return between worlds and powers remain pending.
 
-En Inventario, C guarda/retira el objeto seleccionado. Se conservan límites
-de slots/carga y restricciones de equipo puesto, préstamos, reservas de misión
-y crafting. La entrega permite al jugador reorganizar su contenido aunque
-los 10 kg iniciales aumenten temporalmente su carga. El texto da instrucciones
-y la ruta del pasaje/ascensor/cueva. Desde 0t indica dónde examinar la aparición.
+In Inventory, C saves/withdraws the selected object. Slots/load limits and restrictions
+are retained for equipment placed, loans, mission reserves and crafting. Delivery allows
+the player to reorganise its content even if the initial 10 kg temporarily increase its
+load. Text gives instructions and the path of the passage/lift/cave. From 0t indicates
+where to examine the appearance.
 
-## Residentes esenciales y diálogo poscombate (4.33.0r)
+## Essential residents and post-combat dialogue (4.33.0r)
 
-En MAP01, los cuatro CaelumAnchoredResident con StoryAnchored activan el flag
-nativo BUDDHA antes de DamageMobj y al cargar. El motor limita el daño normal
-a 1 de salud antes de entrar en muerte. En la prueba, alcanzar ese mínimo
-activa CrouchIdle y retira temporalmente colisión, ataques y recepción de daño.
-Reintentar o ganar restaura recursos, armadura, postura e interacción. Die
-mantiene un respaldo para daño forzado/telefrag, que ignora BUDDHA nativo.
-Las instancias de diagnóstico sin anclaje conservan sus reglas normales.
+In MAP01, the four CaelumAnchoredResident with StoryAnchored activate the native BUDDHA
+flag before DamageMobj and on loading. The engine limits normal damage to leave 1 health
+before entering death. In the test, reach that active minimum CrouchIdle and temporarily
+remove collision, attacks and damage reception. Retrying or winning restores resources,
+armor, posture and interaction. Die maintains a fallback for forced damage/telefrag,
+which ignores native BUDDHA. Unanchored diagnostic instances retain its normal rules.
 
-A_Chase puede dejar INCOMBAT tras un ataque de proyectil. StartConversation
-rechaza ese flag aunque el actor tenga toda su salud. Se limpia al salir del
-combate y en el estado de espera/casa, junto con Target/LastEnemy y los flags
-de ataque. No se interrumpe una conversación que aún pertenece a un jugador.
-Los guardados 0q recuperan la interacción sin repetir la prueba.
+A_Chase can leave INCOMBAT after a projectile attack. StartConversation rejects that
+flag even if the actor is in full health. The flag is cleared out of combat and in the
+waiting/house state, along with Target/LastEnemy and attack flags. A conversation that
+still belongs to a player is not interrupted. 0q saves recover the interaction without
+repeating the test.
 
-Una instancia narrativa guardada con health <= 0, CORPSE o KILLED se repara
-mediante Revive y restauración de tamaño, recursos y protección; conserva
-identidad, coordenadas de casa, referencias y estado de misión. Si la prueba
-sigue activa, permanece fuera de combate con 1 de vida hasta terminarla.
-No respawnear copias, alterar botín, adelantar fases ni aumentar el total de
-monstruos al reparar. Un actor ya destruido no es una instancia recuperable.
+A saved narrative instance with health <= 0, CORPSE or KILLED is repaired through Revive
+and restoration of size, resources and protection; it retains identity, home
+coordinates, references and quest state. If the trial remains active, it stays out of
+combat with 1 health until the trial ends. Do not respawn copies, alter loot, advance
+stages or increase the monster total during repair. An already-destroyed actor is not a
+recoverable instance.
 
-Rulo reconoce liderazgo y fuerza innata en victoria, repetición y Detalle.
-No hay bonificación estadística nueva ni exposición del secreto del Limbo.
-0t añade El Loco en la cueva, captura y bonificación de Arcano Mayor. Esa
-recompensa pertenece a la carta, no a la práctica de Rulo.
+Rulo recognizes leadership and innate strength in victory, repetition and detail. There
+is no new statistical bonus or exposure of the Limbo secret. 0t adds El Loco in the
+cave, capture and bonus of Major Arcana. That reward belongs to the card, not to the
+practice of Rulo.
 
-## Combate acompañado y rendimiento del Toro (4.33.0q)
+## Accompanied combat and Bull performance (4.33.0q)
 
-El Toro conserva 900 kg y su perfil ofensivo. Al entrar, se colocan los cuatro
-residentes existentes en la formación durante los dos segundos de preparación:
-Rulo (-2010,-155,0), Ronnie (-2010,155,0), Argento (-1900,-220,0),
-Caella (-1900,220,0). Rulo/Ronnie usan melee; Argento/Caella conservan melee y
-sus proyectiles elementales nativos. No se agregan estadísticas ni armas.
-El Toro conserva un objetivo válido del grupo y busca otro si éste cae.
+The Bull retains 900 kg and its offensive profile. Upon entering, the four existing
+residents are placed in the formation during the two seconds of preparation: Rulo
+(-2010,-155,0), Ronnie (-2010,155,0), Argento (-1900,-220,0), Caella (-1900,220,0).
+Rulo/Ronnie use melee; Argento/Caella retain melee and its native elemental projectiles.
+No statistics or weapons are added. The Bull retains a valid target of the group and
+seeks another if it falls.
 
-RuloPartyMode y las referencias al jugador/Toro viven en cada residente y se
-serializan por el motor. Modo 1 prepara, 2 combate y 3 espera el cierre. Una
-cornada letal deja al residente con 1 de salud, agachado, sin bloqueo ni ataques.
-Reintento y victoria restauran salud, Aire, Anima, Lucidez y armadura. El grupo
-no inflige daño al jugador ni entre sí: sus proyectiles atraviesan aliados y
-los receptores filtran el daño. La derrota del jugador retira también los
-proyectiles de los compañeros antes del reinicio. No se pierde el NPC narrativo.
-Tras ganar, Rulo recibe la devolución allí. Al completar y salir de la vista de
-todos, las mismas instancias recuperan sus dormitorios. Esta reunión no agrega
-una ruta de viaje ni cambia el recorrido físico de Palomo.
+RuloPartyMode and references to player/Toro live in each resident and are serialized by
+the engine. Mode 1 prepares, 2 fights and 3 waits for closure. A lethal gore leaves the
+resident with 1 health, crouching, no blocking or attacks. Retrying and victory restore
+health, Air, Anima, Lucidity and armor. The group does not inflict damage on the player
+or on each other: their projectiles cross allies and the receivers filter the damage.
+The player’s defeat also removes the projectiles from the comrades before reboot. The
+narrative NPC is not lost. After winning, Rulo receives the return there. When
+completing and leaving the view of all, the same instances recover their bedrooms. This
+meeting does not add a travel route or change the physical route of Palomo.
 
-Rendimiento de referencia, no peso exacto deducible sólo de la masa viva:
+Reference yield, not exact weight deductible only from the live mass:
 
-| Concepto | Modelo para el Toro de 900 kg |
+| Concept | Model for the Bull 900 kg |
 | --- | ---: |
-| Piel fresca, húmeda y sin procesar | 54 kg: supuesto de diseño de 6 % de masa viva. |
-| Cuero acabado aprovechable | 54 × 255 / 1100 = 12,518 kg. |
-| Botín nativo | 12,5 kg; 12.500 unidades, cinco pilas de 2,5 kg. |
+| Fresh, wet and unprocessed skin | 54 kg: design assumption of 6 % live mass. |
+| Usable finished leather | 54 × 255 / 1100 = 12,518 kg. |
+| Native loot | 12,5 kg; 12.500 units, five 2,5 kg stacks. |
 
-El 6 % es una estimación explícita para este animal ficticio; no una medición
-ni un porcentaje universal validado para un toro de raza/edad conocidas.
-El curtido se aproxima con el balance de UNIDO de pieles bovinas: 1100 kg de
-piel fresca producen 195 kg de cuero de flor y 60 kg de serraje. Es un caso de
-fabricación de cuero para calzado, no una constante para todos los curtidos.
-Fuente: Buljan, Reich y Ludvik, *Mass Balance in Leather Processing*, 2000,
-página 4, https://leatherpanel.org/sites/default/files/publications-attachments/mass_balance.pdf
+The 6 % is an explicit estimate for this fictitious animal; it is not a universally
+validated measurement or percentage for a known breed/age bull. The tanning approach
+with the UNIDO balance of bovine skins: 1100 kg of fresh skin produce 195 kg of grain
+leather and 60 kg of split leather. It is a case of manufacturing leather for footwear,
+not a constant for all tannings. Source: Buljan, Reich and Ludvik, *Mass Balance in
+Leather Processing*, 2000, page 4,
+https://leatherpanel.org/sites/default/files/publications-attachments/mass_balance.pdf
 
-La entrega automática de cuero acabado mantiene la abstracción de botín ya
-usada. No modifica la receta global de curtido ni aplica otra merma al recoger.
-GetLeatherYieldUnits usa Mass y redondea a 100 g; el talle no influye en ese
-techo físico. Desde 0ad se entrega Min(techo físico, cupo de cuero sin emitir).
-El antiguo LeatherBudgetUnits se conserva para leer guardados, pero se
-recalcula al morir; LeatherDropped sigue garantizando una sola entrega.
-El cuero producido/recogido en una victoria anterior no se retira.
+The automatic delivery of finished leather maintains the abstraction of loot already
+used. It does not modify the overall tanning recipe or apply another decrease when
+collecting. GetLeatherYieldUnits uses Mass and rounds to 100 g; the size does not
+influence that physical ceiling. From 0ad is delivered Min(physical roof, unissued
+leather quota). The old LeatherBudgetUnits is preserved to read saves, but recalculates
+when dying; LeatherDropped continues to guarantee a single delivery. Leather
+produced/picked in a previous victory is not removed.
 
-Argento usa las mismas etapas del Diario; las instrucciones que lo nombraban
-a él se resuelven a textos propios en primera persona, en español e inglés.
+Argento uses the same stages of the Journal; the instructions that named it are resolved
+to own texts in the first person, in Spanish and English.
 
-## Escudo real y vista de espada (4.33.0u)
+## Real Shield and Sword View (4.33.0u)
 
-Ronnie presta exclusivamente una espada. FindActiveNativeShield exige una
-instancia nativa equipada, fuera de la Caja y coincidente en tipo/tier/talle.
-RepairActiveShieldReference recupera su ItemId si corresponde; sin instancia
-válida limpia el modelo. Se ejecuta antes del Tick de vista y al sincronizar
-inventario/guardar; la migración antigua ocurre antes de reparar referencias.
-HasActiveBlockSource exige además durabilidad y compatibilidad con el arma.
-Los guanteletes gigantes conservan su bloqueo propio.
+Ronnie lends exclusively a sword. FindActiveNativeShield demands a native instance
+equipped, outside the Box and matching in type/tier/size. RepairActiveShieldReference
+recovers its ItemId if applicable; without valid instance cleans the model. It runs
+before the View Tick and syncing inventory/save; old migration occurs before repairing
+references. HasActiveBlockSource also requires durability and compatibility with the
+weapon. Giant gauntlets retain their own Block.
 
-La vista modular de espada retira siempre las capas 10/20 sin escudo válido,
-aunque el indicador visual guardado ya diga que no hay escudo. Equipar uno
-real restaura esas capas. Las reglas de mano, costes y defensa no cambian.
-HUDHasActiveBlockSource es una lectura para las instrucciones de la UI;
-no concede equipo ni es autoridad de combate.
+The modular sword view always removes the 10/20 layers without a valid shield, even if
+the visual display saves already says that there is no shield. Equipping a real one
+restores those layers. The rules of hand, costs and defense do not change.
+HUDHasActiveBlockSource is a reading for the instructions of the UI; it does not grant
+equipment nor is combat authority.
 
-## Prueba de combate de Rulo (4.33.0p; guía actualizada en 0u)
+## Rulo combat test (4.33.0p; updated 0u guide)
 
-Autoridad: Inventory viajero y banderas existentes 30–38; se incorporan 59–60
-para Aire gastado/recuperado sin ampliar el arreglo de 64 ni reenumerar banderas.
-Fase 60 + Argento/Caella/Ronnie completos habilita el inicio ante Rulo (70).
-La derrota del Toro marca 36; volver a Rulo marca 37/38 y avanza a 75.
+Authority: Inventory traveler and existing 30–38 flags; 59–60 for spent/recovered air
+without expanding the 64 array or renumbering flags. 60 phase + Argento/Caella/Ronnie
+complete enables the start to Rulo (70). The defeat of the bull marks 36; return to Rulo
+brand 37/38 and advance to 75.
 
-| Práctica | Confirmación real |
+| Practice | Actual confirmation |
 | --- | --- |
-| Principal | Impacto en el blanco con Fire, melee o proyectil. |
-| Secundaria | Impacto AltFire; apuntado en distancia; lanza sin secundario, golpe avanzando. |
-| Defensa | Bloqueo con equipo real compatible/guanteletes, ADS a distancia o 48 MU de desplazamiento lateral dentro de la sala de planta baja. El mandoble usa esquiva; Zoom no bloquea. |
-| Avanzada | Impacto cargado, impacto mágico lanzado en desplazamiento lateral o recarga terminada. |
-| Aire gastado | Descenso real del recurso dentro de la sala. |
-| Aire recuperado | Incremento posterior al gasto. |
+| Primary | Impact on the target with Fire, melee or projectile. |
+| Secondary | AltFire hit; ranged Aim; for a spear without a secondary attack, strike while moving forward. |
+| Defense | Blocking with actual compatible equipment/gauntlets, ranged ADS or 48 MU of lateral movement inside the ground-floor room. Greatsword uses dodge; Zoom does not block. |
+| Advanced | Charged hit, magical impact thrown in lateral displacement or completed reload. |
+| Air spent | Actual resource decrease inside the practice room. |
+| Air recovered | Post-expenditure increase. |
 
-Rulo y Detalle eligen la indicación desde el equipo activo: apuntado, bloqueo
-o esquiva. El mandoble recibe una explicación explícita. Mover la cámara sin
-caminar no cuenta; deben usarse los controles de desplazamiento lateral frente
-al blanco. La marca se actualiza al superar el recorrido y persiste al cargar.
-No se añade un botón de esquiva ni una defensa nueva al mandoble.
+Rulo and Detail choose the indication from the active equipment: aim, block or dodge.
+The greatsword receives an explicit explanation. Moving the camera without walking does
+not count; lateral scroll controls must be used in front of the target. The brand is
+updated when you pass the route and persists when loading. No dodge button or new
+defense is added to the greatsword.
 
-La magia en movimiento evita exigir un ataque cargado cuyo coste supere el
-Anima máximo de algunos personajes. No se modifican costes, daño ni atributos.
-Las marcas no se reinician al reabrir el diálogo o cargar. La llave requiere
-las seis prácticas. El blanco no da experiencia, adrenalina, botín ni desgaste
-por impactos; conserva el arte y volumen del TrainingDummy existente.
+The magic in motion avoids demanding a loaded attack whose cost exceeds the maximum
+Anima of some characters. No changes are made to costs, damage or attributes. Brands are
+not restarted when re-opening the dialogue or charging. The key requires all six
+practices. The target gives no experience, adrenaline, loot or wear by impact; it
+retains the art and volume of the existing TrainingDummy.
 
-Rulo reacondiciona el arma inicial sobre su mismo ItemId y presta 24 unidades
-de la munición nativa necesaria. El préstamo se gasta primero, se repone si se
-agota dentro del recinto y al preparar un nuevo intento, y no puede soltarse
-por el inventario mientras quede munición prestada. La devolución retira sólo
-el remanente y ajusta cargadores; conserva las unidades propias. Se comprueba
-capacidad de carga antes de entregar. La jabalina no produce materiales
-recuperados mientras está activa esta prueba: no se puede convertir el
-reacondicionamiento en materias primas. Su AltFire melee reutiliza ahora el
-alcance principal existente, corrigiendo el antiguo valor cero del fallback.
+Rulo refurbishes the initial weapon on its same ItemId and lends 24 units of the
+necessary native ammunition. The loan is spent first, is replenished if it runs out
+inside the enclosure and when preparing a new attempt, and cannot be released by
+inventory while the ammunition is borrowed. The return removes only the remainder and
+adjusts the magazines; it retains its own units. It checks load capacity before
+delivering. The javelin does not produce recovered materials while this test is active:
+it cannot convert the reconditioning into raw materials. Its AltFire melee now reuses
+the existing main range, correcting the old zero value of the fallback.
 
-El Toro tutorial conserva perfil, masa, anatomía y daño nativos. Ajustes de
-esta entrega para comprobar en juego: 18 tics de anticipación de cornada,
-2 segundos de preparación inicial/reintento. La entrada inicia la prueba; la
-llave sola no despierta al Toro. Las dos hojas de puerta 806 se bloquean y el
-Toro queda contenido en su sala. La muerte del jugador se intercepta antes de
-Die nativo y el reinicio se completa al siguiente WorldTick: posiciones,
-Salud/Aire/Anima/Lucidez, estados elementales y arma inicial. Se retiran los
-proyectiles del intento; no se genera cuero ni se incrementa una victoria.
-El Toro vencido abre el recinto, entrega una vez el cuero dentro del cupo
-actual (hasta 12,5 kg desde 0q) y se disipa. Se habla con Rulo dentro del recinto para cerrar.
+The tutorial bull retains profile, mass, anatomy and native damage. Adjustments of this
+delivery to check in game: 18 tics of gore anticipation, 2 seconds of initial
+preparation/retry. The entry starts the test; the key alone does not wake the bull. The
+two leaves of door 806 are blocked and the bull is contained in its room. The player’s
+death is intercepted before native Die and the restart is completed to the next
+WorldTick: positions, Health/Air/Lucidity, elemental states and initial weapon. The
+projectiles of the attempt are removed; no leather is generated or increased. The
+defeated bull opens the enclosure, delivers once the leather within the current quota
+(up to 12,5 kg from 0q) and dissipates. It is spoken with Rulo within the enclosure to
+close.
 
-## Conocimiento de recetas y retiro del manual (4.33.0o)
+## Knowledge of recipes and manual removal (4.33.0o)
 
-La prueba de Ronnie enseña la receta elegida y sus componentes/procesamientos.
-Se retira el Manual de Procesamiento exterior de MAP01 (LORE-0001); cargar una
-partida anterior también quita ese ejemplar del mundo. No se revocan recetas
-aprendidas ni se retiran objetos del inventario. La clase del manual permanece
-para compatibilidad y otros usos; no se modifican las reglas de aprendizaje.
-0n quedó aprobado por el autor el 2026-09-11.
+The Ronnie test shows the chosen recipe and its components/processings. The MAP01
+External Processing Manual (LORE-0001) is removed; loading a previous game also removes
+that copy from the world. Learned recipes are not revoked or objects removed from the
+inventory. The manual class remains for compatibility and other uses; learning rules are
+not modified. 0n was approved by the author the 2026-09-11.
 
-## Referencia histórica de costes y abastecimiento (4.33.0n–0ac)
+## Historical cost and supply reference (4.33.0n–0ac)
 
-El stock descrito en este apartado fue sustituido por los cupos de 0ad.
-Las fórmulas de coste no cambian; sólo la entrega de materias primas.
+The stock described in this section was replaced by 0ad quotas. Cost formulas do not
+change; only the delivery of raw materials.
 
-Fuente: blueprint nativo de GZDoom 4.14.2, talle M, eficiencia 25 % en cada
-capa, inventario vacío. Cada conjunto incluye cabeza, torso, manos y pies;
-"sellos" comprende los cinco elementos. No se cambian las recetas vigentes.
+Source: GZDoom native blueprint 4.14.2, size M, efficiency 25 % in each layer, empty
+inventory. Each set includes head, torso, hands and feet; "seals" comprise all five
+elements. Current recipes are not changed.
 
-| Familia T1 | Cuero de vaca ya curtido para el conjunto M |
+| T1 family | Cow leather already tanned for set M |
 | --- | ---: |
-| Mágica | 41,6 kg |
-| Liviana | 78,4 kg |
-| Mediana | 156,8 kg |
-| Pesada | 313,6 kg |
+| Magic | 41,6 kg |
+| Light | 78,4 kg |
+| Medium | 156,8 kg |
+| Heavy | 313,6 kg |
 
-Son 590,4 kg para los cuatro conjuntos. Si se parte de piel cruda y se curte al
-25 %, esas cantidades se multiplican por cuatro. No confundir unidades de
-material (0,001 kg) con objetos enteros. Esos valores describen el COSTE de
-fabricación, no el botín actual del Toro. Desde 0q, sus 12,5 kg ya no cubren un
-conjunto completo al 25 % por capa. El cajón conserva 96 kg en M para los
-primeros guanteletes. No se garantiza simultáneamente arma + cualquier conjunto
-completo: por ejemplo, guanteletes M consumen la reserva y una armadura pesada M
-necesita otros 313,6 kg; faltarían 301,1 kg después del nuevo botín.
+They are 590,4 kg for all four sets. If you are split from raw skin and cured to 25 %,
+those quantities multiply by four. Do not confuse units of material (0,001 kg) with
+whole objects. These values describe the manufacturing cost, not the current bull loot.
+Since 0q, its 12,5 kg no longer covers a complete set to 25 % per layer. The drawer
+retains 96 kg in M for the first gauntlets. Gun + any complete set is not guaranteed
+simultaneously: for example, M gauntlets consume the reserve and an M heavy armor needs
+another 313,6 kg; 301,1 kg would be missing after the new loot.
 
-Sellos T1: 460,8 kg cobre bruto, 51,2 kg estaño bruto y 9,6 kg de cada gema.
-Las cinco vetas cubren esos tipos y cantidades. Por decisión del autor, el
-abastecimiento de MAP01 se limita a T1. Como referencia fuera de ese alcance,
-sellos T2: 256 kg hierro
-bruto, 16 kg plata bruta y 19,2 kg de cada gema; faltan fuentes de hierro/plata.
-Las armaduras T2 usan cuero de depredador, además de cuero de vaca para correas
-y plata para detalles. T3 suma cuero de monstruo para armaduras y oro;
-los sellos T3 requieren también acero (hierro/carbón), plata y oro.
-Infraestructura disponible no implica recetas aprendidas ni materiales.
+Seals T1: 460,8 kg raw copper, 51,2 kg raw tin and 9,6 kg each gem. The five veins cover
+those types and quantities. By decision of the author, the supply of MAP01 is limited to
+T1. As a reference outside that range, T2 seals: 256 kg raw iron, 16 kg raw silver and
+19,2 kg of each gem; iron/silver sources are missing. T2 armors use predator leather, as
+well as cow leather for straps and silver for details. T3 sum monster leather for armor
+and gold; T3 seals also require steel (iron/coal), silver and gold. Available
+infrastructure does not imply any knowledge or materials.
 
-Guanteletes gigantes T1/M al 25 %: 96 kg de cuero ya curtido para sus correas.
-Es la única elección inicial con cuero. El cajón conserva una reserva para
-esa receta antes del Toro, calculada al talle elegido. No se modifica la receta.
-La migración retira sólo el stock de gemas del cajón, conserva lo ya recogido
-y descuenta el cuero retirado antes de actualizar. No repone consumos.
+Giant gauntlets T1/M to 25 %: 96 kg of leather already tanned for your straps. It is the
+only initial choice with leather. The drawer retains a reservation for that recipe
+before the Toro, calculated on the size chosen. The recipe is not modified. The
+migration removes only the stock of gems from the drawer, retains what has already been
+collected and discountes the leather removed before updating. It does not replace
+consumptions.
 
+This reference consolidates implemented rules. Narrative scope is in
+[MAP01.txt](MAP01.txt), acceptance status in [PROJECT.md](PROJECT.md) and historical
+variants in [HISTORY.md](HISTORY.md).
 
-Esta referencia consolida reglas implementadas. El alcance narrativo está en
-[MAP01.txt](MAP01.txt), el estado de aceptación en [PROJECT.md](PROJECT.md) y
-las variantes históricas en [HISTORY.md](HISTORY.md).
+## Caella test (4.33.0i–0m)
 
-## Prueba de Caella (4.33.0i–0m)
+It is enabled when closing Argento in phase 35. Fire/AltFire use its actual releases;
+User2 retains Seal Channel with Adrenaline expense. The old MAP01 Reload/Channel display
+is replaced by User2. The Anima is spent when completing a release and its recovery is
+observed in the actual reserve.
 
-Se habilita al cerrar Argento en fase 35. Fire/AltFire usan sus lanzamientos
-reales; User2 conserva Channel del Sello con gasto de Adrenalina. La indicación
-antigua Reload/Channel de MAP01 queda sustituida por User2. El Ánima se gasta
-al completar un lanzamiento y su recuperación se observa en la reserva real.
+The practice requires five actions followed by four runes; the Journal counts from 0/9
+to 9/9. Use on a rune with an active implement channels its element. Earth → Air → Fire
+→ Water records 4/4 and asks the player to return to Caella. It remains at stage 40,
+with borrowed equipment and a solid wall. The return response to Caella removes only
+CA_LimboMagicImplement/Seal, advances to stage 45 and enables passage. The wall retains
+CMIN01 on both sides and the runes remain lit: the player walks through it. Owned
+equipment is not removed. An error resets only the runes; hints appear after 2 and 4
+errors. A save already completed in 0l retains its stage and returns; the texture is
+restored without blocking passage again.
 
-La práctica exige cinco hechos y después cuatro runas; el Diario cuenta 0/9
-hasta 9/9. Usar sobre una runa con un implemento activo conduce su elemento.
-Tierra → Aire → Fuego → Agua registra 4/4 y pide volver con Caella. Sigue en
-fase 40, con equipo prestado y pared sólida. La respuesta de devolución ante
-Caella retira sólo CA_LimboMagicImplement/Seal, avanza a fase 45 y habilita el
-paso. La pared conserva CMIN01 por ambas caras y las runas quedan encendidas:
-el jugador camina a través de ella. Equipo propio no se retira. Error: sólo
-reinicia las runas; pistas a los 2 y 4 errores. Un guardado ya completado en 0l
-conserva fase y devoluciones; se repone la textura sin volver a bloquearlo.
+The two temporary instances reuse T1 from the catalog. They retain ItemId and the
+CA_ITEMFLAG_LIMBO_TEMP brand; they are not sold, released, disarmed or stored in the
+Box. There is no duplication when preparing again. To show Channel without attacking
+anyone, the first User2 can top up the reserve up to a second of its native cost,
+limited by MaximumAdrenaline. The assistance ends when recording actual consumption.
+Cooldowns, general combat and attributes do not change.
 
-Las dos instancias temporales reutilizan T1 del catálogo. Conservan ItemId y
-la marca CA_ITEMFLAG_LIMBO_TEMP; no se venden, sueltan, desarman ni almacenan
-en la Caja. No hay duplicación al preparar otra vez. Para enseñar Channel sin
-atacar a nadie, el primer User2 puede completar la reserva hasta un segundo de
-su coste nativo, limitada por MaximumAdrenaline. La ayuda termina al registrar
-consumo real. Los cooldowns, el combate general y los atributos no cambian.
+Persistence adds sequence index, errors, Anima reference and previous equipment IDs;
+uses 57–58 free flags. Do not shift accepted fields/indices. Placement, compatibility,
+testing and limits are in PROJECT.md.
 
-La persistencia añade índice de secuencia, errores, referencia de Ánima y IDs
-del equipo previo; usa flags libres 57–58. No desplaza campos/índices aceptados.
-La colocación, compatibilidad, pruebas y límites están en PROJECT.md.
+## Ronnie: choice, materials and first weapon (4.33.0l)
 
-## Ronnie: elección, materiales y primera arma (4.33.0l)
+After Caella, Ronnie offers 36 T1 choices: 16 physical weapons and four magic shapes for
+five essences. The class does not restrict the choice. It can be read and returned
+before confirming; confirming sets the character's choice and size. You learn the final
+recipe and all its processing steps/components. The quantities are calculated using
+CaelumCraftingRules; there is no other recipe table within the mission. Since 0ad the
+reference plan uses 100% on each layer.
 
-Tras Caella, Ronnie ofrece 36 elecciones T1: 16 armas físicas y cuatro formas
-mágicas por cinco esencias. La clase no restringe la elección. Se puede leer y
-volver antes de confirmar; confirmar fija la opción y el talle del personaje.
-Se aprenden la receta final y todos sus pasos de procesamiento/componentes.
-Las cantidades se calculan mediante CaelumCraftingRules; no hay otra tabla
-de recetas dentro de la misión. Desde 0ad el plan de referencia usa 100% en cada capa.
-
-| Armas | Materias primas del catálogo T1 |
+| Weapons | T1 catalogue raw materials |
 | --- | --- |
-| Daga, hachuela, machete, jabalina, espada, hacha, lanza, espadón, hacha de guerra, alabarda | Madera, cobre bruto y estaño bruto. |
-| Mangual y carabina | Cobre bruto y estaño bruto. |
-| Puños gigantes | Cobre bruto, estaño bruto y cuero de vaca ya curtido. |
-| Arco común, arco largo y ballesta | Madera y fibra vegetal. |
-| Bastón y estatuilla | Madera y gema bruta de la esencia elegida. |
-| Campana | Cobre bruto, estaño bruto y gema bruta. |
-| Libro | Fibra vegetal y gema bruta. |
+| Dagger, hatchet, machete, javelin, sword, axe, spear, greatsword, war axe, halberd | Wood, raw copper and raw tin. |
+| Flail and carbine | Raw copper and raw tin. |
+| Giant gauntlets | Raw copper, raw tin and already tanned cow leather. |
+| Common bow, long bow and crossbow | Wood and vegetable fiber. |
+| Staff and statuette | Raw wood and gem of the chosen essence. |
+| Bell | Raw copper, raw tin and raw gem. |
+| Book | Vegetable fiber and raw gem. |
 
-Gemas: rubí/Fuego, zafiro/Agua, esmeralda/Tierra, topacio/Aire y ópalo/Quintaesencia.
-Las cinco gemas se extraen de vetas al fondo de la cueva. El cajón contiene
-sólo cuero T1 ya curtido. Desde 0ad cubre el conjunto elegido y, cuando
-corresponde, los guanteletes gigantes, al 100% por transformación: éstos usan
-6.000 unidades en M. Cada unidad pesa 0,001 kg. Se retira sólo el cupo sin
-emitir que cabe en la carga actual; no es necesario llevarlo todo de una vez.
+Gems: ruby/Fire, sapphire/Water, emerald/Earth, topaz/Air and opal/Quintessence. The
+five gems are extracted from veins at the bottom of the cave. The drawer contains only
+leather T1 already tanned. From 0ad covers the chosen set and, where appropriate, giant
+gauntlets, to 100% by transformation: these use 6.000 units in M. Each unit weighs 0,001
+kg. Only the unissued quota that fits in the current load is removed; it is not
+necessary to carry it all at once.
 
-El stock pertenece al registro del personaje. Reabrir/cargar no lo repone.
-Devolver retorna sólo cantidades retiradas de ese cofre que siguen sin gastar
-y no están reservadas por una tarea. Cancelar libera reservas; cerrar la
-estación pausa el trabajo. Se pueden procesar materiales por etapas; el
-abastecimiento de 0ad exige 100% en cada capa para cubrir el conjunto completo. Los faltantes del Diario
-descuentan también componentes y procesados que ya posee el jugador.
+The stock belongs to the character's record. Reopen/load does not replace it. Return
+only amounts removed from that chest that remain unexpended and are not booked for a
+task. Cancel releases reservations; closing the station pauses work. Materials can be
+processed by stages; the supply of 0ad requires 100% in each layer to cover the entire
+set. The Journal’s missing-materials display also accounts for components and processed
+materials already owned by the player.
 
-Veinte arbustos 2D rodean la entrada junto con cuatro ceibos: daño cortante
-produce fibra de arbustos y madera de árboles; perforante/contundente no.
-La vegetación se retira de la cueva. Cada arbusto tiene 10 kg y dureza 2,5,
-igual que la madera, y conserva la regeneración general. La espada T1 prestada usa
-principal cortante y secundario perforante para las vetas de cobre/estaño.
-Si ya existe la antigua espada de cueva en inventario, se adopta su ItemId.
-Revisarla restaura/equipa la misma pieza. Caella devuelve sólo sus préstamos.
+Twenty 2D shrubs surround the entrance along with four ceibos: cutting damage produces
+bush fiber and tree wood; piercing/blunt damage does not. The vegetation is removed from
+the cave. Each shrub has 10 kg and hardness 2,5, as well as wood, and retains general
+regeneration. The borrowed T1 sword uses main cutting and piercing secondary attack for
+copper/tin veins. If there is already the old cave sword in stock, your ItemId is
+adopted. Requesting it again restores/equips the same piece. Caella removes only her
+loaned items.
 
-La primera fabricación T1 dentro de esta prueba entrega una instancia personal
-con CA_ITEMFLAG_LIMBO_PRESERVABLE. No requiere Caja Mágica, conserva sus
-eficiencias y pasa a fase 60. El préstamo se devuelve al hablar con Ronnie.
-Antes de salir del Limbo el arma inicial no se vende, descarta ni desarma.
-Las armas fabricadas después son temporales y no reemplazan su ItemId.
-La limpieza técnica de viajes de desarrollo quita esas instancias y cantidades
-de misión, preservando porciones propias anteriores. La salida narrativa 0v
-aplica la regla final más estricta: sólo Caja y primera arma, incluyendo la
-limpieza de los demás objetos almacenados. Al llegar, el arma puede recuperarse
-y usarse como equipo ordinario.
+The first T1 manufacturing within this test delivers a personal instance with
+CA_ITEMFLAG_LIMBO_PRESERVABLE. It does not require Magic Box, retains its efficiencies
+and moves to 60 phase. The loan is returned when talking to Ronnie. Before leaving the
+Limbo the initial weapon is not sold, discarded or disarmed. The weapons manufactured
+afterwards are temporary and do not replace your ItemId. Technical cleanup of
+development trips removes those instances and amounts of mission, preserving previous
+portions of its own. The 0v narrative exit applies the strictest final rule: only Box
+and first weapon, including cleaning of the other stored objects. Upon arrival, the
+weapon can be recovered and used as ordinary equipment.
 
-Las pilas usan LimboQuestUnits y LimboSupplyUnits; consumir descuenta primero
-la porción tutorial. El crafting conserva esa procedencia en sus resultados
-intermedios y en las reservas al guardar/cargar. No se venden, descartan ni
-envían a la Caja pilas con porción tutorial. La salida narrativa requiere que
-el jugador termine o cancele personalmente la tarea; no borra reservas activas.
-La limpieza técnica de viajes de desarrollo no elimina existencias propias por
-coincidencia de nombre ni concede otra vez préstamos devueltos. La confirmación
-narrativa sí advierte y retira todos los otros objetos físicos.
+The stacks use LimboQuestUnits and LimboSupplyUnits; consumption first deducts the
+tutorial portion. The crafting retains that origin in their intermediate results and in
+the reservations when saving/loading. Stacks containing a tutorial portion cannot be
+sold, dropped or sent to the Box. Narrative exit requires the player to finish or
+cancel the task personally; it does not delete active reservations. Technical cleanup
+of development trips does not eliminate own stocks by name matching or grant returned
+loans again. Narrative confirmation does warn and remove all other physical objects.
 
-0n incorpora flechas y 0w añade reparación opcional después de cerrar Ronnie.
-Necesidades (0x), Aire/movimiento (0y), carga (0z) y respiración en piscina
-(0ab) tienen prácticas opcionales. Virotes y su enseñanza se agregan en 0ac.
-0ad incorpora las recetas de armadura elegida y 0ae las de sellos.
-Siguen pendientes balas (composición/proceso) y recolección/potabilización de
-agua; ninguna ampliación es un requisito nuevo para empezar a Rulo.
+0n incorporates arrows and 0w adds optional repair after closing Ronnie. Needs (0x),
+Air/Movement (0y), Load (0z) and Pool Breathing (0ab) have optional practices. Bolts and
+their teaching are added to 0ac. 0ad incorporates the chosen armor recipes and 0ae
+seals. Bullets (composition/process) and water collection/potabilization are still
+pending; no expansion is a new requirement to start to Rulo.
 
-### Flechas y controles de Oficios (4.33.0n)
+### Crafts arrows and controls (4.33.0n)
 
-Elegir arco o arco largo enseña la receta 129 y sus dependencias. Se aplica
-también a guardados con esas elecciones. Las 129 recetas anteriores conservan
-sus índices y conocimiento; el catálogo pasa a 130 entradas. Filtro Municiones.
+Choosing bow or longbow shows the recipe 129 and its dependencies. It also applies to
+saves with those choices. Previous 129 recipes retain their indices and knowledge; the
+catalog passes to 130 entries. Filter Munitions.
 
-Un lote produce diez CaelumArrowAmmo de 50 g cada una. Composición incorporada:
-350 unidades de asta y 150 de punta de bronce por lote antes de merma; al 25 %
-el montaje consume 1.400/600, y cada componente/procesamiento añade su propia
-merma. Usa banco, carpintería/forja y taller de distancia de Ronnie mediante
-el sistema nativo de dependencias. La tarea reserva, pausa, cancela y persiste
-como las demás. No exige Caja y no registra ni sustituye la primera arma.
-Las flechas tienen tier fijo 1 y lote fijo de diez; B no aumenta ese lote.
+One batch produces ten CaelumArrowAmmo of 50 g each. Built-in composition: 350 units of
+shaft and 150 of bronze tip per batch before material loss; to 25 % the assembly
+consumes 1.400/600, and each component/processing step adds its own material loss. Use
+bench, carpentry/forging and ranged workshop of Ronnie through the native system of
+dependencies. The task reserves, pauses, cancels and persists like the others. It does
+not require Box and does not record or replace the first weapon. The arrows have fixed
+tier 1 and fixed lot of ten; B does not increase that lot.
 
-Tab cierra Oficios con o sin estación. G filtra familias durante la sesión
-(el botón Y de mando conserva esa función). Q/Escape siguen cerrando la sesión.
-Puertas y estaciones exigen solapamiento vertical, diferencia de pies <=64 MU
-y CheckSight antes de ejecutar la interacción. La estación también comprueba
-alcance al mantener la sesión; cambiar de piso la cierra y pausa la tarea.
+Tab closes Crafts with or without station. G filters families during the session (the Y
+control button retains that function). Q/Escape continues to close the session. Doors
+and stations demand vertical overlap, foot difference <=64 MU and CheckSight before
+performing the interaction. The station also checks range while maintaining the session;
+changing floor closes it and pauses the task.
 
-### Llave, Toro y retirada de Palomo (4.33.0n)
+### Key, Bull and Palomo’s departure (4.33.0n)
 
-Argento posee una instancia de llave de plata; se transfiere al jugador sin
-recrear otra. Requiere Argento/Caella/Ronnie completos y las seis prácticas
-de Rulo (o su rama ya completa). Exigir el Toro derrotado sería circular.
-La lección está conectada desde 0p. El Toro espera inactivo hasta ENTRAR en el
-recinto con la llave y la preparación terminada. Desde 0q se reúne el grupo
-antes del primer ataque. La muerte registra el resultado y produce el cuero
-basado en masa descrito arriba. Guardar no duplica llave, actor ni botín.
+Argento has a silver key instance; it is transferred to the player without recreating
+another. It requires Argento/Caella/Ronnie complete and the six practices of Rulo (or
+its already complete branch). Demanding the defeated Bull would be circular. The lesson
+is connected from 0p. The Bull waits inactive until ENTERING the enclosure with the key
+and preparation finished. From 0q the group meets before the first attack. Death records
+the result and produces the mass-based leather described above. Save does not duplicate
+key, actor or loot.
 
-Tras terminar el diálogo inicial, Palomo mantiene SOLID activado e INVISIBLE desactivado. Corre usando velocidad XY,
-física vertical, escaleras y puertas sin llave; queda esperando arriba. La ruta
-se guarda. Los estados nuevos se añaden al final para conservar índices de
-sprites en guardados antiguos. La conversación final se conecta después de Rulo.
+After the initial dialog is finished, Palomo keeps SOLID on and INVISIBLE disabled. He
+runs using XY velocity, vertical physics, stairs and unlocked doors, then waits
+upstairs. The path is saved. New states are added at the end to keep sprite indexes in
+old saves. The final conversation is connected after Rulo.
 
-## Masa de arbustos y migración del jardín (4.33.0m)
+## Mass of shrubs and garden migration (4.33.0m)
 
-El arbusto representa aproximadamente 1,5 m de alto y 2,2 m de copa; la masa
-adoptada es **10 kg de biomasa aérea fresca**, una estimación para ese ejemplar,
-no el peso universal de una especie ni un pesaje. No se incluyen raíces o tierra.
-El follaje tiene aire: no se calcula como un cilindro de madera maciza.
-Como modelo orientativo de esa estimación, 0,012 m³ de tallos/ramas a una densidad
-supuesta de 650 kg/m³ suman 7,8 kg, más 2,2 kg de hojas/tallos finos. Estas son
-hipótesis de modelado, no mediciones botánicas; una especie/tamaño documentado
-permitiría sustituirlas por una estimación alométrica específica.
+The shrub represents approximately 1,5 m in height and 2,2 m of crown width; the adopted
+mass is **10 kg of fresh above-ground biomass**, an estimate for that specimen, not a
+universal species weight or a weighing. Roots and soil are excluded. Foliage contains
+air: it is not calculated as a solid wooden cylinder. As an indicative model of that
+estimate, 0,012 m³ of stems/branches at an assumed density of 650 kg/m³ totals 7,8 kg,
+plus 2,2 kg of leaves/thin stems. These are modeling assumptions, not botanical
+measurements; a documented species/size would allow replacing them with a specific
+allometric estimate.
 
-El sistema del juego convierte esa masa a capacidad con 1 unidad = 0,001 kg:
-10.000 unidades por arbusto y 200.000 entre veinte. Es una reserva acumulada,
-no el rendimiento por golpe ni una afirmación de que una planta real se convierta
-íntegramente en fibra textil. Cada impacto cortante libera potencia × (1−2,5/10),
-limitada por la reserva restante, acumulando fracciones. La masa limita el total;
-la dureza y la potencia determinan la extracción por impacto.
-El peor plan T1/XL existente necesita 144.000 unidades de fibra al 25% en cada
-capa, por lo que el jardín inicial alcanza sin aumentar la masa de cada planta.
+The game system converts that mass to capacity with 1 unit = 0,001 kg: 10.000 units per
+bush and 200.000 between twenty. It is an accumulated reserve, not the yield per stroke
+nor a claim that a real plant will become entirely textile fiber. Each cutting impact
+releases power × (1−2,5/10), limited by the remaining reserve, accumulating fractions.
+The mass limits the total; hardness and power determine the extraction by impact. The
+worst existing T1/XL plan needs 144.000 units of fiber to 25% in each layer, so the
+initial garden is sufficient without increasing the mass of each plant.
 
-Al cargar 0l se traslada la proporción restante de los tres nodos antiguos a los
-veinte nuevos. Se usa su capacidad original de 100 kg: GZDoom puede omitir Mass
-cuando coincide con el Default y aplicar el Default nuevo al deserializar.
-Los materiales ya recogidos no se quitan. Las cargas siguientes no repueblan ni
-rellenan nada; la regeneración nativa continúa. Las vetas y el cofre no se mueven.
+When loading 0l the remaining proportion of the three old nodes is moved to the twenty
+new ones. Its original capacity of 100 kg is used: GZDoom can omit Mass when it matches
+the Default and apply the new Default when deserializing. The materials already
+collected are not removed. Subsequent loads do not redistribute or refill anything;
+native regeneration continues. Veins and chests are not moved.
 
-## Talleres de MAP01 (4.33.0m–0n)
+## MAP01 workshops (4.33.0m–0n)
 
-Cada habitación tiene una red propia; sólo vecinos a 64 MU o menos y con el
-mismo CraftingRoomGroup suman infraestructura. El grupo cero conserva las redes
-libres de otros mapas. No hay préstamos de capacidad entre paredes o pisos.
+Each room has its own network; only neighbors to 64 MU or less and with the same
+CraftingRoomGroup add up infrastructure. Group zero retains unrestricted networks on
+other maps. There are no capacity loans between walls or floors.
 
-| Habitación | Infraestructura física | Cobertura |
+| Room | Physical infrastructure | Coverage |
 | --- | --- | --- |
-| Rulo, norte junto a entrada, Z136 | Banco, forja, yunque, taller de armaduras, máquina de coser | Armas y armaduras pesadas T1–T2, con sus componentes. |
-| Ronnie, norte junto a escalera, Z136 | Las cinco anteriores, taller de distancia y aserradero | Armas/armaduras medianas T1–T2 y armas a distancia. |
-| Argento, sur junto a escalera, Z136 | Banco, forja, yunque, taller de armaduras, máquina de coser | Armas y armaduras livianas T1–T2, con sus componentes. |
-| Caella, sur junto a entrada, Z136 | Las cinco comunes, altar, globo, joyero y herramientas finas | Armas y armaduras mágicas T1–T2, procesamiento de gemas/esencias/telas. |
-| Habitación interior del segundo piso, Z264 | Las doce estaciones, incluido Banco Maestro | Red completa; las recetas y materiales siguen siendo necesarios. |
+| Rulo, north by the entrance, Z136 | Workbench, forge, anvil, armor workshop, sewing machine | T1–T2 heavy weapons and armor, with its components. |
+| Ronnie, north by the stairs, Z136 | The previous five, ranged workshop and sawmill | T1–T2 medium weapons/armor and ranged weapons. |
+| Argento, south by the stairs, Z136 | Workbench, forge, anvil, armor workshop, sewing machine | Lightweight weapons and armor T1–T2, with its components. |
+| Caella, south by the entrance, Z136 | The five commons, altar, globe, jeweler’s bench and fine tools | T1–T2 magic weapons and armors, processing gems/essences/fabrics. |
+| Second floor interior room, Z264 | The twelve stations, including the Master Workbench | Complete network; recipes and materials are still needed. |
 
-En 0n los dormitorios usan sus esquinas; arriba las doce forman una fila
-contra la pared del fondo, X=-336. Se conserva la red de cada habitación.
+In 0n the bedrooms use their corners; upstairs the twelve form a row against the back
+wall, X=-336. The network of each room is conserved.
 
-Son especializaciones narrativas e infraestructura, no nuevas restricciones
-por clase/familia. Las familias físicas comparten forja/yunque según el catálogo.
-No hay Banco Maestro en dormitorios. Se mantienen las 18 instancias exteriores
-al trasladarlas y se agregan 20: total 38. Una tarea que estaba en una estación
-trasladada queda pausada al alejarse, conservando progreso, materiales y reservas;
-se reanuda desde la infraestructura adecuada. No se modifica la economía T2 ni
-se regalan materiales T2 como parte de la primera arma T1 de Ronnie.
+They are narrative specializations and infrastructure, not new restrictions by
+class/family. Physical families share forging/sewing according to the catalog. There is
+no Master Workbench in dormitories. 18 existing instances are retained when moved and 20
+are added: total 38. A task that was in a transferred station is paused as it moves
+away, preserving progress, materials and reserves; it is resumed from the right
+infrastructure. T2 economy is not modified nor T2 materials are given as part of the
+first T1 weapon.
 
-## Poses de personajes (4.33.0m)
+## Character Poses (4.33.0m)
 
-Rulo/RSRU, Ronnie/RSRO, Argento/RSAR, Caella/RSCA y Domingo/RSDO comparten:
-RestSeated=A, RestLying=B, CrouchIdle=C, CrouchWalk=D–G (6 tics por fase), ocho
-rotaciones por cuadro. Domingo cambia entre C y D–G con la locomoción agachada;
-se preservan el crouch físico nativo, ataques, dolor, muerte y la vuelta a pie.
-El renderer recibe el sprite agachado para evitar una segunda compresión. Los
-estados nuevos se anexan al final: no desplazan índices de estados guardados.
-En 0m las poses sentada/acostada eran estados gráficos preparados. Desde 0d
-Domingo las usa en la sesión del jugador: Dormir recupera Sueño y Esperar
-mantiene su consumo. Las poses de los demás NPC siguen disponibles como arte,
-sin programación de rutinas. 0e añade muebles y cámara para el jugador; las
-rutinas de descanso de NPC no forman parte de esa implementación.
+Rulo/RSRU, Ronnie/RSRO, Argento/RSAR, Caella/RSCA and Domingo/RSDO share: RestSeated=A,
+RestLying=B, CrouchIdle=C, CrouchWalk=D–G (6 tics per phase), eight rotations per frame.
+Domingo switches between C and D–G during crouched movement; native physical crouching,
+attacks, pain, death and returning to standing are preserved. The renderer receives the
+crouched sprite to avoid compressing it twice. New states are appended: they do not
+shift saved state indices. In 0m, seated/lying poses were prepared graphical states.
+Since 0d, Domingo uses them in the player session: Sleep restores Sleep and Wait
+maintains its consumption. Other NPC poses remain available as art, without routine
+scheduling. 0e adds player furniture and camera; NPC rest routines are outside that
+implementation.
 
-## Probabilidad social
+## Social probability
 
-Rulo usa **Emoción**, derivada de Empatía. Caella usa **Persuasión**, derivada
-de Carisma. Ambas usan Tipo 4 y dificultad 120, según la decisión para 0f.
-Los residentes no tienen facción asignada: el modificador de reputación es neutro.
+Rulo uses **Emotion**, derived from Empathy. Caella uses **Persuasion**, derived from
+Charisma. Both use Type 4 and 120 difficulty, according to the decision for 0f.
+Residents have no assigned faction: reputation modifier is neutral.
 
 ```text
 capacidad Tipo 4 = 100 + 2 × atributo × (atributo + 1) / 101
 probabilidad (%) = limitar(redondear(capacidad × 100 / dificultad), 0, 100)
 ```
 
-El redondeo es al entero más cercano (`Floor(x + 0.5)`). Para porcentajes de
-1 a 99 se tira un entero uniforme de 1 a 100; hay éxito si dado <= porcentaje.
-0 falla y 100 tiene éxito automático, sin consumir el generador aleatorio.
-La dificultad no es por sí sola un porcentaje: hay que conocer el atributo.
+The rounding is to the nearest integer (`Floor(x + 0.5)`). For 1 to 99 percentages a
+uniform integer is thrown from 1 to 100; there is success if roll <= percentage. 0 fails
+and 100 succeeds automatically, without consuming the random-number generator. The
+difficulty is not a percentage alone: you have to know the attribute.
 
-| Dificultad | Atributo 10 | Atributo 30 | Atributo 50 |
+| Difficulty | Attribute 10 | Attribute 30 | Attribute 50 |
 | ---: | ---: | ---: | ---: |
 | 50 | 100% | 100% | 100% |
 | 100 | 100% | 100% | 100% |
@@ -3293,189 +3222,180 @@ La dificultad no es por sí sola un porcentaje: hay que conocer el atributo.
 | 200 | 51% | 59% | 75% |
 | 300 | 34% | 39% | 50% |
 
-Contra dificultad 120: atributo 0 → 83%; 3 → 84%; 10 → 85%; 15 → 87%;
-30 → 99%; 31 → 100%. El 31 ya alcanza 100% por redondeo; no requiere que la
-capacidad sin redondear llegue exactamente a 120. Una dificultad <= 100 es
-automática incluso con atributo cero debido al piso de Tipo 4. Estos datos
-explican el balance existente; 0h no cambia la fórmula ni las dificultades.
+120: 0 attribute → 83%; 3 → 84%; 10 → 85%; 15 → 87%; 30 → 99%; 31 → 100%. The 31 already
+reaches 100% by rounding; does not require the unrounded capacity to reach exactly 120.
+A difficulty<=100 succeeds automatically even with a zero attribute due to the Type 4
+floor. These data explain the existing balance; 0h does not change the formula or the
+difficulties.
 
-Ronnie no tira dados. Su opción directa requiere **Labia >= 1**, con:
+Ronnie does not roll dice. His direct option requires **Dialogue skill >= 1**, with:
 
 ```text
 Labia Tipo 2 = Elocuencia × (Elocuencia + 1) / 101
 ```
 
-Elocuencia 9 da aproximadamente 0,891 y no alcanza; Elocuencia 10 da 1,089
-y habilita la opción. Labia 1 no significa Elocuencia 1.
+Eloquence 9 gives approximately 0,891 and does not reach; Eloquence 10 gives 1,089 and
+enables the option. Dialogue skill 1 does not mean Eloquence 1.
 
-Los intentos de Rulo/Caella guardan resultado, probabilidad y dado. Reabrir
-el diálogo no renueva la tirada. Un fallo habilita el consejo de Argento y una
-respuesta alternativa sin azar. Rulo requiere además una respuesta respetuosa:
-leer su emoción no equivale a conseguir su colaboración. El consejo también
-permite continuar con Ronnie después de visitarlo aunque falte Labia.
+Rulo/Caella attempts save the result, probability and die roll. Reopening the dialog
+does not reroll. Failure unlocks Argento’s hint and an alternative response without
+chance. Rulo also requires a respectful response: reading his emotion does not mean
+obtaining his cooperation. The advice also allows you to continue with Ronnie after
+visiting it even if you lack Dialogue skill.
 
-## Recursos, persistencia y física
+## Resources, persistence and physics
 
-Salud, Ánima, Aire, Adrenalina, Lucidez, Hambre, Sed y Sueño pertenecen al
-personaje; los cálculos viven en los módulos de atributos, estadísticas y
-recursos. Se conserva la escala **1 hora de juego = 3 minutos reales**.
-Los estados y fórmulas no se reequilibran en 0h.
+Health, Anima, Air, Adrenaline, Lucidity, Hunger, Thirst and Sleep belong to the
+character; the calculations live in the modules of attributes, statistics and resources.
+The scale **1 game hour = 3 real minutes** is conserved. The states and formulas are not
+rebalanced in 0h.
 
-`Actor.Inv` y `CaelumPersistentCharacterState` son las fuentes autoritativas.
-El HUD/Diario usa instantáneas, y los tokens USDF son condiciones derivadas.
-Exit/changemap transfieren al personaje; `map MAP02` inicia otro personaje.
-El progreso cooperativo compartido todavía no está implementado.
+`Actor.Inv` and `CaelumPersistentCharacterState` are authoritative sources. HUD/Journal
+uses snapshots, and USDF tokens are derived conditions. Exit/changemap transfer to
+character; `map MAP02` initiates another character. Shared cooperative progress is not
+yet implemented.
 
-Las colisiones usan los módulos de física del proyecto y las restricciones
-nativas de movimiento. No convertir las fórmulas de impulso en una segunda
-ruta de daño de las armas. Las calibraciones históricas completas se conservan
-en HISTORY.md; las pruebas de multitudes permanecen separadas en CADEV02.
+Collisions use the project physics modules and native movement restrictions. Do not
+convert impulse formulas into a second weapon damage route. Complete historical
+calibrations are preserved in HISTORY.md; crowd testing remains separate in CADEV02.
 
-## Detalle de misiones (4.33.0k–0l)
+## Mission detail (4.33.0k–0l)
 
-Desde 0ak, Izquierda/Derecha selecciona una misión conocida; Arriba/Abajo
-también selecciona en la lista. En Diario → Misiones, F (Y en mando) alterna
-resumen y Detalle de la misión seleccionada. La descripción explica de qué
-trata y qué corresponde hacer en la etapa actual. En Detalle, Arriba/Abajo
-recorre el texto; TAB vuelve a la lista y otra pulsación cierra el Diario.
-RePág/AvPág o LB/RB cambia de solapa. La navegación es local, no cambia
-progreso ni otorga objetos. Las misiones aún desconocidas no aparecen.
+From 0ak, Left/Right selects a known mission; Up/Down also selects from the list. In
+Journal → Missions, F (Y on a controller) alternates summary and Detail of the selected
+mission. The description explains what it is about and what it should be done in the
+current stage. In Detail, Up/Down crosses the text; TAB returns to the list and another
+press closes the Journal. PgUp/PgDn or LB/RB changes tab. Navigation is local, does not
+change progress or grants objects. Undiscovered quests do not appear.
 
-Durante Caella enumera primario, secundario, canalización, gasto de Ánima y
-recuperación como Hecho/Pendiente. A 5/5 cambia a la secuencia de runas y al
-acertijo. A 4/4 pide volver con Caella; tras la devolución en fase 45 indica
-hablar con Ronnie. Argento usa ese mismo selector cuando se le pregunta con
-quién seguir, incluyendo recolección y devolución de Ronnie. La fuente es el registro persistente,
-no contadores independientes del menú. La misma indicación de ubicación se
-usa en la conversación de Caella y en Detalle para evitar contradicciones.
+During Caella it lists primary, secondary, channeling, anima expense and recovery as
+Done/Pending. A 5/5 changes to runes sequence and riddle. A 4/4 requests to return with
+Caella; after the 45 phase return indicates to speak with Ronnie. Argento uses that same
+selector when asked with whom to follow, including collection and return of Ronnie. The
+source is persistent record, not independent menu counters. The same location indication
+is used in the Caella conversation and in detail to avoid contradictions.
 
-Ruta: entrada → pasillo central → escalera del fondo. Permanecer en planta
-baja, rodearla por la derecha/sur y mirar la pared trasera detrás de ese lado,
-cerca del piso. Aceptar la prueba hace aparecer las marcas; práctica 5/5
-permite usarlas. Acercarse con bastón activo, apuntar y pulsar Usar. El Sello
-de fuego basta; no se dispara para activar las runas.
+Path: entrance → central corridor → bottom staircase. Stay on the ground floor, surround
+it on the right/south and look at the back wall behind that side, near the floor.
+Accepting the test makes the marks appear; 5/5 practice allows you to use them.
+Approaching with active staff, aim and press Use. The seal of fire is enough; it is not
+fired to activate the runes.
 
-Durante Ronnie, Detalle muestra el arma elegida, el plan de materias primas
-al 25%, las cantidades faltantes y las ubicaciones de cofre, arbustos, vetas y
-Banco de Trabajo. Tras fabricar pide devolver la espada; después muestra la
-preparación terminada. La lista de misiones indica Arma inicial preparada.
+During Ronnie, Detail shows the weapon chosen, the raw material plan to 25%, the missing
+quantities and locations of chests, bushes, veins and Workbench. After manufacturing, it
+asks to return the sword; then it shows the finished preparation. The list of missions
+indicates initial ready weapon.
 
-## Presentación del Sello y runas (4.33.0j)
+## Presentation of Seal and Runes (4.33.0j)
 
-El Sello equipado se ve en el costado derecho del HUD. Conserva sus colores si
-User2 puede iniciar la canalización o si ya está canalizando; aparece en escala
-de grises si hay recarga, falta Adrenalina o existe otro bloqueo del sistema.
-La misma consulta de disponibilidad alimenta la acción y el HUD; observarla
-no concede ni consume recursos. La ayuda inicial de Caella cuenta como disponible.
+The equipped Seal is seen on the right side of the HUD. It retains its colors if User2
+can start the channeling or if it is already channeling; it appears on gray scale if
+there is cooldown, insufficient Adrenaline or there is another system block. The same
+availability query feeds the action and the HUD; observing it does not grant or consume
+resources. Caella's initial help counts as available.
 
-Durante la recarga se muestran debajo los segundos restantes, redondeados
-hacia arriba, hasta desaparecer al llegar a cero. La espera conserva los 60 s
-existentes. Sin Adrenalina queda gris y sin contador: ese recurso no tiene una
-hora garantizada de recuperación. User2 deja de generar el texto central de
-estado y el aviso central genérico de habilidad. Los otros controles conservan
-su comportamiento.
+The remaining seconds, rounded upwards, are shown below during cooldown until they
+disappear at zero. The wait retains the existing 60 s. Without Adrenaline, it is grey
+and without a counter: that resource has no guaranteed recovery time. User2 stops
+generating the central state text and generic central skill warning. The other controls
+retain their behavior.
 
-Caella usa la sección española [es], igual que las conversaciones anteriores.
-La práctica exige primario, secundario, canalización, gasto y recuperación de
-Ánima. Después, con el implemento mágico activo, Usar activa cada runa. Un solo
-Sello y el bastón prestado sirven para Tierra → Aire → Fuego → Agua. El Sello
-no determina el elemento de la runa y no se exige dispararle. El progreso y
-la devolución del préstamo siguen en el registro persistente existente.
+Caella uses the Spanish section [en], as well as the previous conversations. Practice
+requires primary, secondary, channeling, spending and recovery of Anima. Then, with
+active magic implement, Use activates each rune. A single Seal and borrowed staff serve
+for Earth → Air → Fire → Water. Seal does not determine the element of rune and it is
+not required to shoot it. Progress and repayment of the loan continue in the existing
+persistent record.
 
-Las estaciones reciben modelos 3D sin modificar su lógica de infraestructura.
+The stations receive 3D models without changing their infrastructure logic.
 
-## Crafting y reparación
+## Crafting and repair
 
-La red de estaciones es acumulativa. Banco de Trabajo y la estación principal
-habilitan T1; la especializada añade T2 y Banco Maestro añade T3. Forja usa
-Yunque, Distancia usa Aserradero, Armaduras usa Máquina de Coser, Esencias usa
-Globo Terráqueo y Joyero usa Herramientas Finas. Los requisitos particulares
-de las recetas, incluido el yunque de los escudos, permanecen vigentes.
+The station network is cumulative. Workbench and main station enable T1; the specialist
+adds T2 and Master Workbench adds T3. Forge uses Anvil, Ranged uses Sawmill, Armor uses
+Sewing Machine, Essences uses Earth Globe and Jewellery uses Fine Tools. The particular
+requirements of recipes, including the shield anvil, remain valid.
 
-La eficiencia se elige por capa: 25/50/100% con factores de tiempo 1/10/100.
-La merma se propaga por cantidades y cada operación aplica su factor una sola
-vez. La regla antigua «todo tarda diez segundos» no describe la fabricación
-vigente. Complejidad, unidades, lotes, atributo técnico y subcapas intervienen
-en el tiempo. El comercio conserva su tiempo de diez segundos por transacción.
+The efficiency is chosen by layer: 25/50/100% with time factors 1/10/100. Material loss
+propagates through quantities and each operation applies its factor once. The old rule
+"everything takes ten seconds" does not describe the current manufacturing. Complexity,
+units, batches, technical attribute and sublayers intervene in time. Trade retains its
+time of ten seconds per transaction.
 
-Las tareas reservan materiales y sólo progresan con sesión activa, dentro del
-alcance de la estación (96 MU) y con infraestructura disponible. Cerrar o alejarse
-pausa; cancelar explícitamente libera las reservas. El armado multicapa permite
-partir de recursos primarios. Reparación proporcional y desarme usan la receta
-y durabilidad; equipo elemental devuelve sus materiales correspondientes.
+The tasks reserve materials and progress only with active session, within the range of
+the station (96 MU) and with available infrastructure. Closing or moving away pauses;
+cancel explicitly frees up reserves. Multilayer assembly allows from primary resources.
+Proportional repair and disassembly use recipe and durability; elemental equipment
+returns its corresponding materials.
 
-## Controles comunes
+## Common controls
 
-| Entrada | Función vigente |
+| Input | Current function |
 | --- | --- |
-| Fire | Ataque principal del arma; cancela Block al atacar. |
-| AltFire | Ataque secundario del arma; en distancia, Aim alternativo. |
-| Reload | Recarga en distancia; carga del próximo ataque cuerpo a cuerpo/mágico. |
-| Zoom | Barrido con espadón/hacha de guerra/alabarda; Block con equipo compatible (incluidos guanteletes gigantes); ADS en distancia. |
-| User1 | Interfaz reservada para habilidad racial; contenido pendiente. |
-| User2 | Channel del Sello equipado. |
-| User3 | Interfaz de Tarot activo; contenido completo pendiente. |
-| User4 | Interfaz de habilidad de clase; contenido pendiente. |
-| Use | Interacción nativa con NPC, estaciones, puertas, ascensor y aparición de El Loco. |
-| Tab | Diario/Inventario; Tarot muestra la colección desde 0t. |
+| Fire | Primary attack of the weapon; cancel Block while attacking. |
+| AltFire | Secondary weapon attack; for ranged weapons, alternative Aim. |
+| Reload | Reload ranged weapons; charge the next melee/magical attack. |
+| Zoom | Sweeping with greatsword/war axe/halberd; Block with compatible equipment (including giant gauntlets); ADS for ranged weapons. |
+| User1 | Interface reserved for racial ability; pending content. |
+| User2 | Channel the equipped Seal. |
+| User3 | Tarot interface active; full content pending. |
+| User4 | Class ability interface; pending content. |
+| Use | Native interaction with NPC, stations, doors, lift and El Loco appearance. |
+| Tab | Journal/Inventory; Tarot displays the collection from 0t. |
 
-La carga base dura 2 s ajustados por velocidad; la ventana preparada dura 3 s.
-El siguiente ataque duplica daño y coste, y las explosiones duplican área
-(radio × sqrt(2)). Dolor y cambios incompatibles interrumpen la carga.
-La espada usa Fire cortante y AltFire punzante, por lo que sirve para árboles
-y vetas del tutorial. No se necesita la hachuela especial retirada en 0d.
+Charging has a 2 s base duration adjusted by speed; the prepared window lasts 3 s. The
+next attack doubles damage and cost, and explosions double area (radius × sqrt(2)).
+Incompatible pain and changes interrupt charging. The sword uses slashing Fire and
+piercing AltFire, so it serves for trees and veins of the tutorial. The special hatchet
+removed in 0d is not needed.
 
+## Damage and Anima cost: Type 4 divisor (4.33.0aa)
 
-## Daño y coste de Ánima: divisor Tipo 4 (4.33.0aa)
+F(A) = 1 + 2 × A × (A + 1) / 10100. General damage received = post-vulnerability damage
+and armor / F(Dureza). Magical cost = base cost ×tier modifier × charge / F(Elocuencia).
+T2 retains ×1,6 and T3 ×2,5; a prepared charge preserves ×2. The bell and statuette
+maintain its bases. Player and NPC use the same curve, also for explosions; the entire
+rounding of Engine Health is preserved.
 
-F(A) = 1 + 2 × A × (A + 1) / 10100.
-Daño general recibido = daño posterior a vulnerabilidad y armadura / F(Dureza).
-Coste mágico = coste base × modificador de tier × carga / F(Elocuencia).
-T2 conserva ×1,6 y T3 ×2,5; una carga preparada conserva ×2. La campana y la
-estatuilla mantienen sus bases. Jugador y NPC usan la misma curva, también
-para explosiones; se conserva el redondeo entero de Salud del motor.
-
-| Atributo | Divisor | Porcentaje restante |
+| Attribute | Divisor | Remaining percentage |
 | --- | --- | --- |
 | 0 | 1 | 100% |
 | 25 | 1,128713 | 88,5965% |
 | 50 | 1,504950 | 66,4474% |
 | 100 | 3 | 33,3333% |
 
-El porcentaje de reducción que muestra depuración es el equivalente
-100 × (1 − 1/F), no la antigua curva Tipo 2. Dureza 100 ya no anula el daño
-general y Elocuencia 100 ya no permite lanzar gratis. Valores mayores siguen
-el divisor sin límite artificial de 100. Se conserva Labia Tipo 2.
-Dolor y pérdida de Lucidez conservan sus fórmulas anteriores, tanto en jugador
-como NPC; el cambio de daño real puede afectar indirectamente su entrada.
+The reduction percentage showing debugging is the equivalent 100 × (1 − 1/F), not the
+old Type 2 curve. 100 hardness no longer cancels the general damage and Eloquence 100 no
+longer allows to launch for free. Higher values continue to use the divisor without an
+artificial cap at 100. Dialogue skill retains Type 2. Pain and Lucidity loss retain
+their previous formulas, both in player and NPC; the actual damage change may indirectly
+affect their entry.
 
-Colisiones: se conserva exactamente max(0, porcentaje de impacto × superficie
-− Dureza), después vulnerabilidad por contacto, armadura y Salud máxima.
-También se mantiene el bono acrobático de la rodela y las reglas de aplastamiento.
-No se aplica otra vez el divisor de daño general al resultado de colisión.
+Collisions: exactly max(0, impact percentage × surface − hardness), then contact
+vulnerability, armor and maximum health. The acrobatic bonus of the buckler and crushing
+rules is also maintained. The general damage divisor is not applied again to the
+collision result.
 
-## Barrido de armas grandes (4.33.0aa)
+## Heavy-weapon sweep (4.33.0aa)
 
-Zoom ejecuta un barrido de 360° con espadón, hacha de guerra y alabarda. Alcance
-primario: 80, 76 y 84 MU, respectivamente, hasta la superficie del blanco.
-Usa el daño primario del tier, Fuerza, vulnerabilidad y crítico por enemigo;
-conserva armadura, empuje y desgaste sobre el daño causado. No es una explosión.
-La búsqueda es espacial; cada enemigo cercano recibe como máximo un impacto.
-Un trazado comprueba paredes y pisos 3D; aliados, residentes, jugadores y
-recursos quedan excluidos. Los blancos de práctica son una excepción explícita.
+Zoom executes a 360° sweep with greatsword, axe of war and halberd. Primary range: 80,
+76 and 84 MU, respectively, to the surface of the target. Use primary damage from the
+tier, Strength, vulnerability and critical by enemy; retains armor, thrust and wear on
+the damage caused. It is not an explosion. Search is spatial; each nearby enemy receives
+at most one hit. A layout checks walls and floors 3D; allies, residents, players and
+resources are excluded. Practice targets are an explicit exception.
 
-Se paga 3 × coste primario real de Aire una sola vez por ejecución, incluso
-sin blancos. No se paga por enemigo. Aire insuficiente o cooldown impiden el
-ataque sin consumirlo. La recuperación es la del primario. Mantener Zoom no
-repite: soltar y volver a presionar. Una carga ya preparada se consume y conserva
-×2 daño/coste, por lo que un barrido cargado cuesta 6 primarios sin carga.
-Guanteletes gigantes mantienen Zoom/Block; Rulo sigue contando la esquiva
-lateral como defensa del mandoble. El barrido no reemplaza esa prueba.
+3 × the actual primary Air cost is paid once per execution, even without targets. It is
+not paid for by enemy. Insufficient air or cooldown prevents attack without consuming
+it. Recovery is primary. Keep Zoom does not repeat: release and re-press. An already
+prepared charge is consumed and retained ×2 damage/cost, so a charged sweep costs 6
+uncharged primary attacks. Giant gauntlets keep Zoom/Block; Rulo continues to count the
+side dodge as defense of the greatsword. The sweep does not replace that test.
 
-## Matriz detallada de armas
+## Detailed matrix of weapons
 
-Matriz técnica de entradas conservada; la ampliación visual de primera persona
-no modifica estas rutas de combate.
+Technical matrix of preserved inputs; the visual enlargement of first person does not
+modify these combat routes.
 
 ### Physical melee weapons
 
@@ -3489,9 +3409,9 @@ no modifica estas rutas de combate.
 | Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Shield Block. |
 | Flail | Blunt primary attack. | Stronger blunt attack at the same range. | Charge next melee attack. | Shield Block. |
 | Spear | Piercing primary thrust. | No authored secondary attack in the current catalogue. | Charge next melee attack. | Shield Block. |
-| Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
-| War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
-| Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Barrido 360°: daño, alcance y recuperación del primario; triple Aire. |
+| Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
+| War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
+| Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
 | Giant Gauntlets | Blunt primary punch. | Same damage, range and Air cost as Fire, with additional upward push. | Charge next melee attack. | Weapon-based Block using Buckler coverage, defense and special rules. |
 
 ### Ranged weapons
@@ -3505,7 +3425,9 @@ no modifica estas rutas de combate.
 
 ### Magical implements
 
-Every magical variant below exists at T1, T2 and T3 for Fire/Light, Water/Ice, Earth/Poison, Air/Lightning and Quintessence. `Fire` selects the primary side of the equipped essence and `AltFire` selects its secondary side.
+Every magical variant below exists at T1, T2 and T3 for Fire/Light, Water/Ice,
+Earth/Poison, Air/Lightning and Quintessence. `Fire` selects the primary side of the
+equipped essence and `AltFire` selects its secondary side.
 
 | Implement | Fire and AltFire delivery | Reload | Zoom |
 | --- | --- | --- | --- |
@@ -3526,7 +3448,8 @@ Every magical variant below exists at T1, T2 and T3 for Fire/Light, Water/Ice, E
 
 ### Complete magical variant list
 
-The following twenty implement/essence combinations each have T1, T2 and T3 selectors, totaling sixty magical weapons:
+The following twenty implement/essence combinations each have T1, T2 and T3 selectors,
+totaling sixty magical weapons:
 
 | Essence | Staff | Bell | Book | Statuette |
 | --- | --- | --- | --- | --- |
@@ -3536,110 +3459,106 @@ The following twenty implement/essence combinations each have T1, T2 and T3 sele
 | Air / Lightning | Air Staff T1–T3 | Air Bell T1–T3 | Air Book T1–T3 | Air Statuette T1–T3 |
 | Quintessence | Quintessence Staff T1–T3 | Quintessence Bell T1–T3 | Quintessence Book T1–T3 | Quintessence Statuette T1–T3 |
 
+## Economy
 
-## Economía
+Current values, kept from the accepted base V4.32.0a-r4.
 
-Valores vigentes, conservados desde la base aceptada V4.32.0a-r4.
+### 1. Monetary unit
 
-### 1. Unidad monetaria
+The accounting unit is the **monetary copper**. All internal economic amounts are
+first expressed in copper equivalents. A silver monetary unit is equivalent to 200
+coppers and a gold monetary unit is equivalent to 200 silvers, i.e. 40.000 coppers.
 
-La unidad contable es el **cobre monetario**. Todas las cantidades económicas
-internas se expresan primero en equivalentes de cobre. Una unidad monetaria de
-plata equivale a 200 cobres y una unidad monetaria de oro equivale a 200
-platas, es decir, 40.000 cobres.
+Each metal has coin denominations of 1, 5, 20, 50 and 100:
 
-Cada metal tiene monedas nominales de 1, 5, 20, 50 y 100:
-
-| Metal | Denominación | Valor en cobre | Peso por moneda |
+| Metal | Denomination | Copper value | Weight per coin |
 | --- | ---: | ---: | ---: |
-| Cobre | 1 | 1 | 0,001 kg |
-| Cobre | 5 | 5 | 0,001 kg |
-| Cobre | 20 | 20 | 0,001 kg |
-| Cobre | 50 | 50 | 0,001 kg |
-| Cobre | 100 | 100 | 0,001 kg |
-| Plata | 1 | 200 | 0,001 kg |
-| Plata | 5 | 1.000 | 0,001 kg |
-| Plata | 20 | 4.000 | 0,001 kg |
-| Plata | 50 | 10.000 | 0,001 kg |
-| Plata | 100 | 20.000 | 0,001 kg |
-| Oro | 1 | 40.000 | 0,001 kg |
-| Oro | 5 | 200.000 | 0,001 kg |
-| Oro | 20 | 800.000 | 0,001 kg |
-| Oro | 50 | 2.000.000 | 0,001 kg |
-| Oro | 100 | 4.000.000 | 0,001 kg |
+| Copper | 1 | 1 | 0,001 kg |
+| Copper | 5 | 5 | 0,001 kg |
+| Copper | 20 | 20 | 0,001 kg |
+| Copper | 50 | 50 | 0,001 kg |
+| Copper | 100 | 100 | 0,001 kg |
+| Silver | 1 | 200 | 0,001 kg |
+| Silver | 5 | 1.000 | 0,001 kg |
+| Silver | 20 | 4.000 | 0,001 kg |
+| Silver | 50 | 10.000 | 0,001 kg |
+| Silver | 100 | 20.000 | 0,001 kg |
+| Gold | 1 | 40.000 | 0,001 kg |
+| Gold | 5 | 200.000 | 0,001 kg |
+| Gold | 20 | 800.000 | 0,001 kg |
+| Gold | 50 | 2.000.000 | 0,001 kg |
+| Gold | 100 | 4.000.000 | 0,001 kg |
 
-Las monedas son objetos físicos apilables de `Actor.Inv`. Persisten en
-guardados y viajes, pueden recogerse y soltarse, y obedecen las mismas reglas
-de carga y Caja Mágica que los demás objetos. El total visible del Diario suma
-todas las monedas poseídas, incluidas las guardadas en la Caja Mágica. Las que
-están fuera aportan su peso completo; las guardadas entran en el peso real total
-que la caja divide por sus slots máximos y trunca a 0,001 kg.
+Coins are stackable physical objects of `Actor.Inv`. They persist in saves and travels,
+can be collected and released, and obey the same carrying-capacity and Magic Box rules
+as all other objects. The Journal's total visible sum up all the coins possessed,
+including those stored in the Magic Box. Those that are outside contribute their full
+weight; those saved enter the total actual weight that the Box divides by its maximum slots and truncates to 0,001 kg.
 
-Son objetos monetarios nominales: el jugador no puede fundirlos ni acuñarlos y
-su valor facial no se deriva del valor de la plata u oro usados como materiales.
+They are currency with a nominal value: the player cannot melt or mint them and their face
+value is not derived from the value of the silver or gold used as materials.
 
-Clases nativas:
+Native classes:
 
-- Cobre: `CaelumCopperCoin`, `CaelumCopperCoin5`,
-  `CaelumCopperCoin20`, `CaelumCopperCoin50`, `CaelumCopperCoin100`.
-- Plata: `CaelumSilverCoin`, `CaelumSilverCoin5`,
-  `CaelumSilverCoin20`, `CaelumSilverCoin50`, `CaelumSilverCoin100`.
-- Oro: `CaelumGoldCoin`, `CaelumGoldCoin5`, `CaelumGoldCoin20`,
-  `CaelumGoldCoin50`, `CaelumGoldCoin100`.
+- Copper: `CaelumCopperCoin`, `CaelumCopperCoin5`, `CaelumCopperCoin20`,
+  `CaelumCopperCoin50`, `CaelumCopperCoin100`.
+- Silver: `CaelumSilverCoin`, `CaelumSilverCoin5`, `CaelumSilverCoin20`,
+  `CaelumSilverCoin50`, `CaelumSilverCoin100`.
+- Gold: `CaelumGoldCoin`, `CaelumGoldCoin5`, `CaelumGoldCoin20`, `CaelumGoldCoin50`,
+  `CaelumGoldCoin100`.
 
-### 2. Valores base de materias primas y consumibles
+### 2. Base values of raw materials and consumables
 
-Los precios siguientes son anclas de diseño autorizadas. La dureza y la
-abundancia aceptadas en V4.31 continúan determinando cuánto cuesta obtener un
-recurso en tiempo y esfuerzo, pero ya no recalculan automáticamente su valor
-monetario.
+The following prices are authorized design anchors. The hardness and abundance accepted
+in V4.31 continue to determine how much it costs to obtain a resource in time and
+effort, but no longer automatically recalculate its monetary value.
 
-| Materia prima | Cobres por unidad de 0,001 kg |
+| Raw material | Coppers per unit of 0,001 kg |
 | --- | ---: |
-| Madera común | 2 |
-| Fibra vegetal | 3 |
-| Piel de vaca | 3 |
-| Carbón mineral | 5 |
-| Cobre bruto | 5 |
-| Estaño bruto | 5 |
-| Hierro bruto | 7 |
-| Plata bruta | 100 |
-| Ópalo bruto | 500 |
-| Topacio bruto | 500 |
-| Esmeralda bruta | 500 |
-| Zafiro bruto | 500 |
-| Rubí bruto | 500 |
-| Oro bruto | 1.000 |
+| Common timber | 2 |
+| Plant fiber | 3 |
+| Cowhide | 3 |
+| Mineral coal | 5 |
+| Raw copper | 5 |
+| Raw tin | 5 |
+| Raw iron | 7 |
+| Raw silver | 100 |
+| Raw opal | 500 |
+| Raw topaz | 500 |
+| Raw emerald | 500 |
+| Raw sapphire | 500 |
+| Raw ruby | 500 |
+| Raw gold | 1.000 |
 
-Lana, algodón, seda bruta, piel de depredador y piel de monstruo conservan por
-ahora sus anclas provisionales anteriores:
+Wool, cotton, raw silk, predator hide and monster hide retain their previous temporary
+anchors for the time being:
 
-| Familia | Grado 1 | Grado 2 | Grado 3 |
+| Family | Grade 1 | Grade 2 | Grade 3 |
 | --- | ---: | ---: | ---: |
-| Fibra: lana / algodón / seda bruta | 2 | 4 | 8 |
-| Piel: vaca / depredador / monstruo | 3 | 4 | 8 |
+| Fiber: wool/cotton/raw silk | 2 | 4 | 8 |
+| Hide: cow / predator / monster | 3 | 4 | 8 |
 
-Cambiar esos valores pendientes requerirá una decisión de diseño explícita; la
-abundancia de la fuente no los sobrescribirá sola.
+Changing those outstanding values will require an explicit design decision; the
+abundance of the source will not overwrite them alone.
 
-Los siguientes valores corresponden a una unidad completa del objeto
-consumible, no a un gramo de contenido:
+The following values correspond to a complete consumable item, not to a
+gram of content:
 
-| Consumible | Valor base en cobre |
+| Consumable | Base value in copper |
 | --- | ---: |
-| Ración de comida | 4 |
-| Ración de agua | 6 |
+| Food ration | 4 |
+| Water ration | 6 |
 
-### 3. Valor recursivo de manufactura
+### 3. Recursive value of manufacture
 
-El sistema calcula el valor con las recetas reales y siempre toma como
-referencia la **eficiencia material de 100 %**. Las eficiencias jugables de
-25/50/100 % y sus tiempos 1×/10×/100× permanecen intactos; la merma elegida por
-el jugador no redefine el precio base del objeto.
+The system calculates the value with the actual recipes and always takes as reference
+the **material efficiency of 100 %**. The playable efficiencies of 25/50/100 % and its
+times 1×/10×/100× remain intact; the material loss resulting from the player’s chosen efficiency does not redefine the
+base price of the object.
 
-#### 3.1 Procesamiento básico
+#### 3.1 Basic processing
 
-Para lingotes, aleaciones, tejido, cuerda y cuero:
+For ingots, alloys, fabric, string and leather:
 
 ```text
 valor unitario de salida =
@@ -3648,113 +3567,140 @@ valor unitario de salida =
     / unidades de salida al 100 %
 ```
 
-El recargo de esta etapa es siempre **25 %**.
+The surcharge for this stage is always **25 %**.
 
-#### 3.2 Componentes
+#### 3.2 Components
 
-Cada componente toma el valor del material **ya procesado** que consume, no el
-de su materia prima original. Luego aplica el recargo correspondiente a la red
-de estaciones de su tier:
+Each component takes the value of the material **already processed** it consumes, not
+its original raw material. It then applies the surcharge corresponding to the network of
+stations in its tier:
 
-| Tier | Infraestructura acumulativa | Valor agregado |
+| Tier | Cumulative infrastructure | Added value |
 | --- | --- | ---: |
-| T1 | Banco de trabajo + estación principal | 25 % |
-| T2 | Red T1 + estación especializada | 50 % |
-| T3 | Red T2 + Banco Maestro | 100 % |
+| T1 | Workbench + main station | 25 % |
+| T2 | Network T1 + specialized station | 50 % |
+| T3 | T2 network + Master Workbench | 100 % |
 
-Los escudos conservan su requisito adicional de yunque; no cambia el tier ni
-duplica el recargo.
+Shields retain their additional anvil requirement; it does not change the tier or double
+the surcharge.
 
-#### 3.3 Objetos finales
+#### 3.3 Final items
 
-Armas físicas, armas de esencia, armaduras, escudos, amuletos y sellos suman
-el valor de sus componentes ya manufacturados, incluidos los detalles de
-plata y oro existentes en la receta. Sobre esa suma vuelven a aplicar el
-recargo T1/T2/T3 de la tabla anterior. Por lo tanto, cada etapa conserva su
-propia mano de obra y el valor se acumula de forma recursiva.
+Physical weapons, essence weapons, armor, shields, amulets and seals add up to the
+value of their already manufactured components, including the details of silver and gold
+in the recipe. On this sum, the T1/T2/T3 surcharge in the table above applies again.
+Therefore, each stage retains its own labor and the value accumulates recursively.
 
-`CaelumEconomyRules` expone el cálculo por material, por familia de objeto y
-por instancia nativa de inventario. Las raciones de comida y agua ya poseen
-valor base autorizado. Munición, demás consumibles, llaves y objetos clave no
-entran todavía al catálogo comercial porque carecen de receta o de un valor
-base autorizado; devolverles un precio inventado violaría esta regla.
+`CaelumEconomyRules` exposes the calculation by material, by object family and by native
+inventory instance. Food and water rations already have authorized base value.
+Ammunition, other consumables, keys and key objects do not yet enter the commercial
+catalog because they lack a recipe or an authorized base value; returning an invented
+price to them would violate this rule.
 
-### 4. Márgenes de comerciante
+### 4. Trader Margins
 
-El margen se aplica una sola vez al total del lote:
+The margin applies only once to the total lot:
 
 ```text
 NPC compra al jugador = piso(valor base total × 0,50)
 NPC vende al jugador  = techo(valor base total × 1,50)
 ```
 
-El piso al pagar y el techo al cobrar evitan crear cobre por redondeo. Aplicar
-el margen después de sumar el lote permite, por ejemplo, que dos unidades de
-valor base 1 se vendan juntas por 1 cobre aunque una unidad aislada produzca
-una fracción no representable.
+The floor when paying and the ceiling when charging avoid creating copper by rounding.
+Applying the margin after adding the lot allows, for example, that two units with base value 1 sell together for 1 copper even though a single unit produces an unrepresentable fraction.
 
-Los métodos autoritativos son:
+Authoritative methods are:
 
 - `CaelumEconomyRules.GetPricePaidByMerchant`
 - `CaelumEconomyRules.GetPriceChargedByMerchant`
 
-Estos son los márgenes normales de la infraestructura comercial. La prueba
-posterior de rebaja conserva compra del jugador al 140% y venta al 60%; no
-está disponible desde el Palomo canónico de MAP01. 0an permite activarla por
-una condición de reputación en servicios que la declaren, sin hacerla permanente.
-Asignaciones narrativas, personalidades y precios regionales definitivos
-siguen pendientes.
+These are the normal margins of the commercial infrastructure. The subsequent discount test
+retains the player's purchase to 140% and sale to 60%; it is not available from Palomo
+canonical MAP01. 0an enables it to be activated by a reputational condition in services
+that declare it, without making it permanent. Narrative assignments, personalities and
+definitive regional prices remain pending.
 
-### 5. Presentación en inventario
+### 5. Presentation in inventory
 
-El Diario incorpora un filtro de monedas y, junto a **Carga** y **Caja
-Mágica**, muestra:
+The Journal incorporates a coin filter and, together with **Load** and **MagicBox**,
+shows:
 
-- valor total expresado en cobres;
-- cantidad física total de monedas de cobre, sumando sus cinco denominaciones;
-- cantidad física total de monedas de plata, sumando sus cinco denominaciones;
-- cantidad física total de monedas de oro, sumando sus cinco denominaciones.
+- total value expressed in coppers;
+- total physical number of copper coins, adding their five denominations;
+- total physical quantity of silver coins, adding their five denominations;
+- total physical number of gold coins, adding up their five denominations.
 
-La línea de Caja Mágica muestra además sus slots usados/máximos y su peso total:
-10,000 kg propios más la contribución reducida de todo el contenido. La fórmula,
-las restricciones y los casos de cambio de Inteligencia están documentados en
-`SYSTEMS.md`.
+The Magic Box line also shows your used/maximum slots and their total weight: 10,000 kg
+own plus the reduced contribution of all content. The formula, restrictions and cases of
+change of Intelligence are documented in `SYSTEMS.md`.
 
-Los tres iconos RGBA 64×64 suministrados para Caelum Argenteum se conservan sin
-redibujar en `graphics/caelum/icons/currency/`. Las cinco denominaciones de un
-mismo metal comparten imagen y se distinguen por su nombre localizado y valor
-facial. Las copias registradas como `CCOP`, `CSIL` y `CGOL` permiten también que
-cada moneda exista como pickup visible en el mundo.
+The three RGBA 64×64 icons supplied for Caelum Argenteum are preserved unredrawn in
+`graphics/caelum/icons/currency/`. The five denominations of the same metal share image
+and are distinguished by their localized name and face value. Copies registered as
+`CCOP`, `CSIL` and `CGOL` also allow each coin to exist as a visible pickup in the
+world.
 
-## Caja Mágica
+### 6. Planned prisoner coin reward
 
-V4.32.0a-r4 sigue siendo la base de peso y almacenamiento aceptada. V4.32.0b
-cambia la adquisición: un personaje nuevo ya no posee la Caja Mágica al
-comenzar. Las revisiones V4.32 usaron a Palomo para validar el regalo; esa ruta
-era un entorno de prueba y V4.33.0b la retira del diálogo canónico. V4.33.0s
-implementa la entrega después de las cuatro ramas, al aceptar ante Palomo en
-el segundo piso; avanza de fase 75 a 80. La prueba anterior
-también confirmó que la salida normal conserva la Caja; `map MAP02` crea un
-personaje nuevo y no constituye un viaje del personaje.
+[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8.
+At the port, each successfully rescued prisoner grants coins sufficient for
+two weapons at the arithmetic mean purchase price of the size-M catalogue,
+in addition to +10 reputation with that prisoner's own faction. This replaces
+the earlier unspecified material reward; both benefits are claimable once.
 
-### 1. Naturaleza y peso propio
+For the approved reference set S containing N priced weapon entries:
 
-La Caja Mágica tiene una instancia Inventory con propietario e ItemId desde
-0s; su contenido y peso siguen centralizados en el personaje. No añade una
-entrada seleccionable a la lista: no puede soltarse, venderse, destruirse ni
-guardarse dentro de sí misma. Antes de recibirla no aporta peso, no ofrece
-slots y ninguna ruta de pickup, crafting o interfaz puede guardar objetos en
-ella. Al recibirla, su estructura aporta **10,000 kg** a la carga incluso
-cuando está vacía.
+```text
+P_i = CaelumEconomyRules.GetPriceChargedByMerchant(V_i, 1)
+reward_copper = CaelumEconomyRules.RoundCopperUp(2 * sum(P_i) / N)
+```
 
-La cantidad máxima de slots continúa derivándose de Inteligencia. Cada pieza
-individual de equipo y cada pila admitida consume un slot, sin importar cuántas
-unidades contenga la pila.
+V_i uses the existing recursive recipe valuation at reference 100% material
+efficiency, with the weapon's canonical tier, essence and size-M weight
+(`CaelumConstants.EQUIPMENT_SIZE_M`). The normal merchant purchase margin
+is currently 150%; apply it once, with no extra invented rarity multiplier.
+Player discounts and merchant buyback prices do not define this reference.
 
-### 2. Reducción de peso
+Enumerate each distinct purchasable weapon catalogue entry once in the
+eligible tiers, including physical and essence weapons; exclude fists,
+ammunition, shields, other equipment and unsellable Limbo items. Duplicate
+instances and map spawn counts do not weight the mean. The implementation PR
+must list the entries, N, copper prices, sum, mean and rounded payout.
 
-El contenido no pierde todo su peso. La carga se calcula con una sola operación
-agregada:
+**PENDING:** author confirmation of T1 only versus all T1–T3 in S. The map's
+T1-only loot rule does not implicitly resolve the reward's reference tiers.
+Do not publish a numerical payout before that decision. One rescue pays R;
+four pay 4R, with +10 for each respective faction. Use existing physical coin
+denominations and conversion, preserve independent claim state across saves
+and travel, and leave failed coin delivery retryable without duplicated coins
+or reputation. Keep one authoritative reward definition for all four NPCs.
+
+## Magic Box
+
+V4.32.0a-r4 remains the accepted weight and storage base. V4.32.0b changes the
+acquisition: a new character no longer has the Magic Box at the beginning. V4.32
+revisions used Palomo to validate the gift; that route was a test environment and
+V4.33.0b removes it from the canonical dialogue. V4.33.0s implements the delivery after
+the four branches, accepting Palomo on the second floor; moving from 75 phase to 80. The
+previous test also confirmed that the normal exit preserves the Box; `map MAP02` creates
+a new character and does not constitute a character's journey.
+
+### 1. Nature and Own Weight
+
+The Magic Box has an Inventory instance with owner and ItemId from 0s; its content and
+weight remain centralized in the character. It does not add a selectable entry to the
+list: it cannot be dropped, sold, destroyed or stored within itself. Before receiving
+it does not add weight, it does not offer slots and no pickup, crafting or interface
+path can save objects in it. Upon receiving it, its structure contributes **10,000 kg**
+to the load even when it is empty.
+
+The maximum number of slots continues to derive from Intelligence. Each individual piece
+of equipment and each supported stack occupies one slot, no matter how many units the
+stack contains.
+
+### 2. Weight reduction
+
+The content does not lose all its weight. The load is calculated with a single aggregate operation:
 
 ```text
 peso reducido del contenido =
@@ -3764,123 +3710,115 @@ peso total de la Caja Mágica =
     10,000 kg + peso reducido del contenido
 ```
 
-Se usan los **slots máximos**, no los ocupados. Todos los objetos y pilas se
-suman antes de dividir y redondear. Esto evita que separar un mismo peso entre
-varias pilas elimine carga mediante redondeos individuales.
+The maximum **slots** are used, not the occupied ones. The weight of all items and stacks is summed
+before dividing and rounding. This prevents separating the same weight between multiple
+stacks from removing load by individual roundings.
 
-Ejemplo: con 20 slots máximos y 10,000 kg reales guardados, el contenido aporta
-0,500 kg y la caja completa aporta 10,500 kg. Con 0,380 kg guardados, el
-contenido aporta 0,019 kg.
+Example: with 20 maximum slots and 10,000 kg actually stored, the content provides 0,500
+kg and the complete box provides 10,500 kg. With 0,380 kg stored, the content provides
+0,019 kg.
 
-### 3. Contenido y restricciones
+### 3. Content and restrictions
 
-Se conservan las reglas existentes:
+Existing rules are preserved:
 
-- equipo, consumibles, materiales, monedas, objetos clave admitidos y la pila
-  personalizada de munición pueden guardarse;
-- las llaves comunes no pueden guardarse, porque GZDoom comprueba su posesión
-  nativa para puertas y `LOCKDEFS`;
-- flechas y virotes nativos permanecen en el inventario personal;
-- una pila completa sigue contando como un único slot, pero todas sus unidades
-  aportan al peso real previo a la reducción;
-- las monedas guardadas conservan íntegramente su valor y participan del peso
-  reducido como cualquier otra pila.
+- equipment, consumables, materials, coins, key items admitted and custom ammunition stacks
+  can be stored;
+- common keys cannot be saved because GZDoom checks their native possession for doors and
+  `LOCKDEFS`;
+- Native arrows and bolts remain in the personal inventory;
+- a complete stack still counts as a single slot, but all its units contribute to the
+  actual weight prior to reduction;
+- the stored coins retain their full value and share the reduced weight as any other stack.
 
-### 4. Transacciones y cambios de capacidad
+### 4. Transactions and capacity changes
 
-Recoger, depositar, recuperar, equipar, fabricar y desarmar evalúan la carga
-final completa. Una operación se rechaza si, después de retirar el peso de su
-ubicación anterior y añadirlo a la nueva, la carga superaría la capacidad del
-personaje. Mover un objeto del inventario personal a la caja continúa permitido
-cuando libera carga.
+Collecting, depositing, recovering, equipping, crafting and disassembling evaluate the
+complete final load. An operation is rejected if, after removing the weight from its
+previous location and adding it to the new one, the load would exceed the character’s
+capacity. Moving an item from personal inventory to the box continues to be allowed when
+releasing load.
 
-Si un cambio de Inteligencia reduce los slots máximos por debajo de los ya
-ocupados, el contenido se conserva: no se elimina ni se expulsa. Se recalculan
-de inmediato el divisor y la carga, y se bloquean nuevos depósitos hasta que la
-ocupación vuelva a estar dentro del máximo. Recuperar o soltar contenido sigue
-siendo la vía para liberar slots.
+If an Intelligence change reduces maximum slots below the already occupied ones, the
+content is retained: it is not removed or expelled. The divisor and load are
+recalculated immediately, and new deposits are blocked until occupancy is back within the maximum. Recovering or releasing content remains the way to free slots.
 
-### 5. Interfaz
+### 5. Interface
 
-El Inventario muestra `slots usados/máximos` y el peso total actual de la caja,
-incluidos sus 10,000 kg propios. La línea general de Carga incorpora exactamente
-el mismo valor. El peso individual seleccionado continúa mostrando el peso real
-del objeto o pila antes de la reducción. El icono 64×64 suministrado se muestra
-junto a esta línea; antes del regalo aparece atenuado con el texto `No
-adquirida`. Intentar almacenar desde Inventario antes del regalo devuelve una
-causa explícita y no cambia el objeto.
+The Inventory shows `slots usados/máximos` and the current total weight of the box,
+including its own 10,000 kg. The general Load line incorporates exactly the same value.
+The selected item’s weight continues to show the actual weight of the object or
+stack before reduction. The 64×64 icon provided is displayed next to this line; before
+the gift it is dimmed with the `No adquirida` text. Trying to store from Inventory
+before the gift returns an explicit cause and does not change the object.
 
-### 6. Adquisición y compatibilidad de guardados
+### 6. Acquisition and save compatibility
 
-- Un perfil nuevo se marca explícitamente como no propietario.
-- El primer encuentro canónico con Palomo no concede la Caja ni abre comercio.
-- Aceptar ante Palomo, tras cerrar las cuatro ramas en fase 75, avanza a
-  `MAIN_M00_STATE_BOX_RECEIVED`. Las preguntas y el cierre no entregan nada.
-- El regalo añade sus 10 kg y habilita los slots una sola vez mediante
-  `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`; una Caja heredada conserva su peso.
-- `CaelumPersistentCharacterState` es la fuente persistente de propiedad. Se
-  guarda en `PreTravelled` y se restaura en `Travelled`; el campo vivo y el
-  marcador técnico se sincronizan desde ese registro.
-- La propiedad es independiente de la ubicación física de Palomo.
-- Los perfiles confirmados creados antes de V4.32.0b conservan la Caja durante
-  la migración. Esto evita perder acceso a contenido que ya estaba guardado.
-- Una partida intermedia malformada que no posea la recompensa pero contenga
-  banderas `InMagicBox` se sanea moviendo esas pilas al inventario personal; no
-  se elimina ningún objeto.
+- A new profile is explicitly marked as a non-owner.
+- The first canonical encounter with Palomo does not grant the Box or open commerce.
+- Accepting Palomo’s offer, after closing the four branches in phase 75, advances to
+  `MAIN_M00_STATE_BOX_RECEIVED`. Questions and closing the conversation deliver nothing.
+- The gift adds its 10 kg and enables slots once by `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`; an
+  inherited Box retains its weight.
+- `CaelumPersistentCharacterState` is the persistent source of ownership. It is saved to
+  `PreTravelled` and restored to `Travelled`; the live field and technical marker are
+  synchronized from that record.
+- Ownership is independent of the physical location of Palomo.
+- Confirmed profiles created before V4.32.0b retain the Box during migration. This avoids
+  losing access to content that was already saved.
+- A malformed intermediate save that does not have the reward but contains `InMagicBox` flags is repaired by moving those stacks to the personal inventory; no objects are removed.
 
-### 7. Integración con el registro de misión
+### 7. Integration with Mission Log
 
-`GrantMagicBoxFromPalomo()` no altera el registro de misión por sí sola.
-En 0s, AcceptMagicBox valida la conversación y RecordMainM00MagicBoxGranted
-confirma fase/bandera después de comprobar propiedad e identidad.
-La misión canónica **Donde despiertan los perdidos** comienza al despertar y
-su primer objetivo es buscar ayuda. Poseer una Caja de una partida anterior no
-salta la Voz, la presentación de Palomo ni la orientación hacia Argento.
+`GrantMagicBoxFromPalomo()` does not alter the mission record on its own. In 0s,
+AcceptMagicBox validates the conversation and RecordMainM00MagicBoxGranted confirms
+phase/flag after checking property and identity. The canonical mission **Where the lost
+awaken** begins on awakening and its first objective is to seek help. Owning a Box from
+an earlier game does not skip the Voice, the presentation of Palomo or the orientation
+to Argento.
 
-Al migrar V4.33.0a se reinicia únicamente el relato comercial descartado. La
-Caja existente no se duplica ni se quita, y conserva exactamente contenido,
-slots, peso y reducción. Esto permite probar el nuevo prólogo sin destruir
-inventario de desarrollo y mantiene a los personajes nuevos en la progresión
-canónica sin Caja.
+When migrating V4.33.0a, only the discarded commercial quest is restarted. The existing
+Box is not duplicated or removed, and retains exactly content, slots, weight and
+reduction. This allows testing the new prologue without destroying development inventory
+and keeps new characters in canonical progression without Box.
 
-Palomo permanece oculto antes de la Voz y se revela en el recibidor. Desde
-0n recorre visiblemente las escaleras después del diálogo inicial; se conserva
-esa misma instancia arriba. El resolvedor del Diario lo indica en el segundo
-piso desde fase 75. En 0s puede hablar allí: orienta si faltan pruebas, ofrece
-la Caja al cerrarlas y ayuda a utilizarla después de recibirla.
+Palomo remains hidden before the Voice and is revealed in the hall. From 0n it visibly
+travels the stairs after the initial dialogue; it is retained that same instance above.
+The Journal solver indicates it on the second floor from phase 75. In 0s he can speak
+there: he guides the player if trials remain incomplete, offers the Box once they are
+complete, and helps the player use it after receipt.
 
-La prueba de la misión es usar la puerta final tras capturar El Loco y confirmar
-el cruce. `changemap MAP02` prueba viaje de desarrollo, pero omite la transacción
-narrativa. `map MAP02` comienza otro personaje sin Caja y tampoco prueba esa
-persistencia. Para pruebas de actores independientes se usa `map CADEV02`.
+The test of the mission is to use the final door after capturing El Loco and confirming
+the crossing. `changemap MAP02` tests development journey, but omits narrative
+transaction. `map MAP02` starts another character without Box and does not prove that
+persistence. `map CADEV02` is used for independent actor testing.
 
-## Diálogos nativos y audio
+## Native dialogues and audio
 
-Desde 0b las conversaciones mantienen la simulación activa. MAPINFO declara
-UnFreezeSinglePlayerConversations y el menú común omite la pausa diferida de
-ConversationMenu.Ticker, también al cargar snapshots anteriores.
+From 0b the conversations keep the simulation active. MAPINFO declares
+UnFreezeSinglePlayerConversations and the common menu omits the delayed pause of
+ConversationMenu.Ticker, also when loading previous snapshots.
 
-`GameInfo.AddDialogues` carga CAPALOMO; Thing_SetConversation y StartConversation
-abren los menús nativos. Q equivale a Atrás; Escape y mando mantienen sus
-controles del motor. La Voz del prólogo conserva su única salida Continuar.
-En alcantarillas, Mirar alrededor abre la ayuda final y Continuar permite cerrar.
-Las probabilidades aparecen antes de elegir; el requisito de Ronnie permanece
-visible y gris cuando está bloqueado. La emoción de Rulo es información privada.
+`GameInfo.AddDialogues` load CAPALOMO; Thing_SetConversation and StartConversation open
+native menus. Q equals Back; Escape and controller buttons retain their engine controls.
+Prologue Voice retains its only exit option, Continue. In sewers, Look around opens the final
+help and Continue allows closing. Probabilities appear before choosing; Ronnie
+requirement remains visible and gray when blocked. Rulo emotion is private information.
 
-La primera frase de Simple Harp Loop (2,571429 s, con caída de 450 ms) es
-el `GameInfo.ChatSound` del proyecto. GZDoom emite una sola señal local al
-abrir una conversación y al mostrar cada página siguiente: Voz, Palomo,
-Argento, Rulo, Ronnie y Caella. No hay otra llamada manual al abrir. Una
-opción bloqueada no pasa de página y no produce otra señal. La navegación
-del cursor no equivale a avanzar el texto. La marca singular deja terminar
-la frase en curso si se avanza muy rápido; evita acumular acordes superpuestos.
-ChatSound también es la notificación nativa del chat del motor; no se modifica
-su alcance local ni su autoridad. Véase ASSETS.md para procedencia y edición.
+The first phrase of Simple Harp Loop (2,571429 s, with 450 ms drop) is the
+`GameInfo.ChatSound` of the project. GZDoom emits a single local signal when opening a
+conversation and when displaying each next page: Voice, Palomo, Argento, Rulo, Ronnie
+and Caella. There is no other manual call when opening. A blocked option does not go
+over the page and does not produce another signal. Cursor navigation does not amount to
+advancing the text. The singular mark lets the current phrase finish if it is advanced
+very quickly; it avoids accumulating overlapping chords. ChatSound is also the native
+notification of the engine chat; its local reach and authority are not modified. See
+ASSETS.md for source and editing.
 
-La portada reproduce una vez el War Drums de 6 s. CaelumMenuAudio solicita
-reproducción sin bucle al entrar; no cambia volúmenes, música de mapas ni
-listas personales. Los menús de pausa conservan la música de la partida.
-Al elegir Salir/Exit en el menú principal, CaelumExitMenu abre la confirmación
-nativa y reproduce menu_strings_start mientras el audio sigue activo. Cancelar
-regresa al menú padre. QuitSound y el botón Exit del mapa conservan el mismo
-recurso; la marca singular evita superponer dos instancias de las cuerdas.
+The title screen plays once the 6 s War Drums. CaelumMenuAudio requests unlooped
+playback when entering; does not change volumes, map music, or personal lists. Pause
+menus retain the music of the game. When choosing Exit/Salir in the main menu,
+CaelumExitMenu opens native confirmation and plays menu_strings_start while the audio is
+still active. Cancel returns to the parent menu. QuitSound and the Exit button of the
+map retain the same resource; the singular mark avoids overlapping two instances of
+strings.

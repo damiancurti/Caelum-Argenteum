@@ -1,5 +1,10 @@
 # Caelum Argenteum — Event audio pack v1 (revision 1.4)
 
+Historical audio-package record. The integration and test status below describes
+the original delivery; subsequent integration is recorded in INTEGRACION_4_36_0c.txt.
+For current checkout setup and outstanding author checks, use the root README.md
+and pending_test.txt. Do not repeat this archived resource installation.
+
 Six Ogg Vorbis files for five requested events, including an alternative ship
 excerpt. This is an audio resource and integration package, not a complete game
 patch. Reference source documentation: Caelum Argenteum 4.36.0a; target engine:

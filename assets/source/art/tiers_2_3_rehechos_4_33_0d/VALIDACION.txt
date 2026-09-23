@@ -1,8 +1,5 @@
-Revisión de perspectiva y anatomía.
-99 PNG: 49 T2 + 49 T3 + ca_giant_gauntlets.png.
-Correspondencia exacta con los 99 nombres y rutas del parche anterior.
-99/99 PNG legibles, RGBA, 128x128, alfa 0..255, contenido no vacío.
-Margen transparente de al menos 7 px en cada borde.
-Control visual realizado sobre másteres y PNG exportados.
-Las vistas previas son láminas de consulta, no sprites para el motor.
-No se ejecutó una prueba dentro del juego en esta revisión.
+Historical perspective and anatomy review. 99 PNG: 49 T2 + 49 T3 + ca_giant_gauntlets.png. Accurate
+matching with the 99 names and paths of the previous patch. 99/99 PNGs readable, RGBA,
+128x128, alpha 0..255, non-empty content. Transparent margin of at least 7 px on each
+edge. Visual control performed on exported masters and PNG. Previews are reference
+sheets, not sprites for the engine. No test was executed within the game in this review.

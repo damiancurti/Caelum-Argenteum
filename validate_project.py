@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comprueba documentación, traducciones y recursos sin modificar archivos."""
+"""Check current documentation, localization and resources without modifying files."""
 from pathlib import Path
 import argparse
 import json
@@ -10,10 +10,9 @@ CANONICAL = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md'}
 WORKING = {'CONTEXT.md', 'TASKS.md'}
 DOCUMENTS = CANONICAL | WORKING
 
-VERSION_RE = re.compile(
-    r'(?:Versión documental|Document(?:ary)? version)\s*:\s*'
-    r'([0-9]+\.[0-9]+\.[0-9]+(?:[a-z]+[0-9]*)?)'
-)
+NUMERIC_VERSION_RE = re.compile(r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\Z')
+DIAGNOSTICS = ('src/caelum/world/CaelumPhysicalHazards.zs',
+               'src/caelum/world/CaelumSewerMaze.zs')
 
 AUDIO_INVENTORY_RE = re.compile(
     r'(?:contiene\s+(\d+)\s+archivos de runtime'
@@ -26,36 +25,64 @@ def validate(root):
         if not condition:
             errors.append(message)
 
-    readme = (root / 'README.md').read_text(encoding='utf-8-sig')
-    match = re.search(r'Current release: ([0-9]+\.[0-9]+\.[0-9]+(?:[a-z]+[0-9]*)?)\.', readme)
-    check(match is not None, 'README: falta Current release.')
-    version = match.group(1) if match else ''
-    actual_docs = {p.relative_to(root/'docs').as_posix() for p in (root/'docs').rglob('*') if p.is_file()}
-    check(actual_docs == DOCUMENTS, f'docs debe contener exactamente {sorted(DOCUMENTS)}; encontrado {sorted(actual_docs)}')
-    for heading in ('## Implemented', '## Planned', '## Pending validation'):
-        check(heading in readme, f'README: falta {heading}')
-    for name in sorted(CANONICAL):
-        path = root/'docs'/name
-        if not path.exists():
-            continue
-        text = path.read_text(encoding='utf-8-sig')
-        header = re.search(VERSION_RE, text[:1000])
-        check(header is not None and header.group(1) == version, f'{name}: versión desactualizada')
-        check('VALIDATION_RESULT_PLACEHOLDER' not in text, f'{name}: validación sin completar')
-        if name == 'HISTORY.md':
-            continue
-        for target in re.findall(r'\]\(([^)]+)\)', text):
+    def read(relative):
+        try:
+            return (root / relative).read_text(encoding='utf-8-sig')
+        except (OSError, UnicodeError) as exc:
+            check(False, f'{relative}: cannot read UTF-8 file: {exc}')
+            return ''
+
+    def current_version(text, label, name):
+        # Only the opening header is authoritative; release history is unrestricted.
+        header = text[:1000].replace('**', '')
+        markers = re.findall(r'^' + re.escape(label) + r'\s*(\S+)', header, re.M)
+        check(len(markers) == 1, f'{name}: require exactly one opening "{label}" header.')
+        value = markers[0] if markers else ''
+        if value.endswith('.'):
+            value = value[:-1]
+        check(bool(NUMERIC_VERSION_RE.fullmatch(value)),
+              f'{name}: current version {value!r} must use numeric MAJOR.MINOR.PATCH.')
+        return value
+
+    def links(text, path):
+        targets = re.findall(r'\]\(([^)]+)\)', text)
+        for target in targets:
             if not re.match(r'^[a-z]+:', target) and not target.startswith('#'):
-                check((path.parent/target.split('#')[0]).exists(), f'{name}: enlace inexistente {target}')
-    for target in re.findall(r'\]\(([^)]+)\)', readme):
-        if not re.match(r'^[a-z]+:', target) and not target.startswith('#'):
-            check((root/target.split('#')[0]).exists(), f'README: enlace inexistente {target}')
+                check((path.parent / target.split('#')[0]).exists(),
+                      f'{path.relative_to(root)}: missing link target {target}')
+        return targets
+
+    readme = read('README.md')
+    version = current_version(readme, 'Current release:', 'README.md')
+    actual_docs = {p.relative_to(root/'docs').as_posix() for p in (root/'docs').rglob('*') if p.is_file()}
+    check(actual_docs == DOCUMENTS, f'docs must contain exactly {sorted(DOCUMENTS)}; found {sorted(actual_docs)}')
+    for heading in ('## Implemented', '## Planned', '## Pending validation'):
+        check(heading in readme, f'README: missing {heading}')
+    # Every canonical/working document and AGENTS declares a version. Ancillary
+    # guides without this header inherit README's release (see AGENTS.md).
+    for relative in ['AGENTS.md'] + ['docs/' + name for name in sorted(DOCUMENTS)]:
+        text = read(relative)
+        declared = current_version(text, 'Documentation version:', relative)
+        check(declared == version, f'{relative}: current version {declared!r} differs from README {version!r}.')
+        check('VALIDATION_RESULT_PLACEHOLDER' not in text, f'{relative}: unfinished validation placeholder')
+        if relative != 'docs/HISTORY.md':
+            links(text, root / relative)
+    for relative in DIAGNOSTICS:
+        markers = re.findall(r'\[Caelum ([^\]]+)\]', read(relative))
+        check(bool(markers) and all(v == version for v in markers),
+              f'{relative}: diagnostic release labels must match README {version!r}.')
+    readme_links = links(readme, root / 'README.md')
+    for target in ('pending_test.txt', 'docs/HISTORY.md'):
+        check(target in readme_links, f'README: add a direct Markdown link to {target}.')
+    check((root / 'pending_test.txt').is_file(), 'Missing root pending_test.txt; keep it tracked even when empty.')
+    if (root / 'pending_test.txt').is_file():
+        read('pending_test.txt')
 
     sndinfo = (root/'src/SNDINFO').read_text(encoding='utf-8-sig')
     definitions = dict(re.findall(r'^([\w/]+)\s*=\s*"([^"]+)"', sndinfo, re.M))
     aliases = dict(re.findall(r'^\$alias\s+(\S+)\s+(\S+)', sndinfo, re.M))
     for name, path in definitions.items():
-        check((root/'src'/path).is_file(), f'SNDINFO: falta {path} ({name})')
+        check((root/'src'/path).is_file(), f'SNDINFO: missing {path} ({name})')
     native = ['activate','backup','prompt','cursor','change','invalid','dismiss','choose','clear','advance','quit1','quit2']
     native = ['menu/'+name for name in native] + ['switches/normbutn','switches/exitbutn']
     for name in native:
@@ -64,24 +91,24 @@ def validate(root):
             visited.add(target)
             target = aliases[target]
         check(target.startswith('caelum/') and target in definitions,
-              f'{name}: no resuelve a un recurso de Caelum')
+              f'{name}: does not resolve to a Caelum resource')
     mapinfo = (root/'src/MAPINFO').read_text(encoding='utf-8-sig')
     title = re.search(r'TitleMusic\s*=\s*"([^"]+)"', mapinfo)
-    check(title is not None and (root/'src'/title.group(1)).is_file(), 'TitleMusic: archivo inexistente')
+    check(title is not None and (root/'src'/title.group(1)).is_file(), 'TitleMusic: missing file')
     quit_sound = re.search(r'QuitSound\s*=\s*"([^"]+)"', mapinfo)
-    check(quit_sound is not None and quit_sound.group(1) in definitions, 'QuitSound: alias sin definición propia')
+    check(quit_sound is not None and quit_sound.group(1) in definitions, 'QuitSound: alias has no project definition')
     chat = re.search(r'ChatSound\s*=\s*"([^"]+)"', mapinfo)
-    check(chat is not None and chat.group(1) == 'caelum/ui/dialogue_open', 'ChatSound: debe usar una sola frase de arpa nativa')
-    check('$singular caelum/ui/dialogue_open' in sndinfo, 'Falta la proteccion de frases superpuestas')
-    check('CaelumMenuAudio' in mapinfo and (root/'src/caelum/ui/CaelumMenuAudio.zs').is_file(), 'Falta el observador de audio de portada')
+    check(chat is not None and chat.group(1) == 'caelum/ui/dialogue_open', 'ChatSound: must use one native harp phrase')
+    check('$singular caelum/ui/dialogue_open' in sndinfo, 'Missing protection against overlapping dialogue phrases')
+    check('CaelumMenuAudio' in mapinfo and (root/'src/caelum/ui/CaelumMenuAudio.zs').is_file(), 'Missing title-screen audio observer')
     code = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (root/'src/caelum').rglob('*.zs'))
-    check('PlayDialogueOpenSound' not in code, 'Quedo una llamada duplicada al arpa')
-    check('tools\\build_pk3.ps1' not in (root/'run_dev.bat').read_text(), 'run_dev aun depende de tools')
-    check((root/'build_dev.ps1').is_file(), 'Falta el constructor en raiz')
+    check('PlayDialogueOpenSound' not in code, 'Duplicate manual harp call remains')
+    check('tools\\build_pk3.ps1' not in (root/'run_dev.bat').read_text(), 'run_dev still depends on the retired tools directory')
+    check((root/'build_dev.ps1').is_file(), 'Missing root build_dev.ps1')
     for name in ('generate_environment_models.py', 'generate_mineral_veins.py', 'generate_stash_models.py', 'generate_station_models.py'):
-        check((root/'assets/generators'/name).is_file(), 'Falta un generador fuente: '+name)
-    # Una sección con un código de idioma distinto puede compilar y aun así
-    # dejar una conversación entera en inglés. Comprobar las claves de Caella.
+        check((root/'assets/generators'/name).is_file(), 'Missing source generator: '+name)
+    # An incorrect locale can compile while leaving a conversation in English.
+    # Keep checking the Spanish Caella keys independently of documentation language.
     language = (root/'src/LANGUAGE').read_text(encoding='utf-8-sig')
     localized = {'default': set(), 'es': set()}
     for section, body in re.findall(r'^\[([^\]]+)\]\s*\n(.*?)(?=^\[|\Z)', language, re.M | re.S):
@@ -90,10 +117,10 @@ def validate(root):
             if locale in section.split():
                 localized[locale].update(keys)
     magic_keys = {key for key in localized['default'] if key.startswith('CA_DLG_M01_MAGIC_')}
-    check(bool(magic_keys), 'LANGUAGE: faltan las claves de Caella')
-    check(magic_keys <= localized['es'], 'LANGUAGE: faltan traducciones es de Caella: '+', '.join(sorted(magic_keys-localized['es'])))
-    # Los OBJ por sí solos no activan los modelos: cada clase concreta necesita
-    # su asociación, incluidos los nombres conservados por compatibilidad.
+    check(bool(magic_keys), 'LANGUAGE: missing Caella keys')
+    check(magic_keys <= localized['es'], 'LANGUAGE: missing Spanish (es) Caella translations: '+', '.join(sorted(magic_keys-localized['es'])))
+    # OBJ files alone do not activate models: each concrete class needs a binding,
+    # including class names retained for compatibility.
     station_source = (root/'src/caelum/crafting/CaelumCraftingStation.zs').read_text()
     station_classes = set(re.findall(r'^class (Caelum\w+Station)\s*:', station_source, re.M)) - {'CaelumCraftingStation'}
     modeldef = (root/'src/MODELDEF').read_text()
@@ -105,42 +132,42 @@ def validate(root):
         station_bindings.add(actor)
         path = re.search(r'\bPath\s+"([^"]+)"', body)
         model = re.search(r'\bModel\s+0\s+"([^"]+)"', body)
-        check(path is not None and model is not None, 'MODELDEF: definición incompleta de '+actor)
+        check(path is not None and model is not None, 'MODELDEF: incomplete definition for '+actor)
         if path is None or model is None:
             continue
         resource = root/'src'/path.group(1)/model.group(1)
-        check(resource.is_file(), 'MODELDEF: falta '+str(resource.relative_to(root)))
+        check(resource.is_file(), 'MODELDEF: missing '+str(resource.relative_to(root)))
         station_models.add(resource)
-    check(station_classes == station_bindings, 'MODELDEF: estaciones sin modelo: '+', '.join(sorted(station_classes-station_bindings)))
+    check(station_classes == station_bindings, 'MODELDEF: stations without model bindings: '+', '.join(sorted(station_classes-station_bindings)))
     for resource in station_models:
         if resource.is_file():
             for material in re.findall(r'^usemtl\s+(\S+)', resource.read_text(), re.M):
-                check((root/'src'/material).is_file(), resource.name+': falta el material '+material)
+                check((root/'src'/material).is_file(), resource.name+': missing material '+material)
     for include in re.findall(r'#include\s+"([^"]+)"', (root/'src/ZSCRIPT').read_text()):
-        check((root/'src'/include).is_file(), 'ZSCRIPT: include inexistente '+include)
-    # Vorbis conserva la posición final en muestras en la última página Ogg.
+        check((root/'src'/include).is_file(), 'ZSCRIPT: missing include '+include)
+    # The last Ogg page stores the final Vorbis sample position.
     cue = root/'src/sounds/caelum/ui/ca_dialogue_open.ogg'
     if cue.exists():
         data, offset, last_granule = cue.read_bytes(), 0, 0
         while offset < len(data):
             if data[offset:offset+4] != b'OggS' or offset+27 > len(data):
-                errors.append('Recorte de diálogo: contenedor Ogg inválido')
+                errors.append('Dialogue cue: invalid Ogg container')
                 break
             last_granule = struct.unpack_from('<Q', data, offset+6)[0]
             segments = data[offset+26]
             offset += 27 + segments + sum(data[offset+27:offset+27+segments])
         ident = data.find(b'\x01vorbis')
         sample_rate = struct.unpack_from('<I', data, ident+12)[0] if ident >= 0 else 0
-        check(sample_rate == 44100 and last_granule == 113400, 'La frase de arpa debe conservar 113400 muestras a 44100 Hz')
+        check(sample_rate == 44100 and last_granule == 113400, 'The harp phrase must retain 113400 samples at 44100 Hz')
     else:
-        errors.append('Falta el recorte de diálogo')
+        errors.append('Missing dialogue cue')
     audio_count = sum(p.suffix.lower() in ('.ogg','.mp3') for p in (root/'src').rglob('*') if p.is_file())
     assets = (root/'docs/ASSETS.md').read_text(encoding='utf-8-sig')
     count = re.search(AUDIO_INVENTORY_RE, assets)
     inventory = int(count.group(1) or count.group(2)) if count else None
-    check(inventory == audio_count, 'ASSETS.md: actualizar el inventario de audio')
+    check(inventory == audio_count, 'ASSETS.md: update the runtime audio inventory count')
 
-    # Comprobaciones opcionales: solo se ejecutan si el archivo existe.
+    # Check contributor premises when the file can be read.
     agents = root/'AGENTS.md'
     premise_numbers = set()
     if agents.exists():
@@ -149,19 +176,19 @@ def validate(root):
             r'(?:Premisa|Premise)s?\s+([0-9]{1,2})(?:\s+a\s+[0-9]{1,2})?\s*(?:[.:-]|$)', text, re.I)}
         if not premise_numbers:
             premise_numbers = {int(n) for n in re.findall(r'^([0-9]{1,2})\.\s', text, re.M)}
-        check(bool(premise_numbers), 'AGENTS.md: no se detectaron premisas numeradas')
+        check(bool(premise_numbers), 'AGENTS.md: no numbered premises found')
 
     context = root/'docs'/'CONTEXT.md'
     context_words = 0
     if context.exists():
         text = context.read_text(encoding='utf-8-sig')
         context_words = len(text.split())
-        check(context_words < 2500, f'CONTEXT.md: excede 2500 palabras ({context_words})')
+        check(context_words < 2500, f'CONTEXT.md: exceeds 2500 words ({context_words})')
     else:
-        check(False, 'Falta docs/CONTEXT.md')
+        check(False, 'Missing docs/CONTEXT.md')
 
-    check((root/'docs'/'TASKS.md').exists(), 'Falta docs/TASKS.md')
-    check((root/'.github'/'ISSUE_TEMPLATE'/'tarea.md').exists(), 'Falta .github/ISSUE_TEMPLATE/tarea.md')
+    check((root/'docs'/'TASKS.md').exists(), 'Missing docs/TASKS.md')
+    check((root/'.github'/'ISSUE_TEMPLATE'/'tarea.md').exists(), 'Missing .github/ISSUE_TEMPLATE/tarea.md')
 
     return {'version':version, 'documents':len(actual_docs), 'audio_files':audio_count,
             'station_models':len(station_models), 'spanish_caella_keys':len(magic_keys),
@@ -170,9 +197,13 @@ def validate(root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('root', nargs='?', type=Path, default=Path(__file__).resolve().parent)
+    parser.add_argument('root', nargs='?', type=Path, default=Path(__file__).resolve().parent,
+                        help='Repository root (defaults to the directory containing this script).')
     args = parser.parse_args()
-    result = validate(args.root)
+    try:
+        result = validate(args.root.resolve())
+    except (OSError, UnicodeError, struct.error) as exc:
+        result = {'errors': [f'Cannot validate repository input: {exc}. Restore the named file from the complete checkout.']}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     raise SystemExit(1 if result['errors'] else 0)
 

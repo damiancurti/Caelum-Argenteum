@@ -4,9 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.0i.** Merge this incremental source patch into the
-complete **4.36.0h** project and rebuild with `run_dev.bat`. Start a new game or
-use `map MAP02`: MAP02 has been replaced with the author's authorization.
+**Current release: 4.36.1.** Obtain and update the complete repository, validate
+it, then rebuild with `run_dev.bat` as described below. Issue
+[#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) standardizes English
+documentation, numeric patch versions and the author-test workflow.
+This patch preserves gameplay and save behavior from 4.36.0i. When upgrading
+from a version before 4.36.0i, start a new game or use `map MAP02`: that earlier
+release replaced MAP02 with the author's authorization.
+
+Outstanding author checks are in [pending_test.txt](pending_test.txt); changes,
+performed validation and confirmed results are in [HISTORY.md](docs/HISTORY.md).
+The following gameplay details describe the retained 4.36.0i baseline.
 
 The flail handle rotates 22.5 degrees counterclockwise from 0h and half of its
 previously exposed shaft moves into the glove. Its chain and ball are a
@@ -40,11 +48,16 @@ inventory transactions, key-controlled doors, resource arithmetic and the
 flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
 0.13.0 solely as a development IWAD. Native screenshots are in
 `assets/first_person_v7/`; validation records are in `assets/validation_0i/`.
-Windows 11 playthrough and the author's final visual acceptance remain pending.
+On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
+Bow appearance is accepted; the flail still needs approximately 10 degrees more
+counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
+A reported stall when equipping a bow without arrows is tracked separately in
+[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8). Neither fix is included in 4.36.1.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.0i**. See **PRUEBAS_4_36_0i.txt** for installation and focused checks.
+**4.36.1**. Use the repository instructions below and the root pending-test queue
+for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 
@@ -165,8 +178,9 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   visual update; the selected lying/seated poses are unchanged.
 - The catalogue identifies MAP01 as Limbo with a 1:1 local clock; every other
   map keeps the accepted rate of one game hour per 180 simulation seconds.
-- Project validation accepts numeric hotfix suffixes such as 4.35.0d1 while
-  retaining the existing resource, documentation and localization checks.
+- Historical validation accepted hotfix labels such as 4.35.0d1. Since 4.36.1,
+  current headers require numeric MAJOR.MINOR.PATCH; historical labels remain valid.
+  Resource, documentation and localization checks are retained.
 
 - Hidden native Inventory stores the rest mode, duration, elapsed tics, origin,
   input-release latch and last observed world-clock pulse. Repeated callbacks
@@ -466,8 +480,8 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   collection percentage: Swords = Mental, Cups = Social, Wands = Physical,
   Coins = Technical. All fourteen cards in a suit add +3 to each of its three
   attributes; all 78 cards still add +100% through collection. Journal shows
-  the minor base separately. Only the Fool is obtainable in current content;
-  the remaining cards need their planned acquisition content.
+  the minor base separately. The Fool and the Ace of Cups are obtainable in
+  current content; the remaining cards need their planned acquisition content.
 - Greatsword, war axe and halberd use Zoom for a 360-degree sweep: primary
   damage, reach and recovery, with triple primary Air per execution. Nearby
   enemies can all be hit once; walls, solid 3D floors and allies are respected.
@@ -657,7 +671,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - The 250 old test items in the six first ground-floor rooms are retired on
   map load, including existing saves. Carried items and player drops remain.
 - A single root Windows builder, source art and reusable generators in assets,
-  five active documents and source patches installed by copying files.
+  seven maintained documents and issue-based patches delivered through linked PRs.
 
 ## Planned
 
@@ -672,21 +686,26 @@ The fast path does not simulate arbitrary AI, physics, doors or third-party
 Thinkers. Extending it outside designated safe areas requires those systems'
 explicit timing contracts. The 8-game-hour full Sleep recovery rate is confirmed.
 Fares, freely drivable/additional vehicles, route incidents and a travel minimap remain future content.
-New campaign content and inherited expansion follow the V4 playtest export.
+The author now requires a complete three-map campaign slice before the V4
+playtest export. Further campaign content and inherited expansion remain V5.
 Of the authored class abilities, only Arcanist Sleep is added here; the remaining
 class abilities and racial toggles stay in the V5 abilities block.
 Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Narrative faction assignments, rank thresholds and cross-faction relations
-still require authored design.
+Four new prisoner affiliations, +10 own-faction reputation and coins worth two
+average size-M weapons per successful rescue are defined in the roadmap.
+SYSTEMS records the purchase-price formula; reward reference tiers (T1 or
+T1–T3), rank thresholds and cross-faction relations still require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system
 testing. MAP02 now contains the authorized maze and encounters; MAP03–05
-retain their test spaces. The remaining campaign layout is future content.
+retain their test spaces. The new three-map playtest slice is planned in
+[#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16); test spaces do
+not count as completed campaign maps. The existing port is MAP06.
 Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
@@ -694,30 +713,73 @@ crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
-After V4.37, prepare and verify an exported playtest build for other players,
-with installation, controls, a test route and a way to record issues. Then
+New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
+repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
+persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
+assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
+and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
+features are not included in the current 4.36.1 gameplay baseline.
+
+After V4.37, complete and accept three campaign maps covering the prologue,
+El Loco and two distinct Minors, then verify the exported
+playtest for other players (#17), including installation, controls, the full
+route, saves and issue reporting. The mansion -> maze -> port route is
+confirmed: the third map is a demon siege, whose commanding Zupay holds
+the second Minor (exact card pending). Freed prisoners use source-character
+combat stats and follow/fight until their living extraction before the MAP02
+boss; they leave for the port and do not participate in that boss fight. Then
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
-art, loot, faction consequences, perception/formations, sieges, co-op/PvP,
+art, loot, faction consequences, perception/formations, general world sieges, co-op/PvP,
 world persistence and the complete campaign are assigned to V5 in PROJECT.md.
 The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-- Windows 11 playthrough of the complete maze, including save/load during combat.
-- Author acceptance of flail placement, full swing and thicker bows.
-- Long-term encounter/provision balance for different character builds.
-- Remaining 4.36 systems listed in PROJECT.md are outside this increment.
+See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
+its correction. On 2026-09-23 the author confirmed zero validator errors,
+successful rebuild/launch and both 4.36.1 diagnostic headers. That completed
+test and the accepted maze/save-load/table tests are recorded in HISTORY.
+The empty-bow stall is a separate open correction in #8, not an accepted result.
+Long-term encounter/provision balance and unfinished 4.36 systems are development
+work in PROJECT/TASKS, not new acceptance tests created by this documentation patch.
 
 ## Build and run
 
-Close GZDoom. Merge the patch contents into the complete **4.36.0h** project,
-replacing matching files and preserving the rest. Rebuild the PK3; opening an
-old PK3 will keep old code. Start a fresh MAP02 or a new campaign, since the
-map layout changed completely. The diagnostic must identify **4.36.0i**.
+GitHub is the primary working source. To obtain a complete checkout:
+
+```powershell
+git clone https://github.com/damiancurti/Caelum-Argenteum.git
+cd Caelum-Argenteum
+```
+
+For an existing checkout, close GZDoom, run `git status`, and preserve any local
+work before updating the intended branch with `git pull --ff-only`. A release
+under review is obtained from its linked PR branch; check README's current
+version after switching. Do not merge an old patch ZIP into this checkout.
+
+From the repository root, using the author's installed Python:
+
+```powershell
+python validate_project.py
+```
+
+Success prints JSON with `"version": "4.36.1"`, `"documents": 7`, and
+`"errors": []`, returning exit code 0 (`$LASTEXITCODE` in PowerShell or
+`echo %ERRORLEVEL%` in Command Prompt). On failure, report the full output,
+command, Python version (`python --version`) and current commit (`git rev-parse
+HEAD`) in the issue. If `python` is not recognized, make the installed interpreter
+available on PATH or invoke its full path; do not regenerate assets to fix a
+documentation error. The validator is read-only and uses Python's standard library.
+
+Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
+`netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
+**4.36.1**. The 4.36.1 documentation patch requires no new campaign or save migration.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
-existing engine/IWAD paths. To build independently, from any working directory:
+existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on
+another machine; supply your own development dependencies. To build independently,
+from any working directory:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\path\CaelumArgenteum\build_dev.ps1"
@@ -743,13 +805,32 @@ history and keep patch-specific utilities out of the active project.
 | [ASSETS.md](docs/ASSETS.md) | Audio/art inventory, provenance, source generators and accepted framing. |
 | [HISTORY.md](docs/HISTORY.md) | Consolidated previous records and superseded decisions. |
 
-Use English code/identifiers and Spanish explanatory comments. Prefer native
+Use English code, identifiers and maintained documentation. Gameplay explanatory
+comments remain Spanish; modified tooling uses English help, diagnostics,
+comments and docstrings. Preserve bilingual game localization. Prefer native
 engine features and shared authoritative systems; protect accepted gameplay
-and author-owned lore/balance. Deliver changed files and report actual tests.
-Keep useful source assets and required license notices. Deliver patches as
-changed files to copy plus one test TXT; no patch installers. V5 source refactoring
+and author-owned lore/balance. Keep useful source assets and required license
+notices. Plan a concrete issue in Work; implement and test in desktop Codex on a
+focused branch; review the linked PR and evidence; record author acceptance when
+required. One issue defines one patch, with several focused commits if needed.
+ZIPs are optional exports. V5 source refactoring
 must preserve save/input compatibility through incremental changes.
 
 Run `python validate_project.py` before preparing a release to check version,
 documentation, structure, Caella translations, station models and audio references. Development engine/IWAD files,
-test observers and archives are not part of the playable PK3 or source delta.
+test observers and archives are not part of the playable PK3 or source delivery.
+
+Patch versions are numeric MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.2.
+Implementation commits and later acceptance do not each create a new patch.
+Historical labels stay intact; PROJECT records the current roadmap and the
+author-approved three-map playtest requirement. All
+seven docs and AGENTS declare a current version; ancillary guides without a
+header inherit this README's release.
+
+Carry author checks forward in `pending_test.txt`. After explicit author pass
+confirmation, record the stable test ID, originating version/issue, result,
+confirmation date and qualifications in that release's HISTORY entry, then
+remove only that pending entry in the same update. Partial, failed and unconfirmed
+checks remain. Static success, engine success, merging and issue closure are
+distinct from author acceptance. Keep the queue tracked and empty when all tests
+are confirmed; it contains no completed results or general backlog.
