@@ -1,54 +1,54 @@
 # AGENTS.md — Caelum Argenteum
 
-Manual de arranque para agentes de IA y colaboradores humanos. Este archivo
-describe **cómo trabajar** en el proyecto, no qué balance o diseño contiene.
-Los valores de balance, las recetas y las decisiones de diseño viven en los
-documentos canónicos de `docs/` y en las decisiones del autor.
+Startup guide for AI agents and human contributors. This file describes **how
+to work** on the project, not what balance or design it contains. Balance
+values, recipes, and design decisions live in the canonical documents in
+`docs/` and in the author's decisions.
 
-## Qué es este proyecto
+## What this project is
 
-- **Caelum Argenteum** es un FPS-RPG de fantasía oscura independiente,
-  inspirado en la Argentina del siglo XIX, desarrollado sobre GZDoom/ZScript.
-- **Autor y diseñador:** Damián Curti.
-- **Motor objetivo:** GZDoom 4.14.2 (Windows 11).
-- **Versión documental actual:** 4.36.0i.
-- **Estado:** el producto final debe ser independiente de los assets de Doom.
+- **Caelum Argenteum** is an independent dark-fantasy FPS-RPG inspired by
+  nineteenth-century Argentina, built on GZDoom/ZScript.
+- **Author and designer:** Damián Curti.
+- **Target engine:** GZDoom 4.14.2 (Windows 11).
+- **Current documentation version:** 4.36.0i.
+- **Status:** the final product must be independent of Doom assets.
 
-## Estructura del repositorio
+## Repository structure
 
-| Ruta | Contenido |
+| Path | Contents |
 | --- | --- |
-| `src/` | Todo lo que se empaqueta en el PK3: mapas (`maps/`), código ZScript (`caelum/`, `impactphysics/`, `crafting/`), sprites, modelos, fuentes, sonidos, música, gráficos y avisos de licencia. |
-| `docs/` | Documentación canónica: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md` y los archivos de agente (`CONTEXT.md`, `TASKS.md`). |
-| `assets/` | Fuentes de arte y audio, datos climáticos, vistas de primera persona, generadores opcionales (`generators/`), manifiestos y registros de validación. No se empaqueta en runtime. |
-| `build/` | PK3 regenerable (`caelum_argenteum_dev.pk3`), reconstruido con `build_dev.ps1`. |
-| `archive/` | Respaldos conocidos de versiones anteriores, con utilidad de recuperación. |
-| Raíz | `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`. |
+| `src/` | Everything packaged into the PK3: maps (`maps/`), ZScript code (`caelum/`, `impactphysics/`, `crafting/`), sprites, models, fonts, sounds, music, graphics, and license notices. |
+| `docs/` | Canonical documentation: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`, plus the working documents (`CONTEXT.md`, `TASKS.md`). |
+| `assets/` | Art and audio sources, climate data, first-person views, optional generators (`generators/`), manifests, and validation records. Not packaged at runtime. |
+| `build/` | Regenerable PK3 (`caelum_argenteum_dev.pk3`), rebuilt with `build_dev.ps1`. |
+| `archive/` | Known backups of previous versions, kept for recovery. |
+| Root | `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`. |
 
-Solo `src/` entra en `build/caelum_argenteum_dev.pk3`. `assets/generators/`
-son utilidades de edición opcionales; sus resultados ya están listos en `src/`.
+Only `src/` goes into `build/caelum_argenteum_dev.pk3`. `assets/generators/`
+are optional editing utilities; their outputs are already in `src/`.
 
-## Qué documento leer según la tarea
+## Which document to read per task
 
-| Tarea | Documento(s) de referencia |
+| Task | Reference document(s) |
 | --- | --- |
-| Entender el proyecto, premisas, roadmap, estado y validación actual | `docs/PROJECT.md` |
-| Reglas de juego: controles, combate, crafting, economía, Caja, supervivencia, diálogos | `docs/SYSTEMS.md` |
-| Historia, canon, especificación de MAP01 y límites de implementación | `docs/MAP01.txt` |
-| Audio, arte, primera persona, atribuciones y generadores | `docs/ASSETS.md` |
-| Historial de decisiones y documentos anteriores | `docs/HISTORY.md` |
-| Instalación, build y estado resumido | `README.md` |
-| Resumen rápido antes de leer todo lo anterior | `docs/CONTEXT.md` |
-| Lista de tareas activas y criterios de aceptación | `docs/TASKS.md` |
+| Understand the project, premises, roadmap, status, and current validation | `docs/PROJECT.md` |
+| Game rules: controls, combat, crafting, economy, Box, survival, dialogue | `docs/SYSTEMS.md` |
+| Story, canon, MAP01 specification, and implementation boundaries | `docs/MAP01.txt` |
+| Audio, art, first-person views, attributions, and generators | `docs/ASSETS.md` |
+| History of decisions and previous documents | `docs/HISTORY.md` |
+| Installation, build, and summarized status | `README.md` |
+| Quick summary before reading the rest | `docs/CONTEXT.md` |
+| Active tasks and acceptance criteria | `docs/TASKS.md` |
 
-## Convenciones
+## Conventions
 
-- Código, identificadores y el README general, **en inglés**.
-- Comentarios explicativos y documentación de trabajo, **en español**.
-- Fuentes documentales de texto en UTF-8.
-- Preservar la procedencia y las atribuciones de los recursos propios y externos.
+- Code, identifiers, and the general README are **in English**.
+- Explanatory comments and working documentation are **in Spanish**.
+- Textual documentation sources use UTF-8.
+- Preserve provenance and attribution for owned and external resources.
 
-## Premisas permanentes
+## Permanent premises
 
 Premises 1 to 10 come from `docs/PROJECT.md`, section "Premisas permanentes".
 Premises 11 to 20 were added on request by the author.
@@ -56,39 +56,39 @@ Premises 11 to 20 were added on request by the author.
 1. Code, identifiers, README, and all documentation in English. Explanatory
    comments inside code remain in Spanish, so the author and Spanish-speaking
    collaborators understand the intent of each block.
-2. Preferir funciones nativas estables de GZDoom 4.14.2. Mantener una sola fuente
-   autoritativa para datos y una arquitectura compartida entre armas y actores.
-3. El producto final debe ser independiente: no distribuir assets de Doom.
-   Mantener procedencia, atribuciones y modificaciones de los recursos propios
-   o externos. Las dependencias de desarrollo no equivalen a autorización de distribución.
-4. No inventar valores de balance, recetas, historia ni decisiones pendientes.
-   El diseño del autor y sus correcciones posteriores fijan esos datos.
-5. Proteger lo ya aceptado y validar sólo lo afectado por una revisión.
-   Distinguir análisis estático, prueba aislada del motor y aceptación del autor.
-6. Entregar únicamente archivos nuevos/modificados para copiar y pegar, más
-   un TXT con aplicación y pruebas necesarias; sin instaladores del parche.
-   No incluir IWAD, ejecutables, fixtures de prueba ni un PK3 completo como si
-   fuera la base definitiva cuando sólo se dispone de un delta.
-7. **Documentación consolidada y actualizada en cada parche.** README.md es la
-   entrada general y se revisa con cada entrega. Mantener estos cinco archivos
-   de `docs/`; integrar temas nuevos en sus capítulos antes de crear otro archivo.
-   Un nuevo documento permanente sólo se justifica si el autor lo requiere.
-8. Cada entrega actualiza versión, estado real, decisiones, próximos pasos y
-   resultados de pruebas en el mismo cambio. No duplicar el estado entre un
-   README por parche y varios informes temáticos. Las instrucciones temporales
-   del ZIP quedan fuera de la instalación; las antiguas van al historial.
-9. Conservar historia y contenido único. Antes de retirar un documento, integrar
-   su información vigente y preservar el original. No eliminar silenciosamente
-   archivos locales ni mantener requisitos obsoletos como instrucciones actuales.
-10. **Carpetas con una responsabilidad clara.** Antes de retirar archivos,
-    comprobar consumidores y procedencia. Conservar fuentes útiles en assets,
-    empaquetar sólo src y respaldar retiradas conocidas. El TXT de pruebas
-    de cada entrega no se acumula en los cinco documentos activos. V5.0 reorganiza el
-    código mediante cambios pequeños con compatibilidad de guardado.
-11. Todo cambio debe ser trazable a un issue o tarea.
-12. Ningún agente borra archivos sin autorización explícita.
-13. Los generadores deben ser deterministas (misma entrada, misma salida
-    byte a byte).
+2. Prefer stable native GZDoom 4.14.2 functions. Keep a single authoritative
+   source for data and a shared architecture between weapons and actors.
+3. The final product must be independent: do not distribute Doom assets.
+   Preserve provenance, attribution, and modifications for owned or external
+   resources. Development dependencies do not equal authorization to distribute.
+4. Do not invent balance values, recipes, story, or pending decisions. The
+   author's design and later corrections set those data.
+5. Protect what is already accepted and validate only what a revision affects.
+   Distinguish static analysis, an isolated engine test, and author acceptance.
+6. Deliver only new/modified files to copy and paste, plus a TXT with the
+   required application and tests; no patch installers. Do not include IWADs,
+   executables, test fixtures, or a full PK3 as if it were the definitive base
+   when only a delta is available.
+7. **Consolidated documentation updated in every patch.** `README.md` is the
+   general entry point and is reviewed with each delivery. Keep these five
+   `docs/` files; integrate new topics into their chapters before creating
+   another file. A new permanent document is justified only if the author
+   requires it.
+8. Every delivery updates version, real status, decisions, next steps, and test
+   results in the same change. Do not duplicate state between a per-patch
+   README and several thematic reports. Temporary ZIP instructions stay out of
+   the installation; older ones go to the history.
+9. Preserve history and unique content. Before retiring a document, integrate
+   its current information and preserve the original. Do not silently delete
+   local files or keep obsolete requirements as current instructions.
+10. **Folders with a clear responsibility.** Before removing files, check
+    consumers and provenance. Keep useful sources in assets, package only src,
+    and back up known retirements. Each delivery's test TXT does not accumulate
+    in the five active documents. V5.0 reorganizes code through small changes
+    with save compatibility.
+11. Every change must be traceable to an issue or task.
+12. No agent deletes files without explicit authorization.
+13. Generators must be deterministic (same input, same byte-for-byte output).
 14. One model per task. Routine tasks → economical model (DeepSeek).
     Architecture, narrative, or complex review → advanced model
     (ChatGPT Pro). Document in AGENTS.md which model is expected for each
@@ -113,15 +113,17 @@ Premises 11 to 20 were added on request by the author.
     objective, reference documents, explicit scope, and acceptance criteria.
     A PR without a linked issue is not reviewed.
 
-## Flujo de trabajo esperado
+## Expected workflow
 
-1. **Leer contexto.** Empezar por `docs/CONTEXT.md`, luego el documento canónico
-   correspondiente a la tarea según la tabla anterior.
-2. **Revisar impacto.** Comprobar si el cambio afecta a sistemas ya aceptados;
-   no reabrir lo aprobado sin motivo y no inventar valores pendientes.
-3. **Implementar cambios mínimos.** Modificar solo lo necesario y solo archivos
-   nuevos o afectados.
-4. **Actualizar documentación.** Reflejar versión, estado, decisiones y
-   resultados de pruebas en el mismo cambio.
-5. **Reportar pruebas.** Separar análisis estático, prueba aislada en el motor
-   y aceptación del autor; indicar qué quedó pendiente.
+1. **Read context.** Start with `docs/CONTEXT.md`, then the canonical document
+   for the task per the table above.
+2. **Review impact.** Check whether the change affects already-accepted
+   systems; do not reopen what was approved without reason and do not invent
+   pending values.
+3. **Make minimal changes.** Modify only what is necessary and only new or
+   affected files.
+4. **Update documentation.** Reflect version, status, decisions, and test
+   results in the same change.
+5. **Report tests.** Separate static analysis, an isolated engine test, and
+   author acceptance; state what remains pending.
+

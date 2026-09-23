@@ -1,111 +1,125 @@
-# CONTEXT.md — Resumen ultra-condensado de Caelum Argenteum
+# CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Resumen para que una IA o un colaborador entienda el proyecto sin leer los
-cinco documentos canónicos completos. Fuente: `docs/PROJECT.md`,
-`docs/SYSTEMS.md`, `docs/MAP01.txt`, `docs/ASSETS.md`, `docs/HISTORY.md` y
-`README.md`. Versión documental: **4.36.0i**.
+Summary so an AI or a contributor can understand the project without reading
+the five full canonical documents. Source: `docs/PROJECT.md`,
+`docs/SYSTEMS.md`, `docs/MAP01.txt`, `docs/ASSETS.md`, `docs/HISTORY.md`, and
+`README.md`. Documentation version: **4.36.0i**.
 
-## La premisa del juego
+## The game's premise
 
-Caelum Argenteum es un FPS-RPG de fantasía oscura, independiente, inspirado en
-la Argentina del siglo XIX y desarrollado sobre GZDoom 4.14.2/ZScript. La
-nación recién formada está dividida por intereses políticos, sociales y
-territoriales mientras enfrenta dos invasiones simultáneas.
+Caelum Argenteum is an independent dark-fantasy FPS-RPG inspired by
+nineteenth-century Argentina and built on GZDoom 4.14.2/ZScript. The newly
+formed nation is divided by political, social, and territorial interests while
+facing two simultaneous invasions.
 
-La primera invasión es exterior: los Caelith, habitantes originarios de la
-Luna, descienden sobre la Tierra bajo el mando de la reina Selene. La segunda
-es interior: el Tarot, un poder procedente del Infierno, se infiltra en
-personas, criaturas, objetos, lugares y conflictos; el Culto del Tarot usa esa
-influencia para exacerbar las divisiones y debilitar la resistencia. Ambas
-amenazas provienen del plan de un príncipe infernal que, tras fracasar en
-conquistar la Tierra por la fuerza, decidió corromper la Luna y quebrar la
-Tierra desde dentro.
+The first invasion is external: the Caelith, original inhabitants of the Moon,
+descend upon the Earth under the command of Queen Selene. The second is
+internal: the Tarot, a power from Hell, infiltrates people, creatures, objects,
+places, and conflicts; the Cult of the Tarot uses that influence to sharpen
+the existing divisions and weaken the resistance. Both threats come from the
+plan of an infernal prince who, after repeatedly failing to conquer the Earth
+by force, decided to corrupt the Moon and break the Earth from within.
 
-El protagonista no empieza como héroe ni miembro de una facción: es un errante
-que intentaba escapar del conflicto, muere en circunstancias que no recuerda y
-despierta en una mansión imposible, sin saber que está en el Limbo. Las
-especies principales son alegóricas de la Argentina del siglo XIX: los Hombres
-Bestia representan a los pueblos nativos, los Caelith al colonialismo europeo,
-los duendes a los gauchos y la cultura rural, y los humanos a la sociedad
-urbana porteña.
+The protagonist does not begin as a hero or a declared member of a faction: he
+is a wanderer trying to escape the conflict, dies in circumstances he does not
+remember, and wakes in an impossible mansion without knowing he is in Limbo.
+The main species are allegorical of nineteenth-century Argentina: the Beast Men
+represent the native peoples, the Caelith European colonialism, the duendes
+the gauchos and rural culture, and the humans the urban porteño society.
 
-## Sistemas implementados
+## Implemented systems
 
-- **Combate:** armas físicas cuerpo a cuerpo, armas a distancia e implementos
-  mágicos en tres tiers; bloqueo, apuntado/ADS, ataques cargados, barrido de
-  armas grandes y Channel de Sellos.
-- **Supervivencia:** Hambre, Sed, Sueño, Aire y vida; regeneración,
-  necesidades por masa corporal, digestión, descanso y espera.
-- **Atributos y habilidades:** doce atributos, habilidades raciales y de clase
-  acordadas (solo el Sueño del Arcanista implementado), runas y sellos.
-- **Crafting y equipo:** recetas, reparación, desarme, estaciones, armaduras,
-  munición (flechas y virotes) y cupos de materiales.
-- **Economía y Caja Mágica:** moneda física, transacciones, Caja persistente
-  con reducción de peso y contenido restringido.
-- **Misiones, reputación y facciones:** base de encargos opcionales, estados,
-  condiciones reutilizables de diálogo/acceso/comercio y condiciones de facción.
-- **Tarot:** colección persistente y captura de El Loco; pasivas base de los 56
-  Arcanos Menores por palo; recompensa de cartas.
-- **Mundo y viajes:** Diario de mundo, ubicaciones visitadas, conexiones,
-  puertas agrupadas, caravanas, vehículos costeros (carreta y mercante) y
-  rutas medidas con provisiones.
-- **Tiempo, calendario y clima:** reloj global persistente, calendario civil y
-  de campaña (época 1889-11-03 09:00), agenda mensual de eventos, clima
-  regional SMN y refugio según posición.
-- **Física y peligros:** núcleo Impact Physics, trampilla, foso, rocas, minas
-  explosivas, teletransporte, techo aplastador, peso en reposo y palancas.
-- **MAP01 (mansión/tutorial):** prólogo, Voz desconocida, Palomo, Argento,
-  Caella, Ronnie y Rulo; primera arma, Caja y salida a MAP02.
-- **MAP02 (laberinto):** tres sectores, 147 salas, 96 Mandingas, 45 trampas,
-  tres llaves, 39 cofres, 195 piezas de equipo, Zupay final, 1 de Copas y
-  salida a la costa.
-- **Presentación:** primera persona modular, audio de eventos, localización
-  español/inglés, fuentes tipográficas propias y transiciones del hub.
+- **Combat:** physical melee weapons, ranged weapons, and magical implements in
+  three tiers; blocking, aim/ADS, charged attacks, sweeping heavy weapons, and
+  the equipped-Seal Channel.
+- **Survival:** Hunger, Thirst, Sleep, Air, and health; regeneration, needs by
+  body mass, digestion, rest, and wait.
+- **Attributes and abilities:** twelve attributes, agreed racial and class
+  abilities (only the Arcanist Sleep is implemented), runes, and seals.
+- **Crafting and equipment:** recipes, repair, disassembly, stations, armor,
+  ammunition (arrows and bolts), and material allowances.
+- **Economy and Magic Box:** physical currency, transactions, and a persistent
+  Box with weight reduction and restricted contents.
+- **Quests, reputation, and factions:** optional quest base, states, reusable
+  dialogue/access/trade conditions, and faction conditions.
+- **Tarot:** persistent collection and capture of El Loco; base passives for
+  the 56 Minor Arcana by suit; card rewards.
+- **World and travel:** world Journal, visited locations, connections, grouped
+  doors, caravans, coastal vehicles (carriage and merchant ship), and measured
+  routes with provisions.
+- **Time, calendar, and climate:** persistent global clock, civil and campaign
+  calendar (epoch 1889-11-03 09:00), monthly event agenda, SMN regional
+  climate, and position-dependent shelter.
+- **Physics and hazards:** Impact Physics core, trapdoor, pit, rocks, explosive
+  mines, teleport, ceiling crusher, resting weight, and levers.
+- **MAP01 (mansion/tutorial):** prologue, Unknown Voice, Palomo, Argento,
+  Caella, Ronnie, and Rulo; first weapon, Box, and exit to MAP02.
+- **MAP02 (maze):** three sections, 147 rooms, 96 Mandingas, 45 traps, three
+  keys, 39 chests, 195 equipment pieces, final Zupay, Ace of Cups, and the
+  coast exit.
+- **Presentation:** modular first-person view, event audio, Spanish/English
+  localization, project typography, and hub transitions.
 
-## Estado actual
+## Current status
 
-Versión **4.36.0i**. Compilación y pruebas nativas ejecutadas en GZDoom
-g4.14.2 sobre Linux con Freedoom de desarrollo. Funcionan la base 4.36
-(trampilla, rocas, trampas aprobadas, techo), el laberinto MAP02, la fórmula
-de peso en reposo aprobada, las raciones y las mesas de MAP01 a capacidad.
+Version **4.36.0i**. Native compilation and tests were run on GZDoom g4.14.2
+on Linux with development Freedoom. Working: the 4.36 base (trapdoor, rocks,
+approved traps, ceiling), the MAP02 maze, the approved resting-weight formula,
+rations, and MAP01 tables at full capacity.
 
-Pendiente:
+Pending:
 
-- Aceptación visual y recorrido en Windows 11.
-- Guardado/carga manual interrumpiendo trampas o combates.
-- Cerrar 4.36: superficies dañinas, avalanchas, arietes, catapultas y sectores
-  móviles, con su integración y validación antes de extraer Impact Physics.
+- Visual acceptance and playthrough on Windows 11.
+- Manual save/load interrupting traps or combat.
+- Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
+  sectors, with their integration and validation before extracting Impact
+  Physics.
 
-Después de 4.36 sigue 4.37 (Tarot/Trucazo), luego la exportación de prueba de
-V4 y, recién después, V5.
+After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
+then V5.
 
-## Estructura del repositorio (resumida)
+## Repository structure (summarized)
 
-- `src/`: todo lo empaquetado en el PK3 (mapas, ZScript, sprites, modelos,
-  fuentes, sonidos, música, gráficos, licencias).
-- `docs/`: los cinco documentos canónicos más `CONTEXT.md` y `TASKS.md`.
-- `assets/`: fuentes de arte/audio, clima, primera persona, generadores
-  opcionales y manifiestos; no se empaqueta en runtime.
-- `build/`: PK3 regenerable.
-- `archive/`: respaldos de versiones anteriores.
-- Raíz: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`.
+- `src/`: everything packaged into the PK3 (maps, ZScript, sprites, models,
+  fonts, sounds, music, graphics, licenses).
+- `docs/`: the five canonical documents plus `CONTEXT.md` and `TASKS.md`.
+- `assets/`: art/audio sources, climate, first-person views, optional
+  generators, and manifests; not packaged at runtime.
+- `build/`: regenerable PK3.
+- `archive/`: backups of previous versions.
+- Root: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`.
 
-## Premisas críticas (resumen de las 13)
+## Critical premises (summary of the 20)
 
-1. Código e identificadores en inglés; comentarios y documentación en español.
-2. Preferir funciones nativas estables de GZDoom 4.14.2 y una sola fuente
-   autoritativa de datos.
-3. Producto final independiente de los assets de Doom; preservar procedencia.
-4. No inventar balance, recetas, historia ni decisiones pendientes.
-5. Proteger lo aceptado y validar solo lo afectado.
-6. Entregar archivos nuevos/modificados y un TXT de pruebas; sin instaladores.
-7. Documentación consolidada y actualizada en cada parche.
-8. Cada entrega actualiza versión, estado y resultados en el mismo cambio.
-9. Conservar historia y contenido único; no borrar en silencio.
-10. Carpetas con responsabilidad clara; empaquetar solo `src`.
-11. Todo cambio debe ser trazable a un issue o tarea.
-12. Ningún agente borra archivos sin autorización explícita.
-13. Los generadores deben ser deterministas (misma entrada, misma salida
-    byte a byte).
+1. Code and identifiers in English; explanatory comments and documentation in
+   Spanish.
+2. Prefer stable native GZDoom 4.14.2 functions and a single authoritative
+   data source.
+3. Final product independent of Doom assets; preserve provenance.
+4. Do not invent balance, recipes, story, or pending decisions.
+5. Protect what is accepted and validate only what is affected.
+6. Deliver new/modified files and a test TXT; no installers.
+7. Consolidated documentation updated in every patch.
+8. Every delivery updates version, status, and results in the same change.
+9. Preserve history and unique content; do not delete silently.
+10. Folders with clear responsibility; package only `src`.
+11. Every change must be traceable to an issue or task.
+12. No agent deletes files without explicit authorization.
+13. Generators must be deterministic (same input, same byte-for-byte output).
+14. One model per task: routine → economical model (DeepSeek); architecture,
+    narrative, or complex review → advanced model (ChatGPT Pro).
+15. Saves always migratable: explicit, tested, reversible migration with a
+    revision number and idempotent logic.
+16. Data outside logic: balance, recipes, coordinates, names, and texts live in
+    data or documents; ask rather than invent.
+17. One change, one reason: do not mix visual, balance, and code changes.
+18. Cross-verification between AIs: DeepSeek reviews ChatGPT's code, ChatGPT
+    reviews DeepSeek's design.
+19. Documentation is the contract: if code and docs differ, the docs prevail
+    until updated; report discrepancies, do not "fix" the code silently.
+20. Issues are the unit of work: every significant change comes from an issue
+    with scope and acceptance criteria; a PR without a linked issue is not
+    reviewed.
 
-La lista completa, verbatim, está en `AGENTS.md` y en `docs/PROJECT.md`.
+The full verbatim list is in `AGENTS.md` and `docs/PROJECT.md`.
+
