@@ -1380,6 +1380,34 @@ src/licenses. Los iconos T2/T3 incorporados en 0d están aceptados; continúan
 pendientes las vistas de primera persona restantes y el contenido visual de
 las futuras alcantarillas. No recuperar placeholders Doom al reconstruir paquetes.
 
+## Material fuente histórico
+
+Fuentes que no se empaquetan en el PK3 y que se conservan únicamente como
+procedencia histórica, para auditar decisiones y permitir reeditar arte si el
+autor lo solicita. Proceden de la auditoría de `assets/` registrada en
+`archive/audits/assets-audit.md`.
+
+### `assets/source/art/domingo_fp_4_32_0h|0i|0j|0n/`
+
+- **Ruta:** `assets/source/art/domingo_fp_4_32_0h/`, `..._4_32_0i/`,
+  `..._4_32_0j/` y `..._4_32_0n/`.
+- **Contenido:** orígenes de primera persona de Domingo (manos, agarres y
+  prompts de generación), movidos a `source/art/` en la revisión 4.33.0h.
+- **Revisión asociada:** 4.33.0h (véase `docs/HISTORY.md`, entrada 4.33.0h).
+- **Nota:** 16 archivos, ~1,32 MB. Se conservan como procedencia histórica;
+  no entran al PK3.
+
+### `assets/first_person_v3/`
+
+- **Ruta:** `assets/first_person_v3/`.
+- **Contenido:** procedencia de las correcciones de primera persona de 4.36.0e
+  (`README.md`, `PROMPTS.json`, `PROVENANCE.json` y `SPRITES.json`); su README
+  interno los describe.
+- **Revisión asociada:** 4.36.0e.
+- **Nota:** 4 archivos, ~0,01 MB. La serie v1, v2, v4, v5, v6 y v7 está citada
+  en `ASSETS.md`; v3 se omitió por error. Se conserva como procedencia
+  histórica; no entra al PK3.
+
 ## Fuentes y generadores después de la auditoría 4.33.0h
 
 Los 20 archivos de `art_source/` pasan íntegros a `assets/source/art/`. Se
