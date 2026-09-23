@@ -1,56 +1,57 @@
-# TASKS.md — Tareas activas
+# TASKS.md — Active tasks
 
-Lista de tareas activas del proyecto. Se actualiza con cada tarea.
+List of the project's active tasks. It is updated with every task.
 
-Formato de cada entrada: ID, título, estado, documentos de referencia y
-criterios de aceptación. Si un dato no está definido en los documentos
-canónicos, se escribe `PENDIENTE`; no se inventa.
+Format of each entry: ID, title, status, reference documents, and acceptance
+criteria. If a datum is not defined in the canonical documents, write
+`PENDIENTE`; do not invent it.
 
-## Pendientes de 4.36
+## Pending in 4.36
 
-Estas tareas cierran el bloque V4.36 (entorno móvil y peligros físicos). Según
-`docs/PROJECT.md`, 4.36 ya incluye la trampilla, el foso, las rocas, las
-trampas aprobadas, el techo aplastador y la fórmula de peso en reposo; lo que
-falta es completar las bases previstas y validar su integración antes de
-extraer Impact Physics.
+These tasks close the V4.36 block (mobile environment and physical hazards).
+According to `docs/PROJECT.md`, 4.36 already includes the trapdoor, the pit,
+the rocks, the approved traps, the ceiling crusher, and the resting-weight
+formula; what remains is to complete the planned bases and validate their
+integration before extracting Impact Physics.
 
-### CA-436-01 — Superficies dañinas
+### CA-436-01 — Damaging surfaces
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36),
-  `docs/SYSTEMS.md` (sección de peligros físicos).
-- **Criterios de aceptación:** PENDIENTE. La documentación actual solo la
-  enuncia como base prevista; los criterios concretos los fija el autor.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap),
+  `docs/SYSTEMS.md` (physical hazards section).
+- **Acceptance criteria:** PENDIENTE. The current documentation only states it
+  as a planned base; the concrete criteria are set by the author.
 
-### CA-436-02 — Avalanchas
+### CA-436-02 — Avalanches
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36).
-- **Criterios de aceptación:** PENDIENTE.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
+- **Acceptance criteria:** PENDIENTE.
 
-### CA-436-03 — Arietes
+### CA-436-03 — Rams
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36).
-- **Criterios de aceptación:** PENDIENTE.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
+- **Acceptance criteria:** PENDIENTE.
 
-### CA-436-04 — Catapultas
+### CA-436-04 — Catapults
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36).
-- **Criterios de aceptación:** PENDIENTE.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
+- **Acceptance criteria:** PENDIENTE.
 
-### CA-436-05 — Sectores móviles
+### CA-436-05 — Moving sectors
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36).
-- **Criterios de aceptación:** PENDIENTE.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
+- **Acceptance criteria:** PENDIENTE.
 
-## Integración y cierre de 4.36
+## Integration and closing of 4.36
 
-- **Estado:** Pendiente.
-- **Documentos de referencia:** `docs/PROJECT.md` (roadmap V4.36 y "Qué falta
-  para cerrar 4.36").
-- **Criterios de aceptación:** validar la integración de los mecanismos en la
-  galería, la persistencia y el reinicio; extraer Impact Physics solo después
-  de validar su uso en Caelum. Los criterios numéricos quedan PENDIENTE.
+- **Status:** Pending.
+- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap and "What remains
+  to close 4.36").
+- **Acceptance criteria:** validate the integration of the mechanisms in the
+  gallery, persistence, and reset; extract Impact Physics only after
+  validating its use in Caelum. Numerical criteria remain PENDIENTE.
+

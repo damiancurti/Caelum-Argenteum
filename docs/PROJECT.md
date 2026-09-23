@@ -2065,9 +2065,10 @@ La migración 0h aceptada se conserva; V5 reorganizará el código de programaci
 
 ## Premisas permanentes
 
-1. Código, identificadores y README general en inglés; comentarios explicativos
-   y documentación de trabajo en español. Fuentes documentales de texto UTF-8;
-   mantener formato monoespaciado en las exportaciones de documentación personal.
+1. Código, identificadores, README y toda la documentación en inglés. Los
+   comentarios explicativos dentro del código permanecen en español, para que
+   el autor y los colaboradores hispanohablantes entiendan la intención de
+   cada bloque.
 2. Preferir funciones nativas estables de GZDoom 4.14.2. Mantener una sola fuente
    autoritativa para datos y una arquitectura compartida entre armas y actores.
 3. El producto final debe ser independiente: no distribuir assets de Doom.
@@ -2098,6 +2099,36 @@ La migración 0h aceptada se conserva; V5 reorganizará el código de programaci
     empaquetar sólo src y respaldar retiradas conocidas. El TXT de pruebas
     de cada entrega no se acumula en los cinco documentos activos. V5.0 reorganiza el
     código mediante cambios pequeños con compatibilidad de guardado.
+11. Todo cambio debe ser trazable a un issue o tarea.
+12. Ningún agente borra archivos sin autorización explícita.
+13. Los generadores deben ser deterministas (misma entrada, misma salida
+    byte a byte).
+14. Un modelo por tarea. Tareas rutinarias → modelo económico (DeepSeek).
+    Arquitectura, narrativa o revisión compleja → modelo avanzado
+    (ChatGPT Pro). Documentar en AGENTS.md qué modelo se espera para cada
+    tipo de tarea.
+15. Guardados siempre migrables. Ningún cambio puede invalidar un guardado
+    existente sin una migración explícita, probada y reversible. Los cambios
+    de esquema llevan un número de revisión y lógica de migración idempotente.
+16. Datos fuera de la lógica. Los valores de balance, recetas, coordenadas,
+    nombres y textos viven en datos o documentos, nunca hardcodeados en la
+    lógica. Si un agente necesita un número que no está en los documentos,
+    debe preguntar, no inventarlo.
+17. Un cambio, un motivo. Cada commit o PR atiende un único propósito. Los
+    cambios visuales, de balance y de código no se mezclan, para poder
+    revertir sólo lo que falló.
+18. Verificación cruzada entre IAs. Cuando sea posible, una IA revisa el
+    trabajo de otra. DeepSeek revisa el código de ChatGPT; ChatGPT revisa el
+    diseño de DeepSeek. Reduce errores sin que el autor tenga que revisar
+    cada línea.
+19. La documentación es el contrato. Si el código y la documentación difieren,
+    la documentación prevalece hasta que se actualice. Un agente que detecte
+    una discrepancia debe reportarla, no "arreglar" el código en silencio para
+    que coincida.
+20. Los issues son la unidad de trabajo. Todo cambio significativo (código,
+    balance, documento, mapa) nace de un issue que describe el problema u
+    objetivo, los documentos de referencia, el alcance explícito y los
+    criterios de aceptación. Un PR sin un issue vinculado no se revisa.
 
 ## Mapa de documentos
 

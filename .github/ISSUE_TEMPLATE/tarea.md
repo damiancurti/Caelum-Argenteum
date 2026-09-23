@@ -1,42 +1,43 @@
 ---
-name: Tarea
-about: Registrar una tarea de trabajo en Caelum Argenteum
-title: "[Tarea] "
+name: Task
+about: Register a work task in Caelum Argenteum
+title: "[Task] "
 labels: []
 assignees: []
 ---
 
-## Contexto
+## Context
 
-<!-- Describe la situación actual y por qué hace falta esta tarea. -->
+<!-- Describe the current situation and why this task is needed. -->
 
-## Objetivo
+## Objective
 
-<!-- Qué se busca lograr, de forma concreta. -->
+<!-- What is to be achieved, concretely. -->
 
-## Documentos de referencia
+## Reference documents
 
-<!-- Archivos canónicos relevantes: docs/PROJECT.md, docs/SYSTEMS.md,
+<!-- Relevant canonical files: docs/PROJECT.md, docs/SYSTEMS.md,
      docs/MAP01.txt, docs/ASSETS.md, docs/HISTORY.md, README.md, etc. -->
 
-## Alcance
+## Scope
 
-**Incluye:**
+**Includes:**
 
-- <!-- Qué abarca esta tarea. -->
+- <!-- What this task covers. -->
 
-**No incluye:**
+**Does not include:**
 
-- <!-- Qué queda fuera de esta tarea. -->
+- <!-- What is out of scope for this task. -->
 
-## Criterios de aceptación
+## Acceptance criteria
 
-- [ ] <!-- Condición verificable de finalización. -->
+- [ ] <!-- Verifiable condition for completion. -->
 
-## Etiquetas sugeridas
+## Suggested labels
 
-<!-- Por ejemplo: docs, gameplay, física, arte, audio, build, balance. -->
+<!-- For example: docs, gameplay, physics, art, audio, build, balance. -->
 
-## Enlaces relacionados
+## Related links
 
-- <!-- Issues, tareas o PR relacionados. -->
+- <!-- Related issues, tasks, or PRs. -->
+
