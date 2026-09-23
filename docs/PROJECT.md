@@ -48,7 +48,7 @@ carriage and other 0h tests. It is authorized to rebuild MAP02 without preservin
   final chamber. The hub retains the objects and the loot removed.
 
 [VERIFIED] Compilation and native tests in Linux with GZDoom 4.14.2 and development Freedoom. Real inventory of chests, locks, card, food, water, tables, weight and spin
-of the flail; coverage and static routes of the map. Reports separate those checks from a complete human playthrough. [PENDING] Visual acceptance and playthrough on Windows 11; manual save/load interrupting traps/combat. The original guide was PRUEBAS_4_36_0i.txt; current outstanding checks are carried in [pending_test.txt](../pending_test.txt).
+of the flail; coverage and static routes of the map. Reports separate those checks from a complete human playthrough. On 2026-09-23 the author accepted the maze, save/load, table and bow-art checks. Final flail pose remains partial: approximately 10 degrees more counterclockwise is requested (#9). A new report of a multi-second stall when equipping an empty bow is tracked in #8. The original guide was PRUEBAS_4_36_0i.txt; current outstanding checks are carried in [pending_test.txt](../pending_test.txt), with confirmations in HISTORY.
 
 ### Major Arcana and block closure
 
@@ -57,7 +57,8 @@ and El Sol. Old ideas for other Majors are not converted into approved assignmen
 the Ace of Cups uses the shared reverse and its textual identification, without inventing a
 front.
 
-To close this increment, the author's acceptance is missing. To close all 4.36, harmful
+The remaining 0i corrections are the flail pose (#9) and empty-bow stall (#8);
+the other reported tests are accepted. To close all 4.36, harmful
 surfaces, avalanches, rams, catapults and mobile sectors remain on the roadmap, their
 integration and validation before extracting Impact Physics. The following sections record
 previous deliveries; they do not reverse the status 0i.

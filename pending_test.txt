@@ -1,109 +1,33 @@
 ID: CA-4361-WINDOWS-01
 Originating patch: 4.36.1
 Issue: #6 (https://github.com/damiancurti/Caelum-Argenteum/issues/6)
-Test: Validate and launch with the author's installed Windows/Python environment.
-Prerequisites: Complete 4.36.1 checkout on Windows 11; installed Python,
-GZDoom 4.14.2 and the author's development IWAD; close GZDoom before building.
+Test: Confirm the remaining Windows launcher and build-identification checks.
+Prerequisites: Complete 4.36.1 checkout on Windows 11; installed GZDoom 4.14.2
+and the author's development IWAD; close GZDoom before building.
 Steps:
-1. Open PowerShell in the directory containing README.md. Run python --version,
-   then python validate_project.py, then $LASTEXITCODE. Retain the output.
-2. Check the GZDOOM_EXE and DOOM2_IWAD paths in run_dev.bat, then run
+1. Check the GZDOOM_EXE and DOOM2_IWAD paths in run_dev.bat, then run
    .\run_dev.bat. Wait for the rebuilt game to reach its title screen.
-3. In a disposable test game, open the GZDoom console and run map MAP02,
+2. In a disposable test game, open the GZDoom console and run map MAP02,
    then netevent ca_debug_maze_report and netevent ca_debug_hazards_report.
-Expected: Validation reports version 4.36.1, seven documents, errors: [], and
-exit code 0. The builder reports successful PK3 creation and the game opens
-without script errors. Both diagnostic headers identify 4.36.1. Report the
-test ID, Python version, result and any failure output; no full replay is
-required for this documentation patch.
+Expected: The builder reports successful PK3 creation and the game opens
+without script errors. Both diagnostic headers identify 4.36.1. Report this
+test ID and any failure output. If these exact checks have already been done,
+report their observed results without repeating them. No full replay is required.
 
 ID: CA-4360I-VISUAL-01
 Originating patch: 4.36.0i
-Issue: Legacy release; no original issue recorded. Carried forward by #6.
-Test: Author acceptance of the revised flail and thicker bows.
-Prerequisites: Windows 11/GZDoom 4.14.2; rebuilt current checkout; a disposable
-game with the flail, normal bow, longbow and arrows, obtained from MAP02 chests.
-The comparison artwork is in assets/first_person_v7; existing accepted palette,
-hand placement and unrelated weapons are not reopened by this test.
+Issue: Legacy release carried forward by #6; remaining correction tracked in #9
+(https://github.com/damiancurti/Caelum-Argenteum/issues/9).
+Test: Accept the additional counterclockwise flail adjustment after its correction.
+Prerequisites: Windows 11/GZDoom 4.14.2; a rebuilt version containing the issue #9
+flail correction; a disposable game with the flail. Use the current 4.36.0i/4.36.1
+pose as the comparison for the additional rotation.
 Steps:
 1. Equip the flail through Inventory. Inspect rest, perform a primary attack,
    let it finish, then holster and equip it again.
-2. Equip each bow with ammunition; inspect rest, aim/draw and release a shot
-   using the configured primary/secondary attack controls. Inspect the held
-   weapon and its inventory/ground representation separately.
-Expected: Flail handle is rotated 22.5 degrees counterclockwise from 0h, with
-half the formerly exposed shaft inside the glove. Chain/ball are behind it,
-hang vertically at rest, make a full counterclockwise revolution during an
-accepted attack and return to rest. Both bow staves have twice their previous
-first-person thickness; curvature, muted palette, hands, string and arrow
-layering remain as accepted. Inventory icons and ground sprites are unchanged.
-Report visual acceptance or remaining objections explicitly under this ID.
-
-ID: CA-4360I-MAZE-01
-Originating patch: 4.36.0i
-Issue: Legacy release; no original issue recorded. Carried forward by #6.
-Test: Windows playthrough of the rebuilt MAP02 and its persistent hub exit.
-Prerequisites: Windows 11/GZDoom 4.14.2; fresh MAP02 from the current checkout.
-Use a separate test campaign: map MAP02 resets the character. Do not use a
-pre-0i MAP02 save to test the replaced geometry.
-Steps:
-1. Enter through the mansion exit or run map MAP02 in a disposable game.
-   Run netevent ca_debug_maze_report before collecting anything.
-2. Explore the three maze sections. Use opens chests; pick up their real
-   contents. Try a locked section door before and after obtaining its key.
-   Try reopening an emptied chest.
-3. Reach the final chamber; check the exit while Zupay is alive, defeat him,
-   obtain the Ace of Cups through the native interaction and take the coast
-   exit. Return through the hub connection.
-Expected: The initial map has 147 rooms, 96 Mandingas, 45 traps, three keys,
-39 chests containing 195 distinct equipment pieces, and 120 food plus 120
-water rations. Doors require the correct keys; emptied chests do not refill.
-Zupay guards the Ace of Cups; the coast exit requires his defeat and the card.
-The card uses the shared Tarot back, its own name and Minor Arcana reward
-(+1 to each social attribute and +1% collection bonus). Return reaches the
-final chamber and retains collected loot/card state. Report any obstruction
-or failure and the test ID; no new balance thresholds are implied.
-
-ID: CA-4360I-SAVE-01
-Originating patch: 4.36.0i
-Issue: Legacy release; no original issue recorded. Carried forward by #6.
-Test: Manual save/load during maze combat and an activated physical hazard.
-Prerequisites: Current Windows 11/GZDoom 4.14.2 checkout; separate test saves
-from a fresh 0i-or-later MAP02 and MAP08. Use the configured Save/Load controls;
-do not overwrite the author's campaign saves.
-Steps:
-1. In MAP02, collect loot and a key, then save during a live Mandinga fight.
-   Note health, inventory, enemy condition and the chest/door state. Reload
-   and resume the fight; save and reload again after it ends.
-2. In a separate game run map MAP08. Use the rolling-rock release at
-   (1152,1344,0), targeting the rock with TID 43602. Save while the released
-   rock is moving, reload, and observe it finish. Run
-   netevent ca_debug_hazards_report before and after loading.
-3. Activate the trapdoor centered at (1408,896,0). Save/load after it opens,
-   climb out using the eastern stairs, leave through the lobby connection
-   and return. Do not use the gallery reset lever during this check.
-Expected: Combat, health, real inventory, keys and collected loot persist
-without duplication. The released rock resumes its saved state; using its
-spent lever does not release a new rock. The trapdoor remains open and the
-pit/stairs remain traversable after load and hub return. Report each subcase;
-a partial pass leaves this test pending.
-
-ID: CA-4360I-TABLES-01
-Originating patch: 4.36.0i
-Issue: Legacy release; no original issue recorded. Carried forward by #6.
-Test: Windows acceptance of full MAP01 tables and persistent real servings.
-Prerequisites: Fresh MAP01 in a separate test campaign on the current build;
-do not overwrite an existing campaign. Use the configured Use and Inventory
-controls; no inventory injection or asset regeneration is needed.
-Steps:
-1. Visit the four small bedroom tables, the normal cave-room table and the
-   large upstairs banquet table. Inspect their initial real food contents.
-2. Take a ration from a table, inspect its inventory weight, then consume it
-   when Hunger is below full. Wait for its serving to finish.
-3. Save, reload and revisit that table; verify the consumed/removed ration
-   has not reappeared and the other stored objects remain.
-Expected: Initial capacities are 4,4,4,4,18,60 real rations (94 total), each
-weighing 200 g. Table contents are persistent and allocated only once; taking,
-eating or reloading does not replenish them. The completed serving restores
-Hunger with the established digestion Sleep cost. Report the ID and any
-failure without asserting results for unperformed portions of the test.
+2. Repeat for the three tiers and compare the handle angle with the previous pose.
+Expected: The handle is approximately 10 degrees further counterclockwise from
+its 4.36.0i/4.36.1 pose, retaining its insertion into the glove. Chain/ball remain
+behind the handle, hang vertically at rest, make a full counterclockwise attack
+revolution and return to rest. Report final visual acceptance or objections
+under this stable ID; do not repeat accepted bow-art or unrelated gameplay tests.

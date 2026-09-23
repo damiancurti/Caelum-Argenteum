@@ -13,7 +13,10 @@ original spelling; game localization and runtime behavior are unchanged.
 Release-specific sections preserve the state at their original date. Current
 author checks live in [pending_test.txt](../pending_test.txt); recorded results
 are in [HISTORY](HISTORY.md). This documentation patch does not constitute a
-new engine test or author acceptance of the retained 4.36.0i systems.
+new engine test or automatic author acceptance of the retained 4.36.0i systems.
+Actual author confirmation received on 2026-09-23 is recorded in HISTORY:
+maze, save/load and tables passed; flail pose remains partial and an empty-bow
+equip stall is reported. Corrections #8/#9 are planned, not implemented here.
 
 ## 4.36.0i — active rules and maze
 

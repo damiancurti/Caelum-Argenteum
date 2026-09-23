@@ -82,17 +82,22 @@ its directory was added to the test process's PATH to exercise the documented
 
 ### Engine verification and author acceptance
 
-No new engine session or author acceptance is claimed for this documentation
-patch. Earlier native engine evidence below retains its original release and
-limitations. No save migration is introduced.
+No new agent engine session is claimed for this documentation patch. Earlier
+native engine evidence below retains its original release and limitations.
+No save migration is introduced.
 
-Outstanding checks: CA-4361-WINDOWS-01 for the author's installed Python/launcher
-and diagnostic headers; CA-4360I-VISUAL-01, CA-4360I-MAZE-01,
-CA-4360I-SAVE-01 and CA-4360I-TABLES-01 retain the documented 4.36.0i acceptance
-scope. Their executable instructions are only in the root queue. Accepted 0h
-and earlier work is not reopened. Next: review the linked PR and record actual
-author confirmations through the queue lifecycle; remaining 4.36 development
-continues in TASKS without invented acceptance criteria.
+Author report recorded on 2026-09-23: CA-4361-WINDOWS-01, originating patch
+4.36.1 / issue #6, is PARTIALLY CONFIRMED. Damián reports that
+validate_project.py produced zero errors. The Python version, explicit rebuilt
+launcher result and the two diagnostic version headers were not supplied;
+the remaining launcher/header checks stay in pending_test.txt. The confirmed
+validator step is removed from the pending instructions in this same update.
+
+The accepted 4.36.0i checks and its qualified visual result are recorded in
+their originating release below. The bow stall is tracked by issue #8
+(planned 4.36.2); the additional flail rotation by issue #9 (planned 4.36.3).
+Those fixes are not implemented by this acceptance-record update. The current
+release remains 4.36.1 and PR #7 remains subject to author merge approval.
 
 ## 4.36.0i — approved weight, provisions and complete maze
 
@@ -113,11 +118,38 @@ continues in TASKS without invented acceptance criteria.
 
 Compilation and native tests ran in GZDoom g4.14.2/Linux with development
 Freedoom 0.13.0. Previously accepted author tests remain closed; acceptance of
-this increment and the Windows playthrough remain outstanding. The entire
+this increment and the Windows playthrough were outstanding at delivery. The entire
 4.36 physics roadmap is not declared complete. The missing separate 0i guide
 is superseded for current use by the root pending_test.txt, introduced in #6;
-its outstanding checks retain their 4.36.0i origin. No new author confirmation
-has been recorded for these carried-forward tests.
+its outstanding checks retain their 4.36.0i origin.
+
+### Author acceptance recorded on 2026-09-23
+
+Damián explicitly confirmed that the 4.36.0i tests passed, with the flail-angle
+request and empty-bow stall described below. This is the author's aggregate
+confirmation, not a new agent engine run or an independently supplied log of
+each subcase. Origin for all four IDs: 4.36.0i, legacy release without an original
+issue; carried into the repository by issue #6.
+
+| Test ID | Result | Confirmation date | Scope and qualification |
+| --- | --- | --- | --- |
+| CA-4360I-MAZE-01 | PASS | 2026-09-23 | MAP02 playthrough, keys, loot, final encounter/card and hub exit; author's aggregate confirmation. |
+| CA-4360I-SAVE-01 | PASS | 2026-09-23 | The listed combat/hazard save-load checks; author's aggregate confirmation. |
+| CA-4360I-TABLES-01 | PASS | 2026-09-23 | Full tables and persistent servings; author's aggregate confirmation. |
+| CA-4360I-VISUAL-01 | PARTIAL | 2026-09-23 | Bow appearance and the other tested visual portions accepted; final flail pose still needs approximately 10 degrees more counterclockwise rotation. |
+
+The three passed entries are removed from pending_test.txt in this same update.
+CA-4360I-VISUAL-01 keeps its ID and original provenance, with only the remaining
+flail check; issue [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)
+plans that additional rotation from the current pose, preserving the grip,
+rear chain layer, vertical rest and counterclockwise full attack revolution.
+
+Separate author-reported defect: equipping a bow with no arrows froze the game
+for several seconds; after obtaining an arrow it worked normally. The exact
+bow family/tier and repeatability were not specified. The cause has not been
+independently established. Issue [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8)
+tracks diagnosis and correction; acceptance of bow art does not confirm that
+the empty-ammunition path is fixed. No related gameplay fix is included here.
 
 ## 4.36.0h — 90° rotation, specified mask and percentage damage
 

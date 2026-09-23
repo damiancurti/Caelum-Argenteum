@@ -36,7 +36,12 @@ alpha, not the game.
 The ENGINE_FLAIL/ENGINE_STANDARD_BOW/ENGINE_LONGBOW.png captures come from GZDoom 4.14.2
 (Linux, OpenGL llvmpipe, 1280×720). They are not reconstructions. COMPOSITION.json records
 the factors used. ENGINE_FLAIL_SPIN.txt retains the native angles of the attack. The final
-aesthetic acceptance corresponds to the author.
+aesthetic acceptance corresponds to the author. On 2026-09-23 the author
+accepted the bow appearance and requested approximately 10 degrees more
+counterclockwise flail rotation from this pose (#9, planned 4.36.3).
+CA-4360I-VISUAL-01 remains partial for that flail correction. The separate
+empty-bow equip stall (#8, planned 4.36.2) is a runtime report, not a rejection
+of the accepted bow art. These corrections are not yet implemented.
 
 MAP02.wad is generated with generate_map02_maze.py, only Python standard library.
 MAP02_MANIFEST.json describes geometry, keys, traps, enemies and all the loot. It reuses

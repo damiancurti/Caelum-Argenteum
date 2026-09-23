@@ -75,11 +75,15 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Visual acceptance and playthrough on Windows 11.
-- Manual save/load interrupting traps or combat.
+- Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
+- Reported multi-second stall when equipping a bow without arrows (#8, planned 4.36.2).
+- Remaining 4.36.1 launcher and diagnostic-header confirmation; the author reports zero validator errors.
 - Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
   sectors, with their integration and validation before extracting Impact
   Physics.
+
+On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
+and bow appearance. The exceptions above remain open; detailed results are in HISTORY.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
 then V5.
@@ -142,4 +146,3 @@ its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 All seven docs and AGENTS declare the current version; ancillary guides without
 a header inherit README's version. Historical labels retain their original meaning.
-

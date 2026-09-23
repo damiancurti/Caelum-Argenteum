@@ -11,8 +11,9 @@ criteria. If a datum is not defined in the canonical documents, write
 ## Issue #6 — Documentation and validation workflow (4.36.1)
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/6
-- **Status:** Implemented and statically verified; PR review and author acceptance
-  remain separate. No new author confirmation has been recorded.
+- **Status:** Implemented and statically verified; PR #7 is open. On 2026-09-23
+  the author confirmed zero validator errors. The remaining launcher/header
+  checks and merge approval are pending; partial acceptance is recorded in HISTORY.
 - **References:** AGENTS, README and the five canonical documents; validator,
   builder, launcher and issue template.
 - **Scope:** English maintained documentation; numeric versions; repository-first
@@ -34,6 +35,20 @@ linked PR, then record author acceptance when required. Multiple implementation
 commits and later acceptance retain the same patch version. Outstanding tests
 from earlier releases stay in the same queue. The queue may be empty; it must
 remain tracked. Backlog tasks below are not executable author tests.
+
+## Focused corrections after the author's 4.36.0i tests
+
+- **Issue #8 / planned 4.36.2:** [Empty-bow equip stall](https://github.com/damiancurti/Caelum-Argenteum/issues/8).
+  Reported by the author, not independently reproduced; diagnose first-use and
+  repeated empty/loaded transitions, then apply the smallest verified correction.
+  Preserve accepted bow appearance, ammunition rules and save compatibility.
+- **Issue #9 / planned 4.36.3:** [Additional flail rotation](https://github.com/damiancurti/Caelum-Argenteum/issues/9).
+  Rotate the current first-person handle approximately 10 degrees further
+  counterclockwise while preserving grip, rear chain, vertical rest and attack spin.
+  Retain CA-4360I-VISUAL-01 until the author accepts the corrected pose.
+- Start each patch from the preceding merged version. These two issues are not
+  implemented by the 4.36.1 acceptance-record update. Accepted maze, save/load,
+  table and bow-art checks are recorded in HISTORY and are not reopened.
 
 ## Pending in 4.36
 
@@ -83,4 +98,3 @@ integration before extracting Impact Physics.
 - **Acceptance criteria:** validate the integration of the mechanisms in the
   gallery, persistence, and reset; extract Impact Physics only after
   validating its use in Caelum. Numerical criteria remain PENDING.
-

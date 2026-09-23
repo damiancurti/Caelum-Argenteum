@@ -23,7 +23,10 @@ within the Box. MAP02 now contains the requested maze, the three keys, the Zupay
 of Cups, with exit to the coast when completed. Changing geometry requires starting a new
 MAP02 or a new campaign.
 
-The native 0i test confirmed six tables with 94 rations and 94 slots. The following
+The native 0i test confirmed six tables with 94 rations and 94 slots. On
+2026-09-23 the author confirmed CA-4360I-TABLES-01 and the MAP02/save-load checks;
+the originating results are recorded in HISTORY. No map changes accompany this
+acceptance update. The following
 sections are background sections of the mansion.
 
 ## 4.36.0e — corrections requested after testing 0d

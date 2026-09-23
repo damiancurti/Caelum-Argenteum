@@ -48,7 +48,11 @@ inventory transactions, key-controlled doors, resource arithmetic and the
 flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
 0.13.0 solely as a development IWAD. Native screenshots are in
 `assets/first_person_v7/`; validation records are in `assets/validation_0i/`.
-Windows 11 playthrough and the author's final visual acceptance remain pending.
+On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
+Bow appearance is accepted; the flail still needs approximately 10 degrees more
+counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
+A reported stall when equipping a bow without arrows is tracked separately in
+[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8). Neither fix is included in 4.36.1.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
@@ -714,8 +718,10 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for executable author checks, including
-the outstanding 4.36.0i Windows maze/save-load and visual acceptance checks.
+See [pending_test.txt](pending_test.txt) for the remaining 4.36.1 launcher/header
+check and final flail-pose acceptance after its correction. The author confirmed
+zero validator errors; accepted maze/save-load/table tests are recorded in HISTORY.
+The empty-bow stall is a separate open correction in #8, not an accepted result.
 Long-term encounter/provision balance and unfinished 4.36 systems are development
 work in PROJECT/TASKS, not new acceptance tests created by this documentation patch.
 
