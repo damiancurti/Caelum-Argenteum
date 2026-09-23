@@ -50,12 +50,12 @@ son utilidades de edición opcionales; sus resultados ya están listos en `src/`
 
 ## Premisas permanentes
 
-Las premisas 1 a 10 provienen de `docs/PROJECT.md`, sección "Premisas
-permanentes". Las premisas 11 a 13 se añaden por encargo del autor.
+Premises 1 to 10 come from `docs/PROJECT.md`, section "Premisas permanentes".
+Premises 11 to 20 were added on request by the author.
 
-1. Código, identificadores y README general en inglés; comentarios explicativos
-   y documentación de trabajo en español. Fuentes documentales de texto UTF-8;
-   mantener formato monoespaciado en las exportaciones de documentación personal.
+1. Code, identifiers, README, and all documentation in English. Explanatory
+   comments inside code remain in Spanish, so the author and Spanish-speaking
+   collaborators understand the intent of each block.
 2. Preferir funciones nativas estables de GZDoom 4.14.2. Mantener una sola fuente
    autoritativa para datos y una arquitectura compartida entre armas y actores.
 3. El producto final debe ser independiente: no distribuir assets de Doom.
@@ -89,6 +89,29 @@ permanentes". Las premisas 11 a 13 se añaden por encargo del autor.
 12. Ningún agente borra archivos sin autorización explícita.
 13. Los generadores deben ser deterministas (misma entrada, misma salida
     byte a byte).
+14. One model per task. Routine tasks → economical model (DeepSeek).
+    Architecture, narrative, or complex review → advanced model
+    (ChatGPT Pro). Document in AGENTS.md which model is expected for each
+    task type.
+15. Saves always migratable. No change may invalidate an existing save
+    without explicit, tested, and reversible migration. Schema changes
+    carry a revision number and idempotent migration logic.
+16. Data outside logic. Balance values, recipes, coordinates, names, and
+    texts live in data or documents, never hardcoded in logic. If an agent
+    needs a number that is not in the documents, it must ask, not invent it.
+17. One change, one reason. Each commit or PR addresses a single purpose.
+    Visual changes, balance changes, and code changes are not mixed, so
+    that only what failed can be reverted.
+18. Cross-verification between AIs. When possible, one AI reviews another's
+    work. DeepSeek reviews ChatGPT's code; ChatGPT reviews DeepSeek's
+    design. Reduces errors without the author having to review every line.
+19. Documentation is the contract. If code and documentation differ, the
+    documentation prevails until updated. An agent that finds a discrepancy
+    must report it, not silently "fix" the code to match.
+20. Issues are the unit of work. Every significant change (code, balance,
+    document, map) originates in an issue describing the problem or
+    objective, reference documents, explicit scope, and acceptance criteria.
+    A PR without a linked issue is not reviewed.
 
 ## Flujo de trabajo esperado
 
