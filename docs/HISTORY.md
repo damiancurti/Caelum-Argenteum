@@ -45,6 +45,31 @@ Implementation and verification date: 2026-09-23.
   audio, model, include, structure and Spanish localization checks. Modified
   tooling comments, help and diagnostics use English.
 
+### Author roadmap and usage request — 2026-09-23
+
+- Published issues #10–#17 for the requested T1-only four-section sewer,
+  repair/rest access and scenery, 2:1 rats/Mandingas, four palette-variant
+  prisoners, rescue/faction/port rewards, approved Tarot art, third map and
+  three-map playtest export. Patches 4.36.4–4.36.9 are planned after #8/#9;
+  later content/export patches are assigned in sequence when ready.
+- Updated the current PROJECT roadmap, TASKS, CONTEXT and README. The
+  author now requires a three-map slice before export; broader campaign
+  expansion remains V5 and the original 4.36/4.37 gates remain open.
+- Preserved the accepted 0i baseline and historical records. No new map,
+  actor, asset, faction, reward or card is implemented by this planning update.
+  Route/card identity, rescue conditions/reward values and the final Tarot
+  source pack remain explicitly pending where the author has not decided.
+- Recorded the author's reported 75% weekly allowance without assuming
+  used versus remaining or converting it to tokens. Per-patch evidence must
+  distinguish desktop implementation, Work planning/review, corrections,
+  resets, other activity and unavailable counters; export issue #17 gathers
+  the final batch report. No token saving is asserted before measurement.
+- Existing author acceptance remains valid. New manual tests enter the
+  root queue only when the corresponding change is executable.
+- Planning-update checks: python validate_project.py returned exit 0 with
+  version 4.36.1, seven documents and no errors; git diff --check passed.
+  This documentation-only change did not require new native gameplay tests.
+
 ### Executed verification
 
 Environment: Windows 11 (10.0.26200), Windows PowerShell 5.1.26100.9444,

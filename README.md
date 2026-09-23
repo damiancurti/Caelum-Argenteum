@@ -686,21 +686,25 @@ The fast path does not simulate arbitrary AI, physics, doors or third-party
 Thinkers. Extending it outside designated safe areas requires those systems'
 explicit timing contracts. The 8-game-hour full Sleep recovery rate is confirmed.
 Fares, freely drivable/additional vehicles, route incidents and a travel minimap remain future content.
-New campaign content and inherited expansion follow the V4 playtest export.
+The author now requires a complete three-map campaign slice before the V4
+playtest export. Further campaign content and inherited expansion remain V5.
 Of the authored class abilities, only Arcanist Sleep is added here; the remaining
 class abilities and racial toggles stay in the V5 abilities block.
 Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Narrative faction assignments, rank thresholds and cross-faction relations
-still require authored design.
+Four new prisoner affiliations are now defined in the roadmap; their exact
+reputation/rewards, rank thresholds and cross-faction relations still require
+authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system
 testing. MAP02 now contains the authorized maze and encounters; MAP03–05
-retain their test spaces. The remaining campaign layout is future content.
+retain their test spaces. The new three-map playtest slice is planned in
+[#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16); test spaces do
+not count as completed campaign maps. The existing port is MAP06.
 Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
 Additional equipment by class and special post-awakening resource values await
 author design. The accepted exit still preserves current resources and the first
@@ -708,8 +712,17 @@ crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
-After V4.37, prepare and verify an exported playtest build for other players,
-with installation, controls, a test route and a way to record issues. Then
+New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
+repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
+persistent rescues/port rewards and Tarot fronts. See [TASKS](docs/TASKS.md)
+and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
+features are not included in the current 4.36.1 gameplay baseline.
+
+After V4.37, complete and accept three campaign maps covering the prologue,
+the approved first Major and two distinct Minors, then verify the exported
+playtest for other players (#17), including installation, controls, the full
+route, saves and issue reporting. The proposed mansion/maze/port route and
+card assignments still need author confirmation. Then
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
 art, loot, faction consequences, perception/formations, sieges, co-op/PvP,
@@ -804,7 +817,8 @@ test observers and archives are not part of the playable PK3 or source delivery.
 
 Patch versions are numeric MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.2.
 Implementation commits and later acceptance do not each create a new patch.
-Historical labels stay intact; the larger-version roadmap is unchanged. All
+Historical labels stay intact; PROJECT records the current roadmap and the
+author-approved three-map playtest requirement. All
 seven docs and AGENTS declare a current version; ancillary guides without a
 header inherit this README's release.
 

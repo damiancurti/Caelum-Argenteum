@@ -24,6 +24,68 @@ The larger roadmap remains in force. Proper names, identifiers, literal game
 dialogue, formulas and original external source material retain their spelling;
 English explanatory text does not change the bilingual game localization.
 
+## Author roadmap update — 2026-09-23 (planned, not implemented)
+
+The author requires **three complete campaign maps**, covering the prologue,
+the first Major Arcana and two Minor Arcana, before the external V4 playtest.
+This small campaign slice is now an explicit exception to deferring new
+campaign content to V5. It does not waive the existing 4.36 physics or 4.37
+Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
+
+| Planned patch / stage | Issue | Scope |
+| --- | --- | --- |
+| 4.36.2 | [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) | Empty-bow equip stall. |
+| 4.36.3 | [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) | Additional flail rotation. |
+| 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | MAP02 equipment is Tier 1 only; retain every starter weapon/essence and armor/accessory combination. |
+| 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four keyed sewer sections, endpoint cells with beds, repair refuges, channels/decor and the northern locked Zupay chamber. |
+| 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Two hostile rats per Mandinga in each section: preserve 96 Mandingas, add 192 rats. |
+| 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Persistent rescues, port arrivals, thanks, faction reputation and one-time rewards. |
+| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
+| V4 playtest content | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Complete the third map and the second Minor after author design. |
+| V4 playtest delivery | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | End-to-end acceptance and reproducible export after the retained system gates. |
+
+Issue #10 supersedes the earlier all-tier MAP02 loot request for future
+implementation. The current accepted 0i map remains three sections with T1–T3
+until these patches land. Preserve 120 food and 120 water rations, existing
+repair costs/durability and the 45-trap set when rebuilding; provide actual
+repair stations and audit existing recipes/material access rather than making
+repairs free. Keys must admit a complete route without circular locks.
+
+The prisoner appearances/factions are author-defined: Caella -> Unitarians;
+Ronnie -> Federals; Rulo -> Wild Beast Men; Argento -> Cult of the Tarot.
+These are new identities, not changes to the mansion residents. Existing
+technical faction IDs must not be relabeled to create them. Exact reputation
+gains, reward quantities and successful-rescue/death handling remain PENDING.
+Unrescued NPCs must not appear at the port; benefits cannot duplicate on retry,
+save/load or travel. Full companion/escort AI is not implied.
+
+Working route proposal, **not yet approved**: MAP01 mansion/Fool -> MAP02
+sewer/Ace of Cups -> existing MAP06 port/second Minor. Preserve map IDs.
+The current MAP02 exit targets MAP07, so the final route needs an explicit
+connection change. Confirm whether "first Major" means Fool (0) or Magician
+(I), select the second Minor, and author the third map's objectives/end point.
+The Tarot source ZIP and definitive card manifest are also pending; do not
+regenerate approved art or pretend an inaccessible attachment exists.
+
+The original closure gates remain damaging surfaces, avalanches, rams,
+catapults and moving sectors, then integration/save/reset validation before
+extracting Impact Physics. Their unfinished design criteria are not supplied
+by this map request. Later campaign expansion remains V5.
+
+### Usage measurement for this batch
+
+Author-reported baseline on 2026-09-23: **75% of weekly allowance**. It is not
+an observed account counter; used versus remaining and the reset time are
+unconfirmed. Capture source/timestamp, model/provider/effort/speed, token
+categories when exposed, correction rounds and final allowance. Keep Work
+planning/review separate from desktop implementation; mark missing coverage,
+resets and concurrent unrelated usage. Never infer tokens from changed lines
+or quota percentages, or compare the full translation as an equivalent patch.
+Issues #8–#17 define the current measured implementation batch. Details and
+per-patch evidence belong
+in the linked PRs; #17 consolidates the final report.
+
 ## 4.36.0i — maze, flail, rations and approved weight
 
 [ACCEPTED BY THE AUTHOR] Proposed static-weight formula, bows except thickness,
@@ -1965,7 +2027,7 @@ they are not delivery times.
 | 8f | 4.34.0a: locations and connections | Journal of the world, places visited and registration of the existing return MAP01 → MAP02; previous saves and preservation when traveling. First patch of 4.34, approved by the author. |
 | 8g | 4.34.0b: doors and accesses by group | Native requirements of all door leaves, independent groups without id, passage occupancy and reopening during closing. Optional test with own key and previous saves. Approved by the author. |
 | 8h | 4.34.0c: Sewers connected | MAP02 links with MAP03–05 for future massive testing, Tarot and environment. Six directions, native hub, stairs, Journal and saves; no return to MAP01. |
-| 9 | Map construction and sewers | Campaign expansion passes to V5 by decision of the author. During V4, prioritize systems and tests; in 0m the author authorizes extensions of port/beach with its textures to continue MAP03. Maintain the arrival of MAP02 and CADEV02. |
+| 9 | Map construction and sewers | The 2026-09-23 author update now requires a complete three-map V4 playtest slice (#10–#17); remaining campaign expansion stays in V5. Existing port/coast and sewer test spaces are reusable foundations, not completed campaign maps. Preserve map IDs and confirm the final route before changing its connections. |
 
 The author-only truth and future revelations must not leak into the opening NPCs' knowledge.
 MAP01.txt contains the full specification and corrections that prevail over its first
@@ -1978,7 +2040,8 @@ all the content of that system are finished.
 
 Author decision of 2026-09-13: complete the numbered V4 roadmap through 4.37; then prepare
 and export a test version for other players; begin V5 only after that export. All
-inherited and cross-system pending work explicitly moves to V5. No 4.38 block is added,
+inherited and cross-system pending work explicitly moves to V5, except for the
+three-map playtest slice explicitly authorized above on 2026-09-23. No 4.38 block is added,
 and completing the entire campaign is not required to export the playtest.
 
 The current authorization allows to continue from the 4.33.0ao technical closure to
@@ -1996,16 +2059,17 @@ content extensions and the pending previous versions are returned to V5.
 | V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the four technical ids do not equal the eight narrative factions. |
 | V4.34: world architecture and travel | 0a–0c approved: catalog, Journal, return, group doors and connected sewers. 0d implements caravans and shared registry; 0e adds test stations and supplies. The author now approves all 0e tests, including seals/crafting blocking and recovery of Use. MAP01 does not support return. Timetables, durations and events are integrated with the 4.35 clock. Code refactor is still in V5.0. |
 | V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
-| V4.36: mobile environment and physical hazards | Base of trapdoors, pits, rocks, mines, teleport, ceiling, levers and presentation accepted by the author up to 0g except for the two visual corrections of 0h. 0h incorporates those corrections, initial food and percentage native damage; native tests for this increment still pending. Agreement/implementation of static weight and completion of bases for surfaces with their own damage remain pending, avalanches, rams, catapults and mobile sectors. Validate integration/save before extracting Impact Physics. |
+| V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8/#9 retain the reported weapon corrections. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoners/rescues and Tarot artwork. Damaging surfaces, avalanches, rams, catapults and moving sectors remain unfinished original gates. Validate integration/save/reset before extracting Impact Physics; neither new map content nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Collection initiated in 0t and passive base of the Minor 56 implemented in 0aa; activation of owned/selected cards with User3 and costs/cooldowns; then card content and Trucazo minigame on stable inventory/NPC/events. |
-| **V4 test export** | After 4.37 and before V5: freeze an identifiable base, prepare a playable package for other players, installation/controls instructions, test path, saves and incidence log. Check boot and run from the exported package. Export does not require completion of content transferred to V5 nor does it amount to the final standalone distribution. |
+| **V4 test export** | After 4.37 and before V5: complete and accept three campaign maps covering the prologue, the approved first Major and two distinct Minors (#16), including the sewer/rescue/art batch; then freeze an identifiable build and verify installation, controls, route, saves and issue reporting from the exported package (#17). Other V5 content is not required; this is not final standalone distribution. |
 | **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 
 ### Inherited and cross-cutting work: V5, after export
 
-All commitments in this table are assigned to V5 by decision of the author. They also pass
+Except for the narrowly authorized three-map playtest slice above, commitments
+in this table remain assigned to V5 by decision of the author. They also pass
 to V5 the pending combat matrix, learning and recipe bonuses,
 loot/containers/ownership, merchant and later stores, remaining first person,
 quests/factions enlargement, postponing attributes audit, bullet composition and

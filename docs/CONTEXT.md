@@ -44,7 +44,7 @@ the gauchos and rural culture, and the humans the urban porteño society.
   Box with weight reduction and restricted contents.
 - **Quests, reputation, and factions:** optional quest base, states, reusable
   dialogue/access/trade conditions, and faction conditions.
-- **Tarot:** persistent collection and capture of El Loco; base passives for
+- **Tarot:** persistent collection and capture of El Loco and the Ace of Cups; base passives for
   the 56 Minor Arcana by suit; card rewards.
 - **World and travel:** world Journal, visited locations, connections, grouped
   doors, caravans, coastal vehicles (carriage and merchant ship), and measured
@@ -77,6 +77,11 @@ Pending:
 
 - Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
 - Reported multi-second stall when equipping a bow without arrows (#8, planned 4.36.2).
+- Author-requested patches 4.36.4–4.36.9 (#10–#15): T1-only MAP02 equipment;
+  four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
+  192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
+  rescues/port faction rewards; approved Tarot images. These are planned,
+  not present in the accepted three-section 0i baseline.
 - Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
   sectors, with their integration and validation before extracting Impact
   Physics.
@@ -87,7 +92,16 @@ validator/launcher/header check. The weapon exceptions above remain open;
 detailed results are in HISTORY. PR #7 still requires merge approval.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
-then V5.
+then V5. The 2026-09-23 author decision requires three complete maps with the
+prologue, the first Major and two Minors before export (#16/#17). Proposed
+route: mansion MAP01 -> maze MAP02 -> port MAP06; route/card identities and
+third-map objectives still need author confirmation. Exact rescue rewards and
+success/failure rules, plus the definitive Tarot asset package, remain pending.
+Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
+Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
+PROJECT contains the authoritative scope, dependency order and usage protocol.
+The author reports a 75% weekly-allowance baseline; used/remaining and reset
+time are unconfirmed. Collect measured per-patch data rather than estimating.
 
 ## Repository structure (summarized)
 
