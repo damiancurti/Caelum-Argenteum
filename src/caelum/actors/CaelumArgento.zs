@@ -78,8 +78,9 @@ class CaelumArgento : CaelumAnchoredResident
 
     // Estados nuevos al final: conservan los índices de partidas anteriores.
     IdleBreathing:
-        ARID A 10 A_CaelumResidentLook;
-        Loop;
+        ARID AAA 10 A_CaelumResidentLook;
+        ARID BBBB 10 A_CaelumResidentLook;
+        Goto Spawn;
     Run:
         Goto See;
     }

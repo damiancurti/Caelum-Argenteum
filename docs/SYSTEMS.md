@@ -13,8 +13,10 @@ inherit mansion anchoring/quest behavior. Their persistent identity is the map t
 not the provisional display name.
 
 The MAP01 mansion residents and Palomo keep their story anchoring and separate
-walk/run states, but their idle now loops the static accepted monster idle A
-frame instead of the v4 A/B rest pose, whose lower-hem motion read as walking.
+walk/run states, and their idle alternates the accepted monster idle A and B
+poses. Conversations remain unpaused: MAPINFO keeps
+`UnFreezeSinglePlayerConversations` and the common menu omits the delayed pause
+of `ConversationMenu.Ticker`.
 
 The display names are author-authorized working names: Leonor Benítez
 (Caella/Unitarians), Rufino Acosta (Ronnie/Federals), Santos Barrera

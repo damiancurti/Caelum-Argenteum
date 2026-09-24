@@ -14,8 +14,8 @@ punzó), Rulo -> Santos Barrera (Wild Beast Men, black/brown/green) and Argento
 -> Leandro Farías (Cult of the Tarot, gold/silver over black). No new model or
 replacement illustration is added; original mansion NPC art is unchanged. The
 inert prisoner idle keeps the accepted A/B breathing poses and never enters the
-walking/chase animation. A separate correction in the same release replaces the
-MAP01 mansion NPC idle cycle with the static A frame (see below).
+walking/chase animation. A separate correction in the same release restores the
+MAP01 mansion NPC idle to the accepted A/B breathing poses (see below).
 
 The maintained generator `assets/generators/generate_prisoner_sprites.py`
 writes 632 recolored PNGs and the guarded `CAELUM_PRISONERS_V2` block in
@@ -39,13 +39,15 @@ from pending_test.txt; the tracked queue is empty. #14 owns rescue, escort,
 dialogue and rewards.
 
 Author correction, 2026-09-24: the author clarified that the earlier
-idle-sprite concern referred to the MAP01 mansion NPCs, not the prisoners. The
-mansion NPC idle cycle no longer animates the v4 A/B rest pose whose lower-hem
-motion read as walking. Argento, Caella, Ronnie and Rulo now loop the static
-`ARID/CAID/ROID/RUID A` frame, and Palomo loops the static `PAID A` frame;
-those A frames are byte-identical to the accepted monster idle A poses. The
-inert prisoner recolored A/B poses remain unchanged. Delivered on
-`issue-13-4.36.7`.
+idle-sprite concern referred to the MAP01 mansion NPCs, not the prisoners. An
+intermediate change looped the static `ARID/CAID/ROID/RUID A` frame (and `PAID
+A` for Palomo) because the v4 A/B rest pose's lower-hem motion read as walking;
+a final author correction supersedes that. The mansion NPC idle must alternate
+between the accepted monster idle A and B poses instead of staying frozen, and
+conversations must keep the simulation active without pause. Argento, Caella,
+Ronnie and Rulo therefore alternate the `ARID/CAID/ROID/RUID` A and B breathing
+frames, and Palomo alternates `PAID` A and B. The inert prisoner recolored A/B
+poses remain unchanged. Delivered on `issue-13-4.36.7`.
 
 ## 4.36.6 — Hostile sewer rats (#12)
 
