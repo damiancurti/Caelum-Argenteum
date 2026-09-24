@@ -4,7 +4,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.5.** Obtain and update the complete repository, validate
+**Current release: 4.36.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
 [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) rebuilds MAP02
 into four wider sewer sections with keyed cells, beds, repair refuges and a
@@ -66,7 +66,7 @@ Native resting support is required; suspended objects do not count. Stacks
 transmit their real mass and share it among supports. Fractional damage is
 preserved. Native ceiling damage remains a percentage per engine pulse.
 
-MAP02 is a four-section sewer with 100 junction rooms, 96 Mandingas, 45 traps,
+MAP02 is a four-section sewer with 100 junction rooms, 96 Mandingas, 192 hostile rats, 45 traps,
 four progression/arena keys, four cell keys and 39 chests containing 65 distinct
 Tier 1 equipment pieces. Newly
 acquired size-bearing equipment fits the recipient; owned equipment retains
@@ -94,7 +94,7 @@ recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.5**. Use the repository instructions below and the root pending-test queue
+**4.36.6**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -758,7 +758,7 @@ crafted weapon only, inside the Box.
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
 New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
-repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
+repair refuges, four recolored prisoners,
 persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
 assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
 and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These

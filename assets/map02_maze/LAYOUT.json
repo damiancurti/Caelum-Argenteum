@@ -19,6 +19,7 @@
   "chests_per_section": [10, 10, 10, 9],
   "traps_per_section": [12, 11, 11, 11],
   "mandingas_per_section": [24, 24, 24, 24],
+  "rats_per_mandinga": 2,
   "food_bundles_per_section": [6, 6, 6, 6],
   "water_bundles_per_section": [6, 6, 6, 6],
   "arrow_bundles_per_section": [3, 3, 3, 3],

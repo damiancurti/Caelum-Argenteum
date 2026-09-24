@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.6** — 2026-09-24.
 
 ## 4.36.5 — Wider sewer and barred gates (#11)
 

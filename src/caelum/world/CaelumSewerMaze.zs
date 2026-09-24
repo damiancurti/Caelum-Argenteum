@@ -182,7 +182,7 @@ class CaelumSewerMaze : Object play
 
     static void Report()
     {
-        int chests=0,objects=0,mandingas=0;
+        int chests=0,objects=0,mandingas=0,rats=0;
         let it=ThinkerIterator.Create("CaelumMazeChest");CaelumMazeChest chest;
         while((chest=CaelumMazeChest(it.Next()))!=null)
         {
@@ -191,8 +191,10 @@ class CaelumSewerMaze : Object play
         }
         let enemies=ThinkerIterator.Create("CaelumMandinga");Actor enemy;
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
-        Console.Printf("[Caelum 4.36.5] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d Zupay vivo=%d",chests,objects,mandingas,BossAlive());
-        Console.Printf("Contenido inicial: 39 cofres, 65 piezas T1, 96 Mandingas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
+        let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
+        while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
+        Console.Printf("[Caelum 4.36.6] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        Console.Printf("Contenido inicial: 39 cofres, 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);if(user==null)continue;

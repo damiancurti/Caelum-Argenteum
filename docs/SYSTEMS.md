@@ -1,6 +1,20 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.6** — 2026-09-24.
+
+## 4.36.6 — Hostile sewer rats (#12)
+
+Revision-2 MAP02 keeps its four keyed sections and existing contents, and adds
+two hostile rats per Mandinga: 192 rats against the retained 96 Mandingas and
+one Zupay (a fixed 2:1 ratio, 24 Mandingas / 48 rats per section). Rats reuse
+the accepted `CaelumGiantRat` actor (DoomEdNum 18029) and RATG sprites; no new
+damage, health, AI, art or balance value is introduced.
+
+Each Mandinga junction gains two fixed dry-walkway placements, written
+deterministically by the generator and recorded per section in the manifest.
+Rats are initial placements only and never respawn or resurrect, preserving the
+ratio throughout the map. The historical 0i `MAP02 and rewards` table below is
+unchanged and continues to describe that release.
 
 ## 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
 

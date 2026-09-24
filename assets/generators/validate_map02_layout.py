@@ -15,7 +15,7 @@ import struct
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "assets/map02_maze"
-REPORT = ROOT / "assets/validation_4365/LAYOUT.json"
+REPORT = ROOT / "assets/validation_4366/LAYOUT.json"
 
 
 def read_map(path):
@@ -47,7 +47,7 @@ def main():
     check("WAD things exactly match manifest", actual["thing"] == current["things"])
     counts = Counter(t["type"] for t in actual["thing"])
     old_counts = Counter(t["type"] for t in legacy["things"])
-    for kind, number in {18037: 96, 18038: 1, 30973: 39, 30978: 24, 30979: 24,
+    for kind, number in {18037: 96, 18029: 192, 18038: 1, 30973: 39, 30978: 24, 30979: 24,
                          18111: 12, 18112: 6, 18110: 6, 30987: 4}.items():
         check(f"actual actor count {kind}", counts[kind] == number, counts[kind])
     for kind in (18037, 18038, 30973, 30978, 30979, 30961, 30963, 30964, 30965, 30966, 30975, 30976):
@@ -64,6 +64,11 @@ def main():
           sorted(map(identity, current["loot"])) == sorted(map(identity, legacy["loot"])) and
           all(i["tier"] == 1 for i in current["loot"]))
     check("four sections and four independent cells", len(current["zones"]) == 4 and len(current["prisoners"]) == 4)
+    check("192 rats recorded in the per-section manifest", len(current["rats"]) == 192 and current["counts"]["rats"] == 192)
+    for z, zone in enumerate(current["zones"]):
+        check(f"section {z + 1} has twice as many rats as Mandingas",
+              sum(1 for rat in current["rats"] if rat["zone"] == z)
+              == data["mandingas_per_section"][z] * data["rats_per_mandinga"])
     check("four unique section keys and four unique cell keys", all(counts[k] == 1 for k in (30970, 30971, 30972, 30982, 30983, 30984, 30985, 30986)))
     equipment_source = (ROOT / "src/caelum/equipment/CaelumEquipmentPickups.zs").read_text(encoding="utf-8")
     for cls in ("CaelumCarbineAmmo", "CaelumArrowAmmo", "CaelumBoltAmmo"):
@@ -165,6 +170,9 @@ def main():
         stages.append(dict(section=z + 1, cells_before_key=len(reach), cells_after_cell_key=len(unlocked)))
         keys.add(203 + z)
     complete = reachable(keys)
+    rat_positions = [rat["position"] for rat in current["rats"]]
+    check("rat positions are unique", len(rat_positions) == len({tuple(pos) for pos in rat_positions}))
+    check("every rat starts in a reachable open cell", all(nodes_at(pos) & complete for pos in rat_positions))
     for i, room in enumerate(current["rooms"]):
         x, y = room["center"]
         # The six accepted pits deliberately occupy room centers. Validate a

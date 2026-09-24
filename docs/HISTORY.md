@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.6** — 2026-09-24.
+
+## 4.36.6 — Hostile sewer rats (#12)
+
+Baseline: integrated 4.36.5, `c65a4ba` (PR #28 merge). MAP02 adds two hostile
+sewer rats per Mandinga, reusing the existing accepted `CaelumGiantRat` actor
+(DoomEdNum 18029) and its RATG sprite/combat profile. The retained population
+is 96 Mandingas and one Zupay; exactly 192 rats are placed at two fixed
+dry-walkway positions per Mandinga junction, recorded in the per-section
+manifest. No new art, damage, health, AI or balance value is introduced.
+
+Placement is deterministic through the updated MAP02 generator and layout
+validator. Rats are initial placements only: they never respawn or resurrect,
+so the exact 192/96 ratio holds for the whole map. Every other accepted #10/#11
+content count is unchanged.
+
+Static validation passes 206 checks, including the 192 rat count, the 2:1
+per-section ratio, unique positions and reachable open-cell starts; the report
+is in `assets/validation_4366/LAYOUT.json`. Native detection/pursuit/melee/death,
+narrow-channel/trap and save/load duplicate checks remain separate from author
+acceptance and are not claimed here.
+
+Author check CA-4366-RATS-01 (192/96 ratio, combat behaviour and no duplicates
+after save/load) remains pending in pending_test.txt. It is removed only on the
+author's explicit pass confirmation.
 
 ## 4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)
 

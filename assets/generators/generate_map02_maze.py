@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'assets/map02_maze';OUT.mkdir(exist_ok=True)
 cfg=json.loads((OUT/'LAYOUT.json').read_text(encoding='utf-8'))
 CELL=cfg['grid'];rng=random.Random(cfg['seed'])
-cells={};things=[];rooms=[];zones=[];locks={};contents=[];features=[];gates=[];refuges=[];prisoners=[]
+cells={};things=[];rooms=[];zones=[];locks={};contents=[];features=[];gates=[];refuges=[];prisoners=[];rats=[]
 flags=dict(skill1=True,skill2=True,skill3=True,skill4=True,skill5=True,single=True,coop=True)
 def room(x1,y1,x2,y2,floor=0,ceiling=None,group=0,tag=0,water=False):
  ceiling=cfg['ceiling'] if ceiling is None else ceiling
@@ -117,6 +117,10 @@ for z in range(4):
   features.append(dict(zone=z,type=kind,position=[x,y],tid=tid))
  for n in [n for n in nodes if n!=start]:
   x,y=coord(z,n);thing(18037,x+192,y-192,angle=270)
+  # Two fixed dry-walkway positions per junction keep the 2:1 rat ratio without RNG.
+  thing(18029,x-192,y-64,angle=90);thing(18029,x+192,y+64,angle=270)
+  rats.append(dict(zone=z,node=list(n),position=[x-192,y-64]))
+  rats.append(dict(zone=z,node=list(n),position=[x+192,y+64]))
  # A protected service alcove per section. Existing repair rules/stations only.
  sx,sy=coord(z,start);rx=sx-1024
  corridor((sx,sy),(rx,sy),z+1,False);room(rx-320,sy-320,rx+320,sy+320,group=z+1)
@@ -194,7 +198,7 @@ for (x,y),v in sorted(cells.items()):
    for si in [l['sidefront']]+([l['sideback']] if 'sideback' in l else []):
     sides[si]['texturemiddle']='CMGT02';sides[si]['offsetx']=min(a[1],b[1])%128 if barrier['axis']=='x' else min(a[0],b[0])%128
 def value(v):return str(v).lower() if isinstance(v,bool) else json.dumps(v) if isinstance(v,str) else str(v)
-text=['namespace = "ZDoom";\n// MAP02 revision 2, 4.36.5; generated from LAYOUT.json.\n']
+text=['namespace = "ZDoom";\n// MAP02 revision 2, 4.36.6; generated from LAYOUT.json.\n']
 for kind,entries in [('vertex',vertices),('sector',sectors),('sidedef',sides),('linedef',lines),('thing',things)]:
  for entry in entries:text.append(kind+'\n{\n'+''.join(f'    {k} = {value(v)};\n' for k,v in entry.items())+'}\n')
 body=bytearray();directory=bytearray()
@@ -214,7 +218,7 @@ for batch in range((len(loot)+19)//20):
  zs.append('        }\n        return item;\n    }')
 zs.append('}\n');(ROOT/'src/caelum/world/CaelumMazeLootCatalogue.zs').write_text('\n'.join(zs),encoding='utf-8')
 
-manifest=dict(version='4.36.5',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='Unchanged 65 unique T1 entries; index=chest+slot*39.',seed=cfg['seed'],layout=cfg,zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,zupays=1,chests=39,equipment=len(contents),food_rations=120,water_rations=120,arrows=240,bolts=120,bullets=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
+manifest=dict(version='4.36.6',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='Unchanged 65 unique T1 entries; index=chest+slot*39.',seed=cfg['seed'],layout=cfg,zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,rats=rats,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,rats=len(rats),zupays=1,chests=39,equipment=len(contents),food_rations=120,water_rations=120,arrows=240,bolts=120,bullets=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
 # Keep each collision cell on one line so geometry evidence remains reviewable.
 manifest_text=json.dumps({**manifest,'cells':'__COLLISION_CELLS__'},indent=2)
 cell_text='[\n'+',\n'.join('    '+json.dumps(row) for row in manifest['cells'])+'\n  ]'

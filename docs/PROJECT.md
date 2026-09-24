@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.6** — 2026-09-24.
+
+## 4.36.6 — Hostile sewer rats (issue #12)
+
+MAP02 keeps its four keyed sections and all accepted #10/#11 contents, and adds
+two hostile sewer rats per Mandinga: 192 rats against the retained 96 Mandingas
+and one Zupay (a fixed 2:1 ratio, 24 Mandingas / 48 rats per section). Rats
+reuse the existing accepted `CaelumGiantRat` actor (DoomEdNum 18029) and RATG
+sprite/combat profile. No new art, damage, health, AI or balance value is
+introduced.
+
+Placement is deterministic: the MAP02 generator writes two fixed dry-walkway
+positions per Mandinga junction and records each rat in the per-section
+manifest. Rats are initial placements only and never respawn or resurrect, so
+the exact ratio holds for the whole map. Static layout validation records are
+in `assets/validation_4366/`; native combat and save/load evidence are separate
+from author acceptance. The author check CA-4366-RATS-01 remains pending.
 
 ## 4.36.5 — Four-section sewer layout (issue #11)
 
