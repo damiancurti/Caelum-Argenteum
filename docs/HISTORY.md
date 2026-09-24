@@ -60,11 +60,19 @@ rest/combat restrictions and the retained boss/card exit truth table.
 Detailed final results, persistence checks and limitations are retained in
 `assets/validation_4365/RESULTS.json`.
 
-Author acceptance: **PENDING**, CA-4365-MAZE-01 (origin 4.36.5 / issue #11).
-Manual acceptance of #10 does not cover this new map or recipe restriction.
-Issue #11 remains open for that acceptance. Usage evidence separates this
-implementation interval and review iterations from Work planning; unavailable
-model/counter fields are explicitly recorded in the validation results and PR.
+Author acceptance, 2026-09-24 (America/Buenos_Aires): the author explicitly
+confirmed that all tests passed and requested closure of issue #11. Result:
+**PASS**, **CA-4365-MAZE-01**, originating 4.36.5 / issue #11, delivered in
+PR #28 (`a7b8f95`). This covers the queued four-section route, keys/barred gates,
+cell beds, refuges, retained contents/ammunition, known-recipe paid repair,
+new-map save/hub persistence, Zupay/Ace exit checks and legacy compatibility.
+No failures, partial results or qualifications were reported. Live prisoner
+escort remains future #14 and was not part of this test. The confirmed entry
+is removed from pending_test.txt; the tracked queue is empty. Release 4.36.5
+is unchanged. Author evidence is separate from the native/static results above.
+Usage evidence preserves the implementation interval and records this later
+acceptance/documentation/closure follow-up separately in RESULTS.json and PR #28;
+unavailable model/counter fields remain explicitly unavailable.
 
 ## 4.36.4 — MAP02 T1 loot, recipient sizing and acquisition feedback (#10)
 

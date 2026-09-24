@@ -31,8 +31,8 @@ The former all-family repair-supply expectation is superseded by this decision.
 Compatibility continuation is explicit: a previously visited MAP02 requires
 `run_dev.bat --legacy-map02`, retaining its original WAD and every saved state.
 New layouts do not overwrite existing maze progress. HISTORY records static,
-native and compatibility evidence; CA-4365-MAZE-01 awaits author confirmation.
-Next implementation: #12 / 4.36.6 after this patch is accepted and integrated.
+native and compatibility evidence separately from the author-confirmed PASS of
+CA-4365-MAZE-01 on 2026-09-24 (PR #28). Next implementation: #12 / 4.36.6.
 
 ## 4.36.4 — T1 acquisition, recipient sizes and feedback
 

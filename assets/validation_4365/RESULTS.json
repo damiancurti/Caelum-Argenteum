@@ -2,7 +2,7 @@
   "version": "4.36.5",
   "issue": 11,
   "baseline": "3f3fa0c2c3a2d426c92d4d56240d41aaf15e0e45",
-  "status": "Implemented; author acceptance pending CA-4365-MAZE-01",
+  "status": "Implemented and author-accepted; CA-4365-MAZE-01 PASS on 2026-09-24",
   "environment": {
     "engine": "GZDoom g4.14.2",
     "os": "Windows 11",
@@ -74,8 +74,7 @@
   "limitations": [
     "Not a full combat campaign playthrough",
     "Live one/four-prisoner escort belongs to #14",
-    "Compatibility mode continues the old geometry rather than migrating a visited maze into revision2",
-    "Author acceptance remains pending"
+    "Compatibility mode continues the old geometry rather than migrating a visited maze into revision2"
   ],
   "normal_package_sha256": "c5a9e92d42be5bae0f24aec84dcead859bcf7a28602956ed7632a0bf0ce7332c",
   "compatibility_package_sha256": "289237794184ee19d6e3b319d382de41975d267a52d9a3f16721335af211d223",
@@ -88,7 +87,25 @@
     "client": "codex-cli 0.156.1 observed; desktop app version unavailable",
     "tokens": "not exposed, including sub-agent totals",
     "weekly_allowance": "Author supplied historical 75% remaining baseline; current balance/reset unknown; not converted to tokens",
-    "scope": "Same ongoing conversation, separately bounded issue11 implementation interval; includes audits, native-fixture corrections, product fixes and peer review. Work planning/review counters unavailable; future acceptance corrections reported separately"
+    "scope": "Same ongoing conversation, separately bounded issue11 implementation interval; includes audits, native-fixture corrections, product fixes and peer review. Work planning/review counters unavailable; future acceptance corrections reported separately",
+    "acceptance_followup": {
+      "start_utc": "2026-09-24 03:26:20 UTC",
+      "documentation_end_utc": "2026-09-24 03:27:27 UTC",
+      "scope": "Author acceptance recorded, pending queue cleared, index/validator checks, commit/push and PR/issue closure; delivery timestamps are available in GitHub. No gameplay change or repeated engine test.",
+      "counters": "Exact model variant, effort/speed, tokens and current allowance/reset unavailable; Work planning not included."
+    }
   },
-  "review": "Independent peer audits of gates/topology, repairs and save compatibility; exact alternative-model selection unavailable"
+  "review": "Independent peer audits of gates/topology, repairs and save compatibility; exact alternative-model selection unavailable",
+  "author_acceptance": {
+    "test_id": "CA-4365-MAZE-01",
+    "originating_version": "4.36.5",
+    "issue": 11,
+    "pull_request": 28,
+    "date": "2026-09-24",
+    "timezone": "America/Buenos_Aires",
+    "result": "PASS",
+    "confirmation": "Author explicitly confirmed all tests passed and requested issue closure.",
+    "qualifications": "None reported; future #14 escort AI remains outside this test.",
+    "pending_entry_removed": true
+  }
 }

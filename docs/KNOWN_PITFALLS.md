@@ -162,7 +162,8 @@ UI to an established save schema.
 
 Status/evidence: ENGINE-VERIFIED in 4.36.5 (#11), GZDoom g4.14.2.
 Baseline: integrated 4.36.4, `3f3fa0c`; implementation evidence uses the #11
-working tree. Author acceptance: PENDING, CA-4365-MAZE-01.
+working tree, delivered in `a7b8f95` / PR #28. Author acceptance:
+CA-4365-MAZE-01 passed on 2026-09-24 without reported qualifications.
 
 GZDoom checks saved map geometry counts and checksum before restoring ZScript
 objects (`p_saveg.cpp`, geometry validation). An inventory revision or a

@@ -10,7 +10,7 @@ it, then rebuild with `run_dev.bat` as described below. Issue
 into four wider sewer sections with keyed cells, beds, repair refuges and a
 pre-boss prisoner extraction reservation. Ground ammunition totals are 240
 arrows, 120 bolts and 120 bullets. Repairs require the weapon's known recipe;
-no new recipe/material allowance is granted. Author check CA-4365-MAZE-01 is pending.
+no new recipe/material allowance is granted. The author confirmed CA-4365-MAZE-01 passed on 2026-09-24.
 
 **Existing saves that already visited the three-section MAP02:** launch
 `run_dev.bat --legacy-map02` (or build with `build_dev.ps1 -LegacyMap02`). This
@@ -782,7 +782,7 @@ The playtest export is a separate milestone from the final independent release.
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
 2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
-[pending_test.txt](pending_test.txt) now contains only CA-4365-MAZE-01.
+[pending_test.txt](pending_test.txt) is empty; CA-4365-MAZE-01 passed on 2026-09-24.
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both

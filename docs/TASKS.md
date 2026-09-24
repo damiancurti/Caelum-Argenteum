@@ -11,8 +11,10 @@ Documentation version: **4.36.5** — 2026-09-24.
   allowance. Preserve finite salvage, costs, time and normal breakage.
 - **Compatibility:** explicit legacy build continues already-visited MAP02 saves
   without map-ID changes, reset, lost loot or rewritten save data.
-- **Acceptance:** CA-4365-MAZE-01 pending. HISTORY and validation_4365 distinguish
-  static/native checks from author confirmation.
+- **Acceptance:** CA-4365-MAZE-01 passed, explicitly confirmed by the author on
+  2026-09-24 without qualifications; delivered through PR #28. HISTORY and
+  validation_4365 keep author evidence separate from static/native checks.
+  The confirmed entry is removed; the author-test queue is empty.
 - **Next:** #12 rat population after this delivery; #14 owns live escort AI,
   extraction and rewards. #16 owns the MAP06 player-route reconciliation.
 
@@ -114,7 +116,7 @@ documentation update does not implement these features or reset accepted tests.
 | Patch / stage | Issue | Work and current blocker |
 | --- | --- | --- |
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
-| 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented; CA-4365-MAZE-01 pending. Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
+| 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented and author-accepted on 2026-09-24; CA-4365-MAZE-01 passed (PR #28). Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |

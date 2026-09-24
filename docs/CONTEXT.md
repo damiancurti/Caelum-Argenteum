@@ -67,13 +67,14 @@ the gauchos and rural culture, and the humans the urban porteño society.
 Current release **4.36.5** implements #11: wider four-section sewers, keyed
 barred gates/cells, beds, repair refuges, pre-boss extraction reservation and
 240 arrows/120 bolts/120 bullets. Only known weapon recipes permit repair;
-no materials or recipes are added. CA-4365-MAZE-01 awaits author acceptance.
+no materials or recipes are added. The author confirmed CA-4365-MAZE-01 passed
+on 2026-09-24; no author checks remain pending.
 Saved campaigns that visited old MAP02 use `run_dev.bat --legacy-map02` to
 continue byte-identical legacy geometry; normal builds use the new layout.
 The accepted **4.36.4** implements #10: the complete T1 maze catalogue,
 recipient-sized natural equipment/rewards, explicit chest previews/collection
 and a bounded recent-message feed. The author confirmed CA-4364-T1-LOOT-01 passed
-on 2026-09-23; only the new #11 check remains in the author queue.
+on 2026-09-23; its acceptance remains recorded separately in HISTORY.
 The retained 4.36.3 issue #9 flail-handle rotation adds 10 degrees
 further counterclockwise across T1–T3. Native before/after, full spin, return
 and re-equip checks passed; the author confirmed CA-4360I-VISUAL-01 passed
@@ -91,7 +92,6 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author acceptance of #11 / 4.36.5 (CA-4365-MAZE-01).
 - Author-requested patches 4.36.6–4.36.9 (#12–#15): 192 enemy rats alongside
   96 Mandingas; four recolored prisoners; persistent
   rescues/port faction rewards; approved Tarot images. These are planned,
