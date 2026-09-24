@@ -1,0 +1,22 @@
+{
+  "version": "4.36.5",
+  "checks": 620,
+  "passed": true,
+  "category_counts": {
+    "armor": 16,
+    "weapon": 36,
+    "shield": 4,
+    "amulet": 4,
+    "seal": 5
+  },
+  "trap_counts": {
+    "crusher": 9,
+    "mine": 12,
+    "falling_rock": 6,
+    "pit": 6,
+    "teleport": 6,
+    "rolling_rock": 6
+  },
+  "map02_sha256": "f074f83b071ede7c6baaee6f06da8fffcee2925c20c7b317736c9b31f93921c9",
+  "limits": "Static coverage and floor-connectivity checks; does not replace native engine radius, collision or combat tests."
+}

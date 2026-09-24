@@ -3984,3 +3984,27 @@ CA_CHEST_PREVIEW_ACCESSORY_PROPERTIES = "Weight: %.2f | Base value: %.2f";
 
 [es]
 CA_CHEST_PREVIEW_ACCESSORY_PROPERTIES = "Peso: %.2f | Valor base: %.2f";
+
+[enu default]
+CA_MAZE_KEY_4 = "Northern arena key";
+CA_MAZE_KEY_5 = "Southern cell key";
+CA_MAZE_KEY_6 = "Western cell key";
+CA_MAZE_KEY_7 = "Eastern cell key";
+CA_MAZE_KEY_8 = "Northern cell key";
+CA_MAZE_LOCK_4 = "You need the northern arena key.";
+CA_MAZE_LOCK_5 = "You need the southern cell key.";
+CA_MAZE_LOCK_6 = "You need the western cell key.";
+CA_MAZE_LOCK_7 = "You need the eastern cell key.";
+CA_MAZE_LOCK_8 = "You need the northern cell key.";
+
+[es]
+CA_MAZE_KEY_4 = "Llave de la cámara norte";
+CA_MAZE_KEY_5 = "Llave de la celda sur";
+CA_MAZE_KEY_6 = "Llave de la celda oeste";
+CA_MAZE_KEY_7 = "Llave de la celda este";
+CA_MAZE_KEY_8 = "Llave de la celda norte";
+CA_MAZE_LOCK_4 = "Necesitás la llave de la cámara norte.";
+CA_MAZE_LOCK_5 = "Necesitás la llave de la celda sur.";
+CA_MAZE_LOCK_6 = "Necesitás la llave de la celda oeste.";
+CA_MAZE_LOCK_7 = "Necesitás la llave de la celda este.";
+CA_MAZE_LOCK_8 = "Necesitás la llave de la celda norte.";

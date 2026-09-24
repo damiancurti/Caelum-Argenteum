@@ -14,6 +14,12 @@ Texture "CASWRWAL", 256, 256
     Patch "graphics/caelum/textures/sewer/CASWRWAL.png", 0, 0
 }
 
+// Conductos del laberinto: reutilizan el hierro propio de las estaciones.
+Texture "CASWRPIP", 128, 128
+{
+    Patch "models/caelum/props/stations/ca_station_iron.png", 0, 0
+}
+
 Flat "CASWRFLR", 256, 256
 {
     Patch "graphics/caelum/textures/sewer/CASWRFLR.png", 0, 0

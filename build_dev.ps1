@@ -1,6 +1,7 @@
 param(
     [string]$Source = "src",
-    [string]$Destination = "build/caelum_argenteum_dev.pk3"
+    [string]$Destination = "build/caelum_argenteum_dev.pk3",
+    [switch]$LegacyMap02
 )
 
 $ErrorActionPreference = "Stop"
@@ -16,6 +17,28 @@ if (-not (Test-Path -LiteralPath $SourcePath -PathType Container)) {
 $Files = @(Get-ChildItem -LiteralPath $SourcePath -Recurse -File | Sort-Object FullName)
 if ($Files.Count -eq 0) {
     throw "Source directory contains no files: $SourcePath"
+}
+
+# Keep the established package name so GZDoom can restore existing saves.
+# Only the MAP02 lump changes; current code and all other maps stay current.
+$LegacyMap02Bytes = $null
+if ($LegacyMap02) {
+    $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_4364/MAP02.wad"
+    $LegacyMap02Hash = "9095BDA962F5410BA869B3780DFF2A58C11FF0A011E35D451A43052B851406D2"
+    if (-not (Test-Path -LiteralPath $LegacyMap02Path -PathType Leaf)) {
+        throw "Legacy MAP02 source is missing: $LegacyMap02Path"
+    }
+    $LegacyMap02Bytes = [System.IO.File]::ReadAllBytes($LegacyMap02Path)
+    $Hasher = [System.Security.Cryptography.SHA256]::Create()
+    try {
+        $ActualHash = [BitConverter]::ToString($Hasher.ComputeHash($LegacyMap02Bytes)).Replace('-', '')
+    }
+    finally {
+        $Hasher.Dispose()
+    }
+    if ($ActualHash -ne $LegacyMap02Hash) {
+        throw "Legacy MAP02 checksum mismatch; refusing to replace the existing PK3."
+    }
 }
 
 foreach ($File in $Files) {
@@ -77,6 +100,7 @@ try {
             $true
         )
         try {
+            $LegacyReplacementCount = 0
             foreach ($File in $Files) {
                 $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
                     [char[]]@('\', '/')
@@ -87,14 +111,27 @@ try {
                     [System.IO.Compression.CompressionLevel]::Optimal
                 )
                 $EntryStream = $Entry.Open()
-                $InputStream = [System.IO.File]::OpenRead($File.FullName)
                 try {
-                    $InputStream.CopyTo($EntryStream)
+                    if ($LegacyMap02 -and $EntryName -ieq "maps/MAP02.wad") {
+                        $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
+                        $LegacyReplacementCount++
+                    }
+                    else {
+                        $InputStream = [System.IO.File]::OpenRead($File.FullName)
+                        try {
+                            $InputStream.CopyTo($EntryStream)
+                        }
+                        finally {
+                            $InputStream.Dispose()
+                        }
+                    }
                 }
                 finally {
-                    $InputStream.Dispose()
                     $EntryStream.Dispose()
                 }
+            }
+            if ($LegacyMap02 -and $LegacyReplacementCount -ne 1) {
+                throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
             }
         }
         finally {
@@ -137,6 +174,13 @@ try {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
     Write-Host "PK3 created successfully: $DestinationPath"
+    if ($LegacyMap02) {
+        Write-Host "MAP02 compatibility: original 4.36.4 layout retained for existing saves."
+        Write-Host "New four-section MAP02 is not active in this build. Rebuild without -LegacyMap02 to restore it."
+    }
+    else {
+        Write-Host "MAP02 layout: current source. Use -LegacyMap02 for saves that already visited the old maze."
+    }
     Write-Host "Files included: $($Files.Count)"
     Write-Host "Directory entries: 0"
 }

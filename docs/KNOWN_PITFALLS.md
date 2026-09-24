@@ -158,6 +158,35 @@ native capture; fresh-save and hub-return probes. See validation_4364 evidence.
 Author acceptance: CA-4364-T1-LOOT-01 passed on 2026-09-23. Preserve this separation when adding another
 UI to an established save schema.
 
+## CA-KP-008 — Changed map geometry prevents old saves from loading
+
+Status/evidence: ENGINE-VERIFIED in 4.36.5 (#11), GZDoom g4.14.2.
+Baseline: integrated 4.36.4, `3f3fa0c`; implementation evidence uses the #11
+working tree, delivered in `a7b8f95` / PR #28. Author acceptance:
+CA-4365-MAZE-01 passed on 2026-09-24 without reported qualifications.
+
+GZDoom checks saved map geometry counts and checksum before restoring ZScript
+objects (`p_saveg.cpp`, geometry validation). An inventory revision or a
+WorldLoaded migration cannot repair that earlier rejection. A hub save on a
+different active map can still contain the old MAP02 snapshot; testing only
+fresh games or the active map misses this dependency.
+
+Keep the original WAD and its provenance. The explicit `build_dev.ps1
+-LegacyMap02` / `run_dev.bat --legacy-map02` mode packages that exact MAP02
+under the established package name, with current code and unchanged map IDs.
+The builder verifies SHA-256 before replacing its output. Current runtime
+coordinates branch on the new layout marker, so restored old geometry keeps
+its original travel/furniture positions. Compatibility is continuation of
+the old layout, not conversion to the new layout or permission to reset saves.
+
+Native regression: load a pre-patch save inside MAP02 and another in MAP03
+with a saved MAP02 hub, return, and compare keys, chest ownership, identity,
+size, wear and position. Both pass (49 and 48 checks respectively). Builder
+verification also rejects missing/wrong legacy data without replacing the
+previous package. See [validation evidence](../assets/validation_4365/RESULTS.json).
+Keep compatibility mode for that campaign; normal builds provide the rebuilt
+map for new campaigns. No external save rewriting is required.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.

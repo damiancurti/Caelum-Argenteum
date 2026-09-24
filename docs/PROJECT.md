@@ -1,6 +1,38 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
+
+## 4.36.5 — Four-section sewer layout (issue #11)
+
+MAP02 now contains four identifiable sections, each ending in a separately
+keyed prisoner cell and usable bed. The northern section leads to the keyed
+Zupay arena; the Ace of Cups and existing boss/card exit checks remain. A
+reachable prisoner extraction reservation lies outside that arena; escort
+actors, extraction state and rewards remain #14. The player still uses the
+existing MAP07 connection; #16 owns the later MAP06 route reconciliation.
+
+Passages provide two 160-MU dry walkways beside a harmless 64-MU channel,
+384-MU level crossings/open gates and 128-MU gate headroom. Existing maximum
+player/prisoner collision diameters are 42.6667/42.6 MU and maximum height
+74.7 MU. Cell exits, bends and refuge accesses use the same clear dimensions.
+Existing barred-gate and iron artwork is reused; no Doom asset or MAP01 change.
+
+The retained counts are 96 Mandingas, one Zupay, 45 traps, 39 chests/65 unique
+recipient-sized T1 items and 120 food/120 water. Ammunition totals are 240 arrows,
+120 bolts and 120 bullets, counted as units rather than bundles. Four maintenance
+alcoves provide connected T1 stations without placed enemies/traps. Existing
+rest/combat, finite salvage, crafting costs and times still apply.
+
+Author clarification during #11: repair only weapons whose final recipe is
+known; other weapons may wear out and break. No extra recipes or materials are
+authorized. The implementation now checks knowledge before reserving components.
+The former all-family repair-supply expectation is superseded by this decision.
+
+Compatibility continuation is explicit: a previously visited MAP02 requires
+`run_dev.bat --legacy-map02`, retaining its original WAD and every saved state.
+New layouts do not overwrite existing maze progress. HISTORY records static,
+native and compatibility evidence separately from the author-confirmed PASS of
+CA-4365-MAZE-01 on 2026-09-24 (PR #28). Next implementation: #12 / 4.36.6.
 
 ## 4.36.4 — T1 acquisition, recipient sizes and feedback
 

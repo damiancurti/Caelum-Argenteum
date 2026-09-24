@@ -6,6 +6,7 @@ class CaelumSewerTravel : Object play
     {
         if(level.MapName=="MAP02")
         {
+            if(CaelumMazeLayout.IsCurrent())return CaelumMazeLayout.TravelPosition(id);
             if(id==2)return (704,9600,0);
             if(id==4)return (1600,9600,0);
             if(id==6)return (704,10048,0);

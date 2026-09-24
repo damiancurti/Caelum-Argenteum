@@ -1,0 +1,77 @@
+QA_ROUTE_PERSIST_WORLD map=MAP02 save=0 reopen=0
+QA_ROUTE_PASS largest supported player collision profile active
+QA_ROUTE_PASS no noclip
+QA_ROUTE_PASS retained ground food and water are 120 units each
+QA_ROUTE_PASS ground ammunition is 240 arrows 120 bolts 120 bullets
+QA_ROUTE_PASS 39 real chests hold exactly 65 T1 entries
+QA_ROUTE_COUNTS food=120 water=120 arrows=240 bolts=120 bullets=120 chests=39 equipment=65
+QA_ROUTE_ISOLATION actor_count=160; route runs within one world tick, no AI/hazard ticks; collision restored afterward
+QA_ROUTE_PASS gate 44720 exists
+QA_ROUTE_PASS gate 44720 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44720 opened by real held key/native activation
+QA_ROUTE_PASS refuge/extraction waypoint 0 has native clearance
+QA_ROUTE_PASS real reachable key tid 43710 collected
+QA_ROUTE_PASS real reachable key tid 43720 collected
+QA_ROUTE_PASS gate 44710 exists
+QA_ROUTE_PASS gate 44710 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44710 opened by real held key/native activation
+QA_ROUTE_PASS endpoint bed 44810 exists
+QA_ROUTE_PASS largest player fits bed 44810
+QA_ROUTE_PASS bed 44810 releases into clear walkable space
+QA_ROUTE_PASS route chest exists
+QA_ROUTE_PASS route chest opens under normal aim and sight
+QA_ROUTE_PASS route chest collects each real entry once
+QA_ROUTE_PASS route remains below immobilizing carry capacity
+QA_ROUTE_PASS gate 44700 exists
+QA_ROUTE_PASS gate 44700 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44700 opened by real held key/native activation
+QA_ROUTE_PASS gate 44721 exists
+QA_ROUTE_PASS gate 44721 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44721 opened by real held key/native activation
+QA_ROUTE_PASS refuge/extraction waypoint 1 has native clearance
+QA_ROUTE_PASS real reachable key tid 43711 collected
+QA_ROUTE_PASS real reachable key tid 43721 collected
+QA_ROUTE_PASS gate 44711 exists
+QA_ROUTE_PASS gate 44711 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44711 opened by real held key/native activation
+QA_ROUTE_PASS endpoint bed 44811 exists
+QA_ROUTE_PASS largest player fits bed 44811
+QA_ROUTE_PASS bed 44811 releases into clear walkable space
+QA_ROUTE_PASS gate 44701 exists
+QA_ROUTE_PASS gate 44701 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44701 opened by real held key/native activation
+QA_ROUTE_PASS gate 44722 exists
+QA_ROUTE_PASS gate 44722 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44722 opened by real held key/native activation
+QA_ROUTE_PASS refuge/extraction waypoint 2 has native clearance
+QA_ROUTE_PASS real reachable key tid 43712 collected
+QA_ROUTE_PASS real reachable key tid 43722 collected
+QA_ROUTE_PASS gate 44712 exists
+QA_ROUTE_PASS gate 44712 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44712 opened by real held key/native activation
+QA_ROUTE_PASS endpoint bed 44812 exists
+QA_ROUTE_PASS largest player fits bed 44812
+QA_ROUTE_PASS bed 44812 releases into clear walkable space
+QA_ROUTE_PASS gate 44702 exists
+QA_ROUTE_PASS gate 44702 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44702 opened by real held key/native activation
+QA_ROUTE_PASS gate 44723 exists
+QA_ROUTE_PASS gate 44723 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44723 opened by real held key/native activation
+QA_ROUTE_PASS refuge/extraction waypoint 3 has native clearance
+QA_ROUTE_PASS real reachable key tid 43713 collected
+QA_ROUTE_PASS real reachable key tid 43723 collected
+QA_ROUTE_PASS gate 44713 exists
+QA_ROUTE_PASS gate 44713 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44713 opened by real held key/native activation
+QA_ROUTE_PASS endpoint bed 44813 exists
+QA_ROUTE_PASS largest player fits bed 44813
+QA_ROUTE_PASS bed 44813 releases into clear walkable space
+QA_ROUTE_PASS refuge/extraction waypoint 4 has native clearance
+QA_ROUTE_PASS gate 44703 exists
+QA_ROUTE_PASS gate 44703 approached within normal Use range 48.00
+QA_ROUTE_PASS gate 44703 opened by real held key/native activation
+QA_ROUTE_PASS original Zupay remains in arena
+QA_ROUTE_PASS Zupay-sized native collision proxy traverses 640-MU square in arena
+QA_ROUTE_PASS entire four-section native route completed without teleports/jumps
+QA_DONE route failures=0 steps=2335 beds_mask=15 radius=21.333333 height=74.666667

@@ -1,0 +1,268 @@
+QA_GATE_PASS tag=44720 largest supported profile selected
+QA_GATE_BODY radius=21.333333 height=74.666667
+QA_GATE_VIEW sewer channel
+QA_GATE_VIEW locked cell
+QA_GATE_VIEW repair refuge gate
+QA_GATE_VIEW pre-boss extraction
+QA_GATE_VIEW refuge stations
+QA_GATE_PASS tag=44720 controller exists
+QA_GATE_PASS tag=44720 native barrier exists
+QA_GATE_PASS tag=44720 initial native blockers
+QA_GATE_PASS tag=44720 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44720 distance=48.00 z=64.00
+QA_GATE_PASS tag=44720 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44720 distance=48.00 z=64.00
+QA_GATE_PASS tag=44720 Use trace stops at closed bars
+QA_GATE_PASS tag=44720 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44720 largest player cannot cross closed gate
+QA_GATE_PASS tag=44720 actual projectile impacts closed gate
+QA_GATE_PASS tag=44720 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44720 open native blockers cleared
+QA_GATE_PASS tag=44720 hitscan crosses open gate
+QA_GATE_PASS tag=44720 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44720 Use trace crosses open gate
+QA_GATE_PASS tag=44720 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44720 repeated Use keeps gate open
+QA_GATE_PASS tag=44720 actual projectile crosses open gate
+QA_GATE_PASS tag=44710 controller exists
+QA_GATE_PASS tag=44710 native barrier exists
+QA_GATE_PASS tag=44710 initial native blockers
+QA_GATE_PASS tag=44710 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44710 distance=48.00 z=64.00
+QA_GATE_PASS tag=44710 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44710 distance=48.00 z=64.00
+QA_GATE_PASS tag=44710 Use trace stops at closed bars
+QA_GATE_PASS tag=44710 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44710 largest player cannot cross closed gate
+QA_GATE_PASS tag=44710 wrong silver key cannot open gate
+QA_GATE_PASS tag=44710 actual projectile impacts closed gate
+QA_GATE_PASS tag=44710 actual world key exists
+QA_GATE_PASS tag=44710 actual world key pickup
+QA_GATE_PASS tag=44710 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44710 opening does not consume key
+QA_GATE_PASS tag=44710 open native blockers cleared
+QA_GATE_PASS tag=44710 hitscan crosses open gate
+QA_GATE_PASS tag=44710 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44710 Use trace crosses open gate
+QA_GATE_PASS tag=44710 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44710 repeated Use keeps gate open
+QA_GATE_PASS tag=44710 actual projectile crosses open gate
+QA_GATE_PASS tag=44700 controller exists
+QA_GATE_PASS tag=44700 native barrier exists
+QA_GATE_PASS tag=44700 initial native blockers
+QA_GATE_PASS tag=44700 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44700 distance=48.00 z=64.00
+QA_GATE_PASS tag=44700 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44700 distance=48.00 z=64.00
+QA_GATE_PASS tag=44700 Use trace stops at closed bars
+QA_GATE_PASS tag=44700 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44700 largest player cannot cross closed gate
+QA_GATE_PASS tag=44700 wrong silver key cannot open gate
+QA_GATE_PASS tag=44700 actual projectile impacts closed gate
+QA_GATE_PASS tag=44700 actual world key exists
+QA_GATE_PASS tag=44700 actual world key pickup
+QA_GATE_PASS tag=44700 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44700 opening does not consume key
+QA_GATE_PASS tag=44700 open native blockers cleared
+QA_GATE_PASS tag=44700 hitscan crosses open gate
+QA_GATE_PASS tag=44700 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44700 Use trace crosses open gate
+QA_GATE_PASS tag=44700 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44700 repeated Use keeps gate open
+QA_GATE_PASS tag=44700 actual projectile crosses open gate
+QA_GATE_PASS tag=44721 controller exists
+QA_GATE_PASS tag=44721 native barrier exists
+QA_GATE_PASS tag=44721 initial native blockers
+QA_GATE_PASS tag=44721 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44721 distance=48.00 z=64.00
+QA_GATE_PASS tag=44721 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44721 distance=48.00 z=64.00
+QA_GATE_PASS tag=44721 Use trace stops at closed bars
+QA_GATE_PASS tag=44721 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44721 largest player cannot cross closed gate
+QA_GATE_PASS tag=44721 actual projectile impacts closed gate
+QA_GATE_PASS tag=44721 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44721 open native blockers cleared
+QA_GATE_PASS tag=44721 hitscan crosses open gate
+QA_GATE_PASS tag=44721 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44721 Use trace crosses open gate
+QA_GATE_PASS tag=44721 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44721 repeated Use keeps gate open
+QA_GATE_PASS tag=44721 actual projectile crosses open gate
+QA_GATE_PASS tag=44711 controller exists
+QA_GATE_PASS tag=44711 native barrier exists
+QA_GATE_PASS tag=44711 initial native blockers
+QA_GATE_PASS tag=44711 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44711 distance=48.00 z=64.00
+QA_GATE_PASS tag=44711 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44711 distance=48.00 z=64.00
+QA_GATE_PASS tag=44711 Use trace stops at closed bars
+QA_GATE_PASS tag=44711 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44711 largest player cannot cross closed gate
+QA_GATE_PASS tag=44711 wrong silver key cannot open gate
+QA_GATE_PASS tag=44711 actual projectile impacts closed gate
+QA_GATE_PASS tag=44711 actual world key exists
+QA_GATE_PASS tag=44711 actual world key pickup
+QA_GATE_PASS tag=44711 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44711 opening does not consume key
+QA_GATE_PASS tag=44711 open native blockers cleared
+QA_GATE_PASS tag=44711 hitscan crosses open gate
+QA_GATE_PASS tag=44711 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44711 Use trace crosses open gate
+QA_GATE_PASS tag=44711 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44711 repeated Use keeps gate open
+QA_GATE_PASS tag=44711 actual projectile crosses open gate
+QA_GATE_PASS tag=44701 controller exists
+QA_GATE_PASS tag=44701 native barrier exists
+QA_GATE_PASS tag=44701 initial native blockers
+QA_GATE_PASS tag=44701 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44701 distance=48.00 z=64.00
+QA_GATE_PASS tag=44701 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44701 distance=48.00 z=64.00
+QA_GATE_PASS tag=44701 Use trace stops at closed bars
+QA_GATE_PASS tag=44701 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44701 largest player cannot cross closed gate
+QA_GATE_PASS tag=44701 wrong silver key cannot open gate
+QA_GATE_PASS tag=44701 actual projectile impacts closed gate
+QA_GATE_PASS tag=44701 actual world key exists
+QA_GATE_PASS tag=44701 actual world key pickup
+QA_GATE_PASS tag=44701 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44701 opening does not consume key
+QA_GATE_PASS tag=44701 open native blockers cleared
+QA_GATE_PASS tag=44701 hitscan crosses open gate
+QA_GATE_PASS tag=44701 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44701 Use trace crosses open gate
+QA_GATE_PASS tag=44701 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44701 repeated Use keeps gate open
+QA_GATE_PASS tag=44701 actual projectile crosses open gate
+QA_GATE_PASS tag=44722 controller exists
+QA_GATE_PASS tag=44722 native barrier exists
+QA_GATE_PASS tag=44722 initial native blockers
+QA_GATE_PASS tag=44722 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44722 distance=48.00 z=64.00
+QA_GATE_PASS tag=44722 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44722 distance=48.00 z=64.00
+QA_GATE_PASS tag=44722 Use trace stops at closed bars
+QA_GATE_PASS tag=44722 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44722 largest player cannot cross closed gate
+QA_GATE_PASS tag=44722 actual projectile impacts closed gate
+QA_GATE_PASS tag=44722 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44722 open native blockers cleared
+QA_GATE_PASS tag=44722 hitscan crosses open gate
+QA_GATE_PASS tag=44722 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44722 Use trace crosses open gate
+QA_GATE_PASS tag=44722 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44722 repeated Use keeps gate open
+QA_GATE_PASS tag=44722 actual projectile crosses open gate
+QA_GATE_PASS tag=44712 controller exists
+QA_GATE_PASS tag=44712 native barrier exists
+QA_GATE_PASS tag=44712 initial native blockers
+QA_GATE_PASS tag=44712 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44712 distance=48.00 z=64.00
+QA_GATE_PASS tag=44712 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44712 distance=48.00 z=64.00
+QA_GATE_PASS tag=44712 Use trace stops at closed bars
+QA_GATE_PASS tag=44712 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44712 largest player cannot cross closed gate
+QA_GATE_PASS tag=44712 wrong silver key cannot open gate
+QA_GATE_PASS tag=44712 actual projectile impacts closed gate
+QA_GATE_PASS tag=44712 actual world key exists
+QA_GATE_PASS tag=44712 actual world key pickup
+QA_GATE_PASS tag=44712 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44712 opening does not consume key
+QA_GATE_PASS tag=44712 open native blockers cleared
+QA_GATE_PASS tag=44712 hitscan crosses open gate
+QA_GATE_PASS tag=44712 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44712 Use trace crosses open gate
+QA_GATE_PASS tag=44712 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44712 repeated Use keeps gate open
+QA_GATE_PASS tag=44712 actual projectile crosses open gate
+QA_GATE_PASS tag=44702 controller exists
+QA_GATE_PASS tag=44702 native barrier exists
+QA_GATE_PASS tag=44702 initial native blockers
+QA_GATE_PASS tag=44702 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44702 distance=48.00 z=64.00
+QA_GATE_PASS tag=44702 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44702 distance=48.00 z=64.00
+QA_GATE_PASS tag=44702 Use trace stops at closed bars
+QA_GATE_PASS tag=44702 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44702 largest player cannot cross closed gate
+QA_GATE_PASS tag=44702 wrong silver key cannot open gate
+QA_GATE_PASS tag=44702 actual projectile impacts closed gate
+QA_GATE_PASS tag=44702 actual world key exists
+QA_GATE_PASS tag=44702 actual world key pickup
+QA_GATE_PASS tag=44702 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44702 opening does not consume key
+QA_GATE_PASS tag=44702 open native blockers cleared
+QA_GATE_PASS tag=44702 hitscan crosses open gate
+QA_GATE_PASS tag=44702 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44702 Use trace crosses open gate
+QA_GATE_PASS tag=44702 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44702 repeated Use keeps gate open
+QA_GATE_PASS tag=44702 actual projectile crosses open gate
+QA_GATE_PASS tag=44723 controller exists
+QA_GATE_PASS tag=44723 native barrier exists
+QA_GATE_PASS tag=44723 initial native blockers
+QA_GATE_PASS tag=44723 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44723 distance=48.00 z=64.00
+QA_GATE_PASS tag=44723 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44723 distance=48.00 z=64.00
+QA_GATE_PASS tag=44723 Use trace stops at closed bars
+QA_GATE_PASS tag=44723 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44723 largest player cannot cross closed gate
+QA_GATE_PASS tag=44723 actual projectile impacts closed gate
+QA_GATE_PASS tag=44723 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44723 open native blockers cleared
+QA_GATE_PASS tag=44723 hitscan crosses open gate
+QA_GATE_PASS tag=44723 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44723 Use trace crosses open gate
+QA_GATE_PASS tag=44723 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44723 repeated Use keeps gate open
+QA_GATE_PASS tag=44723 actual projectile crosses open gate
+QA_GATE_PASS tag=44713 controller exists
+QA_GATE_PASS tag=44713 native barrier exists
+QA_GATE_PASS tag=44713 initial native blockers
+QA_GATE_PASS tag=44713 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44713 distance=48.00 z=64.00
+QA_GATE_PASS tag=44713 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44713 distance=48.00 z=64.00
+QA_GATE_PASS tag=44713 Use trace stops at closed bars
+QA_GATE_PASS tag=44713 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44713 largest player cannot cross closed gate
+QA_GATE_PASS tag=44713 wrong silver key cannot open gate
+QA_GATE_PASS tag=44713 actual projectile impacts closed gate
+QA_GATE_PASS tag=44713 actual world key exists
+QA_GATE_PASS tag=44713 actual world key pickup
+QA_GATE_PASS tag=44713 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44713 opening does not consume key
+QA_GATE_PASS tag=44713 open native blockers cleared
+QA_GATE_PASS tag=44713 hitscan crosses open gate
+QA_GATE_PASS tag=44713 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44713 Use trace crosses open gate
+QA_GATE_PASS tag=44713 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44713 repeated Use keeps gate open
+QA_GATE_PASS tag=44713 actual projectile crosses open gate
+QA_GATE_PASS tag=44703 controller exists
+QA_GATE_PASS tag=44703 native barrier exists
+QA_GATE_PASS tag=44703 initial native blockers
+QA_GATE_PASS tag=44703 sight passes closed bars
+QA_GATE_TRACE hitscan type=3 line=44703 distance=48.00 z=64.00
+QA_GATE_PASS tag=44703 hitscan trace stops at closed bars
+QA_GATE_TRACE use type=3 line=44703 distance=48.00 z=64.00
+QA_GATE_PASS tag=44703 Use trace stops at closed bars
+QA_GATE_PASS tag=44703 actual hitscan cannot damage through closed gate
+QA_GATE_PASS tag=44703 largest player cannot cross closed gate
+QA_GATE_PASS tag=44703 wrong silver key cannot open gate
+QA_GATE_PASS tag=44703 actual projectile impacts closed gate
+QA_GATE_PASS tag=44703 actual world key exists
+QA_GATE_PASS tag=44703 actual world key pickup
+QA_GATE_PASS tag=44703 native player CheckUse opens gate through product event
+QA_GATE_PASS tag=44703 opening does not consume key
+QA_GATE_PASS tag=44703 open native blockers cleared
+QA_GATE_PASS tag=44703 hitscan crosses open gate
+QA_GATE_PASS tag=44703 actual hitscan damages target beyond open gate
+QA_GATE_PASS tag=44703 Use trace crosses open gate
+QA_GATE_PASS tag=44703 largest player crosses open gate with native movement
+QA_GATE_PASS tag=44703 repeated Use keeps gate open
+QA_GATE_PASS tag=44703 actual projectile crosses open gate
+QA_GATE_DONE checks=237 failures=0

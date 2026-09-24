@@ -450,6 +450,14 @@ class CaelumDiningWorld : Object play
     {
         if(level.MapName=="MAP06")return Place(601,(-800,800,0),1);
         if(level.MapName=="MAP07")return Place(701,(-256,1280,0),1);
+        if(CaelumMazeLayout.IsCurrent())
+        {
+            // Habilita los espacios trasladados; enemigos y combate siguen
+            // bloqueando el avance mediante las guardas compartidas.
+            for(int i=0;i<CaelumMazeLayout.TIME_ADVANCE_ZONE_COUNT;i++)
+                Zone(CaelumMazeLayout.TimeAdvanceZonePosition(i),i+1);
+            return true;
+        }
         if(!CaelumSewerTrialSupport.IsTrialMap())return true;
         Zone(level.MapName=="MAP02"?(-224,160,0):(0,320,0),1);
         if(level.MapName!="MAP03")return true;

@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -56,18 +56,25 @@ the gauchos and rural culture, and the humans the urban porteño society.
   mines, teleport, ceiling crusher, resting weight, and levers.
 - **MAP01 (mansion/tutorial):** prologue, Unknown Voice, Palomo, Argento,
   Caella, Ronnie, and Rulo; first weapon, Box, and exit to MAP02.
-- **MAP02 (maze):** three sections, 147 rooms, 96 Mandingas, 45 traps, three
-  keys, 39 chests, 65 unique T1 equipment pieces, final Zupay, Ace of Cups, and the
-  coast exit.
+- **MAP02 (maze):** four sections, 100 junction rooms, 96 Mandingas, 45 traps,
+  four progression/arena and four cell keys, 39 chests, 65 unique T1 pieces,
+  four cell beds/refuges, final Zupay, Ace of Cups and the retained coast exit.
 - **Presentation:** modular first-person view, event audio, Spanish/English
   localization, project typography, and hub transitions.
 
 ## Current status
 
-Current release **4.36.4** implements #10: the complete T1 maze catalogue,
+Current release **4.36.5** implements #11: wider four-section sewers, keyed
+barred gates/cells, beds, repair refuges, pre-boss extraction reservation and
+240 arrows/120 bolts/120 bullets. Only known weapon recipes permit repair;
+no materials or recipes are added. The author confirmed CA-4365-MAZE-01 passed
+on 2026-09-24; no author checks remain pending.
+Saved campaigns that visited old MAP02 use `run_dev.bat --legacy-map02` to
+continue byte-identical legacy geometry; normal builds use the new layout.
+The accepted **4.36.4** implements #10: the complete T1 maze catalogue,
 recipient-sized natural equipment/rewards, explicit chest previews/collection
 and a bounded recent-message feed. The author confirmed CA-4364-T1-LOOT-01 passed
-on 2026-09-23; the author-test queue is empty.
+on 2026-09-23; its acceptance remains recorded separately in HISTORY.
 The retained 4.36.3 issue #9 flail-handle rotation adds 10 degrees
 further counterclockwise across T1–T3. Native before/after, full spin, return
 and re-equip checks passed; the author confirmed CA-4360I-VISUAL-01 passed
@@ -85,10 +92,10 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patches 4.36.5–4.36.9 (#11–#15): four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
-  192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
+- Author-requested patches 4.36.6–4.36.9 (#12–#15): 192 enemy rats alongside
+  96 Mandingas; four recolored prisoners; persistent
   rescues/port faction rewards; approved Tarot images. These are planned,
-  not present in the current three-section map.
+  not present in the current four-section map.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation

@@ -16,6 +16,7 @@ class CaelumSewerTrialSupport : Object play
 
     static vector3 BenchPosition()
     {
+        if(CaelumMazeLayout.IsCurrent())return CaelumMazeLayout.ArrivalWorkbenchPosition();
         return level.MapName == "MAP02" ? (-320,64,0) : (-80,384,0);
     }
 
@@ -42,7 +43,7 @@ class CaelumSewerTrialSupport : Object play
 
     static void PrepareWorld()
     {
-        if (!IsTrialMap()) return;
+        if (!IsTrialMap() && !CaelumMazeLayout.IsCurrent()) return;
         vector3 position = BenchPosition();
         PlaceStation("CaelumWorkbenchStation", CaelumConstants.CRAFTING_STATION_WORKBENCH, position);
         PlaceStation("CaelumSawmillStation", CaelumConstants.CRAFTING_STATION_SAWMILL, position + (level.MapName=="MAP02"?(0,112,0):(-112,0,0)));

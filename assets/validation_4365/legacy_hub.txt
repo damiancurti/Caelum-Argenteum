@@ -1,0 +1,52 @@
+QA_SAVE_WORLD map=MAP03 save=1 reopen=0 checksum=4f4b47d52ac384d1c22a332dd9e1caa6
+QA_SAVE_HUB_SNAPSHOT_READY
+QA_SAVE_WORLD map=MAP02 save=0 reopen=1 checksum=50e947197aa79a29d536cdb389ee7136
+QA_SAVE PASS legacy geometry never selects current layout marker
+QA_SAVE PASS legacy reservoir travel coordinates
+QA_SAVE PASS legacy tarot travel coordinates
+QA_SAVE PASS legacy maintenance travel coordinates
+QA_SAVE PASS legacy coast travel coordinates
+QA_SAVE PASS revision1 retained
+QA_SAVE PASS collected sluice key retained
+QA_SAVE PASS chest 0 exact remaining slots
+QA_SAVE PASS chest 1 exact remaining slots
+QA_SAVE PASS chest 2 exact remaining slots
+QA_SAVE PASS chest 3 exact remaining slots
+QA_SAVE PASS chest 4 exact remaining slots
+QA_SAVE PASS chest 5 exact remaining slots
+QA_SAVE PASS chest 6 exact remaining slots
+QA_SAVE PASS chest 7 exact remaining slots
+QA_SAVE PASS chest 8 exact remaining slots
+QA_SAVE PASS chest 9 exact remaining slots
+QA_SAVE PASS chest 10 exact remaining slots
+QA_SAVE PASS chest 11 exact remaining slots
+QA_SAVE PASS chest 12 exact remaining slots
+QA_SAVE PASS chest 13 exact remaining slots
+QA_SAVE PASS chest 14 exact remaining slots
+QA_SAVE PASS chest 15 exact remaining slots
+QA_SAVE PASS chest 16 exact remaining slots
+QA_SAVE PASS chest 17 exact remaining slots
+QA_SAVE PASS chest 18 exact remaining slots
+QA_SAVE PASS chest 19 exact remaining slots
+QA_SAVE PASS chest 20 exact remaining slots
+QA_SAVE PASS chest 21 exact remaining slots
+QA_SAVE PASS chest 22 exact remaining slots
+QA_SAVE PASS chest 23 exact remaining slots
+QA_SAVE PASS chest 24 exact remaining slots
+QA_SAVE PASS chest 25 exact remaining slots
+QA_SAVE PASS chest 26 exact remaining slots
+QA_SAVE PASS chest 27 exact remaining slots
+QA_SAVE PASS chest 28 exact remaining slots
+QA_SAVE PASS chest 29 exact remaining slots
+QA_SAVE PASS chest 30 exact remaining slots
+QA_SAVE PASS chest 31 exact remaining slots
+QA_SAVE PASS chest 32 exact remaining slots
+QA_SAVE PASS chest 33 exact remaining slots
+QA_SAVE PASS chest 34 exact remaining slots
+QA_SAVE PASS chest 35 exact remaining slots
+QA_SAVE PASS chest 36 exact remaining slots
+QA_SAVE PASS chest 37 exact remaining slots
+QA_SAVE PASS chest 38 exact remaining slots
+QA_SAVE PASS owned equipment identity size wear retained
+QA_SAVE PASS owned equipment exists
+QA_DONE save_compat failures=0 save=0 reopen=1 revision=1

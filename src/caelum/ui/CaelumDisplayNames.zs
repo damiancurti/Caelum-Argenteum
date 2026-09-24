@@ -105,7 +105,7 @@ class CaelumDisplayNames : Object
     {
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
-            if(specialType>=1 && specialType<=3)return String.Format("CA_MAZE_KEY_%d",specialType);
+            if(specialType>=1 && specialType<=8)return String.Format("CA_MAZE_KEY_%d",specialType);
             return "CA_KEY_SILVER";
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)

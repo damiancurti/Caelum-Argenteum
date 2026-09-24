@@ -10649,6 +10649,25 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
+    bool KnowsWeaponRepairRecipe(CaelumEquipmentItem item)
+    {
+        if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
+            return false;
+        // La receta del arma completa autoriza la reparación; tener sus
+        // componentes no sustituye ese conocimiento. La esencia distingue variantes.
+        for (int option = 0; option < CaelumMainM00StarterRules.OPTION_COUNT; option++)
+        {
+            if (CaelumMainM00StarterRules.GetWeaponType(option) != item.ItemType) continue;
+            int recipe = CaelumMainM00StarterRules.GetRecipe(option);
+            if (CaelumCraftingRules.GetUnifiedRecipeKind(recipe)
+                    == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
+                && CaelumCraftingRules.GetUnifiedEssenceType(recipe) != item.EssenceType)
+                continue;
+            return DirectCraftingRecipeKnown(recipe);
+        }
+        return false;
+    }
+
     void BeginRepairSelectedEquipment()
     {
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
@@ -10671,6 +10690,12 @@ class CaelumPlayer : DoomPlayer
         }
         CaelumEquipmentItem target = GetSelectedNativeEquipmentItem();
         if (!IsDurabilityTaskEquipment(target)) { return; }
+        if (target.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && !KnowsWeaponRepairRecipe(target))
+        {
+            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED;
+            return;
+        }
         if (target.Equipped)
         {
             LastEquipmentAction =

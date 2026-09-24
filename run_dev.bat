@@ -3,6 +3,14 @@
 REM Delayed expansion preserves paths containing parentheses inside IF.
 setlocal EnableDelayedExpansion
 
+REM Select compatibility explicitly; never modify or restart a saved campaign.
+set "BUILD_MAP_OPTION="
+if not "%~2"=="" goto invalid_arguments
+if "%~1"=="" goto arguments_ready
+if /I not "%~1"=="--legacy-map02" goto invalid_arguments
+set "BUILD_MAP_OPTION=-LegacyMap02"
+:arguments_ready
+
 REM Engine path in the installation supplied by the author.
 set "GZDOOM_EXE=C:\Users\dcc70\OneDrive\Documentos\GZDooM\gzdoom.exe"
 
@@ -33,7 +41,7 @@ if not exist "!DOOM2_IWAD!" (
 
 REM Build with the authoritative builder in the project root.
 pushd "!PROJECT_ROOT!"
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "!PROJECT_ROOT!build_dev.ps1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "!PROJECT_ROOT!build_dev.ps1" !BUILD_MAP_OPTION!
 set "BUILD_EXIT=!ERRORLEVEL!"
 popd
 
@@ -49,3 +57,10 @@ REM Start GZDoom with the newly rebuilt PK3.
 "!GZDOOM_EXE!" -iwad "!DOOM2_IWAD!" -file "!PROJECT_PK3!"
 
 endlocal
+exit /b
+
+:invalid_arguments
+echo Usage: run_dev.bat [--legacy-map02]
+echo --legacy-map02 continues saves that already visited the original 4.36.4 maze.
+endlocal
+exit /b 2

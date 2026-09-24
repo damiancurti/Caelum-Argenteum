@@ -37,38 +37,16 @@ check(not any(a['type'] in (18100,18101,18102,18130,18131) for a in m['things'])
 check(Counter(t['type'] for t in m['things'])[30978]*5==120,'120 food rations')
 check(Counter(t['type'] for t in m['things'])[30979]*5==120,'120 water rations')
 check(Counter(t['type'] for t in m['things'])[18037]==96,'96 Mandingas')
-cells={(a[0],a[1]):a[2:] for a in m['cells']}
-def walk(keys):
- start=(-1152,0);seen={start};queue=deque([start])
- while queue:
-  a=queue.popleft()
-  for dx,dy in [(32,0),(-32,0),(0,32),(0,-32)]:
-   b=(a[0]+dx,a[1]+dy)
-   if b in seen or b not in cells:continue
-   f,c,g,tag,w=cells[b]
-   if tag and tag-43701>=keys:continue
-   if c-f<56 and not tag:continue
-   if f-cells[a][0]>24:continue
-   seen.add(b);queue.append(b)
- return seen
-progress=[]
-for keys in range(4):
- reachable=walk(keys)
- for z in range(3):
-  x,y=m['zones'][z]['position'];check(((x//32*32,y//32*32) in reachable)==(z<=keys),f'progression with {keys} keys, key {z+1}')
- check(((1152,10112) in reachable)==(keys==3),f'final chamber requires three keys ({keys})')
- progress.append(len(reachable))
-check(len(walk(3))==len(cells),'all floor cells, including pits and steps, are reachable')
-for trap in m['traps']:
- if trap['type']=='pit':
-  x,y=trap['position'];check((x-64,y-32) in walk(3),'pit connects to its exit steps')
+# Radius-aware topology is maintained independently from catalogue assertions.
+from validate_map02_layout import main as validate_layout
+check(not validate_layout(), 'four-section native geometry, counts and keyed routes')
 b=(R/'src/maps/MAP02.wad').read_bytes();magic,n,o=struct.unpack_from('<4sii',b);lumps={}
 for i in range(n):
  off,size,name=struct.unpack_from('<ii8s',b,o+i*16);lumps[name.rstrip(b'\0').decode()]=b[off:off+size]
 check(magic==b'PWAD' and 'TEXTMAP' in lumps and 'ENDMAP' in lumps,'valid UDMF WAD')
 s=lumps['TEXTMAP'].decode();check(s.count('thing\n{')==len(m['things']),'WAD actor count matches manifest')
 check(s.count('sector\n{')==m['geometry']['sectors'],'WAD sector count matches manifest')
-check(len(re.findall(r'special = 13;',s))==36,'outlines of the three native doors')
+check(len(re.findall(r'special = 13;',s))==sum(g['width']//32 for g in m['gates']),'all native barred-gate segments')
 textures=(R/'src/TEXTURES').read_text()
 for family,x in [(16,3),(17,2.45)]:
  for tier in range(1,4):
@@ -76,7 +54,7 @@ for family,x in [(16,3),(17,2.45)]:
    block=re.search(rf'Sprite "D{family}{tier}{phase}0",.*?\n\}}',textures,re.S).group()
    check(float(re.search(r'XScale ([\d.]+)',block)[1])==x,'double thickness: '+str(family)+str(tier)+phase)
 check('upper.bOnMobj' in (R/'src/caelum/world/CaelumWeightPressure.zs').read_text(),'weight requires native support')
-report=dict(version='4.36.4',checks=len(checks),passed=True,category_counts=counts,trap_counts=Counter(t['type'] for t in m['traps']),reachable_cells_by_keys=progress,map02_sha256=hashlib.sha256(b).hexdigest(),limits='Static coverage and floor-connectivity checks; does not replace native engine radius, collision or combat tests.')
-(R/'assets/validation_4364').mkdir(exist_ok=True)
-(R/'assets/validation_4364/STATIC_CONTENT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+report=dict(version='4.36.5',checks=len(checks),passed=True,category_counts=counts,trap_counts=Counter(t['type'] for t in m['traps']),map02_sha256=hashlib.sha256(b).hexdigest(),limits='Static coverage and floor-connectivity checks; does not replace native engine radius, collision or combat tests.')
+(R/'assets/validation_4365').mkdir(exist_ok=True)
+(R/'assets/validation_4365/STATIC_CONTENT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False))
