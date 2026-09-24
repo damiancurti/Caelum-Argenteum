@@ -1,6 +1,70 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
+
+## 4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)
+
+Baseline: integrated 4.36.4, `3f3fa0c` (PR #27). Rebuilt MAP02 has four
+25-junction sections, four separately keyed endpoint cells with usable beds,
+four existing-station repair networks, and a keyed northern Zupay arena.
+Eight reachable keys define an acyclic progression, documented in SYSTEMS.
+The pre-boss extraction point reserves space only: prisoner actors, escort,
+survival rewards and registration belong to #14. Existing player travel stays
+unchanged until #16 reconciles the confirmed MAP06 port destination.
+
+Passages and gates are 384 MU wide, with two 160-MU dry walkways beside a
+64-MU channel; junctions/cells/refuges are 640 MU wide. Dimensions account for
+the largest player radius 21.333333 and prisoner radius 21.3. Gates retain
+native closed movement, Use, hitscan and projectile blocking while allowing
+sight through project-owned CMGT02 bars. Keyed Use permanently opens them.
+Overhead iron conduits and existing sewer surfaces add environmental detail;
+no imported Doom art, sewage damage or new water rule was added. Before/after
+native views, exact clearances and content counts accompany the patch.
+
+The existing 96 Mandingas, one Zupay, 45 traps, 39 chests and complete 65-entry
+recipient-sized T1 catalogue remain. Ground food/water stay at 120 units each.
+The author's ammunition exception supplies exactly 240 arrows, 120 bolts and
+120 bullets (12/6/6 twenty-unit bundles). Other accepted ground totals remain.
+MAP01 retains its original bytes; the generated loot catalogue retains its
+original content (normal checkout line endings).
+
+Resource audit found no new-map source of recipes/raw materials and no way to
+repair the unique carbine by dismantling that same carbine. The author then
+specified that only weapons with a known recipe can be repaired; the others
+can only break. Consequently a known final weapon recipe is required,
+including matching essence; unknown recipes reject before reserving materials.
+There is no new material or recipe allowance. Existing finite salvage, costs,
+times, equipment wear/breakage and dismantling rules remain. Native tests cover
+all 36 weapon/essence recipe pairs and a real paid repair using finite salvage
+from a matching chest dagger. They do not claim every loot family can be
+sustained indefinitely. Rest/work zones follow relocated arrival infrastructure,
+refuges and cell beds; ordinary threat/combat guards still apply.
+
+GZDoom validates map geometry before restoring ZScript; old snapshots cannot
+silently become the new layout. Explicit `--legacy-map02` launch mode packages
+the preserved, checksum-verified 4.36.4 WAD with current code and the same
+package/map names. It continues old campaigns reversibly without resetting
+keys, loot, positions or wear. Native active-map and hub-return tests passed
+49 and 48 checks. CA-KP-008 records the cause, constraint and prevention.
+
+Static coverage passes 198 geometry/reachability checks and 620 content checks.
+Native g4.14.2 evidence includes 237 gate checks, a 2335-point ordinary-collision
+route at maximum player size, all four beds and Zupay-sized arena clearance.
+The route fixture isolates AI/hazards during movement; it proves geometry, not
+a combat playthrough or live escort AI. Gate tests use actual native movement,
+Use activation, projectile impacts and hitscan damage. Implementation review
+fixed a bridge bypass and keys too close to pits. It also corrected a legacy
+MAP03–05-only initialization guard that skipped the new MAP02 rest/work zones
+and entrance furniture; 72 native checks confirm their initialization, ordinary
+rest/combat restrictions and the retained boss/card exit truth table.
+Detailed final results, persistence checks and limitations are retained in
+`assets/validation_4365/RESULTS.json`.
+
+Author acceptance: **PENDING**, CA-4365-MAZE-01 (origin 4.36.5 / issue #11).
+Manual acceptance of #10 does not cover this new map or recipe restriction.
+Issue #11 remains open for that acceptance. Usage evidence separates this
+implementation interval and review iterations from Work planning; unavailable
+model/counter fields are explicitly recorded in the validation results and PR.
 
 ## 4.36.4 — MAP02 T1 loot, recipient sizing and acquisition feedback (#10)
 

@@ -1,0 +1,73 @@
+QA_GUARD_PASS ten authored arrival/refuge/cell zones exist
+QA_GUARD_PASS zone 0 native position qualifies
+QA_GUARD_PASS zone 0 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 0 does not waive rest combat guard
+QA_GUARD_PASS zone 0 does not waive time advance combat guard
+QA_GUARD_PASS zone 0 cannot activate fast time in combat
+QA_GUARD_PASS zone 0 blocked action grants no elapsed time
+QA_GUARD_PASS zone 1 native position qualifies
+QA_GUARD_PASS zone 1 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 1 does not waive rest combat guard
+QA_GUARD_PASS zone 1 does not waive time advance combat guard
+QA_GUARD_PASS zone 1 cannot activate fast time in combat
+QA_GUARD_PASS zone 1 blocked action grants no elapsed time
+QA_GUARD_PASS zone 2 native position qualifies
+QA_GUARD_PASS zone 2 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 2 does not waive rest combat guard
+QA_GUARD_PASS zone 2 does not waive time advance combat guard
+QA_GUARD_PASS zone 2 cannot activate fast time in combat
+QA_GUARD_PASS zone 2 blocked action grants no elapsed time
+QA_GUARD_PASS zone 3 native position qualifies
+QA_GUARD_PASS zone 3 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 3 does not waive rest combat guard
+QA_GUARD_PASS zone 3 does not waive time advance combat guard
+QA_GUARD_PASS zone 3 cannot activate fast time in combat
+QA_GUARD_PASS zone 3 blocked action grants no elapsed time
+QA_GUARD_PASS zone 4 native position qualifies
+QA_GUARD_PASS zone 4 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 4 does not waive rest combat guard
+QA_GUARD_PASS zone 4 does not waive time advance combat guard
+QA_GUARD_PASS zone 4 cannot activate fast time in combat
+QA_GUARD_PASS zone 4 blocked action grants no elapsed time
+QA_GUARD_PASS zone 5 native position qualifies
+QA_GUARD_PASS zone 5 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 5 does not waive rest combat guard
+QA_GUARD_PASS zone 5 does not waive time advance combat guard
+QA_GUARD_PASS zone 5 cannot activate fast time in combat
+QA_GUARD_PASS zone 5 blocked action grants no elapsed time
+QA_GUARD_PASS zone 6 native position qualifies
+QA_GUARD_PASS zone 6 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 6 does not waive rest combat guard
+QA_GUARD_PASS zone 6 does not waive time advance combat guard
+QA_GUARD_PASS zone 6 cannot activate fast time in combat
+QA_GUARD_PASS zone 6 blocked action grants no elapsed time
+QA_GUARD_PASS zone 7 native position qualifies
+QA_GUARD_PASS zone 7 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 7 does not waive rest combat guard
+QA_GUARD_PASS zone 7 does not waive time advance combat guard
+QA_GUARD_PASS zone 7 cannot activate fast time in combat
+QA_GUARD_PASS zone 7 blocked action grants no elapsed time
+QA_GUARD_PASS zone 8 native position qualifies
+QA_GUARD_PASS zone 8 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 8 does not waive rest combat guard
+QA_GUARD_PASS zone 8 does not waive time advance combat guard
+QA_GUARD_PASS zone 8 cannot activate fast time in combat
+QA_GUARD_PASS zone 8 blocked action grants no elapsed time
+QA_GUARD_PASS zone 9 native position qualifies
+QA_GUARD_PASS zone 9 begins genuine rest session (prior reason )
+QA_GUARD_PASS zone 9 does not waive rest combat guard
+QA_GUARD_PASS zone 9 does not waive time advance combat guard
+QA_GUARD_PASS zone 9 cannot activate fast time in combat
+QA_GUARD_PASS zone 9 blocked action grants no elapsed time
+QA_GUARD_PASS ordinary maze corridor does not become a safe zone
+QA_GUARD_PASS real boss and Ace reward exist
+QA_GUARD_PASS actual reward approached within aim/sight
+QA_GUARD_PASS live boss and absent card block coast departure
+QA_GUARD_PASS live boss blocks actual Ace collection
+QA_GUARD_PASS live boss blocks departure even with owned card
+QA_GUARD_PASS defeated boss without Ace still blocks departure
+QA_GUARD_PASS actual reward grants Ace after defeated-boss predicate
+QA_GUARD_PASS defeated boss and actual Ace ownership permit coast predicate
+QA_GUARD_PASS repeated reward interaction never duplicates card
+QA_GUARD_PASS fixture restores original boss/card state before next tick
+QA_DONE guards checks=72 failures=0

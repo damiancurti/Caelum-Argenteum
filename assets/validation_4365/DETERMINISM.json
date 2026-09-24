@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "identical_regeneration": {
+    "src/maps/MAP02.wad": "f074f83b071ede7c6baaee6f06da8fffcee2925c20c7b317736c9b31f93921c9",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "e1927619b91f004dda3399bd97f233c5888d04a8a4e7f7bb16f0d8f55f706213",
+    "src/caelum/world/CaelumMazeLayout.zs": "3f7fdb54db6104373c7b578b5f9190f99675bc3667b5d03656fb7d1cf2ad3f65",
+    "assets/map02_maze/MAP02_MANIFEST.json": "6e460137daebcb57fa9e566205b45f5f84e82da3cfb14978f247c69613517dd3"
+  },
+  "unchanged_from_baseline": [
+    {
+      "path": "src/maps/MAP01.wad",
+      "sha256": "c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c",
+      "comparison": "exact bytes"
+    },
+    {
+      "path": "src/caelum/world/CaelumMazeLootCatalogue.zs",
+      "sha256": "e1927619b91f004dda3399bd97f233c5888d04a8a4e7f7bb16f0d8f55f706213",
+      "comparison": "Git content, normalizing checkout CRLF"
+    }
+  ]
+}

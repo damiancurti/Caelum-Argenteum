@@ -1,0 +1,43 @@
+QA_ROUTE_PERSIST_WORLD map=MAP02 save=1 reopen=0
+QA_ROUTE_PERSIST_PASS serialized route and all four bed trials preserved
+QA_ROUTE_PERSIST_PASS key lock 203 survives
+QA_ROUTE_PERSIST_PASS key lock 204 survives
+QA_ROUTE_PERSIST_PASS key lock 205 survives
+QA_ROUTE_PERSIST_PASS key lock 206 survives
+QA_ROUTE_PERSIST_PASS key lock 207 survives
+QA_ROUTE_PERSIST_PASS key lock 208 survives
+QA_ROUTE_PERSIST_PASS key lock 209 survives
+QA_ROUTE_PERSIST_PASS key lock 210 survives
+QA_ROUTE_PERSIST_PASS all twelve controller open states persist
+QA_ROUTE_PERSIST_PASS 144 real gate lines retain cleared collision/use/attack flags
+QA_ROUTE_PERSIST_PASS opened gate middle textures remain removed
+QA_ROUTE_PERSIST_PASS cell bed 0 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 1 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 2 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 3 remains present and released
+QA_ROUTE_PERSIST_PASS looted chest remains empty after EnsureLoot
+QA_DONE route_persistence stage=0 failures=0
+QA_ROUTE_HUB departing MAP02 -> MAP03 for native hub persistence only; progression guard tested separately
+QA_ROUTE_PERSIST_WORLD map=MAP03 save=0 reopen=0
+QA_ROUTE_PERSIST_PASS route inventory record travels to MAP03
+QA_ROUTE_HUB returning MAP03 -> MAP02
+QA_ROUTE_PERSIST_WORLD map=MAP02 save=0 reopen=1
+QA_ROUTE_PERSIST_PASS serialized route and all four bed trials preserved
+QA_ROUTE_PERSIST_PASS key lock 203 survives
+QA_ROUTE_PERSIST_PASS key lock 204 survives
+QA_ROUTE_PERSIST_PASS key lock 205 survives
+QA_ROUTE_PERSIST_PASS key lock 206 survives
+QA_ROUTE_PERSIST_PASS key lock 207 survives
+QA_ROUTE_PERSIST_PASS key lock 208 survives
+QA_ROUTE_PERSIST_PASS key lock 209 survives
+QA_ROUTE_PERSIST_PASS key lock 210 survives
+QA_ROUTE_PERSIST_PASS all twelve controller open states persist
+QA_ROUTE_PERSIST_PASS 144 real gate lines retain cleared collision/use/attack flags
+QA_ROUTE_PERSIST_PASS opened gate middle textures remain removed
+QA_ROUTE_PERSIST_PASS cell bed 0 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 1 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 2 remains present and released
+QA_ROUTE_PERSIST_PASS cell bed 3 remains present and released
+QA_ROUTE_PERSIST_PASS looted chest remains empty after EnsureLoot
+QA_DONE route_persistence stage=2 failures=0
+QA_DONE route_hub failures=0

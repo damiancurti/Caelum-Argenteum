@@ -1,0 +1,32 @@
+CA-4365-MAZE-01 — Four-section sewer, gates, refuges and compatibility
+Origin: 4.36.5 / issue #11. Status: awaiting explicit author confirmation.
+Prerequisites: GZDoom 4.14.2, normal rebuilt PK3 and a new MAP02 or a save that
+has never visited MAP02. Keep original saves; use copies for compatibility checks.
+
+1. Traverse all four sections with normal controls. Obtain each section and cell
+   key before its lock, test a wrong key, then open with the correct one. Check
+   cell beds and the route back to the extraction reservation before the boss.
+   Expected: no bypass/deadlock, usable beds, broad bends/crossings/open gates;
+   transparent closed bars stop passage, Use and attacks. The extraction marker
+   does not transport the player or grant a rescue/reward.
+2. Inspect channels, iron conduits, barred gates and refuges. Check the retained
+   T1 recipient-sized loot/39 chests, food/water and accessible ammunition.
+   Expected ground totals: 120 food, 120 water, 240 arrows, 120 bolts, 120 bullets.
+   Population remains 96 Mandingas/one Zupay and 45 traps; no new rats.
+3. Wear an owned weapon with a known recipe. Obtain required materials through
+   existing finite salvage, then use a connected refuge station to repair it.
+   Expected: normal material cost/time, only reserved units consumed. A weapon
+   with unknown recipe cannot be repaired even if components are available;
+   it may still wear out and break. No free repair/material/recipe allowance.
+4. Save/load after collecting keys, opening cells and taking chest loot; leave
+   and return to MAP02. Expected: gate/bed/chest/owned-item progress persists.
+   Check Zupay movement/attacks in the northern arena and retained boss/Ace exit
+   requirements. Live four-prisoner escort AI remains a separate #14 test.
+5. For a copy of an older campaign that already visited the three-section MAP02,
+   launch run_dev.bat --legacy-map02. Load inside MAP02 and from another hub map,
+   then return. Expected: original layout, position, keys, loot and wear retained.
+   Keep compatibility mode for that campaign; rebuild normally for the new maze.
+   This preserves the old map rather than transferring it into the new layout.
+
+Report failed/partial steps separately. Only explicit author pass confirmation
+removes this entry and records the ID, origin, date and qualifications in HISTORY.

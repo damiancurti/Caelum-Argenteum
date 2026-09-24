@@ -21,7 +21,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumMenuAudio", "CaelumConversationResume", "CaelumWorldClockTicker", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay", "CaelumChestPreview"
+    EventHandlers = "CaelumMenuAudio", "CaelumConversationResume", "CaelumWorldClockTicker", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents"
 
     // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
     // trasladar o recrear a Palomo durante futuras etapas de misión sin
@@ -480,4 +480,12 @@ DoomEdNums
     30976 = CaelumMazeTrapdoor
     30978 = CaelumMazeFood
     30979 = CaelumMazeWater
+    30980 = CaelumMazeBarredGate
+    30981 = CaelumMazeLayoutMarker
+    30982 = CaelumMazeNorthKey
+    30983 = CaelumMazeSouthCellKey
+    30984 = CaelumMazeWestCellKey
+    30985 = CaelumMazeEastCellKey
+    30986 = CaelumMazeNorthCellKey
+    30987 = CaelumRestBed
 }

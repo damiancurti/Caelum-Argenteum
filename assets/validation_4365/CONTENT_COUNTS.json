@@ -1,0 +1,300 @@
+{
+  "baseline": "3f3fa0c2c3a2d426c92d4d56240d41aaf15e0e45",
+  "scope": "Authored MAP02 things, including non-inventory markers and stations. Runtime-created Ace and travel/support actors are not ground bundles.",
+  "types": [
+    {
+      "editor_number": 1,
+      "actor": "PlayerStart",
+      "before_actors": 2,
+      "after_actors": 2,
+      "units_per_pickup": 1,
+      "before_units": 2,
+      "after_units": 2
+    },
+    {
+      "editor_number": 18000,
+      "actor": "CaelumForgeStation",
+      "before_actors": 0,
+      "after_actors": 4,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 4
+    },
+    {
+      "editor_number": 18001,
+      "actor": "CaelumRangedWorkshopStation",
+      "before_actors": 0,
+      "after_actors": 4,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 4
+    },
+    {
+      "editor_number": 18003,
+      "actor": "CaelumEssenceAltarStation",
+      "before_actors": 0,
+      "after_actors": 4,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 4
+    },
+    {
+      "editor_number": 18004,
+      "actor": "CaelumWorkbenchStation",
+      "before_actors": 0,
+      "after_actors": 4,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 4
+    },
+    {
+      "editor_number": 18037,
+      "actor": "CaelumMandinga",
+      "before_actors": 96,
+      "after_actors": 96,
+      "units_per_pickup": 1,
+      "before_units": 96,
+      "after_units": 96
+    },
+    {
+      "editor_number": 18038,
+      "actor": "CaelumZupayColossus",
+      "before_actors": 1,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 1,
+      "after_units": 1
+    },
+    {
+      "editor_number": 18110,
+      "actor": "CaelumCarbineAmmo",
+      "before_actors": 0,
+      "after_actors": 6,
+      "units_per_pickup": 20,
+      "before_units": 0,
+      "after_units": 120
+    },
+    {
+      "editor_number": 18111,
+      "actor": "CaelumArrowAmmo",
+      "before_actors": 0,
+      "after_actors": 12,
+      "units_per_pickup": 20,
+      "before_units": 0,
+      "after_units": 240
+    },
+    {
+      "editor_number": 18112,
+      "actor": "CaelumBoltAmmo",
+      "before_actors": 0,
+      "after_actors": 6,
+      "units_per_pickup": 20,
+      "before_units": 0,
+      "after_units": 120
+    },
+    {
+      "editor_number": 30961,
+      "actor": "CaelumHazardRock",
+      "before_actors": 12,
+      "after_actors": 12,
+      "units_per_pickup": 1,
+      "before_units": 12,
+      "after_units": 12
+    },
+    {
+      "editor_number": 30963,
+      "actor": "CaelumMagicMine",
+      "before_actors": 12,
+      "after_actors": 12,
+      "units_per_pickup": 1,
+      "before_units": 12,
+      "after_units": 12
+    },
+    {
+      "editor_number": 30964,
+      "actor": "CaelumTeleportTrap",
+      "before_actors": 6,
+      "after_actors": 6,
+      "units_per_pickup": 1,
+      "before_units": 6,
+      "after_units": 6
+    },
+    {
+      "editor_number": 30965,
+      "actor": "CaelumTrapDestination",
+      "before_actors": 6,
+      "after_actors": 6,
+      "units_per_pickup": 1,
+      "before_units": 6,
+      "after_units": 6
+    },
+    {
+      "editor_number": 30966,
+      "actor": "CaelumCrusherTrap",
+      "before_actors": 9,
+      "after_actors": 9,
+      "units_per_pickup": 1,
+      "before_units": 9,
+      "after_units": 9
+    },
+    {
+      "editor_number": 30970,
+      "actor": "CaelumMazeSluiceKey",
+      "before_actors": 1,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 1,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30971,
+      "actor": "CaelumMazeCryptKey",
+      "before_actors": 1,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 1,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30972,
+      "actor": "CaelumMazeSanctumKey",
+      "before_actors": 1,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 1,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30973,
+      "actor": "CaelumMazeChest",
+      "before_actors": 39,
+      "after_actors": 39,
+      "units_per_pickup": 1,
+      "before_units": 39,
+      "after_units": 39
+    },
+    {
+      "editor_number": 30974,
+      "actor": "CaelumCupsAceEssence",
+      "before_actors": 1,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 1,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30975,
+      "actor": "CaelumMazeRockPlate",
+      "before_actors": 12,
+      "after_actors": 12,
+      "units_per_pickup": 1,
+      "before_units": 12,
+      "after_units": 12
+    },
+    {
+      "editor_number": 30976,
+      "actor": "CaelumMazeTrapdoor",
+      "before_actors": 6,
+      "after_actors": 6,
+      "units_per_pickup": 1,
+      "before_units": 6,
+      "after_units": 6
+    },
+    {
+      "editor_number": 30978,
+      "actor": "CaelumMazeFood",
+      "before_actors": 24,
+      "after_actors": 24,
+      "units_per_pickup": 5,
+      "before_units": 120,
+      "after_units": 120
+    },
+    {
+      "editor_number": 30979,
+      "actor": "CaelumMazeWater",
+      "before_actors": 24,
+      "after_actors": 24,
+      "units_per_pickup": 5,
+      "before_units": 120,
+      "after_units": 120
+    },
+    {
+      "editor_number": 30980,
+      "actor": "CaelumMazeBarredGate",
+      "before_actors": 0,
+      "after_actors": 12,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 12
+    },
+    {
+      "editor_number": 30981,
+      "actor": "CaelumMazeLayoutMarker",
+      "before_actors": 0,
+      "after_actors": 6,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 6
+    },
+    {
+      "editor_number": 30982,
+      "actor": "CaelumMazeNorthKey",
+      "before_actors": 0,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30983,
+      "actor": "CaelumMazeSouthCellKey",
+      "before_actors": 0,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30984,
+      "actor": "CaelumMazeWestCellKey",
+      "before_actors": 0,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30985,
+      "actor": "CaelumMazeEastCellKey",
+      "before_actors": 0,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30986,
+      "actor": "CaelumMazeNorthCellKey",
+      "before_actors": 0,
+      "after_actors": 1,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 1
+    },
+    {
+      "editor_number": 30987,
+      "actor": "CaelumRestBed",
+      "before_actors": 0,
+      "after_actors": 4,
+      "units_per_pickup": 1,
+      "before_units": 0,
+      "after_units": 4
+    }
+  ],
+  "chest_equipment": {
+    "before": 65,
+    "after": 65,
+    "recipient_size_policy": "CHARACTER_DEFAULT",
+    "catalogue_unchanged": true
+  }
+}

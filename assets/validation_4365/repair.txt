@@ -1,0 +1,102 @@
+QA_REPAIR PASS uses actual MAP02
+QA_REPAIR PASS actual workbench and forge connected
+QA_REPAIR PASS unknown weapon combination 0 blocked
+QA_REPAIR PASS known weapon combination 0 admitted
+QA_REPAIR PASS unknown weapon combination 1 blocked
+QA_REPAIR PASS known weapon combination 1 admitted
+QA_REPAIR PASS unknown weapon combination 2 blocked
+QA_REPAIR PASS known weapon combination 2 admitted
+QA_REPAIR PASS unknown weapon combination 3 blocked
+QA_REPAIR PASS known weapon combination 3 admitted
+QA_REPAIR PASS unknown weapon combination 4 blocked
+QA_REPAIR PASS known weapon combination 4 admitted
+QA_REPAIR PASS unknown weapon combination 5 blocked
+QA_REPAIR PASS known weapon combination 5 admitted
+QA_REPAIR PASS unknown weapon combination 6 blocked
+QA_REPAIR PASS known weapon combination 6 admitted
+QA_REPAIR PASS unknown weapon combination 7 blocked
+QA_REPAIR PASS known weapon combination 7 admitted
+QA_REPAIR PASS unknown weapon combination 8 blocked
+QA_REPAIR PASS known weapon combination 8 admitted
+QA_REPAIR PASS unknown weapon combination 9 blocked
+QA_REPAIR PASS known weapon combination 9 admitted
+QA_REPAIR PASS unknown weapon combination 10 blocked
+QA_REPAIR PASS known weapon combination 10 admitted
+QA_REPAIR PASS unknown weapon combination 11 blocked
+QA_REPAIR PASS known weapon combination 11 admitted
+QA_REPAIR PASS unknown weapon combination 12 blocked
+QA_REPAIR PASS known weapon combination 12 admitted
+QA_REPAIR PASS unknown weapon combination 13 blocked
+QA_REPAIR PASS known weapon combination 13 admitted
+QA_REPAIR PASS unknown weapon combination 14 blocked
+QA_REPAIR PASS known weapon combination 14 admitted
+QA_REPAIR PASS unknown weapon combination 15 blocked
+QA_REPAIR PASS known weapon combination 15 admitted
+QA_REPAIR PASS unknown weapon combination 16 blocked
+QA_REPAIR PASS known weapon combination 16 admitted
+QA_REPAIR PASS unknown weapon combination 17 blocked
+QA_REPAIR PASS known weapon combination 17 admitted
+QA_REPAIR PASS unknown weapon combination 18 blocked
+QA_REPAIR PASS known weapon combination 18 admitted
+QA_REPAIR PASS unknown weapon combination 19 blocked
+QA_REPAIR PASS known weapon combination 19 admitted
+QA_REPAIR PASS unknown weapon combination 20 blocked
+QA_REPAIR PASS known weapon combination 20 admitted
+QA_REPAIR PASS unknown weapon combination 21 blocked
+QA_REPAIR PASS known weapon combination 21 admitted
+QA_REPAIR PASS unknown weapon combination 22 blocked
+QA_REPAIR PASS known weapon combination 22 admitted
+QA_REPAIR PASS unknown weapon combination 23 blocked
+QA_REPAIR PASS known weapon combination 23 admitted
+QA_REPAIR PASS unknown weapon combination 24 blocked
+QA_REPAIR PASS known weapon combination 24 admitted
+QA_REPAIR PASS unknown weapon combination 25 blocked
+QA_REPAIR PASS known weapon combination 25 admitted
+QA_REPAIR PASS unknown weapon combination 26 blocked
+QA_REPAIR PASS known weapon combination 26 admitted
+QA_REPAIR PASS unknown weapon combination 27 blocked
+QA_REPAIR PASS known weapon combination 27 admitted
+QA_REPAIR PASS unknown weapon combination 28 blocked
+QA_REPAIR PASS known weapon combination 28 admitted
+QA_REPAIR PASS unknown weapon combination 29 blocked
+QA_REPAIR PASS known weapon combination 29 admitted
+QA_REPAIR PASS unknown weapon combination 30 blocked
+QA_REPAIR PASS known weapon combination 30 admitted
+QA_REPAIR PASS unknown weapon combination 31 blocked
+QA_REPAIR PASS known weapon combination 31 admitted
+QA_REPAIR PASS unknown weapon combination 32 blocked
+QA_REPAIR PASS known weapon combination 32 admitted
+QA_REPAIR PASS unknown weapon combination 33 blocked
+QA_REPAIR PASS known weapon combination 33 admitted
+QA_REPAIR PASS unknown weapon combination 34 blocked
+QA_REPAIR PASS known weapon combination 34 admitted
+QA_REPAIR PASS unknown weapon combination 35 blocked
+QA_REPAIR PASS known weapon combination 35 admitted
+QA_REPAIR PASS synthetic retained starter acquired with actual recipient policy
+QA_REPAIR PASS real inventory equip selects retained starter
+QA_REPAIR PASS current profile has positive gameplay wear multiplier
+QA_REPAIR PASS gameplay wear hook changes native item and active model by authored threshold
+QA_REPAIR_WEAR method=ApplyWeaponDurabilityFromSuccessfulDamage simulated_damage=1000.000000 multiplier=1.000000 before=1000 after=999; isolated hook, not combat-hit evidence
+QA_REPAIR PASS normal unequip preserves actual gameplay wear
+QA_REPAIR PASS ordinary chest opens preview
+QA_REPAIR PASS actual finite chest supplies matching spare weapon
+QA_REPAIR PASS ordinary station session opened
+QA_REPAIR PASS finite spare dismantling starts
+QA_REPAIR dismantle_seconds=34.423408
+QA_REPAIR PASS retained starter survives spare dismantling
+QA_REPAIR PASS finite salvaged component 25 available
+QA_REPAIR PASS finite salvaged component 2 available
+QA_REPAIR PASS unknown final recipe rejects repair despite available components
+QA_REPAIR PASS unknown rejection preserves durability and reserves nothing
+QA_REPAIR PASS unknown rejection preserves finite components
+QA_REPAIR PASS unknown rejection preserves finite components
+QA_REPAIR PASS known recipe starts paid repair
+QA_REPAIR PASS repair reserves positive finite component units
+QA_REPAIR PASS repair reserves positive finite component units
+QA_REPAIR PASS repair takes positive normal task time
+QA_REPAIR repair_seconds=0.206540 reserved_basic=4 reserved_tier=8
+QA_REPAIR PASS normal task completion repairs actual starter
+QA_REPAIR PASS normal tics elapsed without debug advance
+QA_REPAIR PASS successful repair consumes exact reserved finite units
+QA_REPAIR PASS successful repair consumes exact reserved finite units
+QA_DONE repair failures=0 elapsed_tics=8

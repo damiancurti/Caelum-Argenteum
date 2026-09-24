@@ -700,6 +700,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED:
                 return "CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED:
+                return "CA_CRAFTING_RECIPE_UNKNOWN";
             default:
                 return "CA_EQUIPMENT_ACTION_NONE";
         }

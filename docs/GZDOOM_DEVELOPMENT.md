@@ -78,6 +78,16 @@ map MAP02
 
 Direct map loading tests startup, not normal campaign progression. Use an ordinary-player route when keys, quests, exits or persistent progression are in scope. Preserve the user's real saves and use copies for migration tests.
 
+### Continuing campaigns after a map rebuild
+
+For issue #11, `run_dev.bat --legacy-map02` rebuilds current code with the
+preserved 4.36.4 MAP02. The equivalent builder switch is `-LegacyMap02`.
+Keep this mode for a campaign that has already visited the old maze, including
+saves currently in another hub map. A normal build selects the new layout.
+Both modes keep the established package name and map IDs. This is reversible
+build selection, not an automatic geometry migration; preserve save copies.
+See CA-KP-008 and the README for the checksum constraint and tested scope.
+
 ## Reusable project patterns
 
 ### Equipment size is a domain mapping

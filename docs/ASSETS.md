@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
+
+## 4.36.5 — Wider sewer and barred gates (#11)
+
+`assets/map02_maze/LAYOUT.json` supplies the deterministic layout dimensions,
+counts and collision rationale to `assets/generators/generate_map02_maze.py`.
+The generated WAD, manifest and `CaelumMazeLayout.zs` are maintained together.
+The 4.36.4 T1 catalogue and stable chest IDs/assignments remain intact.
+
+Barred gates reuse project-owned `graphics/caelum/textures/mansion/CMGT02.png`
+through its existing TEXTURES definition; its transparency is real, and native
+line flags provide the keyed collision. Existing masonry/posts remain visible.
+Overhead service conduits reuse `models/caelum/props/stations/ca_station_iron.png`
+through the new `CASWRPIP` texture alias. Bricks, stone and water retain CASWRWAL,
+CASWRFLR and CAPOOL01. No image regeneration or external/Doom artwork is added.
+Existing furniture and station assets are reused without balance changes.
+
+`assets/map02_maze/legacy_4364/` preserves the original WAD and manifest for
+explicit saved-campaign compatibility. The builder checks the original WAD's
+SHA-256 before selecting it; normal src packaging remains the new map. No save,
+IWAD, executable or test fixture is included. Before/after native views and
+verification belong to `assets/validation_4365/`.
 
 ## 4.36.4 — T1 maze catalogue
 

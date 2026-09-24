@@ -4,8 +4,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.4.** Obtain and update the complete repository, validate
+**Current release: 4.36.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) rebuilds MAP02
+into four wider sewer sections with keyed cells, beds, repair refuges and a
+pre-boss prisoner extraction reservation. Ground ammunition totals are 240
+arrows, 120 bolts and 120 bullets. Repairs require the weapon's known recipe;
+no new recipe/material allowance is granted. Author check CA-4365-MAZE-01 is pending.
+
+**Existing saves that already visited the three-section MAP02:** launch
+`run_dev.bat --legacy-map02` (or build with `build_dev.ps1 -LegacyMap02`). This
+preserves the exact original geometry and saved progress under the same map
+and package names. It continues the old maze; it does not transfer it into the
+new layout. Keep this option for that campaign, including saves made outside
+MAP02 after visiting it. A normal build activates the new layout for fresh
+campaigns or saves that have never visited MAP02. Keep originals when testing
+copies; no reset, save rewrite or automatic restart is performed.
+
+Issue
 [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) supplies the
 complete 65-item T1 MAP02 catalogue, recipient-sized natural equipment/rewards,
 chest previews with explicit collection and a recent acquisition/gameplay
@@ -50,8 +66,9 @@ Native resting support is required; suspended objects do not count. Stacks
 transmit their real mass and share it among supports. Fractional damage is
 preserved. Native ceiling damage remains a percentage per engine pulse.
 
-MAP02 is a three-section maze with 147 rooms, 96 Mandingas, 45 traps, three
-keys and 39 chests containing 65 distinct Tier 1 equipment pieces. Newly
+MAP02 is a four-section sewer with 100 junction rooms, 96 Mandingas, 45 traps,
+four progression/arena keys, four cell keys and 39 chests containing 65 distinct
+Tier 1 equipment pieces. Newly
 acquired size-bearing equipment fits the recipient; owned equipment retains
 its resolved size. Old saved chests retain the original T1 distribution and
 do not replenish looted slots; unclaimed T2/T3 are retired reversibly.
@@ -77,7 +94,7 @@ recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.4**. Use the repository instructions below and the root pending-test queue
+**4.36.5**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -765,7 +782,8 @@ The playtest export is a separate milestone from the final independent release.
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
 2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
-[pending_test.txt](pending_test.txt) is now empty. HISTORY records CA-4364-T1-LOOT-01. The 4.36.2 bow
+[pending_test.txt](pending_test.txt) now contains only CA-4365-MAZE-01.
+HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed

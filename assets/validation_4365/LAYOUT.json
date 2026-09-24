@@ -1,0 +1,1033 @@
+{
+  "version": "4.36.5",
+  "evidence": "static analysis",
+  "checks": 198,
+  "failures": 0,
+  "scope": "Fresh revision-2 MAP02 only. Geometry clearance excludes dynamic actors; native movement, projectile and save migration tests remain separate.",
+  "collision": {
+    "radius": 21.333333,
+    "height": 74.7,
+    "maximum_step": 16,
+    "valid_grid_cells": 49955
+  },
+  "stages": [
+    {
+      "section": 1,
+      "cells_before_key": 11227,
+      "cells_after_cell_key": 11603
+    },
+    {
+      "section": 2,
+      "cells_before_key": 22661,
+      "cells_after_cell_key": 23037
+    },
+    {
+      "section": 3,
+      "cells_before_key": 33950,
+      "cells_after_cell_key": 34326
+    },
+    {
+      "section": 4,
+      "cells_before_key": 45891,
+      "cells_after_cell_key": 46267
+    }
+  ],
+  "results": [
+    {
+      "name": "WAD things exactly match manifest",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual actor count 18037",
+      "passed": true,
+      "details": 96
+    },
+    {
+      "name": "actual actor count 18038",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "name": "actual actor count 30973",
+      "passed": true,
+      "details": 39
+    },
+    {
+      "name": "actual actor count 30978",
+      "passed": true,
+      "details": 24
+    },
+    {
+      "name": "actual actor count 30979",
+      "passed": true,
+      "details": 24
+    },
+    {
+      "name": "actual actor count 18111",
+      "passed": true,
+      "details": 12
+    },
+    {
+      "name": "actual actor count 18112",
+      "passed": true,
+      "details": 6
+    },
+    {
+      "name": "actual actor count 18110",
+      "passed": true,
+      "details": 6
+    },
+    {
+      "name": "actual actor count 30987",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "accepted actor count preserved 18037",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 18038",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30973",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30978",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30979",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30961",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30963",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30964",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30965",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30966",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30975",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "accepted actor count preserved 30976",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "45 traps preserve each accepted type",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual arrows units",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual bolts units",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual bullets units",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual food units",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "actual water units",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "65 unique accepted T1 identities and chest assignments preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "four sections and four independent cells",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "four unique section keys and four unique cell keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "CaelumCarbineAmmo native bundle amount agrees with map data",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "CaelumArrowAmmo native bundle amount agrees with map data",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "CaelumBoltAmmo native bundle amount agrees with map data",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44720 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44710 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44700 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44721 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44711 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44701 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44722 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44712 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44702 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44723 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44713 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gate 44703 native transparent barrier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 progression key reachable before its lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 cell key reachable outside its cell",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 cell inaccessible without its key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 repair refuge reachable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 cannot bypass section 1 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 cannot bypass section 1 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cannot bypass section 1 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "boss inaccessible at stage 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 cell_center accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 bed accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 1 reserved_actor accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 progression key reachable before its lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 cell key reachable outside its cell",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 cell inaccessible without its key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 repair refuge reachable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 cannot bypass section 2 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cannot bypass section 2 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "boss inaccessible at stage 2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 cell_center accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 bed accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 2 reserved_actor accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 progression key reachable before its lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 cell key reachable outside its cell",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 cell inaccessible without its key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 repair refuge reachable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cannot bypass section 3 lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "boss inaccessible at stage 3",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 cell_center accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 bed accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 3 reserved_actor accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 progression key reachable before its lock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cell key reachable outside its cell",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cell inaccessible without its key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 repair refuge reachable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "boss inaccessible at stage 4",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "extraction reachable before boss key use",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "card unavailable before boss gate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "travel 2 unavailable before boss gate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "travel 4 unavailable before boss gate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "travel 6 unavailable before boss gate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "travel 14 unavailable before boss gate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 cell_center accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 bed accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section 4 reserved_actor accessible after own key",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 0 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 1 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 2 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 3 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 4 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 5 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 6 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 7 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 8 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 9 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 10 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 11 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 12 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 13 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 14 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 15 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 16 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 17 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 18 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 19 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 20 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 21 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 22 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 23 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 24 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 25 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 26 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 27 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 28 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 29 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 30 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 31 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 32 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 33 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 34 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 35 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 36 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 37 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 38 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 39 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 40 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 41 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 42 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 43 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 44 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 45 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 46 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 47 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 48 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 49 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 50 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 51 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 52 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 53 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 54 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 55 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 56 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 57 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 58 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 59 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 60 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 61 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 62 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 63 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 64 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 65 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 66 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 67 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 68 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 69 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 70 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 71 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 72 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 73 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 74 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 75 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 76 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 77 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 78 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 79 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 80 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 81 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 82 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 83 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 84 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 85 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 86 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 87 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 88 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 89 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 90 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 91 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 92 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 93 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 94 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 95 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 96 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 97 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 98 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "room 99 reachable with maximum collision size",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "final boss_center reachable with keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "final card reachable with keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "final extraction reachable with keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "refuge 0 complete repair station types",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "refuge 1 complete repair station types",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "refuge 2 complete repair station types",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "refuge 3 complete repair station types",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "three largest actors fit each dry walkway",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "hashes": {
+    "src/maps/MAP02.wad": "f074f83b071ede7c6baaee6f06da8fffcee2925c20c7b317736c9b31f93921c9",
+    "assets/map02_maze/MAP02_MANIFEST.json": "6e460137daebcb57fa9e566205b45f5f84e82da3cfb14978f247c69613517dd3",
+    "assets/map02_maze/LAYOUT.json": "76967f86d4d6dbb93b2a16d59bfdf06c0596165f83c89e7e52aad2d46af01648",
+    "assets/map02_maze/legacy_4364/MAP02.wad": "9095bda962f5410ba869b3780dff2a58c11ff0a011e35d451a43052b851406d2"
+  }
+}

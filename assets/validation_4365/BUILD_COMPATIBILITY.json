@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "entries": 5325,
+  "changed_entries": [
+    "maps/MAP02.wad"
+  ],
+  "identical_non_map_entries": 5324,
+  "legacy_map02_sha256": "9095bda962f5410ba869b3780dff2a58c11ff0a011e35d451a43052b851406d2",
+  "new_map02_sha256": "f074f83b071ede7c6baaee6f06da8fffcee2925c20c7b317736c9b31f93921c9",
+  "wrong_sha_rejected": true,
+  "missing_map_entry_rejected": true,
+  "failed_build_preserves_existing_output": true,
+  "failed_build_cleans_temporary_file": true
+}

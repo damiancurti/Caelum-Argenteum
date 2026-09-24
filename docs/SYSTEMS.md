@@ -1,6 +1,66 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
+
+## 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
+
+Revision-2 MAP02 uses four 5×5 junction networks. Section keys retain native
+locks 203/204/205; the northern arena uses 206. Independent cell keys use
+207–210. Keys are not consumed. Barred gates retain native movement, Use,
+hitscan and projectile blocking while closed, but permit sight through their
+transparent existing texture. Unlocking permanently removes the barrier; there
+is no auto-close collision with future followers. Refuge gates need no key.
+
+Each cell contains an existing usable bed and a reserved prisoner marker.
+Routes from all cells join the extraction marker before the northern boss
+door. This marker grants no rescue, reward or player travel shortcut. #14 owns
+live escort/four-companion combat and backtracking tests; width alone is not
+evidence that its future AI works.
+
+The minimum T1 repair network comprises workbench, forge, ranged workshop and
+essence altar, connected using the existing station-range rules. Four alcoves
+contain that network; original entrance infrastructure is preserved/repositioned.
+The alcoves contain no placed enemies or traps, but do not grant invulnerability
+or suppress normal combat/rest guards. Existing time-advance zones cover the
+relocated arrival furniture/workshops, four refuges and four cell beds; all
+normal threat, rest and fast-time restrictions remain. Existing materials come from finite
+salvage; no new allowance, raw-material spawn or recipe source is introduced.
+
+The author clarified during implementation that only a known final weapon recipe
+permits repair. Physical type and magical essence must match the known recipe.
+Possessing components alone does not bypass that requirement. Rejection occurs
+before reservation, wear or inventory changes; existing paid repair times/costs
+and dismantling rules remain. Other weapons can wear out and break normally.
+
+Geometry changes cannot load into an old GZDoom snapshot: the engine verifies
+map geometry before restoring ZScript. `-LegacyMap02` selects the checksum-verified
+original WAD under the same MAP02 and package names. This revisioned compatibility
+mode preserves old progression exactly and is reversible by rebuilding the normal
+package; retain it whenever loading a campaign that visited the old maze. It does
+not reset/repopulate or silently convert an old map into the new four sections.
+
+### Key dependency graph and ordinary-player route
+
+Start → southern key 203 → western key 204 → eastern key 205 → northern
+key 206 → Zupay arena → defeat boss → Ace of Cups → existing player exits.
+Cell keys 207–210 are reachable in their own sections, outside the cells.
+All four cell branches return to the same pre-boss extraction point; none
+requires crossing the boss door. Refuge gates are unkeyed branches.
+
+| Section | Progression key (x,y) | Cell key (x,y) | Cell/bed center |
+| --- | --- | --- | --- |
+| south | (1280, 1536) | (1792, 2304) | (2560, 3840) / (2464, 3680) |
+| west | (1280, 4864) | (1792, 5632) | (2560, 7936) / (2464, 7776) |
+| east | (-1792, 12032) | (1792, 11264) | (2560, 12032) / (2464, 11872) |
+| north | (-1024, 13824) | (-512, 13056) | (2560, 16128) / (2464, 15968) |
+
+Extraction reservation: `(896, 16896)`; northern boss center: `(1536, 18304)`.
+Walk the maze branches to obtain each key, open its corresponding gate with Use,
+and return from cells along the opened route. No debug command, jump shortcut
+or sewage-damage exception is part of this route. The manifest records every
+edge, chest, provision/ammunition bundle, trap and gate; the independent validator
+searches actual generated floor cells with maximum-body clearance and closed
+barriers, rather than trusting the logical generator graph.
 
 ## 4.36.4 — Acquisition and chest contract (issue #10)
 

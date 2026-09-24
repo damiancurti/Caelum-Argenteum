@@ -1,0 +1,94 @@
+{
+  "version": "4.36.5",
+  "issue": 11,
+  "baseline": "3f3fa0c2c3a2d426c92d4d56240d41aaf15e0e45",
+  "status": "Implemented; author acceptance pending CA-4365-MAZE-01",
+  "environment": {
+    "engine": "GZDoom g4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan",
+    "gpu": "RTX 3070 Ti",
+    "iwad": "Author-installed development Doom II; not distributed"
+  },
+  "static": {
+    "layout_checks": 198,
+    "content_checks": 620,
+    "failures": 0,
+    "deterministic_regeneration": "DETERMINISM.json",
+    "counts_before_after": "CONTENT_COUNTS.json",
+    "compatibility_builder": "BUILD_COMPATIBILITY.json",
+    "project_validator": {
+      "exit_code": 0,
+      "errors": []
+    },
+    "normal_build": {
+      "exit_code": 0,
+      "files": 5325
+    },
+    "diff_check": {
+      "exit_code": 0
+    }
+  },
+  "native": {
+    "gates": {
+      "checks": 237,
+      "failures": 0,
+      "log": "gates.txt",
+      "scope": "All 12 real gates, maximum player collision, wrong/right keys, non-consumption, visibility, native hitscan and projectile blocking closed/passage open, native Use traces; all activation assertions use PlayerPawn.CheckUse with real press/release, not direct line activation"
+    },
+    "route": {
+      "steps": 2335,
+      "failures": 0,
+      "beds": 4,
+      "log": "route.txt",
+      "scope": "Native TryMove in 16-MU steps; no noclip, jump or traversal teleport. AI/hazard ticking isolated during route; native beds position occupant normally. Includes real keys, chest collection, refuge/extraction and Zupay-sized 640-MU arena circuit."
+    },
+    "repair": {
+      "failures": 0,
+      "log": "repair.txt",
+      "scope": "36 unknown/known weapon-essence recipe pairs; actual finite matching-dagger salvage pays retained starter dagger repair; natural timers, reserved basic4/tier8 consumed; no general family sustainability claim; wear is applied through ApplyWeaponDurabilityFromSuccessfulDamage on equipped weapon using the authored threshold, then preserved after unequip; this is isolated hook evidence, not a combat hit"
+    },
+    "persistence": {
+      "failures": 0,
+      "log": "persistence.txt",
+      "scope": "New save load and MAP03 hub return preserve 8 keys, 12 gate controllers, all 144 line flags and middle textures, four released beds and empty chest"
+    },
+    "guards": {
+      "checks": 72,
+      "failures": 0,
+      "log": "guards.txt",
+      "scope": "10 actual initialized safe zones, real rest sessions, retained combat/fast-time blockers with no elapsed-time gift; boss alive/dead and card absent/present predicates, real Ace interaction; fixture restores temporary boss/card state"
+    },
+    "legacy": {
+      "active_checks": 49,
+      "hub_checks": 48,
+      "failures": 0,
+      "logs": [
+        "legacy_active.txt",
+        "legacy_hub.txt"
+      ],
+      "scope": "Actual 4.36.4 saves inside MAP02 and active MAP03 with old MAP02 snapshot, loaded using current code plus original WAD. Preserves key/chest identity, sizing, wear, position and legacy travel coordinates; no conversion to new geometry",
+      "qualification": "Compatibility native runs precede final new-layout-only rest/work initialization fixes; legacy branches remain unchanged."
+    }
+  },
+  "limitations": [
+    "Not a full combat campaign playthrough",
+    "Live one/four-prisoner escort belongs to #14",
+    "Compatibility mode continues the old geometry rather than migrating a visited maze into revision2",
+    "Author acceptance remains pending"
+  ],
+  "normal_package_sha256": "c5a9e92d42be5bae0f24aec84dcead859bcf7a28602956ed7632a0bf0ce7332c",
+  "compatibility_package_sha256": "289237794184ee19d6e3b319d382de41975d267a52d9a3f16721335af211d223",
+  "usage": {
+    "implementation_start_utc": "2026-09-24 02:27:46 UTC",
+    "implementation_end_utc": "2026-09-24 03:10:24 UTC",
+    "model": "GPT-6 agent identity; exact backend variant unavailable",
+    "reasoning_effort": "not exposed",
+    "speed": "not exposed",
+    "client": "codex-cli 0.156.1 observed; desktop app version unavailable",
+    "tokens": "not exposed, including sub-agent totals",
+    "weekly_allowance": "Author supplied historical 75% remaining baseline; current balance/reset unknown; not converted to tokens",
+    "scope": "Same ongoing conversation, separately bounded issue11 implementation interval; includes audits, native-fixture corrections, product fixes and peer review. Work planning/review counters unavailable; future acceptance corrections reported separately"
+  },
+  "review": "Independent peer audits of gates/topology, repairs and save compatibility; exact alternative-model selection unavailable"
+}

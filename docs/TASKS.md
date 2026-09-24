@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.4** — 2026-09-23.
+Documentation version: **4.36.5** — 2026-09-24.
+
+## Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/11
+- **Scope:** four keyed sections/cells, beds and refuges; wider walkways and
+  transparent barred gates; exact approved ammunition and retained population/loot.
+- **Author decision:** repair known weapon recipes only; no new recipe/material
+  allowance. Preserve finite salvage, costs, time and normal breakage.
+- **Compatibility:** explicit legacy build continues already-visited MAP02 saves
+  without map-ID changes, reset, lost loot or rewritten save data.
+- **Acceptance:** CA-4365-MAZE-01 pending. HISTORY and validation_4365 distinguish
+  static/native checks from author confirmation.
+- **Next:** #12 rat population after this delivery; #14 owns live escort AI,
+  extraction and rewards. #16 owns the MAP06 player-route reconciliation.
 
 ## Issue #10 — T1 loot, default sizing and pickup feedback (4.36.4)
 
@@ -100,7 +114,7 @@ documentation update does not implement these features or reset accepted tests.
 | Patch / stage | Issue | Work and current blocker |
 | --- | --- | --- |
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
-| 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four sections, keys/cells/beds, functional repair refuges, sewer channels/decor, northern locked boss room. After #10. |
+| 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented; CA-4365-MAZE-01 pending. Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |

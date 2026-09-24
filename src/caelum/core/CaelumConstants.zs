@@ -583,6 +583,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_RESERVED = 27;
     const EQUIPMENT_ACTION_FAILED_MATERIALS = 28;
     const EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED = 29;
+    const EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED = 30;
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.

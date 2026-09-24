@@ -54,3 +54,9 @@ Lock 205
     RemoteMessage "$CA_MAZE_LOCK_3"
     LockedSound "caelum/world/door_locked"
 }
+
+Lock 206 { CaelumMazeNorthKey Message "$CA_MAZE_LOCK_4" RemoteMessage "$CA_MAZE_LOCK_4" LockedSound "caelum/world/door_locked" }
+Lock 207 { CaelumMazeSouthCellKey Message "$CA_MAZE_LOCK_5" RemoteMessage "$CA_MAZE_LOCK_5" LockedSound "caelum/world/door_locked" }
+Lock 208 { CaelumMazeWestCellKey Message "$CA_MAZE_LOCK_6" RemoteMessage "$CA_MAZE_LOCK_6" LockedSound "caelum/world/door_locked" }
+Lock 209 { CaelumMazeEastCellKey Message "$CA_MAZE_LOCK_7" RemoteMessage "$CA_MAZE_LOCK_7" LockedSound "caelum/world/door_locked" }
+Lock 210 { CaelumMazeNorthCellKey Message "$CA_MAZE_LOCK_8" RemoteMessage "$CA_MAZE_LOCK_8" LockedSound "caelum/world/door_locked" }
