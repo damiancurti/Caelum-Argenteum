@@ -64,10 +64,19 @@ family session; repeated equips and subsequent transitions are logged separately
 - A separate AI performed focused read-only cross-verification of the crop
   caches, unchanged definitions/schema and current roadmap: no actionable
   findings. This was another Codex/GPT-6 agent, not a claimed DeepSeek review.
-- **Author acceptance is pending:** CA-4362-BOW-EMPTY-01. Native automation
-  invokes the existing callbacks; physical bindings and the author's normal
-  inventory route remain in that focused check. Other renderers/devices and
-  the original unspecified bow/tier are not claimed covered. Existing accepted
+- **Author acceptance passed on 2026-09-23 (America/Buenos_Aires):**
+  CA-4362-BOW-EMPTY-01, originating patch **4.36.2**, issue **#8**, implementation
+  PR **#24**. The author explicitly confirmed that the requested manual tests
+  passed and asked to remove the pending entry. This accepts the empty/loaded
+  bow equip, primary/aim/reload, one-arrow consumption, switch-away/back and
+  appearance check described by that test. No exceptions or additional timing,
+  renderer or per-tier measurements were supplied. This author result is
+  separate from the native automation above and is not extended to other
+  renderers/devices or the pending #9 flail correction.
+- The acceptance follow-up removes only CA-4362-BOW-EMPTY-01 from the root queue,
+  updates current status and CA-KP-003, and retains version 4.36.2. Documentation
+  index regeneration, `python validate_project.py` and `git diff --check` pass;
+  no new engine run or gameplay change is part of this record. Existing accepted
   maps, furniture and ceiling/elevator checks were not replayed.
 
 ### Author environmental-scope clarification — 2026-09-23

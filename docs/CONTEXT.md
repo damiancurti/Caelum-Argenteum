@@ -66,7 +66,8 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 Current release **4.36.2** implements the issue #8 bow crop cache and the
 author-approved environmental scope clarification. Native Windows evidence is
-recorded in HISTORY; CA-4362-BOW-EMPTY-01 awaits author acceptance. Gameplay
+recorded in HISTORY; the author confirmed CA-4362-BOW-EMPTY-01 passed on
+2026-09-23. Gameplay
 rules, accepted bow art and saves are unchanged. The engineering guides/index
 from #22 and English documentation/acceptance workflow from #6 remain in force.
 
@@ -78,7 +79,6 @@ rations, and MAP01 tables at full capacity.
 Pending:
 
 - Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
-- Author acceptance of the 4.36.2 empty-bow stall correction (#8).
 - Author-requested patches 4.36.4–4.36.9 (#10–#15): T1-only MAP02 equipment;
   four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent

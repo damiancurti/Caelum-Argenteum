@@ -7,8 +7,8 @@ Documentation version: **4.36.2** — 2026-09-23.
 Issue #8 caches the existing crop-only bow-stave composition; native color
 effects and A/B/C presentation remain unchanged. This changes no ammunition,
 magazine capacity, reload time, damage, controls or persistent schema. Empty
-bows still hide the arrow; loaded bows show it. Evidence and pending author
-acceptance are in HISTORY. Environmental scope follows PROJECT: the existing
+bows still hide the arrow; loaded bows show it. Evidence and the author's
+2026-09-23 pass confirmation for CA-4362-BOW-EMPTY-01 are in HISTORY. Environmental scope follows PROJECT: the existing
 ceiling/elevator cover moving sectors; avalanches and damaging surfaces are
 future work and no longer block 4.36. No new hazard is implemented here.
 

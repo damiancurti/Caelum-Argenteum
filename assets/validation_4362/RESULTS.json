@@ -7,7 +7,7 @@
   "rendering": "Vulkan / NVIDIA GeForce RTX 3070 Ti; fresh isolated configs, no user autoload, sound disabled",
   "measurement": "Object.MSTimeF between WorldTick callbacks; cold_max is ticks 1-100, transitions_max 101-580 per tier. Includes scheduling/render work, not pure equip function duration. World simulation at native 35 Hz. Rendering comparisons use 512x1024 old/new textures side by side on black; original at x=0, optimized at x=512.",
   "fixture": "Local-only EventHandler acquires weapons through TryPickup, uses equipped native selectors, invokes existing primary/aim/reload callbacks, grants one arrow through GiveInventory and waits for actual timed reload. Loaded-control initial state is seeded to magazine=1 and inventory=1. Tier cases reset aim. No save-schema changes or save migration.",
-  "limitations": "Physical keyboard/controller bindings, normal author inventory route and author acceptance remain CA-4362-BOW-EMPTY-01. Tests do not claim coverage of every renderer/device or accepted maps/furniture. Original exact user bow/tier remains unknown.",
+  "limitations": "At the native-test boundary, physical keyboard/controller bindings and the normal inventory route required separate author acceptance under CA-4362-BOW-EMPTY-01; that acceptance is now recorded below. Native tests do not claim coverage of every renderer/device or accepted maps/furniture. Original exact user bow/tier remains unknown.",
   "runs": [
     {
       "file": "BASELINE_INITIAL.txt",
@@ -105,5 +105,16 @@
   "build_file_count": 5321,
   "original_pending_flail_entry_preserved": true,
   "generator_environment": "Python 3.12.14 / Pillow 12.3.0",
-  "review": "Separate inherited Codex/GPT-6 reviewer reconstructed all six baseline crop outputs including alpha and byte-identical PNG encoding, and reviewed final documentation; no actionable findings. Not a claimed DeepSeek review."
+  "review": "Separate inherited Codex/GPT-6 reviewer reconstructed all six baseline crop outputs including alpha and byte-identical PNG encoding, and reviewed final documentation; no actionable findings. Not a claimed DeepSeek review.",
+  "author_acceptance": {
+    "id": "CA-4362-BOW-EMPTY-01",
+    "originating_patch": "4.36.2",
+    "issue": 8,
+    "implementation_pr": 24,
+    "result": "passed",
+    "confirmation_date": "2026-09-23",
+    "timezone": "America/Buenos_Aires",
+    "source": "Explicit author confirmation in the Codex acceptance follow-up",
+    "qualifications": "No exceptions or additional timing, renderer or per-tier measurements supplied. The separate issue #9 flail check remains pending."
+  }
 }

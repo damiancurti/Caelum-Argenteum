@@ -61,8 +61,9 @@ remain tracked. Backlog tasks below are not executable author tests.
 - **Issue #8 / 4.36.2:** [Empty-bow equip stall](https://github.com/damiancurti/Caelum-Argenteum/issues/8).
   First-use texture-composition stalls reproduced in native GZDoom 4.14.2
   on Windows. Deterministic bow crop caches remove repeated composition;
-  native evidence is in HISTORY. Author acceptance CA-4362-BOW-EMPTY-01 is
-  pending. Bow appearance, ammunition rules and save compatibility are retained.
+  native evidence is in HISTORY. The author confirmed CA-4362-BOW-EMPTY-01
+  passed on 2026-09-23; its entry is removed from the pending queue. Bow
+  appearance, ammunition rules and save compatibility are retained.
 - **Issue #9 / planned 4.36.3:** [Additional flail rotation](https://github.com/damiancurti/Caelum-Argenteum/issues/9).
   Rotate the current first-person handle approximately 10 degrees further
   counterclockwise while preserving grip, rear chain, vertical rest and attack spin.
