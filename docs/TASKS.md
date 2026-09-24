@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.1b** — 2026-09-23.
+Documentation version: **4.36.2** — 2026-09-23.
 
 List of the project's active tasks. It is updated with every task.
 
@@ -11,7 +11,8 @@ criteria. If a datum is not defined in the canonical documents, write
 ## Issue #22 — Engineering guides and document index (4.36.1b)
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/22
-- **Status:** Implemented; verification pending. Documentation/tooling only.
+- **Status:** Implemented and merged in PR #23; static verification is recorded
+  in HISTORY. Documentation/tooling only.
 - **References:** AGENTS, README, the canonical documents,
   `GZDOOM_DEVELOPMENT.md`, `KNOWN_PITFALLS.md`, `build_document_index.py` and the
   generated `DOCUMENT_INDEX.md`.
@@ -29,10 +30,10 @@ criteria. If a datum is not defined in the canonical documents, write
 ## Issue #6 — Documentation and validation workflow (4.36.1)
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/6
-- **Status:** Implemented and statically verified; PR #7 is open. On 2026-09-23
+- **Status:** Implemented and statically verified; PR #7 is merged. On 2026-09-23
   the author confirmed zero validator errors, successful rebuild/launch and both
   4.36.1 diagnostic headers. CA-4361-WINDOWS-01 is passed and recorded in HISTORY;
-  its pending entry is removed. Merge approval remains pending.
+  its pending entry is removed.
 - **References:** AGENTS, README and the five canonical documents; validator,
   builder, launcher and issue template.
 - **Scope:** English maintained documentation; numeric versions; repository-first
@@ -57,10 +58,11 @@ remain tracked. Backlog tasks below are not executable author tests.
 
 ## Focused corrections after the author's 4.36.0i tests
 
-- **Issue #8 / planned 4.36.2:** [Empty-bow equip stall](https://github.com/damiancurti/Caelum-Argenteum/issues/8).
-  Reported by the author, not independently reproduced; diagnose first-use and
-  repeated empty/loaded transitions, then apply the smallest verified correction.
-  Preserve accepted bow appearance, ammunition rules and save compatibility.
+- **Issue #8 / 4.36.2:** [Empty-bow equip stall](https://github.com/damiancurti/Caelum-Argenteum/issues/8).
+  First-use texture-composition stalls reproduced in native GZDoom 4.14.2
+  on Windows. Deterministic bow crop caches remove repeated composition;
+  native evidence is in HISTORY. Author acceptance CA-4362-BOW-EMPTY-01 is
+  pending. Bow appearance, ammunition rules and save compatibility are retained.
 - **Issue #9 / planned 4.36.3:** [Additional flail rotation](https://github.com/damiancurti/Caelum-Argenteum/issues/9).
   Rotate the current first-person handle approximately 10 degrees further
   counterclockwise while preserving grip, rear chain, vertical rest and attack spin.
@@ -105,10 +107,11 @@ Work, desktop, resets, concurrent work and missing measurements separately.
 Only add actionable author checks to pending_test.txt after implementation;
 missing design/assets belong here and in issues, not in that queue.
 
-## Pending in 4.36
+## Environmental scope and remaining 4.36 work
 
-These original physics gates remain necessary alongside the new batch to
-close the V4.36 block (mobile environment and physical hazards).
+The author's 2026-09-23 clarification in #8 distinguishes covered, deferred
+and still-pending mechanisms. Covered/deferred entries below are not 4.36
+release blockers; rams/catapults and remaining integration checks still are.
 According to `docs/PROJECT.md`, 4.36 already includes the trapdoor, the pit,
 the rocks, the approved traps, the ceiling crusher, and the resting-weight
 formula; what remains is to complete the planned bases and validate their
@@ -116,7 +119,9 @@ integration before extracting Impact Physics.
 
 ### CA-436-01 — Damaging surfaces
 
-- **Status:** Pending.
+- **Status:** Deferred until environmental temperature effects are implemented
+  (author confirmation in #8, 2026-09-23). Future backlog, not a 4.36 blocker;
+  no acid or lava is requested now. Not implemented.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap),
   `docs/SYSTEMS.md` (physical hazards section).
 - **Acceptance criteria:** PENDING. The current documentation only states it
@@ -124,7 +129,8 @@ integration before extracting Impact Physics.
 
 ### CA-436-02 — Avalanches
 
-- **Status:** Pending.
+- **Status:** Deferred until additional maps are developed (author confirmation
+  in #8, 2026-09-23). Future backlog, not a 4.36 blocker. Not implemented.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
 - **Acceptance criteria:** PENDING.
 
@@ -148,9 +154,11 @@ integration before extracting Impact Physics.
 
 ### CA-436-05 — Moving sectors
 
-- **Status:** Pending.
-- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
-- **Acceptance criteria:** PENDING.
+- **Status:** Covered by the existing crushing ceiling and native elevator,
+  per the author's 2026-09-23 confirmation in #8. No longer a 4.36 blocker.
+- **Reference documents:** `docs/PROJECT.md` (current 4.36.2 scope).
+- **Acceptance:** Scope confirmation only; no new engine test or replay is
+  claimed. No rotating/translating rooms or additional platforms are requested.
 
 ## Integration and closing of 4.36
 

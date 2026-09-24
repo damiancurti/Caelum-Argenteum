@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.1b** — 2026-09-23.
+Documentation version: **4.36.2** — 2026-09-23.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,12 +64,11 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.1b** implements issue #22: integrated engineering guides,
-a deterministic long-document index, validator coverage and reconciliation of
-the prisoner coin reference. It follows 4.36.1 (#6), whose English documentation,
-numeric patches, repository-first delivery and root author-test queue remain in
-force. Its static checks are recorded separately in HISTORY; no new gameplay is
-introduced.
+Current release **4.36.2** implements the issue #8 bow crop cache and the
+author-approved environmental scope clarification. Native Windows evidence is
+recorded in HISTORY; CA-4362-BOW-EMPTY-01 awaits author acceptance. Gameplay
+rules, accepted bow art and saves are unchanged. The engineering guides/index
+from #22 and English documentation/acceptance workflow from #6 remain in force.
 
 The **4.36.0i gameplay baseline** was compiled and tested on GZDoom g4.14.2
 on Linux with development Freedoom. Working: the 4.36 base (trapdoor, rocks,
@@ -79,7 +78,7 @@ rations, and MAP01 tables at full capacity.
 Pending:
 
 - Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
-- Reported multi-second stall when equipping a bow without arrows (#8, planned 4.36.2).
+- Author acceptance of the 4.36.2 empty-bow stall correction (#8).
 - Author-requested patches 4.36.4–4.36.9 (#10–#15): T1-only MAP02 equipment;
   four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
@@ -87,14 +86,16 @@ Pending:
   not present in the accepted three-section 0i baseline.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
-- Closing 4.36: damaging surfaces, avalanches, rams, catapults, and moving
-  sectors, with their integration and validation before extracting Impact
-  Physics.
+- Closing 4.36: rams/catapults and remaining integration/save/reset validation
+  before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
+  existing ceiling/elevator cover moving sectors; avalanches await additional
+  maps and damaging surfaces await temperature effects (no acid/lava requested).
+  Those three items no longer block 4.36; Tarot and demo gates remain.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
 and bow appearance. The author also confirmed the complete 4.36.1 Windows
 validator/launcher/header check. The weapon exceptions above remain open;
-detailed results are in HISTORY. PR #7 still requires merge approval.
+detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
 then V5. The 2026-09-23 author decision requires three complete maps with the

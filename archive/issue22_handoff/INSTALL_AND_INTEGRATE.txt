@@ -1,0 +1,38 @@
+CAELUM ARGENTEUM — DEVELOPMENT KNOWLEDGE HANDOFF
+Prepared 2026-09-23. Documentation only; no game release, patch number or issue is created by this package.
+
+CONTENTS
+knowledge_handoff/GZDOOM_DEVELOPMENT.md
+knowledge_handoff/KNOWN_PITFALLS.md
+INSTALL_AND_INTEGRATE.txt (this temporary delivery note)
+
+LOCAL STAGING
+Copy the knowledge_handoff folder to your repository root. Do not put its contents in docs/ or src/ yet. If that folder already exists, compare contents before replacing anything. Keep this note outside the repository if you prefer.
+
+The current validator requires exactly seven files under docs/. A later formal integration issue must deliberately accommodate the two requested new permanent guides. These drafts are not yet wired into AGENTS, README or the validator.
+
+Both guides are English UTF-8 Markdown. Each contains its own maintenance rules. KNOWN_PITFALLS includes a reusable entry template and explicit evidence levels. Existing source facts, unresolved user reports and future requirements are separated. No new engine run or resolved bow/flail defect is claimed.
+
+PROPOSED FINAL LOCATIONS (for the later issue)
+docs/GZDOOM_DEVELOPMENT.md
+docs/KNOWN_PITFALLS.md
+
+FORMAL INTEGRATION CHECKLIST — NOT AN ISSUE CREATED NOW
+1. Start from the current accepted repository baseline and inspect local changes. Reconcile these drafts against the actual merged code and latest author decisions.
+2. Allocate the numeric patch version in the then-current sequence. Do not infer it from an issue number or assign it in this handoff.
+3. Register the two guides in AGENTS and the context/navigation documentation. Preserve the five canonical documents and their responsibilities. Link the guides from README as appropriate.
+4. Update validate_project.py narrowly: preserve canonical/working version checks; register the ancillary guides, validate existence/UTF-8 and local links, and document whether ancillary guides inherit README or carry release headers. These drafts propose inheritance to avoid stale duplicated release markers.
+5. Include isolated positive/negative checks: both guides present and linked pass; missing guide/broken link fail; existing header mismatch and resource/localization failures remain detectable. Define how unexpected docs files are handled rather than disabling that check.
+6. Reconcile the confirmed T1/recipient-size loot and reward decision where canonical text is stale. Preserve earlier proposals as history, not current design. Do not implement the gameplay issues inside this documentation patch.
+7. Record integration and actual checks in HISTORY and update current version markers under the existing policy. Add an author pending test only if a concrete check needs the author's environment; do not invent one just to populate the queue.
+8. Review concise rules for future additions: evidence required, stable IDs, no invented causes/APIs, no duplicated balance, focused updates, and separate author acceptance.
+9. Verify links and paths after moving the files; prevent two maintained copies. Retire the temporary staging copies only with explicit authorization consistent with AGENTS.
+10. Deliver through one linked issue and PR. Do not merge automatically. No translation of the complete historical documents is required.
+
+PROVENANCE
+Repository: https://github.com/damiancurti/Caelum-Argenteum
+PR inspected: https://github.com/damiancurti/Caelum-Argenteum/pull/7
+Committed baseline: 1dc390576fa330d37ff543526fc7e69a397fc28f
+The local review checkout had uncommitted documentation updates. Those updates are not represented as part of the cited commit. Runtime/tool facts used here were inspected in files unchanged in that checkout. Open issues and visible author instructions supplied the explicitly labelled planned requirements.
+
+This package is a compact seed, not an exhaustive audit of every past engine incident. Expand it with verified lessons as patches are completed.

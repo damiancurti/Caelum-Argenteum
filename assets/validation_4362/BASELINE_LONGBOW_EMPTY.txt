@@ -1,0 +1,31 @@
+GZDoom version g4.14.2
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+QA_PASS kind=15 tier=1 tick=35 native weapon pickup
+QA_PASS kind=15 tier=1 tick=35 weapon in inventory
+QA_PASS kind=15 tier=1 tick=35 activate equipped weapon
+QA_GAP tick=52 ms=9439.194
+QA_PASS kind=15 tier=1 tick=100 native selector ready
+QA_PASS kind=15 tier=1 tick=100 initial arrow visibility
+QA_TIMING kind=15 tier=1 initialLoaded=0 cold_max_tick_ms=9439.194
+QA_PASS kind=15 tier=1 tick=110 aim toggles
+QA_PASS kind=15 tier=1 tick=140 primary accepted only with loaded arrow
+QA_PASS kind=15 tier=1 tick=165 magazine empty after primary
+QA_PASS kind=15 tier=1 tick=165 empty bow hides arrow
+QA_PASS kind=15 tier=1 tick=165 empty reserve rejects reload
+QA_PASS kind=15 tier=1 tick=165 empty attack rejected
+QA_PASS kind=15 tier=1 tick=220 one inventory arrow starts timed reload
+QA_RELOAD seconds=2.923582
+QA_GAP tick=323 ms=4853.096
+QA_PASS kind=15 tier=1 tick=390 timed reload completes with one arrow
+QA_PASS kind=15 tier=1 tick=390 loaded bow displays arrow
+QA_GAP tick=391 ms=4762.775
+QA_PASS kind=15 tier=1 tick=450 loaded primary fires
+QA_PASS kind=15 tier=1 tick=450 exactly one arrow consumed
+QA_PASS kind=15 tier=1 tick=480 fired arrow no longer displayed
+QA_PASS kind=15 tier=1 tick=530 switch away to fists
+QA_PASS kind=15 tier=1 tick=540 repeat empty equip
+QA_PASS kind=15 tier=1 tick=580 switch back ready
+QA_PASS kind=15 tier=1 tick=580 repeat empty equip hides arrow
+QA_TIMING kind=15 tier=1 transitions_max_tick_ms=4853.096
+QA_DONE failures=0

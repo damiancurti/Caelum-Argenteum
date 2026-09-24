@@ -1,0 +1,109 @@
+{
+  "baseline_commit": "3b75054",
+  "engine": "GZDoom g4.14.2",
+  "os": "Windows 11",
+  "iwad": "Author-installed Doom II (development only); engine also loaded id24res.wad and bundled support/widescreen resources",
+  "map": "MAP03 direct-map safe test profile; no map progression acceptance",
+  "rendering": "Vulkan / NVIDIA GeForce RTX 3070 Ti; fresh isolated configs, no user autoload, sound disabled",
+  "measurement": "Object.MSTimeF between WorldTick callbacks; cold_max is ticks 1-100, transitions_max 101-580 per tier. Includes scheduling/render work, not pure equip function duration. World simulation at native 35 Hz. Rendering comparisons use 512x1024 old/new textures side by side on black; original at x=0, optimized at x=512.",
+  "fixture": "Local-only EventHandler acquires weapons through TryPickup, uses equipped native selectors, invokes existing primary/aim/reload callbacks, grants one arrow through GiveInventory and waits for actual timed reload. Loaded-control initial state is seeded to magazine=1 and inventory=1. Tier cases reset aim. No save-schema changes or save migration.",
+  "limitations": "Physical keyboard/controller bindings, normal author inventory route and author acceptance remain CA-4362-BOW-EMPTY-01. Tests do not claim coverage of every renderer/device or accepted maps/furniture. Original exact user bow/tier remains unknown.",
+  "runs": [
+    {
+      "file": "BASELINE_INITIAL.txt",
+      "complete": true,
+      "timings": [
+        "PROBE gap tic=52 ms=10442.647",
+        "PROBE gap tic=383 ms=5210.706"
+      ]
+    },
+    {
+      "file": "BOW_EMPTY.txt",
+      "complete": true,
+      "timings": [
+        "QA_TIMING kind=14 tier=1 initialLoaded=0 cold_max_tick_ms=34.060",
+        "QA_TIMING kind=14 tier=1 transitions_max_tick_ms=57.925",
+        "QA_TIMING kind=14 tier=2 initialLoaded=0 cold_max_tick_ms=31.102",
+        "QA_TIMING kind=14 tier=2 transitions_max_tick_ms=32.201",
+        "QA_TIMING kind=14 tier=3 initialLoaded=0 cold_max_tick_ms=31.127",
+        "QA_TIMING kind=14 tier=3 transitions_max_tick_ms=32.369"
+      ]
+    },
+    {
+      "file": "LONGBOW_EMPTY.txt",
+      "complete": true,
+      "timings": [
+        "QA_TIMING kind=15 tier=1 initialLoaded=0 cold_max_tick_ms=35.680",
+        "QA_TIMING kind=15 tier=1 transitions_max_tick_ms=58.566",
+        "QA_TIMING kind=15 tier=2 initialLoaded=0 cold_max_tick_ms=34.183",
+        "QA_TIMING kind=15 tier=2 transitions_max_tick_ms=34.334",
+        "QA_TIMING kind=15 tier=3 initialLoaded=0 cold_max_tick_ms=32.911",
+        "QA_TIMING kind=15 tier=3 transitions_max_tick_ms=33.822"
+      ]
+    },
+    {
+      "file": "BOW_LOADED.txt",
+      "complete": true,
+      "timings": [
+        "QA_TIMING kind=14 tier=1 initialLoaded=1 cold_max_tick_ms=82.172",
+        "QA_TIMING kind=14 tier=1 transitions_max_tick_ms=33.676",
+        "QA_TIMING kind=14 tier=2 initialLoaded=1 cold_max_tick_ms=32.374",
+        "QA_TIMING kind=14 tier=2 transitions_max_tick_ms=33.066",
+        "QA_TIMING kind=14 tier=3 initialLoaded=1 cold_max_tick_ms=31.998",
+        "QA_TIMING kind=14 tier=3 transitions_max_tick_ms=34.967"
+      ]
+    },
+    {
+      "file": "LONGBOW_LOADED.txt",
+      "complete": true,
+      "timings": [
+        "QA_TIMING kind=15 tier=1 initialLoaded=1 cold_max_tick_ms=78.648",
+        "QA_TIMING kind=15 tier=1 transitions_max_tick_ms=33.952",
+        "QA_TIMING kind=15 tier=2 initialLoaded=1 cold_max_tick_ms=31.835",
+        "QA_TIMING kind=15 tier=2 transitions_max_tick_ms=35.550",
+        "QA_TIMING kind=15 tier=3 initialLoaded=1 cold_max_tick_ms=34.466",
+        "QA_TIMING kind=15 tier=3 transitions_max_tick_ms=33.831"
+      ]
+    },
+    {
+      "file": "BASELINE_BOW_LOADED.txt",
+      "complete": true,
+      "timings": [
+        "QA_GAP tick=52 ms=10807.060",
+        "QA_TIMING kind=14 tier=1 initialLoaded=1 cold_max_tick_ms=10807.060",
+        "QA_GAP tick=111 ms=5034.135",
+        "QA_GAP tick=141 ms=5048.995",
+        "QA_TIMING kind=14 tier=1 transitions_max_tick_ms=5048.995"
+      ]
+    },
+    {
+      "file": "BASELINE_LONGBOW_EMPTY.txt",
+      "complete": true,
+      "timings": [
+        "QA_GAP tick=52 ms=9439.194",
+        "QA_TIMING kind=15 tier=1 initialLoaded=0 cold_max_tick_ms=9439.194",
+        "QA_GAP tick=323 ms=4853.096",
+        "QA_GAP tick=391 ms=4762.775",
+        "QA_TIMING kind=15 tier=1 transitions_max_tick_ms=4853.096"
+      ]
+    },
+    {
+      "file": "BASELINE_LONGBOW_LOADED.txt",
+      "complete": true,
+      "timings": [
+        "QA_GAP tick=52 ms=9655.233",
+        "QA_TIMING kind=15 tier=1 initialLoaded=1 cold_max_tick_ms=9655.233",
+        "QA_GAP tick=111 ms=4734.439",
+        "QA_GAP tick=141 ms=4777.462",
+        "QA_TIMING kind=15 tier=1 transitions_max_tick_ms=4777.462"
+      ]
+    }
+  ],
+  "corrected_pass_assertions": 252,
+  "corrected_fail_assertions": 0,
+  "final_build_matches_tested_runtime_bytes": true,
+  "build_file_count": 5321,
+  "original_pending_flail_entry_preserved": true,
+  "generator_environment": "Python 3.12.14 / Pillow 12.3.0",
+  "review": "Separate inherited Codex/GPT-6 reviewer reconstructed all six baseline crop outputs including alpha and byte-identical PNG encoding, and reviewed final documentation; no actionable findings. Not a claimed DeepSeek review."
+}

@@ -1,0 +1,76 @@
+GZDoom version g4.14.2
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+QA_PASS kind=14 tier=1 tick=35 native weapon pickup
+QA_PASS kind=14 tier=1 tick=35 weapon in inventory
+QA_PASS kind=14 tier=1 tick=35 activate equipped weapon
+QA_PASS kind=14 tier=1 tick=100 native selector ready
+QA_PASS kind=14 tier=1 tick=100 initial arrow visibility
+QA_TIMING kind=14 tier=1 initialLoaded=1 cold_max_tick_ms=82.172
+QA_PASS kind=14 tier=1 tick=110 aim toggles
+QA_PASS kind=14 tier=1 tick=140 primary accepted only with loaded arrow
+QA_PASS kind=14 tier=1 tick=165 magazine empty after primary
+QA_PASS kind=14 tier=1 tick=165 empty bow hides arrow
+QA_PASS kind=14 tier=1 tick=165 empty reserve rejects reload
+QA_PASS kind=14 tier=1 tick=165 empty attack rejected
+QA_PASS kind=14 tier=1 tick=220 one inventory arrow starts timed reload
+QA_RELOAD seconds=2.923582
+QA_PASS kind=14 tier=1 tick=390 timed reload completes with one arrow
+QA_PASS kind=14 tier=1 tick=390 loaded bow displays arrow
+QA_PASS kind=14 tier=1 tick=450 loaded primary fires
+QA_PASS kind=14 tier=1 tick=450 exactly one arrow consumed
+QA_PASS kind=14 tier=1 tick=480 fired arrow no longer displayed
+QA_PASS kind=14 tier=1 tick=530 switch away to fists
+QA_PASS kind=14 tier=1 tick=540 repeat empty equip
+QA_PASS kind=14 tier=1 tick=580 switch back ready
+QA_PASS kind=14 tier=1 tick=580 repeat empty equip hides arrow
+QA_TIMING kind=14 tier=1 transitions_max_tick_ms=33.676
+QA_PASS kind=14 tier=2 tick=635 native weapon pickup
+QA_PASS kind=14 tier=2 tick=635 weapon in inventory
+QA_PASS kind=14 tier=2 tick=635 activate equipped weapon
+QA_PASS kind=14 tier=2 tick=700 native selector ready
+QA_PASS kind=14 tier=2 tick=700 initial arrow visibility
+QA_TIMING kind=14 tier=2 initialLoaded=1 cold_max_tick_ms=32.374
+QA_PASS kind=14 tier=2 tick=710 aim toggles
+QA_PASS kind=14 tier=2 tick=740 primary accepted only with loaded arrow
+QA_PASS kind=14 tier=2 tick=765 magazine empty after primary
+QA_PASS kind=14 tier=2 tick=765 empty bow hides arrow
+QA_PASS kind=14 tier=2 tick=765 empty reserve rejects reload
+QA_PASS kind=14 tier=2 tick=765 empty attack rejected
+QA_PASS kind=14 tier=2 tick=820 one inventory arrow starts timed reload
+QA_RELOAD seconds=2.923582
+QA_PASS kind=14 tier=2 tick=990 timed reload completes with one arrow
+QA_PASS kind=14 tier=2 tick=990 loaded bow displays arrow
+QA_PASS kind=14 tier=2 tick=1050 loaded primary fires
+QA_PASS kind=14 tier=2 tick=1050 exactly one arrow consumed
+QA_PASS kind=14 tier=2 tick=1080 fired arrow no longer displayed
+QA_PASS kind=14 tier=2 tick=1130 switch away to fists
+QA_PASS kind=14 tier=2 tick=1140 repeat empty equip
+QA_PASS kind=14 tier=2 tick=1180 switch back ready
+QA_PASS kind=14 tier=2 tick=1180 repeat empty equip hides arrow
+QA_TIMING kind=14 tier=2 transitions_max_tick_ms=33.066
+QA_PASS kind=14 tier=3 tick=1235 native weapon pickup
+QA_PASS kind=14 tier=3 tick=1235 weapon in inventory
+QA_PASS kind=14 tier=3 tick=1235 activate equipped weapon
+QA_PASS kind=14 tier=3 tick=1300 native selector ready
+QA_PASS kind=14 tier=3 tick=1300 initial arrow visibility
+QA_TIMING kind=14 tier=3 initialLoaded=1 cold_max_tick_ms=31.998
+QA_PASS kind=14 tier=3 tick=1310 aim toggles
+QA_PASS kind=14 tier=3 tick=1340 primary accepted only with loaded arrow
+QA_PASS kind=14 tier=3 tick=1365 magazine empty after primary
+QA_PASS kind=14 tier=3 tick=1365 empty bow hides arrow
+QA_PASS kind=14 tier=3 tick=1365 empty reserve rejects reload
+QA_PASS kind=14 tier=3 tick=1365 empty attack rejected
+QA_PASS kind=14 tier=3 tick=1420 one inventory arrow starts timed reload
+QA_RELOAD seconds=2.923582
+QA_PASS kind=14 tier=3 tick=1590 timed reload completes with one arrow
+QA_PASS kind=14 tier=3 tick=1590 loaded bow displays arrow
+QA_PASS kind=14 tier=3 tick=1650 loaded primary fires
+QA_PASS kind=14 tier=3 tick=1650 exactly one arrow consumed
+QA_PASS kind=14 tier=3 tick=1680 fired arrow no longer displayed
+QA_PASS kind=14 tier=3 tick=1730 switch away to fists
+QA_PASS kind=14 tier=3 tick=1740 repeat empty equip
+QA_PASS kind=14 tier=3 tick=1780 switch back ready
+QA_PASS kind=14 tier=3 tick=1780 repeat empty equip hides arrow
+QA_TIMING kind=14 tier=3 transitions_max_tick_ms=34.967
+QA_DONE failures=0

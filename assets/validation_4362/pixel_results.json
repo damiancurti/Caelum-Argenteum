@@ -1,0 +1,62 @@
+[
+  {
+    "family": "standard_bow",
+    "tier": 1,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  },
+  {
+    "family": "standard_bow",
+    "tier": 2,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  },
+  {
+    "family": "standard_bow",
+    "tier": 3,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  },
+  {
+    "family": "longbow",
+    "tier": 1,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  },
+  {
+    "family": "longbow",
+    "tier": 2,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  },
+  {
+    "family": "longbow",
+    "tier": 3,
+    "capture_size": [
+      1920,
+      1080
+    ],
+    "different_pixels": 0,
+    "bounding_box": null
+  }
+]

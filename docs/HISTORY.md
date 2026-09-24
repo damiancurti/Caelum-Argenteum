@@ -1,6 +1,93 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.1b** — 2026-09-23.
+Documentation version: **4.36.2** — 2026-09-23.
+
+## 4.36.2 — Bow first-use composition stall (issue #8)
+
+Implemented on 2026-09-23 from merged main `3b75054` (PRs #7/#23).
+
+### Cause and correction
+
+The author's multi-second empty-bow report was reproduced in native GZDoom
+g4.14.2 on Windows 11, Vulkan/NVIDIA RTX 3070 Ti, using the author's installed
+Doom II development IWAD and isolated configuration. First presentation of a
+T1 empty standard bow produced a 10,442.647 ms inter-tick gap; the first loaded
+pose later produced 5,210.706 ms. Repeated equips were responsive, and the
+explicit equip callback returned in 0.055 ms. The cause is expensive first-use
+TEXTURES composition: 167–173 strip textures per tier recursively rebuilt the
+cropped/recolored 1536 x 1024 source sheet. It is not a verified state loop.
+
+`generate_fp_native_0i.py` now stores the same column-clipped, row-shifted
+staves as six deterministic 512 x 1024 RGBA PNG caches. TEXTURES keeps the
+existing native desaturation/tint, scales, offsets and sprite names. Original
+art, flail output, hand/string/arrow ordering, state tables, magazine capacity,
+reload timing, ammunition consumption, damage, controls and save schemas are
+unchanged. No migration is required. Moving palette operations alone did not
+remove the stall; caching the crop result is the final correction.
+
+### Verification and acceptance
+
+All four corrected family/ammunition runs passed: **252 assertions, zero
+failures** across tiers 1–3. The largest inter-tick interval in those runs was
+82.172 ms. Fresh-session T1 controls are:
+
+| Initial presentation | Baseline maximum (ms) | Corrected maximum (ms) |
+| --- | ---: | ---: |
+| Standard bow, empty | 10442.647 | 34.060 |
+| Standard bow, loaded | 10807.060 | 82.172 |
+| Longbow, empty | 9439.194 | 35.680 |
+| Longbow, loaded | 9655.233 | 78.648 |
+
+These are wall-clock gaps between native WorldTick callbacks, including
+rendering/scheduling, not isolated function benchmarks or a performance
+guarantee for other machines. T2/T3 use previously unseen textures in the same
+family session; repeated equips and subsequent transitions are logged separately.
+
+- Native before/after conditions, timings and callback assertions are retained
+  in [assets/validation_4362/RESULTS.json](../assets/validation_4362/RESULTS.json)
+  and its adjacent filtered engine logs. Both bow families are checked empty
+  and initially loaded, with primary/aim/reload, one-arrow acquisition and
+  consumption, return to empty, and switching to fists/back. Fresh sessions
+  distinguish cold presentation from repeated equips. Loaded-control fixtures
+  seed one magazine/inventory arrow; the subsequent reload uses real timing.
+- Six native side-by-side texture captures (two families x three tiers) have
+  **zero differing RGB pixels** over a black background. The independent
+  source review reconstructs all six original strip outputs exactly, including
+  alpha; the 18 A/B/C sprite declarations and all unrelated texture definitions
+  remain byte-identical. No original PNG is edited.
+- Re-running the generator produces identical SHA-256 hashes for TEXTURES and
+  all caches. Static checks confirm no gameplay/save-schema delta and preserve
+  the original pending flail test. `python validate_project.py` passes with
+  version 4.36.2, ten docs and no errors; the normal builder includes 5,321
+  files and no directory entries. `git diff --check` passes. The document index
+  is regenerated and checked for deterministic output.
+- A separate AI performed focused read-only cross-verification of the crop
+  caches, unchanged definitions/schema and current roadmap: no actionable
+  findings. This was another Codex/GPT-6 agent, not a claimed DeepSeek review.
+- **Author acceptance is pending:** CA-4362-BOW-EMPTY-01. Native automation
+  invokes the existing callbacks; physical bindings and the author's normal
+  inventory route remain in that focused check. Other renderers/devices and
+  the original unspecified bow/tier are not claimed covered. Existing accepted
+  maps, furniture and ceiling/elevator checks were not replayed.
+
+### Author environmental-scope clarification — 2026-09-23
+
+The author explicitly included this decision in issue #8: existing crushing
+ceiling and native elevator cover moving sectors. Avalanches are deferred
+until additional maps are developed; damaging surfaces until environmental
+temperature effects, with no acid or lava requested now. Those three no longer
+block 4.36. No new environmental mechanism or ceiling/elevator engine test is
+claimed. Rams/catapults and remaining integration/save/reset checks, 4.37
+Tarot/Trucazo and three-map demo requirements remain active. The older five-item
+plans remain historical; current PROJECT/TASKS/CONTEXT/README/SYSTEMS agree.
+Linked issues #16/#17/#20/#21 were checked: #17 already reflects this decision;
+no contradictory active hazard gate was found in those linked requirements.
+
+At the author's request, removed the already-integrated #22 staging files
+`INSTALL_AND_INTEGRATE.txt` and `knowledge_handoff/` from the root after
+hash-verifying their original backups in `archive/issue22_handoff/`. The
+maintained guides stay in docs. The Tarot ZIP/source folder was left untouched
+and excluded from the patch.
 
 ## 4.36.1b — Engineering guides and long-document index
 

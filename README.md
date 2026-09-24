@@ -4,13 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.1b.** Obtain and update the complete repository, validate
+**Current release: 4.36.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) caches the existing
+bow-stave crops to remove first-use texture-composition stalls, preserving
+native palette effects, geometry, controls, ammunition and saves. Issue
 [#22](https://github.com/damiancurti/Caelum-Argenteum/issues/22) integrates the
 engineering guides and the long-document index; issue
 [#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) standardized English
 documentation, numeric patch versions and the author-test workflow.
-The gameplay baseline remains 4.36.1. When upgrading from a version before
+Gameplay rules retain the accepted 4.36.0i baseline. When upgrading from a version before
 4.36.0i, start a new game or use `map MAP02`: that earlier release replaced
 MAP02 with the author's authorization.
 
@@ -53,12 +56,13 @@ flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
 Bow appearance is accepted; the flail still needs approximately 10 degrees more
 counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
-A reported stall when equipping a bow without arrows is tracked separately in
-[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8). Neither fix is included in 4.36.1b.
+The empty-bow stall is corrected in 4.36.2 (#8); focused native Windows evidence
+is recorded in HISTORY. Author acceptance remains pending under
+CA-4362-BOW-EMPTY-01. The flail correction remains separate.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.1b**. Use the repository instructions below and the root pending-test queue
+**4.36.2**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -681,8 +685,13 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 V4.35 now includes the accepted world clock/calendar, rest furniture/camera,
 sleeping bag, comfort factors and the initial safe-area accelerated path.
 The regional climate and shelter service builds on the accepted 0k adapter.
-V4.35 is accepted and closed through 0q. V4.36 includes the trapdoor, rocks, approved magical traps and ceiling crusher; dedicated damaging surfaces, avalanches, rams, catapults and
-broader moving-sector hazards remain in this block.
+V4.35 is accepted and closed through 0q. V4.36 includes the trapdoor, rocks,
+approved magical traps and ceiling crusher. Per the author's 2026-09-23
+clarification in #8, the existing crushing ceiling and native elevator cover
+moving sectors. Avalanches are deferred until additional maps; damaging
+surfaces until environmental temperature effects (no acid/lava requested).
+These three items no longer block 4.36. Rams, catapults and remaining
+integration/save/reset checks still do; the Tarot and demo gates remain.
 Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and
 subsequent maps; future regions can use the existing explicit map marker.
 The fast path does not simulate arbitrary AI, physics, doors or third-party
@@ -740,13 +749,14 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
-its correction. On 2026-09-23 the author confirmed zero validator errors,
-successful rebuild/launch and both 4.36.1b diagnostic headers. That completed
+See [pending_test.txt](pending_test.txt) for the 4.36.2 bow acceptance check and
+final flail-pose acceptance after its separate correction. On 2026-09-23 the
+author confirmed zero validator errors, successful rebuild/launch and both
+4.36.1 diagnostic headers. That completed
 test and the accepted maze/save-load/table tests are recorded in HISTORY.
-The empty-bow stall is a separate open correction in #8, not an accepted result.
+The #8 bow correction is engine-verified; explicit author acceptance remains pending.
 Long-term encounter/provision balance and unfinished 4.36 systems are development
-work in PROJECT/TASKS, not new acceptance tests created by this documentation patch.
+work in PROJECT/TASKS, not additional author checks for this patch.
 
 ## Build and run
 
