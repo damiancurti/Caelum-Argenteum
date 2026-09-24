@@ -14,7 +14,7 @@ class CaelumPrisonerUnitario : CaelumCaella
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        BecomeInertPrisoner();
+        BecomePrisoner(CaelumConstants.PRISONER_UNITARIO);
     }
 
     States
@@ -69,6 +69,9 @@ class CaelumPrisonerUnitario : CaelumCaella
         PUNI AAA 10;
         PUNI BBBB 10;
         Goto Spawn;
+    EscortFollow:
+        PUNC ABCD 1 A_CaelumPrisonerFollow;
+        Loop;
     Run:
         Goto See;
     }
@@ -87,7 +90,7 @@ class CaelumPrisonerFederal : CaelumRonnie
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        BecomeInertPrisoner();
+        BecomePrisoner(CaelumConstants.PRISONER_FEDERAL);
     }
 
     States
@@ -142,6 +145,9 @@ class CaelumPrisonerFederal : CaelumRonnie
         PFED AAA 10;
         PFED BBBB 10;
         Goto Spawn;
+    EscortFollow:
+        PFEC ABCD 1 A_CaelumPrisonerFollow;
+        Loop;
     Run:
         Goto See;
     }
@@ -160,7 +166,7 @@ class CaelumPrisonerBestia : CaelumRulo
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        BecomeInertPrisoner();
+        BecomePrisoner(CaelumConstants.PRISONER_BESTIA);
     }
 
     States
@@ -215,6 +221,9 @@ class CaelumPrisonerBestia : CaelumRulo
         PBES AAA 10;
         PBES BBBB 10;
         Goto Spawn;
+    EscortFollow:
+        PBRN ABCD 1 A_CaelumPrisonerFollow;
+        Loop;
     Run:
         Goto See;
     }
@@ -233,7 +242,7 @@ class CaelumPrisonerTarot : CaelumArgento
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        BecomeInertPrisoner();
+        BecomePrisoner(CaelumConstants.PRISONER_TAROT);
     }
 
     States
@@ -288,6 +297,9 @@ class CaelumPrisonerTarot : CaelumArgento
         PTAR AAA 10;
         PTAR BBBB 10;
         Goto Spawn;
+    EscortFollow:
+        PTRN ABCD 1 A_CaelumPrisonerFollow;
+        Loop;
     Run:
         Goto See;
     }

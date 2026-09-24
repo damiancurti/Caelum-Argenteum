@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,15 +64,24 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.7** implements #13: four recolored prisoner appearances
-that reuse the mansion characters without new models. Caella -> Unitarians
+Current release **4.36.8** implements #14: the four MAP02 prisoners can be
+released, then follow and fight alongside the player with their source combat
+profiles while staying back from the northern Zupay. Each prisoner is extracted
+only by reaching the pre-boss reservation alive before that fight (killing the
+boss is not required); a follower that dies earlier is not rescued. At the
+MAP06 port, each extracted prisoner grants +10 reputation with its own faction
+and 25 gold coins (1,000,000 copper) once, independent of character size, with
+no duplicate payout across retry, save/load or travel. Four new faction domains
+are added without relabeling accepted IDs 0-3. GZDoom 4.14.2 compiles the
+complete package and loads MAP01/MAP02/MAP06 without script errors; author
+acceptance CA-4368-RESCUE-01 remains pending.
+
+The preceding **4.36.8** implements #13: four recolored prisoner appearances
+reusing the mansion characters without new models: Caella -> Unitarians
 (Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
 Wild Beast Men (Santos Barrera, black/brown/green) and Argento -> Cult of the
-Tarot (Leandro Farías, gold/silver over black). One inert, friendly,
-invulnerable variant is instantiated in each reserved MAP02 cell; original
-mansion NPCs and their accepted combat profiles remain unchanged. The author
-visual check CA-4367-PRISONER-ART-01 passed on 2026-09-24; the author-test
-queue is empty.
+Tarot (Leandro Farías, gold/silver over black). The author visual check
+CA-4367-PRISONER-ART-01 passed on 2026-09-24.
 
 The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
 Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat

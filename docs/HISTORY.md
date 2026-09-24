@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
+
+Baseline: integrated 4.36.7, `660d18b` (author acceptance of #13). The four
+MAP02 prisoners are now live companions. Opening a reserved cell offers release,
+and a freed prisoner follows and fights alongside the player using its source
+character's combat profile, stays back from the northern Zupay, and is extracted
+alive only when it reaches the pre-boss reservation before that fight. Extraction
+does not require killing the boss; a follower that dies before extraction is not
+rescued. Each rescued prisoner persists across save/load/travel and appears once
+at the MAP06 port, where its own-faction thanks grant +10 reputation and 25 gold
+coins (1,000,000 copper) exactly once, independent of character size; a failed
+coin delivery stays retryable without duplicate money or reputation. Four new
+faction domains (Unitarians, Federals, Wild Beast Men, Cult of the Tarot) are
+added without relabeling accepted IDs 0-3. No new runtime art is introduced: the
+prisoner actors reuse the #13 recolored sprites and accepted combat profiles.
+
+Static and native verification remain separate from author acceptance. GZDoom
+4.14.2 compiles the complete PK3 and loads MAP01, MAP02 and MAP06 without script
+errors; `python validate_project.py` passes with no errors. Author acceptance is
+pending: `CA-4368-RESCUE-01` remains in the author queue until the author confirms
+the full release/follow/extraction/port-reward route.
 
 ## 4.36.7 — Recolored prisoner appearances (#13)
 

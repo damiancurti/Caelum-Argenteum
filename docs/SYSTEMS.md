@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
+
+Each reserved MAP02 cell now offers release through a prisoner conversation; the
+freed actor becomes friendly, stops counting as a kill, follows the player and
+fights using the source mansion character's exact combat profile. It stays back
+from the northern Zupay and is extracted alive only at the pre-boss reservation
+before that fight; killing the boss is not required, and a follower that dies
+before extraction is not rescued. Persistent per-prisoner state survives save,
+load and travel; extracted prisoners appear once at the MAP06 port, where their
+own-faction thanks grant +10 reputation and 25 gold coins (1,000,000 copper)
+exactly once, independent of character size. A failed coin delivery is retryable
+without duplicate money or reputation. Four new faction domains (Unitarians,
+Federals, Wild Beast Men, Cult of the Tarot) use new IDs 4-7 and do not relabel
+accepted IDs 0-3.
 
 ## 4.36.7 — Inert prisoner appearances (#13)
 
@@ -3795,7 +3810,7 @@ world.
 
 ### 6. Prisoner coin reward
 
-[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8. The
+[IMPLEMENTED, AUTHOR ACCEPTANCE PENDING] Issue #14, 4.36.8. The
 latest author decision, explicitly referenced by #10 and verified against #14,
 supersedes the former average-weapon-price formula reconciled in #22.
 

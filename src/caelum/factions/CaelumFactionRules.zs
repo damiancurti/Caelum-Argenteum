@@ -10,6 +10,10 @@ class CaelumFactionRules : Object
             case CaelumConstants.FACTION_SETTLEMENTS: return "CA_FACTION_SETTLEMENTS";
             case CaelumConstants.FACTION_CARAVANS: return "CA_FACTION_CARAVANS";
             case CaelumConstants.FACTION_POLITICAL_ACTORS: return "CA_FACTION_POLITICAL_ACTORS";
+            case CaelumConstants.FACTION_UNITARIOS: return "CA_FACTION_UNITARIOS";
+            case CaelumConstants.FACTION_FEDERALS: return "CA_FACTION_FEDERALS";
+            case CaelumConstants.FACTION_WILD_BEAST_MEN: return "CA_FACTION_WILD_BEAST_MEN";
+            case CaelumConstants.FACTION_CULT_TAROT: return "CA_FACTION_CULT_TAROT";
         }
         return "CA_REP_UNKNOWN_FACTION";
     }

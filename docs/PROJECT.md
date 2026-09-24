@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## 4.36.8 — Prisoner rescue, escort and port rewards (issue #14)
+
+The four MAP02 prisoners become optional live companions: a cell dialogue
+releases each captive, and a freed prisoner follows and fights with the source
+character's accepted combat statistics while staying back from the northern
+Zupay. A follower is extracted only by reaching the pre-boss reservation alive
+before that boss fight; killing the boss is not required, and a follower that
+dies earlier is not rescued. Zero, one or four rescues are valid. Each outcome
+persists across save/load/travel, and each rescued prisoner appears once at the
+MAP06 port, granting +10 reputation with that prisoner's own faction and 25 gold
+coins (1,000,000 copper) once, independent of character size, with retryable
+coin delivery and no duplicate payout. Four new faction domains are added without
+relabeling accepted IDs 0-3; broad companion formations remain out of scope.
 
 ## 4.36.7 — Recolored prisoner appearances (issue #13)
 

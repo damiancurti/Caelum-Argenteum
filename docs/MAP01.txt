@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## 4.36.8 — Prisoner rescue dialogue and port thanks (#14)
+
+Issue #14 implements the cell release/recognition dialogue, escort and port
+reward that #13 reserved. No new story fact, perpetrator, military rank or
+confirmed Cult membership is introduced; Leandro Farías remains tempted, not
+a confirmed member, and the protagonist's amnesia is preserved. The port thanks
+reuse the existing provisional display names without asserting new biography.
 
 ## 4.36.7 — Prisoner identities and shared ambush history (#13)
 

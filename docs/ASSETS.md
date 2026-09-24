@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## 4.36.8 — No new runtime assets (#14)
+
+Issue #14 adds prisoner release/escort/port-reward logic and dialogue but no new
+runtime art: the four MAP02 prisoner actors reuse the #13 recolored sprites and
+the accepted mansion combat profiles. No source artwork, generator or TEXTURES
+block changes in this patch.
 
 ## 4.36.7 — Recolored prisoner sprites (#13)
 

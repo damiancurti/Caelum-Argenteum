@@ -3277,3 +3277,281 @@ conversation
         choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
     }
 }
+
+// CA_PRISONER_RESCUE_CELL — captives converse in their MAP02 cells.
+conversation
+{
+    id = 43420;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_unitario_cell";
+        name = "$CA_PRISONER_UNITARIO_NAME";
+        dialog = "$CA_PRISONER_DLG_UNITARIO_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed0Token"; amount = 1; } link = "prisoner_unitario_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_unitario_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_unitario_follow";
+        name = "$CA_PRISONER_UNITARIO_NAME";
+        dialog = "$CA_PRISONER_DLG_UNITARIO_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43421;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_federal_cell";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed1Token"; amount = 1; } link = "prisoner_federal_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_federal_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_follow";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43422;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_bestia_cell";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed2Token"; amount = 1; } link = "prisoner_bestia_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_bestia_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_follow";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43423;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_tarot_cell";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed3Token"; amount = 1; } link = "prisoner_tarot_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_tarot_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_follow";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+// CA_PRISONER_RESCUE_PORT — each rescued prisoner appears once in MAP06.
+conversation
+{
+    id = 43424;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_unitario_port";
+        name = "$CA_PRISONER_UNITARIO_NAME";
+        dialog = "$CA_PRISONER_DLG_UNITARIO_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed0Token"; amount = 1; } link = "prisoner_unitario_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_unitario_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_unitario_outcome";
+        name = "$CA_PRISONER_UNITARIO_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed0Token"; amount = 1; } link = "prisoner_unitario_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_unitario_claimed";
+        name = "$CA_PRISONER_UNITARIO_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43425;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_federal_port";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed1Token"; amount = 1; } link = "prisoner_federal_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_federal_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_outcome";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed1Token"; amount = 1; } link = "prisoner_federal_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_claimed";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43426;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_bestia_port";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed2Token"; amount = 1; } link = "prisoner_bestia_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_bestia_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_outcome";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed2Token"; amount = 1; } link = "prisoner_bestia_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_claimed";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43427;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_tarot_port";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_tarot_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_outcome";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_claimed";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

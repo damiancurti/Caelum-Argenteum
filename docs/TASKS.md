@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.7** — 2026-09-24.
+Documentation version: **4.36.8** — 2026-09-24.
+
+## Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/14
+- **Scope:** release the four MAP02 prisoners through cell dialogue; freed
+  prisoners follow and fight with the source character's stats while staying
+  back from the northern Zupay; extract each alive at the pre-boss reservation
+  before that fight (killing the boss is not required); persist outcomes and
+  spawn rescued prisoners once at the MAP06 port, granting +10 own-faction
+  reputation and 25 gold coins (1,000,000 copper) once per rescued prisoner,
+  independent of character size, with no duplicate payout and retryable coin
+  delivery. Add faction domains 4-7 without relabeling accepted IDs 0-3.
+- **Author contract:** a follower that dies before extraction is not rescued;
+  zero, one or four rescues are valid; no death respawn; do not reopen other
+  cells; no broad companion formations. The Tarot remains the next issue.
+- **Acceptance:** CA-4368-RESCUE-01 pending author confirmation.
+- **Next:** #15 / 4.36.9 owns the Tarot package after this delivery.
 
 ## Issue #13 — Recolored prisoner appearances (4.36.7)
 

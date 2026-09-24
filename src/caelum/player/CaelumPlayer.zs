@@ -995,6 +995,81 @@ class CaelumPlayer : DoomPlayer
         return changed;
     }
 
+    int GetPrisonerRescueState(int prisonerId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return CaelumConstants.PRISONER_STATE_CAPTIVE; }
+        return persistentState.GetPrisonerRescueState(prisonerId);
+    }
+
+    bool SetPlayerPrisonerRescueState(int prisonerId, int nextState)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.SetPrisonerRescueState(
+            prisonerId, nextState
+        );
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool IsPlayerPrisonerRewardClaimed(int prisonerId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        return persistentState.IsPrisonerRewardClaimed(prisonerId);
+    }
+
+    bool ClaimPrisonerPortReward(int prisonerId, int factionId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null || player == null || health <= 0
+            || persistentState.GetPrisonerRescueState(prisonerId)
+                != CaelumConstants.PRISONER_STATE_EXTRACTED
+            || persistentState.IsPrisonerRewardClaimed(prisonerId))
+        {
+            return false;
+        }
+
+        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
+        {
+            if (!BuildPalomoCurrencyCreditPlan(
+                CaelumConstants.PRISONER_RESCUE_COPPER_REWARD))
+            {
+                return false;
+            }
+            if (currencyRoute == 1)
+            {
+                if (!MagicBoxOwned) { continue; }
+                RoutePalomoCurrencyGainsToMagicBox();
+            }
+            double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
+            double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
+            int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
+            if (!PalomoTransactionCapacityFits(
+                personalDelta, boxRawDelta, boxSlotDelta))
+            {
+                continue;
+            }
+            if (!ApplyPalomoCurrencyPlan()) { return false; }
+            persistentState.MarkPrisonerRewardClaimed(prisonerId);
+            persistentState.ChangeFactionReputation(
+                factionId, CaelumConstants.PRISONER_RESCUE_REPUTATION_GAIN);
+            RefreshSocialJournalSnapshot();
+            PersistCharacterState();
+            CaelumNotifications.Notify(self,
+                StringTable.Localize("CA_PRISONER_REWARD_RECEIVED", false));
+            return true;
+        }
+        CaelumNotifications.Notify(self,
+            StringTable.Localize("CA_PRISONER_REWARD_CAPACITY_FAIL", false));
+        return false;
+    }
+
     void ResetPlayerFactionStateForDebug()
     {
         CaelumPersistentCharacterState persistentState =

@@ -4,13 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.7.** Obtain and update the complete repository, validate
+**Current release: 4.36.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) makes the four
+MAP02 prisoners follow and fight alongside the player, extracts them alive at
+the pre-boss reservation before the northern Zupay, and grants each rescued
+prisoner a one-time +10 own-faction reputation and 25 gold coins (1,000,000
+copper) at the MAP06 port, independent of character size. Issue
 [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) adds four
-recolored prisoner appearances that reuse the mansion characters without new
-models: Caella -> Unitarians, Ronnie -> Federals, Rulo -> Wild Beast Men and
-Argento -> Cult of the Tarot. One inert, friendly, invulnerable variant is
-placed in each reserved MAP02 cell; original mansion NPCs are unchanged.
+recolored prisoner appearances reusing the mansion characters: Caella ->
+Unitarians, Ronnie -> Federals, Rulo -> Wild Beast Men and Argento -> Cult of
+the Tarot.
 Issue [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) added
 192 hostile sewer rats (two per Mandinga) and was author-confirmed on
 2026-09-24. Issue

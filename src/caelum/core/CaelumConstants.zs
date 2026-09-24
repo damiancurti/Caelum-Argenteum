@@ -186,12 +186,41 @@ class CaelumConstants : Object
     const FACTION_SETTLEMENTS = 1;
     const FACTION_CARAVANS = 2;
     const FACTION_POLITICAL_ACTORS = 3;
-    const FACTION_COUNT = 4;
+    // Nuevos dominios narrativos de los prisioneros de MAP02. No se
+    // reetiquetan los Ã­ndices 0-3 ya aceptados por la GendarmerÃ­a.
+    const FACTION_UNITARIOS = 4;
+    const FACTION_FEDERALS = 5;
+    const FACTION_WILD_BEAST_MEN = 6;
+    const FACTION_CULT_TAROT = 7;
+    const FACTION_COUNT = 8;
     const FACTION_REPUTATION_MINIMUM = -1000;
     const FACTION_REPUTATION_MAXIMUM = 1000;
     const FACTION_RELATION_HOSTILE = -1;
     const FACTION_RELATION_NEUTRAL = 0;
     const FACTION_RELATION_FRIENDLY = 1;
+
+    // Rescate y escolta de los cuatro prisioneros de MAP02. El orden es el
+    // mismo que usan las celdas reservadas y la tabla de apariciones de #13.
+    const PRISONER_UNITARIO = 0;
+    const PRISONER_FEDERAL = 1;
+    const PRISONER_BESTIA = 2;
+    const PRISONER_TAROT = 3;
+    const PRISONER_COUNT = 4;
+    const PRISONER_STATE_CAPTIVE = 0;
+    const PRISONER_STATE_FOLLOWING = 1;
+    const PRISONER_STATE_EXTRACTED = 2;
+    const PRISONER_STATE_DEAD = -1;
+    const PRISONER_TID_BASE = 44820;
+    const PRISONER_EXTRACTION_TID = 44830;
+    const PRISONER_PORT_TID_BASE = 44900;
+    const PRISONER_RESCUE_COPPER_REWARD = 1000000;
+    const PRISONER_RESCUE_REPUTATION_GAIN = 10;
+    const PRISONER_CONVERSATION_BASE = 43420;
+    const PRISONER_PORT_CONVERSATION_BASE = 43424;
+    const PRISONER_FOLLOW_DISTANCE = 96.0;
+    const PRISONER_EXTRACTION_RADIUS = 96.0;
+    const PRISONER_THREAT_RADIUS = 512.0;
+    const PRISONER_BOSS_STAYBACK_RADIUS = 1400.0;
 
     // Character creation allocation limits from the design document.
     const FREE_LAYER_POINTS = 4;
