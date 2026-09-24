@@ -8,7 +8,8 @@ Issue [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) replaces
 runtime reconstruction of bow crop strips with six deterministic PNG caches
 derived from the original images. Native palette effects, all 18 sprite names,
 scales/offsets, presentation logic, ammunition and save schemas remain intact.
-Native evidence and outstanding author acceptance are recorded in HISTORY.
+Native evidence and the author's 2026-09-23 pass confirmation for
+CA-4362-BOW-EMPTY-01 are recorded in HISTORY.
 
 The author's 2026-09-23 scope clarification in #8 covers moving sectors with
 the existing crushing ceiling and native elevator. Avalanches are deferred
@@ -167,8 +168,8 @@ and El Sol. Old ideas for other Majors are not converted into approved assignmen
 the Ace of Cups uses the shared reverse and its textual identification, without inventing a
 front.
 
-The flail pose remains in #9; the 4.36.2 empty-bow correction (#8) awaits
-author acceptance. The other reported 0i tests remain accepted. Rams, catapults
+The flail pose remains in #9; the author accepted the 4.36.2 empty-bow
+correction (#8) on 2026-09-23. The other reported 0i tests remain accepted. Rams, catapults
 and remaining integration/save/reset validation still precede Impact Physics
 extraction; the three environmental items follow the current #8 scope above.
 The following sections record previous deliveries and then-pending plans.
@@ -2112,7 +2113,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the four technical ids do not equal the eight narrative factions. |
 | V4.34: world architecture and travel | 0a–0c approved: catalog, Journal, return, group doors and connected sewers. 0d implements caravans and shared registry; 0e adds test stations and supplies. The author now approves all 0e tests, including seals/crafting blocking and recovery of Use. MAP01 does not support return. Timetables, durations and events are integrated with the 4.35 clock. Code refactor is still in V5.0. |
 | V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
-| V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8/#9 retain the reported weapon corrections. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and catapults. Rams/catapults remain pending. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
+| V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and catapults. Rams/catapults remain pending. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Collection initiated in 0t and passive base of the Minor 56 implemented in 0aa; activation of owned/selected cards with User3 and costs/cooldowns; then card content and Trucazo minigame on stable inventory/NPC/events. |
 | **V4 test export** | After 4.37 and before V5: complete and accept three campaign maps covering the prologue, the approved first Major and two distinct Minors (#16), including the sewer/rescue/art batch; then freeze an identifiable build and verify installation, controls, route, saves and issue reporting from the exported package (#17). Other V5 content is not required; this is not final standalone distribution. |
 | **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |

@@ -45,8 +45,10 @@ Verification: representative small, medium and large characters, actual recipien
 
 ## CA-KP-003 — Nested bow crop composition stalls on first presentation
 
-Status/evidence: RESOLVED-VERIFIED in 4.36.2 (#8); author acceptance pending
-CA-4362-BOW-EMPTY-01. Baseline: merged main `3b75054`.
+Status/evidence: RESOLVED-VERIFIED in 4.36.2 (#8, fix commit `abdae0d`, PR #24).
+Author acceptance: CA-4362-BOW-EMPTY-01 passed, explicitly confirmed on
+2026-09-23 (America/Buenos_Aires), with no reported exceptions; see HISTORY.
+Baseline: merged main `3b75054`.
 Source: https://github.com/damiancurti/Caelum-Argenteum/issues/8
 
 Native GZDoom g4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / development Doom II

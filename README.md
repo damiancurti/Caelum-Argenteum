@@ -57,8 +57,8 @@ On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
 Bow appearance is accepted; the flail still needs approximately 10 degrees more
 counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
 The empty-bow stall is corrected in 4.36.2 (#8); focused native Windows evidence
-is recorded in HISTORY. Author acceptance remains pending under
-CA-4362-BOW-EMPTY-01. The flail correction remains separate.
+and the author's 2026-09-23 pass confirmation for CA-4362-BOW-EMPTY-01 are
+recorded in HISTORY. The flail correction remains separate.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
@@ -749,12 +749,12 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for the 4.36.2 bow acceptance check and
-final flail-pose acceptance after its separate correction. On 2026-09-23 the
+See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
+its separate correction. The 4.36.2 bow check passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed
 test and the accepted maze/save-load/table tests are recorded in HISTORY.
-The #8 bow correction is engine-verified; explicit author acceptance remains pending.
+The #8 bow correction is engine-verified and author-accepted (CA-4362-BOW-EMPTY-01).
 Long-term encounter/provision balance and unfinished 4.36 systems are development
 work in PROJECT/TASKS, not additional author checks for this patch.
 
